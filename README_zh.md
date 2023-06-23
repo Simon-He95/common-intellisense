@@ -5,6 +5,8 @@
 
 提供一些常用的单词的快捷提醒，帮助在开发阶段能够加高效的coding
 
+![demo](assets/demo.gif)
+
 ## :coffee:
 
 [请我喝一杯咖啡](https://github.com/Simon-He95/sponsor)

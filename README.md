@@ -5,6 +5,8 @@
 
 Provide a quick reminder of some common words to help improve coding efficiency in the development stage
 
+![demo](assets/demo.gif)
+
 ## :coffee:
 
 [buy me a cup of coffee](https://github.com/Simon-He95/sponsor)
