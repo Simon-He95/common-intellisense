@@ -1,5 +1,5 @@
 <p align="center">
-<img height="200" src="./assets/kv.png" alt="to unocss">
+<img height="200" src="./assets/kv.png" alt="common-intellisense">
 </p>
 <p align="center"> <a href="./README.md">English</a> | 简体中文</p>
 
