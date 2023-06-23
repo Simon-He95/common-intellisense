@@ -61,6 +61,7 @@ const commonMap = [
   ...progressStatus.map(status => `status="${status}"`),
   ...avatarShape.map(shape => `shape="${shape}"`),
 ]
+// todo: snippetString生成完光标在""之间
 
 export function activate(context: vscode.ExtensionContext) {
   const filter = ['javascript', 'javascriptreact', 'typescriptreact', 'html', 'vue', 'css']
