@@ -1,0 +1,63 @@
+{
+  "publisher": "simonhe",
+  "name": "common-intellisense",
+  "displayName": "common-intellisense",
+  "version": "0.0.0",
+  "packageManager": "pnpm@8.1.1",
+  "description": "common-intellisense",
+  "author": "Simon He <https://github.com/Simon-He95>",
+  "license": "MIT",
+  "funding": "https://github.com/sponsors/Simon-He95",
+  "homepage": "https://github.com/Simon-He95/vscode-common-intellisense#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Simon-He95/vscode-common-intellisense"
+  },
+  "bugs": {
+    "url": "https://github.com/Simon-He95/vscode-common-intellisense/issues"
+  },
+  "sponsor": {
+    "url": "https://github.com/Simon-He95/sponsor"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./dist/index.js",
+  "icon": "icon.png",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "vscode": "^1.77.0"
+  },
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "scripts": {
+    "dev": "pnpm build --watch",
+    "test": "vitest",
+    "build": "tsup src/index.ts --external vscode",
+    "pack": "vsce package --no-dependencies",
+    "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx,.md,.json --max-warnings 0 --cache",
+    "lint:fix": "eslint . --ext .vue,.js,.ts,.jsx,.tsx,.md,.json --max-warnings 0 --cache --fix",
+    "publish": "vsce publish --no-dependencies",
+    "typecheck": "tsc --noEmit",
+    "release": "bumpp && pnpm run publish"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.38.4",
+    "@types/node": "^18.15.11",
+    "@types/vscode": "^1.77.0",
+    "@vscode-use/utils": "^0.0.20",
+    "bumpp": "^9.1.0",
+    "eslint": "^8.37.0",
+    "esno": "^0.16.3",
+    "pnpm": "^8.1.1",
+    "rimraf": "^4.4.1",
+    "tsup": "^6.7.0",
+    "typescript": "^5.0.3",
+    "vite": "^4.2.1",
+    "vitest": "^0.29.8",
+    "vsce": "^2.15.0"
+  }
+}
