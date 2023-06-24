@@ -1,11 +1,15 @@
 import * as vscode from 'vscode'
-import { createCompletionItem, registerCompletionItemProvider } from '@vscode-use/utils'
+import { createCompletionItem, getSelection, registerCompletionItemProvider } from '@vscode-use/utils'
 
-const buttonType = ['primary', 'success', 'info', 'warning', 'danger', 'text']
-const buttonSize = ['medium', 'small', 'large', 'mini']
+const buttonType = ['primary', 'success', 'info', 'warning', 'danger', 'text', 'error']
+const buttonSize = ['medium', 'small', 'large', 'mini', 'normal']
 const progressStatus = ['success', 'exception', 'warning']
 const progressType = ['line', 'circle', 'dashboard']
 const avatarShape = ['circle', 'square']
+const placementPosition = ['top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end', 'left', 'left-start', 'left-end', 'right', 'right-start', 'right-end']
+const directionWay = ['horizontal', 'vertical', 'rtl', 'ltr', 'ttb', 'btt']
+const alignWay = ['left', 'center', 'right']
+const columnFixed = ['left', 'right']
 const snippetString = [
   'width',
   'height',
@@ -26,6 +30,7 @@ const snippetString = [
   'label',
   'label-position',
   'label-width',
+  'label-suffix',
   'rules',
   'active-color',
   'inactive-color',
@@ -39,6 +44,8 @@ const snippetString = [
   'prefix-icon',
   'suffix-icon',
   'total',
+  'value-format',
+  'formatter',
 ]
 const commonMap = [
   'autocomplete',
@@ -54,23 +61,110 @@ const commonMap = [
   'fit',
   'clearable',
   'autosize',
-  ...snippetString.map(snippet => `${snippet}=""`),
+  'column-key',
+  'append-to-body',
+  'draggable',
   ...buttonType.map(type => `type="${type}"`),
   ...buttonSize.map(size => `size="${size}"`),
   ...progressType.map(type => `type="${type}"`),
   ...progressStatus.map(status => `status="${status}"`),
   ...avatarShape.map(shape => `shape="${shape}"`),
+  ...placementPosition.map(placement => `placement="${placement}"`),
+  ...directionWay.map(direction => `direction="${direction}"`),
+  ...alignWay.map(align => `align="${align}"`),
+  ...columnFixed.map(fixed => `fixed="${fixed}"`),
 ]
-// todo: snippetString生成完光标在""之间
+const uiComponents = [
+  'container',
+  'header',
+  'aside',
+  'main',
+  'footer',
+  'form',
+  'form-item',
+  'table',
+  'table-item',
+  'tag',
+  'progress',
+  'tree',
+  'pagination',
+  'badge',
+  'row',
+  'col',
+  'avatar',
+  'empty',
+  'alert',
+  'menu',
+  'menu-item',
+  'submenu',
+  'tabs',
+  'tab-pane',
+  'breadcrumb',
+  'breadcrumb-item',
+  'page-header',
+  'dropdown',
+  'dropdown-menu',
+  'steps',
+  'dialog',
+  'tooltip',
+  'popover',
+  'button',
+  'link',
+  'icon',
+  'radio',
+  'radio-group',
+  'checkbox',
+  'checkbox-group',
+  'input',
+  'input-number',
+  'select',
+  'cascader',
+  'switch',
+  'slider',
+  'time-select',
+  'time-picker',
+  'date-picker',
+  'upload',
+  'rate',
+  'color-picker',
+  'transfer',
+  'popconfirm',
+  'card',
+  'carousel',
+  'collapse',
+  'collapse-item',
+  'timeline',
+  'timeline-item',
+  'divider',
+  'calendar',
+  'image',
+  'backtop',
+  'drawer',
+]
 
 export function activate(context: vscode.ExtensionContext) {
   const filter = ['javascript', 'javascriptreact', 'typescriptreact', 'html', 'vue', 'css']
 
   context.subscriptions.push(registerCompletionItemProvider(filter, () => {
-    return commonMap.map(completion => createCompletionItem(
-      completion as string,
-      vscode.CompletionItemKind.Variable,
-    ))
+    const { lineText } = getSelection()!
+    const uiMatch = lineText.match(/(\w+)-/)
+    if (uiMatch) {
+      const uiLib = uiMatch[1]
+      return uiComponents.map((component) => {
+        return createCompletionItem(`${uiLib}-${component}`, `<el-${component}></el-${component}>`, vscode.CompletionItemKind.Variable)
+      })
+    }
+
+    return [
+      ...commonMap.map(completion => createCompletionItem(
+        completion,
+        completion,
+        vscode.CompletionItemKind.Variable,
+      )),
+      ...snippetString.map(snippet =>
+        createCompletionItem(snippet, `${snippet}="$1"$2`, vscode.CompletionItemKind.Variable),
+      ),
+    ]
   }, ['"', '\'', ' ', '.']))
 }
 
