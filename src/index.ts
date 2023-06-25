@@ -147,11 +147,11 @@ export function activate(context: vscode.ExtensionContext) {
 
   context.subscriptions.push(registerCompletionItemProvider(filter, () => {
     const { lineText } = getSelection()!
-    const uiMatch = lineText.match(/(\w+)-/)
+    const uiMatch = lineText.split(' ').slice(-1)[0].match(/<(\w+)-/)
     if (uiMatch) {
       const uiLib = uiMatch[1]
       return uiComponents.map((component) => {
-        return createCompletionItem(`${uiLib}-${component}`, `<el-${component}></el-${component}>`, vscode.CompletionItemKind.Variable)
+        return createCompletionItem(`${uiLib}-${component}`, `${uiLib}-${component}></${uiLib}-${component}>`, vscode.CompletionItemKind.Variable)
       })
     }
 
