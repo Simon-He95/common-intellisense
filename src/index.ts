@@ -144,27 +144,26 @@ const uiComponents = [
 
 export function activate(context: vscode.ExtensionContext) {
   const filter = ['javascript', 'javascriptreact', 'typescriptreact', 'html', 'vue', 'css']
-
+  const cacheMap: any = [
+    ...commonMap.map(completion => createCompletionItem(
+      completion,
+      completion,
+      vscode.CompletionItemKind.Variable,
+    )),
+    ...snippetString.map(snippet =>
+      createCompletionItem(snippet, `${snippet}="$1"$2`, vscode.CompletionItemKind.Variable),
+    ),
+  ]
   context.subscriptions.push(registerCompletionItemProvider(filter, () => {
     const { lineText } = getSelection()!
     const uiMatch = lineText.split(' ').slice(-1)[0].match(/<(\w+)-/)
     if (uiMatch) {
       const uiLib = uiMatch[1]
-      return uiComponents.map((component) => {
-        return createCompletionItem(`${uiLib}-${component}`, `${uiLib}-${component}></${uiLib}-${component}>`, vscode.CompletionItemKind.Variable)
-      })
+      return uiComponents.map(component =>
+        createCompletionItem(`${uiLib}-${component}`, `${uiLib}-${component}></${uiLib}-${component}>`, vscode.CompletionItemKind.Variable),
+      )
     }
-
-    return [
-      ...commonMap.map(completion => createCompletionItem(
-        completion,
-        completion,
-        vscode.CompletionItemKind.Variable,
-      )),
-      ...snippetString.map(snippet =>
-        createCompletionItem(snippet, `${snippet}="$1"$2`, vscode.CompletionItemKind.Variable),
-      ),
-    ]
+    return cacheMap
   }, ['"', '\'', ' ', '.']))
 }
 
