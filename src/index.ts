@@ -80,6 +80,7 @@ const uiComponents = [
   'aside',
   'main',
   'footer',
+  'card',
   'form',
   'form-item',
   'table',
@@ -129,7 +130,6 @@ const uiComponents = [
   'color-picker',
   'transfer',
   'popconfirm',
-  'card',
   'carousel',
   'collapse',
   'collapse-item',
@@ -146,25 +146,35 @@ export function activate(context: vscode.ExtensionContext) {
   const filter = ['javascript', 'javascriptreact', 'typescriptreact', 'html', 'vue', 'css']
   const cacheMap: any = [
     ...commonMap.map(completion => createCompletionItem(
-      completion,
-      completion,
-      vscode.CompletionItemKind.Variable,
+      {
+        content: completion,
+        snippet: completion,
+        type: vscode.CompletionItemKind.Variable,
+      },
     )),
     ...snippetString.map(snippet =>
-      createCompletionItem(snippet, `${snippet}="$1"$2`, vscode.CompletionItemKind.Variable),
+      createCompletionItem({
+        content: snippet,
+        snippet: `${snippet}="$1"$2`,
+        type: vscode.CompletionItemKind.Variable,
+      }),
     ),
   ]
   context.subscriptions.push(registerCompletionItemProvider(filter, () => {
     const { lineText } = getSelection()!
-    const uiMatch = lineText.split(' ').slice(-1)[0].match(/<(\w+)-/)
+    const uiMatch = lineText.split(' ').slice(-1)[0].match(/(\w+)-/)
     if (uiMatch) {
       const uiLib = uiMatch[1]
       return uiComponents.map(component =>
-        createCompletionItem(`${uiLib}-${component}`, `${uiLib}-${component}></${uiLib}-${component}>`, vscode.CompletionItemKind.Variable),
+        createCompletionItem({
+          content: `${uiLib}-${component}`,
+          snippet: `<${uiLib}-${component}></${uiLib}-${component}>`,
+          type: vscode.CompletionItemKind.Variable,
+        }),
       )
     }
     return cacheMap
-  }, ['"', '\'', ' ', '.']))
+  }, ['"', '\'', '-']))
 }
 
 export function deactivate() {
