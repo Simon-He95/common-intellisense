@@ -1,5 +1,6 @@
 import * as vscode from 'vscode'
 import { createCompletionItem, getSelection, registerCompletionItemProvider } from '@vscode-use/utils'
+import { parser } from './utils'
 
 const buttonType = ['primary', 'success', 'info', 'warning', 'danger', 'text', 'error']
 const buttonSize = ['medium', 'small', 'large', 'mini', 'normal']
@@ -160,10 +161,11 @@ export function activate(context: vscode.ExtensionContext) {
       }),
     ),
   ]
-  context.subscriptions.push(registerCompletionItemProvider(filter, () => {
+  context.subscriptions.push(registerCompletionItemProvider(filter, (document, position) => {
+    const result = parser(document.getText(), position)
     const { lineText } = getSelection()!
     const uiMatch = lineText.split(' ').slice(-1)[0].match(/(\w+)-/)
-    if (uiMatch) {
+    if (uiMatch && (result === true || result?.type === 'text')) {
       const uiLib = uiMatch[1]
       return uiComponents.map(component =>
         createCompletionItem({
@@ -173,7 +175,8 @@ export function activate(context: vscode.ExtensionContext) {
         }),
       )
     }
-    return cacheMap
+    if (result === true || (result?.type === 'props' && !result.propName))
+      return cacheMap
   }, ['"', '\'', '-']))
 }
 
