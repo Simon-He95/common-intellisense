@@ -39,7 +39,7 @@ function dfs(children: any, position: vscode.Position) {
         if (isInPosition(prop.loc, position)) {
           return {
             tag,
-            propName: props.name,
+            propName: prop.name,
             props,
             type: 'props',
           }
