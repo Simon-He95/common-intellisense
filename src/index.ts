@@ -6,7 +6,7 @@ import UI from './ui'
 export function activate(context: vscode.ExtensionContext) {
   const filter = ['javascript', 'javascriptreact', 'typescriptreact', 'html', 'vue', 'css']
   let UiCompletions: any = null
-
+  let optionsComponents: any = null
   registerCommand('common-intellisense.pickerUI', () => {
     createSelect([
       'elementUI',
@@ -18,6 +18,7 @@ export function activate(context: vscode.ExtensionContext) {
       title: '选择你使用的UI框架',
       canPickMany: true,
     }).then((options: any) => {
+      optionsComponents = options.map((option: string) => `${option}Components`)
       UiCompletions = options.reduce((result: any, option: string) =>
         Object.assign(result, (UI as any)[option]?.())
       , {} as any)
@@ -27,14 +28,19 @@ export function activate(context: vscode.ExtensionContext) {
   // todo: 判断当前使用ui
   context.subscriptions.push(registerCompletionItemProvider(filter, (document, position) => {
     const result = parser(document.getText(), position)
-    if (UiCompletions && typeof result === 'object') {
+    if (UiCompletions && result?.type === 'props') {
       const name = result.tag[0].toUpperCase() + result.tag.replace(/(-\w)/g, (match: string) => match[1].toUpperCase()).slice(1)
       return result.propName === 'on'
         ? UiCompletions[name].events
         : UiCompletions[name].completions
     }
-    // if (result === true || (result?.type === 'props' && !result.propName))
-    //   return cacheMap
+
+    if (optionsComponents) {
+      return optionsComponents.reduce((result: any, name: string) => {
+        result.push(...(UI as any)[name])
+        return result
+      }, [])
+    }
   }, ['"', '\'', '-', ' ', '@']))
 }
 
