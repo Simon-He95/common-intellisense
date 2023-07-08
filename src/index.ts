@@ -10,8 +10,13 @@ export function activate(context: vscode.ExtensionContext) {
   registerCommand('common-intellisense.pickerUI', () => {
     createSelect([
       'elementUI',
-    ]).then((option: any) => {
-      UiCompletions = UI[option as keyof typeof UI]()
+    ], {
+      title: '选择你使用的UI框架',
+      canPickMany: true,
+    }).then((options: any) => {
+      UiCompletions = options.reduce((result: any, option: string) =>
+        Object.assign(result, (UI as any)[option]?.())
+      , {} as any)
     })
   })
 
