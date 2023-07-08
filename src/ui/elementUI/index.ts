@@ -2,12 +2,14 @@ import { createCompletionItem } from '@vscode-use/utils'
 import ElRow from './row.json'
 import ElCol from './col.json'
 import ElAlert from './alert.json'
+import ElButton from './button.json'
 
 export function elementUI() {
   const map: any = [
     ElRow,
     ElCol,
     ElAlert,
+    ElButton,
   ]
 
   return map.reduce((result: any, item: any) => {
