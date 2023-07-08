@@ -10,6 +10,10 @@ export function activate(context: vscode.ExtensionContext) {
   registerCommand('common-intellisense.pickerUI', () => {
     createSelect([
       'elementUI',
+      'antDesign',
+      'elementPlus',
+      'vant',
+      'varlet',
     ], {
       title: '选择你使用的UI框架',
       canPickMany: true,
