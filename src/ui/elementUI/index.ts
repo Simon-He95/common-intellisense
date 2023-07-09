@@ -5,6 +5,9 @@ import ElCol from './col.json'
 import ElAlert from './alert.json'
 import ElButton from './button.json'
 import ElLink from './link.json'
+import ElRadio from './radio.json'
+import ElRadioGroup from './radioGroup.json'
+import ElRadioButton from './radioButton.json'
 
 export function elementUI() {
   const map: any = [
@@ -13,6 +16,9 @@ export function elementUI() {
     ElAlert,
     ElButton,
     ElLink,
+    ElRadio,
+    ElRadioGroup,
+    ElRadioButton,
   ]
 
   return map.reduce((result: any, item: any) => {
@@ -64,6 +70,7 @@ export const elementUIComponents = [
   'el-link',
   'el-radio',
   'el-radio-group',
+  'el-radio-button',
   'el-checkbox',
   'el-checkbox-group',
   'el-input',
