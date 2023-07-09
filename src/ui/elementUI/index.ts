@@ -1,4 +1,5 @@
 import { createCompletionItem } from '@vscode-use/utils'
+import * as vscode from 'vscode'
 import ElRow from './row.json'
 import ElCol from './col.json'
 import ElAlert from './alert.json'
@@ -121,4 +122,4 @@ export const elementUIComponents = [
   'el-image',
   'el-backtop',
   'el-drawer',
-].map(name => createCompletionItem({ content: name, snippet: `<${name}>$1</${name}>` }))
+].map(name => createCompletionItem({ content: name, snippet: `<${name}>$1</${name}>`, type: vscode.CompletionItemKind.TypeParameter }))

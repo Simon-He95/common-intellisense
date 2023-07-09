@@ -51,10 +51,14 @@ function dfs(children: any, position: vscode.Position) {
       if (result)
         return result
     }
-    else {
+    if (child.tag) {
       return {
-        type: 'text',
+        type: 'props',
+        tag: child.tag,
       }
+    }
+    return {
+      type: 'text',
     }
   }
 }

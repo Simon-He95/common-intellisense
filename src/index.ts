@@ -1,5 +1,5 @@
 import type * as vscode from 'vscode'
-import { createSelect, registerCommand, registerCompletionItemProvider } from '@vscode-use/utils'
+import { createSelect, getSelection, registerCommand, registerCompletionItemProvider } from '@vscode-use/utils'
 import { parser } from './utils'
 import UI from './ui'
 
@@ -34,8 +34,8 @@ export function activate(context: vscode.ExtensionContext) {
         ? UiCompletions[name].events
         : UiCompletions[name].completions
     }
-
-    if (optionsComponents) {
+    const { lineText } = getSelection()!
+    if (optionsComponents && lineText?.slice(-1)[0] !== ' ') {
       return optionsComponents.reduce((result: any, name: string) => {
         result.push(...(UI as any)[name])
         return result
