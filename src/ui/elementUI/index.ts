@@ -47,20 +47,22 @@ export function elementUI() {
         if (value.description)
           detail.push(`*说明:    ${value.description}`)
 
-        return createCompletionItem({ content: `${key}="${v}"`, documentation: detail.join('\n\n') })
+        return createCompletionItem({ content: `${key}="${v}"`, documentation: detail.join('\n\n'), snippet: `${key}="$\{1:${v}\}$2"` })
       },
       ))
     })
     if (item.methods) {
       events.push(...item.methods.map((method: any) => {
         const detail = []
-        if (method.description)
+        let { name, description, callback } = method
+        if (description)
           detail.push(`*说明:    ${method.description}`)
 
-        if (method.callback)
+        if (callback)
           detail.push(`*回调参数:    ${method.callback}`)
-
-        return createCompletionItem({ content: `${method.name}=""`, snippet: `${method.name}="$1"`, documentation: detail.join('\n\n') })
+        name = name.replace(/-(\w)/g, (_: string, v: string) => v.toUpperCase())
+        const snippet = `${name}="$\{1:on${name[0].toUpperCase()}${method.name.slice(1)}\}$2"`
+        return createCompletionItem({ content: `${method.name}="on${name[0].toUpperCase()}${method.name.slice(1)}"`, snippet, documentation: detail.join('\n\n') })
       },
       ))
     }
