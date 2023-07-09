@@ -3,6 +3,7 @@ import ElRow from './row.json'
 import ElCol from './col.json'
 import ElAlert from './alert.json'
 import ElButton from './button.json'
+import ElLink from './link.json'
 
 export function elementUI() {
   const map: any = [
@@ -10,6 +11,7 @@ export function elementUI() {
     ElCol,
     ElAlert,
     ElButton,
+    ElLink,
   ]
 
   return map.reduce((result: any, item: any) => {
