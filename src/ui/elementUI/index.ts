@@ -1,4 +1,5 @@
 import { createCompletionItem } from '@vscode-use/utils'
+import * as vscode from 'vscode'
 import ElRow from './row.json'
 import ElCol from './col.json'
 import ElAlert from './alert.json'
@@ -7,6 +8,10 @@ import ElContainer from './container.json'
 import ElHeader from './header.json'
 import ElAside from './aside.json'
 import ElFooter from './footer.json'
+import ElLink from './link.json'
+import ElRadio from './radio.json'
+import ElRadioGroup from './radioGroup.json'
+import ElRadioButton from './radioButton.json'
 
 export function elementUI() {
   const map: any = [
@@ -18,6 +23,10 @@ export function elementUI() {
     ElHeader,
     ElAside,
     ElFooter,
+    ElLink,
+    ElRadio,
+    ElRadioGroup,
+    ElRadioButton,
   ]
 
   return map.reduce((result: any, item: any) => {
@@ -72,6 +81,7 @@ export const elementUIComponents = [
   'el-link',
   'el-radio',
   'el-radio-group',
+  'el-radio-button',
   'el-checkbox',
   'el-checkbox-group',
   'el-input',
@@ -132,4 +142,4 @@ export const elementUIComponents = [
   'el-image',
   'el-backtop',
   'el-drawer',
-].map(name => createCompletionItem({ content: name, snippet: `<${name}>$1</${name}>` }))
+].map(name => createCompletionItem({ content: name, snippet: `<${name}>$1</${name}>`, type: vscode.CompletionItemKind.TypeParameter }))
