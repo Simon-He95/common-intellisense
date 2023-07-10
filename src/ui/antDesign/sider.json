@@ -1,0 +1,99 @@
+{
+  "name": "Sider",
+  "props": {
+    "breakpoint": {
+      "value": [
+        "xs",
+        "sm",
+        "md",
+        "lg",
+        "xl",
+        "xxl"
+      ],
+      "description": "触发响应式布局的断点",
+      "default": "",
+      "type": "xs | sm | md | lg | xl | xxl"
+    },
+    "className": {
+      "value": "",
+      "description": "容器 className",
+      "default": "",
+      "type": "string"
+    },
+    "collapsed": {
+      "value": "",
+      "description": "当前收起状态",
+      "default": "",
+      "type": "boolean"
+    },
+    "collapsedWidth": {
+      "value": "",
+      "description": "收缩宽度，设置为 0 会出现特殊 trigger",
+      "default": "80",
+      "type": "number"
+    },
+    "collapsible": {
+      "value": "",
+      "description": "是否可收起",
+      "default": "false",
+      "type": "boolean"
+    },
+    "defaultCollapsed": {
+      "value": "",
+      "description": "是否默认收起",
+      "default": "false",
+      "type": "boolean"
+    },
+    "reverseArrow": {
+      "value": "",
+      "description": "翻转折叠提示箭头的方向，当 Sider 在右边时可以使用",
+      "default": "false",
+      "type": "boolean"
+    },
+    "style": {
+      "value": "",
+      "description": "指定样式",
+      "default": "",
+      "type": "CSSProperties"
+    },
+    "theme": {
+      "value": [
+        "light",
+        "dark"
+      ],
+      "description": "主题颜色",
+      "default": "",
+      "type": "light | dark"
+    },
+    "trigger": {
+      "value": "",
+      "description": "自定义 trigger，设置为 null 时隐藏 trigger",
+      "default": "",
+      "type": "ReactNode"
+    },
+    "width": {
+      "value": "",
+      "description": "宽度",
+      "default": "200",
+      "type": "number | string"
+    },
+    "zeroWidthTriggerStyle": {
+      "value": "",
+      "description": "指定当 collapsedWidth 为 0 时出现的特殊 trigger 的样式",
+      "default": "",
+      "type": "object"
+    }
+  },
+  "evenets": [
+    {
+      "name": "onBreakpoint",
+      "description": "触发响应式布局断点时的回调",
+      "callback": "(broken) => {}"
+    },
+    {
+      "name": "onCollapse",
+      "description": "展开-收起时的回调函数，有点击 trigger 以及响应式反馈两种方式可以触发",
+      "callback": "(collapsed, type) => {}"
+    }
+  ]
+}

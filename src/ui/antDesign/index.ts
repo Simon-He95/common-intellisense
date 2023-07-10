@@ -1,9 +1,19 @@
 import { createCompletionItem } from '@vscode-use/utils'
 import Divider from './divider.json'
+import Row from './row.json'
+import Col from './col.json'
+import Layout from './layout.json'
+import Sider from './sider.json'
+import Space from './space.json'
 
 export function antDesign() {
   const map: any = [
     Divider,
+    Row,
+    Col,
+    Layout,
+    Sider,
+    Space,
   ]
 
   return map.reduce((result: any, item: any) => {
