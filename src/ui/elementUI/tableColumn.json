@@ -1,0 +1,167 @@
+{
+  "name": "ElTableColumn",
+  "props": {
+    "type": {
+      "value": ["selection", "index", "expand"],
+      "description": "对应列的类型。如果设置了 selection 则显示多选框；如果设置了 index 则显示该行的索引（从 1 开始计算）；如果设置了 expand 则显示为一个可展开的按钮",
+      "default": "",
+      "type": "string"
+    },
+    "index": {
+      "value": "",
+      "description": "如果设置了 type=index，可以通过传递 index 属性来自定义索引",
+      "default": "",
+      "type": "number/Function(index)"
+    },
+    "column-key": {
+      "value": "",
+      "description": "column 的 key，如果需要使用 filter-change 事件，则需要此属性标识是哪个 column 的筛选条件",
+      "default": "",
+      "type": "string"
+    },
+    "label": {
+      "value": "",
+      "description": "显示的标题",
+      "default": "",
+      "type": "string"
+    },
+    "prop": {
+      "value": "",
+      "description": "对应列内容的字段名，也可以使用 property 属性",
+      "default": "",
+      "type": "string"
+    },
+    "width": {
+      "value": "",
+      "description": "对应列的宽度",
+      "default": "",
+      "type": "string"
+    },
+    "min-width": {
+      "value": "",
+      "description": "对应列的最小宽度，与 width 的区别是 width 是固定的，min-width 会把剩余宽度按比例分配给设置了 min-width 的列",
+      "default": "",
+      "type": "string"
+    },
+    "fixed": {
+      "value": ["true", "left", "right"],
+      "description": "列是否固定在左侧或者右侧，true 表示固定在左侧",
+      "default": true,
+      "type": "string/boolean"
+    },
+    "render-header": {
+      "value": "",
+      "description": "列标题 Label 区域渲染使用的 Function",
+      "default": "",
+      "type": "Function(h, { column, $index })"
+    },
+    "sortable": {
+      "value": ["true", "false", "custom"],
+      "description": "对应列是否可以排序，如果设置为 'custom'，则代表用户希望远程排序，需要监听 Table 的 sort-change 事件",
+      "default": "false",
+      "type": "boolean/string"
+    },
+    "sort-method": {
+      "value": "",
+      "description": "对数据进行排序的时候使用的方法，仅当 sortable 设置为 true 的时候有效，需返回一个数字，和 Array.sort 表现一致",
+      "default": "",
+      "type": "Function(a, b)"
+    },
+    "sort-by": {
+      "value": "",
+      "description": "指定数据按照哪个属性进行排序，仅当 sortable 设置为 true 且没有设置 sort-method 的时候有效。如果 sort-by 为数组，则先按照第 1 个属性排序，如果第 1 个相等，再按照第 2 个排序，以此类推",
+      "default": "",
+      "type": "String/Array/Function(row, index)"
+    },
+    "sort-orders": {
+      "value": ["ascending", "descending", "null"],
+      "description": "数据在排序时所使用排序策略的轮转顺序，仅当 sortable 为 true 时有效。需传入一个数组，随着用户点击表头，该列依次按照数组中元素的顺序进行排序",
+      "default": "['ascending', 'descending', null]",
+      "type": "array"
+    },
+    "resizable": {
+      "value": "",
+      "description": "对应列是否可以通过拖动改变宽度（需要在 el-table 上设置 border 属性为真）",
+      "default": "true",
+      "type": "boolean"
+    },
+    "formatter": {
+      "value": "",
+      "description": "用来格式化内容",
+      "default": "",
+      "type": "Function(row, column, cellValue, index)"
+    },
+    "show-overflow-tooltip": {
+      "value": "",
+      "description": "当内容过长被隐藏时显示 tooltip",
+      "default": "false",
+      "type": "Boolean"
+    },
+    "align": {
+      "value": ["left", "center", "right"],
+      "description": "对齐方式",
+      "default": "left",
+      "type": "String"
+    },
+    "header-align": {
+      "value": ["left", "center", "right"],
+      "description": "表头对齐方式，若不设置该项，则使用表格的对齐方式",
+      "default": "",
+      "type": "String"
+    },
+    "class-name": {
+      "value": "",
+      "description": "列的 className",
+      "default": "",
+      "type": "String"
+    },
+    "label-class-name": {
+      "value": "",
+      "description": "当前列标题的自定义类名",
+      "default": "",
+      "type": "string"
+    },
+    "selectable": {
+      "value": "",
+      "description": "仅对 type=selection 的列有效，类型为 Function，Function 的返回值用来决定这一行的 CheckBox 是否可以勾选",
+      "default": "",
+      "type": "Function(row, index)"
+    },
+    "reserve-selection": {
+      "value": "",
+      "description": "仅对 type=selection 的列有效，类型为 Boolean，为 true 则会在数据更新之后保留之前选中的数据（需指定 row-key）",
+      "default": "false",
+      "type": "Boolean"
+    },
+    "filters": {
+      "value": "",
+      "description": "数据过滤的选项，数组格式，数组中的元素需要有 text 和 value 属性。",
+      "default": "",
+      "type": "Array[{ text, value }]"
+    },
+    "filter-placement": {
+      "value": ["top", "top-start", "top-end", "bottom", "bottom-start", "bottom-end", "left", "left-start", "left-end", "right", "right-start", "right-end"],
+      "description": "过滤弹出框的定位",
+      "default": "",
+      "type": "String"
+    },
+    "filter-multiple": {
+      "value": "",
+      "description": "数据过滤的选项是否多选",
+      "default": "true",
+      "type": "Boolean"
+    },
+    "filter-method": {
+      "value": "",
+      "description": "数据过滤使用的方法，如果是多选的筛选项，对每一条数据会执行多次，任意一次返回 true 就会显示。",
+      "default": "",
+      "type": "Function(value, row, column)"
+    },
+    "filtered-value": {
+      "value": "",
+      "description": "选中的数据过滤项，如果需要自定义表头过滤的渲染方式，可能会需要此属性。",
+      "default": "",
+      "type": "Array"
+    }
+  }
+}
