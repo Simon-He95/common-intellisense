@@ -15,6 +15,8 @@ import ElRadioButton from './radioButton.json'
 import ElForm from './form.json'
 import ElFormItem from './formItem.json'
 import ElTable from './table.json'
+import ElTableColumn from './tableColumn.json'
+import ElCard from './card.json'
 
 export function elementUI() {
   const map: any = [
@@ -33,6 +35,8 @@ export function elementUI() {
     ElForm,
     ElFormItem,
     ElTable,
+    ElTableColumn,
+    ElCard,
   ]
 
   return map.reduce((result: any, item: any) => {
