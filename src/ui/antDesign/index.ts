@@ -1,9 +1,13 @@
 import { createCompletionItem } from '@vscode-use/utils'
 import Divider from './divider.json'
+import Button from './button.json'
+import Icon from './icon.json'
 
 export function antDesign() {
   const map: any = [
     Divider,
+    Button,
+    Icon,
   ]
 
   return map.reduce((result: any, item: any) => {
