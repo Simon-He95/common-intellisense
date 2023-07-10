@@ -1,3 +1,4 @@
+import * as vscode from 'vscode'
 import { createCompletionItem } from '@vscode-use/utils'
 import Divider from './divider.json'
 import Button from './button.json'
