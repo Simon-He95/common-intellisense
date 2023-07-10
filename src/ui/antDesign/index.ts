@@ -1,12 +1,22 @@
 import * as vscode from 'vscode'
 import { createCompletionItem } from '@vscode-use/utils'
 import Divider from './divider.json'
+import Row from './row.json'
+import Col from './col.json'
+import Layout from './layout.json'
+import Sider from './sider.json'
+import Space from './space.json'
 import Button from './button.json'
 import Icon from './icon.json'
 
 export function antDesign() {
   const map: any = [
     Divider,
+    Row,
+    Col,
+    Layout,
+    Sider,
+    Space,
     Button,
     Icon,
   ]
