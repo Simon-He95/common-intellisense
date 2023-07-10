@@ -1,0 +1,194 @@
+{
+  "name": "ElInput",
+  "props": {
+    "type": {
+      "value": ["text", "textarea"],
+      "description": "类型",
+      "default": "text",
+      "type": "string"
+    },
+    "value": {
+      "value": "",
+      "description": "绑定值",
+      "default": "绑定值",
+      "type": "string / number"
+    },
+    "v-model": {
+      "value": "",
+      "description": "绑定值",
+      "default": "绑定值",
+      "type": "string / number"
+    },
+    "maxlength": {
+      "value": "",
+      "description": "原生属性，最大输入长度",
+      "default": "",
+      "type": "number"
+    },
+    "minlength": {
+      "value": "",
+      "description": "原生属性，最小输入长度",
+      "default": "",
+      "type": "number"
+    },
+    "show-word-limit": {
+      "value": "",
+      "description": "是否显示输入字数统计，只在 type = \"text\" 或 type = \"textarea\" 时有效",
+      "default": "false",
+      "type": "boolean"
+    },
+    "placeholder": {
+      "value": "",
+      "description": "输入框占位文本",
+      "default": "",
+      "type": "string"
+    },
+    "clearable": {
+      "value": "",
+      "description": "是否可清空",
+      "default": "false",
+      "type": "boolean"
+    },
+    "show-password": {
+      "value": "",
+      "description": "是否显示切换密码图标",
+      "default": "false",
+      "type": "boolean"
+    },
+    "disabled": {
+      "value": "",
+      "description": "禁用",
+      "default": "false",
+      "type": "boolean"
+    },
+    "size": {
+      "value": ["medium", "small", "mini"],
+      "description": "输入框头部图标",
+      "default": "",
+      "type": "string"
+    },
+    "prefix-icon": {
+      "value": "",
+      "description": "输入框头部图标",
+      "default": "",
+      "type": "string"
+    },
+    "suffix-icon": {
+      "value": "",
+      "description": "输入框尾部图标",
+      "default": "",
+      "type": "string"
+    },
+    "rows": {
+      "value": "",
+      "description": "输入框行数，只对 type=\"textarea\" 有效",
+      "default": "2",
+      "type": "number"
+    },
+    "autosize": {
+      "value": "",
+      "description": "自适应内容高度，只对 type=\"textarea\" 有效，可传入对象，如，{ minRows: 2, maxRows: 6 }",
+      "default": "false",
+      "type": "boolean / object"
+    },
+    "autocomplete": {
+      "value": ["on", "off"],
+      "description": "原生属性，自动补全",
+      "default": "off",
+      "type": "string"
+    },
+    "name": {
+      "value": "",
+      "description": "原生属性",
+      "default": "",
+      "type": "string"
+    },
+    "readonly": {
+      "value": "",
+      "description": "原生属性，是否只读",
+      "default": "false",
+      "type": "boolean"
+    },
+    "max": {
+      "value": "",
+      "description": "原生属性，设置最大值",
+      "default": "",
+      "type": "string"
+    },
+    "min": {
+      "value": "",
+      "description": "原生属性，设置最小值",
+      "default": "",
+      "type": "string"
+    },
+    "step": {
+      "value": "",
+      "description": "原生属性，设置输入字段的合法数字间隔",
+      "default": "",
+      "type": "string"
+    },
+    "resize": {
+      "value": ["none", "both", "horizontal", "vertical"],
+      "description": "控制是否能被用户缩放",
+      "default": "",
+      "type": "string"
+    },
+    "autofocus": {
+      "value": "",
+      "description": "原生属性，自动获取焦点",
+      "default": "false",
+      "type": "boolean"
+    },
+    "form": {
+      "value": "",
+      "description": "原生属性",
+      "default": "",
+      "type": "string"
+    },
+    "label": {
+      "value": "",
+      "description": "输入框关联的label文字",
+      "default": "",
+      "type": "string"
+    },
+    "tabindex": {
+      "value": ["medium", "small", "mini"],
+      "description": "输入框尺寸，只在 type!=\"textarea\" 时有效",
+      "default": "",
+      "type": "string"
+    },
+    "validate-event": {
+      "value": "",
+      "description": "输入时是否触发表单的校验",
+      "default": "true",
+      "type": "boolean"
+    }
+  },
+  "events": [
+    {
+      "name": "blur",
+      "description": "在 Input 失去焦点时触发",
+      "params": "(event: Event)"
+    },
+    {
+      "name": "focus",
+      "description": "在 Input 获得焦点时触发",
+      "params": "(event: Event)"
+    },
+    {
+      "name": "change",
+      "description": "仅在输入框失去焦点或用户按下回车时触发",
+      "params": "(value: string | number)"
+    },
+    {
+      "name": "input",
+      "description": "在 Input 值改变时触发",
+      "params": "(value: string | number)"
+    },
+    {
+      "name": "clear",
+      "description": "在点击由 clearable 属性生成的清空按钮时触发",
+      "params": ""
+    }
+  ]
+}

@@ -18,7 +18,10 @@ export function activate(context: vscode.ExtensionContext) {
       title: '选择你使用的UI框架',
       canPickMany: true,
     }).then((options: any) => {
-      optionsComponents = options.map((option: string) => `${option}Components`)
+      optionsComponents = options.map((option: string) => `${option}Components`).reduce((result: any, name: string) => {
+        result.push(...(UI as any)[name]())
+        return result
+      }, [])
       UiCompletions = options.reduce((result: any, option: string) =>
         Object.assign(result, (UI as any)[option]?.())
       , {} as any)
@@ -35,12 +38,8 @@ export function activate(context: vscode.ExtensionContext) {
         : UiCompletions[name].completions
     }
     const { lineText } = getSelection()!
-    if (optionsComponents && lineText?.slice(-1)[0] !== ' ') {
-      return optionsComponents.reduce((result: any, name: string) => {
-        result.push(...(UI as any)[name])
-        return result
-      }, [])
-    }
+    if (optionsComponents && lineText?.slice(-1)[0] !== ' ')
+      return optionsComponents
   }, ['"', '\'', '-', ' ', '@']))
 }
 
