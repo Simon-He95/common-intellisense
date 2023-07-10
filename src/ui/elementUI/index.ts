@@ -13,6 +13,7 @@ import ElRadio from './radio.json'
 import ElRadioGroup from './radioGroup.json'
 import ElRadioButton from './radioButton.json'
 import ElForm from './form.json'
+import ElFormItem from './formItem.json'
 
 export function elementUI() {
   const map: any = [
@@ -29,6 +30,7 @@ export function elementUI() {
     ElRadioGroup,
     ElRadioButton,
     ElForm,
+    ElFormItem,
   ]
 
   return map.reduce((result: any, item: any) => {
