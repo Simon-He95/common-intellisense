@@ -139,5 +139,11 @@ export function antDesignComponents() {
     ['image', '图片'],
     ['backtop', '回到顶部'],
     ['drawer', '抽屉'],
-  ].map(([content, detail]) => createCompletionItem({ content, snippet: `<${content}>$1</${content}>`, detail, type: vscode.CompletionItemKind.TypeParameter }))
+  ].map(([content, detail]) => {
+    const documentation = new vscode.MarkdownString()
+    documentation.isTrusted = true
+    documentation.supportHtml = true
+    documentation.appendMarkdown(`#### ***📖 ${detail}***`)
+    return createCompletionItem({ content, snippet: `<${content}>$1</${content}>`, documentation, type: vscode.CompletionItemKind.TypeParameter })
+  })
 }

@@ -53,16 +53,20 @@ export function elementUI() {
       completions.push(...value.value.map((v: string) => {
         const detail = []
         if (value.default !== undefined && value.default !== '')
-          detail.push(`*默认值:    ${value.default}`)
+          detail.push(`#### ***💎 默认值:***    \`${value.default}\``)
 
         if (value.type)
-          detail.push(`*类型:    ${value.type}`)
+          detail.push(`#### ***💡 类型:***    \`${value.type}\``)
 
         if (value.description)
-          detail.push(`*说明:    ${value.description}`)
+          detail.push(`#### ***🔦 说明:***    \`${value.description}\``)
+        const documentation = new vscode.MarkdownString()
+        documentation.isTrusted = true
+        documentation.supportHtml = true
+        documentation.appendMarkdown(detail.join('\n\n'))
         if (value.type && value.type.includes('boolean') && value.default === 'false')
-          return createCompletionItem({ content: key, documentation: detail.join('\n\n') })
-        return createCompletionItem({ content: `${key}="${v}"`, documentation: detail.join('\n\n'), snippet: `${key}="$\{1:${v}\}$2"` })
+          return createCompletionItem({ content: key, documentation })
+        return createCompletionItem({ content: `${key}="${v}"`, documentation, snippet: `${key}="$\{1:${v}\}$2"` })
       },
       ))
     })
@@ -72,13 +76,17 @@ export function elementUI() {
         let { name, description, params } = events
 
         if (description)
-          detail.push(`*说明:    ${description}`)
+          detail.push(`#### ***🔦 说明:***    \`${description}\``)
 
         if (params)
-          detail.push(`*回调参数:    ${params}`)
+          detail.push(`#### ***🔮 回调参数:***    \`${params}\``)
         name = name.replace(/-(\w)/g, (_: string, v: string) => v.toUpperCase())
         const snippet = `${name}="$\{1:on${name[0].toUpperCase()}${name.slice(1)}\}$2"`
-        return createCompletionItem({ content: `${name}="on${name[0].toUpperCase()}${name.slice(1)}"`, snippet, documentation: detail.join('\n\n') })
+        const documentation = new vscode.MarkdownString()
+        documentation.isTrusted = true
+        documentation.supportHtml = true
+        documentation.appendMarkdown(detail.join('\n\n'))
+        return createCompletionItem({ content: `${name}="on${name[0].toUpperCase()}${name.slice(1)}"`, snippet, documentation })
       },
       ))
     }
@@ -165,5 +173,11 @@ export function elementUIComponents() {
     ['el-backtop', '回到顶部'],
     ['el-drawer', '抽屉'],
     ['el-autocomplete', '远程搜索'],
-  ].map(([content, detail]) => createCompletionItem({ content, snippet: `<${content}>$1</${content}>`, detail, type: vscode.CompletionItemKind.TypeParameter }))
+  ].map(([content, detail]) => {
+    const documentation = new vscode.MarkdownString()
+    documentation.isTrusted = true
+    documentation.supportHtml = true
+    documentation.appendMarkdown(`#### ***📖 ${detail}***`)
+    return createCompletionItem({ content, snippet: `<${content}>$1</${content}>`, documentation, type: vscode.CompletionItemKind.TypeParameter })
+  })
 }
