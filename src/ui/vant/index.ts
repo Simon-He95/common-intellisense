@@ -26,16 +26,16 @@ export function vant() {
       },
       ))
     })
-    if (item.methods) {
-      events.push(...item.methods.map((method: any) => {
+    if (item.events) {
+      events.push(...item.events.map((events: any) => {
         const detail = []
-        if (method.description)
-          detail.push(`*说明:    ${method.description}`)
+        if (events.description)
+          detail.push(`*说明:    ${events.description}`)
 
-        if (method.callback)
-          detail.push(`*回调参数:    ${method.callback}`)
+        if (events.params)
+          detail.push(`*回调参数:    ${events.params}`)
 
-        return createCompletionItem({ content: `${method.name}=""`, snippet: `${method.name}="$1"`, documentation: detail.join('\n\n') })
+        return createCompletionItem({ content: `${events.name}=""`, snippet: `${events.name}="$1"`, documentation: detail.join('\n\n') })
       },
       ))
     }

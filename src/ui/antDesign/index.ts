@@ -5,6 +5,8 @@ import Col from './col.json'
 import Layout from './layout.json'
 import Sider from './sider.json'
 import Space from './space.json'
+import Button from './button.json'
+import Icon from './icon.json'
 
 export function antDesign() {
   const map: any = [
@@ -14,6 +16,8 @@ export function antDesign() {
     Layout,
     Sider,
     Space,
+    Button,
+    Icon,
   ]
 
   return map.reduce((result: any, item: any) => {
@@ -38,16 +42,16 @@ export function antDesign() {
       },
       ))
     })
-    if (item.methods) {
-      events.push(...item.methods.map((method: any) => {
+    if (item.events) {
+      events.push(...item.events.map((events: any) => {
         const detail = []
-        if (method.description)
-          detail.push(`*说明:    ${method.description}`)
+        if (events.description)
+          detail.push(`*说明:    ${events.description}`)
 
-        if (method.callback)
-          detail.push(`*回调参数:    ${method.callback}`)
+        if (events.params)
+          detail.push(`*回调参数:    ${events.params}`)
 
-        return createCompletionItem({ content: `${method.name}=""`, snippet: `${method.name}="$1"`, documentation: detail.join('\n\n') })
+        return createCompletionItem({ content: `${events.name}=""`, snippet: `${events.name}="$1"`, documentation: detail.join('\n\n') })
       },
       ))
     }
