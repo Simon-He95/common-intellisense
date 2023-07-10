@@ -14,6 +14,7 @@ import ElRadioGroup from './radioGroup.json'
 import ElRadioButton from './radioButton.json'
 import ElForm from './form.json'
 import ElFormItem from './formItem.json'
+import ElTable from './table.json'
 
 export function elementUI() {
   const map: any = [
@@ -31,6 +32,7 @@ export function elementUI() {
     ElRadioButton,
     ElForm,
     ElFormItem,
+    ElTable,
   ]
 
   return map.reduce((result: any, item: any) => {
@@ -58,12 +60,13 @@ export function elementUI() {
     if (item.events) {
       events.push(...item.events.map((events: any) => {
         const detail = []
-        let { name, description, callback } = events
+        let { name, description, params } = events
+
         if (description)
           detail.push(`*说明:    ${description}`)
 
-        if (callback)
-          detail.push(`*回调参数:    ${callback}`)
+        if (params)
+          detail.push(`*回调参数:    ${params}`)
         name = name.replace(/-(\w)/g, (_: string, v: string) => v.toUpperCase())
         const snippet = `${name}="$\{1:on${name[0].toUpperCase()}${name.slice(1)}\}$2"`
         return createCompletionItem({ content: `${name}="on${name[0].toUpperCase()}${name.slice(1)}"`, snippet, documentation: detail.join('\n\n') })
