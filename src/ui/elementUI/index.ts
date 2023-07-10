@@ -56,7 +56,8 @@ export function elementUI() {
 
         if (value.description)
           detail.push(`*说明:    ${value.description}`)
-
+        if (value.type && value.type.includes('boolean') && value.default === 'false')
+          return createCompletionItem({ content: key, documentation: detail.join('\n\n') })
         return createCompletionItem({ content: `${key}="${v}"`, documentation: detail.join('\n\n'), snippet: `${key}="$\{1:${v}\}$2"` })
       },
       ))
@@ -158,4 +159,5 @@ export const elementUIComponents = [
   ['el-image', '图片'],
   ['el-backtop', '回到顶部'],
   ['el-drawer', '抽屉'],
+  ['el-autocomplete', '远程搜索'],
 ].map(([content, detail]) => createCompletionItem({ content, snippet: `<${content}>$1</${content}>`, detail, type: vscode.CompletionItemKind.TypeParameter }))

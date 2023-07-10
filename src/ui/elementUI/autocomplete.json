@@ -1,0 +1,101 @@
+{
+  "name": "ElAutocomplete",
+  "props": {
+    "placeholder": {
+      "value": "",
+      "description": "输入框占位文本",
+      "default": "",
+      "type": "string"
+    },
+    "disabled": {
+      "value": "",
+      "description": "禁用",
+      "default": "false",
+      "type": "boolean"
+    },
+    "value-key": {
+      "value": "",
+      "description": "输入建议对象中用于显示的键名",
+      "default": "value",
+      "type": "string"
+    },
+    "value": {
+      "value": "",
+      "description": "必填值，输入绑定值",
+      "default": "",
+      "type": "string"
+    },
+    "debounce": {
+      "value": "",
+      "description": "获取输入建议的去抖延时",
+      "default": "300",
+      "type": "number"
+    },
+    "placement": {
+      "value": ["top", "top-start", "top-end", "bottom", "bottom-start", "bottom-end"],
+      "description": "菜单弹出位置",
+      "default": "bottom-start",
+      "type": "string"
+    },
+    "fetch-suggestions": {
+      "value": "",
+      "description": "返回输入建议的方法，仅当你的输入建议数据 resolve 时，通过调用 callback(data:[]) 来返回它",
+      "default": "",
+      "type": "Function(queryString, callback)"
+    },
+    "popper-class": {
+      "value": "",
+      "description": "Autocomplete 下拉列表的类名",
+      "default": "",
+      "type": "string"
+    },
+    "trigger-on-focus": {
+      "value": "",
+      "description": "是否在输入框 focus 时显示建议列表",
+      "default": "true",
+      "type": "boolean"
+    },
+    "prefix-icon": {
+      "value": "",
+      "description": "输入框头部图标",
+      "default": "",
+      "type": "string"
+    },
+    "suffix-icon": {
+      "value": "",
+      "description": "输入框尾部图标",
+      "default": "",
+      "type": "string"
+    },
+    "hide-loading": {
+      "value": "",
+      "description": "是否隐藏远程加载时的加载图标",
+      "default": "false",
+      "type": "boolean"
+    },
+    "popper-append-to-body": {
+      "value": "",
+      "description": "是否将下拉列表插入至 body 元素。在下拉列表的定位出现问题时，可将该属性设置为 false",
+      "default": "true",
+      "type": "boolean"
+    },
+    "highlight-first-item": {
+      "value": "",
+      "description": "是否默认突出显示远程搜索建议中的第一项",
+      "default": "false",
+      "type": "boolean"
+    }
+  },
+  "events": [
+    {
+      "name": "select",
+      "description": "点击选中建议项时触发",
+      "params": "选中建议项"
+    },
+    {
+      "name": "change",
+      "description": "在 Input 值改变时触发",
+      "params": "(value: string | number)"
+    }
+  ]
+}
