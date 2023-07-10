@@ -17,6 +17,8 @@ import ElFormItem from './formItem.json'
 import ElTable from './table.json'
 import ElTableColumn from './tableColumn.json'
 import ElCard from './card.json'
+import ElInput from './input.json'
+import ElAutocomplete from './autocomplete.json'
 
 export function elementUI() {
   const map: any = [
@@ -37,6 +39,8 @@ export function elementUI() {
     ElTable,
     ElTableColumn,
     ElCard,
+    ElInput,
+    ElAutocomplete,
   ]
 
   return map.reduce((result: any, item: any) => {
