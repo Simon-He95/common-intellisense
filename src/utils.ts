@@ -1,5 +1,6 @@
 import * as vscode from 'vscode'
 import { parse } from '@vue/compiler-sfc'
+import { parse as tsParser } from '@typescript-eslint/typescript-estree'
 
 // 引入vue-parser只在template中才处理一些逻辑
 export function parser(code: string, position: vscode.Position) {
@@ -11,6 +12,8 @@ export function parser(code: string, position: vscode.Position) {
     return
   if (suffix === 'vue')
     return transformVue(code, position)
+  if (/jsx|tsx/.test(suffix))
+    return parserJSX(code, position)
 
   return true
 }
@@ -77,4 +80,50 @@ function isInPosition(loc: any, position: vscode.Position) {
   if (line + 1 > endLine)
     return
   return true
+}
+
+export function parserJSX(code: string, position: vscode.Position) {
+  const ast = tsParser(code, { jsx: true, loc: true })
+  return jsxDfs(ast.body, position)
+}
+
+function jsxDfs(children: any, position: vscode.Position) {
+  for (const child of children) {
+    let { loc, type, openingElement, body: children, argument } = child
+    if (!isInPosition(loc, position))
+      continue
+    if (openingElement && openingElement.attributes.length) {
+      for (const prop of openingElement.attributes) {
+        if (isInPosition(prop.loc, position)) {
+          return {
+            tag: openingElement.name.name,
+            propName: prop.name.name,
+            props: openingElement.attributes,
+            type: 'props',
+          }
+        }
+      }
+    }
+    if (type === 'ReturnStatement')
+      children = argument
+    else if (type === 'JSXElement')
+      children = child.children
+    if (children && !Array.isArray(children))
+      children = [children]
+
+    if (children && children.length) {
+      const result = jsxDfs(children, position) as any
+      if (result)
+        return result
+    }
+    if (type === 'JSXElement') {
+      return {
+        type: 'props',
+        tag: openingElement.name.name,
+      }
+    }
+    return {
+      type: 'text',
+    }
+  }
 }

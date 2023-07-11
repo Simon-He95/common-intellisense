@@ -60,20 +60,20 @@ export function antDesign() {
     if (item.events) {
       events.push(...item.events.map((events: any) => {
         const detail = []
-        let { name, description, params } = events
+        const { name, description, params } = events
 
         if (description)
           detail.push(`#### ***🔦 说明:***    \`${description}\``)
 
         if (params)
           detail.push(`#### ***🔮 回调参数:***    \`${params}\``)
-        name = name.replace(/-(\w)/g, (_: string, v: string) => v.toUpperCase())
-        const snippet = `${name}="$\{1:on${name[0].toUpperCase()}${name.slice(1)}\}$2"`
+
+        const snippet = `${name}="$\{1:handle${name.slice(2)}\}$2"`
         const documentation = new vscode.MarkdownString()
         documentation.isTrusted = true
         documentation.supportHtml = true
         documentation.appendMarkdown(detail.join('\n\n'))
-        return createCompletionItem({ content: `${name}="on${name[0].toUpperCase()}${name.slice(1)}"`, snippet, documentation, type: vscode.CompletionItemKind.Event })
+        return createCompletionItem({ content: `${name}="handle${name.slice(2)}"`, snippet, documentation, type: vscode.CompletionItemKind.Event })
       },
       ))
     }
