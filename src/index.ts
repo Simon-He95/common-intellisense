@@ -1,5 +1,5 @@
 import type * as vscode from 'vscode'
-import { createSelect, getSelection, registerCommand, registerCompletionItemProvider } from '@vscode-use/utils'
+import { createSelect, getSelection, message, registerCommand, registerCompletionItemProvider } from '@vscode-use/utils'
 import { parser } from './utils'
 import UI from './ui'
 
@@ -18,6 +18,10 @@ export function activate(context: vscode.ExtensionContext) {
       title: '选择你使用的UI框架',
       canPickMany: true,
     }).then((options: any) => {
+      if (!options) {
+        message.error('加载错误，请稍后重新选择UI框架')
+        return
+      }
       optionsComponents = options.map((option: string) => `${option}Components`).reduce((result: any, name: string) => {
         result.push(...(UI as any)[name]())
         return result

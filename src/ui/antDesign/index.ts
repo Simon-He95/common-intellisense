@@ -32,33 +32,48 @@ export function antDesign() {
     const events: any = []
     Object.keys(item.props!).forEach((key) => {
       const value = (item.props as any)[key]
+      let type = vscode.CompletionItemKind.Property
       if (typeof value.value === 'string')
         value.value = [value.value]
+      else
+        type = vscode.CompletionItemKind.Enum
       completions.push(...value.value.map((v: string) => {
         const detail = []
         if (value.default !== undefined && value.default !== '')
-          detail.push(`*默认值:    ${value.default}`)
+          detail.push(`#### ***💎 默认值:***    \`${value.default}\``)
 
         if (value.type)
-          detail.push(`*类型:    ${value.type}`)
+          detail.push(`#### ***💡 类型:***    \`${value.type}\``)
 
         if (value.description)
-          detail.push(`*说明:    ${value.description}`)
-
-        return createCompletionItem({ content: `${key}="${v}"`, documentation: detail.join('\n\n') })
+          detail.push(`#### ***🔦 说明:***    \`${value.description}\``)
+        const documentation = new vscode.MarkdownString()
+        documentation.isTrusted = true
+        documentation.supportHtml = true
+        documentation.appendMarkdown(detail.join('\n\n'))
+        if (value.type && value.type.includes('boolean') && value.default === 'false')
+          return createCompletionItem({ content: key, documentation })
+        return createCompletionItem({ content: `${key}="${v}"`, documentation, snippet: `${key}="$\{1:${v}\}$2"`, type })
       },
       ))
     })
     if (item.events) {
       events.push(...item.events.map((events: any) => {
         const detail = []
-        if (events.description)
-          detail.push(`*说明:    ${events.description}`)
+        let { name, description, params } = events
 
-        if (events.params)
-          detail.push(`*回调参数:    ${events.params}`)
+        if (description)
+          detail.push(`#### ***🔦 说明:***    \`${description}\``)
 
-        return createCompletionItem({ content: `${events.name}=""`, snippet: `${events.name}="$1"`, documentation: detail.join('\n\n') })
+        if (params)
+          detail.push(`#### ***🔮 回调参数:***    \`${params}\``)
+        name = name.replace(/-(\w)/g, (_: string, v: string) => v.toUpperCase())
+        const snippet = `${name}="$\{1:on${name[0].toUpperCase()}${name.slice(1)}\}$2"`
+        const documentation = new vscode.MarkdownString()
+        documentation.isTrusted = true
+        documentation.supportHtml = true
+        documentation.appendMarkdown(detail.join('\n\n'))
+        return createCompletionItem({ content: `${name}="on${name[0].toUpperCase()}${name.slice(1)}"`, snippet, documentation, type: vscode.CompletionItemKind.Event })
       },
       ))
     }
