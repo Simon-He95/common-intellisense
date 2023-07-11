@@ -1,12 +1,12 @@
-import { elementUI, elementUIComponents } from './elementUI'
+import { elementUi2, elementUi2Components } from './elementUI'
 import { antDesign, antDesignComponents } from './antDesign'
 import { elementPlus, elementPlusComponents } from './elementPlus'
 import { vant, vantComponents } from './vant'
 import { varlet, varletComponents } from './varlet'
 
 export default {
-  elementUI,
-  elementUIComponents,
+  elementUi2,
+  elementUi2Components,
   antDesign,
   antDesignComponents,
   elementPlus,

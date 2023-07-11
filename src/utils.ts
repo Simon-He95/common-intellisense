@@ -1,6 +1,8 @@
+import fsp from 'node:fs/promises'
 import * as vscode from 'vscode'
 import { parse } from '@vue/compiler-sfc'
 import { parse as tsParser } from '@typescript-eslint/typescript-estree'
+import { findUp } from 'find-up'
 
 // 引入vue-parser只在template中才处理一些逻辑
 export function parser(code: string, position: vscode.Position) {
@@ -126,4 +128,29 @@ function jsxDfs(children: any, position: vscode.Position) {
       type: 'text',
     }
   }
+}
+
+const UINames = ['element-ui', 'element-plus', 'ant-design', 'ant-design-vue', 'varlet', 'vant']
+export async function findPkgUI(cwd?: string) {
+  if (!cwd)
+    return
+  const pkg = await findUp('package.json', { cwd })
+  if (!pkg)
+    return
+  const p = JSON.parse(await fsp.readFile(pkg, 'utf-8'))
+  const { dependencies, devDependencies } = p
+  const result = []
+  if (dependencies) {
+    for (const key in dependencies) {
+      if (UINames.includes(key))
+        result.push([key, dependencies[key]])
+    }
+  }
+  if (devDependencies) {
+    for (const key in devDependencies) {
+      if (UINames.includes(key))
+        result.push([key, devDependencies[key]])
+    }
+  }
+  return result
 }
