@@ -8,6 +8,9 @@ import Sider from './sider.json'
 import Space from './space.json'
 import Button from './button.json'
 import Icon from './icon.json'
+import Text from './text.json'
+import Title from './title.json'
+import Paragraph from './paragraph.json'
 
 export function antDesign() {
   const map: any = [
@@ -19,6 +22,9 @@ export function antDesign() {
     Space,
     Button,
     Icon,
+    Text,
+    Title,
+    Paragraph,
   ]
 
   return map.reduce((result: any, item: any) => {
