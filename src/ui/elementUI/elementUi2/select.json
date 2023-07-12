@@ -1,0 +1,193 @@
+{
+  "name": "ElSelect",
+  "props": {
+    "value": {
+      "value": "",
+      "description": "绑定值",
+      "default": "",
+      "type": "boolean | string | number"
+    },
+    "multiple": {
+      "value": "",
+      "description": "是否多选",
+      "default": "",
+      "type": "boolean"
+    },
+    "disabled": {
+      "value": "",
+      "description": "是否禁用",
+      "default": "",
+      "type": "boolean"
+    },
+    "value-key": {
+      "value": "",
+      "description": "作为 value 唯一标识的键名，绑定值为对象类型时必填",
+      "default": "",
+      "type": "string"
+    },
+    "size": {
+      "value": "",
+      "description": "输入框尺寸",
+      "default": "medium | small } mini",
+      "type": "string"
+    },
+    "clearable": {
+      "value": "",
+      "description": "是否可以清空选项",
+      "default": "",
+      "type": "boolean"
+    },
+    "collapse-tags": {
+      "value": "",
+      "description": "多选时是否将选中值按文字的形式展示",
+      "default": "",
+      "type": "boolean"
+    },
+    "multiple-limit": {
+      "value": "",
+      "description": "多选时用户最多可以选择的项目数，为 0 则不限制",
+      "default": "",
+      "type": "number"
+    },
+    "name": {
+      "value": "",
+      "description": "select input 的 name 属性",
+      "default": "",
+      "type": "string"
+    },
+    "autocomplete": {
+      "value": "",
+      "description": "select input 的 autocomplete 属性",
+      "default": "",
+      "type": "string"
+    },
+    "auto-complete": {
+      "value": "",
+      "description": "下个主版本弃用",
+      "default": "",
+      "type": "string"
+    },
+    "placeholder": {
+      "value": "",
+      "description": "占位符",
+      "default": "",
+      "type": "string"
+    },
+    "filterable": {
+      "value": "",
+      "description": "是否可搜索",
+      "default": "",
+      "type": "boolean"
+    },
+    "allow-create": {
+      "value": "",
+      "description": "是否允许用户创建新条目，需配合 `filterable` 使用",
+      "default": "",
+      "type": "boolean"
+    },
+    "filter-method": {
+      "value": "",
+      "description": "自定义搜索方法",
+      "default": "",
+      "type": "function"
+    },
+    "remote": {
+      "value": "",
+      "description": "是否为远程搜索",
+      "default": "",
+      "type": "boolean"
+    },
+    "remote-method": {
+      "value": "",
+      "description": "远程搜索方法",
+      "default": "",
+      "type": "function"
+    },
+    "loading": {
+      "value": "",
+      "description": "是否正在从远程获取数据",
+      "default": "",
+      "type": "boolean"
+    },
+    "loading-text": {
+      "value": "",
+      "description": "远程加载时显示的文字",
+      "default": "",
+      "type": "string"
+    },
+    "no-match-text": {
+      "value": "",
+      "description": "搜索条件无匹配时显示的文字，也可以使用`slot=\"empty\"`设置",
+      "default": "",
+      "type": "string"
+    },
+    "no-data-text": {
+      "value": "",
+      "description": "选项为空时显示的文字，也可以使用`slot=\"empty\"`设置",
+      "default": "",
+      "type": "string"
+    },
+    "popper-class": {
+      "value": "",
+      "description": "Select 下拉框的类名",
+      "default": "",
+      "type": "string"
+    },
+    "reserve-keyword": {
+      "value": "",
+      "description": "多选且可搜索时，是否在选中一个选项后保留当前的搜索关键词",
+      "default": "",
+      "type": "boolean"
+    },
+    "default-first-option": {
+      "value": "",
+      "description": "在输入框按下回车，选择第一个匹配项。需配合 `filterable` 或 `remote` 使用",
+      "default": "",
+      "type": "boolean"
+    },
+    "popper-append-to-body": {
+      "value": "",
+      "description": "是否将弹出框插入至 body 元素。在弹出框的定位出现问题时，可将该属性设置为 false",
+      "default": "",
+      "type": "boolean"
+    },
+    "automatic-dropdown": {
+      "value": "",
+      "description": "对于不可搜索的 Select，是否在输入框获得焦点后自动弹出选项菜单",
+      "default": "",
+      "type": "boolean"
+    }
+  },
+  "events": [
+    {
+      "name": "change",
+      "description": "选中值发生变化时触发",
+      "params": "目前的选中值"
+    },
+    {
+      "name": "visible-change",
+      "description": "下拉框出现/隐藏时触发",
+      "params": "出现则为 true，隐藏则为 false"
+    },
+    {
+      "name": "remove-tag",
+      "description": "多选模式下移除tag时触发",
+      "params": "移除的tag值"
+    },
+    {
+      "name": "clear",
+      "description": "可清空的单选模式下用户点击清空按钮时触发",
+      "params": ""
+    },
+    {
+      "name": "blur",
+      "description": "当 input 失去焦点时触发",
+      "params": "(event: Event)"
+    },
+    {
+      "name": "focus",
+      "description": "当 input 获得焦点时触发",
+      "params": "(event: Event)"
+    }
+  ]
+}

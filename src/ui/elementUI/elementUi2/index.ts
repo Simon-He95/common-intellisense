@@ -19,6 +19,12 @@ import ElTableColumn from './tableColumn.json'
 import ElCard from './card.json'
 import ElInput from './input.json'
 import ElAutocomplete from './autocomplete.json'
+import ElCheckBox from './checkbox.json'
+import ElCheckBoxGroup from './checkboxGroup.json'
+import ElCheckBoxButton from './checkboxButton.json'
+import ElSelect from './select.json'
+import ElCascader from './cascader.json'
+import ElCascaderPanel from './cascaderPanel.json'
 
 export function elementUi2() {
   const map: any = [
@@ -41,6 +47,12 @@ export function elementUi2() {
     ElCard,
     ElInput,
     ElAutocomplete,
+    ElCheckBox,
+    ElCheckBoxGroup,
+    ElCheckBoxButton,
+    ElSelect,
+    ElCascader,
+    ElCascaderPanel,
   ]
 
   return map.reduce((result: any, item: any) => {
@@ -122,6 +134,7 @@ export function elementUi2Components() {
     ['el-option', '基础多选'],
     ['el-option-group', '备选项进行分组展示'],
     ['el-cascader', '级联选择器'],
+    ['el-cascader-panel', '级联面板'],
     ['el-switch', '开关'],
     ['el-slider', '滑块'],
     ['el-time-select', '时间选择器'],
