@@ -63,6 +63,7 @@ export function deactivate() {
   UINames = null
   optionsComponents = null
   UiCompletions = null
+  cacheMap = null
 }
 
 function findUI() {
