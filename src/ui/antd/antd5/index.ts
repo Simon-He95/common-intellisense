@@ -12,7 +12,7 @@ import Text from './text.json'
 import Title from './title.json'
 import Paragraph from './paragraph.json'
 
-export function antDesign5() {
+export function antd5() {
   const map: any = [
     Divider,
     Row,
@@ -83,7 +83,7 @@ export function antDesign5() {
   }, {} as any)
 }
 
-export function antDesign5Components() {
+export function antd5Components() {
   return [
     ['Row', '布局'],
     ['Col', '布局'],

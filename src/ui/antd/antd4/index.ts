@@ -12,7 +12,7 @@ import Text from './text.json'
 import Title from './title.json'
 import Paragraph from './paragraph.json'
 
-export function antDesign4() {
+export function antd4() {
   const map: any = [
     Divider,
     Row,
@@ -83,7 +83,7 @@ export function antDesign4() {
   }, {} as any)
 }
 
-export function antDesign4Components() {
+export function antd4Components() {
   return [
     ['Row', '布局'],
     ['Col', '布局'],

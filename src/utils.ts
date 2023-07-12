@@ -14,7 +14,7 @@ export function parser(code: string, position: vscode.Position) {
     return
   if (suffix === 'vue')
     return transformVue(code, position)
-  if (/jsx|tsx/.test(suffix))
+  if (/ts|js|jsx|tsx/.test(suffix))
     return parserJSX(code, position)
 
   return true
@@ -130,7 +130,7 @@ function jsxDfs(children: any, position: vscode.Position) {
   }
 }
 
-const UINames = ['element-ui', 'element-plus', 'ant-design', 'ant-design-vue', 'varlet', 'vant']
+const UINames = ['element-ui', 'element-plus', 'antd', 'ant-design-vue', 'varlet', 'vant']
 export async function findPkgUI(cwd?: string) {
   if (!cwd)
     return
