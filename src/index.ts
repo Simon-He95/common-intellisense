@@ -22,6 +22,8 @@ export function activate(context: vscode.ExtensionContext) {
 
   context.subscriptions.push(registerCompletionItemProvider(filter, (document, position) => {
     const result = parser(document.getText(), position)
+    if (!result)
+      return
     if (UiCompletions && result?.type === 'props') {
       const name = result.tag[0].toUpperCase() + result.tag.replace(/(-\w)/g, (match: string) => match[1].toUpperCase()).slice(1)
       return result.propName === 'on'
