@@ -69,7 +69,7 @@ function findUI() {
     cacheMap[pkg].push(cwd)
     const uisName: string[] = []
     uis.forEach(([uiName, version]: any) => {
-      const _version = version.match(/[^~\s]([0-9]+)./)![1]
+      const _version = version.match(/[^~]?([0-9]+)./)![1]
       uisName.push(`${uiName.replace(/-(\w)/, (_: string, v: string) => v.toUpperCase())}${_version}`)
     })
     if (uisName.every(name => UINames.includes(name)))
