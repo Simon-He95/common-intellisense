@@ -11,6 +11,8 @@ import Icon from './icon.json'
 import Text from './text.json'
 import Title from './title.json'
 import Paragraph from './paragraph.json'
+import Anchor from './anchor.json'
+import BreadCrumb from './breadCrumb.json'
 
 export function antd5() {
   const map: any = [
@@ -25,6 +27,8 @@ export function antd5() {
     Text,
     Title,
     Paragraph,
+    Anchor,
+    BreadCrumb,
   ]
 
   return map.reduce((result: any, item: any) => {

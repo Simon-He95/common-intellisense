@@ -1,0 +1,108 @@
+{
+  "name": "Anchor",
+  "props": {
+    "affix": {
+      "value": "",
+      "description": "固定模式",
+      "default": "true",
+      "type": "boolean"
+    },
+    "bounds": {
+      "value": "",
+      "description": "锚点区域边界",
+      "default": "5",
+      "type": "number"
+    },
+    "getContainer": {
+      "value": "",
+      "description": "指定滚动的容器",
+      "default": "() => window",
+      "type": "() => HTMLElement"
+    },
+    "getCurrentAnchor": {
+      "value": "",
+      "description": "自定义高亮的锚点",
+      "default": "-",
+      "type": "(activeLink: string) => string"
+    },
+    "offsetTop": {
+      "value": "",
+      "description": "距离窗口顶部达到指定偏移量后触发",
+      "default": "",
+      "type": "number"
+    },
+    "showInkInFixed": {
+      "value": "",
+      "description": "`affix={false}` 时是否显示小方块",
+      "default": "false",
+      "type": "boolean"
+    },
+    "targetOffset": {
+      "value": "",
+      "description": "锚点滚动偏移量，默认与 offsetTop 相同，[例子](#components-anchor-demo-targetoffset)",
+      "default": "-",
+      "type": "number"
+    },
+    "items": {
+      "value": "",
+      "description": "数据化配置选项内容，支持通过 children 嵌套",
+      "default": "-",
+      "type": {
+        "key": {
+          "value": "",
+          "description": "唯一标志",
+          "default": "",
+          "type": "string | number"
+        },
+        "href": {
+          "value": "",
+          "description": "锚点链接",
+          "default": "",
+          "type": "string"
+        },
+        "title": {
+          "value": "",
+          "description": "文字内容",
+          "default": "",
+          "type": "ReactNode"
+        },
+        "target": {
+          "value": "",
+          "description": "该属性指定在何处显示链接的资源",
+          "default": "",
+          "type": "string"
+        },
+        "children": {
+          "value": "",
+          "description": "嵌套的 Anchor Link，注意：水平方向该属性不支持",
+          "default": "",
+          "type": "[]"
+        }
+      }
+    },
+    "direction": {
+      "value": "",
+      "description": "设置导航方向",
+      "default": "`vertical`",
+      "type": "`vertical` | `horizontal`"
+    },
+    "replace": {
+      "value": "",
+      "description": "替换浏览器历史记录中项目的 href 而不是推送它",
+      "default": "false",
+      "type": "boolean"
+    }
+  },
+  "events": [
+    {
+      "name": "onChange",
+      "description": "监听锚点链接改变",
+      "callback": "(currentActiveLink: string) => void"
+    },
+    {
+      "name": "onClick",
+      "description": "`click` 事件的 handler",
+      "callback": "(e: MouseEvent, link: object) => void"
+    }
+  ]
+}
