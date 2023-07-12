@@ -10,38 +10,13 @@ let cacheMap: any = {}
 
 export function activate(context: vscode.ExtensionContext) {
   const filter = ['javascript', 'javascriptreact', 'typescriptreact', 'html', 'vue', 'css']
-  // registerCommand('common-intellisense.pickerUI', () => {
-  //   createSelect([
-  //     'elementUI',
-  //     'antDesign',
-  //     'elementPlus',
-  //     'vant',
-  //     'varlet',
-  //   ], {
-  //     title: '选择你使用的UI框架',
-  //     canPickMany: true,
-  //   }).then((options: any) => {
-  //     if (!options) {
-  //       message.error('加载错误，请稍后重新选择UI框架')
-  //       return
-  //     }
-  //     optionsComponents = options.map((option: string) => `${option}Components`).reduce((result: any, name: string) => {
-  //       result.push(...(UI as any)[name]())
-  //       return result
-  //     }, [])
-  //     UiCompletions = options.reduce((result: any, option: string) =>
-  //       Object.assign(result, (UI as any)[option]?.())
-  //       , {} as any)
-  //   })
-  // })
-
-  addEventListener('activeText-change', (editor: vscode.TextEditor) => {
+  context.subscriptions.push(addEventListener('activeText-change', (editor: vscode.TextEditor) => {
     // 找到当前活动的编辑器
     const visibleEditors = vscode.window.visibleTextEditors
     const currentEditor = visibleEditors.find(e => e === editor)
     if (currentEditor)
       findUI()
-  })
+  }))
 
   findUI()
 
