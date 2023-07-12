@@ -7,9 +7,8 @@ let UINames: any = []
 let optionsComponents: any = null
 let UiCompletions: any = null
 let cacheMap: any = {}
-
 export function activate(context: vscode.ExtensionContext) {
-  const filter = ['javascript', 'javascriptreact', 'typescriptreact', 'html', 'vue', 'css']
+  const filter = ['javascript', 'javascriptreact', 'typescriptreact', 'vue', 'svelte']
   context.subscriptions.push(addEventListener('activeText-change', (editor: vscode.TextEditor) => {
     // 找到当前活动的编辑器
     const visibleEditors = vscode.window.visibleTextEditors
@@ -43,8 +42,15 @@ export function deactivate() {
   cacheMap = null
 }
 
+const filters = ['js', 'ts', 'jsx', 'tsx', 'vue', 'svelte']
+
 function findUI() {
   const cwd = vscode.window.activeTextEditor?.document.uri.fsPath
+  const suffix = cwd?.split('.').slice(-1)[0]
+
+  if (!suffix || !filters.includes(suffix))
+    return
+
   const values = Object.values(cacheMap) as any
   if (values[0] && values[0].includes(cwd))
     return
