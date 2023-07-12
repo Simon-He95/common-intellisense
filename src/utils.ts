@@ -152,5 +152,5 @@ export async function findPkgUI(cwd?: string) {
         result.push([key, devDependencies[key]])
     }
   }
-  return result
+  return { pkg, uis: result }
 }

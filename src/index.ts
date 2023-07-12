@@ -3,9 +3,10 @@ import { addEventListener, getSelection, registerCompletionItemProvider } from '
 import { findPkgUI, parser } from './utils'
 import UI from './ui'
 
-let UINames: string[] = []
+let UINames: any = []
 let optionsComponents: any = null
 let UiCompletions: any = null
+let cacheMap: any = {}
 
 export function activate(context: vscode.ExtensionContext) {
   const filter = ['javascript', 'javascriptreact', 'typescriptreact', 'html', 'vue', 'css']
@@ -34,8 +35,12 @@ export function activate(context: vscode.ExtensionContext) {
   //   })
   // })
 
-  addEventListener('activeText-change', () => {
-    findUI()
+  addEventListener('activeText-change', (editor: vscode.TextEditor) => {
+    // 找到当前活动的编辑器
+    const visibleEditors = vscode.window.visibleTextEditors
+    const currentEditor = visibleEditors.find(e => e === editor)
+    if (currentEditor)
+      findUI()
   })
 
   findUI()
@@ -55,15 +60,31 @@ export function activate(context: vscode.ExtensionContext) {
 }
 
 export function deactivate() {
-
+  UINames = null
+  optionsComponents = null
+  UiCompletions = null
 }
 
 function findUI() {
-  findPkgUI(vscode.window.activeTextEditor?.document.uri.fsPath).then((uis) => {
+  const cwd = vscode.window.activeTextEditor?.document.uri.fsPath
+  const values = Object.values(cacheMap) as any
+  if (values[0] && values[0].includes(cwd))
+    return
+  findPkgUI(cwd).then(({ uis, pkg }: any) => {
     if (!uis)
       return
+    if (Object.keys(cacheMap).length) {
+      if (!cacheMap[pkg]) {
+        cacheMap = {}
+        cacheMap[pkg] = []
+      }
+    }
+    else if (!cacheMap[pkg]) {
+      cacheMap[pkg] = []
+    }
+    cacheMap[pkg].push(cwd)
     const uisName: string[] = []
-    uis.forEach(([uiName, version]) => {
+    uis.forEach(([uiName, version]: any) => {
       const _version = version.match(/[^~\s]([0-9]+)./)![1]
       uisName.push(`${uiName.replace(/-(\w)/, (_: string, v: string) => v.toUpperCase())}${_version}`)
     })
