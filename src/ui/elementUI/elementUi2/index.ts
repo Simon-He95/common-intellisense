@@ -81,7 +81,7 @@ export function elementUi2() {
         documentation.appendMarkdown(detail.join('\n\n'))
 
         if (value.typeDetail)
-          documentation.appendCodeblock(Object.keys(value.typeDetail).reduce((result, key) => result += `interface ${key} {\n  ${value.typeDetail[key].map((item: any) => `${item.name}: ${item.type} /*${item.description}*/`).join('\n  ')}\n}`, ''), 'typescript')
+          documentation.appendCodeblock(`#### ***🌈 类型详情:***\n${Object.keys(value.typeDetail).reduce((result, key) => result += `interface ${key} {\n  ${value.typeDetail[key].map((item: any) => `${item.name}: ${item.type} /*${item.description}*/`).join('\n  ')}\n}`, '')}`, 'typescript')
 
         if (value.type && value.type.includes('boolean') && value.default === 'false')
           return createCompletionItem({ content: key, documentation })
