@@ -32,6 +32,14 @@ import ElCarouselItem from './carouselItem.json'
 import ElCollapse from './collapse.json'
 import ElCollapseItem from './collapseItem.json'
 import ElColorPicker from './colorPicker.json'
+import ElImage from './image.json'
+import ElEmpty from './empty.json'
+import ElDropdown from './dropdown.json'
+import ElDropdownMenuItem from './dropdownMenuItem.json'
+import ElDrawer from './drawer.json'
+import ElDivider from './divider.json'
+import ElDialog from './dialog.json'
+import ElDescriptions from './descriptions.json'
 
 export function elementUi2() {
   const map: any = [
@@ -67,6 +75,14 @@ export function elementUi2() {
     ElCollapse,
     ElCollapseItem,
     ElColorPicker,
+    ElImage,
+    ElEmpty,
+    ElDropdown,
+    ElDropdownMenuItem,
+    ElDrawer,
+    ElDivider,
+    ElDialog,
+    ElDescriptions,
   ]
 
   return map.reduce((result: any, item: any) => {

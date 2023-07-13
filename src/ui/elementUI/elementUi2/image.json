@@ -1,0 +1,77 @@
+{
+  "name": "ElImage",
+  "props": {
+    "src": {
+      "value": "",
+      "description": "图片源，同原生",
+      "default": "—",
+      "type": "string"
+    },
+    "fit": {
+      "value": [
+        "fill",
+        "contain",
+        "cover",
+        "none",
+        "scale-down"
+      ],
+      "description": "确定图片如何适应容器框，同原生 [object-fit](https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit)",
+      "default": "fill | contain | cover | none | scale-down",
+      "type": "string"
+    },
+    "alt": {
+      "value": "",
+      "description": "原生 alt",
+      "default": "-",
+      "type": "string"
+    },
+    "referrer-policy": {
+      "value": "",
+      "description": "原生 referrerPolicy",
+      "default": "-",
+      "type": "string"
+    },
+    "lazy": {
+      "value": "",
+      "description": "是否开启懒加载",
+      "default": "false",
+      "type": "boolean"
+    },
+    "scroll-container": {
+      "value": "",
+      "description": "开启懒加载后，监听 scroll 事件的容器",
+      "default": "—",
+      "type": "string | HTMLElement"
+    },
+    "preview-src-list": {
+      "value": "",
+      "description": "开启图片预览功能",
+      "default": "—",
+      "type": "Array"
+    },
+    "z-index": {
+      "value": "",
+      "description": "设置图片预览的 z-index",
+      "default": "—",
+      "type": "Number"
+    },
+    "initial-index": {
+      "value": "",
+      "description": "图片预览初始图片index",
+      "default": "—",
+      "type": "Number"
+    }
+  },
+  "events": [
+    {
+      "name": "load",
+      "description": "图片加载成功触发",
+      "callback": "(e: Event)"
+    },
+    {
+      "name": "error",
+      "description": "图片加载失败触发",
+      "callback": "(e: Error)"
+    }
+  ]
+}
