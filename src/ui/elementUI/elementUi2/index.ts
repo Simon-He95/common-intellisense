@@ -89,9 +89,6 @@ export function elementUi2() {
     const completions: any = []
     const events: any = []
     Object.keys(item.props!).forEach((key) => {
-      const documentation = new vscode.MarkdownString()
-      documentation.isTrusted = true
-      documentation.supportHtml = true
       const value = (item.props as any)[key]
       let type = vscode.CompletionItemKind.Property
       if (typeof value.value === 'string')
@@ -99,6 +96,10 @@ export function elementUi2() {
       else
         type = vscode.CompletionItemKind.Enum
       completions.push(...value.value.map((v: string) => {
+        const documentation = new vscode.MarkdownString()
+        documentation.isTrusted = true
+        documentation.supportHtml = true
+
         const detail = []
         if (value.default !== undefined && value.default !== '')
           detail.push(`#### ***💎 默认值:***    \`${value.default}\``)
