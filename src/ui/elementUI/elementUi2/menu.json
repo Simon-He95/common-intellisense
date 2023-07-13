@@ -1,0 +1,95 @@
+{
+  "name": "ElMenu",
+  "props": {
+    "mode": {
+      "value": [
+        "horizontal",
+        "vertical"
+      ],
+      "description": "模式",
+      "default": "horizontal | vertical",
+      "type": "string"
+    },
+    "collapse": {
+      "value": "",
+      "description": "是否水平折叠收起菜单（仅在 mode 为 vertical 时可用）",
+      "default": "false",
+      "type": "boolean"
+    },
+    "background-color": {
+      "value": "",
+      "description": "菜单的背景色（仅支持 hex 格式）",
+      "default": "—",
+      "type": "string"
+    },
+    "text-color": {
+      "value": "",
+      "description": "菜单的文字颜色（仅支持 hex 格式）",
+      "default": "—",
+      "type": "string"
+    },
+    "active-text-color": {
+      "value": "",
+      "description": "当前激活菜单的文字颜色（仅支持 hex 格式）",
+      "default": "—",
+      "type": "string"
+    },
+    "default-active": {
+      "value": "",
+      "description": "当前激活菜单的 index",
+      "default": "—",
+      "type": "string"
+    },
+    "default-openeds": {
+      "value": "",
+      "description": "当前打开的 sub-menu 的 index 的数组",
+      "default": "—",
+      "type": "Array"
+    },
+    "unique-opened": {
+      "value": "",
+      "description": "是否只保持一个子菜单的展开",
+      "default": "false",
+      "type": "boolean"
+    },
+    "menu-trigger": {
+      "value": [
+        "hover",
+        "click"
+      ],
+      "description": "子菜单打开的触发方式(只在 mode 为 horizontal 时有效)",
+      "default": "hover | click",
+      "type": "string"
+    },
+    "router": {
+      "value": "",
+      "description": "是否使用 vue-router 的模式，启用该模式会在激活导航时以 index 作为 path 进行路由跳转",
+      "default": "false",
+      "type": "boolean"
+    },
+    "collapse-transition": {
+      "value": "",
+      "description": "是否开启折叠动画",
+      "default": "false",
+      "type": "boolean"
+    }
+  },
+  "events": [
+    {
+      "name": "select",
+      "description": "菜单激活回调",
+      "params": "index: 选中菜单项的 index, indexPath: 选中菜单项的 index path"
+    },
+    {
+      "name": "open",
+      "description": "sub-menu 展开的回调",
+      "params": "index: 打开的 sub-menu 的 index， indexPath: 打开的 sub-menu 的 index path"
+    },
+    {
+      "name": "close",
+      "description": "sub-menu 收起的回调",
+      "params": "index: 收起的 sub-menu 的 index， indexPath: 收起的 sub-menu 的 index path"
+    }
+  ],
+  "link": "https://element.eleme.cn/#/zh-CN/component/menu"
+}

@@ -1,0 +1,137 @@
+{
+  "name": "ElSlider",
+  "props": {
+    "value": {
+      "value": "",
+      "description": "绑定值",
+      "default": "—",
+      "type": "number"
+    },
+    "v-model": {
+      "value": "",
+      "description": "绑定值",
+      "default": "—",
+      "type": "number"
+    },
+    "min": {
+      "value": "",
+      "description": "最小值",
+      "default": "—",
+      "type": "number"
+    },
+    "max": {
+      "value": "",
+      "description": "最大值",
+      "default": "—",
+      "type": "number"
+    },
+    "disabled": {
+      "value": "",
+      "description": "是否禁用",
+      "default": "false",
+      "type": "boolean"
+    },
+    "step": {
+      "value": "",
+      "description": "步长",
+      "default": "—",
+      "type": "number"
+    },
+    "show-input": {
+      "value": "",
+      "description": "是否显示输入框，仅在非范围选择时有效",
+      "default": "false",
+      "type": "boolean"
+    },
+    "show-input-controls": {
+      "value": "",
+      "description": "在显示输入框的情况下，是否显示输入框的控制按钮",
+      "default": "false",
+      "type": "boolean"
+    },
+    "input-size": {
+      "value": [
+        "large",
+        "medium",
+        "small",
+        "mini"
+      ],
+      "description": "输入框的尺寸",
+      "default": "large | medium | small | mini",
+      "type": "string"
+    },
+    "show-stops": {
+      "value": "",
+      "description": "是否显示间断点",
+      "default": "false",
+      "type": "boolean"
+    },
+    "show-tooltip": {
+      "value": "",
+      "description": "是否显示 tooltip",
+      "default": "false",
+      "type": "boolean"
+    },
+    "format-tooltip": {
+      "value": "",
+      "description": "格式化 tooltip message",
+      "default": "—",
+      "type": "function(value)"
+    },
+    "range": {
+      "value": "",
+      "description": "是否为范围选择",
+      "default": "false",
+      "type": "boolean"
+    },
+    "vertical": {
+      "value": "",
+      "description": "是否竖向模式",
+      "default": "false",
+      "type": "boolean"
+    },
+    "height": {
+      "value": "",
+      "description": "Slider 高度，竖向模式时必填",
+      "default": "—",
+      "type": "string"
+    },
+    "label": {
+      "value": "",
+      "description": "屏幕阅读器标签",
+      "default": "—",
+      "type": "string"
+    },
+    "debounce": {
+      "value": "",
+      "description": "输入时的去抖延迟，毫秒，仅在`show-input`等于true时有效",
+      "default": "—",
+      "type": "number"
+    },
+    "tooltip-class": {
+      "value": "",
+      "description": "tooltip 的自定义类名",
+      "default": "—",
+      "type": "string"
+    },
+    "marks": {
+      "value": "",
+      "description": "标记， key 的类型必须为 number 且取值在闭区间 `[min, max]` 内，每个标记可以单独设置样式",
+      "default": "—",
+      "type": "object"
+    }
+  },
+  "events": [
+    {
+      "name": "change",
+      "description": "值改变时触发（使用鼠标拖曳时，只在松开鼠标后触发）",
+      "params": "改变后的值"
+    },
+    {
+      "name": "input",
+      "description": "数据改变时触发（使用鼠标拖曳时，活动过程实时触发）",
+      "params": "改变后的值"
+    }
+  ],
+  "link": "https://element.eleme.cn/#/zh-CN/component/slider"
+}
