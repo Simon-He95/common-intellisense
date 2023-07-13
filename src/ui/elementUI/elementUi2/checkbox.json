@@ -34,17 +34,21 @@
     "disabled": {
       "value": "",
       "description": "是否禁用",
-      "default": "—",
+      "default": "false",
       "type": "boolean"
     },
     "border": {
       "value": "",
       "description": "是否显示边框",
-      "default": "—",
+      "default": "false",
       "type": "boolean"
     },
     "size": {
-      "value": "",
+      "value": [
+        "medium",
+        "small",
+        "mini"
+      ],
       "description": "Checkbox 的尺寸，仅在 border 为真时有效",
       "default": "medium | small | mini",
       "type": "string"
@@ -52,19 +56,19 @@
     "name": {
       "value": "",
       "description": "原生 name 属性",
-      "default": "",
+      "default": "—",
       "type": "string"
     },
     "checked": {
       "value": "",
       "description": "当前是否勾选",
-      "default": "",
+      "default": "false",
       "type": "boolean"
     },
     "indeterminate": {
       "value": "",
       "description": "设置 indeterminate 状态，只负责样式控制",
-      "default": "",
+      "default": "false",
       "type": "boolean"
     }
   },
@@ -72,7 +76,7 @@
     {
       "name": "change",
       "description": "当绑定值变化时触发的事件",
-      "params": "更新后的值"
+      "callback": "更新后的值"
     }
   ]
 }
