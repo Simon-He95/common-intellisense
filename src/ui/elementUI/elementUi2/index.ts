@@ -28,6 +28,7 @@ import ElCheckboxButton from './checkboxButton.json'
 import ElBadge from './badge.json'
 import ElBreadcrumb from './breadcrumb.json'
 import ElCarousel from './carousel.json'
+import ElCarouselItem from './carouselItem.json'
 import ElCollapse from './collapse.json'
 import ElCollapseItem from './collapseItem.json'
 
@@ -61,6 +62,7 @@ export function elementUi2() {
     ElBadge,
     ElBreadcrumb,
     ElCarousel,
+    ElCarouselItem,
     ElCollapse,
     ElCollapseItem,
   ]
