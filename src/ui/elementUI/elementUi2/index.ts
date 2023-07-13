@@ -114,6 +114,9 @@ export function elementUi2() {
         if (value.typeDetail)
           documentation.appendCodeblock(`#### ***🌈 类型详情:***\n${Object.keys(value.typeDetail).reduce((result, key) => result += `interface ${key} {\n  ${value.typeDetail[key].map((item: any) => `${item.name}: ${item.type} /*${item.description}*/`).join('\n  ')}\n}`, '')}`, 'typescript')
 
+        if (item.link)
+          documentation.appendMarkdown(`\n[🔗 文档链接](${item.link})`)
+
         if (value.type && value.type.includes('boolean') && value.default === 'false')
           return createCompletionItem({ content: key, documentation })
         return createCompletionItem({ content: `${key}="${v}"`, documentation, snippet: `${key}="$\{1:${v}\}$2"`, type })

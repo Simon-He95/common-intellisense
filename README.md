@@ -122,7 +122,8 @@ Create a json format for the data structure corresponding to the component, for 
       "description": "点击按钮时的回调",
       "params": "(event: MouseEvent) => void"
     }
-  ]
+  ],
+  "link":"https://element.eleme.cn/#/zh-CN/component/collapse"
 }
 
 ```

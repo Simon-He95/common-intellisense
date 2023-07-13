@@ -121,7 +121,8 @@
       "description": "点击按钮时的回调",
       "params": "(event: MouseEvent) => void"
     }
-  ]
+  ],
+  "link":"https://element.eleme.cn/#/zh-CN/component/collapse"
 }
 
 ```
