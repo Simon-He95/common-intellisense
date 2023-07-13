@@ -13,8 +13,13 @@ import Title from './title.json'
 import Paragraph from './paragraph.json'
 import Anchor from './anchor.json'
 import BreadCrumb from './breadCrumb.json'
+import Dropdown from './dropdown.json'
+import DropdownButton from './dropdownButton.json'
+import Menu from './menu.json'
+import Pagination from './pagination.json'
+import Steps from './steps.json'
 
-export function antd4() {
+export function antd5() {
   const map: any = [
     Divider,
     Row,
@@ -29,6 +34,11 @@ export function antd4() {
     Paragraph,
     Anchor,
     BreadCrumb,
+    Dropdown,
+    DropdownButton,
+    Menu,
+    Pagination,
+    Steps,
   ]
 
   return map.reduce((result: any, item: any) => {
@@ -87,7 +97,7 @@ export function antd4() {
   }, {} as any)
 }
 
-export function antd4Components() {
+export function antd5Components() {
   return [
     ['Row', '布局'],
     ['Col', '布局'],
@@ -126,7 +136,7 @@ export function antd4Components() {
     ['tag', '标签'],
     ['progress', '进度条'],
     ['tree', '树形控件'],
-    ['pagination', '分页'],
+    ['Pagination', '分页'],
     ['badge', '标记'],
     ['avatar', '头像'],
     ['skeleton', '骨架屏'],
@@ -136,18 +146,14 @@ export function antd4Components() {
     ['result', '结果'],
     ['statistic', '统计数值'],
     ['alert', '警告'],
-    ['menu', '导航菜单'],
-    ['submenu', '导航子菜单'],
-    ['menu-item', '导航菜单项'],
+    ['Menu', '导航菜单'],
     ['tabs', '标签页'],
     ['tab-pane', '标签项'],
     ['breadcrumb', '面包屑'],
     ['breadcrumb-item', '面包屑项'],
     ['page-header', '页头'],
-    ['dropdown', '下拉菜单'],
-    ['dropdown-menu', '下拉菜单列表'],
-    ['dropdown-item', '下拉菜单列表项'],
-    ['steps', '步骤条'],
+    ['Dropdown', '下拉菜单'],
+    ['Steps', '步骤条'],
     ['dialog', '对话框'],
     ['tooltip', '文字提示'],
     ['popover', '弹出框'],
