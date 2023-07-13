@@ -19,12 +19,12 @@ import ElTableColumn from './tableColumn.json'
 import ElCard from './card.json'
 import ElInput from './input.json'
 import ElAutocomplete from './autocomplete.json'
-import ElCheckBox from './checkbox.json'
-import ElCheckBoxGroup from './checkboxGroup.json'
-import ElCheckBoxButton from './checkboxButton.json'
 import ElSelect from './select.json'
 import ElCascader from './cascader.json'
 import ElCascaderPanel from './cascaderPanel.json'
+import ElCheckbox from './checkbox.json'
+import ElCheckboxGroup from './checkboxGroup.json'
+import ElCheckboxButton from './checkboxButton.json'
 
 export function elementUi2() {
   const map: any = [
@@ -47,18 +47,21 @@ export function elementUi2() {
     ElCard,
     ElInput,
     ElAutocomplete,
-    ElCheckBox,
-    ElCheckBoxGroup,
-    ElCheckBoxButton,
     ElSelect,
     ElCascader,
     ElCascaderPanel,
+    ElCheckbox,
+    ElCheckboxGroup,
+    ElCheckboxButton,
   ]
 
   return map.reduce((result: any, item: any) => {
     const completions: any = []
     const events: any = []
     Object.keys(item.props!).forEach((key) => {
+      const documentation = new vscode.MarkdownString()
+      documentation.isTrusted = true
+      documentation.supportHtml = true
       const value = (item.props as any)[key]
       let type = vscode.CompletionItemKind.Property
       if (typeof value.value === 'string')
@@ -70,15 +73,16 @@ export function elementUi2() {
         if (value.default !== undefined && value.default !== '')
           detail.push(`#### ***💎 默认值:***    \`${value.default}\``)
 
-        if (value.type)
-          detail.push(`#### ***💡 类型:***    \`${value.type}\``)
-
         if (value.description)
           detail.push(`#### ***🔦 说明:***    \`${value.description}\``)
-        const documentation = new vscode.MarkdownString()
-        documentation.isTrusted = true
-        documentation.supportHtml = true
+
+        if (value.type)
+          detail.push(`#### ***💡 类型:***    \`${value.type}\``)
         documentation.appendMarkdown(detail.join('\n\n'))
+
+        if (value.typeDetail)
+          documentation.appendCodeblock(Object.keys(value.typeDetail).reduce((result, key) => result += `interface ${key} {\n  ${value.typeDetail[key].map((item: any) => `${item.name}: ${item.type} /*${item.description}*/`).join('\n  ')}\n}`, ''), 'typescript')
+
         if (value.type && value.type.includes('boolean') && value.default === 'false')
           return createCompletionItem({ content: key, documentation })
         return createCompletionItem({ content: `${key}="${v}"`, documentation, snippet: `${key}="$\{1:${v}\}$2"`, type })

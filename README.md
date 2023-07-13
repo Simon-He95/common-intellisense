@@ -120,7 +120,7 @@ Create a json format for the data structure corresponding to the component, for 
     {
       "name": "onClick",
       "description": "点击按钮时的回调",
-      "callback": "(event: MouseEvent) => void"
+      "params": "(event: MouseEvent) => void"
     }
   ]
 }
