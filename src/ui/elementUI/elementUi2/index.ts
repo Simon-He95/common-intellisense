@@ -70,6 +70,8 @@ import ElTooltip from './tooltip.json'
 import ElTransfer from './transfer.json'
 import ElTree from './tree.json'
 import ElUpload from './upload.json'
+import ElAvatar from './avatar.json'
+import ElBacktop from './backtop.json'
 
 export function elementUi2() {
   const map: any = [
@@ -143,6 +145,8 @@ export function elementUi2() {
     ElTransfer,
     ElTree,
     ElUpload,
+    ElAvatar,
+    ElBacktop,
   ]
 
   return map.reduce((result: any, item: any) => {
@@ -174,21 +178,21 @@ export function elementUi2() {
         if (value.typeDetail)
           documentation.appendCodeblock(`#### 🌈 类型详情:\n${Object.keys(value.typeDetail).reduce((result, key) => result += `interface ${key} {\n  ${value.typeDetail[key].map((item: any) => `${item.name}: ${item.type} /*${item.description}${item.default ? ` 默认值: ***${item.default}***` : ''}*/`).join('\n  ')}\n}`, '')}`, 'typescript')
 
-        if (item.methods && item.methods.length) {
-          item.methods.forEach((methods: any) => {
-            const detail = []
-            const { name, description, params } = methods
-            if (name)
-              detail.push(`\n#### 💨 方法 ${name}:`)
+        // if (item.methods && item.methods.length) {
+        //   item.methods.forEach((methods: any) => {
+        //     const detail = []
+        //     const { name, description, params } = methods
+        //     if (name)
+        //       detail.push(`\n#### 💨 方法 ${name}:`)
 
-            if (description)
-              detail.push(`- 👓 说明:    ***\`${description}\`***`)
+        //     if (description)
+        //       detail.push(`- 👓 说明:    ***\`${description}\`***`)
 
-            if (params)
-              detail.push(`- 🚢 参数:    ***\`${params}\`***`)
-            documentation.appendMarkdown(detail.join('\n'))
-          })
-        }
+        //     if (params)
+        //       detail.push(`- 🚢 参数:    ***\`${params}\`***`)
+        //     documentation.appendMarkdown(detail.join('\n'))
+        //   })
+        // }
 
         if (item.link)
           documentation.appendMarkdown(`\n\n[🔗 文档链接](${item.link})`)
