@@ -29,6 +29,7 @@ import ElBadge from './badge.json'
 import ElBreadcrumb from './breadcrumb.json'
 import ElCarousel from './carousel.json'
 import ElCollapse from './collapse.json'
+import ElCollapseItem from './collapseItem.json'
 
 export function elementUi2() {
   const map: any = [
@@ -61,6 +62,7 @@ export function elementUi2() {
     ElBreadcrumb,
     ElCarousel,
     ElCollapse,
+    ElCollapseItem,
   ]
 
   return map.reduce((result: any, item: any) => {
