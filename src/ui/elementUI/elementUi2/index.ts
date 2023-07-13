@@ -28,6 +28,7 @@ import ElCheckboxButton from './checkboxButton.json'
 import ElBadge from './badge.json'
 import ElBreadcrumb from './breadcrumb.json'
 import ElCarousel from './carousel.json'
+import ElCollapse from './collapse.json'
 
 export function elementUi2() {
   const map: any = [
@@ -59,6 +60,7 @@ export function elementUi2() {
     ElBadge,
     ElBreadcrumb,
     ElCarousel,
+    ElCollapse,
   ]
 
   return map.reduce((result: any, item: any) => {
