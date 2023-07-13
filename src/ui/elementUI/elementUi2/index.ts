@@ -31,6 +31,7 @@ import ElCarousel from './carousel.json'
 import ElCarouselItem from './carouselItem.json'
 import ElCollapse from './collapse.json'
 import ElCollapseItem from './collapseItem.json'
+import ElColorPicker from './colorPicker.json'
 
 export function elementUi2() {
   const map: any = [
@@ -65,6 +66,7 @@ export function elementUi2() {
     ElCarouselItem,
     ElCollapse,
     ElCollapseItem,
+    ElColorPicker,
   ]
 
   return map.reduce((result: any, item: any) => {
