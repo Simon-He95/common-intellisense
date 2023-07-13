@@ -71,7 +71,45 @@
       "value": "",
       "description": "配置选项卡内容",
       "default": "[]",
-      "type": "[StepItem]"
+      "type": "StepItem[]",
+      "typeDetail": {
+        "description": {
+          "value": "",
+          "description": "步骤的详情描述，可选",
+          "default": "",
+          "type": "ReactNode"
+        },
+        "disabled": {
+          "value": "",
+          "description": "禁用点击",
+          "default": "false",
+          "type": "boolean"
+        },
+        "icon": {
+          "value": "",
+          "description": "步骤图标的类型，可选",
+          "default": "",
+          "type": "ReactNode"
+        },
+        "status": {
+          "value": "",
+          "description": "指定状态。当不配置该属性时，会使用 Steps 的 `current` 来自动指定状态。可选：`wait` `process` `finish` `error`",
+          "default": "`wait`",
+          "type": "string"
+        },
+        "subTitle": {
+          "value": "",
+          "description": "子标题",
+          "default": "",
+          "type": "ReactNode"
+        },
+        "title": {
+          "value": "",
+          "description": "标题",
+          "default": "",
+          "type": "ReactNode"
+        }
+      }
     }
   },
   "events": [

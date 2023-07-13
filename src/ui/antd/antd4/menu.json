@@ -41,7 +41,126 @@
       "value": "",
       "description": "菜单内容",
       "default": "",
-      "type": "ItemType[]"
+      "type": "MenuItemType[] | SubMenuType[] | MenuItemGroupType[] | MenuDividerType[]",
+      "typeDetail": [
+        {
+          "danger": {
+            "value": "",
+            "description": "展示错误状态样式",
+            "default": "false",
+            "type": "boolean"
+          },
+          "disabled": {
+            "value": "",
+            "description": "是否禁用",
+            "default": "false",
+            "type": "boolean"
+          },
+          "icon": {
+            "value": "",
+            "description": "菜单图标",
+            "default": "",
+            "type": "ReactNode"
+          },
+          "key": {
+            "value": "",
+            "description": "item 的唯一标志",
+            "default": "",
+            "type": "string"
+          },
+          "label": {
+            "value": "",
+            "description": "菜单项标题",
+            "default": "",
+            "type": "ReactNode"
+          },
+          "title": {
+            "value": "",
+            "description": "设置收缩时展示的悬浮标题",
+            "default": "",
+            "type": "string"
+          }
+        },
+        {
+          "children": {
+            "value": "",
+            "description": "子菜单的菜单项",
+            "default": "-",
+            "type": "[ItemType[]]"
+          },
+          "disabled": {
+            "value": "",
+            "description": "是否禁用",
+            "default": "false",
+            "type": "boolean"
+          },
+          "icon": {
+            "value": "",
+            "description": "菜单图标",
+            "default": "",
+            "type": "ReactNode"
+          },
+          "key": {
+            "value": "",
+            "description": "唯一标志",
+            "default": "",
+            "type": "string"
+          },
+          "label": {
+            "value": "",
+            "description": "菜单项标题",
+            "default": "",
+            "type": "ReactNode"
+          },
+          "popupClassName": {
+            "value": "",
+            "description": "子菜单样式，`mode=\"inline\"` 时无效",
+            "default": "",
+            "type": "string"
+          },
+          "popupOffset": {
+            "value": "",
+            "description": "子菜单偏移量，`mode=\"inline\"` 时无效",
+            "default": "",
+            "type": "[number, number]"
+          },
+          "theme": {
+            "value": "",
+            "description": "设置子菜单的主题，默认从 Menu 上继承",
+            "default": "",
+            "type": "`light` | `dark`"
+          },
+          "events": [
+            {
+              "name": "onTitleClick",
+              "description": "点击子菜单标题",
+              "callback": "function({ key, domEvent })"
+            }
+          ]
+        },
+        {
+          "children": {
+            "value": "",
+            "description": "分组的菜单项",
+            "default": "",
+            "type": "[MenuItemType[]]"
+          },
+          "label": {
+            "value": "",
+            "description": "分组标题",
+            "default": "",
+            "type": "ReactNode"
+          }
+        },
+        {
+          "dashed": {
+            "value": "",
+            "description": "是否虚线",
+            "default": "false",
+            "type": "boolean"
+          }
+        }
+      ]
     },
     "mode": {
       "value": "",
