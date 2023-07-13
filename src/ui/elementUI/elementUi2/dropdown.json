@@ -1,0 +1,93 @@
+{
+  "name": "ElDropdown",
+  "props": {
+    "type": {
+      "value": "",
+      "description": "菜单按钮类型，同 Button 组件(只在`split-button`为 true 的情况下有效)",
+      "default": "—",
+      "type": "string"
+    },
+    "size": {
+      "value": [
+        "medium",
+        "small",
+        "mini"
+      ],
+      "description": "菜单尺寸，在`split-button`为 true 的情况下也对触发按钮生效",
+      "default": "medium | small | mini",
+      "type": "string"
+    },
+    "split-button": {
+      "value": "",
+      "description": "下拉触发元素呈现为按钮组",
+      "default": "false",
+      "type": "boolean"
+    },
+    "placement": {
+      "value": [
+        "top",
+        "top-start",
+        "top-end",
+        "bottom",
+        "bottom-start",
+        "bottom-end"
+      ],
+      "description": "菜单弹出位置",
+      "default": "top | top-start | top-end | bottom | bottom-start | bottom-end",
+      "type": "string"
+    },
+    "trigger": {
+      "value": "",
+      "description": "触发下拉的行为",
+      "default": "hover, click",
+      "type": "string"
+    },
+    "hide-on-click": {
+      "value": "",
+      "description": "是否在点击菜单项后隐藏菜单",
+      "default": "false",
+      "type": "boolean"
+    },
+    "show-timeout": {
+      "value": "",
+      "description": "展开下拉菜单的延时（仅在 trigger 为 hover 时有效）",
+      "default": "—",
+      "type": "number"
+    },
+    "hide-timeout": {
+      "value": "",
+      "description": "收起下拉菜单的延时（仅在 trigger 为 hover 时有效）",
+      "default": "—",
+      "type": "number"
+    },
+    "tabindex": {
+      "value": "",
+      "description": "Dropdown 组件的 [tabindex](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex)",
+      "default": "—",
+      "type": "number"
+    },
+    "disabled": {
+      "value": "",
+      "description": "是否禁用",
+      "default": "false",
+      "type": "boolean"
+    }
+  },
+  "events": [
+    {
+      "name": "click",
+      "description": "`split-button` 为 true 时，点击左侧按钮的回调",
+      "callback": "—"
+    },
+    {
+      "name": "command",
+      "description": "点击菜单项触发的事件回调",
+      "callback": "dropdown-item 的指令"
+    },
+    {
+      "name": "visible-change",
+      "description": "下拉框出现/隐藏时触发",
+      "callback": "出现则为 true，隐藏则为 false"
+    }
+  ]
+}
