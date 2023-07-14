@@ -1,0 +1,256 @@
+{
+  "name": "Menu",
+  "props": {
+    "defaultOpenKeys": {
+      "value": "",
+      "description": "初始展开的 SubMenu 菜单项 key 数组",
+      "default": "",
+      "type": "string[]"
+    },
+    "defaultSelectedKeys": {
+      "value": "",
+      "description": "初始选中的菜单项 key 数组",
+      "default": "",
+      "type": "string[]"
+    },
+    "expandIcon": {
+      "value": "",
+      "description": "自定义展开图标",
+      "default": "",
+      "type": "ReactNode | `(props: SubMenuProps & { isSubMenu: boolean }) => ReactNode`"
+    },
+    "forceSubMenuRender": {
+      "value": "",
+      "description": "在子菜单展示之前就渲染进 DOM",
+      "default": "false",
+      "type": "boolean"
+    },
+    "inlineCollapsed": {
+      "value": "",
+      "description": "inline 时菜单是否收起状态",
+      "default": "",
+      "type": "boolean"
+    },
+    "inlineIndent": {
+      "value": "",
+      "description": "inline 模式的菜单缩进宽度",
+      "default": "24",
+      "type": "number"
+    },
+    "items": {
+      "value": "",
+      "description": "菜单内容",
+      "default": "",
+      "type": "MenuItemType[] | SubMenuType[] | MenuItemGroupType[] | MenuDividerType[]",
+      "typeDetail": [
+        {
+          "danger": {
+            "value": "",
+            "description": "展示错误状态样式",
+            "default": "false",
+            "type": "boolean"
+          },
+          "disabled": {
+            "value": "",
+            "description": "是否禁用",
+            "default": "false",
+            "type": "boolean"
+          },
+          "icon": {
+            "value": "",
+            "description": "菜单图标",
+            "default": "",
+            "type": "ReactNode"
+          },
+          "key": {
+            "value": "",
+            "description": "item 的唯一标志",
+            "default": "",
+            "type": "string"
+          },
+          "label": {
+            "value": "",
+            "description": "菜单项标题",
+            "default": "",
+            "type": "ReactNode"
+          },
+          "title": {
+            "value": "",
+            "description": "设置收缩时展示的悬浮标题",
+            "default": "",
+            "type": "string"
+          }
+        },
+        {
+          "children": {
+            "value": "",
+            "description": "子菜单的菜单项",
+            "default": "-",
+            "type": "[ItemType[]]"
+          },
+          "disabled": {
+            "value": "",
+            "description": "是否禁用",
+            "default": "false",
+            "type": "boolean"
+          },
+          "icon": {
+            "value": "",
+            "description": "菜单图标",
+            "default": "",
+            "type": "ReactNode"
+          },
+          "key": {
+            "value": "",
+            "description": "唯一标志",
+            "default": "",
+            "type": "string"
+          },
+          "label": {
+            "value": "",
+            "description": "菜单项标题",
+            "default": "",
+            "type": "ReactNode"
+          },
+          "popupClassName": {
+            "value": "",
+            "description": "子菜单样式，`mode=\"inline\"` 时无效",
+            "default": "",
+            "type": "string"
+          },
+          "popupOffset": {
+            "value": "",
+            "description": "子菜单偏移量，`mode=\"inline\"` 时无效",
+            "default": "",
+            "type": "[number, number]"
+          },
+          "theme": {
+            "value": "",
+            "description": "设置子菜单的主题，默认从 Menu 上继承",
+            "default": "",
+            "type": "`light` | `dark`"
+          },
+          "events": [
+            {
+              "name": "onTitleClick",
+              "description": "点击子菜单标题",
+              "callback": "function({ key, domEvent })"
+            }
+          ]
+        },
+        {
+          "children": {
+            "value": "",
+            "description": "分组的菜单项",
+            "default": "",
+            "type": "[MenuItemType[]]"
+          },
+          "label": {
+            "value": "",
+            "description": "分组标题",
+            "default": "",
+            "type": "ReactNode"
+          }
+        },
+        {
+          "dashed": {
+            "value": "",
+            "description": "是否虚线",
+            "default": "false",
+            "type": "boolean"
+          }
+        }
+      ]
+    },
+    "mode": {
+      "value": "",
+      "description": "菜单类型，现在支持垂直、水平、和内嵌模式三种",
+      "default": "`vertical`",
+      "type": "`vertical` | `horizontal` | `inline`"
+    },
+    "multiple": {
+      "value": "",
+      "description": "是否允许多选",
+      "default": "false",
+      "type": "boolean"
+    },
+    "openKeys": {
+      "value": "",
+      "description": "当前展开的 SubMenu 菜单项 key 数组",
+      "default": "",
+      "type": "string[]"
+    },
+    "overflowedIndicator": {
+      "value": [
+        "`<EllipsisOutlined />`"
+      ],
+      "description": "用于自定义 Menu 水平空间不足时的省略收缩的图标",
+      "default": "`<EllipsisOutlined />`",
+      "type": "ReactNode"
+    },
+    "selectable": {
+      "value": "",
+      "description": "是否允许选中",
+      "default": "true",
+      "type": "boolean"
+    },
+    "selectedKeys": {
+      "value": "",
+      "description": "当前选中的菜单项 key 数组",
+      "default": "",
+      "type": "string[]"
+    },
+    "style": {
+      "value": "",
+      "description": "根节点样式",
+      "default": "",
+      "type": "CSSProperties"
+    },
+    "subMenuCloseDelay": {
+      "value": "",
+      "description": "用户鼠标离开子菜单后关闭延时，单位：秒",
+      "default": "0.1",
+      "type": "number"
+    },
+    "subMenuOpenDelay": {
+      "value": "",
+      "description": "用户鼠标进入子菜单后开启延时，单位：秒",
+      "default": "0",
+      "type": "number"
+    },
+    "theme": {
+      "value": "",
+      "description": "主题颜色",
+      "default": "`light`",
+      "type": "`light` | `dark`"
+    },
+    "triggerSubMenuAction": {
+      "value": "",
+      "description": "SubMenu 展开/关闭的触发行为",
+      "default": "`hover`",
+      "type": "`hover` | `click`"
+    }
+  },
+  "events": [
+    {
+      "name": "onClick",
+      "description": "点击 MenuItem 调用此函数",
+      "callback": "function({ item, key, keyPath, domEvent })"
+    },
+    {
+      "name": "onDeselect",
+      "description": "取消选中时调用，仅在 multiple 生效",
+      "callback": "function({ item, key, keyPath, selectedKeys, domEvent })"
+    },
+    {
+      "name": "onOpenChange",
+      "description": "SubMenu 展开/关闭的回调",
+      "callback": "function(openKeys: string[])"
+    },
+    {
+      "name": "onSelect",
+      "description": "被选中时调用",
+      "callback": "function({ item, key, keyPath, selectedKeys, domEvent })"
+    }
+  ]
+}

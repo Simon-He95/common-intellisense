@@ -39,7 +39,7 @@
     },
     "targetOffset": {
       "value": "",
-      "description": "锚点滚动偏移量，默认与 offsetTop 相同，[例子](#components-anchor-demo-targetoffset)",
+      "description": "锚点滚动偏移量，默认与 offsetTop 相同",
       "default": "-",
       "type": "number"
     },
@@ -47,7 +47,45 @@
       "value": "",
       "description": "数据化配置选项内容，支持通过 children 嵌套",
       "default": "-",
-      "type": ""
+      "type": "{ key, href, title, target, children }[]",
+      "typeDetail": {
+        "key": {
+          "value": "",
+          "description": "唯一标志",
+          "default": "",
+          "type": "string | number"
+        },
+        "href": {
+          "value": "",
+          "description": "锚点链接",
+          "default": "",
+          "type": "string"
+        },
+        "target": {
+          "value": "",
+          "description": "该属性指定在何处显示链接的资源",
+          "default": "",
+          "type": "string"
+        },
+        "title": {
+          "value": "",
+          "description": "文字内容",
+          "default": "",
+          "type": "ReactNode"
+        },
+        "children": {
+          "value": "",
+          "description": "嵌套的 Anchor Link，`注意：水平方向该属性不支持`",
+          "default": "",
+          "type": "[AnchorItem]"
+        },
+        "replace": {
+          "value": "",
+          "description": "替换浏览器历史记录中的项目 href 而不是推送它",
+          "default": "false",
+          "type": "boolean"
+        }
+      }
     },
     "direction": {
       "value": "",
