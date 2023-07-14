@@ -19,7 +19,7 @@ export function propsReducer(map: string[]) {
 
         const detail = []
         if (value.default !== undefined && value.default !== '')
-          detail.push(`#### 💎 默认值:    ***\`${value.default.replace(/`/g, '')}\`***`)
+          detail.push(`#### 💎 默认值:    ***\`${value.default.toString().replace(/`/g, '')}\`***`)
 
         if (value.description)
           detail.push(`#### 🔦 说明:    ***\`${value.description}\`***`)
@@ -52,7 +52,7 @@ export function propsReducer(map: string[]) {
 
         if (value.type && value.type.includes('boolean') && value.default === 'false')
           return createCompletionItem({ content: key, documentation })
-        return createCompletionItem({ content: `${key}="${v}"`, documentation, snippet: `${key}="$\{1:${v}\}$2"`, type })
+        return createCompletionItem({ content: `${key}="${v}"`, documentation, snippet: `${key}="$\{1:${v}\}$2"`, type, preselect: true, sortText: '99' })
       },
       ))
     })

@@ -1,0 +1,229 @@
+{
+  "name": "ATableColumn",
+  "props": {
+    "align": {
+      "value": "",
+      "description": "设置列的对齐方式",
+      "default": "`left`",
+      "type": "`left` | `right` | `center`"
+    },
+    "colSpan": {
+      "value": "",
+      "description": "表头列合并,设置为 0 时，不渲染",
+      "default": "",
+      "type": "number"
+    },
+    "customCell": {
+      "value": "",
+      "description": "设置单元格属性",
+      "default": "-",
+      "type": "Function(record, rowIndex, column)"
+    },
+    "customFilterDropdown": {
+      "value": "",
+      "description": "启用 v-slot:customFilterDropdown，优先级低于 filterDropdown",
+      "default": "false",
+      "type": "boolean"
+    },
+    "customHeaderCell": {
+      "value": "",
+      "description": "设置头部单元格属性",
+      "default": "-",
+      "type": "Function(column)"
+    },
+    "customRender": {
+      "value": "",
+      "description": "生成复杂数据的渲染函数，参数分别为当前行的值，当前行数据，行索引",
+      "default": "-",
+      "type": "Function({text, record, index, column}) {}"
+    },
+    "dataIndex": {
+      "value": "",
+      "description": "列数据在数据项中对应的路径，支持通过数组查询嵌套路径",
+      "default": "-",
+      "type": "string | string\\[]"
+    },
+    "defaultFilteredValue": {
+      "value": "",
+      "description": "默认筛选值",
+      "default": "-",
+      "type": "string\\[]"
+    },
+    "filterResetToDefaultFilteredValue": {
+      "value": "",
+      "description": "点击重置按钮的时候，是否恢复默认筛选值",
+      "default": "false",
+      "type": "boolean"
+    },
+    "defaultSortOrder": {
+      "value": "",
+      "description": "默认排序顺序",
+      "default": "-",
+      "type": "`ascend` | `descend`"
+    },
+    "ellipsis": {
+      "value": "",
+      "description": "超过宽度将自动省略，暂不支持和排序筛选一起使用。<br />设置为 `true` 或 `{ showTitle?: boolean }` 时，表格布局将变成 `tableLayout=\"fixed\"`。",
+      "default": "false",
+      "type": "boolean | { showTitle?: boolean }"
+    },
+    "filterDropdown": {
+      "value": "",
+      "description": "可以自定义筛选菜单，此函数只负责渲染图层，需要自行编写各种交互",
+      "default": "-",
+      "type": "VNode | (props: FilterDropdownProps) => VNode"
+    },
+    "filterDropdownOpen": {
+      "value": "",
+      "description": "用于控制自定义筛选菜单是否可见",
+      "default": "false",
+      "type": "boolean"
+    },
+    "filtered": {
+      "value": "",
+      "description": "标识数据是否经过过滤，筛选图标会高亮",
+      "default": "false",
+      "type": "boolean"
+    },
+    "filteredValue": {
+      "value": "",
+      "description": "筛选的受控属性，外界可用此控制列的筛选状态，值为已筛选的 value 数组",
+      "default": "-",
+      "type": "string\\[]"
+    },
+    "filterIcon": {
+      "value": "",
+      "description": "自定义 filter 图标。",
+      "default": "false",
+      "type": "VNode | ({filtered: boolean, column: Column}) => vNode"
+    },
+    "filterMode": {
+      "value": "",
+      "description": "指定筛选菜单的用户界面",
+      "default": "'menu'",
+      "type": "'menu' | 'tree'"
+    },
+    "filterMultiple": {
+      "value": "",
+      "description": "是否多选",
+      "default": "true",
+      "type": "boolean"
+    },
+    "filters": {
+      "value": "",
+      "description": "表头的筛选菜单项",
+      "default": "-",
+      "type": "object\\[]"
+    },
+    "filterSearch": {
+      "value": "",
+      "description": "筛选菜单项是否可搜索",
+      "default": "false",
+      "type": "boolean | function(input, filter):boolean"
+    },
+    "fixed": {
+      "value": "",
+      "description": "列是否固定，可选 `true`(等效于 left) `'left'` `'right'`",
+      "default": "false",
+      "type": "boolean|string"
+    },
+    "key": {
+      "value": "",
+      "description": "Vue 需要的 key，如果已经设置了唯一的 `dataIndex`，可以忽略这个属性",
+      "default": "-",
+      "type": "string"
+    },
+    "maxWidth": {
+      "value": "",
+      "description": "拖动列最大宽度，会受到表格自动调整分配宽度影响",
+      "default": "-",
+      "type": "number"
+    },
+    "minWidth": {
+      "value": "",
+      "description": "拖动列最小宽度，会受到表格自动调整分配宽度影响",
+      "default": "50",
+      "type": "number"
+    },
+    "resizable": {
+      "value": "",
+      "description": "是否可拖动调整宽度，此时 width 必须是 number 类型",
+      "default": "false",
+      "type": "boolean"
+    },
+    "responsive": {
+      "value": "",
+      "description": "响应式 breakpoint 配置列表。未设置则始终可见。",
+      "default": "-",
+      "type": "xxxl | xxl | xl | lg | md | sm | xs"
+    },
+    "rowScope": {
+      "value": "",
+      "description": "设置列范围",
+      "default": "-",
+      "type": "`row` | `rowgroup`"
+    },
+    "showSorterTooltip": {
+      "value": "",
+      "description": "表头显示下一次排序的 tooltip 提示, 覆盖 table 中 `showSorterTooltip`",
+      "default": "true",
+      "type": "boolean | [Tooltip props]( | components | tooltip | #api)"
+    },
+    "sortDirections": {
+      "value": "",
+      "description": "支持的排序方式，取值为 `'ascend'` `'descend'`",
+      "default": "`['ascend', 'descend']`",
+      "type": "Array"
+    },
+    "sorter": {
+      "value": "",
+      "description": "排序函数，本地排序使用一个函数(参考 [Array.sort](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort) 的 compareFunction)，需要服务端排序可设为 true",
+      "default": "-",
+      "type": "Function|boolean"
+    },
+    "sortOrder": {
+      "value": "",
+      "description": "排序的受控属性，外界可用此控制列的排序，可设置为 `'ascend'` `'descend'` `null`",
+      "default": "-",
+      "type": "string"
+    },
+    "title": {
+      "value": "",
+      "description": "列头显示文字",
+      "default": "-",
+      "type": "string"
+    },
+    "width": {
+      "value": "",
+      "description": "列宽度",
+      "default": "-",
+      "type": "string|number"
+    }
+  },
+  "methods": [],
+  "events": [
+    {
+      "name": "onFilter",
+      "description": "本地模式下，确定筛选的运行函数, 使用 template 或 jsx 时作为`filter`事件使用",
+      "params": "Function"
+    },
+    {
+      "name": "onFilterDropdownOpenChange",
+      "description": "自定义筛选菜单可见变化时调用，使用 template 或 jsx 时作为`filterDropdownOpenChange`事件使用",
+      "params": "function(open) {}"
+    }
+  ],
+  "typeDetail": {
+    "FilterDropdownProps": [
+      { "name": "prefixCls", "description": "", "type": "string" },
+      { "name": "setSelectedKeys", "description": "", "type": "(selectedKeys: Key[]) => void" },
+      { "name": "selectedKeys", "description": "", "type": "Key[]" },
+      { "name": "confirm", "description": "", "type": "(param?: FilterConfirmProps) => void", "optional": "true" },
+      { "name": "clearFilters", "description": "", "type": "() => void", "optional": "true" },
+      { "name": "filters", "description": "", "type": "ColumnFilterItem", "optional": "true" },
+      { "name": "visible", "description": "", "type": "boolean" },
+      { "name": "column", "description": "", "type": "ColumnType" }
+    ]
+  },
+  "link": "https://antdv.com/components/table-cn"
+}

@@ -1,0 +1,102 @@
+{
+  "name": "ATypographyParagraph",
+  "props": {
+    "code": {
+      "value": "",
+      "description": "添加代码样式",
+      "default": "false",
+      "type": "boolean"
+    },
+    "content(v-model)": {
+      "value": "",
+      "description": "当使用 ellipsis 或 editable 时，使用 content 代替 children",
+      "default": "-",
+      "type": "string"
+    },
+    "copyable": {
+      "value": "",
+      "description": "是否可拷贝，为对象时可进行各种自定义",
+      "default": "false",
+      "type": "boolean | [copyable](#copyable)"
+    },
+    "delete": {
+      "value": "",
+      "description": "添加删除线样式",
+      "default": "false",
+      "type": "boolean"
+    },
+    "disabled": {
+      "value": "",
+      "description": "禁用文本",
+      "default": "false",
+      "type": "boolean"
+    },
+    "editable": {
+      "value": "",
+      "description": "是否可编辑，为对象时可对编辑进行控制",
+      "default": "false",
+      "type": "boolean | [editable](#editable)"
+    },
+    "ellipsis": {
+      "value": "",
+      "description": "自动溢出省略，为对象时可设置省略行数、是否可展开、添加后缀等",
+      "default": "false",
+      "type": "boolean | [ellipsis](#ellipsis)"
+    },
+    "mark": {
+      "value": "",
+      "description": "添加标记样式",
+      "default": "false",
+      "type": "boolean"
+    },
+    "strong": {
+      "value": "",
+      "description": "是否加粗",
+      "default": "false",
+      "type": "boolean"
+    },
+    "type": {
+      "value": "",
+      "description": "文本类型",
+      "default": "-",
+      "type": "`secondary` | `success` | `warning` | `danger`"
+    },
+    "underline": {
+      "value": "",
+      "description": "添加下划线样式",
+      "default": "false",
+      "type": "boolean"
+    }
+  },
+  "methods": [],
+  "events": [],
+  "typeDetail": {
+    "copyable": [
+      { "name": "text", "description": "拷贝到剪切板里的文本", "type": "string" },
+      { "name": "tooltip", "description": "是否展示提示文本", "type": "boolean", "default": "true" },
+      { "name": "onCopy", "description": "拷贝成功的回调函数", "type": "function" }
+    ],
+    "editable": [
+      { "name": "autoSize", "description": "自动 resize 文本域", "type": "boolean | { minRows: number, maxRows: number }" },
+      { "name": "editing", "description": "控制是否是编辑中状态", "type": "boolean", "default": "false" },
+      { "name": "maxlength", "description": "编辑中文本域最大长度", "type": "number" },
+      { "name": "tooltip", "description": "是否展示提示文本", "type": "boolean", "default": "true" },
+      { "name": "triggerType", "description": "Edit mode trigger - icon, text or both (not specifying icon as trigger hides it)", "type": "Array<icon, text>", "default": "['icon']" },
+      { "name": "onCancel", "description": "按 ESC 退出编辑状态时触发", "type": "function" },
+      { "name": "onChange", "description": "文本域编辑时触发", "type": "function(event)" },
+      { "name": "onEnd", "description": "按 ENTER 结束编辑状态时触发", "type": "function" },
+      { "name": "onStart", "description": "进入编辑中状态时触发", "type": "function" }
+    ],
+    "ellipsis": [
+      { "name": "expandable", "description": "是否可展开", "type": "boolean" },
+      { "name": "rows", "description": "最多显示的行数", "type": "number" },
+      { "name": "suffix", "description": "自定义省略内容后缀", "type": "string" },
+      { "name": "symbol", "description": "自定义展开描述文案", "type": "string", "default": "展开" },
+      { "name": "tooltip", "description": "省略时，展示提示信息", "type": "boolean | string" },
+      { "name": "onEllipsis", "description": "触发省略时的回调", "type": "function(ellipsis)" },
+      { "name": "onExpand", "description": "点击展开时的回调", "type": "function(event)" }
+    ]
+  },
+  "link": "https://antdv.com/components/typography-cn"
+
+}

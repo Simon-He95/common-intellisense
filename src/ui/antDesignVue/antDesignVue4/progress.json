@@ -1,0 +1,98 @@
+{
+  "name": "AProgress",
+  "props": {
+    "format": {
+      "value": "",
+      "description": "内容的模板函数",
+      "default": "(percent) => percent + `%`",
+      "type": "function(percent, successPercent)"
+    },
+    "percent": {
+      "value": "",
+      "description": "百分比",
+      "default": "0",
+      "type": "number"
+    },
+    "showInfo": {
+      "value": "",
+      "description": "是否显示进度数值或状态图标",
+      "default": "true",
+      "type": "boolean"
+    },
+    "status": {
+      "value": "",
+      "description": "状态，可选：`success` `exception` `normal` `active`(仅限 line)",
+      "default": "-",
+      "type": "string"
+    },
+    "strokeColor": {
+      "value": "",
+      "description": "圆形进度条线的色彩，传入 object 时为渐变",
+      "default": "-",
+      "type": "string | object"
+    },
+    "strokeLinecap": {
+      "value": "",
+      "description": "进度条的样式",
+      "default": "`round`",
+      "type": "`round` | `butt` | `square`，区别详见 [stroke-linecap](https: |  | developer.mozilla.org | docs | Web | SVG | Attribute | stroke-linecap)"
+    },
+    "success": {
+      "value": "",
+      "description": "成功进度条相关配置",
+      "default": "-",
+      "type": "{ percent: number, strokeColor: string }"
+    },
+    "title": {
+      "value": "",
+      "description": "html 标签 title",
+      "default": "-",
+      "type": "string"
+    },
+    "trailColor": {
+      "value": "",
+      "description": "未完成的分段的颜色",
+      "default": "-",
+      "type": "string"
+    },
+    "type": {
+      "value": "",
+      "description": "类型，可选 `line` `circle` `dashboard`",
+      "default": "`line`",
+      "type": "string"
+    },
+    "size": {
+      "value": "",
+      "description": "进度条的尺寸",
+      "default": "\"default\"",
+      "type": "number | \\[number, number] | \"small\" | \"default\""
+    },
+    "steps": {
+      "value": "",
+      "description": "进度条总共步数",
+      "default": "-",
+      "type": "number"
+    },
+    "strokeWidth": {
+      "value": "",
+      "description": "仪表盘进度条线的宽度，单位是进度条画布宽度的百分比",
+      "default": "6",
+      "type": "number"
+    },
+    "gapDegree": {
+      "value": "",
+      "description": "仪表盘进度条缺口角度，可取值 0 ~ 295",
+      "default": "75",
+      "type": "number"
+    },
+    "gapPosition": {
+      "value": "",
+      "description": "仪表盘进度条缺口位置",
+      "default": "`bottom`",
+      "type": "`top` | `bottom` | `left` | `right`"
+    }
+  },
+  "methods": [],
+  "events": [],
+  "link": "https://antdv.com/components/progress"
+}

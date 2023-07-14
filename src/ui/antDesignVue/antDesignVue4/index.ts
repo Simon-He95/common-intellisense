@@ -112,6 +112,7 @@ export function antDesignVue4() {
 export function antDesignVue4Components() {
   const map = [
     ['a-row', '栅格布局'],
+    ['a-qrcode', '二维码'],
     ['a-col', '栅格布局'],
     ['a-layout-content', '内容部分，自带默认样式，其下可嵌套任何元素，只能放在 Layout 中'],
     ['a-layout-header', '顶部布局，自带默认样式，其下可嵌套任何元素，只能放在 Layout 中。'],
@@ -120,6 +121,7 @@ export function antDesignVue4Components() {
     ['a-layout-footer', '底部布局，自带默认样式，其下可嵌套任何元素，只能放在 Layout 中。'],
     ['a-button', '按钮'],
     ['a-space', '间距 设置组件之间的间距'],
+    ['a-space-compact', '紧凑布局组合 使用 Space.Compact 让表单组件之间紧凑连接且合并边框'],
     ['a-anchor', '锚点'],
     ['a-radio', '单选框'],
     ['a-radio-group', '单选框组'],
@@ -134,6 +136,12 @@ export function antDesignVue4Components() {
     ['a-input-number', '计数器'],
     ['a-select', '选择器'],
     ['a-option', '基础多选'],
+    ['a-typography', '排版'],
+    ['a-segmented', '分段控制器 用于展示多个选项并允许用户选择其中单个选项'],
+    ['a-typography-paragraph', '排版段落'],
+    ['a-typography-text', '排版文本'],
+    ['a-typography-title', '排版标题'],
+    ['a-typography-link', '排版超链接'],
     ['a-option-group', '备选项进行分组展示'],
     ['a-cascader', '级联选择器'],
     ['a-switch', '开关'],

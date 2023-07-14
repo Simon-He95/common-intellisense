@@ -1,0 +1,175 @@
+{
+  "name": "AModal",
+  "props": {
+    "afterClose": {
+      "value": "",
+      "description": "Modal 完全关闭后的回调",
+      "default": "无",
+      "type": "function"
+    },
+    "bodyStyle": {
+      "value": "",
+      "description": "Modal body 样式",
+      "default": "{}",
+      "type": "object"
+    },
+    "cancelButtonProps": {
+      "value": "",
+      "description": "cancel 按钮 props",
+      "default": "-",
+      "type": "[ButtonProps]( | components | button | #api)"
+    },
+    "cancelText": {
+      "value": "",
+      "description": "取消按钮文字",
+      "default": "取消",
+      "type": "string| slot"
+    },
+    "centered": {
+      "value": "",
+      "description": "垂直居中展示 Modal",
+      "default": "`false`",
+      "type": "boolean"
+    },
+    "closable": {
+      "value": "",
+      "description": "是否显示右上角的关闭按钮",
+      "default": "true",
+      "type": "boolean"
+    },
+    "closeIcon": {
+      "value": "",
+      "description": "自定义关闭图标",
+      "default": "-",
+      "type": "VNode | slot"
+    },
+    "confirmLoading": {
+      "value": "",
+      "description": "确定按钮 loading",
+      "default": "无",
+      "type": "boolean"
+    },
+    "destroyOnClose": {
+      "value": "",
+      "description": "关闭时销毁 Modal 里的子元素",
+      "default": "false",
+      "type": "boolean"
+    },
+    "dialogClass": {
+      "value": "",
+      "description": "可用于设置浮层的类名",
+      "default": "-",
+      "type": "string"
+    },
+    "dialogStyle": {
+      "value": "",
+      "description": "可用于设置浮层的样式，调整浮层位置等",
+      "default": "-",
+      "type": "object"
+    },
+    "footer": {
+      "value": "",
+      "description": "底部内容，当不需要默认底部按钮时，可以设为 `:footer=\"null\"`",
+      "default": "确定取消按钮",
+      "type": "string|slot"
+    },
+    "forceRender": {
+      "value": "",
+      "description": "强制渲染 Modal",
+      "default": "false",
+      "type": "boolean"
+    },
+    "getContainer": {
+      "value": "",
+      "description": "指定 Modal 挂载的 HTML 节点",
+      "default": "() => document.body",
+      "type": "(instance): HTMLElement"
+    },
+    "keyboard": {
+      "value": "",
+      "description": "是否支持键盘 esc 关闭",
+      "default": "true",
+      "type": "boolean"
+    },
+    "mask": {
+      "value": "",
+      "description": "是否展示遮罩",
+      "default": "true",
+      "type": "boolean"
+    },
+    "maskClosable": {
+      "value": "",
+      "description": "点击蒙层是否允许关闭",
+      "default": "true",
+      "type": "boolean"
+    },
+    "maskStyle": {
+      "value": "",
+      "description": "遮罩样式",
+      "default": "{}",
+      "type": "object"
+    },
+    "okButtonProps": {
+      "value": "",
+      "description": "ok 按钮 props",
+      "default": "-",
+      "type": "[ButtonProps]( | components | button | #api)"
+    },
+    "okText": {
+      "value": "",
+      "description": "确认按钮文字",
+      "default": "确定",
+      "type": "string|slot"
+    },
+    "okType": {
+      "value": "",
+      "description": "确认按钮类型",
+      "default": "primary",
+      "type": "string"
+    },
+    "title": {
+      "value": "",
+      "description": "标题",
+      "default": "无",
+      "type": "string|slot"
+    },
+    "open(v-model)": {
+      "value": "",
+      "description": "对话框是否可见",
+      "default": "无",
+      "type": "boolean"
+    },
+    "width": {
+      "value": "",
+      "description": "宽度",
+      "default": "520",
+      "type": "string|number"
+    },
+    "wrapClassName": {
+      "value": "",
+      "description": "对话框外层容器的类名",
+      "default": "-",
+      "type": "string"
+    },
+    "zIndex": {
+      "value": "",
+      "description": "设置 Modal 的 `z-index`",
+      "default": "1000",
+      "type": "number"
+    }
+  },
+  "methods": [],
+  "events": [
+    {
+      "name": "cancel",
+      "description": "点击遮罩层或右上角叉或取消按钮的回调",
+      "params": "function(e)"
+    },
+    {
+      "name": "ok",
+      "description": "点击确定回调",
+      "params": "function(e)"
+    }
+  ],
+  "link": "https://antdv.com/components/modal"
+}

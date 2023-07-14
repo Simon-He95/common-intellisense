@@ -1,0 +1,181 @@
+{
+  "name": "ATimePicker",
+  "props": {
+    "allowClear": {
+      "value": "",
+      "description": "是否展示清除按钮",
+      "default": "true",
+      "type": "boolean"
+    },
+    "autofocus": {
+      "value": "",
+      "description": "自动获取焦点",
+      "default": "false",
+      "type": "boolean"
+    },
+    "bordered": {
+      "value": "",
+      "description": "是否有边框",
+      "default": "true",
+      "type": "boolean"
+    },
+    "clearIcon": {
+      "value": "",
+      "description": "自定义的清除图标",
+      "default": "-",
+      "type": "v-slot:clearIcon"
+    },
+    "clearText": {
+      "value": "",
+      "description": "清除按钮的提示文案",
+      "default": "clear",
+      "type": "string"
+    },
+    "disabled": {
+      "value": "",
+      "description": "禁用全部操作",
+      "default": "false",
+      "type": "boolean"
+    },
+    "disabledTime": {
+      "value": "",
+      "description": "不可选择的时间",
+      "default": "-",
+      "type": "[DisabledTime](#disabledtime)"
+    },
+    "format": {
+      "value": "",
+      "description": "展示的时间格式",
+      "default": "`HH:mm:ss`",
+      "type": "string"
+    },
+    "getPopupContainer": {
+      "value": "",
+      "description": "定义浮层的容器，默认为 body 上新建 div",
+      "default": "-",
+      "type": "function(trigger)"
+    },
+    "hideDisabledOptions": {
+      "value": "",
+      "description": "隐藏禁止选择的选项",
+      "default": "false",
+      "type": "boolean"
+    },
+    "hourStep": {
+      "value": "",
+      "description": "小时选项间隔",
+      "default": "1",
+      "type": "number"
+    },
+    "inputReadOnly": {
+      "value": "",
+      "description": "设置输入框为只读（避免在移动设备上打开虚拟键盘）",
+      "default": "false",
+      "type": "boolean"
+    },
+    "minuteStep": {
+      "value": "",
+      "description": "分钟选项间隔",
+      "default": "1",
+      "type": "number"
+    },
+    "open(v-model)": {
+      "value": "",
+      "description": "面板是否打开",
+      "default": "false",
+      "type": "boolean"
+    },
+    "placeholder": {
+      "value": "",
+      "description": "没有值的时候显示的内容",
+      "default": "`请选择时间`",
+      "type": "string | \\[string, string]"
+    },
+    "placement": {
+      "value": "",
+      "description": "选择框弹出的位置",
+      "default": "bottomLeft",
+      "type": "`bottomLeft` `bottomRight` `topLeft` `topRight`"
+    },
+    "popupClassName": {
+      "value": "",
+      "description": "弹出层类名",
+      "default": "-",
+      "type": "string"
+    },
+    "popupStyle": {
+      "value": "",
+      "description": "弹出层样式对象",
+      "default": "-",
+      "type": "object"
+    },
+    "renderExtraFooter": {
+      "value": "",
+      "description": "选择框底部显示自定义的内容",
+      "default": "-",
+      "type": "v-slot:renderExtraFooter"
+    },
+    "secondStep": {
+      "value": "",
+      "description": "秒选项间隔",
+      "default": "1",
+      "type": "number"
+    },
+    "showNow": {
+      "value": "",
+      "description": "面板是否显示“此刻”按钮",
+      "default": "false",
+      "type": "boolean"
+    },
+    "status": {
+      "value": "",
+      "description": "设置校验状态",
+      "default": "-",
+      "type": "'error' | 'warning'"
+    },
+    "suffixIcon": {
+      "value": "",
+      "description": "自定义的选择框后缀图标",
+      "default": "-",
+      "type": "v-slot:suffixIcon"
+    },
+    "use12Hours": {
+      "value": "",
+      "description": "使用 12 小时制，为 true 时 `format` 默认为 `h:mm:ss a`",
+      "default": "false",
+      "type": "boolean"
+    },
+    "value(v-model)": {
+      "value": "",
+      "description": "当前时间",
+      "default": "-",
+      "type": "[dayjs](https: |  | day.js.org | )"
+    },
+    "valueFormat": {
+      "value": "",
+      "description": "可选，绑定值的格式，对 value、defaultValue 起作用。不指定则绑定值为 dayjs 对象",
+      "default": "-",
+      "type": "string，[具体格式](https: |  | day.js.org | docs | zh-CN | display | format)"
+    }
+  },
+  "methods": [],
+  "events": [
+    {
+      "name": "change",
+      "description": "时间发生变化的回调",
+      "params": "function(time: dayjs | string, timeString: string): void"
+    },
+    {
+      "name": "openChange",
+      "description": "面板打开/关闭时的回调",
+      "params": "(open: boolean): void"
+    }
+  ],
+  "typeDetail": {
+    "TimeRangePicker": [
+      { "name": "order", "description": "始末时间是否自动排序", "type": "boolean", "default": "true" },
+      { "name": "disabledTime", "description": "不可选择的时间", "type": "(now: Dayjs, type = 'start' | 'end') => { disabledHours?: () => number[]; disabledMinutes?: (selectedHour: number) => number[]; disabledSeconds?: (selectedHour: number, selectedMinute: number) => number[]; }" }
+    ]
+  },
+  "link": "https://antdv.com/components/time-picker-cn"
+}

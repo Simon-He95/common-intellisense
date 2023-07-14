@@ -1,0 +1,75 @@
+{
+  "name": "AWatermark",
+  "props": {
+    "width": {
+      "value": "",
+      "description": "水印的宽度，`content` 的默认值为自身的宽度",
+      "default": "120",
+      "type": "number"
+    },
+    "height": {
+      "value": "",
+      "description": "水印的高度，`content` 的默认值为自身的高度",
+      "default": "64",
+      "type": "number"
+    },
+    "rotate": {
+      "value": "",
+      "description": "水印绘制时，旋转的角度，单位 `°`",
+      "default": "-22",
+      "type": "number"
+    },
+    "zIndex": {
+      "value": "",
+      "description": "追加的水印元素的 z-index",
+      "default": "9",
+      "type": "number"
+    },
+    "image": {
+      "value": "",
+      "description": "图片源，建议导出 2 倍或 3 倍图，优先级高",
+      "default": "-",
+      "type": "string"
+    },
+    "content": {
+      "value": "",
+      "description": "水印文字内容",
+      "default": "-",
+      "type": "string | string[]"
+    },
+    "font": {
+      "value": "",
+      "description": "文字样式",
+      "default": "[Font](#font)",
+      "type": "[Font](#font)"
+    },
+    "gap": {
+      "value": "",
+      "description": "水印之间的间距",
+      "default": "\\[100, 100\\]",
+      "type": "\\[number, number\\]"
+    },
+    "offset": {
+      "value": [
+        "\\[gap\\[0\\]",
+        "2, gap\\[1\\]",
+        "2\\]"
+      ],
+      "description": "水印距离容器左上角的偏移量，默认为 `gap/2`",
+      "default": "\\[gap\\[0\\] | 2, gap\\[1\\] | 2\\]",
+      "type": "\\[number, number\\]"
+    }
+  },
+  "methods": [],
+  "events": [],
+  "typeDetail": {
+    "Font": [
+      { "name": "color", "description": "字体颜色", "type": "string" },
+      { "name": "fontSize", "description": "字体大小", "type": "number" },
+      { "name": "fontWeight", "description": "字体粗细", "type": "normal | light | weight | number | normal" },
+      { "name": "fontFamily", "description": "字体类型", "type": "string | sans-serif" },
+      { "name": "fontStyle", "description": "字体样式", "type": "none | normal | italic | oblique", "default": "normal" }
+    ]
+  },
+  "link": "https://antdv.com/components/watermark-cn"
+}

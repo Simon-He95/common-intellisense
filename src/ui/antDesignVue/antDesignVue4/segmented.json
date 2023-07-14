@@ -1,0 +1,68 @@
+{
+  "name": "ASegmented",
+  "props": {
+    "block": {
+      "value": "",
+      "description": "将宽度调整为父元素宽度的选项",
+      "default": "无",
+      "type": "boolean"
+    },
+    "disabled": {
+      "value": "",
+      "description": "是否禁用",
+      "default": "false",
+      "type": "boolean"
+    },
+    "options": {
+      "value": "",
+      "description": "数据化配置选项内容",
+      "default": "[]",
+      "type": "string[] | number[] | SegmentedOption[]"
+    },
+    "size": {
+      "value": "",
+      "description": "控件尺寸",
+      "default": "-",
+      "type": "`large` | `middle` | `small`"
+    },
+    "value": {
+      "value": "",
+      "description": "当前选中的值",
+      "default": "",
+      "type": "string | number"
+    },
+    "label": {
+      "value": "",
+      "description": "使用插槽自定义 label",
+      "default": "",
+      "type": "v-slot:label=\"SegmentedBaseOption\""
+    }
+  },
+  "methods": [],
+  "events": [
+    {
+      "name": "change",
+      "description": "选项变化时的回调函数",
+      "params": "function(value: string | number)"
+    }
+  ],
+  "typeDetail": {
+    "SegmentedBaseOption": [
+      { "name": "value", "description": "", "type": "string | number" },
+      { "name": "disabled", "description": "", "type": "boolean", "optional": "true" },
+      { "name": "payload", "description": "payload more data", "type": "any", "optional": "true" },
+      { "name": "title", "description": " html `title` property for label", "type": "string", "optional": "true" },
+      { "name": "className", "description": "", "type": "string", "optional": "true" }
+    ],
+    "SegmentedOption": [
+      { "name": "label", "description": "", "type": "VueNode | ((option: SegmentedBaseOption) => VueNode)", "optional": "true" },
+      { "name": "value", "description": "", "type": "string | number" },
+      { "name": "disabled", "description": "", "type": "boolean", "optional": "true" },
+      { "name": "payload", "description": "payload more data", "type": "any", "optional": "true" },
+      { "name": "title", "description": " html `title` property for label", "type": "string", "optional": "true" },
+      { "name": "className", "description": "", "type": "string", "optional": "true" }
+
+    ]
+  },
+  "link": "https://antdv.com/components/segmented-cn"
+}

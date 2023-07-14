@@ -1,0 +1,123 @@
+{
+  "name": "ASlider",
+  "props": {
+    "autofocus": {
+      "value": "",
+      "description": "自动获取焦点",
+      "default": "false",
+      "type": "boolean"
+    },
+    "disabled": {
+      "value": "",
+      "description": "值为 `true` 时，滑块为禁用状态",
+      "default": "false",
+      "type": "boolean"
+    },
+    "dots": {
+      "value": "",
+      "description": "是否只能拖拽到刻度上",
+      "default": "false",
+      "type": "boolean"
+    },
+    "included": {
+      "value": "",
+      "description": "`marks` 不为空对象时有效，值为 true 时表示值为包含关系，false 表示并列",
+      "default": "true",
+      "type": "boolean"
+    },
+    "mark": {
+      "value": "",
+      "description": "自定义刻度标记",
+      "default": "{ point: number, label: any }",
+      "type": "v-slot:mark"
+    },
+    "marks": {
+      "value": [
+        "{ number: string|VNode } or { number: { style: object, label: string|VNode } } or { number: () => VNode }"
+      ],
+      "description": "刻度标记，key 的类型必须为 `number` 且取值在闭区间 \\[min, max] 内，每个标签可以单独设置样式",
+      "default": "{ number: string|VNode } or { number: { style: object, label: string|VNode } } or { number: () => VNode }",
+      "type": "object"
+    },
+    "max": {
+      "value": "",
+      "description": "最大值",
+      "default": "100",
+      "type": "number"
+    },
+    "min": {
+      "value": "",
+      "description": "最小值",
+      "default": "0",
+      "type": "number"
+    },
+    "range": {
+      "value": "",
+      "description": "双滑块模式",
+      "default": "false",
+      "type": "boolean"
+    },
+    "reverse": {
+      "value": "",
+      "description": "反向坐标轴",
+      "default": "false",
+      "type": "boolean"
+    },
+    "step": {
+      "value": "",
+      "description": "步长，取值必须大于 0，并且可被 (max - min) 整除。当 `marks` 不为空对象时，可以设置 `step` 为 `null`，此时 Slider 的可选值仅有 marks 标出来的部分。",
+      "default": "1",
+      "type": "number|null"
+    },
+    "value(v-model)": {
+      "value": "",
+      "description": "设置当前取值。当 `range` 为 `false` 时，使用 `number`，否则用 `[number, number]`",
+      "default": "",
+      "type": "number|number\\[]"
+    },
+    "vertical": {
+      "value": "",
+      "description": "值为 `true` 时，Slider 为垂直方向",
+      "default": "false",
+      "type": "Boolean"
+    },
+    "tipFormatter": {
+      "value": "",
+      "description": "Slider 会把当前值传给 `tipFormatter`，并在 Tooltip 中显示 `tipFormatter` 的返回值，若为 null，则隐藏 Tooltip。",
+      "default": "IDENTITY",
+      "type": "Function|null"
+    },
+    "tooltipPlacement": {
+      "value": "",
+      "description": "设置 Tooltip 展示位置。参考 [`Tooltip`](/components/tooltip/)。",
+      "default": "",
+      "type": "string"
+    },
+    "tooltipOpen": {
+      "value": "",
+      "description": "值为`true`时，Tooltip 将会始终显示；否则始终不显示，哪怕在拖拽及移入时。",
+      "default": "",
+      "type": "Boolean"
+    },
+    "getTooltipPopupContainer": {
+      "value": "",
+      "description": "Tooltip 渲染父节点，默认渲染到 body 上。",
+      "default": "() => document.body",
+      "type": "Function"
+    }
+  },
+  "methods": [],
+  "events": [
+    {
+      "name": "change",
+      "description": "当 Slider 的值发生改变时，会触发 change 事件，并把改变后的值作为参数传入。",
+      "params": "Function(value)"
+    },
+    {
+      "name": "afterChange",
+      "description": "与 `mouseup` 触发时机一致，把当前值作为参数传入。",
+      "params": "Function(value)"
+    }
+  ],
+  "link": "https://antdv.com/components/slider-cn"
+}

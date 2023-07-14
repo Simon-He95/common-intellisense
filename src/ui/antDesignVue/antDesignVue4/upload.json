@@ -1,0 +1,206 @@
+{
+  "name": "AUpload",
+  "props": {
+    "accept": {
+      "value": "",
+      "description": "接受上传的文件类型, 详见 [input accept Attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#accept)",
+      "default": "无",
+      "type": "string"
+    },
+    "action": {
+      "value": "",
+      "description": "上传的地址",
+      "default": "无",
+      "type": "string|(file) => `Promise`"
+    },
+    "beforeUpload": {
+      "value": "",
+      "description": "上传文件之前的钩子，参数为上传的文件，若返回 `false` 则停止上传。支持返回一个 Promise 对象，Promise 对象 reject 时则停止上传，resolve 时开始上传（ resolve 传入 `File` 或 `Blob` 对象则上传 resolve 传入对象）。",
+      "default": "无",
+      "type": "(file, fileList) => `boolean` | `Promise`"
+    },
+    "customRequest": {
+      "value": "",
+      "description": "通过覆盖默认的上传行为，可以自定义自己的上传实现",
+      "default": "无",
+      "type": "function"
+    },
+    "data": {
+      "value": "",
+      "description": "上传所需参数或返回上传参数的方法",
+      "default": "无",
+      "type": "object|(file) => object"
+    },
+    "directory": {
+      "value": "",
+      "description": "支持上传文件夹（[caniuse](https://caniuse.com/#feat=input-file-directory)）",
+      "default": "false",
+      "type": "boolean"
+    },
+    "disabled": {
+      "value": "",
+      "description": "是否禁用",
+      "default": "false",
+      "type": "boolean"
+    },
+    "downloadIcon": {
+      "value": "",
+      "description": "自定义下载 icon",
+      "default": "-",
+      "type": "v-slot:iconRender=\"{file: UploadFile}\""
+    },
+    "fileList": {
+      "value": "",
+      "description": "已经上传的文件列表（受控）",
+      "default": "无",
+      "type": "object\\[]"
+    },
+    "headers": {
+      "value": "",
+      "description": "设置上传的请求头部，IE10 以上有效",
+      "default": "无",
+      "type": "object"
+    },
+    "iconRender": {
+      "value": "",
+      "description": "自定义显示 icon",
+      "default": "-",
+      "type": "v-slot:iconRender=\"{file: UploadFile, listType?: UploadListType}\""
+    },
+    "isImageUrl": {
+      "value": "",
+      "description": "自定义缩略图是否使用 <img /> 标签进行显示",
+      "default": "-",
+      "type": "(file: UploadFile) => boolean"
+    },
+    "itemRender": {
+      "value": "",
+      "description": "自定义上传列表项",
+      "default": "-",
+      "type": "v-slot:itemRender=\"{originNode: VNode, file: UploadFile, fileList: object\\[], actions: { download: function, preview: function, remove: function }\""
+    },
+    "listType": {
+      "value": "",
+      "description": "上传列表的内建样式，支持三种基本样式 `text`, `picture` 和 `picture-card`",
+      "default": "`text`",
+      "type": "string"
+    },
+    "maxCount": {
+      "value": "",
+      "description": "限制上传数量。当为 1 时，始终用最新上传的文件代替当前文件",
+      "default": "-",
+      "type": "number"
+    },
+    "method": {
+      "value": "",
+      "description": "上传请求的 http method",
+      "default": "`post`",
+      "type": "string"
+    },
+    "multiple": {
+      "value": "",
+      "description": "是否支持多选文件，`ie10+` 支持。开启后按住 ctrl 可选择多个文件。",
+      "default": "false",
+      "type": "boolean"
+    },
+    "name": {
+      "value": "",
+      "description": "发到后台的文件参数名",
+      "default": "`file`",
+      "type": "string"
+    },
+    "openFileDialogOnClick": {
+      "value": "",
+      "description": "点击打开文件对话框",
+      "default": "true",
+      "type": "boolean"
+    },
+    "previewFile": {
+      "value": "",
+      "description": "自定义文件预览逻辑",
+      "default": "无",
+      "type": "(file: File | Blob) => Promise<dataURL: string>"
+    },
+    "previewIcon": {
+      "value": "",
+      "description": "自定义预览 icon",
+      "default": "-",
+      "type": "v-slot:iconRender=\"{file: UploadFile}\""
+    },
+    "progress": {
+      "value": "",
+      "description": "自定义进度条样式",
+      "default": "{ strokeWidth: 2, showInfo: false }",
+      "type": "[ProgressProps]( | components | progress | #api)（仅支持 `type=\"line\"`）"
+    },
+    "removeIcon": {
+      "value": "",
+      "description": "自定义删除 icon",
+      "default": "-",
+      "type": "v-slot:iconRender=\"{file: UploadFile}\""
+    },
+    "showUploadList": {
+      "value": "",
+      "description": "是否展示 uploadList, 可设为一个对象，用于单独设定 showPreviewIcon, showRemoveIcon 和 showDownloadIcon",
+      "default": "true",
+      "type": "boolean | { showPreviewIcon?: boolean, showRemoveIcon?: boolean, showDownloadIcon?: boolean }"
+    },
+    "supportServerRender": {
+      "value": "",
+      "description": "服务端渲染时需要打开这个",
+      "default": "false",
+      "type": "boolean"
+    },
+    "withCredentials": {
+      "value": "",
+      "description": "上传请求时是否携带 cookie",
+      "default": "false",
+      "type": "boolean"
+    }
+  },
+  "methods": [],
+  "events": [
+    {
+      "name": "change",
+      "description": "上传文件改变时的状态，详见 [change](#change)",
+      "params": "function"
+    },
+    {
+      "name": "download",
+      "description": "点击下载文件时的回调，如果没有指定，则默认跳转到文件 url 对应的标签页。",
+      "params": "function(file): void"
+    },
+    {
+      "name": "drop",
+      "description": "当文件被拖入上传区域时执行的回调功能",
+      "params": "(event: DragEvent) => void"
+    },
+    {
+      "name": "preview",
+      "description": "点击文件链接或预览图标时的回调",
+      "params": "function(file)"
+    },
+    {
+      "name": "reject",
+      "description": "拖拽文件不符合 accept 类型时的回调",
+      "params": "function(fileList)"
+    },
+    {
+      "name": "remove",
+      "description": "点击移除文件时的回调，返回值为 false 时不移除。支持返回一个 Promise 对象，Promise 对象 resolve(false) 或 reject 时不移除",
+      "params": "function(file): boolean | Promise"
+    }
+  ],
+  "typeDetail": {
+    "UploadFile": [
+      { "name": "crossOrigin", "description": "CORS 属性设置", "type": "anonymous | se-credentials" },
+      { "name": "name", "description": "文件名", "type": "string" },
+      { "name": "percent", "description": "上传进度", "type": "number" },
+      { "name": "status", "description": "上传状态，不同状态展示颜色也会有所不同", "type": "error | success | done | uploading | removed" },
+      { "name": "thumbUrl", "description": "缩略图地址", "type": "string" },
+      { "name": "uid", "description": "唯一标识符，不设置时会自动生成", "type": "string" },
+      { "name": "url", "description": "下载地址", "type": "string" }
+    ]
+  },
+  "link": "https://antdv.com/components/upload-cn"
+}

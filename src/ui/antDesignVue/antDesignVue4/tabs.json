@@ -1,0 +1,89 @@
+{
+  "name": "ATabs",
+  "props": {
+    "activeKey(v-model)": {
+      "value": "",
+      "description": "当前激活 tab 面板的 key",
+      "default": "无",
+      "type": "string"
+    },
+    "animated": {
+      "value": "",
+      "description": "是否使用动画切换 Tabs，在 tabPosition=`\"top\"` | `\"bottom\"` 时有效",
+      "default": "true, 当 type=\"card\" 时为 false",
+      "type": "boolean | {inkBar:boolean, tabPane:boolean}"
+    },
+    "centered": {
+      "value": "",
+      "description": "标签居中展示",
+      "default": "false",
+      "type": "boolean"
+    },
+    "destroyInactiveTabPane": {
+      "value": "",
+      "description": "被隐藏时是否销毁 DOM 结构",
+      "default": "false",
+      "type": "boolean"
+    },
+    "hideAdd": {
+      "value": "",
+      "description": "是否隐藏加号图标，在 `type=\"editable-card\"` 时有效",
+      "default": "false",
+      "type": "boolean"
+    },
+    "size": {
+      "value": "",
+      "description": "大小，提供 `large` `middle` 和 `small` 三种大小",
+      "default": "`middle`",
+      "type": "string"
+    },
+    "tabBarGutter": {
+      "value": "",
+      "description": "tabs 之间的间隙",
+      "default": "无",
+      "type": "number"
+    },
+    "tabBarStyle": {
+      "value": "",
+      "description": "tab bar 的样式对象",
+      "default": "-",
+      "type": "CSSProperties"
+    },
+    "tabPosition": {
+      "value": "",
+      "description": "页签位置，可选值有 `top` `right` `bottom` `left`",
+      "default": "`top`",
+      "type": "string"
+    },
+    "type": {
+      "value": "",
+      "description": "页签的基本样式，可选 `line`、`card` `editable-card` 类型",
+      "default": "`line`",
+      "type": "string"
+    }
+  },
+  "methods": [],
+  "events": [
+    {
+      "name": "change",
+      "description": "切换面板的回调",
+      "params": "Function(activeKey) {}"
+    },
+    {
+      "name": "edit",
+      "description": "新增和删除页签的回调，在 `type=\"editable-card\"` 时有效",
+      "params": "(action === 'add' ? event : targetKey, action): void"
+    },
+    {
+      "name": "tabClick",
+      "description": "tab 被点击的回调",
+      "params": "Function"
+    },
+    {
+      "name": "tabScroll",
+      "description": "滚动 TabBar 时触发",
+      "params": "{ direction: 'left' | 'right' | 'top' | 'bottom' }"
+    }
+  ],
+  "link": "https://antdv.com/components/tabs-cn"
+}

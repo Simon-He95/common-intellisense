@@ -1,0 +1,225 @@
+{
+  "name": "ATree",
+  "props": {
+    "allowDrop": {
+      "value": "",
+      "description": "是否允许拖拽时放置在该节点",
+      "default": "-",
+      "type": "({ dropNode, dropPosition }) => boolean"
+    },
+    "autoExpandParent": {
+      "value": "",
+      "description": "是否自动展开父节点",
+      "default": "false",
+      "type": "boolean"
+    },
+    "blockNode": {
+      "value": "",
+      "description": "是否节点占据一行",
+      "default": "false",
+      "type": "boolean"
+    },
+    "checkable": {
+      "value": "",
+      "description": "节点前添加 Checkbox 复选框",
+      "default": "false",
+      "type": "boolean"
+    },
+    "checkedKeys(v-model)": {
+      "value": "",
+      "description": "（受控）选中复选框的树节点（注意：父子节点有关联，如果传入父节点 key，则子节点自动选中；相应当子节点 key 都传入，父节点也自动选中。当设置`checkable`和`checkStrictly`，它是一个有`checked`和`halfChecked`属性的对象，并且父子节点的选中与否不再关联",
+      "default": "\\[]",
+      "type": "string\\[] | number\\[] | {checked: string\\[] | number\\[], halfChecked: string\\[] | number\\[]}"
+    },
+    "checkStrictly": {
+      "value": "",
+      "description": "checkable 状态下节点选择完全受控（父子节点选中状态不再关联）",
+      "default": "false",
+      "type": "boolean"
+    },
+    "defaultExpandAll": {
+      "value": "",
+      "description": "默认展开所有树节点, 如果是异步数据，需要在数据返回后再实例化，建议用 v-if=\"data.length\"；当有 expandedKeys 时，defaultExpandAll 将失效",
+      "default": "false",
+      "type": "boolean"
+    },
+    "disabled": {
+      "value": "",
+      "description": "将树禁用",
+      "default": "false",
+      "type": "bool"
+    },
+    "draggable": {
+      "value": "",
+      "description": "设置节点可拖拽",
+      "default": "false",
+      "type": "boolean"
+    },
+    "expandedKeys(v-model)": {
+      "value": "",
+      "description": "（受控）展开指定的树节点",
+      "default": "\\[]",
+      "type": "string\\[] | number\\[]"
+    },
+    "fieldNames": {
+      "value": "",
+      "description": "替换 treeNode 中 title,key,children 字段为 treeData 中对应的字段",
+      "default": "{children:'children', title:'title', key:'key' }",
+      "type": "object"
+    },
+    "filterTreeNode": {
+      "value": "",
+      "description": "按需筛选树节点（高亮），返回 true",
+      "default": "-",
+      "type": "function(node)"
+    },
+    "height": {
+      "value": "",
+      "description": "设置虚拟滚动容器高度，设置后内部节点不再支持横向滚动",
+      "default": "-",
+      "type": "number"
+    },
+    "loadData": {
+      "value": "",
+      "description": "异步加载数据",
+      "default": "-",
+      "type": "function(node)"
+    },
+    "loadedKeys": {
+      "value": "",
+      "description": "（受控）已经加载的节点，需要配合 `loadData` 使用",
+      "default": "\\[]",
+      "type": "string\\[] | number\\[]"
+    },
+    "multiple": {
+      "value": "",
+      "description": "支持点选多个节点（节点本身）",
+      "default": "false",
+      "type": "boolean"
+    },
+    "selectable": {
+      "value": "",
+      "description": "是否可选中",
+      "default": "true",
+      "type": "boolean"
+    },
+    "selectedKeys(v-model)": {
+      "value": "",
+      "description": "（受控）设置选中的树节点",
+      "default": "-",
+      "type": "string\\[] | number\\[]"
+    },
+    "showIcon": {
+      "value": "",
+      "description": "是否展示 TreeNode title 前的图标，没有默认样式，如设置为 true，需要自行定义图标相关样式",
+      "default": "false",
+      "type": "boolean"
+    },
+    "showLine": {
+      "value": "",
+      "description": "是否展示连接线",
+      "default": "false",
+      "type": "boolean | {showLeafIcon: boolean}(3.0+)"
+    },
+    "switcherIcon": {
+      "value": "",
+      "description": "自定义树节点的展开/折叠图标",
+      "default": "-",
+      "type": "v-slot:switcherIcon=\"{active, checked, expanded, loading, selected, halfChecked, title, key, children, dataRef, data, defaultIcon, switcherCls}\""
+    },
+    "title": {
+      "value": "",
+      "description": "自定义标题",
+      "default": "",
+      "type": "slot"
+    },
+    "treeData": {
+      "value": "",
+      "description": "treeNodes 数据，如果设置则不需要手动构造 TreeNode 节点（key 在整个树范围内唯一）",
+      "default": "--",
+      "type": "[TreeNode\\[\\]](#treenode)"
+    },
+    "virtual": {
+      "value": "",
+      "description": "设置 false 时关闭虚拟滚动",
+      "default": "true",
+      "type": "boolean"
+    }
+  },
+  "methods": [],
+  "events": [
+    {
+      "name": "check",
+      "description": "点击复选框触发",
+      "params": "function(checkedKeys, e:{checked: bool, checkedNodes, node, event})"
+    },
+    {
+      "name": "dragend",
+      "description": "dragend 触发时调用",
+      "params": "function({event, node})"
+    },
+    {
+      "name": "dragenter",
+      "description": "dragenter 触发时调用",
+      "params": "function({event, node, expandedKeys})"
+    },
+    {
+      "name": "dragleave",
+      "description": "dragleave 触发时调用",
+      "params": "function({event, node})"
+    },
+    {
+      "name": "dragover",
+      "description": "dragover 触发时调用",
+      "params": "function({event, node})"
+    },
+    {
+      "name": "dragstart",
+      "description": "开始拖拽时调用",
+      "params": "function({event, node})"
+    },
+    {
+      "name": "drop",
+      "description": "drop 触发时调用",
+      "params": "function({event, node, dragNode, dragNodesKeys})"
+    },
+    {
+      "name": "expand",
+      "description": "展开/收起节点时触发",
+      "params": "function(expandedKeys, {expanded: bool, node})"
+    },
+    {
+      "name": "load",
+      "description": "节点加载完毕时触发",
+      "params": "function(loadedKeys, {event, node})"
+    },
+    {
+      "name": "rightClick",
+      "description": "响应右键点击",
+      "params": "function({event, node})"
+    },
+    {
+      "name": "select",
+      "description": "点击树节点触发",
+      "params": "function(selectedKeys, e:{selected: bool, selectedNodes, node, event})"
+    }
+  ],
+  "typeDetail": {
+    "TreeNode": [
+      { "name": "checkable", "description": "当树为 checkable 时，设置独立节点是否展示 Checkbox", "type": "boolean" },
+      { "name": "class", "description": "节点的 class", "type": "string" },
+      { "name": "disableCheckbox", "description": "禁掉 checkbox", "type": "boolean", "default": "false" },
+      { "name": "disabled", "description": "禁掉响应", "type": "boolean", "default": "false" },
+      { "name": "icon", "description": "自定义图标。可接收组件，props 为当前节点 props", "type": "slot | slot-scope" },
+      { "name": "isLeaf", "description": "设置为叶子节点(设置了`loadData`时有效)", "type": "boolean", "default": "false" },
+      { "name": "key", "description": "被树的 (default)ExpandedKeys | (default)CheckedKeys | (default)SelectedKeys 属性所用。注意：整个树范围内的所有节点的 key 值不能重复！", "type": "string | number", "default": "内部计算出的节点位置" },
+      { "name": "selectable", "description": "设置节点是否可被选中", "type": "boolean", "default": "true" },
+      { "name": "style", "description": "节点的 style", "type": "string | object" },
+      { "name": "title", "description": "标题", "type": "string" }
+    ],
+    "DirectoryTree": [
+      { "name": "expandAction", "description": "目录展开逻辑，可选 `false` `'click'` `'dblclick'`", "type": "string", "default": "click" }
+    ]
+  },
+  "link": "https://antdv.com/components/tree-cn"
+}

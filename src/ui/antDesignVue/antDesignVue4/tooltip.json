@@ -1,0 +1,104 @@
+{
+  "name": "ATooltip",
+  "props": {
+    "title": {
+      "value": "",
+      "description": "提示文字",
+      "default": "无",
+      "type": "string|slot"
+    },
+    "align": {
+      "value": "",
+      "description": "该值将合并到 placement 的配置中，设置参考 [dom-align](https://github.com/yiminghe/dom-align)",
+      "default": "无",
+      "type": "Object"
+    },
+    "arrowPointAtCenter": {
+      "value": "",
+      "description": "箭头是否指向目标元素中心",
+      "default": "`false`",
+      "type": "boolean"
+    },
+    "autoAdjustOverflow": {
+      "value": "",
+      "description": "气泡被遮挡时自动调整位置",
+      "default": "`true`",
+      "type": "boolean"
+    },
+    "color": {
+      "value": "",
+      "description": "背景颜色",
+      "default": "无",
+      "type": "string"
+    },
+    "destroyTooltipOnHide": {
+      "value": "",
+      "description": "隐藏后是否销毁 tooltip",
+      "default": "false",
+      "type": "boolean"
+    },
+    "getPopupContainer": {
+      "value": "",
+      "description": "浮层渲染父节点，默认渲染到 body 上",
+      "default": "() => document.body",
+      "type": "(triggerNode: HTMLElement) => HTMLElement"
+    },
+    "mouseEnterDelay": {
+      "value": "",
+      "description": "鼠标移入后延时多少才显示 Tooltip，单位：秒",
+      "default": "0.1",
+      "type": "number"
+    },
+    "mouseLeaveDelay": {
+      "value": "",
+      "description": "鼠标移出后延时多少才隐藏 Tooltip，单位：秒",
+      "default": "0.1",
+      "type": "number"
+    },
+    "overlayClassName": {
+      "value": "",
+      "description": "卡片类名",
+      "default": "无",
+      "type": "string"
+    },
+    "overlayStyle": {
+      "value": "",
+      "description": "卡片样式",
+      "default": "无",
+      "type": "object"
+    },
+    "overlayInnerStyle": {
+      "value": "",
+      "description": "卡片内容区域样式",
+      "default": "无",
+      "type": "object"
+    },
+    "placement": {
+      "value": "",
+      "description": "气泡框位置，可选 `top` `left` `right` `bottom` `topLeft` `topRight` `bottomLeft` `bottomRight` `leftTop` `leftBottom` `rightTop` `rightBottom`",
+      "default": "top",
+      "type": "string"
+    },
+    "trigger": {
+      "value": "",
+      "description": "触发行为，可选 `hover/focus/click/contextmenu`",
+      "default": "hover",
+      "type": "string"
+    },
+    "open(v-model)": {
+      "value": "",
+      "description": "用于手动控制浮层显隐, 小于 4.0.0 使用 `visible`",
+      "default": "false",
+      "type": "boolean"
+    }
+  },
+  "methods": [],
+  "events": [
+    {
+      "name": "openChange",
+      "description": "显示隐藏的回调",
+      "params": "(visible) => void"
+    }
+  ],
+  "link": "https://antdv.com/components/tooltip-cn"
+}

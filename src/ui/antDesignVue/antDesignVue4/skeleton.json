@@ -1,0 +1,68 @@
+{
+  "name": "ASkeleton",
+  "props": {
+    "active": {
+      "value": "",
+      "description": "是否展示动画效果",
+      "default": "false",
+      "type": "boolean"
+    },
+    "avatar": {
+      "value": "",
+      "description": "是否显示头像占位图",
+      "default": "false",
+      "type": "boolean | [SkeletonAvatarProps](#skeletonavatarprops)"
+    },
+    "loading": {
+      "value": "",
+      "description": "为 `true` 时，显示占位图。反之则直接展示子组件",
+      "default": "false",
+      "type": "boolean"
+    },
+    "paragraph": {
+      "value": "",
+      "description": "是否显示段落占位图",
+      "default": "true",
+      "type": "boolean | SkeletonParagraphProps"
+    },
+    "title": {
+      "value": "",
+      "description": "是否显示标题占位图",
+      "default": "true",
+      "type": "boolean | [SkeletonTitleProps](#skeletontitleprops)"
+    }
+  },
+  "methods": [],
+  "events": [],
+  "typeDetail": {
+    "SkeletonAvatarProps": [
+      { "name": "active", "description": "是否展示动画效果", "type": "boolean", "default": "false" },
+      { "name": "avatar", "description": "是否显示头像占位图", "type": "boolean | SkeletonAvatarProps", "default": "false" },
+      { "name": "loading", "description": "为 `true` 时，显示占位图。反之则直接展示子组件", "type": "boolean" },
+      { "name": "paragraph", "description": "是否显示段落占位图", "type": "boolean | SkeletonParagraphProps" },
+      { "name": "title", "description": "是否显示标题占位图", "type": "boolean | SkeletonTitleProps", "default": "true" }
+    ],
+    "OptGroup": [
+      { "name": "key", "description": "", "type": "string" },
+      { "name": "label", "description": "组名", "type": "string | function(h) | slot" }
+    ],
+    "SkeletonTitleProps": [
+      { "name": "width", "description": "设置标题占位图的宽度", "type": "number | string" }
+    ],
+    "SkeletonParagraphProps": [
+      { "name": "rows", "description": "设置段落占位图的行数", "type": "number" },
+      { "name": "width", "description": "设置段落占位图的宽度，若为数组时则为对应的每行宽度，反之则是最后一行的宽度", "type": "number | string", "default": "Array<number | string>" }
+    ],
+    "SkeletonButtonProps": [
+      { "name": "active", "description": "是否展示动画效果", "type": "boolean", "default": "false" },
+      { "name": "block", "description": "将按钮宽度调整为其父宽度的选项", "type": "boolean", "default": "false" },
+      { "name": "shape", "description": "指定按钮的形状", "type": "circle | round | default" },
+      { "name": "size", "description": "设置按钮的大小", "type": "large | small | default" }
+    ],
+    "SkeletonInputProps": [
+      { "name": "active", "description": "是否展示动画效果", "type": "boolean", "default": "false" },
+      { "name": "size", "description": "设置输入框的大小", "type": "large | small | default" }
+    ]
+  },
+  "link": "https://antdv.com/components/skeleton-cn"
+}
