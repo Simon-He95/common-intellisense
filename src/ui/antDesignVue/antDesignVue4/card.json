@@ -1,0 +1,86 @@
+{
+  "name": "ACard",
+  "props": {
+    "activeTabKey": {
+      "value": "",
+      "description": "当前激活页签的 key",
+      "default": "-",
+      "type": "string"
+    },
+    "bodyStyle": {
+      "value": "",
+      "description": "内容区域自定义样式",
+      "default": "-",
+      "type": "object"
+    },
+    "bordered": {
+      "value": "",
+      "description": "是否有边框",
+      "default": "true",
+      "type": "boolean"
+    },
+    "defaultActiveTabKey": {
+      "value": "",
+      "description": "初始化选中页签的 key，如果没有设置 activeTabKey",
+      "default": "第一个页签",
+      "type": "string"
+    },
+    "extra": {
+      "value": "",
+      "description": "卡片右上角的操作区域",
+      "default": "-",
+      "type": "string|slot"
+    },
+    "headStyle": {
+      "value": "",
+      "description": "自定义标题区域样式",
+      "default": "-",
+      "type": "object"
+    },
+    "hoverable": {
+      "value": "",
+      "description": "鼠标移过时可浮起",
+      "default": "false",
+      "type": "boolean"
+    },
+    "loading": {
+      "value": "",
+      "description": "当卡片内容还在加载中时，可以用 loading 展示一个占位",
+      "default": "false",
+      "type": "boolean"
+    },
+    "size": {
+      "value": "",
+      "description": "card 的尺寸",
+      "default": "",
+      "type": "default | small"
+    },
+    "tabList": {
+      "value": "",
+      "description": "页签标题列表, 可以通过 customTab(v3.0) 插槽自定义 tab",
+      "default": "-",
+      "type": "Array<{key: string, tab: any}>"
+    },
+    "title": {
+      "value": "",
+      "description": "卡片标题",
+      "default": "-",
+      "type": "string|slot"
+    },
+    "type": {
+      "value": "",
+      "description": "卡片类型，可设置为 `inner` 或 不设置",
+      "default": "-",
+      "type": "string"
+    }
+  },
+  "methods": [],
+  "events": [
+    {
+      "name": "tabChange",
+      "description": "页签切换的回调",
+      "params": "(key) => void"
+    }
+  ],
+  "link": "https://antdv.com/components/card-cn"
+}

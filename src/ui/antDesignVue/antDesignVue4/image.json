@@ -1,0 +1,72 @@
+{
+  "name": "AImage",
+  "props": {
+    "alt": {
+      "value": "",
+      "description": "图像描述",
+      "default": "-",
+      "type": "string"
+    },
+    "fallback": {
+      "value": "",
+      "description": "加载失败容错地址",
+      "default": "-",
+      "type": "string"
+    },
+    "height": {
+      "value": "",
+      "description": "图像高度",
+      "default": "-",
+      "type": "string | number"
+    },
+    "placeholder": {
+      "value": "",
+      "description": "加载占位, 为 `true` 时使用默认占位",
+      "default": "-",
+      "type": "boolean | slot"
+    },
+    "preview": {
+      "value": "",
+      "description": "预览参数，为 `false` 时禁用",
+      "default": "true",
+      "type": "boolean | [previewType](#previewtype)"
+    },
+    "src": {
+      "value": "",
+      "description": "图片地址",
+      "default": "-",
+      "type": "string"
+    },
+    "previewMask": {
+      "value": "",
+      "description": "自定义 mask",
+      "default": "-",
+      "type": "false | function | slot"
+    },
+    "width": {
+      "value": "",
+      "description": "图像宽度",
+      "default": "-",
+      "type": "string | number"
+    }
+  },
+  "methods": [],
+  "events": [
+    {
+      "name": "error",
+      "description": "加载错误回调",
+      "params": "(event: Event) => void"
+    }
+  ],
+  "typeDetail": {
+    "previewType": [
+      { "name": "visible", "description": "", "type": "boolean", "optional": "true" },
+      { "name": "onVisibleChange", "description": "", "type": "(visible, prevVisible) => void", "optional": "true" },
+      { "name": "getContainer", "description": "", "type": "string | HTMLElement | (() => HTMLElement)" },
+      { "name": "src", "description": "", "type": "string", "optional": "true" },
+      { "name": "maskClassName", "description": "", "type": "string", "optional": "true" },
+      { "name": "current", "description": "", "type": "number", "optional": "true" }
+    ]
+  },
+  "link": "https://antdv.com/components/image-cn"
+}

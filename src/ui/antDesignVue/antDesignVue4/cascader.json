@@ -1,0 +1,235 @@
+{
+  "name": "ACascader",
+  "props": {
+    "allowClear": {
+      "value": "",
+      "description": "是否支持清除",
+      "default": "true",
+      "type": "boolean"
+    },
+    "autofocus": {
+      "value": "",
+      "description": "自动获取焦点",
+      "default": "false",
+      "type": "boolean"
+    },
+    "bordered": {
+      "value": "",
+      "description": "是否有边框",
+      "default": "true",
+      "type": "boolean"
+    },
+    "clearIcon": {
+      "value": "",
+      "description": "自定义的选择框清空图标",
+      "default": "-",
+      "type": "slot"
+    },
+    "changeOnSelect": {
+      "value": "",
+      "description": "（单选时生效）当此项为 true 时，点选每级菜单选项值都会发生变化，具体见上面的演示",
+      "default": "false",
+      "type": "boolean"
+    },
+    "defaultValue": {
+      "value": "",
+      "description": "默认的选中项",
+      "default": "[]",
+      "type": "string[] | number[]"
+    },
+    "disabled": {
+      "value": "",
+      "description": "禁用",
+      "default": "false",
+      "type": "boolean"
+    },
+    "displayRender": {
+      "value": [
+        "`labels => labels.join('",
+        "')`"
+      ],
+      "description": "选择后展示的渲染函数,可使用 #displayRender=\"{labels, selectedOptions}\"",
+      "default": "`labels => labels.join(' | ')`",
+      "type": "`({labels, selectedOptions}) => VNode`"
+    },
+    "popupClassName": {
+      "value": "",
+      "description": "自定义浮层类名",
+      "default": "-",
+      "type": "string"
+    },
+    "dropdownStyle": {
+      "value": "",
+      "description": "自定义浮层样式",
+      "default": "{}",
+      "type": "CSSProperties"
+    },
+    "expandIcon": {
+      "value": "",
+      "description": "自定义次级菜单展开图标",
+      "default": "-",
+      "type": "slot"
+    },
+    "expandTrigger": {
+      "value": "",
+      "description": "次级菜单的展开方式",
+      "default": "'click'",
+      "type": "click | hover"
+    },
+    "fieldNames": {
+      "value": "",
+      "description": "自定义 options 中 label name children 的字段",
+      "default": "`{ label: 'label', value: 'value', children: 'children' }`",
+      "type": "object"
+    },
+    "getPopupContainer": {
+      "value": "",
+      "description": "菜单渲染父节点。默认渲染到 body 上，如果你遇到菜单滚动定位问题，试试修改为滚动的区域，并相对其定位。",
+      "default": "() => document.body",
+      "type": "Function(triggerNode)"
+    },
+    "loadData": {
+      "value": "",
+      "description": "用于动态加载选项，无法与 `showSearch` 一起使用",
+      "default": "-",
+      "type": "`(selectedOptions) => void`"
+    },
+    "maxTagCount": {
+      "value": "",
+      "description": "最多显示多少个 tag，响应式模式会对性能产生损耗",
+      "default": "-",
+      "type": "number | `responsive`"
+    },
+    "maxTagPlaceholder": {
+      "value": "",
+      "description": "隐藏 tag 时显示的内容",
+      "default": "-",
+      "type": "v-slot | function(omittedValues)"
+    },
+    "multiple": {
+      "value": "",
+      "description": "支持多选节点",
+      "default": "false",
+      "type": "boolean"
+    },
+    "notFoundContent": {
+      "value": "",
+      "description": "当下拉列表为空时显示的内容",
+      "default": "'Not Found'",
+      "type": "string | slot"
+    },
+    "open": {
+      "value": "",
+      "description": "控制浮层显隐",
+      "default": "false",
+      "type": "boolean"
+    },
+    "options": {
+      "value": "",
+      "description": "可选项数据源",
+      "default": "-",
+      "type": "[Option](#option)[]"
+    },
+    "placeholder": {
+      "value": "",
+      "description": "输入框占位文本",
+      "default": "'请选择'",
+      "type": "string"
+    },
+    "placement": {
+      "value": "",
+      "description": "浮层预设位置",
+      "default": "`bottomLeft`",
+      "type": "`bottomLeft` | `bottomRight` | `topLeft` | `topRight`"
+    },
+    "showCheckedStrategy": {
+      "value": "",
+      "description": "定义选中项回填的方式。`Cascader.SHOW_CHILD`: 只显示选中的子节点。`Cascader.SHOW_PARENT`: 只显示父节点（当父节点下所有子节点都选中时）。",
+      "default": "`Cascader.SHOW_PARENT`",
+      "type": "`Cascader.SHOW_PARENT` | `Cascader.SHOW_CHILD`"
+    },
+    "removeIcon": {
+      "value": "",
+      "description": "自定义的多选框清除图标",
+      "default": "-",
+      "type": "slot"
+    },
+    "searchValue": {
+      "value": "",
+      "description": "设置搜索的值，需要与 `showSearch` 配合使用",
+      "default": "-",
+      "type": "string"
+    },
+    "showSearch": {
+      "value": "",
+      "description": "在选择框中显示搜索框",
+      "default": "false",
+      "type": "boolean | [object](#showsearch)"
+    },
+    "status": {
+      "value": "",
+      "description": "设置校验状态",
+      "default": "-",
+      "type": "'error' | 'warning'"
+    },
+    "size": {
+      "value": "",
+      "description": "输入框大小",
+      "default": "",
+      "type": "`large` |  | small"
+    },
+    "suffixIcon": {
+      "value": "",
+      "description": "自定义的选择框后缀图标",
+      "default": "-",
+      "type": "string | VNode | slot"
+    },
+    "tagRender": {
+      "value": "",
+      "description": "自定义 tag 内容，多选时生效",
+      "default": "-",
+      "type": "slot"
+    },
+    "value(v-model)": {
+      "value": "",
+      "description": "指定选中项",
+      "default": "-",
+      "type": "string[] | number[]"
+    }
+  },
+  "methods": [],
+  "events": [
+    {
+      "name": "change",
+      "description": "选择完成后的回调",
+      "params": "`(value, selectedOptions) => void`"
+    },
+    {
+      "name": "dropdownVisibleChange",
+      "description": "显示/隐藏浮层的回调",
+      "params": "`(value) => void`"
+    },
+    {
+      "name": "search",
+      "description": "监听搜索，返回输入的值",
+      "params": "`(value) => void`"
+    }
+  ],
+  "typeDetail": {
+    "showSearch": [
+      { "name": "filter", "description": "接收 `inputValue` `path` 两个参数，当 `path` 符合筛选条件时，应返回 true，反之则返回 false。", "type": "function(inputValue, path): boolean" },
+      { "name": "limit", "description": "搜索结果展示数量", "type": "number | false", "default": "50" },
+      { "name": "matchInputWidth", "description": "搜索结果列表是否与输入框同宽", "type": "boolean" },
+      { "name": "render", "description": "用于渲染 filter 后的选项,可使用 #showSearchRender=\"{inputValue, path}\"", "type": "function({inputValue, path}): VNode" },
+      { "name": "sort", "description": "用于排序 filter 后的选项", "type": "function(a, b, inputValue)" }
+    ],
+    "Option": [
+      { "name": "value", "description": "", "type": "string | number" },
+      { "name": "label", "description": "", "type": "any" },
+      { "name": "disabled", "description": "", "type": "boolean" },
+      { "name": "children", "description": "", "type": "Option[]" },
+      { "name": "isLeaf", "description": "标记是否为叶子节点，设置了 `loadData` 时有效，设为 `false` 时会强制标记为父节点，即使当前节点没有 children，也会显示展开图标", "type": "boolean" }
+    ]
+  },
+  "link": "https://antdv.com/components/cascader-cn"
+}

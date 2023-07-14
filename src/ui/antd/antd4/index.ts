@@ -43,7 +43,6 @@ export function antd4() {
   return propsReducer(map)
 }
 
-
 export function antd4Components() {
   const map = [
     ['Row', '布局'],

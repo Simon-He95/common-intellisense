@@ -1,0 +1,73 @@
+{
+  "name": "ADropdownButton",
+  "props": {
+    "disabled": {
+      "value": "",
+      "description": "菜单是否禁用",
+      "default": "false",
+      "type": "boolean"
+    },
+    "icon": {
+      "value": "",
+      "description": "右侧的 icon",
+      "default": "-",
+      "type": "VNode | slot"
+    },
+    "loading": {
+      "value": "",
+      "description": "设置按钮载入状态",
+      "default": "false",
+      "type": "boolean | { delay: number }"
+    },
+    "overlay(v-slot)": {
+      "value": "",
+      "description": "菜单",
+      "default": "-",
+      "type": "[Menu]( | components | menu-cn | )"
+    },
+    "placement": {
+      "value": "",
+      "description": "菜单弹出位置",
+      "default": "`bottomLeft`",
+      "type": "bottomLeft | bottom | bottomRight | topLeft | top | topRight"
+    },
+    "size": {
+      "value": "",
+      "description": "按钮大小，和 [Button](/components/button-cn/) 一致",
+      "default": "'default'",
+      "type": "string"
+    },
+    "trigger": {
+      "value": "",
+      "description": "触发下拉的行为",
+      "default": "['hover']",
+      "type": "['click' | 'hover' | 'contextmenu']"
+    },
+    "type": {
+      "value": "",
+      "description": "按钮类型，和 [Button](/components/button-cn/) 一致",
+      "default": "'default'",
+      "type": "string"
+    },
+    "open(v-model)": {
+      "value": "",
+      "description": "菜单是否显示",
+      "default": "false",
+      "type": "boolean"
+    }
+  },
+  "methods": [],
+  "events": [
+    {
+      "name": "click",
+      "description": "点击左侧按钮的回调，和 [Button](/components/button-cn/) 一致",
+      "params": "Function"
+    },
+    {
+      "name": "openChange",
+      "description": "菜单显示状态改变时调用，参数为 visible。点击菜单按钮导致的消失不会触发",
+      "params": "function(open)"
+    }
+  ],
+  "link": "https://antdv.com/components/dropdown-cn"
+}

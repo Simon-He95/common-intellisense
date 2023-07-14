@@ -1,0 +1,38 @@
+{
+  "name": "ACheckboxGroup",
+  "props": {
+    "disabled": {
+      "value": "",
+      "description": "整组失效",
+      "default": "false",
+      "type": "boolean"
+    },
+    "name": {
+      "value": "",
+      "description": "CheckboxGroup 下所有 `input[type=\"checkbox\"]` 的 `name` 属性",
+      "default": "-",
+      "type": "string"
+    },
+    "options": {
+      "value": "",
+      "description": "指定可选项，可以通过 slot=\"label\" slot-scope=\"option\" 定制`label`",
+      "default": "[]",
+      "type": "string[] | Array<{ label: string value: string disabled?: boolean, indeterminate?: boolean, onChange?: function }>"
+    },
+    "value(v-model)": {
+      "value": "",
+      "description": "指定选中的选项",
+      "default": "[]",
+      "type": "string[]"
+    }
+  },
+  "methods": [],
+  "events": [
+    {
+      "name": "change",
+      "description": "变化时回调函数",
+      "params": "Function(checkedValue)"
+    }
+  ],
+  "link": "https://antdv.com/components/checkbox-cn"
+}

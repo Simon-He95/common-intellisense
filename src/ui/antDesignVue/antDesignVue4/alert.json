@@ -1,0 +1,83 @@
+{
+  "name": "AAlert",
+  "props": {
+    "action": {
+      "value": "",
+      "description": "自定义操作项",
+      "default": "-",
+      "type": "slot"
+    },
+    "afterClose": {
+      "value": "",
+      "description": "关闭动画结束后触发的回调函数",
+      "default": "-",
+      "type": "() => void"
+    },
+    "banner": {
+      "value": "",
+      "description": "是否用作顶部公告",
+      "default": "false",
+      "type": "boolean"
+    },
+    "closable": {
+      "value": "",
+      "description": "默认不显示关闭按钮",
+      "default": "无",
+      "type": "boolean"
+    },
+    "closeIcon": {
+      "value": [
+        "`<CloseOutlined",
+        ">`"
+      ],
+      "description": "自定义关闭 Icon",
+      "default": "`<CloseOutlined | >`",
+      "type": "slot"
+    },
+    "closeText": {
+      "value": "",
+      "description": "自定义关闭按钮",
+      "default": "无",
+      "type": "string|slot"
+    },
+    "description": {
+      "value": "",
+      "description": "警告提示的辅助性文字介绍",
+      "default": "无",
+      "type": "string|slot"
+    },
+    "icon": {
+      "value": "",
+      "description": "自定义图标，`showIcon` 为 `true` 时有效",
+      "default": "-",
+      "type": "vnode|slot"
+    },
+    "message": {
+      "value": "",
+      "description": "警告提示内容",
+      "default": "无",
+      "type": "string|slot"
+    },
+    "showIcon": {
+      "value": "",
+      "description": "是否显示辅助图标",
+      "default": "false,`banner` 模式下默认值为 true",
+      "type": "boolean"
+    },
+    "type": {
+      "value": "",
+      "description": "指定警告提示的样式，有四种选择 `success`、`info`、`warning`、`error`",
+      "default": "`info`,`banner` 模式下默认值为 `warning`",
+      "type": "string"
+    }
+  },
+  "methods": [],
+  "events": [
+    {
+      "name": "close",
+      "description": "关闭时触发的回调函数",
+      "params": "(e: MouseEvent) => void"
+    }
+  ],
+  "link": "https://antdv.com/components/alert-cn"
+}

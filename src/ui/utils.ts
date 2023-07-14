@@ -19,17 +19,17 @@ export function propsReducer(map: string[]) {
 
         const detail = []
         if (value.default !== undefined && value.default !== '')
-          detail.push(`#### 💎 默认值:    ***\`${value.default}\`***`)
+          detail.push(`#### 💎 默认值:    ***\`${value.default.replace(/`/g, '')}\`***`)
 
         if (value.description)
           detail.push(`#### 🔦 说明:    ***\`${value.description}\`***`)
 
         if (value.type)
-          detail.push(`#### 💡 类型:    ***\`${value.type}\`***`)
+          detail.push(`#### 💡 类型:    ***\`${value.type.replace(/`/g, '')}\`***`)
         documentation.appendMarkdown(detail.join('\n\n'))
 
         if (value.typeDetail)
-          documentation.appendCodeblock(`#### 🌈 类型详情:\n${Object.keys(value.typeDetail).reduce((result, key) => result += `interface ${key} {\n  ${value.typeDetail[key].map((item: any) => `${item.name}: ${item.type} /*${item.description}${item.default ? ` 默认值: ***${item.default}***` : ''}*/`).join('\n  ')}\n}`, '')}`, 'typescript')
+          documentation.appendCodeblock(`#### 🌈 类型详情:\n${Object.keys(value.typeDetail).reduce((result, key) => result += `interface ${key} {\n  ${value.typeDetail[key].map((item: any) => `${item.name}${item.optional ? '?' : ''}: ${item.type} /*${item.description}${item.default ? ` 默认值: ***${item.default}***` : ''}*/`).join('\n  ')}\n}`, '')}`, 'typescript')
 
         // if (item.methods && item.methods.length) {
         //   item.methods.forEach((methods: any) => {

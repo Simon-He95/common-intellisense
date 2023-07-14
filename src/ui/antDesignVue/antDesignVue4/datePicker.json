@@ -1,0 +1,255 @@
+{
+  "name": "ADatePicker",
+  "props": {
+    "allowClear": {
+      "value": "",
+      "description": "是否显示清除按钮",
+      "default": "true",
+      "type": "boolean"
+    },
+    "autofocus": {
+      "value": "",
+      "description": "自动获取焦点",
+      "default": "false",
+      "type": "boolean"
+    },
+    "bordered": {
+      "value": "",
+      "description": "是否有边框",
+      "default": "true",
+      "type": "boolean"
+    },
+    "dateRender": {
+      "value": "",
+      "description": "自定义日期单元格的内容",
+      "default": "-",
+      "type": "v-slot:dateRender=\"{current, today}\""
+    },
+    "disabled": {
+      "value": "",
+      "description": "禁用",
+      "default": "false",
+      "type": "boolean"
+    },
+    "disabledDate": {
+      "value": "",
+      "description": "不可选择的日期",
+      "default": "-",
+      "type": "(currentDate: dayjs) => boolean"
+    },
+    "format": {
+      "value": [
+        "YYYY",
+        "YYYY-QQ",
+        "YYYY-MM",
+        "YYYY-wo"
+      ],
+      "description": "展示的日期格式，配置参考 [dayjs](https://day.js.org/docs/zh-CN/display/format)",
+      "default": "`YYYY-MM-DD`",
+      "type": "formatType"
+    },
+    "dropdownClassName": {
+      "value": "",
+      "description": "额外的弹出日历 className",
+      "default": "-",
+      "type": "string"
+    },
+    "getPopupContainer": {
+      "value": "",
+      "description": "定义浮层的容器，默认为 body 上新建 div",
+      "default": "-",
+      "type": "function(trigger)"
+    },
+    "inputReadOnly": {
+      "value": "",
+      "description": "设置输入框为只读（避免在移动设备上打开虚拟键盘）",
+      "default": "false",
+      "type": "boolean"
+    },
+    "locale": {
+      "value": [
+        "[默认配置](https:",
+        "",
+        "github.com",
+        "vueComponent",
+        "ant-design-vue",
+        "blob",
+        "main",
+        "components",
+        "date-picker",
+        "locale",
+        "example.json)"
+      ],
+      "description": "国际化配置",
+      "default": "[默认配置](https: |  | github.com | vueComponent | ant-design-vue | blob | main | components | date-picker | locale | example.json)",
+      "type": "object"
+    },
+    "mode": {
+      "value": "",
+      "description": "日期面板的状态",
+      "default": "-",
+      "type": "`time` | `date` | `month` | `year` | `decade`"
+    },
+    "nextIcon": {
+      "value": "",
+      "description": "自定义下一个图标",
+      "default": "-",
+      "type": "slot"
+    },
+    "open": {
+      "value": "",
+      "description": "控制弹层是否展开",
+      "default": "false",
+      "type": "boolean"
+    },
+    "picker": {
+      "value": "",
+      "description": "设置选择器类型",
+      "default": "`date`",
+      "type": "`date` | `week` | `month` | `quarter` | `year`"
+    },
+    "placeholder": {
+      "value": "",
+      "description": "输入框提示文字",
+      "default": "-",
+      "type": "string | [string, string]"
+    },
+    "placement": {
+      "value": "",
+      "description": "选择框弹出的位置",
+      "default": "bottomLeft",
+      "type": "`bottomLeft` `bottomRight` `topLeft` `topRight`"
+    },
+    "popupStyle": {
+      "value": "",
+      "description": "额外的弹出日历样式",
+      "default": "{}",
+      "type": "CSSProperties"
+    },
+    "prevIcon": {
+      "value": "",
+      "description": "自定义上一个图标",
+      "default": "-",
+      "type": "slot"
+    },
+    "presets": {
+      "value": "",
+      "description": "预设时间范围快捷选择",
+      "default": "-",
+      "type": "{ label: slot, value: [dayjs](https: |  | day.js.org | ) }[]"
+    },
+    "size": {
+      "value": "",
+      "description": "输入框大小，`large` 高度为 40px，`small` 为 24px，默认是 32px",
+      "default": "-",
+      "type": "`large` | middle | small"
+    },
+    "status": {
+      "value": "",
+      "description": "设置校验状态",
+      "default": "-",
+      "type": "'error' | 'warning'"
+    },
+    "suffixIcon": {
+      "value": "",
+      "description": "自定义的选择框后缀图标",
+      "default": "-",
+      "type": "v-slot:suffixIcon"
+    },
+    "superNextIcon": {
+      "value": "",
+      "description": "自定义 `<<` 切换图标",
+      "default": "-",
+      "type": "slot"
+    },
+    "superPrevIcon": {
+      "value": "",
+      "description": "自定义 `>>` 切换图标",
+      "default": "-",
+      "type": "slot"
+    },
+    "valueFormat": {
+      "value": "",
+      "description": "可选，绑定值的格式，对 value、defaultValue、defaultPickerValue 起作用。不指定则绑定值为 dayjs 对象",
+      "default": "-",
+      "type": "string，[具体格式](https: |  | day.js.org | docs | zh-CN | display | format)"
+    },
+    "defaultPickerValue": {
+      "value": "",
+      "description": "默认面板日期",
+      "default": "-",
+      "type": "[dayjs](https: |  | day.js.org | )"
+    },
+    "disabledTime": {
+      "value": "",
+      "description": "不可选择的时间",
+      "default": "-",
+      "type": "function(date)"
+    },
+    "renderExtraFooter": {
+      "value": "",
+      "description": "在面板中添加额外的页脚",
+      "default": "-",
+      "type": "v-slot:renderExtraFooter=\"mode\""
+    },
+    "showNow": {
+      "value": "",
+      "description": "当设定了 `showTime` 的时候，面板是否显示“此刻”按钮",
+      "default": "false",
+      "type": "boolean"
+    },
+    "showTime": {
+      "value": [
+        "[TimePicker Options](",
+        "components",
+        "time-picker",
+        "#api)"
+      ],
+      "description": "增加时间选择功能",
+      "default": "[TimePicker Options]( | components | time-picker | #api)",
+      "type": "Object | boolean"
+    },
+    "showTime.defaultValue": {
+      "value": "",
+      "description": "设置用户选择日期时默认的时分秒，[例子](#components-date-picker-demo-disabled-date)",
+      "default": "dayjs()",
+      "type": "[dayjs](https: |  | day.js.org | )"
+    },
+    "showToday": {
+      "value": "",
+      "description": "是否展示“今天”按钮",
+      "default": "true",
+      "type": "boolean"
+    },
+    "value(v-model)": {
+      "value": "",
+      "description": "日期",
+      "default": "-",
+      "type": "[dayjs](https: |  | day.js.org | )"
+    }
+  },
+  "methods": [],
+  "events": [
+    {
+      "name": "openChange",
+      "description": "弹出日历和关闭日历的回调",
+      "params": "function(status)"
+    },
+    {
+      "name": "panelChange",
+      "description": "日期面板变化时的回调",
+      "params": "function(value, mode)"
+    },
+    {
+      "name": "change",
+      "description": "时间发生变化的回调",
+      "params": "function(date: dayjs | string, dateString: string)"
+    },
+    {
+      "name": "ok",
+      "description": "点击确定按钮的回调",
+      "params": "function(date: dayjs | string)"
+    }
+  ],
+  "link": "https://antdv.com/components/date-picker-cn"
+}

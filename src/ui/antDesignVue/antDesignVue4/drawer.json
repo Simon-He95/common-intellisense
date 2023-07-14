@@ -1,0 +1,190 @@
+{
+  "name": "ADrawer",
+  "props": {
+    "autofocus": {
+      "value": "",
+      "description": "抽屉展开后是否将焦点切换至其 Dom 节点",
+      "default": "true",
+      "type": "boolean"
+    },
+    "bodyStyle": {
+      "value": "",
+      "description": "可用于设置 Drawer 内容部分的样式",
+      "default": "-",
+      "type": "CSSProperties"
+    },
+    "class": {
+      "value": "",
+      "description": "Drawer 容器外层 className 设置，如果需要设置最外层，请使用 rootClassName",
+      "default": "-",
+      "type": "string"
+    },
+    "closable": {
+      "value": "",
+      "description": "是否显示左上角的关闭按钮",
+      "default": "true",
+      "type": "boolean"
+    },
+    "closeIcon": {
+      "value": [
+        "`<CloseOutlined",
+        ">`"
+      ],
+      "description": "自定义关闭图标",
+      "default": "`<CloseOutlined | >`",
+      "type": "VNode | slot"
+    },
+    "contentWrapperStyle": {
+      "value": "",
+      "description": "可用于设置 Drawer 包裹内容部分的样式",
+      "default": "-",
+      "type": "CSSProperties"
+    },
+    "destroyOnClose": {
+      "value": "",
+      "description": "关闭时销毁 Drawer 里的子元素",
+      "default": "false",
+      "type": "boolean"
+    },
+    "extra": {
+      "value": "",
+      "description": "抽屉右上角的操作区域",
+      "default": "-",
+      "type": "VNode | slot"
+    },
+    "footer": {
+      "value": "",
+      "description": "抽屉的页脚",
+      "default": "-",
+      "type": "VNode | slot"
+    },
+    "footerStyle": {
+      "value": "",
+      "description": "抽屉页脚部件的样式",
+      "default": "-",
+      "type": "CSSProperties"
+    },
+    "forceRender": {
+      "value": "",
+      "description": "预渲染 Drawer 内元素",
+      "default": "false",
+      "type": "boolean"
+    },
+    "getContainer": {
+      "value": "",
+      "description": "指定 Drawer 挂载的节点，**并在容器内展现** | `() => HTMLElement` | Selectors",
+      "default": "",
+      "type": "'body'"
+    },
+    "headerStyle": {
+      "value": "",
+      "description": "用于设置 Drawer 头部的样式",
+      "default": "-",
+      "type": "CSSProperties"
+    },
+    "height": {
+      "value": "",
+      "description": "高度, 在 `placement` 为 `top` 或 bottom 时使用",
+      "default": "378",
+      "type": "string | number"
+    },
+    "keyboard": {
+      "value": "",
+      "description": "是否支持键盘 esc 关闭",
+      "default": "true",
+      "type": "boolean"
+    },
+    "mask": {
+      "value": "",
+      "description": "是否展示遮罩",
+      "default": "true",
+      "type": "Boolean"
+    },
+    "maskClosable": {
+      "value": "",
+      "description": "点击蒙层是否允许关闭",
+      "default": "true",
+      "type": "boolean"
+    },
+    "maskStyle": {
+      "value": "",
+      "description": "遮罩样式",
+      "default": "{}",
+      "type": "CSSProperties"
+    },
+    "placement": {
+      "value": "",
+      "description": "抽屉的方向",
+      "default": "'right'",
+      "type": "'top' | 'right' | 'bottom' | 'left'"
+    },
+    "push": {
+      "value": "",
+      "description": "用于设置多层 Drawer 的推动行为",
+      "default": "{ distance: 180 }",
+      "type": "boolean | {distance: string | number}"
+    },
+    "rootClassName": {
+      "value": "",
+      "description": "对话框外层容器的类名",
+      "default": "-",
+      "type": "string"
+    },
+    "rootStyle": {
+      "value": "",
+      "description": "可用于设置 Drawer 最外层容器的样式，和 `style` 的区别是作用节点包括 `mask`",
+      "default": "-",
+      "type": "CSSProperties"
+    },
+    "size": {
+      "value": "",
+      "description": "预设抽屉宽度（或高度），default `378px` 和 large `736px`",
+      "default": "",
+      "type": "default | `large`"
+    },
+    "style": {
+      "value": "",
+      "description": "设计 Drawer 容器样式，如果你只需要设置内容部分请使用 `bodyStyle`",
+      "default": "-",
+      "type": "CSSProperties"
+    },
+    "title": {
+      "value": "",
+      "description": "标题",
+      "default": "-",
+      "type": "string | slot"
+    },
+    "open(v-model)": {
+      "value": "",
+      "description": "Drawer 是否可见",
+      "default": "false",
+      "type": "boolean"
+    },
+    "width": {
+      "value": "",
+      "description": "宽度",
+      "default": "378",
+      "type": "string | number"
+    },
+    "zIndex": {
+      "value": "",
+      "description": "设置 Drawer 的 `z-index`",
+      "default": "1000",
+      "type": "Number"
+    }
+  },
+  "methods": [],
+  "events": [
+    {
+      "name": "afterOpenChange",
+      "description": "切换抽屉时动画结束后的回调",
+      "params": "function(open)"
+    },
+    {
+      "name": "close",
+      "description": "点击遮罩层或左上角叉或取消按钮的回调",
+      "params": "function(e)"
+    }
+  ],
+  "link": "https://antdv.com/components/drawer-cn"
+}

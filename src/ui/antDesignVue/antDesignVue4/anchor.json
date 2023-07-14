@@ -1,0 +1,106 @@
+{
+  "name": "AAnchor",
+  "props": {
+    "affix": {
+      "value": "",
+      "description": "固定模式",
+      "default": "true",
+      "type": "boolean"
+    },
+    "bounds": {
+      "value": "",
+      "description": "锚点区域边界",
+      "default": "5(px)",
+      "type": "number"
+    },
+    "getContainer": {
+      "value": "",
+      "description": "指定滚动的容器",
+      "default": "() => window",
+      "type": "() => HTMLElement"
+    },
+    "getCurrentAnchor": {
+      "value": "",
+      "description": "自定义高亮的锚点",
+      "default": "-",
+      "type": "(activeLink: string) => string"
+    },
+    "offsetBottom": {
+      "value": "",
+      "description": "距离窗口底部达到指定偏移量后触发",
+      "default": "",
+      "type": "number"
+    },
+    "offsetTop": {
+      "value": "",
+      "description": "距离窗口顶部达到指定偏移量后触发",
+      "default": "",
+      "type": "number"
+    },
+    "showInkInFixed": {
+      "value": "",
+      "description": "`:affix=\"false\"` 时是否显示小方块",
+      "default": "false",
+      "type": "boolean"
+    },
+    "targetOffset": {
+      "value": "",
+      "description": "锚点滚动偏移量，默认与 offsetTop 相同，[例子](#components-anchor-demo-targetoffset)",
+      "default": "`offsetTop`",
+      "type": "number"
+    },
+    "wrapperClass": {
+      "value": "",
+      "description": "容器的类名",
+      "default": "-",
+      "type": "string"
+    },
+    "wrapperStyle": {
+      "value": "",
+      "description": "容器样式",
+      "default": "-",
+      "type": "object"
+    },
+    "items": {
+      "value": "",
+      "description": "数据化配置选项内容，支持通过 children 嵌套",
+      "default": "-",
+      "type": "{ key, href, title, target, children }[] [具体见](#anchoritem)"
+    },
+    "direction": {
+      "value": "",
+      "description": "设置导航方向",
+      "default": "vertical",
+      "type": "vertical | horizontal"
+    },
+    "customTitle": {
+      "value": "",
+      "description": "使用插槽自定义选项 title",
+      "default": "-",
+      "type": "v-slot=\"AnchorItem\""
+    }
+  },
+  "methods": [],
+  "typeDetail": {
+    "AnchorItem": [
+      { "name": "key", "description": "唯一标志", "type": "string | number" },
+      { "name": "href", "description": "锚点链接", "type": "string" },
+      { "name": "target", "description": "该属性指定在何处显示链接的资源", "type": "string" },
+      { "name": "title", "description": "文字内容", "type": "VueNode | (item: AnchorItem) => VueNode" },
+      { "name": "children", "description": "嵌套的 Anchor Link", "type": "AnchorItem[]" }
+    ]
+  },
+  "events": [
+    {
+      "name": "change",
+      "description": "监听锚点链接改变",
+      "params": "(currentActiveLink: string) => void"
+    },
+    {
+      "name": "click",
+      "description": "`click` 事件的 handler",
+      "params": "Function(e: MouseEvent, link: Object)"
+    }
+  ],
+  "link": "https://antdv.com/components/anchor-cn"
+}

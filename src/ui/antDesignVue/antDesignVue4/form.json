@@ -1,0 +1,119 @@
+{
+  "name": "AForm",
+  "props": {
+    "colon": {
+      "value": "",
+      "description": "配置 Form.Item 的 colon 的默认值 (只有在属性 layout 为 horizontal 时有效)",
+      "default": "true",
+      "type": "boolean"
+    },
+    "disabled": {
+      "value": "",
+      "description": "设置表单组件禁用，仅对 antdv 组件有效",
+      "default": "false",
+      "type": "boolean"
+    },
+    "hideRequiredMark": {
+      "value": "",
+      "description": "隐藏所有表单项的必选标记",
+      "default": "false",
+      "type": "Boolean"
+    },
+    "labelAlign": {
+      "value": "",
+      "description": "label 标签的文本对齐方式",
+      "default": "'right'",
+      "type": "'left' | 'right'"
+    },
+    "labelCol": {
+      "value": "",
+      "description": "label 标签布局，同 `<Col>` 组件，设置 `span` `offset` 值，如 `{span: 3, offset: 12}` 或 `sm: {span: 3, offset: 12}`",
+      "default": "",
+      "type": "[object]( | components | grid-cn | #col)"
+    },
+    "labelWrap": {
+      "value": "",
+      "description": "label 标签的文本换行方式",
+      "default": "false",
+      "type": "boolean"
+    },
+    "layout": {
+      "value": "",
+      "description": "表单布局",
+      "default": "'horizontal'",
+      "type": "'horizontal'|'vertical'|'inline'"
+    },
+    "model": {
+      "value": "",
+      "description": "表单数据对象",
+      "default": "",
+      "type": "object"
+    },
+    "name": {
+      "value": "",
+      "description": "表单名称，会作为表单字段 `id` 前缀使用",
+      "default": "-",
+      "type": "string"
+    },
+    "noStyle": {
+      "value": "",
+      "description": "为 `true` 时不带样式，作为纯字段控件使用",
+      "default": "false",
+      "type": "boolean"
+    },
+    "rules": {
+      "value": "",
+      "description": "表单验证规则",
+      "default": "",
+      "type": "object"
+    },
+    "scrollToFirstError": {
+      "value": "",
+      "description": "提交失败自动滚动到第一个错误字段",
+      "default": "false",
+      "type": "boolean | [options](https: |  | github.com | stipsan | scroll-into-view-if-needed | #options)"
+    },
+    "validateOnRuleChange": {
+      "value": "",
+      "description": "是否在 rules 属性改变后立即触发一次验证",
+      "default": "true",
+      "type": "boolean"
+    },
+    "validateTrigger": {
+      "value": "",
+      "description": "统一设置字段校验规则",
+      "default": "`change`",
+      "type": "string | string\\[]"
+    },
+    "wrapperCol": {
+      "value": "",
+      "description": "需要为输入控件设置布局样式时，使用该属性，用法同 labelCol",
+      "default": "",
+      "type": "[object]( | components | grid-cn | #col)"
+    }
+  },
+  "methods": [],
+  "events": [
+    {
+      "name": "finish",
+      "description": "提交表单且数据验证成功后回调事件",
+      "params": "function(values)"
+    },
+    {
+      "name": "finishFailed",
+      "description": "提交表单且数据验证失败后回调事件",
+      "params": "function({ values, errorFields, outOfDate })"
+    },
+    {
+      "name": "submit",
+      "description": "数据验证成功后回调事件",
+      "params": "Function(e:Event)"
+    },
+    {
+      "name": "validate",
+      "description": "任一表单项被校验后触发",
+      "params": "Function(name, status, errorMsgs)"
+    }
+  ],
+  "link": "https://antdv.com/components/form-cn"
+}

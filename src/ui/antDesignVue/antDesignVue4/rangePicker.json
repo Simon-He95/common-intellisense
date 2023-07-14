@@ -1,0 +1,110 @@
+{
+  "name": "",
+  "props": {
+    "allowEmpty": {
+      "value": "",
+      "description": "允许起始项部分为空",
+      "default": "[false, false]",
+      "type": "[boolean, boolean]"
+    },
+    "dateRender": {
+      "value": "",
+      "description": "自定义日期单元格的内容。",
+      "default": "-",
+      "type": "v-slot:dateRender=\"{current: dayjs, today: dayjs, info: { range: `start` | `end` }}\""
+    },
+    "defaultPickerValue": {
+      "value": "",
+      "description": "默认面板日期",
+      "default": "-",
+      "type": "[dayjs](https: |  | day.js.org | )[]"
+    },
+    "disabled": {
+      "value": "",
+      "description": "禁用起始项",
+      "default": "-",
+      "type": "[boolean, boolean]"
+    },
+    "disabledTime": {
+      "value": "",
+      "description": "不可选择的时间",
+      "default": "-",
+      "type": "function(date: dayjs, partial: `start` | `end`)"
+    },
+    "format": {
+      "value": "",
+      "description": "展示的日期格式",
+      "default": "`YYYY-MM-DD HH:mm:ss`",
+      "type": "[formatType](#formattype)"
+    },
+    "presets": {
+      "value": "",
+      "description": "预设时间范围快捷选择",
+      "default": "-",
+      "type": "{ label: slot, value: [dayjs](https: |  | day.js.org | )[] }[]"
+    },
+    "ranges": {
+      "value": "",
+      "description": "预设时间范围快捷选择",
+      "default": "-",
+      "type": "{ [range: string]: [dayjs](https: |  | day.js.org | )[] } | { [range: string]: () => [dayjs](https: |  | day.js.org | )[] }"
+    },
+    "renderExtraFooter": {
+      "value": "",
+      "description": "在面板中添加额外的页脚",
+      "default": "-",
+      "type": "v-slot:renderExtraFooter=\"mode\""
+    },
+    "separator": {
+      "value": [
+        "`<SwapRightOutlined",
+        ">`"
+      ],
+      "description": "设置分隔符",
+      "default": "`<SwapRightOutlined | >`",
+      "type": "string | v-slot:separator"
+    },
+    "showTime": {
+      "value": [
+        "[TimePicker Options](",
+        "components",
+        "time-picker",
+        "#api)"
+      ],
+      "description": "增加时间选择功能",
+      "default": "[TimePicker Options]( | components | time-picker | #api)",
+      "type": "Object|boolean"
+    },
+    "showTime.defaultValue": {
+      "value": "",
+      "description": "设置用户选择日期时默认的时分秒，[例子](#components-date-picker-demo-disabled-date)",
+      "default": "[dayjs(), dayjs()]",
+      "type": "[dayjs](https: |  | day.js.org | )[]"
+    },
+    "value(v-model)": {
+      "value": "",
+      "description": "日期",
+      "default": "-",
+      "type": "[dayjs](https: |  | day.js.org | )[]"
+    }
+  },
+  "methods": [],
+  "events": [
+    {
+      "name": "calendarChange",
+      "description": "待选日期发生变化的回调",
+      "params": "function(dates: [dayjs, dayjs] | [string, string], dateStrings: [string, string], info: { range:`start`|`end` })"
+    },
+    {
+      "name": "change",
+      "description": "日期范围发生变化的回调",
+      "params": "function(dates: [dayjs, dayjs] | [string, string], dateStrings: [string, string])"
+    },
+    {
+      "name": "ok",
+      "description": "点击确定按钮的回调",
+      "params": "function(dates: [dayjs, dayjs] | [string, string])"
+    }
+  ],
+  "link": "https://antdv.com/components/date-picker-cn"
+}

@@ -1,0 +1,108 @@
+{
+  "name": "ACalendar",
+  "props": {
+    "dateCellRender": {
+      "value": "",
+      "description": "作用域插槽，用来自定义渲染日期单元格，返回内容会被追加到单元格,",
+      "default": "无",
+      "type": "v-slot:dateCellRender=\"{current: dayjs}\""
+    },
+    "dateFullCellRender": {
+      "value": "",
+      "description": "作用域插槽，自定义渲染日期单元格，返回内容覆盖单元格",
+      "default": "无",
+      "type": "v-slot:dateFullCellRender=\"{current: dayjs}\""
+    },
+    "disabledDate": {
+      "value": "",
+      "description": "不可选择的日期",
+      "default": "无",
+      "type": "(currentDate: dayjs) => boolean"
+    },
+    "fullscreen": {
+      "value": "",
+      "description": "是否全屏显示",
+      "default": "true",
+      "type": "boolean"
+    },
+    "headerRender": {
+      "value": "",
+      "description": "自定义头部内容",
+      "default": "-",
+      "type": "v-slot:headerRender=\"{value: dayjs, type: string, onChange: f(), onTypeChange: f()}\""
+    },
+    "locale": {
+      "value": [
+        "[默认配置](https:",
+        "",
+        "github.com",
+        "vueComponent",
+        "ant-design-vue",
+        "blob",
+        "main",
+        "components",
+        "date-picker",
+        "locale",
+        "example.json)"
+      ],
+      "description": "国际化配置",
+      "default": "[默认配置](https: |  | github.com | vueComponent | ant-design-vue | blob | main | components | date-picker | locale | example.json)",
+      "type": "object"
+    },
+    "mode": {
+      "value": "",
+      "description": "初始模式，`month/year`",
+      "default": "month",
+      "type": "string"
+    },
+    "monthCellRender": {
+      "value": "",
+      "description": "作用域插槽，自定义渲染月单元格，返回内容会被追加到单元格",
+      "default": "无",
+      "type": "v-slot:monthCellRender=\"{current: dayjs}\""
+    },
+    "monthFullCellRender": {
+      "value": "",
+      "description": "作用域插槽，自定义渲染月单元格，返回内容覆盖单元格",
+      "default": "无",
+      "type": "v-slot:monthFullCellRender=\"{current: dayjs}\""
+    },
+    "validRange": {
+      "value": "",
+      "description": "设置可以显示的日期",
+      "default": "无",
+      "type": "[[dayjs](https: |  | day.js.org | ), [dayjs](https: |  | day.js.org | )]"
+    },
+    "value(v-model)": {
+      "value": "",
+      "description": "展示日期",
+      "default": "当前日期",
+      "type": "[dayjs](https: |  | day.js.org | )"
+    },
+    "valueFormat": {
+      "value": "",
+      "description": "可选，绑定值的格式，对 value、defaultValue 起作用。不指定则绑定值为 dayjs 对象",
+      "default": "-",
+      "type": "string，[具体格式](https: |  | day.js.org | docs | zh-CN | display | format)"
+    }
+  },
+  "methods": [],
+  "events": [
+    {
+      "name": "change",
+      "description": "日期变化时的回调, 面板变化有可能导致日期变化",
+      "params": "function(date: dayjs | string）"
+    },
+    {
+      "name": "panelChange",
+      "description": "日期面板变化回调",
+      "params": "function(date: dayjs | string, mode: string)"
+    },
+    {
+      "name": "select",
+      "description": "选择日期回调，包含来源信息",
+      "params": "function(date: Dayjs, info: { source: 'year' | 'month' | 'date' | 'customize' })"
+    }
+  ],
+  "link": "https://antdv.com/components/calendar-cn"
+}

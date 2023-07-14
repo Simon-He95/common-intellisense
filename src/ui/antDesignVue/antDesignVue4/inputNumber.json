@@ -1,0 +1,162 @@
+{
+  "name": "AInputNumber",
+  "props": {
+    "addonAfter": {
+      "value": "",
+      "description": "带标签的 input，设置后置标签",
+      "default": "-",
+      "type": "slot"
+    },
+    "addonBefore": {
+      "value": "",
+      "description": "带标签的 input，设置前置标签",
+      "default": "-",
+      "type": "slot"
+    },
+    "autofocus": {
+      "value": "",
+      "description": "自动获取焦点",
+      "default": "false",
+      "type": "boolean"
+    },
+    "bordered": {
+      "value": "",
+      "description": "是否有边框",
+      "default": "true",
+      "type": "boolean"
+    },
+    "controls": {
+      "value": "",
+      "description": "是否显示增减按钮",
+      "default": "true",
+      "type": "boolean"
+    },
+    "decimalSeparator": {
+      "value": "",
+      "description": "小数点",
+      "default": "-",
+      "type": "string"
+    },
+    "defaultValue": {
+      "value": "",
+      "description": "初始值",
+      "default": "",
+      "type": "number"
+    },
+    "disabled": {
+      "value": "",
+      "description": "禁用",
+      "default": "false",
+      "type": "boolean"
+    },
+    "formatter": {
+      "value": "",
+      "description": "指定输入框展示值的格式",
+      "default": "-",
+      "type": "function(value: number | string, info: { userTyping: boolean, input: string }): string"
+    },
+    "keyboard": {
+      "value": "",
+      "description": "是否启用键盘快捷行为",
+      "default": "true",
+      "type": "boolean"
+    },
+    "max": {
+      "value": "",
+      "description": "最大值",
+      "default": "Infinity",
+      "type": "number"
+    },
+    "min": {
+      "value": "",
+      "description": "最小值",
+      "default": "-Infinity",
+      "type": "number"
+    },
+    "parser": {
+      "value": "",
+      "description": "指定从 formatter 里转换回数字的方式，和 formatter 搭配使用",
+      "default": "-",
+      "type": "function( string): number"
+    },
+    "precision": {
+      "value": "",
+      "description": "数值精度",
+      "default": "-",
+      "type": "number"
+    },
+    "prefix": {
+      "value": "",
+      "description": "带有前缀图标的 input",
+      "default": "-",
+      "type": "slot"
+    },
+    "size": {
+      "value": "",
+      "description": "输入框大小",
+      "default": "无",
+      "type": "string"
+    },
+    "status": {
+      "value": "",
+      "description": "设置校验状态",
+      "default": "-",
+      "type": "'error' | 'warning'"
+    },
+    "step": {
+      "value": "",
+      "description": "每次改变步数，可以为小数",
+      "default": "1",
+      "type": "number|string"
+    },
+    "stringMode": {
+      "value": "",
+      "description": "字符值模式，开启后支持高精度小数。同时 `change` 事件将返回 string 类型",
+      "default": "false",
+      "type": "boolean"
+    },
+    "upIcon": {
+      "value": [
+        "`<UpOutlined",
+        ">`"
+      ],
+      "description": "自定义上箭头图标",
+      "default": "`<UpOutlined | >`",
+      "type": "slot"
+    },
+    "downIcon": {
+      "value": [
+        "`<DownOutlined",
+        ">`"
+      ],
+      "description": "自定义下箭头图标",
+      "default": "`<DownOutlined | >`",
+      "type": "slot"
+    },
+    "value(v-model)": {
+      "value": "",
+      "description": "当前值",
+      "default": "",
+      "type": "number"
+    }
+  },
+  "methods": [],
+  "events": [
+    {
+      "name": "change",
+      "description": "变化回调",
+      "params": "Function(value: number | string)"
+    },
+    {
+      "name": "pressEnter",
+      "description": "按下回车的回调",
+      "params": "function(e)"
+    },
+    {
+      "name": "step",
+      "description": "点击上下箭头的回调",
+      "params": "(value: number, info: { offset: number, type: 'up' | 'down' }) => void"
+    }
+  ],
+  "link": "https://antdv.com/components/input-number-cn"
+}

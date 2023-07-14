@@ -1,0 +1,104 @@
+{
+  "name": "AConfigProvider",
+  "props": {
+    "autoInsertSpaceInButton": {
+      "value": "",
+      "description": "设置为 `false` 时，移除按钮中 2 个汉字之间的空格",
+      "default": "true",
+      "type": "boolean"
+    },
+    "componentSize": {
+      "value": "",
+      "description": "设置 antd 组件大小",
+      "default": "-",
+      "type": "small | middle | `large`"
+    },
+    "csp": {
+      "value": "",
+      "description": "设置 [Content Security Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) 配置",
+      "default": "-",
+      "type": "{ nonce: string }"
+    },
+    "direction": {
+      "value": "",
+      "description": "设置文本展示方向。 [示例](#components-config-provider-demo-direction)",
+      "default": "`ltr`",
+      "type": "`ltr` | `rtl`"
+    },
+    "dropdownMatchSelectWidth": {
+      "value": "",
+      "description": "下拉菜单和选择器同宽。默认将设置 `min-width`，当值小于选择框宽度时会被忽略。`false` 时会关闭虚拟滚动",
+      "default": "-",
+      "type": "boolean | number"
+    },
+    "form": {
+      "value": "",
+      "description": "设置 Form 组件的通用属性",
+      "default": "-",
+      "type": "{ validateMessages?: [ValidateMessages]( | components | form | #validatemessages), requiredMark?: boolean | `optional`, colon?: boolean}"
+    },
+    "getPopupContainer": {
+      "value": "",
+      "description": "弹出框（Select, Tooltip, Menu 等等）渲染父节点，默认渲染到 body 上。",
+      "default": "() => document.body",
+      "type": "Function(triggerNode, dialogContext)"
+    },
+    "getTargetContainer": {
+      "value": "",
+      "description": "配置 Affix、Anchor 滚动监听容器。",
+      "default": "() => window",
+      "type": "() => HTMLElement"
+    },
+    "input": {
+      "value": "",
+      "description": "设置 Input 组件的通用属性",
+      "default": "-",
+      "type": "{ autocomplete?: string }"
+    },
+    "locale": {
+      "value": "",
+      "description": "语言包配置，语言包可到 [ant-design-vue/es/locale](http://unpkg.com/ant-design-vue/es/locale/) 目录下寻找",
+      "default": "-",
+      "type": "object"
+    },
+    "pageHeader": {
+      "value": "",
+      "description": "统一设置 pageHeader 的 ghost，参考 [pageHeader](<(/components/page-header)>)",
+      "default": "'true'",
+      "type": "{ ghost: boolean }"
+    },
+    "prefixCls": {
+      "value": "",
+      "description": "设置统一样式前缀。注意：需要配合 `less` 变量 `@ant-prefix` 使用",
+      "default": "`ant`",
+      "type": "string"
+    },
+    "renderEmpty": {
+      "value": "",
+      "description": "自定义组件空状态。参考 [空状态](/components/empty/)",
+      "default": "-",
+      "type": "slot | Function(componentName: string): VNode"
+    },
+    "space": {
+      "value": "",
+      "description": "设置 Space 的 `size`，参考 [Space](/components/space)",
+      "default": "-",
+      "type": "{ size: small | middle | `large` | `number` }"
+    },
+    "transformCellText": {
+      "value": "",
+      "description": "Table 数据渲染前可以再次改变，一般用户空数据的默认配置",
+      "default": "-",
+      "type": "Function({ text, column, record, index }) => any"
+    },
+    "virtual": {
+      "value": "",
+      "description": "设置 `false` 时关闭虚拟滚动",
+      "default": "false",
+      "type": "boolean"
+    }
+  },
+  "methods": [],
+  "events": [],
+  "link": "https://antdv.com/components/config-provider-cn"
+}
