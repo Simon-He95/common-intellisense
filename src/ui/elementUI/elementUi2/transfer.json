@@ -1,0 +1,111 @@
+{
+  "name": "ElTransfer",
+  "props": {
+    "value": {
+      "value": "",
+      "description": "绑定值",
+      "default": "—",
+      "type": "array"
+    },
+    "v-model": {
+      "value": "",
+      "description": "绑定值",
+      "default": "—",
+      "type": "array"
+    },
+    "data": {
+      "value": "",
+      "description": "Transfer 的数据源",
+      "default": "—",
+      "type": "array[{ key, label, disabled }]"
+    },
+    "filterable": {
+      "value": "",
+      "description": "是否可搜索",
+      "default": "false",
+      "type": "boolean"
+    },
+    "filter-placeholder": {
+      "value": "",
+      "description": "搜索框占位符",
+      "default": "—",
+      "type": "string"
+    },
+    "filter-method": {
+      "value": "",
+      "description": "自定义搜索方法",
+      "default": "—",
+      "type": "function"
+    },
+    "target-order": {
+      "value": [
+        "original",
+        "push",
+        "unshift"
+      ],
+      "description": "右侧列表元素的排序策略：若为 `original`，则保持与数据源相同的顺序；若为 `push`，则新加入的元素排在最后；若为 `unshift`，则新加入的元素排在最前",
+      "default": "original | push | unshift",
+      "type": "string"
+    },
+    "titles": {
+      "value": "",
+      "description": "自定义列表标题",
+      "default": "—",
+      "type": "array"
+    },
+    "button-texts": {
+      "value": "",
+      "description": "自定义按钮文案",
+      "default": "—",
+      "type": "array"
+    },
+    "render-content": {
+      "value": "",
+      "description": "自定义数据项渲染函数",
+      "default": "—",
+      "type": "function(h, option)"
+    },
+    "format": {
+      "value": "",
+      "description": "列表顶部勾选状态文案",
+      "default": "—",
+      "type": "object{noChecked, hasChecked}"
+    },
+    "props": {
+      "value": "",
+      "description": "数据源的字段别名",
+      "default": "—",
+      "type": "object{key, label, disabled}"
+    },
+    "left-default-checked": {
+      "value": "",
+      "description": "初始状态下左侧列表的已勾选项的 key 数组",
+      "default": "—",
+      "type": "array"
+    },
+    "right-default-checked": {
+      "value": "",
+      "description": "初始状态下右侧列表的已勾选项的 key 数组",
+      "default": "—",
+      "type": "array"
+    }
+  },
+  "events": [
+    {
+      "name": "change",
+      "description": "右侧列表元素变化时触发",
+      "params": "当前值、数据移动的方向（'left' / 'right'）、发生移动的数据 key 数组"
+    },
+    {
+      "name": "left-check-change",
+      "description": "左侧列表元素被用户选中 / 取消选中时触发",
+      "params": "当前被选中的元素的 key 数组、选中状态发生变化的元素的 key 数组"
+    },
+    {
+      "name": "right-check-change",
+      "description": "右侧列表元素被用户选中 / 取消选中时触发",
+      "params": "当前被选中的元素的 key 数组、选中状态发生变化的元素的 key 数组"
+    }
+  ],
+  "link": "https://element.eleme.cn/#/zh-CN/component/transfer"
+}

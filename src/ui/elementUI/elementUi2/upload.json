@@ -1,0 +1,166 @@
+{
+  "name": "ElUpload",
+  "props": {
+    "action": {
+      "value": "",
+      "description": "必选参数，上传的地址",
+      "default": "—",
+      "type": "string"
+    },
+    "headers": {
+      "value": "",
+      "description": "设置上传的请求头部",
+      "default": "—",
+      "type": "object"
+    },
+    "multiple": {
+      "value": "",
+      "description": "是否支持多选文件",
+      "default": "false",
+      "type": "boolean"
+    },
+    "data": {
+      "value": "",
+      "description": "上传时附带的额外参数",
+      "default": "—",
+      "type": "object"
+    },
+    "name": {
+      "value": "",
+      "description": "上传的文件字段名",
+      "default": "—",
+      "type": "string"
+    },
+    "with-credentials": {
+      "value": "",
+      "description": "支持发送 cookie 凭证信息",
+      "default": "false",
+      "type": "boolean"
+    },
+    "show-file-list": {
+      "value": "",
+      "description": "是否显示已上传文件列表",
+      "default": "false",
+      "type": "boolean"
+    },
+    "drag": {
+      "value": "",
+      "description": "是否启用拖拽上传",
+      "default": "false",
+      "type": "boolean"
+    },
+    "accept": {
+      "value": "",
+      "description": "接受上传的[文件类型](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attr-accept)（thumbnail-mode 模式下此参数无效）",
+      "default": "—",
+      "type": "string"
+    },
+    "before-upload": {
+      "value": "",
+      "description": "上传文件之前的钩子，参数为上传的文件，若返回 false 或者返回 Promise 且被 reject，则停止上传。",
+      "default": "—",
+      "type": "function(file)"
+    },
+    "before-remove": {
+      "value": "",
+      "description": "删除文件之前的钩子，参数为上传的文件和文件列表，若返回 false 或者返回 Promise 且被 reject，则停止删除。",
+      "default": "—",
+      "type": "function(file, fileList)"
+    },
+    "list-type": {
+      "value": [
+        "text",
+        "picture",
+        "picture-card"
+      ],
+      "description": "文件列表的类型",
+      "default": "text | picture | picture-card",
+      "type": "string"
+    },
+    "auto-upload": {
+      "value": "",
+      "description": "是否在选取文件后立即进行上传",
+      "default": "false",
+      "type": "boolean"
+    },
+    "file-list": {
+      "value": "",
+      "description": "上传的文件列表, 例如: [{name: 'food.jpg', url: 'https://xxx.cdn.com/xxx.jpg'}]",
+      "default": "—",
+      "type": "array"
+    },
+    "http-request": {
+      "value": "",
+      "description": "覆盖默认的上传行为，可以自定义上传的实现",
+      "default": "—",
+      "type": "function"
+    },
+    "disabled": {
+      "value": "",
+      "description": "是否禁用",
+      "default": "false",
+      "type": "boolean"
+    },
+    "limit": {
+      "value": "",
+      "description": "最大允许上传个数",
+      "default": "—",
+      "type": "number"
+    }
+  },
+  "methods": [
+    {
+      "name": "clearFiles",
+      "description": "清空已上传的文件列表（该方法不支持在 before-upload 中调用）",
+      "params": "—"
+    },
+    {
+      "name": "abort",
+      "description": "取消上传请求",
+      "params": "（ file: fileList 中的 file 对象 ）"
+    },
+    {
+      "name": "submit",
+      "description": "手动上传文件列表",
+      "params": "—"
+    }
+  ],
+  "events": [
+    {
+      "name": "on-preview",
+      "description": "点击文件列表中已上传的文件时的钩子",
+      "params": "function(file)"
+    },
+    {
+      "name": "on-remove",
+      "description": "文件列表移除文件时的钩子",
+      "params": "function(file, fileList)"
+    },
+    {
+      "name": "on-success",
+      "description": "文件上传成功时的钩子",
+      "params": "function(response, file, fileList)"
+    },
+    {
+      "name": "on-error",
+      "description": "文件上传失败时的钩子",
+      "params": "function(err, file, fileList)"
+    },
+    {
+      "name": "on-progress",
+      "description": "文件上传时的钩子",
+      "params": "function(event, file, fileList)"
+    },
+    {
+      "name": "on-change",
+      "description": "文件状态改变时的钩子，添加文件、上传成功和上传失败时都会被调用",
+      "params": "function(file, fileList)"
+    },
+    {
+      "name": "on-exceed",
+      "description": "文件超出个数限制时的钩子",
+      "params": "function(files, fileList)"
+    }
+  ],
+  "link": "https://element.eleme.cn/#/zh-CN/component/upload"
+}

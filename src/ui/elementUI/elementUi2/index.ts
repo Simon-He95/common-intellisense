@@ -1,5 +1,4 @@
-import { createCompletionItem } from '@vscode-use/utils'
-import * as vscode from 'vscode'
+import { componentsReducer, propsReducer } from '../../utils'
 import ElRow from './row.json'
 import ElCol from './col.json'
 import ElAlert from './alert.json'
@@ -19,12 +18,59 @@ import ElTableColumn from './tableColumn.json'
 import ElCard from './card.json'
 import ElInput from './input.json'
 import ElAutocomplete from './autocomplete.json'
-import ElCheckBox from './checkbox.json'
-import ElCheckBoxGroup from './checkboxGroup.json'
-import ElCheckBoxButton from './checkboxButton.json'
 import ElSelect from './select.json'
 import ElCascader from './cascader.json'
 import ElCascaderPanel from './cascaderPanel.json'
+import ElCheckbox from './checkbox.json'
+import ElCheckboxGroup from './checkboxGroup.json'
+import ElCheckboxButton from './checkboxButton.json'
+import ElBadge from './badge.json'
+import ElBreadcrumb from './breadcrumb.json'
+import ElCarousel from './carousel.json'
+import ElCarouselItem from './carouselItem.json'
+import ElCollapse from './collapse.json'
+import ElCollapseItem from './collapseItem.json'
+import ElColorPicker from './colorPicker.json'
+import ElImage from './image.json'
+import ElEmpty from './empty.json'
+import ElDropdown from './dropdown.json'
+import ElDropdownMenuItem from './dropdownMenuItem.json'
+import ElDrawer from './drawer.json'
+import ElDivider from './divider.json'
+import ElDialog from './dialog.json'
+import ElDescriptions from './descriptions.json'
+import ElDatepicker from './datePicker.json'
+import ElDatetimePicker from './datetimePicker.json'
+import ElMenu from './menu.json'
+import ElMenuItem from './menuItem.json'
+import ElPageHeader from './pageHeader.json'
+import ElPagination from './pagination.json'
+import ElPopconfirm from './popconfirm.json'
+import ElPopover from './popover.json'
+import ElProgress from './progress.json'
+import ElRate from './rate.json'
+import ElResult from './result.json'
+import ElSkeleton from './skeleton.json'
+import ElSkeletonItem from './skeletonItem.json'
+import ElSlider from './slider.json'
+import ElStatistic from './statistic.json'
+import ElStep from './step.json'
+import ElSteps from './steps.json'
+import ElSubmenu from './submenu.json'
+import ElSwitch from './switch.json'
+import ElTabPane from './tabPane.json'
+import ElTabs from './tabs.json'
+import ElTag from './tag.json'
+import ElTimeline from './timeline.json'
+import ElTimelineItem from './timelineItem.json'
+import ElTimePicker from './timePicker.json'
+import ElTimeSelect from './timeSelect.json'
+import ElTooltip from './tooltip.json'
+import ElTransfer from './transfer.json'
+import ElTree from './tree.json'
+import ElUpload from './upload.json'
+import ElAvatar from './avatar.json'
+import ElBacktop from './backtop.json'
 
 export function elementUi2() {
   const map: any = [
@@ -47,72 +93,66 @@ export function elementUi2() {
     ElCard,
     ElInput,
     ElAutocomplete,
-    ElCheckBox,
-    ElCheckBoxGroup,
-    ElCheckBoxButton,
     ElSelect,
     ElCascader,
     ElCascaderPanel,
+    ElCheckbox,
+    ElCheckboxGroup,
+    ElCheckboxButton,
+    ElBadge,
+    ElBreadcrumb,
+    ElCarousel,
+    ElCarouselItem,
+    ElCollapse,
+    ElCollapseItem,
+    ElColorPicker,
+    ElImage,
+    ElEmpty,
+    ElDropdown,
+    ElDropdownMenuItem,
+    ElDrawer,
+    ElDivider,
+    ElDialog,
+    ElDescriptions,
+    ElDatepicker,
+    ElDatetimePicker,
+    ElMenu,
+    ElMenuItem,
+    ElPageHeader,
+    ElPagination,
+    ElPopconfirm,
+    ElPopover,
+    ElProgress,
+    ElRate,
+    ElResult,
+    ElSkeleton,
+    ElSkeletonItem,
+    ElSlider,
+    ElStatistic,
+    ElStep,
+    ElSteps,
+    ElSubmenu,
+    ElSwitch,
+    ElTabPane,
+    ElTabs,
+    ElTag,
+    ElTimeline,
+    ElTimelineItem,
+    ElTimePicker,
+    ElTimeSelect,
+    ElTooltip,
+    ElTransfer,
+    ElTree,
+    ElUpload,
+    ElAvatar,
+    ElBacktop,
   ]
 
-  return map.reduce((result: any, item: any) => {
-    const completions: any = []
-    const events: any = []
-    Object.keys(item.props!).forEach((key) => {
-      const value = (item.props as any)[key]
-      let type = vscode.CompletionItemKind.Property
-      if (typeof value.value === 'string')
-        value.value = [value.value]
-      else
-        type = vscode.CompletionItemKind.Enum
-      completions.push(...value.value.map((v: string) => {
-        const detail = []
-        if (value.default !== undefined && value.default !== '')
-          detail.push(`#### ***💎 默认值:***    \`${value.default}\``)
-
-        if (value.type)
-          detail.push(`#### ***💡 类型:***    \`${value.type}\``)
-
-        if (value.description)
-          detail.push(`#### ***🔦 说明:***    \`${value.description}\``)
-        const documentation = new vscode.MarkdownString()
-        documentation.isTrusted = true
-        documentation.supportHtml = true
-        documentation.appendMarkdown(detail.join('\n\n'))
-        if (value.type && value.type.includes('boolean') && value.default === 'false')
-          return createCompletionItem({ content: key, documentation })
-        return createCompletionItem({ content: `${key}="${v}"`, documentation, snippet: `${key}="$\{1:${v}\}$2"`, type })
-      },
-      ))
-    })
-    if (item.events) {
-      events.push(...item.events.map((events: any) => {
-        const detail = []
-        let { name, description, params } = events
-
-        if (description)
-          detail.push(`#### ***🔦 说明:***    \`${description}\``)
-
-        if (params)
-          detail.push(`#### ***🔮 回调参数:***    \`${params}\``)
-        name = name.replace(/-(\w)/g, (_: string, v: string) => v.toUpperCase())
-        const snippet = `${name}="$\{1:on${name[0].toUpperCase()}${name.slice(1)}\}$2"`
-        const documentation = new vscode.MarkdownString()
-        documentation.isTrusted = true
-        documentation.supportHtml = true
-        documentation.appendMarkdown(detail.join('\n\n'))
-        return createCompletionItem({ content: `${name}="on${name[0].toUpperCase()}${name.slice(1)}"`, snippet, documentation, type: vscode.CompletionItemKind.Event })
-      },
-      ))
-    }
-
-    result[item.name!] = { completions, events }
-    return result
-  }, {} as any)
+  return propsReducer(map)
 }
 
 export function elementUi2Components() {
-  return [
+  const map = [
     ['el-row', '布局'],
     ['el-col', '布局'],
     ['el-container', '布局容器'],
@@ -189,11 +229,6 @@ export function elementUi2Components() {
     ['el-backtop', '回到顶部'],
     ['el-drawer', '抽屉'],
     ['el-autocomplete', '远程搜索'],
-  ].map(([content, detail]) => {
-    const documentation = new vscode.MarkdownString()
-    documentation.isTrusted = true
-    documentation.supportHtml = true
-    documentation.appendMarkdown(`#### ***📖 ${detail}***`)
-    return createCompletionItem({ content, snippet: `<${content}>$1</${content}>`, documentation, type: vscode.CompletionItemKind.TypeParameter })
-  })
+  ]
+  return componentsReducer(map)
 }

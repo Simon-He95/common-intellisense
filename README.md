@@ -25,7 +25,7 @@ Create a json format for the data structure corresponding to the component, for 
     "classNames": {
       "value": "",
       "description": "语义化结构 class",
-      "default": "",
+      "default": "—",
       "type": "Record<SemanticDOM, string>"
     },
     "danger": {
@@ -49,7 +49,7 @@ Create a json format for the data structure corresponding to the component, for 
     "href": {
       "value": "",
       "description": "点击跳转的地址，指定此属性 button 的行为和 a 链接一致",
-      "default": "",
+      "default": "—",
       "type": "string"
     },
     "htmlType": {
@@ -61,7 +61,7 @@ Create a json format for the data structure corresponding to the component, for 
     "icon": {
       "value": "",
       "description": "设置按钮的图标组件",
-      "default": "",
+      "default": "—",
       "type": "ReactNode"
     },
     "loading": {
@@ -93,13 +93,13 @@ Create a json format for the data structure corresponding to the component, for 
     "styles": {
       "value": "",
       "description": "语义化结构 style",
-      "default": "",
+      "default": "—",
       "type": "Record<SemanticDOM, CSSProperties>"
     },
     "target": {
       "value": "",
       "description": "相当于 a 链接的 target 属性，href 存在时生效",
-      "default": "",
+      "default": "—",
       "type": "string"
     },
     "type": {
@@ -120,9 +120,10 @@ Create a json format for the data structure corresponding to the component, for 
     {
       "name": "onClick",
       "description": "点击按钮时的回调",
-      "callback": "(event: MouseEvent) => void"
+      "params": "(event: MouseEvent) => void"
     }
-  ]
+  ],
+  "link":"https://element.eleme.cn/#/zh-CN/component/collapse"
 }
 
 ```

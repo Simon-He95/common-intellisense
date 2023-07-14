@@ -1,20 +1,20 @@
 import { elementUi2, elementUi2Components } from './elementUI'
 import { antd4, antd4Components, antd5, antd5Components } from './antd'
-import { elementPlus, elementPlusComponents } from './elementPlus'
-import { vant, vantComponents } from './vant'
-import { varlet, varletComponents } from './varlet'
+import { elementPlus2, elementPlus2Components } from './elementPlus'
+import { vant4, vant4Components } from './vant'
+import { varlet2, varlet2Components } from './varlet'
 
 export default {
   elementUi2,
   antd4,
   antd5,
-  elementPlus,
-  vant,
-  varlet,
+  elementPlus2,
+  vant4,
+  varlet2,
   elementUi2Components,
   antd4Components,
   antd5Components,
-  elementPlusComponents,
-  vantComponents,
-  varletComponents,
+  elementPlus2Components,
+  vant4Components,
+  varlet2Components,
 }
