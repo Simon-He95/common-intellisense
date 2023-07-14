@@ -1,68 +1,14 @@
-import * as vscode from 'vscode'
-import { createCompletionItem } from '@vscode-use/utils'
+import { componentsReducer, propsReducer } from '../../utils'
 
 export function antDesignVue2() {
   const map: any = [
   ]
 
-  return map.reduce((result: any, item: any) => {
-    const completions: any = []
-    const events: any = []
-    Object.keys(item.props!).forEach((key) => {
-      const value = (item.props as any)[key]
-      let type = vscode.CompletionItemKind.Property
-      if (typeof value.value === 'string')
-        value.value = [value.value]
-      else
-        type = vscode.CompletionItemKind.Enum
-      completions.push(...value.value.map((v: string) => {
-        const detail = []
-        if (value.default !== undefined && value.default !== '')
-          detail.push(`#### ***💎 默认值:***    \`${value.default}\``)
-
-        if (value.type)
-          detail.push(`#### ***💡 类型:***    \`${value.type}\``)
-
-        if (value.description)
-          detail.push(`#### ***🔦 说明:***    \`${value.description}\``)
-        const documentation = new vscode.MarkdownString()
-        documentation.isTrusted = true
-        documentation.supportHtml = true
-        documentation.appendMarkdown(detail.join('\n\n'))
-        if (value.type && value.type.includes('boolean') && value.default === 'false')
-          return createCompletionItem({ content: key, documentation })
-        return createCompletionItem({ content: `${key}="${v}"`, documentation, snippet: `${key}="$\{1:${v}\}$2"`, type })
-      },
-      ))
-    })
-    if (item.events) {
-      events.push(...item.events.map((events: any) => {
-        const detail = []
-        let { name, description, params } = events
-
-        if (description)
-          detail.push(`#### ***🔦 说明:***    \`${description}\``)
-
-        if (params)
-          detail.push(`#### ***🔮 回调参数:***    \`${params}\``)
-        name = name.replace(/-(\w)/g, (_: string, v: string) => v.toUpperCase())
-        const snippet = `${name}="$\{1:on${name[0].toUpperCase()}${name.slice(1)}\}$2"`
-        const documentation = new vscode.MarkdownString()
-        documentation.isTrusted = true
-        documentation.supportHtml = true
-        documentation.appendMarkdown(detail.join('\n\n'))
-        return createCompletionItem({ content: `${name}="on${name[0].toUpperCase()}${name.slice(1)}"`, snippet, documentation, type: vscode.CompletionItemKind.Event })
-      },
-      ))
-    }
-
-    result[item.name!] = { completions, events }
-    return result
-  }, {} as any)
+  return propsReducer(map)
 }
 
 export function antDesignVue2Components() {
-  return [
+  const map = [
     ['Row', '布局'],
     ['Col', '布局'],
     ['Content', '内容部分，自带默认样式，其下可嵌套任何元素，只能放在 Layout 中'],
@@ -138,11 +84,6 @@ export function antDesignVue2Components() {
     ['image', '图片'],
     ['backtop', '回到顶部'],
     ['drawer', '抽屉'],
-  ].map(([content, detail]) => {
-    const documentation = new vscode.MarkdownString()
-    documentation.isTrusted = true
-    documentation.supportHtml = true
-    documentation.appendMarkdown(`#### ***📖 ${detail}***`)
-    return createCompletionItem({ content, snippet: `<${content}>$1</${content}>`, documentation, type: vscode.CompletionItemKind.TypeParameter })
-  })
+  ]
+  return componentsReducer(map)
 }
