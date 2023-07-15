@@ -1,0 +1,136 @@
+{
+  "name": "Form",
+  "props": {
+    "colon": {
+      "value": "",
+      "description": "配置 Form.Item 的 `colon` 的默认值。表示是否显示 label 后面的冒号 (只有在属性 layout 为 horizontal 时有效)",
+      "default": "true",
+      "type": "boolean"
+    },
+    "disabled": {
+      "value": "",
+      "description": "设置表单组件禁用，仅对 antd 组件有效",
+      "default": "false",
+      "type": "boolean"
+    },
+    "component": {
+      "value": "",
+      "description": "设置 Form 渲染元素，为 `false` 则不创建 DOM 节点",
+      "default": "form",
+      "type": "ComponentType | false"
+    },
+    "fields": {
+      "value": "",
+      "description": "通过状态管理（如 redux）控制表单字段，如非强需求不推荐使用",
+      "default": "-",
+      "type": "[FieldData][]"
+    },
+    "form": {
+      "value": "",
+      "description": "经 `Form.useForm()` 创建的 form 控制实例，不提供时会自动创建",
+      "default": "-",
+      "type": "[FormInstance]"
+    },
+    "initialValues": {
+      "value": "",
+      "description": "表单默认值，只有初始化以及重置时生效",
+      "default": "-",
+      "type": "object"
+    },
+    "labelAlign": {
+      "value": "",
+      "description": "label 标签的文本对齐方式",
+      "default": "`right`",
+      "type": "`left` | `right`"
+    },
+    "labelWrap": {
+      "value": "",
+      "description": "label 标签的文本换行方式",
+      "default": "false",
+      "type": "boolean"
+    },
+    "labelCol": {
+      "value": "",
+      "description": "label 标签布局，同 `<Col>` 组件，设置 `span` `offset` 值，如 `{span: 3, offset: 12}` 或 `sm: {span: 3, offset: 12}`",
+      "default": "-",
+      "type": "[object]"
+    },
+    "layout": {
+      "value": "",
+      "description": "表单布局",
+      "default": "`horizontal`",
+      "type": "`horizontal` | `vertical` | `inline`"
+    },
+    "name": {
+      "value": "",
+      "description": "表单名称，会作为表单字段 `id` 前缀使用",
+      "default": "-",
+      "type": "string"
+    },
+    "preserve": {
+      "value": "",
+      "description": "当字段被删除时保留字段值",
+      "default": "true",
+      "type": "boolean"
+    },
+    "requiredMark": {
+      "value": "",
+      "description": "必选样式，可以切换为必选或者可选展示样式。此为 Form 配置，Form.Item 无法单独配置",
+      "default": "true",
+      "type": "boolean | `optional`"
+    },
+    "scrollToFirstError": {
+      "value": "",
+      "description": "提交失败自动滚动到第一个错误字段",
+      "default": "false",
+      "type": "boolean | [Options]"
+    },
+    "size": {
+      "value": "",
+      "description": "设置字段组件的尺寸（仅限 antd 组件）",
+      "default": "-",
+      "type": "`small` | `middle` | `large`"
+    },
+    "validateMessages": {
+      "value": "",
+      "description": "验证提示模板",
+      "default": "-",
+      "type": "[ValidateMessages]"
+    },
+    "validateTrigger": {
+      "value": "",
+      "description": "统一设置字段触发验证的时机",
+      "default": "`onChange`",
+      "type": "string | string[]"
+    },
+    "wrapperCol": {
+      "value": "",
+      "description": "需要为输入控件设置布局样式时，使用该属性，用法同 labelCol",
+      "default": "-",
+      "type": "[object]"
+    }
+  },
+  "methods": [],
+  "events": [
+    {
+      "name": "onFieldsChange",
+      "description": "字段更新时触发回调事件",
+      "params": "function(changedFields, allFields)"
+    },
+    {
+      "name": "onFinish",
+      "description": "提交表单且数据验证成功后回调事件",
+      "params": "function(values)"
+    },
+    {
+      "name": "onFinishFailed",
+      "description": "提交表单且数据验证失败后回调事件",
+      "params": "function({ values, errorFields, outOfDate })"
+    },
+    {
+      "name": "onValuesChange",
+      "description": "字段值更新时触发回调事件",
+      "params": "function(changedValues, allValues)"
+    }
+  ]
+}

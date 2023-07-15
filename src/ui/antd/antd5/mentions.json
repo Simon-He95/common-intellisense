@@ -1,0 +1,116 @@
+{
+  "name": "Mentions",
+  "props": {
+    "autoFocus": {
+      "value": "",
+      "description": "自动获得焦点",
+      "default": "false",
+      "type": "boolean"
+    },
+    "autoSize": {
+      "value": "",
+      "description": "自适应内容高度，可设置为 true | false 或对象：{ minRows: 2, maxRows: 6 }",
+      "default": "false",
+      "type": "boolean | object"
+    },
+    "defaultValue": {
+      "value": "",
+      "description": "默认值",
+      "default": "-",
+      "type": "string"
+    },
+    "filterOption": {
+      "value": "",
+      "description": "自定义过滤逻辑",
+      "default": "-",
+      "type": "false | (input: string, option: OptionProps) => boolean"
+    },
+    "getPopupContainer": {
+      "value": "",
+      "description": "指定建议框挂载的 HTML 节点",
+      "default": "-",
+      "type": "() => HTMLElement"
+    },
+    "notFoundContent": {
+      "value": "",
+      "description": "当下拉列表为空时显示的内容",
+      "default": "`Not Found`",
+      "type": "ReactNode"
+    },
+    "placement": {
+      "value": "",
+      "description": "弹出层展示位置",
+      "default": "`bottom`",
+      "type": "`top` | `bottom`"
+    },
+    "prefix": {
+      "value": "",
+      "description": "设置触发关键字",
+      "default": "`@`",
+      "type": "string | string[]"
+    },
+    "split": {
+      "value": "",
+      "description": "设置选中项前后分隔符",
+      "default": "` `",
+      "type": "string"
+    },
+    "status": {
+      "value": "",
+      "description": "设置校验状态",
+      "default": "-",
+      "type": "'error' | 'warning'"
+    },
+    "validateSearch": {
+      "value": "",
+      "description": "自定义触发验证逻辑",
+      "default": "-",
+      "type": "(text: string, props: MentionsProps) => void"
+    },
+    "value": {
+      "value": "",
+      "description": "设置值",
+      "default": "-",
+      "type": "string"
+    },
+    "options": {
+      "value": "",
+      "description": "选项配置",
+      "default": "[]",
+      "type": "[Options]"
+    }
+  },
+  "methods": [],
+  "events": [
+    {
+      "name": "onBlur",
+      "description": "失去焦点时触发",
+      "params": "() => void"
+    },
+    {
+      "name": "onChange",
+      "description": "值改变时触发",
+      "params": "(text: string) => void"
+    },
+    {
+      "name": "onFocus",
+      "description": "获得焦点时触发",
+      "params": "() => void"
+    },
+    {
+      "name": "onResize",
+      "description": "resize 回调",
+      "params": "function({ width, height })"
+    },
+    {
+      "name": "onSearch",
+      "description": "搜索时触发",
+      "params": "(text: string, prefix: string) => void"
+    },
+    {
+      "name": "onSelect",
+      "description": "选择选项时触发",
+      "params": "(option: OptionProps, prefix: string) => void"
+    }
+  ]
+}

@@ -1,0 +1,178 @@
+{
+  "name": "AutoComplete",
+  "props": {
+    "allowClear": {
+      "value": "",
+      "description": "支持清除",
+      "default": "false",
+      "type": "boolean"
+    },
+    "autoFocus": {
+      "value": "",
+      "description": "自动获取焦点",
+      "default": "false",
+      "type": "boolean"
+    },
+    "backfill": {
+      "value": "",
+      "description": "使用键盘选择选项的时候把选中项回填到输入框中",
+      "default": "false",
+      "type": "boolean"
+    },
+    "bordered": {
+      "value": "",
+      "description": "是否有边框",
+      "default": "true",
+      "type": "boolean"
+    },
+    "children (自动完成的数据源)": {
+      "value": "",
+      "description": "自动完成的数据源",
+      "default": "-",
+      "type": "React.ReactElement<OptionProps> | Array<React.ReactElement<OptionProps>>"
+    },
+    "children (自定义输入框)": {
+      "value": [
+        "<Input",
+        ">"
+      ],
+      "description": "自定义输入框",
+      "default": "<Input | >",
+      "type": "HTMLInputElement | HTMLTextAreaElement | React.ReactElement<InputProps>"
+    },
+    "defaultActiveFirstOption": {
+      "value": "",
+      "description": "是否默认高亮第一个选项",
+      "default": "true",
+      "type": "boolean"
+    },
+    "defaultOpen": {
+      "value": "",
+      "description": "是否默认展开下拉菜单",
+      "default": "false",
+      "type": "boolean"
+    },
+    "defaultValue": {
+      "value": "",
+      "description": "指定默认选中的条目",
+      "default": "-",
+      "type": "string"
+    },
+    "disabled": {
+      "value": "",
+      "description": "是否禁用",
+      "default": "false",
+      "type": "boolean"
+    },
+    "popupClassName": {
+      "value": "",
+      "description": "下拉菜单的 className 属性",
+      "default": "-",
+      "type": "string"
+    },
+    "dropdownMatchSelectWidth": {
+      "value": "",
+      "description": "下拉菜单和选择器同宽。默认将设置 `min-width`，当值小于选择框宽度时会被忽略。false 时会关闭虚拟滚动",
+      "default": "true",
+      "type": "boolean | number"
+    },
+    "filterOption": {
+      "value": "",
+      "description": "是否根据输入项进行筛选。当其为一个函数时，会接收 `inputValue` `option` 两个参数，当 `option` 符合筛选条件时，应返回 true，反之则返回 false",
+      "default": "true",
+      "type": "boolean | function(inputValue, option)"
+    },
+    "getPopupContainer": {
+      "value": "",
+      "description": "菜单渲染父节点。默认渲染到 body 上，如果你遇到菜单滚动定位问题，试试修改为滚动的区域，并相对其定位。[示例](https://codesandbox.io/s/4j168r7jw0)",
+      "default": "() => document.body",
+      "type": "function(triggerNode)"
+    },
+    "notFoundContent": {
+      "value": "",
+      "description": "当下拉列表为空时显示的内容",
+      "default": "-",
+      "type": "ReactNode"
+    },
+    "open": {
+      "value": "",
+      "description": "是否展开下拉菜单",
+      "default": "false",
+      "type": "boolean"
+    },
+    "options": {
+      "value": "",
+      "description": "数据化配置选项内容，相比 jsx 定义会获得更好的渲染性能",
+      "default": "-",
+      "type": "{ label, value }\\[]"
+    },
+    "placeholder": {
+      "value": "",
+      "description": "输入框提示",
+      "default": "-",
+      "type": "string"
+    },
+    "status": {
+      "value": "",
+      "description": "设置校验状态",
+      "default": "-",
+      "type": "'error' | 'warning'"
+    },
+    "value": {
+      "value": "",
+      "description": "指定当前选中的条目",
+      "default": "-",
+      "type": "string"
+    },
+    "blur()": {
+      "value": "",
+      "description": "移除焦点",
+      "default": "",
+      "type": ""
+    },
+    "focus()": {
+      "value": "",
+      "description": "获取焦点",
+      "default": "",
+      "type": ""
+    }
+  },
+  "methods": [],
+  "events": [
+    {
+      "name": "onBlur",
+      "description": "失去焦点时的回调",
+      "params": "function()"
+    },
+    {
+      "name": "onChange",
+      "description": "选中 option，或 input 的 value 变化时，调用此函数",
+      "params": "function(value)"
+    },
+    {
+      "name": "onDropdownVisibleChange",
+      "description": "展开下拉菜单的回调",
+      "params": "function(open)"
+    },
+    {
+      "name": "onFocus",
+      "description": "获得焦点时的回调",
+      "params": "function()"
+    },
+    {
+      "name": "onSearch",
+      "description": "搜索补全项的时候调用",
+      "params": "function(value)"
+    },
+    {
+      "name": "onSelect",
+      "description": "被选中时调用，参数为选中项的 value 值",
+      "params": "function(value, option)"
+    },
+    {
+      "name": "onClear",
+      "description": "清除内容时的回调",
+      "params": "function"
+    }
+  ]
+}

@@ -17,6 +17,31 @@ import DropdownButton from './dropdownButton.json'
 import Menu from './menu.json'
 import Pagination from './pagination.json'
 import Steps from './steps.json'
+import AutoComplete from './autoComplete.json'
+import Cascader from './cascader.json'
+import Checkbox from './checkbox.json'
+import CheckboxGroup from './checkboxGroup.json'
+import ColorPicker from './colorPicker.json'
+import DatePicker from './datePicker.json'
+import RangePicker from './rangePicker.json'
+import Form from './form.json'
+import FormItem from './formItem.json'
+import Input from './input.json'
+import InputNumber from './inputNumber.json'
+import InputPassword from './inputPassword.json'
+import InputSearch from './inputSearch.json'
+import InputTextArea from './InputTextArea.json'
+import Mentions from './mentions.json'
+import Radio from './radio.json'
+import RadioGroup from './radioGroup.json'
+import Rate from './rate.json'
+import Select from './select.json'
+import Slider from './slider.json'
+import Switch from './switch.json'
+import TimePicker from './timePicker.json'
+import Transfer from './transfer.json'
+import TreeSelect from './treeSelect.json'
+import Upload from './upload.json'
 
 export function antd4() {
   const map: any = [
@@ -38,6 +63,31 @@ export function antd4() {
     Menu,
     Pagination,
     Steps,
+    AutoComplete,
+    Cascader,
+    Checkbox,
+    CheckboxGroup,
+    ColorPicker,
+    DatePicker,
+    RangePicker,
+    Form,
+    FormItem,
+    Input,
+    InputNumber,
+    InputPassword,
+    InputSearch,
+    InputTextArea,
+    Mentions,
+    Radio,
+    RadioGroup,
+    Rate,
+    Select,
+    Slider,
+    Switch,
+    TimePicker,
+    Transfer,
+    TreeSelect,
+    Upload,
   ]
 
   return propsReducer(map)
