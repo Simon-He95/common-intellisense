@@ -13,36 +13,12 @@
       "default": "false",
       "type": "boolean | copyable",
       "typeDetail": {
-        "format": {
-          "value": "",
-          "description": "剪切板数据的 Mime Type",
-          "default": "",
-          "type": "'text|plain' | 'text|html'"
-        },
-        "icon": {
-          "value": "",
-          "description": "自定义拷贝图标：[默认图标, 拷贝后的图标]",
-          "default": "",
-          "type": "[ReactNode, ReactNode]"
-        },
-        "text": {
-          "value": "",
-          "description": "拷贝到剪切板里的文本",
-          "default": "",
-          "type": "string"
-        },
-        "tooltips": {
-          "value": "",
-          "description": "自定义提示文案，为 false 时隐藏文案",
-          "default": "[`复制`, `复制成功`]",
-          "type": "[ReactNode, ReactNode]"
-        },
-        "events": [
-          {
-            "name": "onCopy",
-            "description": "拷贝成功的回调函数",
-            "callback": "function"
-          }
+        "copyableItem": [
+          { "name": "format", "description": "剪切板数据的 Mime Type", "type": "'text|plain' | 'text|html'" },
+          { "name": "icon", "description": "自定义拷贝图标：[默认图标, 拷贝后的图标]", "type": "[ReactNode, ReactNode]" },
+          { "name": "text", "description": "拷贝到剪切板里的文本", "type": "string" },
+          { "name": "tooltips", "description": "自定义提示文案，为 false 时隐藏文案", "type": "[ReactNode, ReactNode]" },
+          { "name": "onCopy", "description": "拷贝成功的回调函数", "callback": "function" }
         ]
       }
     },
@@ -64,79 +40,19 @@
       "default": "false",
       "type": "boolean | editable",
       "typeDetail": {
-        "autoSize": {
-          "value": "",
-          "description": "自动 resize 文本域",
-          "default": "",
-          "type": "boolean | { minRows: number, maxRows: number }"
-        },
-        "editing": {
-          "value": "",
-          "description": "控制是否是编辑中状态",
-          "default": "false",
-          "type": "boolean"
-        },
-        "icon": {
-          "value": [
-            "<EditOutlined |>"
-          ],
-          "description": "自定义编辑图标",
-          "default": "<EditOutlined |>",
-          "type": "ReactNode"
-        },
-        "maxLength": {
-          "value": "",
-          "description": "编辑中文本域最大长度",
-          "default": "",
-          "type": "number"
-        },
-        "tooltip": {
-          "value": "",
-          "description": "自定义提示文本，为 false 时关闭",
-          "default": "`编辑`",
-          "type": "boolean | ReactNode"
-        },
-        "text": {
-          "value": "",
-          "description": "显式地指定编辑文案，为空时将隐式地使用 children",
-          "default": "",
-          "type": "string"
-        },
-        "triggerType": {
-          "value": "",
-          "description": "编辑模式触发器类型，图标、文本或者两者都设置（不设置图标作为触发器时它会隐藏）",
-          "default": "[`icon`]",
-          "type": "Array<`icon`|`text`>"
-        },
-        "enterIcon": {
-          "value": [
-            "`<EnterOutlined |>`"
-          ],
-          "description": "在编辑段中自定义“enter”图标（传递“null”将删除图标）",
-          "default": "`<EnterOutlined |>`",
-          "type": "ReactNode"
-        },
-        "events": [
-          {
-            "name": "onChange",
-            "description": "文本域编辑时触发",
-            "callback": "function(value: string)"
-          },
-          {
-            "name": "onCancel",
-            "description": "按 ESC 退出编辑状态时触发",
-            "callback": "function"
-          },
-          {
-            "name": "onStart",
-            "description": "进入编辑中状态时触发",
-            "callback": "function"
-          },
-          {
-            "name": "onEnd",
-            "description": "按 ENTER 结束编辑状态时触发",
-            "callback": "function"
-          }
+        "editableItem": [
+          { "name": "autoSize", "description": "自动 resize 文本域", "type": "boolean | { minRows: number, maxRows: number }" },
+          { "name": "editing", "description": "控制是否是编辑中状态", "type": "boolean" },
+          { "name": "icon", "description": "自定义编辑图标", "type": "ReactNode" },
+          { "name": "maxLength", "description": "编辑中文本域最大长度", "type": "number" },
+          { "name": "tooltip", "description": "自定义提示文本，为 false 时关闭", "type": "boolean | ReactNode" },
+          { "name": "text", "description": "显式地指定编辑文案，为空时将隐式地使用 children", "type": "string" },
+          { "name": "triggerType", "description": "编辑模式触发器类型，图标、文本或者两者都设置（不设置图标作为触发器时它会隐藏）", "type": "['icon' | 'text']" },
+          { "name": "enterIcon", "description": "在编辑段中自定义“enter”图标（传递“null”将删除图标）", "type": "ReactNode" },
+          { "name": "onChange", "description": "文本域编辑时触发", "callback": "function(value: string)" },
+          { "name": "onCancel", "description": "按 ESC 退出编辑状态时触发", "callback": "function" },
+          { "name": "onStart", "description": "进入编辑中状态时触发", "callback": "function" },
+          { "name": "onEnd", "description": "按 ENTER 结束编辑状态时触发", "callback": "function" }
         ]
       }
     },
@@ -146,47 +62,14 @@
       "default": "false",
       "type": "boolean | ellipsis",
       "typeDetail": {
-        "expandable": {
-          "value": "",
-          "description": "是否可展开",
-          "default": "false",
-          "type": "boolean"
-        },
-        "rows": {
-          "value": "",
-          "description": "最多显示的行数",
-          "default": "",
-          "type": "number"
-        },
-        "suffix": {
-          "value": "",
-          "description": "自定义省略内容后缀",
-          "default": "",
-          "type": "string"
-        },
-        "symbol": {
-          "value": "",
-          "description": "自定义展开描述文案",
-          "default": "`展开`",
-          "type": "ReactNode"
-        },
-        "tooltip": {
-          "value": "",
-          "description": "省略时，展示提示信息",
-          "default": "",
-          "type": "boolean | ReactNode | [TooltipProps]( | components | tooltip-cn | #api)"
-        },
-        "events": [
-          {
-            "name": "onEllipsis",
-            "description": "触发省略时的回调",
-            "callback": "function(ellipsis)"
-          },
-          {
-            "name": "onExpand",
-            "description": "点击展开时的回调",
-            "callback": "function(event)"
-          }
+        "ellipsisItem": [
+          { "name": "expandable", "description": "是否可展开", "type": "boolean" },
+          { "name": "rows", "description": "最多显示的行数", "type": "number" },
+          { "name": "suffix", "description": "自定义省略内容后缀", "type": "string" },
+          { "name": "symbol", "description": "自定义展开描述文案", "type": "ReactNode" },
+          { "name": "tooltip", "description": "省略时，展示提示信息", "type": "boolean | ReactNode | [TooltipProps]" },
+          { "name": "onEllipsis", "description": "触发省略时的回调", "callback": "function(ellipsis)" },
+          { "name": "onExpand", "description": "点击展开时的回调", "callback": "function(event)" }
         ]
       }
     },

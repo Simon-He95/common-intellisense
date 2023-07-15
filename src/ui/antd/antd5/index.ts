@@ -18,7 +18,7 @@ import Menu from './menu.json'
 import Pagination from './pagination.json'
 import Steps from './steps.json'
 
-export function antd5() {
+export function antd4() {
   const map: any = [
     Divider,
     Row,
@@ -43,7 +43,7 @@ export function antd5() {
   return propsReducer(map)
 }
 
-export function antd5Components() {
+export function antd4Components() {
   const map = [
     ['Row', '布局'],
     ['Col', '布局'],
