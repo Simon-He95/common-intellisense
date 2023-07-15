@@ -33,7 +33,7 @@
     },
     "showInkInFixed": {
       "value": "",
-      "description": "`affix={false}` 时是否显示小方块",
+      "description": "affix={false} 时是否显示小方块",
       "default": "false",
       "type": "boolean"
     },
@@ -49,42 +49,13 @@
       "default": "-",
       "type": "{ key, href, title, target, children }[]",
       "typeDetail": {
-        "key": {
-          "value": "",
-          "description": "唯一标志",
-          "default": "",
-          "type": "string | number"
-        },
-        "href": {
-          "value": "",
-          "description": "锚点链接",
-          "default": "",
-          "type": "string"
-        },
-        "target": {
-          "value": "",
-          "description": "该属性指定在何处显示链接的资源",
-          "default": "",
-          "type": "string"
-        },
-        "title": {
-          "value": "",
-          "description": "文字内容",
-          "default": "",
-          "type": "ReactNode"
-        },
-        "children": {
-          "value": "",
-          "description": "嵌套的 Anchor Link，`注意：水平方向该属性不支持`",
-          "default": "",
-          "type": "[AnchorItem]"
-        },
-        "replace": {
-          "value": "",
-          "description": "替换浏览器历史记录中的项目 href 而不是推送它",
-          "default": "false",
-          "type": "boolean"
-        }
+        "AnchorItem": [
+          { "name": "key", "description": "唯一标志", "type": "string | number" },
+          { "name": "href", "description": "锚点链接", "type": "string" },
+          { "name": "target", "description": "该属性指定在何处显示链接的资源", "type": "string" },
+          { "name": "title", "description": "文字内容", "type": "VueNode | (item: AnchorItem) => VueNode" },
+          { "name": "children", "description": "嵌套的 Anchor Link", "type": "AnchorItem[]" }
+        ]
       }
     },
     "direction": {
