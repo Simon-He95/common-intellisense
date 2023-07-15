@@ -1,7 +1,19 @@
 import * as vscode from 'vscode'
 import { createCompletionItem } from '@vscode-use/utils'
 
-export function propsReducer(map: string[]) {
+export function propsReducer(map: string[], iconData?: { prefix: string;type: string;icons: any[] }, extensionContext?: any) {
+  const result: any = {}
+  let icons
+  if (iconData) {
+    const prefix = iconData.prefix
+    icons = iconData.icons.map((icon) => {
+      const imagePath = vscode.Uri.file(extensionContext.asAbsolutePath(`images/${iconData.type}/${icon}.svg`))
+      const documentation = new vscode.MarkdownString(`![img](${imagePath})`)
+      const snippet = `${prefix}-${icon}`
+      return createCompletionItem({ content: icon, type: 19, documentation, snippet })
+    })
+    result.icons = icons
+  }
   return map.reduce((result: any, item: any) => {
     const completions: any = []
     const events: any = []
@@ -12,11 +24,11 @@ export function propsReducer(map: string[]) {
         value.value = [value.value]
       else
         type = vscode.CompletionItemKind.Enum
+
       completions.push(...value.value.map((v: string) => {
         const documentation = new vscode.MarkdownString()
         documentation.isTrusted = true
         documentation.supportHtml = true
-
         const detail = []
         if (value.default !== undefined && value.default !== '')
           detail.push(`#### 💎 默认值:    ***\`${value.default.toString().replace(/`/g, '')}\`***`)
@@ -80,7 +92,7 @@ export function propsReducer(map: string[]) {
 
     result[item.name!] = { completions, events }
     return result
-  }, {} as any)
+  }, result)
 }
 
 export function componentsReducer(map: string[][]) {

@@ -7,7 +7,9 @@ let UINames: any = []
 let optionsComponents: any = null
 let UiCompletions: any = null
 let cacheMap: any = {}
+let extensionContext: any = null
 export function activate(context: vscode.ExtensionContext) {
+  extensionContext = context
   const filter = ['javascript', 'javascriptreact', 'typescriptreact', 'vue', 'svelte']
   context.subscriptions.push(addEventListener('activeText-change', (editor: vscode.TextEditor) => {
     // 找到当前活动的编辑器
@@ -25,6 +27,9 @@ export function activate(context: vscode.ExtensionContext) {
       return
     if (UiCompletions && result?.type === 'props') {
       const name = result.tag[0].toUpperCase() + result.tag.replace(/(-\w)/g, (match: string) => match[1].toUpperCase()).slice(1)
+      if (result.propName === 'icon')
+        return UiCompletions.icons
+
       return result.propName === 'on'
         ? UiCompletions[name].events
         : UiCompletions[name].completions
@@ -83,7 +88,7 @@ function findUI() {
       return result
     }, [])
     UiCompletions = UINames.reduce((result: any, option: string) =>
-      Object.assign(result, (UI as any)[option]?.())
+      Object.assign(result, (UI as any)[option]?.(extensionContext))
     , {} as any)
   })
 }
