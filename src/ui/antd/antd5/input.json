@@ -1,0 +1,120 @@
+{
+  "name": "Input",
+  "props": {
+    "addonAfter": {
+      "value": "",
+      "description": "带标签的 input，设置后置标签",
+      "default": "-",
+      "type": "ReactNode"
+    },
+    "addonBefore": {
+      "value": "",
+      "description": "带标签的 input，设置前置标签",
+      "default": "-",
+      "type": "ReactNode"
+    },
+    "allowClear": {
+      "value": "",
+      "description": "可以点击清除图标删除内容",
+      "default": "-",
+      "type": "boolean | { clearIcon: ReactNode }"
+    },
+    "bordered": {
+      "value": "",
+      "description": "是否有边框",
+      "default": "true",
+      "type": "boolean"
+    },
+    "classNames": {
+      "value": "",
+      "description": "语义化结构 class",
+      "default": "-",
+      "type": "Record<[SemanticDOM], string>"
+    },
+    "defaultValue": {
+      "value": "",
+      "description": "输入框默认内容",
+      "default": "-",
+      "type": "string"
+    },
+    "disabled": {
+      "value": "",
+      "description": "是否禁用状态，默认为 false",
+      "default": "false",
+      "type": "boolean"
+    },
+    "id": {
+      "value": "",
+      "description": "输入框的 id",
+      "default": "-",
+      "type": "string"
+    },
+    "maxLength": {
+      "value": "",
+      "description": "最大长度",
+      "default": "-",
+      "type": "number"
+    },
+    "showCount": {
+      "value": "",
+      "description": "是否展示字数",
+      "default": "false",
+      "type": "boolean | { formatter: (info: { value: string, count: number, maxLength?: number }) => ReactNode }"
+    },
+    "status": {
+      "value": "",
+      "description": "设置校验状态",
+      "default": "-",
+      "type": "'error' | 'warning'"
+    },
+    "styles": {
+      "value": "",
+      "description": "语义化结构 style",
+      "default": "-",
+      "type": "Record<[SemanticDOM], CSSProperties>"
+    },
+    "prefix": {
+      "value": "",
+      "description": "带有前缀图标的 input",
+      "default": "-",
+      "type": "ReactNode"
+    },
+    "size": {
+      "value": "",
+      "description": "控件大小。注：标准表单内的输入框大小限制为 `middle`",
+      "default": "-",
+      "type": "`large` | `middle` | `small`"
+    },
+    "suffix": {
+      "value": "",
+      "description": "带有后缀图标的 input",
+      "default": "-",
+      "type": "ReactNode"
+    },
+    "type": {
+      "value": "",
+      "description": "声明 input 类型，同原生 input 标签的 type 属性",
+      "default": "`text`",
+      "type": "string"
+    },
+    "value": {
+      "value": "",
+      "description": "输入框内容",
+      "default": "-",
+      "type": "string"
+    }
+  },
+  "methods": [],
+  "events": [
+    {
+      "name": "onChange",
+      "description": "输入框内容变化时的回调",
+      "params": "function(e)"
+    },
+    {
+      "name": "onPressEnter",
+      "description": "按下回车的回调",
+      "params": "function(e)"
+    }
+  ]
+}

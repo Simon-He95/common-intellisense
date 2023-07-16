@@ -1,0 +1,161 @@
+{
+  "name": "InputNumber",
+  "props": {
+    "addonAfter": {
+      "value": "",
+      "description": "带标签的 input，设置后置标签",
+      "default": "-",
+      "type": "ReactNode"
+    },
+    "addonBefore": {
+      "value": "",
+      "description": "带标签的 input，设置前置标签",
+      "default": "-",
+      "type": "ReactNode"
+    },
+    "autoFocus": {
+      "value": "",
+      "description": "自动获取焦点",
+      "default": "false",
+      "type": "boolean"
+    },
+    "bordered": {
+      "value": "",
+      "description": "是否有边框",
+      "default": "true",
+      "type": "boolean"
+    },
+    "controls": {
+      "value": "",
+      "description": "是否显示增减按钮，也可设置自定义箭头图标",
+      "default": "-",
+      "type": "boolean | { upIcon?: React.ReactNode; downIcon?: React.ReactNode; }"
+    },
+    "decimalSeparator": {
+      "value": "",
+      "description": "小数点",
+      "default": "-",
+      "type": "string"
+    },
+    "defaultValue": {
+      "value": "",
+      "description": "初始值",
+      "default": "-",
+      "type": "number"
+    },
+    "disabled": {
+      "value": "",
+      "description": "禁用",
+      "default": "false",
+      "type": "boolean"
+    },
+    "formatter": {
+      "value": "",
+      "description": "指定输入框展示值的格式",
+      "default": "-",
+      "type": "function(value: number | string, info: { userTyping: boolean, input: string }): string"
+    },
+    "keyboard": {
+      "value": "",
+      "description": "是否启用键盘快捷行为",
+      "default": "true",
+      "type": "boolean"
+    },
+    "max": {
+      "value": ["[Number.MAX_SAFE_INTEGER]"],
+      "description": "最大值",
+      "default": "[Number.MAX_SAFE_INTEGER]",
+      "type": "number"
+    },
+    "min": {
+      "value": ["[Number.MIN_SAFE_INTEGER]"],
+      "description": "最小值",
+      "default": "[Number.MIN_SAFE_INTEGER]",
+      "type": "number"
+    },
+    "parser": {
+      "value": "",
+      "description": "指定从 `formatter` 里转换回数字的方式，和 `formatter` 搭配使用",
+      "default": "-",
+      "type": "function(string): number"
+    },
+    "precision": {
+      "value": "",
+      "description": "数值精度，配置 `formatter` 时会以 `formatter` 为准",
+      "default": "-",
+      "type": "number"
+    },
+    "readOnly": {
+      "value": "",
+      "description": "只读",
+      "default": "false",
+      "type": "boolean"
+    },
+    "status": {
+      "value": "",
+      "description": "设置校验状态",
+      "default": "-",
+      "type": "'error' | 'warning'"
+    },
+    "prefix": {
+      "value": "",
+      "description": "带有前缀图标的 input",
+      "default": "-",
+      "type": "ReactNode"
+    },
+    "size": {
+      "value": "",
+      "description": "输入框大小",
+      "default": "-",
+      "type": "`large` | `middle` | `small`"
+    },
+    "step": {
+      "value": "",
+      "description": "每次改变步数，可以为小数",
+      "default": "1",
+      "type": "number | string"
+    },
+    "stringMode": {
+      "value": "",
+      "description": "字符值模式，开启后支持高精度小数。同时 `onChange` 将返回 string 类型",
+      "default": "false",
+      "type": "boolean"
+    },
+    "value": {
+      "value": "",
+      "description": "当前值",
+      "default": "-",
+      "type": "number"
+    },
+    "blur()": {
+      "value": "",
+      "description": "移除焦点",
+      "default": "",
+      "type": ""
+    },
+    "focus()": {
+      "value": "",
+      "description": "获取焦点",
+      "default": "",
+      "type": ""
+    }
+  },
+  "methods": [],
+  "events": [
+    {
+      "name": "onChange",
+      "description": "变化回调",
+      "params": "function(value: number | string | null)"
+    },
+    {
+      "name": "onPressEnter",
+      "description": "按下回车的回调",
+      "params": "function(e)"
+    },
+    {
+      "name": "onStep",
+      "description": "点击上下箭头的回调",
+      "params": "(value: number, info: { offset: number, type: 'up' | 'down' }) => void"
+    }
+  ]
+}

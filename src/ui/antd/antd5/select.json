@@ -1,0 +1,326 @@
+{
+  "name": "Select",
+  "props": {
+    "allowClear": {
+      "value": "",
+      "description": "支持清除",
+      "default": "false",
+      "type": "boolean"
+    },
+    "autoClearSearchValue": {
+      "value": "",
+      "description": "是否在选中项后清空搜索框，只在 `mode` 为 `multiple` 或 `tags` 时有效",
+      "default": "true",
+      "type": "boolean"
+    },
+    "autoFocus": {
+      "value": "",
+      "description": "默认获取焦点",
+      "default": "false",
+      "type": "boolean"
+    },
+    "bordered": {
+      "value": "",
+      "description": "是否有边框",
+      "default": "true",
+      "type": "boolean"
+    },
+    "clearIcon": {
+      "value": "",
+      "description": "自定义的多选框清空图标",
+      "default": "-",
+      "type": "ReactNode"
+    },
+    "defaultActiveFirstOption": {
+      "value": "",
+      "description": "是否默认高亮第一个选项",
+      "default": "true",
+      "type": "boolean"
+    },
+    "defaultOpen": {
+      "value": "",
+      "description": "是否默认展开下拉菜单",
+      "default": "false",
+      "type": "boolean"
+    },
+    "defaultValue": {
+      "value": "",
+      "description": "指定默认选中的条目",
+      "default": "-",
+      "type": "string | string[] | number | number[] | LabeledValue | LabeledValue[]"
+    },
+    "disabled": {
+      "value": "",
+      "description": "是否禁用",
+      "default": "false",
+      "type": "boolean"
+    },
+    "popupClassName": {
+      "value": "",
+      "description": "下拉菜单的 className 属性",
+      "default": "-",
+      "type": "string"
+    },
+    "popupMatchSelectWidth": {
+      "value": "",
+      "description": "下拉菜单和选择器同宽。默认将设置 `min-width`，当值小于选择框宽度时会被忽略。false 时会关闭虚拟滚动",
+      "default": "true",
+      "type": "boolean | number"
+    },
+    "dropdownRender": {
+      "value": "",
+      "description": "自定义下拉框内容",
+      "default": "-",
+      "type": "(originNode: ReactNode) => ReactNode"
+    },
+    "dropdownStyle": {
+      "value": "",
+      "description": "下拉菜单的 style 属性",
+      "default": "-",
+      "type": "CSSProperties"
+    },
+    "fieldNames": {
+      "value": "",
+      "description": "自定义节点 label、value、options、groupLabel 的字段",
+      "default": "{ label: `label`, value: `value`, options: `options`, groupLabel: `label` }",
+      "type": "object"
+    },
+    "filterOption": {
+      "value": "",
+      "description": "是否根据输入项进行筛选。当其为一个函数时，会接收 `inputValue` `option` 两个参数，当 `option` 符合筛选条件时，应返回 true，反之则返回 false",
+      "default": "true",
+      "type": "boolean | function(inputValue, option)"
+    },
+    "filterSort": {
+      "value": "",
+      "description": "搜索时对筛选结果项的排序函数",
+      "default": "-",
+      "type": "(optionA: Option, optionB: Option) => number"
+    },
+    "getPopupContainer": {
+      "value": "",
+      "description": "菜单渲染父节点。默认渲染到 body 上，如果你遇到菜单滚动定位问题，试试修改为滚动的区域，并相对其定位",
+      "default": "() => document.body",
+      "type": "function(triggerNode)"
+    },
+    "labelInValue": {
+      "value": "",
+      "description": "是否把每个选项的 label 包装到 value 中，会把 Select 的 value 类型从 `string` 变为 { value: string, label: ReactNode } 的格式",
+      "default": "false",
+      "type": "boolean"
+    },
+    "listHeight": {
+      "value": "",
+      "description": "设置弹窗滚动高度",
+      "default": "256",
+      "type": "number"
+    },
+    "loading": {
+      "value": "",
+      "description": "加载中状态",
+      "default": "false",
+      "type": "boolean"
+    },
+    "maxTagCount": {
+      "value": "",
+      "description": "最多显示多少个 tag，响应式模式会对性能产生损耗",
+      "default": "-",
+      "type": "number | `responsive`"
+    },
+    "maxTagPlaceholder": {
+      "value": "",
+      "description": "隐藏 tag 时显示的内容",
+      "default": "-",
+      "type": "ReactNode | function(omittedValues)"
+    },
+    "maxTagTextLength": {
+      "value": "",
+      "description": "最大显示的 tag 文本长度",
+      "default": "-",
+      "type": "number"
+    },
+    "menuItemSelectedIcon": {
+      "value": "",
+      "description": "自定义多选时当前选中的条目图标",
+      "default": "-",
+      "type": "ReactNode"
+    },
+    "mode": {
+      "value": "",
+      "description": "设置 Select 的模式为多选或标签",
+      "default": "-",
+      "type": "`multiple` | `tags`"
+    },
+    "notFoundContent": {
+      "value": "",
+      "description": "当下拉列表为空时显示的内容",
+      "default": "`Not Found`",
+      "type": "ReactNode"
+    },
+    "open": {
+      "value": "",
+      "description": "是否展开下拉菜单",
+      "default": "false",
+      "type": "boolean"
+    },
+    "optionFilterProp": {
+      "value": "",
+      "description": "搜索时过滤对应的 `option` 属性，如设置为 `children` 表示对内嵌内容进行搜索。若通过 `options` 属性配置选项内容，建议设置 `optionFilterProp=\"label\"` 来对内容进行搜索。",
+      "default": "`value`",
+      "type": "string"
+    },
+    "optionLabelProp": {
+      "value": "",
+      "description": "回填到选择框的 Option 的属性值，默认是 Option 的子元素。比如在子元素需要高亮效果时，此值可以设为 `value`",
+      "default": "`children`",
+      "type": "string"
+    },
+    "options": {
+      "value": "",
+      "description": "数据化配置选项内容，相比 jsx 定义会获得更好的渲染性能",
+      "default": "-",
+      "type": "{ label, value }[]"
+    },
+    "placeholder": {
+      "value": "",
+      "description": "选择框默认文本",
+      "default": "-",
+      "type": "string"
+    },
+    "placement": {
+      "value": "",
+      "description": "选择框弹出的位置",
+      "default": "bottomLeft",
+      "type": "`bottomLeft` `bottomRight` `topLeft` `topRight`"
+    },
+    "removeIcon": {
+      "value": "",
+      "description": "自定义的多选框清除图标",
+      "default": "-",
+      "type": "ReactNode"
+    },
+    "searchValue": {
+      "value": "",
+      "description": "控制搜索文本",
+      "default": "-",
+      "type": "string"
+    },
+    "showArrow": {
+      "value": "",
+      "description": "是否显示下拉小箭头",
+      "default": "`true`",
+      "type": "boolean"
+    },
+    "showSearch": {
+      "value": "",
+      "description": "配置是否可搜索",
+      "default": "单选为 false，多选为 true",
+      "type": "boolean"
+    },
+    "size": {
+      "value": "",
+      "description": "选择框大小",
+      "default": "`middle`",
+      "type": "`large` | `middle` | `small`"
+    },
+    "status": {
+      "value": "",
+      "description": "设置校验状态",
+      "default": "-",
+      "type": "'error' | 'warning'"
+    },
+    "suffixIcon": {
+      "value": "",
+      "description": "自定义的选择框后缀图标。以防止图标被用于其他交互，替换的图标默认不会响应展开、收缩事件，可以通过添加 `pointer-events: none` 样式透传。",
+      "default": "-",
+      "type": "ReactNode"
+    },
+    "tagRender": {
+      "value": "",
+      "description": "自定义 tag 内容 render，仅在 `mode` 为 `multiple` 或 `tags` 时生效",
+      "default": "-",
+      "type": "(props) => ReactNode"
+    },
+    "tokenSeparators": {
+      "value": "",
+      "description": "自动分词的分隔符，仅在 `mode=\"tags\"` 时生效",
+      "default": "-",
+      "type": "string[]"
+    },
+    "value": {
+      "value": "",
+      "description": "指定当前选中的条目，多选时为一个数组。（value 数组引用未变化时，Select 不会更新）",
+      "default": "-",
+      "type": "string | string[] | number | number[] | LabeledValue | LabeledValue[]"
+    },
+    "virtual": {
+      "value": "",
+      "description": "设置 false 时关闭虚拟滚动",
+      "default": "true",
+      "type": "boolean"
+    }
+  },
+  "methods": [],
+  "events": [
+    {
+      "name": "onBlur",
+      "description": "失去焦点时回调",
+      "params": "function"
+    },
+    {
+      "name": "onChange",
+      "description": "选中 option，或 input 的 value 变化时，调用此函数",
+      "params": "function(value, option:Option | Array<Option>)"
+    },
+    {
+      "name": "onClear",
+      "description": "清除内容时回调",
+      "params": "function"
+    },
+    {
+      "name": "onDeselect",
+      "description": "取消选中时调用，参数为选中项的 value (或 key) 值，仅在 `multiple` 或 `tags` 模式下生效",
+      "params": "function(value: string | number | LabeledValue)"
+    },
+    {
+      "name": "onDropdownVisibleChange",
+      "description": "展开下拉菜单的回调",
+      "params": "function(open)"
+    },
+    {
+      "name": "onFocus",
+      "description": "获得焦点时回调",
+      "params": "function"
+    },
+    {
+      "name": "onInputKeyDown",
+      "description": "按键按下时回调",
+      "params": "function"
+    },
+    {
+      "name": "onMouseEnter",
+      "description": "鼠标移入时回调",
+      "params": "function"
+    },
+    {
+      "name": "onMouseLeave",
+      "description": "鼠标移出时回调",
+      "params": "function"
+    },
+    {
+      "name": "onPopupScroll",
+      "description": "下拉列表滚动时的回调",
+      "params": "function"
+    },
+    {
+      "name": "onSearch",
+      "description": "文本框值变化时回调",
+      "params": "function(value: string)"
+    },
+    {
+      "name": "onSelect",
+      "description": "被选中时调用，参数为选中项的 value (或 key) 值",
+      "params": "function(value: string | number | LabeledValue, option: Option)"
+    }
+  ]
+}

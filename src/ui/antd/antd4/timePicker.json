@@ -1,0 +1,198 @@
+{
+  "name": "TimePicker",
+  "props": {
+    "allowClear": {
+      "value": "",
+      "description": "是否展示清除按钮",
+      "default": "true",
+      "type": "boolean"
+    },
+    "autoFocus": {
+      "value": "",
+      "description": "自动获取焦点",
+      "default": "false",
+      "type": "boolean"
+    },
+    "bordered": {
+      "value": "",
+      "description": "是否有边框",
+      "default": "true",
+      "type": "boolean"
+    },
+    "cellRender": {
+      "value": "",
+      "description": "自定义单元格的内容",
+      "default": "-",
+      "type": "(current: number, info: { originNode: React.ReactNode, today: dayjs, range?: 'start' | 'end', subType: 'hour' | 'minute' | 'second' | 'meridiem' }) => React.ReactNode"
+    },
+    "changeOnBlur": {
+      "value": "",
+      "description": "失去焦点时触发 `change` 事件，例如 datetime 下不再需要点击确认按钮",
+      "default": "false",
+      "type": "boolean"
+    },
+    "className": {
+      "value": "",
+      "description": "选择器类名",
+      "default": "-",
+      "type": "string"
+    },
+    "clearIcon": {
+      "value": "",
+      "description": "自定义的清除图标",
+      "default": "-",
+      "type": "ReactNode"
+    },
+    "clearText": {
+      "value": "",
+      "description": "清除按钮的提示文案",
+      "default": "clear",
+      "type": "string"
+    },
+    "defaultValue": {
+      "value": "",
+      "description": "默认时间",
+      "default": "-",
+      "type": "[dayjs]"
+    },
+    "disabled": {
+      "value": "",
+      "description": "禁用全部操作",
+      "default": "false",
+      "type": "boolean"
+    },
+    "disabledTime": {
+      "value": "",
+      "description": "不可选择的时间",
+      "default": "-",
+      "type": "[DisabledTime]"
+    },
+    "format": {
+      "value": "",
+      "description": "展示的时间格式",
+      "default": "`HH:mm:ss`",
+      "type": "string"
+    },
+    "getPopupContainer": {
+      "value": "",
+      "description": "定义浮层的容器，默认为 body 上新建 div",
+      "default": "-",
+      "type": "function(trigger)"
+    },
+    "hideDisabledOptions": {
+      "value": "",
+      "description": "隐藏禁止选择的选项",
+      "default": "false",
+      "type": "boolean"
+    },
+    "hourStep": {
+      "value": "",
+      "description": "小时选项间隔",
+      "default": "1",
+      "type": "number"
+    },
+    "inputReadOnly": {
+      "value": "",
+      "description": "设置输入框为只读（避免在移动设备上打开虚拟键盘）",
+      "default": "false",
+      "type": "boolean"
+    },
+    "minuteStep": {
+      "value": "",
+      "description": "分钟选项间隔",
+      "default": "1",
+      "type": "number"
+    },
+    "open": {
+      "value": "",
+      "description": "面板是否打开",
+      "default": "false",
+      "type": "boolean"
+    },
+    "placeholder": {
+      "value": "",
+      "description": "没有值的时候显示的内容",
+      "default": "`请选择时间`",
+      "type": "string | [string, string]"
+    },
+    "placement": {
+      "value": "",
+      "description": "选择框弹出的位置",
+      "default": "bottomLeft",
+      "type": "`bottomLeft` `bottomRight` `topLeft` `topRight`"
+    },
+    "popupClassName": {
+      "value": "",
+      "description": "弹出层类名",
+      "default": "-",
+      "type": "string"
+    },
+    "popupStyle": {
+      "value": "",
+      "description": "弹出层样式对象",
+      "default": "-",
+      "type": "object"
+    },
+    "renderExtraFooter": {
+      "value": "",
+      "description": "选择框底部显示自定义的内容",
+      "default": "-",
+      "type": "() => ReactNode"
+    },
+    "secondStep": {
+      "value": "",
+      "description": "秒选项间隔",
+      "default": "1",
+      "type": "number"
+    },
+    "showNow": {
+      "value": "",
+      "description": "面板是否显示“此刻”按钮",
+      "default": "false",
+      "type": "boolean"
+    },
+    "size": {
+      "value": "",
+      "description": "输入框大小，`large` 高度为 40px，`small` 为 24px，默认是 32px",
+      "default": "-",
+      "type": "`large` | `middle` | `small`"
+    },
+    "status": {
+      "value": "",
+      "description": "设置校验状态",
+      "default": "-",
+      "type": "'error' | 'warning'"
+    },
+    "suffixIcon": {
+      "value": "",
+      "description": "自定义的选择框后缀图标",
+      "default": "-",
+      "type": "ReactNode"
+    },
+    "use12Hours": {
+      "value": "",
+      "description": "使用 12 小时制，为 true 时 `format` 默认为 `h:mm:ss a`",
+      "default": "false",
+      "type": "boolean"
+    },
+    "value": {
+      "value": "",
+      "description": "当前时间",
+      "default": "-",
+      "type": "[dayjs]"
+    }
+  },
+  "methods": [],
+  "events": [
+    {
+      "name": "onChange",
+      "description": "时间发生变化的回调",
+      "params": "function(time: dayjs, timeString: string): void"
+    },
+    {
+      "name": "onOpenChange",
+      "description": "面板打开/关闭时的回调",
+      "params": "(open: boolean) => void"
+    }
+  ]
+}
