@@ -11,6 +11,7 @@ import badge from './badge.json'
 import barrage from './barrage.json'
 import button from './button.json'
 import calendar from './calendar.json'
+import card from './card.json'
 
 export function vant4() {
   const map: any = [
@@ -26,6 +27,7 @@ export function vant4() {
     barrage,
     button,
     calendar,
+    card,
   ]
 
   return propsReducer(map)
@@ -44,6 +46,7 @@ export function vant4Components() {
     ['van-barrage', '弹幕 实现观看视频时弹出的评论性字幕功能。请升级 vant 到 >= 4.4.0 版本来使用该组件。'],
     ['van-button', '按钮 按钮用于触发一个操作，如提交表单。'],
     ['van-calendar', '日历 日历组件用于选择日期或日期区间。'],
+    ['van-card', '卡片 商品卡片，用于展示商品的图片、价格等信息。'],
   ]
   return componentsReducer(map)
 }
