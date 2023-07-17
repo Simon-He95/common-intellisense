@@ -40,10 +40,11 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
           detail.push(`#### 💡 类型:    ***\`${value.type.replace(/`/g, '')}\`***`)
         documentation.appendMarkdown(detail.join('\n\n'))
 
-        if (value.typeDetail) {
-          documentation.appendCodeblock(`#### 🌈 类型详情:\n${Object.keys(value.typeDetail).reduce((result, key) => result += key.slice(0) === '$'
-            ? `type ${key.slice(1)} = ${value.typeDtail[key].map((item: any) => `${item.name} /*${item.description}*/`).join(' | ')} `
-            : `interface ${key} {\n  ${value.typeDetail[key].map((item: any) => `${item.name}${item.optional ? '?' : ''}: ${item.type} /*${item.description}${item.default ? ` 默认值: ***${item.default}***` : ''}*/`).join('\n  ')}\n}`, '')}`, 'typescript')
+        if (item.typeDetail) {
+          const data = `🌈 类型详情:\n${Object.keys(item.typeDetail).reduce((result, key) => result += key[0] === '$'
+          ? `type ${key.slice(1)} = \n${item.typeDetail[key].map((typeItem: any) => `${typeItem.name} /*${typeItem.description}*/`).join('\n| ')}\n\n`
+          : `interface ${key} {\n  ${item.typeDetail[key].map((typeItem: any) => `${typeItem.name}${typeItem.optional ? '?' : ''}: ${typeItem.type} /*${typeItem.description}${typeItem.default ? ` 默认值: ***${typeItem.default}***` : ''}*/`).join('\n  ')}\n}`, '')}`
+          documentation.appendCodeblock(data, 'typescript')
         }
 
         // if (item.methods && item.methods.length) {
