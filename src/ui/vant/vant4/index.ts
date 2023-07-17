@@ -15,6 +15,8 @@ import card from './card.json'
 import cascader from './cascader.json'
 import cell from './cell.json'
 import cellGroup from './cellGroup.json'
+import checkbox from './checkbox.json'
+import checkboxGroup from './checkboxGroup.json'
 
 export function vant4() {
   const map: any = [
@@ -34,6 +36,8 @@ export function vant4() {
     cascader,
     cell,
     cellGroup,
+    checkbox,
+    checkboxGroup,
   ]
 
   return propsReducer(map)
@@ -56,6 +60,8 @@ export function vant4Components() {
     ['van-cascader', '级联选择 级联选择框，用于多层级数据的选择，典型场景为省市区选择。'],
     ['van-cell', '单元格 单元格为列表中的单个展示项。'],
     ['van-cell-group', '单元格组 单元格为列表中的单个展示项。'],
+    ['van-checkbox', '复选框 在一组备选项中进行多选。'],
+    ['van-checkbox-group', '复选框组 在一组备选项中进行多选。'],
   ]
   return componentsReducer(map)
 }
