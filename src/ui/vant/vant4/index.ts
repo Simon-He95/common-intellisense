@@ -4,6 +4,7 @@ import actionBarButton from './actionBarButton.json'
 import actionBarIcon from './actionBarIcon.json'
 import actionSheet from './actionSheet.json'
 import addressEdit from './addressEdit.json'
+import addressList from './addressList.json'
 
 export function vant4() {
   const map: any = [
@@ -12,6 +13,7 @@ export function vant4() {
     actionBarIcon,
     actionSheet,
     addressEdit,
+    addressList,
   ]
 
   return propsReducer(map)
