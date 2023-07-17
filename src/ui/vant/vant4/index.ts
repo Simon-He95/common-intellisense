@@ -12,6 +12,7 @@ import barrage from './barrage.json'
 import button from './button.json'
 import calendar from './calendar.json'
 import card from './card.json'
+import cascader from './cascader.json'
 
 export function vant4() {
   const map: any = [
@@ -28,6 +29,7 @@ export function vant4() {
     button,
     calendar,
     card,
+    cascader,
   ]
 
   return propsReducer(map)
@@ -47,6 +49,7 @@ export function vant4Components() {
     ['van-button', '按钮 按钮用于触发一个操作，如提交表单。'],
     ['van-calendar', '日历 日历组件用于选择日期或日期区间。'],
     ['van-card', '卡片 商品卡片，用于展示商品的图片、价格等信息。'],
+    ['van-cascader', '级联选择 级联选择框，用于多层级数据的选择，典型场景为省市区选择。'],
   ]
   return componentsReducer(map)
 }
