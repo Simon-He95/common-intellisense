@@ -23,6 +23,7 @@ import row from './row.json'
 import collapse from './collapse.json'
 import collapseItem from './collapseItem.json'
 import configProvider from './configProvider.json'
+import contactCard from './contactCard.json'
 
 export function vant4() {
   const map: any = [
@@ -50,6 +51,7 @@ export function vant4() {
     collapse,
     collapseItem,
     configProvider,
+    contactCard,
   ]
 
   return propsReducer(map)
@@ -80,6 +82,7 @@ export function vant4Components() {
     ['van-collapse', '折叠面板 将一组内容放置在多个折叠面板中，点击面板的标题可以展开或收缩其内容。'],
     ['van-collapse-item', '折叠面板项 将一组内容放置在多个折叠面板中，点击面板的标题可以展开或收缩其内容。'],
     ['van-config-provider', '全局配置 用于全局配置 Vant 组件，提供深色模式、主题定制等能力。'],
+    ['van-contact-card', '联系人卡片 以卡片的形式展示联系人信息。'],
   ]
   return componentsReducer(map)
 }
