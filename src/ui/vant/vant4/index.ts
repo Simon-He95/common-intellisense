@@ -8,6 +8,7 @@ import addressList from './addressList.json'
 import area from './area.json'
 import backTop from './backTop.json'
 import badge from './badge.json'
+import barrage from './barrage.json'
 
 export function vant4() {
   const map: any = [
@@ -20,6 +21,7 @@ export function vant4() {
     area,
     backTop,
     badge,
+    barrage,
   ]
 
   return propsReducer(map)
@@ -35,6 +37,7 @@ export function vant4Components() {
     ['van-area', '省市区选择 省市区三级联动选择，通常与弹出层组件配合使用。'],
     ['van-back-top', '回到顶部 返回页面顶部的操作按钮。'],
     ['van-badge', '徽标 在右上角展示徽标数字或小红点。'],
+    ['van-barrage', '弹幕 实现观看视频时弹出的评论性字幕功能。请升级 vant 到 >= 4.4.0 版本来使用该组件。'],
   ]
   return componentsReducer(map)
 }
