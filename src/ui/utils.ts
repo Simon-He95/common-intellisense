@@ -1,7 +1,7 @@
 import * as vscode from 'vscode'
 import { createCompletionItem } from '@vscode-use/utils'
 
-export function propsReducer(map: string[], iconData?: { prefix: string;type: string;icons: any[] }, extensionContext?: any) {
+export function propsReducer(map: string[], iconData?: { prefix: string; type: string; icons: any[] }, extensionContext?: any) {
   const result: any = {}
   let icons
   if (iconData) {
@@ -40,8 +40,11 @@ export function propsReducer(map: string[], iconData?: { prefix: string;type: st
           detail.push(`#### 💡 类型:    ***\`${value.type.replace(/`/g, '')}\`***`)
         documentation.appendMarkdown(detail.join('\n\n'))
 
-        if (value.typeDetail)
-          documentation.appendCodeblock(`#### 🌈 类型详情:\n${Object.keys(value.typeDetail).reduce((result, key) => result += `interface ${key} {\n  ${value.typeDetail[key].map((item: any) => `${item.name}${item.optional ? '?' : ''}: ${item.type} /*${item.description}${item.default ? ` 默认值: ***${item.default}***` : ''}*/`).join('\n  ')}\n}`, '')}`, 'typescript')
+        if (value.typeDetail) {
+          documentation.appendCodeblock(`#### 🌈 类型详情:\n${Object.keys(value.typeDetail).reduce((result, key) => result += key.slice(0) === '$'
+            ? `type ${key.slice(1)} = ${value.typeDtail[key].map((item: any) => `${item.name} /*${item.description}*/`).join(' | ')} `
+            : `interface ${key} {\n  ${value.typeDetail[key].map((item: any) => `${item.name}${item.optional ? '?' : ''}: ${item.type} /*${item.description}${item.default ? ` 默认值: ***${item.default}***` : ''}*/`).join('\n  ')}\n}`, '')}`, 'typescript')
+        }
 
         // if (item.methods && item.methods.length) {
         //   item.methods.forEach((methods: any) => {

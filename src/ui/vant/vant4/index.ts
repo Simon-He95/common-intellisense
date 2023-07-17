@@ -26,6 +26,7 @@ import configProvider from './configProvider.json'
 import contactCard from './contactCard.json'
 import contactEdit from './contactEdit.json'
 import contactList from './contactList.json'
+import countDown from './countDown.json'
 
 export function vant4() {
   const map: any = [
@@ -56,6 +57,7 @@ export function vant4() {
     contactCard,
     contactEdit,
     contactList,
+    countDown,
   ]
 
   return propsReducer(map)
@@ -89,6 +91,7 @@ export function vant4Components() {
     ['van-contact-card', '联系人卡片 以卡片的形式展示联系人信息。'],
     ['van-contact-edit', '联系人编辑 编辑并保存联系人信息。'],
     ['van-contact-list', '联系人列表 展示联系人列表。'],
+    ['van-count-down', '倒计时 用于实时展示倒计时数值，支持毫秒精度。'],
   ]
   return componentsReducer(map)
 }

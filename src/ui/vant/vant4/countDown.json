@@ -1,0 +1,119 @@
+{
+  "name": "VanCountDown",
+  "props": {
+    "time": {
+      "value": "",
+      "description": "倒计时时长，单位毫秒",
+      "default": "0",
+      "type": "倒计时时长，单位毫秒"
+    },
+    "format": {
+      "value": "",
+      "description": "时间格式",
+      "default": "HH:mm:ss",
+      "type": "时间格式"
+    },
+    "auto-start": {
+      "value": "",
+      "description": "是否自动开始倒计时",
+      "default": "true",
+      "type": "是否自动开始倒计时"
+    },
+    "millisecond": {
+      "value": "",
+      "description": "是否开启毫秒级渲染",
+      "default": "false",
+      "type": "是否开启毫秒级渲染"
+    },
+    "default": {
+      "value": "",
+      "description": "自定义内容",
+      "default": "",
+      "type": "自定义内容"
+    }
+  },
+  "methods": [],
+  "typeDetail": {
+    "$format": [
+      {
+        "name": "DD",
+        "description": "天数",
+        "type": ""
+      },
+      {
+        "name": "HH",
+        "description": "小时",
+        "type": ""
+      },
+      {
+        "name": "mm",
+        "description": "分钟",
+        "type": ""
+      },
+      {
+        "name": "ss",
+        "description": "秒数",
+        "type": ""
+      },
+      {
+        "name": "S",
+        "description": "毫秒（1 位）",
+        "type": ""
+      },
+      {
+        "name": "SS",
+        "description": "毫秒（2 位）",
+        "type": ""
+      },
+      {
+        "name": "SSS",
+        "description": "毫秒（3 位）",
+        "type": ""
+      }
+    ],
+    "CurrentTime": [
+      {
+        "name": "total",
+        "description": "剩余总时间（单位毫秒）",
+        "type": "number"
+      },
+      {
+        "name": "days",
+        "description": "剩余天数",
+        "type": "number"
+      },
+      {
+        "name": "hours",
+        "description": "剩余小时",
+        "type": "number"
+      },
+      {
+        "name": "minutes",
+        "description": "剩余分钟",
+        "type": "number"
+      },
+      {
+        "name": "seconds",
+        "description": "剩余秒数",
+        "type": "number"
+      },
+      {
+        "name": "milliseconds",
+        "description": "剩余毫秒",
+        "type": "number"
+      }
+    ]
+  },
+  "events": [
+    {
+      "name": "finish",
+      "description": "倒计时结束时触发",
+      "params": "倒计时结束时触发"
+    },
+    {
+      "name": "change",
+      "description": "倒计时变化时触发",
+      "params": "倒计时变化时触发"
+    }
+  ]
+}
