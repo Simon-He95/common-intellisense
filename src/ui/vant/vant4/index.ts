@@ -7,6 +7,7 @@ import addressEdit from './addressEdit.json'
 import addressList from './addressList.json'
 import area from './area.json'
 import backTop from './backTop.json'
+import badge from './badge.json'
 
 export function vant4() {
   const map: any = [
@@ -18,6 +19,7 @@ export function vant4() {
     addressList,
     area,
     backTop,
+    badge,
   ]
 
   return propsReducer(map)
@@ -32,6 +34,7 @@ export function vant4Components() {
     ['van-address-edit', '地址编辑 展示地址信息列表。'],
     ['van-area', '省市区选择 省市区三级联动选择，通常与弹出层组件配合使用。'],
     ['van-back-top', '回到顶部 返回页面顶部的操作按钮。'],
+    ['van-badge', '徽标 在右上角展示徽标数字或小红点。'],
   ]
   return componentsReducer(map)
 }
