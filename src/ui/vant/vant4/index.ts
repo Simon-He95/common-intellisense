@@ -17,6 +17,7 @@ import cell from './cell.json'
 import cellGroup from './cellGroup.json'
 import checkbox from './checkbox.json'
 import checkboxGroup from './checkboxGroup.json'
+import circle from './circle.json'
 
 export function vant4() {
   const map: any = [
@@ -38,6 +39,7 @@ export function vant4() {
     cellGroup,
     checkbox,
     checkboxGroup,
+    circle,
   ]
 
   return propsReducer(map)
@@ -62,6 +64,7 @@ export function vant4Components() {
     ['van-cell-group', '单元格组 单元格为列表中的单个展示项。'],
     ['van-checkbox', '复选框 在一组备选项中进行多选。'],
     ['van-checkbox-group', '复选框组 在一组备选项中进行多选。'],
+    ['van-circle', '环形进度条 圆环形的进度条组件，支持进度渐变动画。'],
   ]
   return componentsReducer(map)
 }
