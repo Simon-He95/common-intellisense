@@ -6,6 +6,7 @@ import actionSheet from './actionSheet.json'
 import addressEdit from './addressEdit.json'
 import addressList from './addressList.json'
 import area from './area.json'
+import backTop from './backTop.json'
 
 export function vant4() {
   const map: any = [
@@ -16,6 +17,7 @@ export function vant4() {
     addressEdit,
     addressList,
     area,
+    backTop,
   ]
 
   return propsReducer(map)
@@ -29,6 +31,7 @@ export function vant4Components() {
     ['van-action-sheet', '动作面板 底部弹起的模态面板，包含与当前情境相关的多个选项。'],
     ['van-address-edit', '地址编辑 展示地址信息列表。'],
     ['van-area', '省市区选择 省市区三级联动选择，通常与弹出层组件配合使用。'],
+    ['van-back-top', '回到顶部 返回页面顶部的操作按钮。'],
   ]
   return componentsReducer(map)
 }
