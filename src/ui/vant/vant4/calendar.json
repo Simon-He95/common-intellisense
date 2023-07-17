@@ -1,0 +1,201 @@
+{
+  "name": "VanCalendar",
+  "props": {
+    "type": {
+      "value": "",
+      "description": "选择类型: `single` 表示选择单个日期， `multiple` 表示选择多个日期， `range` 表示选择日期区间",
+      "default": "single",
+      "type": "选择类型: single 表示选择单个日期， multiple 表示选择多个日期， range 表示选择日期区间"
+    },
+    "title": {
+      "value": "",
+      "description": "日历标题",
+      "default": "日期选择",
+      "type": "日历标题"
+    },
+    "color": {
+      "value": "",
+      "description": "主题色，对底部按钮和选中日期生效",
+      "default": "#1989fa",
+      "type": "主题色，对底部按钮和选中日期生效"
+    },
+    "min-date": {
+      "value": "",
+      "description": "可选择的最小日期",
+      "default": "当前日期",
+      "type": "可选择的最小日期"
+    },
+    "max-date": {
+      "value": "",
+      "description": "可选择的最大日期",
+      "default": "当前日期的六个月后",
+      "type": "可选择的最大日期"
+    },
+    "default-date": {
+      "value": "",
+      "description": "默认选中的日期，`type` 为 `multiple` 或 `range` 时为数组，传入 `null` 表示默认不选择",
+      "default": "今天",
+      "type": "默认选中的日期，type 为 multiple 或 range 时为数组，传入 null 表示默认不选择"
+    },
+    "row-height": {
+      "value": "",
+      "description": "日期行高",
+      "default": "64",
+      "type": "日期行高"
+    },
+    "formatter": {
+      "value": "",
+      "description": "日期格式化函数",
+      "default": "-",
+      "type": "日期格式化函数"
+    },
+    "poppable": {
+      "value": "",
+      "description": "是否以弹层的形式展示日历",
+      "default": "true",
+      "type": "是否以弹层的形式展示日历"
+    },
+    "lazy-render": {
+      "value": "",
+      "description": "是否只渲染可视区域的内容",
+      "default": "true",
+      "type": "是否只渲染可视区域的内容"
+    },
+    "show-mark": {
+      "value": "",
+      "description": "是否显示月份背景水印",
+      "default": "true",
+      "type": "是否显示月份背景水印"
+    },
+    "show-title": {
+      "value": "",
+      "description": "是否展示日历标题",
+      "default": "true",
+      "type": "是否展示日历标题"
+    },
+    "show-subtitle": {
+      "value": "",
+      "description": "是否展示日历副标题（年月）",
+      "default": "true",
+      "type": "是否展示日历副标题（年月）"
+    },
+    "show-confirm": {
+      "value": "",
+      "description": "是否展示确认按钮",
+      "default": "true",
+      "type": "是否展示确认按钮"
+    },
+    "readonly": {
+      "value": "",
+      "description": "是否为只读状态，只读状态下不能选择日期",
+      "default": "false",
+      "type": "是否为只读状态，只读状态下不能选择日期"
+    },
+    "confirm-text": {
+      "value": "",
+      "description": "确认按钮的文字",
+      "default": "确定",
+      "type": "确认按钮的文字"
+    },
+    "confirm-disabled-text": {
+      "value": "",
+      "description": "确认按钮处于禁用状态时的文字",
+      "default": "确定",
+      "type": "确认按钮处于禁用状态时的文字"
+    },
+    "first-day-of-week": {
+      "value": "",
+      "description": "设置周起始日",
+      "default": "0",
+      "type": "设置周起始日"
+    }
+  },
+  "methods": [],
+  "typeDetail": {
+    "type3": [
+      {
+        "name": "date",
+        "description": "日期对应的 Date 对象",
+        "type": "Date"
+      },
+      {
+        "name": "type",
+        "description": "日期类型，可选值为 `selected`、`start`、`middle`、`end`、`disabled`",
+        "type": "string"
+      },
+      {
+        "name": "text",
+        "description": "中间显示的文字",
+        "type": "string"
+      },
+      {
+        "name": "topInfo",
+        "description": "上方的提示信息",
+        "type": "string"
+      },
+      {
+        "name": "bottomInfo",
+        "description": "下方的提示信息",
+        "type": "string"
+      },
+      {
+        "name": "className",
+        "description": "额外类名",
+        "type": "string"
+      }
+    ]
+  },
+  "events": [
+    {
+      "name": "select",
+      "description": "点击并选中任意日期时触发",
+      "params": "点击并选中任意日期时触发"
+    },
+    {
+      "name": "confirm",
+      "description": "日期选择完成后触发，若 `show-confirm` 为 `true`，则点击确认按钮后触发",
+      "params": "日期选择完成后触发，若 `show-confirm` 为 `true`，则点击确认按钮后触发"
+    },
+    {
+      "name": "open",
+      "description": "打开弹出层时触发",
+      "params": "打开弹出层时触发"
+    },
+    {
+      "name": "close",
+      "description": "关闭弹出层时触发",
+      "params": "关闭弹出层时触发"
+    },
+    {
+      "name": "opened",
+      "description": "打开弹出层且动画结束后触发",
+      "params": "打开弹出层且动画结束后触发"
+    },
+    {
+      "name": "closed",
+      "description": "关闭弹出层且动画结束后触发",
+      "params": "关闭弹出层且动画结束后触发"
+    },
+    {
+      "name": "unselect",
+      "description": "当日历组件的 `type` 为 `multiple` 时，取消选中日期时触发",
+      "params": "当日历组件的 `type` 为 `multiple` 时，取消选中日期时触发"
+    },
+    {
+      "name": "month-show",
+      "description": "当某个月份进入可视区域时触发",
+      "params": "当某个月份进入可视区域时触发"
+    },
+    {
+      "name": "over-range",
+      "description": "范围选择超过最多可选天数时触发",
+      "params": "范围选择超过最多可选天数时触发"
+    },
+    {
+      "name": "click-subtitle",
+      "description": "点击日历副标题时触发",
+      "params": "点击日历副标题时触发"
+    }
+  ],
+  "link": "https://vant-ui.github.io/vant/#/zh-CN/calendar"
+}
