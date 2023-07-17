@@ -25,6 +25,7 @@ import collapseItem from './collapseItem.json'
 import configProvider from './configProvider.json'
 import contactCard from './contactCard.json'
 import contactEdit from './contactEdit.json'
+import contactList from './contactList.json'
 
 export function vant4() {
   const map: any = [
@@ -54,6 +55,7 @@ export function vant4() {
     configProvider,
     contactCard,
     contactEdit,
+    contactList,
   ]
 
   return propsReducer(map)
@@ -86,6 +88,7 @@ export function vant4Components() {
     ['van-config-provider', '全局配置 用于全局配置 Vant 组件，提供深色模式、主题定制等能力。'],
     ['van-contact-card', '联系人卡片 以卡片的形式展示联系人信息。'],
     ['van-contact-edit', '联系人编辑 编辑并保存联系人信息。'],
+    ['van-contact-list', '联系人列表 展示联系人列表。'],
   ]
   return componentsReducer(map)
 }

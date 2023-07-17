@@ -1,0 +1,72 @@
+{
+  "name": "VanContactList",
+  "props": {
+    "v-model": {
+      "value": "",
+      "description": "当前选中联系人的 id",
+      "default": "-",
+      "type": "当前选中联系人的 id"
+    },
+    "list": {
+      "value": "",
+      "description": "联系人列表",
+      "default": "[]",
+      "type": "联系人列表"
+    },
+    "add-text": {
+      "value": "",
+      "description": "新建按钮文案",
+      "default": "新建联系人",
+      "type": "新建按钮文案"
+    },
+    "default-tag-text": {
+      "value": "",
+      "description": "默认联系人标签文案",
+      "default": "-",
+      "type": "默认联系人标签文案"
+    }
+  },
+  "methods": [],
+  "typeDetail": {
+    "ContactListItem": [
+      {
+        "name": "id",
+        "description": "每位联系人的唯一标识",
+        "type": "number | string"
+      },
+      {
+        "name": "name",
+        "description": "联系人姓名",
+        "type": "string"
+      },
+      {
+        "name": "tel",
+        "description": "联系人手机号",
+        "type": "number | string"
+      },
+      {
+        "name": "isDefault",
+        "description": "是否为默认联系人",
+        "type": "boolean | undefined"
+      }
+    ]
+  },
+  "events": [
+    {
+      "name": "add",
+      "description": "点击新增按钮时触发",
+      "params": "点击新增按钮时触发"
+    },
+    {
+      "name": "edit",
+      "description": "点击编辑按钮时触发",
+      "params": "点击编辑按钮时触发"
+    },
+    {
+      "name": "select",
+      "description": "切换选中的联系人时触发",
+      "params": "切换选中的联系人时触发"
+    }
+  ],
+  "link": "https://vant-ui.github.io/vant/#/zh-CN/contact-list"
+}
