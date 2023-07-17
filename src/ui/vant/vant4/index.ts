@@ -18,6 +18,8 @@ import cellGroup from './cellGroup.json'
 import checkbox from './checkbox.json'
 import checkboxGroup from './checkboxGroup.json'
 import circle from './circle.json'
+import col from './col.json'
+import row from './row.json'
 
 export function vant4() {
   const map: any = [
@@ -40,6 +42,8 @@ export function vant4() {
     checkbox,
     checkboxGroup,
     circle,
+    col,
+    row,
   ]
 
   return propsReducer(map)
@@ -65,6 +69,8 @@ export function vant4Components() {
     ['van-checkbox', '复选框 在一组备选项中进行多选。'],
     ['van-checkbox-group', '复选框组 在一组备选项中进行多选。'],
     ['van-circle', '环形进度条 圆环形的进度条组件，支持进度渐变动画。'],
+    ['van-col', '布局 Layout 组件提供了 24列栅格，通过在 Col 上添加 span 属性设置列所占的宽度百分比。此外，添加 offset 属性可以设置列的偏移宽度，计算方式与 span 相同。'],
+    ['van-row', '布局 <van-row justify="center"><van-col span="6">span: 6</van-col></van-row>'],
   ]
   return componentsReducer(map)
 }
