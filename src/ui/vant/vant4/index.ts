@@ -34,6 +34,7 @@ import dialog from './dialog.json'
 import dropdownItem from './dropdownItem.json'
 import dropdownMenu from './dropdownMenu.json'
 import empty from './empty.json'
+import field from './field.json'
 
 export function vant4() {
   const map: any = [
@@ -72,6 +73,7 @@ export function vant4() {
     dropdownItem,
     dropdownMenu,
     empty,
+    field,
   ]
 
   return propsReducer(map)
@@ -130,6 +132,10 @@ export function vant4Components() {
 </van-dropdown-menu>
 `],
     ['van-empty', '空状态 空状态时的占位提示。', '<van-empty description="描述文字" />'],
+    ['van-field', '输入框 用户可以在文本框内输入或编辑文字。', `<van-cell-group inset>
+  <van-field v-model="value" label="文本" placeholder="请输入用户名" />
+</van-cell-group>
+`],
   ]
   return componentsReducer(map)
 }
