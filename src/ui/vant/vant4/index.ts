@@ -31,6 +31,8 @@ import couponCell from './couponCell.json'
 import couponList from './couponList.json'
 import datePicker from './datePicker.json'
 import dialog from './dialog.json'
+import dropdownItem from './dropdownItem.json'
+import dropdownMenu from './dropdownMenu.json'
 
 export function vant4() {
   const map: any = [
@@ -66,6 +68,8 @@ export function vant4() {
     couponList,
     datePicker,
     dialog,
+    dropdownItem,
+    dropdownMenu,
   ]
 
   return propsReducer(map)
@@ -112,6 +116,17 @@ export function vant4Components() {
     ['van-dialog', '弹出框 弹出模态框，常用于消息提示、消息确认，或在当前页面内完成特定的交互操作。支持组件调用和函数调用两种方式。', `<van-dialog v-model:show="show" title="标题" show-cancel-button>
   <img src="https://fastly.jsdelivr.net/npm/@vant/assets/apple-3.jpeg" />
 </van-dialog>`],
+    ['van-divider', '分割线 用于将内容分隔为多个区域。', '<van-divider>文本</van-divider>'],
+    ['van-dropdown-item', '下拉菜单 向下弹出的菜单列表。', `<van-dropdown-menu>
+  <van-dropdown-item v-model="value1" :options="option1" />
+  <van-dropdown-item v-model="value2" :options="option2" />
+</van-dropdown-menu>
+`],
+    ['van-dropdown-menu', '下拉菜单 向下弹出的菜单列表。', `<van-dropdown-menu>
+  <van-dropdown-item v-model="value1" :options="option1" />
+  <van-dropdown-item v-model="value2" :options="option2" />
+</van-dropdown-menu>
+`],
   ]
   return componentsReducer(map)
 }
