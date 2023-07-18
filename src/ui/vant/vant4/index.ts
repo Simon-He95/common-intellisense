@@ -29,6 +29,7 @@ import contactList from './contactList.json'
 import countDown from './countDown.json'
 import couponCell from './couponCell.json'
 import couponList from './couponList.json'
+import datePicker from './datePicker.json'
 
 export function vant4() {
   const map: any = [
@@ -62,6 +63,7 @@ export function vant4() {
     countDown,
     couponCell,
     couponList,
+    datePicker,
   ]
 
   return propsReducer(map)
@@ -98,6 +100,7 @@ export function vant4Components() {
     ['van-count-down', '倒计时 用于实时展示倒计时数值，支持毫秒精度。'],
     ['van-coupon-cell', '优惠券选择器 用于优惠券的兑换和选择。'],
     ['van-coupon-list', '优惠券选择器 用于优惠券的兑换和选择。'],
+    ['van-date-picker', '日期选择 日期选择器，用于选择年、月、日，通常与弹出层组件配合使用。'],
   ]
   return componentsReducer(map)
 }
