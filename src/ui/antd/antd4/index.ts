@@ -72,6 +72,13 @@ import TagCheckableTag from './tagCheckableTag.json'
 import Timeline from './timeline.json'
 import Tooltip from './tooltip.json'
 import Tree from './tree.json'
+import Alert from './alert.json'
+import Drawer from './drawer.json'
+import Modal from './modal.json'
+import Popconfirm from './popconfirm.json'
+import Progress from './progress.json'
+import Result from './result.json'
+import Spin from './spin.json'
 
 export function antd4() {
   const map: any = [
@@ -148,6 +155,13 @@ export function antd4() {
     Timeline,
     Tooltip,
     Tree,
+    Alert,
+    Drawer,
+    Modal,
+    Popconfirm,
+    Progress,
+    Result,
+    Spin,
   ]
 
   return propsReducer(map)
