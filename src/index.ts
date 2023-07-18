@@ -1,7 +1,13 @@
 import * as vscode from 'vscode'
-import { addEventListener, getSelection, registerCompletionItemProvider } from '@vscode-use/utils'
+import { addEventListener, copyText, getSelection, message, registerCommand, registerCompletionItemProvider } from '@vscode-use/utils'
 import { findPkgUI, parser } from './utils'
 import UI from './ui'
+
+declare const global: {
+  commonIntellisense: {
+    copyDom: string
+  }
+}
 
 let UINames: any = []
 let optionsComponents: any = null
@@ -10,6 +16,9 @@ let cacheMap: any = {}
 let extensionContext: any = null
 export function activate(context: vscode.ExtensionContext) {
   extensionContext = context
+  global.commonIntellisense = {
+    copyDom: '',
+  }
   const filter = ['javascript', 'javascriptreact', 'typescriptreact', 'vue', 'svelte']
   context.subscriptions.push(addEventListener('activeText-change', (editor: vscode.TextEditor) => {
     // 找到当前活动的编辑器
@@ -17,6 +26,11 @@ export function activate(context: vscode.ExtensionContext) {
     const currentEditor = visibleEditors.find(e => e === editor)
     if (currentEditor)
       findUI()
+  }))
+
+  context.subscriptions.push(registerCommand('intellisense.copyDemo', () => {
+    copyText(global.commonIntellisense.copyDom)
+    message.info('copy successfully')
   }))
 
   findUI()

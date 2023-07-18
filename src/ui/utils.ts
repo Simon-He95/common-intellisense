@@ -1,6 +1,12 @@
 import * as vscode from 'vscode'
 import { createCompletionItem } from '@vscode-use/utils'
 
+declare const global: {
+  commonIntellisense: {
+    copyDom: string
+  }
+}
+
 export function propsReducer(map: string[], iconData?: { prefix: string; type: string; icons: any[] }, extensionContext?: any) {
   const result: any = {}
   let icons
@@ -42,8 +48,8 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
 
         if (item.typeDetail) {
           const data = `🌈 类型详情:\n${Object.keys(item.typeDetail).reduce((result, key) => result += key[0] === '$'
-          ? `type ${key.slice(1)} = \n${item.typeDetail[key].map((typeItem: any) => `${typeItem.name} /*${typeItem.description}*/`).join('\n| ')}\n\n`
-          : `interface ${key} {\n  ${item.typeDetail[key].map((typeItem: any) => `${typeItem.name}${typeItem.optional ? '?' : ''}: ${typeItem.type} /*${typeItem.description}${typeItem.default ? ` 默认值: ***${typeItem.default}***` : ''}*/`).join('\n  ')}\n}`, '')}`
+            ? `type ${key.slice(1)} = \n${item.typeDetail[key].map((typeItem: any) => `${typeItem.name} /*${typeItem.description}*/`).join('\n| ')}\n\n`
+            : `interface ${key} {\n  ${item.typeDetail[key].map((typeItem: any) => `${typeItem.name}${typeItem.optional ? '?' : ''}: ${typeItem.type} /*${typeItem.description}${typeItem.default ? ` 默认值: ***${typeItem.default}***` : ''}*/`).join('\n  ')}\n}`, '')}`
           documentation.appendCodeblock(data, 'typescript')
         }
 
@@ -100,11 +106,18 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
 }
 
 export function componentsReducer(map: string[][]) {
-  return map.map(([content, detail]) => {
+  return map.map(([content, detail, demo]) => {
     const documentation = new vscode.MarkdownString()
     documentation.isTrusted = true
     documentation.supportHtml = true
-    documentation.appendMarkdown(`#### 🍀 ${detail}`)
+    documentation.appendMarkdown(`#### 🍀 ${detail}\n`)
+    if (demo) {
+      global.commonIntellisense.copyDom = demo
+      const copyIcon = '<img width="12" height="12" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxnIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2UyOWNkMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2Utd2lkdGg9IjEuNSI+PHBhdGggZD0iTTIwLjk5OCAxMGMtLjAxMi0yLjE3NS0uMTA4LTMuMzUzLS44NzctNC4xMjFDMTkuMjQzIDUgMTcuODI4IDUgMTUgNWgtM2MtMi44MjggMC00LjI0MyAwLTUuMTIxLjg3OUM2IDYuNzU3IDYgOC4xNzIgNiAxMXY1YzAgMi44MjggMCA0LjI0My44NzkgNS4xMjFDNy43NTcgMjIgOS4xNzIgMjIgMTIgMjJoM2MyLjgyOCAwIDQuMjQzIDAgNS4xMjEtLjg3OUMyMSAyMC4yNDMgMjEgMTguODI4IDIxIDE2di0xIi8+PHBhdGggZD0iTTMgMTB2NmEzIDMgMCAwIDAgMyAzTTE4IDVhMyAzIDAgMCAwLTMtM2gtNEM3LjIyOSAyIDUuMzQzIDIgNC4xNzIgMy4xNzJDMy41MTggMy44MjUgMy4yMjkgNC43IDMuMTAyIDYiLz48L2c+PC9zdmc+" />'
+      documentation.appendMarkdown('#### 🌰 例子\n')
+      documentation.appendCodeblock(demo, 'html')
+      documentation.appendMarkdown(`\n<a href="command:intellisense.copyDemo">${copyIcon}</a>\n`)
+    }
     return createCompletionItem({ content, snippet: `<${content}>$1</${content}>`, documentation, type: vscode.CompletionItemKind.TypeParameter })
   })
 }
