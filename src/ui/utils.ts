@@ -23,6 +23,12 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
   return map.reduce((result: any, item: any) => {
     const completions: any = []
     const events: any = []
+    completions.push(...[
+      'id',
+      'style',
+      'class',
+      'className'
+    ].map(item => createCompletionItem({ content: item, snippet: `${item}="$1"`, type: 5 })))
     Object.keys(item.props!).forEach((key) => {
       const value = (item.props as any)[key]
       let type = vscode.CompletionItemKind.Property
@@ -74,7 +80,7 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
 
         if (value.type && value.type.includes('boolean') && value.default === 'false')
           return createCompletionItem({ content: key, documentation })
-        return createCompletionItem({ content: `${key}="${v}"`, documentation, snippet: `${key}="$\{1:${v}\}$2"`, type, preselect: true, sortText: '99' })
+        return createCompletionItem({ content: `${key}="${v}"`, documentation, snippet: `${key}="$\{1:${v}\}$2"`, type, preselect: true, sortText: '1' })
       },
       ))
     })
