@@ -27,7 +27,7 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
       'id',
       'style',
       'class',
-      'className'
+      'className',
     ].map(item => createCompletionItem({ content: item, snippet: `${item}="$1"`, type: 5 })))
     Object.keys(item.props!).forEach((key) => {
       const value = (item.props as any)[key]

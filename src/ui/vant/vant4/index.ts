@@ -35,6 +35,7 @@ import dropdownItem from './dropdownItem.json'
 import dropdownMenu from './dropdownMenu.json'
 import empty from './empty.json'
 import field from './field.json'
+import floatingBubble from './floatingBubble.json'
 
 export function vant4() {
   const map: any = [
@@ -74,6 +75,7 @@ export function vant4() {
     dropdownMenu,
     empty,
     field,
+    floatingBubble,
   ]
 
   return propsReducer(map)
@@ -136,6 +138,7 @@ export function vant4Components() {
   <van-field v-model="value" label="文本" placeholder="请输入用户名" />
 </van-cell-group>
 `],
+    ['van-floating-bubble', '浮动气泡 悬浮在页面边缘的可点击气泡。请升级 vant 到 >= 4.6.0 版本来使用该组件。', '<van-floating-bubble icon="chat" @click="onClick" />'],
   ]
   return componentsReducer(map)
 }
