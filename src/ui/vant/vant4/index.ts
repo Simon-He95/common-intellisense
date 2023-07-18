@@ -33,6 +33,7 @@ import datePicker from './datePicker.json'
 import dialog from './dialog.json'
 import dropdownItem from './dropdownItem.json'
 import dropdownMenu from './dropdownMenu.json'
+import empty from './empty.json'
 
 export function vant4() {
   const map: any = [
@@ -70,6 +71,7 @@ export function vant4() {
     dialog,
     dropdownItem,
     dropdownMenu,
+    empty,
   ]
 
   return propsReducer(map)
@@ -127,6 +129,7 @@ export function vant4Components() {
   <van-dropdown-item v-model="value2" :options="option2" />
 </van-dropdown-menu>
 `],
+    ['van-empty', '空状态 空状态时的占位提示。', '<van-empty description="描述文字" />'],
   ]
   return componentsReducer(map)
 }
