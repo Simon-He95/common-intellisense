@@ -27,6 +27,8 @@ import contactCard from './contactCard.json'
 import contactEdit from './contactEdit.json'
 import contactList from './contactList.json'
 import countDown from './countDown.json'
+import couponCell from './couponCell.json'
+import couponList from './couponList.json'
 
 export function vant4() {
   const map: any = [
@@ -58,6 +60,8 @@ export function vant4() {
     contactEdit,
     contactList,
     countDown,
+    couponCell,
+    couponList,
   ]
 
   return propsReducer(map)
@@ -92,6 +96,8 @@ export function vant4Components() {
     ['van-contact-edit', '联系人编辑 编辑并保存联系人信息。'],
     ['van-contact-list', '联系人列表 展示联系人列表。'],
     ['van-count-down', '倒计时 用于实时展示倒计时数值，支持毫秒精度。'],
+    ['van-coupon-cell', '优惠券选择器 用于优惠券的兑换和选择。'],
+    ['van-coupon-list', '优惠券选择器 用于优惠券的兑换和选择。'],
   ]
   return componentsReducer(map)
 }

@@ -1,0 +1,181 @@
+{
+  "name": "VanCouponList",
+  "props": {
+    "v-model:code": {
+      "value": "",
+      "description": "当前输入的兑换码",
+      "default": "-",
+      "type": "当前输入的兑换码"
+    },
+    "chosen-coupon": {
+      "value": "",
+      "description": "当前选中优惠券的索引",
+      "default": "-1",
+      "type": "当前选中优惠券的索引"
+    },
+    "coupons": {
+      "value": "",
+      "description": "可用优惠券列表",
+      "default": "[]",
+      "type": "可用优惠券列表"
+    },
+    "disabled-coupons": {
+      "value": "",
+      "description": "不可用优惠券列表",
+      "default": "[]",
+      "type": "不可用优惠券列表"
+    },
+    "enabled-title": {
+      "value": "",
+      "description": "可用优惠券列表标题",
+      "default": "可使用优惠券",
+      "type": "可用优惠券列表标题"
+    },
+    "disabled-title": {
+      "value": "",
+      "description": "不可用优惠券列表标题",
+      "default": "不可使用优惠券",
+      "type": "不可用优惠券列表标题"
+    },
+    "exchange-button-text": {
+      "value": "",
+      "description": "兑换按钮文字",
+      "default": "兑换",
+      "type": "兑换按钮文字"
+    },
+    "exchange-button-loading": {
+      "value": "",
+      "description": "是否显示兑换按钮加载动画",
+      "default": "false",
+      "type": "是否显示兑换按钮加载动画"
+    },
+    "exchange-button-disabled": {
+      "value": "",
+      "description": "是否禁用兑换按钮",
+      "default": "false",
+      "type": "是否禁用兑换按钮"
+    },
+    "exchange-min-length": {
+      "value": "",
+      "description": "兑换码最小长度",
+      "default": "1",
+      "type": "兑换码最小长度"
+    },
+    "displayed-coupon-index": {
+      "value": "",
+      "description": "滚动至特定优惠券位置",
+      "default": "-",
+      "type": "滚动至特定优惠券位置"
+    },
+    "show-close-button": {
+      "value": "",
+      "description": "是否显示列表底部按钮",
+      "default": "true",
+      "type": "是否显示列表底部按钮"
+    },
+    "close-button-text": {
+      "value": "",
+      "description": "列表底部按钮文字",
+      "default": "不使用优惠",
+      "type": "列表底部按钮文字"
+    },
+    "input-placeholder": {
+      "value": "",
+      "description": "输入框文字提示",
+      "default": "请输入优惠码",
+      "type": "输入框文字提示"
+    },
+    "show-exchange-bar": {
+      "value": "",
+      "description": "是否展示兑换栏",
+      "default": "true",
+      "type": "是否展示兑换栏"
+    },
+    "currency": {
+      "value": "",
+      "description": "货币符号",
+      "default": "¥",
+      "type": "货币符号"
+    },
+    "empty-image": {
+      "value": "",
+      "description": "列表为空时的占位图",
+      "default": "-",
+      "type": "列表为空时的占位图"
+    },
+    "show-count": {
+      "value": "",
+      "description": "是否展示可用 / 不可用数量",
+      "default": "true",
+      "type": "是否展示可用 | 不可用数量"
+    }
+  },
+  "methods": [],
+  "typeDetail": {
+    "type3": [
+      {
+        "name": "id",
+        "description": "优惠券 id",
+        "type": "string"
+      },
+      {
+        "name": "name",
+        "description": "优惠券名称",
+        "type": "string"
+      },
+      {
+        "name": "condition",
+        "description": "满减条件",
+        "type": "string"
+      },
+      {
+        "name": "startAt",
+        "description": "卡有效开始时间 (时间戳, 单位秒)",
+        "type": "number"
+      },
+      {
+        "name": "endAt",
+        "description": "卡失效日期 (时间戳, 单位秒)",
+        "type": "number"
+      },
+      {
+        "name": "description",
+        "description": "描述信息，优惠券可用时展示",
+        "type": "string"
+      },
+      {
+        "name": "reason",
+        "description": "不可用原因，优惠券不可用时展示",
+        "type": "string"
+      },
+      {
+        "name": "value",
+        "description": "折扣券优惠金额，单位分",
+        "type": "number"
+      },
+      {
+        "name": "valueDesc",
+        "description": "折扣券优惠金额文案",
+        "type": "string"
+      },
+      {
+        "name": "unitDesc",
+        "description": "单位文案",
+        "type": "string"
+      }
+    ]
+  },
+  "events": [
+    {
+      "name": "change",
+      "description": "优惠券切换回调",
+      "params": "优惠券切换回调"
+    },
+    {
+      "name": "exchange",
+      "description": "兑换优惠券回调",
+      "params": "兑换优惠券回调"
+    }
+  ],
+  "list": "https://vant-ui.github.io/vant/#/zh-CN/coupon-list"
+}
