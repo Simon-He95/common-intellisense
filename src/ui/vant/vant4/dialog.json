@@ -1,0 +1,201 @@
+{
+  "name": "VanDialog",
+  "props": {
+    "v-model:show": {
+      "value": "",
+      "description": "是否显示弹窗",
+      "default": "-",
+      "type": "是否显示弹窗"
+    },
+    "title": {
+      "value": "",
+      "description": "标题",
+      "default": "-",
+      "type": "标题"
+    },
+    "width": {
+      "value": "",
+      "description": "弹窗宽度，默认单位为 `px`",
+      "default": "320px",
+      "type": "弹窗宽度，默认单位为 px"
+    },
+    "message": {
+      "value": "",
+      "description": "文本内容，支持通过 `\\n` 换行",
+      "default": "-",
+      "type": "文本内容，支持通过 \\n 换行"
+    },
+    "message-align": {
+      "value": "",
+      "description": "内容水平对齐方式，可选值为 `left` `right` `justify`",
+      "default": "center",
+      "type": "内容水平对齐方式，可选值为 left right justify"
+    },
+    "theme": {
+      "value": "",
+      "description": "样式风格，可选值为 `round-button`",
+      "default": "default",
+      "type": "样式风格，可选值为 round-button"
+    },
+    "show-confirm-button": {
+      "value": "",
+      "description": "是否展示确认按钮",
+      "default": "true",
+      "type": "是否展示确认按钮"
+    },
+    "show-cancel-button": {
+      "value": "",
+      "description": "是否展示取消按钮",
+      "default": "false",
+      "type": "是否展示取消按钮"
+    },
+    "confirm-button-text": {
+      "value": "",
+      "description": "确认按钮文案",
+      "default": "确认",
+      "type": "确认按钮文案"
+    },
+    "confirm-button-color": {
+      "value": "",
+      "description": "确认按钮颜色",
+      "default": "#ee0a24",
+      "type": "确认按钮颜色"
+    },
+    "confirm-button-disabled": {
+      "value": "",
+      "description": "是否禁用确认按钮",
+      "default": "false",
+      "type": "是否禁用确认按钮"
+    },
+    "cancel-button-text": {
+      "value": "",
+      "description": "取消按钮文案",
+      "default": "取消",
+      "type": "取消按钮文案"
+    },
+    "cancel-button-color": {
+      "value": "",
+      "description": "取消按钮颜色",
+      "default": "black",
+      "type": "取消按钮颜色"
+    },
+    "cancel-button-disabled": {
+      "value": "",
+      "description": "是否禁用取消按钮",
+      "default": "false",
+      "type": "是否禁用取消按钮"
+    },
+    "z-index": {
+      "value": "",
+      "description": "将弹窗的 z-index 层级设置为一个固定值",
+      "default": "2000+",
+      "type": "将弹窗的 z-index 层级设置为一个固定值"
+    },
+    "overlay": {
+      "value": "",
+      "description": "是否展示遮罩层",
+      "default": "true",
+      "type": "是否展示遮罩层"
+    },
+    "overlay-class": {
+      "value": "",
+      "description": "自定义遮罩层类名",
+      "default": "-",
+      "type": "自定义遮罩层类名"
+    },
+    "overlay-style": {
+      "value": "",
+      "description": "自定义遮罩层样式",
+      "default": "-",
+      "type": "自定义遮罩层样式"
+    },
+    "close-on-popstate": {
+      "value": "",
+      "description": "是否在页面回退时自动关闭",
+      "default": "true",
+      "type": "是否在页面回退时自动关闭"
+    },
+    "close-on-click-overlay": {
+      "value": "",
+      "description": "是否在点击遮罩层后关闭弹窗",
+      "default": "false",
+      "type": "是否在点击遮罩层后关闭弹窗"
+    },
+    "lazy-render": {
+      "value": "",
+      "description": "是否在显示弹层时才渲染节点",
+      "default": "true",
+      "type": "是否在显示弹层时才渲染节点"
+    },
+    "lock-scroll": {
+      "value": "",
+      "description": "是否锁定背景滚动",
+      "default": "true",
+      "type": "是否锁定背景滚动"
+    },
+    "allow-html": {
+      "value": "",
+      "description": "是否允许 message 内容中渲染 HTML",
+      "default": "false",
+      "type": "是否允许 message 内容中渲染 HTML"
+    },
+    "before-close": {
+      "value": "",
+      "description": "关闭前的回调函数，返回 `false` 可阻止关闭，支持返回 Promise",
+      "default": "-",
+      "type": "关闭前的回调函数，返回 false 可阻止关闭，支持返回 Promise"
+    },
+    "transition": {
+      "value": "",
+      "description": "动画类名，等价于 [transition](https://cn.vuejs.org/api/built-in-components.html#transition) 的 `name` 属性",
+      "default": "-",
+      "type": "动画类名，等价于 [transition](https: |  | cn.vuejs.org | api | built-in-components.html#transition) 的 name 属性"
+    },
+    "teleport": {
+      "value": "",
+      "description": "指定挂载的节点，等同于 Teleport 组件的 [to 属性](https://cn.vuejs.org/api/built-in-components.html#teleport)",
+      "default": "-",
+      "type": "指定挂载的节点，等同于 Teleport 组件的 [to 属性](https: |  | cn.vuejs.org | api | built-in-components.html#teleport)"
+    },
+    "confirm": {
+      "value": "",
+      "description": "点击确认按钮时触发",
+      "default": "",
+      "type": "点击确认按钮时触发"
+    },
+    "cancel": {
+      "value": "",
+      "description": "点击取消按钮时触发",
+      "default": "",
+      "type": "点击取消按钮时触发"
+    },
+    "open": {
+      "value": "",
+      "description": "打开弹窗时触发",
+      "default": "",
+      "type": "打开弹窗时触发"
+    },
+    "close": {
+      "value": "",
+      "description": "关闭弹窗时触发",
+      "default": "",
+      "type": "关闭弹窗时触发"
+    },
+    "opened": {
+      "value": "",
+      "description": "打开弹窗且动画结束后触发",
+      "default": "",
+      "type": "打开弹窗且动画结束后触发"
+    },
+    "closed": {
+      "value": "",
+      "description": "关闭弹窗且动画结束后触发",
+      "default": "",
+      "type": "关闭弹窗且动画结束后触发"
+    }
+  },
+  "methods": [],
+  "typeDetail": {},
+  "events": [],
+  "link": "https://vant-ui.github.io/vant/#/zh-CN/dialog"
+}

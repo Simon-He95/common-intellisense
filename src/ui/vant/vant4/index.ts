@@ -30,6 +30,7 @@ import countDown from './countDown.json'
 import couponCell from './couponCell.json'
 import couponList from './couponList.json'
 import datePicker from './datePicker.json'
+import dialog from './dialog.json'
 
 export function vant4() {
   const map: any = [
@@ -64,6 +65,7 @@ export function vant4() {
     couponCell,
     couponList,
     datePicker,
+    dialog,
   ]
 
   return propsReducer(map)
@@ -101,12 +103,15 @@ export function vant4Components() {
     ['van-coupon-cell', '优惠券选择器 用于优惠券的兑换和选择。'],
     ['van-coupon-list', '优惠券选择器 用于优惠券的兑换和选择。'],
     ['van-date-picker', '日期选择 日期选择器，用于选择年、月、日，通常与弹出层组件配合使用。', `<van-date-picker
-    v-model="currentDate"
-    title="选择日期"
-    :min-date="minDate"
-    :max-date="maxDate"
-  />
+  v-model="currentDate"
+  title="选择日期"
+  :min-date="minDate"
+  :max-date="maxDate"
+/>
   `],
+    ['van-dialog', '弹出框 弹出模态框，常用于消息提示、消息确认，或在当前页面内完成特定的交互操作。支持组件调用和函数调用两种方式。', `<van-dialog v-model:show="show" title="标题" show-cancel-button>
+  <img src="https://fastly.jsdelivr.net/npm/@vant/assets/apple-3.jpeg" />
+</van-dialog>`],
   ]
   return componentsReducer(map)
 }
