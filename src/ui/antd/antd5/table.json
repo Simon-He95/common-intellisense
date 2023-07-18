@@ -1,0 +1,155 @@
+{
+  "name": "Table",
+  "props": {
+    "bordered": {
+      "value": "",
+      "description": "是否展示外边框和列边框",
+      "default": "false",
+      "type": "boolean"
+    },
+    "columns": {
+      "value": "",
+      "description": "表格列的配置描述，具体项见下表",
+      "default": "-",
+      "type": "[ColumnsType][]"
+    },
+    "components": {
+      "value": "",
+      "description": "覆盖默认的 table 元素",
+      "default": "-",
+      "type": "[TableComponents]"
+    },
+    "dataSource": {
+      "value": "",
+      "description": "数据数组",
+      "default": "-",
+      "type": "object[]"
+    },
+    "expandable": {
+      "value": "",
+      "description": "配置展开属性",
+      "default": "-",
+      "type": "[expandable]"
+    },
+    "footer": {
+      "value": "",
+      "description": "表格尾部",
+      "default": "-",
+      "type": "function(currentPageData)"
+    },
+    "getPopupContainer": {
+      "value": "",
+      "description": "设置表格内各类浮层的渲染节点，如筛选菜单",
+      "default": "() => TableHtmlElement",
+      "type": "(triggerNode) => HTMLElement"
+    },
+    "loading": {
+      "value": "",
+      "description": "页面是否加载中",
+      "default": "false",
+      "type": "boolean | [Spin Props]"
+    },
+    "locale": {
+      "value": "[默认值]",
+      "description": "默认文案设置，目前包括排序、过滤、空数据文案",
+      "default": "[默认值]",
+      "type": "object"
+    },
+    "pagination": {
+      "value": "",
+      "description": "分页器，设为 false 时不展示和进行分页",
+      "default": "-",
+      "type": "object | `false`"
+    },
+    "rowClassName": {
+      "value": "",
+      "description": "表格行的类名",
+      "default": "-",
+      "type": "function(record, index): string"
+    },
+    "rowKey": {
+      "value": "",
+      "description": "表格行 key 的取值，可以是字符串或一个函数",
+      "default": "`key`",
+      "type": "string | function(record): string"
+    },
+    "rowSelection": {
+      "value": "",
+      "description": "表格行是否可选择，[配置项]",
+      "default": "-",
+      "type": "object"
+    },
+    "scroll": {
+      "value": "",
+      "description": "表格是否可滚动，也可以指定滚动区域的宽、高",
+      "default": "-",
+      "type": "object"
+    },
+    "showHeader": {
+      "value": "",
+      "description": "是否显示表头",
+      "default": "true",
+      "type": "boolean"
+    },
+    "showSorterTooltip": {
+      "value": "",
+      "description": "表头是否显示下一次排序的 tooltip 提示。当参数类型为对象时，将被设置为 Tooltip 的属性",
+      "default": "true",
+      "type": "boolean | [Tooltip props]"
+    },
+    "size": {
+      "value": "",
+      "description": "表格大小",
+      "default": "`large`",
+      "type": "`large` | `middle` | `small`"
+    },
+    "sortDirections": {
+      "value": "",
+      "description": "支持的排序方式，取值为 `ascend` `descend`",
+      "default": "[`ascend`, `descend`]",
+      "type": "Array"
+    },
+    "sticky": {
+      "value": "",
+      "description": "设置粘性头部和滚动条",
+      "default": "-",
+      "type": "boolean | `{offsetHeader?: number, offsetScroll?: number, getContainer?: () => HTMLElement}`"
+    },
+    "summary": {
+      "value": "",
+      "description": "总结栏",
+      "default": "-",
+      "type": "(currentData) => ReactNode"
+    },
+    "tableLayout": {
+      "value": ["无 ,固定表头", "列或使用了 `column.ellipsis` 时，默认值为 `fixed`"],
+      "description": "表格元素的 [table-layout](https://developer.mozilla.org/zh-CN/docs/Web/CSS/table-layout) 属性，设为 `fixed` 表示内容不会影响列的布局",
+      "default": "无<hr | >固定表头 | 列或使用了 `column.ellipsis` 时，默认值为 `fixed`",
+      "type": "- | `auto` | `fixed`"
+    },
+    "title": {
+      "value": "",
+      "description": "表格标题",
+      "default": "-",
+      "type": "function(currentPageData)"
+    }
+  },
+  "methods": [],
+  "events": [
+    {
+      "name": "onChange",
+      "description": "分页、排序、筛选变化时触发",
+      "params": "function(pagination, filters, sorter, extra: { currentDataSource: [], action: `paginate` | `sort` | `filter` })"
+    },
+    {
+      "name": "onHeaderRow",
+      "description": "设置头部行属性",
+      "params": "function(columns, index)"
+    },
+    {
+      "name": "onRow",
+      "description": "设置行属性",
+      "params": "function(record, index)"
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "name": "Tabs",
+  "props": {
+    "activeKey": {
+      "value": "",
+      "description": "当前激活 tab 面板的 key",
+      "default": "-",
+      "type": "string"
+    },
+    "addIcon": {
+      "value": "",
+      "description": "自定义添加按钮",
+      "default": "-",
+      "type": "ReactNode"
+    },
+    "animated": {
+      "value": "",
+      "description": "是否使用动画切换 Tabs, 仅生效于 `tabPosition=\"top\"`",
+      "default": "{ inkBar: true, tabPane: false }",
+      "type": "boolean| { inkBar: boolean, tabPane: boolean }"
+    },
+    "centered": {
+      "value": "",
+      "description": "标签居中展示",
+      "default": "false",
+      "type": "boolean"
+    },
+    "defaultActiveKey": {
+      "value": "",
+      "description": "初始化选中面板的 key，如果没有设置 activeKey",
+      "default": "`第一个面板`",
+      "type": "string"
+    },
+    "hideAdd": {
+      "value": "",
+      "description": "是否隐藏加号图标，在 `type=\"editable-card\"` 时有效",
+      "default": "false",
+      "type": "boolean"
+    },
+    "items": {
+      "value": "",
+      "description": "配置选项卡内容",
+      "default": "[]",
+      "type": "[TabItemType]"
+    },
+    "moreIcon": {
+      "value": "<EllipsisOutlined />",
+      "description": "自定义折叠 icon",
+      "default": "<EllipsisOutlined />",
+      "type": "ReactNode"
+    },
+    "popupClassName": {
+      "value": "",
+      "description": "更多菜单的 `className`",
+      "default": "-",
+      "type": "string"
+    },
+    "renderTabBar": {
+      "value": "",
+      "description": "替换 TabBar，用于二次封装标签头",
+      "default": "-",
+      "type": "(props: DefaultTabBarProps, DefaultTabBar: React.ComponentClass) => React.ReactElement"
+    },
+    "size": {
+      "value": "",
+      "description": "大小，提供 `large` `middle` 和 `small` 三种大小",
+      "default": "`middle`",
+      "type": "string"
+    },
+    "tabBarExtraContent": {
+      "value": "",
+      "description": "tab bar 上额外的元素",
+      "default": "-",
+      "type": "ReactNode | {left?: ReactNode, right?: ReactNode}"
+    },
+    "tabBarGutter": {
+      "value": "",
+      "description": "tabs 之间的间隙",
+      "default": "-",
+      "type": "number"
+    },
+    "tabBarStyle": {
+      "value": "",
+      "description": "tab bar 的样式对象",
+      "default": "-",
+      "type": "CSSProperties"
+    },
+    "tabPosition": {
+      "value": "",
+      "description": "页签位置，可选值有 `top` `right` `bottom` `left`",
+      "default": "`top`",
+      "type": "string"
+    },
+    "destroyInactiveTabPane": {
+      "value": "",
+      "description": "被隐藏时是否销毁 DOM 结构",
+      "default": "false",
+      "type": "boolean"
+    },
+    "type": {
+      "value": "",
+      "description": "页签的基本样式，可选 `line`、`card` `editable-card` 类型",
+      "default": "`line`",
+      "type": "string"
+    }
+  },
+  "methods": [],
+  "events": [
+    {
+      "name": "onChange",
+      "description": "切换面板的回调",
+      "params": "function(activeKey) {}"
+    },
+    {
+      "name": "onEdit",
+      "description": "新增和删除页签的回调，在 `type=\"editable-card\"` 时有效",
+      "params": "(action === 'add' ? event : targetKey, action): void"
+    },
+    {
+      "name": "onTabClick",
+      "description": "tab 被点击的回调",
+      "params": "function(key: string, event: MouseEvent)"
+    },
+    {
+      "name": "onTabScroll",
+      "description": "tab 滚动时触发",
+      "params": "function({ direction: `left` | `right` | `top` | `bottom` })"
+    }
+  ]
+}

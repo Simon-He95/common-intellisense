@@ -42,6 +42,36 @@ import TimePicker from './timePicker.json'
 import Transfer from './transfer.json'
 import TreeSelect from './treeSelect.json'
 import Upload from './upload.json'
+import Avatar from './avatar.json'
+import AvatarGroup from './avatarGroup.json'
+import Badge from './badge.json'
+import BadgeRibbon from './badegRibbon.json'
+import Calender from './calendar.json'
+import Card from './card.json'
+import CardGrid from './cardGrid.json'
+import CardMeta from './cardMeta.json'
+import Carousel from './Carousel.json'
+import Collapse from './collapse.json'
+import CollapsePanel from './collapsePanel.json'
+import Descriptions from './descriptions.json'
+import DescriptionItem from './descriptionItem.json'
+import Empty from './empty.json'
+import Image from './image.json'
+import ImagePreviewGroup from './imagePreviewGroup.json'
+import List from './list.json'
+import ListItemMeta from './listItemMeta.json'
+import ListItem from './listItem.json'
+import Popover from './popover.json'
+import Segmented from './segmented.json'
+import Statistic from './statistic.json'
+import StatisticCountdown from './statisticCountdown.json'
+import Table from './table.json'
+import Tabs from './tabs.json'
+import Tag from './tag.json'
+import TagCheckableTag from './tagCheckableTag.json'
+import Timeline from './timeline.json'
+import Tooltip from './tooltip.json'
+import Tree from './tree.json'
 
 export function antd4() {
   const map: any = [
@@ -88,6 +118,36 @@ export function antd4() {
     Transfer,
     TreeSelect,
     Upload,
+    Avatar,
+    AvatarGroup,
+    Badge,
+    BadgeRibbon,
+    Calender,
+    Card,
+    CardGrid,
+    CardMeta,
+    Carousel,
+    Collapse,
+    CollapsePanel,
+    Descriptions,
+    DescriptionItem,
+    Empty,
+    Image,
+    ImagePreviewGroup,
+    List,
+    ListItem,
+    ListItemMeta,
+    Popover,
+    Segmented,
+    Statistic,
+    StatisticCountdown,
+    Table,
+    Tabs,
+    Tag,
+    TagCheckableTag,
+    Timeline,
+    Tooltip,
+    Tree,
   ]
 
   return propsReducer(map)

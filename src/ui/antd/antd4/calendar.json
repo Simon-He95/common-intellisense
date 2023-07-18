@@ -1,0 +1,107 @@
+{
+  "name": "Calender",
+  "props": {
+    "dateCellRender": {
+      "value": "",
+      "description": "自定义渲染日期单元格，返回内容会被追加到单元格，>= 5.4.0 请用 `cellRender`",
+      "default": "-",
+      "type": "function(date: Dayjs): ReactNode"
+    },
+    "cellRender": {
+      "value": "",
+      "description": "自定义单元格的内容",
+      "default": "-",
+      "type": "function(current: dayjs, today: dayjs, info: { originNode: React.ReactElement,today: DateType, range?: 'start' | 'end', type: PanelMode, locale?: Locale, subType?: 'hour' | 'minute' | 'second' | 'meridiem' }) => React.ReactNode"
+    },
+    "dateFullCellRender": {
+      "value": "",
+      "description": "自定义渲染日期单元格，返回内容覆盖单元格，>= 5.4.0 请用 `fullCellRender`",
+      "default": "-",
+      "type": "function(date: Dayjs): ReactNode"
+    },
+    "fullCellRender": {
+      "value": "",
+      "description": "自定义单元格的内容",
+      "default": "-",
+      "type": "function(current: dayjs, today: dayjs, info: { originNode: React.ReactElement,today: DateType, range?: 'start' | 'end', type: PanelMode, locale?: Locale, subType?: 'hour' | 'minute' | 'second' | 'meridiem' }) => React.ReactNode"
+    },
+    "defaultValue": {
+      "value": "",
+      "description": "默认展示的日期",
+      "default": "-",
+      "type": "[dayjs]"
+    },
+    "disabledDate": {
+      "value": "",
+      "description": "不可选择的日期，参数为当前 `value`",
+      "default": "-",
+      "type": "(currentDate: Dayjs) => boolean"
+    },
+    "fullscreen": {
+      "value": "",
+      "description": "是否全屏显示",
+      "default": "true",
+      "type": "boolean"
+    },
+    "headerRender": {
+      "value": "",
+      "description": "自定义头部内容",
+      "default": "-",
+      "type": "function(object:{value: Dayjs, type: string, onChange: f(), onTypeChange: f()})"
+    },
+    "locale": {
+      "value": ["[(默认配置)]"],
+      "description": "国际化配置",
+      "default": "[(默认配置)]",
+      "type": "object"
+    },
+    "mode": {
+      "value": "",
+      "description": "初始模式",
+      "default": "`month`",
+      "type": "`month` | `year`"
+    },
+    "monthCellRender": {
+      "value": "",
+      "description": "自定义渲染月单元格，返回内容会被追加到单元格，>= 5.4.0 请用 `cellRender`",
+      "default": "-",
+      "type": "function(date: Dayjs): ReactNode"
+    },
+    "monthFullCellRender": {
+      "value": "",
+      "description": "自定义渲染月单元格，返回内容覆盖单元格，>= 5.4.0 请用 `fullCellRender`",
+      "default": "-",
+      "type": "function(date: Dayjs): ReactNode"
+    },
+    "validRange": {
+      "value": "",
+      "description": "设置可以显示的日期",
+      "default": "-",
+      "type": "[[dayjs], [dayjs]]"
+    },
+    "value": {
+      "value": "",
+      "description": "展示日期",
+      "default": "-",
+      "type": "[dayjs]"
+    }
+  },
+  "methods": [],
+  "events": [
+    {
+      "name": "onChange",
+      "description": "日期变化回调",
+      "params": "function(date: Dayjs)"
+    },
+    {
+      "name": "onPanelChange",
+      "description": "日期面板变化回调",
+      "params": "function(date: Dayjs, mode: string)"
+    },
+    {
+      "name": "onSelect",
+      "description": "选择日期回调，包含来源信息",
+      "params": "function(date: Dayjs, info: { source: 'year' | 'month' | 'date' | 'customize' })"
+    }
+  ]
+}
