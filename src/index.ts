@@ -48,6 +48,9 @@ export function activate(context: vscode.ExtensionContext) {
         ? UiCompletions[name].events
         : UiCompletions[name].completions
     }
+    else if (!result.isInTemplate) {
+      return
+    }
     const { lineText } = getSelection()!
     if (optionsComponents && lineText?.slice(-1)[0] !== ' ')
       return optionsComponents

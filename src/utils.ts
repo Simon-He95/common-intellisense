@@ -5,6 +5,8 @@ import { parse as tsParser } from '@typescript-eslint/typescript-estree'
 import { findUp } from 'find-up'
 
 // 引入vue-parser只在template中才处理一些逻辑
+let isInTemplate = false
+
 export function parser(code: string, position: vscode.Position) {
   const entry = vscode.window.activeTextEditor?.document.uri.fsPath
   if (!entry)
@@ -12,6 +14,7 @@ export function parser(code: string, position: vscode.Position) {
   const suffix = entry.slice(entry.lastIndexOf('.') + 1)
   if (!suffix)
     return
+  isInTemplate = false
   if (suffix === 'vue')
     return transformVue(code, position)
   if (/ts|js|jsx|tsx/.test(suffix))
@@ -64,6 +67,7 @@ function dfs(children: any, position: vscode.Position) {
     }
     return {
       type: 'text',
+      isInTemplate: true,
     }
   }
 }
@@ -107,6 +111,9 @@ function jsxDfs(children: any, position: vscode.Position) {
       }
     }
 
+    if (type === 'JSXElement' || (type === 'ReturnStatement' && argument.type === 'JSXElement'))
+      isInTemplate = true
+
     if (type === 'VariableDeclaration')
       children = declarations
     else if (type === 'VariableDeclarator')
@@ -130,6 +137,7 @@ function jsxDfs(children: any, position: vscode.Position) {
       }
     }
     return {
+      isInTemplate,
       type: 'text',
     }
   }
