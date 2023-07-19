@@ -61,6 +61,7 @@ import progress from './progress.json'
 import pullRefresh from './pullRefresh.json'
 import radio from './radio.json'
 import radioGroup from './radioGroup.json'
+import rate from './rate.json'
 
 export function vant4() {
   const map: any = [
@@ -126,6 +127,7 @@ export function vant4() {
     pullRefresh,
     radio,
     radioGroup,
+    rate,
   ]
 
   return propsReducer(map)
@@ -269,6 +271,8 @@ export function vant4Components() {
   <van-radio name="1">单选框 1</van-radio>
   <van-radio name="2">单选框 2</van-radio>
 </van-radio-group>`],
+    ['van-rate', '评分 用于对事物进行评级操作。', '<van-rate v-model="value" />'],
+
   ]
   return componentsReducer(map)
 }
