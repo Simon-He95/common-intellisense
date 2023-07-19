@@ -59,6 +59,8 @@ import popover from './popover.json'
 import popup from './popup.json'
 import progress from './progress.json'
 import pullRefresh from './pullRefresh.json'
+import radio from './radio.json'
+import radioGroup from './radioGroup.json'
 
 export function vant4() {
   const map: any = [
@@ -122,6 +124,8 @@ export function vant4() {
     popup,
     progress,
     pullRefresh,
+    radio,
+    radioGroup,
   ]
 
   return propsReducer(map)
@@ -260,6 +264,11 @@ export function vant4Components() {
     ['van-pull-refresh', '下拉刷新 用于提供下拉刷新的交互操作。', `<van-pull-refresh v-model="loading" @refresh="onRefresh">
   <p>刷新次数: {{ count }}</p>
 </van-pull-refresh>`],
+    ['van-radio', '单选框 在一组备选项中进行单选。', '<van-radio name="1">单选框 1</van-radio>'],
+    ['van-radio-group', '单选框 在一组备选项中进行单选。', `<van-radio-group v-model="checked">
+  <van-radio name="1">单选框 1</van-radio>
+  <van-radio name="2">单选框 2</van-radio>
+</van-radio-group>`],
   ]
   return componentsReducer(map)
 }
