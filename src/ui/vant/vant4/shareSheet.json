@@ -1,0 +1,176 @@
+{
+  "name": "VanShareSheet",
+  "props": {
+    "v-model:show": {
+      "value": "",
+      "description": "是否显示分享面板",
+      "default": "false",
+      "type": "是否显示分享面板"
+    },
+    "options": {
+      "value": "",
+      "description": "分享选项",
+      "default": "[]",
+      "type": "分享选项"
+    },
+    "title": {
+      "value": "",
+      "description": "顶部标题",
+      "default": "-",
+      "type": "顶部标题"
+    },
+    "cancel-text": {
+      "value": "",
+      "description": "取消按钮文字，传入空字符串可以隐藏按钮",
+      "default": "'取消'",
+      "type": "取消按钮文字，传入空字符串可以隐藏按钮"
+    },
+    "description": {
+      "value": "",
+      "description": "标题下方的辅助描述文字",
+      "default": "-",
+      "type": "标题下方的辅助描述文字"
+    },
+    "duration": {
+      "value": "",
+      "description": "动画时长，单位秒，设置为 0 可以禁用动画",
+      "default": "0.3",
+      "type": "动画时长，单位秒，设置为 0 可以禁用动画"
+    },
+    "z-index": {
+      "value": "",
+      "description": "将面板的 z-index 层级设置为一个固定值",
+      "default": "2000+",
+      "type": "将面板的 z-index 层级设置为一个固定值"
+    },
+    "round": {
+      "value": "",
+      "description": "是否显示圆角",
+      "default": "true",
+      "type": "是否显示圆角"
+    },
+    "overlay": {
+      "value": "",
+      "description": "是否显示遮罩层",
+      "default": "true",
+      "type": "是否显示遮罩层"
+    },
+    "overlay-class": {
+      "value": "",
+      "description": "自定义遮罩层类名",
+      "default": "-",
+      "type": "自定义遮罩层类名"
+    },
+    "overlay-style": {
+      "value": "",
+      "description": "自定义遮罩层样式",
+      "default": "-",
+      "type": "自定义遮罩层样式"
+    },
+    "lock-scroll": {
+      "value": "",
+      "description": "是否锁定背景滚动",
+      "default": "true",
+      "type": "是否锁定背景滚动"
+    },
+    "lazy-render": {
+      "value": "",
+      "description": "是否在显示弹层时才渲染内容",
+      "default": "true",
+      "type": "是否在显示弹层时才渲染内容"
+    },
+    "close-on-popstate": {
+      "value": "",
+      "description": "是否在页面回退时自动关闭",
+      "default": "true",
+      "type": "是否在页面回退时自动关闭"
+    },
+    "close-on-click-overlay": {
+      "value": "",
+      "description": "是否在点击遮罩层后关闭",
+      "default": "true",
+      "type": "是否在点击遮罩层后关闭"
+    },
+    "safe-area-inset-bottom": {
+      "value": "",
+      "description": "是否开启[底部安全区适配](#/zh-CN/advanced-usage#di-bu-an-quan-qu-gua-pei)",
+      "default": "true",
+      "type": "是否开启[底部安全区适配](# | zh-CN | advanced-usage#di-bu-an-quan-qu-gua-pei)"
+    },
+    "teleport": {
+      "value": "",
+      "description": "指定挂载的节点，等同于 Teleport 组件的 [to 属性](https://cn.vuejs.org/api/built-in-components.html#teleport)",
+      "default": "-",
+      "type": "指定挂载的节点，等同于 Teleport 组件的 [to 属性](https: |  | cn.vuejs.org | api | built-in-components.html#teleport)"
+    },
+    "before-close": {
+      "value": "",
+      "description": "关闭前的回调函数，返回 `false` 可阻止关闭，支持返回 Promise",
+      "default": "-",
+      "type": "关闭前的回调函数，返回 false 可阻止关闭，支持返回 Promise"
+    }
+  },
+  "methods": [],
+  "typeDetail": {
+    "Option": [
+      {
+        "name": "name",
+        "description": "分享渠道名称",
+        "type": "string"
+      },
+      {
+        "name": "description",
+        "description": "分享选项描述",
+        "type": "string"
+      },
+      {
+        "name": "icon",
+        "description": "图标，可选值为 `wechat` `weibo` `qq` `link` `qrcode` `poster` `weapp-qrcode` `wechat-moments`，支持传入图片 URL",
+        "type": "string"
+      },
+      {
+        "name": "className",
+        "description": "分享选项类名",
+        "type": "string"
+      }
+    ]
+  },
+  "events": [
+    {
+      "name": "select",
+      "description": "点击分享选项时触发",
+      "params": "点击分享选项时触发"
+    },
+    {
+      "name": "cancel",
+      "description": "点击取消按钮时触发",
+      "params": "点击取消按钮时触发"
+    },
+    {
+      "name": "open",
+      "description": "打开面板时触发",
+      "params": "打开面板时触发"
+    },
+    {
+      "name": "close",
+      "description": "关闭面板时触发",
+      "params": "关闭面板时触发"
+    },
+    {
+      "name": "opened",
+      "description": "打开面板且动画结束后触发",
+      "params": "打开面板且动画结束后触发"
+    },
+    {
+      "name": "closed",
+      "description": "关闭面板且动画结束后触发",
+      "params": "关闭面板且动画结束后触发"
+    },
+    {
+      "name": "click-overlay",
+      "description": "点击遮罩层时触发",
+      "params": "点击遮罩层时触发"
+    }
+  ],
+  "link": "https://vant-contrib.gitee.io/vant/#/zh-CN/share-sheet"
+}
