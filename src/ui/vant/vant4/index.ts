@@ -67,6 +67,7 @@ import search from './search.json'
 import shareSheet from './shareSheet.json'
 import sidebar from './sidebar.json'
 import sidebarItem from './sidebarItem.json'
+import signature from './signature.json'
 
 export function vant4() {
   const map: any = [
@@ -138,6 +139,7 @@ export function vant4() {
     shareSheet,
     sidebar,
     sidebarItem,
+    signature,
   ]
 
   return propsReducer(map)
@@ -300,6 +302,7 @@ export function vant4Components() {
 <van-sidebar-item title="标签名称" />
 <van-sidebar-item title="标签名称" />
 </van-sidebar>`],
+    ['van-signature', '签名 用于签名场景的组件，基于 Canvas 实现。请升级 vant 到 >= 4.3.0 版本来使用该组件。', '<van-signature @submit="onSubmit" @clear="onClear" />'],
   ]
   return componentsReducer(map)
 }
