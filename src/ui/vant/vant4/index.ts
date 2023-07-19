@@ -54,6 +54,7 @@ import overlay from './overlay.json'
 import pagination from './pagination.json'
 import passwordInput from './passwordInput.json'
 import picker from './picker.json'
+import pickerGroup from './pickerGroup.json'
 
 export function vant4() {
   const map: any = [
@@ -112,6 +113,7 @@ export function vant4() {
     pagination,
     passwordInput,
     picker,
+    pickerGroup,
   ]
 
   return propsReducer(map)
@@ -225,6 +227,20 @@ export function vant4Components() {
   @cancel="onCancel"
   @change="onChange"
 />`],
+    ['van-picker-group', '选择器组 用于结合多个 Picker 选择器组件，在一次交互中完成多个值的选择。', `<van-picker-group
+  title="预约日期"
+  :tabs="['选择日期', '选择时间']"
+  next-step-text="下一步"
+  @confirm="onConfirm"
+  @cancel="onCancel"
+  >
+  <van-date-picker
+    v-model="currentDate"
+    :min-date="minDate"
+    :max-date="maxDate"
+  />
+  <van-time-picker v-model="currentTime" />
+</van-picker-group>`],
 
   ]
   return componentsReducer(map)
