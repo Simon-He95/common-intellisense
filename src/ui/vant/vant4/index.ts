@@ -41,6 +41,7 @@ import form from './form.json'
 import grid from './grid.json'
 import gridItem from './gridItem.json'
 import icon from './icon.json'
+import image from './image.json'
 
 export function vant4() {
   const map: any = [
@@ -86,6 +87,7 @@ export function vant4() {
     grid,
     gridItem,
     icon,
+    image,
   ]
 
   return propsReducer(map)
@@ -158,6 +160,11 @@ export function vant4Components() {
 <van-grid-item v-for="value in 6" :key="value" icon="photo-o" text="文字" />
 </van-grid>`],
     ['van-icon', '图标 基于字体的图标集，可以通过 Icon 组件使用，也可以在其他组件中通过 icon 属性引用。', '<van-icon name="chat-o" />'],
+    ['van-image', '图片 增强版的 img 标签，提供多种图片填充模式，支持图片懒加载、加载中提示、加载失败提示。', `<van-image
+  width="100"
+  height="100"
+  src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+/>`],
 
   ]
   return componentsReducer(map)
