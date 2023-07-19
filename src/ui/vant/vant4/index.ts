@@ -38,6 +38,8 @@ import field from './field.json'
 import floatingBubble from './floatingBubble.json'
 import floatingPanel from './floatingPanel.json'
 import form from './form.json'
+import grid from './grid.json'
+import gridItem from './gridItem.json'
 
 export function vant4() {
   const map: any = [
@@ -80,6 +82,8 @@ export function vant4() {
     floatingBubble,
     floatingPanel,
     form,
+    grid,
+    gridItem,
   ]
 
   return propsReducer(map)
@@ -121,8 +125,7 @@ export function vant4Components() {
   title="选择日期"
   :min-date="minDate"
   :max-date="maxDate"
-/>
-  `],
+/>`],
     ['van-dialog', '弹出框 弹出模态框，常用于消息提示、消息确认，或在当前页面内完成特定的交互操作。支持组件调用和函数调用两种方式。', `<van-dialog v-model:show="show" title="标题" show-cancel-button>
   <img src="https://fastly.jsdelivr.net/npm/@vant/assets/apple-3.jpeg" />
 </van-dialog>`],
@@ -130,26 +133,28 @@ export function vant4Components() {
     ['van-dropdown-item', '下拉菜单 向下弹出的菜单列表。', `<van-dropdown-menu>
   <van-dropdown-item v-model="value1" :options="option1" />
   <van-dropdown-item v-model="value2" :options="option2" />
-</van-dropdown-menu>
-`],
+</van-dropdown-menu>`],
     ['van-dropdown-menu', '下拉菜单 向下弹出的菜单列表。', `<van-dropdown-menu>
   <van-dropdown-item v-model="value1" :options="option1" />
   <van-dropdown-item v-model="value2" :options="option2" />
-</van-dropdown-menu>
-`],
+</van-dropdown-menu>`],
     ['van-empty', '空状态 空状态时的占位提示。', '<van-empty description="描述文字" />'],
     ['van-field', '输入框 用户可以在文本框内输入或编辑文字。', `<van-cell-group inset>
   <van-field v-model="value" label="文本" placeholder="请输入用户名" />
-</van-cell-group>
-`],
+</van-cell-group>`],
     ['van-floating-bubble', '浮动气泡 悬浮在页面边缘的可点击气泡。请升级 vant 到 >= 4.6.0 版本来使用该组件。', '<van-floating-bubble icon="chat" @click="onClick" />'],
     ['van-floating-bubble', '浮动面板 浮动在页面底部的面板，可以上下拖动来浏览内容，常用于提供额外的功能或信息。请升级 vant 到 >= 4.5.0 版本来使用该组件。', `<van-floating-panel v-model:height="height" :anchors="anchors">
   <div style="text-align: center; padding: 15px">
     <p>面板显示高度 {{ height.toFixed(0) }} px</p>
   </div>
-</van-floating-panel>
-  `],
+</van-floating-panel>`],
     ['van-form', '表单 用于数据录入、校验，支持输入框、单选框、复选框、文件上传等类型，需要与 Field 输入框 组件搭配使用。', '<van-form @submit="onSubmit"></van-form>'],
+    ['van-grid', '宫格 宫格可以在水平方向上把页面分隔成等宽度的区块，用于展示内容或进行页面导航。', `<van-grid :column-num="3">
+  <van-grid-item v-for="value in 6" :key="value" icon="photo-o" text="文字" />
+</van-grid>`],
+    ['van-grid-item', '宫格 宫格可以在水平方向上把页面分隔成等宽度的区块，用于展示内容或进行页面导航。', `<van-grid :column-num="3">
+<van-grid-item v-for="value in 6" :key="value" icon="photo-o" text="文字" />
+</van-grid>`],
   ]
   return componentsReducer(map)
 }
