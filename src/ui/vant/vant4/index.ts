@@ -40,6 +40,7 @@ import floatingPanel from './floatingPanel.json'
 import form from './form.json'
 import grid from './grid.json'
 import gridItem from './gridItem.json'
+import icon from './icon.json'
 
 export function vant4() {
   const map: any = [
@@ -84,6 +85,7 @@ export function vant4() {
     form,
     grid,
     gridItem,
+    icon,
   ]
 
   return propsReducer(map)
@@ -155,6 +157,8 @@ export function vant4Components() {
     ['van-grid-item', '宫格 宫格可以在水平方向上把页面分隔成等宽度的区块，用于展示内容或进行页面导航。', `<van-grid :column-num="3">
 <van-grid-item v-for="value in 6" :key="value" icon="photo-o" text="文字" />
 </van-grid>`],
+    ['van-icon', '图标 基于字体的图标集，可以通过 Icon 组件使用，也可以在其他组件中通过 icon 属性引用。', '<van-icon name="chat-o" />'],
+
   ]
   return componentsReducer(map)
 }
