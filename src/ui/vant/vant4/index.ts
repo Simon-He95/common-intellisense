@@ -49,6 +49,7 @@ import list from './list.json'
 import loading from './loading.json'
 import navBar from './navBar.json'
 import noticeBar from './noticeBar.json'
+import numberKeyboard from './numberKeyboard.json'
 
 export function vant4() {
   const map: any = [
@@ -102,6 +103,7 @@ export function vant4() {
     loading,
     navBar,
     noticeBar,
+    numberKeyboard,
   ]
 
   return propsReducer(map)
@@ -195,6 +197,12 @@ export function vant4Components() {
     ['van-loading', '加载 加载图标，用于表示加载中的过渡状态。', '<van-loading type="spinner" />'],
     ['van-nav-bar', '导航栏 为页面提供导航功能，常用于页面顶部。', '<van-nav-bar title="标题" />'],
     ['van-notice-bar', '通知栏 用于循环播放展示一组消息通知。', '<van-notice-bar scrollable text="米袋虽空——樱花开哉！" />'],
+    ['van-number-keyboard', '数字 虚拟数字键盘，可以配合密码输入框组件或自定义的输入框组件使用。', `<van-number-keyboard
+  :show="show"
+  @blur="show = false"
+  @input="onInput"
+  @delete="onDelete"
+/>`],
   ]
   return componentsReducer(map)
 }
