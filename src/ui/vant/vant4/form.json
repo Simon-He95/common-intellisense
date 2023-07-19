@@ -1,0 +1,153 @@
+{
+  "name": "VanForm",
+  "props": {
+    "label-width": {
+      "value": "",
+      "description": "表单项 label 宽度，默认单位为`px`",
+      "default": "6.2em",
+      "type": "表单项 label 宽度，默认单位为px"
+    },
+    "label-align": {
+      "value": "",
+      "description": "表单项 label 对齐方式，可选值为 `center` `right` `top`",
+      "default": "left",
+      "type": "表单项 label 对齐方式，可选值为 center right top"
+    },
+    "input-align": {
+      "value": "",
+      "description": "输入框对齐方式，可选值为 `center` `right`",
+      "default": "left",
+      "type": "输入框对齐方式，可选值为 center right"
+    },
+    "error-message-align": {
+      "value": "",
+      "description": "错误提示文案对齐方式，可选值为 `center` `right`",
+      "default": "left",
+      "type": "错误提示文案对齐方式，可选值为 center right"
+    },
+    "validate-trigger": {
+      "value": "",
+      "description": "表单校验触发时机，可选值为 `onChange`、`onSubmit`，支持通过数组同时设置多个值，具体用法见下方表格",
+      "default": "onBlur",
+      "type": "表单校验触发时机，可选值为 onChange、onSubmit，支持通过数组同时设置多个值，具体用法见下方表格"
+    },
+    "colon": {
+      "value": "",
+      "description": "是否在 label 后面添加冒号",
+      "default": "false",
+      "type": "是否在 label 后面添加冒号"
+    },
+    "disabled": {
+      "value": "",
+      "description": "是否禁用表单中的所有输入框",
+      "default": "false",
+      "type": "是否禁用表单中的所有输入框"
+    },
+    "readonly": {
+      "value": "",
+      "description": "是否将表单中的所有输入框设置为只读状态",
+      "default": "false",
+      "type": "是否将表单中的所有输入框设置为只读状态"
+    },
+    "validate-first": {
+      "value": "",
+      "description": "是否在某一项校验不通过时停止校验",
+      "default": "false",
+      "type": "是否在某一项校验不通过时停止校验"
+    },
+    "scroll-to-error": {
+      "value": "",
+      "description": "是否在提交表单且校验不通过时滚动至错误的表单项",
+      "default": "false",
+      "type": "是否在提交表单且校验不通过时滚动至错误的表单项"
+    },
+    "show-error": {
+      "value": "",
+      "description": "是否在校验不通过时标红输入框",
+      "default": "false",
+      "type": "是否在校验不通过时标红输入框"
+    },
+    "show-error-message": {
+      "value": "",
+      "description": "是否在校验不通过时在输入框下方展示错误提示",
+      "default": "true",
+      "type": "是否在校验不通过时在输入框下方展示错误提示"
+    },
+    "submit-on-enter": {
+      "value": "",
+      "description": "是否在按下回车键时提交表单",
+      "default": "true",
+      "type": "是否在按下回车键时提交表单"
+    }
+  },
+  "methods": [],
+  "typeDetail": {
+    "Rule": [
+      {
+        "name": "required",
+        "description": "是否为必选字段，当值为空值时（空字符串、空数组、`false`、`undefined`、`null` ），校验不通过",
+        "type": "boolean"
+      },
+      {
+        "name": "message",
+        "description": "错误提示文案，可以设置为一个函数来返回动态的文案内容",
+        "type": "string | (value, rule) => string"
+      },
+      {
+        "name": "validator",
+        "description": "通过函数进行校验，可以返回一个 Promise 来进行异步校验",
+        "type": "(value, rule) => boolean | string | Promise"
+      },
+      {
+        "name": "pattern",
+        "description": "通过正则表达式进行校验，正则无法匹配表示校验不通过",
+        "type": "RegExp"
+      },
+      {
+        "name": "trigger",
+        "description": "设置本项规则的触发时机，优先级高于 Form 组件设置的 `validate-trigger` 属性，可选值为 `onChange`、`onBlur`、`onSubmit`",
+        "type": "string | string[]"
+      },
+      {
+        "name": "formatter",
+        "description": "格式化函数，将表单项的值转换后进行校验",
+        "type": "(value, rule) => any"
+      },
+      {
+        "name": "validateEmpty",
+        "description": "设置 `validator` 和 `pattern` 是否要对空值进行校验，默认值为 `true`，可以设置为 `false` 来禁用该行为",
+        "type": "boolean"
+      }
+    ],
+    "$validate-trigger": [
+      {
+        "name": "onSubmit",
+        "description": "仅在提交表单时触发校验",
+        "type": ""
+      },
+      {
+        "name": "onBlur",
+        "description": "在提交表单和输入框失焦时触发校验",
+        "type": ""
+      },
+      {
+        "name": "onChange",
+        "description": "在提交表单和输入框内容变化时触发校验",
+        "type": ""
+      }
+    ]
+  },
+  "events": [
+    {
+      "name": "submit",
+      "description": "提交表单且验证通过后触发",
+      "params": "提交表单且验证通过后触发"
+    },
+    {
+      "name": "failed",
+      "description": "提交表单且验证不通过后触发",
+      "params": "提交表单且验证不通过后触发"
+    }
+  ],
+  "link": "https://vant-contrib.gitee.io/vant/#/zh-CN/form"
+}

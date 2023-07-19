@@ -29,6 +29,7 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
       'class',
       'className',
     ].map(item => createCompletionItem({ content: item, snippet: `${item}="$1"`, type: 5 })))
+
     Object.keys(item.props!).forEach((key) => {
       const value = (item.props as any)[key]
       let type = vscode.CompletionItemKind.Property
@@ -54,8 +55,8 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
 
         if (item.typeDetail) {
           const data = `🌈 类型详情:\n${Object.keys(item.typeDetail).reduce((result, key) => result += key[0] === '$'
-            ? `type ${key.slice(1)} = \n${item.typeDetail[key].map((typeItem: any) => `${typeItem.name} /*${typeItem.description}*/`).join('\n| ')}\n\n`
-            : `interface ${key} {\n  ${item.typeDetail[key].map((typeItem: any) => `${typeItem.name}${typeItem.optional ? '?' : ''}: ${typeItem.type} /*${typeItem.description}${typeItem.default ? ` 默认值: ***${typeItem.default}***` : ''}*/`).join('\n  ')}\n}`, '')}`
+            ? `\ntype ${key.slice(1).replace(/-(\w)/g, v => v.toUpperCase())} = \n${item.typeDetail[key].map((typeItem: any) => `${typeItem.name} /*${typeItem.description}*/`).join('\n| ')}\n\n`
+            : `\ninterface ${key} {\n  ${item.typeDetail[key].map((typeItem: any) => `${typeItem.name}${typeItem.optional ? '?' : ''}: ${typeItem.type} /*${typeItem.description}${typeItem.default ? ` 默认值: ***${typeItem.default}***` : ''}*/`).join('\n  ')}\n}`, '')}`
           documentation.appendCodeblock(data, 'typescript')
         }
 

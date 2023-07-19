@@ -37,6 +37,7 @@ import empty from './empty.json'
 import field from './field.json'
 import floatingBubble from './floatingBubble.json'
 import floatingPanel from './floatingPanel.json'
+import form from './form.json'
 
 export function vant4() {
   const map: any = [
@@ -78,6 +79,7 @@ export function vant4() {
     field,
     floatingBubble,
     floatingPanel,
+    form,
   ]
 
   return propsReducer(map)
@@ -147,6 +149,7 @@ export function vant4Components() {
   </div>
 </van-floating-panel>
   `],
+    ['van-form', '表单 用于数据录入、校验，支持输入框、单选框、复选框、文件上传等类型，需要与 Field 输入框 组件搭配使用。', '<van-form @submit="onSubmit"></van-form>'],
   ]
   return componentsReducer(map)
 }
