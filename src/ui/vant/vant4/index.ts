@@ -45,6 +45,7 @@ import image from './image.json'
 import imagePreview from './imagePreview.json'
 import indexBar from './indexBar.json'
 import indexAnchor from './indexAnchor.json'
+import list from './list.json'
 
 export function vant4() {
   const map: any = [
@@ -94,6 +95,7 @@ export function vant4() {
     imagePreview,
     indexBar,
     indexAnchor,
+    list,
   ]
 
   return propsReducer(map)
@@ -176,6 +178,14 @@ export function vant4Components() {
 </van-image-preview>`],
     ['van-index-anchor', '索引栏 为页面提供导航功能，常用于页面顶部。', '<van-index-anchor index="A" />'],
     ['van-index-bar', '索引栏 为页面提供导航功能，常用于页面顶部。', '<van-index-bar />'],
+    ['van-list', '列表 瀑布流滚动加载，用于展示长列表，当列表即将滚动到底部时，会触发事件并加载更多列表项。', `<van-list
+  v-model:loading="loading"
+  :finished="finished"
+  finished-text="没有更多了"
+  @load="onLoad"
+>
+  <van-cell v-for="item in list" :key="item" :title="item" />
+</van-list>`],
 
   ]
   return componentsReducer(map)
