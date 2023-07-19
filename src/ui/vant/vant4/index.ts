@@ -46,6 +46,7 @@ import imagePreview from './imagePreview.json'
 import indexBar from './indexBar.json'
 import indexAnchor from './indexAnchor.json'
 import list from './list.json'
+import loading from './loading.json'
 
 export function vant4() {
   const map: any = [
@@ -96,6 +97,7 @@ export function vant4() {
     indexBar,
     indexAnchor,
     list,
+    loading,
   ]
 
   return propsReducer(map)
@@ -186,7 +188,7 @@ export function vant4Components() {
 >
   <van-cell v-for="item in list" :key="item" :title="item" />
 </van-list>`],
-
+    ['van-loading', '加载 加载图标，用于表示加载中的过渡状态。', '<van-loading type="spinner" />'],
   ]
   return componentsReducer(map)
 }
