@@ -58,6 +58,7 @@ import pickerGroup from './pickerGroup.json'
 import popover from './popover.json'
 import popup from './popup.json'
 import progress from './progress.json'
+import pullRefresh from './pullRefresh.json'
 
 export function vant4() {
   const map: any = [
@@ -120,6 +121,7 @@ export function vant4() {
     popover,
     popup,
     progress,
+    pullRefresh,
   ]
 
   return propsReducer(map)
@@ -255,6 +257,9 @@ export function vant4Components() {
 `],
     ['van-popup', '弹出层 弹出层容器，用于展示弹窗、信息提示等内容，支持多个弹出层叠加展示。', '<van-popup v-model:show="show" :style="{ padding: \'64px\' }">内容</van-popup>'],
     ['van-progress', '进度条 用于展示操作的当前进度。', '<van-progress :percentage="50" />'],
+    ['van-pull-refresh', '下拉刷新 用于提供下拉刷新的交互操作。', `<van-pull-refresh v-model="loading" @refresh="onRefresh">
+  <p>刷新次数: {{ count }}</p>
+</van-pull-refresh>`],
   ]
   return componentsReducer(map)
 }
