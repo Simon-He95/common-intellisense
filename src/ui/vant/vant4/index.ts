@@ -62,6 +62,7 @@ import pullRefresh from './pullRefresh.json'
 import radio from './radio.json'
 import radioGroup from './radioGroup.json'
 import rate from './rate.json'
+import rollText from './rollText.json'
 
 export function vant4() {
   const map: any = [
@@ -128,6 +129,7 @@ export function vant4() {
     radio,
     radioGroup,
     rate,
+    rollText,
   ]
 
   return propsReducer(map)
@@ -272,6 +274,7 @@ export function vant4Components() {
   <van-radio name="2">单选框 2</van-radio>
 </van-radio-group>`],
     ['van-rate', '评分 用于对事物进行评级操作。', '<van-rate v-model="value" />'],
+    ['van-rolling-text', '翻滚文本 文本翻滚动效，可以翻滚数字和其他类型文本。请升级 vant 到 >= 4.6.0 版本来使用该组件。', '<van-rolling-text :start-num="0" :target-num="123" />'],
 
   ]
   return componentsReducer(map)
