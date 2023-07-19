@@ -43,6 +43,8 @@ import gridItem from './gridItem.json'
 import icon from './icon.json'
 import image from './image.json'
 import imagePreview from './imagePreview.json'
+import indexBar from './indexBar.json'
+import indexAnchor from './indexAnchor.json'
 
 export function vant4() {
   const map: any = [
@@ -90,6 +92,8 @@ export function vant4() {
     icon,
     image,
     imagePreview,
+    indexBar,
+    indexAnchor,
   ]
 
   return propsReducer(map)
@@ -170,6 +174,9 @@ export function vant4Components() {
     ['van-image-preview', '图片预览 图片放大预览，支持组件调用和函数调用两种方式。', `<van-image-preview v-model:show="show" :images="images" @change="onChange">
   <template v-slot:index>第{{ index + 1 }}页</template>
 </van-image-preview>`],
+    ['van-index-anchor', '索引栏 为页面提供导航功能，常用于页面顶部。', '<van-index-anchor index="A" />'],
+    ['van-index-bar', '索引栏 为页面提供导航功能，常用于页面顶部。', '<van-index-bar />'],
+
   ]
   return componentsReducer(map)
 }
