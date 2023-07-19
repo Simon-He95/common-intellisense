@@ -56,6 +56,7 @@ import passwordInput from './passwordInput.json'
 import picker from './picker.json'
 import pickerGroup from './pickerGroup.json'
 import popover from './popover.json'
+import popup from './popup.json'
 
 export function vant4() {
   const map: any = [
@@ -116,6 +117,7 @@ export function vant4() {
     picker,
     pickerGroup,
     popover,
+    popup,
   ]
 
   return propsReducer(map)
@@ -249,7 +251,7 @@ export function vant4Components() {
   </template>
 </van-popover>
 `],
-
+    ['van-popup', '弹出层 弹出层容器，用于展示弹窗、信息提示等内容，支持多个弹出层叠加展示。', '<van-popup v-model:show="show" :style="{ padding: \'64px\' }">内容</van-popup>'],
   ]
   return componentsReducer(map)
 }
