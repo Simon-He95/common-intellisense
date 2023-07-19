@@ -50,6 +50,7 @@ import loading from './loading.json'
 import navBar from './navBar.json'
 import noticeBar from './noticeBar.json'
 import numberKeyboard from './numberKeyboard.json'
+import overlay from './overlay.json'
 
 export function vant4() {
   const map: any = [
@@ -104,6 +105,7 @@ export function vant4() {
     navBar,
     noticeBar,
     numberKeyboard,
+    overlay,
   ]
 
   return propsReducer(map)
@@ -203,6 +205,8 @@ export function vant4Components() {
   @input="onInput"
   @delete="onDelete"
 />`],
+    ['van-overlay', '遮罩层 创建一个遮罩层，用于强调特定的页面元素，并阻止用户进行其他操作。', '<van-overlay :show="show" @click="show = false" />'],
+
   ]
   return componentsReducer(map)
 }
