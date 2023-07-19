@@ -1,0 +1,135 @@
+{
+  "name": "VanPicker",
+  "props": {
+    "columns": {
+      "value": "",
+      "description": "对象数组，配置每一列显示的数据",
+      "default": "[]",
+      "type": "对象数组，配置每一列显示的数据"
+    },
+    "columns-field-names": {
+      "value": "",
+      "description": "自定义 `columns` 结构中的字段",
+      "default": "{ text: 'text', value: 'value', children: 'children' }",
+      "type": "自定义 columns 结构中的字段"
+    },
+    "title": {
+      "value": "",
+      "description": "顶部栏标题",
+      "default": "-",
+      "type": "顶部栏标题"
+    },
+    "confirm-button-text": {
+      "value": "",
+      "description": "确认按钮文字",
+      "default": "确认",
+      "type": "确认按钮文字"
+    },
+    "cancel-button-text": {
+      "value": "",
+      "description": "取消按钮文字",
+      "default": "取消",
+      "type": "取消按钮文字"
+    },
+    "toolbar-position": {
+      "value": "",
+      "description": "顶部栏位置，可选值为 `bottom`",
+      "default": "top",
+      "type": "顶部栏位置，可选值为 bottom"
+    },
+    "loading": {
+      "value": "",
+      "description": "是否显示加载状态",
+      "default": "false",
+      "type": "是否显示加载状态"
+    },
+    "show-toolbar": {
+      "value": "",
+      "description": "是否显示顶部栏",
+      "default": "true",
+      "type": "是否显示顶部栏"
+    },
+    "allow-html": {
+      "value": "",
+      "description": "是否允许选项内容中渲染 HTML",
+      "default": "false",
+      "type": "是否允许选项内容中渲染 HTML"
+    },
+    "option-height": {
+      "value": "",
+      "description": "选项高度，支持 `px` `vw` `vh` `rem` 单位，默认 `px`",
+      "default": "44",
+      "type": "选项高度，支持 px vw vh rem 单位，默认 px"
+    },
+    "visible-option-num": {
+      "value": "",
+      "description": "可见的选项个数",
+      "default": "6",
+      "type": "可见的选项个数"
+    },
+    "swipe-duration": {
+      "value": "",
+      "description": "快速滑动时惯性滚动的时长，单位 `ms`",
+      "default": "1000",
+      "type": "快速滑动时惯性滚动的时长，单位 ms"
+    }
+  },
+  "methods": [],
+  "typeDetail": {
+    "type3": [
+      {
+        "name": "text",
+        "description": "选项文字内容",
+        "type": "string | number"
+      },
+      {
+        "name": "value",
+        "description": "选项对应的值",
+        "type": "string | number"
+      },
+      {
+        "name": "disabled",
+        "description": "是否禁用选项",
+        "type": "boolean"
+      },
+      {
+        "name": "children",
+        "description": "级联选项",
+        "type": "PickerOption[]"
+      },
+      {
+        "name": "className",
+        "description": "选项额外类名",
+        "type": "string | Array | object"
+      }
+    ]
+  },
+  "events": [
+    {
+      "name": "confirm",
+      "description": "点击完成按钮时触发",
+      "params": "点击完成按钮时触发"
+    },
+    {
+      "name": "cancel",
+      "description": "点击取消按钮时触发",
+      "params": "点击取消按钮时触发"
+    },
+    {
+      "name": "change",
+      "description": "选中的选项改变时触发",
+      "params": "选中的选项改变时触发"
+    },
+    {
+      "name": "click-option",
+      "description": "点击选项时触发",
+      "params": "点击选项时触发"
+    },
+    {
+      "name": "scroll-into ",
+      "description": "当用户通过点击或拖拽让一个选项滚动到中间的选择区域时触发",
+      "params": "当用户通过点击或拖拽让一个选项滚动到中间的选择区域时触发"
+    }
+  ],
+  "link": "https://vant-contrib.gitee.io/vant/#/zh-CN/picker"
+}

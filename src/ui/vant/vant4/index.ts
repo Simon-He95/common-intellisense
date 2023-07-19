@@ -53,6 +53,7 @@ import numberKeyboard from './numberKeyboard.json'
 import overlay from './overlay.json'
 import pagination from './pagination.json'
 import passwordInput from './passwordInput.json'
+import picker from './picker.json'
 
 export function vant4() {
   const map: any = [
@@ -110,6 +111,7 @@ export function vant4() {
     overlay,
     pagination,
     passwordInput,
+    picker,
   ]
 
   return propsReducer(map)
@@ -216,6 +218,14 @@ export function vant4Components() {
   :focused="showKeyboard"
   @focus="showKeyboard = true"
 />`],
+    ['van-picker', '选择器 提供多个选项集合供用户选择，支持单列选择、多列选择和级联选择，通常与弹出层组件配合使用。', `<van-picker
+  title="标题"
+  :columns="columns"
+  @confirm="onConfirm"
+  @cancel="onCancel"
+  @change="onChange"
+/>`],
+
   ]
   return componentsReducer(map)
 }
