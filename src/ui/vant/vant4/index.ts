@@ -42,6 +42,7 @@ import grid from './grid.json'
 import gridItem from './gridItem.json'
 import icon from './icon.json'
 import image from './image.json'
+import imagePreview from './imagePreview.json'
 
 export function vant4() {
   const map: any = [
@@ -88,6 +89,7 @@ export function vant4() {
     gridItem,
     icon,
     image,
+    imagePreview,
   ]
 
   return propsReducer(map)
@@ -165,7 +167,9 @@ export function vant4Components() {
   height="100"
   src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
 />`],
-
+    ['van-image-preview', '图片预览 图片放大预览，支持组件调用和函数调用两种方式。', `<van-image-preview v-model:show="show" :images="images" @change="onChange">
+  <template v-slot:index>第{{ index + 1 }}页</template>
+</van-image-preview>`],
   ]
   return componentsReducer(map)
 }
