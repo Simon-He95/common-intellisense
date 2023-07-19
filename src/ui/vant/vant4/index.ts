@@ -65,6 +65,8 @@ import rate from './rate.json'
 import rollText from './rollText.json'
 import search from './search.json'
 import shareSheet from './shareSheet.json'
+import sidebar from './sidebar.json'
+import sidebarItem from './sidebarItem.json'
 
 export function vant4() {
   const map: any = [
@@ -134,6 +136,8 @@ export function vant4() {
     rollText,
     search,
     shareSheet,
+    sidebar,
+    sidebarItem,
   ]
 
   return propsReducer(map)
@@ -286,6 +290,16 @@ export function vant4Components() {
   :options="options"
   @select="onSelect"
 />`],
+    ['van-sidebar', '侧边导航 垂直展示的导航栏，用于在不同的内容区域之间进行切换。', `<van-sidebar v-model="active">
+  <van-sidebar-item title="标签名称" />
+  <van-sidebar-item title="标签名称" />
+  <van-sidebar-item title="标签名称" />
+</van-sidebar>`],
+    ['van-sidebar-item', '侧边导航 垂直展示的导航栏，用于在不同的内容区域之间进行切换。', `<van-sidebar v-model="active">
+<van-sidebar-item title="标签名称" />
+<van-sidebar-item title="标签名称" />
+<van-sidebar-item title="标签名称" />
+</van-sidebar>`],
   ]
   return componentsReducer(map)
 }
