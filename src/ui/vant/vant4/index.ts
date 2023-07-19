@@ -51,6 +51,7 @@ import navBar from './navBar.json'
 import noticeBar from './noticeBar.json'
 import numberKeyboard from './numberKeyboard.json'
 import overlay from './overlay.json'
+import pagination from './pagination.json'
 
 export function vant4() {
   const map: any = [
@@ -106,6 +107,7 @@ export function vant4() {
     noticeBar,
     numberKeyboard,
     overlay,
+    pagination,
   ]
 
   return propsReducer(map)
@@ -206,7 +208,7 @@ export function vant4Components() {
   @delete="onDelete"
 />`],
     ['van-overlay', '遮罩层 创建一个遮罩层，用于强调特定的页面元素，并阻止用户进行其他操作。', '<van-overlay :show="show" @click="show = false" />'],
-
+    ['van-pagination', '分页 数据量过多时，采用分页的形式将数据分隔，每次只加载一个页面。', '<van-pagination v-model="currentPage" :total-items="24" :items-per-page="5" />'],
   ]
   return componentsReducer(map)
 }
