@@ -55,6 +55,7 @@ import pagination from './pagination.json'
 import passwordInput from './passwordInput.json'
 import picker from './picker.json'
 import pickerGroup from './pickerGroup.json'
+import popover from './popover.json'
 
 export function vant4() {
   const map: any = [
@@ -114,6 +115,7 @@ export function vant4() {
     passwordInput,
     picker,
     pickerGroup,
+    popover,
   ]
 
   return propsReducer(map)
@@ -241,6 +243,12 @@ export function vant4Components() {
   />
   <van-time-picker v-model="currentTime" />
 </van-picker-group>`],
+    ['van-popover', '气泡弹出框 弹出式的气泡菜单。', `<van-popover v-model:show="showPopover" :actions="actions" @select="onSelect">
+  <template #reference>
+    <van-button type="primary">浅色风格</van-button>
+  </template>
+</van-popover>
+`],
 
   ]
   return componentsReducer(map)
