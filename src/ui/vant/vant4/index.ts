@@ -78,6 +78,7 @@ import space from './space.json'
 import stepper from './stepper.json'
 import steps from './steps.json'
 import sticky from './sticky.json'
+import submitBar from './submitBar.json'
 
 export function vant4() {
   const map: any = [
@@ -160,6 +161,7 @@ export function vant4() {
     stepper,
     steps,
     sticky,
+    submitBar,
   ]
 
   return propsReducer(map)
@@ -340,6 +342,8 @@ export function vant4Components() {
     ['van-sticky', '粘性布局 Sticky 组件与 CSS 中 position: sticky 属性实现的效果一致，当组件在屏幕范围内时，会按照正常的布局排列，当组件滚出屏幕范围时，始终会固定在屏幕顶部。', `<van-sticky>
   <van-button type="primary">基础用法</van-button>
 </van-sticky>`],
+    ['van-submit-bar', '提交订单栏 用于展示订单金额与提交订单。', '<van-submit-bar :price="3050" button-text="提交订单" @submit="onSubmit" />'],
+
   ]
   return componentsReducer(map)
 }
