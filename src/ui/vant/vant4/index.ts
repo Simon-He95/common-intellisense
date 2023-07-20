@@ -79,6 +79,8 @@ import stepper from './stepper.json'
 import steps from './steps.json'
 import sticky from './sticky.json'
 import submitBar from './submitBar.json'
+import swipe from './swipe.json'
+import swipeItem from './swipeItem.json'
 
 export function vant4() {
   const map: any = [
@@ -162,6 +164,8 @@ export function vant4() {
     steps,
     sticky,
     submitBar,
+    swipe,
+    swipeItem,
   ]
 
   return propsReducer(map)
@@ -343,7 +347,18 @@ export function vant4Components() {
   <van-button type="primary">基础用法</van-button>
 </van-sticky>`],
     ['van-submit-bar', '提交订单栏 用于展示订单金额与提交订单。', '<van-submit-bar :price="3050" button-text="提交订单" @submit="onSubmit" />'],
-
+    ['van-swipe', '轮播 用于循环播放一组图片或内容。', `<van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
+  <van-swipe-item>1</van-swipe-item>
+  <van-swipe-item>2</van-swipe-item>
+  <van-swipe-item>3</van-swipe-item>
+  <van-swipe-item>4</van-swipe-item>
+</van-swipe>`],
+    ['van-swipe-item', '轮播 用于循环播放一组图片或内容。', `<van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
+<van-swipe-item>1</van-swipe-item>
+<van-swipe-item>2</van-swipe-item>
+<van-swipe-item>3</van-swipe-item>
+<van-swipe-item>4</van-swipe-item>
+</van-swipe>`],
   ]
   return componentsReducer(map)
 }
