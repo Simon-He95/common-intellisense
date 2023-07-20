@@ -76,6 +76,7 @@ import skeletonTitle from './skeletonTitle.json'
 import slider from './slider.json'
 import space from './space.json'
 import stepper from './stepper.json'
+import steps from './steps.json'
 
 export function vant4() {
   const map: any = [
@@ -156,6 +157,7 @@ export function vant4() {
     slider,
     space,
     stepper,
+    steps,
   ]
 
   return propsReducer(map)
@@ -327,6 +329,12 @@ export function vant4Components() {
     ['van-slider', '滑块 滑动输入条，用于在给定的范围内选择一个值。', '<van-slider v-model="value" @change="onChange" />'],
     ['van-space', '间距 设置元素之间的间距。', '<van-space direction="vertical" fill></van-space>'],
     ['van-stepper', '步进器 步进器由增加按钮、减少按钮和输入框组成，用于在一定范围内输入、调整数字。', '<van-stepper v-model="value" />'],
+    ['van-steps', '步骤 用于展示操作流程的各个环节，让用户了解当前的操作在整体流程中的位置。', `<van-steps :active="active">
+  <van-step>买家下单</van-step>
+  <van-step>商家接单</van-step>
+  <van-step>买家提货</van-step>
+  <van-step>交易完成</van-step>
+</van-steps>`],
   ]
   return componentsReducer(map)
 }
