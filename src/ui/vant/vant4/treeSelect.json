@@ -1,0 +1,101 @@
+{
+  "name": "VanTreeSelect",
+  "props": {
+    "v-model:main-active-index": {
+      "value": "",
+      "description": "左侧选中项的索引",
+      "default": "0",
+      "type": "左侧选中项的索引"
+    },
+    "v-model:active-id": {
+      "value": "",
+      "description": "右侧选中项的 id，支持传入数组",
+      "default": "0",
+      "type": "右侧选中项的 id，支持传入数组"
+    },
+    "items": {
+      "value": "",
+      "description": "分类显示所需的数据",
+      "default": "[]",
+      "type": "分类显示所需的数据"
+    },
+    "height": {
+      "value": "",
+      "description": "高度，默认单位为`px`",
+      "default": "300",
+      "type": "高度，默认单位为px"
+    },
+    "max": {
+      "value": "",
+      "description": "右侧项最大选中个数",
+      "default": "Infinity",
+      "type": "右侧项最大选中个数"
+    },
+    "selected-icon": {
+      "value": "",
+      "description": "自定义右侧栏选中状态的图标",
+      "default": "success",
+      "type": "自定义右侧栏选中状态的图标"
+    }
+  },
+  "methods": [],
+  "typeDetail": {
+    "TreeSelectItem": [
+      {
+        "name": "text",
+        "description": "导航名称",
+        "type": "string"
+      },
+      {
+        "name": "badge",
+        "description": "导航名称右上角徽标",
+        "type": "number"
+      },
+      {
+        "name": "dot",
+        "description": "是否在导航名称右上角显示小红点",
+        "type": "boolean"
+      },
+      {
+        "name": "className",
+        "description": "导航节点额外类名",
+        "type": "string"
+      },
+      {
+        "name": "children",
+        "description": "该导航下所有的可选项",
+        "type": "TreeSelectItemChild"
+      }
+    ],
+    "TreeSelectItemChild": [
+      {
+        "name": "text",
+        "description": "名称",
+        "type": "string"
+      },
+      {
+        "name": "id",
+        "description": "id，作为匹配选中状态的标识符",
+        "type": "number"
+      },
+      {
+        "name": "disabled",
+        "description": "禁用选项",
+        "type": "boolean"
+      }
+    ]
+  },
+  "events": [
+    {
+      "name": "click-nav",
+      "description": "点击左侧导航时触发",
+      "params": "点击左侧导航时触发"
+    },
+    {
+      "name": "click-item",
+      "description": "点击右侧选择项时触发",
+      "params": "点击右侧选择项时触发"
+    }
+  ],
+  "link": "https://vant-contrib.gitee.io/vant/#/zh-CN/tree-select"
+}

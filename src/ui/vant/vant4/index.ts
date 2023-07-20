@@ -90,6 +90,9 @@ import tabbarItem from './tabbarItem.json'
 import tag from './tag.json'
 import textEllipsis from './textEllipsis.json'
 import timePicker from './timePicker.json'
+import treeSelect from './treeSelect.json'
+import uploader from './uploader.json'
+import watermark from './watermark.json'
 
 export function vant4() {
   const map: any = [
@@ -184,6 +187,9 @@ export function vant4() {
     tag,
     textEllipsis,
     timePicker,
+    treeSelect,
+    uploader,
+    watermark,
   ]
 
   return propsReducer(map)
@@ -417,6 +423,13 @@ export function vant4Components() {
     ['van-tag', '标签 用于标记关键词和概括主要内容。', '<van-tag type="primary">标签</van-tag>'],
     ['van-text-ellipsis', '文本省略 对长文本进行省略，支持展开/收起。请升级 vant 到 >= 4.1.0 版本来使用该组件。', '<van-text-ellipsis :content="text" />'],
     ['van-time-picker', '时间选择 时间选择器，通常与弹出层组件配合使用。', '<van-time-picker v-model="currentTime" title="选择时间" />'],
+    ['van-tree-select', '分类选择 用于从一组相关联的数据集合中进行选择。', `<van-tree-select
+  v-model:active-id="activeId"
+  v-model:main-active-index="activeIndex"
+  :items="items"
+/>`],
+    ['van-uploader', '文件上传 用于将本地的图片或文件上传至服务器，并在上传过程中展示预览图和上传进度。目前 Uploader 组件不包含将文件上传至服务器的接口逻辑，该步骤需要自行实现。', '<van-uploader :after-read="afterRead" />'],
+    ['van-watermark', '水印 在页面上添加特定的文字或图案作为水印，可用于防止信息盗用。请升级 vant 到 >= 4.2.0 版本来使用该组件。', '<van-watermark content="Vant" />'],
   ]
   return componentsReducer(map)
 }
