@@ -85,6 +85,8 @@ import swipeCell from './swipeCell.json'
 import vswitch from './switch.json'
 import tab from './tab.json'
 import tabs from './tabs.json'
+import tabbar from './tabbar.json'
+import tabbarItem from './tabbarItem.json'
 
 export function vant4() {
   const map: any = [
@@ -174,6 +176,8 @@ export function vant4() {
     vswitch,
     tabs,
     tab,
+    tabbar,
+    tabbarItem,
   ]
 
   return propsReducer(map)
@@ -392,7 +396,18 @@ export function vant4Components() {
   <van-tab title="标签 3">内容 3</van-tab>
   <van-tab title="标签 4">内容 4</van-tab>
 </van-tabs>`],
-
+    ['van-tabbar', '标签栏 底部导航栏，用于在不同页面之间进行切换。', `<van-tabbar v-model="active">
+  <van-tabbar-item icon="home-o">标签</van-tabbar-item>
+  <van-tabbar-item icon="search">标签</van-tabbar-item>
+  <van-tabbar-item icon="friends-o">标签</van-tabbar-item>
+  <van-tabbar-item icon="setting-o">标签</van-tabbar-item>
+</van-tabbar>`],
+    ['van-tabbar-item', '标签栏 底部导航栏，用于在不同页面之间进行切换。', `<van-tabbar v-model="active">
+<van-tabbar-item icon="home-o">标签</van-tabbar-item>
+<van-tabbar-item icon="search">标签</van-tabbar-item>
+<van-tabbar-item icon="friends-o">标签</van-tabbar-item>
+<van-tabbar-item icon="setting-o">标签</van-tabbar-item>
+</van-tabbar>`],
   ]
   return componentsReducer(map)
 }
