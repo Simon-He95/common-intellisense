@@ -83,6 +83,8 @@ import swipe from './swipe.json'
 import swipeItem from './swipeItem.json'
 import swipeCell from './swipeCell.json'
 import vswitch from './switch.json'
+import tab from './tab.json'
+import tabs from './tabs.json'
 
 export function vant4() {
   const map: any = [
@@ -170,6 +172,8 @@ export function vant4() {
     swipeItem,
     swipeCell,
     vswitch,
+    tabs,
+    tab,
   ]
 
   return propsReducer(map)
@@ -376,6 +380,19 @@ export function vant4Components() {
     <van-button square text="删除" type="danger" class="delete-button" />
   </template>
 </van-swipe-cell>`],
+    ['van-tab', '标签页 选项卡组件，用于在不同的内容区域之间进行切换。', `<van-tabs v-model:active="active">
+  <van-tab title="标签 1">内容 1</van-tab>
+  <van-tab title="标签 2">内容 2</van-tab>
+  <van-tab title="标签 3">内容 3</van-tab>
+  <van-tab title="标签 4">内容 4</van-tab>
+</van-tabs>`],
+    ['van-tabs', '标签页 选项卡组件，用于在不同的内容区域之间进行切换。', `<van-tabs v-model:active="active">
+  <van-tab title="标签 1">内容 1</van-tab>
+  <van-tab title="标签 2">内容 2</van-tab>
+  <van-tab title="标签 3">内容 3</van-tab>
+  <van-tab title="标签 4">内容 4</van-tab>
+</van-tabs>`],
+
   ]
   return componentsReducer(map)
 }
