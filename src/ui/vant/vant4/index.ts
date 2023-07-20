@@ -82,6 +82,7 @@ import submitBar from './submitBar.json'
 import swipe from './swipe.json'
 import swipeItem from './swipeItem.json'
 import swipeCell from './swipeCell.json'
+import vswitch from './switch.json'
 
 export function vant4() {
   const map: any = [
@@ -168,6 +169,7 @@ export function vant4() {
     swipe,
     swipeItem,
     swipeCell,
+    vswitch,
   ]
 
   return propsReducer(map)
