@@ -81,6 +81,7 @@ import sticky from './sticky.json'
 import submitBar from './submitBar.json'
 import swipe from './swipe.json'
 import swipeItem from './swipeItem.json'
+import swipeCell from './swipeCell.json'
 
 export function vant4() {
   const map: any = [
@@ -166,6 +167,7 @@ export function vant4() {
     submitBar,
     swipe,
     swipeItem,
+    swipeCell,
   ]
 
   return propsReducer(map)
@@ -359,6 +361,19 @@ export function vant4Components() {
 <van-swipe-item>3</van-swipe-item>
 <van-swipe-item>4</van-swipe-item>
 </van-swipe>`],
+    ['van-swipe-cell', '滑动单元格 可以左右滑动来展示操作按钮的单元格组件。', `<van-swipe-cell>
+  <van-card
+    num="2"
+    price="2.00"
+    desc="描述信息"
+    title="商品标题"
+    class="goods-card"
+    thumb="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+  />
+  <template #right>
+    <van-button square text="删除" type="danger" class="delete-button" />
+  </template>
+</van-swipe-cell>`],
   ]
   return componentsReducer(map)
 }
