@@ -77,6 +77,7 @@ import slider from './slider.json'
 import space from './space.json'
 import stepper from './stepper.json'
 import steps from './steps.json'
+import sticky from './sticky.json'
 
 export function vant4() {
   const map: any = [
@@ -158,6 +159,7 @@ export function vant4() {
     space,
     stepper,
     steps,
+    sticky,
   ]
 
   return propsReducer(map)
@@ -335,6 +337,9 @@ export function vant4Components() {
   <van-step>买家提货</van-step>
   <van-step>交易完成</van-step>
 </van-steps>`],
+    ['van-sticky', '粘性布局 Sticky 组件与 CSS 中 position: sticky 属性实现的效果一致，当组件在屏幕范围内时，会按照正常的布局排列，当组件滚出屏幕范围时，始终会固定在屏幕顶部。', `<van-sticky>
+  <van-button type="primary">基础用法</van-button>
+</van-sticky>`],
   ]
   return componentsReducer(map)
 }
