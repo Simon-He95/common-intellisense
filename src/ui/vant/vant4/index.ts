@@ -87,6 +87,7 @@ import tab from './tab.json'
 import tabs from './tabs.json'
 import tabbar from './tabbar.json'
 import tabbarItem from './tabbarItem.json'
+import tag from './tag.json'
 
 export function vant4() {
   const map: any = [
@@ -178,6 +179,7 @@ export function vant4() {
     tab,
     tabbar,
     tabbarItem,
+    tag,
   ]
 
   return propsReducer(map)
@@ -408,6 +410,7 @@ export function vant4Components() {
 <van-tabbar-item icon="friends-o">标签</van-tabbar-item>
 <van-tabbar-item icon="setting-o">标签</van-tabbar-item>
 </van-tabbar>`],
+    ['van-tag', '标签 用于标记关键词和概括主要内容。', '<van-tag type="primary">标签</van-tag>'],
   ]
   return componentsReducer(map)
 }
