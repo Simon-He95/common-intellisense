@@ -1,0 +1,178 @@
+{
+  "name": "VanStepper",
+  "props": {
+    "v-model": {
+      "value": "",
+      "description": "当前输入的值",
+      "default": "-",
+      "type": "当前输入的值"
+    },
+    "min": {
+      "value": "",
+      "description": "最小值",
+      "default": "1",
+      "type": "最小值"
+    },
+    "max": {
+      "value": "",
+      "description": "最大值",
+      "default": "-",
+      "type": "最大值"
+    },
+    "auto-fixed": {
+      "value": "",
+      "description": "是否自动校正超出限制范围的数值，设置为 `false` 后输入超过限制范围的数值将不会自动校正",
+      "default": "true",
+      "type": "是否自动校正超出限制范围的数值，设置为 false 后输入超过限制范围的数值将不会自动校正"
+    },
+    "default-value": {
+      "value": "",
+      "description": "初始值，当 v-model 为空时生效",
+      "default": "1",
+      "type": "初始值，当 v-model 为空时生效"
+    },
+    "step": {
+      "value": "",
+      "description": "步长，每次点击时改变的值",
+      "default": "1",
+      "type": "步长，每次点击时改变的值"
+    },
+    "name": {
+      "value": "",
+      "description": "标识符，通常为一个唯一的字符串或数字，可以在 `change` 事件回调参数中获取",
+      "default": "-",
+      "type": "标识符，通常为一个唯一的字符串或数字，可以在 change 事件回调参数中获取"
+    },
+    "input-width": {
+      "value": "",
+      "description": "输入框宽度，默认单位为 `px`",
+      "default": "32px",
+      "type": "输入框宽度，默认单位为 px"
+    },
+    "button-size": {
+      "value": "",
+      "description": "按钮大小以及输入框高度，默认单位为 `px`",
+      "default": "28px",
+      "type": "按钮大小以及输入框高度，默认单位为 px"
+    },
+    "decimal-length": {
+      "value": "",
+      "description": "固定显示的小数位数",
+      "default": "-",
+      "type": "固定显示的小数位数"
+    },
+    "theme": {
+      "value": "",
+      "description": "样式风格，可选值为 `round`",
+      "default": "-",
+      "type": "样式风格，可选值为 round"
+    },
+    "placeholder": {
+      "value": "",
+      "description": "输入框占位提示文字",
+      "default": "-",
+      "type": "输入框占位提示文字"
+    },
+    "integer": {
+      "value": "",
+      "description": "是否只允许输入整数",
+      "default": "false",
+      "type": "是否只允许输入整数"
+    },
+    "disabled": {
+      "value": "",
+      "description": "是否禁用步进器",
+      "default": "false",
+      "type": "是否禁用步进器"
+    },
+    "disable-plus": {
+      "value": "",
+      "description": "是否禁用增加按钮",
+      "default": "false",
+      "type": "是否禁用增加按钮"
+    },
+    "disable-minus": {
+      "value": "",
+      "description": "是否禁用减少按钮",
+      "default": "false",
+      "type": "是否禁用减少按钮"
+    },
+    "disable-input": {
+      "value": "",
+      "description": "是否禁用输入框",
+      "default": "false",
+      "type": "是否禁用输入框"
+    },
+    "before-change": {
+      "value": "",
+      "description": "输入值变化前的回调函数，返回 `false` 可阻止输入，支持返回 Promise",
+      "default": "false",
+      "type": "输入值变化前的回调函数，返回 false 可阻止输入，支持返回 Promise"
+    },
+    "show-plus": {
+      "value": "",
+      "description": "是否显示增加按钮",
+      "default": "true",
+      "type": "是否显示增加按钮"
+    },
+    "show-minus": {
+      "value": "",
+      "description": "是否显示减少按钮",
+      "default": "true",
+      "type": "是否显示减少按钮"
+    },
+    "show-input": {
+      "value": "",
+      "description": "是否显示输入框",
+      "default": "true",
+      "type": "是否显示输入框"
+    },
+    "long-press": {
+      "value": "",
+      "description": "是否开启长按手势，开启后可以长按增加和减少按钮",
+      "default": "true",
+      "type": "是否开启长按手势，开启后可以长按增加和减少按钮"
+    },
+    "allow-empty": {
+      "value": "",
+      "description": "是否允许输入的值为空，设置为 `true` 后允许传入空字符串",
+      "default": "false",
+      "type": "是否允许输入的值为空，设置为 true 后允许传入空字符串"
+    }
+  },
+  "methods": [],
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "change",
+      "description": "当绑定值变化时触发的事件",
+      "params": "当绑定值变化时触发的事件"
+    },
+    {
+      "name": "overlimit",
+      "description": "点击不可用的按钮时触发",
+      "params": "点击不可用的按钮时触发"
+    },
+    {
+      "name": "plus",
+      "description": "点击增加按钮时触发",
+      "params": "点击增加按钮时触发"
+    },
+    {
+      "name": "minus",
+      "description": "点击减少按钮时触发",
+      "params": "点击减少按钮时触发"
+    },
+    {
+      "name": "focus",
+      "description": "输入框聚焦时触发",
+      "params": "输入框聚焦时触发"
+    },
+    {
+      "name": "blur",
+      "description": "输入框失焦时触发",
+      "params": "输入框失焦时触发"
+    }
+  ],
+  "link": "https://vant-contrib.gitee.io/vant/#/zh-CN/stepper"
+}

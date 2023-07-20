@@ -74,6 +74,8 @@ import skeletonAvatar from './skeletonAvatar.json'
 import skeletonImage from './skeletonImage.json'
 import skeletonTitle from './skeletonTitle.json'
 import slider from './slider.json'
+import space from './space.json'
+import stepper from './stepper.json'
 
 export function vant4() {
   const map: any = [
@@ -152,6 +154,8 @@ export function vant4() {
     skeletonImage,
     skeletonTitle,
     slider,
+    space,
+    stepper,
   ]
 
   return propsReducer(map)
@@ -321,6 +325,8 @@ export function vant4Components() {
     ['van-skeleton-avatar', '骨架屏 用于在内容加载过程中展示一组占位图形。', '<van-skeleton-avatar />'],
     ['van-skeleton-image', '骨架屏 用于在内容加载过程中展示一组占位图形。', '<van-skeleton-image />'],
     ['van-slider', '滑块 滑动输入条，用于在给定的范围内选择一个值。', '<van-slider v-model="value" @change="onChange" />'],
+    ['van-space', '间距 设置元素之间的间距。', '<van-space direction="vertical" fill></van-space>'],
+    ['van-stepper', '步进器 步进器由增加按钮、减少按钮和输入框组成，用于在一定范围内输入、调整数字。', '<van-stepper v-model="value" />'],
   ]
   return componentsReducer(map)
 }
