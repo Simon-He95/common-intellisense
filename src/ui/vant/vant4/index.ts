@@ -68,6 +68,11 @@ import shareSheet from './shareSheet.json'
 import sidebar from './sidebar.json'
 import sidebarItem from './sidebarItem.json'
 import signature from './signature.json'
+import skeleton from './skeleton.json'
+import skeletonParagraph from './skeletonParagraph.json'
+import skeletonAvatar from './skeletonAvatar.json'
+import skeletonImage from './skeletonImage.json'
+import skeletonTitle from './skeletonTitle.json'
 
 export function vant4() {
   const map: any = [
@@ -140,6 +145,11 @@ export function vant4() {
     sidebar,
     sidebarItem,
     signature,
+    skeleton,
+    skeletonParagraph,
+    skeletonAvatar,
+    skeletonImage,
+    skeletonTitle,
   ]
 
   return propsReducer(map)
@@ -303,6 +313,11 @@ export function vant4Components() {
 <van-sidebar-item title="标签名称" />
 </van-sidebar>`],
     ['van-signature', '签名 用于签名场景的组件，基于 Canvas 实现。请升级 vant 到 >= 4.3.0 版本来使用该组件。', '<van-signature @submit="onSubmit" @clear="onClear" />'],
+    ['van-skeleton', '骨架屏 用于在内容加载过程中展示一组占位图形。', '<van-skeleton title :row="3" />'],
+    ['van-skeleton-title', '骨架屏 用于在内容加载过程中展示一组占位图形。', '<van-skeleton-title />'],
+    ['van-skeleton-paragraph', '骨架屏 用于在内容加载过程中展示一组占位图形。', '<van-skeleton-paragraph />'],
+    ['van-skeleton-avatar', '骨架屏 用于在内容加载过程中展示一组占位图形。', '<van-skeleton-avatar />'],
+    ['van-skeleton-image', '骨架屏 用于在内容加载过程中展示一组占位图形。', '<van-skeleton-image />'],
   ]
   return componentsReducer(map)
 }
