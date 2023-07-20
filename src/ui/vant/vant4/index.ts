@@ -73,6 +73,7 @@ import skeletonParagraph from './skeletonParagraph.json'
 import skeletonAvatar from './skeletonAvatar.json'
 import skeletonImage from './skeletonImage.json'
 import skeletonTitle from './skeletonTitle.json'
+import slider from './slider.json'
 
 export function vant4() {
   const map: any = [
@@ -150,6 +151,7 @@ export function vant4() {
     skeletonAvatar,
     skeletonImage,
     skeletonTitle,
+    slider,
   ]
 
   return propsReducer(map)
@@ -318,6 +320,7 @@ export function vant4Components() {
     ['van-skeleton-paragraph', '骨架屏 用于在内容加载过程中展示一组占位图形。', '<van-skeleton-paragraph />'],
     ['van-skeleton-avatar', '骨架屏 用于在内容加载过程中展示一组占位图形。', '<van-skeleton-avatar />'],
     ['van-skeleton-image', '骨架屏 用于在内容加载过程中展示一组占位图形。', '<van-skeleton-image />'],
+    ['van-slider', '滑块 滑动输入条，用于在给定的范围内选择一个值。', '<van-slider v-model="value" @change="onChange" />'],
   ]
   return componentsReducer(map)
 }
