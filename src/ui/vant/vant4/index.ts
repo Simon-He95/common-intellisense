@@ -89,6 +89,7 @@ import tabbar from './tabbar.json'
 import tabbarItem from './tabbarItem.json'
 import tag from './tag.json'
 import textEllipsis from './textEllipsis.json'
+import timePicker from './timePicker.json'
 
 export function vant4() {
   const map: any = [
@@ -182,6 +183,7 @@ export function vant4() {
     tabbarItem,
     tag,
     textEllipsis,
+    timePicker,
   ]
 
   return propsReducer(map)
@@ -414,6 +416,7 @@ export function vant4Components() {
 </van-tabbar>`],
     ['van-tag', '标签 用于标记关键词和概括主要内容。', '<van-tag type="primary">标签</van-tag>'],
     ['van-text-ellipsis', '文本省略 对长文本进行省略，支持展开/收起。请升级 vant 到 >= 4.1.0 版本来使用该组件。', '<van-text-ellipsis :content="text" />'],
+    ['van-time-picker', '时间选择 时间选择器，通常与弹出层组件配合使用。', '<van-time-picker v-model="currentTime" title="选择时间" />'],
   ]
   return componentsReducer(map)
 }
