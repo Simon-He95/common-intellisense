@@ -8,6 +8,7 @@ import breadcrumb from './breadcrumb.json'
 import breadcrumbItem from './breadcrumbItem.json'
 import checkbox from './checkbox.json'
 import checkboxGroup from './checkboxGroup.json'
+import dialog from './dialog.json'
 
 export function navieUi2(extensionContext: any) {
   const map: any = [
@@ -20,6 +21,7 @@ export function navieUi2(extensionContext: any) {
     buttonGroup,
     checkbox,
     checkboxGroup,
+    dialog,
   ]
 
   return propsReducer(map)
@@ -65,6 +67,14 @@ export function navieUi2Components() {
     <n-checkbox value="Shenzen" label="深圳" />
   </n-space>
 </n-checkbox-group>`],
+    ['n-dialog', '对话框', `<n-dialog
+  title="确认"
+  content="你确定"
+  negative-text="不确认"
+  positive-text="确认"
+  @positive-click="handlePositiveClick"
+  @negative-click="handleNegativeClick"
+/>`],
   ]
   return componentsReducer(map)
 }
