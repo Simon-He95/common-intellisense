@@ -1,0 +1,120 @@
+{
+  "name": "NForm",
+  "props": {
+    "disabled": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "是否禁用",
+      "type": "boolean"
+    },
+    "inline": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "是否展示为行内表单",
+      "type": "boolean"
+    },
+    "label-width": {
+      "value": "",
+      "description": "`number | string | 'auto'`",
+      "default": "标签的宽度，在 label-placement 是 'left' 的时候可能会有用，'auto' 意味着 label width 会被自动调整",
+      "type": "number | string | 'auto'"
+    },
+    "label-align": {
+      "value": "",
+      "description": "`'left' | 'right'`",
+      "default": "标签的文本对齐方式",
+      "type": "'left' | 'right'"
+    },
+    "label-placement": {
+      "value": "",
+      "description": "`'left' | 'top'`",
+      "default": "标签显示的位置",
+      "type": "'left' | 'top'"
+    },
+    "model": {
+      "value": "",
+      "description": "`Object`",
+      "default": "获取表项中收集到的值的对象",
+      "type": "Object"
+    },
+    "rules": {
+      "value": "",
+      "description": "`type FormRules = { [itemValidatePath: string]: FormItemRule | Array<FormItemRule> | FormRules }`",
+      "default": "验证表项的规则",
+      "type": "type FormRules = { [itemValidatePath: string]: FormItemRule | Array<FormItemRule> | FormRules }"
+    },
+    "show-feedback": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "是否展示校验反馈",
+      "type": "boolean"
+    },
+    "show-label": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "是否展示标签",
+      "type": "boolean"
+    },
+    "show-require-mark": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "是否展示必填的星号",
+      "type": "boolean"
+    },
+    "require-mark-placement": {
+      "value": "",
+      "description": "`'left' | 'right' | 'right-hanging'`",
+      "default": "必填星号的位置",
+      "type": "'left' | 'right' | 'right-hanging'"
+    },
+    "size": {
+      "value": "",
+      "description": "`'small' | 'medium' | 'large'`",
+      "default": "尺寸",
+      "type": "'small' | 'medium' | 'large'"
+    },
+    "validate-messages": {
+      "value": "",
+      "description": "`FormValidateMessages`",
+      "default": "async-validator 的默认验证信息",
+      "type": "FormValidateMessages"
+    }
+  },
+  "methods": [],
+  "typeDetail": {
+    "FormItemRule": [
+      {
+        "name": "asyncValidator",
+        "description": "`(rule: FormItemRule, value: any, callback: (error?: Error) => void) => void`",
+        "type": "异步校验，支持定义回调函数"
+      },
+      {
+        "name": "message",
+        "description": "`string`",
+        "type": "校验失败时展示的信息"
+      },
+      {
+        "name": "renderMessage",
+        "description": "`() => VNodeChild`",
+        "type": "信息的渲染函数"
+      },
+      {
+        "name": "required",
+        "description": "`boolean`",
+        "type": "是否必填"
+      },
+      {
+        "name": "trigger",
+        "description": "`string | Array<string>`",
+        "type": "触发方式"
+      },
+      {
+        "name": "validator",
+        "description": "`(rule: FormItemRule, value: any) => boolean | Error`",
+        "type": "校验规则"
+      }
+    ]
+  },
+  "events": [],
+  "link": "https://www.naiveui.com/zh-CN/dark/components/form"
+}

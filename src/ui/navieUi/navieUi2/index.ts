@@ -19,6 +19,9 @@ import select from './select.json'
 import nswitch from './switch.json'
 import table from './table.json'
 import dataTable from './dataTable.json'
+import form from './form.json'
+import formItem from './formItem.json'
+import formItemGi from './formItemGi.json'
 
 export function navieUi2(extensionContext: any) {
   const map: any = [
@@ -42,6 +45,9 @@ export function navieUi2(extensionContext: any) {
     nswitch,
     table,
     dataTable,
+    form,
+    formItem,
+    formItemGi,
   ]
 
   return propsReducer(map)
@@ -157,6 +163,21 @@ Definitely Maybe
   :pagination="pagination"
   :bordered="false"
 />`],
+    ['n-form', '表单', `<n-form
+  ref="formRef"
+  inline
+  :label-width="80"
+  :model="formValue"
+  :rules="rules"
+  :size="size"
+></n-form>`],
+    ['n-form-item', '表单', ` <n-form-item label="姓名" path="user.name">
+    <n-input v-model:value="formValue.user.name" placeholder="输入姓名" />
+  </n-form-item>`],
+    ['n-form-item-gi', '表单', `<n-form-item-gi :span="12" label="Input" path="inputValue">
+  <n-input v-model:value="model.inputValue" placeholder="Input" />
+</n-form-item-gi>`],
+
   ]
   return componentsReducer(map)
 }
