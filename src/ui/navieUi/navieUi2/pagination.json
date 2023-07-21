@@ -1,0 +1,209 @@
+{
+  "name": "NPagination",
+  "props": {
+    "default-page": {
+      "value": "",
+      "description": "`number`",
+      "default": "非受控模式下的当前页",
+      "type": "number"
+    },
+    "default-page-size": {
+      "value": "",
+      "description": "`number`",
+      "default": "非受控模式下的分页大小",
+      "type": "number"
+    },
+    "disabled": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "是否禁用",
+      "type": "boolean"
+    },
+    "display-order": {
+      "value": "",
+      "description": "`Array<'pages' | 'size-picker' | 'quick-jumper'>`",
+      "default": "不同部分的展示顺序",
+      "type": "Array<'pages' | 'size-picker' | 'quick-jumper'>"
+    },
+    "goto": {
+      "value": "",
+      "description": "`() => VNodeChild`",
+      "default": "渲染快速跳转的文本内容",
+      "type": "() => VNodeChild"
+    },
+    "item-count": {
+      "value": "",
+      "description": "`number`",
+      "default": "总条数",
+      "type": "number"
+    },
+    "next": {
+      "value": "",
+      "description": "`(info: PaginationInfo) => VNodeChild`",
+      "default": "下一页",
+      "type": "(info: PaginationInfo) => VNodeChild"
+    },
+    "prev": {
+      "value": "",
+      "description": "`(info: PaginationInfo) => VNodeChild`",
+      "default": "上一页",
+      "type": "(info: PaginationInfo) => VNodeChild"
+    },
+    "label": {
+      "value": "",
+      "description": "`PaginationRenderLabel`",
+      "default": "每一项的内容",
+      "type": "PaginationRenderLabel"
+    },
+    "page-count": {
+      "value": "",
+      "description": "`number`",
+      "default": "总页数",
+      "type": "number"
+    },
+    "page-sizes": {
+      "value": "",
+      "description": "`Array<number | PaginationSizeOption>`",
+      "default": "每页条数， 可自定义",
+      "type": "Array<number | PaginationSizeOption>"
+    },
+    "page-size": {
+      "value": "",
+      "description": "`number`",
+      "default": "受控模式下的分页大小",
+      "type": "number"
+    },
+    "page-slot": {
+      "value": "",
+      "description": "`number`",
+      "default": "页码显示的个数",
+      "type": "number"
+    },
+    "page": {
+      "value": "",
+      "description": "`number`",
+      "default": "受控模式下的当前页",
+      "type": "number"
+    },
+    "prefix": {
+      "value": "",
+      "description": "`(info: PaginationInfo) => VNodeChild`",
+      "default": "分页前缀",
+      "type": "(info: PaginationInfo) => VNodeChild"
+    },
+    "select-props": {
+      "value": "",
+      "description": "`SelectProps`",
+      "default": "分页大小选择器的属性",
+      "type": "SelectProps"
+    },
+    "show-quick-jumper": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "是否显示快速跳转",
+      "type": "boolean"
+    },
+    "size": {
+      "value": "",
+      "description": "`'small' | 'medium' | 'large'`",
+      "default": "分页按钮的大小",
+      "type": "'small' | 'medium' | 'large'"
+    },
+    "simple": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "是否显示为简单分页",
+      "type": "boolean"
+    },
+    "suffix": {
+      "value": "",
+      "description": "`(info: PaginationInfo) => VNodeChild`",
+      "default": "分页后缀",
+      "type": "(info: PaginationInfo) => VNodeChild"
+    },
+    "show-size-picker": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "是否显示每页条数的选择器",
+      "type": "boolean"
+    },
+    "to": {
+      "value": "",
+      "description": "`string | HTMLElement | false`",
+      "default": "弹出菜单的容器节点，false 会待在原地",
+      "type": "string | HTMLElement | false"
+    },
+    "on-update:page": {
+      "value": "",
+      "description": "`(page: number) => void`",
+      "default": "当前页发生改变时的回调函数",
+      "type": "(page: number) => void"
+    },
+    "on-update:page-size": {
+      "value": "",
+      "description": "`(pageSize: number) => void`",
+      "default": "当前分页大小发生改变时的回调函数",
+      "type": "(pageSize: number) => void"
+    }
+  },
+  "methods": [],
+  "typeDetail": {
+    "PaginationRenderLabel": [
+      {
+        "name": "info",
+        "description": "_",
+        "type": "VNodeChild"
+      }
+    ],
+    "VNodeChild": [
+      {
+        "name": "type",
+        "description": "_",
+        "type": "string"
+      },
+      {
+        "name": "node",
+        "description": "_",
+        "type": "VNode"
+      },
+      {
+        "name": "active",
+        "description": "_",
+        "type": "boolean"
+      }
+    ],
+    "PaginationInfo": [
+      {
+        "name": "startIndex",
+        "description": "_",
+        "type": "number"
+      },
+      {
+        "name": "endIndex",
+        "description": "_",
+        "type": "number"
+      },
+      {
+        "name": "page",
+        "description": "_",
+        "type": "number"
+      },
+      {
+        "name": "pageSize",
+        "description": "_",
+        "type": "number"
+      },
+      {
+        "name": "pageCount",
+        "description": "_",
+        "type": "number"
+      },
+      {
+        "name": "itemCount",
+        "description": "_",
+        "type": "number|undefined"
+      }
+    ]
+  },
+  "events": []
+}

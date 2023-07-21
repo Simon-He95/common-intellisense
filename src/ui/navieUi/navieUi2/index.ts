@@ -10,6 +10,7 @@ import checkbox from './checkbox.json'
 import checkboxGroup from './checkboxGroup.json'
 import dialog from './dialog.json'
 import modal from './modal.json'
+import pagination from './pagination.json'
 
 export function navieUi2(extensionContext: any) {
   const map: any = [
@@ -24,6 +25,7 @@ export function navieUi2(extensionContext: any) {
     checkboxGroup,
     dialog,
     modal,
+    pagination,
   ]
 
   return propsReducer(map)
@@ -87,6 +89,7 @@ export function navieUi2Components() {
   @positive-click="submitCallback"
   @negative-click="cancelCallback"
 />`],
+    ['n-pagination', '分页', '<n-pagination v-model:page="page" :page-count="100" />'],
   ]
   return componentsReducer(map)
 }
