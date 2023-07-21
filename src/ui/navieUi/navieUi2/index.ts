@@ -11,6 +11,10 @@ import checkboxGroup from './checkboxGroup.json'
 import dialog from './dialog.json'
 import modal from './modal.json'
 import pagination from './pagination.json'
+import popover from './popover.json'
+import radio from './radio.json'
+import radioButton from './radioButton.json'
+import radioGroup from './radioGroup.json'
 
 export function navieUi2(extensionContext: any) {
   const map: any = [
@@ -26,6 +30,10 @@ export function navieUi2(extensionContext: any) {
     dialog,
     modal,
     pagination,
+    popover,
+    radio,
+    radioGroup,
+    radioButton,
   ]
 
   return propsReducer(map)
@@ -90,6 +98,36 @@ export function navieUi2Components() {
   @negative-click="cancelCallback"
 />`],
     ['n-pagination', '分页', '<n-pagination v-model:page="page" :page-count="100" />'],
+    ['n-popover', '弹出信息', `<n-popover trigger="hover">
+  <template #trigger>
+    <n-button>悬浮</n-button>
+  </template>
+  <span>或许不想知道你的花园长得咋样</span>
+</n-popover>`],
+    ['n-radio', '单选', `<n-radio
+  :checked="checkedValue === 'Definitely Maybe'"
+  value="Definitely Maybe"
+  name="basic-demo"
+  @change="handleChange"
+  >
+  Definitely Maybe
+</n-radio>`],
+    ['n-radio-button', '单选', `<n-radio-button
+:checked="checkedValue === 'Definitely Maybe'"
+value="Definitely Maybe"
+name="basic-demo"
+@change="handleChange"
+>
+Definitely Maybe
+</n-radio-button>`],
+    ['n-radio-group', '单选组', `  <n-radio-group v-model:value="value" name="radiogroup">
+  <n-space>
+    <n-radio v-for="song in songs" :key="song.value" :value="song.value">
+      {{ song.label }}
+    </n-radio>
+  </n-space>
+</n-radio-group>`],
+
   ]
   return componentsReducer(map)
 }

@@ -1,63 +1,57 @@
 {
-  "name": "NCheckbox",
+  "name": "NRadio",
   "props": {
     "checked": {
       "value": "",
       "description": "`boolean`",
-      "default": "受控状态下是否选中",
+      "default": "选中状态",
       "type": "boolean"
     },
     "default-checked": {
       "value": "",
       "description": "`boolean`",
-      "default": "非受控模式下默认是否选中",
+      "default": "默认选中的状态",
       "type": "boolean"
     },
     "disabled": {
       "value": "",
       "description": "`boolean`",
-      "default": "是否禁用",
-      "type": "boolean"
-    },
-    "focusable": {
-      "value": "",
-      "description": "`boolean`",
-      "default": "是否可被 focus",
-      "type": "boolean"
-    },
-    "indeterminate": {
-      "value": "",
-      "description": "`boolean`",
-      "default": "是否部分选中",
+      "default": "禁用状态",
       "type": "boolean"
     },
     "label": {
       "value": "",
       "description": "`string`",
-      "default": "Checkbox 的标签",
+      "default": "标签",
+      "type": "string"
+    },
+    "name": {
+      "value": "",
+      "description": "`string`",
+      "default": "单选按钮 radio 元素的 name 属性。如果没有设定会使用 n-radio-group 的 name",
       "type": "string"
     },
     "size": {
       "value": "",
       "description": "`'small' | 'medium' | 'large'`",
-      "default": "组件尺寸",
+      "default": "大小",
       "type": "'small' | 'medium' | 'large'"
     },
     "value": {
       "value": "",
-      "description": "`string | number`",
-      "default": "Checkbox 在 checkbox group 中使用的值",
-      "type": "string | number"
+      "description": "`string | number | boolean`",
+      "default": "选中的值",
+      "type": "string | number | boolean"
     }
   },
   "methods": [],
   "typeDetail": {},
   "events": [
     {
-      "name": "update:checked",
+      "name": "on-update:checked",
       "description": "`(checked: boolean) => void`",
       "params": "`(checked: boolean) => void`"
     }
   ],
-  "link": "https://www.naiveui.com/zh-CN/dark/components/checkbox"
+  "link": "https://www.naiveui.com/zh-CN/dark/components/radio"
 }

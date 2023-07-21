@@ -106,6 +106,48 @@
       "description": "最大允许上传个数",
       "default": "—",
       "type": "number"
+    },
+    "on-preview": {
+      "value": "",
+      "description": "点击文件列表中已上传的文件时的钩子",
+      "default": "—",
+      "type": "点击文件列表中已上传的文件时的钩子"
+    },
+    "on-remove": {
+      "value": "",
+      "description": "文件列表移除文件时的钩子",
+      "default": "—",
+      "type": "文件列表移除文件时的钩子"
+    },
+    "on-success": {
+      "value": "",
+      "description": "文件上传成功时的钩子",
+      "default": "—",
+      "type": "文件上传成功时的钩子"
+    },
+    "on-error": {
+      "value": "",
+      "description": "文件上传失败时的钩子",
+      "default": "—",
+      "type": "文件上传失败时的钩子"
+    },
+    "on-progress": {
+      "value": "",
+      "description": "文件上传时的钩子",
+      "default": "—",
+      "type": "文件上传时的钩子"
+    },
+    "on-change": {
+      "value": "",
+      "description": "文件状态改变时的钩子，添加文件、上传成功和上传失败时都会被调用",
+      "default": "—",
+      "type": "文件状态改变时的钩子，添加文件、上传成功和上传失败时都会被调用"
+    },
+    "on-exceed": {
+      "value": "",
+      "description": "文件超出个数限制时的钩子",
+      "default": "—",
+      "type": "文件超出个数限制时的钩子"
     }
   },
   "methods": [
@@ -123,43 +165,6 @@
       "name": "submit",
       "description": "手动上传文件列表",
       "params": "—"
-    }
-  ],
-  "events": [
-    {
-      "name": "on-preview",
-      "description": "点击文件列表中已上传的文件时的钩子",
-      "params": "function(file)"
-    },
-    {
-      "name": "on-remove",
-      "description": "文件列表移除文件时的钩子",
-      "params": "function(file, fileList)"
-    },
-    {
-      "name": "on-success",
-      "description": "文件上传成功时的钩子",
-      "params": "function(response, file, fileList)"
-    },
-    {
-      "name": "on-error",
-      "description": "文件上传失败时的钩子",
-      "params": "function(err, file, fileList)"
-    },
-    {
-      "name": "on-progress",
-      "description": "文件上传时的钩子",
-      "params": "function(event, file, fileList)"
-    },
-    {
-      "name": "on-change",
-      "description": "文件状态改变时的钩子，添加文件、上传成功和上传失败时都会被调用",
-      "params": "function(file, fileList)"
-    },
-    {
-      "name": "on-exceed",
-      "description": "文件超出个数限制时的钩子",
-      "params": "function(files, fileList)"
     }
   ],
   "link": "https://element.eleme.cn/#/zh-CN/component/upload"

@@ -132,18 +132,6 @@
       "description": "`string | HTMLElement | false`",
       "default": "弹出菜单的容器节点，false 会待在原地",
       "type": "string | HTMLElement | false"
-    },
-    "on-update:page": {
-      "value": "",
-      "description": "`(page: number) => void`",
-      "default": "当前页发生改变时的回调函数",
-      "type": "(page: number) => void"
-    },
-    "on-update:page-size": {
-      "value": "",
-      "description": "`(pageSize: number) => void`",
-      "default": "当前分页大小发生改变时的回调函数",
-      "type": "(pageSize: number) => void"
     }
   },
   "methods": [],
@@ -205,5 +193,16 @@
       }
     ]
   },
-  "events": []
+  "events": [
+    {
+      "name": "update:page",
+      "description": "`(page: number) => void`",
+      "params": "`(page: number) => void`"
+    },
+    {
+      "name": "update:page-size",
+      "description": "`(pageSize: number) => void`",
+      "params": "`(pageSize: number) => void`"
+    }
+  ]
 }
