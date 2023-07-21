@@ -16,7 +16,9 @@ import radio from './radio.json'
 import radioButton from './radioButton.json'
 import radioGroup from './radioGroup.json'
 import select from './select.json'
-import nswitch from './nswitch.json'
+import nswitch from './switch.json'
+import table from './table.json'
+import dataTable from './dataTable.json'
 
 export function navieUi2(extensionContext: any) {
   const map: any = [
@@ -38,6 +40,8 @@ export function navieUi2(extensionContext: any) {
     radioButton,
     select,
     nswitch,
+    table,
+    dataTable,
   ]
 
   return propsReducer(map)
@@ -133,6 +137,26 @@ Definitely Maybe
 </n-radio-group>`],
     ['n-select', '选择器', '<n-select v-model:value="value" :options="options" />'],
     ['n-switch', '开关', '<n-switch v-model:value="active" />'],
+    ['n-table', '开关', `<n-table>
+  <thead>
+    <tr>
+      <th>Abandon</th>
+      <th>Abnormal</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+  </tbody>
+</n-table>`],
+    ['n-data-table', '数据表格', `<n-data-table
+  :columns="columns"
+  :data="data"
+  :pagination="pagination"
+  :bordered="false"
+/>`],
   ]
   return componentsReducer(map)
 }

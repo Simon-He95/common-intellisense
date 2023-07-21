@@ -1,0 +1,539 @@
+{
+  "name": "NDataTable",
+  "props": {
+    "allow-checking-not-loaded": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "是否允许级联勾选还没有完全加载的节点。如果你要用这个属性，请记住 checked-row-keys 可能是不完整的",
+      "type": "boolean"
+    },
+    "bordered": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "是否显示 border",
+      "type": "boolean"
+    },
+    "bottom-bordered": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "是否显示 bottom border",
+      "type": "boolean"
+    },
+    "checked-row-keys": {
+      "value": "",
+      "description": "`Array<string | number>`",
+      "default": "被选中的列的 key",
+      "type": "Array<string | number>"
+    },
+    "cascade": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "在进行树型数据选择的时候是否级联",
+      "type": "boolean"
+    },
+    "children-key": {
+      "value": "",
+      "description": "`string`",
+      "default": "树形数据下后代节点在数据中的 key",
+      "type": "string"
+    },
+    "columns": {
+      "value": "",
+      "description": "`Array<DataTableColumn>`",
+      "default": "需要展示的列",
+      "type": "Array<DataTableColumn>"
+    },
+    "data": {
+      "value": "",
+      "description": "`Array<object>`",
+      "default": "需要展示的数据",
+      "type": "Array<object>"
+    },
+    "default-checked-row-keys": {
+      "value": "",
+      "description": "`Array<string | number>`",
+      "default": "默认选中的 key 值",
+      "type": "Array<string | number>"
+    },
+    "default-expanded-row-keys": {
+      "value": "",
+      "description": "`Array<string | number>`",
+      "default": "默认展开行的 key 值",
+      "type": "Array<string | number>"
+    },
+    "default-expand-all": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "是否默认展开全部可展开的行，不可在异步展开行时使用",
+      "type": "boolean"
+    },
+    "expanded-row-keys": {
+      "value": "",
+      "description": "`Array<string | number>`",
+      "default": "展开行的 key 值",
+      "type": "Array<string | number>"
+    },
+    "indent": {
+      "value": "",
+      "description": "`number`",
+      "default": "使用树形数据时行内容的缩进",
+      "type": "number"
+    },
+    "pagination-behavior-on-filter": {
+      "value": "",
+      "description": "`'first' | 'current'`",
+      "default": "过滤操作后页面的状态，'first' 为回到首页，'current' 为停留在当前页",
+      "type": "'first' | 'current'"
+    },
+    "flex-height": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "是否让表格主体的高度自动适应整个表格区域的高度，打开这个选项会让 table-layout 始终为 'fixed'",
+      "type": "boolean"
+    },
+    "loading": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "是否显示 loading 状态",
+      "type": "boolean"
+    },
+    "max-height": {
+      "value": "",
+      "description": "`number | string`",
+      "default": "表格内容的最大高度，可以是 CSS 属性值",
+      "type": "number | string"
+    },
+    "min-height": {
+      "value": "",
+      "description": "`number | string`",
+      "default": "表格内容的最低高度，可以是 CSS 属性值",
+      "type": "number | string"
+    },
+    "paginate-single-page": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "当表格数据只有一页时是否显示分页面",
+      "type": "boolean"
+    },
+    "pagination": {
+      "value": "",
+      "description": "`false | object`",
+      "default": "属性参考 [Pagination props](pagination#Pagination-Props)",
+      "type": "false | object"
+    },
+    "remote": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "表格是否自动分页数据，在异步的状况下你可能需要把它设为 true",
+      "type": "boolean"
+    },
+    "render-cell": {
+      "value": "",
+      "description": "`(value: any, rowData: object, column: DataTableBaseColumn) => VNodeChild`",
+      "default": "自定义单元格渲染，优先级低于列的 render",
+      "type": "(value: any, rowData: object, column: DataTableBaseColumn) => VNodeChild"
+    },
+    "render-expand-icon": {
+      "value": "",
+      "description": "`({ expanded }: { expanded: boolean }) => VNodeChild`",
+      "default": "自定义渲染展开图标",
+      "type": "({ expanded }: { expanded: boolean }) => VNodeChild"
+    },
+    "row-class-name": {
+      "value": "",
+      "description": "`string | (rowData: object, index : number) => string`",
+      "default": "每一行上的类名",
+      "type": "string | (rowData: object, index : number) => string"
+    },
+    "row-key": {
+      "value": "",
+      "description": "`(rowData: object) => (number | string)`",
+      "default": "通过行数据创建行的 key（如果你不想给每一行加上 key）",
+      "type": "(rowData: object) => (number | string)"
+    },
+    "row-props": {
+      "value": "",
+      "description": "`(rowData: object, rowIndex : number) => object`",
+      "default": "自定义行属性",
+      "type": "(rowData: object, rowIndex : number) => object"
+    },
+    "scroll-x": {
+      "value": "",
+      "description": "`number | string`",
+      "default": "表格内容的横向宽度，如果列被水平固定了，则需要设定它",
+      "type": "number | string"
+    },
+    "scrollbar-props": {
+      "value": "",
+      "description": "`object`",
+      "default": "属性参考 [Scrollbar props](scrollbar#Scrollbar-Props)",
+      "type": "object"
+    },
+    "single-column": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "是否不设定行的分割线，当参数为true时，则单元格没有下边线",
+      "type": "boolean"
+    },
+    "single-line": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "是否不设定列的分割线，当参数值为 true 时，则单元格没有右边线",
+      "type": "boolean"
+    },
+    "size": {
+      "value": "",
+      "description": "`'small' | 'medium' | 'large'`",
+      "default": "表格的尺寸",
+      "type": "'small' | 'medium' | 'large'"
+    },
+    "spin-props": {
+      "value": "",
+      "description": "`{ strokeWidth?: number, stroke?: string }`",
+      "default": "表格 spin 的属性",
+      "type": "{ strokeWidth?: number, stroke?: string }"
+    },
+    "sticky-expanded-rows": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "展开行是否不随表格横向滚动",
+      "type": "boolean"
+    },
+    "striped": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "是否使用斑马线条纹",
+      "type": "boolean"
+    },
+    "summary": {
+      "value": [
+        "表格总结栏的数据，类型见 <n-a href=\"#DataTableCreateSummary-Type\">DataTableCreateSummary Type<",
+        "n-a>"
+      ],
+      "description": "`DataTableCreateSummary`",
+      "default": "表格总结栏的数据，类型见 <n-a href=\"#DataTableCreateSummary-Type\">DataTableCreateSummary Type< | n-a>",
+      "type": "DataTableCreateSummary"
+    },
+    "summary-placement": {
+      "value": "",
+      "description": "`'top' | 'bottom'`",
+      "default": "总结栏的位置",
+      "type": "'top' | 'bottom'"
+    },
+    "table-layout": {
+      "value": "",
+      "description": "`'auto' | 'fixed'`",
+      "default": "表格的 table-layout 样式属性，在设定 ellipsis 或 max-height 的情况下固定为 'fixed'",
+      "type": "'auto' | 'fixed'"
+    },
+    "virtual-scroll": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "是否开启虚拟滚动，应对大规模数据，开启前请设定好 max-height。当 virtual-scroll 为 true 时，rowSpan 将不生效",
+      "type": "boolean"
+    },
+    "align": {
+      "value": "",
+      "description": "`'left' | 'right' | 'center'`",
+      "default": "列内的文本排列",
+      "type": "'left' | 'right' | 'center'"
+    },
+    "titleAlign": {
+      "value": "",
+      "description": "`'left' | 'right' | 'center'`",
+      "default": "表头列对齐方式，若不设置该项，则使用列内的文本排列",
+      "type": "'left' | 'right' | 'center'"
+    },
+    "cellProps": {
+      "value": "",
+      "description": "`(rowData: object, rowIndex: number) => object`",
+      "default": "该列单元格的 HTML 属性",
+      "type": "(rowData: object, rowIndex: number) => object"
+    },
+    "children": {
+      "value": "",
+      "description": "`DataTableColumn[]`",
+      "default": "成组列头的子节点",
+      "type": "DataTableColumn[]"
+    },
+    "className": {
+      "value": "",
+      "description": "`string`",
+      "default": "列的类名",
+      "type": "string"
+    },
+    "colSpan": {
+      "value": "",
+      "description": "`(rowData: object, rowIndex: number) => number`",
+      "default": "该列单元格的的 col span",
+      "type": "(rowData: object, rowIndex: number) => number"
+    },
+    "defaultFilterOptionValue": {
+      "value": "",
+      "description": "`string | number | null`",
+      "default": "非受控状态下默认的过滤器选项值（过滤器单选时生效）",
+      "type": "string | number | null"
+    },
+    "defaultFilterOptionValues": {
+      "value": "",
+      "description": "`Array<string | number>`",
+      "default": "非受控状态下默认的过滤器选项值（过滤器多选时生效）",
+      "type": "Array<string | number>"
+    },
+    "defaultSortOrder": {
+      "value": "",
+      "description": "`'descend' | 'ascend' | false`",
+      "default": "非受控状态下表格默认的排序方式",
+      "type": "'descend' | 'ascend' | false"
+    },
+    "disabled": {
+      "value": "",
+      "description": "`(rowData: object, rowIndex: number) => boolean`",
+      "default": "是否禁用",
+      "type": "(rowData: object, rowIndex: number) => boolean"
+    },
+    "ellipsis": {
+      "value": "",
+      "description": "`boolean | EllipsisProps`",
+      "default": "文本溢出的设置",
+      "type": "boolean | EllipsisProps"
+    },
+    "expandable": {
+      "value": "",
+      "description": "`(rowData: object) => boolean`",
+      "default": "行是否可展开，仅在 type 为 'expand' 时生效",
+      "type": "(rowData: object) => boolean"
+    },
+    "filter": {
+      "value": "",
+      "description": "`boolean | (optionValue: string | number, rowData: object) => boolean | 'default'`",
+      "default": "这一列的过滤方法。如果设为 true，表格将只会在这列展示一个排序图标，在异步的时候可能有用。",
+      "type": "boolean | (optionValue: string | number, rowData: object) => boolean | 'default'"
+    },
+    "filterMode": {
+      "value": "",
+      "description": "`'and' | 'or'`",
+      "default": "同一列筛选方式为与还是或",
+      "type": "'and' | 'or'"
+    },
+    "filterMultiple": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "同一列是否可以筛选多个",
+      "type": "boolean"
+    },
+    "filterOptionValue": {
+      "value": "",
+      "description": "`string | number | null`",
+      "default": "受控状态下，当前激活的过滤器选项值。如果不做设定，这一列的过滤行为将是非受控的（过滤器单选时生效）",
+      "type": "string | number | null"
+    },
+    "filterOptionValues": {
+      "value": "",
+      "description": "`Array<string | number> | null`",
+      "default": "受控状态下，当前激活的过滤器选项值数组。如果不做设定，这一列的过滤行为将是非受控的（过滤器多选时生效）",
+      "type": "Array<string | number> | null"
+    },
+    "filterOptions": {
+      "value": "",
+      "description": "`Array<{ label: string, value: string | number}>`",
+      "default": "filter 的 options 数据",
+      "type": "Array<{ label: string, value: string | number}>"
+    },
+    "resizable": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "列宽是否可以拖动",
+      "type": "boolean"
+    },
+    "fixed": {
+      "value": "",
+      "description": "`'left | 'right' | false`",
+      "default": "该列是否需要 fixed",
+      "type": "'left | 'right' | false"
+    },
+    "key": {
+      "value": "",
+      "description": "`string | number`",
+      "default": "这一列的 key，不可重复。",
+      "type": "string | number"
+    },
+    "minWidth": {
+      "value": "",
+      "description": "`number | string`",
+      "default": "列的最小宽度",
+      "type": "number | string"
+    },
+    "maxWidth": {
+      "value": "",
+      "description": "`number | string`",
+      "default": "列的最大宽度，仅在 resizable 为 true 的时候生效",
+      "type": "number | string"
+    },
+    "multiple": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "是否开启多选，仅在 type 为 'selection' 的时候生效",
+      "type": "boolean"
+    },
+    "options": {
+      "value": "",
+      "description": "`Array<'all' | 'none' | { label: string, key: string | number, onSelect: (pageData: RowData[]) => void }>`",
+      "default": "自定义选择项的选项，只对 type='selection' 生效",
+      "type": "Array<'all' | 'none' | { label: string, key: string | number, onSelect: (pageData: RowData[]) => void }>"
+    },
+    "render": {
+      "value": "",
+      "description": "`(rowData: object, rowIndex: number) => VNodeChild`",
+      "default": "渲染函数，渲染这一列的每一行的单元格",
+      "type": "(rowData: object, rowIndex: number) => VNodeChild"
+    },
+    "renderExpand": {
+      "value": "",
+      "description": "`(rowData: object, rowIndex: number) => VNodeChild`",
+      "default": "展开区域的渲染函数，仅在 type 为 'expand' 的时候生效",
+      "type": "(rowData: object, rowIndex: number) => VNodeChild"
+    },
+    "renderFilter": {
+      "value": "",
+      "description": "`(options: { active: boolean, show: boolean }) => VNodeChild`",
+      "default": "渲染函数，渲染过滤器触发元素",
+      "type": "(options: { active: boolean, show: boolean }) => VNodeChild"
+    },
+    "renderFilterIcon": {
+      "value": "",
+      "description": "`(options: { active: boolean, show: boolean }) => VNodeChild`",
+      "default": "渲染函数，渲染过滤器图标",
+      "type": "(options: { active: boolean, show: boolean }) => VNodeChild"
+    },
+    "renderFilterMenu": {
+      "value": "",
+      "description": "`(actions: { hide: () => void }) => VNodeChild`",
+      "default": "渲染函数，渲染这一列的过滤器菜单",
+      "type": "(actions: { hide: () => void }) => VNodeChild"
+    },
+    "renderSorter": {
+      "value": "",
+      "description": "`(options: { order: 'descend' | 'ascend' | false }) => VNodeChild`",
+      "default": "渲染函数，渲染排序触发",
+      "type": "(options: { order: 'descend' | 'ascend' | false }) => VNodeChild"
+    },
+    "renderSorterIcon": {
+      "value": "",
+      "description": "`(options: { order: 'descend' | 'ascend' | false }) => VNodeChild`",
+      "default": "渲染函数，渲染排序图标",
+      "type": "(options: { order: 'descend' | 'ascend' | false }) => VNodeChild"
+    },
+    "rowSpan": {
+      "value": "",
+      "description": "`(rowData: object, rowIndex: number) => number`",
+      "default": "该列单元格的 row span",
+      "type": "(rowData: object, rowIndex: number) => number"
+    },
+    "sortOrder": {
+      "value": "",
+      "description": "`'descend' | 'ascend' | false`",
+      "default": "受控状态下表格的排序方式。如果多列都设定了有效值，那么只有第一个会生效",
+      "type": "'descend' | 'ascend' | false"
+    },
+    "sorter": {
+      "value": "",
+      "description": "`boolean | function | 'default'`",
+      "default": "这一列的排序方法。如果设为 'default' 表格将会使用一个内置的排序函数；如果设为 true，表格将只会在这列展示一个排序图标，在异步的时候可能有用。其他情况下它工作的方式类似 Array.sort 的对比函数",
+      "type": "boolean | function | 'default'"
+    },
+    "tree": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "是否在这一列展示树形数据的展开按钮",
+      "type": "boolean"
+    },
+    "title": {
+      "value": "",
+      "description": "`string | (() => VNodeChild)`",
+      "default": "列的 title 信息，可以是渲染函数",
+      "type": "string | (() => VNodeChild)"
+    },
+    "titleRowSpan": {
+      "value": "",
+      "description": "`number`",
+      "default": "title 行所占的单元格的个数",
+      "type": "number"
+    },
+    "type": {
+      "value": "",
+      "description": "`'selection' | 'expand'`",
+      "default": "列的类型",
+      "type": "'selection' | 'expand'"
+    },
+    "width": {
+      "value": "",
+      "description": "`number | string`",
+      "default": "列的宽度（在列固定时是**必需**的，并且需要为 number 类型）",
+      "type": "number | string"
+    }
+  },
+  "methods": [],
+  "typeDetail": {
+    "DataTableSortState": [
+      {
+        "name": "columnKey",
+        "description": "-",
+        "type": "string | number"
+      },
+      {
+        "name": "sorter",
+        "description": "-",
+        "type": "'default' | function | boolean"
+      },
+      {
+        "name": "order",
+        "description": "-",
+        "type": "ascend' | 'descend' | false"
+      }
+    ]
+  },
+  "events": [
+    {
+      "name": "load",
+      "description": "`(rowData: object) => Promise<void>`",
+      "params": "`(rowData: object) => Promise<void>`"
+    },
+    {
+      "name": "scroll",
+      "description": "`(e: Event) => void`",
+      "params": "`(e: Event) => void`"
+    },
+    {
+      "name": "update:checked-row-keys",
+      "description": "`(keys: Array<string | number>, rows: object[], meta: { row: object | undefined, action: 'check' | 'uncheck' | 'checkAll' | 'uncheckAll' }) => void`",
+      "params": "`(keys: Array<string | number>, rows: object[], meta: { row: object | undefined, action: 'check' | 'uncheck' | 'checkAll' | 'uncheckAll' }) => void`"
+    },
+    {
+      "name": "update:expanded-row-keys",
+      "description": "`(keys: Array<string | number>) => void`",
+      "params": "`(keys: Array<string | number>) => void`"
+    },
+    {
+      "name": "update:filters",
+      "description": "`(filters: DataTableFilterState, initiatorColumn: DataTableBaseColumn)`",
+      "params": "`(filters: DataTableFilterState, initiatorColumn: DataTableBaseColumn)`"
+    },
+    {
+      "name": "update:page",
+      "description": "`(page: number)`",
+      "params": "`(page: number)`"
+    },
+    {
+      "name": "update:page-size",
+      "description": "`(pageSize: number) => void`",
+      "params": "`(pageSize: number) => void`"
+    },
+    {
+      "name": "update:sorter",
+      "description": "`(options: DataTableSortState | DataTableSortState[] | null) => void`",
+      "params": "`(options: DataTableSortState | DataTableSortState[] | null) => void`"
+    }
+  ],
+  "link": "https://www.naiveui.com/zh-CN/dark/components/data-table"
+}
