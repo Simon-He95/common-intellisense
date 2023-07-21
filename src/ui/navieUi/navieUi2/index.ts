@@ -9,6 +9,7 @@ import breadcrumbItem from './breadcrumbItem.json'
 import checkbox from './checkbox.json'
 import checkboxGroup from './checkboxGroup.json'
 import dialog from './dialog.json'
+import modal from './modal.json'
 
 export function navieUi2(extensionContext: any) {
   const map: any = [
@@ -22,6 +23,7 @@ export function navieUi2(extensionContext: any) {
     checkbox,
     checkboxGroup,
     dialog,
+    modal,
   ]
 
   return propsReducer(map)
@@ -74,6 +76,16 @@ export function navieUi2Components() {
   positive-text="确认"
   @positive-click="handlePositiveClick"
   @negative-click="handleNegativeClick"
+/>`],
+    ['n-modal', '模态框', `<n-modal
+  v-model:show="showModal"
+  preset="dialog"
+  title="确认"
+  content="你确认?"
+  positive-text="确认"
+  negative-text="算了"
+  @positive-click="submitCallback"
+  @negative-click="cancelCallback"
 />`],
   ]
   return componentsReducer(map)
