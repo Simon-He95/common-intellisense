@@ -23,7 +23,7 @@ import form from './form.json'
 import formItem from './formItem.json'
 import formItemGi from './formItemGi.json'
 
-export function navieUi2(extensionContext: any) {
+export function naiveUi2() {
   const map: any = [
     avatar,
     avatarGroup,
@@ -53,7 +53,7 @@ export function navieUi2(extensionContext: any) {
   return propsReducer(map)
 }
 
-export function navieUi2Components() {
+export function naiveUi2Components() {
   const map = [
     ['n-avatar', '头像', `<n-avatar
   round
@@ -177,7 +177,6 @@ Definitely Maybe
     ['n-form-item-gi', '表单', `<n-form-item-gi :span="12" label="Input" path="inputValue">
   <n-input v-model:value="model.inputValue" placeholder="Input" />
 </n-form-item-gi>`],
-
   ]
   return componentsReducer(map)
 }
