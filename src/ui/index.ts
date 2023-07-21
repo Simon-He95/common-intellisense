@@ -1,9 +1,10 @@
-import { elementUi2, elementUi2Components } from './elementUI'
+import { elementUi2, elementUi2Components } from './elementUi'
 import { antd4, antd4Components, antd5, antd5Components } from './antd'
 import { elementPlus2, elementPlus2Components } from './elementPlus'
 import { vant4, vant4Components } from './vant'
 import { antDesignVue2, antDesignVue2Components, antDesignVue3, antDesignVue3Components, antDesignVue4, antDesignVue4Components } from './antDesignVue'
 // import { varlet2, varlet2Components } from './varlet'
+import { navieUi2, navieUi2Components } from './navieUi'
 
 export default {
   elementUi2,
@@ -11,6 +12,7 @@ export default {
   antd5,
   elementPlus2,
   vant4,
+  navieUi2,
   antDesignVue4,
   antDesignVue3,
   antDesignVue2,
@@ -23,5 +25,6 @@ export default {
   antDesignVue4Components,
   antDesignVue3Components,
   antDesignVue2Components,
+  navieUi2Components,
   // varlet2Components,
 }
