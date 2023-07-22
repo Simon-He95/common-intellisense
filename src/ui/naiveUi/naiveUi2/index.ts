@@ -26,6 +26,7 @@ import tabs from './tabs.json'
 import tab from './tab.json'
 import tabPane from './tabPane.json'
 import upload from './upload.json'
+import autoComplete from './autoComplete.json'
 
 export function naiveUi2() {
   const map: any = [
@@ -56,6 +57,7 @@ export function naiveUi2() {
     tab,
     tabPane,
     upload,
+    autoComplete,
   ]
 
   return propsReducer(map)
@@ -214,6 +216,14 @@ Definitely Maybe
 >
   <n-button>上传文件</n-button>
 </n-upload>`],
+    ['n-auto-complete', '自动填充', `<n-auto-complete
+  v-model:value="value"
+  :input-props="{
+    autocomplete: 'disabled'
+  }"
+  :options="options"
+  placeholder="邮箱"
+/>`],
   ]
   return componentsReducer(map)
 }
