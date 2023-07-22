@@ -65,7 +65,9 @@ export function deactivate() {
 }
 
 const filters = ['js', 'ts', 'jsx', 'tsx', 'vue', 'svelte']
-
+const nameMap: any = {
+  '@varlet/ui': 'varlet',
+}
 function findUI() {
   const cwd = vscode.window.activeTextEditor?.document.uri.fsPath
   const suffix = cwd?.split('.').slice(-1)[0]
@@ -92,18 +94,19 @@ function findUI() {
     const uisName: string[] = []
     uis.forEach(([uiName, version]: any) => {
       const _version = version.match(/[^~]?([0-9]+)./)![1]
-      uisName.push(`${uiName.replace(/-(\w)/g, (_: string, v: string) => v.toUpperCase())}${_version}`)
+      const name = uiName.replace(/-(\w)/g, (_: string, v: string) => v.toUpperCase())
+      uisName.push(`${nameMap[name] ?? name}${_version}`)
     })
     if (uisName.every(name => UINames.includes(name)))
       return
     UINames = uisName
-
     optionsComponents = UINames.map((option: string) => `${option}Components`).reduce((result: any, name: string) => {
       const componentsNames = (UI as any)[name]?.()
       if (componentsNames)
         result.push(...componentsNames)
       return result
     }, [])
+
     UiCompletions = UINames.reduce((result: any, option: string) =>
       Object.assign(result, (UI as any)[option]?.(extensionContext))
     , {} as any)

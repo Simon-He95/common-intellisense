@@ -3,7 +3,7 @@ import { antd4, antd4Components, antd5, antd5Components } from './antd'
 import { elementPlus2, elementPlus2Components } from './elementPlus'
 import { vant4, vant4Components } from './vant'
 import { antDesignVue2, antDesignVue2Components, antDesignVue3, antDesignVue3Components, antDesignVue4, antDesignVue4Components } from './antDesignVue'
-// import { varlet2, varlet2Components } from './varlet'
+import { varlet2, varlet2Components } from './varlet'
 import { naiveUi2, naiveUi2Components } from './naiveUi'
 
 export default {
@@ -16,7 +16,7 @@ export default {
   antDesignVue4,
   antDesignVue3,
   antDesignVue2,
-  // varlet2,
+  varlet2,
   elementUi2Components,
   antd4Components,
   antd5Components,
@@ -26,5 +26,5 @@ export default {
   antDesignVue3Components,
   antDesignVue2Components,
   naiveUi2Components,
-  // varlet2Components,
+  varlet2Components,
 }

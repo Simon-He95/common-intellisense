@@ -1,7 +1,29 @@
 import { componentsReducer, propsReducer } from '../../utils'
+import button from './button.json'
+import vswitch from './switch.json'
+import buttonGroup from './buttonGroup.json'
+import checkbox from './checkbox.json'
+import checkboxGroup from './checkboxGroup.json'
+import form from './form.json'
+import pagination from './pagination.json'
+import tab from './tab.json'
+import tabItem from './tabItem.json'
+import tabs from './tabs.json'
+import table from './table.json'
 
 export function varlet2() {
   const map: any = [
+    button,
+    vswitch,
+    buttonGroup,
+    checkbox,
+    checkboxGroup,
+    form,
+    pagination,
+    tab,
+    tabItem,
+    tabs,
+    table,
   ]
 
   return propsReducer(map)
@@ -9,81 +31,43 @@ export function varlet2() {
 
 export function varlet2Components() {
   const map = [
-    ['Row', '布局'],
-    ['Col', '布局'],
-    ['Content', '内容部分，自带默认样式，其下可嵌套任何元素，只能放在 Layout 中'],
-    ['Header', '顶部布局，自带默认样式，其下可嵌套任何元素，只能放在 Layout 中。'],
-    ['Sider', '侧边栏，自带默认样式及基本功能，其下可嵌套任何元素，只能放在 Layout 中。'],
-    ['Layout', '布局容器，其下可嵌套 Header Sider Content Footer 或 Layout 本身，可以放在任何父容器中。'],
-    ['Footer', '底部布局，自带默认样式，其下可嵌套任何元素，只能放在 Layout 中。'],
-    ['Button', '按钮'],
-    ['Space', '间距'],
-    ['Anchor', '锚点'],
-    ['radio', '单选框'],
-    ['radio-group', '单选框组'],
-    ['radio-button', '按钮样式的单选组合'],
-    ['checkbox', '多选框'],
-    ['checkbox-group', '多选框组'],
-    ['checkbox-button', '按钮样式的多选组合'],
-    ['input', '输入框'],
-    ['input-number', '计数器'],
-    ['select', '选择器'],
-    ['option', '基础多选'],
-    ['option-group', '备选项进行分组展示'],
-    ['cascader', '级联选择器'],
-    ['switch', '开关'],
-    ['slider', '滑块'],
-    ['time-select', '时间选择器'],
-    ['date-picker', '日期选择器/日期时间选择器'],
-    ['upload', '上传'],
-    ['rate', '评分'],
-    ['color-picker', '颜色选择器'],
-    ['transfer', '穿梭框'],
-    ['form', '表单'],
-    ['form-item', '表单项'],
-    ['table', '表格'],
-    ['table-column', '表格项'],
-    ['tag', '标签'],
-    ['progress', '进度条'],
-    ['tree', '树形控件'],
-    ['pagination', '分页'],
-    ['badge', '标记'],
-    ['avatar', '头像'],
-    ['skeleton', '骨架屏'],
-    ['empty', '空状态'],
-    ['descriptions', '描述列表'],
-    ['descriptions-item', '描述列表项'],
-    ['result', '结果'],
-    ['statistic', '统计数值'],
-    ['alert', '警告'],
-    ['menu', '导航菜单'],
-    ['submenu', '导航子菜单'],
-    ['menu-item', '导航菜单项'],
-    ['tabs', '标签页'],
-    ['tab-pane', '标签项'],
-    ['breadcrumb', '面包屑'],
-    ['breadcrumb-item', '面包屑项'],
-    ['page-header', '页头'],
-    ['dropdown', '下拉菜单'],
-    ['dropdown-menu', '下拉菜单列表'],
-    ['dropdown-item', '下拉菜单列表项'],
-    ['steps', '步骤条'],
-    ['dialog', '对话框'],
-    ['tooltip', '文字提示'],
-    ['popover', '弹出框'],
-    ['popconfirm', '气泡确认框'],
-    ['card', '卡片'],
-    ['carousel', '走马灯'],
-    ['carousel-item', '走马灯项'],
-    ['collapse', '折叠面板'],
-    ['collapse-item', '折叠面板项'],
-    ['timeline', '时间线'],
-    ['timeline-item', '时间线项'],
-    ['divider', '分割线'],
-    ['calendar', '日历'],
-    ['image', '图片'],
-    ['backtop', '回到顶部'],
-    ['drawer', '抽屉'],
+    ['var-button', '按钮', '<var-button>默认按钮</var-button>'],
+    ['var-switch', '开关', '<var-switch v-model="value" />'],
+    ['var-button-group', '按钮组', `<var-button-group type="primary" mode="text">
+  <var-button>按钮</var-button>
+  <var-button>按钮</var-button>
+  <var-button>按钮</var-button>
+</var-button-group>`],
+    ['var-checkbox', '复选框', '<var-checkbox v-model="value">当前的值: {{ value }}</var-checkbox>'],
+    ['var-checkbox-group', '复选框组', `<var-checkbox-group
+  v-model="value"
+  :rules="[v => v.length === 2 || '请全选']"
+>
+  <var-checkbox :checked-value="0">吃饭</var-checkbox>
+  <var-checkbox :checked-value="1">睡觉</var-checkbox>
+</var-checkbox-group>`],
+    ['var-form', '表单', `<var-form 
+    ref="form" 
+    :disabled="disabled"
+    :readonly="readonly" 
+    scroll-to-error="start"
+  ></var-form>`],
+    ['var-pagination', '分页', '<var-pagination :current="3" :total="120" />'],
+    ['var-tabs', '选项卡组', `<var-tabs
+  elevation
+  color="var(--color-primary)"
+  active-color="#fff"
+  inactive-color="hsla(0, 0%, 100%, .6)"
+  disabled-color="#aaa"
+  v-model:active="active"
+>
+  <var-tab>选项1</var-tab>
+  <var-tab>选项2</var-tab>
+  <var-tab disabled>禁用选项</var-tab>
+</var-tabs>`],
+    ['var-tab', '选项卡', '<var-tab>选项1</var-tab>'],
+    ['var-tab-item', '选项卡', '<var-tab-item>选项1</var-tab-item>'],
+    ['var-table', '表格', '<var-table>选项1</var-table>'],
   ]
   return componentsReducer(map)
 }

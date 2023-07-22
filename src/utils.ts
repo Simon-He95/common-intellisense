@@ -143,7 +143,7 @@ function jsxDfs(children: any, position: vscode.Position) {
   }
 }
 
-const UINames = ['element-ui', 'element-plus', 'antd', 'ant-design-vue', 'varlet', 'vant', 'naive-ui']
+const UINames = ['element-ui', 'element-plus', 'antd', 'ant-design-vue', '@varlet/ui', 'vant', 'naive-ui']
 export async function findPkgUI(cwd?: string) {
   if (!cwd)
     return
