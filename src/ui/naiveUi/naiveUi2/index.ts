@@ -22,6 +22,10 @@ import dataTable from './dataTable.json'
 import form from './form.json'
 import formItem from './formItem.json'
 import formItemGi from './formItemGi.json'
+import tabs from './tabs.json'
+import tab from './tab.json'
+import tabPane from './tabPane.json'
+import upload from './upload.json'
 
 export function naiveUi2() {
   const map: any = [
@@ -48,6 +52,10 @@ export function naiveUi2() {
     form,
     formItem,
     formItemGi,
+    tabs,
+    tab,
+    tabPane,
+    upload,
   ]
 
   return propsReducer(map)
@@ -177,6 +185,35 @@ Definitely Maybe
     ['n-form-item-gi', '表单', `<n-form-item-gi :span="12" label="Input" path="inputValue">
   <n-input v-model:value="model.inputValue" placeholder="Input" />
 </n-form-item-gi>`],
+    ['n-tabs', '标签页', `<n-tabs
+  v-model:value="name"
+  type="card"
+  closable
+  tab-style="min-width: 80px;"
+  @close="handleClose"
+>
+  <n-tab-pane
+    v-for="panel in panels"
+    :key="panel"
+    :tab="panel.toString()"
+    :name="panel"
+  >
+    {{ panel }}
+  </n-tab-pane>
+</n-tabs>`],
+    ['n-tab', '标签页'],
+    ['n-tabPane', '标签页'],
+    ['n-upload', '上传', `<n-upload
+  action="https://www.mocky.io/v2/5e4bafc63100007100d8b70f"
+  :headers="{
+    'naive-info': 'hello!'
+  }"
+  :data="{
+    'naive-data': 'cool! naive!'
+  }"
+>
+  <n-button>上传文件</n-button>
+</n-upload>`],
   ]
   return componentsReducer(map)
 }
