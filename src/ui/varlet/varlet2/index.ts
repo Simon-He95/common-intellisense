@@ -10,6 +10,8 @@ import tab from './tab.json'
 import tabItem from './tabItem.json'
 import tabs from './tabs.json'
 import table from './table.json'
+import breadcrumbs from './breadcrumbs.json'
+import breadcrumb from './breadcrumb.json'
 
 export function varlet2() {
   const map: any = [
@@ -24,6 +26,8 @@ export function varlet2() {
     tabItem,
     tabs,
     table,
+    breadcrumbs,
+    breadcrumb,
   ]
 
   return propsReducer(map)
@@ -68,6 +72,8 @@ export function varlet2Components() {
     ['var-tab', '选项卡', '<var-tab>选项1</var-tab>'],
     ['var-tab-item', '选项卡', '<var-tab-item>选项1</var-tab-item>'],
     ['var-table', '表格', '<var-table>选项1</var-table>'],
+    ['var-breadcrumbs', '面包屑', '<var-breadcrumbs></var-breadcrumbs>'],
+    ['var-breadcrumb', '面包屑', '<var-breadcrumb></var-breadcrumb>'],
   ]
   return componentsReducer(map)
 }
