@@ -1,0 +1,216 @@
+{
+  "name": "VarMenu",
+  "props": {
+    "v-model:show": {
+      "value": "",
+      "description": "是否显示菜单",
+      "default": "default",
+      "type": "是否显示菜单"
+    },
+    "placement": {
+      "value": "",
+      "description": "菜单弹出位置",
+      "default": "cover-top-start",
+      "type": "菜单弹出位置"
+    },
+    "offset-x": {
+      "value": "",
+      "description": "x 轴偏移量， 相对于菜单对齐后的位置",
+      "default": "0",
+      "type": "x 轴偏移量， 相对于菜单对齐后的位置"
+    },
+    "offset-y": {
+      "value": "",
+      "description": "y 轴偏移量， 相对于菜单对齐后的位置",
+      "default": "0",
+      "type": "y 轴偏移量， 相对于菜单对齐后的位置"
+    },
+    "teleport": {
+      "value": "",
+      "description": "菜单挂载的位置",
+      "default": "body",
+      "type": "菜单挂载的位置"
+    },
+    "disabled": {
+      "value": "",
+      "description": "是否禁用菜单",
+      "default": "false",
+      "type": "是否禁用菜单"
+    },
+    "trigger": {
+      "value": "",
+      "description": "菜单触发方式，可选值为 `click` `hover`, `click` 为点击时触发, `hover` 为悬停时触发",
+      "default": "click",
+      "type": "菜单触发方式，可选值为 click hover, click 为点击时触发, hover 为悬停时触发"
+    },
+    "reference": {
+      "value": "",
+      "description": "菜单关联的触发元素选择器，用于指定菜单的特定子元素为触发元素",
+      "default": "-",
+      "type": "菜单关联的触发元素选择器，用于指定菜单的特定子元素为触发元素"
+    },
+    "elevation": {
+      "value": "",
+      "description": "海拔高度，可选值为 `true` `false` 和 `0-24` 的等级",
+      "default": "true",
+      "type": "海拔高度，可选值为 true false 和 0-24 的等级"
+    },
+    "same-width": {
+      "value": "",
+      "description": "是否与触发元素同宽",
+      "default": "false",
+      "type": "是否与触发元素同宽"
+    },
+    "default-style": {
+      "value": "",
+      "description": "是否启用默认样式",
+      "default": "true",
+      "type": "是否启用默认样式"
+    },
+    "popover-class": {
+      "value": "",
+      "description": "弹出层的 class",
+      "default": "-",
+      "type": "弹出层的 class"
+    },
+    "close-on-click-reference": {
+      "value": "",
+      "description": "是否在点击菜单触发元素后关闭菜单",
+      "default": "false",
+      "type": "是否在点击菜单触发元素后关闭菜单"
+    }
+  },
+  "methods": [],
+  "typeDetail": {
+    "$Placement": [
+      {
+        "name": "`top`",
+        "description": "顶部中心位置",
+        "type": ""
+      },
+      {
+        "name": "`top-start`",
+        "description": "顶部左侧位置",
+        "type": ""
+      },
+      {
+        "name": "`top-end`",
+        "description": "顶部右侧位置",
+        "type": ""
+      },
+      {
+        "name": "`bottom`",
+        "description": "底部中心位置",
+        "type": ""
+      },
+      {
+        "name": "`bottom-start`",
+        "description": "底部左侧位置",
+        "type": ""
+      },
+      {
+        "name": "`bottom-end`",
+        "description": "底部右侧位置",
+        "type": ""
+      },
+      {
+        "name": "`right`",
+        "description": "右侧中心位置",
+        "type": ""
+      },
+      {
+        "name": "`right-start`",
+        "description": "右侧上方位置",
+        "type": ""
+      },
+      {
+        "name": "`right-end`",
+        "description": "右侧下方位置",
+        "type": ""
+      },
+      {
+        "name": "`left`",
+        "description": "左侧中心位置",
+        "type": ""
+      },
+      {
+        "name": "`left-start`",
+        "description": "左侧上方位置",
+        "type": ""
+      },
+      {
+        "name": "`left-end`",
+        "description": "左侧下方位置",
+        "type": ""
+      },
+      {
+        "name": "`cover-top`",
+        "description": "顶部中心位置, 覆盖触发器",
+        "type": ""
+      },
+      {
+        "name": "`cover-top-start`",
+        "description": "顶部左侧位置, 覆盖触发器",
+        "type": ""
+      },
+      {
+        "name": "`cover-top-end`",
+        "description": "顶部右侧位置, 覆盖触发器",
+        "type": ""
+      },
+      {
+        "name": "`cover-bottom`",
+        "description": "底部中心位置, 覆盖触发器",
+        "type": ""
+      },
+      {
+        "name": "`cover-bottom-start`",
+        "description": "底部左侧位置, 覆盖触发器",
+        "type": ""
+      },
+      {
+        "name": "`cover-bottom-end`",
+        "description": "底部右侧位置, 覆盖触发器",
+        "type": ""
+      },
+      {
+        "name": "`cover-left`",
+        "description": "左侧位置, 覆盖触发器",
+        "type": ""
+      },
+      {
+        "name": "`cover-right`",
+        "description": "右侧位置, 覆盖触发器",
+        "type": ""
+      }
+    ]
+  },
+  "events": [
+    {
+      "name": "open",
+      "description": "打开菜单时触发",
+      "params": "打开菜单时触发"
+    },
+    {
+      "name": "opened",
+      "description": "打开菜单动画结束时触发",
+      "params": "打开菜单动画结束时触发"
+    },
+    {
+      "name": "close",
+      "description": "关闭菜单时触发",
+      "params": "关闭菜单时触发"
+    },
+    {
+      "name": "closed",
+      "description": "关闭菜单动画结束时触发",
+      "params": "关闭菜单动画结束时触发"
+    },
+    {
+      "name": "click-outside",
+      "description": "点击菜单外部时触发",
+      "params": "点击菜单外部时触发"
+    }
+  ],
+  "link": "https://varlet.gitee.io/varlet-ui/#/zh-CN/loading-bar"
+}

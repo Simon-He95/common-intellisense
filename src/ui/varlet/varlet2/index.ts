@@ -31,6 +31,13 @@ import imagePreview from './imagePreview.json'
 import indexBar from './indexBar.json'
 import indexAnchor from './indexAnchor.json'
 import input from './input.json'
+import link from './link.json'
+import list from './list.json'
+import loading from './loading.json'
+import menu from './menu.json'
+import overlay from './overlay.json'
+import paper from './paper.json'
+import picker from './picker.json'
 
 export function varlet2() {
   const map: any = [
@@ -66,6 +73,13 @@ export function varlet2() {
     indexBar,
     indexAnchor,
     input,
+    link,
+    list,
+    loading,
+    menu,
+    overlay,
+    paper,
+    picker,
   ]
 
   return propsReducer(map)
@@ -140,6 +154,21 @@ export function varlet2Components() {
   标题 {{ item }}
 </var-index-anchor>`],
     ['var-input', '输入框 输入框的行为和基本原生一致，用户输入时始终获得一个符合 type 规则的字符串，可选择 standard 和 outlined 两种风格，默认为 standard。', '<var-input placeholder="请输入文本" v-model="value" />'],
+    ['var-link', '链接 链接组件，用于页面跳转。', '<var-link>默认链接</var-link>'],
+    ['var-list', '无限滚动列表 无限滚动加载列表、触底加载，支持手动检查位置并加载。支持自定义加载状态、错误状态、数据加载完成状态。', `<var-list
+  :finished="finished"
+  v-model:loading="loading"
+  @load="load"
+>
+  <var-cell :key="item" v-for="item in list">
+    列表项: {{ item }}
+  </var-cell>
+</var-list>`],
+    ['var-loading', '加载 加载组件，用于数据加载时执行动画。', '<var-loading type="circle" />'],
+    ['var-menu', '菜单 当元素点击时显示一个菜单，通过控制弹出位置和偏移量改变菜单的显示位置。', '<var-menu></var-menu>'],
+    ['var-overlay', '遮罩层 创建一个遮罩层，用于强调特定的页面元素。', '<var-overlay v-model:show="show" />'],
+    ['var-paper', '纸张 创建一个更容易的使用海拔效果和水波效果的容器', '<var-paper :elevation="2" :width="100" :height="100" ripple />'],
+    ['var-picker', '多列选择器 提供了函数和组件两种调用方式。同时支持级联模式，可以处理多级联动。', '<var-picker :columns="columns" />'],
 
   ]
   return componentsReducer(map)

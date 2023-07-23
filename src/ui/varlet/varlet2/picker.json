@@ -1,0 +1,240 @@
+{
+  "name": "VarPicker",
+  "props": {
+    "columns": {
+      "value": "",
+      "description": "列内容",
+      "default": "[]",
+      "type": "列内容"
+    },
+    "title": {
+      "value": "",
+      "description": "标题",
+      "default": "提示",
+      "type": "标题"
+    },
+    "text-key": {
+      "value": "",
+      "description": "文本的属性 key",
+      "default": "text",
+      "type": "文本的属性 key"
+    },
+    "toolbar": {
+      "value": "",
+      "description": "是否显示上方工具栏",
+      "default": "true",
+      "type": "是否显示上方工具栏"
+    },
+    "cascade": {
+      "value": "",
+      "description": "是否开启级联模式",
+      "default": "true",
+      "type": "是否开启级联模式"
+    },
+    "cascade-initial-indexes": {
+      "value": "",
+      "description": "级联模式的初始化索引列表",
+      "default": "-",
+      "type": "级联模式的初始化索引列表"
+    },
+    "text-formatter": {
+      "value": "",
+      "description": "文本格式化",
+      "default": "text => text",
+      "type": "文本格式化"
+    },
+    "option-height": {
+      "value": "",
+      "description": "选项的高度(px rem)",
+      "default": "44",
+      "type": "选项的高度(px rem)"
+    },
+    "option-count": {
+      "value": "",
+      "description": "可见的选项个数",
+      "default": "6",
+      "type": "可见的选项个数"
+    },
+    "confirm-button-text": {
+      "value": "",
+      "description": "确认按钮文字",
+      "default": "确认",
+      "type": "确认按钮文字"
+    },
+    "cancel-button-text": {
+      "value": "",
+      "description": "取消按钮文字",
+      "default": "取消",
+      "type": "取消按钮文字"
+    },
+    "confirm-button-text-color": {
+      "value": "",
+      "description": "确认按钮文字颜色",
+      "default": "-",
+      "type": "确认按钮文字颜色"
+    },
+    "cancel-button-text-color": {
+      "value": "",
+      "description": "取消按钮文字颜色",
+      "default": "-",
+      "type": "取消按钮文字颜色"
+    }
+  },
+  "methods": [],
+  "typeDetail": {
+    "Options": [
+      {
+        "name": "`columns`",
+        "description": "列内容",
+        "type": "NormalColumn[] | CascadeColumn[] | Texts"
+      },
+      {
+        "name": "`title`",
+        "description": "标题",
+        "type": "string"
+      },
+      {
+        "name": "`textKey`",
+        "description": "文本的属性 key",
+        "type": "string"
+      },
+      {
+        "name": "`toolbar`",
+        "description": "是否显示上方工具栏",
+        "type": "boolean"
+      },
+      {
+        "name": "`cascade`",
+        "description": "是否开启级联模式",
+        "type": "boolean"
+      },
+      {
+        "name": "`cascadeInitialIndexes`",
+        "description": "级联模式的初始化索引列表",
+        "type": "number[]"
+      },
+      {
+        "name": "`textFormatter`",
+        "description": "文本格式化",
+        "type": "(text: any, columnIndex: number) => any"
+      },
+      {
+        "name": "`optionHeight`",
+        "description": "选项的高度",
+        "type": "string | number"
+      },
+      {
+        "name": "`optionCount`",
+        "description": "可见的选项个数",
+        "type": "string | number"
+      },
+      {
+        "name": "`confirmButtonText`",
+        "description": "确认按钮文字",
+        "type": "string"
+      },
+      {
+        "name": "`cancelButtonText`",
+        "description": "取消按钮文字",
+        "type": "string"
+      },
+      {
+        "name": "`confirmButtonTextColor`",
+        "description": "确认按钮文字颜色",
+        "type": "string"
+      },
+      {
+        "name": "`cancelButtonTextColor`",
+        "description": "取消按钮文字颜色",
+        "type": "string"
+      },
+      {
+        "name": "`cancelButtonTextColor`",
+        "description": "取消按钮文字颜色",
+        "type": "string"
+      },
+      {
+        "name": "`safeArea`",
+        "description": "是否开启底部安全区适配",
+        "type": "boolean"
+      },
+      {
+        "name": "`onOpen`",
+        "description": "弹出层开启回调",
+        "type": "() => void"
+      },
+      {
+        "name": "`onOpened`",
+        "description": "弹出层开启动画结束回调",
+        "type": "() => void"
+      },
+      {
+        "name": "`onClose`",
+        "description": "弹出层关闭回调",
+        "type": "() => void"
+      },
+      {
+        "name": "`onClosed`",
+        "description": "关闭弹出层动画结束时回调",
+        "type": "(texts: Texts, indexes: number[]) => void"
+      },
+      {
+        "name": "`onChange`",
+        "description": "选择内容变化时回调",
+        "type": "(texts: Texts, indexes: number[]) => void"
+      },
+      {
+        "name": "`onConfirm`",
+        "description": "点击确认按钮时触发",
+        "type": "(texts: Texts, indexes: number[]) => void"
+      },
+      {
+        "name": "`onCancel`",
+        "description": "点击取消按钮时触发",
+        "type": "(texts: Texts, indexes: number[]) => void"
+      }
+    ],
+    "NormalColumn": [
+      {
+        "name": "`texts`",
+        "description": "文本数组",
+        "type": "Texts"
+      },
+      {
+        "name": "`initialIndex`",
+        "description": "初始化索引",
+        "type": "number"
+      }
+    ],
+    "CascadeColumn": [
+      {
+        "name": "`text`",
+        "description": "每一行的文本",
+        "type": "any"
+      },
+      {
+        "name": "`children`",
+        "description": "子级",
+        "type": "CascadeColumn[]"
+      }
+    ]
+  },
+  "events": [
+    {
+      "name": "change",
+      "description": "选择内容变化时触发",
+      "params": "选择内容变化时触发"
+    },
+    {
+      "name": "cancel",
+      "description": "点击取消按钮时触发",
+      "params": "点击取消按钮时触发"
+    },
+    {
+      "name": "confirm",
+      "description": "点击确认按钮时触发",
+      "params": "点击确认按钮时触发"
+    }
+  ],
+  "link": "https://varlet.gitee.io/varlet-ui/#/zh-CN/picker"
+}
