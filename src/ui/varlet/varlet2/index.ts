@@ -23,6 +23,8 @@ import countdown from './countdown.json'
 import counter from './counter.json'
 import datePicker from './datePicker.json'
 import divider from './divider.json'
+import drag from './drag.json'
+import ellipsis from './ellipsis.json'
 
 export function varlet2() {
   const map: any = [
@@ -50,6 +52,8 @@ export function varlet2() {
     counter,
     datePicker,
     divider,
+    drag,
+    ellipsis,
   ]
 
   return propsReducer(map)
@@ -110,6 +114,12 @@ export function varlet2Components() {
     ['var-counter', '计数器', '<var-counter v-model="value"/>'],
     ['var-date-picker', '日期选择器 用于选择日期或日期范围。', '<var-date-picker v-model="date" />'],
     ['var-divider', '分割线 用于分隔列表或布局的各个部分。', '<var-divider />'],
+    ['var-drag', '拖拽 使元素可以自由拖拽。', `<var-drag>
+  <var-button type="primary">基本使用</var-button>
+</var-drag>`],
+    ['var-ellipsis', '文本省略 主要用于省略单行文字和多行文字。', `<var-ellipsis style="max-width: 170px">
+  其实没有什么事情是不可能的，我都拿到世界冠军了，真的没有什么事情是不可能的。
+</var-ellipsis>`],
   ]
   return componentsReducer(map)
 }
