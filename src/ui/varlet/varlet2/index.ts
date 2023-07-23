@@ -38,6 +38,7 @@ import menu from './menu.json'
 import overlay from './overlay.json'
 import paper from './paper.json'
 import picker from './picker.json'
+import popup from './popup.json'
 
 export function varlet2() {
   const map: any = [
@@ -80,6 +81,7 @@ export function varlet2() {
     overlay,
     paper,
     picker,
+    popup,
   ]
 
   return propsReducer(map)
@@ -169,7 +171,7 @@ export function varlet2Components() {
     ['var-overlay', '遮罩层 创建一个遮罩层，用于强调特定的页面元素。', '<var-overlay v-model:show="show" />'],
     ['var-paper', '纸张 创建一个更容易的使用海拔效果和水波效果的容器', '<var-paper :elevation="2" :width="100" :height="100" ripple />'],
     ['var-picker', '多列选择器 提供了函数和组件两种调用方式。同时支持级联模式，可以处理多级联动。', '<var-picker :columns="columns" />'],
-
+    ['var-popup', '弹出层 创建一个可以从上、下、左、右、中心弹出的容器，用于展示信息。默认使用 teleport 插入到 body 尾部。', '<var-popup v-model:show="center"></var-popup>'],
   ]
   return componentsReducer(map)
 }
