@@ -39,6 +39,9 @@ import overlay from './overlay.json'
 import paper from './paper.json'
 import picker from './picker.json'
 import popup from './popup.json'
+import progress from './progress.json'
+import pullRefresh from './pullRefresh.json'
+import rate from './rate.json'
 
 export function varlet2() {
   const map: any = [
@@ -82,6 +85,9 @@ export function varlet2() {
     paper,
     picker,
     popup,
+    progress,
+    pullRefresh,
+    rate,
   ]
 
   return propsReducer(map)
@@ -172,6 +178,9 @@ export function varlet2Components() {
     ['var-paper', '纸张 创建一个更容易的使用海拔效果和水波效果的容器', '<var-paper :elevation="2" :width="100" :height="100" ripple />'],
     ['var-picker', '多列选择器 提供了函数和组件两种调用方式。同时支持级联模式，可以处理多级联动。', '<var-picker :columns="columns" />'],
     ['var-popup', '弹出层 创建一个可以从上、下、左、右、中心弹出的容器，用于展示信息。默认使用 teleport 插入到 body 尾部。', '<var-popup v-model:show="center"></var-popup>'],
+    ['var-progress', '进度条 展示操作的当前进度。', '<var-progress :value="20" />'],
+    ['var-pull-refresh', '下拉刷新 用于提供下拉刷新的交互操作', ' <var-pull-refresh v-model="isRefresh" @refresh="refresh"></var-pull-refresh>'],
+    ['var-rate', '评分', '<var-rate v-model="score" :count="8"/>'],
   ]
   return componentsReducer(map)
 }
