@@ -21,6 +21,7 @@ import collapse from './collapse.json'
 import collapseItem from './collapseItem.json'
 import countdown from './countdown.json'
 import counter from './counter.json'
+import datePicker from './datePicker.json'
 
 export function varlet2() {
   const map: any = [
@@ -46,6 +47,7 @@ export function varlet2() {
     collapseItem,
     countdown,
     counter,
+    datePicker,
   ]
 
   return propsReducer(map)
@@ -104,6 +106,7 @@ export function varlet2Components() {
     ['var-collapse', '折叠面板 可以折叠/展开的内容区域。', '<var-collapse-item title="标题" name="1">文本</var-collapse-item>'],
     ['var-countdown', '倒计时 用于实时展示倒计时数值，支持毫秒精度。', '<var-countdown :time="time" />'],
     ['var-counter', '计数器', '<var-counter v-model="value"/>'],
+    ['var-date-picker', '日期选择器 用于选择日期或日期范围。', '<var-date-picker v-model="date" />'],
   ]
   return componentsReducer(map)
 }
