@@ -5,6 +5,7 @@ import { vant4, vant4Components } from './vant'
 import { antDesignVue2, antDesignVue2Components, antDesignVue3, antDesignVue3Components, antDesignVue4, antDesignVue4Components } from './antDesignVue'
 import { varlet2, varlet2Components } from './varlet'
 import { naiveUi2, naiveUi2Components } from './naiveUi'
+import { vuetify3, vuetify3Components } from './vuetify'
 
 export default {
   elementUi2,
@@ -17,6 +18,7 @@ export default {
   antDesignVue3,
   antDesignVue2,
   varlet2,
+  vuetify3,
   elementUi2Components,
   antd4Components,
   antd5Components,
@@ -27,4 +29,5 @@ export default {
   antDesignVue2Components,
   naiveUi2Components,
   varlet2Components,
+  vuetify3Components,
 }
