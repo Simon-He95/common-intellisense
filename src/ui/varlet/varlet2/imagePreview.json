@@ -1,0 +1,173 @@
+{
+  "name": "VarImagePreview",
+  "props": {
+    "show": {
+      "value": "",
+      "description": "是否显示",
+      "default": "false",
+      "type": "是否显示"
+    },
+    "images": {
+      "value": "",
+      "description": "需要预览的图片 URL 数组",
+      "default": "[]",
+      "type": "需要预览的图片 URL 数组"
+    },
+    "initial-index": {
+      "value": "",
+      "description": "图片预览起始的索引",
+      "default": "0",
+      "type": "图片预览起始的索引"
+    },
+    "zoom": {
+      "value": "",
+      "description": "双击放大倍数",
+      "default": "2",
+      "type": "双击放大倍数"
+    },
+    "closeable": {
+      "value": "",
+      "description": "是否显示关闭按钮",
+      "default": "false",
+      "type": "是否显示关闭按钮"
+    },
+    "loop": {
+      "value": "",
+      "description": "是否开启循环播放",
+      "default": "true",
+      "type": "是否开启循环播放"
+    },
+    "indicator": {
+      "value": "",
+      "description": "是否显示分页",
+      "default": "true",
+      "type": "是否显示分页"
+    },
+    "lock-scroll": {
+      "value": "",
+      "description": "锁定滚动",
+      "default": "true",
+      "type": "锁定滚动"
+    },
+    "teleport": {
+      "value": "",
+      "description": "弹出层挂载的位置",
+      "default": "body",
+      "type": "弹出层挂载的位置"
+    },
+    "image-prevent-default": {
+      "value": "",
+      "description": "是否禁止图片默认行为",
+      "default": "false",
+      "type": "是否禁止图片默认行为"
+    }
+  },
+  "methods": [],
+  "typeDetail": {
+    "ImagePreview": [
+      {
+        "name": "`images`",
+        "description": "需要预览的图片 URL 数组或者单个图片的 URL",
+        "type": "string[] | string"
+      },
+      {
+        "name": "`initialIndex`",
+        "description": "图片预览起始的索引",
+        "type": "string | number"
+      },
+      {
+        "name": "`zoom`",
+        "description": "双击放大倍数",
+        "type": "string | number"
+      },
+      {
+        "name": "`closeable`",
+        "description": "是否显示关闭按钮",
+        "type": "boolean"
+      },
+      {
+        "name": "`loop`",
+        "description": "是否开启循环播放",
+        "type": "boolean"
+      },
+      {
+        "name": "`indicator`",
+        "description": "是否显示分页",
+        "type": "boolean"
+      },
+      {
+        "name": "`lockScroll`",
+        "description": "锁定滚动",
+        "type": "boolean"
+      },
+      {
+        "name": "`imagePreventDefault`",
+        "description": "是否禁止图片默认行为",
+        "type": "boolean"
+      },
+      {
+        "name": "`onChange`",
+        "description": "切换图片时的回调函数，回调参数为当前索引",
+        "type": "(index: number) => void"
+      },
+      {
+        "name": "`onOpen`",
+        "description": "image-preview 开启时候的回调",
+        "type": "() => void"
+      },
+      {
+        "name": "`onOpened`",
+        "description": "image-preview 动画结束时候的回调",
+        "type": "() => void"
+      },
+      {
+        "name": "`onClose`",
+        "description": "image-preview 时关闭时候的回调",
+        "type": "() => void"
+      },
+      {
+        "name": "`onClosed`",
+        "description": "image-preview 关闭动画结束时候的回调",
+        "type": "() => void"
+      },
+      {
+        "name": "`onLongPress`",
+        "description": "长按图片时的回调函数，回调参数为当前索引",
+        "type": "(index: number) => void"
+      }
+    ]
+  },
+  "events": [
+    {
+      "name": "change",
+      "description": "切换图片时的回调函数，回调参数为当前索引",
+      "params": "切换图片时的回调函数，回调参数为当前索引"
+    },
+    {
+      "name": "open",
+      "description": "打开 image-preview 时触发",
+      "params": "打开 image-preview 时触发"
+    },
+    {
+      "name": "opened",
+      "description": "打开 image-preview 动画结束时触发",
+      "params": "打开 image-preview 动画结束时触发"
+    },
+    {
+      "name": "close",
+      "description": "关闭 image-preview 时触发",
+      "params": "关闭 image-preview 时触发"
+    },
+    {
+      "name": "closed",
+      "description": "关闭 image-preview 动画结束时触发",
+      "params": "关闭 image-preview 动画结束时触发"
+    },
+    {
+      "name": "long-press",
+      "description": "长按图片时的回调函数，回调参数为当前索引",
+      "params": "长按图片时的回调函数，回调参数为当前索引"
+    }
+  ],
+  "link": "https://varlet.gitee.io/varlet-ui/#/zh-CN/image-preview"
+}

@@ -25,6 +25,11 @@ import datePicker from './datePicker.json'
 import divider from './divider.json'
 import drag from './drag.json'
 import ellipsis from './ellipsis.json'
+import fab from './fab.json'
+import formDetails from './formDetails.json'
+import imagePreview from './imagePreview.json'
+import indexBar from './indexBar.json'
+import indexAnchor from './indexAnchor.json'
 
 export function varlet2() {
   const map: any = [
@@ -54,6 +59,11 @@ export function varlet2() {
     divider,
     drag,
     ellipsis,
+    fab,
+    formDetails,
+    imagePreview,
+    indexBar,
+    indexAnchor,
   ]
 
   return propsReducer(map)
@@ -120,6 +130,13 @@ export function varlet2Components() {
     ['var-ellipsis', '文本省略 主要用于省略单行文字和多行文字。', `<var-ellipsis style="max-width: 170px">
   其实没有什么事情是不可能的，我都拿到世界冠军了，真的没有什么事情是不可能的。
 </var-ellipsis>`],
+    ['var-fab', '悬浮动作按钮 悬浮动作按钮组件，按下可显示一组动作按钮。', '<var-fab :type="type" />'],
+    ['var-form-details', '表单 提供了对所有表单组件进行控制的能力。', '<var-form-details :error-message="errorMessage" :extra-message="extraMessage" />'],
+    ['var-image-preview', '图片预览 图片放大预览，支持双击倍数放大，支持函数调用和组件调用两种方式。', '<var-image-preview :images="images" v-model:show="show" />'],
+    ['var-index-bar', '索引栏 用于跳转到页面指定位置。', '<var-index-bar duration="300" @change="change"></var-index-bar>'],
+    ['var-index-anchor', '索引栏 用于跳转到页面指定位置。', `<var-index-anchor :index="item" class="anchor">
+  标题 {{ item }}
+</var-index-anchor>`],
   ]
   return componentsReducer(map)
 }
