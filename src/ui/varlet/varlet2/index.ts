@@ -30,6 +30,7 @@ import formDetails from './formDetails.json'
 import imagePreview from './imagePreview.json'
 import indexBar from './indexBar.json'
 import indexAnchor from './indexAnchor.json'
+import input from './input.json'
 
 export function varlet2() {
   const map: any = [
@@ -64,6 +65,7 @@ export function varlet2() {
     imagePreview,
     indexBar,
     indexAnchor,
+    input,
   ]
 
   return propsReducer(map)
@@ -137,6 +139,8 @@ export function varlet2Components() {
     ['var-index-anchor', '索引栏 用于跳转到页面指定位置。', `<var-index-anchor :index="item" class="anchor">
   标题 {{ item }}
 </var-index-anchor>`],
+    ['var-input', '输入框 输入框的行为和基本原生一致，用户输入时始终获得一个符合 type 规则的字符串，可选择 standard 和 outlined 两种风格，默认为 standard。', '<var-input placeholder="请输入文本" v-model="value" />'],
+
   ]
   return componentsReducer(map)
 }
