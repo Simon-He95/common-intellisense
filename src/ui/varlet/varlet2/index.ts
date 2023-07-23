@@ -22,6 +22,7 @@ import collapseItem from './collapseItem.json'
 import countdown from './countdown.json'
 import counter from './counter.json'
 import datePicker from './datePicker.json'
+import divider from './divider.json'
 
 export function varlet2() {
   const map: any = [
@@ -48,6 +49,7 @@ export function varlet2() {
     countdown,
     counter,
     datePicker,
+    divider,
   ]
 
   return propsReducer(map)
@@ -107,6 +109,7 @@ export function varlet2Components() {
     ['var-countdown', '倒计时 用于实时展示倒计时数值，支持毫秒精度。', '<var-countdown :time="time" />'],
     ['var-counter', '计数器', '<var-counter v-model="value"/>'],
     ['var-date-picker', '日期选择器 用于选择日期或日期范围。', '<var-date-picker v-model="date" />'],
+    ['var-divider', '分割线 用于分隔列表或布局的各个部分。', '<var-divider />'],
   ]
   return componentsReducer(map)
 }
