@@ -17,6 +17,8 @@ import cell from './cell.json'
 import chip from './chip.json'
 import col from './col.json'
 import row from './row.json'
+import collapse from './collapse.json'
+import collapseItem from './collapseItem.json'
 
 export function varlet2() {
   const map: any = [
@@ -38,6 +40,8 @@ export function varlet2() {
     chip,
     col,
     row,
+    collapse,
+    collapseItem,
   ]
 
   return propsReducer(map)
@@ -92,6 +96,8 @@ export function varlet2Components() {
     ['var-chip', '纸片', '<var-chip>默认纸片</var-chip>'],
     ['var-col', '布局 提供 span 属性设置这一列所占的份数，offset 属性设置这一列偏移的份数。', '<var-col :span="8">span: 8</var-col>'],
     ['var-row', '布局 组件把一行平均划分为 24列 栅格( 24份 )', '<var-row></van-row>'],
+    ['var-collapse', '折叠面板 可以折叠/展开的内容区域。', '<var-collapse v-model="value" @change="changeHandle"></van-row>'],
+    ['var-collapse', '折叠面板 可以折叠/展开的内容区域。', '<var-collapse-item title="标题" name="1">文本</var-collapse-item>'],
   ]
   return componentsReducer(map)
 }
