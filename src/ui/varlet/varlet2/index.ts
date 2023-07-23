@@ -19,6 +19,7 @@ import col from './col.json'
 import row from './row.json'
 import collapse from './collapse.json'
 import collapseItem from './collapseItem.json'
+import countdown from './countdown.json'
 
 export function varlet2() {
   const map: any = [
@@ -42,6 +43,7 @@ export function varlet2() {
     row,
     collapse,
     collapseItem,
+    countdown,
   ]
 
   return propsReducer(map)
@@ -98,6 +100,7 @@ export function varlet2Components() {
     ['var-row', '布局 组件把一行平均划分为 24列 栅格( 24份 )', '<var-row></van-row>'],
     ['var-collapse', '折叠面板 可以折叠/展开的内容区域。', '<var-collapse v-model="value" @change="changeHandle"></van-row>'],
     ['var-collapse', '折叠面板 可以折叠/展开的内容区域。', '<var-collapse-item title="标题" name="1">文本</var-collapse-item>'],
+    ['var-countdown', '倒计时 用于实时展示倒计时数值，支持毫秒精度。', '<var-countdown :time="time" />'],
   ]
   return componentsReducer(map)
 }
