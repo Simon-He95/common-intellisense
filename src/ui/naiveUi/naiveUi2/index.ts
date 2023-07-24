@@ -44,6 +44,7 @@ import result from './result.json'
 import scrollbar from './scrollbar.json'
 import skeleton from './skeleton.json'
 import slider from './slider.json'
+import space from './space.json'
 
 export function naiveUi2() {
   const map: any = [
@@ -92,6 +93,7 @@ export function naiveUi2() {
     scrollbar,
     skeleton,
     slider,
+    space,
   ]
 
   return propsReducer(map)
@@ -288,6 +290,12 @@ Definitely Maybe
     ['n-scrollbar', '滚动条', '<n-scrollbar style="max-height: 120px"></n-scrollbar>'],
     ['n-skeleton', '骨架屏', '<n-skeleton text :repeat="2" /> <n-skeleton text style="width: 60%" />'],
     ['n-slider', '滑动选择', '<n-slider v-model:value="value" :step="10" />'],
+    ['n-space', '间距', `<n-space>
+  <n-button>Oops!</n-button>
+  <n-button>Oops!</n-button>
+  <n-button>Oops!</n-button>
+  <n-button>Long! Long! Cross the line!</n-button>
+</n-space>`],
   ]
   return componentsReducer(map)
 }
