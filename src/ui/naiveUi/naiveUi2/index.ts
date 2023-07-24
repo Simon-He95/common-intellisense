@@ -40,6 +40,7 @@ import menu from './menu.json'
 import messageProvider from './messageProvider.json'
 import notificationProvider from './notificationProvider.json'
 import rate from './rate.json'
+import result from './result.json'
 
 export function naiveUi2() {
   const map: any = [
@@ -84,6 +85,7 @@ export function naiveUi2() {
     messageProvider,
     notificationProvider,
     rate,
+    result,
   ]
 
   return propsReducer(map)
@@ -272,6 +274,11 @@ Definitely Maybe
   <content />
 </n-notification-provider>`],
     ['n-rate', '评分', '<n-rate />'],
+    ['n-result', '结果页', `<n-result status="404" title="404 资源不存在" description="生活总归带点荒谬">
+  <template #footer>
+    <n-button>找点乐子吧</n-button>
+  </template>
+</n-result>`],
   ]
   return componentsReducer(map)
 }
