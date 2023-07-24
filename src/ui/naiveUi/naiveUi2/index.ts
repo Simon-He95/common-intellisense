@@ -38,6 +38,7 @@ import layoutFooter from './layoutFooter.json'
 import loadingBarProvider from './loadingBarProvider.json'
 import menu from './menu.json'
 import messageProvider from './messageProvider.json'
+import notificationProvider from './notificationProvider.json'
 
 export function naiveUi2() {
   const map: any = [
@@ -80,6 +81,7 @@ export function naiveUi2() {
     loadingBarProvider,
     menu,
     messageProvider,
+    notificationProvider,
   ]
 
   return propsReducer(map)
@@ -264,6 +266,9 @@ Definitely Maybe
     ['n-message-provider', '信息', `<n-message-provider>
   <content />
 </n-message-provider>`],
+    ['n-notification-provider', '通知', `<n-notification-provider>
+  <content />
+</n-notification-provider>`],
   ]
   return componentsReducer(map)
 }
