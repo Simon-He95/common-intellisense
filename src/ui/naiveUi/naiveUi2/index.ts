@@ -45,6 +45,7 @@ import scrollbar from './scrollbar.json'
 import skeleton from './skeleton.json'
 import slider from './slider.json'
 import space from './space.json'
+import spin from './spin.json'
 
 export function naiveUi2() {
   const map: any = [
@@ -94,6 +95,7 @@ export function naiveUi2() {
     skeleton,
     slider,
     space,
+    spin,
   ]
 
   return propsReducer(map)
@@ -296,6 +298,7 @@ Definitely Maybe
   <n-button>Oops!</n-button>
   <n-button>Long! Long! Cross the line!</n-button>
 </n-space>`],
+    ['n-spin', '加载', '<n-spin size="small" />'],
   ]
   return componentsReducer(map)
 }
