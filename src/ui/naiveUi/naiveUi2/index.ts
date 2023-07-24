@@ -28,6 +28,8 @@ import tabPane from './tabPane.json'
 import upload from './upload.json'
 import autoComplete from './autoComplete.json'
 import image from './image.json'
+import input from './input.json'
+import inputNumber from './inputNumber.json'
 
 export function naiveUi2() {
   const map: any = [
@@ -60,6 +62,8 @@ export function naiveUi2() {
     upload,
     autoComplete,
     image,
+    input,
+    inputNumber,
   ]
 
   return propsReducer(map)
@@ -230,6 +234,8 @@ Definitely Maybe
   width="100"
   src="https://07akioni.oss-cn-beijing.aliyuncs.com/07akioni.jpeg"
 />`],
+    ['n-input', '文本输入', '<n-input v-model:value="value" type="text" placeholder="基本的 Input" />'],
+    ['n-input-number', '数字输入', '<n-input-number v-model:value="value" clearable />'],
   ]
   return componentsReducer(map)
 }
