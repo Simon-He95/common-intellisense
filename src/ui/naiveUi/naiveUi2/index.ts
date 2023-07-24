@@ -39,6 +39,7 @@ import loadingBarProvider from './loadingBarProvider.json'
 import menu from './menu.json'
 import messageProvider from './messageProvider.json'
 import notificationProvider from './notificationProvider.json'
+import rate from './rate.json'
 
 export function naiveUi2() {
   const map: any = [
@@ -82,6 +83,7 @@ export function naiveUi2() {
     menu,
     messageProvider,
     notificationProvider,
+    rate,
   ]
 
   return propsReducer(map)
@@ -269,6 +271,7 @@ Definitely Maybe
     ['n-notification-provider', '通知', `<n-notification-provider>
   <content />
 </n-notification-provider>`],
+    ['n-rate', '评分', '<n-rate />'],
   ]
   return componentsReducer(map)
 }
