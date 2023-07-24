@@ -42,6 +42,7 @@ import notificationProvider from './notificationProvider.json'
 import rate from './rate.json'
 import result from './result.json'
 import scrollbar from './scrollbar.json'
+import skeleton from './skeleton.json'
 
 export function naiveUi2() {
   const map: any = [
@@ -88,6 +89,7 @@ export function naiveUi2() {
     rate,
     result,
     scrollbar,
+    skeleton,
   ]
 
   return propsReducer(map)
@@ -282,6 +284,7 @@ Definitely Maybe
   </template>
 </n-result>`],
     ['n-scrollbar', '滚动条', '<n-scrollbar style="max-height: 120px"></n-scrollbar>'],
+    ['n-skeleton', '骨架屏', '<n-skeleton text :repeat="2" /> <n-skeleton text style="width: 60%" />'],
   ]
   return componentsReducer(map)
 }
