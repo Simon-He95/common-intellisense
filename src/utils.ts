@@ -65,6 +65,13 @@ function dfs(children: any, position: vscode.Position) {
         tag: child.tag,
       }
     }
+    const pos = position.character - loc.start.column
+    const temp = '$$__temp__$$'
+    const newContent = loc.source.slice(0, pos) + temp + loc.source.slice(pos + 1)
+    const reg = /['"]\s*\$\$__temp__\$\$\s*['"]/
+    if (reg.test(newContent))
+      return
+
     return {
       type: 'text',
       isInTemplate: true,
@@ -136,6 +143,7 @@ function jsxDfs(children: any, position: vscode.Position) {
         tag: openingElement.name.name,
       }
     }
+
     return {
       isInTemplate,
       type: 'text',
