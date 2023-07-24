@@ -30,6 +30,11 @@ import autoComplete from './autoComplete.json'
 import image from './image.json'
 import input from './input.json'
 import inputNumber from './inputNumber.json'
+import layout from './layout.json'
+import layoutSider from './layoutSider.json'
+import layoutContent from './layoutContent.json'
+import layoutHeader from './layoutHeader.json'
+import layoutFooter from './layoutFooter.json'
 
 export function naiveUi2() {
   const map: any = [
@@ -64,6 +69,11 @@ export function naiveUi2() {
     image,
     input,
     inputNumber,
+    layout,
+    layoutSider,
+    layoutContent,
+    layoutHeader,
+    layoutFooter,
   ]
 
   return propsReducer(map)
@@ -236,6 +246,11 @@ Definitely Maybe
 />`],
     ['n-input', '文本输入', '<n-input v-model:value="value" type="text" placeholder="基本的 Input" />'],
     ['n-input-number', '数字输入', '<n-input-number v-model:value="value" clearable />'],
+    ['n-layout', '布局', '<n-layout></n-layout>'],
+    ['n-layout-sider', '布局', '<n-layout-sider content-style="padding: 24px;">海淀桥</n-layout-sider>'],
+    ['n-layout-header', '布局', '<n-layout-header content-style="padding: 24px;">海淀桥</n-layout-header>'],
+    ['n-layout-content', '布局', '<n-layout-content content-style="padding: 24px;">海淀桥</n-layout-content>'],
+    ['n-layout-footer', '布局', '<n-layout-footer content-style="padding: 24px;">海淀桥</n-layout-footer>'],
   ]
   return componentsReducer(map)
 }
