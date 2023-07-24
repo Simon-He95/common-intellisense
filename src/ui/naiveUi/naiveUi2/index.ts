@@ -43,6 +43,7 @@ import rate from './rate.json'
 import result from './result.json'
 import scrollbar from './scrollbar.json'
 import skeleton from './skeleton.json'
+import slider from './slider.json'
 
 export function naiveUi2() {
   const map: any = [
@@ -90,6 +91,7 @@ export function naiveUi2() {
     result,
     scrollbar,
     skeleton,
+    slider,
   ]
 
   return propsReducer(map)
@@ -285,6 +287,7 @@ Definitely Maybe
 </n-result>`],
     ['n-scrollbar', '滚动条', '<n-scrollbar style="max-height: 120px"></n-scrollbar>'],
     ['n-skeleton', '骨架屏', '<n-skeleton text :repeat="2" /> <n-skeleton text style="width: 60%" />'],
+    ['n-slider', '滑动选择', '<n-slider v-model:value="value" :step="10" />'],
   ]
   return componentsReducer(map)
 }
