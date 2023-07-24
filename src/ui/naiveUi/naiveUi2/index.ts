@@ -37,6 +37,7 @@ import layoutHeader from './layoutHeader.json'
 import layoutFooter from './layoutFooter.json'
 import loadingBarProvider from './loadingBarProvider.json'
 import menu from './menu.json'
+import messageProvider from './messageProvider.json'
 
 export function naiveUi2() {
   const map: any = [
@@ -78,6 +79,7 @@ export function naiveUi2() {
     layoutFooter,
     loadingBarProvider,
     menu,
+    messageProvider,
   ]
 
   return propsReducer(map)
@@ -259,6 +261,9 @@ Definitely Maybe
   <content />
 </n-loading-bar-provider>`],
     ['n-menu', '菜单', '<n-menu v-model:value="activeKey" mode="horizontal" :options="menuOptions" />'],
+    ['n-message-provider', '信息', `<n-message-provider>
+  <content />
+</n-message-provider>`],
   ]
   return componentsReducer(map)
 }
