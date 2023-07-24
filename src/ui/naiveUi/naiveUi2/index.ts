@@ -47,6 +47,7 @@ import slider from './slider.json'
 import space from './space.json'
 import spin from './spin.json'
 import statistic from './statistic.json'
+import tag from './tag.json'
 
 export function naiveUi2() {
   const map: any = [
@@ -98,6 +99,7 @@ export function naiveUi2() {
     space,
     spin,
     statistic,
+    tag,
   ]
 
   return propsReducer(map)
@@ -311,6 +313,7 @@ Definitely Maybe
   title="Come Together"
   description="Here come old flat top He come grooving up slowly"
 />`],
+    ['n-tag', '标签', '<n-tag> 爱在西元前 </n-tag>'],
   ]
   return componentsReducer(map)
 }
