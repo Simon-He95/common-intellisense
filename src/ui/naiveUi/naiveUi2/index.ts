@@ -41,6 +41,7 @@ import messageProvider from './messageProvider.json'
 import notificationProvider from './notificationProvider.json'
 import rate from './rate.json'
 import result from './result.json'
+import scrollbar from './scrollbar.json'
 
 export function naiveUi2() {
   const map: any = [
@@ -86,6 +87,7 @@ export function naiveUi2() {
     notificationProvider,
     rate,
     result,
+    scrollbar,
   ]
 
   return propsReducer(map)
@@ -279,6 +281,7 @@ Definitely Maybe
     <n-button>找点乐子吧</n-button>
   </template>
 </n-result>`],
+    ['n-scrollbar', '滚动条', '<n-scrollbar style="max-height: 120px"></n-scrollbar>'],
   ]
   return componentsReducer(map)
 }
