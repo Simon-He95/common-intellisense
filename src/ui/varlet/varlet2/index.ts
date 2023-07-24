@@ -42,6 +42,21 @@ import popup from './popup.json'
 import progress from './progress.json'
 import pullRefresh from './pullRefresh.json'
 import rate from './rate.json'
+import result from './result.json'
+import select from './select.json'
+import skeleton from './skeleton.json'
+import slider from './slider.json'
+import snackbar from './snackbar.json'
+import space from './space.json'
+import step from './step.json'
+import steps from './steps.json'
+import sticky from './sticky.json'
+import swipe from './swipe.json'
+import swipeItem from './swipeItem.json'
+import tabsItems from './tabsItems.json'
+import timePicker from './timePicker.json'
+import tooltip from './tooltip.json'
+import uploader from './uploader.json'
 
 export function varlet2() {
   const map: any = [
@@ -88,6 +103,21 @@ export function varlet2() {
     progress,
     pullRefresh,
     rate,
+    result,
+    select,
+    skeleton,
+    slider,
+    snackbar,
+    space,
+    step,
+    steps,
+    sticky,
+    swipe,
+    swipeItem,
+    tabsItems,
+    timePicker,
+    tooltip,
+    uploader,
   ]
 
   return propsReducer(map)
@@ -181,6 +211,53 @@ export function varlet2Components() {
     ['var-progress', '进度条 展示操作的当前进度。', '<var-progress :value="20" />'],
     ['var-pull-refresh', '下拉刷新 用于提供下拉刷新的交互操作', ' <var-pull-refresh v-model="isRefresh" @refresh="refresh"></var-pull-refresh>'],
     ['var-rate', '评分', '<var-rate v-model="score" :count="8"/>'],
+    ['van-result', '结果 用于向用户展示结果。', `<var-result 
+  type="success" 
+  title="成功"
+  description="嗨~ 我是结果页的一段描述~"
+>
+  <template #footer>
+    <var-button type="success">知道了</var-button>
+  </template>
+</var-result>`],
+    ['van-select', '选择框 通过下拉菜单展示并选择内容。', `<var-select placeholder="文本关联值" v-model="value2">
+  <var-option label="吃饭" :value="1" />
+  <var-option label="睡觉" :value="2" />
+</var-select>`],
+    ['van-skeleton', '骨架屏 显示一些带过渡效果的占位元素，优化加载过程。', '<var-skeleton :loading="loading">加载的数据</var-skeleton>'],
+    ['van-slider', '滑块 用于在给定范围内取值。', '<var-slider v-model="value" />'],
+    ['van-snackbar', '消息条 用于向用户显示快速消息。', '<var-snackbar v-model:show="show">这是一个消息条！！</var-snackbar>'],
+    ['van-space', '间隔 组件库提供了 <var-space> 布局的组件，使您更有效率的进行 flex 布局。', '<var-space></var-space'],
+    ['van-steps', '步骤条 引导用户按照流程完成任务的导航条。', `<var-steps :active="active">
+  <var-step>步骤1</var-step>
+  <var-step>步骤2</var-step>
+  <var-step>步骤3</var-step>
+  <var-step>步骤4</var-step>
+</var-steps>`],
+    ['van-step', '步骤条 引导用户按照流程完成任务的导航条。', '<var-step>步骤1</var-step>'],
+    ['van-sticky', '粘性布局 粘性布局默认使用监听容器滚动事件的 scroll 模式，如有需要可以切换成基于 css sticky 的模式来提升性能。', `<var-sticky :offset-top="54">
+  <var-button type="primary">基本使用</var-button>
+</var-sticky>`],
+    ['van-swipe', '轮播', `<var-swipe class="swipe-example">
+<var-swipe-item>
+  <img class="swipe-example-image" src="https://varlet.gitee.io/varlet-ui/cat.jpg">
+</var-swipe-item>
+</var-swipe>`],
+    ['van-swipe-item', '轮播', `<var-swipe-item>
+  <img class="swipe-example-image" src="https://varlet.gitee.io/varlet-ui/cat.jpg">
+</var-swipe-item>`],
+    ['van-tabs-items', '选项卡组 使用 Tabs、Tab 实现选项卡组的切换。使用 TabsItems、TabItem 实现和选项卡组的视图联动', `<var-tabs-items v-model:active="active">
+  <var-tab-item>
+    呜啦啦啦火车笛，随着奔腾的马蹄。 小妹妹吹着口琴，夕阳下美了剪影。 我用子弹写日记，介绍完了风景。
+    接下来换介绍我自己。 我虽然是个牛仔，在酒吧只点牛奶。 为什么不喝啤酒，因为啤酒伤身体。
+  </var-tab-item>
+</var-tabs-items`],
+    ['van-time-picker', '时间选择器 用于选择时间。', '<var-time-picker v-model="date" />'],
+    ['van-tooltip', '提示 当元素点击或悬停时显示一个提示，通过控制弹出位置和偏移量改变提示的显示位置。', `<var-tooltip content="Tooltip">
+  <var-button type="primary">基本使用</var-button>
+</var-tooltip>`],
+    ['van-uploader', '文件上传 提供了文件读取、图片/视频预览能力。 通过监听 after-read 事件获取文件上传服务器。', '<var-uploader v-model="files" @after-read="handleAfterRead"/>'],
+
   ]
   return componentsReducer(map)
 }

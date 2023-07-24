@@ -1,0 +1,188 @@
+{
+  "name": "VarUploader",
+  "props": {
+    "v-model": {
+      "value": "",
+      "description": "文件列表",
+      "default": "[]",
+      "type": "文件列表"
+    },
+    "accept": {
+      "value": [
+        "image",
+        "*"
+      ],
+      "description": "接受的文件类型，与原生属性一致",
+      "default": "image | *",
+      "type": "接受的文件类型，与原生属性一致"
+    },
+    "capture": {
+      "value": "",
+      "description": "获取文件方式，与原生属性一致",
+      "default": "-",
+      "type": "获取文件方式，与原生属性一致"
+    },
+    "multiple": {
+      "value": "",
+      "description": "是否多选文件",
+      "default": "false",
+      "type": "是否多选文件"
+    },
+    "readonly": {
+      "value": "",
+      "description": "是否只读",
+      "default": "false",
+      "type": "是否只读"
+    },
+    "disabled": {
+      "value": "",
+      "description": "是否禁用",
+      "default": "false",
+      "type": "是否禁用"
+    },
+    "elevation": {
+      "value": "",
+      "description": "海拔高度，可选值为 `true` `false` 和 `0-24` 的等级, 不为简单模式时生效",
+      "default": "true",
+      "type": "海拔高度，可选值为 true false 和 0-24 的等级, 不为简单模式时生效"
+    },
+    "removable": {
+      "value": "",
+      "description": "是否可以删除",
+      "default": "true",
+      "type": "是否可以删除"
+    },
+    "maxlength": {
+      "value": "",
+      "description": "最大文件个数",
+      "default": "-",
+      "type": "最大文件个数"
+    },
+    "maxsize": {
+      "value": "",
+      "description": "最大文件大小",
+      "default": "-",
+      "type": "最大文件大小"
+    },
+    "previewed": {
+      "value": "",
+      "description": "是否允许预览",
+      "default": "true",
+      "type": "是否允许预览"
+    },
+    "ripple": {
+      "value": "",
+      "description": "是否开启水波纹",
+      "default": "true",
+      "type": "是否开启水波纹"
+    },
+    "hide-list": {
+      "value": "",
+      "description": "是否隐藏文件列表",
+      "default": "false",
+      "type": "是否隐藏文件列表"
+    },
+    "validate-trigger": {
+      "value": "",
+      "description": "触发验证的时机， 可选值为 `onChange` `onRemove`",
+      "default": "['onChange', 'onRemove']",
+      "type": "触发验证的时机， 可选值为 onChange onRemove"
+    },
+    "rules": {
+      "value": "",
+      "description": "验证规则，返回 `true` 表示验证通过，其余的值则转换为文本作为用户提示",
+      "default": "-",
+      "type": "验证规则，返回 true 表示验证通过，其余的值则转换为文本作为用户提示"
+    }
+  },
+  "methods": [],
+  "typeDetail": {
+    "VarFile": [
+      {
+        "name": "`file`",
+        "description": "原生文件",
+        "type": "File"
+      },
+      {
+        "name": "`name`",
+        "description": "文件名",
+        "type": "string"
+      },
+      {
+        "name": "`url`",
+        "description": "文件地址",
+        "type": "string"
+      },
+      {
+        "name": "`cover`",
+        "description": "封面图",
+        "type": "string"
+      },
+      {
+        "name": "`fit`",
+        "description": "封面图填充模式，可选值为 `fill` `contain` `cover` `none` `scale-down`",
+        "type": "string"
+      },
+      {
+        "name": "`state`",
+        "description": "文件上传状态，可选值为 `loading` `success` `error`",
+        "type": "string"
+      },
+      {
+        "name": "`progress`",
+        "description": "文件上传进度，范围 [0, 100]",
+        "type": "number"
+      }
+    ],
+    "VarFileUtils": [
+      {
+        "name": "`getLoading`",
+        "description": "获取 `state` 等于 `loading` 的文件集合",
+        "type": "`-`"
+      },
+      {
+        "name": "`getSuccess`",
+        "description": "获取 `state` 等于 `success` 的文件集合",
+        "type": "`-`"
+      },
+      {
+        "name": "`getError`",
+        "description": "获取 `state` 等于 `error` 的文件集合",
+        "type": "`-`"
+      }
+    ]
+  },
+  "events": [
+    {
+      "name": "before-filter",
+      "description": "`before-read` 前触发，对文件列表进行过滤",
+      "params": "`before-read` 前触发，对文件列表进行过滤"
+    },
+    {
+      "name": "before-read",
+      "description": "文件读取前触发，返回假值阻止文件读取(支持 promise)",
+      "params": "文件读取前触发，返回假值阻止文件读取(支持 promise)"
+    },
+    {
+      "name": "after-read",
+      "description": "文件读取后触发",
+      "params": "文件读取后触发"
+    },
+    {
+      "name": "oversize",
+      "description": "文件超过限制大小时触发",
+      "params": "文件超过限制大小时触发"
+    },
+    {
+      "name": "before-remove",
+      "description": "文件删除前触发，返回假值阻止文件删除(支持 promise)",
+      "params": "文件删除前触发，返回假值阻止文件删除(支持 promise)"
+    },
+    {
+      "name": "remove",
+      "description": "文件删除时触发",
+      "params": "文件删除时触发"
+    }
+  ],
+  "link": "https://varlet.gitee.io/varlet-ui/#/zh-CN/uploader"
+}

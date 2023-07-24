@@ -1,0 +1,93 @@
+{
+  "name": "VarTimePicker",
+  "props": {
+    "v-model": {
+      "value": "",
+      "description": "被选择的时间（ISO 8601 格式，`HH:mm` 或 `HH:mm:ss`）",
+      "default": "-",
+      "type": "被选择的时间（ISO 8601 格式，HH:mm 或 HH:mm:ss）"
+    },
+    "format": {
+      "value": "",
+      "description": "选择器时间格式，可选值为 `ampm 24hr`",
+      "default": "ampm",
+      "type": "选择器时间格式，可选值为 ampm 24hr"
+    },
+    "color": {
+      "value": "",
+      "description": "选择器的颜色",
+      "default": "#2979ff",
+      "type": "选择器的颜色"
+    },
+    "header-color": {
+      "value": "",
+      "description": "标题背景色。如果未指定，将使用由 color 属性或默认颜色。",
+      "default": "#2979ff",
+      "type": "标题背景色。如果未指定，将使用由 color 属性或默认颜色。"
+    },
+    "elevation": {
+      "value": "",
+      "description": "海拔高度，可选值为 `true` `false` 和 `0-24` 的等级",
+      "default": "false",
+      "type": "海拔高度，可选值为 true false 和 0-24 的等级"
+    },
+    "min": {
+      "value": "",
+      "description": "允许的最小时间（ISO 8601格式）",
+      "default": "-",
+      "type": "允许的最小时间（ISO 8601格式）"
+    },
+    "max": {
+      "value": "",
+      "description": "允许的最大时间（ISO 8601格式）",
+      "default": "-",
+      "type": "允许的最大时间（ISO 8601格式）"
+    },
+    "allowed-time": {
+      "value": "",
+      "description": "限制可以选择的时间",
+      "default": "-",
+      "type": "限制可以选择的时间"
+    },
+    "readonly": {
+      "value": "",
+      "description": "是否只读",
+      "default": "false",
+      "type": "是否只读"
+    },
+    "use-seconds": {
+      "value": "",
+      "description": "是否显示秒",
+      "default": "false",
+      "type": "是否显示秒"
+    }
+  },
+  "methods": [],
+  "typeDetail": {
+    "AllowedTime": [
+      {
+        "name": "`hours`",
+        "description": "限制可选的 `hour`",
+        "type": "Function: hour => boolean"
+      },
+      {
+        "name": "`minutes`",
+        "description": "限制可选的 `minute`",
+        "type": "Function: minute => boolean"
+      },
+      {
+        "name": "`seconds`",
+        "description": "限制可选的 `second`",
+        "type": "Function: second => boolean"
+      }
+    ]
+  },
+  "events": [
+    {
+      "name": "change",
+      "description": "时间变化时触发",
+      "params": "时间变化时触发"
+    }
+  ],
+  "link": "https://varlet.gitee.io/varlet-ui/#/zh-CN/time-picker"
+}
