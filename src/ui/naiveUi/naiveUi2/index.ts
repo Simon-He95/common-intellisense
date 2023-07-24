@@ -35,6 +35,7 @@ import layoutSider from './layoutSider.json'
 import layoutContent from './layoutContent.json'
 import layoutHeader from './layoutHeader.json'
 import layoutFooter from './layoutFooter.json'
+import loadingBarProvider from './loadingBarProvider.json'
 
 export function naiveUi2() {
   const map: any = [
@@ -74,6 +75,7 @@ export function naiveUi2() {
     layoutContent,
     layoutHeader,
     layoutFooter,
+    loadingBarProvider,
   ]
 
   return propsReducer(map)
@@ -251,6 +253,9 @@ Definitely Maybe
     ['n-layout-header', '布局', '<n-layout-header content-style="padding: 24px;">海淀桥</n-layout-header>'],
     ['n-layout-content', '布局', '<n-layout-content content-style="padding: 24px;">海淀桥</n-layout-content>'],
     ['n-layout-footer', '布局', '<n-layout-footer content-style="padding: 24px;">海淀桥</n-layout-footer>'],
+    ['n-loading-bar-provider', '加载条', `<n-loading-bar-provider>
+  <content />
+</n-loading-bar-provider>`],
   ]
   return componentsReducer(map)
 }
