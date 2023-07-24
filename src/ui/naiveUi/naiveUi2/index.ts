@@ -36,6 +36,7 @@ import layoutContent from './layoutContent.json'
 import layoutHeader from './layoutHeader.json'
 import layoutFooter from './layoutFooter.json'
 import loadingBarProvider from './loadingBarProvider.json'
+import menu from './menu.json'
 
 export function naiveUi2() {
   const map: any = [
@@ -76,6 +77,7 @@ export function naiveUi2() {
     layoutHeader,
     layoutFooter,
     loadingBarProvider,
+    menu,
   ]
 
   return propsReducer(map)
@@ -256,6 +258,7 @@ Definitely Maybe
     ['n-loading-bar-provider', '加载条', `<n-loading-bar-provider>
   <content />
 </n-loading-bar-provider>`],
+    ['n-menu', '菜单', '<n-menu v-model:value="activeKey" mode="horizontal" :options="menuOptions" />'],
   ]
   return componentsReducer(map)
 }
