@@ -27,6 +27,7 @@ import tab from './tab.json'
 import tabPane from './tabPane.json'
 import upload from './upload.json'
 import autoComplete from './autoComplete.json'
+import image from './image.json'
 
 export function naiveUi2() {
   const map: any = [
@@ -58,6 +59,7 @@ export function naiveUi2() {
     tabPane,
     upload,
     autoComplete,
+    image,
   ]
 
   return propsReducer(map)
@@ -223,6 +225,10 @@ Definitely Maybe
   }"
   :options="options"
   placeholder="邮箱"
+/>`],
+    ['n-image', '图像', `<n-image
+  width="100"
+  src="https://07akioni.oss-cn-beijing.aliyuncs.com/07akioni.jpeg"
 />`],
   ]
   return componentsReducer(map)
