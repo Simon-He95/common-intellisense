@@ -302,6 +302,15 @@ Definitely Maybe
 </n-space>`],
     ['n-spin', '加载', '<n-spin size="small" />'],
     ['n-statistic', '统计数据', '<n-statistic label="统计数据" :value="99"></n-statistic'],
+    ['n-steps', '步骤', `<n-steps
+  size="small"
+  :current="(current as number)"
+  :status="currentStatus"
+></n-steps>`],
+    ['n-step', '步骤', `<n-step
+  title="Come Together"
+  description="Here come old flat top He come grooving up slowly"
+/>`],
   ]
   return componentsReducer(map)
 }
