@@ -54,6 +54,7 @@ import timeline from './timeline.json'
 import timelineItem from './timelineItem.json'
 import transfer from './transfer.json'
 import tree from './tree.json'
+import treeSelect from './treeSelect.json'
 
 export function naiveUi2() {
   const map: any = [
@@ -112,6 +113,7 @@ export function naiveUi2() {
     timelineItem,
     transfer,
     tree,
+    treeSelect,
   ]
 
   return propsReducer(map)
@@ -339,6 +341,11 @@ Definitely Maybe
     expand-on-click
     selectable
   />`],
+    ['n-treeSelect', '树型选择', `<n-tree-select
+  :options="options"
+  default-value="Drive My Car"
+  @update:value="handleUpdateValue"
+/>`],
   ]
   return componentsReducer(map)
 }

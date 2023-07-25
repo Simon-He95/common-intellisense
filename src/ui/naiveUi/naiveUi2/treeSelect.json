@@ -1,0 +1,302 @@
+{
+  "name": "NTreeSelect",
+  "props": {
+    "allow-checking-not-loaded": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "是否允许级联勾选还没有完全加载的节点。如果你要用这个属性，请记住 value 可能是不完整的，并且请注意勾选行为和后端计算逻辑的一致性，尤其是有禁用节点的情况下",
+      "type": "boolean"
+    },
+    "cascade": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "使用 checkbox 进行多选时是否级联",
+      "type": "boolean"
+    },
+    "checkable": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "是否使用 checkbox 进行选择",
+      "type": "boolean"
+    },
+    "check-strategy": {
+      "value": "",
+      "description": "`string`",
+      "default": "设置勾选策略来指定显示的勾选节点，all 表示显示全部选中节点；parent 表示只显示父节点（当父节点下所有子节点都选中时）；child 表示只显示子节点",
+      "type": "string"
+    },
+    "children-field": {
+      "value": "",
+      "description": "`string`",
+      "default": "替代 TreeSelectOption 中的 children 字段名",
+      "type": "string"
+    },
+    "clearable": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "是否可清除",
+      "type": "boolean"
+    },
+    "clear-filter-after-select": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "是否在可过滤和多选的情况下选中一个选项后保留当前的搜索关键词",
+      "type": "boolean"
+    },
+    "consistent-menu-width": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "是否使菜单宽度和输入框一致，打开会禁用虚拟滚动",
+      "type": "boolean"
+    },
+    "default-value": {
+      "value": "",
+      "description": "`string | number | Array<string | number> | null`",
+      "default": "默认选中的 key",
+      "type": "string | number | Array<string | number> | null"
+    },
+    "default-expand-all": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "默认展开全部",
+      "type": "boolean"
+    },
+    "default-expanded-keys": {
+      "value": "",
+      "description": "`Array<string | number>`",
+      "default": "默认展开节点的 key",
+      "type": "Array<string | number>"
+    },
+    "disabled": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "是否禁用",
+      "type": "boolean"
+    },
+    "expanded-keys": {
+      "value": "",
+      "description": "`Array<string | number>`",
+      "default": "展开节点的 key",
+      "type": "Array<string | number>"
+    },
+    "indeterminate-keys": {
+      "value": "",
+      "description": "`string | number`",
+      "default": "部分选中选项的 key",
+      "type": "string | number"
+    },
+    "filterable": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "是否可过滤",
+      "type": "boolean"
+    },
+    "filter": {
+      "value": "",
+      "description": "`(pattern: string, option: TreeSelectOption) => boolean`",
+      "default": "过滤器函数",
+      "type": "(pattern: string, option: TreeSelectOption) => boolean"
+    },
+    "key-field": {
+      "value": "",
+      "description": "`string`",
+      "default": "替代 TreeSelectOption 中的 key 字段名",
+      "type": "string"
+    },
+    "label-field": {
+      "value": "",
+      "description": "`string`",
+      "default": "替代 TreeSelectOption 中的 label 字段名",
+      "type": "string"
+    },
+    "disabled-field": {
+      "value": "",
+      "description": "`string`",
+      "default": "替代 TreeSelectOption 中的 disabled 字段名",
+      "type": "string"
+    },
+    "loading": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "是否加载中",
+      "type": "boolean"
+    },
+    "max-tag-count": {
+      "value": "",
+      "description": "`number | 'responsive'`",
+      "default": "多选时最多直接显示多少选项，设为 'responsive' 会保证最多一行",
+      "type": "number | 'responsive'"
+    },
+    "menu-props": {
+      "value": "",
+      "description": "`HTMLAttributes`",
+      "default": "菜单的 DOM 属性",
+      "type": "HTMLAttributes"
+    },
+    "multiple": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "是否支持多选",
+      "type": "boolean"
+    },
+    "node-props": {
+      "value": "",
+      "description": "`(info: { option: TreeSelectOption }) => HTMLAttributes`",
+      "default": "节点的 HTML 属性",
+      "type": "(info: { option: TreeSelectOption }) => HTMLAttributes"
+    },
+    "options": {
+      "value": "",
+      "description": "`TreeSelectOption[]`",
+      "default": "选项",
+      "type": "TreeSelectOption[]"
+    },
+    "placeholder": {
+      "value": "",
+      "description": "`string`",
+      "default": "占位信息",
+      "type": "string"
+    },
+    "placement": {
+      "value": "",
+      "description": "`'top-start' | 'top' | 'top-end' | 'right-start' | 'right' | 'right-end' | 'bottom-start' | 'bottom' | 'bottom-end' | 'left-start' | 'left' | 'left-end'`",
+      "default": "选择器的弹出位置.",
+      "type": "'top-start' | 'top' | 'top-end' | 'right-start' | 'right' | 'right-end' | 'bottom-start' | 'bottom' | 'bottom-end' | 'left-start' | 'left' | 'left-end'"
+    },
+    "render-label": {
+      "value": "",
+      "description": "`(info: { option: TreeSelectOption, checked: boolean, selected: boolean }) => VNodeChild`",
+      "default": "节点内容的渲染函数",
+      "type": "(info: { option: TreeSelectOption, checked: boolean, selected: boolean }) => VNodeChild"
+    },
+    "render-prefix": {
+      "value": "",
+      "description": "`(info: { option: TreeSelectOption, checked: boolean, selected: boolean }) => VNodeChild`",
+      "default": "节点前缀的渲染函数",
+      "type": "(info: { option: TreeSelectOption, checked: boolean, selected: boolean }) => VNodeChild"
+    },
+    "render-suffix": {
+      "value": "",
+      "description": "`(info: { option: TreeSelectOption, checked: boolean, selected: boolean }) => VNodeChild`",
+      "default": "节点后缀的渲染函数",
+      "type": "(info: { option: TreeSelectOption, checked: boolean, selected: boolean }) => VNodeChild"
+    },
+    "render-switcher-icon": {
+      "value": "",
+      "description": "`() => VNodeChild`",
+      "default": "节点展开开关的渲染函数",
+      "type": "() => VNodeChild"
+    },
+    "render-tag": {
+      "value": "",
+      "description": "`(props: { option: TreeSelectOption, handleClose: () => void }) => VNodeChild`",
+      "default": "控制标签的渲染",
+      "type": "(props: { option: TreeSelectOption, handleClose: () => void }) => VNodeChild"
+    },
+    "separator": {
+      "value": "",
+      "description": "`string`",
+      "default": "数据分隔符",
+      "type": "string"
+    },
+    "show-path": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "是否在选择器中显示选项路径",
+      "type": "boolean"
+    },
+    "size": {
+      "value": "",
+      "description": "`'small' | 'medium' | 'large'`",
+      "default": "组件尺寸",
+      "type": "'small' | 'medium' | 'large'"
+    },
+    "status": {
+      "value": "",
+      "description": "`'success' | 'warning' | 'error'`",
+      "default": "验证状态",
+      "type": "'success' | 'warning' | 'error'"
+    },
+    "to": {
+      "value": "",
+      "description": "`string | HTMLElement | false`",
+      "default": "菜单的容器节点，false 会待在原地",
+      "type": "string | HTMLElement | false"
+    },
+    "value": {
+      "value": "",
+      "description": "`string | number | Array<string | number> | null>`",
+      "default": "选中的 key",
+      "type": "string | number | Array<string | number> | null>"
+    },
+    "virtual-scroll": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "是否开启虚拟滚动",
+      "type": "boolean"
+    }
+  },
+  "methods": [],
+  "typeDetail": {
+    "TreeSelectOption": [
+      {
+        "name": "key",
+        "description": "`string | number`",
+        "type": "选项的 key，需要唯一，可使用 `key-field` 修改字段名"
+      },
+      {
+        "name": "label",
+        "description": "`string`",
+        "type": "选项的显示内容，可使用 `label-field` 修改字段名"
+      },
+      {
+        "name": "children?",
+        "description": "`TreeSelectOption[]`",
+        "type": "节点的子选项"
+      },
+      {
+        "name": "disabled?",
+        "description": "`boolean`",
+        "type": "是否禁用选项"
+      },
+      {
+        "name": "isLeaf?",
+        "description": "`boolean`",
+        "type": "节点是否是叶节点，在异步展开状态下是必须的"
+      }
+    ]
+  },
+  "events": [
+    {
+      "name": "blur",
+      "description": "`(e: FocusEvent) => void`",
+      "params": "`(e: FocusEvent) => void`"
+    },
+    {
+      "name": "focus",
+      "description": "`(e: FocusEvent) => void`",
+      "params": "`(e: FocusEvent) => void`"
+    },
+    {
+      "name": "load",
+      "description": "`(node: TreeSelectOption) => Promise<void>`",
+      "params": "`(node: TreeSelectOption) => Promise<void>`"
+    },
+    {
+      "name": "update:expanded-keys",
+      "description": "`(value: Array<string | number>, meta: { node: TreeOption | null, action: 'expand' | 'collapse' | 'filter' }) => void`",
+      "params": "`(value: Array<string | number>, meta: { node: TreeOption | null, action: 'expand' | 'collapse' | 'filter' }) => void`"
+    },
+    {
+      "name": "update:indeterminate-keys",
+      "description": "`(keys: Array<string | number>) => void`",
+      "params": "`(keys: Array<string | number>) => void`"
+    },
+    {
+      "name": "update:value",
+      "description": "`(value: string | number | Array<string | number> | null, option: TreeSelectOption | null | Array<TreeSelectOption | null>, meta: { node: TreeOption | null, action: 'select' | 'unselect' | 'delete' | 'clear' }) => void`",
+      "params": "`(value: string | number | Array<string | number> | null, option: TreeSelectOption | null | Array<TreeSelectOption | null>, meta: { node: TreeOption | null, action: 'select' | 'unselect' | 'delete' | 'clear' }) => void`"
+    }
+  ],
+  "link": "https://www.naiveui.com/zh-CN/dark/components/tree-select"
+}
