@@ -55,6 +55,16 @@ import timelineItem from './timelineItem.json'
 import transfer from './transfer.json'
 import tree from './tree.json'
 import treeSelect from './treeSelect.json'
+import text from './text.json'
+import h1 from './h1.json'
+import h2 from './h2.json'
+import h3 from './h3.json'
+import h4 from './h4.json'
+import h5 from './h5.json'
+import h6 from './h6.json'
+import o1 from './o1.json'
+import u1 from './u1.json'
+import watermark from './watermark.json'
 
 export function naiveUi2() {
   const map: any = [
@@ -114,6 +124,16 @@ export function naiveUi2() {
     transfer,
     tree,
     treeSelect,
+    text,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    o1,
+    u1,
+    watermark,
   ]
 
   return propsReducer(map)
@@ -346,6 +366,29 @@ Definitely Maybe
   default-value="Drive My Car"
   @update:value="handleUpdateValue"
 />`],
+    ['n-text', '排印', `<n-text type="primary">
+  sin(x)
+</n-text>`],
+    ['n-h1', '排印', '<n-h1></n-h1>'],
+    ['n-h2', '排印', '<n-h2></n-h2>'],
+    ['n-h3', '排印', '<n-h3></n-h3>'],
+    ['n-h4', '排印', '<n-h4></n-h4>'],
+    ['n-h5', '排印', '<n-h5></n-h5>'],
+    ['n-h6', '排印', '<n-h6></n-h6>'],
+    ['n-u1', '排印', '<n-u1></n-u1>'],
+    ['n-o1', '排印', '<n-o1></n-o1>'],
+    ['n-watermark', '水印', `<n-watermark
+  content="核心机密"
+  cross
+  selectable
+  :font-size="16"
+  :line-height="16"
+  :width="192"
+  :height="128"
+  :x-offset="12"
+  :y-offset="28"
+  :rotate="-15"
+>`],
   ]
   return componentsReducer(map)
 }
