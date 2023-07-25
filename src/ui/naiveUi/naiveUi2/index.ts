@@ -53,6 +53,7 @@ import time from './time.json'
 import timeline from './timeline.json'
 import timelineItem from './timelineItem.json'
 import transfer from './transfer.json'
+import tree from './tree.json'
 
 export function naiveUi2() {
   const map: any = [
@@ -110,6 +111,7 @@ export function naiveUi2() {
     timeline,
     timelineItem,
     transfer,
+    tree,
   ]
 
   return propsReducer(map)
@@ -329,6 +331,14 @@ Definitely Maybe
     ['n-timeline', '时间线', '<n-timeline></n-timeline>'],
     ['n-timeline-item', '时间线', '<n-timeline-item content="啊" />'],
     ['n-transfer', '穿梭框', '<n-transfer ref="transfer" v-model:value="value" :options="options" />'],
+    ['n-tree', '树', `<n-tree
+    block-line
+    :data="data"
+    :default-expanded-keys="defaultExpandedKeys"
+    checkable
+    expand-on-click
+    selectable
+  />`],
   ]
   return componentsReducer(map)
 }

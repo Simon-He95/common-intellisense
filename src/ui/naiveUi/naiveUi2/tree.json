@@ -1,0 +1,367 @@
+{
+  "name": "NTree",
+  "props": {
+    "accordion": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "是否使用手风琴展开模式",
+      "type": "boolean"
+    },
+    "allow-checking-not-loaded": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "是否允许级联勾选还没有完全加载的节点。如果你要用这个属性，请记住 checked-keys 可能是不完整的，并且请注意勾选行为和后端计算逻辑的一致性，尤其是有禁用节点的情况下",
+      "type": "boolean"
+    },
+    "allow-drop": {
+      "value": "",
+      "description": "`(info: { dropPosition: DropPosition, node: TreeOption, phase: 'drag' | 'drop' }) => boolean`",
+      "default": "是否允许 drop",
+      "type": "(info: { dropPosition: DropPosition, node: TreeOption, phase: 'drag' | 'drop' }) => boolean"
+    },
+    "animated": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "是否有展开动画",
+      "type": "boolean"
+    },
+    "block-line": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "节点整行撑开",
+      "type": "boolean"
+    },
+    "block-node": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "节点名称整行撑开",
+      "type": "boolean"
+    },
+    "cancelable": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "选中之后是否允许取消",
+      "type": "boolean"
+    },
+    "cascade": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "是否关联选项",
+      "type": "boolean"
+    },
+    "check-strategy": {
+      "value": "",
+      "description": "`string`",
+      "default": "设置勾选策略来指定勾选回调返回的值，all 表示回调函数值为全部选中节点；parent 表示回调函数值为父节点（当父节点下所有子节点都选中时）；child 表示回调函数值为子节点",
+      "type": "string"
+    },
+    "checkable": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "是否显示选择框",
+      "type": "boolean"
+    },
+    "checkbox-placement": {
+      "value": "",
+      "description": "`'left' | 'right'`",
+      "default": "复选框的位置",
+      "type": "'left' | 'right'"
+    },
+    "children-field": {
+      "value": "",
+      "description": "`string`",
+      "default": "替代 TreeOption 中的 children 字段名",
+      "type": "string"
+    },
+    "checked-keys": {
+      "value": "",
+      "description": "`Array<string | number>`",
+      "default": "如果设定则 checked 状态受控",
+      "type": "Array<string | number>"
+    },
+    "check-on-click": {
+      "value": "",
+      "description": "`boolean | ((node: TreeOption) => boolean)`",
+      "default": "是否允许点击节点进行勾选，仅在 checkable 为 true 时生效",
+      "type": "boolean | ((node: TreeOption) => boolean)"
+    },
+    "data": {
+      "value": "",
+      "description": "`Array<TreeOption>`",
+      "default": "树的节点数据。重新设置 data 会将一些非受控状态清空，如果你需要在使用中改动 data，最好以受控的方式控制树",
+      "type": "Array<TreeOption>"
+    },
+    "default-checked-keys": {
+      "value": "",
+      "description": "`Array<string | number>`",
+      "default": "默认选中的多选项",
+      "type": "Array<string | number>"
+    },
+    "default-expand-all": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "展开全部选项",
+      "type": "boolean"
+    },
+    "default-expanded-keys": {
+      "value": "",
+      "description": "`Array<string | number>`",
+      "default": "默认展开项",
+      "type": "Array<string | number>"
+    },
+    "default-selected-keys": {
+      "value": "",
+      "description": "`Array<string | number>`",
+      "default": "默认选中的节点",
+      "type": "Array<string | number>"
+    },
+    "draggable": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "是否可拖拽",
+      "type": "boolean"
+    },
+    "expand-on-dragenter": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "是否在拖入后展开节点",
+      "type": "boolean"
+    },
+    "expand-on-click": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "是否在点击节点后展开或收缩节点",
+      "type": "boolean"
+    },
+    "expanded-keys": {
+      "value": "",
+      "description": "`Array<string | number>`",
+      "default": "如果设定则展开受控",
+      "type": "Array<string | number>"
+    },
+    "filter": {
+      "value": "",
+      "description": "`(pattern: string, node: TreeOption) => boolean`",
+      "default": "基于 pattern 指定过滤节点的函数",
+      "type": "(pattern: string, node: TreeOption) => boolean"
+    },
+    "get-children": {
+      "value": "",
+      "description": "`(option: any) => unknown`",
+      "default": "获取当前选项的子选项",
+      "type": "(option: any) => unknown"
+    },
+    "indeterminate-keys": {
+      "value": "",
+      "description": "`Array<string | number>`",
+      "default": "部分选中选项的 key",
+      "type": "Array<string | number>"
+    },
+    "keyboard": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "是否支持键盘操作",
+      "type": "boolean"
+    },
+    "key-field": {
+      "value": "",
+      "description": "`string`",
+      "default": "替代 TreeOption 中的 key 字段名",
+      "type": "string"
+    },
+    "label-field": {
+      "value": "",
+      "description": "`string`",
+      "default": "替代 TreeOption 中的 label 字段名",
+      "type": "string"
+    },
+    "disabled-field": {
+      "value": "",
+      "description": "`string`",
+      "default": "替代 TreeOption 中的 disabled 字段名",
+      "type": "string"
+    },
+    "node-props": {
+      "value": "",
+      "description": "`(info: { option: TreeOption }) => HTMLAttributes`",
+      "default": "节点的 HTML 属性",
+      "type": "(info: { option: TreeOption }) => HTMLAttributes"
+    },
+    "multiple": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "是否允许节点多选",
+      "type": "boolean"
+    },
+    "pattern": {
+      "value": "",
+      "description": "`string`",
+      "default": "默认搜索的内容",
+      "type": "string"
+    },
+    "render-label": {
+      "value": "",
+      "description": "`(info: { option: TreeOption, checked: boolean, selected: boolean }) => VNodeChild`",
+      "default": "节点内容的渲染函数",
+      "type": "(info: { option: TreeOption, checked: boolean, selected: boolean }) => VNodeChild"
+    },
+    "render-prefix": {
+      "value": "",
+      "description": "`(info: { option: TreeOption, checked: boolean, selected: boolean }) => VNodeChild`",
+      "default": "节点前缀的渲染函数",
+      "type": "(info: { option: TreeOption, checked: boolean, selected: boolean }) => VNodeChild"
+    },
+    "render-suffix": {
+      "value": "",
+      "description": "`(info: { option: TreeOption, checked: boolean, selected: boolean }) => VNodeChild`",
+      "default": "节点后缀的渲染函数",
+      "type": "(info: { option: TreeOption, checked: boolean, selected: boolean }) => VNodeChild"
+    },
+    "render-switcher-icon": {
+      "value": "",
+      "description": "`(props: { option: TreeOption, expanded: boolean, selected: boolean }) => VNodeChild`",
+      "default": "节点展开开关的渲染函数",
+      "type": "(props: { option: TreeOption, expanded: boolean, selected: boolean }) => VNodeChild"
+    },
+    "scrollbar-props": {
+      "value": "",
+      "description": "`object`",
+      "default": "属性参考 [Scrollbar props](scrollbar#Scrollbar-Props)",
+      "type": "object"
+    },
+    "selectable": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "节点是否可以被选中",
+      "type": "boolean"
+    },
+    "selected-keys": {
+      "value": "",
+      "description": "`Array<string | number>`",
+      "default": "如果设定则 selected 状态受控",
+      "type": "Array<string | number>"
+    },
+    "show-irrelevant-nodes": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "是否在搜索状态显示和搜索无关的节点",
+      "type": "boolean"
+    },
+    "show-line": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "是否显示连接线",
+      "type": "boolean"
+    },
+    "virtual-scroll": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "是否启用虚拟滚动，启用前你需要设定好树的高度样式",
+      "type": "boolean"
+    },
+    "watch-props": {
+      "value": "",
+      "description": "`Array<'defaultCheckedKeys' | 'defaultSelectedKeys' |'defaultExpandedKeys'>`",
+      "default": "需要检测变更的默认属性，检测后组件状态会更新。注意：watch-props 本身不是响应式的",
+      "type": "Array<'defaultCheckedKeys' | 'defaultSelectedKeys' |'defaultExpandedKeys'>"
+    }
+  },
+  "methods": [],
+  "typeDetail": {
+    "type2": [
+      {
+        "name": "key",
+        "description": "`string | number`",
+        "type": "节点的 `key`，需要唯一，可使用 `key-field` 修改字段名"
+      },
+      {
+        "name": "label",
+        "description": "`string`",
+        "type": "节点的内容，可使用 `label-field` 修改字段名"
+      },
+      {
+        "name": "checkboxDisabled?",
+        "description": "`boolean`",
+        "type": "是否禁用节点的 `checkbox`"
+      },
+      {
+        "name": "children?",
+        "description": "`TreeOption[]`",
+        "type": "节点的子节点"
+      },
+      {
+        "name": "disabled?",
+        "description": "`boolean`",
+        "type": "是否禁用节点"
+      },
+      {
+        "name": "isLeaf?",
+        "description": "`boolean`",
+        "type": "节点是否是叶节点，在异步展开状态下是必须的"
+      },
+      {
+        "name": "prefix?",
+        "description": "`string | (() => VNodeChild)`",
+        "type": "节点的前缀"
+      },
+      {
+        "name": "suffix?",
+        "description": "`string | (() => VNodeChild)`",
+        "type": "节点的后缀"
+      }
+    ]
+  },
+  "events": [
+    {
+      "name": "load",
+      "description": "`(node: TreeOption) => Promise<unknown>`",
+      "params": "`(node: TreeOption) => Promise<unknown>`"
+    },
+    {
+      "name": "dragend",
+      "description": "`(data: { node: TreeOption, event: DragEvent }) => void`",
+      "params": "`(data: { node: TreeOption, event: DragEvent }) => void`"
+    },
+    {
+      "name": "dragenter",
+      "description": "`(data: { node: TreeOption, event: DragEvent }) => void`",
+      "params": "`(data: { node: TreeOption, event: DragEvent }) => void`"
+    },
+    {
+      "name": "dragleave",
+      "description": "`(data: { node: TreeOption, event: DragEvent }) => void`",
+      "params": "`(data: { node: TreeOption, event: DragEvent }) => void`"
+    },
+    {
+      "name": "dragstart",
+      "description": "`(data: { node: TreeOption, event: DragEvent }) => void`",
+      "params": "`(data: { node: TreeOption, event: DragEvent }) => void`"
+    },
+    {
+      "name": "drop",
+      "description": "`(data: { node: TreeOption, dragNode: TreeOption, dropPosition: 'before' | 'inside' | 'after', event: DragEvent }) => void`",
+      "params": "`(data: { node: TreeOption, dragNode: TreeOption, dropPosition: 'before' | 'inside' | 'after', event: DragEvent }) => void`"
+    },
+    {
+      "name": "update:checked-keys",
+      "description": "`(keys: Array<string | number>, option: Array<TreeOption | null>, meta: { node: TreeOption | null, action: 'check' | 'uncheck' }) => void`",
+      "params": "`(keys: Array<string | number>, option: Array<TreeOption | null>, meta: { node: TreeOption | null, action: 'check' | 'uncheck' }) => void`"
+    },
+    {
+      "name": "update:indeterminate-keys",
+      "description": "`(keys: Array<string | number>, option: Array<TreeOption | null>) => void`",
+      "params": "`(keys: Array<string | number>, option: Array<TreeOption | null>) => void`"
+    },
+    {
+      "name": "update:expanded-keys",
+      "description": "`(keys: Array<string | number>, option: Array<TreeOption | null>, meta: { node: TreeOption | null, action: 'expand' | 'collapse' | 'filter' }) => void`",
+      "params": "`(keys: Array<string | number>, option: Array<TreeOption | null>, meta: { node: TreeOption | null, action: 'expand' | 'collapse' | 'filter' }) => void`"
+    },
+    {
+      "name": "update:selected-keys",
+      "description": "`(keys: Array<string | number>, option: Array<TreeOption | null>, meta: { node: TreeOption, action: 'select' | 'unselect' }) => void`",
+      "params": "`(keys: Array<string | number>, option: Array<TreeOption | null>, meta: { node: TreeOption, action: 'select' | 'unselect' }) => void`"
+    }
+  ],
+  "link": "https://www.naiveui.com/zh-CN/dark/components/tree"
+}
