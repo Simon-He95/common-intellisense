@@ -52,6 +52,7 @@ import thing from './thing.json'
 import time from './time.json'
 import timeline from './timeline.json'
 import timelineItem from './timelineItem.json'
+import transfer from './transfer.json'
 
 export function naiveUi2() {
   const map: any = [
@@ -108,6 +109,7 @@ export function naiveUi2() {
     time,
     timeline,
     timelineItem,
+    transfer,
   ]
 
   return propsReducer(map)
@@ -326,6 +328,7 @@ Definitely Maybe
     ['n-time', '时间', '<n-time :time="0" />'],
     ['n-timeline', '时间线', '<n-timeline></n-timeline>'],
     ['n-timeline-item', '时间线', '<n-timeline-item content="啊" />'],
+    ['n-transfer', '穿梭框', '<n-transfer ref="transfer" v-model:value="value" :options="options" />'],
   ]
   return componentsReducer(map)
 }
