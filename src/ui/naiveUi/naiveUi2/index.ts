@@ -49,6 +49,7 @@ import spin from './spin.json'
 import statistic from './statistic.json'
 import tag from './tag.json'
 import thing from './thing.json'
+import time from './time.json'
 
 export function naiveUi2() {
   const map: any = [
@@ -102,6 +103,7 @@ export function naiveUi2() {
     statistic,
     tag,
     thing,
+    time,
   ]
 
   return propsReducer(map)
@@ -317,6 +319,7 @@ Definitely Maybe
 />`],
     ['n-tag', '标签', '<n-tag> 爱在西元前 </n-tag>'],
     ['n-thing', '东西', '<n-thing></n-thing>'],
+    ['n-time', '时间', '<n-time :time="0" />'],
   ]
   return componentsReducer(map)
 }
