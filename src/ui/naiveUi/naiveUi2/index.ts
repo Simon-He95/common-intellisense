@@ -50,6 +50,8 @@ import statistic from './statistic.json'
 import tag from './tag.json'
 import thing from './thing.json'
 import time from './time.json'
+import timeline from './timeline.json'
+import timelineItem from './timelineItem.json'
 
 export function naiveUi2() {
   const map: any = [
@@ -104,6 +106,8 @@ export function naiveUi2() {
     tag,
     thing,
     time,
+    timeline,
+    timelineItem,
   ]
 
   return propsReducer(map)
@@ -320,6 +324,8 @@ Definitely Maybe
     ['n-tag', '标签', '<n-tag> 爱在西元前 </n-tag>'],
     ['n-thing', '东西', '<n-thing></n-thing>'],
     ['n-time', '时间', '<n-time :time="0" />'],
+    ['n-timeline', '时间线', '<n-timeline></n-timeline>'],
+    ['n-timeline-item', '时间线', '<n-timeline-item content="啊" />'],
   ]
   return componentsReducer(map)
 }
