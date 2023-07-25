@@ -173,77 +173,252 @@ export function antd5() {
 
 export function antd5Components() {
   const map = [
-    ['Row', '布局'],
-    ['Col', '布局'],
+    ['Button', '按钮', '<Button type="primary">Primary Button</Button>'],
+    ['Typography', '排版', '<Typography></Typography>'],
+    ['Title', '标题组件', '<Title></Title>'],
+    ['Paragraph', '排版', '<Paragraph></Paragraph>'],
+    ['Link', '文本与超链接组件', `<Link href="https://ant.design" target="_blank">
+  Ant Design (Link)
+</Link>`],
+    ['Divider', '分割线', '<Divider />'],
+    ['Row', '栅格', '<Row></Row>'],
+    ['Col', '栅格', '<Col></Col>'],
+    ['Layout', '布局容器，其下可嵌套 Header Sider Content Footer 或 Layout 本身，可以放在任何父容器中。'],
     ['Content', '内容部分，自带默认样式，其下可嵌套任何元素，只能放在 Layout 中'],
     ['Header', '顶部布局，自带默认样式，其下可嵌套任何元素，只能放在 Layout 中。'],
     ['Sider', '侧边栏，自带默认样式及基本功能，其下可嵌套任何元素，只能放在 Layout 中。'],
-    ['Layout', '布局容器，其下可嵌套 Header Sider Content Footer 或 Layout 本身，可以放在任何父容器中。'],
     ['Footer', '底部布局，自带默认样式，其下可嵌套任何元素，只能放在 Layout 中。'],
-    ['Button', '按钮'],
     ['Space', '间距'],
     ['Anchor', '锚点'],
-    ['radio', '单选框'],
-    ['radio-group', '单选框组'],
-    ['radio-button', '按钮样式的单选组合'],
-    ['checkbox', '多选框'],
-    ['checkbox-group', '多选框组'],
-    ['checkbox-button', '按钮样式的多选组合'],
-    ['input', '输入框'],
-    ['input-number', '计数器'],
-    ['select', '选择器'],
-    ['option', '基础多选'],
-    ['option-group', '备选项进行分组展示'],
-    ['cascader', '级联选择器'],
-    ['switch', '开关'],
-    ['slider', '滑块'],
-    ['time-select', '时间选择器'],
-    ['date-picker', '日期选择器/日期时间选择器'],
-    ['upload', '上传'],
-    ['rate', '评分'],
-    ['color-picker', '颜色选择器'],
-    ['transfer', '穿梭框'],
-    ['form', '表单'],
-    ['form-item', '表单项'],
-    ['table', '表格'],
-    ['table-column', '表格项'],
-    ['tag', '标签'],
-    ['progress', '进度条'],
-    ['tree', '树形控件'],
-    ['Pagination', '分页'],
-    ['badge', '标记'],
-    ['avatar', '头像'],
-    ['skeleton', '骨架屏'],
-    ['empty', '空状态'],
-    ['descriptions', '描述列表'],
-    ['descriptions-item', '描述列表项'],
-    ['result', '结果'],
-    ['statistic', '统计数值'],
-    ['alert', '警告'],
-    ['Menu', '导航菜单'],
-    ['tabs', '标签页'],
-    ['tab-pane', '标签项'],
-    ['breadcrumb', '面包屑'],
-    ['breadcrumb-item', '面包屑项'],
-    ['page-header', '页头'],
+    ['Breadcrumb', '面包屑'],
     ['Dropdown', '下拉菜单'],
-    ['Steps', '步骤条'],
-    ['dialog', '对话框'],
-    ['tooltip', '文字提示'],
-    ['popover', '弹出框'],
-    ['popconfirm', '气泡确认框'],
-    ['card', '卡片'],
-    ['carousel', '走马灯'],
-    ['carousel-item', '走马灯项'],
-    ['collapse', '折叠面板'],
-    ['collapse-item', '折叠面板项'],
-    ['timeline', '时间线'],
-    ['timeline-item', '时间线项'],
-    ['divider', '分割线'],
-    ['calendar', '日历'],
-    ['image', '图片'],
-    ['backtop', '回到顶部'],
-    ['drawer', '抽屉'],
+    ['Menu', '导航菜单'],
+    ['Pagination', '分页', '<Pagination defaultCurrent={1} total={50} />'],
+    ['Steps', '步骤条', `<Steps
+  current={1}
+  items={[
+    {
+      title: 'Finished',
+      description,
+    },
+    {
+      title: 'In Progress',
+      description,
+      subTitle: 'Left 00:00:08',
+    },
+    {
+      title: 'Waiting',
+      description,
+    },
+  ]}
+/>`],
+    ['AutoComplete', '自动完成', `<AutoComplete
+  options={options}
+  style={{ width: 200 }}
+  onSelect={onSelect}
+  onSearch={(text) => setOptions(getPanelValue(text))}
+  placeholder="input here"
+/>`],
+    ['Cascader', '级联选择', '<Cascader options={options} onChange={onChange} placeholder="Please select" />'],
+    ['Checkbox', '多选框', '<Checkbox onChange={onChange}>Checkbox</Checkbox>'],
+    ['Checkbox.Group', '多选框组', '<Checkbox.Group style={{ width: \'100%\' }} onChange={onChange}></Checkbox.Group>'],
+    ['ColorPicker', '颜色选择器', '<ColorPicker />'],
+    ['DatePicker', '日期选择框', '<DatePicker onChange={onChange} />'],
+    ['DatePicker.RangePicker', '日期选择框'],
+    ['Form', '表单', `<Form
+  name="basic"
+  labelCol={{ span: 8 }}
+  wrapperCol={{ span: 16 }}
+  style={{ maxWidth: 600 }}
+  initialValues={{ remember: true }}
+  onFinish={onFinish}
+  onFinishFailed={onFinishFailed}
+  autoComplete="off"
+></Form>`],
+    ['Form.Item', '表单项', `<Form.Item
+  label="Username"
+  name="username"
+  rules={[{ required: true, message: 'Please input your username!' }]}
+>
+  <Input />
+</Form.Item>`],
+    ['Input', '输入框', '<Input placeholder="Basic usage" />'],
+    ['Input.Search', '输入框'],
+    ['Input.TextArea', '输入框'],
+    ['InputNumber', '数字输入框', '<InputNumber min={1} max={10} defaultValue={3} onChange={onChange} />'],
+    ['Mentions', '提及', '<Mentions options={options} />'],
+    ['Radio', '单选框', '<Radio>Radio</Radio>'],
+    ['Radio.Button', '单选框按钮', '<Radio.Button>Radio</Radio.Button>'],
+    ['Radio.Group', '单选框组', `<Radio.Group name="radiogroup" defaultValue={1}>
+  <Radio value={1}>A</Radio>
+  <Radio value={2}>B</Radio>
+  <Radio value={3}>C</Radio>
+  <Radio value={4}>D</Radio>
+</Radio.Group>`],
+    ['Rate', '评分', '<Rate />'],
+    ['Select', '选择器', `<Select
+  defaultValue="lucy"
+  style={{ width: 120 }}
+  onChange={handleChange}
+  options={[
+    { value: 'jack', label: 'Jack' },
+    { value: 'lucy', label: 'Lucy' },
+    { value: 'Yiminghe', label: 'yiminghe' },
+    { value: 'disabled', label: 'Disabled', disabled: true },
+  ]}
+/>`],
+    ['Slider', '滑动输入条', '<Slider defaultValue={30} disabled={disabled} />'],
+    ['Switch', '开关', '<Switch defaultChecked onChange={onChange} />'],
+    ['TimePicker', '时间选择框', '<TimePicker onChange={onChange} defaultOpenValue={dayjs(\'00:00:00\', \'HH:mm:ss\')} />'],
+    ['Transfer', '穿梭框', `<Transfer
+  dataSource={mockData}
+  titles={['Source', 'Target']}
+  targetKeys={targetKeys}
+  selectedKeys={selectedKeys}
+  onChange={onChange}
+  onSelectChange={onSelectChange}
+  onScroll={onScroll}
+  render={(item) => item.title}
+/>`],
+    ['TreeSelect', '树选择', `<TreeSelect
+  showSearch
+  style={{ width: '100%' }}
+  value={value}
+  dropdownStyle={{ maxHeight: 400, overflow: 'auto' }}
+  placeholder="Please select"
+  allowClear
+  treeDefaultExpandAll
+  onChange={onChange}
+  treeData={treeData}
+/>`],
+    ['Upload', '上传', `<Upload {...props}>
+  <Button icon={<UploadOutlined />}>Click to Upload</Button>
+</Upload>`],
+    ['Avatar', '头像', '<Avatar size={64} icon={<UserOutlined />} />'],
+    ['Badge', '徽标数', `<Badge count={5}>
+  <Avatar shape="square" size="large" />
+</Badge>`],
+    ['Calendar', '日历', '<Calendar onPanelChange={onPanelChange} />'],
+    ['Card', '卡片', `<Card title="Default size card" extra={<a href="#">More</a>} style={{ width: 300 }}>
+  <p>Card content</p>
+  <p>Card content</p>
+  <p>Card content</p>
+</Card>`],
+    ['Card.Grid', '网格型内嵌卡片', 'Card.Grid style={gridStyle}>Content</Card.Grid>'],
+    ['Carousel', '走马灯', `<Carousel afterChange={onChange}>
+  <div>
+    <h3 style={contentStyle}>1</h3>
+  </div>
+  <div>
+    <h3 style={contentStyle}>2</h3>
+  </div>
+  <div>
+    <h3 style={contentStyle}>3</h3>
+  </div>
+  <div>
+    <h3 style={contentStyle}>4</h3>
+  </div>
+</Carousel>`],
+    ['Collapse', '折叠面板', '<Collapse items={items} defaultActiveKey={[\'1\']} />'],
+    ['Panel', '折叠面板项', `<Panel header="This is panel header 1" key="1">
+  <p>{text}</p>
+</Panel>`],
+    ['Descriptions', '描述列表'],
+    ['Descriptions.Item', '描述列表'],
+    ['Empty', '空状态', '<Empty />'],
+    ['Image', '图片', `<Image
+  width={200}
+  src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
+/>`],
+    ['List', '列表', `<List
+  header={<div>Header</div>}
+  footer={<div>Footer</div>}
+  bordered
+  dataSource={data}
+  renderItem={(item) => (
+    <List.Item>
+      <Typography.Text mark>[ITEM]</Typography.Text> {item}
+    </List.Item>
+  )}
+/>`],
+    ['List.Item', '列表项', `<List.Item>
+  <Typography.Text mark>[ITEM]</Typography.Text> {item}
+</List.Item>`],
+    ['Popover', '气泡卡片', `<Popover content={content} title="Title">
+  <Button type="primary">Hover me</Button>
+</Popover>`],
+    ['QRCode', '二维码', '<QRCode value={text || \'-\'} />'],
+    ['Segmented', '分段控制器', '<Segmented options={[\'Daily\', \'Weekly\', \'Monthly\', \'Quarterly\', \'Yearly\']} />'],
+    ['Statistic', '统计数值'],
+    ['Statistic.Countdown', '统计数值'],
+    ['Table', '表格'],
+    ['TabPane', '标签项', `<TabPane tab="Tab 1" key="1">
+  Content of Tab Pane 1
+</TabPane>`],
+    ['Tabs', '标签页', '<Tabs defaultActiveKey="1" items={items} onChange={onChange} />'],
+    ['Tag', '标签', '<Tag>Tag 1</Tag>'],
+    ['Timeline', '时间轴', `<Timeline onChange={onChange}>
+  <Timeline.Item>Sample</Timeline.Item>
+</Timeline>`],
+    ['Tooltip', '文字提示', `<Tooltip title="prompt text">
+  <span>Tooltip will show on mouse enter.</span>
+</Tooltip>`],
+    ['Tour', '漫游式引导', '<Tour open={open} onClose={() => setOpen(false)} steps={steps} />'],
+    ['Tree', '树形控件', `<Tree
+  checkable
+  defaultExpandedKeys={['0-0-0', '0-0-1']}
+  defaultSelectedKeys={['0-0-0', '0-0-1']}
+  defaultCheckedKeys={['0-0-0', '0-0-1']}
+  onSelect={onSelect}
+  onCheck={onCheck}
+  treeData={treeData}
+/>`],
+    ['Alert', '警告提示', '<Alert message="Success Text" type="success" />'],
+    ['Drawer', '抽屉', `<Drawer title="Basic Drawer" placement="right" onClose={onClose} open={open}>
+  <p>Some contents...</p>
+  <p>Some contents...</p>
+  <p>Some contents...</p>
+</Drawer>`],
+    ['Modal', '对话框', `<Modal title="Basic Modal" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
+  <p>Some contents...</p>
+  <p>Some contents...</p>
+  <p>Some contents...</p>
+</Modal>`],
+    ['Popconfirm', '气泡确认框', `<Popconfirm
+  title="Delete the task"
+  description="Are you sure to delete this task?"
+  onConfirm={confirm}
+  onCancel={cancel}
+  okText="Yes"
+  cancelText="No"
+  >
+  <Button danger>Delete</Button>
+</Popconfirm>`],
+    ['Progress', '进度条', '<Progress percent={30} />'],
+    ['Result', '结果', `<Result
+  status="success"
+  title="Successfully Purchased Cloud Server ECS!"
+  subTitle="Order number: 2017182818828182881 Cloud server configuration takes 1-5 minutes, please wait."
+  extra={[
+    <Button type="primary" key="console">
+      Go Console
+    </Button>,
+    <Button key="buy">Buy Again</Button>,
+  ]}
+/>`],
+    ['Skeleton', '骨架屏', '<Skeleton />'],
+    ['Spin', '加载中', '<Spin />'],
+    ['Affix', '固钉', `<Affix offsetTop={top}>
+  <Button type="primary" onClick={() => setTop(top + 10)}>
+    Affix top
+  </Button>
+</Affix>`],
+    ['App', '包裹组件'],
+    ['ConfigProvider', '全局化配置'],
+    ['FloatButton', '悬浮按钮', '<FloatButton onClick={() => console.log(\'click\')} />'],
+    ['Watermark', '水印', `<Watermark content="Ant Design">
+  <div style={{ height: 500 }} />
+</Watermark>`],
   ]
   return componentsReducer(map)
 }
