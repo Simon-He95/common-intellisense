@@ -3,6 +3,7 @@ import button from './button.json'
 import card from './card.json'
 import chip from './chip.json'
 import dialog from './dialog.json'
+import divider from './divider.json'
 
 export function vuetify3() {
   const map: any = [
@@ -10,6 +11,7 @@ export function vuetify3() {
     card,
     chip,
     dialog,
+    divider,
   ]
 
   return propsReducer(map)
@@ -25,6 +27,7 @@ export function vuetify3Components() {
   activator="parent"
   width="auto"
 ></v-dialog`],
+    ['v-divider', '组件用于分隔列表或布局的各个部分', '<v-divider></v-divider>'],
   ]
   return componentsReducer(map)
 }
