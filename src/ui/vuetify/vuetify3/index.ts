@@ -1,6 +1,10 @@
 import { componentsReducer, propsReducer } from '../../utils'
 import button from './button.json'
 import card from './card.json'
+import cardItem from './cardItem.json'
+import cardTitle from './cardTitle.json'
+import cardSubtitle from './cardSubtitle.json'
+import cardText from './cardText.json'
 import chip from './chip.json'
 import dialog from './dialog.json'
 import divider from './divider.json'
@@ -20,6 +24,10 @@ export function vuetify3() {
     expansionPanels,
     expansionPanelText,
     expansionPanelTitle,
+    cardItem,
+    cardTitle,
+    cardSubtitle,
+    cardText,
   ]
 
   return propsReducer(map)
@@ -29,6 +37,11 @@ export function vuetify3Components() {
   const map: any[] = [
     ['v-button', '按钮', '<v-btn>Button</v-btn>'],
     ['v-card', '卡片', '<v-card text="..."></v-card>'],
+    ['v-card-item', '卡片', '<v-card-item></v-card-item>'],
+    ['v-card-text', '卡片', '<v-card-text></v-card-text>'],
+    ['v-card-title', '卡片', '<v-card-title></v-card-title>'],
+    ['v-card-subtitle', '卡片', '<v-card-subtitle></v-card-subtitle>'],
+    ['v-card-actions', '卡片', '<v-card-actions></v-card-actions>'],
     ['v-chip', '纸片', '<v-chip>Chip</v-chip'],
     ['v-dialog', '对话框', `<v-dialog
   v-model="dialog"
