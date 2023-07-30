@@ -13,6 +13,9 @@ import expansionPanels from './expansionPanels.json'
 import expansionPanelText from './expansionPanelText.json'
 import expansionPanelTitle from './expansionPanelTitle.json'
 import list from './list.json'
+import listItem from './listItem.json'
+import listSubheader from './listSubheader.json'
+import listGroup from './listGroup.json'
 
 export function vuetify3() {
   const map: any = [
@@ -30,6 +33,9 @@ export function vuetify3() {
     cardSubtitle,
     cardText,
     list,
+    listItem,
+    listSubheader,
+    listGroup,
   ]
 
   return propsReducer(map)
