@@ -12,6 +12,7 @@ import expansionPanel from './expansionPanel.json'
 import expansionPanels from './expansionPanels.json'
 import expansionPanelText from './expansionPanelText.json'
 import expansionPanelTitle from './expansionPanelTitle.json'
+import list from './list.json'
 
 export function vuetify3() {
   const map: any = [
@@ -28,6 +29,7 @@ export function vuetify3() {
     cardTitle,
     cardSubtitle,
     cardText,
+    list,
   ]
 
   return propsReducer(map)
@@ -55,6 +57,7 @@ export function vuetify3Components() {
 ></v-expansion-panel>`],
     ['v-expansion-title', '高级版扩展面板 用于展示可扩展面板的标题的子组件。 也可以包裹在 #title 插槽内', '<v-expansion-panel-title></v-expansion-panel-title>'],
     ['v-expansion-text', '高级版扩展面板 用于展示可扩展面板的内容的子组件。 也可以包裹在 #text 插槽内', '<v-expansion-panel-text></v-expansion-panel-text>'],
+    ['v-list', '列表 简单地用于表明某几个元素属于同一个集合。 列表为同组的文字和图像提供了了相同的样式', '<v-list lines="one"></v-list>'],
 
   ]
   return componentsReducer(map)

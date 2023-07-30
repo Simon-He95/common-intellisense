@@ -1,0 +1,208 @@
+{
+  "name": "VList",
+  "props": {
+    "active-class": {
+      "value": "",
+      "description": "当组件处于 active 状态时应用的类",
+      "default": "undefined",
+      "type": "string"
+    },
+    "active-color": {
+      "value": "",
+      "description": "当组件处于 active 状态时应用的颜色",
+      "default": "undefined",
+      "type": "string"
+    },
+    "base-color": {
+      "value": "",
+      "description": "MISSING DESCRIPTION",
+      "default": "undefined",
+      "type": "string"
+    },
+    "bg-color": {
+      "value": "",
+      "description": "Applies specified color to the control’s background. Used on components that also support the color prop. - supports utility colors (for example success or purple) or css color (#033 or rgba(255, 0, 0, 0.5)). Find a list of built-in classes on the colors page",
+      "default": "undefined",
+      "type": "string"
+    },
+    "border": {
+      "value": "",
+      "description": "应用边框样式到组件。",
+      "default": "false",
+      "type": "string | number | boolean"
+    },
+
+    "color": {
+      "value": "",
+      "description": "指定控件颜色，颜色值可以是任意 Material 颜色（例如 success 或者 purple ）也可以是 Css 颜色 （例如 #033 或者 rgba(255, 0, 0, 0.5)）。在 颜色页中可以找到内置的颜色类列表。",
+      "default": "undefined",
+      "type": "string"
+    },
+    "density": {
+      "value": "",
+      "description": "调整组件使用的垂直高度。",
+      "default": "default",
+      "type": "'default' | 'comfortable' | 'compact'"
+    },
+    "disabled": {
+      "value": "",
+      "description": "移除单击组件或选中组件的能力，将组件设置为不可用状态。",
+      "default": "false",
+      "type": "boolean"
+    },
+    "elevation": {
+      "value": "",
+      "description": "组件的海拔可接受 0 到 24 之间的值。你可以在 elevation page浏览更多信息。",
+      "default": "undefined",
+      "type": "string | number"
+    },
+    "height": {
+      "value": "",
+      "description": "设定组件的高度。",
+      "default": "undefined",
+      "type": "string | number"
+    },
+    "item-children": {
+      "value": "",
+      "description": "提供的包含其子项的 items 上的属性",
+      "default": "children",
+      "type": "SelectItemKey"
+    },
+    "item-props": {
+      "value": "",
+      "description": "Props object that will be applied to each item component. true will treat the original object as raw props and pass it directly to the component.",
+      "default": "props",
+      "type": "SelectItemKey"
+    },
+    "items": {
+      "value": "",
+      "description": "An array of strings or objects used for automatically generating children components",
+      "default": "[]",
+      "type": "unknown[]"
+    },
+    "item-title": {
+      "value": "",
+      "description": "Property on supplied items that contains its title",
+      "default": "title",
+      "type": "SelectItemKey"
+    },
+    "item-type": {
+      "value": "",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "default": "type",
+      "type": "string"
+    },
+    "item-value": {
+      "value": "",
+      "description": "Designates a minimum-height for all children v-list-item components. This prop uses line-clamp and is not supported in all browsers.",
+      "default": "one",
+      "type": "false | 'one' | 'two' | 'three'"
+    },
+    "mandatory": {
+      "value": "",
+      "description": "强制至少选择一个项目（如果可用）。",
+      "default": "false",
+      "type": "boolean"
+    },
+    "max-height": {
+      "value": "",
+      "description": "设定组件的最大高度。",
+      "default": "undefined",
+      "type": "string | number"
+    },
+    "max-width": {
+      "value": "",
+      "description": "设定组件的最大宽度。",
+      "default": "undefined",
+      "type": "string | number"
+    },
+    "min-height": {
+      "value": "",
+      "description": "设定组件的最小高度。",
+      "default": "undefined",
+      "type": "string | number"
+    },
+    "min-width": {
+      "value": "",
+      "description": "设定组件的最小宽度。",
+      "default": "undefined",
+      "type": "string | number"
+    },
+    "nav": {
+      "value": "",
+      "description": "另一种样式可以减小 v-list-item 的宽度并圆角化。 通常与 v-navigation-drawer一起使用",
+      "default": "false",
+      "type": "boolean"
+    },
+    "opened": {
+      "value": "",
+      "description": "An array containing the values of currently opened groups. Can be two-way bound with v-model:opened.",
+      "default": "undefined",
+      "type": "unknown[]"
+    },
+    "open-strategy": {
+      "value": "",
+      "description": "multiple: Any number of groups can be open at once. single: Only one group at each level can be open, opening a group will cause others to close. list: Multiple, but all other groups will close when an item is selected.",
+      "default": "list",
+      "type": "'multiple' | 'single' | 'list' | { open: OpenStrategyFn; select: OpenSelectStrategyFn }"
+    },
+    "return-object": {
+      "value": "",
+      "description": "将选择器的行为更改为直接返回对象，而不是 item-value 指定的值",
+      "default": "false",
+      "type": "boolean"
+    },
+    "rounded": {
+      "value": "",
+      "description": "对指定的组件应用 border-radius 样式。您可以在 边框的圆角半径页面获取更多有关信息",
+      "default": "false",
+      "type": "string | number | boolean"
+    },
+    "selected": {
+      "value": "",
+      "description": "An array containing the values of currently selected items. Can be two-way bound with v-model:selected.",
+      "default": "undefined",
+      "type": "unknown[]"
+    },
+    "select-strategy": {
+      "value": "",
+      "description": "leaf: Only leaf nodes (items without children) can be selected.independent: All nodes can be selected whether they have children or not.classic: Selecting a parent node will cause all children to be selected, parent nodes will be displayed as selected if all their descendants are selected. Only leaf nodes will be added to the model.",
+      "default": "single-leaf",
+      "type": "'single-leaf' | 'leaf' | 'independent' | 'single-independent' | 'classic' | SelectStrategyFn"
+    },
+    "tag": {
+      "value": "",
+      "description": "指定在根元素上使用的自定义标签。",
+      "default": "button",
+      "type": "string"
+    },
+    "theme": {
+      "value": "",
+      "description": "指定此组件及其所有子组件的主题",
+      "default": "undefined",
+      "type": "string"
+    },
+    "variant": {
+      "value": "",
+      "description": "对指定的组件应用 border-radius 样式。您可以在 边框的圆角半径页面获取更多有关信息",
+      "default": "false",
+      "type": "'text' | 'flat' | 'elevated' | 'tonal' | 'outlined' | 'plain'"
+    },
+    "width": {
+      "value": "",
+      "description": "设定组件的宽度。",
+      "default": "undefined",
+      "type": "string | number"
+    }
+  },
+  "methods": [],
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "group:selected",
+      "description": "Event that is emitted when an item is selected within a group.",
+      "params": "[{ value: boolean }]"
+    }
+  ],
+  "link": "https://vuetifyjs.com/zh-Hans/api/v-list/"
+}
