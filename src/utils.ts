@@ -30,9 +30,17 @@ export function transformVue(code: string, position: vscode.Position) {
   } = parse(code)
   if (errors.length || !template)
     return
-  if ((script && isInPosition(script.loc, position)) || (scriptSetup && isInPosition(scriptSetup.loc, position))) {
+  const _script = script || scriptSetup
+  if (_script && isInPosition(_script.loc, position)) {
+    const content = _script.content!
+    const refs: string[] = []
+    for (const match of content.matchAll(/(const|let|var)\s+([\w\$_0-9]+)\s*=\s*ref\(/g)) {
+      if (match)
+        refs.push(match[2])
+    }
     return {
       type: 'script',
+      refs,
     }
   }
   if (!isInPosition(template.loc, position))

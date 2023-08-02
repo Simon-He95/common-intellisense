@@ -1,5 +1,5 @@
 import * as vscode from 'vscode'
-import { addEventListener, copyText, getSelection, message, registerCommand, registerCompletionItemProvider } from '@vscode-use/utils'
+import { addEventListener, copyText, createCompletionItem, getSelection, message, registerCommand, registerCompletionItemProvider } from '@vscode-use/utils'
 import { findPkgUI, parser } from './utils'
 import UI from './ui'
 
@@ -40,6 +40,9 @@ export function activate(context: vscode.ExtensionContext) {
 
     if (!result)
       return
+    if (result.refs)
+      return result.refs.map((refName: string) => createCompletionItem({ content: refName, snippet: `${refName}.value` }))
+
     if (UiCompletions && result?.type === 'props') {
       const name = result.tag[0].toUpperCase() + result.tag.replace(/(-\w)/g, (match: string) => match[1].toUpperCase()).slice(1)
       if (result.propName === 'icon')
