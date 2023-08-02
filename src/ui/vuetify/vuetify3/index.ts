@@ -20,6 +20,7 @@ import listItemAction from './listItemAction.json'
 import listItemMedia from './listItemMedia.json'
 import listSubheader from './listSubheader.json'
 import menu from './menu.json'
+import overlay from './overlay.json'
 
 export function vuetify3() {
   const map: any = [
@@ -44,6 +45,7 @@ export function vuetify3() {
     listItemAction,
     listItemMedia,
     menu,
+    overlay,
   ]
 
   return propsReducer(map)
@@ -81,6 +83,7 @@ export function vuetify3Components() {
     ['v-list-item-action', '导航列表', '<v-list-item-action></v-list-item-action>'],
     ['v-list-item-media', '导航列表', '<v-list-item-media></v-list-item-media>'],
     ['v-menu', '菜单 可以在某个激活菜单的元素位置显示一个菜单。', '<v-menu></v-menu>'],
+    ['v-overlay', '遮罩层', '<v-overlay v-model="overlay"></v-overlay>'],
   ]
   return componentsReducer(map)
 }
