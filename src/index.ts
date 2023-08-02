@@ -40,8 +40,10 @@ export function activate(context: vscode.ExtensionContext) {
 
     if (!result)
       return
-    if (result.refs)
-      return result.refs.map((refName: string) => createCompletionItem({ content: refName, snippet: `${refName}.value` }))
+    const { lineText } = getSelection()!
+    const isPreEmpty = lineText?.slice(-1)[0] === ' '
+    if (result.refs && !isPreEmpty)
+      return result.refs.map((refName: string) => createCompletionItem({ content: refName, snippet: `${refName}.value`,documentation:`${refName}.value`,preselect:true,sortText:'99' }))
 
     if (UiCompletions && result?.type === 'props') {
       const name = result.tag[0].toUpperCase() + result.tag.replace(/(-\w)/g, (match: string) => match[1].toUpperCase()).slice(1)
@@ -55,8 +57,7 @@ export function activate(context: vscode.ExtensionContext) {
     else if (!result.isInTemplate) {
       return
     }
-    const { lineText } = getSelection()!
-    if (optionsComponents && lineText?.slice(-1)[0] !== ' ')
+    if (optionsComponents && !isPreEmpty)
       return optionsComponents
   }, ['"', '\'', '-', ' ', '@', '.']))
 }
