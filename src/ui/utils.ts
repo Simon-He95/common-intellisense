@@ -23,6 +23,7 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
   return map.reduce((result: any, item: any) => {
     const completions: any = []
     const events: any = []
+    const methods = []
     completions.push(...[
       'id',
       'style',
@@ -107,7 +108,28 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
       ))
     }
 
-    result[item.name!] = { completions, events }
+    if (item.methods) {
+      methods.push(...item.methods.map((method: any) => {
+        const documentation = new vscode.MarkdownString()
+        documentation.isTrusted = true
+        documentation.supportHtml = true
+        const detail: any = []
+        const { name, description, params } = method
+        if (name)
+          detail.push(`\n#### 💨 方法 ${name}:`)
+
+        if (description)
+          detail.push(`- 👓 说明:    ***\`${description}\`***`)
+
+        if (params)
+          detail.push(`- 🚢 参数:    ***\`${params}\`***`)
+
+        documentation.appendMarkdown(detail.join('\n\n'))
+        return createCompletionItem({ content: method.name, snippet: `${name}()$1`, documentation, type: 1, preselect: true, sortText: '1' })
+      }))
+    }
+
+    result[item.name!] = { completions, events, methods }
     return result
   }, result)
 }

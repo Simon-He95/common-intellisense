@@ -1,6 +1,7 @@
 import fsp from 'node:fs/promises'
 import * as vscode from 'vscode'
 import { parse } from '@vue/compiler-sfc'
+import type { SFCTemplateBlock } from '@vue/compiler-sfc'
 import { parse as tsParser } from '@typescript-eslint/typescript-estree'
 import { findUp } from 'find-up'
 
@@ -15,8 +16,13 @@ export function parser(code: string, position: vscode.Position) {
   if (!suffix)
     return
   isInTemplate = false
-  if (suffix === 'vue')
-    return transformVue(code, position)
+  if (suffix === 'vue') {
+    const result = transformVue(code, position)
+    if (!result.refs)
+      return result
+    const refsMap = findRefs(result.template)
+    return Object.assign(result, { refsMap })
+  }
   if (/ts|js|jsx|tsx/.test(suffix))
     return parserJSX(code, position)
 
@@ -34,13 +40,14 @@ export function transformVue(code: string, position: vscode.Position) {
   if (_script && isInPosition(_script.loc, position)) {
     const content = _script.content!
     const refs: string[] = []
-    for (const match of content.matchAll(/(const|let|var)\s+([\w\$_0-9]+)\s*=\s*ref\(/g)) {
+    for (const match of content.matchAll(/(const|let|var)\s+([\w\$_0-9]+)\s*=\s*ref[^\()]*\(/g)) {
       if (match)
         refs.push(match[2])
     }
     return {
       type: 'script',
       refs,
+      template,
     }
   }
   if (!isInPosition(template.loc, position))
@@ -161,6 +168,28 @@ function jsxDfs(children: any, position: vscode.Position) {
     }
     return
   }
+}
+
+function findRefs(template: SFCTemplateBlock) {
+  const { ast } = template
+  return findRef(ast.children, {})
+}
+function findRef(children: any, map: any) {
+  for (const child of children) {
+    const { tag, props, children } = child
+    if (props && props.length) {
+      for (const prop of props) {
+        const { name, value: { content } } = prop
+        if (name !== 'ref' || !content)
+          continue
+        const tagName = tag[0].toUpperCase() + tag.replace(/(-\w)/g, (match: string) => match[1].toUpperCase()).slice(1)
+        map[content] = tagName
+      }
+    }
+    if (children && children.length)
+      findRef(children, map) as any
+  }
+  return map
 }
 
 const UINames = ['element-ui', 'element-plus', 'antd', 'ant-design-vue', '@varlet/ui', 'vant', 'naive-ui', 'vuetify']
