@@ -37,6 +37,7 @@ export function activate(context: vscode.ExtensionContext) {
 
   context.subscriptions.push(registerCompletionItemProvider(filter, (document, position) => {
     const result = parser(document.getText(), position)
+
     if (!result)
       return
     if (UiCompletions && result?.type === 'props') {
@@ -54,7 +55,7 @@ export function activate(context: vscode.ExtensionContext) {
     const { lineText } = getSelection()!
     if (optionsComponents && lineText?.slice(-1)[0] !== ' ')
       return optionsComponents
-  }, ['"', '\'', '-', ' ', '@']))
+  }, ['"', '\'', '-', ' ', '@', '.']))
 }
 
 export function deactivate() {

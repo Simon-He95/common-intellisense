@@ -25,11 +25,16 @@ export function parser(code: string, position: vscode.Position) {
 
 export function transformVue(code: string, position: vscode.Position) {
   const {
-    descriptor: { template },
+    descriptor: { template, script, scriptSetup },
     errors,
   } = parse(code)
   if (errors.length || !template)
     return
+  if ((script && isInPosition(script.loc, position)) || (scriptSetup && isInPosition(scriptSetup.loc, position))) {
+    return {
+      type: 'script',
+    }
+  }
   if (!isInPosition(template.loc, position))
     return
   // 在template中
