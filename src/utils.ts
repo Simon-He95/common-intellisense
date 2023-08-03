@@ -113,7 +113,16 @@ function isInPosition(loc: any, position: vscode.Position) {
 
 export function parserJSX(code: string, position: vscode.Position) {
   const ast = tsParser(code, { jsx: true, loc: true })
-  return jsxDfs(ast.body, position)
+  const children = ast.body
+  const result = jsxDfs(children, position)
+  const map = findJsxRefs(children)
+  if (result)
+    return Object.assign(result, map)
+
+  return {
+    type: 'script',
+    ...map,
+  }
 }
 
 function jsxDfs(children: any, position: vscode.Position) {
@@ -170,6 +179,51 @@ function jsxDfs(children: any, position: vscode.Position) {
   }
 }
 
+function findJsxRefs(children: any, map: any = {}, refs: any = []) {
+  for (const child of children) {
+    let { type, openingElement, body: children, argument, declarations, init, id, expression } = child
+    if (type === 'VariableDeclaration') {
+      children = declarations
+    }
+    else if (type === 'VariableDeclarator') {
+      children = init
+      if (init.callee && init.callee.name === 'useRef') {
+        refs.push(id.name)
+        continue
+      }
+    }
+    else if (type === 'ExpressionStatement') {
+      children = expression.arguments
+    }
+    else if (type === 'ReturnStatement') {
+      children = argument
+    }
+    else if (type === 'JSXElement') {
+      children = child.children
+    }
+    else if (!children) {
+      continue
+    }
+    if (children && !Array.isArray(children))
+      children = [children]
+    if (openingElement && openingElement.attributes.length) {
+      for (const prop of openingElement.attributes) {
+        if (prop.name.name === 'ref') {
+          const value = prop.value.expression.name
+          map[value] = transformTagName(openingElement.name.name)
+        }
+      }
+    }
+
+    if (children && children.length)
+      findJsxRefs(children, map, refs)
+  }
+  return {
+    refsMap: map,
+    refs,
+  }
+}
+
 function findRefs(template: SFCTemplateBlock) {
   const { ast } = template
   return findRef(ast.children, {})
@@ -182,7 +236,7 @@ function findRef(children: any, map: any) {
         const { name, value: { content } } = prop
         if (name !== 'ref' || !content)
           continue
-        const tagName = tag[0].toUpperCase() + tag.replace(/(-\w)/g, (match: string) => match[1].toUpperCase()).slice(1)
+        const tagName = transformTagName(tag)
         map[content] = tagName
       }
     }
@@ -215,4 +269,8 @@ export async function findPkgUI(cwd?: string) {
     }
   }
   return { pkg, uis: result }
+}
+
+export function transformTagName(name: string) {
+  return name[0].toUpperCase() + name.replace(/(-\w)/g, (match: string) => match[1].toUpperCase()).slice(1)
 }
