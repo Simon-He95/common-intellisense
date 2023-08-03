@@ -1,5 +1,5 @@
 import * as vscode from 'vscode'
-import { addEventListener, copyText, getSelection, message, registerCommand, registerCompletionItemProvider } from '@vscode-use/utils'
+import { addEventListener, copyText, createCompletionItem, getSelection, message, registerCommand, registerCompletionItemProvider } from '@vscode-use/utils'
 import { findPkgUI, parser } from './utils'
 import UI from './ui'
 
@@ -41,18 +41,19 @@ export function activate(context: vscode.ExtensionContext) {
     if (!result)
       return
     const { lineText } = getSelection()!
-    const isPreEmpty = lineText?.slice(-1)[0] === ' '
+    const { character } = position
+    const isPreEmpty = lineText[character - 1] === ' '
     if (result.refs && !isPreEmpty) {
       if (result.refsMap && Object.keys(result.refsMap).length) {
         if (lineText?.slice(-1)[0] === '.') {
           for (const key in result.refsMap) {
             const value = result.refsMap[key]
-            if (lineText.endsWith(`${key}.value.`) && UiCompletions[value])
+            if ((lineText.endsWith(`.$refs.${key}.`) || lineText.endsWith(`${key}.value.`)) && UiCompletions[value])
               return UiCompletions[value].methods
           }
         }
       }
-      // return result.refs.map((refName: string) => createCompletionItem({ content: refName, snippet: `${refName}.value`,documentation:`${refName}.value`,preselect:true,sortText:'99' }))
+      return result.refs.map((refName: string) => createCompletionItem({ content: refName, snippet: `${refName}.value`, documentation: `${refName}.value`, preselect: true, sortText: '99' }))
     }
 
     if (UiCompletions && result?.type === 'props') {
