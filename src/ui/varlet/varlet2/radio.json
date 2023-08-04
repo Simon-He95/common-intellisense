@@ -1,80 +1,100 @@
 {
-  "name": "VarCheckbox",
+  "name": "VarRadio",
   "props": {
     "v-model": {
       "value": "",
       "description": "绑定的值",
       "default": "false",
-      "type": "绑定的值"
+      "type": "any"
     },
     "checked-value": {
       "value": "",
       "description": "选中状态的值",
       "default": "true",
-      "type": "选中状态的值"
+      "type": "any"
     },
     "unchecked-value": {
       "value": "",
       "description": "未选中状态的值",
       "default": "false",
-      "type": "未选中状态的值"
+      "type": "any"
     },
     "checked-color": {
       "value": "",
       "description": "选中状态的颜色",
       "default": "-",
-      "type": "选中状态的颜色"
+      "type": "any"
     },
     "unchecked-color": {
       "value": "",
       "description": "未选中状态的颜色",
       "default": "-",
-      "type": "未选中状态的颜色"
+      "type": "any"
     },
     "icon-size": {
       "value": "",
       "description": "图标尺寸",
       "default": "-",
-      "type": "图标尺寸"
+      "type": "string | number"
     },
     "disabled": {
       "value": "",
       "description": "是否禁用",
       "default": "false",
-      "type": "是否禁用"
+      "type": "boolean"
     },
     "readonly": {
       "value": "",
       "description": "是否只读",
       "default": "false",
-      "type": "是否只读"
+      "type": "boolean"
     },
     "ripple": {
       "value": "",
       "description": "是否开启水波纹",
       "default": "true",
-      "type": "是否开启水波纹"
+      "type": "boolean"
     },
     "rules": {
       "value": "",
       "description": "验证规则，返回 `true` 表示验证通过，其余的值则转换为文本作为用户提示",
       "default": "-",
-      "type": "验证规则，返回 true 表示验证通过，其余的值则转换为文本作为用户提示"
+      "type": "Array<(value: any) => any>"
     }
   },
-  "methods": [{ "name": "validate", "description": "触发校验", "params": "`-`" }, { "name": "resetValidation", "description": "清空校验信息", "params": "`-`" }, { "name": "reset", "description": "清空绑定的值(设置为 `unchecked-value`)和校验信息", "params": "`-`" }, { "name": "toggle", "description": "切换选中状态，传 `checked-value` 为选中， `unchecked-value` 为取消选中，不传或其他情况为取反", "params": "`value: any`" }],
+  "methods": [
+    {
+      "name": "validate",
+      "description": "触发校验",
+      "params": "`-`"
+    },
+    {
+      "name": "resetValidation",
+      "description": "清空校验信息",
+      "params": "`-`"
+    },
+    {
+      "name": "reset",
+      "description": "清空绑定的值(设置为 `unchecked-value`)和校验信息",
+      "params": "`-`"
+    },
+    {
+      "name": "toggle",
+      "description": "切换选中状态，传 `checked-value` 为选中，`unchecked-value` 为取消选中，不传或其他情况为取反",
+      "params": "`value: any`"
+    }
+  ],
   "typeDetail": {},
   "events": [
     {
-      "name": "`click`",
+      "name": "click",
       "description": "点击时触发",
-      "params": "点击时触发"
+      "params": "`e: Event`"
     },
     {
-      "name": "`change`",
+      "name": "change",
       "description": "状态变更时触发",
-      "params": "状态变更时触发"
+      "params": "`value: any`"
     }
-  ],
-  "link": "https://varlet.gitee.io/varlet-ui/#/zh-CN/checkbox-group"
+  ]
 }

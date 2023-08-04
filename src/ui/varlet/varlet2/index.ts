@@ -1,4 +1,5 @@
 import { componentsReducer, propsReducer } from '../../utils'
+import actionSheet from './actionSheet.json'
 import button from './button.json'
 import vswitch from './switch.json'
 import buttonGroup from './buttonGroup.json'
@@ -22,6 +23,7 @@ import collapseItem from './collapseItem.json'
 import countdown from './countdown.json'
 import counter from './counter.json'
 import datePicker from './datePicker.json'
+import dialog from './dialog.json'
 import divider from './divider.json'
 import drag from './drag.json'
 import ellipsis from './ellipsis.json'
@@ -42,6 +44,8 @@ import popup from './popup.json'
 import progress from './progress.json'
 import pullRefresh from './pullRefresh.json'
 import rate from './rate.json'
+import radio from './radio.json'
+import radioGroup from './radioGroup.json'
 import result from './result.json'
 import select from './select.json'
 import skeleton from './skeleton.json'
@@ -60,6 +64,7 @@ import uploader from './uploader.json'
 
 export function varlet2() {
   const map: any = [
+    actionSheet,
     button,
     vswitch,
     buttonGroup,
@@ -118,6 +123,9 @@ export function varlet2() {
     timePicker,
     tooltip,
     uploader,
+    dialog,
+    radio,
+    radioGroup,
   ]
 
   return propsReducer(map)
@@ -125,6 +133,24 @@ export function varlet2() {
 
 export function varlet2Components() {
   const map = [
+    ['var-action-sheet', '动作面板', `<var-action-sheet 
+  :actions="actions"
+  v-model:show="show"
+  @select="handleSelect"
+/>`],
+    ['var-dialog', '对话框', `<var-dialog
+    title="兰亭序"
+    message="兰亭临帖 行书如行云流水"
+    v-model:show="show"
+    @confirm="() => Snackbar.success('confirm')"
+    @cancel="() => Snackbar.error('cancel')"
+    @closed="() => Snackbar.info('closed')"
+  />`],
+    ['var-radio', '单选框', '<var-radio v-model="value">当前的值: {{ value }}</var-radio>'],
+    ['var-radio-group', '单选框组', `<var-radio-group v-model="value">
+  <var-radio :checked-value="0">吃饭</var-radio>
+  <var-radio :checked-value="1">睡觉</var-radio>
+</var-radio-group>`],
     ['var-button', '按钮', '<var-button>默认按钮</var-button>'],
     ['var-switch', '开关', '<var-switch v-model="value" />'],
     ['var-button-group', '按钮组', `<var-button-group type="primary" mode="text">

@@ -1,0 +1,334 @@
+{
+  "name": "VarDialog",
+  "props": {
+    "v-model:show": {
+      "value": "",
+      "description": "是否显示对话框",
+      "default": "false",
+      "type": "boolean"
+    },
+    "title": {
+      "value": "",
+      "description": "对话框标题",
+      "default": "提示",
+      "type": "string"
+    },
+    "width": {
+      "value": "",
+      "description": "对话框宽度",
+      "default": "-",
+      "type": "string | number"
+    },
+    "message": {
+      "value": "",
+      "description": "对话框内容",
+      "default": "-",
+      "type": "string"
+    },
+    "message-align": {
+      "value": "",
+      "description": "对话框内容文字对齐方式，可选值 `center` `left` `right`",
+      "default": "left",
+      "type": "string"
+    },
+    "confirm-button": {
+      "value": "",
+      "description": "是否显示确认按钮",
+      "default": "true",
+      "type": "boolean"
+    },
+    "cancel-button": {
+      "value": "",
+      "description": "是否显示取消按钮",
+      "default": "true",
+      "type": "boolean"
+    },
+    "confirm-button-text": {
+      "value": "",
+      "description": "确认按钮文字",
+      "default": "确认",
+      "type": "string"
+    },
+    "cancel-button-text": {
+      "value": "",
+      "description": "取消按钮文字",
+      "default": "取消",
+      "type": "string"
+    },
+    "confirm-button-text-color": {
+      "value": "",
+      "description": "确认按钮文字颜色",
+      "default": "-",
+      "type": "string"
+    },
+    "cancel-button-text-color": {
+      "value": "",
+      "description": "取消按钮文字颜色",
+      "default": "-",
+      "type": "string"
+    },
+    "confirm-button-color": {
+      "value": "",
+      "description": "确认按钮背景颜色",
+      "default": "-",
+      "type": "string"
+    },
+    "cancel-button-color": {
+      "value": "",
+      "description": "取消按钮背景颜色",
+      "default": "-",
+      "type": "string"
+    },
+    "dialog-class": {
+      "value": "",
+      "description": "对话框主体区域的 class",
+      "default": "-",
+      "type": "string"
+    },
+    "dialog-style": {
+      "value": "",
+      "description": "对话框主体区域的 style",
+      "default": "-",
+      "type": "object"
+    },
+    "overlay": {
+      "value": "",
+      "description": "是否显示遮罩层",
+      "default": "true",
+      "type": "boolean"
+    },
+    "overlay-class": {
+      "value": "",
+      "description": "自定义遮罩层的 class",
+      "default": "-",
+      "type": "string"
+    },
+    "overlay-style": {
+      "value": "",
+      "description": "自定义遮罩层的 style",
+      "default": "-",
+      "type": "object"
+    },
+    "lock-scroll": {
+      "value": "",
+      "description": "是否禁止滚动穿透，禁止时滚动弹出层不会引发 body 的滚动",
+      "default": "true",
+      "type": "boolean"
+    },
+    "close-on-click-overlay": {
+      "value": "",
+      "description": "是否点击遮罩层关闭弹出层",
+      "default": "true",
+      "type": "boolean"
+    },
+    "teleport": {
+      "value": "",
+      "description": "弹出层挂载的位置",
+      "default": "body",
+      "type": "TeleportProps['to'] | false"
+    }
+  },
+  "methods": [
+    {
+      "name": "Dialog",
+      "description": "显示对话框",
+      "params": "options | string"
+    },
+    {
+      "name": "Dialog.close",
+      "description": "关闭对话框",
+      "params": "-"
+    },
+    {
+      "name": "Dialog.setDefaultOptions",
+      "description": "设置默认的选项配置",
+      "params": "options"
+    },
+    {
+      "name": "Dialog.resetDefaultOptions",
+      "description": "重置默认的选项配置",
+      "params": "-"
+    }
+  ],
+  "typeDetail": {
+    "Dialog Options": [
+      {
+        "name": "`title`",
+        "description": "对话框标题",
+        "type": "string"
+      },
+      {
+        "name": "`width`",
+        "description": "对话框宽度",
+        "type": "string | number"
+      },
+      {
+        "name": "`message`",
+        "description": "对话框内容",
+        "type": "string"
+      },
+      {
+        "name": "`messageAlign`",
+        "description": "对话框内容文字对齐方式，可选值 `center` `left` `right`",
+        "type": "string"
+      },
+      {
+        "name": "`confirmButton`",
+        "description": "是否显示确认按钮",
+        "type": "boolean"
+      },
+      {
+        "name": "`cancelButton`",
+        "description": "是否显示取消按钮",
+        "type": "boolean"
+      },
+      {
+        "name": "`confirmButtonText`",
+        "description": "确认按钮文字",
+        "type": "string"
+      },
+      {
+        "name": "`cancelButtonText`",
+        "description": "取消按钮文字",
+        "type": "string"
+      },
+      {
+        "name": "`confirmButtonTextColor`",
+        "description": "确认按钮文字颜色",
+        "type": "string"
+      },
+      {
+        "name": "`cancelButtonTextColor`",
+        "description": "取消按钮文字颜色",
+        "type": "string"
+      },
+      {
+        "name": "`confirmButtonColor`",
+        "description": "确认按钮背景颜色",
+        "type": "string"
+      },
+      {
+        "name": "`cancelButtonColor`",
+        "description": "取消按钮背景颜色",
+        "type": "string"
+      },
+      {
+        "name": "`dialogClass`",
+        "description": "对话框主体区域的 class",
+        "type": "string"
+      },
+      {
+        "name": "`dialogStyle`",
+        "description": "对话框主体区域的 style",
+        "type": "object"
+      },
+      {
+        "name": "`overlay`",
+        "description": "是否显示遮罩层",
+        "type": "boolean"
+      },
+      {
+        "name": "`overlayClass`",
+        "description": "自定义遮罩层的 class",
+        "type": "string"
+      },
+      {
+        "name": "`overlayStyle`",
+        "description": "自定义遮罩层的 style",
+        "type": "object"
+      },
+      {
+        "name": "`lockScroll`",
+        "description": "是否禁止滚动穿透，禁止时滚动弹出层不会引发 body 的滚动",
+        "type": "boolean"
+      },
+      {
+        "name": "`closeOnClickOverlay`",
+        "description": "是否点击遮罩层关闭弹出层",
+        "type": "boolean"
+      },
+      {
+        "name": "`onOpen`",
+        "description": "对话框开启回调",
+        "type": "() => void"
+      },
+      {
+        "name": "`onOpened`",
+        "description": "对话框开启动画结束回调",
+        "type": "() => void"
+      },
+      {
+        "name": "`onBeforeClose`",
+        "description": "对话框关闭前回调，会阻止关闭",
+        "type": "(action: confirm | cancel | close, done: Function) => void"
+      },
+      {
+        "name": "`onClose`",
+        "description": "对话框关闭回调",
+        "type": "() => void"
+      },
+      {
+        "name": "`onClosed`",
+        "description": "对话框关闭动画结束回调",
+        "type": "() => void"
+      },
+      {
+        "name": "`onConfirm`",
+        "description": "确认回调",
+        "type": "() => void"
+      },
+      {
+        "name": "`onCancel`",
+        "description": "取消回调",
+        "type": "() => void"
+      },
+      {
+        "name": "`onClickOverlay`",
+        "description": "遮罩层点击回调",
+        "type": "() => void"
+      }
+    ]
+  },
+  "events": [
+    {
+      "name": "open",
+      "description": "打开对话框时触发",
+      "params": "`-`"
+    },
+    {
+      "name": "opened",
+      "description": "打开对话框动画结束时触发",
+      "params": "`-`"
+    },
+    {
+      "name": "before-close",
+      "description": "对话框关闭前触发，会阻止关闭",
+      "params": "`action: confirm | cancel | close`   `done: Function`"
+    },
+    {
+      "name": "close",
+      "description": "关闭对话框时触发",
+      "params": "`-`"
+    },
+    {
+      "name": "closed",
+      "description": "关闭对话框动画结束时触发",
+      "params": "`-`"
+    },
+    {
+      "name": "confirm",
+      "description": "确认时触发",
+      "params": "`-`"
+    },
+    {
+      "name": "cancel",
+      "description": "取消时触发",
+      "params": "`-`"
+    },
+    {
+      "name": "click-overlay",
+      "description": "点击遮罩层时触发",
+      "params": "`-`"
+    }
+  ]
+}

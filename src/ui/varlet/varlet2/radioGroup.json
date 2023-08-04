@@ -1,0 +1,48 @@
+{
+  "name": "VarRadioGroup",
+  "props": {
+    "v-model": {
+      "value": "",
+      "description": "绑定的值",
+      "default": "-",
+      "type": "any"
+    },
+    "direction": {
+      "value": "",
+      "description": "布局方向，可选值为 `horizontal` `vertical`",
+      "default": "horizontal",
+      "type": "string"
+    },
+    "rules": {
+      "value": "",
+      "description": "验证规则，返回 `true` 表示验证通过，其余的值则转换为文本作为用户提示",
+      "default": "-",
+      "type": "Array<(value: any) => any>"
+    }
+  },
+  "methods": [
+    {
+      "name": "validate",
+      "description": "触发校验",
+      "params": "`-`"
+    },
+    {
+      "name": "resetValidation",
+      "description": "清空校验信息",
+      "params": "`-`"
+    },
+    {
+      "name": "reset",
+      "description": "清空绑定的值(设置为 `undefined`)和校验信息",
+      "params": "`-`"
+    }
+  ],
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "change",
+      "description": "变更时触发",
+      "params": "`value: any`"
+    }
+  ]
+}
