@@ -6,10 +6,15 @@ import avatarGroup from './avatarGroup.json'
 import badge from './badge.json'
 import breadcrumb from './breadcrumb.json'
 import breadcrumbItem from './breadcrumbItem.json'
+import carousel from './carousel.json'
+import cascader from './cascader.json'
+import countdown from './countdown.json'
 import checkbox from './checkbox.json'
 import checkboxGroup from './checkboxGroup.json'
 import dialog from './dialog.json'
+import datePicker from './datePicker.json'
 import modal from './modal.json'
+import mention from './mention.json'
 import pagination from './pagination.json'
 import popover from './popover.json'
 import radio from './radio.json'
@@ -36,9 +41,11 @@ import layoutContent from './layoutContent.json'
 import layoutHeader from './layoutHeader.json'
 import layoutFooter from './layoutFooter.json'
 import loadingBarProvider from './loadingBarProvider.json'
+import log from './log.json'
 import menu from './menu.json'
 import messageProvider from './messageProvider.json'
 import notificationProvider from './notificationProvider.json'
+import numberAnimation from './numberAnimation.json'
 import rate from './rate.json'
 import result from './result.json'
 import scrollbar from './scrollbar.json'
@@ -75,10 +82,15 @@ export function naiveUi2() {
     breadcrumbItem,
     button,
     buttonGroup,
+    carousel,
+    cascader,
+    countdown,
     checkbox,
     checkboxGroup,
     dialog,
     modal,
+    mention,
+    numberAnimation,
     pagination,
     popover,
     radio,
@@ -88,6 +100,7 @@ export function naiveUi2() {
     nswitch,
     table,
     dataTable,
+    datePicker,
     form,
     formItem,
     formItemGi,
@@ -105,6 +118,7 @@ export function naiveUi2() {
     layoutHeader,
     layoutFooter,
     loadingBarProvider,
+    log,
     menu,
     messageProvider,
     notificationProvider,
@@ -141,6 +155,31 @@ export function naiveUi2() {
 
 export function naiveUi2Components() {
   const map = [
+    ['n-anchor', '侧边导航', '<n-anchor :show-rail="showRail" :show-background="showBackground"></n-anchor>'],
+    ['n-anchor-link', '侧边导航', '<n-anchor-link title="演示" href="#演示"></n-anchor-link>'],
+    ['n-countdown', '倒计时', '<n-countdown :duration="5000" :active="active" />'],
+    ['n-number-animation', '数值动画', '<n-number-animation ref="numberAnimationInstRef" :from="0" :to="12039" />'],
+    ['n-mention', '提及', '<n-mention :options="options" default-value="@" />'],
+    ['n-carousel', '轮播图', '<n-carousel></n-carousel>'],
+    ['n-log', '日志', `<n-log
+  :log="log"
+  :loading="loading"
+  trim
+  @require-more="handleRequireMore"
+  @reach-top="handleReachTop"
+  @reach-bottom="handleReachBottom"
+/>`],
+    ['n-date-picker', '日期选择器', '<n-date-picker v-model:value="timestamp" type="date" />'],
+    ['n-cascader', '级联选择', `<n-cascader
+  v-model:value="value"
+  placeholder="没啥用的值"
+  :expand-trigger="hoverTrigger ? 'hover' : 'click'"
+  :options="options"
+  :check-strategy="checkStrategyIsChild ? 'child' : 'all'"
+  :show-path="showPath"
+  :filterable="filterable"
+  @update:value="handleUpdateValue"
+/>`],
     ['n-avatar', '头像', `<n-avatar
   round
   size="small"

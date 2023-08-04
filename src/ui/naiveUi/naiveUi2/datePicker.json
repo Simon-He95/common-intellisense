@@ -1,0 +1,495 @@
+{
+  "name": "NDatePicker",
+  "props": {
+    "clearable": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "是否支持清除",
+      "type": "false"
+    },
+    "default-value": {
+      "value": "",
+      "description": "`number | [number, number] | null`",
+      "default": "默认被选中的日期的时间戳",
+      "type": "undefined"
+    },
+    "default-formatted-value": {
+      "value": "",
+      "description": "`string | [string, string] | null`",
+      "default": "Date Picker 格式化后的值",
+      "type": "undefined"
+    },
+    "disabled": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "是否禁用",
+      "type": "false"
+    },
+    "first-day-of-week": {
+      "value": "",
+      "description": "`0 | 1 | 2 | 3 | 4 | 5 | 6`",
+      "default": "日历上一周的开始，0 代表周一",
+      "type": "undefined"
+    },
+    "formatted-value": {
+      "value": "",
+      "description": "`string | [string, string] | null`",
+      "default": "格式化之后的值",
+      "type": "undefined"
+    },
+    "input-readonly": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "设置输入框为只读（避免在移动设备上打开虚拟键盘）",
+      "type": "false"
+    },
+    "panel": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "是否只使用面板",
+      "type": "false"
+    },
+    "placement": {
+      "value": "",
+      "description": "`'top-start' | 'top' | 'top-end' | 'right-start' | 'right' | 'right-end' | 'bottom-start' | 'bottom' | 'bottom-end' | 'left-start' | 'left' | 'left-end'`",
+      "default": "面板的弹出位置",
+      "type": "'bottom-start'"
+    },
+    "shortcuts": {
+      "value": "",
+      "description": "`Record<string, number | (() => number)> | Record<string, [number, number] | (() => [number, number])>`",
+      "default": "自定义快捷按钮",
+      "type": "undefined"
+    },
+    "show": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "是否展示面板",
+      "type": "undefined"
+    },
+    "size": {
+      "value": "",
+      "description": "`'small' | 'medium' | 'large'`",
+      "default": "尺寸",
+      "type": "'medium'"
+    },
+    "status": {
+      "value": "",
+      "description": "`'success' | 'warning' | 'error'`",
+      "default": "验证状态",
+      "type": "undefined"
+    },
+    "to": {
+      "value": "",
+      "description": "`string | HTMLElement | false`",
+      "default": "面板的容器节点，false 会待在原地",
+      "type": "body"
+    },
+    "type": {
+      "value": "",
+      "description": "`'date' | 'datetime' | 'daterange' | 'datetimerange' | 'month' | 'monthrange' | 'year' | 'quarter'`",
+      "default": "Date Picker 的类型",
+      "type": "'date'"
+    },
+    "value": {
+      "value": "",
+      "description": "`number | [number, number] | null`",
+      "default": "Date Picker 的值",
+      "type": "undefined"
+    },
+    "value-format": {
+      "value": [
+        "绑定值的格式，详情见 [format](https:",
+        "",
+        "date-fns.org",
+        "v2.23.0",
+        "docs",
+        "format)"
+      ],
+      "description": "`string`",
+      "default": "绑定值的格式，详情见 [format](https: |  | date-fns.org | v2.23.0 | docs | format)",
+      "type": "跟随 format 属性"
+    }
+  },
+  "methods": [
+    {
+      "name": "focus",
+      "description": "`() => void`",
+      "params": "聚焦"
+    },
+    {
+      "name": "blur",
+      "description": "`() => void`",
+      "params": "失焦"
+    }
+  ],
+  "typeDetail": {
+    "Date 类型的 Props": [
+      {
+        "name": "actions",
+        "description": "`Array<'clear' | 'now'> | null`",
+        "type": "`['clear', 'now']`"
+      },
+      {
+        "name": "format",
+        "description": "`string`",
+        "type": "`'yyyy-MM-dd'`"
+      },
+      {
+        "name": "is-date-disabled",
+        "description": "`(current: number) => boolean`",
+        "type": "`undefined`"
+      },
+      {
+        "name": "placeholder",
+        "description": "`string`",
+        "type": "`'选择日期'`"
+      },
+      {
+        "name": "on-update:formatted-value",
+        "description": "`(value: string | null, timestampValue: number | null) => void`",
+        "type": "`undefined`"
+      },
+      {
+        "name": "on-update:value",
+        "description": "`(value: number | null, formattedValue: string | null) => void`",
+        "type": "`undefined`"
+      }
+    ],
+    "DateTime 类型的 Props": [
+      {
+        "name": "actions",
+        "description": "`Array<'clear' | 'now' | 'confirm'> | null`",
+        "type": "`['clear', 'now', 'confirm']`"
+      },
+      {
+        "name": "default-time",
+        "description": "`string`",
+        "type": "`undefined`"
+      },
+      {
+        "name": "format",
+        "description": "`string`",
+        "type": "`'yyyy-MM-dd HH:mm:ss'`"
+      },
+      {
+        "name": "is-date-disabled",
+        "description": "`(current: number) => boolean`",
+        "type": "`undefined`"
+      },
+      {
+        "name": "is-time-disabled",
+        "description": "`(current: number) => { isHourDisabled: boolean, isMinuteDisabled: boolean, isSecondDisabled: boolean }`",
+        "type": "`undefined`"
+      },
+      {
+        "name": "placeholder",
+        "description": "`string`",
+        "type": "`'选择日期时间'`"
+      },
+      {
+        "name": "time-picker-props",
+        "description": "`TimePickerProps`",
+        "type": "`undefined`"
+      },
+      {
+        "name": "update-value-on-close",
+        "description": "`boolean`",
+        "type": "`false`"
+      },
+      {
+        "name": "on-update:formatted-value",
+        "description": "`(value: string | null, timestampValue: number | null) => void`",
+        "type": "`undefined`"
+      },
+      {
+        "name": "on-update:value",
+        "description": "`(value: number | null, formattedValue: string | null) => void`",
+        "type": "`undefined`"
+      }
+    ],
+    "DateRange 类型的 Props": [
+      {
+        "name": "actions",
+        "description": "`Array<'clear' | 'confirm'> | null`",
+        "type": "`['clear', 'confirm']`"
+      },
+      {
+        "name": "bind-calendar-months",
+        "description": "`boolean`",
+        "type": "`false`"
+      },
+      {
+        "name": "default-calendar-start-time",
+        "description": "`number`",
+        "type": "`undefined`"
+      },
+      {
+        "name": "default-calendar-end-time",
+        "description": "`number`",
+        "type": "`undefined`"
+      },
+      {
+        "name": "format",
+        "description": "`string`",
+        "type": "`'yyyy-MM-dd'`"
+      },
+      {
+        "name": "is-date-disabled",
+        "description": "`(current: number, phase: 'start' | 'end', value: [number, number] | null) => boolean`",
+        "type": "`undefined`"
+      },
+      {
+        "name": "is-time-disabled",
+        "description": "`(current: number, phase: 'start' | 'end', value: [number, number]) => { isHourDisabled?: (hour: number) => boolean, isMinuteDisabled?: (minute: number, hour: number | null) => boolean, isSecondDisabled?: (second: number, minute: number | null, hour: number | null) => boolean }`",
+        "type": "`undefined`"
+      },
+      {
+        "name": "close-on-select",
+        "description": "`boolean`",
+        "type": "`false`"
+      },
+      {
+        "name": "separator",
+        "description": "`string`",
+        "type": "`'至'`"
+      },
+      {
+        "name": "start-placeholder",
+        "description": "`string`",
+        "type": "`'开始日期'`"
+      },
+      {
+        "name": "update-value-on-close",
+        "description": "`boolean`",
+        "type": "`false`"
+      },
+      {
+        "name": "on-update:formatted-value",
+        "description": "`(value: [string, string] | null, timestampValue: [number, number] | null) => void`",
+        "type": "`undefined`"
+      },
+      {
+        "name": "on-update:value",
+        "description": "`(value: [number, number] | null, formattedValue: [string, string] | null) => void`",
+        "type": "`undefined`"
+      }
+    ],
+    "DateTimeRange 类型的 Props": [
+      {
+        "name": "actions",
+        "description": "`Array<'clear' | 'confirm'> | null`",
+        "type": "`['clear', 'confirm']`"
+      },
+      {
+        "name": "bind-calendar-months",
+        "description": "`boolean`",
+        "type": "`false`"
+      },
+      {
+        "name": "default-calendar-start-time",
+        "description": "`number`",
+        "type": "`undefined`"
+      },
+      {
+        "name": "default-calendar-end-time",
+        "description": "`number`",
+        "type": "`undefined`"
+      },
+      {
+        "name": "default-time",
+        "description": "`string | Array<string | undefined>`",
+        "type": "`undefined`"
+      },
+      {
+        "name": "end-placeholder",
+        "description": "`string`",
+        "type": "`'结束日期时间'`"
+      },
+      {
+        "name": "format",
+        "description": "`string`",
+        "type": "`'yyyy-MM-dd HH:mm:ss'`"
+      },
+      {
+        "name": "is-date-disabled",
+        "description": "`(current: number, phase: 'start' | 'end', value: [number, number] | null) => boolean`",
+        "type": "`undefined`"
+      },
+      {
+        "name": "is-time-disabled",
+        "description": "`(current: number, phase: 'start' | 'end', value: [number, number]) => { isHourDisabled?: (hour: number) => boolean, isMinuteDisabled?: (minute: number, hour: number | null) => boolean, isSecondDisabled?: (second: number, minute: number | null, hour: number | null) => boolean }`",
+        "type": "`undefined`"
+      },
+      {
+        "name": "separator",
+        "description": "`string`",
+        "type": "`'to'`"
+      },
+      {
+        "name": "start-placeholder",
+        "description": "`string`",
+        "type": "`'开始日期时间'`"
+      },
+      {
+        "name": "time-picker-props",
+        "description": "`TimePickerProps | [TimePickerProps, TimePickerProps]`",
+        "type": "`undefined`"
+      },
+      {
+        "name": "update-value-on-close",
+        "description": "`boolean`",
+        "type": "`false`"
+      },
+      {
+        "name": "on-update:formatted-value",
+        "description": "`(value: [string, string] | null, timestampValue: [number, number] | null) => void`",
+        "type": "`undefined`"
+      },
+      {
+        "name": "on-update:value",
+        "description": "`(value: [number, number] | null, formattedValue: [string, string] | null) => void`",
+        "type": "`undefined`"
+      }
+    ],
+    "Month 类型的 Props": [
+      {
+        "name": "actions",
+        "description": "`Array<'clear' | 'now' | 'confirm'> | null`",
+        "type": "`['clear', 'now']`"
+      },
+      {
+        "name": "format",
+        "description": "`string`",
+        "type": "`'yyyy-MM'`"
+      },
+      {
+        "name": "is-date-disabled",
+        "description": "`(current: number) => boolean`",
+        "type": "`undefined`"
+      },
+      {
+        "name": "placeholder",
+        "description": "`string`",
+        "type": "`'选择月份'`"
+      },
+      {
+        "name": "on-update:formatted-value",
+        "description": "`(value: string | null, timestampValue: number | null) => void`",
+        "type": "`undefined`"
+      },
+      {
+        "name": "on-update:value",
+        "description": "`(value: number | null, formattedValue: string | null) => void`",
+        "type": "`undefined`"
+      }
+    ],
+    "MonthRange、QuarterRange、YearRange 类型的 Props": [
+      {
+        "name": "actions",
+        "description": "`Array<'clear' | 'confirm'> | null`",
+        "type": "`['clear', 'confirm']`"
+      },
+      {
+        "name": "end-placeholder",
+        "description": "`string`",
+        "type": "`'结束月份'`"
+      },
+      {
+        "name": "format",
+        "description": "`string`",
+        "type": "`'yyyy-MM-dd'`"
+      },
+      {
+        "name": "close-on-select",
+        "description": "`boolean`",
+        "type": "`false`"
+      },
+      {
+        "name": "separator",
+        "description": "`string`",
+        "type": "`'至'`"
+      },
+      {
+        "name": "start-placeholder",
+        "description": "`string`",
+        "type": "`'开始月份'`"
+      },
+      {
+        "name": "update-value-on-close",
+        "description": "`boolean`",
+        "type": "`false`"
+      },
+      {
+        "name": "on-update:formatted-value",
+        "description": "`(value: [string, string] | null, timestampValue: [number, number] | null) => void`",
+        "type": "`undefined`"
+      },
+      {
+        "name": "on-update:value",
+        "description": "`(value: [number, number] | null, formattedValue: [string, string] | null) => void`",
+        "type": "`undefined`"
+      }
+    ],
+    "Year 类型的 Props": [
+      {
+        "name": "actions",
+        "description": "`Array<'clear' | 'now'> | null`",
+        "type": "`['clear', 'now']`"
+      },
+      {
+        "name": "format",
+        "description": "`string`",
+        "type": "`'yyyy'`"
+      },
+      {
+        "name": "is-date-disabled",
+        "description": "`(current: number) => boolean`",
+        "type": "`undefined`"
+      },
+      {
+        "name": "placeholder",
+        "description": "`string`",
+        "type": "`'选择年份'`"
+      },
+      {
+        "name": "on-update:formatted-value",
+        "description": "`(value: string | null, timestampValue: number | null) => void`",
+        "type": "`undefined`"
+      },
+      {
+        "name": "on-update:value",
+        "description": "`(value: number | null, formattedValue: string | null) => void`",
+        "type": "`undefined`"
+      }
+    ]
+  },
+  "events": [
+    {
+      "name": "clear",
+      "description": "`() => void`",
+      "params": "`undefined`"
+    },
+    {
+      "name": "confirm",
+      "description": "`(value: number | [number, number] | null, formattedValue: string | [string, string] | null) => void`",
+      "params": "`undefined`"
+    },
+    {
+      "name": "blur",
+      "description": "`() => void`",
+      "params": "`undefined`"
+    },
+    {
+      "name": "focus",
+      "description": "`() => void`",
+      "params": "`undefined`"
+    },
+    {
+      "name": "update:show",
+      "description": "`(show: boolean) => void`",
+      "params": "`undefined`"
+    }
+  ],
+  "link": "https://www.naiveui.com/zh-CN/dark/components/date-picker"
+}

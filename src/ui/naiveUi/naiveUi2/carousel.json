@@ -1,0 +1,180 @@
+{
+  "name": "NCarousel",
+  "props": {
+    "autoplay": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "是否自动播放",
+      "type": "false"
+    },
+    "centered-slides": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "是否居中显示当前页轮播图",
+      "type": "false"
+    },
+    "current-index": {
+      "value": "",
+      "description": "`number`",
+      "default": "当前显示页",
+      "type": "undefined"
+    },
+    "default-index": {
+      "value": "",
+      "description": "`number`",
+      "default": "默认显示页",
+      "type": "0"
+    },
+    "direction": {
+      "value": "",
+      "description": "`'horizontal' | 'vertical'`",
+      "default": "轮播图显示的方向",
+      "type": "'horizontal'"
+    },
+    "dot-placement": {
+      "value": "",
+      "description": "`'top' | 'bottom' | 'left' | 'right'`",
+      "default": "轮播指示点位置",
+      "type": "'bottom'"
+    },
+    "dot-type": {
+      "value": "",
+      "description": "`'dot' | 'line'`",
+      "default": "轮播指示点样式",
+      "type": "'dot'"
+    },
+    "draggable": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "是否通过鼠标拖拽切换轮播图",
+      "type": "false"
+    },
+    "effect": {
+      "value": "",
+      "description": "`'slide' | 'fade' | 'card' | 'custom'`",
+      "default": "轮播图切换时的过渡效果",
+      "type": "'slide'"
+    },
+    "interval": {
+      "value": "",
+      "description": "`number`",
+      "default": "自动播放的间隔（ms）",
+      "type": "5000"
+    },
+    "keyboard": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "是否通过按键切换轮播图，只有焦点在 Dots 上时才起作用",
+      "type": "false"
+    },
+    "loop": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "是否循环播放",
+      "type": "true"
+    },
+    "mousewheel": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "是否通过鼠标滚轮切换轮播图",
+      "type": "false"
+    },
+    "next-slide-style": {
+      "value": "",
+      "description": "`object | string`",
+      "default": "下一张轮播图的样式",
+      "type": "undefined"
+    },
+    "prev-slide-style": {
+      "value": "",
+      "description": "`object | string`",
+      "default": "上一张轮播图的样式",
+      "type": "undefined"
+    },
+    "slides-per-view": {
+      "value": "",
+      "description": "`'auto' | number`",
+      "default": "每一页显示的轮播图数量",
+      "type": "1"
+    },
+    "space-between": {
+      "value": "",
+      "description": "`number`",
+      "default": "轮播图之间的间距",
+      "type": "0"
+    },
+    "show-arrow": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "是否显示箭头按钮",
+      "type": "false"
+    },
+    "show-dots": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "是否展示指示点",
+      "type": "true"
+    },
+    "touchable": {
+      "value": "",
+      "description": "`boolean`",
+      "default": "是否通过触摸拖拽切换轮播图",
+      "type": "true"
+    },
+    "transition-style": {
+      "value": "",
+      "description": "`{ transitionDuration?: string, transitionTimingFunction?: string }`",
+      "default": "过渡效果的样式",
+      "type": "{ transitionDuration: '300ms' }"
+    },
+    "transition-props": {
+      "value": [
+        "自定义过渡效果属性，[参考 Vue 文档](https:",
+        "",
+        "v3.cn.vuejs.org",
+        "api",
+        "built-in-components.html#transition)"
+      ],
+      "description": "`TransitionProps`",
+      "default": "自定义过渡效果属性，[参考 Vue 文档](https: |  | v3.cn.vuejs.org | api | built-in-components.html#transition)",
+      "type": "undefined"
+    },
+    "trigger": {
+      "value": "",
+      "description": "`'click' | 'hover'`",
+      "default": "触发切换的方式",
+      "type": "'click'"
+    }
+  },
+  "methods": [
+    {
+      "name": "to",
+      "description": "`(index: number) => void`",
+      "params": "滑动至某一页"
+    },
+    {
+      "name": "prev",
+      "description": "`() => void`",
+      "params": "滑动至前一页"
+    },
+    {
+      "name": "next",
+      "description": "`() => void`",
+      "params": "滑动至后一页"
+    },
+    {
+      "name": "getCurrentIndex",
+      "description": "`() => number`",
+      "params": "获取当前页"
+    }
+  ],
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "update:current-index",
+      "description": "`(currentIndex: number, lastIndex: number) => void`",
+      "params": "`undefined`"
+    }
+  ],
+  "link": "https://www.naiveui.com/zh-CN/dark/components/carousel"
+}
