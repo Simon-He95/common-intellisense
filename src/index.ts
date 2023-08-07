@@ -56,7 +56,7 @@ export function activate(context: vscode.ExtensionContext) {
       return result.refs.map((refName: string) => createCompletionItem({ content: refName, snippet: `${refName}.value`, documentation: `${refName}.value`, preselect: true, sortText: '99' }))
     }
 
-    if (UiCompletions && result?.type === 'props') {
+    if (UiCompletions && result?.type === 'props' && !result.propName) {
       const name = result.tag[0].toUpperCase() + result.tag.replace(/(-\w)/g, (match: string) => match[1].toUpperCase()).slice(1)
       if (result.propName === 'icon')
         return UiCompletions.icons
@@ -65,11 +65,12 @@ export function activate(context: vscode.ExtensionContext) {
         ? UiCompletions[name].events
         : UiCompletions[name].completions
     }
-    else if (!result.isInTemplate) {
+    else if (!result.isInTemplate || isPreEmpty || !optionsComponents) {
       return
     }
-    if (optionsComponents && !isPreEmpty)
-      return optionsComponents
+    const prefix = lineText.trim().split(' ').slice(-1)[0]
+    if (optionsComponents.prefix.some((reg: string) => prefix.startsWith(reg)))
+      return optionsComponents.data
   }, ['"', '\'', '-', ' ', '@', '.']))
 }
 
@@ -118,10 +119,13 @@ function findUI() {
     UINames = uisName
     optionsComponents = UINames.map((option: string) => `${option}Components`).reduce((result: any, name: string) => {
       const componentsNames = (UI as any)[name]?.()
-      if (componentsNames)
-        result.push(...componentsNames)
+      if (componentsNames) {
+        const { prefix, data } = componentsNames
+        result.prefix.push(prefix)
+        result.data.push(...data)
+      }
       return result
-    }, [])
+    }, { prefix: [], data: [] })
 
     UiCompletions = UINames.reduce((result: any, option: string) =>
       Object.assign(result, (UI as any)[option]?.(extensionContext))

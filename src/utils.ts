@@ -102,7 +102,7 @@ function isInPosition(loc: any, position: vscode.Position) {
   const { line, character } = position
   if (line + 1 === startLine && character < startcharacter)
     return
-  if (line + 1 === endLine && character > endcharacter)
+  if (line + 1 === endLine && character > endcharacter - 1)
     return
   if (line + 1 < startLine)
     return
