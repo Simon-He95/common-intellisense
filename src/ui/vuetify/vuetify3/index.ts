@@ -21,6 +21,7 @@ import listItemMedia from './listItemMedia.json'
 import listSubheader from './listSubheader.json'
 import menu from './menu.json'
 import overlay from './overlay.json'
+import sheet from './sheet.json'
 
 export function vuetify3() {
   const map: any = [
@@ -46,6 +47,7 @@ export function vuetify3() {
     listItemMedia,
     menu,
     overlay,
+    sheet,
   ]
 
   return propsReducer(map)
@@ -56,6 +58,7 @@ export function vuetify3Components() {
     ['v-button', '按钮', '<v-btn>Button</v-btn>'],
     ['v-card', '卡片', '<v-card text="..."></v-card>'],
     ['v-card-item', '卡片', '<v-card-item></v-card-item>'],
+    ['v-sheet', '工作区', '<v-sheet :height="200" :width="200"></v-sheet>'],
     ['v-card-text', '卡片', '<v-card-text></v-card-text>'],
     ['v-card-title', '卡片', '<v-card-title></v-card-title>'],
     ['v-card-subtitle', '卡片', '<v-card-subtitle></v-card-subtitle>'],
