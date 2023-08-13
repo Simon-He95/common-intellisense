@@ -1,0 +1,98 @@
+{
+  "name": "UActionSheet",
+  "props": {
+    "show": {
+      "value": "",
+      "description": "是否展示",
+      "default": "false",
+      "type": "Boolean"
+    },
+    "title": {
+      "value": "",
+      "description": "设置标题",
+      "default": "-",
+      "type": "String"
+    },
+    "description": {
+      "value": "",
+      "description": "选项上方的描述信息，见上方文档示例",
+      "default": "-",
+      "type": "String"
+    },
+    "actions": {
+      "value": "",
+      "description": "按钮的文字数组，见上方文档示例",
+      "default": "[ ]",
+      "type": "Array\\<Object\\>"
+    },
+    "cancelText": {
+      "value": "",
+      "description": "取消按钮的文字，不为空时显示按钮",
+      "default": "-",
+      "type": "String"
+    },
+    "closeOnClickAction": {
+      "value": "",
+      "description": "点击某个菜单项时是否关闭弹窗，见上方文档示例",
+      "default": "-",
+      "type": "String"
+    },
+    "safeAreaInsetBottom": {
+      "value": "",
+      "description": "是否开启[底部安全区适配](/components/safeAreaInset.html#关于uview某些组件safe-area-inset参数的说明)",
+      "default": "false",
+      "type": "Boolean"
+    },
+    "openType": {
+      "value": "",
+      "description": "小程序的打开方式",
+      "default": "-",
+      "type": "String"
+    }
+  },
+  "methods": [],
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "select",
+      "description": "点击ActionSheet列表项时触发",
+      "params": "-"
+    },
+    {
+      "name": "close",
+      "description": "点击取消按钮时触发",
+      "params": "-"
+    },
+    {
+      "name": "getuserinfo",
+      "description": "用户点击该按钮时，会返回获取到的用户信息，回调的 detail 数据与 wx.getUserInfo 返回的一致，openType=\"getUserInfo\"时有效",
+      "params": "detail"
+    },
+    {
+      "name": "contact",
+      "description": "客服消息回调，openType=\"contact\"时有效",
+      "params": "-"
+    },
+    {
+      "name": "getphonenumber",
+      "description": "获取用户手机号回调，openType=\"getPhoneNumber\"时有效",
+      "params": "-"
+    },
+    {
+      "name": "error",
+      "description": "当使用开放能力时，发生错误的回调，openType=\"error\"时有效",
+      "params": "-"
+    },
+    {
+      "name": "launchapp",
+      "description": "打开 APP 成功的回调，openType=\"launchApp\"时有效",
+      "params": "-"
+    },
+    {
+      "name": "opensetting",
+      "description": "在打开授权设置页后回调，openType=\"openSetting\"时有效",
+      "params": "-"
+    }
+  ],
+  "link": "https://uviewui.com/components/actionSheet.html"
+}
