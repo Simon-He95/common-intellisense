@@ -5,95 +5,104 @@
       "value": "",
       "description": "当前选中项对应的地区码",
       "default": "-",
-      "type": "当前选中项对应的地区码"
+      "type": "string"
     },
     "title": {
       "value": "",
       "description": "顶部栏标题",
       "default": "-",
-      "type": "顶部栏标题"
+      "type": "string"
     },
     "confirm-button-text": {
       "value": "",
       "description": "确认按钮文字",
       "default": "确认",
-      "type": "确认按钮文字"
+      "type": "string"
     },
     "cancel-button-text": {
       "value": "",
       "description": "取消按钮文字",
       "default": "取消",
-      "type": "取消按钮文字"
+      "type": "string"
     },
     "area-list": {
       "value": "",
       "description": "省市区数据，格式见下方",
       "default": "-",
-      "type": "省市区数据，格式见下方"
+      "type": "object"
     },
     "columns-placeholder": {
       "value": "",
       "description": "列占位提示文字",
       "default": "[]",
-      "type": "列占位提示文字"
+      "type": "string[]"
     },
     "loading": {
       "value": "",
       "description": "是否显示加载状态",
       "default": "false",
-      "type": "是否显示加载状态"
+      "type": "boolean"
     },
     "readonly": {
       "value": "",
       "description": "是否为只读状态，只读状态下无法切换选项",
       "default": "false",
-      "type": "是否为只读状态，只读状态下无法切换选项"
+      "type": "boolean"
     },
     "option-height": {
       "value": "",
       "description": "选项高度，支持 `px` `vw` `vh` `rem` 单位，默认 `px`",
       "default": "44",
-      "type": "选项高度，支持 `px` `vw` `vh` `rem` 单位，默认 `px`"
+      "type": "number | string"
     },
     "columns-num": {
       "value": "",
       "description": "显示列数，3-省市区，2-省市，1-省",
       "default": "3",
-      "type": "显示列数，3-省市区，2-省市，1-省"
+      "type": "number | string"
     },
     "visible-option-num": {
       "value": "",
       "description": "可见的选项个数",
       "default": "6",
-      "type": "可见的选项个数"
+      "type": "number | string"
     },
     "swipe-duration": {
       "value": "",
       "description": "快速滑动时惯性滚动的时长，单位 `ms`",
       "default": "1000",
-      "type": "快速滑动时惯性滚动的时长，单位 `ms`"
-    },
-    "confirm": {
-      "value": "",
-      "description": "点击完成按钮时触发",
-      "default": "",
-      "type": "点击完成按钮时触发"
-    },
-    "cancel": {
-      "value": "",
-      "description": "点击取消按钮时触发",
-      "default": "",
-      "type": "点击取消按钮时触发"
-    },
-    "change": {
-      "value": "",
-      "description": "选项改变时触发",
-      "default": "",
-      "type": "选项改变时触发"
+      "type": "number | string"
     }
   },
-  "methods": [{ "name": "confirm", "description": "停止惯性滚动并触发 `confirm` 事件", "params": "-" }, { "name": "getSelectedOptions", "description": "获取当前选中的选项", "params": "-" }],
+  "methods": [
+    {
+      "name": "confirm",
+      "description": "停止惯性滚动并触发 `confirm` 事件",
+      "params": "-"
+    },
+    {
+      "name": "getSelectedOptions",
+      "description": "获取当前选中的选项",
+      "params": "-"
+    }
+  ],
   "typeDetail": {},
-  "events": [],
+  "events": [
+    {
+      "name": "confirm",
+      "description": "点击完成按钮时触发",
+      "params": "{ selectedValues, selectedOptions, selectedIndexes }"
+    },
+    {
+      "name": "cancel",
+      "description": "点击取消按钮时触发",
+      "params": "{ selectedValues, selectedOptions, selectedIndexes }"
+    },
+    {
+      "name": "change",
+      "description": "选项改变时触发",
+      "params": "{ selectedValues, selectedOptions, selectedIndexes, columnIndex }"
+    }
+  ],
   "link": "https://vant-ui.github.io/vant/#/zh-CN/area%23jie-shao"
 }
