@@ -103,7 +103,7 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
         documentation.isTrusted = true
         documentation.supportHtml = true
         documentation.appendMarkdown(detail.join('\n\n'))
-        return createCompletionItem({ content: `${name}="on${name[0].toUpperCase()}${name.slice(1)}"`, snippet, documentation, type: vscode.CompletionItemKind.Event })
+        return createCompletionItem({ content: `${name}="on${name[0].toUpperCase()}${name.slice(1)}"`, snippet, documentation, type: vscode.CompletionItemKind.Event, sortText: '0', preselect: true })
       },
       ))
     }

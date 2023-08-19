@@ -1,6 +1,127 @@
 {
   "name": "VanTabs",
-  "props": {},
+  "props": {
+    "v-model:active": {
+      "value": "",
+      "description": "绑定当前选中标签的标识符",
+      "default": "0",
+      "type": "number | string"
+    },
+    "type": {
+      "value": "",
+      "description": "样式风格类型，可选值为 `card`",
+      "default": "line",
+      "type": "string"
+    },
+    "color": {
+      "value": "",
+      "description": "标签主题色",
+      "default": "#1989fa",
+      "type": "string"
+    },
+    "background": {
+      "value": "",
+      "description": "标签栏背景色",
+      "default": "white",
+      "type": "string"
+    },
+    "duration": {
+      "value": "",
+      "description": "动画时间，单位秒，设置为 0 可以禁用动画",
+      "default": "0.3",
+      "type": "number | string"
+    },
+    "line-width": {
+      "value": "",
+      "description": "底部条宽度，默认单位 `px`",
+      "default": "40px",
+      "type": "number | string"
+    },
+    "line-height": {
+      "value": "",
+      "description": "底部条高度，默认单位 `px`",
+      "default": "3px",
+      "type": "number | string"
+    },
+    "animated": {
+      "value": "",
+      "description": "是否开启切换标签内容时的转场动画",
+      "default": "false",
+      "type": "boolean"
+    },
+    "border": {
+      "value": "",
+      "description": "是否显示标签栏外边框，仅在 `type=\"line\"` 时有效",
+      "default": "false",
+      "type": "boolean"
+    },
+    "ellipsis": {
+      "value": "",
+      "description": "是否省略过长的标题文字",
+      "default": "true",
+      "type": "boolean"
+    },
+    "sticky": {
+      "value": "",
+      "description": "是否使用粘性布局",
+      "default": "false",
+      "type": "boolean"
+    },
+    "shrink": {
+      "value": "",
+      "description": "是否开启左侧收缩布局",
+      "default": "false",
+      "type": "boolean"
+    },
+    "swipeable": {
+      "value": "",
+      "description": "是否开启手势左右滑动切换",
+      "default": "false",
+      "type": "boolean"
+    },
+    "lazy-render": {
+      "value": "",
+      "description": "是否开启延迟渲染（首次切换到标签时才触发内容渲染）",
+      "default": "true",
+      "type": "boolean"
+    },
+    "scrollspy": {
+      "value": "",
+      "description": "是否开启滚动导航",
+      "default": "false",
+      "type": "boolean"
+    },
+    "offset-top": {
+      "value": "",
+      "description": "粘性布局下吸顶时与顶部的距离，支持 `px` `vw` `vh` `rem` 单位，默认 `px`",
+      "default": "0",
+      "type": "number | string"
+    },
+    "swipe-threshold": {
+      "value": "",
+      "description": "滚动阈值，标签数量超过阈值且总宽度超过标签栏宽度时开始横向滚动",
+      "default": "5",
+      "type": "number | string"
+    },
+    "title-active-color": {
+      "value": "",
+      "description": "标题选中态颜色",
+      "default": "-",
+      "type": "string"
+    },
+    "title-inactive-color": {
+      "value": "",
+      "description": "标题默认态颜色",
+      "default": "-",
+      "type": "string"
+    },
+    "before-change": {
+      "value": "",
+      "description": "切换标签前的回调函数，返回 `false` 可阻止切换，支持返回 Promise",
+      "default": "-",
+      "type": "(name: number | string) => boolean | Promise\\<boolean\\>"
+    }
+  },
   "methods": [],
   "typeDetail": {},
   "events": [

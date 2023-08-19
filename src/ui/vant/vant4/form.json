@@ -5,79 +5,79 @@
       "value": "",
       "description": "表单项 label 宽度，默认单位为`px`",
       "default": "6.2em",
-      "type": "表单项 label 宽度，默认单位为px"
+      "type": "number | string"
     },
     "label-align": {
       "value": "",
       "description": "表单项 label 对齐方式，可选值为 `center` `right` `top`",
       "default": "left",
-      "type": "表单项 label 对齐方式，可选值为 center right top"
+      "type": "string"
     },
     "input-align": {
       "value": "",
       "description": "输入框对齐方式，可选值为 `center` `right`",
       "default": "left",
-      "type": "输入框对齐方式，可选值为 center right"
+      "type": "string"
     },
     "error-message-align": {
       "value": "",
       "description": "错误提示文案对齐方式，可选值为 `center` `right`",
       "default": "left",
-      "type": "错误提示文案对齐方式，可选值为 center right"
+      "type": "string"
     },
     "validate-trigger": {
       "value": "",
       "description": "表单校验触发时机，可选值为 `onChange`、`onSubmit`，支持通过数组同时设置多个值，具体用法见下方表格",
       "default": "onBlur",
-      "type": "表单校验触发时机，可选值为 onChange、onSubmit，支持通过数组同时设置多个值，具体用法见下方表格"
+      "type": "string | string[]"
     },
     "colon": {
       "value": "",
       "description": "是否在 label 后面添加冒号",
       "default": "false",
-      "type": "是否在 label 后面添加冒号"
+      "type": "boolean"
     },
     "disabled": {
       "value": "",
       "description": "是否禁用表单中的所有输入框",
       "default": "false",
-      "type": "是否禁用表单中的所有输入框"
+      "type": "boolean"
     },
     "readonly": {
       "value": "",
       "description": "是否将表单中的所有输入框设置为只读状态",
       "default": "false",
-      "type": "是否将表单中的所有输入框设置为只读状态"
+      "type": "boolean"
     },
     "validate-first": {
       "value": "",
       "description": "是否在某一项校验不通过时停止校验",
       "default": "false",
-      "type": "是否在某一项校验不通过时停止校验"
+      "type": "boolean"
     },
     "scroll-to-error": {
       "value": "",
       "description": "是否在提交表单且校验不通过时滚动至错误的表单项",
       "default": "false",
-      "type": "是否在提交表单且校验不通过时滚动至错误的表单项"
+      "type": "boolean"
     },
     "show-error": {
       "value": "",
       "description": "是否在校验不通过时标红输入框",
       "default": "false",
-      "type": "是否在校验不通过时标红输入框"
+      "type": "boolean"
     },
     "show-error-message": {
       "value": "",
       "description": "是否在校验不通过时在输入框下方展示错误提示",
       "default": "true",
-      "type": "是否在校验不通过时在输入框下方展示错误提示"
+      "type": "boolean"
     },
     "submit-on-enter": {
       "value": "",
       "description": "是否在按下回车键时提交表单",
       "default": "true",
-      "type": "是否在按下回车键时提交表单"
+      "type": "boolean"
     }
   },
   "methods": [{ "name": "submit", "description": "提交表单，与点击提交按钮的效果等价", "params": "-" }, { "name": "getValues", "description": "获取所有表单项当前的值", "params": "-" }, { "name": "validate", "description": "验证表单，支持传入一个或多个 `name` 来验证单个或部分表单项，不传入 `name` 时，会验证所有表单项", "params": "name?: string | string[]" }, { "name": "resetValidation", "description": "重置表单项的验证提示，支持传入一个或多个 `name` 来重置单个或部分表单项，不传入 `name` 时，会重置所有表单项", "params": "name?: string | string[]" }, { "name": "getValidationStatus", "description": "获取所有表单项的校验状态，状态包括 `passed`、`failed`、`unvalidated`", "params": "-" }, { "name": "scrollToField", "description": "滚动到对应表单项的位置，默认滚动到顶部，第二个参数传 false 可滚动至底部", "params": "name: string, alignToTop: boolean" }],

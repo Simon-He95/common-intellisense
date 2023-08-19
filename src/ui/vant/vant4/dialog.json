@@ -4,194 +4,158 @@
     "v-model:show": {
       "value": "",
       "description": "是否显示弹窗",
-      "default": "-",
-      "type": "是否显示弹窗"
+      "default": "false",
+      "type": "boolean"
     },
     "title": {
       "value": "",
       "description": "标题",
       "default": "-",
-      "type": "标题"
+      "type": "string"
     },
     "width": {
       "value": "",
       "description": "弹窗宽度，默认单位为 `px`",
       "default": "320px",
-      "type": "弹窗宽度，默认单位为 px"
+      "type": "number | string"
     },
     "message": {
       "value": "",
       "description": "文本内容，支持通过 `\\n` 换行",
       "default": "-",
-      "type": "文本内容，支持通过 \\n 换行"
+      "type": "string | () => JSX.Element"
     },
     "message-align": {
       "value": "",
       "description": "内容水平对齐方式，可选值为 `left` `right` `justify`",
       "default": "center",
-      "type": "内容水平对齐方式，可选值为 left right justify"
+      "type": "string"
     },
     "theme": {
       "value": "",
       "description": "样式风格，可选值为 `round-button`",
       "default": "default",
-      "type": "样式风格，可选值为 round-button"
+      "type": "string"
     },
     "show-confirm-button": {
       "value": "",
       "description": "是否展示确认按钮",
       "default": "true",
-      "type": "是否展示确认按钮"
+      "type": "boolean"
     },
     "show-cancel-button": {
       "value": "",
       "description": "是否展示取消按钮",
       "default": "false",
-      "type": "是否展示取消按钮"
+      "type": "boolean"
     },
     "confirm-button-text": {
       "value": "",
       "description": "确认按钮文案",
       "default": "确认",
-      "type": "确认按钮文案"
+      "type": "string"
     },
     "confirm-button-color": {
       "value": "",
       "description": "确认按钮颜色",
       "default": "#ee0a24",
-      "type": "确认按钮颜色"
+      "type": "string"
     },
     "confirm-button-disabled": {
       "value": "",
       "description": "是否禁用确认按钮",
       "default": "false",
-      "type": "是否禁用确认按钮"
+      "type": "boolean"
     },
     "cancel-button-text": {
       "value": "",
       "description": "取消按钮文案",
       "default": "取消",
-      "type": "取消按钮文案"
+      "type": "string"
     },
     "cancel-button-color": {
       "value": "",
       "description": "取消按钮颜色",
       "default": "black",
-      "type": "取消按钮颜色"
+      "type": "string"
     },
     "cancel-button-disabled": {
       "value": "",
       "description": "是否禁用取消按钮",
       "default": "false",
-      "type": "是否禁用取消按钮"
+      "type": "boolean"
     },
     "z-index": {
       "value": "",
       "description": "将弹窗的 z-index 层级设置为一个固定值",
       "default": "2000+",
-      "type": "将弹窗的 z-index 层级设置为一个固定值"
+      "type": "number | string"
     },
     "overlay": {
       "value": "",
       "description": "是否展示遮罩层",
       "default": "true",
-      "type": "是否展示遮罩层"
+      "type": "boolean"
     },
     "overlay-class": {
       "value": "",
       "description": "自定义遮罩层类名",
       "default": "-",
-      "type": "自定义遮罩层类名"
+      "type": "string"
     },
     "overlay-style": {
       "value": "",
       "description": "自定义遮罩层样式",
       "default": "-",
-      "type": "自定义遮罩层样式"
+      "type": "object"
     },
     "close-on-popstate": {
       "value": "",
       "description": "是否在页面回退时自动关闭",
       "default": "true",
-      "type": "是否在页面回退时自动关闭"
+      "type": "boolean"
     },
     "close-on-click-overlay": {
       "value": "",
       "description": "是否在点击遮罩层后关闭弹窗",
       "default": "false",
-      "type": "是否在点击遮罩层后关闭弹窗"
+      "type": "boolean"
     },
     "lazy-render": {
       "value": "",
       "description": "是否在显示弹层时才渲染节点",
       "default": "true",
-      "type": "是否在显示弹层时才渲染节点"
+      "type": "boolean"
     },
     "lock-scroll": {
       "value": "",
       "description": "是否锁定背景滚动",
       "default": "true",
-      "type": "是否锁定背景滚动"
+      "type": "boolean"
     },
     "allow-html": {
       "value": "",
       "description": "是否允许 message 内容中渲染 HTML",
       "default": "false",
-      "type": "是否允许 message 内容中渲染 HTML"
+      "type": "boolean"
     },
     "before-close": {
       "value": "",
       "description": "关闭前的回调函数，返回 `false` 可阻止关闭，支持返回 Promise",
       "default": "-",
-      "type": "关闭前的回调函数，返回 false 可阻止关闭，支持返回 Promise"
+      "type": "(action: string) => boolean | Promise\\<boolean\\>"
     },
     "transition": {
       "value": "",
       "description": "动画类名，等价于 [transition](https://cn.vuejs.org/api/built-in-components.html#transition) 的 `name` 属性",
       "default": "-",
-      "type": "动画类名，等价于 [transition](https: |  | cn.vuejs.org | api | built-in-components.html#transition) 的 name 属性"
+      "type": "string"
     },
     "teleport": {
       "value": "",
       "description": "指定挂载的节点，等同于 Teleport 组件的 [to 属性](https://cn.vuejs.org/api/built-in-components.html#teleport)",
       "default": "-",
-      "type": "指定挂载的节点，等同于 Teleport 组件的 [to 属性](https: |  | cn.vuejs.org | api | built-in-components.html#teleport)"
-    },
-    "confirm": {
-      "value": "",
-      "description": "点击确认按钮时触发",
-      "default": "",
-      "type": "点击确认按钮时触发"
-    },
-    "cancel": {
-      "value": "",
-      "description": "点击取消按钮时触发",
-      "default": "",
-      "type": "点击取消按钮时触发"
-    },
-    "open": {
-      "value": "",
-      "description": "打开弹窗时触发",
-      "default": "",
-      "type": "打开弹窗时触发"
-    },
-    "close": {
-      "value": "",
-      "description": "关闭弹窗时触发",
-      "default": "",
-      "type": "关闭弹窗时触发"
-    },
-    "opened": {
-      "value": "",
-      "description": "打开弹窗且动画结束后触发",
-      "default": "",
-      "type": "打开弹窗且动画结束后触发"
-    },
-    "closed": {
-      "value": "",
-      "description": "关闭弹窗且动画结束后触发",
-      "default": "",
-      "type": "关闭弹窗且动画结束后触发"
+      "type": "string | Element"
     }
   },
   "methods": [{ "name": "showDialog", "description": "展示弹窗", "params": "options: DialogOptions" }, { "name": "showConfirmDialog", "description": "展示消息确认弹窗", "params": "options: DialogOptions" }, { "name": "closeDialog", "description": "关闭弹窗", "params": "-" }, { "name": "setDialogDefaultOptions", "description": "修改默认配置，影响所有的 `showDialog` 调用", "params": "options: DialogOptions" }, { "name": "resetDialogDefaultOptions", "description": "重置默认配置，影响所有的 `showDialog` 调用", "params": "-" }],

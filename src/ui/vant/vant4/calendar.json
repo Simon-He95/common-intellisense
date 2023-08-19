@@ -5,181 +5,109 @@
       "value": "",
       "description": "选择类型: `single` 表示选择单个日期， `multiple` 表示选择多个日期， `range` 表示选择日期区间",
       "default": "single",
-      "type": "选择类型: single 表示选择单个日期， multiple 表示选择多个日期， range 表示选择日期区间"
+      "type": "string"
     },
     "title": {
       "value": "",
       "description": "日历标题",
       "default": "日期选择",
-      "type": "日历标题"
+      "type": "string"
     },
     "color": {
       "value": "",
       "description": "主题色，对底部按钮和选中日期生效",
       "default": "#1989fa",
-      "type": "主题色，对底部按钮和选中日期生效"
+      "type": "string"
     },
     "min-date": {
       "value": "",
       "description": "可选择的最小日期",
       "default": "当前日期",
-      "type": "可选择的最小日期"
+      "type": "Date"
     },
     "max-date": {
       "value": "",
       "description": "可选择的最大日期",
       "default": "当前日期的六个月后",
-      "type": "可选择的最大日期"
+      "type": "Date"
     },
     "default-date": {
       "value": "",
       "description": "默认选中的日期，`type` 为 `multiple` 或 `range` 时为数组，传入 `null` 表示默认不选择",
       "default": "今天",
-      "type": "默认选中的日期，type 为 multiple 或 range 时为数组，传入 null 表示默认不选择"
+      "type": "Date | Date[] | null"
     },
     "row-height": {
       "value": "",
       "description": "日期行高",
       "default": "64",
-      "type": "日期行高"
+      "type": "number | string"
     },
     "formatter": {
       "value": "",
       "description": "日期格式化函数",
       "default": "-",
-      "type": "日期格式化函数"
+      "type": "(day: Day) => Day"
     },
     "poppable": {
       "value": "",
       "description": "是否以弹层的形式展示日历",
       "default": "true",
-      "type": "是否以弹层的形式展示日历"
+      "type": "boolean"
     },
     "lazy-render": {
       "value": "",
       "description": "是否只渲染可视区域的内容",
       "default": "true",
-      "type": "是否只渲染可视区域的内容"
+      "type": "boolean"
     },
     "show-mark": {
       "value": "",
       "description": "是否显示月份背景水印",
       "default": "true",
-      "type": "是否显示月份背景水印"
+      "type": "boolean"
     },
     "show-title": {
       "value": "",
       "description": "是否展示日历标题",
       "default": "true",
-      "type": "是否展示日历标题"
+      "type": "boolean"
     },
     "show-subtitle": {
       "value": "",
       "description": "是否展示日历副标题（年月）",
       "default": "true",
-      "type": "是否展示日历副标题（年月）"
+      "type": "boolean"
     },
     "show-confirm": {
       "value": "",
       "description": "是否展示确认按钮",
       "default": "true",
-      "type": "是否展示确认按钮"
+      "type": "boolean"
     },
     "readonly": {
       "value": "",
       "description": "是否为只读状态，只读状态下不能选择日期",
       "default": "false",
-      "type": "是否为只读状态，只读状态下不能选择日期"
+      "type": "boolean"
     },
     "confirm-text": {
       "value": "",
       "description": "确认按钮的文字",
       "default": "确定",
-      "type": "确认按钮的文字"
+      "type": "string"
     },
     "confirm-disabled-text": {
       "value": "",
       "description": "确认按钮处于禁用状态时的文字",
       "default": "确定",
-      "type": "确认按钮处于禁用状态时的文字"
+      "type": "string"
     },
     "first-day-of-week": {
       "value": "",
       "description": "设置周起始日",
       "default": "0",
-      "type": "设置周起始日"
-    },
-    "v-model:show": {
-      "value": "",
-      "description": "是否显示日历弹窗",
-      "default": "false",
-      "type": "是否显示日历弹窗"
-    },
-    "position": {
-      "value": "",
-      "description": "弹出位置，可选值为 `top` `right` `left`",
-      "default": "bottom",
-      "type": "弹出位置，可选值为 top right left"
-    },
-    "round": {
-      "value": "",
-      "description": "是否显示圆角弹窗",
-      "default": "true",
-      "type": "是否显示圆角弹窗"
-    },
-    "close-on-popstate": {
-      "value": "",
-      "description": "是否在页面回退时自动关闭",
-      "default": "true",
-      "type": "是否在页面回退时自动关闭"
-    },
-    "close-on-click-overlay": {
-      "value": "",
-      "description": "是否在点击遮罩层后关闭",
-      "default": "true",
-      "type": "是否在点击遮罩层后关闭"
-    },
-    "safe-area-inset-top": {
-      "value": "",
-      "description": "是否开启[顶部安全区适配](#/zh-CN/advanced-usage#di-bu-an-quan-qu-gua-pei)",
-      "default": "false",
-      "type": "是否开启[顶部安全区适配](# | zh-CN | advanced-usage#di-bu-an-quan-qu-gua-pei)"
-    },
-    "safe-area-inset-bottom": {
-      "value": "",
-      "description": "是否开启[底部安全区适配](#/zh-CN/advanced-usage#di-bu-an-quan-qu-gua-pei)",
-      "default": "true",
-      "type": "是否开启[底部安全区适配](# | zh-CN | advanced-usage#di-bu-an-quan-qu-gua-pei)"
-    },
-    "teleport": {
-      "value": "",
-      "description": "指定挂载的节点，等同于 Teleport 组件的 [to 属性](https://cn.vuejs.org/api/built-in-components.html#teleport)",
-      "default": "-",
-      "type": "指定挂载的节点，等同于 Teleport 组件的 [to 属性](https: |  | cn.vuejs.org | api | built-in-components.html#teleport)"
-    },
-    "max-range": {
-      "value": "",
-      "description": "日期最多可选天数",
-      "default": "无限制",
-      "type": "日期最多可选天数"
-    },
-    "range-prompt": {
-      "value": "",
-      "description": "选择超过最多可选天数时的提示文案",
-      "default": "最多选择 xx 天",
-      "type": "选择超过最多可选天数时的提示文案"
-    },
-    "show-range-prompt": {
-      "value": "",
-      "description": "范围选择超过最多可选天数时，是否展示提示文案",
-      "default": "true",
-      "type": "范围选择超过最多可选天数时，是否展示提示文案"
-    },
-    "allow-same-day": {
-      "value": "",
-      "description": "是否允许日期范围的起止时间为同一天",
-      "default": "false",
-      "type": "是否允许日期范围的起止时间为同一天"
+      "type": "0-6"
     }
   },
   "methods": [{ "name": "reset", "description": "将选中的日期重置到指定日期，未传参时会重置到默认日期", "params": "date?: Date | Date[]" }, { "name": "scrollToDate", "description": "滚动到某个日期", "params": "date: Date" }, { "name": "getSelectedDate", "description": "获取选中的日期", "params": "-" }],

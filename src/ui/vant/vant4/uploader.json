@@ -5,7 +5,7 @@
       "value": "",
       "description": "已上传的文件列表",
       "default": "-",
-      "type": "已上传的文件列表"
+      "type": "FileListItem[]"
     },
     "accept": {
       "value": [
@@ -14,139 +14,139 @@
       ],
       "description": "允许上传的文件类型，[详细说明](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/Input/file#%E9%99%90%E5%88%B6%E5%85%81%E8%AE%B8%E7%9A%84%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B)",
       "default": "image | *",
-      "type": "允许上传的文件类型，[详细说明](https: |  | developer.mozilla.org | zh-CN | docs | Web | HTML | Element | Input | file#%E9%99%90%E5%88%B6%E5%85%81%E8%AE%B8%E7%9A%84%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B)"
+      "type": "string"
     },
     "name": {
       "value": "",
       "description": "标识符，通常为一个唯一的字符串或数字，可以在回调函数的第二项参数中获取",
       "default": "-",
-      "type": "标识符，通常为一个唯一的字符串或数字，可以在回调函数的第二项参数中获取"
+      "type": "number | string"
     },
     "preview-size": {
       "value": "",
       "description": "预览图和上传区域的尺寸，默认单位为 `px`",
       "default": "80px",
-      "type": "预览图和上传区域的尺寸，默认单位为 px"
+      "type": "number | string | Array"
     },
     "preview-image": {
       "value": "",
       "description": "是否在上传完成后展示预览图",
       "default": "true",
-      "type": "是否在上传完成后展示预览图"
+      "type": "boolean"
     },
     "preview-full-image": {
       "value": "",
       "description": "是否在点击预览图后展示全屏图片预览",
       "default": "true",
-      "type": "是否在点击预览图后展示全屏图片预览"
+      "type": "boolean"
     },
     "preview-options": {
       "value": "",
       "description": "全屏图片预览的配置项，可选值见 [ImagePreview](#/zh-CN/image-preview)",
       "default": "-",
-      "type": "全屏图片预览的配置项，可选值见 [ImagePreview](# | zh-CN | image-preview)"
+      "type": "object"
     },
     "multiple": {
       "value": "",
       "description": "是否开启图片多选，部分安卓机型不支持",
       "default": "false",
-      "type": "是否开启图片多选，部分安卓机型不支持"
+      "type": "boolean"
     },
     "disabled": {
       "value": "",
       "description": "是否禁用文件上传",
       "default": "false",
-      "type": "是否禁用文件上传"
+      "type": "boolean"
     },
     "readonly": {
       "value": "",
       "description": "是否将上传区域设置为只读状态",
       "default": "false",
-      "type": "是否将上传区域设置为只读状态"
+      "type": "boolean"
     },
     "deletable": {
       "value": "",
       "description": "是否展示删除按钮",
       "default": "true",
-      "type": "是否展示删除按钮"
+      "type": "boolean"
     },
     "reupload": {
       "value": "",
       "description": "是否开启覆盖上传，开启后会关闭图片预览",
       "default": "false",
-      "type": "是否开启覆盖上传，开启后会关闭图片预览"
+      "type": "boolean"
     },
     "show-upload": {
       "value": "",
       "description": "是否展示上传区域",
       "default": "true",
-      "type": "是否展示上传区域"
+      "type": "boolean"
     },
     "lazy-load": {
       "value": "",
       "description": "是否开启图片懒加载，须配合 [Lazyload](#/zh-CN/lazyload) 组件使用",
       "default": "false",
-      "type": "是否开启图片懒加载，须配合 [Lazyload](# | zh-CN | lazyload) 组件使用"
+      "type": "boolean"
     },
     "capture": {
       "value": "",
       "description": "图片选取模式，可选值为 `camera` (直接调起摄像头)",
       "default": "-",
-      "type": "图片选取模式，可选值为 camera (直接调起摄像头)"
+      "type": "string"
     },
     "after-read": {
       "value": "",
       "description": "文件读取完成后的回调函数",
       "default": "-",
-      "type": "文件读取完成后的回调函数"
+      "type": "Function"
     },
     "before-read": {
       "value": "",
       "description": "文件读取前的回调函数，返回 `false` 可终止文件读取， 支持返回 `Promise`",
       "default": "-",
-      "type": "文件读取前的回调函数，返回 false 可终止文件读取， 支持返回 Promise"
+      "type": "Function"
     },
     "before-delete": {
       "value": "",
       "description": "文件删除前的回调函数，返回 `false` 可终止文件读取， 支持返回 `Promise`",
       "default": "-",
-      "type": "文件删除前的回调函数，返回 false 可终止文件读取， 支持返回 Promise"
+      "type": "Function"
     },
     "max-size": {
       "value": "",
       "description": "文件大小限制，单位为 `byte`",
       "default": "Infinity",
-      "type": "文件大小限制，单位为 byte"
+      "type": "number | string | (file: File) => boolean"
     },
     "max-count": {
       "value": "",
       "description": "文件上传数量限制",
       "default": "Infinity",
-      "type": "文件上传数量限制"
+      "type": "number | string"
     },
     "result-type": {
       "value": "",
       "description": "文件读取结果类型，可选值为 `file` `text`",
       "default": "dataUrl",
-      "type": "文件读取结果类型，可选值为 file text"
+      "type": "string"
     },
     "upload-text": {
       "value": "",
       "description": "上传区域文字提示",
       "default": "-",
-      "type": "上传区域文字提示"
+      "type": "string"
     },
     "image-fit": {
       "value": "",
       "description": "预览图裁剪模式，可选值见 [Image](#/zh-CN/image) 组件",
       "default": "cover",
-      "type": "预览图裁剪模式，可选值见 [Image](# | zh-CN | image) 组件"
+      "type": "string"
     },
     "upload-icon": {
       "value": "",
       "description": "上传区域图标名称或图片链接，等同于 Icon 组件的 [name 属性](#/zh-CN/icon#props)",
       "default": "photograph",
-      "type": "上传区域图标名称或图片链接，等同于 Icon 组件的 [name 属性](# | zh-CN | icon#props)"
+      "type": "string"
     }
   },
   "methods": [{ "name": "closeImagePreview", "description": "关闭全屏的图片预览", "params": "-" }, { "name": "chooseFile", "description": "主动调起文件选择，由于浏览器安全限制，只有在用户触发操作的上下文中调用才有效", "params": "-" }],
