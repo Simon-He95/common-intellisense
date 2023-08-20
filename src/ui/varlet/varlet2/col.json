@@ -14,52 +14,52 @@
       "type": "列偏移的栅格数"
     },
     "direction": {
-      "value": "",
+      "value": ["row", "column"],
       "description": "布局方向 可选值为 row column",
       "default": "row",
-      "type": "布局方向 可选值为 row column"
+      "type": "string"
     },
     "justify": {
-      "value": "",
+      "value": ["flex-start", "flex-end", "center", "space-around", "space-between"],
       "description": "主轴排列方式 可选值为 `flex-start` `flex-end` `center` `space-around` `space-between`",
       "default": "-",
-      "type": "主轴排列方式 可选值为 flex-start flex-end center space-around space-between"
+      "type": "string"
     },
     "align": {
-      "value": "",
+      "value": ["stretch", "flex-start", "flex-end", "center", "baseline"],
       "description": "交叉轴排列方式 可选值为 `stretch` `center` `flex-start` `flex-end` `baseline`",
       "default": "-",
-      "type": "交叉轴排列方式 可选值为 stretch center flex-start flex-end baseline"
+      "type": "string"
     },
     "xs": {
       "value": "",
       "description": "`<768px` 响应式栅格数或者栅格属性对象",
       "default": "-",
-      "type": "<768px 响应式栅格数或者栅格属性对象"
+      "type": "string | number | { span?: number | string, offset?: number | string }"
     },
     "sm": {
       "value": "",
       "description": "`≥768px` 响应式栅格数或者栅格属性对象",
       "default": "-",
-      "type": "≥768px 响应式栅格数或者栅格属性对象"
+      "type": "string | number | { span?: number | string, offset?: number | string }"
     },
     "md": {
       "value": "",
       "description": "`≥992px` 响应式栅格数或者栅格属性对象",
       "default": "-",
-      "type": "≥992px 响应式栅格数或者栅格属性对象"
+      "type": "string | number | { span?: number | string, offset?: number | string }"
     },
     "lg": {
       "value": "",
       "description": "`≥1200px` 响应式栅格数或者栅格属性对象",
       "default": "-",
-      "type": "≥1200px 响应式栅格数或者栅格属性对象"
+      "type": "string | number | { span?: number | string, offset?: number | string }"
     },
     "xl": {
       "value": "",
       "description": "`≥1920px` 响应式栅格数或者栅格属性对象",
       "default": "-",
-      "type": "≥1920px 响应式栅格数或者栅格属性对象"
+      "type": "string | number | { span?: number | string, offset?: number | string }"
     }
   },
   "methods": [],
@@ -68,7 +68,7 @@
     {
       "name": "click",
       "description": "点击 Col 时触发",
-      "params": "点击 Col 时触发"
+      "params": "event: Event"
     }
   ],
   "link": "https://varlet.gitee.io/varlet-ui/#/zh-CN/row"

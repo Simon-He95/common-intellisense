@@ -5,79 +5,79 @@
       "value": "",
       "description": "是否显示",
       "default": "false",
-      "type": "是否显示"
+      "type": "boolean"
     },
     "content": {
       "value": "",
       "description": "显示的内容",
       "default": "-",
-      "type": "显示的内容"
+      "type": "string"
     },
     "color": {
       "value": "",
       "description": "背景颜色",
       "default": "-",
-      "type": "背景颜色"
+      "type": "string"
     },
     "type": {
-      "value": "",
+      "value": ["primary", "info", "success", "warning", "danger", "default"],
       "description": "类型，可选值为 `default` `primary` `info` `success` `warning` `danger`",
       "default": "default",
-      "type": "类型，可选值为 default primary info success warning danger"
+      "type": "string"
     },
     "placement": {
-      "value": "",
+      "value": ["top", "bottom", "left", "right"],
       "description": "弹出位置",
       "default": "top",
-      "type": "弹出位置"
+      "type": "Placement"
     },
     "offset-x": {
       "value": "",
       "description": "x 轴偏移量， 相对于 `Tooltip` 对齐后的位置",
       "default": "0",
-      "type": "x 轴偏移量， 相对于 Tooltip 对齐后的位置"
+      "type": "number | string"
     },
     "offset-y": {
       "value": "",
       "description": "y 轴偏移量， 相对于 `Tooltip` 对齐后的位置",
       "default": "0",
-      "type": "y 轴偏移量， 相对于 Tooltip 对齐后的位置"
+      "type": "number | string"
     },
     "teleport": {
       "value": "",
       "description": "挂载的位置",
       "default": "body",
-      "type": "挂载的位置"
+      "type": "TeleportProps['to'] | false"
     },
     "same-width": {
       "value": "",
       "description": "是否与触发元素同宽",
       "default": "false",
-      "type": "是否与触发元素同宽"
+      "type": "boolean"
     },
     "disabled": {
       "value": "",
       "description": "是否禁用 Tooltip",
       "default": "false",
-      "type": "是否禁用 Tooltip"
+      "type": "boolean"
     },
     "trigger": {
-      "value": "",
+      "value": ["click", "hover"],
       "description": "触发方式，可选值为 `click` `hover`, `click` 为点击时触发, `hover` 为悬停时触发",
       "default": "hover",
-      "type": "触发方式，可选值为 click hover, click 为点击时触发, hover 为悬停时触发"
+      "type": "string"
     },
     "reference": {
       "value": "",
       "description": "关联的触发元素选择器，用于指定特定子元素为触发元素",
       "default": "-",
-      "type": "关联的触发元素选择器，用于指定特定子元素为触发元素"
+      "type": "string"
     },
     "close-on-click-reference": {
       "value": "",
       "description": "是否在点击菜单触发元素后关闭菜单",
       "default": "false",
-      "type": "是否在点击菜单触发元素后关闭菜单"
+      "type": "boolean"
     }
   },
   "methods": [{ "name": "open", "description": "打开 `Tooltip`", "params": "`-`" }, { "name": "close", "description": "关闭 `Tooltip`", "params": "`-`" }, { "name": "resize", "description": "`Tooltip` 默认插槽元素产生位置大小变化时可以调用此方法进行重绘", "params": "`-`" }, { "name": "click-outside", "description": "点击菜单外部时触发", "params": "`event: Event`" }],
@@ -149,22 +149,22 @@
     {
       "name": "open",
       "description": "打开 `Tooltip` 时触发",
-      "params": "打开 `Tooltip` 时触发"
+      "params": "_"
     },
     {
       "name": "opened",
       "description": "打开 `Tooltip` 动画结束时触发",
-      "params": "打开 `Tooltip` 动画结束时触发"
+      "params": "_"
     },
     {
       "name": "close",
       "description": "关闭 `Tooltip` 时触发",
-      "params": "关闭 `Tooltip` 时触发"
+      "params": "_"
     },
     {
       "name": "closed",
       "description": "关闭 `Tooltip` 动画结束时触发",
-      "params": "关闭 `Tooltip` 动画结束时触发"
+      "params": "_"
     }
   ],
   "link": "https://varlet.gitee.io/varlet-ui/#/zh-CN/tooltip"

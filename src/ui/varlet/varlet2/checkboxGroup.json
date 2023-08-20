@@ -5,25 +5,25 @@
       "value": "",
       "description": "绑定的值",
       "default": "[]",
-      "type": "绑定的值"
+      "type": "Array"
     },
     "max": {
       "value": "",
       "description": "最大选择的数量",
       "default": "-",
-      "type": "最大选择的数量"
+      "type": "number"
     },
     "direction": {
-      "value": "",
+      "value": ["horizontal", "vertical"],
       "description": "布局方向，可选值为 `horizontal` `vertical`",
       "default": "horizontal",
-      "type": "布局方向，可选值为 horizontal vertical"
+      "type": "string"
     },
     "rules": {
       "value": "",
       "description": "验证规则，返回 `true` 表示验证通过，其余的值则转换为文本作为用户提示",
-      "default": "horizontal",
-      "type": "验证规则，返回 true 表示验证通过，其余的值则转换为文本作为用户提示"
+      "default": "_",
+      "type": "Array<(value: any) => any>"
     }
   },
   "methods": [{ "name": "validate", "description": "触发校验", "params": "`-`" }, { "name": "resetValidation", "description": "清空校验信息", "params": "`-`" }, { "name": "reset", "description": "清空绑定的值(设置为 `[]`)和校验信息", "params": "`-`" }, { "name": "checkAll", "description": "全选", "params": "`-`" }, { "name": "inverseAll", "description": "反选", "params": "`-`" }],

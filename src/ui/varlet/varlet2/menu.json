@@ -5,79 +5,85 @@
       "value": "",
       "description": "是否显示菜单",
       "default": "default",
-      "type": "是否显示菜单"
+      "type": "string"
     },
     "placement": {
       "value": "",
       "description": "菜单弹出位置",
       "default": "cover-top-start",
-      "type": "菜单弹出位置"
+      "type": "Placement"
+    },
+    "strategy": {
+      "value": ["absolute", "fixed"],
+      "description": "菜单定位方式，可选值为 absolute fixed",
+      "default": "absolute",
+      "type": "string"
     },
     "offset-x": {
       "value": "",
       "description": "x 轴偏移量， 相对于菜单对齐后的位置",
       "default": "0",
-      "type": "x 轴偏移量， 相对于菜单对齐后的位置"
+      "type": "number | string"
     },
     "offset-y": {
       "value": "",
       "description": "y 轴偏移量， 相对于菜单对齐后的位置",
       "default": "0",
-      "type": "y 轴偏移量， 相对于菜单对齐后的位置"
+      "type": "number | string"
     },
     "teleport": {
       "value": "",
       "description": "菜单挂载的位置",
       "default": "body",
-      "type": "菜单挂载的位置"
+      "type": "TeleportProps['to'] | false"
     },
     "disabled": {
       "value": "",
       "description": "是否禁用菜单",
       "default": "false",
-      "type": "是否禁用菜单"
+      "type": "boolean"
     },
     "trigger": {
-      "value": "",
+      "value": ["click", "hover"],
       "description": "菜单触发方式，可选值为 `click` `hover`, `click` 为点击时触发, `hover` 为悬停时触发",
       "default": "click",
-      "type": "菜单触发方式，可选值为 click hover, click 为点击时触发, hover 为悬停时触发"
+      "type": "string"
     },
     "reference": {
       "value": "",
       "description": "菜单关联的触发元素选择器，用于指定菜单的特定子元素为触发元素",
       "default": "-",
-      "type": "菜单关联的触发元素选择器，用于指定菜单的特定子元素为触发元素"
+      "type": "string"
     },
     "elevation": {
-      "value": "",
+      "value": ["true", "false", "0-24"],
       "description": "海拔高度，可选值为 `true` `false` 和 `0-24` 的等级",
       "default": "true",
-      "type": "海拔高度，可选值为 true false 和 0-24 的等级"
+      "type": "string | number | boolean"
     },
     "same-width": {
       "value": "",
       "description": "是否与触发元素同宽",
       "default": "false",
-      "type": "是否与触发元素同宽"
+      "type": "boolean"
     },
     "default-style": {
       "value": "",
       "description": "是否启用默认样式",
       "default": "true",
-      "type": "是否启用默认样式"
+      "type": "boolean"
     },
     "popover-class": {
       "value": "",
       "description": "弹出层的 class",
       "default": "-",
-      "type": "弹出层的 class"
+      "type": "string"
     },
     "close-on-click-reference": {
       "value": "",
       "description": "是否在点击菜单触发元素后关闭菜单",
       "default": "false",
-      "type": "是否在点击菜单触发元素后关闭菜单"
+      "type": "boolean"
     }
   },
   "methods": [{ "name": "open", "description": "打开 Menu", "params": "`-`" }, { "name": "close", "description": "关闭 Menu", "params": "`-`" }, { "name": "resize", "description": "Menu 默认插槽元素产生位置大小变化时可以调用此方法进行重绘", "params": "`-`" }],

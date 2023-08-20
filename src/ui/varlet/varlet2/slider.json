@@ -5,103 +5,103 @@
       "value": "",
       "description": "当前进度值",
       "default": "0",
-      "type": "当前进度值"
+      "type": "number | [number, number]"
     },
     "step": {
       "value": "",
       "description": "步长，取值必须大于 0",
       "default": "1",
-      "type": "步长，取值必须大于 0"
+      "type": "string | number"
     },
     "range": {
       "value": "",
       "description": "是否启用双滑块",
       "default": "false",
-      "type": "是否启用双滑块"
+      "type": "boolean"
     },
     "max": {
       "value": "",
       "description": "最大值",
       "default": "100",
-      "type": "最大值"
+      "type": "string | number"
     },
     "min": {
       "value": "",
       "description": "最小值",
       "default": "0",
-      "type": "最小值"
+      "type": "string | number"
     },
     "label-visible": {
-      "value": "",
+      "value": ["always", "normal", "never"],
       "description": "是否显示标签，可选值为 `always normal never`",
       "default": "normal",
-      "type": "是否显示标签，可选值为 always normal never"
+      "type": "string"
     },
     "label-text-color": {
       "value": "",
       "description": "标签文字颜色",
       "default": "#fff",
-      "type": "标签文字颜色"
+      "type": "string"
     },
     "label-color": {
       "value": "",
       "description": "标签颜色",
       "default": "-",
-      "type": "标签颜色"
+      "type": "string"
     },
     "active-color": {
       "value": "",
       "description": "已激活的轨道背景颜色",
       "default": "-",
-      "type": "已激活的轨道背景颜色"
+      "type": "string"
     },
     "track-color": {
       "value": "",
       "description": "轨道背景颜色",
       "default": "-",
-      "type": "轨道背景颜色"
+      "type": "string"
     },
     "track-height": {
       "value": "",
       "description": "轨道的高度",
       "default": "2",
-      "type": "轨道的高度"
+      "type": "string | number"
     },
     "thumb-size": {
       "value": "",
       "description": "滑块的大小",
       "default": "12",
-      "type": "滑块的大小"
+      "type": "string | number"
     },
     "thumb-color": {
       "value": "",
       "description": "滑块的背景颜色",
       "default": "-",
-      "type": "滑块的背景颜色"
+      "type": "string"
     },
     "disabled": {
       "value": "",
       "description": "是否禁用",
       "default": "false",
-      "type": "是否禁用"
+      "type": "boolean"
     },
     "readonly": {
       "value": "",
       "description": "是否只读",
       "default": "false",
-      "type": "是否只读"
+      "type": "boolean"
     },
     "direction": {
-      "value": "",
+      "value": ["horizontal", "vertical"],
       "description": "显示方向，可选值为 `vertical horizontal`",
       "default": "horizontal",
-      "type": "显示方向，可选值为 vertical horizontal"
+      "type": "string"
     },
     "rules": {
       "value": "",
       "description": "校验规则",
       "default": "-",
-      "type": "校验规则"
+      "type": "array"
     }
   },
   "methods": [],
@@ -110,17 +110,17 @@
     {
       "name": "change",
       "description": "值改变时触发",
-      "params": "值改变时触发"
+      "params": "value: 当前进度"
     },
     {
       "name": "start",
       "description": "开始拖动时触发",
-      "params": "开始拖动时触发"
+      "params": "_"
     },
     {
       "name": "end",
       "description": "结束拖动时触发",
-      "params": "结束拖动时触发"
+      "params": "value: 当前进度"
     }
   ],
   "link": "https://varlet.gitee.io/varlet-ui/#/zh-CN/slider"

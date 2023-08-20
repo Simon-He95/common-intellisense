@@ -5,127 +5,127 @@
       "value": "",
       "description": "绑定的值",
       "default": "-",
-      "type": "绑定的值"
+      "type": "string"
     },
     "placeholder": {
       "value": "",
       "description": "占位符",
       "default": "-",
-      "type": "占位符"
+      "type": "string"
     },
     "type": {
-      "value": "",
+      "value": ["text", "password", "number", "tel"],
       "description": "输入框类型, 可选值为 `text` `password` `number` `tel`",
       "default": "text",
-      "type": "输入框类型, 可选值为 text password number tel"
+      "type": "string"
     },
     "size": {
-      "value": "",
+      "value": ["small", "medium", "large"],
       "description": "输入框尺寸，可选值 `small`",
       "default": "-",
       "type": "输入框尺寸，可选值 small"
     },
     "variant": {
-      "value": "",
+      "value": ["standard", "outlined"],
       "description": "输入框风格, 可选值为 `standard` `outlined`",
       "default": "standard",
-      "type": "输入框风格, 可选值为 standard outlined"
+      "type": "string"
     },
     "maxlength": {
       "value": "",
       "description": "最大长度",
       "default": "-",
-      "type": "最大长度"
+      "type": "string | number"
     },
     "textarea": {
       "value": "",
       "description": "是否是文本域",
       "default": "false",
-      "type": "是否是文本域"
+      "type": "boolean"
     },
     "rows": {
       "value": "",
       "description": "文本域的显示行数",
       "default": "8",
-      "type": "文本域的显示行数"
+      "type": "string"
     },
     "line": {
       "value": "",
       "description": "是否显示分割线",
       "default": "true",
-      "type": "是否显示分割线"
+      "type": "boolean"
     },
     "hint": {
       "value": "",
       "description": "是否使用占位符作为提示",
       "default": "true",
-      "type": "是否使用占位符作为提示"
+      "type": "boolean"
     },
     "text-color": {
       "value": "",
       "description": "文字颜色",
       "default": "-",
-      "type": "文字颜色"
+      "type": "string"
     },
     "focus-color": {
       "value": "",
       "description": "聚焦时的主要颜色",
       "default": "-",
-      "type": "聚焦时的主要颜色"
+      "type": "string"
     },
     "blur-color": {
       "value": "",
       "description": "失焦时的主要颜色",
       "default": "-",
-      "type": "失焦时的主要颜色"
+      "type": "string"
     },
     "readonly": {
       "value": "",
       "description": "是否只读",
       "default": "false",
-      "type": "是否只读"
+      "type": "boolean"
     },
     "disabled": {
       "value": "",
       "description": "是否禁用",
       "default": "false",
-      "type": "是否禁用"
+      "type": "boolean"
     },
     "clearable": {
       "value": "",
       "description": "是否可清除",
       "default": "false",
-      "type": "是否可清除"
+      "type": "boolean"
     },
     "resize": {
       "value": "",
       "description": "文本域是否可以拖动调整尺寸",
       "default": "false",
-      "type": "文本域是否可以拖动调整尺寸"
+      "type": "boolean"
     },
     "autofocus": {
       "value": "",
       "description": "是否自动聚焦",
       "default": "false",
-      "type": "是否自动聚焦"
+      "type": "boolean"
     },
     "validate-trigger": {
-      "value": "",
+      "value": ["onFocus", " onBlur", "onChange", "onClick", "onClear", "onInput"],
       "description": "触发验证的时机，可选值为 `onFocus` `onBlur` `onChange` `onClick` `onClear` `onInput`",
       "default": "['onInput', 'onClear']",
-      "type": "触发验证的时机，可选值为 onFocus onBlur onChange onClick onClear onInput"
+      "type": "string"
     },
     "rules": {
       "value": "",
       "description": "验证规则，返回 `true` 表示验证通过，其余的值则转换为文本作为用户提示",
       "default": "-",
-      "type": "验证规则，返回 true 表示验证通过，其余的值则转换为文本作为用户提示"
+      "type": "Array<(v: string) => any>"
     },
     "enterkeyhint": {
       "value": "",
       "description": "定制回车键样式，参见 [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/enterkeyhint)",
       "default": "-",
-      "type": "定制回车键样式，参见 [MDN](https: |  | developer.mozilla.org | en-US | docs | Web | HTML | Globalattributes | enterkeyhint)"
+      "type": "string"
     }
   },
   "methods": [{ "name": "focus", "description": "聚焦", "params": "`-`" }, { "name": "blur", "description": "失焦", "params": "`-`" }, { "name": "validate", "description": "触发校验", "params": "`-`" }, { "name": "resetValidation", "description": "清空校验信息", "params": "`-`" }, { "name": "reset", "description": "清空绑定的值和校验信息", "params": "`-`" }],

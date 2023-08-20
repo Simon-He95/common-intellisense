@@ -5,61 +5,61 @@
       "value": "",
       "description": "被选择的时间（ISO 8601 格式，`HH:mm` 或 `HH:mm:ss`）",
       "default": "-",
-      "type": "被选择的时间（ISO 8601 格式，HH:mm 或 HH:mm:ss）"
+      "type": "string"
     },
     "format": {
-      "value": "",
+      "value": ["ampm", "24hr"],
       "description": "选择器时间格式，可选值为 `ampm 24hr`",
       "default": "ampm",
-      "type": "选择器时间格式，可选值为 ampm 24hr"
+      "type": "string"
     },
     "color": {
       "value": "",
       "description": "选择器的颜色",
       "default": "#2979ff",
-      "type": "选择器的颜色"
+      "type": "string"
     },
     "header-color": {
       "value": "",
       "description": "标题背景色。如果未指定，将使用由 color 属性或默认颜色。",
       "default": "#2979ff",
-      "type": "标题背景色。如果未指定，将使用由 color 属性或默认颜色。"
+      "type": "string"
     },
     "elevation": {
-      "value": "",
+      "value": ["true", "false", "0-24"],
       "description": "海拔高度，可选值为 `true` `false` 和 `0-24` 的等级",
       "default": "false",
-      "type": "海拔高度，可选值为 true false 和 0-24 的等级"
+      "type": "string | number | boolean"
     },
     "min": {
       "value": "",
       "description": "允许的最小时间（ISO 8601格式）",
       "default": "-",
-      "type": "允许的最小时间（ISO 8601格式）"
+      "type": "string"
     },
     "max": {
       "value": "",
       "description": "允许的最大时间（ISO 8601格式）",
       "default": "-",
-      "type": "允许的最大时间（ISO 8601格式）"
+      "type": "string"
     },
     "allowed-time": {
       "value": "",
       "description": "限制可以选择的时间",
       "default": "-",
-      "type": "限制可以选择的时间"
+      "type": "AllowedTime"
     },
     "readonly": {
       "value": "",
       "description": "是否只读",
       "default": "false",
-      "type": "是否只读"
+      "type": "boolean"
     },
     "use-seconds": {
       "value": "",
       "description": "是否显示秒",
       "default": "false",
-      "type": "是否显示秒"
+      "type": "boolean"
     }
   },
   "methods": [],
@@ -86,7 +86,7 @@
     {
       "name": "change",
       "description": "时间变化时触发",
-      "params": "时间变化时触发"
+      "params": "value: string"
     }
   ],
   "link": "https://varlet.gitee.io/varlet-ui/#/zh-CN/time-picker"

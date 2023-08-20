@@ -5,91 +5,91 @@
       "value": "",
       "description": "被选择的日期（ISO 8601 格式，`YYYY-MM-DD` 或 `YYYY-MM`）",
       "default": "undefined",
-      "type": "被选择的日期（ISO 8601 格式，YYYY-MM-DD 或 YYYY-MM）"
+      "type": "string[] | string"
     },
     "type": {
-      "value": "",
+      "value": ["date", "month"],
       "description": "选择器类型，可选值为 `date month`",
       "default": "date",
-      "type": "选择器类型，可选值为 date month"
+      "type": "string"
     },
     "allowed-dates": {
       "value": "",
       "description": "限制可以选择的日期",
       "default": "-",
-      "type": "限制可以选择的日期"
+      "type": "function"
     },
     "color": {
       "value": "",
       "description": "选择器的颜色",
       "default": "#2979ff",
-      "type": "选择器的颜色"
+      "type": "string"
     },
     "header-color": {
       "value": "",
       "description": "标题背景色。如果未指定，将使用由 color 属性或默认颜色。",
       "default": "#2979ff",
-      "type": "标题背景色。如果未指定，将使用由 color 属性或默认颜色。"
+      "type": "string"
     },
     "elevation": {
-      "value": "",
+      "value": ["true", "false", "0-24"],
       "description": "海拔高度，可选值为 `true` `false` 和 `0-24` 的等级",
       "default": "false",
-      "type": "海拔高度，可选值为 true false 和 0-24 的等级"
+      "type": "string | number | boolean"
     },
     "button-elevation": {
       "value": "",
       "description": "Button 的海拔高度",
       "default": "true",
-      "type": "Button 的海拔高度"
+      "type": "string | number | boolean"
     },
     "first-day-of-week": {
       "value": "",
       "description": "设置一周的第一天，从周日的 0 开始。",
       "default": "0",
-      "type": "设置一周的第一天，从周日的 0 开始。"
+      "type": "string | number"
     },
     "min": {
       "value": "",
       "description": "允许的最小日期/月份（ISO 8601格式）",
       "default": "-",
-      "type": "允许的最小日期 | 月份（ISO 8601格式）"
+      "type": "string"
     },
     "max": {
       "value": "",
       "description": "允许的最大日期/月份（ISO 8601格式）",
       "default": "-",
-      "type": "允许的最大日期 | 月份（ISO 8601格式）"
+      "type": "string"
     },
     "show-current": {
       "value": "",
       "description": "是否显示当前日期",
       "default": "true",
-      "type": "是否显示当前日期"
+      "type": "boolean"
     },
     "readonly": {
       "value": "",
       "description": "是否只读",
       "default": "false",
-      "type": "是否只读"
+      "type": "boolean"
     },
     "multiple": {
       "value": "",
       "description": "是否支持选择多个日期",
       "default": "false",
-      "type": "是否支持选择多个日期"
+      "type": "boolean"
     },
     "range": {
       "value": "",
       "description": "是否支持选择一个范围",
       "default": "false",
-      "type": "是否支持选择一个范围"
+      "type": "boolean"
     },
     "touchable": {
       "value": "",
       "description": "是否支持拖动切换面板",
       "default": "true",
-      "type": "是否支持拖动切换面板"
+      "type": "boolean"
     }
   },
   "methods": [],
@@ -98,12 +98,12 @@
     {
       "name": "preview",
       "description": "日期切换时触发",
-      "params": "日期切换时触发"
+      "params": "year: number, month: number"
     },
     {
       "name": "change",
       "description": "日期改变时触发",
-      "params": "日期改变时触发"
+      "params": "日value: string | string[]"
     }
   ],
   "link": "https://varlet.gitee.io/varlet-ui/#/zh-CN/date-picker"

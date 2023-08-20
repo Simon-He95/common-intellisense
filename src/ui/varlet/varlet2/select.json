@@ -5,103 +5,103 @@
       "value": "",
       "description": "绑定的值",
       "default": "-",
-      "type": "绑定的值"
+      "type": "any | any[]"
     },
     "size": {
       "value": "",
       "description": "选择框尺寸，可选值 `small`",
       "default": "-",
-      "type": "选择框尺寸，可选值 small"
+      "type": "string"
     },
     "variant": {
-      "value": "",
+      "value": ["standard", "outlined"],
       "description": "选择框风格, 可选值为 `standard` `outlined`",
       "default": "standard",
-      "type": "选择框风格, 可选值为 standard outlined"
+      "type": "string"
     },
     "placeholder": {
       "value": "",
       "description": "占位符",
       "default": "-",
-      "type": "占位符"
+      "type": "string"
     },
     "multiple": {
       "value": "",
       "description": "是否开启多选",
       "default": "false",
-      "type": "是否开启多选"
+      "type": "boolean"
     },
     "offset-y": {
       "value": "",
       "description": "下拉菜单的垂直偏移量",
       "default": "0",
-      "type": "下拉菜单的垂直偏移量"
+      "type": "number | string"
     },
     "chip": {
       "value": "",
       "description": "是否使用纸片风格(仅限多选)",
       "default": "false",
-      "type": "是否使用纸片风格(仅限多选)"
+      "type": "boolean"
     },
     "line": {
       "value": "",
       "description": "是否显示分割线",
       "default": "true",
-      "type": "是否显示分割线"
+      "type": "boolean"
     },
     "hint": {
       "value": "",
       "description": "是否使用占位符作为提示",
       "default": "true",
-      "type": "是否使用占位符作为提示"
+      "type": "boolean"
     },
     "text-color": {
       "value": "",
       "description": "文字颜色",
       "default": "-",
-      "type": "文字颜色"
+      "type": "string"
     },
     "focus-color": {
       "value": "",
       "description": "聚焦时的主要颜色",
       "default": "-",
-      "type": "聚焦时的主要颜色"
+      "type": "string"
     },
     "blur-color": {
       "value": "",
       "description": "失焦时的主要颜色",
       "default": "-",
-      "type": "失焦时的主要颜色"
+      "type": "string"
     },
     "readonly": {
       "value": "",
       "description": "是否只读",
       "default": "false",
-      "type": "是否只读"
+      "type": "boolean"
     },
     "disabled": {
       "value": "",
       "description": "是否禁用",
       "default": "false",
-      "type": "是否禁用"
+      "type": "boolean"
     },
     "clearable": {
       "value": "",
       "description": "是否可清除",
       "default": "false",
-      "type": "是否可清除"
+      "type": "boolean"
     },
     "validate-trigger": {
-      "value": "",
+      "value": ["onChange", "onBlur", "onFocus", "onClear", "onInput"],
       "description": "触发验证的时机，可选值为 `onFocus` `onBlur` `onChange` `onClick` `onClear` `onClose`",
       "default": "['onChange', 'onClear', 'onClose']",
-      "type": "触发验证的时机，可选值为 onFocus onBlur onChange onClick onClear onClose"
+      "type": "string"
     },
     "rules": {
       "value": "",
       "description": "验证规则，返回 `true` 表示验证通过，其余的值则转换为文本作为用户提示",
       "default": "-",
-      "type": "验证规则，返回 true 表示验证通过，其余的值则转换为文本作为用户提示"
+      "type": "Array<(v: any | any[]) => any>"
     }
   },
   "methods": [{ "name": "focus", "description": "聚焦", "params": "`-`" }, { "name": "blur", "description": "失焦", "params": "`-`" }, { "name": "validate", "description": "触发校验", "params": "`-`" }, { "name": "resetValidation", "description": "清空校验信息", "params": "`-`" }, { "name": "reset", "description": "清空绑定的值(单选设置为 `undefined`，多选设置为 `[]`)和校验信息", "params": "`-`" }],
@@ -123,32 +123,32 @@
     {
       "name": "focus",
       "description": "聚焦时触发",
-      "params": "聚焦时触发"
+      "params": "event: Event"
     },
     {
       "name": "blur",
       "description": "失焦时触发",
-      "params": "失焦时触发"
+      "params": "event: Event"
     },
     {
       "name": "click",
       "description": "点击时触发",
-      "params": "点击时触发"
+      "params": "event: Event"
     },
     {
       "name": "clear",
       "description": "清除时触发",
-      "params": "清除时触发"
+      "params": "value: any | any[]"
     },
     {
       "name": "close",
       "description": "输入时触发",
-      "params": "输入时触发"
+      "params": "value: any | any[]"
     },
     {
       "name": "change",
       "description": "更新时触发",
-      "params": "更新时触发"
+      "params": "value: any | any[]"
     }
   ]
 }

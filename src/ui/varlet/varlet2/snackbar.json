@@ -5,85 +5,85 @@
       "value": "",
       "description": "是否显示 `Snackbar`",
       "default": "false",
-      "type": "是否显示 Snackbar"
+      "type": "boolean"
     },
     "type": {
-      "value": "",
+      "value": ["info", "success", "warning", "error", "loading"],
       "description": "`Snackbar` 类型，可选值为 `success warning info error loading`",
       "default": "-",
-      "type": "Snackbar 类型，可选值为 success warning info error loading"
+      "type": "string"
     },
     "position": {
-      "value": "",
+      "value": ["top", "center", "bottom"],
       "description": "`Snackbar`  位置，可选值为 `top center bottom`",
       "default": "top",
-      "type": "Snackbar  位置，可选值为 top center bottom"
+      "type": "Sstring"
     },
     "duration": {
       "value": "",
       "description": "显示时长",
       "default": "3000",
-      "type": "显示时长"
+      "type": "number"
     },
     "content": {
       "value": "",
       "description": "自定义内容",
       "default": "-",
-      "type": "自定义内容"
+      "type": "string"
     },
     "content-class": {
       "value": "",
       "description": "自定义内容的类名",
       "default": "-",
-      "type": "自定义内容的类名"
+      "type": "string"
     },
     "vertical": {
       "value": "",
       "description": "是否启用竖直排列方式",
       "default": "false",
-      "type": "是否启用竖直排列方式"
+      "type": "boolean"
     },
     "loading-type": {
-      "value": "",
+      "value": ["circle", "spinner"],
       "description": "Loading类型(见 `Loading` 组件)",
       "default": "circle",
-      "type": "Loading类型(见 Loading 组件)"
+      "type": "string"
     },
     "loading-size": {
       "value": "",
       "description": "Loading大小(见 `Loading` 组件)",
       "default": "normal",
-      "type": "Loading大小(见 Loading 组件)"
+      "type": "string"
     },
     "loading-color": {
       "value": "",
       "description": "loading颜色(见 `loading`组件)",
       "default": "currentColor",
-      "type": "loading颜色(见 loading组件)"
+      "type": "string"
     },
     "loading-radius": {
       "value": "",
       "description": "Loading半径大小(见 `Loading` 组件)",
       "default": "-",
-      "type": "Loading半径大小(见 Loading 组件)"
+      "type": "string | number"
     },
     "lock-scroll": {
       "value": "",
       "description": "是否禁止滚动穿透",
       "default": "false",
-      "type": "是否禁止滚动穿透"
+      "type": "boolean"
     },
     "forbid-click": {
       "value": "",
       "description": "是否禁止穿透点击",
       "default": "false",
-      "type": "是否禁止穿透点击"
+      "type": "boolean"
     },
     "teleport": {
       "value": "",
       "description": "弹出层挂载的位置",
       "default": "body",
-      "type": "弹出层挂载的位置"
+      "type": "TeleportProps['to'] | false"
     }
   },
   "methods": [{ "name": "Snackbar", "description": "显示消息条", "params": "options | string" }, { "name": "Snackbar.success", "description": "显示成功消息条", "params": "options | string" }, { "name": "Snackbar.info", "description": "显示普通消息条", "params": "options | string" }, { "name": "Snackbar.warning", "description": "显示警告消息条", "params": "options | string" }, { "name": "Snackbar.error", "description": "显示错误消息条", "params": "options | string" }, { "name": "Snackbar.loading", "description": "显示加载消息条", "params": "options | string" }, { "name": "Snackbar.clear", "description": "关闭消息条", "params": "-" }, { "name": "Snackbar.allowMultiple", "description": "是否允许多例模式", "params": "boolean" }, { "name": "Snackbar.setDefaultOptions", "description": "设置默认的选项配置", "params": "options" }, { "name": "Snackbar.resetDefaultOptions", "description": "重置默认的选项配置", "params": "-" }],
@@ -92,22 +92,22 @@
     {
       "name": "open",
       "description": "打开 `Snackbar` 时触发",
-      "params": "打开 `Snackbar` 时触发"
+      "params": "_"
     },
     {
       "name": "opened",
       "description": "打开 `Snackbar` 动画结束时触发",
-      "params": "打开 `Snackbar` 动画结束时触发"
+      "params": "_"
     },
     {
       "name": "close",
       "description": "关闭 `Snackbar` 时触发",
-      "params": "关闭 `Snackbar` 时触发"
+      "params": "_"
     },
     {
       "name": "closed",
       "description": "关闭 `Snackbar` 动画结束时触发",
-      "params": "关闭 `Snackbar` 动画结束时触发"
+      "params": "_"
     }
   ],
   "link": "https://varlet.gitee.io/varlet-ui/#/zh-CN/snackbar"
