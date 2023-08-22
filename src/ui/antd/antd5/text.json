@@ -11,16 +11,7 @@
       "value": "",
       "description": "是否可拷贝，为对象时可进行各种自定义",
       "default": "false",
-      "type": "boolean | copyable",
-      "typeDetail": {
-        "copyableItem": [
-          { "name": "format", "description": "剪切板数据的 Mime Type", "type": "'text|plain' | 'text|html'" },
-          { "name": "icon", "description": "自定义拷贝图标：[默认图标, 拷贝后的图标]", "type": "[ReactNode, ReactNode]" },
-          { "name": "text", "description": "拷贝到剪切板里的文本", "type": "string" },
-          { "name": "tooltips", "description": "自定义提示文案，为 false 时隐藏文案", "type": "[ReactNode, ReactNode]" },
-          { "name": "onCopy", "description": "拷贝成功的回调函数", "callback": "function" }
-        ]
-      }
+      "type": "boolean | copyable"
     },
     "delete": {
       "value": "",
@@ -38,23 +29,7 @@
       "value": "",
       "description": "是否可编辑，为对象时可对编辑进行控制",
       "default": "false",
-      "type": "boolean | editable",
-      "typeDetail": {
-        "editableItem": [
-          { "name": "autoSize", "description": "自动 resize 文本域", "type": "boolean | { minRows: number, maxRows: number }" },
-          { "name": "editing", "description": "控制是否是编辑中状态", "type": "boolean" },
-          { "name": "icon", "description": "自定义编辑图标", "type": "ReactNode" },
-          { "name": "maxLength", "description": "编辑中文本域最大长度", "type": "number" },
-          { "name": "tooltip", "description": "自定义提示文本，为 false 时关闭", "type": "boolean | ReactNode" },
-          { "name": "text", "description": "显式地指定编辑文案，为空时将隐式地使用 children", "type": "string" },
-          { "name": "triggerType", "description": "编辑模式触发器类型，图标、文本或者两者都设置（不设置图标作为触发器时它会隐藏）", "type": "['icon' | 'text']" },
-          { "name": "enterIcon", "description": "在编辑段中自定义“enter”图标（传递“null”将删除图标）", "type": "ReactNode" },
-          { "name": "onChange", "description": "文本域编辑时触发", "callback": "function(value: string)" },
-          { "name": "onCancel", "description": "按 ESC 退出编辑状态时触发", "callback": "function" },
-          { "name": "onStart", "description": "进入编辑中状态时触发", "callback": "function" },
-          { "name": "onEnd", "description": "按 ENTER 结束编辑状态时触发", "callback": "function" }
-        ]
-      }
+      "type": "boolean | editable"
     },
     "ellipsis": {
       "value": "",
@@ -103,6 +78,29 @@
       "default": "false",
       "type": "boolean"
     }
+  },
+  "typeDetail": {
+    "editableItem": [
+      { "name": "autoSize", "description": "自动 resize 文本域", "type": "boolean | { minRows: number, maxRows: number }" },
+      { "name": "editing", "description": "控制是否是编辑中状态", "type": "boolean" },
+      { "name": "icon", "description": "自定义编辑图标", "type": "ReactNode" },
+      { "name": "maxLength", "description": "编辑中文本域最大长度", "type": "number" },
+      { "name": "tooltip", "description": "自定义提示文本，为 false 时关闭", "type": "boolean | ReactNode" },
+      { "name": "text", "description": "显式地指定编辑文案，为空时将隐式地使用 children", "type": "string" },
+      { "name": "triggerType", "description": "编辑模式触发器类型，图标、文本或者两者都设置（不设置图标作为触发器时它会隐藏）", "type": "['icon' | 'text']" },
+      { "name": "enterIcon", "description": "在编辑段中自定义“enter”图标（传递“null”将删除图标）", "type": "ReactNode" },
+      { "name": "onChange", "description": "文本域编辑时触发", "callback": "function(value: string)" },
+      { "name": "onCancel", "description": "按 ESC 退出编辑状态时触发", "callback": "function" },
+      { "name": "onStart", "description": "进入编辑中状态时触发", "callback": "function" },
+      { "name": "onEnd", "description": "按 ENTER 结束编辑状态时触发", "callback": "function" }
+    ],
+    "copyableItem": [
+      { "name": "format", "description": "剪切板数据的 Mime Type", "type": "'text|plain' | 'text|html'" },
+      { "name": "icon", "description": "自定义拷贝图标：[默认图标, 拷贝后的图标]", "type": "[ReactNode, ReactNode]" },
+      { "name": "text", "description": "拷贝到剪切板里的文本", "type": "string" },
+      { "name": "tooltips", "description": "自定义提示文案，为 false 时隐藏文案", "type": "[ReactNode, ReactNode]" },
+      { "name": "onCopy", "description": "拷贝成功的回调函数", "callback": "function" }
+    ]
   },
   "events": [
     {

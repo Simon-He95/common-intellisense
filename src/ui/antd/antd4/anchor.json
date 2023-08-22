@@ -47,16 +47,7 @@
       "value": "",
       "description": "数据化配置选项内容，支持通过 children 嵌套",
       "default": "-",
-      "type": "{ key, href, title, target, children }[]",
-      "typeDetail": {
-        "AnchorItem": [
-          { "name": "key", "description": "唯一标志", "type": "string | number" },
-          { "name": "href", "description": "锚点链接", "type": "string" },
-          { "name": "target", "description": "该属性指定在何处显示链接的资源", "type": "string" },
-          { "name": "title", "description": "文字内容", "type": "VueNode | (item: AnchorItem) => VueNode" },
-          { "name": "children", "description": "嵌套的 Anchor Link", "type": "AnchorItem[]" }
-        ]
-      }
+      "type": "{ key, href, title, target, children }[]"
     },
     "direction": {
       "value": "",
@@ -70,6 +61,15 @@
       "default": "false",
       "type": "boolean"
     }
+  },
+  "typeDetail": {
+    "AnchorItem": [
+      { "name": "key", "description": "唯一标志", "type": "string | number" },
+      { "name": "href", "description": "锚点链接", "type": "string" },
+      { "name": "target", "description": "该属性指定在何处显示链接的资源", "type": "string" },
+      { "name": "title", "description": "文字内容", "type": "VueNode | (item: AnchorItem) => VueNode" },
+      { "name": "children", "description": "嵌套的 Anchor Link", "type": "AnchorItem[]" }
+    ]
   },
   "events": [
     {

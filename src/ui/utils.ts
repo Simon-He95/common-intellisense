@@ -54,28 +54,12 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
           detail.push(`#### 💡 类型:    ***\`${value.type.replace(/`/g, '')}\`***`)
         documentation.appendMarkdown(detail.join('\n\n'))
 
-        if (item.typeDetail) {
+        if (item.typeDetail && Object.keys(item.typeDetail).length) {
           const data = `🌈 类型详情:\n${Object.keys(item.typeDetail).reduce((result, key) => result += key[0] === '$'
             ? `\ntype ${key.slice(1).replace(/-(\w)/g, v => v.toUpperCase())} = \n${item.typeDetail[key].map((typeItem: any) => `${typeItem.name} /*${typeItem.description}*/`).join('\n| ')}\n\n`
             : `\ninterface ${key} {\n  ${item.typeDetail[key].map((typeItem: any) => `${typeItem.name}${typeItem.optional ? '?' : ''}: ${typeItem.type} /*${typeItem.description}${typeItem.default ? ` 默认值: ***${typeItem.default}***` : ''}*/`).join('\n  ')}\n}`, '')}`
           documentation.appendCodeblock(data, 'typescript')
         }
-
-        // if (item.methods && item.methods.length) {
-        //   item.methods.forEach((methods: any) => {
-        //     const detail = []
-        //     const { name, description, params } = methods
-        //     if (name)
-        //       detail.push(`\n#### 💨 方法 ${name}:`)
-
-        //     if (description)
-        //       detail.push(`- 👓 说明:    ***\`${description}\`***`)
-
-        //     if (params)
-        //       detail.push(`- 🚢 参数:    ***\`${params}\`***`)
-        //     documentation.appendMarkdown(detail.join('\n'))
-        //   })
-        // }
 
         if (item.link)
           documentation.appendMarkdown(`\n\n[🔗 文档链接](${item.link})`)

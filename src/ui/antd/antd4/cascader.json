@@ -137,32 +137,7 @@
       "value": "",
       "description": "可选项数据源",
       "default": "-",
-      "type": "[Option][]",
-      "typeDetail": {
-        "optionsItem": [
-          {
-            "name": "value",
-            "type": "string | number"
-          },
-          {
-            "name": "label",
-            "type": "React.ReactNode"
-          },
-          {
-            "disabled": "value",
-            "type": "boolean"
-          },
-          {
-            "children": "value",
-            "type": "optionsItem[]"
-          },
-          {
-            "isLeaf": "value",
-            "description": "设为 `false` 时会强制标记为父节点，即使当前节点没有 children，也会显示展开图标",
-            "type": "boolean"
-          }
-        ]
-      }
+      "type": "[Option][]"
     },
     "placeholder": {
       "value": "",
@@ -180,36 +155,7 @@
       "value": "",
       "description": "在选择框中显示搜索框",
       "default": "false",
-      "type": "boolean | [Object]",
-      "typeDetail": {
-        "objectItem": [
-          {
-            "name": "filter",
-            "description": "接收 inputValue path 两个参数，当 path 符合筛选条件时，应返回 true，反之则返回 false",
-            "type": "function(inputValue, path): boolean"
-          },
-          {
-            "name": "limit",
-            "description": "搜索结果展示数量",
-            "type": "number | false"
-          },
-          {
-            "name": "matchInputWidth",
-            "description": "搜索结果列表是否与输入框同宽",
-            "type": "boolean"
-          },
-          {
-            "name": "render",
-            "description": "用于渲染 filter 后的选项",
-            "type": "function(inputValue, path): ReactNode"
-          },
-          {
-            "name": "sort",
-            "description": "用于排序 filter 后的选项",
-            "type": "function(a, b, inputValue)"
-          }
-        ]
-      }
+      "type": "boolean | [Object]"
     },
     "size": {
       "value": "",
@@ -301,6 +247,58 @@
       "default": "-",
       "type": "function(a, b, inputValue)"
     }
+  },
+  "typeDetail": {
+    "objectItem": [
+      {
+        "name": "filter",
+        "description": "接收 inputValue path 两个参数，当 path 符合筛选条件时，应返回 true，反之则返回 false",
+        "type": "function(inputValue, path): boolean"
+      },
+      {
+        "name": "limit",
+        "description": "搜索结果展示数量",
+        "type": "number | false"
+      },
+      {
+        "name": "matchInputWidth",
+        "description": "搜索结果列表是否与输入框同宽",
+        "type": "boolean"
+      },
+      {
+        "name": "render",
+        "description": "用于渲染 filter 后的选项",
+        "type": "function(inputValue, path): ReactNode"
+      },
+      {
+        "name": "sort",
+        "description": "用于排序 filter 后的选项",
+        "type": "function(a, b, inputValue)"
+      }
+    ],
+    "optionsItem": [
+      {
+        "name": "value",
+        "type": "string | number"
+      },
+      {
+        "name": "label",
+        "type": "React.ReactNode"
+      },
+      {
+        "disabled": "value",
+        "type": "boolean"
+      },
+      {
+        "children": "value",
+        "type": "optionsItem[]"
+      },
+      {
+        "isLeaf": "value",
+        "description": "设为 `false` 时会强制标记为父节点，即使当前节点没有 children，也会显示展开图标",
+        "type": "boolean"
+      }
+    ]
   },
   "methods": [{ "name": "blur()", "description": "移除焦点", "params": "" }, { "name": "focus()", "description": "获取焦点", "params": "" }],
   "events": [
