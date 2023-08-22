@@ -71,6 +71,8 @@ export function activate(context: vscode.ExtensionContext) {
           ? completions.filter((item: any) => item.label.startsWith(propName)).map((item: any) =>
             createCompletionItem({
               content: item.label.split('=')[1].slice(1, -1),
+              documentation: item.documentation,
+              detail: item.detail,
             }),
           )
           : hasProps.length
