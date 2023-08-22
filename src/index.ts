@@ -60,10 +60,22 @@ export function activate(context: vscode.ExtensionContext) {
       const name = result.tag[0].toUpperCase() + result.tag.replace(/(-\w)/g, (match: string) => match[1].toUpperCase()).slice(1)
       if (result.propName === 'icon')
         return UiCompletions.icons
-
-      return result.propName === 'on'
-        ? UiCompletions[name].events
-        : UiCompletions[name].completions
+      const propName = result.propName
+      const { events, completions } = UiCompletions[name]
+      const hasProps = result.props
+        ? result.props.map((item: any) => item.name)
+        : []
+      return propName === 'on'
+        ? events
+        : propName
+          ? completions.filter((item: any) => item.label.startsWith(propName)).map((item: any) =>
+            createCompletionItem({
+              content: item.label.split('=')[1].slice(1, -1),
+            }),
+          )
+          : hasProps.length
+            ? completions.filter((item: any) => !hasProps.find((prop: any) => item.label.startsWith(prop)))
+            : completions
     }
     else if (!result.isInTemplate || isPreEmpty || !optionsComponents) {
       return

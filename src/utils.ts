@@ -83,12 +83,14 @@ function dfs(children: any, position: vscode.Position) {
       return {
         type: 'props',
         tag: child.tag,
+        props,
       }
     }
     if (child.type === 2) {
       return {
         type: 'text',
         isInTemplate: true,
+        props,
       }
     }
     return
@@ -166,6 +168,7 @@ function jsxDfs(children: any, position: vscode.Position) {
       return {
         type: 'props',
         tag: openingElement.name.name,
+        props: openingElement.attributes,
       }
     }
 
@@ -173,6 +176,7 @@ function jsxDfs(children: any, position: vscode.Position) {
       return {
         isInTemplate,
         type: 'text',
+        props: openingElement?.attributes,
       }
     }
     return
