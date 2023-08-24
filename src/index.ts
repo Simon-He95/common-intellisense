@@ -37,7 +37,6 @@ export function activate(context: vscode.ExtensionContext) {
 
   context.subscriptions.push(registerCompletionItemProvider(filter, (document, position) => {
     const result = parser(document.getText(), position)
-
     if (!result)
       return
     const { lineText } = getSelection()!

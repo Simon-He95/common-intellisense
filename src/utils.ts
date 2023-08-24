@@ -237,7 +237,10 @@ function findRef(children: any, map: any) {
     const { tag, props, children } = child
     if (props && props.length) {
       for (const prop of props) {
-        const { name, value: { content } } = prop
+        const { name, value } = prop
+        if (!value)
+          continue
+        const { content } = value
         if (name !== 'ref' || !content)
           continue
         const tagName = transformTagName(tag)
