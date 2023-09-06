@@ -98,8 +98,8 @@ export function deactivate() {
 const filters = ['js', 'ts', 'jsx', 'tsx', 'vue', 'svelte']
 const nameMap: any = {
   '@varlet/ui': 'varlet',
-  '@chakra-ui/react': 'chakraUiReact',
-  '@chakra-ui/vue': 'chakraUiVue',
+  '@chakraUi/react': 'chakraUiReact',
+  '@chakraUi/vue': 'chakraUiVue',
 }
 function findUI() {
   const cwd = vscode.window.activeTextEditor?.document.uri.fsPath

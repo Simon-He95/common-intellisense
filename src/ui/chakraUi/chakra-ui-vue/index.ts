@@ -1,7 +1,7 @@
 import { componentsReducer, propsReducer } from '../../utils'
 import Accordion from './Accordion.json'
 
-export function chakraUiReact2() {
+export function chakraUiVue0() {
   const map: any = [
     Accordion
   ]
@@ -9,7 +9,7 @@ export function chakraUiReact2() {
   return propsReducer(map)
 }
 
-export function chakraUiReact2Components() {
+export function chakraUiVue0Components() {
   const map = [
     ['Accordion', '手风琴', '<Accordion></Accordion>'],
   ]
