@@ -1,1 +1,1 @@
-export * from './chakraUi0'
+export * from './chakra-ui-react'

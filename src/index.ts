@@ -98,6 +98,8 @@ export function deactivate() {
 const filters = ['js', 'ts', 'jsx', 'tsx', 'vue', 'svelte']
 const nameMap: any = {
   '@varlet/ui': 'varlet',
+  '@chakra-ui/react': 'chakraUiReact',
+  '@chakra-ui/vue': 'chakraUiVue',
 }
 function findUI() {
   const cwd = vscode.window.activeTextEditor?.document.uri.fsPath
@@ -109,6 +111,7 @@ function findUI() {
   const values = Object.values(cacheMap) as any
   if (values[0] && values[0].includes(cwd))
     return
+
   findPkgUI(cwd).then(({ uis, pkg }: any) => {
     if (!uis)
       return

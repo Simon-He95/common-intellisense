@@ -7,7 +7,7 @@ import { varlet2, varlet2Components } from './varlet'
 import { naiveUi2, naiveUi2Components } from './naiveUi'
 import { vuetify3, vuetify3Components } from './vuetify'
 import { uview2, uview2Components } from './uview'
-import { chakraUi0, chakraUi0Components } from './chakraUi'
+import { chakraUiReact2, chakraUiReact2Components } from './chakraUi'
 
 export default {
   elementUi2,
@@ -22,7 +22,7 @@ export default {
   varlet2,
   vuetify3,
   uview2,
-  chakraUi0,
+  chakraUiReact2,
   elementUi2Components,
   antd4Components,
   antd5Components,
@@ -35,5 +35,5 @@ export default {
   varlet2Components,
   vuetify3Components,
   uview2Components,
-  chakraUi0Components,
+  chakraUiReact2Components,
 }
