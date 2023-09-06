@@ -8,6 +8,9 @@ import Breadcrumb from './Breadcrumb.json'
 import BreadcrumbItem from './BreadcrumbItem.json'
 import BreadcrumbLink from './BreadcrumbLink.json'
 import BreadcrumbSeparator from './BreadcrumbSeparator.json'
+import Button from './Button.json'
+import ButtonGroup from './ButtonGroup.json'
+import IconButton from './IconButton.json'
 
 export function chakraUiReact2() {
   const map: any = [
@@ -20,6 +23,9 @@ export function chakraUiReact2() {
     BreadcrumbItem,
     BreadcrumbLink,
     BreadcrumbSeparator,
+    Button,
+    ButtonGroup,
+    IconButton,
   ]
 
   return propsReducer(map)
@@ -36,6 +42,9 @@ export function chakraUiReact2Components() {
     [BreadcrumbItem.name, '面包屑项', '<BreadcrumbItem></BreadcrumbItem>'],
     [BreadcrumbLink.name, '面包屑链接', '<BreadcrumbLink></BreadcrumbLink>'],
     [BreadcrumbSeparator.name, '每个面包屑之间的视觉分隔符', '<BreadcrumbSeparator />'],
+    [Button.name, '按钮', '<Button colorScheme=\'blue\'>Save</Button>'],
+    [ButtonGroup.name, '按钮组', '<ButtonGroup></ButtonGroup>'],
+    [IconButton.name, '单独的图标按钮', '<IconButton aria-label=\'Add to friends\' icon={<AddIcon />} />'],
   ]
   return componentsReducer(map)
 }
