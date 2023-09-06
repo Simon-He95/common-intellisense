@@ -253,7 +253,7 @@ function findRef(children: any, map: any) {
   return map
 }
 
-const UINames = ['element-ui', 'element-plus', 'antd', 'ant-design-vue', '@varlet/ui', 'vant', 'naive-ui', 'vuetify','@chakra-ui/react','@chakra-ui/vue']
+const UINames = ['element-ui', 'element-plus', 'antd', 'ant-design-vue', '@varlet/ui', 'vant', 'naive-ui', 'vuetify', '@chakra-ui/react', '@chakra-ui/vue']
 export async function findPkgUI(cwd?: string) {
   if (!cwd)
     return

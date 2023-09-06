@@ -3,7 +3,7 @@ import Accordion from './Accordion.json'
 
 export function chakraUiVue0() {
   const map: any = [
-    Accordion
+    Accordion,
   ]
 
   return propsReducer(map)
