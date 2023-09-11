@@ -82,7 +82,7 @@ function dfs(children: any, position: vscode.Position) {
         return result
     }
     if (child.tag) {
-      if (!isStartTag(child.loc, position, child.tag.length))
+      if (!child.isSelfClosing && !isStartTag(child.loc, position, child.tag.length))
         return false
       return {
         type: 'props',
