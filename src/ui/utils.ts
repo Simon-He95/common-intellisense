@@ -61,8 +61,9 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
           documentation.appendCodeblock(data, 'typescript')
         }
 
+        // command:extension.openDocumentLink?%7B%22link%22%3A%22https%3A%2F%2Fexample.com%2F%22%7D
         if (item.link)
-          documentation.appendMarkdown(`\n\n[🔗 文档链接](${item.link})`)
+          documentation.appendMarkdown(`\n\n[🔗 文档链接](command:intellisense.openDocument?%7B%22link%22%3A%22${encodeURIComponent(item.link)}%22%7D)`)
 
         if (value.type && value.type.includes('boolean') && value.default === 'false')
           return createCompletionItem({ content: key, documentation })

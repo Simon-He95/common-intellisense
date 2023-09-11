@@ -1,5 +1,6 @@
 import * as vscode from 'vscode'
 import { addEventListener, copyText, createCompletionItem, getSelection, message, registerCommand, registerCompletionItemProvider } from '@vscode-use/utils'
+import { CreateWebview } from '@vscode-use/createwebview'
 import { findPkgUI, parser } from './utils'
 import UI from './ui'
 
@@ -86,6 +87,42 @@ export function activate(context: vscode.ExtensionContext) {
     if (optionsComponents.prefix.some((reg: string) => prefix.startsWith(reg)))
       return optionsComponents.data
   }, ['"', '\'', '-', ' ', '@', '.']))
+  const provider = new CreateWebview(context.extensionUri, {
+    viewColumn: vscode.ViewColumn.Beside,
+    scripts: ['main.js'],
+  })
+  context.subscriptions.push(registerCommand('intellisense.openDocument', (args) => {
+    // 注册全局的link点击时间
+    const url = args.link
+    if (!url)
+      return
+    provider.create(`
+      <!DOCTYPE html>
+      <html lang="en">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Webview</title>
+          <style>
+            body{
+              width:100%;
+              height:100vh;
+            }
+          </style>
+        </head>
+        <body>
+          <iframe src="${url}" width="100%" height="100%"></iframe>
+        </body>
+      </html>
+      `, ({ data, type }) => {
+      // callback 获取js层的postMessage数据
+      if (type === 'copy') {
+        vscode.env.clipboard.writeText(data).then(() => {
+          vscode.window.showInformationMessage('复制成功!  ✅')
+        })
+      }
+    })
+  }))
 }
 
 export function deactivate() {
