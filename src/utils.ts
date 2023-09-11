@@ -65,6 +65,8 @@ function dfs(children: any, position: vscode.Position) {
     if (props && props.length) {
       for (const prop of props) {
         if (isInPosition(prop.loc, position)) {
+          if (!isStartTag(child.loc, position, child.tag.length))
+            return false
           return {
             tag,
             propName: prop.name,
@@ -80,6 +82,8 @@ function dfs(children: any, position: vscode.Position) {
         return result
     }
     if (child.tag) {
+      if (!isStartTag(child.loc, position, child.tag.length))
+        return false
       return {
         type: 'props',
         tag: child.tag,
@@ -280,4 +284,15 @@ export async function findPkgUI(cwd?: string) {
 
 export function transformTagName(name: string) {
   return name[0].toUpperCase() + name.replace(/(-\w)/g, (match: string) => match[1].toUpperCase()).slice(1)
+}
+
+export function isStartTag(loc: any, position: vscode.Position, tagLen: number) {
+  const posLine = position.line + 1
+  const posCharacter = position.character + 3 + tagLen
+  if (loc.start.line === posLine) {
+    if (loc.end.line !== posLine)
+      return true
+    return loc.end.column >= posCharacter
+  }
+  return false
 }
