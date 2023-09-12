@@ -75,14 +75,13 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
     if (item.events) {
       events.push(...item.events.map((events: any) => {
         const detail = []
-        let { name, description, params } = events
+        const { name, description, params } = events
 
         if (description)
           detail.push(`#### 🔦 说明:    ***\`${description}\`***`)
 
         if (params)
           detail.push(`#### 🔮 回调参数:    ***\`${params}\`***`)
-        name = name.replace(/-(\w)/g, (_: string, v: string) => v.toUpperCase())
         const snippet = `${name}="$\{1:on${name[0].toUpperCase()}${name.slice(1)}\}$2"`
         const documentation = new vscode.MarkdownString()
         documentation.isTrusted = true
