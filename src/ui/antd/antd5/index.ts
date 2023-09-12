@@ -11,7 +11,7 @@ import Text from './text.json'
 import Title from './title.json'
 import Paragraph from './paragraph.json'
 import Anchor from './anchor.json'
-import BreadCrumb from './breadCrumb.json'
+import Breadcrumb from './breadcrumb.json'
 import Dropdown from './dropdown.json'
 import DropdownButton from './dropdownButton.json'
 import Menu from './menu.json'
@@ -96,7 +96,7 @@ export function antd5() {
     Title,
     Paragraph,
     Anchor,
-    BreadCrumb,
+    Breadcrumb,
     Dropdown,
     DropdownButton,
     Menu,

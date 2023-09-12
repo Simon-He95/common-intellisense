@@ -1,0 +1,88 @@
+{
+  "name": "ElCarousel",
+  "props": {
+    "height": {
+      "value": "",
+      "description": "走马灯的高度",
+      "default": "—",
+      "type": "string"
+    },
+    "initial-index": {
+      "value": "",
+      "description": "初始状态激活的幻灯片的索引，从 0 开始",
+      "default": "—",
+      "type": "number"
+    },
+    "trigger": {
+      "value": "",
+      "description": "指示器的触发方式",
+      "default": "click",
+      "type": "string"
+    },
+    "autoplay": {
+      "value": "",
+      "description": "是否自动切换",
+      "default": "false",
+      "type": "boolean"
+    },
+    "interval": {
+      "value": "",
+      "description": "自动切换的时间间隔，单位为毫秒",
+      "default": "—",
+      "type": "number"
+    },
+    "indicator-position": {
+      "value": [
+        "outside",
+        "none"
+      ],
+      "description": "指示器的位置",
+      "default": "outside | none",
+      "type": "string"
+    },
+    "arrow": {
+      "value": [
+        "always",
+        "hover",
+        "never"
+      ],
+      "description": "切换箭头的显示时机",
+      "default": "always | hover | never",
+      "type": "string"
+    },
+    "type": {
+      "value": "",
+      "description": "走马灯的类型",
+      "default": "card",
+      "type": "string"
+    },
+    "loop": {
+      "value": "",
+      "description": "是否循环显示",
+      "default": "false",
+      "type": "boolean"
+    },
+    "direction": {
+      "value": [
+        "horizontal",
+        "vertical"
+      ],
+      "description": "走马灯展示的方向",
+      "default": "horizontal | vertical",
+      "type": "string"
+    }
+  },
+  "methods": [
+    { "name": "setActiveItem", "description": "手动切换幻灯片", "params": "需要切换的幻灯片的索引，从 0 开始；或相应 `el-carousel-item` 的 `name` 属性值" },
+    { "name": "prev", "description": "切换至上一张幻灯片", "params": "—" },
+    { "name": "next", "description": "切换至下一张幻灯片", "params": "—" }
+  ],
+  "events": [
+    {
+      "name": "change",
+      "description": "幻灯片切换时触发",
+      "params": "目前激活的幻灯片的索引，原幻灯片的索引"
+    }
+  ],
+  "link": "https://element.eleme.cn/#/zh-CN/component/carousel"
+}

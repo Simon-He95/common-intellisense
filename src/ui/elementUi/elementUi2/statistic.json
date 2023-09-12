@@ -1,0 +1,93 @@
+{
+  "name": "ElStatistic",
+  "props": {
+    "value": {
+      "value": "",
+      "description": "必填值，输入绑定值",
+      "default": "—",
+      "type": "string"
+    },
+    "decimal-separator": {
+      "value": "",
+      "description": "设置小数点",
+      "default": "—",
+      "type": "string"
+    },
+    "formatter": {
+      "value": "",
+      "description": "自定义数值展示",
+      "default": "—",
+      "type": "v-slot |({value}) => VNode"
+    },
+    "group-separator": {
+      "value": "",
+      "description": "设置千分位标识符",
+      "default": "—",
+      "type": "string"
+    },
+    "precision": {
+      "value": "",
+      "description": "数值精度",
+      "default": "—",
+      "type": "number"
+    },
+    "prefix": {
+      "value": "",
+      "description": "设置数值的前缀",
+      "default": "—",
+      "type": "string | v-slot"
+    },
+    "suffix": {
+      "value": "",
+      "description": "设置数值的后缀",
+      "default": "—",
+      "type": "string | v-slot"
+    },
+    "title": {
+      "value": "",
+      "description": "数值的标题",
+      "default": "—",
+      "type": "string | v-slot"
+    },
+    "value-style": {
+      "value": "",
+      "description": "设置数值的样式",
+      "default": "—",
+      "type": "object"
+    },
+    "rate": {
+      "value": "",
+      "description": "设置倍率",
+      "default": "—",
+      "type": "number"
+    },
+    "time-indices": {
+      "value": [
+        "true|false"
+      ],
+      "description": "是否开启倒计时功能",
+      "default": "true|false",
+      "type": "boolean"
+    },
+    "format": {
+      "value": "",
+      "description": "格式化倒计时展示",
+      "default": "—",
+      "type": "string"
+    }
+  },
+  "methods": [{ "name": "suspend", "description": "暂停倒计时", "params": "(value:boolean)" }],
+  "events": [
+    {
+      "name": "change",
+      "description": "在`倒计时`的功能中开启",
+      "params": "(value: Date)"
+    },
+    {
+      "name": "finish",
+      "description": "在`倒计时` 完成后启动",
+      "params": "(value: boolean)"
+    }
+  ],
+  "link": "https://element.eleme.cn/#/zh-CN/component/statistic"
+}

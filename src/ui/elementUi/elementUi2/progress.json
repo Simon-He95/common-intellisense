@@ -1,0 +1,91 @@
+{
+  "name": "ElProgress",
+  "props": {
+    "**percentage**": {
+      "value": "",
+      "description": "**百分比（必填）**",
+      "default": "0-100",
+      "type": "number"
+    },
+    "type": {
+      "value": [
+        "line",
+        "circle",
+        "dashboard"
+      ],
+      "description": "进度条类型",
+      "default": "line | circle | dashboard",
+      "type": "string"
+    },
+    "stroke-width": {
+      "value": "",
+      "description": "进度条的宽度，单位 px",
+      "default": "—",
+      "type": "number"
+    },
+    "text-inside": {
+      "value": "",
+      "description": "进度条显示文字内置在进度条内（只在 type=line 时可用）",
+      "default": "false",
+      "type": "boolean"
+    },
+    "status": {
+      "value": [
+        "success",
+        "exception",
+        "warning"
+      ],
+      "description": "进度条当前状态",
+      "default": "success | exception | warning",
+      "type": "string"
+    },
+    "color": {
+      "value": "",
+      "description": "进度条背景色（会覆盖 status 状态颜色）",
+      "default": "—",
+      "type": "string | function | array"
+    },
+    "width": {
+      "value": "",
+      "description": "环形进度条画布宽度（只在 type 为 circle 或 dashboard 时可用）",
+      "default": "",
+      "type": "number"
+    },
+    "show-text": {
+      "value": "",
+      "description": "是否显示进度条文字内容",
+      "default": "false",
+      "type": "boolean"
+    },
+    "stroke-linecap": {
+      "value": [
+        "butt",
+        "round",
+        "square"
+      ],
+      "description": "circle/dashboard 类型路径两端的形状",
+      "default": "butt | round | square",
+      "type": "string"
+    },
+    "format": {
+      "value": "",
+      "description": "指定进度条文字内容",
+      "default": "—",
+      "type": "function(percentage)"
+    },
+    "define-back-color": {
+      "value": "",
+      "description": "指定进度条底色（支持 hex 格式）",
+      "default": "—",
+      "type": "string"
+    },
+    "text-color": {
+      "value": "",
+      "description": "指定进度条字体颜色（支持 hex 格式）",
+      "default": "—",
+      "type": "string"
+    }
+  },
+  "events": [],
+  "link": "https://element.eleme.cn/#/zh-CN/component/progress"
+}

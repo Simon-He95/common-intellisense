@@ -43,7 +43,7 @@ export function activate(context: vscode.ExtensionContext) {
     const { lineText } = getSelection()!
     const { character } = position
     const isPreEmpty = lineText[character - 1] === ' '
-    if (result.refs && !isPreEmpty) {
+    if (!result.isInTemplate && result.refs && !isPreEmpty) {
       if (result.refsMap && Object.keys(result.refsMap).length) {
         if (lineText?.slice(-1)[0] === '.') {
           for (const key in result.refsMap) {

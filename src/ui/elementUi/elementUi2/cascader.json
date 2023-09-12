@@ -1,0 +1,133 @@
+{
+  "name": "ElCascader",
+  "props": {
+    "value": {
+      "value": "",
+      "description": "选中项绑定值",
+      "default": "—",
+      "type": "default"
+    },
+    "options": {
+      "value": "",
+      "description": "可选项数据源，键名可通过 `Props` 属性配置",
+      "default": "—",
+      "type": "array"
+    },
+    "props": {
+      "value": "",
+      "description": "配置选项，具体见下表",
+      "default": "—",
+      "type": "object"
+    },
+    "size": {
+      "value": "",
+      "description": "尺寸",
+      "default": "medium | small | mini",
+      "type": "string"
+    },
+    "placeholder": {
+      "value": "",
+      "description": "输入框占位文本",
+      "default": "—",
+      "type": "string"
+    },
+    "disabled": {
+      "value": "",
+      "description": "是否禁用",
+      "default": "—",
+      "type": "boolean"
+    },
+    "clearable": {
+      "value": "",
+      "description": "是否支持清空选项",
+      "default": "—",
+      "type": "boolean"
+    },
+    "show-all-levels": {
+      "value": "",
+      "description": "输入框中是否显示选中值的完整路径",
+      "default": "—",
+      "type": "boolean"
+    },
+    "collapse-tags": {
+      "value": "",
+      "description": "多选模式下是否折叠Tag",
+      "default": "—",
+      "type": "boolean"
+    },
+    "separator": {
+      "value": "",
+      "description": "选项分隔符",
+      "default": "—",
+      "type": "string"
+    },
+    "filterable": {
+      "value": "",
+      "description": "是否可搜索选项",
+      "default": "—",
+      "type": "boolean"
+    },
+    "filter-method": {
+      "value": "",
+      "description": "自定义搜索逻辑，第一个参数是节点`node`，第二个参数是搜索关键词`keyword`，通过返回布尔值表示是否命中",
+      "default": "—",
+      "type": "function(node, keyword)"
+    },
+    "debounce": {
+      "value": "",
+      "description": "搜索关键词输入的去抖延迟，毫秒",
+      "default": "—",
+      "type": "number"
+    },
+    "before-filter": {
+      "value": "",
+      "description": "筛选之前的钩子，参数为输入的值，若返回 false 或者返回 Promise 且被 reject，则停止筛选",
+      "default": "—",
+      "type": "function(value)"
+    },
+    "popper-class": {
+      "value": "",
+      "description": "自定义浮层类名",
+      "default": "—",
+      "type": "string"
+    },
+    "slot": {
+      "value": "empty",
+      "description": "无匹配选项时的内容"
+    }
+  },
+  "methods": [{ "name": "getCheckedNodes", "description": "获取选中的节点数组", "params": "(leafOnly) 是否只是叶子节点，默认值为 `false`" }, { "name": "clearCheckedNodes", "description": "清空选中的节点", "params": "-" }],
+  "events": [
+    {
+      "name": "change",
+      "description": "当选中节点变化时触发",
+      "params": "选中节点的值"
+    },
+    {
+      "name": "expand-change",
+      "description": "当展开节点发生变化时触发",
+      "params": "各父级选项值组成的数组"
+    },
+    {
+      "name": "blur",
+      "description": "当失去焦点时触发",
+      "params": "(event: Event)"
+    },
+    {
+      "name": "focus",
+      "description": "当获得焦点时触发",
+      "params": "(event: Event)"
+    },
+    {
+      "name": "visible-change",
+      "description": "下拉框出现/隐藏时触发",
+      "params": "出现则为 true，隐藏则为 false"
+    },
+    {
+      "name": "remove-tag",
+      "description": "在多选模式下，移除Tag时触发",
+      "params": "移除的Tag对应的节点的值"
+    }
+  ],
+  "link": "https://element.eleme.cn/#/zh-CN/component/cascader"
+}

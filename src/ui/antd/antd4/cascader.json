@@ -248,7 +248,31 @@
       "type": "function(a, b, inputValue)"
     }
   },
+  "methods": [{ "name": "blur()", "description": "移除焦点", "params": "" }, { "name": "focus()", "description": "获取焦点", "params": "" }],
   "typeDetail": {
+    "optionsItem": [
+      {
+        "name": "value",
+        "type": "string | number"
+      },
+      {
+        "name": "label",
+        "type": "React.ReactNode"
+      },
+      {
+        "disabled": "value",
+        "type": "boolean"
+      },
+      {
+        "children": "value",
+        "type": "optionsItem[]"
+      },
+      {
+        "isLeaf": "value",
+        "description": "设为 `false` 时会强制标记为父节点，即使当前节点没有 children，也会显示展开图标",
+        "type": "boolean"
+      }
+    ],
     "objectItem": [
       {
         "name": "filter",
@@ -275,32 +299,8 @@
         "description": "用于排序 filter 后的选项",
         "type": "function(a, b, inputValue)"
       }
-    ],
-    "optionsItem": [
-      {
-        "name": "value",
-        "type": "string | number"
-      },
-      {
-        "name": "label",
-        "type": "React.ReactNode"
-      },
-      {
-        "disabled": "value",
-        "type": "boolean"
-      },
-      {
-        "children": "value",
-        "type": "optionsItem[]"
-      },
-      {
-        "isLeaf": "value",
-        "description": "设为 `false` 时会强制标记为父节点，即使当前节点没有 children，也会显示展开图标",
-        "type": "boolean"
-      }
     ]
   },
-  "methods": [{ "name": "blur()", "description": "移除焦点", "params": "" }, { "name": "focus()", "description": "获取焦点", "params": "" }],
   "events": [
     {
       "name": "onChange",
@@ -317,5 +317,6 @@
       "description": "监听搜索，返回输入的值",
       "params": "(search: string) => void"
     }
-  ]
+  ],
+  "link": "http://192.168.119.22:8001/components/cascader"
 }

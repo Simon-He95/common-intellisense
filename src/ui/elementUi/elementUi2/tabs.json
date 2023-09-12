@@ -1,0 +1,90 @@
+{
+  "name": "ElTabs",
+  "props": {
+    "value": {
+      "value": "",
+      "description": "绑定值，选中选项卡的 name",
+      "default": "—",
+      "type": "string"
+    },
+    "v-model": {
+      "value": "",
+      "description": "绑定值，选中选项卡的 name",
+      "default": "—",
+      "type": "string"
+    },
+    "type": {
+      "value": [
+        "card",
+        "border-card"
+      ],
+      "description": "风格类型",
+      "default": "card | border-card",
+      "type": "string"
+    },
+    "closable": {
+      "value": "",
+      "description": "标签是否可关闭",
+      "default": "false",
+      "type": "boolean"
+    },
+    "addable": {
+      "value": "",
+      "description": "标签是否可增加",
+      "default": "false",
+      "type": "boolean"
+    },
+    "editable": {
+      "value": "",
+      "description": "标签是否同时可增加和关闭",
+      "default": "false",
+      "type": "boolean"
+    },
+    "tab-position": {
+      "value": [
+        "top",
+        "right",
+        "bottom",
+        "left"
+      ],
+      "description": "选项卡所在位置",
+      "default": "top | right | bottom | left",
+      "type": "string"
+    },
+    "stretch": {
+      "value": "",
+      "description": "标签的宽度是否自撑开",
+      "default": "false",
+      "type": "boolean"
+    },
+    "before-leave": {
+      "value": "",
+      "description": "切换标签之前的钩子，若返回 false 或者返回 Promise 且被 reject，则阻止切换。",
+      "default": "—",
+      "type": "Function(activeName, oldActiveName)"
+    }
+  },
+  "events": [
+    {
+      "name": "tab-click",
+      "description": "tab 被选中时触发",
+      "params": "被选中的标签 tab 实例"
+    },
+    {
+      "name": "tab-remove",
+      "description": "点击 tab 移除按钮后触发",
+      "params": "被删除的标签的 name"
+    },
+    {
+      "name": "tab-add",
+      "description": "点击 tabs 的新增按钮后触发",
+      "params": "—"
+    },
+    {
+      "name": "edit",
+      "description": "点击 tabs 的新增按钮或 tab 被关闭后触发",
+      "params": "(targetName, action)"
+    }
+  ],
+  "link": "https://element.eleme.cn/#/zh-CN/component/tabs"
+}
