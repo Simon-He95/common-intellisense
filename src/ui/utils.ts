@@ -7,6 +7,14 @@ declare const global: {
   }
 }
 
+const originEvent = [
+  {
+    name: 'click',
+    description: '点击事件',
+    params: '',
+  },
+]
+
 export function propsReducer(map: string[], iconData?: { prefix: string; type: string; icons: any[] }, extensionContext?: any) {
   const result: any = {}
   let icons
@@ -71,7 +79,13 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
       },
       ))
     })
+    if (!item.events)
+      item.events = []
 
+    originEvent.forEach((_event) => {
+      if (!item.events.find((event: any) => event.name === _event.name))
+        item.events.push(_event)
+    })
     if (item.events) {
       events.push(...item.events.map((events: any) => {
         const detail = []
