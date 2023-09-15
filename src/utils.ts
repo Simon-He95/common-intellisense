@@ -72,6 +72,7 @@ function dfs(children: any, position: vscode.Position) {
             propName: prop.name,
             props,
             type: 'props',
+            isInTemplate: true,
           }
         }
       }
@@ -88,6 +89,7 @@ function dfs(children: any, position: vscode.Position) {
         type: 'props',
         tag: child.tag,
         props,
+        isInTemplate: true,
       }
     }
     if (child.type === 2) {
@@ -144,6 +146,7 @@ function jsxDfs(children: any, position: vscode.Position) {
             propName: prop.name.name,
             props: openingElement.attributes,
             type: 'props',
+            isInTemplate,
           }
         }
       }
@@ -169,10 +172,21 @@ function jsxDfs(children: any, position: vscode.Position) {
         return result
     }
     if (type === 'JSXElement') {
+      const target = openingElement.attributes.find((item: any) => isInPosition(item.loc, position) || item.value === null)
+      if (target) {
+        return {
+          type: 'props',
+          tag: openingElement.name.name,
+          props: openingElement.attributes,
+          propName: target.name.name,
+          isInTemplate,
+        }
+      }
       return {
         type: 'props',
         tag: openingElement.name.name,
         props: openingElement.attributes,
+        isInTemplate,
       }
     }
 

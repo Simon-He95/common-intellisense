@@ -1,19 +1,11 @@
 import * as vscode from 'vscode'
-import { createCompletionItem } from '@vscode-use/utils'
+import { createCompletionItem, getActiveTextEditorLanguageId } from '@vscode-use/utils'
 
 declare const global: {
   commonIntellisense: {
     copyDom: string
   }
 }
-
-const originEvent = [
-  {
-    name: 'click',
-    description: '点击事件',
-    params: '',
-  },
-]
 
 export function propsReducer(map: string[], iconData?: { prefix: string; type: string; icons: any[] }, extensionContext?: any) {
   const result: any = {}
@@ -82,28 +74,48 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
     if (!item.events)
       item.events = []
 
-    originEvent.forEach((_event) => {
-      if (!item.events.find((event: any) => event.name === _event.name))
-        item.events.push(_event)
-    })
     if (item.events) {
-      events.push(...item.events.map((events: any) => {
-        const detail = []
-        const { name, description, params } = events
+      const deferEventsCall = () => {
+        const lan = getActiveTextEditorLanguageId()
+        const originEvent = [
+          {
+            name: lan === 'vue' ? 'click' : 'onClick',
+            description: '点击事件',
+            params: '',
+          },
+        ]
+        originEvent.forEach((_event) => {
+          if (!item.events.find((event: any) => event.name === _event.name))
+            item.events.push(_event)
+        })
+        return item.events.map((events: any) => {
+          const detail = []
+          const { name, description, params } = events
 
-        if (description)
-          detail.push(`#### 🔦 说明:    ***\`${description}\`***`)
+          if (description)
+            detail.push(`#### 🔦 说明:    ***\`${description}\`***`)
 
-        if (params)
-          detail.push(`#### 🔮 回调参数:    ***\`${params}\`***`)
-        const snippet = `${name}="$\{1:on${name[0].toUpperCase()}${name.slice(1)}\}$2"`
-        const documentation = new vscode.MarkdownString()
-        documentation.isTrusted = true
-        documentation.supportHtml = true
-        documentation.appendMarkdown(detail.join('\n\n'))
-        return createCompletionItem({ content: `${name}="on${name[0].toUpperCase()}${name.slice(1)}"`, snippet, documentation, type: vscode.CompletionItemKind.Event, sortText: '0', preselect: true })
-      },
-      ))
+          if (params)
+            detail.push(`#### 🔮 回调参数:    ***\`${params}\`***`)
+          let snippet
+          let content
+          if (lan === 'vue') {
+            snippet = `${name}="on\${1:${name[0].toUpperCase()}${name.slice(1)}}"`
+            content = `${name}="on${name[0].toUpperCase()}${name.slice(1)}"`
+          }
+          else {
+            snippet = `${name}={ \${1:${name}} }`
+            content = `${name}="${name}"`
+          }
+          const documentation = new vscode.MarkdownString()
+          documentation.isTrusted = true
+          documentation.supportHtml = true
+          documentation.appendMarkdown(detail.join('\n\n'))
+          return createCompletionItem({ content, snippet, documentation, type: vscode.CompletionItemKind.Event, sortText: '0', preselect: true })
+        },
+        )
+      }
+      events.push(deferEventsCall)
     }
 
     if (item.methods) {

@@ -61,11 +61,39 @@ export function activate(context: vscode.ExtensionContext) {
       const name = result.tag[0].toUpperCase() + result.tag.replace(/(-\w)/g, (match: string) => match[1].toUpperCase()).slice(1)
       if (result.propName === 'icon')
         return UiCompletions.icons
+
       const propName = result.propName
       const { events, completions } = UiCompletions[name]
       const hasProps = result.props
-        ? result.props.map((item: any) => item.name)
+        ? result.props.map((item: any) => {
+          if (item.name === 'on' && item.arg)
+            return `${item.arg.content}`
+
+          if (typeof item.name === 'object')
+            item.name.label = item.name.name.slice(2)
+          return item.name
+        })
         : []
+      if (propName === 'on') {
+        const eventCallback = events[0]
+        if (eventCallback)
+          return eventCallback().filter((item: any) => !hasProps.find((prop: any) => item.label.startsWith(prop)))
+      }
+      else if (propName) {
+        return completions.filter((item: any) => item.label.startsWith(propName)).map((item: any) =>
+          createCompletionItem({
+            content: item.label.split('=')[1].slice(1, -1),
+            documentation: item.documentation,
+            detail: item.detail,
+          }),
+        )
+      }
+      else if (hasProps.length) {
+        return completions.filter((item: any) => !hasProps.find((prop: any) => item.label.startsWith(prop)))
+      }
+      else {
+        return completions
+      }
       return propName === 'on'
         ? events
         : propName
