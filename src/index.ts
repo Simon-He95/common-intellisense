@@ -80,7 +80,7 @@ export function activate(context: vscode.ExtensionContext) {
           return eventCallback().filter((item: any) => !hasProps.find((prop: any) => item.label.startsWith(prop)))
       }
       else if (propName) {
-        return completions.filter((item: any) => item.label.startsWith(propName)).map((item: any) =>
+        return completions[0]().filter((item: any) => item.label.startsWith(propName)).map((item: any) =>
           createCompletionItem({
             content: item.label.split('=')[1].slice(1, -1),
             documentation: item.documentation,
@@ -89,15 +89,15 @@ export function activate(context: vscode.ExtensionContext) {
         )
       }
       else if (hasProps.length) {
-        return completions.filter((item: any) => !hasProps.find((prop: any) => item.label.startsWith(prop)))
+        return completions[0]().filter((item: any) => !hasProps.find((prop: any) => item.label.startsWith(prop)))
       }
       else {
-        return completions
+        return completions[0]()
       }
       return propName === 'on'
         ? events
         : propName
-          ? completions.filter((item: any) => item.label.startsWith(propName)).map((item: any) =>
+          ? completions[0]().filter((item: any) => item.label.startsWith(propName)).map((item: any) =>
             createCompletionItem({
               content: item.label.split('=')[1].slice(1, -1),
               documentation: item.documentation,
@@ -105,8 +105,8 @@ export function activate(context: vscode.ExtensionContext) {
             }),
           )
           : hasProps.length
-            ? completions.filter((item: any) => !hasProps.find((prop: any) => item.label.startsWith(prop)))
-            : completions
+            ? completions[0]().filter((item: any) => !hasProps.find((prop: any) => item.label.startsWith(prop)))
+            : completions[0]()
     }
     else if (!result.isInTemplate || isPreEmpty || !optionsComponents) {
       return
