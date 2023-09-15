@@ -3,9 +3,7 @@
 </p>
 <p align="center"> English | <a href="./README_zh.md">简体中文</a></p>
 
->WIP: PR welcome
-
-Provide a quick reminder of some common words to help improve coding efficiency in the development 
+Keep working hard for a better development experience, and provide quick reminders of some commonly used words to help add efficient coding in the development stage.
 
 ![demo](assets/demo.gif)
 
