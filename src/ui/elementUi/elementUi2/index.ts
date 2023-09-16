@@ -71,6 +71,8 @@ import ElTree from './tree.json'
 import ElUpload from './upload.json'
 import ElAvatar from './avatar.json'
 import ElBacktop from './backtop.json'
+import ElOption from './option.json'
+import ElOptionGroup from './optionGroup.json'
 
 export function elementUi2(extensionContext: any) {
   const map: any = [
@@ -146,6 +148,8 @@ export function elementUi2(extensionContext: any) {
     ElUpload,
     ElAvatar,
     ElBacktop,
+    ElOption,
+    ElOptionGroup
   ]
   const icons = [
     'platform-eleme',
@@ -511,6 +515,8 @@ export function elementUi2Components() {
     ['el-backtop', '回到顶部'],
     ['el-drawer', '抽屉'],
     ['el-autocomplete', '远程搜索'],
+    ['el-option', '选择项'],
+    ['el-option-group', '分组'],
   ]
   return componentsReducer(map)
 }
