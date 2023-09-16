@@ -149,7 +149,7 @@ export function elementUi2(extensionContext: any) {
     ElAvatar,
     ElBacktop,
     ElOption,
-    ElOptionGroup
+    ElOptionGroup,
   ]
   const icons = [
     'platform-eleme',

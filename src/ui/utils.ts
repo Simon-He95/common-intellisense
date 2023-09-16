@@ -72,7 +72,7 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
           if (key.startsWith(':') && !v) {
             if (lan === 'vue')
               return createCompletionItem({ content: `${key}="${getComponentTagName(item.name)}${key[1].toUpperCase()}${key.slice(2)}"`, documentation, snippet: `${key}="\${1:${getComponentTagName(item.name)}${key[1].toUpperCase()}${key.slice(2)}}"$2`, type, preselect: true, sortText: '1' })
-            return createCompletionItem({ content: `${key}={ ${getComponentTagName(item.name)}${key[1].toUpperCase()}${key.slice(2)} }`, documentation, snippet: `${key}={ \${1:${getComponentTagName(item.name)}${key[1].toUpperCase()}${key.slice(2)}} }$2`, type, preselect: true, sortText: '1' })
+            return createCompletionItem({ content: `${key.slice(1)}={ ${getComponentTagName(item.name)}${key[1].toUpperCase()}${key.slice(2)} }`, documentation, snippet: `${key.slice(1)}={ \${1:${getComponentTagName(item.name)}${key[1].toUpperCase()}${key.slice(2)}} }$2`, type, preselect: true, sortText: '1' })
           }
           return createCompletionItem({ content: `${key}="${v}"`, documentation, snippet: `${key}="$\{1:${v}\}$2"`, type, preselect: true, sortText: '1' })
         },
