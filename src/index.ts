@@ -15,6 +15,8 @@ let optionsComponents: any = null
 let UiCompletions: any = null
 let cacheMap: any = {}
 let extensionContext: any = null
+let eventCallbacks: any = new Map()
+let completionsCallbacks: any = new Map()
 export function activate(context: vscode.ExtensionContext) {
   extensionContext = context
   global.commonIntellisense = {
@@ -36,10 +38,20 @@ export function activate(context: vscode.ExtensionContext) {
 
   findUI()
   context.subscriptions.push(registerCompletionItemProvider(filter, (document, position) => {
-    const result = parser(document.getText(), position)
+    const { lineText } = getSelection()!
+    const p: any = position
+    let preText = lineText.slice(0, vscode.window.activeTextEditor?.selection.active.character)
+    let i = preText.length - 1
+    let active = ''
+    let completionsCallback: any = null
+    while (preText[i] && (preText[i] !== ' ')) {
+      active += preText[i]
+      i--
+    }
+    p.active = active
+    const result = parser(document.getText(), p)
     if (!result)
       return
-    const { lineText } = getSelection()!
     const { character } = position
     const isPreEmpty = lineText[character - 1] === ' '
     if (!result.isInTemplate && result.refs && !isPreEmpty) {
@@ -62,6 +74,13 @@ export function activate(context: vscode.ExtensionContext) {
 
       const propName = result.propName
       const { events, completions } = UiCompletions[name]
+      if (!completionsCallbacks.has(name)) {
+        completionsCallbacks.set(name, completions[0]())
+      }
+      if (!eventCallbacks.has(name)) {
+        eventCallbacks.set(name, events[0]())
+      }
+      completionsCallback = completionsCallbacks.get(name)
       const hasProps = result.props
         ? result.props.map((item: any) => {
           if (item.name === 'on' && item.arg)
@@ -69,16 +88,16 @@ export function activate(context: vscode.ExtensionContext) {
 
           if (typeof item.name === 'object')
             item.name.label = item.name.name.slice(2)
+          if (item.name !== 'on')
+            return item.name
           return false
         }).filter(Boolean)
         : []
       if (propName === 'on') {
-        const eventCallback = events[0]
-        if (eventCallback)
-          return eventCallback().filter((item: any) => !hasProps.find((prop: any) => item.label.startsWith(prop)))
+        return eventCallbacks.get(name).filter((item: any) => !hasProps.find((prop: any) => item.label.startsWith(prop)))
       }
       else if (propName) {
-        return completions[0]().filter((item: any) => item.label.startsWith(propName)).map((item: any) =>
+        return completionsCallback.filter((item: any) => item.label.startsWith(propName)).map((item: any) =>
           createCompletionItem({
             content: item.label.split('=')[1] ? item.label.split('=')[1].slice(1, -1) : item.label,
             documentation: item.documentation,
@@ -87,24 +106,11 @@ export function activate(context: vscode.ExtensionContext) {
         )
       }
       else if (hasProps.length) {
-        return completions[0]().filter((item: any) => !hasProps.find((prop: any) => item.label.startsWith(prop)))
+        return completionsCallback.filter((item: any) => !hasProps.find((prop: any) => item.label.startsWith(prop)))
       }
       else {
-        return completions[0]()
+        return completionsCallback
       }
-      return propName === 'on'
-        ? events
-        : propName
-          ? completions[0]().filter((item: any) => item.label.startsWith(propName)).map((item: any) =>
-            createCompletionItem({
-              content: item.label.split('=')[1] ? item.label.split('=')[1].slice(1, -1) : item.label,
-              documentation: item.documentation,
-              detail: item.detail,
-            }),
-          )
-          : hasProps.length
-            ? completions[0]().filter((item: any) => !hasProps.find((prop: any) => item.label.startsWith(prop)))
-            : completions[0]()
     }
     else if (!result.isInTemplate || isPreEmpty || !optionsComponents) {
       return
@@ -156,6 +162,8 @@ export function deactivate() {
   optionsComponents = null
   UiCompletions = null
   cacheMap = null
+  eventCallbacks = null
+  completionsCallbacks = null
 }
 
 const filters = ['js', 'ts', 'jsx', 'tsx', 'vue', 'svelte']
@@ -209,6 +217,6 @@ function findUI() {
 
     UiCompletions = UINames.reduce((result: any, option: string) =>
       Object.assign(result, (UI as any)[option]?.(extensionContext))
-    , {} as any)
+      , {} as any)
   })
 }

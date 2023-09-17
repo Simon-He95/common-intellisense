@@ -10,7 +10,7 @@ const { parse: svelteParser } = require('svelte/compiler')
 // 引入vue-parser只在template中才处理一些逻辑
 let isInTemplate = false
 
-export function parser(code: string, position: vscode.Position) {
+export function parser(code: string, position: vscode.Position & { active: string }) {
   const entry = vscode.window.activeTextEditor?.document.uri.fsPath
   if (!entry)
     return
@@ -168,16 +168,6 @@ function jsxDfs(children: any, position: vscode.Position) {
             isInTemplate,
           }
         }
-        else if (type === 'InlineComponent') {
-          return {
-            tag: openingElement.name.name,
-            propName: '',
-            props: openingElement.attributes,
-            propType: prop.type,
-            type: 'props',
-            isInTemplate,
-          }
-        }
       }
     }
 
@@ -204,7 +194,7 @@ function jsxDfs(children: any, position: vscode.Position) {
         return result
     }
 
-    if (type === 'JSXElement' || type === 'Element') {
+    if (type === 'JSXElement' || type === 'Element' || type === 'InlineComponent') {
       const target = openingElement.attributes.find((item: any) => isInPosition(item.loc, position) || item.value === null)
       openingElement = {
         name: {
