@@ -5,6 +5,8 @@ import type { SFCTemplateBlock } from '@vue/compiler-sfc'
 import { parse as tsParser } from '@typescript-eslint/typescript-estree'
 import { findUp } from 'find-up'
 
+const { parse: svelteParser } = require('svelte/compiler')
+
 // 引入vue-parser只在template中才处理一些逻辑
 let isInTemplate = false
 
@@ -25,6 +27,9 @@ export function parser(code: string, position: vscode.Position) {
   }
   if (/ts|js|jsx|tsx/.test(suffix))
     return parserJSX(code, position)
+
+  if (suffix === 'svelte')
+    return parserSvelte(code, position)
 
   return true
 }
@@ -136,15 +141,39 @@ export function parserJSX(code: string, position: vscode.Position) {
 function jsxDfs(children: any, position: vscode.Position) {
   for (const child of children) {
     let { loc, type, openingElement, body: children, argument, declarations, init } = child
+    if (!loc)
+      loc = convertPositionToLoc(child)
+
     if (!isInPosition(loc, position))
       continue
+    if (!openingElement && child.attributes) {
+      openingElement = {
+        name: {
+          name: child.name,
+        },
+        attributes: child.attributes,
+      }
+    }
     if (openingElement && openingElement.attributes.length) {
       for (const prop of openingElement.attributes) {
+        if (!prop.loc)
+          prop.loc = convertPositionToLoc(prop)
         if (isInPosition(prop.loc, position)) {
           return {
             tag: openingElement.name.name,
-            propName: prop.name.name,
+            propName: typeof prop.name === 'string' ? prop.type === 'EventHandler' ? 'on' : prop.name : prop.name.name,
             props: openingElement.attributes,
+            propType: prop.type,
+            type: 'props',
+            isInTemplate,
+          }
+        }
+        else if (type === 'InlineComponent') {
+          return {
+            tag: openingElement.name.name,
+            propName: '',
+            props: openingElement.attributes,
+            propType: prop.type,
             type: 'props',
             isInTemplate,
           }
@@ -152,10 +181,13 @@ function jsxDfs(children: any, position: vscode.Position) {
       }
     }
 
-    if (type === 'JSXElement' || (type === 'ReturnStatement' && argument.type === 'JSXElement'))
+    if (type === 'JSXElement' || type === 'Element' || (type === 'ReturnStatement' && argument.type === 'JSXElement'))
       isInTemplate = true
 
-    if (type === 'VariableDeclaration')
+    if (child.children)
+      children = child.children
+
+    else if (type === 'VariableDeclaration')
       children = declarations
     else if (type === 'VariableDeclarator')
       children = init
@@ -171,14 +203,24 @@ function jsxDfs(children: any, position: vscode.Position) {
       if (result)
         return result
     }
-    if (type === 'JSXElement') {
+
+    if (type === 'JSXElement' || type === 'Element') {
       const target = openingElement.attributes.find((item: any) => isInPosition(item.loc, position) || item.value === null)
+      openingElement = {
+        name: {
+          name: child.name,
+        },
+        attributes: child.attributes,
+      }
       if (target) {
         return {
           type: 'props',
           tag: openingElement.name.name,
           props: openingElement.attributes,
-          propName: target.name.name,
+          propName: typeof target.name === 'string'
+            ? target.type === 'EventHandler' ? 'on' : target.name
+            : target.name.name,
+          propType: target.type,
           isInTemplate,
         }
       }
@@ -190,7 +232,7 @@ function jsxDfs(children: any, position: vscode.Position) {
       }
     }
 
-    if (type === 'JSXText') {
+    if (type === 'JSXText' || type === 'Text') {
       return {
         isInTemplate,
         type: 'text',
@@ -271,7 +313,24 @@ function findRef(children: any, map: any) {
   return map
 }
 
-const UINames = ['element-ui', 'element-plus', 'antd', 'ant-design-vue', '@varlet/ui', 'vant', 'naive-ui', 'vuetify', '@chakra-ui/react', '@chakra-ui/vue']
+export function parserSvelte(code: string, position: vscode.Position) {
+  const { html } = svelteParser(code)
+  const result = jsxDfs([html], position)
+  const map = {
+    refsMap: {},
+    refs: [],
+  }
+
+  if (result)
+    return Object.assign(result, map)
+
+  return {
+    type: 'script',
+    ...map,
+  }
+}
+
+const UINames = ['element-ui', 'element-plus', 'antd', 'ant-design-vue', '@varlet/ui', 'vant', 'naive-ui', 'vuetify', '@chakra-ui/react', '@chakra-ui/vue', '@skeletonlabs/skeleton']
 export async function findPkgUI(cwd?: string) {
   if (!cwd)
     return
@@ -309,4 +368,27 @@ export function isStartTag(loc: any, position: vscode.Position, tagLen: number) 
     return loc.end.column >= posCharacter
   }
   return false
+}
+
+export function convertPositionToLoc(data: any) {
+  const { start, end } = data
+  const document = vscode.window.activeTextEditor!.document
+  return {
+    start: convertOffsetToLineColumn(document, start),
+    end: convertOffsetToLineColumn(document, end),
+  }
+}
+
+function convertOffsetToPosition(document: vscode.TextDocument, offset: number) {
+  return document.positionAt(offset)
+}
+
+function convertOffsetToLineColumn(document: vscode.TextDocument, offset: number) {
+  const position = convertOffsetToPosition(document, offset)
+  const lineText = document.lineAt(position.line).text
+  const line = position.line + 1
+  const column = position.character + 1
+  const lineOffset = document.offsetAt(position)
+
+  return { line, column, lineText, lineOffset }
 }

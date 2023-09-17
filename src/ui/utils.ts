@@ -115,6 +115,10 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
             snippet = `${name}="on\${1:${name[0].toUpperCase()}${name.slice(1)}}"`
             content = `${name}="on${name[0].toUpperCase()}${name.slice(1)}"`
           }
+          else if (lan === 'svelte') {
+            snippet = `${name}={ \${1:${name.replace(/:(\w)/, (_: string, v: string) => v.toUpperCase())}} }`
+            content = `${name}={ ${name.replace(/:(\w)/, (_: string, v: string) => v.toUpperCase())} }`
+          }
           else {
             snippet = `${name}={ \${1:${name}} }`
             content = `${name}={ ${name} }`

@@ -35,7 +35,6 @@ export function activate(context: vscode.ExtensionContext) {
   }))
 
   findUI()
-
   context.subscriptions.push(registerCompletionItemProvider(filter, (document, position) => {
     const result = parser(document.getText(), position)
     if (!result)
@@ -70,8 +69,8 @@ export function activate(context: vscode.ExtensionContext) {
 
           if (typeof item.name === 'object')
             item.name.label = item.name.name.slice(2)
-          return item.name
-        })
+          return false
+        }).filter(Boolean)
         : []
       if (propName === 'on') {
         const eventCallback = events[0]
@@ -81,7 +80,7 @@ export function activate(context: vscode.ExtensionContext) {
       else if (propName) {
         return completions[0]().filter((item: any) => item.label.startsWith(propName)).map((item: any) =>
           createCompletionItem({
-            content: item.label.split('=')[1].slice(1, -1),
+            content: item.label.split('=')[1] ? item.label.split('=')[1].slice(1, -1) : item.label,
             documentation: item.documentation,
             detail: item.detail,
           }),
@@ -98,7 +97,7 @@ export function activate(context: vscode.ExtensionContext) {
         : propName
           ? completions[0]().filter((item: any) => item.label.startsWith(propName)).map((item: any) =>
             createCompletionItem({
-              content: item.label.split('=')[1].slice(1, -1),
+              content: item.label.split('=')[1] ? item.label.split('=')[1].slice(1, -1) : item.label,
               documentation: item.documentation,
               detail: item.detail,
             }),
@@ -164,11 +163,11 @@ const nameMap: any = {
   '@varlet/ui': 'varlet',
   '@chakraUi/react': 'chakraUiReact',
   '@chakraUi/vue': 'chakraUiVue',
+  '@skeletonlabs/skeleton': 'skeleton',
 }
 function findUI() {
   const cwd = vscode.window.activeTextEditor?.document.uri.fsPath
   const suffix = cwd?.split('.').slice(-1)[0]
-
   if (!suffix || !filters.includes(suffix))
     return
 

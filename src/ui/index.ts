@@ -8,7 +8,7 @@ import { naiveUi2, naiveUi2Components } from './naiveUi'
 import { vuetify3, vuetify3Components } from './vuetify'
 import { uview2, uview2Components } from './uview'
 import { chakraUiReact2, chakraUiReact2Components } from './chakraUi'
-import { daisyui3, daisyui3Components } from './daisyui'
+import { skeleton2, skeleton2Components } from './skeleton'
 
 export default {
   elementUi2,
@@ -24,7 +24,7 @@ export default {
   vuetify3,
   uview2,
   chakraUiReact2,
-  daisyui3,
+  skeleton2,
   elementUi2Components,
   antd4Components,
   antd5Components,
@@ -38,5 +38,5 @@ export default {
   vuetify3Components,
   uview2Components,
   chakraUiReact2Components,
-  daisyui3Components,
+  skeleton2Components,
 }
