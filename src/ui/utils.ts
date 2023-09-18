@@ -66,15 +66,28 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
           // command:extension.openDocumentLink?%7B%22link%22%3A%22https%3A%2F%2Fexample.com%2F%22%7D
           if (item.link)
             documentation.appendMarkdown(`\n\n[🔗 文档链接](command:intellisense.openDocument?%7B%22link%22%3A%22${encodeURIComponent(item.link)}%22%7D)`)
-
-          if (value.type && value.type.includes('boolean') && value.default === 'false')
-            return createCompletionItem({ content: key, documentation })
-          if (key.startsWith(':') && !v) {
-            if (lan === 'vue')
-              return createCompletionItem({ content: `${key}="${getComponentTagName(item.name)}${key[1].toUpperCase()}${key.slice(2)}"`, documentation, snippet: `${key}="\${1:${getComponentTagName(item.name)}${key[1].toUpperCase()}${key.slice(2)}}"$2`, type, preselect: true, sortText: '1' })
-            return createCompletionItem({ content: `${key.slice(1)}={ ${getComponentTagName(item.name)}${key[1].toUpperCase()}${key.slice(2)} }`, documentation, snippet: `${key.slice(1)}={ \${1:${getComponentTagName(item.name)}${key[1].toUpperCase()}${key.slice(2)}} }$2`, type, preselect: true, sortText: '1' })
+          let content = ''
+          let snippet = ''
+          if (value.type && value.type.includes('boolean') && value.default === 'false') {
+            content = snippet = key
           }
-          return createCompletionItem({ content: `${key}="${v}"`, documentation, snippet: `${key}="$\{1:${v}\}$2"`, type, preselect: true, sortText: '1' })
+          else if (key.startsWith(':') && !v) {
+            if (lan === 'vue') {
+              content = `${key}="${getComponentTagName(item.name)}${key[1].toUpperCase()}${key.slice(2)}"`
+              snippet = `${key}="\${1:${getComponentTagName(item.name)}${key[1].toUpperCase()}${key.slice(2)}}"$2`
+            }
+            else {
+              content = `${key.slice(1)}={ ${getComponentTagName(item.name)}${key[1].toUpperCase()}${key.slice(2)} }`
+              snippet = `${key.slice(1)}={ \${1:${getComponentTagName(item.name)}${key[1].toUpperCase()}${key.slice(2)}} }$2`
+            }
+          }
+          else {
+            content = `${key}="${v}"`
+            snippet = `${key}="$\{1:${v}\}$2"`
+          }
+          content += `  ${value.description}${value.default ? `  默认：${value.default}` : ''}`
+
+          return createCompletionItem({ content, snippet, type, documentation, preselect: true, sortText: '0' })
         },
         ))
       })
@@ -123,6 +136,7 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
             snippet = `${name}={ \${1:${name}} }`
             content = `${name}={ ${name} }`
           }
+          content += `  ${description}${params ? `  参数：${params}` : ''}`
           const documentation = new vscode.MarkdownString()
           documentation.isTrusted = true
           documentation.supportHtml = true
@@ -175,7 +189,7 @@ export function componentsReducer(map: string[][]) {
         documentation.appendCodeblock(demo, 'html')
         documentation.appendMarkdown(`\n<a href="command:intellisense.copyDemo">${copyIcon}</a>\n`)
       }
-      return createCompletionItem({ content, snippet: `<${content}>$1</${content}>`, documentation, type: vscode.CompletionItemKind.TypeParameter })
+      return createCompletionItem({ content: `${content}  ${detail}`, snippet: `<${content}>$1</${content}>`, documentation, type: vscode.CompletionItemKind.TypeParameter })
     }),
   }
 }

@@ -40,7 +40,7 @@ export function activate(context: vscode.ExtensionContext) {
   context.subscriptions.push(registerCompletionItemProvider(filter, (document, position) => {
     const { lineText } = getSelection()!
     const p: any = position
-    let preText = lineText.slice(0, vscode.window.activeTextEditor?.selection.active.character)
+    const preText = lineText.slice(0, vscode.window.activeTextEditor?.selection.active.character)
     let i = preText.length - 1
     let active = ''
     let completionsCallback: any = null
@@ -74,12 +74,12 @@ export function activate(context: vscode.ExtensionContext) {
 
       const propName = result.propName
       const { events, completions } = UiCompletions[name]
-      if (!completionsCallbacks.has(name)) {
+      if (!completionsCallbacks.has(name))
         completionsCallbacks.set(name, completions[0]())
-      }
-      if (!eventCallbacks.has(name)) {
+
+      if (!eventCallbacks.has(name))
         eventCallbacks.set(name, events[0]())
-      }
+
       completionsCallback = completionsCallbacks.get(name)
       const hasProps = result.props
         ? result.props.map((item: any) => {
@@ -217,6 +217,6 @@ function findUI() {
 
     UiCompletions = UINames.reduce((result: any, option: string) =>
       Object.assign(result, (UI as any)[option]?.(extensionContext))
-      , {} as any)
+    , {} as any)
   })
 }
