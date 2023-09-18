@@ -129,11 +129,9 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
           let snippet
           let content
           if (lan === 'vue') {
-            const _name = name.split(':').map((item: string, i: number) =>
-              item[0].toUpperCase() + (i > 0
-                ? item.slice(1).replace(/-(\w)/g, (_: string, v: string) => v.toUpperCase())
-                : item.slice(1)),
-            ).join('')
+            const _name = name.split(':').map((item: string) =>
+              item[0].toUpperCase() + item.slice(1),
+            ).join('').replace(/-(\w)/g, (_: string, v: string) => v.toUpperCase())
             snippet = `${name}="on\${1:${_name}}"`
             content = `${name}="on${_name}"`
           }
