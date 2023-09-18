@@ -1,0 +1,277 @@
+{
+  "name": "NPopselect",
+  "props": {
+    "multiple": {
+      "value": "",
+      "description": "是否为多选",
+      "default": "false",
+      "type": "boolean"
+    },
+    "node-props": {
+      "value": "",
+      "description": "选项的 DOM 属性生成函数",
+      "default": "undefined",
+      "type": "(option: SelectOption | SelectGroupOption) => object"
+    },
+    "options": {
+      "value": "",
+      "description": "配置选项内容，详情参考 [Select](select#SelectOption-Properties)",
+      "default": "[]",
+      "type": "Array<SelectOption | SelectGroupOption>"
+    },
+    "scrollable": {
+      "value": "",
+      "description": "popover 内容是否可滚动",
+      "default": "false",
+      "type": "boolean"
+    },
+    "render-label": {
+      "value": "",
+      "description": "控制全部选项的渲染",
+      "default": "undefined",
+      "type": "(option: SelectOption | SelectGroupOption) => VNodeChild"
+    },
+    "size": {
+      "value": "",
+      "description": "组件尺寸",
+      "default": "'medium'",
+      "type": "'small' | 'medium' | 'large'"
+    },
+    "value": {
+      "value": "",
+      "description": "受控模式下的值",
+      "default": "null",
+      "type": "string | number | Array<string | number> | null"
+    },
+    "virtual-scroll": {
+      "value": "",
+      "description": "是否启用虚拟滚动",
+      "default": "false",
+      "type": "boolean"
+    },
+    "animated": {
+      "value": "",
+      "description": "弹出弹窗时使用动画",
+      "default": "true",
+      "type": "boolean"
+    },
+    "arrow-style": {
+      "value": "",
+      "description": "popover 的箭头样式",
+      "default": "undefined",
+      "type": "Object"
+    },
+    "arrow-point-to-center": {
+      "value": "",
+      "description": "箭头是否指向触发元素中心",
+      "default": "false",
+      "type": "boolean"
+    },
+    "content-style": {
+      "value": "",
+      "description": "popover 内容的样式",
+      "default": "undefined",
+      "type": "Object | string"
+    },
+    "delay": {
+      "value": "",
+      "description": "悬浮触发弹出信息的延迟",
+      "default": "100",
+      "type": "number"
+    },
+    "disabled": {
+      "value": "",
+      "description": "是否不能激活弹出信息",
+      "default": "false",
+      "type": "boolean"
+    },
+    "display-directive": {
+      "value": "",
+      "description": "条件渲染使用的指令，`if` 会让内容被使用 `v-if` 渲染，`show` 会让内容被使用 `v-show` 渲染",
+      "default": "'if'",
+      "type": "'if' | 'show'"
+    },
+    "duration": {
+      "value": "",
+      "description": "悬浮关闭弹出信息的延迟",
+      "default": "100",
+      "type": "number"
+    },
+    "flip": {
+      "value": "",
+      "description": "是否在当前放置方式不能提供足够空间的时候调整弹出信息的位置",
+      "default": "true",
+      "type": "boolean"
+    },
+    "footer-style": {
+      "value": "",
+      "description": "popover footer 的样式",
+      "default": "undefined",
+      "type": "Object | string"
+    },
+    "header-style": {
+      "value": "",
+      "description": "popover header 的样式",
+      "default": "undefined",
+      "type": "Object | string"
+    },
+    "keep-alive-on-hover": {
+      "value": "",
+      "description": "是否在 trigger 为 hover 的时候，悬浮在 popover 时保持 popover 显示",
+      "default": "true",
+      "type": "boolean"
+    },
+    "overlap": {
+      "value": "",
+      "description": "覆盖触发元素",
+      "default": "false",
+      "type": "boolean"
+    },
+    "placement": {
+      "value": "",
+      "description": "popover 的弹出位置",
+      "default": "'top'",
+      "type": "'top-start' | 'top' | 'top-end' | 'right-start' | 'right' | 'right-end' | 'bottom-start' | 'bottom' | 'bottom-end' | 'left-start' | 'left' | 'left-end' | "
+    },
+    "raw": {
+      "value": "",
+      "description": "是否不添加默认样式",
+      "default": "false",
+      "type": "boolean"
+    },
+    "show-arrow": {
+      "value": "",
+      "description": "是否显示箭头",
+      "default": "true",
+      "type": "boolean"
+    },
+    "show": {
+      "value": "",
+      "description": "是否展示 popover",
+      "default": "undefined",
+      "type": "boolean"
+    },
+    "title": {
+      "value": "",
+      "description": "popover 的 title 信息",
+      "default": "undefined",
+      "type": "string"
+    },
+    "to": {
+      "value": "",
+      "description": "弹出内容的目标容器位置，`false` 会待在原地",
+      "default": "'body'",
+      "type": "string | HTMLElement | false"
+    },
+    "trigger": {
+      "value": "",
+      "description": "popover 的触发方式",
+      "default": "'hover'",
+      "type": "'hover' | 'click' | 'focus' | 'manual'"
+    },
+    "width": {
+      "value": "",
+      "description": "`'trigger'` 表示 popover 的宽度会和它的触发元素一致",
+      "default": "undefined",
+      "type": "number | 'trigger'"
+    },
+    "x": {
+      "value": "",
+      "description": "手动控制位置时弹出内容的 CSS `left` 的像素值（x，y 都设置才能生效）",
+      "default": "undefined",
+      "type": "number"
+    },
+    "y": {
+      "value": "",
+      "description": "手动控制位置时弹出内容的 CSS `top` 的像素值（x，y 都设置才能生效）",
+      "default": "undefined",
+      "type": "number"
+    },
+    "z-index": {
+      "value": "",
+      "description": "Popover 的 z-index",
+      "default": "undefined",
+      "type": "number"
+    }
+  },
+  "methods": [],
+  "typeDetail": {
+    "SelectOption": [
+      {
+        "name": "class",
+        "description": "自定义一个选项的类名",
+        "type": "`string`"
+      },
+      {
+        "name": "disabled",
+        "description": "是否禁用一个选项",
+        "type": "`boolean`"
+      },
+      {
+        "name": "label",
+        "description": "选项的标签，注意如果你使用了渲染函数，默认的过滤器将会过滤该选项",
+        "type": "`string | ((option: SelectOption, selected: boolean) => VNodeChild)`"
+      },
+      {
+        "name": "render",
+        "description": "渲染整个选项",
+        "type": "`(info: { node: VNode, option: SelectOption, selected: boolean }) => VNodeChild`"
+      },
+      {
+        "name": "style",
+        "description": "自定义一个选项的样式",
+        "type": "`string | CSSProperties`"
+      },
+      {
+        "name": "value",
+        "description": "在选项中应该是唯一的",
+        "type": "`string | number`"
+      }
+    ],
+    "SelectGroupOption": [
+      {
+        "name": "children",
+        "description": "子选项组",
+        "type": "`Array<SelectOption>`"
+      },
+      {
+        "name": "label",
+        "description": "选项组的标签",
+        "type": "`string | ((option: SelectGroupOption) => VNodeChild)`"
+      },
+      {
+        "name": "key",
+        "description": "在选项中应该是唯一的",
+        "type": "`string | number`"
+      },
+      {
+        "name": "render",
+        "description": "渲染整个选项",
+        "type": "`(info: { node: VNode, option: SelectOption, selected: boolean }) => VNodeChild`"
+      },
+      {
+        "name": "type",
+        "description": "选项组的类型",
+        "type": "`'group'`"
+      }
+    ]
+  },
+  "events": [
+    {
+      "name": "update:value",
+      "description": "值更新的回调",
+      "params": "`(value: string | number | Array<string | number> | null, option: SelectBaseOption | null | Array<SelectBaseOption>) => void`"
+    },
+    {
+      "name": "clickoutside",
+      "description": "clickoutside 时触发的回调函数",
+      "params": "`(e: MouseEvent) => void`"
+    },
+    {
+      "name": "update:show",
+      "description": "显示状态改变的回调函数",
+      "params": "`(value: boolean) => void`"
+    }
+  ],
+  "link": "https://www.naiveui.com/en-US/os-theme/components/popselect"
+}
