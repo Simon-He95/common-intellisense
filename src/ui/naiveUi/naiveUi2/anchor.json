@@ -3,52 +3,52 @@
   "props": {
     "affix": {
       "value": "",
-      "description": "`boolean`",
-      "default": "Anchor 是否像 Affix 一样展示，如果设定为 true，它还会接受 [Affix](affix#Affix-Props) 的 Props",
-      "type": "false"
+      "description": "Anchor 是否像 Affix 一样展示，如果设定为 `true`，它还会接受 [Affix](affix#Affix-Props) 的 Props",
+      "default": "false",
+      "type": "boolean"
     },
     "bound": {
       "value": "",
-      "description": "`number`",
-      "default": "元素开始触发 anchor 的偏移量",
-      "type": "12"
+      "description": "元素开始触发 anchor 的偏移量",
+      "default": "12",
+      "type": "number"
     },
     "ignore-gap": {
       "value": "",
-      "description": "`boolean`",
-      "default": "如果设定为 true, 导航将显示在准确的 href 区域",
-      "type": "false"
+      "description": "如果设定为 `true`, 导航将显示在准确的 href 区域",
+      "default": "false",
+      "type": "boolean"
     },
     "offset-target": {
       "value": "",
-      "description": "`string | HTMLElement | Window | Document | (() => HTMLElement)`",
-      "default": "计算偏移位置相对的元素或选择器。如果你滚动的不是整个文档而只是其中的一部分，那你有可能要设定这个",
-      "type": "document"
+      "description": "计算偏移位置相对的元素或选择器。如果你滚动的不是整个文档而只是其中的一部分，那你有可能要设定这个",
+      "default": "document",
+      "type": "string | HTMLElement | Window | Document | (() => HTMLElement)"
     },
     "show-rail": {
       "value": "",
-      "description": "`boolean`",
-      "default": "是否展示侧面的轨道",
-      "type": "true"
+      "description": "是否展示侧面的轨道",
+      "default": "true",
+      "type": "boolean"
     },
     "show-background": {
       "value": "",
-      "description": "`boolean`",
-      "default": "是否展示 link 的背景",
-      "type": "true"
+      "description": "是否展示 link 的背景",
+      "default": "true",
+      "type": "boolean"
     },
     "type": {
-      "value": "",
-      "description": "`'rail' | 'block'`",
-      "default": "Anchor 的风格，'block' 为块状风格，'rail' 为轨道风格",
-      "type": "'rail'"
+      "value": ["rail", "block"],
+      "description": "Anchor 的风格，`'block'` 为块状风格，`'rail'` 为轨道风格",
+      "default": "'rail'",
+      "type": "'rail' | 'block'"
     }
   },
   "methods": [
     {
       "name": "scrollTo",
-      "description": "`(href: string) => void`",
-      "params": "手动触发到指定滚动位置"
+      "description": "手动触发到指定滚动位置",
+      "params": "`(href: string) => void`"
     }
   ],
   "typeDetail": {},

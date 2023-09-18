@@ -26,19 +26,19 @@
       "type": "number"
     },
     "direction": {
-      "value": "",
+      "value": ["horizontal", "vertical"],
       "description": "轮播图显示的方向",
       "default": "'horizontal'",
       "type": "'horizontal' | 'vertical'"
     },
     "dot-placement": {
-      "value": "",
+      "value": ["top", "bottom", "left", "right"],
       "description": "轮播指示点位置",
       "default": "'bottom'",
       "type": "'top' | 'bottom' | 'left' | 'right'"
     },
     "dot-type": {
-      "value": "",
+      "value": ["dot", "line"],
       "description": "轮播指示点样式",
       "default": "'dot'",
       "type": "'dot' | 'line'"
@@ -50,7 +50,7 @@
       "type": "boolean"
     },
     "effect": {
-      "value": "",
+      "value": ["slide", "fade", "card", "custom"],
       "description": "轮播图切换时的过渡效果",
       "default": "'slide'",
       "type": "'slide' | 'fade' | 'card' | 'custom'"
@@ -127,14 +127,14 @@
       "default": "{ transitionDuration: '300ms' }",
       "type": "{ transitionDuration?: string, transitionTimingFunction?: string }"
     },
-    "transition-props": {
+    ":transition-props": {
       "value": "",
       "description": "自定义过渡效果属性，[参考 Vue 文档](https://v3.cn.vuejs.org/api/built-in-components.html#transition)",
       "default": "undefined",
       "type": "TransitionProps"
     },
     "trigger": {
-      "value": "",
+      "value": ["click", "hover"],
       "description": "触发切换的方式",
       "default": "'click'",
       "type": "'click' | 'hover'"

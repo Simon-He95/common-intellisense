@@ -295,7 +295,7 @@ Definitely Maybe
 </n-radio-group>`],
     ['n-select', '选择器', '<n-select v-model:value="value" :options="options" />'],
     ['n-switch', '开关', '<n-switch v-model:value="active" />'],
-    ['n-table', '开关', `<n-table>
+    ['n-table', '表格', `<n-table>
   <thead>
     <tr>
       <th>Abandon</th>
