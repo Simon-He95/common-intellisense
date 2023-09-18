@@ -16,13 +16,13 @@
     "type": {
       "value": "",
       "description": "输入框类型",
-      "default": "'text'",
-      "type": "'text' | 'textarea'"
+      "default": "text",
+      "type": "text | textarea"
     },
     "separator": {
       "value": "",
       "description": "切分提及使用的字符，长度必须为 1",
-      "default": "' '",
+      "default": " ",
       "type": "string"
     },
     "bordered": {
@@ -46,7 +46,7 @@
     "default-value": {
       "value": "",
       "description": "输入框的默认值",
-      "default": "''",
+      "default": "",
       "type": "string"
     },
     "loading": {
@@ -58,20 +58,20 @@
     "prefix": {
       "value": "",
       "description": "触发提及的前缀，长度必须为 1",
-      "default": "'@'",
+      "default": "@",
       "type": "string | string[]"
     },
     "placeholder": {
       "value": "",
       "description": "输入框的占位符",
-      "default": "''",
+      "default": "",
       "type": "string"
     },
     "placement": {
       "value": ["top-start", "top", "top-end", "right-start", "right", "right-end", "bottom-start", "bottom", "bottom-end", "left-start", "left", "left-end"],
       "description": "选择面板的弹出位置.",
-      "default": "'bottom-start'",
-      "type": "'top-start' | 'top' | 'top-end' | 'right-start' | 'right' | 'right-end' | 'bottom-start' | 'bottom' | 'bottom-end' | 'left-start' | 'left' | 'left-end'"
+      "default": "bottom-start",
+      "type": "top-start | top | top-end | right-start | right | right-end | bottom-start | bottom | bottom-end | left-start | left | left-end"
     },
     "render-label": {
       "value": "",
@@ -82,14 +82,14 @@
     "size": {
       "value": ["small", "medium", "large"],
       "description": "输入框的大小",
-      "default": "'medium'",
-      "type": "'small' | 'medium' | 'large'"
+      "default": "medium",
+      "type": "small | medium | large"
     },
     "status": {
       "value": ["success", "warning", "error"],
       "description": "验证状态",
       "default": "undefined",
-      "type": "'success' | 'warning' | 'error'"
+      "type": "success | warning | error"
     },
     "to": {
       "value": "",
@@ -101,12 +101,12 @@
   "methods": [
     {
       "name": "focus",
-      "description": "`() => void`",
+      "description": "() => void",
       "params": "聚焦"
     },
     {
       "name": "blur",
-      "description": "`() => void`",
+      "description": "() => void",
       "params": "失焦"
     }
   ],
@@ -115,32 +115,32 @@
       {
         "name": "class",
         "description": "选项的自定义类名",
-        "type": "`string`"
+        "type": "string"
       },
       {
         "name": "disabled",
         "description": "选项是否禁用",
-        "type": "`boolean`"
+        "type": "boolean"
       },
       {
         "name": "label",
         "description": "选项的标签",
-        "type": "`string | (option: MentionOption) => VNodeChild`"
+        "type": "string | (option: MentionOption) => VNodeChild"
       },
       {
         "name": "render",
         "description": "支持通过 `render` 渲染函数自定义选项",
-        "type": "`(option: MentionOption) => VNodeChild`"
+        "type": "(option: MentionOption) => VNodeChild"
       },
       {
         "name": "style",
         "description": "选项的样式",
-        "type": "`string`"
+        "type": "string"
       },
       {
         "name": "value",
         "description": "在选项中应该是唯一的",
-        "type": "`string`"
+        "type": "string"
       }
     ]
   },
@@ -148,32 +148,32 @@
     {
       "name": "update:show",
       "description": "选择面板显示状态发生变化时触发",
-      "params": "`(show: boolean) => void`"
+      "params": "(show: boolean) => void"
     },
     {
       "name": "update:value",
       "description": "输入框值发生更新时触发",
-      "params": "`(value: string) => void`"
+      "params": "(value: string) => void"
     },
     {
       "name": "select",
       "description": "输入框的选中时触发",
-      "params": "`(option: MentionOption, prefix: string) => void`"
+      "params": "(option: MentionOption, prefix: string) => void"
     },
     {
       "name": "focus",
       "description": "输入框获得焦点时触发",
-      "params": "`(e: FocusEvent) => void`"
+      "params": "(e: FocusEvent) => void"
     },
     {
       "name": "search",
       "description": "输入框搜索时触发",
-      "params": "`(pattern: string, prefix: string) => void`"
+      "params": "(pattern: string, prefix: string) => void"
     },
     {
       "name": "blur",
       "description": "输入框失去焦点时触发",
-      "params": "`(e: FocusEvent) => void`"
+      "params": "(e: FocusEvent) => void"
     }
   ],
   "link": "https://www.naiveui.com/zh-CN/dark/components/mention"

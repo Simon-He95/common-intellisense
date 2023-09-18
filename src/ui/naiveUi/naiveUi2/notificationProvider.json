@@ -17,18 +17,18 @@
       "value": ["top", "bottom", "top-right", "top-left", "bottom-left", "bottom-right"],
       "description": "所有通知框显示的位置",
       "default": "top-right",
-      "type": "'top' | 'bottom' | 'top-right' | 'top-left' | 'bottom-left' | 'bottom-right'"
+      "type": "top | bottom | top-right | top-left | bottom-left | bottom-right"
     },
     "scrollable": {
       "value": "",
-      "description": "通知是否可滚动，对于 `placement` 为 `'top'` 和 `'bottom'` 不生效",
+      "description": "通知是否可滚动，对于 `placement` 为 top 和 bottom 不生效",
       "default": "true",
       "type": "boolean"
     },
     "to": {
       "value": "",
       "description": "`Notification` 容器节点的位置",
-      "default": "'body'",
+      "default": "body",
       "type": "string | HTMLElement"
     }
   },
@@ -36,32 +36,32 @@
     {
       "name": "create",
       "description": "创建通知框",
-      "params": "`(option: NotificationOption) => NotificationReactive`"
+      "params": "(option: NotificationOption) => NotificationReactive"
     },
     {
       "name": "destroyAll",
       "description": "销毁所有弹出的通知框",
-      "params": "`() => void`"
+      "params": "() => void"
     },
     {
       "name": "error",
       "description": "调用 `error` 类型的通知框",
-      "params": "`(option: NotificationOption) => NotificationReactive`"
+      "params": "(option: NotificationOption) => NotificationReactive"
     },
     {
       "name": "info",
       "description": "调用 `info` 类型的通知框",
-      "params": "`(option: NotificationOption) => NotificationReactive`"
+      "params": "(option: NotificationOption) => NotificationReactive"
     },
     {
       "name": "success",
       "description": "调用 `success` 类型的通知框",
-      "params": "`(option: NotificationOption) => NotificationReactive`"
+      "params": "(option: NotificationOption) => NotificationReactive"
     },
     {
       "name": "warning",
       "description": "调用 `warning` 类型的通知框",
-      "params": "`(option: NotificationOption) => NotificationReactive`"
+      "params": "(option: NotificationOption) => NotificationReactive"
     }
   ],
   "typeDetail": {
@@ -69,67 +69,67 @@
       {
         "name": "action",
         "description": "操作区域的内容,可以是 render 函数",
-        "type": "`string | (() => VNodeChild)`"
+        "type": "string | (() => VNodeChild)"
       },
       {
         "name": "avatar",
         "description": "头像区域的内容",
-        "type": "`() => VNodeChild`"
+        "type": "() => VNodeChild"
       },
       {
         "name": "closable",
         "description": "是否显示 close 图标",
-        "type": "`boolean`"
+        "type": "boolean"
       },
       {
         "name": "content",
         "description": "通知框内容，可以是 render 函数",
-        "type": "`string | (() => VNodeChild)`"
+        "type": "string | (() => VNodeChild)"
       },
       {
         "name": "description",
         "description": "描述的内容，可以是 render 函数",
-        "type": "`string | (() => VNodeChild)`"
+        "type": "string | (() => VNodeChild)"
       },
       {
         "name": "duration",
         "description": "如果没有设定则不会自动关闭，单位毫秒",
-        "type": "`number`"
+        "type": "number"
       },
       {
         "name": "keepAliveOnHover",
         "description": "当鼠标移入时是否保持通知框显示",
-        "type": "`boolean`"
+        "type": "boolean"
       },
       {
         "name": "meta",
         "description": "`meta` 信息，可以是 render 函数",
-        "type": "`string | (() => VNodeChild)`"
+        "type": "string | (() => VNodeChild)"
       },
       {
         "name": "title",
         "description": "`title` 信息，可以是 render 函数",
-        "type": "`string | (() => VNodeChild)`"
+        "type": "string | (() => VNodeChild)"
       },
       {
         "name": "onAfterEnter",
         "description": "过渡动画进入执行完后执行的回调",
-        "type": "`Function`"
+        "type": "Function"
       },
       {
         "name": "onAfterLeave",
         "description": "过渡动画离开执行完后执行的回调",
-        "type": "`Function`"
+        "type": "Function"
       },
       {
         "name": "onClose",
         "description": "关闭通知的回调，返回 `false`、Promise resolve `false` 或者 reject 会取消这次关闭",
-        "type": "`() => boolean | Promise<boolean>`"
+        "type": "() => boolean | Promise<boolean>"
       },
       {
         "name": "onLeave",
         "description": "过渡动画离开时执行的回调",
-        "type": "`Function`"
+        "type": "Function"
       }
     ]
   },

@@ -15,21 +15,21 @@
     },
     "label-width": {
       "value": "",
-      "description": "标签的宽度，在 `label-placement` 是 `'left'` 的时候可能会有用，`'auto'` 意味着 label width 会被自动调整",
+      "description": "标签的宽度，在 `label-placement` 是 left 的时候可能会有用，auto 意味着 label width 会被自动调整",
       "default": "undefined",
-      "type": "number | string | 'auto'"
+      "type": "number | string | auto"
     },
     "label-align": {
       "value": ["left", "right"],
       "description": "标签的文本对齐方式",
       "default": "-",
-      "type": "'left' | 'right'"
+      "type": "left | right"
     },
     "label-placement": {
       "value": ["left", "top"],
       "description": "标签显示的位置",
-      "default": "'top'",
-      "type": "'left' | 'top'"
+      "default": "top",
+      "type": "left | top"
     },
     "model": {
       "value": "",
@@ -64,14 +64,14 @@
     "require-mark-placement": {
       "value": ["left", "right", "right-hanging"],
       "description": "必填星号的位置",
-      "default": "'right'",
-      "type": "'left' | 'right' | 'right-hanging'"
+      "default": "right",
+      "type": "left | right | right-hanging"
     },
     "size": {
       "value": ["small", "medium", "large"],
       "description": "尺寸",
-      "default": "'medium'",
-      "type": "'small' | 'medium' | 'large'"
+      "default": "medium",
+      "type": "small | medium | large"
     },
     "validate-messages": {
       "value": "",
@@ -84,12 +84,12 @@
     {
       "name": "validate",
       "description": "验证表单，Promise rejection 的返回值类型是 `Array<FormValidationError>`",
-      "params": "`(validateCallback?: (errors?: Array<FormValidationError>) => void, shouldRuleBeApplied?: FormItemRule => boolean) => Promise<void>`"
+      "params": "(validateCallback?: (errors?: Array<FormValidationError>) => void, shouldRuleBeApplied?: FormItemRule => boolean) => Promise<void>"
     },
     {
       "name": "restoreValidation",
       "description": "还原到未校验的状态",
-      "params": "`() => void`"
+      "params": "() => void"
     }
   ],
   "typeDetail": {
@@ -97,32 +97,32 @@
       {
         "name": "asyncValidator",
         "description": "异步校验，支持定义回调函数",
-        "type": "`(rule: FormItemRule, value: any, callback: (error?: Error) => void) => void`"
+        "type": "(rule: FormItemRule, value: any, callback: (error?: Error) => void) => void"
       },
       {
         "name": "message",
         "description": "校验失败时展示的信息",
-        "type": "`string`"
+        "type": "string"
       },
       {
         "name": "renderMessage",
         "description": "信息的渲染函数",
-        "type": "`() => VNodeChild`"
+        "type": "() => VNodeChild"
       },
       {
         "name": "required",
         "description": "是否必填",
-        "type": "`boolean`"
+        "type": "boolean"
       },
       {
         "name": "trigger",
         "description": "触发方式",
-        "type": "`string | Array<string>`"
+        "type": "string | Array<string>"
       },
       {
         "name": "validator",
         "description": "校验规则",
-        "type": "`(rule: FormItemRule, value: any) => boolean | Error`"
+        "type": "(rule: FormItemRule, value: any) => boolean | Error"
       }
     ]
   },

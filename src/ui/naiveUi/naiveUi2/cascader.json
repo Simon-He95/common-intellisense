@@ -16,13 +16,13 @@
     "check-strategy": {
       "value": "",
       "description": "设置勾选策略来指定显示的勾选节点，`all` 表示显示全部选中节点；`parent` 表示只显示父节点（当父节点下所有子节点都选中时，对于单选无效）；`child` 表示只显示子节点",
-      "default": "'all'",
+      "default": "all",
       "type": "string"
     },
     "children-field": {
       "value": "",
       "description": "替代 `CascaderOption` 中的 children 字段名",
-      "default": "'children'",
+      "default": "children",
       "type": "string"
     },
     "clearable": {
@@ -52,14 +52,14 @@
     "disabled-field": {
       "value": "",
       "description": "替代 `CascaderOption` 中的 disabled 字段名",
-      "default": "'disabled'",
+      "default": "disabled",
       "type": "string"
     },
     "expand-trigger": {
       "value": ["click", "hover"],
-      "description": "在 `remote` 被设定时 `'hover'` 不生效",
-      "default": "'click'",
-      "type": "'click' | 'hover'"
+      "description": "在 `remote` 被设定时 hover 不生效",
+      "default": "click",
+      "type": "click | hover"
     },
     "filterable": {
       "value": "",
@@ -82,20 +82,20 @@
     "value-field": {
       "value": "",
       "description": "替代 `CascaderOption` 中的 value 字段名",
-      "default": "'value'",
+      "default": "value",
       "type": "string"
     },
     "label-field": {
       "value": "",
       "description": "替代 `CascaderOption` 中的 label 字段名",
-      "default": "'label'",
+      "default": "label",
       "type": "string"
     },
     "max-tag-count": {
       "value": "",
       "description": "多选标签的最大显示数量，`responsive` 会将所有标签保持在一行",
       "default": "undefined",
-      "type": "number | 'responsive'"
+      "type": "number | responsive"
     },
     "menu-props": {
       "value": "",
@@ -118,14 +118,14 @@
     "placeholder": {
       "value": "",
       "description": "提示信息",
-      "default": "'请选择'",
+      "default": "$1",
       "type": "string"
     },
     "placement": {
       "value": ["top-start", "top", "top-end", "right-start", "right", "right-end", "bottom-start", "bottom", "bottom-end", "left-start", "left", "left-end"],
       "description": "弹出位置",
-      "default": "'bottom-start'",
-      "type": "'top-start' | 'top' | 'top-end' | 'right-start' | 'right' | 'right-end' | 'bottom-start' | 'bottom' | 'bottom-end' | 'left-start' | 'left' | 'left-end'"
+      "default": "bottom-start",
+      "type": "top-start | top | top-end | right-start | right | right-end | bottom-start | bottom | bottom-end | left-start | left | left-end"
     },
     "remote": {
       "value": "",
@@ -140,12 +140,9 @@
       "type": "(option: CascaderOption, checked: boolean) => VNodeChild"
     },
     "separator": {
-      "value": [
-        "'",
-        "'"
-      ],
+      "value": "",
       "description": "数据分隔符",
-      "default": "' | '",
+      "default": " / ",
       "type": "string"
     },
     "show": {
@@ -163,14 +160,14 @@
     "size": {
       "value": ["small", "medium", "large"],
       "description": "尺寸",
-      "default": "'medium'",
-      "type": "'small' | 'medium' | 'large'"
+      "default": "medium",
+      "type": "small | medium | large"
     },
     "status": {
       "value": ["success", "warning", "error"],
       "description": "验证状态",
       "default": "undefined",
-      "type": "'success' | 'warning' | 'error'"
+      "type": "success | warning | error"
     },
     "to": {
       "value": "",
@@ -195,22 +192,22 @@
     {
       "name": "blur",
       "description": "失焦",
-      "params": "`() => void`"
+      "params": "() => void"
     },
     {
       "name": "focus",
       "description": "聚焦",
-      "params": "`() => void`"
+      "params": "() => void"
     },
     {
       "name": "getCheckedData",
       "description": "获取选中的数据",
-      "params": "`() => { keys: Array<string | number>, options: Array<TreeOption | null> }`"
+      "params": "() => { keys: Array<string | number>, options: Array<TreeOption | null> }"
     },
     {
       "name": "getIndeterminateData",
       "description": "获取半选的数据",
-      "params": "`() => { keys: Array<string | number>, options: Array<TreeOption | null> }`"
+      "params": "() => { keys: Array<string | number>, options: Array<TreeOption | null> }"
     }
   ],
   "typeDetail": {
@@ -218,22 +215,22 @@
       {
         "name": "label",
         "description": "label 标签，用于展示信息",
-        "type": "`string`"
+        "type": "string"
       },
       {
         "name": "value",
         "description": "对应 label 的 value 值",
-        "type": "`string | number`"
+        "type": "string | number"
       },
       {
         "name": "disabled?",
         "description": "该项是否禁用",
-        "type": "`boolean`"
+        "type": "boolean"
       },
       {
         "name": "children?",
         "description": "该项的子项数据",
-        "type": "`CascaderOption`"
+        "type": "CascaderOption"
       }
     ]
   },
@@ -241,27 +238,27 @@
     {
       "name": "blur",
       "description": "用户 blur 时执行的回调",
-      "params": "`() => void`"
+      "params": "() => void"
     },
     {
       "name": "focus",
       "description": "用户 focus 时执行的回调",
-      "params": "`() => void`"
+      "params": "() => void"
     },
     {
       "name": "load",
       "description": "在点击未加载完成节点时的回调，在返回的 promise 中设定 `option.children`，在返回的 promise resolve 或 reject 之后完成加载",
-      "params": "`(option: CascaderOption) => Promise<void>`"
+      "params": "(option: CascaderOption) => Promise<void>"
     },
     {
       "name": "update:show",
       "description": "菜单打开关闭的回调",
-      "params": "`(value: boolean) => void`"
+      "params": "(value: boolean) => void"
     },
     {
       "name": "update:value",
       "description": "值改变时执行的回调",
-      "params": "`(value: string | number | Array<string | number> | null, option: CascaderOption | Array<CascaderOption | null> | null, pathValues: Array<CascaderOption | null> | Array<CascaderOption[] | null> | null) => void`"
+      "params": "(value: string | number | Array<string | number> | null, option: CascaderOption | Array<CascaderOption | null> | null, pathValues: Array<CascaderOption | null> | Array<CascaderOption[] | null> | null) => void"
     }
   ],
   "link": "https://www.naiveui.com/zh-CN/dark/components/cascader"

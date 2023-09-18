@@ -10,7 +10,7 @@
     "negative-text": {
       "value": "",
       "description": "取消按钮文字",
-      "default": "'取消'",
+      "default": "$1",
       "type": "string | null"
     },
     "positive-button-props": {
@@ -22,7 +22,7 @@
     "positive-text": {
       "value": "",
       "description": "确定按钮文字",
-      "default": "'确认'",
+      "default": "$1",
       "type": "string | null"
     },
     "show-icon": {
@@ -70,8 +70,8 @@
     "display-directive": {
       "value": ["if", "show"],
       "description": "条件渲染使用的指令，`if` 会让内容被使用 `v-if` 渲染，`show` 会让内容被使用 `v-show` 渲染",
-      "default": "'if'",
-      "type": "'if' | 'show'"
+      "default": "if",
+      "type": "if | show"
     },
     "duration": {
       "value": "",
@@ -112,8 +112,8 @@
     "placement": {
       "value": ["top-start", "top", "top-end", "right-start", "right", "right-end", "bottom-start", "bottom", "bottom-end", "left-start", "left", "left-end"],
       "description": "popover 的弹出位置",
-      "default": "'top'",
-      "type": "'top-start' | 'top' | 'top-end' | 'right-start' | 'right' | 'right-end' | 'bottom-start' | 'bottom' | 'bottom-end' | 'left-start' | 'left' | 'left-end' | "
+      "default": "top",
+      "type": "top-start | top | top-end | right-start | right | right-end | bottom-start | bottom | bottom-end | left-start | left | left-end | "
     },
     "raw": {
       "value": "",
@@ -148,20 +148,20 @@
     "to": {
       "value": "",
       "description": "弹出内容的目标容器位置，`false` 会待在原地",
-      "default": "'body'",
+      "default": "body",
       "type": "string | HTMLElement | false"
     },
     "trigger": {
       "value": ["hover", "click", "focus", "manual"],
       "description": "popover 的触发方式",
-      "default": "'hover'",
-      "type": "'hover' | 'click' | 'focus' | 'manual'"
+      "default": "hover",
+      "type": "hover | click | focus | manual"
     },
     "width": {
       "value": "",
-      "description": "`'trigger'` 表示 popover 的宽度会和它的触发元素一致",
+      "description": "trigger 表示 popover 的宽度会和它的触发元素一致",
       "default": "undefined",
-      "type": "number | 'trigger'"
+      "type": "number | trigger"
     },
     "x": {
       "value": "",
@@ -199,22 +199,22 @@
     {
       "name": "positive-click",
       "description": "点击确定的回调函数",
-      "params": "`() => boolean | Promise<boolean> | any`"
+      "params": "() => boolean | Promise<boolean> | any"
     },
     {
       "name": "negative-click",
       "description": "点击取消的回调函数",
-      "params": "`() => boolean | Promise<boolean> | any`"
+      "params": "() => boolean | Promise<boolean> | any"
     },
     {
       "name": "clickoutside",
       "description": "clickoutside 时触发的回调函数",
-      "params": "`(e: MouseEvent) => void`"
+      "params": "(e: MouseEvent) => void"
     },
     {
       "name": "update:show",
       "description": "显示状态改变的回调函数",
-      "params": "`(value: boolean) => void`"
+      "params": "(value: boolean) => void"
     }
   ],
   "link": "https://www.naiveui.com/zh-CN/os-theme/components/popconfirm"

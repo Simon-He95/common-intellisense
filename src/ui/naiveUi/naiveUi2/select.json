@@ -10,7 +10,7 @@
     "children-field": {
       "value": "",
       "description": "选项组 children 的字段名",
-      "default": "'children'",
+      "default": "children",
       "type": "string"
     },
     "clearable": {
@@ -76,7 +76,7 @@
     "label-field": {
       "value": "",
       "description": "选项 label 的字段名",
-      "default": "'label'",
+      "default": "label",
       "type": "string"
     },
     "loading": {
@@ -89,7 +89,7 @@
       "value": "",
       "description": "多选标签的最大显示数量，`responsive` 会将所有标签保持在一行",
       "default": "undefined",
-      "type": "number | 'responsive'"
+      "type": "number | responsive"
     },
     "menu-props": {
       "value": "",
@@ -118,14 +118,14 @@
     "placeholder": {
       "value": "",
       "description": "提示信息",
-      "default": "'请选择' (i18n)",
+      "default": "$1 (i18n)",
       "type": "string"
     },
     "placement": {
       "value": ["top-start", "top", "top-end", "right-start", "right", "right-end", "bottom-start", "bottom", "bottom-end", "left-start", "left", "left-end"],
       "description": "菜单的弹出位置",
-      "default": "'bottom-start'",
-      "type": "'top-start' | 'top' | 'top-end' | 'right-start' | 'right' | 'right-end' | 'bottom-start' | 'bottom' | 'bottom-end' | 'left-start' | 'left' | 'left-end'"
+      "default": "bottom-start",
+      "type": "top-start | top | top-end | right-start | right | right-end | bottom-start | bottom | bottom-end | left-start | left | left-end"
     },
     "remote": {
       "value": "",
@@ -184,14 +184,14 @@
     "size": {
       "value": ["tiny", "small", "medium", "large"],
       "description": "组件尺寸",
-      "default": "'medium'",
-      "type": "'tiny' | 'small' | 'medium' | 'large'"
+      "default": "medium",
+      "type": "tiny | small | medium | large"
     },
     "status": {
       "value": ["success", "warning", "error"],
       "description": "验证状态",
       "default": "undefined",
-      "type": "'success' | 'warning' | 'error'"
+      "type": "success | warning | error"
     },
     "tag": {
       "value": "",
@@ -214,7 +214,7 @@
     "value-field": {
       "value": "",
       "description": "选项 value 的字段名",
-      "default": "'value'",
+      "default": "value",
       "type": "string"
     },
     "virtual-scroll": {
@@ -228,22 +228,22 @@
     {
       "name": "focus",
       "description": "聚焦",
-      "params": "`() => void`"
+      "params": "() => void"
     },
     {
       "name": "focusInput",
       "description": "输入聚焦",
-      "params": "`() => void`"
+      "params": "() => void"
     },
     {
       "name": "blur",
       "description": "失焦",
-      "params": "`() => void`"
+      "params": "() => void"
     },
     {
       "name": "blurInput",
       "description": "输入失焦",
-      "params": "`() => void`"
+      "params": "() => void"
     }
   ],
   "typeDetail": {
@@ -251,59 +251,59 @@
       {
         "name": "class",
         "description": "自定义一个选项的类名",
-        "type": "`string`"
+        "type": "string"
       },
       {
         "name": "disabled",
         "description": "是否禁用一个选项",
-        "type": "`boolean`"
+        "type": "boolean"
       },
       {
         "name": "label",
         "description": "选项的标签，注意如果你使用了渲染函数，默认的过滤器将会过滤该选项",
-        "type": "`string | ((option: SelectOption, selected: boolean) => VNodeChild)`"
+        "type": "string | ((option: SelectOption, selected: boolean) => VNodeChild)"
       },
       {
         "name": "render",
         "description": "渲染整个选项",
-        "type": "`(info: { node: VNode, option: SelectOption, selected: boolean }) => VNodeChild`"
+        "type": "(info: { node: VNode, option: SelectOption, selected: boolean }) => VNodeChild"
       },
       {
         "name": "style",
         "description": "自定义一个选项的样式",
-        "type": "`string | CSSProperties`"
+        "type": "string | CSSProperties"
       },
       {
         "name": "value",
         "description": "在选项中应该是唯一的",
-        "type": "`string | number`"
+        "type": "string | number"
       }
     ],
     "SelectGroupOption": [
       {
         "name": "children",
         "description": "子选项组",
-        "type": "`Array<SelectOption>`"
+        "type": "Array<SelectOption>"
       },
       {
         "name": "label",
         "description": "选项组的标签",
-        "type": "`string | ((option: SelectGroupOption) => VNodeChild)`"
+        "type": "string | ((option: SelectGroupOption) => VNodeChild)"
       },
       {
         "name": "key",
         "description": "在选项中应该是唯一的",
-        "type": "`string | number`"
+        "type": "string | number"
       },
       {
         "name": "render",
         "description": "渲染整个选项",
-        "type": "`(info: { node: VNode, option: SelectOption, selected: boolean }) => VNodeChild`"
+        "type": "(info: { node: VNode, option: SelectOption, selected: boolean }) => VNodeChild"
       },
       {
         "name": "type",
         "description": "选项组的类型",
-        "type": "`'group'`"
+        "type": "group"
       }
     ]
   },
@@ -311,42 +311,42 @@
     {
       "name": "blur",
       "description": "`blur` 时执行的回调",
-      "params": "`() => void`"
+      "params": "() => void"
     },
     {
       "name": "clear",
       "description": "`clear` 时执行的回调",
-      "params": "`() => void`"
+      "params": "() => void"
     },
     {
       "name": "create",
       "description": "在输入内容时如何创建一个选项。注意 `filter` 对这个生成的选项同样会生效。同时确保这个选项和其他选项的 `value` 不要有重复，应该和 `tag` 属性一起被使用",
-      "params": "`(label: string) => SelectOption`"
+      "params": "(label: string) => SelectOption"
     },
     {
       "name": "focus",
       "description": "`focus` 时执行的回调",
-      "params": "`() => void`"
+      "params": "() => void"
     },
     {
       "name": "scroll",
       "description": "滚动时执行的回调",
-      "params": "`(e: ScrollEvent) => void`"
+      "params": "(e: ScrollEvent) => void"
     },
     {
       "name": "search",
       "description": "搜索时执行的回调",
-      "params": "`(value: string) => void`"
+      "params": "(value: string) => void"
     },
     {
       "name": "update:show",
       "description": "菜单打开状态变化的回调",
-      "params": "`(show: boolean) => void`"
+      "params": "(show: boolean) => void"
     },
     {
       "name": "update:value",
       "description": "值更新时执行的回调",
-      "params": "`(value: Array | string | number | null, option: SelectBaseOption | null | SelectBaseOption[]) => void`"
+      "params": "(value: Array | string | number | null, option: SelectBaseOption | null | SelectBaseOption[]) => void"
     }
   ],
   "link": "https://www.naiveui.com/zh-CN/dark/components/select"

@@ -34,8 +34,8 @@
     "size": {
       "value": ["small", "medium", "large"],
       "description": "组件尺寸",
-      "default": "'medium'",
-      "type": "'small' | 'medium' | 'large'"
+      "default": "medium",
+      "type": "small | medium | large"
     },
     "value": {
       "value": "",
@@ -88,8 +88,8 @@
     "display-directive": {
       "value": ["if", "show"],
       "description": "条件渲染使用的指令，`if` 会让内容被使用 `v-if` 渲染，`show` 会让内容被使用 `v-show` 渲染",
-      "default": "'if'",
-      "type": "'if' | 'show'"
+      "default": "if",
+      "type": "if | show"
     },
     "duration": {
       "value": "",
@@ -130,8 +130,8 @@
     "placement": {
       "value": "",
       "description": "popover 的弹出位置",
-      "default": "'top'",
-      "type": "'top-start' | 'top' | 'top-end' | 'right-start' | 'right' | 'right-end' | 'bottom-start' | 'bottom' | 'bottom-end' | 'left-start' | 'left' | 'left-end' | "
+      "default": "top",
+      "type": "top-start | top | top-end | right-start | right | right-end | bottom-start | bottom | bottom-end | left-start | left | left-end | "
     },
     "raw": {
       "value": "",
@@ -160,20 +160,20 @@
     "to": {
       "value": "",
       "description": "弹出内容的目标容器位置，`false` 会待在原地",
-      "default": "'body'",
+      "default": "body",
       "type": "string | HTMLElement | false"
     },
     "trigger": {
       "value": ["hover", "click", "focus", "manual"],
       "description": "popover 的触发方式",
-      "default": "'hover'",
-      "type": "'hover' | 'click' | 'focus' | 'manual'"
+      "default": "hover",
+      "type": "hover | click | focus | manual"
     },
     "width": {
       "value": "",
-      "description": "`'trigger'` 表示 popover 的宽度会和它的触发元素一致",
+      "description": "trigger 表示 popover 的宽度会和它的触发元素一致",
       "default": "undefined",
-      "type": "number | 'trigger'"
+      "type": "number | trigger"
     },
     "x": {
       "value": "",
@@ -200,59 +200,59 @@
       {
         "name": "class",
         "description": "自定义一个选项的类名",
-        "type": "`string`"
+        "type": "string"
       },
       {
         "name": "disabled",
         "description": "是否禁用一个选项",
-        "type": "`boolean`"
+        "type": "boolean"
       },
       {
         "name": "label",
         "description": "选项的标签，注意如果你使用了渲染函数，默认的过滤器将会过滤该选项",
-        "type": "`string | ((option: SelectOption, selected: boolean) => VNodeChild)`"
+        "type": "string | ((option: SelectOption, selected: boolean) => VNodeChild)"
       },
       {
         "name": "render",
         "description": "渲染整个选项",
-        "type": "`(info: { node: VNode, option: SelectOption, selected: boolean }) => VNodeChild`"
+        "type": "(info: { node: VNode, option: SelectOption, selected: boolean }) => VNodeChild"
       },
       {
         "name": "style",
         "description": "自定义一个选项的样式",
-        "type": "`string | CSSProperties`"
+        "type": "string | CSSProperties"
       },
       {
         "name": "value",
         "description": "在选项中应该是唯一的",
-        "type": "`string | number`"
+        "type": "string | number"
       }
     ],
     "SelectGroupOption": [
       {
         "name": "children",
         "description": "子选项组",
-        "type": "`Array<SelectOption>`"
+        "type": "Array<SelectOption>"
       },
       {
         "name": "label",
         "description": "选项组的标签",
-        "type": "`string | ((option: SelectGroupOption) => VNodeChild)`"
+        "type": "string | ((option: SelectGroupOption) => VNodeChild)"
       },
       {
         "name": "key",
         "description": "在选项中应该是唯一的",
-        "type": "`string | number`"
+        "type": "string | number"
       },
       {
         "name": "render",
         "description": "渲染整个选项",
-        "type": "`(info: { node: VNode, option: SelectOption, selected: boolean }) => VNodeChild`"
+        "type": "(info: { node: VNode, option: SelectOption, selected: boolean }) => VNodeChild"
       },
       {
         "name": "type",
         "description": "选项组的类型",
-        "type": "`'group'`"
+        "type": "group"
       }
     ]
   },
@@ -260,17 +260,17 @@
     {
       "name": "update:value",
       "description": "值更新的回调",
-      "params": "`(value: string | number | Array<string | number> | null, option: SelectBaseOption | null | Array<SelectBaseOption>) => void`"
+      "params": "(value: string | number | Array<string | number> | null, option: SelectBaseOption | null | Array<SelectBaseOption>) => void"
     },
     {
       "name": "clickoutside",
       "description": "clickoutside 时触发的回调函数",
-      "params": "`(e: MouseEvent) => void`"
+      "params": "(e: MouseEvent) => void"
     },
     {
       "name": "update:show",
       "description": "显示状态改变的回调函数",
-      "params": "`(value: boolean) => void`"
+      "params": "(value: boolean) => void"
     }
   ],
   "link": "https://www.naiveui.com/en-US/os-theme/components/popselect"

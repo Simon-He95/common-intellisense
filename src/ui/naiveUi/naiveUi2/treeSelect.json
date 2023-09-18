@@ -22,13 +22,13 @@
     "check-strategy": {
       "value": "",
       "description": "设置勾选策略来指定显示的勾选节点，`all` 表示显示全部选中节点；`parent` 表示只显示父节点（当父节点下所有子节点都选中时）；`child` 表示只显示子节点",
-      "default": "'all'",
+      "default": "all",
       "type": "string"
     },
     "children-field": {
       "value": "",
       "description": "替代 `TreeSelectOption` 中的 children 字段名",
-      "default": "'children'",
+      "default": "children",
       "type": "string"
     },
     "clearable": {
@@ -100,19 +100,19 @@
     "key-field": {
       "value": "",
       "description": "替代 `TreeSelectOption` 中的 key 字段名",
-      "default": "'key'",
+      "default": "key",
       "type": "string"
     },
     "label-field": {
       "value": "",
       "description": "替代 `TreeSelectOption` 中的 label 字段名",
-      "default": "'label'",
+      "default": "label",
       "type": "string"
     },
     "disabled-field": {
       "value": "",
       "description": "替代 `TreeSelectOption` 中的 disabled 字段名",
-      "default": "'disabled'",
+      "default": "disabled",
       "type": "string"
     },
     "loading": {
@@ -123,9 +123,9 @@
     },
     "max-tag-count": {
       "value": "",
-      "description": "多选时最多直接显示多少选项，设为 `'responsive'` 会保证最多一行",
+      "description": "多选时最多直接显示多少选项，设为 responsive 会保证最多一行",
       "default": "undefined",
-      "type": "number | 'responsive'"
+      "type": "number | responsive"
     },
     "menu-props": {
       "value": "",
@@ -154,14 +154,14 @@
     "placeholder": {
       "value": "",
       "description": "占位信息",
-      "default": "'请选择'",
+      "default": "$1",
       "type": "string"
     },
     "placement": {
       "value": "",
       "description": "选择器的弹出位置.",
-      "default": "'bottom-start'",
-      "type": "'top-start' | 'top' | 'top-end' | 'right-start' | 'right' | 'right-end' | 'bottom-start' | 'bottom' | 'bottom-end' | 'left-start' | 'left' | 'left-end'"
+      "default": "bottom-start",
+      "type": "top-start | top | top-end | right-start | right | right-end | bottom-start | bottom | bottom-end | left-start | left | left-end"
     },
     "render-label": {
       "value": "",
@@ -194,12 +194,9 @@
       "type": "(props: { option: TreeSelectOption, handleClose: () => void }) => VNodeChild"
     },
     "separator": {
-      "value": [
-        "'",
-        "'"
-      ],
+      "value": "",
       "description": "数据分隔符",
-      "default": "' | '",
+      "default": " / ",
       "type": "string"
     },
     "show-path": {
@@ -211,14 +208,14 @@
     "size": {
       "value": ["small", "medium", "large"],
       "description": "组件尺寸",
-      "default": "'medium'",
-      "type": "'small' | 'medium' | 'large'"
+      "default": "medium",
+      "type": "small | medium | large"
     },
     "status": {
       "value": ["success", "warning", "error"],
       "description": "验证状态",
       "default": "undefined",
-      "type": "'success' | 'warning' | 'error'"
+      "type": "success | warning | error"
     },
     "to": {
       "value": "",
@@ -243,32 +240,32 @@
     {
       "name": "blur",
       "description": "失焦",
-      "params": "`() => void`"
+      "params": "() => void"
     },
     {
       "name": "blurInput",
       "description": "输入失焦",
-      "params": "`() => void`"
+      "params": "() => void"
     },
     {
       "name": "focus",
       "description": "聚焦",
-      "params": "`() => void`"
+      "params": "() => void"
     },
     {
       "name": "focusInput",
       "description": "输入聚焦",
-      "params": "`() => void`"
+      "params": "() => void"
     },
     {
       "name": "getCheckedData",
       "description": "获取选中的数据",
-      "params": "`() => { keys: Array<string | number>, options: Array<TreeOption | null> }`"
+      "params": "() => { keys: Array<string | number>, options: Array<TreeOption | null> }"
     },
     {
       "name": "getIndeterminateData",
       "description": "获取半选的数据",
-      "params": "`() => { keys: Array<string | number>, options: Array<TreeOption | null> }`"
+      "params": "() => { keys: Array<string | number>, options: Array<TreeOption | null> }"
     }
   ],
   "typeDetail": {
@@ -276,27 +273,27 @@
       {
         "name": "key",
         "description": "选项的 key，需要唯一，可使用 `key-field` 修改字段名",
-        "type": "`string | number`"
+        "type": "string | number"
       },
       {
         "name": "label",
         "description": "选项的显示内容，可使用 `label-field` 修改字段名",
-        "type": "`string`"
+        "type": "string"
       },
       {
         "name": "children?",
         "description": "节点的子选项",
-        "type": "`TreeSelectOption[]`"
+        "type": "TreeSelectOption[]"
       },
       {
         "name": "disabled?",
         "description": "是否禁用选项",
-        "type": "`boolean`"
+        "type": "boolean"
       },
       {
         "name": "isLeaf?",
         "description": "节点是否是叶节点，在异步展开状态下是必须的",
-        "type": "`boolean`"
+        "type": "boolean"
       }
     ]
   },
@@ -304,32 +301,32 @@
     {
       "name": "blur",
       "description": "Blur 时的回调",
-      "params": "`(e: FocusEvent) => void`"
+      "params": "(e: FocusEvent) => void"
     },
     {
       "name": "focus",
       "description": "Focus 时的回调",
-      "params": "`(e: FocusEvent) => void`"
+      "params": "(e: FocusEvent) => void"
     },
     {
       "name": "load",
       "description": "异步加载数据的回调函数",
-      "params": "`(node: TreeSelectOption) => Promise<void>`"
+      "params": "(node: TreeSelectOption) => Promise<void>"
     },
     {
       "name": "update:expanded-keys",
       "description": "展开节点更新的回调",
-      "params": "`(value: Array<string | number>, meta: { node: TreeOption | null, action: 'expand' | 'collapse' | 'filter' }) => void`"
+      "params": "(value: Array<string | number>, meta: { node: TreeOption | null, action: expand | collapse | filter }) => void"
     },
     {
       "name": "update:indeterminate-keys",
       "description": "节点部分勾选项发生变化时的回调函数",
-      "params": "`(keys: Array<string | number>) => void`"
+      "params": "(keys: Array<string | number>) => void"
     },
     {
       "name": "update:value",
       "description": "更新值的回调",
-      "params": "`(value: string | number | Array<string | number> | null, option: TreeSelectOption | null | Array<TreeSelectOption | null>, meta: { node: TreeOption | null, action: 'select' | 'unselect' | 'delete' | 'clear' }) => void`"
+      "params": "(value: string | number | Array<string | number> | null, option: TreeSelectOption | null | Array<TreeSelectOption | null>, meta: { node: TreeOption | null, action: select | unselect | delete | clear }) => void"
     }
   ],
   "link": "https://www.naiveui.com/zh-CN/dark/components/tree-select"

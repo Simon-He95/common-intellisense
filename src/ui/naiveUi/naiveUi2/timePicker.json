@@ -4,8 +4,8 @@
     "actions": {
       "value": "",
       "description": "Time Picker 中支持的操作",
-      "default": "['now', 'confirm']",
-      "type": "Array<'now' | 'confirm'> | null"
+      "default": "[now, confirm]",
+      "type": "Array<now | confirm> | null"
     },
     "clearable": {
       "value": "",
@@ -34,7 +34,7 @@
     "format": {
       "value": "",
       "description": "时间格式化字符串，详情见 [format](https://date-fns.org/v2.23.0/docs/format)",
-      "default": "'HH:mm:ss'",
+      "default": "HH:mm:ss",
       "type": "string"
     },
     "formatted-value": {
@@ -88,14 +88,14 @@
     "placeholder": {
       "value": "",
       "description": "选择框的占位符",
-      "default": "'请选择时间'",
+      "default": "$1",
       "type": "string"
     },
     "placement": {
       "value": ["top-start", "top", "top-end", "right-start", "right", "right-end", "bottom-start", "bottom", "bottom-end", "left-start", "left", "left-end"],
       "description": "时间选择器的面板的弹出位置",
-      "default": "'bottom-start'",
-      "type": "'top-start' | 'top' | 'top-end' | 'right-start' | 'right' | 'right-end' | 'bottom-start' | 'bottom' | 'bottom-end' | 'left-start' | 'left' | 'left-end'"
+      "default": "bottom-start",
+      "type": "top-start | top | top-end | right-start | right | right-end | bottom-start | bottom | bottom-end | left-start | left | left-end"
     },
     "show": {
       "value": "",
@@ -106,18 +106,18 @@
     "size": {
       "value": ["small", "medium", "large"],
       "description": "选择框的尺寸",
-      "default": "'medium'",
-      "type": "'small' | 'medium' | 'large'"
+      "default": "medium",
+      "type": "small | medium | large"
     },
     "status": {
       "value": ["success", "warning", "error"],
       "description": "验证状态",
       "default": "undefined",
-      "type": "'success' | 'warning' | 'error'"
+      "type": "success | warning | error"
     },
     "time-zone": {
       "value": "",
-      "description": "格式化值时使用的市区，遵循 [iana time zones](https://www.iana.org/time-zones) 格式。你可以使用 `Intl.supportedValuesOf('timeZone')` 来查看支持的时区",
+      "description": "格式化值时使用的市区，遵循 [iana time zones](https://www.iana.org/time-zones) 格式。你可以使用 `Intl.supportedValuesOf(timeZone)` 来查看支持的时区",
       "default": "undefined",
       "type": "string"
     },
@@ -150,12 +150,12 @@
     {
       "name": "focus",
       "description": "聚焦",
-      "params": "`() => void`"
+      "params": "() => void"
     },
     {
       "name": "blur",
       "description": "失焦",
-      "params": "`() => void`"
+      "params": "() => void"
     }
   ],
   "typeDetail": {},
@@ -163,37 +163,37 @@
     {
       "name": "blur",
       "description": "选择框失去焦点时的回调",
-      "params": "`() => void`"
+      "params": "() => void"
     },
     {
       "name": "clear",
       "description": "清除值时的回调",
-      "params": "`() => void`"
+      "params": "() => void"
     },
     {
       "name": "confirm",
       "description": "点击确认按钮时的回调",
-      "params": "`(value: number | null, formattedValue: string | null) => void`"
+      "params": "(value: number | null, formattedValue: string | null) => void"
     },
     {
       "name": "focus",
       "description": "选择框获得焦点时的回调",
-      "params": "`() => void`"
+      "params": "() => void"
     },
     {
       "name": "update:formatted-value",
       "description": "格式化的值发生改变时的回调",
-      "params": "`(value: number | null, timestampValue: number | null) => void`"
+      "params": "(value: number | null, timestampValue: number | null) => void"
     },
     {
       "name": "update:show",
       "description": "面板打开、关闭时的回调",
-      "params": "`(show: boolean) => void`"
+      "params": "(show: boolean) => void"
     },
     {
       "name": "update:value",
       "description": "值发生改变时的回调",
-      "params": "`(value: number | null, formattedValue: string | null) => void`"
+      "params": "(value: number | null, formattedValue: string | null) => void"
     }
   ],
   "link": "https://www.naiveui.com/zh-CN/dark/components/time-picker"

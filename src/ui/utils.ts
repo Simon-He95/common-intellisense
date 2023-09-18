@@ -129,8 +129,13 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
           let snippet
           let content
           if (lan === 'vue') {
-            snippet = `${name}="on\${1:${name[0].toUpperCase()}${name.slice(1)}}"`
-            content = `${name}="on${name[0].toUpperCase()}${name.slice(1)}"`
+            const _name = name.split(':').map((item: string, i: number) =>
+              item[0].toUpperCase() + (i > 0
+                ? item.slice(1).replace(/-(\w)/g, (_: string, v: string) => v.toUpperCase())
+                : item.slice(1)),
+            ).join('')
+            snippet = `${name}="on\${1:${_name}}"`
+            content = `${name}="on${_name}"`
           }
           else if (lan === 'svelte') {
             snippet = `${name}={ \${1:${name.replace(/:(\w)/, (_: string, v: string) => v.toUpperCase())}} }`

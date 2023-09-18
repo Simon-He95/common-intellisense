@@ -34,7 +34,7 @@
     "children-key": {
       "value": "",
       "description": "树形数据下后代节点在数据中的 key",
-      "default": "'children'",
+      "default": "children",
       "type": "string"
     },
     ":columns": {
@@ -81,13 +81,13 @@
     },
     "pagination-behavior-on-filter": {
       "value": ["first", "current"],
-      "description": "过滤操作后页面的状态，`'first'` 为回到首页，`'current'` 为停留在当前页",
-      "default": "'current'",
-      "type": "'first' | 'current'"
+      "description": "过滤操作后页面的状态，first 为回到首页，current 为停留在当前页",
+      "default": "current",
+      "type": "first | current"
     },
     "flex-height": {
       "value": "",
-      "description": "是否让表格主体的高度自动适应整个表格区域的高度，打开这个选项会让 `table-layout` 始终为 `'fixed'`",
+      "description": "是否让表格主体的高度自动适应整个表格区域的高度，打开这个选项会让 `table-layout` 始终为 fixed",
       "default": "false",
       "type": "boolean"
     },
@@ -184,8 +184,8 @@
     "size": {
       "value": ["small", "medium", "large"],
       "description": "表格的尺寸",
-      "default": "'medium'",
-      "type": "'small' | 'medium' | 'large'"
+      "default": "medium",
+      "type": "small | medium | large"
     },
     "spin-props": {
       "value": "",
@@ -214,14 +214,14 @@
     "summary-placement": {
       "value": ["top", "bottom"],
       "description": "总结栏的位置",
-      "default": "'bottom'",
-      "type": "'top' | 'bottom'"
+      "default": "bottom",
+      "type": "top | bottom"
     },
     "table-layout": {
       "value": ["auto", "fixed"],
-      "description": "表格的 `table-layout` 样式属性，在设定 `ellipsis` 或 `max-height` 的情况下固定为 `'fixed'`",
-      "default": "'auto'",
-      "type": "'auto' | 'fixed'"
+      "description": "表格的 `table-layout` 样式属性，在设定 `ellipsis` 或 `max-height` 的情况下固定为 fixed",
+      "default": "auto",
+      "type": "auto | fixed"
     },
     "virtual-scroll": {
       "value": "",
@@ -234,32 +234,32 @@
     {
       "name": "clearFilters",
       "description": "清空所有的 filter 状态",
-      "params": "`() => void`"
+      "params": "() => void"
     },
     {
       "name": "clearSorter",
       "description": "清空所有的 sort 状态",
-      "params": "`() => void`"
+      "params": "() => void"
     },
     {
       "name": "filters",
       "description": "设定表格当前的过滤器",
-      "params": "`(filters: DataTableFilterState | null) => void`"
+      "params": "(filters: DataTableFilterState | null) => void"
     },
     {
       "name": "page",
       "description": "手动设置 page",
-      "params": "`(page: number) => void`"
+      "params": "(page: number) => void"
     },
     {
       "name": "scrollTo",
       "description": "滚动内容",
-      "params": "`(options: { left?: number, top?: number, behavior?: ScrollBehavior }): void & (x: number, y: number) => void`"
+      "params": "(options: { left?: number, top?: number, behavior?: ScrollBehavior }): void & (x: number, y: number) => void"
     },
     {
       "name": "sort",
       "description": "设定表格的过滤状态",
-      "params": "`(columnKey: string | number | null, order: 'ascend' | 'descend' | false) => void`"
+      "params": "(columnKey: string | number | null, order: ascend | descend | false) => void"
     }
   ],
   "typeDetail": {
@@ -272,12 +272,12 @@
       {
         "name": "sorter",
         "description": "-",
-        "type": "'default' | function | boolean"
+        "type": "default | function | boolean"
       },
       {
         "name": "order",
         "description": "-",
-        "type": "ascend' | 'descend' | false"
+        "type": "ascend | descend | false"
       }
     ]
   },
@@ -285,42 +285,42 @@
     {
       "name": "load",
       "description": "异步展开树形数据的回调",
-      "params": "`(rowData: object) => Promise<void>`"
+      "params": "(rowData: object) => Promise<void>"
     },
     {
       "name": "scroll",
       "description": "表格主体滚动的回调",
-      "params": "`(e: Event) => void`"
+      "params": "(e: Event) => void"
     },
     {
       "name": "update:checked-row-keys",
       "description": "checked-row-keys 值改变时触发的回调函数",
-      "params": "`(keys: Array<string | number>, rows: object[], meta: { row: object | undefined, action: 'check' | 'uncheck' | 'checkAll' | 'uncheckAll' }) => void`"
+      "params": "(keys: Array<string | number>, rows: object[], meta: { row: object | undefined, action: check | uncheck | checkAll | uncheckAll }) => void"
     },
     {
       "name": "update:expanded-row-keys",
       "description": "expanded-row-keys 值改变时触发的回调函数",
-      "params": "`(keys: Array<string | number>) => void`"
+      "params": "(keys: Array<string | number>) => void"
     },
     {
       "name": "update:filters",
       "description": "filters 数据改变时触发的回调函数",
-      "params": "`(filters: DataTableFilterState, initiatorColumn: DataTableBaseColumn)`"
+      "params": "(filters: DataTableFilterState, initiatorColumn: DataTableBaseColumn)"
     },
     {
       "name": "update:page",
       "description": "page 改变时触发的回调函数",
-      "params": "`(page: number)`"
+      "params": "(page: number)"
     },
     {
       "name": "update:page-size",
       "description": "page-size 改变时触发的回调函数",
-      "params": "`(pageSize: number) => void`"
+      "params": "(pageSize: number) => void"
     },
     {
       "name": "update:sorter",
       "description": "如果变动列为多列排序则返回 `DataTableSortState[] | null` 否则返回 `DataTableSortState | null`",
-      "params": "`(options: DataTableSortState | DataTableSortState[] | null) => void`"
+      "params": "(options: DataTableSortState | DataTableSortState[] | null) => void"
     }
   ],
   "link": "https://www.naiveui.com/zh-CN/dark/components/data-table"

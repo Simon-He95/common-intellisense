@@ -9,13 +9,13 @@
     },
     "collapse-mode": {
       "value": ["transform", "width"],
-      "description": "如果设定为 `'width'`，Sider 的内容宽度将会被实际改变；如果设定为 `'transform'`，边栏将只会移动它的位置而不会改变宽度",
-      "default": "'transform'",
-      "type": "'transform' | 'width'"
+      "description": "如果设定为 width，Sider 的内容宽度将会被实际改变；如果设定为 transform，边栏将只会移动它的位置而不会改变宽度",
+      "default": "transform",
+      "type": "transform | width"
     },
     "collapsed": {
       "value": "",
-      "description": "边栏是否折叠。只在 `position` 为 `'static'` 时生效",
+      "description": "边栏是否折叠。只在 `position` 为 static 时生效",
       "default": "undefined",
       "type": "boolean"
     },
@@ -58,8 +58,8 @@
     "position": {
       "value": "",
       "description": "`static` 模式将会把 CSS `position` 设为 `static`， `absolute` 模式将会把 CSS `position` 设为 `absolute`，还将 `left`、`top`、`bottom` 设为 `0`。`absolute` 模式在你想将内容在一个固定容器或者将这个页面的布局设为固定位置的时候很有用。你可能需要修改一些 style 来确保它按照你预想的方式展示",
-      "default": "'static'",
-      "type": "'static' | 'absolute'"
+      "default": "static",
+      "type": "static | absolute"
     },
     "scrollbar-props": {
       "value": "",
@@ -77,7 +77,7 @@
       "value": "",
       "description": "内置的触发按钮是否展示",
       "default": "false",
-      "type": "boolean | 'bar' | 'arrow-circle'"
+      "type": "boolean | bar | arrow-circle"
     },
     "trigger-style": {
       "value": "",
@@ -96,7 +96,7 @@
     {
       "name": "scrollTo",
       "description": "滚动到某处",
-      "params": "`((xCoord: number, yCoord: number) => void) | (options: { left?: number, top?: number, behavior: 'smooth' | 'auto' }) => void`"
+      "params": "((xCoord: number, yCoord: number) => void) | (options: { left?: number, top?: number, behavior: smooth | auto }) => void"
     }
   ],
   "typeDetail": {},
@@ -104,22 +104,22 @@
     {
       "name": "after-enter",
       "description": "完成展开后的回调",
-      "params": "`() => void`"
+      "params": "() => void"
     },
     {
       "name": "after-leave",
       "description": "完成折叠后的回调",
-      "params": "`() => void`"
+      "params": "() => void"
     },
     {
       "name": "scroll",
       "description": "内容的滚动事件回调函数",
-      "params": "`(e: Event) => void`"
+      "params": "(e: Event) => void"
     },
     {
       "name": "update:collapsed",
       "description": "折叠状态发生改变时的回调函数",
-      "params": "`(collapsed: boolean) => void`"
+      "params": "(collapsed: boolean) => void"
     }
   ],
   "link": "https://www.naiveui.com/zh-CN/dark/components/layout"

@@ -10,7 +10,7 @@
     "children-field": {
       "value": "",
       "description": "children 的字段名",
-      "default": "'children'",
+      "default": "children",
       "type": "string"
     },
     "collapsed-icon-size": {
@@ -33,7 +33,7 @@
     },
     "default-expand-all": {
       "value": "",
-      "description": "是否展开全部菜单，`options` 为异步获取时，`watch-props` 需要设置为 `['defaultExpandedKeys']` 才会生效",
+      "description": "是否展开全部菜单，`options` 为异步获取时，`watch-props` 需要设置为 `[defaultExpandedKeys]` 才会生效",
       "default": "false",
       "type": "boolean"
     },
@@ -52,18 +52,18 @@
     "disabled-field": {
       "value": "",
       "description": "disabled 的字段名",
-      "default": "'disabled'",
+      "default": "disabled",
       "type": "string"
     },
     "dropdown-placement": {
       "value": "",
-      "description": "仅在 `mode='horizontal'` 模式下生效",
-      "default": "'top'",
-      "type": "'top-start' | 'top' | 'top-end' | 'right-start' | 'right' | 'right-end' | 'bottom-start' | 'bottom' | 'bottom-end' | 'left-start' | 'left' | 'left-end' | "
+      "description": "仅在 `mode=horizontal` 模式下生效",
+      "default": "top",
+      "type": "top-start | top | top-end | right-start | right | right-end | bottom-start | bottom | bottom-end | left-start | left | left-end | "
     },
     "dropdown-props": {
       "value": "",
-      "description": "菜单折叠或 `mode='horizontal'` 模式时 Dropdown 的 props，请参考 [Dropdown Props](dropdown#Dropdown-Props)",
+      "description": "菜单折叠或 `mode=horizontal` 模式时 Dropdown 的 props，请参考 [Dropdown Props](dropdown#Dropdown-Props)",
       "default": "undefined",
       "type": "DropdownProps"
     },
@@ -100,13 +100,13 @@
     "key-field": {
       "value": "",
       "description": "key 的字段名",
-      "default": "'key'",
+      "default": "key",
       "type": "string"
     },
     "label-field": {
       "value": "",
       "description": "label 的字段名",
-      "default": "'label'",
+      "default": "label",
       "type": "string"
     },
     ":options": {
@@ -124,8 +124,8 @@
     "mode": {
       "value": ["vertical", "horizontal"],
       "description": "菜单的布局方式",
-      "default": "'vertical'",
-      "type": "'vertical' | 'horizontal'"
+      "default": "vertical",
+      "type": "vertical | horizontal"
     },
     "render-extra": {
       "value": "",
@@ -161,14 +161,14 @@
       "value": "",
       "description": "需要检测变更的默认属性，检测后组件状态会更新。注意：`watch-props` 本身不是响应式的",
       "default": "undefined",
-      "type": "Array<'defaultValue' | 'defaultExpandedKeys'>"
+      "type": "Array<defaultValue | defaultExpandedKeys>"
     }
   },
   "methods": [
     {
       "name": "showOption",
       "description": "展开菜单，确保设定的元素被显示，如果不传入 `key` 会当前选中元素",
-      "params": "`(key?: string | number) => void`"
+      "params": "(key?: string | number) => void"
     }
   ],
   "typeDetail": {
@@ -176,86 +176,86 @@
       {
         "name": "children?",
         "description": "子选项",
-        "type": "`Array<MenuOption | MenuGroupOption>`"
+        "type": "Array<MenuOption | MenuGroupOption>"
       },
       {
         "name": "disabled?",
         "description": "是否禁用菜单项",
-        "type": "`boolean`"
+        "type": "boolean"
       },
       {
         "name": "extra?",
         "description": "菜单项的额外部分",
-        "type": "`string | (() => VNodeChild)`"
+        "type": "string | (() => VNodeChild)"
       },
       {
         "name": "icon?",
         "description": "菜单项的图标",
-        "type": "`() => VNode`"
+        "type": "() => VNode"
       },
       {
         "name": "key",
         "description": "菜单项的标识符",
-        "type": "`string`"
+        "type": "string"
       },
       {
         "name": "label",
         "description": "菜单项的内容",
-        "type": "`string | (() => VNodeChild)`"
+        "type": "string | (() => VNodeChild)"
       },
       {
         "name": "show?",
         "description": "是否显示菜单项",
-        "type": "`boolean`"
+        "type": "boolean"
       }
     ],
     "MenuGroupOption": [
       {
         "name": "children",
         "description": "子菜单，**必填！**",
-        "type": "`Array<MenuOption | MenuGroupOption>`"
+        "type": "Array<MenuOption | MenuGroupOption>"
       },
       {
         "name": "key",
         "description": "菜单项的标识符",
-        "type": "`string`"
+        "type": "string"
       },
       {
         "name": "label",
         "description": "菜单项的内容",
-        "type": "`string | (() => VNodeChild)`"
+        "type": "string | (() => VNodeChild)"
       },
       {
         "name": "show?",
         "description": "是否显示菜单项",
-        "type": "`boolean`"
+        "type": "boolean"
       },
       {
         "name": "type",
         "description": "菜单项的类型，**必填！**",
-        "type": "`'group'`"
+        "type": "group"
       }
     ],
     "MenuDividerOption": [
       {
         "name": "key",
         "description": "菜单项的标识符",
-        "type": "`string`"
+        "type": "string"
       },
       {
         "name": "props",
         "description": "分割线的属性",
-        "type": "`HTMLAttributes`"
+        "type": "HTMLAttributes"
       },
       {
         "name": "show?",
         "description": "是否显示菜单项",
-        "type": "`boolean`"
+        "type": "boolean"
       },
       {
         "name": "type",
         "description": "菜单项的类型，**必填！**",
-        "type": "`'divider'`"
+        "type": "divider"
       }
     ]
   },
@@ -263,12 +263,12 @@
     {
       "name": "update:expanded-keys",
       "description": "`keys` 是展开菜单项的 `key` 的数组",
-      "params": "`(keys: string[]) => void`"
+      "params": "(keys: string[]) => void"
     },
     {
       "name": "update:value",
       "description": "选中菜单的回调，`key` 是选中菜单项的 `key`，`item` 是菜单项原始数据",
-      "params": "`(key: string, item: MenuOption) => void`"
+      "params": "(key: string, item: MenuOption) => void"
     }
   ],
   "link": "https://www.naiveui.com/zh-CN/dark/components/menu"

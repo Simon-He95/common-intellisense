@@ -17,7 +17,7 @@
       "value": "",
       "description": "是否允许 drop",
       "default": "一个不允许 drop 在叶节点内部的函数",
-      "type": "(info: { dropPosition: DropPosition, node: TreeOption, phase: 'drag' | 'drop' }) => boolean"
+      "type": "(info: { dropPosition: DropPosition, node: TreeOption, phase: drag | drop }) => boolean"
     },
     "animated": {
       "value": "",
@@ -52,7 +52,7 @@
     "check-strategy": {
       "value": "",
       "description": "设置勾选策略来指定勾选回调返回的值，`all` 表示回调函数值为全部选中节点；`parent` 表示回调函数值为父节点（当父节点下所有子节点都选中时）；`child` 表示回调函数值为子节点",
-      "default": "'all'",
+      "default": "all",
       "type": "string"
     },
     "checkable": {
@@ -64,13 +64,13 @@
     "checkbox-placement": {
       "value": ["left", "right"],
       "description": "复选框的位置",
-      "default": "'left'",
-      "type": "'left' | 'right'"
+      "default": "left",
+      "type": "left | right"
     },
     "children-field": {
       "value": "",
       "description": "替代 `TreeOption` 中的 children 字段名",
-      "default": "'children'",
+      "default": "children",
       "type": "string"
     },
     "checked-keys": {
@@ -166,19 +166,19 @@
     "key-field": {
       "value": "",
       "description": "替代 `TreeOption` 中的 key 字段名",
-      "default": "'key'",
+      "default": "key",
       "type": "string"
     },
     "label-field": {
       "value": "",
       "description": "替代 `TreeOption` 中的 label 字段名",
-      "default": "'label'",
+      "default": "label",
       "type": "string"
     },
     "disabled-field": {
       "value": "",
       "description": "替代 `TreeOption` 中的 disabled 字段名",
-      "default": "'disabled'",
+      "default": "disabled",
       "type": "string"
     },
     "node-props": {
@@ -196,7 +196,7 @@
     "pattern": {
       "value": "",
       "description": "默认搜索的内容",
-      "default": "''",
+      "default": "",
       "type": "string"
     },
     "render-label": {
@@ -263,7 +263,7 @@
       "value": "",
       "description": "需要检测变更的默认属性，检测后组件状态会更新。注意：`watch-props` 本身不是响应式的",
       "default": "undefined",
-      "type": "Array<'defaultCheckedKeys' | 'defaultSelectedKeys' |'defaultExpandedKeys'>"
+      "type": "Array<defaultCheckedKeys | defaultSelectedKeys |defaultExpandedKeys>"
     }
   },
   "methods": [
@@ -288,42 +288,42 @@
       {
         "name": "key",
         "description": "节点的 `key`，需要唯一，可使用 `key-field` 修改字段名",
-        "type": "`string | number`"
+        "type": "string | number"
       },
       {
         "name": "label",
         "description": "节点的内容，可使用 `label-field` 修改字段名",
-        "type": "`string`"
+        "type": "string"
       },
       {
         "name": "checkboxDisabled?",
         "description": "是否禁用节点的 `checkbox`",
-        "type": "`boolean`"
+        "type": "boolean"
       },
       {
         "name": "children?",
         "description": "节点的子节点",
-        "type": "`TreeOption[]`"
+        "type": "TreeOption[]"
       },
       {
         "name": "disabled?",
         "description": "是否禁用节点",
-        "type": "`boolean`"
+        "type": "boolean"
       },
       {
         "name": "isLeaf?",
         "description": "节点是否是叶节点，在异步展开状态下是必须的",
-        "type": "`boolean`"
+        "type": "boolean"
       },
       {
         "name": "prefix?",
         "description": "节点的前缀",
-        "type": "`string | (() => VNodeChild)`"
+        "type": "string | (() => VNodeChild)"
       },
       {
         "name": "suffix?",
         "description": "节点的后缀",
-        "type": "`string | (() => VNodeChild)`"
+        "type": "string | (() => VNodeChild)"
       }
     ]
   },
@@ -331,52 +331,52 @@
     {
       "name": "load",
       "description": "异步加载数据的回调函数，如果没有加载到数据你应该让 Promise resolve `false` 或者 reject 这个 Promise，否则加载动画不会停止",
-      "params": "`(node: TreeOption) => Promise<unknown>`"
+      "params": "(node: TreeOption) => Promise<unknown>"
     },
     {
       "name": "dragend",
       "description": "节点完成拖拽动作后的回调函数",
-      "params": "`(data: { node: TreeOption, event: DragEvent }) => void`"
+      "params": "(data: { node: TreeOption, event: DragEvent }) => void"
     },
     {
       "name": "dragenter",
       "description": "节点拖拽中的回调函数",
-      "params": "`(data: { node: TreeOption, event: DragEvent }) => void`"
+      "params": "(data: { node: TreeOption, event: DragEvent }) => void"
     },
     {
       "name": "dragleave",
       "description": "拖拽一个节点，该节点离开其它节点后的回调函数",
-      "params": "`(data: { node: TreeOption, event: DragEvent }) => void`"
+      "params": "(data: { node: TreeOption, event: DragEvent }) => void"
     },
     {
       "name": "dragstart",
       "description": "开始拖拽某一个节点的回调函数",
-      "params": "`(data: { node: TreeOption, event: DragEvent }) => void`"
+      "params": "(data: { node: TreeOption, event: DragEvent }) => void"
     },
     {
       "name": "drop",
       "description": "节点完成拖拽动作后的回调函数",
-      "params": "`(data: { node: TreeOption, dragNode: TreeOption, dropPosition: 'before' | 'inside' | 'after', event: DragEvent }) => void`"
+      "params": "(data: { node: TreeOption, dragNode: TreeOption, dropPosition: before | inside | after, event: DragEvent }) => void"
     },
     {
       "name": "update:checked-keys",
       "description": "节点勾选项发生变化时的回调函数",
-      "params": "`(keys: Array<string | number>, option: Array<TreeOption | null>, meta: { node: TreeOption | null, action: 'check' | 'uncheck' }) => void`"
+      "params": "(keys: Array<string | number>, option: Array<TreeOption | null>, meta: { node: TreeOption | null, action: check | uncheck }) => void"
     },
     {
       "name": "update:indeterminate-keys",
       "description": "节点部分勾选项发生变化时的回调函数",
-      "params": "`(keys: Array<string | number>, option: Array<TreeOption | null>) => void`"
+      "params": "(keys: Array<string | number>, option: Array<TreeOption | null>) => void"
     },
     {
       "name": "update:expanded-keys",
       "description": "节点展开项发生变化时的回调函数",
-      "params": "`(keys: Array<string | number>, option: Array<TreeOption | null>, meta: { node: TreeOption | null, action: 'expand' | 'collapse' | 'filter' }) => void`"
+      "params": "(keys: Array<string | number>, option: Array<TreeOption | null>, meta: { node: TreeOption | null, action: expand | collapse | filter }) => void"
     },
     {
       "name": "update:selected-keys",
       "description": "节点选中项发生变化时的回调函数",
-      "params": "`(keys: Array<string | number>, option: Array<TreeOption | null>, meta: { node: TreeOption, action: 'select' | 'unselect' }) => void`"
+      "params": "(keys: Array<string | number>, option: Array<TreeOption | null>, meta: { node: TreeOption, action: select | unselect }) => void"
     }
   ],
   "link": "https://www.naiveui.com/zh-CN/dark/components/tree"
