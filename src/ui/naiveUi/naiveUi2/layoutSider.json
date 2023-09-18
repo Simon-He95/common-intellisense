@@ -3,116 +3,122 @@
   "props": {
     "bordered": {
       "value": "",
-      "description": "`boolean`",
-      "default": "是否显示边框",
+      "description": "是否显示边框",
+      "default": "false",
       "type": "boolean"
     },
     "collapse-mode": {
       "value": "",
-      "description": "`'transform' | 'width'`",
-      "default": "如果设定为 'width'，Sider 的内容宽度将会被实际改变；如果设定为 'transform'，边栏将只会移动它的位置而不会改变宽度",
+      "description": "如果设定为 `'width'`，Sider 的内容宽度将会被实际改变；如果设定为 `'transform'`，边栏将只会移动它的位置而不会改变宽度",
+      "default": "'transform'",
       "type": "'transform' | 'width'"
     },
     "collapsed": {
       "value": "",
-      "description": "`boolean`",
-      "default": "边栏是否折叠。只在 position 为 'static' 时生效",
+      "description": "边栏是否折叠。只在 `position` 为 `'static'` 时生效",
+      "default": "undefined",
       "type": "boolean"
     },
     "collapsed-trigger-style": {
       "value": "",
-      "description": "`string | Object`",
-      "default": "折叠时触发器样式",
+      "description": "折叠时触发器样式",
+      "default": "undefined",
       "type": "string | Object"
     },
     "collapsed-width": {
       "value": "",
-      "description": "`number`",
-      "default": "折叠宽度",
+      "description": "折叠宽度",
+      "default": "48",
       "type": "number"
     },
     "content-style": {
       "value": "",
-      "description": "`string | Object`",
-      "default": "可滚动内容节点的样式",
+      "description": "可滚动内容节点的样式",
+      "default": "undefined",
       "type": "string | Object"
     },
     "default-collapsed": {
       "value": "",
-      "description": "`boolean`",
-      "default": "非受控模式下的默认折叠状态",
+      "description": "非受控模式下的默认折叠状态",
+      "default": "false",
       "type": "boolean"
     },
     "inverted": {
       "value": "",
-      "description": "`boolean`",
-      "default": "使用反转背景色",
+      "description": "使用反转背景色",
+      "default": "false",
       "type": "boolean"
     },
     "native-scrollbar": {
       "value": "",
-      "description": "`boolean`",
-      "default": "是否在自身使用原生滚动条。如果设定为 false，Sider 将会对内容使用 naive-ui 风格的滚动条",
+      "description": "是否在自身使用原生滚动条。如果设定为 `false`，`Sider` 将会对内容使用 naive-ui 风格的滚动条",
+      "default": "true",
       "type": "boolean"
     },
     "position": {
       "value": "",
-      "description": "`'static' | 'absolute'`",
-      "default": "static 模式将会把 CSS position 设为 static， absolute 模式将会把 CSS position 设为 absolute，还将 left、top、bottom 设为 0。absolute 模式在你想将内容在一个固定容器或者将这个页面的布局设为固定位置的时候很有用。你可能需要修改一些 style 来确保它按照你预想的方式展示",
+      "description": "`static` 模式将会把 CSS `position` 设为 `static`， `absolute` 模式将会把 CSS `position` 设为 `absolute`，还将 `left`、`top`、`bottom` 设为 `0`。`absolute` 模式在你想将内容在一个固定容器或者将这个页面的布局设为固定位置的时候很有用。你可能需要修改一些 style 来确保它按照你预想的方式展示",
+      "default": "'static'",
       "type": "'static' | 'absolute'"
     },
     "scrollbar-props": {
       "value": "",
-      "description": "`object`",
-      "default": "属性参考 [Scrollbar props](scrollbar#Scrollbar-Props)",
+      "description": "属性参考 [Scrollbar props](scrollbar#Scrollbar-Props)",
+      "default": "undefined",
       "type": "object"
     },
     "show-collapsed-content": {
       "value": "",
-      "description": "`boolean`",
-      "default": "是否在 sider 折叠后展示内部内容",
+      "description": "是否在 `sider` 折叠后展示内部内容",
+      "default": "true",
       "type": "boolean"
     },
     "show-trigger": {
       "value": "",
-      "description": "`boolean | 'bar' | 'arrow-circle'`",
-      "default": "内置的触发按钮是否展示",
+      "description": "内置的触发按钮是否展示",
+      "default": "false",
       "type": "boolean | 'bar' | 'arrow-circle'"
     },
     "trigger-style": {
       "value": "",
-      "description": "`string | Object`",
-      "default": "触发器样式",
+      "description": "触发器样式",
+      "default": "undefined",
       "type": "string | Object"
     },
     "width": {
       "value": "",
-      "description": "`number | string`",
-      "default": "宽度的 CSS 值，为数字时会添加 px",
+      "description": "宽度的 CSS 值，为数字时会添加 px",
+      "default": "272",
       "type": "number | string"
     }
   },
-  "methods": [],
+  "methods": [
+    {
+      "name": "scrollTo",
+      "description": "滚动到某处",
+      "params": "`((xCoord: number, yCoord: number) => void) | (options: { left?: number, top?: number, behavior: 'smooth' | 'auto' }) => void`"
+    }
+  ],
   "typeDetail": {},
   "events": [
     {
       "name": "after-enter",
-      "description": "`() => void`",
+      "description": "完成展开后的回调",
       "params": "`() => void`"
     },
     {
       "name": "after-leave",
-      "description": "`() => void`",
+      "description": "完成折叠后的回调",
       "params": "`() => void`"
     },
     {
       "name": "scroll",
-      "description": "`(e: Event) => void`",
+      "description": "内容的滚动事件回调函数",
       "params": "`(e: Event) => void`"
     },
     {
       "name": "update:collapsed",
-      "description": "`(collapsed: boolean) => void`",
+      "description": "折叠状态发生改变时的回调函数",
       "params": "`(collapsed: boolean) => void`"
     }
   ],

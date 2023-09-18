@@ -3,197 +3,196 @@
   "props": {
     "actions": {
       "value": "",
-      "description": "`Array<'now' | 'confirm'> | null`",
-      "default": "Time Picker 中支持的操作",
+      "description": "Time Picker 中支持的操作",
+      "default": "['now', 'confirm']",
       "type": "Array<'now' | 'confirm'> | null"
     },
     "clearable": {
       "value": "",
-      "description": "`boolean`",
-      "default": "是否可清空",
+      "description": "是否可清空",
+      "default": "false",
       "type": "boolean"
     },
     "default-value": {
       "value": "",
-      "description": "`number | null`",
-      "default": "非受控模式下的默认值",
+      "description": "非受控模式下的默认值",
+      "default": "null",
       "type": "number | null"
     },
     "default-formatted-value": {
       "value": "",
-      "description": "`string | null`",
-      "default": "非受控模式下的默认格式化后的值",
+      "description": "非受控模式下的默认格式化后的值",
+      "default": "undefined",
       "type": "string | null"
     },
     "disabled": {
       "value": "",
-      "description": "`boolean`",
-      "default": "是否禁用",
+      "description": "是否禁用",
+      "default": "false",
       "type": "boolean"
     },
     "format": {
-      "value": [
-        "时间格式化字符串，详情见 [format](https:",
-        "",
-        "date-fns.org",
-        "v2.23.0",
-        "docs",
-        "format)"
-      ],
-      "description": "`string`",
-      "default": "时间格式化字符串，详情见 [format](https: |  | date-fns.org | v2.23.0 | docs | format)",
+      "value": "",
+      "description": "时间格式化字符串，详情见 [format](https://date-fns.org/v2.23.0/docs/format)",
+      "default": "'HH:mm:ss'",
       "type": "string"
     },
     "formatted-value": {
       "value": "",
-      "description": "`string | null`",
-      "default": "格式化后的值",
+      "description": "格式化后的值",
+      "default": "undefined",
       "type": "string | null"
     },
     "hours": {
       "value": "",
-      "description": "`number | number[]`",
-      "default": "通过数组指定显示的小时。当值为 number 时，将被当做时间步进处理",
+      "description": "通过数组指定显示的小时。当值为 `number` 时，将被当做时间步进处理",
+      "default": "undefined",
       "type": "number | number[]"
     },
     "minutes": {
       "value": "",
-      "description": "`number | number[]`",
-      "default": "通过数组指定显示的分钟。当值为 number 时，将被当做时间步进处理",
+      "description": "通过数组指定显示的分钟。当值为 `number` 时，将被当做时间步进处理",
+      "default": "undefined",
       "type": "number | number[]"
     },
     "seconds": {
       "value": "",
-      "description": "`number | number[]`",
-      "default": "通过数组指定显示的秒。当值为 number 时，将被当做时间步进处理",
+      "description": "通过数组指定显示的秒。当值为 `number` 时，将被当做时间步进处理",
+      "default": "undefined",
       "type": "number | number[]"
     },
     "input-readonly": {
       "value": "",
-      "description": "`boolean`",
-      "default": "设置输入框为只读（避免在移动设备上打开虚拟键盘）",
+      "description": "设置输入框为只读（避免在移动设备上打开虚拟键盘）",
+      "default": "false",
       "type": "boolean"
     },
     "is-hour-disabled": {
       "value": "",
-      "description": "`(hour: number) => boolean`",
-      "default": "用于禁用小时的回调函数",
+      "description": "用于禁用小时的回调函数",
+      "default": "() => false",
       "type": "(hour: number) => boolean"
     },
     "is-minute-disabled": {
       "value": "",
-      "description": "`(minute: number, hour: number | null) => boolean`",
-      "default": "用于禁用分钟的回调函数，在没有选中值时，hour 是 null",
+      "description": "用于禁用分钟的回调函数，在没有选中值时，`hour` 是 `null`",
+      "default": "() => false",
       "type": "(minute: number, hour: number | null) => boolean"
     },
     "is-second-disabled": {
       "value": "",
-      "description": "`(second: number, minute: number | null, hour: number | null) => boolean`",
-      "default": "用于禁用秒钟的回调函数，在没有选中值时，minute 和 hour 是 null",
+      "description": "用于禁用秒钟的回调函数，在没有选中值时，`minute` 和 `hour` 是 `null`",
+      "default": "() => false",
       "type": "(second: number, minute: number | null, hour: number | null) => boolean"
     },
     "placeholder": {
       "value": "",
-      "description": "`string`",
-      "default": "选择框的占位符",
+      "description": "选择框的占位符",
+      "default": "'请选择时间'",
       "type": "string"
     },
     "placement": {
       "value": "",
-      "description": "`'top-start' | 'top' | 'top-end' | 'right-start' | 'right' | 'right-end' | 'bottom-start' | 'bottom' | 'bottom-end' | 'left-start' | 'left' | 'left-end'`",
-      "default": "时间选择器的面板的弹出位置",
+      "description": "时间选择器的面板的弹出位置",
+      "default": "'bottom-start'",
       "type": "'top-start' | 'top' | 'top-end' | 'right-start' | 'right' | 'right-end' | 'bottom-start' | 'bottom' | 'bottom-end' | 'left-start' | 'left' | 'left-end'"
     },
     "show": {
       "value": "",
-      "description": "`boolean`",
-      "default": "是否展示面板",
+      "description": "是否展示面板",
+      "default": "undefined",
       "type": "boolean"
     },
     "size": {
       "value": "",
-      "description": "`'small' | 'medium' | 'large'`",
-      "default": "选择框的尺寸",
+      "description": "选择框的尺寸",
+      "default": "'medium'",
       "type": "'small' | 'medium' | 'large'"
     },
     "status": {
       "value": "",
-      "description": "`'success' | 'warning' | 'error'`",
-      "default": "验证状态",
+      "description": "验证状态",
+      "default": "undefined",
       "type": "'success' | 'warning' | 'error'"
     },
     "time-zone": {
-      "value": [
-        "格式化值时使用的市区，遵循 [iana time zones](https:",
-        "",
-        "www.iana.org",
-        "time-zones) 格式。你可以使用 Intl.supportedValuesOf('timeZone') 来查看支持的时区"
-      ],
-      "description": "`string`",
-      "default": "格式化值时使用的市区，遵循 [iana time zones](https: |  | www.iana.org | time-zones) 格式。你可以使用 Intl.supportedValuesOf('timeZone') 来查看支持的时区",
+      "value": "",
+      "description": "格式化值时使用的市区，遵循 [iana time zones](https://www.iana.org/time-zones) 格式。你可以使用 `Intl.supportedValuesOf('timeZone')` 来查看支持的时区",
+      "default": "undefined",
       "type": "string"
     },
     "to": {
       "value": "",
-      "description": "`string | HTMLElement | false`",
-      "default": "菜单的容器节点，false 会待在原地",
+      "description": "菜单的容器节点，`false` 会待在原地",
+      "default": "body",
       "type": "string | HTMLElement | false"
     },
     "use-12-hours": {
       "value": "",
-      "description": "`boolean`",
-      "default": "是否使用 12 小时制的面板",
+      "description": "是否使用 12 小时制的面板",
+      "default": "false",
       "type": "boolean"
     },
     "value": {
       "value": "",
-      "description": "`number | null`",
-      "default": "受控模式下的值",
+      "description": "受控模式下的值",
+      "default": "undefined",
       "type": "number | null"
     },
     "value-format": {
       "value": "",
-      "description": "`string`",
-      "default": "格式化后值的格式",
+      "description": "格式化后值的格式",
+      "default": "跟随 format",
       "type": "string"
     }
   },
-  "methods": [{ "name": "focus", "description": "`() => void`", "params": "聚焦" }, { "name": "blur", "description": "`() => void`", "params": "失焦" }],
+  "methods": [
+    {
+      "name": "focus",
+      "description": "聚焦",
+      "params": "`() => void`"
+    },
+    {
+      "name": "blur",
+      "description": "失焦",
+      "params": "`() => void`"
+    }
+  ],
   "typeDetail": {},
   "events": [
     {
       "name": "blur",
-      "description": "`() => void`",
+      "description": "选择框失去焦点时的回调",
       "params": "`() => void`"
     },
     {
       "name": "clear",
-      "description": "`() => void`",
+      "description": "清除值时的回调",
       "params": "`() => void`"
     },
     {
       "name": "confirm",
-      "description": "`(value: number | null, formattedValue: string | null) => void`",
+      "description": "点击确认按钮时的回调",
       "params": "`(value: number | null, formattedValue: string | null) => void`"
     },
     {
       "name": "focus",
-      "description": "`() => void`",
+      "description": "选择框获得焦点时的回调",
       "params": "`() => void`"
     },
     {
       "name": "update:formatted-value",
-      "description": "`(value: number | null, timestampValue: number | null) => void`",
+      "description": "格式化的值发生改变时的回调",
       "params": "`(value: number | null, timestampValue: number | null) => void`"
     },
     {
       "name": "update:show",
-      "description": "`(show: boolean) => void`",
+      "description": "面板打开、关闭时的回调",
       "params": "`(show: boolean) => void`"
     },
     {
       "name": "update:value",
-      "description": "`(value: number | null, formattedValue: string | null) => void`",
+      "description": "值发生改变时的回调",
       "params": "`(value: number | null, formattedValue: string | null) => void`"
     }
   ],

@@ -3,50 +3,50 @@
   "props": {
     "allow-half": {
       "value": "",
-      "description": "`boolean`",
-      "default": "允许只激活一半图标",
+      "description": "允许只激活一半图标",
+      "default": "false",
       "type": "boolean"
     },
     "clearable": {
       "value": "",
-      "description": "`boolean`",
-      "default": "是否可清空，在点击当前值对应的图标后值会被设为 null",
+      "description": "是否可清空，在点击当前值对应的图标后值会被设为 `null`",
+      "default": "false",
       "type": "boolean"
     },
     "color": {
       "value": "",
-      "description": "`string`",
-      "default": "已激活图标颜色（支持形如 #FFF， #FFFFFF， yellow，rgb(0, 0, 0) 的颜色）",
+      "description": "已激活图标颜色（支持形如 `#FFF`， `#FFFFFF`， `yellow`，`rgb(0, 0, 0)` 的颜色）",
+      "default": "undefined",
       "type": "string"
     },
     "count": {
       "value": "",
-      "description": "`number`",
-      "default": "图标个数",
+      "description": "图标个数",
+      "default": "5",
       "type": "number"
     },
     "default-value": {
       "value": "",
-      "description": "`number | null`",
-      "default": "默认已激活图标个数，2.33.0 前默认值为 0",
+      "description": "默认已激活图标个数，2.33.0 前默认值为 `0`",
+      "default": "null",
       "type": "number | null"
     },
     "readonly": {
       "value": "",
-      "description": "`boolean`",
-      "default": "只读，交互失效",
+      "description": "只读，交互失效",
+      "default": "false",
       "type": "boolean"
     },
     "size": {
       "value": "",
-      "description": "`'small' | 'medium' | 'large' | number`",
-      "default": "图标尺寸",
+      "description": "图标尺寸",
+      "default": "'medium'",
       "type": "'small' | 'medium' | 'large' | number"
     },
     "value": {
       "value": "",
-      "description": "`number | null`",
-      "default": "已激活图标个数",
+      "description": "已激活图标个数",
+      "default": "undefined",
       "type": "number | null"
     }
   },
@@ -55,12 +55,12 @@
   "events": [
     {
       "name": "clear",
-      "description": "`() => void`",
+      "description": "清除当前值的回调",
       "params": "`() => void`"
     },
     {
       "name": "update:value",
-      "description": "`(value: number) => void`",
+      "description": "激活图标个数改变时触发",
       "params": "`(value: number) => void`"
     }
   ],

@@ -3,48 +3,219 @@
   "props": {
     "negative-button-props": {
       "value": "",
-      "description": "`ButtonProps`",
-      "default": "取消按钮的属性",
+      "description": "取消按钮的属性",
+      "default": "undefined",
       "type": "ButtonProps"
     },
     "negative-text": {
       "value": "",
-      "description": "`string | null`",
-      "default": "取消按钮文字",
+      "description": "取消按钮文字",
+      "default": "'取消'",
       "type": "string | null"
     },
     "positive-button-props": {
       "value": "",
-      "description": "`ButtonProps`",
-      "default": "确定按钮的属性",
+      "description": "确定按钮的属性",
+      "default": "undefined",
       "type": "ButtonProps"
     },
     "positive-text": {
       "value": "",
-      "description": "`string | null`",
-      "default": "确定按钮文字",
+      "description": "确定按钮文字",
+      "default": "'确认'",
       "type": "string | null"
     },
     "show-icon": {
       "value": "",
-      "description": "`boolean`",
-      "default": "是否显示图标",
+      "description": "是否显示图标",
+      "default": "true",
       "type": "boolean"
+    },
+    "animated": {
+      "value": "",
+      "description": "弹出弹窗时使用动画",
+      "default": "true",
+      "type": "boolean"
+    },
+    "arrow-style": {
+      "value": "",
+      "description": "popover 的箭头样式",
+      "default": "undefined",
+      "type": "Object"
+    },
+    "arrow-point-to-center": {
+      "value": "",
+      "description": "箭头是否指向触发元素中心",
+      "default": "false",
+      "type": "boolean"
+    },
+    "content-style": {
+      "value": "",
+      "description": "popover 内容的样式",
+      "default": "undefined",
+      "type": "Object | string"
+    },
+    "delay": {
+      "value": "",
+      "description": "悬浮触发弹出信息的延迟",
+      "default": "100",
+      "type": "number"
+    },
+    "disabled": {
+      "value": "",
+      "description": "是否不能激活弹出信息",
+      "default": "false",
+      "type": "boolean"
+    },
+    "display-directive": {
+      "value": "",
+      "description": "条件渲染使用的指令，`if` 会让内容被使用 `v-if` 渲染，`show` 会让内容被使用 `v-show` 渲染",
+      "default": "'if'",
+      "type": "'if' | 'show'"
+    },
+    "duration": {
+      "value": "",
+      "description": "悬浮关闭弹出信息的延迟",
+      "default": "100",
+      "type": "number"
+    },
+    "flip": {
+      "value": "",
+      "description": "是否在当前放置方式不能提供足够空间的时候调整弹出信息的位置",
+      "default": "true",
+      "type": "boolean"
+    },
+    "footer-style": {
+      "value": "",
+      "description": "popover footer 的样式",
+      "default": "undefined",
+      "type": "Object | string"
+    },
+    "header-style": {
+      "value": "",
+      "description": "popover header 的样式",
+      "default": "undefined",
+      "type": "Object | string"
+    },
+    "keep-alive-on-hover": {
+      "value": "",
+      "description": "是否在 trigger 为 hover 的时候，悬浮在 popover 时保持 popover 显示",
+      "default": "true",
+      "type": "boolean"
+    },
+    "overlap": {
+      "value": "",
+      "description": "覆盖触发元素",
+      "default": "false",
+      "type": "boolean"
+    },
+    "placement": {
+      "value": "",
+      "description": "popover 的弹出位置",
+      "default": "'top'",
+      "type": "'top-start' | 'top' | 'top-end' | 'right-start' | 'right' | 'right-end' | 'bottom-start' | 'bottom' | 'bottom-end' | 'left-start' | 'left' | 'left-end' | "
+    },
+    "raw": {
+      "value": "",
+      "description": "是否不添加默认样式",
+      "default": "false",
+      "type": "boolean"
+    },
+    "scrollable": {
+      "value": "",
+      "description": "popover 内容是否可滚动",
+      "default": "false",
+      "type": "boolean"
+    },
+    "show-arrow": {
+      "value": "",
+      "description": "是否显示箭头",
+      "default": "true",
+      "type": "boolean"
+    },
+    "show": {
+      "value": "",
+      "description": "是否展示 popover",
+      "default": "undefined",
+      "type": "boolean"
+    },
+    "title": {
+      "value": "",
+      "description": "popover 的 title 信息",
+      "default": "undefined",
+      "type": "string"
+    },
+    "to": {
+      "value": "",
+      "description": "弹出内容的目标容器位置，`false` 会待在原地",
+      "default": "'body'",
+      "type": "string | HTMLElement | false"
+    },
+    "trigger": {
+      "value": "",
+      "description": "popover 的触发方式",
+      "default": "'hover'",
+      "type": "'hover' | 'click' | 'focus' | 'manual'"
+    },
+    "width": {
+      "value": "",
+      "description": "`'trigger'` 表示 popover 的宽度会和它的触发元素一致",
+      "default": "undefined",
+      "type": "number | 'trigger'"
+    },
+    "x": {
+      "value": "",
+      "description": "手动控制位置时弹出内容的 CSS `left` 的像素值（x，y 都设置才能生效）",
+      "default": "undefined",
+      "type": "number"
+    },
+    "y": {
+      "value": "",
+      "description": "手动控制位置时弹出内容的 CSS `top` 的像素值（x，y 都设置才能生效）",
+      "default": "undefined",
+      "type": "number"
+    },
+    "z-index": {
+      "value": "",
+      "description": "Popover 的 z-index",
+      "default": "undefined",
+      "type": "number"
     }
   },
-  "methods": [{ "name": "setShow", "description": "`(show: boolean)`", "params": "非受控模式下控制是否显示 popover" }, { "name": "syncPosition", "description": "`()`", "params": "同步 popover 位置" }],
+  "methods": [
+    {
+      "name": "setShow",
+      "description": "非受控模式下控制是否显示 popover",
+      "params": "非受控模式下控制是否显示 popover"
+    },
+    {
+      "name": "syncPosition",
+      "description": "同步 popover 位置",
+      "params": "同步 popover 位置"
+    }
+  ],
   "typeDetail": {},
   "events": [
     {
       "name": "positive-click",
-      "description": "`() => boolean | Promise<boolean> | any`",
+      "description": "点击确定的回调函数",
       "params": "`() => boolean | Promise<boolean> | any`"
     },
     {
       "name": "negative-click",
-      "description": "`() => boolean | Promise<boolean> | any`",
+      "description": "点击取消的回调函数",
       "params": "`() => boolean | Promise<boolean> | any`"
+    },
+    {
+      "name": "clickoutside",
+      "description": "clickoutside 时触发的回调函数",
+      "params": "`(e: MouseEvent) => void`"
+    },
+    {
+      "name": "update:show",
+      "description": "显示状态改变的回调函数",
+      "params": "`(value: boolean) => void`"
     }
   ],
-  "link": ""
+  "link": "https://www.naiveui.com/zh-CN/os-theme/components/popconfirm"
 }

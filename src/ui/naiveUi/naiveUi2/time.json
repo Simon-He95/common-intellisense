@@ -2,51 +2,39 @@
   "name": "NTime",
   "props": {
     "format": {
-      "value": [
-        "时间格式化字符串，详情见 [format](https:",
-        "",
-        "date-fns.org",
-        "v2.23.0",
-        "docs",
-        "format)"
-      ],
-      "description": "`string`",
-      "default": "时间格式化字符串，详情见 [format](https: |  | date-fns.org | v2.23.0 | docs | format)",
+      "value": "",
+      "description": "时间格式化字符串，详情见 [format](https://date-fns.org/v2.23.0/docs/format)",
+      "default": "undefined",
       "type": "string"
     },
     "time": {
       "value": "",
-      "description": "`number | Date`",
-      "default": "时间",
+      "description": "时间",
+      "default": "Date.now()",
       "type": "number | Date"
     },
     "time-zone": {
-      "value": [
-        "格式化值时使用的市区，遵循 [iana time zones](https:",
-        "",
-        "www.iana.org",
-        "time-zones) 格式。你可以使用 Intl.supportedValuesOf('timeZone') 来查看支持的时区"
-      ],
-      "description": "`string`",
-      "default": "格式化值时使用的市区，遵循 [iana time zones](https: |  | www.iana.org | time-zones) 格式。你可以使用 Intl.supportedValuesOf('timeZone') 来查看支持的时区",
+      "value": "",
+      "description": "格式化值时使用的市区，遵循 [iana time zones](https://www.iana.org/time-zones) 格式。你可以使用 `Intl.supportedValuesOf('timeZone')` 来查看支持的时区",
+      "default": "undefined",
       "type": "string"
     },
     "to": {
       "value": "",
-      "description": "`number | Date`",
-      "default": "目标时间",
+      "description": "目标时间",
+      "default": "Date.now()",
       "type": "number | Date"
     },
     "type": {
       "value": "",
-      "description": "`'relative' | 'date' | 'datetime'`",
-      "default": "时间类型",
+      "description": "时间类型",
+      "default": "'datetime'",
       "type": "'relative' | 'date' | 'datetime'"
     },
     "unix": {
       "value": "",
-      "description": "`boolean`",
-      "default": "unix 时间戳",
+      "description": "`unix` 时间戳",
+      "default": "false",
       "type": "boolean"
     }
   },

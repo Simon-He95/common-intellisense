@@ -72,6 +72,9 @@ import h6 from './h6.json'
 import o1 from './o1.json'
 import u1 from './u1.json'
 import watermark from './watermark.json'
+import dropdown from './dropdown.json'
+import imageGroup from './imageGroup.json'
+import popselect from './popselect.json'
 
 export function naiveUi2() {
   const map: any = [
@@ -80,6 +83,8 @@ export function naiveUi2() {
     badge,
     breadcrumb,
     breadcrumbItem,
+    imageGroup,
+    popselect,
     button,
     buttonGroup,
     carousel,
@@ -112,6 +117,7 @@ export function naiveUi2() {
     image,
     input,
     inputNumber,
+    dropdown,
     layout,
     layoutSider,
     layoutContent,
@@ -158,6 +164,13 @@ export function naiveUi2Components() {
     ['n-anchor', '侧边导航', '<n-anchor :show-rail="showRail" :show-background="showBackground"></n-anchor>'],
     ['n-anchor-link', '侧边导航', '<n-anchor-link title="演示" href="#演示"></n-anchor-link>'],
     ['n-countdown', '倒计时', '<n-countdown :duration="5000" :active="active" />'],
+    ['n-image-group', '照片组', '<n-image-group />'],
+    ['n-popselect', '弹出选择', `<n-popselect v-model:value="value" :options="options" trigger="click">
+  <n-button>{{ value || '弹出选择' }}</n-button>
+</n-popselect>`],
+    ['n-dropdown', '下拉菜单', `<n-dropdown trigger="hover" :options="options" @select="handleSelect">
+  <n-button>找个地方休息</n-button>
+</n-dropdown>`],
     ['n-number-animation', '数值动画', '<n-number-animation ref="numberAnimationInstRef" :from="0" :to="12039" />'],
     ['n-mention', '提及', '<n-mention :options="options" default-value="@" />'],
     ['n-carousel', '轮播图', '<n-carousel></n-carousel>'],

@@ -3,133 +3,100 @@
   "props": {
     "alt": {
       "value": "",
-      "description": "`string`",
-      "default": "图片说明",
+      "description": "图片说明",
+      "default": "undefined",
       "type": "string"
     },
     "fallback-src": {
       "value": "",
-      "description": "`string`",
-      "default": "图片加载失败时显示的地址",
+      "description": "图片加载失败时显示的地址",
+      "default": "undefined",
       "type": "string"
     },
     "height": {
       "value": "",
-      "description": "`string | number`",
-      "default": "图片高度",
+      "description": "图片高度",
+      "default": "undefined",
       "type": "string | number"
     },
     "img-props": {
       "value": "",
-      "description": "`object`",
-      "default": "组件中 img 元素的属性",
+      "description": "组件中 img 元素的属性",
+      "default": "undefined",
       "type": "object"
     },
     "lazy": {
-      "value": [
-        "是否让图片进入视口再加载，单独使用将设置为[HTMLImageElement.loading](https:",
-        "",
-        "developer.mozilla.org",
-        "en-US",
-        "docs",
-        "Web",
-        "API",
-        "HTMLImageElement",
-        "loading) 的属性值；也可配合 intersection-observer-options 配置实现懒加载"
-      ],
-      "description": "`boolean`",
-      "default": "是否让图片进入视口再加载，单独使用将设置为[HTMLImageElement.loading](https: |  | developer.mozilla.org | en-US | docs | Web | API | HTMLImageElement | loading) 的属性值；也可配合 intersection-observer-options 配置实现懒加载",
+      "value": "",
+      "description": "是否让图片进入视口再加载，单独使用将设置为[HTMLImageElement.loading](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/loading) 的属性值；也可配合 `intersection-observer-options` 配置实现懒加载",
+      "default": "false",
       "type": "boolean"
     },
     "intersection-observer-options": {
       "value": "",
-      "description": "`{ root?: Element | Document | string | null, rootMargin?: string, threshold?: number | number[]; }`",
-      "default": "lazy=true 时 intersection observer 观测的配置",
+      "description": "`lazy=true` 时 intersection observer 观测的配置",
+      "default": "undefined",
       "type": "{ root?: Element | Document | string | null, rootMargin?: string, threshold?: number | number[]; }"
     },
     "object-fit": {
       "value": "",
-      "description": "`'fill' | 'contain' | 'cover' | 'none' | 'scale-down'`",
-      "default": "图片在容器内的的适应类型",
+      "description": "图片在容器内的的适应类型",
+      "default": "'fill'",
       "type": "'fill' | 'contain' | 'cover' | 'none' | 'scale-down'"
     },
     "preview-src": {
       "value": "",
-      "description": "`string`",
-      "default": "预览图片的图片地址",
+      "description": "预览图片的图片地址",
+      "default": "undefined",
       "type": "string"
     },
     "preview-disabled": {
       "value": "",
-      "description": "`boolean`",
-      "default": "是否禁用单击图像预览",
+      "description": "是否禁用单击图像预览",
+      "default": "false",
       "type": "boolean"
     },
     "previewed-img-props": {
       "value": "",
-      "description": "`object`",
-      "default": "预览图片时 img 元素的属性",
+      "description": "预览图片时 img 元素的属性",
+      "default": "undefined",
       "type": "object"
     },
     "show-toolbar": {
       "value": "",
-      "description": "`boolean`",
-      "default": "图片放大后是否展示底部工具栏",
+      "description": "图片放大后是否展示底部工具栏",
+      "default": "true",
       "type": "boolean"
     },
     "show-toolbar-tooltip": {
       "value": "",
-      "description": "`boolean`",
-      "default": "是否展示工具栏的提示",
+      "description": "是否展示工具栏的提示",
+      "default": "false",
       "type": "boolean"
     },
     "src": {
       "value": "",
-      "description": "`string`",
-      "default": "图片来源",
+      "description": "图片来源",
+      "default": "undefined",
       "type": "string"
     },
     "width": {
       "value": "",
-      "description": "`string | number`",
-      "default": "图片宽度",
+      "description": "图片宽度",
+      "default": "undefined",
       "type": "string | number"
     }
   },
   "methods": [],
-  "typeDetail": {
-    "ImageGroup": [
-      {
-        "name": "on-preview-prev",
-        "description": "`() => void`",
-        "type": "`undefined`"
-      },
-      {
-        "name": "on-preview-next",
-        "description": "`() => void`",
-        "type": "`undefined`"
-      },
-      {
-        "name": "show-toolbar",
-        "description": "`boolean`",
-        "type": "`true`"
-      },
-      {
-        "name": "show-toolbar-tooltip",
-        "description": "`boolean`",
-        "type": "`false`"
-      }
-    ]
-  },
+  "typeDetail": {},
   "events": [
     {
       "name": "error",
-      "description": "`(e: Event) => void`",
+      "description": "图片加载失败执行的回调",
       "params": "`(e: Event) => void`"
     },
     {
       "name": "load",
-      "description": "`(e: Event) => void`",
+      "description": "图片加载完成执行的回调",
       "params": "`(e: Event) => void`"
     }
   ],

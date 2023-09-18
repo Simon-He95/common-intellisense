@@ -104,7 +104,11 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
         const lan = getActiveTextEditorLanguageId()
         const originEvent = [
           {
-            name: lan === 'vue' ? 'click' : 'onClick',
+            name: lan === 'vue'
+              ? 'click'
+              : lan === 'svelte'
+                ? 'on:click'
+                : 'onClick',
             description: '点击事件',
             params: '',
           },

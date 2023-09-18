@@ -3,29 +3,40 @@
   "props": {
     "trigger": {
       "value": "",
-      "description": "`'hover' | 'none'`",
-      "default": "显示滚动条的时机，'none' 表示一直显示",
+      "description": "显示滚动条的时机，`'none'` 表示一直显示",
+      "default": "'hover'",
       "type": "'hover' | 'none'"
     },
     "x-scrollable": {
       "value": "",
-      "description": "`boolean`",
-      "default": "是否可以横向滚动",
+      "description": "是否可以横向滚动",
+      "default": "false",
       "type": "boolean"
     },
     "size": {
       "value": "",
-      "description": "`number`",
-      "default": "滚动条的大小",
+      "description": "滚动条的大小",
+      "default": "undefined",
       "type": "number"
     }
   },
-  "methods": [{ "name": "scrollBy", "description": "`(options: { left?: number, top?: number, behavior?: ScrollBehavior }): void & (x: number, y: number) => void`", "params": "滚动特定距离" }, { "name": "scrollTo", "description": "`(options: { left?: number, top?: number, behavior?: ScrollBehavior }): void & (x: number, y: number) => void`", "params": "滚动内容" }],
+  "methods": [
+    {
+      "name": "scrollBy",
+      "description": "滚动特定距离",
+      "params": "`(options: { left?: number, top?: number, behavior?: ScrollBehavior }): void & (x: number, y: number) => void`"
+    },
+    {
+      "name": "scrollTo",
+      "description": "滚动内容",
+      "params": "`(options: { left?: number, top?: number, behavior?: ScrollBehavior }): void & (x: number, y: number) => void`"
+    }
+  ],
   "typeDetail": {},
   "events": [
     {
       "name": "scroll",
-      "description": "`(e: Event) => void`",
+      "description": "滚动的回调",
       "params": "`(e: Event) => void`"
     }
   ],

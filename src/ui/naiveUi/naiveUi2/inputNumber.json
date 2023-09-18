@@ -1,161 +1,224 @@
 {
   "name": "NInputNumber",
   "props": {
+    "allow-input": {
+      "value": "",
+      "description": "校验当前的输入是否合法，如果返回 `false` 输入框便不会响应此次的输入",
+      "default": "undefined",
+      "type": "(value: string) => false"
+    },
     "autofocus": {
       "value": "",
-      "description": "`boolean`",
-      "default": "是否自动获取焦点",
+      "description": "是否自动获取焦点",
+      "default": "false",
       "type": "boolean"
     },
-    "bordered": {
+    "autosize": {
       "value": "",
-      "description": "`boolean`",
-      "default": "是否有边框",
-      "type": "boolean"
-    },
-    "button-placement": {
-      "value": "",
-      "description": "`'both' | 'right'`",
-      "default": "加减按钮的位置",
-      "type": "'both' | 'right'"
+      "description": "自适应内容高度，只对 `type=\"textarea\"` 有效，可传入对象，如 `{ minRows: 1, maxRows: 3 }`",
+      "default": "false",
+      "type": "boolean | { minRows?: number, maxRows?: number }"
     },
     "clearable": {
       "value": "",
-      "description": "`boolean`",
-      "default": "是否可清空",
+      "description": "是否可清空",
+      "default": "false",
       "type": "boolean"
     },
     "default-value": {
       "value": "",
-      "description": "`number | null`",
-      "default": "非受控模式下的默认值",
-      "type": "number | null"
+      "description": "输入框默认值",
+      "default": "null",
+      "type": "string | [string, string] | null"
+    },
+    "count-graphemes": {
+      "value": "",
+      "description": "计算输入的字数。如果设定了，那么原生的 `maxlength` 和 `minlength` 属性将不再被使用",
+      "default": "undefined",
+      "type": "(value: string) => number"
     },
     "disabled": {
       "value": "",
-      "description": "`boolean`",
-      "default": "是否禁用",
+      "description": "是否禁用",
+      "default": "false",
       "type": "boolean"
     },
-    "format": {
+    "input-props": {
       "value": "",
-      "description": "`(value: number | null) => string`",
-      "default": "格式化值的方法，设定后会禁用 update-value-on-input",
-      "type": "(value: number | null) => string"
-    },
-    "keyboard": {
-      "value": "",
-      "description": "`{ ArrowUp?: boolean, ArrowDown?: boolean }`",
-      "default": "控制允许的键盘操作，属性值设为 false 的时候会禁用对应的键盘操作",
-      "type": "{ ArrowUp?: boolean, ArrowDown?: boolean }"
+      "description": "Input 组件内部 input 元素的属性，对 `pair` 类型不生效，[在这里查看原生属性](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input)。注意：input-props 不会覆盖内部 input 元素的已经存在的属性（除了 `type`）",
+      "default": "undefined",
+      "type": "HTMLInputAttributes"
     },
     "loading": {
       "value": "",
-      "description": "`boolean`",
-      "default": "是否展示加载图标，设为非 undefined 会占据空间",
+      "description": "是否展示加载图标，设为非 `undefined` 会占据空间",
+      "default": "undefined",
       "type": "boolean"
     },
-    "max": {
+    "maxlength": {
       "value": "",
-      "description": "`number`",
-      "default": "最大值",
+      "description": "最大输入长度",
+      "default": "undefined",
       "type": "number"
     },
-    "min": {
+    "minlength": {
       "value": "",
-      "description": "`number`",
-      "default": "最小值",
+      "description": "最小输入长度",
+      "default": "undefined",
       "type": "number"
     },
-    "parse": {
+    "pair": {
       "value": "",
-      "description": "`(input: string) => number | null`",
-      "default": "解析输入的字符串，设定后会禁用 update-value-on-input",
-      "type": "(input: string) => number | null"
+      "description": "是否输入成对的值",
+      "default": "false",
+      "type": "boolean"
+    },
+    "passively-activated": {
+      "value": "",
+      "description": "是否被动激活输入框",
+      "default": "false",
+      "type": "boolean"
     },
     "placeholder": {
       "value": "",
-      "description": "`string`",
-      "default": "提示信息",
-      "type": "string"
-    },
-    "precision": {
-      "value": "",
-      "description": "`number`",
-      "default": "数值保留的精度值，设定后会禁用 update-value-on-input",
-      "type": "number"
+      "description": "文本输入的占位符。如果 `pair` 是 `true`，`placeholder`是一个数组",
+      "default": "undefined",
+      "type": "string | [string, string]"
     },
     "readonly": {
       "value": "",
-      "description": "`boolean`",
-      "default": "是否只读",
+      "description": "是否只读",
+      "default": "false",
       "type": "boolean"
     },
-    "show-button": {
+    "render-count": {
       "value": "",
-      "description": "`boolean`",
-      "default": "是否有按钮",
+      "description": "字数统计的渲染函数",
+      "default": "undefined",
+      "type": "(props: { value: string }) => void"
+    },
+    "round": {
+      "value": "",
+      "description": "输入框是否圆角",
+      "default": "false",
       "type": "boolean"
+    },
+    "rows": {
+      "value": "",
+      "description": "输入框行数，对 type=\"textarea\" 有效",
+      "default": "3",
+      "type": "number"
+    },
+    "separator": {
+      "value": "",
+      "description": "成对输入框中间的分隔符",
+      "default": "undefined",
+      "type": "string"
+    },
+    "show-count": {
+      "value": "",
+      "description": "是否显示字数统计",
+      "default": "false",
+      "type": "boolean"
+    },
+    "show-password-on": {
+      "value": "",
+      "description": "显示密码的时机",
+      "default": "undefined",
+      "type": "'click' | 'mousedown'"
     },
     "size": {
       "value": "",
-      "description": "`'tiny' | 'small' | 'medium' | 'large'`",
-      "default": "输入框大小",
+      "description": "输入框尺寸",
+      "default": "'medium'",
       "type": "'tiny' | 'small' | 'medium' | 'large'"
     },
     "status": {
       "value": "",
-      "description": "`'success' | 'warning' | 'error'`",
-      "default": "验证状态",
+      "description": "验证状态",
+      "default": "undefined",
       "type": "'success' | 'warning' | 'error'"
     },
-    "step": {
+    "type": {
       "value": "",
-      "description": "`number`",
-      "default": "每次改变步数，可以为小数",
-      "type": "number"
-    },
-    "update-value-on-input": {
-      "value": "",
-      "description": "`boolean`",
-      "default": "在输入的过程中，在输入值合法的情况下，是否改变值",
-      "type": "boolean"
-    },
-    "validator": {
-      "value": "",
-      "description": "`(value) => boolean`",
-      "default": "设置自定义验证",
-      "type": "(value) => boolean"
+      "description": "输入框类型",
+      "default": "'text'",
+      "type": "'text' | 'password' | 'textarea'"
     },
     "value": {
       "value": "",
-      "description": "`number | null`",
-      "default": "受控模式下的值",
-      "type": "number | null"
+      "description": "文本输入的值。如果 `pair` 是 `true`，`value` 是一个数组",
+      "default": "undefined",
+      "type": "string | [string, string] | null"
+    },
+    "blur": {
+      "value": "",
+      "description": "Blur input 元素",
+      "default": "",
+      "type": "() => void"
+    },
+    "focus": {
+      "value": "",
+      "description": "Focus input 元素",
+      "default": "",
+      "type": "() => void"
+    },
+    "select": {
+      "value": "",
+      "description": "Select input 元素",
+      "default": "",
+      "type": "() => void"
+    },
+    "scrollTo": {
+      "value": "",
+      "description": "滚动到",
+      "default": "2.32.0",
+      "type": "(options: { left?: number, top?: number, behavior?: 'auto' | 'smooth' }) => void"
     }
   },
-  "methods": [{ "name": "blur", "description": "`() => void`", "params": "失焦输入" }, { "name": "focus", "description": "`() => void`", "params": "聚焦输入" }],
-  "typeDetail": {},
-  "events": [
+  "methods": [
     {
       "name": "blur",
-      "description": "`(event: FocusEvent) => void`",
-      "params": "`(event: FocusEvent) => void`"
-    },
-    {
-      "name": "clear",
-      "description": "`() => void`",
+      "description": "失焦输入",
       "params": "`() => void`"
     },
     {
       "name": "focus",
-      "description": "`(event: FocusEvent) => void`",
-      "params": "`(event: FocusEvent) => void`"
+      "description": "聚焦输入",
+      "params": "`() => void`"
+    }
+  ],
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "blur",
+      "description": "输入框失去焦点时触发",
+      "params": "`() => void`"
+    },
+    {
+      "name": "change",
+      "description": "原生 change 事件触发时触发",
+      "params": "`(value: string | [string, string]) => void`"
+    },
+    {
+      "name": "clear",
+      "description": "输入框点击清空按钮时触发",
+      "params": "`() => void`"
+    },
+    {
+      "name": "focus",
+      "description": "输入框获得焦点时触发",
+      "params": "`() => void`"
+    },
+    {
+      "name": "input",
+      "description": "输入框在用户输入时触发",
+      "params": "`(value: string | [string, string]) => void`"
     },
     {
       "name": "update:value",
-      "description": "`(value: number | null) => void`",
-      "params": "`(value: number | null) => void`"
+      "description": "输入框值 change 时触发",
+      "params": "`(value: string | [string, string]) => void`"
     }
   ],
   "link": "https://www.naiveui.com/zh-CN/dark/components/input-number"

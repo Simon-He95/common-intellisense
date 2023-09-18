@@ -3,24 +3,40 @@
   "props": {
     "container-style": {
       "value": "",
-      "description": "`string | object`",
-      "default": "加载条容器的样式",
+      "description": "加载条容器的样式",
+      "default": "undefined",
       "type": "string | object"
     },
     "loading-bar-style": {
       "value": "",
-      "description": "`{ loading?: string | object, error?: string | object }`",
-      "default": "加载条样式",
+      "description": "加载条样式",
+      "default": "undefined",
       "type": "{ loading?: string | object, error?: string | object }"
     },
     "to": {
       "value": "",
-      "description": "`string | HTMLElement | false`",
-      "default": "加载条的挂载位置",
+      "description": "加载条的挂载位置",
+      "default": "undefined",
       "type": "string | HTMLElement | false"
     }
   },
-  "methods": [],
+  "methods": [
+    {
+      "name": "error",
+      "description": "加载条出现错误的回调函数",
+      "params": "`() => void`"
+    },
+    {
+      "name": "finish",
+      "description": "加载条结束加载的回调函数",
+      "params": "`() => void`"
+    },
+    {
+      "name": "start",
+      "description": "加载条开始加载的回调函数",
+      "params": "`() => void`"
+    }
+  ],
   "typeDetail": {},
   "events": [],
   "link": "https://www.naiveui.com/zh-CN/dark/components/loading-bar"

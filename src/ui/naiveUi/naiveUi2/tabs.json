@@ -3,128 +3,134 @@
   "props": {
     "addable": {
       "value": "",
-      "description": "`boolean | { disabled?: boolean }`",
-      "default": "是否允许添加标签，只在标签的 type 为 card 时生效",
+      "description": "是否允许添加标签，只在标签的 `type` 为 `card` 时生效",
+      "default": "false",
       "type": "boolean | { disabled?: boolean }"
     },
     "animated": {
       "value": "",
-      "description": "`boolean`",
-      "default": "标签页切换是否使用动画，当 placement 为 'left' 或 'right' 时不生效",
+      "description": "标签页切换是否使用动画，当 `placement` 为 `'left'` 或 `'right'` 时不生效",
+      "default": "false",
       "type": "boolean"
     },
     "bar-width": {
       "value": "",
-      "description": "`number`",
-      "default": "标签条的宽度",
+      "description": "标签条的宽度",
+      "default": "undefined",
       "type": "number"
     },
     "closable": {
       "value": "",
-      "description": "`boolean`",
-      "default": "是否允许关闭标签，只在标签的 type 为 card 时生效",
+      "description": "是否允许关闭标签，只在标签的 `type` 为 `card` 时生效",
+      "default": "false",
       "type": "boolean"
     },
     "default-value": {
       "value": "",
-      "description": "`string | number`",
-      "default": "非受控模式下的默认值",
+      "description": "非受控模式下的默认值",
+      "default": "undefined",
       "type": "string | number"
     },
     "justify-content": {
       "value": "",
-      "description": "`'space-between' | 'space-around' | 'space-evenly' | 'start' | 'center' | 'end'`",
-      "default": "flex 布局下主轴的排列方式，只对 'line' 和 'bar' 类型生效",
+      "description": "`flex` 布局下主轴的排列方式，只对 `'line'` 和 `'bar'` 类型生效",
+      "default": "undefined",
       "type": "'space-between' | 'space-around' | 'space-evenly' | 'start' | 'center' | 'end'"
     },
     "size": {
       "value": "",
-      "description": "`'small' | 'medium' | 'large'`",
-      "default": "标签页的尺寸",
+      "description": "标签页的尺寸",
+      "default": "'medium'",
       "type": "'small' | 'medium' | 'large'"
     },
     "pane-class": {
       "value": "",
-      "description": "`string`",
-      "default": "面板的类名",
+      "description": "面板的类名",
+      "default": "undefined",
       "type": "string"
     },
     "pane-style": {
       "value": "",
-      "description": "`string | object`",
-      "default": "面板的样式",
+      "description": "面板的样式",
+      "default": "undefined",
       "type": "string | object"
     },
     "pane-wrapper-class": {
       "value": "",
-      "description": "`string`",
-      "default": "面板容器的类名",
+      "description": "面板容器的类名",
+      "default": "undefined",
       "type": "string"
     },
     "pane-wrapper-style": {
       "value": "",
-      "description": "`string | object`",
-      "default": "面板容器的样式",
+      "description": "面板容器的样式",
+      "default": "undefined",
       "type": "string | object"
     },
     "placement": {
       "value": "",
-      "description": "`'left' | 'right' | 'top' | 'bottom'`",
-      "default": "标签的位置，对于 'segment' 类型的 n-tabs 不生效",
+      "description": "标签的位置，对于 `'segment'` 类型的 `n-tabs` 不生效",
+      "default": "'top'",
       "type": "'left' | 'right' | 'top' | 'bottom'"
     },
     "tab-style": {
       "value": "",
-      "description": "`string | object`",
-      "default": "标签的样式",
+      "description": "标签的样式",
+      "default": "undefined",
       "type": "string | object"
     },
     "tabs-padding": {
       "value": "",
-      "description": "`number`",
-      "default": "全部标签最左和最右的 padding",
+      "description": "全部标签最左和最右的 `padding`",
+      "default": "0",
       "type": "number"
     },
     "trigger": {
       "value": "",
-      "description": "`'click' | 'hover'`",
-      "default": "触发 tab 的方式",
+      "description": "触发 tab 的方式",
+      "default": "'click'",
       "type": "'click' | 'hover'"
     },
     "type": {
       "value": "",
-      "description": "`'bar' | 'line' | 'card' | 'segment'`",
-      "default": "标签类型",
+      "description": "标签类型",
+      "default": "'bar'",
       "type": "'bar' | 'line' | 'card' | 'segment'"
     },
     "value": {
       "value": "",
-      "description": "`string | number`",
-      "default": "受控模式下的值",
+      "description": "受控模式下的值",
+      "default": "undefined",
       "type": "string | number"
     }
   },
-  "methods": [{ "name": "syncBarPosition", "description": "`() => void`", "params": "更新指示条的位置" }],
+  "methods": [
+    {
+      "name": "syncBarPosition",
+      "description": "更新指示条的位置",
+      "params": "`() => void`"
+    }
+  ],
   "typeDetail": {},
   "events": [
     {
       "name": "add",
-      "description": "`() => void`",
+      "description": "添加标签的回调函数",
       "params": "`() => void`"
     },
     {
       "name": "before-leave",
-      "description": "`(name: string | number, oldName: string | number | null) => boolean | Promise<boolean>`",
+      "description": "切换标签之前的钩子函数，返回 `false` 或 promise resolve `false` 或 promise reject 会阻止切换",
       "params": "`(name: string | number, oldName: string | number | null) => boolean | Promise<boolean>`"
     },
     {
       "name": "close",
-      "description": "`(name: string | number) => void`",
+      "description": "关闭标签的回调函数",
       "params": "`(name: string | number) => void`"
     },
     {
       "name": "update:value",
-      "description": "`(value: string | number) => void`",
+      "description": "选中发生改变时的回调函数",
       "params": "`(value: string | number) => void`"
     }
   ],

@@ -3,49 +3,138 @@
   "props": {
     "closable": {
       "value": "",
-      "description": "`boolean`",
-      "default": "所有 Message 是否显示 close 图标",
+      "description": "所有 Message 是否显示 close 图标",
+      "default": "false",
       "type": "boolean"
     },
     "container-style": {
       "value": "",
-      "description": "`string | CSSProperties`",
-      "default": "Message 容器的样式",
+      "description": "Message 容器的样式",
+      "default": "undefined",
       "type": "string | CSSProperties"
     },
     "duration": {
       "value": "",
-      "description": "`number`",
-      "default": "所有 Message 默认的持续时长",
+      "description": "所有 Message 默认的持续时长",
+      "default": "3000",
       "type": "number"
     },
     "keep-alive-on-hover": {
       "value": "",
-      "description": "`boolean`",
-      "default": "所有 Message 在悬浮信息上时是否不销毁",
+      "description": "所有 Message 在悬浮信息上时是否不销毁",
+      "default": "false",
       "type": "boolean"
     },
     "max": {
       "value": "",
-      "description": "`number`",
-      "default": "限制提示信息显示的个数",
+      "description": "限制提示信息显示的个数",
+      "default": "undefined",
       "type": "number"
     },
     "placement": {
       "value": "",
-      "description": "`top | top-left | top-right | bottom | bottom-left | bottom-right `",
-      "default": "所有 Message 显示的位置",
+      "description": "所有 Message 显示的位置",
+      "default": "top",
       "type": "top | top-left | top-right | bottom | bottom-left | bottom-right "
     },
     "to": {
       "value": "",
-      "description": "`string | HTMLElement`",
-      "default": "Message 容器节点的位置",
+      "description": "Message 容器节点的位置",
+      "default": "'body'",
       "type": "string | HTMLElement"
     }
   },
-  "methods": [{ "name": "destroyAll", "description": "`() => void`", "params": "销毁所有弹出的信息" }, { "name": "create", "description": "`(content: string | (() => VNodeChild), option?: MessageOption) => MessageReactive`", "params": "调用 create 类型的信息" }, { "name": "error", "description": "`(content: string | (() => VNodeChild), option?: MessageOption) => MessageReactive`", "params": "调用 error 类型的信息" }, { "name": "info", "description": "`(content: string | (() => VNodeChild), option?: MessageOption) => MessageReactive`", "params": "调用 info 类型的信息" }, { "name": "loading", "description": "`(content: string | (() => VNodeChild), option?: MessageOption) => MessageReactive`", "params": "调用 loading 类型的信息" }, { "name": "success", "description": "`(content: string | (() => VNodeChild), option?: MessageOption) => MessageReactive`", "params": "调用 success 类型的信息" }, { "name": "warning", "description": "`(content: string | (() => VNodeChild), option?: MessageOption) => MessageReactive`", "params": "调用 warning 类型的信息" }],
-  "typeDetail": { "MessageOption Properties": [{ "name": "closable", "description": "`boolean`", "type": "是否显示 close 图标" }, { "name": "duration", "description": "`number`", "type": "信息展示的时长" }, { "name": "icon", "description": "`() => VNodeChild`", "type": "信息图标" }, { "name": "keepAliveOnHover", "description": "`boolean`", "type": "Hover 到信息上是否不销毁" }, { "name": "render", "description": "`MessageRenderMessage`", "type": "消息的渲染函数" }, { "name": "showIcon", "description": "`boolean`", "type": "是否展示图标" }, { "name": "type", "description": "`'info' | 'success' | 'warning' | 'error' | 'loading' | 'default'`", "type": "信息类型" }, { "name": "onAfterLeave", "description": "`() => void`", "type": "信息消失动画结束的回调" }, { "name": "onClose", "description": "`() => void`", "type": "点击关闭图标的回调" }, { "name": "onLeave", "description": "`() => void`", "type": "信息开始消失的回调" }] },
+  "methods": [
+    {
+      "name": "destroyAll",
+      "description": "销毁所有弹出的信息",
+      "params": "`() => void`"
+    },
+    {
+      "name": "create",
+      "description": "调用 create 类型的信息",
+      "params": "`(content: string | (() => VNodeChild), option?: MessageOption) => MessageReactive`"
+    },
+    {
+      "name": "error",
+      "description": "调用 error 类型的信息",
+      "params": "`(content: string | (() => VNodeChild), option?: MessageOption) => MessageReactive`"
+    },
+    {
+      "name": "info",
+      "description": "调用 info 类型的信息",
+      "params": "`(content: string | (() => VNodeChild), option?: MessageOption) => MessageReactive`"
+    },
+    {
+      "name": "loading",
+      "description": "调用 loading 类型的信息",
+      "params": "`(content: string | (() => VNodeChild), option?: MessageOption) => MessageReactive`"
+    },
+    {
+      "name": "success",
+      "description": "调用 success 类型的信息",
+      "params": "`(content: string | (() => VNodeChild), option?: MessageOption) => MessageReactive`"
+    },
+    {
+      "name": "warning",
+      "description": "调用 warning 类型的信息",
+      "params": "`(content: string | (() => VNodeChild), option?: MessageOption) => MessageReactive`"
+    }
+  ],
+  "typeDetail": {
+    "MessageOption": [
+      {
+        "name": "closable",
+        "description": "是否显示 close 图标",
+        "type": "`boolean`"
+      },
+      {
+        "name": "duration",
+        "description": "信息展示的时长",
+        "type": "`number`"
+      },
+      {
+        "name": "icon",
+        "description": "信息图标",
+        "type": "`() => VNodeChild`"
+      },
+      {
+        "name": "keepAliveOnHover",
+        "description": "Hover 到信息上是否不销毁",
+        "type": "`boolean`"
+      },
+      {
+        "name": "render",
+        "description": "消息的渲染函数",
+        "type": "`MessageRenderMessage`"
+      },
+      {
+        "name": "showIcon",
+        "description": "是否展示图标",
+        "type": "`boolean`"
+      },
+      {
+        "name": "type",
+        "description": "信息类型",
+        "type": "`'info' | 'success' | 'warning' | 'error' | 'loading' | 'default'`"
+      },
+      {
+        "name": "onAfterLeave",
+        "description": "信息消失动画结束的回调",
+        "type": "`() => void`"
+      },
+      {
+        "name": "onClose",
+        "description": "点击关闭图标的回调",
+        "type": "`() => void`"
+      },
+      {
+        "name": "onLeave",
+        "description": "信息开始消失的回调",
+        "type": "`() => void`"
+      }
+    ]
+  },
   "events": [],
   "link": "https://www.naiveui.com/en-US/dark/components/message"
 }

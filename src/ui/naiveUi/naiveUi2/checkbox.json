@@ -1,62 +1,183 @@
 {
   "name": "NCheckbox",
   "props": {
-    "checked": {
+    "autoplay": {
       "value": "",
-      "description": "`boolean`",
-      "default": "受控状态下是否选中",
+      "description": "是否自动播放",
+      "default": "false",
       "type": "boolean"
     },
-    "default-checked": {
+    "centered-slides": {
       "value": "",
-      "description": "`boolean`",
-      "default": "非受控模式下默认是否选中",
+      "description": "是否居中显示当前页轮播图",
+      "default": "false",
       "type": "boolean"
     },
-    "disabled": {
+    "current-index": {
       "value": "",
-      "description": "`boolean`",
-      "default": "是否禁用",
+      "description": "当前显示页",
+      "default": "undefined",
+      "type": "number"
+    },
+    "default-index": {
+      "value": "",
+      "description": "默认显示页",
+      "default": "0",
+      "type": "number"
+    },
+    "direction": {
+      "value": "",
+      "description": "轮播图显示的方向",
+      "default": "'horizontal'",
+      "type": "'horizontal' | 'vertical'"
+    },
+    "dot-placement": {
+      "value": "",
+      "description": "轮播指示点位置",
+      "default": "'bottom'",
+      "type": "'top' | 'bottom' | 'left' | 'right'"
+    },
+    "dot-type": {
+      "value": "",
+      "description": "轮播指示点样式",
+      "default": "'dot'",
+      "type": "'dot' | 'line'"
+    },
+    "draggable": {
+      "value": "",
+      "description": "是否通过鼠标拖拽切换轮播图",
+      "default": "false",
       "type": "boolean"
     },
-    "focusable": {
+    "effect": {
       "value": "",
-      "description": "`boolean`",
-      "default": "是否可被 focus",
+      "description": "轮播图切换时的过渡效果",
+      "default": "'slide'",
+      "type": "'slide' | 'fade' | 'card' | 'custom'"
+    },
+    "interval": {
+      "value": "",
+      "description": "自动播放的间隔（ms）",
+      "default": "5000",
+      "type": "number"
+    },
+    "keyboard": {
+      "value": "",
+      "description": "是否通过按键切换轮播图，只有焦点在 Dots 上时才起作用",
+      "default": "false",
       "type": "boolean"
     },
-    "indeterminate": {
+    "loop": {
       "value": "",
-      "description": "`boolean`",
-      "default": "是否部分选中",
+      "description": "是否循环播放",
+      "default": "true",
       "type": "boolean"
     },
-    "label": {
+    "mousewheel": {
       "value": "",
-      "description": "`string`",
-      "default": "Checkbox 的标签",
-      "type": "string"
+      "description": "是否通过鼠标滚轮切换轮播图",
+      "default": "false",
+      "type": "boolean"
     },
-    "size": {
+    "next-slide-style": {
       "value": "",
-      "description": "`'small' | 'medium' | 'large'`",
-      "default": "组件尺寸",
-      "type": "'small' | 'medium' | 'large'"
+      "description": "下一张轮播图的样式",
+      "default": "undefined",
+      "type": "object | string"
     },
-    "value": {
+    "prev-slide-style": {
       "value": "",
-      "description": "`string | number`",
-      "default": "Checkbox 在 checkbox group 中使用的值",
-      "type": "string | number"
+      "description": "上一张轮播图的样式",
+      "default": "undefined",
+      "type": "object | string"
+    },
+    "slides-per-view": {
+      "value": "",
+      "description": "每一页显示的轮播图数量",
+      "default": "1",
+      "type": "'auto' | number"
+    },
+    "space-between": {
+      "value": "",
+      "description": "轮播图之间的间距",
+      "default": "0",
+      "type": "number"
+    },
+    "show-arrow": {
+      "value": "",
+      "description": "是否显示箭头按钮",
+      "default": "false",
+      "type": "boolean"
+    },
+    "show-dots": {
+      "value": "",
+      "description": "是否展示指示点",
+      "default": "true",
+      "type": "boolean"
+    },
+    "touchable": {
+      "value": "",
+      "description": "是否通过触摸拖拽切换轮播图",
+      "default": "true",
+      "type": "boolean"
+    },
+    "transition-style": {
+      "value": "",
+      "description": "过渡效果的样式",
+      "default": "{ transitionDuration: '300ms' }",
+      "type": "{ transitionDuration?: string, transitionTimingFunction?: string }"
+    },
+    "transition-props": {
+      "value": "",
+      "description": "自定义过渡效果属性，[参考 Vue 文档](https://v3.cn.vuejs.org/api/built-in-components.html#transition)",
+      "default": "undefined",
+      "type": "TransitionProps"
+    },
+    "trigger": {
+      "value": "",
+      "description": "触发切换的方式",
+      "default": "'click'",
+      "type": "'click' | 'hover'"
     }
   },
-  "methods": [{ "name": "focus", "description": "`() => void`", "params": "聚焦" }, { "name": "blur", "description": "`() => void`", "params": "失焦" }],
+  "methods": [
+    {
+      "name": "to",
+      "description": "滑动至某一页",
+      "params": "`(index: number) => void`"
+    },
+    {
+      "name": "prev",
+      "description": "滑动至前一页",
+      "params": "`() => void`"
+    },
+    {
+      "name": "next",
+      "description": "滑动至后一页",
+      "params": "`() => void`"
+    },
+    {
+      "name": "getCurrentIndex",
+      "description": "获取当前页",
+      "params": "`() => number`"
+    },
+    {
+      "name": "focus",
+      "description": "聚焦",
+      "params": "`() => void`"
+    },
+    {
+      "name": "blur",
+      "description": "失焦",
+      "params": "`() => void`"
+    }
+  ],
   "typeDetail": {},
   "events": [
     {
-      "name": "update:checked",
-      "description": "`(checked: boolean) => void`",
-      "params": "`(checked: boolean) => void`"
+      "name": "update:current-index",
+      "description": "当前页变化时的回调函数",
+      "params": "`(currentIndex: number, lastIndex: number) => void`"
     }
   ],
   "link": "https://www.naiveui.com/zh-CN/dark/components/checkbox"

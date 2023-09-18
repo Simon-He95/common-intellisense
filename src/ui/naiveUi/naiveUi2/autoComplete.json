@@ -3,175 +3,203 @@
   "props": {
     "blur-after-select": {
       "value": "",
-      "description": "`boolean`",
-      "default": "选中后是否 blur",
+      "description": "选中后是否 blur",
+      "default": "false",
       "type": "boolean"
     },
     "clear-after-select": {
       "value": "",
-      "description": "`boolean`",
-      "default": "选中后是否清空",
+      "description": "选中后是否清空",
+      "default": "false",
       "type": "boolean"
     },
     "clearable": {
       "value": "",
-      "description": "`boolean`",
-      "default": "自动填充是否支持可清除",
+      "description": "自动填充是否支持可清除",
+      "default": "false",
       "type": "boolean"
     },
     "default-value": {
       "value": "",
-      "description": "`string`",
-      "default": "自动填充的默认值",
+      "description": "自动填充的默认值",
+      "default": "null",
       "type": "string"
     },
     "disabled": {
       "value": "",
-      "description": "`boolean`",
-      "default": "自动填充是否禁用",
+      "description": "自动填充是否禁用",
+      "default": "false",
       "type": "boolean"
     },
     "get-show": {
       "value": "",
-      "description": "`(value: string) => boolean`",
-      "default": "根据输入值在聚焦的状态中决定是否显示菜单",
+      "description": "根据输入值在聚焦的状态中决定是否显示菜单",
+      "default": "undefined",
       "type": "(value: string) => boolean"
     },
     "input-props": {
       "value": "",
-      "description": "`HTMLInputAttributes`",
-      "default": "自动填充中 input 元素的属性",
+      "description": "自动填充中 input 元素的属性",
+      "default": "undefined",
       "type": "HTMLInputAttributes"
     },
     "loading": {
       "value": "",
-      "description": "`boolean`",
-      "default": "是否展示加载状态",
+      "description": "是否展示加载状态",
+      "default": "false",
       "type": "boolean"
     },
-    "menu-props": {
+    ":menu-props": {
       "value": "",
-      "description": "`HTMLAttributes`",
-      "default": "菜单的 DOM 属性",
+      "description": "菜单的 DOM 属性",
+      "default": "undefined",
       "type": "HTMLAttributes"
     },
-    "options": {
+    ":options": {
       "value": "",
-      "description": "`Array<string | AutoCompleteOption | AutoCompleteGroupOption>`",
-      "default": "自动填充的自定义选项",
+      "description": "自动填充的自定义选项",
+      "default": "[]",
       "type": "Array<string | AutoCompleteOption | AutoCompleteGroupOption>"
     },
     "placeholder": {
       "value": "",
-      "description": "`string`",
-      "default": "自动填充的提示信息",
+      "description": "自动填充的提示信息",
+      "default": "'请输入'",
       "type": "string"
     },
     "placement": {
       "value": "",
-      "description": "`'top-start' | 'top' | 'top-end' | 'right-start' | 'right' | 'right-end' | 'bottom-start' | 'bottom' | 'bottom-end' | 'left-start' | 'left' | 'left-end'`",
-      "default": "自动填充的弹出位置",
+      "description": "自动填充的弹出位置",
+      "default": "'bottom-start'",
       "type": "'top-start' | 'top' | 'top-end' | 'right-start' | 'right' | 'right-end' | 'bottom-start' | 'bottom' | 'bottom-end' | 'left-start' | 'left' | 'left-end'"
     },
     "render-label": {
       "value": "",
-      "description": "`(option: SelectOption | SelectGroupOption, selected: boolean) => VNodeChild`",
-      "default": "选项标签渲染函数",
+      "description": "选项标签渲染函数",
+      "default": "undefined",
       "type": "(option: SelectOption | SelectGroupOption, selected: boolean) => VNodeChild"
     },
     "render-option": {
       "value": "",
-      "description": "`(info: { node: VNode, option: SelectOption | SelectGroupOption, selected: boolean }) => VNodeChild`",
-      "default": "选项的渲染函数",
+      "description": "选项的渲染函数",
+      "default": "undefined",
       "type": "(info: { node: VNode, option: SelectOption | SelectGroupOption, selected: boolean }) => VNodeChild"
     },
     "size": {
       "value": "",
-      "description": "`'small' | 'medium' | 'large'`",
-      "default": "自动填充的尺寸大小",
+      "description": "自动填充的尺寸大小",
+      "default": "'medium'",
       "type": "'small' | 'medium' | 'large'"
     },
     "to": {
       "value": "",
-      "description": "`string | HTMLElement | false`",
-      "default": "菜单的容器节点，false 会待在原地",
+      "description": "菜单的容器节点，`false` 会待在原地",
+      "default": "body",
       "type": "string | HTMLElement | false"
     },
     "status": {
       "value": "",
-      "description": "`'success' | 'warning' | 'error'`",
-      "default": "验证状态",
+      "description": "验证状态",
+      "default": "undefined",
       "type": "'success' | 'warning' | 'error'"
     },
     "value": {
       "value": "",
-      "description": "`string`",
-      "default": "自动填充的数据用户可控",
+      "description": "自动填充的数据用户可控",
+      "default": "undefined",
       "type": "string"
+    },
+    "default": {
+      "value": "",
+      "description": "自定义输入元素，由用户填充",
+      "default": "",
+      "type": "自定义输入元素，由用户填充"
+    },
+    "prefix": {
+      "value": "",
+      "description": "输入框头部内容",
+      "default": "",
+      "type": "输入框头部内容"
+    },
+    "suffix": {
+      "value": "",
+      "description": "输入框尾部内容",
+      "default": "",
+      "type": "输入框尾部内容"
     }
   },
-
-  "methods": [{ "name": "blur", "description": "`() => void`", "params": "Blur input 元素" }, { "name": "focus", "description": "`() => void`", "params": "Focus input 元素" }],
+  "methods": [
+    {
+      "name": "blur",
+      "description": "Blur input 元素",
+      "params": "`() => void`"
+    },
+    {
+      "name": "focus",
+      "description": "Focus input 元素",
+      "params": "`() => void`"
+    }
+  ],
   "typeDetail": {
     "AutoCompleteOption": [
       {
         "name": "disabled",
-        "description": "`boolean`",
-        "type": "是否禁用"
+        "description": "是否禁用",
+        "type": "`boolean`"
       },
       {
         "name": "label",
-        "description": "`string`",
-        "type": "显示的 label 值"
+        "description": "显示的 label 值",
+        "type": "`string`"
       },
       {
         "name": "value",
-        "description": "`string`",
-        "type": "需要唯一"
+        "description": "需要唯一",
+        "type": "`string`"
       }
     ],
     "AutoCompleteGroupOption": [
       {
         "name": "children",
-        "description": "`Array<string | AutoCompleteOption>`",
-        "type": "AutoCompleteGroupOption 的 children 项"
+        "description": "AutoCompleteGroupOption 的 children 项",
+        "type": "`Array<string | AutoCompleteOption>`"
       },
       {
         "name": "label",
-        "description": "`string`",
-        "type": "AutoCompleteGroupOption 的名字"
+        "description": "AutoCompleteGroupOption 的名字",
+        "type": "`string`"
       },
       {
         "name": "key",
-        "description": "`string | number`",
-        "type": "AutoCompleteGroupOption 的 key"
+        "description": "AutoCompleteGroupOption 的 key",
+        "type": "`string | number`"
       },
       {
         "name": "type",
-        "description": "`'group'`",
-        "type": "AutoCompleteGroupOption 的类型"
+        "description": "AutoCompleteGroupOption 的类型",
+        "type": "`'group'`"
       }
     ]
   },
   "events": [
     {
       "name": "blur",
-      "description": "`(event: FocusEvent) => void`",
+      "description": "blur 时触发的回调函数",
       "params": "`(event: FocusEvent) => void`"
     },
     {
       "name": "focus",
-      "description": "`(event: FocusEvent) => void`",
+      "description": "focus 时触发的回调函数",
       "params": "`(event: FocusEvent) => void`"
     },
     {
       "name": "select",
-      "description": "`(value: string) => void`",
+      "description": "select 选中时触发的回调函数",
       "params": "`(value: string) => void`"
     },
     {
       "name": "update:value",
-      "description": "`(value: string | null) => void`",
+      "description": "可控数据更新时触发的回调函数",
       "params": "`(value: string | null) => void`"
     }
   ],

@@ -3,262 +3,265 @@
   "props": {
     "allow-checking-not-loaded": {
       "value": "",
-      "description": "`boolean`",
-      "default": "是否允许级联勾选还没有完全加载的节点。如果你要用这个属性，请记住 value 可能是不完整的，并且请注意勾选行为和后端计算逻辑的一致性，尤其是有禁用节点的情况下",
-      "type": "false"
+      "description": "是否允许级联勾选还没有完全加载的节点。如果你要用这个属性，请记住 `value` 可能是不完整的，并且请注意勾选行为和后端计算逻辑的一致性，尤其是有禁用节点的情况下",
+      "default": "false",
+      "type": "boolean"
     },
     "cascade": {
       "value": "",
-      "description": "`boolean`",
-      "default": "在多选时是否关联选项",
-      "type": "true"
+      "description": "在多选时是否关联选项",
+      "default": "true",
+      "type": "boolean"
     },
     "check-strategy": {
       "value": "",
-      "description": "`string`",
-      "default": "设置勾选策略来指定显示的勾选节点，all 表示显示全部选中节点；parent 表示只显示父节点（当父节点下所有子节点都选中时，对于单选无效）；child 表示只显示子节点",
-      "type": "'all'"
+      "description": "设置勾选策略来指定显示的勾选节点，`all` 表示显示全部选中节点；`parent` 表示只显示父节点（当父节点下所有子节点都选中时，对于单选无效）；`child` 表示只显示子节点",
+      "default": "'all'",
+      "type": "string"
     },
     "children-field": {
       "value": "",
-      "description": "`string`",
-      "default": "替代 CascaderOption 中的 children 字段名",
-      "type": "'children'"
+      "description": "替代 `CascaderOption` 中的 children 字段名",
+      "default": "'children'",
+      "type": "string"
     },
     "clearable": {
       "value": "",
-      "description": "`boolean`",
-      "default": "值是否可清除",
-      "type": "false"
+      "description": "值是否可清除",
+      "default": "false",
+      "type": "boolean"
     },
     "clear-filter-after-select": {
       "value": "",
-      "description": "`boolean`",
-      "default": "是否在可过滤和多选的情况下选中一个选项后保留当前的搜索关键词",
-      "type": "true"
+      "description": "是否在可过滤和多选的情况下选中一个选项后保留当前的搜索关键词",
+      "default": "true",
+      "type": "boolean"
     },
     "default-value": {
       "value": "",
-      "description": "`string | number | Array<number | string> | null`",
-      "default": "级联菜单默认选中的数据",
-      "type": "null"
+      "description": "级联菜单默认选中的数据",
+      "default": "null",
+      "type": "string | number | Array<number | string> | null"
     },
     "disabled": {
       "value": "",
-      "description": "`boolean`",
-      "default": "是否禁用",
-      "type": "false"
+      "description": "是否禁用",
+      "default": "false",
+      "type": "boolean"
     },
     "disabled-field": {
       "value": "",
-      "description": "`string`",
-      "default": "替代 CascaderOption 中的 disabled 字段名",
-      "type": "'disabled'"
+      "description": "替代 `CascaderOption` 中的 disabled 字段名",
+      "default": "'disabled'",
+      "type": "string"
     },
     "expand-trigger": {
       "value": "",
-      "description": "`'click' | 'hover'`",
-      "default": "在 remote 被设定时 'hover' 不生效",
-      "type": "'click'"
+      "description": "在 `remote` 被设定时 `'hover'` 不生效",
+      "default": "'click'",
+      "type": "'click' | 'hover'"
     },
     "filterable": {
       "value": "",
-      "description": "`boolean`",
-      "default": "remote 被设定时不生效",
-      "type": "false"
+      "description": "`remote` 被设定时不生效",
+      "default": "false",
+      "type": "boolean"
     },
     "filter": {
       "value": "",
-      "description": "`(pattern: string, option: CascaderOption, path: CascaderOption[]) => boolean`",
-      "default": "过滤选项的函数",
-      "type": "一个基于字符串的过滤算法"
+      "description": "过滤选项的函数",
+      "default": "一个基于字符串的过滤算法",
+      "type": "(pattern: string, option: CascaderOption, path: CascaderOption[]) => boolean"
     },
     "filter-menu-props": {
       "value": "",
-      "description": "`HTMLAttributes`",
-      "default": "可过滤菜单的 DOM 属性",
-      "type": "undefined"
+      "description": "可过滤菜单的 DOM 属性",
+      "default": "undefined",
+      "type": "HTMLAttributes"
     },
     "value-field": {
       "value": "",
-      "description": "`string`",
-      "default": "替代 CascaderOption 中的 value 字段名",
-      "type": "'value'"
+      "description": "替代 `CascaderOption` 中的 value 字段名",
+      "default": "'value'",
+      "type": "string"
     },
     "label-field": {
       "value": "",
-      "description": "`string`",
-      "default": "替代 CascaderOption 中的 label 字段名",
-      "type": "'label'"
+      "description": "替代 `CascaderOption` 中的 label 字段名",
+      "default": "'label'",
+      "type": "string"
     },
     "max-tag-count": {
       "value": "",
-      "description": "`number | 'responsive'`",
-      "default": "多选标签的最大显示数量，responsive 会将所有标签保持在一行",
-      "type": "undefined"
+      "description": "多选标签的最大显示数量，`responsive` 会将所有标签保持在一行",
+      "default": "undefined",
+      "type": "number | 'responsive'"
     },
     "menu-props": {
       "value": "",
-      "description": "`HTMLAttributes`",
-      "default": "菜单的 DOM 属性",
-      "type": "undefined"
+      "description": "菜单的 DOM 属性",
+      "default": "undefined",
+      "type": "HTMLAttributes"
     },
     "multiple": {
       "value": "",
-      "description": "`boolean`",
-      "default": "是否支持多选",
-      "type": "false"
+      "description": "是否支持多选",
+      "default": "false",
+      "type": "boolean"
     },
     "options": {
       "value": "",
-      "description": "`CascaderOption[]`",
-      "default": "填充的 options 数据",
-      "type": "[]"
+      "description": "填充的 options 数据",
+      "default": "[]",
+      "type": "CascaderOption[]"
     },
     "placeholder": {
       "value": "",
-      "description": "`string`",
-      "default": "提示信息",
-      "type": "'请选择'"
+      "description": "提示信息",
+      "default": "'请选择'",
+      "type": "string"
     },
     "placement": {
       "value": "",
-      "description": "`'top-start' | 'top' | 'top-end' | 'right-start' | 'right' | 'right-end' | 'bottom-start' | 'bottom' | 'bottom-end' | 'left-start' | 'left' | 'left-end'`",
-      "default": "弹出位置",
-      "type": "'bottom-start'"
+      "description": "弹出位置",
+      "default": "'bottom-start'",
+      "type": "'top-start' | 'top' | 'top-end' | 'right-start' | 'right' | 'right-end' | 'bottom-start' | 'bottom' | 'bottom-end' | 'left-start' | 'left' | 'left-end'"
     },
     "remote": {
       "value": "",
-      "description": "`boolean`",
-      "default": "是否远程获取数据",
-      "type": "false"
+      "description": "是否远程获取数据",
+      "default": "false",
+      "type": "boolean"
     },
     "render-label": {
       "value": "",
-      "description": "`(option: CascaderOption, checked: boolean) => VNodeChild`",
-      "default": "Cascader 菜单选项标签渲染函数",
-      "type": "undefined"
+      "description": "Cascader 菜单选项标签渲染函数",
+      "default": "undefined",
+      "type": "(option: CascaderOption, checked: boolean) => VNodeChild"
     },
     "separator": {
-      "value": "",
-      "description": "`string`",
-      "default": "数据分隔符",
-      "type": "' | '"
+      "value": [
+        "'",
+        "'"
+      ],
+      "description": "数据分隔符",
+      "default": "' | '",
+      "type": "string"
     },
     "show": {
       "value": "",
-      "description": "`boolean`",
-      "default": "是否打开菜单",
-      "type": "undefined"
+      "description": "是否打开菜单",
+      "default": "undefined",
+      "type": "boolean"
     },
     "show-path": {
       "value": "",
-      "description": "`boolean`",
-      "default": "是否在选择器中显示选项路径",
-      "type": "true"
+      "description": "是否在选择器中显示选项路径",
+      "default": "true",
+      "type": "boolean"
     },
     "size": {
       "value": "",
-      "description": "`'small' | 'medium' | 'large'`",
-      "default": "尺寸",
-      "type": "'medium'"
+      "description": "尺寸",
+      "default": "'medium'",
+      "type": "'small' | 'medium' | 'large'"
     },
     "status": {
       "value": "",
-      "description": "`'success' | 'warning' | 'error'`",
-      "default": "验证状态",
-      "type": "undefined"
+      "description": "验证状态",
+      "default": "undefined",
+      "type": "'success' | 'warning' | 'error'"
     },
     "to": {
       "value": "",
-      "description": "`string | HTMLElement | false`",
-      "default": "菜单的容器节点，false 会待在原地",
-      "type": "body"
+      "description": "菜单的容器节点，`false` 会待在原地",
+      "default": "body",
+      "type": "string | HTMLElement | false"
     },
     "value": {
       "value": "",
-      "description": "`string | number | Array<number | string> | null`",
-      "default": "级联选择的数据受控",
-      "type": "undefined"
+      "description": "级联选择的数据受控",
+      "default": "undefined",
+      "type": "string | number | Array<number | string> | null"
     },
     "virtual-scroll": {
       "value": "",
-      "description": "`boolean`",
-      "default": "是否支持虚拟滚动",
-      "type": "true"
+      "description": "是否支持虚拟滚动",
+      "default": "true",
+      "type": "boolean"
     }
   },
   "methods": [
     {
       "name": "blur",
-      "description": "`() => void`",
-      "params": "失焦"
+      "description": "失焦",
+      "params": "`() => void`"
     },
     {
       "name": "focus",
-      "description": "`() => void`",
-      "params": "聚焦"
+      "description": "聚焦",
+      "params": "`() => void`"
     },
     {
       "name": "getCheckedData",
-      "description": "`() => { keys: Array<string | number>, options: Array<TreeOption | null> }`",
-      "params": "获取选中的数据"
+      "description": "获取选中的数据",
+      "params": "`() => { keys: Array<string | number>, options: Array<TreeOption | null> }`"
     },
     {
       "name": "getIndeterminateData",
-      "description": "`() => { keys: Array<string | number>, options: Array<TreeOption | null> }`",
-      "params": "获取半选的数据"
+      "description": "获取半选的数据",
+      "params": "`() => { keys: Array<string | number>, options: Array<TreeOption | null> }`"
     }
   ],
   "typeDetail": {
-    "CascaderOption Properties": [
+    "CascaderOption": [
       {
         "name": "label",
-        "description": "`string`",
-        "type": "label 标签，用于展示信息"
+        "description": "label 标签，用于展示信息",
+        "type": "`string`"
       },
       {
         "name": "value",
-        "description": "`string | number`",
-        "type": "对应 label 的 value 值"
+        "description": "对应 label 的 value 值",
+        "type": "`string | number`"
       },
       {
         "name": "disabled?",
-        "description": "`boolean`",
-        "type": "该项是否禁用"
+        "description": "该项是否禁用",
+        "type": "`boolean`"
       },
       {
         "name": "children?",
-        "description": "`CascaderOption`",
-        "type": "该项的子项数据"
+        "description": "该项的子项数据",
+        "type": "`CascaderOption`"
       }
     ]
   },
   "events": [
     {
       "name": "blur",
-      "description": "`() => void`",
-      "params": "`undefined`"
+      "description": "用户 blur 时执行的回调",
+      "params": "`() => void`"
     },
     {
       "name": "focus",
-      "description": "`() => void`",
-      "params": "`undefined`"
+      "description": "用户 focus 时执行的回调",
+      "params": "`() => void`"
     },
     {
       "name": "load",
-      "description": "`(option: CascaderOption) => Promise<void>`",
-      "params": "`undefined`"
+      "description": "在点击未加载完成节点时的回调，在返回的 promise 中设定 `option.children`，在返回的 promise resolve 或 reject 之后完成加载",
+      "params": "`(option: CascaderOption) => Promise<void>`"
     },
     {
       "name": "update:show",
-      "description": "`(value: boolean) => void`",
-      "params": "`undefined`"
+      "description": "菜单打开关闭的回调",
+      "params": "`(value: boolean) => void`"
     },
     {
       "name": "update:value",
-      "description": "`(value: string | number | Array<string | number> | null, option: CascaderOption | Array<CascaderOption | null> | null, pathValues: Array<CascaderOption | null> | Array<CascaderOption[] | null> | null) => void`",
-      "params": "`undefined`"
+      "description": "值改变时执行的回调",
+      "params": "`(value: string | number | Array<string | number> | null, option: CascaderOption | Array<CascaderOption | null> | null, pathValues: Array<CascaderOption | null> | Array<CascaderOption[] | null> | null) => void`"
     }
   ],
   "link": "https://www.naiveui.com/zh-CN/dark/components/cascader"

@@ -3,492 +3,485 @@
   "props": {
     "clearable": {
       "value": "",
-      "description": "`boolean`",
-      "default": "是否支持清除",
-      "type": "false"
+      "description": "是否支持清除",
+      "default": "false",
+      "type": "boolean"
     },
     "default-value": {
       "value": "",
-      "description": "`number | [number, number] | null`",
-      "default": "默认被选中的日期的时间戳",
-      "type": "undefined"
+      "description": "默认被选中的日期的时间戳",
+      "default": "undefined",
+      "type": "number | [number, number] | null"
     },
     "default-formatted-value": {
       "value": "",
-      "description": "`string | [string, string] | null`",
-      "default": "Date Picker 格式化后的值",
-      "type": "undefined"
+      "description": "Date Picker 格式化后的值",
+      "default": "undefined",
+      "type": "string | [string, string] | null"
     },
     "disabled": {
       "value": "",
-      "description": "`boolean`",
-      "default": "是否禁用",
-      "type": "false"
+      "description": "是否禁用",
+      "default": "false",
+      "type": "boolean"
     },
     "first-day-of-week": {
       "value": "",
-      "description": "`0 | 1 | 2 | 3 | 4 | 5 | 6`",
-      "default": "日历上一周的开始，0 代表周一",
-      "type": "undefined"
+      "description": "日历上一周的开始，0 代表周一",
+      "default": "undefined",
+      "type": "0 | 1 | 2 | 3 | 4 | 5 | 6"
     },
     "formatted-value": {
       "value": "",
-      "description": "`string | [string, string] | null`",
-      "default": "格式化之后的值",
-      "type": "undefined"
+      "description": "格式化之后的值",
+      "default": "undefined",
+      "type": "string | [string, string] | null"
     },
     "input-readonly": {
       "value": "",
-      "description": "`boolean`",
-      "default": "设置输入框为只读（避免在移动设备上打开虚拟键盘）",
-      "type": "false"
+      "description": "设置输入框为只读（避免在移动设备上打开虚拟键盘）",
+      "default": "false",
+      "type": "boolean"
     },
     "panel": {
       "value": "",
-      "description": "`boolean`",
-      "default": "是否只使用面板",
-      "type": "false"
+      "description": "是否只使用面板",
+      "default": "false",
+      "type": "boolean"
     },
     "placement": {
       "value": "",
-      "description": "`'top-start' | 'top' | 'top-end' | 'right-start' | 'right' | 'right-end' | 'bottom-start' | 'bottom' | 'bottom-end' | 'left-start' | 'left' | 'left-end'`",
-      "default": "面板的弹出位置",
-      "type": "'bottom-start'"
+      "description": "面板的弹出位置",
+      "default": "'bottom-start'",
+      "type": "'top-start' | 'top' | 'top-end' | 'right-start' | 'right' | 'right-end' | 'bottom-start' | 'bottom' | 'bottom-end' | 'left-start' | 'left' | 'left-end'"
     },
     "shortcuts": {
       "value": "",
-      "description": "`Record<string, number | (() => number)> | Record<string, [number, number] | (() => [number, number])>`",
-      "default": "自定义快捷按钮",
-      "type": "undefined"
+      "description": "自定义快捷按钮",
+      "default": "undefined",
+      "type": "Record<string, number | (() => number)> | Record<string, [number, number] | (() => [number, number])>"
     },
     "show": {
       "value": "",
-      "description": "`boolean`",
-      "default": "是否展示面板",
-      "type": "undefined"
+      "description": "是否展示面板",
+      "default": "undefined",
+      "type": "boolean"
     },
     "size": {
       "value": "",
-      "description": "`'small' | 'medium' | 'large'`",
-      "default": "尺寸",
-      "type": "'medium'"
+      "description": "尺寸",
+      "default": "'medium'",
+      "type": "'small' | 'medium' | 'large'"
     },
     "status": {
       "value": "",
-      "description": "`'success' | 'warning' | 'error'`",
-      "default": "验证状态",
-      "type": "undefined"
+      "description": "验证状态",
+      "default": "undefined",
+      "type": "'success' | 'warning' | 'error'"
     },
     "to": {
       "value": "",
-      "description": "`string | HTMLElement | false`",
-      "default": "面板的容器节点，false 会待在原地",
-      "type": "body"
+      "description": "面板的容器节点，`false` 会待在原地",
+      "default": "body",
+      "type": "string | HTMLElement | false"
     },
     "type": {
       "value": "",
-      "description": "`'date' | 'datetime' | 'daterange' | 'datetimerange' | 'month' | 'monthrange' | 'year' | 'quarter'`",
-      "default": "Date Picker 的类型",
-      "type": "'date'"
+      "description": "Date Picker 的类型",
+      "default": "'date'",
+      "type": "'date' | 'datetime' | 'daterange' | 'datetimerange' | 'month' | 'monthrange' | 'year' | 'quarter'"
     },
     "value": {
       "value": "",
-      "description": "`number | [number, number] | null`",
-      "default": "Date Picker 的值",
-      "type": "undefined"
+      "description": "Date Picker 的值",
+      "default": "undefined",
+      "type": "number | [number, number] | null"
     },
     "value-format": {
-      "value": [
-        "绑定值的格式，详情见 [format](https:",
-        "",
-        "date-fns.org",
-        "v2.23.0",
-        "docs",
-        "format)"
-      ],
-      "description": "`string`",
-      "default": "绑定值的格式，详情见 [format](https: |  | date-fns.org | v2.23.0 | docs | format)",
-      "type": "跟随 format 属性"
+      "value": "",
+      "description": "绑定值的格式，详情见 [format](https://date-fns.org/v2.23.0/docs/format)",
+      "default": "跟随 format 属性",
+      "type": "string"
     }
   },
   "methods": [
     {
       "name": "focus",
-      "description": "`() => void`",
-      "params": "聚焦"
+      "description": "聚焦",
+      "params": "`() => void`"
     },
     {
       "name": "blur",
-      "description": "`() => void`",
-      "params": "失焦"
+      "description": "失焦",
+      "params": "`() => void`"
     }
   ],
   "typeDetail": {
-    "Date 类型的 Props": [
+    "Date": [
       {
         "name": "actions",
-        "description": "`Array<'clear' | 'now'> | null`",
-        "type": "`['clear', 'now']`"
+        "description": "Date 类型的 Date Picker 中支持的操作",
+        "type": "`Array<'clear' | 'now'> | null`"
       },
       {
         "name": "format",
-        "description": "`string`",
-        "type": "`'yyyy-MM-dd'`"
+        "description": "时间格式化字符串，详情见 [format](https://date-fns.org/v2.23.0/docs/format)",
+        "type": "`string`"
       },
       {
         "name": "is-date-disabled",
-        "description": "`(current: number) => boolean`",
-        "type": "`undefined`"
+        "description": "日期禁用的校验函数",
+        "type": "`(current: number) => boolean`"
       },
       {
         "name": "placeholder",
-        "description": "`string`",
-        "type": "`'选择日期'`"
+        "description": "自动填充的提示信息",
+        "type": "`string`"
       },
       {
         "name": "on-update:formatted-value",
-        "description": "`(value: string | null, timestampValue: number | null) => void`",
-        "type": "`undefined`"
+        "description": "可控数据更新时触发的回调函数",
+        "type": "`(value: string | null, timestampValue: number | null) => void`"
       },
       {
         "name": "on-update:value",
-        "description": "`(value: number | null, formattedValue: string | null) => void`",
-        "type": "`undefined`"
+        "description": "可控数据更新时触发的回调函数",
+        "type": "`(value: number | null, formattedValue: string | null) => void`"
       }
     ],
-    "DateTime 类型的 Props": [
+    "DateTime": [
       {
         "name": "actions",
-        "description": "`Array<'clear' | 'now' | 'confirm'> | null`",
-        "type": "`['clear', 'now', 'confirm']`"
+        "description": "DateTime 类型的 Date Picker 中支持的操作",
+        "type": "`Array<'clear' | 'now' | 'confirm'> | null`"
       },
       {
         "name": "default-time",
-        "description": "`string`",
-        "type": "`undefined`"
+        "description": "默认时间，格式为 `HH:mm:ss`",
+        "type": "`string`"
       },
       {
         "name": "format",
-        "description": "`string`",
-        "type": "`'yyyy-MM-dd HH:mm:ss'`"
+        "description": "时间格式化字符串，详情见 [format](https://date-fns.org/v2.23.0/docs/format)",
+        "type": "`string`"
       },
       {
         "name": "is-date-disabled",
-        "description": "`(current: number) => boolean`",
-        "type": "`undefined`"
+        "description": "日期禁用的校验函数",
+        "type": "`(current: number) => boolean`"
       },
       {
         "name": "is-time-disabled",
-        "description": "`(current: number) => { isHourDisabled: boolean, isMinuteDisabled: boolean, isSecondDisabled: boolean }`",
-        "type": "`undefined`"
+        "description": "时间禁用的校验函数",
+        "type": "`(current: number) => { isHourDisabled: boolean, isMinuteDisabled: boolean, isSecondDisabled: boolean }`"
       },
       {
         "name": "placeholder",
-        "description": "`string`",
-        "type": "`'选择日期时间'`"
+        "description": "提示信息",
+        "type": "`string`"
       },
       {
         "name": "time-picker-props",
-        "description": "`TimePickerProps`",
-        "type": "`undefined`"
+        "description": "面板中时间选择器的属性",
+        "type": "`TimePickerProps`"
       },
       {
         "name": "update-value-on-close",
-        "description": "`boolean`",
-        "type": "`false`"
+        "description": "关闭面板时更新值",
+        "type": "`boolean`"
       },
       {
         "name": "on-update:formatted-value",
-        "description": "`(value: string | null, timestampValue: number | null) => void`",
-        "type": "`undefined`"
+        "description": "数据更新时触发的回调函数",
+        "type": "`(value: string | null, timestampValue: number | null) => void`"
       },
       {
         "name": "on-update:value",
-        "description": "`(value: number | null, formattedValue: string | null) => void`",
-        "type": "`undefined`"
+        "description": "数据更新时触发的回调函数",
+        "type": "`(value: number | null, formattedValue: string | null) => void`"
       }
     ],
-    "DateRange 类型的 Props": [
+    "DateRange": [
       {
         "name": "actions",
-        "description": "`Array<'clear' | 'confirm'> | null`",
-        "type": "`['clear', 'confirm']`"
+        "description": "DateRange 类型的 Date Picker 中支持的用户操作",
+        "type": "`Array<'clear' | 'confirm'> | null`"
       },
       {
         "name": "bind-calendar-months",
-        "description": "`boolean`",
-        "type": "`false`"
+        "description": "面板月份是否连续",
+        "type": "`boolean`"
       },
       {
         "name": "default-calendar-start-time",
-        "description": "`number`",
-        "type": "`undefined`"
+        "description": "面板日历默认开始的月份时间戳",
+        "type": "`number`"
       },
       {
         "name": "default-calendar-end-time",
-        "description": "`number`",
-        "type": "`undefined`"
+        "description": "面板日历默认结束的月份时间戳",
+        "type": "`number`"
       },
       {
         "name": "format",
-        "description": "`string`",
-        "type": "`'yyyy-MM-dd'`"
+        "description": "时间格式化字符串，详情见 [format](https://date-fns.org/v2.23.0/docs/format)",
+        "type": "`string`"
       },
       {
         "name": "is-date-disabled",
-        "description": "`(current: number, phase: 'start' | 'end', value: [number, number] | null) => boolean`",
-        "type": "`undefined`"
+        "description": "日期禁用的校验函数",
+        "type": "`(current: number, phase: 'start' | 'end', value: [number, number] | null) => boolean`"
       },
       {
         "name": "is-time-disabled",
-        "description": "`(current: number, phase: 'start' | 'end', value: [number, number]) => { isHourDisabled?: (hour: number) => boolean, isMinuteDisabled?: (minute: number, hour: number | null) => boolean, isSecondDisabled?: (second: number, minute: number | null, hour: number | null) => boolean }`",
-        "type": "`undefined`"
+        "description": "时间禁用的校验函数，校验函数中的 `null` 表示当前没有选中值",
+        "type": "`(current: number, phase: 'start' | 'end', value: [number, number]) => { isHourDisabled?: (hour: number) => boolean, isMinuteDisabled?: (minute: number, hour: number | null) => boolean, isSecondDisabled?: (second: number, minute: number | null, hour: number | null) => boolean }`"
       },
       {
         "name": "close-on-select",
-        "description": "`boolean`",
-        "type": "`false`"
+        "description": "用户选择时间范围后是否自动关闭面板",
+        "type": "`boolean`"
       },
       {
         "name": "separator",
-        "description": "`string`",
-        "type": "`'至'`"
+        "description": "start 选框与 end 选框之间的分隔符",
+        "type": "`string`"
       },
       {
         "name": "start-placeholder",
-        "description": "`string`",
-        "type": "`'开始日期'`"
+        "description": "DateRange 中 start 选框的提示信息",
+        "type": "`string`"
       },
       {
         "name": "update-value-on-close",
-        "description": "`boolean`",
-        "type": "`false`"
+        "description": "关闭面板时是否更新值",
+        "type": "`boolean`"
       },
       {
         "name": "on-update:formatted-value",
-        "description": "`(value: [string, string] | null, timestampValue: [number, number] | null) => void`",
-        "type": "`undefined`"
+        "description": "数据更新时触发的回调函数",
+        "type": "`(value: [string, string] | null, timestampValue: [number, number] | null) => void`"
       },
       {
         "name": "on-update:value",
-        "description": "`(value: [number, number] | null, formattedValue: [string, string] | null) => void`",
-        "type": "`undefined`"
+        "description": "数据更新时触发的回调函数",
+        "type": "`(value: [number, number] | null, formattedValue: [string, string] | null) => void`"
       }
     ],
-    "DateTimeRange 类型的 Props": [
+    "DateTimeRange": [
       {
         "name": "actions",
-        "description": "`Array<'clear' | 'confirm'> | null`",
-        "type": "`['clear', 'confirm']`"
+        "description": "DateTimeRange 类型的 Date Picker 中支持的用户操作",
+        "type": "`Array<'clear' | 'confirm'> | null`"
       },
       {
         "name": "bind-calendar-months",
-        "description": "`boolean`",
-        "type": "`false`"
+        "description": "面板月份是否连续",
+        "type": "`boolean`"
       },
       {
         "name": "default-calendar-start-time",
-        "description": "`number`",
-        "type": "`undefined`"
+        "description": "面板日历默认开始的月份时间戳",
+        "type": "`number`"
       },
       {
         "name": "default-calendar-end-time",
-        "description": "`number`",
-        "type": "`undefined`"
+        "description": "面板日历默认结束的月份时间戳",
+        "type": "`number`"
       },
       {
         "name": "default-time",
-        "description": "`string | Array<string | undefined>`",
-        "type": "`undefined`"
+        "description": "默认时间，格式为 `HH:mm:ss`",
+        "type": "`string | Array<string | undefined>`"
       },
       {
         "name": "end-placeholder",
-        "description": "`string`",
-        "type": "`'结束日期时间'`"
+        "description": "DateTimeRange 中 end 选框的提示信息",
+        "type": "`string`"
       },
       {
         "name": "format",
-        "description": "`string`",
-        "type": "`'yyyy-MM-dd HH:mm:ss'`"
+        "description": "时间格式化字符串，详情见 [format](https://date-fns.org/v2.23.0/docs/format)",
+        "type": "`string`"
       },
       {
         "name": "is-date-disabled",
-        "description": "`(current: number, phase: 'start' | 'end', value: [number, number] | null) => boolean`",
-        "type": "`undefined`"
+        "description": "日期禁用的校验函数",
+        "type": "`(current: number, phase: 'start' | 'end', value: [number, number] | null) => boolean`"
       },
       {
         "name": "is-time-disabled",
-        "description": "`(current: number, phase: 'start' | 'end', value: [number, number]) => { isHourDisabled?: (hour: number) => boolean, isMinuteDisabled?: (minute: number, hour: number | null) => boolean, isSecondDisabled?: (second: number, minute: number | null, hour: number | null) => boolean }`",
-        "type": "`undefined`"
+        "description": "时间禁用的校验函数，校验函数中的 `null` 表示当前没有选中值",
+        "type": "`(current: number, phase: 'start' | 'end', value: [number, number]) => { isHourDisabled?: (hour: number) => boolean, isMinuteDisabled?: (minute: number, hour: number | null) => boolean, isSecondDisabled?: (second: number, minute: number | null, hour: number | null) => boolean }`"
       },
       {
         "name": "separator",
-        "description": "`string`",
-        "type": "`'to'`"
+        "description": "start 选框与 end 选框之间的分隔符",
+        "type": "`string`"
       },
       {
         "name": "start-placeholder",
-        "description": "`string`",
-        "type": "`'开始日期时间'`"
+        "description": "DateTimeRange 中 start 选框的提示信息",
+        "type": "`string`"
       },
       {
         "name": "time-picker-props",
-        "description": "`TimePickerProps | [TimePickerProps, TimePickerProps]`",
-        "type": "`undefined`"
+        "description": "面板中时间选择器的属性",
+        "type": "`TimePickerProps | [TimePickerProps, TimePickerProps]`"
       },
       {
         "name": "update-value-on-close",
-        "description": "`boolean`",
-        "type": "`false`"
+        "description": "关闭面板时是否更新值",
+        "type": "`boolean`"
       },
       {
         "name": "on-update:formatted-value",
-        "description": "`(value: [string, string] | null, timestampValue: [number, number] | null) => void`",
-        "type": "`undefined`"
+        "description": "数据更新时触发的回调函数",
+        "type": "`(value: [string, string] | null, timestampValue: [number, number] | null) => void`"
       },
       {
         "name": "on-update:value",
-        "description": "`(value: [number, number] | null, formattedValue: [string, string] | null) => void`",
-        "type": "`undefined`"
+        "description": "数据更新时触发的回调函数",
+        "type": "`(value: [number, number] | null, formattedValue: [string, string] | null) => void`"
       }
     ],
-    "Month 类型的 Props": [
+    "Month": [
       {
         "name": "actions",
-        "description": "`Array<'clear' | 'now' | 'confirm'> | null`",
-        "type": "`['clear', 'now']`"
+        "description": "Month 类型的 Date Picker 中支持的操作",
+        "type": "`Array<'clear' | 'now' | 'confirm'> | null`"
       },
       {
         "name": "format",
-        "description": "`string`",
-        "type": "`'yyyy-MM'`"
+        "description": "时间格式化字符串，详情见 [format](https://date-fns.org/v2.23.0/docs/format)",
+        "type": "`string`"
       },
       {
         "name": "is-date-disabled",
-        "description": "`(current: number) => boolean`",
-        "type": "`undefined`"
+        "description": "月份禁用的校验函数",
+        "type": "`(current: number) => boolean`"
       },
       {
         "name": "placeholder",
-        "description": "`string`",
-        "type": "`'选择月份'`"
+        "description": "自动填充的提示信息",
+        "type": "`string`"
       },
       {
         "name": "on-update:formatted-value",
-        "description": "`(value: string | null, timestampValue: number | null) => void`",
-        "type": "`undefined`"
+        "description": "可控数据更新时触发的回调函数",
+        "type": "`(value: string | null, timestampValue: number | null) => void`"
       },
       {
         "name": "on-update:value",
-        "description": "`(value: number | null, formattedValue: string | null) => void`",
-        "type": "`undefined`"
+        "description": "可控数据更新时触发的回调函数",
+        "type": "`(value: number | null, formattedValue: string | null) => void`"
       }
     ],
-    "MonthRange、QuarterRange、YearRange 类型的 Props": [
+    "MonthRange、QuarterRange、YearRange": [
       {
         "name": "actions",
-        "description": "`Array<'clear' | 'confirm'> | null`",
-        "type": "`['clear', 'confirm']`"
+        "description": "MonthRange 类型的 Date Picker 中支持的用户操作",
+        "type": "`Array<'clear' | 'confirm'> | null`"
       },
       {
         "name": "end-placeholder",
-        "description": "`string`",
-        "type": "`'结束月份'`"
+        "description": "MonthRange 中 end 选框的提示信息",
+        "type": "`string`"
       },
       {
         "name": "format",
-        "description": "`string`",
-        "type": "`'yyyy-MM-dd'`"
+        "description": "时间格式化字符串，详情见 [format](https://date-fns.org/v2.23.0/docs/format)",
+        "type": "`string`"
       },
       {
         "name": "close-on-select",
-        "description": "`boolean`",
-        "type": "`false`"
+        "description": "用户选择时间范围后是否自动关闭面板",
+        "type": "`boolean`"
       },
       {
         "name": "separator",
-        "description": "`string`",
-        "type": "`'至'`"
+        "description": "start 选框与 end 选框之间的分隔符",
+        "type": "`string`"
       },
       {
         "name": "start-placeholder",
-        "description": "`string`",
-        "type": "`'开始月份'`"
+        "description": "MonthRange 中 start 选框的提示信息",
+        "type": "`string`"
       },
       {
         "name": "update-value-on-close",
-        "description": "`boolean`",
-        "type": "`false`"
+        "description": "关闭面板时是否更新值",
+        "type": "`boolean`"
       },
       {
         "name": "on-update:formatted-value",
-        "description": "`(value: [string, string] | null, timestampValue: [number, number] | null) => void`",
-        "type": "`undefined`"
+        "description": "数据更新时触发的回调函数",
+        "type": "`(value: [string, string] | null, timestampValue: [number, number] | null) => void`"
       },
       {
         "name": "on-update:value",
-        "description": "`(value: [number, number] | null, formattedValue: [string, string] | null) => void`",
-        "type": "`undefined`"
+        "description": "数据更新时触发的回调函数",
+        "type": "`(value: [number, number] | null, formattedValue: [string, string] | null) => void`"
       }
     ],
-    "Year 类型的 Props": [
+    "Year": [
       {
         "name": "actions",
-        "description": "`Array<'clear' | 'now'> | null`",
-        "type": "`['clear', 'now']`"
+        "description": "Year 类型的 Date Picker 中支持的操作",
+        "type": "`Array<'clear' | 'now'> | null`"
       },
       {
         "name": "format",
-        "description": "`string`",
-        "type": "`'yyyy'`"
+        "description": "时间格式化字符串，详情见 [format](https://date-fns.org/v2.23.0/docs/format)",
+        "type": "`string`"
       },
       {
         "name": "is-date-disabled",
-        "description": "`(current: number) => boolean`",
-        "type": "`undefined`"
+        "description": "年份禁用的校验函数",
+        "type": "`(current: number) => boolean`"
       },
       {
         "name": "placeholder",
-        "description": "`string`",
-        "type": "`'选择年份'`"
+        "description": "自动填充的提示信息",
+        "type": "`string`"
       },
       {
         "name": "on-update:formatted-value",
-        "description": "`(value: string | null, timestampValue: number | null) => void`",
-        "type": "`undefined`"
+        "description": "可控数据更新时触发的回调函数",
+        "type": "`(value: string | null, timestampValue: number | null) => void`"
       },
       {
         "name": "on-update:value",
-        "description": "`(value: number | null, formattedValue: string | null) => void`",
-        "type": "`undefined`"
+        "description": "可控数据更新时触发的回调函数",
+        "type": "`(value: number | null, formattedValue: string | null) => void`"
       }
     ]
   },
   "events": [
     {
       "name": "clear",
-      "description": "`() => void`",
-      "params": "`undefined`"
+      "description": "用户 clear 时执行的回调",
+      "params": "`() => void`"
     },
     {
       "name": "confirm",
-      "description": "`(value: number | [number, number] | null, formattedValue: string | [string, string] | null) => void`",
-      "params": "`undefined`"
+      "description": "用户 confirm 时执行的回调",
+      "params": "`(value: number | [number, number] | null, formattedValue: string | [string, string] | null) => void`"
     },
     {
       "name": "blur",
-      "description": "`() => void`",
-      "params": "`undefined`"
+      "description": "用户 blur 时执行的回调",
+      "params": "`() => void`"
     },
     {
       "name": "focus",
-      "description": "`() => void`",
-      "params": "`undefined`"
+      "description": "用户 focus 时执行的回调",
+      "params": "`() => void`"
     },
     {
       "name": "update:show",
-      "description": "`(show: boolean) => void`",
-      "params": "`undefined`"
+      "description": "面板打开、关闭时的回调",
+      "params": "`(show: boolean) => void`"
     }
   ],
   "link": "https://www.naiveui.com/zh-CN/dark/components/date-picker"

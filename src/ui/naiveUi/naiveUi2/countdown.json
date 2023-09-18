@@ -3,42 +3,42 @@
   "props": {
     "active": {
       "value": "",
-      "description": "`boolean`",
-      "default": "是否处于计时状态",
-      "type": "true"
+      "description": "是否处于计时状态",
+      "default": "true",
+      "type": "boolean"
     },
     "duration": {
       "value": "",
-      "description": "`number`",
-      "default": "倒计时持续时间，单位毫秒，非响应式",
-      "type": "0"
+      "description": "倒计时持续时间，单位毫秒，非响应式",
+      "default": "0",
+      "type": "number"
     },
     "precision": {
       "value": "",
-      "description": "`0 | 1 | 2 | 3`",
-      "default": "倒计时的秒显示的精度",
-      "type": "0"
+      "description": "倒计时的秒显示的精度",
+      "default": "0",
+      "type": "0 | 1 | 2 | 3"
     },
     "render": {
       "value": "",
-      "description": "`(props: { hours: number, minutes: number, seconds: number, milliseconds: number }) => VNodeChild`",
-      "default": "时间的渲染函数",
-      "type": "undefined"
+      "description": "时间的渲染函数",
+      "default": "undefined",
+      "type": "(props: { hours: number, minutes: number, seconds: number, milliseconds: number }) => VNodeChild"
     }
   },
   "methods": [
     {
       "name": "reset",
-      "description": "`() => void`",
-      "params": "重置"
+      "description": "重置",
+      "params": "`() => void`"
     }
   ],
   "typeDetail": {},
   "events": [
     {
       "name": "finish",
-      "description": "`() => void`",
-      "params": "`undefined`"
+      "description": "倒计时结束的回调",
+      "params": "`() => void`"
     }
   ],
   "link": "https://www.naiveui.com/zh-CN/dark/components/countdown"

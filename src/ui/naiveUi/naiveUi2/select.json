@@ -3,328 +3,349 @@
   "props": {
     "consistent-menu-width": {
       "value": "",
-      "description": "`boolean`",
-      "default": "菜单宽度是否和选择触发器一致，设为 false 会使 virtual-scroll 失效",
+      "description": "菜单宽度是否和选择触发器一致，设为 `false` 会使 `virtual-scroll` 失效",
+      "default": "true",
       "type": "boolean"
     },
     "children-field": {
       "value": "",
-      "description": "`string`",
-      "default": "选项组 children 的字段名",
+      "description": "选项组 children 的字段名",
+      "default": "'children'",
       "type": "string"
     },
     "clearable": {
       "value": "",
-      "description": "`boolean`",
-      "default": "是否可清空",
+      "description": "是否可清空",
+      "default": "false",
       "type": "boolean"
     },
     "clear-filter-after-select": {
       "value": "",
-      "description": "`boolean`",
-      "default": "是否在可过滤和多选的情况下选中一个选项后保留当前的搜索关键词",
+      "description": "是否在可过滤和多选的情况下选中一个选项后保留当前的搜索关键词",
+      "default": "true",
       "type": "boolean"
     },
     "default-value": {
       "value": "",
-      "description": "`Array<string | number> | string | number | null`",
-      "default": "非受控模式下的默认值",
+      "description": "非受控模式下的默认值",
+      "default": "null",
       "type": "Array<string | number> | string | number | null"
     },
     "disabled": {
       "value": "",
-      "description": "`boolean`",
-      "default": "是否禁用",
+      "description": "是否禁用",
+      "default": "false",
       "type": "boolean"
     },
     "fallback-option": {
       "value": "",
-      "description": "`false | (value: string | number) => SelectOption`",
-      "default": "在传入的选项中没有对应当前值的选项时，这个值应该对应的选项。如果设为 false，不会为找不到对应选项的值生成回退选项也不会显示它，未在选项中的值会被视为不合法，操作过程中会被组件清除掉",
+      "description": "在传入的选项中没有对应当前值的选项时，这个值应该对应的选项。如果设为 `false`，不会为找不到对应选项的值生成回退选项也不会显示它，未在选项中的值会被视为不合法，操作过程中会被组件清除掉",
+      "default": "value => ({ label: '' + value, value })",
       "type": "false | (value: string | number) => SelectOption"
     },
     "filterable": {
       "value": "",
-      "description": "`boolean`",
-      "default": "是否可以过滤",
+      "description": "是否可以过滤",
+      "default": "false",
       "type": "boolean"
     },
     "filter": {
       "value": "",
-      "description": "`(pattern: string, option: object) => boolean`",
-      "default": "过滤器函数",
+      "description": "过滤器函数",
+      "default": "一个简单的字符串搜索算法",
       "type": "(pattern: string, option: object) => boolean"
     },
     "ignore-composition": {
       "value": "",
-      "description": "`boolean`",
-      "default": "忽略输入法 Composition 状态，默认情况下 filter 在输入法输入的过程中不会触发",
+      "description": "忽略输入法 Composition 状态，默认情况下 `filter` 在输入法输入的过程中不会触发",
+      "default": "true",
       "type": "boolean"
     },
     "input-props": {
       "value": "",
-      "description": "`HTMLInputAttributes`",
-      "default": "触发器中 input 元素的属性，只在可过滤时有意义",
+      "description": "触发器中 input 元素的属性，只在可过滤时有意义",
+      "default": "undefined",
       "type": "HTMLInputAttributes"
     },
     "keyboard": {
       "value": "",
-      "description": "`boolean`",
-      "default": "是否支持键盘操作",
+      "description": "是否支持键盘操作",
+      "default": "true",
       "type": "boolean"
     },
     "label-field": {
       "value": "",
-      "description": "`string`",
-      "default": "选项 label 的字段名",
+      "description": "选项 label 的字段名",
+      "default": "'label'",
       "type": "string"
     },
     "loading": {
       "value": "",
-      "description": "`boolean`",
-      "default": "是否为加载状态",
+      "description": "是否为加载状态",
+      "default": "false",
       "type": "boolean"
     },
     "max-tag-count": {
       "value": "",
-      "description": "`number | 'responsive'`",
-      "default": "多选标签的最大显示数量，responsive 会将所有标签保持在一行",
+      "description": "多选标签的最大显示数量，`responsive` 会将所有标签保持在一行",
+      "default": "undefined",
       "type": "number | 'responsive'"
     },
     "menu-props": {
       "value": "",
-      "description": "`HTMLAttributes`",
-      "default": "菜单的 DOM 属性",
+      "description": "菜单的 DOM 属性",
+      "default": "undefined",
       "type": "HTMLAttributes"
     },
     "multiple": {
       "value": "",
-      "description": "`boolean`",
-      "default": "是否为多选",
+      "description": "是否为多选",
+      "default": "false",
       "type": "boolean"
     },
     "node-props": {
       "value": "",
-      "description": "`(option: SelectOption | SelectGroupOption) => object`",
-      "default": "选项的 DOM 属性生成函数",
+      "description": "选项的 DOM 属性生成函数",
+      "default": "undefined",
       "type": "(option: SelectOption | SelectGroupOption) => object"
     },
     "options": {
       "value": "",
-      "description": "`Array<SelectOption | SelectGroupOption>`",
-      "default": "配置选项内容，详情见 SelectOption Properties",
+      "description": "配置选项内容，详情见 SelectOption Properties",
+      "default": "[]",
       "type": "Array<SelectOption | SelectGroupOption>"
     },
     "placeholder": {
       "value": "",
-      "description": "`string`",
-      "default": "提示信息",
+      "description": "提示信息",
+      "default": "'请选择' (i18n)",
       "type": "string"
     },
     "placement": {
       "value": "",
-      "description": "`'top-start' | 'top' | 'top-end' | 'right-start' | 'right' | 'right-end' | 'bottom-start' | 'bottom' | 'bottom-end' | 'left-start' | 'left' | 'left-end'`",
-      "default": "菜单的弹出位置",
+      "description": "菜单的弹出位置",
+      "default": "'bottom-start'",
       "type": "'top-start' | 'top' | 'top-end' | 'right-start' | 'right' | 'right-end' | 'bottom-start' | 'bottom' | 'bottom-end' | 'left-start' | 'left' | 'left-end'"
     },
     "remote": {
       "value": "",
-      "description": "`boolean`",
-      "default": "是否要异步获取选项。注意如果设定了，那么 filter 和 tag 都不会对 options 生效。这个时候你在全权控制 options",
+      "description": "是否要异步获取选项。注意如果设定了，那么 `filter` 和 `tag` 都不会对 `options` 生效。这个时候你在全权控制 `options`",
+      "default": "false",
       "type": "boolean"
     },
     "render-label": {
       "value": "",
-      "description": "`(option: SelectOption | SelectGroupOption, selected: boolean) => VNodeChild`",
-      "default": "选项标签渲染函数",
+      "description": "选项标签渲染函数",
+      "default": "undefined",
       "type": "(option: SelectOption | SelectGroupOption, selected: boolean) => VNodeChild"
     },
     "render-option": {
       "value": "",
-      "description": "`(info: { node: VNode, option: SelectOption | SelectGroupOption, selected: boolean }) => VNodeChild`",
-      "default": "选项的渲染函数",
+      "description": "选项的渲染函数",
+      "default": "undefined",
       "type": "(info: { node: VNode, option: SelectOption | SelectGroupOption, selected: boolean }) => VNodeChild"
     },
     "render-tag": {
       "value": "",
-      "description": "`(props: { option: SelectBaseOption, handleClose: () => void }) => VNodeChild`",
-      "default": "控制标签的渲染",
+      "description": "控制标签的渲染",
+      "default": "undefined",
       "type": "(props: { option: SelectBaseOption, handleClose: () => void }) => VNodeChild"
     },
     "reset-menu-on-options-change": {
       "value": "",
-      "description": "`boolean`",
-      "default": "是否在选项变化时重置菜单状态，例如滚动状态",
+      "description": "是否在选项变化时重置菜单状态，例如滚动状态",
+      "default": "true",
       "type": "boolean"
     },
     "show": {
       "value": "",
-      "description": "`boolean`",
-      "default": "是否展示菜单",
+      "description": "是否展示菜单",
+      "default": "undefined",
       "type": "boolean"
     },
     "show-arrow": {
       "value": "",
-      "description": "`boolean`",
-      "default": "是否展示箭头",
+      "description": "是否展示箭头",
+      "default": "true",
       "type": "boolean"
     },
     "show-checkmark": {
       "value": "",
-      "description": "`boolean`",
-      "default": "多选情况下是否展示对勾",
+      "description": "多选情况下是否展示对勾",
+      "default": "true",
       "type": "boolean"
     },
     "show-on-focus": {
       "value": "",
-      "description": "`boolean`",
-      "default": "聚焦时是否展示菜单",
+      "description": "聚焦时是否展示菜单",
+      "default": "false",
       "type": "boolean"
     },
     "size": {
       "value": "",
-      "description": "`'tiny' | 'small' | 'medium' | 'large'`",
-      "default": "组件尺寸",
+      "description": "组件尺寸",
+      "default": "'medium'",
       "type": "'tiny' | 'small' | 'medium' | 'large'"
     },
     "status": {
       "value": "",
-      "description": "`'success' | 'warning' | 'error'`",
-      "default": "验证状态",
+      "description": "验证状态",
+      "default": "undefined",
       "type": "'success' | 'warning' | 'error'"
     },
     "tag": {
       "value": "",
-      "description": "`boolean`",
-      "default": "是否可以创建新的选项，需要和 filterable 一起使用",
+      "description": "是否可以创建新的选项，需要和 `filterable` 一起使用",
+      "default": "false",
       "type": "boolean"
     },
     "to": {
       "value": "",
-      "description": "`string | HTMLElement | false`",
-      "default": "菜单的容器节点，false 会待在原地",
+      "description": "菜单的容器节点，`false` 会待在原地",
+      "default": "body",
       "type": "string | HTMLElement | false"
     },
     "value": {
       "value": "",
-      "description": "`Array<string | number> | string | number | null`",
-      "default": "受控模式下的值",
+      "description": "受控模式下的值",
+      "default": "undefined",
       "type": "Array<string | number> | string | number | null"
     },
     "value-field": {
       "value": "",
-      "description": "`string`",
-      "default": "选项 value 的字段名",
+      "description": "选项 value 的字段名",
+      "default": "'value'",
       "type": "string"
     },
     "virtual-scroll": {
       "value": "",
-      "description": "`boolean`",
-      "default": "是否启用虚拟滚动",
+      "description": "是否启用虚拟滚动",
+      "default": "true",
       "type": "boolean"
     }
   },
-  "methods": [],
+  "methods": [
+    {
+      "name": "focus",
+      "description": "聚焦",
+      "params": "`() => void`"
+    },
+    {
+      "name": "focusInput",
+      "description": "输入聚焦",
+      "params": "`() => void`"
+    },
+    {
+      "name": "blur",
+      "description": "失焦",
+      "params": "`() => void`"
+    },
+    {
+      "name": "blurInput",
+      "description": "输入失焦",
+      "params": "`() => void`"
+    }
+  ],
   "typeDetail": {
     "SelectOption": [
       {
         "name": "class",
-        "description": "`string`",
-        "type": "自定义一个选项的类名"
+        "description": "自定义一个选项的类名",
+        "type": "`string`"
       },
       {
         "name": "disabled",
-        "description": "`boolean`",
-        "type": "是否禁用一个选项"
+        "description": "是否禁用一个选项",
+        "type": "`boolean`"
       },
       {
         "name": "label",
-        "description": "`string | ((option: SelectOption, selected: boolean) => VNodeChild)`",
-        "type": "选项的标签，注意如果你使用了渲染函数，默认的过滤器将会过滤该选项"
+        "description": "选项的标签，注意如果你使用了渲染函数，默认的过滤器将会过滤该选项",
+        "type": "`string | ((option: SelectOption, selected: boolean) => VNodeChild)`"
       },
       {
         "name": "render",
-        "description": "`(info: { node: VNode, option: SelectOption, selected: boolean }) => VNodeChild`",
-        "type": "渲染整个选项"
+        "description": "渲染整个选项",
+        "type": "`(info: { node: VNode, option: SelectOption, selected: boolean }) => VNodeChild`"
       },
       {
         "name": "style",
-        "description": "`string | CSSProperties`",
-        "type": "自定义一个选项的样式"
+        "description": "自定义一个选项的样式",
+        "type": "`string | CSSProperties`"
       },
       {
         "name": "value",
-        "description": "`string | number`",
-        "type": "在选项中应该是唯一的"
+        "description": "在选项中应该是唯一的",
+        "type": "`string | number`"
       }
     ],
     "SelectGroupOption": [
       {
         "name": "children",
-        "description": "`Array<SelectOption>`",
-        "type": "子选项组"
+        "description": "子选项组",
+        "type": "`Array<SelectOption>`"
       },
       {
         "name": "label",
-        "description": "`string | ((option: SelectGroupOption) => VNodeChild)`",
-        "type": "选项组的标签"
+        "description": "选项组的标签",
+        "type": "`string | ((option: SelectGroupOption) => VNodeChild)`"
       },
       {
         "name": "key",
-        "description": "`string | number`",
-        "type": "在选项中应该是唯一的"
+        "description": "在选项中应该是唯一的",
+        "type": "`string | number`"
       },
       {
         "name": "render",
-        "description": "`(info: { node: VNode, option: SelectOption, selected: boolean }) => VNodeChild`",
-        "type": "渲染整个选项"
+        "description": "渲染整个选项",
+        "type": "`(info: { node: VNode, option: SelectOption, selected: boolean }) => VNodeChild`"
       },
       {
         "name": "type",
-        "description": "`'group'`",
-        "type": "选项组的类型"
+        "description": "选项组的类型",
+        "type": "`'group'`"
       }
     ]
   },
   "events": [
     {
       "name": "blur",
-      "description": "`() => void`",
+      "description": "`blur` 时执行的回调",
       "params": "`() => void`"
     },
     {
       "name": "clear",
-      "description": "`() => void`",
+      "description": "`clear` 时执行的回调",
       "params": "`() => void`"
     },
     {
       "name": "create",
-      "description": "`(label: string) => SelectOption`",
+      "description": "在输入内容时如何创建一个选项。注意 `filter` 对这个生成的选项同样会生效。同时确保这个选项和其他选项的 `value` 不要有重复，应该和 `tag` 属性一起被使用",
       "params": "`(label: string) => SelectOption`"
     },
     {
       "name": "focus",
-      "description": "`() => void`",
+      "description": "`focus` 时执行的回调",
       "params": "`() => void`"
     },
     {
       "name": "scroll",
-      "description": "`(e: ScrollEvent) => void`",
+      "description": "滚动时执行的回调",
       "params": "`(e: ScrollEvent) => void`"
     },
     {
       "name": "search",
-      "description": "`(value: string) => void`",
+      "description": "搜索时执行的回调",
       "params": "`(value: string) => void`"
     },
     {
       "name": "update:show",
-      "description": "`(show: boolean) => void`",
+      "description": "菜单打开状态变化的回调",
       "params": "`(show: boolean) => void`"
     },
     {
       "name": "update:value",
-      "description": "`(value: Array | string | number | null, option: SelectBaseOption | null | SelectBaseOption[]) => void`",
+      "description": "值更新时执行的回调",
       "params": "`(value: Array | string | number | null, option: SelectBaseOption | null | SelectBaseOption[]) => void`"
     }
   ],

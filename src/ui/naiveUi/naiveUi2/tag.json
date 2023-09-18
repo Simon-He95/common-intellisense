@@ -3,68 +3,68 @@
   "props": {
     "bordered": {
       "value": "",
-      "description": "`boolean`",
-      "default": "是否有边框",
+      "description": "是否有边框",
+      "default": "true",
       "type": "boolean"
     },
     "checkable": {
       "value": "",
-      "description": "`boolean`",
-      "default": "是否可以选择，使用后 type 将不生效",
+      "description": "是否可以选择，使用后 type 将不生效",
+      "default": "false",
       "type": "boolean"
     },
     "checked": {
       "value": "",
-      "description": "`boolean`",
-      "default": "是否被选中，配合 checkable 一起使用",
+      "description": "是否被选中，配合 checkable 一起使用",
+      "default": "false",
       "type": "boolean"
     },
     "closable": {
       "value": "",
-      "description": "`boolean`",
-      "default": "是否可关闭",
+      "description": "是否可关闭",
+      "default": "false",
       "type": "boolean"
     },
     "color": {
       "value": "",
-      "description": "`{ color?: string, borderColor?: string, textColor?: string }`",
-      "default": "标签颜色，设置该项后 type 无效",
+      "description": "标签颜色，设置该项后 `type` 无效",
+      "default": "undefined",
       "type": "{ color?: string, borderColor?: string, textColor?: string }"
     },
     "disabled": {
       "value": "",
-      "description": "`boolean`",
-      "default": "是否禁用",
+      "description": "是否禁用",
+      "default": "false",
       "type": "boolean"
     },
     "round": {
       "value": "",
-      "description": "`boolean`",
-      "default": "是否圆角",
+      "description": "是否圆角",
+      "default": "false",
       "type": "boolean"
     },
     "size": {
       "value": "",
-      "description": "`'small' | 'medium' | 'large'`",
-      "default": "尺寸",
+      "description": "尺寸",
+      "default": "'medium'",
       "type": "'small' | 'medium' | 'large'"
     },
     "strong": {
       "value": "",
-      "description": "`boolean`",
-      "default": "文字是否加粗",
+      "description": "文字是否加粗",
+      "default": "false",
       "type": "boolean"
     },
     "trigger-click-on-close": {
       "value": "",
-      "description": "`boolean`",
-      "default": "关闭时是否触发点击事件",
+      "description": "关闭时是否触发点击事件",
+      "default": "false",
       "type": "boolean"
     },
     "type": {
       "value": "",
-      "description": "`'default' | 'primary' | 'info' | 'success' | 'warning' | 'error'`",
-      "default": "类型",
+      "description": "类型",
+      "default": "'default'",
       "type": "'default' | 'primary' | 'info' | 'success' | 'warning' | 'error'"
     }
   },
@@ -73,12 +73,12 @@
   "events": [
     {
       "name": "close",
-      "description": "`(e: MouseEvent) => void`",
+      "description": "点击关闭时的回调",
       "params": "`(e: MouseEvent) => void`"
     },
     {
       "name": "update:checked",
-      "description": "`(value: boolean) => void`",
+      "description": "选择状态更改时的回调",
       "params": "`(value: boolean) => void`"
     }
   ],

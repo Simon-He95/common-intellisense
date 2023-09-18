@@ -3,37 +3,136 @@
   "props": {
     "container-style": {
       "value": "",
-      "description": "`string | Object`",
-      "default": "容器的样式",
+      "description": "容器的样式",
+      "default": "undefined",
       "type": "string | Object"
     },
     "max": {
       "value": "",
-      "description": "`number`",
-      "default": "限制通知框显示的个数",
+      "description": "限制通知框显示的个数",
+      "default": "undefined",
       "type": "number"
     },
     "placement": {
       "value": "",
-      "description": "`'top' | 'bottom' | 'top-right' | 'top-left' | 'bottom-left' | 'bottom-right'`",
-      "default": "所有通知框显示的位置",
+      "description": "所有通知框显示的位置",
+      "default": "top-right",
       "type": "'top' | 'bottom' | 'top-right' | 'top-left' | 'bottom-left' | 'bottom-right'"
     },
     "scrollable": {
       "value": "",
-      "description": "`boolean`",
-      "default": "通知是否可滚动，对于 placement 为 'top' 和 'bottom' 不生效",
+      "description": "通知是否可滚动，对于 `placement` 为 `'top'` 和 `'bottom'` 不生效",
+      "default": "true",
       "type": "boolean"
     },
     "to": {
       "value": "",
-      "description": "`string | HTMLElement`",
-      "default": "Notification 容器节点的位置",
+      "description": "`Notification` 容器节点的位置",
+      "default": "'body'",
       "type": "string | HTMLElement"
     }
   },
-  "methods": [{ "name": "create", "description": "`(option: NotificationOption) => NotificationReactive`", "params": "创建通知框" }, { "name": "destroyAll", "description": "`() => void`", "params": "销毁所有弹出的通知框" }, { "name": "error", "description": "`(option: NotificationOption) => NotificationReactive`", "params": "调用 `error` 类型的通知框" }, { "name": "info", "description": "`(option: NotificationOption) => NotificationReactive`", "params": "调用 `info` 类型的通知框" }, { "name": "success", "description": "`(option: NotificationOption) => NotificationReactive`", "params": "调用 `success` 类型的通知框" }, { "name": "warning", "description": "`(option: NotificationOption) => NotificationReactive`", "params": "调用 `warning` 类型的通知框" }],
-  "typeDetail": { "NotificationOption Properties": [{ "name": "action", "description": "`string | (() => VNodeChild)`", "type": "`undefined`" }, { "name": "avatar", "description": "`() => VNodeChild`", "type": "`undefined`" }, { "name": "closable", "description": "`boolean`", "type": "`true`" }, { "name": "content", "description": "`string | (() => VNodeChild)`", "type": "`undefined`" }, { "name": "description", "description": "`string | (() => VNodeChild)`", "type": "`undefined`" }, { "name": "duration", "description": "`number`", "type": "`undefined`" }, { "name": "keepAliveOnHover", "description": "`boolean`", "type": "`false`" }, { "name": "meta", "description": "`string | (() => VNodeChild)`", "type": "`undefined`" }, { "name": "title", "description": "`string | (() => VNodeChild)`", "type": "`undefined`" }, { "name": "onAfterEnter", "description": "`Function`", "type": "`undefined`" }, { "name": "onAfterLeave", "description": "`Function`", "type": "`undefined`" }, { "name": "onClose", "description": "`() => boolean | Promise<boolean>`", "type": "`undefined`" }, { "name": "onLeave", "description": "`Function`", "type": "`undefined`" }] },
+  "methods": [
+    {
+      "name": "create",
+      "description": "创建通知框",
+      "params": "`(option: NotificationOption) => NotificationReactive`"
+    },
+    {
+      "name": "destroyAll",
+      "description": "销毁所有弹出的通知框",
+      "params": "`() => void`"
+    },
+    {
+      "name": "error",
+      "description": "调用 `error` 类型的通知框",
+      "params": "`(option: NotificationOption) => NotificationReactive`"
+    },
+    {
+      "name": "info",
+      "description": "调用 `info` 类型的通知框",
+      "params": "`(option: NotificationOption) => NotificationReactive`"
+    },
+    {
+      "name": "success",
+      "description": "调用 `success` 类型的通知框",
+      "params": "`(option: NotificationOption) => NotificationReactive`"
+    },
+    {
+      "name": "warning",
+      "description": "调用 `warning` 类型的通知框",
+      "params": "`(option: NotificationOption) => NotificationReactive`"
+    }
+  ],
+  "typeDetail": {
+    "NotificationOption": [
+      {
+        "name": "action",
+        "description": "操作区域的内容,可以是 render 函数",
+        "type": "`string | (() => VNodeChild)`"
+      },
+      {
+        "name": "avatar",
+        "description": "头像区域的内容",
+        "type": "`() => VNodeChild`"
+      },
+      {
+        "name": "closable",
+        "description": "是否显示 close 图标",
+        "type": "`boolean`"
+      },
+      {
+        "name": "content",
+        "description": "通知框内容，可以是 render 函数",
+        "type": "`string | (() => VNodeChild)`"
+      },
+      {
+        "name": "description",
+        "description": "描述的内容，可以是 render 函数",
+        "type": "`string | (() => VNodeChild)`"
+      },
+      {
+        "name": "duration",
+        "description": "如果没有设定则不会自动关闭，单位毫秒",
+        "type": "`number`"
+      },
+      {
+        "name": "keepAliveOnHover",
+        "description": "当鼠标移入时是否保持通知框显示",
+        "type": "`boolean`"
+      },
+      {
+        "name": "meta",
+        "description": "`meta` 信息，可以是 render 函数",
+        "type": "`string | (() => VNodeChild)`"
+      },
+      {
+        "name": "title",
+        "description": "`title` 信息，可以是 render 函数",
+        "type": "`string | (() => VNodeChild)`"
+      },
+      {
+        "name": "onAfterEnter",
+        "description": "过渡动画进入执行完后执行的回调",
+        "type": "`Function`"
+      },
+      {
+        "name": "onAfterLeave",
+        "description": "过渡动画离开执行完后执行的回调",
+        "type": "`Function`"
+      },
+      {
+        "name": "onClose",
+        "description": "关闭通知的回调，返回 `false`、Promise resolve `false` 或者 reject 会取消这次关闭",
+        "type": "`() => boolean | Promise<boolean>`"
+      },
+      {
+        "name": "onLeave",
+        "description": "过渡动画离开时执行的回调",
+        "type": "`Function`"
+      }
+    ]
+  },
   "events": [],
   "link": "https://www.naiveui.com/zh-CN/dark/components/notification"
 }
