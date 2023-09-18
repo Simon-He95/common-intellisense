@@ -1,4 +1,9 @@
 import { componentsReducer, propsReducer } from '../../utils'
+import anchor from './anchor.json'
+import popconfirm from './popconfirm.json'
+import step from './step.json'
+import steps from './steps.json'
+import timePicker from './timePicker.json'
 import button from './button.json'
 import buttonGroup from './buttonGroup.json'
 import avatar from './avatar.json'
@@ -78,6 +83,11 @@ import popselect from './popselect.json'
 
 export function naiveUi2() {
   const map: any = [
+    anchor,
+    timePicker,
+    popconfirm,
+    step,
+    steps,
     avatar,
     avatarGroup,
     badge,
@@ -162,6 +172,10 @@ export function naiveUi2() {
 export function naiveUi2Components() {
   const map = [
     ['n-anchor', '侧边导航', '<n-anchor :show-rail="showRail" :show-background="showBackground"></n-anchor>'],
+    ['n-popconfirm', '弹出确认', '<n-popconfirm></n-popconfirm>'],
+    ['n-timePicker', '时间选择器', '<n-timePicker></n-timePicker>'],
+    ['n-step', '步骤', '<n-step></n-step>'],
+    ['n-step', '步骤', '<n-steps></n-steps>'],
     ['n-anchor-link', '侧边导航', '<n-anchor-link title="演示" href="#演示"></n-anchor-link>'],
     ['n-countdown', '倒计时', '<n-countdown :duration="5000" :active="active" />'],
     ['n-image-group', '照片组', '<n-image-group />'],
