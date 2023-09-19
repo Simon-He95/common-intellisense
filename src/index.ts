@@ -69,6 +69,8 @@ export function activate(context: vscode.ExtensionContext) {
       }
       if (lan === 'vue' && lineText.slice(character, character + 6) !== '.value')
         return result.refs.map((refName: string) => createCompletionItem({ content: refName, snippet: `${refName}.value`, documentation: `${refName}.value`, preselect: true, sortText: '99' }))
+      if (lineText.slice(character, character + 8) !== '.current')
+        return result.refs.map((refName: string) => createCompletionItem({ content: refName, snippet: `${refName}.current`, documentation: `${refName}.current`, preselect: true, sortText: '99' }))
     }
     if (UiCompletions && result?.type === 'props') {
       const name = result.tag[0].toUpperCase() + result.tag.replace(/(-\w)/g, (match: string) => match[1].toUpperCase()).slice(1)
