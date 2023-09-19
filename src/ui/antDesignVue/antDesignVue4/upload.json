@@ -7,19 +7,19 @@
       "default": "无",
       "type": "string"
     },
-    "action": {
+    ":action": {
       "value": "",
       "description": "上传的地址",
       "default": "无",
-      "type": "string|(file) => `Promise`"
+      "type": "string|(file) => Promise"
     },
-    "beforeUpload": {
+    ":beforeUpload": {
       "value": "",
       "description": "上传文件之前的钩子，参数为上传的文件，若返回 `false` 则停止上传。支持返回一个 Promise 对象，Promise 对象 reject 时则停止上传，resolve 时开始上传（ resolve 传入 `File` 或 `Blob` 对象则上传 resolve 传入对象）。",
       "default": "无",
-      "type": "(file, fileList) => `boolean` | `Promise`"
+      "type": "(file, fileList) => `boolean` | Promise"
     },
-    "customRequest": {
+    ":customRequest": {
       "value": "",
       "description": "通过覆盖默认的上传行为，可以自定义自己的上传实现",
       "default": "无",
@@ -81,8 +81,8 @@
     },
     "listType": {
       "value": "",
-      "description": "上传列表的内建样式，支持三种基本样式 `text`, `picture` 和 `picture-card`",
-      "default": "`text`",
+      "description": "上传列表的内建样式，支持三种基本样式 text, `picture` 和 `picture-card`",
+      "default": "text",
       "type": "string"
     },
     "maxCount": {
@@ -94,7 +94,7 @@
     "method": {
       "value": "",
       "description": "上传请求的 http method",
-      "default": "`post`",
+      "default": "post",
       "type": "string"
     },
     "multiple": {
@@ -106,7 +106,7 @@
     "name": {
       "value": "",
       "description": "发到后台的文件参数名",
-      "default": "`file`",
+      "default": "file",
       "type": "string"
     },
     "openFileDialogOnClick": {

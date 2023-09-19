@@ -8,16 +8,16 @@
       "type": "string"
     },
     "crossOrigin": {
-      "value": "",
+      "value": ["anonymous", "use-credentials"],
       "description": "cors 属性设置",
       "default": "-",
-      "type": "`'anonymous'` | `'use-credentials'` | `''`"
+      "type": "anonymous | `'use-credentials'` | `''`"
     },
     "draggable": {
       "value": "",
       "description": "图片是否允许拖动",
       "default": "-",
-      "type": "boolean | `'true'` | `'false'`"
+      "type": "boolean"
     },
     "gap": {
       "value": "",
@@ -31,14 +31,14 @@
       "default": "-",
       "type": "VNode | slot"
     },
-    "loadError": {
+    ":loadError": {
       "value": "",
       "description": "图片加载失败的事件，返回 false 会关闭组件默认的 fallback 行为",
       "default": "-",
       "type": "() => boolean"
     },
     "shape": {
-      "value": "",
+      "value": ["circle", "square"],
       "description": "指定头像的形状",
       "default": "circle",
       "type": "circle | square"
@@ -47,7 +47,7 @@
       "value": "",
       "description": "设置头像的大小",
       "default": "",
-      "type": "number | `large` | small |  | { xs: number, sm: number, ...}"
+      "type": "number | large | small | default | { xs: number, sm: number, ...}"
     },
     "src": {
       "value": "",

@@ -81,14 +81,14 @@
         "example.json)"
       ],
       "description": "国际化配置",
-      "default": "[默认配置](https: |  | github.com | vueComponent | ant-design-vue | blob | main | components | date-picker | locale | example.json)",
+      "default": "",
       "type": "object"
     },
     "mode": {
-      "value": "",
+      "value": ["time", "date", "month", "year", "decade"],
       "description": "日期面板的状态",
       "default": "-",
-      "type": "`time` | `date` | `month` | `year` | `decade`"
+      "type": "time | date | month | year | decade"
     },
     "nextIcon": {
       "value": "",
@@ -103,10 +103,10 @@
       "type": "boolean"
     },
     "picker": {
-      "value": "",
+      "value": ["date", "week", "month", "quarter", "year"],
       "description": "设置选择器类型",
-      "default": "`date`",
-      "type": "`date` | `week` | `month` | `quarter` | `year`"
+      "default": "date",
+      "type": "date | week | month | quarter | year"
     },
     "placeholder": {
       "value": "",
@@ -115,10 +115,10 @@
       "type": "string | [string, string]"
     },
     "placement": {
-      "value": "",
+      "value": ["bottomLeft", "bottomRight", "topLeft", "topRight"],
       "description": "选择框弹出的位置",
       "default": "bottomLeft",
-      "type": "`bottomLeft` `bottomRight` `topLeft` `topRight`"
+      "type": "bottomLeft `bottomRight` `topLeft` topRight"
     },
     "popupStyle": {
       "value": "",
@@ -132,20 +132,20 @@
       "default": "-",
       "type": "slot"
     },
-    "presets": {
+    ":presets": {
       "value": "",
       "description": "预设时间范围快捷选择",
       "default": "-",
-      "type": "{ label: slot, value: [dayjs](https: |  | day.js.org | ) }[]"
+      "type": "{ label: slot, value: dayjs }[]"
     },
     "size": {
-      "value": "",
+      "value": ["large", "middle", "small"],
       "description": "输入框大小，`large` 高度为 40px，`small` 为 24px，默认是 32px",
       "default": "-",
-      "type": "`large` | middle | small"
+      "type": "large | middle | small"
     },
     "status": {
-      "value": "",
+      "value": ["error", "warning"],
       "description": "设置校验状态",
       "default": "-",
       "type": "'error' | 'warning'"
@@ -172,13 +172,13 @@
       "value": "",
       "description": "可选，绑定值的格式，对 value、defaultValue、defaultPickerValue 起作用。不指定则绑定值为 dayjs 对象",
       "default": "-",
-      "type": "string，[具体格式](https: |  | day.js.org | docs | zh-CN | display | format)"
+      "type": "string"
     },
     "defaultPickerValue": {
       "value": "",
       "description": "默认面板日期",
       "default": "-",
-      "type": "[dayjs](https: |  | day.js.org | )"
+      "type": "dayjs"
     },
     "disabledTime": {
       "value": "",
@@ -213,7 +213,7 @@
       "value": "",
       "description": "设置用户选择日期时默认的时分秒，[例子](#components-date-picker-demo-disabled-date)",
       "default": "dayjs()",
-      "type": "[dayjs](https: |  | day.js.org | )"
+      "type": "dayjs"
     },
     "showToday": {
       "value": "",
@@ -225,7 +225,7 @@
       "value": "",
       "description": "日期",
       "default": "-",
-      "type": "[dayjs](https: |  | day.js.org | )"
+      "type": "dayjs"
     }
   },
   "methods": [],

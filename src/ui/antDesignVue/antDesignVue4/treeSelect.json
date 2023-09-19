@@ -47,7 +47,7 @@
       "value": "",
       "description": "是否根据输入项进行筛选，默认用 treeNodeFilterProp 的值作为要筛选的 TreeNode 的属性值",
       "default": "Function",
-      "type": "boolean|Function(inputValue: string, treeNode: TreeNode) (函数需要返回 bool 值)"
+      "type": "boolean | Function(inputValue: string, treeNode: TreeNode) (函数需要返回 bool 值)"
     },
     "getPopupContainer": {
       "value": "",
@@ -101,13 +101,13 @@
       "value": "",
       "description": "选择框默认文字",
       "default": "-",
-      "type": "string|slot"
+      "type": "string | slot"
     },
     "placement": {
-      "value": "",
+      "value": ["bottomLeft", "bottomRight", "topLeft", "topRight"],
       "description": "选择框弹出的位置",
       "default": "bottomLeft",
-      "type": "`bottomLeft` `bottomRight` `topLeft` `topRight`"
+      "type": "bottomLeft `bottomRight` `topLeft` topRight"
     },
     "replaceFields": {
       "value": "",
@@ -119,7 +119,7 @@
       "value": "",
       "description": "搜索框默认文字",
       "default": "-",
-      "type": "string|slot"
+      "type": "string | slot"
     },
     "searchValue(v-model)": {
       "value": "",
@@ -141,12 +141,12 @@
     },
     "size": {
       "value": "",
-      "description": "选择框大小，可选 `large` `small`",
+      "description": "选择框大小，可选 `large` small",
       "default": "'default'",
       "type": "string"
     },
     "status": {
-      "value": "",
+      "value": ["error", "warning"],
       "description": "设置校验状态",
       "default": "-",
       "type": "'error' | 'warning'"
@@ -191,7 +191,7 @@
       "value": "",
       "description": "使用简单格式的 treeData，具体设置参考可设置的类型 (此时 treeData 应变为这样的数据结构: \\[{id:1, pId:0, value:'1', label:\"test1\",...},...], `pId` 是父节点的 id)",
       "default": "false",
-      "type": "false|Array<{ id: string, pId: string, rootPId: null }>"
+      "type": "false | Array<{ id: string, pId: string, rootPId: null }>"
     },
     "treeDefaultExpandAll": {
       "value": "",

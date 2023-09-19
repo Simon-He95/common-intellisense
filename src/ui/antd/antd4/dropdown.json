@@ -62,20 +62,20 @@
       "type": "CSSProperties"
     },
     "placement": {
-      "value": "",
-      "description": "菜单弹出位置：`bottom` `bottomLeft` `bottomRight` top `topLeft` `topRight`",
+      "value": ["bottom", "bottomLeft", "bottomRight", "topLeft", "topRight"],
+      "description": "菜单弹出位置：`bottom` `bottomLeft` `bottomRight` top `topLeft` topRight",
       "default": "bottomLeft",
       "type": "string"
     },
     "trigger": {
-      "value": "",
+      "value": ["click", "hover", "contextMenu"],
       "description": "触发下拉的行为, 移动端不支持 hover",
       "default": "[hover]",
       "type": " click | hover | contextMenu"
     },
     "open": {
       "value": "",
-      "description": "菜单是否显示，小于 4.23.0 使用 `visible`",
+      "description": "菜单是否显示，小于 4.23.0 使用 visible",
       "default": "",
       "type": "boolean"
     }
@@ -83,7 +83,7 @@
   "events": [
     {
       "name": "onOpenChange",
-      "description": "菜单显示状态改变时调用，点击菜单按钮导致的消失不会触发。小于 4.23.0 使用 `onVisibleChange`",
+      "description": "菜单显示状态改变时调用，点击菜单按钮导致的消失不会触发。小于 4.23.0 使用 onVisibleChange",
       "callback": "(open: boolean) => void"
     }
   ],

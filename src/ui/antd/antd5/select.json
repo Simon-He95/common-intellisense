@@ -82,7 +82,7 @@
     "fieldNames": {
       "value": "",
       "description": "自定义节点 label、value、options、groupLabel 的字段",
-      "default": "{ label: `label`, value: `value`, options: `options`, groupLabel: `label` }",
+      "default": "{ label: label, value: value, options: options, groupLabel: `label` }",
       "type": "object"
     },
     "filterOption": {
@@ -125,7 +125,7 @@
       "value": "",
       "description": "最多显示多少个 tag，响应式模式会对性能产生损耗",
       "default": "-",
-      "type": "number | `responsive`"
+      "type": "number | responsive"
     },
     "maxTagPlaceholder": {
       "value": "",
@@ -149,7 +149,7 @@
       "value": "",
       "description": "设置 Select 的模式为多选或标签",
       "default": "-",
-      "type": "`multiple` | `tags`"
+      "type": "multiple | tags"
     },
     "notFoundContent": {
       "value": "",
@@ -166,16 +166,16 @@
     "optionFilterProp": {
       "value": "",
       "description": "搜索时过滤对应的 `option` 属性，如设置为 `children` 表示对内嵌内容进行搜索。若通过 `options` 属性配置选项内容，建议设置 `optionFilterProp=\"label\"` 来对内容进行搜索。",
-      "default": "`value`",
+      "default": "value",
       "type": "string"
     },
     "optionLabelProp": {
       "value": "",
-      "description": "回填到选择框的 Option 的属性值，默认是 Option 的子元素。比如在子元素需要高亮效果时，此值可以设为 `value`",
-      "default": "`children`",
+      "description": "回填到选择框的 Option 的属性值，默认是 Option 的子元素。比如在子元素需要高亮效果时，此值可以设为 value",
+      "default": "children",
       "type": "string"
     },
-    "options": {
+    ":options": {
       "value": "",
       "description": "数据化配置选项内容，相比 jsx 定义会获得更好的渲染性能",
       "default": "-",
@@ -188,12 +188,12 @@
       "type": "string"
     },
     "placement": {
-      "value": "",
+      "value": ["bottomLeft", "bottomRight", "topLeft", "topRight"],
       "description": "选择框弹出的位置",
       "default": "bottomLeft",
-      "type": "`bottomLeft` `bottomRight` `topLeft` `topRight`"
+      "type": "bottomLeft `bottomRight` `topLeft` topRight"
     },
-    "removeIcon": {
+    ":removeIcon": {
       "value": "",
       "description": "自定义的多选框清除图标",
       "default": "-",
@@ -208,7 +208,7 @@
     "showArrow": {
       "value": "",
       "description": "是否显示下拉小箭头",
-      "default": "`true`",
+      "default": "true",
       "type": "boolean"
     },
     "showSearch": {
@@ -218,24 +218,24 @@
       "type": "boolean"
     },
     "size": {
-      "value": "",
+      "value": ["large", "middle", "small"],
       "description": "选择框大小",
-      "default": "`middle`",
-      "type": "`large` | `middle` | `small`"
+      "default": "middle",
+      "type": "large | middle | small"
     },
     "status": {
-      "value": "",
+      "value": ["error", "warning"],
       "description": "设置校验状态",
       "default": "-",
       "type": "'error' | 'warning'"
     },
-    "suffixIcon": {
+    ":suffixIcon": {
       "value": "",
       "description": "自定义的选择框后缀图标。以防止图标被用于其他交互，替换的图标默认不会响应展开、收缩事件，可以通过添加 `pointer-events: none` 样式透传。",
       "default": "-",
       "type": "ReactNode"
     },
-    "tagRender": {
+    ":tagRender": {
       "value": "",
       "description": "自定义 tag 内容 render，仅在 `mode` 为 `multiple` 或 `tags` 时生效",
       "default": "-",

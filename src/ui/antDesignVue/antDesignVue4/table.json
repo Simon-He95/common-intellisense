@@ -16,7 +16,7 @@
     "childrenColumnName": {
       "value": "",
       "description": "指定树形结构的列名",
-      "default": "`children`",
+      "default": "children",
       "type": "string"
     },
     "columns": {
@@ -93,7 +93,7 @@
     },
     "expandFixed": {
       "value": "",
-      "description": "控制展开图标是否固定，可选 true `left` `right`",
+      "description": "控制展开图标是否固定，可选 true `left` right",
       "default": "false",
       "type": "boolean | string"
     },
@@ -112,7 +112,7 @@
     "expandRowByClick": {
       "value": "",
       "description": "通过点击行来展开子行",
-      "default": "`false`",
+      "default": "false",
       "type": "boolean"
     },
     "footer": {
@@ -148,14 +148,14 @@
     "locale": {
       "value": "",
       "description": "默认文案设置，目前包括排序、过滤、空数据文案",
-      "default": "filterConfirm: `确定` <br> filterReset: `重置` <br> emptyText: `暂无数据`",
+      "default": "filterConfirm: `确定` <br> filterReset: `重置` <br> emptyText: $1",
       "type": "object"
     },
     "pagination": {
       "value": "",
       "description": "分页器，参考[配置项](#pagination)或 [pagination](/components/pagination-cn/)文档，设为 false 时不展示和进行分页",
       "default": "",
-      "type": "object | `false`"
+      "type": "object | false"
     },
     "rowClassName": {
       "value": "",
@@ -173,7 +173,7 @@
       "value": "",
       "description": "表格行 key 的取值，可以是字符串或一个函数",
       "default": "'key'",
-      "type": "string|Function(record):string"
+      "type": "string | Function(record):string"
     },
     "rowSelection": {
       "value": "",
@@ -206,15 +206,15 @@
       "type": "boolean | [Tooltip props]( | components | tooltip | )"
     },
     "size": {
-      "value": "",
+      "value": ["large", "middle", "small"],
       "description": "表格大小",
-      "default": "`large`",
-      "type": "`large` | `middle` | `small`"
+      "default": "large",
+      "type": "large | middle | small"
     },
     "sortDirections": {
       "value": "",
-      "description": "支持的排序方式，取值为 `ascend` `descend`",
-      "default": "\\[`ascend`, `descend`]",
+      "description": "支持的排序方式，取值为 `ascend` descend",
+      "default": "\\[ascend, descend]",
       "type": "Array"
     },
     "sticky": {
@@ -233,10 +233,10 @@
       "value": [
         "无<hr",
         ">固定表头",
-        "列或使用了 `column.ellipsis` 时，默认值为 `fixed`"
+        "列或使用了 `column.ellipsis` 时，默认值为 fixed"
       ],
       "description": "表格元素的 [table-layout](https://developer.mozilla.org/zh-CN/docs/Web/CSS/table-layout) 属性，设为 `fixed` 表示内容不会影响列的布局",
-      "default": "无<hr | >固定表头 | 列或使用了 `column.ellipsis` 时，默认值为 `fixed`",
+      "default": "无<hr | >固定表头 | 列或使用了 `column.ellipsis` 时，默认值为 fixed",
       "type": "- | 'auto' | 'fixed'"
     },
     "title": {

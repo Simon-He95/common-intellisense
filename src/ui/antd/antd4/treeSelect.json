@@ -58,7 +58,7 @@
     "fieldNames": {
       "value": "",
       "description": "自定义节点 label、value、children 的字段",
-      "default": "{ label: `label`, value: `value`, children: `children` }",
+      "default": "{ label: label, value: value, children: `children` }",
       "type": "object"
     },
     "filterTreeNode": {
@@ -95,7 +95,7 @@
       "value": "",
       "description": "最多显示多少个 tag，响应式模式会对性能产生损耗",
       "default": "-",
-      "type": "number | `responsive`"
+      "type": "number | responsive"
     },
     "maxTagPlaceholder": {
       "value": "",
@@ -128,10 +128,10 @@
       "type": "string"
     },
     "placement": {
-      "value": "",
+      "value": ["bottomLeft", "bottomRight", "topLeft", "topRight"],
       "description": "选择框弹出的位置",
       "default": "bottomLeft",
-      "type": "`bottomLeft` `bottomRight` `topLeft` `topRight`"
+      "type": "bottomLeft `bottomRight` `topLeft` topRight"
     },
     "searchValue": {
       "value": "",
@@ -141,8 +141,8 @@
     },
     "showArrow": {
       "value": "",
-      "description": "是否显示 `suffixIcon`",
-      "default": "`true`",
+      "description": "是否显示 suffixIcon",
+      "default": "true",
       "type": "boolean"
     },
     "showCheckedStrategy": {
@@ -161,13 +161,13 @@
       "type": "boolean"
     },
     "size": {
-      "value": "",
+      "value": ["large", "middle", "small"],
       "description": "选择框大小",
       "default": "-",
-      "type": "`large` | `middle` | `small`"
+      "type": "large | middle | small"
     },
     "status": {
-      "value": "",
+      "value": ["error", "warning"],
       "description": "设置校验状态",
       "default": "-",
       "type": "'error' | 'warning'"
@@ -198,7 +198,7 @@
     },
     "treeCheckStrictly": {
       "value": "",
-      "description": "`checkable` 状态下节点选择完全受控（父子节点选中状态不再关联），会使得 `labelInValue` 强制为 true",
+      "description": "checkable 状态下节点选择完全受控（父子节点选中状态不再关联），会使得 `labelInValue` 强制为 true",
       "default": "false",
       "type": "boolean"
     },
@@ -228,7 +228,7 @@
     },
     "treeExpandAction": {
       "value": "",
-      "description": "点击节点 title 时的展开逻辑，可选：false | `click` | `doubleClick`",
+      "description": "点击节点 title 时的展开逻辑，可选：false | click | doubleClick",
       "default": "false",
       "type": "string | boolean"
     },
@@ -259,13 +259,13 @@
     "treeNodeFilterProp": {
       "value": "",
       "description": "输入项过滤对应的 treeNode 属性",
-      "default": "`value`",
+      "default": "value",
       "type": "string"
     },
     "treeNodeLabelProp": {
       "value": "",
       "description": "作为显示的 prop 设置",
-      "default": "`title`",
+      "default": "title",
       "type": "string"
     },
     "value": {

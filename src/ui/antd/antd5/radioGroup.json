@@ -2,10 +2,10 @@
   "name": "RadioGroup",
   "props": {
     "buttonStyle": {
-      "value": "",
+      "value": ["outline", "solid"],
       "description": "RadioButton 的风格样式，目前有描边和填色两种风格",
-      "default": "`outline`",
-      "type": "`outline` | `solid`"
+      "default": "outline",
+      "type": "outline | solid"
     },
     "defaultValue": {
       "value": "",
@@ -25,23 +25,23 @@
       "default": "-",
       "type": "string"
     },
-    "options": {
+    ":options": {
       "value": "",
       "description": "以配置形式设置子元素",
       "default": "-",
       "type": "string\\[] | number\\[] | Array<{ label: ReactNode; value: string; disabled?: boolean; }>"
     },
     "optionType": {
-      "value": "",
+      "value": ["default", "button"],
       "description": "用于设置 Radio `options` 类型",
-      "default": "`default`",
-      "type": "`default` | `button`"
+      "default": "default",
+      "type": "default | button"
     },
     "size": {
-      "value": "",
+      "value": ["large", "middle", "small"],
       "description": "大小，只对按钮样式生效",
       "default": "-",
-      "type": "`large` | `middle` | `small`"
+      "type": "large | middle | small"
     },
     "value": {
       "value": "",

@@ -13,25 +13,25 @@
       "default": "-",
       "type": "string | (file) => Promise<string>"
     },
-    "beforeUpload": {
+    ":beforeUpload": {
       "value": "",
       "description": "上传文件之前的钩子，参数为上传的文件，若返回 `false` 则停止上传。支持返回一个 Promise 对象，Promise 对象 reject 时则停止上传，resolve 时开始上传（ resolve 传入 `File` 或 `Blob` 对象则上传 resolve 传入对象）；也可以返回 `Upload.LIST_IGNORE`，此时列表中将不展示此文件。 **注意：IE9 不支持该方法**",
       "default": "-",
       "type": "(file, fileList) => boolean | Promise<File> | `Upload.LIST_IGNORE`"
     },
-    "customRequest": {
+    ":customRequest": {
       "value": "",
       "description": "通过覆盖默认的上传行为，可以自定义自己的上传实现",
       "default": "-",
       "type": "function"
     },
-    "data": {
+    ":data": {
       "value": "",
       "description": "上传所需额外参数或返回上传额外参数的方法",
       "default": "-",
       "type": "object|(file) => object | Promise<object>"
     },
-    "defaultFileList": {
+    ":defaultFileList": {
       "value": "",
       "description": "默认已经上传的文件列表",
       "default": "-",
@@ -81,8 +81,8 @@
     },
     "listType": {
       "value": "",
-      "description": "上传列表的内建样式，支持四种基本样式 `text`, `picture`, `picture-card` 和 `picture-circle`",
-      "default": "`text`",
+      "description": "上传列表的内建样式，支持四种基本样式 text, picture, `picture-card` 和 `picture-circle`",
+      "default": "text",
       "type": "string"
     },
     "maxCount": {
@@ -94,7 +94,7 @@
     "method": {
       "value": "",
       "description": "上传请求的 http method",
-      "default": "`post`",
+      "default": "post",
       "type": "string"
     },
     "multiple": {
@@ -106,7 +106,7 @@
     "name": {
       "value": "",
       "description": "发到后台的文件参数名",
-      "default": "`file`",
+      "default": "file",
       "type": "string"
     },
     "openFileDialogOnClick": {
@@ -129,7 +129,7 @@
     },
     "showUploadList": {
       "value": "",
-      "description": "是否展示文件列表, 可设为一个对象，用于单独设定 `showPreviewIcon`, `showRemoveIcon`, `showDownloadIcon`, `removeIcon` 和 `downloadIcon`",
+      "description": "是否展示文件列表, 可设为一个对象，用于单独设定 showPreviewIcon, showRemoveIcon, showDownloadIcon, `removeIcon` 和 downloadIcon",
       "default": "true",
       "type": "boolean | { showPreviewIcon?: boolean, showRemoveIcon?: boolean, showDownloadIcon?: boolean, previewIcon?: ReactNode | (file: UploadFile) => ReactNode, removeIcon?: ReactNode | (file: UploadFile) => ReactNode, downloadIcon?: ReactNode | (file: UploadFile) => ReactNode }"
     },

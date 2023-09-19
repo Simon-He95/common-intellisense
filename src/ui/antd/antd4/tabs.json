@@ -28,7 +28,7 @@
     "defaultActiveKey": {
       "value": "",
       "description": "初始化选中面板的 key，如果没有设置 activeKey",
-      "default": "`第一个面板`",
+      "default": "",
       "type": "string"
     },
     "hideAdd": {
@@ -51,7 +51,7 @@
     },
     "popupClassName": {
       "value": "",
-      "description": "更多菜单的 `className`",
+      "description": "更多菜单的 className",
       "default": "-",
       "type": "string"
     },
@@ -62,9 +62,9 @@
       "type": "(props: DefaultTabBarProps, DefaultTabBar: React.ComponentClass) => React.ReactElement"
     },
     "size": {
-      "value": "",
+      "value": ["large", "middle", "small"],
       "description": "大小，提供 `large` `middle` 和 `small` 三种大小",
-      "default": "`middle`",
+      "default": "middle",
       "type": "string"
     },
     "tabBarExtraContent": {
@@ -86,9 +86,9 @@
       "type": "CSSProperties"
     },
     "tabPosition": {
-      "value": "",
-      "description": "页签位置，可选值有 `top` `right` `bottom` `left`",
-      "default": "`top`",
+      "value": ["top", "right", "bottom", "left"],
+      "description": "页签位置，可选值有 `top` `right` `bottom` left",
+      "default": "top",
       "type": "string"
     },
     "destroyInactiveTabPane": {
@@ -98,9 +98,9 @@
       "type": "boolean"
     },
     "type": {
-      "value": "",
+      "value": ["line", "card", "editable-card"],
       "description": "页签的基本样式，可选 `line`、`card` `editable-card` 类型",
-      "default": "`line`",
+      "default": "line",
       "type": "string"
     }
   },
@@ -124,7 +124,7 @@
     {
       "name": "onTabScroll",
       "description": "tab 滚动时触发",
-      "params": "function({ direction: `left` | `right` | `top` | `bottom` })"
+      "params": "function({ direction: `left` | right | top | `bottom` })"
     }
   ],
   "link": "https://ant.design/components//tabs"

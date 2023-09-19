@@ -82,14 +82,14 @@
     "fieldNames": {
       "value": "",
       "description": "自定义节点 label、value、options 的字段",
-      "default": "{ label: `label`, value: `value`, options: `options` }",
+      "default": "{ label: label, value: value, options: `options` }",
       "type": "object"
     },
     "filterOption": {
       "value": "",
       "description": "是否根据输入项进行筛选。当其为一个函数时，会接收 `inputValue` `option` 两个参数，当 `option` 符合筛选条件时，应返回 `true`，反之则返回 `false`。",
       "default": "true",
-      "type": "`boolean` | `function(inputValue, option)`"
+      "type": "boolean | `function(inputValue, option)`"
     },
     "filterSort": {
       "value": "",
@@ -101,7 +101,7 @@
       "value": "",
       "description": "默认高亮的选项",
       "default": "-",
-      "type": "string|string\\[]"
+      "type": "string | string\\[]"
     },
     "getPopupContainer": {
       "value": "",
@@ -155,7 +155,7 @@
       "value": "",
       "description": "当下拉列表为空时显示的内容",
       "default": "`Not Found`",
-      "type": "string|slot"
+      "type": "string | slot"
     },
     "open": {
       "value": "",
@@ -177,14 +177,14 @@
     },
     "optionLabelProp": {
       "value": [
-        "`children`",
-        "`label`(设置 options 时)"
+        "children",
+        "label(设置 options 时)"
       ],
       "description": "回填到选择框的 Option 的属性值，默认是 Option 的子元素。比如在子元素需要高亮效果时，此值可以设为 `value`。",
-      "default": "`children` | `label`(设置 options 时)",
+      "default": "children | `label`(设置 options 时)",
       "type": "string"
     },
-    "options": {
+    ":options": {
       "value": "",
       "description": "options 数据，如果设置则不需要手动构造 selectOption 节点",
       "default": "\\[]",
@@ -194,13 +194,13 @@
       "value": "",
       "description": "选择框默认文字",
       "default": "-",
-      "type": "string|slot"
+      "type": "string | slot"
     },
     "placement": {
-      "value": "",
+      "value": ["bottomLeft", "bottomRight", "topLeft", "topRight"],
       "description": "选择框弹出的位置",
       "default": "bottomLeft",
-      "type": "`bottomLeft` `bottomRight` `topLeft` `topRight`"
+      "type": "bottomLeft `bottomRight` `topLeft` topRight"
     },
     "removeIcon": {
       "value": "",
@@ -228,12 +228,12 @@
     },
     "size": {
       "value": "",
-      "description": "选择框大小，可选 `large` `small`",
+      "description": "选择框大小，可选 `large` small",
       "default": "default",
       "type": "string"
     },
     "status": {
-      "value": "",
+      "value": ["error", "warning"],
       "description": "设置校验状态",
       "default": "-",
       "type": "'error' | 'warning'"
@@ -260,7 +260,7 @@
       "value": "",
       "description": "指定当前选中的条目",
       "default": "-",
-      "type": "string|string\\[]|number|number\\[]"
+      "type": "string | string\\[]|number | number\\[]"
     },
     "virtual": {
       "value": "",

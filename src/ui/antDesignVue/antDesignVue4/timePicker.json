@@ -88,14 +88,14 @@
     "placeholder": {
       "value": "",
       "description": "没有值的时候显示的内容",
-      "default": "`请选择时间`",
+      "default": "",
       "type": "string | \\[string, string]"
     },
     "placement": {
-      "value": "",
+      "value": ["bottomLeft", "bottomRight", "topLeft", "topRight"],
       "description": "选择框弹出的位置",
       "default": "bottomLeft",
-      "type": "`bottomLeft` `bottomRight` `topLeft` `topRight`"
+      "type": "bottomLeft `bottomRight` `topLeft` topRight"
     },
     "popupClassName": {
       "value": "",
@@ -128,7 +128,7 @@
       "type": "boolean"
     },
     "status": {
-      "value": "",
+      "value": ["error", "warning"],
       "description": "设置校验状态",
       "default": "-",
       "type": "'error' | 'warning'"
@@ -149,13 +149,13 @@
       "value": "",
       "description": "当前时间",
       "default": "-",
-      "type": "[dayjs](https: |  | day.js.org | )"
+      "type": "dayjs"
     },
     "valueFormat": {
       "value": "",
       "description": "可选，绑定值的格式，对 value、defaultValue 起作用。不指定则绑定值为 dayjs 对象",
       "default": "-",
-      "type": "string，[具体格式](https: |  | day.js.org | docs | zh-CN | display | format)"
+      "type": "string"
     }
   },
   "methods": [{ "name": "blur()", "description": "移除焦点", "params": "" }, { "name": "focus()", "description": "获取焦点", "params": "" }],

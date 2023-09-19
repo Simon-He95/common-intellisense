@@ -23,7 +23,7 @@
       "value": "",
       "description": "颜色默认的值",
       "default": "-",
-      "type": "string | `Color`"
+      "type": "string | Color"
     },
     "disabled": {
       "value": "",
@@ -35,13 +35,13 @@
       "value": "",
       "description": "关闭后是否销毁弹窗",
       "default": "false",
-      "type": "`boolean`"
+      "type": "boolean"
     },
     "format": {
       "value": "",
       "description": "颜色格式",
-      "default": "`hex`",
-      "type": "`rgb` | `hex` | `hsb`"
+      "default": "hex",
+      "type": "rgb | hex | hsb"
     },
     "open": {
       "value": "",
@@ -58,8 +58,8 @@
     "placement": {
       "value": "",
       "description": "弹出窗口的位置",
-      "default": "`bottomLeft`",
-      "type": "`top` | `topLeft` | `topRight` | `bottom` | `bottomLeft` | `bottomRight`"
+      "default": "bottomLeft",
+      "type": "top | topLeft | topRight | bottom | bottomLeft | bottomRight"
     },
     "panelRender": {
       "value": "",
@@ -74,28 +74,31 @@
       "type": "boolean | `(color: Color) => React.ReactNode`"
     },
     "size": {
-      "value": "",
+      "value": ["large", "middle", "small"],
       "description": "设置触发器大小",
-      "default": "`middle`",
-      "type": "`large` | `middle` | `small`"
+      "default": "middle",
+      "type": "large | middle | small"
     },
     "trigger": {
-      "value": "",
+      "value": [
+        "hover",
+        "click"
+      ],
       "description": "颜色选择器的触发模式",
-      "default": "`click`",
-      "type": "`hover` | `click`"
+      "default": "click",
+      "type": "hover | click"
     },
     "value": {
       "value": "",
       "description": "颜色的值",
       "default": "-",
-      "type": "string | `Color`"
+      "type": "string | Color"
     }
   },
   "methods": [],
   "typeDetail": {
     "Color": [
-      { "name": "toHex", "description": "转换成 `hex` 格式字符，返回格式如：`1677ff`", "type": "`() => string`" },
+      { "name": "toHex", "description": "转换成 `hex` 格式字符，返回格式如：1677ff", "type": "`() => string`" },
       { "name": "toHexString", "description": "转换成 `hex` 格式颜色字符串，返回格式如：`#1677ff`", "type": "`() => string`" },
       { "name": "toHsb", "description": "转换成 `hsb` 对象", "type": "`() => ({ h: number, s: number, b: number, a number })`" },
       { "name": "toHsbString", "description": "转换成 `hsb` 格式颜色字符串，返回格式如：`hsb(215, 91%, 100%)`", "type": "`() => string`" },
