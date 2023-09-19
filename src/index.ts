@@ -101,10 +101,10 @@ export function activate(context: vscode.ExtensionContext) {
         }).filter(Boolean)
         : []
       if (propName === 'on') {
-        return eventCallbacks.get(name).filter((item: any) => !hasProps.find((prop: any) => item.label.startsWith(prop)))
+        return eventCallbacks.get(name).filter((item: any) => !hasProps.find((prop: any) => isSamePrefix(item.label, prop)))
       }
       else if (propName) {
-        return completionsCallback.filter((item: any) => item.label.startsWith(propName)).map((item: any) =>
+        return completionsCallback.filter((item: any) => !hasProps.find((prop: any) => isSamePrefix(item.label, prop))).filter((item: any) => item.label.startsWith(propName)).map((item: any) =>
           createCompletionItem({
             content: item.label.split('=')[1] ? item.label.split('=')[1].slice(1, -1) : item.label,
             documentation: item.documentation,
@@ -113,7 +113,7 @@ export function activate(context: vscode.ExtensionContext) {
         )
       }
       else if (hasProps.length) {
-        return completionsCallback.filter((item: any) => !hasProps.find((prop: any) => item.label.startsWith(prop)))
+        return completionsCallback.filter((item: any) => !hasProps.find((prop: any) => isSamePrefix(item.label, prop)))
       }
       else {
         return completionsCallback
@@ -226,4 +226,13 @@ function findUI() {
       Object.assign(result, (UI as any)[option]?.(extensionContext))
     , {} as any)
   })
+}
+
+function isSamePrefix(label: string, key: string) {
+  let labelName = label.split('=')[0]
+  if (labelName.indexOf(' ')) {
+    // 防止匹配到描述中的=
+    labelName = labelName.split(' ')[0]
+  }
+  return labelName === key
 }
