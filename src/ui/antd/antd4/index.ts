@@ -1,4 +1,5 @@
 import { componentsReducer, propsReducer } from '../../utils'
+import Affix from './affix.json'
 import Divider from './divider.json'
 import Row from './row.json'
 import Col from './col.json'
@@ -82,6 +83,7 @@ import Spin from './spin.json'
 
 export function antd4() {
   const map: any = [
+    Affix,
     Divider,
     Row,
     Col,

@@ -196,11 +196,13 @@ function jsxDfs(children: any, position: vscode.Position) {
 
     if (type === 'JSXElement' || type === 'Element' || type === 'InlineComponent') {
       const target = openingElement.attributes.find((item: any) => isInPosition(item.loc, position) || item.value === null)
-      openingElement = {
-        name: {
-          name: child.name,
-        },
-        attributes: child.attributes,
+      if (!openingElement) {
+        openingElement = {
+          name: {
+            name: child.name,
+          },
+          attributes: child.attributes,
+        }
       }
       if (target) {
         return {
@@ -233,8 +235,8 @@ function jsxDfs(children: any, position: vscode.Position) {
   }
 }
 
-function findJsxRefs(children: any, map: any = {}, refs: any = []) {
-  for (const child of children) {
+function findJsxRefs(childrens: any, map: any = {}, refs: any = []) {
+  for (const child of childrens) {
     let { type, openingElement, body: children, argument, declarations, init, id, expression } = child
     if (type === 'VariableDeclaration') {
       children = declarations
@@ -263,7 +265,7 @@ function findJsxRefs(children: any, map: any = {}, refs: any = []) {
     if (openingElement && openingElement.attributes.length) {
       for (const prop of openingElement.attributes) {
         if (prop.name.name === 'ref') {
-          const value = prop.value.expression.name
+          const value = prop.value?.expression?.name || prop.value.value
           map[value] = transformTagName(openingElement.name.name)
         }
       }

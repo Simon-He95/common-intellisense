@@ -1,5 +1,5 @@
 import * as vscode from 'vscode'
-import { addEventListener, copyText, createCompletionItem, getSelection, message, registerCommand, registerCompletionItemProvider } from '@vscode-use/utils'
+import { addEventListener, copyText, createCompletionItem, getActiveTextEditorLanguageId, getSelection, message, registerCommand, registerCompletionItemProvider } from '@vscode-use/utils'
 import { CreateWebview } from '@vscode-use/createwebview'
 import { findPkgUI, parser } from './utils'
 import UI from './ui'
@@ -54,17 +54,20 @@ export function activate(context: vscode.ExtensionContext) {
       return
     const { character } = position
     const isPreEmpty = lineText[character - 1] === ' '
+    const lan = getActiveTextEditorLanguageId()
     if (!result.isInTemplate && result.refs && !isPreEmpty) {
       if (result.refsMap && Object.keys(result.refsMap).length) {
         if (lineText?.slice(-1)[0] === '.') {
           for (const key in result.refsMap) {
             const value = result.refsMap[key]
-            if ((lineText.endsWith(`.$refs.${key}.`) || lineText.endsWith(`${key}.value.`)) && UiCompletions[value])
+            if (lan === 'vue' && (lineText.endsWith(`.$refs.${key}.`) || lineText.endsWith(`${key}.value.`)) && UiCompletions[value])
+              return UiCompletions[value].methods
+            else if (lineText.endsWith(`${key}.current.`) && UiCompletions[value])
               return UiCompletions[value].methods
           }
         }
       }
-      if (lineText.slice(character, character + 6) !== '.value')
+      if (lan === 'vue' && lineText.slice(character, character + 6) !== '.value')
         return result.refs.map((refName: string) => createCompletionItem({ content: refName, snippet: `${refName}.value`, documentation: `${refName}.value`, preselect: true, sortText: '99' }))
     }
     if (UiCompletions && result?.type === 'props') {
@@ -86,10 +89,12 @@ export function activate(context: vscode.ExtensionContext) {
           if (item.name === 'on' && item.arg)
             return `${item.arg.content}`
 
-          if (typeof item.name === 'object')
-            item.name.label = item.name.name.slice(2)
+          if (typeof item.name === 'object' && item.name.name !== 'on')
+            return item.name.name
+
           if (item.name !== 'on')
             return item.name
+
           return false
         }).filter(Boolean)
         : []

@@ -68,17 +68,36 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
             documentation.appendMarkdown(`\n\n[🔗 文档链接](command:intellisense.openDocument?%7B%22link%22%3A%22${encodeURIComponent(item.link)}%22%7D)`)
           let content = ''
           let snippet = ''
+
           if (value.type && value.type.includes('boolean') && value.default === 'false') {
-            content = snippet = key
-          }
-          else if (key.startsWith(':') && !v) {
             if (lan === 'vue') {
-              content = `${key}="${getComponentTagName(item.name)}${key[1].toUpperCase()}${key.slice(2)}"`
-              snippet = `${key}="\${1:${getComponentTagName(item.name)}${key[1].toUpperCase()}${key.slice(2)}}"$2`
+              content = snippet = key
             }
             else {
-              content = `${key.slice(1)}={ ${getComponentTagName(item.name)}${key[1].toUpperCase()}${key.slice(2)} }`
-              snippet = `${key.slice(1)}={ \${1:${getComponentTagName(item.name)}${key[1].toUpperCase()}${key.slice(2)}} }$2`
+              content = `${key}="true"`
+              snippet = `${key}="$\{1:true\}$2"`
+            }
+          }
+          else if (key.startsWith(':')) {
+            if (!v) {
+              if (lan === 'vue') {
+                content = `${key}="${getComponentTagName(item.name)}${key[1].toUpperCase()}${key.slice(2)}"`
+                snippet = `${key}="\${1:${getComponentTagName(item.name)}${key[1].toUpperCase()}${key.slice(2)}}"$2`
+              }
+              else {
+                content = `${key.slice(1)}={${getComponentTagName(item.name)}${key[1].toUpperCase()}${key.slice(2)}}`
+                snippet = `${key.slice(1)}={\${1:${getComponentTagName(item.name)}${key[1].toUpperCase()}${key.slice(2)}}}$2`
+              }
+            }
+            else {
+              if (lan === 'vue') {
+                content = `${key}="${getComponentTagName(item.name)}${key[1].toUpperCase()}${key.slice(2)}"`
+                snippet = `${key}="\${1:${getComponentTagName(item.name)}${key[1].toUpperCase()}${key.slice(2)}}"$2`
+              }
+              else {
+                content = `${key.slice(1)}={${v}}`
+                snippet = `${key.slice(1)}={\${1:${v}}}$2`
+              }
             }
           }
           else {
@@ -136,12 +155,12 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
             content = `${name}="on${_name}"`
           }
           else if (lan === 'svelte') {
-            snippet = `${name}={ \${1:${name.replace(/:(\w)/, (_: string, v: string) => v.toUpperCase())}} }`
-            content = `${name}={ ${name.replace(/:(\w)/, (_: string, v: string) => v.toUpperCase())} }`
+            snippet = `${name}={\${1:${name.replace(/:(\w)/, (_: string, v: string) => v.toUpperCase())}}}`
+            content = `${name}={${name.replace(/:(\w)/, (_: string, v: string) => v.toUpperCase())}}`
           }
           else {
-            snippet = `${name}={ \${1:${name}} }`
-            content = `${name}={ ${name} }`
+            snippet = `${name}={\${1:${name}}}`
+            content = `${name}={${name}}`
           }
           content += `  ${description}${params ? `  参数：${params}` : ''}`
           const documentation = new vscode.MarkdownString()
@@ -172,7 +191,7 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
           detail.push(`- 🚢 参数:    ***\`${params}\`***`)
 
         documentation.appendMarkdown(detail.join('\n\n'))
-        return createCompletionItem({ content: method.name, snippet: `${name}()$1`, documentation, type: 1, preselect: true, sortText: '1' })
+        return createCompletionItem({ content: method.name, snippet: `${name.endsWith('()') ? name : `${name}()`}$1`, documentation, type: 1, preselect: true, sortText: '1' })
       }))
     }
 
