@@ -1,0 +1,82 @@
+{
+  "name": "InputMask",
+  "props": {
+    "modelValue": {
+      "default": "",
+      "description": "Value of the component.",
+      "type": "string",
+      "value": ""
+    },
+    "slotChar": {
+      "default": "_",
+      "description": "Placeholder character in mask, default is underscore.",
+      "type": "string",
+      "value": ""
+    },
+    "mask": {
+      "default": "",
+      "description": "Mask pattern.",
+      "type": "string",
+      "value": ""
+    },
+    "autoClear": {
+      "default": "true",
+      "description": "Clears the incomplete value on blur.",
+      "type": "boolean",
+      "value": ""
+    },
+    "unmask": {
+      "default": "false",
+      "description": "Defines if model sets the raw unmasked value to bound value or the formatted mask value.",
+      "type": "boolean",
+      "value": ""
+    },
+    "readonly": {
+      "default": "false",
+      "description": "Whether the items are clickable or not.",
+      "type": "boolean",
+      "value": ""
+    },
+    "pt": {
+      "default": "",
+      "description": "Used to pass attributes to DOM elements inside the component.",
+      "type": "PassThrough<InputMaskPassThroughOptions>",
+      "value": ""
+    },
+    "ptOptions": {
+      "default": "",
+      "description": "Used to configure passthrough(pt) options of the component.",
+      "type": "PassThroughOptions",
+      "value": ""
+    },
+    "unstyled": {
+      "default": "false",
+      "description": "When enabled, it removes component related styles in the core.",
+      "type": "boolean",
+      "value": ""
+    }
+  },
+  "events": [
+    {
+      "name": "update:modelValue",
+      "description": "Emitted when the value changes.",
+      "params": "(value: string) => void"
+    },
+    {
+      "name": "focus",
+      "description": "Callback to invoke when the component receives focus.",
+      "params": "(event: Event) => void"
+    },
+    {
+      "name": "blur",
+      "description": "Callback to invoke when the component loses focus.",
+      "params": "(event: Event) => void"
+    },
+    {
+      "name": "keydown",
+      "description": "Callback to invoke when a key is pressed.",
+      "params": "(event: Event) => void"
+    }
+  ],
+  "link": "https://primevue.org/inputmask/"
+}

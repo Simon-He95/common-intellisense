@@ -1,0 +1,82 @@
+{
+  "name": "Editor",
+  "props": {
+    "modelValue": {
+      "default": "",
+      "description": "Value of the content.",
+      "type": "string",
+      "value": ""
+    },
+    "placeholder": {
+      "default": "",
+      "description": "Placeholder text to show when editor is empty.",
+      "type": "string",
+      "value": ""
+    },
+    "readonly": {
+      "default": "false",
+      "description": "Whether to instantiate the editor to readonly mode.",
+      "type": "boolean",
+      "value": ""
+    },
+    "formats": {
+      "default": "",
+      "description": "Whitelist of formats to display, see [here](https://quilljs.com/docs/formats/) for available options.",
+      "type": "any[]",
+      "value": ""
+    },
+    "editorStyle": {
+      "default": "",
+      "description": "Inline style of the container.",
+      "type": "any",
+      "value": ""
+    },
+    "modules": {
+      "default": "",
+      "description": "Modules configuration, see [here](https://quilljs.com/docs/modules/) for available options.",
+      "type": "any",
+      "value": ""
+    },
+    "pt": {
+      "default": "",
+      "description": "Used to pass attributes to DOM elements inside the component.",
+      "type": "PassThrough<EditorPassThroughOptions>",
+      "value": ""
+    },
+    "ptOptions": {
+      "default": "",
+      "description": "Used to configure passthrough(pt) options of the component.",
+      "type": "PassThroughOptions",
+      "value": ""
+    },
+    "unstyled": {
+      "default": "false",
+      "description": "When enabled, it removes component related styles in the core.",
+      "type": "boolean",
+      "value": ""
+    }
+  },
+  "events": [
+    {
+      "name": "update:modelValue",
+      "description": "Emitted when the value changes.",
+      "params": "(value: string) => void"
+    },
+    {
+      "name": "text-change",
+      "description": "Callback to invoke when text of editor changes.",
+      "params": "(event: EditorTextChangeEvent) => void"
+    },
+    {
+      "name": "selection-change",
+      "description": "Callback to invoke when selection of the text changes.",
+      "params": "(event: EditorSelectionChangeEvent) => void"
+    },
+    {
+      "name": "load",
+      "description": "Callback to invoke when the quill modules are loaded.",
+      "params": "(event: EditorLoadEvent) => void"
+    }
+  ],
+  "link": "https://primevue.org/editor/"
+}

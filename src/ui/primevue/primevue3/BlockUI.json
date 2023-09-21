@@ -1,0 +1,60 @@
+{
+  "name": "BlockUI",
+  "props": {
+    "blocked": {
+      "default": "false",
+      "description": "Controls the blocked state.",
+      "type": "boolean",
+      "value": ""
+    },
+    "fullScreen": {
+      "default": "false",
+      "description": "When enabled, the whole document gets blocked.",
+      "type": "boolean",
+      "value": ""
+    },
+    "baseZIndex": {
+      "default": "0",
+      "description": "Base zIndex value to use in layering.",
+      "type": "number",
+      "value": ""
+    },
+    "autoZIndex": {
+      "default": "true",
+      "description": "Whether to automatically manage layering.",
+      "type": "boolean",
+      "value": ""
+    },
+    "pt": {
+      "default": "",
+      "description": "Used to pass attributes to DOM elements inside the component.",
+      "type": "PassThrough<BlockUIPassThroughOptions>",
+      "value": ""
+    },
+    "ptOptions": {
+      "default": "",
+      "description": "Used to configure passthrough(pt) options of the component.",
+      "type": "PassThroughOptions",
+      "value": ""
+    },
+    "unstyled": {
+      "default": "false",
+      "description": "When enabled, it removes component related styles in the core.",
+      "type": "boolean",
+      "value": ""
+    }
+  },
+  "events": [
+    {
+      "name": "block",
+      "description": "Fired when the element gets blocked.",
+      "params": "() => void"
+    },
+    {
+      "name": "unblock",
+      "description": "Fired when the element gets unblocked.",
+      "params": "() => void"
+    }
+  ],
+  "link": "https://primevue.org/blockui/"
+}

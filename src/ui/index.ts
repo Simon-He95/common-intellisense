@@ -9,6 +9,7 @@ import { vuetify3, vuetify3Components } from './vuetify'
 import { uview2, uview2Components } from './uview'
 import { chakraUiReact2, chakraUiReact2Components } from './chakraUi'
 import { skeleton2, skeleton2Components } from './skeleton'
+import { primevue3, primevue3Components } from './primevue'
 
 export default {
   elementUi2,
@@ -25,6 +26,7 @@ export default {
   uview2,
   chakraUiReact2,
   skeleton2,
+  primevue3,
   elementUi2Components,
   antd4Components,
   antd5Components,
@@ -39,4 +41,5 @@ export default {
   uview2Components,
   chakraUiReact2Components,
   skeleton2Components,
+  primevue3Components,
 }

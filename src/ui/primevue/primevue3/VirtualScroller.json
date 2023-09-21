@@ -1,0 +1,178 @@
+{
+  "name": "VirtualScroller",
+  "props": {
+    "id": {
+      "default": "",
+      "description": "Unique identifier of the element.",
+      "type": "string",
+      "value": ""
+    },
+    "style": {
+      "default": "",
+      "description": "Inline style of the component.",
+      "type": "any",
+      "value": ""
+    },
+    "class": {
+      "default": "",
+      "description": "Style class of the component.",
+      "type": "any",
+      "value": ""
+    },
+    "items": {
+      "default": "",
+      "description": "An array of objects to display.",
+      "type": "null | any[] | any[][]",
+      "value": ""
+    },
+    "itemSize": {
+      "default": "",
+      "description": "The height/width of item according to orientation.",
+      "type": "number | number[]",
+      "value": ""
+    },
+    "scrollHeight": {
+      "default": "",
+      "description": "Height of the scroll viewport.",
+      "type": "string",
+      "value": ""
+    },
+    "scrollWidth": {
+      "default": "",
+      "description": "Width of the scroll viewport.",
+      "type": "string",
+      "value": ""
+    },
+    "orientation": {
+      "default": "vertical",
+      "description": "The orientation of scrollbar.",
+      "type": "\"both\" | \"horizontal\" | \"vertical\"",
+      "value": ""
+    },
+    "numToleratedItems": {
+      "default": "half the number of items shown in the view.",
+      "description": "Determines how many additional elements to add to the DOM outside of the view.\nAccording to the scrolls made up and down, extra items are added in a certain algorithm in the form of multiples of this number.",
+      "type": "number",
+      "value": ""
+    },
+    "delay": {
+      "default": "0",
+      "description": "Delay in scroll before new data is loaded.",
+      "type": "number",
+      "value": ""
+    },
+    "resizeDelay": {
+      "default": "10",
+      "description": "Delay after window's resize finishes.",
+      "type": "number",
+      "value": ""
+    },
+    "lazy": {
+      "default": "false",
+      "description": "Defines if data is loaded and interacted with in lazy manner.",
+      "type": "boolean",
+      "value": ""
+    },
+    "disabled": {
+      "default": "false",
+      "description": "If disabled, the VirtualScroller feature is eliminated and the content is displayed directly.",
+      "type": "boolean",
+      "value": ""
+    },
+    "loaderDisabled": {
+      "default": "false",
+      "description": "Used to implement a custom loader instead of using the loader feature in the VirtualScroller.",
+      "type": "boolean",
+      "value": ""
+    },
+    "showLoader": {
+      "default": "false",
+      "description": "Whether to show loader.",
+      "type": "boolean",
+      "value": ""
+    },
+    "showSpacer": {
+      "default": "true",
+      "description": "Used to implement a custom spacer instead of using the spacer feature in the VirtualScroller.",
+      "type": "boolean",
+      "value": ""
+    },
+    "loading": {
+      "default": "false",
+      "description": "Whether to load items.",
+      "type": "boolean",
+      "value": ""
+    },
+    "tabindex": {
+      "default": "0",
+      "description": "Index of the element in tabbing order.",
+      "type": "string | number",
+      "value": ""
+    },
+    "inline": {
+      "default": "false",
+      "description": "When enabled, positions the content as inline.",
+      "type": "boolean",
+      "value": ""
+    },
+    "step": {
+      "default": "0",
+      "description": "Used to specify how many items to load in each load method in lazy mode.",
+      "type": "number",
+      "value": ""
+    },
+    "appendOnly": {
+      "default": "false",
+      "description": "Used to append each loaded item to top without removing any items from the DOM. Using very large data may cause the browser to crash.",
+      "type": "boolean",
+      "value": ""
+    },
+    "autoSize": {
+      "default": "false",
+      "description": "Whether to dynamically change the height or width of scrollable container.",
+      "type": "boolean",
+      "value": ""
+    },
+    "pt": {
+      "default": "",
+      "description": "Used to pass attributes to DOM elements inside the component.",
+      "type": "PassThrough<VirtualScrollerPassThroughOptions>",
+      "value": ""
+    },
+    "ptOptions": {
+      "default": "",
+      "description": "Used to configure passthrough(pt) options of the component.",
+      "type": "PassThroughOptions",
+      "value": ""
+    },
+    "unstyled": {
+      "default": "false",
+      "description": "When enabled, it removes component related styles in the core.",
+      "type": "boolean",
+      "value": ""
+    }
+  },
+  "events": [
+    {
+      "name": "update:numToleratedItems",
+      "description": "Emitted when the numToleratedItems changes.",
+      "params": "(value: number) => void"
+    },
+    {
+      "name": "scroll",
+      "description": "Callback to invoke when scroll position changes.",
+      "params": "(event: Event) => void"
+    },
+    {
+      "name": "scroll-index-change",
+      "description": "Callback to invoke when scroll position and item's range in view changes.",
+      "params": "(event: VirtualScrollerScrollIndexChangeEvent) => void"
+    },
+    {
+      "name": "lazy-load",
+      "description": "Callback to invoke in lazy mode to load new data.",
+      "params": "(event: VirtualScrollerLazyEvent) => void"
+    }
+  ],
+  "link": "https://primevue.org/virtualscroller/"
+}

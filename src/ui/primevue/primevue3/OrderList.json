@@ -1,0 +1,142 @@
+{
+  "name": "OrderList",
+  "props": {
+    "modelValue": {
+      "default": "",
+      "description": "Value of the component.",
+      "type": "any[]",
+      "value": ""
+    },
+    "dataKey": {
+      "default": "",
+      "description": "Name of the field that uniquely identifies the a record in the data.",
+      "type": "string",
+      "value": ""
+    },
+    "selection": {
+      "default": "",
+      "description": "Selected items in the list.",
+      "type": "any[]",
+      "value": ""
+    },
+    "metaKeySelection": {
+      "default": "true",
+      "description": "Defines whether metaKey is requred or not for the selection.\nWhen true metaKey needs to be pressed to select or unselect an item and\nwhen set to false selection of each item can be toggled individually. On touch enabled devices, metaKeySelection is turned off automatically.",
+      "type": "boolean",
+      "value": ""
+    },
+    "listStyle": {
+      "default": "",
+      "description": "Inline style of the the list element.",
+      "type": "any",
+      "value": ""
+    },
+    "responsive": {
+      "default": "true",
+      "description": "Whether the list optimizes layout based on screen size.",
+      "type": "boolean",
+      "value": ""
+    },
+    "breakpoint": {
+      "default": "960px",
+      "description": "The breakpoint to define the maximum width boundary when responsiveness is enabled.",
+      "type": "string",
+      "value": ""
+    },
+    "stripedRows": {
+      "default": "",
+      "description": "Whether to displays rows with alternating colors.",
+      "type": "boolean",
+      "value": ""
+    },
+    "tabindex": {
+      "default": "",
+      "description": "Index of the element in tabbing order.",
+      "type": "string | number",
+      "value": ""
+    },
+    "listProps": {
+      "default": "",
+      "description": "Used to pass all properties of the HTMLAttributes to the list element.",
+      "type": "HTMLAttributes",
+      "value": ""
+    },
+    "moveUpButtonProps": {
+      "default": "",
+      "description": "Used to pass all properties of the HTMLButtonElement to the move up button inside the component.",
+      "type": "ButtonHTMLAttributes",
+      "value": ""
+    },
+    "moveTopButtonProps": {
+      "default": "",
+      "description": "Used to pass all properties of the HTMLButtonElement to the move top button inside the component.",
+      "type": "ButtonHTMLAttributes",
+      "value": ""
+    },
+    "moveDownButtonProps": {
+      "default": "",
+      "description": "Used to pass all properties of the HTMLButtonElement to the move down button inside the component.",
+      "type": "ButtonHTMLAttributes",
+      "value": ""
+    },
+    "moveBottomButtonProps": {
+      "default": "",
+      "description": "Used to pass all properties of the HTMLButtonElement to the move bottom button inside the component.",
+      "type": "ButtonHTMLAttributes",
+      "value": ""
+    },
+    "aria-label": {
+      "default": "",
+      "description": "Defines a string value that labels an interactive list element.",
+      "type": "string",
+      "value": ""
+    },
+    "aria-labelledby": {
+      "default": "",
+      "description": "Identifier of the underlying list element.",
+      "type": "string",
+      "value": ""
+    },
+    "pt": {
+      "default": "",
+      "description": "Used to pass attributes to DOM elements inside the component.",
+      "type": "PassThrough<OrderListPassThroughOptions>",
+      "value": ""
+    },
+    "ptOptions": {
+      "default": "",
+      "description": "Used to configure passthrough(pt) options of the component.",
+      "type": "PassThroughOptions",
+      "value": ""
+    },
+    "unstyled": {
+      "default": "false",
+      "description": "When enabled, it removes component related styles in the core.",
+      "type": "boolean",
+      "value": ""
+    }
+  },
+  "events": [
+    {
+      "name": "update:modelValue",
+      "description": "Emitted when the value changes.",
+      "params": "(value: any[]) => void"
+    },
+    {
+      "name": "update:selection",
+      "description": "Emitted when the selection changes.",
+      "params": "(value: any[]) => void"
+    },
+    {
+      "name": "reorder",
+      "description": "Callback to invoke when the list is reordered.",
+      "params": "(event: OrderListReorderEvent) => void"
+    },
+    {
+      "name": "selection-change",
+      "description": "Callback to invoke when selection changes.",
+      "params": "(event: OrderListSelectionChangeEvent) => void"
+    }
+  ],
+  "link": "https://primevue.org/orderlist/"
+}

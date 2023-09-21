@@ -1,0 +1,416 @@
+{
+  "name": "Calendar",
+  "props": {
+    "modelValue": {
+      "default": "null",
+      "description": "Value of the component.",
+      "type": "null | string | string[] | Date | Date[]",
+      "value": ""
+    },
+    "selectionMode": {
+      "default": "single",
+      "description": "Defines the quantity of the selection.",
+      "type": "\"multiple\" | \"range\" | \"single\"",
+      "value": ""
+    },
+    "dateFormat": {
+      "default": "",
+      "description": "Format of the date. Defaults to PrimeVue Locale configuration.",
+      "type": "string",
+      "value": ""
+    },
+    "inline": {
+      "default": "false",
+      "description": "When enabled, displays the calendar as inline instead of an overlay.",
+      "type": "boolean",
+      "value": ""
+    },
+    "showOtherMonths": {
+      "default": "true",
+      "description": "Whether to display dates in other months (non-selectable) at the start or end of the current month. To make these days selectable use the selectOtherMonths option.",
+      "type": "boolean",
+      "value": ""
+    },
+    "selectOtherMonths": {
+      "default": "false",
+      "description": "Whether days in other months shown before or after the current month are selectable. This only applies if the showOtherMonths option is set to true.",
+      "type": "boolean",
+      "value": ""
+    },
+    "showIcon": {
+      "default": "false",
+      "description": "When enabled, displays a button with icon next to input.",
+      "type": "boolean",
+      "value": ""
+    },
+    "icon": {
+      "default": "",
+      "description": "Icon of the calendar button.",
+      "type": "string",
+      "value": ""
+    },
+    "previousIcon": {
+      "default": "",
+      "description": "Icon to show in the previous button.",
+      "type": "string",
+      "value": ""
+    },
+    "nextIcon": {
+      "default": "",
+      "description": "Icon to show in the next button.",
+      "type": "string",
+      "value": ""
+    },
+    "incrementIcon": {
+      "default": "",
+      "description": "Icon to show in each of the increment buttons.",
+      "type": "string",
+      "value": ""
+    },
+    "decrementIcon": {
+      "default": "",
+      "description": "Icon to show in each of the decrement buttons.",
+      "type": "string",
+      "value": ""
+    },
+    "numberOfMonths": {
+      "default": "1",
+      "description": "Number of months to display.",
+      "type": "number",
+      "value": ""
+    },
+    "responsiveOptions": {
+      "default": "",
+      "description": "An array of options for responsive design.",
+      "type": "CalendarResponsiveOptions[]",
+      "value": ""
+    },
+    "view": {
+      "default": "date",
+      "description": "Type of view to display.",
+      "type": "\"month\" | \"year\" | \"date\"",
+      "value": ""
+    },
+    "touchUI": {
+      "default": "false",
+      "description": "When enabled, calendar overlay is displayed as optimized for touch devices.",
+      "type": "boolean",
+      "value": ""
+    },
+    "monthNavigator": {
+      "default": "false",
+      "description": "Whether the month should be rendered as a dropdown instead of text.",
+      "type": "boolean",
+      "value": ""
+    },
+    "yearNavigator": {
+      "default": "false",
+      "description": "Whether the year should be rendered as a dropdown instead of text.",
+      "type": "boolean",
+      "value": ""
+    },
+    "yearRange": {
+      "default": "false",
+      "description": "The range of years displayed in the year drop-down in (nnnn:nnnn) format such as (2000:2020).",
+      "type": "string",
+      "value": ""
+    },
+    "minDate": {
+      "default": "",
+      "description": "The minimum selectable date.",
+      "type": "Date",
+      "value": ""
+    },
+    "maxDate": {
+      "default": "",
+      "description": "The maximum selectable date.",
+      "type": "Date",
+      "value": ""
+    },
+    "disabledDates": {
+      "default": "",
+      "description": "Array with dates to disable.",
+      "type": "Date[]",
+      "value": ""
+    },
+    "disabledDays": {
+      "default": "",
+      "description": "Array with disabled weekday numbers.",
+      "type": "number[]",
+      "value": ""
+    },
+    "maxDateCount": {
+      "default": "",
+      "description": "Maximum number of selectable dates in multiple mode.",
+      "type": "number",
+      "value": ""
+    },
+    "showOnFocus": {
+      "default": "true",
+      "description": "When disabled, datepicker will not be visible with input focus.",
+      "type": "boolean",
+      "value": ""
+    },
+    "autoZIndex": {
+      "default": "true",
+      "description": "Whether to automatically manage layering.",
+      "type": "boolean",
+      "value": ""
+    },
+    "baseZIndex": {
+      "default": "0",
+      "description": "Base zIndex value to use in layering.",
+      "type": "number",
+      "value": ""
+    },
+    "showButtonBar": {
+      "default": "false",
+      "description": "Whether to display today and clear buttons at the footer.",
+      "type": "boolean",
+      "value": ""
+    },
+    "shortYearCutoff": {
+      "default": "+10",
+      "description": "The cutoff year for determining the century for a date.",
+      "type": "string",
+      "value": ""
+    },
+    "showTime": {
+      "default": "false",
+      "description": "Whether to display timepicker.",
+      "type": "boolean",
+      "value": ""
+    },
+    "timeOnly": {
+      "default": "false",
+      "description": "Whether to display timepicker only.",
+      "type": "boolean",
+      "value": ""
+    },
+    "hourFormat": {
+      "default": "24",
+      "description": "Specifies hour format.",
+      "type": "\"12\" | \"24\"",
+      "value": ""
+    },
+    "stepHour": {
+      "default": "1",
+      "description": "Hours to change per step.",
+      "type": "number",
+      "value": ""
+    },
+    "stepMinute": {
+      "default": "1",
+      "description": "Minutes to change per step.",
+      "type": "number",
+      "value": ""
+    },
+    "stepSecond": {
+      "default": "1",
+      "description": "Seconds to change per step.",
+      "type": "number",
+      "value": ""
+    },
+    "showSeconds": {
+      "default": "false",
+      "description": "Whether to show the seconds in time picker.",
+      "type": "boolean",
+      "value": ""
+    },
+    "hideOnDateTimeSelect": {
+      "default": "false",
+      "description": "Whether to hide the overlay on date selection when showTime is enabled.",
+      "type": "boolean",
+      "value": ""
+    },
+    "hideOnRangeSelection": {
+      "default": "false",
+      "description": "Whether to hide the overlay on date selection is completed when selectionMode is range.",
+      "type": "boolean",
+      "value": ""
+    },
+    "timeSeparator": {
+      "default": ":",
+      "description": "Separator of time selector.",
+      "type": "string",
+      "value": ""
+    },
+    "showWeek": {
+      "default": "false",
+      "description": "When enabled, calendar will show week numbers.",
+      "type": "boolean",
+      "value": ""
+    },
+    "manualInput": {
+      "default": "true",
+      "description": "Whether to allow entering the date manually via typing.",
+      "type": "boolean",
+      "value": ""
+    },
+    "disabled": {
+      "default": "false",
+      "description": "When present, it specifies that the component should be disabled.",
+      "type": "boolean",
+      "value": ""
+    },
+    "readonly": {
+      "default": "false",
+      "description": "When present, it specifies that an input field is read-only.",
+      "type": "boolean",
+      "value": ""
+    },
+    "placeholder": {
+      "default": "",
+      "description": "Placeholder text for the input.",
+      "type": "string",
+      "value": ""
+    },
+    "appendTo": {
+      "default": "body",
+      "description": "A valid query selector or an HTMLElement to specify where the overlay gets attached.",
+      "type": "string | HTMLElement",
+      "value": ""
+    },
+    "id": {
+      "default": "",
+      "description": "Identifier of the element.",
+      "type": "string",
+      "value": ""
+    },
+    "inputId": {
+      "default": "",
+      "description": "Identifier of the underlying input element.",
+      "type": "string",
+      "value": ""
+    },
+    "inputStyle": {
+      "default": "",
+      "description": "Inline style of the input field.",
+      "type": "object",
+      "value": ""
+    },
+    "inputClass": {
+      "default": "",
+      "description": "Style class of the input field.",
+      "type": "string | object",
+      "value": ""
+    },
+    "inputProps": {
+      "default": "",
+      "description": "Used to pass all properties of the HTMLInputElement to the focusable input element inside the component.",
+      "type": "InputHTMLAttributes",
+      "value": ""
+    },
+    "panelStyle": {
+      "default": "",
+      "description": "Inline style of the overlay panel.",
+      "type": "object",
+      "value": ""
+    },
+    "panelClass": {
+      "default": "",
+      "description": "Style class of the overlay panel.",
+      "type": "string | object",
+      "value": ""
+    },
+    "panelProps": {
+      "default": "",
+      "description": "Used to pass all properties of the HTMLDivElement to the overlay panel inside the component.",
+      "type": "HTMLAttributes",
+      "value": ""
+    },
+    "aria-labelledby": {
+      "default": "",
+      "description": "Establishes relationships between the component and label(s) where its value should be one or more element IDs.",
+      "type": "string",
+      "value": ""
+    },
+    "aria-label": {
+      "default": "",
+      "description": "Establishes a string value that labels the component.",
+      "type": "string",
+      "value": ""
+    },
+    "pt": {
+      "default": "",
+      "description": "Used to pass attributes to DOM elements inside the component.",
+      "type": "PassThrough<CalendarPassThroughOptions>",
+      "value": ""
+    },
+    "ptOptions": {
+      "default": "",
+      "description": "Used to configure passthrough(pt) options of the component.",
+      "type": "PassThroughOptions",
+      "value": ""
+    },
+    "unstyled": {
+      "default": "false",
+      "description": "When enabled, it removes component related styles in the core.",
+      "type": "boolean",
+      "value": ""
+    }
+  },
+  "events": [
+    {
+      "name": "update:modelValue",
+      "description": "Emitted when the value changes.",
+      "params": "(value: undefined | string | string[] | Date | Date[]) => void"
+    },
+    {
+      "name": "input",
+      "description": "Callback to invoke when input field is being typed.",
+      "params": "(event: Event) => void"
+    },
+    {
+      "name": "date-select",
+      "description": "Callback to invoke when a date is selected.",
+      "params": "(value: Date) => void"
+    },
+    {
+      "name": "show",
+      "description": "Callback to invoke when datepicker panel is shown.",
+      "params": "() => void"
+    },
+    {
+      "name": "hide",
+      "description": "Callback to invoke when datepicker panel is hidden.",
+      "params": "() => void"
+    },
+    {
+      "name": "today-click",
+      "description": "Callback to invoke when today button is clicked.",
+      "params": "(date: Date) => void"
+    },
+    {
+      "name": "clear-click",
+      "description": "Callback to invoke when clear button is clicked.",
+      "params": "(event: Event) => void"
+    },
+    {
+      "name": "month-change",
+      "description": "Callback to invoke when a month is changed using the navigators.",
+      "params": "(event: CalendarMonthChangeEvent) => void"
+    },
+    {
+      "name": "year-change",
+      "description": "Callback to invoke when a year is changed using the navigators.",
+      "params": "(event: CalendarYearChangeEvent) => void"
+    },
+    {
+      "name": "focus",
+      "description": "Callback to invoke on focus of input field.",
+      "params": "(event: Event) => void"
+    },
+    {
+      "name": "blur",
+      "description": "Callback to invoke on blur of input field.",
+      "params": "(event: CalendarBlurEvent) => void"
+    },
+    {
+      "name": "keydown",
+      "description": "Callback to invoke when a key is pressed.",
+      "params": "(event: Event) => void"
+    }
+  ],
+  "link": "https://primevue.org/calendar/"
+}

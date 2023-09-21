@@ -1,0 +1,101 @@
+{
+  "name": "Slider",
+  "props": {
+    "modelValue": {
+      "default": "",
+      "description": "Value of the component.",
+      "type": "number | number[]",
+      "value": ""
+    },
+    "min": {
+      "default": "0",
+      "description": "Mininum boundary value.",
+      "type": "number",
+      "value": ""
+    },
+    "max": {
+      "default": "100",
+      "description": "Maximum boundary value.",
+      "type": "number",
+      "value": ""
+    },
+    "orientation": {
+      "default": "horizontal",
+      "description": "Orientation of the slider.",
+      "type": "\"horizontal\" | \"vertical\"",
+      "value": ""
+    },
+    "step": {
+      "default": "1",
+      "description": "Step factor to increment/decrement the value.",
+      "type": "number",
+      "value": ""
+    },
+    "range": {
+      "default": "false",
+      "description": "When speficed, allows two boundary values to be picked.",
+      "type": "boolean",
+      "value": ""
+    },
+    "disabled": {
+      "default": "false",
+      "description": "When present, it specifies that the component should be disabled.",
+      "type": "boolean",
+      "value": ""
+    },
+    "tabindex": {
+      "default": "",
+      "description": "Index of the element in tabbing order.",
+      "type": "number",
+      "value": ""
+    },
+    "aria-labelledby": {
+      "default": "",
+      "description": "Establishes relationships between the component and label(s) where its value should be one or more element IDs.",
+      "type": "string",
+      "value": ""
+    },
+    "aria-label": {
+      "default": "",
+      "description": "Used to define a string that labels the element.",
+      "type": "string",
+      "value": ""
+    },
+    "pt": {
+      "default": "",
+      "description": "Used to pass attributes to DOM elements inside the component.",
+      "type": "PassThrough<SliderPassThroughOptions>",
+      "value": ""
+    },
+    "ptOptions": {
+      "default": "",
+      "description": "Used to configure passthrough(pt) options of the component.",
+      "type": "PassThroughOptions",
+      "value": ""
+    },
+    "unstyled": {
+      "default": "false",
+      "description": "When enabled, it removes component related styles in the core.",
+      "type": "boolean",
+      "value": ""
+    }
+  },
+  "events": [
+    {
+      "name": "update:modelValue",
+      "description": "Emitted when the value changes.",
+      "params": "(value: number | number[]) => void"
+    },
+    {
+      "name": "change",
+      "description": "Callback to invoke on value change.",
+      "params": "(value: number) => void"
+    },
+    {
+      "name": "slideend",
+      "description": "Callback to invoke when slide ends.",
+      "params": "(event: SliderSlideEndEvent) => void"
+    }
+  ],
+  "link": "https://primevue.org/slider/"
+}

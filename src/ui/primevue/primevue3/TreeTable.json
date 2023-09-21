@@ -1,0 +1,335 @@
+{
+  "name": "TreeTable",
+  "props": {
+    "value": {
+      "default": "",
+      "description": "An array of treenodes.",
+      "type": "TreeNode[]",
+      "value": ""
+    },
+    "expandedKeys": {
+      "default": "",
+      "description": "A map of keys to represent the state of the tree expansion state in controlled mode.",
+      "type": "TreeTableExpandedKeys",
+      "value": ""
+    },
+    "selectionKeys": {
+      "default": "",
+      "description": "A map of keys to control the selection state.",
+      "type": "TreeTableSelectionKeys",
+      "value": ""
+    },
+    "selectionMode": {
+      "default": "",
+      "description": "Defines the selection mode.",
+      "type": "\"multiple\" | \"checkbox\" | \"single\"",
+      "value": ""
+    },
+    "metaKeySelection": {
+      "default": "true",
+      "description": "Defines how multiple items can be selected, when true metaKey needs to be pressed to select or unselect an item and when set to false selection of each item can be toggled individually.\nOn touch enabled devices, metaKeySelection is turned off automatically.",
+      "type": "boolean",
+      "value": ""
+    },
+    "rows": {
+      "default": "",
+      "description": "Number of rows to display per page.",
+      "type": "number",
+      "value": ""
+    },
+    "first": {
+      "default": "0",
+      "description": "Index of the first row to be displayed.",
+      "type": "number",
+      "value": ""
+    },
+    "totalRecords": {
+      "default": "",
+      "description": "Number of total records, defaults to length of value when not defined.",
+      "type": "number",
+      "value": ""
+    },
+    "paginator": {
+      "default": "false",
+      "description": "When specified as true, enables the pagination.",
+      "type": "boolean",
+      "value": ""
+    },
+    "paginatorPosition": {
+      "default": "bottom",
+      "description": "Position of the paginator, options are 'top','bottom' or 'both'.",
+      "type": "\"both\" | \"top\" | \"bottom\"",
+      "value": ""
+    },
+    "alwaysShowPaginator": {
+      "default": "true",
+      "description": "Whether to show it even there is only one page.",
+      "type": "boolean",
+      "value": ""
+    },
+    "paginatorTemplate": {
+      "default": "FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink RowsPerPageDropdown",
+      "description": "Template of the paginator. It can be customized using the template property using the predefined keys. Here are the available elements that can be placed inside a paginator in any order.\n\n- FirstPageLink\n- PrevPageLink\n- PageLinks\n- NextPageLink\n- LastPageLink\n- RowsPerPageDropdown\n- JumpToPageDropdown\n- JumpToPageInput\n- CurrentPageReport",
+      "type": "string",
+      "value": ""
+    },
+    "pageLinkSize": {
+      "default": "5",
+      "description": "Number of page links to display.",
+      "type": "number",
+      "value": ""
+    },
+    "rowsPerPageOptions": {
+      "default": "",
+      "description": "Array of integer values to display inside rows per page dropdown.",
+      "type": "number[]",
+      "value": ""
+    },
+    "currentPageReportTemplate": {
+      "default": "'({currentPage} of {totalPages})'",
+      "description": "Template of the current page report element. It displays information about the pagination state.\n\n- {currentPage}\n- {totalPages}\n- {rows}\n- {first}\n- {last}\n- {totalRecords}",
+      "type": "string",
+      "value": ""
+    },
+    "lazy": {
+      "default": "false",
+      "description": "Defines if data is loaded and interacted with in lazy manner.",
+      "type": "boolean",
+      "value": ""
+    },
+    "loading": {
+      "default": "false",
+      "description": "Displays a loader to indicate data load is in progress.",
+      "type": "boolean",
+      "value": ""
+    },
+    "loadingIcon": {
+      "default": "",
+      "description": "The icon to show while indicating data load is in progress.",
+      "type": "string",
+      "value": ""
+    },
+    "rowHover": {
+      "default": "false",
+      "description": "When enabled, background of the rows change on hover.",
+      "type": "boolean",
+      "value": ""
+    },
+    "autoLayout": {
+      "default": "false",
+      "description": "Whether the cell widths scale according to their content or not.",
+      "type": "boolean",
+      "value": ""
+    },
+    "sortField": {
+      "default": "",
+      "description": "Property name or a getter function of a row data used for sorting by default.",
+      "type": "string | Function",
+      "value": ""
+    },
+    "sortOrder": {
+      "default": "",
+      "description": "Order to sort the data by default.",
+      "type": "number",
+      "value": ""
+    },
+    "defaultSortOrder": {
+      "default": "1",
+      "description": "Default sort order of an unsorted column.",
+      "type": "number",
+      "value": ""
+    },
+    "multiSortMeta": {
+      "default": "",
+      "description": "An array of SortMeta objects to sort the data by default in multiple sort mode.",
+      "type": "null | TreeTableSortMeta[]",
+      "value": ""
+    },
+    "sortMode": {
+      "default": "single",
+      "description": "Defines whether sorting works on single column or on multiple columns.",
+      "type": "\"multiple\" | \"single\"",
+      "value": ""
+    },
+    "removableSort": {
+      "default": "false",
+      "description": "When enabled, columns can have an un-sorted state.",
+      "type": "boolean",
+      "value": ""
+    },
+    "filters": {
+      "default": "",
+      "description": "Filters object with key-value pairs to define the filters.",
+      "type": "TreeTableFilterMeta",
+      "value": ""
+    },
+    "filterMode": {
+      "default": "lenient",
+      "description": "Mode for filtering.",
+      "type": "\"strict\" | \"lenient\"",
+      "value": ""
+    },
+    "filterLocale": {
+      "default": "",
+      "description": "Locale to use in filtering. The default locale is the host environment's current locale.",
+      "type": "string",
+      "value": ""
+    },
+    "resizableColumns": {
+      "default": "false",
+      "description": "When enabled, columns can be resized using drag and drop.",
+      "type": "boolean",
+      "value": ""
+    },
+    "columnResizeMode": {
+      "default": "fit",
+      "description": "Defines whether the overall table width should change on column resize.",
+      "type": "\"fit\" | \"expand\"",
+      "value": ""
+    },
+    "indentation": {
+      "default": "1",
+      "description": "Indentation factor as rem value for children nodes.",
+      "type": "number",
+      "value": ""
+    },
+    "showGridlines": {
+      "default": "false",
+      "description": "Whether to show grid lines between cells.",
+      "type": "boolean",
+      "value": ""
+    },
+    "scrollable": {
+      "default": "false",
+      "description": "When specified, enables horizontal and/or vertical scrolling.",
+      "type": "boolean",
+      "value": ""
+    },
+    "scrollHeight": {
+      "default": "",
+      "description": "Height of the scroll viewport in fixed pixels or the 'flex' keyword for a dynamic size.",
+      "type": "string",
+      "value": ""
+    },
+    "scrollDirection": {
+      "default": "vertical",
+      "description": "Orientation of the scrolling.",
+      "type": "\"both\" | \"horizontal\" | \"vertical\"",
+      "value": ""
+    },
+    "responsiveLayout": {
+      "default": "stack",
+      "description": "Defines the responsive mode, currently only option is scroll.",
+      "type": "\"scroll\" | \"stack\"",
+      "value": ""
+    },
+    "size": {
+      "default": "",
+      "description": "Defines the size of the table.",
+      "type": "\"small\" | \"large\"",
+      "value": ""
+    },
+    "tableProps": {
+      "default": "",
+      "description": "Props to pass to the table element.",
+      "type": "any",
+      "value": ""
+    },
+    "pt": {
+      "default": "",
+      "description": "Used to pass attributes to DOM elements inside the component.",
+      "type": "PassThrough<TreeTablePassThroughOptions>",
+      "value": ""
+    },
+    "ptOptions": {
+      "default": "",
+      "description": "Used to configure passthrough(pt) options of the component.",
+      "type": "PassThroughOptions",
+      "value": ""
+    },
+    "unstyled": {
+      "default": "false",
+      "description": "When enabled, it removes component related styles in the core.",
+      "type": "boolean",
+      "value": ""
+    }
+  },
+  "events": [
+    {
+      "name": "update:expandedKeys",
+      "description": "Emitted when the expanded keys change.",
+      "params": "(value: TreeTableExpandedKeys) => void"
+    },
+    {
+      "name": "update:selectionKeys",
+      "description": "Emitted when the selection keys change.",
+      "params": "(event: TreeTableSelectionKeys) => void"
+    },
+    {
+      "name": "update:first",
+      "description": "Emitted when the first changes.",
+      "params": "(value: number) => void"
+    },
+    {
+      "name": "update:rows",
+      "description": "Emitted when the rows changes.",
+      "params": "(value: number) => void"
+    },
+    {
+      "name": "update:sortField",
+      "description": "Emitted when the sortField changes.",
+      "params": "(value: string) => void"
+    },
+    {
+      "name": "update:sortOrder",
+      "description": "Emitted when the sortOrder changes.",
+      "params": "(value: undefined | number) => void"
+    },
+    {
+      "name": "update:multiSortMeta",
+      "description": "Emitted when the multiSortMeta changes.",
+      "params": "(value: undefined | null | TreeTableSortMeta[]) => void"
+    },
+    {
+      "name": "page",
+      "description": "Callback to invoke on pagination. Sort and Filter information is also available for lazy loading implementation.",
+      "params": "(event: TreeTablePageEvent) => void"
+    },
+    {
+      "name": "sort",
+      "description": "Callback to invoke on sort. Page and Filter information is also available for lazy loading implementation.",
+      "params": "(event: TreeTableSortEvent) => void"
+    },
+    {
+      "name": "filter",
+      "description": "Event to emit after filtering, not triggered in lazy mode.",
+      "params": "(event: TreeTableFilterEvent) => void"
+    },
+    {
+      "name": "node-select",
+      "description": "Callback to invoke when a node is selected.",
+      "params": "(node: TreeNode) => void"
+    },
+    {
+      "name": "node-unselect",
+      "description": "Callback to invoke when a node is unselected.",
+      "params": "(node: TreeNode) => void"
+    },
+    {
+      "name": "node-expand",
+      "description": "Callback to invoke when a node is expanded.",
+      "params": "(node: TreeNode) => void"
+    },
+    {
+      "name": "node-collapse",
+      "description": "Callback to invoke when a node is collapsed.",
+      "params": "(node: TreeNode) => void"
+    },
+    {
+      "name": "column-resize-end",
+      "description": "Callback to invoke when a column is resized.",
+      "params": "(event: Event) => void"
+    }
+  ],
+  "link": "https://primevue.org/treetable/"
+}

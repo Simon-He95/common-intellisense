@@ -1,0 +1,184 @@
+{
+  "name": "TreeSelect",
+  "props": {
+    "modelValue": {
+      "default": "",
+      "description": "Value of the component.",
+      "type": "any",
+      "value": ""
+    },
+    "options": {
+      "default": "",
+      "description": "An array of treenodes.",
+      "type": "TreeNode[]",
+      "value": ""
+    },
+    "scrollHeight": {
+      "default": "200px",
+      "description": "Height of the viewport, a scrollbar is defined if height of list exceeds this value.",
+      "type": "string",
+      "value": ""
+    },
+    "placeholder": {
+      "default": "",
+      "description": "Label to display when there are no selections.",
+      "type": "string",
+      "value": ""
+    },
+    "disabled": {
+      "default": "false",
+      "description": "When present, it specifies that the component should be disabled.",
+      "type": "boolean",
+      "value": ""
+    },
+    "tabindex": {
+      "default": "",
+      "description": "Index of the element in tabbing order.",
+      "type": "string",
+      "value": ""
+    },
+    "selectionMode": {
+      "default": "",
+      "description": "Defines the selection mode.",
+      "type": "\"multiple\" | \"checkbox\" | \"single\"",
+      "value": ""
+    },
+    "panelClass": {
+      "default": "",
+      "description": "Style class of the overlay panel.",
+      "type": "any",
+      "value": ""
+    },
+    "appendTo": {
+      "default": "body",
+      "description": "A valid query selector or an HTMLElement to specify where the overlay gets attached.",
+      "type": "string | HTMLElement",
+      "value": ""
+    },
+    "emptyMessage": {
+      "default": "No results found",
+      "description": "Text to display when there are no options available. Defaults to value from PrimeVue locale configuration.",
+      "type": "string",
+      "value": ""
+    },
+    "display": {
+      "default": "comma",
+      "description": "Defines how the selected items are displayed.",
+      "type": "\"comma\" | \"chip\"",
+      "value": ""
+    },
+    "metaKeySelection": {
+      "default": "true",
+      "description": "Defines how multiple items can be selected, when true metaKey needs to be pressed to select or unselect an item and when set to false selection of each item can be toggled individually.\nOn touch enabled devices, metaKeySelection is turned off automatically.",
+      "type": "boolean",
+      "value": ""
+    },
+    "inputId": {
+      "default": "",
+      "description": "Identifier of the underlying input element.",
+      "type": "string",
+      "value": ""
+    },
+    "inputClass": {
+      "default": "",
+      "description": "Style class of the input field.",
+      "type": "string | object",
+      "value": ""
+    },
+    "inputStyle": {
+      "default": "",
+      "description": "Inline style of the input field.",
+      "type": "object",
+      "value": ""
+    },
+    "inputProps": {
+      "default": "",
+      "description": "Used to pass all properties of the HTMLInputElement to the focusable input element inside the component.",
+      "type": "InputHTMLAttributes",
+      "value": ""
+    },
+    "aria-labelledby": {
+      "default": "",
+      "description": "Establishes relationships between the component and label(s) where its value should be one or more element IDs.",
+      "type": "string",
+      "value": ""
+    },
+    "aria-label": {
+      "default": "",
+      "description": "Establishes a string value that labels the component.",
+      "type": "string",
+      "value": ""
+    },
+    "pt": {
+      "default": "",
+      "description": "Used to pass attributes to DOM elements inside the component.",
+      "type": "PassThrough<TreeSelectPassThroughOptions>",
+      "value": ""
+    },
+    "ptOptions": {
+      "default": "",
+      "description": "Used to configure passthrough(pt) options of the component.",
+      "type": "PassThroughOptions",
+      "value": ""
+    },
+    "unstyled": {
+      "default": "false",
+      "description": "When enabled, it removes component related styles in the core.",
+      "type": "boolean",
+      "value": ""
+    }
+  },
+  "events": [
+    {
+      "name": "update:modelValue",
+      "description": "Emitted when the value changes.",
+      "params": "(value: any) => void"
+    },
+    {
+      "name": "change",
+      "description": "Callback to invoke on value change.",
+      "params": "(value: string[]) => void"
+    },
+    {
+      "name": "before-show",
+      "description": "Callback to invoke before the overlay is shown.",
+      "params": "() => void"
+    },
+    {
+      "name": "before-hide",
+      "description": "Callback to invoke before the overlay is hidden.",
+      "params": "() => void"
+    },
+    {
+      "name": "show",
+      "description": "Callback to invoke when the overlay is shown.",
+      "params": "() => void"
+    },
+    {
+      "name": "hide",
+      "description": "Callback to invoke when the overlay is hidden.",
+      "params": "() => void"
+    },
+    {
+      "name": "node-select",
+      "description": "Callback to invoke when a node is selected.",
+      "params": "(node: TreeNode) => void"
+    },
+    {
+      "name": "node-unselect",
+      "description": "Callback to invoke when a node is unselected.",
+      "params": "(node: TreeNode) => void"
+    },
+    {
+      "name": "node-expand",
+      "description": "Callback to invoke when a node is expanded.",
+      "params": "(node: TreeNode) => void"
+    },
+    {
+      "name": "node-collapse",
+      "description": "Callback to invoke when a node is collapsed.",
+      "params": "(node: TreeNode) => void"
+    }
+  ],
+  "link": "https://primevue.org/treeselect/"
+}

@@ -1,0 +1,146 @@
+{
+  "name": "Tree",
+  "props": {
+    "value": {
+      "default": "",
+      "description": "An array of treenodes.",
+      "type": "TreeNode[]",
+      "value": ""
+    },
+    "expandedKeys": {
+      "default": "",
+      "description": "A map of keys to represent the expansion state in controlled mode.",
+      "type": "TreeExpandedKeys",
+      "value": ""
+    },
+    "selectionKeys": {
+      "default": "",
+      "description": "A map of keys to control the selection state.",
+      "type": "TreeSelectionKeys",
+      "value": ""
+    },
+    "selectionMode": {
+      "default": "",
+      "description": "Defines the selection mode.",
+      "type": "\"multiple\" | \"checkbox\" | \"single\"",
+      "value": ""
+    },
+    "metaKeySelection": {
+      "default": "true",
+      "description": "Defines how multiple items can be selected, when true metaKey needs to be pressed to select or unselect an item and when set to false selection of each item can be toggled individually.\nOn touch enabled devices, metaKeySelection is turned off automatically.",
+      "type": "boolean",
+      "value": ""
+    },
+    "loading": {
+      "default": "false",
+      "description": "Whether to display loading indicator.",
+      "type": "boolean",
+      "value": ""
+    },
+    "loadingIcon": {
+      "default": "",
+      "description": "Icon to display when tree is loading.",
+      "type": "string",
+      "value": ""
+    },
+    "filter": {
+      "default": "false",
+      "description": "When specified, displays an input field to filter the items.",
+      "type": "boolean",
+      "value": ""
+    },
+    "filterBy": {
+      "default": "label",
+      "description": "When filtering is enabled, filterBy decides which field or fields (comma separated) to search against.",
+      "type": "string",
+      "value": ""
+    },
+    "filterMode": {
+      "default": "lenient",
+      "description": "Mode for filtering.",
+      "type": "\"strict\" | \"lenient\"",
+      "value": ""
+    },
+    "filterPlaceholder": {
+      "default": "",
+      "description": "Placeholder text to show when filter input is empty.",
+      "type": "string",
+      "value": ""
+    },
+    "filterLocale": {
+      "default": "",
+      "description": "Locale to use in filtering. The default locale is the host environment's current locale.",
+      "type": "string",
+      "value": ""
+    },
+    "scrollHeight": {
+      "default": "",
+      "description": "Height of the scroll viewport in fixed units or the 'flex' keyword for a dynamic size.",
+      "type": "string",
+      "value": ""
+    },
+    "aria-label": {
+      "default": "",
+      "description": "Defines a string value that labels an interactive element.",
+      "type": "string",
+      "value": ""
+    },
+    "aria-labelledby": {
+      "default": "",
+      "description": "Identifier of the underlying menu element.",
+      "type": "string",
+      "value": ""
+    },
+    "pt": {
+      "default": "",
+      "description": "Used to pass attributes to DOM elements inside the component.",
+      "type": "PassThrough<TreePassThroughOptions>",
+      "value": ""
+    },
+    "ptOptions": {
+      "default": "",
+      "description": "Used to configure passthrough(pt) options of the component.",
+      "type": "PassThroughOptions",
+      "value": ""
+    },
+    "unstyled": {
+      "default": "false",
+      "description": "When enabled, it removes component related styles in the core.",
+      "type": "boolean",
+      "value": ""
+    }
+  },
+  "events": [
+    {
+      "name": "update:expandedKeys",
+      "description": "Emitted when the expanded keys change.",
+      "params": "(value: TreeExpandedKeys) => void"
+    },
+    {
+      "name": "update:selectionKeys",
+      "description": "Emitted when the selection keys change.",
+      "params": "(event: TreeSelectionKeys) => void"
+    },
+    {
+      "name": "node-select",
+      "description": "Callback to invoke when a node is selected.",
+      "params": "(node: TreeNode) => void"
+    },
+    {
+      "name": "node-unselect",
+      "description": "Callback to invoke when a node is unselected.",
+      "params": "(node: TreeNode) => void"
+    },
+    {
+      "name": "node-expand",
+      "description": "Callback to invoke when a node is expanded.",
+      "params": "(node: TreeNode) => void"
+    },
+    {
+      "name": "node-collapse",
+      "description": "Callback to invoke when a node is collapsed.",
+      "params": "(node: TreeNode) => void"
+    }
+  ],
+  "link": "https://primevue.org/tree/"
+}

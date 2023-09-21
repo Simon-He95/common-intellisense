@@ -1,0 +1,83 @@
+{
+  "name": "Paginator",
+  "props": {
+    "totalRecords": {
+      "default": "0",
+      "description": "Number of total records.",
+      "type": "number",
+      "value": ""
+    },
+    "rows": {
+      "default": "0",
+      "description": "Data count to display per page.",
+      "type": "number",
+      "value": ""
+    },
+    "first": {
+      "default": "0",
+      "description": "Zero-relative number of the first row to be displayed.",
+      "type": "number",
+      "value": ""
+    },
+    "pageLinkSize": {
+      "default": "5",
+      "description": "Number of page links to display.",
+      "type": "number",
+      "value": ""
+    },
+    "rowsPerPageOptions": {
+      "default": "",
+      "description": "Array of integer values to display inside rows per page dropdown.",
+      "type": "number[]",
+      "value": ""
+    },
+    "template": {
+      "default": "",
+      "description": "Template of the paginator, can either be a string or an object with key-value pairs to define templates per breakpoint. Available templates are the following;\n\n- FirstPageLink\n- PrevPageLink\n- PageLinks\n- NextPageLink\n- LastPageLink\n- RowsPerPageDropdown\n- JumpToPageDropdown\n- JumpToPageInput\n- CurrentPageReport",
+      "type": "any",
+      "value": ""
+    },
+    "currentPageReportTemplate": {
+      "default": "'({currentPage} of {totalPages})'",
+      "description": "Template of the current page report element. It displays information about the pagination state. Available placeholders are the following;\n\n- {currentPage}\n- {totalPages}\n- {rows}\n- {first}\n- {last}\n- {totalRecords}",
+      "type": "string",
+      "value": ""
+    },
+    "alwaysShow": {
+      "default": "true",
+      "description": "Whether to show the paginator even there is only one page.",
+      "type": "boolean",
+      "value": ""
+    },
+    "pt": {
+      "default": "",
+      "description": "Used to pass attributes to DOM elements inside the component.",
+      "type": "PassThrough<PaginatorPassThroughOptions>",
+      "value": ""
+    },
+    "ptOptions": {
+      "default": "",
+      "description": "Used to configure passthrough(pt) options of the component.",
+      "type": "PassThroughOptions",
+      "value": ""
+    }
+  },
+  "events": [
+    {
+      "name": "update:first",
+      "description": "Emitted when the first changes.",
+      "params": "(value: number) => void"
+    },
+    {
+      "name": "update:rows",
+      "description": "Emitted when the rows changes.",
+      "params": "(value: number) => void"
+    },
+    {
+      "name": "page",
+      "description": "Callback to invoke when page changes, the event object contains information about the new state.",
+      "params": "(event: PageState) => void"
+    }
+  ],
+  "link": "https://primevue.org/paginator/"
+}

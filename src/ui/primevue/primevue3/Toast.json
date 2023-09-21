@@ -1,0 +1,102 @@
+{
+  "name": "Toast",
+  "props": {
+    "group": {
+      "default": "",
+      "description": "Unique identifier of a message group.",
+      "type": "string",
+      "value": ""
+    },
+    "position": {
+      "default": "top-right",
+      "description": "Position of the toast in viewport.",
+      "type": "\"center\" | \"top-left\" | \"top-center\" | \"top-right\" | \"bottom-left\" | \"bottom-center\" | \"bottom-right\"",
+      "value": ""
+    },
+    "autoZIndex": {
+      "default": "true",
+      "description": "Whether to automatically manage layering.",
+      "type": "boolean",
+      "value": ""
+    },
+    "baseZIndex": {
+      "default": "0",
+      "description": "Base zIndex value to use in layering.",
+      "type": "number",
+      "value": ""
+    },
+    "breakpoints": {
+      "default": "",
+      "description": "Object literal to define styles per screen size.",
+      "type": "ToastBreakpointsType",
+      "value": ""
+    },
+    "closeIcon": {
+      "default": "",
+      "description": "Icon to display in the toast close button.",
+      "type": "string",
+      "value": ""
+    },
+    "infoIcon": {
+      "default": "",
+      "description": "Icon to display in the toast with info severity.",
+      "type": "string",
+      "value": ""
+    },
+    "warnIcon": {
+      "default": "",
+      "description": "Icon to display in the toast with warn severity.",
+      "type": "string",
+      "value": ""
+    },
+    "errorIcon": {
+      "default": "",
+      "description": "Icon to display in the toast with error severity.",
+      "type": "string",
+      "value": ""
+    },
+    "successIcon": {
+      "default": "",
+      "description": "Icon to display in the toast with success severity.",
+      "type": "string",
+      "value": ""
+    },
+    "closeButtonProps": {
+      "default": "",
+      "description": "Used to pass all properties of the HTMLButtonElement to the close button.",
+      "type": "ButtonHTMLAttributes",
+      "value": ""
+    },
+    "pt": {
+      "default": "",
+      "description": "Used to pass attributes to DOM elements inside the component.",
+      "type": "PassThrough<ToastPassThroughOptions>",
+      "value": ""
+    },
+    "ptOptions": {
+      "default": "",
+      "description": "Used to configure passthrough(pt) options of the component.",
+      "type": "PassThroughOptions",
+      "value": ""
+    },
+    "unstyled": {
+      "default": "false",
+      "description": "When enabled, it removes component related styles in the core.",
+      "type": "boolean",
+      "value": ""
+    }
+  },
+  "events": [
+    {
+      "name": "close",
+      "description": "Callback to invoke when the toast is closed.",
+      "params": "(message: ToastMessageOptions) => void"
+    },
+    {
+      "name": "life-end",
+      "description": "Callback to invoke when the toast's timeout is over.",
+      "params": "(message: ToastMessageOptions) => void"
+    }
+  ],
+  "link": "https://primevue.org/toast/"
+}

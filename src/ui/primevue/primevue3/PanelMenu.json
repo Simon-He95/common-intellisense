@@ -1,0 +1,65 @@
+{
+  "name": "PanelMenu",
+  "props": {
+    "model": {
+      "default": "",
+      "description": "An array of menuitems.",
+      "type": "MenuItem[]",
+      "value": ""
+    },
+    "expandedKeys": {
+      "default": "",
+      "description": "A map of keys to represent the expansion state in controlled mode.",
+      "type": "PanelMenuExpandedKeys",
+      "value": ""
+    },
+    "exact": {
+      "default": "true",
+      "description": "Whether to apply 'router-link-active-exact' class if route exactly matches the item path.",
+      "type": "boolean",
+      "value": ""
+    },
+    "tabindex": {
+      "default": "",
+      "description": "Index of the element in tabbing order.",
+      "type": "string | number",
+      "value": ""
+    },
+    "pt": {
+      "default": "",
+      "description": "Used to pass attributes to DOM elements inside the component.",
+      "type": "PassThrough<PanelMenuPassThroughOptions>",
+      "value": ""
+    },
+    "ptOptions": {
+      "default": "",
+      "description": "Used to configure passthrough(pt) options of the component.",
+      "type": "PassThroughOptions",
+      "value": ""
+    },
+    "unstyled": {
+      "default": "false",
+      "description": "When enabled, it removes component related styles in the core.",
+      "type": "boolean",
+      "value": ""
+    }
+  },
+  "events": [
+    {
+      "name": "update:expandedKeys",
+      "description": "Emitted when the expandedKeys changes.",
+      "params": "(value: any) => void"
+    },
+    {
+      "name": "panel-open",
+      "description": "Callback to invoke when a panel gets expanded.",
+      "params": "(event: PanelMenuPanelOpenEvent) => void"
+    },
+    {
+      "name": "panel-close",
+      "description": "Callback to invoke when an active panel is collapsed by clicking on the header.",
+      "params": "(event: PanelMenuPanelCloseEvent) => void"
+    }
+  ],
+  "link": "https://primevue.org/panelmenu/"
+}

@@ -1,0 +1,86 @@
+{
+  "name": "OrganizationChart",
+  "props": {
+    "value": {
+      "default": "",
+      "description": "Value of the component.",
+      "type": "OrganizationChartNode",
+      "value": ""
+    },
+    "selectionKeys": {
+      "default": "",
+      "description": "A map instance of key-value pairs to represented the selected nodes.",
+      "type": "OrganizationChartSelectionKeys",
+      "value": ""
+    },
+    "selectionMode": {
+      "default": "",
+      "description": "Type of the selection.",
+      "type": "\"multiple\" | \"single\"",
+      "value": ""
+    },
+    "collapsedKeys": {
+      "default": "",
+      "description": "A map instance of key-value pairs to represented the collapsed nodes.",
+      "type": "OrganizationChartCollapsedKeys",
+      "value": ""
+    },
+    "collapsible": {
+      "default": "false",
+      "description": "Whether the nodes can be expanded or toggled.",
+      "type": "boolean",
+      "value": ""
+    },
+    "pt": {
+      "default": "",
+      "description": "Used to pass attributes to DOM elements inside the component.",
+      "type": "PassThrough<OrganizationChartPassThroughOptions>",
+      "value": ""
+    },
+    "ptOptions": {
+      "default": "",
+      "description": "Used to configure passthrough(pt) options of the component.",
+      "type": "PassThroughOptions",
+      "value": ""
+    },
+    "unstyled": {
+      "default": "false",
+      "description": "When enabled, it removes component related styles in the core.",
+      "type": "boolean",
+      "value": ""
+    }
+  },
+  "events": [
+    {
+      "name": "update:selectionKeys",
+      "description": "Emitted when the value changes.",
+      "params": "(value: any) => void"
+    },
+    {
+      "name": "update:collapsedKeys",
+      "description": "Emitted when the value changes.",
+      "params": "(value: boolean) => void"
+    },
+    {
+      "name": "node-select",
+      "description": "Callback to invoke when a suggestion is selected.",
+      "params": "(node: OrganizationChartNode) => void"
+    },
+    {
+      "name": "node-unselect",
+      "description": "Callback to invoke when a node is unselected.",
+      "params": "(node: OrganizationChartNode) => void"
+    },
+    {
+      "name": "node-expand",
+      "description": "Callback to invoke when a node is expanded.",
+      "params": "(node: OrganizationChartNode) => void"
+    },
+    {
+      "name": "node-collapsed",
+      "description": "Callback to invoke when a node is collapsed.",
+      "params": "(node: OrganizationChartNode) => void"
+    }
+  ],
+  "link": "https://primevue.org/organizationchart/"
+}

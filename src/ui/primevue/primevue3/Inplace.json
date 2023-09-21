@@ -1,0 +1,77 @@
+{
+  "name": "Inplace",
+  "props": {
+    "closable": {
+      "default": "false",
+      "description": "Displays a button to switch back to display mode.",
+      "type": "boolean",
+      "value": ""
+    },
+    "active": {
+      "default": "false",
+      "description": "Whether the content is displayed or not.",
+      "type": "boolean",
+      "value": ""
+    },
+    "disabled": {
+      "default": "false",
+      "description": "When present, it specifies that the element should be disabled.",
+      "type": "boolean",
+      "value": ""
+    },
+    "closeIcon": {
+      "default": "",
+      "description": "Icon to display in the close button.",
+      "type": "string",
+      "value": ""
+    },
+    "displayProps": {
+      "default": "",
+      "description": "Used to pass all properties of the HTMLDivElement to display container.",
+      "type": "HTMLAttributes",
+      "value": ""
+    },
+    "closeButtonProps": {
+      "default": "",
+      "description": "Used to pass all properties of the HTMLButtonElement to the close button.",
+      "type": "ButtonHTMLAttributes",
+      "value": ""
+    },
+    "pt": {
+      "default": "",
+      "description": "Used to pass attributes to DOM elements inside the component.",
+      "type": "PassThrough<InplacePassThroughOptions>",
+      "value": ""
+    },
+    "ptOptions": {
+      "default": "",
+      "description": "Used to configure passthrough(pt) options of the component.",
+      "type": "PassThroughOptions",
+      "value": ""
+    },
+    "unstyled": {
+      "default": "false",
+      "description": "When enabled, it removes component related styles in the core.",
+      "type": "boolean",
+      "value": ""
+    }
+  },
+  "events": [
+    {
+      "name": "update:active",
+      "description": "Emitted when the active changes.",
+      "params": "(value: boolean) => void"
+    },
+    {
+      "name": "open",
+      "description": "Callback to invoke when inplace is opened.",
+      "params": "(event: Event) => void"
+    },
+    {
+      "name": "close",
+      "description": "Callback to invoke when inplace is closed.",
+      "params": "(event: Event) => void"
+    }
+  ],
+  "link": "https://primevue.org/inplace/"
+}

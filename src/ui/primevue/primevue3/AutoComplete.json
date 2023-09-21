@@ -1,0 +1,349 @@
+{
+  "name": "AutoComplete",
+  "props": {
+    "modelValue": {
+      "default": "",
+      "description": "Value of the component.",
+      "type": "any",
+      "value": ""
+    },
+    "suggestions": {
+      "default": "",
+      "description": "An array of suggestions to display.",
+      "type": "any[]",
+      "value": ""
+    },
+    "field": {
+      "default": "",
+      "description": "",
+      "type": "string | Function",
+      "value": ""
+    },
+    "optionLabel": {
+      "default": "",
+      "description": "Property name or getter function to use as the label of an option.",
+      "type": "string | Function",
+      "value": ""
+    },
+    "optionDisabled": {
+      "default": "",
+      "description": "Property name or getter function to use as the disabled flag of an option, defaults to false when not defined.",
+      "type": "string | Function",
+      "value": ""
+    },
+    "optionGroupLabel": {
+      "default": "",
+      "description": "Property name or getter function to use as the label of an option group.",
+      "type": "string | Function",
+      "value": ""
+    },
+    "optionGroupChildren": {
+      "default": "",
+      "description": "Property name or getter function that refers to the children options of option group.",
+      "type": "string | Function",
+      "value": ""
+    },
+    "scrollHeight": {
+      "default": "200px",
+      "description": "Maximum height of the suggestions panel.",
+      "type": "string",
+      "value": ""
+    },
+    "dropdown": {
+      "default": "false",
+      "description": "Displays a button next to the input field when enabled.",
+      "type": "boolean",
+      "value": ""
+    },
+    "dropdownMode": {
+      "default": "blank",
+      "description": "Specifies the behavior dropdown button. Default 'blank' mode sends an empty string and 'current' mode sends the input value.",
+      "type": "\"blank\" | \"current\"",
+      "value": ""
+    },
+    "autoHighlight": {
+      "default": "false",
+      "description": "",
+      "type": "boolean",
+      "value": ""
+    },
+    "multiple": {
+      "default": "false",
+      "description": "Specifies if multiple values can be selected.",
+      "type": "boolean",
+      "value": ""
+    },
+    "placeholder": {
+      "default": "",
+      "description": "Default text to display when no option is selected.",
+      "type": "string",
+      "value": ""
+    },
+    "loading": {
+      "default": "false",
+      "description": "Whether the autocomplete is in loading state.",
+      "type": "boolean",
+      "value": ""
+    },
+    "disabled": {
+      "default": "false",
+      "description": "When present, it specifies that the component should be disabled.",
+      "type": "boolean",
+      "value": ""
+    },
+    "dataKey": {
+      "default": "",
+      "description": "A property to uniquely identify an option.",
+      "type": "string",
+      "value": ""
+    },
+    "minLength": {
+      "default": "1",
+      "description": "Minimum number of characters to initiate a search.",
+      "type": "number",
+      "value": ""
+    },
+    "delay": {
+      "default": "300",
+      "description": "Delay between keystrokes to wait before sending a query.",
+      "type": "number",
+      "value": ""
+    },
+    "appendTo": {
+      "default": "body",
+      "description": "A valid query selector or an HTMLElement to specify where the overlay gets attached.\nSpecial keywords are 'body' for document body and 'self' for the element itself.",
+      "type": "string | HTMLElement",
+      "value": ""
+    },
+    "forceSelection": {
+      "default": "false",
+      "description": "When present, autocomplete clears the manual input if it does not match of the suggestions to force only accepting values from the suggestions.",
+      "type": "boolean",
+      "value": ""
+    },
+    "completeOnFocus": {
+      "default": "false",
+      "description": "Whether to run a query when input receives focus.",
+      "type": "boolean",
+      "value": ""
+    },
+    "inputId": {
+      "default": "",
+      "description": "Identifier of the underlying input element.",
+      "type": "string",
+      "value": ""
+    },
+    "inputStyle": {
+      "default": "",
+      "description": "Inline style of the input field.",
+      "type": "object",
+      "value": ""
+    },
+    "inputClass": {
+      "default": "",
+      "description": "Style class of the input field.",
+      "type": "string | object",
+      "value": ""
+    },
+    "inputProps": {
+      "default": "",
+      "description": "Used to pass all properties of the HTMLInputElement to the focusable input element inside the component.",
+      "type": "InputHTMLAttributes",
+      "value": ""
+    },
+    "panelStyle": {
+      "default": "",
+      "description": "Inline style of the overlay panel.",
+      "type": "object",
+      "value": ""
+    },
+    "panelClass": {
+      "default": "",
+      "description": "Style class of the overlay panel.",
+      "type": "string | object",
+      "value": ""
+    },
+    "panelProps": {
+      "default": "",
+      "description": "Used to pass all properties of the HTMLDivElement to the overlay panel inside the component.",
+      "type": "HTMLAttributes",
+      "value": ""
+    },
+    "dropdownIcon": {
+      "default": "",
+      "description": "Icon to display in the dropdown.",
+      "type": "string",
+      "value": ""
+    },
+    "dropdownClass": {
+      "default": "",
+      "description": "Style class of the dropdown button.",
+      "type": "string | object",
+      "value": ""
+    },
+    "loadingIcon": {
+      "default": "",
+      "description": "Icon to display in loading state.",
+      "type": "string",
+      "value": ""
+    },
+    "removeTokenIcon": {
+      "default": "",
+      "description": "Icon to display in chip remove action.",
+      "type": "string",
+      "value": ""
+    },
+    "virtualScrollerOptions": {
+      "default": "",
+      "description": "Whether to use the virtualScroller feature. The properties of VirtualScroller component can be used like an object in it.",
+      "type": "VirtualScrollerProps",
+      "value": ""
+    },
+    "autoOptionFocus": {
+      "default": "true",
+      "description": "Whether to focus on the first visible or selected element when the overlay panel is shown.",
+      "type": "boolean",
+      "value": ""
+    },
+    "selectOnFocus": {
+      "default": "false",
+      "description": "When enabled, the focused option is selected.",
+      "type": "boolean",
+      "value": ""
+    },
+    "searchLocale": {
+      "default": "",
+      "description": "Locale to use in searching. The default locale is the host environment's current locale.",
+      "type": "string",
+      "value": ""
+    },
+    "searchMessage": {
+      "default": "'{0} results are available'",
+      "description": "Text to be displayed in hidden accessible field when filtering returns any results. Defaults to value from PrimeVue locale configuration.",
+      "type": "string",
+      "value": ""
+    },
+    "selectionMessage": {
+      "default": "'{0} items selected'",
+      "description": "Text to be displayed in hidden accessible field when options are selected. Defaults to value from PrimeVue locale configuration.",
+      "type": "string",
+      "value": ""
+    },
+    "emptySelectionMessage": {
+      "default": "No selected item",
+      "description": "Text to be displayed in hidden accessible field when any option is not selected. Defaults to value from PrimeVue locale configuration.",
+      "type": "string",
+      "value": ""
+    },
+    "emptySearchMessage": {
+      "default": "No results found",
+      "description": "Text to display when filtering does not return any results. Defaults to value from PrimeVue locale configuration.",
+      "type": "string",
+      "value": ""
+    },
+    "tabindex": {
+      "default": "",
+      "description": "Index of the element in tabbing order.",
+      "type": "string | number",
+      "value": ""
+    },
+    "aria-label": {
+      "default": "",
+      "description": "Defines a string value that labels an interactive element.",
+      "type": "string",
+      "value": ""
+    },
+    "aria-labelledby": {
+      "default": "",
+      "description": "Identifier of the underlying input element.",
+      "type": "string",
+      "value": ""
+    },
+    "pt": {
+      "default": "",
+      "description": "Used to pass attributes to DOM elements inside the component.",
+      "type": "PassThrough<AutoCompletePassThroughOptions>",
+      "value": ""
+    },
+    "ptOptions": {
+      "default": "",
+      "description": "Used to configure passthrough(pt) options of the component.",
+      "type": "PassThroughOptions",
+      "value": ""
+    },
+    "unstyled": {
+      "default": "false",
+      "description": "When enabled, it removes component related styles in the core.",
+      "type": "boolean",
+      "value": ""
+    }
+  },
+  "events": [
+    {
+      "name": "update:modelValue",
+      "description": "Emitted when the value changes.",
+      "params": "(value: any) => void"
+    },
+    {
+      "name": "change",
+      "description": "Callback to invoke on value change.",
+      "params": "(event: AutoCompleteChangeEvent) => void"
+    },
+    {
+      "name": "focus",
+      "description": "Callback to invoke when the component receives focus.",
+      "params": "(event: Event) => void"
+    },
+    {
+      "name": "blur",
+      "description": "Callback to invoke when the component loses focus.",
+      "params": "(event: Event) => void"
+    },
+    {
+      "name": "item-select",
+      "description": "Callback to invoke when a suggestion is selected.",
+      "params": "(event: AutoCompleteItemSelectEvent) => void"
+    },
+    {
+      "name": "item-unselect",
+      "description": "Callback to invoke when a selected value is removed.",
+      "params": "(event: AutoCompleteItemUnselectEvent) => void"
+    },
+    {
+      "name": "dropdown-click",
+      "description": "Callback to invoke to when dropdown button is clicked.",
+      "params": "(event: AutoCompleteDropdownClickEvent) => void"
+    },
+    {
+      "name": "clear",
+      "description": "Callback to invoke when input is cleared by the user.",
+      "params": "() => void"
+    },
+    {
+      "name": "complete",
+      "description": "Callback to invoke to search for suggestions.",
+      "params": "(event: AutoCompleteCompleteEvent) => void"
+    },
+    {
+      "name": "before-show",
+      "description": "Callback to invoke before the overlay is shown.",
+      "params": "() => void"
+    },
+    {
+      "name": "before-hide",
+      "description": "Callback to invoke before the overlay is hidden.",
+      "params": "() => void"
+    },
+    {
+      "name": "show",
+      "description": "Callback to invoke when the overlay is shown.",
+      "params": "() => void"
+    },
+    {
+      "name": "hide",
+      "description": "Callback to invoke when the overlay is hidden.",
+      "params": "() => void"
+    }
+  ],
+  "link": "https://primevue.org/autocomplete/"
+}

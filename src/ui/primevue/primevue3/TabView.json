@@ -1,0 +1,95 @@
+{
+  "name": "TabView",
+  "props": {
+    "activeIndex": {
+      "default": "0",
+      "description": "Index of the active tab.",
+      "type": "number",
+      "value": ""
+    },
+    "lazy": {
+      "default": "false",
+      "description": "When enabled, hidden tabs are not rendered at all. Defaults to false that hides tabs with css.",
+      "type": "boolean",
+      "value": ""
+    },
+    "scrollable": {
+      "default": "false",
+      "description": "When enabled displays buttons at each side of the tab headers to scroll the tab list.",
+      "type": "boolean",
+      "value": ""
+    },
+    "tabindex": {
+      "default": "0",
+      "description": "Index of the element in tabbing order.",
+      "type": "number",
+      "value": ""
+    },
+    "selectOnFocus": {
+      "default": "false",
+      "description": "When enabled, the focused tab is activated.",
+      "type": "boolean",
+      "value": ""
+    },
+    "previousButtonProps": {
+      "default": "",
+      "description": "Used to pass all properties of the HTMLButtonElement to the previous button.",
+      "type": "ButtonHTMLAttributes",
+      "value": ""
+    },
+    "nextButtonProps": {
+      "default": "",
+      "description": "Used to pass all properties of the HTMLButtonElement to the next button.",
+      "type": "ButtonHTMLAttributes",
+      "value": ""
+    },
+    "prevIcon": {
+      "default": "",
+      "description": "Previous icon of the scrollable tabview.",
+      "type": "string",
+      "value": ""
+    },
+    "nextIcon": {
+      "default": "",
+      "description": "Next icon of the scrollable tabview.",
+      "type": "string",
+      "value": ""
+    },
+    "pt": {
+      "default": "",
+      "description": "Used to pass attributes to DOM elements inside the component.",
+      "type": "PassThrough<TabViewPassThroughOptions>",
+      "value": ""
+    },
+    "ptOptions": {
+      "default": "",
+      "description": "Used to configure passthrough(pt) options of the component.",
+      "type": "PassThroughOptions",
+      "value": ""
+    },
+    "unstyled": {
+      "default": "false",
+      "description": "When enabled, it removes component related styles in the core.",
+      "type": "boolean",
+      "value": ""
+    }
+  },
+  "events": [
+    {
+      "name": "update:activeIndex",
+      "description": "Emitted when the activeIndex changes.",
+      "params": "(index: number) => void"
+    },
+    {
+      "name": "tab-change",
+      "description": "Callback to invoke when an active tab is changed.",
+      "params": "(event: TabViewChangeEvent) => void"
+    },
+    {
+      "name": "tab-click",
+      "description": "Callback to invoke when an active tab is clicked.",
+      "params": "(event: TabViewClickEvent) => void"
+    }
+  ],
+  "link": "https://primevue.org/tabview/"
+}

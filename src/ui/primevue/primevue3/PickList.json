@@ -1,0 +1,192 @@
+{
+  "name": "PickList",
+  "props": {
+    "modelValue": {
+      "default": "",
+      "description": "Value of the component as a multidimensional array.",
+      "type": "any[][]",
+      "value": ""
+    },
+    "selection": {
+      "default": "",
+      "description": "Selected items in the list as a multidimensional array.",
+      "type": "any[][]",
+      "value": ""
+    },
+    "dataKey": {
+      "default": "",
+      "description": "Name of the field that uniquely identifies the a record in the data.",
+      "type": "string",
+      "value": ""
+    },
+    "metaKeySelection": {
+      "default": "true",
+      "description": "Defines whether metaKey is requred or not for the selection.\nWhen true metaKey needs to be pressed to select or unselect an item and\nwhen set to false selection of each item can be toggled individually. On touch enabled devices, metaKeySelection is turned off automatically.",
+      "type": "boolean",
+      "value": ""
+    },
+    "listStyle": {
+      "default": "",
+      "description": "Inline style of the the list element.",
+      "type": "any",
+      "value": ""
+    },
+    "responsive": {
+      "default": "true",
+      "description": "Whether the list optimizes layout based on screen size.",
+      "type": "boolean",
+      "value": ""
+    },
+    "breakpoint": {
+      "default": "960px",
+      "description": "The breakpoint to define the maximum width boundary when responsiveness is enabled.",
+      "type": "string",
+      "value": ""
+    },
+    "stripedRows": {
+      "default": "false",
+      "description": "Whether to displays rows with alternating colors.",
+      "type": "boolean",
+      "value": ""
+    },
+    "showSourceControls": {
+      "default": "true",
+      "description": "Whether to show buttons of source list.",
+      "type": "boolean",
+      "value": ""
+    },
+    "showTargetControls": {
+      "default": "true",
+      "description": "Whether to show buttons of target list.",
+      "type": "boolean",
+      "value": ""
+    },
+    "tabindex": {
+      "default": "",
+      "description": "Index of the list element in tabbing order.",
+      "type": "string | number",
+      "value": ""
+    },
+    "targetListProps": {
+      "default": "",
+      "description": "Used to pass all properties of the HTMLAttributes to the target list element.",
+      "type": "HTMLAttributes",
+      "value": ""
+    },
+    "sourceListProps": {
+      "default": "",
+      "description": "Used to pass all properties of the HTMLAttributes to the source list element.",
+      "type": "HTMLAttributes",
+      "value": ""
+    },
+    "moveUpButtonProps": {
+      "default": "",
+      "description": "Used to pass all properties of the HTMLButtonElement to the move up button inside the component.",
+      "type": "ButtonHTMLAttributes",
+      "value": ""
+    },
+    "moveTopButtonProps": {
+      "default": "",
+      "description": "Used to pass all properties of the HTMLButtonElement to the move top button inside the component.",
+      "type": "ButtonHTMLAttributes",
+      "value": ""
+    },
+    "moveDownButtonProps": {
+      "default": "",
+      "description": "Used to pass all properties of the HTMLButtonElement to the move down button inside the component.",
+      "type": "ButtonHTMLAttributes",
+      "value": ""
+    },
+    "moveBottomButtonProps": {
+      "default": "",
+      "description": "Used to pass all properties of the HTMLButtonElement to the move bottom button inside the component.",
+      "type": "ButtonHTMLAttributes",
+      "value": ""
+    },
+    "moveToTargetProps": {
+      "default": "",
+      "description": "Used to pass all properties of the HTMLButtonElement to the move to target button inside the component.",
+      "type": "ButtonHTMLAttributes",
+      "value": ""
+    },
+    "moveAllToTargetProps": {
+      "default": "",
+      "description": "Used to pass all properties of the HTMLButtonElement to the move all to target button inside the component.",
+      "type": "ButtonHTMLAttributes",
+      "value": ""
+    },
+    "moveToSourceProps": {
+      "default": "",
+      "description": "Used to pass all properties of the HTMLButtonElement to the move to source button inside the component.",
+      "type": "ButtonHTMLAttributes",
+      "value": ""
+    },
+    "moveAllToSourceProps": {
+      "default": "",
+      "description": "Used to pass all properties of the HTMLButtonElement to the move all to source button inside the component.",
+      "type": "ButtonHTMLAttributes",
+      "value": ""
+    },
+    "pt": {
+      "default": "",
+      "description": "Used to pass attributes to DOM elements inside the component.",
+      "type": "PassThrough<PickListPassThroughOptions>",
+      "value": ""
+    },
+    "ptOptions": {
+      "default": "",
+      "description": "Used to configure passthrough(pt) options of the component.",
+      "type": "PassThroughOptions",
+      "value": ""
+    },
+    "unstyled": {
+      "default": "false",
+      "description": "When enabled, it removes component related styles in the core.",
+      "type": "boolean",
+      "value": ""
+    }
+  },
+  "events": [
+    {
+      "name": "update:modelValue",
+      "description": "Emitted when the value changes.",
+      "params": "(value: any[][]) => void"
+    },
+    {
+      "name": "update:selection",
+      "description": "Emitted when the selection changes.",
+      "params": "(value: any[][]) => void"
+    },
+    {
+      "name": "reorder",
+      "description": "Callback to invoke when the list is reordered.",
+      "params": "(event: PickListReorderEvent) => void"
+    },
+    {
+      "name": "selection-change",
+      "description": "Callback to invoke when one or more items are moved to the other list.",
+      "params": "(event: PickListSelectionChangeEvent) => void"
+    },
+    {
+      "name": "move-to-target",
+      "description": "Callback to invoke when one or more items are moved to the target list.",
+      "params": "(event: PickListMoveToTargetEvent) => void"
+    },
+    {
+      "name": "move-all-to-target",
+      "description": "Callback to invoke when all items are moved to the target list.",
+      "params": "(event: PickListMoveAllToTargetEvent) => void"
+    },
+    {
+      "name": "move-to-source",
+      "description": "Callback to invoke when one or more items are moved to the source list.",
+      "params": "(event: PickListMoveToSourceEvent) => void"
+    },
+    {
+      "name": "move-all-to-source",
+      "description": "Callback to invoke when all items are moved to the source list.",
+      "params": "(event: PickListMoveAllToSourceEvent) => void"
+    }
+  ],
+  "link": "https://primevue.org/picklist/"
+}

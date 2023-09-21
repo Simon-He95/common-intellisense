@@ -1,0 +1,226 @@
+{
+  "name": "FileUpload",
+  "props": {
+    "name": {
+      "default": "",
+      "description": "Name of the request parameter to identify the files at backend.",
+      "type": "string",
+      "value": ""
+    },
+    "url": {
+      "default": "",
+      "description": "Remote url to upload the files.",
+      "type": "string",
+      "value": ""
+    },
+    "mode": {
+      "default": "advanced",
+      "description": "Defines the UI of the component, possible values are 'advanced' and 'basic'.",
+      "type": "\"basic\" | \"advanced\"",
+      "value": ""
+    },
+    "multiple": {
+      "default": "false",
+      "description": "Used to select multiple files at once from file dialog.",
+      "type": "boolean",
+      "value": ""
+    },
+    "accept": {
+      "default": "",
+      "description": "Pattern to restrict the allowed file types such as 'image/*'.",
+      "type": "string",
+      "value": ""
+    },
+    "disabled": {
+      "default": "false",
+      "description": "Disables the upload functionality.",
+      "type": "boolean",
+      "value": ""
+    },
+    "auto": {
+      "default": "false",
+      "description": "When enabled, upload begins automatically after selection is completed.",
+      "type": "boolean",
+      "value": ""
+    },
+    "maxFileSize": {
+      "default": "",
+      "description": "Maximum file size allowed in bytes.",
+      "type": "number",
+      "value": ""
+    },
+    "invalidFileSizeMessage": {
+      "default": ": Invalid file size, file size should be smaller than {1.}",
+      "description": "Message of the invalid fize size.",
+      "type": "string",
+      "value": ""
+    },
+    "invalidFileLimitMessage": {
+      "default": "Maximum number of files to be uploaded is {0.}",
+      "description": "Message to display when number of files to be uploaded exceeeds the limit.",
+      "type": "string",
+      "value": ""
+    },
+    "invalidFileTypeMessage": {
+      "default": "'{0}: Invalid file type.'",
+      "description": "Message of the invalid fize type.",
+      "type": "string",
+      "value": ""
+    },
+    "fileLimit": {
+      "default": "",
+      "description": "Maximum number of files that can be uploaded.",
+      "type": "number",
+      "value": ""
+    },
+    "withCredentials": {
+      "default": "false",
+      "description": "Cross-site Access-Control requests should be made using credentials such as cookies, authorization headers or TLS client certificates.",
+      "type": "boolean",
+      "value": ""
+    },
+    "previewWidth": {
+      "default": "50",
+      "description": "Width of the image thumbnail in pixels.",
+      "type": "number",
+      "value": ""
+    },
+    "chooseLabel": {
+      "default": "",
+      "description": "Label of the choose button. Defaults to PrimeVue Locale configuration.",
+      "type": "string",
+      "value": ""
+    },
+    "uploadLabel": {
+      "default": "",
+      "description": "Label of the upload button. Defaults to PrimeVue Locale configuration.",
+      "type": "string",
+      "value": ""
+    },
+    "cancelLabel": {
+      "default": "Cancel",
+      "description": "Label of the cancel button. Defaults to PrimeVue Locale configuration.",
+      "type": "string",
+      "value": ""
+    },
+    "customUpload": {
+      "default": "",
+      "description": "Whether to use the default upload or a manual implementation defined in uploadHandler callback. Defaults to PrimeVue Locale configuration.",
+      "type": "boolean",
+      "value": ""
+    },
+    "showUploadButton": {
+      "default": "true",
+      "description": "Whether to show the upload button.",
+      "type": "boolean",
+      "value": ""
+    },
+    "showCancelButton": {
+      "default": "true",
+      "description": "Whether to show the cancel button.",
+      "type": "boolean",
+      "value": ""
+    },
+    "chooseIcon": {
+      "default": "",
+      "description": "Icon of the choose button.",
+      "type": "string",
+      "value": ""
+    },
+    "uploadIcon": {
+      "default": "",
+      "description": "Icon of the upload button.",
+      "type": "string",
+      "value": ""
+    },
+    "cancelIcon": {
+      "default": "",
+      "description": "Icon of the cancel button.",
+      "type": "string",
+      "value": ""
+    },
+    "style": {
+      "default": "",
+      "description": "Inline style of the component.",
+      "type": "any",
+      "value": ""
+    },
+    "class": {
+      "default": "",
+      "description": "Style class of the component.",
+      "type": "any",
+      "value": ""
+    },
+    "pt": {
+      "default": "",
+      "description": "Used to pass attributes to DOM elements inside the component.",
+      "type": "PassThrough<FileUploadPassThroughOptions>",
+      "value": ""
+    },
+    "ptOptions": {
+      "default": "",
+      "description": "Used to configure passthrough(pt) options of the component.",
+      "type": "PassThroughOptions",
+      "value": ""
+    },
+    "unstyled": {
+      "default": "false",
+      "description": "When enabled, it removes component related styles in the core.",
+      "type": "boolean",
+      "value": ""
+    }
+  },
+  "events": [
+    {
+      "name": "select",
+      "description": "Callback to invoke when files are selected.",
+      "params": "(event: FileUploadSelectEvent) => void"
+    },
+    {
+      "name": "before-upload",
+      "description": "Callback to invoke before file upload begins to customize the request such as post parameters before the files.",
+      "params": "(event: FileUploadBeforeUploadEvent) => void"
+    },
+    {
+      "name": "progress",
+      "description": "Callback to invoke when files are being uploaded.",
+      "params": "(event: FileUploadProgressEvent) => void"
+    },
+    {
+      "name": "upload",
+      "description": "Callback to invoke when file upload is complete.",
+      "params": "(event: FileUploadUploadEvent) => void"
+    },
+    {
+      "name": "uploader",
+      "description": "Callback to invoke to implement a custom upload.",
+      "params": "(event: FileUploadUploaderEvent) => void"
+    },
+    {
+      "name": "error",
+      "description": "Callback to invoke if file upload fails.",
+      "params": "(event: FileUploadErrorEvent) => void"
+    },
+    {
+      "name": "before-send",
+      "description": "Callback to invoke before file send begins to customize the request such as adding headers.",
+      "params": "(event: FileUploadBeforeSendEvent) => void"
+    },
+    {
+      "name": "clear",
+      "description": "Callback to invoke when files in queue are removed without uploading.",
+      "params": "() => void"
+    },
+    {
+      "name": "remove",
+      "description": "Callback to invoke when a singe file is removed from the list.",
+      "params": "(event: FileUploadRemoveEvent) => void"
+    },
+    {
+      "name": "removeUploadedFile",
+      "description": "Callback to invoke when a single uploaded file is removed from the uploaded file list.",
+      "params": "(event: FileUploadRemoveUploadedFile) => void"
+    }
+  ],
+  "link": "https://primevue.org/fileupload/"
+}

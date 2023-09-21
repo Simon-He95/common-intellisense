@@ -1,0 +1,106 @@
+{
+  "name": "ColorPicker",
+  "props": {
+    "modelValue": {
+      "default": "",
+      "description": "Value of the component.",
+      "type": "any",
+      "value": ""
+    },
+    "defaultColor": {
+      "default": "ff0000",
+      "description": "Initial color to display when value is not defined.",
+      "type": "any",
+      "value": ""
+    },
+    "inline": {
+      "default": "false",
+      "description": "Whether to display as an overlay or not.",
+      "type": "boolean",
+      "value": ""
+    },
+    "format": {
+      "default": "hex",
+      "description": "Format to use in value binding, supported formats are 'hex', 'rgb' and 'hsb'.",
+      "type": "\"rgb\" | \"hex\" | \"hsb\"",
+      "value": ""
+    },
+    "disabled": {
+      "default": "false",
+      "description": "When present, it specifies that the component should be disabled.",
+      "type": "boolean",
+      "value": ""
+    },
+    "tabindex": {
+      "default": "",
+      "description": "Index of the element in tabbing order.",
+      "type": "string",
+      "value": ""
+    },
+    "autoZIndex": {
+      "default": "true",
+      "description": "Whether to automatically manage layering.",
+      "type": "boolean",
+      "value": ""
+    },
+    "baseZIndex": {
+      "default": "0",
+      "description": "Base zIndex value to use in layering.",
+      "type": "number",
+      "value": ""
+    },
+    "panelClass": {
+      "default": "",
+      "description": "Style class of the overlay panel.",
+      "type": "any",
+      "value": ""
+    },
+    "appendTo": {
+      "default": "body",
+      "description": "A valid query selector or an HTMLElement to specify where the overlay gets attached. Special keywords are 'body' for document body and 'self' for the element itself.",
+      "type": "string | HTMLElement",
+      "value": ""
+    },
+    "pt": {
+      "default": "",
+      "description": "Used to pass attributes to DOM elements inside the component.",
+      "type": "PassThrough<ColorPickerPassThroughOptions>",
+      "value": ""
+    },
+    "ptOptions": {
+      "default": "",
+      "description": "Used to configure passthrough(pt) options of the component.",
+      "type": "PassThroughOptions",
+      "value": ""
+    },
+    "unstyled": {
+      "default": "false",
+      "description": "When enabled, it removes component related styles in the core.",
+      "type": "boolean",
+      "value": ""
+    }
+  },
+  "events": [
+    {
+      "name": "update:modelValue",
+      "description": "Emitted when the value changes.",
+      "params": "(value: any) => void"
+    },
+    {
+      "name": "change",
+      "description": "Callback to invoke when a chip is added.",
+      "params": "(event: ColorPickerChangeEvent) => void"
+    },
+    {
+      "name": "show",
+      "description": "Callback to invoke when input is cleared by the user.",
+      "params": "() => void"
+    },
+    {
+      "name": "hide",
+      "description": "Callback to invoke when input is cleared by the user.",
+      "params": "() => void"
+    }
+  ],
+  "link": "https://primevue.org/colorpicker/"
+}

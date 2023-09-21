@@ -1,0 +1,106 @@
+{
+  "name": "SelectButton",
+  "props": {
+    "modelValue": {
+      "default": "",
+      "description": "Value of the component.",
+      "type": "any",
+      "value": ""
+    },
+    "options": {
+      "default": "",
+      "description": "An array of selectitems to display as the available options.",
+      "type": "any[]",
+      "value": ""
+    },
+    "optionLabel": {
+      "default": "",
+      "description": "Property name or getter function to use as the label of an option.",
+      "type": "string | Function",
+      "value": ""
+    },
+    "optionValue": {
+      "default": "",
+      "description": "Property name or getter function to use as the value of an option, defaults to the option itself when not defined.",
+      "type": "string | Function",
+      "value": ""
+    },
+    "optionDisabled": {
+      "default": "",
+      "description": "Property name or getter function to use as the disabled flag of an option, defaults to false when not defined.",
+      "type": "string | Function",
+      "value": ""
+    },
+    "multiple": {
+      "default": "false",
+      "description": "When specified, allows selecting multiple values.",
+      "type": "boolean",
+      "value": ""
+    },
+    "disabled": {
+      "default": "false",
+      "description": "When present, it specifies that the element should be disabled.",
+      "type": "boolean",
+      "value": ""
+    },
+    "dataKey": {
+      "default": "",
+      "description": "A property to uniquely identify an option.",
+      "type": "string",
+      "value": ""
+    },
+    "unselectable": {
+      "default": "false",
+      "description": "Whether selection can be cleared.",
+      "type": "boolean",
+      "value": ""
+    },
+    "aria-labelledby": {
+      "default": "",
+      "description": "Identifier of the underlying element.",
+      "type": "string",
+      "value": ""
+    },
+    "pt": {
+      "default": "",
+      "description": "Used to pass attributes to DOM elements inside the component.",
+      "type": "PassThrough<SelectButtonPassThroughOptions>",
+      "value": ""
+    },
+    "ptOptions": {
+      "default": "",
+      "description": "Used to configure passthrough(pt) options of the component.",
+      "type": "PassThroughOptions",
+      "value": ""
+    },
+    "unstyled": {
+      "default": "false",
+      "description": "When enabled, it removes component related styles in the core.",
+      "type": "boolean",
+      "value": ""
+    }
+  },
+  "events": [
+    {
+      "name": "update:modelValue",
+      "description": "Emitted when the value changes.",
+      "params": "(value: any) => void"
+    },
+    {
+      "name": "change",
+      "description": "Callback to invoke on value change.",
+      "params": "(event: SelectButtonChangeEvent) => void"
+    },
+    {
+      "name": "focus",
+      "description": "Callback to invoke on focus.",
+      "params": "(event: Event) => void"
+    },
+    {
+      "name": "blur",
+      "description": "Callback to invoke on blur.",
+      "params": "(event: Event) => void"
+    }
+  ],
+  "link": "https://primevue.org/selectbutton/"
+}
