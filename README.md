@@ -5,6 +5,16 @@
 
 Keep working hard for a better development experience, and provide quick reminders of some commonly used words to help add efficient coding in the development stage.
 
+### 🍬 Currently supported
+- vant
+- element
+- antd
+- antdv
+- varlet
+- naive
+- primevue
+- quasar
+
 ### antdv
 ![antdv](assets/antdv.gif)
 
