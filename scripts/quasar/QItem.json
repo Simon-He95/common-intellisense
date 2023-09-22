@@ -1,0 +1,118 @@
+{
+  "mixins": ["composables/private/use-router-link"],
+
+  "meta": {
+    "docsUrl": "https://v2.quasar.dev/vue-components/list-and-list-items"
+  },
+
+  "props": {
+    "active": {
+      "type": "Boolean",
+      "desc": "Put item into 'active' state",
+      "category": "state",
+      "default": null
+    },
+
+    "dark": {
+      "extends": "dark"
+    },
+
+    "clickable": {
+      "type": "Boolean",
+      "desc": "Is QItem clickable? If it's the case, then it will add hover effects and emit 'click' events",
+      "category": "state"
+    },
+
+    "dense": {
+      "extends": "dense"
+    },
+
+    "inset-level": {
+      "type": "Number",
+      "desc": "Apply an inset; Useful when avatar/left side is missing but you want to align content with other items that do have a left side, or when you're building a menu",
+      "examples": [":inset-level=\"1\""],
+      "category": "content"
+    },
+
+    "tabindex": {
+      "extends": "tabindex"
+    },
+
+    "tag": {
+      "extends": "tag",
+      "desc": "HTML tag to render; Suggestion: use 'label' when encapsulating a QCheckbox/QRadio/QToggle so that when user clicks/taps on the whole item it will trigger a model change for the mentioned components",
+      "default": "div",
+      "examples": ["a", "label", "div"]
+    },
+
+    "manual-focus": {
+      "type": "Boolean",
+      "desc": "Put item into a manual focus state; Enables 'focused' prop which will determine if item is focused or not, rather than relying on native hover/focus states",
+      "category": "state"
+    },
+
+    "focused": {
+      "type": "Boolean",
+      "desc": "Determines focus state, ONLY if 'manual-focus' is enabled / set to true",
+      "category": "state"
+    }
+  },
+
+  "slots": {
+    "default": {
+      "desc": "This is where QItem's content goes"
+    }
+  },
+
+  "events": {
+    "click": {
+      "desc": "Emitted when the component is clicked",
+      "params": {
+        "evt": {
+          "extends": "evt",
+          "desc": "JS event object; If you are using route navigation ('to'/'replace' props) and you want to cancel navigation then call evt.preventDefault() synchronously in your event handler"
+        },
+        "go": {
+          "type": "Function",
+          "desc": "Available ONLY if you are using route navigation ('to'/'replace' props); When you need to control the time at which the component should trigger the route navigation then call evt.preventDefault() synchronously and then call this function at your convenience; Useful if you have async work to be done before the actual route navigation or if you want to redirect somewhere else",
+          "required": false,
+          "addedIn": "v2.9",
+          "params": {
+            "opts": {
+              "type": "Object",
+              "desc": "Optional options",
+              "required": false,
+              "definition": {
+                "to": {
+                  "type": ["String", "Object"],
+                  "desc": "Equivalent to Vue Router <router-link> 'to' property; Specify it explicitly otherwise it will be set with same value as component's 'to' prop",
+                  "required": false,
+                  "examples": [
+                    "/home/dashboard",
+                    "{ name: 'my-route-name' }"
+                  ]
+                },
+
+                "replace": {
+                  "type": "Boolean",
+                  "desc": "Equivalent to Vue Router <router-link> 'replace' property; Specify it explicitly otherwise it will be set with same value as component's 'replace' prop",
+                  "required": false
+                },
+
+                "returnRouterError": {
+                  "type": "Boolean",
+                  "desc": "Return the router error, if any; Otherwise the returned Promise will always fulfill",
+                  "required": false
+                }
+              }
+            }
+          },
+          "returns": {
+            "type": "Promise<any>",
+            "desc": "Returns the router's navigation promise"
+          }
+        }
+      }
+    }
+  }
+}

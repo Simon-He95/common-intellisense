@@ -1,0 +1,194 @@
+{
+  "name": "QDate",
+  "methods": [
+    {
+      "name": "setToday",
+      "description": "Change model to today",
+      "params": ""
+    },
+    {
+      "name": "setView",
+      "description": "Change current view",
+      "params": "(view: String) => void"
+    },
+    {
+      "name": "offsetCalendar",
+      "description": "Increment or decrement calendar view's month or year",
+      "params": "(type: String, descending: Boolean) => void"
+    },
+    {
+      "name": "setCalendarTo",
+      "description": "Change current year and month of the Calendar view; It gets corrected if using navigation-min/max-year-month and sets the current view to Calendar",
+      "params": "(year: Number, month: Number) => void"
+    },
+    {
+      "name": "setEditingRange",
+      "description": "Configure the current editing range",
+      "params": "(from: Object, to: Object) => void"
+    }
+  ],
+  "events": [
+    {
+      "name": "update:model-value",
+      "description": "",
+      "params": "(value: String,Array,Object,null, reason: String, details: Object) => void"
+    },
+    {
+      "name": "navigation",
+      "description": "Emitted when user navigates to a different month or year (and even when the model changes from an outside source)",
+      "params": "(view: Object) => void"
+    },
+    {
+      "name": "range-start",
+      "description": "User has started a range selection",
+      "params": "(from: Object) => void"
+    },
+    {
+      "name": "range-end",
+      "description": "User has ended a range selection",
+      "params": "(range: Object) => void"
+    }
+  ],
+  "props": {
+    "model-value": {
+      "value": "",
+      "type": [
+        "String",
+        "Array",
+        "Object",
+        "null",
+        "undefined"
+      ],
+      "description": "",
+      "default": "",
+      "extends": "model-value",
+      "desc": "Date(s) of the component; Must be Array if using 'multiple' prop; Either use this property (along with a listener for 'update:model-value' event) OR use v-model directive",
+      "examples": [
+        "v-model=\"myDate\"",
+        "v-model=\"[myDate1, myDate2]\"",
+        "v-model=\"[{ from: myDateFrom, to: myDateTo }]\"",
+        "v-model=\"[myDate1, { from: myDateFrom, to: myDateTo }, myDate2]\""
+      ]
+    },
+    "title": {
+      "value": "",
+      "type": "String",
+      "description": "When specified, it overrides the default header title; Makes sense when not in 'minimal' mode",
+      "default": ""
+    },
+    "subtitle": {
+      "value": "",
+      "type": "String",
+      "description": "When specified, it overrides the default header subtitle; Makes sense when not in 'minimal' mode",
+      "default": ""
+    },
+    "default-year-month": {
+      "value": "",
+      "type": "String",
+      "description": "The default year and month to display (in YYYY/MM format) when model is unfilled (undefined or null); Please ensure it is within the navigation min/max year-month (if using them)",
+      "default": ""
+    },
+    "mask": {
+      "value": "",
+      "type": "String",
+      "default": "YYYY/MM/DD"
+    },
+    "default-view": {
+      "value": "",
+      "type": "String",
+      "description": "The view which will be displayed by default",
+      "default": "Calendar"
+    },
+    "years-in-month-view": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Show the years selector in months view",
+      "default": "false"
+    },
+    "events": {
+      "value": "",
+      "type": [
+        "Array",
+        "Function"
+      ],
+      "description": "A list of events to highlight on the calendar; If using a function, it receives the date as a String and must return a Boolean (matches or not); If using a function then for best performance, reference it from your scope and do not define it inline",
+      "default": ""
+    },
+    "event-color": {
+      "value": "",
+      "type": [
+        "String",
+        "Function"
+      ],
+      "description": "Color name (from the Quasar Color Palette); If using a function, it receives the date as a String and must return a String (color for the received date); If using a function then for best performance, reference it from your scope and do not define it inline",
+      "default": ""
+    },
+    "options": {
+      "value": "",
+      "type": [
+        "Array",
+        "Function"
+      ],
+      "description": "Optionally configure the days that are selectable; If using a function, it receives the date as a String and must return a Boolean (is date acceptable or not); If using a function then for best performance, reference it from your scope and do not define it inline; Incompatible with 'range' prop",
+      "default": ""
+    },
+    "navigation-min-year-month": {
+      "value": "",
+      "type": "String",
+      "description": "Lock user from navigating below a specific year+month (in YYYY/MM format); This prop is not used to correct the model; You might want to also use 'default-year-month' prop",
+      "default": ""
+    },
+    "navigation-max-year-month": {
+      "value": "",
+      "type": "String",
+      "description": "Lock user from navigating above a specific year+month (in YYYY/MM format); This prop is not used to correct the model; You might want to also use 'default-year-month' prop",
+      "default": ""
+    },
+    "no-unset": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Remove ability to unselect a date; It does not apply to selecting a range over already selected dates",
+      "default": "false"
+    },
+    "first-day-of-week": {
+      "value": "",
+      "type": [
+        "String",
+        "Number"
+      ],
+      "description": "Sets the day of the week that is considered the first day (0 - Sunday, 1 - Monday, ...); This day will show in the left-most column of the calendar",
+      "default": "(based on configured Quasar lang language)"
+    },
+    "today-btn": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Display a button that selects the current day",
+      "default": "false"
+    },
+    "minimal": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Don’t display the header",
+      "default": "false"
+    },
+    "multiple": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Allow multiple selection; Model must be Array",
+      "default": "false"
+    },
+    "range": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Allow range selection; Partial compatibility with 'options' prop: selected ranges might also include 'unselectable' days",
+      "default": "false"
+    },
+    "emit-immediately": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Emit model when user browses month and year too; ONLY for single selection (non-multiple, non-range)",
+      "default": "false"
+    }
+  },
+  "link": "https://v2.quasar.dev/vue-components/date"
+}

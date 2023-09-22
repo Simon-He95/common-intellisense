@@ -1,0 +1,135 @@
+{
+  "mixins": ["composables/private/use-field", "components/input/use-mask", "composables/private/use-form"],
+
+  "meta": {
+    "docsUrl": "https://v2.quasar.dev/vue-components/input"
+  },
+
+  "props": {
+    "model-value": {
+      "extends": "model-value",
+      "type": ["String", "Number", "null", "undefined"],
+      "desc": "Model of the component; Either use this property (along with a listener for 'update:modelValue' event) OR use v-model directive",
+      "examples": ["v-model=\"myText\""]
+    },
+
+    "shadow-text": {
+      "type": "String",
+      "desc": "Text to be displayed as shadow at the end of the text in the control; Does NOT applies to type=file",
+      "examples": ["rest of the fill value"],
+      "category": "content"
+    },
+
+    "type": {
+      "type": "String",
+      "desc": "Input type",
+      "default": "text",
+      "values": [
+        "text", "password", "textarea", "email", "search",
+        "tel", "file", "number", "url", "time", "date"
+      ],
+      "category": "general"
+    },
+
+    "debounce": {
+      "type": ["String", "Number"],
+      "desc": "Debounce amount (in milliseconds) when updating model",
+      "category": "model"
+    },
+
+    "maxlength": {
+      "type": ["String", "Number"],
+      "desc": "Specify a max length of model",
+      "category": "model"
+    },
+
+    "autogrow": {
+      "type": "Boolean",
+      "desc": "Make field autogrow along with its content (uses a textarea)",
+      "category": "content"
+    },
+
+    "input-class": {
+      "type": ["String", "Array", "Object"],
+      "tsType": "VueClassProp",
+      "desc": "Class definitions to be attributed to the underlying input tag",
+      "examples": [
+        "my-special-class",
+        ":input-class=\"{ 'my-special-class': <condition> }\""
+      ],
+      "category": "style"
+    },
+
+    "input-style": {
+      "type": ["String", "Array", "Object"],
+      "tsType": "VueStyleProp",
+      "desc": "Style definitions to be attributed to the underlying input tag",
+      "examples": [
+        "background-color: #ff0000",
+        ":input-style=\"{ backgroundColor: '#ff0000' }\""
+      ],
+      "category": "style"
+    }
+  },
+
+  "events": {
+    "update:model-value": {
+      "extends": "update:model-value",
+      "params": {
+        "value": {
+          "type": ["String", "Number", "null"]
+        }
+      }
+    },
+
+    "focus": {
+      "desc": "Emitted when component gets focused",
+      "params": {
+        "evt": {
+          "extends": "evt"
+        }
+      }
+    },
+
+    "blur": {
+      "desc": "Emitted when component loses focus",
+      "params": {
+        "evt": {
+          "extends": "evt"
+        }
+      }
+    }
+  },
+
+  "methods": {
+    "focus": {
+      "desc": "Focus underlying input tag"
+    },
+
+    "blur": {
+      "desc": "Lose focus on underlying input tag"
+    },
+
+    "select": {
+      "desc": "Select input text"
+    },
+
+    "getNativeElement": {
+      "desc": "DEPRECATED; Access 'nativeEl' directly instead; Get the native input/textarea DOM Element",
+      "returns": {
+        "type": "Element",
+        "tsType": "QInputNativeElement",
+        "desc": "The underlying native input/textarea DOM Element"
+      }
+    }
+  },
+
+  "computedProps": {
+    "nativeEl": {
+      "type": "Element",
+      "tsType": "QInputNativeElement",
+      "desc": "The native input/textarea DOM Element",
+      "addedIn": "v2.10.1"
+    }
+  }
+}

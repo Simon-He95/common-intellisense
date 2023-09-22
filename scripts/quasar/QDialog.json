@@ -1,0 +1,146 @@
+{
+  "mixins": ["composables/private/use-model-toggle", "composables/private/use-portal", "composables/private/use-transition"],
+
+  "meta": {
+    "docsUrl": "https://v2.quasar.dev/vue-components/dialog"
+  },
+
+  "props": {
+    "persistent": {
+      "type": "Boolean",
+      "desc": "User cannot dismiss Dialog if clicking outside of it or hitting ESC key; Also, an app route change won't dismiss it",
+      "category": "behavior"
+    },
+
+    "no-esc-dismiss": {
+      "type": "Boolean",
+      "desc": "User cannot dismiss Dialog by hitting ESC key; No need to set it if 'persistent' prop is also set",
+      "category": "behavior"
+    },
+
+    "no-backdrop-dismiss": {
+      "type": "Boolean",
+      "desc": "User cannot dismiss Dialog by clicking outside of it; No need to set it if 'persistent' prop is also set",
+      "category": "behavior"
+    },
+
+    "no-route-dismiss": {
+      "type": "Boolean",
+      "desc": "Changing route app won't dismiss Dialog; No need to set it if 'persistent' prop is also set",
+      "category": "behavior"
+    },
+
+    "auto-close": {
+      "type": "Boolean",
+      "desc": "Any click/tap inside of the dialog will close it",
+      "category": "behavior"
+    },
+
+    "seamless": {
+      "type": "Boolean",
+      "desc": "Put Dialog into seamless mode; Does not use a backdrop so user is able to interact with the rest of the page too",
+      "category": "content"
+    },
+
+    "maximized": {
+      "type": "Boolean",
+      "desc": "Put Dialog into maximized mode",
+      "category": "content"
+    },
+
+    "full-width": {
+      "type": "Boolean",
+      "desc": "Dialog will try to render with same width as the window",
+      "category": "content"
+    },
+
+    "full-height": {
+      "type": "Boolean",
+      "desc": "Dialog will try to render with same height as the window",
+      "category": "content"
+    },
+
+    "position": {
+      "type": "String",
+      "desc": "Stick dialog to one of the sides (top, right, bottom or left)",
+      "default": "standard",
+      "values": ["standard", "top", "right", "bottom", "left"],
+      "category": "content"
+    },
+
+    "square": {
+      "type": "Boolean",
+      "desc": "Forces content to have squared borders",
+      "category": "style"
+    },
+
+    "no-refocus": {
+      "type": "Boolean",
+      "desc": "(Accessibility) When Dialog gets hidden, do not refocus on the DOM element that previously had focus",
+      "category": "behavior"
+    },
+
+    "no-focus": {
+      "type": "Boolean",
+      "desc": "(Accessibility) When Dialog gets shown, do not switch focus on it",
+      "category": "behavior"
+    },
+
+    "no-shake": {
+      "type": "Boolean",
+      "desc": "Do not shake up the Dialog to catch user's attention",
+      "category": "behavior",
+      "addedIn": "v2.1.1"
+    },
+
+    "allow-focus-outside": {
+      "type": "Boolean",
+      "desc": "Allow elements outside of the Dialog to be focusable; By default, for accessibility reasons, QDialog does not allow outer focus",
+      "category": "behavior",
+      "addedIn": "v2.7.2"
+    }
+  },
+
+  "events": {
+    "shake": {
+      "desc": "Emitted when the Dialog shakes in order to catch user's attention, unless the 'no-shake' property is set"
+    },
+
+    "escape-key": {
+      "desc": "Emitted when ESC key is pressed; Does not get emitted if Dialog is 'persistent' or it has 'no-esc-key' set"
+    }
+  },
+
+  "methods": {
+    "focus": {
+      "desc": "Focus dialog; if you have content with autofocus attribute, it will directly focus it",
+      "params": {
+        "selector": {
+          "type": "String",
+          "required": false,
+          "desc": "Optional CSS selector to override default focusable element",
+          "examples": ["[tabindex]:not([tabindex=\"-1\"])"],
+          "addedIn": "v2.6.5"
+        }
+      }
+    },
+
+    "shake": {
+      "desc": "Shakes dialog",
+      "params": {
+        "focusTarget": {
+          "type": "Element",
+          "desc": "Optional DOM Element to be focused after shake",
+          "examples": ["document.getElementById('example')"],
+          "addedIn": "v2.10.1"
+        }
+      }
+    }
+  },
+
+  "slots": {
+    "default": {
+      "extends": "default"
+    }
+  }
+}

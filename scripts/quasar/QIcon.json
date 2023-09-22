@@ -1,0 +1,43 @@
+{
+  "mixins": ["composables/private/use-size"],
+
+  "meta": {
+    "docsUrl": "https://v2.quasar.dev/vue-components/icon"
+  },
+
+  "props": {
+    "tag": {
+      "extends": "tag",
+      "desc": "HTML tag to render, unless no icon is supplied or it's an svg icon",
+      "default": "i",
+      "examples": ["div", "i"]
+    },
+
+    "name": {
+      "extends": "icon",
+      "category": "model"
+    },
+
+    "color": {
+      "extends": "color"
+    },
+
+    "left": {
+      "type": "Boolean",
+      "desc": "Useful if icon is on the left side of something: applies a standard margin on the right side of Icon",
+      "category": "content"
+    },
+
+    "right": {
+      "type": "Boolean",
+      "desc": "Useful if icon is on the right side of something: applies a standard margin on the left side of Icon",
+      "category": "content"
+    }
+  },
+
+  "slots": {
+    "default": {
+      "desc": "Suggestions: QTooltip or QMenu"
+    }
+  }
+}

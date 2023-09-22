@@ -1,0 +1,47 @@
+{
+  "name": "QScrollObserver",
+  "methods": [
+    {
+      "name": "trigger",
+      "description": "Emit a 'scroll' event",
+      "params": "(immediately: Boolean) => void"
+    },
+    {
+      "name": "getPosition",
+      "description": "Get current scroll details under the form of an Object: { position, direction, directionChanged, inflectionPoint }",
+      "params": ""
+    }
+  ],
+  "events": [
+    {
+      "name": "scroll",
+      "description": "Emitted when scroll position changes",
+      "params": "(details: Object) => void"
+    }
+  ],
+  "props": {
+    "debounce": {
+      "value": "",
+      "type": [
+        "String",
+        "Number"
+      ],
+      "description": "Debounce amount (in milliseconds)",
+      "default": ""
+    },
+    "axis": {
+      "value": "",
+      "type": "String",
+      "description": "Axis on which to detect changes",
+      "default": "vertical"
+    },
+    "scroll-target": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "default": "",
+      "extends": "scroll-target"
+    }
+  },
+  "link": "https://v2.quasar.dev/vue-components/scroll-observer"
+}

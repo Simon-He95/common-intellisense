@@ -1,0 +1,151 @@
+{
+  "mixins": ["composables/private/use-panel", "composables/private/use-fullscreen"],
+
+  "meta": {
+    "docsUrl": "https://v2.quasar.dev/vue-components/carousel"
+  },
+
+  "props": {
+    "dark": {
+      "extends": "dark"
+    },
+
+    "height": {
+      "extends": "size",
+      "desc": "Height of Carousel in CSS units, including unit name"
+    },
+
+    "padding": {
+      "type": "Boolean",
+      "desc": "Applies a default padding to each slide, according to the usage of 'arrows' and 'navigation' props",
+      "category": "content"
+    },
+
+    "control-color": {
+      "extends": "color",
+      "desc": "Color name for QCarousel button controls (arrows, navigation) from the Quasar Color Palette"
+    },
+
+    "control-text-color": {
+      "extends": "color",
+      "desc": "Color name for text color of QCarousel button controls (arrows, navigation) from the Quasar Color Palette"
+    },
+
+    "control-type": {
+      "type": "String",
+      "desc": "Type of button to use for controls (arrows, navigation)",
+      "values": ["regular", "flat", "outline", "push", "unelevated"],
+      "category": "style"
+    },
+
+    "autoplay": {
+      "type": ["Number", "Boolean"],
+      "desc": "Jump to next slide (if 'true' or val > 0) or previous slide (if val < 0) at fixed time intervals (in milliseconds); 'false' disables autoplay, 'true' enables it for 5000ms intervals",
+      "default": false,
+      "examples": [
+        ":autoplay=\"2500\"",
+        true,
+        false
+      ],
+      "category": "behavior"
+    },
+
+    "arrows": {
+      "type": "Boolean",
+      "desc": "Show navigation arrow buttons",
+      "category": "content"
+    },
+
+    "prev-icon": {
+      "extends": "icon"
+    },
+
+    "next-icon": {
+      "extends": "icon"
+    },
+
+    "navigation": {
+      "type": "Boolean",
+      "desc": "Show navigation dots",
+      "category": "content"
+    },
+
+    "navigation-position": {
+      "type": "String",
+      "desc": "Side to stick navigation to",
+      "default": "bottom/right",
+      "values": ["top", "right", "bottom", "left"],
+      "category": "content"
+    },
+
+    "navigation-icon": {
+      "extends": "icon"
+    },
+
+    "navigation-active-icon": {
+      "extends": "icon",
+      "desc": "Icon name following Quasar convention for the active (current slide) navigation icon; Make sure you have the icon library installed unless you are using 'img:' prefix"
+    },
+
+    "thumbnails": {
+      "type": "Boolean",
+      "desc": "Show thumbnails",
+      "category": "content"
+    },
+
+    "transition-prev": {
+      "default": "fade"
+    },
+
+    "transition-next": {
+      "default": "fade"
+    }
+  },
+
+  "slots": {
+    "default": {
+      "desc": "Suggestion: QCarouselSlide"
+    },
+
+    "control": {
+      "desc": "Slot specific for QCarouselControl"
+    },
+
+    "navigation-icon": {
+      "desc": "Slot for navigation icon/btn; Suggestion: QBtn",
+      "scope": {
+        "index": {
+          "type": "Number",
+          "desc": "The 0-based index of corresponding slide"
+        },
+        "maxIndex": {
+          "type": "Number",
+          "desc": "The available number of slides"
+        },
+        "name": {
+          "type": "Any",
+          "desc": "The name of the corresponding slide"
+        },
+        "active": {
+          "type": "Boolean",
+          "desc": "Is this the current slide?"
+        },
+        "btnProps": {
+          "type": "Object",
+          "desc": "Default QBtn props that can be binded to your own QBtn"
+        },
+        "onClick": {
+          "type": "Function",
+          "desc": "Default trigger when clicked/tapped on",
+          "params": {
+            "evt": {
+              "extends": "evt",
+              "required": true
+            }
+          },
+          "returns": null
+        }
+      }
+    }
+  }
+}

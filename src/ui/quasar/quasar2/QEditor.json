@@ -1,0 +1,249 @@
+{
+  "name": "QEditor",
+  "methods": [
+    {
+      "name": "runCmd",
+      "description": "Run contentEditable command at caret position and range",
+      "params": "(cmd: String, param: String, update: Boolean) => void"
+    },
+    {
+      "name": "refreshToolbar",
+      "description": "Hide the link editor if visible and force the instance to re-render",
+      "params": ""
+    },
+    {
+      "name": "focus",
+      "description": "Focus on the contentEditable at saved cursor position",
+      "params": ""
+    },
+    {
+      "name": "getContentEl",
+      "description": "Retrieve the content of the Editor",
+      "params": ""
+    }
+  ],
+  "events": [
+    {
+      "name": "update:model-value",
+      "description": "",
+      "params": "(value: String) => void"
+    },
+    {
+      "name": "dropdown-show",
+      "description": "Emitted after a dropdown in the toolbar has triggered show()",
+      "params": "(evt: undefined) => void"
+    },
+    {
+      "name": "dropdown-before-show",
+      "description": "Emitted when a dropdown in the toolbar triggers show() but before it finishes doing it",
+      "params": "(evt: undefined) => void"
+    },
+    {
+      "name": "dropdown-hide",
+      "description": "Emitted after a dropdown in the toolbar has triggered hide()",
+      "params": "(evt: undefined) => void"
+    },
+    {
+      "name": "dropdown-before-hide",
+      "description": "Emitted when a dropdown in the toolbar triggers hide() but before it finishes doing it",
+      "params": "(evt: undefined) => void"
+    },
+    {
+      "name": "link-show",
+      "description": "Emitted when the toolbar for editing a link is shown",
+      "params": ""
+    },
+    {
+      "name": "link-hide",
+      "description": "Emitted when the toolbar for editing a link is hidden",
+      "params": ""
+    }
+  ],
+  "props": {
+    "model-value": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "default": "",
+      "extends": "model-value",
+      "desc": "Model of the component; Either use this property (along with a listener for 'update:modelValue' event) OR use v-model directive",
+      "examples": [
+        "v-model=\"content\""
+      ]
+    },
+    "readonly": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "default": "",
+      "extends": "readonly"
+    },
+    "square": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "default": "",
+      "extends": "square"
+    },
+    "flat": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "default": "",
+      "extends": "flat",
+      "desc": "Applies a 'flat' design (no borders)"
+    },
+    "dense": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "default": "",
+      "extends": "dense",
+      "desc": "Dense mode; toolbar buttons are shown on one-line only"
+    },
+    "dark": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "default": "",
+      "extends": "dark"
+    },
+    "disable": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "default": "",
+      "extends": "disable"
+    },
+    "min-height": {
+      "value": "",
+      "type": "String",
+      "description": "CSS unit for the minimum height of the editable area",
+      "default": "10rem"
+    },
+    "max-height": {
+      "value": "",
+      "type": "String",
+      "description": "CSS unit for maximum height of the input area",
+      "default": ""
+    },
+    "height": {
+      "value": "",
+      "type": "String",
+      "description": "CSS value to set the height of the editable area",
+      "default": ""
+    },
+    "definitions": {
+      "value": "",
+      "type": "Object",
+      "description": "Definition of commands and their buttons to be included in the 'toolbar' prop",
+      "default": ""
+    },
+    "fonts": {
+      "value": "",
+      "type": "Object",
+      "description": "Object with definitions of fonts",
+      "default": ""
+    },
+    "toolbar": {
+      "value": "",
+      "type": "Array",
+      "description": "An array of arrays of Objects/Strings that you use to define the construction of the elements and commands available in the toolbar",
+      "default": [
+        [
+          "left",
+          "center",
+          "right",
+          "justify"
+        ],
+        [
+          "bold",
+          "italic",
+          "underline",
+          "strike"
+        ],
+        [
+          "undo",
+          "redo"
+        ]
+      ]
+    },
+    "toolbar-color": {
+      "type": "String",
+      "description": "Color name for component from the Quasar Color Palette",
+      "value": "",
+      "default": "",
+      "extends": "color",
+      "desc": "Font color (from the Quasar Palette) of buttons and text in the toolbar",
+      "category": "toolbar"
+    },
+    "toolbar-text-color": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "default": "",
+      "extends": "text-color",
+      "desc": "Text color (from the Quasar Palette) of toolbar commands",
+      "category": "toolbar"
+    },
+    "toolbar-toggle-color": {
+      "value": "",
+      "type": "String",
+      "description": "Choose the active color (from the Quasar Palette) of toolbar commands button",
+      "default": "primary"
+    },
+    "toolbar-bg": {
+      "value": "",
+      "type": "String",
+      "description": "Toolbar background color (from Quasar Palette)",
+      "default": "grey-3"
+    },
+    "toolbar-outline": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Toolbar buttons are rendered \"outlined\"",
+      "default": "false"
+    },
+    "toolbar-push": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Toolbar buttons are rendered as a \"push-button\" type",
+      "default": "false"
+    },
+    "toolbar-rounded": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Toolbar buttons are rendered \"rounded\"",
+      "default": "false"
+    },
+    "paragraph-tag": {
+      "value": "",
+      "type": "String",
+      "description": "Paragraph tag to be used",
+      "default": ""
+    },
+    "content-style": {
+      "value": "",
+      "type": "Object",
+      "description": "Object with CSS properties and values for styling the container of QEditor",
+      "default": ""
+    },
+    "content-class": {
+      "value": "",
+      "type": [
+        "String",
+        "Array",
+        "Object"
+      ],
+      "description": "CSS classes for the input area",
+      "default": ""
+    },
+    "placeholder": {
+      "value": "",
+      "type": "String",
+      "description": "Text to display as placeholder",
+      "default": ""
+    }
+  },
+  "link": "https://v2.quasar.dev/vue-components/editor"
+}

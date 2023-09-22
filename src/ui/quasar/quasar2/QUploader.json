@@ -1,0 +1,162 @@
+{
+  "name": "QUploader",
+  "methods": [
+    {
+      "name": "upload",
+      "description": "Start uploading (same as clicking the upload button)",
+      "params": ""
+    },
+    {
+      "name": "abort",
+      "description": "Abort upload of all files (same as clicking the abort button)",
+      "params": ""
+    },
+    {
+      "name": "reset",
+      "description": "Resets uploader to default; Empties queue, aborts current uploads",
+      "params": ""
+    },
+    {
+      "name": "removeUploadedFiles",
+      "description": "Removes already uploaded files from the list",
+      "params": ""
+    },
+    {
+      "name": "removeQueuedFiles",
+      "description": "Remove files that are waiting for upload to start (same as clicking the left clear button)",
+      "params": ""
+    },
+    {
+      "name": "removeFile",
+      "description": "Remove specified file from the queue",
+      "params": "(file: File) => void"
+    },
+    {
+      "name": "updateFileStatus",
+      "description": "Update the status of a file",
+      "params": "(file: File, status: String, uploadedSize: Number) => void"
+    },
+    {
+      "name": "isAlive",
+      "description": "Is the component alive (activated but not unmounted); Useful to determine if you still need to compute anything going further",
+      "params": ""
+    },
+    {
+      "name": "pickFiles",
+      "description": "Trigger the file picker dialog; The event must come from a user interaction event handler",
+      "params": "(evt: undefined) => void"
+    },
+    {
+      "name": "addFiles",
+      "description": "Manually add files to the queue",
+      "params": "(files: Array) => void"
+    }
+  ],
+  "events": [
+    {
+      "name": "added",
+      "description": "Emitted when files are added into the list",
+      "params": "(files: Array) => void"
+    },
+    {
+      "name": "removed",
+      "description": "Emitted when files are removed from the list",
+      "params": "(files: Array) => void"
+    },
+    {
+      "name": "start",
+      "description": "Started working",
+      "params": ""
+    },
+    {
+      "name": "finish",
+      "description": "Finished working (regardless of success or fail)",
+      "params": ""
+    }
+  ],
+  "props": {
+    "label": {
+      "value": "",
+      "type": "String",
+      "description": "Label for the uploader",
+      "default": ""
+    },
+    "color": {
+      "type": "String",
+      "description": "Color name for component from the Quasar Color Palette",
+      "value": "",
+      "default": "",
+      "extends": "color",
+      "desc": "Font color (from the Quasar Palette) of buttons and text in the toolbar",
+      "category": "toolbar"
+    },
+    "text-color": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "default": "",
+      "extends": "text-color"
+    },
+    "dark": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "default": "",
+      "extends": "dark"
+    },
+    "square": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "default": "",
+      "extends": "square"
+    },
+    "flat": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "default": "",
+      "extends": "flat"
+    },
+    "bordered": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "default": "",
+      "extends": "bordered"
+    },
+    "no-thumbnails": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Don't display thumbnails for image files",
+      "default": "false"
+    },
+    "auto-upload": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Upload files immediately when added",
+      "default": "false"
+    },
+    "hide-upload-btn": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Don't show the upload button",
+      "default": "false"
+    },
+    "disable": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "default": "",
+      "extends": "disable"
+    },
+    "readonly": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "default": "",
+      "extends": "readonly"
+    }
+  },
+  "link": "https://v2.quasar.dev/vue-components/uploader"
+}

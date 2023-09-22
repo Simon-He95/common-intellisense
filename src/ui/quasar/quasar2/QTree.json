@@ -1,0 +1,252 @@
+{
+  "name": "QTree",
+  "methods": [
+    {
+      "name": "getNodeByKey",
+      "description": "Get the node with the given key",
+      "params": "(key: Any) => Object"
+    },
+    {
+      "name": "getTickedNodes",
+      "description": "Get array of nodes that are ticked",
+      "params": ""
+    },
+    {
+      "name": "getExpandedNodes",
+      "description": "Get array of nodes that are expanded",
+      "params": ""
+    },
+    {
+      "name": "isExpanded",
+      "description": "Determine if a node is expanded",
+      "params": "(key: Any) => Boolean"
+    },
+    {
+      "name": "expandAll",
+      "description": "Use to expand all branches of the tree",
+      "params": ""
+    },
+    {
+      "name": "collapseAll",
+      "description": "Use to collapse all branches of the tree",
+      "params": ""
+    },
+    {
+      "name": "setExpanded",
+      "description": "Expands the tree at the point of the node with the key given",
+      "params": "(key: Any, state: Boolean) => void"
+    },
+    {
+      "name": "isTicked",
+      "description": "Method to check if a node's checkbox is selected or not",
+      "params": "(key: Any) => Boolean"
+    },
+    {
+      "name": "setTicked",
+      "description": "Method to set a node's checkbox programmatically",
+      "params": "(keys: Array, state: Boolean) => void"
+    }
+  ],
+  "events": [
+    {
+      "name": "update:expanded",
+      "description": "Triggered when nodes are expanded or collapsed; Used by Vue on 'v-model:update' to update its value",
+      "params": "(expanded: Array) => void"
+    },
+    {
+      "name": "lazy-load",
+      "description": "Emitted when the lazy loading of nodes is finished",
+      "params": "(details: Object) => void"
+    },
+    {
+      "name": "update:ticked",
+      "description": "Emitted when nodes are ticked/unticked via the checkbox; Used by Vue on 'v-model:ticked' to update its value",
+      "params": "(target: Array) => void"
+    },
+    {
+      "name": "update:selected",
+      "description": "Emitted when selected node changes; Used by Vue on 'v-model:selected' to update its value",
+      "params": "(target: Any) => void"
+    },
+    {
+      "name": "after-show",
+      "description": "",
+      "params": ""
+    },
+    {
+      "name": "after-hide",
+      "description": "",
+      "params": ""
+    }
+  ],
+  "props": {
+    "nodes": {
+      "value": "",
+      "type": "Array",
+      "description": "The array of nodes that designates the tree structure",
+      "default": ""
+    },
+    "node-key": {
+      "value": "",
+      "type": "String",
+      "description": "The property name of each node object that holds a unique node id",
+      "default": ""
+    },
+    "label-key": {
+      "value": "",
+      "type": "String",
+      "description": "The property name of each node object that holds the label of the node",
+      "default": "label"
+    },
+    "children-key": {
+      "value": "",
+      "type": "String",
+      "description": "The property name of each node object that holds the list of children of the node",
+      "default": "children"
+    },
+    "no-connectors": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Do not display the connector lines between nodes",
+      "default": "false"
+    },
+    "color": {
+      "type": "String",
+      "description": "Color name for component from the Quasar Color Palette",
+      "value": "",
+      "default": "primary",
+      "extends": "color",
+      "desc": "Color name for selected nodes (from the Quasar Color Palette)",
+      "category": "style",
+      "addedIn": "v2.4"
+    },
+    "control-color": {
+      "type": "String",
+      "description": "Color name for component from the Quasar Color Palette",
+      "value": "",
+      "default": "primary",
+      "extends": "color",
+      "desc": "Color name for selected nodes (from the Quasar Color Palette)",
+      "category": "style",
+      "addedIn": "v2.4"
+    },
+    "text-color": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "default": "",
+      "extends": "text-color"
+    },
+    "selected-color": {
+      "type": "String",
+      "description": "Color name for component from the Quasar Color Palette",
+      "value": "",
+      "default": "primary",
+      "extends": "color",
+      "desc": "Color name for selected nodes (from the Quasar Color Palette)",
+      "category": "style",
+      "addedIn": "v2.4"
+    },
+    "dense": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "default": "",
+      "extends": "dense",
+      "addedIn": "v2.2.4"
+    },
+    "dark": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "default": "",
+      "extends": "dark"
+    },
+    "icon": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "default": "",
+      "extends": "icon"
+    },
+    "tick-strategy": {
+      "value": "",
+      "type": "String",
+      "description": "The type of strategy to use for the selection of the nodes",
+      "default": "none"
+    },
+    "ticked": {
+      "value": "",
+      "type": "Array",
+      "description": "Keys of nodes that are ticked",
+      "default": ""
+    },
+    "expanded": {
+      "value": "",
+      "type": "Array",
+      "description": "Keys of nodes that are expanded",
+      "default": ""
+    },
+    "selected": {
+      "value": "",
+      "type": "Any",
+      "description": "Key of node currently selected",
+      "default": ""
+    },
+    "no-selection-unset": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Do not allow un-selection when clicking currently selected node",
+      "default": "false"
+    },
+    "default-expand-all": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Allow the tree to have all its branches expanded, when first rendered",
+      "default": "false"
+    },
+    "accordion": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Allows the tree to be set in accordion mode",
+      "default": "false"
+    },
+    "no-transition": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Turn off transition effects when expanding/collapsing nodes; Also enhances perf by a lot as a side-effect; Recommended for big trees",
+      "default": "false"
+    },
+    "filter": {
+      "value": "",
+      "type": "String",
+      "description": "The text value to be used for filtering nodes",
+      "default": ""
+    },
+    "filter-method": {
+      "value": "",
+      "type": "Function",
+      "description": "The function to use to filter the tree nodes; For best performance, reference it from your scope and do not define it inline",
+      "default": "(see source code)"
+    },
+    "duration": {
+      "value": "",
+      "type": "Number",
+      "description": "Toggle animation duration (in milliseconds)",
+      "default": 300
+    },
+    "no-nodes-label": {
+      "value": "",
+      "type": "String",
+      "description": "Override default such label for when no nodes are available",
+      "default": ""
+    },
+    "no-results-label": {
+      "value": "",
+      "type": "String",
+      "description": "Override default such label for when no nodes are available due to filtering",
+      "default": ""
+    }
+  },
+  "link": "https://v2.quasar.dev/vue-components/tree"
+}

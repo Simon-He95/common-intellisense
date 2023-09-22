@@ -1,0 +1,84 @@
+{
+  "name": "QForm",
+  "methods": [
+    {
+      "name": "focus",
+      "description": "Focus on first focusable element/component in the form",
+      "params": ""
+    },
+    {
+      "name": "validate",
+      "description": "Triggers a validation on all applicable inner Quasar components",
+      "params": "(shouldFocus: Boolean) => Promise<boolean>"
+    },
+    {
+      "name": "resetValidation",
+      "description": "Resets the validation on all applicable inner Quasar components",
+      "params": ""
+    },
+    {
+      "name": "submit",
+      "description": "Manually trigger form validation and submit",
+      "params": "(evt: undefined) => void"
+    },
+    {
+      "name": "reset",
+      "description": "Manually trigger form reset",
+      "params": "(evt: undefined) => void"
+    },
+    {
+      "name": "getValidationComponents",
+      "description": "Get an array of children Vue component instances that support Quasar validation API (derived from QField, or using useFormChild()/QFormChildMixin)",
+      "params": ""
+    }
+  ],
+  "events": [
+    {
+      "name": "submit",
+      "description": "Emitted when all validations have passed when tethered to a submit button",
+      "params": "(evt: Event,SubmitEvent) => void"
+    },
+    {
+      "name": "reset",
+      "description": "Emitted when all validations have been reset when tethered to a reset button; It is recommended to manually reset the wrapped components models in this handler",
+      "params": ""
+    },
+    {
+      "name": "validation-success",
+      "description": "Emitted after a validation was triggered and all inner Quasar components models are valid",
+      "params": ""
+    },
+    {
+      "name": "validation-error",
+      "description": "Emitted after a validation was triggered and at least one of the inner Quasar components models are NOT valid",
+      "params": "(ref: Component) => void"
+    }
+  ],
+  "props": {
+    "autofocus": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Focus first focusable element on initial component render",
+      "default": "false"
+    },
+    "no-error-focus": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Do not try to focus on first component that has a validation error when submitting form",
+      "default": "false"
+    },
+    "no-reset-focus": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Do not try to focus on first component when resetting form",
+      "default": "false"
+    },
+    "greedy": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Validate all fields in form (by default it stops after finding the first invalid field with synchronous validation)",
+      "default": "false"
+    }
+  },
+  "link": "https://v2.quasar.dev/vue-components/form"
+}

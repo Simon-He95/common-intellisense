@@ -1,0 +1,135 @@
+{
+  "name": "QMenu",
+  "methods": [
+    {
+      "name": "updatePosition",
+      "description": "There are some custom scenarios for which Quasar cannot automatically reposition the menu without significant performance drawbacks so the optimal solution is for you to call this method when you need it",
+      "params": ""
+    },
+    {
+      "name": "focus",
+      "description": "Focus menu; if you have content with autofocus attribute, it will directly focus it",
+      "params": ""
+    }
+  ],
+  "events": [
+    {
+      "name": "escape-key",
+      "description": "Emitted when ESC key is pressed; Does not get emitted if Menu is 'persistent'",
+      "params": ""
+    }
+  ],
+  "props": {
+    "dark": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "default": "",
+      "extends": "dark"
+    },
+    "fit": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Allows the menu to match at least the full width of its target",
+      "default": "false"
+    },
+    "cover": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Allows the menu to cover its target. When used, the 'self' and 'fit' props are no longer effective",
+      "default": "false"
+    },
+    "anchor": {
+      "value": "",
+      "type": "String",
+      "description": "Two values setting the starting position or anchor point of the menu relative to its target",
+      "default": ""
+    },
+    "self": {
+      "value": "",
+      "type": "String",
+      "description": "Two values setting the menu's own position relative to its target",
+      "default": ""
+    },
+    "offset": {
+      "value": "",
+      "type": "Array",
+      "description": "An array of two numbers to offset the menu horizontally and vertically in pixels",
+      "default": ""
+    },
+    "scroll-target": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "default": "",
+      "extends": "scroll-target"
+    },
+    "touch-position": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Allows for the target position to be set by the mouse position, when the target of the menu is either clicked or touched",
+      "default": "false"
+    },
+    "persistent": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Allows the menu to not be dismissed by a click/tap outside of the menu or by hitting the ESC key",
+      "default": "false"
+    },
+    "no-route-dismiss": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Changing route app won't dismiss the popup; No need to set it if 'persistent' prop is also set",
+      "default": "false"
+    },
+    "auto-close": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Allows any click/tap in the menu to close it; Useful instead of attaching events to each menu item that should close the menu on click/tap",
+      "default": "false"
+    },
+    "separate-close-popup": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Separate from parent menu, marking it as a separate closing point for v-close-popup (without this, chained menus close all together)",
+      "default": "false"
+    },
+    "square": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Forces content to have squared borders",
+      "default": "false"
+    },
+    "no-refocus": {
+      "value": "",
+      "type": "Boolean",
+      "description": "(Accessibility) When Menu gets hidden, do not refocus on the DOM element that previously had focus",
+      "default": "false"
+    },
+    "no-focus": {
+      "value": "",
+      "type": "Boolean",
+      "description": "(Accessibility) When Menu gets shown, do not switch focus on it",
+      "default": "false"
+    },
+    "max-height": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "default": "",
+      "extends": "size",
+      "desc": "The maximum height of the menu; Size in CSS units, including unit name",
+      "category": "style"
+    },
+    "max-width": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "default": "",
+      "extends": "size",
+      "desc": "The maximum width of the menu; Size in CSS units, including unit name",
+      "category": "style"
+    }
+  },
+  "link": "https://v2.quasar.dev/vue-components/menu"
+}

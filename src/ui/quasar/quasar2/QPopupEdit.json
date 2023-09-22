@@ -1,0 +1,203 @@
+{
+  "name": "QPopupEdit",
+  "methods": [
+    {
+      "name": "set",
+      "description": "Trigger a model update; Validates model (and emits 'save' event if it's the case) then closes Popup",
+      "params": ""
+    },
+    {
+      "name": "cancel",
+      "description": "Triggers a model reset to its initial value ('cancel' event is emitted) then closes Popup",
+      "params": ""
+    },
+    {
+      "name": "show",
+      "params": ""
+    },
+    {
+      "name": "hide",
+      "params": ""
+    },
+    {
+      "name": "updatePosition",
+      "description": "There are some custom scenarios for which Quasar cannot automatically reposition the component without significant performance drawbacks so the optimal solution is for you to call this method when you need it",
+      "params": ""
+    }
+  ],
+  "events": [
+    {
+      "name": "update:model-value",
+      "description": "Emitted when Popup gets cancelled in order to reset model to its initial value; Is also used by v-model",
+      "params": ""
+    },
+    {
+      "name": "before-show",
+      "description": "Emitted right before Popup gets shown",
+      "params": ""
+    },
+    {
+      "name": "show",
+      "description": "Emitted right after Popup gets shown",
+      "params": ""
+    },
+    {
+      "name": "before-hide",
+      "description": "Emitted right before Popup gets dismissed",
+      "params": ""
+    },
+    {
+      "name": "hide",
+      "description": "Emitted right after Popup gets dismissed",
+      "params": ""
+    },
+    {
+      "name": "save",
+      "description": "Emitted when value has been successfully validated and it should be saved",
+      "params": "(value: Any, initialValue: Any) => void"
+    },
+    {
+      "name": "cancel",
+      "description": "Emitted when user cancelled the change (hit ESC key or clicking outside of Popup or hit 'Cancel' button)",
+      "params": "(value: Any, initialValue: Any) => void"
+    }
+  ],
+  "props": {
+    "model-value": {
+      "value": "",
+      "type": "Any",
+      "description": "",
+      "default": "",
+      "extends": "model-value",
+      "examples": [
+        "v-model=\"myValue\""
+      ]
+    },
+    "title": {
+      "value": "",
+      "type": "String",
+      "description": "Optional title (unless 'title' slot is used)",
+      "default": ""
+    },
+    "buttons": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Show Set and Cancel buttons",
+      "default": "false"
+    },
+    "label-set": {
+      "value": "",
+      "type": "String",
+      "description": "Override Set button label",
+      "default": ""
+    },
+    "label-cancel": {
+      "value": "",
+      "type": "String",
+      "description": "Override Cancel button label",
+      "default": ""
+    },
+    "auto-save": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Automatically save the model (if changed) when user clicks/taps outside of the popup; It does not apply to ESC key",
+      "default": "false"
+    },
+    "color": {
+      "type": "String",
+      "description": "Color name for component from the Quasar Color Palette",
+      "value": "",
+      "default": "primary",
+      "extends": "color",
+      "desc": "Color name for bottom-side background from the Quasar Color Palette",
+      "category": "style",
+      "addedIn": "v2.4"
+    },
+    "validate": {
+      "value": "",
+      "type": "Function",
+      "description": "Validates model then triggers 'save' and closes Popup; Returns a Boolean ('true' means valid, 'false' means abort); Syntax: validate(value); For best performance, reference it from your scope and do not define it inline",
+      "default": ""
+    },
+    "disable": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "default": "",
+      "extends": "disable"
+    },
+    "fit": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Allows the menu to match at least the full width of its target",
+      "default": "false"
+    },
+    "cover": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Allows the menu to cover its target. When used, the 'self' and 'fit' props are no longer effective",
+      "default": true
+    },
+    "anchor": {
+      "value": "",
+      "type": "String",
+      "description": "Two values setting the starting position or anchor point of the menu relative to its target",
+      "default": ""
+    },
+    "self": {
+      "value": "",
+      "type": "String",
+      "description": "Two values setting the menu's own position relative to its target",
+      "default": ""
+    },
+    "offset": {
+      "value": "",
+      "type": "Array",
+      "description": "An array of two numbers to offset the menu horizontally and vertically in pixels",
+      "default": ""
+    },
+    "touch-position": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Allows for the target position to be set by the mouse position, when the target of the menu is either clicked or touched",
+      "default": "false"
+    },
+    "persistent": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Avoid menu closing by hitting ESC key or by clicking/tapping outside of the Popup",
+      "default": "false"
+    },
+    "separate-close-popup": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Separate from parent menu, marking it as a separate closing point for v-close-popup (without this, chained menus close all together)",
+      "default": "false"
+    },
+    "square": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Forces menu to have squared borders",
+      "default": "false"
+    },
+    "max-height": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "default": "",
+      "extends": "size",
+      "desc": "The maximum height of the menu; Size in CSS units, including unit name",
+      "category": "style"
+    },
+    "max-width": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "default": "",
+      "extends": "size",
+      "desc": "The maximum width of the menu; Size in CSS units, including unit name",
+      "category": "style"
+    }
+  },
+  "link": "https://v2.quasar.dev/vue-components/popup-edit"
+}

@@ -1,0 +1,91 @@
+{
+  "name": "QInfiniteScroll",
+  "methods": [
+    {
+      "name": "poll",
+      "description": "Checks scroll position and loads more content if necessary",
+      "params": ""
+    },
+    {
+      "name": "trigger",
+      "description": "Tells Infinite Scroll to load more content, regardless of the scroll position",
+      "params": ""
+    },
+    {
+      "name": "reset",
+      "description": "Resets calling index to 0",
+      "params": ""
+    },
+    {
+      "name": "stop",
+      "description": "Stops working, regardless of scroll position",
+      "params": ""
+    },
+    {
+      "name": "resume",
+      "description": "Starts working. Checks scroll position upon call and if trigger is hit, it loads more content",
+      "params": ""
+    },
+    {
+      "name": "setIndex",
+      "description": "Overwrite the current pagination index",
+      "params": "(newIndex: Number) => void"
+    },
+    {
+      "name": "updateScrollTarget",
+      "description": "Updates the scroll target; Useful when the parent elements change so that the scrolling target also changes",
+      "params": ""
+    }
+  ],
+  "events": [
+    {
+      "name": "load",
+      "description": "Emitted when Infinite Scroll needs to load more data",
+      "params": "(index: Number, done: Function) => void"
+    }
+  ],
+  "props": {
+    "offset": {
+      "value": "",
+      "type": "Number",
+      "description": "Offset (pixels) to bottom of Infinite Scroll container from which the component should start loading more content in advance",
+      "default": 500
+    },
+    "debounce": {
+      "value": "",
+      "type": [
+        "String",
+        "Number"
+      ],
+      "description": "Debounce amount (in milliseconds)",
+      "default": 100
+    },
+    "initial-index": {
+      "value": "",
+      "type": "Number",
+      "description": "Initialize the pagination index (used for the @load event)",
+      "default": 0
+    },
+    "scroll-target": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "default": "",
+      "extends": "scroll-target"
+    },
+    "disable": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "default": "",
+      "extends": "disable"
+    },
+    "reverse": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Scroll area should behave like a messenger - starting scrolled to bottom and loading when reaching the top",
+      "default": "false"
+    }
+  },
+  "link": "https://v2.quasar.dev/vue-components/infinite-scroll"
+}

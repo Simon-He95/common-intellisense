@@ -1,0 +1,54 @@
+{
+  "name": "QFooter",
+  "methods": [],
+  "events": [
+    {
+      "name": "reveal",
+      "description": "Emitted when 'reveal' state gets changed",
+      "params": "(value: Boolean) => void"
+    }
+  ],
+  "props": {
+    "model-value": {
+      "value": "",
+      "type": "Boolean",
+      "description": "",
+      "default": true,
+      "extends": "model-value",
+      "desc": "Model of the component defining if it is shown or hidden to the user; Either use this property (along with a listener for 'update:modelValue' event) OR use v-model directive",
+      "required": false,
+      "examples": [
+        "v-model=\"footerState\""
+      ]
+    },
+    "reveal": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Enable 'reveal' mode; Takes into account user scroll to temporarily show/hide footer",
+      "default": "false"
+    },
+    "bordered": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "default": "",
+      "extends": "bordered"
+    },
+    "elevated": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Adds a default shadow to the footer",
+      "default": "false"
+    },
+    "height-hint": {
+      "value": "",
+      "type": [
+        "Number",
+        "String"
+      ],
+      "description": "When using SSR, you can optionally hint of the height (in pixels) of the QFooter",
+      "default": 50
+    }
+  },
+  "link": "https://v2.quasar.dev/layout/header-and-footer"
+}

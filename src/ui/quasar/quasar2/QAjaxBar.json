@@ -1,0 +1,75 @@
+{
+  "name": "QAjaxBar",
+  "methods": [
+    {
+      "name": "start",
+      "description": "Notify bar you are waiting for a new process to finish",
+      "params": "(speed: Number) => Number"
+    },
+    {
+      "name": "increment",
+      "description": "Manually trigger a bar progress increment",
+      "params": "(amount: Number) => Number"
+    },
+    {
+      "name": "stop",
+      "description": "Notify bar that one process you were waiting has finished",
+      "params": ""
+    }
+  ],
+  "events": [
+    {
+      "name": "start",
+      "description": "Emitted when bar is triggered to appear",
+      "params": ""
+    },
+    {
+      "name": "stop",
+      "description": "Emitted when bar has finished its job",
+      "params": ""
+    }
+  ],
+  "props": {
+    "position": {
+      "value": "",
+      "type": "String",
+      "description": "Position within window of where QAjaxBar should be displayed",
+      "default": "top"
+    },
+    "size": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "default": "2px",
+      "extends": "size"
+    },
+    "color": {
+      "type": "String",
+      "description": "Color name for component from the Quasar Color Palette",
+      "value": "",
+      "default": "primary",
+      "extends": "color",
+      "desc": "Color name for component's track from the Quasar Color Palette",
+      "category": "toolbar"
+    },
+    "reverse": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Reverse direction of progress",
+      "default": "false"
+    },
+    "skip-hijack": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Skip Ajax hijacking (not a reactive prop)",
+      "default": "false"
+    },
+    "hijack-filter": {
+      "value": "",
+      "type": "Function",
+      "description": "Filter which URL should trigger start() + stop()",
+      "default": ""
+    }
+  },
+  "link": "https://v2.quasar.dev/vue-components/ajax-bar"
+}

@@ -1,0 +1,45 @@
+{
+  "name": "QVirtualScroll",
+  "methods": [],
+  "events": [
+    {
+      "name": "virtual-scroll",
+      "description": "",
+      "params": "(details: undefined) => void"
+    }
+  ],
+  "props": {
+    "type": {
+      "value": "",
+      "type": "String",
+      "description": "The type of content: list (default) or table",
+      "default": "list"
+    },
+    "items": {
+      "value": "",
+      "type": "Array",
+      "description": "Available list items that will be passed to the scoped slot; For best performance freeze the list of items; Required if 'itemsFn' is not supplied",
+      "default": "[]"
+    },
+    "items-size": {
+      "value": "",
+      "type": "Number",
+      "description": "Number of available items in the list; Required and used only if 'itemsFn' is provided",
+      "default": "void 0"
+    },
+    "items-fn": {
+      "value": "",
+      "type": "Function",
+      "description": "Function to return the scope for the items to be displayed; Should return an array for items starting from 'from' index for size length; For best performance, reference it from your scope and do not define it inline",
+      "default": ""
+    },
+    "scroll-target": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "default": "",
+      "extends": "scroll-target"
+    }
+  },
+  "link": "https://v2.quasar.dev/vue-components/virtual-scroll"
+}

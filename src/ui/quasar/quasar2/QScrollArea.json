@@ -1,0 +1,142 @@
+{
+  "name": "QScrollArea",
+  "methods": [
+    {
+      "name": "getScrollTarget",
+      "description": "Get the scrolling DOM element target",
+      "params": ""
+    },
+    {
+      "name": "getScroll",
+      "description": "Get the current scroll information",
+      "params": ""
+    },
+    {
+      "name": "getScrollPosition",
+      "description": "Get current scroll position",
+      "params": ""
+    },
+    {
+      "name": "getScrollPercentage",
+      "description": "Get current scroll position in percentage (0.0 <= x <= 1.0)",
+      "params": ""
+    },
+    {
+      "name": "setScrollPosition",
+      "description": "Set scroll position to an offset; If a duration (in milliseconds) is specified then the scroll is animated",
+      "params": "(axis: String, offset: Number, duration: Number) => void"
+    },
+    {
+      "name": "setScrollPercentage",
+      "description": "Set scroll position to a percentage (0.0 <= x <= 1.0) of the total scrolling size; If a duration (in milliseconds) is specified then the scroll is animated",
+      "params": "(axis: String, offset: Number, duration: Number) => void"
+    }
+  ],
+  "events": [
+    {
+      "name": "scroll",
+      "description": "Emitted when scroll information changes (and listener is configured)",
+      "params": "(info: Object) => void"
+    }
+  ],
+  "props": {
+    "dark": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "default": "",
+      "extends": "dark"
+    },
+    "bar-style": {
+      "value": "",
+      "type": [
+        "String",
+        "Array",
+        "Object"
+      ],
+      "description": "Object with CSS properties and values for custom styling the scrollbars (both vertical and horizontal)",
+      "default": ""
+    },
+    "vertical-bar-style": {
+      "value": "",
+      "type": [
+        "String",
+        "Array",
+        "Object"
+      ],
+      "description": "Object with CSS properties and values for custom styling the vertical scrollbar; Is applied on top of 'bar-style' prop",
+      "default": ""
+    },
+    "horizontal-bar-style": {
+      "value": "",
+      "type": [
+        "String",
+        "Array",
+        "Object"
+      ],
+      "description": "Object with CSS properties and values for custom styling the horizontal scrollbar; Is applied on top of 'bar-style' prop",
+      "default": ""
+    },
+    "thumb-style": {
+      "value": "",
+      "type": "Object",
+      "description": "Object with CSS properties and values for custom styling the thumb of scrollbars (both vertical and horizontal)",
+      "default": ""
+    },
+    "vertical-thumb-style": {
+      "value": "",
+      "type": "Object",
+      "description": "Object with CSS properties and values for custom styling the thumb of the vertical scrollbar; Is applied on top of 'thumb-style' prop",
+      "default": ""
+    },
+    "horizontal-thumb-style": {
+      "value": "",
+      "type": "Object",
+      "description": "Object with CSS properties and values for custom styling the thumb of the horizontal scrollbar; Is applied on top of 'thumb-style' prop",
+      "default": ""
+    },
+    "content-style": {
+      "value": "",
+      "type": [
+        "String",
+        "Array",
+        "Object"
+      ],
+      "description": "Object with CSS properties and values for styling the container of QScrollArea",
+      "default": ""
+    },
+    "content-active-style": {
+      "value": "",
+      "type": [
+        "String",
+        "Array",
+        "Object"
+      ],
+      "description": "Object with CSS properties and values for styling the container of QScrollArea when scroll area becomes active (is mouse hovered)",
+      "default": ""
+    },
+    "visible": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Manually control the visibility of the scrollbar; Overrides default mouse over/leave behavior",
+      "default": "false"
+    },
+    "delay": {
+      "value": "",
+      "type": [
+        "Number",
+        "String"
+      ],
+      "description": "When content changes, the scrollbar appears; this delay defines the amount of time (in milliseconds) before scrollbars disappear again (if component is not hovered)",
+      "default": 1000
+    },
+    "tabindex": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "default": "",
+      "extends": "tabindex"
+    }
+  },
+  "link": "https://v2.quasar.dev/vue-components/scroll-area"
+}

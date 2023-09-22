@@ -144,16 +144,17 @@ function run() {
 function generateIndex() {
   const indexTemplate = `import { componentsReducer, propsReducer } from '../../utils'
   ${primevue3Importers.join('\n')}
-  export function primevue3() {
-    const map: any = ${JSON.stringify(primevue3Map, null, 4)}
   
-    return propsReducer(map)
-  }
+export function primevue3() {
+  const map: any = ${JSON.stringify(primevue3Map, null, 4).replace(/"/g, '')}
+
+  return propsReducer(map)
+}
   
-  export function primevue3Components() {
-    const map = ${JSON.stringify(primevue3ComponentsMap, null, 4)}
-    return componentsReducer(map)
-  }
+export function primevue3Components() {
+  const map = ${JSON.stringify(primevue3ComponentsMap, null, 4)}
+  return componentsReducer(map)
+}
   `
   fsp.writeFile(`${base}/src/ui/primevue/primevue3/index.ts`, indexTemplate)
 }

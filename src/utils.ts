@@ -322,7 +322,7 @@ export function parserSvelte(code: string, position: vscode.Position) {
   }
 }
 
-const UINames = ['element-ui', 'element-plus', 'antd', 'ant-design-vue', '@varlet/ui', 'vant', 'naive-ui', 'vuetify', '@chakra-ui/react', '@chakra-ui/vue', '@skeletonlabs/skeleton', 'primevue']
+const UINames = ['element-ui', 'element-plus', 'antd', 'ant-design-vue', '@varlet/ui', 'vant', 'naive-ui', 'vuetify', '@chakra-ui/react', '@chakra-ui/vue', '@skeletonlabs/skeleton', 'primevue', 'quasar']
 export async function findPkgUI(cwd?: string) {
   if (!cwd)
     return

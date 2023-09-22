@@ -1,3 +1,5 @@
-import run from './primevue'
+import primevueRun from './primevue'
+import quasarRun from './quasar'
 
-run()
+quasarRun()
+primevueRun()

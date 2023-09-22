@@ -1,0 +1,138 @@
+{
+  "name": "QDrawer",
+  "methods": [],
+  "events": [
+    {
+      "name": "on-layout",
+      "description": "Emitted when drawer toggles between occupying space on page or not",
+      "params": "(state: Boolean) => void"
+    },
+    {
+      "name": "click",
+      "description": "Emitted when user clicks/taps on the component and drawer is NOT in mobile mode; Useful for when taking a decision to toggle mini mode",
+      "params": ""
+    },
+    {
+      "name": "mouseover",
+      "description": "Emitted when user moves mouse cursor over the component and drawer is NOT in mobile mode; Useful for when taking a decision to toggle mini mode",
+      "params": ""
+    },
+    {
+      "name": "mouseout",
+      "description": "Emitted when user moves mouse cursor out of the component and drawer is NOT in mobile mode; Useful for when taking a decision to toggle mini mode",
+      "params": ""
+    },
+    {
+      "name": "mini-state",
+      "description": "Emitted when drawer changes the mini-mode state (sometimes it is forced to do so)",
+      "params": "(state: Boolean) => void"
+    }
+  ],
+  "props": {
+    "side": {
+      "value": "",
+      "type": "String",
+      "description": "Side to attach to",
+      "default": "left"
+    },
+    "overlay": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Puts drawer into overlay mode (does not occupy space on screen, narrowing the page)",
+      "default": "false"
+    },
+    "width": {
+      "value": "",
+      "type": "Number",
+      "description": "Width of drawer (in pixels)",
+      "default": 300
+    },
+    "mini": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Puts drawer into mini mode",
+      "default": "false"
+    },
+    "mini-width": {
+      "value": "",
+      "type": "Number",
+      "description": "Width of drawer (in pixels) when in mini mode",
+      "default": 60
+    },
+    "mini-to-overlay": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Mini mode will expand as an overlay",
+      "default": "false"
+    },
+    "no-mini-animation": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Disables animation of the drawer when toggling mini mode",
+      "default": "false"
+    },
+    "dark": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "default": "",
+      "extends": "dark"
+    },
+    "breakpoint": {
+      "value": "",
+      "type": "Number",
+      "description": "Breakpoint (in pixels) of layout width up to which mobile mode is used",
+      "default": 1023
+    },
+    "behavior": {
+      "value": "",
+      "type": "String",
+      "description": "Overrides the default dynamic mode into which the drawer is put on",
+      "default": "default"
+    },
+    "bordered": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "default": "",
+      "extends": "bordered"
+    },
+    "elevated": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Adds a default shadow to the header",
+      "default": "false"
+    },
+    "persistent": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Prevents drawer from auto-closing when app's route changes",
+      "default": "false"
+    },
+    "show-if-above": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Forces drawer to be shown on screen on initial render if the layout width is above breakpoint, regardless of v-model; This is the default behavior when SSR is taken over by client on initial render",
+      "default": "false"
+    },
+    "no-swipe-open": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Disables the default behavior where drawer can be swiped into view; Useful for iOS platforms where it might interfere with Safari's 'swipe to go to previous/next page' feature",
+      "default": "false"
+    },
+    "no-swipe-close": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Disables the default behavior where drawer can be swiped out of view (applies to drawer content only); Useful for iOS platforms where it might interfere with Safari's 'swipe to go to previous/next page' feature",
+      "default": "false"
+    },
+    "no-swipe-backdrop": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Disables the default behavior where drawer backdrop can be swiped",
+      "default": "false"
+    }
+  },
+  "link": "https://v2.quasar.dev/layout/drawer"
+}

@@ -1,0 +1,72 @@
+{
+  "name": "QFab",
+  "methods": [
+    {
+      "name": "show",
+      "description": "Expands fab actions list",
+      "params": ""
+    },
+    {
+      "name": "hide",
+      "description": "Collapses fab actions list",
+      "params": ""
+    }
+  ],
+  "events": [
+    {
+      "name": "update:model-value",
+      "description": "Emitted when fab actions are shown/hidden; Captured by v-model directive",
+      "params": ""
+    }
+  ],
+  "props": {
+    "model-value": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "default": "",
+      "extends": "model-value",
+      "desc": "Controls state of fab actions (showing/hidden); Works best with v-model directive, otherwise use along listening to 'update:modelValue' event",
+      "category": "model",
+      "required": false
+    },
+    "icon": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "default": "",
+      "extends": "icon"
+    },
+    "active-icon": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "default": "",
+      "extends": "icon"
+    },
+    "hide-icon": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Hide the icon (don't use any)",
+      "default": "false"
+    },
+    "direction": {
+      "value": "",
+      "type": "String",
+      "description": "Direction to expand Fab Actions to",
+      "default": "right"
+    },
+    "vertical-actions-align": {
+      "value": "",
+      "type": "String",
+      "description": "The side of the Fab where Fab Actions will expand (only when direction is 'up' or 'down')",
+      "default": "center"
+    },
+    "persistent": {
+      "value": "",
+      "type": "Boolean",
+      "description": "By default, Fab Actions are hidden when user navigates to another route and this prop disables this behavior",
+      "default": "false"
+    }
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "name": "QDialog",
+  "methods": [
+    {
+      "name": "focus",
+      "description": "Focus dialog; if you have content with autofocus attribute, it will directly focus it",
+      "params": "(selector: String) => void"
+    },
+    {
+      "name": "shake",
+      "description": "Shakes dialog",
+      "params": "(focusTarget: Element) => void"
+    }
+  ],
+  "events": [
+    {
+      "name": "shake",
+      "description": "Emitted when the Dialog shakes in order to catch user's attention, unless the 'no-shake' property is set",
+      "params": ""
+    },
+    {
+      "name": "escape-key",
+      "description": "Emitted when ESC key is pressed; Does not get emitted if Dialog is 'persistent' or it has 'no-esc-key' set",
+      "params": ""
+    }
+  ],
+  "props": {
+    "persistent": {
+      "value": "",
+      "type": "Boolean",
+      "description": "User cannot dismiss Dialog if clicking outside of it or hitting ESC key; Also, an app route change won't dismiss it",
+      "default": "false"
+    },
+    "no-esc-dismiss": {
+      "value": "",
+      "type": "Boolean",
+      "description": "User cannot dismiss Dialog by hitting ESC key; No need to set it if 'persistent' prop is also set",
+      "default": "false"
+    },
+    "no-backdrop-dismiss": {
+      "value": "",
+      "type": "Boolean",
+      "description": "User cannot dismiss Dialog by clicking outside of it; No need to set it if 'persistent' prop is also set",
+      "default": "false"
+    },
+    "no-route-dismiss": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Changing route app won't dismiss Dialog; No need to set it if 'persistent' prop is also set",
+      "default": "false"
+    },
+    "auto-close": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Any click/tap inside of the dialog will close it",
+      "default": "false"
+    },
+    "seamless": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Put Dialog into seamless mode; Does not use a backdrop so user is able to interact with the rest of the page too",
+      "default": "false"
+    },
+    "maximized": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Put Dialog into maximized mode",
+      "default": "false"
+    },
+    "full-width": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Dialog will try to render with same width as the window",
+      "default": "false"
+    },
+    "full-height": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Dialog will try to render with same height as the window",
+      "default": "false"
+    },
+    "position": {
+      "value": "",
+      "type": "String",
+      "description": "Stick dialog to one of the sides (top, right, bottom or left)",
+      "default": "standard"
+    },
+    "square": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Forces content to have squared borders",
+      "default": "false"
+    },
+    "no-refocus": {
+      "value": "",
+      "type": "Boolean",
+      "description": "(Accessibility) When Dialog gets hidden, do not refocus on the DOM element that previously had focus",
+      "default": "false"
+    },
+    "no-focus": {
+      "value": "",
+      "type": "Boolean",
+      "description": "(Accessibility) When Dialog gets shown, do not switch focus on it",
+      "default": "false"
+    },
+    "no-shake": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Do not shake up the Dialog to catch user's attention",
+      "default": "false"
+    },
+    "allow-focus-outside": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Allow elements outside of the Dialog to be focusable; By default, for accessibility reasons, QDialog does not allow outer focus",
+      "default": "false"
+    }
+  },
+  "link": "https://v2.quasar.dev/vue-components/dialog"
+}

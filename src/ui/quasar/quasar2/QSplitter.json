@@ -1,0 +1,108 @@
+{
+  "name": "QSplitter",
+  "methods": [],
+  "events": [
+    {
+      "name": "update:model-value",
+      "description": "Emitted when component's model value changes; Is also used by v-model",
+      "params": "(value: Number) => void"
+    }
+  ],
+  "props": {
+    "model-value": {
+      "value": "",
+      "type": "Number",
+      "description": "",
+      "default": "",
+      "extends": "model-value",
+      "desc": "Model of the component defining the size of first panel (or second if using reverse) in the unit specified (for '%' it's the split ratio percent - 0.0 < x < 100.0; for 'px' it's the size in px); Either use this property (along with a listener for 'update:modelValue' event) OR use v-model directive",
+      "examples": [
+        "v-model=\"ratio\""
+      ]
+    },
+    "reverse": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Apply the model size to the second panel (by default it applies to the first)",
+      "default": "false"
+    },
+    "unit": {
+      "value": "",
+      "type": "String",
+      "description": "CSS unit for the model",
+      "default": "%"
+    },
+    "emit-immediately": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Emit model while user is panning on the separator",
+      "default": "false"
+    },
+    "horizontal": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Allows the splitter to split its two panels horizontally, instead of vertically",
+      "default": "false"
+    },
+    "limits": {
+      "value": "",
+      "type": "Array",
+      "description": "An array of two values representing the minimum and maximum split size of the two panels; When 'px' unit is set then you can use Infinity as the second value to make it unbound on the other side",
+      "default": "For '%' unit: [10, 90]; For 'px' unit: [50, Infinity]"
+    },
+    "disable": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "default": "",
+      "extends": "disable"
+    },
+    "before-class": {
+      "value": "",
+      "type": [
+        "String",
+        "Array",
+        "Object"
+      ],
+      "description": "Class definitions to be attributed to the 'before' panel",
+      "default": ""
+    },
+    "after-class": {
+      "value": "",
+      "type": [
+        "String",
+        "Array",
+        "Object"
+      ],
+      "description": "Class definitions to be attributed to the 'after' panel",
+      "default": ""
+    },
+    "separator-class": {
+      "value": "",
+      "type": [
+        "String",
+        "Array",
+        "Object"
+      ],
+      "description": "Class definitions to be attributed to the splitter separator",
+      "default": ""
+    },
+    "separator-style": {
+      "value": "",
+      "type": [
+        "String",
+        "Array",
+        "Object"
+      ],
+      "description": "Style definitions to be attributed to the splitter separator",
+      "default": ""
+    },
+    "dark": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Applies a default lighter color on the separator; To be used when background is darker; Avoid using when you are overriding through separator-class or separator-style props",
+      "default": "false"
+    }
+  },
+  "link": "https://v2.quasar.dev/vue-components/splitter"
+}

@@ -1,0 +1,107 @@
+{
+  "mixins": ["composables/private/use-model-toggle", "components/fab/use-fab"],
+
+  "props": {
+    "model-value": {
+      "extends": "model-value",
+      "desc": "Controls state of fab actions (showing/hidden); Works best with v-model directive, otherwise use along listening to 'update:modelValue' event",
+      "category": "model",
+      "required": false
+    },
+
+    "icon": {
+      "extends": "icon"
+    },
+
+    "active-icon": {
+      "extends": "icon"
+    },
+
+    "hide-icon": {
+      "type": "Boolean",
+      "desc": "Hide the icon (don't use any)",
+      "category": "style|content"
+    },
+
+    "direction": {
+      "type": "String",
+      "desc": "Direction to expand Fab Actions to",
+      "default": "right",
+      "values": ["up", "right", "down", "left"],
+      "category": "behavior"
+    },
+
+    "vertical-actions-align": {
+      "type": "String",
+      "desc": "The side of the Fab where Fab Actions will expand (only when direction is 'up' or 'down')",
+      "default": "center",
+      "values": ["left", "center", "right"],
+      "category": "style|content"
+    },
+
+    "persistent": {
+      "type": "Boolean",
+      "desc": "By default, Fab Actions are hidden when user navigates to another route and this prop disables this behavior",
+      "category": "behavior"
+    }
+  },
+
+  "slots": {
+    "default": {
+      "desc": "This is where QFabActions may go into"
+    },
+
+    "tooltip": {
+      "desc": "Slot specifically designed for a QTooltip"
+    },
+
+    "icon": {
+      "desc": "Slot for icon shown when FAB is closed; Suggestion: QIcon",
+      "scope": {
+        "opened": {
+          "type": "Boolean",
+          "desc": "FAB is opened"
+        }
+      },
+      "addedIn": "v2.4"
+    },
+
+    "active-icon": {
+      "desc": "Slot for icon shown when FAB is opened; Suggestion: QIcon",
+      "scope": {
+        "opened": {
+          "type": "Boolean",
+          "desc": "FAB is opened"
+        }
+      },
+      "addedIn": "v2.4"
+    },
+
+    "label": {
+      "desc": "Slot for label",
+      "scope": {
+        "opened": {
+          "type": "Boolean",
+          "desc": "FAB is opened"
+        }
+      },
+      "addedIn": "v2.4"
+    }
+  },
+
+  "events": {
+    "update:model-value": {
+      "desc": "Emitted when fab actions are shown/hidden; Captured by v-model directive"
+    }
+  },
+
+  "methods": {
+    "show": {
+      "desc": "Expands fab actions list"
+    },
+
+    "hide": {
+      "desc": "Collapses fab actions list"
+    }
+  }
+}

@@ -1,0 +1,268 @@
+{
+  "name": "QPagination",
+  "methods": [
+    {
+      "name": "set",
+      "description": "Go directly to the specified page",
+      "params": "(pageNumber: Number) => void"
+    },
+    {
+      "name": "setByOffset",
+      "description": "Increment/Decrement current page by offset",
+      "params": "(offset: Number) => void"
+    }
+  ],
+  "events": [
+    {
+      "name": "update:model-value",
+      "description": "",
+      "params": "(value: Number) => void"
+    }
+  ],
+  "props": {
+    "model-value": {
+      "value": "",
+      "type": "Number",
+      "description": "",
+      "default": "",
+      "extends": "model-value",
+      "desc": "Current page (must be between min/max)"
+    },
+    "min": {
+      "value": "",
+      "type": [
+        "Number",
+        "String"
+      ],
+      "description": "Minimum page (must be lower than 'max')",
+      "default": 1
+    },
+    "max": {
+      "value": "",
+      "type": [
+        "Number",
+        "String"
+      ],
+      "description": "Number of last page (must be higher than 'min')",
+      "default": ""
+    },
+    "dark": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "default": "",
+      "extends": "dark",
+      "desc": "Notify the component that the background is a dark color (useful when you are using it along with the 'input' prop)"
+    },
+    "size": {
+      "value": "",
+      "type": "String",
+      "description": "Button size in CSS units, including unit name",
+      "default": ""
+    },
+    "disable": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "default": "",
+      "extends": "disable"
+    },
+    "input": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Use an input instead of buttons",
+      "default": "false"
+    },
+    "icon-prev": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "default": "",
+      "extends": "icon"
+    },
+    "icon-next": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "default": "",
+      "extends": "icon"
+    },
+    "icon-first": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "default": "",
+      "extends": "icon"
+    },
+    "icon-last": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "default": "",
+      "extends": "icon"
+    },
+    "to-fn": {
+      "value": "",
+      "type": "Function",
+      "description": "Generate link for page buttons; For best performance, reference it from your scope and do not define it inline",
+      "default": ""
+    },
+    "boundary-links": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Show boundary button links",
+      "default": "false"
+    },
+    "boundary-numbers": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Always show first and last page buttons (if not using 'input')",
+      "default": "false"
+    },
+    "direction-links": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Show direction buttons",
+      "default": "false"
+    },
+    "ellipses": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Show ellipses (...) when pages are available",
+      "default": "false"
+    },
+    "max-pages": {
+      "value": "",
+      "type": [
+        "Number",
+        "String"
+      ],
+      "description": "Maximum number of page links to display at a time; 0 means Infinite",
+      "default": 0
+    },
+    "flat": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Use 'flat' design for non-active buttons (it's the default option)",
+      "default": "false"
+    },
+    "outline": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Use 'outline' design for non-active buttons",
+      "default": "false"
+    },
+    "unelevated": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Remove shadow for non-active buttons",
+      "default": "false"
+    },
+    "push": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Use 'push' design for non-active buttons",
+      "default": "false"
+    },
+    "color": {
+      "type": "String",
+      "description": "Color name for component from the Quasar Color Palette",
+      "value": "",
+      "default": "primary",
+      "extends": "color",
+      "desc": "Color name from the Quasar Color Palette for the ACTIVE button",
+      "category": "toolbar"
+    },
+    "text-color": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "default": "",
+      "extends": "text-color",
+      "desc": "Text color name from the Quasar Color Palette for the ACTIVE buttons"
+    },
+    "active-design": {
+      "value": "",
+      "type": "String",
+      "description": "The design of the ACTIVE button, similar to the flat/outline/push/unelevated props (but those are used for non-active buttons)",
+      "default": ""
+    },
+    "active-color": {
+      "type": "String",
+      "description": "Color name for component from the Quasar Color Palette",
+      "value": "",
+      "default": "primary",
+      "extends": "color",
+      "desc": "Color name from the Quasar Color Palette for the ACTIVE button",
+      "category": "toolbar"
+    },
+    "active-text-color": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "default": "",
+      "extends": "text-color",
+      "desc": "Text color name from the Quasar Color Palette for the ACTIVE button"
+    },
+    "round": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Makes a circle shaped button for all buttons",
+      "default": "false"
+    },
+    "rounded": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Applies a more prominent border-radius for a squared shape button for all buttons",
+      "default": "false"
+    },
+    "glossy": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Applies a glossy effect for all buttons",
+      "default": "false"
+    },
+    "gutter": {
+      "value": "",
+      "type": "String",
+      "description": "Apply custom gutter; Size in CSS units, including unit name or standard size name (none|xs|sm|md|lg|xl)",
+      "default": "2px"
+    },
+    "padding": {
+      "value": "",
+      "type": "String",
+      "description": "Apply custom padding (vertical [horizontal]); Size in CSS units, including unit name or standard size name (none|xs|sm|md|lg|xl); Also removes the min width and height when set",
+      "default": ""
+    },
+    "input-style": {
+      "value": "",
+      "type": [
+        "String",
+        "Array",
+        "Object"
+      ],
+      "description": "Style definitions to be attributed to the input (if using one)",
+      "default": ""
+    },
+    "input-class": {
+      "value": "",
+      "type": [
+        "String",
+        "Array",
+        "Object"
+      ],
+      "description": "Class definitions to be attributed to the input (if using one)",
+      "default": ""
+    },
+    "ripple": {
+      "value": "",
+      "type": [
+        "Boolean",
+        "Object"
+      ],
+      "description": "Configure buttons material ripple (disable it by setting it to 'false' or supply a config object); Does not applies to boundary and ellipsis buttons",
+      "default": true
+    }
+  },
+  "link": "https://v2.quasar.dev/vue-components/pagination"
+}

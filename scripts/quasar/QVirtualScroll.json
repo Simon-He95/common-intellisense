@@ -1,0 +1,105 @@
+{
+  "mixins": ["components/virtual-scroll/use-virtual-scroll"],
+
+  "meta": {
+    "docsUrl": "https://v2.quasar.dev/vue-components/virtual-scroll"
+  },
+
+  "props": {
+    "type": {
+      "type": "String",
+      "desc": "The type of content: list (default) or table",
+      "default": "list",
+      "values": ["list", "table"],
+      "category": "content"
+    },
+
+    "items": {
+      "type": "Array",
+      "desc": "Available list items that will be passed to the scoped slot; For best performance freeze the list of items; Required if 'itemsFn' is not supplied",
+      "default": "[]",
+      "examples": [
+        ":items=\"[ 'BMW', 'Samsung Phone' ]\"",
+        ":items=\"[ { label: 'BMW', value: 'car' }, { label: 'Samsung Phone', value: 'phone' } ]\""
+      ],
+      "category": "content"
+    },
+
+    "items-size": {
+      "type": "Number",
+      "desc": "Number of available items in the list; Required and used only if 'itemsFn' is provided",
+      "default": "void 0",
+      "examples": [
+        ":items-size=\"100000\"",
+        ":items-size=\"500\""
+      ],
+      "category": "content"
+    },
+
+    "items-fn": {
+      "type": "Function",
+      "desc": "Function to return the scope for the items to be displayed; Should return an array for items starting from 'from' index for size length; For best performance, reference it from your scope and do not define it inline",
+      "params": {
+        "from": {
+          "type": "Number",
+          "desc": "Index of the first item (0 based)"
+        },
+        "size": {
+          "type": "Number",
+          "desc": "Number of items to return"
+        }
+      },
+      "returns": {
+        "type": "Array",
+        "desc": "List of scope for items to be displayed"
+      },
+      "examples": [
+        ":items-fn=\"(from, size) => { const items = []; for (let i = 0; i < size; i++) { items.push('Item ' + i) }; return items }\""
+      ],
+      "category": "content"
+    },
+
+    "scroll-target": {
+      "extends": "scroll-target"
+    }
+  },
+
+  "events": {
+    "virtual-scroll": {
+      "params": {
+        "details": {
+          "definition": {
+            "ref": {
+              "tsType": "QVirtualScroll",
+              "desc": "Vue reference to the QVirtualScroll"
+            }
+          }
+        }
+      }
+    }
+  },
+
+  "slots": {
+    "before": {
+      "desc": "Template slot for the elements that should be rendered before the list; Suggestion: thead before a table"
+    },
+
+    "after": {
+      "desc": "Template slot for the elements that should be rendered after the list; Suggestion: tfoot after a table"
+    },
+
+    "default": {
+      "desc": "Template slot for defining the list item; Suggestion: QItem",
+      "scope": {
+        "index": {
+          "type": "Number",
+          "desc": "Item index in the items list"
+        },
+        "item": {
+          "type": "Any",
+          "desc": "Item data -- its value is taken from 'items' prop"
+        }
+      }
+    }
+  }
+}

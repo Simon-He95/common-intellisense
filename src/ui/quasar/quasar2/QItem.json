@@ -1,0 +1,78 @@
+{
+  "name": "QItem",
+  "methods": [],
+  "events": [
+    {
+      "name": "click",
+      "description": "Emitted when the component is clicked",
+      "params": "(evt: undefined, go: Function) => void"
+    }
+  ],
+  "props": {
+    "active": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Put item into 'active' state",
+      "default": null
+    },
+    "dark": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "default": "",
+      "extends": "dark"
+    },
+    "clickable": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Is QItem clickable? If it's the case, then it will add hover effects and emit 'click' events",
+      "default": "false"
+    },
+    "dense": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "default": "",
+      "extends": "dense"
+    },
+    "inset-level": {
+      "value": "",
+      "type": "Number",
+      "description": "Apply an inset; Useful when avatar/left side is missing but you want to align content with other items that do have a left side, or when you're building a menu",
+      "default": ""
+    },
+    "tabindex": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "default": "",
+      "extends": "tabindex"
+    },
+    "tag": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "default": "div",
+      "extends": "tag",
+      "desc": "HTML tag to render; Suggestion: use 'label' when encapsulating a QCheckbox/QRadio/QToggle so that when user clicks/taps on the whole item it will trigger a model change for the mentioned components",
+      "examples": [
+        "a",
+        "label",
+        "div"
+      ]
+    },
+    "manual-focus": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Put item into a manual focus state; Enables 'focused' prop which will determine if item is focused or not, rather than relying on native hover/focus states",
+      "default": "false"
+    },
+    "focused": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Determines focus state, ONLY if 'manual-focus' is enabled / set to true",
+      "default": "false"
+    }
+  },
+  "link": "https://v2.quasar.dev/vue-components/list-and-list-items"
+}
