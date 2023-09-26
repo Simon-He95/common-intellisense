@@ -1,0 +1,134 @@
+{
+  "name": "DropdownItem",
+  "methods": [],
+  "events": [
+    {
+      "name": "onAction",
+      "description": "Handler that is called when the dropdown item is selected. (**Deprecated**) pass to `DropdownMenu` instead.",
+      "params": "`() => void`"
+    },
+    {
+      "name": "onClose",
+      "description": "Handler that is called when the dropdown item should close after selecting. (**Deprecated**) pass to `DropdownMenu` instead.",
+      "params": "`() => void`"
+    },
+    {
+      "name": "onPress",
+      "description": "Handler called when the press is released over the target.",
+      "params": "`(e: PressEvent) => void`"
+    },
+    {
+      "name": "onPressStart",
+      "description": "Handler called when a press interaction starts.",
+      "params": "`(e: PressEvent) => void`"
+    },
+    {
+      "name": "onPressEnd",
+      "description": "Handler called when a press interaction ends, either over the target or when the pointer leaves the target.",
+      "params": "`(e: PressEvent) => void`"
+    },
+    {
+      "name": "onPressChange",
+      "description": "Handler called when the press state changes.",
+      "params": "`(isPressed: boolean) => void`"
+    },
+    {
+      "name": "onPressUp",
+      "description": "Handler called when a press is released over the target, regardless of whether it started on the target or not.",
+      "params": "`(e: PressEvent) => void`"
+    },
+    {
+      "name": "onKeyDown",
+      "description": "Handler called when a key is pressed.",
+      "params": "`(e: KeyboardEvent) => void`"
+    },
+    {
+      "name": "onKeyUp",
+      "description": "Handler called when a key is released.",
+      "params": "`(e: KeyboardEvent) => void`"
+    },
+    {
+      "name": "onClick",
+      "description": "The native button click event handler (**Deprecated**) use **onPress** instead.",
+      "params": "`MouseEventHandler`"
+    }
+  ],
+  "props": {
+    "children\\*": {
+      "type": "`ReactNode`",
+      "default": "-",
+      "description": "The contents of the dropdown item."
+    },
+    "key": {
+      "type": "`React.Key`",
+      "default": "-",
+      "description": "The unique key for the dropdown item."
+    },
+    "title": {
+      "type": "`string` | `ReactNode`",
+      "default": "-",
+      "description": "The title of the dropdown item."
+    },
+    "textValue": {
+      "type": "`string`",
+      "default": "-",
+      "description": "A string representation of the item's contents, used for features like typeahead."
+    },
+    "description": {
+      "type": "`string` | `ReactNode`",
+      "default": "-",
+      "description": "The description of the dropdown item."
+    },
+    "shortcut": {
+      "type": "`string` | `ReactNode`",
+      "default": "-",
+      "description": "The dropdown item keyboard shortcut."
+    },
+    "startContent": {
+      "type": "`ReactNode`",
+      "default": "-",
+      "description": "The start content of the dropdown item."
+    },
+    "endContent": {
+      "type": "`ReactNode`",
+      "default": "-",
+      "description": "The end content of the dropdown item. This is positioned after the shortcut and the selected icon."
+    },
+    "selectedIcon": {
+      "type": "[SelectedIconProps](#dropdown-item-selected-icon-props)",
+      "default": "-",
+      "description": "Custom icon to render when the item is selected."
+    },
+    "showDivider": {
+      "type": "`boolean`",
+      "default": "`false`",
+      "description": "Whether to show a divider below the item."
+    },
+    "isDisabled": {
+      "type": "`boolean`",
+      "default": "`false`",
+      "description": "Whether the dropdown item should be disabled. (**Deprecated**) pass **disabledKeys** to `DropdownMenu` instead."
+    },
+    "isSelected": {
+      "type": "`boolean`",
+      "default": "`false`",
+      "description": "Whether the dropdown item should be selected. (**Deprecated**) pass **selectedKeys** to `DropdownMenu` instead."
+    },
+    "isReadOnly": {
+      "type": "`boolean`",
+      "default": "`false`",
+      "description": "Whether the dropdown item press events should be ignored."
+    },
+    "closeOnSelect": {
+      "type": "`boolean`",
+      "default": "`true`",
+      "description": "Whether the dropdown menu should be closed when the item is selected."
+    },
+    "classNames": {
+      "type": "`Record<\"base\"｜ \"wrapper\"｜ \"title\"｜ \"description\"｜ \"shortcut\" ｜ \"selectedIcon\", string>`",
+      "default": "-",
+      "description": "Allows to set custom class names for the dropdown item slots."
+    }
+  },
+  "link": "https://nextui.org/docs/components/dropdownitem"
+}

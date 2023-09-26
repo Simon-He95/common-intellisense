@@ -1,0 +1,89 @@
+{
+  "name": "Navbar",
+  "methods": [],
+  "events": [
+    {
+      "name": "onMenuOpenChange",
+      "description": "Handler that is called when the navbar menu open state changes.",
+      "params": "`(isOpen: boolean) => void`"
+    },
+    {
+      "name": "onScrollPositionChange",
+      "description": "Handler that is called when the navbar parent element is scrolled. This event is only dispatched if `disableScrollHandler` is set to `false` or `shouldHideOnScroll` is set to `true`.",
+      "params": "`(position: number) => void`"
+    }
+  ],
+  "props": {
+    "children\\*": {
+      "type": "`ReactNode[]`",
+      "default": "-",
+      "description": "The children to render. Usually navbar elements such as `NavbarBrand`, `NavbarContent` and `NavbarItem`"
+    },
+    "height": {
+      "type": "`string` | `number`",
+      "default": "`4rem` (64px)",
+      "description": "The height of the navbar."
+    },
+    "position": {
+      "type": "`static` | `sticky`",
+      "default": "`sticky`",
+      "description": "The position of the navbar."
+    },
+    "maxWidth": {
+      "type": "`sm` | `md` | `lg` | `xl` | `2xl` | `full`",
+      "default": "`lg`",
+      "description": "The max width of the navbar wrapper."
+    },
+    "parentRef": {
+      "type": "`React.RefObject<HTMLElement>`",
+      "default": "`window`",
+      "description": "The parent element where the navbar is placed within. This is used to determine the scroll position and whether the navbar should be hidden or not."
+    },
+    "isBordered": {
+      "type": "`boolean`",
+      "default": "`false`",
+      "description": "Whether the navbar should have a bottom border or not."
+    },
+    "isBlurred": {
+      "type": "`boolean`",
+      "default": "`true`",
+      "description": "Whether the navbar should have a blur effect or not."
+    },
+    "isMenuOpen": {
+      "type": "`boolean`",
+      "default": "`false`",
+      "description": "Indicates if the navbar menu is open. (controlled)"
+    },
+    "isMenuDefaultOpen": {
+      "type": "`boolean`",
+      "default": "`false`",
+      "description": "Indicates if the navbar menu is open by default. (uncontrolled)"
+    },
+    "shouldHideOnScroll": {
+      "type": "`boolean`",
+      "default": "`false`",
+      "description": "Indicates if the navbar should hide on scroll."
+    },
+    "motionProps": {
+      "type": "[MotionProps](#motion-props)",
+      "default": "-",
+      "description": "The motion props to controle the `visible` / `hidden` animation. This motion is only available if the `shouldHideOnScroll` prop is set to `true`."
+    },
+    "disableScrollHandler": {
+      "type": "`boolean`",
+      "default": "`false`",
+      "description": "Whether the navbar parent scroll event should be listened to or not."
+    },
+    "disableAnimation": {
+      "type": "`boolean`",
+      "default": "`false`",
+      "description": "Whether the navbar menu animation should be disabled or not."
+    },
+    "classNames": {
+      "type": "`Record<\"base\"｜ \"wrapper\"｜ \"brand\"｜ \"content\"｜ \"item\"｜ \"toggle\"｜ \"toggleIcon\"｜ \"menu\"｜ \"menuItem\", string>`",
+      "default": "-",
+      "description": "Allows to set custom class names for the navbar slots."
+    }
+  },
+  "link": "https://nextui.org/docs/components/navbar"
+}

@@ -1,0 +1,59 @@
+{
+  "name": "Dropdown",
+  "methods": [],
+  "events": [
+    {
+      "name": "onOpenChange",
+      "description": "Handler that is called when the dropdown's open state changes.",
+      "params": "`(isOpen: boolean) => void`"
+    },
+    {
+      "name": "shouldCloseOnInteractOutside",
+      "description": "When user interacts with the argument element outside of the dropdown ref, return `true` if `onClose` should be called.",
+      "params": "`(e: HTMLElement) => void`"
+    },
+    {
+      "name": "onClose",
+      "description": "Handler that is called when the dropdown should close.",
+      "params": "`() => void`"
+    }
+  ],
+  "props": {
+    "children\\*": {
+      "type": "`ReactNode[]`",
+      "default": "-",
+      "description": "The children to render. Usually a `DropdownTrigger` and `DropdownMenu` elements."
+    },
+    "type": {
+      "type": "`menu` | `listbox`",
+      "default": "`menu`",
+      "description": "Type of overlay that is opened by the dropdown trigger."
+    },
+    "trigger": {
+      "type": "`press` | `longPress`",
+      "default": "`press`",
+      "description": "How the dropdown menu is triggered."
+    },
+    "isDisabled": {
+      "type": "`boolean`",
+      "default": "`false`",
+      "description": "Whether the dropdown trigger is disabled."
+    },
+    "closeOnSelect": {
+      "type": "`boolean`",
+      "default": "`true`",
+      "description": "Whether the dropdown menu should be closed when an item is selected."
+    },
+    "shouldBlockScroll": {
+      "type": "`boolean`",
+      "default": "`true`",
+      "description": "Whether the dropdown menu should block scrolling outside the menu."
+    },
+    "PopoverProps": {
+      "type": "[PopoverProps](/docs/components/popover)",
+      "default": "-",
+      "description": "Since the dropdown is an extension of the popover, it accepts all the props of the popover component."
+    }
+  },
+  "link": "https://nextui.org/docs/components/dropdown"
+}

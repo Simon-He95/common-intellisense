@@ -1,0 +1,174 @@
+{
+  "name": "Table",
+  "methods": [],
+  "events": [
+    {
+      "name": "onRowAction",
+      "description": "Handler that is called when a user performs an action on the row.",
+      "params": "`(key: React.Key) => void`"
+    },
+    {
+      "name": "onCellAction",
+      "description": "Handler that is called when a user performs an action on the cell.",
+      "params": "`(key: react.Key) => void`"
+    },
+    {
+      "name": "onSelectionChange",
+      "description": "Handler that is called when the selection changes.",
+      "params": "`(keys: Selection) => any`"
+    },
+    {
+      "name": "onSortChange",
+      "description": "Handler that is called when the sorted column or direction changes.",
+      "params": "`(descriptor: SortDescriptor) => any`"
+    }
+  ],
+  "props": {
+    "children\\*": {
+      "type": "`ReactNode[]`",
+      "default": "-",
+      "description": "The elements that make up the table. Includes the `TableHeader`, `TableBody`, `TableColumn`, and `TableRow`."
+    },
+    "color": {
+      "type": "`default` | `primary` | `secondary` | `success` | `warning` | `danger`",
+      "default": "`default`",
+      "description": "Color of the selected rows, and checkboxes."
+    },
+    "layout": {
+      "type": "`auto` | `fixed`",
+      "default": "`auto`",
+      "description": "Defines the layout of the table."
+    },
+    "radius": {
+      "type": "`none` | `sm` | `md` | `lg`",
+      "default": "`lg`",
+      "description": "The border-radius of the table."
+    },
+    "shadow": {
+      "type": "`none` | `sm` | `md` | `lg`",
+      "default": "`sm`",
+      "description": "The shadow size of the table."
+    },
+    "hideHeader": {
+      "type": "`boolean`",
+      "default": "`false`",
+      "description": "Whether to hide the table header."
+    },
+    "isStriped": {
+      "type": "`boolean`",
+      "default": "`false`",
+      "description": "Whether to apply striped rows in the table."
+    },
+    "isCompact": {
+      "type": "`boolean`",
+      "default": "`false`",
+      "description": "Whether to apply compact style to the table."
+    },
+    "isHeaderSticky": {
+      "type": "`boolean`",
+      "default": "`false`",
+      "description": "Whether to make the table header sticky."
+    },
+    "fullWidth": {
+      "type": "`boolean`",
+      "default": "`true`",
+      "description": "Whether to make the table full width."
+    },
+    "disableAnimation": {
+      "type": "`boolean`",
+      "default": "`false`",
+      "description": "Whether to disable the table and checkbox animations."
+    },
+    "removeWrapper": {
+      "type": "`boolean`",
+      "default": "`false`",
+      "description": "Whether the table base container should not be rendered."
+    },
+    "BaseComponent": {
+      "type": "`React.ComponentType<any>`",
+      "default": "`div`",
+      "description": "A custom wrapper component for the table."
+    },
+    "topContent": {
+      "type": "`ReactNode`",
+      "default": "-",
+      "description": "Provides content to include a component in the top of the table."
+    },
+    "bottomContent": {
+      "type": "`ReactNode`",
+      "default": "-",
+      "description": "Provides content to include a component in the bottom of the table."
+    },
+    "topContentPlacement": {
+      "type": "`inside` | `outside`",
+      "default": "`inside`",
+      "description": "Where to place the `topContent` component."
+    },
+    "bottomContentPlacement": {
+      "type": "`inside` | `outside`",
+      "default": "`inside`",
+      "description": "Where to place the `bottomContent` component."
+    },
+    "showSelectionCheckboxes": {
+      "type": "`boolean`",
+      "default": "-",
+      "description": "Whether the row selection checkboxes should be displayed."
+    },
+    "sortDescriptor": {
+      "type": "[SortDescriptor](#sort-descriptor)",
+      "default": "-",
+      "description": "The current sorted column and direction."
+    },
+    "selectedKeys": {
+      "type": "[Selection](#selection)",
+      "default": "-",
+      "description": "The currently selected keys in the collection (controlled)."
+    },
+    "defaultSelectedKeys": {
+      "type": "[Selection](#selection)",
+      "default": "-",
+      "description": "The initial selected keys in the collection (uncontrolled)."
+    },
+    "disabledKeys": {
+      "type": "[Selection](#selection)",
+      "default": "-",
+      "description": "A set of keys for rows that are disabled."
+    },
+    "disallowEmptySelection": {
+      "type": "`boolean`",
+      "default": "-",
+      "description": "Whether the collection allows empty selection."
+    },
+    "selectionMode": {
+      "type": "`single` | `multiple` | `none`",
+      "default": "`none`",
+      "description": "The type of selection that is allowed in the collection."
+    },
+    "selectionBehavior": {
+      "type": "`toggle` | `replace`",
+      "default": "`toggle`",
+      "description": "How multiple selection should behave in the collection."
+    },
+    "disabledBehavior": {
+      "type": "`selection` | `all`",
+      "default": "`selection`",
+      "description": "Whether `disabledKeys` applies to all interactions, or only selection."
+    },
+    "allowDuplicateSelectionEvents": {
+      "type": "`boolean`",
+      "default": "-",
+      "description": "Whether `onSelectionChange` should fire even if the new set of keys is the same as the last."
+    },
+    "checkboxesProps": {
+      "type": "[CheckboxProps](/docs/components/checkbox/#checkbox-props)",
+      "default": "-",
+      "description": "Props to be passed to the checkboxes."
+    },
+    "classNames": {
+      "type": "`Record<\"base\" ｜ \"table\" ｜ \"thead\" ｜ \"tbody\" ｜ \"tfoot\" ｜ \"emptyWrapper\" ｜ \"loadingWrapper\" ｜ \"wrapper\" ｜ \"tr\" ｜ \"th\" ｜ \"td\" ｜ \"sortIcon\", string>`",
+      "default": "-",
+      "description": "Allows to set custom class names for the dropdown item slots."
+    }
+  },
+  "link": "https://nextui.org/docs/components/table"
+}

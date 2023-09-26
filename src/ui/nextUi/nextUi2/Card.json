@@ -1,0 +1,99 @@
+{
+  "name": "Card",
+  "methods": [],
+  "events": [
+    {
+      "name": "onPress",
+      "description": "Handler that is called when the press is released over the target.",
+      "params": "`(e: PressEvent) => void`"
+    },
+    {
+      "name": "onPressStart",
+      "description": "Handler that is called when a press interaction starts.",
+      "params": "`(e: PressEvent) => void`"
+    },
+    {
+      "name": "onPressEnd",
+      "description": "Handler that is called when a press interaction ends, either over the target or when the pointer leaves the target.",
+      "params": "`(e: PressEvent) => void`"
+    },
+    {
+      "name": "onPressChange",
+      "description": "Handler that is called when the press state changes.",
+      "params": "`(isPressed: boolean) => void`"
+    },
+    {
+      "name": "onPressUp",
+      "description": "Handler that is called when a press is released over the target, regardless of whether it started on the target or not.",
+      "params": "`(e: PressEvent) => void`"
+    }
+  ],
+  "props": {
+    "children": {
+      "type": "`ReactNode` | `ReactNode[]`",
+      "default": "-",
+      "description": "Usually the Card parts, `CardHeader`, `CardBody` and `CardFooter`."
+    },
+    "shadow": {
+      "type": "`none` | `sm` | `md` | `lg`",
+      "default": "`md`",
+      "description": "The card shadow."
+    },
+    "radius": {
+      "type": "`none` | `sm` | `md` | `lg`",
+      "default": "`lg`",
+      "description": "The card border radius."
+    },
+    "fullWidth": {
+      "type": "`boolean`",
+      "default": "`false`",
+      "description": "Whether the card should take the full width of its parent."
+    },
+    "isHoverable": {
+      "type": "`boolean`",
+      "default": "`false`",
+      "description": "Whether the card should change the background on hover."
+    },
+    "isPressable": {
+      "type": "`boolean`",
+      "default": "`false`",
+      "description": "Whether the card should allow to be pressed."
+    },
+    "isBlurred": {
+      "type": "`boolean`",
+      "default": "`false`",
+      "description": "Whether the card background should be blurred."
+    },
+    "isFooterBlurred": {
+      "type": "`boolean`",
+      "default": "`false`",
+      "description": "Whether the card footer background should be blurred."
+    },
+    "isDisabled": {
+      "type": "`boolean`",
+      "default": "`false`",
+      "description": "Whether the card should be disabled. The press events will be ignored."
+    },
+    "disableAnimation": {
+      "type": "`boolean`",
+      "default": "`false`",
+      "description": "Whether to disable the animation."
+    },
+    "disableRipple": {
+      "type": "`boolean`",
+      "default": "`false`",
+      "description": "Whether to disable ripple effect. Only when `isPressable` is true."
+    },
+    "allowTextSelectionOnPress": {
+      "type": "`boolean`",
+      "default": "`false`",
+      "description": "Whether to allow text selection on pressing. Only when `isPressable` is true."
+    },
+    "classNames": {
+      "type": "`Record<\"base\"｜ \"header\"｜ \"body\"｜ \"footer\", string>`",
+      "default": "-",
+      "description": "Allows to set custom class names for the card slots."
+    }
+  },
+  "link": "https://nextui.org/docs/components/card"
+}

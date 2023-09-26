@@ -1,0 +1,154 @@
+{
+  "name": "Popover",
+  "methods": [],
+  "events": [
+    {
+      "name": "onOpenChange",
+      "description": "Handler that is called when the popover's open state changes.",
+      "params": "`(isOpen: boolean) => void`"
+    },
+    {
+      "name": "shouldCloseOnInteractOutside",
+      "description": "When user interacts with the argument element outside of the popover ref, return true if onClose should be called. This gives you a chance to filter out interaction with elements that should not dismiss the popover. By default, onClose will always be called on interaction outside the overlay ref.",
+      "params": "`(e: HTMLElement) => void`"
+    },
+    {
+      "name": "onClose",
+      "description": "Handler that is called when the popover should close.",
+      "params": "`() => void`"
+    }
+  ],
+  "props": {
+    "children\\*": {
+      "type": "`ReactNode[]`",
+      "default": "-",
+      "description": "The content of the popover. It's usually the `PopoverTrigger` and `PopoverContent`."
+    },
+    "size": {
+      "type": "`sm` | `md` | `lg`",
+      "default": "`md`",
+      "description": "The popover content font size."
+    },
+    "color": {
+      "type": "`default` | `primary` | `secondary` | `success` | `warning` | `danger`",
+      "default": "`default`",
+      "description": "The popover color theme."
+    },
+    "radius": {
+      "type": "`none` | `sm` | `md` | `lg` | `full`",
+      "default": "`lg`",
+      "description": "The popover border radius."
+    },
+    "shadow": {
+      "type": "`none` | `sm` | `md` | `lg`",
+      "default": "`lg`",
+      "description": "The popover shadow."
+    },
+    "backdrop": {
+      "type": "`transparent` | `opaque` | `blur`",
+      "default": "`transparent`",
+      "description": "The popover backdrop type."
+    },
+    "placement": {
+      "type": "[PopoverPlacement](#popover-placement)",
+      "default": "`bottom`",
+      "description": "The placement of the popover relative to its trigger reference."
+    },
+    "state": {
+      "type": "`OverlayTriggerState`",
+      "default": "-",
+      "description": "The controlled state of the popover. See [Overlay States](https://react-spectrum.adobe.com/react-stately/useOverlayTriggerState.html#useoverlaytriggerstate)"
+    },
+    "isOpen": {
+      "type": "`boolean`",
+      "default": "-",
+      "description": "Whether the popover is open by default (controlled)."
+    },
+    "defaultOpen": {
+      "type": "`boolean`",
+      "default": "-",
+      "description": "Whether the popover is open by default (uncontrolled)."
+    },
+    "offset(px)": {
+      "type": "`number`",
+      "default": "`7`",
+      "description": "The distance or margin between the reference and popper. It is used internally to create an offset modifier."
+    },
+    "containerPadding(px)": {
+      "type": "`number`",
+      "default": "`12`",
+      "description": "The placement padding that should be applied between the element and its surrounding container."
+    },
+    "crossOffset(px)": {
+      "type": "`number`",
+      "default": "`0`",
+      "description": "The additional offset applied along the cross axis between the element and its anchor element."
+    },
+    "triggerType": {
+      "type": "`dialog` | `menu` | `listbox` | `tree` | `grid`;",
+      "default": "`dialog`",
+      "description": "Type of popover that is opened by the trigger."
+    },
+    "showArrow": {
+      "type": "`boolean`",
+      "default": "`false`",
+      "description": "Whether the popover should have an arrow."
+    },
+    "shouldFlip": {
+      "type": "`boolean`",
+      "default": "`true`",
+      "description": "Whether the popover should change its placement and flip when it's about to overflow its boundary area."
+    },
+    "triggerScaleOnOpen": {
+      "type": "`boolean`",
+      "default": "`true`",
+      "description": "Whether the trigger should scale down when the popover is open."
+    },
+    "shouldBlockScroll": {
+      "type": "`boolean`",
+      "default": "`false`",
+      "description": "Whether to block scrolling outside the popover."
+    },
+    "isKeyboardDismissDisabled": {
+      "type": "`boolean`",
+      "default": "`false`",
+      "description": "Whether pressing the escape key to close the popover should be disabled."
+    },
+    "shouldCloseOnBlur": {
+      "type": "`boolean`",
+      "default": "`false`",
+      "description": "Whether the popover should close when focus is lost or moves outside it."
+    },
+    "motionProps": {
+      "type": "[MotionProps](#motion-props)",
+      "default": "",
+      "description": "The props to modify the framer motion animation. Use the `variants` API to create your own animation."
+    },
+    "portalContainer": {
+      "type": "`HTMLElement`",
+      "default": "`document.body`",
+      "description": "The container element in which the overlay portal will be placed."
+    },
+    "triggerRef": {
+      "type": "`RefObject<HTMLElement>`",
+      "default": "-",
+      "description": "The ref for the element which the popover positions itself with respect to."
+    },
+    "scrollRef": {
+      "type": "`RefObject<HTMLElement>`",
+      "default": "`overlayRef`",
+      "description": "A ref for the scrollable region within the popover."
+    },
+    "disableAnimation": {
+      "type": "`boolean`",
+      "default": "`false`",
+      "description": "Whether the popover is animated."
+    },
+    "classNames": {
+      "type": "`Record<\"base\"｜ \"trigger\"｜ \"backdrop\"｜ \"arrow\", string>`",
+      "default": "-",
+      "description": "Allows to set custom class names for the popover slots."
+    }
+  },
+  "link": "https://nextui.org/docs/components/popover"
+}

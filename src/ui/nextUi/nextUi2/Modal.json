@@ -1,0 +1,109 @@
+{
+  "name": "Modal",
+  "methods": [],
+  "events": [
+    {
+      "name": "onOpenChange",
+      "description": "Handler that is called when the modal's open state changes.",
+      "params": "`(isOpen: boolean) => void`"
+    },
+    {
+      "name": "onClose",
+      "description": "Handler that is called when the modal is closed.",
+      "params": "`() => void`"
+    }
+  ],
+  "props": {
+    "children\\*": {
+      "type": "`ReactNode`",
+      "default": "-",
+      "description": "The content of the modal. It's usually the `ModalContent`."
+    },
+    "size": {
+      "type": "`xs` | `sm` | `md` | `lg` | `xl` | `2xl` | `3xl` | `4xl` | `5xl` | `full`",
+      "default": "`md`",
+      "description": "The modal size. This changes the modal `max-width` and `height` (full)."
+    },
+    "radius": {
+      "type": "`none` | `sm` | `md` | `lg`",
+      "default": "`lg`",
+      "description": "The modal border radius."
+    },
+    "shadow": {
+      "type": "`none` | `sm` | `md` | `lg`",
+      "default": "`lg`",
+      "description": "The modal shadow."
+    },
+    "backdrop": {
+      "type": "`transparent` | `opaque` | `blur`",
+      "default": "`opaque`",
+      "description": "The modal backdrop type."
+    },
+    "scrollBehavior": {
+      "type": "`normal` | `inside` | `outside`",
+      "default": "`normal`",
+      "description": "The modal scroll behavior."
+    },
+    "placement": {
+      "type": "`auto` | `top` | `center` | `bottom`",
+      "default": "`auto`",
+      "description": "The modal position."
+    },
+    "isOpen": {
+      "type": "`boolean`",
+      "default": "-",
+      "description": "Whether the modal is open by default (controlled)."
+    },
+    "defaultOpen": {
+      "type": "`boolean`",
+      "default": "-",
+      "description": "Whether the modal is open by default (uncontrolled)."
+    },
+    "isDismissable": {
+      "type": "`boolean`",
+      "default": "`true`",
+      "description": "Whether the modal can be closed by clicking on the overlay or pressing the <Kbd>Esc</Kbd> key."
+    },
+    "isKeyboardDismissDisabled": {
+      "type": "`boolean`",
+      "default": "`false`",
+      "description": "Whether pressing the <Kbd>Esc</Kbd> key to close the modal should be disabled."
+    },
+    "shouldBlockScroll": {
+      "type": "`boolean`",
+      "default": "`true`",
+      "description": "Whether the modal should block the scroll of the page on open."
+    },
+    "hideCloseButton": {
+      "type": "`boolean`",
+      "default": "`false`",
+      "description": "Whether to hide the modal close button."
+    },
+    "closeButton": {
+      "type": "`ReactNode`",
+      "default": "-",
+      "description": "Custom close button to display on top right corner."
+    },
+    "motionProps": {
+      "type": "[MotionProps](#motion-props)",
+      "default": "",
+      "description": "The props to modify the framer motion animation. Use the `variants` API to create your own animation."
+    },
+    "portalContainer": {
+      "type": "`HTMLElement`",
+      "default": "`document.body`",
+      "description": "The container element in which the overlay portal will be placed."
+    },
+    "disableAnimation": {
+      "type": "`boolean`",
+      "default": "`false`",
+      "description": "Whether the modal should not have animations."
+    },
+    "classNames": {
+      "type": "`Record<\"wrapper\"｜ \"base\"｜ \"backdrop\"｜ \"header\" ｜ \"body\" ｜ \"footer\" ｜ \"closeButton\", string>`",
+      "default": "-",
+      "description": "Allows to set custom class names for the modal slots."
+    }
+  },
+  "link": "https://nextui.org/docs/components/modal"
+}

@@ -1,0 +1,159 @@
+{
+  "name": "Tooltip",
+  "methods": [],
+  "events": [
+    {
+      "name": "onOpenChange",
+      "description": "Handler that is called when the tooltip's open state changes.",
+      "params": "`(isOpen: boolean) => void`"
+    },
+    {
+      "name": "shouldCloseOnInteractOutside",
+      "description": "When user interacts with the argument element outside of the tooltip ref, return true if onClose should be called. This gives you a chance to filter out interaction with elements that should not dismiss the tooltip. By default, onClose will always be called on interaction outside the overlay ref.",
+      "params": "`(e: HTMLElement) => void`"
+    },
+    {
+      "name": "onClose",
+      "description": "Handler that is called when the tooltip should close.",
+      "params": "`() => void`"
+    }
+  ],
+  "props": {
+    "children\\*": {
+      "type": "`ReactNode[]`",
+      "default": "-",
+      "description": "The children to render. Usually a trigger element."
+    },
+    "content": {
+      "type": "`ReactNode`",
+      "default": "-",
+      "description": "The content to render inside the tooltip."
+    },
+    "size": {
+      "type": "`sm` | `md` | `lg`",
+      "default": "`md`",
+      "description": "The tooltip size. This change the `content` font size."
+    },
+    "color": {
+      "type": "`default` | `primary` | `secondary` | `success` | `warning` | `danger`",
+      "default": "`default`",
+      "description": "The tooltip color theme."
+    },
+    "radius": {
+      "type": "`none` | `sm` | `md` | `lg` | `full`",
+      "default": "`md`",
+      "description": "The tooltip border radius."
+    },
+    "shadow": {
+      "type": "`none` | `sm` | `md` | `lg`",
+      "default": "`sm`",
+      "description": "The tooltip shadow."
+    },
+    "placement": {
+      "type": "[TooltipPlacement](#tooltip-placement)",
+      "default": "`top`",
+      "description": "The placement of the tooltip relative to its trigger reference."
+    },
+    "delay": {
+      "type": "`number`",
+      "default": "`500`",
+      "description": "The delay in milliseconds before the tooltip opens."
+    },
+    "closeDelay": {
+      "type": "`number`",
+      "default": "`0`",
+      "description": "The delay in milliseconds before the tooltip closes."
+    },
+    "isOpen": {
+      "type": "`boolean`",
+      "default": "-",
+      "description": "Whether the tooltip is open by default (controlled)."
+    },
+    "defaultOpen": {
+      "type": "`boolean`",
+      "default": "-",
+      "description": "Whether the tooltip is open by default (uncontrolled)."
+    },
+    "offset(px)": {
+      "type": "`number`",
+      "default": "`7`",
+      "description": "The distance or margin between the reference and popper. It is used internally to create an offset modifier."
+    },
+    "containerPadding(px)": {
+      "type": "`number`",
+      "default": "`12`",
+      "description": "The placement padding that should be applied between the element and its surrounding container."
+    },
+    "crossOffset(px)": {
+      "type": "`number`",
+      "default": "`0`",
+      "description": "The additional offset applied along the cross axis between the element and its anchor element."
+    },
+    "triggerType": {
+      "type": "`dialog` | `menu` | `listbox` | `tree` | `grid`;",
+      "default": "`dialog`",
+      "description": "Type of tooltip that is opened by the trigger."
+    },
+    "showArrow": {
+      "type": "`boolean`",
+      "default": "`false`",
+      "description": "Whether the tooltip should have an arrow."
+    },
+    "shouldFlip": {
+      "type": "`boolean`",
+      "default": "`true`",
+      "description": "Whether the tooltip should change its placement and flip when it's about to overflow its boundary area."
+    },
+    "triggerScaleOnOpen": {
+      "type": "`boolean`",
+      "default": "`true`",
+      "description": "Whether the trigger should scale down when the tooltip is open."
+    },
+    "shouldBlockScroll": {
+      "type": "`boolean`",
+      "default": "`true`",
+      "description": "Whether to block scrolling outside the tooltip."
+    },
+    "isKeyboardDismissDisabled": {
+      "type": "`boolean`",
+      "default": "`false`",
+      "description": "Whether pressing the escape key to close the tooltip should be disabled."
+    },
+    "isDismissable": {
+      "type": "`boolean`",
+      "default": "`false`",
+      "description": "Whether to close the overlay when the user interacts outside it."
+    },
+    "shouldCloseOnBlur": {
+      "type": "`boolean`",
+      "default": "`true`",
+      "description": "Whether the tooltip should close when focus is lost or moves outside it."
+    },
+    "motionProps": {
+      "type": "[MotionProps](#motion-props)",
+      "default": "-",
+      "description": "The props to modify the framer motion animation. Use the `variants` API to create your own animation."
+    },
+    "portalContainer": {
+      "type": "`HTMLElement`",
+      "default": "`document.body`",
+      "description": "The container element in which the overlay portal will be placed."
+    },
+    "isDisabled": {
+      "type": "`boolean`",
+      "default": "`false`",
+      "description": "Whether the tooltip is disabled."
+    },
+    "disableAnimation": {
+      "type": "`boolean`",
+      "default": "`false`",
+      "description": "Whether the tooltip is animated."
+    },
+    "classNames": {
+      "type": "`Record<\"base\"｜\"arrow\", string>`",
+      "default": "-",
+      "description": "Allows to set custom class names for the tooltip slots."
+    }
+  },
+  "link": "https://nextui.org/docs/components/tooltip"
+}

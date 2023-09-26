@@ -1,0 +1,80 @@
+{
+  "name": "DropdownMenu",
+  "methods": [],
+  "events": [
+    {
+      "name": "onAction",
+      "description": "Handler that is called when an item is selected.",
+      "params": "`(key: React.Key) => void`"
+    },
+    {
+      "name": "onSelectionChange",
+      "description": "Handler that is called when the selection changes.",
+      "params": "`(keys: React.Key[]) => void`"
+    },
+    {
+      "name": "onClose",
+      "description": "Handler that is called when the menu should close after selecting an item.",
+      "params": "`() => void`"
+    }
+  ],
+  "props": {
+    "children\\*": {
+      "type": "`ReactNode` | `((item: T) => ReactElement)`",
+      "description": "The contents of the collection. It's usually the `DropdownItem` or `DropdownSection`. (static)"
+    },
+    "items": {
+      "type": "[`Iterable<T>`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols)",
+      "description": "Item objects in the collection. (dynamic)"
+    },
+    "variant": {
+      "type": "`solid` | `bordered` | `light` | `flat` | `faded` | `shadow`",
+      "description": "The dropdown items appearance style."
+    },
+    "color": {
+      "type": "`default` | `primary` | `secondary` | `success` | `warning` | `danger`",
+      "description": "The dropdown items color theme."
+    },
+    "selectionMode": {
+      "type": "`none` | `single` | `multiple`",
+      "description": "The type of selection that is allowed in the collection."
+    },
+    "selectedKeys": {
+      "type": "`React.Key[]`",
+      "description": "The currently selected keys in the collection (controlled)."
+    },
+    "disabledKeys": {
+      "type": "`React.Key[]`",
+      "description": "The item keys that are disabled. These items cannot be selected, focused, or otherwise interacted with."
+    },
+    "defaultSelectedKeys": {
+      "type": "`all` | `React.Key[]`",
+      "description": "The initial selected keys in the collection (uncontrolled)."
+    },
+    "disallowEmptySelection": {
+      "type": "`boolean`",
+      "description": "Whether the collection allows empty selection."
+    },
+    "autoFocus": {
+      "type": "`boolean` | `first` | `last`",
+      "description": "Where the focus should be set."
+    },
+    "shouldFocusWrap": {
+      "type": "`boolean`",
+      "description": "Whether keyboard navigation is circular."
+    },
+    "closeOnSelect": {
+      "type": "`boolean`",
+      "description": "Whether the dropdown menu should be closed when an item is selected."
+    },
+    "disableAnimation": {
+      "type": "`boolean`",
+      "description": "Whether to disable the animation of the dropdown items."
+    },
+    "itemClasses": {
+      "type": "`Record<\"base\"｜ \"wrapper\"｜ \"title\"｜ \"description\"｜ \"shortcut\" ｜ \"selectedIcon\", string>`",
+      "description": "Allows to set custom class names for the dropdown item slots."
+    }
+  },
+  "link": "https://nextui.org/docs/components/dropdownmenu"
+}

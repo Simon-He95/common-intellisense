@@ -1,0 +1,84 @@
+{
+  "name": "Listbox",
+  "methods": [],
+  "events": [
+    {
+      "name": "onAction",
+      "description": "Handler that is called when an item is selected.",
+      "params": "`(key: React.Key) => void`"
+    },
+    {
+      "name": "onSelectionChange",
+      "description": "Handler that is called when the selection changes.",
+      "params": "`(keys: React.Key[]) => void`"
+    }
+  ],
+  "props": {
+    "children\\*": {
+      "type": "`ReactNode[]`",
+      "default": "-",
+      "description": "The children to render. Usually a list of `ListboxItem` or `ListboxSection`"
+    },
+    "items": {
+      "type": "[`Iterable<T>`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols)",
+      "default": "-",
+      "description": "Item objects in the collection. (dynamic)"
+    },
+    "variant": {
+      "type": "`solid` | `bordered` | `light` | `flat` | `faded` | `shadow`",
+      "default": "`solid`",
+      "description": "The listbox items appearance style."
+    },
+    "color": {
+      "type": "`default` | `primary` | `secondary` | `success` | `warning` | `danger`",
+      "default": "`default`",
+      "description": "The listbox items color theme."
+    },
+    "selectionMode": {
+      "type": "`none` | `single` | `multiple`",
+      "default": "-",
+      "description": "The type of selection that is allowed in the collection."
+    },
+    "selectedKeys": {
+      "type": "`React.Key[]`",
+      "default": "-",
+      "description": "The currently selected keys in the collection (controlled)."
+    },
+    "disabledKeys": {
+      "type": "`React.Key[]`",
+      "default": "-",
+      "description": "The item keys that are disabled. These items cannot be selected, focused, or otherwise interacted with."
+    },
+    "defaultSelectedKeys": {
+      "type": "`all` | `React.Key[]`",
+      "default": "-",
+      "description": "The initial selected keys in the collection (uncontrolled)."
+    },
+    "disallowEmptySelection": {
+      "type": "`boolean`",
+      "default": "`false`",
+      "description": "Whether the collection allows empty selection."
+    },
+    "autoFocus": {
+      "type": "`boolean` | `first` | `last`",
+      "default": "`false`",
+      "description": "Where the focus should be set."
+    },
+    "shouldFocusWrap": {
+      "type": "`boolean`",
+      "default": "`false`",
+      "description": "Whether keyboard navigation is circular."
+    },
+    "disableAnimation": {
+      "type": "`boolean`",
+      "default": "`false`",
+      "description": "Whether to disable the animation of the listbox items."
+    },
+    "itemClasses": {
+      "type": "`Record<\"base\"｜ \"wrapper\"｜ \"title\"｜ \"description\"｜ \"selectedIcon\", string>`",
+      "default": "-",
+      "description": "Allows to set custom class names for the listbox item slots."
+    }
+  },
+  "link": "https://nextui.org/docs/components/listbox"
+}
