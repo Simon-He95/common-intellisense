@@ -30,7 +30,6 @@ export function activate(context: vscode.ExtensionContext) {
     if (currentEditor)
       findUI()
   }))
-
   context.subscriptions.push(registerCommand('intellisense.copyDemo', () => {
     copyText(global.commonIntellisense.copyDom)
     message.info('copy successfully')
@@ -179,6 +178,7 @@ const nameMap: any = {
   '@chakraUi/react': 'chakraUiReact',
   '@chakraUi/vue': 'chakraUiVue',
   '@skeletonlabs/skeleton': 'skeleton',
+  '@nextuiOrg/react': 'nextui',
 }
 function findUI() {
   const cwd = vscode.window.activeTextEditor?.document.uri.fsPath
@@ -209,6 +209,7 @@ function findUI() {
       const name = uiName.replace(/-(\w)/g, (_: string, v: string) => v.toUpperCase())
       uisName.push(`${nameMap[name] ?? name}${_version}`)
     })
+
     if (uisName.every(name => UINames.includes(name)))
       return
     UINames = uisName

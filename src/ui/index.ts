@@ -11,6 +11,7 @@ import { chakraUiReact2, chakraUiReact2Components } from './chakraUi'
 import { skeleton2, skeleton2Components } from './skeleton'
 import { primevue3, primevue3Components } from './primevue'
 import { quasar2, quasar2Components } from './quasar'
+import { nextui2, nextui2Components } from './nextUi'
 
 export default {
   elementUi2,
@@ -29,6 +30,7 @@ export default {
   skeleton2,
   primevue3,
   quasar2,
+  nextui2,
   elementUi2Components,
   antd4Components,
   antd5Components,
@@ -45,4 +47,5 @@ export default {
   skeleton2Components,
   primevue3Components,
   quasar2Components,
+  nextui2Components,
 }

@@ -10,14 +10,6 @@ const quasar2ComponentsMap: string[][] = []
 const quasar2Map: string[] = []
 const quasar2Importers: string[] = []
 
-const extendsMap: any = {
-  color: {
-    type: 'String',
-    description: 'Color name for component from the Quasar Color Palette',
-    value: '',
-    default: ''
-  },
-}
 async function run() {
   const entry = await fg(['*.json'], { dot: true, cwd })
   entry.forEach(async (item: any) => {
@@ -37,7 +29,8 @@ async function run() {
         props[p.Attribute] = {
           type: p.Type,
           default: p.Default,
-          description: p.Description
+          description: p.Description,
+          value: p.value || ''
         }
       })
     }
@@ -88,13 +81,13 @@ function generateIndex() {
   const indexTemplate = `import { componentsReducer, propsReducer } from '../../utils'
 ${quasar2Importers.join('\n')}
 
-export function quasar2() {
+export function nextui2() {
   const map: any = ${JSON.stringify(quasar2Map, null, 4).replace(/"/g, '')}
 
   return propsReducer(map)
 }
 
-export function quasar2Components() {
+export function nextui2Components() {
   const map = ${JSON.stringify(quasar2ComponentsMap, null, 4)}
   return componentsReducer(map)
 }
@@ -102,5 +95,4 @@ export function quasar2Components() {
   fsp.writeFile(`${base}/src/ui/nextui/nextui2/index.ts`, indexTemplate)
 }
 
-run()
 export default run

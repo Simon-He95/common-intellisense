@@ -14,6 +14,7 @@
 - naive
 - primevue
 - quasar
+- @nextui-org/react
 
 ### antdv
 ![antdv](assets/antdv.gif)

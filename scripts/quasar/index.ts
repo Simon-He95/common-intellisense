@@ -36,6 +36,9 @@ async function run() {
       Object.keys(_props).forEach((key) => {
         const value = _props[key]
         if (value.extends) {
+          if(value.type && Array.isArray(value.type)){
+            value.type = value.type.join(' | ')
+          }
           props[key] = Object.assign(extendsMap[value.extends]
             || {
             value: '',
@@ -48,7 +51,7 @@ async function run() {
           const type = value.type || value.tsType || 'String'
           props[key] = {
             value: '',
-            type,
+            type: Array.isArray(type) ? type.join(' | ') : type,
             description: value.desc,
             default: value.default !== undefined ? value.default : type === 'Boolean' ? 'false' : '',
           }

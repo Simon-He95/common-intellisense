@@ -128,10 +128,7 @@
     },
     "row-key": {
       "value": "",
-      "type": [
-        "String",
-        "Function"
-      ],
+      "type": "String | Function",
       "description": "Property of each row that defines the unique key of each row (the result must be a primitive, not Object, Array, etc); The value of property must be string or a function taking a row and returning the desired (nested) key in the row; If supplying a function then for best performance, reference it from your scope and do not define it inline",
       "default": "id"
     },
@@ -150,76 +147,60 @@
     },
     "virtual-scroll-slice-size": {
       "value": "",
-      "type": [
-        "Number",
-        "String"
-      ],
+      "type": "Number | String",
       "description": "Minimum number of rows to render in the virtual list",
       "default": 30
     },
     "virtual-scroll-slice-ratio-before": {
       "value": "",
-      "type": [
-        "Number",
-        "String"
-      ],
+      "type": "Number | String",
       "description": "Ratio of number of rows in visible zone to render before it",
       "default": 1
     },
     "virtual-scroll-slice-ratio-after": {
       "value": "",
-      "type": [
-        "Number",
-        "String"
-      ],
+      "type": "Number | String",
       "description": "Ratio of number of rows in visible zone to render after it",
       "default": 1
     },
     "virtual-scroll-item-size": {
       "value": "",
-      "type": [
-        "Number",
-        "String"
-      ],
+      "type": "Number | String",
       "description": "Default size in pixels of a row; This value is used for rendering the initial table; Try to use a value close to the minimum size of a row",
       "default": "48 (24 if dense)"
     },
     "virtual-scroll-sticky-size-start": {
       "value": "",
-      "type": [
-        "Number",
-        "String"
-      ],
+      "type": "Number | String",
       "description": "Size in pixels of the sticky header (if using one); A correct value will improve scroll precision; Will be also used for non-virtual-scroll tables for fixing top alignment when using scrollTo method",
       "default": "0"
     },
     "virtual-scroll-sticky-size-end": {
       "value": "",
-      "type": [
-        "Number",
-        "String"
-      ],
+      "type": "Number | String",
       "description": "Size in pixels of the sticky footer part (if using one); A correct value will improve scroll precision",
       "default": "0"
     },
     "table-colspan": {
       "value": "",
-      "type": [
-        "Number",
-        "String"
-      ],
+      "type": "Number | String",
       "description": "The number of columns in the table (you need this if you use table-layout: fixed)",
       "default": ""
     },
     "color": {
-      "type": "String",
+      "type": "String | Array",
       "description": "Color name for component from the Quasar Color Palette",
       "value": "",
       "default": "grey-8",
       "extends": "color",
-      "desc": "Color name for selected nodes (from the Quasar Color Palette)",
-      "category": "style",
-      "addedIn": "v2.4"
+      "desc": "Color name from the Quasar Palette for half selected icons",
+      "category": "header",
+      "addedIn": "v2.4",
+      "examples": [
+        "primary",
+        "teal-10",
+        "[\"accent\", \"grey-7\"] "
+      ]
     },
     "icon-first-page": {
       "value": "",
@@ -417,100 +398,61 @@
     },
     "table-style": {
       "value": "",
-      "type": [
-        "String",
-        "Array",
-        "Object"
-      ],
+      "type": "String | Array | Object",
       "description": "CSS style to apply to native HTML <table> element's wrapper (which is a DIV)",
       "default": ""
     },
     "table-class": {
       "value": "",
-      "type": [
-        "String",
-        "Array",
-        "Object"
-      ],
+      "type": "String | Array | Object",
       "description": "CSS classes to apply to native HTML <table> element's wrapper (which is a DIV)",
       "default": ""
     },
     "table-header-style": {
       "value": "",
-      "type": [
-        "String",
-        "Array",
-        "Object"
-      ],
+      "type": "String | Array | Object",
       "description": "CSS style to apply to header of native HTML <table> (which is a TR)",
       "default": ""
     },
     "table-header-class": {
       "value": "",
-      "type": [
-        "String",
-        "Array",
-        "Object"
-      ],
+      "type": "String | Array | Object",
       "description": "CSS classes to apply to header of native HTML <table> (which is a TR)",
       "default": ""
     },
     "card-container-style": {
       "value": "",
-      "type": [
-        "String",
-        "Array",
-        "Object"
-      ],
+      "type": "String | Array | Object",
       "description": "CSS style to apply to the cards container (when in grid mode)",
       "default": ""
     },
     "card-container-class": {
       "value": "",
-      "type": [
-        "String",
-        "Array",
-        "Object"
-      ],
+      "type": "String | Array | Object",
       "description": "CSS classes to apply to the cards container (when in grid mode)",
       "default": ""
     },
     "card-style": {
       "value": "",
-      "type": [
-        "String",
-        "Array",
-        "Object"
-      ],
+      "type": "String | Array | Object",
       "description": "CSS style to apply to the card (when in grid mode) or container card (when not in grid mode)",
       "default": ""
     },
     "card-class": {
       "value": "",
-      "type": [
-        "String",
-        "Array",
-        "Object"
-      ],
+      "type": "String | Array | Object",
       "description": "CSS classes to apply to the card (when in grid mode) or container card (when not in grid mode)",
       "default": ""
     },
     "title-class": {
       "value": "",
-      "type": [
-        "String",
-        "Array",
-        "Object"
-      ],
+      "type": "String | Array | Object",
       "description": "CSS classes to apply to the title (if using 'title' prop)",
       "default": ""
     },
     "filter": {
       "value": "",
-      "type": [
-        "String",
-        "Object"
-      ],
+      "type": "String | Object",
       "description": "String/Object to filter table with; When using an Object it requires 'filter-method' to also be specified since it will be a custom filtering",
       "default": ""
     },

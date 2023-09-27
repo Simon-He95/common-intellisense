@@ -14,6 +14,7 @@ Keep working hard for a better development experience, and provide quick reminde
 - naive
 - primevue
 - quasar
+- @nextui-org/react
 
 ### antdv
 ![antdv](assets/antdv.gif)

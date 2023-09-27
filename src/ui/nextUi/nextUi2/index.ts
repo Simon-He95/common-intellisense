@@ -55,7 +55,7 @@ import Textarea from './Textarea.json'
 import Tooltip from './Tooltip.json'
 import User from './User.json'
 
-export function quasar2() {
+export function nextui2() {
   const map: any = [
     Accordion,
     AccordionItem,
@@ -117,7 +117,7 @@ export function quasar2() {
   return propsReducer(map)
 }
 
-export function quasar2Components() {
+export function nextui2Components() {
   const map = [
     [
       'Accordion',
