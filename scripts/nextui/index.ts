@@ -36,7 +36,6 @@ async function run() {
     }
 
     if (_methods) {
-      debugger
       Object.keys(_methods).forEach((key) => {
         const value = _methods[key]
         const params = value.params

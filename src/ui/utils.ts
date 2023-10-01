@@ -200,10 +200,72 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
   }, result)
 }
 
-export function componentsReducer(map: string[][]) {
+export function componentsReducer(map: any[][]) {
+  let prefix = ''
+  if (map) {
+    const first = map[0][0]
+    const name = typeof first === 'string' ? first : `${first.name[0].toLowerCase()}${hyphenate(first.name.slice(1))}`
+    prefix = name.split('-')[0][0]
+  }
+
   return {
-    prefix: map ? map[0][0].split('-')[0][0] : '',
+    prefix,
     data: map.map(([content, detail, demo]) => {
+      let snippet = ''
+      let _content = ''
+      if (typeof content === 'object') {
+        const requiredProps: string[] = []
+
+        if (content.props) {
+          const lan = getActiveTextEditorLanguageId()
+          Object.keys(content.props).forEach(key => {
+            const item = content.props[key]
+            if (!item.required) return
+            let attr = ''
+            const v = item.value
+            if (item.type && item.type.includes('boolean') && item.default === 'false') {
+              if (lan === 'vue') {
+                attr = key
+              }
+              else {
+                attr = `${key}="true"`
+              }
+            }
+            else if (key.startsWith(':')) {
+              if (!v) {
+                if (lan === 'vue') {
+                  attr = `${key}="${getComponentTagName(content.name)}${key[1].toUpperCase()}${key.slice(2)}"`
+                }
+                else {
+                  attr = `${key.slice(1)}={${getComponentTagName(content.name)}${key[1].toUpperCase()}${key.slice(2)}}`
+                }
+              }
+              else {
+                if (lan === 'vue') {
+                  attr = `${key}="${getComponentTagName(content.name)}${key[1].toUpperCase()}${key.slice(2)}"`
+                }
+                else {
+                  attr = `${key.slice(1)}={${v}}`
+                }
+              }
+            }
+            else {
+              attr = `${key}="${v}"`
+            }
+            requiredProps.push(attr)
+          })
+        }
+        const tag = `${content.name[0].toLowerCase()}${hyphenate(content.name.slice(1))}`
+        if (requiredProps.length)
+          snippet = `<${tag} ${requiredProps.join(' ')}></${tag}>`
+        else
+          snippet = `<${tag}></${tag}>`
+        _content = `${tag}  ${detail}`
+      } else {
+        snippet = `<${content}>$1</${content}>`
+        _content = `${content}  ${detail}`
+      }
+
       const documentation = new vscode.MarkdownString()
       documentation.isTrusted = true
       documentation.supportHtml = true
@@ -215,11 +277,16 @@ export function componentsReducer(map: string[][]) {
         documentation.appendCodeblock(demo, 'html')
         documentation.appendMarkdown(`\n<a href="command:intellisense.copyDemo">${copyIcon}</a>\n`)
       }
-      return createCompletionItem({ content: `${content}  ${detail}`, snippet: `<${content}>$1</${content}>`, documentation, type: vscode.CompletionItemKind.TypeParameter })
+      return createCompletionItem({ content: _content, snippet, documentation, type: vscode.CompletionItemKind.TypeParameter })
     }),
   }
 }
 
 function getComponentTagName(str: string) {
   return str.replace(/([a-z])([A-Z])/g, '$1-$2').split('-').slice(-1)[0].toLowerCase()
+}
+
+
+export function hyphenate(s: string): string {
+  return s.replace(/([A-Z])/g, '-$1').toLowerCase()
 }
