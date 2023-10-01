@@ -218,35 +218,33 @@ export function componentsReducer(map: any[][]) {
 
         if (content.props) {
           const lan = getActiveTextEditorLanguageId()
-          Object.keys(content.props).forEach(key => {
+          Object.keys(content.props).forEach((key) => {
             const item = content.props[key]
-            if (!item.required) return
+            if (!item.required)
+              return
             let attr = ''
             const v = item.value
             if (item.type && item.type.includes('boolean') && item.default === 'false') {
-              if (lan === 'vue') {
+              if (lan === 'vue')
                 attr = key
-              }
-              else {
+
+              else
                 attr = `${key}="true"`
-              }
             }
             else if (key.startsWith(':')) {
               if (!v) {
-                if (lan === 'vue') {
+                if (lan === 'vue')
                   attr = `${key}="${getComponentTagName(content.name)}${key[1].toUpperCase()}${key.slice(2)}"`
-                }
-                else {
+
+                else
                   attr = `${key.slice(1)}={${getComponentTagName(content.name)}${key[1].toUpperCase()}${key.slice(2)}}`
-                }
               }
               else {
-                if (lan === 'vue') {
+                if (lan === 'vue')
                   attr = `${key}="${getComponentTagName(content.name)}${key[1].toUpperCase()}${key.slice(2)}"`
-                }
-                else {
+
+                else
                   attr = `${key.slice(1)}={${v}}`
-                }
               }
             }
             else {
@@ -257,14 +255,17 @@ export function componentsReducer(map: any[][]) {
         }
         const tag = `${content.name[0].toLowerCase()}${hyphenate(content.name.slice(1))}`
         if (requiredProps.length)
-          snippet = `<${tag} ${requiredProps.join(' ')}></${tag}>`
+          snippet = `<${tag} ${requiredProps.join(' ')}>$1</${tag}>`
         else
-          snippet = `<${tag}></${tag}>`
+          snippet = `<${tag}>$1</${tag}>`
         _content = `${tag}  ${detail}`
-      } else {
+      }
+      else {
         snippet = `<${content}>$1</${content}>`
         _content = `${content}  ${detail}`
       }
+      if (!demo)
+        demo = snippet
 
       const documentation = new vscode.MarkdownString()
       documentation.isTrusted = true
@@ -285,7 +286,6 @@ export function componentsReducer(map: any[][]) {
 function getComponentTagName(str: string) {
   return str.replace(/([a-z])([A-Z])/g, '$1-$2').split('-').slice(-1)[0].toLowerCase()
 }
-
 
 export function hyphenate(s: string): string {
   return s.replace(/([A-Z])/g, '-$1').toLowerCase()

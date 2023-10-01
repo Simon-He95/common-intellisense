@@ -444,395 +444,395 @@ export function elementUi2(extensionContext: any) {
 export function elementUi2Components() {
   const map = [
     [
-        ElRow,
-        "布局",
-        "<el-row></el-row>"
+      ElRow,
+      '布局',
+      '<el-row></el-row>',
     ],
     [
-        ElCol,
-        "布局",
-        "<el-col></el-col>"
+      ElCol,
+      '布局',
+      '<el-col></el-col>',
     ],
     [
-        ElContainer,
-        "布局容器",
-        "<el-container></el-container>"
+      ElContainer,
+      '布局容器',
+      '<el-container></el-container>',
     ],
     [
-        ElHeader,
-        "顶栏容器",
-        "<el-header></el-header>"
+      ElHeader,
+      '顶栏容器',
+      '<el-header></el-header>',
     ],
     [
-        ElAside,
-        "侧边栏容器",
-        "<el-aside></el-aside>"
+      ElAside,
+      '侧边栏容器',
+      '<el-aside></el-aside>',
     ],
     [
-        "el-main",
-        "主要区域容器",
-        "<el-main></el-main>"
+      'el-main',
+      '主要区域容器',
+      '<el-main></el-main>',
     ],
     [
-        ElFooter,
-        "底栏容器",
-        "<el-footer></el-footer>"
+      ElFooter,
+      '底栏容器',
+      '<el-footer></el-footer>',
     ],
     [
-        ElButton,
-        "按钮",
-        "<el-button></el-button>"
+      ElButton,
+      '按钮',
+      '<el-button></el-button>',
     ],
     [
-        ElLink,
-        "文字链接",
-        "<el-link></el-link>"
+      ElLink,
+      '文字链接',
+      '<el-link></el-link>',
     ],
     [
-        ElRadio,
-        "单选框",
-        "<el-radio></el-radio>"
+      ElRadio,
+      '单选框',
+      '<el-radio></el-radio>',
     ],
     [
-        ElRadioGroup,
-        "单选框组",
-        "<el-radio-group></el-radio-group>"
+      ElRadioGroup,
+      '单选框组',
+      '<el-radio-group></el-radio-group>',
     ],
     [
-        ElRadioButton,
-        "按钮样式的单选组合",
-        "<el-radio-button></el-radio-button>"
+      ElRadioButton,
+      '按钮样式的单选组合',
+      '<el-radio-button></el-radio-button>',
     ],
     [
-        ElCheckbox,
-        "多选框",
-        "<el-checkbox></el-checkbox>"
+      ElCheckbox,
+      '多选框',
+      '<el-checkbox></el-checkbox>',
     ],
     [
-        ElCheckboxGroup,
-        "多选框组",
-        "<el-checkbox-group></el-checkbox-group>"
+      ElCheckboxGroup,
+      '多选框组',
+      '<el-checkbox-group></el-checkbox-group>',
     ],
     [
-        ElCheckboxButton,
-        "按钮样式的多选组合",
-        "<el-checkbox-button></el-checkbox-button>"
+      ElCheckboxButton,
+      '按钮样式的多选组合',
+      '<el-checkbox-button></el-checkbox-button>',
     ],
     [
-        ElInput,
-        "输入框",
-        "<el-input></el-input>"
+      ElInput,
+      '输入框',
+      '<el-input></el-input>',
     ],
     [
-        ElInputNumber,
-        "计数器",
-        "<el-input-number></el-input-number>"
+      ElInputNumber,
+      '计数器',
+      '<el-input-number></el-input-number>',
     ],
     [
-        ElSelect,
-        "选择器",
-        "<el-select></el-select>"
+      ElSelect,
+      '选择器',
+      '<el-select></el-select>',
     ],
     [
-        ElOption,
-        "基础多选",
-        "<el-option></el-option>"
+      ElOption,
+      '基础多选',
+      '<el-option></el-option>',
     ],
     [
-        ElOptionGroup,
-        "备选项进行分组展示",
-        "<el-option-group></el-option-group>"
+      ElOptionGroup,
+      '备选项进行分组展示',
+      '<el-option-group></el-option-group>',
     ],
     [
-        ElCascader,
-        "级联选择器",
-        "<el-cascader></el-cascader>"
+      ElCascader,
+      '级联选择器',
+      '<el-cascader></el-cascader>',
     ],
     [
-        ElCascaderPanel,
-        "级联面板",
-        "<el-cascader-panel></el-cascader-panel>"
+      ElCascaderPanel,
+      '级联面板',
+      '<el-cascader-panel></el-cascader-panel>',
     ],
     [
-        ElSwitch,
-        "开关",
-        "<el-switch></el-switch>"
+      ElSwitch,
+      '开关',
+      '<el-switch></el-switch>',
     ],
     [
-        ElSlider,
-        "滑块",
-        "<el-slider></el-slider>"
+      ElSlider,
+      '滑块',
+      '<el-slider></el-slider>',
     ],
     [
-        ElTimeSelect,
-        "时间选择器",
-        "<el-time-select></el-time-select>"
+      ElTimeSelect,
+      '时间选择器',
+      '<el-time-select></el-time-select>',
     ],
     [
-        ElDatePicker,
-        "日期选择器/日期时间选择器",
-        "<el-date-picker></el-date-picker>"
+      ElDatePicker,
+      '日期选择器/日期时间选择器',
+      '<el-date-picker></el-date-picker>',
     ],
     [
-        ElUpload,
-        "上传",
-        "<el-upload></el-upload>"
+      ElUpload,
+      '上传',
+      '<el-upload></el-upload>',
     ],
     [
-        ElRate,
-        "评分",
-        "<el-rate></el-rate>"
+      ElRate,
+      '评分',
+      '<el-rate></el-rate>',
     ],
     [
-        ElColorPicker,
-        "颜色选择器",
-        "<el-color-picker></el-color-picker>"
+      ElColorPicker,
+      '颜色选择器',
+      '<el-color-picker></el-color-picker>',
     ],
     [
-        ElTransfer,
-        "穿梭框",
-        "<el-transfer></el-transfer>"
+      ElTransfer,
+      '穿梭框',
+      '<el-transfer></el-transfer>',
     ],
     [
-        ElForm,
-        "表单",
-        "<el-form></el-form>"
+      ElForm,
+      '表单',
+      '<el-form></el-form>',
     ],
     [
-        ElFormItem,
-        "表单项",
-        "<el-form-item></el-form-item>"
+      ElFormItem,
+      '表单项',
+      '<el-form-item></el-form-item>',
     ],
     [
-        ElTable,
-        "表格",
-        "<el-table></el-table>"
+      ElTable,
+      '表格',
+      '<el-table></el-table>',
     ],
     [
-        ElTableColumn,
-        "表格项",
-        "<el-table-column></el-table-column>"
+      ElTableColumn,
+      '表格项',
+      '<el-table-column></el-table-column>',
     ],
     [
-        ElTag,
-        "标签",
-        "<el-tag></el-tag>"
+      ElTag,
+      '标签',
+      '<el-tag></el-tag>',
     ],
     [
-        ElProgress,
-        "进度条",
-        "<el-progress></el-progress>"
+      ElProgress,
+      '进度条',
+      '<el-progress></el-progress>',
     ],
     [
-        ElTree,
-        "树形控件",
-        "<el-tree></el-tree>"
+      ElTree,
+      '树形控件',
+      '<el-tree></el-tree>',
     ],
     [
-        ElPagination,
-        "分页",
-        "<el-pagination></el-pagination>"
+      ElPagination,
+      '分页',
+      '<el-pagination></el-pagination>',
     ],
     [
-        ElBadge,
-        "标记",
-        "<el-badge></el-badge>"
+      ElBadge,
+      '标记',
+      '<el-badge></el-badge>',
     ],
     [
-        ElAvatar,
-        "头像",
-        "<el-avatar></el-avatar>"
+      ElAvatar,
+      '头像',
+      '<el-avatar></el-avatar>',
     ],
     [
-        ElSkeleton,
-        "骨架屏",
-        "<el-skeleton></el-skeleton>"
+      ElSkeleton,
+      '骨架屏',
+      '<el-skeleton></el-skeleton>',
     ],
     [
-        ElEmpty,
-        "空状态",
-        "<el-empty></el-empty>"
+      ElEmpty,
+      '空状态',
+      '<el-empty></el-empty>',
     ],
     [
-        ElDescriptions,
-        "描述列表",
-        "<el-descriptions></el-descriptions>"
+      ElDescriptions,
+      '描述列表',
+      '<el-descriptions></el-descriptions>',
     ],
     [
-        "el-descriptions-item",
-        "描述列表项",
-        "<el-descriptions-item></el-descriptions-item>"
+      'el-descriptions-item',
+      '描述列表项',
+      '<el-descriptions-item></el-descriptions-item>',
     ],
     [
-        ElResult,
-        "结果",
-        "<el-result></el-result>"
+      ElResult,
+      '结果',
+      '<el-result></el-result>',
     ],
     [
-        ElStatistic,
-        "统计数值",
-        "<el-statistic></el-statistic>"
+      ElStatistic,
+      '统计数值',
+      '<el-statistic></el-statistic>',
     ],
     [
-        ElAlert,
-        "警告",
-        "<el-alert></el-alert>"
+      ElAlert,
+      '警告',
+      '<el-alert></el-alert>',
     ],
     [
-        ElMenu,
-        "导航菜单",
-        "<el-menu></el-menu>"
+      ElMenu,
+      '导航菜单',
+      '<el-menu></el-menu>',
     ],
     [
-        ElSubmenu,
-        "导航子菜单",
-        "<el-submenu></el-submenu>"
+      ElSubmenu,
+      '导航子菜单',
+      '<el-submenu></el-submenu>',
     ],
     [
-        ElMenuItem,
-        "导航菜单项",
-        "<el-menu-item></el-menu-item>"
+      ElMenuItem,
+      '导航菜单项',
+      '<el-menu-item></el-menu-item>',
     ],
     [
-        ElTabs,
-        "标签页",
-        "<el-tabs></el-tabs>"
+      ElTabs,
+      '标签页',
+      '<el-tabs></el-tabs>',
     ],
     [
-        ElTabPane,
-        "标签项",
-        "<el-tab-pane></el-tab-pane>"
+      ElTabPane,
+      '标签项',
+      '<el-tab-pane></el-tab-pane>',
     ],
     [
-        ElBreadcrumb,
-        "面包屑",
-        "<el-breadcrumb></el-breadcrumb>"
+      ElBreadcrumb,
+      '面包屑',
+      '<el-breadcrumb></el-breadcrumb>',
     ],
     [
-        "el-breadcrumb-item",
-        "面包屑项",
-        "<el-breadcrumb-item></el-breadcrumb-item>"
+      'el-breadcrumb-item',
+      '面包屑项',
+      '<el-breadcrumb-item></el-breadcrumb-item>',
     ],
     [
-        ElPageHeader,
-        "页头",
-        "<el-page-header></el-page-header>"
+      ElPageHeader,
+      '页头',
+      '<el-page-header></el-page-header>',
     ],
     [
-        ElDropdown,
-        "下拉菜单",
-        "<el-dropdown></el-dropdown>"
+      ElDropdown,
+      '下拉菜单',
+      '<el-dropdown></el-dropdown>',
     ],
     [
-        "el-dropdown-menu",
-        "下拉菜单列表",
-        "<el-dropdown-menu></el-dropdown-menu>"
+      'el-dropdown-menu',
+      '下拉菜单列表',
+      '<el-dropdown-menu></el-dropdown-menu>',
     ],
     [
-        "el-dropdown-item",
-        "下拉菜单列表项",
-        "<el-dropdown-item></el-dropdown-item>"
+      'el-dropdown-item',
+      '下拉菜单列表项',
+      '<el-dropdown-item></el-dropdown-item>',
     ],
     [
-        ElSteps,
-        "步骤条",
-        "<el-steps></el-steps>"
+      ElSteps,
+      '步骤条',
+      '<el-steps></el-steps>',
     ],
     [
-        ElDialog,
-        "对话框",
-        "<el-dialog></el-dialog>"
+      ElDialog,
+      '对话框',
+      '<el-dialog></el-dialog>',
     ],
     [
-        ElTooltip,
-        "文字提示",
-        "<el-tooltip></el-tooltip>"
+      ElTooltip,
+      '文字提示',
+      '<el-tooltip></el-tooltip>',
     ],
     [
-        ElPopover,
-        "弹出框",
-        "<el-popover></el-popover>"
+      ElPopover,
+      '弹出框',
+      '<el-popover></el-popover>',
     ],
     [
-        ElPopconfirm,
-        "气泡确认框",
-        "<el-popconfirm></el-popconfirm>"
+      ElPopconfirm,
+      '气泡确认框',
+      '<el-popconfirm></el-popconfirm>',
     ],
     [
-        ElCard,
-        "卡片",
-        "<el-card></el-card>"
+      ElCard,
+      '卡片',
+      '<el-card></el-card>',
     ],
     [
-        ElCarousel,
-        "走马灯",
-        "<el-carousel></el-carousel>"
+      ElCarousel,
+      '走马灯',
+      '<el-carousel></el-carousel>',
     ],
     [
-        ElCarouselItem,
-        "走马灯项",
-        "<el-carousel-item></el-carousel-item>"
+      ElCarouselItem,
+      '走马灯项',
+      '<el-carousel-item></el-carousel-item>',
     ],
     [
-        ElCollapse,
-        "折叠面板",
-        "<el-collapse></el-collapse>"
+      ElCollapse,
+      '折叠面板',
+      '<el-collapse></el-collapse>',
     ],
     [
-        ElCollapseItem,
-        "折叠面板项",
-        "<el-collapse-item></el-collapse-item>"
+      ElCollapseItem,
+      '折叠面板项',
+      '<el-collapse-item></el-collapse-item>',
     ],
     [
-        ElTimeline,
-        "时间线",
-        "<el-timeline></el-timeline>"
+      ElTimeline,
+      '时间线',
+      '<el-timeline></el-timeline>',
     ],
     [
-        ElTimelineItem,
-        "时间线项",
-        "<el-timeline-item></el-timeline-item>"
+      ElTimelineItem,
+      '时间线项',
+      '<el-timeline-item></el-timeline-item>',
     ],
     [
-        ElDivider,
-        "分割线",
-        "<el-divider></el-divider>"
+      ElDivider,
+      '分割线',
+      '<el-divider></el-divider>',
     ],
     [
-        ElCalendar,
-        "日历",
-        "<el-calendar></el-calendar>"
+      ElCalendar,
+      '日历',
+      '<el-calendar></el-calendar>',
     ],
     [
-        ElImage,
-        "图片",
-        "<el-image></el-image>"
+      ElImage,
+      '图片',
+      '<el-image></el-image>',
     ],
     [
-        ElBacktop,
-        "回到顶部",
-        "<el-backtop></el-backtop>"
+      ElBacktop,
+      '回到顶部',
+      '<el-backtop></el-backtop>',
     ],
     [
-        ElDrawer,
-        "抽屉",
-        "<el-drawer></el-drawer>"
+      ElDrawer,
+      '抽屉',
+      '<el-drawer></el-drawer>',
     ],
     [
-        ElAutocomplete,
-        "远程搜索",
-        "<el-autocomplete></el-autocomplete>"
+      ElAutocomplete,
+      '远程搜索',
+      '<el-autocomplete></el-autocomplete>',
     ],
     [
-        ElOption,
-        "选择项",
-        "<el-option></el-option>"
+      ElOption,
+      '选择项',
+      '<el-option></el-option>',
     ],
     [
-        ElOptionGroup,
-        "分组",
-        "<el-option-group></el-option-group>"
-    ]
-]
+      ElOptionGroup,
+      '分组',
+      '<el-option-group></el-option-group>',
+    ],
+  ]
   return componentsReducer(map)
 }
