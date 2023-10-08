@@ -215,7 +215,6 @@ export function componentsReducer(map: any[][]) {
       let _content = ''
       if (typeof content === 'object') {
         const requiredProps: string[] = []
-
         if (content.props) {
           const lan = getActiveTextEditorLanguageId()
           Object.keys(content.props).forEach((key) => {
@@ -232,19 +231,30 @@ export function componentsReducer(map: any[][]) {
                 attr = `${key}="true"`
             }
             else if (key.startsWith(':')) {
-              if (!v) {
-                if (lan === 'vue')
-                  attr = `${key}="${getComponentTagName(content.name)}${key[1].toUpperCase()}${key.slice(2)}"`
-
+              const tagName = getComponentTagName(content.name)
+              if (item.foreach) {
+                if (requiredProps.some(p => p.includes('v-for=')))
+                  attr = `${key}="item.${key.slice(1)}"`
                 else
-                  attr = `${key.slice(1)}={${getComponentTagName(content.name)}${key[1].toUpperCase()}${key.slice(2)}}`
+                  attr = `v-for="item in ${tagName}Options" :key="item.value" ${key}="item.${key.slice(1)}"`
               }
               else {
-                if (lan === 'vue')
-                  attr = `${key}="${getComponentTagName(content.name)}${key[1].toUpperCase()}${key.slice(2)}"`
+                const _key = key.replace('v-model', 'model')
+                key = key.replace(':v-model', 'v-model')
+                if (!v) {
+                  if (lan === 'vue')
+                    attr = `${key}="${getComponentTagName(content.name)}${_key[1].toUpperCase()}${_key.slice(2)}"`
 
-                else
-                  attr = `${key.slice(1)}={${v}}`
+                  else
+                    attr = `${key.slice(1)}={${getComponentTagName(content.name)}${_key[1].toUpperCase()}${_key.slice(2)}}`
+                }
+                else {
+                  if (lan === 'vue')
+                    attr = `${key}="${getComponentTagName(content.name)}${key[1].toUpperCase()}${key.slice(2)}"`
+
+                  else
+                    attr = `${key.slice(1)}={${v}}`
+                }
               }
             }
             else {
