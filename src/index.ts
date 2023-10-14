@@ -61,7 +61,7 @@ export function activate(context: vscode.ExtensionContext) {
             const value = result.refsMap[key]
             if (lan === 'vue' && (lineText.endsWith(`.$refs.${key}.`) || lineText.endsWith(`${key}.value.`)) && UiCompletions[value])
               return UiCompletions[value].methods
-            else if (lineText.endsWith(`${key}.current.`) && UiCompletions[value])
+            else if (lan !== 'vue' && lineText.endsWith(`${key}.current.`) && UiCompletions[value])
               return UiCompletions[value].methods
           }
         }
