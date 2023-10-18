@@ -823,16 +823,6 @@ export function elementUi2Components() {
       '远程搜索',
       '<el-autocomplete></el-autocomplete>',
     ],
-    [
-      ElOption,
-      '选择项',
-      '<el-option></el-option>',
-    ],
-    [
-      ElOptionGroup,
-      '分组',
-      '<el-option-group></el-option-group>',
-    ],
   ]
   return componentsReducer(map)
 }
