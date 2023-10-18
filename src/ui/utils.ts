@@ -31,7 +31,6 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
         'class',
         'className',
       ].map(item => createCompletionItem({ content: item, snippet: `${item}="$1"`, type: 5 }))
-
       Object.keys(item.props!).forEach((key) => {
         const value = (item.props as any)[key]
         let type = vscode.CompletionItemKind.Property
@@ -224,14 +223,8 @@ export function componentsReducer(map: any[][]) {
               return
             let attr = ''
             const v = item.value
-            if (item.type && item.type.includes('boolean') && item.default === 'false') {
-              if (lan === 'vue')
-                attr = key
 
-              else
-                attr = `${key}="true"`
-            }
-            else if (key.startsWith(':')) {
+            if (key.startsWith(':')) {
               const tagName = getComponentTagName(content.name)
               if (item.foreach) {
                 if (requiredProps.some(p => p.includes('v-for=')))
@@ -257,6 +250,13 @@ export function componentsReducer(map: any[][]) {
                     attr = `${key.slice(1)}={${v}}`
                 }
               }
+            }
+            else if (item.type && item.type.includes('boolean') && item.default === 'false') {
+              if (lan === 'vue')
+                attr = key
+
+              else
+                attr = `${key}="true"`
             }
             else {
               attr = `${key}="${v}"`
