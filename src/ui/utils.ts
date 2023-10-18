@@ -68,7 +68,6 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
             documentation.appendMarkdown(`\n\n[🔗 文档链接](command:intellisense.openDocument?%7B%22link%22%3A%22${encodeURIComponent(item.link)}%22%7D)`)
           let content = ''
           let snippet = ''
-
           if (value.type && value.type.includes('boolean') && value.default === 'false') {
             if (lan === 'vue') {
               content = snippet = key
@@ -81,8 +80,9 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
           else if (key.startsWith(':')) {
             if (!v) {
               if (lan === 'vue') {
-                content = `${key}="${getComponentTagName(item.name)}${key[1].toUpperCase()}${key.slice(2)}"`
-                snippet = `${key}="\${1:${getComponentTagName(item.name)}${key[1].toUpperCase()}${key.slice(2)}}"$2`
+                const _key = key.replace('v-model', 'model')
+                content = `${key.replace(':v-model', 'v-model')}="${getComponentTagName(item.name)}${_key[1].toUpperCase()}${_key.slice(2)}"`
+                snippet = `${key.replace(':v-model', 'v-model')}="\${1:${getComponentTagName(item.name)}${_key[1].toUpperCase()}${_key.slice(2)}}"$2`
               }
               else {
                 content = `${key.slice(1)}={${getComponentTagName(item.name)}${key[1].toUpperCase()}${key.slice(2)}}`
@@ -91,8 +91,9 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
             }
             else {
               if (lan === 'vue') {
-                content = `${key}="${getComponentTagName(item.name)}${key[1].toUpperCase()}${key.slice(2)}"`
-                snippet = `${key}="\${1:${getComponentTagName(item.name)}${key[1].toUpperCase()}${key.slice(2)}}"$2`
+                const _key = key.replace('v-model', 'model')
+                content = `${key.replace(':v-model', 'v-model')}="${getComponentTagName(item.name)}${_key[1].toUpperCase()}${_key.slice(2)}"`
+                snippet = `${key.replace(':v-model', 'v-model')}="\${1:${getComponentTagName(item.name)}${_key[1].toUpperCase()}${_key.slice(2)}}"$2`
               }
               else {
                 content = `${key.slice(1)}={${v}}`
@@ -219,7 +220,7 @@ export function componentsReducer(map: any[][]) {
           const lan = getActiveTextEditorLanguageId()
           Object.keys(content.props).forEach((key) => {
             const item = content.props[key]
-            if (!item.required)
+            if (!item.required && key !== ':v-model')
               return
             let attr = ''
             const v = item.value
