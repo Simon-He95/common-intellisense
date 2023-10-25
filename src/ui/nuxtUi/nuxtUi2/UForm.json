@@ -1,0 +1,34 @@
+{
+  "name": "UForm",
+  "methods": [],
+  "events": [],
+  "props": {
+    "state": {
+      "type": "Record<string, any>",
+      "default": "",
+      "value": "",
+      "required": true
+    },
+    "schema": {
+      "type": [
+        "ZodType<any, ZodTypeDef, any>",
+        "ObjectSchema<any, AnyObject, any, >",
+        "AnySchema<any>",
+        "ObjectSchemaAsync<any>"
+      ],
+      "default": "undefined",
+      "value": ""
+    },
+    "validate": {
+      "type": "((state: any) => Promise<FormError<string>[]>) | ((state: any) => FormError<string>[])",
+      "default": "[]",
+      "value": ""
+    },
+    "validateOn": {
+      "type": "FormEventType[]",
+      "default": "[\"blur\", \"input\", \"change\", \"submit\"]",
+      "value": ""
+    }
+  },
+  "link": "https://ui.nuxt.com/elements/form"
+}
