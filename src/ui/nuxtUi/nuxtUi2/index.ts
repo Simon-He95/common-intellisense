@@ -30,6 +30,7 @@ import UTooltip from './UTooltip.json'
 import UContextMenu from './UContextMenu.json'
 import UNotification from './UNotification.json'
 import UCard from './UCard.json'
+import UContainer from './UContainer.json'
 
 export function nuxtui2() {
   const map: any = [
@@ -63,6 +64,7 @@ export function nuxtui2() {
     UContextMenu,
     UNotification,
     UCard,
+    UContainer,
   ]
 
   return propsReducer(map)
@@ -224,6 +226,11 @@ export function nuxtui2Components() {
       UCard.name,
       UCard.name,
       `<${UCard.name}></${UCard.name}>`,
+    ],
+    [
+      UContainer.name,
+      UContainer.name,
+      `<${UContainer.name}></${UContainer.name}>`,
     ],
 
   ]
