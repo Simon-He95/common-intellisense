@@ -20,6 +20,7 @@ import UFormGroup from './UFormGroup.json'
 import UForm from './UForm.json'
 import UTable from './UTable.json'
 import UVerticalNavigation from './UVerticalNavigation.json'
+import UCommandPalette from './UCommandPalette.json'
 
 export function nuxtui2() {
   const map: any = [
@@ -43,6 +44,7 @@ export function nuxtui2() {
     UForm,
     UTable,
     UVerticalNavigation,
+    UCommandPalette,
   ]
 
   return propsReducer(map)
@@ -154,6 +156,11 @@ export function nuxtui2Components() {
       UVerticalNavigation.name,
       UVerticalNavigation.name,
       `<${UVerticalNavigation.name}></${UVerticalNavigation.name}>`,
+    ],
+    [
+      UCommandPalette.name,
+      UCommandPalette.name,
+      `<${UCommandPalette.name}></${UCommandPalette.name}>`,
     ],
 
   ]
