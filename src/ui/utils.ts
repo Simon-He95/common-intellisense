@@ -104,7 +104,7 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
             content = `${key}="${v}"`
             snippet = `${key}="$\{1:${v}\}$2"`
           }
-          content += `  ${value.description}${value.default ? `  默认：${value.default}` : ''}`
+          content += `  ${value.description || ''}${value.default ? `  默认：${value.default}` : ''}`
 
           return createCompletionItem({ content, snippet, type, documentation, preselect: true, sortText: '0' })
         },

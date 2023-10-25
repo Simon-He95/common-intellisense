@@ -10,12 +10,7 @@
       "required": true
     },
     "schema": {
-      "type": [
-        "ZodType<any, ZodTypeDef, any>",
-        "ObjectSchema<any, AnyObject, any, >",
-        "AnySchema<any>",
-        "ObjectSchemaAsync<any>"
-      ],
+      "type": "ZodType<any, ZodTypeDef, any> | ObjectSchema<any, AnyObject, any> | AnySchema<any> | ObjectSchemaAsync<any>",
       "default": "undefined",
       "value": ""
     },
@@ -27,7 +22,7 @@
     "validateOn": {
       "type": "FormEventType[]",
       "default": "[\"blur\", \"input\", \"change\", \"submit\"]",
-      "value": ""
+      "value": ["blur", "input", "change", "submit"]
     }
   },
   "link": "https://ui.nuxt.com/elements/form"

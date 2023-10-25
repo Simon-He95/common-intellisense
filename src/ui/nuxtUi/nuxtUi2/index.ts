@@ -31,6 +31,7 @@ import UContextMenu from './UContextMenu.json'
 import UNotification from './UNotification.json'
 import UCard from './UCard.json'
 import UContainer from './UContainer.json'
+import USkeleton from './USkeleton.json'
 
 export function nuxtui2() {
   const map: any = [
@@ -65,6 +66,7 @@ export function nuxtui2() {
     UNotification,
     UCard,
     UContainer,
+    USkeleton,
   ]
 
   return propsReducer(map)
@@ -232,7 +234,11 @@ export function nuxtui2Components() {
       UContainer.name,
       `<${UContainer.name}></${UContainer.name}>`,
     ],
-
+    [
+      USkeleton.name,
+      USkeleton.name,
+      `<${USkeleton.name}></${USkeleton.name}>`,
+    ],
   ]
   return componentsReducer(map)
 }
