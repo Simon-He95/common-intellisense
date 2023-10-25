@@ -5,6 +5,7 @@ import UAvatar from './UAvatar.json'
 import UBadge from './UBadge.json'
 import UButton from './UButton.json'
 import UDropdown from './UDropdown.json'
+import UIcon from './UIcon.json'
 
 export function nuxtui2() {
   const map: any = [
@@ -14,6 +15,7 @@ export function nuxtui2() {
     UBadge,
     UButton,
     UDropdown,
+    UIcon,
   ]
 
   return propsReducer(map)
@@ -50,6 +52,11 @@ export function nuxtui2Components() {
       UDropdown.name,
       UDropdown.name,
       `<${UDropdown.name}></${UDropdown.name}>`,
+    ],
+    [
+      UIcon.name,
+      UIcon.name,
+      `<${UIcon.name}></${UIcon.name}>`,
     ],
 
   ]
