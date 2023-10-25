@@ -9,6 +9,7 @@ import UIcon from './UIcon.json'
 import UKbd from './UKbd.json'
 import ULink from './ULink.json'
 import UInput from './UInput.json'
+import UTextarea from './UTextarea.json'
 
 export function nuxtui2() {
   const map: any = [
@@ -21,6 +22,7 @@ export function nuxtui2() {
     UIcon,
     UKbd,
     UInput,
+    UTextarea,
   ]
 
   return propsReducer(map)
@@ -77,6 +79,11 @@ export function nuxtui2Components() {
       UInput.name,
       UInput.name,
       `<${UInput.name}></${UInput.name}>`,
+    ],
+    [
+      UTextarea.name,
+      UTextarea.name,
+      `<${UTextarea.name}></${UTextarea.name}>`,
     ],
   ]
   return componentsReducer(map)
