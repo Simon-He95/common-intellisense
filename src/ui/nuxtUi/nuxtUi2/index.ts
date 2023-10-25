@@ -16,6 +16,7 @@ import UCheckbox from './UCheckbox.json'
 import URadio from './URadio.json'
 import UToggle from './UToggle.json'
 import URange from './URange.json'
+import UFormGroup from './UFormGroup.json'
 
 export function nuxtui2() {
   const map: any = [
@@ -35,6 +36,7 @@ export function nuxtui2() {
     URadio,
     UToggle,
     URange,
+    UFormGroup,
   ]
 
   return propsReducer(map)
@@ -126,6 +128,11 @@ export function nuxtui2Components() {
       URange.name,
       URange.name,
       `<${URange.name}></${URange.name}>`,
+    ],
+    [
+      UFormGroup.name,
+      UFormGroup.name,
+      `<${UFormGroup.name}></${UFormGroup.name}>`,
     ],
 
   ]
