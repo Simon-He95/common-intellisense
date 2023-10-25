@@ -14,6 +14,7 @@ import USelect from './USelect.json'
 import USelectMenu from './USelectMenu.json'
 import UCheckbox from './UCheckbox.json'
 import URadio from './URadio.json'
+import UToggle from './UToggle.json'
 
 export function nuxtui2() {
   const map: any = [
@@ -31,6 +32,7 @@ export function nuxtui2() {
     USelectMenu,
     UCheckbox,
     URadio,
+    UToggle,
   ]
 
   return propsReducer(map)
@@ -112,6 +114,11 @@ export function nuxtui2Components() {
       URadio.name,
       URadio.name,
       `<${URadio.name}></${URadio.name}>`,
+    ],
+    [
+      UToggle.name,
+      UToggle.name,
+      `<${UToggle.name}></${UToggle.name}>`,
     ],
 
   ]
