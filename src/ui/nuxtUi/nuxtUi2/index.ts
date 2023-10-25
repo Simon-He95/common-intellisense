@@ -8,6 +8,7 @@ import UDropdown from './UDropdown.json'
 import UIcon from './UIcon.json'
 import UKbd from './UKbd.json'
 import ULink from './ULink.json'
+import UInput from './UInput.json'
 
 export function nuxtui2() {
   const map: any = [
@@ -19,6 +20,7 @@ export function nuxtui2() {
     UDropdown,
     UIcon,
     UKbd,
+    UInput,
   ]
 
   return propsReducer(map)
@@ -70,6 +72,11 @@ export function nuxtui2Components() {
       ULink.name,
       ULink.name,
       `<${ULink.name}></${ULink.name}>`,
+    ],
+    [
+      UInput.name,
+      UInput.name,
+      `<${UInput.name}></${UInput.name}>`,
     ],
   ]
   return componentsReducer(map)
