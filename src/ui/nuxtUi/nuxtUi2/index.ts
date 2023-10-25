@@ -26,6 +26,7 @@ import UTabs from './UTabs.json'
 import UModal from './UModal.json'
 import USlideover from './USlideover.json'
 import UPopover from './UPopover.json'
+import UTooltip from './UTooltip.json'
 
 export function nuxtui2() {
   const map: any = [
@@ -55,6 +56,7 @@ export function nuxtui2() {
     UModal,
     USlideover,
     UPopover,
+    UTooltip,
   ]
 
   return propsReducer(map)
@@ -196,6 +198,11 @@ export function nuxtui2Components() {
       UPopover.name,
       UPopover.name,
       `<${UPopover.name}></${UPopover.name}>`,
+    ],
+    [
+      UTooltip.name,
+      UTooltip.name,
+      `<${UTooltip.name}></${UTooltip.name}>`,
     ],
 
   ]
