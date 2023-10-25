@@ -7,6 +7,7 @@ import UButton from './UButton.json'
 import UDropdown from './UDropdown.json'
 import UIcon from './UIcon.json'
 import UKbd from './UKbd.json'
+import ULink from './ULink.json'
 
 export function nuxtui2() {
   const map: any = [
@@ -64,6 +65,11 @@ export function nuxtui2Components() {
       UKbd.name,
       UKbd.name,
       `<${UKbd.name}></${UKbd.name}>`,
+    ],
+    [
+      ULink.name,
+      ULink.name,
+      `<${ULink.name}></${ULink.name}>`,
     ],
   ]
   return componentsReducer(map)
