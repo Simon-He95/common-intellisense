@@ -1,1 +1,1 @@
-export * from './nextUi2'
+export * from './nuxtUi2'
