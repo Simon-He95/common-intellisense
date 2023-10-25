@@ -23,6 +23,8 @@ import UVerticalNavigation from './UVerticalNavigation.json'
 import UCommandPalette from './UCommandPalette.json'
 import UPagination from './UPagination.json'
 import UTabs from './UTabs.json'
+import UModal from './UModal.json'
+import USlideover from './USlideover.json'
 
 export function nuxtui2() {
   const map: any = [
@@ -49,6 +51,8 @@ export function nuxtui2() {
     UCommandPalette,
     UPagination,
     UTabs,
+    UModal,
+    USlideover,
   ]
 
   return propsReducer(map)
@@ -175,6 +179,16 @@ export function nuxtui2Components() {
       UTabs.name,
       UTabs.name,
       `<${UTabs.name}></${UTabs.name}>`,
+    ],
+    [
+      UModal.name,
+      UModal.name,
+      `<${UModal.name}></${UModal.name}>`,
+    ],
+    [
+      USlideover.name,
+      USlideover.name,
+      `<${USlideover.name}></${USlideover.name}>`,
     ],
 
   ]
