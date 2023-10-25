@@ -179,6 +179,7 @@ const nameMap: any = {
   '@chakraUi/vue': 'chakraUiVue',
   '@skeletonlabs/skeleton': 'skeleton',
   '@nextuiOrg/react': 'nextui',
+  '@nuxt/ui': 'nuxtui',
 }
 function findUI() {
   const cwd = vscode.window.activeTextEditor?.document.uri.fsPath

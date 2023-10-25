@@ -151,7 +151,7 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
             const _name = name.split(':').map((item: string) =>
               item[0].toUpperCase() + item.slice(1),
             ).join('').replace(/-(\w)/g, (_: string, v: string) => v.toUpperCase())
-            snippet = `${name}="on\${1:${_name}}"`
+            snippet = `${name}="\${1:on${_name}}"`
             content = `${name}="on${_name}"`
           }
           else if (lan === 'svelte') {
