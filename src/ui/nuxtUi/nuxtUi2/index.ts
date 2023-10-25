@@ -11,6 +11,7 @@ import ULink from './ULink.json'
 import UInput from './UInput.json'
 import UTextarea from './UTextarea.json'
 import USelect from './USelect.json'
+import USelectMenu from './USelectMenu.json'
 
 export function nuxtui2() {
   const map: any = [
@@ -24,6 +25,8 @@ export function nuxtui2() {
     UKbd,
     UInput,
     UTextarea,
+    USelect,
+    USelectMenu,
   ]
 
   return propsReducer(map)
@@ -91,7 +94,11 @@ export function nuxtui2Components() {
       USelect.name,
       `<${USelect.name}></${USelect.name}>`,
     ],
-
+    [
+      USelectMenu.name,
+      USelectMenu.name,
+      `<${USelectMenu.name}></${USelectMenu.name}>`,
+    ],
   ]
   return componentsReducer(map)
 }
