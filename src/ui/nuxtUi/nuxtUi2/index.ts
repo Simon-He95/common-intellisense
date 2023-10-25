@@ -12,6 +12,7 @@ import UInput from './UInput.json'
 import UTextarea from './UTextarea.json'
 import USelect from './USelect.json'
 import USelectMenu from './USelectMenu.json'
+import UCheckbox from './UCheckbox.json'
 
 export function nuxtui2() {
   const map: any = [
@@ -27,6 +28,7 @@ export function nuxtui2() {
     UTextarea,
     USelect,
     USelectMenu,
+    UCheckbox,
   ]
 
   return propsReducer(map)
@@ -99,6 +101,12 @@ export function nuxtui2Components() {
       USelectMenu.name,
       `<${USelectMenu.name}></${USelectMenu.name}>`,
     ],
+    [
+      UCheckbox.name,
+      UCheckbox.name,
+      `<${UCheckbox.name}></${UCheckbox.name}>`,
+    ],
+
   ]
   return componentsReducer(map)
 }
