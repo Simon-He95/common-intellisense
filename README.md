@@ -3,7 +3,10 @@
 </p>
 <p align="center"> English | <a href="./README_zh.md">简体中文</a></p>
 
-Keep working hard for a better development experience, and provide quick reminders of some commonly used words to help add efficient coding in the development stage.
+It is hoped to give developers a more friendly development experience and provide some tips on the use of component libraries to help add efficient coding in the development stage.
+
+### 🛠️️ How to use
+Install the supported ui component library in your project and install the plug-in. If the plug-in does not work, you can restart vscode. If you encounter problems, you can open an issue.
 
 ### 🍬 Currently supported
 - vant
@@ -15,6 +18,7 @@ Keep working hard for a better development experience, and provide quick reminde
 - primevue
 - quasar
 - @nextui-org/react
+- @nuxt/ui
 
 ### antdv
 ![antdv](assets/antdv.gif)
@@ -33,6 +37,9 @@ Keep working hard for a better development experience, and provide quick reminde
 
 ### naive-ui
 ![naive](assets/naive.gif)
+
+### nuxt-ui
+![nuxt](assets/nuxt.gif)
 
 ## :coffee:
 
