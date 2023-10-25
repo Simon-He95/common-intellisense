@@ -10,6 +10,7 @@ import UKbd from './UKbd.json'
 import ULink from './ULink.json'
 import UInput from './UInput.json'
 import UTextarea from './UTextarea.json'
+import USelect from './USelect.json'
 
 export function nuxtui2() {
   const map: any = [
@@ -85,6 +86,12 @@ export function nuxtui2Components() {
       UTextarea.name,
       `<${UTextarea.name}></${UTextarea.name}>`,
     ],
+    [
+      USelect.name,
+      USelect.name,
+      `<${USelect.name}></${USelect.name}>`,
+    ],
+
   ]
   return componentsReducer(map)
 }
