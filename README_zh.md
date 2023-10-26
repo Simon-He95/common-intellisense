@@ -9,16 +9,16 @@
 在你的项目中安装已支持的ui组件库，并且安装次插件即可，如果插件不能生效，可以重启vscode，如遇到问题可以打开一个issue
 
 ### 🍬 目前支持
-- vant
-- element
-- antd
-- antdv
-- varlet
-- naive
-- primevue
-- quasar
-- @nextui-org/react
-- @nuxt/ui
+- vant 4
+- element 2
+- antd 4、5
+- antdv 4
+- varlet 2
+- naive 2
+- primevue 3
+- quasar 2
+- @nextui-org/react 2
+- @nuxt/ui 2
 
 ### antdv
 ![antdv](assets/antdv.gif)

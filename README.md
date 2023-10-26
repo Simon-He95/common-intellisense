@@ -9,16 +9,16 @@ It is hoped to give developers a more friendly development experience and provid
 Install the supported ui component library in your project and install the plug-in. If the plug-in does not work, you can restart vscode. If you encounter problems, you can open an issue.
 
 ### 🍬 Currently supported
-- vant
-- element
-- antd
-- antdv
-- varlet
-- naive
-- primevue
-- quasar
-- @nextui-org/react
-- @nuxt/ui
+- vant 4
+- element 2
+- antd 4、5
+- antdv 4
+- varlet 2
+- naive 2
+- primevue 3
+- quasar 2
+- @nextui-org/react 2
+- @nuxt/ui 2
 
 ### antdv
 ![antdv](assets/antdv.gif)
