@@ -445,12 +445,12 @@ export function elementUi2Components() {
   const map = [
     [
       ElRow,
-      '布局',
+      '行布局',
       '<el-row></el-row>',
     ],
     [
       ElCol,
-      '布局',
+      '列布局',
       '<el-col></el-col>',
     ],
     [

@@ -17,6 +17,7 @@ let cacheMap: any = {}
 let extensionContext: any = null
 let eventCallbacks: any = new Map()
 let completionsCallbacks: any = new Map()
+
 export function activate(context: vscode.ExtensionContext) {
   extensionContext = context
   global.commonIntellisense = {

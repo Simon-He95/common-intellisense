@@ -1,5 +1,5 @@
 import * as vscode from 'vscode'
-import { createCompletionItem, getActiveTextEditorLanguageId } from '@vscode-use/utils'
+import { createCompletionItem, getActiveTextEditorLanguageId, getLocale } from '@vscode-use/utils'
 
 declare const global: {
   commonIntellisense: {
@@ -24,6 +24,8 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
     const completions: any = []
     const events: any = []
     const methods = []
+    const isZh = getLocale().includes('zh')
+
     const completionsDeferCallback = () => {
       const data = [
         'id',
@@ -46,13 +48,17 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
           documentation.supportHtml = true
           const detail = []
           if (value.default !== undefined && value.default !== '')
-            detail.push(`#### 💎 默认值:    ***\`${value.default.toString().replace(/`/g, '')}\`***`)
+            detail.push(`#### 💎 ${isZh ? '默认值' : 'default'}:    ***\`${value.default.toString().replace(/`/g, '')}\`***`)
 
-          if (value.description)
-            detail.push(`#### 🔦 说明:    ***\`${value.description}\`***`)
+          if (value.description) {
+            if (isZh)
+              detail.push(`#### 🔦 说明:    ***\`${value.description_zh || value.description}\`***`)
+            else
+              detail.push(`#### 🔦 description:    ***\`${value.description}\`***`)
+          }
 
           if (value.type)
-            detail.push(`#### 💡 类型:    ***\`${value.type.replace(/`/g, '')}\`***`)
+            detail.push(`#### 💡 ${isZh ? '类型' : 'type'}:    ***\`${value.type.replace(/`/g, '')}\`***`)
           documentation.appendMarkdown(detail.join('\n\n'))
 
           if (item.typeDetail && Object.keys(item.typeDetail).length) {
@@ -64,7 +70,7 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
 
           // command:extension.openDocumentLink?%7B%22link%22%3A%22https%3A%2F%2Fexample.com%2F%22%7D
           if (item.link)
-            documentation.appendMarkdown(`\n\n[🔗 文档链接](command:intellisense.openDocument?%7B%22link%22%3A%22${encodeURIComponent(item.link)}%22%7D)`)
+            documentation.appendMarkdown(`\n\n[🔗 ${isZh ? '文档链接' : 'Documentation link'}](command:intellisense.openDocument?%7B%22link%22%3A%22${encodeURIComponent(item.link)}%22%7D)`)
           let content = ''
           let snippet = ''
           if (value.type && value.type.includes('boolean') && value.default === 'false') {
@@ -104,7 +110,7 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
             content = `${key}="${v}"`
             snippet = `${key}="$\{1:${v}\}$2"`
           }
-          content += `  ${value.description || ''}${value.default ? `  默认：${value.default}` : ''}`
+          content += `  ${value.description || ''}${value.default ? `  ${isZh ? '默认' : 'default'}：${value.default}` : ''}`
 
           return createCompletionItem({ content, snippet, type, documentation, preselect: true, sortText: '0' })
         },
@@ -128,7 +134,7 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
               : lan === 'svelte'
                 ? 'on:click'
                 : 'onClick',
-            description: '点击事件',
+            description: isZh ? '点击事件' : 'click event',
             params: '',
           },
         ]
@@ -138,13 +144,17 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
         })
         return item.events.map((events: any) => {
           const detail = []
-          const { name, description, params } = events
+          const { name, description, params, description_zh } = events
 
-          if (description)
-            detail.push(`#### 🔦 说明:    ***\`${description}\`***`)
+          if (description) {
+            if (isZh)
+              detail.push(`#### 🔦 说明:    ***\`${description_zh || description}\`***`)
+            else
+              detail.push(`#### 🔦 description:    ***\`${description}\`***`)
+          }
 
           if (params)
-            detail.push(`#### 🔮 回调参数:    ***\`${params}\`***`)
+            detail.push(`#### 🔮 ${isZh ? '回调参数' : 'callback parameters'}:    ***\`${params}\`***`)
           let snippet
           let content
           if (lan === 'vue') {
@@ -162,7 +172,7 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
             snippet = `${name}={\${1:${name}}}`
             content = `${name}={${name}}`
           }
-          content += `  ${description}${params ? `  参数：${params}` : ''}`
+          content += `  ${description}${params ? `  ${isZh ? '参数' : 'params'}：${params}` : ''}`
           const documentation = new vscode.MarkdownString()
           documentation.isTrusted = true
           documentation.supportHtml = true
@@ -180,15 +190,19 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
         documentation.isTrusted = true
         documentation.supportHtml = true
         const detail: any = []
-        const { name, description, params } = method
+        const { name, description, params, description_zh } = method
         if (name)
-          detail.push(`\n#### 💨 方法 ${name}:`)
+          detail.push(`\n#### 💨 ${isZh ? '方法' : 'method'} ${name}:`)
 
-        if (description)
-          detail.push(`- 👓 说明:    ***\`${description}\`***`)
+        if (description) {
+          if (isZh)
+            detail.push(`- 👓 说明:    ***\`${description_zh || description}\`***`)
+          else
+            detail.push(`- 👓 description:    ***\`${description}\`***`)
+        }
 
         if (params)
-          detail.push(`- 🚢 参数:    ***\`${params}\`***`)
+          detail.push(`- 🚢 ${isZh ? '参数' : 'params'}:    ***\`${params}\`***`)
 
         documentation.appendMarkdown(detail.join('\n\n'))
         return createCompletionItem({ content: method.name, snippet: `${name.endsWith('()') ? name : `${name}()`}$1`, documentation, type: 1, preselect: true, sortText: '1' })
@@ -207,6 +221,7 @@ export function componentsReducer(map: any[][]) {
     const name = typeof first === 'string' ? first : `${first.name[0].toLowerCase()}${hyphenate(first.name.slice(1))}`
     prefix = name.split('-')[0][0]
   }
+  const isZh = getLocale().includes('zh')
 
   return {
     prefix,
@@ -277,7 +292,6 @@ export function componentsReducer(map: any[][]) {
       }
       if (!demo)
         demo = snippet
-
       const documentation = new vscode.MarkdownString()
       documentation.isTrusted = true
       documentation.supportHtml = true
@@ -285,7 +299,7 @@ export function componentsReducer(map: any[][]) {
       if (demo) {
         global.commonIntellisense.copyDom = demo
         const copyIcon = '<img width="12" height="12" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxnIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2UyOWNkMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2Utd2lkdGg9IjEuNSI+PHBhdGggZD0iTTIwLjk5OCAxMGMtLjAxMi0yLjE3NS0uMTA4LTMuMzUzLS44NzctNC4xMjFDMTkuMjQzIDUgMTcuODI4IDUgMTUgNWgtM2MtMi44MjggMC00LjI0MyAwLTUuMTIxLjg3OUM2IDYuNzU3IDYgOC4xNzIgNiAxMXY1YzAgMi44MjggMCA0LjI0My44NzkgNS4xMjFDNy43NTcgMjIgOS4xNzIgMjIgMTIgMjJoM2MyLjgyOCAwIDQuMjQzIDAgNS4xMjEtLjg3OUMyMSAyMC4yNDMgMjEgMTguODI4IDIxIDE2di0xIi8+PHBhdGggZD0iTTMgMTB2NmEzIDMgMCAwIDAgMyAzTTE4IDVhMyAzIDAgMCAwLTMtM2gtNEM3LjIyOSAyIDUuMzQzIDIgNC4xNzIgMy4xNzJDMy41MTggMy44MjUgMy4yMjkgNC43IDMuMTAyIDYiLz48L2c+PC9zdmc+" />'
-        documentation.appendMarkdown('#### 🌰 例子\n')
+        documentation.appendMarkdown(`#### 🌰 ${isZh ? '例子' : 'example'}\n`)
         documentation.appendCodeblock(demo, 'html')
         documentation.appendMarkdown(`\n<a href="command:intellisense.copyDemo">${copyIcon}</a>\n`)
       }
