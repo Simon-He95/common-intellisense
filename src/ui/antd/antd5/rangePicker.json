@@ -3,101 +3,122 @@
   "props": {
     "allowEmpty": {
       "value": "",
-      "description": "允许起始项部分为空",
+      "description": "The start section is allowed to be empty",
       "default": "[false, false]",
-      "type": "[boolean, boolean]"
+      "type": "[boolean, boolean]",
+      "description_zh": "允许起始项部分为空"
     },
     "dateRender": {
       "value": "",
-      "description": "自定义日期单元格的内容，5.4.0 起用 `cellRender` 代替",
+      "description": "Customize the contents of the date cell, replace it with 'cellRender' from 5.4.0",
       "default": "-",
-      "type": "function(currentDate: dayjs, today: dayjs) => React.ReactNode"
+      "type": "function(currentDate: dayjs, today: dayjs) => React.ReactNode",
+      "description_zh": "自定义日期单元格的内容，5.4.0 起用 `cellRender` 代替"
     },
     "cellRender": {
       "value": "",
-      "description": "自定义单元格的内容。",
+      "description": "Customize the contents of the cell.",
       "default": "-",
-      "type": "(current: dayjs, info: { originNode: React.ReactElement,today: DateType, range?: 'start' | 'end', type: PanelMode, locale?: Locale, subType?: 'hour' | 'minute' | 'second' | 'meridiem' }) => React.ReactNode"
+      "type": "(current: dayjs, info: { originNode: React.ReactElement,today: DateType, range?: 'start' | 'end', type: PanelMode, locale?: Locale, subType?: 'hour' | 'minute' | 'second' | 'meridiem' }) => React.ReactNode",
+      "description_zh": "自定义单元格的内容。"
     },
     "defaultPickerValue": {
       "value": "",
-      "description": "默认面板日期",
+      "description": "Default panel date",
       "default": "-",
-      "type": "[dayjs]"
+      "type": "[dayjs]",
+      "description_zh": "默认面板日期"
     },
     "defaultValue": {
       "value": "",
-      "description": "默认日期",
+      "description": "Default date",
       "default": "-",
-      "type": "[dayjs]"
+      "type": "[dayjs]",
+      "description_zh": "默认日期"
     },
     "disabled": {
       "value": "",
-      "description": "禁用起始项",
+      "description": "Disable the starting item",
       "default": "-",
-      "type": "[boolean, boolean]"
+      "type": "[boolean, boolean]",
+      "description_zh": "禁用起始项"
     },
     "disabledTime": {
       "value": "",
-      "description": "不可选择的时间",
+      "description": "Unselectable time",
       "default": "-",
-      "type": "function(date: dayjs, partial: `start` | `end`)"
+      "type": "function(date: dayjs, partial: `start` | `end`)",
+      "description_zh": "不可选择的时间"
     },
     "format": {
       "value": "",
-      "description": "展示的日期格式",
+      "description": "The date format of the display",
       "default": "`YYYY-MM-DD HH:mm:ss`",
-      "type": "[formatType]"
+      "type": "[formatType]",
+      "description_zh": "展示的日期格式"
     },
     "presets": {
       "value": "",
-      "description": "预设时间范围快捷选择",
+      "description": "Preset time range for quick selection",
       "default": "-",
-      "type": "{ label: React.ReactNode, value: [dayjs]}"
+      "type": "{ label: React.ReactNode, value: [dayjs]}",
+      "description_zh": "预设时间范围快捷选择"
     },
     "renderExtraFooter": {
       "value": "",
-      "description": "在面板中添加额外的页脚",
+      "description": "Add an extra footer to the panel",
       "default": "-",
-      "type": "() => React.ReactNode"
+      "type": "() => React.ReactNode",
+      "description_zh": "在面板中添加额外的页脚"
     },
     "separator": {
-      "value": ["`<SwapRightOutlined />`"],
-      "description": "设置分隔符",
+      "value": [
+        "`<SwapRightOutlined />`"
+      ],
+      "description": "Set the separator",
       "default": "`<SwapRightOutlined />`",
-      "type": "React.ReactNode"
+      "type": "React.ReactNode",
+      "description_zh": "设置分隔符"
     },
     "showTime": {
-      "value": ["[TimePicker Options]"],
-      "description": "增加时间选择功能",
+      "value": [
+        "[TimePicker Options]"
+      ],
+      "description": "Added time selection function",
       "default": "[TimePicker Options]",
-      "type": "Object | boolean"
+      "type": "Object | boolean",
+      "description_zh": "增加时间选择功能"
     },
     "showTime.defaultValue": {
       "value": "",
-      "description": "设置用户选择日期时默认的时分秒",
+      "description": "Sets the default hour, minute, and second when the user selects the date",
       "default": "[dayjs(), dayjs()]",
-      "type": "[dayjs]"
+      "type": "[dayjs]",
+      "description_zh": "设置用户选择日期时默认的时分秒"
     },
     "value": {
       "value": "",
-      "description": "日期",
+      "description": "date",
       "default": "-",
-      "type": "[dayjs]"
+      "type": "[dayjs]",
+      "description_zh": "日期"
     }
   },
   "methods": [],
   "events": [
     {
       "name": "onCalendarChange",
-      "description": "待选日期发生变化的回调。`info` 参数自 4.4.0 添加",
-      "params": "function(dates: [dayjs, dayjs], dateStrings: [string, string], info: { range:`start`|`end` })"
+      "description": "Callbacks for changes in the pending date. The 'info' parameter was added since 4.4.0",
+      "params": "function(dates: [dayjs, dayjs], dateStrings: [string, string], info: { range:`start`|`end` })",
+      "description_zh": "待选日期发生变化的回调。`info` 参数自 4.4.0 添加"
     },
     {
       "name": "onChange",
-      "description": "日期范围发生变化的回调",
-      "params": "function(dates: [dayjs, dayjs], dateStrings: [string, string])"
+      "description": "Callbacks for changes in the date range",
+      "params": "function(dates: [dayjs, dayjs], dateStrings: [string, string])",
+      "description_zh": "日期范围发生变化的回调"
     }
   ],
-  "link": "https://ant.design/components//date-picker"
+  "link": "https://ant.design/components//date-picker",
+  "link_zh": "https://ant.design/components//date-picker"
 }

@@ -3,141 +3,185 @@
   "props": {
     "blur-after-select": {
       "value": "",
-      "description": "选中后是否 blur",
+      "description": "When selected, whether to blur",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "选中后是否 blur"
     },
     "clear-after-select": {
       "value": "",
-      "description": "选中后是否清空",
+      "description": "Select whether to clear the item",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "选中后是否清空"
     },
     "clearable": {
       "value": "",
-      "description": "自动填充是否支持可清除",
+      "description": "Whether AutoFill supports purgeability",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "自动填充是否支持可清除"
     },
     "default-value": {
       "value": "",
-      "description": "自动填充的默认值",
+      "description": "Default value for autofill",
       "default": "null",
-      "type": "string"
+      "type": "string",
+      "description_zh": "自动填充的默认值"
     },
     "disabled": {
       "value": "",
-      "description": "自动填充是否禁用",
+      "description": "Whether autofill is disabled",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "自动填充是否禁用"
     },
     "get-show": {
       "value": "",
-      "description": "根据输入值在聚焦的状态中决定是否显示菜单",
+      "description": "Depending on the input value, the menu is displayed in the focused state",
       "default": "undefined",
-      "type": "(value: string) => boolean"
+      "type": "(value: string) => boolean",
+      "description_zh": "根据输入值在聚焦的状态中决定是否显示菜单"
     },
     "input-props": {
       "value": "",
-      "description": "自动填充中 input 元素的属性",
+      "description": "Autofill the attributes of the input element",
       "default": "undefined",
-      "type": "HTMLInputAttributes"
+      "type": "HTMLInputAttributes",
+      "description_zh": "自动填充中 input 元素的属性"
     },
     "loading": {
       "value": "",
-      "description": "是否展示加载状态",
+      "description": "Whether to display the loading status",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否展示加载状态"
     },
     ":menu-props": {
       "value": "",
-      "description": "菜单的 DOM 属性",
+      "description": "DOM properties of the menu",
       "default": "undefined",
-      "type": "HTMLAttributes"
+      "type": "HTMLAttributes",
+      "description_zh": "菜单的 DOM 属性"
     },
     ":options": {
       "value": "",
-      "description": "自动填充的自定义选项",
+      "description": "Customization options for autofill",
       "default": "[]",
-      "type": "Array<string | AutoCompleteOption | AutoCompleteGroupOption>"
+      "type": "Array<string | AutoCompleteOption | AutoCompleteGroupOption>",
+      "description_zh": "自动填充的自定义选项"
     },
     "placeholder": {
       "value": "",
-      "description": "自动填充的提示信息",
+      "description": "Auto-fill prompts",
       "default": "请输入",
-      "type": "string"
+      "type": "string",
+      "description_zh": "自动填充的提示信息"
     },
     "placement": {
-      "value": ["top-start", "top", "top-end", "right-start", "right", "right-end", "bottom-start", "bottom", "bottom-end", "left-start", "left", "left-end"],
-      "description": "自动填充的弹出位置",
+      "value": [
+        "top-start",
+        "top",
+        "top-end",
+        "right-start",
+        "right",
+        "right-end",
+        "bottom-start",
+        "bottom",
+        "bottom-end",
+        "left-start",
+        "left",
+        "left-end"
+      ],
+      "description": "The pop-up location for auto-filling",
       "default": "bottom-start",
-      "type": "top-start | top | top-end | right-start | right | right-end | bottom-start | bottom | bottom-end | left-start | left | left-end"
+      "type": "top-start | top | top-end | right-start | right | right-end | bottom-start | bottom | bottom-end | left-start | left | left-end",
+      "description_zh": "自动填充的弹出位置"
     },
     ":render-label": {
       "value": "",
-      "description": "选项标签渲染函数",
+      "description": "Option label rendering function",
       "default": "undefined",
-      "type": "(option: SelectOption | SelectGroupOption, selected: boolean) => VNodeChild"
+      "type": "(option: SelectOption | SelectGroupOption, selected: boolean) => VNodeChild",
+      "description_zh": "选项标签渲染函数"
     },
     ":render-option": {
       "value": "",
-      "description": "选项的渲染函数",
+      "description": "option",
       "default": "undefined",
-      "type": "(info: { node: VNode, option: SelectOption | SelectGroupOption, selected: boolean }) => VNodeChild"
+      "type": "(info: { node: VNode, option: SelectOption | SelectGroupOption, selected: boolean }) => VNodeChild",
+      "description_zh": "选项的渲染函数"
     },
     "size": {
-      "value": ["small", "medium", "large"],
-      "description": "自动填充的尺寸大小",
+      "value": [
+        "small",
+        "medium",
+        "large"
+      ],
+      "description": "The size of the auto-populated size",
       "default": "medium",
-      "type": "small | medium | large"
+      "type": "small | medium | large",
+      "description_zh": "自动填充的尺寸大小"
     },
     "to": {
       "value": "",
-      "description": "菜单的容器节点，`false` 会待在原地",
+      "description": "menu's container node, 'false' will stay put",
       "default": "body",
-      "type": "string | HTMLElement | false"
+      "type": "string | HTMLElement | false",
+      "description_zh": "菜单的容器节点，`false` 会待在原地"
     },
     "status": {
-      "value": ["success", "warning", "error"],
-      "description": "验证状态",
+      "value": [
+        "success",
+        "warning",
+        "error"
+      ],
+      "description": "Verify the status",
       "default": "undefined",
-      "type": "success | warning | error"
+      "type": "success | warning | error",
+      "description_zh": "验证状态"
     },
     "value": {
       "value": "",
-      "description": "自动填充的数据用户可控",
+      "description": "Auto-populated data is user-controllable",
       "default": "undefined",
-      "type": "string"
+      "type": "string",
+      "description_zh": "自动填充的数据用户可控"
     },
     "default": {
       "value": "",
-      "description": "自定义输入元素，由用户填充",
+      "description": "Custom input elements, populated by the user",
       "default": "",
-      "type": "自定义输入元素，由用户填充"
+      "type": "自定义输入元素，由用户填充",
+      "description_zh": "自定义输入元素，由用户填充"
     },
     "prefix": {
       "value": "",
-      "description": "输入框头部内容",
+      "description": "Enter the content of the header of the box",
       "default": "",
-      "type": "输入框头部内容"
+      "type": "输入框头部内容",
+      "description_zh": "输入框头部内容"
     },
     "suffix": {
       "value": "",
-      "description": "输入框尾部内容",
+      "description": "Enter the content at the end of the box",
       "default": "",
-      "type": "输入框尾部内容"
+      "type": "输入框尾部内容",
+      "description_zh": "输入框尾部内容"
     }
   },
   "methods": [
     {
       "name": "blur",
-      "description": "Blur input 元素",
-      "params": "() => void"
+      "description": "Blur input element",
+      "params": "() => void",
+      "description_zh": "Blur input 元素"
     },
     {
       "name": "focus",
-      "description": "Focus input 元素",
-      "params": "() => void"
+      "description": "Focus input element",
+      "params": "() => void",
+      "description_zh": "Focus input 元素"
     }
   ],
   "typeDetail": {
@@ -184,24 +228,29 @@
   "events": [
     {
       "name": "blur",
-      "description": "blur 时触发的回调函数",
-      "params": "(event: FocusEvent) => void"
+      "description": "blur",
+      "params": "(event: FocusEvent) => void",
+      "description_zh": "blur 时触发的回调函数"
     },
     {
       "name": "focus",
-      "description": "focus 时触发的回调函数",
-      "params": "(event: FocusEvent) => void"
+      "description": "focus",
+      "params": "(event: FocusEvent) => void",
+      "description_zh": "focus 时触发的回调函数"
     },
     {
       "name": "select",
-      "description": "select 选中时触发的回调函数",
-      "params": "(value: string) => void"
+      "description": "Select callback function that is triggered when selected",
+      "params": "(value: string) => void",
+      "description_zh": "select 选中时触发的回调函数"
     },
     {
       "name": "update:value",
-      "description": "可控数据更新时触发的回调函数",
-      "params": "(value: string | null) => void"
+      "description": "A callback function that is triggered when controllable data is updated",
+      "params": "(value: string | null) => void",
+      "description_zh": "可控数据更新时触发的回调函数"
     }
   ],
-  "link": "https://www.naiveui.com/zh-CN/dark/components/auto-complete"
+  "link": "https://www.naiveui.com/zh-CN/dark/components/auto-complete",
+  "link_zh": "https://www.naiveui.com/zh-CN/dark/components/auto-complete"
 }

@@ -3,66 +3,119 @@
   "props": {
     "show": {
       "value": "",
-      "description": "是否显示",
+      "description": "Whether it is displayed or not",
       "default": "false",
-      "type": "是否显示"
+      "type": "是否显示",
+      "description_zh": "是否显示"
     },
     "images": {
       "value": "",
-      "description": "需要预览的图片 URL 数组",
+      "description": "An array of image URLs that need to be previewed",
       "default": "[]",
-      "type": "需要预览的图片 URL 数组"
+      "type": "需要预览的图片 URL 数组",
+      "description_zh": "需要预览的图片 URL 数组"
     },
     "initial-index": {
       "value": "",
-      "description": "图片预览起始的索引",
+      "description": "The index from which the image preview begins",
       "default": "0",
-      "type": "图片预览起始的索引"
+      "type": "图片预览起始的索引",
+      "description_zh": "图片预览起始的索引"
     },
     "zoom": {
       "value": "",
-      "description": "双击放大倍数",
+      "description": "Double-click the magnification",
       "default": "2",
-      "type": "双击放大倍数"
+      "type": "双击放大倍数",
+      "description_zh": "双击放大倍数"
     },
     "closeable": {
       "value": "",
-      "description": "是否显示关闭按钮",
+      "description": "Whether or not to display a close button",
       "default": "false",
-      "type": "是否显示关闭按钮"
+      "type": "是否显示关闭按钮",
+      "description_zh": "是否显示关闭按钮"
     },
     "loop": {
       "value": "",
-      "description": "是否开启循环播放",
+      "description": "Whether to enable looping",
       "default": "true",
-      "type": "是否开启循环播放"
+      "type": "是否开启循环播放",
+      "description_zh": "是否开启循环播放"
     },
     "indicator": {
       "value": "",
-      "description": "是否显示分页",
+      "description": "Whether or not to display pagination",
       "default": "true",
-      "type": "是否显示分页"
+      "type": "是否显示分页",
+      "description_zh": "是否显示分页"
     },
     "lock-scroll": {
       "value": "",
-      "description": "锁定滚动",
+      "description": "Lock scrolling",
       "default": "true",
-      "type": "锁定滚动"
+      "type": "锁定滚动",
+      "description_zh": "锁定滚动"
     },
     "teleport": {
       "value": "",
-      "description": "弹出层挂载的位置",
+      "description": "The location where the pop-up layer is mounted",
       "default": "body",
-      "type": "弹出层挂载的位置"
+      "type": "弹出层挂载的位置",
+      "description_zh": "弹出层挂载的位置"
     },
     "image-prevent-default": {
       "value": "",
-      "description": "是否禁止图片默认行为",
+      "description": "Whether to prohibit the default behavior of images",
       "default": "false",
-      "type": "是否禁止图片默认行为"
+      "type": "是否禁止图片默认行为",
+      "description_zh": "是否禁止图片默认行为"
     }
   },
-  "methods": [{ "name": "ImagePreview", "description": "显示 image-preview", "params": "options | string | string[]" }, { "name": "ImagePreview.close", "description": "关闭 image-preview", "params": "-" }, { "name": "ImagePreview.setDefaultOptions", "description": "设置默认的选项配置", "params": "options" }, { "name": "ImagePreview.resetDefaultOptions", "description": "重置默认的选项配置", "params": "-" }, { "name": "prev", "description": "上一页", "params": "`options?: SwipeToOptions`" }, { "name": "next", "description": "下一页", "params": "`options?: SwipeToOptions`" }, { "name": "to", "description": "跳转到指定下标", "params": "`index: number, options?: SwipeToOptions`" }],
+  "methods": [
+    {
+      "name": "ImagePreview",
+      "description": "Image-preview is displayed",
+      "params": "options | string | string[]",
+      "description_zh": "显示 image-preview"
+    },
+    {
+      "name": "ImagePreview.close",
+      "description": "Turn off image-preview",
+      "params": "-",
+      "description_zh": "关闭 image-preview"
+    },
+    {
+      "name": "ImagePreview.setDefaultOptions",
+      "description": "Sets the default option configuration",
+      "params": "options",
+      "description_zh": "设置默认的选项配置"
+    },
+    {
+      "name": "ImagePreview.resetDefaultOptions",
+      "description": "Reset the default option configuration",
+      "params": "-",
+      "description_zh": "重置默认的选项配置"
+    },
+    {
+      "name": "prev",
+      "description": "Previous",
+      "params": "`options?: SwipeToOptions`",
+      "description_zh": "上一页"
+    },
+    {
+      "name": "next",
+      "description": "Next",
+      "params": "`options?: SwipeToOptions`",
+      "description_zh": "下一页"
+    },
+    {
+      "name": "to",
+      "description": "Jump to the specified subscript",
+      "params": "`index: number, options?: SwipeToOptions`",
+      "description_zh": "跳转到指定下标"
+    }
+  ],
   "typeDetail": {
     "ImagePreview": [
       {
@@ -140,34 +193,41 @@
   "events": [
     {
       "name": "change",
-      "description": "切换图片时的回调函数，回调参数为当前索引",
-      "params": "切换图片时的回调函数，回调参数为当前索引"
+      "description": "The callback function when switching images, the callback parameter is the current index",
+      "params": "切换图片时的回调函数，回调参数为当前索引",
+      "description_zh": "切换图片时的回调函数，回调参数为当前索引"
     },
     {
       "name": "open",
-      "description": "打开 image-preview 时触发",
-      "params": "打开 image-preview 时触发"
+      "description": "Triggered when image-preview is opened",
+      "params": "打开 image-preview 时触发",
+      "description_zh": "打开 image-preview 时触发"
     },
     {
       "name": "opened",
-      "description": "打开 image-preview 动画结束时触发",
-      "params": "打开 image-preview 动画结束时触发"
+      "description": "Turn on the image-preview animation to trigger at the end of the animation",
+      "params": "打开 image-preview 动画结束时触发",
+      "description_zh": "打开 image-preview 动画结束时触发"
     },
     {
       "name": "close",
-      "description": "关闭 image-preview 时触发",
-      "params": "关闭 image-preview 时触发"
+      "description": "Triggered when image-preview is turned off",
+      "params": "关闭 image-preview 时触发",
+      "description_zh": "关闭 image-preview 时触发"
     },
     {
       "name": "closed",
-      "description": "关闭 image-preview 动画结束时触发",
-      "params": "关闭 image-preview 动画结束时触发"
+      "description": "Turn off the image-preview animation to trigger at the end of the animation",
+      "params": "关闭 image-preview 动画结束时触发",
+      "description_zh": "关闭 image-preview 动画结束时触发"
     },
     {
       "name": "long-press",
-      "description": "长按图片时的回调函数，回调参数为当前索引",
-      "params": "长按图片时的回调函数，回调参数为当前索引"
+      "description": "When you press and hold an image, the callback parameter is the current index",
+      "params": "长按图片时的回调函数，回调参数为当前索引",
+      "description_zh": "长按图片时的回调函数，回调参数为当前索引"
     }
   ],
-  "link": "https://varlet.gitee.io/varlet-ui/#/zh-CN/image-preview"
+  "link": "https://varlet.gitee.io/varlet-ui/#/zh-CN/image-preview",
+  "link_zh": "https://varlet.gitee.io/varlet-ui/#/zh-CN/image-preview"
 }

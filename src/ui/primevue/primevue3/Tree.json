@@ -5,142 +5,168 @@
       "default": "",
       "description": "An array of treenodes.",
       "type": "TreeNode[]",
-      "value": ""
+      "value": "",
+      "description_zh": "树节点的数组。"
     },
     "expandedKeys": {
       "default": "",
       "description": "A map of keys to represent the expansion state in controlled mode.",
       "type": "TreeExpandedKeys",
-      "value": ""
+      "value": "",
+      "description_zh": "用于表示受控模式下的扩展状态的键映射。"
     },
     "selectionKeys": {
       "default": "",
       "description": "A map of keys to control the selection state.",
       "type": "TreeSelectionKeys",
-      "value": ""
+      "value": "",
+      "description_zh": "用于控制选择状态的键映射。"
     },
     "selectionMode": {
       "default": "",
       "description": "Defines the selection mode.",
       "type": "\"multiple\" | \"checkbox\" | \"single\"",
-      "value": ""
+      "value": "",
+      "description_zh": "定义选择模式。"
     },
     "metaKeySelection": {
       "default": "true",
       "description": "Defines how multiple items can be selected, when true metaKey needs to be pressed to select or unselect an item and when set to false selection of each item can be toggled individually.\nOn touch enabled devices, metaKeySelection is turned off automatically.",
       "type": "boolean",
-      "value": ""
+      "value": "",
+      "description_zh": "定义如何选择多个项目，何时需要按下 true metaKey 来选择或取消选择某个项目，以及何时设置为 false 选择每个项目可以单独切换。\n在支持触摸的设备上，metaKeySelection 会自动关闭。"
     },
     "loading": {
       "default": "false",
       "description": "Whether to display loading indicator.",
       "type": "boolean",
-      "value": ""
+      "value": "",
+      "description_zh": "是否显示加载指示器。"
     },
     "loadingIcon": {
       "default": "",
       "description": "Icon to display when tree is loading.",
       "type": "string",
-      "value": ""
+      "value": "",
+      "description_zh": "加载树时显示的图标。"
     },
     "filter": {
       "default": "false",
       "description": "When specified, displays an input field to filter the items.",
       "type": "boolean",
-      "value": ""
+      "value": "",
+      "description_zh": "指定后，将显示用于筛选项目的输入字段。"
     },
     "filterBy": {
       "default": "label",
       "description": "When filtering is enabled, filterBy decides which field or fields (comma separated) to search against.",
       "type": "string",
-      "value": ""
+      "value": "",
+      "description_zh": "启用筛选后，filterBy 将决定要搜索的一个或多个字段（逗号分隔）。"
     },
     "filterMode": {
       "default": "lenient",
       "description": "Mode for filtering.",
       "type": "\"strict\" | \"lenient\"",
-      "value": ""
+      "value": "",
+      "description_zh": "过滤模式。"
     },
     "filterPlaceholder": {
       "default": "",
       "description": "Placeholder text to show when filter input is empty.",
       "type": "string",
-      "value": ""
+      "value": "",
+      "description_zh": "筛选器输入为空时显示的占位符文本。"
     },
     "filterLocale": {
       "default": "",
       "description": "Locale to use in filtering. The default locale is the host environment's current locale.",
       "type": "string",
-      "value": ""
+      "value": "",
+      "description_zh": "要在筛选中使用的区域设置。默认区域设置是主机环境的当前区域设置。"
     },
     "scrollHeight": {
       "default": "",
       "description": "Height of the scroll viewport in fixed units or the 'flex' keyword for a dynamic size.",
       "type": "string",
-      "value": ""
+      "value": "",
+      "description_zh": "滚动视口的高度（以固定单位表示）或动态大小的“flex”关键字。"
     },
     "aria-label": {
       "default": "",
       "description": "Defines a string value that labels an interactive element.",
       "type": "string",
-      "value": ""
+      "value": "",
+      "description_zh": "定义一个字符串值，该值标记交互式元素。"
     },
     "aria-labelledby": {
       "default": "",
       "description": "Identifier of the underlying menu element.",
       "type": "string",
-      "value": ""
+      "value": "",
+      "description_zh": "基础菜单元素的标识符。"
     },
     "pt": {
       "default": "",
       "description": "Used to pass attributes to DOM elements inside the component.",
       "type": "PassThrough<TreePassThroughOptions>",
-      "value": ""
+      "value": "",
+      "description_zh": "用于将属性传递给组件内部的 DOM 元素。"
     },
     "ptOptions": {
       "default": "",
       "description": "Used to configure passthrough(pt) options of the component.",
       "type": "PassThroughOptions",
-      "value": ""
+      "value": "",
+      "description_zh": "用于配置组件的直通 （pt） 选项。"
     },
     "unstyled": {
       "default": "false",
       "description": "When enabled, it removes component related styles in the core.",
       "type": "boolean",
-      "value": ""
+      "value": "",
+      "description_zh": "启用后，它会删除核心中与组件相关的样式。"
     }
   },
   "events": [
     {
       "name": "update:expandedKeys",
       "description": "Emitted when the expanded keys change.",
-      "params": "(value: TreeExpandedKeys) => void"
+      "params": "(value: TreeExpandedKeys) => void",
+      "description_zh": "在扩展键更改时发出。"
     },
     {
       "name": "update:selectionKeys",
       "description": "Emitted when the selection keys change.",
-      "params": "(event: TreeSelectionKeys) => void"
+      "params": "(event: TreeSelectionKeys) => void",
+      "description_zh": "在选择键更改时发出。"
     },
     {
       "name": "node-select",
       "description": "Callback to invoke when a node is selected.",
-      "params": "(node: TreeNode) => void"
+      "params": "(node: TreeNode) => void",
+      "description_zh": "选择节点时调用的回调。"
     },
     {
       "name": "node-unselect",
       "description": "Callback to invoke when a node is unselected.",
-      "params": "(node: TreeNode) => void"
+      "params": "(node: TreeNode) => void",
+      "description_zh": "取消选择节点时调用的回调。"
     },
     {
       "name": "node-expand",
       "description": "Callback to invoke when a node is expanded.",
-      "params": "(node: TreeNode) => void"
+      "params": "(node: TreeNode) => void",
+      "description_zh": "节点展开时调用的回调。"
     },
     {
       "name": "node-collapse",
       "description": "Callback to invoke when a node is collapsed.",
-      "params": "(node: TreeNode) => void"
+      "params": "(node: TreeNode) => void",
+      "description_zh": "节点折叠时调用的回调。"
     }
   ],
-  "link": "https://primevue.org/tree/"
+  "link": "https://primevue.org/tree/",
+  "link_zh": "https://primevue.org/tree/",
+  "methods": []
 }

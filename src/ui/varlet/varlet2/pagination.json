@@ -3,72 +3,87 @@
   "props": {
     "v-model:current": {
       "value": "",
-      "description": "当前页数",
+      "description": "The current number of pages",
       "default": "1",
       "type": "string | number",
-      "required": true
+      "required": true,
+      "description_zh": "当前页数"
     },
     "v-model:size": {
       "value": "",
-      "description": "每页条数",
+      "description": "Number of pieces per page",
       "default": "10",
       "type": "string | number",
-      "required": true
+      "required": true,
+      "description_zh": "每页条数"
     },
     "total": {
       "value": "",
-      "description": "总条数",
+      "description": "Total number of records",
       "default": "0",
       "type": "string | number",
-      "required": true
+      "required": true,
+      "description_zh": "总条数"
     },
     "simple": {
       "value": "",
-      "description": "是否为简单模式",
+      "description": "Whether it is in simple mode",
       "default": "true",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否为简单模式"
     },
     "elevation": {
-      "value": ["true", "false", "0-24"],
-      "description": "海拔高度，可选值为 `true` `false` 和 `0-24` 的等级, 不为简单模式时生效",
+      "value": [
+        "true",
+        "false",
+        "0-24"
+      ],
+      "description": "Altitude, which can be 'true', 'false' and '0-24', takes effect when not in simple mode",
       "default": "true",
-      "type": "string | number | boolean"
+      "type": "string | number | boolean",
+      "description_zh": "海拔高度，可选值为 `true` `false` 和 `0-24` 的等级, 不为简单模式时生效"
     },
     "disabled": {
       "value": "",
-      "description": "禁用分页",
+      "description": "Disable pagination",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "禁用分页"
     },
     "show-size-changer": {
       "value": "",
-      "description": "是否显示 `size` 切换器",
+      "description": "Whether or not to display the 'size' switcher",
       "default": "true",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否显示 `size` 切换器"
     },
     "show-quick-jumper": {
       "value": "",
-      "description": "是否可以快速跳转至某页",
+      "description": "Is it possible to quickly jump to a page?",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否可以快速跳转至某页"
     },
     "max-pager-count": {
       "value": "",
-      "description": "省略号间显示的按钮数量",
+      "description": "The number of buttons displayed between the ellipses",
       "default": "3",
-      "type": "number"
+      "type": "number",
+      "description_zh": "省略号间显示的按钮数量"
     },
     "size-option": {
       "value": "",
-      "description": "指定每页可以显示多少条",
+      "description": "Specifies how many bars can be displayed on each page",
       "default": "[10, 20, 50, 100]",
-      "type": "number[]"
+      "type": "number[]",
+      "description_zh": "指定每页可以显示多少条"
     },
     "show-total": {
       "value": "",
-      "description": "用于显示数据总量和当前数据顺序",
+      "description": "Used to display the total amount of data and the current data order",
       "default": "-",
-      "type": "function(total, range)"
+      "type": "function(total, range)",
+      "description_zh": "用于显示数据总量和当前数据顺序"
     }
   },
   "methods": [],
@@ -76,9 +91,11 @@
   "events": [
     {
       "name": "change",
-      "description": "current 或 `size` 改变后的回调",
-      "params": "current: number, size: number"
+      "description": "current or 'size'",
+      "params": "current: number, size: number",
+      "description_zh": "current 或 `size` 改变后的回调"
     }
   ],
-  "link": "https://varlet.gitee.io/varlet-ui/#/zh-CN/pagination"
+  "link": "https://varlet.gitee.io/varlet-ui/#/zh-CN/pagination",
+  "link_zh": "https://varlet.gitee.io/varlet-ui/#/zh-CN/pagination"
 }

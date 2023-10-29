@@ -3,66 +3,130 @@
   "props": {
     "block": {
       "value": "",
-      "description": "将宽度调整为父元素宽度的选项",
+      "description": "Option to adjust the width to the width of the parent element",
       "default": "无",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "将宽度调整为父元素宽度的选项"
     },
     "disabled": {
       "value": "",
-      "description": "是否禁用",
+      "description": "Whether to disable or not",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否禁用"
     },
     ":options": {
       "value": "",
-      "description": "数据化配置选项内容",
+      "description": "Data-based configuration options",
       "default": "[]",
-      "type": "string[] | number[] | SegmentedOption[]"
+      "type": "string[] | number[] | SegmentedOption[]",
+      "description_zh": "数据化配置选项内容"
     },
     "size": {
-      "value": ["large", "middle", "small"],
-      "description": "控件尺寸",
+      "value": [
+        "large",
+        "middle",
+        "small"
+      ],
+      "description": "Widget size",
       "default": "-",
-      "type": "large | middle | small"
+      "type": "large | middle | small",
+      "description_zh": "控件尺寸"
     },
     "value": {
       "value": "",
-      "description": "当前选中的值",
+      "description": "The currently selected value",
       "default": "",
-      "type": "string | number"
+      "type": "string | number",
+      "description_zh": "当前选中的值"
     },
     "label": {
       "value": "",
-      "description": "使用插槽自定义 label",
+      "description": "Use the slot to customize the label",
       "default": "",
-      "type": "v-slot:label=\"SegmentedBaseOption\""
+      "type": "v-slot:label=\"SegmentedBaseOption\"",
+      "description_zh": "使用插槽自定义 label"
     }
   },
   "methods": [],
   "events": [
     {
       "name": "change",
-      "description": "选项变化时的回调函数",
-      "params": "function(value: string | number)"
+      "description": "The callback function when the option changes",
+      "params": "function(value: string | number)",
+      "description_zh": "选项变化时的回调函数"
     }
   ],
   "typeDetail": {
     "SegmentedBaseOption": [
-      { "name": "value", "description": "", "type": "string | number" },
-      { "name": "disabled", "description": "", "type": "boolean", "optional": "true" },
-      { "name": "payload", "description": "payload more data", "type": "any", "optional": "true" },
-      { "name": "title", "description": " html `title` property for label", "type": "string", "optional": "true" },
-      { "name": "className", "description": "", "type": "string", "optional": "true" }
+      {
+        "name": "value",
+        "description": "",
+        "type": "string | number"
+      },
+      {
+        "name": "disabled",
+        "description": "",
+        "type": "boolean",
+        "optional": "true"
+      },
+      {
+        "name": "payload",
+        "description": "payload more data",
+        "type": "any",
+        "optional": "true"
+      },
+      {
+        "name": "title",
+        "description": " html `title` property for label",
+        "type": "string",
+        "optional": "true"
+      },
+      {
+        "name": "className",
+        "description": "",
+        "type": "string",
+        "optional": "true"
+      }
     ],
     "SegmentedOption": [
-      { "name": "label", "description": "", "type": "VueNode | ((option: SegmentedBaseOption) => VueNode)", "optional": "true" },
-      { "name": "value", "description": "", "type": "string | number" },
-      { "name": "disabled", "description": "", "type": "boolean", "optional": "true" },
-      { "name": "payload", "description": "payload more data", "type": "any", "optional": "true" },
-      { "name": "title", "description": " html `title` property for label", "type": "string", "optional": "true" },
-      { "name": "className", "description": "", "type": "string", "optional": "true" }
-
+      {
+        "name": "label",
+        "description": "",
+        "type": "VueNode | ((option: SegmentedBaseOption) => VueNode)",
+        "optional": "true"
+      },
+      {
+        "name": "value",
+        "description": "",
+        "type": "string | number"
+      },
+      {
+        "name": "disabled",
+        "description": "",
+        "type": "boolean",
+        "optional": "true"
+      },
+      {
+        "name": "payload",
+        "description": "payload more data",
+        "type": "any",
+        "optional": "true"
+      },
+      {
+        "name": "title",
+        "description": " html `title` property for label",
+        "type": "string",
+        "optional": "true"
+      },
+      {
+        "name": "className",
+        "description": "",
+        "type": "string",
+        "optional": "true"
+      }
     ]
   },
-  "link": "https://antdv.com/components/segmented-cn"
+  "link": "https://antdv.com/components/segmented-cn",
+  "link_zh": "https://antdv.com/components/segmented-cn"
 }

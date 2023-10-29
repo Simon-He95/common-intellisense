@@ -3,42 +3,48 @@
   "props": {
     "height": {
       "value": "",
-      "description": "走马灯的高度",
+      "description": "The height of the marquee",
       "default": "—",
-      "type": "string"
+      "type": "string",
+      "description_zh": "走马灯的高度"
     },
     "initial-index": {
       "value": "",
-      "description": "初始状态激活的幻灯片的索引，从 0 开始",
+      "description": "The index of the slides that are active in the initial state, starting at 0",
       "default": "—",
-      "type": "number"
+      "type": "number",
+      "description_zh": "初始状态激活的幻灯片的索引，从 0 开始"
     },
     "trigger": {
       "value": "",
-      "description": "指示器的触发方式",
+      "description": "How the indicator is triggered",
       "default": "click",
-      "type": "string"
+      "type": "string",
+      "description_zh": "指示器的触发方式"
     },
     "autoplay": {
       "value": "",
-      "description": "是否自动切换",
+      "description": "Whether or not to switch automatically",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否自动切换"
     },
     "interval": {
       "value": "",
-      "description": "自动切换的时间间隔，单位为毫秒",
+      "description": "The time interval between automatic switching, in milliseconds",
       "default": "—",
-      "type": "number"
+      "type": "number",
+      "description_zh": "自动切换的时间间隔，单位为毫秒"
     },
     "indicator-position": {
       "value": [
         "outside",
         "none"
       ],
-      "description": "指示器的位置",
+      "description": "The location of the indicator",
       "default": "outside | none",
-      "type": "string"
+      "type": "string",
+      "description_zh": "指示器的位置"
     },
     "arrow": {
       "value": [
@@ -46,43 +52,64 @@
         "hover",
         "never"
       ],
-      "description": "切换箭头的显示时机",
+      "description": "Toggles when the arrows are displayed",
       "default": "always | hover | never",
-      "type": "string"
+      "type": "string",
+      "description_zh": "切换箭头的显示时机"
     },
     "type": {
       "value": "",
-      "description": "走马灯的类型",
+      "description": "Types of marquees",
       "default": "card",
-      "type": "string"
+      "type": "string",
+      "description_zh": "走马灯的类型"
     },
     "loop": {
       "value": "",
-      "description": "是否循环显示",
+      "description": "Whether to cycle through the display",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否循环显示"
     },
     "direction": {
       "value": [
         "horizontal",
         "vertical"
       ],
-      "description": "走马灯展示的方向",
+      "description": "The direction of the marquee display",
       "default": "horizontal | vertical",
-      "type": "string"
+      "type": "string",
+      "description_zh": "走马灯展示的方向"
     }
   },
   "methods": [
-    { "name": "setActiveItem", "description": "手动切换幻灯片", "params": "需要切换的幻灯片的索引，从 0 开始；或相应 `el-carousel-item` 的 `name` 属性值" },
-    { "name": "prev", "description": "切换至上一张幻灯片", "params": "—" },
-    { "name": "next", "description": "切换至下一张幻灯片", "params": "—" }
+    {
+      "name": "setActiveItem",
+      "description": "Manually switch slides",
+      "params": "需要切换的幻灯片的索引，从 0 开始；或相应 `el-carousel-item` 的 `name` 属性值",
+      "description_zh": "手动切换幻灯片"
+    },
+    {
+      "name": "prev",
+      "description": "Switch to the previous slide",
+      "params": "—",
+      "description_zh": "切换至上一张幻灯片"
+    },
+    {
+      "name": "next",
+      "description": "Switch to the next slide",
+      "params": "—",
+      "description_zh": "切换至下一张幻灯片"
+    }
   ],
   "events": [
     {
       "name": "change",
-      "description": "幻灯片切换时触发",
-      "params": "目前激活的幻灯片的索引，原幻灯片的索引"
+      "description": "Triggered when the slide is switched",
+      "params": "目前激活的幻灯片的索引，原幻灯片的索引",
+      "description_zh": "幻灯片切换时触发"
     }
   ],
-  "link": "https://element.eleme.cn/#/zh-CN/component/carousel"
+  "link": "https://element.eleme.cn/#/zh-CN/component/carousel",
+  "link_zh": "https://element.eleme.cn/#/zh-CN/component/carousel"
 }

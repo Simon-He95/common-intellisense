@@ -3,65 +3,83 @@
   "props": {
     "container-style": {
       "value": "",
-      "description": "容器的样式",
+      "description": "The style of the container",
       "default": "undefined",
-      "type": "string | Object"
+      "type": "string | Object",
+      "description_zh": "容器的样式"
     },
     "max": {
       "value": "",
-      "description": "限制通知框显示的个数",
+      "description": "Limit the number of notifications that can be displayed",
       "default": "undefined",
-      "type": "number"
+      "type": "number",
+      "description_zh": "限制通知框显示的个数"
     },
     "placement": {
-      "value": ["top", "bottom", "top-right", "top-left", "bottom-left", "bottom-right"],
-      "description": "所有通知框显示的位置",
+      "value": [
+        "top",
+        "bottom",
+        "top-right",
+        "top-left",
+        "bottom-left",
+        "bottom-right"
+      ],
+      "description": "The location where all notification boxes are displayed",
       "default": "top-right",
-      "type": "top | bottom | top-right | top-left | bottom-left | bottom-right"
+      "type": "top | bottom | top-right | top-left | bottom-left | bottom-right",
+      "description_zh": "所有通知框显示的位置"
     },
     "scrollable": {
       "value": "",
-      "description": "通知是否可滚动，对于 `placement` 为 top 和 bottom 不生效",
+      "description": "Whether the notification is rollable or not, it does not take effect for 'placement' of top and bottom",
       "default": "true",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "通知是否可滚动，对于 `placement` 为 top 和 bottom 不生效"
     },
     "to": {
       "value": "",
-      "description": "Notification 容器节点的位置",
+      "description": "The location of the Notification container node",
       "default": "body",
-      "type": "string | HTMLElement"
+      "type": "string | HTMLElement",
+      "description_zh": "Notification 容器节点的位置"
     }
   },
   "methods": [
     {
       "name": "create",
-      "description": "创建通知框",
-      "params": "(option: NotificationOption) => NotificationReactive"
+      "description": "Create a notification box",
+      "params": "(option: NotificationOption) => NotificationReactive",
+      "description_zh": "创建通知框"
     },
     {
       "name": "destroyAll",
-      "description": "销毁所有弹出的通知框",
-      "params": "() => void"
+      "description": "Destroy all pop-up notification boxes",
+      "params": "() => void",
+      "description_zh": "销毁所有弹出的通知框"
     },
     {
       "name": "error",
-      "description": "调用 `error` 类型的通知框",
-      "params": "(option: NotificationOption) => NotificationReactive"
+      "description": "Call the notification box of type 'error'",
+      "params": "(option: NotificationOption) => NotificationReactive",
+      "description_zh": "调用 `error` 类型的通知框"
     },
     {
       "name": "info",
-      "description": "调用 `info` 类型的通知框",
-      "params": "(option: NotificationOption) => NotificationReactive"
+      "description": "Call the notification box of type 'info'",
+      "params": "(option: NotificationOption) => NotificationReactive",
+      "description_zh": "调用 `info` 类型的通知框"
     },
     {
       "name": "success",
-      "description": "调用 `success` 类型的通知框",
-      "params": "(option: NotificationOption) => NotificationReactive"
+      "description": "Call the notification box of type 'success'",
+      "params": "(option: NotificationOption) => NotificationReactive",
+      "description_zh": "调用 `success` 类型的通知框"
     },
     {
       "name": "warning",
-      "description": "调用 `warning` 类型的通知框",
-      "params": "(option: NotificationOption) => NotificationReactive"
+      "description": "Call the notification box of type 'warning'",
+      "params": "(option: NotificationOption) => NotificationReactive",
+      "description_zh": "调用 `warning` 类型的通知框"
     }
   ],
   "typeDetail": {
@@ -134,5 +152,6 @@
     ]
   },
   "events": [],
-  "link": "https://www.naiveui.com/zh-CN/dark/components/notification"
+  "link": "https://www.naiveui.com/zh-CN/dark/components/notification",
+  "link_zh": "https://www.naiveui.com/zh-CN/dark/components/notification"
 }

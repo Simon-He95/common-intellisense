@@ -3,134 +3,160 @@
   "props": {
     "dataSource": {
       "value": "",
-      "description": "数据源，其中的数据将会被渲染到左边一栏中，`targetKeys` 中指定的除外",
+      "description": "Data source, where the data will be rendered to the left column, except as specified in 'targetKeys'",
       "default": "[]",
-      "type": "[RecordType extends TransferItem = TransferItem][]"
+      "type": "[RecordType extends TransferItem = TransferItem][]",
+      "description_zh": "数据源，其中的数据将会被渲染到左边一栏中，`targetKeys` 中指定的除外"
     },
     "disabled": {
       "value": "",
-      "description": "是否禁用",
+      "description": "Whether to disable or not",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否禁用"
     },
     "filterOption": {
       "value": "",
-      "description": "根据搜索内容进行筛选，接收 `inputValue` `option` 两个参数，当 `option` 符合筛选条件时，应返回 true，反之则返回 false",
+      "description": "Filter according to the search content, receive two parameters, 'inputValue' and 'option', when 'option' meets the filter conditions, it should return true, otherwise it should return false",
       "default": "-",
-      "type": "(inputValue, option): boolean"
+      "type": "(inputValue, option): boolean",
+      "description_zh": "根据搜索内容进行筛选，接收 `inputValue` `option` 两个参数，当 `option` 符合筛选条件时，应返回 true，反之则返回 false"
     },
     "footer": {
       "value": "",
-      "description": "底部渲染函数",
+      "description": "Bottom render function",
       "default": "-",
-      "type": "(props, { direction }) => ReactNode"
+      "type": "(props, { direction }) => ReactNode",
+      "description_zh": "底部渲染函数"
     },
     "listStyle": {
       "value": "",
-      "description": "两个穿梭框的自定义样式",
+      "description": "Custom styles for two shuttle boxes",
       "default": "-",
-      "type": "object|({direction: `left` | `right`}) => object"
+      "type": "object|({direction: `left` | `right`}) => object",
+      "description_zh": "两个穿梭框的自定义样式"
     },
     "locale": {
       "value": "",
-      "description": "各种语言",
+      "description": "Various languages",
       "default": "{ itemUnit: '', itemsUnit: '', searchPlaceholder: `请输入搜索内容` }",
-      "type": "{ itemUnit: string; itemsUnit: string; searchPlaceholder: string; notFoundContent: ReactNode | ReactNode[]; }"
+      "type": "{ itemUnit: string; itemsUnit: string; searchPlaceholder: string; notFoundContent: ReactNode | ReactNode[]; }",
+      "description_zh": "各种语言"
     },
     "operations": {
       "value": "",
-      "description": "操作文案集合，顺序从上至下",
+      "description": "Manipulate collections of copy, in order from top to bottom",
       "default": "[`>`, `<`]",
-      "type": "string[]"
+      "type": "string[]",
+      "description_zh": "操作文案集合，顺序从上至下"
     },
     "operationStyle": {
       "value": "",
-      "description": "操作栏的自定义样式",
+      "description": "Custom style for the action bar",
       "default": "-",
-      "type": "CSSProperties"
+      "type": "CSSProperties",
+      "description_zh": "操作栏的自定义样式"
     },
     "pagination": {
       "value": "",
-      "description": "使用分页样式，自定义渲染列表下无效",
+      "description": "Using the pagination style, the custom render list is invalid",
       "default": "false",
-      "type": "boolean | { pageSize: number, simple: boolean, showSizeChanger?: boolean, showLessItems?: boolean }"
+      "type": "boolean | { pageSize: number, simple: boolean, showSizeChanger?: boolean, showLessItems?: boolean }",
+      "description_zh": "使用分页样式，自定义渲染列表下无效"
     },
     "render": {
       "value": "",
-      "description": "每行数据渲染函数，该函数的入参为 `dataSource` 中的项，返回值为 ReactElement。或者返回一个普通对象，其中 `label` 字段为 ReactElement，`value` 字段为 title",
+      "description": "Each row of data renders a function with an input parameter of 'dataSource' and a return value of ReactElement. Or return a normal object where the 'label' field is ReactElement and the 'value' field is title",
       "default": "-",
-      "type": "(record) => ReactNode"
+      "type": "(record) => ReactNode",
+      "description_zh": "每行数据渲染函数，该函数的入参为 `dataSource` 中的项，返回值为 ReactElement。或者返回一个普通对象，其中 `label` 字段为 ReactElement，`value` 字段为 title"
     },
     "selectAllLabels": {
       "value": "",
-      "description": "自定义顶部多选框标题的集合",
+      "description": "Customize the collection of top checkbox titles",
       "default": "-",
-      "type": "(ReactNode | (info: { selectedCount: number, totalCount: number }) => ReactNode)[]"
+      "type": "(ReactNode | (info: { selectedCount: number, totalCount: number }) => ReactNode)[]",
+      "description_zh": "自定义顶部多选框标题的集合"
     },
     "selectedKeys": {
       "value": "",
-      "description": "设置哪些项应该被选中",
+      "description": "Sets which items should be selected",
       "default": "[]",
-      "type": "string[]"
+      "type": "string[]",
+      "description_zh": "设置哪些项应该被选中"
     },
     "showSearch": {
       "value": "",
-      "description": "是否显示搜索框",
+      "description": "Whether or not to display a search box",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否显示搜索框"
     },
     "showSelectAll": {
       "value": "",
-      "description": "是否展示全选勾选框",
+      "description": "Whether to display the All check box",
       "default": "true",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否展示全选勾选框"
     },
     "status": {
-      "value": ["error", "warning"],
-      "description": "设置校验状态",
+      "value": [
+        "error",
+        "warning"
+      ],
+      "description": "Set the verification status",
       "default": "-",
-      "type": "'error' | 'warning'"
+      "type": "'error' | 'warning'",
+      "description_zh": "设置校验状态"
     },
     "targetKeys": {
       "value": "",
-      "description": "显示在右侧框数据的 key 集合",
+      "description": "A collection of keys that are displayed in the right-hand box for the data",
       "default": "[]",
-      "type": "string[]"
+      "type": "string[]",
+      "description_zh": "显示在右侧框数据的 key 集合"
     },
     "titles": {
       "value": "",
-      "description": "标题集合，顺序从左至右",
+      "description": "A collection of titles, in order from left to right",
       "default": "-",
-      "type": "ReactNode[]"
+      "type": "ReactNode[]",
+      "description_zh": "标题集合，顺序从左至右"
     }
   },
   "methods": [],
   "events": [
     {
       "name": "oneWay",
-      "description": "展示为单向样式",
-      "params": "boolean"
+      "description": "The presentation is in a one-way style",
+      "params": "boolean",
+      "description_zh": "展示为单向样式"
     },
     {
       "name": "onChange",
-      "description": "选项在两栏之间转移时的回调函数",
-      "params": "(targetKeys, direction, moveKeys): void"
+      "description": "option to transfer the callback function when moving between the two columns",
+      "params": "(targetKeys, direction, moveKeys): void",
+      "description_zh": "选项在两栏之间转移时的回调函数"
     },
     {
       "name": "onScroll",
-      "description": "选项列表滚动时的回调函数",
-      "params": "(direction, event): void"
+      "description": "Callback function when the picklist scrolls",
+      "params": "(direction, event): void",
+      "description_zh": "选项列表滚动时的回调函数"
     },
     {
       "name": "onSearch",
-      "description": "搜索框内容时改变时的回调函数",
-      "params": "(direction: `left` | right, value: string): void"
+      "description": "A callback function when the contents of the search box are changed",
+      "params": "(direction: `left` | right, value: string): void",
+      "description_zh": "搜索框内容时改变时的回调函数"
     },
     {
       "name": "onSelectChange",
-      "description": "选中项发生改变时的回调函数",
-      "params": "(sourceSelectedKeys, targetSelectedKeys): void"
+      "description": "The callback function when the selected item changes",
+      "params": "(sourceSelectedKeys, targetSelectedKeys): void",
+      "description_zh": "选中项发生改变时的回调函数"
     }
   ],
-  "link": "https://ant.design/components//transfer"
+  "link": "https://ant.design/components//transfer",
+  "link_zh": "https://ant.design/components//transfer"
 }

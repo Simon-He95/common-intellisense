@@ -5,27 +5,32 @@
     {
       "name": "onClose",
       "description": "Callback fired when the select popover is closed.",
-      "params": "`() => void`"
+      "params": "`() => void`",
+      "description_zh": "关闭选择弹出框时触发回调。"
     },
     {
       "name": "onOpenChange",
       "description": "Callback fired when the select popover is opened or closed.",
-      "params": "`(isOpen: boolean) => void`"
+      "params": "`(isOpen: boolean) => void`",
+      "description_zh": "打开或关闭选择弹出框时触发回调。"
     },
     {
       "name": "onSelectionChange",
       "description": "Callback fired when the selected keys change.",
-      "params": "`(keys: React.Key[]) => void`"
+      "params": "`(keys: React.Key[]) => void`",
+      "description_zh": "当所选键更改时触发回调。"
     },
     {
       "name": "onChange",
       "description": "Native select change event, fired when the selected value changes.",
-      "params": "`React.ChangeEvent<HTMLSelectElement>`"
+      "params": "`React.ChangeEvent<HTMLSelectElement>`",
+      "description_zh": "本机选择更改事件，在所选值更改时触发。"
     },
     {
       "name": "renderValue",
       "description": "Function to render the value of the select. It renders the selected item by default.",
-      "params": "[RenderValueFunction](#render-value-function)"
+      "params": "[RenderValueFunction](#render-value-function)",
+      "description_zh": "用于呈现 select 值的函数。默认情况下，它呈现所选项目。"
     }
   ],
   "props": {
@@ -33,224 +38,262 @@
       "type": "`ReactNode[]`",
       "default": "-",
       "description": "The children to render. Usually a list of `SelectItem` and `SelectSection` elements.",
-      "value": ""
+      "value": "",
+      "description_zh": "要呈现的子项。通常是“SelectItem”和“SelectSection”元素的列表。"
     },
     "items": {
       "type": "[`Iterable<T>`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols)",
       "default": "-",
       "description": "Item objects in the select. (dynamic)",
-      "value": ""
+      "value": "",
+      "description_zh": "select 中的 Item 对象。（动态）"
     },
     "selectionMode": {
       "type": "`single` | `multiple`",
       "default": "-",
       "description": "The type of selection that is allowed in the collection.",
-      "value": ""
+      "value": "",
+      "description_zh": "集合中允许的选择类型。"
     },
     "selectedKeys": {
       "type": "`all` | `React.Key[]`",
       "default": "-",
       "description": "The currently selected keys in the collection (controlled).",
-      "value": ""
+      "value": "",
+      "description_zh": "集合中当前选定的键（受控）。"
     },
     "disabledKeys": {
       "type": "`all` | `React.Key[]`",
       "default": "-",
       "description": "The item keys that are disabled. These items cannot be selected, focused, or otherwise interacted with.",
-      "value": ""
+      "value": "",
+      "description_zh": "已禁用的项目键。无法选择、聚焦这些项目或以其他方式与之交互。"
     },
     "defaultSelectedKeys": {
       "type": "`all` | `React.Key[]`",
       "default": "-",
       "description": "The initial selected keys in the collection (uncontrolled).",
-      "value": ""
+      "value": "",
+      "description_zh": "集合中初始选择的键（不受控制）。"
     },
     "variant": {
       "type": "`flat` | `bordered` | `faded` | `underlined`",
       "default": "`flat`",
       "description": "The variant of the select.",
-      "value": ""
+      "value": "",
+      "description_zh": "select 的变体。"
     },
     "color": {
       "type": "`default` | `primary` | `secondary` | `success` | `warning` | `danger`",
       "default": "`default`",
       "description": "The color of the select.",
-      "value": ""
+      "value": "",
+      "description_zh": "选择的颜色。"
     },
     "size": {
       "type": "`sm` | `md` | `lg`",
       "default": "`md`",
       "description": "The size of the select.",
-      "value": ""
+      "value": "",
+      "description_zh": "选择的大小。"
     },
     "radius": {
       "type": "`none` | `sm` | `md` | `lg` | `full`",
       "default": "-",
       "description": "The radius of the select.",
-      "value": ""
+      "value": "",
+      "description_zh": "选择的半径。"
     },
     "placeholder": {
       "type": "`string`",
       "default": "`Select an option`",
       "description": "The placeholder of the select.",
-      "value": ""
+      "value": "",
+      "description_zh": "select 的占位符。"
     },
     "labelPlacement": {
       "type": "`inside` | `outside` | `outside-left`",
       "default": "`inside`",
       "description": "The position of the label.",
-      "value": ""
+      "value": "",
+      "description_zh": "标签的位置。"
     },
     "label": {
       "type": "`ReactNode`",
       "default": "-",
       "description": "The content to display as the label.",
-      "value": ""
+      "value": "",
+      "description_zh": "要显示为标签的内容。"
     },
     "description": {
       "type": "`ReactNode`",
       "default": "-",
       "description": "A description for the select. Provides a hint such as specific requirements for what to choose.",
-      "value": ""
+      "value": "",
+      "description_zh": "选择的说明。提供提示，例如选择内容的具体要求。"
     },
     "errorMessage": {
       "type": "`ReactNode`",
       "default": "-",
       "description": "An error message for the select.",
-      "value": ""
+      "value": "",
+      "description_zh": "选择的错误消息。"
     },
     "startContent": {
       "type": "`ReactNode`",
       "default": "-",
       "description": "Element to be rendered in the left side of the select.",
-      "value": ""
+      "value": "",
+      "description_zh": "要在 select 的左侧呈现的元素。"
     },
     "endContent": {
       "type": "`ReactNode`",
       "default": "-",
       "description": "Element to be rendered in the right side of the select.",
-      "value": ""
+      "value": "",
+      "description_zh": "要在选择的右侧呈现的元素。"
     },
     "selectorIcon": {
       "type": "`ReactNode`",
       "default": "-",
       "description": "Element to be rendered as the selector icon.",
-      "value": ""
+      "value": "",
+      "description_zh": "要呈现为选择器图标的元素。"
     },
     "scrollRef": {
       "type": "`React.RefObject<HTMLElement>`",
       "default": "-",
       "description": "A ref to the scrollable element.",
-      "value": ""
+      "value": "",
+      "description_zh": "对可滚动元素的引用。"
     },
     "spinnerRef": {
       "type": "`React.RefObject<HTMLElement>`",
       "default": "-",
       "description": "A ref to the spinner element.",
-      "value": ""
+      "value": "",
+      "description_zh": "微调器元素的引用。"
     },
     "fullWidth": {
       "type": "`boolean`",
       "default": "`true`",
       "description": "Whether the select should take up the width of its parent.",
-      "value": ""
+      "value": "",
+      "description_zh": "选择是否应占用其父项的宽度。"
     },
     "isOpen": {
       "type": "`boolean`",
       "default": "-",
       "description": "Whether the select is open by default (controlled).",
-      "value": ""
+      "value": "",
+      "description_zh": "默认情况下是否打开选择（受控）。"
     },
     "defaultOpen": {
       "type": "`boolean`",
       "default": "-",
       "description": "Whether the select is open by default (uncontrolled).",
-      "value": ""
+      "value": "",
+      "description_zh": "默认情况下是否打开选择（不受控制）。"
     },
     "isRequired": {
       "type": "`boolean`",
       "default": "`false`",
       "description": "Whether user select is required on the select before form submission.",
-      "value": ""
+      "value": "",
+      "description_zh": "在表单提交之前选择时是否需要用户选择。"
     },
     "isDisabled": {
       "type": "`boolean`",
       "default": "`false`",
       "description": "Whether the select is disabled.",
-      "value": ""
+      "value": "",
+      "description_zh": "是否禁用选择。"
     },
     "isMultiline": {
       "type": "`boolean`",
       "default": "`false`",
       "description": "Whether the select should allow multiple lines of text.",
-      "value": ""
+      "value": "",
+      "description_zh": "选择是否应允许多行文本。"
     },
     "isInvalid": {
       "type": "`boolean`",
       "default": "`false`",
       "description": "Whether the select is invalid.",
-      "value": ""
+      "value": "",
+      "description_zh": "选择是否无效。"
     },
     "validationState": {
       "type": "`valid` | `invalid`",
       "default": "-",
       "description": "Whether the select should display its \"valid\" or \"invalid\" visual styling. (**Deprecated**) use **isInvalid** instead.",
-      "value": ""
+      "value": "",
+      "description_zh": "选择项是否应显示其“有效”或“无效”的视觉样式。（**已弃用**）请改用 **isInvalid**。"
     },
     "showScrollIndicators": {
       "type": "`boolean`",
       "default": "`true`",
       "description": "Whether the select should show scroll indicators when the listbox is scrollable.",
-      "value": ""
+      "value": "",
+      "description_zh": "当列表框可滚动时，选择是否应显示滚动指示器。"
     },
     "autoFocus": {
       "type": "`boolean`",
       "default": "`false`",
       "description": "Whether the select should be focused on the first mount.",
-      "value": ""
+      "value": "",
+      "description_zh": "是否应将选择集中在第一个挂载上。"
     },
     "disallowEmptySelection": {
       "type": "`boolean`",
       "default": "`false`",
       "description": "Whether the collection allows empty selection.",
-      "value": ""
+      "value": "",
+      "description_zh": "集合是否允许空选择。"
     },
     "disableAnimation": {
       "type": "`boolean`",
       "default": "`true`",
       "description": "Whether the select should be animated.",
-      "value": ""
+      "value": "",
+      "description_zh": "是否应对选择进行动画处理。"
     },
     "disableSelectionIconRotation": {
       "type": "`boolean`",
       "default": "`false`",
       "description": "Whether the select should disable the rotation of the selector icon.",
-      "value": ""
+      "value": "",
+      "description_zh": "选择是否应禁用选择器图标的旋转。"
     },
     "popoverProps": {
       "type": "[PopoverProps](/docs/components/popover#api)",
       "default": "-",
       "description": "Props to be passed to the popover component.",
-      "value": ""
+      "value": "",
+      "description_zh": "要传递给 popover 组件的 props。"
     },
     "listboxProps": {
       "type": "[ListboxProps](/docs/components/listbox#api)",
       "default": "-",
       "description": "Props to be passed to the listbox component.",
-      "value": ""
+      "value": "",
+      "description_zh": "要传递给列表框组件的 props。"
     },
     "scrollShadowProps": {
       "type": "[ScrollShadowProps](/docs/components/scroll-shadow#api)",
       "default": "-",
       "description": "Props to be passed to the scroll shadow component.",
-      "value": ""
+      "value": "",
+      "description_zh": "要传递给滚动阴影组件的 props。"
     },
     "classNames": {
       "type": "`Record<\"base\"｜ \"label\"｜ \"trigger\"｜ \"mainWrapper\" ｜ \"innerWrapper\"｜ \"selectorIcon\" ｜ \"value\" ｜ \"listboxWrapper\"｜ \"listbox\" ｜ \"popover\" ｜ \"helperWrapper\" ｜ \"description\" ｜ \"errorMessage\", string>`",
       "default": "-",
       "description": "Allows to set custom class names for the dropdown item slots.",
-      "value": ""
+      "value": "",
+      "description_zh": "允许为下拉项槽设置自定义类名。"
     }
   },
-  "link": "https://nextui.org/docs/components/select"
+  "link": "https://nextui.org/docs/components/select",
+  "link_zh": "https://nextui.org/docs/components/select"
 }

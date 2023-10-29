@@ -3,154 +3,187 @@
   "props": {
     "bordered": {
       "value": "",
-      "description": "是否展示外边框和列边框",
+      "description": "Whether to display outer borders and column borders",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否展示外边框和列边框"
     },
     "columns": {
       "value": "",
-      "description": "表格列的配置描述，具体项见下表",
+      "description": "The following table describes the configuration of the table columns",
       "default": "-",
-      "type": "[ColumnsType][]"
+      "type": "[ColumnsType][]",
+      "description_zh": "表格列的配置描述，具体项见下表"
     },
     "components": {
       "value": "",
-      "description": "覆盖默认的 table 元素",
+      "description": "Override the default table element",
       "default": "-",
-      "type": "[TableComponents]"
+      "type": "[TableComponents]",
+      "description_zh": "覆盖默认的 table 元素"
     },
     "dataSource": {
       "value": "",
-      "description": "数据数组",
+      "description": "Array of data",
       "default": "-",
-      "type": "object[]"
+      "type": "object[]",
+      "description_zh": "数据数组"
     },
     "expandable": {
       "value": "",
-      "description": "配置展开属性",
+      "description": "Configure the expansion properties",
       "default": "-",
-      "type": "[expandable]"
+      "type": "[expandable]",
+      "description_zh": "配置展开属性"
     },
     "footer": {
       "value": "",
-      "description": "表格尾部",
+      "description": "Tail of table",
       "default": "-",
-      "type": "function(currentPageData)"
+      "type": "function(currentPageData)",
+      "description_zh": "表格尾部"
     },
     "getPopupContainer": {
       "value": "",
-      "description": "设置表格内各类浮层的渲染节点，如筛选菜单",
+      "description": "Set the rendering nodes for various types of floating layers in the table, such as the filter menu",
       "default": "() => TableHtmlElement",
-      "type": "(triggerNode) => HTMLElement"
+      "type": "(triggerNode) => HTMLElement",
+      "description_zh": "设置表格内各类浮层的渲染节点，如筛选菜单"
     },
     "loading": {
       "value": "",
-      "description": "页面是否加载中",
+      "description": "Whether the page is loading",
       "default": "false",
-      "type": "boolean | [Spin Props]"
+      "type": "boolean | [Spin Props]",
+      "description_zh": "页面是否加载中"
     },
     "locale": {
       "value": "[默认值]",
-      "description": "默认文案设置，目前包括排序、过滤、空数据文案",
+      "description": "The default copywriting settings currently include sorting, filtering, and empty data copy",
       "default": "[默认值]",
-      "type": "object"
+      "type": "object",
+      "description_zh": "默认文案设置，目前包括排序、过滤、空数据文案"
     },
     "pagination": {
       "value": "",
-      "description": "分页器，设为 false 时不展示和进行分页",
+      "description": "Paginer, which is set to false does not show and pagination",
       "default": "-",
-      "type": "object | false"
+      "type": "object | false",
+      "description_zh": "分页器，设为 false 时不展示和进行分页"
     },
     "rowClassName": {
       "value": "",
-      "description": "表格行的类名",
+      "description": "The class name of the table row",
       "default": "-",
-      "type": "function(record, index): string"
+      "type": "function(record, index): string",
+      "description_zh": "表格行的类名"
     },
     "rowKey": {
       "value": "",
-      "description": "表格行 key 的取值，可以是字符串或一个函数",
+      "description": "The value of the table row key can be a string or a function",
       "default": "key",
-      "type": "string | function(record): string"
+      "type": "string | function(record): string",
+      "description_zh": "表格行 key 的取值，可以是字符串或一个函数"
     },
     "rowSelection": {
       "value": "",
-      "description": "表格行是否可选择，[配置项]",
+      "description": "Whether table rows can be selected, [Config]",
       "default": "-",
-      "type": "object"
+      "type": "object",
+      "description_zh": "表格行是否可选择，[配置项]"
     },
     "scroll": {
       "value": "",
-      "description": "表格是否可滚动，也可以指定滚动区域的宽、高",
+      "description": "Whether the table is scrollable or not, you can also specify the width and height of the scrolling area",
       "default": "-",
-      "type": "object"
+      "type": "object",
+      "description_zh": "表格是否可滚动，也可以指定滚动区域的宽、高"
     },
     "showHeader": {
       "value": "",
-      "description": "是否显示表头",
+      "description": "Whether to display the header",
       "default": "true",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否显示表头"
     },
     "showSorterTooltip": {
       "value": "",
-      "description": "表头是否显示下一次排序的 tooltip 提示。当参数类型为对象时，将被设置为 Tooltip 的属性",
+      "description": "Whether the header displays a tooltip hint for the next sort. When the parameter type is Object, it will be set as a property of the Tooltip",
       "default": "true",
-      "type": "boolean | [Tooltip props]"
+      "type": "boolean | [Tooltip props]",
+      "description_zh": "表头是否显示下一次排序的 tooltip 提示。当参数类型为对象时，将被设置为 Tooltip 的属性"
     },
     "size": {
-      "value": ["large", "middle", "small"],
-      "description": "表格大小",
+      "value": [
+        "large",
+        "middle",
+        "small"
+      ],
+      "description": "Table size",
       "default": "large",
-      "type": "large | middle | small"
+      "type": "large | middle | small",
+      "description_zh": "表格大小"
     },
     "sortDirections": {
       "value": "",
-      "description": "支持的排序方式，取值为 `ascend` descend",
+      "description": "The supported sorting method can be 'ascend' descend",
       "default": "[ascend, descend]",
-      "type": "Array"
+      "type": "Array",
+      "description_zh": "支持的排序方式，取值为 `ascend` descend"
     },
     "sticky": {
       "value": "",
-      "description": "设置粘性头部和滚动条",
+      "description": "Set the sticky head and scrollbar",
       "default": "-",
-      "type": "boolean | `{offsetHeader?: number, offsetScroll?: number, getContainer?: () => HTMLElement}`"
+      "type": "boolean | `{offsetHeader?: number, offsetScroll?: number, getContainer?: () => HTMLElement}`",
+      "description_zh": "设置粘性头部和滚动条"
     },
     "summary": {
       "value": "",
-      "description": "总结栏",
+      "description": "Summary bar",
       "default": "-",
-      "type": "(currentData) => ReactNode"
+      "type": "(currentData) => ReactNode",
+      "description_zh": "总结栏"
     },
     "tableLayout": {
-      "value": ["无 ,固定表头", "列或使用了 `column.ellipsis` 时，默认值为 fixed"],
-      "description": "表格元素的 [table-layout](https://developer.mozilla.org/zh-CN/docs/Web/CSS/table-layout) 属性，设为 `fixed` 表示内容不会影响列的布局",
+      "value": [
+        "无 ,固定表头",
+        "列或使用了 `column.ellipsis` 时，默认值为 fixed"
+      ],
+      "description": "The [table-layout](https://developer.mozilla.org/zh-CN/docs/Web/CSS/table-layout) property of the table element, set to 'fixed' means that the content does not affect the layout of the column",
       "default": "无<hr | >固定表头 | 列或使用了 `column.ellipsis` 时，默认值为 fixed",
-      "type": "- | auto | fixed"
+      "type": "- | auto | fixed",
+      "description_zh": "表格元素的 [table-layout](https://developer.mozilla.org/zh-CN/docs/Web/CSS/table-layout) 属性，设为 `fixed` 表示内容不会影响列的布局"
     },
     "title": {
       "value": "",
-      "description": "表格标题",
+      "description": "Table title",
       "default": "-",
-      "type": "function(currentPageData)"
+      "type": "function(currentPageData)",
+      "description_zh": "表格标题"
     }
   },
   "methods": [],
   "events": [
     {
       "name": "onChange",
-      "description": "分页、排序、筛选变化时触发",
-      "params": "function(pagination, filters, sorter, extra: { currentDataSource: [], action: `paginate` | sort | `filter` })"
+      "description": "Triggered when there are changes in pagination, sorting, and filtering",
+      "params": "function(pagination, filters, sorter, extra: { currentDataSource: [], action: `paginate` | sort | `filter` })",
+      "description_zh": "分页、排序、筛选变化时触发"
     },
     {
       "name": "onHeaderRow",
-      "description": "设置头部行属性",
-      "params": "function(columns, index)"
+      "description": "Set the header row properties",
+      "params": "function(columns, index)",
+      "description_zh": "设置头部行属性"
     },
     {
       "name": "onRow",
-      "description": "设置行属性",
-      "params": "function(record, index)"
+      "description": "Set the row properties",
+      "params": "function(record, index)",
+      "description_zh": "设置行属性"
     }
   ],
-  "link": "https://ant.design/components//table"
+  "link": "https://ant.design/components//table",
+  "link_zh": "https://ant.design/components//table"
 }

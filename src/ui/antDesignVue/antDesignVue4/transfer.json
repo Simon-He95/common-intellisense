@@ -3,144 +3,194 @@
   "props": {
     "dataSource": {
       "value": "",
-      "description": "数据源，其中的数据将会被渲染到左边一栏中，`targetKeys` 中指定的除外。",
+      "description": "Data source, where the data will be rendered to the left column, except as specified in 'targetKeys'.",
       "default": "\\[]",
-      "type": "\\[{key: string.isRequired,title: string.isRequired,description: string,disabled: bool}]\\[]"
+      "type": "\\[{key: string.isRequired,title: string.isRequired,description: string,disabled: bool}]\\[]",
+      "description_zh": "数据源，其中的数据将会被渲染到左边一栏中，`targetKeys` 中指定的除外。"
     },
     "disabled": {
       "value": "",
-      "description": "是否禁用",
+      "description": "Whether to disable or not",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否禁用"
     },
     "filterOption": {
       "value": "",
-      "description": "接收 `inputValue` `option` 两个参数，当 `option` 符合筛选条件时，应返回 `true`，反之则返回 `false`。",
+      "description": "Receive two parameters, 'inputValue' and 'option', when 'option' meets the filter conditions, it should return 'true', otherwise it should return 'false'.",
       "default": "",
-      "type": "(inputValue, option): boolean"
+      "type": "(inputValue, option): boolean",
+      "description_zh": "接收 `inputValue` `option` 两个参数，当 `option` 符合筛选条件时，应返回 `true`，反之则返回 `false`。"
     },
     "footer": {
       "value": "",
-      "description": "可以设置为一个 作用域插槽",
+      "description": "Can be set to a scoped slot",
       "default": "",
-      "type": "slot=\"footer\" slot-scope=\"props\""
+      "type": "slot=\"footer\" slot-scope=\"props\"",
+      "description_zh": "可以设置为一个 作用域插槽"
     },
     "listStyle": {
       "value": "",
-      "description": "两个穿梭框的自定义样式",
+      "description": "Custom styles for two shuttle boxes",
       "default": "",
-      "type": "CSSProperties"
+      "type": "CSSProperties",
+      "description_zh": "两个穿梭框的自定义样式"
     },
     "locale": {
       "value": "",
-      "description": "各种语言",
+      "description": "Various languages",
       "default": "`{ itemUnit: '项', itemsUnit: '项', notFoundContent: '列表为空', searchPlaceholder: '请输入搜索内容' }`",
-      "type": "object"
+      "type": "object",
+      "description_zh": "各种语言"
     },
     "operations": {
       "value": "",
-      "description": "操作文案集合，顺序从上至下",
+      "description": "Manipulate collections of copy, in order from top to bottom",
       "default": "\\['>', '<']",
-      "type": "string\\[]"
+      "type": "string\\[]",
+      "description_zh": "操作文案集合，顺序从上至下"
     },
     "operationStyle": {
       "value": "",
-      "description": "操作栏的自定义样式",
+      "description": "Custom style for the action bar",
       "default": "-",
-      "type": "CSSProperties"
+      "type": "CSSProperties",
+      "description_zh": "操作栏的自定义样式"
     },
     "pagination": {
       "value": "",
-      "description": "使用分页样式，自定义渲染列表下无效",
+      "description": "Using the pagination style, the custom render list is invalid",
       "default": "flase",
-      "type": "boolean | { pageSize: number, simple: boolean, showSizeChanger?: boolean, showLessItems?: boolean }"
+      "type": "boolean | { pageSize: number, simple: boolean, showSizeChanger?: boolean, showLessItems?: boolean }",
+      "description_zh": "使用分页样式，自定义渲染列表下无效"
     },
     "render": {
       "value": "",
-      "description": "每行数据渲染函数，该函数的入参为 `dataSource` 中的项，返回值为 element。或者返回一个普通对象，其中 `label` 字段为 element，`value` 字段为 title",
+      "description": "Each row of data renders a function with an input parameter of 'dataSource' and a return value of element. Or return a normal object where the 'label' field is element and the 'value' field is title",
       "default": "",
-      "type": "Function(record)| slot"
+      "type": "Function(record)| slot",
+      "description_zh": "每行数据渲染函数，该函数的入参为 `dataSource` 中的项，返回值为 element。或者返回一个普通对象，其中 `label` 字段为 element，`value` 字段为 title"
     },
     "selectAllLabels": {
       "value": "",
-      "description": "自定义顶部多选框标题的集合",
+      "description": "Customize the collection of top checkbox titles",
       "default": "-",
-      "type": "VueNode | ((info: { selectedCount: number; totalCount: number }) => VueNode);"
+      "type": "VueNode | ((info: { selectedCount: number; totalCount: number }) => VueNode);",
+      "description_zh": "自定义顶部多选框标题的集合"
     },
     "selectedKeys(v-model)": {
       "value": "",
-      "description": "设置哪些项应该被选中",
+      "description": "Sets which items should be selected",
       "default": "\\[]",
-      "type": "string\\[]"
+      "type": "string\\[]",
+      "description_zh": "设置哪些项应该被选中"
     },
     "showSearch": {
       "value": "",
-      "description": "是否显示搜索框",
+      "description": "Whether or not to display a search box",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否显示搜索框"
     },
     "showSelectAll": {
       "value": "",
-      "description": "是否展示全选勾选框",
+      "description": "Whether to display the All check box",
       "default": "true",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否展示全选勾选框"
     },
     "status": {
-      "value": ["error", "warning"],
-      "description": "设置校验状态",
+      "value": [
+        "error",
+        "warning"
+      ],
+      "description": "Set the verification status",
       "default": "-",
-      "type": "'error' | 'warning'"
+      "type": "'error' | 'warning'",
+      "description_zh": "设置校验状态"
     },
     "targetKeys(v-model)": {
       "value": "",
-      "description": "显示在右侧框数据的 key 集合",
+      "description": "A collection of keys that are displayed in the right-hand box for the data",
       "default": "\\[]",
-      "type": "string\\[]"
+      "type": "string\\[]",
+      "description_zh": "显示在右侧框数据的 key 集合"
     },
     "titles": {
       "value": "",
-      "description": "标题集合，顺序从左至右",
+      "description": "A collection of titles, in order from left to right",
       "default": "\\['', '']",
-      "type": "string\\[]"
+      "type": "string\\[]",
+      "description_zh": "标题集合，顺序从左至右"
     }
   },
   "methods": [],
   "events": [
     {
       "name": "oneWay",
-      "description": "展示为单向样式",
-      "params": "boolean"
+      "description": "The presentation is in a one-way style",
+      "params": "boolean",
+      "description_zh": "展示为单向样式"
     },
     {
       "name": "change",
-      "description": "选项在两栏之间转移时的回调函数",
-      "params": "(targetKeys, direction, moveKeys): void"
+      "description": "option to transfer the callback function when moving between the two columns",
+      "params": "(targetKeys, direction, moveKeys): void",
+      "description_zh": "选项在两栏之间转移时的回调函数"
     },
     {
       "name": "scroll",
-      "description": "选项列表滚动时的回调函数",
-      "params": "(direction, event): void"
+      "description": "Callback function when the picklist scrolls",
+      "params": "(direction, event): void",
+      "description_zh": "选项列表滚动时的回调函数"
     },
     {
       "name": "search",
-      "description": "搜索框内容时改变时的回调函数",
-      "params": "(direction: 'left'|'right', value: string): void"
+      "description": "A callback function when the contents of the search box are changed",
+      "params": "(direction: 'left'|'right', value: string): void",
+      "description_zh": "搜索框内容时改变时的回调函数"
     },
     {
       "name": "selectChange",
-      "description": "选中项发生改变时的回调函数",
-      "params": "(sourceSelectedKeys, targetSelectedKeys): void"
+      "description": "The callback function when the selected item changes",
+      "params": "(sourceSelectedKeys, targetSelectedKeys): void",
+      "description_zh": "选中项发生改变时的回调函数"
     }
   ],
   "typeDetail": {
     "Render": [
-      { "name": "direction", "description": "渲染列表的方向", "type": "left | right" },
-      { "name": "disabled", "description": "是否禁用列表", "type": "Boolean" },
-      { "name": "filteredItems", "description": "过滤后的数据", "type": "TransferItem[]" },
-      { "name": "selectedKeys", "description": "选中的条目", "type": "string[]" },
-      { "name": "onItemSelect", "description": "勾选条目", "type": "(key: string, selected: boolean)" },
-      { "name": "onItemSelectAll", "description": "勾选一组条目", "type": "(keys: string[], selected: boolean)" }
+      {
+        "name": "direction",
+        "description": "渲染列表的方向",
+        "type": "left | right"
+      },
+      {
+        "name": "disabled",
+        "description": "是否禁用列表",
+        "type": "Boolean"
+      },
+      {
+        "name": "filteredItems",
+        "description": "过滤后的数据",
+        "type": "TransferItem[]"
+      },
+      {
+        "name": "selectedKeys",
+        "description": "选中的条目",
+        "type": "string[]"
+      },
+      {
+        "name": "onItemSelect",
+        "description": "勾选条目",
+        "type": "(key: string, selected: boolean)"
+      },
+      {
+        "name": "onItemSelectAll",
+        "description": "勾选一组条目",
+        "type": "(keys: string[], selected: boolean)"
+      }
     ]
   },
-  "link": "https://antdv.com/components/transfer-cn"
+  "link": "https://antdv.com/components/transfer-cn",
+  "link_zh": "https://antdv.com/components/transfer-cn"
 }

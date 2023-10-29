@@ -3,296 +3,389 @@
   "props": {
     "allowClear": {
       "value": "",
-      "description": "显示清除按钮",
+      "description": "The Clear button is displayed",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "显示清除按钮"
     },
     "defaultValue": {
       "value": "",
-      "description": "指定默认选中的条目",
+      "description": "Specifies the items that are selected by default",
       "default": "-",
-      "type": "string | string\\[]"
+      "type": "string | string\\[]",
+      "description_zh": "指定默认选中的条目"
     },
     "disabled": {
       "value": "",
-      "description": "是否禁用",
+      "description": "Whether to disable or not",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否禁用"
     },
     "popupClassName": {
       "value": "",
-      "description": "下拉菜单的 className 属性",
+      "description": "drop-down menu",
       "default": "-",
-      "type": "string"
+      "type": "string",
+      "description_zh": "下拉菜单的 className 属性"
     },
     "dropdownMatchSelectWidth": {
       "value": "",
-      "description": "下拉菜单和选择器同宽。默认将设置 `min-width`，当值小于选择框宽度时会被忽略。false 时会关闭虚拟滚动",
+      "description": "The drop-down menu is the same width as the selector. 'min-width' is set by default and is ignored when the value is less than the width of the selection box. false, which turns off virtual scrolling",
       "default": "true",
-      "type": "boolean | number"
+      "type": "boolean | number",
+      "description_zh": "下拉菜单和选择器同宽。默认将设置 `min-width`，当值小于选择框宽度时会被忽略。false 时会关闭虚拟滚动"
     },
     "dropdownStyle": {
       "value": "",
-      "description": "下拉菜单的样式",
+      "description": "The style of the drop-down menu",
       "default": "-",
-      "type": "object"
+      "type": "object",
+      "description_zh": "下拉菜单的样式"
     },
     "fieldNames": {
       "value": "",
-      "description": "替换 treeNode 中 label,value,children 字段为 treeData 中对应的字段",
+      "description": "Replace the label, value, and children fields in treeNode with the corresponding fields in treeData",
       "default": "{children:'children', label:'title', value: 'value' }",
-      "type": "object"
+      "type": "object",
+      "description_zh": "替换 treeNode 中 label,value,children 字段为 treeData 中对应的字段"
     },
     "filterTreeNode": {
       "value": "",
-      "description": "是否根据输入项进行筛选，默认用 treeNodeFilterProp 的值作为要筛选的 TreeNode 的属性值",
+      "description": "Whether to filter based on the input items, the value of treeNodeFilterProp is used as the property value of the TreeNode to be filtered by default",
       "default": "Function",
-      "type": "boolean | Function(inputValue: string, treeNode: TreeNode) (函数需要返回 bool 值)"
+      "type": "boolean | Function(inputValue: string, treeNode: TreeNode) (函数需要返回 bool 值)",
+      "description_zh": "是否根据输入项进行筛选，默认用 treeNodeFilterProp 的值作为要筛选的 TreeNode 的属性值"
     },
     "getPopupContainer": {
       "value": "",
-      "description": "菜单渲染父节点。默认渲染到 body 上，如果你遇到菜单滚动定位问题，试试修改为滚动的区域，并相对其定位。",
+      "description": "The menu renders the parent node. By default, it is rendered to the body, and if you're having trouble scrolling the menu, try modifying the scrolling area and positioning it relative to it.",
       "default": "() => document.body",
-      "type": "Function(triggerNode)"
+      "type": "Function(triggerNode)",
+      "description_zh": "菜单渲染父节点。默认渲染到 body 上，如果你遇到菜单滚动定位问题，试试修改为滚动的区域，并相对其定位。"
     },
     "labelInValue": {
       "value": "",
-      "description": "是否把每个选项的 label 包装到 value 中，会把 value 类型从 `string` 变为 `{value: string, label: VNode, halfChecked(treeCheckStrictly 时有效): string[] }` 的格式",
+      "description": "Whether or not to wrap the label of each option into value will change the value type from 'string' to the format of '{value: string, label: VNode, halfChecked(treeCheckStrictly when valid): string[] }'",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否把每个选项的 label 包装到 value 中，会把 value 类型从 `string` 变为 `{value: string, label: VNode, halfChecked(treeCheckStrictly 时有效): string[] }` 的格式"
     },
     "listHeight": {
       "value": "",
-      "description": "设置弹窗滚动高度",
+      "description": "Set the scroll height of the pop-up window",
       "default": "256",
-      "type": "number"
+      "type": "number",
+      "description_zh": "设置弹窗滚动高度"
     },
     "loadData": {
       "value": "",
-      "description": "异步加载数据",
+      "description": "Load data asynchronously",
       "default": "-",
-      "type": "function(node)"
+      "type": "function(node)",
+      "description_zh": "异步加载数据"
     },
     "maxTagCount": {
       "value": "",
-      "description": "最多显示多少个 tag",
+      "description": "The maximum number of tags to display",
       "default": "-",
-      "type": "number"
+      "type": "number",
+      "description_zh": "最多显示多少个 tag"
     },
     "maxTagPlaceholder": {
       "value": "",
-      "description": "隐藏 tag 时显示的内容",
+      "description": "What is displayed when the tag is hidden",
       "default": "-",
-      "type": "slot | function(omittedValues)"
+      "type": "slot | function(omittedValues)",
+      "description_zh": "隐藏 tag 时显示的内容"
     },
     "multiple": {
       "value": "",
-      "description": "支持多选（当设置 treeCheckable 时自动变为 true）",
+      "description": "Support for multiple selections (automatically becomes true when treeCheckable is set)",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "支持多选（当设置 treeCheckable 时自动变为 true）"
     },
     "notFoundContent": {
       "value": "",
-      "description": "当下拉列表为空时显示的内容",
+      "description": "What is displayed when the drop-down list is empty",
       "default": "`Not Found`",
-      "type": "slot"
+      "type": "slot",
+      "description_zh": "当下拉列表为空时显示的内容"
     },
     "placeholder": {
       "value": "",
-      "description": "选择框默认文字",
+      "description": "The selection box defaults to text",
       "default": "-",
-      "type": "string | slot"
+      "type": "string | slot",
+      "description_zh": "选择框默认文字"
     },
     "placement": {
-      "value": ["bottomLeft", "bottomRight", "topLeft", "topRight"],
-      "description": "选择框弹出的位置",
+      "value": [
+        "bottomLeft",
+        "bottomRight",
+        "topLeft",
+        "topRight"
+      ],
+      "description": "Select where the box pops up",
       "default": "bottomLeft",
-      "type": "bottomLeft `bottomRight` `topLeft` topRight"
+      "type": "bottomLeft `bottomRight` `topLeft` topRight",
+      "description_zh": "选择框弹出的位置"
     },
     "replaceFields": {
       "value": "",
-      "description": "替换 treeNode 中 label,value,key,children 字段为 treeData 中对应的字段",
+      "description": "Replace the label, value, key, and children fields in treeNode with the corresponding fields in treeData",
       "default": "{children:'children', label:'title', key:'key', value: 'value' }",
-      "type": "object"
+      "type": "object",
+      "description_zh": "替换 treeNode 中 label,value,key,children 字段为 treeData 中对应的字段"
     },
     "searchPlaceholder": {
       "value": "",
-      "description": "搜索框默认文字",
+      "description": "The search box defaults to text",
       "default": "-",
-      "type": "string | slot"
+      "type": "string | slot",
+      "description_zh": "搜索框默认文字"
     },
     "searchValue(v-model)": {
       "value": "",
-      "description": "搜索框的值，可以通过 `search` 事件获取用户输入",
+      "description": "The value of the search box, which can be fetched by the user input via the 'search' event",
       "default": "-",
-      "type": "string"
+      "type": "string",
+      "description_zh": "搜索框的值，可以通过 `search` 事件获取用户输入"
     },
     "showCheckedStrategy": {
       "value": "",
-      "description": "定义选中项回填的方式。`TreeSelect.SHOW_ALL`: 显示所有选中节点(包括父节点). `TreeSelect.SHOW_PARENT`: 只显示父节点(当父节点下所有子节点都选中时). 默认只显示子节点.",
+      "description": "Defines how the selection is backfilled. 'TreeSelect.SHOW_ALL': Displays all selected nodes (including the parent node). 'TreeSelect.SHOW_PARENT': Show only the parent node (when all children under the parent node are selected). By default, only child nodes are displayed.",
       "default": "TreeSelect.SHOW_CHILD",
-      "type": "enum{TreeSelect.SHOW_ALL, TreeSelect.SHOW_PARENT, TreeSelect.SHOW_CHILD }"
+      "type": "enum{TreeSelect.SHOW_ALL, TreeSelect.SHOW_PARENT, TreeSelect.SHOW_CHILD }",
+      "description_zh": "定义选中项回填的方式。`TreeSelect.SHOW_ALL`: 显示所有选中节点(包括父节点). `TreeSelect.SHOW_PARENT`: 只显示父节点(当父节点下所有子节点都选中时). 默认只显示子节点."
     },
     "showSearch": {
       "value": "",
-      "description": "在下拉中显示搜索框(仅在单选模式下生效)",
+      "description": "Show search box in drop-down (only available in radio mode)",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "在下拉中显示搜索框(仅在单选模式下生效)"
     },
     "size": {
       "value": "",
-      "description": "选择框大小，可选 `large` small",
+      "description": "Select the box size, optionally 'large' small",
       "default": "'default'",
-      "type": "string"
+      "type": "string",
+      "description_zh": "选择框大小，可选 `large` small"
     },
     "status": {
-      "value": ["error", "warning"],
-      "description": "设置校验状态",
+      "value": [
+        "error",
+        "warning"
+      ],
+      "description": "Set the verification status",
       "default": "-",
-      "type": "'error' | 'warning'"
+      "type": "'error' | 'warning'",
+      "description_zh": "设置校验状态"
     },
     "suffixIcon": {
       "value": "",
-      "description": "自定义的选择框后缀图标",
+      "description": "Custom selection box suffix icon",
       "default": "-",
-      "type": "VNode | slot"
+      "type": "VNode | slot",
+      "description_zh": "自定义的选择框后缀图标"
     },
     "tagRender": {
       "value": "",
-      "description": "自定义 tag 内容，多选时生效",
+      "description": "Customize the tag content, which takes effect when multiple selections are made",
       "default": "-",
-      "type": "slot"
+      "type": "slot",
+      "description_zh": "自定义 tag 内容，多选时生效"
     },
     "title": {
       "value": "",
-      "description": "自定义标题",
+      "description": "Customize the title",
       "default": "",
-      "type": "slot"
+      "type": "slot",
+      "description_zh": "自定义标题"
     },
     "treeCheckable": {
       "value": "",
-      "description": "显示 checkbox",
+      "description": "The checkbox is displayed",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "显示 checkbox"
     },
     "treeCheckStrictly": {
       "value": "",
-      "description": "checkable 状态下节点选择完全受控（父子节点选中状态不再关联），会使得 `labelInValue` 强制为 true",
+      "description": "In the checkable state, the node selection is fully controlled (the parent and child node selection states are no longer associated), which will force 'labelInValue' to be true",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "checkable 状态下节点选择完全受控（父子节点选中状态不再关联），会使得 `labelInValue` 强制为 true"
     },
     "treeData": {
       "value": "",
-      "description": "treeNodes 数据，如果设置则不需要手动构造 TreeNode 节点（value 在整个树范围内唯一）",
+      "description": "treeNodes data, if set then you don't need to manually construct a TreeNode node (value is unique across the tree)",
       "default": "\\[]",
-      "type": "array<{value, label, children, [disabled, disableCheckbox, selectable]}>"
+      "type": "array<{value, label, children, [disabled, disableCheckbox, selectable]}>",
+      "description_zh": "treeNodes 数据，如果设置则不需要手动构造 TreeNode 节点（value 在整个树范围内唯一）"
     },
     "treeDataSimpleMode": {
       "value": "",
-      "description": "使用简单格式的 treeData，具体设置参考可设置的类型 (此时 treeData 应变为这样的数据结构: \\[{id:1, pId:0, value:'1', label:\"test1\",...},...], `pId` 是父节点的 id)",
+      "description": "Use a simple format of treeData, set it with reference to the configurable type (in this case, treeData should be structured like this: \\[{id:1, pId:0, value:'1', label:\"test1\",...},...], 'pId' is the id of the parent node)",
       "default": "false",
-      "type": "false | Array<{ id: string, pId: string, rootPId: null }>"
+      "type": "false | Array<{ id: string, pId: string, rootPId: null }>",
+      "description_zh": "使用简单格式的 treeData，具体设置参考可设置的类型 (此时 treeData 应变为这样的数据结构: \\[{id:1, pId:0, value:'1', label:\"test1\",...},...], `pId` 是父节点的 id)"
     },
     "treeDefaultExpandAll": {
       "value": "",
-      "description": "默认展开所有树节点",
+      "description": "By default, all tree nodes are expanded",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "默认展开所有树节点"
     },
     "treeDefaultExpandedKeys": {
       "value": "",
-      "description": "默认展开的树节点",
+      "description": "The default expanded tree node",
       "default": "-",
-      "type": "string\\[] | number\\[]"
+      "type": "string\\[] | number\\[]",
+      "description_zh": "默认展开的树节点"
     },
     "treeExpandedKeys(v-model)": {
       "value": "",
-      "description": "设置展开的树节点",
+      "description": "Sets the expanded tree node",
       "default": "-",
-      "type": "string\\[] | number\\[]"
+      "type": "string\\[] | number\\[]",
+      "description_zh": "设置展开的树节点"
     },
     "treeIcon": {
       "value": "",
-      "description": "是否展示 TreeNode title 前的图标，没有默认样式，如设置为 true，需要自行定义图标相关样式",
+      "description": "There is no default style for displaying the icon before the TreeNode title, if it is set to true, you need to define the icon related style",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否展示 TreeNode title 前的图标，没有默认样式，如设置为 true，需要自行定义图标相关样式"
     },
     "treeLine": {
       "value": "",
-      "description": "是否展示线条样式，请参考 [Tree - showLine](/components/tree/#components-tree-demo-line)",
+      "description": "For details on whether to display the line style, see [Tree - showLine](/components/tree/#components-tree-demo-line)",
       "default": "false",
-      "type": "boolean | object"
+      "type": "boolean | object",
+      "description_zh": "是否展示线条样式，请参考 [Tree - showLine](/components/tree/#components-tree-demo-line)"
     },
     "treeLoadedKeys": {
       "value": "",
-      "description": "（受控）已经加载的节点，需要配合 `loadData` 使用",
+      "description": "(controlled) nodes that have already been loaded, and need to be used with 'loadData'",
       "default": "[]",
-      "type": "string[]"
+      "type": "string[]",
+      "description_zh": "（受控）已经加载的节点，需要配合 `loadData` 使用"
     },
     "treeNodeFilterProp": {
       "value": "",
-      "description": "输入项过滤对应的 treeNode 属性",
+      "description": "The corresponding treeNode property for input filtering",
       "default": "'value'",
-      "type": "string"
+      "type": "string",
+      "description_zh": "输入项过滤对应的 treeNode 属性"
     },
     "treeNodeLabelProp": {
       "value": "",
-      "description": "作为显示的 prop 设置",
+      "description": "as the prop setting shown",
       "default": "'title'",
-      "type": "string"
+      "type": "string",
+      "description_zh": "作为显示的 prop 设置"
     },
     "value(v-model)": {
       "value": "",
-      "description": "指定当前选中的条目",
+      "description": "Specifies the currently selected entry",
       "default": "-",
-      "type": "string | string\\[]"
+      "type": "string | string\\[]",
+      "description_zh": "指定当前选中的条目"
     },
     "virtual": {
       "value": "",
-      "description": "设置 false 时关闭虚拟滚动",
+      "description": "Turn off virtual scrolling when set to false",
       "default": "true",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "设置 false 时关闭虚拟滚动"
     }
   },
   "methods": [],
   "events": [
     {
       "name": "change",
-      "description": "选中树节点时调用此函数",
-      "params": "function(value, label, extra)"
+      "description": "This function is called when a tree node is selected",
+      "params": "function(value, label, extra)",
+      "description_zh": "选中树节点时调用此函数"
     },
     {
       "name": "dropdownVisibleChange",
-      "description": "展开下拉菜单的回调",
-      "params": "function(open)"
+      "description": "Expand the callback for the drop-down menu",
+      "params": "function(open)",
+      "description_zh": "展开下拉菜单的回调"
     },
     {
       "name": "search",
-      "description": "文本框值变化时回调",
-      "params": "function(value: string)"
+      "description": "Callback when the value of the text box changes",
+      "params": "function(value: string)",
+      "description_zh": "文本框值变化时回调"
     },
     {
       "name": "select",
-      "description": "被选中时调用",
-      "params": "function(value, node, extra)"
+      "description": "Called when selected",
+      "params": "function(value, node, extra)",
+      "description_zh": "被选中时调用"
     },
     {
       "name": "treeExpand",
-      "description": "展开节点时调用",
-      "params": "function(expandedKeys)"
+      "description": "Called when a node is expanded",
+      "params": "function(expandedKeys)",
+      "description_zh": "展开节点时调用"
     }
   ],
   "typeDetail": {
     "TreeNode": [
-      { "name": "checkable", "description": "当树为 checkable 时，设置独立节点是否展示 Checkbox", "type": "boolean" },
-      { "name": "disableCheckbox", "description": "禁掉 checkbox", "type": "boolean", "default": "false" },
-      { "name": "disabled", "description": "是否禁用", "type": "boolean", "default": "false" },
-      { "name": "isLeaf", "description": "是否是叶子节点", "type": "boolean", "default": "false" },
-      { "name": "key", "description": "此项必须设置（其值在整个树范围内唯一）", "type": "string | number", "default": "" },
-      { "name": "selectable", "description": "是否可选", "type": "boolean", "default": "true" },
-      { "name": "title", "description": "树节点显示的内容", "type": "string | slot" },
-      { "name": "value", "description": "标题默认根据此属性值进行筛选（其值在整个树范围内唯一）", "type": "string" }
+      {
+        "name": "checkable",
+        "description": "当树为 checkable 时，设置独立节点是否展示 Checkbox",
+        "type": "boolean"
+      },
+      {
+        "name": "disableCheckbox",
+        "description": "禁掉 checkbox",
+        "type": "boolean",
+        "default": "false"
+      },
+      {
+        "name": "disabled",
+        "description": "是否禁用",
+        "type": "boolean",
+        "default": "false"
+      },
+      {
+        "name": "isLeaf",
+        "description": "是否是叶子节点",
+        "type": "boolean",
+        "default": "false"
+      },
+      {
+        "name": "key",
+        "description": "此项必须设置（其值在整个树范围内唯一）",
+        "type": "string | number",
+        "default": ""
+      },
+      {
+        "name": "selectable",
+        "description": "是否可选",
+        "type": "boolean",
+        "default": "true"
+      },
+      {
+        "name": "title",
+        "description": "树节点显示的内容",
+        "type": "string | slot"
+      },
+      {
+        "name": "value",
+        "description": "标题默认根据此属性值进行筛选（其值在整个树范围内唯一）",
+        "type": "string"
+      }
     ]
   },
-  "link": "https://antdv.com/components/tree-cn"
+  "link": "https://antdv.com/components/tree-cn",
+  "link_zh": "https://antdv.com/components/tree-cn"
 }

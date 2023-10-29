@@ -3,87 +3,107 @@
   "props": {
     "alt": {
       "value": "",
-      "description": "图片说明",
+      "description": "Photo captions",
       "default": "undefined",
-      "type": "string"
+      "type": "string",
+      "description_zh": "图片说明"
     },
     "fallback-src": {
       "value": "",
-      "description": "图片加载失败时显示的地址",
+      "description": "The address that appears when the image fails to load",
       "default": "undefined",
-      "type": "string"
+      "type": "string",
+      "description_zh": "图片加载失败时显示的地址"
     },
     "height": {
       "value": "",
-      "description": "图片高度",
+      "description": "Picture height",
       "default": "undefined",
-      "type": "string | number"
+      "type": "string | number",
+      "description_zh": "图片高度"
     },
     "img-props": {
       "value": "",
-      "description": "组件中 img 元素的属性",
+      "description": "The properties of the img element in the component",
       "default": "undefined",
-      "type": "object"
+      "type": "object",
+      "description_zh": "组件中 img 元素的属性"
     },
     "lazy": {
       "value": "",
-      "description": "是否让图片进入视口再加载，单独使用将设置为[HTMLImageElement.loading](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/loading) 的属性值；也可配合 `intersection-observer-options` 配置实现懒加载",
+      "description": "Whether to let the image enter the viewport and then load, use the property value that will be set to [HTMLImageElement.loading](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/loading); Lazy loading can also be implemented with the 'intersection-observer-options' configuration",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否让图片进入视口再加载，单独使用将设置为[HTMLImageElement.loading](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/loading) 的属性值；也可配合 `intersection-observer-options` 配置实现懒加载"
     },
     "intersection-observer-options": {
       "value": "",
-      "description": "`lazy=true` 时 intersection observer 观测的配置",
+      "description": "'lazy=true' when the intersection observer observation",
       "default": "undefined",
-      "type": "{ root?: Element | Document | string | null, rootMargin?: string, threshold?: number | number[]; }"
+      "type": "{ root?: Element | Document | string | null, rootMargin?: string, threshold?: number | number[]; }",
+      "description_zh": "`lazy=true` 时 intersection observer 观测的配置"
     },
     "object-fit": {
-      "value": ["fill", "contain", "cover", "none", "scale-down"],
-      "description": "图片在容器内的的适应类型",
+      "value": [
+        "fill",
+        "contain",
+        "cover",
+        "none",
+        "scale-down"
+      ],
+      "description": "The type of adaptation of the picture inside the container",
       "default": "fill",
-      "type": "fill | contain | cover | none | scale-down"
+      "type": "fill | contain | cover | none | scale-down",
+      "description_zh": "图片在容器内的的适应类型"
     },
     "preview-src": {
       "value": "",
-      "description": "预览图片的图片地址",
+      "description": "The image address of the preview image",
       "default": "undefined",
-      "type": "string"
+      "type": "string",
+      "description_zh": "预览图片的图片地址"
     },
     "preview-disabled": {
       "value": "",
-      "description": "是否禁用单击图像预览",
+      "description": "Whether to disable click image preview",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否禁用单击图像预览"
     },
     "previewed-img-props": {
       "value": "",
-      "description": "预览图片时 img 元素的属性",
+      "description": "The properties of the img element when previewing the image",
       "default": "undefined",
-      "type": "object"
+      "type": "object",
+      "description_zh": "预览图片时 img 元素的属性"
     },
     "show-toolbar": {
       "value": "",
-      "description": "图片放大后是否展示底部工具栏",
+      "description": "Whether to display the bottom toolbar after the image is enlarged",
       "default": "true",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "图片放大后是否展示底部工具栏"
     },
     "show-toolbar-tooltip": {
       "value": "",
-      "description": "是否展示工具栏的提示",
+      "description": "Whether or not to display toolbar prompts",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否展示工具栏的提示"
     },
     "src": {
       "value": "",
-      "description": "图片来源",
+      "description": "Image source",
       "default": "undefined",
-      "type": "string"
+      "type": "string",
+      "description_zh": "图片来源"
     },
     "width": {
       "value": "",
-      "description": "图片宽度",
+      "description": "Image width",
       "default": "undefined",
-      "type": "string | number"
+      "type": "string | number",
+      "description_zh": "图片宽度"
     }
   },
   "methods": [],
@@ -91,14 +111,17 @@
   "events": [
     {
       "name": "error",
-      "description": "图片加载失败执行的回调",
-      "params": "(e: Event) => void"
+      "description": "A callback that is executed if the image fails to load",
+      "params": "(e: Event) => void",
+      "description_zh": "图片加载失败执行的回调"
     },
     {
       "name": "load",
-      "description": "图片加载完成执行的回调",
-      "params": "(e: Event) => void"
+      "description": "The callback that is executed after the image is loaded",
+      "params": "(e: Event) => void",
+      "description_zh": "图片加载完成执行的回调"
     }
   ],
-  "link": "https://www.naiveui.com/zh-CN/dark/components/image"
+  "link": "https://www.naiveui.com/zh-CN/dark/components/image",
+  "link_zh": "https://www.naiveui.com/zh-CN/dark/components/image"
 }

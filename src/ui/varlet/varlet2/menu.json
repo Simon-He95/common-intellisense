@@ -3,91 +3,134 @@
   "props": {
     "v-model:show": {
       "value": "",
-      "description": "是否显示菜单",
+      "description": "Whether or not to display the menu",
       "default": "default",
       "type": "string",
-      "required": true
+      "required": true,
+      "description_zh": "是否显示菜单"
     },
     "placement": {
       "value": "",
-      "description": "菜单弹出位置",
+      "description": "Menu pop-up location",
       "default": "cover-top-start",
-      "type": "Placement"
+      "type": "Placement",
+      "description_zh": "菜单弹出位置"
     },
     "strategy": {
-      "value": ["absolute", "fixed"],
-      "description": "菜单定位方式，可选值为 absolute fixed",
+      "value": [
+        "absolute",
+        "fixed"
+      ],
+      "description": "Menu positioning, optionally absolute fixed",
       "default": "absolute",
-      "type": "string"
+      "type": "string",
+      "description_zh": "菜单定位方式，可选值为 absolute fixed"
     },
     "offset-x": {
       "value": "",
-      "description": "x 轴偏移量， 相对于菜单对齐后的位置",
+      "description": "The x-axis offset, relative to the position of the menu alignment",
       "default": "0",
-      "type": "number | string"
+      "type": "number | string",
+      "description_zh": "x 轴偏移量， 相对于菜单对齐后的位置"
     },
     "offset-y": {
       "value": "",
-      "description": "y 轴偏移量， 相对于菜单对齐后的位置",
+      "description": "Y-axis offset, relative to the position of the menu alignment",
       "default": "0",
-      "type": "number | string"
+      "type": "number | string",
+      "description_zh": "y 轴偏移量， 相对于菜单对齐后的位置"
     },
     "teleport": {
       "value": "",
-      "description": "菜单挂载的位置",
+      "description": "The location where the menu is mounted",
       "default": "body",
-      "type": "TeleportProps['to'] | false"
+      "type": "TeleportProps['to'] | false",
+      "description_zh": "菜单挂载的位置"
     },
     "disabled": {
       "value": "",
-      "description": "是否禁用菜单",
+      "description": "Whether to disable the menu",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否禁用菜单"
     },
     "trigger": {
-      "value": ["click", "hover"],
-      "description": "菜单触发方式，可选值为 `click` hover, `click` 为点击时触发, `hover` 为悬停时触发",
+      "value": [
+        "click",
+        "hover"
+      ],
+      "description": "The menu trigger mode can be 'click' hover, 'click' is triggered when clicked, and 'hover' is triggered on hover",
       "default": "click",
-      "type": "string"
+      "type": "string",
+      "description_zh": "菜单触发方式，可选值为 `click` hover, `click` 为点击时触发, `hover` 为悬停时触发"
     },
     "reference": {
       "value": "",
-      "description": "菜单关联的触发元素选择器，用于指定菜单的特定子元素为触发元素",
+      "description": "A trigger element selector associated with a menu that specifies a specific child element of the menu as the trigger element",
       "default": "-",
-      "type": "string"
+      "type": "string",
+      "description_zh": "菜单关联的触发元素选择器，用于指定菜单的特定子元素为触发元素"
     },
     "elevation": {
-      "value": ["true", "false", "0-24"],
-      "description": "海拔高度，可选值为 `true` `false` 和 `0-24` 的等级",
+      "value": [
+        "true",
+        "false",
+        "0-24"
+      ],
+      "description": "Altitude, with selectable values of 'true', 'false' and '0-24'",
       "default": "true",
-      "type": "string | number | boolean"
+      "type": "string | number | boolean",
+      "description_zh": "海拔高度，可选值为 `true` `false` 和 `0-24` 的等级"
     },
     "same-width": {
       "value": "",
-      "description": "是否与触发元素同宽",
+      "description": "Whether it is the same width as the triggering element",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否与触发元素同宽"
     },
     "default-style": {
       "value": "",
-      "description": "是否启用默认样式",
+      "description": "Whether to enable the default style",
       "default": "true",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否启用默认样式"
     },
     "popover-class": {
       "value": "",
-      "description": "弹出层的 class",
+      "description": "The class of the pop-up layer",
       "default": "-",
-      "type": "string"
+      "type": "string",
+      "description_zh": "弹出层的 class"
     },
     "close-on-click-reference": {
       "value": "",
-      "description": "是否在点击菜单触发元素后关闭菜单",
+      "description": "Whether to close the menu after clicking on the menu to trigger the element",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否在点击菜单触发元素后关闭菜单"
     }
   },
-  "methods": [{ "name": "open", "description": "打开 Menu", "params": "`-`" }, { "name": "close", "description": "关闭 Menu", "params": "`-`" }, { "name": "resize", "description": "Menu 默认插槽元素产生位置大小变化时可以调用此方法进行重绘", "params": "`-`" }],
+  "methods": [
+    {
+      "name": "open",
+      "description": "Open the Menu",
+      "params": "`-`",
+      "description_zh": "打开 Menu"
+    },
+    {
+      "name": "close",
+      "description": "Close the Menu",
+      "params": "`-`",
+      "description_zh": "关闭 Menu"
+    },
+    {
+      "name": "resize",
+      "description": "Menu By default, this method can be called to redraw when a slot element changes its position size",
+      "params": "`-`",
+      "description_zh": "Menu 默认插槽元素产生位置大小变化时可以调用此方法进行重绘"
+    }
+  ],
   "typeDetail": {
     "$Placement": [
       {
@@ -195,29 +238,35 @@
   "events": [
     {
       "name": "open",
-      "description": "打开菜单时触发",
-      "params": "打开菜单时触发"
+      "description": "Triggered when the menu is opened",
+      "params": "打开菜单时触发",
+      "description_zh": "打开菜单时触发"
     },
     {
       "name": "opened",
-      "description": "打开菜单动画结束时触发",
-      "params": "打开菜单动画结束时触发"
+      "description": "Triggers when the opening menu animation ends",
+      "params": "打开菜单动画结束时触发",
+      "description_zh": "打开菜单动画结束时触发"
     },
     {
       "name": "close",
-      "description": "关闭菜单时触发",
-      "params": "关闭菜单时触发"
+      "description": "Triggered when the menu is closed",
+      "params": "关闭菜单时触发",
+      "description_zh": "关闭菜单时触发"
     },
     {
       "name": "closed",
-      "description": "关闭菜单动画结束时触发",
-      "params": "关闭菜单动画结束时触发"
+      "description": "Triggers when the close menu animation ends",
+      "params": "关闭菜单动画结束时触发",
+      "description_zh": "关闭菜单动画结束时触发"
     },
     {
       "name": "click-outside",
-      "description": "点击菜单外部时触发",
-      "params": "点击菜单外部时触发"
+      "description": "Triggered when you tap outside the menu",
+      "params": "点击菜单外部时触发",
+      "description_zh": "点击菜单外部时触发"
     }
   ],
-  "link": "https://varlet.gitee.io/varlet-ui/#/zh-CN/loading-bar"
+  "link": "https://varlet.gitee.io/varlet-ui/#/zh-CN/loading-bar",
+  "link_zh": "https://varlet.gitee.io/varlet-ui/#/zh-CN/loading-bar"
 }

@@ -5,7 +5,8 @@
     {
       "name": "update:model-value",
       "description": "Emitted when component's model value changes; Is also used by v-model",
-      "params": "(value: Number) => void"
+      "params": "(value: Number) => void",
+      "description_zh": "当组件的模型值发生变化时发出;也被 v-model 使用"
     }
   ],
   "props": {
@@ -18,75 +19,88 @@
       "desc": "Model of the component defining the size of first panel (or second if using reverse) in the unit specified (for '%' it's the split ratio percent - 0.0 < x < 100.0; for 'px' it's the size in px); Either use this property (along with a listener for 'update:modelValue' event) OR use v-model directive",
       "examples": [
         "v-model=\"ratio\""
-      ]
+      ],
+      "description_zh": ""
     },
     "reverse": {
       "value": "",
       "type": "Boolean",
       "description": "Apply the model size to the second panel (by default it applies to the first)",
-      "default": "false"
+      "default": "false",
+      "description_zh": "将模型大小应用于第二个面板（默认情况下，它适用于第一个面板）"
     },
     "unit": {
       "value": "",
       "type": "String",
       "description": "CSS unit for the model",
-      "default": "%"
+      "default": "%",
+      "description_zh": "模型的 CSS 单元"
     },
     "emit-immediately": {
       "value": "",
       "type": "Boolean",
       "description": "Emit model while user is panning on the separator",
-      "default": "false"
+      "default": "false",
+      "description_zh": "当用户在分隔符上平移时发出模型"
     },
     "horizontal": {
       "value": "",
       "type": "Boolean",
       "description": "Allows the splitter to split its two panels horizontally, instead of vertically",
-      "default": "false"
+      "default": "false",
+      "description_zh": "允许拆分器水平拆分其两个面板，而不是垂直拆分"
     },
     "limits": {
       "value": "",
       "type": "Array",
       "description": "An array of two values representing the minimum and maximum split size of the two panels; When 'px' unit is set then you can use Infinity as the second value to make it unbound on the other side",
-      "default": "For '%' unit: [10, 90]; For 'px' unit: [50, Infinity]"
+      "default": "For '%' unit: [10, 90]; For 'px' unit: [50, Infinity]",
+      "description_zh": "由两个值组成的数组，表示两个面板的最小和最大拆分大小;当设置了“px”单位时，您可以使用 Infinity 作为第二个值，使其在另一侧解除绑定"
     },
     "disable": {
       "value": "",
       "type": "String",
       "description": "",
       "default": "",
-      "extends": "disable"
+      "extends": "disable",
+      "description_zh": ""
     },
     "before-class": {
       "value": "",
       "type": "String | Array | Object",
       "description": "Class definitions to be attributed to the 'before' panel",
-      "default": ""
+      "default": "",
+      "description_zh": "归因于“之前”面板的类定义"
     },
     "after-class": {
       "value": "",
       "type": "String | Array | Object",
       "description": "Class definitions to be attributed to the 'after' panel",
-      "default": ""
+      "default": "",
+      "description_zh": "归因于“after”面板的类定义"
     },
     "separator-class": {
       "value": "",
       "type": "String | Array | Object",
       "description": "Class definitions to be attributed to the splitter separator",
-      "default": ""
+      "default": "",
+      "description_zh": "要归因于拆分器分隔符的类定义"
     },
     "separator-style": {
       "value": "",
       "type": "String | Array | Object",
       "description": "Style definitions to be attributed to the splitter separator",
-      "default": ""
+      "default": "",
+      "description_zh": "要归因于拆分器分隔符的样式定义"
     },
     "dark": {
       "value": "",
       "type": "Boolean",
       "description": "Applies a default lighter color on the separator; To be used when background is darker; Avoid using when you are overriding through separator-class or separator-style props",
-      "default": "false"
+      "default": "false",
+      "description_zh": "在分隔符上应用默认的较浅颜色;在背景较暗时使用;避免在覆盖分隔符类或分隔符样式的道具时使用"
     }
   },
-  "link": "https://v2.quasar.dev/vue-components/splitter"
+  "link": "https://v2.quasar.dev/vue-components/splitter",
+  "link_zh": "https://v2.quasar.dev/vue-components/splitter"
 }

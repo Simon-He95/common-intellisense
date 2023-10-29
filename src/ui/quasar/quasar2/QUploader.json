@@ -4,74 +4,88 @@
     {
       "name": "upload",
       "description": "Start uploading (same as clicking the upload button)",
-      "params": ""
+      "params": "",
+      "description_zh": "开始上传（与单击上传按钮相同）"
     },
     {
       "name": "abort",
       "description": "Abort upload of all files (same as clicking the abort button)",
-      "params": ""
+      "params": "",
+      "description_zh": "中止所有文件的上传（与单击中止按钮相同）"
     },
     {
       "name": "reset",
       "description": "Resets uploader to default; Empties queue, aborts current uploads",
-      "params": ""
+      "params": "",
+      "description_zh": "将上传器重置为默认值;清空队列，中止当前上传"
     },
     {
       "name": "removeUploadedFiles",
       "description": "Removes already uploaded files from the list",
-      "params": ""
+      "params": "",
+      "description_zh": "从列表中删除已上传的文件"
     },
     {
       "name": "removeQueuedFiles",
       "description": "Remove files that are waiting for upload to start (same as clicking the left clear button)",
-      "params": ""
+      "params": "",
+      "description_zh": "删除等待上传开始的文件（与单击左清除按钮相同）"
     },
     {
       "name": "removeFile",
       "description": "Remove specified file from the queue",
-      "params": "(file: File) => void"
+      "params": "(file: File) => void",
+      "description_zh": "从队列中删除指定文件"
     },
     {
       "name": "updateFileStatus",
       "description": "Update the status of a file",
-      "params": "(file: File, status: String, uploadedSize: Number) => void"
+      "params": "(file: File, status: String, uploadedSize: Number) => void",
+      "description_zh": "更新文件的状态"
     },
     {
       "name": "isAlive",
       "description": "Is the component alive (activated but not unmounted); Useful to determine if you still need to compute anything going further",
-      "params": ""
+      "params": "",
+      "description_zh": "组件是否处于活动状态（已激活但未卸载）;有助于确定是否仍需要进一步计算任何内容"
     },
     {
       "name": "pickFiles",
       "description": "Trigger the file picker dialog; The event must come from a user interaction event handler",
-      "params": "(evt: undefined) => void"
+      "params": "(evt: undefined) => void",
+      "description_zh": "触发文件选取器对话框;该事件必须来自用户交互事件处理程序"
     },
     {
       "name": "addFiles",
       "description": "Manually add files to the queue",
-      "params": "(files: Array) => void"
+      "params": "(files: Array) => void",
+      "description_zh": "手动将文件添加到队列"
     }
   ],
   "events": [
     {
       "name": "added",
       "description": "Emitted when files are added into the list",
-      "params": "(files: Array) => void"
+      "params": "(files: Array) => void",
+      "description_zh": "将文件添加到列表中时发出"
     },
     {
       "name": "removed",
       "description": "Emitted when files are removed from the list",
-      "params": "(files: Array) => void"
+      "params": "(files: Array) => void",
+      "description_zh": "从列表中删除文件时发出"
     },
     {
       "name": "start",
       "description": "Started working",
-      "params": ""
+      "params": "",
+      "description_zh": "开始工作"
     },
     {
       "name": "finish",
       "description": "Finished working (regardless of success or fail)",
-      "params": ""
+      "params": "",
+      "description_zh": "完成工作（无论成功或失败）"
     }
   ],
   "props": {
@@ -79,7 +93,8 @@
       "value": "",
       "type": "String",
       "description": "Label for the uploader",
-      "default": ""
+      "default": "",
+      "description_zh": "上传者的标签"
     },
     "color": {
       "type": "String | Array",
@@ -94,75 +109,87 @@
         "primary",
         "teal-10",
         "[\"accent\", \"grey-7\"] "
-      ]
+      ],
+      "description_zh": "类星体调色板中组件的颜色名称"
     },
     "text-color": {
       "value": "",
       "type": "String",
       "description": "",
       "default": "",
-      "extends": "text-color"
+      "extends": "text-color",
+      "description_zh": ""
     },
     "dark": {
       "value": "",
       "type": "String",
       "description": "",
       "default": "",
-      "extends": "dark"
+      "extends": "dark",
+      "description_zh": ""
     },
     "square": {
       "value": "",
       "type": "String",
       "description": "",
       "default": "",
-      "extends": "square"
+      "extends": "square",
+      "description_zh": ""
     },
     "flat": {
       "value": "",
       "type": "String",
       "description": "",
       "default": "",
-      "extends": "flat"
+      "extends": "flat",
+      "description_zh": ""
     },
     "bordered": {
       "value": "",
       "type": "String",
       "description": "",
       "default": "",
-      "extends": "bordered"
+      "extends": "bordered",
+      "description_zh": ""
     },
     "no-thumbnails": {
       "value": "",
       "type": "Boolean",
       "description": "Don't display thumbnails for image files",
-      "default": "false"
+      "default": "false",
+      "description_zh": "不显示图像文件的缩略图"
     },
     "auto-upload": {
       "value": "",
       "type": "Boolean",
       "description": "Upload files immediately when added",
-      "default": "false"
+      "default": "false",
+      "description_zh": "添加后立即上传文件"
     },
     "hide-upload-btn": {
       "value": "",
       "type": "Boolean",
       "description": "Don't show the upload button",
-      "default": "false"
+      "default": "false",
+      "description_zh": "不显示上传按钮"
     },
     "disable": {
       "value": "",
       "type": "String",
       "description": "",
       "default": "",
-      "extends": "disable"
+      "extends": "disable",
+      "description_zh": ""
     },
     "readonly": {
       "value": "",
       "type": "String",
       "description": "",
       "default": "",
-      "extends": "readonly"
+      "extends": "readonly",
+      "description_zh": ""
     }
   },
-  "link": "https://v2.quasar.dev/vue-components/uploader"
+  "link": "https://v2.quasar.dev/vue-components/uploader",
+  "link_zh": "https://v2.quasar.dev/vue-components/uploader"
 }

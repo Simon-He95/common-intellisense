@@ -3,112 +3,130 @@
   "props": {
     "v-model:code": {
       "value": "",
-      "description": "当前输入的兑换码",
+      "description": "The currently entered redemption code",
       "default": "-",
       "type": "string",
-      "required": true
+      "required": true,
+      "description_zh": "当前输入的兑换码"
     },
     "chosen-coupon": {
       "value": "",
-      "description": "当前选中优惠券的索引",
+      "description": "Index of the currently selected coupon",
       "default": "-1",
-      "type": "number"
+      "type": "number",
+      "description_zh": "当前选中优惠券的索引"
     },
     ":coupons": {
       "value": "",
-      "description": "可用优惠券列表",
+      "description": "List of available coupons",
       "default": "[]",
-      "type": "CouponInfo[]"
+      "type": "CouponInfo[]",
+      "description_zh": "可用优惠券列表"
     },
     ":disabled-coupons": {
       "value": "",
-      "description": "不可用优惠券列表",
+      "description": "List of unavailable coupons",
       "default": "[]",
-      "type": "CouponInfo[]"
+      "type": "CouponInfo[]",
+      "description_zh": "不可用优惠券列表"
     },
     "enabled-title": {
       "value": "",
-      "description": "可用优惠券列表标题",
+      "description": "The title of the list of available coupons",
       "default": "可使用优惠券",
-      "type": "string"
+      "type": "string",
+      "description_zh": "可用优惠券列表标题"
     },
     "disabled-title": {
       "value": "",
-      "description": "不可用优惠券列表标题",
+      "description": "Coupon list titles are not available",
       "default": "不可使用优惠券",
-      "type": "string"
+      "type": "string",
+      "description_zh": "不可用优惠券列表标题"
     },
     "exchange-button-text": {
       "value": "",
-      "description": "兑换按钮文字",
+      "description": "Redeem button text",
       "default": "兑换",
-      "type": "string"
+      "type": "string",
+      "description_zh": "兑换按钮文字"
     },
     "exchange-button-loading": {
       "value": "",
-      "description": "是否显示兑换按钮加载动画",
+      "description": "Whether to display the redemption button loading animation",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否显示兑换按钮加载动画"
     },
     "exchange-button-disabled": {
       "value": "",
-      "description": "是否禁用兑换按钮",
+      "description": "Whether to disable the redeem button",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否禁用兑换按钮"
     },
     "exchange-min-length": {
       "value": "",
-      "description": "兑换码最小长度",
+      "description": "The minimum length of the redemption code",
       "default": "1",
-      "type": "number"
+      "type": "number",
+      "description_zh": "兑换码最小长度"
     },
     "displayed-coupon-index": {
       "value": "",
-      "description": "滚动至特定优惠券位置",
+      "description": "Scroll to a specific coupon location",
       "default": "-",
-      "type": "number"
+      "type": "number",
+      "description_zh": "滚动至特定优惠券位置"
     },
     "show-close-button": {
       "value": "",
-      "description": "是否显示列表底部按钮",
+      "description": "Whether to display the button at the bottom of the list",
       "default": "true",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否显示列表底部按钮"
     },
     "close-button-text": {
       "value": "",
-      "description": "列表底部按钮文字",
+      "description": "Button text at the bottom of the list",
       "default": "不使用优惠",
-      "type": "string"
+      "type": "string",
+      "description_zh": "列表底部按钮文字"
     },
     "input-placeholder": {
       "value": "",
-      "description": "输入框文字提示",
+      "description": "Text prompt in the input box",
       "default": "请输入优惠码",
-      "type": "string"
+      "type": "string",
+      "description_zh": "输入框文字提示"
     },
     "show-exchange-bar": {
       "value": "",
-      "description": "是否展示兑换栏",
+      "description": "Whether or not to display the redemption bar",
       "default": "true",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否展示兑换栏"
     },
     "currency": {
       "value": "",
-      "description": "货币符号",
+      "description": "Currency symbols",
       "default": "¥",
-      "type": "string"
+      "type": "string",
+      "description_zh": "货币符号"
     },
     "empty-image": {
       "value": "",
-      "description": "列表为空时的占位图",
+      "description": "A placeholder map when the list is empty",
       "default": "-",
-      "type": "string"
+      "type": "string",
+      "description_zh": "列表为空时的占位图"
     },
     "show-count": {
       "value": "",
-      "description": "是否展示可用 / 不可用数量",
+      "description": "Whether to show the number of available/unavailable quantities",
       "default": "true",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否展示可用 / 不可用数量"
     }
   },
   "methods": [],
@@ -169,13 +187,15 @@
   "events": [
     {
       "name": "change",
-      "description": "优惠券切换回调",
-      "params": "优惠券切换回调"
+      "description": "Coupon switching callback",
+      "params": "优惠券切换回调",
+      "description_zh": "优惠券切换回调"
     },
     {
       "name": "exchange",
-      "description": "兑换优惠券回调",
-      "params": "兑换优惠券回调"
+      "description": "Redeem coupon callbacks",
+      "params": "兑换优惠券回调",
+      "description_zh": "兑换优惠券回调"
     }
   ],
   "list": "https://vant-docs.netlify.app/#/zh-CN/coupon-list"

@@ -3,33 +3,38 @@
   "props": {
     "dateCellRender": {
       "value": "",
-      "description": "作用域插槽，用来自定义渲染日期单元格，返回内容会被追加到单元格,",
+      "description": "Scoped slots, which are used to customize the rendered date cell, the returned content will be appended to the cell,",
       "default": "无",
-      "type": "v-slot:dateCellRender=\"{current: dayjs}\""
+      "type": "v-slot:dateCellRender=\"{current: dayjs}\"",
+      "description_zh": "作用域插槽，用来自定义渲染日期单元格，返回内容会被追加到单元格,"
     },
     "dateFullCellRender": {
       "value": "",
-      "description": "作用域插槽，自定义渲染日期单元格，返回内容覆盖单元格",
+      "description": "Scoped slots, custom rendered date cells, return content overlay cells",
       "default": "无",
-      "type": "v-slot:dateFullCellRender=\"{current: dayjs}\""
+      "type": "v-slot:dateFullCellRender=\"{current: dayjs}\"",
+      "description_zh": "作用域插槽，自定义渲染日期单元格，返回内容覆盖单元格"
     },
     "disabledDate": {
       "value": "",
-      "description": "不可选择的日期",
+      "description": "Unselectable dates",
       "default": "无",
-      "type": "(currentDate: dayjs) => boolean"
+      "type": "(currentDate: dayjs) => boolean",
+      "description_zh": "不可选择的日期"
     },
     "fullscreen": {
       "value": "",
-      "description": "是否全屏显示",
+      "description": "Whether it is displayed in full screen",
       "default": "true",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否全屏显示"
     },
     "headerRender": {
       "value": "",
-      "description": "自定义头部内容",
+      "description": "Customize the header content",
       "default": "-",
-      "type": "v-slot:headerRender=\"{value: dayjs, type: string, onChange: f(), onTypeChange: f()}\""
+      "type": "v-slot:headerRender=\"{value: dayjs, type: string, onChange: f(), onTypeChange: f()}\"",
+      "description_zh": "自定义头部内容"
     },
     "locale": {
       "value": [
@@ -45,64 +50,75 @@
         "locale",
         "example.json)"
       ],
-      "description": "国际化配置",
+      "description": "Internationalized configuration",
       "default": "",
-      "type": "object"
+      "type": "object",
+      "description_zh": "国际化配置"
     },
     "mode": {
       "value": "",
-      "description": "初始模式，`month/year`",
+      "description": "Initial mode, 'month/year'",
       "default": "month",
-      "type": "string"
+      "type": "string",
+      "description_zh": "初始模式，`month/year`"
     },
     "monthCellRender": {
       "value": "",
-      "description": "作用域插槽，自定义渲染月单元格，返回内容会被追加到单元格",
+      "description": "Scoped slots, custom render month cells, returned content will be appended to the cell",
       "default": "无",
-      "type": "v-slot:monthCellRender=\"{current: dayjs}\""
+      "type": "v-slot:monthCellRender=\"{current: dayjs}\"",
+      "description_zh": "作用域插槽，自定义渲染月单元格，返回内容会被追加到单元格"
     },
     "monthFullCellRender": {
       "value": "",
-      "description": "作用域插槽，自定义渲染月单元格，返回内容覆盖单元格",
+      "description": "Scoped slots, custom render month cells, return content overlay cells",
       "default": "无",
-      "type": "v-slot:monthFullCellRender=\"{current: dayjs}\""
+      "type": "v-slot:monthFullCellRender=\"{current: dayjs}\"",
+      "description_zh": "作用域插槽，自定义渲染月单元格，返回内容覆盖单元格"
     },
     "validRange": {
       "value": "",
-      "description": "设置可以显示的日期",
+      "description": "Set the dates that can be displayed",
       "default": "无",
-      "type": "dayjs"
+      "type": "dayjs",
+      "description_zh": "设置可以显示的日期"
     },
     "value(v-model)": {
       "value": "",
-      "description": "展示日期",
+      "description": "Date of display",
       "default": "当前日期",
-      "type": "dayjs"
+      "type": "dayjs",
+      "description_zh": "展示日期"
     },
     "valueFormat": {
       "value": "",
-      "description": "可选，绑定值的格式，对 value、defaultValue 起作用。不指定则绑定值为 dayjs 对象",
+      "description": "Optionally, the format of the bound value has effect on value and defaultValue. If not specified, the binding value is a dayjs object",
       "default": "-",
-      "type": "string"
+      "type": "string",
+      "description_zh": "可选，绑定值的格式，对 value、defaultValue 起作用。不指定则绑定值为 dayjs 对象"
     }
   },
   "methods": [],
   "events": [
     {
       "name": "change",
-      "description": "日期变化时的回调, 面板变化有可能导致日期变化",
-      "params": "function(date: dayjs | string）"
+      "description": "Callbacks when the date changes, and the date may change due to the change of the panel",
+      "params": "function(date: dayjs | string）",
+      "description_zh": "日期变化时的回调, 面板变化有可能导致日期变化"
     },
     {
       "name": "panelChange",
-      "description": "日期面板变化回调",
-      "params": "function(date: dayjs | string, mode: string)"
+      "description": "Date panel change callback",
+      "params": "function(date: dayjs | string, mode: string)",
+      "description_zh": "日期面板变化回调"
     },
     {
       "name": "select",
-      "description": "选择日期回调，包含来源信息",
-      "params": "function(date: Dayjs, info: { source: 'year' | 'month' | 'date' | 'customize' })"
+      "description": "Select a date callback that contains the source information",
+      "params": "function(date: Dayjs, info: { source: 'year' | 'month' | 'date' | 'customize' })",
+      "description_zh": "选择日期回调，包含来源信息"
     }
   ],
-  "link": "https://antdv.com/components/calendar-cn"
+  "link": "https://antdv.com/components/calendar-cn",
+  "link_zh": "https://antdv.com/components/calendar-cn"
 }

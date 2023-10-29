@@ -3,211 +3,270 @@
   "props": {
     "allow-checking-not-loaded": {
       "value": "",
-      "description": "是否允许级联勾选还没有完全加载的节点。如果你要用这个属性，请记住 `value` 可能是不完整的，并且请注意勾选行为和后端计算逻辑的一致性，尤其是有禁用节点的情况下",
+      "description": "Whether to allow cascade checks for nodes that are not yet fully loaded. If you're going to use this property, keep in mind that 'value' may be incomplete, and be careful to check the consistency between the behavior and the backend computation logic, especially if you have nodes disabled",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否允许级联勾选还没有完全加载的节点。如果你要用这个属性，请记住 `value` 可能是不完整的，并且请注意勾选行为和后端计算逻辑的一致性，尤其是有禁用节点的情况下"
     },
     "cascade": {
       "value": "",
-      "description": "在多选时是否关联选项",
+      "description": "Whether or not to associate options when multi-selecting",
       "default": "true",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "在多选时是否关联选项"
     },
     "check-strategy": {
       "value": "",
-      "description": "设置勾选策略来指定显示的勾选节点，`all` 表示显示全部选中节点；`parent` 表示只显示父节点（当父节点下所有子节点都选中时，对于单选无效）；`child` 表示只显示子节点",
+      "description": "Set the check policy to specify the check nodes to be displayed, 'all' means to show all the selected nodes; 'parent' means that only the parent node is displayed (when all child nodes under the parent node are selected, it is not valid for single selection); 'child' indicates that only child nodes are displayed",
       "default": "all",
-      "type": "string"
+      "type": "string",
+      "description_zh": "设置勾选策略来指定显示的勾选节点，`all` 表示显示全部选中节点；`parent` 表示只显示父节点（当父节点下所有子节点都选中时，对于单选无效）；`child` 表示只显示子节点"
     },
     "children-field": {
       "value": "",
-      "description": "替代 `CascaderOption` 中的 children 字段名",
+      "description": "Override the children field name in 'CascaderOption'",
       "default": "children",
-      "type": "string"
+      "type": "string",
+      "description_zh": "替代 `CascaderOption` 中的 children 字段名"
     },
     "clearable": {
       "value": "",
-      "description": "值是否可清除",
+      "description": "Whether the value is clearable",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "值是否可清除"
     },
     "clear-filter-after-select": {
       "value": "",
-      "description": "是否在可过滤和多选的情况下选中一个选项后保留当前的搜索关键词",
+      "description": "Whether to keep the current search term after selecting an option with filterable and multi-select",
       "default": "true",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否在可过滤和多选的情况下选中一个选项后保留当前的搜索关键词"
     },
     "default-value": {
       "value": "",
-      "description": "级联菜单默认选中的数据",
+      "description": "The cascade menu defaults to the selected data",
       "default": "null",
-      "type": "string | number | Array<number | string> | null"
+      "type": "string | number | Array<number | string> | null",
+      "description_zh": "级联菜单默认选中的数据"
     },
     "disabled": {
       "value": "",
-      "description": "是否禁用",
+      "description": "Whether to disable or not",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否禁用"
     },
     "disabled-field": {
       "value": "",
-      "description": "替代 `CascaderOption` 中的 disabled 字段名",
+      "description": "Override the disabled field name in 'CascaderOption'",
       "default": "disabled",
-      "type": "string"
+      "type": "string",
+      "description_zh": "替代 `CascaderOption` 中的 disabled 字段名"
     },
     "expand-trigger": {
-      "value": ["click", "hover"],
-      "description": "在 `remote` 被设定时 hover 不生效",
+      "value": [
+        "click",
+        "hover"
+      ],
+      "description": "Hover does not take effect when 'remote' is set",
       "default": "click",
-      "type": "click | hover"
+      "type": "click | hover",
+      "description_zh": "在 `remote` 被设定时 hover 不生效"
     },
     "filterable": {
       "value": "",
-      "description": "remote 被设定时不生效",
+      "description": "The remote does not take effect when it is set",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "remote 被设定时不生效"
     },
     "filter": {
       "value": "",
-      "description": "过滤选项的函数",
+      "description": "A function for filtering options",
       "default": "一个基于字符串的过滤算法",
-      "type": "(pattern: string, option: CascaderOption, path: CascaderOption[]) => boolean"
+      "type": "(pattern: string, option: CascaderOption, path: CascaderOption[]) => boolean",
+      "description_zh": "过滤选项的函数"
     },
     "filter-menu-props": {
       "value": "",
-      "description": "可过滤菜单的 DOM 属性",
+      "description": "You can filter the DOM properties of the menu",
       "default": "undefined",
-      "type": "HTMLAttributes"
+      "type": "HTMLAttributes",
+      "description_zh": "可过滤菜单的 DOM 属性"
     },
     "value-field": {
       "value": "",
-      "description": "替代 `CascaderOption` 中的 value 字段名",
+      "description": "Override the value field name in 'CascaderOption'",
       "default": "value",
-      "type": "string"
+      "type": "string",
+      "description_zh": "替代 `CascaderOption` 中的 value 字段名"
     },
     "label-field": {
       "value": "",
-      "description": "替代 `CascaderOption` 中的 label 字段名",
+      "description": "Override the label field name in 'CascaderOption'",
       "default": "label",
-      "type": "string"
+      "type": "string",
+      "description_zh": "替代 `CascaderOption` 中的 label 字段名"
     },
     "max-tag-count": {
       "value": "",
-      "description": "多选标签的最大显示数量，`responsive` 会将所有标签保持在一行",
+      "description": "The maximum number of multi-select tags to display, 'responsive' will keep all tags on a single line",
       "default": "undefined",
-      "type": "number | responsive"
+      "type": "number | responsive",
+      "description_zh": "多选标签的最大显示数量，`responsive` 会将所有标签保持在一行"
     },
     "menu-props": {
       "value": "",
-      "description": "菜单的 DOM 属性",
+      "description": "DOM properties of the menu",
       "default": "undefined",
-      "type": "HTMLAttributes"
+      "type": "HTMLAttributes",
+      "description_zh": "菜单的 DOM 属性"
     },
     "multiple": {
       "value": "",
-      "description": "是否支持多选",
+      "description": "Whether multiple selections are supported",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否支持多选"
     },
     ":options": {
       "value": "",
-      "description": "填充的 options 数据",
+      "description": "Populated options data",
       "default": "[]",
-      "type": "CascaderOption[]"
+      "type": "CascaderOption[]",
+      "description_zh": "填充的 options 数据"
     },
     "placeholder": {
       "value": "",
-      "description": "提示信息",
+      "description": "Prompt information",
       "default": "",
-      "type": "string"
+      "type": "string",
+      "description_zh": "提示信息"
     },
     "placement": {
-      "value": ["top-start", "top", "top-end", "right-start", "right", "right-end", "bottom-start", "bottom", "bottom-end", "left-start", "left", "left-end"],
-      "description": "弹出位置",
+      "value": [
+        "top-start",
+        "top",
+        "top-end",
+        "right-start",
+        "right",
+        "right-end",
+        "bottom-start",
+        "bottom",
+        "bottom-end",
+        "left-start",
+        "left",
+        "left-end"
+      ],
+      "description": "Ejection position",
       "default": "bottom-start",
-      "type": "top-start | top | top-end | right-start | right | right-end | bottom-start | bottom | bottom-end | left-start | left | left-end"
+      "type": "top-start | top | top-end | right-start | right | right-end | bottom-start | bottom | bottom-end | left-start | left | left-end",
+      "description_zh": "弹出位置"
     },
     "remote": {
       "value": "",
-      "description": "是否远程获取数据",
+      "description": "Whether to obtain data remotely",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否远程获取数据"
     },
     "render-label": {
       "value": "",
-      "description": "Cascader 菜单选项标签渲染函数",
+      "description": "Cascader Menu Options Label Rendering Function",
       "default": "undefined",
-      "type": "(option: CascaderOption, checked: boolean) => VNodeChild"
+      "type": "(option: CascaderOption, checked: boolean) => VNodeChild",
+      "description_zh": "Cascader 菜单选项标签渲染函数"
     },
     "separator": {
       "value": "",
-      "description": "数据分隔符",
+      "description": "Data separators",
       "default": " / ",
-      "type": "string"
+      "type": "string",
+      "description_zh": "数据分隔符"
     },
     "show": {
       "value": "",
-      "description": "是否打开菜单",
+      "description": "Whether to open the menu",
       "default": "undefined",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否打开菜单"
     },
     "show-path": {
       "value": "",
-      "description": "是否在选择器中显示选项路径",
+      "description": "Whether or not to display the option path in the selector",
       "default": "true",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否在选择器中显示选项路径"
     },
     "size": {
-      "value": ["small", "medium", "large"],
-      "description": "尺寸",
+      "value": [
+        "small",
+        "medium",
+        "large"
+      ],
+      "description": "size",
       "default": "medium",
-      "type": "small | medium | large"
+      "type": "small | medium | large",
+      "description_zh": "尺寸"
     },
     "status": {
-      "value": ["success", "warning", "error"],
-      "description": "验证状态",
+      "value": [
+        "success",
+        "warning",
+        "error"
+      ],
+      "description": "Verify the status",
       "default": "undefined",
-      "type": "success | warning | error"
+      "type": "success | warning | error",
+      "description_zh": "验证状态"
     },
     "to": {
       "value": "",
-      "description": "菜单的容器节点，`false` 会待在原地",
+      "description": "menu's container node, 'false' will stay put",
       "default": "body",
-      "type": "string | HTMLElement | false"
+      "type": "string | HTMLElement | false",
+      "description_zh": "菜单的容器节点，`false` 会待在原地"
     },
     "value": {
       "value": "",
-      "description": "级联选择的数据受控",
+      "description": "Cascade selection of data controlled",
       "default": "undefined",
-      "type": "string | number | Array<number | string> | null"
+      "type": "string | number | Array<number | string> | null",
+      "description_zh": "级联选择的数据受控"
     },
     "virtual-scroll": {
       "value": "",
-      "description": "是否支持虚拟滚动",
+      "description": "Whether virtual scrolling is supported",
       "default": "true",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否支持虚拟滚动"
     }
   },
   "methods": [
     {
       "name": "blur",
-      "description": "失焦",
-      "params": "() => void"
+      "description": "Out of focus",
+      "params": "() => void",
+      "description_zh": "失焦"
     },
     {
       "name": "focus",
-      "description": "聚焦",
-      "params": "() => void"
+      "description": "focus",
+      "params": "() => void",
+      "description_zh": "聚焦"
     },
     {
       "name": "getCheckedData",
-      "description": "获取选中的数据",
-      "params": "() => { keys: Array<string | number>, options: Array<TreeOption | null> }"
+      "description": "Get the selected data",
+      "params": "() => { keys: Array<string | number>, options: Array<TreeOption | null> }",
+      "description_zh": "获取选中的数据"
     },
     {
       "name": "getIndeterminateData",
-      "description": "获取半选的数据",
-      "params": "() => { keys: Array<string | number>, options: Array<TreeOption | null> }"
+      "description": "Get half-selected data",
+      "params": "() => { keys: Array<string | number>, options: Array<TreeOption | null> }",
+      "description_zh": "获取半选的数据"
     }
   ],
   "typeDetail": {
@@ -237,29 +296,35 @@
   "events": [
     {
       "name": "blur",
-      "description": "用户 blur 时执行的回调",
-      "params": "() => void"
+      "description": "A callback that is executed when the user blurs",
+      "params": "() => void",
+      "description_zh": "用户 blur 时执行的回调"
     },
     {
       "name": "focus",
-      "description": "用户 focus 时执行的回调",
-      "params": "() => void"
+      "description": "The callback executed when the user is focused",
+      "params": "() => void",
+      "description_zh": "用户 focus 时执行的回调"
     },
     {
       "name": "load",
-      "description": "在点击未加载完成节点时的回调，在返回的 promise 中设定 `option.children`，在返回的 promise resolve 或 reject 之后完成加载",
-      "params": "(option: CascaderOption) => Promise<void>"
+      "description": "When you click the callback when the node is not loaded, set 'option.children' in the returned promise to complete the loading after the returned promise resolve or reject",
+      "params": "(option: CascaderOption) => Promise<void>",
+      "description_zh": "在点击未加载完成节点时的回调，在返回的 promise 中设定 `option.children`，在返回的 promise resolve 或 reject 之后完成加载"
     },
     {
       "name": "update:show",
-      "description": "菜单打开关闭的回调",
-      "params": "(value: boolean) => void"
+      "description": "menu to open and close the callback",
+      "params": "(value: boolean) => void",
+      "description_zh": "菜单打开关闭的回调"
     },
     {
       "name": "update:value",
-      "description": "值改变时执行的回调",
-      "params": "(value: string | number | Array<string | number> | null, option: CascaderOption | Array<CascaderOption | null> | null, pathValues: Array<CascaderOption | null> | Array<CascaderOption[] | null> | null) => void"
+      "description": "A callback that is executed when the value changes",
+      "params": "(value: string | number | Array<string | number> | null, option: CascaderOption | Array<CascaderOption | null> | null, pathValues: Array<CascaderOption | null> | Array<CascaderOption[] | null> | null) => void",
+      "description_zh": "值改变时执行的回调"
     }
   ],
-  "link": "https://www.naiveui.com/zh-CN/dark/components/cascader"
+  "link": "https://www.naiveui.com/zh-CN/dark/components/cascader",
+  "link_zh": "https://www.naiveui.com/zh-CN/dark/components/cascader"
 }

@@ -3,38 +3,78 @@
   "props": {
     ":v-model": {
       "value": "",
-      "description": "绑定的值",
+      "description": "The value of the binding",
       "default": "[]",
       "type": "Array",
-      "required": true
+      "required": true,
+      "description_zh": "绑定的值"
     },
     "max": {
       "value": "",
-      "description": "最大选择的数量",
+      "description": "The maximum number of selections",
       "default": "-",
-      "type": "number"
+      "type": "number",
+      "description_zh": "最大选择的数量"
     },
     "direction": {
-      "value": ["horizontal", "vertical"],
-      "description": "布局方向，可选值为 `horizontal` vertical",
+      "value": [
+        "horizontal",
+        "vertical"
+      ],
+      "description": "Layout direction, optionally 'horizontal' vertical",
       "default": "horizontal",
-      "type": "string"
+      "type": "string",
+      "description_zh": "布局方向，可选值为 `horizontal` vertical"
     },
     "rules": {
       "value": "",
-      "description": "验证规则，返回 `true` 表示验证通过，其余的值则转换为文本作为用户提示",
+      "description": "Validation rules, which return 'true' to indicate that the validation is passed, and the rest of the values are converted to text as user prompts",
       "default": "_",
-      "type": "Array<(value: any) => any>"
+      "type": "Array<(value: any) => any>",
+      "description_zh": "验证规则，返回 `true` 表示验证通过，其余的值则转换为文本作为用户提示"
     }
   },
-  "methods": [{ "name": "validate", "description": "触发校验", "params": "`-`" }, { "name": "resetValidation", "description": "清空校验信息", "params": "`-`" }, { "name": "reset", "description": "清空绑定的值(设置为 `[]`)和校验信息", "params": "`-`" }, { "name": "checkAll", "description": "全选", "params": "`-`" }, { "name": "inverseAll", "description": "反选", "params": "`-`" }],
+  "methods": [
+    {
+      "name": "validate",
+      "description": "Trigger the check",
+      "params": "`-`",
+      "description_zh": "触发校验"
+    },
+    {
+      "name": "resetValidation",
+      "description": "Clear the verification information",
+      "params": "`-`",
+      "description_zh": "清空校验信息"
+    },
+    {
+      "name": "reset",
+      "description": "Clear the bound value (set to '[]') and the validation information",
+      "params": "`-`",
+      "description_zh": "清空绑定的值(设置为 `[]`)和校验信息"
+    },
+    {
+      "name": "checkAll",
+      "description": "Select all",
+      "params": "`-`",
+      "description_zh": "全选"
+    },
+    {
+      "name": "inverseAll",
+      "description": "Counter-selection",
+      "params": "`-`",
+      "description_zh": "反选"
+    }
+  ],
   "typeDetail": {},
   "events": [
     {
       "name": "change",
-      "description": "变更时触发",
-      "params": "变更时触发"
+      "description": "Triggered when the change is made",
+      "params": "变更时触发",
+      "description_zh": "变更时触发"
     }
   ],
-  "link": "https://varlet.gitee.io/varlet-ui/#/zh-CN/checkbox-group"
+  "link": "https://varlet.gitee.io/varlet-ui/#/zh-CN/checkbox-group",
+  "link_zh": "https://varlet.gitee.io/varlet-ui/#/zh-CN/checkbox-group"
 }

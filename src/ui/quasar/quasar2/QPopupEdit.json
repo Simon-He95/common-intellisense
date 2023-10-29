@@ -4,62 +4,76 @@
     {
       "name": "set",
       "description": "Trigger a model update; Validates model (and emits 'save' event if it's the case) then closes Popup",
-      "params": ""
+      "params": "",
+      "description_zh": "触发模型更新;验证模型（如果是这种情况，则发出“save”事件），然后关闭弹出窗口"
     },
     {
       "name": "cancel",
       "description": "Triggers a model reset to its initial value ('cancel' event is emitted) then closes Popup",
-      "params": ""
+      "params": "",
+      "description_zh": "触发模型重置为其初始值（发出“取消”事件），然后关闭弹出窗口"
     },
     {
       "name": "show",
-      "params": ""
+      "params": "",
+      "description": "",
+      "description_zh": ""
     },
     {
       "name": "hide",
-      "params": ""
+      "params": "",
+      "description": "",
+      "description_zh": ""
     },
     {
       "name": "updatePosition",
       "description": "There are some custom scenarios for which Quasar cannot automatically reposition the component without significant performance drawbacks so the optimal solution is for you to call this method when you need it",
-      "params": ""
+      "params": "",
+      "description_zh": "在某些自定义场景中，Quasar 无法自动重新定位组件，而不会出现明显的性能缺陷，因此最佳解决方案是在需要时调用此方法"
     }
   ],
   "events": [
     {
       "name": "update:model-value",
       "description": "Emitted when Popup gets cancelled in order to reset model to its initial value; Is also used by v-model",
-      "params": ""
+      "params": "",
+      "description_zh": "当弹出窗口被取消以将模型重置为其初始值时发出;也被 v-model 使用"
     },
     {
       "name": "before-show",
       "description": "Emitted right before Popup gets shown",
-      "params": ""
+      "params": "",
+      "description_zh": "在弹出窗口显示之前发出"
     },
     {
       "name": "show",
       "description": "Emitted right after Popup gets shown",
-      "params": ""
+      "params": "",
+      "description_zh": "弹出窗口显示后立即发出"
     },
     {
       "name": "before-hide",
       "description": "Emitted right before Popup gets dismissed",
-      "params": ""
+      "params": "",
+      "description_zh": "在弹出窗口被驳回之前发出"
     },
     {
       "name": "hide",
       "description": "Emitted right after Popup gets dismissed",
-      "params": ""
+      "params": "",
+      "description_zh": "在弹出窗口被关闭后立即发出"
     },
     {
       "name": "save",
       "description": "Emitted when value has been successfully validated and it should be saved",
-      "params": "(value: Any, initialValue: Any) => void"
+      "params": "(value: Any, initialValue: Any) => void",
+      "description_zh": "当值已成功验证并应保存时发出"
     },
     {
       "name": "cancel",
       "description": "Emitted when user cancelled the change (hit ESC key or clicking outside of Popup or hit 'Cancel' button)",
-      "params": "(value: Any, initialValue: Any) => void"
+      "params": "(value: Any, initialValue: Any) => void",
+      "description_zh": "当用户取消更改时发出（按 ESC 键或单击弹出窗口外部或点击“取消”按钮）"
     }
   ],
   "props": {
@@ -71,37 +85,43 @@
       "extends": "model-value",
       "examples": [
         "v-model=\"myValue\""
-      ]
+      ],
+      "description_zh": ""
     },
     "title": {
       "value": "",
       "type": "String",
       "description": "Optional title (unless 'title' slot is used)",
-      "default": ""
+      "default": "",
+      "description_zh": "可选标题（除非使用“title”插槽）"
     },
     "buttons": {
       "value": "",
       "type": "Boolean",
       "description": "Show Set and Cancel buttons",
-      "default": "false"
+      "default": "false",
+      "description_zh": "显示“设置”和“取消”按钮"
     },
     "label-set": {
       "value": "",
       "type": "String",
       "description": "Override Set button label",
-      "default": ""
+      "default": "",
+      "description_zh": "覆盖“设置”按钮标签"
     },
     "label-cancel": {
       "value": "",
       "type": "String",
       "description": "Override Cancel button label",
-      "default": ""
+      "default": "",
+      "description_zh": "覆盖“取消”按钮标签"
     },
     "auto-save": {
       "value": "",
       "type": "Boolean",
       "description": "Automatically save the model (if changed) when user clicks/taps outside of the popup; It does not apply to ESC key",
-      "default": "false"
+      "default": "false",
+      "description_zh": "当用户在弹出窗口外单击/点击时自动保存模型（如果已更改）;它不适用于 ESC 键"
     },
     "color": {
       "type": "String",
@@ -110,74 +130,86 @@
       "default": "primary",
       "extends": "color",
       "desc": "Color name for component's track from the Quasar Color Palette",
-      "category": "style"
+      "category": "style",
+      "description_zh": "类星体调色板中组件的颜色名称"
     },
     "validate": {
       "value": "",
       "type": "Function",
       "description": "Validates model then triggers 'save' and closes Popup; Returns a Boolean ('true' means valid, 'false' means abort); Syntax: validate(value); For best performance, reference it from your scope and do not define it inline",
-      "default": ""
+      "default": "",
+      "description_zh": "验证模型，然后触发“保存”并关闭弹出窗口;返回一个布尔值（'true' 表示有效，'false' 表示中止）;语法：validate（value）;为了获得最佳性能，请从您的范围引用它，不要以内联方式定义它"
     },
     "disable": {
       "value": "",
       "type": "String",
       "description": "",
       "default": "",
-      "extends": "disable"
+      "extends": "disable",
+      "description_zh": ""
     },
     "fit": {
       "value": "",
       "type": "Boolean",
       "description": "Allows the menu to match at least the full width of its target",
-      "default": "false"
+      "default": "false",
+      "description_zh": "允许菜单至少匹配其目标的整个宽度"
     },
     "cover": {
       "value": "",
       "type": "Boolean",
       "description": "Allows the menu to cover its target. When used, the 'self' and 'fit' props are no longer effective",
-      "default": true
+      "default": true,
+      "description_zh": "允许菜单覆盖其目标。使用时，“自我”和“适合”道具不再有效"
     },
     "anchor": {
       "value": "",
       "type": "String",
       "description": "Two values setting the starting position or anchor point of the menu relative to its target",
-      "default": ""
+      "default": "",
+      "description_zh": "两个值设置菜单相对于其目标的起始位置或锚点"
     },
     "self": {
       "value": "",
       "type": "String",
       "description": "Two values setting the menu's own position relative to its target",
-      "default": ""
+      "default": "",
+      "description_zh": "两个值设置菜单相对于其目标的位置"
     },
     "offset": {
       "value": "",
       "type": "Array",
       "description": "An array of two numbers to offset the menu horizontally and vertically in pixels",
-      "default": ""
+      "default": "",
+      "description_zh": "由两个数字组成的数组，用于水平和垂直偏移菜单（以像素为单位）"
     },
     "touch-position": {
       "value": "",
       "type": "Boolean",
       "description": "Allows for the target position to be set by the mouse position, when the target of the menu is either clicked or touched",
-      "default": "false"
+      "default": "false",
+      "description_zh": "当单击或触摸菜单的目标时，允许通过鼠标位置设置目标位置"
     },
     "persistent": {
       "value": "",
       "type": "Boolean",
       "description": "Avoid menu closing by hitting ESC key or by clicking/tapping outside of the Popup",
-      "default": "false"
+      "default": "false",
+      "description_zh": "通过按 ESC 键或单击/点击弹出窗口外部来避免菜单关闭"
     },
     "separate-close-popup": {
       "value": "",
       "type": "Boolean",
       "description": "Separate from parent menu, marking it as a separate closing point for v-close-popup (without this, chained menus close all together)",
-      "default": "false"
+      "default": "false",
+      "description_zh": "与父菜单分开，将其标记为 v-close-popup 的单独关闭点（没有这个，链接的菜单将一起关闭）"
     },
     "square": {
       "value": "",
       "type": "Boolean",
       "description": "Forces menu to have squared borders",
-      "default": "false"
+      "default": "false",
+      "description_zh": "强制菜单具有方形边框"
     },
     "max-height": {
       "value": "",
@@ -186,7 +218,8 @@
       "default": "",
       "extends": "size",
       "desc": "The maximum height of the menu; Size in CSS units, including unit name",
-      "category": "style"
+      "category": "style",
+      "description_zh": ""
     },
     "max-width": {
       "value": "",
@@ -195,8 +228,10 @@
       "default": "",
       "extends": "size",
       "desc": "The maximum width of the menu; Size in CSS units, including unit name",
-      "category": "style"
+      "category": "style",
+      "description_zh": ""
     }
   },
-  "link": "https://v2.quasar.dev/vue-components/popup-edit"
+  "link": "https://v2.quasar.dev/vue-components/popup-edit",
+  "link_zh": "https://v2.quasar.dev/vue-components/popup-edit"
 }

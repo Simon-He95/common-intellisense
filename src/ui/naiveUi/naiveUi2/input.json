@@ -3,178 +3,223 @@
   "props": {
     "allow-input": {
       "value": "",
-      "description": "校验当前的输入是否合法，如果返回 `false` 输入框便不会响应此次的输入",
+      "description": "Verify that the current input is valid, and if the 'false' input box is returned, it will not respond to the input",
       "default": "undefined",
-      "type": "(value: string) => false"
+      "type": "(value: string) => false",
+      "description_zh": "校验当前的输入是否合法，如果返回 `false` 输入框便不会响应此次的输入"
     },
     "autofocus": {
       "value": "",
-      "description": "是否自动获取焦点",
+      "description": "Whether or not to get focus automatically",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否自动获取焦点"
     },
     "autosize": {
       "value": "",
-      "description": "自适应内容高度，只对 `type=\"textarea\"` 有效，可传入对象，如 `{ minRows: 1, maxRows: 3 }`",
+      "description": "Adaptive content height, only valid for 'type=\"textarea\"', can be passed in objects, e.g. '{ minRows: 1, maxRows: 3 }'",
       "default": "false",
-      "type": "boolean | { minRows?: number, maxRows?: number }"
+      "type": "boolean | { minRows?: number, maxRows?: number }",
+      "description_zh": "自适应内容高度，只对 `type=\"textarea\"` 有效，可传入对象，如 `{ minRows: 1, maxRows: 3 }`"
     },
     "clearable": {
       "value": "",
-      "description": "是否可清空",
+      "description": "Whether it can be emptied",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否可清空"
     },
     "default-value": {
       "value": "",
-      "description": "输入框默认值",
+      "description": "Input box defaults",
       "default": "null",
-      "type": "string | [string, string] | null"
+      "type": "string | [string, string] | null",
+      "description_zh": "输入框默认值"
     },
     "count-graphemes": {
       "value": "",
-      "description": "计算输入的字数。如果设定了，那么原生的 `maxlength` 和 `minlength` 属性将不再被使用",
+      "description": "Count the number of words entered. If set, the native 'maxlength' and 'minlength' properties will no longer be used",
       "default": "undefined",
-      "type": "(value: string) => number"
+      "type": "(value: string) => number",
+      "description_zh": "计算输入的字数。如果设定了，那么原生的 `maxlength` 和 `minlength` 属性将不再被使用"
     },
     "disabled": {
       "value": "",
-      "description": "是否禁用",
+      "description": "Whether to disable or not",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否禁用"
     },
     "input-props": {
       "value": "",
-      "description": "Input 组件内部 input 元素的属性，对 `pair` 类型不生效，[在这里查看原生属性](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input)。注意：input-props 不会覆盖内部 input 元素的已经存在的属性（除了 `type`）",
+      "description": "The properties of the input element inside the input component, which do not take effect for the 'pair' type, [see native properties here](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input). Note: input-props do not override the already existing properties of the internal input element (except for 'type')",
       "default": "undefined",
-      "type": "HTMLInputAttributes"
+      "type": "HTMLInputAttributes",
+      "description_zh": "Input 组件内部 input 元素的属性，对 `pair` 类型不生效，[在这里查看原生属性](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input)。注意：input-props 不会覆盖内部 input 元素的已经存在的属性（除了 `type`）"
     },
     "loading": {
       "value": "",
-      "description": "是否展示加载图标，设为非 `undefined` 会占据空间",
+      "description": "Whether or not to display the loading icon, setting it to non-'undefined' will take up space",
       "default": "undefined",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否展示加载图标，设为非 `undefined` 会占据空间"
     },
     "maxlength": {
       "value": "",
-      "description": "最大输入长度",
+      "description": "Maximum input length",
       "default": "undefined",
-      "type": "number"
+      "type": "number",
+      "description_zh": "最大输入长度"
     },
     "minlength": {
       "value": "",
-      "description": "最小输入长度",
+      "description": "Minimum input length",
       "default": "undefined",
-      "type": "number"
+      "type": "number",
+      "description_zh": "最小输入长度"
     },
     "pair": {
       "value": "",
-      "description": "是否输入成对的值",
+      "description": "Whether to enter pairwise values",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否输入成对的值"
     },
     "passively-activated": {
       "value": "",
-      "description": "是否被动激活输入框",
+      "description": "Whether or not to passively activate the input box",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否被动激活输入框"
     },
     "placeholder": {
       "value": "",
-      "description": "文本输入的占位符。如果 `pair` 是 `true`，`placeholder`是一个数组",
+      "description": "Placeholders for text input. If 'pair' is 'true', 'placeholder' is an array",
       "default": "undefined",
       "type": "string | [string, string]",
-      "required": true
+      "required": true,
+      "description_zh": "文本输入的占位符。如果 `pair` 是 `true`，`placeholder`是一个数组"
     },
     "readonly": {
       "value": "",
-      "description": "是否只读",
+      "description": "Whether it is read-only or not",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否只读"
     },
     "render-count": {
       "value": "",
-      "description": "字数统计的渲染函数",
+      "description": "Rendering function for word count",
       "default": "undefined",
-      "type": "(props: { value: string }) => void"
+      "type": "(props: { value: string }) => void",
+      "description_zh": "字数统计的渲染函数"
     },
     "round": {
       "value": "",
-      "description": "输入框是否圆角",
+      "description": "Enter whether the box is rounded",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "输入框是否圆角"
     },
     "rows": {
       "value": "",
-      "description": "输入框行数，对 type=\"textarea\" 有效",
+      "description": "Enter the number of lines in the box, which is valid for type=\"textarea\".",
       "default": "3",
-      "type": "number"
+      "type": "number",
+      "description_zh": "输入框行数，对 type=\"textarea\" 有效"
     },
     "separator": {
       "value": "",
-      "description": "成对输入框中间的分隔符",
+      "description": "A separator in the middle of a paired input box",
       "default": "undefined",
-      "type": "string"
+      "type": "string",
+      "description_zh": "成对输入框中间的分隔符"
     },
     "show-count": {
       "value": "",
-      "description": "是否显示字数统计",
+      "description": "Whether or not to display the word count",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否显示字数统计"
     },
     "show-password-on": {
-      "value": ["click", "mousedown"],
-      "description": "显示密码的时机",
+      "value": [
+        "click",
+        "mousedown"
+      ],
+      "description": "When the password is displayed",
       "default": "undefined",
-      "type": "click | mousedown"
+      "type": "click | mousedown",
+      "description_zh": "显示密码的时机"
     },
     "size": {
-      "value": ["tiny", "small", "medium", "large"],
-      "description": "输入框尺寸",
+      "value": [
+        "tiny",
+        "small",
+        "medium",
+        "large"
+      ],
+      "description": "Enter the size of the field",
       "default": "medium",
-      "type": "tiny | small | medium | large"
+      "type": "tiny | small | medium | large",
+      "description_zh": "输入框尺寸"
     },
     "status": {
-      "value": ["success", "warning", "error"],
-      "description": "验证状态",
+      "value": [
+        "success",
+        "warning",
+        "error"
+      ],
+      "description": "Verify the status",
       "default": "undefined",
-      "type": "success | warning | error"
+      "type": "success | warning | error",
+      "description_zh": "验证状态"
     },
     "type": {
-      "value": ["text", "password", "textarea"],
-      "description": "输入框类型",
+      "value": [
+        "text",
+        "password",
+        "textarea"
+      ],
+      "description": "Enter the type of field",
       "default": "text",
-      "type": "text | password | textarea"
+      "type": "text | password | textarea",
+      "description_zh": "输入框类型"
     },
     "value": {
       "value": "",
-      "description": "文本输入的值。如果 `pair` 是 `true`，`value` 是一个数组",
+      "description": "The value of the text entry. If 'pair' is 'true', 'value' is an array",
       "default": "undefined",
-      "type": "string | [string, string] | null"
+      "type": "string | [string, string] | null",
+      "description_zh": "文本输入的值。如果 `pair` 是 `true`，`value` 是一个数组"
     },
     "blur": {
       "value": "",
-      "description": "Blur input 元素",
+      "description": "Blur input element",
       "default": "",
-      "type": "() => void"
+      "type": "() => void",
+      "description_zh": "Blur input 元素"
     },
     "focus": {
       "value": "",
-      "description": "Focus input 元素",
+      "description": "Focus input element",
       "default": "",
-      "type": "() => void"
+      "type": "() => void",
+      "description_zh": "Focus input 元素"
     },
     "select": {
       "value": "",
-      "description": "Select input 元素",
+      "description": "Select input element",
       "default": "",
-      "type": "() => void"
+      "type": "() => void",
+      "description_zh": "Select input 元素"
     },
     ":scrollTo": {
       "value": "",
-      "description": "滚动到",
+      "description": "Scroll to",
       "default": "",
-      "type": "(options: { left?: number, top?: number, behavior?: auto | smooth }) => void"
+      "type": "(options: { left?: number, top?: number, behavior?: auto | smooth }) => void",
+      "description_zh": "滚动到"
     }
   },
   "methods": [],
@@ -182,34 +227,41 @@
   "events": [
     {
       "name": "blur",
-      "description": "输入框失去焦点时触发",
-      "params": "() => void"
+      "description": "Triggered when the input box loses focus",
+      "params": "() => void",
+      "description_zh": "输入框失去焦点时触发"
     },
     {
       "name": "change",
-      "description": "原生 change 事件触发时触发",
-      "params": "(value: string | [string, string]) => void"
+      "description": "Triggered when the native change event is triggered",
+      "params": "(value: string | [string, string]) => void",
+      "description_zh": "原生 change 事件触发时触发"
     },
     {
       "name": "clear",
-      "description": "输入框点击清空按钮时触发",
-      "params": "() => void"
+      "description": "Triggered when the input box is clicked to clear the button",
+      "params": "() => void",
+      "description_zh": "输入框点击清空按钮时触发"
     },
     {
       "name": "focus",
-      "description": "输入框获得焦点时触发",
-      "params": "() => void"
+      "description": "Triggers when the input box gains focus",
+      "params": "() => void",
+      "description_zh": "输入框获得焦点时触发"
     },
     {
       "name": "input",
-      "description": "输入框在用户输入时触发",
-      "params": "(value: string | [string, string]) => void"
+      "description": "The input box is triggered when the user inputs",
+      "params": "(value: string | [string, string]) => void",
+      "description_zh": "输入框在用户输入时触发"
     },
     {
       "name": "update:value",
-      "description": "输入框值 change 时触发",
-      "params": "(value: string | [string, string]) => void"
+      "description": "Triggered when the value of the input box changes",
+      "params": "(value: string | [string, string]) => void",
+      "description_zh": "输入框值 change 时触发"
     }
   ],
-  "link": "https://www.naiveui.com/zh-CN/dark/components/input"
+  "link": "https://www.naiveui.com/zh-CN/dark/components/input",
+  "link_zh": "https://www.naiveui.com/zh-CN/dark/components/input"
 }

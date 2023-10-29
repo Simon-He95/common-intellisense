@@ -3,110 +3,167 @@
   "props": {
     ":v-model": {
       "value": "",
-      "description": "绑定的值",
+      "description": "The value of the binding",
       "default": "-",
       "type": "any | any[]",
-      "required": true
+      "required": true,
+      "description_zh": "绑定的值"
     },
     "size": {
       "value": "",
-      "description": "选择框尺寸，可选值 small",
+      "description": "Select the box size, optionally small",
       "default": "-",
-      "type": "string"
+      "type": "string",
+      "description_zh": "选择框尺寸，可选值 small"
     },
     "variant": {
-      "value": ["standard", "outlined"],
-      "description": "选择框风格, 可选值为 `standard` outlined",
+      "value": [
+        "standard",
+        "outlined"
+      ],
+      "description": "Selection box style, optionally 'standard' outlined",
       "default": "standard",
-      "type": "string"
+      "type": "string",
+      "description_zh": "选择框风格, 可选值为 `standard` outlined"
     },
     "placeholder": {
       "value": "",
-      "description": "占位符",
+      "description": "Placeholders",
       "default": "-",
       "type": "string",
-      "required": true
+      "required": true,
+      "description_zh": "占位符"
     },
     "multiple": {
       "value": "",
-      "description": "是否开启多选",
+      "description": "Whether to enable multiple selection",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否开启多选"
     },
     "offset-y": {
       "value": "",
-      "description": "下拉菜单的垂直偏移量",
+      "description": "The vertical offset of the drop-down menu",
       "default": "0",
-      "type": "number | string"
+      "type": "number | string",
+      "description_zh": "下拉菜单的垂直偏移量"
     },
     "chip": {
       "value": "",
-      "description": "是否使用纸片风格(仅限多选)",
+      "description": "Whether to use a paper style (multiple choice only)",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否使用纸片风格(仅限多选)"
     },
     "line": {
       "value": "",
-      "description": "是否显示分割线",
+      "description": "Whether or not to display a dividing line",
       "default": "true",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否显示分割线"
     },
     "hint": {
       "value": "",
-      "description": "是否使用占位符作为提示",
+      "description": "Whether to use a placeholder as a hint",
       "default": "true",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否使用占位符作为提示"
     },
     "text-color": {
       "value": "",
-      "description": "文字颜色",
+      "description": "Text color",
       "default": "-",
-      "type": "string"
+      "type": "string",
+      "description_zh": "文字颜色"
     },
     "focus-color": {
       "value": "",
-      "description": "聚焦时的主要颜色",
+      "description": "The primary color when focused",
       "default": "-",
-      "type": "string"
+      "type": "string",
+      "description_zh": "聚焦时的主要颜色"
     },
     "blur-color": {
       "value": "",
-      "description": "失焦时的主要颜色",
+      "description": "The primary color when out of focus",
       "default": "-",
-      "type": "string"
+      "type": "string",
+      "description_zh": "失焦时的主要颜色"
     },
     "readonly": {
       "value": "",
-      "description": "是否只读",
+      "description": "Whether it is read-only or not",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否只读"
     },
     "disabled": {
       "value": "",
-      "description": "是否禁用",
+      "description": "Whether to disable or not",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否禁用"
     },
     "clearable": {
       "value": "",
-      "description": "是否可清除",
+      "description": "Whether it can be purged",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否可清除"
     },
     "validate-trigger": {
-      "value": ["onChange", "onBlur", "onFocus", "onClear", "onInput"],
-      "description": "触发验证的时机，可选值为 `onFocus` `onBlur` `onChange` `onClick` `onClear` onClose",
+      "value": [
+        "onChange",
+        "onBlur",
+        "onFocus",
+        "onClear",
+        "onInput"
+      ],
+      "description": "When the validation is triggered, the selectable values are 'onFocus', 'onBlur', 'onChange', 'onClick', 'onClear', onClose",
       "default": "['onChange', 'onClear', 'onClose']",
-      "type": "string"
+      "type": "string",
+      "description_zh": "触发验证的时机，可选值为 `onFocus` `onBlur` `onChange` `onClick` `onClear` onClose"
     },
     "rules": {
       "value": "",
-      "description": "验证规则，返回 `true` 表示验证通过，其余的值则转换为文本作为用户提示",
+      "description": "Validation rules, which return 'true' to indicate that the validation is passed, and the rest of the values are converted to text as user prompts",
       "default": "-",
-      "type": "Array<(v: any | any[]) => any>"
+      "type": "Array<(v: any | any[]) => any>",
+      "description_zh": "验证规则，返回 `true` 表示验证通过，其余的值则转换为文本作为用户提示"
     }
   },
-  "methods": [{ "name": "focus", "description": "聚焦", "params": "`-`" }, { "name": "blur", "description": "失焦", "params": "`-`" }, { "name": "validate", "description": "触发校验", "params": "`-`" }, { "name": "resetValidation", "description": "清空校验信息", "params": "`-`" }, { "name": "reset", "description": "清空绑定的值(单选设置为 `undefined`，多选设置为 `[]`)和校验信息", "params": "`-`" }],
+  "methods": [
+    {
+      "name": "focus",
+      "description": "focus",
+      "params": "`-`",
+      "description_zh": "聚焦"
+    },
+    {
+      "name": "blur",
+      "description": "Out of focus",
+      "params": "`-`",
+      "description_zh": "失焦"
+    },
+    {
+      "name": "validate",
+      "description": "Trigger the check",
+      "params": "`-`",
+      "description_zh": "触发校验"
+    },
+    {
+      "name": "resetValidation",
+      "description": "Clear the verification information",
+      "params": "`-`",
+      "description_zh": "清空校验信息"
+    },
+    {
+      "name": "reset",
+      "description": "Clear the bound value ('undefined' for single selection, '[]' for multiple selection) and validation information",
+      "params": "`-`",
+      "description_zh": "清空绑定的值(单选设置为 `undefined`，多选设置为 `[]`)和校验信息"
+    }
+  ],
   "typeDetail": {
     "Option": [
       {
@@ -124,33 +181,39 @@
   "events": [
     {
       "name": "focus",
-      "description": "聚焦时触发",
-      "params": "event: Event"
+      "description": "Triggered when focused",
+      "params": "event: Event",
+      "description_zh": "聚焦时触发"
     },
     {
       "name": "blur",
-      "description": "失焦时触发",
-      "params": "event: Event"
+      "description": "Triggers when out of focus",
+      "params": "event: Event",
+      "description_zh": "失焦时触发"
     },
     {
       "name": "click",
-      "description": "点击时触发",
-      "params": "event: Event"
+      "description": "Triggered when clicked",
+      "params": "event: Event",
+      "description_zh": "点击时触发"
     },
     {
       "name": "clear",
-      "description": "清除时触发",
-      "params": "value: any | any[]"
+      "description": "Triggered when cleared",
+      "params": "value: any | any[]",
+      "description_zh": "清除时触发"
     },
     {
       "name": "close",
-      "description": "输入时触发",
-      "params": "value: any | any[]"
+      "description": "Triggered when entering",
+      "params": "value: any | any[]",
+      "description_zh": "输入时触发"
     },
     {
       "name": "change",
-      "description": "更新时触发",
-      "params": "value: any | any[]"
+      "description": "Triggered when updating",
+      "params": "value: any | any[]",
+      "description_zh": "更新时触发"
     }
   ]
 }

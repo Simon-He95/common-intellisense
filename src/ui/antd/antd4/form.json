@@ -3,135 +3,192 @@
   "props": {
     "colon": {
       "value": "",
-      "description": "配置 Form.Item 的 `colon` 的默认值。表示是否显示 label 后面的冒号 (只有在属性 layout 为 horizontal 时有效)",
+      "description": "Configure the default value for 'colon' for Form.Item. Indicates whether to display a colon after label (only valid if the property layout is horizontal)",
       "default": "true",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "配置 Form.Item 的 `colon` 的默认值。表示是否显示 label 后面的冒号 (只有在属性 layout 为 horizontal 时有效)"
     },
     "disabled": {
       "value": "",
-      "description": "设置表单组件禁用，仅对 antd 组件有效",
+      "description": "Set the form component to be disabled, only for the antd component",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "设置表单组件禁用，仅对 antd 组件有效"
     },
     "component": {
       "value": "",
-      "description": "设置 Form 渲染元素，为 `false` 则不创建 DOM 节点",
+      "description": "Set the Form render element to 'false' to create no DOM node",
       "default": "form",
-      "type": "ComponentType | false"
+      "type": "ComponentType | false",
+      "description_zh": "设置 Form 渲染元素，为 `false` 则不创建 DOM 节点"
     },
     "fields": {
       "value": "",
-      "description": "通过状态管理（如 redux）控制表单字段，如非强需求不推荐使用",
+      "description": "Control form fields through state management (e.g., Redux), which is not recommended if not strongly demanded",
       "default": "-",
-      "type": "[FieldData][]"
+      "type": "[FieldData][]",
+      "description_zh": "通过状态管理（如 redux）控制表单字段，如非强需求不推荐使用"
     },
     "form": {
       "value": "",
-      "description": "经 `Form.useForm()` 创建的 form 控制实例，不提供时会自动创建",
+      "description": "A control instance of form created by 'Form.useForm()' is automatically created when not available",
       "default": "-",
-      "type": "[FormInstance]"
+      "type": "[FormInstance]",
+      "description_zh": "经 `Form.useForm()` 创建的 form 控制实例，不提供时会自动创建"
     },
     "initialValues": {
       "value": "",
-      "description": "表单默认值，只有初始化以及重置时生效",
+      "description": "The form default, which only takes effect when initialized and reset",
       "default": "-",
-      "type": "object"
+      "type": "object",
+      "description_zh": "表单默认值，只有初始化以及重置时生效"
     },
     "labelAlign": {
-      "value": ["left", "right"],
-      "description": "label 标签的文本对齐方式",
+      "value": [
+        "left",
+        "right"
+      ],
+      "description": "The text alignment of the label label",
       "default": "right",
-      "type": "left | right"
+      "type": "left | right",
+      "description_zh": "label 标签的文本对齐方式"
     },
     "labelWrap": {
       "value": "",
-      "description": "label 标签的文本换行方式",
+      "description": "The way the text wraps for label labels",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "label 标签的文本换行方式"
     },
     "labelCol": {
       "value": "",
-      "description": "label 标签布局，同 `<Col>` 组件，设置 `span` `offset` 值，如 `{span: 3, offset: 12}` 或 `sm: {span: 3, offset: 12}`",
+      "description": "label layout, with the ''' component, set the 'span' 'offset' value, such as '{span: 3, offset: 12}' <Col>or 'sm: {span: 3, offset: 12}'",
       "default": "-",
-      "type": "[object]"
+      "type": "[object]",
+      "description_zh": "label 标签布局，同 `<Col>` 组件，设置 `span` `offset` 值，如 `{span: 3, offset: 12}` 或 `sm: {span: 3, offset: 12}`"
     },
     "layout": {
       "value": "",
-      "description": "表单布局",
+      "description": "Form layout",
       "default": "horizontal",
-      "type": "horizontal | vertical | inline"
+      "type": "horizontal | vertical | inline",
+      "description_zh": "表单布局"
     },
     "name": {
       "value": "",
-      "description": "表单名称，会作为表单字段 `id` 前缀使用",
+      "description": "The form name, which is prefixed with the form field 'id'",
       "default": "-",
-      "type": "string"
+      "type": "string",
+      "description_zh": "表单名称，会作为表单字段 `id` 前缀使用"
     },
     "preserve": {
       "value": "",
-      "description": "当字段被删除时保留字段值",
+      "description": "When a field is deleted, the field value is retained",
       "default": "true",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "当字段被删除时保留字段值"
     },
     "requiredMark": {
       "value": "",
-      "description": "必选样式，可以切换为必选或者可选展示样式。此为 Form 配置，Form.Item 无法单独配置",
+      "description": "Required style, which can be switched to a required or optional display style. This is a Form configuration and cannot be configured separately for Form.Item",
       "default": "true",
-      "type": "boolean | optional"
+      "type": "boolean | optional",
+      "description_zh": "必选样式，可以切换为必选或者可选展示样式。此为 Form 配置，Form.Item 无法单独配置"
     },
     "scrollToFirstError": {
       "value": "",
-      "description": "提交失败自动滚动到第一个错误字段",
+      "description": "Submission failures automatically scroll to the first error field",
       "default": "false",
-      "type": "boolean | [Options]"
+      "type": "boolean | [Options]",
+      "description_zh": "提交失败自动滚动到第一个错误字段"
     },
     "size": {
       "value": "",
-      "description": "设置字段组件的尺寸（仅限 antd 组件）",
+      "description": "Set the size of the field component (antd component only)",
       "default": "-",
-      "type": "small | middle | large"
+      "type": "small | middle | large",
+      "description_zh": "设置字段组件的尺寸（仅限 antd 组件）"
     },
     "validateMessages": {
       "value": "",
-      "description": "验证提示模板",
+      "description": "Validation prompt template",
       "default": "-",
-      "type": "[ValidateMessages]"
+      "type": "[ValidateMessages]",
+      "description_zh": "验证提示模板"
     },
     "validateTrigger": {
       "value": "",
-      "description": "统一设置字段触发验证的时机",
+      "description": "Uniformly set when a field triggers validation",
       "default": "onChange",
-      "type": "string | string[]"
+      "type": "string | string[]",
+      "description_zh": "统一设置字段触发验证的时机"
     },
     "wrapperCol": {
       "value": "",
-      "description": "需要为输入控件设置布局样式时，使用该属性，用法同 labelCol",
+      "description": "Use this property when you need to style a layout for an input control, and use it in the same way as labelCol",
       "default": "-",
-      "type": "[object]"
+      "type": "[object]",
+      "description_zh": "需要为输入控件设置布局样式时，使用该属性，用法同 labelCol"
     }
   },
-  "methods": [{ "name": "clearValidate", "description": "移除表单项的校验结果。传入待移除的表单项的 name 属性或者 name 组成的数组，如不传则移除整个表单的校验结果", "params": "(nameList?: [NamePath](#namepath)\\[]) => void" }, { "name": "resetFields", "description": "对整个表单进行重置，将所有字段值重置为初始值并移除校验结果", "params": "(nameList?: [NamePath](#namepath)\\[]) => void" }, { "name": "scrollToField", "description": "滚动到对应字段位置", "params": "(name: [NamePath](#namepath), options: \\[[ScrollOptions](https: | | github.com | stipsan | scroll-into-view-if-needed | tree | ece40bd9143f48caf4b99503425ecb16b0ad8249#options)]) => void" }, { "name": "validate", "description": "触发表单验证, 同 validateFields", "params": "(nameList?: [NamePath](#namepath)\\[]) => Promise" }, { "name": "validateFields", "description": "触发表单验证", "params": "(nameList?: [NamePath](#namepath)\\[]) => Promise" }],
+  "methods": [
+    {
+      "name": "clearValidate",
+      "description": "Removes the validation result of the form item. Enter the name attribute or array of name of the form item to be removed, and remove the verification result of the entire form if not",
+      "params": "(nameList?: [NamePath](#namepath)\\[]) => void",
+      "description_zh": "移除表单项的校验结果。传入待移除的表单项的 name 属性或者 name 组成的数组，如不传则移除整个表单的校验结果"
+    },
+    {
+      "name": "resetFields",
+      "description": "Reset the entire form, reset all field values to their default values, and remove the validation results",
+      "params": "(nameList?: [NamePath](#namepath)\\[]) => void",
+      "description_zh": "对整个表单进行重置，将所有字段值重置为初始值并移除校验结果"
+    },
+    {
+      "name": "scrollToField",
+      "description": "Scroll to the corresponding field location",
+      "params": "(name: [NamePath](#namepath), options: \\[[ScrollOptions](https: | | github.com | stipsan | scroll-into-view-if-needed | tree | ece40bd9143f48caf4b99503425ecb16b0ad8249#options)]) => void",
+      "description_zh": "滚动到对应字段位置"
+    },
+    {
+      "name": "validate",
+      "description": "Triggers form validation, same as validateFields",
+      "params": "(nameList?: [NamePath](#namepath)\\[]) => Promise",
+      "description_zh": "触发表单验证, 同 validateFields"
+    },
+    {
+      "name": "validateFields",
+      "description": "Trigger form validation",
+      "params": "(nameList?: [NamePath](#namepath)\\[]) => Promise",
+      "description_zh": "触发表单验证"
+    }
+  ],
   "events": [
     {
       "name": "onFieldsChange",
-      "description": "字段更新时触发回调事件",
-      "params": "function(changedFields, allFields)"
+      "description": "A callback event is triggered when a field is updated",
+      "params": "function(changedFields, allFields)",
+      "description_zh": "字段更新时触发回调事件"
     },
     {
       "name": "onFinish",
-      "description": "提交表单且数据验证成功后回调事件",
-      "params": "function(values)"
+      "description": "After the form is submitted and the data is validated, the event is called",
+      "params": "function(values)",
+      "description_zh": "提交表单且数据验证成功后回调事件"
     },
     {
       "name": "onFinishFailed",
-      "description": "提交表单且数据验证失败后回调事件",
-      "params": "function({ values, errorFields, outOfDate })"
+      "description": "Callback events are called after the form is submitted and the data validation fails",
+      "params": "function({ values, errorFields, outOfDate })",
+      "description_zh": "提交表单且数据验证失败后回调事件"
     },
     {
       "name": "onValuesChange",
-      "description": "字段值更新时触发回调事件",
-      "params": "function(changedValues, allValues)"
+      "description": "A callback event is triggered when a field value is updated",
+      "params": "function(changedValues, allValues)",
+      "description_zh": "字段值更新时触发回调事件"
     }
   ],
-  "link": "https://ant.design/components//form"
+  "link": "https://ant.design/components//form",
+  "link_zh": "https://ant.design/components//form"
 }

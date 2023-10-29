@@ -4,139 +4,166 @@
     {
       "name": "focus",
       "description": "Focus component",
-      "params": ""
+      "params": "",
+      "description_zh": "焦点组件"
     },
     {
       "name": "showPopup",
       "description": "Focus and open popup",
-      "params": ""
+      "params": "",
+      "description_zh": "焦点并打开弹出窗口"
     },
     {
       "name": "hidePopup",
       "description": "Hide popup",
-      "params": ""
+      "params": "",
+      "description_zh": "隐藏弹出窗口"
     },
     {
       "name": "removeAtIndex",
       "description": "Remove selected option located at specific index",
-      "params": "(index: Number) => void"
+      "params": "(index: Number) => void",
+      "description_zh": "删除位于特定索引处的选定选项"
     },
     {
       "name": "add",
       "description": "Adds option to model",
-      "params": "(opt: Any, unique: Boolean) => void"
+      "params": "(opt: Any, unique: Boolean) => void",
+      "description_zh": "向模型添加选项"
     },
     {
       "name": "toggleOption",
       "description": "Add/remove option from model",
-      "params": "(opt: Any, keepOpen: Boolean) => void"
+      "params": "(opt: Any, keepOpen: Boolean) => void",
+      "description_zh": "从模型中添加/删除选项"
     },
     {
       "name": "getOptionIndex",
       "description": "Gets current focused option index from menu; It's -1 if no option is focused",
-      "params": ""
+      "params": "",
+      "description_zh": "从菜单中获取当前焦点选项索引;如果没有聚焦选项，则为 -1"
     },
     {
       "name": "setOptionIndex",
       "description": "Sets option from menu as 'focused'; -1 to focus none",
-      "params": "(index: Number) => void"
+      "params": "(index: Number) => void",
+      "description_zh": "将菜单中的选项设置为“聚焦”;-1 表示不对焦"
     },
     {
       "name": "moveOptionSelection",
       "description": "Move selected option from menu by index offset",
-      "params": "(offset: Number, skipInputValue: Boolean) => void"
+      "params": "(offset: Number, skipInputValue: Boolean) => void",
+      "description_zh": "按索引偏移量从菜单中移动所选选项"
     },
     {
       "name": "filter",
       "description": "Filter options",
-      "params": "(value: String) => void"
+      "params": "(value: String) => void",
+      "description_zh": "筛选器选项"
     },
     {
       "name": "updateMenuPosition",
       "description": "Recomputes menu position",
-      "params": ""
+      "params": "",
+      "description_zh": "重新计算菜单位置"
     },
     {
       "name": "updateInputValue",
       "description": "If 'use-input' is specified, this updates the value that it holds",
-      "params": "(value: String, noFilter: Boolean) => void"
+      "params": "(value: String, noFilter: Boolean) => void",
+      "description_zh": "如果指定了“use-input”，则会更新它所保存的值"
     },
     {
       "name": "isOptionSelected",
       "description": "Tells if an option is selected",
-      "params": "(opt: Any) => Boolean"
+      "params": "(opt: Any) => Boolean",
+      "description_zh": "判断是否选择了某个选项"
     },
     {
       "name": "getEmittingOptionValue",
       "description": "Get the model value that would be emitted by QSelect when selecting a said option; Also takes into consideration if 'emit-value' is set",
-      "params": "(opt: Any) => Any"
+      "params": "(opt: Any) => Any",
+      "description_zh": "获取选择所述选项时QSelect将发出的模型值;还要考虑是否设置了“emit-value”"
     },
     {
       "name": "getOptionValue",
       "description": "Get the model value of an option; Takes into consideration 'option-value' (if used), but does not looks for 'emit-value', like getEmittingOptionValue() does",
-      "params": "(opt: Any) => Any"
+      "params": "(opt: Any) => Any",
+      "description_zh": "获取期权的模型值;考虑“option-value”（如果使用），但不会像 getEmittingOptionValue（） 那样查找“emit-value”"
     },
     {
       "name": "getOptionLabel",
       "description": "Get the label of an option; Takes into consideration the 'option-label' prop (if used)",
-      "params": "(opt: Any) => Any"
+      "params": "(opt: Any) => Any",
+      "description_zh": "获取选项的标签;考虑“option-label”道具（如果使用）"
     },
     {
       "name": "isOptionDisabled",
       "description": "Tells if an option is disabled; Takes into consideration 'option-disable' prop (if used)",
-      "params": "(opt: Any) => Boolean"
+      "params": "(opt: Any) => Boolean",
+      "description_zh": "判断某个选项是否被禁用;考虑“选项禁用”道具（如果使用）"
     }
   ],
   "events": [
     {
       "name": "update:model-value",
       "description": "",
-      "params": ""
+      "params": "",
+      "description_zh": ""
     },
     {
       "name": "input-value",
       "description": "Emitted when the value in the text input changes",
-      "params": "(value: String) => void"
+      "params": "(value: String) => void",
+      "description_zh": "当文本输入中的值更改时发出"
     },
     {
       "name": "remove",
       "description": "Emitted when an option is removed from selection",
-      "params": "(details: Object) => void"
+      "params": "(details: Object) => void",
+      "description_zh": "从选定内容中删除选项时发出"
     },
     {
       "name": "add",
       "description": "Emitted when an option is added to the selection",
-      "params": "(details: Object) => void"
+      "params": "(details: Object) => void",
+      "description_zh": "将选项添加到所选内容时发出"
     },
     {
       "name": "new-value",
       "description": "Enables creation of new values; Emitted when a new value has been created; You can override 'new-value-mode' property with it",
-      "params": "(inputValue: String, doneFn: Function) => void"
+      "params": "(inputValue: String, doneFn: Function) => void",
+      "description_zh": "创造新价值;在创建新值时发出;您可以使用它覆盖“new-value-mode”属性"
     },
     {
       "name": "filter",
       "description": "Emitted when user wants to filter a value",
-      "params": "(inputValue: String, doneFn: Function, abortFn: Function) => void"
+      "params": "(inputValue: String, doneFn: Function, abortFn: Function) => void",
+      "description_zh": "当用户想要筛选值时发出"
     },
     {
       "name": "filter-abort",
       "description": "Emitted when a filtering was aborted; Probably a new one was requested?",
-      "params": ""
+      "params": "",
+      "description_zh": "在中止过滤时发出;可能要求一个新的？"
     },
     {
       "name": "popup-show",
       "description": "Emitted when the select options menu or dialog is shown.",
-      "params": "(evt: undefined) => void"
+      "params": "(evt: undefined) => void",
+      "description_zh": "显示选择选项菜单或对话框时发出。"
     },
     {
       "name": "popup-hide",
       "description": "Emitted when the select options menu or dialog is hidden.",
-      "params": "(evt: undefined) => void"
+      "params": "(evt: undefined) => void",
+      "description_zh": "在隐藏选择选项菜单或对话框时发出。"
     },
     {
       "name": "virtual-scroll",
       "description": "",
-      "params": "(details: undefined) => void"
+      "params": "(details: undefined) => void",
+      "description_zh": ""
     }
   ],
   "props": {
@@ -149,19 +176,22 @@
       "desc": "Model of the component; Must be Array if using 'multiple' prop; Either use this property (along with a listener for 'update:modelValue' event) OR use v-model directive",
       "examples": [
         "v-model=\"myModel\""
-      ]
+      ],
+      "description_zh": ""
     },
     "multiple": {
       "value": "",
       "type": "Boolean",
       "description": "Allow multiple selection; Model must be Array",
-      "default": "false"
+      "default": "false",
+      "description_zh": "允许多选;模型必须是数组"
     },
     "display-value": {
       "value": "",
       "type": "Number | String",
       "description": "Override default selection string, if not using 'selected' slot/scoped slot and if not using 'use-chips' prop",
-      "default": ""
+      "default": "",
+      "description_zh": "覆盖默认选择字符串，如果不使用“selected”插槽/作用域插槽，如果不使用“use-chips”属性"
     },
     "display-value-html": {
       "value": "",
@@ -170,56 +200,65 @@
       "default": "",
       "extends": "html",
       "desc": "Force render the selected option(s) as HTML; This can lead to XSS attacks so make sure that you sanitize the content; Does NOT apply when using 'selected' or 'selected-item' slots!",
-      "category": "selection"
+      "category": "selection",
+      "description_zh": ""
     },
     "options": {
       "value": "",
       "type": "Array",
       "description": "Available options that the user can select from. For best performance freeze the list of options.",
-      "default": "[]"
+      "default": "[]",
+      "description_zh": "用户可以从中进行选择的可用选项。为获得最佳性能，请冻结选项列表。"
     },
     "option-value": {
       "value": "",
       "type": "Function | String",
       "description": "Property of option which holds the 'value'; If using a function then for best performance, reference it from your scope and do not define it inline",
-      "default": "value"
+      "default": "value",
+      "description_zh": "持有“价值”的期权属性;如果使用函数，则为了获得最佳性能，请从您的范围引用它，并且不要以内联方式定义它"
     },
     "option-label": {
       "value": "",
       "type": "Function | String",
       "description": "Property of option which holds the 'label'; If using a function then for best performance, reference it from your scope and do not define it inline",
-      "default": "label"
+      "default": "label",
+      "description_zh": "持有“标签”的期权属性;如果使用函数，则为了获得最佳性能，请从您的范围引用它，并且不要以内联方式定义它"
     },
     "option-disable": {
       "value": "",
       "type": "Function | String",
       "description": "Property of option which tells it's disabled; The value of the property must be a Boolean; If using a function then for best performance, reference it from your scope and do not define it inline",
-      "default": "disable"
+      "default": "disable",
+      "description_zh": "选项的属性，告诉它被禁用;该属性的值必须是布尔值;如果使用函数，则为了获得最佳性能，请从您的范围引用它，并且不要以内联方式定义它"
     },
     "hide-selected": {
       "value": "",
       "type": "Boolean",
       "description": "Hides selection; Use the underlying input tag to hold the label (instead of showing it to the right of the input) of the selected option; Only works for non 'multiple' Selects",
-      "default": "false"
+      "default": "false",
+      "description_zh": "隐藏选择;使用基础输入标记来保存所选选项的标签（而不是将其显示在输入的右侧）;仅适用于非“多个”选择"
     },
     "hide-dropdown-icon": {
       "value": "",
       "type": "Boolean",
       "description": "Hides dropdown icon",
-      "default": "false"
+      "default": "false",
+      "description_zh": "隐藏下拉图标"
     },
     "dropdown-icon": {
       "value": "",
       "type": "String",
       "description": "",
       "default": "",
-      "extends": "icon"
+      "extends": "icon",
+      "description_zh": ""
     },
     "max-values": {
       "value": "",
       "type": "Number | String",
       "description": "Allow a maximum number of selections that the user can do",
-      "default": ""
+      "default": "",
+      "description_zh": "允许用户执行的最大选择数"
     },
     "options-dense": {
       "value": "",
@@ -228,19 +267,22 @@
       "default": "",
       "extends": "dense",
       "desc": "Dense mode for options list; occupies less space",
-      "category": "options"
+      "category": "options",
+      "description_zh": ""
     },
     "options-dark": {
       "value": "",
       "type": "Boolean",
       "description": "Options menu will be colored with a dark color",
-      "default": "false"
+      "default": "false",
+      "description_zh": "选项菜单将用深色着色"
     },
     "options-selected-class": {
       "value": "",
       "type": "String",
       "description": "CSS class name for options that are active/selected; Set it to an empty string to stop applying the default (which is text-* where * is the 'color' prop value)",
-      "default": ""
+      "default": "",
+      "description_zh": "活动/选定选项的 CSS 类名;将其设置为空字符串以停止应用默认值（即 text-*，其中 * 是“color”属性值）"
     },
     "options-html": {
       "value": "",
@@ -249,116 +291,135 @@
       "default": "",
       "extends": "html",
       "desc": "Force render the options as HTML; This can lead to XSS attacks so make sure that you sanitize the content; Does NOT apply when using 'option' slot!",
-      "category": "options"
+      "category": "options",
+      "description_zh": ""
     },
     "options-cover": {
       "value": "",
       "type": "Boolean",
       "description": "Expanded menu will cover the component (will not work along with 'use-input' prop for obvious reasons)",
-      "default": "false"
+      "default": "false",
+      "description_zh": "扩展菜单将覆盖组件（由于显而易见的原因，不会与“use-input”道具一起使用）"
     },
     "menu-shrink": {
       "value": "",
       "type": "Boolean",
       "description": "Allow the options list to be narrower than the field (only in menu mode)",
-      "default": "false"
+      "default": "false",
+      "description_zh": "允许选项列表比字段窄（仅在菜单模式下）"
     },
     "menu-anchor": {
       "value": "",
       "type": "String",
       "description": "Two values setting the starting position or anchor point of the options list relative to the field (only in menu mode)",
-      "default": ""
+      "default": "",
+      "description_zh": "两个值设置选项列表相对于字段的起始位置或锚点（仅在菜单模式下）"
     },
     "menu-self": {
       "value": "",
       "type": "String",
       "description": "Two values setting the options list's own position relative to its target (only in menu mode)",
-      "default": ""
+      "default": "",
+      "description_zh": "两个值设置选项列表相对于其目标的位置（仅在菜单模式下）"
     },
     "menu-offset": {
       "value": "",
       "type": "Array",
       "description": "An array of two numbers to offset the options list horizontally and vertically in pixels (only in menu mode)",
-      "default": ""
+      "default": "",
+      "description_zh": "由两个数字组成的数组，用于以像素为单位水平和垂直偏移选项列表（仅在菜单模式下）"
     },
     "popup-content-class": {
       "value": "",
       "type": "String",
       "description": "Class definitions to be attributed to the popup content",
-      "default": ""
+      "default": "",
+      "description_zh": "要归因于弹出窗口内容的类定义"
     },
     "popup-content-style": {
       "value": "",
       "type": "String | Array | Object",
       "description": "Style definitions to be attributed to the popup content",
-      "default": ""
+      "default": "",
+      "description_zh": "要归因于弹出窗口内容的样式定义"
     },
     "use-input": {
       "value": "",
       "type": "Boolean",
       "description": "Use an input tag where users can type",
-      "default": "false"
+      "default": "false",
+      "description_zh": "使用用户可以键入的输入标记"
     },
     "use-chips": {
       "value": "",
       "type": "Boolean",
       "description": "Use QChip to show what is currently selected",
-      "default": "false"
+      "default": "false",
+      "description_zh": "使用 QChip 显示当前选择的内容"
     },
     "fill-input": {
       "value": "",
       "type": "Boolean",
       "description": "Fills the input with current value; Useful along with 'hide-selected'; Does NOT works along with 'multiple' selection",
-      "default": "false"
+      "default": "false",
+      "description_zh": "用当前值填充输入;与“隐藏选择”一起有用;不能与“多选”一起使用"
     },
     "new-value-mode": {
       "value": "",
       "type": "String",
       "description": "Enables creation of new values and defines behavior when a new value is added: 'add' means it adds the value (even if possible duplicate), 'add-unique' adds only unique values, and 'toggle' adds or removes the value (based on if it exists or not already); When using this prop then listening for @new-value becomes optional (only to override the behavior defined by 'new-value-mode')",
-      "default": ""
+      "default": "",
+      "description_zh": "启用新值的创建并定义添加新值时的行为：“add”表示添加值（即使可能重复），“add-unique”仅添加唯一值，“toggle”添加或删除值（基于它是否存在）;使用此道具时，监听@new值成为可选的（仅用于覆盖“new-value-mode”定义的行为）"
     },
     "map-options": {
       "value": "",
       "type": "Boolean",
       "description": "Try to map labels of model from 'options' Array; has a small performance penalty; If you are using emit-value you will probably need to use map-options to display the label text in the select field rather than the value;  Refer to the 'Affecting model' section above",
-      "default": "false"
+      "default": "false",
+      "description_zh": "尝试从“options”数组映射模型的标签;性能损失很小;如果您使用 emit-value，则可能需要使用 map-options 在选择字段中显示标签文本而不是值; 请参阅上面的“影响模型”部分"
     },
     "emit-value": {
       "value": "",
       "type": "Boolean",
       "description": "Update model with the value of the selected option instead of the whole option",
-      "default": "false"
+      "default": "false",
+      "description_zh": "使用所选选项的值而不是整个选项更新模型"
     },
     "input-debounce": {
       "value": "",
       "type": "Number | String",
       "description": "Debounce the input model update with an amount of milliseconds",
-      "default": 500
+      "default": 500,
+      "description_zh": "以毫秒为单位对输入模型更新进行去抖动"
     },
     "input-class": {
       "value": "",
       "type": "String | Array | Object",
       "description": "Class definitions to be attributed to the underlying input tag",
-      "default": ""
+      "default": "",
+      "description_zh": "要归因于基础输入标记的类定义"
     },
     "input-style": {
       "value": "",
       "type": "String | Array | Object",
       "description": "Style definitions to be attributed to the underlying input tag",
-      "default": ""
+      "default": "",
+      "description_zh": "要归因于基础输入标记的样式定义"
     },
     "tabindex": {
       "value": "",
       "type": "String",
       "description": "",
       "default": "",
-      "extends": "tabindex"
+      "extends": "tabindex",
+      "description_zh": ""
     },
     "autocomplete": {
       "value": "",
       "type": "String",
       "description": "Autocomplete attribute for field",
-      "default": ""
+      "default": "",
+      "description_zh": "字段的自动完成属性"
     },
     "transition-show": {
       "value": "",
@@ -367,7 +428,8 @@
       "default": "fade",
       "extends": "transition",
       "desc": "Transition when showing the menu/dialog; One of Quasar's embedded transitions",
-      "category": "behavior"
+      "category": "behavior",
+      "description_zh": ""
     },
     "transition-hide": {
       "value": "",
@@ -376,20 +438,24 @@
       "default": "fade",
       "extends": "transition",
       "desc": "Transition when hiding the menu/dialog; One of Quasar's embedded transitions",
-      "category": "behavior"
+      "category": "behavior",
+      "description_zh": ""
     },
     "transition-duration": {
       "value": "",
       "type": "String | Number",
       "description": "Transition duration when hiding the menu/dialog (in milliseconds, without unit)",
-      "default": 300
+      "default": 300,
+      "description_zh": "隐藏菜单/对话框时的过渡持续时间（以毫秒为单位，无单位）"
     },
     "behavior": {
       "value": "",
       "type": "String",
       "description": "Overrides the default dynamic mode of showing as menu on desktop and dialog on mobiles",
-      "default": "default"
+      "default": "default",
+      "description_zh": "覆盖在桌面上显示为菜单，在移动设备上显示为对话框的默认动态模式"
     }
   },
-  "link": "https://v2.quasar.dev/vue-components/select"
+  "link": "https://v2.quasar.dev/vue-components/select",
+  "link_zh": "https://v2.quasar.dev/vue-components/select"
 }

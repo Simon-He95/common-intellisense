@@ -3,94 +3,109 @@
   "props": {
     ":v-model": {
       "value": "",
-      "description": "当前选中的日期",
+      "description": "The date that is currently selected",
       "default": "[]",
       "type": "string[]",
-      "required": true
+      "required": true,
+      "description_zh": "当前选中的日期"
     },
     "columns-type": {
       "value": "",
-      "description": "选项类型，由 `year`、`month` 和 `day` 组成的数组",
+      "description": "Option type, an array of 'year', 'month', and 'day'",
       "default": "['year', 'month', 'day']",
-      "type": "string[]"
+      "type": "string[]",
+      "description_zh": "选项类型，由 `year`、`month` 和 `day` 组成的数组"
     },
     "min-date": {
       "value": "",
-      "description": "可选的最小时间，精确到日",
+      "description": "Selectable minimum time, accurate to the day",
       "default": "十年前",
-      "type": "Date"
+      "type": "Date",
+      "description_zh": "可选的最小时间，精确到日"
     },
     "max-date": {
       "value": "",
-      "description": "可选的最大时间，精确到日",
+      "description": "Selectable maximum time, accurate to the day",
       "default": "十年后",
-      "type": "Date"
+      "type": "Date",
+      "description_zh": "可选的最大时间，精确到日"
     },
     "title": {
       "value": "",
-      "description": "顶部栏标题",
+      "description": "Top bar title",
       "default": "''",
-      "type": "string"
+      "type": "string",
+      "description_zh": "顶部栏标题"
     },
     "confirm-button-text": {
       "value": "",
-      "description": "确认按钮文字",
+      "description": "Confirm the button text",
       "default": "确认",
-      "type": "string"
+      "type": "string",
+      "description_zh": "确认按钮文字"
     },
     "cancel-button-text": {
       "value": "",
-      "description": "取消按钮文字",
+      "description": "Cancel button text",
       "default": "取消",
-      "type": "string"
+      "type": "string",
+      "description_zh": "取消按钮文字"
     },
     "show-toolbar": {
       "value": "",
-      "description": "是否显示顶部栏",
+      "description": "Whether to display the top bar",
       "default": "true",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否显示顶部栏"
     },
     "loading": {
       "value": "",
-      "description": "是否显示加载状态",
+      "description": "Whether or not to display the loading status",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否显示加载状态"
     },
     "readonly": {
       "value": "",
-      "description": "是否为只读状态，只读状态下无法切换选项",
+      "description": "Whether it is in the read-only state, and the option cannot be switched in the read-only state",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否为只读状态，只读状态下无法切换选项"
     },
     ":filter": {
       "value": "",
-      "description": "选项过滤函数",
+      "description": "option filter function",
       "default": "-",
-      "type": "(type: string, options: PickerOption[]) => PickerOption[]"
+      "type": "(type: string, options: PickerOption[]) => PickerOption[]",
+      "description_zh": "选项过滤函数"
     },
     ":formatter": {
       "value": "",
-      "description": "选项格式化函数",
+      "description": "option formatting function",
       "default": "-",
-      "type": "(type: string, option: PickerOption) => PickerOption"
+      "type": "(type: string, option: PickerOption) => PickerOption",
+      "description_zh": "选项格式化函数"
     },
     "option-height": {
       "value": "",
-      "description": "选项高度，支持 `px` `vw` `vh` `rem` 单位，默认 px",
+      "description": "Option height, support 'px' 'vw' 'vh' 'rem' units, default px",
       "default": "44",
-      "type": "number | string"
+      "type": "number | string",
+      "description_zh": "选项高度，支持 `px` `vw` `vh` `rem` 单位，默认 px"
     },
     "visible-option-num": {
       "value": "",
-      "description": "可见的选项个数",
+      "description": "The number of options that are visible",
       "default": "6",
-      "type": "number | string"
+      "type": "number | string",
+      "description_zh": "可见的选项个数"
     },
     "swipe-duration": {
       "value": "",
-      "description": "快速滑动时惯性滚动的时长，单位 ms",
+      "description": "The duration of inertial scrolling during a quick swipe in ms",
       "default": "1000",
-      "type": "number | string"
+      "type": "number | string",
+      "description_zh": "快速滑动时惯性滚动的时长，单位 ms"
     }
   },
   "methods": [],
@@ -98,19 +113,23 @@
   "events": [
     {
       "name": "confirm",
-      "description": "点击完成按钮时触发",
-      "params": "点击完成按钮时触发"
+      "description": "Triggered when the Done button is clicked",
+      "params": "点击完成按钮时触发",
+      "description_zh": "点击完成按钮时触发"
     },
     {
       "name": "cancel",
-      "description": "点击取消按钮时触发",
-      "params": "点击取消按钮时触发"
+      "description": "Triggered when the cancel button is clicked",
+      "params": "点击取消按钮时触发",
+      "description_zh": "点击取消按钮时触发"
     },
     {
       "name": "change",
-      "description": "选项改变时触发",
-      "params": "选项改变时触发"
+      "description": "Triggered when the option changes",
+      "params": "选项改变时触发",
+      "description_zh": "选项改变时触发"
     }
   ],
-  "link": "https://vant-docs.netlify.app/#/zh-CN/date-picker"
+  "link": "https://vant-docs.netlify.app/#/en-US/date-picker",
+  "link_zh": "https://vant-docs.netlify.app/#/zh-CN/date-picker"
 }

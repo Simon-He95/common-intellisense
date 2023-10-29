@@ -3,124 +3,155 @@
   "props": {
     "v-model:show": {
       "value": "",
-      "description": "是否展示图片预览",
+      "description": "Whether to display image previews",
       "default": "false",
       "type": "boolean",
-      "required": true
+      "required": true,
+      "description_zh": "是否展示图片预览"
     },
     "images": {
       "value": "",
-      "description": "需要预览的图片 URL 数组",
+      "description": "An array of image URLs that need to be previewed",
       "default": "[]",
-      "type": "string[]"
+      "type": "string[]",
+      "description_zh": "需要预览的图片 URL 数组"
     },
     "start-position": {
       "value": "",
-      "description": "图片预览起始位置索引",
+      "description": "Image preview start position index",
       "default": "0",
-      "type": "number | string"
+      "type": "number | string",
+      "description_zh": "图片预览起始位置索引"
     },
     "swipe-duration": {
       "value": "",
-      "description": "动画时长，单位为 ms",
+      "description": "The duration of the animation, in ms",
       "default": "300",
-      "type": "number | string"
+      "type": "number | string",
+      "description_zh": "动画时长，单位为 ms"
     },
     "show-index": {
       "value": "",
-      "description": "是否显示页码",
+      "description": "Whether or not to display page numbers",
       "default": "true",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否显示页码"
     },
     "show-indicators": {
       "value": "",
-      "description": "是否显示轮播指示器",
+      "description": "Whether or not to display a carousel indicator",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否显示轮播指示器"
     },
     "loop": {
       "value": "",
-      "description": "是否开启循环播放",
+      "description": "Whether to enable looping",
       "default": "true",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否开启循环播放"
     },
     "before-close": {
       "value": "",
-      "description": "关闭前的回调函数，返回 `false` 可阻止关闭，支持返回 Promise",
+      "description": "The callback function before closing, returning 'false' to prevent closing, supports returning Promise",
       "default": "-",
-      "type": "(active: number) => boolean | Promise\\<boolean\\>"
+      "type": "(active: number) => boolean | Promise\\<boolean\\>",
+      "description_zh": "关闭前的回调函数，返回 `false` 可阻止关闭，支持返回 Promise"
     },
     "close-on-popstate": {
       "value": "",
-      "description": "是否在页面回退时自动关闭",
+      "description": "Whether it is automatically closed when the page falls back",
       "default": "true",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否在页面回退时自动关闭"
     },
     "class-name": {
       "value": "",
-      "description": "自定义类名",
+      "description": "Custom class name",
       "default": "-",
-      "type": "string | Array | object"
+      "type": "string | Array | object",
+      "description_zh": "自定义类名"
     },
     "max-zoom": {
       "value": "",
-      "description": "手势缩放时，最大缩放比例",
+      "description": "The maximum zoom when the gesture is zoomed",
       "default": "3",
-      "type": "number | string"
+      "type": "number | string",
+      "description_zh": "手势缩放时，最大缩放比例"
     },
     "min-zoom": {
       "value": [
         "1",
         "3"
       ],
-      "description": "手势缩放时，最小缩放比例",
+      "description": "When the gesture is zoomed, the minimum zoom level",
       "default": "1 | 3",
-      "type": "number | string"
+      "type": "number | string",
+      "description_zh": "手势缩放时，最小缩放比例"
     },
     "closeable": {
       "value": "",
-      "description": "是否显示关闭图标",
+      "description": "Whether or not to display the close icon",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否显示关闭图标"
     },
     "close-icon": {
       "value": "",
-      "description": "关闭图标名称或图片链接",
+      "description": "Turn off the icon name or image link",
       "default": "clear",
-      "type": "string"
+      "type": "string",
+      "description_zh": "关闭图标名称或图片链接"
     },
     "close-icon-position": {
-      "value": ["top-left", "top-right", "bottom-left", "bottom-right"],
-      "description": "关闭图标位置，可选值为 `top-left` `bottom-left` `bottom-right`",
+      "value": [
+        "top-left",
+        "top-right",
+        "bottom-left",
+        "bottom-right"
+      ],
+      "description": "Turn off the icon position, optional values are 'top-left' 'bottom-left' 'bottom-right'",
       "default": "top-right",
-      "type": "string"
+      "type": "string",
+      "description_zh": "关闭图标位置，可选值为 `top-left` `bottom-left` `bottom-right`"
     },
     "transition": {
       "value": "",
-      "description": "动画类名，等价于 [transition](https://cn.vuejs.org/api/built-in-components.html#transition) 的 `name` 属性",
+      "description": "The name of the animation class, which is equivalent to the 'name' property of [transition](https://cn.vuejs.org/api/built-in-components.html#transition).",
       "default": "van-fade",
-      "type": "string"
+      "type": "string",
+      "description_zh": "动画类名，等价于 [transition](https://cn.vuejs.org/api/built-in-components.html#transition) 的 `name` 属性"
     },
     "overlay-class": {
       "value": "",
-      "description": "自定义遮罩层类名",
+      "description": "Customize the mask layer class name",
       "default": "-",
-      "type": "string | Array | object"
+      "type": "string | Array | object",
+      "description_zh": "自定义遮罩层类名"
     },
     "overlay-style": {
       "value": "",
-      "description": "自定义遮罩层样式",
+      "description": "Customize the mask layer style",
       "default": "-",
-      "type": "object"
+      "type": "object",
+      "description_zh": "自定义遮罩层样式"
     },
     "teleport": {
       "value": "",
-      "description": "指定挂载的节点，等同于 Teleport 组件的 [to 属性](https://cn.vuejs.org/api/built-in-components.html#teleport)",
+      "description": "Specifies the node to be mounted, which is equivalent to the [to property](https://cn.vuejs.org/api/built-in-components.html#teleport) of the Teleport component",
       "default": "-",
-      "type": "string | Element"
+      "type": "string | Element",
+      "description_zh": "指定挂载的节点，等同于 Teleport 组件的 [to 属性](https://cn.vuejs.org/api/built-in-components.html#teleport)"
     }
   },
-  "methods": [{ "name": "showImagePreview", "description": "展示图片预览", "params": "string[] | ImagePreviewOptions" }],
+  "methods": [
+    {
+      "name": "showImagePreview",
+      "description": "Show a preview of the image",
+      "params": "string[] | ImagePreviewOptions",
+      "description_zh": "展示图片预览"
+    }
+  ],
   "typeDetail": {
     "ImagePreviewOptions": [
       {
@@ -233,29 +264,35 @@
   "events": [
     {
       "name": "close",
-      "description": "关闭时触发",
-      "params": "关闭时触发"
+      "description": "Triggered when turned off",
+      "params": "关闭时触发",
+      "description_zh": "关闭时触发"
     },
     {
       "name": "closed",
-      "description": "关闭且且动画结束后触发",
-      "params": "关闭且且动画结束后触发"
+      "description": "Turns off and triggers after the animation ends",
+      "params": "关闭且且动画结束后触发",
+      "description_zh": "关闭且且动画结束后触发"
     },
     {
       "name": "change",
-      "description": "切换当前图片时触发",
-      "params": "切换当前图片时触发"
+      "description": "Triggered when the current image is switched",
+      "params": "切换当前图片时触发",
+      "description_zh": "切换当前图片时触发"
     },
     {
       "name": "scale",
-      "description": "缩放当前图片时触发",
-      "params": "缩放当前图片时触发"
+      "description": "Triggered when the current picture is zoomed",
+      "params": "缩放当前图片时触发",
+      "description_zh": "缩放当前图片时触发"
     },
     {
       "name": "long-press",
-      "description": "长按当前图片时触发",
-      "params": "长按当前图片时触发"
+      "description": "Triggered when you press and hold the current image",
+      "params": "长按当前图片时触发",
+      "description_zh": "长按当前图片时触发"
     }
   ],
-  "link": "https://vant-contrib.gitee.io/vant/#/zh-CN/image-preview"
+  "link": "https://vant-contrib.gitee.io/vant/#/zh-CN/image-preview",
+  "link_zh": "https://vant-contrib.gitee.io/vant/#/zh-CN/image-preview"
 }

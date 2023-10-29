@@ -3,172 +3,203 @@
   "props": {
     "accordion": {
       "value": "",
-      "description": "是否使用手风琴模式",
+      "description": "Whether or not to use accordion mode",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否使用手风琴模式"
     },
     "children-field": {
       "value": "",
-      "description": "children 的字段名",
+      "description": "children's field name",
       "default": "children",
-      "type": "string"
+      "type": "string",
+      "description_zh": "children 的字段名"
     },
     "collapsed-icon-size": {
       "value": "",
-      "description": "菜单折叠时图标的大小，如果未设定则使用 `icon-size` 代替",
+      "description": "The size of the icon when the menu is collapsed, if not set, use 'icon-size' instead",
       "default": "24",
-      "type": "number"
+      "type": "number",
+      "description_zh": "菜单折叠时图标的大小，如果未设定则使用 `icon-size` 代替"
     },
     "collapsed-width": {
       "value": "",
-      "description": "折叠后菜单的宽度",
+      "description": "The width of the collapsed menu",
       "default": "48",
-      "type": "number"
+      "type": "number",
+      "description_zh": "折叠后菜单的宽度"
     },
     "collapsed": {
       "value": "",
-      "description": "菜单是否折叠，值在菜单为垂直时有用",
+      "description": "Whether the menu is collapsed or not, the value is useful when the menu is vertical",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "菜单是否折叠，值在菜单为垂直时有用"
     },
     "default-expand-all": {
       "value": "",
-      "description": "是否展开全部菜单，`options` 为异步获取时，`watch-props` 需要设置为 `[defaultExpandedKeys]` 才会生效",
+      "description": "If you expand all menus and 'options' is asynchronously obtained, 'watch-props' needs to be set to '[defaultExpandedKeys]' for it to take effect",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否展开全部菜单，`options` 为异步获取时，`watch-props` 需要设置为 `[defaultExpandedKeys]` 才会生效"
     },
     "default-expanded-keys": {
       "value": "",
-      "description": "在非受控状态下默认展开的子菜单标识符数组",
+      "description": "An array of submenu identifiers that is expanded by default in an uncontrolled state",
       "default": "[]",
-      "type": "Array<string>"
+      "type": "Array<string>",
+      "description_zh": "在非受控状态下默认展开的子菜单标识符数组"
     },
     "default-value": {
       "value": "",
-      "description": "非受控模式下的默认值",
+      "description": "Default value in uncontrolled mode",
       "default": "null",
-      "type": "string | null"
+      "type": "string | null",
+      "description_zh": "非受控模式下的默认值"
     },
     "disabled-field": {
       "value": "",
-      "description": "disabled 的字段名",
+      "description": "disabled field name",
       "default": "disabled",
-      "type": "string"
+      "type": "string",
+      "description_zh": "disabled 的字段名"
     },
     "dropdown-placement": {
       "value": "",
-      "description": "仅在 `mode=horizontal` 模式下生效",
+      "description": "Takes effect only in 'mode=horizontal' mode",
       "default": "top",
-      "type": "top-start | top | top-end | right-start | right | right-end | bottom-start | bottom | bottom-end | left-start | left | left-end | "
+      "type": "top-start | top | top-end | right-start | right | right-end | bottom-start | bottom | bottom-end | left-start | left | left-end | ",
+      "description_zh": "仅在 `mode=horizontal` 模式下生效"
     },
     "dropdown-props": {
       "value": "",
-      "description": "菜单折叠或 `mode=horizontal` 模式时 Dropdown 的 props，请参考 [Dropdown Props](dropdown#Dropdown-Props)",
+      "description": "For dropdown props when menu collapse or 'mode=horizontal' mode, please refer to [Dropdown Props](dropdown#Dropdown-Props)",
       "default": "undefined",
-      "type": "DropdownProps"
+      "type": "DropdownProps",
+      "description_zh": "菜单折叠或 `mode=horizontal` 模式时 Dropdown 的 props，请参考 [Dropdown Props](dropdown#Dropdown-Props)"
     },
     "expanded-keys": {
       "value": "",
-      "description": "展开的子菜单标识符数组，如果设定了，菜单的展开将会进入受控状态，`default-expanded-keys` 不会生效",
+      "description": "Expanded array of submenu identifiers, if set, the expansion of the menu will enter a controlled state, and 'default-expanded-keys' will not take effect",
       "default": "undefined",
-      "type": "Array<string>"
+      "type": "Array<string>",
+      "description_zh": "展开的子菜单标识符数组，如果设定了，菜单的展开将会进入受控状态，`default-expanded-keys` 不会生效"
     },
     "expand-icon": {
       "value": "",
-      "description": "批量处理菜单展开图标的渲染",
+      "description": "Batch processing the rendering of the menu expansion icon",
       "default": "undefined",
-      "type": "(option: MenuOption) => VNodeChild"
+      "type": "(option: MenuOption) => VNodeChild",
+      "description_zh": "批量处理菜单展开图标的渲染"
     },
     "icon-size": {
       "value": "",
-      "description": "菜单未折叠时图标的大小",
+      "description": "The size of the icon when the menu is not collapsed",
       "default": "20",
-      "type": "number"
+      "type": "number",
+      "description_zh": "菜单未折叠时图标的大小"
     },
     "indent": {
       "value": "",
-      "description": "菜单每级的缩进",
+      "description": "Indentation of each level of the menu",
       "default": "32",
-      "type": "number"
+      "type": "number",
+      "description_zh": "菜单每级的缩进"
     },
     "inverted": {
       "value": "",
-      "description": "使用反转样式",
+      "description": "Use inverted styles",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "使用反转样式"
     },
     "key-field": {
       "value": "",
-      "description": "key 的字段名",
+      "description": "key",
       "default": "key",
-      "type": "string"
+      "type": "string",
+      "description_zh": "key 的字段名"
     },
     "label-field": {
       "value": "",
-      "description": "label 的字段名",
+      "description": "label",
       "default": "label",
-      "type": "string"
+      "type": "string",
+      "description_zh": "label 的字段名"
     },
     ":options": {
       "value": "",
-      "description": "菜单的数据",
+      "description": "Menu data",
       "default": "[]",
-      "type": "Array<MenuOption | MenuDividerOption | MenuGroupOption>"
+      "type": "Array<MenuOption | MenuDividerOption | MenuGroupOption>",
+      "description_zh": "菜单的数据"
     },
     "node-props": {
       "value": "",
-      "description": "节点的 DOM 属性生成函数",
+      "description": "The node's DOM property generation function",
       "default": "undefined",
-      "type": "(option: MenuOption | MenuGroupOption) => object"
+      "type": "(option: MenuOption | MenuGroupOption) => object",
+      "description_zh": "节点的 DOM 属性生成函数"
     },
     "mode": {
-      "value": ["vertical", "horizontal"],
-      "description": "菜单的布局方式",
+      "value": [
+        "vertical",
+        "horizontal"
+      ],
+      "description": "How the menu is laid out",
       "default": "vertical",
-      "type": "vertical | horizontal"
+      "type": "vertical | horizontal",
+      "description_zh": "菜单的布局方式"
     },
     "render-extra": {
       "value": "",
-      "description": "批量处理菜单额外部分渲染",
+      "description": "Batch processing menu extra part rendering",
       "default": "undefined",
-      "type": "(option: MenuOption | MenuGroupOption) => VNodeChild"
+      "type": "(option: MenuOption | MenuGroupOption) => VNodeChild",
+      "description_zh": "批量处理菜单额外部分渲染"
     },
     "render-icon": {
       "value": "",
-      "description": "批量处理菜单图标渲染",
+      "description": "Batch processing menu icon rendering",
       "default": "undefined",
-      "type": "(option: MenuOption) => VNodeChild"
+      "type": "(option: MenuOption) => VNodeChild",
+      "description_zh": "批量处理菜单图标渲染"
     },
     "render-label": {
       "value": "",
-      "description": "批量处理菜单标签渲染",
+      "description": "Batch processing of menu label rendering",
       "default": "undefined",
-      "type": "(option: MenuOption | MenuGroupOption) => VNodeChild"
+      "type": "(option: MenuOption | MenuGroupOption) => VNodeChild",
+      "description_zh": "批量处理菜单标签渲染"
     },
     "root-indent": {
       "value": "",
-      "description": "菜单第一级的缩进，如果没有设定，使用 `indent` 代替",
+      "description": "The indentation of the first level of the menu, if not set, is replaced by 'indent'",
       "default": "32",
-      "type": "number"
+      "type": "number",
+      "description_zh": "菜单第一级的缩进，如果没有设定，使用 `indent` 代替"
     },
     "value": {
       "value": "",
-      "description": "菜单当前的选中值",
+      "description": "The currently selected value of the menu",
       "default": "undefined",
-      "type": "string | null"
+      "type": "string | null",
+      "description_zh": "菜单当前的选中值"
     },
     "watch-props": {
       "value": "",
-      "description": "需要检测变更的默认属性，检测后组件状态会更新。注意：`watch-props` 本身不是响应式的",
+      "description": "The default properties that need to be detected for changes, after which the component state is updated. Note: 'watch-props' are not inherently reactive",
       "default": "undefined",
-      "type": "Array<defaultValue | defaultExpandedKeys>"
+      "type": "Array<defaultValue | defaultExpandedKeys>",
+      "description_zh": "需要检测变更的默认属性，检测后组件状态会更新。注意：`watch-props` 本身不是响应式的"
     }
   },
   "methods": [
     {
       "name": "showOption",
-      "description": "展开菜单，确保设定的元素被显示，如果不传入 `key` 会当前选中元素",
-      "params": "(key?: string | number) => void"
+      "description": "Expand the menu and make sure the set element is displayed, if you don't pass 'key' it will now have the element selected",
+      "params": "(key?: string | number) => void",
+      "description_zh": "展开菜单，确保设定的元素被显示，如果不传入 `key` 会当前选中元素"
     }
   ],
   "typeDetail": {
@@ -262,14 +293,17 @@
   "events": [
     {
       "name": "update:expanded-keys",
-      "description": "keys 是展开菜单项的 `key` 的数组",
-      "params": "(keys: string[]) => void"
+      "description": "keys is an array of 'keys' that expand the menu item",
+      "params": "(keys: string[]) => void",
+      "description_zh": "keys 是展开菜单项的 `key` 的数组"
     },
     {
       "name": "update:value",
-      "description": "选中菜单的回调，`key` 是选中菜单项的 `key`，`item` 是菜单项原始数据",
-      "params": "(key: string, item: MenuOption) => void"
+      "description": "Select the callback of the menu, 'key' is the 'key' of the selected menu item, and 'item' is the raw data of the menu item",
+      "params": "(key: string, item: MenuOption) => void",
+      "description_zh": "选中菜单的回调，`key` 是选中菜单项的 `key`，`item` 是菜单项原始数据"
     }
   ],
-  "link": "https://www.naiveui.com/zh-CN/dark/components/menu"
+  "link": "https://www.naiveui.com/zh-CN/dark/components/menu",
+  "link_zh": "https://www.naiveui.com/zh-CN/dark/components/menu"
 }

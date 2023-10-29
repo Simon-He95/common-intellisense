@@ -3,85 +3,138 @@
   "props": {
     "v-model:show": {
       "value": "",
-      "description": "是否显示",
+      "description": "Whether it is displayed or not",
       "default": "false",
       "type": "boolean",
-      "required": true
+      "required": true,
+      "description_zh": "是否显示"
     },
     "content": {
       "value": "",
-      "description": "显示的内容",
+      "description": "What is displayed",
       "default": "-",
-      "type": "string"
+      "type": "string",
+      "description_zh": "显示的内容"
     },
     "color": {
       "value": "",
-      "description": "背景颜色",
+      "description": "Background color",
       "default": "-",
-      "type": "string"
+      "type": "string",
+      "description_zh": "背景颜色"
     },
     "type": {
-      "value": ["primary", "info", "success", "warning", "danger", "default"],
-      "description": "类型，可选值为 `default` `primary` `info` `success` `warning` danger",
+      "value": [
+        "primary",
+        "info",
+        "success",
+        "warning",
+        "danger",
+        "default"
+      ],
+      "description": "type, optionally 'default', 'primary', 'info', 'success', 'warning' danger",
       "default": "default",
-      "type": "string"
+      "type": "string",
+      "description_zh": "类型，可选值为 `default` `primary` `info` `success` `warning` danger"
     },
     "placement": {
-      "value": ["top", "bottom", "left", "right"],
-      "description": "弹出位置",
+      "value": [
+        "top",
+        "bottom",
+        "left",
+        "right"
+      ],
+      "description": "Ejection position",
       "default": "top",
-      "type": "Placement"
+      "type": "Placement",
+      "description_zh": "弹出位置"
     },
     "offset-x": {
       "value": "",
-      "description": "x 轴偏移量， 相对于 `Tooltip` 对齐后的位置",
+      "description": "The x-axis offset, relative to the aligned position of the 'Tooltip'",
       "default": "0",
-      "type": "number | string"
+      "type": "number | string",
+      "description_zh": "x 轴偏移量， 相对于 `Tooltip` 对齐后的位置"
     },
     "offset-y": {
       "value": "",
-      "description": "y 轴偏移量， 相对于 `Tooltip` 对齐后的位置",
+      "description": "The y-axis offset, relative to the position of the 'Tooltip' alignment",
       "default": "0",
-      "type": "number | string"
+      "type": "number | string",
+      "description_zh": "y 轴偏移量， 相对于 `Tooltip` 对齐后的位置"
     },
     "teleport": {
       "value": "",
-      "description": "挂载的位置",
+      "description": "The location of the mount",
       "default": "body",
-      "type": "TeleportProps['to'] | false"
+      "type": "TeleportProps['to'] | false",
+      "description_zh": "挂载的位置"
     },
     "same-width": {
       "value": "",
-      "description": "是否与触发元素同宽",
+      "description": "Whether it is the same width as the triggering element",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否与触发元素同宽"
     },
     "disabled": {
       "value": "",
-      "description": "是否禁用 Tooltip",
+      "description": "Whether to disable Tooltip",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否禁用 Tooltip"
     },
     "trigger": {
-      "value": ["click", "hover"],
-      "description": "触发方式，可选值为 `click` hover, `click` 为点击时触发, `hover` 为悬停时触发",
+      "value": [
+        "click",
+        "hover"
+      ],
+      "description": "Trigger mode, the optional value is 'click' hover, 'click' is triggered when clicking, and 'hover' is triggered on hovering",
       "default": "hover",
-      "type": "string"
+      "type": "string",
+      "description_zh": "触发方式，可选值为 `click` hover, `click` 为点击时触发, `hover` 为悬停时触发"
     },
     "reference": {
       "value": "",
-      "description": "关联的触发元素选择器，用于指定特定子元素为触发元素",
+      "description": "An associated trigger element selector that designates a specific child element as a trigger element",
       "default": "-",
-      "type": "string"
+      "type": "string",
+      "description_zh": "关联的触发元素选择器，用于指定特定子元素为触发元素"
     },
     "close-on-click-reference": {
       "value": "",
-      "description": "是否在点击菜单触发元素后关闭菜单",
+      "description": "Whether to close the menu after clicking on the menu to trigger the element",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否在点击菜单触发元素后关闭菜单"
     }
   },
-  "methods": [{ "name": "open", "description": "打开 Tooltip", "params": "`-`" }, { "name": "close", "description": "关闭 Tooltip", "params": "`-`" }, { "name": "resize", "description": "Tooltip 默认插槽元素产生位置大小变化时可以调用此方法进行重绘", "params": "`-`" }, { "name": "click-outside", "description": "点击菜单外部时触发", "params": "`event: Event`" }],
+  "methods": [
+    {
+      "name": "open",
+      "description": "Open Tooltip",
+      "params": "`-`",
+      "description_zh": "打开 Tooltip"
+    },
+    {
+      "name": "close",
+      "description": "Close Tooltip",
+      "params": "`-`",
+      "description_zh": "关闭 Tooltip"
+    },
+    {
+      "name": "resize",
+      "description": "Tooltip defaults: This method can be called to redraw when a slot element changes its position size",
+      "params": "`-`",
+      "description_zh": "Tooltip 默认插槽元素产生位置大小变化时可以调用此方法进行重绘"
+    },
+    {
+      "name": "click-outside",
+      "description": "Triggered when you tap outside the menu",
+      "params": "`event: Event`",
+      "description_zh": "点击菜单外部时触发"
+    }
+  ],
   "typeDetail": {
     "$Placement": [
       {
@@ -149,24 +202,29 @@
   "events": [
     {
       "name": "open",
-      "description": "打开 `Tooltip` 时触发",
-      "params": "_"
+      "description": "Triggered when 'Tooltip' is opened",
+      "params": "_",
+      "description_zh": "打开 `Tooltip` 时触发"
     },
     {
       "name": "opened",
-      "description": "打开 `Tooltip` 动画结束时触发",
-      "params": "_"
+      "description": "Open the 'Tooltip' to trigger at the end of the animation",
+      "params": "_",
+      "description_zh": "打开 `Tooltip` 动画结束时触发"
     },
     {
       "name": "close",
-      "description": "关闭 `Tooltip` 时触发",
-      "params": "_"
+      "description": "Triggered when 'Tooltip' is closed",
+      "params": "_",
+      "description_zh": "关闭 `Tooltip` 时触发"
     },
     {
       "name": "closed",
-      "description": "关闭 `Tooltip` 动画结束时触发",
-      "params": "_"
+      "description": "Turn off the 'Tooltip' animation to trigger at the end of the animation",
+      "params": "_",
+      "description_zh": "关闭 `Tooltip` 动画结束时触发"
     }
   ],
-  "link": "https://varlet.gitee.io/varlet-ui/#/zh-CN/tooltip"
+  "link": "https://varlet.gitee.io/varlet-ui/#/zh-CN/tooltip",
+  "link_zh": "https://varlet.gitee.io/varlet-ui/#/zh-CN/tooltip"
 }

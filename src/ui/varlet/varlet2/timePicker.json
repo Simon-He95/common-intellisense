@@ -3,64 +3,81 @@
   "props": {
     ":v-model": {
       "value": "",
-      "description": "被选择的时间（ISO 8601 格式，`HH:mm` 或 `HH:mm:ss`）",
+      "description": "Selected time (ISO 8601 format, 'HH:mm' or 'HH:mm:ss')",
       "default": "-",
       "type": "string",
-      "required": true
+      "required": true,
+      "description_zh": "被选择的时间（ISO 8601 格式，`HH:mm` 或 `HH:mm:ss`）"
     },
     "format": {
-      "value": ["ampm", "24hr"],
-      "description": "选择器时间格式，可选值为 `ampm 24hr`",
+      "value": [
+        "ampm",
+        "24hr"
+      ],
+      "description": "Selector time format, optionally 'ampm 24hr'",
       "default": "ampm",
-      "type": "string"
+      "type": "string",
+      "description_zh": "选择器时间格式，可选值为 `ampm 24hr`"
     },
     "color": {
       "value": "",
-      "description": "选择器的颜色",
+      "description": "The color of the selector",
       "default": "#2979ff",
-      "type": "string"
+      "type": "string",
+      "description_zh": "选择器的颜色"
     },
     "header-color": {
       "value": "",
-      "description": "标题背景色。如果未指定，将使用由 color 属性或默认颜色。",
+      "description": "Title background color. If not specified, the color property or the default color will be used.",
       "default": "#2979ff",
-      "type": "string"
+      "type": "string",
+      "description_zh": "标题背景色。如果未指定，将使用由 color 属性或默认颜色。"
     },
     "elevation": {
-      "value": ["true", "false", "0-24"],
-      "description": "海拔高度，可选值为 `true` `false` 和 `0-24` 的等级",
+      "value": [
+        "true",
+        "false",
+        "0-24"
+      ],
+      "description": "Altitude, with selectable values of 'true', 'false' and '0-24'",
       "default": "false",
-      "type": "string | number | boolean"
+      "type": "string | number | boolean",
+      "description_zh": "海拔高度，可选值为 `true` `false` 和 `0-24` 的等级"
     },
     "min": {
       "value": "",
-      "description": "允许的最小时间（ISO 8601格式）",
+      "description": "Minimum time allowed (ISO 8601 format)",
       "default": "-",
-      "type": "string"
+      "type": "string",
+      "description_zh": "允许的最小时间（ISO 8601格式）"
     },
     "max": {
       "value": "",
-      "description": "允许的最大时间（ISO 8601格式）",
+      "description": "Maximum time allowed (ISO 8601 format)",
       "default": "-",
-      "type": "string"
+      "type": "string",
+      "description_zh": "允许的最大时间（ISO 8601格式）"
     },
     "allowed-time": {
       "value": "",
-      "description": "限制可以选择的时间",
+      "description": "Limit the time you can choose",
       "default": "-",
-      "type": "AllowedTime"
+      "type": "AllowedTime",
+      "description_zh": "限制可以选择的时间"
     },
     "readonly": {
       "value": "",
-      "description": "是否只读",
+      "description": "Whether it is read-only or not",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否只读"
     },
     "use-seconds": {
       "value": "",
-      "description": "是否显示秒",
+      "description": "Whether seconds are displayed",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否显示秒"
     }
   },
   "methods": [],
@@ -86,9 +103,11 @@
   "events": [
     {
       "name": "change",
-      "description": "时间变化时触发",
-      "params": "value: string"
+      "description": "Triggered when the time changes",
+      "params": "value: string",
+      "description_zh": "时间变化时触发"
     }
   ],
-  "link": "https://varlet.gitee.io/varlet-ui/#/zh-CN/time-picker"
+  "link": "https://varlet.gitee.io/varlet-ui/#/zh-CN/time-picker",
+  "link_zh": "https://varlet.gitee.io/varlet-ui/#/zh-CN/time-picker"
 }

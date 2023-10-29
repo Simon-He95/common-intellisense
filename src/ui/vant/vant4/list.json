@@ -3,73 +3,95 @@
   "props": {
     "v-model:loading": {
       "value": "",
-      "description": "是否处于加载状态，加载过程中不触发 `load` 事件",
+      "description": "Whether it is in the loading state, and the 'load' event is not triggered during the loading process",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否处于加载状态，加载过程中不触发 `load` 事件"
     },
     "v-model:error": {
       "value": "",
-      "description": "是否加载失败，加载失败后点击错误提示可以重新触发 `load` 事件",
+      "description": "Whether the loading fails, click the error prompt after the loading failure to retrigger the 'load' event",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否加载失败，加载失败后点击错误提示可以重新触发 `load` 事件"
     },
     ":finished": {
       "value": "",
-      "description": "是否已加载完成，加载完成后不再触发 `load` 事件",
+      "description": "Whether the load is complete, the 'load' event will no longer be triggered after the load is completed",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否已加载完成，加载完成后不再触发 `load` 事件"
     },
     "offset": {
       "value": "",
-      "description": "滚动条与底部距离小于 offset 时触发 `load` 事件",
+      "description": "The 'load' event is triggered when the distance between the scrollbar and the bottom is less than the offset",
       "default": "300",
-      "type": "number | string"
+      "type": "number | string",
+      "description_zh": "滚动条与底部距离小于 offset 时触发 `load` 事件"
     },
     "loading-text": {
       "value": "",
-      "description": "加载过程中的提示文案",
+      "description": "Prompt copy during the loading process",
       "default": "加载中...",
-      "type": "string"
+      "type": "string",
+      "description_zh": "加载过程中的提示文案"
     },
     "finished-text": {
       "value": "",
-      "description": "加载完成后的提示文案",
+      "description": "Prompt copy after loading is complete",
       "default": "-",
-      "type": "string"
+      "type": "string",
+      "description_zh": "加载完成后的提示文案"
     },
     "error-text": {
       "value": "",
-      "description": "加载失败后的提示文案",
+      "description": "Prompt copy after loading failure",
       "default": "-",
-      "type": "string"
+      "type": "string",
+      "description_zh": "加载失败后的提示文案"
     },
     "immediate-check": {
       "value": "",
-      "description": "是否在初始化时立即执行滚动位置检查",
+      "description": "Whether the scroll position check is performed immediately upon initialization",
       "default": "true",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否在初始化时立即执行滚动位置检查"
     },
     "disabled": {
       "value": "",
-      "description": "是否禁用滚动加载",
+      "description": "Whether to disable scroll loading",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否禁用滚动加载"
     },
     "direction": {
-      "value": ["up", "down"],
-      "description": "滚动触发加载的方向，可选值为 up",
+      "value": [
+        "up",
+        "down"
+      ],
+      "description": "The scroll triggers the direction of loading, optionally up",
       "default": "down",
-      "type": "string"
+      "type": "string",
+      "description_zh": "滚动触发加载的方向，可选值为 up"
     }
   },
-  "methods": [{ "name": "check", "description": "检查当前的滚动位置，若已滚动至底部，则会触发 load 事件", "params": "-" }],
+  "methods": [
+    {
+      "name": "check",
+      "description": "Check the current scroll position, and if you have scrolled to the bottom, a load event will be triggered",
+      "params": "-",
+      "description_zh": "检查当前的滚动位置，若已滚动至底部，则会触发 load 事件"
+    }
+  ],
   "typeDetail": {},
   "events": [
     {
       "name": "load",
-      "description": "滚动条与底部距离小于 offset 时触发",
-      "params": "滚动条与底部距离小于 offset 时触发"
+      "description": "Triggered when the distance between the scrollbar and the bottom is less than offset",
+      "params": "滚动条与底部距离小于 offset 时触发",
+      "description_zh": "滚动条与底部距离小于 offset 时触发"
     }
   ],
-  "link": "https://vant-contrib.gitee.io/vant/#/zh-CN/list"
+  "link": "https://vant-contrib.gitee.io/vant/#/zh-CN/list",
+  "link_zh": "https://vant-contrib.gitee.io/vant/#/zh-CN/list"
 }

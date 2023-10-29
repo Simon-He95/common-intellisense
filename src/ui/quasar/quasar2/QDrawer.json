@@ -5,27 +5,32 @@
     {
       "name": "on-layout",
       "description": "Emitted when drawer toggles between occupying space on page or not",
-      "params": "(state: Boolean) => void"
+      "params": "(state: Boolean) => void",
+      "description_zh": "当抽屉在占用页面空间与否之间切换时发出"
     },
     {
       "name": "click",
       "description": "Emitted when user clicks/taps on the component and drawer is NOT in mobile mode; Useful for when taking a decision to toggle mini mode",
-      "params": ""
+      "params": "",
+      "description_zh": "当用户单击/点击组件且抽屉未处于移动模式时发出;在决定切换迷你模式时很有用"
     },
     {
       "name": "mouseover",
       "description": "Emitted when user moves mouse cursor over the component and drawer is NOT in mobile mode; Useful for when taking a decision to toggle mini mode",
-      "params": ""
+      "params": "",
+      "description_zh": "当用户将鼠标光标移到组件上且抽屉未处于移动模式时发出;在决定切换迷你模式时很有用"
     },
     {
       "name": "mouseout",
       "description": "Emitted when user moves mouse cursor out of the component and drawer is NOT in mobile mode; Useful for when taking a decision to toggle mini mode",
-      "params": ""
+      "params": "",
+      "description_zh": "当用户将鼠标光标移出组件且抽屉未处于移动模式时发出;在决定切换迷你模式时很有用"
     },
     {
       "name": "mini-state",
       "description": "Emitted when drawer changes the mini-mode state (sometimes it is forced to do so)",
-      "params": "(state: Boolean) => void"
+      "params": "(state: Boolean) => void",
+      "description_zh": "当抽屉更改迷你模式状态时发出（有时是强制这样做的）"
     }
   ],
   "props": {
@@ -33,106 +38,124 @@
       "value": "",
       "type": "String",
       "description": "Side to attach to",
-      "default": "left"
+      "default": "left",
+      "description_zh": "要连接的侧面"
     },
     "overlay": {
       "value": "",
       "type": "Boolean",
       "description": "Puts drawer into overlay mode (does not occupy space on screen, narrowing the page)",
-      "default": "false"
+      "default": "false",
+      "description_zh": "将抽屉置于叠加模式（不占用屏幕上的空间，缩小页面范围）"
     },
     "width": {
       "value": "",
       "type": "Number",
       "description": "Width of drawer (in pixels)",
-      "default": 300
+      "default": 300,
+      "description_zh": "抽屉宽度（像素）"
     },
     "mini": {
       "value": "",
       "type": "Boolean",
       "description": "Puts drawer into mini mode",
-      "default": "false"
+      "default": "false",
+      "description_zh": "将抽屉置于迷你模式"
     },
     "mini-width": {
       "value": "",
       "type": "Number",
       "description": "Width of drawer (in pixels) when in mini mode",
-      "default": 60
+      "default": 60,
+      "description_zh": "迷你模式下的抽屉宽度（以像素为单位）"
     },
     "mini-to-overlay": {
       "value": "",
       "type": "Boolean",
       "description": "Mini mode will expand as an overlay",
-      "default": "false"
+      "default": "false",
+      "description_zh": "迷你模式将扩展为叠加层"
     },
     "no-mini-animation": {
       "value": "",
       "type": "Boolean",
       "description": "Disables animation of the drawer when toggling mini mode",
-      "default": "false"
+      "default": "false",
+      "description_zh": "切换迷你模式时禁用抽屉动画"
     },
     "dark": {
       "value": "",
       "type": "String",
       "description": "",
       "default": "",
-      "extends": "dark"
+      "extends": "dark",
+      "description_zh": ""
     },
     "breakpoint": {
       "value": "",
       "type": "Number",
       "description": "Breakpoint (in pixels) of layout width up to which mobile mode is used",
-      "default": 1023
+      "default": 1023,
+      "description_zh": "使用移动模式的布局宽度的断点（以像素为单位）"
     },
     "behavior": {
       "value": "",
       "type": "String",
       "description": "Overrides the default dynamic mode into which the drawer is put on",
-      "default": "default"
+      "default": "default",
+      "description_zh": "覆盖抽屉进入的默认动态模式"
     },
     "bordered": {
       "value": "",
       "type": "String",
       "description": "",
       "default": "",
-      "extends": "bordered"
+      "extends": "bordered",
+      "description_zh": ""
     },
     "elevated": {
       "value": "",
       "type": "Boolean",
       "description": "Adds a default shadow to the header",
-      "default": "false"
+      "default": "false",
+      "description_zh": "向标题添加默认阴影"
     },
     "persistent": {
       "value": "",
       "type": "Boolean",
       "description": "Prevents drawer from auto-closing when app's route changes",
-      "default": "false"
+      "default": "false",
+      "description_zh": "防止抽屉在应用程序的路线更改时自动关闭"
     },
     "show-if-above": {
       "value": "",
       "type": "Boolean",
       "description": "Forces drawer to be shown on screen on initial render if the layout width is above breakpoint, regardless of v-model; This is the default behavior when SSR is taken over by client on initial render",
-      "default": "false"
+      "default": "false",
+      "description_zh": "如果布局宽度高于断点，则强制抽屉在初始渲染时显示在屏幕上，而不考虑 v-model;这是客户端在初始渲染时接管 SSR 时的默认行为"
     },
     "no-swipe-open": {
       "value": "",
       "type": "Boolean",
       "description": "Disables the default behavior where drawer can be swiped into view; Useful for iOS platforms where it might interfere with Safari's 'swipe to go to previous/next page' feature",
-      "default": "false"
+      "default": "false",
+      "description_zh": "禁用抽屉可以滑动到视图中的默认行为;适用于 iOS 平台，它可能会干扰 Safari 的“滑动转到上一页/下一页”功能"
     },
     "no-swipe-close": {
       "value": "",
       "type": "Boolean",
       "description": "Disables the default behavior where drawer can be swiped out of view (applies to drawer content only); Useful for iOS platforms where it might interfere with Safari's 'swipe to go to previous/next page' feature",
-      "default": "false"
+      "default": "false",
+      "description_zh": "禁用抽屉可以滑出视图的默认行为（仅适用于抽屉内容）;适用于 iOS 平台，它可能会干扰 Safari 的“滑动转到上一页/下一页”功能"
     },
     "no-swipe-backdrop": {
       "value": "",
       "type": "Boolean",
       "description": "Disables the default behavior where drawer backdrop can be swiped",
-      "default": "false"
+      "default": "false",
+      "description_zh": "禁用可以滑动抽屉背景的默认行为"
     }
   },
-  "link": "https://v2.quasar.dev/layout/drawer"
+  "link": "https://v2.quasar.dev/layout/drawer",
+  "link_zh": "https://v2.quasar.dev/layout/drawer"
 }

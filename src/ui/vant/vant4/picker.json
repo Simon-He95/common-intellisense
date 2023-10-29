@@ -3,79 +3,107 @@
   "props": {
     ":columns": {
       "value": "",
-      "description": "对象数组，配置每一列显示的数据",
+      "description": "An array of objects to configure the data to be displayed in each column",
       "default": "[]",
       "type": "PickerOption[] | PickerOption[][]",
-      "required": true
+      "required": true,
+      "description_zh": "对象数组，配置每一列显示的数据"
     },
     "columns-field-names": {
       "value": "",
-      "description": "自定义 `columns` 结构中的字段",
+      "description": "Customize the fields in the 'columns' structure",
       "default": "{ text: 'text', value: 'value', children: 'children' }",
-      "type": "object"
+      "type": "object",
+      "description_zh": "自定义 `columns` 结构中的字段"
     },
     "title": {
       "value": "",
-      "description": "顶部栏标题",
+      "description": "Top bar title",
       "default": "-",
-      "type": "string"
+      "type": "string",
+      "description_zh": "顶部栏标题"
     },
     "confirm-button-text": {
       "value": "",
-      "description": "确认按钮文字",
+      "description": "Confirm the button text",
       "default": "确认",
-      "type": "string"
+      "type": "string",
+      "description_zh": "确认按钮文字"
     },
     "cancel-button-text": {
       "value": "",
-      "description": "取消按钮文字",
+      "description": "Cancel button text",
       "default": "取消",
-      "type": "string"
+      "type": "string",
+      "description_zh": "取消按钮文字"
     },
     "toolbar-position": {
-      "value": ["top", "bottom"],
-      "description": "顶部栏位置，可选值为 bottom",
+      "value": [
+        "top",
+        "bottom"
+      ],
+      "description": "The position of the top bar, optionally bottom",
       "default": "top",
-      "type": "string"
+      "type": "string",
+      "description_zh": "顶部栏位置，可选值为 bottom"
     },
     "loading": {
       "value": "",
-      "description": "是否显示加载状态",
+      "description": "Whether or not to display the loading status",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否显示加载状态"
     },
     "show-toolbar": {
       "value": "",
-      "description": "是否显示顶部栏",
+      "description": "Whether to display the top bar",
       "default": "true",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否显示顶部栏"
     },
     "allow-html": {
       "value": "",
-      "description": "是否允许选项内容中渲染 HTML",
+      "description": "Whether to allow HTML to be rendered in the content of the options",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否允许选项内容中渲染 HTML"
     },
     "option-height": {
       "value": "",
-      "description": "选项高度，支持 `px` `vw` `vh` `rem` 单位，默认 px",
+      "description": "Option height, support 'px' 'vw' 'vh' 'rem' units, default px",
       "default": "44",
-      "type": "number | string"
+      "type": "number | string",
+      "description_zh": "选项高度，支持 `px` `vw` `vh` `rem` 单位，默认 px"
     },
     "visible-option-num": {
       "value": "",
-      "description": "可见的选项个数",
+      "description": "The number of options that are visible",
       "default": "6",
-      "type": "number | string"
+      "type": "number | string",
+      "description_zh": "可见的选项个数"
     },
     "swipe-duration": {
       "value": "",
-      "description": "快速滑动时惯性滚动的时长，单位 ms",
+      "description": "The duration of inertial scrolling during a quick swipe in ms",
       "default": "1000",
-      "type": "number | string"
+      "type": "number | string",
+      "description_zh": "快速滑动时惯性滚动的时长，单位 ms"
     }
   },
-  "methods": [{ "name": "confirm", "description": "停止惯性滚动并触发 `confirm` 事件", "params": "-" }, { "name": "getSelectedOptions", "description": "获取当前选中的选项", "params": "-" }],
+  "methods": [
+    {
+      "name": "confirm",
+      "description": "Stops inertial scrolling and triggers a 'confirm' event",
+      "params": "-",
+      "description_zh": "停止惯性滚动并触发 `confirm` 事件"
+    },
+    {
+      "name": "getSelectedOptions",
+      "description": "Gets the currently selected option",
+      "params": "-",
+      "description_zh": "获取当前选中的选项"
+    }
+  ],
   "typeDetail": {
     "PickerOption": [
       {
@@ -108,29 +136,35 @@
   "events": [
     {
       "name": "confirm",
-      "description": "点击完成按钮时触发",
-      "params": "点击完成按钮时触发"
+      "description": "Triggered when the Done button is clicked",
+      "params": "点击完成按钮时触发",
+      "description_zh": "点击完成按钮时触发"
     },
     {
       "name": "cancel",
-      "description": "点击取消按钮时触发",
-      "params": "点击取消按钮时触发"
+      "description": "Triggered when the cancel button is clicked",
+      "params": "点击取消按钮时触发",
+      "description_zh": "点击取消按钮时触发"
     },
     {
       "name": "change",
-      "description": "选中的选项改变时触发",
-      "params": "选中的选项改变时触发"
+      "description": "Triggers when the selected option changes",
+      "params": "选中的选项改变时触发",
+      "description_zh": "选中的选项改变时触发"
     },
     {
       "name": "click-option",
-      "description": "点击选项时触发",
-      "params": "点击选项时触发"
+      "description": "Triggered when you click on an option",
+      "params": "点击选项时触发",
+      "description_zh": "点击选项时触发"
     },
     {
       "name": "scroll-into ",
-      "description": "当用户通过点击或拖拽让一个选项滚动到中间的选择区域时触发",
-      "params": "当用户通过点击或拖拽让一个选项滚动到中间的选择区域时触发"
+      "description": "Triggered when the user clicks or drags to scroll an option to the selection area in the middle",
+      "params": "当用户通过点击或拖拽让一个选项滚动到中间的选择区域时触发",
+      "description_zh": "当用户通过点击或拖拽让一个选项滚动到中间的选择区域时触发"
     }
   ],
-  "link": "https://vant-contrib.gitee.io/vant/#/zh-CN/picker"
+  "link": "https://vant-contrib.gitee.io/vant/#/zh-CN/picker",
+  "link_zh": "https://vant-contrib.gitee.io/vant/#/zh-CN/picker"
 }

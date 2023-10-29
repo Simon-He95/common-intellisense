@@ -3,43 +3,49 @@
   "props": {
     "value": {
       "value": "",
-      "description": "绑定值，选中选项卡的 name",
+      "description": "Bind value, select the name of the tab",
       "default": "—",
-      "type": "string"
+      "type": "string",
+      "description_zh": "绑定值，选中选项卡的 name"
     },
     ":v-model": {
       "value": "",
-      "description": "绑定值，选中选项卡的 name",
+      "description": "Bind value, select the name of the tab",
       "default": "—",
       "type": "string",
-      "required": true
+      "required": true,
+      "description_zh": "绑定值，选中选项卡的 name"
     },
     "type": {
       "value": [
         "card",
         "border-card"
       ],
-      "description": "风格类型",
+      "description": "Type of style",
       "default": "card | border-card",
-      "type": "string"
+      "type": "string",
+      "description_zh": "风格类型"
     },
     "closable": {
       "value": "",
-      "description": "标签是否可关闭",
+      "description": "Whether the label can be closed",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "标签是否可关闭"
     },
     "addable": {
       "value": "",
-      "description": "标签是否可增加",
+      "description": "Whether the label can be increased",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "标签是否可增加"
     },
     "editable": {
       "value": "",
-      "description": "标签是否同时可增加和关闭",
+      "description": "Whether labels can be added and closed at the same time",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "标签是否同时可增加和关闭"
     },
     "tab-position": {
       "value": [
@@ -48,44 +54,53 @@
         "bottom",
         "left"
       ],
-      "description": "选项卡所在位置",
+      "description": "The location of the tab",
       "default": "top | right | bottom | left",
-      "type": "string"
+      "type": "string",
+      "description_zh": "选项卡所在位置"
     },
     "stretch": {
       "value": "",
-      "description": "标签的宽度是否自撑开",
+      "description": "Whether the width of the label is self-propping",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "标签的宽度是否自撑开"
     },
     "before-leave": {
       "value": "",
-      "description": "切换标签之前的钩子，若返回 false 或者返回 Promise 且被 reject，则阻止切换。",
+      "description": "If the hook before the toggle tag returns false or returns a Promise and is rejected, the toggle is blocked.",
       "default": "—",
-      "type": "Function(activeName, oldActiveName)"
+      "type": "Function(activeName, oldActiveName)",
+      "description_zh": "切换标签之前的钩子，若返回 false 或者返回 Promise 且被 reject，则阻止切换。"
     }
   },
   "events": [
     {
       "name": "tab-click",
-      "description": "tab 被选中时触发",
-      "params": "被选中的标签 tab 实例"
+      "description": "Triggered when tab is selected",
+      "params": "被选中的标签 tab 实例",
+      "description_zh": "tab 被选中时触发"
     },
     {
       "name": "tab-remove",
-      "description": "点击 tab 移除按钮后触发",
-      "params": "被删除的标签的 name"
+      "description": "Triggered by clicking the tab remove button",
+      "params": "被删除的标签的 name",
+      "description_zh": "点击 tab 移除按钮后触发"
     },
     {
       "name": "tab-add",
-      "description": "点击 tabs 的新增按钮后触发",
-      "params": "—"
+      "description": "It is triggered when you click the Add button for tabs",
+      "params": "—",
+      "description_zh": "点击 tabs 的新增按钮后触发"
     },
     {
       "name": "edit",
-      "description": "点击 tabs 的新增按钮或 tab 被关闭后触发",
-      "params": "(targetName, action)"
+      "description": "Clicks the Add button on tabs or triggers when tabs are closed",
+      "params": "(targetName, action)",
+      "description_zh": "点击 tabs 的新增按钮或 tab 被关闭后触发"
     }
   ],
-  "link": "https://element.eleme.cn/#/zh-CN/component/tabs"
+  "link": "https://element.eleme.cn/#/zh-CN/component/tabs",
+  "link_zh": "https://element.eleme.cn/#/zh-CN/component/tabs",
+  "methods": []
 }

@@ -4,44 +4,52 @@
     {
       "name": "poll",
       "description": "Checks scroll position and loads more content if necessary",
-      "params": ""
+      "params": "",
+      "description_zh": "检查滚动位置并在必要时加载更多内容"
     },
     {
       "name": "trigger",
       "description": "Tells Infinite Scroll to load more content, regardless of the scroll position",
-      "params": ""
+      "params": "",
+      "description_zh": "告诉 Infinite Scroll 加载更多内容，无论滚动位置如何"
     },
     {
       "name": "reset",
       "description": "Resets calling index to 0",
-      "params": ""
+      "params": "",
+      "description_zh": "将调用索引重置为 0"
     },
     {
       "name": "stop",
       "description": "Stops working, regardless of scroll position",
-      "params": ""
+      "params": "",
+      "description_zh": "停止工作，无论滚动位置如何"
     },
     {
       "name": "resume",
       "description": "Starts working. Checks scroll position upon call and if trigger is hit, it loads more content",
-      "params": ""
+      "params": "",
+      "description_zh": "开始工作。调用时检查滚动位置，如果触发器被击中，它会加载更多内容"
     },
     {
       "name": "setIndex",
       "description": "Overwrite the current pagination index",
-      "params": "(newIndex: Number) => void"
+      "params": "(newIndex: Number) => void",
+      "description_zh": "覆盖当前分页索引"
     },
     {
       "name": "updateScrollTarget",
       "description": "Updates the scroll target; Useful when the parent elements change so that the scrolling target also changes",
-      "params": ""
+      "params": "",
+      "description_zh": "更新滚动目标;当父元素更改时很有用，因此滚动目标也发生变化"
     }
   ],
   "events": [
     {
       "name": "load",
       "description": "Emitted when Infinite Scroll needs to load more data",
-      "params": "(index: Number, done: Function) => void"
+      "params": "(index: Number, done: Function) => void",
+      "description_zh": "当 Infinite Scroll 需要加载更多数据时发出"
     }
   ],
   "props": {
@@ -49,40 +57,47 @@
       "value": "",
       "type": "Number",
       "description": "Offset (pixels) to bottom of Infinite Scroll container from which the component should start loading more content in advance",
-      "default": 500
+      "default": 500,
+      "description_zh": "Offset （pixels） 到 Infinite Scroll 容器底部，组件应从该容器开始提前加载更多内容"
     },
     "debounce": {
       "value": "",
       "type": "String | Number",
       "description": "Debounce amount (in milliseconds)",
-      "default": 100
+      "default": 100,
+      "description_zh": "去抖动量（以毫秒为单位）"
     },
     "initial-index": {
       "value": "",
       "type": "Number",
       "description": "Initialize the pagination index (used for the @load event)",
-      "default": 0
+      "default": 0,
+      "description_zh": "初始化分页索引（用于@load事件）"
     },
     "scroll-target": {
       "value": "",
       "type": "String",
       "description": "",
       "default": "",
-      "extends": "scroll-target"
+      "extends": "scroll-target",
+      "description_zh": ""
     },
     "disable": {
       "value": "",
       "type": "String",
       "description": "",
       "default": "",
-      "extends": "disable"
+      "extends": "disable",
+      "description_zh": ""
     },
     "reverse": {
       "value": "",
       "type": "Boolean",
       "description": "Scroll area should behave like a messenger - starting scrolled to bottom and loading when reaching the top",
-      "default": "false"
+      "default": "false",
+      "description_zh": "滚动区域应该像信使一样 - 开始滚动到底部并在到达顶部时加载"
     }
   },
-  "link": "https://v2.quasar.dev/vue-components/infinite-scroll"
+  "link": "https://v2.quasar.dev/vue-components/infinite-scroll",
+  "link_zh": "https://v2.quasar.dev/vue-components/infinite-scroll"
 }

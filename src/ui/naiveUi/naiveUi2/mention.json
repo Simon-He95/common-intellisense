@@ -3,111 +3,150 @@
   "props": {
     "autosize": {
       "value": "",
-      "description": "自动换行",
+      "description": "word wrap",
       "default": "false",
-      "type": "boolean | { maxRows?: number, minRows?: number }"
+      "type": "boolean | { maxRows?: number, minRows?: number }",
+      "description_zh": "自动换行"
     },
     ":options": {
       "value": "",
-      "description": "选项列表",
+      "description": "List of options",
       "default": "[]",
-      "type": "MentionOption[]"
+      "type": "MentionOption[]",
+      "description_zh": "选项列表"
     },
     "type": {
       "value": "",
-      "description": "输入框类型",
+      "description": "Enter the type of field",
       "default": "text",
-      "type": "text | textarea"
+      "type": "text | textarea",
+      "description_zh": "输入框类型"
     },
     "separator": {
       "value": "",
-      "description": "切分提及使用的字符，长度必须为 1",
+      "description": "The character used for the split mention must be 1 in length",
       "default": " ",
-      "type": "string"
+      "type": "string",
+      "description_zh": "切分提及使用的字符，长度必须为 1"
     },
     "bordered": {
       "value": "",
-      "description": "是否显示输入框边框",
+      "description": "Whether to display the input box border",
       "default": "true",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否显示输入框边框"
     },
     "disabled": {
       "value": "",
-      "description": "是否设置输入框为禁用状态",
+      "description": "Whether to set the input field to a disabled state",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否设置输入框为禁用状态"
     },
     "value": {
       "value": "",
-      "description": "输入框的值",
+      "description": "Enter a value for the field",
       "default": "undefined",
-      "type": "string | null"
+      "type": "string | null",
+      "description_zh": "输入框的值"
     },
     "default-value": {
       "value": "",
-      "description": "输入框的默认值",
+      "description": "The default value for the input box",
       "default": "",
-      "type": "string"
+      "type": "string",
+      "description_zh": "输入框的默认值"
     },
     "loading": {
       "value": "",
-      "description": "选择面板是否显示加载状态",
+      "description": "Select whether the panel displays the loading status",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "选择面板是否显示加载状态"
     },
     "prefix": {
       "value": "",
-      "description": "触发提及的前缀，长度必须为 1",
+      "description": "The trigger mentioned prefix must be 1 in length",
       "default": "@",
-      "type": "string | string[]"
+      "type": "string | string[]",
+      "description_zh": "触发提及的前缀，长度必须为 1"
     },
     "placeholder": {
       "value": "",
-      "description": "输入框的占位符",
+      "description": "A placeholder for the input box",
       "default": "",
-      "type": "string"
+      "type": "string",
+      "description_zh": "输入框的占位符"
     },
     "placement": {
-      "value": ["top-start", "top", "top-end", "right-start", "right", "right-end", "bottom-start", "bottom", "bottom-end", "left-start", "left", "left-end"],
-      "description": "选择面板的弹出位置.",
+      "value": [
+        "top-start",
+        "top",
+        "top-end",
+        "right-start",
+        "right",
+        "right-end",
+        "bottom-start",
+        "bottom",
+        "bottom-end",
+        "left-start",
+        "left",
+        "left-end"
+      ],
+      "description": "Select the pop-up location of the panel.",
       "default": "bottom-start",
-      "type": "top-start | top | top-end | right-start | right | right-end | bottom-start | bottom | bottom-end | left-start | left | left-end"
+      "type": "top-start | top | top-end | right-start | right | right-end | bottom-start | bottom | bottom-end | left-start | left | left-end",
+      "description_zh": "选择面板的弹出位置."
     },
     "render-label": {
       "value": "",
-      "description": "选项标签渲染函数",
+      "description": "Option label rendering function",
       "default": "undefined",
-      "type": "(option: MentionOption) => VNodeChild"
+      "type": "(option: MentionOption) => VNodeChild",
+      "description_zh": "选项标签渲染函数"
     },
     "size": {
-      "value": ["small", "medium", "large"],
-      "description": "输入框的大小",
+      "value": [
+        "small",
+        "medium",
+        "large"
+      ],
+      "description": "The size of the input box",
       "default": "medium",
-      "type": "small | medium | large"
+      "type": "small | medium | large",
+      "description_zh": "输入框的大小"
     },
     "status": {
-      "value": ["success", "warning", "error"],
-      "description": "验证状态",
+      "value": [
+        "success",
+        "warning",
+        "error"
+      ],
+      "description": "Verify the status",
       "default": "undefined",
-      "type": "success | warning | error"
+      "type": "success | warning | error",
+      "description_zh": "验证状态"
     },
     "to": {
       "value": "",
-      "description": "菜单的容器节点，`false` 会待在原地",
+      "description": "menu's container node, 'false' will stay put",
       "default": "body",
-      "type": "string | HTMLElement | false"
+      "type": "string | HTMLElement | false",
+      "description_zh": "菜单的容器节点，`false` 会待在原地"
     }
   },
   "methods": [
     {
       "name": "focus",
       "description": "() => void",
-      "params": "聚焦"
+      "params": "聚焦",
+      "description_zh": "（） => void"
     },
     {
       "name": "blur",
       "description": "() => void",
-      "params": "失焦"
+      "params": "失焦",
+      "description_zh": "（） => void"
     }
   ],
   "typeDetail": {
@@ -147,34 +186,41 @@
   "events": [
     {
       "name": "update:show",
-      "description": "选择面板显示状态发生变化时触发",
-      "params": "(show: boolean) => void"
+      "description": "Trigger when the display status of the selection panel changes",
+      "params": "(show: boolean) => void",
+      "description_zh": "选择面板显示状态发生变化时触发"
     },
     {
       "name": "update:value",
-      "description": "输入框值发生更新时触发",
-      "params": "(value: string) => void"
+      "description": "Triggered when the value of the input box is updated",
+      "params": "(value: string) => void",
+      "description_zh": "输入框值发生更新时触发"
     },
     {
       "name": "select",
-      "description": "输入框的选中时触发",
-      "params": "(option: MentionOption, prefix: string) => void"
+      "description": "Triggered when the input box is selected",
+      "params": "(option: MentionOption, prefix: string) => void",
+      "description_zh": "输入框的选中时触发"
     },
     {
       "name": "focus",
-      "description": "输入框获得焦点时触发",
-      "params": "(e: FocusEvent) => void"
+      "description": "Triggers when the input box gains focus",
+      "params": "(e: FocusEvent) => void",
+      "description_zh": "输入框获得焦点时触发"
     },
     {
       "name": "search",
-      "description": "输入框搜索时触发",
-      "params": "(pattern: string, prefix: string) => void"
+      "description": "Triggered when the input box is searched",
+      "params": "(pattern: string, prefix: string) => void",
+      "description_zh": "输入框搜索时触发"
     },
     {
       "name": "blur",
-      "description": "输入框失去焦点时触发",
-      "params": "(e: FocusEvent) => void"
+      "description": "Triggered when the input box loses focus",
+      "params": "(e: FocusEvent) => void",
+      "description_zh": "输入框失去焦点时触发"
     }
   ],
-  "link": "https://www.naiveui.com/zh-CN/dark/components/mention"
+  "link": "https://www.naiveui.com/zh-CN/dark/components/mention",
+  "link_zh": "https://www.naiveui.com/zh-CN/dark/components/mention"
 }

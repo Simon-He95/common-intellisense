@@ -3,150 +3,263 @@
   "props": {
     "forceSubMenuRender": {
       "value": "",
-      "description": "在子菜单展示之前就渲染进 DOM",
+      "description": "Render into the DOM before the submenu is displayed",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "在子菜单展示之前就渲染进 DOM"
     },
     "inlineCollapsed": {
       "value": "",
-      "description": "inline 时菜单是否收起状态",
+      "description": "inline",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "inline 时菜单是否收起状态"
     },
     "inlineIndent": {
       "value": "",
-      "description": "inline 模式的菜单缩进宽度",
+      "description": "Inline mode's menu indent width",
       "default": "24",
-      "type": "number"
+      "type": "number",
+      "description_zh": "inline 模式的菜单缩进宽度"
     },
     "items": {
       "value": "",
-      "description": "菜单内容",
+      "description": "Menu contents",
       "default": "-",
-      "type": "MenuItemType | SubMenuType | MenuItemGroupType | MenuDividerType"
+      "type": "MenuItemType | SubMenuType | MenuItemGroupType | MenuDividerType",
+      "description_zh": "菜单内容"
     },
     "mode": {
       "value": "",
-      "description": "菜单类型，现在支持垂直、水平、和内嵌模式三种",
+      "description": "Menu types are now available in vertical, horizontal, and inline modes",
       "default": "vertical",
-      "type": "vertical | horizontal | inline"
+      "type": "vertical | horizontal | inline",
+      "description_zh": "菜单类型，现在支持垂直、水平、和内嵌模式三种"
     },
     "multiple": {
       "value": "",
-      "description": "是否允许多选",
+      "description": "Whether to allow multiple selections",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否允许多选"
     },
     "openKeys(v-model)": {
       "value": "",
-      "description": "当前展开的 SubMenu 菜单项 key 数组",
+      "description": "The currently expanded SubMenu menu item key array",
       "default": "",
-      "type": "string\\[]"
+      "type": "string\\[]",
+      "description_zh": "当前展开的 SubMenu 菜单项 key 数组"
     },
     "overflowedIndicator": {
       "value": [
         "`<EllipsisOutlined",
         ">`"
       ],
-      "description": "用于自定义 Menu 水平空间不足时的省略收缩的图标",
+      "description": "An icon to customize the omitted shrinkage of the Menu when there is not enough horizontal space",
       "default": "`<EllipsisOutlined | >`",
-      "type": "slot"
+      "type": "slot",
+      "description_zh": "用于自定义 Menu 水平空间不足时的省略收缩的图标"
     },
     "selectable": {
       "value": "",
-      "description": "是否允许选中",
+      "description": "Whether to allow selection",
       "default": "true",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否允许选中"
     },
     "selectedKeys(v-model)": {
       "value": "",
-      "description": "当前选中的菜单项 key 数组",
+      "description": "The currently selected menu item key array",
       "default": "",
-      "type": "string\\[]"
+      "type": "string\\[]",
+      "description_zh": "当前选中的菜单项 key 数组"
     },
     "subMenuCloseDelay": {
       "value": "",
-      "description": "用户鼠标离开子菜单后关闭延时，单位：秒",
+      "description": "The delay is turned off after the user leaves the submenu, in seconds",
       "default": "0.1",
-      "type": "number"
+      "type": "number",
+      "description_zh": "用户鼠标离开子菜单后关闭延时，单位：秒"
     },
     "subMenuOpenDelay": {
       "value": "",
-      "description": "用户鼠标进入子菜单后开启延时，单位：秒",
+      "description": "After the user enters the submenu, the delay is enabled, unit: seconds",
       "default": "0",
-      "type": "number"
+      "type": "number",
+      "description_zh": "用户鼠标进入子菜单后开启延时，单位：秒"
     },
     "theme": {
       "value": "",
-      "description": "主题颜色",
+      "description": "Theme colors",
       "default": "light",
-      "type": "light | dark"
+      "type": "light | dark",
+      "description_zh": "主题颜色"
     },
     "triggerSubMenuAction": {
-      "value": ["click", "hover"],
-      "description": "修改 Menu 子菜单的触发方式",
+      "value": [
+        "click",
+        "hover"
+      ],
+      "description": "Modify how the Menu submenu is triggered",
       "default": "hover",
-      "type": "click | hover"
+      "type": "click | hover",
+      "description_zh": "修改 Menu 子菜单的触发方式"
     }
   },
   "methods": [],
   "events": [
     {
       "name": "click",
-      "description": "点击 MenuItem 调用此函数",
-      "params": "function({ item, key, keyPath })"
+      "description": "Click MenuItem to call this function",
+      "params": "function({ item, key, keyPath })",
+      "description_zh": "点击 MenuItem 调用此函数"
     },
     {
       "name": "deselect",
-      "description": "取消选中时调用，仅在 multiple 生效",
-      "params": "function({ item, key, selectedKeys })"
+      "description": "Called when unchecked, only for multiple",
+      "params": "function({ item, key, selectedKeys })",
+      "description_zh": "取消选中时调用，仅在 multiple 生效"
     },
     {
       "name": "openChange",
-      "description": "SubMenu 展开/关闭的回调",
-      "params": "function(openKeys: string\\[])"
+      "description": "Callbacks for SubMenu to expand/close",
+      "params": "function(openKeys: string\\[])",
+      "description_zh": "SubMenu 展开/关闭的回调"
     },
     {
       "name": "select",
-      "description": "被选中时调用",
-      "params": "function({ item, key, selectedKeys })"
+      "description": "Called when selected",
+      "params": "function({ item, key, selectedKeys })",
+      "description_zh": "被选中时调用"
     }
   ],
   "typeDetail": {
     "MenuItemType": [
-      { "name": "danger", "description": "展示错误状态样式", "type": "boolean", "default": "false" },
-      { "name": "disabled", "description": "是否禁用", "type": "boolean", "default": "false" },
-      { "name": "icon", "description": "菜单图标", "type": "VueNode | (item: MenuItemType)=>VueNode" },
-      { "name": "key", "description": "item 的唯一标志", "type": "string" },
-      { "name": "label", "description": "菜单项标题", "type": "VueNode" },
-      { "name": "title", "description": "设置收缩时展示的悬浮标题", "type": "string" }
+      {
+        "name": "danger",
+        "description": "展示错误状态样式",
+        "type": "boolean",
+        "default": "false"
+      },
+      {
+        "name": "disabled",
+        "description": "是否禁用",
+        "type": "boolean",
+        "default": "false"
+      },
+      {
+        "name": "icon",
+        "description": "菜单图标",
+        "type": "VueNode | (item: MenuItemType)=>VueNode"
+      },
+      {
+        "name": "key",
+        "description": "item 的唯一标志",
+        "type": "string"
+      },
+      {
+        "name": "label",
+        "description": "菜单项标题",
+        "type": "VueNode"
+      },
+      {
+        "name": "title",
+        "description": "设置收缩时展示的悬浮标题",
+        "type": "string"
+      }
     ],
     "SubMenuType": [
-      { "name": "children", "description": "子菜单的菜单项", "type": "ItemType[]" },
-      { "name": "disabled", "description": "是否禁用", "type": "boolean | false" },
-      { "name": "icon", "description": "菜单图标", "type": "VueNode | (item: SubMenuType)=>VueNode" },
-      { "name": "key", "description": "唯一标志", "type": "string" },
-      { "name": "label", "description": "菜单项标题", "type": "VueNode" },
-      { "name": "popupClassName", "description": "子菜单样式，`mode=\"inline\"` 时无效", "type": "string" },
-      { "name": "popupOffset", "description": "子菜单偏移量，`mode=\"inline\"` 时无效", "type": "[number, number]" },
-      { "name": "onTitleClick", "description": "点击子菜单标题", "type": "function({ key, domEvent })" },
-      { "name": "theme", "description": "设置子菜单的主题，默认从 Menu 上继承", "type": "light | dark" }
+      {
+        "name": "children",
+        "description": "子菜单的菜单项",
+        "type": "ItemType[]"
+      },
+      {
+        "name": "disabled",
+        "description": "是否禁用",
+        "type": "boolean | false"
+      },
+      {
+        "name": "icon",
+        "description": "菜单图标",
+        "type": "VueNode | (item: SubMenuType)=>VueNode"
+      },
+      {
+        "name": "key",
+        "description": "唯一标志",
+        "type": "string"
+      },
+      {
+        "name": "label",
+        "description": "菜单项标题",
+        "type": "VueNode"
+      },
+      {
+        "name": "popupClassName",
+        "description": "子菜单样式，`mode=\"inline\"` 时无效",
+        "type": "string"
+      },
+      {
+        "name": "popupOffset",
+        "description": "子菜单偏移量，`mode=\"inline\"` 时无效",
+        "type": "[number, number]"
+      },
+      {
+        "name": "onTitleClick",
+        "description": "点击子菜单标题",
+        "type": "function({ key, domEvent })"
+      },
+      {
+        "name": "theme",
+        "description": "设置子菜单的主题，默认从 Menu 上继承",
+        "type": "light | dark"
+      }
     ],
     "ItemGroup": [
-      { "name": "title", "description": "分组标题", "type": "string | slot" }
+      {
+        "name": "title",
+        "description": "分组标题",
+        "type": "string | slot"
+      }
     ],
     "Divider": [
-      { "name": "dashed", "description": "是否虚线", "type": "boolean | false" }
+      {
+        "name": "dashed",
+        "description": "是否虚线",
+        "type": "boolean | false"
+      }
     ],
     "MenuItemGroupType": [
-      { "name": "type", "description": "定义类型为 `group` 时，会作为分组处理", "type": "string" },
-      { "name": "label", "description": "分组标题", "type": "MenuItemType[]" },
-      { "name": "children", "description": "分组的菜单项", "type": "ReactNode" }
+      {
+        "name": "type",
+        "description": "定义类型为 `group` 时，会作为分组处理",
+        "type": "string"
+      },
+      {
+        "name": "label",
+        "description": "分组标题",
+        "type": "MenuItemType[]"
+      },
+      {
+        "name": "children",
+        "description": "分组的菜单项",
+        "type": "ReactNode"
+      }
     ],
     "MenuDividerType": [
-      { "name": "type", "description": "定义类型为 `group` 时，会作为分组处理", "type": "string" },
-      { "name": "dashed", "description": "是否虚线", "type": "boolean", "default": "false" }
+      {
+        "name": "type",
+        "description": "定义类型为 `group` 时，会作为分组处理",
+        "type": "string"
+      },
+      {
+        "name": "dashed",
+        "description": "是否虚线",
+        "type": "boolean",
+        "default": "false"
+      }
     ]
   },
-  "link": "https://antdv.com/components/menu-cn"
+  "link": "https://antdv.com/components/menu-cn",
+  "link_zh": "https://antdv.com/components/menu-cn"
 }

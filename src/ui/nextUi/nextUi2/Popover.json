@@ -5,17 +5,20 @@
     {
       "name": "onOpenChange",
       "description": "Handler that is called when the popover's open state changes.",
-      "params": "`(isOpen: boolean) => void`"
+      "params": "`(isOpen: boolean) => void`",
+      "description_zh": "在弹出框的打开状态更改时调用的处理程序。"
     },
     {
       "name": "shouldCloseOnInteractOutside",
       "description": "When user interacts with the argument element outside of the popover ref, return true if onClose should be called. This gives you a chance to filter out interaction with elements that should not dismiss the popover. By default, onClose will always be called on interaction outside the overlay ref.",
-      "params": "`(e: HTMLElement) => void`"
+      "params": "`(e: HTMLElement) => void`",
+      "description_zh": "当用户与弹出框引用外部的参数元素交互时，如果应调用 onClose，则返回 true。这使您有机会过滤掉与不应关闭弹出框的元素的交互。默认情况下，onClose 将始终在覆盖 ref 外部的交互时调用。"
     },
     {
       "name": "onClose",
       "description": "Handler that is called when the popover should close.",
-      "params": "`() => void`"
+      "params": "`() => void`",
+      "description_zh": "在弹出框应关闭时调用的处理程序。"
     }
   ],
   "props": {
@@ -23,158 +26,185 @@
       "type": "`ReactNode[]`",
       "default": "-",
       "description": "The content of the popover. It's usually the `PopoverTrigger` and `PopoverContent`.",
-      "value": ""
+      "value": "",
+      "description_zh": "弹出框的内容。它通常是“PopoverTrigger”和“PopoverContent”。"
     },
     "size": {
       "type": "`sm` | `md` | `lg`",
       "default": "`md`",
       "description": "The popover content font size.",
-      "value": ""
+      "value": "",
+      "description_zh": "弹出框内容字体大小。"
     },
     "color": {
       "type": "`default` | `primary` | `secondary` | `success` | `warning` | `danger`",
       "default": "`default`",
       "description": "The popover color theme.",
-      "value": ""
+      "value": "",
+      "description_zh": "弹出框颜色主题。"
     },
     "radius": {
       "type": "`none` | `sm` | `md` | `lg` | `full`",
       "default": "`lg`",
       "description": "The popover border radius.",
-      "value": ""
+      "value": "",
+      "description_zh": "弹出框边框半径。"
     },
     "shadow": {
       "type": "`none` | `sm` | `md` | `lg`",
       "default": "`lg`",
       "description": "The popover shadow.",
-      "value": ""
+      "value": "",
+      "description_zh": "弹出框阴影。"
     },
     "backdrop": {
       "type": "`transparent` | `opaque` | `blur`",
       "default": "`transparent`",
       "description": "The popover backdrop type.",
-      "value": ""
+      "value": "",
+      "description_zh": "弹出框背景类型。"
     },
     "placement": {
       "type": "[PopoverPlacement](#popover-placement)",
       "default": "`bottom`",
       "description": "The placement of the popover relative to its trigger reference.",
-      "value": ""
+      "value": "",
+      "description_zh": "弹出框相对于其触发器引用的位置。"
     },
     "state": {
       "type": "`OverlayTriggerState`",
       "default": "-",
       "description": "The controlled state of the popover. See [Overlay States](https://react-spectrum.adobe.com/react-stately/useOverlayTriggerState.html#useoverlaytriggerstate)",
-      "value": ""
+      "value": "",
+      "description_zh": "弹出框的受控状态。参见 [Overlay States]（https://react-spectrum.adobe.com/react-stately/useOverlayTriggerState.html#useoverlaytriggerstate）"
     },
     "isOpen": {
       "type": "`boolean`",
       "default": "-",
       "description": "Whether the popover is open by default (controlled).",
-      "value": ""
+      "value": "",
+      "description_zh": "弹出框是否默认打开（受控）。"
     },
     "defaultOpen": {
       "type": "`boolean`",
       "default": "-",
       "description": "Whether the popover is open by default (uncontrolled).",
-      "value": ""
+      "value": "",
+      "description_zh": "默认情况下弹出框是否打开（不受控制）。"
     },
     "offset(px)": {
       "type": "`number`",
       "default": "`7`",
       "description": "The distance or margin between the reference and popper. It is used internally to create an offset modifier.",
-      "value": ""
+      "value": "",
+      "description_zh": "参照和波普尔之间的距离或边距。它在内部用于创建偏移修饰符。"
     },
     "containerPadding(px)": {
       "type": "`number`",
       "default": "`12`",
       "description": "The placement padding that should be applied between the element and its surrounding container.",
-      "value": ""
+      "value": "",
+      "description_zh": "应在元素与其周围容器之间应用的放置填充。"
     },
     "crossOffset(px)": {
       "type": "`number`",
       "default": "`0`",
       "description": "The additional offset applied along the cross axis between the element and its anchor element.",
-      "value": ""
+      "value": "",
+      "description_zh": "沿元素与其锚点元素之间的横轴应用的附加偏移。"
     },
     "triggerType": {
       "type": "`dialog` | `menu` | `listbox` | `tree` | `grid`;",
       "default": "`dialog`",
       "description": "Type of popover that is opened by the trigger.",
-      "value": ""
+      "value": "",
+      "description_zh": "触发器打开的弹出框的类型。"
     },
     "showArrow": {
       "type": "`boolean`",
       "default": "`false`",
       "description": "Whether the popover should have an arrow.",
-      "value": ""
+      "value": "",
+      "description_zh": "弹出框是否应有箭头。"
     },
     "shouldFlip": {
       "type": "`boolean`",
       "default": "`true`",
       "description": "Whether the popover should change its placement and flip when it's about to overflow its boundary area.",
-      "value": ""
+      "value": "",
+      "description_zh": "弹出框是否应更改其位置并在即将溢出其边界区域时翻转。"
     },
     "triggerScaleOnOpen": {
       "type": "`boolean`",
       "default": "`true`",
       "description": "Whether the trigger should scale down when the popover is open.",
-      "value": ""
+      "value": "",
+      "description_zh": "当弹出框打开时，触发器是否应按比例缩小。"
     },
     "shouldBlockScroll": {
       "type": "`boolean`",
       "default": "`false`",
       "description": "Whether to block scrolling outside the popover.",
-      "value": ""
+      "value": "",
+      "description_zh": "是否阻止在弹出框外滚动。"
     },
     "isKeyboardDismissDisabled": {
       "type": "`boolean`",
       "default": "`false`",
       "description": "Whether pressing the escape key to close the popover should be disabled.",
-      "value": ""
+      "value": "",
+      "description_zh": "是否应禁用按 Escape 键关闭弹出框。"
     },
     "shouldCloseOnBlur": {
       "type": "`boolean`",
       "default": "`false`",
       "description": "Whether the popover should close when focus is lost or moves outside it.",
-      "value": ""
+      "value": "",
+      "description_zh": "当焦点丢失时，弹出框是应关闭还是应移出。"
     },
     "motionProps": {
       "type": "[MotionProps](#motion-props)",
       "default": "",
       "description": "The props to modify the framer motion animation. Use the `variants` API to create your own animation.",
-      "value": ""
+      "value": "",
+      "description_zh": "用于修改成帧器运动动画的道具。使用“变体”API 创建您自己的动画。"
     },
     "portalContainer": {
       "type": "`HTMLElement`",
       "default": "`document.body`",
       "description": "The container element in which the overlay portal will be placed.",
-      "value": ""
+      "value": "",
+      "description_zh": "将在其中放置覆盖门户的容器元素。"
     },
     "triggerRef": {
       "type": "`RefObject<HTMLElement>`",
       "default": "-",
       "description": "The ref for the element which the popover positions itself with respect to.",
-      "value": ""
+      "value": "",
+      "description_zh": "弹出框相对于其定位的元素的 ref。"
     },
     "scrollRef": {
       "type": "`RefObject<HTMLElement>`",
       "default": "`overlayRef`",
       "description": "A ref for the scrollable region within the popover.",
-      "value": ""
+      "value": "",
+      "description_zh": "弹出框内可滚动区域的 ref。"
     },
     "disableAnimation": {
       "type": "`boolean`",
       "default": "`false`",
       "description": "Whether the popover is animated.",
-      "value": ""
+      "value": "",
+      "description_zh": "弹出框是否为动画。"
     },
     "classNames": {
       "type": "`Record<\"base\"｜ \"trigger\"｜ \"backdrop\"｜ \"arrow\", string>`",
       "default": "-",
       "description": "Allows to set custom class names for the popover slots.",
-      "value": ""
+      "value": "",
+      "description_zh": "允许为弹出框插槽设置自定义类名。"
     }
   },
-  "link": "https://nextui.org/docs/components/popover"
+  "link": "https://nextui.org/docs/components/popover",
+  "link_zh": "https://nextui.org/docs/components/popover"
 }

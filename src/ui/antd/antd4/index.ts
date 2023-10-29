@@ -80,6 +80,8 @@ import Popconfirm from './popconfirm.json'
 import Progress from './progress.json'
 import Result from './result.json'
 import Spin from './spin.json'
+import QRCode from './qrCode.json'
+import Tour from './tour.json'
 
 export function antd4() {
   const map: any = [

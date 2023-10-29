@@ -4,24 +4,28 @@
     {
       "name": "focus",
       "description": "Focus dialog; if you have content with autofocus attribute, it will directly focus it",
-      "params": "(selector: String) => void"
+      "params": "(selector: String) => void",
+      "description_zh": "焦点对话框;如果您有具有自动对焦属性的内容，它将直接对焦"
     },
     {
       "name": "shake",
       "description": "Shakes dialog",
-      "params": "(focusTarget: Element) => void"
+      "params": "(focusTarget: Element) => void",
+      "description_zh": "“摇晃”对话框"
     }
   ],
   "events": [
     {
       "name": "shake",
       "description": "Emitted when the Dialog shakes in order to catch user's attention, unless the 'no-shake' property is set",
-      "params": ""
+      "params": "",
+      "description_zh": "在对话框摇晃时发出以引起用户注意，除非设置了“no-shake”属性"
     },
     {
       "name": "escape-key",
       "description": "Emitted when ESC key is pressed; Does not get emitted if Dialog is 'persistent' or it has 'no-esc-key' set",
-      "params": ""
+      "params": "",
+      "description_zh": "按下ESC键时发出;如果 Dialog 为“持久性”或设置了“no-esc-key”，则不会发出"
     }
   ],
   "props": {
@@ -29,92 +33,108 @@
       "value": "",
       "type": "Boolean",
       "description": "User cannot dismiss Dialog if clicking outside of it or hitting ESC key; Also, an app route change won't dismiss it",
-      "default": "false"
+      "default": "false",
+      "description_zh": "如果单击对话框外部或按 ESC 键，则用户无法关闭对话框;此外，应用路由更改不会将其关闭"
     },
     "no-esc-dismiss": {
       "value": "",
       "type": "Boolean",
       "description": "User cannot dismiss Dialog by hitting ESC key; No need to set it if 'persistent' prop is also set",
-      "default": "false"
+      "default": "false",
+      "description_zh": "用户无法通过按 ESC 键关闭对话框;如果还设置了 'persistent' 道具，则无需设置它"
     },
     "no-backdrop-dismiss": {
       "value": "",
       "type": "Boolean",
       "description": "User cannot dismiss Dialog by clicking outside of it; No need to set it if 'persistent' prop is also set",
-      "default": "false"
+      "default": "false",
+      "description_zh": "用户不能通过单击对话框外部来关闭对话框;如果还设置了 'persistent' 道具，则无需设置它"
     },
     "no-route-dismiss": {
       "value": "",
       "type": "Boolean",
       "description": "Changing route app won't dismiss Dialog; No need to set it if 'persistent' prop is also set",
-      "default": "false"
+      "default": "false",
+      "description_zh": "更改路线应用程序不会关闭 Dialog;如果还设置了 'persistent' 道具，则无需设置它"
     },
     "auto-close": {
       "value": "",
       "type": "Boolean",
       "description": "Any click/tap inside of the dialog will close it",
-      "default": "false"
+      "default": "false",
+      "description_zh": "对话框中的任何单击/点击都将关闭它"
     },
     "seamless": {
       "value": "",
       "type": "Boolean",
       "description": "Put Dialog into seamless mode; Does not use a backdrop so user is able to interact with the rest of the page too",
-      "default": "false"
+      "default": "false",
+      "description_zh": "将对话框置于无缝模式;不使用背景，因此用户也可以与页面的其余部分进行交互"
     },
     "maximized": {
       "value": "",
       "type": "Boolean",
       "description": "Put Dialog into maximized mode",
-      "default": "false"
+      "default": "false",
+      "description_zh": "将对话框置于最大化模式"
     },
     "full-width": {
       "value": "",
       "type": "Boolean",
       "description": "Dialog will try to render with same width as the window",
-      "default": "false"
+      "default": "false",
+      "description_zh": "对话框将尝试以与窗口相同的宽度呈现"
     },
     "full-height": {
       "value": "",
       "type": "Boolean",
       "description": "Dialog will try to render with same height as the window",
-      "default": "false"
+      "default": "false",
+      "description_zh": "对话框将尝试以与窗口相同的高度呈现"
     },
     "position": {
       "value": "",
       "type": "String",
       "description": "Stick dialog to one of the sides (top, right, bottom or left)",
-      "default": "standard"
+      "default": "standard",
+      "description_zh": "将对话框粘贴到其中一侧（顶部、右侧、底部或左侧）"
     },
     "square": {
       "value": "",
       "type": "Boolean",
       "description": "Forces content to have squared borders",
-      "default": "false"
+      "default": "false",
+      "description_zh": "强制内容具有方形边框"
     },
     "no-refocus": {
       "value": "",
       "type": "Boolean",
       "description": "(Accessibility) When Dialog gets hidden, do not refocus on the DOM element that previously had focus",
-      "default": "false"
+      "default": "false",
+      "description_zh": "（辅助功能）当 Dialog 被隐藏时，不要重新聚焦在以前具有焦点的 DOM 元素上"
     },
     "no-focus": {
       "value": "",
       "type": "Boolean",
       "description": "(Accessibility) When Dialog gets shown, do not switch focus on it",
-      "default": "false"
+      "default": "false",
+      "description_zh": "（辅助功能）显示对话框时，请勿将焦点切换到该对话框上"
     },
     "no-shake": {
       "value": "",
       "type": "Boolean",
       "description": "Do not shake up the Dialog to catch user's attention",
-      "default": "false"
+      "default": "false",
+      "description_zh": "不要摇晃对话框以吸引用户的注意力"
     },
     "allow-focus-outside": {
       "value": "",
       "type": "Boolean",
       "description": "Allow elements outside of the Dialog to be focusable; By default, for accessibility reasons, QDialog does not allow outer focus",
-      "default": "false"
+      "default": "false",
+      "description_zh": "允许对话框外部的元素可聚焦;默认情况下，出于可访问性的原因，QDialog 不允许外部焦点"
     }
   },
-  "link": "https://v2.quasar.dev/vue-components/dialog"
+  "link": "https://v2.quasar.dev/vue-components/dialog",
+  "link_zh": "https://v2.quasar.dev/vue-components/dialog"
 }

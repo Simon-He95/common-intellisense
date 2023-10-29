@@ -3,227 +3,298 @@
   "props": {
     "align": {
       "value": "",
-      "description": "设置列的对齐方式",
+      "description": "Set the alignment of the columns",
       "default": "left",
-      "type": "left | right | center"
+      "type": "left | right | center",
+      "description_zh": "设置列的对齐方式"
     },
     "colSpan": {
       "value": "",
-      "description": "表头列合并,设置为 0 时，不渲染",
+      "description": "Header column merging, when set to 0, is not rendered",
       "default": "",
-      "type": "number"
+      "type": "number",
+      "description_zh": "表头列合并,设置为 0 时，不渲染"
     },
     "customCell": {
       "value": "",
-      "description": "设置单元格属性",
+      "description": "Set cell properties",
       "default": "-",
-      "type": "Function(record, rowIndex, column)"
+      "type": "Function(record, rowIndex, column)",
+      "description_zh": "设置单元格属性"
     },
     "customFilterDropdown": {
       "value": "",
-      "description": "启用 v-slot:customFilterDropdown，优先级低于 filterDropdown",
+      "description": "Enable v-slot:customFilterDropdown, which takes precedence over filterDropdown",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "启用 v-slot:customFilterDropdown，优先级低于 filterDropdown"
     },
     "customHeaderCell": {
       "value": "",
-      "description": "设置头部单元格属性",
+      "description": "Set the header cell properties",
       "default": "-",
-      "type": "Function(column)"
+      "type": "Function(column)",
+      "description_zh": "设置头部单元格属性"
     },
     "customRender": {
       "value": "",
-      "description": "生成复杂数据的渲染函数，参数分别为当前行的值，当前行数据，行索引",
+      "description": "A rendering function that generates complex data, with parameters such as the value of the current row, the data of the current row, and the index of the row",
       "default": "-",
-      "type": "Function({text, record, index, column}) {}"
+      "type": "Function({text, record, index, column}) {}",
+      "description_zh": "生成复杂数据的渲染函数，参数分别为当前行的值，当前行数据，行索引"
     },
     "dataIndex": {
       "value": "",
-      "description": "列数据在数据项中对应的路径，支持通过数组查询嵌套路径",
+      "description": "The path of column data in a data item can be queried through arrays",
       "default": "-",
-      "type": "string | string\\[]"
+      "type": "string | string\\[]",
+      "description_zh": "列数据在数据项中对应的路径，支持通过数组查询嵌套路径"
     },
     "defaultFilteredValue": {
       "value": "",
-      "description": "默认筛选值",
+      "description": "Default filter value",
       "default": "-",
-      "type": "string\\[]"
+      "type": "string\\[]",
+      "description_zh": "默认筛选值"
     },
     "filterResetToDefaultFilteredValue": {
       "value": "",
-      "description": "点击重置按钮的时候，是否恢复默认筛选值",
+      "description": "When you click the Reset button, whether to restore the default filter value",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "点击重置按钮的时候，是否恢复默认筛选值"
     },
     "defaultSortOrder": {
       "value": "",
-      "description": "默认排序顺序",
+      "description": "Default sort order",
       "default": "-",
-      "type": "ascend | descend"
+      "type": "ascend | descend",
+      "description_zh": "默认排序顺序"
     },
     "ellipsis": {
       "value": "",
-      "description": "超过宽度将自动省略，暂不支持和排序筛选一起使用。<br />设置为 `true` 或 `{ showTitle?: boolean }` 时，表格布局将变成 `tableLayout=\"fixed\"`。",
+      "description": "Exceeding the width will be automatically omitted and cannot be used with sort filtering. <When br /> is set to 'true' or '{ showTitle?: boolean }', the table layout changes to 'tableLayout=\"fixed\"'.",
       "default": "false",
-      "type": "boolean | { showTitle?: boolean }"
+      "type": "boolean | { showTitle?: boolean }",
+      "description_zh": "超过宽度将自动省略，暂不支持和排序筛选一起使用。<br />设置为 `true` 或 `{ showTitle?: boolean }` 时，表格布局将变成 `tableLayout=\"fixed\"`。"
     },
     "filterDropdown": {
       "value": "",
-      "description": "可以自定义筛选菜单，此函数只负责渲染图层，需要自行编写各种交互",
+      "description": "You can customize the filter menu, this function is only responsible for rendering the layer, and you need to write your own interactions",
       "default": "-",
-      "type": "VNode | (props: FilterDropdownProps) => VNode"
+      "type": "VNode | (props: FilterDropdownProps) => VNode",
+      "description_zh": "可以自定义筛选菜单，此函数只负责渲染图层，需要自行编写各种交互"
     },
     "filterDropdownOpen": {
       "value": "",
-      "description": "用于控制自定义筛选菜单是否可见",
+      "description": "Lets you control whether the custom filter menu is visible",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "用于控制自定义筛选菜单是否可见"
     },
     "filtered": {
       "value": "",
-      "description": "标识数据是否经过过滤，筛选图标会高亮",
+      "description": "Identifies whether the data is filtered or not, and the filter icon is highlighted",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "标识数据是否经过过滤，筛选图标会高亮"
     },
     "filteredValue": {
       "value": "",
-      "description": "筛选的受控属性，外界可用此控制列的筛选状态，值为已筛选的 value 数组",
+      "description": "A filtered controlled property that can be used externally to control the filtering status of a column, with a value of the filtered value array",
       "default": "-",
-      "type": "string\\[]"
+      "type": "string\\[]",
+      "description_zh": "筛选的受控属性，外界可用此控制列的筛选状态，值为已筛选的 value 数组"
     },
     "filterIcon": {
       "value": "",
-      "description": "自定义 filter 图标。",
+      "description": "Customize the filter icon.",
       "default": "false",
-      "type": "VNode | ({filtered: boolean, column: Column}) => vNode"
+      "type": "VNode | ({filtered: boolean, column: Column}) => vNode",
+      "description_zh": "自定义 filter 图标。"
     },
     "filterMode": {
       "value": "",
-      "description": "指定筛选菜单的用户界面",
+      "description": "Specifies the user interface for the filter menu",
       "default": "'menu'",
-      "type": "'menu' | 'tree'"
+      "type": "'menu' | 'tree'",
+      "description_zh": "指定筛选菜单的用户界面"
     },
     "filterMultiple": {
       "value": "",
-      "description": "是否多选",
+      "description": "Whether to select more than one",
       "default": "true",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否多选"
     },
     "filters": {
       "value": "",
-      "description": "表头的筛选菜单项",
+      "description": "Filter menu item for the header",
       "default": "-",
-      "type": "object\\[]"
+      "type": "object\\[]",
+      "description_zh": "表头的筛选菜单项"
     },
     "filterSearch": {
       "value": "",
-      "description": "筛选菜单项是否可搜索",
+      "description": "Filter whether a menu item is searchable",
       "default": "false",
-      "type": "boolean | function(input, filter):boolean"
+      "type": "boolean | function(input, filter):boolean",
+      "description_zh": "筛选菜单项是否可搜索"
     },
     "fixed": {
       "value": "",
-      "description": "列是否固定，可选 `true`(等效于 left) `'left'` `'right'`",
+      "description": "Whether the column is fixed or not, you can select 'true' (equivalent to left) ''left'' 'right''",
       "default": "false",
-      "type": "boolean | string"
+      "type": "boolean | string",
+      "description_zh": "列是否固定，可选 `true`(等效于 left) `'left'` `'right'`"
     },
     "key": {
       "value": "",
-      "description": "Vue 需要的 key，如果已经设置了唯一的 `dataIndex`，可以忽略这个属性",
+      "description": "If Vue needs a key, if the unique 'dataIndex' has been set, this property can be ignored",
       "default": "-",
-      "type": "string"
+      "type": "string",
+      "description_zh": "Vue 需要的 key，如果已经设置了唯一的 `dataIndex`，可以忽略这个属性"
     },
     "maxWidth": {
       "value": "",
-      "description": "拖动列最大宽度，会受到表格自动调整分配宽度影响",
+      "description": "Dragging the maximum width of the column will be affected by the automatic adjustment of the allocation width of the table",
       "default": "-",
-      "type": "number"
+      "type": "number",
+      "description_zh": "拖动列最大宽度，会受到表格自动调整分配宽度影响"
     },
     "minWidth": {
       "value": "",
-      "description": "拖动列最小宽度，会受到表格自动调整分配宽度影响",
+      "description": "Dragging the minimum width of a column will be affected by the table's automatic adjustment of the allocation width",
       "default": "50",
-      "type": "number"
+      "type": "number",
+      "description_zh": "拖动列最小宽度，会受到表格自动调整分配宽度影响"
     },
     "resizable": {
       "value": "",
-      "description": "是否可拖动调整宽度，此时 width 必须是 number 类型",
+      "description": "Whether the width can be dragged to adjust the width, in which case the width must be of type number",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否可拖动调整宽度，此时 width 必须是 number 类型"
     },
     "responsive": {
       "value": "",
-      "description": "响应式 breakpoint 配置列表。未设置则始终可见。",
+      "description": "A list of responsive breakpoint configurations. Always visible if not set.",
       "default": "-",
-      "type": "xxxl | xxl | xl | lg | md | sm | xs"
+      "type": "xxxl | xxl | xl | lg | md | sm | xs",
+      "description_zh": "响应式 breakpoint 配置列表。未设置则始终可见。"
     },
     "rowScope": {
       "value": "",
-      "description": "设置列范围",
+      "description": "Set the column range",
       "default": "-",
-      "type": "row | rowgroup"
+      "type": "row | rowgroup",
+      "description_zh": "设置列范围"
     },
     "showSorterTooltip": {
       "value": "",
-      "description": "表头显示下一次排序的 tooltip 提示, 覆盖 table 中 showSorterTooltip",
+      "description": "The header shows a tooltip hint for the next sort, overriding the showSorterTooltip in the table",
       "default": "true",
-      "type": "boolean | [Tooltip props]( | components | tooltip | #api)"
+      "type": "boolean | [Tooltip props]( | components | tooltip | #api)",
+      "description_zh": "表头显示下一次排序的 tooltip 提示, 覆盖 table 中 showSorterTooltip"
     },
     "sortDirections": {
       "value": "",
-      "description": "支持的排序方式，取值为 `'ascend'` `'descend'`",
+      "description": "The supported sorting method can be ''ascend'' ''descend'''",
       "default": "`['ascend', 'descend']`",
-      "type": "Array"
+      "type": "Array",
+      "description_zh": "支持的排序方式，取值为 `'ascend'` `'descend'`"
     },
     "sorter": {
       "value": "",
-      "description": "排序函数，本地排序使用一个函数(参考 [Array.sort](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort) 的 compareFunction)，需要服务端排序可设为 true",
+      "description": "Sorting function, local sorting uses a function (refer to the compareFunction of [Array.sort](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)), which requires server-side sorting to be set to true",
       "default": "-",
-      "type": "Function | boolean"
+      "type": "Function | boolean",
+      "description_zh": "排序函数，本地排序使用一个函数(参考 [Array.sort](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort) 的 compareFunction)，需要服务端排序可设为 true"
     },
     "sortOrder": {
       "value": "",
-      "description": "排序的受控属性，外界可用此控制列的排序，可设置为 `'ascend'` `'descend'` null",
+      "description": "A controlled property of sorting, which can be used externally to control the sorting of columns, which can be set to ''ascend' ''descend'' null",
       "default": "-",
-      "type": "string"
+      "type": "string",
+      "description_zh": "排序的受控属性，外界可用此控制列的排序，可设置为 `'ascend'` `'descend'` null"
     },
     "title": {
       "value": "",
-      "description": "列头显示文字",
+      "description": "The column header displays text",
       "default": "-",
-      "type": "string"
+      "type": "string",
+      "description_zh": "列头显示文字"
     },
     "width": {
       "value": "",
-      "description": "列宽度",
+      "description": "Column width",
       "default": "-",
-      "type": "string | number"
+      "type": "string | number",
+      "description_zh": "列宽度"
     }
   },
   "methods": [],
   "events": [
     {
       "name": "onFilter",
-      "description": "本地模式下，确定筛选的运行函数, 使用 template 或 jsx 时作为`filter`事件使用",
-      "params": "Function"
+      "description": "In local mode, the function that determines the filter is used as a 'filter' event when using template or jsx",
+      "params": "Function",
+      "description_zh": "本地模式下，确定筛选的运行函数, 使用 template 或 jsx 时作为`filter`事件使用"
     },
     {
       "name": "onFilterDropdownOpenChange",
-      "description": "自定义筛选菜单可见变化时调用，使用 template 或 jsx 时作为`filterDropdownOpenChange`事件使用",
-      "params": "function(open) {}"
+      "description": "The custom filter menu is called when the change is visible, and is used as a 'filterDropdownOpenChange' event when using template or jsx",
+      "params": "function(open) {}",
+      "description_zh": "自定义筛选菜单可见变化时调用，使用 template 或 jsx 时作为`filterDropdownOpenChange`事件使用"
     }
   ],
   "typeDetail": {
     "FilterDropdownProps": [
-      { "name": "prefixCls", "description": "", "type": "string" },
-      { "name": "setSelectedKeys", "description": "", "type": "(selectedKeys: Key[]) => void" },
-      { "name": "selectedKeys", "description": "", "type": "Key[]" },
-      { "name": "confirm", "description": "", "type": "(param?: FilterConfirmProps) => void", "optional": "true" },
-      { "name": "clearFilters", "description": "", "type": "() => void", "optional": "true" },
-      { "name": "filters", "description": "", "type": "ColumnFilterItem", "optional": "true" },
-      { "name": "visible", "description": "", "type": "boolean" },
-      { "name": "column", "description": "", "type": "ColumnType" }
+      {
+        "name": "prefixCls",
+        "description": "",
+        "type": "string"
+      },
+      {
+        "name": "setSelectedKeys",
+        "description": "",
+        "type": "(selectedKeys: Key[]) => void"
+      },
+      {
+        "name": "selectedKeys",
+        "description": "",
+        "type": "Key[]"
+      },
+      {
+        "name": "confirm",
+        "description": "",
+        "type": "(param?: FilterConfirmProps) => void",
+        "optional": "true"
+      },
+      {
+        "name": "clearFilters",
+        "description": "",
+        "type": "() => void",
+        "optional": "true"
+      },
+      {
+        "name": "filters",
+        "description": "",
+        "type": "ColumnFilterItem",
+        "optional": "true"
+      },
+      {
+        "name": "visible",
+        "description": "",
+        "type": "boolean"
+      },
+      {
+        "name": "column",
+        "description": "",
+        "type": "ColumnType"
+      }
     ]
   },
-  "link": "https://antdv.com/components/table-cn"
+  "link": "https://antdv.com/components/table-cn",
+  "link_zh": "https://antdv.com/components/table-cn"
 }

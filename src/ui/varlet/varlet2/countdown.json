@@ -3,24 +3,46 @@
   "props": {
     ":time": {
       "value": "",
-      "description": "倒计时时长（ms）",
+      "description": "Countdown Duration (ms)",
       "default": "0",
-      "type": "倒计时时长（ms）"
+      "type": "倒计时时长（ms）",
+      "description_zh": "倒计时时长（ms）"
     },
     "format": {
       "value": "",
-      "description": "时间格式",
+      "description": "Time format",
       "default": "HH : mm : ss",
-      "type": "时间格式"
+      "type": "时间格式",
+      "description_zh": "时间格式"
     },
     "auto-start": {
       "value": "",
-      "description": "是否自动开始倒计时",
+      "description": "Whether or not to start the countdown automatically",
       "default": "true",
-      "type": "是否自动开始倒计时"
+      "type": "是否自动开始倒计时",
+      "description_zh": "是否自动开始倒计时"
     }
   },
-  "methods": [{ "name": "start", "description": "开始倒计时", "params": "`-`" }, { "name": "pause", "description": "暂停倒计时", "params": "`-`" }, { "name": "reset", "description": "重设倒计时，若 `auto-start` 为 `true`，重设后会自动开始倒计时", "params": "`-`" }],
+  "methods": [
+    {
+      "name": "start",
+      "description": "Start the countdown",
+      "params": "`-`",
+      "description_zh": "开始倒计时"
+    },
+    {
+      "name": "pause",
+      "description": "Pause the countdown",
+      "params": "`-`",
+      "description_zh": "暂停倒计时"
+    },
+    {
+      "name": "reset",
+      "description": "Reset the countdown, if 'auto-start' is 'true', the countdown will start automatically after the reset",
+      "params": "`-`",
+      "description_zh": "重设倒计时，若 `auto-start` 为 `true`，重设后会自动开始倒计时"
+    }
+  ],
   "typeDetail": {
     "TimeData": [
       {
@@ -53,14 +75,17 @@
   "events": [
     {
       "name": "end",
-      "description": "倒计时结束时触发",
-      "params": "倒计时结束时触发"
+      "description": "Triggers at the end of the countdown",
+      "params": "倒计时结束时触发",
+      "description_zh": "倒计时结束时触发"
     },
     {
       "name": "change",
-      "description": "倒计时变化时触发",
-      "params": "倒计时变化时触发"
+      "description": "Triggered when the countdown changes",
+      "params": "倒计时变化时触发",
+      "description_zh": "倒计时变化时触发"
     }
   ],
-  "link": "https://varlet.gitee.io/varlet-ui/#/zh-CN/countdown"
+  "link": "https://varlet.gitee.io/varlet-ui/#/zh-CN/countdown",
+  "link_zh": "https://varlet.gitee.io/varlet-ui/#/zh-CN/countdown"
 }

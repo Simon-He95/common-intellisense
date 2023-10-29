@@ -3,15 +3,17 @@
   "props": {
     "area-list": {
       "value": "",
-      "description": "地区列表",
+      "description": "List of regions",
       "default": "-",
-      "type": "object"
+      "type": "object",
+      "description_zh": "地区列表"
     },
     "area-columns-placeholder": {
       "value": "",
-      "description": "地区选择列占位提示文字",
+      "description": "Region selection column placeholder prompt text",
       "default": "[]",
-      "type": "string[]"
+      "type": "string[]",
+      "description_zh": "地区选择列占位提示文字"
     },
     "area-placeholder": {
       "value": [
@@ -19,167 +21,196 @@
         "市",
         "区"
       ],
-      "description": "地区输入框占位提示文字",
+      "description": "The locale input box occupies the text of the place-grabbing prompt",
       "default": "选择省 | 市 | 区",
-      "type": "string"
+      "type": "string",
+      "description_zh": "地区输入框占位提示文字"
     },
     "address-info": {
       "value": "",
-      "description": "地址信息初始值",
+      "description": "The initial value of the address information",
       "default": "{}",
-      "type": "AddressEditInfo"
+      "type": "AddressEditInfo",
+      "description_zh": "地址信息初始值"
     },
     "search-result": {
       "value": "",
-      "description": "详细地址搜索结果",
+      "description": "Detailed address search results",
       "default": "[]",
-      "type": "AddressEditSearchItem[]"
+      "type": "AddressEditSearchItem[]",
+      "description_zh": "详细地址搜索结果"
     },
     "show-delete": {
       "value": "",
-      "description": "是否显示删除按钮",
+      "description": "Whether or not to display a delete button",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否显示删除按钮"
     },
     "show-set-default": {
       "value": "",
-      "description": "是否显示默认地址栏",
+      "description": "Whether to display the default address bar",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否显示默认地址栏"
     },
     "show-search-result": {
       "value": "",
-      "description": "是否显示搜索结果",
+      "description": "Whether or not to display search results",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否显示搜索结果"
     },
     "show-area": {
       "value": "",
-      "description": "是否显示地区",
+      "description": "Whether or not to display the region",
       "default": "true",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否显示地区"
     },
     "show-detail": {
       "value": "",
-      "description": "是否显示详细地址",
+      "description": "Whether to display the address details",
       "default": "true",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否显示详细地址"
     },
     "disable-area": {
       "value": "",
-      "description": "是否禁用地区选择",
+      "description": "Whether to disable region selection",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否禁用地区选择"
     },
     "save-button-text": {
       "value": "",
-      "description": "保存按钮文字",
+      "description": "Save the button text",
       "default": "保存",
-      "type": "string"
+      "type": "string",
+      "description_zh": "保存按钮文字"
     },
     "delete-button-text": {
       "value": "",
-      "description": "删除按钮文字",
+      "description": "Delete the button text",
       "default": "删除",
-      "type": "string"
+      "type": "string",
+      "description_zh": "删除按钮文字"
     },
     "detail-rows": {
       "value": "",
-      "description": "详细地址输入框行数",
+      "description": "The number of rows in the detailed address input box",
       "default": "1",
-      "type": "number | string"
+      "type": "number | string",
+      "description_zh": "详细地址输入框行数"
     },
     "detail-maxlength": {
       "value": "",
-      "description": "详细地址最大长度",
+      "description": "The maximum length of the detailed address",
       "default": "200",
-      "type": "number | string"
+      "type": "number | string",
+      "description_zh": "详细地址最大长度"
     },
     "is-saving": {
       "value": "",
-      "description": "是否显示保存按钮加载动画",
+      "description": "Whether or not to display the Save button loading animation",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否显示保存按钮加载动画"
     },
     "is-deleting": {
       "value": "",
-      "description": "是否显示删除按钮加载动画",
+      "description": "Whether or not to display the delete button loading animation",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否显示删除按钮加载动画"
     },
     "tel-validator": {
       "value": "",
-      "description": "手机号格式校验函数",
+      "description": "The format verification function of the mobile phone number",
       "default": "-",
-      "type": "(val: string) => boolean"
+      "type": "(val: string) => boolean",
+      "description_zh": "手机号格式校验函数"
     },
     "tel-maxlength": {
       "value": "",
-      "description": "手机号最大长度",
+      "description": "The maximum length of the mobile phone number",
       "default": "-",
-      "type": "number | string"
+      "type": "number | string",
+      "description_zh": "手机号最大长度"
     },
     "validator": {
       "value": "",
-      "description": "自定义校验函数",
+      "description": "Custom check functions",
       "default": "-",
-      "type": "(key: string, val: string) => string"
+      "type": "(key: string, val: string) => string",
+      "description_zh": "自定义校验函数"
     }
   },
   "methods": [
     {
       "name": "setAddressDetail",
-      "description": "设置详细地址",
-      "params": "addressDetail: string"
+      "description": "Set the address details",
+      "params": "addressDetail: string",
+      "description_zh": "设置详细地址"
     },
     {
       "name": "setAreaCode",
-      "description": "设置地区编号",
-      "params": "code: string"
+      "description": "Set up the area code",
+      "params": "code: string",
+      "description_zh": "设置地区编号"
     }
   ],
   "typeDetail": {},
   "events": [
     {
       "name": "save",
-      "description": "点击保存按钮时触发",
-      "params": "info: AddressEditInfo"
+      "description": "Triggered when the save button is clicked",
+      "params": "info: AddressEditInfo",
+      "description_zh": "点击保存按钮时触发"
     },
     {
       "name": "focus",
-      "description": "输入框聚焦时触发",
-      "params": "key: string"
+      "description": "Triggered when the input box is focused",
+      "params": "key: string",
+      "description_zh": "输入框聚焦时触发"
     },
     {
       "name": "delete",
-      "description": "确认删除地址时触发",
-      "params": "info: AddressEditInfo"
+      "description": "Triggered when the deletion of an address is confirmed",
+      "params": "info: AddressEditInfo",
+      "description_zh": "确认删除地址时触发"
     },
     {
       "name": "select-search",
-      "description": "选中搜索结果时触发",
-      "params": "value: string"
+      "description": "Triggered when a search result is selected",
+      "params": "value: string",
+      "description_zh": "选中搜索结果时触发"
     },
     {
       "name": "click-area",
-      "description": "点击收件地区时触发",
-      "params": "-"
+      "description": "Triggered when you click on the destination region",
+      "params": "-",
+      "description_zh": "点击收件地区时触发"
     },
     {
       "name": "change-area",
-      "description": "修改收件地区时触发",
-      "params": "selectedOptions: PickerOption[]"
+      "description": "Triggered when the shipping destination is changed",
+      "params": "selectedOptions: PickerOption[]",
+      "description_zh": "修改收件地区时触发"
     },
     {
       "name": "change-detail",
-      "description": "修改详细地址时触发",
-      "params": "value: string"
+      "description": "Triggered when the detailed address is modified",
+      "params": "value: string",
+      "description_zh": "修改详细地址时触发"
     },
     {
       "name": "change-default",
-      "description": "切换是否使用默认地址时触发",
-      "params": "checked: boolean"
+      "description": "Triggered when the default address is used",
+      "params": "checked: boolean",
+      "description_zh": "切换是否使用默认地址时触发"
     }
   ],
-  "link": "https://vant-docs.netlify.app/#/zh-CN/address-edit"
+  "link": "https://vant-docs.netlify.app/#/en-US/address-edit",
+  "link_zh": "https://vant-docs.netlify.app/#/zh-CN/address-edit"
 }

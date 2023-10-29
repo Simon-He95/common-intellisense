@@ -3,197 +3,255 @@
   "props": {
     "allowClear": {
       "value": "",
-      "description": "是否展示清除按钮",
+      "description": "Whether or not to display a clear button",
       "default": "true",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否展示清除按钮"
     },
     "autoFocus": {
       "value": "",
-      "description": "自动获取焦点",
+      "description": "Automatically get focus",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "自动获取焦点"
     },
     "bordered": {
       "value": "",
-      "description": "是否有边框",
+      "description": "Whether there is a border or not",
       "default": "true",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "是否有边框"
     },
     "cellRender": {
       "value": "",
-      "description": "自定义单元格的内容",
+      "description": "Customize the contents of the cell",
       "default": "-",
-      "type": "(current: number, info: { originNode: React.ReactNode, today: dayjs, range?: 'start' | 'end', subType: 'hour' | 'minute' | 'second' | 'meridiem' }) => React.ReactNode"
+      "type": "(current: number, info: { originNode: React.ReactNode, today: dayjs, range?: 'start' | 'end', subType: 'hour' | 'minute' | 'second' | 'meridiem' }) => React.ReactNode",
+      "description_zh": "自定义单元格的内容"
     },
     "changeOnBlur": {
       "value": "",
-      "description": "失去焦点时触发 `change` 事件，例如 datetime 下不再需要点击确认按钮",
+      "description": "Trigger a 'change' event when you lose focus, e.g. no longer need to click the confirm button at datetime",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "失去焦点时触发 `change` 事件，例如 datetime 下不再需要点击确认按钮"
     },
     "className": {
       "value": "",
-      "description": "选择器类名",
+      "description": "The name of the selector class",
       "default": "-",
-      "type": "string"
+      "type": "string",
+      "description_zh": "选择器类名"
     },
     "clearIcon": {
       "value": "",
-      "description": "自定义的清除图标",
+      "description": "Customized clear icon",
       "default": "-",
-      "type": "ReactNode"
+      "type": "ReactNode",
+      "description_zh": "自定义的清除图标"
     },
     "clearText": {
       "value": "",
-      "description": "清除按钮的提示文案",
+      "description": "Clear the tooltip copy for the button",
       "default": "clear",
-      "type": "string"
+      "type": "string",
+      "description_zh": "清除按钮的提示文案"
     },
     "defaultValue": {
       "value": "",
-      "description": "默认时间",
+      "description": "Default time",
       "default": "-",
-      "type": "[dayjs]"
+      "type": "[dayjs]",
+      "description_zh": "默认时间"
     },
     "disabled": {
       "value": "",
-      "description": "禁用全部操作",
+      "description": "Disable all operations",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "禁用全部操作"
     },
     "disabledTime": {
       "value": "",
-      "description": "不可选择的时间",
+      "description": "Unselectable time",
       "default": "-",
-      "type": "[DisabledTime]"
+      "type": "[DisabledTime]",
+      "description_zh": "不可选择的时间"
     },
     "format": {
       "value": "",
-      "description": "展示的时间格式",
+      "description": "The time format of the presentation",
       "default": "`HH:mm:ss`",
-      "type": "string"
+      "type": "string",
+      "description_zh": "展示的时间格式"
     },
     "getPopupContainer": {
       "value": "",
-      "description": "定义浮层的容器，默认为 body 上新建 div",
+      "description": "The container that defines the floating layer, defaults to a new div on the body",
       "default": "-",
-      "type": "function(trigger)"
+      "type": "function(trigger)",
+      "description_zh": "定义浮层的容器，默认为 body 上新建 div"
     },
     "hideDisabledOptions": {
       "value": "",
-      "description": "隐藏禁止选择的选项",
+      "description": "Hide the option to prohibit selection",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "隐藏禁止选择的选项"
     },
     "hourStep": {
       "value": "",
-      "description": "小时选项间隔",
+      "description": "Hour option interval",
       "default": "1",
-      "type": "number"
+      "type": "number",
+      "description_zh": "小时选项间隔"
     },
     "inputReadOnly": {
       "value": "",
-      "description": "设置输入框为只读（避免在移动设备上打开虚拟键盘）",
+      "description": "Make input boxes read-only (avoid opening the virtual keyboard on mobile devices)",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "设置输入框为只读（避免在移动设备上打开虚拟键盘）"
     },
     "minuteStep": {
       "value": "",
-      "description": "分钟选项间隔",
+      "description": "Minute option interval",
       "default": "1",
-      "type": "number"
+      "type": "number",
+      "description_zh": "分钟选项间隔"
     },
     "open": {
       "value": "",
-      "description": "面板是否打开",
+      "description": "Whether the panel is open",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "面板是否打开"
     },
     "placeholder": {
       "value": "",
-      "description": "没有值的时候显示的内容",
+      "description": "What is displayed when there is no value",
       "default": "请选择时间",
-      "type": "string | [string, string]"
+      "type": "string | [string, string]",
+      "description_zh": "没有值的时候显示的内容"
     },
     "placement": {
-      "value": ["bottomLeft", "bottomRight", "topLeft", "topRight"],
-      "description": "选择框弹出的位置",
+      "value": [
+        "bottomLeft",
+        "bottomRight",
+        "topLeft",
+        "topRight"
+      ],
+      "description": "Select where the box pops up",
       "default": "bottomLeft",
-      "type": "bottomLeft `bottomRight` `topLeft` topRight"
+      "type": "bottomLeft `bottomRight` `topLeft` topRight",
+      "description_zh": "选择框弹出的位置"
     },
     "popupClassName": {
       "value": "",
-      "description": "弹出层类名",
+      "description": "The layer class name pops up",
       "default": "-",
-      "type": "string"
+      "type": "string",
+      "description_zh": "弹出层类名"
     },
     "popupStyle": {
       "value": "",
-      "description": "弹出层样式对象",
+      "description": "Pop up a layer style object",
       "default": "-",
-      "type": "object"
+      "type": "object",
+      "description_zh": "弹出层样式对象"
     },
     "renderExtraFooter": {
       "value": "",
-      "description": "选择框底部显示自定义的内容",
+      "description": "The bottom of the selection box displays the customized content",
       "default": "-",
-      "type": "() => ReactNode"
+      "type": "() => ReactNode",
+      "description_zh": "选择框底部显示自定义的内容"
     },
     "secondStep": {
       "value": "",
-      "description": "秒选项间隔",
+      "description": "Seconds option interval",
       "default": "1",
-      "type": "number"
+      "type": "number",
+      "description_zh": "秒选项间隔"
     },
     "showNow": {
       "value": "",
-      "description": "面板是否显示“此刻”按钮",
+      "description": "Whether the panel displays the \"Now\" button",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "面板是否显示“此刻”按钮"
     },
     "size": {
-      "value": ["large", "middle", "small"],
-      "description": "输入框大小，`large` 高度为 40px，`small` 为 24px，默认是 32px",
+      "value": [
+        "large",
+        "middle",
+        "small"
+      ],
+      "description": "The size of the input box, 'large' is 40px in height and 'small' is 24px, default is 32px",
       "default": "-",
-      "type": "large | middle | small"
+      "type": "large | middle | small",
+      "description_zh": "输入框大小，`large` 高度为 40px，`small` 为 24px，默认是 32px"
     },
     "status": {
-      "value": ["error", "warning"],
-      "description": "设置校验状态",
+      "value": [
+        "error",
+        "warning"
+      ],
+      "description": "Set the verification status",
       "default": "-",
-      "type": "'error' | 'warning'"
+      "type": "'error' | 'warning'",
+      "description_zh": "设置校验状态"
     },
     "suffixIcon": {
       "value": "",
-      "description": "自定义的选择框后缀图标",
+      "description": "Custom selection box suffix icon",
       "default": "-",
-      "type": "ReactNode"
+      "type": "ReactNode",
+      "description_zh": "自定义的选择框后缀图标"
     },
     "use12Hours": {
       "value": "",
-      "description": "使用 12 小时制，为 true 时 `format` 默认为 `h:mm:ss a`",
+      "description": "Using the 12-hour format, 'format' defaults to 'h:mm:ss a' when true",
       "default": "false",
-      "type": "boolean"
+      "type": "boolean",
+      "description_zh": "使用 12 小时制，为 true 时 `format` 默认为 `h:mm:ss a`"
     },
     "value": {
       "value": "",
-      "description": "当前时间",
+      "description": "The current time",
       "default": "-",
-      "type": "[dayjs]"
+      "type": "[dayjs]",
+      "description_zh": "当前时间"
     }
   },
-  "methods": [{ "name": "blur()", "description": "移除焦点", "params": "" }, { "name": "focus()", "description": "获取焦点", "params": "" }],
+  "methods": [
+    {
+      "name": "blur()",
+      "description": "Remove the focus",
+      "params": "",
+      "description_zh": "移除焦点"
+    },
+    {
+      "name": "focus()",
+      "description": "Get focus",
+      "params": "",
+      "description_zh": "获取焦点"
+    }
+  ],
   "events": [
     {
       "name": "onChange",
-      "description": "时间发生变化的回调",
-      "params": "function(time: dayjs, timeString: string): void"
+      "description": "Callbacks where time changes",
+      "params": "function(time: dayjs, timeString: string): void",
+      "description_zh": "时间发生变化的回调"
     },
     {
       "name": "onOpenChange",
-      "description": "面板打开/关闭时的回调",
-      "params": "(open: boolean) => void"
+      "description": "Callback when the panel is opened/closed",
+      "params": "(open: boolean) => void",
+      "description_zh": "面板打开/关闭时的回调"
     }
   ],
-  "link": "https://ant.design/components//time-picker"
+  "link": "https://ant.design/components//time-picker",
+  "link_zh": "https://ant.design/components//time-picker"
 }
