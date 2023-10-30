@@ -19,6 +19,7 @@
 - quasar 2
 - @nextui-org/react 2
 - @nuxt/ui 2
+- vuetify 3
 
 ### antdv
 ![antdv](assets/antdv.gif)
@@ -40,6 +41,9 @@
 
 ### nuxt-ui
 ![nuxt](assets/nuxt.gif)
+
+### vuetify
+![vuetify](assets/vuetify.gif)
 
 ## :coffee:
 

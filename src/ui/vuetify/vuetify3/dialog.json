@@ -107,7 +107,7 @@
       "description_zh": "指定组件的位置。可以使用空格分隔的字符串同时应用多个。"
     },
     "location-strategy": {
-      "value": "",
+      "value": ["static", "connected", "LocationStrategyFn"],
       "description": "A function used to specifies how the component should position relative to its activator",
       "default": "static",
       "type": "'static' | 'connected' | LocationStrategyFn",
@@ -191,7 +191,7 @@
       "description_zh": "指定组件在其激活器悬停时是否应激活。"
     },
     "origin": {
-      "value": "",
+      "value": ["Anchor", "auto", "overlap"],
       "description": "Sets the origin of the animation on the element. You can explore more for transition origin on the MDN documentation",
       "default": "'center center'",
       "type": "Anchor | 'auto' | 'overlap'",
@@ -226,7 +226,7 @@
       "description_zh": "当设置为 true 时，期望有一个 v-card 和一个 v-card-text 组件，并有指定的高度。更多信息，请查看 可滚动示例。"
     },
     "scroll-strategy": {
-      "value": "",
+      "value": ["close", "block", "none", "reposition", "ScrollStrategyFn"],
       "description": "MISSING DESCRIPTION (edit in github)",
       "default": "block",
       "type": "'close' | 'block' | 'none' | 'reposition' | ScrollStrategyFn",
@@ -268,9 +268,10 @@
       "name": "update:modelValue",
       "description": "Event that is emitted when the component’s model changes",
       "params": "[boolean]",
-      "description_zh": "组件模型更改时发出的事件"
+      "description_zh": "组件模型更改时发出的事件",
+      "value": ""
     }
   ],
   "link": "https://vuetifyjs.com/en/components/dialogs/",
-  "link_zh": "https://vuetifyjs.com/zh-Hans/components/dialogs/"
+  "link_zh": "https://vuetifyjs.com/en/components/dialogs/"
 }

@@ -37,7 +37,7 @@
       "description_zh": "指定控件颜色，颜色值可以是任意 Material 颜色（例如 success 或者 purple ）也可以是 Css 颜色 （例如 #033 或者 rgba(255, 0, 0, 0.5)）。在 颜色页中可以找到内置的颜色类列表。"
     },
     "density": {
-      "value": "",
+      "value": ["default", "comfortable", "compact"],
       "description": "Adjusts the vertical height used by the component.",
       "default": "default",
       "type": "'default' | 'comfortable' | 'compact'",
@@ -135,7 +135,13 @@
       "description_zh": "设定组件的最小宽度。"
     },
     "position": {
-      "value": "",
+      "value": [
+        "static",
+        "relative",
+        "fixed",
+        "absolute",
+        "sticky"
+      ],
       "description": "location",
       "default": "undefined",
       "type": "'static' | 'relative' | 'fixed' | 'absolute' | 'sticky'",
@@ -233,7 +239,14 @@
       "description_zh": "在组中选择组件时使用的值。如果没有提供，则使用唯一 ID。"
     },
     "variant": {
-      "value": "",
+      "value": [
+        "text",
+        "flat",
+        "elevated",
+        "tonal",
+        "outlined",
+        "plain"
+      ],
       "description": "Applies the border-radius style to the specified component. You can get more information about this on the Corner Radius of Borders page",
       "default": "false",
       "type": "'text' | 'flat' | 'elevated' | 'tonal' | 'outlined' | 'plain'",
@@ -254,9 +267,10 @@
       "name": "group:selected",
       "description": "Event that is emitted when an item is selected within a group.",
       "params": "[{ value: boolean }]",
-      "description_zh": "在组中选择项目时发出的事件。"
+      "description_zh": "在组中选择项目时发出的事件。",
+      "value": ""
     }
   ],
   "link": "https://vuetifyjs.com/en/components/buttons/",
-  "link_zh": "https://vuetifyjs.com/zh-Hans/components/buttons/"
+  "link_zh": "https://vuetifyjs.com/en/components/buttons/"
 }

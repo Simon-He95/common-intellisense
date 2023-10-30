@@ -3,15 +3,22 @@ const path = require('path')
 const fg = require('fast-glob')
 const root = process.cwd()
 let stack = 0
-const hasDOne = new Set()
+let limit = 10
+const hasDone = new Set()
 async function setup() {
-  const cwd = path.resolve(root, 'src/ui')
+  const cwd = path.resolve(root, 'src/ui/vuetify')
   const entry = await fg(['**/*.json'], { dot: true, cwd })
+  const rest = entry.map((url: string) => {
+    const newUrl = path.resolve(cwd, url)
+    if (hasDone.has(newUrl)) return
+    return newUrl
+  }).filter(Boolean)
   const entryLength = entry.length
   stack--
-  await Promise.all(entry.map(async (url: string) => {
-    const newUrl = path.resolve(cwd, url)
-    if (hasDOne.has(newUrl)) return
+  console.log(rest)
+
+  await Promise.all(rest.map(async (newUrl: string) => {
+    if (hasDone.has(newUrl)) return
     const content = await fsp.readFile(newUrl, 'utf8')
     if (!content) return
     const obj = JSON.parse(content)
@@ -21,23 +28,26 @@ async function setup() {
       if (!value.description) {
         value.description = ''
       }
+      if(!value.value){
+        value.value = ''
+      }
       if (hasChineseCharacters(value.description)) {
         value['description_zh'] = value.description
         try {
           value['description'] = await fanyi(value.description)
         } catch (error) {
-          if (stack >= 10) return
+          if (stack >= limit) return
           stack++
           console.log('reload', newUrl)
           setTimeout(setup, 500)
           return
         }
       }
-      else if (!hasChineseCharacters(value['description_zh'])) {
+      if (!hasChineseCharacters(value['description_zh'])) {
         try {
           value['description_zh'] = await fanyi(value.description)
         } catch (error) {
-          if (stack >= 10) return
+          if (stack >= limit) return
           stack++
           console.log('reload', newUrl)
           setTimeout(setup, 500)
@@ -52,12 +62,15 @@ async function setup() {
       if (!item.description) {
         item.description = ''
       }
+      if(!item.value){
+        item.value = ''
+      }
       if (hasChineseCharacters(item.description)) {
         item['description_zh'] = item.description
         try {
           item['description'] = await fanyi(item.description)
         } catch (error) {
-          if (stack >= 10) return
+          if (stack >= limit) return
 
           console.log('reload', newUrl)
           stack++
@@ -66,11 +79,11 @@ async function setup() {
           return
         }
       }
-      else if (!hasChineseCharacters(item['description_zh'])) {
+      if (!hasChineseCharacters(item['description_zh'])) {
         try {
           item['description_zh'] = await fanyi(item.description)
         } catch (error) {
-          if (stack >= 10) return
+          if (stack >= limit) return
 
           stack++
           console.log('reload', newUrl)
@@ -86,12 +99,15 @@ async function setup() {
       if (!item.description) {
         item.description = ''
       }
+      if(!item.value){
+        item.value = ''
+      }
       if (hasChineseCharacters(item.description)) {
         item['description_zh'] = item.description
         try {
           item['description'] = await fanyi(item.description)
         } catch (error) {
-          if (stack >= 10) return
+          if (stack >= limit) return
 
           stack++
           console.log('reload', newUrl)
@@ -99,11 +115,11 @@ async function setup() {
           return
         }
       }
-      else if (!hasChineseCharacters(item['description_zh'])) {
+      if (!hasChineseCharacters(item['description_zh'])) {
         try {
           item['description_zh'] = await fanyi(item.description)
         } catch (error) {
-          if (stack >= 10) return
+          if (stack >= limit) return
 
           stack++
           console.log('reload', newUrl)
@@ -113,12 +129,12 @@ async function setup() {
       }
     }
     try {
-      hasDOne.add(newUrl)
+      hasDone.add(newUrl)
       const data = JSON.stringify(obj, null, 2)
-      console.log({ newUrl, resolveLength: hasDOne.size, entryLength, data })
+      console.log({ newUrl, resolveLength: hasDone.size, entryLength })
       fsp.writeFile(newUrl, data)
     } catch (error) {
-      if (stack >= 10) return
+      if (stack >= limit) return
       stack++
       console.log('reload')
       setTimeout(setup, 500)

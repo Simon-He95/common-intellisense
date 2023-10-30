@@ -1,0 +1,325 @@
+{
+  "name": "VFileInput",
+  "props": {
+    "active": {
+      "default": "false",
+      "description": "The active state of the control item. This is typically used to highlight components.",
+      "type": "boolean",
+      "description_zh": "控制项的 active 状态。这通常用于高亮显示组件。",
+      "value": ""
+    },
+    "append-icon": {
+      "default": "undefined",
+      "description": "Creates a v-icon component after default content in the append slot.",
+      "type": "string | (string | [string, number])[] | (new () => any) | FunctionalComponent",
+      "description_zh": "在追加槽中的默认内容之后创建一个 v-icon 组件。",
+      "value": ""
+    },
+    "append-inner-icon": {
+      "default": "undefined",
+      "description": "Creates a v-icon component in the append-inner slot.",
+      "type": "string | (string | [string, number])[] | (new () => any) | FunctionalComponent",
+      "description_zh": "在 append-inner 插槽中创建一个 v-icon 组件。",
+      "value": ""
+    },
+    "base-color": {
+      "default": "undefined",
+      "description": "Sets the color of the input when it is not focused.",
+      "type": "string",
+      "description_zh": "设置输入未聚焦时的颜色。",
+      "value": ""
+    },
+    "bg-color": {
+      "default": "undefined",
+      "description": "Applies specified color to the control’s background. Used on components that also support the color prop. - supports utility colors (for example success or purple) or css color (#033 or rgba(255, 0, 0, 0.5)). Find a list of built-in classes on the colors page.",
+      "type": "string",
+      "description_zh": "将指定的颜色应用于控件的背景。用于也支持 color 属性的组件。- 支持实用程序颜色（例如成功或紫色）或 CSS 颜色（#033 或 rgba（255， 0， 0， 0.5））。在颜色页面上查找内置类的列表。",
+      "value": ""
+    },
+    "center-affix": {
+      "default": "false",
+      "description": "Vertically align appendInner, prependInner, clearIcon and label in the center.",
+      "type": "boolean",
+      "description_zh": "将 appendInner、prependInner、clearIcon 和标签垂直对齐在中心。",
+      "value": ""
+    },
+    "chips": {
+      "default": "false",
+      "description": "Changes display of selections to chips.",
+      "type": "boolean",
+      "description_zh": "将选择的显示更改为筹码。",
+      "value": ""
+    },
+    "clearable": {
+      "default": "true",
+      "description": "Allows for the component to be cleared.",
+      "type": "boolean",
+      "description_zh": "允许清除组件。",
+      "value": ""
+    },
+    "clear-icon": {
+      "default": "'$clear'",
+      "description": "The icon used when the clearable prop is set to true.",
+      "type": "string | (string | [string, number])[] | (new () => any) | FunctionalComponent",
+      "description_zh": "将 clearable prop 设置为 true 时使用的图标。",
+      "value": ""
+    },
+    "color": {
+      "default": "undefined",
+      "description": "Applies specified color to the control - supports utility colors (for example success or purple) or css color (for example success or purple) or css color (#033 or rgba(255, 0, 0, 0.5)). Find a list of built-in classes on the colors page.",
+      "type": "string",
+      "description_zh": "将指定的颜色应用于控件 - 支持实用程序颜色（例如，成功或紫色）或 css 颜色（例如，成功或紫色）或 css 颜色（#033 或 rgba（255， 0， 0， 0.5））。在颜色页面上查找内置类的列表。",
+      "value": ""
+    },
+    "counter": {
+      "default": "false",
+      "description": "Create a counter for the input length, default to 25 if no number is specified, no validation will be applied.",
+      "type": "boolean",
+      "description_zh": "为输入长度创建一个计数器，如果未指定数字，则默认为25，不会应用任何验证。",
+      "value": ""
+    },
+    "counter-size-string": {
+      "default": "'$vuetify.fileInput.counterSize'",
+      "description": "The text that appears when using the counter and show-size attributes. Global customization is also possible on the Internationalization page.",
+      "type": "string",
+      "description_zh": "使用 counter 和 show-size 属性时显示的文本。也可以在 internationalization page 上进行全局定制。",
+      "value": ""
+    },
+    "counter-string": {
+      "default": "'$vuetify.fileInput.counter'",
+      "description": "The text that appears when using the counter attribute. You can also customize globally on the Internationalization page.",
+      "type": "string",
+      "description_zh": "使用 counter 属性时显示的文字。 也可以在 internationalization page 上进行全局自定义。",
+      "value": ""
+    },
+    "density": {
+      "default": "'default'",
+      "description": "Adjusts the vertical height used by the component.",
+      "type": "'default' | 'comfortable' | 'compact'",
+      "description_zh": "调整组件使用的垂直高度。",
+      "value": ["default", "comfortable", "compact"]
+    },
+    "direction": {
+      "default": "'horizontal'",
+      "description": "Changes the direction of the input.",
+      "type": "'horizontal' | 'vertical'",
+      "description_zh": "更改输入的方向。",
+      "value": ["horizontal", "vertical"]
+    },
+    "dirty": {
+      "default": "false",
+      "description": "Manually apply the dirty state styling.",
+      "type": "boolean",
+      "description_zh": "手动应用脏状态样式。",
+      "value": ""
+    },
+    "disabled": {
+      "default": "false",
+      "description": "Removes the ability to click or target the input.",
+      "type": "boolean",
+      "description_zh": "删除单击或定位输入的功能。",
+      "value": ""
+    },
+    "error": {
+      "default": "false",
+      "description": "Puts the input in a manual error state.",
+      "type": "boolean",
+      "description_zh": "将输入置于手动错误状态。",
+      "value": ""
+    },
+    "error-messages": {
+      "default": "[]",
+      "description": "Puts the input in an error state and passes through custom error messages. Will be combined with any validations that occur from the rules prop. This field will not trigger validation.",
+      "type": "string | string[]",
+      "description_zh": "将输入置于错误状态并传递自定义错误消息。将与 rules 属性发生的任何验证相结合。此字段不会触发验证。",
+      "value": ""
+    },
+    "flat": {
+      "default": "false",
+      "description": "Removes box shadow when using a variant with elevation.",
+      "type": "boolean",
+      "description_zh": "使用具有高程的变体时删除框阴影。",
+      "value": ""
+    },
+    "focused": {
+      "default": "false",
+      "description": "Force the component to use the style when focused.",
+      "type": "boolean",
+      "description_zh": "强制组件使用聚焦时的样式。",
+      "value": ""
+    },
+    "hide-details": {
+      "default": "false",
+      "description": "Hides hint and validation errors. When set to auto messages will be rendered only if there’s a message (hint, error message, counter value etc) to display.",
+      "type": "boolean | 'auto'",
+      "description_zh": "隐藏提示和验证错误。设置为自动时，仅当有消息（提示、错误消息、计数器值等）要显示时，才会呈现消息。",
+      "value": ""
+    },
+    "hint": {
+      "default": "undefined",
+      "description": "Displays hint text below the input when focused. Force this always open with the persistent-hint property.",
+      "type": "string",
+      "description_zh": "聚焦时在输入下方显示提示文本。使用 persistent-hint 属性强制它始终打开。",
+      "value": ""
+    },
+    "id": {
+      "default": "undefined",
+      "description": "Sets the DOM id on the component.",
+      "type": "string",
+      "description_zh": "设置组件上的 DOM ID。",
+      "value": ""
+    },
+    "label": {
+      "default": "undefined",
+      "description": "Sets the text of the v-label or v-field-label component.",
+      "type": "string",
+      "description_zh": "设置 v-label 或 v-field-label 组件的文本。",
+      "value": ""
+    },
+    "loading": {
+      "default": "false",
+      "description": "Displays linear progress bar. Can either be a String which specifies which color is applied to the progress bar (any material color or theme color - primary, secondary, success, info, warning, error) or a Boolean which uses the component color (set by color prop - if it’s supported by the component) or the primary color.",
+      "type": "string | boolean",
+      "description_zh": "显示线性进度条。可以是指定应用于进度条的颜色（任何材质颜色或主题颜色 - 原色、辅助色、成功色、信息色、警告色、错误）的 String，也可以是使用组件颜色（由 color 属性设置 - 如果组件支持）或原色的布尔值。",
+      "value": ""
+    },
+    "max-errors": {
+      "default": "1",
+      "description": "Control the maximum number of shown errors from validation.",
+      "type": "string | number",
+      "description_zh": "控制验证中显示的最大错误数。",
+      "value": ""
+    },
+    "messages": {
+      "default": "[]",
+      "description": "Displays a list of messages or a single message if using a string.",
+      "type": "string | string[]",
+      "description_zh": "显示消息列表或单个消息（如果使用字符串）。",
+      "value": ""
+    },
+    "model-value": {
+      "default": "[]",
+      "description": "The v-model value of the component. If component supports the multiple prop, this defaults to an empty array.",
+      "type": "File[]",
+      "description_zh": "组件的 v 模型值。如果组件支持 multiple 属性，则默认为空数组。",
+      "value": ""
+    },
+    "multiple": {
+      "default": "false",
+      "description": "Add the multiple attribute to the input to allow multiple files to be selected.",
+      "type": "boolean",
+      "description_zh": "将 multiple 属性添加到输入中，允许选择多个文件。",
+      "value": ""
+    },
+    "name": {
+      "default": "undefined",
+      "description": "Set the name property of the component.",
+      "type": "string",
+      "description_zh": "设置组件的 name 属性.",
+      "value": ""
+    },
+    "persistent-clear": {
+      "default": "false",
+      "description": "Always show the clearable icon when the input is dirty (By default it only shows on hover).",
+      "type": "boolean",
+      "description_zh": "当输入脏时，始终显示可清除图标（默认情况下，它仅在悬停时显示）。",
+      "value": ""
+    },
+    "persistent-hint": {
+      "default": "false",
+      "description": "Forces hint to always be visible.",
+      "type": "boolean",
+      "description_zh": "力暗示始终可见。",
+      "value": ""
+    },
+    "prepend-icon": {
+      "default": "'$file'",
+      "description": "Prepends an icon to the component, uses the same syntax as v-icon.",
+      "type": "string | (string | [string, number])[] | (new () => any) | FunctionalComponent",
+      "description_zh": "在组件前面添加一个图标，使用与 v-icon 相同的语法。",
+      "value": ""
+    },
+    "prepend-inner-icon": {
+      "default": "undefined",
+      "description": "Creates a v-icon component in the prepend-inner slot.",
+      "type": "string | (string | [string, number])[] | (new () => any) | FunctionalComponent",
+      "description_zh": "在 preend-inner 插槽中创建一个 v-icon 组件。",
+      "value": ""
+    },
+    "readonly": {
+      "default": "false",
+      "description": "Puts input in readonly state.",
+      "type": "boolean",
+      "description_zh": "将输入置于只读状态。",
+      "value": ""
+    },
+    "reverse": {
+      "default": "false",
+      "description": "Reverses the orientation.",
+      "type": "boolean",
+      "description_zh": "反转方向。",
+      "value": ""
+    },
+    "rounded": {
+      "default": "false",
+      "description": "Applies the border-radius style to the specified component. You can get more information about this on the Corner Radius of Borders page",
+      "type": "string | number | boolean",
+      "description_zh": "对指定的组件应用 border-radius 样式。您可以在 边框的圆角半径页面 获取更多有关信息",
+      "value": ""
+    },
+    "rules": {
+      "default": "[]",
+      "description": "Accepts a mixed array of types function, boolean and string. Functions pass an input value as an argument and must return either true / false or a string containing an error message. The input field will enter an error state if a function returns (or any value in the array contains) false or is a string.",
+      "type": "ValidationRule[]",
+      "description_zh": "接受 function、boolean 和 string 类型的混合数组。函数将输入值作为参数传递，并且必须返回 true / false 或包含错误消息的字符串。如果函数返回（或数组中的任何值包含）false 或字符串，则输入字段将进入错误状态。",
+      "value": ""
+    },
+    "show-size": {
+      "default": "false",
+      "description": "Sets the display size of the selected file. 1024 will be displayed (KiB, MiB, GiB) when the default value of 1000 (kB,MB,GB) is displayed with true.",
+      "type": "boolean | 1000 | 1024",
+      "description_zh": "设置所选文件的显示大小。当使用 true 默认值为 1000 显示（kB，MB，GB） 时，1024 将显示（KiB，MiB，GiB）。",
+      "value": ["true", "false", "1000", "1024"]
+    },
+    "single-line": {
+      "default": "false",
+      "description": "Label does not move on focus/dirty.",
+      "type": "boolean",
+      "description_zh": "标签不对焦/脏污。",
+      "value": ""
+    },
+    "theme": {
+      "default": "undefined",
+      "description": "Specify a theme for this component and all of its children.",
+      "type": "string",
+      "description_zh": "为此组件及其所有子组件指定主题。",
+      "value": ""
+    },
+    "validate-on": {
+      "default": "undefined",
+      "description": "Change what type of event triggers validation to run.",
+      "type": "'lazy' | 'blur' | 'input' | 'submit' | 'blur lazy' | 'input lazy' | 'submit lazy' | 'lazy blur' | 'lazy input' | 'lazy submit'",
+      "description_zh": "更改触发要运行的验证的事件类型。",
+      "value": ["lazy", "blur", "input", "submit", "blur lazy", "input lazy", "submit lazy", "lazy blur", "lazy input", "lazy submit"]
+    },
+    "validation-value": {
+      "default": "undefined",
+      "description": "The value used when applying validation rules.",
+      "type": "any",
+      "description_zh": "应用验证规则时使用的值。",
+      "value": ""
+    },
+    "variant": {
+      "default": "'filled'",
+      "description": "Applies a distinct style to the component.",
+      "type": "'outlined' | 'plain' | 'underlined' | 'filled' | 'solo' | 'solo-inverted' | 'solo-filled'",
+      "description_zh": "对组件应用不同的样式。",
+      "value": ["outlined", "plain", "underlined", "filled", "solo", "solo-inverted", "solo-filled"]
+    }
+  },
+  "methods": [],
+  "typeDetail": {},
+  "events": [],
+  "link": "https://vuetifyjs.com/en/api/v-file-input/#links",
+  "link_zh": "https://vuetifyjs.com/zh-Hans/api/v-file-input/#links"
+}

@@ -25,7 +25,6 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
     const events: any = []
     const methods = []
     const isZh = getLocale().includes('zh')
-
     const completionsDeferCallback = () => {
       const data = [
         'id',
@@ -73,7 +72,7 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
             documentation.appendMarkdown(`\n\n[🔗 ${isZh ? '文档链接' : 'Documentation link'}](command:intellisense.openDocument?%7B%22link%22%3A%22${encodeURIComponent(item.link)}%22%7D)`)
           let content = ''
           let snippet = ''
-          if (value.type && value.type.includes('boolean') && value.default === 'false') {
+          if (value.type && value.type.trim() === 'boolean' && value.default === 'false') {
             if (lan === 'vue') {
               content = snippet = key
             }
