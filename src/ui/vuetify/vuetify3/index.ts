@@ -374,7 +374,7 @@ export function vuetify3Components() {
         ['v-toolbar', 'Toolbar', '<v-toolbar title="Application"></v-toolbar>'],
         ['v-toolbar-items', 'Toolbar', '<v-toolbar-items></v-toolbar-items>'],
         ['v-toolbar-title', 'Toolbar', '<v-toolbar-title></v-toolbar-title>'],
-        ['v-button', 'Button', '<v-btn>Button</v-btn>'],
+        ['v-btn', 'Button', '<v-btn>Button</v-btn>'],
         ['v-card', 'card', '<v-card text="..."></v-card>'],
         ['v-card-item', 'card', '<v-card-item></v-card-item>'],
         ['v-sheet', 'Workspace', '<v-sheet :height="200" :width="200"></v-sheet>'],
