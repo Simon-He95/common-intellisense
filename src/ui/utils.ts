@@ -230,6 +230,7 @@ export function componentsReducer(map: any[][]) {
       let _content = ''
       if (typeof content === 'object') {
         const requiredProps: string[] = []
+        let index = 0
         if (content.props) {
           const lan = getActiveTextEditorLanguageId()
           Object.keys(content.props).forEach((key) => {
@@ -269,19 +270,21 @@ export function componentsReducer(map: any[][]) {
             else if (item.type && item.type.includes('boolean') && item.default === 'false') {
               if (lan === 'vue')
                 attr = key
-
               else
                 attr = `${key}="true"`
             }
             else {
-              attr = `${key}="${v}"`
+              if (v)
+                attr = `${key}="${v}"`
+              else
+                attr = `${key}="$${++index}"`
             }
             requiredProps.push(attr)
           })
         }
         const tag = `${content.name[0].toLowerCase()}${hyphenate(content.name.slice(1))}`
         if (requiredProps.length)
-          snippet = `<${tag} ${requiredProps.join(' ')}>$1</${tag}>`
+          snippet = `<${tag} ${requiredProps.join(' ')}>$${++index}</${tag}>`
         else
           snippet = `<${tag}>$1</${tag}>`
         _content = `${tag}  ${detail}`
