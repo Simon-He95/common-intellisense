@@ -733,7 +733,7 @@ export function elementUi2Components() {
           '<el-dropdown-menu></el-dropdown-menu>',
         ],
         [
-          'el-dropdown-item',
+          ElDropdownMenuItem,
           '下拉菜单列表项',
           '<el-dropdown-item></el-dropdown-item>',
         ],
@@ -1115,7 +1115,7 @@ export function elementUi2Components() {
           '<el-dropdown-menu></el-dropdown-menu>',
         ],
         [
-          'el-dropdown-item',
+          ElDropdownMenuItem,
           'Drop-down menu list item',
           '<el-dropdown-item></el-dropdown-item>',
         ],

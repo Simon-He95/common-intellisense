@@ -238,7 +238,6 @@ export function componentsReducer(map: any[][]) {
               return
             let attr = ''
             const v = item.value
-
             if (key.startsWith(':')) {
               const tagName = getComponentTagName(content.name)
               if (item.foreach) {
@@ -305,6 +304,7 @@ export function componentsReducer(map: any[][]) {
         documentation.appendCodeblock(demo, 'html')
         documentation.appendMarkdown(`\n<a href="command:intellisense.copyDemo">${copyIcon}</a>\n`)
       }
+
       return createCompletionItem({ content: _content, snippet, documentation, type: vscode.CompletionItemKind.TypeParameter })
     }),
   }
