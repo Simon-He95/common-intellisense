@@ -21,29 +21,21 @@ Install the supported ui component library in your project and install the plug-
 - @nuxt/ui 2
 - vuetify 3
 
-### antdv
-![antdv](assets/antdv.gif)
+### [antdv demo](assets/antdv.gif)
 
-### varlet
-![varlet](assets/varlet.gif)
+### [varlet demo](assets/varlet.gif)
 
-### vant
-![vant](assets/vant.gif)
+### [vant demo](assets/vant.gif)
 
-### antd
-![antd](assets/antd.gif)
+### [antd demo](assets/antd.gif)
 
-### element-ui
-![element](assets/element.gif)
+### [element-ui demo](assets/element.gif)
 
-### naive-ui
-![naive](assets/naive.gif)
+### [naive-ui demo](assets/naive.gif)
 
-### nuxt-ui
-![nuxt](assets/nuxt.gif)
+### [nuxt-ui demo](assets/nuxt.gif)
 
-### vuetify
-![vuetify](assets/vuetify.gif)
+### [vuetify demo](assets/vuetify.gif)
 
 ## :coffee:
 
@@ -52,3 +44,12 @@ Install the supported ui component library in your project and install the plug-
 ## License
 
 [MIT](./license)
+
+
+## Sponsors
+
+<p align="center">
+  <a href="https://cdn.jsdelivr.net/gh/Simon-He95/sponsor/sponsors.svg">
+    <img src='https://cdn.jsdelivr.net/gh/Simon-He95/sponsor/sponsors.svg'/>
+  </a>
+</p>
