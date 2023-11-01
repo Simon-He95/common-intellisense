@@ -13,6 +13,7 @@ import { primevue3, primevue3Components } from './primevue'
 import { quasar2, quasar2Components } from './quasar'
 import { nextui2, nextui2Components } from './nextUi'
 import { nuxtui2, nuxtui2Components } from './nuxtUi'
+import { shadcnVue0, shadcnVue0Components } from './shadcn-vue'
 
 export default {
   elementUi2,
@@ -33,6 +34,7 @@ export default {
   quasar2,
   nextui2,
   nuxtui2,
+  shadcnVue0,
   elementUi2Components,
   antd4Components,
   antd5Components,
@@ -51,4 +53,5 @@ export default {
   quasar2Components,
   nextui2Components,
   nuxtui2Components,
+  shadcnVue0Components
 }

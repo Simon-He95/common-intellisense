@@ -188,6 +188,8 @@ const nameMap: any = {
   '@skeletonlabs/skeleton': 'skeleton',
   '@nextuiOrg/react': 'nextui',
   '@nuxt/ui': 'nuxtui',
+  'radix-vue':'shadcnvue',
+  'shadcn-vue':'shadcnvue'
 }
 function findUI() {
   const cwd = vscode.window.activeTextEditor?.document.uri.fsPath
