@@ -249,19 +249,18 @@ export function componentsReducer(map: any[][]) {
               else {
                 const _key = key.replace('v-model', 'model')
                 key = key.replace(':v-model', 'v-model')
+                ++index
                 if (!v) {
                   if (lan === 'vue')
-                    attr = `${key}="${getComponentTagName(content.name)}${_key[1].toUpperCase()}${_key.slice(2)}"`
-
+                    attr = `${key}="\${${index}:${getComponentTagName(content.name)}${_key[1].toUpperCase()}${_key.slice(2)}}"`
                   else
-                    attr = `${key.slice(1)}={${getComponentTagName(content.name)}${_key[1].toUpperCase()}${_key.slice(2)}}`
+                    attr = `${key.slice(1)}={\${${index}:${getComponentTagName(content.name)}${_key[1].toUpperCase()}${_key.slice(2)}}}`
                 }
                 else {
                   if (lan === 'vue')
-                    attr = `${key}="${getComponentTagName(content.name)}${key[1].toUpperCase()}${key.slice(2)}"`
-
+                    attr = `${key}="\${${index}:${getComponentTagName(content.name)}${key[1].toUpperCase()}${key.slice(2)}}"`
                   else
-                    attr = `${key.slice(1)}={${v}}`
+                    attr = `${key.slice(1)}={\${${index}:${v}}}`
                 }
               }
             }
@@ -275,7 +274,7 @@ export function componentsReducer(map: any[][]) {
               if (v)
                 attr = `${key}="${v}"`
               else
-                attr = `${key}="$${++index}"`
+                attr = `${key}="\$${++index}"`
             }
             requiredProps.push(attr)
           })
