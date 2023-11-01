@@ -242,9 +242,9 @@ export function componentsReducer(map: any[][]) {
               const tagName = getComponentTagName(content.name)
               if (item.foreach) {
                 if (requiredProps.some(p => p.includes('v-for=')))
-                  attr = `${key}="item.${key.slice(1)}"`
+                  attr = `${key}="item.\${${++index}:${key.slice(1)}}"`
                 else
-                  attr = `v-for="item in ${tagName}Options" :key="item.value" ${key}="item.${key.slice(1)}"`
+                  attr = `v-for="item in \${${++index}:${tagName}Options}" :key="item.\${${++index}:key}" ${key}="item.\${${++index}:${key.slice(1)}}"`
               }
               else {
                 const _key = key.replace('v-model', 'model')
