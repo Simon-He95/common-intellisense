@@ -1,5 +1,5 @@
 import * as vscode from 'vscode'
-import { addEventListener, copyText, createCompletionItem, getActiveTextEditorLanguageId, getSelection, message, registerCommand, registerCompletionItemProvider } from '@vscode-use/utils'
+import { addEventListener, copyText, createCompletionItem, getActiveTextEditorLanguageId, getSelection, message, openExternalUrl, registerCommand, registerCompletionItemProvider } from '@vscode-use/utils'
 import { CreateWebview } from '@vscode-use/createwebview'
 import { findPkgUI, parser } from './utils'
 import UI from './ui'
@@ -69,7 +69,7 @@ export function activate(context: vscode.ExtensionContext) {
       }
       if (lan === 'vue' && lineText.slice(character, character + 6) !== '.value')
         return result.refs.map((refName: string) => createCompletionItem({ content: refName, snippet: `${refName}.value`, documentation: `${refName}.value`, preselect: true, sortText: '99' }))
-      if (lineText.slice(character, character + 8) !== '.current')
+      if (lan !== 'vue' && lineText.slice(character, character + 8) !== '.current')
         return result.refs.map((refName: string) => createCompletionItem({ content: refName, snippet: `${refName}.current`, documentation: `${refName}.current`, preselect: true, sortText: '99' }))
     }
     if (UiCompletions && result?.type === 'props') {
@@ -161,6 +161,13 @@ export function activate(context: vscode.ExtensionContext) {
         })
       }
     })
+  }))
+  context.subscriptions.push(registerCommand('intellisense.openDocumentExternal', (args) => {
+    // 注册全局的link点击时间
+    const url = args.link
+    if (!url)
+      return
+    openExternalUrl(url)
   }))
 }
 
