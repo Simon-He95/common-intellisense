@@ -36,6 +36,22 @@ import ComboboxRoot from './ComboboxRoot.json'
 import ComboboxSeparator from './ComboboxSeparator.json'
 import ComboboxTrigger from './ComboboxTrigger.json'
 import ComboboxViewport from './ComboboxViewport.json'
+import ContextMenuArrow from './ContextMenuArrow.json'
+import ContextMenuCheckboxItem from './ContextMenuCheckboxItem.json'
+import ContextMenuContent from './ContextMenuContent.json'
+import ContextMenuGroup from './ContextMenuGroup.json'
+import ContextMenuItem from './ContextMenuItem.json'
+import ContextMenuItemIndicator from './ContextMenuItemIndicator.json'
+import ContextMenuLabel from './ContextMenuLabel.json'
+import ContextMenuPortal from './ContextMenuPortal.json'
+import ContextMenuRadioGroup from './ContextMenuRadioGroup.json'
+import ContextMenuRadioItem from './ContextMenuRadioItem.json'
+import ContextMenuRoot from './ContextMenuRoot.json'
+import ContextMenuSeparator from './ContextMenuSeparator.json'
+import ContextMenuSub from './ContextMenuSub.json'
+import ContextMenuSubContent from './ContextMenuSubContent.json'
+import ContextMenuSubTrigger from './ContextMenuSubTrigger.json'
+import ContextMenuTrigger from './ContextMenuTrigger.json'
 
 export function shadcnVue0() {
   const map: any = [
@@ -76,6 +92,22 @@ export function shadcnVue0() {
     ComboboxSeparator,
     ComboboxTrigger,
     ComboboxViewport,
+    ContextMenuArrow,
+    ContextMenuCheckboxItem,
+    ContextMenuContent,
+    ContextMenuGroup,
+    ContextMenuItem,
+    ContextMenuItemIndicator,
+    ContextMenuLabel,
+    ContextMenuPortal,
+    ContextMenuRadioGroup,
+    ContextMenuRadioItem,
+    ContextMenuRoot,
+    ContextMenuSeparator,
+    ContextMenuSub,
+    ContextMenuSubContent,
+    ContextMenuSubTrigger,
+    ContextMenuTrigger,
   ]
 
   return propsReducer(map)
@@ -120,6 +152,22 @@ export function shadcnVue0Components() {
     [ComboboxSeparator.name, '组合框', '<ComboboxSeparator></ComboboxSeparator>'],
     [ComboboxTrigger.name, '组合框', '<ComboboxTrigger></ComboboxTrigger>'],
     [ComboboxViewport.name, '组合框', '<ComboboxViewport></ComboboxViewport>'],
+    [ContextMenuArrow.name, '上下文菜单', '<ContextMenuArrow></ContextMenuArrow>'],
+    [ContextMenuCheckboxItem.name, '上下文菜单', '<ContextMenuCheckboxItem></ContextMenuCheckboxItem>'],
+    [ContextMenuContent.name, '上下文菜单', '<ContextMenuContent></ContextMenuContent>'],
+    [ContextMenuGroup.name, '上下文菜单', '<ContextMenuGroup></ContextMenuGroup>'],
+    [ContextMenuItem.name, '上下文菜单', '<ContextMenuItem></ContextMenuItem>'],
+    [ContextMenuItemIndicator.name, '上下文菜单', '<ContextMenuItemIndicator></ContextMenuItemIndicator>'],
+    [ContextMenuLabel.name, '上下文菜单', '<ContextMenuLabel></ContextMenuLabel>'],
+    [ContextMenuPortal.name, '上下文菜单', '<ContextMenuPortal></ContextMenuPortal>'],
+    [ContextMenuRadioGroup.name, '上下文菜单', '<ContextMenuRadioGroup></ContextMenuRadioGroup>'],
+    [ContextMenuRadioItem.name, '上下文菜单', '<ContextMenuRadioItem></ContextMenuRadioItem>'],
+    [ContextMenuRoot.name, '上下文菜单', '<ContextMenuRoot></ContextMenuRoot>'],
+    [ContextMenuSeparator.name, '上下文菜单', '<ContextMenuSeparator></ContextMenuSeparator>'],
+    [ContextMenuSub.name, '上下文菜单', '<ContextMenuSub></ContextMenuSub>'],
+    [ContextMenuSubContent.name, '上下文菜单', '<ContextMenuSubContent></ContextMenuSubContent>'],
+    [ContextMenuSubTrigger.name, '上下文菜单', '<ContextMenuSubTrigger></ContextMenuSubTrigger>'],
+    [ContextMenuTrigger.name, '上下文菜单', '<ContextMenuTrigger></ContextMenuTrigger>'],
   ]
   return componentsReducer(map)
 }
