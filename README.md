@@ -50,6 +50,6 @@ Install the supported ui component library in your project and install the plug-
 
 <p align="center">
   <a href="https://cdn.jsdelivr.net/gh/Simon-He95/sponsor@main/sponsors.svg">
-    <img src="https://cdn.jsdelivr.net/gh/Simon-He95/sponsor@main/sponsors.svg"/>
+    <img src="https://cdn.jsdelivr.net/gh/Simon-He95/sponsor@main/sponsors.png"/>
   </a>
 </p>

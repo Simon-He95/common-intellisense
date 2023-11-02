@@ -14,6 +14,14 @@ import AlertDialogRoot from './AlertDialogRoot.json'
 import AlertDialogTitle from './AlertDialogTitle.json'
 import AlertDialogTrigger from './AlertDialogTrigger.json'
 import AspectRatio from './AspectRatio.json'
+import AvatarFallback from './AvatarFallback.json'
+import AvatarImage from './AvatarImage.json'
+import AvatarRoot from './AvatarRoot.json'
+import CheckboxIndicator from './CheckboxIndicator.json'
+import CheckboxRoot from './CheckboxRoot.json'
+import CollapsibleContent from './CollapsibleContent.json'
+import CollapsibleRoot from './CollapsibleRoot.json'
+import CollapsibleTrigger from './CollapsibleTrigger.json'
 
 export function shadcnVue0() {
   const map: any = [
@@ -32,6 +40,14 @@ export function shadcnVue0() {
     AlertDialogTitle,
     AlertDialogTrigger,
     AspectRatio,
+    AvatarFallback,
+    AvatarImage,
+    AvatarRoot,
+    CheckboxIndicator,
+    CheckboxRoot,
+    CollapsibleContent,
+    CollapsibleRoot,
+    CollapsibleTrigger,
   ]
 
   return propsReducer(map)
@@ -54,6 +70,14 @@ export function shadcnVue0Components() {
     [AlertDialogTitle.name, '警报对话框', '<AlertDialogTitle></AlertDialogTitle>'],
     [AlertDialogTrigger.name, '警报对话框', '<AlertDialogTrigger></AlertDialogTrigger>'],
     [AspectRatio.name, '纵横比', '<AspectRatio></AspectRatio>'],
+    [AvatarFallback.name, '图像元素', '<AvatarFallback></AvatarFallback>'],
+    [AvatarImage.name, '图像元素', '<AvatarImage></AvatarImage>'],
+    [AvatarRoot.name, '图像元素', '<AvatarRoot></AvatarRoot>'],
+    [CheckboxIndicator.name, '复选框', '<CheckboxIndicator></CheckboxIndicator>'],
+    [CheckboxRoot.name, '复选框', '<CheckboxRoot></CheckboxRoot>'],
+    [CollapsibleContent.name, '折叠面板', '<CollapsibleContent></CollapsibleContent>'],
+    [CollapsibleRoot.name, '折叠面板', '<CollapsibleRoot></CollapsibleRoot>'],
+    [CollapsibleTrigger.name, '折叠面板', '<CollapsibleTrigger></CollapsibleTrigger>'],
   ]
   return componentsReducer(map)
 }
