@@ -52,6 +52,14 @@ import ContextMenuSub from './ContextMenuSub.json'
 import ContextMenuSubContent from './ContextMenuSubContent.json'
 import ContextMenuSubTrigger from './ContextMenuSubTrigger.json'
 import ContextMenuTrigger from './ContextMenuTrigger.json'
+import DialogClose from './DialogClose.json'
+import DialogContent from './DialogContent.json'
+import DialogDescription from './DialogDescription.json'
+import DialogOverlay from './DialogOverlay.json'
+import DialogPortal from './DialogPortal.json'
+import DialogRoot from './DialogRoot.json'
+import DialogTitle from './DialogTitle.json'
+import DialogTrigger from './DialogTrigger.json'
 
 export function shadcnVue0() {
   const map: any = [
@@ -108,6 +116,14 @@ export function shadcnVue0() {
     ContextMenuSubContent,
     ContextMenuSubTrigger,
     ContextMenuTrigger,
+    DialogClose,
+    DialogContent,
+    DialogDescription,
+    DialogOverlay,
+    DialogPortal,
+    DialogRoot,
+    DialogTitle,
+    DialogTrigger,
   ]
 
   return propsReducer(map)
@@ -168,6 +184,14 @@ export function shadcnVue0Components() {
     [ContextMenuSubContent.name, '上下文菜单', '<ContextMenuSubContent></ContextMenuSubContent>'],
     [ContextMenuSubTrigger.name, '上下文菜单', '<ContextMenuSubTrigger></ContextMenuSubTrigger>'],
     [ContextMenuTrigger.name, '上下文菜单', '<ContextMenuTrigger></ContextMenuTrigger>'],
+    [DialogClose.name, '对话', '<DialogClose></DialogClose>'],
+    [DialogContent.name, '对话', '<DialogContent></DialogContent>'],
+    [DialogDescription.name, '对话', '<DialogDescription></DialogDescription>'],
+    [DialogOverlay.name, '对话', '<DialogOverlay></DialogOverlay>'],
+    [DialogPortal.name, '对话', '<DialogPortal></DialogPortal>'],
+    [DialogRoot.name, '对话', '<DialogRoot></DialogRoot>'],
+    [DialogTitle.name, '对话', '<DialogTitle></DialogTitle>'],
+    [DialogTrigger.name, '对话', '<DialogTrigger></DialogTrigger>'],
   ]
   return componentsReducer(map)
 }
