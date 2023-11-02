@@ -13,6 +13,7 @@ import AlertDialogPortal from './AlertDialogPortal.json'
 import AlertDialogRoot from './AlertDialogRoot.json'
 import AlertDialogTitle from './AlertDialogTitle.json'
 import AlertDialogTrigger from './AlertDialogTrigger.json'
+import AspectRatio from './AspectRatio.json'
 
 export function shadcnVue0() {
   const map: any = [
@@ -30,6 +31,7 @@ export function shadcnVue0() {
     AlertDialogRoot,
     AlertDialogTitle,
     AlertDialogTrigger,
+    AspectRatio,
   ]
 
   return propsReducer(map)
@@ -51,6 +53,7 @@ export function shadcnVue0Components() {
     [AlertDialogRoot.name, '警报对话框', '<AlertDialogRoot></AlertDialogRoot>'],
     [AlertDialogTitle.name, '警报对话框', '<AlertDialogTitle></AlertDialogTitle>'],
     [AlertDialogTrigger.name, '警报对话框', '<AlertDialogTrigger></AlertDialogTrigger>'],
+    [AspectRatio.name, '纵横比', '<AspectRatio></AspectRatio>'],
   ]
   return componentsReducer(map)
 }
