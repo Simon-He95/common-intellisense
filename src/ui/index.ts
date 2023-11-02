@@ -53,5 +53,5 @@ export default {
   quasar2Components,
   nextui2Components,
   nuxtui2Components,
-  shadcnVue0Components
+  shadcnVue0Components,
 }
