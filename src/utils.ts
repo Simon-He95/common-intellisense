@@ -209,9 +209,13 @@ function jsxDfs(children: any, position: vscode.Position) {
           type: 'props',
           tag: openingElement.name.name,
           props: openingElement.attributes,
-          propName: typeof target.name === 'string'
-            ? target.type === 'EventHandler' ? 'on' : target.name
-            : target.name.name,
+          propName: target.value === null
+            ? ''
+            : typeof target.name === 'string'
+              ? target.type === 'EventHandler'
+                ? 'on'
+                : target.name
+              : target.name.name,
           propType: target.type,
           isInTemplate,
         }

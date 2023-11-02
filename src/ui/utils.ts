@@ -26,12 +26,19 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
     const methods = []
     const isZh = getLocale().includes('zh')
     const completionsDeferCallback = () => {
+      const lan = getActiveTextEditorLanguageId()
+
       const data = [
         'id',
-        'style',
         'class',
         'className',
       ].map(item => createCompletionItem({ content: item, snippet: `${item}="$1"`, type: 5 }))
+
+      if (lan === 'vue')
+        data.push(createCompletionItem({ content: 'style', snippet: 'style="$1"', type: 5 }))
+      else
+        data.push(createCompletionItem({ content: 'style', snippet: 'style={{ $1 }}', type: 5 }))
+
       Object.keys(item.props!).forEach((key) => {
         const value = (item.props as any)[key]
         let type = vscode.CompletionItemKind.Property
@@ -39,13 +46,13 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
           value.value = [value.value]
         else
           type = vscode.CompletionItemKind.Enum
-        const lan = getActiveTextEditorLanguageId()
 
         data.push(...value.value.map((v: string) => {
           const documentation = new vscode.MarkdownString()
           documentation.isTrusted = true
           documentation.supportHtml = true
           const detail = []
+
           if (value.default !== undefined && value.default !== '')
             detail.push(`#### 💎 ${isZh ? '默认值' : 'default'}:    ***\`${value.default.toString().replace(/`/g, '')}\`***`)
 
@@ -75,13 +82,7 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
           let content = ''
           let snippet = ''
           if (value.type && value.type.trim() === 'boolean' && value.default === 'false') {
-            if (lan === 'vue') {
-              content = snippet = key
-            }
-            else {
-              content = `${key}="true"`
-              snippet = `${key}="$\{1:true\}$2"`
-            }
+            content = snippet = key
           }
           else if (key.startsWith(':')) {
             if (!v) {
@@ -281,7 +282,7 @@ export function componentsReducer(map: any[][]) {
             requiredProps.push(attr)
           })
         }
-        const tag = `${content.name[0].toLowerCase()}${hyphenate(content.name.slice(1))}`
+        const tag = hyphenate(content.name.slice(1)) === content.name.slice(1) ? content.name : `${content.name[0].toLowerCase()}${hyphenate(content.name.slice(1))}`
         if (requiredProps.length)
           snippet = `<${tag} ${requiredProps.join(' ')}>$${++index}</${tag}>`
         else
