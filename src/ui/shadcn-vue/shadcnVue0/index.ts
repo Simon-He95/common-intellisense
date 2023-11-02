@@ -22,6 +22,20 @@ import CheckboxRoot from './CheckboxRoot.json'
 import CollapsibleContent from './CollapsibleContent.json'
 import CollapsibleRoot from './CollapsibleRoot.json'
 import CollapsibleTrigger from './CollapsibleTrigger.json'
+import ComboboxAnchor from './ComboboxAnchor.json'
+import ComboboxArrow from './ComboboxArrow.json'
+import ComboboxCancel from './ComboboxCancel.json'
+import ComboboxContent from './ComboboxContent.json'
+import ComboboxGroup from './ComboboxGroup.json'
+import ComboboxInput from './ComboboxInput.json'
+import ComboboxItem from './ComboboxItem.json'
+import ComboboxItemIndicator from './ComboboxItemIndicator.json'
+import ComboboxLabel from './ComboboxLabel.json'
+import ComboboxPortal from './ComboboxPortal.json'
+import ComboboxRoot from './ComboboxRoot.json'
+import ComboboxSeparator from './ComboboxSeparator.json'
+import ComboboxTrigger from './ComboboxTrigger.json'
+import ComboboxViewport from './ComboboxViewport.json'
 
 export function shadcnVue0() {
   const map: any = [
@@ -48,6 +62,20 @@ export function shadcnVue0() {
     CollapsibleContent,
     CollapsibleRoot,
     CollapsibleTrigger,
+    ComboboxAnchor,
+    ComboboxArrow,
+    ComboboxCancel,
+    ComboboxContent,
+    ComboboxGroup,
+    ComboboxInput,
+    ComboboxItem,
+    ComboboxItemIndicator,
+    ComboboxLabel,
+    ComboboxPortal,
+    ComboboxRoot,
+    ComboboxSeparator,
+    ComboboxTrigger,
+    ComboboxViewport,
   ]
 
   return propsReducer(map)
@@ -78,6 +106,20 @@ export function shadcnVue0Components() {
     [CollapsibleContent.name, '折叠面板', '<CollapsibleContent></CollapsibleContent>'],
     [CollapsibleRoot.name, '折叠面板', '<CollapsibleRoot></CollapsibleRoot>'],
     [CollapsibleTrigger.name, '折叠面板', '<CollapsibleTrigger></CollapsibleTrigger>'],
+    [ComboboxAnchor.name, '组合框', '<ComboboxAnchor></ComboboxAnchor>'],
+    [ComboboxArrow.name, '组合框', '<ComboboxArrow></ComboboxArrow>'],
+    [ComboboxCancel.name, '组合框', '<ComboboxCancel></ComboboxCancel>'],
+    [ComboboxContent.name, '组合框', '<ComboboxContent></ComboboxContent>'],
+    [ComboboxGroup.name, '组合框', '<ComboboxGroup></ComboboxGroup>'],
+    [ComboboxInput.name, '组合框', '<ComboboxInput></ComboboxInput>'],
+    [ComboboxItem.name, '组合框', '<ComboboxItem></ComboboxItem>'],
+    [ComboboxItemIndicator.name, '组合框', '<ComboboxItemIndicator></ComboboxItemIndicator>'],
+    [ComboboxLabel.name, '组合框', '<ComboboxLabel></ComboboxLabel>'],
+    [ComboboxPortal.name, '组合框', '<ComboboxPortal></ComboboxPortal>'],
+    [ComboboxRoot.name, '组合框', '<ComboboxRoot></ComboboxRoot>'],
+    [ComboboxSeparator.name, '组合框', '<ComboboxSeparator></ComboboxSeparator>'],
+    [ComboboxTrigger.name, '组合框', '<ComboboxTrigger></ComboboxTrigger>'],
+    [ComboboxViewport.name, '组合框', '<ComboboxViewport></ComboboxViewport>'],
   ]
   return componentsReducer(map)
 }
