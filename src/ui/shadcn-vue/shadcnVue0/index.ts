@@ -138,6 +138,10 @@ import SliderThumb from './SliderThumb.json'
 import SliderTrack from './SliderTrack.json'
 import SwitchRoot from './SwitchRoot.json'
 import SwitchThumb from './SwitchThumb.json'
+import TabsContent from './TabsContent.json'
+import TabsList from './TabsList.json'
+import TabsRoot from './TabsRoot.json'
+import TabsTrigger from './TabsTrigger.json'
 
 export function shadcnVue0() {
   const map: any = [
@@ -282,6 +286,10 @@ export function shadcnVue0() {
     SliderTrack,
     SwitchRoot,
     SwitchThumb,
+    TabsContent,
+    TabsList,
+    TabsRoot,
+    TabsTrigger,
   ]
 
   return propsReducer(map)
@@ -429,6 +437,10 @@ export function shadcnVue0Components() {
     [SliderTrack.name, '滑块', '<SliderTrack></SliderTrack>'],
     [SwitchRoot.name, '开关', '<SwitchRoot></SwitchRoot>'],
     [SwitchThumb.name, '开关', '<SwitchThumb></SwitchThumb>'],
+    [TabsContent.name, '项卡面板', '<TabsContent></TabsContent>'],
+    [TabsList.name, '项卡面板', '<TabsList></TabsList>'],
+    [TabsRoot.name, '项卡面板', '<TabsRoot></TabsRoot>'],
+    [TabsTrigger.name, '项卡面板', '<TabsTrigger></TabsTrigger>'],
 
   ]
   return componentsReducer(map)
