@@ -109,6 +109,12 @@ import PopoverRoot from './PopoverRoot.json'
 import PopoverTrigger from './PopoverTrigger.json'
 import ProgressIndicator from './ProgressIndicator.json'
 import ProgressRoot from './ProgressRoot.json'
+import ProgressItem from './ProgressItem.json'
+import ScrollAreaCorner from './ScrollAreaCorner.json'
+import ScrollAreaRoot from './ScrollAreaRoot.json'
+import ScrollAreaScrollbar from './ScrollAreaScrollbar.json'
+import ScrollAreaThumb from './ScrollAreaThumb.json'
+import ScrollAreaViewport from './ScrollAreaViewport.json'
 
 export function shadcnVue0() {
   const map: any = [
@@ -222,6 +228,13 @@ export function shadcnVue0() {
     PopoverTrigger,
     ProgressIndicator,
     ProgressRoot,
+    ProgressItem,
+    ScrollAreaCorner,
+    ScrollAreaRoot,
+    ScrollAreaScrollbar,
+    ScrollAreaThumb,
+    ScrollAreaViewport,
+    ScrollAreaCorner,
   ]
 
   return propsReducer(map)
@@ -338,7 +351,14 @@ export function shadcnVue0Components() {
     [PopoverRoot.name, '弹出框', '<PopoverRoot></PopoverRoot>'],
     [PopoverTrigger.name, '弹出框', '<PopoverTrigger></PopoverTrigger>'],
     [ProgressIndicator.name, '单选按钮组', '<ProgressIndicator></ProgressIndicator>'],
-    [ProgressRoot.name, '单选按钮组', '<ProgressRoot></ProgressRoot>'],
+    [ProgressIndicator.name, '单选按钮组', '<ProgressIndicator></ProgressIndicator>'],
+    [ProgressItem.name, '单选按钮组', '<ProgressItem></ProgressItem>'],
+    [ScrollAreaCorner.name, '滚动区域', '<ScrollAreaCorner></ScrollAreaCorner>'],
+    [ScrollAreaRoot.name, '滚动区域', '<ScrollAreaRoot></ScrollAreaRoot>'],
+    [ScrollAreaScrollbar.name, '滚动区域', '<ScrollAreaScrollbar></ScrollAreaScrollbar>'],
+    [ScrollAreaThumb.name, '滚动区域', '<ScrollAreaThumb></ScrollAreaThumb>'],
+    [ScrollAreaViewport.name, '滚动区域', '<ScrollAreaViewport></ScrollAreaViewport>'],
+    [ScrollAreaCorner.name, '滚动区域', '<ScrollAreaCorner></ScrollAreaCorner>'],
   ]
   return componentsReducer(map)
 }
