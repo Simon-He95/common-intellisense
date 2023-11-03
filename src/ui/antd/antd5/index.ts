@@ -674,5 +674,5 @@ export function antd5Components() {
    <div style={{ height: 500 }} />
 </Watermark>`],
       ]
-  return componentsReducer(map)
+  return componentsReducer(map, false)
 }

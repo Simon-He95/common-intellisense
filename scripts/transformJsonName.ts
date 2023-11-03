@@ -5,7 +5,6 @@ const IMPORT_REG = /import (\w+) from/g
 export async function transformJsonName() {
   const url = path.resolve(root, 'src/ui/antDesignVue/antDesignVue4/index.ts')
   const content = await fsp.readFile(url, 'utf-8')
-  // console.log(content)
   const imports = []
   for (const match of content.matchAll(IMPORT_REG)) {
     imports.push(match[1])

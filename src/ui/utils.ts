@@ -226,7 +226,7 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
   }, result)
 }
 
-export function componentsReducer(map: any[][]) {
+export function componentsReducer(map: any[][], isSeperatorByHyphen = true) {
   let prefix = ''
   if (map) {
     const first = map[0][0]
@@ -292,7 +292,7 @@ export function componentsReducer(map: any[][]) {
             requiredProps.push(attr)
           })
         }
-        const tag = hyphenate(content.name.slice(1)) === content.name.slice(1) ? content.name : `${content.name[0].toLowerCase()}${hyphenate(content.name.slice(1))}`
+        const tag = isSeperatorByHyphen ? hyphenate(content.name.slice(1)) === content.name.slice(1) ? content.name : `${content.name[0].toLowerCase()}${hyphenate(content.name.slice(1))}` : content.name
         if (requiredProps.length)
           snippet = `<${tag} ${requiredProps.join(' ')}>$${++index}</${tag}>`
         else

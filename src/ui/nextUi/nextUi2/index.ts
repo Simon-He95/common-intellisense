@@ -395,5 +395,5 @@ export function nextui2Components() {
       '<User></User>',
     ],
   ]
-  return componentsReducer(map)
+  return componentsReducer(map, false)
 }

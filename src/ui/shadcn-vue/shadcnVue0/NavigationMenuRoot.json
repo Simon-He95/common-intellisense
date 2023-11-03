@@ -1,47 +1,53 @@
 {
   "name": "NavigationMenuRoot",
   "props": {
-    "modelValue": {
+    ":v-model": {
       "default": "",
       "value": "",
       "type": "string",
       "description": "The controlled value of the menu item to activate. Should be used in conjunction with onValueChange.",
-      "description_zh": ""
+      "description_zh": "要激活的菜单项的受控值。应与 onValueChange 结合使用。"
     },
     "defaultValue": {
       "default": "",
       "value": "",
       "type": "string",
       "description": "The value of the menu item that should be active when initially rendered. Use when you do not need to control the value state.",
-      "description_zh": ""
+      "description_zh": "最初呈现时应处于活动状态的菜单项的值。在不需要控制值状态时使用。"
     },
-    "delayDuration": {
+    ":delayDuration": {
       "default": "200",
       "value": "",
       "type": "number",
       "description": "The duration from when the mouse enters a trigger until the content opens.",
-      "description_zh": ""
+      "description_zh": "从鼠标进入触发器到内容打开的持续时间。"
     },
-    "skipDelayDuration": {
+    ":skipDelayDuration": {
       "default": "300",
       "value": "",
       "type": "number",
       "description": "How much time a user has to enter another trigger without incurring a delay again.",
-      "description_zh": ""
+      "description_zh": "用户必须输入另一个触发器而不会再次产生延迟的时间。"
     },
     "dir": {
       "default": "",
-      "value": ["ltr", "rtl"],
+      "value": [
+        "ltr",
+        "rtl"
+      ],
       "type": "\"ltr\" | \"rtl\"",
       "description": "The reading direction of the menu when applicable. If omitted, inherits globally from DirectionProvider or assumes LTR (left-to-right) reading mode.",
-      "description_zh": ""
+      "description_zh": "菜单的阅读方向（如果适用）。如果省略，则全局继承自 DirectionProvider 或采用 LTR（从左到右）读取模式。"
     },
     "orientation": {
       "default": "\"horizontal\"",
-      "value": ["horizontal", "vertical"],
+      "value": [
+        "horizontal",
+        "vertical"
+      ],
       "type": "\"horizontal\" | \"vertical\"",
       "description": "The orientation of the menu.",
-      "description_zh": ""
+      "description_zh": "菜单的方向。"
     }
   },
   "events": [],
