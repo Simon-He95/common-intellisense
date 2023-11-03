@@ -158,6 +158,12 @@ import ToolbarRoot from './ToolbarRoot.json'
 import ToolbarSeparator from './ToolbarSeparator.json'
 import ToolbarToggleGroup from './ToolbarToggleGroup.json'
 import ToolbarToggleItem from './ToolbarToggleItem.json'
+import TooltipArrow from './TooltipArrow.json'
+import TooltipContent from './TooltipContent.json'
+import TooltipPortal from './TooltipPortal.json'
+import TooltipProvider from './TooltipProvider.json'
+import TooltipRoot from './TooltipRoot.json'
+import TooltipTrigger from './TooltipTrigger.json'
 
 export function shadcnVue0() {
   const map: any = [
@@ -322,6 +328,12 @@ export function shadcnVue0() {
     ToolbarSeparator,
     ToolbarToggleGroup,
     ToolbarToggleItem,
+    TooltipArrow,
+    TooltipContent,
+    TooltipPortal,
+    TooltipProvider,
+    TooltipRoot,
+    TooltipTrigger,
   ]
 
   return propsReducer(map)
@@ -489,6 +501,12 @@ export function shadcnVue0Components() {
     [ToolbarSeparator.name, '工具栏', '<ToolbarSeparator></ToolbarSeparator>'],
     [ToolbarToggleGroup.name, '工具栏', '<ToolbarToggleGroup></ToolbarToggleGroup>'],
     [ToolbarToggleItem.name, '工具栏', '<ToolbarToggleItem></ToolbarToggleItem>'],
+    [TooltipArrow.name, '弹出窗口提示', '<TooltipArrow></TooltipArrow>'],
+    [TooltipContent.name, '弹出窗口提示', '<TooltipContent></TooltipContent>'],
+    [TooltipPortal.name, '弹出窗口提示', '<TooltipPortal></TooltipPortal>'],
+    [TooltipProvider.name, '弹出窗口提示', '<TooltipProvider></TooltipProvider>'],
+    [TooltipRoot.name, '弹出窗口提示', '<TooltipRoot></TooltipRoot>'],
+    [TooltipTrigger.name, '弹出窗口提示', '<TooltipTrigger></TooltipTrigger>'],
 
   ]
   return componentsReducer(map)
