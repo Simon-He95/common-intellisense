@@ -142,6 +142,13 @@ import TabsContent from './TabsContent.json'
 import TabsList from './TabsList.json'
 import TabsRoot from './TabsRoot.json'
 import TabsTrigger from './TabsTrigger.json'
+import ToastAction from './ToastAction.json'
+import ToastClose from './ToastClose.json'
+import ToastDescription from './ToastDescription.json'
+import ToastProvider from './ToastProvider.json'
+import ToastRoot from './ToastRoot.json'
+import ToastTitle from './ToastTitle.json'
+import ToastViewport from './ToastViewport.json'
 
 export function shadcnVue0() {
   const map: any = [
@@ -290,6 +297,13 @@ export function shadcnVue0() {
     TabsList,
     TabsRoot,
     TabsTrigger,
+    ToastAction,
+    ToastClose,
+    ToastDescription,
+    ToastProvider,
+    ToastRoot,
+    ToastTitle,
+    ToastViewport,
   ]
 
   return propsReducer(map)
@@ -441,6 +455,13 @@ export function shadcnVue0Components() {
     [TabsList.name, '项卡面板', '<TabsList></TabsList>'],
     [TabsRoot.name, '项卡面板', '<TabsRoot></TabsRoot>'],
     [TabsTrigger.name, '项卡面板', '<TabsTrigger></TabsTrigger>'],
+    [ToastAction.name, '简洁消息', '<ToastAction></ToastAction>'],
+    [ToastClose.name, '简洁消息', '<ToastClose></ToastClose>'],
+    [ToastDescription.name, '简洁消息', '<ToastDescription></ToastDescription>'],
+    [ToastProvider.name, '简洁消息', '<ToastProvider></ToastProvider>'],
+    [ToastRoot.name, '简洁消息', '<ToastRoot></ToastRoot>'],
+    [ToastTitle.name, '简洁消息', '<ToastTitle></ToastTitle>'],
+    [ToastViewport.name, '简洁消息', '<ToastViewport></ToastViewport>'],
 
   ]
   return componentsReducer(map)
