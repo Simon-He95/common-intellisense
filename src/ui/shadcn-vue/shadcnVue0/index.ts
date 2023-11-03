@@ -65,6 +65,24 @@ import HoverCardContent from './HoverCardContent.json'
 import HoverCardPortal from './HoverCardPortal.json'
 import HoverCardRoot from './HoverCardRoot.json'
 import HoverCardTrigger from './HoverCardTrigger.json'
+import Label from './Label.json'
+import MenubaRadioItem from './MenubaRadioItem.json'
+import MenubarArrow from './MenubarArrow.json'
+import MenubarCheckboxItem from './MenubarCheckboxItem.json'
+import MenubarContent from './MenubarContent.json'
+import MenubarGroup from './MenubarGroup.json'
+import MenubarItem from './MenubarItem.json'
+import MenubarItemIndicator from './MenubarItemIndicator.json'
+import MenubarLabel from './MenubarLabel.json'
+import MenubarMenu from './MenubarMenu.json'
+import MenubarPortal from './MenubarPortal.json'
+import MenubarRadioGroup from './MenubarRadioGroup.json'
+import MenubarRoot from './MenubarRoot.json'
+import MenubarSeparator from './MenubarSeparator.json'
+import MenubarSub from './MenubarSub.json'
+import MenubarSubContent from './MenubarSubContent.json'
+import MenubarSubTrigger from './MenubarSubTrigger.json'
+import MenubarTrigger from './MenubarTrigger.json'
 
 export function shadcnVue0() {
   const map: any = [
@@ -134,6 +152,24 @@ export function shadcnVue0() {
     HoverCardPortal,
     HoverCardRoot,
     HoverCardTrigger,
+    Label,
+    MenubaRadioItem,
+    MenubarArrow,
+    MenubarCheckboxItem,
+    MenubarContent,
+    MenubarGroup,
+    MenubarItem,
+    MenubarItemIndicator,
+    MenubarLabel,
+    MenubarMenu,
+    MenubarPortal,
+    MenubarRadioGroup,
+    MenubarRoot,
+    MenubarSeparator,
+    MenubarSub,
+    MenubarSubContent,
+    MenubarSubTrigger,
+    MenubarTrigger,
   ]
 
   return propsReducer(map)
@@ -207,6 +243,24 @@ export function shadcnVue0Components() {
     [HoverCardPortal.name, '悬浮卡', '<HoverCardPortal></HoverCardPortal>'],
     [HoverCardRoot.name, '悬浮卡', '<HoverCardRoot></HoverCardRoot>'],
     [HoverCardTrigger.name, '悬浮卡', '<HoverCardTrigger></HoverCardTrigger>'],
+    [Label.name, '标签', '<Label></Label>'],
+    [MenubaRadioItem.name, '菜单栏', '<MenubaRadioItem></MenubaRadioItem>'],
+    [MenubarArrow.name, '菜单栏', '<MenubarArrow></MenubarArrow>'],
+    [MenubarCheckboxItem.name, '菜单栏', '<MenubarCheckboxItem></MenubarCheckboxItem>'],
+    [MenubarContent.name, '菜单栏', '<MenubarContent></MenubarContent>'],
+    [MenubarGroup.name, '菜单栏', '<MenubarGroup></MenubarGroup>'],
+    [MenubarItem.name, '菜单栏', '<MenubarItem></MenubarItem>'],
+    [MenubarItemIndicator.name, '菜单栏', '<MenubarItemIndicator></MenubarItemIndicator>'],
+    [MenubarLabel.name, '菜单栏', '<MenubarLabel></MenubarLabel>'],
+    [MenubarMenu.name, '菜单栏', '<MenubarMenu></MenubarMenu>'],
+    [MenubarPortal.name, '菜单栏', '<MenubarPortal></MenubarPortal>'],
+    [MenubarRadioGroup.name, '菜单栏', '<MenubarRadioGroup></MenubarRadioGroup>'],
+    [MenubarRoot.name, '菜单栏', '<MenubarRoot></MenubarRoot>'],
+    [MenubarSeparator.name, '菜单栏', '<MenubarSeparator></MenubarSeparator>'],
+    [MenubarSub.name, '菜单栏', '<MenubarSub></MenubarSub>'],
+    [MenubarSubContent.name, '菜单栏', '<MenubarSubContent></MenubarSubContent>'],
+    [MenubarSubTrigger.name, '菜单栏', '<MenubarSubTrigger></MenubarSubTrigger>'],
+    [MenubarTrigger.name, '菜单栏', '<MenubarTrigger></MenubarTrigger>'],
   ]
   return componentsReducer(map)
 }
