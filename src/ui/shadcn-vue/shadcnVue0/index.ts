@@ -165,6 +165,8 @@ import TooltipProvider from './TooltipProvider.json'
 import TooltipRoot from './TooltipRoot.json'
 import TooltipTrigger from './TooltipTrigger.json'
 import ConfigProvider from './ConfigProvider.json'
+import VisuallyHidden from './VisuallyHidden.json'
+import Primitive from './Primitive.json'
 
 export function shadcnVue0() {
   const map: any = [
@@ -336,6 +338,8 @@ export function shadcnVue0() {
     TooltipRoot,
     TooltipTrigger,
     ConfigProvider,
+    VisuallyHidden,
+    Primitive,
   ]
 
   return propsReducer(map)
@@ -481,35 +485,38 @@ export function shadcnVue0Components() {
     [SliderRoot.name, '滑块', '<SliderRoot></SliderRoot>'],
     [SliderThumb.name, '滑块', '<SliderThumb></SliderThumb>'],
     [SliderTrack.name, '滑块', '<SliderTrack></SliderTrack>'],
-    [SwitchRoot.name, '开关', '<SwitchRoot></SwitchRoot>'],
-    [SwitchThumb.name, '开关', '<SwitchThumb></SwitchThumb>'],
-    [TabsContent.name, '项卡面板', '<TabsContent></TabsContent>'],
-    [TabsList.name, '项卡面板', '<TabsList></TabsList>'],
-    [TabsRoot.name, '项卡面板', '<TabsRoot></TabsRoot>'],
-    [TabsTrigger.name, '项卡面板', '<TabsTrigger></TabsTrigger>'],
-    [ToastAction.name, '简洁消息', '<ToastAction></ToastAction>'],
-    [ToastClose.name, '简洁消息', '<ToastClose></ToastClose>'],
-    [ToastDescription.name, '简洁消息', '<ToastDescription></ToastDescription>'],
-    [ToastProvider.name, '简洁消息', '<ToastProvider></ToastProvider>'],
-    [ToastRoot.name, '简洁消息', '<ToastRoot></ToastRoot>'],
-    [ToastTitle.name, '简洁消息', '<ToastTitle></ToastTitle>'],
-    [ToastViewport.name, '简洁消息', '<ToastViewport></ToastViewport>'],
-    [Toggle.name, '切换', '<Toggle></Toggle>'],
-    [ToggleGroupItem.name, '切换组', '<ToggleGroupItem></ToggleGroupItem>'],
-    [ToggleGroupRoot.name, '切换组', '<ToggleGroupRoot></ToggleGroupRoot>'],
-    [ToolbarButton.name, '工具栏', '<ToolbarButton></ToolbarButton>'],
-    [ToolbarLink.name, '工具栏', '<ToolbarLink></ToolbarLink>'],
-    [ToolbarRoot.name, '工具栏', '<ToolbarRoot></ToolbarRoot>'],
-    [ToolbarSeparator.name, '工具栏', '<ToolbarSeparator></ToolbarSeparator>'],
-    [ToolbarToggleGroup.name, '工具栏', '<ToolbarToggleGroup></ToolbarToggleGroup>'],
-    [ToolbarToggleItem.name, '工具栏', '<ToolbarToggleItem></ToolbarToggleItem>'],
-    [TooltipArrow.name, '弹出窗口提示', '<TooltipArrow></TooltipArrow>'],
-    [TooltipContent.name, '弹出窗口提示', '<TooltipContent></TooltipContent>'],
-    [TooltipPortal.name, '弹出窗口提示', '<TooltipPortal></TooltipPortal>'],
-    [TooltipProvider.name, '弹出窗口提示', '<TooltipProvider></TooltipProvider>'],
-    [TooltipRoot.name, '弹出窗口提示', '<TooltipRoot></TooltipRoot>'],
-    [TooltipTrigger.name, '弹出窗口提示', '<TooltipTrigger></TooltipTrigger>'],
-    [ConfigProvider.name, '全局配置', '<ConfigProvider></ConfigProvider>'],
+    [SwitchRoot.name, '允许用户在选中和未选中之间切换的控件', '<SwitchRoot></SwitchRoot>'],
+    [SwitchThumb.name, '允许用户在选中和未选中之间切换的控件', '<SwitchThumb></SwitchThumb>'],
+    [TabsContent.name, '一组分层的内容部分（称为选项卡面板），一次显示一个。', '<TabsContent></TabsContent>'],
+    [TabsList.name, '一组分层的内容部分（称为选项卡面板），一次显示一个。', '<TabsList></TabsList>'],
+    [TabsRoot.name, '一组分层的内容部分（称为选项卡面板），一次显示一个。', '<TabsRoot></TabsRoot>'],
+    [TabsTrigger.name, '一组分层的内容部分（称为选项卡面板），一次显示一个。', '<TabsTrigger></TabsTrigger>'],
+    [ToastAction.name, '临时显示的简洁消息。', '<ToastAction></ToastAction>'],
+    [ToastClose.name, '临时显示的简洁消息。', '<ToastClose></ToastClose>'],
+    [ToastDescription.name, '临时显示的简洁消息。', '<ToastDescription></ToastDescription>'],
+    [ToastProvider.name, '临时显示的简洁消息。', '<ToastProvider></ToastProvider>'],
+    [ToastRoot.name, '临时显示的简洁消息。', '<ToastRoot></ToastRoot>'],
+    [ToastTitle.name, '临时显示的简洁消息。', '<ToastTitle></ToastTitle>'],
+    [ToastViewport.name, '临时显示的简洁消息。', '<ToastViewport></ToastViewport>'],
+    [Toggle.name, '一个双状态按钮，可以打开或关闭', '<Toggle></Toggle>'],
+    [ToggleGroupItem.name, '一组可以打开或关闭的双状态按钮。', '<ToggleGroupItem></ToggleGroupItem>'],
+    [ToggleGroupRoot.name, '一组可以打开或关闭的双状态按钮。', '<ToggleGroupRoot></ToggleGroupRoot>'],
+    [ToolbarButton.name, '用于对一组控件（如按钮、工具栏组或下拉菜单）进行分组的容器。', '<ToolbarButton></ToolbarButton>'],
+    [ToolbarLink.name, '用于对一组控件（如按钮、工具栏组或下拉菜单）进行分组的容器。', '<ToolbarLink></ToolbarLink>'],
+    [ToolbarRoot.name, '用于对一组控件（如按钮、工具栏组或下拉菜单）进行分组的容器。', '<ToolbarRoot></ToolbarRoot>'],
+    [ToolbarSeparator.name, '用于对一组控件（如按钮、工具栏组或下拉菜单）进行分组的容器。', '<ToolbarSeparator></ToolbarSeparator>'],
+    [ToolbarToggleGroup.name, '用于对一组控件（如按钮、工具栏组或下拉菜单）进行分组的容器。', '<ToolbarToggleGroup></ToolbarToggleGroup>'],
+    [ToolbarToggleItem.name, '用于对一组控件（如按钮、工具栏组或下拉菜单）进行分组的容器。', '<ToolbarToggleItem></ToolbarToggleItem>'],
+    [TooltipArrow.name, '当元素获得键盘焦点或鼠标悬停在元素上时显示与元素相关的信息的弹出窗口', '<TooltipArrow></TooltipArrow>'],
+    [TooltipContent.name, '当元素获得键盘焦点或鼠标悬停在元素上时显示与元素相关的信息的弹出窗口', '<TooltipContent></TooltipContent>'],
+    [TooltipPortal.name, '当元素获得键盘焦点或鼠标悬停在元素上时显示与元素相关的信息的弹出窗口', '<TooltipPortal></TooltipPortal>'],
+    [TooltipProvider.name, '当元素获得键盘焦点或鼠标悬停在元素上时显示与元素相关的信息的弹出窗口', '<TooltipProvider></TooltipProvider>'],
+    [TooltipRoot.name, '当元素获得键盘焦点或鼠标悬停在元素上时显示与元素相关的信息的弹出窗口', '<TooltipRoot></TooltipRoot>'],
+    [TooltipTrigger.name, '当元素获得键盘焦点或鼠标悬停在元素上时显示与元素相关的信息的弹出窗口', '<TooltipTrigger></TooltipTrigger>'],
+    [ConfigProvider.name, '包装应用以提供全局配置', '<ConfigProvider></ConfigProvider>'],
+    [VisuallyHidden.name, '以可访问的方式从屏幕上隐藏内容', '<VisuallyHidden></VisuallyHidden>'],
+    [Primitive.name, '将 Radix 的功能组合到替代元素类型或你自己的 Vue 组件上', '<Primitive></Primitive>'],
+
   ]
   return componentsReducer(map)
 }
