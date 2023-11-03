@@ -131,6 +131,11 @@ import SelectSeparator from './SelectSeparator.json'
 import SelectTrigger from './SelectTrigger.json'
 import SelectValue from './SelectValue.json'
 import SelectViewport from './SelectViewport.json'
+import Separator from './Separator.json'
+import SliderRange from './SliderRange.json'
+import SliderRoot from './SliderRoot.json'
+import SliderThumb from './SliderThumb.json'
+import SliderTrack from './SliderTrack.json'
 
 export function shadcnVue0() {
   const map: any = [
@@ -268,6 +273,11 @@ export function shadcnVue0() {
     SelectTrigger,
     SelectValue,
     SelectViewport,
+    Separator,
+    SliderRange,
+    SliderRoot,
+    SliderThumb,
+    SliderTrack,
   ]
 
   return propsReducer(map)
@@ -408,6 +418,12 @@ export function shadcnVue0Components() {
     [SelectTrigger.name, '选择', '<SelectTrigger></SelectTrigger>'],
     [SelectValue.name, '选择', '<SelectValue></SelectValue>'],
     [SelectViewport.name, '选择', '<SelectViewport></SelectViewport>'],
+    [Separator.name, '分隔符', '<Separator></Separator>'],
+    [SliderRange.name, '滑块', '<SliderRange></SliderRange>'],
+    [SliderRoot.name, '滑块', '<SliderRoot></SliderRoot>'],
+    [SliderThumb.name, '滑块', '<SliderThumb></SliderThumb>'],
+    [SliderTrack.name, '滑块', '<SliderTrack></SliderTrack>'],
+
   ]
   return componentsReducer(map)
 }
