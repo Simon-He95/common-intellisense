@@ -29,7 +29,7 @@
       "type": "string",
       "description_zh": "选择器 className"
     },
-    "dateRender": {
+    ":dateRender": {
       "value": "",
       "description": "Customize the contents of the date cell, replace it with 'cellRender' from 5.4.0",
       "default": "-",
@@ -43,7 +43,7 @@
       "type": "boolean",
       "description_zh": "失去焦点时触发 `change` 事件，例如 datetime 下不再需要点击确认按钮"
     },
-    "cellRender": {
+    ":cellRender": {
       "value": "",
       "description": "Customize the contents of the cell",
       "default": "-",
@@ -66,7 +66,11 @@
     },
     "format": {
       "value": [
-        "[rc-picker]"
+        "time",
+        "week",
+        "month",
+        "quarter",
+        "year"
       ],
       "description": "Set the date format, support multi-format matching when it is an array, and the display is based on the first one",
       "default": "[rc-picker]",
@@ -80,7 +84,7 @@
       "type": "string",
       "description_zh": "额外的弹出日历 className"
     },
-    "getPopupContainer": {
+    ":getPopupContainer": {
       "value": "",
       "description": "The container that defines the floating layer, defaults to a new div on the body",
       "default": "-",
@@ -96,7 +100,9 @@
     },
     "locale": {
       "value": [
-        "[默认配置]"
+        "en_US",
+        "zh_CN",
+        "zh_TW"
       ],
       "description": "Internationalized configuration",
       "default": "[默认配置]",
@@ -116,7 +122,7 @@
       "type": "time | date | month | year | decade",
       "description_zh": "日期面板的状态"
     },
-    "nextIcon": {
+    ":nextIcon": {
       "value": "",
       "description": "Customize the next icon",
       "default": "-",
@@ -130,7 +136,7 @@
       "type": "boolean",
       "description_zh": "控制弹层是否展开"
     },
-    "panelRender": {
+    ":panelRender": {
       "value": "",
       "description": "Customize the render panel",
       "default": "-",
@@ -155,7 +161,8 @@
       "description": "Input box prompt text",
       "default": "-",
       "type": "string | [string, string]",
-      "description_zh": "输入框提示文字"
+      "description_zh": "输入框提示文字",
+      "required": true
     },
     "placement": {
       "value": [
@@ -169,21 +176,21 @@
       "type": "bottomLeft `bottomRight` `topLeft` topRight",
       "description_zh": "选择框弹出的位置"
     },
-    "popupStyle": {
+    ":popupStyle": {
       "value": "",
       "description": "Additional pop-up calendar style",
       "default": "{}",
       "type": "CSSProperties",
       "description_zh": "额外的弹出日历样式"
     },
-    "prevIcon": {
+    ":prevIcon": {
       "value": "",
       "description": "Customize the previous icon",
       "default": "-",
       "type": "ReactNode",
       "description_zh": "自定义上一个图标"
     },
-    "presets": {
+    ":presets": {
       "value": "",
       "description": "Preset time range for quick selection",
       "default": "-",
@@ -211,56 +218,56 @@
       "type": "'error' | 'warning'",
       "description_zh": "设置校验状态"
     },
-    "style": {
+    ":style": {
       "value": "",
       "description": "Customize the input box style",
       "default": "{}",
       "type": "CSSProperties",
       "description_zh": "自定义输入框样式"
     },
-    "suffixIcon": {
+    ":suffixIcon": {
       "value": "",
       "description": "Custom selection box suffix icon",
       "default": "-",
       "type": "ReactNode",
       "description_zh": "自定义的选择框后缀图标"
     },
-    "superNextIcon": {
+    ":superNextIcon": {
       "value": "",
       "description": "Customize the '>>' toggle icon",
       "default": "-",
       "type": "ReactNode",
       "description_zh": "自定义 `>>` 切换图标"
     },
-    "superPrevIcon": {
+    ":superPrevIcon": {
       "value": "",
       "description": "Customize the '<<' toggle icon",
       "default": "-",
       "type": "ReactNode",
       "description_zh": "自定义 `<<` 切换图标"
     },
-    "defaultPickerValue": {
+    ":defaultPickerValue": {
       "value": "",
       "description": "Default panel date",
       "default": "-",
       "type": "[dayjs]",
       "description_zh": "默认面板日期"
     },
-    "defaultValue": {
+    ":defaultValue": {
       "value": "",
       "description": "The default date, if the start time or end time is 'null' or 'undefined', the date range will be an open range",
       "default": "-",
       "type": "[dayjs]",
       "description_zh": "默认日期，如果开始时间或结束时间为 `null` 或者 `undefined`，日期范围将是一个开区间"
     },
-    "disabledTime": {
+    ":disabledTime": {
       "value": "",
       "description": "Unselectable time",
       "default": "-",
       "type": "function(date)",
       "description_zh": "不可选择的时间"
     },
-    "renderExtraFooter": {
+    ":renderExtraFooter": {
       "value": "",
       "description": "Add an extra footer to the panel",
       "default": "-",
@@ -274,16 +281,14 @@
       "type": "boolean",
       "description_zh": "当设定了 `showTime` 的时候，面板是否显示“此刻”按钮"
     },
-    "showTime": {
-      "value": [
-        "[TimePicker Options]"
-      ],
+    ":showTime": {
+      "value": "",
       "description": "Added time selection function",
       "default": "[TimePicker Options]",
       "type": "Object | boolean",
       "description_zh": "增加时间选择功能"
     },
-    "showTime.defaultValue": {
+    ":showTime.defaultValue": {
       "value": "",
       "description": "Sets the default hour, minute, and second when the user selects the date",
       "default": "dayjs()",
@@ -297,7 +302,7 @@
       "type": "boolean",
       "description_zh": "是否展示“今天”按钮"
     },
-    "value": {
+    ":value": {
       "value": "",
       "description": "date",
       "default": "-",

@@ -1,28 +1,28 @@
 {
   "name": "Calender",
   "props": {
-    "dateCellRender": {
+    ":dateCellRender": {
       "value": "",
       "description": "Custom render date cell, the return content will be appended to the cell, > = 5.4.0 Please use cellRender",
       "default": "-",
       "type": "function(date: Dayjs): ReactNode",
       "description_zh": "自定义渲染日期单元格，返回内容会被追加到单元格，>= 5.4.0 请用 cellRender"
     },
-    "cellRender": {
+    ":cellRender": {
       "value": "",
       "description": "Customize the contents of the cell",
       "default": "-",
       "type": "function(current: dayjs, today: dayjs, info: { originNode: React.ReactElement,today: DateType, range?: 'start' | 'end', type: PanelMode, locale?: Locale, subType?: 'hour' | 'minute' | 'second' | 'meridiem' }) => React.ReactNode",
       "description_zh": "自定义单元格的内容"
     },
-    "dateFullCellRender": {
+    ":dateFullCellRender": {
       "value": "",
       "description": "Custom render date cell, return content overwrite cell, > = 5.4.0 Please use fullCellRender",
       "default": "-",
       "type": "function(date: Dayjs): ReactNode",
       "description_zh": "自定义渲染日期单元格，返回内容覆盖单元格，>= 5.4.0 请用 fullCellRender"
     },
-    "fullCellRender": {
+    ":fullCellRender": {
       "value": "",
       "description": "Customize the contents of the cell",
       "default": "-",
@@ -36,7 +36,7 @@
       "type": "[dayjs]",
       "description_zh": "默认展示的日期"
     },
-    "disabledDate": {
+    ":disabledDate": {
       "value": "",
       "description": "An unselectable date with the current value",
       "default": "-",
@@ -50,7 +50,7 @@
       "type": "boolean",
       "description_zh": "是否全屏显示"
     },
-    "headerRender": {
+    ":headerRender": {
       "value": "",
       "description": "Customize the header content",
       "default": "-",
@@ -59,7 +59,9 @@
     },
     "locale": {
       "value": [
-        "[(默认配置)]"
+        "en_US",
+        "zh_CN",
+        "zh_TW"
       ],
       "description": "Internationalized configuration",
       "default": "[(默认配置)]",
@@ -67,20 +69,20 @@
       "description_zh": "国际化配置"
     },
     "mode": {
-      "value": "",
+      "value": ["month", "year"],
       "description": "Initial mode",
       "default": "month",
       "type": "month | year",
       "description_zh": "初始模式"
     },
-    "monthCellRender": {
+    ":monthCellRender": {
       "value": "",
       "description": "Custom render month cell, the return content will be appended to the cell, > = 5.4.0 Please use cellRender",
       "default": "-",
       "type": "function(date: Dayjs): ReactNode",
       "description_zh": "自定义渲染月单元格，返回内容会被追加到单元格，>= 5.4.0 请用 cellRender"
     },
-    "monthFullCellRender": {
+    ":monthFullCellRender": {
       "value": "",
       "description": "Custom render month cell, return content overwrite cell, > = 5.4.0 Please use fullCellRender",
       "default": "-",

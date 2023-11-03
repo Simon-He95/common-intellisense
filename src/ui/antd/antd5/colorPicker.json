@@ -15,7 +15,7 @@
       "type": "`boolean | { pointAtCenter: boolean }`",
       "description_zh": "配置弹出的箭头"
     },
-    "children": {
+    ":children": {
       "value": "",
       "description": "Triggers for color pickers",
       "default": "-",
@@ -44,7 +44,7 @@
       "description_zh": "关闭后是否销毁弹窗"
     },
     "format": {
-      "value": "",
+      "value": ["rgb", "hex", "hsb"],
       "description": "Color format",
       "default": "hex",
       "type": "rgb | hex | hsb",
@@ -57,7 +57,7 @@
       "type": "boolean",
       "description_zh": "是否显示弹出窗口"
     },
-    "presets": {
+    ":presets": {
       "value": "",
       "description": "Preset colors",
       "default": "-",
@@ -65,20 +65,20 @@
       "description_zh": "预设的颜色"
     },
     "placement": {
-      "value": "",
+      "value": ["top", "topLeft", "topRight", "bottom", "bottomLeft", "bottomRight"],
       "description": "The location of the pop-up window",
       "default": "bottomLeft",
       "type": "top | topLeft | topRight | bottom | bottomLeft | bottomRight",
       "description_zh": "弹出窗口的位置"
     },
-    "panelRender": {
+    ":panelRender": {
       "value": "",
       "description": "Customize the render panel",
       "default": "-",
       "type": "`(panel: React.ReactNode, extra: { components: { Picker: FC; Presets: FC } }) => React.ReactNode`",
       "description_zh": "自定义渲染面板"
     },
-    "showText": {
+    ":showText": {
       "value": "",
       "description": "Displays color text",
       "default": "-",
@@ -111,7 +111,8 @@
       "description": "The value of the color",
       "default": "-",
       "type": "string | Color",
-      "description_zh": "颜色的值"
+      "description_zh": "颜色的值",
+      "required": true
     }
   },
   "methods": [],

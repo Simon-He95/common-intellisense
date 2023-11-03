@@ -22,7 +22,7 @@
       "type": "boolean",
       "description_zh": "是否有边框"
     },
-    "clearIcon": {
+    ":clearIcon": {
       "value": "",
       "description": "Customize the selection box to clear the icon",
       "default": "-",
@@ -43,7 +43,7 @@
       "type": "string",
       "description_zh": "自定义类名"
     },
-    "defaultValue": {
+    ":defaultValue": {
       "value": "",
       "description": "The default selection",
       "default": "[]",
@@ -57,17 +57,14 @@
       "type": "boolean",
       "description_zh": "禁用"
     },
-    "displayRender": {
-      "value": [
-        "label => label.join(`",
-        "`)"
-      ],
+    ":displayRender": {
+      "value": "",
       "description": "Select the render function that is displayed",
       "default": "label => label.join(` | `)",
       "type": "(label, selectedOptions) => ReactNode",
       "description_zh": "选择后展示的渲染函数"
     },
-    "tagRender": {
+    ":tagRender": {
       "value": "",
       "description": "Customize the tag content render, which only takes effect when multiple selections are made",
       "default": "-",
@@ -81,14 +78,14 @@
       "type": "string",
       "description_zh": "自定义浮层类名"
     },
-    "dropdownRender": {
+    ":dropdownRender": {
       "value": "",
       "description": "Customize the drop-down box content",
       "default": "-",
       "type": "(menus: ReactNode) => ReactNode",
       "description_zh": "自定义下拉框内容"
     },
-    "expandIcon": {
+    ":expandIcon": {
       "value": "",
       "description": "Customize the secondary menu expansion icon",
       "default": "-",
@@ -105,7 +102,7 @@
       "type": "string",
       "description_zh": "次级菜单的展开方式，可选 'click' 和 'hover'"
     },
-    "fieldNames": {
+    ":fieldNames": {
       "value": "",
       "description": "Customize the Options field for label value children",
       "default": "{ label: label, value: value, children: `children` }",
@@ -126,21 +123,21 @@
       "type": "(selectedOptions) => void",
       "description_zh": "用于动态加载选项，无法与 `showSearch` 一起使用"
     },
-    "maxTagCount": {
+    ":maxTagCount": {
       "value": "",
       "description": "The maximum number of tags to display, responsive mode has a performance penalty",
       "default": "-",
       "type": "number | responsive",
       "description_zh": "最多显示多少个 tag，响应式模式会对性能产生损耗"
     },
-    "maxTagPlaceholder": {
+    ":maxTagPlaceholder": {
       "value": "",
       "description": "What is displayed when the tag is hidden",
       "default": "-",
       "type": "ReactNode | function(omittedValues)",
       "description_zh": "隐藏 tag 时显示的内容"
     },
-    "maxTagTextLength": {
+    ":maxTagTextLength": {
       "value": "",
       "description": "The maximum length of the tag text to display",
       "default": "-",
@@ -217,7 +214,7 @@
       "type": "'error' | 'warning'",
       "description_zh": "设置校验状态"
     },
-    "style": {
+    ":style": {
       "value": "",
       "description": "Custom styles",
       "default": "-",
@@ -231,7 +228,7 @@
       "type": "ReactNode",
       "description_zh": "自定义的选择框后缀图标"
     },
-    "value": {
+    ":value": {
       "value": "",
       "description": "Specify the selection",
       "default": "-",
@@ -245,7 +242,7 @@
       "type": "boolean",
       "description_zh": "支持多选节点"
     },
-    "showCheckedStrategy": {
+    ":showCheckedStrategy": {
       "value": "",
       "description": "Defines how the selection is backfilled. 'Cascader.SHOW_CHILD': Displays only the selected child nodes. 'Cascader.SHOW_PARENT': Displays only the parent node (when all child nodes under the parent node are selected).",
       "default": "`Cascader.SHOW_PARENT`",
@@ -266,21 +263,21 @@
       "type": "string",
       "description_zh": "设置搜索的值，需要与 `showSearch` 配合使用"
     },
-    "dropdownMenuColumnStyle": {
+    ":dropdownMenuColumnStyle": {
       "value": "",
       "description": "The style of the drop-down menu column",
       "default": "-",
       "type": "CSSProperties",
       "description_zh": "下拉菜单列的样式"
     },
-    "filter": {
+    ":filter": {
       "value": "",
       "description": "Receive the two parameters 'inputValue' and 'path', and return true when 'path' meets the filter conditions, and false if not",
       "default": "-",
       "type": "function(inputValue, path): boolean",
       "description_zh": "接收 `inputValue` `path` 两个参数，当 `path` 符合筛选条件时，应返回 true，反之则返回 false"
     },
-    "limit": {
+    ":limit": {
       "value": "",
       "description": "The number of search result impressions",
       "default": "50",
@@ -301,7 +298,7 @@
       "type": "function(inputValue, path): ReactNode",
       "description_zh": "用于渲染 filter 后的选项"
     },
-    "sort": {
+    ":sort": {
       "value": "",
       "description": "Options for sorting filters",
       "default": "-",

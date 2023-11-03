@@ -22,7 +22,7 @@
       "type": "ComponentType | false",
       "description_zh": "设置 Form 渲染元素，为 `false` 则不创建 DOM 节点"
     },
-    "fields": {
+    ":fields": {
       "value": "",
       "description": "Control form fields through state management (e.g., Redux), which is not recommended if not strongly demanded",
       "default": "-",
@@ -69,7 +69,7 @@
       "description_zh": "label 标签布局，同 `<Col>` 组件，设置 `span` `offset` 值，如 `{span: 3, offset: 12}` 或 `sm: {span: 3, offset: 12}`"
     },
     "layout": {
-      "value": "",
+      "value": ["horizontal", "validateTrigger", "inline"],
       "description": "Form layout",
       "default": "horizontal",
       "type": "horizontal | vertical | inline",
@@ -89,14 +89,14 @@
       "type": "boolean",
       "description_zh": "当字段被删除时保留字段值"
     },
-    "requiredMark": {
+    ":requiredMark": {
       "value": "",
       "description": "Required style, which can be switched to a required or optional display style. This is a Form configuration and cannot be configured separately for Form.Item",
       "default": "true",
       "type": "boolean | optional",
       "description_zh": "必选样式，可以切换为必选或者可选展示样式。此为 Form 配置，Form.Item 无法单独配置"
     },
-    "scrollToFirstError": {
+    ":scrollToFirstError": {
       "value": "",
       "description": "Submission failures automatically scroll to the first error field",
       "default": "false",
@@ -104,7 +104,7 @@
       "description_zh": "提交失败自动滚动到第一个错误字段"
     },
     "size": {
-      "value": "",
+      "value": ["small", "middle", "large"],
       "description": "Set the size of the field component (antd component only)",
       "default": "-",
       "type": "small | middle | large",

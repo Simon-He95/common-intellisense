@@ -3,201 +3,185 @@
   "props": {
     "autoFocus": {
       "value": "",
-      "description": "Whether the drawer switches focus to its DOM node when expanded",
       "default": "true",
-      "type": "抽屉展开后是否将焦点切换至其 Dom 节点",
+      "type": "boolean",
+      "description": "Does the drawer switch the focus to its Dom node after unfolding?",
       "description_zh": "抽屉展开后是否将焦点切换至其 Dom 节点"
     },
-    "afterOpenChange": {
+    ":afterOpenChange": {
       "value": "",
-      "description": "The callback after the animation ends when the drawer is switched",
       "default": "-",
-      "type": "切换抽屉时动画结束后的回调",
+      "type": "function(open)",
+      "description": "The callback after the animation when switching drawers",
       "description_zh": "切换抽屉时动画结束后的回调"
-    },
-    "bodyStyle": {
-      "value": "",
-      "description": "Lets you style the content portion of the drawer",
-      "default": "-",
-      "type": "可用于设置 Drawer 内容部分的样式",
-      "description_zh": "可用于设置 Drawer 内容部分的样式"
     },
     "className": {
       "value": "",
-      "description": "Drawer container outer className setting, if you need to set the outermost layer, use rootClassName",
       "default": "-",
-      "type": "Drawer 容器外层 className 设置，如果需要设置最外层，请使用 rootClassName",
+      "type": "string",
+      "description": "Drawer container outer className setting, if you need to set the outermost layer, please use rootClassName",
       "description_zh": "Drawer 容器外层 className 设置，如果需要设置最外层，请使用 rootClassName"
     },
-    "closeIcon": {
-      "value": [
-        "<CloseOutlined/>"
-      ],
-      "description": "Customize the close icon. 5.7.0: Hide the close button when set to 'null' or 'false'",
-      "default": "<CloseOutlined | >",
-      "type": "自定义关闭图标。5.7.0：设置为 null 或 false 时隐藏关闭按钮",
-      "description_zh": "自定义关闭图标。5.7.0：设置为 `null` 或 `false` 时隐藏关闭按钮"
-    },
-    "contentWrapperStyle": {
+    "classNames": {
       "value": "",
-      "description": "Lets you style the content portion of the Drawer wrap",
       "default": "-",
-      "type": "可用于设置 Drawer 包裹内容部分的样式",
+      "type": "header?: string; body?: string; footer?: string; mask?: string; wrapper?: string;",
+      "description": "Configure the className of the built-in module of the drawer",
+      "description_zh": "配置抽屉内置模块的 className"
+    },
+    "styles": {
+      "value": "",
+      "default": "-",
+      "type": "header?: CSSProperties; body?: CSSProperties; footer?: CSSProperties; mask?: CSSProperties; wrapper?: CSSProperties;",
+      "description": "Configure the style of the built-in module of the drawer",
+      "description_zh": "配置抽屉内置模块的 style"
+    },
+    ":closeIcon": {
+      "value": "",
+      "default": "<CloseOutlined />",
+      "type": "boolean | ReactNode",
+      "description": "Custom close icon. 5.7.0: Hide the close button when set to null or false",
+      "description_zh": "自定义关闭图标。5.7.0：设置为 null 或 false 时隐藏关闭按钮"
+    },
+    ":contentWrapperStyle": {
+      "value": "",
+      "default": "-",
+      "type": "CSSProperties",
+      "description": "It can be used to set the style of the content part of the Drawer package.",
       "description_zh": "可用于设置 Drawer 包裹内容部分的样式"
     },
     "destroyOnClose": {
       "value": "",
-      "description": "Destroys the child elements in the Drawer when closed",
       "default": "false",
-      "type": "关闭时销毁 Drawer 里的子元素",
+      "type": "boolean",
+      "description": "Destroy the child elements in the Drawer when closing",
       "description_zh": "关闭时销毁 Drawer 里的子元素"
     },
-    "extra": {
+    ":extra": {
       "value": "",
-      "description": "The operating area in the upper right corner of the drawer",
       "default": "-",
-      "type": "抽屉右上角的操作区域",
+      "type": "ReactNode",
+      "description": "The operation area in the upper right corner of the drawer",
       "description_zh": "抽屉右上角的操作区域"
     },
-    "footer": {
+    ":footer": {
       "value": "",
-      "description": "Footer of the drawer",
       "default": "-",
-      "type": "抽屉的页脚",
+      "type": "ReactNode",
+      "description": "The footer of the drawer",
       "description_zh": "抽屉的页脚"
     },
-    "footerStyle": {
+    ":forceRender": {
       "value": "",
-      "description": "The style of the drawer footer widget",
-      "default": "-",
-      "type": "抽屉页脚部件的样式",
-      "description_zh": "抽屉页脚部件的样式"
-    },
-    "forceRender": {
-      "value": "",
-      "description": "Pre-render elements inside the Drawer",
       "default": "false",
-      "type": "预渲染 Drawer 内元素",
+      "type": "boolean",
+      "description": "Pre-rendered Drawer internal elements",
       "description_zh": "预渲染 Drawer 内元素"
     },
     "getContainer": {
       "value": "",
-      "description": "Specifies the node to which the drawer is mounted, and renders it in the container, with 'false' being mounted at the current location",
       "default": "body",
-      "type": "指定 Drawer 挂载的节点，**并在容器内展现**，false 为挂载在当前位置",
-      "description_zh": "指定 Drawer 挂载的节点，**并在容器内展现**，`false` 为挂载在当前位置"
-    },
-    "headerStyle": {
-      "value": "",
-      "description": "Lets you style the Drawer head",
-      "default": "-",
-      "type": "用于设置 Drawer 头部的样式",
-      "description_zh": "用于设置 Drawer 头部的样式"
+      "type": "HTMLElement | () => HTMLElement | Selectors | false",
+      "description": "Specify the node mounted by Drawer and display it in the container. false is mounted at the current position.",
+      "description_zh": "指定 Drawer 挂载的节点，并在容器内展现，false 为挂载在当前位置"
     },
     "height": {
       "value": "",
-      "description": "Height, which is used when 'placement' is 'top' or 'bottom'",
       "default": "378",
-      "type": "高度, 在 placement 为 top 或 bottom 时使用",
-      "description_zh": "高度, 在 `placement` 为 `top` 或 `bottom` 时使用"
+      "type": "string | number",
+      "description": "Height, used when placement is top or bottom",
+      "description_zh": "高度，在 placement 为 top 或 bottom 时使用"
     },
     "keyboard": {
       "value": "",
-      "description": "Whether the keyboard ESC is supported",
       "default": "true",
-      "type": "是否支持键盘 esc 关闭",
+      "type": "boolean",
+      "description": "Whether to support keyboard esc close",
       "description_zh": "是否支持键盘 esc 关闭"
     },
     "mask": {
       "value": "",
-      "description": "Whether or not to display a mask",
       "default": "true",
-      "type": "是否展示遮罩",
+      "type": "boolean",
+      "description": "Whether to display the mask",
       "description_zh": "是否展示遮罩"
     },
     "maskClosable": {
       "value": "",
-      "description": "Click whether the mask is allowed to be turned off",
       "default": "true",
-      "type": "点击蒙层是否允许关闭",
+      "type": "boolean",
+      "description": "Click whether the mask layer is allowed to be closed",
       "description_zh": "点击蒙层是否允许关闭"
     },
-    "maskStyle": {
-      "value": "",
-      "description": "Mask style",
-      "default": "{}",
-      "type": "遮罩样式",
-      "description_zh": "遮罩样式"
-    },
     "placement": {
-      "value": "",
-      "description": "The orientation of the drawer",
+      "value": ["top", "right", "bottom", "left"],
       "default": "right",
-      "type": "抽屉的方向",
+      "type": "top | right | bottom | left",
+      "description": "drawer direction",
       "description_zh": "抽屉的方向"
     },
-    "push": {
+    ":push": {
       "value": "",
-      "description": "Used to set the push behavior of a multi-layer drawer",
       "default": "{ distance: 180 }",
-      "type": "用于设置多层 Drawer 的推动行为",
+      "type": "boolean | { distance: string | number }",
+      "description": "Used to set the push behavior of multi-layer Drawer",
       "description_zh": "用于设置多层 Drawer 的推动行为"
     },
-    "rootClassName": {
+    ":rootStyle": {
       "value": "",
-      "description": "The class name of the outer container of the dialog box",
       "default": "-",
-      "type": "对话框外层容器的类名",
-      "description_zh": "对话框外层容器的类名"
-    },
-    "rootStyle": {
-      "value": "",
-      "description": "It can be used to style the outermost container of the drawer, except that the effect node includes a mask",
-      "default": "-",
-      "type": "可用于设置 Drawer 最外层容器的样式，和 style 的区别是作用节点包括 mask",
-      "description_zh": "可用于设置 Drawer 最外层容器的样式，和 `style` 的区别是作用节点包括 mask"
+      "type": "CSSProperties",
+      "description": "Can be used to set the style of the outermost container of Drawer. The difference from style is that the effect node includes mask",
+      "description_zh": "可用于设置 Drawer 最外层容器的样式，和 style 的区别是作用节点包括 mask"
     },
     "size": {
-      "value": "",
-      "description": "Preset drawer width (or height), default '378px' and large 736px",
+      "value": ["default", "large"],
       "default": "'default'",
-      "type": "预设抽屉宽度（或高度），default 378px 和 large 736px",
-      "description_zh": "预设抽屉宽度（或高度），default `378px` 和 large 736px"
+      "type": "'default' | 'large'",
+      "description": "Default drawer width (or height), default 378px and large 736px",
+      "description_zh": "预设抽屉宽度（或高度），default 378px 和 large 736px"
     },
-    "style": {
+    ":style": {
       "value": "",
-      "description": "Style the Drawer container, and if you only need to set the content part, use bodyStyle",
       "default": "-",
-      "type": "设计 Drawer 容器样式，如果你只需要设置内容部分请使用 bodyStyle",
+      "type": "CSSProperties",
+      "description": "Design the Drawer container style. If you only need to set the content part, please use bodyStyle",
       "description_zh": "设计 Drawer 容器样式，如果你只需要设置内容部分请使用 bodyStyle"
     },
-    "title": {
+    ":title": {
       "value": "",
-      "description": "title",
       "default": "-",
-      "type": "标题",
+      "type": "ReactNode",
+      "description": "title",
       "description_zh": "标题"
     },
     "open": {
       "value": "",
-      "description": "Whether the Drawer is visible",
       "default": "-",
-      "type": "Drawer 是否可见",
+      "type": "boolean",
+      "description": "Is Drawer visible?",
       "description_zh": "Drawer 是否可见"
     },
     "width": {
       "value": "",
-      "description": "width",
       "default": "378",
-      "type": "宽度",
+      "type": "string | number",
+      "description": "width",
       "description_zh": "宽度"
     },
-    "zIndex": {
+    ":zIndex": {
       "value": "",
-      "description": "Set the drawer's 'z-index'",
       "default": "1000",
-      "type": "设置 Drawer 的 z-index",
-      "description_zh": "设置 Drawer 的 `z-index`"
+      "type": "number",
+      "description": "Set Drawer's z-index",
+      "description_zh": "设置 Drawer 的 z-index"
+    },
+    ":onClose": {
+      "value": "",
+      "default": "-",
+      "type": "function(e)",
+      "description": "Callback for clicking the mask layer or the upper left corner or cancel button",
+      "description_zh": "点击遮罩层或左上角叉或取消按钮的回调"
     }
   },
   "methods": [],

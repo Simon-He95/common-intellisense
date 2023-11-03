@@ -84,6 +84,16 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
           if (value.type && value.type.trim() === 'boolean' && value.default === 'false') {
             content = snippet = key
           }
+          else if (value.type && value.type.trim() === 'boolean' && value.default === 'true') {
+            if (lan === 'vue') {
+              content = key
+              snippet = `:${key}="false"`
+            }
+            else {
+              content = key
+              snippet = `${key}={false}`
+            }
+          }
           else if (key.startsWith(':')) {
             if (!v) {
               if (lan === 'vue') {
