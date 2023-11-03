@@ -115,6 +115,22 @@ import ScrollAreaRoot from './ScrollAreaRoot.json'
 import ScrollAreaScrollbar from './ScrollAreaScrollbar.json'
 import ScrollAreaThumb from './ScrollAreaThumb.json'
 import ScrollAreaViewport from './ScrollAreaViewport.json'
+import SelectArrow from './SelectArrow.json'
+import SelectContent from './SelectContent.json'
+import SelectGroup from './SelectGroup.json'
+import SelectIcon from './SelectIcon.json'
+import SelectItem from './SelectItem.json'
+import SelectItemIndicator from './SelectItemIndicator.json'
+import SelectItemText from './SelectItemText.json'
+import SelectLabel from './SelectLabel.json'
+import SelectPortal from './SelectPortal.json'
+import SelectRoot from './SelectRoot.json'
+import SelectScrollDownButton from './SelectScrollDownButton.json'
+import SelectScrollUpButton from './SelectScrollUpButton.json'
+import SelectSeparator from './SelectSeparator.json'
+import SelectTrigger from './SelectTrigger.json'
+import SelectValue from './SelectValue.json'
+import SelectViewport from './SelectViewport.json'
 
 export function shadcnVue0() {
   const map: any = [
@@ -235,6 +251,23 @@ export function shadcnVue0() {
     ScrollAreaThumb,
     ScrollAreaViewport,
     ScrollAreaCorner,
+    ScrollAreaViewport,
+    SelectArrow,
+    SelectContent,
+    SelectGroup,
+    SelectIcon,
+    SelectItem,
+    SelectItemIndicator,
+    SelectItemText,
+    SelectLabel,
+    SelectPortal,
+    SelectRoot,
+    SelectScrollDownButton,
+    SelectScrollUpButton,
+    SelectSeparator,
+    SelectTrigger,
+    SelectValue,
+    SelectViewport,
   ]
 
   return propsReducer(map)
@@ -359,6 +392,22 @@ export function shadcnVue0Components() {
     [ScrollAreaThumb.name, '滚动区域', '<ScrollAreaThumb></ScrollAreaThumb>'],
     [ScrollAreaViewport.name, '滚动区域', '<ScrollAreaViewport></ScrollAreaViewport>'],
     [ScrollAreaCorner.name, '滚动区域', '<ScrollAreaCorner></ScrollAreaCorner>'],
+    [SelectArrow.name, '选择', '<SelectArrow></SelectArrow>'],
+    [SelectContent.name, '选择', '<SelectContent></SelectContent>'],
+    [SelectGroup.name, '选择', '<SelectGroup></SelectGroup>'],
+    [SelectIcon.name, '选择', '<SelectIcon></SelectIcon>'],
+    [SelectItem.name, '选择', '<SelectItem></SelectItem>'],
+    [SelectItemIndicator.name, '选择', '<SelectItemIndicator></SelectItemIndicator>'],
+    [SelectItemText.name, '选择', '<SelectItemText></SelectItemText>'],
+    [SelectLabel.name, '选择', '<SelectLabel></SelectLabel>'],
+    [SelectPortal.name, '选择', '<SelectPortal></SelectPortal>'],
+    [SelectRoot.name, '选择', '<SelectRoot></SelectRoot>'],
+    [SelectScrollDownButton.name, '选择', '<SelectScrollDownButton></SelectScrollDownButton>'],
+    [SelectScrollUpButton.name, '选择', '<SelectScrollUpButton></SelectScrollUpButton>'],
+    [SelectSeparator.name, '选择', '<SelectSeparator></SelectSeparator>'],
+    [SelectTrigger.name, '选择', '<SelectTrigger></SelectTrigger>'],
+    [SelectValue.name, '选择', '<SelectValue></SelectValue>'],
+    [SelectViewport.name, '选择', '<SelectViewport></SelectViewport>'],
   ]
   return componentsReducer(map)
 }
