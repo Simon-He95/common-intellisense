@@ -164,6 +164,7 @@ import TooltipPortal from './TooltipPortal.json'
 import TooltipProvider from './TooltipProvider.json'
 import TooltipRoot from './TooltipRoot.json'
 import TooltipTrigger from './TooltipTrigger.json'
+import ConfigProvider from './ConfigProvider.json'
 
 export function shadcnVue0() {
   const map: any = [
@@ -334,6 +335,7 @@ export function shadcnVue0() {
     TooltipProvider,
     TooltipRoot,
     TooltipTrigger,
+    ConfigProvider,
   ]
 
   return propsReducer(map)
@@ -507,7 +509,7 @@ export function shadcnVue0Components() {
     [TooltipProvider.name, '弹出窗口提示', '<TooltipProvider></TooltipProvider>'],
     [TooltipRoot.name, '弹出窗口提示', '<TooltipRoot></TooltipRoot>'],
     [TooltipTrigger.name, '弹出窗口提示', '<TooltipTrigger></TooltipTrigger>'],
-
+    [ConfigProvider.name, '全局配置', '<ConfigProvider></ConfigProvider>'],
   ]
   return componentsReducer(map)
 }
