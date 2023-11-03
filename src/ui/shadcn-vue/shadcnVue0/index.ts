@@ -100,6 +100,13 @@ import PaginationListNext from './PaginationListNext.json'
 import PaginationListLast from './PaginationListLast.json'
 import PaginationListPrev from './PaginationListPrev.json'
 import PaginationRoot from './PaginationRoot.json'
+import PopoverAnchor from './PopoverAnchor.json'
+import PopoverArrow from './PopoverArrow.json'
+import PopoverClose from './PopoverClose.json'
+import PopoverContent from './PopoverContent.json'
+import PopoverPortal from './PopoverPortal.json'
+import PopoverRoot from './PopoverRoot.json'
+import PopoverTrigger from './PopoverTrigger.json'
 
 export function shadcnVue0() {
   const map: any = [
@@ -204,6 +211,13 @@ export function shadcnVue0() {
     PaginationListLast,
     PaginationListPrev,
     PaginationRoot,
+    PopoverAnchor,
+    PopoverArrow,
+    PopoverClose,
+    PopoverContent,
+    PopoverPortal,
+    PopoverRoot,
+    PopoverTrigger,
   ]
 
   return propsReducer(map)
@@ -312,6 +326,13 @@ export function shadcnVue0Components() {
     [PaginationListLast.name, '分页', '<PaginationListLast></PaginationListLast>'],
     [PaginationListPrev.name, '分页', '<PaginationListPrev></PaginationListPrev>'],
     [PaginationRoot.name, '分页', '<PaginationRoot></PaginationRoot>'],
+    [PopoverAnchor.name, '弹出框', '<PopoverAnchor></PopoverAnchor>'],
+    [PopoverArrow.name, '弹出框', '<PopoverArrow></PopoverArrow>'],
+    [PopoverClose.name, '弹出框', '<PopoverClose></PopoverClose>'],
+    [PopoverContent.name, '弹出框', '<PopoverContent></PopoverContent>'],
+    [PopoverPortal.name, '弹出框', '<PopoverPortal></PopoverPortal>'],
+    [PopoverRoot.name, '弹出框', '<PopoverRoot></PopoverRoot>'],
+    [PopoverTrigger.name, '弹出框', '<PopoverTrigger></PopoverTrigger>'],
   ]
   return componentsReducer(map)
 }
