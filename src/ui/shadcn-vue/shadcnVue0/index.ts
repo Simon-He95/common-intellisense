@@ -60,6 +60,11 @@ import DialogPortal from './DialogPortal.json'
 import DialogRoot from './DialogRoot.json'
 import DialogTitle from './DialogTitle.json'
 import DialogTrigger from './DialogTrigger.json'
+import HoverCardArrow from './HoverCardArrow.json'
+import HoverCardContent from './HoverCardContent.json'
+import HoverCardPortal from './HoverCardPortal.json'
+import HoverCardRoot from './HoverCardRoot.json'
+import HoverCardTrigger from './HoverCardTrigger.json'
 
 export function shadcnVue0() {
   const map: any = [
@@ -124,6 +129,11 @@ export function shadcnVue0() {
     DialogRoot,
     DialogTitle,
     DialogTrigger,
+    HoverCardArrow,
+    HoverCardContent,
+    HoverCardPortal,
+    HoverCardRoot,
+    HoverCardTrigger,
   ]
 
   return propsReducer(map)
@@ -192,6 +202,11 @@ export function shadcnVue0Components() {
     [DialogRoot.name, '对话', '<DialogRoot></DialogRoot>'],
     [DialogTitle.name, '对话', '<DialogTitle></DialogTitle>'],
     [DialogTrigger.name, '对话', '<DialogTrigger></DialogTrigger>'],
+    [HoverCardArrow.name, '悬浮卡', '<HoverCardArrow></HoverCardArrow>'],
+    [HoverCardContent.name, '悬浮卡', '<HoverCardContent></HoverCardContent>'],
+    [HoverCardPortal.name, '悬浮卡', '<HoverCardPortal></HoverCardPortal>'],
+    [HoverCardRoot.name, '悬浮卡', '<HoverCardRoot></HoverCardRoot>'],
+    [HoverCardTrigger.name, '悬浮卡', '<HoverCardTrigger></HoverCardTrigger>'],
   ]
   return componentsReducer(map)
 }
