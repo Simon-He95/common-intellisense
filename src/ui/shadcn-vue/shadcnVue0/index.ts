@@ -92,6 +92,14 @@ import NavigationMenuRoot from './NavigationMenuRoot.json'
 import NavigationMenuSub from './NavigationMenuSub.json'
 import NavigationMenuTrigger from './NavigationMenuTrigger.json'
 import NavigationMenuViewport from './NavigationMenuViewport.json'
+import PaginationList from './PaginationList.json'
+import PaginationListEllipsis from './PaginationListEllipsis.json'
+import PaginationListFirst from './PaginationListFirst.json'
+import PaginationListItem from './PaginationListItem.json'
+import PaginationListNext from './PaginationListNext.json'
+import PaginationListLast from './PaginationListLast.json'
+import PaginationListPrev from './PaginationListPrev.json'
+import PaginationRoot from './PaginationRoot.json'
 
 export function shadcnVue0() {
   const map: any = [
@@ -188,6 +196,14 @@ export function shadcnVue0() {
     NavigationMenuSub,
     NavigationMenuTrigger,
     NavigationMenuViewport,
+    PaginationList,
+    PaginationListEllipsis,
+    PaginationListFirst,
+    PaginationListItem,
+    PaginationListNext,
+    PaginationListLast,
+    PaginationListPrev,
+    PaginationRoot,
   ]
 
   return propsReducer(map)
@@ -288,6 +304,14 @@ export function shadcnVue0Components() {
     [NavigationMenuSub.name, '导航菜单', '<NavigationMenuSub></NavigationMenuSub>'],
     [NavigationMenuTrigger.name, '导航菜单', '<NavigationMenuTrigger></NavigationMenuTrigger>'],
     [NavigationMenuViewport.name, '导航菜单', '<NavigationMenuViewport></NavigationMenuViewport>'],
+    [PaginationList.name, '分页', '<PaginationList></PaginationList>'],
+    [PaginationListEllipsis.name, '分页', '<PaginationListEllipsis></PaginationListEllipsis>'],
+    [PaginationListFirst.name, '分页', '<PaginationListFirst></PaginationListFirst>'],
+    [PaginationListItem.name, '分页', '<PaginationListItem></PaginationListItem>'],
+    [PaginationListNext.name, '分页', '<PaginationListNext></PaginationListNext>'],
+    [PaginationListLast.name, '分页', '<PaginationListLast></PaginationListLast>'],
+    [PaginationListPrev.name, '分页', '<PaginationListPrev></PaginationListPrev>'],
+    [PaginationRoot.name, '分页', '<PaginationRoot></PaginationRoot>'],
   ]
   return componentsReducer(map)
 }
