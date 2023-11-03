@@ -83,6 +83,15 @@ import MenubarSub from './MenubarSub.json'
 import MenubarSubContent from './MenubarSubContent.json'
 import MenubarSubTrigger from './MenubarSubTrigger.json'
 import MenubarTrigger from './MenubarTrigger.json'
+import NavigationMenuContent from './NavigationMenuContent.json'
+import NavigationMenuIndicator from './NavigationMenuIndicator.json'
+import NavigationMenuItem from './NavigationMenuItem.json'
+import NavigationMenuLink from './NavigationMenuLink.json'
+import NavigationMenuList from './NavigationMenuList.json'
+import NavigationMenuRoot from './NavigationMenuRoot.json'
+import NavigationMenuSub from './NavigationMenuSub.json'
+import NavigationMenuTrigger from './NavigationMenuTrigger.json'
+import NavigationMenuViewport from './NavigationMenuViewport.json'
 
 export function shadcnVue0() {
   const map: any = [
@@ -170,6 +179,15 @@ export function shadcnVue0() {
     MenubarSubContent,
     MenubarSubTrigger,
     MenubarTrigger,
+    NavigationMenuContent,
+    NavigationMenuIndicator,
+    NavigationMenuItem,
+    NavigationMenuLink,
+    NavigationMenuList,
+    NavigationMenuRoot,
+    NavigationMenuSub,
+    NavigationMenuTrigger,
+    NavigationMenuViewport,
   ]
 
   return propsReducer(map)
@@ -261,6 +279,15 @@ export function shadcnVue0Components() {
     [MenubarSubContent.name, '菜单栏', '<MenubarSubContent></MenubarSubContent>'],
     [MenubarSubTrigger.name, '菜单栏', '<MenubarSubTrigger></MenubarSubTrigger>'],
     [MenubarTrigger.name, '菜单栏', '<MenubarTrigger></MenubarTrigger>'],
+    [NavigationMenuContent.name, '导航菜单', '<NavigationMenuContent></NavigationMenuContent>'],
+    [NavigationMenuIndicator.name, '导航菜单', '<NavigationMenuIndicator></NavigationMenuIndicator>'],
+    [NavigationMenuItem.name, '导航菜单', '<NavigationMenuItem></NavigationMenuItem>'],
+    [NavigationMenuLink.name, '导航菜单', '<NavigationMenuLink></NavigationMenuLink>'],
+    [NavigationMenuList.name, '导航菜单', '<NavigationMenuList></NavigationMenuList>'],
+    [NavigationMenuRoot.name, '导航菜单', '<NavigationMenuRoot></NavigationMenuRoot>'],
+    [NavigationMenuSub.name, '导航菜单', '<NavigationMenuSub></NavigationMenuSub>'],
+    [NavigationMenuTrigger.name, '导航菜单', '<NavigationMenuTrigger></NavigationMenuTrigger>'],
+    [NavigationMenuViewport.name, '导航菜单', '<NavigationMenuViewport></NavigationMenuViewport>'],
   ]
   return componentsReducer(map)
 }
