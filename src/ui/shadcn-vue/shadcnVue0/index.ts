@@ -152,6 +152,12 @@ import ToastViewport from './ToastViewport.json'
 import Toggle from './Toggle.json'
 import ToggleGroupItem from './ToggleGroupItem.json'
 import ToggleGroupRoot from './ToggleGroupRoot.json'
+import ToolbarButton from './ToolbarButton.json'
+import ToolbarLink from './ToolbarLink.json'
+import ToolbarRoot from './ToolbarRoot.json'
+import ToolbarSeparator from './ToolbarSeparator.json'
+import ToolbarToggleGroup from './ToolbarToggleGroup.json'
+import ToolbarToggleItem from './ToolbarToggleItem.json'
 
 export function shadcnVue0() {
   const map: any = [
@@ -310,6 +316,12 @@ export function shadcnVue0() {
     Toggle,
     ToggleGroupItem,
     ToggleGroupRoot,
+    ToolbarButton,
+    ToolbarLink,
+    ToolbarRoot,
+    ToolbarSeparator,
+    ToolbarToggleGroup,
+    ToolbarToggleItem,
   ]
 
   return propsReducer(map)
@@ -471,6 +483,12 @@ export function shadcnVue0Components() {
     [Toggle.name, '切换', '<Toggle></Toggle>'],
     [ToggleGroupItem.name, '切换组', '<ToggleGroupItem></ToggleGroupItem>'],
     [ToggleGroupRoot.name, '切换组', '<ToggleGroupRoot></ToggleGroupRoot>'],
+    [ToolbarButton.name, '工具栏', '<ToolbarButton></ToolbarButton>'],
+    [ToolbarLink.name, '工具栏', '<ToolbarLink></ToolbarLink>'],
+    [ToolbarRoot.name, '工具栏', '<ToolbarRoot></ToolbarRoot>'],
+    [ToolbarSeparator.name, '工具栏', '<ToolbarSeparator></ToolbarSeparator>'],
+    [ToolbarToggleGroup.name, '工具栏', '<ToolbarToggleGroup></ToolbarToggleGroup>'],
+    [ToolbarToggleItem.name, '工具栏', '<ToolbarToggleItem></ToolbarToggleItem>'],
 
   ]
   return componentsReducer(map)
