@@ -107,6 +107,8 @@ import PopoverContent from './PopoverContent.json'
 import PopoverPortal from './PopoverPortal.json'
 import PopoverRoot from './PopoverRoot.json'
 import PopoverTrigger from './PopoverTrigger.json'
+import ProgressIndicator from './ProgressIndicator.json'
+import ProgressRoot from './ProgressRoot.json'
 
 export function shadcnVue0() {
   const map: any = [
@@ -218,6 +220,8 @@ export function shadcnVue0() {
     PopoverPortal,
     PopoverRoot,
     PopoverTrigger,
+    ProgressIndicator,
+    ProgressRoot,
   ]
 
   return propsReducer(map)
@@ -333,6 +337,8 @@ export function shadcnVue0Components() {
     [PopoverPortal.name, '弹出框', '<PopoverPortal></PopoverPortal>'],
     [PopoverRoot.name, '弹出框', '<PopoverRoot></PopoverRoot>'],
     [PopoverTrigger.name, '弹出框', '<PopoverTrigger></PopoverTrigger>'],
+    [ProgressIndicator.name, '单选按钮组', '<ProgressIndicator></ProgressIndicator>'],
+    [ProgressRoot.name, '单选按钮组', '<ProgressRoot></ProgressRoot>'],
   ]
   return componentsReducer(map)
 }
