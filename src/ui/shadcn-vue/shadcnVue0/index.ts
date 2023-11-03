@@ -136,6 +136,8 @@ import SliderRange from './SliderRange.json'
 import SliderRoot from './SliderRoot.json'
 import SliderThumb from './SliderThumb.json'
 import SliderTrack from './SliderTrack.json'
+import SwitchRoot from './SwitchRoot.json'
+import SwitchThumb from './SwitchThumb.json'
 
 export function shadcnVue0() {
   const map: any = [
@@ -278,6 +280,8 @@ export function shadcnVue0() {
     SliderRoot,
     SliderThumb,
     SliderTrack,
+    SwitchRoot,
+    SwitchThumb,
   ]
 
   return propsReducer(map)
@@ -423,6 +427,8 @@ export function shadcnVue0Components() {
     [SliderRoot.name, '滑块', '<SliderRoot></SliderRoot>'],
     [SliderThumb.name, '滑块', '<SliderThumb></SliderThumb>'],
     [SliderTrack.name, '滑块', '<SliderTrack></SliderTrack>'],
+    [SwitchRoot.name, '开关', '<SwitchRoot></SwitchRoot>'],
+    [SwitchThumb.name, '开关', '<SwitchThumb></SwitchThumb>'],
 
   ]
   return componentsReducer(map)
