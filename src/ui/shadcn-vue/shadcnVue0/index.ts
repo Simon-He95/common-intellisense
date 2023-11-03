@@ -150,6 +150,8 @@ import ToastRoot from './ToastRoot.json'
 import ToastTitle from './ToastTitle.json'
 import ToastViewport from './ToastViewport.json'
 import Toggle from './Toggle.json'
+import ToggleGroupItem from './ToggleGroupItem.json'
+import ToggleGroupRoot from './ToggleGroupRoot.json'
 
 export function shadcnVue0() {
   const map: any = [
@@ -306,6 +308,8 @@ export function shadcnVue0() {
     ToastTitle,
     ToastViewport,
     Toggle,
+    ToggleGroupItem,
+    ToggleGroupRoot,
   ]
 
   return propsReducer(map)
@@ -465,6 +469,8 @@ export function shadcnVue0Components() {
     [ToastTitle.name, '简洁消息', '<ToastTitle></ToastTitle>'],
     [ToastViewport.name, '简洁消息', '<ToastViewport></ToastViewport>'],
     [Toggle.name, '切换', '<Toggle></Toggle>'],
+    [ToggleGroupItem.name, '切换组', '<ToggleGroupItem></ToggleGroupItem>'],
+    [ToggleGroupRoot.name, '切换组', '<ToggleGroupRoot></ToggleGroupRoot>'],
 
   ]
   return componentsReducer(map)
