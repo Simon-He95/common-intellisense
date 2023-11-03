@@ -188,7 +188,7 @@ const nameMap: any = {
   '@skeletonlabs/skeleton': 'skeleton',
   '@nextuiOrg/react': 'nextui',
   '@nuxt/ui': 'nuxtui',
-  'radix-vue': 'shadcnvue',
+  'radix-vue': 'radixVue',
   'shadcn-vue': 'shadcnvue',
 }
 function findUI() {

@@ -1,0 +1,66 @@
+{
+  "name": "NavigationMenuContent",
+  "props": {
+    "as": {
+      "default": "div",
+      "value": "",
+      "type": "string | Component",
+      "description": "The element or component this component should render as. Can be overwrite by asChild",
+      "description_zh": "此组件应呈现为的元素或组件。可以被 asChild 覆盖"
+    },
+    "asChild": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Change the default rendered element for the one passed as a child, merging their props and behavior.",
+      "description_zh": "更改作为子元素传递的默认渲染元素，合并其道具和行为。"
+    },
+    "disableOutsidePointerEvents": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "When true, hover/focus/click interactions will be disabled on elements outside the bounds of the component. Users will need to click twice on outside elements to interact with them: Once to close the navigation menu, and again to activate the element.",
+      "description_zh": "如果为 true，则将在组件边界之外的元素上禁用悬停/聚焦/单击交互。用户需要单击两次外部元素才能与它们交互：一次关闭导航菜单，另一次激活元素。"
+    },
+    "forceMount": {
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "description": "Used to force mounting when more control is needed. Useful when controlling animation with Vue.js animation libraries.",
+      "description_zh": "用于在需要更多控制时强制安装。在使用 Vue.js 动画库控制动画时很有用。"
+    }
+  },
+  "events": [
+    {
+      "name": "escapeKeyDown",
+      "prams": "(event: KeyboardEvent) => void",
+      "description": "Event handler called when the escape key is down. It can be prevented by calling event.preventDefault.",
+      "description_zh": "当转义键关闭时调用的事件处理程序。可以通过调用 event.preventDefault 来防止它。",
+      "value": ""
+    },
+    {
+      "name": "pointerDownOutside",
+      "prams": "(event: PointerDownOutsideEvent) => void",
+      "description": "Event handler called when a pointer event occurs outside the bounds of the component. It can be prevented by calling event.preventDefault.",
+      "description_zh": "当指针事件发生在组件边界之外时调用的事件处理程序。可以通过调用 event.preventDefault 来防止它。",
+      "value": ""
+    },
+    {
+      "name": "focusOutside",
+      "prams": "(event: FocusOutsideEvent) => void",
+      "description": "Event handler called when focus moves outside the bounds of the component. It can be prevented by calling event.preventDefault.",
+      "description_zh": "当焦点移出组件边界时调用的事件处理程序。可以通过调用 event.preventDefault 来防止它。",
+      "value": ""
+    },
+    {
+      "name": "interactOutside",
+      "prams": "(event: FocusEvent | MouseEvent | TouchEvent) => void",
+      "description": "Event handler called when an interaction (pointer or focus event) happens outside the bounds of the component. It can be prevented by calling event.preventDefault.",
+      "description_zh": "当交互（指针或焦点事件）发生在组件边界之外时调用的事件处理程序。可以通过调用 event.preventDefault 来防止它。",
+      "value": ""
+    }
+  ],
+  "methods": [],
+  "link": "https://www.radix-vue.com/components/navigation-menu.html#root",
+  "link_zh": "https://www.radix-vue.com/components/navigation-menu.html#root"
+}

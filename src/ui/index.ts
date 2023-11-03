@@ -14,6 +14,7 @@ import { quasar2, quasar2Components } from './quasar'
 import { nextui2, nextui2Components } from './nextUi'
 import { nuxtui2, nuxtui2Components } from './nuxtUi'
 import { shadcnVue0, shadcnVue0Components } from './shadcn-vue'
+import { radixVue1, radixVue1Components } from './radix-vue'
 
 export default {
   elementUi2,
@@ -35,6 +36,7 @@ export default {
   nextui2,
   nuxtui2,
   shadcnVue0,
+  radixVue1,
   elementUi2Components,
   antd4Components,
   antd5Components,
@@ -54,4 +56,5 @@ export default {
   nextui2Components,
   nuxtui2Components,
   shadcnVue0Components,
+  radixVue1Components,
 }
