@@ -1,0 +1,252 @@
+{
+  "name": "Table.Column",
+  "props": {
+    "align": {
+      "value": ["left", "right", "center"],
+      "default": "left",
+      "type": "left | right | center",
+      "description": "设置列的对齐方式",
+      "description_zh": "设置列的对齐方式"
+    },
+    "className": {
+      "value": "",
+      "default": "-",
+      "type": "string",
+      "description": "列样式类名",
+      "description_zh": "列样式类名"
+    },
+    ":colSpan": {
+      "value": "",
+      "default": "-",
+      "type": "number",
+      "description": "表头列合并，设置为 0 时，不渲染",
+      "description_zh": "表头列合并，设置为 0 时，不渲染"
+    },
+    ":dataIndex": {
+      "value": "",
+      "default": "-",
+      "type": "string | string[]",
+      "description": "列数据在数据项中对应的路径，支持通过数组查询嵌套路径",
+      "description_zh": "列数据在数据项中对应的路径，支持通过数组查询嵌套路径"
+    },
+    ":defaultFilteredValue": {
+      "value": "",
+      "default": "-",
+      "type": "string[]",
+      "description": "默认筛选值",
+      "description_zh": "默认筛选值"
+    },
+    "filterResetToDefaultFilteredValue": {
+      "value": "",
+      "default": "false",
+      "type": "boolean",
+      "description": "点击重置按钮的时候，是否恢复默认筛选值",
+      "description_zh": "点击重置按钮的时候，是否恢复默认筛选值"
+    },
+    "defaultSortOrder": {
+      "value": ["ascend", "descend"],
+      "default": "-",
+      "type": "ascend | descend",
+      "description": "默认排序顺序",
+      "description_zh": "默认排序顺序"
+    },
+    "ellipsis": {
+      "value": "",
+      "default": "false",
+      "type": "boolean | { showTitle?: boolean }",
+      "description": "超过宽度将自动省略，暂不支持和排序筛选一起使用。设置为 true 或 { showTitle?: boolean } 时，表格布局将变成 tableLayout=\"fixed\"。",
+      "description_zh": "超过宽度将自动省略，暂不支持和排序筛选一起使用。设置为 true 或 { showTitle?: boolean } 时，表格布局将变成 tableLayout=\"fixed\"。"
+    },
+    ":filterDropdown": {
+      "value": "",
+      "default": "-",
+      "type": "ReactNode | (props: FilterDropdownProps) => ReactNode",
+      "description": "可以自定义筛选菜单，此函数只负责渲染图层，需要自行编写各种交互",
+      "description_zh": "可以自定义筛选菜单，此函数只负责渲染图层，需要自行编写各种交互"
+    },
+    "filterDropdownOpen": {
+      "value": "",
+      "default": "-",
+      "type": "boolean",
+      "description": "用于控制自定义筛选菜单是否可见",
+      "description_zh": "用于控制自定义筛选菜单是否可见"
+    },
+    "filtered": {
+      "value": "",
+      "default": "false",
+      "type": "boolean",
+      "description": "标识数据是否经过过滤，筛选图标会高亮",
+      "description_zh": "标识数据是否经过过滤，筛选图标会高亮"
+    },
+    ":filteredValue": {
+      "value": "",
+      "default": "-",
+      "type": "string[]",
+      "description": "筛选的受控属性，外界可用此控制列的筛选状态，值为已筛选的 value 数组",
+      "description_zh": "筛选的受控属性，外界可用此控制列的筛选状态，值为已筛选的 value 数组"
+    },
+    ":filterIcon": {
+      "value": "",
+      "default": "false",
+      "type": "ReactNode | (filtered: boolean) => ReactNode",
+      "description": "自定义 filter 图标。",
+      "description_zh": "自定义 filter 图标。"
+    },
+    "filterMultiple": {
+      "value": "",
+      "default": "true",
+      "type": "boolean",
+      "description": "是否多选",
+      "description_zh": "是否多选"
+    },
+    "filterMode": {
+      "value": ["menu", "tree"],
+      "default": "'menu'",
+      "type": "'menu' | 'tree'",
+      "description": "指定筛选菜单的用户界面",
+      "description_zh": "指定筛选菜单的用户界面"
+    },
+    "filterSearch": {
+      "value": "",
+      "default": "false",
+      "type": "boolean | function(input, record):boolean",
+      "description": "筛选菜单项是否可搜索",
+      "description_zh": "筛选菜单项是否可搜索"
+    },
+    ":filters": {
+      "value": "",
+      "default": "-",
+      "type": "object[]",
+      "description": "表头的筛选菜单项",
+      "description_zh": "表头的筛选菜单项"
+    },
+    "fixed": {
+      "value": "",
+      "default": "false",
+      "type": "boolean | string",
+      "description": "（IE 下无效）列是否固定，可选 true (等效于 left) left right",
+      "description_zh": "（IE 下无效）列是否固定，可选 true (等效于 left) left right"
+    },
+    "key": {
+      "value": "",
+      "default": "-",
+      "type": "string",
+      "description": "React 需要的 key，如果已经设置了唯一的 dataIndex，可以忽略这个属性",
+      "description_zh": "React 需要的 key，如果已经设置了唯一的 dataIndex，可以忽略这个属性"
+    },
+    ":render": {
+      "value": "",
+      "default": "-",
+      "type": "function(text, record, index) {}",
+      "description": "生成复杂数据的渲染函数，参数分别为当前行的值，当前行数据，行索引",
+      "description_zh": "生成复杂数据的渲染函数，参数分别为当前行的值，当前行数据，行索引"
+    },
+    ":responsive": {
+      "value": "",
+      "default": "-",
+      "type": "Breakpoint[]",
+      "description": "响应式 breakpoint 配置列表。未设置则始终可见。",
+      "description_zh": "响应式 breakpoint 配置列表。未设置则始终可见。"
+    },
+    ":rowScope": {
+      "value": "",
+      "default": "-",
+      "type": "row | rowgroup",
+      "description": "设置列范围",
+      "description_zh": "设置列范围"
+    },
+    ":shouldCellUpdate": {
+      "value": "",
+      "default": "-",
+      "type": "(record, prevRecord) => boolean",
+      "description": "自定义单元格渲染时机",
+      "description_zh": "自定义单元格渲染时机"
+    },
+    "showSorterTooltip": {
+      "value": "",
+      "default": "true",
+      "type": "boolean | Tooltip props",
+      "description": "表头显示下一次排序的 tooltip 提示, 覆盖 table 中 showSorterTooltip",
+      "description_zh": "表头显示下一次排序的 tooltip 提示, 覆盖 table 中 showSorterTooltip"
+    },
+    ":sortDirections": {
+      "value": "",
+      "default": "[ascend, descend]",
+      "type": "Array",
+      "description": "支持的排序方式，覆盖 Table 中 sortDirections， 取值为 ascend descend",
+      "description_zh": "支持的排序方式，覆盖 Table 中 sortDirections， 取值为 ascend descend"
+    },
+    ":sorter": {
+      "value": "",
+      "default": "-",
+      "type": "function | boolean | { compare: function, multiple: number }",
+      "description": "排序函数，本地排序使用一个函数(参考 Array.sort 的 compareFunction)。需要服务端排序可设为 true（单列排序） 或 { multiple: number }（多列排序）",
+      "description_zh": "排序函数，本地排序使用一个函数(参考 Array.sort 的 compareFunction)。需要服务端排序可设为 true（单列排序） 或 { multiple: number }（多列排序）"
+    },
+    "sortOrder": {
+      "value": ["ascend", "descend"],
+      "default": "-",
+      "type": "ascend | descend | null",
+      "description": "排序的受控属性，外界可用此控制列的排序，可设置为 ascend descend null",
+      "description_zh": "排序的受控属性，外界可用此控制列的排序，可设置为 ascend descend null"
+    },
+    ":sortIcon": {
+      "value": "",
+      "default": "-",
+      "type": "(props: { sortOrder }) => ReactNode",
+      "description": "自定义 sort 图标",
+      "description_zh": "自定义 sort 图标"
+    },
+    ":title": {
+      "value": "",
+      "default": "-",
+      "type": "ReactNode | ({ sortOrder, sortColumn, filters }) => ReactNode",
+      "description": "列头显示文字（函数用法 3.10.0 后支持）",
+      "description_zh": "列头显示文字（函数用法 3.10.0 后支持）"
+    },
+    "width": {
+      "value": "",
+      "default": "-",
+      "type": "string | number",
+      "description": "列宽度（指定了也不生效？）",
+      "description_zh": "列宽度（指定了也不生效？）"
+    }
+  },
+  "methods": [{
+    "name": "nativeElement",
+    "type": "HTMLDivElement",
+    "description": "最外层 div 元素"
+  }, {
+    "name": "scrollTo",
+    "type": "(config: { index?: number, key?: React.Key, top?: number }) => void",
+    "description": "滚动到目标位置（设置 key 时为 Record 对应的 rowKey）"
+  }],
+  "events": [
+    {
+      "name": "onCell",
+      "description": "设置单元格属性",
+      "params": "function(record, rowIndex)",
+      "description_zh": "设置单元格属性"
+    },
+    {
+      "name": "onFilter",
+      "description": "本地模式下，确定筛选的运行函数",
+      "params": "function",
+      "description_zh": "本地模式下，确定筛选的运行函数"
+    },
+    {
+      "name": "onFilterDropdownOpenChange",
+      "description": "自定义筛选菜单可见变化时调用",
+      "params": "function(visible) {}",
+      "description_zh": "自定义筛选菜单可见变化时调用"
+    },
+    {
+      "name": "onHeaderCell",
+      "description": "设置头部单元格属性",
+      "params": "function(column)",
+      "description_zh": "设置头部单元格属性"
+    }
+  ],
+  "link": "https://ant.design/components//table",
+  "link_zh": "https://ant.design/components//table-cn"
+}

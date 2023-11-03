@@ -1,174 +1,200 @@
 import { getLocale } from '@vscode-use/utils'
 import { componentsReducer, propsReducer } from '../../utils'
-import Divider from './divider.json'
-import Affix from './affix.json'
-import Row from './row.json'
-import Col from './col.json'
-import Layout from './layout.json'
-import Sider from './sider.json'
-import Space from './space.json'
-import Button from './button.json'
-import Icon from './icon.json'
-import Text from './text.json'
-import Title from './title.json'
-import Paragraph from './paragraph.json'
-import Anchor from './anchor.json'
-import Breadcrumb from './breadcrumb.json'
-import Dropdown from './dropdown.json'
-import DropdownButton from './dropdownButton.json'
-import Menu from './menu.json'
-import Pagination from './pagination.json'
-import Steps from './steps.json'
-import AutoComplete from './autoComplete.json'
-import Cascader from './cascader.json'
-import Checkbox from './checkbox.json'
-import CheckboxGroup from './checkboxGroup.json'
-import ColorPicker from './colorPicker.json'
-import DatePicker from './datePicker.json'
-import RangePicker from './rangePicker.json'
-import Form from './form.json'
-import FormItem from './formItem.json'
-import Input from './input.json'
-import InputNumber from './inputNumber.json'
-import InputPassword from './inputPassword.json'
-import InputSearch from './inputSearch.json'
+import Affix from './Affix.json'
+import Alert from './Alert.json'
+import Anchor from './Anchor.json'
+import AnchorItem from './AnchorItem.json'
+import AutoComplete from './AutoComplete.json'
+import Avatar from './Avatar.json'
+import AvatarGroup from './AvatarGroup.json'
+import BadgeRibbon from './BadegRibbon.json'
+import Badge from './Badge.json'
+import Breadcrumb from './Breadcrumb.json'
+import BreadcrumbItem from './BreadcrumbItem.json'
+import Button from './Button.json'
+import Calendar from './Calendar.json'
+import Card from './Card.json'
+import CardGrid from './CardGrid.json'
+import CardMeta from './CardMeta.json'
+import Carousel from './Carousel.json'
+import Cascader from './Cascader.json'
+import Checkbox from './Checkbox.json'
+import CheckboxGroup from './CheckboxGroup.json'
+import Col from './Col.json'
+import Collapse from './Collapse.json'
+import CollapsePanel from './CollapsePanel.json'
+import ColorPicker from './ColorPicker.json'
+import DatePicker from './DatePicker.json'
+import DescriptionItem from './DescriptionItem.json'
+import Descriptions from './Descriptions.json'
+import Divider from './Divider.json'
+import Drawer from './Drawer.json'
+import Dropdown from './Dropdown.json'
+import DropdownButton from './DropdownButton.json'
+import Empty from './Empty.json'
+import Form from './Form.json'
+import FormItem from './FormItem.json'
+import Icon from './Icon.json'
+import Image from './Image.json'
+import ImagePreviewGroup from './ImagePreviewGroup.json'
+import Input from './Input.json'
+import InputNumber from './InputNumber.json'
+import InputPassword from './InputPassword.json'
+import InputSearch from './InputSearch.json'
 import InputTextArea from './InputTextArea.json'
-import Mentions from './mentions.json'
-import Radio from './radio.json'
-import RadioGroup from './radioGroup.json'
-import Rate from './rate.json'
-import Select from './select.json'
-import Slider from './slider.json'
-import Switch from './switch.json'
-import TimePicker from './timePicker.json'
-import Transfer from './transfer.json'
-import TreeSelect from './treeSelect.json'
-import Upload from './upload.json'
-import Avatar from './avatar.json'
-import AvatarGroup from './avatarGroup.json'
-import Badge from './badge.json'
-import BadgeRibbon from './badegRibbon.json'
-import Calendar from './calendar.json'
-import Card from './card.json'
-import CardGrid from './cardGrid.json'
-import CardMeta from './cardMeta.json'
-import Carousel from './carousel.json'
-import Collapse from './collapse.json'
-import CollapsePanel from './collapsePanel.json'
-import Descriptions from './descriptions.json'
-import DescriptionItem from './descriptionItem.json'
-import Empty from './empty.json'
-import Image from './image.json'
-import ImagePreviewGroup from './imagePreviewGroup.json'
-import List from './list.json'
-import ListItemMeta from './listItemMeta.json'
-import ListItem from './listItem.json'
-import Popover from './popover.json'
-import QRCode from './qrCode.json'
-import Segmented from './segmented.json'
-import Statistic from './statistic.json'
-import StatisticCountdown from './statisticCountdown.json'
-import Table from './table.json'
-import Tabs from './tabs.json'
-import Tag from './tag.json'
-import TagCheckableTag from './tagCheckableTag.json'
-import Timeline from './timeline.json'
-import Tooltip from './tooltip.json'
-import Tour from './tour.json'
-import Tree from './tree.json'
-import Alert from './alert.json'
-import Drawer from './drawer.json'
-import Modal from './modal.json'
-import Popconfirm from './popconfirm.json'
-import Progress from './progress.json'
-import Result from './result.json'
-import Spin from './spin.json'
+import Layout from './Layout.json'
+import LayoutSider from './LayoutSider.json'
+import List from './List.json'
+import ListGrid from './ListGrid.json'
+import ListItem from './ListItem.json'
+import ListItemMeta from './ListItemMeta.json'
+import Mentions from './Mentions.json'
+import Menu from './Menu.json'
+import Modal from './Modal.json'
+import Pagination from './Pagination.json'
+import Popconfirm from './Popconfirm.json'
+import Popover from './Popover.json'
+import Progress from './Progress.json'
+import QRCode from './QrCode.json'
+import Radio from './Radio.json'
+import RadioButton from './RadioButton.json'
+import RadioGroup from './RadioGroup.json'
+import RangePicker from './RangePicker.json'
+import Rate from './Rate.json'
+import Result from './Result.json'
+import Row from './Row.json'
+import Segmented from './Segmented.json'
+import Select from './Select.json'
+import Slider from './Slider.json'
+import Space from './Space.json'
+import Spin from './Spin.json'
+import Statistic from './Statistic.json'
+import StatisticCountdown from './StatisticCountdown.json'
+import Steps from './Steps.json'
+import Switch from './Switch.json'
+import Table from './Table.json'
+import TableColumn from './TableColumn.json'
+import TableColumnGroup from './TableColumnGroup.json'
+import Tabs from './Tabs.json'
+import Tag from './Tag.json'
+import TagCheckableTag from './TagCheckableTag.json'
+import Timeline from './Timeline.json'
+import TimePicker from './TimePicker.json'
+import Tooltip from './Tooltip.json'
+import Tour from './Tour.json'
+import Transfer from './Transfer.json'
+import Tree from './Tree.json'
+import TreeSelect from './TreeSelect.json'
+import TypographyParagraph from './TypographyParagraph.json'
+import TypographyText from './TypographyText.json'
+import TypographyTitle from './TypographyTitle.json'
+import Upload from './Upload.json'
+import FloatButton from './FloatButton.json'
+import FloatButtonBackTop from './FloatButtonBackTop.json'
+import FloatButtonGroup from './FloatButtonGroup.json'
+import Watermark from './Watermark.json'
+import App from './App.json'
+import ConfigProvider from './ConfigProvider.json'
+import Skeleton from './Skeleton.json'
 
 export function antd5() {
   const map: any = [
     Affix,
-    Divider,
-    Row,
-    Col,
-    Layout,
-    Sider,
-    Space,
-    Button,
-    Icon,
-    Text,
-    Title,
-    Paragraph,
+    Alert,
     Anchor,
-    Breadcrumb,
-    Dropdown,
-    DropdownButton,
-    Menu,
-    Pagination,
-    Steps,
+    AnchorItem,
     AutoComplete,
-    Cascader,
-    Checkbox,
-    CheckboxGroup,
-    ColorPicker,
-    DatePicker,
-    RangePicker,
-    Form,
-    FormItem,
-    Input,
-    InputNumber,
-    InputPassword,
-    InputSearch,
-    InputTextArea,
-    Mentions,
-    Radio,
-    RadioGroup,
-    Rate,
-    Select,
-    Slider,
-    Switch,
-    TimePicker,
-    Transfer,
-    TreeSelect,
-    Upload,
     Avatar,
     AvatarGroup,
-    Badge,
     BadgeRibbon,
+    Badge,
+    Breadcrumb,
+    BreadcrumbItem,
+    Button,
     Calendar,
     Card,
     CardGrid,
     CardMeta,
     Carousel,
+    Cascader,
+    Checkbox,
+    CheckboxGroup,
+    Col,
     Collapse,
     CollapsePanel,
-    Descriptions,
+    ColorPicker,
+    DatePicker,
     DescriptionItem,
+    Descriptions,
+    Divider,
+    Drawer,
+    Dropdown,
+    DropdownButton,
     Empty,
+    Form,
+    FormItem,
+    Icon,
     Image,
     ImagePreviewGroup,
+    Input,
+    InputNumber,
+    InputPassword,
+    InputSearch,
+    InputTextArea,
+    Layout,
+    LayoutSider,
     List,
+    ListGrid,
     ListItem,
     ListItemMeta,
+    Mentions,
+    Menu,
+    Modal,
+    Pagination,
+    Popconfirm,
     Popover,
+    Progress,
     QRCode,
+    Radio,
+    RadioButton,
+    RadioGroup,
+    RangePicker,
+    Rate,
+    Result,
+    Row,
     Segmented,
+    Select,
+    Slider,
+    Space,
+    Spin,
     Statistic,
     StatisticCountdown,
+    Steps,
+    Switch,
     Table,
+    TableColumn,
+    TableColumnGroup,
     Tabs,
     Tag,
     TagCheckableTag,
     Timeline,
+    TimePicker,
     Tooltip,
     Tour,
+    Transfer,
     Tree,
-    Alert,
-    Drawer,
-    Modal,
-    Popconfirm,
-    Progress,
-    Result,
-    Spin,
+    TreeSelect,
+    TypographyParagraph,
+    TypographyText,
+    TypographyTitle,
+    Upload,
+    FloatButton,
+    FloatButtonBackTop,
+    FloatButtonGroup,
+    Watermark,
+    App,
+    ConfigProvider,
+    Skeleton,
   ]
 
   return propsReducer(map)
@@ -181,8 +207,6 @@ export function antd5Components() {
     ? [
         [Button, '按钮', '<Button type="primary">Primary Button</Button>'],
         ['Typography', '排版', '<Typography></Typography>'],
-        [Title, '标题组件', '<Title></Title>'],
-        [Paragraph, '排版', '<Paragraph></Paragraph>'],
         ['Link', '文本与超链接组件', `<Link href="https://ant.design" target="_blank">
   Ant Design (Link)
 </Link>`],
@@ -192,7 +216,6 @@ export function antd5Components() {
         [Layout, '布局容器，其下可嵌套 Header Sider Content Footer 或 Layout 本身，可以放在任何父容器中。'],
         ['Content', '内容部分，自带默认样式，其下可嵌套任何元素，只能放在 Layout 中'],
         ['Header', '顶部布局，自带默认样式，其下可嵌套任何元素，只能放在 Layout 中。'],
-        [Sider, '侧边栏，自带默认样式及基本功能，其下可嵌套任何元素，只能放在 Layout 中。'],
         ['Footer', '底部布局，自带默认样式，其下可嵌套任何元素，只能放在 Layout 中。'],
         [Space, '间距'],
         [Anchor, '锚点'],
@@ -227,10 +250,10 @@ export function antd5Components() {
 />`],
         [Cascader, '级联选择', '<Cascader options={options} onChange={onChange} placeholder="Please select" />'],
         [Checkbox, '多选框', '<Checkbox onChange={onChange}>Checkbox</Checkbox>'],
-        ['Checkbox.Group', '多选框组', '<Checkbox.Group style={{ width: \'100%\' }} onChange={onChange}></Checkbox.Group>'],
+        [CheckboxGroup, '多选框组', '<Checkbox.Group style={{ width: \'100%\' }} onChange={onChange}></Checkbox.Group>'],
         [ColorPicker, '颜色选择器', '<ColorPicker />'],
         [DatePicker, '日期选择框', '<DatePicker onChange={onChange} />'],
-        ['DatePicker.RangePicker', '日期选择框'],
+        [RangePicker, '日期选择框'],
         [Form, '表单', `<Form
   name="basic"
   labelCol={{ span: 8 }}
@@ -241,7 +264,7 @@ export function antd5Components() {
   onFinishFailed={onFinishFailed}
   autoComplete="off"
 ></Form>`],
-        ['Form.Item', '表单项', `<Form.Item
+        [FormItem, '表单项', `<Form.Item
   label="Username"
   name="username"
   rules={[{ required: true, message: 'Please input your username!' }]}
@@ -249,8 +272,8 @@ export function antd5Components() {
   <Input />
 </Form.Item>`],
         [Input, '输入框', '<Input placeholder="Basic usage" />'],
-        ['Input.Search', '输入框'],
-        ['Input.TextArea', '输入框'],
+        [InputSearch, '输入框'],
+        [InputTextArea, '输入框'],
         [InputNumber, '数字输入框', '<InputNumber min={1} max={10} defaultValue={3} onChange={onChange} />'],
         [Mentions, '提及', '<Mentions options={options} />'],
         [Radio, '单选框', '<Radio>Radio</Radio>'],
@@ -310,7 +333,7 @@ export function antd5Components() {
   <p>Card content</p>
   <p>Card content</p>
 </Card>`],
-        ['Card.Grid', '网格型内嵌卡片', 'Card.Grid style={gridStyle}>Content</Card.Grid>'],
+        [CardGrid, '网格型内嵌卡片', 'Card.Grid style={gridStyle}>Content</Card.Grid>'],
         [Carousel, '走马灯', `<Carousel afterChange={onChange}>
   <div>
     <h3 style={contentStyle}>1</h3>
@@ -326,11 +349,11 @@ export function antd5Components() {
   </div>
 </Carousel>`],
         [Collapse, '折叠面板', '<Collapse items={items} defaultActiveKey={[\'1\']} />'],
-        ['Panel', '折叠面板项', `<Panel header="This is panel header 1" key="1">
+        [CollapsePanel, '折叠面板项', `<Panel header="This is panel header 1" key="1">
   <p>{text}</p>
 </Panel>`],
         [Descriptions, '描述列表'],
-        ['Descriptions.Item', '描述列表'],
+        [DescriptionItem, '描述列表'],
         [Empty, '空状态', '<Empty />'],
         [Image, '图片', `<Image
   width={200}
@@ -347,20 +370,20 @@ export function antd5Components() {
     </List.Item>
   )}
 />`],
-        ['List.Item', '列表项', `<List.Item>
-  <Typography.Text mark>[ITEM]</Typography.Text> {item}
+        [ListItem, '列表项', `<List.Item>
+<Typography.Text mark>[ITEM]</Typography.Text> {item}
 </List.Item>`],
+        [ListGrid, '列表项', `<List.Grid>
+<Typography.Text mark>[ITEM]</Typography.Text> {item}
+</List.Grid>`],
         [Popover, '气泡卡片', `<Popover content={content} title="Title">
   <Button type="primary">Hover me</Button>
 </Popover>`],
         [QRCode, '二维码', '<QRCode value={text || \'-\'} />'],
         [Segmented, '分段控制器', '<Segmented options={[\'Daily\', \'Weekly\', \'Monthly\', \'Quarterly\', \'Yearly\']} />'],
         [Statistic, '统计数值'],
-        ['Statistic.Countdown', '统计数值'],
+        [StatisticCountdown, '统计数值'],
         [Table, '表格'],
-        ['TabPane', '标签项', `<TabPane tab="Tab 1" key="1">
-  Content of Tab Pane 1
-</TabPane>`],
         [Tabs, '标签页', '<Tabs defaultActiveKey="1" items={items} onChange={onChange} />'],
         [Tag, '标签', '<Tag>Tag 1</Tag>'],
         [Timeline, '时间轴', `<Timeline onChange={onChange}>
@@ -412,25 +435,28 @@ export function antd5Components() {
     <Button key="buy">Buy Again</Button>,
   ]}
 />`],
-        ['Skeleton', '骨架屏', '<Skeleton />'],
+        [Skeleton, '骨架屏', '<Skeleton />'],
         [Spin, '加载中', '<Spin />'],
         [Affix, '固钉', `<Affix offsetTop={top}>
   <Button type="primary" onClick={() => setTop(top + 10)}>
     Affix top
   </Button>
 </Affix>`],
-        ['App', '包裹组件'],
-        ['ConfigProvider', '全局化配置'],
-        ['FloatButton', '悬浮按钮', '<FloatButton onClick={() => console.log(\'click\')} />'],
-        ['Watermark', '水印', `<Watermark content="Ant Design">
+        [App, '包裹组件'],
+        [ConfigProvider, '全局化配置'],
+        [FloatButton, '悬浮按钮', '<FloatButton onClick={() => console.log(\'click\')} />'],
+        [FloatButtonBackTop, '悬浮按钮', '<FloatButton.BackTop onClick={() => console.log(\'click\')} />'],
+        [FloatButtonGroup, '悬浮按钮', '<FloatButton.Group onClick={() => console.log(\'click\')} />'],
+        [Watermark, '水印', `<Watermark content="Ant Design">
   <div style={{ height: 500 }} />
 </Watermark>`],
       ]
     : [
         [Button, 'Button', '<Button type="primary">Primary Button</Button>'],
         ['Typography', 'Typography', '<Typography></Typography>'],
-        [Title, 'Title component', '<Title></Title>'],
-        [Paragraph, 'Typesetting', '<Paragraph></Paragraph>'],
+        [TypographyParagraph, 'TypographyParagraph', '<TypographyParagraph></TypographyParagraph>'],
+        [TypographyText, 'TypographyText', '<TypographyText></TypographyText>'],
+        [TypographyTitle, 'TypographyTitle', '<TypographyTitle></TypographyTitle>'],
         ['Link', 'Text and hyperlink components', `<Link href="https://ant.design" target="_blank">
    Ant Design (Link)
 </Link>`],
@@ -440,11 +466,13 @@ export function antd5Components() {
         [Layout, 'Layout container, under which Header Sider Content Footer or Layout itself can be nested, which can be placed in any parent container. '],
         ['Content', 'The content part has its own default style. Any element can be nested under it and can only be placed in Layout'],
         ['Header', 'Top layout, with its own default style, any element can be nested under it, and can only be placed in Layout. '],
-        [Sider, 'The sidebar has its own default style and basic functions. Any element can be nested under it and can only be placed in Layout. '],
+        [LayoutSider, 'The sidebar has its own default style and basic functions. Any element can be nested under it and can only be placed in Layout. '],
         ['Footer', 'Bottom layout, with its own default style, any element can be nested under it, and can only be placed in Layout. '],
         [Space, 'spacing'],
         [Anchor, 'anchor'],
+        [AnchorItem, 'anchor item'],
         [Breadcrumb, 'breadcrumb'],
+        [BreadcrumbItem, 'BreadcrumbItem'],
         [Dropdown, 'Dropdown menu'],
         [Menu, 'Navigation menu'],
         [Pagination, 'Pagination', '<Pagination defaultCurrent={1} total={50} />'],
@@ -475,10 +503,10 @@ export function antd5Components() {
 />`],
         [Cascader, 'Cascade selection', '<Cascader options={options} onChange={onChange} placeholder="Please select" />'],
         [Checkbox, 'Multiple checkbox', '<Checkbox onChange={onChange}>Checkbox</Checkbox>'],
-        ['Checkbox.Group', 'Multiple checkbox group', '<Checkbox.Group style={{ width: \'100%\' }} onChange={onChange}></Checkbox.Group>'],
+        [CheckboxGroup, 'Multiple checkbox group', '<Checkbox.Group style={{ width: \'100%\' }} onChange={onChange}></Checkbox.Group>'],
         [ColorPicker, 'Color Picker', '<ColorPicker />'],
         [DatePicker, 'Date selection box', '<DatePicker onChange={onChange} />'],
-        ['DatePicker.RangePicker', 'Date selection box'],
+        [RangePicker, 'Date selection box'],
         [Form, 'form', `<Form
    name="basic"
    labelCol={{ span: 8 }}
@@ -489,7 +517,7 @@ export function antd5Components() {
    onFinishFailed={onFinishFailed}
    autoComplete="off"
 ></Form>`],
-        ['Form.Item', 'Form item', `<Form.Item
+        [FormItem, 'Form item', `<Form.Item
    label="Username"
    name="username"
    rules={[{ required: true, message: 'Please input your username!' }]}
@@ -497,13 +525,13 @@ export function antd5Components() {
    <Input />
 </Form.Item>`],
         [Input, 'input box', '<Input placeholder="Basic usage" />'],
-        ['Input.Search', 'input box'],
-        ['Input.TextArea', 'input box'],
+        [InputSearch, 'input box'],
+        [InputTextArea, 'input box'],
         [InputNumber, 'Number input box', '<InputNumber min={1} max={10} defaultValue={3} onChange={onChange} />'],
         [Mentions, 'mentions', '<Mentions options={options} />'],
         [Radio, 'Radio button', '<Radio>Radio</Radio>'],
-        ['Radio.Button', 'Radio button button', '<Radio.Button>Radio</Radio.Button>'],
-        ['Radio.Group', 'Radio group', `<Radio.Group name="radiogroup" defaultValue={1}>
+        [RadioButton, 'Radio button button', '<Radio.Button>Radio</Radio.Button>'],
+        [RadioGroup, 'Radio group', `<Radio.Group name="radiogroup" defaultValue={1}>
    <Radio value={1}>A</Radio>
    <Radio value={2}>B</Radio>
    <Radio value={3}>C</Radio>
@@ -558,7 +586,7 @@ export function antd5Components() {
    <p>Card content</p>
    <p>Card content</p>
 </Card>`],
-        ['Card.Grid', 'Grid style embedded card', 'Card.Grid style={gridStyle}>Content</Card.Grid>'],
+        [CardGrid, 'Grid style embedded card', 'Card.Grid style={gridStyle}>Content</Card.Grid>'],
         [Carousel, 'Carousel', `<Carousel afterChange={onChange}>
    <div>
      <h3 style={contentStyle}>1</h3>
@@ -574,11 +602,11 @@ export function antd5Components() {
    </div>
 </Carousel>`],
         [Collapse, 'collapse panel', '<Collapse items={items} defaultActiveKey={[\'1\']} />'],
-        ['Panel', 'Collapse panel item', `<Panel header="This is panel header 1" key="1">
+        [CollapsePanel, 'Collapse panel item', `<Panel header="This is panel header 1" key="1">
    <p>{text}</p>
 </Panel>`],
         [Descriptions, 'Description list'],
-        ['Descriptions.Item', 'Description list'],
+        [DescriptionItem, 'Description list'],
         [Empty, 'Empty state', '<Empty />'],
         [Image, 'picture', `<Image
    width={200}
@@ -595,7 +623,7 @@ export function antd5Components() {
      </List.Item>
    )}
 />`],
-        ['List.Item', 'List item', `<List.Item>
+        [ListItem, 'List item', `<List.Item>
    <Typography.Text mark>[ITEM]</Typography.Text> {item}
 </List.Item>`],
         [Popover, 'Bubble Card', `<Popover content={content} title="Title">
@@ -604,11 +632,10 @@ export function antd5Components() {
         [QRCode, 'QR code', '<QRCode value={text || \'-\'} />'],
         [Segmented, 'Segmented Controller', '<Segmented options={[\'Daily\', \'Weekly\', \'Monthly\', \'Quarterly\', \'Yearly\']} /> '],
         [Statistic, 'statistical value'],
-        ['Statistic.Countdown', 'statistical value'],
+        [StatisticCountdown, 'statistical value'],
         [Table, 'table'],
-        ['TabPane', 'Tab item', `<TabPane tab="Tab 1" key="1">
-   Content of Tab Pane 1
-</TabPane>`],
+        [TableColumn, 'TableColumn'],
+        [TableColumnGroup, 'TableColumnGroup'],
         [Tabs, 'Tabs', '<Tabs defaultActiveKey="1" items={items} onChange={onChange} />'],
         [Tag, 'tag', '<Tag>Tag 1</Tag>'],
         [Timeline, 'Timeline', `<Timeline onChange={onChange}>
@@ -660,17 +687,19 @@ export function antd5Components() {
      <Button key="buy">Buy Again</Button>,
    ]}
 />`],
-        ['Skeleton', 'Skeleton Screen', '<Skeleton />'],
+        [Skeleton, 'Skeleton Screen', '<Skeleton />'],
         [Spin, 'Loading', '<Spin />'],
         [Affix, 'fix', `<Affix offsetTop={top}>
    <Button type="primary" onClick={() => setTop(top + 10)}>
      Affix top
    </Button>
 </Affix>`],
-        ['App', 'Wrapped component'],
-        ['ConfigProvider', 'Global configuration'],
-        ['FloatButton', 'Floating Button', '<FloatButton onClick={() => console.log(\'click\')} />'],
-        ['Watermark', 'Watermark', `<Watermark content="Ant Design">
+        [App, 'Wrapped component'],
+        [ConfigProvider, 'Global configuration'],
+        [FloatButton, 'Floating Button', '<FloatButton onClick={() => console.log(\'click\')} />'],
+        [FloatButtonBackTop, 'Floating Button', '<FloatButton.BackTop onClick={() => console.log(\'click\')} />'],
+        [FloatButtonGroup, 'Floating Button', '<FloatButton.Group onClick={() => console.log(\'click\')} />'],
+        [Watermark, 'Watermark', `<Watermark content="Ant Design">
    <div style={{ height: 500 }} />
 </Watermark>`],
       ]
