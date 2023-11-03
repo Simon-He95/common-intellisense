@@ -1,78 +1,97 @@
 {
   "name": "ComboboxRoot",
   "props": {
-    "defaultValue": {
+    ":defaultValue": {
       "default": "",
       "value": "",
       "type": "string | string[] | object | object[]",
-      "description": "",
+      "description": "The value of the combobox when initially rendered. Use when you do not need to control the state of the Combobox",
       "description_zh": ""
     },
     "modelValue": {
       "default": "",
       "value": "",
       "type": "string | string[] | object | object[]",
-      "description": "",
+      "description": "The controlled value of the Combobox Should be binded-with with v-model.",
       "description_zh": ""
     },
     "defaultOpen": {
       "default": "",
       "value": "",
       "type": "boolean",
-      "description": "",
+      "description": "The open state of the combobox when it is initially rendered. Use when you do not need to control its open state.",
       "description_zh": ""
     },
     "open": {
-      "default": "",
+      "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "",
+      "description": "The controlled open state of the Combobox Must be binded-with with v-model.",
       "description_zh": ""
     },
     "searchTerm": {
       "default": "",
       "value": "",
       "type": "string",
-      "description": "",
+      "description": "The controlled search term of the Combobox Should be binded-with with v-model:searchTerm.",
       "description_zh": ""
     },
-    "filterFunction": {
+    ":filterFunction": {
       "default": "",
       "value": "",
       "type": "(val: Array<string | any>, term: string) => Array<any>",
-      "description": "",
+      "description": "The custom filter function for filtering ComboboxItem.",
       "description_zh": ""
     },
     "multiple": {
       "default": "",
       "value": "",
       "type": "boolean",
-      "description": "",
+      "description": "Whether multiple options can be selected or not.",
       "description_zh": ""
     },
     "dir": {
       "default": "",
-      "value": "",
-      "type": "enum",
-      "description": "",
+      "value": ["ltr", "rtl"],
+      "type": "\"ltr\" | \"rtl\"",
+      "description": "The reading direction of the combobox when applicable. If omitted, inherits globally from DirectionProvider or assumes LTR (left-to-right) reading mode.",
       "description_zh": ""
     },
     "name": {
       "default": "",
       "value": "",
       "type": "string",
-      "description": "",
+      "description": "The name of the Combobox Submitted with its owning form as part of a name/value pair.",
       "description_zh": ""
     },
     "disabled": {
       "default": "",
       "value": "",
       "type": "boolean",
-      "description": "",
+      "description": "When true, prevents the user from interacting with Combobox",
       "description_zh": ""
     }
   },
-  "events": [],
+  "events": [
+    {
+      "name": "update:modelValue",
+      "params": "(value: string) => void",
+      "description": "",
+      "description_zh": ""
+    },
+    {
+      "name": "update:open",
+      "params": "(open: boolean) => void",
+      "description": "",
+      "description_zh": ""
+    },
+    {
+      "name": "update:searchTerm",
+      "params": "(value: string) => void",
+      "description": "",
+      "description_zh": ""
+    }
+  ],
   "methods": [],
   "link": "https://www.radix-vue.com/components/combobox.html",
   "link_zh": "https://www.radix-vue.com/components/combobox.html"

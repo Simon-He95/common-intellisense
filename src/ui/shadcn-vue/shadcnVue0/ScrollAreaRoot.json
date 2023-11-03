@@ -3,37 +3,37 @@
   "props": {
     "type": {
       "default": "\"hover\"",
-      "value": "",
-      "type": "enum",
-      "description": "",
+      "value": ["auto", "always", "scroll", "hover"],
+      "type": "\"auto\" | \"always\" | \"scroll\" | \"hover\"",
+      "description": "Describes the nature of scrollbar visibility, similar to how the scrollbar preferences in MacOS control visibility of native scrollbars.",
       "description_zh": ""
     },
-    "scrollHideDelay": {
+    ":scrollHideDelay": {
       "default": "600",
       "value": "",
       "type": "number",
-      "description": "",
+      "description": "If type is set to either \"scroll\" or \"hover\", this prop determines the length of time, in milliseconds, before the scrollbars are hidden after the user stops interacting with scrollbars.",
       "description_zh": ""
     },
     "dir": {
       "default": "",
-      "value": "",
-      "type": "enum",
-      "description": "",
+      "value": ["ltr", "rtl"],
+      "type": "\"ltr\" | \"rtl\"",
+      "description": "The reading direction of the scroll area. If omitted, inherits globally from DirectionProvider or assumes LTR (left-to-right) reading mode.",
       "description_zh": ""
     },
     "as": {
       "default": "div",
       "value": "",
       "type": "string | Component",
-      "description": "",
+      "description": "The element or component this component should render as. Can be overwrite by asChild",
       "description_zh": ""
     },
     "asChild": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "",
+      "description": "Change the default rendered element for the one passed as a child, merging their props and behavior.",
       "description_zh": ""
     }
   },

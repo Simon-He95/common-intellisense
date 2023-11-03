@@ -3,126 +3,135 @@
   "props": {
     "position": {
       "default": "\"inline\"",
-      "value": "",
-      "type": "enum",
-      "description": "",
+      "value": ["inline", "popper"],
+      "type": "\"inline\" | \"popper\"",
+      "description": "The positioning mode to use, inline is the default and behaves similarly to a native MacOS menu by positioning content relative to the active item. popper positions content in the same way as our other primitives, for example Popover or DropdownMenu.",
       "description_zh": ""
     },
     "bodyLock": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "",
+      "description": "The document.body will be lock, and scrolling will be disabled.",
       "description_zh": ""
     },
     "disableOutsidePointerEvents": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "",
+      "description": "The hover/focus/click interactions will be disabled on elements outside the Content",
       "description_zh": ""
     },
     "side": {
       "default": "\"bottom\"",
-      "value": "",
-      "type": "enum",
-      "description": "",
+      "value": [
+        "top",
+        "right",
+        "bottom",
+        "left"
+      ],
+      "type": "\"top\" | \"right\" | \"bottom\" | \"left\"",
+      "description": "The hover/focus/click interactions will be disabled on elements outside the Content",
       "description_zh": ""
     },
     "sideOffset": {
       "default": "0",
       "value": "",
       "type": "number",
-      "description": "",
+      "description": "The distance in pixels from the anchor. Only available when position is set to popper.",
       "description_zh": ""
     },
     "align": {
       "default": "\"start\"",
-      "value": "",
-      "type": "enum",
-      "description": "",
+      "value": ["start", "center", "end"],
+      "type": "\"start\" | \"center\" | \"end\"",
+      "description": "The preferred alignment against the anchor. May change when collisions occur. Only available when position is set to popper.",
       "description_zh": ""
     },
-    "alignOffset": {
+    ":alignOffset": {
       "default": "0",
       "value": "",
       "type": "number",
-      "description": "",
+      "description": "An offset in pixels from the \"start\" or \"end\" alignment options. Only available when position is set to popper.",
       "description_zh": ""
     },
     "avoidCollisions": {
       "default": "true",
       "value": "",
       "type": "boolean",
-      "description": "",
+      "description": "When true, overrides the side and align preferences to prevent collisions with boundary edges. Only available when position is set to popper .",
       "description_zh": ""
     },
     "collisionBoundary": {
       "default": "[]",
       "value": "",
-      "type": "Boundary",
-      "description": "",
+      "type": "Element | null | Array<Element | null>",
+      "description": "The element used as the collision boundary. By default this is the viewport, though you can provide additional element(s) to be included in this check. Only available when position is set to popper.",
       "description_zh": ""
     },
     "collisionPadding": {
       "default": "10",
       "value": "",
-      "type": "number | Padding",
-      "description": "",
+      "type": "number | Partial<Record<Side, number>>",
+      "description": "The distance in pixels from the boundary edges where collision detection should occur. Accepts a number (same for all sides), or a partial padding object, for example: top: 20, left: 20x . Only available when position is set to popper .",
       "description_zh": ""
     },
     "arrowPadding": {
       "default": "0",
       "value": "",
       "type": "number",
-      "description": "",
+      "description": "The padding between the arrow and the edges of the content. If your content has border-radius, this will prevent it from overflowing the corners. Only available when position is set to popper.",
       "description_zh": ""
     },
     "sticky": {
       "default": "\"partial\"",
-      "value": "",
-      "type": "enum",
-      "description": "",
+      "value": ["partial", "always"],
+      "type": "\"partial\" | \"always\"",
+      "description": "The sticky behavior on the align axis. \"partial\" will keep the content in the boundary as long as the trigger is at least partially in the boundary whilst \"always\" will keep the content in the boundary regardless. Only available when position is set to popper.",
       "description_zh": ""
     },
     "hideWhenDetached": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "",
+      "description": "Whether to hide the content when the trigger becomes fully occluded. Only available when position is set to popper.",
       "description_zh": ""
     },
     "as": {
       "default": "div",
       "value": "",
       "type": "string | Component",
-      "description": "",
+      "description": "The element or component this component should render as. Can be overwrite by asChild",
       "description_zh": ""
     },
     "asChild": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "",
+      "description": "Change the default rendered element for the one passed as a child, merging their props and behavior.",
       "description_zh": ""
     }
   },
-  "events": [{
-    "name": "closeAutoFocus",
-    "params": "(event: Event) => void",
-    "description": "",
-    "description_zh": ""
-  }, {
-    "name": "escapeKeyDown",
-    "params": "(event: KeyboardEvent) => void",
-    "description": "",
-    "description_zh": ""
-  }, {
-    "name": "pointerDownOutside",
-    "params": "(event: PointerDownOutsideEvent) => void",
-    "description": "",
-    "description_zh": ""
-  }],
+  "events": [
+    {
+      "name": "closeAutoFocus",
+      "params": "(event: Event) => void",
+      "description": "Event handler called when focus moves to the trigger after closing. It can be prevented by calling event.preventDefault.",
+      "description_zh": ""
+    },
+    {
+      "name": "escapeKeyDown",
+      "params": "(event: KeyboardEvent) => void",
+      "description": "Event handler called when the escape key is down. It can be prevented by calling event.preventDefault.",
+      "description_zh": ""
+    },
+    {
+      "name": "pointerDownOutside",
+      "params": "(event: PointerDownOutsideEvent) => void",
+      "description": "Event handler called when a pointer event occurs outside the bounds of the component. It can be prevented by calling event.preventDefault.",
+      "description_zh": ""
+    }
+  ],
   "methods": [],
   "link": "https://www.radix-vue.com/components/combobox.html",
   "link_zh": "https://www.radix-vue.com/components/combobox.html"

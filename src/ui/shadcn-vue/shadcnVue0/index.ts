@@ -60,13 +60,17 @@ import DialogPortal from './DialogPortal.json'
 import DialogRoot from './DialogRoot.json'
 import DialogTitle from './DialogTitle.json'
 import DialogTrigger from './DialogTrigger.json'
+import DropdownMenuContent from './DropdownMenuContent.json'
+import DropdownMenuRoot from './DropdownMenuRoot.json'
+import DropdownMenuTrigger from './DropdownMenuTrigger.json'
+import DropdownMenuPortal from './DropdownMenuPortal.json'
 import HoverCardArrow from './HoverCardArrow.json'
 import HoverCardContent from './HoverCardContent.json'
 import HoverCardPortal from './HoverCardPortal.json'
 import HoverCardRoot from './HoverCardRoot.json'
 import HoverCardTrigger from './HoverCardTrigger.json'
 import Label from './Label.json'
-import MenubaRadioItem from './MenubaRadioItem.json'
+import MenubarRadioItem from './MenubarRadioItem.json'
 import MenubarArrow from './MenubarArrow.json'
 import MenubarCheckboxItem from './MenubarCheckboxItem.json'
 import MenubarContent from './MenubarContent.json'
@@ -109,7 +113,6 @@ import PopoverRoot from './PopoverRoot.json'
 import PopoverTrigger from './PopoverTrigger.json'
 import ProgressIndicator from './ProgressIndicator.json'
 import ProgressRoot from './ProgressRoot.json'
-import ProgressItem from './ProgressItem.json'
 import ScrollAreaCorner from './ScrollAreaCorner.json'
 import ScrollAreaRoot from './ScrollAreaRoot.json'
 import ScrollAreaScrollbar from './ScrollAreaScrollbar.json'
@@ -237,7 +240,7 @@ export function shadcnVue0() {
     HoverCardRoot,
     HoverCardTrigger,
     Label,
-    MenubaRadioItem,
+    MenubarRadioItem,
     MenubarArrow,
     MenubarCheckboxItem,
     MenubarContent,
@@ -280,7 +283,6 @@ export function shadcnVue0() {
     PopoverTrigger,
     ProgressIndicator,
     ProgressRoot,
-    ProgressItem,
     ScrollAreaCorner,
     ScrollAreaRoot,
     ScrollAreaScrollbar,
@@ -340,6 +342,10 @@ export function shadcnVue0() {
     ConfigProvider,
     VisuallyHidden,
     Primitive,
+    DropdownMenuContent,
+    DropdownMenuRoot,
+    DropdownMenuTrigger,
+    DropdownMenuPortal,
   ]
 
   return propsReducer(map)
@@ -408,13 +414,17 @@ export function shadcnVue0Components() {
     [DialogRoot.name, '对话', '<DialogRoot></DialogRoot>'],
     [DialogTitle.name, '对话', '<DialogTitle></DialogTitle>'],
     [DialogTrigger.name, '对话', '<DialogTrigger></DialogTrigger>'],
+    [DropdownMenuContent.name, '下拉菜单', '<DropdownMenuContent></DropdownMenuContent>'],
+    [DropdownMenuRoot.name, '下拉菜单', '<DropdownMenuRoot></DropdownMenuRoot>'],
+    [DropdownMenuTrigger.name, '下拉菜单', '<DropdownMenuTrigger></DropdownMenuTrigger>'],
+    [DropdownMenuPortal.name, '下拉菜单', '<DropdownMenuPortal></DropdownMenuPortal>'],
     [HoverCardArrow.name, '悬浮卡', '<HoverCardArrow></HoverCardArrow>'],
     [HoverCardContent.name, '悬浮卡', '<HoverCardContent></HoverCardContent>'],
     [HoverCardPortal.name, '悬浮卡', '<HoverCardPortal></HoverCardPortal>'],
     [HoverCardRoot.name, '悬浮卡', '<HoverCardRoot></HoverCardRoot>'],
     [HoverCardTrigger.name, '悬浮卡', '<HoverCardTrigger></HoverCardTrigger>'],
     [Label.name, '标签', '<Label></Label>'],
-    [MenubaRadioItem.name, '菜单栏', '<MenubaRadioItem></MenubaRadioItem>'],
+    [MenubarRadioItem.name, '菜单栏', '<MenubarRadioItem></MenubarRadioItem>'],
     [MenubarArrow.name, '菜单栏', '<MenubarArrow></MenubarArrow>'],
     [MenubarCheckboxItem.name, '菜单栏', '<MenubarCheckboxItem></MenubarCheckboxItem>'],
     [MenubarContent.name, '菜单栏', '<MenubarContent></MenubarContent>'],
@@ -457,7 +467,6 @@ export function shadcnVue0Components() {
     [PopoverTrigger.name, '弹出框', '<PopoverTrigger></PopoverTrigger>'],
     [ProgressIndicator.name, '单选按钮组', '<ProgressIndicator></ProgressIndicator>'],
     [ProgressIndicator.name, '单选按钮组', '<ProgressIndicator></ProgressIndicator>'],
-    [ProgressItem.name, '单选按钮组', '<ProgressItem></ProgressItem>'],
     [ScrollAreaCorner.name, '滚动区域', '<ScrollAreaCorner></ScrollAreaCorner>'],
     [ScrollAreaRoot.name, '滚动区域', '<ScrollAreaRoot></ScrollAreaRoot>'],
     [ScrollAreaScrollbar.name, '滚动区域', '<ScrollAreaScrollbar></ScrollAreaScrollbar>'],

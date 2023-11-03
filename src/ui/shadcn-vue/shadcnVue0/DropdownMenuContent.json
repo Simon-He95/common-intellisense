@@ -1,5 +1,5 @@
 {
-  "name": "ContextMenuContent",
+  "name": "DropdownMenuContent",
   "props": {
     "loop": {
       "default": "false",
@@ -12,14 +12,35 @@
       "default": "",
       "value": "",
       "type": "boolean",
-      "description": "Used to force mounting when more control is needed. Useful when controlling animation with Vue.js animation libraries. It inherits from ContextMenu.Portal.",
+      "description": "Used to force mounting when more control is needed. Useful when controlling animation with Vue.js animation libraries. It inherits from DropdownMenuPortal.",
+      "description_zh": ""
+    },
+    "side": {
+      "default": "\"bottom\"",
+      "value": ["top", "right", "bottom", "left"],
+      "type": "\"top\" | \"right\" | \"bottom\" | \"left\"",
+      "description": "The preferred side of the trigger to render against when open. Will be reversed when collisions occur and avoidCollisions is enabled.",
+      "description_zh": ""
+    },
+    "sideOffset": {
+      "default": "0",
+      "value": "",
+      "type": "number",
+      "description": "The distance in pixels from the trigger.",
+      "description_zh": ""
+    },
+    "align": {
+      "default": "\"center\"",
+      "value": ["start", "center", "end"],
+      "type": "\"start\" | \"center\" | \"end\"",
+      "description": "The preferred alignment against the trigger. May change when collisions occur.",
       "description_zh": ""
     },
     "alignOffset": {
       "default": "0",
       "value": "",
       "type": "number",
-      "description": "The vertical distance in pixels from the anchor.",
+      "description": "An offset in pixels from the \"start\" or \"end\" alignment options.",
       "description_zh": ""
     },
     "avoidCollisions": {
@@ -29,7 +50,7 @@
       "description": "When true, overrides the side and align preferences to prevent collisions with boundary edges.",
       "description_zh": ""
     },
-    "collisionBoundary": {
+    ":collisionBoundary": {
       "default": "[]",
       "value": "",
       "type": "Element | null | Array<Element | null>",
@@ -41,6 +62,13 @@
       "value": "",
       "type": "number | Partial<Record<Side, number>>",
       "description": "The distance in pixels from the boundary edges where collision detection should occur. Accepts a number (same for all sides), or a partial padding object, for example: { top: 20, left: 20 }.",
+      "description_zh": ""
+    },
+    ":arrowPadding": {
+      "default": "0",
+      "value": "",
+      "type": "number",
+      "description": "The padding between the arrow and the edges of the content. If your content has border-radius, this will prevent it from overflowing the corners.",
       "description_zh": ""
     },
     "sticky": {
@@ -72,33 +100,8 @@
       "description_zh": ""
     }
   },
-  "events": [{
-    "name": "closeAutoFocus",
-    "params": "(event: Event) => void",
-    "description": "Event handler called when focus moves to the trigger after closing. It can be prevented by calling event.preventDefault.",
-    "description_zh": ""
-  }, {
-    "name": "escapeKeyDown",
-    "params": "(event: KeyboardEvent) => void",
-    "description": "Event handler called when the escape key is down. It can be prevented by calling event.preventDefault.",
-    "description_zh": ""
-  }, {
-    "name": "pointerDownOutside",
-    "params": "(event: PointerDownOutsideEvent) => void",
-    "description": "Event handler called when a pointer event occurs outside the bounds of the component. It can be prevented by calling event.preventDefault.",
-    "description_zh": ""
-  }, {
-    "name": "focusOutside",
-    "params": "(event: FocusOutsideEvent) => void",
-    "description": "Event handler called when focus moves outside the bounds of the component. It can be prevented by calling event.preventDefault.",
-    "description_zh": ""
-  }, {
-    "name": "interactOutside",
-    "params": "(event: FocusEvent | MouseEvent | TouchEvent) => void",
-    "description": "Event handler called when an interaction (pointer or focus event) happens outside the bounds of the component. It can be prevented by calling event.preventDefault.",
-    "description_zh": ""
-  }],
+  "events": [],
   "methods": [],
-  "link": "https://www.radix-vue.com/components/context-menu.html",
-  "link_zh": "https://www.radix-vue.com/components/context-menu.html"
+  "link": "https://www.radix-vue.com/components/dropdown-menu.html#root",
+  "link_zh": "https://www.radix-vue.com/components/dropdown-menu.html#root"
 }

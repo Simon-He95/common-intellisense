@@ -1,124 +1,68 @@
 {
   "name": "AccordionRoot",
   "props": {
-    "autocollapse": {
+    "as": {
+      "default": "div",
       "value": "",
-      "description": "Set the auto-collapse mode.",
+      "type": "string | Component",
+      "description": "The element or component this component should render as. Can be overwrite by asChild",
+      "description_zh": ""
+    },
+    "asChild": {
       "default": "false",
+      "value": "",
       "type": "boolean",
-      "description_zh": "设置自动折叠模式。"
+      "description": "Change the default rendered element for the one passed as a child, merging their props and behavior.",
+      "description_zh": ""
     },
-    "width": {
-      "value": "",
-      "description": "Provide classes to set the accordion width.",
-      "default": "'w-full'",
-      "type": "string",
-      "description_zh": "提供用于设置折叠宽度的类。"
+    "type": {
+      "default": "",
+      "value": ["single", "multiple"],
+      "type": "\"single\" | \"multiple\"",
+      "description": "Determines whether one or multiple items can be opened at the same time.",
+      "description_zh": ""
     },
-    "spacing": {
+    "defaultValue": {
+      "default": "",
       "value": "",
-      "description": "Provide classes to set the vertical spacing between items.",
-      "default": "'space-y-1'",
-      "type": "string",
-      "description_zh": "提供类以设置项之间的垂直间距。"
+      "type": "string | string[]",
+      "description": "The value of the item to expand when initially rendered. Use when you do not need to control the state of the items.",
+      "description_zh": ""
+    },
+    "value": {
+      "default": "",
+      "value": "",
+      "type": "string | string[]",
+      "description": "The controlled value of the item to expand. Must be binded with v-model.",
+      "description_zh": ""
+    },
+    "collapsible": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "When type is \"single\", allows closing content when clicking trigger for an open item.",
+      "description_zh": ""
     },
     "disabled": {
-      "value": "",
-      "description": "Set the accordion disabled state for all items.",
       "default": "false",
+      "value": "",
       "type": "boolean",
-      "description_zh": "为所有项目设置手风琴禁用状态。"
+      "description": "When `true`, prevents the user from interacting with the accordion and all its items.",
+      "description_zh": ""
     },
-    "padding": {
-      "value": "",
-      "description": "Provide classes to set the accordion item padding styles.",
-      "default": "'py-2 px-4'",
-      "type": "string",
-      "description_zh": "提供用于设置折叠项填充样式的类。"
+    "dir": {
+      "default": "\"ltr\"",
+      "value": ["ltr", "rtl"],
+      "type": "\"ltr\" | \"rtl\"",
+      "description": "The reading direction of the accordion when applicable. If omitted, assumes LTR (left-to-right) reading mode.",
+      "description_zh": ""
     },
-    "hover": {
-      "value": "",
-      "description": "Provide classes to set the accordion item hover styles.",
-      "default": "'hover:bg-primary-hover-token'",
-      "type": "string",
-      "description_zh": "提供用于设置折叠项悬停样式的类。"
-    },
-    "rounded": {
-      "value": "",
-      "description": "Provide classes to set the accordion item rounded styles.",
-      "default": "'rounded-container-token'",
-      "type": "string",
-      "description_zh": "提供用于设置折叠项圆角样式的类。"
-    },
-    "caretOpen": {
-      "value": "",
-      "description": "Set the rotation of the item caret in the open state.",
-      "default": "'rotate-180'",
-      "type": "string",
-      "description_zh": "将项目插入符号的旋转设置为打开状态。"
-    },
-    "caretClosed": {
-      "value": "",
-      "description": "Set the rotation of the item caret in the closed state.",
-      "default": "-",
-      "type": "string",
-      "description_zh": "将项目插入符号的旋转设置为关闭状态。"
-    },
-    "regionControl": {
-      "value": "",
-      "description": "Provide arbitrary classes to the trigger button region.",
-      "default": "-",
-      "type": "string",
-      "description_zh": "为触发按钮区域提供任意类。"
-    },
-    "regionPanel": {
-      "value": "",
-      "description": "Provide arbitrary classes to the content panel region.",
-      "default": "'space-y-4'",
-      "type": "string",
-      "description_zh": "为内容面板区域提供任意类。"
-    },
-    "regionCaret": {
-      "value": "",
-      "description": "Provide arbitrary classes to the caret icon region.",
-      "default": "-",
-      "type": "string",
-      "description_zh": "为插入符号图标区域提供任意类。"
-    },
-    "transitions": {
-      "value": "",
-      "description": "Enable/Disable transitions",
-      "default": "!$prefersReducedMotionStore",
-      "type": "boolean",
-      "description_zh": "启用/禁用转换"
-    },
-    "transitionIn": {
-      "value": "",
-      "description": "Provide the transition to used on entry.",
-      "default": "-",
-      "type": "TransitionIn",
-      "description_zh": "提供到“输入时使用”的转换。"
-    },
-    "transitionInParams": {
-      "value": "",
-      "description": "Transition params provided to `transitionIn`.",
-      "default": "{ duration: 200 }",
-      "type": "TransitionParams",
-      "description_zh": "提供给“transitionIn”的转换参数。"
-    },
-    "transitionOut": {
-      "value": "",
-      "description": "Provide the transition to used on exit.",
-      "default": "-",
-      "type": "TransitionOut",
-      "description_zh": "提供到退出时使用的转换。"
-    },
-    "transitionOutParams": {
-      "value": "",
-      "description": "Transition params provided to `transitionOut`.",
-      "default": "{ duration: 200 }",
-      "type": "TransitionParams",
-      "description_zh": "提供给“transitionOut”的转换参数。"
+    "orientation": {
+      "default": "\"vertical\"",
+      "value": ["horizontal", "vertical"],
+      "type": "\"horizontal\" | \"vertical\"",
+      "description": "The orientation of the Accordion",
+      "description_zh": ""
     }
   },
   "events": [],
