@@ -1,19 +1,20 @@
 {
   "name": "AProgress",
   "props": {
-    "format": {
+    ":format": {
       "value": "",
       "description": "Template functions for the content",
       "default": "(percent) => percent + `%`",
       "type": "function(percent, successPercent)",
       "description_zh": "内容的模板函数"
     },
-    "percent": {
+    ":percent": {
       "value": "",
       "description": "percentage",
       "default": "0",
       "type": "number",
-      "description_zh": "百分比"
+      "description_zh": "百分比",
+      "required": true
     },
     "showInfo": {
       "value": "",
@@ -47,7 +48,7 @@
       "type": "round | butt | `square`，区别详见 stroke-linecap",
       "description_zh": "进度条的样式"
     },
-    "success": {
+    ":success": {
       "value": "",
       "description": "Configure the success progress bar",
       "default": "-",
@@ -86,21 +87,21 @@
       "type": "number | \\[number, number] | \"small\" | \"default\"",
       "description_zh": "进度条的尺寸"
     },
-    "steps": {
+    ":steps": {
       "value": "",
       "description": "The total number of steps in the progress bar",
       "default": "-",
       "type": "number",
       "description_zh": "进度条总共步数"
     },
-    "strokeWidth": {
+    ":strokeWidth": {
       "value": "",
       "description": "The width of the dashboard progress bar line, in percentage of the width of the progress bar canvas",
       "default": "6",
       "type": "number",
       "description_zh": "仪表盘进度条线的宽度，单位是进度条画布宽度的百分比"
     },
-    "gapDegree": {
+    ":gapDegree": {
       "value": "",
       "description": "The notch angle of the dashboard progress bar can be 0 ~ 295",
       "default": "75",
@@ -108,7 +109,7 @@
       "description_zh": "仪表盘进度条缺口角度，可取值 0 ~ 295"
     },
     "gapPosition": {
-      "value": "",
+      "value": ["top", "bottom", "left", "right"],
       "description": "Notch position of the dashboard progress bar",
       "default": "bottom",
       "type": "top | bottom | left | right",

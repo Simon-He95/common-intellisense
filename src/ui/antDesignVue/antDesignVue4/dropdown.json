@@ -22,19 +22,12 @@
       "type": "boolean",
       "description_zh": "菜单是否禁用"
     },
-    "getPopupContainer": {
+    ":getPopupContainer": {
       "value": "",
       "description": "The menu renders the parent node. By default, it is rendered to the body, and if you're having trouble scrolling the menu, try modifying the scrolling area and positioning it relative to it.",
       "default": "`() => document.body`",
       "type": "Function(triggerNode)",
       "description_zh": "菜单渲染父节点。默认渲染到 body 上，如果你遇到菜单滚动定位问题，试试修改为滚动的区域，并相对其定位。"
-    },
-    "overlay(v-slot)": {
-      "value": "",
-      "description": "menu",
-      "default": "-",
-      "type": "[Menu]( | components | menu-cn)",
-      "description_zh": "菜单"
     },
     "overlayClassName": {
       "value": "",
@@ -43,7 +36,7 @@
       "type": "string",
       "description_zh": "下拉根元素的类名称"
     },
-    "overlayStyle": {
+    ":overlayStyle": {
       "value": "",
       "description": "Drop-down the style of the root element",
       "default": "-",
@@ -75,12 +68,13 @@
       "type": "['click' | 'hover' | 'contextmenu']",
       "description_zh": "触发下拉的行为, 移动端不支持 hover"
     },
-    "open(v-model)": {
+    "v-model:open": {
       "value": "",
       "description": "Whether the menu is displayed",
       "default": "false",
       "type": "boolean",
-      "description_zh": "菜单是否显示"
+      "description_zh": "菜单是否显示",
+      "required": true
     }
   },
   "methods": [],

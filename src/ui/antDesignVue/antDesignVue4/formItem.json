@@ -15,7 +15,7 @@
       "type": "boolean",
       "description_zh": "配合 label 属性使用，表示是否显示 label 后面的冒号"
     },
-    "extra": {
+    ":extra": {
       "value": "",
       "description": "An extra hint, similar to help, can be used when you need both an error message and a hint copy.",
       "default": "",
@@ -48,16 +48,17 @@
       "description": "The text of the label label",
       "default": "",
       "type": "string | slot",
-      "description_zh": "label 标签的文本"
+      "description_zh": "label 标签的文本",
+      "required": true
     },
     "labelAlign": {
-      "value": "",
+      "value": ["left", "right"],
       "description": "Label text alignment",
       "default": "'right'",
       "type": "'left' | 'right'",
       "description_zh": "标签文本对齐方式"
     },
-    "labelCol": {
+    ":labelCol": {
       "value": "",
       "description": "label layout, with the ''' component, set the 'span' 'offset' value, such as '{span: 3, offset: 12}' <Col>or 'sm: {span: 3, offset: 12}'",
       "default": "",
@@ -69,7 +70,8 @@
       "description": "The form field model field, which is required in the case of using the validate, resetFields methods",
       "default": "",
       "type": "string",
-      "description_zh": "表单域 model 字段，在使用 validate、resetFields 方法的情况下，该属性是必填的"
+      "description_zh": "表单域 model 字段，在使用 validate、resetFields 方法的情况下，该属性是必填的",
+      "required": true
     },
     "required": {
       "value": "",
@@ -78,7 +80,7 @@
       "type": "boolean",
       "description_zh": "是否必填，如不设置，则会根据校验规则自动生成"
     },
-    "rules": {
+    ":rules": {
       "value": "",
       "description": "Form validation rules",
       "default": "",
@@ -106,7 +108,7 @@
       "type": "string | string\\[]",
       "description_zh": "设置字段校验的时机"
     },
-    "wrapperCol": {
+    ":wrapperCol": {
       "value": "",
       "description": "Use this property when you need to style a layout for an input control, and use it in the same way as labelCol",
       "default": "",

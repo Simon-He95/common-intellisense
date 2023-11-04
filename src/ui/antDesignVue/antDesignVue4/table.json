@@ -1,7 +1,7 @@
 {
   "name": "ATable",
   "props": {
-    "bodyCell": {
+    ":bodyCell": {
       "value": "",
       "description": "Personalize the cells",
       "default": "-",
@@ -22,49 +22,50 @@
       "type": "string",
       "description_zh": "指定树形结构的列名"
     },
-    "columns": {
+    ":columns": {
       "value": "",
       "description": "For the configuration description of the table columns, see [the following table] (#column)",
       "default": "-",
       "type": "array",
-      "description_zh": "表格列的配置描述，具体项见[下表](#column)"
+      "description_zh": "表格列的配置描述，具体项见[下表](#column)",
+      "required": true
     },
-    "components": {
+    ":components": {
       "value": "",
       "description": "Override the default table element",
       "default": "-",
       "type": "object",
       "description_zh": "覆盖默认的 table 元素"
     },
-    "customFilterDropdown": {
+    ":customFilterDropdown": {
       "value": "",
       "description": "Custom filter menu, you need to use it with 'column.customFilterDropdown'",
       "default": "-",
       "type": "v-slot:customFilterDropdown=\"[FilterDropdownProps](#filterdropdownprops)\"",
       "description_zh": "自定义筛选菜单，需要配合 `column.customFilterDropdown` 使用"
     },
-    "customFilterIcon": {
+    ":customFilterIcon": {
       "value": "",
       "description": "Customize the filter icon",
       "default": "-",
       "type": "v-slot:customFilterIcon=\"{filtered, column}\"",
       "description_zh": "自定义筛选图标"
     },
-    "customHeaderRow": {
+    ":customHeaderRow": {
       "value": "",
       "description": "Set the header row properties",
       "default": "-",
       "type": "Function(columns, index)",
       "description_zh": "设置头部行属性"
     },
-    "customRow": {
+    ":customRow": {
       "value": "",
       "description": "Set the row properties",
       "default": "-",
       "type": "Function(record, index)",
       "description_zh": "设置行属性"
     },
-    "dataSource": {
+    ":dataSource": {
       "value": "",
       "description": "Array of data",
       "default": "",
@@ -79,7 +80,7 @@
       "type": "boolean",
       "description_zh": "初始时，是否展开所有行"
     },
-    "defaultExpandedRowKeys": {
+    ":defaultExpandedRowKeys": {
       "value": "",
       "description": "The default expanded row",
       "default": "-",
@@ -114,14 +115,14 @@
       "type": "boolean | string",
       "description_zh": "控制展开图标是否固定，可选 true `left` right"
     },
-    "expandColumnTitle": {
+    ":expandColumnTitle": {
       "value": "",
       "description": "Customize the expanded list header",
       "default": "-",
       "type": "v-slot",
       "description_zh": "自定义展开列表头"
     },
-    "expandIcon": {
+    ":expandIcon": {
       "value": "",
       "description": "Customize the expand icon",
       "default": "-",
@@ -135,28 +136,28 @@
       "type": "boolean",
       "description_zh": "通过点击行来展开子行"
     },
-    "footer": {
+    ":footer": {
       "value": "",
       "description": "Tail of table",
       "default": "",
       "type": "Function(currentPageData)|v-slot:footer=\"currentPageData\"",
       "description_zh": "表格尾部"
     },
-    "getPopupContainer": {
+    ":getPopupContainer": {
       "value": "",
       "description": "Set the rendering nodes for various types of floating layers in the table, such as the filter menu",
       "default": "`() => TableHtmlElement`",
       "type": "(triggerNode) => HTMLElement",
       "description_zh": "设置表格内各类浮层的渲染节点，如筛选菜单"
     },
-    "headerCell": {
+    ":headerCell": {
       "value": "",
       "description": "Personalize the header cell",
       "default": "-",
       "type": "v-slot:headerCell=\"{title, column}\"",
       "description_zh": "个性化头部单元格"
     },
-    "indentSize": {
+    ":indentSize": {
       "value": "",
       "description": "The width of each layer indentation, in px, when displaying tree data",
       "default": "15",
@@ -177,21 +178,21 @@
       "type": "object",
       "description_zh": "默认文案设置，目前包括排序、过滤、空数据文案"
     },
-    "pagination": {
+    ":pagination": {
       "value": "",
       "description": "Paginer, refer to the [Config] (#pagination) or [pagination](/components/pagination-cn/) document, and do not display and pagination when set to false",
       "default": "",
       "type": "object | false",
       "description_zh": "分页器，参考[配置项](#pagination)或 [pagination](/components/pagination-cn/)文档，设为 false 时不展示和进行分页"
     },
-    "rowClassName": {
+    ":rowClassName": {
       "value": "",
       "description": "The class name of the table row",
       "default": "-",
       "type": "Function(record, index):string",
       "description_zh": "表格行的类名"
     },
-    "rowExpandable": {
+    ":rowExpandable": {
       "value": "",
       "description": "Set whether to allow row expansion",
       "default": "-",
@@ -205,14 +206,14 @@
       "type": "string | Function(record):string",
       "description_zh": "表格行 key 的取值，可以是字符串或一个函数"
     },
-    "rowSelection": {
+    ":rowSelection": {
       "value": "",
       "description": "Whether the list item is selectable, [configuration item] (#rowselection)",
       "default": "null",
       "type": "object",
       "description_zh": "列表项是否可选择，[配置项](#rowselection)"
     },
-    "scroll": {
+    ":scroll": {
       "value": "",
       "description": "Whether the table can be scrolled, or you can specify the width and height of the scrolling area, [Configuration Item] (#scroll)",
       "default": "-",
@@ -233,7 +234,7 @@
       "type": "boolean",
       "description_zh": "是否显示表头"
     },
-    "showSorterTooltip": {
+    ":showSorterTooltip": {
       "value": "",
       "description": "Whether the header displays a tooltip hint for the next sort. When the parameter type is Object, it will be set as a property of the Tooltip",
       "default": "true",
@@ -251,14 +252,14 @@
       "type": "large | middle | small",
       "description_zh": "表格大小"
     },
-    "sortDirections": {
+    ":sortDirections": {
       "value": "",
       "description": "The supported sorting method can be 'ascend' descend",
       "default": "\\[ascend, descend]",
       "type": "Array",
       "description_zh": "支持的排序方式，取值为 `ascend` descend"
     },
-    "sticky": {
+    ":sticky": {
       "value": "",
       "description": "Set the sticky head and scrollbar",
       "default": "-",
@@ -273,24 +274,20 @@
       "description_zh": "总结栏"
     },
     "tableLayout": {
-      "value": [
-        "无<hr",
-        ">固定表头",
-        "列或使用了 `column.ellipsis` 时，默认值为 fixed"
-      ],
+      "value": ["auto", "fixed"],
       "description": "The [table-layout](https://developer.mozilla.org/zh-CN/docs/Web/CSS/table-layout) property of the table element, set to 'fixed' means that the content does not affect the layout of the column",
       "default": "无<hr | >固定表头 | 列或使用了 `column.ellipsis` 时，默认值为 fixed",
       "type": "- | 'auto' | 'fixed'",
       "description_zh": "表格元素的 [table-layout](https://developer.mozilla.org/zh-CN/docs/Web/CSS/table-layout) 属性，设为 `fixed` 表示内容不会影响列的布局"
     },
-    "title": {
+    ":title": {
       "value": "",
       "description": "Table title",
       "default": "",
       "type": "Function(currentPageData)|v-slot:title=\"currentPageData\"",
       "description_zh": "表格标题"
     },
-    "transformCellText": {
+    ":transformCellText": {
       "value": "",
       "description": "The default configuration for empty data can be changed again before the data is rendered, and can be configured globally through [ConfigProvider](/components/config-provider-cn/).",
       "default": "-",

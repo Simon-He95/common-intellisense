@@ -9,13 +9,13 @@
       "description_zh": "设置为 `false` 时，移除按钮中 2 个汉字之间的空格"
     },
     "componentSize": {
-      "value": "",
+      "value": ["small", "middle", "large"],
       "description": "Set the antd component size",
       "default": "-",
       "type": "small | middle | large",
       "description_zh": "设置 antd 组件大小"
     },
-    "csp": {
+    ":csp": {
       "value": "",
       "description": "Set the [Content Security Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) configuration",
       "default": "-",
@@ -23,7 +23,7 @@
       "description_zh": "设置 [Content Security Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) 配置"
     },
     "direction": {
-      "value": "",
+      "value": ["ltr", "rtl"],
       "description": "Set the direction in which the text is displayed. [Example] (#components-config-provider-demo-direction)",
       "default": "ltr",
       "type": "ltr | rtl",
@@ -36,28 +36,28 @@
       "type": "boolean | number",
       "description_zh": "下拉菜单和选择器同宽。默认将设置 `min-width`，当值小于选择框宽度时会被忽略。`false` 时会关闭虚拟滚动"
     },
-    "form": {
+    ":form": {
       "value": "",
       "description": "Sets the common properties of the Form component",
       "default": "-",
       "type": "{ validateMessages?: [ValidateMessages]( | components | form | #validatemessages), requiredMark?: boolean | optional, colon?: boolean}",
       "description_zh": "设置 Form 组件的通用属性"
     },
-    "getPopupContainer": {
+    ":getPopupContainer": {
       "value": "",
       "description": "Popovers (Select, Tooltip, Menu, etc.) render the parent node, which is rendered to the body by default.",
       "default": "() => document.body",
       "type": "Function(triggerNode, dialogContext)",
       "description_zh": "弹出框（Select, Tooltip, Menu 等等）渲染父节点，默认渲染到 body 上。"
     },
-    "getTargetContainer": {
+    ":getTargetContainer": {
       "value": "",
       "description": "Configure the Affix and Anchor scrolling listening containers.",
       "default": "() => window",
       "type": "() => HTMLElement",
       "description_zh": "配置 Affix、Anchor 滚动监听容器。"
     },
-    "input": {
+    ":input": {
       "value": "",
       "description": "Sets the common properties of the Input component",
       "default": "-",
@@ -65,13 +65,13 @@
       "description_zh": "设置 Input 组件的通用属性"
     },
     "locale": {
-      "value": "",
+      "value": ["en_US", "zh_CN", "zh_TW"],
       "description": "Language pack configuration, which can be found in the [ant-design-vue/es/locale](http://unpkg.com/ant-design-vue/es/locale/) directory",
       "default": "-",
       "type": "object",
       "description_zh": "语言包配置，语言包可到 [ant-design-vue/es/locale](http://unpkg.com/ant-design-vue/es/locale/) 目录下寻找"
     },
-    "pageHeader": {
+    ":pageHeader": {
       "value": "",
       "description": "Set the ghost of pageHeader uniformly, refer to [pageHeader](<(/components/page-header)>)",
       "default": "'true'",
@@ -85,7 +85,7 @@
       "type": "string",
       "description_zh": "设置统一样式前缀。注意：需要配合 `less` 变量 `@ant-prefix` 使用"
     },
-    "renderEmpty": {
+    ":renderEmpty": {
       "value": "",
       "description": "Customize the empty state of the component. Refer to [empty state](/components/empty/)",
       "default": "-",
@@ -99,7 +99,7 @@
       "type": "{ size: small | middle | large | `number` }",
       "description_zh": "设置 Space 的 `size`，参考 [Space](/components/space)"
     },
-    "transformCellText": {
+    ":transformCellText": {
       "value": "",
       "description": "Table data can be changed again before rendering, and the default configuration of empty data for general users",
       "default": "-",

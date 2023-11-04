@@ -1,7 +1,7 @@
 {
   "name": "ATree",
   "props": {
-    "allowDrop": {
+    ":allowDrop": {
       "value": "",
       "description": "Whether to allow dragging and dropping on the node",
       "default": "-",
@@ -29,12 +29,13 @@
       "type": "boolean",
       "description_zh": "节点前添加 Checkbox 复选框"
     },
-    "checkedKeys(v-model)": {
+    "v-model:checkedKeys": {
       "value": "",
       "description": "(controlled) the tree node with the checkbox selected (Note: the parent node is associated, if the parent node key is passed, the child node is automatically selected; The key of the corresponding child node is passed in, and the parent node is automatically selected. When checkable and checkStrictly are set, it is an object with checked and halfchecked attributes, and the selection or absence of the parent node is no longer associated",
       "default": "\\[]",
       "type": "string\\[] | number\\[] | {checked: string\\[] | number\\[], halfChecked: string\\[] | number\\[]}",
-      "description_zh": "（受控）选中复选框的树节点（注意：父子节点有关联，如果传入父节点 key，则子节点自动选中；相应当子节点 key 都传入，父节点也自动选中。当设置`checkable`和`checkStrictly`，它是一个有`checked`和`halfChecked`属性的对象，并且父子节点的选中与否不再关联"
+      "description_zh": "（受控）选中复选框的树节点（注意：父子节点有关联，如果传入父节点 key，则子节点自动选中；相应当子节点 key 都传入，父节点也自动选中。当设置`checkable`和`checkStrictly`，它是一个有`checked`和`halfChecked`属性的对象，并且父子节点的选中与否不再关联",
+      "required": true
     },
     "checkStrictly": {
       "value": "",
@@ -64,42 +65,43 @@
       "type": "boolean",
       "description_zh": "设置节点可拖拽"
     },
-    "expandedKeys(v-model)": {
+    "v-model:expandedKeys": {
       "value": "",
       "description": "(Controlled) expands the specified tree node",
       "default": "\\[]",
       "type": "string\\[] | number\\[]",
-      "description_zh": "（受控）展开指定的树节点"
+      "description_zh": "（受控）展开指定的树节点",
+      "required": true
     },
-    "fieldNames": {
+    ":fieldNames": {
       "value": "",
       "description": "Replace the title, key, and children fields in treeNode with the corresponding fields in treeData",
       "default": "{children:'children', title:'title', key:'key' }",
       "type": "object",
       "description_zh": "替换 treeNode 中 title,key,children 字段为 treeData 中对应的字段"
     },
-    "filterTreeNode": {
+    ":filterTreeNode": {
       "value": "",
       "description": "Filter tree nodes (highlighted) as needed and return true",
       "default": "-",
       "type": "function(node)",
       "description_zh": "按需筛选树节点（高亮），返回 true"
     },
-    "height": {
+    ":height": {
       "value": "",
       "description": "Set the height of the virtual scrolling container, after which the internal nodes no longer support horizontal scrolling",
       "default": "-",
       "type": "number",
       "description_zh": "设置虚拟滚动容器高度，设置后内部节点不再支持横向滚动"
     },
-    "loadData": {
+    ":loadData": {
       "value": "",
       "description": "Load data asynchronously",
       "default": "-",
       "type": "function(node)",
       "description_zh": "异步加载数据"
     },
-    "loadedKeys": {
+    ":loadedKeys": {
       "value": "",
       "description": "(controlled) nodes that have already been loaded, and need to be used with 'loadData'",
       "default": "\\[]",
@@ -120,12 +122,13 @@
       "type": "boolean",
       "description_zh": "是否可选中"
     },
-    "selectedKeys(v-model)": {
+    "v-model:selectedKeys": {
       "value": "",
       "description": "(Controlled) Sets the selected tree node",
       "default": "-",
       "type": "string\\[] | number\\[]",
-      "description_zh": "（受控）设置选中的树节点"
+      "description_zh": "（受控）设置选中的树节点",
+      "required": true
     },
     "showIcon": {
       "value": "",
@@ -141,7 +144,7 @@
       "type": "boolean | {showLeafIcon: boolean}(3.0+)",
       "description_zh": "是否展示连接线"
     },
-    "switcherIcon": {
+    ":switcherIcon": {
       "value": "",
       "description": "Customize the expand/collapse icon for the tree node",
       "default": "-",
@@ -155,12 +158,13 @@
       "type": "slot",
       "description_zh": "自定义标题"
     },
-    "treeData": {
+    ":treeData": {
       "value": "",
       "description": "treeNodes data, if set then you don't need to manually construct a TreeNode node (the key is unique across the tree)",
       "default": "--",
       "type": "[TreeNode\\[\\]](#treenode)",
-      "description_zh": "treeNodes 数据，如果设置则不需要手动构造 TreeNode 节点（key 在整个树范围内唯一）"
+      "description_zh": "treeNodes 数据，如果设置则不需要手动构造 TreeNode 节点（key 在整个树范围内唯一）",
+      "required": true
     },
     "virtual": {
       "value": "",

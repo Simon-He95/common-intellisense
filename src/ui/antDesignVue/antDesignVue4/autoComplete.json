@@ -22,11 +22,8 @@
       "type": "boolean",
       "description_zh": "使用键盘选择选项的时候把选中项回填到输入框中"
     },
-    "default (自定义输入框)": {
-      "value": [
-        "`<Input",
-        ">`"
-      ],
+    "default": {
+      "value": "",
       "description": "Customize the input box",
       "default": "`<Input | >`",
       "type": "slot",
@@ -60,21 +57,21 @@
       "type": "string",
       "description_zh": "下拉菜单的 className 属性"
     },
-    "dropdownMatchSelectWidth": {
+    ":dropdownMatchSelectWidth": {
       "value": "",
       "description": "The drop-down menu is the same width as the selector. 'min-width' is set by default and is ignored when the value is less than the width of the selection box. false, which turns off virtual scrolling",
       "default": "true",
       "type": "boolean | number",
       "description_zh": "下拉菜单和选择器同宽。默认将设置 `min-width`，当值小于选择框宽度时会被忽略。false 时会关闭虚拟滚动"
     },
-    "dropdownMenuStyle": {
+    ":dropdownMenuStyle": {
       "value": "",
       "description": "Dropdown menu custom styles",
       "default": "",
       "type": "object",
       "description_zh": "dropdown 菜单自定义样式"
     },
-    "filterOption": {
+    ":filterOption": {
       "value": "",
       "description": "Whether to filter based on inputs. When it is a function, it will receive two parameters, 'inputValue' and 'option', and when 'option' meets the filter conditions, it should return 'true', otherwise it should return 'false'.",
       "default": "true",
@@ -100,14 +97,16 @@
       "description": "Autocomplete data sources",
       "default": "",
       "type": "DataSourceItemType",
-      "description_zh": "自动完成的数据源"
+      "description_zh": "自动完成的数据源",
+      "required": true
     },
     "placeholder": {
       "value": "",
       "description": "Input box prompt",
       "default": "-",
       "type": "string | slot",
-      "description_zh": "输入框提示"
+      "description_zh": "输入框提示",
+      "required": true
     },
     "status": {
       "value": [
@@ -124,7 +123,8 @@
       "description": "Specifies the currently selected entry",
       "default": "无",
       "type": "string | string[]|{ key: string, label: string | vNodes }|Array<{ key: string, label: string | vNodes }>",
-      "description_zh": "指定当前选中的条目"
+      "description_zh": "指定当前选中的条目",
+      "required": true
     }
   },
   "methods": [

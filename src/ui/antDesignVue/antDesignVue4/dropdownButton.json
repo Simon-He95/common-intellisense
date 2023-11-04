@@ -8,7 +8,7 @@
       "type": "boolean",
       "description_zh": "菜单是否禁用"
     },
-    "icon": {
+    ":icon": {
       "value": "",
       "description": "icon on the right",
       "default": "-",
@@ -21,13 +21,6 @@
       "default": "false",
       "type": "boolean | { delay: number }",
       "description_zh": "设置按钮载入状态"
-    },
-    "overlay(v-slot)": {
-      "value": "",
-      "description": "menu",
-      "default": "-",
-      "type": "[Menu]( | components | menu-cn | )",
-      "description_zh": "菜单"
     },
     "placement": {
       "value": [
@@ -44,8 +37,8 @@
       "description_zh": "菜单弹出位置"
     },
     "size": {
-      "value": "",
-      "description": "The size of the button is the same as that of [Button](/components/button-cn/).",
+      "value": ["large", "middle", "small"],
+      "description": "large | middle | small",
       "default": "'default'",
       "type": "string",
       "description_zh": "按钮大小，和 [Button](/components/button-cn/) 一致"
@@ -62,18 +55,19 @@
       "description_zh": "触发下拉的行为"
     },
     "type": {
-      "value": "",
-      "description": "The button type is the same as [Button](/components/button-cn/).",
+      "value": ["primary", "ghost", "dashed", "link", "text", "default"],
+      "description": "primary | ghost | dashed | link | text | default",
       "default": "'default'",
       "type": "string",
       "description_zh": "按钮类型，和 [Button](/components/button-cn/) 一致"
     },
-    "open(v-model)": {
+    "v-model:open": {
       "value": "",
       "description": "Whether the menu is displayed",
       "default": "false",
       "type": "boolean",
-      "description_zh": "菜单是否显示"
+      "description_zh": "菜单是否显示",
+      "required": true
     }
   },
   "methods": [],

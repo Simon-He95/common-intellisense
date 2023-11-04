@@ -15,14 +15,14 @@
       "type": "boolean",
       "description_zh": "搜索 loading"
     },
-    "addonAfter": {
+    ":addonAfter": {
       "value": "",
       "description": "Input with labels, set the post-labels",
       "default": "",
       "type": "string | slot",
       "description_zh": "带标签的 input，设置后置标签"
     },
-    "addonBefore": {
+    ":addonBefore": {
       "value": "",
       "description": "Input with a label to set the pre-label",
       "default": "",
@@ -43,11 +43,8 @@
       "type": "boolean",
       "description_zh": "是否有边框"
     },
-    "clearIcon": {
-      "value": [
-        "`<CloseCircleFilled",
-        ">`"
-      ],
+    ":clearIcon": {
+      "value": "",
       "description": "Custom clear icon (effective when allowClear is true)",
       "default": "`<CloseCircleFilled | >`",
       "type": "slot",
@@ -74,14 +71,14 @@
       "type": "string",
       "description_zh": "输入框的 id"
     },
-    "maxlength": {
+    ":maxlength": {
       "value": "",
       "description": "Maximum length",
       "default": "",
       "type": "number",
       "description_zh": "最大长度"
     },
-    "prefix": {
+    ":prefix": {
       "value": "",
       "description": "Input with a prefix icon",
       "default": "",
@@ -106,13 +103,13 @@
       "description_zh": "设置校验状态"
     },
     "size": {
-      "value": "",
+      "value": ["large", "middle", "small"],
       "description": "Control size. Note: The size of the input box in the standard form is limited to 'middle'. Select 'large' 'middle' small",
       "default": "-",
       "type": "string",
       "description_zh": "控件大小。注：标准表单内的输入框大小限制为 `middle`。可选 `large` `middle` small"
     },
-    "suffix": {
+    ":suffix": {
       "value": "",
       "description": "Input with a suffix icon",
       "default": "",
@@ -126,12 +123,13 @@
       "type": "string",
       "description_zh": "声明 input 类型，同原生 input 标签的 type 属性，见：[MDN](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/input#属性)(请直接使用 `<a-textarea />` 代替 `type=\"textarea\"`)。"
     },
-    "value(v-model)": {
+    "v-model:value": {
       "value": "",
       "description": "Enter the contents of the box",
       "default": "",
       "type": "string",
-      "description_zh": "输入框内容"
+      "description_zh": "输入框内容",
+      "required": true
     }
   },
   "methods": [],

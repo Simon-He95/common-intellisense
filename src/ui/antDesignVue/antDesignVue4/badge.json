@@ -13,7 +13,8 @@
       "description": "The displayed number is displayed as '${overflowCount}+' when it is greater than overflowCount, and is hidden when it is 0",
       "default": "",
       "type": "number | string | slot",
-      "description_zh": "展示的数字，大于 overflowCount 时显示为 `${overflowCount}+`，为 0 时隐藏"
+      "description_zh": "展示的数字，大于 overflowCount 时显示为 `${overflowCount}+`，为 0 时隐藏",
+      "required": true
     },
     "dot": {
       "value": "",
@@ -22,21 +23,21 @@
       "type": "boolean",
       "description_zh": "不展示数字，只有一个小红点"
     },
-    "numberStyle": {
+    ":numberStyle": {
       "value": "",
       "description": "Sets the style of the status point",
       "default": "''",
       "type": "object",
       "description_zh": "设置状态点的样式"
     },
-    "offset": {
+    ":offset": {
       "value": "",
       "description": "Set the position offset of the status point in the format [x, y]",
       "default": "-",
       "type": "[number | string, number | string]",
       "description_zh": "设置状态点的位置偏移，格式为 [x, y]"
     },
-    "overflowCount": {
+    ":overflowCount": {
       "value": "",
       "description": "Displays the capped numeric value",
       "default": "99",
@@ -51,7 +52,7 @@
       "description_zh": "当数值为 0 时，是否展示 Badge"
     },
     "status": {
-      "value": "",
+      "value": ["success", "processing", "default", "error", "warning"],
       "description": "Set Badge to the status point",
       "default": "''",
       "type": "Enum{ 'success', 'processing, 'default', 'error', 'warning' }",

@@ -2,7 +2,7 @@
   "name": "ATimeline",
   "props": {
     "mode": {
-      "value": "",
+      "value": ["left", "alternate", "right"],
       "description": "By setting 'mode', you can change the relative position of the timeline and the content",
       "default": "",
       "type": "left | alternate | right",
@@ -15,11 +15,8 @@
       "type": "boolean | string | slot",
       "description_zh": "指定最后一个幽灵节点是否存在或内容"
     },
-    "pendingDot": {
-      "value": [
-        "`<LoadingOutlined",
-        ">`"
-      ],
+    ":pendingDot": {
+      "value": "",
       "description": "When the last ghost node exists, specify its time graph point",
       "default": "`<LoadingOutlined | >`",
       "type": "string | slot",

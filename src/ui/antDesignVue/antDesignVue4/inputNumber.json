@@ -1,14 +1,14 @@
 {
   "name": "AInputNumber",
   "props": {
-    "addonAfter": {
+    ":addonAfter": {
       "value": "",
       "description": "Input with labels, set the post-labels",
       "default": "-",
       "type": "slot",
       "description_zh": "带标签的 input，设置后置标签"
     },
-    "addonBefore": {
+    ":addonBefore": {
       "value": "",
       "description": "Input with a label to set the pre-label",
       "default": "-",
@@ -43,7 +43,7 @@
       "type": "string",
       "description_zh": "小数点"
     },
-    "defaultValue": {
+    ":defaultValue": {
       "value": "",
       "description": "Initial value",
       "default": "",
@@ -57,7 +57,7 @@
       "type": "boolean",
       "description_zh": "禁用"
     },
-    "formatter": {
+    ":formatter": {
       "value": "",
       "description": "Specifies the format in which the input box displays the values",
       "default": "-",
@@ -71,35 +71,35 @@
       "type": "boolean",
       "description_zh": "是否启用键盘快捷行为"
     },
-    "max": {
+    ":max": {
       "value": "",
       "description": "maximum",
       "default": "Infinity",
       "type": "number",
       "description_zh": "最大值"
     },
-    "min": {
+    ":min": {
       "value": "",
       "description": "minimum",
       "default": "-Infinity",
       "type": "number",
       "description_zh": "最小值"
     },
-    "parser": {
+    ":parser": {
       "value": "",
       "description": "Specify how to convert back to numbers from ForMatter, and use it with ForMatter",
       "default": "-",
       "type": "function( string): number",
       "description_zh": "指定从 formatter 里转换回数字的方式，和 formatter 搭配使用"
     },
-    "precision": {
+    ":precision": {
       "value": "",
       "description": "Numerical precision",
       "default": "-",
       "type": "number",
       "description_zh": "数值精度"
     },
-    "prefix": {
+    ":prefix": {
       "value": "",
       "description": "Input with a prefix icon",
       "default": "-",
@@ -137,32 +137,27 @@
       "type": "boolean",
       "description_zh": "字符值模式，开启后支持高精度小数。同时 `change` 事件将返回 string 类型"
     },
-    "upIcon": {
-      "value": [
-        "`<UpOutlined",
-        ">`"
-      ],
+    ":upIcon": {
+      "value": "",
       "description": "Customize the up arrow icon",
       "default": "`<UpOutlined | >`",
       "type": "slot",
       "description_zh": "自定义上箭头图标"
     },
-    "downIcon": {
-      "value": [
-        "`<DownOutlined",
-        ">`"
-      ],
+    ":downIcon": {
+      "value": "",
       "description": "Customize the down arrow icon",
       "default": "`<DownOutlined | >`",
       "type": "slot",
       "description_zh": "自定义下箭头图标"
     },
-    "value(v-model)": {
+    "v-model:value": {
       "value": "",
       "description": "Current value",
       "default": "",
       "type": "number",
-      "description_zh": "当前值"
+      "description_zh": "当前值",
+      "required": true
     }
   },
   "methods": [

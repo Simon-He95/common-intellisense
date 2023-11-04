@@ -1,0 +1,91 @@
+{
+  "name": "ADropdown",
+  "props": {
+    "arrow": {
+      "value": "",
+      "description": "Whether the arrows in the drop-down box are displayed",
+      "default": "false",
+      "type": "boolean | { pointAtCenter: boolean }",
+      "description_zh": "下拉框箭头是否显示"
+    },
+    "destroyPopupOnHide": {
+      "value": "",
+      "description": "Whether to destroy the dropdown after it is closed",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "关闭后是否销毁 Dropdown"
+    },
+    "disabled": {
+      "value": "",
+      "description": "menu whether or not to disable",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "菜单是否禁用"
+    },
+    ":getPopupContainer": {
+      "value": "",
+      "description": "The menu renders the parent node. By default, it is rendered to the body, and if you're having trouble scrolling the menu, try modifying the scrolling area and positioning it relative to it.",
+      "default": "`() => document.body`",
+      "type": "Function(triggerNode)",
+      "description_zh": "菜单渲染父节点。默认渲染到 body 上，如果你遇到菜单滚动定位问题，试试修改为滚动的区域，并相对其定位。"
+    },
+    "overlayClassName": {
+      "value": "",
+      "description": "Drop-down the class name of the root element",
+      "default": "-",
+      "type": "string",
+      "description_zh": "下拉根元素的类名称"
+    },
+    ":overlayStyle": {
+      "value": "",
+      "description": "Drop-down the style of the root element",
+      "default": "-",
+      "type": "object",
+      "description_zh": "下拉根元素的样式"
+    },
+    "placement": {
+      "value": [
+        "bottomLeft",
+        "bottom",
+        "bottomRight",
+        "topLeft",
+        "top",
+        "topRight"
+      ],
+      "description": "Menu pop-up location",
+      "default": "bottomLeft",
+      "type": "bottomLeft | bottom | bottomRight | topLeft | top | topRight",
+      "description_zh": "菜单弹出位置"
+    },
+    "trigger": {
+      "value": [
+        "click",
+        "hover",
+        "contextmenu"
+      ],
+      "description": "Triggers the behavior of pulling down, and the mobile terminal does not support hover",
+      "default": "['hover']",
+      "type": "['click' | 'hover' | 'contextmenu']",
+      "description_zh": "触发下拉的行为, 移动端不支持 hover"
+    },
+    "v-model:open": {
+      "value": "",
+      "description": "Whether the menu is displayed",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "菜单是否显示",
+      "required": true
+    }
+  },
+  "methods": [],
+  "events": [
+    {
+      "name": "openChange",
+      "description": "The menu is called when the display status changes, and the parameter is visible. Disappearances caused by clicking the menu button will not trigger",
+      "params": "function(open)",
+      "description_zh": "菜单显示状态改变时调用，参数为 visible。点击菜单按钮导致的消失不会触发"
+    }
+  ],
+  "link": "https://antdv.com/components/dropdown",
+  "link_zh": "https://antdv.com/components/dropdown-cn"
+}

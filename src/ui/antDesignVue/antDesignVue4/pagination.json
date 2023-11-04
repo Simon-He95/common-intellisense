@@ -1,12 +1,13 @@
 {
   "name": "APagination",
   "props": {
-    "current(v-model)": {
+    "v-model:current": {
       "value": "",
       "description": "The current number of pages",
       "default": "-",
       "type": "number",
-      "description_zh": "当前页数"
+      "description_zh": "当前页数",
+      "required": true
     },
     "defaultPageSize": {
       "value": "",
@@ -29,21 +30,21 @@
       "type": "boolean",
       "description_zh": "只有一页时是否隐藏分页器"
     },
-    "itemRender": {
+    ":itemRender": {
       "value": "",
       "description": "A structure for customizing page numbers that can be used to optimize SEO",
       "default": "-",
       "type": "({page, type: 'page' | 'prev' | 'next', originalElement}) => vNode | v-slot",
       "description_zh": "用于自定义页码的结构，可用于优化 SEO"
     },
-    "pageSize(v-model)": {
+    "v-model:pageSize": {
       "value": "",
       "description": "Number of pieces per page",
       "default": "-",
       "type": "number",
       "description_zh": "每页条数"
     },
-    "pageSizeOptions": {
+    ":pageSizeOptions": {
       "value": "",
       "description": "Specifies how many bars can be displayed on each page",
       "default": "\\['10', '20', '30', '40']",
@@ -78,7 +79,7 @@
       "type": "boolean",
       "description_zh": "是否展示 `pageSize` 切换器，当 `total` 大于 50 时默认为 true"
     },
-    "showTotal": {
+    ":showTotal": {
       "value": "",
       "description": "Used to display the total amount of data and the current data order",
       "default": "-",
@@ -99,12 +100,13 @@
       "type": "string",
       "description_zh": "当为「small」时，是小尺寸分页"
     },
-    "total": {
+    ":total": {
       "value": "",
       "description": "Total number of data",
       "default": "0",
       "type": "number",
-      "description_zh": "数据总数"
+      "description_zh": "数据总数",
+      "required": true
     }
   },
   "methods": [],

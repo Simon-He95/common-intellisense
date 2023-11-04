@@ -1,0 +1,69 @@
+{
+  "name": "ARadioGroup",
+  "props": {
+    "buttonStyle": {
+      "value": [
+        "outline",
+        "solid"
+      ],
+      "description": "The style of RadioButton is currently available in two styles: stroke and fill",
+      "default": "outline",
+      "type": "outline | solid",
+      "description_zh": "RadioButton 的风格样式，目前有描边和填色两种风格"
+    },
+    "disabled": {
+      "value": "",
+      "description": "Disable all sub-selectors",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "禁选所有子单选器"
+    },
+    "name": {
+      "value": "",
+      "description": "The 'name' attribute of all 'input[type=\"radio\"]' under the RadioGroup",
+      "default": "-",
+      "type": "string",
+      "description_zh": "RadioGroup 下所有 `input[type=\"radio\"]` 的 `name` 属性"
+    },
+    ":options": {
+      "value": "",
+      "description": "Set up child elements as a configuration",
+      "default": "-",
+      "type": "string\\[] | number[] | Array<{ label: string value: string disabled?: boolean }>",
+      "description_zh": "以配置形式设置子元素"
+    },
+    "optionType": {
+      "value": ["default", "button"],
+      "description": "Lets you set the Radio 'options' type",
+      "default": "default",
+      "type": "default | button",
+      "description_zh": "用于设置 Radio `options` 类型"
+    },
+    "size": {
+      "value": ["large", "default", "small"],
+      "description": "size, which is only valid for button styles",
+      "default": "default",
+      "type": "large | default | small",
+      "description_zh": "大小，只对按钮样式生效"
+    },
+    "v-model:value": {
+      "value": "",
+      "description": "Lets you set the currently selected value",
+      "default": "-",
+      "type": "any",
+      "description_zh": "用于设置当前选中的值",
+      "required": true
+    }
+  },
+  "methods": [],
+  "events": [
+    {
+      "name": "change",
+      "description": "The callback function when the option changes",
+      "params": "Function(e:Event)",
+      "description_zh": "选项变化时的回调函数"
+    }
+  ],
+  "link": "https://antdv.com/components/radio",
+  "link_zh": "https://antdv.com/components/radio-cn"
+}

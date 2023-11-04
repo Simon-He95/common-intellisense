@@ -247,7 +247,7 @@ export function componentsReducer(map: any[][], isSeperatorByHyphen = true) {
           const lan = getActiveTextEditorLanguageId()
           Object.keys(content.props).forEach((key) => {
             const item = content.props[key]
-            if (!item.required && key !== ':v-model')
+            if (!item.required)
               return
             let attr = ''
             const v = item.value

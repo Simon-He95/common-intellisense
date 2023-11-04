@@ -29,7 +29,7 @@
       "type": "boolean",
       "description_zh": "是否有边框"
     },
-    "clearIcon": {
+    ":clearIcon": {
       "value": "",
       "description": "Custom checkbox clear icon",
       "default": "-",
@@ -64,49 +64,49 @@
       "type": "string",
       "description_zh": "下拉菜单的 className 属性"
     },
-    "dropdownMatchSelectWidth": {
+    ":dropdownMatchSelectWidth": {
       "value": "",
       "description": "The drop-down menu is the same width as the selector. 'min-width' is set by default and is ignored when the value is less than the width of the selection box. false, which turns off virtual scrolling",
       "default": "true",
       "type": "boolean | number",
       "description_zh": "下拉菜单和选择器同宽。默认将设置 `min-width`，当值小于选择框宽度时会被忽略。false 时会关闭虚拟滚动"
     },
-    "dropdownMenuStyle": {
+    ":dropdownMenuStyle": {
       "value": "",
       "description": "Dropdown menu custom styles",
       "default": "-",
       "type": "object",
       "description_zh": "dropdown 菜单自定义样式"
     },
-    "dropdownRender": {
+    ":dropdownRender": {
       "value": "",
       "description": "Customize the drop-down box content",
       "default": "-",
       "type": "({menuNode: VNode, props}) => VNode | v-slot",
       "description_zh": "自定义下拉框内容"
     },
-    "dropdownStyle": {
+    ":dropdownStyle": {
       "value": "",
       "description": "style attribute of the drop-down menu",
       "default": "-",
       "type": "object",
       "description_zh": "下拉菜单的 style 属性"
     },
-    "fieldNames": {
+    ":fieldNames": {
       "value": "",
       "description": "Customize the fields of label, value, and options of the node",
       "default": "{ label: label, value: value, options: `options` }",
       "type": "object",
       "description_zh": "自定义节点 label、value、options 的字段"
     },
-    "filterOption": {
+    ":filterOption": {
       "value": "",
       "description": "Whether to filter based on inputs. When it is a function, it will receive two parameters, 'inputValue' and 'option', and when 'option' meets the filter conditions, it should return 'true', otherwise it should return 'false'.",
       "default": "true",
       "type": "boolean | `function(inputValue, option)`",
       "description_zh": "是否根据输入项进行筛选。当其为一个函数时，会接收 `inputValue` `option` 两个参数，当 `option` 符合筛选条件时，应返回 `true`，反之则返回 `false`。"
     },
-    "filterSort": {
+    ":filterSort": {
       "value": "",
       "description": "The sort function for filtering results during search is similar to the compareFunction in [Array.sort](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort).",
       "default": "-",
@@ -120,7 +120,7 @@
       "type": "string | string\\[]",
       "description_zh": "默认高亮的选项"
     },
-    "getPopupContainer": {
+    ":getPopupContainer": {
       "value": "",
       "description": "The menu renders the parent node. By default, it is rendered to the body, and if you're having trouble scrolling the menu, try modifying the scrolling area and positioning it relative to it.",
       "default": "() => document.body",
@@ -134,14 +134,14 @@
       "type": "boolean",
       "description_zh": "是否把每个选项的 label 包装到 value 中，会把 Select 的 value 类型从 `string` 变为 `{key: string, label: vNodes, originLabel: any}` 的格式, originLabel（3.1） 保持原始类型，如果通过 a-select-option children 构造的节点，该值是是个函数（即 a-select-option 的默认插槽）"
     },
-    "listHeight": {
+    ":listHeight": {
       "value": "",
       "description": "Set the scroll height of the pop-up window",
       "default": "256",
       "type": "number",
       "description_zh": "设置弹窗滚动高度"
     },
-    "maxTagCount": {
+    ":maxTagCount": {
       "value": "",
       "description": "The maximum number of tags to display",
       "default": "-",
@@ -155,14 +155,14 @@
       "type": "slot | function(omittedValues)",
       "description_zh": "隐藏 tag 时显示的内容"
     },
-    "maxTagTextLength": {
+    ":maxTagTextLength": {
       "value": "",
       "description": "The maximum length of the tag text to display",
       "default": "-",
       "type": "number",
       "description_zh": "最大显示的 tag 文本长度"
     },
-    "menuItemSelectedIcon": {
+    ":menuItemSelectedIcon": {
       "value": "",
       "description": "Customize the icon for the currently selected entry",
       "default": "-",
@@ -170,7 +170,7 @@
       "description_zh": "自定义当前选中的条目图标"
     },
     "mode": {
-      "value": "",
+      "value": ["multiple", "tags", "combobox"],
       "description": "Set the mode of Select to Multi-Select or Label",
       "default": "-",
       "type": "'multiple' | 'tags' | 'combobox'",
@@ -190,7 +190,7 @@
       "type": "boolean",
       "description_zh": "是否展开下拉菜单"
     },
-    "option": {
+    ":option": {
       "value": "",
       "description": "Through the option slot, customize the node",
       "default": "-",
@@ -205,10 +205,7 @@
       "description_zh": "搜索时过滤对应的 option 属性，不支持 children"
     },
     "optionLabelProp": {
-      "value": [
-        "children",
-        "label(设置 options 时)"
-      ],
+      "value": "",
       "description": "Backfill the property value of the Option to the selection box, which is a child element of the Option by default. For example, when a child element needs to be highlighted, this value can be set to 'value'.",
       "default": "children | `label`(设置 options 时)",
       "type": "string",
@@ -241,7 +238,7 @@
       "type": "bottomLeft `bottomRight` `topLeft` topRight",
       "description_zh": "选择框弹出的位置"
     },
-    "removeIcon": {
+    ":removeIcon": {
       "value": "",
       "description": "Customized multi-check box clear icon",
       "default": "-",
@@ -286,14 +283,14 @@
       "type": "'error' | 'warning'",
       "description_zh": "设置校验状态"
     },
-    "suffixIcon": {
+    ":suffixIcon": {
       "value": "",
       "description": "Custom selection box suffix icon",
       "default": "-",
       "type": "VNode | slot",
       "description_zh": "自定义的选择框后缀图标"
     },
-    "tagRender": {
+    ":tagRender": {
       "value": "",
       "description": "Customize the tag content render, which only takes effect when 'mode' is 'multiple' or 'tags'",
       "default": "-",
@@ -307,12 +304,13 @@
       "type": "string\\[]",
       "description_zh": "自动分词的分隔符，仅在 `mode=\"tags\"` 时生效"
     },
-    "value(v-model)": {
+    "v-model:value": {
       "value": "",
       "description": "Specifies the currently selected entry",
       "default": "-",
       "type": "string | string\\[]|number | number\\[]",
-      "description_zh": "指定当前选中的条目"
+      "description_zh": "指定当前选中的条目",
+      "required": true
     },
     "virtual": {
       "value": "",

@@ -29,7 +29,7 @@
       "type": "function",
       "description_zh": "通过覆盖默认的上传行为，可以自定义自己的上传实现"
     },
-    "data": {
+    ":data": {
       "value": "",
       "description": "The method to upload the required parameters or return the uploaded parameters",
       "default": "无",
@@ -50,42 +50,43 @@
       "type": "boolean",
       "description_zh": "是否禁用"
     },
-    "downloadIcon": {
+    ":downloadIcon": {
       "value": "",
       "description": "Custom download icon",
       "default": "-",
       "type": "v-slot:iconRender=\"{file: UploadFile}\"",
       "description_zh": "自定义下载 icon"
     },
-    "fileList": {
+    "v-model:fileList": {
       "value": "",
       "description": "List of files that have been uploaded (controlled)",
       "default": "无",
       "type": "object\\[]",
-      "description_zh": "已经上传的文件列表（受控）"
+      "description_zh": "已经上传的文件列表（受控）",
+      "required": true
     },
-    "headers": {
+    ":headers": {
       "value": "",
       "description": "Set the upload request header, which is valid for IE10 or later",
       "default": "无",
       "type": "object",
       "description_zh": "设置上传的请求头部，IE10 以上有效"
     },
-    "iconRender": {
+    ":iconRender": {
       "value": "",
       "description": "Customize the display icon",
       "default": "-",
       "type": "v-slot:iconRender=\"{file: UploadFile, listType?: UploadListType}\"",
       "description_zh": "自定义显示 icon"
     },
-    "isImageUrl": {
+    ":isImageUrl": {
       "value": "",
       "description": "Customize whether thumbnails are displayed using <img/> tags",
       "default": "-",
       "type": "(file: UploadFile) => boolean",
       "description_zh": "自定义缩略图是否使用 <img /> 标签进行显示"
     },
-    "itemRender": {
+    ":itemRender": {
       "value": "",
       "description": "Customize upload list items",
       "default": "-",
@@ -93,13 +94,13 @@
       "description_zh": "自定义上传列表项"
     },
     "listType": {
-      "value": "",
+      "value": ["text", "picture", "picture-card"],
       "description": "Built-in styles for upload lists, supporting three basic styles: text, 'picture' and 'picture-card'",
       "default": "text",
       "type": "string",
       "description_zh": "上传列表的内建样式，支持三种基本样式 text, `picture` 和 `picture-card`"
     },
-    "maxCount": {
+    ":maxCount": {
       "value": "",
       "description": "Limit the number of uploads. When it is 1, always replace the current file with the most recently uploaded file",
       "default": "-",
@@ -125,7 +126,8 @@
       "description": "The name of the file parameter sent to the backend",
       "default": "file",
       "type": "string",
-      "description_zh": "发到后台的文件参数名"
+      "description_zh": "发到后台的文件参数名",
+      "required": true
     },
     "openFileDialogOnClick": {
       "value": "",
@@ -134,35 +136,35 @@
       "type": "boolean",
       "description_zh": "点击打开文件对话框"
     },
-    "previewFile": {
+    ":previewFile": {
       "value": "",
       "description": "Customize the file preview logic",
       "default": "无",
       "type": "(file: File | Blob) => Promise<dataURL: string>",
       "description_zh": "自定义文件预览逻辑"
     },
-    "previewIcon": {
+    ":previewIcon": {
       "value": "",
       "description": "Customize the preview icon",
       "default": "-",
       "type": "v-slot:iconRender=\"{file: UploadFile}\"",
       "description_zh": "自定义预览 icon"
     },
-    "progress": {
+    ":progress": {
       "value": "",
       "description": "Customize the progress bar style",
       "default": "{ strokeWidth: 2, showInfo: false }",
       "type": "[ProgressProps]( | components | progress | #api)（仅支持 `type=\"line\"`）",
       "description_zh": "自定义进度条样式"
     },
-    "removeIcon": {
+    ":removeIcon": {
       "value": "",
       "description": "Delete the icon by custom",
       "default": "-",
       "type": "v-slot:iconRender=\"{file: UploadFile}\"",
       "description_zh": "自定义删除 icon"
     },
-    "showUploadList": {
+    ":showUploadList": {
       "value": "",
       "description": "Whether or not to display uploadList can be set as an object for setting showPreviewIcon, showRemoveIcon and showDownloadIcon separately",
       "default": "true",

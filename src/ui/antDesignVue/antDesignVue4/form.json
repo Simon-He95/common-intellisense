@@ -23,13 +23,13 @@
       "description_zh": "隐藏所有表单项的必选标记"
     },
     "labelAlign": {
-      "value": "",
+      "value": ["left", "right"],
       "description": "The text alignment of the label label",
       "default": "'right'",
       "type": "'left' | 'right'",
       "description_zh": "label 标签的文本对齐方式"
     },
-    "labelCol": {
+    ":labelCol": {
       "value": "",
       "description": "label layout, with the ''' component, set the 'span' 'offset' value, such as '{span: 3, offset: 12}' <Col>or 'sm: {span: 3, offset: 12}'",
       "default": "",
@@ -44,25 +44,27 @@
       "description_zh": "label 标签的文本换行方式"
     },
     "layout": {
-      "value": "",
+      "value": ["horizontal", "vertical", "inline"],
       "description": "Form layout",
       "default": "'horizontal'",
       "type": "'horizontal'|'vertical'|'inline'",
       "description_zh": "表单布局"
     },
-    "model": {
+    ":model": {
       "value": "",
       "description": "Form data object",
       "default": "",
       "type": "object",
-      "description_zh": "表单数据对象"
+      "description_zh": "表单数据对象",
+      "required": true
     },
     "name": {
       "value": "",
       "description": "The form name, which is prefixed with the form field 'id'",
       "default": "-",
       "type": "string",
-      "description_zh": "表单名称，会作为表单字段 `id` 前缀使用"
+      "description_zh": "表单名称，会作为表单字段 `id` 前缀使用",
+      "required": true
     },
     "noStyle": {
       "value": "",
@@ -71,7 +73,7 @@
       "type": "boolean",
       "description_zh": "为 `true` 时不带样式，作为纯字段控件使用"
     },
-    "rules": {
+    ":rules": {
       "value": "",
       "description": "Form validation rules",
       "default": "",
@@ -99,7 +101,7 @@
       "type": "string | string\\[]",
       "description_zh": "统一设置字段校验规则"
     },
-    "wrapperCol": {
+    ":wrapperCol": {
       "value": "",
       "description": "Use this property when you need to style a layout for an input control, and use it in the same way as labelCol",
       "default": "",

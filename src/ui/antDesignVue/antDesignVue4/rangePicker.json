@@ -8,7 +8,7 @@
       "type": "[boolean, boolean]",
       "description_zh": "允许起始项部分为空"
     },
-    "dateRender": {
+    ":dateRender": {
       "value": "",
       "description": "Customize the contents of the date cell.",
       "default": "-",
@@ -29,7 +29,7 @@
       "type": "[boolean, boolean]",
       "description_zh": "禁用起始项"
     },
-    "disabledTime": {
+    ":disabledTime": {
       "value": "",
       "description": "Unselectable time",
       "default": "-",
@@ -43,62 +43,48 @@
       "type": "[formatType](#formattype)",
       "description_zh": "展示的日期格式"
     },
-    "presets": {
+    ":presets": {
       "value": "",
       "description": "Preset time range for quick selection",
       "default": "-",
       "type": "{ label: slot, value: dayjs[] }[]",
       "description_zh": "预设时间范围快捷选择"
     },
-    "ranges": {
+    ":ranges": {
       "value": "",
       "description": "Preset time range for quick selection",
       "default": "-",
       "type": "{ [range: string]: dayjs[] } | { [range: string]: () => dayjs[] }",
       "description_zh": "预设时间范围快捷选择"
     },
-    "renderExtraFooter": {
+    ":renderExtraFooter": {
       "value": "",
       "description": "Add an extra footer to the panel",
       "default": "-",
       "type": "v-slot:renderExtraFooter=\"mode\"",
       "description_zh": "在面板中添加额外的页脚"
     },
-    "separator": {
-      "value": [
-        "`<SwapRightOutlined",
-        ">`"
-      ],
+    ":separator": {
+      "value": "",
       "description": "Set the separator",
       "default": "`<SwapRightOutlined | >`",
       "type": "string | v-slot:separator",
       "description_zh": "设置分隔符"
     },
     "showTime": {
-      "value": [
-        "[TimePicker Options](",
-        "components",
-        "time-picker",
-        "#api)"
-      ],
+      "value": "",
       "description": "Added time selection function",
       "default": "[TimePicker Options]( | components | time-picker | #api)",
       "type": "Object | boolean",
       "description_zh": "增加时间选择功能"
     },
-    "showTime.defaultValue": {
-      "value": "",
-      "description": "Set the default hour, minute, and second when the user selects the date, [Example](#components-date-picker-demo-disabled-date)",
-      "default": "[dayjs(), dayjs()]",
-      "type": "dayjs[]",
-      "description_zh": "设置用户选择日期时默认的时分秒，[例子](#components-date-picker-demo-disabled-date)"
-    },
-    "value(v-model)": {
+    "v-model:value": {
       "value": "",
       "description": "date",
       "default": "-",
       "type": "dayjs[]",
-      "description_zh": "日期"
+      "description_zh": "日期",
+      "required": true
     }
   },
   "methods": [],

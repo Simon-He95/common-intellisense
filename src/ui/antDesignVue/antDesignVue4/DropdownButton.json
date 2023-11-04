@@ -1,0 +1,90 @@
+{
+  "name": "ADropdownButton",
+  "props": {
+    "disabled": {
+      "value": "",
+      "description": "menu whether or not to disable",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "菜单是否禁用"
+    },
+    ":icon": {
+      "value": "",
+      "description": "icon on the right",
+      "default": "-",
+      "type": "VNode | slot",
+      "description_zh": "右侧的 icon"
+    },
+    "loading": {
+      "value": "",
+      "description": "Set the button loading status",
+      "default": "false",
+      "type": "boolean | { delay: number }",
+      "description_zh": "设置按钮载入状态"
+    },
+    "placement": {
+      "value": [
+        "bottomLeft",
+        "bottom",
+        "bottomRight",
+        "topLeft",
+        "top",
+        "topRight"
+      ],
+      "description": "Menu pop-up location",
+      "default": "bottomLeft",
+      "type": "bottomLeft | bottom | bottomRight | topLeft | top | topRight",
+      "description_zh": "菜单弹出位置"
+    },
+    "size": {
+      "value": ["large", "middle", "small"],
+      "description": "large | middle | small",
+      "default": "'default'",
+      "type": "string",
+      "description_zh": "按钮大小，和 [Button](/components/button-cn/) 一致"
+    },
+    "trigger": {
+      "value": [
+        "click",
+        "hover",
+        "contextmenu"
+      ],
+      "description": "Triggers the act of pulling down",
+      "default": "hover",
+      "type": "'click' | 'hover' | 'contextmenu'",
+      "description_zh": "触发下拉的行为"
+    },
+    "type": {
+      "value": ["primary", "ghost", "dashed", "link", "text", "default"],
+      "description": "primary | ghost | dashed | link | text | default",
+      "default": "'default'",
+      "type": "string",
+      "description_zh": "按钮类型，和 [Button](/components/button-cn/) 一致"
+    },
+    "v-model:open": {
+      "value": "",
+      "description": "Whether the menu is displayed",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "菜单是否显示",
+      "required": true
+    }
+  },
+  "methods": [],
+  "events": [
+    {
+      "name": "click",
+      "description": "Click the callback on the left button, which is the same as [Button](/components/button-cn/).",
+      "params": "Function",
+      "description_zh": "点击左侧按钮的回调，和 [Button](/components/button-cn/) 一致"
+    },
+    {
+      "name": "openChange",
+      "description": "The menu is called when the display status changes, and the parameter is visible. Disappearances caused by clicking the menu button will not trigger",
+      "params": "function(open)",
+      "description_zh": "菜单显示状态改变时调用，参数为 visible。点击菜单按钮导致的消失不会触发"
+    }
+  ],
+  "link": "https://antdv.com/components/dropdown",
+  "link_zh": "https://antdv.com/components/dropdown-cn"
+}

@@ -8,7 +8,7 @@
       "type": "boolean",
       "description_zh": "抽屉展开后是否将焦点切换至其 Dom 节点"
     },
-    "bodyStyle": {
+    ":bodyStyle": {
       "value": "",
       "description": "Lets you style the content portion of the drawer",
       "default": "-",
@@ -29,17 +29,14 @@
       "type": "boolean",
       "description_zh": "是否显示左上角的关闭按钮"
     },
-    "closeIcon": {
-      "value": [
-        "`<CloseOutlined",
-        ">`"
-      ],
+    ":closeIcon": {
+      "value": "",
       "description": "Customize the close icon",
       "default": "`<CloseOutlined | >`",
       "type": "VNode | slot",
       "description_zh": "自定义关闭图标"
     },
-    "contentWrapperStyle": {
+    ":contentWrapperStyle": {
       "value": "",
       "description": "Lets you style the content portion of the Drawer wrap",
       "default": "-",
@@ -53,42 +50,42 @@
       "type": "boolean",
       "description_zh": "关闭时销毁 Drawer 里的子元素"
     },
-    "extra": {
+    ":extra": {
       "value": "",
       "description": "The operating area in the upper right corner of the drawer",
       "default": "-",
       "type": "VNode | slot",
       "description_zh": "抽屉右上角的操作区域"
     },
-    "footer": {
+    ":footer": {
       "value": "",
       "description": "Footer of the drawer",
       "default": "-",
       "type": "VNode | slot",
       "description_zh": "抽屉的页脚"
     },
-    "footerStyle": {
+    ":footerStyle": {
       "value": "",
       "description": "The style of the drawer footer widget",
       "default": "-",
       "type": "CSSProperties",
       "description_zh": "抽屉页脚部件的样式"
     },
-    "forceRender": {
+    ":forceRender": {
       "value": "",
       "description": "Pre-render elements inside the Drawer",
       "default": "false",
       "type": "boolean",
       "description_zh": "预渲染 Drawer 内元素"
     },
-    "getContainer": {
+    ":getContainer": {
       "value": "",
       "description": "Specify the node on which the drawer is mounted, and display it in the container `() => HTMLElement` | Selectors",
       "default": "",
       "type": "'body'",
       "description_zh": "指定 Drawer 挂载的节点，**并在容器内展现** | `() => HTMLElement` | Selectors"
     },
-    "headerStyle": {
+    ":headerStyle": {
       "value": "",
       "description": "Lets you style the Drawer head",
       "default": "-",
@@ -123,7 +120,7 @@
       "type": "boolean",
       "description_zh": "点击蒙层是否允许关闭"
     },
-    "maskStyle": {
+    ":maskStyle": {
       "value": "",
       "description": "Mask style",
       "default": "{}",
@@ -131,13 +128,13 @@
       "description_zh": "遮罩样式"
     },
     "placement": {
-      "value": "",
+      "value": ["top", "right", "bottom", "left"],
       "description": "The orientation of the drawer",
       "default": "'right'",
       "type": "'top' | 'right' | 'bottom' | 'left'",
       "description_zh": "抽屉的方向"
     },
-    "push": {
+    ":push": {
       "value": "",
       "description": "Used to set the push behavior of a multi-layer drawer",
       "default": "{ distance: 180 }",
@@ -151,7 +148,7 @@
       "type": "string",
       "description_zh": "对话框外层容器的类名"
     },
-    "rootStyle": {
+    ":rootStyle": {
       "value": "",
       "description": "It can be used to style the outermost container of the drawer, except that the effect node includes a mask",
       "default": "-",
@@ -168,7 +165,7 @@
       "type": "default | large",
       "description_zh": "预设抽屉宽度（或高度），default `378px` 和 large 736px"
     },
-    "style": {
+    ":style": {
       "value": "",
       "description": "Style the Drawer container, and if you only need to set the content part, use bodyStyle",
       "default": "-",
@@ -182,12 +179,13 @@
       "type": "string | slot",
       "description_zh": "标题"
     },
-    "open(v-model)": {
+    "v-model:open": {
       "value": "",
       "description": "Whether the Drawer is visible",
       "default": "false",
       "type": "boolean",
-      "description_zh": "Drawer 是否可见"
+      "description_zh": "Drawer 是否可见",
+      "required": true
     },
     "width": {
       "value": "",
@@ -201,7 +199,8 @@
       "description": "Set the drawer's 'z-index'",
       "default": "1000",
       "type": "Number",
-      "description_zh": "设置 Drawer 的 `z-index`"
+      "description_zh": "设置 Drawer 的 `z-index`",
+      "required": true
     }
   },
   "methods": [],

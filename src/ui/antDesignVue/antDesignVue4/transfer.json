@@ -1,12 +1,13 @@
 {
   "name": "ATransfer",
   "props": {
-    "dataSource": {
+    ":dataSource": {
       "value": "",
       "description": "Data source, where the data will be rendered to the left column, except as specified in 'targetKeys'.",
       "default": "\\[]",
       "type": "\\[{key: string.isRequired,title: string.isRequired,description: string,disabled: bool}]\\[]",
-      "description_zh": "数据源，其中的数据将会被渲染到左边一栏中，`targetKeys` 中指定的除外。"
+      "description_zh": "数据源，其中的数据将会被渲染到左边一栏中，`targetKeys` 中指定的除外。",
+      "required": true
     },
     "disabled": {
       "value": "",
@@ -15,75 +16,76 @@
       "type": "boolean",
       "description_zh": "是否禁用"
     },
-    "filterOption": {
+    ":filterOption": {
       "value": "",
       "description": "Receive two parameters, 'inputValue' and 'option', when 'option' meets the filter conditions, it should return 'true', otherwise it should return 'false'.",
       "default": "",
       "type": "(inputValue, option): boolean",
       "description_zh": "接收 `inputValue` `option` 两个参数，当 `option` 符合筛选条件时，应返回 `true`，反之则返回 `false`。"
     },
-    "footer": {
+    ":footer": {
       "value": "",
       "description": "Can be set to a scoped slot",
       "default": "",
       "type": "slot=\"footer\" slot-scope=\"props\"",
       "description_zh": "可以设置为一个 作用域插槽"
     },
-    "listStyle": {
+    ":listStyle": {
       "value": "",
       "description": "Custom styles for two shuttle boxes",
       "default": "",
       "type": "CSSProperties",
       "description_zh": "两个穿梭框的自定义样式"
     },
-    "locale": {
+    ":locale": {
       "value": "",
       "description": "Various languages",
       "default": "`{ itemUnit: '项', itemsUnit: '项', notFoundContent: '列表为空', searchPlaceholder: '请输入搜索内容' }`",
       "type": "object",
       "description_zh": "各种语言"
     },
-    "operations": {
+    ":operations": {
       "value": "",
       "description": "Manipulate collections of copy, in order from top to bottom",
       "default": "\\['>', '<']",
       "type": "string\\[]",
       "description_zh": "操作文案集合，顺序从上至下"
     },
-    "operationStyle": {
+    ":operationStyle": {
       "value": "",
       "description": "Custom style for the action bar",
       "default": "-",
       "type": "CSSProperties",
       "description_zh": "操作栏的自定义样式"
     },
-    "pagination": {
+    ":pagination": {
       "value": "",
       "description": "Using the pagination style, the custom render list is invalid",
       "default": "flase",
       "type": "boolean | { pageSize: number, simple: boolean, showSizeChanger?: boolean, showLessItems?: boolean }",
       "description_zh": "使用分页样式，自定义渲染列表下无效"
     },
-    "render": {
+    ":render": {
       "value": "",
       "description": "Each row of data renders a function with an input parameter of 'dataSource' and a return value of element. Or return a normal object where the 'label' field is element and the 'value' field is title",
       "default": "",
       "type": "Function(record)| slot",
       "description_zh": "每行数据渲染函数，该函数的入参为 `dataSource` 中的项，返回值为 element。或者返回一个普通对象，其中 `label` 字段为 element，`value` 字段为 title"
     },
-    "selectAllLabels": {
+    ":selectAllLabels": {
       "value": "",
       "description": "Customize the collection of top checkbox titles",
       "default": "-",
       "type": "VueNode | ((info: { selectedCount: number; totalCount: number }) => VueNode);",
       "description_zh": "自定义顶部多选框标题的集合"
     },
-    "selectedKeys(v-model)": {
+    "v-model:selectedKeys": {
       "value": "",
       "description": "Sets which items should be selected",
       "default": "\\[]",
       "type": "string\\[]",
-      "description_zh": "设置哪些项应该被选中"
+      "description_zh": "设置哪些项应该被选中",
+      "required": true
     },
     "showSearch": {
       "value": "",
@@ -109,14 +111,15 @@
       "type": "'error' | 'warning'",
       "description_zh": "设置校验状态"
     },
-    "targetKeys(v-model)": {
+    "v-model:targetKeys": {
       "value": "",
       "description": "A collection of keys that are displayed in the right-hand box for the data",
       "default": "\\[]",
       "type": "string\\[]",
-      "description_zh": "显示在右侧框数据的 key 集合"
+      "description_zh": "显示在右侧框数据的 key 集合",
+      "required": true
     },
-    "titles": {
+    ":titles": {
       "value": "",
       "description": "A collection of titles, in order from left to right",
       "default": "\\['', '']",

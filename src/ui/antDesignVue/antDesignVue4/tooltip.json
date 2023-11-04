@@ -43,21 +43,21 @@
       "type": "boolean",
       "description_zh": "隐藏后是否销毁 tooltip"
     },
-    "getPopupContainer": {
+    ":getPopupContainer": {
       "value": "",
       "description": "The overlay renders the parent node, which is rendered to the body by default",
       "default": "() => document.body",
       "type": "(triggerNode: HTMLElement) => HTMLElement",
       "description_zh": "浮层渲染父节点，默认渲染到 body 上"
     },
-    "mouseEnterDelay": {
+    ":mouseEnterDelay": {
       "value": "",
       "description": "How much delay does it take for the mouse to be moved in before the Tooltip is displayed, in seconds",
       "default": "0.1",
       "type": "number",
       "description_zh": "鼠标移入后延时多少才显示 Tooltip，单位：秒"
     },
-    "mouseLeaveDelay": {
+    ":mouseLeaveDelay": {
       "value": "",
       "description": "How much delay does it take to hide the tooltip after the mouse is removed, in seconds",
       "default": "0.1",
@@ -71,14 +71,14 @@
       "type": "string",
       "description_zh": "卡片类名"
     },
-    "overlayStyle": {
+    ":overlayStyle": {
       "value": "",
       "description": "Card style",
       "default": "无",
       "type": "object",
       "description_zh": "卡片样式"
     },
-    "overlayInnerStyle": {
+    ":overlayInnerStyle": {
       "value": "",
       "description": "Card content area style",
       "default": "无",
@@ -86,20 +86,20 @@
       "description_zh": "卡片内容区域样式"
     },
     "placement": {
-      "value": "",
-      "description": "The bubble box position can be selected as 'top' 'left' 'right' 'bottom' 'topLeft' 'topRight' 'bottomLeft' 'bottomRight' 'leftTop' 'leftBottom' 'rightTop' rightBottom' rightBottom",
+      "value": ["top", "left", "right", "bottom", "topLeft", "topRight", "bottomLeft", "bottomRight", "leftTop", "leftBottom", "rightTop", "rightBottom"],
+      "description": "The bubble box position can be selected as 'top' 'left' 'right' 'bottom' 'topLeft' 'topRight' 'bottomLeft' 'bottomRight' 'leftTop' 'leftBottom' 'rightTop' rightBottom'",
       "default": "top",
       "type": "string",
       "description_zh": "气泡框位置，可选 `top` `left` `right` `bottom` `topLeft` `topRight` `bottomLeft` `bottomRight` `leftTop` `leftBottom` `rightTop` rightBottom"
     },
     "trigger": {
-      "value": "",
+      "value": ["hover", "focus", "click", "contextmenu"],
       "description": "Trigger behavior, optional 'hover/focus/click/contextmenu'",
       "default": "hover",
       "type": "string",
       "description_zh": "触发行为，可选 `hover/focus/click/contextmenu`"
     },
-    "open(v-model)": {
+    "v-model:open": {
       "value": "",
       "description": "Used to manually control the visibility and concealment of the floating layer, less than 4.0.0 use visible",
       "default": "false",

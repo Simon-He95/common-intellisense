@@ -1,6 +1,100 @@
 {
   "name": "AMentions",
-  "props": {},
+  "props": {
+    "autofocus": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Auto get focus when component mounted",
+      "description_zh": "Auto get focus when component mounted"
+    },
+    "defaultValue": {
+      "default": "",
+      "value": "",
+      "type": "string",
+      "description": "Default value",
+      "description_zh": "Default value"
+    },
+    ":filterOption": {
+      "default": "",
+      "value": "",
+      "type": "false | (input: string, option: OptionProps) => boolean",
+      "description": "Customize filter option logic",
+      "description_zh": "Customize filter option logic"
+    },
+    ":getPopupContainer": {
+      "default": "",
+      "value": "",
+      "type": "() => HTMLElement",
+      "description": "Set the mount HTML node for suggestions",
+      "description_zh": "Set the mount HTML node for suggestions"
+    },
+    "notFoundContent": {
+      "default": "'Not Found'",
+      "value": "",
+      "type": "string | slot",
+      "description": "Set mentions content when not match",
+      "description_zh": "Set mentions content when not match"
+    },
+    "placement": {
+      "default": "bottom",
+      "value": ["top", "bottom"],
+      "type": "top | bottom",
+      "description": "Set popup placement",
+      "description_zh": "Set popup placement"
+    },
+    "prefix": {
+      "default": "'@'",
+      "value": "",
+      "type": "string | string[]",
+      "description": "Set trigger prefix keyword",
+      "description_zh": "Set trigger prefix keyword"
+    },
+    "split": {
+      "default": "' '",
+      "value": "",
+      "type": "string",
+      "description": "Set split string before and after selected mention",
+      "description_zh": "Set split string before and after selected mention"
+    },
+    "status": {
+      "default": "-",
+      "value": ["error", "warning", "success", "validating"],
+      "type": "'error' | 'warning' | 'success' | 'validating'",
+      "description": "Set validation status",
+      "description_zh": "Set validation status"
+    },
+    ":validateSearch": {
+      "default": "",
+      "value": "",
+      "type": "(text: string, props: MentionsProps) => void",
+      "description": "Customize trigger search logic",
+      "description_zh": "Customize trigger search logic"
+    },
+    "v-model:value": {
+      "default": "",
+      "value": "",
+      "type": "string",
+      "description": "Set value of mentions",
+      "description_zh": "Set value of mentions",
+      "required": true
+    },
+    ":options": {
+      "default": "[]",
+      "value": "",
+      "type": "Options",
+      "description": "Option Configuration",
+      "description_zh": "Option Configuration",
+      "required": true
+    },
+    ":option": {
+      "default": "-",
+      "value": "",
+      "type": "v-slot:option=\"option\"",
+      "description": "custom option label",
+      "description_zh": "custom option label"
+    }
+  },
   "methods": [],
   "events": [
     {

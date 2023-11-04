@@ -1,98 +1,106 @@
 import { getLocale } from '@vscode-use/utils'
 import { componentsReducer, propsReducer } from '../../utils'
-import AAffix from './affix.json'
-import AAlert from './alert.json'
-import AAnchor from './anchor.json'
-import AAutoComplete from './autoComplete.json'
-import AAvatar from './avatar.json'
-import AAvatarGroup from './avatarGroup.json'
-import ABadge from './badge.json'
-import ABadgeRibbon from './badgeRibbon.json'
-import ABreadcrumb from './breadcrumb.json'
-import ABreadcrumbItem from './breadcrumbItem.json'
-import AButton from './button.json'
-import ACalendar from './calendar.json'
-import ACard from './card.json'
-import ACardMeta from './cardMeta.json'
-import ACarousel from './carousel.json'
-import ACheckbox from './checkbox.json'
-import ACheckboxGroup from './checkboxGroup.json'
-import ACol from './col.json'
-import ACollapse from './collapse.json'
-import ACollapsePanel from './collapsePanel.json'
-import AComment from './comment.json'
-import AConfigProvider from './configProvider.json'
-import ADatePicker from './datePicker.json'
-import ADescriptions from './descriptions.json'
-import ADescriptionsItem from './descriptionsItem.json'
-import ADivider from './divider.json'
-import ADrawer from './drawer.json'
-import ADropdown from './dropdown.json'
-import ADropdownButton from './dropdownButton.json'
-import AEmpty from './empty.json'
-import AFloatButton from './floatButton.json'
-import AFloatButtonGroup from './floatButtonGroup.json'
-import AForm from './form.json'
-import AFormItem from './formItem.json'
-import AImage from './image.json'
-import AInputNumber from './inputNumber.json'
-import AInputPassword from './inputPassword.json'
-import AInputSearch from './inputSearch.json'
-import ALayout from './layout.json'
-import ALayoutSider from './layoutSider.json'
-import AList from './list.json'
-import AListItem from './listItem.json'
-import AListItemMeta from './listItemMeta.json'
-import AMenu from './menu.json'
-import ARangePicker from './rangePicker.json'
-import ARow from './row.json'
-import ATextarea from './textarea.json'
-import AQrcode from './qrcode.json'
-import ASpace from './space.json'
-import ARadio from './radio.json'
-import ARadioGroup from './radioGroup.json'
-import ARadioButton from './radioButton.json'
-import ASpaceCompact from './spaceCompact.json'
-import AInput from './input.json'
-import AInputGroup from './inputGroup.json'
-import ASelect from './select.json'
-import ASelectOption from './selectOption.json'
-import ASelectOptionGroup from './selectOptionGroup.json'
-import ATypographyText from './typographyText.json'
-import ATypographyParagraph from './typographyParagraph.json'
-import ATypographyTitle from './typographyTitle.json'
-import ACascader from './cascader.json'
-import ASegmented from './segmented.json'
-import ASwitch from './switch.json'
-import ASlider from './slider.json'
-import ATimePicker from './timePicker.json'
-import AUpload from './upload.json'
-import ASpin from './spin.json'
-import ARate from './rate.json'
-import ABackTop from './backTop.json'
-import AWatermark from './watermark.json'
-import ATransfer from './transfer.json'
-import ATable from './table.json'
-import ATableColumn from './tableColumn.json'
-import ATag from './tag.json'
-import AProgress from './progress.json'
-import ATree from './tree.json'
-import APagination from './pagination.json'
-import ASkeleton from './skeleton.json'
-import AResult from './result.json'
-import AStatistic from './statistic.json'
-import ATabs from './tabs.json'
-import ATabPane from './tabPane.json'
-import APageHeader from './pageHeader.json'
-import ASteps from './steps.json'
-import ATooltip from './tooltip.json'
-import APopover from './popover.json'
-import APopconfirm from './popconfirm.json'
-import ATour from './tour.json'
-import ATimeline from './timeline.json'
-import ATimelineItem from './timelineItem.json'
-import AModal from './modal.json'
-import AMentions from './mentions.json'
+import AAffix from './Affix.json'
+import AAlert from './Alert.json'
+import AAnchor from './Anchor.json'
+import AAutoComplete from './AutoComplete.json'
+import AAvatar from './Avatar.json'
+import AAvatarGroup from './AvatarGroup.json'
+import ABackTop from './BackTop.json'
+import ABadge from './Badge.json'
+import ABadgeRibbon from './BadgeRibbon.json'
+import ABreadcrumb from './Breadcrumb.json'
+import ABreadcrumbItem from './BreadcrumbItem.json'
+import ABreadcrumbSeparator from './BreadcrumbSeparator.json'
+import AButton from './Button.json'
+import ACalendar from './Calendar.json'
+import ACard from './Card.json'
+import ACardMeta from './CardMeta.json'
+import ACarousel from './Carousel.json'
+import ACascader from './Cascader.json'
+import ACheckableTag from './CheckableTag.json'
+import ACheckbox from './Checkbox.json'
+import ACheckboxGroup from './CheckboxGroup.json'
+import ACol from './Col.json'
+import ACollapse from './Collapse.json'
+import ACollapsePanel from './CollapsePanel.json'
+import AComment from './Comment.json'
+import AConfigProvider from './ConfigProvider.json'
+import ADatePicker from './DatePicker.json'
+import ADescriptions from './Descriptions.json'
+import ADescriptionsItem from './DescriptionsItem.json'
+import ADivider from './Divider.json'
+import ADrawer from './Drawer.json'
+import ADropdown from './Dropdown.json'
+import ADropdownButton from './DropdownButton.json'
+import AEmpty from './Empty.json'
+import AFloatButton from './FloatButton.json'
+import AFloatButtonGroup from './FloatButtonGroup.json'
+import AForm from './Form.json'
+import AFormItem from './FormItem.json'
+import AImage from './Image.json'
+import AInput from './Input.json'
+import AInputGroup from './InputGroup.json'
+import AInputNumber from './InputNumber.json'
+import AInputPassword from './InputPassword.json'
+import AInputSearch from './InputSearch.json'
+import ALayout from './Layout.json'
+import ALayoutSider from './LayoutSider.json'
+import AList from './List.json'
+import AListItem from './ListItem.json'
+import AListItemMeta from './ListItemMeta.json'
+import AMentions from './Mentions.json'
+import AMenu from './Menu.json'
+import AModal from './Modal.json'
+import APageHeader from './PageHeader.json'
+import APagination from './Pagination.json'
+import APopconfirm from './Popconfirm.json'
+import APopover from './Popover.json'
+import AProgress from './Progress.json'
+import AQrcode from './Qrcode.json'
+import ARadio from './Radio.json'
+import ARadioButton from './RadioButton.json'
+import ARadioGroup from './RadioGroup.json'
+import ARangePicker from './RangePicker.json'
+import ARate from './Rate.json'
+import AResult from './Result.json'
+import ARow from './Row.json'
+import ASegmented from './Segmented.json'
+import ASelect from './Select.json'
+import ASelectOption from './SelectOption.json'
+import ASelectOptionGroup from './SelectOptionGroup.json'
+import ASkeleton from './Skeleton.json'
+import ASlider from './Slider.json'
+import ASpace from './Space.json'
+import ASpaceCompact from './SpaceCompact.json'
+import ASpin from './Spin.json'
+import AStatistic from './Statistic.json'
+import AStatisticCountdown from './StatisticCountdown.json'
+import ASteps from './Steps.json'
+import ASwitch from './Switch.json'
+import ATable from './Table.json'
+import ATableColumn from './TableColumn.json'
+import ATabPane from './TabPane.json'
+import ATabs from './Tabs.json'
+import ATag from './Tag.json'
+import ATextarea from './Textarea.json'
+import ATimeline from './Timeline.json'
+import ATimelineItem from './TimelineItem.json'
+import ATimePicker from './TimePicker.json'
+import ATooltip from './Tooltip.json'
+import ATour from './Tour.json'
+import ATransfer from './Transfer.json'
+import ATree from './Tree.json'
+import ATreeSelect from './TreeSelect.json'
+import ATypographyLink from './TypographyLink.json'
+import ATypographyParagraph from './TypographyParagraph.json'
+import ATypographyText from './TypographyText.json'
+import ATypographyTitle from './TypographyTitle.json'
+import AUpload from './Upload.json'
+import AWatermark from './Watermark.json'
+import ALayoutContent from './LayoutContent.json'
+import ALayoutFooter from './LayoutFooter.json'
+import ALayoutHeader from './LayoutHeader.json'
 
 export function antDesignVue4() {
   const map: any = [
@@ -102,15 +110,19 @@ export function antDesignVue4() {
     AAutoComplete,
     AAvatar,
     AAvatarGroup,
+    ABackTop,
     ABadge,
     ABadgeRibbon,
     ABreadcrumb,
     ABreadcrumbItem,
+    ABreadcrumbSeparator,
     AButton,
     ACalendar,
     ACard,
     ACardMeta,
     ACarousel,
+    ACascader,
+    ACheckableTag,
     ACheckbox,
     ACheckboxGroup,
     ACol,
@@ -131,6 +143,8 @@ export function antDesignVue4() {
     AForm,
     AFormItem,
     AImage,
+    AInput,
+    AInputGroup,
     AInputNumber,
     AInputPassword,
     AInputSearch,
@@ -139,56 +153,58 @@ export function antDesignVue4() {
     AList,
     AListItem,
     AListItemMeta,
+    AMentions,
     AMenu,
-    ARangePicker,
-    ARow,
-    ATextarea,
+    AModal,
+    APageHeader,
+    APagination,
+    APopconfirm,
+    APopover,
+    AProgress,
     AQrcode,
-    ASpace,
     ARadio,
-    ARadioGroup,
     ARadioButton,
-    ASpaceCompact,
-    AInput,
-    AInputGroup,
+    ARadioGroup,
+    ARangePicker,
+    ARate,
+    AResult,
+    ARow,
+    ASegmented,
     ASelect,
     ASelectOption,
     ASelectOptionGroup,
-    ATypographyText,
-    ATypographyParagraph,
-    ATypographyTitle,
-    ACascader,
-    ASegmented,
-    ASwitch,
+    ASkeleton,
     ASlider,
-    ATimePicker,
-    AUpload,
+    ASpace,
+    ASpaceCompact,
     ASpin,
-    ARate,
-    ABackTop,
-    AWatermark,
-    ATransfer,
+    AStatistic,
+    AStatisticCountdown,
+    ASteps,
+    ASwitch,
     ATable,
     ATableColumn,
-    ATag,
-    AProgress,
-    ATree,
-    APagination,
-    ASkeleton,
-    AResult,
-    AStatistic,
-    ATabs,
     ATabPane,
-    APageHeader,
-    ASteps,
-    ATooltip,
-    APopover,
-    APopconfirm,
-    ATour,
+    ATabs,
+    ATag,
+    ATextarea,
     ATimeline,
     ATimelineItem,
-    AModal,
-    AMentions,
+    ATimePicker,
+    ATooltip,
+    ATour,
+    ATransfer,
+    ATree,
+    ATreeSelect,
+    ATypographyLink,
+    ATypographyParagraph,
+    ATypographyText,
+    ATypographyTitle,
+    AUpload,
+    AWatermark,
+    ALayoutContent,
+    ALayoutFooter,
+    ALayoutHeader,
   ]
 
   return propsReducer(map)
@@ -202,15 +218,16 @@ export function antDesignVue4Components() {
         [ARow, '栅格布局'],
         [AQrcode, '二维码'],
         [ACol, '栅格布局'],
-        ['a-layout-content', '内容部分，自带默认样式，其下可嵌套任何元素，只能放在 Layout 中'],
-        ['a-layout-header', '顶部布局，自带默认样式，其下可嵌套任何元素，只能放在 Layout 中。'],
+        [ALayoutContent, '内容部分，自带默认样式，其下可嵌套任何元素，只能放在 Layout 中'],
+        [ALayoutHeader, '顶部布局，自带默认样式，其下可嵌套任何元素，只能放在 Layout 中。'],
         [ALayoutSider, '侧边栏，自带默认样式及基本功能，其下可嵌套任何元素，只能放在 Layout 中。'],
         [ALayout, '布局容器，其下可嵌套 Header Sider Content Footer 或 Layout 本身，可以放在任何父容器中。'],
-        ['a-layout-footer', '底部布局，自带默认样式，其下可嵌套任何元素，只能放在 Layout 中。'],
+        [ALayoutFooter, '底部布局，自带默认样式，其下可嵌套任何元素，只能放在 Layout 中。'],
         [AButton, '按钮'],
         [ASpace, '间距 设置组件之间的间距'],
         [ASpaceCompact, '紧凑布局组合 使用 Space.Compact 让表单组件之间紧凑连接且合并边框'],
         [AAnchor, '锚点'],
+        [AAutoComplete, '输入字段的自动完成功能'],
         [ARadio, '单选框'],
         [ARadioGroup, '单选框组'],
         [ARadioButton, '按钮样式的单选组合'],
@@ -227,15 +244,15 @@ export function antDesignVue4Components() {
         [ATypographyParagraph, '排版段落'],
         [ATypographyText, '排版文本'],
         [ATypographyTitle, '排版标题'],
-        ['a-typography-link', '排版超链接'],
+        [ATypographyLink, '排版超链接'],
         [ASelectOptionGroup, '备选项进行分组展示'],
         [ACascader, '级联选择器'],
+        [ACheckableTag, '进行标记和分类的小标签。'],
         [ASwitch, '开关'],
         [ASlider, '滑块'],
         [ATimePicker, '时间选择器'],
-        ['a-time-range-picker', '时间范围选择器'],
+        [ARangePicker, '时间范围选择器'],
         [ADatePicker, '日期选择器/日期时间选择器'],
-        [ARangePicker, '通过设置 picker 属性，指定日期范围选择器类型'],
         [AUpload, '上传'],
         [ASpin, '加载中 用于页面和区块的加载中状态'],
         [ARate, '评分'],
@@ -254,6 +271,7 @@ export function antDesignVue4Components() {
         [ATag, '标签'],
         [AProgress, '进度条'],
         [ATree, '树形控件'],
+        [ATreeSelect, '树型选择控件。'],
         [APagination, '分页'],
         [ABadge, '标记'],
         [ABadgeRibbon, '缎带型的徽标'],
@@ -265,13 +283,14 @@ export function antDesignVue4Components() {
         [ADescriptionsItem, '描述列表项'],
         [AResult, '结果'],
         [AStatistic, '统计数值'],
+        [AStatisticCountdown, '统计数值'],
         [AAlert, '警告'],
         [AMenu, '导航菜单'],
         [ATabs, '标签页'],
         [ATabPane, '标签项'],
         [ABreadcrumb, '面包屑'],
         [ABreadcrumbItem, '面包屑项'],
-        ['a-breadcrumb-separator', '可以自定义分隔符的面包屑项'],
+        [ABreadcrumbSeparator, '可以自定义分隔符的面包屑项'],
         [APageHeader, '页头'],
         [ADropdown, '下拉菜单'],
         [ADropdownButton, '带下拉框的按钮'],
@@ -302,15 +321,16 @@ export function antDesignVue4Components() {
         [ARow, 'grid layout'],
         [AQrcode, 'QR code'],
         [ACol, 'Grid layout'],
-        ['a-layout-content', 'The content part has its own default style. Any elements can be nested under it and can only be placed in Layout'],
-        ['a-layout-header', 'The top layout has its own default style. Any element can be nested under it and can only be placed in Layout. '],
+        [ALayoutContent, 'The content part has its own default style. Any elements can be nested under it and can only be placed in Layout'],
+        [ALayoutHeader, 'The top layout has its own default style. Any element can be nested under it and can only be placed in Layout. '],
         [ALayoutSider, 'Sidebar has its own default style and basic functions. Any element can be nested under it and can only be placed in Layout. '],
         [ALayout, 'Layout container, under which Header Sider Content Footer or Layout itself can be nested, and can be placed in any parent container. '],
-        ['a-layout-footer', 'Bottom layout, with its own default style, any element can be nested under it, and can only be placed in Layout. '],
+        [ALayoutFooter, 'Bottom layout, with its own default style, any element can be nested under it, and can only be placed in Layout. '],
         [AButton, 'button'],
         [ASpace, 'Spacing sets the spacing between components'],
         [ASpaceCompact, 'Compact layout combination uses Space.Compact to compactly connect form components and merge borders'],
         [AAnchor, 'anchor'],
+        [AAutoComplete, 'Autocomplete function of input field.'],
         [ARadio, 'radio button'],
         [ARadioGroup, 'Radio group'],
         [ARadioButton, 'Radio combination of button styles'],
@@ -327,15 +347,15 @@ export function antDesignVue4Components() {
         [ATypographyParagraph, 'typography paragraph'],
         [ATypographyText, 'typography text'],
         [ATypographyTitle, 'typography title'],
-        ['a-typography-link', 'typography hyperlink'],
+        [ATypographyLink, 'typography hyperlink'],
         [ASelectOptionGroup, 'Alternative options are displayed in groups'],
         [ACascader, 'cascading selector'],
+        [ACheckableTag, 'Tag for categorizing or markup.'],
         [ASwitch, 'switch'],
         [ASlider, 'slider'],
         [ATimePicker, 'time picker'],
-        ['a-time-range-picker', 'time range picker'],
+        [ARangePicker, 'time range picker'],
         [ADatePicker, 'Date picker/date time picker'],
-        [ARangePicker, 'Specify the date range picker type by setting the picker attribute'],
         [AUpload, 'upload'],
         [ASpin, 'Loading'],
         [ARate, 'rating'],
@@ -354,6 +374,7 @@ export function antDesignVue4Components() {
         [ATag, 'tag'],
         [AProgress, 'progress bar'],
         [ATree, 'Tree control'],
+        [ATreeSelect, 'Tree selection control.'],
         [APagination, 'pagination'],
         [ABadge, 'mark'],
         [ABadgeRibbon, 'ribbon-shaped logo'],
@@ -365,13 +386,14 @@ export function antDesignVue4Components() {
         [ADescriptionsItem, 'Description list item'],
         [AResult, 'result'],
         [AStatistic, 'statistical value'],
+        [AStatisticCountdown, 'statistical value'],
         [AAlert, 'warning'],
         [AMenu, 'Navigation menu'],
         [ATabs, 'tabs'],
         [ATabPane, 'tab item'],
         [ABreadcrumb, 'breadcrumb'],
         [ABreadcrumbItem, 'breadcrumb item'],
-        ['a-breadcrumb-separator', 'Breadcrumb items with customizable separators'],
+        [ABreadcrumbSeparator, 'Breadcrumb items with customizable separators'],
         [APageHeader, 'page header'],
         [ADropdown, 'drop-down menu'],
         [ADropdownButton, 'Button with dropdown box'],

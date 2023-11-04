@@ -1,28 +1,28 @@
 {
   "name": "AWatermark",
   "props": {
-    "width": {
+    ":width": {
       "value": "",
       "description": "The width of the watermark, the default value of 'content' is its own width",
       "default": "120",
       "type": "number",
       "description_zh": "水印的宽度，`content` 的默认值为自身的宽度"
     },
-    "height": {
+    ":height": {
       "value": "",
       "description": "The height of the watermark, the default value of 'content' is its own height",
       "default": "64",
       "type": "number",
       "description_zh": "水印的高度，`content` 的默认值为自身的高度"
     },
-    "rotate": {
+    ":rotate": {
       "value": "",
       "description": "When the watermark is drawn, the angle of rotation in '°'",
       "default": "-22",
       "type": "number",
       "description_zh": "水印绘制时，旋转的角度，单位 `°`"
     },
-    "zIndex": {
+    ":zIndex": {
       "value": "",
       "description": "The z-index of the appended watermark element",
       "default": "9",
@@ -41,7 +41,8 @@
       "description": "Watermark text content",
       "default": "-",
       "type": "string | string[]",
-      "description_zh": "水印文字内容"
+      "description_zh": "水印文字内容",
+      "required": true
     },
     "font": {
       "value": "",
@@ -50,19 +51,15 @@
       "type": "[Font](#font)",
       "description_zh": "文字样式"
     },
-    "gap": {
+    ":gap": {
       "value": "",
       "description": "The spacing between watermarks",
       "default": "\\[100, 100\\]",
       "type": "\\[number, number\\]",
       "description_zh": "水印之间的间距"
     },
-    "offset": {
-      "value": [
-        "\\[gap\\[0\\]",
-        "2, gap\\[1\\]",
-        "2\\]"
-      ],
+    ":offset": {
+      "value": "",
       "description": "The offset of the watermark from the top left corner of the container, defaults to 'gap/2'",
       "default": "\\[gap\\[0\\] | 2, gap\\[1\\] | 2\\]",
       "type": "\\[number, number\\]",

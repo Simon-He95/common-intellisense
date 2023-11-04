@@ -50,11 +50,8 @@
       "type": "boolean",
       "description_zh": "禁用"
     },
-    "displayRender": {
-      "value": [
-        "`labels => labels.join('",
-        "')`"
-      ],
+    ":displayRender": {
+      "value": "",
       "description": "The render function displayed after selection can be displayed using #displayRender=\"{labels, selectedOptions}\"",
       "default": "`labels => labels.join(' | ')`",
       "type": "`({labels, selectedOptions}) => VNode`",
@@ -67,7 +64,7 @@
       "type": "string",
       "description_zh": "自定义浮层类名"
     },
-    "dropdownStyle": {
+    ":dropdownStyle": {
       "value": "",
       "description": "Customize the overlay style",
       "default": "{}",
@@ -152,14 +149,16 @@
       "description": "Optional data sources",
       "default": "-",
       "type": "[Option](#option)[]",
-      "description_zh": "可选项数据源"
+      "description_zh": "可选项数据源",
+      "required": true
     },
     "placeholder": {
       "value": "",
       "description": "Input box placeholder text",
       "default": "'请选择'",
       "type": "string",
-      "description_zh": "输入框占位文本"
+      "description_zh": "输入框占位文本",
+      "required": true
     },
     "placement": {
       "value": [
@@ -173,14 +172,14 @@
       "type": "bottomLeft | bottomRight | topLeft | topRight",
       "description_zh": "浮层预设位置"
     },
-    "showCheckedStrategy": {
-      "value": "",
+    ":showCheckedStrategy": {
+      "value": ["Cascader.SHOW_PARENT", "Cascader.SHOW_CHILD"],
       "description": "Defines how the selection is backfilled. 'Cascader.SHOW_CHILD': Displays only the selected child nodes. 'Cascader.SHOW_PARENT': Displays only the parent node (when all child nodes under the parent node are selected).",
       "default": "`Cascader.SHOW_PARENT`",
       "type": "`Cascader.SHOW_PARENT` | `Cascader.SHOW_CHILD`",
       "description_zh": "定义选中项回填的方式。`Cascader.SHOW_CHILD`: 只显示选中的子节点。`Cascader.SHOW_PARENT`: 只显示父节点（当父节点下所有子节点都选中时）。"
     },
-    "removeIcon": {
+    ":removeIcon": {
       "value": "",
       "description": "Customized multi-check box clear icon",
       "default": "-",
@@ -222,26 +221,27 @@
       "type": "large | default | small",
       "description_zh": "输入框大小"
     },
-    "suffixIcon": {
+    ":suffixIcon": {
       "value": "",
       "description": "Custom selection box suffix icon",
       "default": "-",
       "type": "string | VNode | slot",
       "description_zh": "自定义的选择框后缀图标"
     },
-    "tagRender": {
+    ":tagRender": {
       "value": "",
       "description": "Customize the tag content, which takes effect when multiple selections are made",
       "default": "-",
       "type": "slot",
       "description_zh": "自定义 tag 内容，多选时生效"
     },
-    "value(v-model)": {
+    "v-model:value": {
       "value": "",
       "description": "Specify the selection",
       "default": "-",
       "type": "string[] | number[]",
-      "description_zh": "指定选中项"
+      "description_zh": "指定选中项",
+      "required": true
     }
   },
   "methods": [

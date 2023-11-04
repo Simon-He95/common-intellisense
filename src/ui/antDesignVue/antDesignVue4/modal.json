@@ -1,21 +1,21 @@
 {
   "name": "AModal",
   "props": {
-    "afterClose": {
+    ":afterClose": {
       "value": "",
       "description": "Callbacks after Modal is completely closed",
       "default": "无",
       "type": "function",
       "description_zh": "Modal 完全关闭后的回调"
     },
-    "bodyStyle": {
+    ":bodyStyle": {
       "value": "",
       "description": "Modal body style",
       "default": "{}",
       "type": "object",
       "description_zh": "Modal body 样式"
     },
-    "cancelButtonProps": {
+    ":cancelButtonProps": {
       "value": "",
       "description": "cancel button props",
       "default": "-",
@@ -43,7 +43,7 @@
       "type": "boolean",
       "description_zh": "是否显示右上角的关闭按钮"
     },
-    "closeIcon": {
+    ":closeIcon": {
       "value": "",
       "description": "Customize the close icon",
       "default": "-",
@@ -71,14 +71,14 @@
       "type": "string",
       "description_zh": "可用于设置浮层的类名"
     },
-    "dialogStyle": {
+    ":dialogStyle": {
       "value": "",
       "description": "It can be used to set the style of the floating layer, adjust the position of the floating layer, and so on",
       "default": "-",
       "type": "object",
       "description_zh": "可用于设置浮层的样式，调整浮层位置等"
     },
-    "footer": {
+    ":footer": {
       "value": "",
       "description": "Bottom content, when the default bottom button is not needed, can be set to ':footer=\"null\"'",
       "default": "确定取消按钮",
@@ -92,7 +92,7 @@
       "type": "boolean",
       "description_zh": "强制渲染 Modal"
     },
-    "getContainer": {
+    ":getContainer": {
       "value": "",
       "description": "Specifies the HTML node to which the modal mounts",
       "default": "() => document.body",
@@ -120,14 +120,14 @@
       "type": "boolean",
       "description_zh": "点击蒙层是否允许关闭"
     },
-    "maskStyle": {
+    ":maskStyle": {
       "value": "",
       "description": "Mask style",
       "default": "{}",
       "type": "object",
       "description_zh": "遮罩样式"
     },
-    "okButtonProps": {
+    ":okButtonProps": {
       "value": "",
       "description": "OK button props",
       "default": "-",
@@ -155,12 +155,13 @@
       "type": "string | slot",
       "description_zh": "标题"
     },
-    "open(v-model)": {
+    "v-model:open": {
       "value": "",
       "description": "Whether the dialog box is visible",
       "default": "无",
       "type": "boolean",
-      "description_zh": "对话框是否可见"
+      "description_zh": "对话框是否可见",
+      "required": true
     },
     "width": {
       "value": "",
@@ -176,7 +177,7 @@
       "type": "string",
       "description_zh": "对话框外层容器的类名"
     },
-    "zIndex": {
+    ":zIndex": {
       "value": "",
       "description": "Set the 'z-index' of the modal",
       "default": "1000",

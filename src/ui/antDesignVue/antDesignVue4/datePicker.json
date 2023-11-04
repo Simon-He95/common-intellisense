@@ -22,7 +22,7 @@
       "type": "boolean",
       "description_zh": "是否有边框"
     },
-    "dateRender": {
+    ":dateRender": {
       "value": "",
       "description": "Customize the contents of the date cell",
       "default": "-",
@@ -36,7 +36,7 @@
       "type": "boolean",
       "description_zh": "禁用"
     },
-    "disabledDate": {
+    ":disabledDate": {
       "value": "",
       "description": "Unselectable dates",
       "default": "-",
@@ -62,7 +62,7 @@
       "type": "string",
       "description_zh": "额外的弹出日历 className"
     },
-    "getPopupContainer": {
+    ":getPopupContainer": {
       "value": "",
       "description": "The container that defines the floating layer, defaults to a new div on the body",
       "default": "-",
@@ -78,17 +78,9 @@
     },
     "locale": {
       "value": [
-        "[默认配置](https:",
-        "",
-        "github.com",
-        "vueComponent",
-        "ant-design-vue",
-        "blob",
-        "main",
-        "components",
-        "date-picker",
-        "locale",
-        "example.json)"
+        "zh_CN",
+        "zh_TW",
+        "en_US"
       ],
       "description": "Internationalized configuration",
       "default": "",
@@ -108,7 +100,7 @@
       "type": "time | date | month | year | decade",
       "description_zh": "日期面板的状态"
     },
-    "nextIcon": {
+    ":nextIcon": {
       "value": "",
       "description": "Customize the next icon",
       "default": "-",
@@ -154,14 +146,14 @@
       "type": "bottomLeft `bottomRight` `topLeft` topRight",
       "description_zh": "选择框弹出的位置"
     },
-    "popupStyle": {
+    ":popupStyle": {
       "value": "",
       "description": "Additional pop-up calendar style",
       "default": "{}",
       "type": "CSSProperties",
       "description_zh": "额外的弹出日历样式"
     },
-    "prevIcon": {
+    ":prevIcon": {
       "value": "",
       "description": "Customize the previous icon",
       "default": "-",
@@ -196,21 +188,21 @@
       "type": "'error' | 'warning'",
       "description_zh": "设置校验状态"
     },
-    "suffixIcon": {
+    ":suffixIcon": {
       "value": "",
       "description": "Custom selection box suffix icon",
       "default": "-",
       "type": "v-slot:suffixIcon",
       "description_zh": "自定义的选择框后缀图标"
     },
-    "superNextIcon": {
+    ":superNextIcon": {
       "value": "",
       "description": "Customize the '<<' toggle icon",
       "default": "-",
       "type": "slot",
       "description_zh": "自定义 `<<` 切换图标"
     },
-    "superPrevIcon": {
+    ":superPrevIcon": {
       "value": "",
       "description": "Customize the '>>' toggle icon",
       "default": "-",
@@ -231,14 +223,14 @@
       "type": "dayjs",
       "description_zh": "默认面板日期"
     },
-    "disabledTime": {
+    ":disabledTime": {
       "value": "",
       "description": "Unselectable time",
       "default": "-",
       "type": "function(date)",
       "description_zh": "不可选择的时间"
     },
-    "renderExtraFooter": {
+    ":renderExtraFooter": {
       "value": "",
       "description": "Add an extra footer to the panel",
       "default": "-",
@@ -253,12 +245,7 @@
       "description_zh": "当设定了 `showTime` 的时候，面板是否显示“此刻”按钮"
     },
     "showTime": {
-      "value": [
-        "[TimePicker Options](",
-        "components",
-        "time-picker",
-        "#api)"
-      ],
+      "value": "",
       "description": "Added time selection function",
       "default": "[TimePicker Options]( | components | time-picker | #api)",
       "type": "Object | boolean",
@@ -278,12 +265,13 @@
       "type": "boolean",
       "description_zh": "是否展示“今天”按钮"
     },
-    "value(v-model)": {
+    "v-model:value": {
       "value": "",
       "description": "date",
       "default": "-",
       "type": "dayjs",
-      "description_zh": "日期"
+      "description_zh": "日期",
+      "required": true
     }
   },
   "methods": [],
