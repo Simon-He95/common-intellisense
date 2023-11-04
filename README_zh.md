@@ -20,6 +20,7 @@
 - @nextui-org/react 2
 - @nuxt/ui 2
 - vuetify 3
+- radix-vue 1
 
 ### [antdv demo](assets/antdv.gif)
 
