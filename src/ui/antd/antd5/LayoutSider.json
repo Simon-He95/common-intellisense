@@ -2,102 +2,117 @@
   "name": "Layout.Sider",
   "props": {
     "breakpoint": {
-      "value": ["xs", "sm", "md", "lg", "xl", "xxl"],
+      "value": [
+        "xs",
+        "sm",
+        "md",
+        "lg",
+        "xl",
+        "xxl"
+      ],
       "default": "-",
       "type": "xs | sm | md | lg | xl | xxl",
-      "description": "触发响应式布局的断点",
+      "description": "Trigger breakpoints for responsive layouts",
       "description_zh": "触发响应式布局的断点"
     },
     "className": {
       "value": "",
       "default": "-",
       "type": "string",
-      "description": "容器 className",
+      "description": "Container className",
       "description_zh": "容器 className"
     },
     "collapsed": {
       "value": "",
       "default": "-",
       "type": "boolean",
-      "description": "当前收起状态",
+      "description": "Current collapsed state",
       "description_zh": "当前收起状态"
     },
     ":collapsedWidth": {
       "value": "",
       "default": "80",
       "type": "number",
-      "description": "收缩宽度，设置为 0 会出现特殊 trigger",
+      "description": "Shrink the width, set to 0 and a special trigger will appear",
       "description_zh": "收缩宽度，设置为 0 会出现特殊 trigger"
     },
     "collapsible": {
       "value": "",
       "default": "false",
       "type": "boolean",
-      "description": "是否可收起",
+      "description": "Whether it can be stowed away",
       "description_zh": "是否可收起"
     },
     "defaultCollapsed": {
       "value": "",
       "default": "false",
       "type": "boolean",
-      "description": "是否默认收起",
+      "description": "Whether it is collapsed by default",
       "description_zh": "是否默认收起"
     },
     "reverseArrow": {
       "value": "",
       "default": "false",
       "type": "boolean",
-      "description": "翻转折叠提示箭头的方向，当 Sider 在右边时可以使用",
+      "description": "Flips the direction of the collapse cue arrow, which can be used when the Sider is on the right",
       "description_zh": "翻转折叠提示箭头的方向，当 Sider 在右边时可以使用"
     },
     ":style": {
       "value": "",
       "default": "-",
       "type": "CSSProperties",
-      "description": "指定样式",
+      "description": "Specify the style",
       "description_zh": "指定样式"
     },
     "theme": {
-      "value": ["light", "dark"],
+      "value": [
+        "light",
+        "dark"
+      ],
       "default": "dark",
       "type": "light | dark",
-      "description": "主题颜色",
+      "description": "Theme colors",
       "description_zh": "主题颜色"
     },
     ":trigger": {
       "value": "",
       "default": "-",
       "type": "ReactNode",
-      "description": "自定义 trigger，设置为 null 时隐藏 trigger",
+      "description": "Customize the trigger, which is hidden when set to null",
       "description_zh": "自定义 trigger，设置为 null 时隐藏 trigger"
     },
     "width": {
       "value": "",
       "default": "200",
       "type": "number | string",
-      "description": "宽度",
+      "description": "width",
       "description_zh": "宽度"
     },
     ":zeroWidthTriggerStyle": {
       "value": "",
       "default": "-",
       "type": "object",
-      "description": "指定当 collapsedWidth 为 0 时出现的特殊 trigger 的样式",
+      "description": "Specifies the style of a special trigger that appears when collapsedWidth is 0",
       "description_zh": "指定当 collapsedWidth 为 0 时出现的特殊 trigger 的样式"
     }
   },
   "link": "https://ant.design/components//layout",
-  "link_zh": "https://ant.design/components//layout-cn",
+  "link_zh": "https://ant.design/components//layout",
   "methods": [],
-  "events": [{
-    "name": "onBreakpoint",
-    "description": "点击搜索图标、清除图标，或按下回车键时的回调",
-    "params": "(broken) => {}",
-    "description_zh": "点击搜索图标、清除图标，或按下回车键时的回调"
-  }, {
-    "name": "onCollapse",
-    "description": "展开-收起时的回调函数，有点击 trigger 以及响应式反馈两种方式可以触发",
-    "params": "(collapsed, type) => {}",
-    "description_zh": "展开-收起时的回调函数，有点击 trigger 以及响应式反馈两种方式可以触发"
-  }]
+  "events": [
+    {
+      "name": "onBreakpoint",
+      "description": "Click the search icon, the clear icon, or the callback when you press enter",
+      "params": "(broken) => {}",
+      "description_zh": "点击搜索图标、清除图标，或按下回车键时的回调",
+      "value": ""
+    },
+    {
+      "name": "onCollapse",
+      "description": "The callback function when expanding-collapsing can be triggered in two ways: click trigger and reactive feedback",
+      "params": "(collapsed, type) => {}",
+      "description_zh": "展开-收起时的回调函数，有点击 trigger 以及响应式反馈两种方式可以触发",
+      "value": ""
+    }
+  ]
 }

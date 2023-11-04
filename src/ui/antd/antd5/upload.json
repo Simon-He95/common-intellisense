@@ -62,7 +62,8 @@
       "description": "A list of files that have been uploaded (controlled), if you encounter an issue where 'onChange' is only called once when you use this parameter",
       "default": "-",
       "type": "UploadFile[]",
-      "description_zh": "已经上传的文件列表（受控），使用此参数时，如果遇到 `onChange` 只调用一次的问题"
+      "description_zh": "已经上传的文件列表（受控），使用此参数时，如果遇到 `onChange` 只调用一次的问题",
+      "required": true
     },
     ":headers": {
       "value": "",
@@ -93,7 +94,7 @@
       "description_zh": "自定义上传列表项"
     },
     "listType": {
-      "value": "",
+      "value": ["text", "picture", "picture-card", "picture-circle"],
       "description": "Built-in styles for upload lists, supporting four basic styles: text, picture, 'picture-card' and 'picture-circle'",
       "default": "text",
       "type": "string",
@@ -169,33 +170,38 @@
       "name": "onChange",
       "description": "Callback when the uploaded file changes, see [onChange](#onchange) for details.",
       "params": "function",
-      "description_zh": "上传文件改变时的回调，详见 [onChange](#onchange)"
+      "description_zh": "上传文件改变时的回调，详见 [onChange](#onchange)",
+      "value": ""
     },
     {
       "name": "onDrop",
       "description": "A callback function that is executed when a file is dragged into the upload area",
       "params": "(event: React.DragEvent) => void",
-      "description_zh": "当文件被拖入上传区域时执行的回调功能"
+      "description_zh": "当文件被拖入上传区域时执行的回调功能",
+      "value": ""
     },
     {
       "name": "onDownload",
       "description": "Click the callback when downloading the file, if not specified, you will be redirected to the tab corresponding to the file URL by default",
       "params": "function(file): void",
-      "description_zh": "点击下载文件时的回调，如果没有指定，则默认跳转到文件 url 对应的标签页"
+      "description_zh": "点击下载文件时的回调，如果没有指定，则默认跳转到文件 url 对应的标签页",
+      "value": ""
     },
     {
       "name": "onPreview",
       "description": "Callback when clicking on the file link or preview icon",
       "params": "function(file)",
-      "description_zh": "点击文件链接或预览图标时的回调"
+      "description_zh": "点击文件链接或预览图标时的回调",
+      "value": ""
     },
     {
       "name": "onRemove",
       "description": "Click the callback when removing a file, and do not remove it when the return value is false. A Promise object can be returned, and the Promise object will not be removed when resolve(false) or reject",
       "params": "function(file): boolean | Promise",
-      "description_zh": "点击移除文件时的回调，返回值为 false 时不移除。支持返回一个 Promise 对象，Promise 对象 resolve(false) 或 reject 时不移除"
+      "description_zh": "点击移除文件时的回调，返回值为 false 时不移除。支持返回一个 Promise 对象，Promise 对象 resolve(false) 或 reject 时不移除",
+      "value": ""
     }
   ],
   "link": "https://ant.design/components//upload",
-  "link_zh": "https://ant.design/components//upload-cn"
+  "link_zh": "https://ant.design/components//upload"
 }

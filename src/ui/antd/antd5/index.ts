@@ -88,6 +88,7 @@ import TreeSelect from './TreeSelect.json'
 import TypographyParagraph from './TypographyParagraph.json'
 import TypographyText from './TypographyText.json'
 import TypographyTitle from './TypographyTitle.json'
+import TypographyLink from './TypographyLink.json'
 import Upload from './Upload.json'
 import FloatButton from './FloatButton.json'
 import FloatButtonBackTop from './FloatButtonBackTop.json'
@@ -96,6 +97,7 @@ import Watermark from './Watermark.json'
 import App from './App.json'
 import ConfigProvider from './ConfigProvider.json'
 import Skeleton from './Skeleton.json'
+import Flex from './Flex.json'
 
 export function antd5() {
   const map: any = [
@@ -195,6 +197,8 @@ export function antd5() {
     App,
     ConfigProvider,
     Skeleton,
+    TypographyLink,
+    Flex,
   ]
 
   return propsReducer(map)
@@ -205,11 +209,13 @@ export function antd5Components() {
 
   const map = isZh
     ? [
+        [Flex, '弹性布局'],
         [Button, '按钮', '<Button type="primary">Primary Button</Button>'],
         ['Typography', '排版', '<Typography></Typography>'],
-        ['Link', '文本与超链接组件', `<Link href="https://ant.design" target="_blank">
-  Ant Design (Link)
-</Link>`],
+        [TypographyParagraph, '段落', '<TypographyParagraph></TypographyParagraph>'],
+        [TypographyLink, '链接', '<TypographyLink></TypographyLink>'],
+        [TypographyText, '文本', '<TypographyText></TypographyText>'],
+        [TypographyTitle, '标题', '<TypographyTitle></TypographyTitle>'],
         [Divider, '分割线', '<Divider />'],
         [Row, '栅格', '<Row></Row>'],
         [Col, '栅格', '<Col></Col>'],
@@ -452,9 +458,11 @@ export function antd5Components() {
 </Watermark>`],
       ]
     : [
+        [Flex, 'Flex box'],
         [Button, 'Button', '<Button type="primary">Primary Button</Button>'],
         ['Typography', 'Typography', '<Typography></Typography>'],
         [TypographyParagraph, 'TypographyParagraph', '<TypographyParagraph></TypographyParagraph>'],
+        [TypographyLink, 'TypographyLink', '<TypographyLink></TypographyLink>'],
         [TypographyText, 'TypographyText', '<TypographyText></TypographyText>'],
         [TypographyTitle, 'TypographyTitle', '<TypographyTitle></TypographyTitle>'],
         ['Link', 'Text and hyperlink components', `<Link href="https://ant.design" target="_blank">

@@ -249,7 +249,8 @@
       "description": "treeNodes data, if set then you don't need to manually construct a TreeNode node (value is unique across the tree)",
       "default": "[]",
       "type": "array<{value, title, children, [disabled, disableCheckbox, selectable, checkable]}>",
-      "description_zh": "treeNodes 数据，如果设置则不需要手动构造 TreeNode 节点（value 在整个树范围内唯一）"
+      "description_zh": "treeNodes 数据，如果设置则不需要手动构造 TreeNode 节点（value 在整个树范围内唯一）",
+      "required": true
     },
     "treeDataSimpleMode": {
       "value": "",
@@ -321,12 +322,13 @@
       "type": "string",
       "description_zh": "作为显示的 prop 设置"
     },
-    "value": {
+    ":value": {
       "value": "",
       "description": "Specifies the currently selected entry",
       "default": "-",
       "type": "string | string[]",
-      "description_zh": "指定当前选中的条目"
+      "description_zh": "指定当前选中的条目",
+      "required": true
     },
     "virtual": {
       "value": "",
@@ -342,31 +344,36 @@
       "name": "onChange",
       "description": "This function is called when a tree node is selected",
       "params": "function(value, label, extra)",
-      "description_zh": "选中树节点时调用此函数"
+      "description_zh": "选中树节点时调用此函数",
+      "value": ""
     },
     {
       "name": "onDropdownVisibleChange",
       "description": "Expand the callback for the drop-down menu",
       "params": "function(open)",
-      "description_zh": "展开下拉菜单的回调"
+      "description_zh": "展开下拉菜单的回调",
+      "value": ""
     },
     {
       "name": "onSearch",
       "description": "Callback when the value of the text box changes",
       "params": "function(value: string)",
-      "description_zh": "文本框值变化时的回调"
+      "description_zh": "文本框值变化时的回调",
+      "value": ""
     },
     {
       "name": "onSelect",
       "description": "Called when selected",
       "params": "function(value, node, extra)",
-      "description_zh": "被选中时调用"
+      "description_zh": "被选中时调用",
+      "value": ""
     },
     {
       "name": "onTreeExpand",
       "description": "Called when a node is displayed",
       "params": "function(expandedKeys)",
-      "description_zh": "展示节点时调用"
+      "description_zh": "展示节点时调用",
+      "value": ""
     }
   ],
   "link": "https://ant.design/components//tree-select",

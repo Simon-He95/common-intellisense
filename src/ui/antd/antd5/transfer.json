@@ -6,7 +6,8 @@
       "description": "Data source, where the data will be rendered to the left column, except as specified in 'targetKeys'",
       "default": "[]",
       "type": "RecordType extends TransferItem = TransferItem[]",
-      "description_zh": "数据源，其中的数据将会被渲染到左边一栏中，`targetKeys` 中指定的除外"
+      "description_zh": "数据源，其中的数据将会被渲染到左边一栏中，`targetKeys` 中指定的除外",
+      "required": true
     },
     "disabled": {
       "value": "",
@@ -17,7 +18,7 @@
     },
     "selectionsIcon": {
       "value": "",
-      "description": "自定义下拉菜单图标",
+      "description": "Customize the drop-down menu icon",
       "default": "",
       "type": "React.ReactNode",
       "description_zh": "自定义下拉菜单图标"
@@ -52,7 +53,7 @@
     },
     "oneWay": {
       "value": "",
-      "description": "展示为单向样式",
+      "description": "The presentation is in a one-way style",
       "default": "false",
       "type": "boolean",
       "description_zh": "展示为单向样式"
@@ -97,7 +98,8 @@
       "description": "Sets which items should be selected",
       "default": "[]",
       "type": "string[]",
-      "description_zh": "设置哪些项应该被选中"
+      "description_zh": "设置哪些项应该被选中",
+      "required": true
     },
     "showSearch": {
       "value": "",
@@ -128,7 +130,8 @@
       "description": "A collection of keys that are displayed in the right-hand box for the data",
       "default": "[]",
       "type": "string[]",
-      "description_zh": "显示在右侧框数据的 key 集合"
+      "description_zh": "显示在右侧框数据的 key 集合",
+      "required": true
     },
     ":titles": {
       "value": "",
@@ -144,33 +147,38 @@
       "name": "oneWay",
       "description": "The presentation is in a one-way style",
       "params": "boolean",
-      "description_zh": "展示为单向样式"
+      "description_zh": "展示为单向样式",
+      "value": ""
     },
     {
       "name": "onChange",
       "description": "option to transfer the callback function when moving between the two columns",
       "params": "(targetKeys, direction, moveKeys): void",
-      "description_zh": "选项在两栏之间转移时的回调函数"
+      "description_zh": "选项在两栏之间转移时的回调函数",
+      "value": ""
     },
     {
       "name": "onScroll",
       "description": "Callback function when the picklist scrolls",
       "params": "(direction, event): void",
-      "description_zh": "选项列表滚动时的回调函数"
+      "description_zh": "选项列表滚动时的回调函数",
+      "value": ""
     },
     {
       "name": "onSearch",
       "description": "A callback function when the contents of the search box are changed",
       "params": "(direction: `left` | right, value: string): void",
-      "description_zh": "搜索框内容时改变时的回调函数"
+      "description_zh": "搜索框内容时改变时的回调函数",
+      "value": ""
     },
     {
       "name": "onSelectChange",
       "description": "The callback function when the selected item changes",
       "params": "(sourceSelectedKeys, targetSelectedKeys): void",
-      "description_zh": "选中项发生改变时的回调函数"
+      "description_zh": "选中项发生改变时的回调函数",
+      "value": ""
     }
   ],
   "link": "https://ant.design/components//transfer",
-  "link_zh": "https://ant.design/components//transfer-cn"
+  "link_zh": "https://ant.design/components//transfer"
 }

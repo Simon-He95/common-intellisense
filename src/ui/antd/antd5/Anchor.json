@@ -5,90 +5,95 @@
       "value": "",
       "default": "true",
       "type": "boolean",
-      "description": "固定模式",
+      "description": "Fixed mode",
       "description_zh": "固定模式"
     },
     ":bounds": {
       "value": "",
       "default": "5",
       "type": "number",
-      "description": "锚点区域边界",
+      "description": "Anchor area boundary",
       "description_zh": "锚点区域边界"
     },
     ":getContainer": {
       "value": "",
       "default": "() => window",
       "type": "() => HTMLElement",
-      "description": "指定滚动的容器",
+      "description": "Specifies the container to scroll",
       "description_zh": "指定滚动的容器"
     },
     ":getCurrentAnchor": {
       "value": "",
       "default": "-",
       "type": "(activeLink: string) => string",
-      "description": "自定义高亮的锚点",
+      "description": "Customize the highlighted anchor point",
       "description_zh": "自定义高亮的锚点"
     },
     ":offsetTop": {
       "value": "",
       "default": "",
       "type": "number",
-      "description": "距离窗口顶部达到指定偏移量后触发",
+      "description": "Triggers when the specified offset is reached from the top of the window",
       "description_zh": "距离窗口顶部达到指定偏移量后触发"
     },
     "showInkInFixed": {
       "value": "",
       "default": "false",
       "type": "boolean",
-      "description": "affix={false} 时是否显示小方块",
+      "description": "affix={false}",
       "description_zh": "affix={false} 时是否显示小方块"
     },
     ":targetOffset": {
       "value": "",
       "default": "-",
       "type": "number",
-      "description": "锚点滚动偏移量，默认与 offsetTop 相同，例子",
+      "description": "Anchor scroll offset, the default is the same as offsetTop, example",
       "description_zh": "锚点滚动偏移量，默认与 offsetTop 相同，例子"
     },
     ":items": {
       "value": "",
       "default": "-",
       "type": "{ key, href, title, target, children }[] 具体见",
-      "description": "数据化配置选项内容，支持通过 children 嵌套",
-      "description_zh": "数据化配置选项内容，支持通过 children 嵌套"
+      "description": "Data-based configuration options, supported by children nesting",
+      "description_zh": "数据化配置选项内容，支持通过 children 嵌套",
+      "required": true
     },
     "direction": {
-      "value": ["vertical", "horizontal"],
+      "value": [
+        "vertical",
+        "horizontal"
+      ],
       "default": "vertical",
       "type": "vertical | horizontal",
-      "description": "设置导航方向",
+      "description": "Set the navigation direction",
       "description_zh": "设置导航方向"
     },
     "replace": {
       "value": "",
       "default": "false",
       "type": "boolean",
-      "description": "替换浏览器历史记录中项目的 href 而不是推送它",
+      "description": "Replace the href of an item in the browser history instead of pushing it",
       "description_zh": "替换浏览器历史记录中项目的 href 而不是推送它"
     }
   },
-  "typeDetail": {
-  },
+  "typeDetail": {},
   "events": [
     {
       "name": "onChange",
       "description": "Listen for anchor link changes",
       "params": "(currentActiveLink: string) => void",
-      "description_zh": "监听锚点链接改变"
+      "description_zh": "监听锚点链接改变",
+      "value": ""
     },
     {
       "name": "onClick",
       "description": "handler for the click event",
       "params": "(e: MouseEvent, link: object) => void",
-      "description_zh": "click 事件的 handler"
+      "description_zh": "click 事件的 handler",
+      "value": ""
     }
   ],
   "link": "https://ant.design/components//anchor",
-  "link_zh": "https://ant.design/components//anchor-cn",
+  "link_zh": "https://ant.design/components//anchor",
   "methods": []
 }

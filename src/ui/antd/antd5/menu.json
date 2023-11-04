@@ -52,7 +52,11 @@
       "description_zh": "菜单内容"
     },
     "mode": {
-      "value": ["vertical", "horizontal", "inline"],
+      "value": [
+        "vertical",
+        "horizontal",
+        "inline"
+      ],
       "description": "Menu types are now available in vertical, horizontal, and inline modes",
       "default": "vertical",
       "type": "vertical | horizontal | inline",
@@ -91,7 +95,8 @@
       "description": "The currently selected menu item key array",
       "default": "",
       "type": "string[]",
-      "description_zh": "当前选中的菜单项 key 数组"
+      "description_zh": "当前选中的菜单项 key 数组",
+      "required": true
     },
     ":style": {
       "value": "",
@@ -140,25 +145,29 @@
       "name": "onClick",
       "description": "Click MenuItem to call this function",
       "callback": "function({ item, key, keyPath, domEvent })",
-      "description_zh": "点击 MenuItem 调用此函数"
+      "description_zh": "点击 MenuItem 调用此函数",
+      "value": ""
     },
     {
       "name": "onDeselect",
       "description": "Called when unchecked, only for multiple",
       "callback": "function({ item, key, keyPath, selectedKeys, domEvent })",
-      "description_zh": "取消选中时调用，仅在 multiple 生效"
+      "description_zh": "取消选中时调用，仅在 multiple 生效",
+      "value": ""
     },
     {
       "name": "onOpenChange",
       "description": "Callbacks for SubMenu to expand/close",
       "callback": "function(openKeys: string[])",
-      "description_zh": "SubMenu 展开/关闭的回调"
+      "description_zh": "SubMenu 展开/关闭的回调",
+      "value": ""
     },
     {
       "name": "onSelect",
       "description": "Called when selected",
       "callback": "function({ item, key, keyPath, selectedKeys, domEvent })",
-      "description_zh": "被选中时调用"
+      "description_zh": "被选中时调用",
+      "value": ""
     }
   ],
   "typeDetail": {
@@ -262,6 +271,6 @@
     ]
   },
   "link": "https://ant.design/components//menu",
-  "link_zh": "https://ant.design/components//menu-cn",
+  "link_zh": "https://ant.design/components//menu",
   "methods": []
 }
