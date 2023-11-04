@@ -79,8 +79,11 @@ export function activate(context: vscode.ExtensionContext) {
 
       const propName = result.propName
       const { events, completions } = UiCompletions[name]
-      if (!completionsCallbacks.has(name))
-        completionsCallbacks.set(name, completions[0]())
+      if (!completionsCallbacks.has(name)) {
+        const _events = events[0]()
+        eventCallbacks.set(name, _events)
+        completionsCallbacks.set(name, [...completions[0](), ..._events])
+      }
 
       if (!eventCallbacks.has(name))
         eventCallbacks.set(name, events[0]())
@@ -107,13 +110,18 @@ export function activate(context: vscode.ExtensionContext) {
         return eventCallbacks.get(name).filter((item: any) => !hasProps.find((prop: any) => isSamePrefix(item.label, prop)))
       }
       else if (propName) {
-        return completionsCallback.filter((item: any) => !hasProps.find((prop: any) => isSamePrefix(item.label, prop))).filter((item: any) => item.label.startsWith(propName)).map((item: any) =>
+        const result = completionsCallback.filter((item: any) => !hasProps.find((prop: any) => isSamePrefix(item.label, prop))).filter((item: any) => item.label.startsWith(propName)).map((item: any) =>
           createCompletionItem({
-            content: item.label.split('=')[1] ? item.label.split('=')[1].slice(1, -1) : item.label,
+            content: item.label,
             documentation: item.documentation,
             detail: item.detail,
           }),
         )
+        const events = eventCallbacks.get(name).filter((item: any) => !hasProps.find((prop: any) => isSamePrefix(item.label, prop)))
+        if (propName === 'o')
+          return [...events, ...result]
+
+        return [...result, ...events]
       }
       else if (hasProps.length) {
         return completionsCallback.filter((item: any) => !hasProps.find((prop: any) => isSamePrefix(item.label, prop)))

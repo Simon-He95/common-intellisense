@@ -149,6 +149,7 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
             params: '',
           },
         ]
+
         originEvent.forEach((_event) => {
           if (!item.events.find((event: any) => event.name === _event.name))
             item.events.push(_event)
