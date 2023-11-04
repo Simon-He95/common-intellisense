@@ -3,7 +3,7 @@
   "methods": [],
   "events": [],
   "props": {
-    "sort": {
+    ":sort": {
       "type": "{ column: string; direction: \"asc\" | \"desc\"; }",
       "default": "{}",
       "value": "",
@@ -17,19 +17,21 @@
       "description": "",
       "description_zh": ""
     },
-    "modelValue": {
+    ":v-model": {
       "type": "unknown[]",
       "default": "null",
       "value": "",
       "description": "",
-      "description_zh": ""
+      "description_zh": "",
+      "required": true
     },
-    "rows": {
+    ":rows": {
       "type": "{ [key: string]: any; click?: Function; }[]",
       "default": "[]",
       "value": "",
       "description": "",
-      "description_zh": ""
+      "description_zh": "",
+      "required": true
     },
     "by": {
       "type": "string | Function",
@@ -52,15 +54,13 @@
       "description": "",
       "description_zh": ""
     },
-    "columns": {
-      "type": [
-        "{ [key: string]: any; key: string; sortable?: boolean; direction?: asc",
-        "desc; class?: string; }[]"
-      ],
+    ":columns": {
+      "type": "{ [key: string]: any; key: string; sortable?: boolean; direction?: \"asc\" | \"desc\"; class?: string; }[]",
       "default": "null",
       "value": "",
       "description": "",
-      "description_zh": ""
+      "description_zh": "",
+      "required": true
     },
     "columnAttribute": {
       "type": "string",

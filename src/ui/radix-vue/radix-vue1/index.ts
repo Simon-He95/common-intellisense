@@ -64,6 +64,15 @@ import DropdownMenuContent from './DropdownMenuContent.json'
 import DropdownMenuRoot from './DropdownMenuRoot.json'
 import DropdownMenuTrigger from './DropdownMenuTrigger.json'
 import DropdownMenuPortal from './DropdownMenuPortal.json'
+import DropdownMenuArrow from './DropdownMenuArrow.json'
+import DropdownMenuCheckboxItem from './DropdownMenuCheckboxItem.json'
+import DropdownMenuGroup from './DropdownMenuGroup.json'
+import DropdownMenuItem from './DropdownMenuItem.json'
+import DropdownMenuItemIndicator from './DropdownMenuItemIndicator.json'
+import DropdownMenuLabel from './DropdownMenuLabel.json'
+import DropdownMenuRadioGroup from './DropdownMenuRadioGroup.json'
+import DropdownMenuRadioItem from './DropdownMenuRadioItem.json'
+import DropdownMenuSeparator from './DropdownMenuSeparator.json'
 import HoverCardArrow from './HoverCardArrow.json'
 import HoverCardContent from './HoverCardContent.json'
 import HoverCardPortal from './HoverCardPortal.json'
@@ -170,6 +179,9 @@ import TooltipTrigger from './TooltipTrigger.json'
 import ConfigProvider from './ConfigProvider.json'
 import VisuallyHidden from './VisuallyHidden.json'
 import Primitive from './Primitive.json'
+import RadioGroupIndicator from './RadioGroupIndicator.json'
+import RadioGroupItem from './RadioGroupItem.json'
+import RadioGroupRoot from './RadioGroupRoot.json'
 
 export function radixVue1() {
   const map: any = [
@@ -346,6 +358,18 @@ export function radixVue1() {
     DropdownMenuRoot,
     DropdownMenuTrigger,
     DropdownMenuPortal,
+    DropdownMenuArrow,
+    DropdownMenuCheckboxItem,
+    DropdownMenuGroup,
+    DropdownMenuItem,
+    DropdownMenuItemIndicator,
+    DropdownMenuLabel,
+    DropdownMenuRadioGroup,
+    DropdownMenuRadioItem,
+    DropdownMenuSeparator,
+    RadioGroupIndicator,
+    RadioGroupItem,
+    RadioGroupRoot,
   ]
 
   return propsReducer(map)
@@ -418,6 +442,15 @@ export function radixVue1Components() {
     [DropdownMenuRoot, '下拉菜单', '<DropdownMenuRoot></DropdownMenuRoot>'],
     [DropdownMenuTrigger, '下拉菜单', '<DropdownMenuTrigger></DropdownMenuTrigger>'],
     [DropdownMenuPortal, '下拉菜单', '<DropdownMenuPortal></DropdownMenuPortal>'],
+    [DropdownMenuArrow, '下拉菜单', '<DropdownMenuArrow></DropdownMenuArrow>'],
+    [DropdownMenuCheckboxItem, '下拉菜单', '<DropdownMenuCheckboxItem></DropdownMenuCheckboxItem>'],
+    [DropdownMenuGroup, '下拉菜单', '<DropdownMenuGroup></DropdownMenuGroup>'],
+    [DropdownMenuItem, '下拉菜单', '<DropdownMenuItem></DropdownMenuItem>'],
+    [DropdownMenuItemIndicator, '下拉菜单', '<DropdownMenuItemIndicator></DropdownMenuItemIndicator>'],
+    [DropdownMenuLabel, '下拉菜单', '<DropdownMenuLabel></DropdownMenuLabel>'],
+    [DropdownMenuRadioGroup, '下拉菜单', '<DropdownMenuRadioGroup></DropdownMenuRadioGroup>'],
+    [DropdownMenuRadioItem, '下拉菜单', '<DropdownMenuRadioItem></DropdownMenuRadioItem>'],
+    [DropdownMenuSeparator, '下拉菜单', '<DropdownMenuSeparator></DropdownMenuSeparator>'],
     [HoverCardArrow, '悬浮卡', '<HoverCardArrow></HoverCardArrow>'],
     [HoverCardContent, '悬浮卡', '<HoverCardContent></HoverCardContent>'],
     [HoverCardPortal, '悬浮卡', '<HoverCardPortal></HoverCardPortal>'],
@@ -525,6 +558,9 @@ export function radixVue1Components() {
     [ConfigProvider, '包装应用以提供全局配置', '<ConfigProvider></ConfigProvider>'],
     [VisuallyHidden, '以可访问的方式从屏幕上隐藏内容', '<VisuallyHidden></VisuallyHidden>'],
     [Primitive, '将 Radix 的功能组合到替代元素类型或你自己的 Vue 组件上', '<Primitive></Primitive>'],
+    [RadioGroupIndicator, '将 Radix 的功能组合到替代元素类型或你自己的 Vue 组件上', '<RadioGroupIndicator></RadioGroupIndicator>'],
+    [RadioGroupItem, '一组可检查的按钮（称为单选按钮），一次只能选中一个按钮', '<RadioGroupItem></RadioGroupItem>'],
+    [RadioGroupRoot, '一组可检查的按钮（称为单选按钮），一次只能选中一个按钮', '<RadioGroupRoot></RadioGroupRoot>'],
 
   ]
   return componentsReducer(map, false)

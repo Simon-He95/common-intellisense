@@ -94,6 +94,9 @@ export function activate(context: vscode.ExtensionContext) {
           if (typeof item.name === 'object' && item.name.name !== 'on')
             return item.name.name
 
+          if (item.name === 'model' && item?.loc?.source?.startsWith('v-model'))
+            return item.loc.source.split('=')[0]
+
           if (item.name !== 'on')
             return item.name
 
