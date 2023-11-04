@@ -160,7 +160,9 @@ function jsxDfs(children: any, position: vscode.Position) {
           prop.loc = convertPositionToLoc(prop)
         if (isInPosition(prop.loc, position)) {
           return {
-            tag: openingElement.name.name,
+            tag: openingElement.name.type === 'JSXMemberExpression'
+              ? `${openingElement.name.object.name}.${openingElement.name.property.name}`
+              : openingElement.name.name,
             propName: typeof prop.name === 'string' ? prop.type === 'EventHandler' ? 'on' : prop.name : prop.name.name,
             props: openingElement.attributes,
             propType: prop.type,
@@ -207,7 +209,9 @@ function jsxDfs(children: any, position: vscode.Position) {
       if (target) {
         return {
           type: 'props',
-          tag: openingElement.name.name,
+          tag: openingElement.name.type === 'JSXMemberExpression'
+            ? `${openingElement.name.object.name}.${openingElement.name.property.name}`
+            : openingElement.name.name,
           props: openingElement.attributes,
           propName: target.value === null
             ? ''
@@ -222,7 +226,9 @@ function jsxDfs(children: any, position: vscode.Position) {
       }
       return {
         type: 'props',
-        tag: openingElement.name.name,
+        tag: openingElement.name.type === 'JSXMemberExpression'
+          ? `${openingElement.name.object.name}.${openingElement.name.property.name}`
+          : openingElement.name.name,
         props: openingElement.attributes,
         isInTemplate,
       }

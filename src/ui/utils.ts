@@ -27,7 +27,6 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
     const isZh = getLocale().includes('zh')
     const completionsDeferCallback = () => {
       const lan = getActiveTextEditorLanguageId()
-
       const data = [
         'id',
         'class',

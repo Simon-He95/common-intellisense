@@ -32,6 +32,11 @@ import UNotification from './UNotification.json'
 import UCard from './UCard.json'
 import UContainer from './UContainer.json'
 import USkeleton from './USkeleton.json'
+import URadioGroup from './URadioGroup.json'
+import UDivider from './UDivider.json'
+import UMeter from './UMeter.json'
+import UMeterGroup from './UMeterGroup.json'
+import UProgress from './UProgress.json'
 
 export function nuxtui2() {
   const map: any = [
@@ -67,6 +72,11 @@ export function nuxtui2() {
     UCard,
     UContainer,
     USkeleton,
+    URadioGroup,
+    UDivider,
+    UMeter,
+    UMeterGroup,
+    UProgress,
   ]
 
   return propsReducer(map)
@@ -75,170 +85,195 @@ export function nuxtui2() {
 export function nuxtui2Components() {
   const map = [
     [
-      UAccordion.name,
+      UAccordion,
       UAccordion.name,
       `<${UAccordion.name}></${UAccordion.name}>`,
     ],
     [
-      UAlert.name,
+      UAlert,
       UAlert.name,
       `<${UAlert.name}></${UAlert.name}>`,
     ],
     [
-      UAvatar.name,
+      UAvatar,
       UAvatar.name,
       `<${UAvatar.name}></${UAvatar.name}>`,
     ],
     [
-      UBadge.name,
+      UBadge,
       UBadge.name,
       `<${UBadge.name}></${UBadge.name}>`,
     ],
     [
-      UButton.name,
+      UButton,
       UButton.name,
       `<${UButton.name}></${UButton.name}>`,
     ],
     [
-      UDropdown.name,
+      UDropdown,
       UDropdown.name,
       `<${UDropdown.name}></${UDropdown.name}>`,
     ],
     [
-      UIcon.name,
+      UIcon,
       UIcon.name,
       `<${UIcon.name}></${UIcon.name}>`,
     ],
     [
-      UKbd.name,
+      UKbd,
       UKbd.name,
       `<${UKbd.name}></${UKbd.name}>`,
     ],
     [
-      ULink.name,
+      ULink,
       ULink.name,
       `<${ULink.name}></${ULink.name}>`,
     ],
     [
-      UInput.name,
+      UInput,
       UInput.name,
       `<${UInput.name}></${UInput.name}>`,
     ],
     [
-      UTextarea.name,
+      UTextarea,
       UTextarea.name,
       `<${UTextarea.name}></${UTextarea.name}>`,
     ],
     [
-      USelect.name,
+      USelect,
       USelect.name,
       `<${USelect.name}></${USelect.name}>`,
     ],
     [
-      USelectMenu.name,
+      USelectMenu,
       USelectMenu.name,
       `<${USelectMenu.name}></${USelectMenu.name}>`,
     ],
     [
-      UCheckbox.name,
+      UCheckbox,
       UCheckbox.name,
       `<${UCheckbox.name}></${UCheckbox.name}>`,
     ],
     [
-      URadio.name,
+      URadio,
       URadio.name,
       `<${URadio.name}></${URadio.name}>`,
     ],
     [
-      UToggle.name,
+      UToggle,
       UToggle.name,
       `<${UToggle.name}></${UToggle.name}>`,
     ],
     [
-      URange.name,
+      URange,
       URange.name,
       `<${URange.name}></${URange.name}>`,
     ],
     [
-      UFormGroup.name,
+      UFormGroup,
       UFormGroup.name,
       `<${UFormGroup.name}></${UFormGroup.name}>`,
     ],
     [
-      UForm.name,
+      UForm,
       UForm.name,
       `<${UForm.name}></${UForm.name}>`,
     ],
     [
-      UTable.name,
+      UTable,
       UTable.name,
       `<${UTable.name}></${UTable.name}>`,
     ],
     [
-      UVerticalNavigation.name,
+      UVerticalNavigation,
       UVerticalNavigation.name,
       `<${UVerticalNavigation.name}></${UVerticalNavigation.name}>`,
     ],
     [
-      UCommandPalette.name,
+      UCommandPalette,
       UCommandPalette.name,
       `<${UCommandPalette.name}></${UCommandPalette.name}>`,
     ],
     [
-      UPagination.name,
+      UPagination,
       UPagination.name,
       `<${UPagination.name}></${UPagination.name}>`,
     ],
     [
-      UTabs.name,
+      UTabs,
       UTabs.name,
       `<${UTabs.name}></${UTabs.name}>`,
     ],
     [
-      UModal.name,
+      UModal,
       UModal.name,
       `<${UModal.name}></${UModal.name}>`,
     ],
     [
-      USlideover.name,
+      USlideover,
       USlideover.name,
       `<${USlideover.name}></${USlideover.name}>`,
     ],
     [
-      UPopover.name,
+      UPopover,
       UPopover.name,
       `<${UPopover.name}></${UPopover.name}>`,
     ],
     [
-      UTooltip.name,
+      UTooltip,
       UTooltip.name,
       `<${UTooltip.name}></${UTooltip.name}>`,
     ],
     [
-      UContextMenu.name,
+      UContextMenu,
       UContextMenu.name,
       `<${UContextMenu.name}></${UContextMenu.name}>`,
     ],
     [
-      UNotification.name,
+      UNotification,
       UNotification.name,
       `<${UNotification.name}></${UNotification.name}>`,
     ],
     [
-      UCard.name,
+      UCard,
       UCard.name,
       `<${UCard.name}></${UCard.name}>`,
     ],
     [
-      UContainer.name,
+      UContainer,
       UContainer.name,
       `<${UContainer.name}></${UContainer.name}>`,
     ],
     [
-      USkeleton.name,
+      USkeleton,
       USkeleton.name,
       `<${USkeleton.name}></${USkeleton.name}>`,
     ],
+    [
+      URadioGroup,
+      URadioGroup.name,
+      `<${URadioGroup.name}></${URadioGroup.name}>`,
+    ],
+    [
+      UDivider,
+      UDivider.name,
+      `<${UDivider.name}></${UDivider.name}>`,
+    ],
+    [
+      UMeter,
+      UMeter.name,
+      `<${UMeter.name}></${UMeter.name}>`,
+    ],
+    [
+      UMeterGroup,
+      UMeterGroup.name,
+      `<${UMeterGroup.name}></${UMeterGroup.name}>`,
+    ],
+    [
+      UProgress,
+      UProgress.name,
+      `<${UProgress.name}></${UProgress.name}>`,
+    ],
   ]
-  return componentsReducer(map)
+  return componentsReducer(map, false)
 }
