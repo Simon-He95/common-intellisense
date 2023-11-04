@@ -33,9 +33,11 @@ Install the supported ui component library in your project and install the plug-
 
 ### [naive-ui demo](assets/naive.gif)
 
-### [nuxt-ui demo](assets/nuxt.gif)
+### [nuxt-ui demo](assets/nuxt-ui.gif)
 
 ### [vuetify demo](assets/vuetify.gif)
+
+### [radix-vue demo](assets/radix-vue.gif)
 
 ## :coffee:
 
