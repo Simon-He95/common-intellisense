@@ -1,0 +1,222 @@
+{
+  "name": "VanForm",
+  "props": {
+    "label-width": {
+      "value": "",
+      "description": "The form item label width, the default unit is px",
+      "default": "6.2em",
+      "type": "number | string",
+      "description_zh": "表单项 label 宽度，默认单位为px"
+    },
+    "label-align": {
+      "value": [
+        "left",
+        "center",
+        "right",
+        "top"
+      ],
+      "description": "Form item label alignment, optionally 'center' 'right' top",
+      "default": "left",
+      "type": "string",
+      "description_zh": "表单项 label 对齐方式，可选值为 `center` `right` top"
+    },
+    "input-align": {
+      "value": [
+        "left",
+        "center",
+        "right"
+      ],
+      "description": "Enter the box alignment, optionally 'center' right",
+      "default": "left",
+      "type": "string",
+      "description_zh": "输入框对齐方式，可选值为 `center` right"
+    },
+    "error-message-align": {
+      "value": [
+        "center",
+        "right",
+        "left"
+      ],
+      "description": "Error message text alignment, optional value 'center' right",
+      "default": "left",
+      "type": "string",
+      "description_zh": "错误提示文案对齐方式，可选值为 `center` right"
+    },
+    "validate-trigger": {
+      "value": [
+        "onChange",
+        "onSubmit"
+      ],
+      "description": "The optional values are 'onChange' and 'onSubmit', and multiple values can be set at the same time through arrays, as shown in the table below",
+      "default": "onBlur",
+      "type": "string | string[]",
+      "description_zh": "表单校验触发时机，可选值为 `onChange`、`onSubmit`，支持通过数组同时设置多个值，具体用法见下方表格"
+    },
+    "colon": {
+      "value": "",
+      "description": "Whether to add a colon after the label",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "是否在 label 后面添加冒号"
+    },
+    "disabled": {
+      "value": "",
+      "description": "Whether to disable all input boxes in the form",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "是否禁用表单中的所有输入框"
+    },
+    "readonly": {
+      "value": "",
+      "description": "Whether to set all input fields in the form to read-only",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "是否将表单中的所有输入框设置为只读状态"
+    },
+    "validate-first": {
+      "value": "",
+      "description": "Whether to stop the verification when a certain check fails",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "是否在某一项校验不通过时停止校验"
+    },
+    "scroll-to-error": {
+      "value": "",
+      "description": "Whether to scroll to the wrong form item when the form is submitted and the validation fails",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "是否在提交表单且校验不通过时滚动至错误的表单项"
+    },
+    "show-error": {
+      "value": "",
+      "description": "Whether the verification fails is marked in red input box",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "是否在校验不通过时标红输入框"
+    },
+    "show-error-message": {
+      "value": "",
+      "description": "If the verification fails, an error message is displayed below the input box",
+      "default": "true",
+      "type": "boolean",
+      "description_zh": "是否在校验不通过时在输入框下方展示错误提示"
+    },
+    "submit-on-enter": {
+      "value": "",
+      "description": "Whether or not to submit the form when you press enter",
+      "default": "true",
+      "type": "boolean",
+      "description_zh": "是否在按下回车键时提交表单"
+    }
+  },
+  "methods": [
+    {
+      "name": "submit",
+      "description": "Submit the form, which is equivalent to the effect of clicking the submit button",
+      "params": "-",
+      "description_zh": "提交表单，与点击提交按钮的效果等价"
+    },
+    {
+      "name": "getValues",
+      "description": "Gets the current value of all form items",
+      "params": "-",
+      "description_zh": "获取所有表单项当前的值"
+    },
+    {
+      "name": "validate",
+      "description": "Validating a form, which supports passing in one or more 'name' to validate a single or partial form item, and when 'name' is not passed, all form items are validated",
+      "params": "name?: string | string[]",
+      "description_zh": "验证表单，支持传入一个或多个 `name` 来验证单个或部分表单项，不传入 `name` 时，会验证所有表单项"
+    },
+    {
+      "name": "resetValidation",
+      "description": "Validation prompt for resetting form items, which allows you to pass in one or more 'name' to reset a single or partial form item, and when 'name' is not passed, all form items are reset",
+      "params": "name?: string | string[]",
+      "description_zh": "重置表单项的验证提示，支持传入一个或多个 `name` 来重置单个或部分表单项，不传入 `name` 时，会重置所有表单项"
+    },
+    {
+      "name": "getValidationStatus",
+      "description": "Get the validation status of all form items, including 'passed', 'failed', unvalidated",
+      "params": "-",
+      "description_zh": "获取所有表单项的校验状态，状态包括 `passed`、`failed`、unvalidated"
+    },
+    {
+      "name": "scrollToField",
+      "description": "Scroll to the position of the corresponding form item, the default scroll to the top, and the second parameter is false to scroll to the bottom",
+      "params": "name: string, alignToTop: boolean",
+      "description_zh": "滚动到对应表单项的位置，默认滚动到顶部，第二个参数传 false 可滚动至底部"
+    }
+  ],
+  "typeDetail": {
+    "Rule": [
+      {
+        "name": "required",
+        "description": "是否为必选字段，当值为空值时（空字符串、空数组、`false`、`undefined`、`null` ），校验不通过",
+        "type": "boolean"
+      },
+      {
+        "name": "message",
+        "description": "错误提示文案，可以设置为一个函数来返回动态的文案内容",
+        "type": "string | (value, rule) => string"
+      },
+      {
+        "name": "validator",
+        "description": "通过函数进行校验，可以返回一个 Promise 来进行异步校验",
+        "type": "(value, rule) => boolean | string | Promise"
+      },
+      {
+        "name": "pattern",
+        "description": "通过正则表达式进行校验，正则无法匹配表示校验不通过",
+        "type": "RegExp"
+      },
+      {
+        "name": "trigger",
+        "description": "设置本项规则的触发时机，优先级高于 Form 组件设置的 `validate-trigger` 属性，可选值为 `onChange`、`onBlur`、onSubmit",
+        "type": "string | string[]"
+      },
+      {
+        "name": "formatter",
+        "description": "格式化函数，将表单项的值转换后进行校验",
+        "type": "(value, rule) => any"
+      },
+      {
+        "name": "validateEmpty",
+        "description": "设置 `validator` 和 `pattern` 是否要对空值进行校验，默认值为 `true`，可以设置为 `false` 来禁用该行为",
+        "type": "boolean"
+      }
+    ],
+    "$validate-trigger": [
+      {
+        "name": "onSubmit",
+        "description": "仅在提交表单时触发校验",
+        "type": ""
+      },
+      {
+        "name": "onBlur",
+        "description": "在提交表单和输入框失焦时触发校验",
+        "type": ""
+      },
+      {
+        "name": "onChange",
+        "description": "在提交表单和输入框内容变化时触发校验",
+        "type": ""
+      }
+    ]
+  },
+  "events": [
+    {
+      "name": "submit",
+      "description": "Triggered when the form is submitted and validated",
+      "params": "提交表单且验证通过后触发",
+      "description_zh": "提交表单且验证通过后触发"
+    },
+    {
+      "name": "failed",
+      "description": "Triggered when the form is submitted and the verification fails",
+      "params": "提交表单且验证不通过后触发",
+      "description_zh": "提交表单且验证不通过后触发"
+    }
+  ],
+  "link": "https://vant-contrib.gitee.io/vant/#/zh-CN/form",
+  "link_zh": "https://vant-contrib.gitee.io/vant/#/zh-CN/form"
+}

@@ -1,0 +1,72 @@
+{
+  "name": "VanIndexBar",
+  "props": {
+    "index-list": {
+      "value": "",
+      "description": "A list of indexed characters",
+      "default": "A-Z",
+      "type": "(string | number)[]",
+      "description_zh": "索引字符列表"
+    },
+    "z-index": {
+      "value": "",
+      "description": "z-index level",
+      "default": "1",
+      "type": "number | string",
+      "description_zh": "z-index 层级"
+    },
+    "sticky": {
+      "value": "",
+      "description": "Whether to turn on the anchor point automatic ceiling",
+      "default": "true",
+      "type": "boolean",
+      "description_zh": "是否开启锚点自动吸顶"
+    },
+    "sticky-offset-top": {
+      "value": "",
+      "description": "The distance from the top when the anchor point is automatically raised",
+      "default": "0",
+      "type": "number",
+      "description_zh": "锚点自动吸顶时与顶部的距离"
+    },
+    "highlight-color": {
+      "value": "",
+      "description": "Index character highlight color",
+      "default": "#1989fa",
+      "type": "string",
+      "description_zh": "索引字符高亮颜色"
+    },
+    "teleport": {
+      "value": "",
+      "description": "Specifies the node to which the index bar is mounted",
+      "default": "-",
+      "type": "string | Element",
+      "description_zh": "指定索引栏挂载的节点"
+    }
+  },
+  "methods": [
+    {
+      "name": "scrollTo",
+      "description": "Scroll to the specified anchor point",
+      "params": "index: number | string",
+      "description_zh": "滚动到指定锚点"
+    }
+  ],
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "select",
+      "description": "Triggered when a character in the index bar is clicked",
+      "params": "点击索引栏的字符时触发",
+      "description_zh": "点击索引栏的字符时触发"
+    },
+    {
+      "name": "change",
+      "description": "Triggered when the currently highlighted index character changes",
+      "params": "当前高亮的索引字符变化时触发",
+      "description_zh": "当前高亮的索引字符变化时触发"
+    }
+  ],
+  "link": "https://vant-contrib.gitee.io/vant/#/zh-CN/index-bar",
+  "link_zh": "https://vant-contrib.gitee.io/vant/#/zh-CN/index-bar"
+}

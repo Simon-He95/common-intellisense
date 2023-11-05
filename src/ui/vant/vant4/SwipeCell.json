@@ -1,0 +1,84 @@
+{
+  "name": "VanSwipeCell",
+  "props": {
+    "name": {
+      "value": "",
+      "description": "The identifier, usually a unique string or number, can be obtained in the event parameter",
+      "default": "''",
+      "type": "number | string",
+      "description_zh": "标识符，通常为一个唯一的字符串或数字，可以在事件参数中获取到"
+    },
+    "left-width": {
+      "value": "",
+      "description": "Specifies the width of the left slide area in px",
+      "default": "auto",
+      "type": "number | string",
+      "description_zh": "指定左侧滑动区域宽度，单位为 px"
+    },
+    "right-width": {
+      "value": "",
+      "description": "Specifies the width of the right slide area in px",
+      "default": "auto",
+      "type": "number | string",
+      "description_zh": "指定右侧滑动区域宽度，单位为 px"
+    },
+    "before-close": {
+      "value": "",
+      "description": "The callback function before closing, returning 'false' to prevent closing, supports returning Promise",
+      "default": "-",
+      "type": "(args) => boolean | Promise\\<boolean\\>",
+      "description_zh": "关闭前的回调函数，返回 `false` 可阻止关闭，支持返回 Promise"
+    },
+    "disabled": {
+      "value": "",
+      "description": "Whether to disable sliding",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "是否禁用滑动"
+    },
+    "stop-propagation": {
+      "value": "",
+      "description": "Whether to prevent the sliding event from bubbling",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "是否阻止滑动事件冒泡"
+    }
+  },
+  "methods": [
+    {
+      "name": "open",
+      "description": "Open the cell sidebar",
+      "params": "position: `left | right`",
+      "description_zh": "打开单元格侧边栏"
+    },
+    {
+      "name": "close",
+      "description": "Collapse the cell sidebar",
+      "params": "-",
+      "description_zh": "收起单元格侧边栏"
+    }
+  ],
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "click",
+      "description": "Triggered when clicked",
+      "params": "点击时触发",
+      "description_zh": "点击时触发"
+    },
+    {
+      "name": "open",
+      "description": "Triggered when opened",
+      "params": "打开时触发",
+      "description_zh": "打开时触发"
+    },
+    {
+      "name": "close",
+      "description": "Triggered when turned off",
+      "params": "关闭时触发",
+      "description_zh": "关闭时触发"
+    }
+  ],
+  "link": "https://vant-contrib.gitee.io/vant/#/zh-CN/swipe-cell",
+  "link_zh": "https://vant-contrib.gitee.io/vant/#/zh-CN/swipe-cell"
+}
