@@ -16,114 +16,115 @@
     }
   ],
   "props": {
-    "children": {
-      "type": "`ReactNode` | `ReactNode[]`",
+    ":children": {
+      "type": "ReactNode | `ReactNode[]`",
       "default": "-",
       "description": "The list of radio elements.",
       "value": "",
       "description_zh": "无线电元素列表。"
     },
-    "label": {
-      "type": "`ReactNode`",
+    ":label": {
+      "type": "ReactNode",
       "default": "-",
       "description": "The label of the radio group.",
       "value": "",
-      "description_zh": "单选按钮组的标签。"
+      "description_zh": "单选按钮组的标签。",
+      "required": true
     },
     "size": {
       "type": "`sm` | `md` | `lg`",
       "default": "`md`",
       "description": "The size of the radios.",
-      "value": "",
+      "value": ["sm", "md", "lg"],
       "description_zh": "收音机的大小。"
     },
     "color": {
       "type": "`default` | `primary` | `secondary` | `success` | `warning` | `danger`",
       "default": "`primary`",
       "description": "The color of the radios.",
-      "value": "",
+      "value": ["default", "primary", "secondary", "success", "warning", "danger"],
       "description_zh": "收音机的颜色。"
     },
     "orientation": {
       "type": "`horizontal` | `vertical`",
       "default": "`vertical`",
       "description": "The orientation of the radio group.",
-      "value": "",
+      "value": ["horizontal", "vertical"],
       "description_zh": "无线电组的方向。"
     },
     "name": {
-      "type": "`string`",
+      "type": "string",
       "default": "-",
       "description": "The name of the RadioGroup, used when submitting an HTML form. See [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#name_and_radio_buttons).",
       "value": "",
       "description_zh": "提交 HTML 表单时使用的 RadioGroup 的名称。参见 [MDN]（https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#name_and_radio_buttons）。"
     },
-    "value": {
+    ":value": {
       "type": "`string[]`",
       "default": "-",
       "description": "The current selected value. (controlled).",
       "value": "",
       "description_zh": "当前选定的值。（受控）。"
     },
-    "defaultValue": {
+    ":defaultValue": {
       "type": "`string[]`",
       "default": "-",
       "description": "The default selected value. (uncontrolled).",
       "value": "",
       "description_zh": "默认的选定值。（不受控制）。"
     },
-    "description": {
-      "type": "`ReactNode`",
+    ":description": {
+      "type": "ReactNode",
       "default": "-",
       "description": "Radio group description .",
       "value": "",
       "description_zh": "无线电组说明。"
     },
-    "errorMessage": {
-      "type": "`ReactNode`",
+    ":errorMessage": {
+      "type": "ReactNode",
       "default": "-",
       "description": "Radio group error message.",
       "value": "",
       "description_zh": "单选组错误消息。"
     },
     "isDisabled": {
-      "type": "`boolean`",
-      "default": "`false`",
+      "type": "boolean",
+      "default": "false",
       "description": "Whether the radio group is disabled.",
       "value": "",
       "description_zh": "单选按钮组是否被禁用。"
     },
     "isRequired": {
-      "type": "`boolean`",
-      "default": "`false`",
+      "type": "boolean",
+      "default": "false",
       "description": "Whether user checkboxes are required on the input before form submission.",
       "value": "",
       "description_zh": "在提交表单之前，输入是否需要用户复选框。"
     },
     "isReadOnly": {
-      "type": "`boolean`",
+      "type": "boolean",
       "default": "-",
       "description": "Whether the checkboxes can be selected but not changed by the user.",
       "value": "",
       "description_zh": "复选框是否可以被选中，但不能由用户更改。"
     },
     "isInvalid": {
-      "type": "`boolean`",
-      "default": "`false`",
+      "type": "boolean",
+      "default": "false",
       "description": "Whether the radio group is invalid.",
       "value": "",
       "description_zh": "单选组是否无效。"
     },
     "validationState": {
       "type": "`valid` | `invalid`",
-      "default": "`false`",
+      "default": "false",
       "description": "Whether the inputs should display its \"valid\" or \"invalid\" visual styling. (**Deprecated**) use **isInvalid** instead.",
-      "value": "",
+      "value": ["valid", "invalid"],
       "description_zh": "输入是否应显示其“有效”或“无效”的视觉样式。（**已弃用**）请改用 **isInvalid**。"
     },
     "disableAnimation": {
-      "type": "`boolean`",
-      "default": "`false`",
+      "type": "boolean",
+      "default": "false",
       "description": "Whether the animation should be disabled.",
       "value": "",
       "description_zh": "是否应禁用动画。"

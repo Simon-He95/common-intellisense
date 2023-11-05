@@ -10,8 +10,8 @@
     }
   ],
   "props": {
-    "children": {
-      "type": "`ReactNode` | `((item: T) => ReactElement)`",
+    ":children": {
+      "type": "ReactNode | `((item: T) => ReactElement)`",
       "default": "-",
       "description": "The list of tabs.",
       "value": "",
@@ -21,59 +21,59 @@
       "type": "`solid` | `bordered` | `light` | `underlined`",
       "default": "`solid`",
       "description": "The tabs appearance style.",
-      "value": "",
+      "value": ["solid", "bordered", "light", "underlined"],
       "description_zh": "选项卡外观样式。"
     },
     "color": {
       "type": "`default` | `primary` | `secondary` | `success` | `warning` | `danger`",
       "default": "`default`",
       "description": "The tabs color theme.",
-      "value": "",
+      "value": ["default", "primary", "secondary", "success", "warning", "danger"],
       "description_zh": "选项卡颜色主题。"
     },
     "size": {
       "type": "`sm` | `md` | `lg`",
       "default": "`md`",
       "description": "The tabs size.",
-      "value": "",
+      "value": ["sm", "md", "lg"],
       "description_zh": "选项卡大小。"
     },
     "radius": {
       "type": "`none` | `sm` | `md` | `lg` | `full`",
       "default": "-",
       "description": "The tabs border radius.",
-      "value": "",
+      "value": ["none", "sm", "md", "lg", "full"],
       "description_zh": "选项卡边框半径。"
     },
     "fullWidth": {
-      "type": "`boolean`",
-      "default": "`false`",
+      "type": "boolean",
+      "default": "false",
       "description": "Whether the tabs should take the full width of its parent.",
       "value": "",
       "description_zh": "选项卡是否应采用其父制表符的全宽。"
     },
-    "items": {
+    ":items": {
       "type": "[`Iterable<T>`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols)",
       "default": "-",
       "description": "The list of tabs (dynamic).",
       "value": "",
       "description_zh": "选项卡列表（动态）。"
     },
-    "disabledKeys": {
+    ":disabledKeys": {
       "type": "`React.Key[]`",
       "default": "-",
       "description": "The item keys that are disabled. These items cannot be selected, focused, or otherwise interacted with.",
       "value": "",
       "description_zh": "已禁用的项目键。无法选择、聚焦这些项目或以其他方式与之交互。"
     },
-    "selectedKey": {
+    ":selectedKey": {
       "type": "`React.Key`",
       "default": "-",
       "description": "The key for the currently selected item.",
       "value": "",
       "description_zh": "当前选定项的键。"
     },
-    "defaultSelectedKey": {
+    ":defaultSelectedKey": {
       "type": "`React.Key`",
       "default": "-",
       "description": "The key for the initially selected item.",
@@ -81,8 +81,8 @@
       "description_zh": "最初选定项的键。"
     },
     "disallowEmptySelection": {
-      "type": "`boolean`",
-      "default": "`false`",
+      "type": "boolean",
+      "default": "false",
       "description": "Whether the tabs should allow empty selection.",
       "value": "",
       "description_zh": "选项卡是否应允许空选择。"
@@ -91,10 +91,10 @@
       "type": "`automatic` | `manual`",
       "default": "`automatic`",
       "description": "Whether tabs are activated automatically on focus or manually.",
-      "value": "",
+      "value": ["automatic", "manual"],
       "description_zh": "选项卡是在对焦时自动激活还是手动激活。"
     },
-    "motionProps": {
+    ":motionProps": {
       "type": "[MotionProps](#motion-props)",
       "default": "-",
       "description": "The props to modify the cursor framer motion animation. Use the `variants` API to create your own animation.",
@@ -102,22 +102,22 @@
       "description_zh": "用于修改光标成帧器运动动画的道具。使用“变体”API 创建您自己的动画。"
     },
     "disableCursorAnimation": {
-      "type": "`boolean`",
-      "default": "`false`",
+      "type": "boolean",
+      "default": "false",
       "description": "Whether the cursor should be hidden.",
       "value": "",
       "description_zh": "是否应隐藏光标。"
     },
     "isDisabled": {
-      "type": "`boolean`",
-      "default": "`false`",
+      "type": "boolean",
+      "default": "false",
       "description": "Whether the tab list should be disabled.",
       "value": "",
       "description_zh": "是否应禁用选项卡列表。"
     },
     "disableAnimation": {
-      "type": "`boolean`",
-      "default": "`false`",
+      "type": "boolean",
+      "default": "false",
       "description": "Whether the tab list should be animated.",
       "value": "",
       "description_zh": "是否应对选项卡列表进行动画处理。"

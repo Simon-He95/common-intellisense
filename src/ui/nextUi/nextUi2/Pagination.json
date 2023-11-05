@@ -14,122 +14,124 @@
       "type": "`flat` | `bordered` | `light` | `faded`",
       "default": "`flat`",
       "description": "The pagination variant.",
-      "value": "",
+      "value": ["flat", "bordered", "light", "faded"],
       "description_zh": "分页变体。"
     },
     "color": {
       "type": "`default` | `primary` | `secondary` | `success` | `warning` | `danger`",
       "default": "`default`",
       "description": "The pagination color theme.",
-      "value": "",
+      "value": ["default", "primary", "secondary", "success", "warning", "danger"],
       "description_zh": "分页颜色主题。"
     },
     "size": {
       "type": "`sm` | `md` | `lg`",
       "default": "`md`",
       "description": "The pagination size.",
-      "value": "",
+      "value": ["sm", "md", "lg"],
       "description_zh": "分页大小。"
     },
     "radius": {
       "type": "`none` | `sm` | `md` | `lg` | `full`",
       "default": "`xl`",
       "description": "The pagination border radius.",
-      "value": "",
+      "value": ["none", "sm", "md", "lg", "full"],
       "description_zh": "分页边框半径。"
     },
-    "total": {
-      "type": "`number`",
+    ":total": {
+      "type": "number",
       "default": "`1`",
       "description": "The total number of pages.",
       "value": "",
-      "description_zh": "总页数。"
+      "description_zh": "总页数。",
+      "required": true
     },
-    "dotsJump": {
-      "type": "`boolean`",
+    ":dotsJump": {
+      "type": "number",
       "default": "`5`",
       "description": "The number of pages that are added or subtracted on the '...' button.",
       "value": "",
       "description_zh": "在“...”上添加或减去的页数按钮。"
     },
-    "initialPage": {
-      "type": "`number`",
+    ":initialPage": {
+      "type": "number",
       "default": "`1`",
       "description": "The initial page. (uncontrolled)",
       "value": "",
-      "description_zh": "初始页面。（不受控制）"
+      "description_zh": "初始页面。（不受控制）",
+      "required": true
     },
-    "page": {
-      "type": "`number`",
+    ":page": {
+      "type": "number",
       "default": "-",
       "description": "The current page. (controlled)",
       "value": "",
       "description_zh": "当前页面。（受控）"
     },
-    "siblings": {
-      "type": "`number`",
+    ":siblings": {
+      "type": "number",
       "default": "`1`",
       "description": "The number of pages to show before and after the current page.",
       "value": "",
       "description_zh": "在当前页面之前和之后显示的页数。"
     },
-    "boundaries": {
-      "type": "`number`",
+    ":boundaries": {
+      "type": "number",
       "default": "`1`",
       "description": "The number of pages to show at the beginning and end of the pagination.",
       "value": "",
       "description_zh": "在分页的开头和结尾显示的页数。"
     },
     "loop": {
-      "type": "`boolean`",
-      "default": "`false`",
+      "type": "boolean",
+      "default": "false",
       "description": "Whether the pagination should be looped.",
       "value": "",
       "description_zh": "是否应循环分页。"
     },
     "isCompact": {
-      "type": "`boolean`",
-      "default": "`false`",
+      "type": "boolean",
+      "default": "false",
       "description": "Whether the pagination should have a compact style.",
       "value": "",
       "description_zh": "分页是否应具有紧凑的样式。"
     },
     "isDisabled": {
-      "type": "`boolean`",
-      "default": "`false`",
+      "type": "boolean",
+      "default": "false",
       "description": "Whether the pagination is disabled.",
       "value": "",
       "description_zh": "是否禁用分页。"
     },
     "showShadow": {
-      "type": "`boolean`",
-      "default": "`false`",
+      "type": "boolean",
+      "default": "false",
       "description": "Whether the pagination cursor should have a shadow.",
       "value": "",
       "description_zh": "分页光标是否应有阴影。"
     },
     "showControls": {
-      "type": "`boolean`",
-      "default": "`false`",
+      "type": "boolean",
+      "default": "false",
       "description": "Whether the pagination should have controls.",
       "value": "",
       "description_zh": "分页是否应具有控件。"
     },
     "disableCursorAnimation": {
-      "type": "`boolean`",
-      "default": "`false`",
+      "type": "boolean",
+      "default": "false",
       "description": "Whether the pagination cursor should be hidden.",
       "value": "",
       "description_zh": "是否应隐藏分页游标。"
     },
-    "renderItem": {
+    ":renderItem": {
       "type": "[PaginationItemProps](#pagination-item-props)",
       "default": "-",
       "description": "The pagination item render function.",
       "value": "",
       "description_zh": "分页项呈现函数。"
     },
-    "getItemAriaLabel": {
+    ":getItemAriaLabel": {
       "type": "`(page: string) => string`",
       "default": "-",
       "description": "A function that allows you to customize the pagination items aria-label.",
@@ -137,8 +139,8 @@
       "description_zh": "允许您自定义分页项 aria-label 的功能。"
     },
     "disableAnimation": {
-      "type": "`boolean`",
-      "default": "`false`",
+      "type": "boolean",
+      "default": "false",
       "description": "Whether the pagination cursor should be animated.",
       "value": "",
       "description_zh": "是否应对分页光标进行动画处理。"

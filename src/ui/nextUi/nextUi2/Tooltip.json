@@ -22,99 +22,113 @@
     }
   ],
   "props": {
-    "children": {
+    ":children": {
       "type": "`ReactNode[]`",
       "default": "-",
       "description": "The children to render. Usually a trigger element.",
       "value": "",
       "description_zh": "要呈现的子项。通常是一个触发元素。"
     },
-    "content": {
-      "type": "`ReactNode`",
+    ":content": {
+      "type": "ReactNode",
       "default": "-",
       "description": "The content to render inside the tooltip.",
       "value": "",
-      "description_zh": "要在工具提示中呈现的内容。"
+      "description_zh": "要在工具提示中呈现的内容。",
+      "required": true
     },
     "size": {
       "type": "`sm` | `md` | `lg`",
       "default": "`md`",
       "description": "The tooltip size. This change the `content` font size.",
-      "value": "",
+      "value": ["sm", "md", "lg"],
       "description_zh": "工具提示大小。这将更改“内容”字体大小。"
     },
     "color": {
       "type": "`default` | `primary` | `secondary` | `success` | `warning` | `danger`",
       "default": "`default`",
       "description": "The tooltip color theme.",
-      "value": "",
+      "value": ["default", "primary", "secondary", "success", "warning", "danger"],
       "description_zh": "工具提示颜色主题。"
     },
     "radius": {
       "type": "`none` | `sm` | `md` | `lg` | `full`",
       "default": "`md`",
       "description": "The tooltip border radius.",
-      "value": "",
+      "value": ["none", "sm", "md", "lg", "full"],
       "description_zh": "工具提示边框半径。"
     },
     "shadow": {
       "type": "`none` | `sm` | `md` | `lg`",
       "default": "`sm`",
       "description": "The tooltip shadow.",
-      "value": "",
+      "value": ["none", "sm", "md", "lg"],
       "description_zh": "工具提示阴影。"
     },
     "placement": {
       "type": "[TooltipPlacement](#tooltip-placement)",
       "default": "`top`",
       "description": "The placement of the tooltip relative to its trigger reference.",
-      "value": "",
+      "value": [
+        "top",
+        "top-start",
+        "top-end",
+        "bottom",
+        "bottom-start",
+        "bottom-end",
+        "left",
+        "left-start",
+        "left-end",
+        "right",
+        "right-start",
+        "right-end"
+      ],
       "description_zh": "工具提示相对于其触发器引用的位置。"
     },
-    "delay": {
-      "type": "`number`",
+    ":delay": {
+      "type": "number",
       "default": "`500`",
       "description": "The delay in milliseconds before the tooltip opens.",
       "value": "",
       "description_zh": "工具提示打开前的延迟（以毫秒为单位）。"
     },
-    "closeDelay": {
-      "type": "`number`",
+    ":closeDelay": {
+      "type": "number",
       "default": "`0`",
       "description": "The delay in milliseconds before the tooltip closes.",
       "value": "",
       "description_zh": "工具提示关闭前的延迟（以毫秒为单位）。"
     },
     "isOpen": {
-      "type": "`boolean`",
+      "type": "boolean",
       "default": "-",
       "description": "Whether the tooltip is open by default (controlled).",
       "value": "",
       "description_zh": "默认情况下，工具提示是否处于打开状态（受控）。"
     },
     "defaultOpen": {
-      "type": "`boolean`",
+      "type": "boolean",
       "default": "-",
       "description": "Whether the tooltip is open by default (uncontrolled).",
       "value": "",
       "description_zh": "默认情况下工具提示是否处于打开状态（不受控制）。"
     },
-    "offset(px)": {
-      "type": "`number`",
+    ":offset": {
+      "type": "number",
       "default": "`7`",
       "description": "The distance or margin between the reference and popper. It is used internally to create an offset modifier.",
       "value": "",
       "description_zh": "参照和波普尔之间的距离或边距。它在内部用于创建偏移修饰符。"
     },
-    "containerPadding(px)": {
-      "type": "`number`",
+    ":containerPadding": {
+      "type": "number",
       "default": "`12`",
       "description": "The placement padding that should be applied between the element and its surrounding container.",
       "value": "",
       "description_zh": "应在元素与其周围容器之间应用的放置填充。"
     },
-    "crossOffset(px)": {
-      "type": "`number`",
+    ":crossOffset": {
+      "type": "number",
       "default": "`0`",
       "description": "The additional offset applied along the cross axis between the element and its anchor element.",
       "value": "",
@@ -124,59 +138,59 @@
       "type": "`dialog` | `menu` | `listbox` | `tree` | `grid`;",
       "default": "`dialog`",
       "description": "Type of tooltip that is opened by the trigger.",
-      "value": "",
+      "value": ["dialog", "menu", "listbox", "tree", "grid"],
       "description_zh": "触发器打开的工具提示的类型。"
     },
     "showArrow": {
-      "type": "`boolean`",
-      "default": "`false`",
+      "type": "boolean",
+      "default": "false",
       "description": "Whether the tooltip should have an arrow.",
       "value": "",
       "description_zh": "工具提示是否应具有箭头。"
     },
     "shouldFlip": {
-      "type": "`boolean`",
-      "default": "`true`",
+      "type": "boolean",
+      "default": "true",
       "description": "Whether the tooltip should change its placement and flip when it's about to overflow its boundary area.",
       "value": "",
       "description_zh": "工具提示是否应更改其位置并在即将溢出其边界区域时翻转。"
     },
     "triggerScaleOnOpen": {
-      "type": "`boolean`",
-      "default": "`true`",
+      "type": "boolean",
+      "default": "true",
       "description": "Whether the trigger should scale down when the tooltip is open.",
       "value": "",
       "description_zh": "当工具提示打开时，触发器是否应按比例缩小。"
     },
     "shouldBlockScroll": {
-      "type": "`boolean`",
-      "default": "`true`",
+      "type": "boolean",
+      "default": "true",
       "description": "Whether to block scrolling outside the tooltip.",
       "value": "",
       "description_zh": "是否阻止在工具提示外滚动。"
     },
     "isKeyboardDismissDisabled": {
-      "type": "`boolean`",
-      "default": "`false`",
+      "type": "boolean",
+      "default": "false",
       "description": "Whether pressing the escape key to close the tooltip should be disabled.",
       "value": "",
       "description_zh": "是否应禁用按 Escape 键关闭工具提示。"
     },
     "isDismissable": {
-      "type": "`boolean`",
-      "default": "`false`",
+      "type": "boolean",
+      "default": "false",
       "description": "Whether to close the overlay when the user interacts outside it.",
       "value": "",
       "description_zh": "当用户在覆盖层外部交互时，是否关闭覆盖层。"
     },
     "shouldCloseOnBlur": {
-      "type": "`boolean`",
-      "default": "`true`",
+      "type": "boolean",
+      "default": "true",
       "description": "Whether the tooltip should close when focus is lost or moves outside it.",
       "value": "",
       "description_zh": "当焦点丢失或移出焦点时，工具提示是否应关闭。"
     },
-    "motionProps": {
+    ":motionProps": {
       "type": "[MotionProps](#motion-props)",
       "default": "-",
       "description": "The props to modify the framer motion animation. Use the `variants` API to create your own animation.",
@@ -191,15 +205,15 @@
       "description_zh": "将在其中放置覆盖门户的容器元素。"
     },
     "isDisabled": {
-      "type": "`boolean`",
-      "default": "`false`",
+      "type": "boolean",
+      "default": "false",
       "description": "Whether the tooltip is disabled.",
       "value": "",
       "description_zh": "工具提示是否被禁用。"
     },
     "disableAnimation": {
-      "type": "`boolean`",
-      "default": "`false`",
+      "type": "boolean",
+      "default": "false",
       "description": "Whether the tooltip is animated.",
       "value": "",
       "description_zh": "工具提示是否为动画。"

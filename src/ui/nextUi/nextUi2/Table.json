@@ -28,7 +28,7 @@
     }
   ],
   "props": {
-    "children": {
+    ":children": {
       "type": "`ReactNode[]`",
       "default": "-",
       "description": "The elements that make up the table. Includes the `TableHeader`, `TableBody`, `TableColumn`, and `TableRow`.",
@@ -39,95 +39,95 @@
       "type": "`default` | `primary` | `secondary` | `success` | `warning` | `danger`",
       "default": "`default`",
       "description": "Color of the selected rows, and checkboxes.",
-      "value": "",
+      "value": ["default", "primary", "secondary", "success", "warning", "danger"],
       "description_zh": "所选行的颜色和复选框。"
     },
     "layout": {
       "type": "`auto` | `fixed`",
       "default": "`auto`",
       "description": "Defines the layout of the table.",
-      "value": "",
+      "value": ["auto", "fixed"],
       "description_zh": "定义表的布局。"
     },
     "radius": {
       "type": "`none` | `sm` | `md` | `lg`",
       "default": "`lg`",
       "description": "The border-radius of the table.",
-      "value": "",
+      "value": ["none", "sm", "md", "lg"],
       "description_zh": "表的边框半径。"
     },
     "shadow": {
       "type": "`none` | `sm` | `md` | `lg`",
       "default": "`sm`",
       "description": "The shadow size of the table.",
-      "value": "",
+      "value": ["none", "sm", "md", "lg"],
       "description_zh": "表的阴影大小。"
     },
     "hideHeader": {
-      "type": "`boolean`",
-      "default": "`false`",
+      "type": "boolean",
+      "default": "false",
       "description": "Whether to hide the table header.",
       "value": "",
       "description_zh": "是否隐藏表头。"
     },
     "isStriped": {
-      "type": "`boolean`",
-      "default": "`false`",
+      "type": "boolean",
+      "default": "false",
       "description": "Whether to apply striped rows in the table.",
       "value": "",
       "description_zh": "是否在表中应用条带化行。"
     },
     "isCompact": {
-      "type": "`boolean`",
-      "default": "`false`",
+      "type": "boolean",
+      "default": "false",
       "description": "Whether to apply compact style to the table.",
       "value": "",
       "description_zh": "是否将紧凑样式应用于表格。"
     },
     "isHeaderSticky": {
-      "type": "`boolean`",
-      "default": "`false`",
+      "type": "boolean",
+      "default": "false",
       "description": "Whether to make the table header sticky.",
       "value": "",
       "description_zh": "是否使表头具有粘性。"
     },
     "fullWidth": {
-      "type": "`boolean`",
-      "default": "`true`",
+      "type": "boolean",
+      "default": "true",
       "description": "Whether to make the table full width.",
       "value": "",
       "description_zh": "是否使工作台全宽。"
     },
     "disableAnimation": {
-      "type": "`boolean`",
-      "default": "`false`",
+      "type": "boolean",
+      "default": "false",
       "description": "Whether to disable the table and checkbox animations.",
       "value": "",
       "description_zh": "是否禁用表格和复选框动画。"
     },
     "removeWrapper": {
-      "type": "`boolean`",
-      "default": "`false`",
+      "type": "boolean",
+      "default": "false",
       "description": "Whether the table base container should not be rendered.",
       "value": "",
       "description_zh": "是否不应呈现表基容器。"
     },
-    "BaseComponent": {
+    ":BaseComponent": {
       "type": "`React.ComponentType<any>`",
       "default": "`div`",
       "description": "A custom wrapper component for the table.",
       "value": "",
       "description_zh": "表的自定义包装器组件。"
     },
-    "topContent": {
-      "type": "`ReactNode`",
+    ":topContent": {
+      "type": "ReactNode",
       "default": "-",
       "description": "Provides content to include a component in the top of the table.",
       "value": "",
       "description_zh": "提供内容以在表的顶部包含组件。"
     },
-    "bottomContent": {
-      "type": "`ReactNode`",
+    ":bottomContent": {
+      "type": "ReactNode",
       "default": "-",
       "description": "Provides content to include a component in the bottom of the table.",
       "value": "",
@@ -137,45 +137,45 @@
       "type": "`inside` | `outside`",
       "default": "`inside`",
       "description": "Where to place the `topContent` component.",
-      "value": "",
+      "value": ["inside", "outside"],
       "description_zh": "放置“topContent”组件的位置。"
     },
     "bottomContentPlacement": {
       "type": "`inside` | `outside`",
       "default": "`inside`",
       "description": "Where to place the `bottomContent` component.",
-      "value": "",
+      "value": ["inside", "outside"],
       "description_zh": "放置“bottomContent”组件的位置。"
     },
     "showSelectionCheckboxes": {
-      "type": "`boolean`",
+      "type": "boolean",
       "default": "-",
       "description": "Whether the row selection checkboxes should be displayed.",
       "value": "",
       "description_zh": "是否应显示行选择复选框。"
     },
-    "sortDescriptor": {
+    ":sortDescriptor": {
       "type": "[SortDescriptor](#sort-descriptor)",
       "default": "-",
       "description": "The current sorted column and direction.",
       "value": "",
       "description_zh": "当前排序的列和方向。"
     },
-    "selectedKeys": {
+    ":selectedKeys": {
       "type": "[Selection](#selection)",
       "default": "-",
       "description": "The currently selected keys in the collection (controlled).",
       "value": "",
       "description_zh": "集合中当前选定的键（受控）。"
     },
-    "defaultSelectedKeys": {
+    ":defaultSelectedKeys": {
       "type": "[Selection](#selection)",
       "default": "-",
       "description": "The initial selected keys in the collection (uncontrolled).",
       "value": "",
       "description_zh": "集合中初始选择的键（不受控制）。"
     },
-    "disabledKeys": {
+    ":disabledKeys": {
       "type": "[Selection](#selection)",
       "default": "-",
       "description": "A set of keys for rows that are disabled.",
@@ -183,7 +183,7 @@
       "description_zh": "禁用行的一组键。"
     },
     "disallowEmptySelection": {
-      "type": "`boolean`",
+      "type": "boolean",
       "default": "-",
       "description": "Whether the collection allows empty selection.",
       "value": "",
@@ -193,31 +193,31 @@
       "type": "`single` | `multiple` | `none`",
       "default": "`none`",
       "description": "The type of selection that is allowed in the collection.",
-      "value": "",
+      "value": ["single", "multiple", "none"],
       "description_zh": "集合中允许的选择类型。"
     },
     "selectionBehavior": {
       "type": "`toggle` | `replace`",
       "default": "`toggle`",
       "description": "How multiple selection should behave in the collection.",
-      "value": "",
+      "value": ["toggle", "replace"],
       "description_zh": "多选在集合中应如何表现。"
     },
     "disabledBehavior": {
       "type": "`selection` | `all`",
       "default": "`selection`",
       "description": "Whether `disabledKeys` applies to all interactions, or only selection.",
-      "value": "",
+      "value": ["selection", "all"],
       "description_zh": "“disabledKeys”是应用于所有交互，还是仅适用于选择。"
     },
     "allowDuplicateSelectionEvents": {
-      "type": "`boolean`",
+      "type": "boolean",
       "default": "-",
       "description": "Whether `onSelectionChange` should fire even if the new set of keys is the same as the last.",
       "value": "",
       "description_zh": "即使新键集与上一组键相同，是否应触发“onSelectionChange”。"
     },
-    "checkboxesProps": {
+    ":checkboxesProps": {
       "type": "[CheckboxProps](/docs/components/checkbox/#checkbox-props)",
       "default": "-",
       "description": "Props to be passed to the checkboxes.",

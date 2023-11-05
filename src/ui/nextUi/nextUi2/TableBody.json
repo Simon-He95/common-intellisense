@@ -10,22 +10,23 @@
     }
   ],
   "props": {
-    "children": {
+    ":children": {
       "type": "`RowElement` | `RowElement[]` | `((item: T) => RowElement)`",
       "default": "-",
       "description": "The contents of the table body. Supports static items or a function for dynamic rendering",
       "value": "",
       "description_zh": "表正文的内容。支持静态项目或动态渲染函数"
     },
-    "items": {
+    ":items": {
       "type": "`Iterable<T>`",
       "default": "-",
       "description": "A list of row objects in the table body used when dynamically rendering rows",
       "value": "",
-      "description_zh": "动态呈现行时使用的表体中的行对象列表"
+      "description_zh": "动态呈现行时使用的表体中的行对象列表",
+      "required": true
     },
     "isLoading": {
-      "type": "`boolean`",
+      "type": "boolean",
       "default": "-",
       "description": "Whether the table body is loading.",
       "value": "",
@@ -38,15 +39,15 @@
       "value": "",
       "description_zh": "当应加载更多项目时调用的处理程序，例如，在底部附近滚动时"
     },
-    "loadingContent": {
-      "type": "`ReactNode`",
+    ":loadingContent": {
+      "type": "ReactNode",
       "default": "-",
       "description": "Content to display while loading more items",
       "value": "",
       "description_zh": "加载更多项目时要显示的内容"
     },
-    "emptyContent": {
-      "type": "`ReactNode`",
+    ":emptyContent": {
+      "type": "ReactNode",
       "default": "-",
       "description": "Content to display when there are no items in the table body",
       "value": "",

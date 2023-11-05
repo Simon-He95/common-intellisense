@@ -17,42 +17,44 @@
   ],
   "props": {
     "src": {
-      "type": "`string`",
+      "type": "string",
       "default": "-",
       "description": "The image source.",
       "value": "",
-      "description_zh": "图像源。"
+      "description_zh": "图像源。",
+      "required": true
     },
     "srcSet": {
-      "type": "`string`",
+      "type": "string",
       "default": "-",
       "description": "The image srcSet.",
       "value": "",
       "description_zh": "图像 srcSet。"
     },
     "sizes": {
-      "type": "`string`",
+      "type": "string",
       "default": "-",
       "description": "The image sizes.",
       "value": "",
       "description_zh": "图像大小。"
     },
     "alt": {
-      "type": "`string`",
+      "type": "string",
       "default": "-",
       "description": "The image alt.",
       "value": "",
-      "description_zh": "图像alt。"
+      "description_zh": "图像alt。",
+      "required": true
     },
-    "width": {
-      "type": "`number`",
+    ":width": {
+      "type": "number",
       "default": "-",
       "description": "The image width.",
       "value": "",
       "description_zh": "图像宽度。"
     },
-    "height": {
-      "type": "`number`",
+    ":height": {
+      "type": "number",
       "default": "-",
       "description": "The image height.",
       "value": "",
@@ -62,54 +64,54 @@
       "type": "`none` | `sm` | `md` | `lg` | `full`",
       "default": "`xl`",
       "description": "The image border radius.",
-      "value": "",
+      "value": ["none", "sm", "md", "lg", "full"],
       "description_zh": "图像边框半径。"
     },
     "shadow": {
       "type": "`none` | `sm` | `md` | `lg`",
       "default": "`none`",
       "description": "The image shadow.",
-      "value": "",
+      "value": ["none", "sm", "md", "lg"],
       "description_zh": "图像阴影。"
     },
     "loading": {
       "type": "`eager` | `lazy`",
       "default": "-",
       "description": "A loading strategy to use for the image.",
-      "value": "",
+      "value": ["eager", "lazy"],
       "description_zh": "用于图像的加载策略。"
     },
     "fallbackSrc": {
-      "type": "`string`",
+      "type": "string",
       "default": "-",
       "description": "The fallback image source.",
       "value": "",
       "description_zh": "回退图像源。"
     },
     "isBlurred": {
-      "type": "`boolean`",
-      "default": "`false`",
+      "type": "boolean",
+      "default": "false",
       "description": "Whether the image should have a duplicated blurred image at the background.",
       "value": "",
       "description_zh": "图像的背景中是否应有重复的模糊图像。"
     },
     "isZoomed": {
-      "type": "`boolean`",
-      "default": "`false`",
+      "type": "boolean",
+      "default": "false",
       "description": "Whether the image should be zoomed when hovered.",
       "value": "",
       "description_zh": "悬停时是否应缩放图像。"
     },
     "removeWrapper": {
-      "type": "`boolean`",
-      "default": "`false`",
-      "description": "Whether to remove the wrapper element. This will cause the image to be rendered as a direct child of the parent element. If you set this prop as `true` neither the skeleton nor the zoom effect will work.",
+      "type": "boolean",
+      "default": "false",
+      "description": "Whether to remove the wrapper element. This will cause the image to be rendered as a direct child of the parent element. If you set this prop as true neither the skeleton nor the zoom effect will work.",
       "value": "",
       "description_zh": "是否删除包装元素。这将导致图像呈现为父元素的直接子元素。如果将此道具设置为“true”，则骨架和缩放效果都不起作用。"
     },
     "disableSkeleton": {
-      "type": "`boolean`",
-      "default": "`false`",
+      "type": "boolean",
+      "default": "false",
       "description": "Whether the image should disable the skeleton animation while loading.",
       "value": "",
       "description_zh": "图像是否应在加载时禁用骨架动画。"

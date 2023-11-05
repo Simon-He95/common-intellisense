@@ -22,8 +22,8 @@
     }
   ],
   "props": {
-    "children": {
-      "type": "`ReactNode`",
+    ":children": {
+      "type": "ReactNode",
       "default": "-",
       "description": "The content of the input.",
       "value": "",
@@ -33,82 +33,83 @@
       "type": "`flat` | `bordered` | `faded` | `underlined`",
       "default": "`flat`",
       "description": "The variant of the input.",
-      "value": "",
+      "value": ["flat", "bordered", "faded", "underlined"],
       "description_zh": "输入的变体。"
     },
     "color": {
       "type": "`default` | `primary` | `secondary` | `success` | `warning` | `danger`",
       "default": "`default`",
       "description": "The color of the input.",
-      "value": "",
+      "value": ["default", "primary", "secondary", "success", "warning", "danger"],
       "description_zh": "输入的颜色。"
     },
     "size": {
       "type": "`sm` | `md` | `lg`",
       "default": "`md`",
       "description": "The size of the input.",
-      "value": "",
+      "value": ["sm", "md", "lg"],
       "description_zh": "输入的大小。"
     },
     "radius": {
       "type": "`none` | `sm` | `md` | `lg` | `full`",
       "default": "-",
       "description": "The radius of the input.",
-      "value": "",
+      "value": ["none", "sm", "md", "lg", "full"],
       "description_zh": "输入的半径。"
     },
-    "label": {
-      "type": "`ReactNode`",
+    ":label": {
+      "type": "ReactNode",
       "default": "-",
       "description": "The content to display as the label.",
       "value": "",
-      "description_zh": "要显示为标签的内容。"
+      "description_zh": "要显示为标签的内容。",
+      "required": true
     },
     "value": {
-      "type": "`string`",
+      "type": "string",
       "default": "-",
       "description": "The current value of the input (controlled).",
       "value": "",
       "description_zh": "输入的当前值（受控）。"
     },
     "defaultValue": {
-      "type": "`string`",
+      "type": "string",
       "default": "-",
       "description": "The default value of the input (uncontrolled).",
       "value": "",
       "description_zh": "输入的默认值（不受控制）。"
     },
     "placeholder": {
-      "type": "`string`",
+      "type": "string",
       "default": "-",
       "description": "The placeholder of the input.",
       "value": "",
       "required": true,
       "description_zh": "输入的占位符。"
     },
-    "description": {
-      "type": "`ReactNode`",
+    ":description": {
+      "type": "ReactNode",
       "default": "-",
       "description": "A description for the input. Provides a hint such as specific requirements for what to choose.",
       "value": "",
       "description_zh": "输入的说明。提供提示，例如选择内容的具体要求。"
     },
-    "errorMessage": {
-      "type": "`ReactNode`",
+    ":errorMessage": {
+      "type": "ReactNode",
       "default": "-",
       "description": "An error message for the input.",
       "value": "",
       "description_zh": "输入的错误消息。"
     },
-    "startContent": {
-      "type": "`ReactNode`",
+    ":startContent": {
+      "type": "ReactNode",
       "default": "-",
       "description": "Element to be rendered in the left side of the input.",
       "value": "",
       "description_zh": "要在输入左侧呈现的元素。"
     },
-    "endContent": {
-      "type": "`ReactNode`",
+    ":endContent": {
+      "type": "ReactNode",
       "default": "-",
       "description": "Element to be rendered in the right side of the input.",
       "value": "",
@@ -118,47 +119,47 @@
       "type": "`inside` | `outside` | `outside-left`",
       "default": "`inside`",
       "description": "The position of the label.",
-      "value": "",
+      "value": ["inside", "outside", "outside-left"],
       "description_zh": "标签的位置。"
     },
     "fullWidth": {
-      "type": "`boolean`",
-      "default": "`true`",
+      "type": "boolean",
+      "default": "true",
       "description": "Whether the input should take up the width of its parent.",
       "value": "",
       "description_zh": "输入是否应占用其父级的宽度。"
     },
     "isClearable": {
-      "type": "`boolean`",
-      "default": "`false`",
+      "type": "boolean",
+      "default": "false",
       "description": "Whether the input should have a clear button.",
       "value": "",
       "description_zh": "输入是否应具有清除按钮。"
     },
     "isRequired": {
-      "type": "`boolean`",
-      "default": "`false`",
+      "type": "boolean",
+      "default": "false",
       "description": "Whether user input is required on the input before form submission.",
       "value": "",
       "description_zh": "在提交表单之前，是否需要用户对输入进行输入。"
     },
     "isReadOnly": {
-      "type": "`boolean`",
+      "type": "boolean",
       "default": "",
       "description": "Whether the input can be selected but not changed by the user.",
       "value": "",
       "description_zh": "输入是否可以由用户选择但不能更改。"
     },
     "isDisabled": {
-      "type": "`boolean`",
-      "default": "`false`",
+      "type": "boolean",
+      "default": "false",
       "description": "Whether the input is disabled.",
       "value": "",
       "description_zh": "输入是否被禁用。"
     },
     "isInvalid": {
-      "type": "`boolean`",
-      "default": "`false`",
+      "type": "boolean",
+      "default": "false",
       "description": "Whether the input is invalid.",
       "value": "",
       "description_zh": "输入是否无效。"
@@ -167,12 +168,12 @@
       "type": "`valid` | `invalid`",
       "default": "-",
       "description": "Whether the input should display its \"valid\" or \"invalid\" visual styling. (**Deprecated**) use **isInvalid** instead.",
-      "value": "",
+      "value": ["valid", "invalid"],
       "description_zh": "输入是否应显示其“有效”或“无效”的视觉样式。（**已弃用**）请改用 **isInvalid**。"
     },
     "disableAnimation": {
-      "type": "`boolean`",
-      "default": "`false`",
+      "type": "boolean",
+      "default": "false",
       "description": "Whether the input should be animated.",
       "value": "",
       "description_zh": "是否应对输入进行动画处理。"

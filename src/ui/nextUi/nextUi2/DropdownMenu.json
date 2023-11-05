@@ -22,13 +22,13 @@
     }
   ],
   "props": {
-    "children": {
-      "type": "`ReactNode` | `((item: T) => ReactElement)`",
+    ":children": {
+      "type": "ReactNode | `((item: T) => ReactElement)`",
       "description": "The contents of the collection. It's usually the `DropdownItem` or `DropdownSection`. (static)",
       "value": "",
       "description_zh": "集合的内容。它通常是“DropdownItem”或“DropdownSection”。（静态）"
     },
-    "items": {
+    ":items": {
       "type": "[`Iterable<T>`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols)",
       "description": "Item objects in the collection. (dynamic)",
       "value": "",
@@ -37,28 +37,28 @@
     "variant": {
       "type": "`solid` | `bordered` | `light` | `flat` | `faded` | `shadow`",
       "description": "The dropdown items appearance style.",
-      "value": "",
+      "value": ["solid", "bordered", "light", "flat", "faded", "shadow"],
       "description_zh": "下拉项外观样式。"
     },
     "color": {
       "type": "`default` | `primary` | `secondary` | `success` | `warning` | `danger`",
       "description": "The dropdown items color theme.",
-      "value": "",
+      "value": ["default", "primary", "secondary", "success", "warning", "danger"],
       "description_zh": "下拉项为主题着色。"
     },
     "selectionMode": {
       "type": "`none` | `single` | `multiple`",
       "description": "The type of selection that is allowed in the collection.",
-      "value": "",
+      "value": ["none", "single", "multiple"],
       "description_zh": "集合中允许的选择类型。"
     },
-    "selectedKeys": {
+    ":selectedKeys": {
       "type": "`React.Key[]`",
       "description": "The currently selected keys in the collection (controlled).",
       "value": "",
       "description_zh": "集合中当前选定的键（受控）。"
     },
-    "disabledKeys": {
+    ":disabledKeys": {
       "type": "`React.Key[]`",
       "description": "The item keys that are disabled. These items cannot be selected, focused, or otherwise interacted with.",
       "value": "",
@@ -71,31 +71,31 @@
       "description_zh": "集合中初始选择的键（不受控制）。"
     },
     "disallowEmptySelection": {
-      "type": "`boolean`",
+      "type": "boolean",
       "description": "Whether the collection allows empty selection.",
       "value": "",
       "description_zh": "集合是否允许空选择。"
     },
     "autoFocus": {
-      "type": "`boolean` | `first` | `last`",
+      "type": "boolean | `first` | `last`",
       "description": "Where the focus should be set.",
       "value": "",
       "description_zh": "应该在哪里设置重点。"
     },
     "shouldFocusWrap": {
-      "type": "`boolean`",
+      "type": "boolean",
       "description": "Whether keyboard navigation is circular.",
       "value": "",
       "description_zh": "键盘导航是否为圆形。"
     },
     "closeOnSelect": {
-      "type": "`boolean`",
+      "type": "boolean",
       "description": "Whether the dropdown menu should be closed when an item is selected.",
       "value": "",
       "description_zh": "选择项目时是否应关闭下拉菜单。"
     },
     "disableAnimation": {
-      "type": "`boolean`",
+      "type": "boolean",
       "description": "Whether to disable the animation of the dropdown items.",
       "value": "",
       "description_zh": "是否禁用下拉项的动画。"

@@ -16,8 +16,8 @@
     }
   ],
   "props": {
-    "children": {
-      "type": "`ReactNode`",
+    ":children": {
+      "type": "ReactNode",
       "default": "-",
       "description": "The content of the modal. It's usually the `ModalContent`.",
       "value": "",
@@ -27,101 +27,102 @@
       "type": "`xs` | `sm` | `md` | `lg` | `xl` | `2xl` | `3xl` | `4xl` | `5xl` | `full`",
       "default": "`md`",
       "description": "The modal size. This changes the modal `max-width` and `height` (full).",
-      "value": "",
+      "value": ["xs", "sm", "md", "lg", "xl", "2xl", "3xl", "4xl", "5xl", "full"],
       "description_zh": "模态大小。这将更改模态“max-width”和“height”（完整）。"
     },
     "radius": {
       "type": "`none` | `sm` | `md` | `lg`",
       "default": "`lg`",
       "description": "The modal border radius.",
-      "value": "",
+      "value": ["none", "sm", "md", "lg"],
       "description_zh": "模态边框半径。"
     },
     "shadow": {
       "type": "`none` | `sm` | `md` | `lg`",
       "default": "`lg`",
       "description": "The modal shadow.",
-      "value": "",
+      "value": ["none", "sm", "md", "lg"],
       "description_zh": "模态阴影。"
     },
     "backdrop": {
       "type": "`transparent` | `opaque` | `blur`",
       "default": "`opaque`",
       "description": "The modal backdrop type.",
-      "value": "",
+      "value": ["transparent", "opaque", "blur"],
       "description_zh": "模态背景类型。"
     },
     "scrollBehavior": {
       "type": "`normal` | `inside` | `outside`",
       "default": "`normal`",
       "description": "The modal scroll behavior.",
-      "value": "",
+      "value": ["normal", "inside", "outside"],
       "description_zh": "模态滚动行为。"
     },
     "placement": {
       "type": "`auto` | `top` | `center` | `bottom`",
       "default": "`auto`",
       "description": "The modal position.",
-      "value": "",
+      "value": ["auto", "top", "center", "bottom"],
       "description_zh": "模态位置。"
     },
     "isOpen": {
-      "type": "`boolean`",
+      "type": "boolean",
       "default": "-",
       "description": "Whether the modal is open by default (controlled).",
       "value": "",
-      "description_zh": "默认情况下，模式是否处于打开状态（受控）。"
+      "description_zh": "默认情况下，模式是否处于打开状态（受控）。",
+      "required": true
     },
     "defaultOpen": {
-      "type": "`boolean`",
+      "type": "boolean",
       "default": "-",
       "description": "Whether the modal is open by default (uncontrolled).",
       "value": "",
       "description_zh": "默认情况下，模式是否处于打开状态（不受控制）。"
     },
     "isDismissable": {
-      "type": "`boolean`",
-      "default": "`true`",
+      "type": "boolean",
+      "default": "true",
       "description": "Whether the modal can be closed by clicking on the overlay or pressing the <Kbd>Esc</Kbd> key.",
       "value": "",
       "description_zh": "是否可以通过单击叠加层或按 <Kbd>Esc</Kbd> 键来关闭模式。"
     },
     "isKeyboardDismissDisabled": {
-      "type": "`boolean`",
-      "default": "`false`",
+      "type": "boolean",
+      "default": "false",
       "description": "Whether pressing the <Kbd>Esc</Kbd> key to close the modal should be disabled.",
       "value": "",
       "description_zh": "是否应禁用按 <Kbd>Esc</Kbd> 键关闭模式。"
     },
     "shouldBlockScroll": {
-      "type": "`boolean`",
-      "default": "`true`",
+      "type": "boolean",
+      "default": "true",
       "description": "Whether the modal should block the scroll of the page on open.",
       "value": "",
       "description_zh": "模式是否应在打开时阻止页面滚动。"
     },
     "hideCloseButton": {
-      "type": "`boolean`",
-      "default": "`false`",
+      "type": "boolean",
+      "default": "false",
       "description": "Whether to hide the modal close button.",
       "value": "",
       "description_zh": "是否隐藏模式关闭按钮。"
     },
-    "closeButton": {
-      "type": "`ReactNode`",
+    ":closeButton": {
+      "type": "ReactNode",
       "default": "-",
       "description": "Custom close button to display on top right corner.",
       "value": "",
       "description_zh": "自定义关闭按钮显示在右上角。"
     },
-    "motionProps": {
+    ":motionProps": {
       "type": "[MotionProps](#motion-props)",
       "default": "",
       "description": "The props to modify the framer motion animation. Use the `variants` API to create your own animation.",
       "value": "",
       "description_zh": "用于修改成帧器运动动画的道具。使用“变体”API 创建您自己的动画。"
     },
-    "portalContainer": {
+    ":portalContainer": {
       "type": "`HTMLElement`",
       "default": "`document.body`",
       "description": "The container element in which the overlay portal will be placed.",
@@ -129,8 +130,8 @@
       "description_zh": "将在其中放置覆盖门户的容器元素。"
     },
     "disableAnimation": {
-      "type": "`boolean`",
-      "default": "`false`",
+      "type": "boolean",
+      "default": "false",
       "description": "Whether the modal should not have animations.",
       "value": "",
       "description_zh": "模态是否不应有动画。"

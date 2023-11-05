@@ -16,14 +16,14 @@
     }
   ],
   "props": {
-    "children": {
+    ":children": {
       "type": "`ReactNode[]`",
       "default": "-",
       "description": "The children to render. Usually a list of `ListboxItem` or `ListboxSection`",
       "value": "",
       "description_zh": "要呈现的子项。通常是“ListboxItem”或“ListboxSection”的列表"
     },
-    "items": {
+    ":items": {
       "type": "[`Iterable<T>`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols)",
       "default": "-",
       "description": "Item objects in the collection. (dynamic)",
@@ -34,31 +34,31 @@
       "type": "`solid` | `bordered` | `light` | `flat` | `faded` | `shadow`",
       "default": "`solid`",
       "description": "The listbox items appearance style.",
-      "value": "",
+      "value": ["solid", "bordered", "light", "flat", "faded", "shadow"],
       "description_zh": "列表框项外观样式。"
     },
     "color": {
       "type": "`default` | `primary` | `secondary` | `success` | `warning` | `danger`",
       "default": "`default`",
       "description": "The listbox items color theme.",
-      "value": "",
+      "value": ["default", "primary", "secondary", "success", "warning", "danger"],
       "description_zh": "列表框项颜色主题。"
     },
     "selectionMode": {
       "type": "`none` | `single` | `multiple`",
       "default": "-",
       "description": "The type of selection that is allowed in the collection.",
-      "value": "",
+      "value": ["none", "single", "multiple"],
       "description_zh": "集合中允许的选择类型。"
     },
-    "selectedKeys": {
+    ":selectedKeys": {
       "type": "`React.Key[]`",
       "default": "-",
       "description": "The currently selected keys in the collection (controlled).",
       "value": "",
       "description_zh": "集合中当前选定的键（受控）。"
     },
-    "disabledKeys": {
+    ":disabledKeys": {
       "type": "`React.Key[]`",
       "default": "-",
       "description": "The item keys that are disabled. These items cannot be selected, focused, or otherwise interacted with.",
@@ -73,29 +73,29 @@
       "description_zh": "集合中初始选择的键（不受控制）。"
     },
     "disallowEmptySelection": {
-      "type": "`boolean`",
-      "default": "`false`",
+      "type": "boolean",
+      "default": "false",
       "description": "Whether the collection allows empty selection.",
       "value": "",
       "description_zh": "集合是否允许空选择。"
     },
     "autoFocus": {
-      "type": "`boolean` | `first` | `last`",
-      "default": "`false`",
+      "type": "boolean | `first` | `last`",
+      "default": "false",
       "description": "Where the focus should be set.",
-      "value": "",
+      "value": ["first", "last"],
       "description_zh": "应该在哪里设置重点。"
     },
     "shouldFocusWrap": {
-      "type": "`boolean`",
-      "default": "`false`",
+      "type": "boolean",
+      "default": "false",
       "description": "Whether keyboard navigation is circular.",
       "value": "",
       "description_zh": "键盘导航是否为圆形。"
     },
     "disableAnimation": {
-      "type": "`boolean`",
-      "default": "`false`",
+      "type": "boolean",
+      "default": "false",
       "description": "Whether to disable the animation of the listbox items.",
       "value": "",
       "description_zh": "是否禁用列表框项的动画。"
