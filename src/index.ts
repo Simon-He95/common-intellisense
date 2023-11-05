@@ -55,6 +55,7 @@ export function activate(context: vscode.ExtensionContext) {
     const { character } = position
     const isPreEmpty = lineText[character - 1] === ' '
     const lan = getActiveTextEditorLanguageId()
+    const isValue = result.isValue
     if (!result.isInTemplate && result.refs && !isPreEmpty) {
       if (result.refsMap && Object.keys(result.refsMap).length) {
         if (lineText?.slice(-1)[0] === '.') {
@@ -82,7 +83,7 @@ export function activate(context: vscode.ExtensionContext) {
       if (!completionsCallbacks.has(name)) {
         const _events = events[0]()
         eventCallbacks.set(name, _events)
-        completionsCallbacks.set(name, [...completions[0](), ..._events])
+        completionsCallbacks.set(name, [...completions[0](), ...(lan === 'vue' ? [] : _events)])
       }
 
       if (!eventCallbacks.has(name))
@@ -110,14 +111,29 @@ export function activate(context: vscode.ExtensionContext) {
         return eventCallbacks.get(name).filter((item: any) => !hasProps.find((prop: any) => isSamePrefix(item.label, prop)))
       }
       else if (propName) {
-        const result = completionsCallback.filter((item: any) => !hasProps.find((prop: any) => isSamePrefix(item.label, prop))).filter((item: any) => item.label.startsWith(propName)).map((item: any) =>
-          createCompletionItem({
-            content: item.label,
-            documentation: item.documentation,
-            detail: item.detail,
-          }),
+        const result = completionsCallback.filter((item: any) => isValue
+          ? hasProps.find((prop: any) => isSamePrefix(item.label, prop))
+          : !hasProps.find((prop: any) => isSamePrefix(item.label, prop))).filter((item: any) => item.label.startsWith(propName)).map((item: any) =>
+          createCompletionItem(isValue
+            ? ({
+                content: item.label,
+                snippet: item.label.replace(/\w+=\"([^"]+)\".*/, '$1'),
+                documentation: item.documentation,
+                detail: item.detail,
+                type: item.kind,
+              })
+            : ({
+                content: item.label,
+                documentation: item.documentation,
+                detail: item.detail,
+                type: item.kind,
+              })),
         )
-        const events = eventCallbacks.get(name).filter((item: any) => !hasProps.find((prop: any) => isSamePrefix(item.label, prop)))
+        const events = lan === 'vue'
+          ? []
+          : isValue
+            ? []
+            : eventCallbacks.get(name).filter((item: any) => !hasProps.find((prop: any) => isSamePrefix(item.label, prop)))
         if (propName === 'o')
           return [...events, ...result]
 

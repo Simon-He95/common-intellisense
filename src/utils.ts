@@ -78,6 +78,7 @@ function dfs(children: any, position: vscode.Position) {
             props,
             type: 'props',
             isInTemplate: true,
+            isValue: !!prop?.value?.content,
           }
         }
       }
@@ -168,6 +169,7 @@ function jsxDfs(children: any, position: vscode.Position) {
             propType: prop.type,
             type: 'props',
             isInTemplate,
+            isValue: Array.isArray(prop?.value) ? !!prop.value[0]?.raw : !!prop?.value?.value,
           }
         }
       }
