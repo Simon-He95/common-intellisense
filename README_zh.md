@@ -21,6 +21,7 @@
 - @nuxt/ui 2
 - vuetify 3
 - radix-vue 1
+- next-ui 2
 
 ### [antdv demo](assets/antdv.gif)
 
@@ -39,6 +40,8 @@
 ### [vuetify demo](assets/vuetify.gif)
 
 ### [radix-vue demo](assets/radix-vue.gif)
+
+### [next-ui demo](assets/next-ui.gif)
 
 ## :coffee:
 
