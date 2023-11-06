@@ -1,0 +1,170 @@
+{
+  "name": "Popconfirm",
+  "props": {
+    "autoFocus": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否自动聚焦弹出框内的可聚焦元素",
+      "description_zh": "是否自动聚焦弹出框内的可聚焦元素"
+    },
+    "defaultPopupVisible": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "默认弹出框是打开还是关闭",
+      "description_zh": "默认弹出框是打开还是关闭"
+    },
+    "disabled": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否禁用",
+      "description_zh": "是否禁用"
+    },
+    "focusLock": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否将焦点锁定在弹出框内",
+      "description_zh": "是否将焦点锁定在弹出框内"
+    },
+    "popupVisible": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "弹出框是打开还是关闭。(受控)",
+      "description_zh": "弹出框是打开还是关闭。(受控)"
+    },
+    "unmountOnExit": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "是否在隐藏的时候销毁 DOM 节点",
+      "description_zh": "是否在隐藏的时候销毁 DOM 节点"
+    },
+    "okType": {
+      "default": "primary",
+      "value": ["default", "primary", "secondary", "dashed", "text", "outline"],
+      "type": "ButtonProps['type']",
+      "description": "确认按钮的类型",
+      "description_zh": "确认按钮的类型"
+    },
+    "position": {
+      "default": "top",
+      "value": ["top", "tl", "tr", "bottom", "bl", "br", "left", "lt", "lb", "right", "rt", "rb"],
+      "type": "| 'top'| 'tl'| 'tr'| 'bottom'| 'bl'| 'br'| 'left'| 'lt'| 'lb'| 'right'| 'rt'| 'rb'",
+      "description": "弹出框的方位，有 12 个方位可供选择",
+      "description_zh": "弹出框的方位，有 12 个方位可供选择"
+    },
+    "trigger": {
+      "default": "click",
+      "value": ["hover", "focus", "click", "contextMenu"],
+      "type": "TriggerProps['trigger']",
+      "description": "触发方式",
+      "description_zh": "触发方式"
+    },
+    "cancelText": {
+      "default": "-",
+      "value": "",
+      "type": "ReactNode",
+      "description": "取消按钮文字",
+      "description_zh": "取消按钮文字"
+    },
+    ":icon": {
+      "default": "<IconExclamationCircleFill />",
+      "value": "",
+      "type": "ReactNode",
+      "description": "标题前的图标",
+      "description_zh": "标题前的图标"
+    },
+    "okText": {
+      "default": "-",
+      "value": "",
+      "type": "ReactNode",
+      "description": "确认按钮文字",
+      "description_zh": "确认按钮文字"
+    },
+    ":cancelButtonProps": {
+      "default": "-",
+      "value": "",
+      "type": "ButtonProps",
+      "description": "取消按钮的参数，可接受 Button 组件的所有参数",
+      "description_zh": "取消按钮的参数，可接受 Button 组件的所有参数"
+    },
+    "className": {
+      "default": "-",
+      "value": "",
+      "type": "string | string[]",
+      "description": "节点类名",
+      "description_zh": "节点类名"
+    },
+    ":okButtonProps": {
+      "default": "-",
+      "value": "",
+      "type": "ButtonProps",
+      "description": "确定按钮的参数，可接受 Button 组件的所有参数",
+      "description_zh": "确定按钮的参数，可接受 Button 组件的所有参数"
+    },
+    ":style": {
+      "default": "-",
+      "value": "",
+      "type": "CSSProperties",
+      "description": "节点样式",
+      "description_zh": "节点样式"
+    },
+    ":triggerProps": {
+      "default": "-",
+      "value": "",
+      "type": "Partial<TriggerProps>",
+      "description": "可以接受所有 Trigger 的参数",
+      "description_zh": "可以接受所有 Trigger 的参数"
+    },
+    ":content": {
+      "default": "-",
+      "value": "",
+      "type": "ReactNode | (() => ReactNode)",
+      "description": "内容.函数类型在 2.48.0 支持",
+      "description_zh": "内容.函数类型在 2.48.0 支持"
+    },
+    ":getPopupContainer": {
+      "default": "-",
+      "value": "",
+      "type": "(node: HTMLElement) => Element",
+      "description": "弹出挂载的节点",
+      "description_zh": "弹出挂载的节点"
+    },
+    "title": {
+      "default": "-",
+      "value": "",
+      "type": "ReactNode | (() => ReactNode)",
+      "description": "标题。 函数类型在 2.48.0 支持",
+      "description_zh": "标题。 函数类型在 2.48.0 支持",
+      "required": true
+    }
+  },
+  "methods": [],
+  "link": "https://arco.design/react/components/popconfirm#api",
+  "link_zh": "https://arco.design/react/components/popconfirm#api",
+  "events": [
+    {
+      "name": "onOk",
+      "description": "点击确认按钮的回调函数。回调函数 event 参数在 2.29.0 支持",
+      "description_zh": "点击确认按钮的回调函数。回调函数 event 参数在 2.29.0 支持",
+      "params": "(e: React.MouseEvent) => Promise<any> | void"
+    },
+    {
+      "name": "onCancel",
+      "description": "点击取消按钮的回调函数。 回调函数 event 参数在 2.29.0 支持",
+      "description_zh": "点击取消按钮的回调函数。 回调函数 event 参数在 2.29.0 支持",
+      "params": "(e: React.MouseEvent) => void"
+    },
+    {
+      "name": "onVisibleChange",
+      "description": "弹出打开和关闭触发的回调",
+      "description_zh": "弹出打开和关闭触发的回调",
+      "params": "(visible: boolean) => void"
+    }
+  ],
+  "typeDetail": {}
+}

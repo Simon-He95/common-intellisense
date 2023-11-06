@@ -1,0 +1,195 @@
+{
+  "name": "Mentions",
+  "props": {
+    "alignTextarea": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "弹出框是否与输入框对齐",
+      "description_zh": "弹出框是否与输入框对齐"
+    },
+    "allowClear": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "允许清空输入框",
+      "description_zh": "允许清空输入框"
+    },
+    "disabled": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否禁用",
+      "description_zh": "是否禁用"
+    },
+    "error": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否是错误状态。(废弃，下个大版本移除，使用 status='error' 替代)",
+      "description_zh": "是否是错误状态。(废弃，下个大版本移除，使用 status='error' 替代)"
+    },
+    "defaultValue": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "输入框默认值",
+      "description_zh": "输入框默认值"
+    },
+    "placeholder": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "输入框提示文字",
+      "description_zh": "输入框提示文字"
+    },
+    "split": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "选中项前后分隔符",
+      "description_zh": "选中项前后分隔符"
+    },
+    "value": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "输入框的值",
+      "description_zh": "输入框的值"
+    },
+    "position": {
+      "default": "bl",
+      "value": ["top", "tl", "tr", "bottom", "bl", "br"],
+      "type": "'top' | 'tl' | 'tr' | 'bottom' | 'bl' | 'br'",
+      "description": "下拉框的弹出位置",
+      "description_zh": "下拉框的弹出位置"
+    },
+    "status": {
+      "default": "-",
+      "value": ["error", "warning"],
+      "type": "'error' | 'warning'",
+      "description": "状态",
+      "description_zh": "状态"
+    },
+    ":clearIcon": {
+      "default": "-",
+      "value": "",
+      "type": "ReactNode",
+      "description": "allowClear 时配置清除按钮的图标。",
+      "description_zh": "allowClear 时配置清除按钮的图标。"
+    },
+    ":notFoundContent": {
+      "default": "-",
+      "value": "",
+      "type": "ReactNode",
+      "description": "下拉列表没有数据时显示的内容",
+      "description_zh": "下拉列表没有数据时显示的内容"
+    },
+    "autoSize": {
+      "default": "-",
+      "value": "",
+      "type": "boolean | { minRows?: number; maxRows?: number }",
+      "description": "是否自动调整输入框的高度",
+      "description_zh": "是否自动调整输入框的高度"
+    },
+    "className": {
+      "default": "-",
+      "value": "",
+      "type": "string | string[]",
+      "description": "节点类名",
+      "description_zh": "节点类名"
+    },
+    ":options": {
+      "default": "-",
+      "value": "",
+      "type": "(| string| number| { label: ReactNode | string; value: string | number; disabled?: boolean })[]",
+      "description": "下拉框可选项",
+      "description_zh": "下拉框可选项",
+      "required": true
+    },
+    "prefix": {
+      "default": "@",
+      "value": "",
+      "type": "string | string[]",
+      "description": "触发关键字",
+      "description_zh": "触发关键字"
+    },
+    ":style": {
+      "default": "-",
+      "value": "",
+      "type": "CSSProperties",
+      "description": "节点样式",
+      "description_zh": "节点样式"
+    },
+    ":triggerProps": {
+      "default": "-",
+      "value": "",
+      "type": "Partial<TriggerProps>",
+      "description": "可以接受所有 Trigger 组件的 Props",
+      "description_zh": "可以接受所有 Trigger 组件的 Props"
+    },
+    ":wrapperStyle": {
+      "default": "-",
+      "value": "",
+      "type": "CSSProperties",
+      "description": "开启字数统计之后，会在 textarea 标签外包一层 div，wrapperStyle 用来配置这个 div 的样式。",
+      "description_zh": "开启字数统计之后，会在 textarea 标签外包一层 div，wrapperStyle 用来配置这个 div 的样式。"
+    },
+    ":filterOption": {
+      "default": "-",
+      "value": "",
+      "type": "false | ((inputValue: string, option) => boolean)",
+      "description": "是否根据输入的值筛选数据，可传入函数自定义过滤逻辑。",
+      "description_zh": "是否根据输入的值筛选数据，可传入函数自定义过滤逻辑。"
+    },
+    ":getPopupContainer": {
+      "default": "-",
+      "value": "",
+      "type": "(node: HTMLElement) => HTMLElement",
+      "description": "弹出框挂载的父节点",
+      "description_zh": "弹出框挂载的父节点"
+    }
+  },
+  "methods": [],
+  "link": "https://arco.design/react/components/mentions",
+  "link_zh": "https://arco.design/react/components/mentions",
+  "events": [
+    {
+      "name": "onBlur",
+      "description": "失焦时的回调",
+      "description_zh": "失焦时的回调",
+      "params": "(e) => void"
+    },
+    {
+      "name": "onChange",
+      "description": "输入改变时的回调",
+      "description_zh": "输入改变时的回调",
+      "params": "(value: string) => void"
+    },
+    {
+      "name": "onClear",
+      "description": "点击清除按钮的回调",
+      "description_zh": "点击清除按钮的回调",
+      "params": "() => void"
+    },
+    {
+      "name": "onFocus",
+      "description": "聚焦时的回调",
+      "description_zh": "聚焦时的回调",
+      "params": "(e) => void"
+    },
+    {
+      "name": "onPressEnter",
+      "description": "按下回车键的回调",
+      "description_zh": "按下回车键的回调",
+      "params": "(e) => void"
+    },
+    {
+      "name": "onSearch",
+      "description": "搜索时的回调",
+      "description_zh": "搜索时的回调",
+      "params": "(text: string, prefix: string) => void"
+    }
+  ],
+  "typeDetail": {}
+}

@@ -1,0 +1,210 @@
+{
+  "name": "Tabs",
+  "props": {
+    "destroyOnHide": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否销毁隐藏标签页的节点, TabPane 的该属性优先级高于 Tabs。",
+      "description_zh": "是否销毁隐藏标签页的节点, TabPane 的该属性优先级高于 Tabs。"
+    },
+    "editable": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否允许增减标签。只在 type 为 card 或 card-gutter 时候生效。",
+      "description_zh": "是否允许增减标签。只在 type 为 card 或 card-gutter 时候生效。"
+    },
+    "headerPadding": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "选项卡头部是否存在水平边距。仅对 type等于 line、text类型的选项卡生效",
+      "description_zh": "选项卡头部是否存在水平边距。仅对 type等于 line、text类型的选项卡生效"
+    },
+    "justify": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "高度撑满容器，只在水平模式下生效。（默认的高度是又撑起的。）",
+      "description_zh": "高度撑满容器，只在水平模式下生效。（默认的高度是又撑起的。）"
+    },
+    "lazyload": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "设置为 true 时，将不会在组件挂载的时候渲染被隐藏的标签页。",
+      "description_zh": "设置为 true 时，将不会在组件挂载的时候渲染被隐藏的标签页。"
+    },
+    "showAddButton": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "是否显示新增按钮（仅在editable为true时生效）",
+      "description_zh": "是否显示新增按钮（仅在editable为true时生效）"
+    },
+    "activeTab": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "当前选中的 tab 的 key",
+      "description_zh": "当前选中的 tab 的 key"
+    },
+    "defaultActiveTab": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "默认选中的标签选项卡，如不指定默认选择第一个",
+      "description_zh": "默认选中的标签选项卡，如不指定默认选择第一个"
+    },
+    "direction": {
+      "default": "-",
+      "value": ["horizontal", "vertical"],
+      "type": "'horizontal' | 'vertical'",
+      "description": "标签选项卡的方向是水平还是竖直，分别对应 horizontal 和 vertical。** 注意： 已废弃，使用 tabPosition 替代。**",
+      "description_zh": "标签选项卡的方向是水平还是竖直，分别对应 horizontal 和 vertical。** 注意： 已废弃，使用 tabPosition 替代。**"
+    },
+    ":inkBarSize": {
+      "default": "-",
+      "value": "",
+      "type": "{ width?: CSSProperties['width']; height?: CSSProperties['height'] }",
+      "description": "定制下划线尺寸",
+      "description_zh": "定制下划线尺寸"
+    },
+    "overflow": {
+      "default": "scroll",
+      "value": ["scroll", "dropdown"],
+      "type": "'scroll' | 'dropdown'",
+      "description": "标签页较多时候，选择滚动/下拉菜单形式展示 tab",
+      "description_zh": "标签页较多时候，选择滚动/下拉菜单形式展示 tab"
+    },
+    "scrollPosition": {
+      "default": "auto",
+      "value": ["start", "end", "center", "auto", "number"],
+      "type": "'start' | 'end' | 'center' | 'auto' | number",
+      "description": "被选中 tab 的滚动位置，默认 auto 即会将 activeTab 滚动到可见区域，但不会特意做位置调整",
+      "description_zh": "被选中 tab 的滚动位置，默认 auto 即会将 activeTab 滚动到可见区域，但不会特意做位置调整"
+    },
+    "size": {
+      "default": "-",
+      "value": ["mini", "small", "default", "large"],
+      "type": "'mini' | 'small' | 'default' | 'large'",
+      "description": "有四个尺寸供选择，分别为mini, small, default, large",
+      "description_zh": "有四个尺寸供选择，分别为mini, small, default, large"
+    },
+    "tabPosition": {
+      "default": "top",
+      "value": ["left", "right", "top", "bottom"],
+      "type": "'left' | 'right' | 'top' | 'bottom'",
+      "description": "选项卡位置",
+      "description_zh": "选项卡位置"
+    },
+    "type": {
+      "default": "line",
+      "value": ["line", "card", "card-gutter", "text", "rounded", "capsule"],
+      "type": "'line' | 'card' | 'card-gutter' | 'text' | 'rounded' | 'capsule'",
+      "description": "标签选项卡的类型",
+      "description_zh": "标签选项卡的类型"
+    },
+    ":addButton": {
+      "default": "-",
+      "value": "",
+      "type": "ReactNode",
+      "description": "自定义新增按钮",
+      "description_zh": "自定义新增按钮"
+    },
+    ":deleteButton": {
+      "default": "-",
+      "value": "",
+      "type": "ReactNode",
+      "description": "自定义删除按钮",
+      "description_zh": "自定义删除按钮"
+    },
+    ":extra": {
+      "default": "-",
+      "value": "",
+      "type": "ReactNode",
+      "description": "显示在标签页右侧的附加",
+      "description_zh": "显示在标签页右侧的附加"
+    },
+    "animation": {
+      "default": "-",
+      "value": "",
+      "type": "boolean | { tabPane?: boolean; inkBar?: boolean }",
+      "description": "是否开启过渡效果",
+      "description_zh": "是否开启过渡效果"
+    },
+    "className": {
+      "default": "-",
+      "value": "",
+      "type": "string | string[]",
+      "description": "节点类名",
+      "description_zh": "节点类名"
+    },
+    ":icons": {
+      "default": "-",
+      "value": "",
+      "type": "{add?: ReactNode;delete?: ReactNode;prev?: ReactNode;next?: ReactNode;dropdown?: ReactNode;}",
+      "description": "标签页头部 编辑/滚动/下拉 图标配置。对于不想展示的图标可以将其设置为null",
+      "description_zh": "标签页头部 编辑/滚动/下拉 图标配置。对于不想展示的图标可以将其设置为null"
+    },
+    ":scrollAfterEdit": {
+      "default": "{ add: true, delete: true }",
+      "value": "",
+      "type": "{delete?: boolean;add?: boolean;}",
+      "description": "是否在标签增减后，自动进行滚动调整(editable为true时生效）",
+      "description_zh": "是否在标签增减后，自动进行滚动调整(editable为true时生效）"
+    },
+    ":style": {
+      "default": "-",
+      "value": "",
+      "type": "CSSProperties",
+      "description": "节点样式",
+      "description_zh": "节点样式"
+    },
+    ":renderTabHeader": {
+      "default": "-",
+      "value": "",
+      "type": "(tabProps: TabsProps, DefaultTabHeader: typeof TabHeader) => ReactElement",
+      "description": "自定义选项卡头部",
+      "description_zh": "自定义选项卡头部"
+    },
+    ":renderTabTitle": {
+      "default": "-",
+      "value": "",
+      "type": "(tabTitle: ReactNode,info: {key: string | number;isActive: boolean;disabled: boolean;editable: boolean;}) => ReactNode",
+      "description": "自定义单个选项卡头部",
+      "description_zh": "自定义单个选项卡头部"
+    }
+  },
+  "methods": [],
+  "link": "https://arco.design/react/components/tabs#api",
+  "link_zh": "https://arco.design/react/components/tabs#api",
+  "events": [
+    {
+      "name": "onAddTab",
+      "description": "点击新增 tab 按钮的回调",
+      "description_zh": "点击新增 tab 按钮的回调",
+      "params": "() => void"
+    },
+    {
+      "name": "onChange",
+      "description": "activeTab 改变的回调",
+      "description_zh": "activeTab 改变的回调",
+      "params": "(key: string) => void"
+    },
+    {
+      "name": "onClickTab",
+      "description": "点击选项卡的回调",
+      "description_zh": "点击选项卡的回调",
+      "params": "(key: string) => void"
+    },
+    {
+      "name": "onDeleteTab",
+      "description": "点击删除按钮的回调",
+      "description_zh": "点击删除按钮的回调",
+      "params": "(key: string) => void"
+    }
+  ],
+  "typeDetail": {}
+}

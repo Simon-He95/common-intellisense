@@ -1,0 +1,277 @@
+{
+  "name": "Tree",
+  "props": {
+    "autoExpandParent": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "是否自动展开父节点",
+      "description_zh": "是否自动展开父节点"
+    },
+    "blockNode": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否节点占据一行",
+      "description_zh": "是否节点占据一行"
+    },
+    "checkable": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否在节点前添加选框",
+      "description_zh": "是否在节点前添加选框"
+    },
+    "checkStrictly": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否取消父子节点关联",
+      "description_zh": "是否取消父子节点关联"
+    },
+    "draggable": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否可拖拽",
+      "description_zh": "是否可拖拽"
+    },
+    "multiple": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否支持多选",
+      "description_zh": "是否支持多选"
+    },
+    "selectable": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "是否可以选择",
+      "description_zh": "是否可以选择"
+    },
+    "showLine": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否展示连接线",
+      "description_zh": "是否展示连接线"
+    },
+    "size": {
+      "default": "-",
+      "value": ["mini", "small", "default", "large"],
+      "type": "'mini' | 'small' | 'default' | 'large'",
+      "description": "不同尺寸",
+      "description_zh": "不同尺寸"
+    },
+    ":actionOnClick": {
+      "default": "-",
+      "value": "",
+      "type": "ActionOnClick | ActionOnClick[]",
+      "description": "点击节点时对应的操作，可以是选中，复选选中，展开/收起",
+      "description_zh": "点击节点时对应的操作，可以是选中，复选选中，展开/收起"
+    },
+    ":allowDrop": {
+      "default": "() => true",
+      "value": "",
+      "type": "AllowDrop",
+      "description": "是否允许拖拽时放置在该节点。 (dragNode in 2.23.0)",
+      "description_zh": "是否允许拖拽时放置在该节点。 (dragNode in 2.23.0)"
+    },
+    ":checkedKeys": {
+      "default": "-",
+      "value": "",
+      "type": "string[]",
+      "description": "选中复选框的树节点。（受控）",
+      "description_zh": "选中复选框的树节点。（受控）"
+    },
+    "checkedStrategy": {
+      "default": "all",
+      "value": "",
+      "type": "SHOW_ALL | SHOW_PARENT | SHOW_CHILD",
+      "description": "定制回填方式  all: 返回所有选中的节点 parent: 父子节点都选中时只返回父节点  child: 只返回子节点",
+      "description_zh": "定制回填方式  all: 返回所有选中的节点 parent: 父子节点都选中时只返回父节点  child: 只返回子节点"
+    },
+    "className": {
+      "default": "-",
+      "value": "",
+      "type": "string | string[]",
+      "description": "节点类名",
+      "description_zh": "节点类名"
+    },
+    ":defaultCheckedKeys": {
+      "default": "-",
+      "value": "",
+      "type": "string[]",
+      "description": "默认选中复选框的树节点",
+      "description_zh": "默认选中复选框的树节点"
+    },
+    ":defaultExpandedKeys": {
+      "default": "-",
+      "value": "",
+      "type": "string[]",
+      "description": "默认展开的节点。",
+      "description_zh": "默认展开的节点。"
+    },
+    ":defaultSelectedKeys": {
+      "default": "-",
+      "value": "",
+      "type": "string[]",
+      "description": "默认选中的树节点",
+      "description_zh": "默认选中的树节点"
+    },
+    ":expandedKeys": {
+      "default": "-",
+      "value": "",
+      "type": "string[]",
+      "description": "展开的节点，(受控)。",
+      "description_zh": "展开的节点，(受控)。"
+    },
+    ":fieldNames": {
+      "default": "-",
+      "value": "",
+      "type": "FieldNamesType",
+      "description": "指定 key，title，isLeaf，disabled，children 对应的字段",
+      "description_zh": "指定 key，title，isLeaf，disabled，children 对应的字段"
+    },
+    ":halfCheckedKeys": {
+      "default": "-",
+      "value": "",
+      "type": "string[]",
+      "description": "半选状态的节点.仅在 checkable 且 checkStrictly 时生效",
+      "description_zh": "半选状态的节点.仅在 checkable 且 checkStrictly 时生效"
+    },
+    ":loadMore": {
+      "default": "-",
+      "value": "",
+      "type": "(node: NodeInstance) => Promise<void>",
+      "description": "异步加载数据的回调，返回一个 Promise。",
+      "description_zh": "异步加载数据的回调，返回一个 Promise。"
+    },
+    ":selectedKeys": {
+      "default": "-",
+      "value": "",
+      "type": "string[]",
+      "description": "选中的树节点。（受控）",
+      "description_zh": "选中的树节点。（受控）"
+    },
+    ":style": {
+      "default": "-",
+      "value": "",
+      "type": "CSSProperties",
+      "description": "节点样式",
+      "description_zh": "节点样式"
+    },
+    ":treeData": {
+      "default": "-",
+      "value": "",
+      "type": "TreeDataType[]",
+      "description": "可以通过传入treeData,生成对应的树结构",
+      "description_zh": "可以通过传入treeData,生成对应的树结构",
+      "required": true
+    },
+    ":virtualListProps": {
+      "default": "-",
+      "value": "",
+      "type": "AvailableVirtualListProps",
+      "description": "传递虚拟列表属性，传入此参数以开启虚拟滚动",
+      "description_zh": "传递虚拟列表属性，传入此参数以开启虚拟滚动"
+    },
+    ":icons": {
+      "default": "FieldNamesType",
+      "value": "",
+      "type": "| ((nodeProps: NodeProps) => {dragIcon?: ReactNode;switcherIcon?: ReactNode;loadingIcon?: ReactNode;})| {dragIcon?: ReactNode;switcherIcon?: ReactNode;loadingIcon?: ReactNode;}",
+      "description": "定制节点图标",
+      "description_zh": "定制节点图标"
+    },
+    ":renderExtra": {
+      "default": "-",
+      "value": "",
+      "type": "(props: NodeProps) => ReactNode",
+      "description": "渲染额外节点",
+      "description_zh": "渲染额外节点"
+    },
+    ":renderTitle": {
+      "default": "-",
+      "value": "",
+      "type": "(props: NodeProps) => ReactNode",
+      "description": "自定义 title 的渲染",
+      "description_zh": "自定义 title 的渲染"
+    }
+  },
+  "methods": [],
+  "link": "https://arco.design/react/components/tree#api",
+  "link_zh": "https://arco.design/react/components/tree#api",
+  "events": [
+    {
+      "name": "onDragEnd",
+      "description": "节点结束拖拽的回调",
+      "description_zh": "节点结束拖拽的回调",
+      "params": "(e: DragEvent<HTMLSpanElement>, node: NodeInstance) => void"
+    },
+    {
+      "name": "onDragLeave",
+      "description": "节点离开可释放目标上时的回调",
+      "description_zh": "节点离开可释放目标上时的回调",
+      "params": "(e: DragEvent<HTMLSpanElement>, node: NodeInstance) => void"
+    },
+    {
+      "name": "onDragOver",
+      "description": "节点被拖拽至可释放目标上时的回调",
+      "description_zh": "节点被拖拽至可释放目标上时的回调",
+      "params": "(e: DragEvent<HTMLSpanElement>, node: NodeInstance) => void"
+    },
+    {
+      "name": "onDragStart",
+      "description": "节点开始拖拽的回调",
+      "description_zh": "节点开始拖拽的回调",
+      "params": "(e: DragEvent<HTMLSpanElement>, node: NodeInstance) => void"
+    },
+    {
+      "name": "onDrop",
+      "description": "节点在可释放目标上释放时的回调",
+      "description_zh": "节点在可释放目标上释放时的回调",
+      "params": "(info: {e: DragEvent<HTMLSpanElement>;dragNode: NodeInstance | null;dropNode: NodeInstance | null;dropPosition: number;}) => void"
+    },
+    {
+      "name": "onCheck",
+      "description": "点击树节点复选框的回调",
+      "description_zh": "点击树节点复选框的回调",
+      "params": "(checkedKeys: string[],extra: {node: NodeInstance;checkedNodes: NodeInstance[];checked: boolean;halfCheckedKeys: string[];halfCheckedNodes: NodeInstance[];e: Event;}) => void"
+    },
+    {
+      "name": "onExpand",
+      "description": "点击展开/关闭的回调",
+      "description_zh": "点击展开/关闭的回调",
+      "params": "(expandedKeys: string[],exra?: { expanded: boolean; node: NodeInstance; expandedNodes: NodeInstance[] }) => void"
+    },
+    {
+      "name": "onSelect",
+      "description": "点击树节点的回调",
+      "description_zh": "点击树节点的回调",
+      "params": "(selectedKeys: string[],extra: {selected: boolean;selectedNodes: NodeInstance[];node: NodeInstance;e: Event;}) => void"
+    }
+  ],
+  "typeDetail": {
+    "VirtualListProps": [
+      {
+        "name": "height",
+        "type": "number",
+        "description": "可视区高度 (2.11.0 开始支持如 80% 的 string 类型)",
+        "default": "200"
+      },
+      {
+        "name": "threshold",
+        "type": "number|null",
+        "description": "自动开启虚拟滚动的元素数量阈值，传入null以禁用虚拟滚动。",
+        "default": "100"
+      },
+      {
+        "name": "isStaticItemHeight",
+        "type": "boolean",
+        "description": "是否为相同高度的静态元素",
+        "default": "true"
+      }
+    ]
+  }
+}

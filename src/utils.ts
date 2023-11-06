@@ -169,7 +169,7 @@ function jsxDfs(children: any, position: vscode.Position) {
             propType: prop.type,
             type: 'props',
             isInTemplate,
-            isValue: Array.isArray(prop?.value) ? !!prop.value[0]?.raw : !!prop?.value?.value,
+            isValue: Array.isArray(prop?.value) ? !!prop.value[0]?.raw : prop.value.type === 'JSXExpressionContainer' ? !!prop.value?.expression : !!prop?.value?.value,
           }
         }
       }
@@ -334,7 +334,7 @@ export function parserSvelte(code: string, position: vscode.Position) {
   }
 }
 
-const UINames = ['element-ui', 'element-plus', 'antd', 'ant-design-vue', '@varlet/ui', 'vant', 'naive-ui', 'vuetify', '@chakra-ui/react', '@chakra-ui/vue', '@skeletonlabs/skeleton', 'primevue', 'quasar', '@nextui-org/react', '@nuxt/ui', 'shadcn-vue', 'radix-vue']
+const UINames = ['element-ui', 'element-plus', 'antd', 'ant-design-vue', '@varlet/ui', 'vant', 'naive-ui', 'vuetify', '@chakra-ui/react', '@chakra-ui/vue', '@skeletonlabs/skeleton', 'primevue', 'quasar', '@nextui-org/react', '@nuxt/ui', 'shadcn-vue', 'radix-vue', '@arco-design/web-react']
 export async function findPkgUI(cwd?: string) {
   if (!cwd)
     return

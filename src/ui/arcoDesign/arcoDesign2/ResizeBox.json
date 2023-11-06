@@ -1,0 +1,85 @@
+{
+  "name": "ResizeBox",
+  "props": {
+    ":height": {
+      "default": "-",
+      "value": "",
+      "type": "number",
+      "description": "高度，受控属性",
+      "description_zh": "高度，受控属性"
+    },
+    ":width": {
+      "default": "-",
+      "value": "",
+      "type": "number",
+      "description": "宽度，受控属性",
+      "description_zh": "宽度，受控属性"
+    },
+    "component": {
+      "default": "div",
+      "value": "",
+      "type": "string",
+      "description": "伸缩框的 html 标签",
+      "description_zh": "伸缩框的 html 标签"
+    },
+    ":directions": {
+      "default": "['right']",
+      "value": "",
+      "type": "Array<'left' | 'right' | 'top' | 'bottom'>",
+      "description": "可以进行伸缩的边，有上、下、左、右可以使用，默认是右方向。",
+      "description_zh": "可以进行伸缩的边，有上、下、左、右可以使用，默认是右方向。"
+    },
+    "className": {
+      "default": "-",
+      "value": "",
+      "type": "string | string[]",
+      "description": "节点类名",
+      "description_zh": "节点类名"
+    },
+    ":resizeIcons": {
+      "default": "{}",
+      "value": "",
+      "type": "{top?: ReactNode;bottom?: ReactNode;left?: ReactNode;right?: ReactNode;}",
+      "description": "定制伸缩杆的图标，四个方向都支持定制。",
+      "description_zh": "定制伸缩杆的图标，四个方向都支持定制。"
+    },
+    ":resizeTriggers": {
+      "default": "{}",
+      "value": "",
+      "type": "{top?: ReactNode;bottom?: ReactNode;left?: ReactNode;right?: ReactNode;}",
+      "description": "定制伸缩杆的内容，四个方向都支持定制。",
+      "description_zh": "定制伸缩杆的内容，四个方向都支持定制。"
+    },
+    ":style": {
+      "default": "-",
+      "value": "",
+      "type": "CSSProperties",
+      "description": "节点样式",
+      "description_zh": "节点样式"
+    }
+  },
+  "methods": [],
+  "link": "https://arco.design/react/components/resize-box#api",
+  "link_zh": "https://arco.design/react/components/resize-box#api",
+  "events": [
+    {
+      "name": "onMoving",
+      "description": "拖拽中的回调",
+      "description_zh": "拖拽中的回调",
+      "params": "(e: MouseEvent, size: { width: number; height: number }) => void"
+    },
+    {
+      "name": "onMovingEnd",
+      "description": "拖拽结束之后的回调",
+      "description_zh": "拖拽结束之后的回调",
+      "params": "() => void"
+    },
+    {
+      "name": "onMovingStart",
+      "description": "开始拖拽之前的回调",
+      "description_zh": "开始拖拽之前的回调",
+      "params": "() => void"
+    }
+  ],
+  "typeDetail": {}
+}

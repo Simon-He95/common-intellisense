@@ -1,0 +1,88 @@
+{
+  "name": "Steps",
+  "props": {
+    "lineless": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "无连接线模式",
+      "description_zh": "无连接线模式"
+    },
+    ":current": {
+      "default": "1",
+      "value": "",
+      "type": "number",
+      "description": "当前步数",
+      "description_zh": "当前步数",
+      "required": true
+    },
+    "direction": {
+      "default": "horizontal",
+      "value": ["vertical", "horizontal"],
+      "type": "'vertical' | 'horizontal'",
+      "description": "显示方向",
+      "description_zh": "显示方向"
+    },
+    "labelPlacement": {
+      "default": "horizontal",
+      "value": ["horizontal", "vertical"],
+      "type": "'horizontal' | 'vertical'",
+      "description": "标签描述文字放置的位置，默认 horizontal 水平放在图标右侧，可选 vertical 放在图标下方",
+      "description_zh": "标签描述文字放置的位置，默认 horizontal 水平放在图标右侧，可选 vertical 放在图标下方"
+    },
+    "size": {
+      "default": "default",
+      "value": ["default", "small"],
+      "type": "'default' | 'small'",
+      "description": "步骤条的尺寸",
+      "description_zh": "步骤条的尺寸"
+    },
+    "status": {
+      "default": "-",
+      "value": ["wait", "process", "finish", "error"],
+      "type": "'wait' | 'process' | 'finish' | 'error'",
+      "description": "当前步数的节点状态",
+      "description_zh": "当前步数的节点状态"
+    },
+    "type": {
+      "default": "default",
+      "value": ["default", "arrow", "dot", "navigation"],
+      "type": "'default' | 'arrow' | 'dot' | 'navigation'",
+      "description": "节点样式类型",
+      "description_zh": "节点样式类型"
+    },
+    "className": {
+      "default": "-",
+      "value": "",
+      "type": "string | string[]",
+      "description": "节点类名",
+      "description_zh": "节点类名"
+    },
+    ":style": {
+      "default": "-",
+      "value": "",
+      "type": "CSSProperties",
+      "description": "节点样式",
+      "description_zh": "节点样式"
+    },
+    ":customDot": {
+      "default": "-",
+      "value": "",
+      "type": "(IconDot: ReactNode, stepConfig: CustomDotRecord) => ReactNode",
+      "description": "自定义步骤条节点 ，不支持箭头模式",
+      "description_zh": "自定义步骤条节点 ，不支持箭头模式"
+    }
+  },
+  "methods": [],
+  "link": "https://arco.design/react/components/steps#api",
+  "link_zh": "https://arco.design/react/components/steps#api",
+  "events": [
+    {
+      "name": "onChange",
+      "description": "点击步骤切换的回调，设置这个属性后，步骤条可点击切换。",
+      "description_zh": "点击步骤切换的回调，设置这个属性后，步骤条可点击切换。",
+      "params": "(current: number, id: any) => void"
+    }
+  ],
+  "typeDetail": {}
+}

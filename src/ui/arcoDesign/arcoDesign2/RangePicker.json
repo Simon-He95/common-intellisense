@@ -1,0 +1,127 @@
+{
+  "name": "DatePicker.RangePicker",
+  "props": {
+    "clearRangeOnReselect": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "当重新选择范围的时候，会清空之前的范围重新进行选择",
+      "description_zh": "当重新选择范围的时候，会清空之前的范围重新进行选择"
+    },
+    "format": {
+      "default": "YYYY-MM-DD",
+      "value": "",
+      "type": "string",
+      "description": "展示日期的格式，参考dayjs",
+      "description_zh": "展示日期的格式，参考dayjs"
+    },
+    ":disabledTime": {
+      "default": "-",
+      "value": "",
+      "type": "(current: Dayjs, type: 'start' | 'end') => DisabledTimeProps",
+      "description": "不可选取的时间",
+      "description_zh": "不可选取的时间"
+    },
+    "mode": {
+      "default": "date",
+      "value": ["date", "month", "week", "year", "quarter"],
+      "type": "'date' | 'month' | 'week' | 'year' | 'quarter'",
+      "description": "范围选择器的类型，可以是日期、月份。",
+      "description_zh": "范围选择器的类型，可以是日期、月份。"
+    },
+    ":triggerElement": {
+      "default": "-",
+      "value": "",
+      "type": "ReactNode",
+      "description": "触发元素。",
+      "description_zh": "触发元素。"
+    },
+    ":defaultPickerValue": {
+      "default": "-",
+      "value": "",
+      "type": "CalendarValue[]",
+      "description": "默认面板显示的日期",
+      "description_zh": "默认面板显示的日期"
+    },
+    ":defaultValue": {
+      "default": "-",
+      "value": "",
+      "type": "CalendarValue[]",
+      "description": "默认日期",
+      "description_zh": "默认日期"
+    },
+    "disabled": {
+      "default": "-",
+      "value": "",
+      "type": "boolean | boolean[]",
+      "description": "是否禁用",
+      "description_zh": "是否禁用"
+    },
+    ":pickerValue": {
+      "default": "-",
+      "value": "",
+      "type": "CalendarValue[]",
+      "description": "面板显示的日期。",
+      "description_zh": "面板显示的日期。"
+    },
+    "placeholder": {
+      "default": "-",
+      "value": "",
+      "type": "string[]",
+      "description": "提示文案",
+      "description_zh": "提示文案",
+      "required": true
+    },
+    "showTime": {
+      "default": "-",
+      "value": "",
+      "type": "boolean | TimePickerRangeProps",
+      "description": "是否增加时间选择，如果传入的是个对象，会把参数传给内置的 TimePicker。",
+      "description_zh": "是否增加时间选择，如果传入的是个对象，会把参数传给内置的 TimePicker。"
+    },
+    ":timepickerProps": {
+      "default": "-",
+      "value": "",
+      "type": "TimePickerProps",
+      "description": "时间显示的参数，参考 TimePickerProps，作用同 showTime。",
+      "description_zh": "时间显示的参数，参考 TimePickerProps，作用同 showTime。"
+    },
+    ":value": {
+      "default": "-",
+      "value": "",
+      "type": "CalendarValue[]",
+      "description": "日历组件的值",
+      "description_zh": "日历组件的值"
+    }
+  },
+  "methods": [],
+  "link": "https://arco.design/react/components/date-picker#%E8%AE%BE%E7%BD%AE%E6%97%B6%E5%8C%BA",
+  "link_zh": "https://arco.design/react/components/date-picker#%E8%AE%BE%E7%BD%AE%E6%97%B6%E5%8C%BA",
+  "events": [
+    {
+      "name": "onSelect",
+      "description": "选中日期发生改变但组件值未改变时的回调",
+      "description_zh": "选中日期发生改变但组件值未改变时的回调",
+      "params": "(dateString: string[], value: Dayjs[], extra: { type: 'start' | 'end' }) => void"
+    },
+    {
+      "name": "onChange",
+      "description": "日历组件值发生改变时的回调",
+      "description_zh": "日历组件值发生改变时的回调",
+      "params": "(dateString: string[], date: Dayjs[]) => void"
+    },
+    {
+      "name": "onOk",
+      "description": "点击确认按钮的回调",
+      "description_zh": "点击确认按钮的回调",
+      "params": "(dateString: string[], date: Dayjs[]) => void"
+    },
+    {
+      "name": "onPickerValueChange",
+      "description": "面板日期改变的回调。",
+      "description_zh": "面板日期改变的回调。",
+      "params": "(dateString: string[], value: Dayjs[]) => void"
+    }
+  ],
+  "typeDetail": {}
+}

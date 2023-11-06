@@ -1,0 +1,344 @@
+{
+  "name": "Upload",
+  "props": {
+    "autoUpload": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "是否选中文件后自动上传",
+      "description_zh": "是否选中文件后自动上传"
+    },
+    "directory": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "文件夹上传",
+      "description_zh": "文件夹上传"
+    },
+    "disabled": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "禁用",
+      "description_zh": "禁用"
+    },
+    "drag": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否拖拽上传",
+      "description_zh": "是否拖拽上传"
+    },
+    "imagePreview": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "启用内置的图片预览，仅在 listType='picture-card' 时生效。(v2.41.0)",
+      "description_zh": "启用内置的图片预览，仅在 listType='picture-card' 时生效。(v2.41.0)"
+    },
+    "multiple": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "文件多选",
+      "description_zh": "文件多选"
+    },
+    "withCredentials": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "上传请求是否携带 cookie",
+      "description_zh": "上传请求是否携带 cookie"
+    },
+    "action": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "上传接口地址",
+      "description_zh": "上传接口地址"
+    },
+    "method": {
+      "default": "post",
+      "value": "",
+      "type": "string",
+      "description": "上传请求的 http method",
+      "description_zh": "上传请求的 http method"
+    },
+    "listType": {
+      "default": "text",
+      "value": ["picture-card", "picture-list", "text"],
+      "type": "'text' | 'picture-list' | 'picture-card'",
+      "description": "展示类型",
+      "description_zh": "展示类型"
+    },
+    "tip": {
+      "default": "-",
+      "value": "",
+      "type": "string | React.ReactNode",
+      "description": "提示文字，listType 不同，展示会有区别",
+      "description_zh": "提示文字，listType 不同，展示会有区别"
+    },
+    "accept": {
+      "default": "-",
+      "value": "",
+      "type": "string | { type: string; strict?: boolean }",
+      "description": "接受上传的类型 详细请参考。（strict in 2.53.0，默认为 true。设置为 false 时，accept 表现和原生一致。设置为 true 时，会严格匹配文件后缀名，过滤掉不符合 accept 规则的文件。)",
+      "description_zh": "接受上传的类型 详细请参考。（strict in 2.53.0，默认为 true。设置为 false 时，accept 表现和原生一致。设置为 true 时，会严格匹配文件后缀名，过滤掉不符合 accept 规则的文件。)"
+    },
+    ":beforeUpload": {
+      "default": "() => true",
+      "value": "",
+      "type": "(file: File, filesList: File[]) => boolean | Promise<any>",
+      "description": "上传文件之前的回调。返回 false 或者 promise抛出异常的时候会取消上传。",
+      "description_zh": "上传文件之前的回调。返回 false 或者 promise抛出异常的时候会取消上传。"
+    },
+    "className": {
+      "default": "-",
+      "value": "",
+      "type": "string | string[]",
+      "description": "节点类名",
+      "description_zh": "节点类名"
+    },
+    ":defaultFileList": {
+      "default": "-",
+      "value": "",
+      "type": "UploadItem[]",
+      "description": "默认已上传的文件列表",
+      "description_zh": "默认已上传的文件列表"
+    },
+    ":fileList": {
+      "default": "-",
+      "value": "",
+      "type": "UploadItem[]",
+      "description": "已上传的文件列表",
+      "description_zh": "已上传的文件列表",
+      "required": true
+    },
+    ":headers": {
+      "default": "-",
+      "value": "",
+      "type": "object",
+      "description": "上传时使用的 headers",
+      "description_zh": "上传时使用的 headers"
+    },
+    ":limit": {
+      "default": "-",
+      "value": "",
+      "type": "number | { maxCount: number; hideOnExceedLimit?: boolean }",
+      "description": "限制上传数量。默认超出后会隐藏上传节点。对象类型在 2.28.0 支持",
+      "description_zh": "限制上传数量。默认超出后会隐藏上传节点。对象类型在 2.28.0 支持"
+    },
+    ":progressProps": {
+      "default": "-",
+      "value": "",
+      "type": "Partial<ProgressProps>",
+      "description": "进度条属性，接收所有进度条的 props。",
+      "description_zh": "进度条属性，接收所有进度条的 props。"
+    },
+    "showUploadList": {
+      "default": "true",
+      "value": "",
+      "type": "boolean | CustomIconType",
+      "description": "是否展示上传文件列表。预览图标，删除图标，文件图标，重新上传图标，取消上传图标。",
+      "description_zh": "是否展示上传文件列表。预览图标，删除图标，文件图标，重新上传图标，取消上传图标。"
+    },
+    ":style": {
+      "default": "-",
+      "value": "",
+      "type": "CSSProperties",
+      "description": "节点样式",
+      "description_zh": "节点样式"
+    },
+    ":customRequest": {
+      "default": "-",
+      "value": "",
+      "type": "(options: RequestOptions) => UploadRequestReturn | void",
+      "description": "通过覆盖默认的上传行为，可以自定义自己的上传实现",
+      "description_zh": "通过覆盖默认的上传行为，可以自定义自己的上传实现"
+    },
+    ":data": {
+      "default": "-",
+      "value": "",
+      "type": "object | ((any: any) => object)",
+      "description": "上传时的 Body 参数",
+      "description_zh": "上传时的 Body 参数"
+    },
+    "name": {
+      "default": "-",
+      "value": "",
+      "type": "string | ((any: any) => string)",
+      "description": "发请求时文件内容的参数名",
+      "description_zh": "发请求时文件内容的参数名"
+    },
+    ":renderUploadItem": {
+      "default": "-",
+      "value": "",
+      "type": "(originNode: ReactNode, file: UploadItem, fileList: UploadItem[]) => ReactNode",
+      "description": "自定义上传列表项",
+      "description_zh": "自定义上传列表项"
+    },
+    ":renderUploadList": {
+      "default": "-",
+      "value": "",
+      "type": "(fileList: UploadItem[], uploadListProps: UploadListProps) => ReactNode",
+      "description": "自定义展示上传文件列表",
+      "description_zh": "自定义展示上传文件列表"
+    }
+  },
+  "methods": [
+    {
+      "name": "submit",
+      "params": "(file?: UploadItem) => void",
+      "description": "手动上传时，调用该方法，开始上传。示例。不传参数时，会默认上传全部init状态的文件。",
+      "description_zh": "手动上传时，调用该方法，开始上传。示例。不传参数时，会默认上传全部init状态的文件。"
+    },
+    {
+      "name": "abort",
+      "params": "(file?: UploadItem) => void",
+      "description": "中止文件上传",
+      "description_zh": "中止文件上传"
+    },
+    {
+      "name": "reupload",
+      "params": "(file?: UploadItem) => void",
+      "description": "重新上传文件",
+      "description_zh": "重新上传文件"
+    }
+  ],
+  "link": "https://arco.design/react/components/upload#api",
+  "link_zh": "https://arco.design/react/components/upload#api",
+  "events": [
+    {
+      "name": "onRemove",
+      "description": "点击删除文件时的回调。返回 false 或者 Promise.reject 的时候不会执行删除。",
+      "description_zh": "点击删除文件时的回调。返回 false 或者 Promise.reject 的时候不会执行删除。",
+      "params": "(file: UploadItem, fileList: UploadItem[]) => void | boolean | Promise<void | boolean>"
+    },
+    {
+      "name": "onChange",
+      "description": "上传文件改变时的回调。文件开始上传，失败，成功时会触发。注意：如果需要实时获取文件的上传进度，请在 onProgress 中处理。",
+      "description_zh": "上传文件改变时的回调。文件开始上传，失败，成功时会触发。注意：如果需要实时获取文件的上传进度，请在 onProgress 中处理。",
+      "params": "(fileList: UploadItem[], file: UploadItem) => void"
+    },
+    {
+      "name": "onDragLeave",
+      "description": "拖拽上传文件离开拖拽区时的回调",
+      "description_zh": "拖拽上传文件离开拖拽区时的回调",
+      "params": "(e: React.DragEvent) => void"
+    },
+    {
+      "name": "onDragOver",
+      "description": "拖拽上传文件进入拖拽区时的回调",
+      "description_zh": "拖拽上传文件进入拖拽区时的回调",
+      "params": "(e: React.DragEvent) => void"
+    },
+    {
+      "name": "onDrop",
+      "description": "拖拽上传文件时执行的回调",
+      "description_zh": "拖拽上传文件时执行的回调",
+      "params": "(e: React.DragEvent) => void"
+    },
+    {
+      "name": "onExceedLimit",
+      "description": "超出上传数量限制时触发",
+      "description_zh": "超出上传数量限制时触发",
+      "params": "(files: File[], fileList: UploadItem[]) => void"
+    },
+    {
+      "name": "onPreview",
+      "description": "点击预览时候的回调",
+      "description_zh": "点击预览时候的回调",
+      "params": "(file: UploadItem) => void"
+    },
+    {
+      "name": "onProgress",
+      "description": "文件上传进度的回调",
+      "description_zh": "文件上传进度的回调",
+      "params": "(file: UploadItem, e?: ProgressEvent) => void"
+    },
+    {
+      "name": "onReupload",
+      "description": "文件重新上传时触发的回调",
+      "description_zh": "文件重新上传时触发的回调",
+      "params": "(file: UploadItem) => void"
+    }
+  ],
+  "typeDetail": {
+    "UploadListProps": [
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "description": "禁用",
+        "default": "-"
+      },
+      {
+        "name": "onRemove",
+        "type": "(file: UploadItem) => void | boolean | Promise<void | boolean>",
+        "description": "点击删除文件时的回调。返回 false 或者 Promise.reject 的时候不会执行删除",
+        "default": "-"
+      },
+      {
+        "name": "onAbort",
+        "type": "(file: UploadItem) => void",
+        "description": "中止文件上传的回调",
+        "default": "-"
+      },
+      {
+        "name": "onPreview",
+        "type": "(file: UploadItem) => void",
+        "description": "点击预览时候的回调。",
+        "default": "-"
+      },
+      {
+        "name": "onReupload",
+        "type": "(file: UploadItem) => void",
+        "description": "重新上传的回调",
+        "default": "-"
+      }
+    ],
+    "UploadItem": [
+      {
+        "name": "percent",
+        "type": "number",
+        "description": "上传进度百分比",
+        "default": "-"
+      },
+      {
+        "name": "name",
+        "type": "string",
+        "description": "文件名",
+        "default": "-"
+      },
+      {
+        "name": "uid",
+        "type": "string  (必填)",
+        "description": "当前上传文件的唯一标示",
+        "default": "-"
+      },
+      {
+        "name": "url",
+        "type": "string",
+        "description": "文件 url",
+        "default": "-"
+      },
+      {
+        "name": "originFile",
+        "type": "File",
+        "description": "文件对象",
+        "default": "-"
+      },
+      {
+        "name": "response",
+        "type": "object",
+        "description": "当前文件上传请求返回的响应",
+        "default": "-"
+      },
+      {
+        "name": "status",
+        "type": "UploadStatus",
+        "description": "当前上传文件的状态",
+        "default": "-"
+      }
+    ]
+  }
+}

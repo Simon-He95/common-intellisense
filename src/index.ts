@@ -114,21 +114,23 @@ export function activate(context: vscode.ExtensionContext) {
         const result = completionsCallback.filter((item: any) => isValue
           ? hasProps.find((prop: any) => isSamePrefix(item.label, prop))
           : !hasProps.find((prop: any) => isSamePrefix(item.label, prop))).filter((item: any) => item.label.startsWith(propName)).map((item: any) =>
-          createCompletionItem(isValue
-            ? ({
-                content: item.label,
-                snippet: item.label.replace(/\w+=\"([^"]+)\".*/, '$1'),
-                documentation: item.documentation,
-                detail: item.detail,
-                type: item.kind,
-              })
-            : ({
-                content: item.label,
-                documentation: item.documentation,
-                detail: item.detail,
-                type: item.kind,
-              })),
-        )
+          item.label.match(/^\w+={[^}]*}/)
+            ? undefined
+            : createCompletionItem(isValue
+              ? ({
+                  content: item.label,
+                  snippet: item.label.replace(/^\w+=\"([^"]+)\".*/, '$1'),
+                  documentation: item.documentation,
+                  detail: item.detail,
+                  type: item.kind,
+                })
+              : ({
+                  content: item.label,
+                  documentation: item.documentation,
+                  detail: item.detail,
+                  type: item.kind,
+                })),
+        ).filter(Boolean)
         const events = lan === 'vue'
           ? []
           : isValue
@@ -215,8 +217,7 @@ const nameMap: any = {
   '@skeletonlabs/skeleton': 'skeleton',
   '@nextuiOrg/react': 'nextui',
   '@nuxt/ui': 'nuxtui',
-  'radix-vue': 'radixVue',
-  'shadcn-vue': 'shadcnvue',
+  '@arcoDesign/webReact': 'arcoDesign',
 }
 function findUI() {
   const cwd = vscode.window.activeTextEditor?.document.uri.fsPath

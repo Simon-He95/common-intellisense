@@ -1,0 +1,129 @@
+{
+  "name": "Input.TextArea",
+  "props": {
+    "allowClear": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "允许清空输入框",
+      "description_zh": "允许清空输入框"
+    },
+    "disabled": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否禁用",
+      "description_zh": "是否禁用"
+    },
+    "error": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否是错误状态。(废弃，下个大版本移除，使用 status='error' 替代)",
+      "description_zh": "是否是错误状态。(废弃，下个大版本移除，使用 status='error' 替代)"
+    },
+    "defaultValue": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "默认值",
+      "description_zh": "默认值"
+    },
+    "placeholder": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "输入框提示文字",
+      "description_zh": "输入框提示文字",
+      "required": true
+    },
+    "value": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "值",
+      "description_zh": "值"
+    },
+    "status": {
+      "default": "-",
+      "value": ["error", "warning"],
+      "type": "'error' | 'warning'",
+      "description": "状态",
+      "description_zh": "状态"
+    },
+    ":clearIcon": {
+      "default": "-",
+      "value": "",
+      "type": "ReactNode",
+      "description": "allowClear 时配置清除按钮的图标。",
+      "description_zh": "allowClear 时配置清除按钮的图标。"
+    },
+    "autoSize": {
+      "default": "-",
+      "value": "",
+      "type": "boolean | { minRows?: number; maxRows?: number }",
+      "description": "是否自动调整输入框的高度",
+      "description_zh": "是否自动调整输入框的高度"
+    },
+    "className": {
+      "default": "-",
+      "value": "",
+      "type": "string | string[]",
+      "description": "节点类名",
+      "description_zh": "节点类名"
+    },
+    ":maxLength": {
+      "default": "-",
+      "value": "",
+      "type": "number | { length: number; errorOnly?: boolean }",
+      "description": "输入框最大输入的长度；设置 errorOnly为 true 后，超过 maxLength 会展示 error 状态，并不限制用户输入。",
+      "description_zh": "输入框最大输入的长度；设置 errorOnly为 true 后，超过 maxLength 会展示 error 状态，并不限制用户输入。"
+    },
+    ":style": {
+      "default": "-",
+      "value": "",
+      "type": "CSSProperties",
+      "description": "节点样式",
+      "description_zh": "节点样式"
+    },
+    ":wrapperStyle": {
+      "default": "-",
+      "value": "",
+      "type": "CSSProperties",
+      "description": "开启字数统计之后，会在 textarea 标签外包一层 div，wrapperStyle 用来配置这个 div 的样式。",
+      "description_zh": "开启字数统计之后，会在 textarea 标签外包一层 div，wrapperStyle 用来配置这个 div 的样式。"
+    }
+  },
+  "methods": [{
+    "name": "focus",
+    "params": "Function",
+    "description": "焦点事件"
+  }, {
+    "name": "blur",
+    "params": "Function",
+    "description": "失去焦点事件"
+  }],
+  "link": "https://arco.design/react/components/input#%E6%96%B9%E6%B3%95",
+  "link_zh": "https://arco.design/react/components/input#%E6%96%B9%E6%B3%95",
+  "events": [
+    {
+      "name": "onChange",
+      "description": "输入时的回调",
+      "description_zh": "输入时的回调",
+      "params": "(value: string, e) => void"
+    },
+    {
+      "name": "onClear",
+      "description": "点击清除按钮的回调",
+      "description_zh": "点击清除按钮的回调",
+      "params": "() => void"
+    },
+    {
+      "name": "onPressEnter",
+      "description": "按下回车键的回调",
+      "description_zh": "按下回车键的回调",
+      "params": "(e) => void"
+    }
+  ],
+  "typeDetail": {}
+}

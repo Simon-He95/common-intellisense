@@ -1,0 +1,270 @@
+{
+  "name": "Picker",
+  "props": {
+    "allowClear": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "允许清除",
+      "description_zh": "允许清除"
+    },
+    "editable": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "是否可输入。",
+      "description_zh": "是否可输入。"
+    },
+    "error": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否是错误状态。(废弃，下个大版本移除，使用 status='error' 替代)",
+      "description_zh": "是否是错误状态。(废弃，下个大版本移除，使用 status='error' 替代)"
+    },
+    "hideNotInViewDates": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "面板隐藏不在当前时间范围的灰色日期",
+      "description_zh": "面板隐藏不在当前时间范围的灰色日期"
+    },
+    "popupVisible": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "指定弹框打开或者关闭状态。",
+      "description_zh": "指定弹框打开或者关闭状态。"
+    },
+    "shortcutsPlacementLeft": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "预设范围选择放在面板左侧，用于大量预设时间的场景。",
+      "description_zh": "预设范围选择放在面板左侧，用于大量预设时间的场景。"
+    },
+    "unmountOnExit": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否在隐藏的时候销毁 DOM 结构",
+      "description_zh": "是否在隐藏的时候销毁 DOM 结构"
+    },
+    ":utcOffset": {
+      "default": "-",
+      "value": "",
+      "type": "number",
+      "description": "设置时区偏移，如果需要 utc 时间则设置为 0。",
+      "description_zh": "设置时区偏移，如果需要 utc 时间则设置为 0。"
+    },
+    "timezone": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "设置时区, 如果设置了 utcOffset，则以 utcOffset 为准。",
+      "description_zh": "设置时区, 如果设置了 utcOffset，则以 utcOffset 为准。"
+    },
+    "position": {
+      "default": "-",
+      "value": ["top", "tl", "tr", "bottom", "bl", "br"],
+      "type": "'top' | 'tl' | 'tr' | 'bottom' | 'bl' | 'br'",
+      "description": "弹出的框的位置",
+      "description_zh": "弹出的框的位置"
+    },
+    "size": {
+      "default": "default",
+      "value": ["mini", "small", "default", "large"],
+      "type": "'mini' | 'small' | 'default' | 'large'",
+      "description": "日期选择器的尺寸",
+      "description_zh": "日期选择器的尺寸"
+    },
+    "status": {
+      "default": "-",
+      "value": ["error", "warning"],
+      "type": "'error' | 'warning'",
+      "description": "状态",
+      "description_zh": "状态"
+    },
+    ":extra": {
+      "default": "-",
+      "value": "",
+      "type": "ReactNode",
+      "description": "额外的页脚",
+      "description_zh": "额外的页脚"
+    },
+    ":prefix": {
+      "default": "-",
+      "value": "",
+      "type": "ReactNode",
+      "description": "前缀",
+      "description_zh": "前缀"
+    },
+    ":separator": {
+      "default": "-",
+      "value": "",
+      "type": "ReactNode",
+      "description": "范围选择器输入框内的分割符号",
+      "description_zh": "范围选择器输入框内的分割符号"
+    },
+    ":triggerElement": {
+      "default": "-",
+      "value": "",
+      "type": "ReactNode",
+      "description": "触发元素。",
+      "description_zh": "触发元素。"
+    },
+    "className": {
+      "default": "-",
+      "value": "",
+      "type": "string | string[]",
+      "description": "节点类名",
+      "description_zh": "节点类名"
+    },
+    "dayStartOfWeek": {
+      "default": "-",
+      "value": ["0", "1", "2", "3", "4", "5", "6"],
+      "type": "0 | 1 | 2 | 3 | 4 | 5 | 6",
+      "description": "每周的第一天开始于周几，0 - 周日，1 - 周一，以此类推。",
+      "description_zh": "每周的第一天开始于周几，0 - 周日，1 - 周一，以此类推。"
+    },
+    ":defaultPickerValue": {
+      "default": "-",
+      "value": "",
+      "type": "CalendarValue",
+      "description": "默认面板显示的日期",
+      "description_zh": "默认面板显示的日期"
+    },
+    "disabled": {
+      "default": "-",
+      "value": "",
+      "type": "boolean | boolean[]",
+      "description": "是否禁用",
+      "description_zh": "是否禁用"
+    },
+    ":icons": {
+      "default": "-",
+      "value": "",
+      "type": "{prev?: ReactNode;prevDouble?: ReactNode;next?: ReactNode;nextDouble?: ReactNode;inputSuffix?: ReactNode;}",
+      "description": "日历翻页的图标配置。",
+      "description_zh": "日历翻页的图标配置。"
+    },
+    ":locale": {
+      "default": "-",
+      "value": "",
+      "type": "Record<string, any>",
+      "description": "国际化配置",
+      "description_zh": "国际化配置"
+    },
+    ":pickerValue": {
+      "default": "-",
+      "value": "",
+      "type": "CalendarValue",
+      "description": "面板显示的日期。",
+      "description_zh": "面板显示的日期。"
+    },
+    "placeholder": {
+      "default": "-",
+      "value": "",
+      "type": "string | string[]",
+      "description": "提示文案",
+      "description_zh": "提示文案"
+    },
+    ":shortcuts": {
+      "default": "-",
+      "value": "",
+      "type": "ShortcutType[]",
+      "description": "预设时间范围快捷选择",
+      "description_zh": "预设时间范围快捷选择"
+    },
+    ":style": {
+      "default": "-",
+      "value": "",
+      "type": "CSSProperties",
+      "description": "节点样式",
+      "description_zh": "节点样式"
+    },
+    ":triggerProps": {
+      "default": "-",
+      "value": "",
+      "type": "Partial<TriggerProps>",
+      "description": "可以传入 Trigger 组件的参数。",
+      "description_zh": "可以传入 Trigger 组件的参数。"
+    },
+    ":dateRender": {
+      "default": "-",
+      "value": "",
+      "type": "(currentDate: Dayjs) => ReactNode",
+      "description": "自定义日期单元格的内容。",
+      "description_zh": "自定义日期单元格的内容。"
+    },
+    ":disabledDate": {
+      "default": "-",
+      "value": "",
+      "type": "(current: Dayjs) => boolean",
+      "description": "不可选取的日期",
+      "description_zh": "不可选取的日期"
+    },
+    ":getPopupContainer": {
+      "default": "bl",
+      "value": "",
+      "type": "(node: HTMLElement) => Element",
+      "description": "弹出框挂载的父节点",
+      "description_zh": "弹出框挂载的父节点"
+    },
+    ":panelRender": {
+      "default": "-",
+      "value": "",
+      "type": "(panelNode: ReactNode) => ReactNode",
+      "description": "自定义渲染面板",
+      "description_zh": "自定义渲染面板"
+    }
+  },
+  "methods": [],
+  "link": "https://arco.design/react/components/date-picker#%E8%AE%BE%E7%BD%AE%E6%97%B6%E5%8C%BA",
+  "link_zh": "https://arco.design/react/components/date-picker#%E8%AE%BE%E7%BD%AE%E6%97%B6%E5%8C%BA",
+  "events": [
+    {
+      "name": "onChange",
+      "description": "日历组件值发生改变时的回调",
+      "description_zh": "日历组件值发生改变时的回调",
+      "params": "(dateString: string, date: Dayjs) => void"
+    },
+    {
+      "name": "onClear",
+      "description": "点击清除按钮后的回调",
+      "description_zh": "点击清除按钮后的回调",
+      "params": "() => void"
+    },
+    {
+      "name": "onOk",
+      "description": "点击确认按钮的回调",
+      "description_zh": "点击确认按钮的回调",
+      "params": "(dateString: string, date: Dayjs) => void"
+    },
+    {
+      "name": "onPickerValueChange",
+      "description": "面板日期改变的回调。",
+      "description_zh": "面板日期改变的回调。",
+      "params": "(dateString: string, value: Dayjs) => void"
+    },
+    {
+      "name": "onSelect",
+      "description": "选中日期发生改变但组件值未改变时的回调",
+      "description_zh": "选中日期发生改变但组件值未改变时的回调",
+      "params": "(dateString: string, date: Dayjs) => void"
+    },
+    {
+      "name": "onSelectShortcut",
+      "description": "点击快捷选择时的回调。",
+      "description_zh": "点击快捷选择时的回调。",
+      "params": "(shortcut: ShortcutType) => void"
+    },
+    {
+      "name": "onVisibleChange",
+      "description": "打开或关闭时的回调",
+      "description_zh": "打开或关闭时的回调",
+      "params": "(visible?: boolean) => void"
+    }
+  ],
+  "typeDetail": {}
+}

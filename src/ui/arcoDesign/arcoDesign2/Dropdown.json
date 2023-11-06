@@ -1,0 +1,81 @@
+{
+  "name": "Dropdown",
+  "props": {
+    "defaultPopupVisible": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "控制下拉框是否默认打开",
+      "description_zh": "控制下拉框是否默认打开"
+    },
+    "disabled": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否禁用弹出",
+      "description_zh": "是否禁用弹出"
+    },
+    "popupVisible": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "控制下拉框是否打开（受控模式）",
+      "description_zh": "控制下拉框是否打开（受控模式）"
+    },
+    "unmountOnExit": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "隐藏后是否销毁 DOM 结构",
+      "description_zh": "隐藏后是否销毁 DOM 结构"
+    },
+    "position": {
+      "default": "bl",
+      "value": ["top", "tl", "tr", "bottom", "bl", "br"],
+      "type": "'top' | 'tl' | 'tr' | 'bottom' | 'bl' | 'br'",
+      "description": "下拉框的弹出位置",
+      "description_zh": "下拉框的弹出位置"
+    },
+    "trigger": {
+      "default": "hover",
+      "value": ["click", "hover", "contextMenu", "focus"],
+      "type": "TriggerProps['trigger']",
+      "description": "触发下拉框弹出的方式",
+      "description_zh": "触发下拉框弹出的方式"
+    },
+    ":droplist": {
+      "default": "-",
+      "value": "",
+      "type": "ReactNode",
+      "description": "下拉框的内容",
+      "description_zh": "下拉框的内容",
+      "required": true
+    },
+    ":triggerProps": {
+      "default": "-",
+      "value": "",
+      "type": "Partial<TriggerProps>",
+      "description": "弹出框下可接受所有 Trigger 组件的 Props",
+      "description_zh": "弹出框下可接受所有 Trigger 组件的 Props"
+    },
+    ":getPopupContainer": {
+      "default": "-",
+      "value": "",
+      "type": "(node: HTMLElement) => Element",
+      "description": "弹出框挂在的父级节点",
+      "description_zh": "弹出框挂在的父级节点"
+    }
+  },
+  "methods": [],
+  "link": "https://arco.design/react/components/dropdown#api",
+  "link_zh": "https://arco.design/react/components/dropdown#api",
+  "events": [
+    {
+      "name": "onVisibleChange",
+      "description": "弹出框打开/关闭时会触发",
+      "description_zh": "弹出框打开/关闭时会触发",
+      "params": "(visible: boolean) => void"
+    }
+  ],
+  "typeDetail": {}
+}

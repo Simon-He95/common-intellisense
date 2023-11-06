@@ -1,0 +1,196 @@
+{
+  "name": "Image.PreviewGroup",
+  "props": {
+    "closable": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "是否显示关闭按钮",
+      "description_zh": "是否显示关闭按钮"
+    },
+    "defaultVisible": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "默认是否可见，非受控",
+      "description_zh": "默认是否可见，非受控"
+    },
+    "escToExit": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "按 ESC 键关闭预览",
+      "description_zh": "按 ESC 键关闭预览"
+    },
+    "infinite": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否无限循环",
+      "description_zh": "是否无限循环"
+    },
+    "maskClosable": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "点击 mask 是否触发关闭",
+      "description_zh": "点击 mask 是否触发关闭"
+    },
+    ":visible": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否可见，受控属性",
+      "description_zh": "是否可见，受控属性",
+      "required": true
+    },
+    ":breakPoint": {
+      "default": "316",
+      "value": "",
+      "type": "number",
+      "description": "触发 toolbar 切换为 simple 模式的宽度",
+      "description_zh": "触发 toolbar 切换为 simple 模式的宽度"
+    },
+    ":current": {
+      "default": "-",
+      "value": "",
+      "type": "number",
+      "description": "当前展示的图片的下标 (受控属性)",
+      "description_zh": "当前展示的图片的下标 (受控属性)"
+    },
+    ":defaultCurrent": {
+      "default": "-",
+      "value": "",
+      "type": "number",
+      "description": "第一张展示的图片的下标",
+      "description_zh": "第一张展示的图片的下标"
+    },
+    ":imgAttributes": {
+      "default": "-",
+      "value": "",
+      "type": "Omit<ImgHTMLAttributes<HTMLImageElement>, 'src'>",
+      "description": "图片属性，透传至预览弹窗中的 img 标签上",
+      "description_zh": "图片属性，透传至预览弹窗中的 img 标签上"
+    },
+    ":extra": {
+      "default": "-",
+      "value": "",
+      "type": "ReactNode",
+      "description": "自定义图片预览区域的额外节点",
+      "description_zh": "自定义图片预览区域的额外节点"
+    },
+    ":actions": {
+      "default": "-",
+      "value": "",
+      "type": "ImagePreviewActionProps[]",
+      "description": "额外操作，ImagePreviewActionProps",
+      "description_zh": "额外操作，ImagePreviewActionProps"
+    },
+    ":actionsLayout": {
+      "default": "['fullScreen', 'rotateRight', 'rotateLeft', 'zoomIn', 'zoomOut', 'originalSize', 'extra']",
+      "value": "",
+      "type": "string[]",
+      "description": "控制条的布局",
+      "description_zh": "控制条的布局"
+    },
+    "className": {
+      "default": "-",
+      "value": "",
+      "type": "string | string[]",
+      "description": "节点类名",
+      "description_zh": "节点类名"
+    },
+    ":scales": {
+      "default": "[25, 33, 50, 67, 75, 80, 90, 100, 110, 125, 150, 175, 200, 250, 300, 400, 500];",
+      "value": "",
+      "type": "number[]",
+      "description": "在预览缩放时会使用当前数组中的缩放百分比。若不包含 100%，则会自动添加在最相邻的位置。",
+      "description_zh": "在预览缩放时会使用当前数组中的缩放百分比。若不包含 100%，则会自动添加在最相邻的位置。"
+    },
+    ":srcList": {
+      "default": "-",
+      "value": "",
+      "type": "string[]",
+      "description": "图片列表 （设置了本属性之后，将不再收集 Image 子组件的图片信息）",
+      "description_zh": "图片列表 （设置了本属性之后，将不再收集 Image 子组件的图片信息）",
+      "required": true
+    },
+    ":style": {
+      "default": "-",
+      "value": "",
+      "type": "CSSProperties",
+      "description": "节点样式",
+      "description_zh": "节点样式"
+    },
+    ":getPopupContainer": {
+      "default": "() => document.body",
+      "value": "",
+      "type": "() => HTMLElement",
+      "description": "弹出层挂载的节点",
+      "description_zh": "弹出层挂载的节点"
+    }
+  },
+  "methods": [],
+  "link": "https://arco.design/react/components/image#api",
+  "link_zh": "https://arco.design/react/components/image#api",
+  "events": [
+    {
+      "name": "onChange",
+      "description": "切换图片触发的事件",
+      "description_zh": "切换图片触发的事件",
+      "params": "(index: number) => void"
+    },
+    {
+      "name": "onVisibleChange",
+      "description": "切换可见状态触发的事件",
+      "description_zh": "切换可见状态触发的事件",
+      "params": "(visible: boolean, preVisible: boolean) => void"
+    }
+  ],
+  "typeDetail": {
+    "ImagePreviewActionProps": [
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "description": "是否禁用",
+        "default": "-"
+      },
+      {
+        "name": "key",
+        "type": "string  (必填)",
+        "description": "唯一标识",
+        "default": "-"
+      },
+      {
+        "name": "name",
+        "type": "string",
+        "description": "名称",
+        "default": "-"
+      },
+      {
+        "name": "content",
+        "type": "ReactNode  (必填)",
+        "description": "内容",
+        "default": "-"
+      },
+      {
+        "name": "className",
+        "type": "string | string[]",
+        "description": "节点类名",
+        "default": "-"
+      },
+      {
+        "name": "style",
+        "type": "CSSProperties",
+        "description": "节点样式",
+        "default": "-"
+      },
+      {
+        "name": "getContainer",
+        "type": "(actionElement: ReactNode) => ReactNode",
+        "description": "因为 content 只能定义内容，所以提供这个函数用于支持自定义外围元素，需要注意的是设置了 getContainer, 显示 name 的 Tooltip 将失效。",
+        "default": "-"
+      }
+    ]
+  }
+}

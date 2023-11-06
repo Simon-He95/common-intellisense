@@ -1,0 +1,226 @@
+{
+  "name": "Transfer",
+  "props": {
+    "disabled": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "禁用穿梭框",
+      "description_zh": "禁用穿梭框"
+    },
+    "draggable": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "列表内条目是否可拖拽",
+      "description_zh": "列表内条目是否可拖拽"
+    },
+    "className": {
+      "default": "-",
+      "value": "",
+      "type": "string | string[]",
+      "description": "节点类名",
+      "description_zh": "节点类名"
+    },
+    ":dataSource": {
+      "default": "-",
+      "value": "",
+      "type": "TransferItem[]",
+      "description": "穿梭框数据源，其中一部分会被渲染到左边一栏，targetKeys 中指定的除外",
+      "description_zh": "穿梭框数据源，其中一部分会被渲染到左边一栏，targetKeys 中指定的除外",
+      "required": true
+    },
+    ":defaultSelectedKeys": {
+      "default": "[]",
+      "value": "",
+      "type": "string[]",
+      "description": "默认的 selectKeys",
+      "description_zh": "默认的 selectKeys"
+    },
+    ":defaultTargetKeys": {
+      "default": "[]",
+      "value": "",
+      "type": "string[]",
+      "description": "默认的 targetKeys",
+      "description_zh": "默认的 targetKeys"
+    },
+    ":listStyle": {
+      "default": "-",
+      "value": "",
+      "type": "CSSProperties | CSSProperties[]",
+      "description": "左右两栏框的样式，通过数组为左右列表传入不同属性",
+      "description_zh": "左右两栏框的样式，通过数组为左右列表传入不同属性"
+    },
+    ":operationStyle": {
+      "default": "-",
+      "value": "",
+      "type": "CSSProperties",
+      "description": "穿梭中间操作部分的样式",
+      "description_zh": "穿梭中间操作部分的样式"
+    },
+    ":operationTexts": {
+      "default": "-",
+      "value": "",
+      "type": "string[] | ReactNode[]",
+      "description": "穿梭按钮的文案数组，顺序从上至下",
+      "description_zh": "穿梭按钮的文案数组，顺序从上至下"
+    },
+    ":pagination": {
+      "default": "-",
+      "value": "",
+      "type": "boolean | PaginationProps | Array<boolean | PaginationProps>",
+      "description": "是否使用翻页，也可传入 Pagination 的配置，通过数组为左右列表传入不同属性",
+      "description_zh": "是否使用翻页，也可传入 Pagination 的配置，通过数组为左右列表传入不同属性"
+    },
+    "searchPlaceholder": {
+      "default": "-",
+      "value": "",
+      "type": "string | string[]",
+      "description": "搜索框默认提示文字，通过数组为左右列表传入不同属性",
+      "description_zh": "搜索框默认提示文字，通过数组为左右列表传入不同属性"
+    },
+    ":selectedKeys": {
+      "default": "-",
+      "value": "",
+      "type": "string[]",
+      "description": "当前应该有哪些项被选中",
+      "description_zh": "当前应该有哪些项被选中"
+    },
+    ":showFooter": {
+      "default": "-",
+      "value": "",
+      "type": "boolean | ReactNode | Array<boolean | ReactNode>",
+      "description": "左右两栏是否显示底部重置按钮，通过数组为左右列表传入不同属性",
+      "description_zh": "左右两栏是否显示底部重置按钮，通过数组为左右列表传入不同属性"
+    },
+    ":showSearch": {
+      "default": "-",
+      "value": "",
+      "type": "boolean | InputProps | Array<boolean | InputProps>",
+      "description": "左右两栏是否显示搜索框，通过数组为左右列表传入不同属性",
+      "description_zh": "左右两栏是否显示搜索框，通过数组为左右列表传入不同属性"
+    },
+    "simple": {
+      "default": "-",
+      "value": "",
+      "type": "| boolean| {retainSelectedItems?: boolean;}",
+      "description": "简单模式",
+      "description_zh": "简单模式"
+    },
+    ":style": {
+      "default": "-",
+      "value": "",
+      "type": "CSSProperties",
+      "description": "节点样式",
+      "description_zh": "节点样式"
+    },
+    ":targetKeys": {
+      "default": "-",
+      "value": "",
+      "type": "string[]",
+      "description": "渲染到右边一栏数据的 key 集合",
+      "description_zh": "渲染到右边一栏数据的 key 集合"
+    },
+    ":titleTexts": {
+      "default": "['Source', 'Target']",
+      "value": "",
+      "type": "Array<TransferListTitle>",
+      "description": "穿梭框左右栏标题数组。(函数写法 2.18.0 开始支持)",
+      "description_zh": "穿梭框左右栏标题数组。(函数写法 2.18.0 开始支持)"
+    },
+    ":virtualListProps": {
+      "default": "-",
+      "value": "",
+      "type": "AvailableVirtualListProps",
+      "description": "传递虚拟滚动属性。",
+      "description_zh": "传递虚拟滚动属性。"
+    },
+    ":children": {
+      "default": "-",
+      "value": "",
+      "type": "(props: TransferCustomListProps) => ReactNode",
+      "description": "自定义列表渲染函数",
+      "description_zh": "自定义列表渲染函数"
+    },
+    ":filterOption": {
+      "default": "(inputValue, item) => item.value.indexOf(inputValue) !== -1",
+      "value": "",
+      "type": "(inputValue: string, item: TransferItem) => boolean",
+      "description": "搜索框筛选算法",
+      "description_zh": "搜索框筛选算法"
+    },
+    ":render": {
+      "default": "-",
+      "value": "",
+      "type": "(item: TransferItem) => any",
+      "description": "每行数据渲染函数",
+      "description_zh": "每行数据渲染函数"
+    }
+  },
+  "methods": [],
+  "link": "https://arco.design/react/components/transfer#api",
+  "link_zh": "https://arco.design/react/components/transfer#api",
+  "events": [
+    {
+      "name": "oneWay",
+      "description": "单向",
+      "description_zh": "单向",
+      "params": "boolean"
+    },
+    {
+      "name": "onChange",
+      "description": "选中项在两栏之间转移时的回调",
+      "description_zh": "选中项在两栏之间转移时的回调",
+      "params": "(newTargetKeys: string[], direction: 'source' | 'target', moveKeys: string[]) => void"
+    },
+    {
+      "name": "onSearch",
+      "description": "搜索框输入进行搜索时回调函数",
+      "description_zh": "搜索框输入进行搜索时回调函数",
+      "params": "(value: string, type?: 'source' | 'target') => void"
+    },
+    {
+      "name": "onDragEnd",
+      "description": "节点结束拖拽的回调",
+      "description_zh": "节点结束拖拽的回调",
+      "params": "(e: DragEvent<HTMLSpanElement>, item: TransferItem) => void"
+    },
+    {
+      "name": "onDragLeave",
+      "description": "节点离开可释放目标上时的回调",
+      "description_zh": "节点离开可释放目标上时的回调",
+      "params": "(e: DragEvent<HTMLSpanElement>, item: TransferItem) => void"
+    },
+    {
+      "name": "onDragOver",
+      "description": "节点被拖拽至可释放目标上时的回调",
+      "description_zh": "节点被拖拽至可释放目标上时的回调",
+      "params": "(e: DragEvent<HTMLSpanElement>, item: TransferItem) => void"
+    },
+    {
+      "name": "onDragStart",
+      "description": "节点开始拖拽的回调",
+      "description_zh": "节点开始拖拽的回调",
+      "params": "(e: DragEvent<HTMLSpanElement>, item: TransferItem) => void"
+    },
+    {
+      "name": "onDrop",
+      "description": "节点在可释放目标上释放时的回调",
+      "description_zh": "节点在可释放目标上释放时的回调",
+      "params": "(info: {e: DragEvent<HTMLSpanElement>;dragItem: TransferItem;dropItem: TransferItem;dropPosition: number;}) => void"
+    },
+    {
+      "name": "onResetData",
+      "description": "点击重置按钮后的回调",
+      "description_zh": "点击重置按钮后的回调",
+      "params": "() => void"
+    },
+    {
+      "name": "onSelectChange",
+      "description": "数据项选中状态发生改变的回调",
+      "description_zh": "数据项选中状态发生改变的回调",
+      "params": "(leftSelectedKeys: string[], rightSelectedKeys: string[]) => void"
+    }
+  ],
+  "typeDetail": {}
+}

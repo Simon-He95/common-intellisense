@@ -6,7 +6,7 @@ let stack = 0
 let limit = 10
 const hasDone = new Set()
 async function setup() {
-  const cwd = path.resolve(root, 'src/ui/radix-vue/radix-vue1')
+  const cwd = path.resolve(root, 'src/ui/arcoDesign/arcoDesign2')
   const entry = await fg(['**/*.json'], { dot: true, cwd })
   const rest = entry.map((url: string) => {
     const newUrl = path.resolve(cwd, url)

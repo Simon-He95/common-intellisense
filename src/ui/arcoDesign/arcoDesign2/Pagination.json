@@ -1,0 +1,186 @@
+{
+  "name": "Pagination",
+  "props": {
+    "disabled": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否禁用",
+      "description_zh": "是否禁用"
+    },
+    "hideOnSinglePage": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否在只有一页的情况下隐藏",
+      "description_zh": "是否在只有一页的情况下隐藏"
+    },
+    "pageSizeChangeResetCurrent": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "pageSize 改变的时候重置当前页码为 1",
+      "description_zh": "pageSize 改变的时候重置当前页码为 1"
+    },
+    "showJumper": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否显示快速跳转到某页，在 simple 模式下默认为 true",
+      "description_zh": "是否显示快速跳转到某页，在 simple 模式下默认为 true"
+    },
+    "showMore": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否显示更多页码提示（当尚无法计算数据总数时可以使用）",
+      "description_zh": "是否显示更多页码提示（当尚无法计算数据总数时可以使用）"
+    },
+    "simple": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否应用精简分页模式",
+      "description_zh": "是否应用精简分页模式"
+    },
+    "sizeCanChange": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否可以改变每页条数",
+      "description_zh": "是否可以改变每页条数"
+    },
+    ":bufferSize": {
+      "default": "2",
+      "value": "",
+      "type": "number",
+      "description": "current 页与 ... 之间的页码个数",
+      "description_zh": "current 页与 ... 之间的页码个数"
+    },
+    ":current": {
+      "default": "-",
+      "value": "",
+      "type": "number",
+      "description": "当前页",
+      "description_zh": "当前页"
+    },
+    ":defaultCurrent": {
+      "default": "-",
+      "value": "",
+      "type": "number",
+      "description": "当前页默认值",
+      "description_zh": "当前页默认值",
+      "required": true
+    },
+    ":defaultPageSize": {
+      "default": "-",
+      "value": "",
+      "type": "number",
+      "description": "默认每页数据条数",
+      "description_zh": "默认每页数据条数"
+    },
+    ":pageSize": {
+      "default": "-",
+      "value": "",
+      "type": "number",
+      "description": "每页数据条数",
+      "description_zh": "每页数据条数"
+    },
+    ":total": {
+      "default": "-",
+      "value": "",
+      "type": "number",
+      "description": "数据总数",
+      "description_zh": "数据总数",
+      "required": true
+    },
+    ":itemRender": {
+      "default": "-",
+      "value": "",
+      "type": "(page: number,type: 'page' | 'more' | 'prev' | 'next',originElement: ReactNode) => ReactNode",
+      "description": "定制分页按钮的结构",
+      "description_zh": "定制分页按钮的结构"
+    },
+    "size": {
+      "default": "-",
+      "value": ["mini", "small", "default", "large"],
+      "type": "'mini' | 'small' | 'default' | 'large'",
+      "description": "分页器尺寸",
+      "description_zh": "分页器尺寸"
+    },
+    ":activePageItemStyle": {
+      "default": "-",
+      "value": "",
+      "type": "CSSProperties",
+      "description": "被选中的分页按钮样式",
+      "description_zh": "被选中的分页按钮样式"
+    },
+    "className": {
+      "default": "-",
+      "value": "",
+      "type": "string | string[]",
+      "description": "节点类名",
+      "description_zh": "节点类名"
+    },
+    ":icons": {
+      "default": "-",
+      "value": "",
+      "type": "{prev?: ReactNode;next?: ReactNode;more?: ReactNode;}",
+      "description": "设置分页器的图标",
+      "description_zh": "设置分页器的图标"
+    },
+    ":pageItemStyle": {
+      "default": "-",
+      "value": "",
+      "type": "CSSProperties",
+      "description": "分页按钮样式",
+      "description_zh": "分页按钮样式"
+    },
+    ":selectProps": {
+      "default": "-",
+      "value": "",
+      "type": "Partial<SelectProps>",
+      "description": "用于配置弹出框的属性",
+      "description_zh": "用于配置弹出框的属性"
+    },
+    ":sizeOptions": {
+      "default": "-",
+      "value": "",
+      "type": "number[]",
+      "description": "每页可以显示数据条数",
+      "description_zh": "每页可以显示数据条数"
+    },
+    ":style": {
+      "default": "-",
+      "value": "",
+      "type": "CSSProperties",
+      "description": "节点样式",
+      "description_zh": "节点样式"
+    },
+    "showTotal": {
+      "default": "-",
+      "value": "",
+      "type": "boolean | ((total: number, range: number[]) => ReactNode)",
+      "description": "是否显示数据总数",
+      "description_zh": "是否显示数据总数"
+    }
+  },
+  "methods": [],
+  "link": "https://arco.design/react/components/pagination#api",
+  "link_zh": "https://arco.design/react/components/pagination#api",
+  "events": [
+    {
+      "name": "onChange",
+      "description": "变化时的回调",
+      "description_zh": "变化时的回调",
+      "params": "(pageNumber: number, pageSize: number) => void"
+    },
+    {
+      "name": "onPageSizeChange",
+      "description": "pageSize 变化时的回调",
+      "description_zh": "pageSize 变化时的回调",
+      "params": "(size: number, current: number) => void"
+    }
+  ],
+  "typeDetail": {}
+}

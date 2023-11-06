@@ -1,0 +1,169 @@
+{
+  "name": "Menu",
+  "props": {
+    "accordion": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "开启手风琴效果",
+      "description_zh": "开启手风琴效果"
+    },
+    "autoOpen": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "默认展开所有多级菜单",
+      "description_zh": "默认展开所有多级菜单"
+    },
+    "autoScrollIntoView": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否自动滚动选中项目到可见区域",
+      "description_zh": "是否自动滚动选中项目到可见区域"
+    },
+    "collapse": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否水平折叠收起菜单",
+      "description_zh": "是否水平折叠收起菜单"
+    },
+    "hasCollapseButton": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否内置折叠按钮",
+      "description_zh": "是否内置折叠按钮"
+    },
+    "selectable": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "菜单选项是否可选",
+      "description_zh": "菜单选项是否可选"
+    },
+    ":levelIndent": {
+      "default": "-",
+      "value": "",
+      "type": "number",
+      "description": "层级之间的缩进量",
+      "description_zh": "层级之间的缩进量"
+    },
+    "mode": {
+      "default": "vertical",
+      "value": ["vertical", "horizontal", "pop", "popButton"],
+      "type": "'vertical' | 'horizontal' | 'pop' | 'popButton'",
+      "description": "菜单类型，目前支持垂直（vertical）、水平菜单（horizontal）、弹出（pop）",
+      "description_zh": "菜单类型，目前支持垂直（vertical）、水平菜单（horizontal）、弹出（pop）"
+    },
+    "theme": {
+      "default": "light",
+      "value": ["light", "dark"],
+      "type": "'light' | 'dark'",
+      "description": "菜单风格",
+      "description_zh": "菜单风格"
+    },
+    "className": {
+      "default": "-",
+      "value": "",
+      "type": "string | string[]",
+      "description": "节点类名",
+      "description_zh": "节点类名"
+    },
+    ":defaultOpenKeys": {
+      "default": "-",
+      "value": "",
+      "type": "string[]",
+      "description": "初始展开的子菜单 key 数组",
+      "description_zh": "初始展开的子菜单 key 数组"
+    },
+    ":defaultSelectedKeys": {
+      "default": "-",
+      "value": "",
+      "type": "string[]",
+      "description": "初始选中的菜单项 key 数组",
+      "description_zh": "初始选中的菜单项 key 数组"
+    },
+    "ellipsis": {
+      "default": "true",
+      "value": "",
+      "type": "| boolean| {text?: ReactNode;}",
+      "description": "水平菜单是否自动溢出省略",
+      "description_zh": "水平菜单是否自动溢出省略"
+    },
+    ":icons": {
+      "default": "-",
+      "value": "",
+      "type": "{horizontalArrowDown?: ReactNode | null;popArrowRight?: ReactNode | null;collapseDefault?: ReactNode | null;collapseActive?: ReactNode | null;}",
+      "description": "用于定制图标",
+      "description_zh": "用于定制图标"
+    },
+    ":openKeys": {
+      "default": "-",
+      "value": "",
+      "type": "string[]",
+      "description": "展开的子菜单 key 数组（受控模式）",
+      "description_zh": "展开的子菜单 key 数组（受控模式）"
+    },
+    ":scrollConfig": {
+      "default": "-",
+      "value": "",
+      "type": "{ [key: string]: any }",
+      "description": "滚动到可见区域的配置项，接收所有scroll-into-view-if-needed的参数",
+      "description_zh": "滚动到可见区域的配置项，接收所有scroll-into-view-if-needed的参数"
+    },
+    ":selectedKeys": {
+      "default": "-",
+      "value": "",
+      "type": "string[]",
+      "description": "选中的菜单项 key 数组（受控模式）",
+      "description_zh": "选中的菜单项 key 数组（受控模式）"
+    },
+    ":style": {
+      "default": "-",
+      "value": "",
+      "type": "CSSProperties",
+      "description": "节点样式",
+      "description_zh": "节点样式"
+    },
+    ":tooltipProps": {
+      "default": "-",
+      "value": "",
+      "type": "Partial<TooltipProps>",
+      "description": "弹出模式下可接受所有 ToolTip 的 Props",
+      "description_zh": "弹出模式下可接受所有 ToolTip 的 Props"
+    },
+    ":triggerProps": {
+      "default": "-",
+      "value": "",
+      "type": "Partial<TriggerProps>",
+      "description": "弹出模式下可接受所有 Trigger 的 Props",
+      "description_zh": "弹出模式下可接受所有 Trigger 的 Props"
+    }
+  },
+  "methods": [],
+  "link": "https://arco.design/react/components/menu#api",
+  "link_zh": "https://arco.design/react/components/menu#api",
+  "events": [
+    {
+      "name": "onClickMenuItem",
+      "description": "点击菜单项的回调",
+      "description_zh": "点击菜单项的回调",
+      "params": "(key: string, event, keyPath: string[]) => any"
+    },
+    {
+      "name": "onClickSubMenu",
+      "description": "点击子菜单标题的回调",
+      "description_zh": "点击子菜单标题的回调",
+      "params": "(key: string, openKeys: string[], keyPath: string[]) => void"
+    },
+    {
+      "name": "onCollapseChange",
+      "description": "折叠状态改变时的回调",
+      "description_zh": "折叠状态改变时的回调",
+      "params": "(collapse: boolean) => void"
+    }
+  ],
+  "typeDetail": {}
+}

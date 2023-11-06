@@ -1,0 +1,257 @@
+{
+  "name": "List",
+  "props": {
+    "bordered": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "是否显示边框",
+      "description_zh": "是否显示边框"
+    },
+    "hoverable": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "列表项是否可悬浮",
+      "description_zh": "列表项是否可悬浮"
+    },
+    "loading": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否加载中",
+      "description_zh": "是否加载中"
+    },
+    "split": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "是否显示分割线",
+      "description_zh": "是否显示分割线"
+    },
+    ":defaultCurrent": {
+      "default": "1",
+      "value": "",
+      "type": "number",
+      "description": "滚动加载数据当前页码",
+      "description_zh": "滚动加载数据当前页码"
+    },
+    ":offsetBottom": {
+      "default": "0",
+      "value": "",
+      "type": "number",
+      "description": "触发底部函数的距离阙值",
+      "description_zh": "触发底部函数的距离阙值"
+    },
+    ":throttleDelay": {
+      "default": "500",
+      "value": "",
+      "type": "number",
+      "description": "节流延时",
+      "description_zh": "节流延时"
+    },
+    "size": {
+      "default": "-",
+      "value": ["small", "default", "large"],
+      "type": "'small' | 'default' | 'large'",
+      "description": "列表的尺寸",
+      "description_zh": "列表的尺寸"
+    },
+    ":children": {
+      "default": "-",
+      "value": "",
+      "type": "ReactNode",
+      "description": "当 dataSource 和 render 存在时，可不传此参数",
+      "description_zh": "当 dataSource 和 render 存在时，可不传此参数"
+    },
+    ":footer": {
+      "default": "-",
+      "value": "",
+      "type": "ReactNode",
+      "description": "列表底部",
+      "description_zh": "列表底部"
+    },
+    ":header": {
+      "default": "-",
+      "value": "",
+      "type": "ReactNode",
+      "description": "列表头部",
+      "description_zh": "列表头部"
+    },
+    ":noDataElement": {
+      "default": "-",
+      "value": "",
+      "type": "ReactNode",
+      "description": "没有数据的时候显示的元素",
+      "description_zh": "没有数据的时候显示的元素"
+    },
+    "scrollLoading": {
+      "default": "-",
+      "value": "",
+      "type": "string | ReactNode",
+      "description": "滚动加载状态时，滚动到底部的提示",
+      "description_zh": "滚动加载状态时，滚动到底部的提示"
+    },
+    "className": {
+      "default": "-",
+      "value": "",
+      "type": "string | string[]",
+      "description": "节点类名",
+      "description_zh": "节点类名"
+    },
+    ":dataSource": {
+      "default": "-",
+      "value": "",
+      "type": "T[]",
+      "description": "列表渲染数据源，当children存在时，可不传此参数 (dataSource优先级更高）",
+      "description_zh": "列表渲染数据源，当children存在时，可不传此参数 (dataSource优先级更高）",
+      "required": true
+    },
+    ":grid": {
+      "default": "-",
+      "value": "",
+      "type": "ListGridProps",
+      "description": "列表栅格配置",
+      "description_zh": "列表栅格配置"
+    },
+    ":listRef": {
+      "default": "-",
+      "value": "",
+      "type": "MutableRefObject<ListHandle>",
+      "description": "当前列表的引用",
+      "description_zh": "当前列表的引用"
+    },
+    ":pagination": {
+      "default": "-",
+      "value": "",
+      "type": "boolean | PaginationProps",
+      "description": "是否使用翻页，也可传入 Pagination 的配置",
+      "description_zh": "是否使用翻页，也可传入 Pagination 的配置"
+    },
+    ":style": {
+      "default": "-",
+      "value": "",
+      "type": "CSSProperties",
+      "description": "节点样式",
+      "description_zh": "节点样式"
+    },
+    ":virtualListProps": {
+      "default": "-",
+      "value": "",
+      "type": "AvailableVirtualListProps",
+      "description": "传递虚拟列表属性，传入此参数以开启虚拟滚动",
+      "description_zh": "传递虚拟列表属性，传入此参数以开启虚拟滚动"
+    },
+    "wrapperClassName": {
+      "default": "-",
+      "value": "",
+      "type": "string | string[]",
+      "description": "指定最外层包裹元素的类名",
+      "description_zh": "指定最外层包裹元素的类名"
+    },
+    ":wrapperStyle": {
+      "default": "-",
+      "value": "",
+      "type": "CSSProperties",
+      "description": "指定最外层包裹元素的样式",
+      "description_zh": "指定最外层包裹元素的样式"
+    },
+    ":render": {
+      "default": "-",
+      "value": "",
+      "type": "(item: T, index: number) => ReactNode",
+      "description": "单个列表渲染函数，当 children 存在时，可不传此参数",
+      "description_zh": "单个列表渲染函数，当 children 存在时，可不传此参数",
+      "required": true
+    }
+  },
+  "methods": [],
+  "link": "https://arco.design/react/components/list#api",
+  "link_zh": "https://arco.design/react/components/list#api",
+  "events": [
+    {
+      "name": "onListScroll",
+      "description": "列表滚动回调函数,参数为列表滚动元素，当onReachBottom无法满足需求，可自定义滚动监听函数。",
+      "description_zh": "列表滚动回调函数,参数为列表滚动元素，当onReachBottom无法满足需求，可自定义滚动监听函数。",
+      "params": "(elem: Element) => void"
+    },
+    {
+      "name": "onReachBottom",
+      "description": "滚动至底部触发函数",
+      "description_zh": "滚动至底部触发函数",
+      "params": "(currentPage: number) => void"
+    }
+  ],
+  "typeDetail": {
+    "ListGridProps": [
+      {
+        "name": "gutter",
+        "type": "number",
+        "description": "行间距",
+        "default": "-"
+      },
+      {
+        "name": "span",
+        "type": "number",
+        "description": "栅格占位格数",
+        "default": "-"
+      },
+      {
+        "name": "xs",
+        "type": "number",
+        "description": "xs 对应的栅格占位格数",
+        "default": "-"
+      },
+      {
+        "name": "sm",
+        "type": "number",
+        "description": "sm 对应的栅格占位格数",
+        "default": "-"
+      },
+      {
+        "name": "md",
+        "type": "number",
+        "description": "md 对应的栅格占位格数",
+        "default": "-"
+      },
+      {
+        "name": "lg",
+        "type": "number",
+        "description": "lg 对应的栅格占位格数",
+        "default": "-"
+      },
+      {
+        "name": "xl",
+        "type": "number",
+        "description": "xl 对应的栅格占位格数",
+        "default": "-"
+      },
+      {
+        "name": "xxl",
+        "type": "number",
+        "description": "xxl 对应的栅格占位格数",
+        "default": "-"
+      }
+    ],
+    "AvailableVirtualListProps": [
+      {
+        "name": "height",
+        "type": "number",
+        "description": "可视区高度 (2.11.0 开始支持如 80% 的 string 类型)",
+        "default": "200"
+      },
+      {
+        "name": "threshold",
+        "type": "number|null",
+        "description": "自动开启虚拟滚动的元素数量阈值，传入null以禁用虚拟滚动。",
+        "default": "100"
+      },
+      {
+        "name": "isStaticItemHeight",
+        "type": "boolean",
+        "description": "是否为相同高度的静态元素",
+        "default": "true"
+      }
+    ]
+  }
+}

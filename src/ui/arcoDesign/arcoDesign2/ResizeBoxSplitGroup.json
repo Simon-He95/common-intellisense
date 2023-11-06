@@ -1,0 +1,78 @@
+{
+  "name": "ResizeBox.SplitGroup",
+  "props": {
+    "component": {
+      "default": "div",
+      "value": "",
+      "type": "string",
+      "description": "分割框的 html 标签",
+      "description_zh": "分割框的 html 标签"
+    },
+    "direction": {
+      "default": "horizontal",
+      "value": ["horizontal", "vertical"],
+      "type": "'horizontal' | 'vertical'",
+      "description": "分割方向分为水平 horizontal 和垂直 vertical，默认是水平分割",
+      "description_zh": "分割方向分为水平 horizontal 和垂直 vertical，默认是水平分割"
+    },
+    ":icon": {
+      "default": "-",
+      "value": "",
+      "type": "ReactNode",
+      "description": "定制伸缩杆的图标",
+      "description_zh": "定制伸缩杆的图标"
+    },
+    "className": {
+      "default": "-",
+      "value": "",
+      "type": "string | string[]",
+      "description": "节点类名",
+      "description_zh": "节点类名"
+    },
+    ":panes": {
+      "default": "-",
+      "value": "",
+      "type": "SplitGroupPane[]  (必填)",
+      "description": "面板",
+      "description_zh": "面板",
+      "required": true
+    },
+    ":style": {
+      "default": "-",
+      "value": "",
+      "type": "CSSProperties",
+      "description": "节点样式",
+      "description_zh": "节点样式"
+    }
+  },
+  "methods": [],
+  "link": "https://arco.design/react/components/resize-box#api",
+  "link_zh": "https://arco.design/react/components/resize-box#api",
+  "events": [
+    {
+      "name": "onMoving",
+      "description": "拖拽中的回调, size 参数是各个面板占的像素值",
+      "description_zh": "拖拽中的回调, size 参数是各个面板占的像素值",
+      "params": "(e: MouseEvent, size: string[], activeIndex: number) => void"
+    },
+    {
+      "name": "onMovingEnd",
+      "description": "拖拽结束之后的回调",
+      "description_zh": "拖拽结束之后的回调",
+      "params": "(activeIndex: number) => void"
+    },
+    {
+      "name": "onMovingStart",
+      "description": "开始拖拽之前的回调",
+      "description_zh": "开始拖拽之前的回调",
+      "params": "(activeIndex: number) => void"
+    },
+    {
+      "name": "onPaneResize",
+      "description": "面板大小变化的回调",
+      "description_zh": "面板大小变化的回调",
+      "params": "(paneContainers: HTMLElement[]) => void"
+    }
+  ],
+  "typeDetail": {}
+}

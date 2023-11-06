@@ -1,0 +1,363 @@
+{
+  "name": "TreeSelect",
+  "props": {
+    "allowClear": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "允许清除值。",
+      "description_zh": "允许清除值。"
+    },
+    "animation": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "是否为内部标签变化添加动画。",
+      "description_zh": "是否为内部标签变化添加动画。"
+    },
+    "bordered": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "是否显示边框",
+      "description_zh": "是否显示边框"
+    },
+    "disabled": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否为禁用状态。",
+      "description_zh": "是否为禁用状态。"
+    },
+    "dragToSort": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否可以通过拖拽为 Tag 排序",
+      "description_zh": "是否可以通过拖拽为 Tag 排序"
+    },
+    "error": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否是错误状态。(废弃，下个大版本移除，使用 status='error' 替代)",
+      "description_zh": "是否是错误状态。(废弃，下个大版本移除，使用 status='error' 替代)"
+    },
+    "labelInValue": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "设置 value 格式。默认是 string，设置为 true 时候，value 格式为： { label: string, value: string }",
+      "description_zh": "设置 value 格式。默认是 string，设置为 true 时候，value 格式为： { label: string, value: string }"
+    },
+    "loading": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否为加载状态。",
+      "description_zh": "是否为加载状态。"
+    },
+    "multiple": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否多选",
+      "description_zh": "是否多选"
+    },
+    "popupVisible": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "控制下拉框的展开收起",
+      "description_zh": "控制下拉框的展开收起"
+    },
+    "treeCheckable": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否展示复选框",
+      "description_zh": "是否展示复选框"
+    },
+    "treeCheckStrictly": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "父子节点是否关联",
+      "description_zh": "父子节点是否关联"
+    },
+    "unmountOnExit": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否在隐藏之后销毁 DOM 结构",
+      "description_zh": "是否在隐藏之后销毁 DOM 结构"
+    },
+    "inputValue": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "输入框搜索文本的受控值",
+      "description_zh": "输入框搜索文本的受控值"
+    },
+    "placeholder": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "选择框默认文字。",
+      "description_zh": "选择框默认文字。",
+      "required": true
+    },
+    "autoWidth": {
+      "default": "-",
+      "value": "",
+      "type": "| boolean| { minWidth?: CSSProperties['minWidth']; maxWidth?: CSSProperties['maxWidth'] }",
+      "description": "设置宽度自适应。minWidth 默认为 0，maxWidth 默认为 100%",
+      "description_zh": "设置宽度自适应。minWidth 默认为 0，maxWidth 默认为 100%"
+    },
+    ":fieldNames": {
+      "default": "DefaultFieldNames",
+      "value": "",
+      "type": "TreeProps['fieldNames']",
+      "description": "指定 key，title，isLeaf，disabled，children 对应的字段",
+      "description_zh": "指定 key，title，isLeaf，disabled，children 对应的字段"
+    },
+    "size": {
+      "default": "-",
+      "value": ["mini", "small", "default", "large"],
+      "type": "'mini' | 'small' | 'default' | 'large'",
+      "description": "分别不同尺寸的选择器。对应 24px, 28px, 32px, 36px",
+      "description_zh": "分别不同尺寸的选择器。对应 24px, 28px, 32px, 36px"
+    },
+    "status": {
+      "default": "-",
+      "value": ["error", "warning"],
+      "type": "'error' | 'warning'",
+      "description": "状态",
+      "description_zh": "状态"
+    },
+    "treeCheckedStrategy": {
+      "default": "all",
+      "value": "",
+      "type": "TreeProps['checkedStrategy']",
+      "description": "定制回显方式",
+      "description_zh": "定制回显方式"
+    },
+    ":addBefore": {
+      "default": "-",
+      "value": "",
+      "type": "ReactNode",
+      "description": "选择框前添加元素",
+      "description_zh": "选择框前添加元素"
+    },
+    ":clearIcon": {
+      "default": "-",
+      "value": "",
+      "type": "ReactNode",
+      "description": "allowClear 时配置清除按钮的图标。",
+      "description_zh": "allowClear 时配置清除按钮的图标。"
+    },
+    ":notFoundContent": {
+      "default": "-",
+      "value": "",
+      "type": "ReactNode",
+      "description": "没有数据时显示的内容",
+      "description_zh": "没有数据时显示的内容"
+    },
+    ":prefix": {
+      "default": "-",
+      "value": "",
+      "type": "ReactNode",
+      "description": "前缀。",
+      "description_zh": "前缀。"
+    },
+    ":suffixIcon": {
+      "default": "-",
+      "value": "",
+      "type": "ReactNode",
+      "description": "自定义选择框后缀图标。",
+      "description_zh": "自定义选择框后缀图标。"
+    },
+    ":arrowIcon": {
+      "default": "-",
+      "value": "",
+      "type": "ReactNode | null",
+      "description": "自定义箭头图标，设置为 null 不显示箭头图标。",
+      "description_zh": "自定义箭头图标，设置为 null 不显示箭头图标。"
+    },
+    "className": {
+      "default": "-",
+      "value": "",
+      "type": "string | string[]",
+      "description": "节点类名",
+      "description_zh": "节点类名"
+    },
+    "defaultValue": {
+      "default": "-",
+      "value": "",
+      "type": "| string| string[]| { label: ReactNode; value: string; disabled?: boolean }| { label: ReactNode; value: string; disabled?: boolean }[]",
+      "description": "选择框的默认值",
+      "description_zh": "选择框的默认值"
+    },
+    ":dropdownMenuStyle": {
+      "default": "-",
+      "value": "",
+      "type": "CSSProperties",
+      "description": "设置下拉框样式",
+      "description_zh": "设置下拉框样式"
+    },
+    ":removeIcon": {
+      "default": "-",
+      "value": "",
+      "type": "ReactNode | null",
+      "description": "多选时配置选中项的删除图标。当传入null，不显示删除图标。",
+      "description_zh": "多选时配置选中项的删除图标。当传入null，不显示删除图标。"
+    },
+    "showSearch": {
+      "default": "-",
+      "value": "",
+      "type": "boolean | { retainInputValue?: boolean; retainInputValueWhileSelect?: boolean }",
+      "description": "使单选模式可搜索，传入 { retainInputValue: true } 在搜索框聚焦时保留现有内容传入 { retainInputValueWhileSelect: true } 在多选选择时保留输入框内容。",
+      "description_zh": "使单选模式可搜索，传入 { retainInputValue: true } 在搜索框聚焦时保留现有内容传入 { retainInputValueWhileSelect: true } 在多选选择时保留输入框内容。"
+    },
+    ":style": {
+      "default": "-",
+      "value": "",
+      "type": "CSSProperties",
+      "description": "节点样式",
+      "description_zh": "节点样式"
+    },
+    ":treeData": {
+      "default": "-",
+      "value": "",
+      "type": "TreeSelectDataType[]",
+      "description": "数据",
+      "description_zh": "数据",
+      "required": true
+    },
+    ":treeProps": {
+      "default": "-",
+      "value": "",
+      "type": "Partial<TreeProps>",
+      "description": "可以接受所有 Tree 组件的参数",
+      "description_zh": "可以接受所有 Tree 组件的参数"
+    },
+    ":triggerProps": {
+      "default": "-",
+      "value": "",
+      "type": "Partial<TriggerProps>",
+      "description": "可以接受所有 Trigger 组件的参数",
+      "description_zh": "可以接受所有 Trigger 组件的参数"
+    },
+    "value": {
+      "default": "-",
+      "value": "",
+      "type": "| string| string[]| { label: ReactNode; value: string; disabled?: boolean }| { label: ReactNode; value: string; disabled?: boolean }[]",
+      "description": "选中值",
+      "description_zh": "选中值"
+    },
+    ":dropdownRender": {
+      "default": "-",
+      "value": "",
+      "type": "(dom: ReactNode) => ReactNode",
+      "description": "自定义下拉框展示",
+      "description_zh": "自定义下拉框展示"
+    },
+    ":filterTreeNode": {
+      "default": "-",
+      "value": "",
+      "type": "(inputText, treeNode: any) => boolean | void",
+      "description": "根据输入的值筛选数据。接收 inputText 和 treeNode 两个参数，当 option 符合筛选条件时，返回 true，反之返回 false。treeNode 是树节点。",
+      "description_zh": "根据输入的值筛选数据。接收 inputText 和 treeNode 两个参数，当 option 符合筛选条件时，返回 true，反之返回 false。treeNode 是树节点。"
+    },
+    ":getPopupContainer": {
+      "default": "-",
+      "value": "",
+      "type": "(node: HTMLElement) => Element",
+      "description": "弹出框挂载的父节点",
+      "description_zh": "弹出框挂载的父节点"
+    },
+    ":loadMore": {
+      "default": "-",
+      "value": "",
+      "type": "(treeNode: NodeProps, dataRef) => void",
+      "description": "动态加载数据",
+      "description_zh": "动态加载数据"
+    },
+    ":maxTagCount": {
+      "default": "-",
+      "value": "",
+      "type": "| number| {count: number;render?: (invisibleTagCount: number) => ReactNode;}",
+      "description": "最多显示多少个 tag，仅在多选或标签模式有效。",
+      "description_zh": "最多显示多少个 tag，仅在多选或标签模式有效。"
+    },
+    ":renderFormat": {
+      "default": "-",
+      "value": "",
+      "type": "(option: NodeProps | null, value: string | LabelValue) => ReactNode",
+      "description": "定制回显内容。返回值将会显示在下拉框内。若 value 对应的 Option 不存在，则第一个参数是 null",
+      "description_zh": "定制回显内容。返回值将会显示在下拉框内。若 value 对应的 Option 不存在，则第一个参数是 null"
+    },
+    ":renderTag": {
+      "default": "-",
+      "value": "",
+      "type": "(props: {value: any;label: ReactNode;closable: boolean;onClose: (event) => void;},index: number,values: ObjectValueType[]) => ReactNode",
+      "description": "自定义标签渲染，props 为当前标签属性，index 为当前标签的顺序，values 为所有标签的值.",
+      "description_zh": "自定义标签渲染，props 为当前标签属性，index 为当前标签的顺序，values 为所有标签的值."
+    },
+    ":triggerElement": {
+      "default": "-",
+      "value": "",
+      "type": "ReactNode | ((params: { value: any }) => ReactNode)",
+      "description": "自定义上方显示元素",
+      "description_zh": "自定义上方显示元素"
+    }
+  },
+  "methods": [],
+  "link": "https://arco.design/react/components/tree-select#api",
+  "link_zh": "https://arco.design/react/components/tree-select#api",
+  "events": [
+    {
+      "name": "onChange",
+      "description": "选中值改变的回调",
+      "description_zh": "选中值改变的回调",
+      "params": "(value: any,extra: {trigger?: NodeProps;checked?: boolean;selected?: boolean;}) => void"
+    },
+    {
+      "name": "onClear",
+      "description": "点击清除时触发，参数是当前下拉框的展开状态。",
+      "description_zh": "点击清除时触发，参数是当前下拉框的展开状态。",
+      "params": "(visible: boolean) => void"
+    },
+    {
+      "name": "onClick",
+      "description": "鼠标点击下拉框时的回调",
+      "description_zh": "鼠标点击下拉框时的回调",
+      "params": "(e) => void"
+    },
+    {
+      "name": "onInputValueChange",
+      "description": "输入框搜索文本改变的回调。",
+      "description_zh": "输入框搜索文本改变的回调。",
+      "params": "(value: string, reason: InputValueChangeReason) => void"
+    },
+    {
+      "name": "onKeyDown",
+      "description": "键盘输入时的回调",
+      "description_zh": "键盘输入时的回调",
+      "params": "(e) => void"
+    },
+    {
+      "name": "onSearch",
+      "description": "自定义搜索方法。未定义的时候将会在已经在数据中进行搜索",
+      "description_zh": "自定义搜索方法。未定义的时候将会在已经在数据中进行搜索",
+      "params": "(inputValue: string) => void"
+    },
+    {
+      "name": "onVisibleChange",
+      "description": "下拉框收起展开时触发",
+      "description_zh": "下拉框收起展开时触发",
+      "params": "(visible: boolean) => void"
+    }
+  ],
+  "typeDetail": {}
+}

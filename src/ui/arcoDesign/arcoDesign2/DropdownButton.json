@@ -1,0 +1,136 @@
+{
+  "name": "Dropdown.Button",
+  "props": {
+    "defaultPopupVisible": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "控制下拉框是否默认打开",
+      "description_zh": "控制下拉框是否默认打开"
+    },
+    "disabled": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否禁用弹出",
+      "description_zh": "是否禁用弹出"
+    },
+    "popupVisible": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "控制下拉框是否打开（受控模式）",
+      "description_zh": "控制下拉框是否打开（受控模式）"
+    },
+    "unmountOnExit": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "隐藏后是否销毁 DOM 结构",
+      "description_zh": "隐藏后是否销毁 DOM 结构"
+    },
+    "position": {
+      "default": "br",
+      "value": ["top", "tl", "tr", "bottom", "bl", "br"],
+      "type": "'top' | 'tl' | 'tr' | 'bottom' | 'bl' | 'br'",
+      "description": "下拉框的弹出位置",
+      "description_zh": "下拉框的弹出位置"
+    },
+    "size": {
+      "default": "-",
+      "value": ["mini", "small", "default", "large"],
+      "type": "'mini' | 'small' | 'default' | 'large'",
+      "description": "等同于 Button 的 size",
+      "description_zh": "等同于 Button 的 size"
+    },
+    "trigger": {
+      "default": "hover",
+      "value": ["click", "hover", "contextMenu", "focus"],
+      "type": "TriggerProps['trigger']",
+      "description": "触发下拉框弹出的方式",
+      "description_zh": "触发下拉框弹出的方式"
+    },
+    "type": {
+      "default": "default",
+      "value": ["default", "primary", "secondary", "dashed", "outline", "text"],
+      "type": "'default' | 'primary' | 'secondary' | 'dashed' | 'outline' | 'text'",
+      "description": "等同于 Button 的 type",
+      "description_zh": "等同于 Button 的 type"
+    },
+    ":droplist": {
+      "default": "-",
+      "value": "",
+      "type": "ReactNode",
+      "description": "下拉框的内容",
+      "description_zh": "下拉框的内容",
+      "required": true
+    },
+    ":icon": {
+      "default": "<IconMore />",
+      "value": "",
+      "type": "ReactNode",
+      "description": "右侧显示内容，可以是 icon 或者任意 dom 元素",
+      "description_zh": "右侧显示内容，可以是 icon 或者任意 dom 元素"
+    },
+    ":buttonProps": {
+      "default": "-",
+      "value": "",
+      "type": "ButtonProps",
+      "description": "接收 button 按钮的所有 Props，应用于左侧按钮",
+      "description_zh": "接收 button 按钮的所有 Props，应用于左侧按钮"
+    },
+    "className": {
+      "default": "-",
+      "value": "",
+      "type": "string | string[]",
+      "description": "节点类名",
+      "description_zh": "节点类名"
+    },
+    ":style": {
+      "default": "-",
+      "value": "",
+      "type": "CSSProperties",
+      "description": "节点样式",
+      "description_zh": "节点样式"
+    },
+    ":triggerProps": {
+      "default": "-",
+      "value": "",
+      "type": "Partial<TriggerProps>",
+      "description": "弹出框下可接受所有 Trigger 组件的 Props",
+      "description_zh": "弹出框下可接受所有 Trigger 组件的 Props"
+    },
+    ":buttonsRender": {
+      "default": "-",
+      "value": "",
+      "type": "(buttons: ReactNode[]) => ReactNode[]",
+      "description": "自定义两个按钮的渲染",
+      "description_zh": "自定义两个按钮的渲染"
+    },
+    ":getPopupContainer": {
+      "default": "-",
+      "value": "",
+      "type": "(node: HTMLElement) => Element",
+      "description": "弹出框挂在的父级节点",
+      "description_zh": "弹出框挂在的父级节点"
+    }
+  },
+  "methods": [],
+  "link": "https://arco.design/react/components/dropdown#api",
+  "link_zh": "https://arco.design/react/components/dropdown#api",
+  "events": [
+    {
+      "name": "onClick",
+      "description": "左侧按钮的点击事件",
+      "description_zh": "左侧按钮的点击事件",
+      "params": "(e: Event) => void"
+    },
+    {
+      "name": "onVisibleChange",
+      "description": "弹出框打开/关闭时会触发",
+      "description_zh": "弹出框打开/关闭时会触发",
+      "params": "(visible: boolean) => void"
+    }
+  ],
+  "typeDetail": {}
+}

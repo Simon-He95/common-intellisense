@@ -1,0 +1,177 @@
+{
+  "name": "Typography.Paragraph",
+  "props": {
+    "blockquote": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "长引用",
+      "description_zh": "长引用"
+    },
+    "bold": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "粗体",
+      "description_zh": "粗体"
+    },
+    "code": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "代码块样式",
+      "description_zh": "代码块样式"
+    },
+    "delete": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "删除线样式",
+      "description_zh": "删除线样式"
+    },
+    "disabled": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "禁用状态",
+      "description_zh": "禁用状态"
+    },
+    "underline": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "下划线样式",
+      "description_zh": "下划线样式"
+    },
+    "spacing": {
+      "default": "default",
+      "value": ["default", "close"],
+      "type": "'default' | 'close'",
+      "description": "段落的的行高，长文本(大于5行)的时候推荐使用默认行高，短文本(小于等于3行)推荐使用 close 紧密的行高。",
+      "description_zh": "段落的的行高，长文本(大于5行)的时候推荐使用默认行高，短文本(小于等于3行)推荐使用 close 紧密的行高。"
+    },
+    "type": {
+      "default": "-",
+      "value": ["primary", "secondary", "success", "error", "warning"],
+      "type": "'primary' | 'secondary' | 'success' | 'error' | 'warning'",
+      "description": "文本类型",
+      "description_zh": "文本类型"
+    },
+    "className": {
+      "default": "-",
+      "value": "",
+      "type": "string | string[]",
+      "description": "节点类名",
+      "description_zh": "节点类名"
+    },
+    "ellipsis": {
+      "default": "-",
+      "value": "",
+      "type": "boolean | EllipsisConfig",
+      "description": "自动溢出省略（只支持字符串），具体参数配置看 EllipsisConfig",
+      "description_zh": "自动溢出省略（只支持字符串），具体参数配置看 EllipsisConfig"
+    },
+    "mark": {
+      "default": "-",
+      "value": "",
+      "type": "boolean | { color: string }",
+      "description": "标记样式",
+      "description_zh": "标记样式"
+    },
+    ":style": {
+      "default": "-",
+      "value": "",
+      "type": "CSSProperties",
+      "description": "节点样式",
+      "description_zh": "节点样式"
+    },
+    "copyable": {
+      "default": "-",
+      "value": "",
+      "type": "| boolean| {text?: string;onCopy?: (text: string, e) => void;icon?: ReactNode;tooltips?: [ReactNode, ReactNode];}",
+      "description": "开启复制功能",
+      "description_zh": "开启复制功能"
+    },
+    "editable": {
+      "default": "-",
+      "value": "",
+      "type": "| boolean| {editing?: boolean;onStart?: (text, e) => void;onChange?: (text) => void;onEnd?: (text) => void;}",
+      "description": "开启可编辑功能",
+      "description_zh": "开启可编辑功能"
+    }
+  },
+  "methods": [],
+  "link": "https://arco.design/react/components/typography#api",
+  "link_zh": "https://arco.design/react/components/typography#api",
+  "events": [],
+  "typeDetail": {
+    "EllipsisConfig": [
+      {
+        "name": "cssEllipsis",
+        "type": "boolean",
+        "description": "自动溢出省略（只支持字符串），在大量使用情况下建议开启提高性能。",
+        "default": "-"
+      },
+      {
+        "name": "defaultExpanded",
+        "type": "boolean",
+        "description": "默认展开",
+        "default": "-"
+      },
+      {
+        "name": "expandable",
+        "type": "boolean",
+        "description": "显示展开/折叠按钮",
+        "default": "-"
+      },
+      {
+        "name": "expanded",
+        "type": "boolean",
+        "description": "是否展开",
+        "default": "-"
+      },
+      {
+        "name": "rows",
+        "type": "number",
+        "description": "显示省略的行数",
+        "default": "1"
+      },
+      {
+        "name": "ellipsisStr",
+        "type": "string",
+        "description": "省略号",
+        "default": "..."
+      },
+      {
+        "name": "suffix",
+        "type": "string",
+        "description": "后缀",
+        "default": "-"
+      },
+      {
+        "name": "showTooltip",
+        "type": "boolean | { type?: 'tooltip' | 'popover'; props?: Record<string, any> }",
+        "description": "配置省略时的弹出框",
+        "default": "-"
+      },
+      {
+        "name": "expandNodes",
+        "type": "ReactNode[]",
+        "description": "配置 折叠 / 展开 的元素",
+        "default": "-"
+      },
+      {
+        "name": "onEllipsis",
+        "type": "(isEllipsis: boolean) => void",
+        "description": "在省略发生改变的时候触发，通常是窗口resize情况会触发。",
+        "default": "-"
+      },
+      {
+        "name": "onExpand",
+        "type": "(isExpand: boolean, e) => void",
+        "description": "在折叠/展开状态发生改变的时候触发，通常是点击折叠/展开按钮触发。",
+        "default": "-"
+      }
+    ]
+  }
+}

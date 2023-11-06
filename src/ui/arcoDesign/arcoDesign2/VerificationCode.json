@@ -1,0 +1,100 @@
+{
+  "name": "VerificationCode",
+  "props": {
+    "disabled": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "禁用",
+      "description_zh": "禁用"
+    },
+    "masked": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否是密码模式",
+      "description_zh": "是否是密码模式"
+    },
+    "readOnly": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "只读",
+      "description_zh": "只读"
+    },
+    ":length": {
+      "default": "6",
+      "value": "",
+      "type": "number",
+      "description": "验证码的长度，根据长度渲染对应个数的输入框",
+      "description_zh": "验证码的长度，根据长度渲染对应个数的输入框"
+    },
+    "defaultValue": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "默认值",
+      "description_zh": "默认值"
+    },
+    "value": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "验证码输入框的值，受控模式",
+      "description_zh": "验证码输入框的值，受控模式"
+    },
+    "size": {
+      "default": "-",
+      "value": ["mini", "small", "default", "large"],
+      "type": "'mini' | 'small' | 'default' | 'large'",
+      "description": "尺寸",
+      "description_zh": "尺寸"
+    },
+    "status": {
+      "default": "-",
+      "value": "",
+      "type": "'error'",
+      "description": "状态",
+      "description_zh": "状态"
+    },
+    "className": {
+      "default": "-",
+      "value": "",
+      "type": "string | string[]",
+      "description": "节点类名",
+      "description_zh": "节点类名"
+    },
+    ":style": {
+      "default": "-",
+      "value": "",
+      "type": "CSSProperties",
+      "description": "节点样式",
+      "description_zh": "节点样式"
+    },
+    ":separator": {
+      "default": "-",
+      "value": "",
+      "type": "(data: { index: number; character: string }) => ReactNode",
+      "description": "分隔符。可在不同索引的输入框后自定义渲染分隔符",
+      "description_zh": "分隔符。可在不同索引的输入框后自定义渲染分隔符"
+    }
+  },
+  "methods": [],
+  "link": "https://arco.design/react/components/verification-code#api",
+  "link_zh": "https://arco.design/react/components/verification-code#api",
+  "events": [
+    {
+      "name": "onChange",
+      "description": "输入值改变时触发的回调",
+      "description_zh": "输入值改变时触发的回调",
+      "params": "(value: string) => void"
+    },
+    {
+      "name": "onFinish",
+      "description": "输入框都被填充后触发的回调",
+      "description_zh": "输入框都被填充后触发的回调",
+      "params": "(value: string) => void"
+    }
+  ],
+  "typeDetail": {}
+}

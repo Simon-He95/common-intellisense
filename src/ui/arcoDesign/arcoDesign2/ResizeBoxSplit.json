@@ -1,0 +1,113 @@
+{
+  "name": "ResizeBox.Split",
+  "props": {
+    "disabled": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "禁用",
+      "description_zh": "禁用"
+    },
+    "component": {
+      "default": "div",
+      "value": "",
+      "type": "string",
+      "description": "分割框的 html 标签",
+      "description_zh": "分割框的 html 标签"
+    },
+    "direction": {
+      "default": "horizontal",
+      "value": ["horizontal", "vertical", "horizontal-reverse", "vertical-reverse"],
+      "type": "'horizontal' | 'vertical' | 'horizontal-reverse' | 'vertical-reverse'",
+      "description": "分割方向分为水平 horizontal 和垂直 vertical，默认是水平分割",
+      "description_zh": "分割方向分为水平 horizontal 和垂直 vertical，默认是水平分割"
+    },
+    ":icon": {
+      "default": "-",
+      "value": "",
+      "type": "ReactNode",
+      "description": "定制伸缩杆的图标",
+      "description_zh": "定制伸缩杆的图标"
+    },
+    ":trigger": {
+      "default": "-",
+      "value": "",
+      "type": "ReactNode",
+      "description": "定制伸缩杆的内容",
+      "description_zh": "定制伸缩杆的内容"
+    },
+    "className": {
+      "default": "-",
+      "value": "",
+      "type": "string | string[]",
+      "description": "节点类名",
+      "description_zh": "节点类名"
+    },
+    "max": {
+      "default": "-",
+      "value": "",
+      "type": "number | string",
+      "description": "最大阈值",
+      "description_zh": "最大阈值"
+    },
+    "min": {
+      "default": "-",
+      "value": "",
+      "type": "number | string",
+      "description": "最小阈值",
+      "description_zh": "最小阈值"
+    },
+    ":panes": {
+      "default": "-",
+      "value": "",
+      "type": "ReactNode[]  (必填)",
+      "description": "面板，[firstPane, secondPane]",
+      "description_zh": "面板，[firstPane, secondPane]",
+      "required": true
+    },
+    "size": {
+      "default": "0.5",
+      "value": "",
+      "type": "number | string",
+      "description": "分割的大小，可以是 0~1 代表百分比，或具体数值的像素，如 300px",
+      "description_zh": "分割的大小，可以是 0~1 代表百分比，或具体数值的像素，如 300px"
+    },
+    ":style": {
+      "default": "-",
+      "value": "",
+      "type": "CSSProperties",
+      "description": "节点样式",
+      "description_zh": "节点样式"
+    }
+  },
+  "methods": [],
+  "link": "https://arco.design/react/components/resize-box#api",
+  "link_zh": "https://arco.design/react/components/resize-box#api",
+  "events": [
+    {
+      "name": "onMoving",
+      "description": "拖拽中的回调",
+      "description_zh": "拖拽中的回调",
+      "params": "(e: MouseEvent, size: number | string) => void"
+    },
+    {
+      "name": "onMovingEnd",
+      "description": "拖拽结束之后的回调",
+      "description_zh": "拖拽结束之后的回调",
+      "params": "() => void"
+    },
+    {
+      "name": "onMovingStart",
+      "description": "开始拖拽之前的回调",
+      "description_zh": "开始拖拽之前的回调",
+      "params": "() => void"
+    },
+    {
+      "name": "onPaneResize",
+      "description": "面板大小变化的回调",
+      "description_zh": "面板大小变化的回调",
+      "params": "(paneContainers: HTMLElement[]) => void"
+    }
+  ],
+  "typeDetail": {}
+}
