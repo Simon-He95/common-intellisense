@@ -15,7 +15,7 @@
       "type": "boolean",
       "description_zh": "是否允许级联勾选还没有完全加载的节点。如果你要用这个属性，请记住 `checked-keys` 可能是不完整的，并且请注意勾选行为和后端计算逻辑的一致性，尤其是有禁用节点的情况下"
     },
-    "allow-drop": {
+    ":allow-drop": {
       "value": "",
       "description": "Whether to allow drop",
       "default": "一个不允许 drop 在叶节点内部的函数",
@@ -107,9 +107,10 @@
       "description": "Node data for the tree. Resetting 'data' will clear some of the uncontrolled state, and if you need to change 'data' in use, it's best to control the tree in a controlled way",
       "default": "[]",
       "type": "Array<TreeOption>",
-      "description_zh": "树的节点数据。重新设置 `data` 会将一些非受控状态清空，如果你需要在使用中改动 `data`，最好以受控的方式控制树"
+      "description_zh": "树的节点数据。重新设置 `data` 会将一些非受控状态清空，如果你需要在使用中改动 `data`，最好以受控的方式控制树",
+      "required": true
     },
-    "default-checked-keys": {
+    ":default-checked-keys": {
       "value": "",
       "description": "Multiple options are selected by default",
       "default": "[]",
@@ -123,14 +124,14 @@
       "type": "boolean",
       "description_zh": "展开全部选项"
     },
-    "default-expanded-keys": {
+    ":default-expanded-keys": {
       "value": "",
       "description": "The default expansion item",
       "default": "[]",
       "type": "Array<string | number>",
       "description_zh": "默认展开项"
     },
-    "default-selected-keys": {
+    ":default-selected-keys": {
       "value": "",
       "description": "The node is selected by default",
       "default": "[]",
@@ -158,28 +159,28 @@
       "type": "boolean",
       "description_zh": "是否在点击节点后展开或收缩节点"
     },
-    "expanded-keys": {
+    ":expanded-keys": {
       "value": "",
       "description": "If set, expand Control",
       "default": "undefined",
       "type": "Array<string | number>",
       "description_zh": "如果设定则展开受控"
     },
-    "filter": {
+    ":filter": {
       "value": "",
       "description": "A function that specifies a filter node based on a pattern",
       "default": "一个简单的字符串过滤算法",
       "type": "(pattern: string, node: TreeOption) => boolean",
       "description_zh": "基于 pattern 指定过滤节点的函数"
     },
-    "get-children": {
+    ":get-children": {
       "value": "",
       "description": "Gets a sub-option of the current option",
       "default": "undefined",
       "type": "(option: any) => unknown",
       "description_zh": "获取当前选项的子选项"
     },
-    "indeterminate-keys": {
+    ":indeterminate-keys": {
       "value": "",
       "description": "Partially select the key of the option",
       "default": "undefined",
@@ -214,7 +215,7 @@
       "type": "string",
       "description_zh": "替代 `TreeOption` 中的 disabled 字段名"
     },
-    "node-props": {
+    ":node-props": {
       "value": "",
       "description": "The HTML attribute of the node",
       "default": "undefined",
@@ -235,35 +236,35 @@
       "type": "string",
       "description_zh": "默认搜索的内容"
     },
-    "render-label": {
+    ":render-label": {
       "value": "",
       "description": "A rendering function for the contents of the node",
       "default": "undefined",
       "type": "(info: { option: TreeOption, checked: boolean, selected: boolean }) => VNodeChild",
       "description_zh": "节点内容的渲染函数"
     },
-    "render-prefix": {
+    ":render-prefix": {
       "value": "",
       "description": "Rendering function for node prefixes",
       "default": "undefined",
       "type": "(info: { option: TreeOption, checked: boolean, selected: boolean }) => VNodeChild",
       "description_zh": "节点前缀的渲染函数"
     },
-    "render-suffix": {
+    ":render-suffix": {
       "value": "",
       "description": "Rendering function for node suffixes",
       "default": "undefined",
       "type": "(info: { option: TreeOption, checked: boolean, selected: boolean }) => VNodeChild",
       "description_zh": "节点后缀的渲染函数"
     },
-    "render-switcher-icon": {
+    ":render-switcher-icon": {
       "value": "",
       "description": "The rendering function of the node expansion switch",
       "default": "undefined",
       "type": "(props: { option: TreeOption, expanded: boolean, selected: boolean }) => VNodeChild",
       "description_zh": "节点展开开关的渲染函数"
     },
-    "scrollbar-props": {
+    ":scrollbar-props": {
       "value": "",
       "description": "Attribute Reference [Scrollbar props](scrollbar#Scrollbar-Props)",
       "default": "undefined",
@@ -277,7 +278,7 @@
       "type": "boolean",
       "description_zh": "节点是否可以被选中"
     },
-    "selected-keys": {
+    ":selected-keys": {
       "value": "",
       "description": "If set, the 'selected' status is controlled",
       "default": "undefined",
@@ -305,7 +306,7 @@
       "type": "boolean",
       "description_zh": "是否启用虚拟滚动，启用前你需要设定好树的高度样式"
     },
-    "watch-props": {
+    ":watch-props": {
       "value": "",
       "description": "The default properties that need to be detected for changes, after which the component state is updated. Note: 'watch-props' are not inherently reactive",
       "default": "undefined",

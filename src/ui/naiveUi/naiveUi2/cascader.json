@@ -81,14 +81,14 @@
       "type": "boolean",
       "description_zh": "remote 被设定时不生效"
     },
-    "filter": {
+    ":filter": {
       "value": "",
       "description": "A function for filtering options",
       "default": "一个基于字符串的过滤算法",
       "type": "(pattern: string, option: CascaderOption, path: CascaderOption[]) => boolean",
       "description_zh": "过滤选项的函数"
     },
-    "filter-menu-props": {
+    ":filter-menu-props": {
       "value": "",
       "description": "You can filter the DOM properties of the menu",
       "default": "undefined",
@@ -109,14 +109,14 @@
       "type": "string",
       "description_zh": "替代 `CascaderOption` 中的 label 字段名"
     },
-    "max-tag-count": {
+    ":max-tag-count": {
       "value": "",
       "description": "The maximum number of multi-select tags to display, 'responsive' will keep all tags on a single line",
       "default": "undefined",
       "type": "number | responsive",
       "description_zh": "多选标签的最大显示数量，`responsive` 会将所有标签保持在一行"
     },
-    "menu-props": {
+    ":menu-props": {
       "value": "",
       "description": "DOM properties of the menu",
       "default": "undefined",
@@ -135,14 +135,16 @@
       "description": "Populated options data",
       "default": "[]",
       "type": "CascaderOption[]",
-      "description_zh": "填充的 options 数据"
+      "description_zh": "填充的 options 数据",
+      "required": true
     },
     "placeholder": {
       "value": "",
       "description": "Prompt information",
       "default": "",
       "type": "string",
-      "description_zh": "提示信息"
+      "description_zh": "提示信息",
+      "required": true
     },
     "placement": {
       "value": [
@@ -171,7 +173,7 @@
       "type": "boolean",
       "description_zh": "是否远程获取数据"
     },
-    "render-label": {
+    ":render-label": {
       "value": "",
       "description": "Cascader Menu Options Label Rendering Function",
       "default": "undefined",
@@ -228,12 +230,13 @@
       "type": "string | HTMLElement | false",
       "description_zh": "菜单的容器节点，`false` 会待在原地"
     },
-    "value": {
+    "v-model:value": {
       "value": "",
       "description": "Cascade selection of data controlled",
       "default": "undefined",
       "type": "string | number | Array<number | string> | null",
-      "description_zh": "级联选择的数据受控"
+      "description_zh": "级联选择的数据受控",
+      "required": true
     },
     "virtual-scroll": {
       "value": "",

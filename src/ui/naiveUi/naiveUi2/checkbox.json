@@ -1,212 +1,64 @@
 {
   "name": "NCheckbox",
   "props": {
-    "autoplay": {
-      "value": "",
-      "description": "Whether or not to play automatically",
+    "v-model:checked": {
       "default": "false",
-      "type": "boolean",
-      "description_zh": "是否自动播放"
-    },
-    "centered-slides": {
       "value": "",
-      "description": "Whether to center the carousel of the current page",
+      "type": "boolean",
+      "description": "Whether the checkbox is being checked manually.",
+      "description_zh": "是否手动检查复选框。"
+    },
+    "default-checked": {
       "default": "false",
+      "value": "",
       "type": "boolean",
-      "description_zh": "是否居中显示当前页轮播图"
+      "description": "Whether the checkbox is checked by default.",
+      "description_zh": "默认情况下是否选中复选框。"
     },
-    "current-index": {
-      "value": "",
-      "description": "The page is currently displayed",
-      "default": "undefined",
-      "type": "number",
-      "description_zh": "当前显示页"
-    },
-    "default-index": {
-      "value": "",
-      "description": "The page is displayed by default",
-      "default": "0",
-      "type": "number",
-      "description_zh": "默认显示页"
-    },
-    "direction": {
-      "value": [
-        "horizontal",
-        "vertical"
-      ],
-      "description": "The direction in which the carousel is displayed",
-      "default": "horizontal",
-      "type": "horizontal | vertical",
-      "description_zh": "轮播图显示的方向"
-    },
-    "dot-placement": {
-      "value": [
-        "top",
-        "bottom",
-        "left",
-        "right"
-      ],
-      "description": "Carousel indicates the location of the point",
-      "default": "bottom",
-      "type": "top | bottom | left | right",
-      "description_zh": "轮播指示点位置"
-    },
-    "dot-type": {
-      "value": [
-        "dot",
-        "line"
-      ],
-      "description": "Carousel indicates the point style",
-      "default": "dot",
-      "type": "dot | line",
-      "description_zh": "轮播指示点样式"
-    },
-    "draggable": {
-      "value": "",
-      "description": "Whether to drag and drop the mouse to toggle the carousel",
+    "disabled": {
       "default": "false",
+      "value": "",
       "type": "boolean",
-      "description_zh": "是否通过鼠标拖拽切换轮播图"
+      "description": "Whether the checkbox is disabled.",
+      "description_zh": "复选框是否被禁用。"
     },
-    "effect": {
-      "value": [
-        "slide",
-        "fade",
-        "card",
-        "custom"
-      ],
-      "description": "The effect of the transition when the carousel is switched",
-      "default": "slide",
-      "type": "slide | fade | card | custom",
-      "description_zh": "轮播图切换时的过渡效果"
-    },
-    "interval": {
-      "value": "",
-      "description": "Autoplay interval (ms)",
-      "default": "5000",
-      "type": "number",
-      "description_zh": "自动播放的间隔（ms）"
-    },
-    "keyboard": {
-      "value": "",
-      "description": "Whether or not to switch the carousel by pressing a button only works if the focus is on Dots",
-      "default": "false",
-      "type": "boolean",
-      "description_zh": "是否通过按键切换轮播图，只有焦点在 Dots 上时才起作用"
-    },
-    "loop": {
-      "value": "",
-      "description": "Whether or not to play on a loop",
+    "focusable": {
       "default": "true",
-      "type": "boolean",
-      "description_zh": "是否循环播放"
-    },
-    "mousewheel": {
       "value": "",
-      "description": "Whether to use the mouse wheel to switch the carousel",
+      "type": "boolean",
+      "description": "Whether the checkbox gains focus after being checked.",
+      "description_zh": "复选框在检查后是否获得焦点。"
+    },
+    "indeterminate": {
       "default": "false",
-      "type": "boolean",
-      "description_zh": "是否通过鼠标滚轮切换轮播图"
-    },
-    "next-slide-style": {
       "value": "",
-      "description": "The style of the next carousel",
+      "type": "boolean",
+      "description": "Whether the checkbox can have a third indeterminate state.",
+      "description_zh": "复选框是否可以具有第三个不确定状态。"
+    },
+    "label": {
       "default": "undefined",
-      "type": "object | string",
-      "description_zh": "下一张轮播图的样式"
-    },
-    "prev-slide-style": {
       "value": "",
-      "description": "The style of the previous carousel",
+      "type": "string",
+      "description": "Checkbox label.",
+      "description_zh": "复选框标签。"
+    },
+    "size": {
+      "default": "'medium'",
+      "value": ["small", "medium", "large"],
+      "type": "'small' | 'medium' | 'large'",
+      "description": "The size of the checkbox.",
+      "description_zh": "复选框的大小。"
+    },
+    "value": {
       "default": "undefined",
-      "type": "object | string",
-      "description_zh": "上一张轮播图的样式"
-    },
-    "slides-per-view": {
       "value": "",
-      "description": "The number of carousels displayed per page",
-      "default": "1",
-      "type": "auto | number",
-      "description_zh": "每一页显示的轮播图数量"
-    },
-    "space-between": {
-      "value": "",
-      "description": "The spacing between carousels",
-      "default": "0",
-      "type": "number",
-      "description_zh": "轮播图之间的间距"
-    },
-    "show-arrow": {
-      "value": "",
-      "description": "Whether or not to display the arrow buttons",
-      "default": "false",
-      "type": "boolean",
-      "description_zh": "是否显示箭头按钮"
-    },
-    "show-dots": {
-      "value": "",
-      "description": "Whether to display the point",
-      "default": "true",
-      "type": "boolean",
-      "description_zh": "是否展示指示点"
-    },
-    "touchable": {
-      "value": "",
-      "description": "Whether to toggle the carousel by touching and dragging",
-      "default": "true",
-      "type": "boolean",
-      "description_zh": "是否通过触摸拖拽切换轮播图"
-    },
-    "transition-style": {
-      "value": "",
-      "description": "The style of the transition effect",
-      "default": "{ transitionDuration: 300ms }",
-      "type": "{ transitionDuration?: string, transitionTimingFunction?: string }",
-      "description_zh": "过渡效果的样式"
-    },
-    ":transition-props": {
-      "value": "",
-      "description": "Custom Transition Effect Properties, [Refer to Vue Documentation](https://v3.cn.vuejs.org/api/built-in-components.html#transition)",
-      "default": "undefined",
-      "type": "TransitionProps",
-      "description_zh": "自定义过渡效果属性，[参考 Vue 文档](https://v3.cn.vuejs.org/api/built-in-components.html#transition)"
-    },
-    "trigger": {
-      "value": [
-        "click",
-        "hover"
-      ],
-      "description": "The way in which the toggle is triggered",
-      "default": "click",
-      "type": "click | hover",
-      "description_zh": "触发切换的方式"
+      "type": "string | number",
+      "description": "The value of the checkbox to be used in a checkbox group.",
+      "description_zh": "在复选框组中使用的复选框的值。"
     }
   },
   "methods": [
-    {
-      "name": "to",
-      "description": "Swipe to a page",
-      "params": "(index: number) => void",
-      "description_zh": "滑动至某一页"
-    },
-    {
-      "name": "prev",
-      "description": "Swipe to the previous page",
-      "params": "() => void",
-      "description_zh": "滑动至前一页"
-    },
-    {
-      "name": "next",
-      "description": "Swipe to the next page",
-      "params": "() => void",
-      "description_zh": "滑动至后一页"
-    },
-    {
-      "name": "getCurrentIndex",
-      "description": "Get the current page",
-      "params": "() => number",
-      "description_zh": "获取当前页"
-    },
     {
       "name": "focus",
       "description": "focus",

@@ -22,7 +22,7 @@
       "type": "boolean",
       "description_zh": "是否显示 bottom border"
     },
-    "checked-row-keys": {
+    ":checked-row-keys": {
       "value": "",
       "description": "The key of the selected column",
       "default": "undefined",
@@ -48,23 +48,25 @@
       "description": "Columns that need to be displayed",
       "default": "[]",
       "type": "Array<DataTableColumn>",
-      "description_zh": "需要展示的列"
+      "description_zh": "需要展示的列",
+      "required": true
     },
     ":data": {
       "value": "",
       "description": "Data to be presented",
       "default": "[]",
       "type": "Array<object>",
-      "description_zh": "需要展示的数据"
+      "description_zh": "需要展示的数据",
+      "required": true
     },
-    "default-checked-row-keys": {
+    ":default-checked-row-keys": {
       "value": "",
       "description": "The default key value is selected",
       "default": "[]",
       "type": "Array<string | number>",
       "description_zh": "默认选中的 key 值"
     },
-    "default-expanded-row-keys": {
+    ":default-expanded-row-keys": {
       "value": "",
       "description": "The key value of the default expanded row",
       "default": "[]",
@@ -78,14 +80,14 @@
       "type": "boolean",
       "description_zh": "是否默认展开全部可展开的行，不可在异步展开行时使用"
     },
-    "expanded-row-keys": {
+    ":expanded-row-keys": {
       "value": "",
       "description": "Expand the key value of the row",
       "default": "undefined",
       "type": "Array<string | number>",
       "description_zh": "展开行的 key 值"
     },
-    "indent": {
+    ":indent": {
       "value": "",
       "description": "Indentation of row content when using tree data",
       "default": "16",
@@ -137,12 +139,13 @@
       "type": "boolean",
       "description_zh": "当表格数据只有一页时是否显示分页面"
     },
-    "pagination": {
+    ":pagination": {
       "value": "",
       "description": "Attribute reference [Pagination props](pagination#Pagination-Props)",
       "default": "false",
       "type": "false | object",
-      "description_zh": "属性参考 [Pagination props](pagination#Pagination-Props)"
+      "description_zh": "属性参考 [Pagination props](pagination#Pagination-Props)",
+      "required": true
     },
     "remote": {
       "value": "",
@@ -158,7 +161,7 @@
       "type": "(value: any, rowData: object, column: DataTableBaseColumn) => VNodeChild",
       "description_zh": "自定义单元格渲染，优先级低于列的 render"
     },
-    "render-expand-icon": {
+    ":render-expand-icon": {
       "value": "",
       "description": "Customize the render expansion icon",
       "default": "undefined",
@@ -179,7 +182,7 @@
       "type": "(rowData: object) => (number | string)",
       "description_zh": "通过行数据创建行的 key（如果你不想给每一行加上 key）"
     },
-    "row-props": {
+    ":row-props": {
       "value": "",
       "description": "Custom row attributes",
       "default": "undefined",
@@ -193,7 +196,7 @@
       "type": "number | string",
       "description_zh": "表格内容的横向宽度，如果列被水平固定了，则需要设定它"
     },
-    "scrollbar-props": {
+    ":scrollbar-props": {
       "value": "",
       "description": "Attribute Reference [Scrollbar props](scrollbar#Scrollbar-Props)",
       "default": "undefined",
@@ -246,7 +249,7 @@
       "type": "boolean",
       "description_zh": "是否使用斑马线条纹"
     },
-    "summary": {
+    ":summary": {
       "value": "",
       "description": "For the data in the summary column of the table, see <n-a href=\"#DataTableCreateSummary-Type\">DataTableCreateSummary Type</n-a>",
       "default": "undefined",

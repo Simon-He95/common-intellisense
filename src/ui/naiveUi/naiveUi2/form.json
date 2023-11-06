@@ -15,7 +15,7 @@
       "type": "boolean",
       "description_zh": "是否展示为行内表单"
     },
-    "label-width": {
+    ":label-width": {
       "value": "",
       "description": "The width of the label, which may be useful when 'label-placement' is left, means that the label width will be adjusted automatically",
       "default": "undefined",
@@ -42,19 +42,21 @@
       "type": "left | top",
       "description_zh": "标签显示的位置"
     },
-    "model": {
+    ":model": {
       "value": "",
       "description": "An object that gets the values collected in the table entry",
       "default": "{}",
       "type": "Object",
-      "description_zh": "获取表项中收集到的值的对象"
+      "description_zh": "获取表项中收集到的值的对象",
+      "required": true
     },
-    "rules": {
+    ":rules": {
       "value": "",
       "description": "Validate the rules for table entries",
       "default": "{}",
       "type": "type FormRules = { [itemValidatePath: string]: FormItemRule | Array<FormItemRule> | FormRules }",
-      "description_zh": "验证表项的规则"
+      "description_zh": "验证表项的规则",
+      "required": true
     },
     "show-feedback": {
       "value": "",
@@ -99,7 +101,7 @@
       "type": "small | medium | large",
       "description_zh": "尺寸"
     },
-    "validate-messages": {
+    ":validate-messages": {
       "value": "",
       "description": "'async-validator'",
       "default": "undefined",

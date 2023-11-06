@@ -1,7 +1,7 @@
 {
   "name": "NTimePicker",
   "props": {
-    "actions": {
+    ":actions": {
       "value": "",
       "description": "Actions supported in Time Picker",
       "default": "[now, confirm]",
@@ -50,21 +50,21 @@
       "type": "string | null",
       "description_zh": "格式化后的值"
     },
-    "hours": {
+    ":hours": {
       "value": "",
       "description": "Specify the hours to be displayed through an array. When the value is 'number', it will be treated as a time step",
       "default": "undefined",
       "type": "number | number[]",
       "description_zh": "通过数组指定显示的小时。当值为 `number` 时，将被当做时间步进处理"
     },
-    "minutes": {
+    ":minutes": {
       "value": "",
       "description": "Specify the minutes to be displayed via an array. When the value is 'number', it will be treated as a time step",
       "default": "undefined",
       "type": "number | number[]",
       "description_zh": "通过数组指定显示的分钟。当值为 `number` 时，将被当做时间步进处理"
     },
-    "seconds": {
+    ":seconds": {
       "value": "",
       "description": "Specify the seconds to be displayed via an array. When the value is 'number', it will be treated as a time step",
       "default": "undefined",
@@ -78,21 +78,21 @@
       "type": "boolean",
       "description_zh": "设置输入框为只读（避免在移动设备上打开虚拟键盘）"
     },
-    "is-hour-disabled": {
+    ":is-hour-disabled": {
       "value": "",
       "description": "A callback function to disable hours",
       "default": "() => false",
       "type": "(hour: number) => boolean",
       "description_zh": "用于禁用小时的回调函数"
     },
-    "is-minute-disabled": {
+    ":is-minute-disabled": {
       "value": "",
       "description": "The callback function to disable minutes, 'hour' is null when no value is selected",
       "default": "() => false",
       "type": "(minute: number, hour: number | null) => boolean",
       "description_zh": "用于禁用分钟的回调函数，在没有选中值时，`hour` 是 null"
     },
-    "is-second-disabled": {
+    ":is-second-disabled": {
       "value": "",
       "description": "A callback function to disable seconds, 'minute' and 'hour' are null when no value is selected",
       "default": "() => false",
@@ -176,7 +176,7 @@
       "type": "boolean",
       "description_zh": "是否使用 12 小时制的面板"
     },
-    "value": {
+    "v-model:value": {
       "value": "",
       "description": "The value in controlled mode",
       "default": "undefined",

@@ -71,7 +71,7 @@
       "type": "boolean",
       "description_zh": "默认展开全部"
     },
-    "default-expanded-keys": {
+    ":default-expanded-keys": {
       "value": "",
       "description": "The key of the default expansion node",
       "default": "[]",
@@ -85,7 +85,7 @@
       "type": "boolean",
       "description_zh": "是否禁用"
     },
-    "expanded-keys": {
+    ":expanded-keys": {
       "value": "",
       "description": "Expand the key of the node",
       "default": "undefined",
@@ -106,7 +106,7 @@
       "type": "boolean",
       "description_zh": "是否可过滤"
     },
-    "filter": {
+    ":filter": {
       "value": "",
       "description": "Filter function",
       "default": "-",
@@ -141,14 +141,14 @@
       "type": "boolean",
       "description_zh": "是否加载中"
     },
-    "max-tag-count": {
+    ":max-tag-count": {
       "value": "",
       "description": "The maximum number of options that are displayed directly when multi-select is set to responsive will guarantee a maximum of one line",
       "default": "undefined",
       "type": "number | responsive",
       "description_zh": "多选时最多直接显示多少选项，设为 responsive 会保证最多一行"
     },
-    "menu-props": {
+    ":menu-props": {
       "value": "",
       "description": "DOM properties of the menu",
       "default": "undefined",
@@ -162,19 +162,20 @@
       "type": "boolean",
       "description_zh": "是否支持多选"
     },
-    "node-props": {
+    ":node-props": {
       "value": "",
       "description": "The HTML attribute of the node",
       "default": "undefined",
       "type": "(info: { option: TreeSelectOption }) => HTMLAttributes",
       "description_zh": "节点的 HTML 属性"
     },
-    "options": {
+    ":options": {
       "value": "",
       "description": "Options",
       "default": "[]",
       "type": "TreeSelectOption[]",
-      "description_zh": "选项"
+      "description_zh": "选项",
+      "required": true
     },
     "placeholder": {
       "value": "",
@@ -184,41 +185,54 @@
       "description_zh": "占位信息"
     },
     "placement": {
-      "value": "",
+      "value": [
+        "top-start",
+        "top",
+        "top-end",
+        "right-start",
+        "right",
+        "right-end",
+        "bottom-start",
+        "bottom",
+        "bottom-end",
+        "left-start",
+        "left",
+        "left-end"
+      ],
       "description": "The pop-up location of the selector.",
       "default": "bottom-start",
       "type": "top-start | top | top-end | right-start | right | right-end | bottom-start | bottom | bottom-end | left-start | left | left-end",
       "description_zh": "选择器的弹出位置."
     },
-    "render-label": {
+    ":render-label": {
       "value": "",
       "description": "A rendering function for the contents of the node",
       "default": "undefined",
       "type": "(info: { option: TreeSelectOption, checked: boolean, selected: boolean }) => VNodeChild",
       "description_zh": "节点内容的渲染函数"
     },
-    "render-prefix": {
+    ":render-prefix": {
       "value": "",
       "description": "Rendering function for node prefixes",
       "default": "undefined",
       "type": "(info: { option: TreeSelectOption, checked: boolean, selected: boolean }) => VNodeChild",
       "description_zh": "节点前缀的渲染函数"
     },
-    "render-suffix": {
+    ":render-suffix": {
       "value": "",
       "description": "Rendering function for node suffixes",
       "default": "undefined",
       "type": "(info: { option: TreeSelectOption, checked: boolean, selected: boolean }) => VNodeChild",
       "description_zh": "节点后缀的渲染函数"
     },
-    "render-switcher-icon": {
+    ":render-switcher-icon": {
       "value": "",
       "description": "The rendering function of the node expansion switch",
       "default": "undefined",
       "type": "() => VNodeChild",
       "description_zh": "节点展开开关的渲染函数"
     },
-    "render-tag": {
+    ":render-tag": {
       "value": "",
       "description": "Controls the rendering of labels",
       "default": "undefined",

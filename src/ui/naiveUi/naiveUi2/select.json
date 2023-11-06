@@ -71,7 +71,7 @@
       "type": "boolean",
       "description_zh": "忽略输入法 Composition 状态，默认情况下 `filter` 在输入法输入的过程中不会触发"
     },
-    "input-props": {
+    ":input-props": {
       "value": "",
       "description": "The properties of the input element in the trigger, which only make sense when they are filterable",
       "default": "undefined",
@@ -99,14 +99,14 @@
       "type": "boolean",
       "description_zh": "是否为加载状态"
     },
-    "max-tag-count": {
+    ":max-tag-count": {
       "value": "",
       "description": "The maximum number of multi-select tags to display, 'responsive' will keep all tags on a single line",
       "default": "undefined",
       "type": "number | responsive",
       "description_zh": "多选标签的最大显示数量，`responsive` 会将所有标签保持在一行"
     },
-    "menu-props": {
+    ":menu-props": {
       "value": "",
       "description": "DOM properties of the menu",
       "default": "undefined",
@@ -120,7 +120,7 @@
       "type": "boolean",
       "description_zh": "是否为多选"
     },
-    "node-props": {
+    ":node-props": {
       "value": "",
       "description": "option",
       "default": "undefined",
@@ -132,7 +132,8 @@
       "description": "Configure the options, see SelectOption Properties for details",
       "default": "[]",
       "type": "Array<SelectOption | SelectGroupOption>",
-      "description_zh": "配置选项内容，详情见 SelectOption Properties"
+      "description_zh": "配置选项内容，详情见 SelectOption Properties",
+      "required": true
     },
     "placeholder": {
       "value": "",
@@ -169,21 +170,21 @@
       "type": "boolean",
       "description_zh": "是否要异步获取选项。注意如果设定了，那么 `filter` 和 `tag` 都不会对 `options` 生效。这个时候你在全权控制 options"
     },
-    "render-label": {
+    ":render-label": {
       "value": "",
       "description": "Option label rendering function",
       "default": "undefined",
       "type": "(option: SelectOption | SelectGroupOption, selected: boolean) => VNodeChild",
       "description_zh": "选项标签渲染函数"
     },
-    "render-option": {
+    ":render-option": {
       "value": "",
       "description": "option",
       "default": "undefined",
       "type": "(info: { node: VNode, option: SelectOption | SelectGroupOption, selected: boolean }) => VNodeChild",
       "description_zh": "选项的渲染函数"
     },
-    "render-tag": {
+    ":render-tag": {
       "value": "",
       "description": "Controls the rendering of labels",
       "default": "undefined",
@@ -262,12 +263,13 @@
       "type": "string | HTMLElement | false",
       "description_zh": "菜单的容器节点，`false` 会待在原地"
     },
-    "value": {
+    "v-model:value": {
       "value": "",
       "description": "The value in controlled mode",
       "default": "undefined",
       "type": "Array<string | number> | string | number | null",
-      "description_zh": "受控模式下的值"
+      "description_zh": "受控模式下的值",
+      "required": true
     },
     "value-field": {
       "value": "",

@@ -8,7 +8,7 @@
       "type": "string",
       "description_zh": "清楚按钮的文本"
     },
-    "default-value": {
+    ":default-value": {
       "value": "",
       "description": "Default value in uncontrolled mode",
       "default": "null",
@@ -22,7 +22,7 @@
       "type": "boolean",
       "description_zh": "是否禁用"
     },
-    "filter": {
+    ":filter": {
       "value": "",
       "description": "The filter function used when searching",
       "default": "一个简单的标签字符串匹配函数",
@@ -34,30 +34,31 @@
       "description": "For more information about the configuration options, see TransferOption Type",
       "default": "[]",
       "type": "TransferOption[]",
-      "description_zh": "配置选项内容，详情见 TransferOption Type"
+      "description_zh": "配置选项内容，详情见 TransferOption Type",
+      "required": true
     },
-    "render-source-label": {
+    ":render-source-label": {
       "value": "",
       "description": "Custom source tags",
       "default": "undefined",
       "type": "(props: { option: TransferOption }) => VNodeChild",
       "description_zh": "自定义源标签"
     },
-    "render-target-label": {
+    ":render-target-label": {
       "value": "",
       "description": "Customize the target label",
       "default": "undefined",
       "type": "(props: { option: TransferOption }) => VNodeChild",
       "description_zh": "自定义目标标签"
     },
-    "render-source-list": {
+    ":render-source-list": {
       "value": "",
       "description": "Customize the list of sources",
       "default": "undefined",
       "type": "(props: { onCheck: (checkedValueList: Array<string | number>) => void, checkedOptions: TransferOption[], pattern: string }) => VNodeChild",
       "description_zh": "自定义源列表"
     },
-    "render-target-list": {
+    ":render-target-list": {
       "value": "",
       "description": "Customize the list of targets",
       "default": "undefined",
@@ -131,12 +132,13 @@
       "type": "string",
       "description_zh": "目标项标题"
     },
-    "value": {
+    "v-model:value": {
       "value": "",
       "description": "The value in controlled mode",
       "default": "undefined",
       "type": "Array<string | number> | null",
-      "description_zh": "受控模式下的值"
+      "description_zh": "受控模式下的值",
+      "required": true
     },
     "virtual-scroll": {
       "value": "",

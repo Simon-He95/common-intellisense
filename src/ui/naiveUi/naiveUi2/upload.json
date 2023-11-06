@@ -22,14 +22,14 @@
       "type": "string",
       "description_zh": "请求提交的地址"
     },
-    "create-thumbnail-url": {
+    ":create-thumbnail-url": {
       "value": "",
       "description": "Custom file thumbnails, if 'undefined' are returned, will use the default thumbnail display logic",
       "default": "undefined",
       "type": "(file: File | null, fileInfo: UploadSettledFileInfo) => (Promise<string> | string | undefined)",
       "description_zh": "自定义文件缩略图，如果返回了 `undefined`，会使用默认的缩略图展示逻辑"
     },
-    "custom-request": {
+    ":custom-request": {
       "value": "",
       "description": "Custom upload method, see <n-a href=\"#UploadCustomRequestOptions-Type\">UploadCustomRequestOptions</n-a>",
       "default": "undefined",
@@ -43,7 +43,7 @@
       "type": "Object | ({ file: UploadFileInfo }) => Object",
       "description_zh": "提交表单需要附加的数据"
     },
-    "default-file-list": {
+    ":default-file-list": {
       "value": "",
       "description": "The default list of files in an uncontrolled state",
       "default": "[]",
@@ -78,42 +78,42 @@
       "type": "boolean",
       "description_zh": "是否支持目录拖拽上传（如果不设定会默认跟随 `directory`）"
     },
-    "file-list-style": {
+    ":file-list-style": {
       "value": "",
       "description": "The style of the file list area",
       "default": "undefined",
       "type": "Object",
       "description_zh": "文件列表区域的样式"
     },
-    "file-list": {
+    ":file-list": {
       "value": "",
       "description": "A list of files, if the incoming component is in a controlled state",
       "default": "undefined",
       "type": "Array<UploadFileInfo>",
       "description_zh": "文件列表，如果传入组件会处于受控状态"
     },
-    "headers": {
+    ":headers": {
       "value": "",
       "description": "HTTP requests require additional headers",
       "default": "undefined",
       "type": "Object | ({ file: UploadFileInfo }) => Object",
       "description_zh": "HTTP 请求需要附加的 Headers"
     },
-    "image-group-props": {
+    ":image-group-props": {
       "value": "",
       "description": "Preview the properties of the image component in Upload, refer to [ImageGroup Props](image#ImageGroup-Props)",
       "default": "undefined",
       "type": "ImageGroupProps",
       "description_zh": "Upload 中预览图片组件的属性，参考 [ImageGroup Props](image#ImageGroup-Props)"
     },
-    "input-props": {
+    ":input-props": {
       "value": "",
       "description": "file input element",
       "default": "undefined",
       "type": "Object",
       "description_zh": "file input 元素的属性"
     },
-    "is-error-state": {
+    ":is-error-state": {
       "value": "",
       "description": "Check whether the request is abnormal",
       "default": "undefined",
@@ -127,7 +127,7 @@
       "type": "string",
       "description_zh": "文件列表的内建样式，`text`、`image` 和 `image-card`"
     },
-    "max": {
+    ":max": {
       "value": "",
       "description": "Limit the number of files you can upload",
       "default": "undefined",
@@ -155,7 +155,7 @@
       "type": "string",
       "description_zh": "文件在提交表单中的字段名"
     },
-    "render-icon": {
+    ":render-icon": {
       "value": "",
       "description": "Rendering function for file icons, which only works when 'list-type=\"image\"' and 'list-type=\"image-card\"'",
       "default": "undefined",
@@ -168,15 +168,14 @@
         "blob",
         "document",
         "json",
-        "responseType",
-        ""
+        "responseType"
       ],
       "description": "'n-upload' uses the responseType of 'XMLHttpRequest'",
       "default": "",
       "type": "'' | arraybuffer | blob | document | json | text",
       "description_zh": "`n-upload` 使用的 `XMLHttpRequest` 的 responseType"
     },
-    "should-use-thumbnail-url": {
+    ":should-use-thumbnail-url": {
       "value": "",
       "description": "The decision on whether to use the preview image function for the file takes effect only when 'list-type=\"image\"' or 'list-type=\"image-card\"' is used",
       "default": "只对图片类文件返回 true 的函数",
@@ -232,7 +231,7 @@
       "type": "boolean",
       "description_zh": "是否显示触发元素"
     },
-    "trigger-style": {
+    ":trigger-style": {
       "value": "",
       "description": "The style of the trigger area",
       "default": "undefined",
