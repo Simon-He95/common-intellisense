@@ -1,0 +1,78 @@
+{
+  "name": "AAvatar",
+  "props": {
+    "shape": {
+      "default": "circle",
+      "value": ["circle", "square"],
+      "type": "'circle' | 'square'",
+      "description": "头像的形状，有圆形(circle)和正方形(square)两种",
+      "description_zh": "头像的形状，有圆形(circle)和正方形(square)两种"
+    },
+    "image-url": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "自定义头像图片地址，如果传入该属性，会默认渲染img标签",
+      "description_zh": "自定义头像图片地址，如果传入该属性，会默认渲染img标签"
+    },
+    ":size": {
+      "default": "-",
+      "value": "",
+      "type": "number",
+      "description": "头像的尺寸大小，单位是 px。未填写时使用样式中的大小 40px",
+      "description_zh": "头像的尺寸大小，单位是 px。未填写时使用样式中的大小 40px"
+    },
+    "auto-fix-font-size": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "是否自动根据头像尺寸调整字体大小",
+      "description_zh": "是否自动根据头像尺寸调整字体大小"
+    },
+    "trigger-type": {
+      "default": "button",
+      "value": ["mask", "button"],
+      "type": "'mask' | 'button'",
+      "description": "可点击的头像交互类型",
+      "description_zh": "可点击的头像交互类型"
+    },
+    ":trigger-icon-style": {
+      "default": "-",
+      "value": "",
+      "type": "CSSProperties",
+      "description": "交互图标的样式",
+      "description_zh": "交互图标的样式"
+    },
+    ":object-fit": {
+      "default": "-",
+      "value": "",
+      "type": "ObjectFit",
+      "description": "图片在容器内的的适应类型",
+      "description_zh": "图片在容器内的的适应类型"
+    }
+  },
+  "methods": [],
+  "link": "https://arco.design/vue/component/avatar#API",
+  "link_zh": "https://arco.design/vue/component/avatar#API",
+  "events": [
+    {
+      "name": "click",
+      "description": "点击回调",
+      "description_zh": "点击回调",
+      "params": "ev: MouseEvent"
+    },
+    {
+      "name": "error",
+      "description": "图片加载错误",
+      "description_zh": "图片加载错误",
+      "params": "-"
+    },
+    {
+      "name": "load",
+      "description": "图片加载成功",
+      "description_zh": "图片加载成功",
+      "params": "-"
+    }
+  ],
+  "typeDetail": {}
+}
