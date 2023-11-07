@@ -1,0 +1,62 @@
+{
+  "name": "ACountdown",
+  "props": {
+    "title": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "倒计时的标题",
+      "description_zh": "倒计时的标题",
+      "required": true
+    },
+    ":value": {
+      "default": "() => Date.now() + 300000",
+      "value": "",
+      "type": "number",
+      "description": "倒计时的值",
+      "description_zh": "倒计时的值",
+      "required": true
+    },
+    ":now": {
+      "default": "() => Date.now()",
+      "value": "",
+      "type": "number",
+      "description": "用于修正初始化时间显示不正确",
+      "description_zh": "用于修正初始化时间显示不正确",
+      "required": true
+    },
+    "format": {
+      "default": "'HH:mm:ss'",
+      "value": "",
+      "type": "string",
+      "description": "倒计时的展示格式 dayjs",
+      "description_zh": "倒计时的展示格式 dayjs"
+    },
+    "start": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "是否开始倒计时",
+      "description_zh": "是否开始倒计时"
+    },
+    ":value-style": {
+      "default": "-",
+      "value": "",
+      "type": "CSSProperties",
+      "description": "自定义显示值的样式",
+      "description_zh": "自定义显示值的样式"
+    }
+  },
+  "methods": [],
+  "link": "https://arco.design/vue/component/statistic#API",
+  "link_zh": "https://arco.design/vue/component/statistic#API",
+  "events": [
+    {
+      "name": "finish",
+      "description": "倒计时完成后触发的回调",
+      "description_zh": "倒计时完成后触发的回调",
+      "params": "-"
+    }
+  ],
+  "typeDetail": {}
+}

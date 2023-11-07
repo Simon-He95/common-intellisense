@@ -1,0 +1,124 @@
+{
+  "name": "AImage",
+  "props": {
+    "src": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "图片获取地址",
+      "description_zh": "图片获取地址",
+      "required": true
+    },
+    "width": {
+      "default": "-",
+      "value": "",
+      "type": "string | number",
+      "description": "图片显示宽度",
+      "description_zh": "图片显示宽度"
+    },
+    "height": {
+      "default": "-",
+      "value": "",
+      "type": "string | number",
+      "description": "图片显示高度",
+      "description_zh": "图片显示高度"
+    },
+    "title": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "标题",
+      "description_zh": "标题"
+    },
+    "description": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "描述，将显示在底部，如果 alt 没有值，则会将其设置给 alt",
+      "description_zh": "描述，将显示在底部，如果 alt 没有值，则会将其设置给 alt"
+    },
+    "fit": {
+      "default": "-",
+      "value": ["contain", "cover", "fill", "none", "scale-down"],
+      "type": "'contain' | 'cover' | 'fill' | 'none' | 'scale-down'",
+      "description": "确定图片如何适应容器框",
+      "description_zh": "确定图片如何适应容器框"
+    },
+    "alt": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "图片的文字描述",
+      "description_zh": "图片的文字描述",
+      "required": true
+    },
+    "hide-footer": {
+      "default": "false",
+      "value": "",
+      "type": "boolean | 'never'",
+      "description": "是否隐藏 footer（2.36.0 版本支持 'never' 参数，支持在加载错误时显示底部内容）",
+      "description_zh": "是否隐藏 footer（2.36.0 版本支持 'never' 参数，支持在加载错误时显示底部内容）"
+    },
+    "footer-position": {
+      "default": "inner",
+      "value": ["inner", "outer"],
+      "type": "'inner' | 'outer'",
+      "description": "底部显示的位置",
+      "description_zh": "底部显示的位置"
+    },
+    "show-loader": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否显示加载中效果",
+      "description_zh": "是否显示加载中效果"
+    },
+    "preview": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "是否开启预览",
+      "description_zh": "是否开启预览"
+    },
+    "v-model:preview-visible": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "控制预览的打开状态，可与 previewVisibleChange 配合使用",
+      "description_zh": "控制预览的打开状态，可与 previewVisibleChange 配合使用"
+    },
+    "default-preview-visible": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "预览的默认打开状态",
+      "description_zh": "预览的默认打开状态"
+    },
+    ":preview-props": {
+      "default": "-",
+      "value": "",
+      "type": "ImagePreviewProps",
+      "description": "预览的配置项（所有选项都是可选的） ImagePreviewProps",
+      "description_zh": "预览的配置项（所有选项都是可选的） ImagePreviewProps"
+    },
+    "footer-class": {
+      "default": "-",
+      "value": "",
+      "type": "string | array|object",
+      "description": "底部显示区域的类名",
+      "description_zh": "底部显示区域的类名"
+    }
+  },
+  "methods": [],
+  "link": "https://arco.design/vue/component/image",
+  "link_zh": "https://arco.design/vue/component/image",
+  "events": [
+    {
+      "name": "preview-visible-change",
+      "description": "预览的打开和关闭事件",
+      "description_zh": "预览的打开和关闭事件",
+      "params": "visible: boolean"
+    }
+  ],
+  "typeDetail": {}
+}

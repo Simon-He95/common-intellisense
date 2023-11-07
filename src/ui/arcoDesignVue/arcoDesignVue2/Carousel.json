@@ -1,0 +1,108 @@
+{
+  "name": "ACarousel",
+  "props": {
+    ":v-model:current": {
+      "default": "-",
+      "value": "",
+      "type": "number",
+      "description": "当前展示索引",
+      "description_zh": "当前展示索引"
+    },
+    ":default-current": {
+      "default": "1",
+      "value": "",
+      "type": "number",
+      "description": "当前展示索引",
+      "description_zh": "当前展示索引"
+    },
+    "auto-play": {
+      "default": "false",
+      "value": "",
+      "type": "boolean | CarouselAutoPlayConfig",
+      "description": "是否自动循环展示，或者传入 { interval: 自动切换的时间间隔(默认: 3000), hoverToPause: 鼠标悬浮时是否暂停自动切换(默认: true) } 进行高级配置",
+      "description_zh": "是否自动循环展示，或者传入 { interval: 自动切换的时间间隔(默认: 3000), hoverToPause: 鼠标悬浮时是否暂停自动切换(默认: true) } 进行高级配置"
+    },
+    ":move-speed": {
+      "default": "500",
+      "value": "",
+      "type": "number",
+      "description": "幻灯片移动速率(ms)",
+      "description_zh": "幻灯片移动速率(ms)"
+    },
+    "animation-name": {
+      "default": "slide",
+      "value": ["slide", "fade", "card"],
+      "type": "'slide' | 'fade' | 'card'",
+      "description": "切换动画",
+      "description_zh": "切换动画"
+    },
+    "trigger": {
+      "default": "click",
+      "value": ["click", "hover"],
+      "type": "'click' | 'hover'",
+      "description": "幻灯片切换触发方式, click/hover 指示器",
+      "description_zh": "幻灯片切换触发方式, click/hover 指示器"
+    },
+    "direction": {
+      "default": "horizontal",
+      "value": ["horizontal", "vertical"],
+      "type": "'horizontal' | 'vertical'",
+      "description": "幻灯片移动方向",
+      "description_zh": "幻灯片移动方向"
+    },
+    "show-arrow": {
+      "default": "always",
+      "value": ["always", "hover", "never"],
+      "type": "'always' | 'hover' | 'never'",
+      "description": "切换箭头显示时机",
+      "description_zh": "切换箭头显示时机"
+    },
+    "arrow-class": {
+      "default": "''",
+      "value": "",
+      "type": "string",
+      "description": "切换箭头样式",
+      "description_zh": "切换箭头样式"
+    },
+    "indicator-type": {
+      "default": "dot",
+      "value": ["line", "dot", "slider", "never"],
+      "type": "'line' | 'dot' | 'slider' | 'never'",
+      "description": "指示器类型，可为小方块和小圆点或不显示",
+      "description_zh": "指示器类型，可为小方块和小圆点或不显示"
+    },
+    "indicator-position": {
+      "default": "bottom",
+      "value": ["bottom", "top", "left", "right", "outer"],
+      "type": "'bottom' | 'top' | 'left' | 'right' | 'outer'",
+      "description": "指示器位置",
+      "description_zh": "指示器位置"
+    },
+    "indicator-class": {
+      "default": "''",
+      "value": "",
+      "type": "string",
+      "description": "指示器的样式",
+      "description_zh": "指示器的样式"
+    },
+    "transition-timing-function": {
+      "default": "'cubic-bezier(0.34, 0.69, 0.1, 1)'",
+      "value": "",
+      "type": "string",
+      "description": "过渡速度曲线, 默认匀速 transition-timing-function",
+      "description_zh": "过渡速度曲线, 默认匀速 transition-timing-function"
+    }
+  },
+  "methods": [],
+  "link": "https://arco.design/vue/component/carousel#API",
+  "link_zh": "https://arco.design/vue/component/carousel#API",
+  "events": [
+    {
+      "name": "change",
+      "description": "幻灯片发生切换时的回调函数",
+      "description_zh": "幻灯片发生切换时的回调函数",
+      "params": "index: numberprevIndex: numberisManual: boolean"
+    }
+  ],
+  "typeDetail": {}
+}

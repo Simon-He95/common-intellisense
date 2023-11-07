@@ -1,0 +1,147 @@
+{
+  "name": "ATabs",
+  "props": {
+    "v-model:active-key": {
+      "default": "-",
+      "value": "",
+      "type": "string | number",
+      "description": "当前选中的标签的 key",
+      "description_zh": "当前选中的标签的 key"
+    },
+    "default-active-key": {
+      "default": "-",
+      "value": "",
+      "type": "string | number",
+      "description": "默认选中的标签的key（非受控状态，为空时选中第一个标签页）",
+      "description_zh": "默认选中的标签的key（非受控状态，为空时选中第一个标签页）"
+    },
+    "position": {
+      "default": "top",
+      "value": ["left", "right", "top", "bottom"],
+      "type": "'left' | 'right' | 'top' | 'bottom'",
+      "description": "选项卡的位置",
+      "description_zh": "选项卡的位置"
+    },
+    "size": {
+      "default": "-",
+      "value": ["mini", "small", "medium", "large"],
+      "type": "'mini' | 'small' | 'medium' | 'large'",
+      "description": "选项卡的大小",
+      "description_zh": "选项卡的大小"
+    },
+    "type": {
+      "default": "line",
+      "value": ["line", "card", "card-gutter", "text", "rounded", "capsule"],
+      "type": "'line' | 'card' | 'card-gutter' | 'text' | 'rounded' | 'capsule'",
+      "description": "选项卡的类型",
+      "description_zh": "选项卡的类型"
+    },
+    "direction": {
+      "default": "horizontal",
+      "value": ["horizontal", "vertical"],
+      "type": "'horizontal' | 'vertical'",
+      "description": "选项卡的方向",
+      "description_zh": "选项卡的方向"
+    },
+    "editable": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否开启可编辑模式",
+      "description_zh": "是否开启可编辑模式"
+    },
+    "show-add-button": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否显示增加按钮（仅在可编辑模式可用）",
+      "description_zh": "是否显示增加按钮（仅在可编辑模式可用）"
+    },
+    "destroy-on-hide": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否在不显示标签时销毁内容",
+      "description_zh": "是否在不显示标签时销毁内容"
+    },
+    "lazy-load": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否在首次展示标签时挂载内容",
+      "description_zh": "是否在首次展示标签时挂载内容"
+    },
+    "justify": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "高度撑满容器，只在水平模式下生效。",
+      "description_zh": "高度撑满容器，只在水平模式下生效。"
+    },
+    "animation": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否开启选项内容过渡动画",
+      "description_zh": "是否开启选项内容过渡动画"
+    },
+    "header-padding": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "选项卡头部是否存在水平边距。仅对 type 等于 line、text 类型的选项卡生效",
+      "description_zh": "选项卡头部是否存在水平边距。仅对 type 等于 line、text 类型的选项卡生效"
+    },
+    "auto-switch": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "创建标签后是否切换到新标签（最后一个）",
+      "description_zh": "创建标签后是否切换到新标签（最后一个）"
+    },
+    "hide-content": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否隐藏内容",
+      "description_zh": "是否隐藏内容"
+    },
+    "trigger": {
+      "default": "click",
+      "value": ["hover", "click"],
+      "type": "'hover' | 'click'",
+      "description": "触发方式",
+      "description_zh": "触发方式"
+    }
+  },
+  "methods": [],
+  "link": "https://arco.design/vue/component/tabs#API",
+  "link_zh": "https://arco.design/vue/component/tabs#API",
+  "events": [
+    {
+      "name": "change",
+      "description": "当前标签值改变时触发",
+      "description_zh": "当前标签值改变时触发",
+      "params": "key: string | number"
+    },
+    {
+      "name": "tab-click",
+      "description": "用户点击标签时触发",
+      "description_zh": "用户点击标签时触发",
+      "params": "key: string | number"
+    },
+    {
+      "name": "add",
+      "description": "用户点击增加按钮时触发",
+      "description_zh": "用户点击增加按钮时触发",
+      "params": "-"
+    },
+    {
+      "name": "delete",
+      "description": "用户点击删除按钮时触发",
+      "description_zh": "用户点击删除按钮时触发",
+      "params": "key: string | number"
+    }
+  ],
+  "typeDetail": {}
+}

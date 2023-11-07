@@ -1,0 +1,485 @@
+{
+  "name": "ATree",
+  "props": {
+    "size": {
+      "default": "'medium'",
+      "value": ["mini", "small", "medium", "large"],
+      "type": "'mini' | 'small' | 'medium' | 'large'",
+      "description": "尺寸",
+      "description_zh": "尺寸"
+    },
+    "block-node": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "节点是否占据一行",
+      "description_zh": "节点是否占据一行"
+    },
+    "default-expand-all": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "是否默认展开父节点",
+      "description_zh": "是否默认展开父节点"
+    },
+    "multiple": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否支持多选",
+      "description_zh": "是否支持多选"
+    },
+    "checkable": {
+      "default": "false",
+      "value": "",
+      "type": "boolean| (( node: TreeNodeData, info: { level: number; isLeaf: boolean; } ) => boolean)",
+      "description": "是否在节点前添加复选框，从 2.27.0 开始支持函数格式",
+      "description_zh": "是否在节点前添加复选框，从 2.27.0 开始支持函数格式"
+    },
+    "selectable": {
+      "default": "true",
+      "value": "",
+      "type": "boolean| (( node: TreeNodeData, info: { level: number; isLeaf: boolean; } ) => boolean)",
+      "description": "是否支持选择，从 2.27.0 开始支持函数格式",
+      "description_zh": "是否支持选择，从 2.27.0 开始支持函数格式"
+    },
+    "check-strictly": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否取消父子节点关联",
+      "description_zh": "是否取消父子节点关联"
+    },
+    "checked-strategy": {
+      "default": "'all'",
+      "value": ["all", "parent", "child"],
+      "type": "'all' | 'parent' | 'child'",
+      "description": "定制回填方式  all: 返回所有选中的节点  parent: 父子节点都选中时只返回父节点  child: 只返回子节点",
+      "description_zh": "定制回填方式  all: 返回所有选中的节点  parent: 父子节点都选中时只返回父节点  child: 只返回子节点"
+    },
+    ":default-selected-keys": {
+      "default": "-",
+      "value": "",
+      "type": "Array<string | number>",
+      "description": "默认选中的树节点",
+      "description_zh": "默认选中的树节点"
+    },
+    "v-model:selected-keys": {
+      "default": "-",
+      "value": "",
+      "type": "Array<string | number>",
+      "description": "选中的树节点",
+      "description_zh": "选中的树节点"
+    },
+    ":default-checked-keys": {
+      "default": "-",
+      "value": "",
+      "type": "Array<string | number>",
+      "description": "默认选中复选框的树节点",
+      "description_zh": "默认选中复选框的树节点"
+    },
+    "v-model:checked-keys": {
+      "default": "-",
+      "value": "",
+      "type": "Array<string | number>",
+      "description": "选中复选框的树节点",
+      "description_zh": "选中复选框的树节点"
+    },
+    "default-expanded-keys": {
+      "default": "-",
+      "value": "",
+      "type": "Array<string | number>",
+      "description": "默认展开的节点",
+      "description_zh": "默认展开的节点"
+    },
+    "v-model:expanded-keys": {
+      "default": "-",
+      "value": "",
+      "type": "Array<string | number>",
+      "description": "展开的节点",
+      "description_zh": "展开的节点"
+    },
+    ":data": {
+      "default": "[]",
+      "value": "",
+      "type": "TreeNodeData[]",
+      "description": "传入data,生成对应的树结构",
+      "description_zh": "传入data,生成对应的树结构",
+      "required": true
+    },
+    ":field-names": {
+      "default": "-",
+      "value": "",
+      "type": "TreeFieldNames",
+      "description": "指定节点数据中的字段名",
+      "description_zh": "指定节点数据中的字段名"
+    },
+    "show-line": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否展示连接线",
+      "description_zh": "是否展示连接线"
+    },
+    ":load-more": {
+      "default": "-",
+      "value": "",
+      "type": "(node: TreeNodeData) => Promise<void>",
+      "description": "异步加载数据的回调，返回一个 Promise",
+      "description_zh": "异步加载数据的回调，返回一个 Promise"
+    },
+    "draggable": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否可以拖拽",
+      "description_zh": "是否可以拖拽"
+    },
+    ":allow-drop": {
+      "default": "-",
+      "value": "",
+      "type": "(options: { dropNode: TreeNodeData; dropPosition: -1 | 0 | 1;}) => boolean",
+      "description": "拖拽时是否允许在某节点上释放",
+      "description_zh": "拖拽时是否允许在某节点上释放"
+    },
+    ":virtual-list-props": {
+      "default": "-",
+      "value": "",
+      "type": "VirtualListProps",
+      "description": "传递虚拟列表属性，传入此参数以开启虚拟滚动，VirtualListProps",
+      "description_zh": "传递虚拟列表属性，传入此参数以开启虚拟滚动，VirtualListProps"
+    },
+    "default-expand-selected": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否默认展开已选中节点的父节点",
+      "description_zh": "是否默认展开已选中节点的父节点"
+    },
+    "default-expand-checked": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否默认展开已选中复选框节点的父节点",
+      "description_zh": "是否默认展开已选中复选框节点的父节点"
+    },
+    "auto-expand-parent": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "是否自动展开已展开节点的父节点",
+      "description_zh": "是否自动展开已展开节点的父节点"
+    },
+    "v-model:half-checked-keys": {
+      "default": "-",
+      "value": "",
+      "type": "Array<string | number>",
+      "description": "半选状态的节点.仅在 checkable 且 checkStrictly 时生效",
+      "description_zh": "半选状态的节点.仅在 checkable 且 checkStrictly 时生效"
+    },
+    "animation": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "是否开启展开时的过渡动效",
+      "description_zh": "是否开启展开时的过渡动效"
+    },
+    ":action-on-node-click": {
+      "default": "-",
+      "value": "",
+      "type": "'expand'",
+      "description": "点击节点的时候触发的动作",
+      "description_zh": "点击节点的时候触发的动作"
+    }
+  },
+  "methods": [
+    {
+      "name": "scrollIntoView",
+      "description": "虚拟列表滚动某个元素",
+      "params": "options: { index?: number; key?: number | string; align: 'auto' | 'top' | 'bottom'}",
+      "description_zh": "虚拟列表滚动某个元素"
+    },
+    {
+      "name": "getSelectedNodes",
+      "description": "获取选中的节点",
+      "params": "-",
+      "description_zh": "获取选中的节点"
+    },
+    {
+      "name": "getCheckedNodes",
+      "description": "获取选中复选框的节点。支持传入 checkedStrategy，没有传则取组件的配置。",
+      "params": "options: checkedStrategy?: 'all' | 'parent' | 'child'; includeHalfChecked?: boolean;",
+      "description_zh": "获取选中复选框的节点。支持传入 checkedStrategy，没有传则取组件的配置。"
+    },
+    {
+      "name": "getHalfCheckedNodes",
+      "description": "获取复选框半选的节点",
+      "params": "-",
+      "description_zh": "获取复选框半选的节点"
+    },
+    {
+      "name": "getExpandedNodes",
+      "description": "获取展开的节点",
+      "params": "-",
+      "description_zh": "获取展开的节点"
+    },
+    {
+      "name": "checkAll",
+      "description": "设置全部节点的复选框状态",
+      "params": "checked: boolean",
+      "description_zh": "设置全部节点的复选框状态"
+    },
+    {
+      "name": "checkNode",
+      "description": "设置指定节点的复选框状态",
+      "params": "key: TreeNodeKey | TreeNodeKey[]checked: booleanonlyCheckLeaf: boolean",
+      "description_zh": "设置指定节点的复选框状态"
+    },
+    {
+      "name": "selectAll",
+      "description": "设置全部节点的选中状态",
+      "params": "selected: boolean",
+      "description_zh": "设置全部节点的选中状态"
+    },
+    {
+      "name": "selectNode",
+      "description": "设置指定节点的选中状态",
+      "params": "key: TreeNodeKey | TreeNodeKey[]selected: boolean",
+      "description_zh": "设置指定节点的选中状态"
+    },
+    {
+      "name": "expandAll",
+      "description": "设置全部节点的展开状态",
+      "params": "expanded: boolean",
+      "description_zh": "设置全部节点的展开状态"
+    },
+    {
+      "name": "expandNode",
+      "description": "设置指定节点的展开状态",
+      "params": "key: TreeNodeKey | TreeNodeKey[]expanded: boolean",
+      "description_zh": "设置指定节点的展开状态"
+    }
+  ],
+  "link": "https://arco.design/vue/component/tree#API",
+  "link_zh": "https://arco.design/vue/component/tree#API",
+  "events": [
+    {
+      "name": "select",
+      "description": "点击树节点时触发",
+      "description_zh": "点击树节点时触发",
+      "params": "selectedKeys: Array<string | number>data: { selected?: boolean; selectedNodes: TreeNodeData[]; node?: TreeNodeData; e?: Event; }"
+    },
+    {
+      "name": "check",
+      "description": "点击树节点复选框时触发。halfCheckedKeys 和 halfCheckedNodes 从 2.19.0 开始支持。",
+      "description_zh": "点击树节点复选框时触发。halfCheckedKeys 和 halfCheckedNodes 从 2.19.0 开始支持。",
+      "params": "checkedKeys: Array<string | number>data: { checked?: boolean; checkedNodes: TreeNodeData[]; node?: TreeNodeData; e?: Event; halfCheckedKeys: (string | number)[]; halfCheckedNodes: TreeNodeData[]; }"
+    },
+    {
+      "name": "expand",
+      "description": "展开/关闭",
+      "description_zh": "展开/关闭",
+      "params": "expandKeys: Array<string | number>data: { expanded?: boolean; expandNodes: TreeNodeData[]; node?: TreeNodeData; e?: Event; }"
+    },
+    {
+      "name": "drag-start",
+      "description": "节点开始拖拽",
+      "description_zh": "节点开始拖拽",
+      "params": "-"
+    },
+    {
+      "name": "drag-end",
+      "description": "节点结束拖拽",
+      "description_zh": "节点结束拖拽",
+      "params": "ev: DragEventnode: TreeNodeData"
+    },
+    {
+      "name": "drag-over",
+      "description": "节点被拖拽至可释放目标",
+      "description_zh": "节点被拖拽至可释放目标",
+      "params": "ev: DragEventnode: TreeNodeData"
+    },
+    {
+      "name": "drag-leave",
+      "description": "节点离开可释放目标",
+      "description_zh": "节点离开可释放目标",
+      "params": "ev: DragEventnode: TreeNodeData"
+    },
+    {
+      "name": "drop",
+      "description": "节点在可释放目标上释放",
+      "description_zh": "节点在可释放目标上释放",
+      "params": "data: { e: DragEvent; dragNode: TreeNodeData; dropNode: TreeNodeData; dropPosition: number; }"
+    }
+  ],
+  "typeDetail": {
+    "TreeNodeData": [
+      {
+        "name": "key",
+        "type": "string | number",
+        "description": "唯一标示",
+        "default": "-"
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "description": "该节点显示的标题",
+        "default": "-"
+      },
+      {
+        "name": "selectable",
+        "type": "boolean",
+        "description": "是否允许选中",
+        "default": "false"
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "description": "是否禁用节点",
+        "default": "false"
+      },
+      {
+        "name": "disableCheckbox",
+        "type": "boolean",
+        "description": "是否禁用复选框",
+        "default": "false"
+      },
+      {
+        "name": "checkable",
+        "type": "boolean",
+        "description": "是否显示多选框",
+        "default": "false"
+      },
+      {
+        "name": "draggable",
+        "type": "boolean",
+        "description": "是否可以拖拽",
+        "default": "false"
+      },
+      {
+        "name": "isLeaf",
+        "type": "boolean",
+        "description": "是否是叶子节点。动态加载时有效",
+        "default": "false"
+      },
+      {
+        "name": "icon",
+        "type": "() => VNode",
+        "description": "节点的图标",
+        "default": "-"
+      },
+      {
+        "name": "switcherIcon",
+        "type": "() => VNode",
+        "description": "定制 switcher 图标，优先级大于 tree",
+        "default": "-"
+      },
+      {
+        "name": "loadingIcon",
+        "type": "() => VNode",
+        "description": "定制 loading 图标，优先级大于 tree",
+        "default": "-"
+      },
+      {
+        "name": "dragIcon",
+        "type": "() => VNode",
+        "description": "定制 drag 图标，优先级大于 tree",
+        "default": "-"
+      },
+      {
+        "name": "children",
+        "type": "TreeNodeData[]",
+        "description": "子节点",
+        "default": "-"
+      }
+    ],
+    "TreeFieldNames": [
+      {
+        "name": "key",
+        "type": "string",
+        "description": "指定 key 在 TreeNodeData 中的字段名",
+        "default": "key"
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "description": "指定 title 在 TreeNodeData 中的字段名",
+        "default": "title"
+      },
+      {
+        "name": "disabled",
+        "type": "string",
+        "description": "指定 disabled 在 TreeNodeData 中的字段名",
+        "default": "disabled"
+      },
+      {
+        "name": "children",
+        "type": "string",
+        "description": "指定 children 在 TreeNodeData 中的字段名",
+        "default": "children"
+      },
+      {
+        "name": "isLeaf",
+        "type": "string",
+        "description": "指定 isLeaf 在 TreeNodeData 中的字段名",
+        "default": "isLeaf"
+      },
+      {
+        "name": "disableCheckbox",
+        "type": "string",
+        "description": "指定 disableCheckbox 在 TreeNodeData 中的字段名",
+        "default": "disableCheckbox"
+      },
+      {
+        "name": "checkable",
+        "type": "string",
+        "description": "指定 checkable 在 TreeNodeData 中的字段名",
+        "default": "checkable"
+      },
+      {
+        "name": "icon",
+        "type": "string",
+        "description": "指定 icon 在 TreeNodeData 中的字段名",
+        "default": "checkable"
+      }
+    ],
+    "VirtualListProps": [
+      {
+        "name": "height",
+        "type": "number | string",
+        "description": "可视区域高度",
+        "default": "-"
+      },
+      {
+        "name": "threshold",
+        "type": "number",
+        "description": "开启虚拟滚动的元素数量阈值，当数据数量小于阈值时不会开启虚拟滚动。",
+        "default": "-"
+      },
+      {
+        "name": "isStaticItemHeight",
+        "type": "boolean",
+        "description": "（已废除）元素高度是否是固定的。2.34.1 版本废除，请使用 fixedSize",
+        "default": "false"
+      },
+      {
+        "name": "fixedSize",
+        "type": "boolean",
+        "description": "元素高度是否是固定的。",
+        "default": "false"
+      },
+      {
+        "name": "estimatedSize",
+        "type": "number",
+        "description": "元素高度不固定时的预估高度。",
+        "default": "-"
+      },
+      {
+        "name": "buffer",
+        "type": "number",
+        "description": "视口边界外提前挂载的元素数量。",
+        "default": "10"
+      }
+    ]
+  }
+}

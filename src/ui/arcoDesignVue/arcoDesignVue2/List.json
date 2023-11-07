@@ -1,0 +1,165 @@
+{
+  "name": "AList",
+  "props": {
+    ":data": {
+      "default": "-",
+      "value": "",
+      "type": "any[]",
+      "description": "列表数据，需要和 item 插槽同时使用",
+      "description_zh": "列表数据，需要和 item 插槽同时使用"
+    },
+    "size": {
+      "default": "medium",
+      "value": ["small", "medium", "large"],
+      "type": "'small' | 'medium' | 'large'",
+      "description": "列表大小",
+      "description_zh": "列表大小"
+    },
+    "bordered": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "是否显示边框",
+      "description_zh": "是否显示边框"
+    },
+    "split": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "是否显示分割线",
+      "description_zh": "是否显示分割线"
+    },
+    "loading": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否为加载中状态",
+      "description_zh": "是否为加载中状态"
+    },
+    "hoverable": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否显示选中样式",
+      "description_zh": "是否显示选中样式"
+    },
+    "pagination-props": {
+      "default": "-",
+      "value": "",
+      "type": "PaginationProps",
+      "description": "列表分页配置",
+      "description_zh": "列表分页配置"
+    },
+    ":grid-props": {
+      "default": "-",
+      "value": "",
+      "type": "object",
+      "description": "列表栅格配置",
+      "description_zh": "列表栅格配置"
+    },
+    "max-height": {
+      "default": "0",
+      "value": "",
+      "type": "string | number",
+      "description": "列表的最大高度",
+      "description_zh": "列表的最大高度"
+    },
+    ":bottom-offset": {
+      "default": "0",
+      "value": "",
+      "type": "number",
+      "description": "触发到达底部的距离阈值",
+      "description_zh": "触发到达底部的距离阈值"
+    },
+    "：virtual-list-props": {
+      "default": "-",
+      "value": "",
+      "type": "VirtualListProps",
+      "description": "传递虚拟列表属性，传入此参数以开启虚拟滚动 VirtualListProps",
+      "description_zh": "传递虚拟列表属性，传入此参数以开启虚拟滚动 VirtualListProps"
+    },
+    "scrollbar": {
+      "default": "true",
+      "value": "",
+      "type": "boolean | ScrollbarProps",
+      "description": "是否开启虚拟滚动条",
+      "description_zh": "是否开启虚拟滚动条"
+    }
+  },
+  "methods": [
+    {
+      "name": "scrollIntoView",
+      "params": "options: { index?: number; key?: number | string; align: 'auto' | 'top' | 'bottom'}",
+      "description": "虚拟滚动到某个元素",
+      "description_zh": "虚拟滚动到某个元素"
+    }
+  ],
+  "link": "https://arco.design/vue/component/list",
+  "link_zh": "https://arco.design/vue/component/list",
+  "events": [
+    {
+      "name": "scroll",
+      "description": "列表滚动时触发",
+      "description_zh": "列表滚动时触发",
+      "params": "-"
+    },
+    {
+      "name": "reach-bottom",
+      "description": "当列表到达底部时触发",
+      "description_zh": "当列表到达底部时触发",
+      "params": "-"
+    },
+    {
+      "name": "page-change",
+      "description": "表格分页发生改变时触发",
+      "description_zh": "表格分页发生改变时触发",
+      "params": "page: number"
+    },
+    {
+      "name": "page-size-change",
+      "description": "表格每页数据数量发生改变时触发",
+      "description_zh": "表格每页数据数量发生改变时触发",
+      "params": "pageSize: number"
+    }
+  ],
+  "typeDetail": {
+    "VirtualListProps": [
+      {
+        "name": "height",
+        "type": "number | string",
+        "description": "可视区域高度",
+        "default": "-"
+      },
+      {
+        "name": "threshold",
+        "type": "number",
+        "description": "开启虚拟滚动的元素数量阈值，当数据数量小于阈值时不会开启虚拟滚动。",
+        "default": "-"
+      },
+      {
+        "name": "isStaticItemHeight",
+        "type": "boolean",
+        "description": "（已废除）元素高度是否是固定的。2.34.1 版本废除，请使用 fixedSize",
+        "default": "false"
+      },
+      {
+        "name": "fixedSize",
+        "type": "boolean",
+        "description": "元素高度是否是固定的。",
+        "default": "false"
+      },
+      {
+        "name": "estimatedSize",
+        "type": "number",
+        "description": "元素高度不固定时的预估高度。",
+        "default": "-"
+      },
+      {
+        "name": "buffer",
+        "type": "number",
+        "description": "视口边界外提前挂载的元素数量。",
+        "default": "10"
+      }
+    ]
+  }
+}

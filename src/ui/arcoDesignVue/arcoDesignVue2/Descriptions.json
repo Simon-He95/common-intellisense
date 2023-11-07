@@ -1,0 +1,103 @@
+{
+  "name": "ADescriptions",
+  "props": {
+    ":data": {
+      "default": "[]",
+      "value": "",
+      "type": "DescData[]",
+      "description": "描述列表的数据",
+      "description_zh": "描述列表的数据",
+      "required": true
+    },
+    ":column": {
+      "default": "3",
+      "value": "",
+      "type": "number | ResponsiveValue",
+      "description": "每行放置的数据个数。2.20.0 版本支持响应式配置，配置可参考 Grid",
+      "description_zh": "每行放置的数据个数。2.20.0 版本支持响应式配置，配置可参考 Grid"
+    },
+    "title": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "描述列表的标题",
+      "description_zh": "描述列表的标题",
+      "required": true
+    },
+    "layout": {
+      "default": "horizontal",
+      "value": ["horizontal", "vertical", "inline-horizontal", "inline-vertical"],
+      "type": "'horizontal' | 'vertical' | 'inline-horizontal' | 'inline-vertical'",
+      "description": "描述列表的排列方式",
+      "description_zh": "描述列表的排列方式"
+    },
+    "align": {
+      "default": "left",
+      "value": "",
+      "type": "TextAlign | { label?: TextAlign; value?: TextAlign }",
+      "description": "文字的对齐位置",
+      "description_zh": "文字的对齐位置"
+    },
+    "size": {
+      "default": "-",
+      "value": ["mini", "small", "medium", "large"],
+      "type": "'mini' | 'small' | 'medium' | 'large'",
+      "description": "描述列表的大小",
+      "description_zh": "描述列表的大小"
+    },
+    "bordered": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否显示边框",
+      "description_zh": "是否显示边框"
+    },
+    ":label-style": {
+      "default": "-",
+      "value": "",
+      "type": "CSSProperties",
+      "description": "数据标签的样式",
+      "description_zh": "数据标签的样式"
+    },
+    ":value-style": {
+      "default": "-",
+      "value": "",
+      "type": "CSSProperties",
+      "description": "数据内容的样式",
+      "description_zh": "数据内容的样式"
+    },
+    "table-layout": {
+      "default": "auto",
+      "value": ["auto", "fixed"],
+      "type": "'auto' | 'fixed'",
+      "description": "描述中表格样式的 layout-fixed，当设置成 fixed 时，宽度会均分。",
+      "description_zh": "描述中表格样式的 layout-fixed，当设置成 fixed 时，宽度会均分。"
+    }
+  },
+  "methods": [],
+  "link": "https://arco.design/vue/component/descriptions#API",
+  "link_zh": "https://arco.design/vue/component/descriptions#API",
+  "events": [],
+  "typeDetail": {
+    "DescData": [
+      {
+        "name": "label",
+        "type": "string | RenderFunction",
+        "description": "标签",
+        "default": "-"
+      },
+      {
+        "name": "value",
+        "type": "string | RenderFunction",
+        "description": "数据",
+        "default": "-"
+      },
+      {
+        "name": "span",
+        "type": "number",
+        "description": "所占列数",
+        "default": "-"
+      }
+    ]
+  }
+}

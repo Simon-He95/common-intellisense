@@ -1,0 +1,925 @@
+{
+  "name": "ATable",
+  "props": {
+    ":columns": {
+      "default": "[]",
+      "value": "",
+      "type": "TableColumnData[]",
+      "description": "表格的列描述信息",
+      "description_zh": "表格的列描述信息",
+      "required": true
+    },
+    ":data": {
+      "default": "[]",
+      "value": "",
+      "type": "TableData[]",
+      "description": "表格的数据",
+      "description_zh": "表格的数据",
+      "required": true
+    },
+    "bordered": {
+      "default": "true",
+      "value": "",
+      "type": "boolean | TableBorder",
+      "description": "是否显示边框",
+      "description_zh": "是否显示边框"
+    },
+    "hoverable": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "是否显示选中效果",
+      "description_zh": "是否显示选中效果"
+    },
+    "stripe": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否开启斑马纹效果",
+      "description_zh": "是否开启斑马纹效果"
+    },
+    "size": {
+      "default": "large",
+      "value": ["mini", "small", "medium", "large"],
+      "type": "'mini' | 'small' | 'medium' | 'large'",
+      "description": "表格的大小",
+      "description_zh": "表格的大小"
+    },
+    "table-layout-fixed": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "表格的 table-layout 属性设置为 fixed，设置为 fixed 后，表格的宽度不会被内容撑开超出 100%。",
+      "description_zh": "表格的 table-layout 属性设置为 fixed，设置为 fixed 后，表格的宽度不会被内容撑开超出 100%。"
+    },
+    "loading": {
+      "default": "false",
+      "value": "",
+      "type": "boolean | object",
+      "description": "是否为加载中状态",
+      "description_zh": "是否为加载中状态"
+    },
+    ":row-selection": {
+      "default": "-",
+      "value": "",
+      "type": "TableRowSelection",
+      "description": "表格的行选择器配置",
+      "description_zh": "表格的行选择器配置"
+    },
+    ":expandable": {
+      "default": "-",
+      "value": "",
+      "type": "TableExpandable",
+      "description": "表格的展开行配置",
+      "description_zh": "表格的展开行配置"
+    },
+    ":scroll": {
+      "default": "-",
+      "value": "",
+      "type": "{ x?: number | string; y?: number | string; minWidth?: number | string; maxHeight?: number | string;}",
+      "description": "表格的滚动属性配置。2.13.0 版本增加字符型值的支持。2.20.0 版本增加 minWidth,maxHeight 的支持。",
+      "description_zh": "表格的滚动属性配置。2.13.0 版本增加字符型值的支持。2.20.0 版本增加 minWidth,maxHeight 的支持。"
+    },
+    ":pagination": {
+      "default": "true",
+      "value": "",
+      "type": "boolean | PaginationProps",
+      "description": "分页的属性配置",
+      "description_zh": "分页的属性配置"
+    },
+    "page-position": {
+      "default": "br",
+      "value": ["tl", "top", "tr", "bl", "bottom", "br"],
+      "type": "'tl' | 'top' | tr' | 'bl' | 'bottom' | 'br'",
+      "description": "分页选择器的位置",
+      "description_zh": "分页选择器的位置"
+    },
+    ":indent-size": {
+      "default": "16",
+      "value": "",
+      "type": "number",
+      "description": "树形表格的缩进距离",
+      "description_zh": "树形表格的缩进距离"
+    },
+    "row-key": {
+      "default": "key",
+      "value": "",
+      "type": "string",
+      "description": "表格行 key 的取值字段",
+      "description_zh": "表格行 key 的取值字段"
+    },
+    "show-header": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "是否显示表头",
+      "description_zh": "是否显示表头"
+    },
+    ":virtual-list-props": {
+      "default": "-",
+      "value": "",
+      "type": "VirtualListProps",
+      "description": "传递虚拟列表属性，传入此参数以开启虚拟滚动 VirtualListProps",
+      "description_zh": "传递虚拟列表属性，传入此参数以开启虚拟滚动 VirtualListProps"
+    },
+    ":span-method": {
+      "default": "-",
+      "value": "",
+      "type": "(data: { record: TableData; column: TableColumnData | TableOperationColumn; rowIndex: number; columnIndex: number;}) => { rowspan?: number; colspan?: number } | void",
+      "description": "单元格合并方法（索引从数据项开始计数）",
+      "description_zh": "单元格合并方法（索引从数据项开始计数）"
+    },
+    "span-all": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否让合并方法的索引包含所有",
+      "description_zh": "是否让合并方法的索引包含所有"
+    },
+    ":load-more": {
+      "default": "-",
+      "value": "",
+      "type": "(record: TableData, done: (children?: TableData[]) => void) => void",
+      "description": "数据懒加载函数，传入时开启懒加载功能",
+      "description_zh": "数据懒加载函数，传入时开启懒加载功能"
+    },
+    "filter-icon-align-left": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "筛选图标是否左对齐",
+      "description_zh": "筛选图标是否左对齐"
+    },
+    "hide-expand-button-on-empty": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否在子树为空时隐藏展开按钮",
+      "description_zh": "是否在子树为空时隐藏展开按钮"
+    },
+    "row-class": {
+      "default": "-",
+      "value": "",
+      "type": "string| any[]| Record<string, any>| ((record: TableData, rowIndex: number) => any)",
+      "description": "表格行元素的类名。2.34.0 版本增加函数值支持",
+      "description_zh": "表格行元素的类名。2.34.0 版本增加函数值支持"
+    },
+    ":draggable": {
+      "default": "-",
+      "value": "",
+      "type": "TableDraggable",
+      "description": "表格拖拽排序的配置",
+      "description_zh": "表格拖拽排序的配置"
+    },
+    "column-resizable": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否允许调整列宽",
+      "description_zh": "是否允许调整列宽"
+    },
+    "summary": {
+      "default": "-",
+      "value": "",
+      "type": "boolean| ((params: { columns: TableColumnData[]; data: TableData[]; }) => TableData[])",
+      "description": "显示表尾总结行",
+      "description_zh": "显示表尾总结行"
+    },
+    "summary-text": {
+      "default": "Summary",
+      "value": "",
+      "type": "string",
+      "description": "总结行的首列文字",
+      "description_zh": "总结行的首列文字"
+    },
+    ":summary-span-method": {
+      "default": "-",
+      "value": "",
+      "type": "(data: { record: TableData; column: TableColumnData | TableOperationColumn; rowIndex: number; columnIndex: number;}) => { rowspan?: number; colspan?: number } | void",
+      "description": "总结行的单元格合并方法",
+      "description_zh": "总结行的单元格合并方法"
+    },
+    ":selected-keys": {
+      "default": "-",
+      "value": "",
+      "type": "(string | number)[]",
+      "description": "已选择的行（受控模式）优先于 rowSelection",
+      "description_zh": "已选择的行（受控模式）优先于 rowSelection"
+    },
+    ":default-selected-keys": {
+      "default": "-",
+      "value": "",
+      "type": "(string | number)[]",
+      "description": "默认已选择的行（非受控模式）优先于 rowSelection",
+      "description_zh": "默认已选择的行（非受控模式）优先于 rowSelection"
+    },
+    ":expanded-keys": {
+      "default": "-",
+      "value": "",
+      "type": "(string | number)[]",
+      "description": "显示的展开行、子树（受控模式）优先于 expandable",
+      "description_zh": "显示的展开行、子树（受控模式）优先于 expandable"
+    },
+    ":default-expanded-keys": {
+      "default": "-",
+      "value": "",
+      "type": "(string | number)[]",
+      "description": "默认显示的展开行、子树（非受控模式）优先于 expandable",
+      "description_zh": "默认显示的展开行、子树（非受控模式）优先于 expandable"
+    },
+    "default-expand-all-rows": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否默认展开所有的行",
+      "description_zh": "是否默认展开所有的行"
+    },
+    "sticky-header": {
+      "default": "false",
+      "value": "",
+      "type": "boolean | number",
+      "description": "是否开启表头吸顶",
+      "description_zh": "是否开启表头吸顶"
+    },
+    "scrollbar": {
+      "default": "true",
+      "value": "",
+      "type": "boolean | ScrollbarProps",
+      "description": "是否开启虚拟滚动条",
+      "description_zh": "是否开启虚拟滚动条"
+    },
+    "show-empty-tree": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否展示空子树",
+      "description_zh": "是否展示空子树"
+    }
+  },
+  "methods": [
+    {
+      "name": "selectAll",
+      "description": "设置全选状态",
+      "params": "checked: boolean",
+      "description_zh": "设置全选状态"
+    },
+    {
+      "name": "select",
+      "description": "设置行选择器状态",
+      "params": "rowKey: string | number | (string | number)[]checked: boolean",
+      "description_zh": "设置行选择器状态"
+    },
+    {
+      "name": "expandAll",
+      "description": "设置全部展开状态",
+      "params": "checked: boolean",
+      "description_zh": "设置全部展开状态"
+    },
+    {
+      "name": "expand",
+      "description": "设置展开状态",
+      "params": "rowKey: string | number | (string | number)[]checked: boolean",
+      "description_zh": "设置展开状态"
+    },
+    {
+      "name": "resetFilters",
+      "description": "重置列的筛选器",
+      "params": "dataIndex: string | string[]",
+      "description_zh": "重置列的筛选器"
+    },
+    {
+      "name": "clearFilters",
+      "description": "清空列的筛选器",
+      "params": "dataIndex: string | string[]",
+      "description_zh": "清空列的筛选器"
+    },
+    {
+      "name": "resetSorters",
+      "description": "重置列的排序",
+      "params": "-",
+      "description_zh": "重置列的排序"
+    },
+    {
+      "name": "clearSorters",
+      "description": "清空列的排序",
+      "params": "-",
+      "description_zh": "清空列的排序"
+    }
+  ],
+  "link": "https://arco.design/vue/component/table#API",
+  "link_zh": "https://arco.design/vue/component/table#API",
+  "events": [
+    {
+      "name": "expand",
+      "description": "点击展开行时触发",
+      "description_zh": "点击展开行时触发",
+      "params": "rowKey: string | numberrecord: TableData"
+    },
+    {
+      "name": "expanded-change",
+      "description": "已展开的数据行发生改变时触发",
+      "description_zh": "已展开的数据行发生改变时触发",
+      "params": "rowKeys: (string | number)[]"
+    },
+    {
+      "name": "select",
+      "description": "点击行选择器时触发",
+      "description_zh": "点击行选择器时触发",
+      "params": "rowKeys: string | number[]rowKey: string | numberrecord: TableData"
+    },
+    {
+      "name": "select-all",
+      "description": "点击全选选择器时触发",
+      "description_zh": "点击全选选择器时触发",
+      "params": "checked: boolean"
+    },
+    {
+      "name": "selection-change",
+      "description": "已选择的数据行发生改变时触发",
+      "description_zh": "已选择的数据行发生改变时触发",
+      "params": "rowKeys: (string | number)[]"
+    },
+    {
+      "name": "sorter-change",
+      "description": "排序规则发生改变时触发",
+      "description_zh": "排序规则发生改变时触发",
+      "params": "dataIndex: stringdirection: string"
+    },
+    {
+      "name": "filter-change",
+      "description": "过滤选项发生改变时触发",
+      "description_zh": "过滤选项发生改变时触发",
+      "params": "dataIndex: stringfilteredValues: string[]"
+    },
+    {
+      "name": "page-change",
+      "description": "表格分页发生改变时触发",
+      "description_zh": "表格分页发生改变时触发",
+      "params": "page: number"
+    },
+    {
+      "name": "page-size-change",
+      "description": "表格每页数据数量发生改变时触发",
+      "description_zh": "表格每页数据数量发生改变时触发",
+      "params": "pageSize: number"
+    },
+    {
+      "name": "change",
+      "description": "表格数据发生变化时触发",
+      "description_zh": "表格数据发生变化时触发",
+      "params": "data: TableData[]extra: TableChangeExtracurrentData: TableData[]"
+    },
+    {
+      "name": "cell-mouse-enter",
+      "description": "单元格 hover 进入时触发",
+      "description_zh": "单元格 hover 进入时触发",
+      "params": "record: TableDatacolumn: TableColumnDataev: Event"
+    },
+    {
+      "name": "cell-mouse-leave",
+      "description": "单元格 hover 退出时触发",
+      "description_zh": "单元格 hover 退出时触发",
+      "params": "record: TableDatacolumn: TableColumnDataev: Event"
+    },
+    {
+      "name": "cell-click",
+      "description": "点击单元格时触发",
+      "description_zh": "点击单元格时触发",
+      "params": "record: TableDatacolumn: TableColumnDataev: Event"
+    },
+    {
+      "name": "row-click",
+      "description": "点击行数据时触发",
+      "description_zh": "点击行数据时触发",
+      "params": "record: TableDataev: Event"
+    },
+    {
+      "name": "header-click",
+      "description": "点击表头数据时触发",
+      "description_zh": "点击表头数据时触发",
+      "params": "column: TableColumnDataev: Event"
+    },
+    {
+      "name": "column-resize",
+      "description": "调整列宽时触发",
+      "description_zh": "调整列宽时触发",
+      "params": "dataIndex: stringwidth: number"
+    },
+    {
+      "name": "row-dblclick",
+      "description": "双击行数据时触发",
+      "description_zh": "双击行数据时触发",
+      "params": "record: TableDataev: Event"
+    },
+    {
+      "name": "cell-dblclick",
+      "description": "双击单元格时触发",
+      "description_zh": "双击单元格时触发",
+      "params": "record: TableDatacolumn: TableColumnDataev: Event"
+    },
+    {
+      "name": "row-contextmenu",
+      "description": "右击行数据时触发",
+      "description_zh": "右击行数据时触发",
+      "params": "record: TableDataev: Event"
+    },
+    {
+      "name": "cell-contextmenu",
+      "description": "右击单元格时触发",
+      "description_zh": "右击单元格时触发",
+      "params": "record: TableDatacolumn: TableColumnDataev: Event"
+    }
+  ],
+  "typeDetail": {
+    "TableData": [
+      {
+        "name": "key",
+        "type": "string",
+        "description": "数据行的key",
+        "default": "-"
+      },
+      {
+        "name": "expand",
+        "type": "string | RenderFunction",
+        "description": "扩展行内容",
+        "default": "-"
+      },
+      {
+        "name": "children",
+        "type": "TableData[]",
+        "description": "子数据",
+        "default": "-"
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "description": "是否禁用行选择器",
+        "default": "false"
+      },
+      {
+        "name": "isLeaf",
+        "type": "boolean",
+        "description": "是否是叶子节点",
+        "default": "false"
+      }
+    ],
+    "TableSortable": [
+      {
+        "name": "sortDirections",
+        "type": "('ascend' | 'descend')[]",
+        "description": "支持的排序方向",
+        "default": "-"
+      },
+      {
+        "name": "sorter",
+        "type": "(( a: TableData, b: TableData, extra: { dataIndex: string; direction: 'ascend' | 'descend' } ) => number) | boolean",
+        "description": "排序函数。设置为 true 可关闭内部排序。2.19.0 版本修改传出数据。",
+        "default": "-"
+      },
+      {
+        "name": "sortOrder",
+        "type": "'ascend' | 'descend' | ''",
+        "description": "排序方向",
+        "default": "-"
+      },
+      {
+        "name": "defaultSortOrder",
+        "type": "'ascend' | 'descend' | ''",
+        "description": "默认排序方向（非受控模式）",
+        "default": "-"
+      }
+    ],
+    "TableFilterable": [
+      {
+        "name": "filters",
+        "type": "TableFilterData[]",
+        "description": "筛选数据",
+        "default": "-"
+      },
+      {
+        "name": "filter",
+        "type": "(filteredValue: string[], record: TableData) => boolean",
+        "description": "筛选函数",
+        "default": "-"
+      },
+      {
+        "name": "multiple",
+        "type": "boolean",
+        "description": "是否支持多选",
+        "default": "false"
+      },
+      {
+        "name": "filteredValue",
+        "type": "string[]",
+        "description": "筛选项",
+        "default": "-"
+      },
+      {
+        "name": "defaultFilteredValue",
+        "type": "string[]",
+        "description": "默认筛选项",
+        "default": "-"
+      },
+      {
+        "name": "renderContent",
+        "type": "(data: { filterValue: string[]; setFilterValue: (filterValue: string[]) => void; handleFilterConfirm: (event: Event) => void; handleFilterReset: (event: Event) => void; }) => VNodeChild",
+        "description": "筛选框的内容",
+        "default": "-"
+      },
+      {
+        "name": "icon",
+        "type": "RenderFunction",
+        "description": "筛选按钮的图标",
+        "default": "-"
+      },
+      {
+        "name": "triggerProps",
+        "type": "TriggerProps",
+        "description": "筛选框的弹出框配置",
+        "default": "-"
+      },
+      {
+        "name": "alignLeft",
+        "type": "boolean",
+        "description": "筛选图标是否左对齐",
+        "default": "false"
+      }
+    ],
+    "TableFilterData": [
+      {
+        "name": "text",
+        "type": "string | RenderFunction",
+        "description": "筛选数据选项的内容",
+        "default": "-"
+      },
+      {
+        "name": "value",
+        "type": "string",
+        "description": "筛选数据选项的值",
+        "default": "-"
+      }
+    ],
+    "TableColumnData": [
+      {
+        "name": "dataIndex",
+        "type": "string",
+        "description": "列信息的标识，对应 TableData 中的数据",
+        "default": "-"
+      },
+      {
+        "name": "title",
+        "type": "string | RenderFunction",
+        "description": "列标题",
+        "default": "-"
+      },
+      {
+        "name": "width",
+        "type": "number",
+        "description": "列宽度",
+        "default": "-"
+      },
+      {
+        "name": "align",
+        "type": "'left' | 'center' | 'right'",
+        "description": "对齐方向",
+        "default": "-"
+      },
+      {
+        "name": "fixed",
+        "type": "'left' | 'right'",
+        "description": "固定位置",
+        "default": "-"
+      },
+      {
+        "name": "ellipsis",
+        "type": "boolean",
+        "description": "是否显示省略号",
+        "default": "false"
+      },
+      {
+        "name": "tooltip",
+        "type": "boolean | Record<string, any>",
+        "description": "是否在显示省略号时显示文本提示。可填入 tooltip 组件属性",
+        "default": "-"
+      },
+      {
+        "name": "sortable",
+        "type": "TableSortable",
+        "description": "排序相关选项",
+        "default": "-"
+      },
+      {
+        "name": "filterable",
+        "type": "TableFilterable",
+        "description": "过滤相关选项",
+        "default": "-"
+      },
+      {
+        "name": "children",
+        "type": "TableColumnData[]",
+        "description": "表头子数据，用于表头分组",
+        "default": "-"
+      },
+      {
+        "name": "cellClass",
+        "type": "ClassName",
+        "description": "自定义单元格类名",
+        "default": "-"
+      },
+      {
+        "name": "headerCellClass",
+        "type": "ClassName",
+        "description": "自定义表头单元格类名",
+        "default": "-"
+      },
+      {
+        "name": "bodyCellClass",
+        "type": "ClassName | ((record: TableData) => ClassName)",
+        "description": "自定义内容单元格类名",
+        "default": "-"
+      },
+      {
+        "name": "summaryCellClass",
+        "type": "ClassName | ((record: TableData) => ClassName)",
+        "description": "自定义总结栏单元格类名",
+        "default": "-"
+      },
+      {
+        "name": "cellStyle",
+        "type": "CSSProperties",
+        "description": "自定义单元格样式",
+        "default": "-"
+      },
+      {
+        "name": "headerCellStyle",
+        "type": "CSSProperties",
+        "description": "自定义表头单元格样式",
+        "default": "-"
+      },
+      {
+        "name": "bodyCellStyle",
+        "type": "CSSProperties | ((record: TableData) => CSSProperties)",
+        "description": "自定义内容单元格样式",
+        "default": "-"
+      },
+      {
+        "name": "summaryCellStyle",
+        "type": "CSSProperties | ((record: TableData) => CSSProperties)",
+        "description": "自定义总结栏单元格样式",
+        "default": "-"
+      },
+      {
+        "name": "render",
+        "type": "(data: { record: TableData; column: TableColumnData; rowIndex: number; }) => VNodeChild",
+        "description": "自定义列单元格的渲染",
+        "default": "-"
+      },
+      {
+        "name": "slotName",
+        "type": "string",
+        "description": "设置当前列的渲染插槽的名字。插槽参数同 #cell",
+        "default": "-"
+      },
+      {
+        "name": "titleSlotName",
+        "type": "string",
+        "description": "设置当前列的标题的渲染插槽的名字",
+        "default": "-"
+      }
+    ],
+    "TableBorder": [
+      {
+        "name": "wrapper",
+        "type": "boolean",
+        "description": "是否展示外边框",
+        "default": "false"
+      },
+      {
+        "name": "cell",
+        "type": "boolean",
+        "description": "是否展示单元格边框（表头+主体）",
+        "default": "false"
+      },
+      {
+        "name": "headerCell",
+        "type": "boolean",
+        "description": "是否展示表头单元格边框",
+        "default": "false"
+      },
+      {
+        "name": "bodyCell",
+        "type": "boolean",
+        "description": "是否展示主体单元格边框",
+        "default": "false"
+      }
+    ],
+    "TableRowSelection": [
+      {
+        "name": "type",
+        "type": "'checkbox' | 'radio'",
+        "description": "行选择器的类型",
+        "default": "-"
+      },
+      {
+        "name": "selectedRowKeys",
+        "type": "BaseType[]",
+        "description": "已选择的行（受控模式）",
+        "default": "-"
+      },
+      {
+        "name": "defaultSelectedRowKeys",
+        "type": "BaseType[]",
+        "description": "默认已选择的行（非受控模式）",
+        "default": "-"
+      },
+      {
+        "name": "showCheckedAll",
+        "type": "boolean",
+        "description": "是否显示全选选择器",
+        "default": "false"
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "description": "列标题",
+        "default": "-"
+      },
+      {
+        "name": "width",
+        "type": "number",
+        "description": "列宽度",
+        "default": "-"
+      },
+      {
+        "name": "fixed",
+        "type": "boolean",
+        "description": "是否固定",
+        "default": "false"
+      },
+      {
+        "name": "checkStrictly",
+        "type": "boolean",
+        "description": "是否开启严格选择模式",
+        "default": "true"
+      },
+      {
+        "name": "onlyCurrent",
+        "type": "boolean",
+        "description": "是否仅展示当前页的 keys（切换分页时清空 keys）",
+        "default": "false"
+      }
+    ],
+    "TableExpandable": [
+      {
+        "name": "expandedRowKeys",
+        "type": "BaseType[]",
+        "description": "显示的展开行（受控模式）",
+        "default": "-"
+      },
+      {
+        "name": "defaultExpandedRowKeys",
+        "type": "BaseType[]",
+        "description": "默认显示的展开行（非受控模式）",
+        "default": "-"
+      },
+      {
+        "name": "defaultExpandAllRows",
+        "type": "boolean",
+        "description": "是否默认展开所有的行",
+        "default": "false"
+      },
+      {
+        "name": "expandedRowRender",
+        "type": "(record: TableData) => VNodeChild",
+        "description": "自定义展开行内容",
+        "default": "-"
+      },
+      {
+        "name": "icon",
+        "type": "(expanded: boolean, record: TableData) => VNodeChild",
+        "description": "展开图标",
+        "default": "-"
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "description": "列标题",
+        "default": "-"
+      },
+      {
+        "name": "width",
+        "type": "number",
+        "description": "列宽度",
+        "default": "-"
+      },
+      {
+        "name": "fixed",
+        "type": "boolean",
+        "description": "是否固定",
+        "default": "false"
+      }
+    ],
+    "TableDraggable": [
+      {
+        "name": "type",
+        "type": "'row' | 'handle'",
+        "description": "拖拽类型",
+        "default": "-"
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "description": "列标题",
+        "default": "-"
+      },
+      {
+        "name": "width",
+        "type": "number",
+        "description": "列宽度",
+        "default": "-"
+      },
+      {
+        "name": "fixed",
+        "type": "boolean",
+        "description": "是否固定",
+        "default": "false"
+      }
+    ],
+    "TableChangeExtra": [
+      {
+        "name": "type",
+        "type": "'pagination' | 'sorter' | 'filter' | 'drag'",
+        "description": "触发类型",
+        "default": "-"
+      },
+      {
+        "name": "page",
+        "type": "number",
+        "description": "页码",
+        "default": "-"
+      },
+      {
+        "name": "pageSize",
+        "type": "number",
+        "description": "每页数据数",
+        "default": "-"
+      },
+      {
+        "name": "sorter",
+        "type": "Sorter",
+        "description": "排序信息",
+        "default": "-"
+      },
+      {
+        "name": "filters",
+        "type": "Filters",
+        "description": "筛选信息",
+        "default": "-"
+      },
+      {
+        "name": "dragTarget",
+        "type": "TableData",
+        "description": "拖拽信息",
+        "default": "-"
+      }
+    ],
+    "VirtualListProps": [
+      {
+        "name": "height",
+        "type": "number | string",
+        "description": "可视区域高度",
+        "default": "-"
+      },
+      {
+        "name": "threshold",
+        "type": "number",
+        "description": "开启虚拟滚动的元素数量阈值，当数据数量小于阈值时不会开启虚拟滚动。",
+        "default": "-"
+      },
+      {
+        "name": "isStaticItemHeight",
+        "type": "boolean",
+        "description": "（已废除）元素高度是否是固定的。2.34.1 版本废除，请使用 fixedSize",
+        "default": "false"
+      },
+      {
+        "name": "fixedSize",
+        "type": "boolean",
+        "description": "元素高度是否是固定的。",
+        "default": "false"
+      },
+      {
+        "name": "estimatedSize",
+        "type": "number",
+        "description": "元素高度不固定时的预估高度。",
+        "default": "-"
+      },
+      {
+        "name": "buffer",
+        "type": "number",
+        "description": "视口边界外提前挂载的元素数量。",
+        "default": "10"
+      }
+    ]
+  }
+}
