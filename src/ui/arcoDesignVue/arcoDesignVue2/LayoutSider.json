@@ -1,0 +1,93 @@
+{
+  "name": "ALayoutSider",
+  "props": {
+    "theme": {
+      "default": "'light'",
+      "value": ["light", "dark"],
+      "type": "'dark' | 'light'",
+      "description": "主题颜色",
+      "description_zh": "主题颜色"
+    },
+    "collapsed": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "当前收起状态",
+      "description_zh": "当前收起状态"
+    },
+    "default-collapsed": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "默认的收起状态",
+      "description_zh": "默认的收起状态"
+    },
+    "collapsible": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否可收起",
+      "description_zh": "是否可收起"
+    },
+    ":width": {
+      "default": "200",
+      "value": "",
+      "type": "number",
+      "description": "宽度",
+      "description_zh": "宽度"
+    },
+    ":collapsed-width": {
+      "default": "48",
+      "value": "",
+      "type": "number",
+      "description": "收缩宽度",
+      "description_zh": "收缩宽度"
+    },
+    "reverse-arrow": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "翻转折叠提示箭头的方向，当 Sider 在右边时可以使用",
+      "description_zh": "翻转折叠提示箭头的方向，当 Sider 在右边时可以使用"
+    },
+    "breakpoint": {
+      "default": "-",
+      "value": ["xxl", "xl", "lg", "md", "sm", "xs"],
+      "type": "'xxl' | 'xl' | 'lg' | 'md' | 'sm' | 'xs'",
+      "description": "触发响应式布局的断点, 详见响应式栅格",
+      "description_zh": "触发响应式布局的断点, 详见响应式栅格"
+    },
+    ":resize-directions": {
+      "default": "-",
+      "value": "",
+      "type": "Array<'left' | 'right' | 'top' | 'bottom'>",
+      "description": "可以用 ResizeBox 替换原生的 aside 标签，这个参数即 ResizeBox的 directions 参数。详情请看 ResizeBox。",
+      "description_zh": "可以用 ResizeBox 替换原生的 aside 标签，这个参数即 ResizeBox的 directions 参数。详情请看 ResizeBox。"
+    },
+    "hide-trigger": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "隐藏底部折叠触发器",
+      "description_zh": "隐藏底部折叠触发器"
+    }
+  },
+  "methods": [],
+  "link": "https://arco.design/vue/component/layout#API",
+  "link_zh": "https://arco.design/vue/component/layout#API",
+  "events": [
+    {
+      "name": "collapse",
+      "description": "展开-收起时的事件，有点击 trigger 以及响应式反馈两种方式可以触发",
+      "description_zh": "展开-收起时的事件，有点击 trigger 以及响应式反馈两种方式可以触发",
+      "params": "collapsed: booleantype: 'clickTrigger'|'responsive'"
+    },
+    {
+      "name": "breakpoint",
+      "description": "触发响应式布局断点时的事件",
+      "description_zh": "触发响应式布局断点时的事件",
+      "params": "collapsed: boolean"
+    }
+  ],
+  "typeDetail": {}
+}
