@@ -1,0 +1,225 @@
+{
+  "name": "ATypographyTitle",
+  "props": {
+    "heading": {
+      "default": "1",
+      "value": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "type": "'1' | '2' | '3' | '4' | '5' | '6'",
+      "description": "标题级别，相当于 h1 h2 h3 h4 h5 h6",
+      "description_zh": "标题级别，相当于 h1 h2 h3 h4 h5 h6"
+    },
+    "type": {
+      "default": "-",
+      "value": [
+        "primary",
+        "secondary",
+        "success",
+        "warning",
+        "danger"
+      ],
+      "type": "'primary' | 'secondary' | 'success' | 'danger' | 'warning'",
+      "description": "文本类型",
+      "description_zh": "文本类型"
+    },
+    "bold": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "粗体",
+      "description_zh": "粗体"
+    },
+    "mark": {
+      "default": "false",
+      "value": "",
+      "type": "boolean | { color: string }",
+      "description": "添加标记样式",
+      "description_zh": "添加标记样式"
+    },
+    "underline": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "下划线样式",
+      "description_zh": "下划线样式"
+    },
+    "delete": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "删除线样式",
+      "description_zh": "删除线样式"
+    },
+    "code": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "代码块样式",
+      "description_zh": "代码块样式"
+    },
+    "disabled": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "禁用状态",
+      "description_zh": "禁用状态"
+    },
+    "editable": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "开启可编辑功能",
+      "description_zh": "开启可编辑功能"
+    },
+    "v-model:editing": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否在编辑状态",
+      "description_zh": "是否在编辑状态"
+    },
+    "default-editing": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "默认的编辑状态",
+      "description_zh": "默认的编辑状态"
+    },
+    "edit-v-model:text": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "编辑的文字",
+      "description_zh": "编辑的文字"
+    },
+    "copyable": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "开启复制功能",
+      "description_zh": "开启复制功能"
+    },
+    "copy-text": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "复制的文字",
+      "description_zh": "复制的文字"
+    },
+    ":copy-delay": {
+      "default": "3000",
+      "value": "",
+      "type": "number",
+      "description": "复制成功后，复制按钮恢复到可点击状态的延迟时间，单位是毫秒",
+      "description_zh": "复制成功后，复制按钮恢复到可点击状态的延迟时间，单位是毫秒"
+    },
+    "ellipsis": {
+      "default": "false",
+      "value": "",
+      "type": "boolean | EllipsisConfig",
+      "description": "自动溢出省略，具体参数配置看 EllipsisConfig",
+      "description_zh": "自动溢出省略，具体参数配置看 EllipsisConfig"
+    },
+    ":edit-tooltip-props": {
+      "default": "-",
+      "value": "",
+      "type": "object",
+      "description": "编辑按钮问题提示配置",
+      "description_zh": "编辑按钮问题提示配置"
+    },
+    ":copy-tooltip-props": {
+      "default": "-",
+      "value": "",
+      "type": "object",
+      "description": "拷贝按钮问题提示配置",
+      "description_zh": "拷贝按钮问题提示配置"
+    }
+  },
+  "methods": [],
+  "link": "https://arco.design/vue/component/typography",
+  "link_zh": "https://arco.design/vue/component/typography",
+  "events": [
+    {
+      "name": "edit-start",
+      "description": "开始编辑",
+      "description_zh": "开始编辑",
+      "params": "-"
+    },
+    {
+      "name": "change",
+      "description": "编辑内容变化",
+      "description_zh": "编辑内容变化",
+      "params": "text: string"
+    },
+    {
+      "name": "edit-end",
+      "description": "编辑结束",
+      "description_zh": "编辑结束",
+      "params": "-"
+    },
+    {
+      "name": "copy",
+      "description": "复制",
+      "description_zh": "复制",
+      "params": "text: string"
+    },
+    {
+      "name": "ellipsis",
+      "description": "省略变化事件",
+      "description_zh": "省略变化事件",
+      "params": "isEllipsis: boolean"
+    },
+    {
+      "name": "expand",
+      "description": "展开收起事件",
+      "description_zh": "展开收起事件",
+      "params": "expanded: boolean"
+    }
+  ],
+  "typeDetail": {
+    "EllipsisConfig": [
+      {
+        "name": "rows",
+        "type": "number",
+        "description": "显示省略的行数",
+        "default": "1"
+      },
+      {
+        "name": "expandable",
+        "type": "boolean",
+        "description": "是否支持展开/折叠",
+        "default": "false"
+      },
+      {
+        "name": "ellipsisStr",
+        "type": "string",
+        "description": "省略号",
+        "default": "'...'"
+      },
+      {
+        "name": "suffix",
+        "type": "string",
+        "description": "后缀",
+        "default": "-"
+      },
+      {
+        "name": "showTooltip",
+        "type": "boolean | { type: 'tooltip' | 'popover'; props: Record<string, any> }",
+        "description": "配置省略时的弹出框",
+        "default": "false"
+      },
+      {
+        "name": "css",
+        "type": "boolean",
+        "description": "是否使用 CSS 省略（此模式暂不支持展开、自定义省略号和后缀）",
+        "default": "false"
+      }
+    ]
+  }
+}
