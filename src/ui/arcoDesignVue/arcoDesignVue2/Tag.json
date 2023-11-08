@@ -3,72 +3,90 @@
   "props": {
     "color": {
       "default": "-",
-      "value": ["red", "orangered", "orange", "gold", "lime", "green", "cyan", "blue", "arcoblue", "purple", "pinkpurple", "magenta", "gray"],
+      "value": [
+        "red",
+        "orangered",
+        "orange",
+        "gold",
+        "lime",
+        "green",
+        "cyan",
+        "blue",
+        "arcoblue",
+        "purple",
+        "pinkpurple",
+        "magenta",
+        "gray"
+      ],
       "type": "'red' | 'orangered' | 'orange' | 'gold' | 'lime' | 'green' | 'cyan' | 'blue' | 'arcoblue' | 'purple' | 'pinkpurple' | 'magenta' | 'gray'",
-      "description": "标签的颜色",
+      "description": "The color of the label",
       "description_zh": "标签的颜色"
     },
     "size": {
-      "default": "'medium'",
-      "value": ["small", "medium", "large"],
+      "default": "medium",
+      "value": [
+        "small",
+        "medium",
+        "large"
+      ],
       "type": "'small' | 'medium' | 'large'",
-      "description": "标签的大小",
+      "description": "The size of the label",
       "description_zh": "标签的大小"
     },
     "bordered": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "是否显示边框",
+      "description": "Whether or not to display a border",
       "description_zh": "是否显示边框"
     },
     "v-model:visible": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "标签是否可见",
+      "description": "Whether the label is visible",
       "description_zh": "标签是否可见"
     },
     "default-visible": {
       "default": "true",
       "value": "",
       "type": "boolean",
-      "description": "标签默认是否可见",
+      "description": "Whether the label is visible by default",
       "description_zh": "标签默认是否可见"
     },
     "loading": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "标签是否为加载中状态",
+      "description": "Whether the tag is loading",
       "description_zh": "标签是否为加载中状态"
     },
     "closable": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "标签是否可关闭",
+      "description": "Whether the label can be closed",
       "description_zh": "标签是否可关闭"
     },
     "checkable": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "标签是否可选中",
+      "description": "Indicates whether the tag is selectable",
       "description_zh": "标签是否可选中"
     },
     "v-model:checked": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "标签是否选中（标签可选中时可用）",
+      "description": "Whether the label is selected (available when the label is selectable)",
       "description_zh": "标签是否选中（标签可选中时可用）"
     },
     "default-checked": {
       "default": "true",
       "value": "",
       "type": "boolean",
-      "description": "标签默认选中状态（标签可选中时可用）",
+      "description": "Tags are selected by default (available when tags are selectable)",
       "description_zh": "标签默认选中状态（标签可选中时可用）"
     }
   },
@@ -78,15 +96,17 @@
   "events": [
     {
       "name": "close",
-      "description": "点击关闭按钮时触发",
+      "description": "Triggered when the close button is clicked",
       "description_zh": "点击关闭按钮时触发",
-      "params": "ev: MouseEvent"
+      "params": "ev: MouseEvent",
+      "value": ""
     },
     {
       "name": "check",
-      "description": "用户选中时触发（仅在可选中模式下触发）",
+      "description": "Trigger when user selected (only in optional mode)",
       "description_zh": "用户选中时触发（仅在可选中模式下触发）",
-      "params": "checked: booleanev: MouseEvent"
+      "params": "checked: boolean, ev: MouseEvent",
+      "value": ""
     }
   ],
   "typeDetail": {}

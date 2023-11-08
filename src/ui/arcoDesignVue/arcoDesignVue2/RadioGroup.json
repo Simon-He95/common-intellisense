@@ -1,0 +1,100 @@
+{
+  "name": "ARadioGroup",
+  "props": {
+    "v-model": {
+      "default": "-",
+      "value": "",
+      "type": "string | number | boolean",
+      "description": "Binding value",
+      "description_zh": "绑定值",
+      "required": true
+    },
+    "default-value": {
+      "default": "''",
+      "value": "",
+      "type": "string | number | boolean",
+      "description": "Default (uncontrolled)",
+      "description_zh": "默认值（非受控状态）"
+    },
+    "type": {
+      "default": "radio",
+      "value": [
+        "radio",
+        "button"
+      ],
+      "type": "'radio' | 'button'",
+      "description": "The type of the radio box group",
+      "description_zh": "单选框组的类型"
+    },
+    "size": {
+      "default": "-",
+      "value": [
+        "mini",
+        "small",
+        "medium",
+        "large"
+      ],
+      "type": "'mini' | 'small' | 'medium' | 'large'",
+      "description": "The size of the radio box group",
+      "description_zh": "单选框组的尺寸"
+    },
+    ":options": {
+      "default": "-",
+      "value": "",
+      "type": "Array<string | number | RadioOption>",
+      "description": "Options",
+      "description_zh": "选项"
+    },
+    "direction": {
+      "default": "horizontal",
+      "value": [
+        "horizontal",
+        "vertical"
+      ],
+      "type": "'horizontal' | 'vertical'",
+      "description": "The direction of the radio box group",
+      "description_zh": "单选框组的方向"
+    },
+    "disabled": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to disable or not",
+      "description_zh": "是否禁用"
+    }
+  },
+  "methods": [],
+  "link": "https://arco.design/vue/component/radio",
+  "link_zh": "https://arco.design/vue/component/radio",
+  "events": [
+    {
+      "name": "change",
+      "description": "Triggered when the value changes",
+      "description_zh": "值改变时触发",
+      "params": "value: string | number | boolean",
+      "value": ""
+    }
+  ],
+  "typeDetail": {
+    "RadioOption": [
+      {
+        "name": "label",
+        "type": "RenderContent",
+        "description": "文案",
+        "default": "-"
+      },
+      {
+        "name": "value",
+        "type": "string | number",
+        "description": "选项的 value",
+        "default": "-"
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "description": "是否禁用",
+        "default": "false"
+      }
+    ]
+  }
+}

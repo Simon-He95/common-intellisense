@@ -1,0 +1,139 @@
+{
+  "name": "ATextarea",
+  "props": {
+    "v-model": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "Binding value",
+      "description_zh": "绑定值"
+    },
+    "default-value": {
+      "default": "''",
+      "value": "",
+      "type": "string",
+      "description": "Default (uncontrolled)",
+      "description_zh": "默认值（非受控状态）"
+    },
+    "placeholder": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "Cue text",
+      "description_zh": "提示文字",
+      "required": true
+    },
+    "disabled": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to disable or not",
+      "description_zh": "是否禁用"
+    },
+    "error": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether it is in an error state",
+      "description_zh": "是否为错误状态"
+    },
+    ":max-length": {
+      "default": "0",
+      "value": "",
+      "type": "number | { length: number; errorOnly?: boolean }",
+      "description": "The maximum length of the input value, the errorOnly property was added in version 2.12.0",
+      "description_zh": "输入值的最大长度，errorOnly 属性在 2.12.0 版本添加"
+    },
+    "show-word-limit": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether or not to display the word count",
+      "description_zh": "是否显示字数统计"
+    },
+    "allow-clear": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether or not to allow the text field to be emptied",
+      "description_zh": "是否允许清空文本域"
+    },
+    "auto-size": {
+      "default": "false",
+      "value": "",
+      "type": "boolean | { minRows?: number; maxRows?: number }",
+      "description": "Whether to make the text box responsive to the content height",
+      "description_zh": "是否让文本框自适应内容高度"
+    },
+    ":word-length": {
+      "default": "-",
+      "value": "",
+      "type": "(value: string) => number",
+      "description": "How character length is calculated",
+      "description_zh": "字符长度的计算方法"
+    },
+    ":word-slice": {
+      "default": "-",
+      "value": "",
+      "type": "(value: string, maxLength: number) => string",
+      "description": "The character truncation method, which is used with wordLength",
+      "description_zh": "字符截取方法，同 wordLength 一起使用"
+    }
+  },
+  "methods": [
+    {
+      "name": "focus",
+      "description": "Makes the input box get focus",
+      "params": "-",
+      "description_zh": "使输入框获取焦点",
+      "value": ""
+    },
+    {
+      "name": "blur",
+      "description": "Makes the input box lose focus",
+      "params": "-",
+      "description_zh": "使输入框失去焦点",
+      "value": ""
+    }
+  ],
+  "link": "https://arco.design/vue/component/textarea#API",
+  "link_zh": "https://arco.design/vue/component/textarea#API",
+  "events": [
+    {
+      "name": "input",
+      "description": "Triggered when the user inputs",
+      "description_zh": "用户输入时触发",
+      "params": "value: string, ev: Event",
+      "value": ""
+    },
+    {
+      "name": "change",
+      "description": "Triggers only when the text box is out of focus",
+      "description_zh": "仅在文本框失焦时触发",
+      "params": "value: string, ev: Event",
+      "value": ""
+    },
+    {
+      "name": "clear",
+      "description": "Triggered when the Clear button is clicked",
+      "description_zh": "点击清除按钮时触发",
+      "params": "ev: MouseEvent",
+      "value": ""
+    },
+    {
+      "name": "focus",
+      "description": "Triggered when a text box gets focus",
+      "description_zh": "文本框获取焦点时触发",
+      "params": "ev: FocusEvent",
+      "value": ""
+    },
+    {
+      "name": "blur",
+      "description": "Triggered when a text box loses focus",
+      "description_zh": "文本框失去焦点时触发",
+      "params": "ev: FocusEvent",
+      "value": ""
+    }
+  ],
+  "typeDetail": {}
+}

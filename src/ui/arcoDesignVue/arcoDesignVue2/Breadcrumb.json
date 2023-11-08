@@ -1,0 +1,59 @@
+{
+  "name": "ABreadcrumb",
+  "props": {
+    ":max-count": {
+      "default": "0",
+      "value": "",
+      "type": "number",
+      "description": "Maximum number of breadcrumbs to show (0 means no limit)",
+      "description_zh": "最多展示的面包屑数量（0表示不限制）"
+    },
+    ":routes": {
+      "default": "-",
+      "value": "",
+      "type": "BreadcrumbRoute[]",
+      "description": "Set the path",
+      "description_zh": "设置路径"
+    },
+    "separator": {
+      "default": "-",
+      "value": "",
+      "type": "string | number",
+      "description": "Separator literal",
+      "description_zh": "分隔符文字"
+    },
+    ":custom-url": {
+      "default": "-",
+      "value": "",
+      "type": "(paths: string[]) => string",
+      "description": "Custom link addresses",
+      "description_zh": "自定义链接地址"
+    }
+  },
+  "methods": [],
+  "link": "https://arco.design/vue/component/breadcrumb#API",
+  "link_zh": "https://arco.design/vue/component/breadcrumb#API",
+  "events": [],
+  "typeDetail": {
+    "BreadcrumbRoute": [
+      {
+        "name": "label",
+        "type": "string",
+        "description": "面包屑名称",
+        "default": "-"
+      },
+      {
+        "name": "path",
+        "type": "string",
+        "description": "跳转路径 (a标签的href)",
+        "default": "-"
+      },
+      {
+        "name": "children",
+        "type": "{ label: string; path: string; }[]",
+        "description": "下拉菜单展示项",
+        "default": "-"
+      }
+    ]
+  }
+}

@@ -5,56 +5,56 @@
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "是否允许一键清除",
+      "description": "Whether to allow one-click purge",
       "description_zh": "是否允许一键清除"
     },
     "defaultActiveFirstOption": {
       "default": "true",
       "value": "",
       "type": "boolean",
-      "description": "是否默认高亮第一个选项",
+      "description": "Whether to highlight the first option by default",
       "description_zh": "是否默认高亮第一个选项"
     },
     "disabled": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "是否禁用",
+      "description": "Whether to disable or not",
       "description_zh": "是否禁用"
     },
     "error": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "是否是错误状态。(废弃，下个大版本移除，使用 status='error' 替代)",
+      "description": "Whether it is an error state. (Deprecated, removed in the next major version, replaced with status='error')",
       "description_zh": "是否是错误状态。(废弃，下个大版本移除，使用 status='error' 替代)"
     },
     "loading": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "是否处于加载状态。",
+      "description": "Whether it is loading.",
       "description_zh": "是否处于加载状态。"
     },
     "strict": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "strict: true 的时候大小写敏感",
+      "description": "strict: true",
       "description_zh": "strict: true 的时候大小写敏感"
     },
     "defaultValue": {
       "default": "-",
       "value": "",
       "type": "string",
-      "description": "自动补全组件的默认值",
+      "description": "The default value for the autocomplete component",
       "description_zh": "自动补全组件的默认值"
     },
     "placeholder": {
       "default": "-",
       "value": "",
       "type": "string",
-      "description": "输入框提示",
+      "description": "Input box prompt",
       "description_zh": "输入框提示",
       "required": true
     },
@@ -62,35 +62,38 @@
       "default": "-",
       "value": "",
       "type": "string",
-      "description": "自动补全组件的值（受控模式）",
+      "description": "Values of Autocomplete Components (Controlled Mode)",
       "description_zh": "自动补全组件的值（受控模式）"
     },
     "status": {
       "default": "-",
-      "value": ["error", "warning"],
+      "value": [
+        "error",
+        "warning"
+      ],
       "type": "'error' | 'warning'",
-      "description": "状态",
+      "description": "state",
       "description_zh": "状态"
     },
     ":children": {
       "default": "-",
       "value": "",
       "type": "ReactNode",
-      "description": "自定义输入框/数据源",
+      "description": "Custom input boxes/data sources",
       "description_zh": "自定义输入框/数据源"
     },
     "className": {
       "default": "-",
       "value": "",
       "type": "string | string[]",
-      "description": "节点类名",
+      "description": "Node class name",
       "description_zh": "节点类名"
     },
     ":data": {
       "default": "-",
       "value": "",
       "type": "(string | { value: string; name: string; [key: string]: any } | ReactNode)[]",
-      "description": "自动完成的数据源",
+      "description": "Autocomplete data sources",
       "description_zh": "自动完成的数据源",
       "required": true
     },
@@ -98,56 +101,56 @@
       "default": "-",
       "value": "",
       "type": "Partial<InputProps>",
-      "description": "传递 Input 组件的属性。",
+      "description": "Pass the properties of the Input component.",
       "description_zh": "传递 Input 组件的属性。"
     },
     ":style": {
       "default": "-",
       "value": "",
       "type": "CSSProperties",
-      "description": "节点样式",
+      "description": "Node style",
       "description_zh": "节点样式"
     },
     ":triggerProps": {
       "default": "-",
       "value": "",
       "type": "Partial<TriggerProps>",
-      "description": "可以接受所有 Trigger 的 Props",
+      "description": "Props that accept all triggers",
       "description_zh": "可以接受所有 Trigger 的 Props"
     },
     ":virtualListProps": {
       "default": "-",
       "value": "",
       "type": "AvailableVirtualListProps",
-      "description": "传递虚拟滚动属性。",
+      "description": "Pass the virtual scroll property.",
       "description_zh": "传递虚拟滚动属性。"
     },
     ":dropdownRender": {
       "default": "-",
       "value": "",
       "type": "(menu: ReactNode) => ReactNode",
-      "description": "自定义弹出内容。",
+      "description": "Customize pop-up content.",
       "description_zh": "自定义弹出内容。"
     },
     "filterOption": {
       "default": "true",
       "value": "",
       "type": "boolean | ((inputValue: string, option: ReactElement) => boolean)",
-      "description": "是否根据输入的值筛选数据。如果传入函数的话，接收 inputValue 和 option 两个参数，当option符合筛选条件时，返回 true，反之返回 false。",
+      "description": "Whether to filter the data based on the values entered. If you pass in a function, you will receive two parameters, inputValue and option, and return true when the option meets the filter conditions, and false if it does not.",
       "description_zh": "是否根据输入的值筛选数据。如果传入函数的话，接收 inputValue 和 option 两个参数，当option符合筛选条件时，返回 true，反之返回 false。"
     },
     ":getPopupContainer": {
       "default": "-",
       "value": "",
       "type": "(node: HTMLElement) => Element",
-      "description": "弹出框挂载的父节点。",
+      "description": "The parent node of the pop-up box.",
       "description_zh": "弹出框挂载的父节点。"
     },
     ":triggerElement": {
       "default": "<Input />",
       "value": "",
       "type": "ReactElement | (({ value }) => ReactElement)",
-      "description": "自定义触发元素",
+      "description": "Customize the trigger element",
       "description_zh": "自定义触发元素"
     }
   },
@@ -157,39 +160,45 @@
   "events": [
     {
       "name": "onBlur",
-      "description": "失去焦点的回调",
+      "description": "A pullback that loses focus",
       "description_zh": "失去焦点的回调",
-      "params": "(event) => void"
+      "params": "(event) => void",
+      "value": ""
     },
     {
       "name": "onChange",
-      "description": "输入或者点击补全项，value 改变时的回调（仅在点击补全项时存在第二个参数）",
+      "description": "Enter or click the callback when the value changes when the completion item is entered or clicked (only the second parameter exists when the completion item is clicked)",
       "description_zh": "输入或者点击补全项，value 改变时的回调（仅在点击补全项时存在第二个参数）",
-      "params": "(value: string, option?: OptionInfo) => void"
+      "params": "(value: string, option?: OptionInfo) => void",
+      "value": ""
     },
     {
       "name": "onFocus",
-      "description": "聚焦时的回调",
+      "description": "Callbacks when focusing",
       "description_zh": "聚焦时的回调",
-      "params": "(event) => void"
+      "params": "(event) => void",
+      "value": ""
     },
     {
       "name": "onPressEnter",
-      "description": "按下回车键的回调",
+      "description": "Push the Enter key to call back",
       "description_zh": "按下回车键的回调",
-      "params": "(event, activeOption?: OptionInfo) => void"
+      "params": "(event, activeOption?: OptionInfo) => void",
+      "value": ""
     },
     {
       "name": "onSearch",
-      "description": "搜索补全时的回调",
+      "description": "Callbacks when searching for completion",
       "description_zh": "搜索补全时的回调",
-      "params": "(value: string) => void"
+      "params": "(value: string) => void",
+      "value": ""
     },
     {
       "name": "onSelect",
-      "description": "点击补全项时的回调",
+      "description": "Callback when you click on a complete item",
       "description_zh": "点击补全项时的回调",
-      "params": "(value: string, option: OptionInfo) => void"
+      "params": "(value: string, option: OptionInfo) => void",
+      "value": ""
     }
   ],
   "typeDetail": {}

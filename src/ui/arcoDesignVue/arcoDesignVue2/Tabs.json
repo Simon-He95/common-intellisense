@@ -5,112 +5,135 @@
       "default": "-",
       "value": "",
       "type": "string | number",
-      "description": "当前选中的标签的 key",
+      "description": "The key of the currently selected label",
       "description_zh": "当前选中的标签的 key"
     },
     "default-active-key": {
       "default": "-",
       "value": "",
       "type": "string | number",
-      "description": "默认选中的标签的key（非受控状态，为空时选中第一个标签页）",
+      "description": "The key of the selected tag by default (uncontrolled, the first tab is selected when it is empty)",
       "description_zh": "默认选中的标签的key（非受控状态，为空时选中第一个标签页）"
     },
     "position": {
       "default": "top",
-      "value": ["left", "right", "top", "bottom"],
+      "value": [
+        "left",
+        "right",
+        "top",
+        "bottom"
+      ],
       "type": "'left' | 'right' | 'top' | 'bottom'",
-      "description": "选项卡的位置",
+      "description": "The location of the tab",
       "description_zh": "选项卡的位置"
     },
     "size": {
       "default": "-",
-      "value": ["mini", "small", "medium", "large"],
+      "value": [
+        "mini",
+        "small",
+        "medium",
+        "large"
+      ],
       "type": "'mini' | 'small' | 'medium' | 'large'",
-      "description": "选项卡的大小",
+      "description": "The size of the tab",
       "description_zh": "选项卡的大小"
     },
     "type": {
       "default": "line",
-      "value": ["line", "card", "card-gutter", "text", "rounded", "capsule"],
+      "value": [
+        "line",
+        "card",
+        "card-gutter",
+        "text",
+        "rounded",
+        "capsule"
+      ],
       "type": "'line' | 'card' | 'card-gutter' | 'text' | 'rounded' | 'capsule'",
-      "description": "选项卡的类型",
+      "description": "The type of tab",
       "description_zh": "选项卡的类型"
     },
     "direction": {
       "default": "horizontal",
-      "value": ["horizontal", "vertical"],
+      "value": [
+        "horizontal",
+        "vertical"
+      ],
       "type": "'horizontal' | 'vertical'",
-      "description": "选项卡的方向",
+      "description": "The orientation of the tab",
       "description_zh": "选项卡的方向"
     },
     "editable": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "是否开启可编辑模式",
+      "description": "Whether to enable editable mode",
       "description_zh": "是否开启可编辑模式"
     },
     "show-add-button": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "是否显示增加按钮（仅在可编辑模式可用）",
+      "description": "Whether to display the Add button (available only in editable mode)",
       "description_zh": "是否显示增加按钮（仅在可编辑模式可用）"
     },
     "destroy-on-hide": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "是否在不显示标签时销毁内容",
+      "description": "Whether to destroy content when the label is not displayed",
       "description_zh": "是否在不显示标签时销毁内容"
     },
     "lazy-load": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "是否在首次展示标签时挂载内容",
+      "description": "Whether or not to mount the content when the tag is first displayed",
       "description_zh": "是否在首次展示标签时挂载内容"
     },
     "justify": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "高度撑满容器，只在水平模式下生效。",
+      "description": "The height supports the container and only works in horizontal mode.",
       "description_zh": "高度撑满容器，只在水平模式下生效。"
     },
     "animation": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "是否开启选项内容过渡动画",
+      "description": "Whether to enable option content transition animation",
       "description_zh": "是否开启选项内容过渡动画"
     },
     "header-padding": {
       "default": "true",
       "value": "",
       "type": "boolean",
-      "description": "选项卡头部是否存在水平边距。仅对 type 等于 line、text 类型的选项卡生效",
+      "description": "Whether there is a horizontal margin in the tab header. This effect applies only to tabs whose type is equal to line or text",
       "description_zh": "选项卡头部是否存在水平边距。仅对 type 等于 line、text 类型的选项卡生效"
     },
     "auto-switch": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "创建标签后是否切换到新标签（最后一个）",
+      "description": "Whether to switch to a new tab after creating a label (the last one)",
       "description_zh": "创建标签后是否切换到新标签（最后一个）"
     },
     "hide-content": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "是否隐藏内容",
+      "description": "Whether or not to hide content",
       "description_zh": "是否隐藏内容"
     },
     "trigger": {
       "default": "click",
-      "value": ["hover", "click"],
+      "value": [
+        "hover",
+        "click"
+      ],
       "type": "'hover' | 'click'",
-      "description": "触发方式",
+      "description": "Trigger mode",
       "description_zh": "触发方式"
     }
   },
@@ -120,27 +143,31 @@
   "events": [
     {
       "name": "change",
-      "description": "当前标签值改变时触发",
+      "description": "Triggered when the current tag value changes",
       "description_zh": "当前标签值改变时触发",
-      "params": "key: string | number"
+      "params": "key: string | number",
+      "value": ""
     },
     {
       "name": "tab-click",
-      "description": "用户点击标签时触发",
+      "description": "Triggered when a user clicks on a tag",
       "description_zh": "用户点击标签时触发",
-      "params": "key: string | number"
+      "params": "key: string | number",
+      "value": ""
     },
     {
       "name": "add",
-      "description": "用户点击增加按钮时触发",
+      "description": "Triggered when the user clicks the Add button",
       "description_zh": "用户点击增加按钮时触发",
-      "params": "-"
+      "params": "-",
+      "value": ""
     },
     {
       "name": "delete",
-      "description": "用户点击删除按钮时触发",
+      "description": "Triggered when the user clicks the delete button",
       "description_zh": "用户点击删除按钮时触发",
-      "params": "key: string | number"
+      "params": "key: string | number",
+      "value": ""
     }
   ],
   "typeDetail": {}

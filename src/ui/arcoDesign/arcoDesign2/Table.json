@@ -5,112 +5,124 @@
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "是否显示单元格边框，作用等同于 border={{ cell: true }}",
+      "description": "Whether to display a cell border, which is equivalent to border={{ cell: true }}",
       "description_zh": "是否显示单元格边框，作用等同于 border={{ cell: true }}"
     },
     "defaultExpandAllRows": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "默认展开所有可展开的行",
+      "description": "By default, all expandable rows are expanded",
       "description_zh": "默认展开所有可展开的行"
     },
     "hover": {
       "default": "true",
       "value": "",
       "type": "boolean",
-      "description": "是否开启鼠标悬浮效果",
+      "description": "Whether to enable the mouse hover effect",
       "description_zh": "是否开启鼠标悬浮效果"
     },
     "showHeader": {
       "default": "true",
       "value": "",
       "type": "boolean",
-      "description": "是否显示表头",
+      "description": "Whether to display the header",
       "description_zh": "是否显示表头"
     },
     "stripe": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "是否开启斑马纹",
+      "description": "Whether or not to turn on zebra prints",
       "description_zh": "是否开启斑马纹"
     },
     "tableLayoutFixed": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "表格的 table-layout 属性设置为 fixed，设置为 fixed 后，表格的宽度不会被内容撑开超出 100%。",
+      "description": "The table-layout property of the table is set to fixed, and when set to fixed, the width of the table will not be stretched beyond 100% by the contents.",
       "description_zh": "表格的 table-layout 属性设置为 fixed，设置为 fixed 后，表格的宽度不会被内容撑开超出 100%。"
     },
     "virtualized": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "表格开启虚拟滚动，用于处理大数据场景。( 注意：虚拟滚动会自动关闭对树形数据的支持 )",
+      "description": "The table is enabled for virtual scrolling, which is used to process big data scenarios. (Note: Virtual scrolling automatically turns off support for tree data)",
       "description_zh": "表格开启虚拟滚动，用于处理大数据场景。( 注意：虚拟滚动会自动关闭对树形数据的支持 )"
     },
     ":indentSize": {
       "default": "15",
       "value": "",
       "type": "number",
-      "description": "树形数据每个层级向左偏移的像素",
+      "description": "The pixels of the tree data that are shifted to the left at each level",
       "description_zh": "树形数据每个层级向左偏移的像素"
     },
     "childrenColumnName": {
       "default": "children",
       "value": "",
       "type": "string",
-      "description": "树形数据在 data 中的字段名，默认是 children",
+      "description": "The field name of the tree data in the data, which is children by default",
       "description_zh": "树形数据在 data 中的字段名，默认是 children"
     },
     "pagePosition": {
       "default": "br",
-      "value": ["br", "bl", "tr", "tl", "topCenter", "bottomCenter"],
+      "value": [
+        "br",
+        "bl",
+        "tr",
+        "tl",
+        "topCenter",
+        "bottomCenter"
+      ],
       "type": "'br' | 'bl' | 'tr' | 'tl' | 'topCenter' | 'bottomCenter'",
-      "description": "设置分页器的位置，有四个方位 右下 左下 右上 左上 上中 下中",
+      "description": "Sets the position of the pagination in four directions: lower right, lower left, upper right, upper left, upper middle, lower middle",
       "description_zh": "设置分页器的位置，有四个方位 右下 左下 右上 左上 上中 下中"
     },
     "size": {
       "default": "-",
-      "value": ["default", "middle", "small", "mini"],
+      "value": [
+        "default",
+        "middle",
+        "small",
+        "mini"
+      ],
       "type": "'default' | 'middle' | 'small' | 'mini'",
-      "description": "表格尺寸，分为 默认，默认 中 小 迷你 四个尺寸",
+      "description": "The table size is divided into four sizes: Default, Default, Medium, Small, and Mini",
       "description_zh": "表格尺寸，分为 默认，默认 中 小 迷你 四个尺寸"
     },
     ":noDataElement": {
       "default": "-",
       "value": "",
       "type": "string | ReactNode",
-      "description": "没有数据的时候显示的元素",
+      "description": "Elements that are displayed when there is no data",
       "description_zh": "没有数据的时候显示的元素"
     },
     ":placeholder": {
       "default": "-",
       "value": "",
       "type": "ReactNode",
-      "description": "当单元格内容为空时，显示占位符，优先级低于 column.placeholder。",
+      "description": "When the cell content is empty, a placeholder is displayed with a lower priority than column.placeholder.",
       "description_zh": "当单元格内容为空时，显示占位符，优先级低于 column.placeholder。"
     },
     "border": {
       "default": "true",
       "value": "",
       "type": "| boolean| { wrapper?: boolean; headerCell?: boolean; bodyCell?: boolean; cell?: boolean }",
-      "description": "边框设置",
+      "description": "Border settings",
       "description_zh": "边框设置"
     },
     "className": {
       "default": "-",
       "value": "",
       "type": "string | string[]",
-      "description": "节点类名",
+      "description": "Node class name",
       "description_zh": "节点类名"
     },
     ":columns": {
       "default": "-",
       "value": "",
       "type": "ColumnProps<T>[]",
-      "description": "列描述数据对象的数组",
+      "description": "Columns describe arrays of data objects",
       "description_zh": "列描述数据对象的数组",
       "required": true
     },
@@ -118,14 +130,14 @@
       "default": "-",
       "value": "",
       "type": "ComponentsProps",
-      "description": "覆盖原生表格标签",
+      "description": "Override native table tags",
       "description_zh": "覆盖原生表格标签"
     },
     ":data": {
       "default": "-",
       "value": "",
       "type": "T[]",
-      "description": "表格数据",
+      "description": "Tabular data",
       "description_zh": "表格数据",
       "required": true
     },
@@ -133,112 +145,112 @@
       "default": "-",
       "value": "",
       "type": "(string | number)[]",
-      "description": "默认展开的行",
+      "description": "The default expanded row",
       "description_zh": "默认展开的行"
     },
     ":expandedRowKeys": {
       "default": "-",
       "value": "",
       "type": "(string | number)[]",
-      "description": "展开的行（受控）",
+      "description": "Expanded Rows (Controlled)",
       "description_zh": "展开的行（受控）"
     },
     ":expandProps": {
       "default": "-",
       "value": "",
       "type": "ExpandProps<T>",
-      "description": "自定义展开/关闭列的图标，宽度，标题，具体用法看这个例子",
+      "description": "Customize the expand/close column icon, width, header, and specific usage see this example",
       "description_zh": "自定义展开/关闭列的图标，宽度，标题，具体用法看这个例子"
     },
     "loading": {
       "default": "-",
       "value": "",
       "type": "boolean | SpinProps",
-      "description": "表格是否在加载中",
+      "description": "Whether the table is loading",
       "description_zh": "表格是否在加载中"
     },
     ":pagination": {
       "default": "-",
       "value": "",
       "type": "PaginationProps | boolean",
-      "description": "分页器设置，参考Pagination组件，设置 false 不展示分页",
+      "description": "For the pagination setting, see the Pagination component, and set false not to show pagination",
       "description_zh": "分页器设置，参考Pagination组件，设置 false 不展示分页"
     },
     ":rowSelection": {
       "default": "-",
       "value": "",
       "type": "RowSelectionProps<T>",
-      "description": "设置表格行是否可选，选中事件等。配置项",
+      "description": "Set whether table rows are optional, select events, and so on. Configuration items",
       "description_zh": "设置表格行是否可选，选中事件等。配置项"
     },
     ":scroll": {
       "default": "-",
       "value": "",
       "type": "{ x?: number | string | boolean; y?: number | string | boolean }",
-      "description": "设置x轴或y轴的滚动。x 设置为 true，会给 table 添加 table-layout: fixed 以及给父元素添加 overflow: auto。y 设置为 true，表头和表身会分离，放在两个 table 中",
+      "description": "Set the scroll of the x-axis or y-axis. x to true adds table-layout: fixed to the table and overflow: auto to the parent element. y is set to true, and the header and body are separated and placed in two tables",
       "description_zh": "设置x轴或y轴的滚动。x 设置为 true，会给 table 添加 table-layout: fixed 以及给父元素添加 overflow: auto。y 设置为 true，表头和表身会分离，放在两个 table 中"
     },
     "showSorterTooltip": {
       "default": "true",
       "value": "",
       "type": "boolean | TooltipProps",
-      "description": "表头是否显示下一次排序的 tooltip 提示。可以设置对象，可以传 Tooltip 组件的所有参数。",
+      "description": "Whether the header displays a tooltip hint for the next sort. You can set the object, you can pass all the parameters of the Tooltip component.",
       "description_zh": "表头是否显示下一次排序的 tooltip 提示。可以设置对象，可以传 Tooltip 组件的所有参数。"
     },
     ":style": {
       "default": "-",
       "value": "",
       "type": "CSSProperties",
-      "description": "节点样式",
+      "description": "Node style",
       "description_zh": "节点样式"
     },
     ":virtualListProps": {
       "default": "-",
       "value": "",
       "type": "AvailableVirtualListProps",
-      "description": "用于配置虚拟滚动。",
+      "description": "Used to configure virtual scrolling.",
       "description_zh": "用于配置虚拟滚动。"
     },
     ":expandedRowRender": {
       "default": "-",
       "value": "",
       "type": "(record: T, index: number) => ReactNode",
-      "description": "点击展开额外的行，渲染函数。返回值为 null 时，不会渲染展开按钮",
+      "description": "Click to expand additional rows to render the function. When the return value is null, the expand button is not rendered",
       "description_zh": "点击展开额外的行，渲染函数。返回值为 null 时，不会渲染展开按钮"
     },
     ":footer": {
       "default": "-",
       "value": "",
       "type": "(currentPageDate) => ReactNode",
-      "description": "表格尾部",
+      "description": "Tail of table",
       "description_zh": "表格尾部"
     },
     ":renderPagination": {
       "default": "-",
       "value": "",
       "type": "(paginationNode?: ReactNode) => ReactNode",
-      "description": "自定义分页渲染。",
+      "description": "Custom paging rendering.",
       "description_zh": "自定义分页渲染。"
     },
     "rowClassName": {
       "default": "-",
       "value": "",
       "type": "(record: T, index: number) => string",
-      "description": "表格行的类名",
+      "description": "The class name of the table row",
       "description_zh": "表格行的类名"
     },
     "rowKey": {
       "default": "key",
       "value": "",
       "type": "React.Key | ((record: T) => React.Key)",
-      "description": "表格行 key 的取值字段",
+      "description": "The value field of the table row key",
       "description_zh": "表格行 key 的取值字段"
     },
     ":summary": {
       "default": "-",
       "value": "",
       "type": "(currentData?: T[]) => ReactNode",
-      "description": "总结栏",
+      "description": "Summary bar",
       "description_zh": "总结栏"
     }
   },
@@ -248,33 +260,38 @@
   "events": [
     {
       "name": "onChange",
-      "description": "分页、排序、筛选时的回调",
+      "description": "Callbacks for pagination, sorting, and filtering",
       "description_zh": "分页、排序、筛选时的回调",
-      "params": "(pagination: PaginationProps,sorter: SorterInfo | SorterInfo[],filters: Partial<Record<keyof T, string[]>>,extra: { currentData: T[]; currentAllData: T[]; action: 'paginate' | 'sort' | 'filter' }) => void"
+      "params": "(pagination: PaginationProps,sorter: SorterInfo | SorterInfo[],filters: Partial<Record<keyof T, string[]>>,extra: { currentData: T[]; currentAllData: T[]; action: 'paginate' | 'sort' | 'filter' }) => void",
+      "value": ""
     },
     {
       "name": "onHeaderRow",
-      "description": "设置表头行单元格的各项事件回调",
+      "description": "Set the event callbacks for the cells in the header rows",
       "description_zh": "设置表头行单元格的各项事件回调",
-      "params": "(columns: ColumnProps<T>[], index: number) => RowCallbackProps"
+      "params": "(columns: ColumnProps<T>[], index: number) => RowCallbackProps",
+      "value": ""
     },
     {
       "name": "onExpand",
-      "description": "点击展开的回调",
+      "description": "Click the expanded callback",
       "description_zh": "点击展开的回调",
-      "params": "(record: T, expanded: boolean) => void"
+      "params": "(record: T, expanded: boolean) => void",
+      "value": ""
     },
     {
       "name": "onExpandedRowsChange",
-      "description": "点击展开时触发，参数为展开行数组",
+      "description": "Triggered when you click Expand, the parameter is Expand Row Array",
       "description_zh": "点击展开时触发，参数为展开行数组",
-      "params": "(expandedRows: (string | number)[]) => void"
+      "params": "(expandedRows: (string | number)[]) => void",
+      "value": ""
     },
     {
       "name": "onRow",
-      "description": "设置表格行的各项事件回调",
+      "description": "Set the event callbacks for the table rows",
       "description_zh": "设置表格行的各项事件回调",
-      "params": "(record: T, index: number) => RowCallbackProps"
+      "params": "(record: T, index: number) => RowCallbackProps",
+      "value": ""
     }
   ],
   "typeDetail": {

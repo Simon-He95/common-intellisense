@@ -1,0 +1,98 @@
+{
+  "name": "ASteps",
+  "props": {
+    "type": {
+      "default": "default",
+      "value": [
+        "default",
+        "arrow",
+        "dot",
+        "navigation"
+      ],
+      "type": "'default' | 'arrow' | 'dot' | 'navigation'",
+      "description": "The type of step bar",
+      "description_zh": "步骤条的类型"
+    },
+    "direction": {
+      "default": "horizontal",
+      "value": [
+        "horizontal",
+        "vertical"
+      ],
+      "type": "'horizontal' | 'vertical'",
+      "description": "The direction in which the step bar is displayed",
+      "description_zh": "步骤条的显示方向"
+    },
+    "label-placement": {
+      "default": "horizontal",
+      "value": [
+        "horizontal",
+        "vertical"
+      ],
+      "type": "'horizontal' | 'vertical'",
+      "description": "The label describes where the text is placed",
+      "description_zh": "标签描述文字放置的位置"
+    },
+    ":v-model:current": {
+      "default": "-",
+      "value": "",
+      "type": "number",
+      "description": "The number of current steps",
+      "description_zh": "当前步骤数",
+      "required": true
+    },
+    ":default-current": {
+      "default": "1",
+      "value": "",
+      "type": "number",
+      "description": "Default number of steps (uncontrolled)",
+      "description_zh": "默认的步骤数（非受控状态）"
+    },
+    "status": {
+      "default": "process",
+      "value": [
+        "wait",
+        "process",
+        "finish",
+        "error"
+      ],
+      "type": "'wait' | 'process' | 'finish' | 'error'",
+      "description": "The status of the current step",
+      "description_zh": "当前步骤的状态"
+    },
+    "line-less": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to use the no-connection style",
+      "description_zh": "是否使用无连接线样式"
+    },
+    "small": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to use a small step bar",
+      "description_zh": "是否使用小型步骤条"
+    },
+    "changeable": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Is it possible to click the switch",
+      "description_zh": "是否可以点击切换"
+    }
+  },
+  "methods": [],
+  "link": "https://arco.design/vue/component/steps#API",
+  "link_zh": "https://arco.design/vue/component/steps#API",
+  "events": [
+    {
+      "name": "change",
+      "description": "Triggered when the number of steps changes",
+      "description_zh": "步骤数发生改变时触发",
+      "params": "step: number, ev: Event",
+      "value": ""
+    }
+  ],
+  "typeDetail": {}
+}

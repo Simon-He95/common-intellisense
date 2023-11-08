@@ -5,49 +5,61 @@
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "控制下拉框是否默认打开",
+      "description": "Controls whether the drop-down box is turned on by default",
       "description_zh": "控制下拉框是否默认打开"
     },
     "disabled": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "是否禁用弹出",
+      "description": "Whether to disable pop-ups",
       "description_zh": "是否禁用弹出"
     },
     "popupVisible": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "控制下拉框是否打开（受控模式）",
+      "description": "Control whether the drop-down box is open (controlled mode)",
       "description_zh": "控制下拉框是否打开（受控模式）"
     },
     "unmountOnExit": {
       "default": "true",
       "value": "",
       "type": "boolean",
-      "description": "隐藏后是否销毁 DOM 结构",
+      "description": "Whether or not to destroy the DOM structure after hiding",
       "description_zh": "隐藏后是否销毁 DOM 结构"
     },
     "position": {
       "default": "bl",
-      "value": ["top", "tl", "tr", "bottom", "bl", "br"],
+      "value": [
+        "top",
+        "tl",
+        "tr",
+        "bottom",
+        "bl",
+        "br"
+      ],
       "type": "'top' | 'tl' | 'tr' | 'bottom' | 'bl' | 'br'",
-      "description": "下拉框的弹出位置",
+      "description": "The pop-up location of the drop-down box",
       "description_zh": "下拉框的弹出位置"
     },
     "trigger": {
       "default": "hover",
-      "value": ["click", "hover", "contextMenu", "focus"],
+      "value": [
+        "click",
+        "hover",
+        "contextMenu",
+        "focus"
+      ],
       "type": "TriggerProps['trigger']",
-      "description": "触发下拉框弹出的方式",
+      "description": "How the drop-down list is triggered",
       "description_zh": "触发下拉框弹出的方式"
     },
     ":droplist": {
       "default": "-",
       "value": "",
       "type": "ReactNode",
-      "description": "下拉框的内容",
+      "description": "The contents of the drop-down box",
       "description_zh": "下拉框的内容",
       "required": true
     },
@@ -55,14 +67,14 @@
       "default": "-",
       "value": "",
       "type": "Partial<TriggerProps>",
-      "description": "弹出框下可接受所有 Trigger 组件的 Props",
+      "description": "The pop-up box accepts the Props of all Trigger components",
       "description_zh": "弹出框下可接受所有 Trigger 组件的 Props"
     },
     ":getPopupContainer": {
       "default": "-",
       "value": "",
       "type": "(node: HTMLElement) => Element",
-      "description": "弹出框挂在的父级节点",
+      "description": "The pop-up box hangs on the parent node",
       "description_zh": "弹出框挂在的父级节点"
     }
   },
@@ -72,9 +84,10 @@
   "events": [
     {
       "name": "onVisibleChange",
-      "description": "弹出框打开/关闭时会触发",
+      "description": "Triggered when the pop-up box is opened/closed",
       "description_zh": "弹出框打开/关闭时会触发",
-      "params": "(visible: boolean) => void"
+      "params": "(visible: boolean) => void",
+      "value": ""
     }
   ],
   "typeDetail": {}

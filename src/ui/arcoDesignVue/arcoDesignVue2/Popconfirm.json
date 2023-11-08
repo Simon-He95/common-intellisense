@@ -1,0 +1,170 @@
+{
+  "name": "APopconfirm",
+  "props": {
+    "content": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "content",
+      "description_zh": "内容",
+      "required": true
+    },
+    "position": {
+      "default": "top",
+      "value": [
+        "top",
+        "tl",
+        "tr",
+        "bottom",
+        "bl",
+        "br",
+        "left",
+        "lt",
+        "lb",
+        "right",
+        "rt",
+        "rb"
+      ],
+      "type": "'top' | 'tl' | 'tr' | 'bottom' | 'bl' | 'br' | 'left' | 'lt' | 'lb' | 'right' | 'rt' | 'rb'",
+      "description": "Ejection position",
+      "description_zh": "弹出位置"
+    },
+    "v-model:popup-visible": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "The bubble confirms that the box is visible",
+      "description_zh": "气泡确认框是否可见"
+    },
+    "default-popup-visible": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Bubble confirmation box is visible by default (uncontrolled mode)",
+      "description_zh": "气泡确认框默认是否可见（非受控模式）"
+    },
+    "type": {
+      "default": "info",
+      "value": [
+        "info",
+        "success",
+        "warning",
+        "error"
+      ],
+      "type": "'info' | 'success' | 'warning' | 'error'",
+      "description": "The type of bubble confirmation box",
+      "description_zh": "气泡确认框的类型"
+    },
+    "ok-text": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "Confirm the contents of the button",
+      "description_zh": "确认按钮的内容"
+    },
+    "cancel-text": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "The contents of the cancel button",
+      "description_zh": "取消按钮的内容"
+    },
+    "ok-loading": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Check whether the button is loading",
+      "description_zh": "确认按钮是否为加载中状态"
+    },
+    ":ok-button-props": {
+      "default": "-",
+      "value": "",
+      "type": "ButtonProps",
+      "description": "Confirm the Props of the button",
+      "description_zh": "确认按钮的Props"
+    },
+    ":cancel-button-props": {
+      "default": "-",
+      "value": "",
+      "type": "ButtonProps",
+      "description": "Cancel the Props of the button",
+      "description_zh": "取消按钮的Props"
+    },
+    "content-class": {
+      "default": "-",
+      "value": "",
+      "type": "ClassName",
+      "description": "The class name of the pop-up contents",
+      "description_zh": "弹出框内容的类名"
+    },
+    ":content-style": {
+      "default": "-",
+      "value": "",
+      "type": "CSSProperties",
+      "description": "The style of the popover content",
+      "description_zh": "弹出框内容的样式"
+    },
+    "arrow-class": {
+      "default": "-",
+      "value": "",
+      "type": "ClassName",
+      "description": "The class name of the pop-up arrow",
+      "description_zh": "弹出框箭头的类名"
+    },
+    ":arrow-style": {
+      "default": "-",
+      "value": "",
+      "type": "CSSProperties",
+      "description": "The style of the popover arrows",
+      "description_zh": "弹出框箭头的样式"
+    },
+    "popup-container": {
+      "default": "-",
+      "value": "",
+      "type": "string | HTMLElement | undefined",
+      "description": "The mount point of the pop-up box",
+      "description_zh": "弹出框的挂载点"
+    }
+  },
+  "methods": [],
+  "link": "https://arco.design/vue/component/popconfirm#API",
+  "link_zh": "https://arco.design/vue/component/popconfirm#API",
+  "events": [
+    {
+      "name": "before-ok",
+      "description": "The callback function before the OK event is triggered. If it returns false, no subsequent events will be triggered, and you can also use done to close asynchronously.",
+      "description_zh": "触发 ok 事件前的回调函数。如果返回 false 则不会触发后续事件，也可使用 done 进行异步关闭。",
+      "params": "( done: (closed: boolean) => void) => void | boolean | Promise<void | boolean>",
+      "value": ""
+    },
+    {
+      "name": "before-cancel",
+      "description": "The callback function before the cancel event is triggered. If false is returned, no subsequent event will be triggered.",
+      "description_zh": "触发 cancel 事件前的回调函数。如果返回 false 则不会触发后续事件。",
+      "params": "() => boolean",
+      "value": ""
+    },
+    {
+      "name": "popup-visible-change",
+      "description": "Triggered when the visible and hidden state of the bubble confirmation box changes",
+      "description_zh": "气泡确认框的显隐状态改变时触发",
+      "params": "visible: boolean",
+      "value": ""
+    },
+    {
+      "name": "ok",
+      "description": "Triggered when the Confirm button is clicked",
+      "description_zh": "点击确认按钮时触发",
+      "params": "-",
+      "value": ""
+    },
+    {
+      "name": "cancel",
+      "description": "Triggered when the cancel button is clicked",
+      "description_zh": "点击取消按钮时触发",
+      "params": "-",
+      "value": ""
+    }
+  ],
+  "typeDetail": {}
+}

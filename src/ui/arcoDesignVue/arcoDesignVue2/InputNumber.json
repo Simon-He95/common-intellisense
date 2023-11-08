@@ -1,0 +1,201 @@
+{
+  "name": "AInputNumber",
+  "props": {
+    ":v-model": {
+      "default": "-",
+      "value": "",
+      "type": "number",
+      "description": "Binding value",
+      "description_zh": "绑定值"
+    },
+    ":default-value": {
+      "default": "-",
+      "value": "",
+      "type": "number",
+      "description": "Default (Uncontrolled Mode)",
+      "description_zh": "默认值（非受控模式）"
+    },
+    "mode": {
+      "default": "embed",
+      "value": [
+        "embed",
+        "button"
+      ],
+      "type": "'embed' | 'button'",
+      "description": "Mode (embed: in-button mode, button: left and right button mode)",
+      "description_zh": "模式（embed：按钮内嵌模式，button：左右按钮模式）"
+    },
+    ":precision": {
+      "default": "-",
+      "value": "",
+      "type": "number",
+      "description": "Digit Precision",
+      "description_zh": "数字精度",
+      "required": true
+    },
+    ":step": {
+      "default": "1",
+      "value": "",
+      "type": "number",
+      "description": "Number change step size",
+      "description_zh": "数字变化步长",
+      "required": true
+    },
+    "disabled": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to disable or not",
+      "description_zh": "是否禁用"
+    },
+    "error": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether it is in an error state",
+      "description_zh": "是否为错误状态"
+    },
+    ":max": {
+      "default": "Infinity",
+      "value": "",
+      "type": "number",
+      "description": "maximum",
+      "description_zh": "最大值"
+    },
+    ":min": {
+      "default": "-Infinity",
+      "value": "",
+      "type": "number",
+      "description": "minimum",
+      "description_zh": "最小值"
+    },
+    ":formatter": {
+      "default": "-",
+      "value": "",
+      "type": "func",
+      "description": "Define the value of the input box display",
+      "description_zh": "定义输入框展示值"
+    },
+    ":parser": {
+      "default": "-",
+      "value": "",
+      "type": "func",
+      "description": "Convert from formatter to digital and use with formatter",
+      "description_zh": "从 formatter 转换为数字，和 formatter 搭配使用"
+    },
+    "placeholder": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "Input box prompt text",
+      "description_zh": "输入框提示文字",
+      "required": true
+    },
+    "hide-button": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to hide the button",
+      "description_zh": "是否隐藏按钮"
+    },
+    "size": {
+      "default": "medium",
+      "value": [
+        "mini",
+        "small",
+        "medium",
+        "large"
+      ],
+      "type": "'mini' | 'small' | 'medium' | 'large'",
+      "description": "Enter the size of the field",
+      "description_zh": "输入框大小"
+    },
+    "allow-clear": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to allow the input field to be cleared",
+      "description_zh": "是否允许清空输入框"
+    },
+    "model-event": {
+      "default": "change",
+      "value": [
+        "change",
+        "input"
+      ],
+      "type": "'change' | 'input'",
+      "description": "The event that triggers the v-model",
+      "description_zh": "触发 v-model 的事件"
+    },
+    "read-only": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "read only",
+      "description_zh": "只读"
+    },
+    ":input-attrs": {
+      "default": "-",
+      "value": "",
+      "type": "object",
+      "description": "The property of the internal input element",
+      "description_zh": "内部 input 元素的属性"
+    }
+  },
+  "methods": [
+    {
+      "name": "focus",
+      "description": "Makes the input box get focus",
+      "params": "-",
+      "description_zh": "使输入框获取焦点",
+      "value": ""
+    },
+    {
+      "name": "blur",
+      "description": "Makes the input box lose focus",
+      "params": "-",
+      "description_zh": "使输入框失去焦点",
+      "value": ""
+    }
+  ],
+  "link": "https://arco.design/vue/component/input-number#API",
+  "link_zh": "https://arco.design/vue/component/input-number#API",
+  "events": [
+    {
+      "name": "change",
+      "description": "Triggered when the value changes",
+      "description_zh": "值发生改变时触发",
+      "params": "value: number | undefined, ev: Event",
+      "value": ""
+    },
+    {
+      "name": "focus",
+      "description": "Triggered when the input box gets focus",
+      "description_zh": "输入框获取焦点时触发",
+      "params": "ev: FocusEvent",
+      "value": ""
+    },
+    {
+      "name": "blur",
+      "description": "Triggered when the input box loses focus",
+      "description_zh": "输入框失去焦点时触发",
+      "params": "ev: FocusEvent",
+      "value": ""
+    },
+    {
+      "name": "clear",
+      "description": "Triggered when the user clicks the clear button",
+      "description_zh": "用户点击清除按钮时触发",
+      "params": "ev: Event",
+      "value": ""
+    },
+    {
+      "name": "input",
+      "description": "Triggered when entering",
+      "description_zh": "输入时触发",
+      "params": "value: number | undefined, inputValue: string, ev: Event",
+      "value": ""
+    }
+  ],
+  "typeDetail": {}
+}

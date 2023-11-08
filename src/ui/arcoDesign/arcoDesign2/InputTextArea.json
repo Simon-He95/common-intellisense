@@ -5,35 +5,35 @@
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "允许清空输入框",
+      "description": "Allows the input field to be cleared",
       "description_zh": "允许清空输入框"
     },
     "disabled": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "是否禁用",
+      "description": "Whether to disable or not",
       "description_zh": "是否禁用"
     },
     "error": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "是否是错误状态。(废弃，下个大版本移除，使用 status='error' 替代)",
+      "description": "Whether it is an error state. (Deprecated, removed in the next major version, replaced with status='error')",
       "description_zh": "是否是错误状态。(废弃，下个大版本移除，使用 status='error' 替代)"
     },
     "defaultValue": {
       "default": "-",
       "value": "",
       "type": "string",
-      "description": "默认值",
+      "description": "Default value",
       "description_zh": "默认值"
     },
     "placeholder": {
       "default": "-",
       "value": "",
       "type": "string",
-      "description": "输入框提示文字",
+      "description": "Input box prompt text",
       "description_zh": "输入框提示文字",
       "required": true
     },
@@ -41,88 +41,101 @@
       "default": "-",
       "value": "",
       "type": "string",
-      "description": "值",
+      "description": "value",
       "description_zh": "值"
     },
     "status": {
       "default": "-",
-      "value": ["error", "warning"],
+      "value": [
+        "error",
+        "warning"
+      ],
       "type": "'error' | 'warning'",
-      "description": "状态",
+      "description": "state",
       "description_zh": "状态"
     },
     ":clearIcon": {
       "default": "-",
       "value": "",
       "type": "ReactNode",
-      "description": "allowClear 时配置清除按钮的图标。",
+      "description": "allowClear when configuring the icon for the Clear button.",
       "description_zh": "allowClear 时配置清除按钮的图标。"
     },
     "autoSize": {
       "default": "-",
       "value": "",
       "type": "boolean | { minRows?: number; maxRows?: number }",
-      "description": "是否自动调整输入框的高度",
+      "description": "Whether to automatically adjust the height of the input box",
       "description_zh": "是否自动调整输入框的高度"
     },
     "className": {
       "default": "-",
       "value": "",
       "type": "string | string[]",
-      "description": "节点类名",
+      "description": "Node class name",
       "description_zh": "节点类名"
     },
     ":maxLength": {
       "default": "-",
       "value": "",
       "type": "number | { length: number; errorOnly?: boolean }",
-      "description": "输入框最大输入的长度；设置 errorOnly为 true 后，超过 maxLength 会展示 error 状态，并不限制用户输入。",
+      "description": "the maximum length of the input box; If errorOnly is set to true, the error status will be displayed when the maxLength is exceeded, and the user is not restricted from entering.",
       "description_zh": "输入框最大输入的长度；设置 errorOnly为 true 后，超过 maxLength 会展示 error 状态，并不限制用户输入。"
     },
     ":style": {
       "default": "-",
       "value": "",
       "type": "CSSProperties",
-      "description": "节点样式",
+      "description": "Node style",
       "description_zh": "节点样式"
     },
     ":wrapperStyle": {
       "default": "-",
       "value": "",
       "type": "CSSProperties",
-      "description": "开启字数统计之后，会在 textarea 标签外包一层 div，wrapperStyle 用来配置这个 div 的样式。",
+      "description": "After the word count is enabled, a layer of div will be encased in the textarea tag, and wrapperStyle will be used to configure the style of this div.",
       "description_zh": "开启字数统计之后，会在 textarea 标签外包一层 div，wrapperStyle 用来配置这个 div 的样式。"
     }
   },
-  "methods": [{
-    "name": "focus",
-    "params": "Function",
-    "description": "焦点事件"
-  }, {
-    "name": "blur",
-    "params": "Function",
-    "description": "失去焦点事件"
-  }],
+  "methods": [
+    {
+      "name": "focus",
+      "params": "Function",
+      "description": "Spotlight events",
+      "value": "",
+      "description_zh": "焦点事件"
+    },
+    {
+      "name": "blur",
+      "params": "Function",
+      "description": "Loss of focus event",
+      "value": "",
+      "description_zh": "失去焦点事件"
+    }
+  ],
   "link": "https://arco.design/react/components/input#%E6%96%B9%E6%B3%95",
   "link_zh": "https://arco.design/react/components/input#%E6%96%B9%E6%B3%95",
   "events": [
     {
       "name": "onChange",
-      "description": "输入时的回调",
+      "description": "Callback at the time of entry",
       "description_zh": "输入时的回调",
-      "params": "(value: string, e) => void"
+      "params": "(value: string, e) => void",
+      "value": ""
     },
     {
       "name": "onClear",
-      "description": "点击清除按钮的回调",
+      "description": "Click the callback of the Clear button",
       "description_zh": "点击清除按钮的回调",
-      "params": "() => void"
+      "params": "() => void",
+      "value": ""
     },
     {
       "name": "onPressEnter",
-      "description": "按下回车键的回调",
+      "description": "Push the Enter key to call back",
       "description_zh": "按下回车键的回调",
-      "params": "(e) => void"
+      "params": "(e) => void",
+      "value": ""
     }
   ],
   "typeDetail": {}

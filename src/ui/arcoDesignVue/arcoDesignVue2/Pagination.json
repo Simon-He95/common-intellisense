@@ -1,0 +1,171 @@
+{
+  "name": "APagination",
+  "props": {
+    ":total": {
+      "default": "-",
+      "value": "",
+      "type": "number",
+      "description": "Total number of data",
+      "description_zh": "数据总数",
+      "required": true
+    },
+    ":v-model:current": {
+      "default": "-",
+      "value": "",
+      "type": "number",
+      "description": "The current number of pages",
+      "description_zh": "当前的页数"
+    },
+    ":default-current": {
+      "default": "1",
+      "value": "",
+      "type": "number",
+      "description": "Default Number of Pages (Uncontrolled)",
+      "description_zh": "默认的页数（非受控状态）"
+    },
+    ":v-model:page-size": {
+      "default": "-",
+      "value": "",
+      "type": "number",
+      "description": "The number of data entries displayed on each page",
+      "description_zh": "每页展示的数据条数"
+    },
+    ":default-page-size": {
+      "default": "10",
+      "value": "",
+      "type": "number",
+      "description": "Default number of data entries displayed per page (uncontrolled state)",
+      "description_zh": "默认每页展示的数据条数（非受控状态）"
+    },
+    "disabled": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to disable or not",
+      "description_zh": "是否禁用"
+    },
+    "hide-on-single-page": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to hide pagination when a single page",
+      "description_zh": "单页时是否隐藏分页"
+    },
+    "simple": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether it is in simple mode",
+      "description_zh": "是否为简单模式"
+    },
+    "show-total": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether or not to display the total number of data",
+      "description_zh": "是否显示数据总数"
+    },
+    "show-more": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to display more buttons",
+      "description_zh": "是否显示更多按钮"
+    },
+    "show-jumper": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to display the redirect",
+      "description_zh": "是否显示跳转"
+    },
+    "show-page-size": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to display the number of data records selector",
+      "description_zh": "是否显示数据条数选择器"
+    },
+    ":page-size-options": {
+      "default": "[10, 20, 30, 40, 50]",
+      "value": "",
+      "type": "number[]",
+      "description": "A list of options for the number of data bars selector",
+      "description_zh": "数据条数选择器的选项列表"
+    },
+    ":page-size-props": {
+      "default": "-",
+      "value": "",
+      "type": "SelectProps",
+      "description": "Props of the data number selector",
+      "description_zh": "数据条数选择器的Props"
+    },
+    "size": {
+      "default": "medium",
+      "value": [
+        "mini",
+        "small",
+        "medium",
+        "large"
+      ],
+      "type": "'mini' | 'small' | 'medium' | 'large'",
+      "description": "The size of the pagination selector",
+      "description_zh": "分页选择器的大小"
+    },
+    ":page-item-style": {
+      "default": "-",
+      "value": "",
+      "type": "CSSProperties",
+      "description": "The style of the pagination button",
+      "description_zh": "分页按钮的样式"
+    },
+    ":active-page-item-style": {
+      "default": "-",
+      "value": "",
+      "type": "CSSProperties",
+      "description": "The style of the current pagination button",
+      "description_zh": "当前分页按钮的样式"
+    },
+    ":base-size": {
+      "default": "6",
+      "value": "",
+      "type": "number",
+      "description": "The number of bases that are omitted is displayed in the calculation. The number of omitted items displayed is baseSize + 2 * bufferSize",
+      "description_zh": "计算显示省略的基础个数。显示省略的个数为 baseSize + 2 * bufferSize"
+    },
+    ":buffer-size": {
+      "default": "2",
+      "value": "",
+      "type": "number",
+      "description": "When the ellipsis is displayed, the number of page numbers displayed to the left and right of the current page number",
+      "description_zh": "显示省略号时，当前页码左右显示的页码个数"
+    },
+    "auto-adjust": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to adjust the page number when changing the number of data records",
+      "description_zh": "是否在改变数据条数时调整页码"
+    }
+  },
+  "methods": [],
+  "link": "https://arco.design/vue/component/pagination#API",
+  "link_zh": "https://arco.design/vue/component/pagination#API",
+  "events": [
+    {
+      "name": "change",
+      "description": "Triggered when the page number changes",
+      "description_zh": "页码改变时触发",
+      "params": "current: number",
+      "value": ""
+    },
+    {
+      "name": "page-size-change",
+      "description": "Triggered when the number of data records changes",
+      "description_zh": "数据条数改变时触发",
+      "params": "pageSize: number",
+      "value": ""
+    }
+  ],
+  "typeDetail": {}
+}

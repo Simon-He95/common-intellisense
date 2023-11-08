@@ -3,6 +3,7 @@ import { addEventListener, copyText, createCompletionItem, getActiveTextEditorLa
 import { CreateWebview } from '@vscode-use/createwebview'
 import { findPkgUI, parser } from './utils'
 import UI from './ui'
+import { nameMap } from './constants'
 
 declare const global: {
   commonIntellisense: {
@@ -210,15 +211,7 @@ export function deactivate() {
 }
 
 const filters = ['js', 'ts', 'jsx', 'tsx', 'vue', 'svelte']
-const nameMap: any = {
-  '@varlet/ui': 'varlet',
-  '@chakraUi/react': 'chakraUiReact',
-  '@chakraUi/vue': 'chakraUiVue',
-  '@skeletonlabs/skeleton': 'skeleton',
-  '@nextuiOrg/react': 'nextui',
-  '@nuxt/ui': 'nuxtui',
-  '@arcoDesign/webReact': 'arcoDesign',
-}
+
 function findUI() {
   const cwd = vscode.window.activeTextEditor?.document.uri.fsPath
   const suffix = cwd?.split('.').slice(-1)[0]

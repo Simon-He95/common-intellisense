@@ -5,91 +5,94 @@
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "当前收起状态",
+      "description": "Current collapsed state",
       "description_zh": "当前收起状态"
     },
     "collapsible": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "是否可收起",
+      "description": "Whether it can be stowed away",
       "description_zh": "是否可收起"
     },
     "defaultCollapsed": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "是否默认收起",
+      "description": "Whether it is collapsed by default",
       "description_zh": "是否默认收起"
     },
     "reverseArrow": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "翻转折叠提示箭头的方向，当 Sider 在右边时可以使用",
+      "description": "Flips the direction of the collapse cue arrow, which can be used when the Sider is on the right",
       "description_zh": "翻转折叠提示箭头的方向，当 Sider 在右边时可以使用"
     },
     ":collapsedWidth": {
       "default": "48",
       "value": "",
       "type": "number",
-      "description": "收缩宽度，设置为 0 会出现特殊 trigger",
+      "description": "Shrink the width, set to 0 and a special trigger will appear",
       "description_zh": "收缩宽度，设置为 0 会出现特殊 trigger"
     },
     "theme": {
       "default": "light",
-      "value": ["light", "dark"],
+      "value": [
+        "light",
+        "dark"
+      ],
       "type": "'dark' | 'light'",
-      "description": "主题颜色",
+      "description": "Theme colors",
       "description_zh": "主题颜色"
     },
     "trigger": {
       "default": "-",
       "value": "",
       "type": "string | ReactNode",
-      "description": "自定义底部折叠触发器，设置为 null 时隐藏 trigger",
+      "description": "Customize the bottom collapse trigger to hide the trigger when set to null",
       "description_zh": "自定义底部折叠触发器，设置为 null 时隐藏 trigger"
     },
     ":breakpoint": {
       "default": "-",
       "value": "",
       "type": "GridResponsiveBreakpoint",
-      "description": "触发响应式布局的断点, 详见响应式栅格",
+      "description": "Breakpoints that trigger responsive layouts, see Responsive Grid for details",
       "description_zh": "触发响应式布局的断点, 详见响应式栅格"
     },
     "className": {
       "default": "-",
       "value": "",
       "type": "string | string[]",
-      "description": "节点类名",
+      "description": "Node class name",
       "description_zh": "节点类名"
     },
     ":resizeBoxProps": {
       "default": "-",
       "value": "",
       "type": "ResizeBoxProps",
-      "description": "可以接受 ResizeBox 所有参数，在伸缩开启时，可以通过 resizeBoxProps 对菜单栏的 width 进行受控展示或者与 collapsed 联动",
+      "description": "All parameters of ResizeBox can be accepted, and when scaling is enabled, the width of the menu bar can be displayed in a controlled manner through resizeBoxProps or linked with collapsed",
       "description_zh": "可以接受 ResizeBox 所有参数，在伸缩开启时，可以通过 resizeBoxProps 对菜单栏的 width 进行受控展示或者与 collapsed 联动"
     },
     ":resizeDirections": {
       "default": "-",
       "value": "",
       "type": "string[]",
-      "description": "可以用 ResizeBox 替换原生的 aside 标签，这个参数即 ResizeBox的 directions 参数。详情请看 ResizeBox。",
+      "description": "You can replace the original aside tag with ResizeBox, which is the directions parameter of ResizeBox. See ResizeBox for details.",
       "description_zh": "可以用 ResizeBox 替换原生的 aside 标签，这个参数即 ResizeBox的 directions 参数。详情请看 ResizeBox。"
     },
     ":style": {
       "default": "-",
       "value": "",
       "type": "CSSProperties",
-      "description": "节点样式",
+      "description": "Node style",
       "description_zh": "节点样式"
     },
     "width": {
       "default": "200",
       "value": "",
       "type": "number | string",
-      "description": "宽度",
+      "description": "width",
       "description_zh": "宽度"
     }
   },
@@ -99,15 +102,17 @@
   "events": [
     {
       "name": "onCollapse",
-      "description": "展开-收起时的回调函数，有点击 trigger 以及响应式反馈两种方式可以触发",
+      "description": "The callback function when expanding-collapsing can be triggered in two ways: click trigger and reactive feedback",
       "description_zh": "展开-收起时的回调函数，有点击 trigger 以及响应式反馈两种方式可以触发",
-      "params": "(collapse: boolean, type: 'clickTrigger' | 'responsive') => void"
+      "params": "(collapse: boolean, type: 'clickTrigger' | 'responsive') => void",
+      "value": ""
     },
     {
       "name": "onBreakpoint",
-      "description": "触发响应式布局断点时的回调",
+      "description": "Callbacks when a responsive layout breakpoint is triggered",
       "description_zh": "触发响应式布局断点时的回调",
-      "params": "(broken: boolean) => void"
+      "params": "(broken: boolean) => void",
+      "value": ""
     }
   ],
   "typeDetail": {}

@@ -1,0 +1,579 @@
+{
+  "name": "AModal",
+  "props": {
+    ":v-model:visible": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the dialog box is visible",
+      "description_zh": "对话框是否可见",
+      "required": true
+    },
+    "default-visible": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the dialog is visible by default (uncontrolled)",
+      "description_zh": "对话框默认是否可见（非受控状态）"
+    },
+    "width": {
+      "default": "-",
+      "value": "",
+      "type": "number | string",
+      "description": "The width of the dialog box, if not set, uses the width value in the style",
+      "description_zh": "对话框的宽度，不设置的情况下会使用样式中的宽度值"
+    },
+    "top": {
+      "default": "-",
+      "value": "",
+      "type": "number | string",
+      "description": "The height of the dialog box from the top, centered display does not take effect when it is turned on",
+      "description_zh": "对话框的距离顶部的高度，居中显示开启的情况下不生效"
+    },
+    "mask": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether or not to display the mask layer",
+      "description_zh": "是否显示遮罩层"
+    },
+    "title": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "title",
+      "description_zh": "标题",
+      "required": true
+    },
+    "title-align": {
+      "default": "center",
+      "value": [
+        "start",
+        "center"
+      ],
+      "type": "'start' | 'center'",
+      "description": "The horizontal alignment direction of the title",
+      "description_zh": "标题的水平对齐方向"
+    },
+    "align-center": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the dialog box is centered",
+      "description_zh": "对话框是否居中显示"
+    },
+    "unmount-on-close": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to unmount the node when it is shut down",
+      "description_zh": "关闭时是否卸载节点"
+    },
+    "mask-closable": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to click on the mask layer closes the dialog",
+      "description_zh": "是否点击遮罩层可以关闭对话框"
+    },
+    "hide-cancel": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to hide the cancel button",
+      "description_zh": "是否隐藏取消按钮"
+    },
+    "simple": {
+      "default": "(props: any) => { return props.notice;}",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to turn on simple mode",
+      "description_zh": "是否开启简单模式"
+    },
+    "closable": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether or not to display a close button",
+      "description_zh": "是否显示关闭按钮"
+    },
+    "ok-text": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "Confirm the contents of the button",
+      "description_zh": "确认按钮的内容"
+    },
+    "cancel-text": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "The contents of the cancel button",
+      "description_zh": "取消按钮的内容"
+    },
+    "ok-loading": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Check whether the button is loading",
+      "description_zh": "确认按钮是否为加载中状态"
+    },
+    ":ok-button-props": {
+      "default": "-",
+      "value": "",
+      "type": "ButtonProps",
+      "description": "Confirm the Props of the button",
+      "description_zh": "确认按钮的Props"
+    },
+    ":cancel-button-props": {
+      "default": "-",
+      "value": "",
+      "type": "ButtonProps",
+      "description": "Cancel the Props of the button",
+      "description_zh": "取消按钮的Props"
+    },
+    "footer": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether or not to display the footer section",
+      "description_zh": "是否展示页脚部分"
+    },
+    "render-to-body": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the dialog is mounted under the body element",
+      "description_zh": "对话框是否挂载在 body 元素下"
+    },
+    "popup-container": {
+      "default": "body",
+      "value": "",
+      "type": "string | HTMLElement",
+      "description": "pop-up box",
+      "description_zh": "弹出框的挂载容器"
+    },
+    ":mask-style": {
+      "default": "-",
+      "value": "",
+      "type": "CSSProperties",
+      "description": "The style of the mask",
+      "description_zh": "蒙层的样式"
+    },
+    "modal-class": {
+      "default": "-",
+      "value": "",
+      "type": "string | any[]",
+      "description": "The class name of the dialog box",
+      "description_zh": "对话框的类名"
+    },
+    ":modal-style": {
+      "default": "-",
+      "value": "",
+      "type": "CSSProperties",
+      "description": "The style of the dialog box",
+      "description_zh": "对话框的样式"
+    },
+    "esc-to-close": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the ESC key is supported to close the dialog box",
+      "description_zh": "是否支持 ESC 键关闭对话框"
+    },
+    "draggable": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether drag is supported",
+      "description_zh": "是否支持拖动"
+    },
+    "fullscreen": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to turn on full screen",
+      "description_zh": "是否开启全屏"
+    },
+    "mask-animation-name": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "The name of the mask layer animation",
+      "description_zh": "遮罩层动画名字"
+    },
+    "modal-animation-name": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "Dialog animation name",
+      "description_zh": "对话框动画名字"
+    },
+    "body-class": {
+      "default": "-",
+      "value": "",
+      "type": "string | any[]",
+      "description": "The class name of the content portion of the dialog box",
+      "description_zh": "对话框内容部分的类名"
+    },
+    ":body-style": {
+      "default": "-",
+      "value": "",
+      "type": "StyleValue",
+      "description": "The style of the content portion of the dialog box",
+      "description_zh": "对话框内容部分的样式"
+    },
+    "hide-title": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to hide the title",
+      "description_zh": "是否隐藏标题"
+    }
+  },
+  "methods": [],
+  "link": "https://arco.design/vue/component/modal#API",
+  "link_zh": "https://arco.design/vue/component/modal#API",
+  "events": [
+    {
+      "name": "before-ok",
+      "description": "The callback function before the OK event is triggered. If it returns false, no subsequent events will be triggered, and you can also use done to close asynchronously.",
+      "description_zh": "触发 ok 事件前的回调函数。如果返回 false 则不会触发后续事件，也可使用 done 进行异步关闭。",
+      "params": "( done: (closed: boolean) => void) => void | boolean | Promise<void | boolean>",
+      "value": ""
+    },
+    {
+      "name": "before-cancel",
+      "description": "The callback function before the cancel event is triggered. If false is returned, no subsequent event will be triggered.",
+      "description_zh": "触发 cancel 事件前的回调函数。如果返回 false 则不会触发后续事件。",
+      "params": "() => boolean",
+      "value": ""
+    },
+    {
+      "name": "ok",
+      "description": "Triggered when the OK button is clicked",
+      "description_zh": "点击确定按钮时触发",
+      "params": "ev: MouseEvent",
+      "value": ""
+    },
+    {
+      "name": "cancel",
+      "description": "Triggered when you click the cancel or close buttons",
+      "description_zh": "点击取消、关闭按钮时触发",
+      "params": "ev: MouseEvent | KeyboardEvent",
+      "value": ""
+    },
+    {
+      "name": "open",
+      "description": "Triggered when the dialog opens (the animation ends).",
+      "description_zh": "对话框打开后（动画结束）触发",
+      "params": "-",
+      "value": ""
+    },
+    {
+      "name": "close",
+      "description": "Triggered when the dialog closes (the animation ends).",
+      "description_zh": "对话框关闭后（动画结束）触发",
+      "params": "-",
+      "value": ""
+    },
+    {
+      "name": "before-open",
+      "description": "Triggered before the dialog opens",
+      "description_zh": "对话框打开前触发",
+      "params": "-",
+      "value": ""
+    },
+    {
+      "name": "before-close",
+      "description": "Triggered before the dialog box closes",
+      "description_zh": "对话框关闭前触发",
+      "params": "-",
+      "value": ""
+    }
+  ],
+  "typeDetail": {
+    "ModalConfig": [
+      {
+        "name": "title",
+        "type": "RenderContent",
+        "description": "标题",
+        "default": "-"
+      },
+      {
+        "name": "content",
+        "type": "RenderContent",
+        "description": "内容",
+        "default": "-"
+      },
+      {
+        "name": "footer",
+        "type": "boolean | RenderContent",
+        "description": "页脚",
+        "default": "true"
+      },
+      {
+        "name": "closable",
+        "type": "boolean",
+        "description": "是否显示关闭按钮",
+        "default": "true"
+      },
+      {
+        "name": "okText",
+        "type": "string",
+        "description": "确认按钮的内容",
+        "default": "-"
+      },
+      {
+        "name": "cancelText",
+        "type": "string",
+        "description": "取消按钮的内容",
+        "default": "-"
+      },
+      {
+        "name": "okButtonProps",
+        "type": "ButtonProps",
+        "description": "确认按钮的Props",
+        "default": "-"
+      },
+      {
+        "name": "cancelButtonProps",
+        "type": "ButtonProps",
+        "description": "取消按钮的Props",
+        "default": "-"
+      },
+      {
+        "name": "okLoading",
+        "type": "boolean",
+        "description": "确认按钮是否为加载中状态",
+        "default": "false"
+      },
+      {
+        "name": "hideCancel",
+        "type": "boolean",
+        "description": "是否隐藏取消按钮",
+        "default": "false"
+      },
+      {
+        "name": "mask",
+        "type": "boolean",
+        "description": "是否显示遮罩层",
+        "default": "true"
+      },
+      {
+        "name": "simple",
+        "type": "boolean",
+        "description": "是否开启简单模式",
+        "default": "false"
+      },
+      {
+        "name": "maskClosable",
+        "type": "boolean",
+        "description": "是否点击遮罩层可以关闭对话框",
+        "default": "true"
+      },
+      {
+        "name": "maskStyle",
+        "type": "CSSProperties",
+        "description": "蒙层的样式",
+        "default": "-"
+      },
+      {
+        "name": "alignCenter",
+        "type": "boolean",
+        "description": "对话框是否居中显示",
+        "default": "true"
+      },
+      {
+        "name": "escToClose",
+        "type": "boolean",
+        "description": "是否支持 ESC 键关闭对话框",
+        "default": "true"
+      },
+      {
+        "name": "draggable",
+        "type": "boolean",
+        "description": "是否支持拖动",
+        "default": "false"
+      },
+      {
+        "name": "fullscreen",
+        "type": "boolean",
+        "description": "是否开启全屏",
+        "default": "false"
+      },
+      {
+        "name": "onOk",
+        "type": "(e?: Event) => void",
+        "description": "点击确定按钮的回调函数",
+        "default": "-"
+      },
+      {
+        "name": "onCancel",
+        "type": "(e?: Event) => void",
+        "description": "点击取消按钮的回调函数",
+        "default": "-"
+      },
+      {
+        "name": "onBeforeOk",
+        "type": "( done: (closed: boolean) => void ) => void | boolean | Promise<void | boolean>",
+        "description": "触发 ok 事件前的回调函数。如果返回 false 则不会触发后续事件，也可使用 done 进行异步关闭。",
+        "default": "-"
+      },
+      {
+        "name": "onBeforeCancel",
+        "type": "() => boolean",
+        "description": "触发 cancel 事件前的回调函数。如果返回 false 则不会触发后续事件。",
+        "default": "-"
+      },
+      {
+        "name": "onOpen",
+        "type": "() => void",
+        "description": "对话框打开后（动画结束）触发",
+        "default": "-"
+      },
+      {
+        "name": "onClose",
+        "type": "() => void",
+        "description": "对话框关闭后（动画结束）触发",
+        "default": "-"
+      },
+      {
+        "name": "onBeforeOpen",
+        "type": "() => void",
+        "description": "对话框打开前触发",
+        "default": "-"
+      },
+      {
+        "name": "onBeforeClose",
+        "type": "() => void",
+        "description": "对话框关闭前触发",
+        "default": "-"
+      },
+      {
+        "name": "width",
+        "type": "number | string",
+        "description": "对话框的宽度，不设置的情况下会使用样式中的宽度值",
+        "default": "-"
+      },
+      {
+        "name": "top",
+        "type": "number | string",
+        "description": "对话框的距离顶部的高度，居中显示开启的情况下不生效",
+        "default": "-"
+      },
+      {
+        "name": "titleAlign",
+        "type": "'start' | 'center'",
+        "description": "标题的水平对齐方向",
+        "default": "center"
+      },
+      {
+        "name": "renderToBody",
+        "type": "boolean",
+        "description": "对话框是否挂载在 body 元素下",
+        "default": "true"
+      },
+      {
+        "name": "popupContainer",
+        "type": "string | HTMLElement",
+        "description": "弹出框的挂载容器",
+        "default": "body"
+      },
+      {
+        "name": "modalClass",
+        "type": "string | any[]",
+        "description": "对话框的类名",
+        "default": "-"
+      },
+      {
+        "name": "modalStyle",
+        "type": "CSSProperties",
+        "description": "对话框的样式",
+        "default": "-"
+      },
+      {
+        "name": "maskAnimationName",
+        "type": "string",
+        "description": "遮罩层动画名字",
+        "default": "-"
+      },
+      {
+        "name": "modalAnimationName",
+        "type": "string",
+        "description": "对话框动画名字",
+        "default": "-"
+      },
+      {
+        "name": "hideTitle",
+        "type": "boolean",
+        "description": "是否隐藏标题",
+        "default": "false"
+      },
+      {
+        "name": "bodyClass",
+        "type": "string | any[]",
+        "description": "对话框内容部分的类名",
+        "default": "-"
+      },
+      {
+        "name": "bodyStyle",
+        "type": "StyleValue",
+        "description": "对话框内容部分的样式",
+        "default": "-"
+      }
+    ],
+    "ModalReturn": [
+      {
+        "name": "close",
+        "type": "() => void",
+        "description": "关闭对话框",
+        "default": "-"
+      },
+      {
+        "name": "update",
+        "type": "(config: ModalUpdateConfig) => void",
+        "description": "更新对话框",
+        "default": "-"
+      }
+    ],
+    "ModalMethod": [
+      {
+        "name": "open",
+        "type": "(config: ModalConfig, appContext?: AppContext) => ModalReturn",
+        "description": "打开对话框",
+        "default": "-"
+      },
+      {
+        "name": "confirm",
+        "type": "(config: ModalConfig, appContext?: AppContext) => ModalReturn",
+        "description": "打开对话框（简单模式）",
+        "default": "-"
+      },
+      {
+        "name": "info",
+        "type": "(config: ModalConfig, appContext?: AppContext) => ModalReturn",
+        "description": "打开信息对话框",
+        "default": "-"
+      },
+      {
+        "name": "success",
+        "type": "(config: ModalConfig, appContext?: AppContext) => ModalReturn",
+        "description": "打开成功对话框",
+        "default": "-"
+      },
+      {
+        "name": "warning",
+        "type": "(config: ModalConfig, appContext?: AppContext) => ModalReturn",
+        "description": "打开警告对话框",
+        "default": "-"
+      },
+      {
+        "name": "error",
+        "type": "(config: ModalConfig, appContext?: AppContext) => ModalReturn",
+        "description": "打开错误对话框",
+        "default": "-"
+      }
+    ]
+  }
+}

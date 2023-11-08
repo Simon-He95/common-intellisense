@@ -3,51 +3,57 @@
   "props": {
     "shape": {
       "default": "circle",
-      "value": ["circle", "square"],
+      "value": [
+        "circle",
+        "square"
+      ],
       "type": "'circle' | 'square'",
-      "description": "头像的形状，有圆形(circle)和正方形(square)两种",
+      "description": "There are two types of avatars: circle and square",
       "description_zh": "头像的形状，有圆形(circle)和正方形(square)两种"
     },
     "image-url": {
       "default": "-",
       "value": "",
       "type": "string",
-      "description": "自定义头像图片地址，如果传入该属性，会默认渲染img标签",
+      "description": "Customize the address of the avatar image, if this attribute is passed, the img tag will be rendered by default",
       "description_zh": "自定义头像图片地址，如果传入该属性，会默认渲染img标签"
     },
     ":size": {
       "default": "-",
       "value": "",
       "type": "number",
-      "description": "头像的尺寸大小，单位是 px。未填写时使用样式中的大小 40px",
+      "description": "The size of the avatar in px. If not filled, use the size of 40px in the style",
       "description_zh": "头像的尺寸大小，单位是 px。未填写时使用样式中的大小 40px"
     },
     "auto-fix-font-size": {
       "default": "true",
       "value": "",
       "type": "boolean",
-      "description": "是否自动根据头像尺寸调整字体大小",
+      "description": "Whether the font size is automatically adjusted according to the size of the avatar",
       "description_zh": "是否自动根据头像尺寸调整字体大小"
     },
     "trigger-type": {
       "default": "button",
-      "value": ["mask", "button"],
+      "value": [
+        "mask",
+        "button"
+      ],
       "type": "'mask' | 'button'",
-      "description": "可点击的头像交互类型",
+      "description": "Types of avatar interactions that can be clicked",
       "description_zh": "可点击的头像交互类型"
     },
     ":trigger-icon-style": {
       "default": "-",
       "value": "",
       "type": "CSSProperties",
-      "description": "交互图标的样式",
+      "description": "The style of the interaction icon",
       "description_zh": "交互图标的样式"
     },
     ":object-fit": {
       "default": "-",
       "value": "",
       "type": "ObjectFit",
-      "description": "图片在容器内的的适应类型",
+      "description": "The type of adaptation of the picture inside the container",
       "description_zh": "图片在容器内的的适应类型"
     }
   },
@@ -57,21 +63,24 @@
   "events": [
     {
       "name": "click",
-      "description": "点击回调",
+      "description": "Click Callbacks",
       "description_zh": "点击回调",
-      "params": "ev: MouseEvent"
+      "params": "ev: MouseEvent",
+      "value": ""
     },
     {
       "name": "error",
-      "description": "图片加载错误",
+      "description": "Picture loading error",
       "description_zh": "图片加载错误",
-      "params": "-"
+      "params": "-",
+      "value": ""
     },
     {
       "name": "load",
-      "description": "图片加载成功",
+      "description": "The image loads successfully",
       "description_zh": "图片加载成功",
-      "params": "-"
+      "params": "-",
+      "value": ""
     }
   ],
   "typeDetail": {}

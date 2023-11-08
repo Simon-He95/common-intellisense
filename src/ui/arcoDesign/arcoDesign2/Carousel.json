@@ -5,119 +5,144 @@
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "是否仅渲染满足动画效果的最少数量的 children",
+      "description": "Whether to render only the minimum number of children that satisfy the animation effect",
       "description_zh": "是否仅渲染满足动画效果的最少数量的 children"
     },
     ":currentIndex": {
       "default": "0",
       "value": "",
       "type": "number",
-      "description": "当前展示索引",
+      "description": "The current display index",
       "description_zh": "当前展示索引"
     },
     ":moveSpeed": {
       "default": "500",
       "value": "",
       "type": "number",
-      "description": "幻灯片移动速率(ms)",
+      "description": "Slide Movement Rate (ms)",
       "description_zh": "幻灯片移动速率(ms)"
     },
     "timingFunc": {
       "default": "cubic-bezier(0.34, 0.69, 0.1, 1)",
       "value": "",
       "type": "string",
-      "description": "过渡速度曲线, 默认匀速 transition-timing-function",
+      "description": "Transition velocity curve, the default constant speed transition-timing-function",
       "description_zh": "过渡速度曲线, 默认匀速 transition-timing-function"
     },
     "animation": {
       "default": "slide",
-      "value": ["slide", "card", "fade"],
+      "value": [
+        "slide",
+        "card",
+        "fade"
+      ],
       "type": "'slide' | 'card' | 'fade'",
-      "description": "切换动画",
+      "description": "Toggle animations",
       "description_zh": "切换动画"
     },
     "direction": {
       "default": "horizontal",
-      "value": ["horizontal", "vertical"],
+      "value": [
+        "horizontal",
+        "vertical"
+      ],
       "type": "'horizontal' | 'vertical'",
-      "description": "幻灯片移动方向",
+      "description": "Slide movement direction",
       "description_zh": "幻灯片移动方向"
     },
     "indicatorPosition": {
       "default": "bottom",
-      "value": ["bottom", "top", "left", "right", "outer"],
+      "value": [
+        "bottom",
+        "top",
+        "left",
+        "right",
+        "outer"
+      ],
       "type": "'bottom' | 'top' | 'left' | 'right' | 'outer'",
-      "description": "指示器位置",
+      "description": "Indicator position",
       "description_zh": "指示器位置"
     },
     "indicatorType": {
       "default": "dot",
-      "value": ["line", "dot", "slider", "never"],
+      "value": [
+        "line",
+        "dot",
+        "slider",
+        "never"
+      ],
       "type": "'line' | 'dot' | 'slider' | 'never'",
-      "description": "指示器类型，可为小方块和小圆点或不显示",
+      "description": "The type of indicator, which can be small squares and dots or not displayed",
       "description_zh": "指示器类型，可为小方块和小圆点或不显示"
     },
     "showArrow": {
       "default": "always",
-      "value": ["always", "hover", "never"],
+      "value": [
+        "always",
+        "hover",
+        "never"
+      ],
       "type": "'always' | 'hover' | 'never'",
-      "description": "切换箭头显示时机",
+      "description": "Toggles when the arrow is displayed",
       "description_zh": "切换箭头显示时机"
     },
     "trigger": {
       "default": "click",
-      "value": ["click", "hover"],
+      "value": [
+        "click",
+        "hover"
+      ],
       "type": "'click' | 'hover'",
-      "description": "幻灯片切换触发方式, click/hover 指示器",
+      "description": "Slide switch trigger mode, click/hover indicator",
       "description_zh": "幻灯片切换触发方式, click/hover 指示器"
     },
     "arrowClassName": {
       "default": "-",
       "value": "",
       "type": "string | string[]",
-      "description": "切换箭头样式",
+      "description": "Toggles the arrow style",
       "description_zh": "切换箭头样式"
     },
     "autoPlay": {
       "default": "-",
       "value": "",
       "type": "boolean | { interval?: number; hoverToPause?: boolean }",
-      "description": "是否自动循环展示，或者传入 { interval: 自动切换的时间间隔(默认: 3000), hoverToPause: 鼠标悬浮时是否暂停自动切换(默认: true) } 进行高级配置 (2.14.0 支持传入对象)",
+      "description": "Whether to automatically loop the display, or pass in { interval: the time interval for automatic switching (default: 3000), hoverToPause: whether to pause automatic switching when hovering (default: true) } for advanced configuration (2.14.0 supports incoming objects)",
       "description_zh": "是否自动循环展示，或者传入 { interval: 自动切换的时间间隔(默认: 3000), hoverToPause: 鼠标悬浮时是否暂停自动切换(默认: true) } 进行高级配置 (2.14.0 支持传入对象)"
     },
     ":carousel": {
       "default": "-",
       "value": "",
       "type": "MutableRefObject<CarouselHandle>",
-      "description": "用于获得带有 API 方法的 Carousel 引用。",
+      "description": "Used to get a Carousel reference with an API method.",
       "description_zh": "用于获得带有 API 方法的 Carousel 引用。"
     },
     "className": {
       "default": "-",
       "value": "",
       "type": "string | string[]",
-      "description": "节点类名",
+      "description": "Node class name",
       "description_zh": "节点类名"
     },
     "icons": {
       "default": "-",
       "value": "",
       "type": "{prev?: ReactNode;next?: ReactNode;}",
-      "description": "自定义图标",
+      "description": "Customize the icon",
       "description_zh": "自定义图标"
     },
     "indicatorClassName": {
       "default": "-",
       "value": "",
       "type": "string | string[]",
-      "description": "指示器的样式",
+      "description": "The style of the indicator",
       "description_zh": "指示器的样式"
     },
     ":style": {
       "default": "-",
       "value": "",
       "type": "CSSProperties",
-      "description": "节点样式",
+      "description": "Node style",
       "description_zh": "节点样式"
     }
   },
@@ -127,9 +152,10 @@
   "events": [
     {
       "name": "onChange",
-      "description": "幻灯片发生切换时的回调函数。",
+      "description": "The callback function when a slide switches.",
       "description_zh": "幻灯片发生切换时的回调函数。",
-      "params": "(index: number, prevIndex: number, isManual: boolean) => void"
+      "params": "(index: number, prevIndex: number, isManual: boolean) => void",
+      "value": ""
     }
   ],
   "typeDetail": {}

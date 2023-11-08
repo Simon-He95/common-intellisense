@@ -1,0 +1,288 @@
+{
+  "name": "ATrigger",
+  "props": {
+    "v-model:popup-visible": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the pop-up box is visible",
+      "description_zh": "弹出框是否可见"
+    },
+    "default-popup-visible": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the pop-up box is visible by default (uncontrolled mode)",
+      "description_zh": "弹出框默认是否可见（非受控模式）"
+    },
+    "trigger": {
+      "default": "hover",
+      "value": [
+        "hover",
+        "click",
+        "focus",
+        "contextMenu"
+      ],
+      "type": "'hover' | 'click' | 'focus' | 'contextMenu'",
+      "description": "Trigger mode",
+      "description_zh": "触发方式"
+    },
+    "position": {
+      "default": "bottom",
+      "value": [
+        "top",
+        "tl",
+        "tr",
+        "bottom",
+        "bl",
+        "br",
+        "left",
+        "lt",
+        "lb",
+        "right",
+        "rt",
+        "rb"
+      ],
+      "type": "'top' | 'tl' | 'tr' | 'bottom' | 'bl' | 'br' | 'left' | 'lt' | 'lb' | 'right' | 'rt' | 'rb'",
+      "description": "Ejection position",
+      "description_zh": "弹出位置"
+    },
+    "disabled": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the trigger is disabled",
+      "description_zh": "触发器是否禁用"
+    },
+    ":popup-offset": {
+      "default": "0",
+      "value": "",
+      "type": "number",
+      "description": "The offset of the popup (the offset distance of the popover from the trigger)",
+      "description_zh": "弹出框的偏移量（弹出框距离触发器的偏移距离）"
+    },
+    ":popup-translate": {
+      "default": "-",
+      "value": "",
+      "type": "TriggerPopupTranslate",
+      "description": "The distance the pop-up box moves",
+      "description_zh": "弹出框的移动距离"
+    },
+    "show-arrow": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether or not the pop-up box displays an arrow",
+      "description_zh": "弹出框是否显示箭头"
+    },
+    "align-point": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the pop-up follows the mouse",
+      "description_zh": "弹出框是否跟随鼠标"
+    },
+    "popup-hover-stay": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to keep the pop-up displayed when the trigger is moved out and moved in",
+      "description_zh": "是否在移出触发器，并移入弹出框时保持弹出框显示"
+    },
+    "blur-to-close": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to close the pop-up box when the trigger loses focus",
+      "description_zh": "是否在触发器失去焦点时关闭弹出框"
+    },
+    "click-to-close": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to close the pop-up box when the trigger is clicked",
+      "description_zh": "是否在点击触发器时关闭弹出框"
+    },
+    "click-outside-to-close": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to close the pop-up box when you click on the external area",
+      "description_zh": "是否在点击外部区域时关闭弹出框"
+    },
+    "unmount-on-close": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to uninstall the pop-up node when it is closed",
+      "description_zh": "是否在关闭时卸载弹出框节点"
+    },
+    "content-class": {
+      "default": "-",
+      "value": "",
+      "type": "string | array | object",
+      "description": "The class name of the pop-up contents",
+      "description_zh": "弹出框内容的类名"
+    },
+    ":content-style": {
+      "default": "-",
+      "value": "",
+      "type": "CSSProperties",
+      "description": "The style of the popover content",
+      "description_zh": "弹出框内容的样式"
+    },
+    "arrow-class": {
+      "default": "-",
+      "value": "",
+      "type": "string | array | object",
+      "description": "The class name of the pop-up arrow",
+      "description_zh": "弹出框箭头的类名"
+    },
+    ":arrow-style": {
+      "default": "-",
+      "value": "",
+      "type": "CSSProperties",
+      "description": "The style of the popover arrows",
+      "description_zh": "弹出框箭头的样式"
+    },
+    ":popup-style": {
+      "default": "-",
+      "value": "",
+      "type": "CSSProperties",
+      "description": "The style of the pop-up box",
+      "description_zh": "弹出框的样式"
+    },
+    "animation-name": {
+      "default": "'fade-in'",
+      "value": "",
+      "type": "string",
+      "description": "The name of the pop-up animation",
+      "description_zh": "弹出动画的name"
+    },
+    "duration": {
+      "default": "-",
+      "value": "",
+      "type": "number| { enter: number; leave: number; }",
+      "description": "The duration of the pop-up animation",
+      "description_zh": "弹出动画的持续时间"
+    },
+    ":mouse-enter-delay": {
+      "default": "100",
+      "value": "",
+      "type": "number",
+      "description": "Time for mouseenter event delay to trigger (ms)",
+      "description_zh": "mouseenter事件延时触发的时间（毫秒）"
+    },
+    ":mouse-leave-delay": {
+      "default": "100",
+      "value": "",
+      "type": "number",
+      "description": "Time for the mouseleave event to be delayed (ms)",
+      "description_zh": "mouseleave事件延时触发的时间（毫秒）"
+    },
+    ":focus-delay": {
+      "default": "0",
+      "value": "",
+      "type": "number",
+      "description": "Time for the focus event to be triggered by a delay (ms)",
+      "description_zh": "focus事件延时触发的时间（毫秒）"
+    },
+    "auto-fit-popup-width": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to set the pop-up width to the trigger width",
+      "description_zh": "是否将弹出框宽度设置为触发器宽度"
+    },
+    "auto-fit-popup-min-width": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to set the minimum width of the pop-up box to the trigger width",
+      "description_zh": "是否将弹出框的最小宽度设置为触发器宽度"
+    },
+    "auto-fix-position": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "When the size of the trigger changes, whether to recalculate the pop-up box position",
+      "description_zh": "当触发器的尺寸发生变化时，是否重新计算弹出框位置"
+    },
+    "popup-container": {
+      "default": "-",
+      "value": "",
+      "type": "string | HTMLElement",
+      "description": "pop-up box",
+      "description_zh": "弹出框的挂载容器"
+    },
+    "update-at-scroll": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to update the position of the popover box when the container scrolls",
+      "description_zh": "是否在容器滚动时更新弹出框的位置"
+    },
+    "auto-fit-position": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to automatically adjust the pop-up box position to fit the window size",
+      "description_zh": "是否自动调整弹出框位置，以适应窗口大小"
+    },
+    "render-to-body": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether it is mounted under the body element",
+      "description_zh": "是否挂载在 body 元素下"
+    },
+    "prevent-focus": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to prevent elements in the pop-up layer from gaining focus when clicked",
+      "description_zh": "是否阻止弹出层中的元素点击时获取焦点"
+    },
+    "scroll-to-close": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to close the pop-up box while scrolling",
+      "description_zh": "是否在滚动时关闭弹出框"
+    },
+    ":scroll-to-close-distance": {
+      "default": "0",
+      "value": "",
+      "type": "number",
+      "description": "Scroll threshold, which triggers a shutdown when the scroll distance exceeds this value",
+      "description_zh": "滚动阈值，当滚动距离超过该值时触发关闭"
+    }
+  },
+  "methods": [],
+  "link": "https://arco.design/vue/component/trigger#API",
+  "link_zh": "https://arco.design/vue/component/trigger#API",
+  "events": [
+    {
+      "name": "popup-visible-change",
+      "description": "A pop-up box is displayed when the status changes",
+      "description_zh": "弹出框显示状态改变时触发",
+      "params": "visible: boolean",
+      "value": ""
+    },
+    {
+      "name": "show",
+      "description": "Triggered after the pop-up box is displayed (at the end of the animation).",
+      "description_zh": "弹出框显示后（动画结束）触发",
+      "params": "-",
+      "value": ""
+    },
+    {
+      "name": "hide",
+      "description": "Triggered when the pop-up box is hidden (at the end of the animation).",
+      "description_zh": "弹出框隐藏后（动画结束）触发",
+      "params": "-",
+      "value": ""
+    }
+  ],
+  "typeDetail": {}
+}

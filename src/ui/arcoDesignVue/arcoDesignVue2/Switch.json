@@ -1,0 +1,130 @@
+{
+  "name": "ASwitch",
+  "props": {
+    "v-model": {
+      "default": "-",
+      "value": "",
+      "type": "string | number | boolean",
+      "description": "Binding value",
+      "description_zh": "绑定值"
+    },
+    "default-checked": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Default Selected State (Uncontrolled)",
+      "description_zh": "默认选中状态（非受控状态）"
+    },
+    "disabled": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to disable or not",
+      "description_zh": "是否禁用"
+    },
+    "loading": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether it is in the Loading state",
+      "description_zh": "是否为加载中状态"
+    },
+    "type": {
+      "default": "circle",
+      "value": [
+        "circle",
+        "round",
+        "line"
+      ],
+      "type": "'circle' | 'round' | 'line'",
+      "description": "The type of switch",
+      "description_zh": "开关的类型"
+    },
+    "size": {
+      "default": "medium",
+      "value": [
+        "small",
+        "medium"
+      ],
+      "type": "'small' | 'medium'",
+      "description": "The size of the switch",
+      "description_zh": "开关的大小"
+    },
+    "checked-value": {
+      "default": "true",
+      "value": "",
+      "type": "string | number | boolean",
+      "description": "The value when selected",
+      "description_zh": "选中时的值"
+    },
+    "unchecked-value": {
+      "default": "false",
+      "value": "",
+      "type": "string | number | boolean",
+      "description": "The value when unchecked",
+      "description_zh": "未选中时的值"
+    },
+    "checked-color": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "The color of the switch when selected",
+      "description_zh": "选中时的开关颜色"
+    },
+    "unchecked-color": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "The color of the switch when it is unchecked",
+      "description_zh": "未选中时的开关颜色"
+    },
+    ":before-change": {
+      "default": "-",
+      "value": "",
+      "type": "( newValue: string | number | boolean) => Promise<boolean | void> | boolean | void",
+      "description": "The hook before the switch state is changed, returns false or returns a Promise and is rejected to stop the switch.",
+      "description_zh": "switch 状态改变前的钩子， 返回 false 或者返回 Promise 且被 reject 则停止切换。"
+    },
+    "checked-text": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "Copywriting when it is open (does not take effect when type='line' and size='small')",
+      "description_zh": "打开状态时的文案（type='line'和size='small'时不生效）"
+    },
+    "unchecked-text": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "Closed copy (not effective when type='line' and size='small')",
+      "description_zh": "关闭状态时的文案（type='line'和size='small'时不生效）"
+    }
+  },
+  "methods": [],
+  "link": "https://arco.design/vue/component/switch#API",
+  "link_zh": "https://arco.design/vue/component/switch#API",
+  "events": [
+    {
+      "name": "change",
+      "description": "Triggered when the value changes",
+      "description_zh": "值改变时触发",
+      "params": "value: boolean | string | number, ev: Event",
+      "value": ""
+    },
+    {
+      "name": "focus",
+      "description": "Triggers when a component gains focus",
+      "description_zh": "组件获得焦点时触发",
+      "params": "ev: FocusEvent",
+      "value": ""
+    },
+    {
+      "name": "blur",
+      "description": "Triggers when a component loses focus",
+      "description_zh": "组件失去焦点时触发",
+      "params": "ev: FocusEvent",
+      "value": ""
+    }
+  ],
+  "typeDetail": {}
+}

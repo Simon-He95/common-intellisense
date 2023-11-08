@@ -5,63 +5,68 @@
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "禁用",
+      "description": "disable",
       "description_zh": "禁用"
     },
     "component": {
       "default": "div",
       "value": "",
       "type": "string",
-      "description": "分割框的 html 标签",
+      "description": "HTML tags for the split box",
       "description_zh": "分割框的 html 标签"
     },
     "direction": {
       "default": "horizontal",
-      "value": ["horizontal", "vertical", "horizontal-reverse", "vertical-reverse"],
+      "value": [
+        "horizontal",
+        "vertical",
+        "horizontal-reverse",
+        "vertical-reverse"
+      ],
       "type": "'horizontal' | 'vertical' | 'horizontal-reverse' | 'vertical-reverse'",
-      "description": "分割方向分为水平 horizontal 和垂直 vertical，默认是水平分割",
+      "description": "The division direction is divided into horizontal and vertical, and the default is horizontal division",
       "description_zh": "分割方向分为水平 horizontal 和垂直 vertical，默认是水平分割"
     },
     ":icon": {
       "default": "-",
       "value": "",
       "type": "ReactNode",
-      "description": "定制伸缩杆的图标",
+      "description": "Customize the icon of the telescopic pole",
       "description_zh": "定制伸缩杆的图标"
     },
     ":trigger": {
       "default": "-",
       "value": "",
       "type": "ReactNode",
-      "description": "定制伸缩杆的内容",
+      "description": "Customize the contents of the telescopic pole",
       "description_zh": "定制伸缩杆的内容"
     },
     "className": {
       "default": "-",
       "value": "",
       "type": "string | string[]",
-      "description": "节点类名",
+      "description": "Node class name",
       "description_zh": "节点类名"
     },
     "max": {
       "default": "-",
       "value": "",
       "type": "number | string",
-      "description": "最大阈值",
+      "description": "Maximum threshold",
       "description_zh": "最大阈值"
     },
     "min": {
       "default": "-",
       "value": "",
       "type": "number | string",
-      "description": "最小阈值",
+      "description": "Minimum threshold",
       "description_zh": "最小阈值"
     },
     ":panes": {
       "default": "-",
       "value": "",
       "type": "ReactNode[]  (必填)",
-      "description": "面板，[firstPane, secondPane]",
+      "description": "Panels, [firstPane, secondPane]",
       "description_zh": "面板，[firstPane, secondPane]",
       "required": true
     },
@@ -69,14 +74,14 @@
       "default": "0.5",
       "value": "",
       "type": "number | string",
-      "description": "分割的大小，可以是 0~1 代表百分比，或具体数值的像素，如 300px",
+      "description": "The size of the segment can be 0~1 for a percentage, or a specific number of pixels, such as 300px",
       "description_zh": "分割的大小，可以是 0~1 代表百分比，或具体数值的像素，如 300px"
     },
     ":style": {
       "default": "-",
       "value": "",
       "type": "CSSProperties",
-      "description": "节点样式",
+      "description": "Node style",
       "description_zh": "节点样式"
     }
   },
@@ -86,27 +91,31 @@
   "events": [
     {
       "name": "onMoving",
-      "description": "拖拽中的回调",
+      "description": "Callbacks in dragging",
       "description_zh": "拖拽中的回调",
-      "params": "(e: MouseEvent, size: number | string) => void"
+      "params": "(e: MouseEvent, size: number | string) => void",
+      "value": ""
     },
     {
       "name": "onMovingEnd",
-      "description": "拖拽结束之后的回调",
+      "description": "The callback after the drag is over",
       "description_zh": "拖拽结束之后的回调",
-      "params": "() => void"
+      "params": "() => void",
+      "value": ""
     },
     {
       "name": "onMovingStart",
-      "description": "开始拖拽之前的回调",
+      "description": "Start dragging the previous callback",
       "description_zh": "开始拖拽之前的回调",
-      "params": "() => void"
+      "params": "() => void",
+      "value": ""
     },
     {
       "name": "onPaneResize",
-      "description": "面板大小变化的回调",
+      "description": "Callbacks for panel size changes",
       "description_zh": "面板大小变化的回调",
-      "params": "(paneContainers: HTMLElement[]) => void"
+      "params": "(paneContainers: HTMLElement[]) => void",
+      "value": ""
     }
   ],
   "typeDetail": {}

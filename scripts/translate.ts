@@ -6,8 +6,13 @@ let stack = 0
 let limit = 10
 const hasDone = new Set()
 async function setup() {
-  const cwd = path.resolve(root, 'src/ui/arcoDesign/arcoDesign2')
+  const cwd = path.resolve(root, 'src/ui/arcoDesignVue/arcoDesignVue2')
   const entry = await fg(['**/*.json'], { dot: true, cwd })
+  // entry.forEach(async (url: string) => {
+  //   const _url = path.resolve(cwd, url)
+  //   const content = JSON.parse(await fsp.readFile(_url, 'utf-8'))
+  //   console.log(content.name)
+  // })
   const rest = entry.map((url: string) => {
     const newUrl = path.resolve(cwd, url)
     if (hasDone.has(newUrl)) return
@@ -28,7 +33,7 @@ async function setup() {
       if (!value.description) {
         value.description = ''
       }
-      if(!value.value){
+      if (!value.value) {
         value.value = ''
       }
       if (hasChineseCharacters(value.description)) {
@@ -62,7 +67,7 @@ async function setup() {
       if (!item.description) {
         item.description = ''
       }
-      if(!item.value){
+      if (!item.value) {
         item.value = ''
       }
       if (hasChineseCharacters(item.description)) {
@@ -99,7 +104,7 @@ async function setup() {
       if (!item.description) {
         item.description = ''
       }
-      if(!item.value){
+      if (!item.value) {
         item.value = ''
       }
       if (hasChineseCharacters(item.description)) {

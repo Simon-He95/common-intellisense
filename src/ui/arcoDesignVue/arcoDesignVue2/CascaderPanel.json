@@ -1,0 +1,142 @@
+{
+  "name": "ACascaderPanel",
+  "props": {
+    "path-mode": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the binding value is a path",
+      "description_zh": "绑定值是否为路径"
+    },
+    "multiple": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether it is a multi-select state (search is enabled by default in multi-select mode)",
+      "description_zh": "是否为多选状态（多选模式默认开启搜索）"
+    },
+    "v-model": {
+      "default": "-",
+      "value": "",
+      "type": "string| number| Record<string, any>| ( | string | number | Record<string, any> | (string | number | Record<string, any>)[] )[]| undefined",
+      "description": "Binding value",
+      "description_zh": "绑定值",
+      "required": true
+    },
+    "default-value": {
+      "default": "'' | undefined | []",
+      "value": "",
+      "type": "string| number| Record<string, any>| ( | string | number | Record<string, any> | (string | number | Record<string, any>)[] )[]| undefined",
+      "description": "Default (uncontrolled)",
+      "description_zh": "默认值（非受控状态）"
+    },
+    ":options": {
+      "default": "[]",
+      "value": "",
+      "type": "CascaderOption[]",
+      "description": "Options for cascade selectors",
+      "description_zh": "级联选择器的选项",
+      "required": true
+    },
+    "expand-trigger": {
+      "default": "click",
+      "value": "",
+      "type": "string",
+      "description": "Expand the trigger method for the next level",
+      "description_zh": "展开下一级的触发方式"
+    },
+    "check-strictly": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to enable strict selection mode",
+      "description_zh": "是否开启严格选择模式"
+    },
+    ":load-more": {
+      "default": "-",
+      "value": "",
+      "type": "( option: CascaderOption, done: (children?: CascaderOption[]) => void) => void",
+      "description": "Lazy loading function, enable the lazy loading function when data is in",
+      "description_zh": "数据懒加载函数，传入时开启懒加载功能"
+    },
+    ":field-names": {
+      "default": "-",
+      "value": "",
+      "type": "CascaderFieldNames",
+      "description": "Customize the fields in CascaderOption",
+      "description_zh": "自定义 CascaderOption 中的字段"
+    },
+    "value-key": {
+      "default": "value",
+      "value": "",
+      "type": "string",
+      "description": "The name of the attribute used to determine the value of the option key",
+      "description_zh": "用于确定选项键值的属性名"
+    },
+    "expand-child": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to expand the submenu",
+      "description_zh": "是否展开子菜单"
+    }
+  },
+  "methods": [],
+  "link": "https://arco.design/vue/component/cascader#API",
+  "link_zh": "https://arco.design/vue/component/cascader#API",
+  "events": [
+    {
+      "name": "change",
+      "description": "Triggers when the selected value changes",
+      "description_zh": "选中值改变时触发",
+      "params": "value: string | number | (string | number | (string | number)[])[] | undefined",
+      "value": ""
+    }
+  ],
+  "typeDetail": {
+    "CascaderOption": [
+      {
+        "name": "value",
+        "type": "string | number | Record<string, any>",
+        "description": "选项值，2.29.0 版本支持对象",
+        "default": "-"
+      },
+      {
+        "name": "label",
+        "type": "string",
+        "description": "选项文本",
+        "default": "-"
+      },
+      {
+        "name": "render",
+        "type": "RenderFunction",
+        "description": "自定义渲染",
+        "default": "-"
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "description": "是否禁用",
+        "default": "false"
+      },
+      {
+        "name": "tagProps",
+        "type": "TagProps",
+        "description": "展示的标签属性",
+        "default": "-"
+      },
+      {
+        "name": "children",
+        "type": "CascaderOption[]",
+        "description": "下一级选项",
+        "default": "-"
+      },
+      {
+        "name": "isLeaf",
+        "type": "boolean",
+        "description": "是否是叶子节点",
+        "default": "false"
+      }
+    ]
+  }
+}

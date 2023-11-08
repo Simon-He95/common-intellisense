@@ -4,6 +4,7 @@ import { parse } from '@vue/compiler-sfc'
 import type { SFCTemplateBlock } from '@vue/compiler-sfc'
 import { parse as tsParser } from '@typescript-eslint/typescript-estree'
 import { findUp } from 'find-up'
+import { UINames } from './constants'
 
 const { parse: svelteParser } = require('svelte/compiler')
 
@@ -334,7 +335,6 @@ export function parserSvelte(code: string, position: vscode.Position) {
   }
 }
 
-const UINames = ['element-ui', 'element-plus', 'antd', 'ant-design-vue', '@varlet/ui', 'vant', 'naive-ui', 'vuetify', '@chakra-ui/react', '@chakra-ui/vue', '@skeletonlabs/skeleton', 'primevue', 'quasar', '@nextui-org/react', '@nuxt/ui', 'shadcn-vue', 'radix-vue', '@arco-design/web-react']
 export async function findPkgUI(cwd?: string) {
   if (!cwd)
     return

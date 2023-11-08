@@ -1,0 +1,60 @@
+{
+  "name": "AResizeBox",
+  "props": {
+    ":v-model:width": {
+      "default": "-",
+      "value": "",
+      "type": "number",
+      "description": "width",
+      "description_zh": "宽度"
+    },
+    ":v-model:height": {
+      "default": "-",
+      "value": "",
+      "type": "number",
+      "description": "height",
+      "description_zh": "高度"
+    },
+    "component": {
+      "default": "div",
+      "value": "",
+      "type": "string",
+      "description": "HTML tag for the expansion box",
+      "description_zh": "伸缩框的 html 标签"
+    },
+    ":directions": {
+      "default": "['right']",
+      "value": "",
+      "type": "('left' | 'right' | 'top' | 'bottom')[]",
+      "description": "Stretchable edges can be used for top, bottom, left, and right",
+      "description_zh": "可以进行伸缩的边，有上、下、左、右可以使用"
+    }
+  },
+  "methods": [],
+  "link": "https://arco.design/vue/component/resize-box#API",
+  "link_zh": "https://arco.design/vue/component/resize-box#API",
+  "events": [
+    {
+      "name": "moving-start",
+      "description": "Triggers when the drag starts",
+      "description_zh": "拖拽开始时触发",
+      "params": "ev: MouseEvent",
+      "value": ""
+    },
+    {
+      "name": "moving",
+      "description": "Triggered when dragging",
+      "description_zh": "拖拽时触发",
+      "params": "size: { width: number; height: number; }, ev: MouseEvent",
+      "value": ""
+    },
+    {
+      "name": "moving-end",
+      "description": "Triggers at the end of the drag",
+      "description_zh": "拖拽结束时触发",
+      "params": "ev: MouseEvent",
+      "value": ""
+    }
+  ],
+  "typeDetail": {}
+}

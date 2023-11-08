@@ -5,7 +5,7 @@
       "default": "true",
       "value": "",
       "type": "boolean",
-      "description": "是否固定。当设置为 true时，锚点组件将会嵌套在固钉 组件内",
+      "description": "Whether it is fixed or not. When set to true, the anchor component will be nested within the Anchor component",
       "description_zh": "是否固定。当设置为 true时，锚点组件将会嵌套在固钉 组件内",
       "required": true
     },
@@ -13,84 +13,87 @@
       "default": "true",
       "value": "",
       "type": "boolean",
-      "description": "是否平滑滚动",
+      "description": "Whether or not to scroll smoothly",
       "description_zh": "是否平滑滚动"
     },
     "hash": {
       "default": "true",
       "value": "",
       "type": "boolean",
-      "description": "是否改变 hash，设置为 false 点击锚点不会改变页面 hash。",
+      "description": "Whether to change the hash, set to false Clicking on the anchor will not change the page hash.",
       "description_zh": "是否改变 hash，设置为 false 点击锚点不会改变页面 hash。"
     },
     "lineless": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "没有左侧轴线的样式。",
+      "description": "There is no style for the left axis.",
       "description_zh": "没有左侧轴线的样式。"
     },
     ":offsetBottom": {
       "default": "-",
       "value": "",
       "type": "number",
-      "description": "距离窗口底部达到指定偏移量后触发。 Affix 固钉组件的 offsetBottom 属性",
+      "description": "Triggers when the specified offset is reached from the bottom of the window. The offsetBottom property of the Affix fastening assembly",
       "description_zh": "距离窗口底部达到指定偏移量后触发。 Affix 固钉组件的 offsetBottom 属性"
     },
     ":offsetTop": {
       "default": "-",
       "value": "",
       "type": "number",
-      "description": "距离窗口顶部达到指定偏移量后触发。即 Affix 固钉组件的 offsetTop 属性",
+      "description": "Triggers when the specified offset is reached from the top of the window. This is the offsetTop property of the Affix fastening component",
       "description_zh": "距离窗口顶部达到指定偏移量后触发。即 Affix 固钉组件的 offsetTop 属性"
     },
     ":targetOffset": {
       "default": "-",
       "value": "",
       "type": "number",
-      "description": "容器中基准线的位置相对容器顶部的偏移量，在没有设置的时候，取值为滚动容器高度的一半。当锚点到达或离开基准线的时候会更新锚点的状态。",
+      "description": "The offset of the position of the baseline in the container from the top of the container, when not set, can be half of the height of the rolling container. When an anchor reaches or leaves the baseline, the status of the anchor is updated.",
       "description_zh": "容器中基准线的位置相对容器顶部的偏移量，在没有设置的时候，取值为滚动容器高度的一半。当锚点到达或离开基准线的时候会更新锚点的状态。"
     },
     "boundary": {
       "default": "start",
       "value": "",
       "type": "number | 'end' | 'start' | 'center' | 'nearest'",
-      "description": "滚动边界值，设置该值为数字后，将会在距离滚动容器 boundary 距离时停止滚动。设置为 end, start, center，目标元素将会对应滚动到底部，顶部，中间位置。",
+      "description": "Scroll boundary value, which is set to a number to stop scrolling at a distance from the boundary of the scroll container. Set to end, start, center, and the target element will scroll to the bottom, top, and middle positions accordingly.",
       "description_zh": "滚动边界值，设置该值为数字后，将会在距离滚动容器 boundary 距离时停止滚动。设置为 end, start, center，目标元素将会对应滚动到底部，顶部，中间位置。"
     },
     "direction": {
       "default": "vertical",
-      "value": ["vertical", "horizontal"],
+      "value": [
+        "vertical",
+        "horizontal"
+      ],
       "type": "'vertical' | 'horizontal'",
-      "description": "方向",
+      "description": "direction",
       "description_zh": "方向"
     },
     ":affixStyle": {
       "default": "-",
       "value": "",
       "type": "CSSProperties",
-      "description": "通过该属性可以设置 Affix 组件的样式",
+      "description": "This property allows you to style the Affix component",
       "description_zh": "通过该属性可以设置 Affix 组件的样式"
     },
     "className": {
       "default": "-",
       "value": "",
       "type": "string | string[]",
-      "description": "节点类名",
+      "description": "Node class name",
       "description_zh": "节点类名"
     },
     "scrollContainer": {
       "default": "-",
       "value": "",
       "type": "string | HTMLElement | Window",
-      "description": "滚动容器。传入选择器或者dom元素。",
+      "description": "Roll the container. Pass in a selector or DOM element.",
       "description_zh": "滚动容器。传入选择器或者dom元素。"
     },
     ":style": {
       "default": "-",
       "value": "",
       "type": "CSSProperties",
-      "description": "节点样式",
+      "description": "Node style",
       "description_zh": "节点样式"
     }
   },
@@ -100,15 +103,17 @@
   "events": [
     {
       "name": "onChange",
-      "description": "滚动时锚点改变或点击锚点时触发",
+      "description": "Triggered when the anchor changes while scrolling or when the anchor is clicked",
       "description_zh": "滚动时锚点改变或点击锚点时触发",
-      "params": "(newLink: string, oldLink: string) => void"
+      "params": "(newLink: string, oldLink: string) => void",
+      "value": ""
     },
     {
       "name": "onSelect",
-      "description": "点击锚点时候触发",
+      "description": "Triggered when the anchor is clicked",
       "description_zh": "点击锚点时候触发",
-      "params": "(newLink: string, oldLink: string) => void"
+      "params": "(newLink: string, oldLink: string) => void",
+      "value": ""
     }
   ],
   "typeDetail": {}

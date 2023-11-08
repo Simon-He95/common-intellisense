@@ -5,70 +5,76 @@
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "当重新选择范围的时候，会清空之前的范围重新进行选择",
+      "description": "When you reselect a range, the previous range is cleared and you want to re-select it",
       "description_zh": "当重新选择范围的时候，会清空之前的范围重新进行选择"
     },
     "format": {
       "default": "YYYY-MM-DD",
       "value": "",
       "type": "string",
-      "description": "展示日期的格式，参考dayjs",
+      "description": "For the format of the display date, see dayjs",
       "description_zh": "展示日期的格式，参考dayjs"
     },
     ":disabledTime": {
       "default": "-",
       "value": "",
       "type": "(current: Dayjs, type: 'start' | 'end') => DisabledTimeProps",
-      "description": "不可选取的时间",
+      "description": "The time that cannot be selected",
       "description_zh": "不可选取的时间"
     },
     "mode": {
       "default": "date",
-      "value": ["date", "month", "week", "year", "quarter"],
+      "value": [
+        "date",
+        "month",
+        "week",
+        "year",
+        "quarter"
+      ],
       "type": "'date' | 'month' | 'week' | 'year' | 'quarter'",
-      "description": "范围选择器的类型，可以是日期、月份。",
+      "description": "The type of the range selector, which can be day or month.",
       "description_zh": "范围选择器的类型，可以是日期、月份。"
     },
     ":triggerElement": {
       "default": "-",
       "value": "",
       "type": "ReactNode",
-      "description": "触发元素。",
+      "description": "Trigger element.",
       "description_zh": "触发元素。"
     },
     ":defaultPickerValue": {
       "default": "-",
       "value": "",
       "type": "CalendarValue[]",
-      "description": "默认面板显示的日期",
+      "description": "The date displayed in the default panel",
       "description_zh": "默认面板显示的日期"
     },
     ":defaultValue": {
       "default": "-",
       "value": "",
       "type": "CalendarValue[]",
-      "description": "默认日期",
+      "description": "Default date",
       "description_zh": "默认日期"
     },
     "disabled": {
       "default": "-",
       "value": "",
       "type": "boolean | boolean[]",
-      "description": "是否禁用",
+      "description": "Whether to disable or not",
       "description_zh": "是否禁用"
     },
     ":pickerValue": {
       "default": "-",
       "value": "",
       "type": "CalendarValue[]",
-      "description": "面板显示的日期。",
+      "description": "The date displayed by the panel.",
       "description_zh": "面板显示的日期。"
     },
     "placeholder": {
       "default": "-",
       "value": "",
       "type": "string[]",
-      "description": "提示文案",
+      "description": "Prompt copywriting",
       "description_zh": "提示文案",
       "required": true
     },
@@ -76,21 +82,21 @@
       "default": "-",
       "value": "",
       "type": "boolean | TimePickerRangeProps",
-      "description": "是否增加时间选择，如果传入的是个对象，会把参数传给内置的 TimePicker。",
+      "description": "Whether to add time selection, if it is an object, the parameter will be passed to the built-in TimePicker.",
       "description_zh": "是否增加时间选择，如果传入的是个对象，会把参数传给内置的 TimePicker。"
     },
     ":timepickerProps": {
       "default": "-",
       "value": "",
       "type": "TimePickerProps",
-      "description": "时间显示的参数，参考 TimePickerProps，作用同 showTime。",
+      "description": "For the parameters of time display, refer to TimePickerProps, which is the same as showTime.",
       "description_zh": "时间显示的参数，参考 TimePickerProps，作用同 showTime。"
     },
     ":value": {
       "default": "-",
       "value": "",
       "type": "CalendarValue[]",
-      "description": "日历组件的值",
+      "description": "The value of the calendar component",
       "description_zh": "日历组件的值"
     }
   },
@@ -100,27 +106,31 @@
   "events": [
     {
       "name": "onSelect",
-      "description": "选中日期发生改变但组件值未改变时的回调",
+      "description": "Select a callback when the date has changed but the component value has not changed",
       "description_zh": "选中日期发生改变但组件值未改变时的回调",
-      "params": "(dateString: string[], value: Dayjs[], extra: { type: 'start' | 'end' }) => void"
+      "params": "(dateString: string[], value: Dayjs[], extra: { type: 'start' | 'end' }) => void",
+      "value": ""
     },
     {
       "name": "onChange",
-      "description": "日历组件值发生改变时的回调",
+      "description": "A callback when the value of the calendar component changes",
       "description_zh": "日历组件值发生改变时的回调",
-      "params": "(dateString: string[], date: Dayjs[]) => void"
+      "params": "(dateString: string[], date: Dayjs[]) => void",
+      "value": ""
     },
     {
       "name": "onOk",
-      "description": "点击确认按钮的回调",
+      "description": "Click the callback of the Confirm button",
       "description_zh": "点击确认按钮的回调",
-      "params": "(dateString: string[], date: Dayjs[]) => void"
+      "params": "(dateString: string[], date: Dayjs[]) => void",
+      "value": ""
     },
     {
       "name": "onPickerValueChange",
-      "description": "面板日期改变的回调。",
+      "description": "Callbacks for panel date changes.",
       "description_zh": "面板日期改变的回调。",
-      "params": "(dateString: string[], value: Dayjs[]) => void"
+      "params": "(dateString: string[], value: Dayjs[]) => void",
+      "value": ""
     }
   ],
   "typeDetail": {}

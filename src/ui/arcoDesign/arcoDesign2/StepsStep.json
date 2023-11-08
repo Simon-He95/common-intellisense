@@ -5,28 +5,33 @@
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "当前步骤点击被禁用",
+      "description": "The current step is to click Disable",
       "description_zh": "当前步骤点击被禁用"
     },
     "status": {
       "default": "-",
-      "value": ["wait", "process", "finish", "error"],
+      "value": [
+        "wait",
+        "process",
+        "finish",
+        "error"
+      ],
       "type": "'wait' | 'process' | 'finish' | 'error'",
-      "description": "节点状态",
+      "description": "Node status",
       "description_zh": "节点状态"
     },
     "description": {
       "default": "-",
       "value": "",
       "type": "string | ReactNode",
-      "description": "节点描述",
+      "description": "Node description",
       "description_zh": "节点描述"
     },
     "title": {
       "default": "-",
       "value": "",
       "type": "string | ReactNode",
-      "description": "节点标题",
+      "description": "Node title",
       "description_zh": "节点标题",
       "required": true
     },
@@ -34,21 +39,21 @@
       "default": "-",
       "value": "",
       "type": "string | string[]",
-      "description": "节点类名",
+      "description": "Node class name",
       "description_zh": "节点类名"
     },
     "id": {
       "default": "-",
       "value": "",
       "type": "any",
-      "description": "指定节点的 ID，将在 onChange 回调中作为参数。",
+      "description": "Specify the ID of the node, which will be used as a parameter in the onChange callback.",
       "description_zh": "指定节点的 ID，将在 onChange 回调中作为参数。"
     },
     ":style": {
       "default": "-",
       "value": "",
       "type": "CSSProperties",
-      "description": "节点样式",
+      "description": "Node style",
       "description_zh": "节点样式"
     }
   },
@@ -58,9 +63,10 @@
   "events": [
     {
       "name": "onClick",
-      "description": "点击回调",
+      "description": "Click Callbacks",
       "description_zh": "点击回调",
-      "params": "(index: number, id: any, e) => void"
+      "params": "(index: number, id: any, e) => void",
+      "value": ""
     }
   ],
   "typeDetail": {}

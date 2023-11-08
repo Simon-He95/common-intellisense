@@ -1,0 +1,138 @@
+{
+  "name": "ATransfer",
+  "props": {
+    ":data": {
+      "default": "[]",
+      "value": "",
+      "type": "TransferItem[]",
+      "description": "Data for the shuttle box",
+      "description_zh": "穿梭框的数据",
+      "required": true
+    },
+    ":v-model": {
+      "default": "-",
+      "value": "",
+      "type": "string[]",
+      "description": "The value in the target selection box",
+      "description_zh": "目标选择框中的值"
+    },
+    ":default-value": {
+      "default": "[]",
+      "value": "",
+      "type": "string[]",
+      "description": "Default value in target selection box (uncontrolled state)",
+      "description_zh": "目标选择框中默认的值（非受控状态）"
+    },
+    ":v-model:selected": {
+      "default": "-",
+      "value": "",
+      "type": "string[]",
+      "description": "The selected option value",
+      "description_zh": "选中的选项值"
+    },
+    ":default-selected": {
+      "default": "[]",
+      "value": "",
+      "type": "string[]",
+      "description": "Default Selected Option Value (Uncontrolled)",
+      "description_zh": "默认选中的选项值（非受控状态）"
+    },
+    "disabled": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to disable or not",
+      "description_zh": "是否禁用"
+    },
+    "simple": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to turn on simple mode (click on the option to move)",
+      "description_zh": "是否开启简单模式（点击选项即移动）"
+    },
+    "show-search": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether or not to display a search box",
+      "description_zh": "是否显示搜索框"
+    },
+    "show-select-all": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to display the All check box",
+      "description_zh": "是否展示全选勾选框"
+    },
+    ":title": {
+      "default": "['Source', 'Target']",
+      "value": "",
+      "type": "string[]",
+      "description": "The titles of the source and destination selection boxes",
+      "description_zh": "源选择框和目标选择框的标题"
+    },
+    ":source-input-search-props": {
+      "default": "-",
+      "value": "",
+      "type": "object",
+      "description": "Search box configuration for the source selection box",
+      "description_zh": "源选择框的搜索框配置"
+    },
+    ":target-input-search-props": {
+      "default": "-",
+      "value": "",
+      "type": "object",
+      "description": "Search box configuration for the target selection box",
+      "description_zh": "目标选择框的搜索框配置"
+    }
+  },
+  "methods": [],
+  "link": "https://arco.design/vue/component/transfer#API",
+  "link_zh": "https://arco.design/vue/component/transfer#API",
+  "events": [
+    {
+      "name": "change",
+      "description": "Triggered when the value of the target selection box changes",
+      "description_zh": "目标选择框的值改变时触发",
+      "params": "value: string[]",
+      "value": ""
+    },
+    {
+      "name": "select",
+      "description": "Triggers when the selected value changes",
+      "description_zh": "选中的值改变时触发",
+      "params": "selected: string[]",
+      "value": ""
+    },
+    {
+      "name": "search",
+      "description": "Triggered when a user searches",
+      "description_zh": "用户搜索时触发",
+      "params": "value: string, type: 'target'|'source'",
+      "value": ""
+    }
+  ],
+  "typeDetail": {
+    "TransferItem": [
+      {
+        "name": "value",
+        "type": "string",
+        "description": "选项的值",
+        "default": "-"
+      },
+      {
+        "name": "label",
+        "type": "string",
+        "description": "选项的标签",
+        "default": "-"
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "description": "是否禁用",
+        "default": "false"
+      }
+    ]
+  }
+}

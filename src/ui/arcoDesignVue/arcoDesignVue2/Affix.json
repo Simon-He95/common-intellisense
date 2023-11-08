@@ -1,0 +1,54 @@
+{
+  "name": "AAffix",
+  "props": {
+    ":offset-top": {
+      "default": "0",
+      "value": "",
+      "type": "number",
+      "description": "Triggers when the specified offset is reached from the top of the window",
+      "description_zh": "距离窗口顶部达到指定偏移量后触发"
+    },
+    ":offset-bottom": {
+      "default": "-",
+      "value": "",
+      "type": "number",
+      "description": "Triggers when the specified offset is reached from the bottom of the window",
+      "description_zh": "距离窗口底部达到指定偏移量后触发"
+    },
+    "target": {
+      "default": "-",
+      "value": "",
+      "type": "string | HTMLElement | Window",
+      "description": "Scroll container, which defaults to window",
+      "description_zh": "滚动容器，默认是 window"
+    },
+    "target-container": {
+      "default": "-",
+      "value": "",
+      "type": "string | HTMLElement | Window",
+      "description": "target's outer scroll element, which defaults to window. Affix listens for scroll events for the element and updates the position of the fastened nail in real time. The main purpose is to solve the problem that if the outer element is scrolled when the target attribute is specified as a non-window element, it may cause the fixed nail to run out of the container",
+      "description_zh": "target的外层滚动元素，默认是 window。Affix 将会监听该元素的滚动事件，并实时更新固钉的位置。主要是为了解决 target 属性指定为非 window 元素时，如果外层元素滚动，可能会导致固钉跑出容器问题"
+    }
+  },
+  "methods": [
+    {
+      "name": "updatePosition",
+      "description": "Update the location",
+      "params": "-",
+      "description_zh": "更新位置",
+      "value": ""
+    }
+  ],
+  "link": "https://arco.design/vue/component/affix#API",
+  "link_zh": "https://arco.design/vue/component/affix#API",
+  "events": [
+    {
+      "name": "change",
+      "description": "Triggered when the fixed state changes",
+      "description_zh": "固定状态发生改变时触发",
+      "params": "fixed: boolean",
+      "value": ""
+    }
+  ],
+  "typeDetail": {}
+}

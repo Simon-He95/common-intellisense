@@ -1,0 +1,128 @@
+{
+  "name": "AMention",
+  "props": {
+    "v-model": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "Binding value",
+      "description_zh": "绑定值",
+      "required": true
+    },
+    "default-value": {
+      "default": "''",
+      "value": "",
+      "type": "string",
+      "description": "Default (uncontrolled)",
+      "description_zh": "默认值（非受控状态）"
+    },
+    ":data": {
+      "default": "[]",
+      "value": "",
+      "type": "(string | number | SelectOptionData | SelectOptionGroup)[]",
+      "description": "Data used for autocompletion",
+      "description_zh": "用于自动补全的数据"
+    },
+    "prefix": {
+      "default": "'@'",
+      "value": "",
+      "type": "string | string[]",
+      "description": "Keywords that trigger autocompletion",
+      "description_zh": "触发自动补全的关键字"
+    },
+    "split": {
+      "default": "' '",
+      "value": "",
+      "type": "string",
+      "description": "The separator before and after the selection",
+      "description_zh": "选中项的前后分隔符"
+    },
+    "type": {
+      "default": "input",
+      "value": [
+        "input",
+        "textarea"
+      ],
+      "type": "'input' | 'textarea'",
+      "description": "Enter a box or text field",
+      "description_zh": "输入框或文本域"
+    },
+    "disabled": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to disable or not",
+      "description_zh": "是否禁用"
+    },
+    "allow-clear": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to allow the input field to be cleared",
+      "description_zh": "是否允许清空输入框"
+    }
+  },
+  "methods": [
+    {
+      "name": "focus",
+      "description": "Makes the input box get focus",
+      "params": "-",
+      "description_zh": "使输入框获取焦点",
+      "value": ""
+    },
+    {
+      "name": "blur",
+      "description": "Makes the input box lose focus",
+      "params": "-",
+      "description_zh": "使输入框失去焦点",
+      "value": ""
+    }
+  ],
+  "link": "https://arco.design/vue/component/mention#API",
+  "link_zh": "https://arco.design/vue/component/mention#API",
+  "events": [
+    {
+      "name": "change",
+      "description": "Triggered when the value changes",
+      "description_zh": "值发生改变时触发",
+      "params": "value: string",
+      "value": ""
+    },
+    {
+      "name": "search",
+      "description": "Triggered during dynamic search, the prefix parameter is added in version 2.47.0",
+      "description_zh": "动态搜索时触发，2.47.0 版本增加 prefix 参数",
+      "params": "value: string, prefix: string",
+      "value": ""
+    },
+    {
+      "name": "select",
+      "description": "Triggered when a drop-down option is selected",
+      "description_zh": "选择下拉选项时触发",
+      "params": "value: string | number | Record<string, any> | undefined",
+      "value": ""
+    },
+    {
+      "name": "clear",
+      "description": "Triggered when the user clicks the clear button",
+      "description_zh": "用户点击清除按钮时触发",
+      "params": "-",
+      "value": ""
+    },
+    {
+      "name": "focus",
+      "description": "Triggered when a text box gets focus",
+      "description_zh": "文本框获取焦点时触发",
+      "params": "ev: FocusEvent",
+      "value": ""
+    },
+    {
+      "name": "blur",
+      "description": "Triggered when a text box loses focus",
+      "description_zh": "文本框失去焦点时触发",
+      "params": "ev: FocusEvent",
+      "value": ""
+    }
+  ],
+  "typeDetail": {}
+}

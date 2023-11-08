@@ -1,0 +1,187 @@
+{
+  "name": "AMenu",
+  "props": {
+    "theme": {
+      "default": "light",
+      "value": [
+        "light",
+        "dark"
+      ],
+      "type": "'light' | 'dark'",
+      "description": "The theme of the menu",
+      "description_zh": "菜单的主题"
+    },
+    "mode": {
+      "default": "vertical",
+      "value": [
+        "vertical",
+        "horizontal",
+        "pop",
+        "popButton"
+      ],
+      "type": "'vertical' | 'horizontal' | 'pop' | 'popButton'",
+      "description": "The mode of the menu",
+      "description_zh": "菜单的模式"
+    },
+    ":level-indent": {
+      "default": "-",
+      "value": "",
+      "type": "number",
+      "description": "The amount of indentation between levels",
+      "description_zh": "层级之间的缩进量"
+    },
+    "auto-open": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "By default, all multi-level menus are expanded",
+      "description_zh": "默认展开所有多级菜单"
+    },
+    "v-model:collapsed": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether or not to collapse the menu",
+      "description_zh": "是否折叠菜单"
+    },
+    "default-collapsed": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "The default is whether to collapse the menu",
+      "description_zh": "默认是否折叠菜单"
+    },
+    ":collapsed-width": {
+      "default": "-",
+      "value": "",
+      "type": "number",
+      "description": "Collapses the menu width",
+      "description_zh": "折叠菜单宽度"
+    },
+    "accordion": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Turn on the accordion effect",
+      "description_zh": "开启手风琴效果"
+    },
+    "auto-scroll-into-view": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to automatically scroll the selected items to the visible area",
+      "description_zh": "是否自动滚动选中项目到可见区域"
+    },
+    "show-collapse-button": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether or not there is a built-in folding button",
+      "description_zh": "是否内置折叠按钮"
+    },
+    "v-model:selected-keys": {
+      "default": "-",
+      "value": "",
+      "type": "string[]",
+      "description": "Selected menu item key array",
+      "description_zh": "选中的菜单项 key 数组"
+    },
+    "default-selected-keys": {
+      "default": "[]",
+      "value": "",
+      "type": "string[]",
+      "description": "The default selected menu item key array",
+      "description_zh": "默认选中的菜单项 key 数组"
+    },
+    "v-model:open-keys": {
+      "default": "-",
+      "value": "",
+      "type": "string[]",
+      "description": "Expand the submenu key array",
+      "description_zh": "展开的子菜单 key 数组"
+    },
+    ":default-open-keys": {
+      "default": "[]",
+      "value": "",
+      "type": "string[]",
+      "description": "The default expanded submenu key array",
+      "description_zh": "默认展开的子菜单 key 数组"
+    },
+    "scroll-config": {
+      "default": "-",
+      "value": "",
+      "type": "{ [key: string]: any }",
+      "description": "Scroll to the config item in the visible area to receive all scroll-into-view-if-needed parameters",
+      "description_zh": "滚动到可见区域的配置项，接收所有scroll-into-view-if-needed的参数"
+    },
+    ":trigger-props": {
+      "default": "-",
+      "value": "",
+      "type": "TriggerProps",
+      "description": "Props that accept all triggers are accepted in pop-up mode",
+      "description_zh": "弹出模式下可接受所有 Trigger 的 Props"
+    },
+    ":tooltip-props": {
+      "default": "-",
+      "value": "",
+      "type": "object",
+      "description": "All ToolTip props are accepted in pop-up mode",
+      "description_zh": "弹出模式下可接受所有 ToolTip 的 Props"
+    },
+    "auto-open-selected": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "By default, the selected menu is expanded",
+      "description_zh": "默认展开选中的菜单"
+    },
+    "breakpoint": {
+      "default": "-",
+      "value": [
+        "xxl",
+        "xl",
+        "lg",
+        "md",
+        "sm",
+        "xs"
+      ],
+      "type": "'xxl' | 'xl' | 'lg' | 'md' | 'sm' | 'xs'",
+      "description": "Responsive breakpoints, see Responsive Rasters for details",
+      "description_zh": "响应式的断点, 详见响应式栅格"
+    },
+    "popup-max-height": {
+      "default": "true",
+      "value": "",
+      "type": "boolean | number",
+      "description": "The maximum height of the pop-up box",
+      "description_zh": "弹出框的最大高度"
+    }
+  },
+  "methods": [],
+  "link": "https://arco.design/vue/component/menu#API",
+  "link_zh": "https://arco.design/vue/component/menu#API",
+  "events": [
+    {
+      "name": "collapse",
+      "description": "Triggered when the collapse status changes",
+      "description_zh": "折叠状态改变时触发",
+      "params": "collapsed: boolean, type: 'clickTrigger'|'responsive'",
+      "value": ""
+    },
+    {
+      "name": "menu-item-click",
+      "description": "Triggered when a menu item is clicked",
+      "description_zh": "点击菜单项时触发",
+      "params": "key: string",
+      "value": ""
+    },
+    {
+      "name": "sub-menu-click",
+      "description": "Triggered when the submenu is clicked",
+      "description_zh": "点击子菜单时触发",
+      "params": "key: string, openKeys: string[]",
+      "value": ""
+    }
+  ],
+  "typeDetail": {}
+}

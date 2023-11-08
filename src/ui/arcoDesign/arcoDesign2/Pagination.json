@@ -5,70 +5,70 @@
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "是否禁用",
+      "description": "Whether to disable or not",
       "description_zh": "是否禁用"
     },
     "hideOnSinglePage": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "是否在只有一页的情况下隐藏",
+      "description": "Whether it is hidden in the case of only one page",
       "description_zh": "是否在只有一页的情况下隐藏"
     },
     "pageSizeChangeResetCurrent": {
       "default": "true",
       "value": "",
       "type": "boolean",
-      "description": "pageSize 改变的时候重置当前页码为 1",
+      "description": "pageSize is reset to 1 when the current page number is changed",
       "description_zh": "pageSize 改变的时候重置当前页码为 1"
     },
     "showJumper": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "是否显示快速跳转到某页，在 simple 模式下默认为 true",
+      "description": "Whether to display a quick jump to a page is true by default in simple mode",
       "description_zh": "是否显示快速跳转到某页，在 simple 模式下默认为 true"
     },
     "showMore": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "是否显示更多页码提示（当尚无法计算数据总数时可以使用）",
+      "description": "Whether to display more page hints (available when it is not yet possible to calculate the total number of data)",
       "description_zh": "是否显示更多页码提示（当尚无法计算数据总数时可以使用）"
     },
     "simple": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "是否应用精简分页模式",
+      "description": "Whether or not to apply the thin pagination pattern",
       "description_zh": "是否应用精简分页模式"
     },
     "sizeCanChange": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "是否可以改变每页条数",
+      "description": "Is it possible to change the number of entries per page",
       "description_zh": "是否可以改变每页条数"
     },
     ":bufferSize": {
       "default": "2",
       "value": "",
       "type": "number",
-      "description": "current 页与 ... 之间的页码个数",
+      "description": "current page with ... The number of pages in between",
       "description_zh": "current 页与 ... 之间的页码个数"
     },
     ":current": {
       "default": "-",
       "value": "",
       "type": "number",
-      "description": "当前页",
+      "description": "Current page",
       "description_zh": "当前页"
     },
     ":defaultCurrent": {
       "default": "-",
       "value": "",
       "type": "number",
-      "description": "当前页默认值",
+      "description": "The current page default",
       "description_zh": "当前页默认值",
       "required": true
     },
@@ -76,21 +76,21 @@
       "default": "-",
       "value": "",
       "type": "number",
-      "description": "默认每页数据条数",
+      "description": "Default number of data entries per page",
       "description_zh": "默认每页数据条数"
     },
     ":pageSize": {
       "default": "-",
       "value": "",
       "type": "number",
-      "description": "每页数据条数",
+      "description": "Number of data entries per page",
       "description_zh": "每页数据条数"
     },
     ":total": {
       "default": "-",
       "value": "",
       "type": "number",
-      "description": "数据总数",
+      "description": "Total number of data",
       "description_zh": "数据总数",
       "required": true
     },
@@ -98,70 +98,75 @@
       "default": "-",
       "value": "",
       "type": "(page: number,type: 'page' | 'more' | 'prev' | 'next',originElement: ReactNode) => ReactNode",
-      "description": "定制分页按钮的结构",
+      "description": "Customize the structure of the pagination buttons",
       "description_zh": "定制分页按钮的结构"
     },
     "size": {
       "default": "-",
-      "value": ["mini", "small", "default", "large"],
+      "value": [
+        "mini",
+        "small",
+        "default",
+        "large"
+      ],
       "type": "'mini' | 'small' | 'default' | 'large'",
-      "description": "分页器尺寸",
+      "description": "Paginator size",
       "description_zh": "分页器尺寸"
     },
     ":activePageItemStyle": {
       "default": "-",
       "value": "",
       "type": "CSSProperties",
-      "description": "被选中的分页按钮样式",
+      "description": "The selected pagination button style",
       "description_zh": "被选中的分页按钮样式"
     },
     "className": {
       "default": "-",
       "value": "",
       "type": "string | string[]",
-      "description": "节点类名",
+      "description": "Node class name",
       "description_zh": "节点类名"
     },
     ":icons": {
       "default": "-",
       "value": "",
       "type": "{prev?: ReactNode;next?: ReactNode;more?: ReactNode;}",
-      "description": "设置分页器的图标",
+      "description": "Sets the icon for the pagiger",
       "description_zh": "设置分页器的图标"
     },
     ":pageItemStyle": {
       "default": "-",
       "value": "",
       "type": "CSSProperties",
-      "description": "分页按钮样式",
+      "description": "Pagination button style",
       "description_zh": "分页按钮样式"
     },
     ":selectProps": {
       "default": "-",
       "value": "",
       "type": "Partial<SelectProps>",
-      "description": "用于配置弹出框的属性",
+      "description": "Lets you configure the properties of the popover",
       "description_zh": "用于配置弹出框的属性"
     },
     ":sizeOptions": {
       "default": "-",
       "value": "",
       "type": "number[]",
-      "description": "每页可以显示数据条数",
+      "description": "The number of data bars can be displayed per page",
       "description_zh": "每页可以显示数据条数"
     },
     ":style": {
       "default": "-",
       "value": "",
       "type": "CSSProperties",
-      "description": "节点样式",
+      "description": "Node style",
       "description_zh": "节点样式"
     },
     "showTotal": {
       "default": "-",
       "value": "",
       "type": "boolean | ((total: number, range: number[]) => ReactNode)",
-      "description": "是否显示数据总数",
+      "description": "Whether or not to display the total number of data",
       "description_zh": "是否显示数据总数"
     }
   },
@@ -171,15 +176,17 @@
   "events": [
     {
       "name": "onChange",
-      "description": "变化时的回调",
+      "description": "Callbacks when changing",
       "description_zh": "变化时的回调",
-      "params": "(pageNumber: number, pageSize: number) => void"
+      "params": "(pageNumber: number, pageSize: number) => void",
+      "value": ""
     },
     {
       "name": "onPageSizeChange",
-      "description": "pageSize 变化时的回调",
+      "description": "pageSize",
       "description_zh": "pageSize 变化时的回调",
-      "params": "(size: number, current: number) => void"
+      "params": "(size: number, current: number) => void",
+      "value": ""
     }
   ],
   "typeDetail": {}

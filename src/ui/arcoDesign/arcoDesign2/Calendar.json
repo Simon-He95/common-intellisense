@@ -5,119 +5,135 @@
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "是否允许选中和切换日期，panel 模式下默认可选中切换",
+      "description": "Whether to allow the date to be selected and toggled, the default optional switch in panel mode",
       "description_zh": "是否允许选中和切换日期，panel 模式下默认可选中切换"
     },
     "isWeek": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "周选择",
+      "description": "Week selection",
       "description_zh": "周选择"
     },
     "panel": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "是否放在容器中进行展示。",
+      "description": "Whether or not to display it in a container.",
       "description_zh": "是否放在容器中进行展示。"
     },
     "panelTodayBtn": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "是否显示跳转到今天的按钮",
+      "description": "Whether or not to display a button to jump to today",
       "description_zh": "是否显示跳转到今天的按钮"
     },
     "defaultMode": {
       "default": "month",
-      "value": ["day", "week", "month", "year"],
+      "value": [
+        "day",
+        "week",
+        "month",
+        "year"
+      ],
       "type": "'day' | 'week' | 'month' | 'year'",
-      "description": "选择日期的月日历和选择月份的年日历。",
+      "description": "Select the month calendar for the date and the year calendar for the month.",
       "description_zh": "选择日期的月日历和选择月份的年日历。"
     },
     "headerType": {
       "default": "button",
-      "value": ["button", "select"],
+      "value": [
+        "button",
+        "select"
+      ],
       "type": "'button' | 'select'",
-      "description": "有两种头部可供选择，默认的按钮类型和下拉框类型，只在全屏日历模式下生效。",
+      "description": "There are two headers to choose from, the default button type and the drop-down box type, which only work in full-screen calendar mode.",
       "description_zh": "有两种头部可供选择，默认的按钮类型和下拉框类型，只在全屏日历模式下生效。"
     },
     "mode": {
       "default": "-",
-      "value": ["day", "week", "month", "year"],
+      "value": [
+        "day",
+        "week",
+        "month",
+        "year"
+      ],
       "type": "'day' | 'week' | 'month' | 'year'",
-      "description": "选择日期的月日历和选择月份的年日历，受控模式。",
+      "description": "Month calendar with selected date and year calendar with selected month, controlled mode.",
       "description_zh": "选择日期的月日历和选择月份的年日历，受控模式。"
     },
     ":panelOperations": {
       "default": "-",
       "value": "",
       "type": "Array<'left' | 'double-left' | 'right' | 'double-right'>",
-      "description": "卡片模式下配置操作按钮",
+      "description": "Configure the action button in card mode",
       "description_zh": "卡片模式下配置操作按钮"
     },
     "className": {
       "default": "-",
       "value": "",
       "type": "string | string[]",
-      "description": "节点类名",
+      "description": "Node class name",
       "description_zh": "节点类名"
     },
     "dayStartOfWeek": {
       "default": "0",
-      "value": ["0", "1"],
+      "value": [
+        "0",
+        "1"
+      ],
       "type": "0 | 1",
-      "description": "每周的第一天开始于周几，0 - 周日，1 - 周一。",
+      "description": "The first day of the week starts on the day of the week, 0 - Sunday, 1 - Monday.",
       "description_zh": "每周的第一天开始于周几，0 - 周日，1 - 周一。"
     },
     ":locale": {
       "default": "-",
       "value": "",
       "type": "Record<string, any>",
-      "description": "国际化配置",
+      "description": "Internationalized configuration",
       "description_zh": "国际化配置"
     },
     "panelWidth": {
       "default": "265",
       "value": "",
       "type": "number | string",
-      "description": "卡片模式的宽度",
+      "description": "The width of the card pattern",
       "description_zh": "卡片模式的宽度"
     },
     ":style": {
       "default": "-",
       "value": "",
       "type": "CSSProperties",
-      "description": "节点样式",
+      "description": "Node style",
       "description_zh": "节点样式"
     },
     ":dateInnerContent": {
       "default": "-",
       "value": "",
       "type": "(currentDate: Dayjs) => ReactNode",
-      "description": "定制日期单元格，内容会被添加到单元格内，只在全屏日历模式下生效。",
+      "description": "Customize the date cell, the content will be added to the cell, and it will only take effect in full-screen calendar mode.",
       "description_zh": "定制日期单元格，内容会被添加到单元格内，只在全屏日历模式下生效。"
     },
     ":dateRender": {
       "default": "-",
       "value": "",
       "type": "(currentDate: Dayjs) => ReactNode",
-      "description": "定制日期显示，会完全覆盖日期单元格。",
+      "description": "Customize the date display to completely overwrite the date cell.",
       "description_zh": "定制日期显示，会完全覆盖日期单元格。"
     },
     ":disabledDate": {
       "default": "-",
       "value": "",
       "type": "(current: Dayjs) => boolean",
-      "description": "不可选取的时间",
+      "description": "The time that cannot be selected",
       "description_zh": "不可选取的时间"
     },
     ":headerRender": {
       "default": "-",
       "value": "",
       "type": "(props: {value?: Dayjs;pageShowDate?: Dayjs;mode?: string;onChange;onChangePageDate;onChangeMode;}) => ReactNode",
-      "description": "自定义头部渲染。",
+      "description": "Custom head rendering.",
       "description_zh": "自定义头部渲染。"
     },
     ":monthRender": {
@@ -134,15 +150,17 @@
   "events": [
     {
       "name": "onChange",
-      "description": "日期变化触发的回调。",
+      "description": "Callbacks triggered by date changes.",
       "description_zh": "日期变化触发的回调。",
-      "params": "(date: Dayjs) => void"
+      "params": "(date: Dayjs) => void",
+      "value": ""
     },
     {
       "name": "onPanelChange",
-      "description": "面板日期发生改变触发的回调。",
+      "description": "A callback triggered by a change in the date of the panel.",
       "description_zh": "面板日期发生改变触发的回调。",
-      "params": "(date: Dayjs) => void"
+      "params": "(date: Dayjs) => void",
+      "value": ""
     }
   ],
   "typeDetail": {}

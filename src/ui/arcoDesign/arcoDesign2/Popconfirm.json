@@ -5,140 +5,165 @@
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "是否自动聚焦弹出框内的可聚焦元素",
+      "description": "Whether to autofocus the focusable elements in the pop-up",
       "description_zh": "是否自动聚焦弹出框内的可聚焦元素"
     },
     "defaultPopupVisible": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "默认弹出框是打开还是关闭",
+      "description": "Whether the default pop-up box is on or off",
       "description_zh": "默认弹出框是打开还是关闭"
     },
     "disabled": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "是否禁用",
+      "description": "Whether to disable or not",
       "description_zh": "是否禁用"
     },
     "focusLock": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "是否将焦点锁定在弹出框内",
+      "description": "Whether to lock focus within a pop-up box",
       "description_zh": "是否将焦点锁定在弹出框内"
     },
     "popupVisible": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "弹出框是打开还是关闭。(受控)",
+      "description": "Whether the pop-up box is on or off. (Controlled)",
       "description_zh": "弹出框是打开还是关闭。(受控)"
     },
     "unmountOnExit": {
       "default": "true",
       "value": "",
       "type": "boolean",
-      "description": "是否在隐藏的时候销毁 DOM 节点",
+      "description": "Whether or not to destroy DOM nodes while hidden",
       "description_zh": "是否在隐藏的时候销毁 DOM 节点"
     },
     "okType": {
       "default": "primary",
-      "value": ["default", "primary", "secondary", "dashed", "text", "outline"],
+      "value": [
+        "default",
+        "primary",
+        "secondary",
+        "dashed",
+        "text",
+        "outline"
+      ],
       "type": "ButtonProps['type']",
-      "description": "确认按钮的类型",
+      "description": "Confirm the type of button",
       "description_zh": "确认按钮的类型"
     },
     "position": {
       "default": "top",
-      "value": ["top", "tl", "tr", "bottom", "bl", "br", "left", "lt", "lb", "right", "rt", "rb"],
+      "value": [
+        "top",
+        "tl",
+        "tr",
+        "bottom",
+        "bl",
+        "br",
+        "left",
+        "lt",
+        "lb",
+        "right",
+        "rt",
+        "rb"
+      ],
       "type": "| 'top'| 'tl'| 'tr'| 'bottom'| 'bl'| 'br'| 'left'| 'lt'| 'lb'| 'right'| 'rt'| 'rb'",
-      "description": "弹出框的方位，有 12 个方位可供选择",
+      "description": "The direction of the pop-up box, there are 12 directions to choose from",
       "description_zh": "弹出框的方位，有 12 个方位可供选择"
     },
     "trigger": {
       "default": "click",
-      "value": ["hover", "focus", "click", "contextMenu"],
+      "value": [
+        "hover",
+        "focus",
+        "click",
+        "contextMenu"
+      ],
       "type": "TriggerProps['trigger']",
-      "description": "触发方式",
+      "description": "Trigger mode",
       "description_zh": "触发方式"
     },
     "cancelText": {
       "default": "-",
       "value": "",
       "type": "ReactNode",
-      "description": "取消按钮文字",
+      "description": "Cancel button text",
       "description_zh": "取消按钮文字"
     },
     ":icon": {
       "default": "<IconExclamationCircleFill />",
       "value": "",
       "type": "ReactNode",
-      "description": "标题前的图标",
+      "description": "icon before the title",
       "description_zh": "标题前的图标"
     },
     "okText": {
       "default": "-",
       "value": "",
       "type": "ReactNode",
-      "description": "确认按钮文字",
+      "description": "Confirm the button text",
       "description_zh": "确认按钮文字"
     },
     ":cancelButtonProps": {
       "default": "-",
       "value": "",
       "type": "ButtonProps",
-      "description": "取消按钮的参数，可接受 Button 组件的所有参数",
+      "description": "Cancels the button's parameters to accept all the parameters of the Button component",
       "description_zh": "取消按钮的参数，可接受 Button 组件的所有参数"
     },
     "className": {
       "default": "-",
       "value": "",
       "type": "string | string[]",
-      "description": "节点类名",
+      "description": "Node class name",
       "description_zh": "节点类名"
     },
     ":okButtonProps": {
       "default": "-",
       "value": "",
       "type": "ButtonProps",
-      "description": "确定按钮的参数，可接受 Button 组件的所有参数",
+      "description": "Determines the parameters of the button, and accepts all parameters of the Button component",
       "description_zh": "确定按钮的参数，可接受 Button 组件的所有参数"
     },
     ":style": {
       "default": "-",
       "value": "",
       "type": "CSSProperties",
-      "description": "节点样式",
+      "description": "Node style",
       "description_zh": "节点样式"
     },
     ":triggerProps": {
       "default": "-",
       "value": "",
       "type": "Partial<TriggerProps>",
-      "description": "可以接受所有 Trigger 的参数",
+      "description": "All Trigger parameters can be accepted",
       "description_zh": "可以接受所有 Trigger 的参数"
     },
     ":content": {
       "default": "-",
       "value": "",
       "type": "ReactNode | (() => ReactNode)",
-      "description": "内容.函数类型在 2.48.0 支持",
+      "description": "Content. Function types are supported in 2.48.0",
       "description_zh": "内容.函数类型在 2.48.0 支持"
     },
     ":getPopupContainer": {
       "default": "-",
       "value": "",
       "type": "(node: HTMLElement) => Element",
-      "description": "弹出挂载的节点",
+      "description": "Eject the attached node",
       "description_zh": "弹出挂载的节点"
     },
     "title": {
       "default": "-",
       "value": "",
       "type": "ReactNode | (() => ReactNode)",
-      "description": "标题。 函数类型在 2.48.0 支持",
+      "description": "Title. Function types are supported in 2.48.0",
       "description_zh": "标题。 函数类型在 2.48.0 支持",
       "required": true
     }
@@ -149,21 +174,24 @@
   "events": [
     {
       "name": "onOk",
-      "description": "点击确认按钮的回调函数。回调函数 event 参数在 2.29.0 支持",
+      "description": "Click the callback function of the Confirm button. The event parameter of the callback function is supported in 2.29.0",
       "description_zh": "点击确认按钮的回调函数。回调函数 event 参数在 2.29.0 支持",
-      "params": "(e: React.MouseEvent) => Promise<any> | void"
+      "params": "(e: React.MouseEvent) => Promise<any> | void",
+      "value": ""
     },
     {
       "name": "onCancel",
-      "description": "点击取消按钮的回调函数。 回调函数 event 参数在 2.29.0 支持",
+      "description": "Click the callback function of the cancel button. The event parameter of the callback function is supported in 2.29.0",
       "description_zh": "点击取消按钮的回调函数。 回调函数 event 参数在 2.29.0 支持",
-      "params": "(e: React.MouseEvent) => void"
+      "params": "(e: React.MouseEvent) => void",
+      "value": ""
     },
     {
       "name": "onVisibleChange",
-      "description": "弹出打开和关闭触发的回调",
+      "description": "Pop up to open and close triggered callbacks",
       "description_zh": "弹出打开和关闭触发的回调",
-      "params": "(visible: boolean) => void"
+      "params": "(visible: boolean) => void",
+      "value": ""
     }
   ],
   "typeDetail": {}

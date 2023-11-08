@@ -5,186 +5,205 @@
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "是否禁用",
+      "description": "Whether to disable or not",
       "description_zh": "是否禁用"
     },
     "error": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "错误状态",
+      "description": "Error status",
       "description_zh": "错误状态"
     },
     "hideControl": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "隐藏右侧按钮",
+      "description": "Hide the right button",
       "description_zh": "隐藏右侧按钮"
     },
     "readOnly": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "是否只读",
+      "description": "Whether it is read-only or not",
       "description_zh": "是否只读"
     },
     "strictMode": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "严格模式下，onChange 回调将返回字符串类型",
+      "description": "In strict mode, the onChange callback will return a string type",
       "description_zh": "严格模式下，onChange 回调将返回字符串类型"
     },
     ":max": {
       "default": "Infinity",
       "value": "",
       "type": "number",
-      "description": "最大值",
+      "description": "maximum",
       "description_zh": "最大值"
     },
     ":min": {
       "default": "-Infinity",
       "value": "",
       "type": "number",
-      "description": "最小值",
+      "description": "minimum",
       "description_zh": "最小值"
     },
     ":precision": {
       "default": "-",
       "value": "",
       "type": "number",
-      "description": "数字精度。设置精度小于step的小数位时，取step的小数个数。",
+      "description": "Numerical precision. If the decimal place is set to a precision less than the number of decimal places of the step, the number of decimal places of the step is taken.",
       "description_zh": "数字精度。设置精度小于step的小数位时，取step的小数个数。"
     },
     ":step": {
       "default": "1",
       "value": "",
       "type": "number",
-      "description": "数字变化步长",
+      "description": "Number change step size",
       "description_zh": "数字变化步长"
     },
     "placeholder": {
       "default": "-",
       "value": "",
       "type": "string",
-      "description": "默认显示文案",
+      "description": "Copy is displayed by default",
       "description_zh": "默认显示文案",
       "required": true
     },
     "mode": {
       "default": "embed",
-      "value": ["embed", "button"],
+      "value": [
+        "embed",
+        "button"
+      ],
       "type": "'embed' | 'button'",
-      "description": "embed - 按钮内嵌模式，button - 左右按钮模式",
+      "description": "Embed - Button inline mode, Button - Left and right button mode",
       "description_zh": "embed - 按钮内嵌模式，button - 左右按钮模式"
     },
     "size": {
       "default": "-",
-      "value": ["mini", "small", "default", "large"],
+      "value": [
+        "mini",
+        "small",
+        "default",
+        "large"
+      ],
       "type": "'mini' | 'small' | 'default' | 'large'",
-      "description": "不同尺寸的数字输入框。分别对应 24px, 28px, 32px, 36px",
+      "description": "Digital input boxes of different sizes. 24px, 28px, 32px, 36px",
       "description_zh": "不同尺寸的数字输入框。分别对应 24px, 28px, 32px, 36px"
     },
     ":prefix": {
       "default": "-",
       "value": "",
       "type": "ReactNode",
-      "description": "显示前缀",
+      "description": "Display the prefix",
       "description_zh": "显示前缀"
     },
     ":suffix": {
       "default": "-",
       "value": "",
       "type": "ReactNode",
-      "description": "显示后缀",
+      "description": "Displays the suffix",
       "description_zh": "显示后缀"
     },
     "className": {
       "default": "-",
       "value": "",
       "type": "string | string[]",
-      "description": "节点类名",
+      "description": "Node class name",
       "description_zh": "节点类名"
     },
     "defaultValue": {
       "default": "-",
       "value": "",
       "type": "number | string",
-      "description": "初始值",
+      "description": "Initial value",
       "description_zh": "初始值"
     },
     ":icons": {
       "default": "-",
       "value": "",
       "type": "{up?: ReactNode;down?: ReactNode;plus?: ReactNode;minus?: ReactNode;}",
-      "description": "配置图标",
+      "description": "Configuration icon",
       "description_zh": "配置图标"
     },
     ":style": {
       "default": "-",
       "value": "",
       "type": "CSSProperties",
-      "description": "节点样式",
+      "description": "Node style",
       "description_zh": "节点样式"
     },
     "value": {
       "default": "-",
       "value": "",
       "type": "undefined | number | string",
-      "description": "当前值",
+      "description": "Current value",
       "description_zh": "当前值"
     },
     ":formatter": {
       "default": "-",
       "value": "",
       "type": "(value: number | string, info: { userTyping: boolean; input: string }) => string",
-      "description": "定义输入框展示值",
+      "description": "Define the value of the input box display",
       "description_zh": "定义输入框展示值"
     },
     ":parser": {
       "default": "(input) => input.replace(/[^\\w\\.-]+/g, '')",
       "value": "",
       "type": "(value: string) => number | string",
-      "description": "从 formatter 转换为数字，和 formatter 搭配使用。",
+      "description": "Convert from formatter to digital and use with formatter.",
       "description_zh": "从 formatter 转换为数字，和 formatter 搭配使用。"
     }
   },
-  "methods": [{
-    "name": "focus",
-    "params": "Function",
-    "description": "焦点事件"
-  }, {
-    "name": "blur",
-    "params": "Function",
-    "description": "失去焦点事件"
-  }],
+  "methods": [
+    {
+      "name": "focus",
+      "params": "Function",
+      "description": "Spotlight events",
+      "value": "",
+      "description_zh": "焦点事件"
+    },
+    {
+      "name": "blur",
+      "params": "Function",
+      "description": "Loss of focus event",
+      "value": "",
+      "description_zh": "失去焦点事件"
+    }
+  ],
   "link": "https://arco.design/react/components/input-number#api",
   "link_zh": "https://arco.design/react/components/input-number#api",
   "events": [
     {
       "name": "onBlur",
-      "description": "输入框失去聚焦事件的回调",
+      "description": "The input box loses the callback for the focused event",
       "description_zh": "输入框失去聚焦事件的回调",
-      "params": "(e) => void"
+      "params": "(e) => void",
+      "value": ""
     },
     {
       "name": "onChange",
-      "description": "变化回调",
+      "description": "Change callbacks",
       "description_zh": "变化回调",
-      "params": "(value: number) => void"
+      "params": "(value: number) => void",
+      "value": ""
     },
     {
       "name": "onFocus",
-      "description": "输入框聚焦事件的回调",
+      "description": "Enter the callback for the focus event",
       "description_zh": "输入框聚焦事件的回调",
-      "params": "(e) => void"
+      "params": "(e) => void",
+      "value": ""
     },
     {
       "name": "onKeyDown",
-      "description": "键盘事件回调",
+      "description": "Keyboard event callbacks",
       "description_zh": "键盘事件回调",
-      "params": "(e: Event) => void"
+      "params": "(e: Event) => void",
+      "value": ""
     }
   ],
   "typeDetail": {}

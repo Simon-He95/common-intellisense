@@ -5,63 +5,87 @@
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "控制下拉框是否默认打开",
+      "description": "Controls whether the drop-down box is turned on by default",
       "description_zh": "控制下拉框是否默认打开"
     },
     "disabled": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "是否禁用弹出",
+      "description": "Whether to disable pop-ups",
       "description_zh": "是否禁用弹出"
     },
     "popupVisible": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "控制下拉框是否打开（受控模式）",
+      "description": "Control whether the drop-down box is open (controlled mode)",
       "description_zh": "控制下拉框是否打开（受控模式）"
     },
     "unmountOnExit": {
       "default": "true",
       "value": "",
       "type": "boolean",
-      "description": "隐藏后是否销毁 DOM 结构",
+      "description": "Whether or not to destroy the DOM structure after hiding",
       "description_zh": "隐藏后是否销毁 DOM 结构"
     },
     "position": {
       "default": "br",
-      "value": ["top", "tl", "tr", "bottom", "bl", "br"],
+      "value": [
+        "top",
+        "tl",
+        "tr",
+        "bottom",
+        "bl",
+        "br"
+      ],
       "type": "'top' | 'tl' | 'tr' | 'bottom' | 'bl' | 'br'",
-      "description": "下拉框的弹出位置",
+      "description": "The pop-up location of the drop-down box",
       "description_zh": "下拉框的弹出位置"
     },
     "size": {
       "default": "-",
-      "value": ["mini", "small", "default", "large"],
+      "value": [
+        "mini",
+        "small",
+        "default",
+        "large"
+      ],
       "type": "'mini' | 'small' | 'default' | 'large'",
-      "description": "等同于 Button 的 size",
+      "description": "Equivalent to the size of the button",
       "description_zh": "等同于 Button 的 size"
     },
     "trigger": {
       "default": "hover",
-      "value": ["click", "hover", "contextMenu", "focus"],
+      "value": [
+        "click",
+        "hover",
+        "contextMenu",
+        "focus"
+      ],
       "type": "TriggerProps['trigger']",
-      "description": "触发下拉框弹出的方式",
+      "description": "How the drop-down list is triggered",
       "description_zh": "触发下拉框弹出的方式"
     },
     "type": {
       "default": "default",
-      "value": ["default", "primary", "secondary", "dashed", "outline", "text"],
+      "value": [
+        "default",
+        "primary",
+        "secondary",
+        "dashed",
+        "outline",
+        "text"
+      ],
       "type": "'default' | 'primary' | 'secondary' | 'dashed' | 'outline' | 'text'",
-      "description": "等同于 Button 的 type",
+      "description": "Equivalent to the type of Button",
       "description_zh": "等同于 Button 的 type"
     },
     ":droplist": {
       "default": "-",
       "value": "",
       "type": "ReactNode",
-      "description": "下拉框的内容",
+      "description": "The contents of the drop-down box",
       "description_zh": "下拉框的内容",
       "required": true
     },
@@ -69,49 +93,49 @@
       "default": "<IconMore />",
       "value": "",
       "type": "ReactNode",
-      "description": "右侧显示内容，可以是 icon 或者任意 dom 元素",
+      "description": "The content on the right side is displayed, which can be an icon or any DOM element",
       "description_zh": "右侧显示内容，可以是 icon 或者任意 dom 元素"
     },
     ":buttonProps": {
       "default": "-",
       "value": "",
       "type": "ButtonProps",
-      "description": "接收 button 按钮的所有 Props，应用于左侧按钮",
+      "description": "Receives all Props for the button button, which is applied to the left button",
       "description_zh": "接收 button 按钮的所有 Props，应用于左侧按钮"
     },
     "className": {
       "default": "-",
       "value": "",
       "type": "string | string[]",
-      "description": "节点类名",
+      "description": "Node class name",
       "description_zh": "节点类名"
     },
     ":style": {
       "default": "-",
       "value": "",
       "type": "CSSProperties",
-      "description": "节点样式",
+      "description": "Node style",
       "description_zh": "节点样式"
     },
     ":triggerProps": {
       "default": "-",
       "value": "",
       "type": "Partial<TriggerProps>",
-      "description": "弹出框下可接受所有 Trigger 组件的 Props",
+      "description": "The pop-up box accepts the Props of all Trigger components",
       "description_zh": "弹出框下可接受所有 Trigger 组件的 Props"
     },
     ":buttonsRender": {
       "default": "-",
       "value": "",
       "type": "(buttons: ReactNode[]) => ReactNode[]",
-      "description": "自定义两个按钮的渲染",
+      "description": "Customize the rendering of both buttons",
       "description_zh": "自定义两个按钮的渲染"
     },
     ":getPopupContainer": {
       "default": "-",
       "value": "",
       "type": "(node: HTMLElement) => Element",
-      "description": "弹出框挂在的父级节点",
+      "description": "The pop-up box hangs on the parent node",
       "description_zh": "弹出框挂在的父级节点"
     }
   },
@@ -121,15 +145,17 @@
   "events": [
     {
       "name": "onClick",
-      "description": "左侧按钮的点击事件",
+      "description": "Click event on the left button",
       "description_zh": "左侧按钮的点击事件",
-      "params": "(e: Event) => void"
+      "params": "(e: Event) => void",
+      "value": ""
     },
     {
       "name": "onVisibleChange",
-      "description": "弹出框打开/关闭时会触发",
+      "description": "Triggered when the pop-up box is opened/closed",
       "description_zh": "弹出框打开/关闭时会触发",
-      "params": "(visible: boolean) => void"
+      "params": "(visible: boolean) => void",
+      "value": ""
     }
   ],
   "typeDetail": {}

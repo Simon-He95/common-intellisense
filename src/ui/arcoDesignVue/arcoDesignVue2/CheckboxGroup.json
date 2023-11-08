@@ -1,0 +1,91 @@
+{
+  "name": "ACheckboxGroup",
+  "props": {
+    ":v-model": {
+      "default": "-",
+      "value": "",
+      "type": "Array<string | number | boolean>",
+      "description": "Binding value",
+      "description_zh": "绑定值",
+      "required": true
+    },
+    ":default-value": {
+      "default": "[]",
+      "value": "",
+      "type": "Array<string | number | boolean>",
+      "description": "Default (uncontrolled)",
+      "description_zh": "默认值（非受控状态）"
+    },
+    ":max": {
+      "default": "-",
+      "value": "",
+      "type": "number",
+      "description": "The maximum number of selections is supported",
+      "description_zh": "支持最多选中的数量"
+    },
+    ":options": {
+      "default": "-",
+      "value": "",
+      "type": "Array<string | number | CheckboxOption>",
+      "description": "Options",
+      "description_zh": "选项"
+    },
+    "direction": {
+      "default": "horizontal",
+      "value": [
+        "horizontal",
+        "vertical"
+      ],
+      "type": "Direction",
+      "description": "The direction in which the checkboxes are arranged",
+      "description_zh": "复选框的排列方向"
+    },
+    "disabled": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to disable or not",
+      "description_zh": "是否禁用"
+    }
+  },
+  "methods": [],
+  "link": "https://arco.design/vue/component/checkbox#API",
+  "link_zh": "https://arco.design/vue/component/checkbox#API",
+  "events": [
+    {
+      "name": "change",
+      "description": "Triggered when the value changes",
+      "description_zh": "值改变时触发",
+      "params": "value: (string | number | boolean)[]ev: Event",
+      "value": ""
+    }
+  ],
+  "typeDetail": {
+    "CheckboxOption": [
+      {
+        "name": "label",
+        "type": "RenderContent",
+        "description": "文案",
+        "default": "-"
+      },
+      {
+        "name": "value",
+        "type": "string | number",
+        "description": "选项的 value",
+        "default": "-"
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "description": "是否禁用",
+        "default": "false"
+      },
+      {
+        "name": "indeterminate",
+        "type": "boolean",
+        "description": "是否为半选状态",
+        "default": "false"
+      }
+    ]
+  }
+}

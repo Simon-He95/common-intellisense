@@ -1,0 +1,414 @@
+{
+  "name": "ADrawer",
+  "props": {
+    ":visible": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the drawer is visible or not",
+      "description_zh": "抽屉是否可见",
+      "required": true
+    },
+    "default-visible": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the drawer is visible by default (uncontrolled mode)",
+      "description_zh": "抽屉默认是否可见（非受控模式）"
+    },
+    "placement": {
+      "default": "right",
+      "value": [
+        "top",
+        "right",
+        "bottom",
+        "left"
+      ],
+      "type": "'top' | 'right' | 'bottom' | 'left'",
+      "description": "Where the drawer is placed",
+      "description_zh": "抽屉放置的位置"
+    },
+    "title": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "title",
+      "description_zh": "标题"
+    },
+    "mask": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether or not to display the mask layer",
+      "description_zh": "是否显示遮罩层"
+    },
+    "mask-closable": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Click to see if the mask layer can be turned off",
+      "description_zh": "点击遮罩层是否可以关闭"
+    },
+    "closable": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether or not to display a close button",
+      "description_zh": "是否展示关闭按钮"
+    },
+    "ok-text": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "Confirm the contents of the button",
+      "description_zh": "确认按钮的内容"
+    },
+    "cancel-text": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "The contents of the cancel button",
+      "description_zh": "取消按钮的内容"
+    },
+    "ok-loading": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Check whether the button is loading",
+      "description_zh": "确认按钮是否为加载中状态"
+    },
+    ":ok-button-props": {
+      "default": "-",
+      "value": "",
+      "type": "ButtonProps",
+      "description": "Confirm the Props of the button",
+      "description_zh": "确认按钮的Props"
+    },
+    ":cancel-button-props": {
+      "default": "-",
+      "value": "",
+      "type": "ButtonProps",
+      "description": "Cancel the Props of the button",
+      "description_zh": "取消按钮的Props"
+    },
+    "unmount-on-close": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to unmount the node when it is shut down",
+      "description_zh": "关闭时是否卸载节点"
+    },
+    "width": {
+      "default": "250",
+      "value": "",
+      "type": "number | string",
+      "description": "Width of drawer (only available when placement is right, left)",
+      "description_zh": "抽屉的宽度（仅在placement为right,left时可用）"
+    },
+    "height": {
+      "default": "250",
+      "value": "",
+      "type": "number | string",
+      "description": "Height of drawer (only available when placement is top, bottom)",
+      "description_zh": "抽屉的高度（仅在placement为top,bottom时可用）"
+    },
+    "popup-container": {
+      "default": "body",
+      "value": "",
+      "type": "string | HTMLElement",
+      "description": "pop-up box",
+      "description_zh": "弹出框的挂载容器"
+    },
+    ":drawer-style": {
+      "default": "-",
+      "value": "",
+      "type": "CSSProperties",
+      "description": "The style of the drawer",
+      "description_zh": "抽屉的样式"
+    },
+    "esc-to-close": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the ESC key is supported to close the drawer",
+      "description_zh": "是否支持 ESC 键关闭抽屉"
+    },
+    "render-to-body": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the drawer is mounted under the body element",
+      "description_zh": "抽屉是否挂载在 body 元素下"
+    },
+    "header": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to display header content",
+      "description_zh": "是否展示头部内容"
+    },
+    "footer": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to show the bottom content",
+      "description_zh": "是否展示底部内容"
+    },
+    "hide-cancel": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to hide the cancel button",
+      "description_zh": "是否隐藏取消按钮"
+    }
+  },
+  "methods": [],
+  "link": "https://arco.design/vue/component/drawer#API",
+  "link_zh": "https://arco.design/vue/component/drawer#API",
+  "events": [
+    {
+      "name": "before-ok",
+      "description": "The callback function before the OK event is triggered. If it returns false, no subsequent events will be triggered, and you can also use done to close asynchronously.",
+      "description_zh": "触发 ok 事件前的回调函数。如果返回 false 则不会触发后续事件，也可使用 done 进行异步关闭。",
+      "params": "( done: (closed: boolean) => void) => void | boolean | Promise<void | boolean>",
+      "value": ""
+    },
+    {
+      "name": "before-cancel",
+      "description": "The callback function before the cancel event is triggered. If false is returned, no subsequent event will be triggered.",
+      "description_zh": "触发 cancel 事件前的回调函数。如果返回 false 则不会触发后续事件。",
+      "params": "() => boolean",
+      "value": ""
+    },
+    {
+      "name": "ok",
+      "description": "Triggered when the OK button is clicked",
+      "description_zh": "点击确定按钮时触发",
+      "params": "ev: MouseEvent",
+      "value": ""
+    },
+    {
+      "name": "cancel",
+      "description": "Triggered when you click the cancel or close buttons",
+      "description_zh": "点击取消、关闭按钮时触发",
+      "params": "ev: MouseEvent | KeyboardEvent",
+      "value": ""
+    },
+    {
+      "name": "open",
+      "description": "Triggers when the drawer is opened (at the end of the animation).",
+      "description_zh": "抽屉打开后（动画结束）触发",
+      "params": "-",
+      "value": ""
+    },
+    {
+      "name": "close",
+      "description": "Triggered when the drawer is closed (the animation ends).",
+      "description_zh": "抽屉关闭后（动画结束）触发",
+      "params": "-",
+      "value": ""
+    },
+    {
+      "name": "before-open",
+      "description": "Triggered before the dialog opens",
+      "description_zh": "对话框打开前触发",
+      "params": "-",
+      "value": ""
+    },
+    {
+      "name": "before-close",
+      "description": "Triggered before the dialog box closes",
+      "description_zh": "对话框关闭前触发",
+      "params": "-",
+      "value": ""
+    }
+  ],
+  "typeDetail": {
+    "DrawerConfig": [
+      {
+        "name": "placement",
+        "type": "'top' | 'right' | 'bottom' | 'left'",
+        "description": "抽屉放置的位置",
+        "default": "right"
+      },
+      {
+        "name": "title",
+        "type": "RenderContent",
+        "description": "标题",
+        "default": "-"
+      },
+      {
+        "name": "content",
+        "type": "RenderContent",
+        "description": "内容",
+        "default": "-"
+      },
+      {
+        "name": "mask",
+        "type": "boolean",
+        "description": "是否显示遮罩层",
+        "default": "true"
+      },
+      {
+        "name": "maskClosable",
+        "type": "boolean",
+        "description": "点击遮罩层是否可以关闭",
+        "default": "true"
+      },
+      {
+        "name": "closable",
+        "type": "boolean",
+        "description": "是否展示关闭按钮",
+        "default": "true"
+      },
+      {
+        "name": "okText",
+        "type": "string",
+        "description": "确认按钮的内容",
+        "default": "-"
+      },
+      {
+        "name": "cancelText",
+        "type": "string",
+        "description": "取消按钮的内容",
+        "default": "-"
+      },
+      {
+        "name": "okLoading",
+        "type": "boolean",
+        "description": "确认按钮是否为加载中状态",
+        "default": "false"
+      },
+      {
+        "name": "okButtonProps",
+        "type": "ButtonProps",
+        "description": "确认按钮的Props",
+        "default": "-"
+      },
+      {
+        "name": "cancelButtonProps",
+        "type": "ButtonProps",
+        "description": "取消按钮的Props",
+        "default": "-"
+      },
+      {
+        "name": "width",
+        "type": "number | string",
+        "description": "抽屉的宽度（仅在placement为right,left时可用）",
+        "default": "250"
+      },
+      {
+        "name": "height",
+        "type": "number | string",
+        "description": "抽屉的高度（仅在placement为top,bottom时可用）",
+        "default": "250"
+      },
+      {
+        "name": "popupContainer",
+        "type": "string | HTMLElement",
+        "description": "弹出框的挂载容器",
+        "default": "body"
+      },
+      {
+        "name": "drawerStyle",
+        "type": "CSSProperties",
+        "description": "抽屉的样式",
+        "default": "-"
+      },
+      {
+        "name": "onOk",
+        "type": "(e?: Event) => void",
+        "description": "点击确定按钮时触发",
+        "default": "-"
+      },
+      {
+        "name": "onCancel",
+        "type": "(e?: Event) => void",
+        "description": "点击取消、关闭按钮时触发",
+        "default": "-"
+      },
+      {
+        "name": "onBeforeOk",
+        "type": "( done: (closed: boolean) => void ) => void | boolean | Promise<void | boolean>",
+        "description": "触发 ok 事件前的回调函数。如果返回 false 则不会触发后续事件，也可使用 done 进行异步关闭。",
+        "default": "-"
+      },
+      {
+        "name": "onBeforeCancel",
+        "type": "() => boolean",
+        "description": "触发 cancel 事件前的回调函数。如果返回 false 则不会触发后续事件。",
+        "default": "-"
+      },
+      {
+        "name": "onOpen",
+        "type": "() => void",
+        "description": "抽屉打开后（动画结束）触发",
+        "default": "-"
+      },
+      {
+        "name": "onClose",
+        "type": "() => void",
+        "description": "抽屉关闭后（动画结束）触发",
+        "default": "-"
+      },
+      {
+        "name": "onBeforeOpen",
+        "type": "() => void",
+        "description": "抽屉打开前触发",
+        "default": "-"
+      },
+      {
+        "name": "onBeforeClose",
+        "type": "() => void",
+        "description": "抽屉关闭前触发",
+        "default": "-"
+      },
+      {
+        "name": "escToClose",
+        "type": "boolean",
+        "description": "是否支持 ESC 键关闭抽屉",
+        "default": "true"
+      },
+      {
+        "name": "header",
+        "type": "boolean | RenderContent",
+        "description": "是否展示头部内容",
+        "default": "true"
+      },
+      {
+        "name": "footer",
+        "type": "boolean | RenderContent",
+        "description": "是否展示底部内容",
+        "default": "true"
+      },
+      {
+        "name": "hideCancel",
+        "type": "boolean",
+        "description": "是否隐藏取消按钮",
+        "default": "false"
+      }
+    ],
+    "DrawerReturn": [
+      {
+        "name": "close",
+        "type": "() => void",
+        "description": "关闭抽屉",
+        "default": "-"
+      },
+      {
+        "name": "update",
+        "type": "(config: DrawerUpdateConfig) => void",
+        "description": "更新抽屉",
+        "default": "-"
+      }
+    ],
+    "DrawerMethod": [
+      {
+        "name": "open",
+        "type": "(config: DrawerConfig, appContext?: AppContext) => DrawerReturn",
+        "description": "打开抽屉",
+        "default": "-"
+      }
+    ]
+  }
+}

@@ -1,0 +1,148 @@
+{
+  "name": "AWatermark",
+  "props": {
+    "content": {
+      "default": "-",
+      "value": "",
+      "type": "string | string[]",
+      "description": "Watermark text content",
+      "description_zh": "水印文字内容",
+      "required": true
+    },
+    "image": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "Image source, 2x or 3x image is recommended",
+      "description_zh": "图片源，建议使用 2 倍或 3 倍图"
+    },
+    ":width": {
+      "default": "-",
+      "value": "",
+      "type": "number",
+      "description": "Watermark width (default is content width)",
+      "description_zh": "水印宽度（默认为内容宽度）"
+    },
+    ":height": {
+      "default": "-",
+      "value": "",
+      "type": "number",
+      "description": "Watermark height (defaults to content height)",
+      "description_zh": "水印高度（默认为内容高度）"
+    },
+    ":gap": {
+      "default": "() => [90, 90]",
+      "value": "",
+      "type": "[number, number]",
+      "description": "The spacing between watermarks",
+      "description_zh": "水印间的间距"
+    },
+    ":offset": {
+      "default": "[gap[0]/2, gap[1]/2]",
+      "value": "",
+      "type": "[number, number]",
+      "description": "The offset from the top left corner of the container, which defaults to half the watermark spacing",
+      "description_zh": "距离容器左上角的偏移量，默认为水印间距的一半"
+    },
+    ":rotate": {
+      "default": "-22",
+      "value": "",
+      "type": "number",
+      "description": "Rotation angle",
+      "description_zh": "旋转角度"
+    },
+    "font": {
+      "default": "-",
+      "value": "",
+      "type": "WatermarkFont",
+      "description": "For the watermark font style, see WatermarkFont for specific parameter configuration",
+      "description_zh": "水印字体样式，具体参数配置看 WatermarkFont"
+    },
+    ":z-index": {
+      "default": "6",
+      "value": "",
+      "type": "number",
+      "description": "Watermark level",
+      "description_zh": "水印层级"
+    },
+    ":alpha": {
+      "default": "1",
+      "value": "",
+      "type": "number",
+      "description": "transparency",
+      "description_zh": "透明度"
+    },
+    "anti-tamper": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Watermark tamper-proof",
+      "description_zh": "水印防篡改"
+    },
+    "grayscale": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Grayscale watermark",
+      "description_zh": "灰阶水印"
+    },
+    "repeat": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the watermark is repeated",
+      "description_zh": "是否重复水印"
+    },
+    "staggered": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the arrangement is staggered",
+      "description_zh": "是否错开排列"
+    }
+  },
+  "methods": [],
+  "link": "https://arco.design/vue/component/watermark#API",
+  "link_zh": "https://arco.design/vue/component/watermark#API",
+  "events": [],
+  "typeDetail": {
+    "WatermarkFont": [
+      {
+        "name": "color",
+        "type": "string",
+        "description": "字体颜色",
+        "default": "rgba(0, 0, 0, 0.15)"
+      },
+      {
+        "name": "fontSize",
+        "type": "number",
+        "description": "字体大小",
+        "default": "16"
+      },
+      {
+        "name": "fontFamily",
+        "type": "string",
+        "description": "字体类型",
+        "default": "sans-serif"
+      },
+      {
+        "name": "fontStyle",
+        "type": "'none' | 'normal' | 'italic' | 'oblique'",
+        "description": "字体样式",
+        "default": "normal"
+      },
+      {
+        "name": "textAlign",
+        "type": "'start' | 'end' | 'left' | 'right' | 'center'",
+        "description": "字体对齐方式",
+        "default": "center"
+      },
+      {
+        "name": "fontWeight",
+        "type": "'normal' | 'bold' | 'bolder' | 'lighter' | number",
+        "description": "字体粗细",
+        "default": "normal"
+      }
+    ]
+  }
+}

@@ -5,7 +5,7 @@
       "default": "[]",
       "value": "",
       "type": "TableColumnData[]",
-      "description": "表格的列描述信息",
+      "description": "The columns of the table describe the information",
       "description_zh": "表格的列描述信息",
       "required": true
     },
@@ -13,7 +13,7 @@
       "default": "[]",
       "value": "",
       "type": "TableData[]",
-      "description": "表格的数据",
+      "description": "Data for the table",
       "description_zh": "表格的数据",
       "required": true
     },
@@ -21,289 +21,309 @@
       "default": "true",
       "value": "",
       "type": "boolean | TableBorder",
-      "description": "是否显示边框",
+      "description": "Whether or not to display a border",
       "description_zh": "是否显示边框"
     },
     "hoverable": {
       "default": "true",
       "value": "",
       "type": "boolean",
-      "description": "是否显示选中效果",
+      "description": "Whether to display the selected effect",
       "description_zh": "是否显示选中效果"
     },
     "stripe": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "是否开启斑马纹效果",
+      "description": "Whether or not to turn on the zebra effect",
       "description_zh": "是否开启斑马纹效果"
     },
     "size": {
       "default": "large",
-      "value": ["mini", "small", "medium", "large"],
+      "value": [
+        "mini",
+        "small",
+        "medium",
+        "large"
+      ],
       "type": "'mini' | 'small' | 'medium' | 'large'",
-      "description": "表格的大小",
+      "description": "The size of the table",
       "description_zh": "表格的大小"
     },
     "table-layout-fixed": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "表格的 table-layout 属性设置为 fixed，设置为 fixed 后，表格的宽度不会被内容撑开超出 100%。",
+      "description": "The table-layout property of the table is set to fixed, and when set to fixed, the width of the table will not be stretched beyond 100% by the contents.",
       "description_zh": "表格的 table-layout 属性设置为 fixed，设置为 fixed 后，表格的宽度不会被内容撑开超出 100%。"
     },
     "loading": {
       "default": "false",
       "value": "",
       "type": "boolean | object",
-      "description": "是否为加载中状态",
+      "description": "Whether it is in the Loading state",
       "description_zh": "是否为加载中状态"
     },
     ":row-selection": {
       "default": "-",
       "value": "",
       "type": "TableRowSelection",
-      "description": "表格的行选择器配置",
+      "description": "Row selector configuration for the table",
       "description_zh": "表格的行选择器配置"
     },
     ":expandable": {
       "default": "-",
       "value": "",
       "type": "TableExpandable",
-      "description": "表格的展开行配置",
+      "description": "Expanded row configuration for the table",
       "description_zh": "表格的展开行配置"
     },
     ":scroll": {
       "default": "-",
       "value": "",
       "type": "{ x?: number | string; y?: number | string; minWidth?: number | string; maxHeight?: number | string;}",
-      "description": "表格的滚动属性配置。2.13.0 版本增加字符型值的支持。2.20.0 版本增加 minWidth,maxHeight 的支持。",
+      "description": "Scroll attribute configuration for the table. Version 2.13.0 adds support for character values. Version 2.20.0 adds support for minWidth and maxHeight.",
       "description_zh": "表格的滚动属性配置。2.13.0 版本增加字符型值的支持。2.20.0 版本增加 minWidth,maxHeight 的支持。"
     },
     ":pagination": {
       "default": "true",
       "value": "",
       "type": "boolean | PaginationProps",
-      "description": "分页的属性配置",
+      "description": "Properties configuration for pagination",
       "description_zh": "分页的属性配置"
     },
     "page-position": {
       "default": "br",
-      "value": ["tl", "top", "tr", "bl", "bottom", "br"],
+      "value": [
+        "tl",
+        "top",
+        "tr",
+        "bl",
+        "bottom",
+        "br"
+      ],
       "type": "'tl' | 'top' | tr' | 'bl' | 'bottom' | 'br'",
-      "description": "分页选择器的位置",
+      "description": "The position of the pagination selector",
       "description_zh": "分页选择器的位置"
     },
     ":indent-size": {
       "default": "16",
       "value": "",
       "type": "number",
-      "description": "树形表格的缩进距离",
+      "description": "The indent distance of the tree table",
       "description_zh": "树形表格的缩进距离"
     },
     "row-key": {
       "default": "key",
       "value": "",
       "type": "string",
-      "description": "表格行 key 的取值字段",
+      "description": "The value field of the table row key",
       "description_zh": "表格行 key 的取值字段"
     },
     "show-header": {
       "default": "true",
       "value": "",
       "type": "boolean",
-      "description": "是否显示表头",
+      "description": "Whether to display the header",
       "description_zh": "是否显示表头"
     },
     ":virtual-list-props": {
       "default": "-",
       "value": "",
       "type": "VirtualListProps",
-      "description": "传递虚拟列表属性，传入此参数以开启虚拟滚动 VirtualListProps",
+      "description": "Pass the virtual list property with this parameter to turn on virtual scrolling VirtualListProps",
       "description_zh": "传递虚拟列表属性，传入此参数以开启虚拟滚动 VirtualListProps"
     },
     ":span-method": {
       "default": "-",
       "value": "",
       "type": "(data: { record: TableData; column: TableColumnData | TableOperationColumn; rowIndex: number; columnIndex: number;}) => { rowspan?: number; colspan?: number } | void",
-      "description": "单元格合并方法（索引从数据项开始计数）",
+      "description": "Cell merge method (index counts from data item)",
       "description_zh": "单元格合并方法（索引从数据项开始计数）"
     },
     "span-all": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "是否让合并方法的索引包含所有",
+      "description": "Whether or not to make the index of the merge method contain all",
       "description_zh": "是否让合并方法的索引包含所有"
     },
     ":load-more": {
       "default": "-",
       "value": "",
       "type": "(record: TableData, done: (children?: TableData[]) => void) => void",
-      "description": "数据懒加载函数，传入时开启懒加载功能",
+      "description": "Lazy loading function, enable the lazy loading function when data is in",
       "description_zh": "数据懒加载函数，传入时开启懒加载功能"
     },
     "filter-icon-align-left": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "筛选图标是否左对齐",
+      "description": "Filter whether the icons are left-aligned",
       "description_zh": "筛选图标是否左对齐"
     },
     "hide-expand-button-on-empty": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "是否在子树为空时隐藏展开按钮",
+      "description": "Whether to hide the expand button when the subtree is empty",
       "description_zh": "是否在子树为空时隐藏展开按钮"
     },
     "row-class": {
       "default": "-",
       "value": "",
       "type": "string| any[]| Record<string, any>| ((record: TableData, rowIndex: number) => any)",
-      "description": "表格行元素的类名。2.34.0 版本增加函数值支持",
+      "description": "The class name of the table row element. Version 2.34.0 adds support for function values",
       "description_zh": "表格行元素的类名。2.34.0 版本增加函数值支持"
     },
     ":draggable": {
       "default": "-",
       "value": "",
       "type": "TableDraggable",
-      "description": "表格拖拽排序的配置",
+      "description": "Configure the drag-and-drop sorting of tables",
       "description_zh": "表格拖拽排序的配置"
     },
     "column-resizable": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "是否允许调整列宽",
+      "description": "Whether to allow column width adjustments",
       "description_zh": "是否允许调整列宽"
     },
     "summary": {
       "default": "-",
       "value": "",
       "type": "boolean| ((params: { columns: TableColumnData[]; data: TableData[]; }) => TableData[])",
-      "description": "显示表尾总结行",
+      "description": "Displays the summary row at the bottom of the table",
       "description_zh": "显示表尾总结行"
     },
     "summary-text": {
       "default": "Summary",
       "value": "",
       "type": "string",
-      "description": "总结行的首列文字",
+      "description": "The first column of text in the summary row",
       "description_zh": "总结行的首列文字"
     },
     ":summary-span-method": {
       "default": "-",
       "value": "",
       "type": "(data: { record: TableData; column: TableColumnData | TableOperationColumn; rowIndex: number; columnIndex: number;}) => { rowspan?: number; colspan?: number } | void",
-      "description": "总结行的单元格合并方法",
+      "description": "Summarize the cell merge method for rows",
       "description_zh": "总结行的单元格合并方法"
     },
     ":selected-keys": {
       "default": "-",
       "value": "",
       "type": "(string | number)[]",
-      "description": "已选择的行（受控模式）优先于 rowSelection",
+      "description": "The rows that have been selected (controlled mode) take precedence over rowSelection",
       "description_zh": "已选择的行（受控模式）优先于 rowSelection"
     },
     ":default-selected-keys": {
       "default": "-",
       "value": "",
       "type": "(string | number)[]",
-      "description": "默认已选择的行（非受控模式）优先于 rowSelection",
+      "description": "By default, rows that are selected (uncontrolled mode) take precedence over rowSelection",
       "description_zh": "默认已选择的行（非受控模式）优先于 rowSelection"
     },
     ":expanded-keys": {
       "default": "-",
       "value": "",
       "type": "(string | number)[]",
-      "description": "显示的展开行、子树（受控模式）优先于 expandable",
+      "description": "The expanded rows, subtrees (controlled mode) displayed take precedence over expandable",
       "description_zh": "显示的展开行、子树（受控模式）优先于 expandable"
     },
     ":default-expanded-keys": {
       "default": "-",
       "value": "",
       "type": "(string | number)[]",
-      "description": "默认显示的展开行、子树（非受控模式）优先于 expandable",
+      "description": "The expanded rows, subtrees (uncontrolled mode) displayed by default take precedence over expandable",
       "description_zh": "默认显示的展开行、子树（非受控模式）优先于 expandable"
     },
     "default-expand-all-rows": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "是否默认展开所有的行",
+      "description": "Whether to expand all rows by default",
       "description_zh": "是否默认展开所有的行"
     },
     "sticky-header": {
       "default": "false",
       "value": "",
       "type": "boolean | number",
-      "description": "是否开启表头吸顶",
+      "description": "Whether to turn on the meter ceiling",
       "description_zh": "是否开启表头吸顶"
     },
     "scrollbar": {
       "default": "true",
       "value": "",
       "type": "boolean | ScrollbarProps",
-      "description": "是否开启虚拟滚动条",
+      "description": "Whether to enable the virtual scrollbar",
       "description_zh": "是否开启虚拟滚动条"
     },
     "show-empty-tree": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "是否展示空子树",
+      "description": "Whether or not to display empty subtrees",
       "description_zh": "是否展示空子树"
     }
   },
   "methods": [
     {
       "name": "selectAll",
-      "description": "设置全选状态",
+      "description": "Set the Select All status",
       "params": "checked: boolean",
-      "description_zh": "设置全选状态"
+      "description_zh": "设置全选状态",
+      "value": ""
     },
     {
       "name": "select",
-      "description": "设置行选择器状态",
+      "description": "Sets the row selector status",
       "params": "rowKey: string | number | (string | number)[]checked: boolean",
-      "description_zh": "设置行选择器状态"
+      "description_zh": "设置行选择器状态",
+      "value": ""
     },
     {
       "name": "expandAll",
-      "description": "设置全部展开状态",
+      "description": "Set the Expand All status",
       "params": "checked: boolean",
-      "description_zh": "设置全部展开状态"
+      "description_zh": "设置全部展开状态",
+      "value": ""
     },
     {
       "name": "expand",
-      "description": "设置展开状态",
+      "description": "Set the expansion status",
       "params": "rowKey: string | number | (string | number)[]checked: boolean",
-      "description_zh": "设置展开状态"
+      "description_zh": "设置展开状态",
+      "value": ""
     },
     {
       "name": "resetFilters",
-      "description": "重置列的筛选器",
+      "description": "Reset the column's filters",
       "params": "dataIndex: string | string[]",
-      "description_zh": "重置列的筛选器"
+      "description_zh": "重置列的筛选器",
+      "value": ""
     },
     {
       "name": "clearFilters",
-      "description": "清空列的筛选器",
+      "description": "Clear the filters for the column",
       "params": "dataIndex: string | string[]",
-      "description_zh": "清空列的筛选器"
+      "description_zh": "清空列的筛选器",
+      "value": ""
     },
     {
       "name": "resetSorters",
-      "description": "重置列的排序",
+      "description": "Reset the sorting of columns",
       "params": "-",
-      "description_zh": "重置列的排序"
+      "description_zh": "重置列的排序",
+      "value": ""
     },
     {
       "name": "clearSorters",
-      "description": "清空列的排序",
+      "description": "Clears the sorting of columns",
       "params": "-",
-      "description_zh": "清空列的排序"
+      "description_zh": "清空列的排序",
+      "value": ""
     }
   ],
   "link": "https://arco.design/vue/component/table#API",
@@ -311,123 +331,143 @@
   "events": [
     {
       "name": "expand",
-      "description": "点击展开行时触发",
+      "description": "Triggered when you click to expand rows",
       "description_zh": "点击展开行时触发",
-      "params": "rowKey: string | numberrecord: TableData"
+      "params": "rowKey: string | numberrecord: TableData",
+      "value": ""
     },
     {
       "name": "expanded-change",
-      "description": "已展开的数据行发生改变时触发",
+      "description": "Triggered when an expanded data row changes",
       "description_zh": "已展开的数据行发生改变时触发",
-      "params": "rowKeys: (string | number)[]"
+      "params": "rowKeys: (string | number)[]",
+      "value": ""
     },
     {
       "name": "select",
-      "description": "点击行选择器时触发",
+      "description": "Triggered when the row selector is clicked",
       "description_zh": "点击行选择器时触发",
-      "params": "rowKeys: string | number[]rowKey: string | numberrecord: TableData"
+      "params": "rowKeys: string | number[]rowKey: string | numberrecord: TableData",
+      "value": ""
     },
     {
       "name": "select-all",
-      "description": "点击全选选择器时触发",
+      "description": "Triggered when you click the Select All selector",
       "description_zh": "点击全选选择器时触发",
-      "params": "checked: boolean"
+      "params": "checked: boolean",
+      "value": ""
     },
     {
       "name": "selection-change",
-      "description": "已选择的数据行发生改变时触发",
+      "description": "Triggered when the selected data row changes",
       "description_zh": "已选择的数据行发生改变时触发",
-      "params": "rowKeys: (string | number)[]"
+      "params": "rowKeys: (string | number)[]",
+      "value": ""
     },
     {
       "name": "sorter-change",
-      "description": "排序规则发生改变时触发",
+      "description": "Triggered when the collation is changed",
       "description_zh": "排序规则发生改变时触发",
-      "params": "dataIndex: stringdirection: string"
+      "params": "dataIndex: stringdirection: string",
+      "value": ""
     },
     {
       "name": "filter-change",
-      "description": "过滤选项发生改变时触发",
+      "description": "Triggered when the filter option is changed",
       "description_zh": "过滤选项发生改变时触发",
-      "params": "dataIndex: stringfilteredValues: string[]"
+      "params": "dataIndex: stringfilteredValues: string[]",
+      "value": ""
     },
     {
       "name": "page-change",
-      "description": "表格分页发生改变时触发",
+      "description": "Triggered when the table pagination changes",
       "description_zh": "表格分页发生改变时触发",
-      "params": "page: number"
+      "params": "page: number",
+      "value": ""
     },
     {
       "name": "page-size-change",
-      "description": "表格每页数据数量发生改变时触发",
+      "description": "Triggered when the number of data per page of the table changes",
       "description_zh": "表格每页数据数量发生改变时触发",
-      "params": "pageSize: number"
+      "params": "pageSize: number",
+      "value": ""
     },
     {
       "name": "change",
-      "description": "表格数据发生变化时触发",
+      "description": "Triggered when the table data changes",
       "description_zh": "表格数据发生变化时触发",
-      "params": "data: TableData[]extra: TableChangeExtracurrentData: TableData[]"
+      "params": "data: TableData[]extra: TableChangeExtracurrentData: TableData[]",
+      "value": ""
     },
     {
       "name": "cell-mouse-enter",
-      "description": "单元格 hover 进入时触发",
+      "description": "Triggered when the cell hover enters",
       "description_zh": "单元格 hover 进入时触发",
-      "params": "record: TableDatacolumn: TableColumnDataev: Event"
+      "params": "record: TableDatacolumn: TableColumnData, ev: Event",
+      "value": ""
     },
     {
       "name": "cell-mouse-leave",
-      "description": "单元格 hover 退出时触发",
+      "description": "Triggered when the cell hover exits",
       "description_zh": "单元格 hover 退出时触发",
-      "params": "record: TableDatacolumn: TableColumnDataev: Event"
+      "params": "record: TableDatacolumn: TableColumnData, ev: Event",
+      "value": ""
     },
     {
       "name": "cell-click",
-      "description": "点击单元格时触发",
+      "description": "Triggered when a cell is clicked",
       "description_zh": "点击单元格时触发",
-      "params": "record: TableDatacolumn: TableColumnDataev: Event"
+      "params": "record: TableDatacolumn: TableColumnData, ev: Event",
+      "value": ""
     },
     {
       "name": "row-click",
-      "description": "点击行数据时触发",
+      "description": "Triggered when a row of data is clicked",
       "description_zh": "点击行数据时触发",
-      "params": "record: TableDataev: Event"
+      "params": "record: TableData, ev: Event",
+      "value": ""
     },
     {
       "name": "header-click",
-      "description": "点击表头数据时触发",
+      "description": "Triggered when you click on the header data",
       "description_zh": "点击表头数据时触发",
-      "params": "column: TableColumnDataev: Event"
+      "params": "column: TableColumnData, ev: Event",
+      "value": ""
     },
     {
       "name": "column-resize",
-      "description": "调整列宽时触发",
+      "description": "Triggered when the column width is adjusted",
       "description_zh": "调整列宽时触发",
-      "params": "dataIndex: stringwidth: number"
+      "params": "dataIndex: stringwidth: number",
+      "value": ""
     },
     {
       "name": "row-dblclick",
-      "description": "双击行数据时触发",
+      "description": "Triggered when a row of data is double-clicked",
       "description_zh": "双击行数据时触发",
-      "params": "record: TableDataev: Event"
+      "params": "record: TableData, ev: Event",
+      "value": ""
     },
     {
       "name": "cell-dblclick",
-      "description": "双击单元格时触发",
+      "description": "Triggered when a cell is double-clicked",
       "description_zh": "双击单元格时触发",
-      "params": "record: TableDatacolumn: TableColumnDataev: Event"
+      "params": "record: TableDatacolumn: TableColumnData, ev: Event",
+      "value": ""
     },
     {
       "name": "row-contextmenu",
-      "description": "右击行数据时触发",
+      "description": "Triggered when a row of data is right-clicked",
       "description_zh": "右击行数据时触发",
-      "params": "record: TableDataev: Event"
+      "params": "record: TableData, ev: Event",
+      "value": ""
     },
     {
       "name": "cell-contextmenu",
-      "description": "右击单元格时触发",
+      "description": "Triggers when a cell is right-clicked",
       "description_zh": "右击单元格时触发",
-      "params": "record: TableDatacolumn: TableColumnDataev: Event"
+      "params": "record: TableDatacolumn: TableColumnData, ev: Event",
+      "value": ""
     }
   ],
   "typeDetail": {

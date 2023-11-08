@@ -5,105 +5,115 @@
       "default": "true",
       "value": "",
       "type": "boolean",
-      "description": "弹出框是否与输入框对齐",
+      "description": "Whether the pop-up box is aligned with the input box",
       "description_zh": "弹出框是否与输入框对齐"
     },
     "allowClear": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "允许清空输入框",
+      "description": "Allows the input field to be cleared",
       "description_zh": "允许清空输入框"
     },
     "disabled": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "是否禁用",
+      "description": "Whether to disable or not",
       "description_zh": "是否禁用"
     },
     "error": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "是否是错误状态。(废弃，下个大版本移除，使用 status='error' 替代)",
+      "description": "Whether it is an error state. (Deprecated, removed in the next major version, replaced with status='error')",
       "description_zh": "是否是错误状态。(废弃，下个大版本移除，使用 status='error' 替代)"
     },
     "defaultValue": {
       "default": "-",
       "value": "",
       "type": "string",
-      "description": "输入框默认值",
+      "description": "Input box defaults",
       "description_zh": "输入框默认值"
     },
     "placeholder": {
       "default": "-",
       "value": "",
       "type": "string",
-      "description": "输入框提示文字",
+      "description": "Input box prompt text",
       "description_zh": "输入框提示文字"
     },
     "split": {
       "default": "-",
       "value": "",
       "type": "string",
-      "description": "选中项前后分隔符",
+      "description": "A separator before and after the selection",
       "description_zh": "选中项前后分隔符"
     },
     "value": {
       "default": "-",
       "value": "",
       "type": "string",
-      "description": "输入框的值",
+      "description": "Enter a value for the field",
       "description_zh": "输入框的值"
     },
     "position": {
       "default": "bl",
-      "value": ["top", "tl", "tr", "bottom", "bl", "br"],
+      "value": [
+        "top",
+        "tl",
+        "tr",
+        "bottom",
+        "bl",
+        "br"
+      ],
       "type": "'top' | 'tl' | 'tr' | 'bottom' | 'bl' | 'br'",
-      "description": "下拉框的弹出位置",
+      "description": "The pop-up location of the drop-down box",
       "description_zh": "下拉框的弹出位置"
     },
     "status": {
       "default": "-",
-      "value": ["error", "warning"],
+      "value": [
+        "error",
+        "warning"
+      ],
       "type": "'error' | 'warning'",
-      "description": "状态",
+      "description": "state",
       "description_zh": "状态"
     },
     ":clearIcon": {
       "default": "-",
       "value": "",
       "type": "ReactNode",
-      "description": "allowClear 时配置清除按钮的图标。",
+      "description": "allowClear when configuring the icon for the Clear button.",
       "description_zh": "allowClear 时配置清除按钮的图标。"
     },
     ":notFoundContent": {
       "default": "-",
       "value": "",
       "type": "ReactNode",
-      "description": "下拉列表没有数据时显示的内容",
+      "description": "What is displayed when there is no data in the drop-down list",
       "description_zh": "下拉列表没有数据时显示的内容"
     },
     "autoSize": {
       "default": "-",
       "value": "",
       "type": "boolean | { minRows?: number; maxRows?: number }",
-      "description": "是否自动调整输入框的高度",
+      "description": "Whether to automatically adjust the height of the input box",
       "description_zh": "是否自动调整输入框的高度"
     },
     "className": {
       "default": "-",
       "value": "",
       "type": "string | string[]",
-      "description": "节点类名",
+      "description": "Node class name",
       "description_zh": "节点类名"
     },
     ":options": {
       "default": "-",
       "value": "",
       "type": "(| string| number| { label: ReactNode | string; value: string | number; disabled?: boolean })[]",
-      "description": "下拉框可选项",
+      "description": "The drop-down box is optional",
       "description_zh": "下拉框可选项",
       "required": true
     },
@@ -111,42 +121,42 @@
       "default": "@",
       "value": "",
       "type": "string | string[]",
-      "description": "触发关键字",
+      "description": "Trigger keywords",
       "description_zh": "触发关键字"
     },
     ":style": {
       "default": "-",
       "value": "",
       "type": "CSSProperties",
-      "description": "节点样式",
+      "description": "Node style",
       "description_zh": "节点样式"
     },
     ":triggerProps": {
       "default": "-",
       "value": "",
       "type": "Partial<TriggerProps>",
-      "description": "可以接受所有 Trigger 组件的 Props",
+      "description": "Props for all trigger components can be accepted",
       "description_zh": "可以接受所有 Trigger 组件的 Props"
     },
     ":wrapperStyle": {
       "default": "-",
       "value": "",
       "type": "CSSProperties",
-      "description": "开启字数统计之后，会在 textarea 标签外包一层 div，wrapperStyle 用来配置这个 div 的样式。",
+      "description": "After the word count is enabled, a layer of div will be encased in the textarea tag, and wrapperStyle will be used to configure the style of this div.",
       "description_zh": "开启字数统计之后，会在 textarea 标签外包一层 div，wrapperStyle 用来配置这个 div 的样式。"
     },
     ":filterOption": {
       "default": "-",
       "value": "",
       "type": "false | ((inputValue: string, option) => boolean)",
-      "description": "是否根据输入的值筛选数据，可传入函数自定义过滤逻辑。",
+      "description": "Whether to filter the data based on the input value can be passed into the function to customize the filtering logic.",
       "description_zh": "是否根据输入的值筛选数据，可传入函数自定义过滤逻辑。"
     },
     ":getPopupContainer": {
       "default": "-",
       "value": "",
       "type": "(node: HTMLElement) => HTMLElement",
-      "description": "弹出框挂载的父节点",
+      "description": "The parent node of the pop-up box",
       "description_zh": "弹出框挂载的父节点"
     }
   },
@@ -156,39 +166,45 @@
   "events": [
     {
       "name": "onBlur",
-      "description": "失焦时的回调",
+      "description": "Callback when out of focus",
       "description_zh": "失焦时的回调",
-      "params": "(e) => void"
+      "params": "(e) => void",
+      "value": ""
     },
     {
       "name": "onChange",
-      "description": "输入改变时的回调",
+      "description": "Enter a callback when it changes",
       "description_zh": "输入改变时的回调",
-      "params": "(value: string) => void"
+      "params": "(value: string) => void",
+      "value": ""
     },
     {
       "name": "onClear",
-      "description": "点击清除按钮的回调",
+      "description": "Click the callback of the Clear button",
       "description_zh": "点击清除按钮的回调",
-      "params": "() => void"
+      "params": "() => void",
+      "value": ""
     },
     {
       "name": "onFocus",
-      "description": "聚焦时的回调",
+      "description": "Callbacks when focusing",
       "description_zh": "聚焦时的回调",
-      "params": "(e) => void"
+      "params": "(e) => void",
+      "value": ""
     },
     {
       "name": "onPressEnter",
-      "description": "按下回车键的回调",
+      "description": "Push the Enter key to call back",
       "description_zh": "按下回车键的回调",
-      "params": "(e) => void"
+      "params": "(e) => void",
+      "value": ""
     },
     {
       "name": "onSearch",
-      "description": "搜索时的回调",
+      "description": "Callbacks when searching",
       "description_zh": "搜索时的回调",
-      "params": "(text: string, prefix: string) => void"
+      "params": "(text: string, prefix: string) => void",
+      "value": ""
     }
   ],
   "typeDetail": {}

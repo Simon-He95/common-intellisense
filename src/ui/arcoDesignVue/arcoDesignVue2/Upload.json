@@ -1,0 +1,478 @@
+{
+  "name": "AUpload",
+  "props": {
+    "v-model:file-list": {
+      "default": "-",
+      "value": "",
+      "type": "FileItem[]",
+      "description": "List of files",
+      "description_zh": "文件列表"
+    },
+    ":default-file-list": {
+      "default": "[]",
+      "value": "",
+      "type": "FileItem[]",
+      "description": "Default file list (uncontrolled)",
+      "description_zh": "默认的文件列表（非受控状态）"
+    },
+    "accept": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "The type of uploaded file received, see the HTML standard for details",
+      "description_zh": "接收的上传文件类型，具体参考 HTML标准"
+    },
+    "action": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "The URL of the upload",
+      "description_zh": "上传的URL"
+    },
+    "disabled": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to disable or not",
+      "description_zh": "是否禁用"
+    },
+    "multiple": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether multi-file upload is supported",
+      "description_zh": "是否支持多文件上传"
+    },
+    "directory": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to support folder upload (requires browser support)",
+      "description_zh": "是否支持文件夹上传（需要浏览器支持）"
+    },
+    "draggable": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether drag-and-drop uploads are supported",
+      "description_zh": "是否支持拖拽上传"
+    },
+    "tip": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "Cue text",
+      "description_zh": "提示文字"
+    },
+    ":headers": {
+      "default": "-",
+      "value": "",
+      "type": "Record<string, string>",
+      "description": "Upload the header information attached to the request",
+      "description_zh": "上传请求附加的头信息"
+    },
+    ":data": {
+      "default": "-",
+      "value": "",
+      "type": "Record<string, string | Blob>| ((fileItem: FileItem) => Record<string, string | Blob>)",
+      "description": "Upload the data attached to the request",
+      "description_zh": "上传请求附加的数据"
+    },
+    "name": {
+      "default": "-",
+      "value": "",
+      "type": "string | ((fileItem: FileItem) => string)",
+      "description": "The name of the uploaded file",
+      "description_zh": "上传的文件名"
+    },
+    "with-credentials": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the upload request carries a cookie",
+      "description_zh": "上传请求是否携带 cookie"
+    },
+    ":custom-request": {
+      "default": "-",
+      "value": "",
+      "type": "(option: RequestOption) => UploadRequest",
+      "description": "Customize upload behavior",
+      "description_zh": "自定义上传行为"
+    },
+    ":limit": {
+      "default": "0",
+      "value": "",
+      "type": "number",
+      "description": "Limit the number of files uploaded. 0 indicates no limit",
+      "description_zh": "限制上传文件的数量。0表示不限制"
+    },
+    "auto-upload": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to automatically upload files",
+      "description_zh": "是否自动上传文件"
+    },
+    "show-file-list": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to display a list of files",
+      "description_zh": "是否显示文件列表"
+    },
+    "show-remove-button": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether or not to display a delete button",
+      "description_zh": "是否显示删除按钮"
+    },
+    "show-retry-button": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether or not to display a retry button",
+      "description_zh": "是否显示重试按钮"
+    },
+    "show-cancel-button": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether or not to display a cancel button",
+      "description_zh": "是否显示取消按钮"
+    },
+    "show-upload-button": {
+      "default": "true",
+      "value": "",
+      "type": "boolean | { showOnExceedLimit: boolean }",
+      "description": "Whether or not to display an upload button. Version 2.14.0 adds support for showOnExceedLimit",
+      "description_zh": "是否显示上传按钮。2.14.0 版本新增 showOnExceedLimit 支持"
+    },
+    "show-preview-button": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether or not the Instagram displays a preview button",
+      "description_zh": "照片墙是否显示预览按钮"
+    },
+    "download": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to <a> add the download attribute to the link",
+      "description_zh": "是否在 <a> 链接上添加 download 属性"
+    },
+    "show-link": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "In list mode, if the uploaded file has a URL, the link is displayed. If you turn off Text Only and click to trigger the Preview event.",
+      "description_zh": "在列表模式下，如果上传的文件存在 URL 则展示链接。如果关闭仅展示文字并且点击可以触发 preview 事件。"
+    },
+    "image-loading": {
+      "default": "-",
+      "value": [
+        "lazy",
+        "eager"
+      ],
+      "type": "'eager' | 'lazy'",
+      "description": "<img> , requires browser support",
+      "description_zh": "<img> 的原生 HTML 属性，需要浏览器支持"
+    },
+    "list-type": {
+      "default": "text",
+      "value": [
+        "text",
+        "picture",
+        "picture-card"
+      ],
+      "type": "'text' | 'picture' | 'picture-card'",
+      "description": "Image list type",
+      "description_zh": "图片列表类型"
+    },
+    "response-url-key": {
+      "default": "-",
+      "value": "",
+      "type": "string | ((fileItem: FileItem) => string)",
+      "description": "Obtain the key of the image URL in the response, and replace the preloaded image with the uploaded image after it is enabled",
+      "description_zh": "Response中获取图片URL的key，开启后会用上传的图片替换预加载的图片"
+    },
+    ":custom-icon": {
+      "default": "-",
+      "value": "",
+      "type": "CustomIcon",
+      "description": "Customize the icon",
+      "description_zh": "自定义图标"
+    },
+    "image-preview": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to use the ImagePreview component for previewing",
+      "description_zh": "是否使用 ImagePreview 组件进行预览"
+    }
+  },
+  "methods": [
+    {
+      "name": "submit",
+      "description": "Upload a file (a file that has been initialized)",
+      "params": "fileItem: FileItem",
+      "description_zh": "上传文件（已经初始化完成的文件）",
+      "value": ""
+    },
+    {
+      "name": "abort",
+      "description": "Abort the upload",
+      "params": "fileItem: FileItem",
+      "description_zh": "中止上传",
+      "value": ""
+    },
+    {
+      "name": "updateFile",
+      "description": "Update the file",
+      "params": "id: stringfile: File",
+      "description_zh": "更新文件",
+      "value": ""
+    },
+    {
+      "name": "upload",
+      "description": "Upload the file",
+      "params": "files: File[]",
+      "description_zh": "上传文件",
+      "value": ""
+    }
+  ],
+  "link": "https://arco.design/vue/component/upload#API",
+  "link_zh": "https://arco.design/vue/component/upload#API",
+  "events": [
+    {
+      "name": "before-upload",
+      "description": "Triggered before uploading a file",
+      "description_zh": "上传文件前触发",
+      "params": "(file: File) => boolean | Promise<boolean | File>",
+      "value": ""
+    },
+    {
+      "name": "before-remove",
+      "description": "Triggered before removing a file",
+      "description_zh": "移除文件前触发",
+      "params": "(fileItem: FileItem) => Promise<boolean>",
+      "value": ""
+    },
+    {
+      "name": "button-click",
+      "description": "Triggered by clicking the upload button (default input upload will be turned off if a Promise is returned)",
+      "description_zh": "点击上传按钮触发（如果返回 Promise 则会关闭默认 input 上传）",
+      "params": "(event: Event) => Promise<FileList> | void",
+      "value": ""
+    },
+    {
+      "name": "exceed-limit",
+      "description": "Triggered when the uploaded file exceeds the limit",
+      "description_zh": "上传的文件超出限制后触发",
+      "params": "fileList: FileItem[], files: File[]",
+      "value": ""
+    },
+    {
+      "name": "change",
+      "description": "Triggered when the status of the uploaded file changes",
+      "description_zh": "上传的文件状态发生改变时触发",
+      "params": "fileList: FileItem[], fileItem: fileItem",
+      "value": ""
+    },
+    {
+      "name": "progress",
+      "description": "Triggered when the progress of a file in the middle of an upload changes",
+      "description_zh": "上传中的文件进度改变时触发",
+      "params": "fileItem: fileItem, ev: ProgressEvent",
+      "value": ""
+    },
+    {
+      "name": "preview",
+      "description": "Triggered when you click on the image preview",
+      "description_zh": "点击图片预览时的触发",
+      "params": "fileItem: FileItem",
+      "value": ""
+    },
+    {
+      "name": "success",
+      "description": "Triggered when the upload is successful",
+      "description_zh": "上传成功时触发",
+      "params": "fileItem: FileItem",
+      "value": ""
+    },
+    {
+      "name": "error",
+      "description": "Triggered when the upload fails",
+      "description_zh": "上传失败时触发",
+      "params": "fileItem: FileItem",
+      "value": ""
+    }
+  ],
+  "typeDetail": {
+    "FileItem": [
+      {
+        "name": "uid",
+        "type": "string",
+        "description": "当前上传文件的唯一标示",
+        "default": "-"
+      },
+      {
+        "name": "status",
+        "type": "FileStatus",
+        "description": "当前上传文件的状态",
+        "default": "-"
+      },
+      {
+        "name": "file",
+        "type": "File",
+        "description": "文件对象",
+        "default": "-"
+      },
+      {
+        "name": "percent",
+        "type": "number",
+        "description": "上传进度百分比",
+        "default": "-"
+      },
+      {
+        "name": "response",
+        "type": "any",
+        "description": "当前文件上传请求返回的响应",
+        "default": "-"
+      },
+      {
+        "name": "url",
+        "type": "string",
+        "description": "文件地址",
+        "default": "-"
+      },
+      {
+        "name": "name",
+        "type": "string",
+        "description": "文件名",
+        "default": "-"
+      }
+    ],
+    "CustomIcon": [
+      {
+        "name": "startIcon",
+        "type": "RenderFunction",
+        "description": "开始图标",
+        "default": "-"
+      },
+      {
+        "name": "cancelIcon",
+        "type": "RenderFunction",
+        "description": "取消图标",
+        "default": "-"
+      },
+      {
+        "name": "retryIcon",
+        "type": "RenderFunction",
+        "description": "重试图标",
+        "default": "-"
+      },
+      {
+        "name": "successIcon",
+        "type": "RenderFunction",
+        "description": "成功图标",
+        "default": "-"
+      },
+      {
+        "name": "errorIcon",
+        "type": "RenderFunction",
+        "description": "失败图标",
+        "default": "-"
+      },
+      {
+        "name": "removeIcon",
+        "type": "RenderFunction",
+        "description": "移除图标",
+        "default": "-"
+      },
+      {
+        "name": "previewIcon",
+        "type": "RenderFunction",
+        "description": "预览图标",
+        "default": "-"
+      },
+      {
+        "name": "fileIcon",
+        "type": "(fileItem: FileItem) => VNode",
+        "description": "文件图标",
+        "default": "-"
+      },
+      {
+        "name": "fileName",
+        "type": "(fileItem: FileItem) => string | VNode",
+        "description": "文件名",
+        "default": "-"
+      }
+    ],
+    "RequestOption": [
+      {
+        "name": "action",
+        "type": "string",
+        "description": "上传的URL",
+        "default": "-"
+      },
+      {
+        "name": "headers",
+        "type": "Record<string, string>",
+        "description": "请求报文的头信息",
+        "default": "-"
+      },
+      {
+        "name": "name",
+        "type": "string | ((fileItem: FileItem) => string)",
+        "description": "上传文件的文件名",
+        "default": "-"
+      },
+      {
+        "name": "fileItem",
+        "type": "FileItem",
+        "description": "上传文件",
+        "default": "-"
+      },
+      {
+        "name": "data",
+        "type": "Record<string, string | Blob> | ((fileItem: FileItem) => Record<string, string | Blob>)",
+        "description": "附加的请求信息",
+        "default": "-"
+      },
+      {
+        "name": "withCredentials",
+        "type": "boolean",
+        "description": "是否携带cookie信息",
+        "default": "false"
+      },
+      {
+        "name": "onProgress",
+        "type": "(percent: number, event?: ProgressEvent) => void",
+        "description": "更新当前文件的上传进度。percent: 当前上传进度百分比",
+        "default": "-"
+      },
+      {
+        "name": "onSuccess",
+        "type": "(response?: any) => void",
+        "description": "上传成功后，调用onSuccess方法，传入的response参数将会附加到当前上传文件的response字段上",
+        "default": "-"
+      },
+      {
+        "name": "onError",
+        "type": "(response?: any) => void",
+        "description": "上传失败后，调用onError方法，传入的response参数将会附加到当前上传文件的response字段上",
+        "default": "-"
+      }
+    ],
+    "UploadRequest": [
+      {
+        "name": "abort",
+        "type": "() => void",
+        "description": "终止上传",
+        "default": "-"
+      }
+    ]
+  }
+}

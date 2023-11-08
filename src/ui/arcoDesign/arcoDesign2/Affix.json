@@ -5,56 +5,56 @@
       "default": "-",
       "value": "",
       "type": "number",
-      "description": "距离窗口底部达到指定偏移量后触发",
+      "description": "Triggers when the specified offset is reached from the bottom of the window",
       "description_zh": "距离窗口底部达到指定偏移量后触发"
     },
     ":offsetTop": {
       "default": "0",
       "value": "",
       "type": "number",
-      "description": "距离窗口顶部达到指定偏移量后触发",
+      "description": "Triggers when the specified offset is reached from the top of the window",
       "description_zh": "距离窗口顶部达到指定偏移量后触发"
     },
     "affixClassName": {
       "default": "-",
       "value": "",
       "type": "string | string[]",
-      "description": "给 fixed 的元素设置 className。",
+      "description": "Set the className to the fixed element.",
       "description_zh": "给 fixed 的元素设置 className。"
     },
     ":affixStyle": {
       "default": "-",
       "value": "",
       "type": "CSSProperties",
-      "description": "给 fixed 的元素设置 style，注意不要设置 position top width height， 因为这几个属性是在元素 fixed 时候用于定位的。",
+      "description": "Set the style to the fixed element, and be careful not to set the position top width height, because these properties are used for positioning when the element is fixed.",
       "description_zh": "给 fixed 的元素设置 style，注意不要设置 position top width height， 因为这几个属性是在元素 fixed 时候用于定位的。"
     },
     "className": {
       "default": "-",
       "value": "",
       "type": "string | string[]",
-      "description": "节点类名",
+      "description": "Node class name",
       "description_zh": "节点类名"
     },
     ":style": {
       "default": "-",
       "value": "",
       "type": "CSSProperties",
-      "description": "节点样式",
+      "description": "Node style",
       "description_zh": "节点样式"
     },
     ":target": {
       "default": "() => window",
       "value": "",
       "type": "() => HTMLElement | null | Window",
-      "description": "滚动容器",
+      "description": "Roll the container",
       "description_zh": "滚动容器"
     },
     ":targetContainer": {
       "default": "-",
       "value": "",
       "type": "() => HTMLElement | null | Window",
-      "description": "target 的外层滚动元素。Affix 将会监听该元素的滚动事件，并实时更新固钉的位置。主要是为了解决 target 属性指定为非 window 元素时，如果外层元素滚动，可能会导致固钉跑出容器问题。",
+      "description": "target's outer scrolling element. Affix listens for scroll events for the element and updates the position of the fastened nail in real time. The main purpose is to solve the problem that if the outer element is scrolled when the target attribute is specified as a non-window element, it may cause the fixed nail to run out of the container.",
       "description_zh": "target 的外层滚动元素。Affix 将会监听该元素的滚动事件，并实时更新固钉的位置。主要是为了解决 target 属性指定为非 window 元素时，如果外层元素滚动，可能会导致固钉跑出容器问题。"
     }
   },
@@ -64,9 +64,10 @@
   "events": [
     {
       "name": "onChange",
-      "description": "固定状态发生改变时触发",
+      "description": "Triggered when the fixed state changes",
       "description_zh": "固定状态发生改变时触发",
-      "params": "(affixed: boolean) => void"
+      "params": "(affixed: boolean) => void",
+      "value": ""
     }
   ],
   "typeDetail": {}

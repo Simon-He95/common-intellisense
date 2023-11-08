@@ -1,0 +1,215 @@
+{
+  "name": "ATimePicker",
+  "props": {
+    "type": {
+      "default": "time",
+      "value": [
+        "time",
+        "'time-range'"
+      ],
+      "type": "'time' | 'time-range'",
+      "description": "Selector type",
+      "description_zh": "选择器类型"
+    },
+    "v-model": {
+      "default": "-",
+      "value": "",
+      "type": "string | number | Date | Array<string | number | Date>",
+      "description": "Binding value",
+      "description_zh": "绑定值"
+    },
+    "default-value": {
+      "default": "-",
+      "value": "",
+      "type": "string | number | Date | Array<string | number | Date>",
+      "description": "Default value",
+      "description_zh": "默认值"
+    },
+    "disabled": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to disable or not",
+      "description_zh": "是否禁用"
+    },
+    "allow-clear": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to allow purging",
+      "description_zh": "是否允许清除"
+    },
+    "readonly": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether it is in read-only mode",
+      "description_zh": "是否为只读模式"
+    },
+    "error": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether it is in an error state",
+      "description_zh": "是否为错误状态"
+    },
+    "format": {
+      "default": "'HH:mm:ss'",
+      "value": "",
+      "type": "string",
+      "description": "For the format of the display date, refer to the string parsing format",
+      "description_zh": "展示日期的格式，参考字符串解析格式"
+    },
+    "placeholder": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "Prompt copywriting",
+      "description_zh": "提示文案"
+    },
+    "size": {
+      "default": "medium",
+      "value": [
+        "mini",
+        "small",
+        "medium",
+        "large"
+      ],
+      "type": "'mini' | 'small' | 'medium' | 'large'",
+      "description": "Enter the size of the field",
+      "description_zh": "输入框尺寸"
+    },
+    "popup-container": {
+      "default": "-",
+      "value": "",
+      "type": "string | HTMLElement",
+      "description": "pop-up box",
+      "description_zh": "弹出框的挂载容器"
+    },
+    "use12-hours": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "12-hour clock",
+      "description_zh": "12 小时制"
+    },
+    ":step": {
+      "default": "-",
+      "value": "",
+      "type": "{ hour?: number; minute?: number; second?: number;}",
+      "description": "Set the selection interval for Hours/Minutes/Seconds",
+      "description_zh": "设置 时 / 分 / 秒 的选择间隔"
+    },
+    ":disabled-hours": {
+      "default": "-",
+      "value": "",
+      "type": "() => number[]",
+      "description": "Partial hours option disabled",
+      "description_zh": "禁用的部分小时选项"
+    },
+    ":disabled-minutes": {
+      "default": "-",
+      "value": "",
+      "type": "(selectedHour?: number) => number[]",
+      "description": "Partial minutes option disabled",
+      "description_zh": "禁用的部分分钟选项"
+    },
+    ":disabled-seconds": {
+      "default": "-",
+      "value": "",
+      "type": "(selectedHour?: number, selectedMinute?: number) => number[]",
+      "description": "Partial seconds option disabled",
+      "description_zh": "禁用的部分秒数选项"
+    },
+    "hide-disabled-options": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Hide the option to prohibit selection",
+      "description_zh": "隐藏禁止选择的选项"
+    },
+    "disable-confirm": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Disable the confirmation step, and you don't need to click the confirmation button to select the time directly after opening",
+      "description_zh": "禁用确认步骤，开启后直接点选时间不需要点击确认按钮"
+    },
+    "position": {
+      "default": "bl",
+      "value": [
+        "tl",
+        "top",
+        "tr",
+        "bl",
+        "bottom",
+        "br"
+      ],
+      "type": "'top' | 'tl' | 'tr' | 'bottom' | 'bl' | 'br'",
+      "description": "The location of the pop-up",
+      "description_zh": "弹出的位置"
+    },
+    "v-model:popup-visible": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Controls the pop-up box to turn on or off",
+      "description_zh": "控制弹出框打开或者关闭"
+    },
+    "default-popup-visible": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "The pop-up box is turned on or off by default",
+      "description_zh": "弹出框默认打开或者关闭"
+    },
+    ":trigger-props": {
+      "default": "-",
+      "value": "",
+      "type": "TriggerProps",
+      "description": "You can pass in the parameters of the Trigger component",
+      "description_zh": "可以传入 Trigger 组件的参数"
+    },
+    "unmount-on-close": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether or not to destroy the DOM structure after closing",
+      "description_zh": "是否在关闭后销毁 dom 结构"
+    }
+  },
+  "methods": [],
+  "link": "https://arco.design/vue/component/time-picker#API",
+  "link_zh": "https://arco.design/vue/component/time-picker#API",
+  "events": [
+    {
+      "name": "change",
+      "description": "The component value changes",
+      "description_zh": "组件值发生改变",
+      "params": "timeString: string | Array<string | undefined> | undefined, time: date | Array<date | undefined> | undefined",
+      "value": ""
+    },
+    {
+      "name": "select",
+      "description": "The time is selected but the component value change is not triggered",
+      "description_zh": "选择时间但未触发组件值变化",
+      "params": "timeString: string | Array<string | undefined>, time: Date | Array<Date | undefined>",
+      "value": ""
+    },
+    {
+      "name": "clear",
+      "description": "Click the Clear button",
+      "description_zh": "点击清除按钮",
+      "params": "-",
+      "value": ""
+    },
+    {
+      "name": "popup-visible-change",
+      "description": "The pop-up box expands and collapses",
+      "description_zh": "弹出框展开和收起",
+      "params": "visible: boolean",
+      "value": ""
+    }
+  ],
+  "typeDetail": {}
+}

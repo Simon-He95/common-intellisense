@@ -5,176 +5,184 @@
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "是否允许清除",
+      "description": "Whether to allow purging",
       "description_zh": "是否允许清除"
     },
     "animation": {
       "default": "true",
       "value": "",
       "type": "boolean",
-      "description": "是否为内部标签变化添加动画。",
+      "description": "Whether to animate internal label changes.",
       "description_zh": "是否为内部标签变化添加动画。"
     },
     "autoFocus": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "自动聚焦",
+      "description": "Autofocus",
       "description_zh": "自动聚焦"
     },
     "disabled": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "是否禁用",
+      "description": "Whether to disable or not",
       "description_zh": "是否禁用"
     },
     "dragToSort": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "是否可以通过拖拽为 Tag 排序",
+      "description": "Whether tags can be sorted by dragging",
       "description_zh": "是否可以通过拖拽为 Tag 排序"
     },
     "error": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "是否是错误状态.(废弃，下个大版本移除，使用 status='error' 替代)",
+      "description": "Whether it is an error state. (Deprecated, removed in the next major version, replaced with status='error')",
       "description_zh": "是否是错误状态.(废弃，下个大版本移除，使用 status='error' 替代)"
     },
     "labelInValue": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "设置传入和回调出的值均为 { label: '', value: ''} 格式。",
+      "description": "Set the values in and out of the { label: '', value: ''} format.",
       "description_zh": "设置传入和回调出的值均为 { label: '', value: ''} 格式。"
     },
     "readOnly": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "是否只读",
+      "description": "Whether it is read-only or not",
       "description_zh": "是否只读"
     },
     "saveOnBlur": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "是否在失焦时自动存储正在输入的文本",
+      "description": "Whether to automatically store the text being typed when out of focus",
       "description_zh": "是否在失焦时自动存储正在输入的文本"
     },
     "inputValue": {
       "default": "-",
       "value": "",
       "type": "string",
-      "description": "控件的输入框内的值",
+      "description": "The value in the input box of the control",
       "description_zh": "控件的输入框内的值"
     },
     "placeholder": {
       "default": "-",
       "value": "",
       "type": "string",
-      "description": "预设文案",
+      "description": "Preset copy",
       "description_zh": "预设文案",
       "required": true
     },
     "size": {
       "default": "-",
-      "value": ["mini", "small", "default", "large"],
+      "value": [
+        "mini",
+        "small",
+        "default",
+        "large"
+      ],
       "type": "'mini' | 'small' | 'default' | 'large'",
-      "description": "不同尺寸",
+      "description": "Different sizes",
       "description_zh": "不同尺寸"
     },
     "status": {
       "default": "-",
-      "value": ["error", "warning"],
+      "value": [
+        "error",
+        "warning"
+      ],
       "type": "'error' | 'warning'",
-      "description": "状态",
+      "description": "state",
       "description_zh": "状态"
     },
     ":addAfter": {
       "default": "-",
       "value": "",
       "type": "ReactNode",
-      "description": "输入框后添加元素",
+      "description": "Add the element after entering the box",
       "description_zh": "输入框后添加元素"
     },
     ":addBefore": {
       "default": "-",
       "value": "",
       "type": "ReactNode",
-      "description": "输入框前添加元素",
+      "description": "Add an element before the input box",
       "description_zh": "输入框前添加元素"
     },
     ":prefix": {
       "default": "-",
       "value": "",
       "type": "ReactNode",
-      "description": "添加前缀文字或者图标",
+      "description": "Add a prefix text or icon",
       "description_zh": "添加前缀文字或者图标"
     },
     ":suffix": {
       "default": "-",
       "value": "",
       "type": "ReactNode",
-      "description": "后缀",
+      "description": "suffix",
       "description_zh": "后缀"
     },
     "className": {
       "default": "-",
       "value": "",
       "type": "string | string[]",
-      "description": "节点类名",
+      "description": "Node class name",
       "description_zh": "节点类名"
     },
     ":defaultValue": {
       "default": "-",
       "value": "",
       "type": "T[]",
-      "description": "默认值",
+      "description": "Default value",
       "description_zh": "默认值"
     },
     ":icon": {
       "default": "-",
       "value": "",
       "type": "{ removeIcon?: ReactNode; clearIcon?: ReactNode }",
-      "description": "自定义图标",
+      "description": "Customize the icon",
       "description_zh": "自定义图标"
     },
     ":style": {
       "default": "-",
       "value": "",
       "type": "CSSProperties",
-      "description": "节点样式",
+      "description": "Node style",
       "description_zh": "节点样式"
     },
     ":tokenSeparators": {
       "default": "-",
       "value": "",
       "type": "string[]",
-      "description": "触发自动分词的分隔符",
+      "description": "The separator that triggers automatic word segmentation",
       "description_zh": "触发自动分词的分隔符"
     },
     ":validate": {
       "default": "(inputValue, values) => inputValue && values.every((item) => item !== inputValue)",
       "value": "",
       "type": "(inputValue: string, values: T[]) => boolean | Promise<boolean> | T | Promise<T>",
-      "description": "校验函数，默认在 按下enter时候触发。",
+      "description": "The validation function is triggered by pressing enter by default.",
       "description_zh": "校验函数，默认在 按下enter时候触发。"
     },
     ":value": {
       "default": "-",
       "value": "",
       "type": "T[]",
-      "description": "控件值",
+      "description": "Control values",
       "description_zh": "控件值"
     },
     ":renderTag": {
       "default": "-",
       "value": "",
       "type": "(props: {value: any;label: ReactNode;closable: boolean;onClose: (event) => void;},index: number,values: ObjectValueType[]) => ReactNode",
-      "description": "自定义标签渲染，props 为当前标签属性，index 为当前标签的顺序，values 为所有标签的值.",
+      "description": "Custom label rendering, props is the current tag property, index is the order of the current tag, and values is the value of all tags.",
       "description_zh": "自定义标签渲染，props 为当前标签属性，index 为当前标签的顺序，values 为所有标签的值."
     }
   },
@@ -184,63 +192,73 @@
   "events": [
     {
       "name": "onBlur",
-      "description": "失去焦点时候触发",
+      "description": "Triggers when you lose focus",
       "description_zh": "失去焦点时候触发",
-      "params": "(e) => void"
+      "params": "(e) => void",
+      "value": ""
     },
     {
       "name": "onChange",
-      "description": "控件值改变时触发",
+      "description": "Triggered when the value of the widget changes",
       "description_zh": "控件值改变时触发",
-      "params": "(value: T[], reason: ValueChangeReason) => void"
+      "params": "(value: T[], reason: ValueChangeReason) => void",
+      "value": ""
     },
     {
       "name": "onClear",
-      "description": "点击清除按钮的回调",
+      "description": "Click the callback of the Clear button",
       "description_zh": "点击清除按钮的回调",
-      "params": "() => void"
+      "params": "() => void",
+      "value": ""
     },
     {
       "name": "onClick",
-      "description": "单击组件的回调。",
+      "description": "Click the callback of the component.",
       "description_zh": "单击组件的回调。",
-      "params": "(e) => void"
+      "params": "(e) => void",
+      "value": ""
     },
     {
       "name": "onFocus",
-      "description": "聚焦时触发",
+      "description": "Triggered when focused",
       "description_zh": "聚焦时触发",
-      "params": "(e) => void"
+      "params": "(e) => void",
+      "value": ""
     },
     {
       "name": "onInputChange",
-      "description": "输入框文本改变的回调。",
+      "description": "Callback for text changes in the input box.",
       "description_zh": "输入框文本改变的回调。",
-      "params": "(inputValue: string, event?) => void"
+      "params": "(inputValue: string, event?) => void",
+      "value": ""
     },
     {
       "name": "onKeyDown",
-      "description": "键盘事件回调",
+      "description": "Keyboard event callbacks",
       "description_zh": "键盘事件回调",
-      "params": "(e) => void"
+      "params": "(e) => void",
+      "value": ""
     },
     {
       "name": "onPaste",
-      "description": "输入框文本粘贴的回调。",
+      "description": "Input box text paste callback.",
       "description_zh": "输入框文本粘贴的回调。",
-      "params": "(e) => void"
+      "params": "(e) => void",
+      "value": ""
     },
     {
       "name": "onPressEnter",
-      "description": "按 enter 键触发",
+      "description": "Press Enter to trigger",
       "description_zh": "按 enter 键触发",
-      "params": "(e) => void"
+      "params": "(e) => void",
+      "value": ""
     },
     {
       "name": "onRemove",
-      "description": "移除某一个标签时改变时触发",
+      "description": "Triggered when a tag is removed",
       "description_zh": "移除某一个标签时改变时触发",
-      "params": "(value: T, index: number, event) => void"
+      "params": "(value: T, index: number, event) => void",
+      "value": ""
     }
   ],
   "typeDetail": {}

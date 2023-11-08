@@ -5,77 +5,95 @@
       "default": "true",
       "value": "",
       "type": "boolean",
-      "description": "是否在失去焦点的时候关闭弹出框",
+      "description": "Whether to close the pop-up box when you lose focus",
       "description_zh": "是否在失去焦点的时候关闭弹出框"
     },
     "defaultPopupVisible": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "默认的弹出框状态",
+      "description": "The default pop-up state",
       "description_zh": "默认的弹出框状态"
     },
     "disabled": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "是否禁用",
+      "description": "Whether to disable or not",
       "description_zh": "是否禁用"
     },
     "popupHoverStay": {
       "default": "true",
       "value": "",
       "type": "boolean",
-      "description": "鼠标移入弹出框的话，弹出框会保留而不销毁",
+      "description": "If you move the mouse over the pop-up box, the pop-up box will be retained but not destroyed",
       "description_zh": "鼠标移入弹出框的话，弹出框会保留而不销毁"
     },
     "popupVisible": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "弹出框是打开还是关闭状态",
+      "description": "Whether the pop-up box is on or off",
       "description_zh": "弹出框是打开还是关闭状态"
     },
     "unmountOnExit": {
       "default": "true",
       "value": "",
       "type": "boolean",
-      "description": "是否在隐藏的时候销毁 DOM 结构",
+      "description": "Whether or not to destroy the DOM structure while hidden",
       "description_zh": "是否在隐藏的时候销毁 DOM 结构"
     },
     "childrenPrefix": {
       "default": "-",
       "value": "",
       "type": "string",
-      "description": "会在打开状态给元素加上一个类，格式为 ${childrenPrefix}-open。",
+      "description": "A class is added to the element in the open state in the format ${childrenPrefix}-open.",
       "description_zh": "会在打开状态给元素加上一个类，格式为 ${childrenPrefix}-open。"
     },
     "color": {
       "default": "-",
       "value": "",
       "type": "string",
-      "description": "弹出层背景色",
+      "description": "The pop-up layer background color",
       "description_zh": "弹出层背景色"
     },
     "position": {
       "default": "top",
-      "value": ["top", "tl", "tr", "bottom", "bl", "br", "left", "lt", "lb", "right", "rt", "rb"],
+      "value": [
+        "top",
+        "tl",
+        "tr",
+        "bottom",
+        "bl",
+        "br",
+        "left",
+        "lt",
+        "lb",
+        "right",
+        "rt",
+        "rb"
+      ],
       "type": "| 'top'| 'tl'| 'tr'| 'bottom'| 'bl'| 'br'| 'left'| 'lt'| 'lb'| 'right'| 'rt'| 'rb'",
-      "description": "弹出框的方位，有 12 个方位可供选择",
+      "description": "The direction of the pop-up box, there are 12 directions to choose from",
       "description_zh": "弹出框的方位，有 12 个方位可供选择"
     },
     "trigger": {
       "default": "hover",
-      "value": ["hover", "click", "contextMenu", "focus"],
+      "value": [
+        "hover",
+        "click",
+        "contextMenu",
+        "focus"
+      ],
       "type": "TriggerProps['trigger']",
-      "description": "触发方式",
+      "description": "Trigger mode",
       "description_zh": "触发方式"
     },
     ":content": {
       "default": "-",
       "value": "",
       "type": "ReactNode",
-      "description": "弹出的内容",
+      "description": "What pops up",
       "description_zh": "弹出的内容",
       "required": true
     },
@@ -83,35 +101,35 @@
       "default": "-",
       "value": "",
       "type": "string | string[]",
-      "description": "节点类名",
+      "description": "Node class name",
       "description_zh": "节点类名"
     },
     ":style": {
       "default": "-",
       "value": "",
       "type": "CSSProperties",
-      "description": "节点样式",
+      "description": "Node style",
       "description_zh": "节点样式"
     },
     ":triggerProps": {
       "default": "-",
       "value": "",
       "type": "Partial<TriggerProps>",
-      "description": "可以接受所有 Trigger 组件的参数",
+      "description": "Parameters for all trigger components can be accepted",
       "description_zh": "可以接受所有 Trigger 组件的参数"
     },
     ":getPopupContainer": {
       "default": "-",
       "value": "",
       "type": "(node: HTMLElement) => Element",
-      "description": "弹出框挂载的节点",
+      "description": "The node to which the pop-up box is mounted",
       "description_zh": "弹出框挂载的节点"
     },
     "title": {
       "default": "-",
       "value": "",
       "type": "ReactNode | (() => ReactNode)",
-      "description": "标题.函数类型在 2.48.0 支持",
+      "description": "Title. Function types are supported in 2.48.0",
       "description_zh": "标题.函数类型在 2.48.0 支持",
       "required": true
     }
@@ -122,9 +140,10 @@
   "events": [
     {
       "name": "onVisibleChange",
-      "description": "显示或隐藏时触发的回调",
+      "description": "Callbacks that are triggered when you show or hide them",
       "description_zh": "显示或隐藏时触发的回调",
-      "params": "(visible: boolean) => void"
+      "params": "(visible: boolean) => void",
+      "value": ""
     }
   ],
   "typeDetail": {}

@@ -1,0 +1,280 @@
+{
+  "name": "ATreeSelect",
+  "props": {
+    "disabled": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to disable or not",
+      "description_zh": "是否禁用"
+    },
+    "loading": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether it is in the Loading state",
+      "description_zh": "是否为加载中状态"
+    },
+    "error": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether it is in an error state",
+      "description_zh": "是否为错误状态"
+    },
+    "size": {
+      "default": "medium",
+      "value": [
+        "mini",
+        "small",
+        "medium",
+        "large"
+      ],
+      "type": "'mini' | 'small' | 'medium' | 'large'",
+      "description": "Select the size of the box",
+      "description_zh": "选择框的大小"
+    },
+    "border": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether or not to display a border",
+      "description_zh": "是否显示边框"
+    },
+    "allow-search": {
+      "default": "false (single) | true (multiple)",
+      "value": "",
+      "type": "boolean | { retainInputValue?: boolean }",
+      "description": "Whether to allow search",
+      "description_zh": "是否允许搜索"
+    },
+    "allow-clear": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to allow purging",
+      "description_zh": "是否允许清除"
+    },
+    "placeholder": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "Prompt copywriting",
+      "description_zh": "提示文案"
+    },
+    ":max-tag-count": {
+      "default": "-",
+      "value": "",
+      "type": "number",
+      "description": "The maximum number of tags displayed, valid only in multi-select mode",
+      "description_zh": "最多显示的标签数量，仅在多选模式有效"
+    },
+    "multiple": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether multiple selections are supported",
+      "description_zh": "是否支持多选"
+    },
+    "default-value": {
+      "default": "-",
+      "value": "",
+      "type": "string | number | Array<string | number> | LabelValue | LabelValue[]",
+      "description": "Default value",
+      "description_zh": "默认值"
+    },
+    "v-model": {
+      "default": "-",
+      "value": "",
+      "type": "string | number | Array<string | number> | LabelValue | LabelValue[]",
+      "description": "Binding value",
+      "description_zh": "绑定值"
+    },
+    ":field-names": {
+      "default": "-",
+      "value": "",
+      "type": "TreeFieldNames",
+      "description": "Specify the name of the field in the node data",
+      "description_zh": "指定节点数据中的字段名"
+    },
+    ":data": {
+      "default": "[]",
+      "value": "",
+      "type": "TreeNodeData[]",
+      "description": "data",
+      "description_zh": "数据",
+      "required": true
+    },
+    "label-in-value": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Set the value format. The default value is string, and when it is set to true, the value format is: { label: string, value: string }",
+      "description_zh": "设置value格式。默认是string，设置为true时候，value格式为： { label: string, value: string }"
+    },
+    "tree-checkable": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to display the checkbox",
+      "description_zh": "是否展示复选框"
+    },
+    "tree-check-strictly": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the parent and child nodes are associated",
+      "description_zh": "父子节点是否关联"
+    },
+    "tree-checked-strategy": {
+      "default": "all",
+      "value": [
+        "all",
+        "parent",
+        "child"
+      ],
+      "type": "'all' | 'parent' | 'child'",
+      "description": "Customize the echo display method",
+      "description_zh": "定制回显方式"
+    },
+    ":tree-props": {
+      "default": "-",
+      "value": "",
+      "type": "Partial<TreeProps>",
+      "description": "Props for all tree components can be accepted",
+      "description_zh": "可以接受所有 Tree 组件的Props"
+    },
+    ":trigger-props": {
+      "default": "-",
+      "value": "",
+      "type": "Partial<TriggerProps>",
+      "description": "Props for all trigger components can be accepted",
+      "description_zh": "可以接受所有 Trigger 组件的Props"
+    },
+    "v-model:popup-visible": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the pop-up box is visible",
+      "description_zh": "弹出框是否可见"
+    },
+    "default-popup-visible": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the default pop-up box is visible",
+      "description_zh": "默认弹出框是否可见"
+    },
+    ":dropdown-style": {
+      "default": "-",
+      "value": "",
+      "type": "CSSProperties",
+      "description": "Drop-down box style",
+      "description_zh": "下拉框样式"
+    },
+    "dropdown-class-name": {
+      "default": "-",
+      "value": "",
+      "type": "string | string[]",
+      "description": "drop-down box style class",
+      "description_zh": "下拉框样式 class"
+    },
+    ":filter-tree-node": {
+      "default": "-",
+      "value": "",
+      "type": "(searchKey: string, nodeData: TreeNodeData) => boolean",
+      "description": "Customize the node filtering function",
+      "description_zh": "自定义节点过滤函数"
+    },
+    ":load-more": {
+      "default": "-",
+      "value": "",
+      "type": "(nodeData: TreeNodeData) => Promise<void>",
+      "description": "Load data dynamically",
+      "description_zh": "动态加载数据"
+    },
+    "disable-filter": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Disable internal filtering logic",
+      "description_zh": "禁用内部过滤逻辑"
+    },
+    "popup-container": {
+      "default": "-",
+      "value": "",
+      "type": "string | HTMLElement | undefined",
+      "description": "pop-up box",
+      "description_zh": "弹出框的挂载容器"
+    },
+    "fallback-option": {
+      "default": "true",
+      "value": "",
+      "type": "boolean | ((key: number | string) => TreeNodeData | boolean)",
+      "description": "Define node data for keys where no match can be found in value",
+      "description_zh": "为 value 中找不到匹配项的 key 定义节点数据"
+    },
+    "selectable": {
+      "default": "true",
+      "value": "",
+      "type": "boolean| 'leaf'| (( node: TreeNodeData, info: { isLeaf: boolean; level: number } ) => boolean)",
+      "description": "Set selectable nodes, all of which are optional by default",
+      "description_zh": "设置可选择的节点，默认全部可选"
+    },
+    "scrollbar": {
+      "default": "true",
+      "value": "",
+      "type": "boolean | ScrollbarProps",
+      "description": "Whether to enable the virtual scrollbar",
+      "description_zh": "是否开启虚拟滚动条"
+    },
+    "show-header-on-empty": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the header is displayed when the state is empty",
+      "description_zh": "空状态时是否显示header"
+    },
+    "show-footer-on-empty": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether or not to display footer when the state is empty",
+      "description_zh": "空状态时是否显示footer"
+    }
+  },
+  "methods": [],
+  "link": "https://arco.design/vue/component/tree-select#API",
+  "link_zh": "https://arco.design/vue/component/tree-select#API",
+  "events": [
+    {
+      "name": "change",
+      "description": "Triggered when the value changes",
+      "description_zh": "值改变时触发",
+      "params": "value: string | number | LabelValue | Array<string | number> | LabelValue[] | undefined",
+      "value": ""
+    },
+    {
+      "name": "popup-visible-change",
+      "description": "The drop-down box is triggered when the status changes",
+      "description_zh": "下拉框显示状态改变时触发",
+      "params": "visible: boolean",
+      "value": ""
+    },
+    {
+      "name": "search",
+      "description": "Triggered when the search value changes",
+      "description_zh": "搜索值变化时触发",
+      "params": "searchKey: string",
+      "value": ""
+    },
+    {
+      "name": "clear",
+      "description": "Triggered when you click Clear",
+      "description_zh": "点击清除时触发",
+      "params": "-",
+      "value": ""
+    }
+  ],
+  "typeDetail": {}
+}

@@ -1,0 +1,213 @@
+{
+  "name": "AInputTag",
+  "props": {
+    "v-model": {
+      "default": "-",
+      "value": "",
+      "type": "(string | number | TagData)[]",
+      "description": "Binding value",
+      "description_zh": "绑定值"
+    },
+    ":default-value": {
+      "default": "[]",
+      "value": "",
+      "type": "(string | number | TagData)[]",
+      "description": "Default (uncontrolled)",
+      "description_zh": "默认值（非受控状态）"
+    },
+    "v-model:input-value": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "Enter a value for the field",
+      "description_zh": "输入框的值"
+    },
+    "default-input-value": {
+      "default": "''",
+      "value": "",
+      "type": "string",
+      "description": "Default value for input field (uncontrolled state)",
+      "description_zh": "输入框的默认值（非受控状态）"
+    },
+    "placeholder": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "Placeholders",
+      "description_zh": "占位符",
+      "required": true
+    },
+    "disabled": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to disable or not",
+      "description_zh": "是否禁用"
+    },
+    "error": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether it is in an error state",
+      "description_zh": "是否为错误状态"
+    },
+    "readonly": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether it is in read-only mode",
+      "description_zh": "是否为只读模式"
+    },
+    "allow-clear": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether or not to allow emptying",
+      "description_zh": "是否允许清空"
+    },
+    "size": {
+      "default": "medium",
+      "value": [
+        "mini",
+        "small",
+        "medium",
+        "large"
+      ],
+      "type": "'mini' | 'small' | 'medium' | 'large'",
+      "description": "The size of the input box",
+      "description_zh": "输入框的大小"
+    },
+    ":max-tag-count": {
+      "default": "0",
+      "value": "",
+      "type": "number",
+      "description": "The maximum number of tags that can be displayed, 0 indicates no limit",
+      "description_zh": "最多展示的标签个数，0 表示不限制"
+    },
+    "retain-input-value": {
+      "default": "false",
+      "value": "",
+      "type": "boolean | { create?: boolean; blur?: boolean }",
+      "description": "Whether to retain the contents of the input box",
+      "description_zh": "是否保留输入框的内容"
+    },
+    ":format-tag": {
+      "default": "-",
+      "value": "",
+      "type": "(data: TagData) => string",
+      "description": "Format the label content",
+      "description_zh": "格式化标签内容"
+    },
+    "unique-value": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to create only unique values",
+      "description_zh": "是否仅创建唯一的值"
+    },
+    ":field-names": {
+      "default": "-",
+      "value": "",
+      "type": "InputTagFieldNames",
+      "description": "Customize the fields in TagData",
+      "description_zh": "自定义 TagData 中的字段"
+    }
+  },
+  "methods": [
+    {
+      "name": "focus",
+      "description": "Makes the input box get focus",
+      "params": "-",
+      "description_zh": "使输入框获取焦点",
+      "value": ""
+    },
+    {
+      "name": "blur",
+      "description": "Makes the input box lose focus",
+      "params": "-",
+      "description_zh": "使输入框失去焦点",
+      "value": ""
+    }
+  ],
+  "link": "https://arco.design/vue/component/input-tag#API",
+  "link_zh": "https://arco.design/vue/component/input-tag#API",
+  "events": [
+    {
+      "name": "change",
+      "description": "Triggered when the value changes",
+      "description_zh": "值发生改变时触发",
+      "params": "value: (string | number | TagData)[], ev: Event",
+      "value": ""
+    },
+    {
+      "name": "input-value-change",
+      "description": "Triggered when the input value changes",
+      "description_zh": "输入值发生改变时触发",
+      "params": "inputValue: string, ev: Event",
+      "value": ""
+    },
+    {
+      "name": "press-enter",
+      "description": "Triggered when the enter key is pressed",
+      "description_zh": "按下回车键时触发",
+      "params": "inputValue: string, ev: KeyboardEvent",
+      "value": ""
+    },
+    {
+      "name": "remove",
+      "description": "Triggered when the delete button of the tag is clicked",
+      "description_zh": "点击标签的删除按钮时触发",
+      "params": "removed: string | number, ev: Event",
+      "value": ""
+    },
+    {
+      "name": "clear",
+      "description": "Triggered when the Clear button is clicked",
+      "description_zh": "点击清除按钮时触发",
+      "params": "ev: MouseEvent",
+      "value": ""
+    },
+    {
+      "name": "focus",
+      "description": "Triggered when the input box gets focus",
+      "description_zh": "输入框获取焦点时触发",
+      "params": "ev: FocusEvent",
+      "value": ""
+    },
+    {
+      "name": "blur",
+      "description": "Triggered when the input box loses focus",
+      "description_zh": "输入框失去焦点时触发",
+      "params": "ev: FocusEvent",
+      "value": ""
+    }
+  ],
+  "typeDetail": {
+    "TagData": [
+      {
+        "name": "value",
+        "type": "string | number",
+        "description": "标签值",
+        "default": "-"
+      },
+      {
+        "name": "label",
+        "type": "string",
+        "description": "标签内容",
+        "default": "-"
+      },
+      {
+        "name": "closable",
+        "type": "boolean",
+        "description": "是否可关闭",
+        "default": "false"
+      },
+      {
+        "name": "tagProps",
+        "type": "TagProps",
+        "description": "标签属性",
+        "default": "-"
+      }
+    ]
+  }
+}

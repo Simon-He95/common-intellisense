@@ -3,72 +3,82 @@
   "props": {
     "theme": {
       "default": "light",
-      "value": ["light", "dark"],
+      "value": [
+        "light",
+        "dark"
+      ],
       "type": "'dark' | 'light'",
-      "description": "主题颜色",
+      "description": "Theme colors",
       "description_zh": "主题颜色"
     },
     "collapsed": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "当前收起状态",
+      "description": "Current collapsed state",
       "description_zh": "当前收起状态"
     },
     "default-collapsed": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "默认的收起状态",
+      "description": "The default collapsed state",
       "description_zh": "默认的收起状态"
     },
     "collapsible": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "是否可收起",
+      "description": "Whether it can be stowed away",
       "description_zh": "是否可收起"
     },
     ":width": {
       "default": "200",
       "value": "",
       "type": "number",
-      "description": "宽度",
+      "description": "width",
       "description_zh": "宽度"
     },
     ":collapsed-width": {
       "default": "48",
       "value": "",
       "type": "number",
-      "description": "收缩宽度",
+      "description": "Shrink width",
       "description_zh": "收缩宽度"
     },
     "reverse-arrow": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "翻转折叠提示箭头的方向，当 Sider 在右边时可以使用",
+      "description": "Flips the direction of the collapse cue arrow, which can be used when the Sider is on the right",
       "description_zh": "翻转折叠提示箭头的方向，当 Sider 在右边时可以使用"
     },
     "breakpoint": {
       "default": "-",
-      "value": ["xxl", "xl", "lg", "md", "sm", "xs"],
+      "value": [
+        "xxl",
+        "xl",
+        "lg",
+        "md",
+        "sm",
+        "xs"
+      ],
       "type": "'xxl' | 'xl' | 'lg' | 'md' | 'sm' | 'xs'",
-      "description": "触发响应式布局的断点, 详见响应式栅格",
+      "description": "Breakpoints that trigger responsive layouts, see Responsive Grid for details",
       "description_zh": "触发响应式布局的断点, 详见响应式栅格"
     },
     ":resize-directions": {
       "default": "-",
       "value": "",
       "type": "Array<'left' | 'right' | 'top' | 'bottom'>",
-      "description": "可以用 ResizeBox 替换原生的 aside 标签，这个参数即 ResizeBox的 directions 参数。详情请看 ResizeBox。",
+      "description": "You can replace the original aside tag with ResizeBox, which is the directions parameter of ResizeBox. See ResizeBox for details.",
       "description_zh": "可以用 ResizeBox 替换原生的 aside 标签，这个参数即 ResizeBox的 directions 参数。详情请看 ResizeBox。"
     },
     "hide-trigger": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "隐藏底部折叠触发器",
+      "description": "Hide the bottom collapse trigger",
       "description_zh": "隐藏底部折叠触发器"
     }
   },
@@ -78,15 +88,17 @@
   "events": [
     {
       "name": "collapse",
-      "description": "展开-收起时的事件，有点击 trigger 以及响应式反馈两种方式可以触发",
+      "description": "Expand-collapse events can be triggered in two ways: click trigger and reactive feedback",
       "description_zh": "展开-收起时的事件，有点击 trigger 以及响应式反馈两种方式可以触发",
-      "params": "collapsed: booleantype: 'clickTrigger'|'responsive'"
+      "params": "collapsed: booleantype: 'clickTrigger'|'responsive'",
+      "value": ""
     },
     {
       "name": "breakpoint",
-      "description": "触发响应式布局断点时的事件",
+      "description": "An event when a reactive layout breakpoint is triggered",
       "description_zh": "触发响应式布局断点时的事件",
-      "params": "collapsed: boolean"
+      "params": "collapsed: boolean",
+      "value": ""
     }
   ],
   "typeDetail": {}

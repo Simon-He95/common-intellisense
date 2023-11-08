@@ -1,0 +1,350 @@
+{
+  "name": "AFormItem",
+  "props": {
+    "field": {
+      "default": "''",
+      "value": "",
+      "type": "string",
+      "description": "The path of the form element in the data object (required for the data item)",
+      "description_zh": "表单元素在数据对象中的path（数据项必填）",
+      "required": true
+    },
+    "label": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "The text of the label",
+      "description_zh": "标签的文本",
+      "required": true
+    },
+    "tooltip": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "Presentation content",
+      "description_zh": "提示内容"
+    },
+    "show-colon": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether or not to display a colon",
+      "description_zh": "是否显示冒号"
+    },
+    "no-style": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether or not to remove the style",
+      "description_zh": "是否去除样式"
+    },
+    "disabled": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to disable or not",
+      "description_zh": "是否禁用"
+    },
+    "help": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "Help with copywriting",
+      "description_zh": "帮助文案"
+    },
+    "extra": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "Extra Displayed Copy",
+      "description_zh": "额外显示的文案"
+    },
+    "required": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether this field is mandatory",
+      "description_zh": "是否必须填写"
+    },
+    "asterisk-position": {
+      "default": "start",
+      "value": [
+        "start",
+        "end"
+      ],
+      "type": "'start' | 'end'",
+      "description": "Optionally place an asterisk before/after the label",
+      "description_zh": "可选择将星号置于 label 前/后"
+    },
+    ":rules": {
+      "default": "-",
+      "value": "",
+      "type": "FieldRule | FieldRule[]",
+      "description": "Form item validation rules (rules that take precedence over form)",
+      "description_zh": "表单项校验规则（优先级高于 form 的 rules）"
+    },
+    "validate-status": {
+      "default": "-",
+      "value": [
+        "success",
+        "warning",
+        "error",
+        "validating"
+      ],
+      "type": "'success' | 'warning' | 'error' | 'validating'",
+      "description": "Verification status",
+      "description_zh": "校验状态"
+    },
+    "validate-trigger": {
+      "default": "change",
+      "value": [
+        "change",
+        "input",
+        "focus",
+        "blur"
+      ],
+      "type": "'change' | 'input' | 'focus' | 'blur'",
+      "description": "The event that triggers the check",
+      "description_zh": "触发校验的事件"
+    },
+    ":label-col-props": {
+      "default": "-",
+      "value": "",
+      "type": "object",
+      "description": "Label element layout options. The parameters <col> are the same as those of the component",
+      "description_zh": "标签元素布局选项。参数同 <col> 组件一致"
+    },
+    ":wrapper-col-props": {
+      "default": "-",
+      "value": "",
+      "type": "object",
+      "description": "Form control layout options. The parameters <col> are the same as those of the component",
+      "description_zh": "表单控件布局选项。参数同 <col> 组件一致"
+    },
+    "hide-label": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to hide the label",
+      "description_zh": "是否隐藏标签"
+    },
+    "hide-asterisk": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to hide the asterisk",
+      "description_zh": "是否隐藏星号"
+    },
+    ":label-col-style": {
+      "default": "-",
+      "value": "",
+      "type": "object",
+      "description": "The style of the label element layout component",
+      "description_zh": "标签元素布局组件的 style"
+    },
+    ":wrapper-col-style": {
+      "default": "-",
+      "value": "",
+      "type": "object",
+      "description": "The style of the form control layout component",
+      "description_zh": "表单控件布局组件的 style"
+    },
+    ":row-props": {
+      "default": "-",
+      "value": "",
+      "type": "object",
+      "description": "Form item layout options. The parameters <row> are the same as those of the component",
+      "description_zh": "表单项布局选项。参数同 <row> 组件一致"
+    },
+    "row-class": {
+      "default": "-",
+      "value": "",
+      "type": "string | array | object",
+      "description": "The class of the form item layout component",
+      "description_zh": "表单项布局组件的 class"
+    },
+    "content-class": {
+      "default": "-",
+      "value": "",
+      "type": "string | array | object",
+      "description": "The class of the form control wrapper",
+      "description_zh": "表单控件包裹层的 class"
+    },
+    "content-flex": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the content layer has flex layout enabled",
+      "description_zh": "内容层是否开启 flex 布局"
+    },
+    "merge-props": {
+      "default": "true",
+      "value": "",
+      "type": "boolean | ((props: Record<string, any>) => Record<string, any>)",
+      "description": "(Deprecated) controls the props passed to the child element. By default, extra properties on disabled, error, size, events, and FormItem are included. Version 2.18.0 is repealed",
+      "description_zh": "（已废除）控制传递到子元素上的 Props。默认包括 disabled、error、size、 events 和 FormItem 上的额外属性。2.18.0 版本废除"
+    },
+    "label-col-flex": {
+      "default": "-",
+      "value": "",
+      "type": "number | string",
+      "description": "Sets the flex properties of the label COL component. When set, the flex property of the form COL component is set to auto.",
+      "description_zh": "设置标签 Col 组件的 flex 属性。设置时表单 Col 组件的 flex 属性会被设置为 auto。"
+    },
+    "feedback": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to display the feedback icon for the form control",
+      "description_zh": "是否显示表单控件的反馈图标"
+    },
+    "label-component": {
+      "default": "label",
+      "value": "",
+      "type": "string",
+      "description": "The element rendered by the form item label",
+      "description_zh": "表单项标签渲染的元素"
+    },
+    ":label-attrs": {
+      "default": "-",
+      "value": "",
+      "type": "object",
+      "description": "The attribute of the form item element",
+      "description_zh": "表单项元素的属性"
+    }
+  },
+  "methods": [],
+  "link": "https://arco.design/vue/component/form#API",
+  "link_zh": "https://arco.design/vue/component/form#API",
+  "events": [],
+  "typeDetail": {
+    "FieldRule": [
+      {
+        "name": "type",
+        "type": "'string' | 'number' | 'boolean' | 'array' | 'object' | 'email' | 'url' | 'ip'",
+        "description": "校验的值的类型，默认为 'string'",
+        "default": "-"
+      },
+      {
+        "name": "required",
+        "type": "boolean",
+        "description": "是否必填",
+        "default": "false"
+      },
+      {
+        "name": "message",
+        "type": "string",
+        "description": "校验失败时展示的信息",
+        "default": "-"
+      },
+      {
+        "name": "length",
+        "type": "number",
+        "description": "校验长度（string, array）",
+        "default": "-"
+      },
+      {
+        "name": "maxLength",
+        "type": "number",
+        "description": "最大长度（string）",
+        "default": "-"
+      },
+      {
+        "name": "minLength",
+        "type": "number",
+        "description": "最小长度（string）",
+        "default": "-"
+      },
+      {
+        "name": "match",
+        "type": "RegExp",
+        "description": "匹配校验（string）",
+        "default": "-"
+      },
+      {
+        "name": "uppercase",
+        "type": "boolean",
+        "description": "大写（string）",
+        "default": "false"
+      },
+      {
+        "name": "lowercase",
+        "type": "boolean",
+        "description": "小写（string）",
+        "default": "false"
+      },
+      {
+        "name": "min",
+        "type": "number",
+        "description": "最小值（number）",
+        "default": "-"
+      },
+      {
+        "name": "max",
+        "type": "number",
+        "description": "最大值（number）",
+        "default": "-"
+      },
+      {
+        "name": "equal",
+        "type": "number",
+        "description": "校验数值（number）",
+        "default": "-"
+      },
+      {
+        "name": "positive",
+        "type": "boolean",
+        "description": "正数（number）",
+        "default": "false"
+      },
+      {
+        "name": "negative",
+        "type": "boolean",
+        "description": "负数（number）",
+        "default": "false"
+      },
+      {
+        "name": "true",
+        "type": "boolean",
+        "description": "是否为 true（boolean）",
+        "default": "false"
+      },
+      {
+        "name": "false",
+        "type": "boolean",
+        "description": "是否为 false（boolean）",
+        "default": "false"
+      },
+      {
+        "name": "includes",
+        "type": "any[]",
+        "description": "数组中是否包含给定值（array）",
+        "default": "-"
+      },
+      {
+        "name": "deepEqual",
+        "type": "any",
+        "description": "数组元素是否相等（array）",
+        "default": "-"
+      },
+      {
+        "name": "empty",
+        "type": "boolean",
+        "description": "是否为空（object）",
+        "default": "false"
+      },
+      {
+        "name": "hasKeys",
+        "type": "string[]",
+        "description": "对象是否包含给定属性（object）",
+        "default": "-"
+      },
+      {
+        "name": "validator",
+        "type": "( value: FieldValue | undefined, callback: (error?: string) => void ) => void",
+        "description": "自定义校验规则",
+        "default": "-"
+      }
+    ]
+  }
+}

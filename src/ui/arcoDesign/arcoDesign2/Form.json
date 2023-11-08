@@ -5,56 +5,68 @@
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "统一配置表单控件是否可用",
+      "description": "Uniformly configure whether form controls are available",
       "description_zh": "统一配置表单控件是否可用"
     },
     "id": {
       "default": "-",
       "value": "",
       "type": "string",
-      "description": "设置后，会作为表单控件 id的前缀。",
+      "description": "Once set, it will be used as a prefix for the form control ID.",
       "description_zh": "设置后，会作为表单控件 id的前缀。"
     },
     "labelAlign": {
       "default": "right",
-      "value": ["left", "right"],
+      "value": [
+        "left",
+        "right"
+      ],
       "type": "'left' | 'right'",
-      "description": "标签的文本对齐方式",
+      "description": "The text alignment of the label",
       "description_zh": "标签的文本对齐方式"
     },
     "layout": {
       "default": "horizontal",
-      "value": ["horizontal", "vertical", "inline"],
+      "value": [
+        "horizontal",
+        "vertical",
+        "inline"
+      ],
       "type": "'horizontal' | 'vertical' | 'inline'",
-      "description": "表单的布局，有三种布局，水平、垂直、多列。",
+      "description": "There are three layouts for the form, horizontal, vertical, and multi-column.",
       "description_zh": "表单的布局，有三种布局，水平、垂直、多列。"
     },
     "requiredSymbol": {
       "default": "true",
       "value": "",
       "type": "boolean | { position: 'start' | 'end' }",
-      "description": "是否在 required 的时候显示加重的红色星号，设置 position 可选择将星号置于 label 前/后",
+      "description": "Whether to display an accentuated red asterisk when required, set position to optionally place the asterisk before/after the label",
       "description_zh": "是否在 required 的时候显示加重的红色星号，设置 position 可选择将星号置于 label 前/后"
     },
     "size": {
       "default": "-",
-      "value": ["mini", "small", "default", "large"],
+      "value": [
+        "mini",
+        "small",
+        "default",
+        "large"
+      ],
       "type": "'mini' | 'small' | 'default' | 'large'",
-      "description": "不同尺寸。",
+      "description": "Different sizes.",
       "description_zh": "不同尺寸。"
     },
     "colon": {
       "default": "-",
       "value": "",
       "type": "boolean | ReactNode",
-      "description": "是否显示标签后的一个冒号，优先级小于 Form.Item 中 colon 的优先级。(ReactNode in v2.41.0)",
+      "description": "Whether to display a colon after the label, which has a lower priority than the colon in the Form.Item. (ReactNode in v2.41.0)",
       "description_zh": "是否显示标签后的一个冒号，优先级小于 Form.Item 中 colon 的优先级。(ReactNode in v2.41.0)"
     },
     "className": {
       "default": "-",
       "value": "",
       "type": "string | string[]",
-      "description": "节点类名",
+      "description": "Node class name",
       "description_zh": "节点类名"
     },
     ":form": {
@@ -62,70 +74,70 @@
       "value": "",
       "type": "FormInstance<FormData, FieldValue, FieldKey>",
       "description": "form",
-      "description_zh": "form",
+      "description_zh": "形式",
       "required": true
     },
     ":initialValues": {
       "default": "-",
       "value": "",
       "type": "Partial<FormData>",
-      "description": "设置表单初始值",
+      "description": "Set the initial value of the form",
       "description_zh": "设置表单初始值"
     },
     ":labelCol": {
       "default": "{ span: 5, offset: 0 }",
       "value": "",
       "type": "ColProps",
-      "description": "<label>标签布局，同<Grid.Col>组件接收的参数相同，可以配置span和offset值，会覆盖全局的labelCol设置",
+      "description": "The <label>label layout is the same as the parameters received by the < Grid.Col > component, and the span and offset values can be configured, which will override the global labelCol settings",
       "description_zh": "<label>标签布局，同<Grid.Col>组件接收的参数相同，可以配置span和offset值，会覆盖全局的labelCol设置"
     },
     ":scrollToFirstError": {
       "default": "-",
       "value": "",
       "type": "boolean | ScrollIntoViewOptions",
-      "description": "验证失败后滚动到第一个错误字段。(ScrollIntoViewOptions 类型在 2.19.0 开始支持)",
+      "description": "Scroll to the first error field after the validation fails. (The ScrollIntoViewOptions type is supported since 2.19.0)",
       "description_zh": "验证失败后滚动到第一个错误字段。(ScrollIntoViewOptions 类型在 2.19.0 开始支持)"
     },
     ":style": {
       "default": "-",
       "value": "",
       "type": "CSSProperties",
-      "description": "节点样式",
+      "description": "Node style",
       "description_zh": "节点样式"
     },
     ":validateMessages": {
       "default": "-",
       "value": "",
       "type": "Partial<{[key in keyof ValidateMessagesTemplateType]: ValidateMessagesTemplateType[key] extends string? ValidateMessagesTemplateType[key] | ((data, { label }) => any): Partial<Record<keyof ValidateMessagesTemplateType[key], string | ((data, { label }) => any)>>;}>",
-      "description": "校验提示信息模板 demo",
+      "description": "Verify the demo of the prompt information template",
       "description_zh": "校验提示信息模板 demo"
     },
     "validateTrigger": {
       "default": "onChange",
       "value": "",
       "type": "string | string[]",
-      "description": "触发验证的时机。",
+      "description": "When the verification is triggered.",
       "description_zh": "触发验证的时机。"
     },
     ":wrapper": {
       "default": "form",
       "value": "",
       "type": "ComponentType",
-      "description": "配置最外层标签，可以是 html 标签或是组件",
+      "description": "Configure the outermost tag, which can be an HTML tag or a component",
       "description_zh": "配置最外层标签，可以是 html 标签或是组件"
     },
     ":wrapperCol": {
       "default": "{ span: 19, offset: 0 }",
       "value": "",
       "type": "ColProps",
-      "description": "控件布局，同labelCol的设置方法一致，会覆盖全局的wrapperCol设置，ColProps",
+      "description": "The control layout, which is the same as the labelCol setting, overrides the global wrapperCol setting, ColProps",
       "description_zh": "控件布局，同labelCol的设置方法一致，会覆盖全局的wrapperCol设置，ColProps"
     },
     ":wrapperProps": {
       "default": "-",
       "value": "",
       "type": "IndexedObject",
-      "description": "配置 wrapper 之后，可以传一些参数到 wrapper 上。",
+      "description": "After configuring the wrapper, you can pass some parameters to the wrapper.",
       "description_zh": "配置 wrapper 之后，可以传一些参数到 wrapper 上。"
     }
   },
@@ -133,73 +145,100 @@
     {
       "name": "validate",
       "params": "Function(fields?: string[], callback(errors, values) => void)",
-      "description": "校验并获取表单输入域的值与 Errors，如果不设置 fields 的话，会验证所有的 fields。支持 callback 和 promise 两种使用方法。"
+      "description": "Validate and get the values and Errors of the form input fields, and if you don't set fields, all fields will be validated. Callbacks and promises are supported.",
+      "value": "",
+      "description_zh": "校验并获取表单输入域的值与 Errors，如果不设置 fields 的话，会验证所有的 fields。支持 callback 和 promise 两种使用方法。"
     },
     {
       "name": "submit",
       "params": "Function",
-      "description": "提交表单"
+      "description": "Submit the form",
+      "value": "",
+      "description_zh": "提交表单"
     },
     {
       "name": "setFieldValue",
       "params": "Function(field: string, value)",
-      "description": "设置一个表单控件的值"
+      "description": "Sets the value of a form control",
+      "value": "",
+      "description_zh": "设置一个表单控件的值"
     },
     {
       "name": "setFields",
       "params": "Function({ [field]: string: { value: any, error: FieldError } })",
-      "description": "设置一组表单控件的值和报错。"
+      "description": "Set the values and errors of a set of form controls.",
+      "value": "",
+      "description_zh": "设置一组表单控件的值和报错。"
     },
     {
       "name": "setFieldsValue",
       "params": "Function({[field]: string, value})",
-      "description": "设置多个表单控件的值"
+      "description": "Set values for multiple form controls",
+      "value": "",
+      "description_zh": "设置多个表单控件的值"
     },
     {
       "name": "getFieldValue",
       "params": "Function(field: string)",
-      "description": "获取一个表单控件的值。请不要把返回值直接作为 useEffect 的依赖，其返回值会被深克隆，引用地址会发生改变",
-      "value": ""
+      "description": "Gets the value of a form control. Please do not use the return value as a direct dependency on useEffect, the return value will be deep cloned and the reference address will be changed",
+      "value": "",
+      "description_zh": "获取一个表单控件的值。请不要把返回值直接作为 useEffect 的依赖，其返回值会被深克隆，引用地址会发生改变"
     },
     {
       "name": "getFields",
       "params": "Function",
-      "description": "获取全部表单项的值，包括被创建后销毁的表单项。请不要把返回值直接作为 useEffect 的依赖，其返回值会被深克隆，引用地址会发生改变"
+      "description": "Gets the value of all form items, including those that were created and destroyed. Please do not use the return value as a direct dependency on useEffect, the return value will be deep cloned and the reference address will be changed",
+      "value": "",
+      "description_zh": "获取全部表单项的值，包括被创建后销毁的表单项。请不要把返回值直接作为 useEffect 的依赖，其返回值会被深克隆，引用地址会发生改变"
     },
     {
       "name": "getFieldsValue",
       "params": "Function(fields: string[])",
-      "description": "获取一组表单控件的值，如果不设置 fields 的话，会获取所有的 fields。请不要把返回值直接作为 useEffect 的依赖，其返回值会被深克隆，引用地址会发生改变"
+      "description": "Gets the values of a set of form controls, and if you don't set fields, it gets all fields. Please do not use the return value as a direct dependency on useEffect, the return value will be deep cloned and the reference address will be changed",
+      "value": "",
+      "description_zh": "获取一组表单控件的值，如果不设置 fields 的话，会获取所有的 fields。请不要把返回值直接作为 useEffect 的依赖，其返回值会被深克隆，引用地址会发生改变"
     },
     {
       "name": "getFieldError",
       "params": "Function(field: string)",
-      "description": "获取一个表单控件的错误状态"
+      "description": "Gets the error status of a form control",
+      "value": "",
+      "description_zh": "获取一个表单控件的错误状态"
     },
     {
       "name": "getFieldsError",
       "params": "Function(fields?: string[])",
-      "description": "获取一组表单控件的错误状态，如果不设置 fields 的话，会获取所有的控件的错误状态。"
+      "description": "Gets the error state of a set of form controls, and if you don't set fields, you get the error state of all controls.",
+      "value": "",
+      "description_zh": "获取一组表单控件的错误状态，如果不设置 fields 的话，会获取所有的控件的错误状态。"
     },
     {
       "name": "scrollToField",
       "params": "Function(field: string, options?: ScrollIntoViewOptions)",
-      "description": "滚动到指定表单字段位置。ScrollIntoViewOptions"
+      "description": "Scroll to the specified form field location. ScrollIntoViewOptions",
+      "value": "",
+      "description_zh": "滚动到指定表单字段位置。ScrollIntoViewOptions"
     },
     {
       "name": "getTouchedFields",
       "params": "() => string[]",
-      "description": "获取被操作过的字段"
+      "description": "Gets the field that has been manipulated",
+      "value": "",
+      "description_zh": "获取被操作过的字段"
     },
     {
       "name": "resetFields",
       "params": "Function(field?: string[])",
-      "description": "重置表单控件的值变为初始值"
+      "description": "Reset the value of the form control to the initial value",
+      "value": "",
+      "description_zh": "重置表单控件的值变为初始值"
     },
     {
       "name": "clearFields",
       "params": "Function(field?: string[])",
-      "description": "清除表单控件的值以及校验状态。等同于 form.setFields({ [field]: { value: undefined; error: null, warning: null } })"
+      "description": "Clear the value of the form control and the validation status. Equivalent to form.setFields({ [field]: { value: undefined; } error: null, warning: null } })",
+      "value": "",
+      "description_zh": "清除表单控件的值以及校验状态。等同于 form.setFields({ [field]: { value: undefined; error: null, warning: null } })"
     }
   ],
   "link": "https://arco.design/react/components/form#api",
@@ -207,27 +246,31 @@
   "events": [
     {
       "name": "onChange",
-      "description": "表单项值改变时候触发。和 onValuesChange 不同的是只会在用户操作表单项时触发",
+      "description": "Triggered when the value of a form item changes. Unlike onValuesChange, it only fires when the user manipulates the form item",
       "description_zh": "表单项值改变时候触发。和 onValuesChange 不同的是只会在用户操作表单项时触发",
-      "params": "(value: Partial<FormData>, values: Partial<FormData>) => void"
+      "params": "(value: Partial<FormData>, values: Partial<FormData>) => void",
+      "value": ""
     },
     {
       "name": "onValuesChange",
-      "description": "任意表单项值改变时候触发。第一个参数是被改变表单项的值，第二个参数是所有的表单项值",
+      "description": "Triggered when the value of any form item changes. The first parameter is the value of the changed form item, and the second parameter is the value of all form items",
       "description_zh": "任意表单项值改变时候触发。第一个参数是被改变表单项的值，第二个参数是所有的表单项值",
-      "params": "(value: Partial<FormData>, values: Partial<FormData>) => void"
+      "params": "(value: Partial<FormData>, values: Partial<FormData>) => void",
+      "value": ""
     },
     {
       "name": "onSubmit",
-      "description": "数据验证成功后回调事件",
+      "description": "After the data validation is successful, the event is called",
       "description_zh": "数据验证成功后回调事件",
-      "params": "(values: FormData) => void"
+      "params": "(values: FormData) => void",
+      "value": ""
     },
     {
       "name": "onSubmitFailed",
-      "description": "数据验证失败后回调事件",
+      "description": "Callback events after data validation fails",
       "description_zh": "数据验证失败后回调事件",
-      "params": "(errors: { [key: string]: FieldError }) => void"
+      "params": "(errors: { [key: string]: FieldError }) => void",
+      "value": ""
     }
   ],
   "typeDetail": {}

@@ -1,0 +1,412 @@
+{
+  "name": "ASelect",
+  "props": {
+    "multiple": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to enable multi-select mode (search is enabled by default in multi-select mode)",
+      "description_zh": "是否开启多选模式（多选模式默认开启搜索）"
+    },
+    ":v-model": {
+      "default": "-",
+      "value": "",
+      "type": "string| number| boolean| Record<string, any>| (string | number | boolean | Record<string, any>)[]",
+      "description": "Binding value",
+      "description_zh": "绑定值",
+      "required": true
+    },
+    "default-value": {
+      "default": "'' | []",
+      "value": "",
+      "type": "string| number| boolean| Record<string, unknown>| (string | number | boolean | Record<string, unknown>)[]",
+      "description": "Default (Uncontrolled Mode)",
+      "description_zh": "默认值（非受控模式）"
+    },
+    "v-model:input-value": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "Enter a value for the field",
+      "description_zh": "输入框的值"
+    },
+    "default-input-value": {
+      "default": "''",
+      "value": "",
+      "type": "string",
+      "description": "Default value for input field (uncontrolled mode)",
+      "description_zh": "输入框的默认值（非受控模式）"
+    },
+    "size": {
+      "default": "medium",
+      "value": [
+        "mini",
+        "small",
+        "medium",
+        "large"
+      ],
+      "type": "'mini' | 'small' | 'medium' | 'large'",
+      "description": "Select the size of the box",
+      "description_zh": "选择框的大小"
+    },
+    "placeholder": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "Placeholders",
+      "description_zh": "占位符",
+      "required": true
+    },
+    "loading": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether it is in the Loading state",
+      "description_zh": "是否为加载中状态"
+    },
+    "disabled": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to disable or not",
+      "description_zh": "是否禁用"
+    },
+    "error": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether it is in an error state",
+      "description_zh": "是否为错误状态"
+    },
+    "allow-clear": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether or not to allow emptying",
+      "description_zh": "是否允许清空"
+    },
+    "allow-search": {
+      "default": "false (single) | true (multiple)",
+      "value": "",
+      "type": "boolean | { retainInputValue?: boolean }",
+      "description": "Whether to allow search",
+      "description_zh": "是否允许搜索"
+    },
+    "allow-create": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to allow creation",
+      "description_zh": "是否允许创建"
+    },
+    ":max-tag-count": {
+      "default": "0",
+      "value": "",
+      "type": "number",
+      "description": "In multi-select mode, the maximum number of labels displayed. 0 indicates no limit",
+      "description_zh": "多选模式下，最多显示的标签数量。0 表示不限制"
+    },
+    "popup-container": {
+      "default": "-",
+      "value": "",
+      "type": "string | HTMLElement",
+      "description": "pop-up box",
+      "description_zh": "弹出框的挂载容器"
+    },
+    "bordered": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to display the border of the input box",
+      "description_zh": "是否显示输入框的边框"
+    },
+    "default-active-first-option": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the first option is selected by default when there is no value",
+      "description_zh": "是否在无值时默认选择第一个选项"
+    },
+    "v-model:popup-visible": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether or not to display a drop-down menu",
+      "description_zh": "是否显示下拉菜单"
+    },
+    "default-popup-visible": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the pop-up box is visible by default (uncontrolled mode)",
+      "description_zh": "弹出框默认是否可见（非受控模式）"
+    },
+    "unmount-on-close": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to destroy the element when the drop-down menu is closed",
+      "description_zh": "是否在下拉菜单关闭时销毁元素"
+    },
+    "filter-option": {
+      "default": "true",
+      "value": "",
+      "type": "boolean | ((inputValue: string, option: SelectOptionData) => boolean)",
+      "description": "Whether or not to filter options",
+      "description_zh": "是否过滤选项"
+    },
+    ":options": {
+      "default": "[]",
+      "value": "",
+      "type": "(string | number | boolean | SelectOptionData | SelectOptionGroup)[]",
+      "description": "Option data",
+      "description_zh": "选项数据",
+      "required": true
+    },
+    ":virtual-list-props": {
+      "default": "-",
+      "value": "",
+      "type": "VirtualListProps",
+      "description": "Pass the virtual list property with this parameter to turn on virtual scrolling VirtualListProps",
+      "description_zh": "传递虚拟列表属性，传入此参数以开启虚拟滚动 VirtualListProps"
+    },
+    ":trigger-props": {
+      "default": "-",
+      "value": "",
+      "type": "TriggerProps",
+      "description": "Trigger properties of the drop-down menu",
+      "description_zh": "下拉菜单的触发器属性"
+    },
+    ":format-label": {
+      "default": "-",
+      "value": "",
+      "type": "(data: SelectOptionData) => string",
+      "description": "Format the display content",
+      "description_zh": "格式化显示内容"
+    },
+    ":fallback-option": {
+      "default": "true",
+      "value": "",
+      "type": "boolean| (( value: string | number | boolean | Record<string, unknown> ) => SelectOptionData)",
+      "description": "Option that does not exist in custom values",
+      "description_zh": "自定义值中不存在的选项"
+    },
+    "show-extra-options": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether or not to display additional options in the drop-down menu",
+      "description_zh": "是否在下拉菜单中显示额外选项"
+    },
+    "value-key": {
+      "default": "value",
+      "value": "",
+      "type": "string",
+      "description": "The name of the attribute used to determine the value of the option key",
+      "description_zh": "用于确定选项键值的属性名"
+    },
+    ":search-delay": {
+      "default": "500",
+      "value": "",
+      "type": "number",
+      "description": "The delay in triggering the search event",
+      "description_zh": "触发搜索事件的延迟时间"
+    },
+    ":limit": {
+      "default": "0",
+      "value": "",
+      "type": "number",
+      "description": "The maximum number of selections when multiple selections are made",
+      "description_zh": "多选时最多的选择个数"
+    },
+    ":field-names": {
+      "default": "-",
+      "value": "",
+      "type": "SelectFieldNames",
+      "description": "Customize the fields in SelectOptionData",
+      "description_zh": "自定义 SelectOptionData 中的字段",
+      "required": true
+    },
+    "scrollbar": {
+      "default": "true",
+      "value": "",
+      "type": "boolean | ScrollbarProps",
+      "description": "Whether to enable the virtual scrollbar",
+      "description_zh": "是否开启虚拟滚动条"
+    },
+    "show-header-on-empty": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the header is displayed when the state is empty",
+      "description_zh": "空状态时是否显示header"
+    },
+    "show-footer-on-empty": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether or not to display footer when the state is empty",
+      "description_zh": "空状态时是否显示footer"
+    }
+  },
+  "methods": [],
+  "link": "https://arco.design/vue/component/select#API",
+  "link_zh": "https://arco.design/vue/component/select#API",
+  "events": [
+    {
+      "name": "change",
+      "description": "Triggered when the value changes",
+      "description_zh": "值发生改变时触发",
+      "params": "value: string | number | boolean | Record<string, any> | (string | number | boolean | Record<string, any>)[]",
+      "value": ""
+    },
+    {
+      "name": "input-value-change",
+      "description": "Triggered when the value of the input field changes",
+      "description_zh": "输入框的值发生改变时触发",
+      "params": "inputValue: string",
+      "value": ""
+    },
+    {
+      "name": "popup-visible-change",
+      "description": "Triggered when the display status of the drop-down box changes",
+      "description_zh": "下拉框的显示状态改变时触发",
+      "params": "visible: boolean",
+      "value": ""
+    },
+    {
+      "name": "clear",
+      "description": "Triggered when the Clear button is clicked",
+      "description_zh": "点击清除按钮时触发",
+      "params": "-",
+      "value": ""
+    },
+    {
+      "name": "remove",
+      "description": "Triggered when the delete button of the tag is clicked",
+      "description_zh": "点击标签的删除按钮时触发",
+      "params": "removed: string | number | boolean | Record<string, any> | undefined",
+      "value": ""
+    },
+    {
+      "name": "search",
+      "description": "Triggered when a user searches",
+      "description_zh": "用户搜索时触发",
+      "params": "inputValue: string",
+      "value": ""
+    },
+    {
+      "name": "dropdown-scroll",
+      "description": "Triggered when the drop-down menu scrolls",
+      "description_zh": "下拉菜单发生滚动时触发",
+      "params": "-",
+      "value": ""
+    },
+    {
+      "name": "dropdown-reach-bottom",
+      "description": "Triggered when the drop-down menu scrolls to the bottom",
+      "description_zh": "下拉菜单滚动到底部时触发",
+      "params": "-",
+      "value": ""
+    },
+    {
+      "name": "exceed-limit",
+      "description": "Triggered when multiple selections exceed the limit",
+      "description_zh": "多选超出限制时触发",
+      "params": "value: string | number | boolean | Record<string, any> | undefined, ev: Event",
+      "value": ""
+    }
+  ],
+  "typeDetail": {
+    "SelectOptionData": [
+      {
+        "name": "value",
+        "type": "string | number | boolean | Record<string, unknown>",
+        "description": "选项值",
+        "default": "-"
+      },
+      {
+        "name": "label",
+        "type": "string",
+        "description": "选项内容",
+        "default": "-"
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "description": "是否禁用",
+        "default": "false"
+      },
+      {
+        "name": "tagProps",
+        "type": "any",
+        "description": "选项对应的多选标签的属性",
+        "default": "-"
+      },
+      {
+        "name": "render",
+        "type": "RenderFunction",
+        "description": "自定义渲染",
+        "default": "-"
+      }
+    ],
+    "SelectOptionGroup": [
+      {
+        "name": "isGroup",
+        "type": "true",
+        "description": "是否为选项组",
+        "default": "-"
+      },
+      {
+        "name": "label",
+        "type": "string",
+        "description": "选项组标题",
+        "default": "-"
+      },
+      {
+        "name": "options",
+        "type": "SelectOption[]",
+        "description": "选项组中的选项",
+        "default": "-"
+      }
+    ],
+    "VirtualListProps": [
+      {
+        "name": "height",
+        "type": "number | string",
+        "description": "可视区域高度",
+        "default": "-"
+      },
+      {
+        "name": "threshold",
+        "type": "number",
+        "description": "开启虚拟滚动的元素数量阈值，当数据数量小于阈值时不会开启虚拟滚动。",
+        "default": "-"
+      },
+      {
+        "name": "isStaticItemHeight",
+        "type": "boolean",
+        "description": "（已废除）元素高度是否是固定的。2.34.1 版本废除，请使用 fixedSize",
+        "default": "false"
+      },
+      {
+        "name": "fixedSize",
+        "type": "boolean",
+        "description": "元素高度是否是固定的。",
+        "default": "false"
+      },
+      {
+        "name": "estimatedSize",
+        "type": "number",
+        "description": "元素高度不固定时的预估高度。",
+        "default": "-"
+      },
+      {
+        "name": "buffer",
+        "type": "number",
+        "description": "视口边界外提前挂载的元素数量。",
+        "default": "10"
+      }
+    ]
+  }
+}

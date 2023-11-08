@@ -5,91 +5,99 @@
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "是否禁用，优先级高于 Form 的 disabled 属性",
+      "description": "Whether it is disabled or not, takes precedence over the disabled attribute of Form",
       "description_zh": "是否禁用，优先级高于 Form 的 disabled 属性"
     },
     "hasFeedback": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "是否显示校验图标，配置 validateStatus 使用。",
+      "description": "Whether to display the verification icon and configure validateStatus to use.",
       "description_zh": "是否显示校验图标，配置 validateStatus 使用。"
     },
     "hidden": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "隐藏表单项. 表单字段值仍然会被获取",
+      "description": "Hide form items. Form field values will still be fetched",
       "description_zh": "隐藏表单项. 表单字段值仍然会被获取"
     },
     "required": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "是否必选，会在 label 标签前显示加重红色符号，如果这里不设置，会从 rules 中寻找是否是 required",
+      "description": "If it is required, an accented red symbol will be displayed in front of the label label, and if it is not set here, it will look for whether it is required from the rules",
       "description_zh": "是否必选，会在 label 标签前显示加重红色符号，如果这里不设置，会从 rules 中寻找是否是 required"
     },
     "trigger": {
       "default": "onChange",
       "value": "",
       "type": "string",
-      "description": "接管子节点，搜集子节点值的时机。",
+      "description": "The timing of taking over the child node and collecting the child node value.",
       "description_zh": "接管子节点，搜集子节点值的时机。"
     },
     "triggerPropName": {
       "default": "value",
       "value": "",
       "type": "string",
-      "description": "子节点被接管的值的属性名，默认是 value,比如 <Checkbox> 为 checked。",
+      "description": "The property name of the value that the child node is taking over, the default is value, for example, <Checkbox> checked.",
       "description_zh": "子节点被接管的值的属性名，默认是 value,比如 <Checkbox> 为 checked。"
     },
     "labelAlign": {
       "default": "right",
-      "value": ["left", "right"],
+      "value": [
+        "left",
+        "right"
+      ],
       "type": "'left' | 'right'",
-      "description": "标签的文本对齐方式，优先级高于 Form",
+      "description": "The text alignment of the label, which takes precedence over the form",
       "description_zh": "标签的文本对齐方式，优先级高于 Form"
     },
     "requiredSymbol": {
       "default": "true",
       "value": "",
       "type": "boolean | { position: 'start' | 'end' }",
-      "description": "是否在 required 的时候显示加重的红色星号，设置 position 可选择将星号置于 label 前/后",
+      "description": "Whether to display an accentuated red asterisk when required, set position to optionally place the asterisk before/after the label",
       "description_zh": "是否在 required 的时候显示加重的红色星号，设置 position 可选择将星号置于 label 前/后"
     },
     "validateStatus": {
       "default": "-",
-      "value": ["success", "warning", "error", "validating"],
+      "value": [
+        "success",
+        "warning",
+        "error",
+        "validating"
+      ],
       "type": "'success' | 'warning' | 'error' | 'validating'",
-      "description": "校验状态",
+      "description": "Verification status",
       "description_zh": "校验状态"
     },
     "colon": {
       "default": "-",
       "value": "",
       "type": "boolean | ReactNode",
-      "description": "是否显示标签后的一个冒号，优先级小于 Form.Item 中 colon 的优先级。(ReactNode in v2.41.0)",
+      "description": "Whether to display a colon after the label, which has a lower priority than the colon in the Form.Item. (ReactNode in v2.41.0)",
       "description_zh": "是否显示标签后的一个冒号，优先级小于 Form.Item 中 colon 的优先级。(ReactNode in v2.41.0)"
     },
     ":extra": {
       "default": "-",
       "value": "",
       "type": "ReactNode",
-      "description": "额外的提示内容。",
+      "description": "Extra hint content.",
       "description_zh": "额外的提示内容。"
     },
     ":help": {
       "default": "-",
       "value": "",
       "type": "ReactNode",
-      "description": "自定义校验文案",
+      "description": "Custom verification copy",
       "description_zh": "自定义校验文案"
     },
     "label": {
       "default": "-",
       "value": "",
       "type": "ReactNode",
-      "description": "标签的文本",
+      "description": "The text of the label",
       "description_zh": "标签的文本",
       "required": true
     },
@@ -97,21 +105,21 @@
       "default": "-",
       "value": "",
       "type": "string | string[]",
-      "description": "节点类名",
+      "description": "Node class name",
       "description_zh": "节点类名"
     },
     ":dependencies": {
       "default": "-",
       "value": "",
       "type": "string[]",
-      "description": "设置依赖字段。当依赖的字段值改变时，触发自身的校验。如果是想动态渲染某个表单控件/表单区域，使用 shouldUpdate",
+      "description": "Set dependency fields. When the value of the dependent field changes, the self-validation is triggered. If you want to dynamically render a form control/form area, use shouldUpdate",
       "description_zh": "设置依赖字段。当依赖的字段值改变时，触发自身的校验。如果是想动态渲染某个表单控件/表单区域，使用 shouldUpdate"
     },
     "field": {
       "default": "-",
       "value": "",
       "type": "FieldKey",
-      "description": "受控组件的唯一标示",
+      "description": "A unique designation of a controlled component",
       "description_zh": "受控组件的唯一标示",
       "required": true
     },
@@ -119,84 +127,84 @@
       "default": "-",
       "value": "",
       "type": "FieldValue",
-      "description": "设置控件初始值.(初始值，请不要使用受控组件的defaultValue了)",
+      "description": "Set the initial value of the control. (Default value, please don't use defaultValue of controlled component)",
       "description_zh": "设置控件初始值.(初始值，请不要使用受控组件的defaultValue了)"
     },
     ":labelCol": {
       "default": "-",
       "value": "",
       "type": "ColProps",
-      "description": "<label>标签布局，同<Grid.Col>组件接收的参数相同，可以配置span和offset值，会覆盖全局的labelCol设置",
+      "description": "The <label>label layout is the same as the parameters received by the < Grid.Col > component, and the span and offset values can be configured, which will override the global labelCol settings",
       "description_zh": "<label>标签布局，同<Grid.Col>组件接收的参数相同，可以配置span和offset值，会覆盖全局的labelCol设置"
     },
     ":normalize": {
       "default": "-",
       "value": "",
       "type": "(value: FieldValue | undefined,prevValue: FieldValue | undefined,allValues: Partial<FormData>) => any",
-      "description": "将控件的 value 进行一定的转换再保存到form中。",
+      "description": "Convert the value of the control to a certain amount and then save it to the form.",
       "description_zh": "将控件的 value 进行一定的转换再保存到form中。"
     },
     ":noStyle": {
       "default": "-",
       "value": "",
       "type": "boolean | { showErrorTip: boolean }",
-      "description": "不渲染任何外部标签/样式，只进行字段绑定。注意: 设置该属性为true时，该字段若未通过校验，错误信息将不会显示出来。可以传入对象，并设置 showErrorTip（ 2.5.0 开始支持） 为true，错误信息将会展示在上层 formItem 节点下。",
+      "description": "No external labels/styles are rendered, only field bindings. Note: If this property is set to true, the error message will not be displayed if the field fails the validation. You can pass in an object and set showErrorTip (supported from 2.5.0) to true, and the error message will be displayed under the upper formItem node.",
       "description_zh": "不渲染任何外部标签/样式，只进行字段绑定。注意: 设置该属性为true时，该字段若未通过校验，错误信息将不会显示出来。可以传入对象，并设置 showErrorTip（ 2.5.0 开始支持） 为true，错误信息将会展示在上层 formItem 节点下。"
     },
     ":rules": {
       "default": "-",
       "value": "",
       "type": "RulesProps<FieldValue>[]",
-      "description": "受控模式下的验证规则，RulesProps",
+      "description": "Validation rules in controlled mode, RulesProps",
       "description_zh": "受控模式下的验证规则，RulesProps"
     },
     "shouldUpdate": {
       "default": "-",
       "value": "",
       "type": "| boolean| ((prevValues: Partial<FormData>,currentValues: Partial<FormData>,info: {isFormList?: boolean;field?: FieldKey | FieldKey[];isInner?: boolean;}) => boolean)",
-      "description": "是否在其他控件值改变时候重新渲染当前区域。设置为true时候，表单的任意改变都会重新渲染该区域。",
+      "description": "Whether to re-render the current area when other widget values change. When set to true, any changes to the form will re-render the area.",
       "description_zh": "是否在其他控件值改变时候重新渲染当前区域。设置为true时候，表单的任意改变都会重新渲染该区域。"
     },
     ":style": {
       "default": "-",
       "value": "",
       "type": "CSSProperties",
-      "description": "节点样式",
+      "description": "Node style",
       "description_zh": "节点样式"
     },
     ":tooltip": {
       "default": "-",
       "value": "",
       "type": "ReactNode | (TooltipProps & { icon?: ReactElement })",
-      "description": "提示文本",
+      "description": "Prompt text",
       "description_zh": "提示文本"
     },
     "validateTrigger": {
       "default": "onChange",
       "value": "",
       "type": "string | string[]",
-      "description": "触发验证的时机。取值和跟包裹的控件有关系，控件支持的触发事件，都可以作为值。例如Input支持的 onFocus、 onBlur、 onChange 都可以作为 validateTrigger 的值。传递为 [] 时，仅会在调用表单 validate 方法时执行校验规则。",
+      "description": "When the verification is triggered. The value is related to the wrapped control, and the trigger events supported by the control can be used as the value. For example, onFocus, onBlur, and onChange can all be used as validateTrigger values. When passed to [], the validation rule is only executed when the form validate method is called.",
       "description_zh": "触发验证的时机。取值和跟包裹的控件有关系，控件支持的触发事件，都可以作为值。例如Input支持的 onFocus、 onBlur、 onChange 都可以作为 validateTrigger 的值。传递为 [] 时，仅会在调用表单 validate 方法时执行校验规则。"
     },
     ":wrapperCol": {
       "default": "-",
       "value": "",
       "type": "ColProps",
-      "description": "控件布局，同labelCol的设置方法一致，会覆盖全局的wrapperCol设置，ColProps",
+      "description": "The control layout, which is the same as the labelCol setting, overrides the global wrapperCol setting, ColProps",
       "description_zh": "控件布局，同labelCol的设置方法一致，会覆盖全局的wrapperCol设置，ColProps"
     },
     ":formatter": {
       "default": "-",
       "value": "",
       "type": "(value: FieldValue | undefined) => any",
-      "description": "将Form内保存的当前控件对应的值进行一定的转换，再传递给控件。",
+      "description": "Convert the value corresponding to the current control stored in the form to a certain extent, and then pass it to the control.",
       "description_zh": "将Form内保存的当前控件对应的值进行一定的转换，再传递给控件。"
     },
     ":getValueFromEvent": {
       "default": "-",
       "value": "",
       "type": "(...args) => FieldValue",
-      "description": "指定在子节点触发onChange事件时如何处理值。（如果自定义了trigger属性，那么这里的参数就是对应的事件回调函数的参数类型）",
+      "description": "Specifies how the value is handled when the child node fires the onChange event. (If the trigger property is customized, then the parameter here is the parameter type of the corresponding event callback function)",
       "description_zh": "指定在子节点触发onChange事件时如何处理值。（如果自定义了trigger属性，那么这里的参数就是对应的事件回调函数的参数类型）"
     }
   },

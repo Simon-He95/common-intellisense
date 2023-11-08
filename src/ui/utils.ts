@@ -97,19 +97,19 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
             if (!v) {
               if (lan === 'vue') {
                 const _key = key.replace('v-model', 'model')
-                content = `${key.replace(':v-model', 'v-model')}="${getComponentTagName(item.name)}${_key[1].toUpperCase()}${_key.slice(2)}"`
-                snippet = `${key.replace(':v-model', 'v-model')}="\${1:${getComponentTagName(item.name)}${_key[1].toUpperCase()}${_key.slice(2)}}"$2`
+                content = `${key.replace(':v-model', 'v-model')}="${getComponentTagName(item.name)}${_key[1].toUpperCase()}${toCamel(_key.slice(2))}"`
+                snippet = `${key.replace(':v-model', 'v-model')}="\${1:${getComponentTagName(item.name)}${_key[1].toUpperCase()}${toCamel(_key.slice(2))}}"$2`
               }
               else {
-                content = `${key.slice(1)}={${getComponentTagName(item.name)}${key[1].toUpperCase()}${key.slice(2)}}`
-                snippet = `${key.slice(1)}={\${1:${getComponentTagName(item.name)}${key[1].toUpperCase()}${key.slice(2)}}}$2`
+                content = `${key.slice(1)}={${getComponentTagName(item.name)}${key[1].toUpperCase()}${toCamel(key.slice(2))}}`
+                snippet = `${key.slice(1)}={\${1:${getComponentTagName(item.name)}${key[1].toUpperCase()}${toCamel(key.slice(2))}}}$2`
               }
             }
             else {
               if (lan === 'vue') {
                 const _key = key.replace('v-model', 'model')
-                content = `${key.replace(':v-model', 'v-model')}="${getComponentTagName(item.name)}${_key[1].toUpperCase()}${_key.slice(2)}"`
-                snippet = `${key.replace(':v-model', 'v-model')}="\${1:${getComponentTagName(item.name)}${_key[1].toUpperCase()}${_key.slice(2)}}"$2`
+                content = `${key.replace(':v-model', 'v-model')}="${getComponentTagName(item.name)}${_key[1].toUpperCase()}${toCamel(_key.slice(2))}"`
+                snippet = `${key.replace(':v-model', 'v-model')}="\${1:${getComponentTagName(item.name)}${_key[1].toUpperCase()}${toCamel(_key.slice(2))}}"$2`
               }
               else {
                 content = `${key.slice(1)}={${v}}`
@@ -257,7 +257,7 @@ export function componentsReducer(map: any[][], isSeperatorByHyphen = true) {
                 if (requiredProps.some(p => p.includes('v-for=')))
                   attr = `${key}="item.\${${++index}:${key.slice(1)}}"`
                 else
-                  attr = `v-for="item in \${${++index}:${tagName}Options}" :key="item.\${${++index}:key}" ${key}="item.\${${++index}:${key.slice(1)}}"`
+                  attr = `v-for="item in \${${++index}:${tagName}Options}" :key="item.\${${++index}:key}" ${key}="item.\${${++index}:${toCamel(key.slice(1))}}"`
               }
               else {
                 const _key = key.replace('v-model', 'model')
@@ -265,13 +265,13 @@ export function componentsReducer(map: any[][], isSeperatorByHyphen = true) {
                 ++index
                 if (!v) {
                   if (lan === 'vue')
-                    attr = `${key}="\${${index}:${getComponentTagName(content.name)}${_key[1].toUpperCase()}${_key.slice(2)}}"`
+                    attr = `${key}="\${${index}:${getComponentTagName(content.name)}${_key[1].toUpperCase()}${toCamel(_key.slice(2))}}"`
                   else
-                    attr = `${key.slice(1)}={\${${index}:${getComponentTagName(content.name)}${_key[1].toUpperCase()}${_key.slice(2)}}}`
+                    attr = `${key.slice(1)}={\${${index}:${getComponentTagName(content.name)}${_key[1].toUpperCase()}${toCamel(_key.slice(2))}}}`
                 }
                 else {
                   if (lan === 'vue')
-                    attr = `${key}="\${${index}:${getComponentTagName(content.name)}${key[1].toUpperCase()}${key.slice(2)}}"`
+                    attr = `${key}="\${${index}:${getComponentTagName(content.name)}${key[1].toUpperCase()}${toCamel(key.slice(2))}}"`
                   else
                     attr = `${key.slice(1)}={\${${index}:${v}}}`
                 }
@@ -328,4 +328,8 @@ function getComponentTagName(str: string) {
 
 export function hyphenate(s: string): string {
   return s.replace(/([A-Z])/g, '-$1').toLowerCase()
+}
+
+export function toCamel(s: string) {
+  return s.replace(/-(\w)/g, (_, v) => v.toUpperCase())
 }
