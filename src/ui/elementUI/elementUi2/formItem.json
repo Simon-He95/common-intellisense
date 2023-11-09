@@ -6,14 +6,16 @@
       "description": "The field in the model of the form component, the form field model field, is required if the validate, resetFields methods are used",
       "default": "—",
       "type": "string",
-      "description_zh": "传入 Form 组件的 model 中的字段，表单域 model 字段，在使用 validate、resetFields 方法的情况下，该属性是必填的"
+      "description_zh": "传入 Form 组件的 model 中的字段，表单域 model 字段，在使用 validate、resetFields 方法的情况下，该属性是必填的",
+      "required": true
     },
     "label": {
       "value": "",
       "description": "Label text",
       "default": "—",
       "type": "string",
-      "description_zh": "标签文本"
+      "description_zh": "标签文本",
+      "required": true
     },
     "label-width": {
       "value": "",
@@ -74,13 +76,22 @@
       "name": "resetField",
       "description": "Reset the form item, reset its value to the initial value, and remove the check result",
       "params": "-",
-      "description_zh": "对该表单项进行重置，将其值重置为初始值并移除校验结果"
+      "description_zh": "对该表单项进行重置，将其值重置为初始值并移除校验结果",
+      "value": ""
     },
     {
       "name": "clearValidate",
       "description": "Removes the validation result of the form item",
       "params": "-",
-      "description_zh": "移除该表单项的校验结果"
+      "description_zh": "移除该表单项的校验结果",
+      "value": ""
+    }
+  ],
+  "slots": [
+    {
+      "name": "label",
+      "description": "The content of the label text",
+      "description_zh": "标签文本的内容"
     }
   ],
   "link": "https://element.eleme.cn/#/en-US/component/form",

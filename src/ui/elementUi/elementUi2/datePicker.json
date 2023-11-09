@@ -1,7 +1,7 @@
 {
   "name": "ElDatePicker",
   "props": {
-    "value": {
+    ":value": {
       "value": "",
       "description": "Binding value",
       "default": "—",
@@ -134,14 +134,14 @@
       "type": "string",
       "description_zh": "选择范围时的分隔符"
     },
-    "default-value": {
+    ":default-value": {
       "value": "",
       "description": "Optionally, the time displayed by default when the selector is turned on",
       "default": "可被`new Date()`解析",
       "type": "Date",
       "description_zh": "可选，选择器打开时默认显示的时间"
     },
-    "default-time": {
+    ":default-time": {
       "value": "",
       "description": "When selecting a range, select the specific time of the day to use the date",
       "default": "数组，长度为 2，每项值为字符串，形如`12:00:00`，第一项指定开始日期的时刻，第二项指定结束日期的时刻，不指定会使用时刻 `00:00:00`",
@@ -196,10 +196,10 @@
     },
     "append-to-body": {
       "value": "",
-      "description": "Whether the DetePicker itself is inserted on the body element.",
+      "description": "Whether the DatePicker itself is inserted on the body element.",
       "default": "false",
       "type": "boolean",
-      "description_zh": "DetePicker 自身是否插入至 body 元素上。"
+      "description_zh": "DatePicker 自身是否插入至 body 元素上。"
     }
   },
   "methods": [
@@ -207,7 +207,8 @@
       "name": "focus",
       "description": "Make input get focus",
       "params": "—",
-      "description_zh": "使 input 获取焦点"
+      "description_zh": "使 input 获取焦点",
+      "value": ""
     }
   ],
   "events": [
@@ -215,19 +216,22 @@
       "name": "change",
       "description": "Triggered when the user confirms the selected value",
       "callback": "组件绑定值。格式与绑定值一致，可受 `value-format` 控制",
-      "description_zh": "用户确认选定的值时触发"
+      "description_zh": "用户确认选定的值时触发",
+      "value": ""
     },
     {
       "name": "blur",
       "description": "Triggers when input loses focus",
       "callback": "组件实例",
-      "description_zh": "当 input 失去焦点时触发"
+      "description_zh": "当 input 失去焦点时触发",
+      "value": ""
     },
     {
       "name": "focus",
       "description": "Triggers when input gains focus",
       "callback": "组件实例",
-      "description_zh": "当 input 获得焦点时触发"
+      "description_zh": "当 input 获得焦点时触发",
+      "value": ""
     }
   ],
   "typeDetail": {

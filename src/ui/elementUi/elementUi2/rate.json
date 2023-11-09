@@ -1,7 +1,7 @@
 {
   "name": "ElRate",
   "props": {
-    "value": {
+    ":value": {
       "value": "",
       "description": "Binding value",
       "default": "—",
@@ -13,9 +13,10 @@
       "description": "Binding value",
       "default": "—",
       "type": "number",
-      "description_zh": "绑定值"
+      "description_zh": "绑定值",
+      "required": true
     },
-    "max": {
+    ":max": {
       "value": "",
       "description": "Maximum score",
       "default": "—",
@@ -36,21 +37,21 @@
       "type": "boolean",
       "description_zh": "是否允许半选"
     },
-    "low-threshold": {
+    ":low-threshold": {
       "value": "",
       "description": "The cut-off values for low and medium scores, and the values themselves are divided into low scores",
       "default": "—",
       "type": "number",
       "description_zh": "低分和中等分数的界限值，值本身被划分在低分中"
     },
-    "high-threshold": {
+    ":high-threshold": {
       "value": "",
       "description": "The cut-off value for the high and medium scores, and the value itself is divided into the high score",
       "default": "—",
       "type": "number",
       "description_zh": "高分和中等分数的界限值，值本身被划分在高分中"
     },
-    "colors": {
+    ":colors": {
       "value": "",
       "description": "icon. If you pass in an array, there are 3 elements, which are the colors corresponding to the 3 segments; If you pass in an object, you can customize the segment, the key name is the boundary value of the segment, and the key value is the corresponding color",
       "default": "—",
@@ -71,7 +72,7 @@
       "type": "string",
       "description_zh": "只读时未选中 icon 的颜色"
     },
-    "icon-classes": {
+    ":icon-classes": {
       "value": "",
       "description": "icon. If you pass in an array, there are 3 elements, which are the class names corresponding to the 3 segments; If you pass in an object, you can customize the segment, the key name is the boundary value of the segment, and the key value is the corresponding class name",
       "default": "—",
@@ -113,7 +114,7 @@
       "type": "string",
       "description_zh": "辅助文字的颜色"
     },
-    "texts": {
+    ":texts": {
       "value": "",
       "description": "Auxiliary text arrays",
       "default": "—",
@@ -133,7 +134,8 @@
       "name": "change",
       "description": "Triggered when the score is changed",
       "params": "改变后的分值",
-      "description_zh": "分值改变时触发"
+      "description_zh": "分值改变时触发",
+      "value": ""
     }
   ],
   "link": "https://element.eleme.cn/#/en-US/component/rate",

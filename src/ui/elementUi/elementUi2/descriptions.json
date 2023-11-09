@@ -41,7 +41,8 @@
       "description": "The title text, which appears in the upper left",
       "default": "—",
       "type": "string",
-      "description_zh": "标题文本，显示在左上方"
+      "description_zh": "标题文本，显示在左上方",
+      "required": true
     },
     "extra": {
       "value": "",
@@ -71,14 +72,14 @@
       "type": "string",
       "description_zh": "自定义内容类名"
     },
-    "labelStyle": {
+    ":labelStyle": {
       "value": "",
       "description": "Customize label styles",
       "default": "—",
       "type": "object",
       "description_zh": "自定义标签样式"
     },
-    "contentStyle": {
+    ":contentStyle": {
       "value": "",
       "description": "Customize content styles",
       "default": "—",
@@ -86,7 +87,20 @@
       "description_zh": "自定义内容样式"
     }
   },
+  "slots": [
+    {
+      "name": "title",
+      "description": "Customize the title, which appears at the top left",
+      "description_zh": "自定义标题，显示在左上方"
+    },
+    {
+      "name": "extra",
+      "description": "The custom action area, which is displayed in the upper right",
+      "description_zh": "自定义操作区，显示在右上方"
+    }
+  ],
   "events": [],
+  "suggestions": ["el-descriptions-item"],
   "link": "https://element.eleme.cn/#/en-US/component/descriptions",
   "link_zh": "https://element.eleme.cn/#/zh-CN/component/descriptions",
   "methods": []

@@ -1,12 +1,13 @@
 {
   "name": "ElProgress",
   "props": {
-    "**percentage**": {
+    ":percentage": {
       "value": "",
       "description": "**Percentage (required)**",
       "default": "0-100",
       "type": "number",
-      "description_zh": "**百分比（必填）**"
+      "description_zh": "**百分比（必填）**",
+      "required": true
     },
     "type": {
       "value": [
@@ -51,7 +52,7 @@
       "type": "string | function | array",
       "description_zh": "进度条背景色（会覆盖 status 状态颜色）"
     },
-    "width": {
+    ":width": {
       "value": "",
       "description": "Circular progress bar canvas width (only available when type is Circle or Dashboard)",
       "default": "",
@@ -76,7 +77,7 @@
       "type": "string",
       "description_zh": "circle/dashboard 类型路径两端的形状"
     },
-    "format": {
+    ":format": {
       "value": "",
       "description": "Specify the text content of the progress bar",
       "default": "—",

@@ -1,12 +1,14 @@
 {
   "name": "ElTimelineItem",
   "props": {
-    "timestamp": {
+    ":timestamp": {
       "value": "",
       "description": "timestamp",
       "default": "-",
       "type": "string",
-      "description_zh": "时间戳"
+      "description_zh": "时间戳",
+      "foreach": true,
+      "required": true
     },
     "hide-timestamp": {
       "value": "",
@@ -68,6 +70,13 @@
       "description_zh": "节点图标"
     }
   },
+  "slots": [
+    {
+      "name": "dot",
+      "description": "Custom nodes",
+      "description_zh": "自定义节点"
+    }
+  ],
   "events": [],
   "link": "https://element.eleme.cn/#/en-US/component/timeline",
   "link_zh": "https://element.eleme.cn/#/zh-CN/component/timeline",

@@ -6,7 +6,8 @@
       "description": "Form data object",
       "default": "—",
       "type": "object",
-      "description_zh": "表单数据对象"
+      "description_zh": "表单数据对象",
+      "required": true
     },
     ":rules": {
       "value": "",
@@ -106,25 +107,29 @@
       "name": "validate",
       "description": "The method of validating the entire form, the parameter is a callback function. The callback function will be called after the verification is completed, and two parameters will be passed in: whether the verification is successful and the fields that fail the verification. If you don't pass in a callback function, a promise will be returned",
       "params": "Function(callback: Function(boolean, object))",
-      "description_zh": "对整个表单进行校验的方法，参数为一个回调函数。该回调函数会在校验结束后被调用，并传入两个参数：是否校验成功和未通过校验的字段。若不传入回调函数，则会返回一个 promise"
+      "description_zh": "对整个表单进行校验的方法，参数为一个回调函数。该回调函数会在校验结束后被调用，并传入两个参数：是否校验成功和未通过校验的字段。若不传入回调函数，则会返回一个 promise",
+      "value": ""
     },
     {
       "name": "validateField",
       "description": "A method for validating some form fields",
       "params": "Function(props: array | string, callback: Function(errorMessage: string))",
-      "description_zh": "对部分表单字段进行校验的方法"
+      "description_zh": "对部分表单字段进行校验的方法",
+      "value": ""
     },
     {
       "name": "resetFields",
       "description": "Reset the entire form, reset all field values to their default values, and remove the validation results",
       "params": "—",
-      "description_zh": "对整个表单进行重置，将所有字段值重置为初始值并移除校验结果"
+      "description_zh": "对整个表单进行重置，将所有字段值重置为初始值并移除校验结果",
+      "value": ""
     },
     {
       "name": "clearValidate",
       "description": "Removes the validation result of the form item. Pass in the prop attribute or prop array of the form item to be removed, and remove the verification result of the entire form if not",
       "params": "Function(props: array | string)",
-      "description_zh": "移除表单项的校验结果。传入待移除的表单项的 prop 属性或者 prop 组成的数组，如不传则移除整个表单的校验结果"
+      "description_zh": "移除表单项的校验结果。传入待移除的表单项的 prop 属性或者 prop 组成的数组，如不传则移除整个表单的校验结果",
+      "value": ""
     }
   ],
   "events": [
@@ -132,9 +137,11 @@
       "name": "validate",
       "description": "An event that is triggered when an alert is closed",
       "params": "",
-      "description_zh": "关闭alert时触发的事件"
+      "description_zh": "关闭alert时触发的事件",
+      "value": ""
     }
   ],
+  "suggestions": ["el-form-item"],
   "link": "https://element.eleme.cn/#/en-US/component/form",
   "link_zh": "https://element.eleme.cn/#/zh-CN/component/form"
 }

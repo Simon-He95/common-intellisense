@@ -5,6 +5,7 @@ import ElCalendar from './calendar.json'
 import ElCol from './col.json'
 import ElAlert from './alert.json'
 import ElButton from './button.json'
+import ElButtonGroup from './buttonGroup.json'
 import ElContainer from './container.json'
 import ElHeader from './header.json'
 import ElAside from './aside.json'
@@ -37,11 +38,13 @@ import ElColorPicker from './colorPicker.json'
 import ElImage from './image.json'
 import ElEmpty from './empty.json'
 import ElDropdown from './dropdown.json'
-import ElDropdownMenuItem from './dropdownMenuItem.json'
+import ElDropdownMenu from './dropdownMenu.json'
+import ElDropdownItem from './dropdownItem.json'
 import ElDrawer from './drawer.json'
 import ElDivider from './divider.json'
 import ElDialog from './dialog.json'
 import ElDescriptions from './descriptions.json'
+import ElDescriptionItem from './descriptionItem.json'
 import ElDatePicker from './datePicker.json'
 import ElDatetimePicker from './datetimePicker.json'
 import ElMenu from './menu.json'
@@ -84,6 +87,7 @@ export function elementUi2(extensionContext: any) {
     ElCalendar,
     ElAlert,
     ElButton,
+    ElButtonGroup,
     ElContainer,
     ElHeader,
     ElAside,
@@ -116,11 +120,13 @@ export function elementUi2(extensionContext: any) {
     ElImage,
     ElEmpty,
     ElDropdown,
-    ElDropdownMenuItem,
+    ElDropdownMenu,
+    ElDropdownItem,
     ElDrawer,
     ElDivider,
     ElDialog,
     ElDescriptions,
+    ElDescriptionItem,
     ElDatePicker,
     ElDatetimePicker,
     ElMenu,
@@ -488,6 +494,11 @@ export function elementUi2Components() {
           '<el-button></el-button>',
         ],
         [
+          ElButtonGroup,
+          '按钮组',
+          '<el-button-group></el-button-group>',
+        ],
+        [
           ElLink,
           '文字链接',
           '<el-link></el-link>',
@@ -663,6 +674,11 @@ export function elementUi2Components() {
           '<el-descriptions></el-descriptions>',
         ],
         [
+          ElDescriptionItem,
+          '描述列表',
+          '<el-description-item></el-description-item>',
+        ],
+        [
           'el-descriptions-item',
           '描述列表项',
           '<el-descriptions-item></el-descriptions-item>',
@@ -728,12 +744,12 @@ export function elementUi2Components() {
           '<el-dropdown></el-dropdown>',
         ],
         [
-          'el-dropdown-menu',
+          ElDropdownMenu,
           '下拉菜单列表',
           '<el-dropdown-menu></el-dropdown-menu>',
         ],
         [
-          ElDropdownMenuItem,
+          ElDropdownItem,
           '下拉菜单列表项',
           '<el-dropdown-item></el-dropdown-item>',
         ],
@@ -868,6 +884,11 @@ export function elementUi2Components() {
           ElButton,
           'button',
           '<el-button></el-button>',
+        ],
+        [
+          ElButtonGroup,
+          'button group',
+          '<el-button-group></el-button-group>',
         ],
         [
           ElLink,
@@ -1045,7 +1066,7 @@ export function elementUi2Components() {
           '<el-descriptions></el-descriptions>',
         ],
         [
-          'el-descriptions-item',
+          ElDropdownItem,
           'Describe list item',
           '<el-descriptions-item></el-descriptions-item>',
         ],
@@ -1110,12 +1131,12 @@ export function elementUi2Components() {
           '<el-dropdown></el-dropdown>',
         ],
         [
-          'el-dropdown-menu',
+          ElDropdownMenu,
           'Drop-down menu list',
           '<el-dropdown-menu></el-dropdown-menu>',
         ],
         [
-          ElDropdownMenuItem,
+          ElDropdownItem,
           'Drop-down menu list item',
           '<el-dropdown-item></el-dropdown-item>',
         ],

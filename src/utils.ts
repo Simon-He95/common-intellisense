@@ -60,10 +60,10 @@ export function transformVue(code: string, position: vscode.Position) {
     return
   // 在template中
   const { ast } = template
-  return dfs(ast.children, position)
+  return dfs(ast.children, template, position)
 }
 
-function dfs(children: any, position: vscode.Position) {
+function dfs(children: any, parent: any, position: vscode.Position) {
   for (const child of children) {
     const { loc, tag, props, children } = child
     if (!isInPosition(loc, position))
@@ -80,12 +80,16 @@ function dfs(children: any, position: vscode.Position) {
             type: 'props',
             isInTemplate: true,
             isValue: !!prop?.value?.content,
+            parent: {
+              tag: parent.tag ? parent.tag : 'template',
+              props: parent.props || [],
+            },
           }
         }
       }
     }
     if (children && children.length) {
-      const result = dfs(children, position) as any
+      const result = dfs(children, child, position) as any
       if (result)
         return result
     }
@@ -97,6 +101,10 @@ function dfs(children: any, position: vscode.Position) {
         tag: child.tag,
         props,
         isInTemplate: true,
+        parent: {
+          tag: parent.tag ? parent.tag : 'template',
+          props: parent.props || [],
+        },
       }
     }
     if (child.type === 2) {
@@ -104,6 +112,10 @@ function dfs(children: any, position: vscode.Position) {
         type: 'text',
         isInTemplate: true,
         props,
+        parent: {
+          tag: parent.tag ? parent.tag : 'template',
+          props: parent.props || [],
+        },
       }
     }
     return
@@ -129,7 +141,7 @@ function isInPosition(loc: any, position: vscode.Position) {
 export function parserJSX(code: string, position: vscode.Position) {
   const ast = tsParser(code, { jsx: true, loc: true })
   const children = ast.body
-  const result = jsxDfs(children, position)
+  const result = jsxDfs(children, null, position)
   const map = findJsxRefs(children)
   if (result)
     return Object.assign(result, map)
@@ -140,7 +152,7 @@ export function parserJSX(code: string, position: vscode.Position) {
   }
 }
 
-function jsxDfs(children: any, position: vscode.Position) {
+function jsxDfs(children: any, parent: any, position: vscode.Position) {
   for (const child of children) {
     let { loc, type, openingElement, body: children, argument, declarations, init } = child
     if (!loc)
@@ -171,6 +183,7 @@ function jsxDfs(children: any, position: vscode.Position) {
             type: 'props',
             isInTemplate,
             isValue: Array.isArray(prop?.value) ? !!prop.value[0]?.raw : prop.value.type === 'JSXExpressionContainer' ? !!prop.value?.expression : !!prop?.value?.value,
+            parent,
           }
         }
       }
@@ -194,7 +207,8 @@ function jsxDfs(children: any, position: vscode.Position) {
       children = [children]
 
     if (children && children.length) {
-      const result = jsxDfs(children, position) as any
+      const p = child.type === 'JSXElement' ? { name: openingElement.name.name, props: openingElement.attributes } : null
+      const result = jsxDfs(children, p, position) as any
       if (result)
         return result
     }
@@ -225,6 +239,7 @@ function jsxDfs(children: any, position: vscode.Position) {
               : target.name.name,
           propType: target.type,
           isInTemplate,
+          parent,
         }
       }
       return {
@@ -234,6 +249,7 @@ function jsxDfs(children: any, position: vscode.Position) {
           : openingElement.name.name,
         props: openingElement.attributes,
         isInTemplate,
+        parent,
       }
     }
 
@@ -242,6 +258,7 @@ function jsxDfs(children: any, position: vscode.Position) {
         isInTemplate,
         type: 'text',
         props: openingElement?.attributes,
+        parent,
       }
     }
     return
@@ -320,7 +337,7 @@ function findRef(children: any, map: any) {
 
 export function parserSvelte(code: string, position: vscode.Position) {
   const { html } = svelteParser(code)
-  const result = jsxDfs([html], position)
+  const result = jsxDfs([html], null, position)
   const map = {
     refsMap: {},
     refs: [],

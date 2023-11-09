@@ -1,7 +1,7 @@
 {
   "name": "ElSlider",
   "props": {
-    "value": {
+    ":value": {
       "value": "",
       "description": "Binding value",
       "default": "—",
@@ -13,16 +13,17 @@
       "description": "Binding value",
       "default": "—",
       "type": "number",
-      "description_zh": "绑定值"
+      "description_zh": "绑定值",
+      "required": true
     },
-    "min": {
+    ":min": {
       "value": "",
       "description": "minimum",
       "default": "—",
       "type": "number",
       "description_zh": "最小值"
     },
-    "max": {
+    ":max": {
       "value": "",
       "description": "maximum",
       "default": "—",
@@ -36,7 +37,7 @@
       "type": "boolean",
       "description_zh": "是否禁用"
     },
-    "step": {
+    ":step": {
       "value": "",
       "description": "Step",
       "default": "—",
@@ -83,7 +84,7 @@
       "type": "boolean",
       "description_zh": "是否显示 tooltip"
     },
-    "format-tooltip": {
+    ":format-tooltip": {
       "value": "",
       "description": "Format the tooltip message",
       "default": "—",
@@ -118,7 +119,7 @@
       "type": "string",
       "description_zh": "屏幕阅读器标签"
     },
-    "debounce": {
+    ":debounce": {
       "value": "",
       "description": "The debounce delay on input, in milliseconds, is only valid when 'show-input' is equal to true",
       "default": "—",
@@ -132,7 +133,7 @@
       "type": "string",
       "description_zh": "tooltip 的自定义类名"
     },
-    "marks": {
+    ":marks": {
       "value": "",
       "description": "tags, the type of key must be number and the value must be in the closed interval '[min, max]', and each token can be styled separately",
       "default": "—",
@@ -145,13 +146,15 @@
       "name": "change",
       "description": "Triggers when the value changes (when dragging with the mouse, it only triggers when the mouse is released)",
       "params": "改变后的值",
-      "description_zh": "值改变时触发（使用鼠标拖曳时，只在松开鼠标后触发）"
+      "description_zh": "值改变时触发（使用鼠标拖曳时，只在松开鼠标后触发）",
+      "value": ""
     },
     {
       "name": "input",
       "description": "Triggered when data changes (when dragging with the mouse, the activity process is triggered in real time)",
       "params": "改变后的值",
-      "description_zh": "数据改变时触发（使用鼠标拖曳时，活动过程实时触发）"
+      "description_zh": "数据改变时触发（使用鼠标拖曳时，活动过程实时触发）",
+      "value": ""
     }
   ],
   "link": "https://element.eleme.cn/#/en-US/component/slider",

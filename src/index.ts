@@ -4,6 +4,7 @@ import { CreateWebview } from '@vscode-use/createwebview'
 import { findPkgUI, parser } from './utils'
 import UI from './ui'
 import { nameMap } from './constants'
+import { toCamel } from './ui/utils'
 
 declare const global: {
   commonIntellisense: {
@@ -73,6 +74,16 @@ export function activate(context: vscode.ExtensionContext) {
         return result.refs.map((refName: string) => createCompletionItem({ content: refName, snippet: `${refName}.value`, documentation: `${refName}.value`, preselect: true, sortText: '99' }))
       if (lan !== 'vue' && lineText.slice(character, character + 8) !== '.current')
         return result.refs.map((refName: string) => createCompletionItem({ content: refName, snippet: `${refName}.current`, documentation: `${refName}.current`, preselect: true, sortText: '99' }))
+    }
+    if (result.parent && result.tag === 'template') {
+      const parentTag = result.parent.tag || result.parent.name
+      if (parentTag) {
+        const name = toCamel(parentTag)
+        const component = UiCompletions[name[0].toUpperCase() + name.slice(1)]
+        const slots = component?.slots
+        if (slots)
+          return slots
+      }
     }
     if (UiCompletions && result?.type === 'props') {
       const name = result.tag[0].toUpperCase() + result.tag.replace(/(-\w)/g, (match: string) => match[1].toUpperCase()).slice(1)
@@ -153,8 +164,26 @@ export function activate(context: vscode.ExtensionContext) {
       return
     }
     const prefix = lineText.trim().split(' ').slice(-1)[0]
-    if (prefix.toLowerCase() === prefix ? optionsComponents.prefix.some((reg: string) => prefix.startsWith(reg)) : true)
+    if (prefix.toLowerCase() === prefix ? optionsComponents.prefix.some((reg: string) => prefix.startsWith(reg)) : true) {
+      const parent = result.parent
+      if (parent) {
+        const parentTag = parent.tag || parent.name
+        const suggestions = UiCompletions[toCamel(parentTag)[0].toUpperCase() + toCamel(parentTag).slice(1)]?.suggestions
+        if (suggestions && suggestions.length) {
+          optionsComponents.data.forEach((child: any) => {
+            const label = child.label.split(' ')[0]
+            child.sortText = suggestions.includes(label) ? '1' : '2'
+          })
+        }
+        else {
+          optionsComponents.data.forEach((child: any) => {
+            child.sortText = '2'
+          })
+        }
+      }
+
       return optionsComponents.data
+    }
   }, ['"', '\'', '-', ' ', '@', '.']))
   const provider = new CreateWebview(context.extensionUri, {
     viewColumn: vscode.ViewColumn.Beside,

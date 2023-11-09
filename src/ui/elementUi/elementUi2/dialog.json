@@ -14,7 +14,8 @@
       "description": "The title of the dialog can also be passed in via a named slot (see table below).",
       "default": "—",
       "type": "string",
-      "description_zh": "Dialog 的标题，也可通过具名 slot （见下表）传入"
+      "description_zh": "Dialog 的标题，也可通过具名 slot （见下表）传入",
+      "required": true
     },
     "width": {
       "value": "",
@@ -93,7 +94,7 @@
       "type": "boolean",
       "description_zh": "是否显示关闭按钮"
     },
-    "before-close": {
+    ":before-close": {
       "value": "",
       "description": "The callback before closing pauses the closure of the dialog",
       "default": "—",
@@ -120,25 +121,41 @@
       "name": "open",
       "description": "Dialog-opened callbacks",
       "params": "_",
-      "description_zh": "Dialog 打开的回调"
+      "description_zh": "Dialog 打开的回调",
+      "value": ""
     },
     {
       "name": "opened",
       "description": "The dialog opens the callback at the end of the animation",
       "params": "_",
-      "description_zh": "Dialog 打开动画结束时的回调"
+      "description_zh": "Dialog 打开动画结束时的回调",
+      "value": ""
     },
     {
       "name": "close",
       "description": "Dialog-closed callbacks",
       "params": "_",
-      "description_zh": "Dialog 关闭的回调"
+      "description_zh": "Dialog 关闭的回调",
+      "value": ""
     },
     {
       "name": "closed",
       "description": "Dialog closes the callback at the end of the animation",
       "params": "_",
-      "description_zh": "Dialog 关闭动画结束时的回调"
+      "description_zh": "Dialog 关闭动画结束时的回调",
+      "value": ""
+    }
+  ],
+  "slots": [
+    {
+      "name": "title",
+      "description": "Dialog 标题区的内容",
+      "description_zh": "Dialog 标题区的内容"
+    },
+    {
+      "name": "footer",
+      "description": "Dialog 按钮操作区的内容",
+      "description_zh": "Dialog 按钮操作区的内容"
     }
   ],
   "link": "https://element.eleme.cn/#/en-US/component/dialog",

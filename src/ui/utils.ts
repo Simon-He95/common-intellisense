@@ -24,6 +24,7 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
     const completions: any = []
     const events: any = []
     const methods = []
+    const slots: any[] = []
     const isZh = getLocale().includes('zh')
     const completionsDeferCallback = () => {
       const lan = getActiveTextEditorLanguageId()
@@ -221,7 +222,26 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
       }))
     }
 
-    result[item.name!] = { completions, events, methods }
+    if (item.slots) {
+      item.slots.forEach((slot: any) => {
+        const { name, description, description_zh } = slot
+        const documentation = new vscode.MarkdownString()
+        documentation.isTrusted = true
+        documentation.supportHtml = true
+        const detail = []
+        if (description) {
+          if (isZh)
+            detail.push(`- 👓 说明:    ***\`${description_zh || description}\`***`)
+          else
+            detail.push(`- 👓 description:    ***\`${description}\`***`)
+        }
+        documentation.appendMarkdown(detail.join('\n\n'))
+
+        slots.push(createCompletionItem({ content: `slot="${name}"`, snippet: `slot="${name}"$1`, documentation, type: 1, preselect: true, sortText: '1' }))
+      })
+    }
+
+    result[item.name!] = { completions, events, methods, slots, suggestions: item.suggestions || [] }
     return result
   }, result)
 }

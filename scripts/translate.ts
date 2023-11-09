@@ -6,7 +6,7 @@ let stack = 0
 let limit = 10
 const hasDone = new Set()
 async function setup() {
-  const cwd = path.resolve(root, 'src/ui/arcoDesignVue/arcoDesignVue2')
+  const cwd = path.resolve(root, 'src/ui/elementUi/elementUi2')
   const entry = await fg(['**/*.json'], { dot: true, cwd })
   // entry.forEach(async (url: string) => {
   //   const _url = path.resolve(cwd, url)
@@ -27,7 +27,8 @@ async function setup() {
     const content = await fsp.readFile(newUrl, 'utf8')
     if (!content) return
     const obj = JSON.parse(content)
-    obj['link_zh'] = obj.link
+    if (!obj['link_zh'])
+      obj['link_zh'] = obj.link
     for (const key in obj.props) {
       const value = obj.props[key]
       if (!value.description) {
@@ -133,6 +134,40 @@ async function setup() {
         }
       }
     }
+
+    if (obj.slots) {
+      for (const item of obj.slots) {
+        if (!item.description) {
+          item.description = ''
+        }
+        if (hasChineseCharacters(item.description)) {
+          item['description_zh'] = item.description
+          try {
+            item['description'] = await fanyi(item.description)
+          } catch (error) {
+            if (stack >= limit) return
+
+            stack++
+            console.log('reload', newUrl)
+            setTimeout(setup, 500)
+            return
+          }
+        }
+        if (!hasChineseCharacters(item['description_zh'])) {
+          try {
+            item['description_zh'] = await fanyi(item.description)
+          } catch (error) {
+            if (stack >= limit) return
+
+            stack++
+            console.log('reload', newUrl)
+            setTimeout(setup, 500)
+            return
+          }
+        }
+      }
+    }
+
     try {
       hasDone.add(newUrl)
       const data = JSON.stringify(obj, null, 2)

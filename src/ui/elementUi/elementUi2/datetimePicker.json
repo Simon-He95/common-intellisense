@@ -45,7 +45,7 @@
       "description_zh": "是否显示清除按钮"
     },
     "size": {
-      "value": "",
+      "value": ["large", "small", "mini"],
       "description": "Enter the size of the field",
       "default": "large, small, mini",
       "type": "string",
@@ -138,7 +138,7 @@
       "type": "string",
       "description_zh": "选择范围时的分隔符"
     },
-    "default-value": {
+    ":default-value": {
       "value": "",
       "description": "Optionally, the time displayed by default when the selector is turned on",
       "default": "可被`new Date()`解析",
@@ -197,7 +197,8 @@
       "name": "focus",
       "description": "Make input get focus",
       "params": "—",
-      "description_zh": "使 input 获取焦点"
+      "description_zh": "使 input 获取焦点",
+      "value": ""
     }
   ],
   "events": [
@@ -205,19 +206,22 @@
       "name": "change",
       "description": "Triggered when the user confirms the selected value",
       "params": "组件绑定值。格式与绑定值一致，可受 `value-format` 控制",
-      "description_zh": "用户确认选定的值时触发"
+      "description_zh": "用户确认选定的值时触发",
+      "value": ""
     },
     {
       "name": "blur",
       "description": "Triggers when input loses focus",
       "params": "组件实例",
-      "description_zh": "当 input 失去焦点时触发"
+      "description_zh": "当 input 失去焦点时触发",
+      "value": ""
     },
     {
       "name": "focus",
       "description": "Triggers when input gains focus",
       "params": "组件实例",
-      "description_zh": "当 input 获得焦点时触发"
+      "description_zh": "当 input 获得焦点时触发",
+      "value": ""
     }
   ],
   "typeDetail": {
@@ -257,6 +261,13 @@
       }
     ]
   },
+  "slots": [
+    {
+      "name": "range-separator",
+      "description": "Custom separators",
+      "description_zh": "自定义分隔符"
+    }
+  ],
   "link": "https://element.eleme.cn/#/en-US/component/datetime-picker",
   "link_zh": "https://element.eleme.cn/#/zh-CN/component/datetime-picker"
 }

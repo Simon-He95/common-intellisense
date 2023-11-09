@@ -30,7 +30,7 @@
       "type": "string",
       "description_zh": "必填值，输入绑定值"
     },
-    "debounce": {
+    ":debounce": {
       "value": "",
       "description": "Get the input suggested debounce delay",
       "default": "300",
@@ -51,7 +51,7 @@
       "type": "string",
       "description_zh": "菜单弹出位置"
     },
-    "fetch-suggestions": {
+    ":fetch-suggestions": {
       "value": "",
       "description": "Returns an input suggestion method, only when your input suggests data Resolve, by calling callback(data:[]).",
       "default": "—",
@@ -134,7 +134,8 @@
       "name": "focus",
       "description": "Make input get focus",
       "params": "-",
-      "description_zh": "使 input 获取焦点"
+      "description_zh": "使 input 获取焦点",
+      "value": ""
     }
   ],
   "events": [
@@ -142,13 +143,37 @@
       "name": "select",
       "description": "Triggered when you click to select a suggestion",
       "params": "选中建议项",
-      "description_zh": "点击选中建议项时触发"
+      "description_zh": "点击选中建议项时触发",
+      "value": ""
     },
     {
       "name": "change",
       "description": "Triggers when the Input value changes",
       "params": "(value: string | number)",
-      "description_zh": "在 Input 值改变时触发"
+      "description_zh": "在 Input 值改变时触发",
+      "value": ""
+    }
+  ],
+  "slots": [
+    {
+      "name": "prefix",
+      "description": "Enter the content of the header of the box",
+      "description_zh": "输入框头部内容"
+    },
+    {
+      "name": "suffix",
+      "description": "Enter the content at the end of the box",
+      "description_zh": "输入框尾部内容"
+    },
+    {
+      "name": "prepend",
+      "description": "The input box is preceded by content",
+      "description_zh": "输入框前置内容"
+    },
+    {
+      "name": "append",
+      "description": "The input box is followed by the content",
+      "description_zh": "输入框后置内容"
     }
   ],
   "link": "https://element.eleme.cn/#/en-US/component/input%23dai-shu-ru-jian-yi",

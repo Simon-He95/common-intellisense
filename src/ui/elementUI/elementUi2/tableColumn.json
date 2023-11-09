@@ -12,7 +12,7 @@
       "type": "string",
       "description_zh": "对应列的类型。如果设置了 selection 则显示多选框；如果设置了 index 则显示该行的索引（从 1 开始计算）；如果设置了 expand 则显示为一个可展开的按钮"
     },
-    "index": {
+    ":index": {
       "value": "",
       "description": "If type=index is set, you can customize the index by passing the index attribute",
       "default": "—",
@@ -67,7 +67,7 @@
       "type": "string | boolean",
       "description_zh": "列是否固定在左侧或者右侧，true 表示固定在左侧"
     },
-    "render-header": {
+    ":render-header": {
       "value": "",
       "description": "The Function used by the Column Header Label area rendering",
       "default": "—",
@@ -85,7 +85,7 @@
       "type": "boolean | string",
       "description_zh": "对应列是否可以排序，如果设置为 'custom'，则代表用户希望远程排序，需要监听 Table 的 sort-change 事件"
     },
-    "sort-method": {
+    ":sort-method": {
       "value": "",
       "description": "The method used to sort the data is only valid when sortable is set to true, and it needs to return a number, which is the same as Array.sort",
       "default": "—",
@@ -117,7 +117,7 @@
       "type": "boolean",
       "description_zh": "对应列是否可以通过拖动改变宽度（需要在 el-table 上设置 border 属性为真）"
     },
-    "formatter": {
+    ":formatter": {
       "value": "",
       "description": "Used to format content",
       "default": "—",
@@ -128,7 +128,7 @@
       "value": "",
       "description": "Displays tooltip when content is too long and hidden",
       "default": "false",
-      "type": "Boolean",
+      "type": "boolean",
       "description_zh": "当内容过长被隐藏时显示 tooltip"
     },
     "align": {
@@ -139,7 +139,7 @@
       ],
       "description": "Alignment",
       "default": "left",
-      "type": "String",
+      "type": "string",
       "description_zh": "对齐方式"
     },
     "header-align": {
@@ -150,14 +150,14 @@
       ],
       "description": "Header alignment, if not set, the table alignment is used",
       "default": "—",
-      "type": "String",
+      "type": "string",
       "description_zh": "表头对齐方式，若不设置该项，则使用表格的对齐方式"
     },
     "class-name": {
       "value": "",
       "description": "The className of the column",
       "default": "—",
-      "type": "String",
+      "type": "string",
       "description_zh": "列的 className"
     },
     "label-class-name": {
@@ -167,7 +167,7 @@
       "type": "string",
       "description_zh": "当前列标题的自定义类名"
     },
-    "selectable": {
+    ":selectable": {
       "value": "",
       "description": "It is valid only for the type=selection column, the type is Function, and the return value of Function is used to determine whether the CheckBox of this row can be checked",
       "default": "—",
@@ -178,10 +178,10 @@
       "value": "",
       "description": "Only valid for columns with type=selection, type Boolean, true will keep the previously selected data after the data update (row-key needs to be specified)",
       "default": "false",
-      "type": "Boolean",
+      "type": "boolean",
       "description_zh": "仅对 type=selection 的列有效，类型为 Boolean，为 true 则会在数据更新之后保留之前选中的数据（需指定 row-key）"
     },
-    "filters": {
+    ":filters": {
       "value": "",
       "description": "Options for data filtering, array formatting, elements in the array need to have text and value attributes.",
       "default": "—",
@@ -205,14 +205,14 @@
       ],
       "description": "Filter the positioning of the pop-up",
       "default": "—",
-      "type": "String",
+      "type": "string",
       "description_zh": "过滤弹出框的定位"
     },
     "filter-multiple": {
       "value": "",
       "description": "Whether to select multiple options for data filtering",
       "default": "true",
-      "type": "Boolean",
+      "type": "boolean",
       "description_zh": "数据过滤的选项是否多选"
     },
     "filter-method": {

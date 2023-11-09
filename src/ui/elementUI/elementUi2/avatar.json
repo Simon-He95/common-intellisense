@@ -35,7 +35,8 @@
       "description": "The resource address of the image avatar",
       "default": "",
       "type": "string",
-      "description_zh": "图片头像的资源地址"
+      "description_zh": "图片头像的资源地址",
+      "required": true
     },
     "srcSet": {
       "value": "",
@@ -49,7 +50,8 @@
       "description": "Alt text that describes the image",
       "default": "",
       "type": "string",
-      "description_zh": "描述图像的替换文本"
+      "description_zh": "描述图像的替换文本",
+      "required": true
     },
     "fit": {
       "value": [
@@ -64,7 +66,7 @@
       "type": "string",
       "description_zh": "当展示类型为图片的时候，设置图片如何适应容器框"
     },
-    "error": {
+    ":error": {
       "value": "",
       "description": "If the image avatar fails to load, returning false will disable the default fallback behavior of the component",
       "default": "",
@@ -72,6 +74,13 @@
       "description_zh": "图片类头像加载失败的回调， 返回 false 会关闭组件默认的 fallback 行为"
     }
   },
+  "slots": [
+    {
+      "name": "default",
+      "description": "Customize your profile picture display",
+      "description_zh": "自定义头像展示内容"
+    }
+  ],
   "events": [],
   "link": "https://element.eleme.cn/#/en-US/component/avatar",
   "link_zh": "https://element.eleme.cn/#/zh-CN/component/avatar",
