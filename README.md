@@ -23,6 +23,7 @@ Install the supported ui component library in your project and install the plug-
 - radix-vue 1
 - next-ui 2
 - arco-design/react 2
+- arco-design/vue 2
 
 ### [antdv demo](assets/antdv.gif)
 
@@ -45,6 +46,8 @@ Install the supported ui component library in your project and install the plug-
 ### [next-ui demo](assets/next-ui.gif)
 
 ### [arco-design/react demo](assets/arco-design.gif)
+
+### [arco-design/vue demo](assets/arco-design-vue.gif)
 
 ## :coffee:
 

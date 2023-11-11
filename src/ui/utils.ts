@@ -241,7 +241,80 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
       })
     }
 
-    result[item.name!] = { completions, events, methods, slots, suggestions: item.suggestions || [] }
+    const createTableDocument = () => {
+      const documentation = new vscode.MarkdownString()
+      documentation.isTrusted = true
+      documentation.supportHtml = true
+      const details = []
+      if (item.props) {
+        if (isZh)
+          details.push(`## 参数:`)
+        else
+          details.push(`## Props:`)
+
+        const tableHeader = `| ${isZh ? '属性名' : 'Name'} | ${isZh ? '描述' : 'Description'} | ${isZh ? '类型' : 'Type'} | ${isZh ? '默认值' : 'Default'} |`;
+        const tableDivider = '| --- | --- | --- | --- |';
+
+        const tableContent = [
+          tableHeader,
+          tableDivider,
+          ...Object.keys(item.props).map((name) => {
+            const { default: defaultValue, type, description, description_zh } = item.props[name]
+            return `| ${name} | ${isZh ? description_zh : description} | ${type} | ${defaultValue} |`
+          })
+        ].join('\n');
+
+        details.push(tableContent)
+      }
+
+      if (item.methods && item.methods.length) {
+        if (isZh)
+          details.push(`## 方法:`)
+        else
+          details.push(`## Methods:`)
+
+        const tableHeader = `| ${isZh ? '方法名' : 'Method Name'} | ${isZh ? '描述' : 'Description'} | ${isZh ? '参数' : 'Params'} |`;
+        const tableDivider = '| --- | --- | --- |';
+
+        const tableContent = [
+          tableHeader,
+          tableDivider,
+          ...item.methods.map((m: any) => {
+            const { name, params, description, description_zh } = m
+            return `| ${name} | ${isZh ? description_zh : description} | ${params} |`
+          })
+        ].join('\n');
+
+        details.push(tableContent)
+      }
+
+      if (item.events && item.events.length) {
+        if (isZh)
+          details.push(`## 事件:`)
+        else
+          details.push(`## Events:`)
+
+        const tableHeader = `| ${isZh ? '事件名' : 'Event Name'} | ${isZh ? '描述' : 'Description'} | ${isZh ? '参数' : 'Params'} |`;
+        const tableDivider = '| --- | --- | --- |';
+
+        const tableContent = [
+          tableHeader,
+          tableDivider,
+          ...item.events.map((m: any) => {
+            const { name, params, description, description_zh } = m
+            return `| ${name} | ${isZh ? description_zh : description} | ${params || '-'} |`
+          })
+        ].join('\n');
+
+        details.push(tableContent)
+      }
+
+      documentation.appendMarkdown(details.join('\n\n'))
+      return documentation
+    }
+    const tableDocument = createTableDocument()
+
+    result[item.name!] = { completions, events, methods, slots, suggestions: item.suggestions || [], tableDocument }
     return result
   }, result)
 }

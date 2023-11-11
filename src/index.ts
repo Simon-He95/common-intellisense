@@ -126,23 +126,23 @@ export function activate(context: vscode.ExtensionContext) {
         const result = completionsCallback.filter((item: any) => isValue
           ? hasProps.find((prop: any) => isSamePrefix(item.label, prop))
           : !hasProps.find((prop: any) => isSamePrefix(item.label, prop))).filter((item: any) => item.label.startsWith(propName)).map((item: any) =>
-          item.label.match(/^\w+={[^}]*}/)
-            ? undefined
-            : createCompletionItem(isValue
-              ? ({
+            item.label.match(/^\w+={[^}]*}/)
+              ? undefined
+              : createCompletionItem(isValue
+                ? ({
                   content: item.label,
                   snippet: item.label.replace(/^\w+=\"([^"]+)\".*/, '$1'),
                   documentation: item.documentation,
                   detail: item.detail,
                   type: item.kind,
                 })
-              : ({
+                : ({
                   content: item.label,
                   documentation: item.documentation,
                   detail: item.detail,
                   type: item.kind,
                 })),
-        ).filter(Boolean)
+          ).filter(Boolean)
         const events = lan === 'vue'
           ? []
           : isValue
@@ -228,6 +228,29 @@ export function activate(context: vscode.ExtensionContext) {
       return
     openExternalUrl(url)
   }))
+  const LANS = ['javascriptreact', 'typescript', 'typescriptreact', 'vue', 'svelte', 'solid', 'swan', 'react', 'js', 'ts', 'tsx', 'jsx']
+
+  context.subscriptions.push(vscode.languages.registerHoverProvider(LANS, {
+    provideHover(document, position) {
+      const editor = vscode.window.activeTextEditor
+      if (!editor)
+        return
+      const range = document.getWordRangeAtPosition(position) as any
+      let word = document.getText(range)
+      if (!optionsComponents.data.length || !word)
+        return new vscode.Hover('')
+
+      const target = UiCompletions[toCamel(word)[0].toUpperCase() + toCamel(word).slice(1)]
+      if (!target)
+        return
+
+      const tableDocument = target.tableDocument
+
+      if (tableDocument)
+        return new vscode.Hover(tableDocument)
+
+    }
+  }))
 }
 
 export function deactivate() {
@@ -286,7 +309,7 @@ function findUI() {
 
     UiCompletions = UINames.reduce((result: any, option: string) =>
       Object.assign(result, (UI as any)[option]?.(extensionContext))
-    , {} as any)
+      , {} as any)
   })
 }
 
