@@ -76,8 +76,8 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
 
           // command:extension.openDocumentLink?%7B%22link%22%3A%22https%3A%2F%2Fexample.com%2F%22%7D
           if (item.link) {
-            documentation.appendMarkdown(`\n\n[🔗 ${isZh ? '文档链接' : 'Documentation link'}](command:intellisense.openDocument?%7B%22link%22%3A%22${encodeURIComponent(item.link)}%22%7D)`)
-            documentation.appendMarkdown(`\n\n[🔗 ${isZh ? '外部文档链接' : 'External document links'}](command:intellisense.openDocumentExternal?%7B%22link%22%3A%22${encodeURIComponent(item.link)}%22%7D)`)
+            documentation.appendMarkdown(`\n\n[🔗 ${isZh ? '文档链接' : 'Documentation link'}](command:intellisense.openDocument?%7B%22link%22%3A%22${encodeURIComponent(isZh ? item.link_zh : item.link)}%22%7D)`)
+            documentation.appendMarkdown(`\n\n[🔗 ${isZh ? '外部文档链接' : 'External document links'}](command:intellisense.openDocumentExternal?%7B%22link%22%3A%22${encodeURIComponent(isZh ? item.link_zh : item.link)}%22%7D)`)
           }
           let content = ''
           let snippet = ''
@@ -124,7 +124,7 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
           }
           content += `  ${value.description || ''}${value.default ? `  ${isZh ? '默认' : 'default'}：${value.default}` : ''}`
 
-          return createCompletionItem({ content, snippet, type, documentation, preselect: true, sortText: '0' })
+          return createCompletionItem({ content, snippet, type, documentation, preselect: true, sortText: 'a' })
         },
         ))
       })
@@ -190,7 +190,7 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
           documentation.isTrusted = true
           documentation.supportHtml = true
           documentation.appendMarkdown(detail.join('\n\n'))
-          return createCompletionItem({ content, snippet, documentation, type: vscode.CompletionItemKind.Event, sortText: '1', preselect: true })
+          return createCompletionItem({ content, snippet, documentation, type: vscode.CompletionItemKind.Event, sortText: 'b', preselect: true })
         },
         )
       }
@@ -218,7 +218,7 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
           detail.push(`- 🚢 ${isZh ? '参数' : 'params'}:    ***\`${params}\`***`)
 
         documentation.appendMarkdown(detail.join('\n\n'))
-        return createCompletionItem({ content: method.name, snippet: `${name.endsWith('()') ? name : `${name}()`}$1`, documentation, type: 1, preselect: true, sortText: '1' })
+        return createCompletionItem({ content: method.name, snippet: `${name.endsWith('()') ? name : `${name}()`}$1`, documentation, type: 1, preselect: true, sortText: 'b' })
       }))
     }
 
@@ -237,7 +237,7 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
         }
         documentation.appendMarkdown(detail.join('\n\n'))
 
-        slots.push(createCompletionItem({ content: `slot="${name}"`, snippet: `slot="${name}"$1`, documentation, type: 1, preselect: true, sortText: '1' }))
+        slots.push(createCompletionItem({ content: `slot="${name}"`, snippet: `slot="${name}"$1`, documentation, type: 1, preselect: true, sortText: 'b' }))
       })
     }
 
@@ -307,6 +307,11 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
         ].join('\n')
 
         details.push(tableContent)
+      }
+
+      if (item.link) {
+        details.push(`\n\n[🔗 ${isZh ? '文档链接' : 'Documentation link'}](command:intellisense.openDocument?%7B%22link%22%3A%22${encodeURIComponent(isZh ? item.link_zh : item.link)}%22%7D)`)
+        details.push(`\n\n[🔗 ${isZh ? '外部文档链接' : 'External document links'}](command:intellisense.openDocumentExternal?%7B%22link%22%3A%22${encodeURIComponent(isZh ? item.link_zh : item.link)}%22%7D)`)
       }
 
       documentation.appendMarkdown(details.join('\n\n'))

@@ -71,9 +71,9 @@ export function activate(context: vscode.ExtensionContext) {
         }
       }
       if (lan === 'vue' && lineText.slice(character, character + 6) !== '.value')
-        return result.refs.map((refName: string) => createCompletionItem({ content: refName, snippet: `${refName}.value`, documentation: `${refName}.value`, preselect: true, sortText: '99' }))
+        return result.refs.map((refName: string) => createCompletionItem({ content: refName, snippet: `${refName}.value`, documentation: `${refName}.value`, preselect: true, sortText: 'a' }))
       if (lan !== 'vue' && lineText.slice(character, character + 8) !== '.current')
-        return result.refs.map((refName: string) => createCompletionItem({ content: refName, snippet: `${refName}.current`, documentation: `${refName}.current`, preselect: true, sortText: '99' }))
+        return result.refs.map((refName: string) => createCompletionItem({ content: refName, snippet: `${refName}.current`, documentation: `${refName}.current`, preselect: true, sortText: 'a' }))
     }
     if (result.parent && result.tag === 'template') {
       const parentTag = result.parent.tag || result.parent.name
