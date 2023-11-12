@@ -152,25 +152,25 @@
     {
       "name": "click-tab",
       "description": "Triggered when a tag is clicked",
-      "params": "点击标签时触发",
+      "params": "{ name: string | number, title: string, event: MouseEvent, disabled: boolean }",
       "description_zh": "点击标签时触发"
     },
     {
       "name": "change",
       "description": "Triggers when the currently active tag changes",
-      "params": "当前激活的标签改变时触发",
+      "params": "name: string | number, title: string ",
       "description_zh": "当前激活的标签改变时触发"
     },
     {
       "name": "rendered",
       "description": "Triggered when tag content is rendered for the first time (only when deferred rendering is enabled)",
-      "params": "标签内容首次渲染时触发（仅在开启延迟渲染后触发）",
+      "params": "name: string | number, title: string",
       "description_zh": "标签内容首次渲染时触发（仅在开启延迟渲染后触发）"
     },
     {
       "name": "scroll",
       "description": "Triggered on scrolling, only in sticky mode",
-      "params": "滚动时触发，仅在 sticky 模式下生效",
+      "params": "{ scrollTop: number, isFixed: boolean }",
       "description_zh": "滚动时触发，仅在 sticky 模式下生效"
     },
     {
@@ -304,6 +304,24 @@
       "description": "The callback function before switching tags, returning 'false' to prevent switching, supports returning Promise",
       "params": "切换标签前的回调函数，返回 `false` 可阻止切换，支持返回 Promise",
       "description_zh": "切换标签前的回调函数，返回 `false` 可阻止切换，支持返回 Promise"
+    }
+  ],
+  "suggestions": ["van-tab"],
+  "slots": [
+    {
+      "name": "nav-left",
+      "description": "标签栏左侧内容",
+      "description_zh": "标签栏左侧内容"
+    },
+    {
+      "name": "nav-right",
+      "description": "标签栏右侧内容",
+      "description_zh": "标签栏右侧内容"
+    },
+    {
+      "name": "nav-bottom",
+      "description": "标签栏下方内容",
+      "description_zh": "标签栏下方内容"
     }
   ],
   "link": "https://vant-contrib.gitee.io/vant/#/zh-CN/tab",

@@ -126,23 +126,23 @@ export function activate(context: vscode.ExtensionContext) {
         const result = completionsCallback.filter((item: any) => isValue
           ? hasProps.find((prop: any) => isSamePrefix(item.label, prop))
           : !hasProps.find((prop: any) => isSamePrefix(item.label, prop))).filter((item: any) => item.label.startsWith(propName)).map((item: any) =>
-            item.label.match(/^\w+={[^}]*}/)
-              ? undefined
-              : createCompletionItem(isValue
-                ? ({
+          item.label.match(/^\w+={[^}]*}/)
+            ? undefined
+            : createCompletionItem(isValue
+              ? ({
                   content: item.label,
                   snippet: item.label.replace(/^\w+=\"([^"]+)\".*/, '$1'),
                   documentation: item.documentation,
                   detail: item.detail,
                   type: item.kind,
                 })
-                : ({
+              : ({
                   content: item.label,
                   documentation: item.documentation,
                   detail: item.detail,
                   type: item.kind,
                 })),
-          ).filter(Boolean)
+        ).filter(Boolean)
         const events = lan === 'vue'
           ? []
           : isValue
@@ -236,7 +236,7 @@ export function activate(context: vscode.ExtensionContext) {
       if (!editor)
         return
       const range = document.getWordRangeAtPosition(position) as any
-      let word = document.getText(range)
+      const word = document.getText(range)
       if (!optionsComponents.data.length || !word)
         return new vscode.Hover('')
 
@@ -248,8 +248,7 @@ export function activate(context: vscode.ExtensionContext) {
 
       if (tableDocument)
         return new vscode.Hover(tableDocument)
-
-    }
+    },
   }))
 }
 
@@ -309,7 +308,7 @@ function findUI() {
 
     UiCompletions = UINames.reduce((result: any, option: string) =>
       Object.assign(result, (UI as any)[option]?.(extensionContext))
-      , {} as any)
+    , {} as any)
   })
 }
 

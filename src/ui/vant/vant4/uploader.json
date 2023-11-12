@@ -217,38 +217,55 @@
     {
       "name": "oversize",
       "description": "Triggered when the file size exceeds the limit",
-      "params": "文件大小超过限制时触发",
+      "params": "file: object, detail: object",
       "description_zh": "文件大小超过限制时触发"
     },
     {
       "name": "click-upload",
       "description": "Triggered when you click on the upload region",
-      "params": "点击上传区域时触发",
+      "params": "event: MouseEvent",
       "description_zh": "点击上传区域时触发"
     },
     {
       "name": "click-preview",
       "description": "Triggered when you click on the preview image",
-      "params": "点击预览图时触发",
+      "params": "file: object, detail: object",
       "description_zh": "点击预览图时触发"
     },
     {
       "name": "click-reupload",
       "description": "Triggered when you click Overwrite upload",
-      "params": "点击覆盖上传时触发",
+      "params": "file: object, detail: object",
       "description_zh": "点击覆盖上传时触发"
     },
     {
       "name": "close-preview",
       "description": "Triggered when full-screen image preview is turned off",
-      "params": "关闭全屏图片预览时触发",
+      "params": "-",
       "description_zh": "关闭全屏图片预览时触发"
     },
     {
       "name": "delete",
       "description": "Triggered when a file preview is deleted",
-      "params": "删除文件预览时触发",
+      "params": "file: object, detail: object",
       "description_zh": "删除文件预览时触发"
+    }
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "description": "自定义上传区域",
+      "description_zh": "自定义上传区域"
+    },
+    {
+      "name": "preview-delete",
+      "description": "自定义删除按钮",
+      "description_zh": "自定义删除按钮"
+    },
+    {
+      "name": "preview-cover",
+      "description": "自定义覆盖在预览区域上方的内容",
+      "description_zh": "自定义覆盖在预览区域上方的内容"
     }
   ],
   "link": "https://vant-contrib.gitee.io/vant/#/zh-CN/uploader",

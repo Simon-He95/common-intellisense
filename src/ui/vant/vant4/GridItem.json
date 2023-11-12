@@ -1,21 +1,23 @@
 {
   "name": "VanGridItem",
   "props": {
-    "text": {
+    ":text": {
       "value": "",
       "description": "writing",
       "default": "-",
       "type": "string",
       "description_zh": "文字",
-      "required": true
+      "required": true,
+      "foreach": true
     },
-    "icon": {
+    ":icon": {
       "value": "",
       "description": "The icon name or image link is equivalent to the [name attribute](https://vant-docs.netlify.app/#/en-US/icon#props) of the icon component.",
       "default": "-",
       "type": "string",
       "description_zh": "图标名称或图片链接，等同于 Icon 组件的 [name 属性](https://vant-docs.netlify.app/#/zh-CN/icon#props)",
-      "required": true
+      "required": true,
+      "foreach": true
     },
     "icon-prefix": {
       "value": "",
@@ -80,8 +82,9 @@
     {
       "name": "click",
       "description": "Triggers when you click on a grid",
-      "params": "点击格子时触发",
-      "description_zh": "点击格子时触发"
+      "params": "event: MouseEvent",
+      "description_zh": "点击格子时触发",
+      "value": ""
     }
   ],
   "link": "https://vant-contrib.gitee.io/vant/#/zh-CN/grid",

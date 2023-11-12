@@ -335,62 +335,99 @@
     {
       "name": "update:model-value",
       "description": "Triggered when the content of the input box changes",
-      "params": "输入框内容变化时触发",
+      "params": "value: string (当前输入的值)",
       "description_zh": "输入框内容变化时触发"
     },
     {
       "name": "focus",
       "description": "Triggers when the input box gains focus",
-      "params": "输入框获得焦点时触发",
+      "params": "event: Event",
       "description_zh": "输入框获得焦点时触发"
     },
     {
       "name": "blur",
       "description": "Triggered when the input box loses focus",
-      "params": "输入框失去焦点时触发",
+      "params": "event: Event",
       "description_zh": "输入框失去焦点时触发"
     },
     {
       "name": "clear",
       "description": "Triggered when the Clear button is clicked",
-      "params": "点击清除按钮时触发",
+      "params": "event: MouseEvent",
       "description_zh": "点击清除按钮时触发"
     },
     {
       "name": "click",
       "description": "Triggered when a component is clicked",
-      "params": "点击组件时触发",
+      "params": "event: MouseEvent",
       "description_zh": "点击组件时触发"
     },
     {
       "name": "click-input",
       "description": "Triggered when you click on the input area",
-      "params": "点击输入区域时触发",
+      "params": "event: MouseEvent",
       "description_zh": "点击输入区域时触发"
     },
     {
       "name": "click-left-icon",
       "description": "Triggered when you click on the icon on the left",
-      "params": "点击左侧图标时触发",
+      "params": "event: MouseEvent",
       "description_zh": "点击左侧图标时触发"
     },
     {
       "name": "click-right-icon",
       "description": "Triggered when you click on the icon on the right",
-      "params": "点击右侧图标时触发",
+      "params": "event: MouseEvent",
       "description_zh": "点击右侧图标时触发"
     },
     {
       "name": "start-validate",
       "description": "Triggered when the form validation is started",
-      "params": "开始表单校验时触发",
+      "params": "-",
       "description_zh": "开始表单校验时触发"
     },
     {
       "name": "end-validate",
       "description": "Triggered when the form validation is ended",
-      "params": "结束表单校验时触发",
+      "params": "{ status: string, message: string }",
       "description_zh": "结束表单校验时触发"
+    }
+  ],
+  "slots": [
+    {
+      "name": "label",
+      "description": "自定义输入框左侧文本",
+      "description_zh": "自定义输入框左侧文本"
+    },
+    {
+      "name": "input",
+      "description": "自定义输入框，使用此插槽后，与输入框相关的属性和事件将失效",
+      "description_zh": "自定义输入框，使用此插槽后，与输入框相关的属性和事件将失效"
+    },
+    {
+      "name": "left-icon",
+      "description": "自定义输入框头部图标",
+      "description_zh": "自定义输入框头部图标"
+    },
+    {
+      "name": "right-icon",
+      "description": "自定义输入框尾部图标",
+      "description_zh": "自定义输入框尾部图标"
+    },
+    {
+      "name": "button",
+      "description": "自定义输入框尾部按钮",
+      "description_zh": "自定义输入框尾部按钮"
+    },
+    {
+      "name": "error-message",
+      "description": "自定义底部错误提示文案",
+      "description_zh": "自定义底部错误提示文案"
+    },
+    {
+      "name": "extra",
+      "description": "自定义输入框最右侧的额外内容",
+      "description_zh": "自定义输入框最右侧的额外内容"
     }
   ],
   "link": "https://vant-docs.netlify.app/#/en-US/field",

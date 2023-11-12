@@ -114,37 +114,43 @@
       "name": "submit",
       "description": "Submit the form, which is equivalent to the effect of clicking the submit button",
       "params": "-",
-      "description_zh": "提交表单，与点击提交按钮的效果等价"
+      "description_zh": "提交表单，与点击提交按钮的效果等价",
+      "value": ""
     },
     {
       "name": "getValues",
       "description": "Gets the current value of all form items",
       "params": "-",
-      "description_zh": "获取所有表单项当前的值"
+      "description_zh": "获取所有表单项当前的值",
+      "value": ""
     },
     {
       "name": "validate",
       "description": "Validating a form, which supports passing in one or more 'name' to validate a single or partial form item, and when 'name' is not passed, all form items are validated",
       "params": "name?: string | string[]",
-      "description_zh": "验证表单，支持传入一个或多个 `name` 来验证单个或部分表单项，不传入 `name` 时，会验证所有表单项"
+      "description_zh": "验证表单，支持传入一个或多个 `name` 来验证单个或部分表单项，不传入 `name` 时，会验证所有表单项",
+      "value": ""
     },
     {
       "name": "resetValidation",
       "description": "Validation prompt for resetting form items, which allows you to pass in one or more 'name' to reset a single or partial form item, and when 'name' is not passed, all form items are reset",
       "params": "name?: string | string[]",
-      "description_zh": "重置表单项的验证提示，支持传入一个或多个 `name` 来重置单个或部分表单项，不传入 `name` 时，会重置所有表单项"
+      "description_zh": "重置表单项的验证提示，支持传入一个或多个 `name` 来重置单个或部分表单项，不传入 `name` 时，会重置所有表单项",
+      "value": ""
     },
     {
       "name": "getValidationStatus",
       "description": "Get the validation status of all form items, including 'passed', 'failed', unvalidated",
       "params": "-",
-      "description_zh": "获取所有表单项的校验状态，状态包括 `passed`、`failed`、unvalidated"
+      "description_zh": "获取所有表单项的校验状态，状态包括 `passed`、`failed`、unvalidated",
+      "value": ""
     },
     {
       "name": "scrollToField",
       "description": "Scroll to the position of the corresponding form item, the default scroll to the top, and the second parameter is false to scroll to the bottom",
       "params": "name: string, alignToTop: boolean",
-      "description_zh": "滚动到对应表单项的位置，默认滚动到顶部，第二个参数传 false 可滚动至底部"
+      "description_zh": "滚动到对应表单项的位置，默认滚动到顶部，第二个参数传 false 可滚动至底部",
+      "value": ""
     }
   ],
   "typeDetail": {
@@ -207,15 +213,20 @@
     {
       "name": "submit",
       "description": "Triggered when the form is submitted and validated",
-      "params": "提交表单且验证通过后触发",
-      "description_zh": "提交表单且验证通过后触发"
+      "params": "values: object",
+      "description_zh": "提交表单且验证通过后触发",
+      "value": ""
     },
     {
       "name": "failed",
       "description": "Triggered when the form is submitted and the verification fails",
-      "params": "提交表单且验证不通过后触发",
-      "description_zh": "提交表单且验证不通过后触发"
+      "params": "errorInfo: { values: object, errors: object[] }",
+      "description_zh": "提交表单且验证不通过后触发",
+      "value": ""
     }
+  ],
+  "suggestions": [
+    "van-cell-group"
   ],
   "link": "https://vant-contrib.gitee.io/vant/#/zh-CN/form",
   "link_zh": "https://vant-contrib.gitee.io/vant/#/zh-CN/form"

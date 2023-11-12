@@ -265,32 +265,49 @@
     {
       "name": "close",
       "description": "Triggered when turned off",
-      "params": "关闭时触发",
+      "params": "{ index: number, url: string }",
       "description_zh": "关闭时触发"
     },
     {
       "name": "closed",
       "description": "Turns off and triggers after the animation ends",
-      "params": "关闭且且动画结束后触发",
+      "params": "-",
       "description_zh": "关闭且且动画结束后触发"
     },
     {
       "name": "change",
       "description": "Triggered when the current image is switched",
-      "params": "切换当前图片时触发",
+      "params": "index: number",
       "description_zh": "切换当前图片时触发"
     },
     {
       "name": "scale",
       "description": "Triggered when the current picture is zoomed",
-      "params": "缩放当前图片时触发",
+      "params": "{ index: number, scale: number }",
       "description_zh": "缩放当前图片时触发"
     },
     {
       "name": "long-press",
       "description": "Triggered when you press and hold the current image",
-      "params": "长按当前图片时触发",
+      "params": "{ index: number }",
       "description_zh": "长按当前图片时触发"
+    }
+  ],
+  "slots": [
+    {
+      "name": "index",
+      "description": "自定义页码内容",
+      "description_zh": "自定义页码内容"
+    },
+    {
+      "name": "cover",
+      "description": "自定义覆盖在图片预览上方的内容",
+      "description_zh": "自定义覆盖在图片预览上方的内容"
+    },
+    {
+      "name": "image",
+      "description": "自定义图片内容",
+      "description_zh": "自定义图片内容"
     }
   ],
   "link": "https://vant-contrib.gitee.io/vant/#/zh-CN/image-preview",

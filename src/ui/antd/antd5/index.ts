@@ -86,6 +86,7 @@ import Transfer from './Transfer.json'
 import Tree from './Tree.json'
 import TreeSelect from './TreeSelect.json'
 import TypographyParagraph from './TypographyParagraph.json'
+import Typography from './Typography.json'
 import TypographyText from './TypographyText.json'
 import TypographyTitle from './TypographyTitle.json'
 import TypographyLink from './TypographyLink.json'
@@ -187,6 +188,7 @@ export function antd5() {
     Tree,
     TreeSelect,
     TypographyParagraph,
+    Typography,
     TypographyText,
     TypographyTitle,
     Upload,
@@ -211,7 +213,7 @@ export function antd5Components() {
     ? [
         [Flex, '弹性布局'],
         [Button, '按钮', '<Button type="primary">Primary Button</Button>'],
-        ['Typography', '排版', '<Typography></Typography>'],
+        [Typography, '排版', '<Typography></Typography>'],
         [TypographyParagraph, '段落', '<TypographyParagraph></TypographyParagraph>'],
         [TypographyLink, '链接', '<TypographyLink></TypographyLink>'],
         [TypographyText, '文本', '<TypographyText></TypographyText>'],
@@ -460,7 +462,7 @@ export function antd5Components() {
     : [
         [Flex, 'Flex box'],
         [Button, 'Button', '<Button type="primary">Primary Button</Button>'],
-        ['Typography', 'Typography', '<Typography></Typography>'],
+        [Typography, 'Typography', '<Typography></Typography>'],
         [TypographyParagraph, 'TypographyParagraph', '<TypographyParagraph></TypographyParagraph>'],
         [TypographyLink, 'TypographyLink', '<TypographyLink></TypographyLink>'],
         [TypographyText, 'TypographyText', '<TypographyText></TypographyText>'],

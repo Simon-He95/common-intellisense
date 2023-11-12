@@ -92,6 +92,7 @@ import ATour from './Tour.json'
 import ATransfer from './Transfer.json'
 import ATree from './Tree.json'
 import ATreeSelect from './TreeSelect.json'
+import ATypography from './Typography.json'
 import ATypographyLink from './TypographyLink.json'
 import ATypographyParagraph from './TypographyParagraph.json'
 import ATypographyText from './TypographyText.json'
@@ -196,6 +197,7 @@ export function antDesignVue4() {
     ATransfer,
     ATree,
     ATreeSelect,
+    ATypography,
     ATypographyLink,
     ATypographyParagraph,
     ATypographyText,
@@ -245,6 +247,7 @@ export function antDesignVue4Components() {
         [ATypographyText, '排版文本'],
         [ATypographyTitle, '排版标题'],
         [ATypographyLink, '排版超链接'],
+        [ATypography, '排版'],
         [ASelectOptionGroup, '备选项进行分组展示'],
         [ACascader, '级联选择器'],
         [ACheckableTag, '进行标记和分类的小标签。'],
@@ -348,6 +351,7 @@ export function antDesignVue4Components() {
         [ATypographyText, 'typography text'],
         [ATypographyTitle, 'typography title'],
         [ATypographyLink, 'typography hyperlink'],
+        [ATypography, 'typography'],
         [ASelectOptionGroup, 'Alternative options are displayed in groups'],
         [ACascader, 'cascading selector'],
         [ACheckableTag, 'Tag for categorizing or markup.'],
