@@ -33,42 +33,81 @@
       "type": "`sm` | `md` | `lg`",
       "default": "`md`",
       "description": "The popover content font size.",
-      "value": ["sm", "md", "lg"],
+      "value": [
+        "sm",
+        "md",
+        "lg"
+      ],
       "description_zh": "弹出框内容字体大小。"
     },
     "color": {
       "type": "`default` | `primary` | `secondary` | `success` | `warning` | `danger`",
       "default": "`default`",
       "description": "The popover color theme.",
-      "value": ["default", "primary", "secondary", "success", "warning", "danger"],
+      "value": [
+        "default",
+        "primary",
+        "secondary",
+        "success",
+        "warning",
+        "danger"
+      ],
       "description_zh": "弹出框颜色主题。"
     },
     "radius": {
       "type": "`none` | `sm` | `md` | `lg` | `full`",
       "default": "`lg`",
       "description": "The popover border radius.",
-      "value": ["none", "sm", "md", "lg", "full"],
+      "value": [
+        "none",
+        "sm",
+        "md",
+        "lg",
+        "full"
+      ],
       "description_zh": "弹出框边框半径。"
     },
     "shadow": {
       "type": "`none` | `sm` | `md` | `lg`",
       "default": "`lg`",
       "description": "The popover shadow.",
-      "value": ["none", "sm", "md", "lg"],
+      "value": [
+        "none",
+        "sm",
+        "md",
+        "lg"
+      ],
       "description_zh": "弹出框阴影。"
     },
     "backdrop": {
       "type": "`transparent` | `opaque` | `blur`",
       "default": "`transparent`",
       "description": "The popover backdrop type.",
-      "value": ["transparent", "opaque", "blur"],
+      "value": [
+        "transparent",
+        "opaque",
+        "blur"
+      ],
       "description_zh": "弹出框背景类型。"
     },
     "placement": {
       "type": "[PopoverPlacement](#popover-placement)",
       "default": "`bottom`",
       "description": "The placement of the popover relative to its trigger reference.",
-      "value": ["top", "bottom", "left", "right", "top-start", "top-end", "bottom-start", "bottom-end", "left-start", "left-end", "right-start", "right-end"],
+      "value": [
+        "top",
+        "bottom",
+        "left",
+        "right",
+        "top-start",
+        "top-end",
+        "bottom-start",
+        "bottom-end",
+        "left-start",
+        "left-end",
+        "right-start",
+        "right-end"
+      ],
       "description_zh": "弹出框相对于其触发器引用的位置。"
     },
     ":state": {
@@ -117,7 +156,13 @@
       "type": "`dialog` | `menu` | `listbox` | `tree` | `grid`;",
       "default": "`dialog`",
       "description": "Type of popover that is opened by the trigger.",
-      "value": ["dialog", "menu", "listbox", "tree", "grid"],
+      "value": [
+        "dialog",
+        "menu",
+        "listbox",
+        "tree",
+        "grid"
+      ],
       "description_zh": "触发器打开的弹出框的类型。"
     },
     "showArrow": {
@@ -205,6 +250,38 @@
       "description_zh": "允许为弹出框插槽设置自定义类名。"
     }
   },
+  "slots": [
+    {
+      "name": "base",
+      "description": "The main popover slot, it wraps the popover content and contains the arrow as a pseudo-element (::before).",
+      "description_zh": "The main popover slot, it wraps the popover content and contains the arrow as a pseudo-element (::before).",
+      "params": ""
+    },
+    {
+      "name": "trigger",
+      "description": "The popover trigger slot, it has small styles to ensure the trigger works correctly.",
+      "description_zh": "The popover trigger slot, it has small styles to ensure the trigger works correctly.",
+      "params": ""
+    },
+    {
+      "name": "backdrop",
+      "description": "The backdrop slot, it contains the backdrop styles.",
+      "description_zh": "The backdrop slot, it contains the backdrop styles.",
+      "params": ""
+    },
+    {
+      "name": "content",
+      "description": "The content slot, it contains the popover content.",
+      "description_zh": "The content slot, it contains the popover content.",
+      "params": ""
+    }
+  ],
+  "suggestions": [
+    "PopoverContent",
+    "PopoverContent",
+    "PopoverPlacement",
+    "PopoverTrigger"
+  ],
   "link": "https://nextui.org/docs/components/popover",
   "link_zh": "https://nextui.org/docs/components/popover"
 }

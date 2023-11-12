@@ -1,9 +1,14 @@
 import { componentsReducer, propsReducer } from '../../utils'
 import Accordion from './Accordion.json'
+import Autocomplete from './Autocomplete.json'
+import AutocompleteItem from './AutocompleteItem.json'
+import AutocompleteSection from './AutocompleteSection.json'
 import AccordionItem from './AccordionItem.json'
 import Avatar from './Avatar.json'
 import AvatarGroup from './AvatarGroup.json'
 import Badge from './Badge.json'
+import Breadcrumbs from './Breadcrumbs.json'
+import BreadcrumbItem from './BreadcrumbItem.json'
 import Button from './Button.json'
 import ButtonGroup from './ButtonGroup.json'
 import Card from './Card.json'
@@ -33,11 +38,13 @@ import NavbarMenu from './NavbarMenu.json'
 import NavbarMenuToggle from './NavbarMenuToggle.json'
 import Pagination from './Pagination.json'
 import Popover from './Popover.json'
+import Progress from './Progress.json'
 import PopoverContent from './PopoverContent.json'
 import PopoverTrigger from './PopoverTrigger.json'
 import Radio from './Radio.json'
 import RadioGroup from './RadioGroup.json'
 import Select from './Select.json'
+import Slider from './Slider.json'
 import ShadowScroll from './ShadowScroll.json'
 import Skeleton from './Skeleton.json'
 import Snippet from './Snippet.json'
@@ -59,9 +66,14 @@ export function nextui2() {
   const map: any = [
     Accordion,
     AccordionItem,
+    Autocomplete,
+    AutocompleteItem,
+    AutocompleteSection,
     Avatar,
     AvatarGroup,
     Badge,
+    Breadcrumbs,
+    BreadcrumbItem,
     Button,
     ButtonGroup,
     Card,
@@ -91,11 +103,13 @@ export function nextui2() {
     NavbarMenuToggle,
     Pagination,
     Popover,
+    Progress,
     PopoverContent,
     PopoverTrigger,
     Radio,
     RadioGroup,
     Select,
+    Slider,
     ShadowScroll,
     Skeleton,
     Snippet,
@@ -130,6 +144,21 @@ export function nextui2Components() {
       '<AccordionItem></AccordionItem>',
     ],
     [
+      Autocomplete,
+      'Autocomplete',
+      '<Autocomplete></Autocomplete>',
+    ],
+    [
+      AutocompleteItem,
+      'AutocompleteItem',
+      '<AutocompleteItem></AutocompleteItem>',
+    ],
+    [
+      AutocompleteSection,
+      'AutocompleteSection',
+      '<AutocompleteSection></AutocompleteSection>',
+    ],
+    [
       Avatar,
       'Avatar',
       '<Avatar></Avatar>',
@@ -143,6 +172,16 @@ export function nextui2Components() {
       Badge,
       'Badge',
       '<Badge></Badge>',
+    ],
+    [
+      Breadcrumbs,
+      'Breadcrumbs',
+      '<Breadcrumbs></Breadcrumbs>',
+    ],
+    [
+      BreadcrumbItem,
+      'BreadcrumbItem',
+      '<BreadcrumbItem></BreadcrumbItem>',
     ],
     [
       Button,
@@ -290,6 +329,11 @@ export function nextui2Components() {
       '<Popover></Popover>',
     ],
     [
+      Progress,
+      'Progress',
+      '<Progress></Progress>',
+    ],
+    [
       PopoverContent,
       'PopoverContent',
       '<PopoverContent></PopoverContent>',
@@ -308,6 +352,11 @@ export function nextui2Components() {
       RadioGroup,
       'RadioGroup',
       '<RadioGroup></RadioGroup>',
+    ],
+    [
+      Slider,
+      'Slider',
+      '<Slider></Slider>',
     ],
     [
       Select,

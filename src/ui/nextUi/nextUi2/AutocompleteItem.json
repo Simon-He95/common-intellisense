@@ -1,0 +1,163 @@
+{
+  "name": "AutocompleteItem",
+  "props": {
+    ":children": {
+      "default": "-",
+      "value": "",
+      "type": "ReactNode[]",
+      "description": "The children to render. Usually a list of ListboxItem or ListboxSection",
+      "description_zh": "The children to render. Usually a list of ListboxItem or ListboxSection"
+    },
+    ":items": {
+      "default": "-",
+      "value": "",
+      "type": "Iterable<T>",
+      "description": "Item objects in the collection. (dynamic)",
+      "description_zh": "Item objects in the collection. (dynamic)"
+    },
+    "variant": {
+      "default": "solid",
+      "value": ["solid", "bordered", "light", "flat", "faded", "shadow"],
+      "type": "solid | bordered | light | flat | faded | shadow",
+      "description": "The listbox items appearance style.",
+      "description_zh": "The listbox items appearance style."
+    },
+    "color": {
+      "default": "default",
+      "value": ["default", "primary", "secondary", "success", "warning", "danger"],
+      "type": "default | primary | secondary | success | warning | danger",
+      "description": "The listbox items color theme.",
+      "description_zh": "The listbox items color theme."
+    },
+    "selectionMode": {
+      "default": "-",
+      "value": ["none", "single", ",multiple"],
+      "type": "none | single | multiple",
+      "description": "The type of selection that is allowed in the collection.",
+      "description_zh": "The type of selection that is allowed in the collection."
+    },
+    ":selectedKeys": {
+      "default": "-",
+      "value": "",
+      "type": "React.Key[]",
+      "description": "The currently selected keys in the collection (controlled).",
+      "description_zh": "The currently selected keys in the collection (controlled)."
+    },
+    ":disabledKeys": {
+      "default": "-",
+      "value": "",
+      "type": "React.Key[]",
+      "description": "The item keys that are disabled. These items cannot be selected, focused, or otherwise interacted with.",
+      "description_zh": "The item keys that are disabled. These items cannot be selected, focused, or otherwise interacted with."
+    },
+    ":defaultSelectedKeys": {
+      "default": "-",
+      "value": "",
+      "type": "all | React.Key[]",
+      "description": "The initial selected keys in the collection (uncontrolled).",
+      "description_zh": "The initial selected keys in the collection (uncontrolled)."
+    },
+    "disallowEmptySelection": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the collection allows empty selection.",
+      "description_zh": "Whether the collection allows empty selection."
+    },
+    "shouldHighlightOnFocus": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the focused item should be highlighted. It applies the same styles to the items as when hovered.",
+      "description_zh": "Whether the focused item should be highlighted. It applies the same styles to the items as when hovered."
+    },
+    "autoFocus": {
+      "default": "false",
+      "value": "",
+      "type": "boolean | first | last",
+      "description": "Where the focus should be set.",
+      "description_zh": "Where the focus should be set."
+    },
+    ":topContent": {
+      "default": "-",
+      "value": "",
+      "type": "ReactNode",
+      "description": "The content to display above the listbox items.",
+      "description_zh": "The content to display above the listbox items."
+    },
+    "bottomContent": {
+      "default": "-",
+      "value": "",
+      "type": "ReactNode",
+      "description": "The content to display below the listbox items.",
+      "description_zh": "The content to display below the listbox items."
+    },
+    "emptyContent": {
+      "default": "No items.",
+      "value": "",
+      "type": "ReactNode",
+      "description": "The content to display when the collection is empty.",
+      "description_zh": "The content to display when the collection is empty."
+    },
+    "shouldFocusWrap": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether keyboard navigation is circular.",
+      "description_zh": "Whether keyboard navigation is circular."
+    },
+    "hideEmptyContent": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to not display the empty content when the collection is empty.",
+      "description_zh": "Whether to not display the empty content when the collection is empty."
+    },
+    "hideSelectedIcon": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to hide the check icon when the items are selected.",
+      "description_zh": "Whether to hide the check icon when the items are selected."
+    },
+    "disableAnimation": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to disable the animation of the listbox items.",
+      "description_zh": "Whether to disable the animation of the listbox items."
+    },
+    "classNames": {
+      "default": "-",
+      "value": "",
+      "type": "Record<\"base\"｜ \"list\"｜ \"emptyContent\", string>",
+      "description": "Allows to set custom class names for the listbox slots.",
+      "description_zh": "Allows to set custom class names for the listbox slots."
+    },
+    "itemClasses": {
+      "default": "-",
+      "value": "",
+      "type": "Record<\"base\"｜ \"wrapper\"｜ \"title\"｜ \"description\"｜ \"selectedIcon\", string>",
+      "description": "Allows to set custom class names for the listbox item slots.",
+      "description_zh": "Allows to set custom class names for the listbox item slots."
+    }
+  },
+  "methods": [],
+  "link": "https://nextui.org/docs/components/autocomplete#api",
+  "link_zh": "https://nextui.org/docs/components/autocomplete#api",
+  "events": [
+    {
+      "name": "onAction",
+      "description": "Handler that is called when an item is selected.",
+      "description_zh": "Handler that is called when an item is selected.",
+      "params": "(key: React.Key) => void"
+    },
+    {
+      "name": "onSelectionChange",
+      "description": "Handler that is called when the selection changes.",
+      "description_zh": "Handler that is called when the selection changes.",
+      "params": "(keys: React.Key[]) => void"
+    }
+  ],
+  "typeDetail": {}
+}

@@ -1,0 +1,332 @@
+{
+  "name": "Slider",
+  "props": {
+    ":label": {
+      "default": "-",
+      "value": "",
+      "type": "ReactNode",
+      "description": "The content to display as the label.",
+      "description_zh": "The content to display as the label."
+    },
+    "name": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "The name of the input element, used when submitting an HTML form. See MDN.",
+      "description_zh": "The name of the input element, used when submitting an HTML form. See MDN."
+    },
+    "size": {
+      "default": "md",
+      "value": [
+        "sm",
+        "md",
+        "lg"
+      ],
+      "type": "sm | md | lg",
+      "description": "The size of the Slider filler and thumb.",
+      "description_zh": "The size of the Slider filler and thumb."
+    },
+    "color": {
+      "default": "primary",
+      "value": [
+        "foreground",
+        "primary",
+        "secondary",
+        "success",
+        "warning",
+        "danger"
+      ],
+      "type": "foreground | primary | secondary | success | warning | danger",
+      "description": "The color of the filler and thumb.",
+      "description_zh": "The color of the filler and thumb."
+    },
+    "radius": {
+      "default": "full",
+      "value": [
+        "none",
+        "sm",
+        "md",
+        "lg",
+        "full"
+      ],
+      "type": "none | sm | md | lg | full",
+      "description": "The Slider's thumbs border radius.",
+      "description_zh": "The Slider's thumbs border radius."
+    },
+    ":step": {
+      "default": "1",
+      "value": "",
+      "type": "number",
+      "description": "The Slider's step value.",
+      "description_zh": "The Slider's step value.",
+      "required": true
+    },
+    ":value": {
+      "default": "-",
+      "value": "",
+      "type": "number",
+      "description": "The current value (controlled).",
+      "description_zh": "The current value (controlled)."
+    },
+    ":defaultValue": {
+      "default": "-",
+      "value": "",
+      "type": "number",
+      "description": "The default value (uncontrolled).",
+      "description_zh": "The default value (uncontrolled)."
+    },
+    ":minValue": {
+      "default": "0",
+      "value": "",
+      "type": "number",
+      "description": "The slider's minimum value.",
+      "description_zh": "The slider's minimum value."
+    },
+    ":maxValue": {
+      "default": "100",
+      "value": "",
+      "type": "number",
+      "description": "The slider's maximum value.",
+      "description_zh": "The slider's maximum value."
+    },
+    "orientation": {
+      "default": "horizontal",
+      "value": [
+        "horizontal",
+        "vertical"
+      ],
+      "type": "horizontal | vertical",
+      "description": "The orientation of the Slider.",
+      "description_zh": "The orientation of the Slider."
+    },
+    ":fillOffset": {
+      "default": "-",
+      "value": "",
+      "type": "number",
+      "description": "The offset from which to start the fill.",
+      "description_zh": "The offset from which to start the fill."
+    },
+    "showSteps": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to show the steps indicators.",
+      "description_zh": "Whether to show the steps indicators."
+    },
+    "showTooltip": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to show a tooltip with the current thumb value when the user hovers or drags the thumb.",
+      "description_zh": "Whether to show a tooltip with the current thumb value when the user hovers or drags the thumb."
+    },
+    ":marks": {
+      "default": "-",
+      "value": "",
+      "type": "SliderStepMarks",
+      "description": "The marks to display on the Slider's steps.",
+      "description_zh": "The marks to display on the Slider's steps."
+    },
+    ":startContent": {
+      "default": "-",
+      "value": "",
+      "type": "ReactNode",
+      "description": "The content to display at the beginning of the Slider.",
+      "description_zh": "The content to display at the beginning of the Slider."
+    },
+    ":endContent": {
+      "default": "-",
+      "value": "",
+      "type": "ReactNode",
+      "description": "The content to display at the end of the Slider.",
+      "description_zh": "The content to display at the end of the Slider."
+    },
+    ":formatOptions": {
+      "default": "-",
+      "value": "",
+      "type": "Intl.NumberFormat",
+      "description": "The options to format the value.",
+      "description_zh": "The options to format the value."
+    },
+    ":tooltipValueFormatOptions": {
+      "default": "-",
+      "value": "",
+      "type": "Intl.NumberFormat",
+      "description": "The options to format the tooltip value. By default, it uses the same options as formatOptions.",
+      "description_zh": "The options to format the tooltip value. By default, it uses the same options as formatOptions."
+    },
+    ":tooltipProps": {
+      "default": "-",
+      "value": "",
+      "type": "TooltipProps",
+      "description": "The props to pass to the thumbs's tooltip.",
+      "description_zh": "The props to pass to the thumbs's tooltip."
+    },
+    "showOutline": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to show a small outline around the thumbs.",
+      "description_zh": "Whether to show a small outline around the thumbs."
+    },
+    "hideValue": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to hide the Slider value.",
+      "description_zh": "Whether to hide the Slider value."
+    },
+    "hideThumb": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to hide all the Slider thumbs.",
+      "description_zh": "Whether to hide all the Slider thumbs."
+    },
+    "disableThumbScale": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to disable the thumb scale animation.",
+      "description_zh": "Whether to disable the thumb scale animation."
+    },
+    "isDisabled": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the whole Slider is disabled.",
+      "description_zh": "Whether the whole Slider is disabled."
+    },
+    "disableAnimation": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to disable the Slider animations.",
+      "description_zh": "Whether to disable the Slider animations."
+    },
+    "classNames": {
+      "default": "-",
+      "value": "",
+      "type": "Record<\"base\"｜\"labelWrapper\"｜\"label\"｜ \"value\" ｜ \"step\" ｜ \"mark\" ｜ \"trackWrapper\" ｜ \"track\"｜ \"output\" ｜ \"filler\" ｜ \"thumb\" ｜ \"startContent\" ｜ \"endContent\", string>",
+      "description": "Allows to set custom class names for the Slider slots.",
+      "description_zh": "Allows to set custom class names for the Slider slots."
+    }
+  },
+  "methods": [
+    {
+      "name": "getValue",
+      "description": "A function to format the value. Overrides default formatted number.",
+      "description_zh": "A function to format the value. Overrides default formatted number.",
+      "params": "(value: SliderValue) => string"
+    },
+    {
+      "name": "renderLabel",
+      "description": "A function to render the label.",
+      "description_zh": "A function to render the label.",
+      "params": "(props: DOMAttributes<HTMLLabelElement>) => ReactNode"
+    },
+    {
+      "name": "renderValue",
+      "description": "A function to render the value.",
+      "description_zh": "A function to render the value.",
+      "params": "(props: DOMAttributes<HTMLOutputElement>) => ReactNode"
+    },
+    {
+      "name": "renderThumb",
+      "description": "A function to render the thumbs. The index prop will tell you which thumb is being rendered.",
+      "description_zh": "A function to render the thumbs. The index prop will tell you which thumb is being rendered.",
+      "params": "(props: DOMAttributes<HTMLDivElement> & {index?: number}) => ReactNode"
+    }
+  ],
+  "link": "https://nextui.org/docs/components/slider#slider-props",
+  "link_zh": "https://nextui.org/docs/components/slider#slider-props",
+  "events": [
+    {
+      "name": "onChange",
+      "description": "Callback fired when the value changes.",
+      "description_zh": "Callback fired when the value changes.",
+      "params": "(value: SliderValue) => void"
+    },
+    {
+      "name": "onChangeEnd",
+      "description": "Callback fired when the value changes and the user stops dragging the thumb.",
+      "description_zh": "Callback fired when the value changes and the user stops dragging the thumb.",
+      "params": "(value: SliderValue) => void"
+    }
+  ],
+  "slots": [
+    {
+      "name": "base",
+      "params": "",
+      "description": "The foundational slot, encompassing all other slots and elements. It serves as the primary container.",
+      "description_zh": "The foundational slot, encompassing all other slots and elements. It serves as the primary container."
+    },
+    {
+      "name": "labelWrapper",
+      "params": "",
+      "description": "The container for the Slider's label and value. It aligns these elements and ensures a consistent layout.",
+      "description_zh": "The container for the Slider's label and value. It aligns these elements and ensures a consistent layout."
+    },
+    {
+      "name": "label",
+      "params": "",
+      "description": "A dedicated slot to display the Slider's label.",
+      "description_zh": "A dedicated slot to display the Slider's label."
+    },
+    {
+      "name": "value",
+      "params": "",
+      "description": "Displays the current value of the Slider. Located within the labelWrapper.",
+      "description_zh": "Displays the current value of the Slider. Located within the labelWrapper."
+    },
+    {
+      "name": "step",
+      "params": "",
+      "description": "Represents individual steps or intervals on the Slider.",
+      "description_zh": "Represents individual steps or intervals on the Slider."
+    },
+    {
+      "name": "mark",
+      "params": "",
+      "description": "Denotes specific values or intervals along the Slider.",
+      "description_zh": "Denotes specific values or intervals along the Slider."
+    },
+    {
+      "name": "trackWrapper",
+      "params": "",
+      "description": "A container for the slider's track, ensuring it is consistently aligned and positioned.",
+      "description_zh": "A container for the slider's track, ensuring it is consistently aligned and positioned."
+    },
+    {
+      "name": "track",
+      "params": "",
+      "description": "The base bar of the Slider, along which the thumb moves.",
+      "description_zh": "The base bar of the Slider, along which the thumb moves."
+    },
+    {
+      "name": "filler",
+      "params": "",
+      "description": "A visual representation of the selected value, filling the track from the start point to the current thumb position.",
+      "description_zh": "A visual representation of the selected value, filling the track from the start point to the current thumb position."
+    },
+    {
+      "name": "thumb",
+      "params": "",
+      "description": "The interactive element that users drag along the track to select a value on the Slider.",
+      "description_zh": "The interactive element that users drag along the track to select a value on the Slider."
+    },
+    {
+      "name": "startContent",
+      "params": "",
+      "description": "A slot for additional content or icons at the beginning of the Slider.",
+      "description_zh": "A slot for additional content or icons at the beginning of the Slider."
+    },
+    {
+      "name": "endContent",
+      "params": "",
+      "description": " A slot for additional content or icons at the end of the Slider.",
+      "description_zh": " A slot for additional content or icons at the end of the Slider."
+    }
+  ],
+  "typeDetail": {}
+}
