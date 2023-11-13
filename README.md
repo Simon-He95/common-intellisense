@@ -47,7 +47,7 @@ Install the supported ui component library in your project and install the plug-
 
 ### [arco-design/react demo](assets/arco-design.gif)
 
-### [arco-design/vue demo](assets/arco-design-vue.gif)
+### [arco-design/vue demo](assets/acro-design-vue.gif)
 
 ## :coffee:
 

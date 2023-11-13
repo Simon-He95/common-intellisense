@@ -10,7 +10,7 @@
 
 ### 🍬 目前支持
 - vant 4
-- element 2
+- element-ui 2
 - antd 4、5
 - antdv 4
 - varlet 2
@@ -47,7 +47,7 @@
 
 ### [arco-design/react demo](assets/arco-design.gif)
 
-### [arco-design/vue demo](assets/arco-design-vue.gif)
+### [arco-design/vue demo](assets/acro-design-vue.gif)
 
 ## :coffee:
 
