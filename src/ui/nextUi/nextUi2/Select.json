@@ -6,31 +6,36 @@
       "name": "onClose",
       "description": "Callback fired when the select popover is closed.",
       "params": "`() => void`",
-      "description_zh": "关闭选择弹出框时触发回调。"
+      "description_zh": "关闭选择弹出框时触发回调。",
+      "value": ""
     },
     {
       "name": "onOpenChange",
       "description": "Callback fired when the select popover is opened or closed.",
       "params": "`(isOpen: boolean) => void`",
-      "description_zh": "打开或关闭选择弹出框时触发回调。"
+      "description_zh": "打开或关闭选择弹出框时触发回调。",
+      "value": ""
     },
     {
       "name": "onSelectionChange",
       "description": "Callback fired when the selected keys change.",
       "params": "`(keys: React.Key[]) => void`",
-      "description_zh": "当所选键更改时触发回调。"
+      "description_zh": "当所选键更改时触发回调。",
+      "value": ""
     },
     {
       "name": "onChange",
       "description": "Native select change event, fired when the selected value changes.",
       "params": "`React.ChangeEvent<HTMLSelectElement>`",
-      "description_zh": "本机选择更改事件，在所选值更改时触发。"
+      "description_zh": "本机选择更改事件，在所选值更改时触发。",
+      "value": ""
     },
     {
       "name": "renderValue",
       "description": "Function to render the value of the select. It renders the selected item by default.",
       "params": "[RenderValueFunction](#render-value-function)",
-      "description_zh": "用于呈现 select 值的函数。默认情况下，它呈现所选项目。"
+      "description_zh": "用于呈现 select 值的函数。默认情况下，它呈现所选项目。",
+      "value": ""
     }
   ],
   "props": {
@@ -52,7 +57,10 @@
       "type": "`single` | `multiple`",
       "default": "-",
       "description": "The type of selection that is allowed in the collection.",
-      "value": ["single", "multiple"],
+      "value": [
+        "single",
+        "multiple"
+      ],
       "description_zh": "集合中允许的选择类型。"
     },
     "selectedKeys": {
@@ -80,28 +88,50 @@
       "type": "`flat` | `bordered` | `faded` | `underlined`",
       "default": "`flat`",
       "description": "The variant of the select.",
-      "value": ["flat", "bordered", "faded", "underlined"],
+      "value": [
+        "flat",
+        "bordered",
+        "faded",
+        "underlined"
+      ],
       "description_zh": "select 的变体。"
     },
     "color": {
       "type": "`default` | `primary` | `secondary` | `success` | `warning` | `danger`",
       "default": "`default`",
       "description": "The color of the select.",
-      "value": ["default", "primary", "secondary", "success", "warning", "danger"],
+      "value": [
+        "default",
+        "primary",
+        "secondary",
+        "success",
+        "warning",
+        "danger"
+      ],
       "description_zh": "选择的颜色。"
     },
     "size": {
       "type": "`sm` | `md` | `lg`",
       "default": "`md`",
       "description": "The size of the select.",
-      "value": ["sm", "md", "lg"],
+      "value": [
+        "sm",
+        "md",
+        "lg"
+      ],
       "description_zh": "选择的大小。"
     },
     "radius": {
       "type": "`none` | `sm` | `md` | `lg` | `full`",
       "default": "-",
       "description": "The radius of the select.",
-      "value": ["none", "sm", "md", "lg", "full"],
+      "value": [
+        "none",
+        "sm",
+        "md",
+        "lg",
+        "full"
+      ],
       "description_zh": "选择的半径。"
     },
     "placeholder": {
@@ -116,7 +146,11 @@
       "type": "`inside` | `outside` | `outside-left`",
       "default": "`inside`",
       "description": "The position of the label.",
-      "value": ["inside", "outside", "outside-left"],
+      "value": [
+        "inside",
+        "outside",
+        "outside-left"
+      ],
       "description_zh": "标签的位置。"
     },
     ":label": {
@@ -228,7 +262,10 @@
       "type": "`valid` | `invalid`",
       "default": "-",
       "description": "Whether the select should display its \"valid\" or \"invalid\" visual styling. (**Deprecated**) use **isInvalid** instead.",
-      "value": ["valid", "invalid"],
+      "value": [
+        "valid",
+        "invalid"
+      ],
       "description_zh": "选择项是否应显示其“有效”或“无效”的视觉样式。（**已弃用**）请改用 **isInvalid**。"
     },
     "showScrollIndicators": {
@@ -299,83 +336,86 @@
     {
       "name": "base",
       "description": "The main wrapper of the select. This wraps the rest of the slots.",
-      "description_zh": "The main wrapper of the select. This wraps the rest of the slots.",
+      "description_zh": "select 的主包装器。这将包裹其余插槽。",
       "params": ""
     },
     {
       "name": "label",
       "description": "The label of the select.",
-      "description_zh": "The label of the select.",
+      "description_zh": "选择的标签。",
       "params": ""
     },
     {
       "name": "mainWrapper",
       "description": "Wraps the helperWrapper and the trigger slots.",
-      "description_zh": "Wraps the helperWrapper and the trigger slots.",
+      "description_zh": "包装 helperWrapper 和触发器槽。",
       "params": ""
     },
     {
       "name": "trigger",
       "description": "The trigger of the select. This wraps the label the inner wrapper and the selector icon.",
-      "description_zh": "The trigger of the select. This wraps the label the inner wrapper and the selector icon.",
+      "description_zh": "选择的触发器。这将包装标签、内部包装器和选择器图标。",
       "params": ""
     },
     {
       "name": "innerWrapper",
       "description": "The wrapper of the select content. This wraps the start/end content and the select value.",
-      "description_zh": "The wrapper of the select content. This wraps the start/end content and the select value.",
+      "description_zh": "所选内容的包装器。这将包装开始/结束内容和选择值。",
       "params": ""
     },
     {
       "name": "selectorIcon",
       "description": "The selector icon of the select. This is the icon that rotates when the select is open (data-open).",
-      "description_zh": "The selector icon of the select. This is the icon that rotates when the select is open (data-open).",
+      "description_zh": "选择的选择器图标。这是在选择打开（数据打开）时旋转的图标。",
       "params": ""
     },
     {
       "name": "value",
       "description": "The select value. This is also the slot that wraps the renderValue function result.",
-      "description_zh": "The select value. This is also the slot that wraps the renderValue function result.",
+      "description_zh": "选择值。这也是包装 renderValue 函数结果的插槽。",
       "params": ""
     },
     {
       "name": "listboxWrapper",
       "description": "The wrapper of the listbox. This wraps the listbox component, this slot is used on top of the scroll shadow component.",
-      "description_zh": "The wrapper of the listbox. This wraps the listbox component, this slot is used on top of the scroll shadow component.",
+      "description_zh": "列表框的包装器。这包装了 listbox 组件，这个槽用在滚动阴影组件的顶部。",
       "params": ""
     },
     {
       "name": "listbox",
       "description": "The listbox component. This is the component that wraps the select items.",
-      "description_zh": "The listbox component. This is the component that wraps the select items.",
+      "description_zh": "列表框组件。这是包装所选项的组件。",
       "params": ""
     },
     {
       "name": "popoverContent",
       "description": "The popover content slot. Use this to modify the popover content styles.",
-      "description_zh": "The popover content slot. Use this to modify the popover content styles.",
+      "description_zh": "弹出框内容槽。使用它来修改弹出框内容样式。",
       "params": ""
     },
     {
       "name": "helperWrapper",
       "description": "The wrapper of the helper text. This wraps the helper text and the error message.",
-      "description_zh": "The wrapper of the helper text. This wraps the helper text and the error message.",
+      "description_zh": "帮助程序文本的包装器。这将包装帮助程序文本和错误消息。",
       "params": ""
     },
     {
       "name": "description",
       "description": "The description of the select.",
-      "description_zh": "The description of the select.",
+      "description_zh": "select 的说明。",
       "params": ""
     },
     {
       "name": "errorMessage",
       "description": "The error message of the select.",
-      "description_zh": "The error message of the select.",
+      "description_zh": "select 的错误消息。",
       "params": ""
     }
   ],
-  "suggestions": ["SelectItem", "SelectSection"],
+  "suggestions": [
+    "SelectItem",
+    "SelectSection"
+  ],
   "link": "https://nextui.org/docs/components/select",
   "link_zh": "https://nextui.org/docs/components/select"
 }

@@ -6,19 +6,22 @@
       "name": "onOpenChange",
       "description": "Handler that is called when the tooltip's open state changes.",
       "params": "`(isOpen: boolean) => void`",
-      "description_zh": "在工具提示的打开状态更改时调用的处理程序。"
+      "description_zh": "在工具提示的打开状态更改时调用的处理程序。",
+      "value": ""
     },
     {
       "name": "shouldCloseOnInteractOutside",
       "description": "When user interacts with the argument element outside of the tooltip ref, return true if onClose should be called. This gives you a chance to filter out interaction with elements that should not dismiss the tooltip. By default, onClose will always be called on interaction outside the overlay ref.",
       "params": "`(e: HTMLElement) => void`",
-      "description_zh": "当用户与工具提示引用外部的参数元素交互时，如果应调用 onClose，则返回 true。这使你有机会筛选出与不应消除工具提示的元素的交互。默认情况下，onClose 将始终在覆盖 ref 外部的交互时调用。"
+      "description_zh": "当用户与工具提示引用外部的参数元素交互时，如果应调用 onClose，则返回 true。这使你有机会筛选出与不应消除工具提示的元素的交互。默认情况下，onClose 将始终在覆盖 ref 外部的交互时调用。",
+      "value": ""
     },
     {
       "name": "onClose",
       "description": "Handler that is called when the tooltip should close.",
       "params": "`() => void`",
-      "description_zh": "在工具提示应关闭时调用的处理程序。"
+      "description_zh": "在工具提示应关闭时调用的处理程序。",
+      "value": ""
     }
   ],
   "props": {
@@ -41,28 +44,50 @@
       "type": "`sm` | `md` | `lg`",
       "default": "`md`",
       "description": "The tooltip size. This change the `content` font size.",
-      "value": ["sm", "md", "lg"],
+      "value": [
+        "sm",
+        "md",
+        "lg"
+      ],
       "description_zh": "工具提示大小。这将更改“内容”字体大小。"
     },
     "color": {
       "type": "`default` | `primary` | `secondary` | `success` | `warning` | `danger`",
       "default": "`default`",
       "description": "The tooltip color theme.",
-      "value": ["default", "primary", "secondary", "success", "warning", "danger"],
+      "value": [
+        "default",
+        "primary",
+        "secondary",
+        "success",
+        "warning",
+        "danger"
+      ],
       "description_zh": "工具提示颜色主题。"
     },
     "radius": {
       "type": "`none` | `sm` | `md` | `lg` | `full`",
       "default": "`md`",
       "description": "The tooltip border radius.",
-      "value": ["none", "sm", "md", "lg", "full"],
+      "value": [
+        "none",
+        "sm",
+        "md",
+        "lg",
+        "full"
+      ],
       "description_zh": "工具提示边框半径。"
     },
     "shadow": {
       "type": "`none` | `sm` | `md` | `lg`",
       "default": "`sm`",
       "description": "The tooltip shadow.",
-      "value": ["none", "sm", "md", "lg"],
+      "value": [
+        "none",
+        "sm",
+        "md",
+        "lg"
+      ],
       "description_zh": "工具提示阴影。"
     },
     "placement": {
@@ -138,7 +163,13 @@
       "type": "`dialog` | `menu` | `listbox` | `tree` | `grid`;",
       "default": "`dialog`",
       "description": "Type of tooltip that is opened by the trigger.",
-      "value": ["dialog", "menu", "listbox", "tree", "grid"],
+      "value": [
+        "dialog",
+        "menu",
+        "listbox",
+        "tree",
+        "grid"
+      ],
       "description_zh": "触发器打开的工具提示的类型。"
     },
     "showArrow": {
@@ -230,13 +261,13 @@
     {
       "name": "base",
       "description": "The main tooltip slot, it wraps the tooltip content.",
-      "description_zh": "The main tooltip slot, it wraps the tooltip content.",
+      "description_zh": "主工具提示槽，它包装工具提示内容。",
       "params": ""
     },
     {
       "name": "arrow",
       "description": "The arrow slot, it wraps the tooltip arrow, the placement of the arrow is based on the tooltip placement, e.g. data-[placement=top]:....",
-      "description_zh": "The arrow slot, it wraps the tooltip arrow, the placement of the arrow is based on the tooltip placement, e.g. data-[placement=top]:....",
+      "description_zh": "箭头槽，它包裹工具提示箭头，箭头的位置基于工具提示的位置，例如 data-[placement=top]：....",
       "params": ""
     }
   ],

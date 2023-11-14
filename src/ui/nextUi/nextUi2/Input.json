@@ -6,19 +6,22 @@
       "name": "onChange",
       "description": "Handler that is called when the element's value changes. You can pull out the new value by accessing `event.target.value` (string).",
       "params": "`React.ChangeEvent<HTMLInputElement>`",
-      "description_zh": "元素的值更改时调用的处理程序。您可以通过访问“event.target.value”（字符串）来提取新值。"
+      "description_zh": "元素的值更改时调用的处理程序。您可以通过访问“event.target.value”（字符串）来提取新值。",
+      "value": ""
     },
     {
       "name": "onValueChange",
       "description": "Handler that is called when the element's value changes.",
       "params": "`(value: string) => void`",
-      "description_zh": "元素的值更改时调用的处理程序。"
+      "description_zh": "元素的值更改时调用的处理程序。",
+      "value": ""
     },
     {
       "name": "onClear",
       "description": "Handler that is called when the clear button is clicked.",
       "params": "`() => void`",
-      "description_zh": "单击清除按钮时调用的处理程序。"
+      "description_zh": "单击清除按钮时调用的处理程序。",
+      "value": ""
     }
   ],
   "props": {
@@ -33,28 +36,50 @@
       "type": "`flat` | `bordered` | `faded` | `underlined`",
       "default": "`flat`",
       "description": "The variant of the input.",
-      "value": ["flat", "bordered", "faded", "underlined"],
+      "value": [
+        "flat",
+        "bordered",
+        "faded",
+        "underlined"
+      ],
       "description_zh": "输入的变体。"
     },
     "color": {
       "type": "`default` | `primary` | `secondary` | `success` | `warning` | `danger`",
       "default": "`default`",
       "description": "The color of the input.",
-      "value": ["default", "primary", "secondary", "success", "warning", "danger"],
+      "value": [
+        "default",
+        "primary",
+        "secondary",
+        "success",
+        "warning",
+        "danger"
+      ],
       "description_zh": "输入的颜色。"
     },
     "size": {
       "type": "`sm` | `md` | `lg`",
       "default": "`md`",
       "description": "The size of the input.",
-      "value": ["sm", "md", "lg"],
+      "value": [
+        "sm",
+        "md",
+        "lg"
+      ],
       "description_zh": "输入的大小。"
     },
     "radius": {
       "type": "`none` | `sm` | `md` | `lg` | `full`",
       "default": "-",
       "description": "The radius of the input.",
-      "value": ["none", "sm", "md", "lg", "full"],
+      "value": [
+        "none",
+        "sm",
+        "md",
+        "lg",
+        "full"
+      ],
       "description_zh": "输入的半径。"
     },
     ":label": {
@@ -119,7 +144,11 @@
       "type": "`inside` | `outside` | `outside-left`",
       "default": "`inside`",
       "description": "The position of the label.",
-      "value": ["inside", "outside", "outside-left"],
+      "value": [
+        "inside",
+        "outside",
+        "outside-left"
+      ],
       "description_zh": "标签的位置。"
     },
     "fullWidth": {
@@ -168,7 +197,10 @@
       "type": "`valid` | `invalid`",
       "default": "-",
       "description": "Whether the input should display its \"valid\" or \"invalid\" visual styling. (**Deprecated**) use **isInvalid** instead.",
-      "value": ["valid", "invalid"],
+      "value": [
+        "valid",
+        "invalid"
+      ],
       "description_zh": "输入是否应显示其“有效”或“无效”的视觉样式。（**已弃用**）请改用 **isInvalid**。"
     },
     "disableAnimation": {
@@ -190,61 +222,61 @@
     {
       "name": "base",
       "description": "Input wrapper, it handles alignment, placement, and general appearance.",
-      "description_zh": "Input wrapper, it handles alignment, placement, and general appearance.",
+      "description_zh": "输入包装器，它处理对齐、放置和一般外观。",
       "params": ""
     },
     {
       "name": "label",
       "description": "Label of the input, it is the one that is displayed above, inside or left of the input.",
-      "description_zh": "Label of the input, it is the one that is displayed above, inside or left of the input.",
+      "description_zh": "输入的标签，它是显示在输入上方、内部或左侧的标签。",
       "params": ""
     },
     {
       "name": "mainWrapper",
       "description": "Wraps the inputWrapper when position is outside / outside-left.",
-      "description_zh": "Wraps the inputWrapper when position is outside / outside-left.",
+      "description_zh": "当位置为 outside / outside-left 时包装 inputWrapper。",
       "params": ""
     },
     {
       "name": "inputWrapper",
       "description": "Wraps the label (when it is inside) and the innerWrapper.",
-      "description_zh": "Wraps the label (when it is inside) and the innerWrapper.",
+      "description_zh": "包裹标签（当它在里面时）和 innerWrapper。",
       "params": ""
     },
     {
       "name": "innerWrapper",
       "description": "Wraps the input, the startContent and the endContent.",
-      "description_zh": "Wraps the input, the startContent and the endContent.",
+      "description_zh": "包装输入、startContent 和 endContent。",
       "params": ""
     },
     {
       "name": "input",
       "description": "The input element.",
-      "description_zh": "The input element.",
+      "description_zh": "输入元素。",
       "params": ""
     },
     {
       "name": "clearButton",
       "description": "The clear button, it is at the end of the input.",
-      "description_zh": "The clear button, it is at the end of the input.",
+      "description_zh": "清除按钮，它位于输入的末尾。",
       "params": ""
     },
     {
       "name": "helperWrapper",
       "description": "Wraps the description and the errorMessage.",
-      "description_zh": "Wraps the description and the errorMessage.",
+      "description_zh": "包装说明和 errorMessage。",
       "params": ""
     },
     {
       "name": "description",
       "description": "The description of the input.",
-      "description_zh": "The description of the input.",
+      "description_zh": "输入的说明。",
       "params": ""
     },
     {
       "name": "errorMessage",
       "description": "The error message of the input.",
-      "description_zh": "The error message of the input.",
+      "description_zh": "输入的错误消息。",
       "params": ""
     }
   ],

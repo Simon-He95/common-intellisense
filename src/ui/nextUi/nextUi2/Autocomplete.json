@@ -6,14 +6,14 @@
       "value": "",
       "type": "ReactNode[]",
       "description": "The children to render. Usually a list of AutocompleteItem and AutocompleteSection elements.",
-      "description_zh": "The children to render. Usually a list of AutocompleteItem and AutocompleteSection elements."
+      "description_zh": "要呈现的子项。通常是 AutocompleteItem 和 AutocompleteSection 元素的列表。"
     },
     "label": {
       "default": "-",
       "value": "",
       "type": "ReactNode",
       "description": "The content to display as the label.",
-      "description_zh": "The content to display as the label.",
+      "description_zh": "要显示为标签的内容。",
       "required": true
     },
     "name": {
@@ -21,91 +21,113 @@
       "value": "",
       "type": "string",
       "description": "The name of the input element, used when submitting an HTML form. See MDN.",
-      "description_zh": "The name of the input element, used when submitting an HTML form. See MDN."
+      "description_zh": "提交HTML表单时使用的输入元素的名称。参见 MDN。"
     },
     "variant": {
       "default": "flat",
-      "value": ["flat", "bordered", "faded", "underlined"],
+      "value": [
+        "flat",
+        "bordered",
+        "faded",
+        "underlined"
+      ],
       "type": "flat | bordered | faded | underlined",
       "description": "The variant of the Autocomplete.",
-      "description_zh": "The variant of the Autocomplete."
+      "description_zh": "自动完成的变体。"
     },
     "color": {
       "default": "default",
-      "value": ["default", "primary", "secondary", "success", "warning", "danger"],
+      "value": [
+        "default",
+        "primary",
+        "secondary",
+        "success",
+        "warning",
+        "danger"
+      ],
       "type": "default | primary | secondary | success | warning | danger",
       "description": "The color of the Autocomplete.",
-      "description_zh": "The color of the Autocomplete."
+      "description_zh": "自动完成的颜色。"
     },
     "size": {
       "default": "md",
-      "value": ["sm", "md", "lg"],
+      "value": [
+        "sm",
+        "md",
+        "lg"
+      ],
       "type": "sm | md | lg",
       "description": "The size of the Autocomplete.",
-      "description_zh": "The size of the Autocomplete."
+      "description_zh": "自动完成的大小。"
     },
     "radius": {
       "default": "-",
-      "value": ["none", "sm", "md", "lg", "full"],
+      "value": [
+        "none",
+        "sm",
+        "md",
+        "lg",
+        "full"
+      ],
       "type": "none | sm | md | lg | full",
       "description": "The radius of the Autocomplete.",
-      "description_zh": "The radius of the Autocomplete."
+      "description_zh": "自动完成半径。"
     },
     ":items": {
       "default": "-",
       "value": "",
       "type": "Iterable<T>",
       "description": "The list of Autocomplete items. (controlled)",
-      "description_zh": "The list of Autocomplete items. (controlled)"
+      "description_zh": "自动完成项的列表。（受控）"
     },
     ":defaultItems": {
       "default": "-",
       "value": "",
       "type": "Iterable<T>",
       "description": "The list of Autocomplete items (uncontrolled).",
-      "description_zh": "The list of Autocomplete items (uncontrolled)."
+      "description_zh": "自动完成项列表（不受控制）。"
     },
     "inputValue": {
       "default": "-",
       "value": "",
       "type": "string",
       "description": "The value of the Autocomplete input (controlled).",
-      "description_zh": "The value of the Autocomplete input (controlled)."
+      "description_zh": "自动完成输入的值（受控）。"
     },
     "defaultInputValue": {
       "default": "-",
       "value": "",
       "type": "string",
       "description": "The value of the Autocomplete input (uncontrolled).",
-      "description_zh": "The value of the Autocomplete input (uncontrolled)."
+      "description_zh": "“自动完成”输入的值（不受控制）。"
     },
     "allowsCustomValue": {
       "default": "false",
       "value": "",
       "type": "boolean",
       "description": "Whether the Autocomplete allows a non-item matching input value to be set.",
-      "description_zh": "Whether the Autocomplete allows a non-item matching input value to be set."
+      "description_zh": "“自动完成”是否允许设置非项目匹配的输入值。"
     },
     "allowsEmptyCollection": {
       "default": "true",
       "value": "",
       "type": "boolean",
       "description": "Whether the autocomplete allows the menu to be open when the collection is empty.",
-      "description_zh": "Whether the autocomplete allows the menu to be open when the collection is empty."
+      "description_zh": "自动完成是否允许在集合为空时打开菜单。"
     },
     "shouldCloseOnBlur": {
       "default": "true",
       "value": "",
       "type": "boolean",
       "description": "Whether the Autocomplete should close when the input is blurred.",
-      "description_zh": "Whether the Autocomplete should close when the input is blurred."
+      "description_zh": "当输入模糊时，自动完成是否应关闭。"
     },
     "placeholder": {
       "default": "-",
       "value": "",
       "type": "string",
       "description": "Temporary text that occupies the text input when it is empty.",
-      "description_zh": "Temporary text that occupies the text input when it is empty.",
+      "description_zh": "当文本输入为空时占用文本输入的临时文本。",
       "required": true
     },
     ":description": {
@@ -113,224 +135,232 @@
       "value": "",
       "type": "ReactNode",
       "description": "A description for the field. Provides a hint such as specific requirements for what to choose.",
-      "description_zh": "A description for the field. Provides a hint such as specific requirements for what to choose."
+      "description_zh": "字段的说明。提供提示，例如选择内容的具体要求。"
     },
     "menuTrigger": {
       "default": "focus",
-      "value": ["focus", "input", "manual"],
+      "value": [
+        "focus",
+        "input",
+        "manual"
+      ],
       "type": "focus | input | manual",
       "description": "The action that causes the menu to open.",
-      "description_zh": "The action that causes the menu to open."
+      "description_zh": "导致菜单打开的操作。"
     },
     "labelPlacement": {
       "default": "inside",
-      "value": ["inside", "outside", "outside-left"],
+      "value": [
+        "inside",
+        "outside",
+        "outside-left"
+      ],
       "type": "inside | outside | outside-left",
       "description": "The position of the label.",
-      "description_zh": "The position of the label."
+      "description_zh": "标签的位置。"
     },
     ":selectedKey": {
       "default": "-",
       "value": "",
       "type": "React.Key",
       "description": "The currently selected key in the collection (controlled).",
-      "description_zh": "The currently selected key in the collection (controlled)."
+      "description_zh": "集合中当前选定的键（受控）。"
     },
     ":defaultSelectedKey": {
       "default": "-",
       "value": "",
       "type": "React.Key",
       "description": "The initial selected key in the collection (uncontrolled).",
-      "description_zh": "The initial selected key in the collection (uncontrolled)."
+      "description_zh": "集合中初始选择的键（不受控制）。"
     },
     ":disabledKeys": {
       "default": "-",
       "value": "",
       "type": "all | React.Key[]",
       "description": "The item keys that are disabled. These items cannot be selected, focused, or otherwise interacted with.",
-      "description_zh": "The item keys that are disabled. These items cannot be selected, focused, or otherwise interacted with."
+      "description_zh": "已禁用的项目键。无法选择、聚焦这些项目或以其他方式与之交互。"
     },
     ":errorMessage": {
       "default": "-",
       "value": "",
       "type": "ReactNode",
       "description": "An error message to display below the field.",
-      "description_zh": "An error message to display below the field."
+      "description_zh": "要在字段下方显示的错误消息。"
     },
     ":startContent": {
       "default": "-",
       "value": "",
       "type": "ReactNode",
       "description": "Element to be rendered in the left side of the Autocomplete.",
-      "description_zh": "Element to be rendered in the left side of the Autocomplete."
+      "description_zh": "要在自动完成左侧呈现的元素。"
     },
     ":endContent": {
       "default": "-",
       "value": "",
       "type": "ReactNode",
       "description": "Element to be rendered in the right side of the Autocomplete.",
-      "description_zh": "Element to be rendered in the right side of the Autocomplete."
+      "description_zh": "要在自动完成右侧呈现的元素。"
     },
     "autoFocus": {
       "default": "false",
       "value": "",
       "type": "boolean",
       "description": "Whether the Autocomplete should be focused on render.",
-      "description_zh": "Whether the Autocomplete should be focused on render."
+      "description_zh": "“自动完成”是否应侧重于渲染。"
     },
     ":defaultFilter": {
       "default": "-",
       "value": "",
       "type": "(textValue: string, inputValue: string) => boolean",
       "description": "The filter function used to determine if a option should be included in the Autocomplete list.",
-      "description_zh": "The filter function used to determine if a option should be included in the Autocomplete list."
+      "description_zh": "用于确定某个选项是否应包含在“自动完成”列表中的筛选器函数。"
     },
     ":filterOptions": {
       "default": "{ sensitivity: 'base'}",
       "value": "",
       "type": "Intl.CollatorOptions",
       "description": "The options used to create the collator used for filtering.",
-      "description_zh": "The options used to create the collator used for filtering."
+      "description_zh": "用于创建用于筛选的整理程序的选项。"
     },
     "isReadOnly": {
       "default": "false",
       "value": "",
       "type": "boolean",
       "description": "Whether the Autocomplete is read only.",
-      "description_zh": "Whether the Autocomplete is read only."
+      "description_zh": "自动完成是否为只读。"
     },
     "isRequired": {
       "default": "false",
       "value": "",
       "type": "boolean",
       "description": "Whether the Autocomplete is required.",
-      "description_zh": "Whether the Autocomplete is required."
+      "description_zh": "是否需要自动完成。"
     },
     "isInvalid": {
       "default": "false",
       "value": "",
       "type": "boolean",
       "description": "Whether the Autocomplete is invalid.",
-      "description_zh": "Whether the Autocomplete is invalid."
+      "description_zh": "自动完成是否无效。"
     },
     "isDisabled": {
       "default": "false",
       "value": "",
       "type": "boolean",
       "description": "Whether the Autocomplete is disabled.",
-      "description_zh": "Whether the Autocomplete is disabled."
+      "description_zh": "是否禁用自动完成。"
     },
     "fullWidth": {
       "default": "true",
       "value": "",
       "type": "boolean",
       "description": "Whether the input should take up the width of its parent.",
-      "description_zh": "Whether the input should take up the width of its parent."
+      "description_zh": "输入是否应占用其父级的宽度。"
     },
     ":selectorIcon": {
       "default": "-",
       "value": "",
       "type": "ReactNode",
       "description": "The icon that represents the autocomplete open state. Usually a chevron icon.",
-      "description_zh": "The icon that represents the autocomplete open state. Usually a chevron icon."
+      "description_zh": "表示自动完成打开状态的图标。通常是人字形图标。"
     },
     ":clearIcon": {
       "default": "-",
       "value": "",
       "type": "ReactNode",
       "description": "The icon to be used in the clear button. Usually a cross icon.",
-      "description_zh": "The icon to be used in the clear button. Usually a cross icon."
+      "description_zh": "要在清除按钮中使用的图标。通常是一个十字图标。"
     },
     "showScrollIndicators": {
       "default": "true",
       "value": "",
       "type": "boolean",
       "description": "Whether the scroll indicators should be shown when the listbox is scrollable.",
-      "description_zh": "Whether the scroll indicators should be shown when the listbox is scrollable."
+      "description_zh": "当列表框可滚动时，是否应显示滚动指示器。"
     },
     ":scrollRef": {
       "default": "-",
       "value": "",
       "type": "React.RefObject<HTMLElement>",
       "description": "A ref to the scrollable element.",
-      "description_zh": "A ref to the scrollable element."
+      "description_zh": "对可滚动元素的引用。"
     },
     "inputProps": {
       "default": "-",
       "value": "",
       "type": "InputProps",
       "description": "Props to be passed to the Input component.",
-      "description_zh": "Props to be passed to the Input component."
+      "description_zh": "要传递给 Input 组件的 props。"
     },
     ":popoverProps": {
       "default": "-",
       "value": "",
       "type": "PopoverProps",
       "description": "Props to be passed to the Popover component.",
-      "description_zh": "Props to be passed to the Popover component."
+      "description_zh": "要传递给 Popover 组件的 props。"
     },
     ":listboxProps": {
       "default": "-",
       "value": "",
       "type": "ListboxProps",
       "description": "Props to be passed to the Listbox component.",
-      "description_zh": "Props to be passed to the Listbox component."
+      "description_zh": "要传递给 Listbox 组件的 props。"
     },
     ":scrollShadowProps": {
       "default": "-",
       "value": "",
       "type": "ScrollShadowProps",
       "description": "Props to be passed to the ScrollShadow component.",
-      "description_zh": "Props to be passed to the ScrollShadow component."
+      "description_zh": "要传递给 ScrollShadow 组件的 Props。"
     },
     ":selectorButtonProps": {
       "default": "-",
       "value": "",
       "type": "ButtonProps",
       "description": "Props to be passed to the selector button.",
-      "description_zh": "Props to be passed to the selector button."
+      "description_zh": "要传递给选择器按钮的道具。"
     },
     ":clearButtonProps": {
       "default": "-",
       "value": "",
       "type": "ButtonProps",
       "description": "Props to be passed to the clear button.",
-      "description_zh": "Props to be passed to the clear button."
+      "description_zh": "要传递给清除按钮的道具。"
     },
     "isClearable": {
       "default": "true",
       "value": "",
       "type": "boolean",
       "description": "Whether the clear button should be shown.",
-      "description_zh": "Whether the clear button should be shown."
+      "description_zh": "是否应显示清除按钮。"
     },
     "disableClearable": {
       "default": "false",
       "value": "",
       "type": "boolean",
       "description": "Whether the clear button should be hidden. (Deprecated) Use isClearable instead.",
-      "description_zh": "Whether the clear button should be hidden. (Deprecated) Use isClearable instead."
+      "description_zh": "是否应隐藏清除按钮。（已弃用）请改用 isClearable。"
     },
     "disableAnimation": {
       "default": "true",
       "value": "",
       "type": "boolean",
       "description": "Whether the Autocomplete should be animated.",
-      "description_zh": "Whether the Autocomplete should be animated."
+      "description_zh": "是否应对“自动完成”进行动画处理。"
     },
     "disableSelectorIconRotation": {
       "default": "false",
       "value": "",
       "type": "boolean",
       "description": "Whether the select should disable the rotation of the selector icon.",
-      "description_zh": "Whether the select should disable the rotation of the selector icon."
+      "description_zh": "选择是否应禁用选择器图标的旋转。"
     },
     "classNames": {
       "default": "-",
       "value": "",
       "type": "Record<\"base\"｜ \"listboxWrapper\"｜ \"listbox\"｜ \"popoverContent\" ｜ \"endContentWrapper\"｜ \"clearButton\" ｜ \"selectorButton\", string>",
       "description": "Allows to set custom class names for the Autocomplete slots.",
-      "description_zh": "Allows to set custom class names for the Autocomplete slots."
+      "description_zh": "允许为自动完成插槽设置自定义类名。"
     }
   },
   "methods": [],
@@ -340,56 +370,65 @@
     {
       "name": "onOpenChange",
       "description": "Method that is called when the open state of the menu changes. Returns the new open state and the action that caused the opening of the menu.",
-      "description_zh": "Method that is called when the open state of the menu changes. Returns the new open state and the action that caused the opening of the menu.",
-      "params": "(isOpen: boolean, menuTrigger?: MenuTriggerAction) => void"
+      "description_zh": "当菜单的打开状态更改时调用的方法。返回新的打开状态和导致菜单打开的操作。",
+      "params": "(isOpen: boolean, menuTrigger?: MenuTriggerAction) => void",
+      "value": ""
     },
     {
       "name": "onInputChange",
       "description": "Handler that is called when the Autocomplete input value changes.",
-      "description_zh": "Handler that is called when the Autocomplete input value changes.",
-      "params": "(value: string) => void"
+      "description_zh": "当自动完成输入值更改时调用的处理程序。",
+      "params": "(value: string) => void",
+      "value": ""
     },
     {
       "name": "onSelectionChange",
       "description": "Handler that is called when the Autocomplete selection changes.",
-      "description_zh": "Handler that is called when the Autocomplete selection changes.",
-      "params": "(key: React.Key) => void"
+      "description_zh": "在“自动完成”选择更改时调用的处理程序。",
+      "params": "(key: React.Key) => void",
+      "value": ""
     },
     {
       "name": "onFocus",
       "description": "Handler that is called when the Autocomplete input is focused.",
-      "description_zh": "Handler that is called when the Autocomplete input is focused.",
-      "params": "(e:  FocusEvent<HTMLInputElement>) => void"
+      "description_zh": "在自动完成输入处于焦点状态时调用的处理程序。",
+      "params": "(e:  FocusEvent<HTMLInputElement>) => void",
+      "value": ""
     },
     {
       "name": "onBlur",
       "description": "Handler that is called when the Autocomplete input is blurred.",
-      "description_zh": "Handler that is called when the Autocomplete input is blurred.",
-      "params": "(e:  FocusEvent<HTMLInputElement>) => void"
+      "description_zh": "当自动完成输入模糊时调用的处理程序。",
+      "params": "(e:  FocusEvent<HTMLInputElement>) => void",
+      "value": ""
     },
     {
       "name": "onFocusChange",
       "description": "Handler that is called when the Autocomplete input focus changes.",
-      "description_zh": "Handler that is called when the Autocomplete input focus changes.",
-      "params": "(isFocused: boolean) => void"
+      "description_zh": "当自动完成输入焦点更改时调用的处理程序。",
+      "params": "(isFocused: boolean) => void",
+      "value": ""
     },
     {
       "name": "onKeyDown",
       "description": "Handler that is called when a key is pressed.",
-      "description_zh": "Handler that is called when a key is pressed.",
-      "params": "(e: KeyboardEvent) => void"
+      "description_zh": "按下某个键时调用的处理程序。",
+      "params": "(e: KeyboardEvent) => void",
+      "value": ""
     },
     {
       "name": "onKeyUp",
       "description": "Handler that is called when a key is released.",
-      "description_zh": "Handler that is called when a key is released.",
-      "params": "(e: KeyboardEvent) => void"
+      "description_zh": "释放密钥时调用的处理程序。",
+      "params": "(e: KeyboardEvent) => void",
+      "value": ""
     },
     {
       "name": "onClose",
       "description": "Handler that is called when the Autocomplete's Popover is closed.",
-      "description_zh": "Handler that is called when the Autocomplete's Popover is closed.",
-      "params": "() => void"
+      "description_zh": "关闭自动完成窗口时调用的处理程序。",
+      "params": "() => void",
+      "value": ""
     }
   ],
   "slots": [
@@ -397,45 +436,48 @@
       "name": "base",
       "params": "",
       "description": "The main wrapper of the autocomplete. This wraps the input and popover components.",
-      "description_zh": "The main wrapper of the autocomplete. This wraps the input and popover components."
+      "description_zh": "自动完成的主包装器。这将包装输入和弹出框组件。"
     },
     {
       "name": "listboxWrapper",
       "params": "",
       "description": "The wrapper of the listbox. This wraps the listbox component, this slot is used on top of the scroll shadow component.",
-      "description_zh": "The wrapper of the listbox. This wraps the listbox component, this slot is used on top of the scroll shadow component."
+      "description_zh": "列表框的包装器。这包装了 listbox 组件，这个槽用在滚动阴影组件的顶部。"
     },
     {
       "name": "listbox",
       "params": "",
       "description": "The listbox component. This is the component that wraps the autocomplete items.",
-      "description_zh": "The listbox component. This is the component that wraps the autocomplete items."
+      "description_zh": "列表框组件。这是包装自动完成项的组件。"
     },
     {
       "name": "popoverContent",
       "params": "",
       "description": "The popover content slot. Use this to modify the popover content styles.",
-      "description_zh": "The popover content slot. Use this to modify the popover content styles."
+      "description_zh": "弹出框内容槽。使用它来修改弹出框内容样式。"
     },
     {
       "name": "endContentWrapper",
       "params": "",
       "description": "The wrapper of the end content. This wraps the clear button and selector button.",
-      "description_zh": "The wrapper of the end content. This wraps the clear button and selector button."
+      "description_zh": "最终内容的包装器。这将包裹清除按钮和选择器按钮。"
     },
     {
       "name": "clearButton",
       "params": "",
       "description": "The clear button slot.",
-      "description_zh": "The clear button slot."
+      "description_zh": "透明按钮插槽。"
     },
     {
       "name": "selectorButton",
       "params": "",
       "description": "The selector button slot.",
-      "description_zh": "The selector button slot."
+      "description_zh": "选择器按钮插槽。"
     }
   ],
-  "suggestions": ["AutocompleteItem", "AutocompleteSection"],
+  "suggestions": [
+    "AutocompleteItem",
+    "AutocompleteSection"
+  ],
   "typeDetail": {}
 }
