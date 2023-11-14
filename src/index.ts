@@ -25,7 +25,7 @@ export function activate(context: vscode.ExtensionContext) {
   global.commonIntellisense = {
     copyDom: '',
   }
-  const filter = ['javascript', 'javascriptreact', 'typescriptreact', 'vue', 'svelte']
+  const filter = ['javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'vue', 'svelte']
   context.subscriptions.push(addEventListener('activeText-change', (editor: vscode.TextEditor) => {
     // 找到当前活动的编辑器
     const visibleEditors = vscode.window.visibleTextEditors
