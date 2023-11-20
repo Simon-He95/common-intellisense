@@ -70,9 +70,10 @@ export function activate(context: vscode.ExtensionContext) {
           }
         }
       }
-      if (lan === 'vue' && lineText.slice(character, character + 6) !== '.value')
+      if (lan === 'vue' && lineText.slice(character, character + 6) !== '.value' && !/\.value\.?$/.test(lineText.slice(0, character)))
         return result.refs.map((refName: string) => createCompletionItem({ content: refName, snippet: `${refName}.value`, documentation: `${refName}.value`, preselect: true, sortText: 'a' }))
-      if (lan !== 'vue' && lineText.slice(character, character + 8) !== '.current')
+
+      if (lan !== 'vue' && lineText.slice(character, character + 8) !== '.current' && !/\.current\.?$/.test(lineText.slice(0, character)))
         return result.refs.map((refName: string) => createCompletionItem({ content: refName, snippet: `${refName}.current`, documentation: `${refName}.current`, preselect: true, sortText: 'a' }))
     }
     if (result.parent && result.tag === 'template') {
