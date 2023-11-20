@@ -37,7 +37,7 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
       if (lan === 'vue')
         data.push(createCompletionItem({ content: 'style', snippet: 'style="$1"', type: 5 }))
       else
-        data.push(createCompletionItem({ content: 'style', snippet: 'style={{ $1 }}', type: 5 }))
+        data.push(createCompletionItem({ content: 'style', snippet: 'style={$1}', type: 5 }))
 
       Object.keys(item.props!).forEach((key) => {
         const value = (item.props as any)[key]
@@ -122,7 +122,7 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
             content = `${key}="${v}"`
             snippet = `${key}="$\{1:${v}\}$2"`
           }
-          content += `  ${value.description || ''}${value.default ? `  ${isZh ? '默认' : 'default'}：${value.default}` : ''}`
+          content += `  ${isZh ? (value.description_zh || value.description) : value.description}${value.default ? `  ${isZh ? '默认' : 'default'}：${value.default}` : ''}`
 
           return createCompletionItem({ content, snippet, type, documentation, preselect: true, sortText: 'a' })
         },
