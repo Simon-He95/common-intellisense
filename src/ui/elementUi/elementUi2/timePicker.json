@@ -1,0 +1,196 @@
+{
+  "name": "ElTimePicker",
+  "props": {
+    ":v-model": {
+      "value": "",
+      "description": "绑定值",
+      "default": "—",
+      "type": "date(TimePicker) / string(TimeSelect)",
+      "description_zh": "绑定值",
+      "required": true
+    },
+    "readonly": {
+      "value": "",
+      "description": "完全只读",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "完全只读"
+    },
+    "disabled": {
+      "value": "",
+      "description": "禁用",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "禁用"
+    },
+    "editable": {
+      "value": "",
+      "description": "文本框可输入",
+      "default": "true",
+      "type": "boolean",
+      "description_zh": "文本框可输入"
+    },
+    "clearable": {
+      "value": "",
+      "description": "是否显示清除按钮",
+      "default": "true",
+      "type": "boolean",
+      "description_zh": "是否显示清除按钮"
+    },
+    "size": {
+      "value": ["medium", "small", "mini"],
+      "description": "输入框尺寸",
+      "default": "—",
+      "type": "medium / small / mini",
+      "description_zh": "输入框尺寸"
+    },
+    "placeholder": {
+      "value": "",
+      "description": "非范围选择时的占位内容",
+      "default": "—",
+      "type": "string",
+      "description_zh": "非范围选择时的占位内容",
+      "required": true
+    },
+    "start-placeholder": {
+      "value": "",
+      "description": "范围选择时开始日期的占位内容",
+      "default": "—",
+      "type": "string",
+      "description_zh": "范围选择时开始日期的占位内容"
+    },
+    "end-placeholder": {
+      "value": "",
+      "description": "范围选择时开始日期的占位内容",
+      "default": "—",
+      "type": "string",
+      "description_zh": "范围选择时开始日期的占位内容"
+    },
+    "is-range": {
+      "value": "",
+      "description": "是否为时间范围选择，仅对<el-time-picker>有效",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "是否为时间范围选择，仅对<el-time-picker>有效"
+    },
+    "arrow-control": {
+      "value": "",
+      "description": "是否使用箭头进行时间选择，仅对<el-time-picker>有效",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "是否使用箭头进行时间选择，仅对<el-time-picker>有效"
+    },
+    "align": {
+      "value": ["left", "center", "right"],
+      "description": "对齐方式",
+      "default": "left",
+      "type": "left / center / right",
+      "description_zh": "对齐方式"
+    },
+    "popper-class": {
+      "value": "",
+      "description": "TimePicker 下拉框的类名",
+      "default": "—",
+      "type": "string",
+      "description_zh": "TimePicker 下拉框的类名"
+    },
+    ":picker-options": {
+      "value": "",
+      "description": "当前时间日期选择器特有的选项参考下表",
+      "default": "{}",
+      "type": "object",
+      "description_zh": "当前时间日期选择器特有的选项参考下表"
+    },
+    "range-separator": {
+      "value": "-",
+      "description": "选择范围时的分隔符",
+      "default": "'-'",
+      "type": "string",
+      "description_zh": "选择范围时的分隔符"
+    },
+    "value-format": {
+      "value": "见日期格式",
+      "description": "可选，仅TimePicker时可用，绑定值的格式。不指定则绑定值为 Date 对象",
+      "default": "—",
+      "type": "string",
+      "description_zh": "可选，仅TimePicker时可用，绑定值的格式。不指定则绑定值为 Date 对象"
+    },
+    "default-value": {
+      "value": "可被new Date()解析(TimePicker) / 可选值(TimeSelect)",
+      "description": "可选，选择器打开时默认显示的时间",
+      "default": "—",
+      "type": "Date(TimePicker) / string(TimeSelect)",
+      "description_zh": "可选，选择器打开时默认显示的时间"
+    },
+    "name": {
+      "value": "",
+      "description": "原生属性",
+      "default": "—",
+      "type": "string",
+      "description_zh": "原生属性"
+    },
+    "prefix-icon": {
+      "value": "",
+      "description": "自定义头部图标的类名",
+      "default": "el-icon-time",
+      "type": "string",
+      "description_zh": "自定义头部图标的类名"
+    },
+    "clear-icon": {
+      "value": "",
+      "description": "自定义清空图标的类名",
+      "default": "el-icon-circle-close",
+      "type": "string",
+      "description_zh": "自定义清空图标的类名"
+    }
+  },
+  "methods": [
+    {
+      "name": "focus",
+      "description": "Make input get focus",
+      "params": "-",
+      "description_zh": "使 input 获取焦点",
+      "value": ""
+    }
+  ],
+  "typeDetail": {
+    "Options": [
+      {
+        "name": "selectableRange",
+        "description": "可选时间段，例如'18:30:00 - 20:30:00'或者传入数组['09:30:00 - 12:00:00', '14:30:00 - 18:30:00']",
+        "description_zh": "可选时间段，例如'18:30:00 - 20:30:00'或者传入数组['09:30:00 - 12:00:00', '14:30:00 - 18:30:00']",
+        "params": "string / array",
+        "value": ""
+      },
+      {
+        "name": "format",
+        "description": "时间格式化(TimePicker)",
+        "description_zh": "时间格式化(TimePicker)",
+        "params": "string",
+        "value": "'HH:mm:ss'"
+      }
+    ]
+  },
+  "events": [
+    {
+      "name": "change",
+      "description": "用户确认选定的值时触发",
+      "description_zh": "用户确认选定的值时触发",
+      "params": "组件绑定值"
+    },
+    {
+      "name": "blur",
+      "description": "当 input 失去焦点时触发",
+      "description_zh": "当 input 失去焦点时触发",
+      "params": "组件实例"
+    },
+    {
+      "name": "focus",
+      "description": "当 input 获得焦点时触发",
+      "description_zh": "当 input 获得焦点时触发",
+      "params": "组件实例"
+    }
+  ],
+  "link": "https://element.eleme.cn/#/en-US/component/time-picker",
+  "link_zh": "https://element.eleme.cn/#/zh-CN/component/time-picker"
+}
