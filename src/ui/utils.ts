@@ -254,13 +254,13 @@ export function propsReducer(uiName: string, map: string[], iconData?: { prefix:
       documentation.supportHtml = true
       const details = []
 
-      details.push(`# ${uiName} [${item.name}]`)
+      details.push(`## ${uiName} [${item.name}]\`            \`[🔗 ${isZh ? '文档链接' : 'Documentation link'}](command:intellisense.openDocument?%7B%22link%22%3A%22${encodeURIComponent(isZh ? item.link_zh : item.link)}%22%7D)\`   \`[🔗 ${isZh ? '外部链接' : 'External document links'}](command:intellisense.openDocumentExternal?%7B%22link%22%3A%22${encodeURIComponent(isZh ? item.link_zh : item.link)}%22%7D)`)
 
       if (item.props) {
         if (isZh)
-          details.push('## 参数:')
+          details.push('### 参数:')
         else
-          details.push('## Props:')
+          details.push('### Props:')
 
         const tableHeader = `| ${isZh ? '属性名' : 'Name'} | ${isZh ? '描述' : 'Description'} | ${isZh ? '类型' : 'Type'} | ${isZh ? '默认值' : 'Default'} |`
         const tableDivider = '| --- | --- | --- | --- |'
@@ -319,10 +319,8 @@ export function propsReducer(uiName: string, map: string[], iconData?: { prefix:
         details.push(tableContent)
       }
 
-      if (item.link) {
-        details.push(`\n\n[🔗 ${isZh ? '文档链接' : 'Documentation link'}](command:intellisense.openDocument?%7B%22link%22%3A%22${encodeURIComponent(isZh ? item.link_zh : item.link)}%22%7D)`)
-        details.push(`\n\n[🔗 ${isZh ? '外部文档链接' : 'External document links'}](command:intellisense.openDocumentExternal?%7B%22link%22%3A%22${encodeURIComponent(isZh ? item.link_zh : item.link)}%22%7D)`)
-      }
+      if (item.link)
+        details.push(`[🔗 ${isZh ? '文档链接' : 'Documentation link'}](command:intellisense.openDocument?%7B%22link%22%3A%22${encodeURIComponent(isZh ? item.link_zh : item.link)}%22%7D)\`        \` [🔗 ${isZh ? '外部文档链接' : 'External document links'}](command:intellisense.openDocumentExternal?%7B%22link%22%3A%22${encodeURIComponent(isZh ? item.link_zh : item.link)}%22%7D)`)
 
       documentation.appendMarkdown(details.join('\n\n'))
       return documentation

@@ -1,6 +1,9 @@
+import fsp from 'node:fs/promises'
+import path from 'node:path'
 import * as vscode from 'vscode'
-import { addEventListener, createCompletionItem, getActiveTextEditorLanguageId, getSelection, message, openExternalUrl, registerCommand, registerCompletionItemProvider, setCopyText } from '@vscode-use/utils'
+import { addEventListener, createCompletionItem, getActiveText, getActiveTextEditorLanguageId, getCurrentFileUrl, getSelection, message, openExternalUrl, registerCommand, registerCompletionItemProvider, setCopyText } from '@vscode-use/utils'
 import { CreateWebview } from '@vscode-use/createwebview'
+import { parse } from '@vue/compiler-sfc'
 import { findPkgUI, parser } from './utils'
 import UI from './ui'
 import { nameMap } from './constants'
@@ -40,24 +43,19 @@ export function activate(context: vscode.ExtensionContext) {
 
   findUI()
 
-  context.subscriptions.push(registerCompletionItemProvider(filter, (document, position) => {
+  context.subscriptions.push(registerCompletionItemProvider(filter, async (document, position) => {
     const { lineText } = getSelection()!
     const p: any = position
     const preText = lineText.slice(0, vscode.window.activeTextEditor?.selection.active.character)
-    let i = preText.length - 1
-    let active = ''
     let completionsCallback: any = null
-    while (preText[i] && (preText[i] !== ' ')) {
-      active += preText[i]
-      i--
-    }
-    p.active = active
+    p.active = getEffectWord(preText)
     const result = parser(document.getText(), p)
     if (!result)
       return
 
     const lan = getActiveTextEditorLanguageId()
     const isVue = lan === 'vue'
+    const deps = isVue ? getImportDeps(getActiveText()!) : {}
     const { character } = position
     const isPreEmpty = lineText[character - 1] === ' '
     const isValue = result.isValue
@@ -95,19 +93,11 @@ export function activate(context: vscode.ExtensionContext) {
         return UiCompletions.icons
 
       const propName = result.propName
-      let target = UiCompletions[name]
-      if (!target) {
-        const prefix = optionsComponents.prefix
-        for (const p of prefix) {
-          const t = UiCompletions[p.toUpperCase() + name]
-          if (t) {
-            target = t
-            break
-          }
-        }
-      }
+      const target = UiCompletions[name] || await findDynamicComponent(name, deps)
+
       if (!target)
         return
+
       const { events, completions } = target
       if (!completionsCallbacks.has(name)) {
         const _events = events[0]()
@@ -129,6 +119,9 @@ export function activate(context: vscode.ExtensionContext) {
 
           if (item.name === 'model' && item?.loc?.source?.startsWith('v-model'))
             return item.loc.source.split('=')[0]
+
+          if (item.name === 'bind')
+            return item.arg.content
 
           if (item.name !== 'on')
             return item.name
@@ -252,7 +245,7 @@ export function activate(context: vscode.ExtensionContext) {
   const LANS = ['javascriptreact', 'typescript', 'typescriptreact', 'vue', 'svelte', 'solid', 'swan', 'react', 'js', 'ts', 'tsx', 'jsx']
 
   context.subscriptions.push(vscode.languages.registerHoverProvider(LANS, {
-    provideHover(document, position) {
+    async provideHover(document, position) {
       const editor = vscode.window.activeTextEditor
       if (!editor)
         return
@@ -261,17 +254,8 @@ export function activate(context: vscode.ExtensionContext) {
       if (!optionsComponents.data.length || !word)
         return new vscode.Hover('')
 
-      let target = UiCompletions[toCamel(word)[0].toUpperCase() + toCamel(word).slice(1)]
-      if (!target) {
-        const prefix = optionsComponents.prefix
-        for (const p of prefix) {
-          const t = UiCompletions[p.toUpperCase() + word]
-          if (t) {
-            target = t
-            break
-          }
-        }
-      }
+      const target = UiCompletions[toCamel(word)[0].toUpperCase() + toCamel(word).slice(1)] || await findDynamicComponent(word, {})
+
       if (!target)
         return
 
@@ -352,19 +336,86 @@ function isSamePrefix(label: string, key: string) {
   return labelName === key
 }
 
-// const IMPORT_REG = /import\s+{([^\}]+)}\s+from\s+['"]([^"']+)['"]/g
+const IMPORT_REG = /import\s+([^\s]+)\s+from\s+['"]([^"']+.vue)['"]/g
 
-// export function getImportDeps(text: string) {
-//   const deps: Record<string, string[]> = {}
-//   for (const match of text.matchAll(IMPORT_REG)) {
-//     if (!match)
-//       continue
-//     const from = match[2]
-//     if (/^[\.\/\@]/.test(from))
-//       continue
-//     if (!UINames.map((i: string) => i.replace(/[0-9]/g, '')).includes(toCamel(from)))
-//       continue
-//     deps[from] = match[1].replace(/\s/g, '').split(',')
-//   }
-//   return deps
-// }
+export function getImportDeps(text: string) {
+  const deps: Record<string, string> = {}
+  for (const match of text.matchAll(IMPORT_REG)) {
+    if (!match)
+      continue
+    const from = match[2]
+    if (!/^[\.\/\@]/.test(from))
+      continue
+    deps[match[1]] = from
+  }
+  return deps
+}
+
+export function getAbosluteUrl(url: string) {
+  return path.resolve(getCurrentFileUrl(), '..', url)
+}
+
+async function getTemplateParentElementName(url: string) {
+  const code = await fsp.readFile(url, 'utf-8')
+  // 如果有defineProps或者props的忽律，交给v-component-prompter处理
+  const {
+    descriptor: { template, script, scriptSetup },
+  } = parse(code)
+
+  if (script?.content && /^\s*props:\s*{/.test(script.content))
+    return
+  if (scriptSetup?.content && /defineProps\(/.test(scriptSetup.content))
+    return
+  if (!template?.ast?.children?.length)
+    return
+
+  let result = ''
+  for (const child of template.ast.children) {
+    const node = child as any
+    if (node.tag) {
+      if (result) // 说明template下不是唯一父节点
+        return
+      result = node.tag
+    }
+  }
+  return result
+}
+
+async function findDynamicComponent(name: string, deps: Record<string, string>) {
+  const prefix = optionsComponents.prefix
+  let target = findDynamic(name, prefix)
+
+  let dep
+  if (!target && (dep = deps[name])) {
+    // 只往下找一层
+    const tag = await getTemplateParentElementName(getAbosluteUrl(dep))
+    if (!tag)
+      return
+    target = findDynamic(tag, prefix)
+  }
+  return target
+}
+
+function findDynamic(tag: string, prefix: string[]) {
+  let target = UiCompletions[tag]
+  if (!target) {
+    for (const p of prefix) {
+      const t = UiCompletions[p.toUpperCase() + tag]
+      if (t) {
+        target = t
+        break
+      }
+    }
+  }
+  return target
+}
+
+function getEffectWord(preText: string) {
+  let i = preText.length - 1
+  let active = ''
+  while (preText[i] && (preText[i] !== ' ')) {
+    active += preText[i]
+    i--
+  }
+  return active
+}
