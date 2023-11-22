@@ -54,26 +54,28 @@ export function activate(context: vscode.ExtensionContext) {
     const result = parser(document.getText(), p)
     if (!result)
       return
+
+    const lan = getActiveTextEditorLanguageId()
+    const isVue = lan === 'vue'
     const { character } = position
     const isPreEmpty = lineText[character - 1] === ' '
-    const lan = getActiveTextEditorLanguageId()
     const isValue = result.isValue
     if (!result.isInTemplate && result.refs && !isPreEmpty) {
       if (result.refsMap && Object.keys(result.refsMap).length) {
         if (lineText?.slice(-1)[0] === '.') {
           for (const key in result.refsMap) {
             const value = result.refsMap[key]
-            if (lan === 'vue' && (lineText.endsWith(`.$refs.${key}.`) || lineText.endsWith(`${key}.value.`)) && UiCompletions[value])
+            if (isVue && (lineText.endsWith(`.$refs.${key}.`) || lineText.endsWith(`${key}.value.`)) && UiCompletions[value])
               return UiCompletions[value].methods
-            else if (lan !== 'vue' && lineText.endsWith(`${key}.current.`) && UiCompletions[value])
+            else if (!isVue && lineText.endsWith(`${key}.current.`) && UiCompletions[value])
               return UiCompletions[value].methods
           }
         }
       }
-      if (lan === 'vue' && lineText.slice(character, character + 6) !== '.value' && !/\.value\.?$/.test(lineText.slice(0, character)))
+      if (isVue && lineText.slice(character, character + 6) !== '.value' && !/\.value\.?$/.test(lineText.slice(0, character)))
         return result.refs.map((refName: string) => createCompletionItem({ content: refName, snippet: `${refName}.value`, documentation: `${refName}.value`, preselect: true, sortText: 'a' }))
 
-      if (lan !== 'vue' && lineText.slice(character, character + 8) !== '.current' && !/\.current\.?$/.test(lineText.slice(0, character)))
+      if (!isVue && lineText.slice(character, character + 8) !== '.current' && !/\.current\.?$/.test(lineText.slice(0, character)))
         return result.refs.map((refName: string) => createCompletionItem({ content: refName, snippet: `${refName}.current`, documentation: `${refName}.current`, preselect: true, sortText: 'a' }))
     }
     if (result.parent && result.tag === 'template') {
@@ -96,7 +98,7 @@ export function activate(context: vscode.ExtensionContext) {
       if (!completionsCallbacks.has(name)) {
         const _events = events[0]()
         eventCallbacks.set(name, _events)
-        completionsCallbacks.set(name, [...completions[0](), ...(lan === 'vue' ? [] : _events)])
+        completionsCallbacks.set(name, [...completions[0](), ...(isVue ? [] : _events)])
       }
 
       if (!eventCallbacks.has(name))
@@ -144,7 +146,7 @@ export function activate(context: vscode.ExtensionContext) {
                   type: item.kind,
                 })),
         ).filter(Boolean)
-        const events = lan === 'vue'
+        const events = isVue
           ? []
           : isValue
             ? []
