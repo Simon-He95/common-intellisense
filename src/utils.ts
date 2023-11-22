@@ -383,7 +383,7 @@ export function transformTagName(name: string) {
 export function isStartTag(loc: any, position: vscode.Position, tagLen: number) {
   const posLine = position.line + 1
   const posCharacter = position.character + 3 + tagLen
-  if (loc.start.line === posLine) {
+  if (loc.start.line <= posLine) {
     if (loc.end.line !== posLine)
       return true
     return loc.end.column >= posCharacter
