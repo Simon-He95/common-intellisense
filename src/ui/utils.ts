@@ -77,10 +77,9 @@ export function propsReducer(uiName: string, map: string[], iconData?: { prefix:
           }
 
           // command:extension.openDocumentLink?%7B%22link%22%3A%22https%3A%2F%2Fexample.com%2F%22%7D
-          if (item.link) {
-            documentation.appendMarkdown(`\n\n[🔗 ${isZh ? '文档链接' : 'Documentation link'}](command:intellisense.openDocument?%7B%22link%22%3A%22${encodeURIComponent(isZh ? item.link_zh : item.link)}%22%7D)`)
-            documentation.appendMarkdown(`\n\n[🔗 ${isZh ? '外部文档链接' : 'External document links'}](command:intellisense.openDocumentExternal?%7B%22link%22%3A%22${encodeURIComponent(isZh ? item.link_zh : item.link)}%22%7D)`)
-          }
+          if (item.link)
+            documentation.appendMarkdown(`[🔗 ${isZh ? '文档链接' : 'Documentation link'}](command:intellisense.openDocument?%7B%22link%22%3A%22${encodeURIComponent(isZh ? item.link_zh : item.link)}%22%7D)\`       \`\n\n[🔗 ${isZh ? '外部文档链接' : 'External document links'}](command:intellisense.openDocumentExternal?%7B%22link%22%3A%22${encodeURIComponent(isZh ? item.link_zh : item.link)}%22%7D)`)
+
           let content = ''
           let snippet = ''
           if (value.type && value.type.trim() === 'boolean' && value.default === 'false') {
@@ -320,7 +319,7 @@ export function propsReducer(uiName: string, map: string[], iconData?: { prefix:
       }
 
       if (item.link)
-        details.push(`[🔗 ${isZh ? '文档链接' : 'Documentation link'}](command:intellisense.openDocument?%7B%22link%22%3A%22${encodeURIComponent(isZh ? item.link_zh : item.link)}%22%7D)\`        \` [🔗 ${isZh ? '外部文档链接' : 'External document links'}](command:intellisense.openDocumentExternal?%7B%22link%22%3A%22${encodeURIComponent(isZh ? item.link_zh : item.link)}%22%7D)`)
+        details.push(`[🔗 ${isZh ? '文档链接' : 'Documentation link'}](command:intellisense.openDocument?%7B%22link%22%3A%22${encodeURIComponent(isZh ? item.link_zh : item.link)}%22%7D)\`        \` [🔗 ${isZh ? '外部链接' : 'External document links'}](command:intellisense.openDocumentExternal?%7B%22link%22%3A%22${encodeURIComponent(isZh ? item.link_zh : item.link)}%22%7D)`)
 
       documentation.appendMarkdown(details.join('\n\n'))
       return documentation
