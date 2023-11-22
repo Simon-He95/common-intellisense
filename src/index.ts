@@ -1,5 +1,5 @@
 import * as vscode from 'vscode'
-import { addEventListener, createCompletionItem, getActiveText, getActiveTextEditorLanguageId, getSelection, message, openExternalUrl, registerCommand, registerCompletionItemProvider, setCopyText } from '@vscode-use/utils'
+import { addEventListener, createCompletionItem, getActiveTextEditorLanguageId, getSelection, message, openExternalUrl, registerCommand, registerCompletionItemProvider, setCopyText } from '@vscode-use/utils'
 import { CreateWebview } from '@vscode-use/createwebview'
 import { findPkgUI, parser } from './utils'
 import UI from './ui'
@@ -58,7 +58,6 @@ export function activate(context: vscode.ExtensionContext) {
 
     const lan = getActiveTextEditorLanguageId()
     const isVue = lan === 'vue'
-    const deps = optionsComponents.prefix.length ? getImportDeps(getActiveText()!) : undefined
     const { character } = position
     const isPreEmpty = lineText[character - 1] === ' '
     const isValue = result.isValue
@@ -99,19 +98,12 @@ export function activate(context: vscode.ExtensionContext) {
       let target = UiCompletions[name]
       if (!target) {
         const prefix = optionsComponents.prefix
-        let flag = false
-        for (const d in deps) {
-          const n = deps[d]
-          for (const p of prefix) {
-            const t = UiCompletions[p.toUpperCase() + n]
-            if (t) {
-              target = t
-              flag = true
-              break
-            }
-          }
-          if (flag)
+        for (const p of prefix) {
+          const t = UiCompletions[p.toUpperCase() + name]
+          if (t) {
+            target = t
             break
+          }
         }
       }
       if (!target)
@@ -360,18 +352,19 @@ function isSamePrefix(label: string, key: string) {
   return labelName === key
 }
 
-const IMPORT_REG = /import\s+{([^\}]+)}\s+from\s+['"]([^"']+)['"]/g
-function getImportDeps(text: string) {
-  const deps: Record<string, string[]> = {}
-  for (const match of text.matchAll(IMPORT_REG)) {
-    if (!match)
-      continue
-    const from = match[2]
-    if (/^[\.\/\@]/.test(from))
-      continue
-    if (!UINames.map((i: string) => i.replace(/[0-9]/g, '')).includes(toCamel(from)))
-      continue
-    deps[from] = match[1].replace(/\s/g, '').split(',')
-  }
-  return deps
-}
+// const IMPORT_REG = /import\s+{([^\}]+)}\s+from\s+['"]([^"']+)['"]/g
+
+// export function getImportDeps(text: string) {
+//   const deps: Record<string, string[]> = {}
+//   for (const match of text.matchAll(IMPORT_REG)) {
+//     if (!match)
+//       continue
+//     const from = match[2]
+//     if (/^[\.\/\@]/.test(from))
+//       continue
+//     if (!UINames.map((i: string) => i.replace(/[0-9]/g, '')).includes(toCamel(from)))
+//       continue
+//     deps[from] = match[1].replace(/\s/g, '').split(',')
+//   }
+//   return deps
+// }
