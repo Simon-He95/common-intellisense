@@ -1,5 +1,5 @@
 import * as vscode from 'vscode'
-import { addEventListener, copyText, createCompletionItem, getActiveTextEditorLanguageId, getSelection, message, openExternalUrl, registerCommand, registerCompletionItemProvider } from '@vscode-use/utils'
+import { addEventListener, createCompletionItem, getActiveText, getActiveTextEditorLanguageId, getSelection, message, openExternalUrl, registerCommand, registerCompletionItemProvider, setCopyText } from '@vscode-use/utils'
 import { CreateWebview } from '@vscode-use/createwebview'
 import { findPkgUI, parser } from './utils'
 import UI from './ui'
@@ -34,11 +34,12 @@ export function activate(context: vscode.ExtensionContext) {
       findUI()
   }))
   context.subscriptions.push(registerCommand('intellisense.copyDemo', () => {
-    copyText(global.commonIntellisense.copyDom)
+    setCopyText(global.commonIntellisense.copyDom)
     message.info('copy successfully')
   }))
 
   findUI()
+
   context.subscriptions.push(registerCompletionItemProvider(filter, (document, position) => {
     const { lineText } = getSelection()!
     const p: any = position
@@ -57,6 +58,7 @@ export function activate(context: vscode.ExtensionContext) {
 
     const lan = getActiveTextEditorLanguageId()
     const isVue = lan === 'vue'
+    const deps = optionsComponents.prefix.length ? getImportDeps(getActiveText()!) : undefined
     const { character } = position
     const isPreEmpty = lineText[character - 1] === ' '
     const isValue = result.isValue
@@ -94,7 +96,27 @@ export function activate(context: vscode.ExtensionContext) {
         return UiCompletions.icons
 
       const propName = result.propName
-      const { events, completions } = UiCompletions[name]
+      let target = UiCompletions[name]
+      if (!target) {
+        const prefix = optionsComponents.prefix
+        let flag = false
+        for (const d in deps) {
+          const n = deps[d]
+          for (const p of prefix) {
+            const t = UiCompletions[p.toUpperCase() + n]
+            if (t) {
+              target = t
+              flag = true
+              break
+            }
+          }
+          if (flag)
+            break
+        }
+      }
+      if (!target)
+        return
+      const { events, completions } = target
       if (!completionsCallbacks.has(name)) {
         const _events = events[0]()
         eventCallbacks.set(name, _events)
@@ -188,10 +210,12 @@ export function activate(context: vscode.ExtensionContext) {
       return optionsComponents.data
     }
   }, ['"', '\'', '-', ' ', '@', '.']))
+
   const provider = new CreateWebview(context.extensionUri, {
     viewColumn: vscode.ViewColumn.Beside,
     scripts: ['main.js'],
   })
+
   context.subscriptions.push(registerCommand('intellisense.openDocument', (args) => {
     // 注册全局的link点击时间
     const url = args.link
@@ -224,6 +248,7 @@ export function activate(context: vscode.ExtensionContext) {
       }
     })
   }))
+
   context.subscriptions.push(registerCommand('intellisense.openDocumentExternal', (args) => {
     // 注册全局的link点击时间
     const url = args.link
@@ -231,6 +256,7 @@ export function activate(context: vscode.ExtensionContext) {
       return
     openExternalUrl(url)
   }))
+
   const LANS = ['javascriptreact', 'typescript', 'typescriptreact', 'vue', 'svelte', 'solid', 'swan', 'react', 'js', 'ts', 'tsx', 'jsx']
 
   context.subscriptions.push(vscode.languages.registerHoverProvider(LANS, {
@@ -243,7 +269,17 @@ export function activate(context: vscode.ExtensionContext) {
       if (!optionsComponents.data.length || !word)
         return new vscode.Hover('')
 
-      const target = UiCompletions[toCamel(word)[0].toUpperCase() + toCamel(word).slice(1)]
+      let target = UiCompletions[toCamel(word)[0].toUpperCase() + toCamel(word).slice(1)]
+      if (!target) {
+        const prefix = optionsComponents.prefix
+        for (const p of prefix) {
+          const t = UiCompletions[p.toUpperCase() + word]
+          if (t) {
+            target = t
+            break
+          }
+        }
+      }
       if (!target)
         return
 
@@ -322,4 +358,20 @@ function isSamePrefix(label: string, key: string) {
     labelName = labelName.split(' ')[0]
   }
   return labelName === key
+}
+
+const IMPORT_REG = /import\s+{([^\}]+)}\s+from\s+['"]([^"']+)['"]/g
+function getImportDeps(text: string) {
+  const deps: Record<string, string[]> = {}
+  for (const match of text.matchAll(IMPORT_REG)) {
+    if (!match)
+      continue
+    const from = match[2]
+    if (/^[\.\/\@]/.test(from))
+      continue
+    if (!UINames.map((i: string) => i.replace(/[0-9]/g, '')).includes(toCamel(from)))
+      continue
+    deps[from] = match[1].replace(/\s/g, '').split(',')
+  }
+  return deps
 }

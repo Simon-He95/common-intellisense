@@ -79,7 +79,7 @@ export function nuxtui2() {
     UProgress,
   ]
 
-  return propsReducer(map)
+  return propsReducer('@nuxt/ui', map)
 }
 
 export function nuxtui2Components() {

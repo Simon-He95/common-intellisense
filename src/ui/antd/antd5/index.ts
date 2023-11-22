@@ -203,7 +203,7 @@ export function antd5() {
     Flex,
   ]
 
-  return propsReducer(map)
+  return propsReducer('antd', map)
 }
 
 export function antd5Components() {

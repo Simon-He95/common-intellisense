@@ -167,7 +167,7 @@ export function naiveUi2() {
     watermark,
   ]
 
-  return propsReducer(map)
+  return propsReducer('naive-ui', map)
 }
 
 export function naiveUi2Components() {
@@ -746,5 +746,5 @@ Definitely Maybe
    :rotate="-15"
 >`],
       ]
-  return componentsReducer(map)
+  return componentsReducer(map, true, 'n')
 }

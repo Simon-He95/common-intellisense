@@ -445,7 +445,7 @@ export function elementUi2(extensionContext: any) {
     'ice-cream-round',
   ]
 
-  return propsReducer(map, { prefix: 'el-icon', type: 'elementUi', icons }, extensionContext)
+  return propsReducer('element-ui', map, { prefix: 'el-icon', type: 'elementUi', icons }, extensionContext)
 }
 
 export function elementUi2Components() {
@@ -1231,5 +1231,5 @@ export function elementUi2Components() {
           '<el-autocomplete></el-autocomplete>',
         ],
       ]
-  return componentsReducer(map)
+  return componentsReducer(map, true, 'el')
 }

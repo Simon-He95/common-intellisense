@@ -372,7 +372,7 @@ export function radixVue1() {
     RadioGroupRoot,
   ]
 
-  return propsReducer(map)
+  return propsReducer('radix-vue', map)
 }
 
 export function radixVue1Components() {

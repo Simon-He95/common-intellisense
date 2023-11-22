@@ -192,7 +192,7 @@ export function vant4() {
     watermark,
   ]
 
-  return propsReducer(map)
+  return propsReducer('vant', map)
 }
 
 export function vant4Components() {
@@ -431,5 +431,5 @@ export function vant4Components() {
     [uploader, '文件上传 用于将本地的图片或文件上传至服务器，并在上传过程中展示预览图和上传进度。目前 Uploader 组件不包含将文件上传至服务器的接口逻辑，该步骤需要自行实现。', '<van-uploader :after-read="afterRead" />'],
     [watermark, '水印 在页面上添加特定的文字或图案作为水印，可用于防止信息盗用。请升级 vant 到 >= 4.2.0 版本来使用该组件。', '<van-watermark content="Vant" />'],
   ]
-  return componentsReducer(map)
+  return componentsReducer(map, true, 'van')
 }

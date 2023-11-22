@@ -4,14 +4,21 @@ const fg = require('fast-glob')
 const fsp = require('node:fs/promises')
 
 export async function run() {
-  const folder = 'src/ui/arcoDesignVue'
-  const name = 'arcoDesignVue2'
+  const folder = 'src/ui/antDesignVue'
+  const name = 'antDesignVue4'
   const isHyphen = true /** 生成的模板中的使用是 true ? a-affix : AAfix */
   const url = path.resolve(root, `${folder}/${name}`)
   const entry = await fg(['**/*.json'], { dot: true, cwd: url })
   const imports = entry.map((_url: string) => `import ${_url.split('.')[0]} from './${_url}'`)
+  let prefix = ''
+  debugger
   const map = entry.map((_url: string) => {
-    return `[${_url.split('.')[0]}, "xx", "<${_url.split('.')[0]}></${_url.split('.')[0]}>"],`
+    let tagName = 'A'+_url.split('.')[0]
+    if (isHyphen) {
+      tagName = hyphenate(tagName)
+      prefix = '\'' + tagName.split('-')[0] + '\''
+    }
+    return `[${_url.split('.')[0]}, ${_url.split('.')[0]}.name, "<${tagName}></${tagName}>"],`
   })
   const template =
     `import { componentsReducer, propsReducer } from '../../utils'
@@ -29,10 +36,15 @@ export function ${name}Components() {
   const map = [
     ${map.join('\n    ')}
   ]
-  return componentsReducer(map, ${isHyphen})
+  return componentsReducer(map, ${isHyphen}, ${prefix})
 }
 `
   fsp.writeFile(path.resolve(root, `${folder}/${name}/index.ts`), template)
 }
 
 run()
+
+
+function hyphenate(s: string): string {
+  return s.replace(/([A-Z])/g, '-$1').toLowerCase().replace(/^-/, '')
+}

@@ -7,7 +7,7 @@ declare const global: {
   }
 }
 
-export function propsReducer(map: string[], iconData?: { prefix: string; type: string; icons: any[] }, extensionContext?: any) {
+export function propsReducer(uiName: string, map: string[], iconData?: { prefix: string; type: string; icons: any[] }, extensionContext?: any) {
   const result: any = {}
   let icons
   if (iconData) {
@@ -16,7 +16,7 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
       const imagePath = vscode.Uri.file(extensionContext.asAbsolutePath(`images/${iconData.type}/${icon}.svg`))
       const documentation = new vscode.MarkdownString(`![img](${imagePath})`)
       const snippet = `${prefix}-${icon}`
-      return createCompletionItem({ content: icon, type: 19, documentation, snippet })
+      return createCompletionItem({ content: icon, type: 19, documentation, snippet, params: uiName })
     })
     result.icons = icons
   }
@@ -26,15 +26,15 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
     const methods = []
     const slots: any[] = []
     const isZh = getLocale().includes('zh')
+    const lan = getActiveTextEditorLanguageId()
+    const isVue = lan === 'vue'
     const completionsDeferCallback = () => {
-      const lan = getActiveTextEditorLanguageId()
       const data = [
         'id',
-        'class',
-        'className',
+        isVue ? 'class' : 'className',
       ].map(item => createCompletionItem({ content: item, snippet: `${item}="$1"`, type: 5 }))
 
-      if (lan === 'vue')
+      if (isVue)
         data.push(createCompletionItem({ content: 'style', snippet: 'style="$1"', type: 5 }))
       else
         data.push(createCompletionItem({ content: 'style', snippet: 'style={$1}', type: 5 }))
@@ -52,6 +52,8 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
           documentation.isTrusted = true
           documentation.supportHtml = true
           const detail = []
+
+          detail.push(`## ${uiName} [${item.name}]`)
 
           if (value.default !== undefined && value.default !== '')
             detail.push(`#### 💎 ${isZh ? '默认值' : 'default'}:    ***\`${value.default.toString().replace(/`/g, '')}\`***`)
@@ -85,7 +87,7 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
             content = snippet = key
           }
           else if (value.type && value.type.trim() === 'boolean' && value.default === 'true') {
-            if (lan === 'vue') {
+            if (isVue) {
               content = key
               snippet = `:${key}="false"`
             }
@@ -96,7 +98,7 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
           }
           else if (key.startsWith(':')) {
             if (!v) {
-              if (lan === 'vue') {
+              if (isVue) {
                 const _key = key.replace('v-model', 'model')
                 content = `${key.replace(':v-model', 'v-model')}="${getComponentTagName(item.name)}${_key[1].toUpperCase()}${toCamel(_key.slice(2))}"`
                 snippet = `${key.replace(':v-model', 'v-model')}="\${1:${getComponentTagName(item.name)}${_key[1].toUpperCase()}${toCamel(_key.slice(2))}}"$2`
@@ -107,7 +109,7 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
               }
             }
             else {
-              if (lan === 'vue') {
+              if (isVue) {
                 const _key = key.replace('v-model', 'model')
                 content = `${key.replace(':v-model', 'v-model')}="${getComponentTagName(item.name)}${_key[1].toUpperCase()}${toCamel(_key.slice(2))}"`
                 snippet = `${key.replace(':v-model', 'v-model')}="\${1:${getComponentTagName(item.name)}${_key[1].toUpperCase()}${toCamel(_key.slice(2))}}"$2`
@@ -124,7 +126,7 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
           }
           content += `  ${isZh ? (value.description_zh || value.description) : value.description}${value.default ? `  ${isZh ? '默认' : 'default'}：${value.default}` : ''}`
 
-          return createCompletionItem({ content, snippet, type, documentation, preselect: true, sortText: 'a' })
+          return createCompletionItem({ content, snippet, type, documentation, preselect: true, sortText: 'a', params: uiName })
         },
         ))
       })
@@ -141,7 +143,7 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
         const lan = getActiveTextEditorLanguageId()
         const originEvent = [
           {
-            name: lan === 'vue'
+            name: isVue
               ? 'click'
               : lan === 'svelte'
                 ? 'on:click'
@@ -159,6 +161,8 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
           const detail = []
           const { name, description, params, description_zh } = events
 
+          detail.push(`## ${uiName} [${item.name}]`)
+
           if (description) {
             if (isZh)
               detail.push(`#### 🔦 说明:    ***\`${description_zh || description}\`***`)
@@ -170,7 +174,7 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
             detail.push(`#### 🔮 ${isZh ? '回调参数' : 'callback parameters'}:    ***\`${params}\`***`)
           let snippet
           let content
-          if (lan === 'vue') {
+          if (isVue) {
             const _name = name.split(':').map((item: string) =>
               item[0].toUpperCase() + item.slice(1),
             ).join('').replace(/-(\w)/g, (_: string, v: string) => v.toUpperCase())
@@ -190,7 +194,7 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
           documentation.isTrusted = true
           documentation.supportHtml = true
           documentation.appendMarkdown(detail.join('\n\n'))
-          return createCompletionItem({ content, snippet, documentation, type: vscode.CompletionItemKind.Event, sortText: 'b', preselect: true })
+          return createCompletionItem({ content, snippet, documentation, type: vscode.CompletionItemKind.Event, sortText: 'b', preselect: true, params: uiName })
         },
         )
       }
@@ -204,6 +208,9 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
         documentation.supportHtml = true
         const detail: any = []
         const { name, description, params, description_zh } = method
+
+        detail.push(`## ${uiName} [${item.name}]`)
+
         if (name)
           detail.push(`\n#### 💨 ${isZh ? '方法' : 'method'} ${name}:`)
 
@@ -218,7 +225,7 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
           detail.push(`- 🚢 ${isZh ? '参数' : 'params'}:    ***\`${params}\`***`)
 
         documentation.appendMarkdown(detail.join('\n\n'))
-        return createCompletionItem({ content: method.name, snippet: `${name.endsWith('()') ? name : `${name}()`}$1`, documentation, type: 1, preselect: true, sortText: 'b' })
+        return createCompletionItem({ content: method.name, snippet: `${name.endsWith('()') ? name : `${name}()`}$1`, documentation, type: 1, preselect: true, sortText: 'b', params: uiName })
       }))
     }
 
@@ -237,7 +244,7 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
         }
         documentation.appendMarkdown(detail.join('\n\n'))
 
-        slots.push(createCompletionItem({ content: `slot="${name}"`, snippet: `slot="${name}"$1`, documentation, type: 1, preselect: true, sortText: 'b' }))
+        slots.push(createCompletionItem({ content: `slot="${name}"`, snippet: `slot="${name}"$1`, documentation, type: 1, preselect: true, sortText: 'b', params: uiName }))
       })
     }
 
@@ -246,6 +253,9 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
       documentation.isTrusted = true
       documentation.supportHtml = true
       const details = []
+
+      details.push(`# ${uiName} [${item.name}]`)
+
       if (item.props) {
         if (isZh)
           details.push('## 参数:')
@@ -324,15 +334,10 @@ export function propsReducer(map: string[], iconData?: { prefix: string; type: s
   }, result)
 }
 
-export function componentsReducer(map: any[][], isSeperatorByHyphen = true) {
-  let prefix = ''
-  if (map) {
-    const first = map[0][0]
-    const name = typeof first === 'string' ? first : `${first.name[0].toLowerCase()}${hyphenate(first.name.slice(1))}`
-    prefix = name.split('-')[0][0]
-  }
+export function componentsReducer(map: any[][], isSeperatorByHyphen = true, prefix = '') {
   const isZh = getLocale().includes('zh')
-
+  const lan = getActiveTextEditorLanguageId()
+  const isVue = lan === 'vue'
   return {
     prefix,
     data: map.map(([content, detail, demo]) => {
@@ -342,7 +347,6 @@ export function componentsReducer(map: any[][], isSeperatorByHyphen = true) {
         const requiredProps: string[] = []
         let index = 0
         if (content.props) {
-          const lan = getActiveTextEditorLanguageId()
           Object.keys(content.props).forEach((key) => {
             const item = content.props[key]
             if (!item.required)
@@ -362,13 +366,13 @@ export function componentsReducer(map: any[][], isSeperatorByHyphen = true) {
                 key = key.replace(':v-model', 'v-model')
                 ++index
                 if (!v) {
-                  if (lan === 'vue')
+                  if (isVue)
                     attr = `${key}="\${${index}:${getComponentTagName(content.name)}${_key[1].toUpperCase()}${toCamel(_key.slice(2))}}"`
                   else
                     attr = `${key.slice(1)}={\${${index}:${getComponentTagName(content.name)}${_key[1].toUpperCase()}${toCamel(_key.slice(2))}}}`
                 }
                 else {
-                  if (lan === 'vue')
+                  if (isVue)
                     attr = `${key}="\${${index}:${getComponentTagName(content.name)}${key[1].toUpperCase()}${toCamel(key.slice(2))}}"`
                   else
                     attr = `${key.slice(1)}={\${${index}:${v}}}`
@@ -376,7 +380,7 @@ export function componentsReducer(map: any[][], isSeperatorByHyphen = true) {
               }
             }
             else if (item.type && item.type.includes('boolean') && item.default === 'false') {
-              if (lan === 'vue')
+              if (isVue)
                 attr = key
               else
                 attr = `${key}="true"`
@@ -390,7 +394,7 @@ export function componentsReducer(map: any[][], isSeperatorByHyphen = true) {
             requiredProps.push(attr)
           })
         }
-        const tag = isSeperatorByHyphen ? hyphenate(content.name.slice(1)) === content.name.slice(1) ? content.name : `${content.name[0].toLowerCase()}${hyphenate(content.name.slice(1))}` : content.name
+        const tag = isSeperatorByHyphen ? hyphenate(content.name) : content.name
         if (requiredProps.length)
           snippet = `<${tag} ${requiredProps.join(' ')}>$${++index}</${tag}>`
         else
@@ -425,7 +429,7 @@ function getComponentTagName(str: string) {
 }
 
 export function hyphenate(s: string): string {
-  return s.replace(/([A-Z])/g, '-$1').toLowerCase()
+  return s.replace(/([A-Z])/g, '-$1').toLowerCase().replace(/^-/, '')
 }
 
 export function toCamel(s: string) {

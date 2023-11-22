@@ -236,7 +236,7 @@ export function arcoDesign2() {
     YearPicker,
   ]
 
-  return propsReducer(map)
+  return propsReducer('@arco-design/web-react', map)
 }
 
 export function arcoDesign2Components() {
