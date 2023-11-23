@@ -11,7 +11,6 @@ export async function run() {
   const entry = await fg(['**/*.json'], { dot: true, cwd: url })
   const imports = entry.map((_url: string) => `import ${_url.split('.')[0]} from './${_url}'`)
   let prefix = ''
-  debugger
   const map = entry.map((_url: string) => {
     let tagName = 'A'+_url.split('.')[0]
     if (isHyphen) {

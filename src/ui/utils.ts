@@ -26,9 +26,10 @@ export function propsReducer(uiName: string, map: string[], iconData?: { prefix:
     const methods = []
     const slots: any[] = []
     const isZh = getLocale().includes('zh')
-    const lan = getActiveTextEditorLanguageId()
-    const isVue = lan === 'vue'
+
     const completionsDeferCallback = () => {
+      const lan = getActiveTextEditorLanguageId()
+      const isVue = lan === 'vue'
       const data = [
         'id',
         isVue ? 'class' : 'className',
@@ -140,6 +141,7 @@ export function propsReducer(uiName: string, map: string[], iconData?: { prefix:
     if (item.events) {
       const deferEventsCall = () => {
         const lan = getActiveTextEditorLanguageId()
+        const isVue = lan === 'vue'
         const originEvent = [
           {
             name: isVue
@@ -185,8 +187,12 @@ export function propsReducer(uiName: string, map: string[], iconData?: { prefix:
             content = `${name}={${name.replace(/:(\w)/, (_: string, v: string) => v.toUpperCase())}}`
           }
           else {
-            snippet = `${name}={\${1:${name}}}`
-            content = `${name}={${name}}`
+            let _name = name
+            if (!_name.startsWith('on'))
+              _name = `on${_name[0].toUpperCase()}${_name.slice(1)}`
+
+            snippet = `${_name}={\${1:${_name}}}`
+            content = `${_name}={${_name}}`
           }
           content += `  ${description}${params ? `  ${isZh ? '参数' : 'params'}：${params}` : ''}`
           const documentation = new vscode.MarkdownString()
@@ -333,11 +339,12 @@ export function propsReducer(uiName: string, map: string[], iconData?: { prefix:
 
 export function componentsReducer(map: any[][], isSeperatorByHyphen = true, prefix = '') {
   const isZh = getLocale().includes('zh')
-  const lan = getActiveTextEditorLanguageId()
-  const isVue = lan === 'vue'
+
   return {
     prefix,
-    data: map.map(([content, detail, demo]) => {
+    data: () => map.map(([content, detail, demo]) => {
+      const lan = getActiveTextEditorLanguageId()
+      const isVue = lan === 'vue'
       let snippet = ''
       let _content = ''
       if (typeof content === 'object') {

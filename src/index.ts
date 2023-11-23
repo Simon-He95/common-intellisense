@@ -49,6 +49,7 @@ export function activate(context: vscode.ExtensionContext) {
     const preText = lineText.slice(0, vscode.window.activeTextEditor?.selection.active.character)
     let completionsCallback: any = null
     p.active = getEffectWord(preText)
+
     const result = parser(document.getText(), p)
     if (!result)
       return
@@ -176,23 +177,24 @@ export function activate(context: vscode.ExtensionContext) {
     const prefix = lineText.trim().split(' ').slice(-1)[0]
     if (prefix.toLowerCase() === prefix ? optionsComponents.prefix.some((reg: string) => prefix.startsWith(reg)) : true) {
       const parent = result.parent
+      const data = optionsComponents.data.map((c: any) => c()).flat()
       if (parent) {
         const parentTag = parent.tag || parent.name
         const suggestions = UiCompletions[toCamel(parentTag)[0].toUpperCase() + toCamel(parentTag).slice(1)]?.suggestions
         if (suggestions && suggestions.length) {
-          optionsComponents.data.forEach((child: any) => {
+          data.forEach((child: any) => {
             const label = child.label.split(' ')[0]
             child.sortText = suggestions.includes(label) ? '1' : '2'
           })
         }
         else {
-          optionsComponents.data.forEach((child: any) => {
+          data.forEach((child: any) => {
             child.sortText = '2'
           })
         }
       }
 
-      return optionsComponents.data
+      return data
     }
   }, ['"', '\'', '-', ' ', '@', '.']))
 
@@ -251,7 +253,8 @@ export function activate(context: vscode.ExtensionContext) {
         return
       const range = document.getWordRangeAtPosition(position) as any
       const word = document.getText(range)
-      if (!optionsComponents.data.length || !word)
+      const data = optionsComponents.data.map((c: any) => c()).flat()
+      if (!data.length || !word)
         return new vscode.Hover('')
 
       const target = UiCompletions[toCamel(word)[0].toUpperCase() + toCamel(word).slice(1)] || await findDynamicComponent(word, {})
@@ -316,7 +319,7 @@ function findUI() {
       if (componentsNames) {
         const { prefix, data } = componentsNames
         result.prefix.push(prefix)
-        result.data.push(...data)
+        result.data.push(data)
       }
       return result
     }, { prefix: [], data: [] })

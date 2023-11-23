@@ -189,12 +189,17 @@ function jsxDfs(children: any, parent: any, position: vscode.Position) {
       }
     }
 
-    if (type === 'JSXElement' || type === 'Element' || (type === 'ReturnStatement' && argument.type === 'JSXElement'))
+    if (type === 'JSXElement' || type === 'Element' || (type === 'ReturnStatement' && (argument.type === 'JSXElement' || argument.type === 'JSXFragment')))
       isInTemplate = true
 
     if (child.children)
       children = child.children
-
+    else if (type === 'ObjectExpression')
+      children = child.properties
+    else if (type === 'Property' && child.value.type === 'FunctionExpression')
+      children = child.value.body.body
+    else if (type === 'ExportDefaultDeclaration')
+      children = child.declaration.arguments
     else if (type === 'VariableDeclaration')
       children = declarations
     else if (type === 'VariableDeclarator')
