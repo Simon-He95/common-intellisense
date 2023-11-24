@@ -348,61 +348,40 @@ export function componentsReducer(map: any[][], isSeperatorByHyphen = true, pref
       let snippet = ''
       let _content = ''
       if (typeof content === 'object') {
-        const requiredProps: string[] = []
-        let index = 0
-        if (content.props) {
-          Object.keys(content.props).forEach((key) => {
-            const item = content.props[key]
-            if (!item.required)
-              return
-            let attr = ''
-            const v = item.value
-            if (key.startsWith(':')) {
-              const tagName = getComponentTagName(content.name)
-              if (item.foreach) {
-                if (requiredProps.some(p => p.includes('v-for=')))
-                  attr = `${key}="item.\${${++index}:${key.slice(1)}}"`
-                else
-                  attr = `v-for="item in \${${++index}:${tagName}Options}" :key="item.\${${++index}:key}" ${key}="item.\${${++index}:${toCamel(key.slice(1))}}"`
-              }
-              else {
-                const _key = key.replace('v-model', 'model')
-                key = key.replace(':v-model', 'v-model')
-                ++index
-                if (!v) {
-                  if (isVue)
-                    attr = `${key}="\${${index}:${getComponentTagName(content.name)}${_key[1].toUpperCase()}${toCamel(_key.slice(2))}}"`
-                  else
-                    attr = `${key.slice(1)}={\${${index}:${getComponentTagName(content.name)}${_key[1].toUpperCase()}${toCamel(_key.slice(2))}}}`
-                }
-                else {
-                  if (isVue)
-                    attr = `${key}="\${${index}:${getComponentTagName(content.name)}${key[1].toUpperCase()}${toCamel(key.slice(2))}}"`
-                  else
-                    attr = `${key.slice(1)}={\${${index}:${v}}}`
-                }
-              }
-            }
-            else if (item.type && item.type.includes('boolean') && item.default === 'false') {
-              if (isVue)
-                attr = key
-              else
-                attr = `${key}="true"`
+        let [requiredProps, index] = getRequireProp(content, 0, isVue)
+        const tag = isSeperatorByHyphen ? hyphenate(content.name) : content.name
+        if (requiredProps.length) {
+          if (content?.suggestions?.length === 1) {
+            const suggestionTag = content.suggestions[0]
+            const suggestion = findTargetMap(map, suggestionTag)
+            if (suggestion) {
+              const [childRquireProps, _index] = getRequireProp(suggestion, index, isVue)
+              index = _index
+              snippet = `<${tag}${requiredProps.length ? ` ${requiredProps.join(' ')}` : ''}>\n  <${suggestionTag}${childRquireProps.length ? ` ${childRquireProps.join(' ')}` : ''}>\$${++index}</${suggestionTag}>\n</${tag}>`
             }
             else {
-              if (v)
-                attr = `${key}="${v}"`
-              else
-                attr = `${key}="\$${++index}"`
+              snippet = `<${tag}>\$${++index}</${tag}>`
             }
-            requiredProps.push(attr)
-          })
+          }
+          else {
+            snippet = `<${tag}${requiredProps.length ? ` ${requiredProps.join(' ')}` : ''}>$${++index}</${tag}>`
+          }
         }
-        const tag = isSeperatorByHyphen ? hyphenate(content.name) : content.name
-        if (requiredProps.length)
-          snippet = `<${tag} ${requiredProps.join(' ')}>$${++index}</${tag}>`
-        else
-          snippet = `<${tag}>$1</${tag}>`
+        else {
+          if (content?.suggestions?.length === 1) {
+            const suggestionTag = content.suggestions[0]
+            const suggestion = findTargetMap(map, suggestionTag)
+            if (suggestion) {
+              const [childRquireProps, _index] = getRequireProp(suggestion, index, isVue)
+              index = _index
+              snippet = `<${tag}>\n  <${suggestionTag}${childRquireProps.length ? ` ${childRquireProps.join(' ')}` : ''}>\$${++index}</${suggestionTag}>\n</${tag}>`
+            }
+            else {
+              snippet = `<${tag}>$1</${tag}>`
+            }
+          }
+          else { snippet = `<${tag}>$1</${tag}>` }
+        }
         _content = `${tag}  ${detail}`
       }
       else {
@@ -438,4 +417,71 @@ export function hyphenate(s: string): string {
 
 export function toCamel(s: string) {
   return s.replace(/-(\w)/g, (_, v) => v.toUpperCase())
+}
+
+export function getRequireProp(content: any, index = 0, isVue: boolean): [string[], number] {
+  const requiredProps: string[] = []
+  if (!content.props)
+    return [requiredProps, index]
+  Object.keys(content.props).forEach((key) => {
+    const item = content.props[key]
+    if (!item.required)
+      return
+    let attr = ''
+    const v = item.value
+    if (key.startsWith(':')) {
+      const tagName = getComponentTagName(content.name)
+      if (item.foreach) {
+        if (requiredProps.some(p => p.includes('v-for=')))
+          attr = `${key}="item.\${${++index}:${key.slice(1)}}"`
+        else
+          attr = `v-for="item in \${${++index}:${tagName}Options}" :key="item.\${${++index}:key}" ${key}="item.\${${++index}:${toCamel(key.slice(1))}}"`
+      }
+      else {
+        const _key = key.replace('v-model', 'model')
+        key = key.replace(':v-model', 'v-model')
+        ++index
+        if (!v) {
+          if (isVue)
+            attr = `${key}="\${${index}:${getComponentTagName(content.name)}${_key[1].toUpperCase()}${toCamel(_key.slice(2))}}"`
+          else
+            attr = `${key.slice(1)}={\${${index}:${getComponentTagName(content.name)}${_key[1].toUpperCase()}${toCamel(_key.slice(2))}}}`
+        }
+        else {
+          if (isVue)
+            attr = `${key}="\${${index}:${getComponentTagName(content.name)}${key[1].toUpperCase()}${toCamel(key.slice(2))}}"`
+          else
+            attr = `${key.slice(1)}={\${${index}:${v}}}`
+        }
+      }
+    }
+    else if (item.type && item.type.includes('boolean') && item.default === 'false') {
+      if (isVue)
+        attr = key
+      else
+        attr = `${key}="true"`
+    }
+    else {
+      if (v)
+        attr = `${key}="${v}"`
+      else
+        attr = `${key}="\$${++index}"`
+    }
+    requiredProps.push(attr)
+  })
+
+  return [requiredProps, index]
+}
+
+function findTargetMap(maps: any, label: string) {
+  label = toCamel(`-${label}`)
+  for (const map of maps) {
+    if (typeof map[0] === 'object') {
+      if (map[0].name === label)
+        return map[0]
+    }
+    else if (map[0] === label) {
+      return map
+    }
+  }
 }
