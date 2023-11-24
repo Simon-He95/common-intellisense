@@ -175,7 +175,7 @@ export function activate(context: vscode.ExtensionContext) {
       return
     }
     const prefix = lineText.trim().split(' ').slice(-1)[0]
-    if (prefix.toLowerCase() === prefix ? optionsComponents.prefix.some((reg: string) => prefix.startsWith(reg)) : true) {
+    if (prefix.toLowerCase() === prefix ? optionsComponents.prefix.some((reg: string) => reg.startsWith(prefix)) : true) {
       const parent = result.parent
       const data = optionsComponents.data.map((c: any) => c()).flat()
       if (parent) {
