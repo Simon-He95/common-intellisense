@@ -33,6 +33,43 @@
   "activationEvents": [
     "onStartupFinished"
   ],
+  "contributes": {
+    "configuration": {
+      "title": "Common Intellisense",
+      "properties": {
+        "common-intellisense.ui": {
+          "type": "array",
+          "default": ["auto"],
+          "items": {
+            "type": "string",
+            "enum": [
+              "auto",
+              "elementUi2",
+              "antd4",
+              "antd5",
+              "vant4",
+              "naiveUi2",
+              "antDesignVue4",
+              "antDesignVue3",
+              "antDesignVue2",
+              "varlet2",
+              "vuetify3",
+              "chakraUiReact2",
+              "primevue3",
+              "quasar2",
+              "nextui2",
+              "nuxtui2",
+              "shadcnVue0",
+              "radixVue1",
+              "arcoDesign2",
+              "arcoDesignVue2"
+            ]
+          },
+          "description": "Choose the UI framework. If your selection includes `auto`, the extension will ignore the config and automatically detect the UI framework."
+        }
+      }
+    }
+  },
   "scripts": {
     "dev": "pnpm build --watch",
     "test": "vitest",

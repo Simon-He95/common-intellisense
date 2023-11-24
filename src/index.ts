@@ -41,6 +41,11 @@ export function activate(context: vscode.ExtensionContext) {
     message.info('copy successfully')
   }))
 
+  context.subscriptions.push(vscode.workspace.onDidChangeConfiguration((e) => {
+    if (e.affectsConfiguration('common-intellisense.ui'))
+      findUI()
+  }))
+
   findUI()
 
   context.subscriptions.push(registerCompletionItemProvider(filter, async (document, position) => {
@@ -282,6 +287,32 @@ export function deactivate() {
 const filters = ['js', 'ts', 'jsx', 'tsx', 'vue', 'svelte']
 
 function findUI() {
+  UINames = []
+  optionsComponents = null
+  UiCompletions = null
+
+  const config = vscode.workspace.getConfiguration('common-intellisense')
+  const selectedUIs = config.get('ui') as string[]
+
+  if (selectedUIs && selectedUIs.length && !selectedUIs.includes('auto')) {
+    UINames = [...selectedUIs]
+
+    optionsComponents = UINames.map((option: string) => `${option}Components`).reduce((result: any, name: string) => {
+      const componentsNames = (UI as any)[name]?.()
+      if (componentsNames) {
+        const { prefix, data } = componentsNames
+        result.prefix.push(prefix)
+        result.data.push(data)
+      }
+      return result
+    }, { prefix: [], data: [] })
+
+    UiCompletions = UINames.reduce((result: any, option: string) =>
+      Object.assign(result, (UI as any)[option]?.(extensionContext))
+    , {} as any)
+    return
+  }
+
   const cwd = vscode.window.activeTextEditor?.document.uri.fsPath
   const suffix = cwd?.split('.').slice(-1)[0]
   if (!suffix || !filters.includes(suffix))
