@@ -1,7 +1,7 @@
 import fsp from 'node:fs/promises'
 import path from 'node:path'
 import * as vscode from 'vscode'
-import { addEventListener, createCompletionItem, getActiveText, getActiveTextEditorLanguageId, getCurrentFileUrl, getSelection, message, openExternalUrl, registerCommand, registerCompletionItemProvider, setCopyText } from '@vscode-use/utils'
+import { addEventListener, createCompletionItem, createSelect, getActiveText, getActiveTextEditorLanguageId, getConfiguration, getCurrentFileUrl, getLocale, getSelection, message, openExternalUrl, registerCommand, registerCompletionItemProvider, setCopyText } from '@vscode-use/utils'
 import { CreateWebview } from '@vscode-use/createwebview'
 import { parse } from '@vue/compiler-sfc'
 import { findPkgUI, parser } from './utils'
@@ -18,13 +18,14 @@ declare const global: {
 let UINames: any = []
 let optionsComponents: any = null
 let UiCompletions: any = null
-let cacheMap: any = {}
+const cacheMap: any = new Map()
 let extensionContext: any = null
 let eventCallbacks: any = new Map()
 let completionsCallbacks: any = new Map()
-
+let currentPkgUiNames: null | string[] = null
 export function activate(context: vscode.ExtensionContext) {
   extensionContext = context
+  const isZh = getLocale().includes('zh')
   global.commonIntellisense = {
     copyDom: '',
   }
@@ -36,9 +37,28 @@ export function activate(context: vscode.ExtensionContext) {
     if (currentEditor)
       findUI()
   }))
+
   context.subscriptions.push(registerCommand('intellisense.copyDemo', () => {
     setCopyText(global.commonIntellisense.copyDom)
     message.info('copy successfully')
+  }))
+
+  context.subscriptions.push(registerCommand('common-intellisense.pickUI', () => {
+    const config = getConfiguration('common-intellisense')
+    if (currentPkgUiNames) {
+      createSelect(currentPkgUiNames, {
+        canPickMany: true,
+        placeHolder: isZh ? '请指定你需要提示的 UI 库' : 'Please specify the UI library you need to prompt.',
+        title: 'common intellisense',
+      }).then((data) => {
+        config.update('ui', data)
+      })
+    }
+    else {
+      message.error(isZh
+        ? '当前项目中并没有安装 common intellisense 支持的 UI 库'
+        : 'There is no UI library supported by common intelligence in the current project.')
+    }
   }))
 
   context.subscriptions.push(vscode.workspace.onDidChangeConfiguration((e) => {
@@ -279,13 +299,13 @@ export function deactivate() {
   UINames = null
   optionsComponents = null
   UiCompletions = null
-  cacheMap = null
+  cacheMap.clear()
   eventCallbacks = null
   completionsCallbacks = null
 }
 
 const filters = ['js', 'ts', 'jsx', 'tsx', 'vue', 'svelte']
-
+const urlCache = new Map()
 function findUI() {
   UINames = []
   optionsComponents = null
@@ -294,59 +314,48 @@ function findUI() {
   const config = vscode.workspace.getConfiguration('common-intellisense')
   const selectedUIs = config.get('ui') as string[]
 
-  if (selectedUIs && selectedUIs.length && !selectedUIs.includes('auto')) {
-    UINames = [...selectedUIs]
-
-    optionsComponents = UINames.map((option: string) => `${option}Components`).reduce((result: any, name: string) => {
-      const componentsNames = (UI as any)[name]?.()
-      if (componentsNames) {
-        const { prefix, data } = componentsNames
-        result.prefix.push(prefix)
-        result.data.push(data)
-      }
-      return result
-    }, { prefix: [], data: [] })
-
-    UiCompletions = UINames.reduce((result: any, option: string) =>
-      Object.assign(result, (UI as any)[option]?.(extensionContext))
-    , {} as any)
-    return
-  }
-
   const cwd = vscode.window.activeTextEditor?.document.uri.fsPath
   const suffix = cwd?.split('.').slice(-1)[0]
   if (!suffix || !filters.includes(suffix))
     return
 
-  const values = Object.values(cacheMap) as any
-  if (values[0] && values[0].includes(cwd))
+  if (urlCache.has(cwd)) {
+    const uis = urlCache.get(cwd)
+    updateCompletions(uis)
     return
+  }
 
-  findPkgUI(cwd).then(({ uis, pkg }: any) => {
+  findPkgUI(cwd).then(({ uis }: any) => {
+    urlCache.set(cwd, uis)
     if (!uis)
       return
-    if (Object.keys(cacheMap).length) {
-      if (!cacheMap[pkg]) {
-        cacheMap = {}
-        cacheMap[pkg] = []
-      }
-    }
-    else if (!cacheMap[pkg]) {
-      cacheMap[pkg] = []
-    }
-    cacheMap[pkg].push(cwd)
+    updateCompletions(uis)
+  })
+
+  function updateCompletions(uis: any) {
     const uisName: string[] = []
+
     uis.forEach(([uiName, version]: any) => {
       const _version = version.match(/[^~]?([0-9]+)./)![1]
       const name = uiName.replace(/-(\w)/g, (_: string, v: string) => v.toUpperCase())
       uisName.push(`${nameMap[name] ?? name}${_version}`)
     })
 
-    if (uisName.every(name => UINames.includes(name)))
-      return
-    UINames = uisName
+    if (selectedUIs && selectedUIs.length && !selectedUIs.includes('auto'))
+      UINames = [...selectedUIs]
+    else
+      UINames = uisName
+
+    currentPkgUiNames = uisName
     optionsComponents = UINames.map((option: string) => `${option}Components`).reduce((result: any, name: string) => {
-      const componentsNames = (UI as any)[name]?.()
+      let componentsNames
+      if (cacheMap.has(name)) {
+        componentsNames = cacheMap.get(name)
+      }
+      else {
+        componentsNames = (UI as any)[name]?.()
+        cacheMap.set(name, componentsNames)
+      }
       if (componentsNames) {
         const { prefix, data } = componentsNames
         result.prefix.push(prefix)
@@ -355,10 +364,19 @@ function findUI() {
       return result
     }, { prefix: [], data: [] })
 
-    UiCompletions = UINames.reduce((result: any, option: string) =>
-      Object.assign(result, (UI as any)[option]?.(extensionContext))
+    UiCompletions = UINames.reduce((result: any, option: string) => {
+      let completion
+      if (cacheMap.has(option)) {
+        completion = cacheMap.get(option)
+      }
+      else {
+        completion = (UI as any)[option]?.(extensionContext)
+        cacheMap.set(option, completion)
+      }
+      return Object.assign(result, completion)
+    }
     , {} as any)
-  })
+  }
 }
 
 function isSamePrefix(label: string, key: string) {
