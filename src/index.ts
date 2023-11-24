@@ -45,7 +45,7 @@ export function activate(context: vscode.ExtensionContext) {
 
   context.subscriptions.push(registerCommand('common-intellisense.pickUI', () => {
     const config = getConfiguration('common-intellisense')
-    if (currentPkgUiNames) {
+    if (currentPkgUiNames && currentPkgUiNames.length) {
       createSelect(currentPkgUiNames, {
         canPickMany: true,
         placeHolder: isZh ? '请指定你需要提示的 UI 库' : 'Please specify the UI library you need to prompt.',

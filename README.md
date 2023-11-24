@@ -49,6 +49,9 @@ Install the supported ui component library in your project and install the plug-
 
 ### [arco-design/vue demo](assets/acro-design-vue.gif)
 
+## 选择指定的 UI 库（解决多个UI库命名冲突）
+- `cmd+shift+p` -> 选择 `Specify the UI library you need to prompt`
+
 ## :coffee:
 
 [buy me a cup of coffee](https://github.com/Simon-He95/sponsor)
