@@ -194,7 +194,7 @@ export function propsReducer(uiName: string, map: string[], iconData?: { prefix:
             snippet = `${_name}={\${1:${_name}}}`
             content = `${_name}={${_name}}`
           }
-          content += `  ${description}${params ? `  ${isZh ? '参数' : 'params'}：${params}` : ''}`
+          content += `  ${isZh ? (description_zh || description) : description}${params ? `  ${isZh ? '参数' : 'params'}：${params}` : ''}`
           const documentation = new vscode.MarkdownString()
           documentation.isTrusted = true
           documentation.supportHtml = true
