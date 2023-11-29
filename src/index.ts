@@ -21,7 +21,6 @@ let eventCallbacks: any = new Map()
 let completionsCallbacks: any = new Map()
 
 export function activate(context: vscode.ExtensionContext) {
-  console.log('插件已经被激活了')
   extensionContext = context
   global.commonIntellisense = {
     copyDom: '',
