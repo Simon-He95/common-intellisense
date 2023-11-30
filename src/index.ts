@@ -147,7 +147,7 @@ export function activate(context: vscode.ExtensionContext) {
             return item.loc.source.split('=')[0]
 
           if (item.name === 'bind')
-            return item.arg.content
+            return item?.arg?.content
 
           if (item.name !== 'on')
             return item.name
