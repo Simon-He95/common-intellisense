@@ -85,6 +85,7 @@ export function activate(context: vscode.ExtensionContext) {
     const { character } = position
     const isPreEmpty = lineText[character - 1] === ' '
     const isValue = result.isValue
+
     if (!result.isInTemplate && result.refs && !isPreEmpty) {
       if (result.refsMap && Object.keys(result.refsMap).length) {
         if (lineText?.slice(-1)[0] === '.') {
@@ -103,6 +104,7 @@ export function activate(context: vscode.ExtensionContext) {
       if (!isVue && lineText.slice(character, character + 8) !== '.current' && !/\.current\.?$/.test(lineText.slice(0, character)))
         return result.refs.map((refName: string) => createCompletionItem({ content: refName, snippet: `${refName}.current`, documentation: `${refName}.current`, preselect: true, sortText: 'a' }))
     }
+
     if (result.parent && result.tag === 'template') {
       const parentTag = result.parent.tag || result.parent.name
       if (parentTag) {
@@ -403,7 +405,7 @@ export function getImportDeps(text: string) {
   return deps
 }
 
-export function getAbosluteUrl(url: string) {
+export function getAbsoluteUrl(url: string) {
   return path.resolve(getCurrentFileUrl(), '..', url)
 }
 
@@ -440,7 +442,7 @@ async function findDynamicComponent(name: string, deps: Record<string, string>) 
   let dep
   if (!target && (dep = deps[name])) {
     // 只往下找一层
-    const tag = await getTemplateParentElementName(getAbosluteUrl(dep))
+    const tag = await getTemplateParentElementName(getAbsoluteUrl(dep))
     if (!tag)
       return
     target = findDynamic(tag, prefix)
