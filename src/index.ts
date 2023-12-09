@@ -1,7 +1,7 @@
 import fsp from 'node:fs/promises'
 import path from 'node:path'
 import * as vscode from 'vscode'
-import { addEventListener, createCompletionItem, createSelect, getActiveText, getActiveTextEditorLanguageId, getConfiguration, getCurrentFileUrl, getLocale, getSelection, message, openExternalUrl, registerCommand, registerCompletionItemProvider, setCopyText } from '@vscode-use/utils'
+import { addEventListener, createCompletionItem, createSelect, getActiveText, getActiveTextEditorLanguageId, getConfiguration, getCurrentFileUrl, getLineText, getLocale, getSelection, message, openExternalUrl, registerCommand, registerCompletionItemProvider, setCopyText } from '@vscode-use/utils'
 import { CreateWebview } from '@vscode-use/createwebview'
 import { parse } from '@vue/compiler-sfc'
 import { findPkgUI, parser } from './utils'
@@ -115,6 +115,7 @@ export function activate(context: vscode.ExtensionContext) {
           return slots
       }
     }
+
     if (UiCompletions && result?.type === 'props') {
       const name = result.tag[0].toUpperCase() + result.tag.replace(/(-\w)/g, (match: string) => match[1].toUpperCase()).slice(1)
       if (result.propName === 'icon')
@@ -280,6 +281,10 @@ export function activate(context: vscode.ExtensionContext) {
         return
       const range = document.getWordRangeAtPosition(position) as any
       const word = document.getText(range)
+      // 只针对template中的内容才提示
+      const lineText = getLineText(position.line)
+      if (lineText[range.start.character - 1] !== '<')
+        return
       const data = optionsComponents.data.map((c: any) => c()).flat()
       if (!data.length || !word)
         return new vscode.Hover('')

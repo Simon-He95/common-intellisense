@@ -33,6 +33,7 @@ import Drawer from './drawer.json'
 import Dropdown from './dropdown.json'
 import DropdownButton from './dropdownButton.json'
 import Empty from './empty.json'
+import Flex from './flex.json'
 import FloatButton from './floatButton.json'
 import FloatButtonGroup from './floatButtonGroup.json'
 import Form from './form.json'
@@ -138,6 +139,7 @@ export function antDesignVue4() {
     Dropdown,
     DropdownButton,
     Empty,
+    Flex,
     FloatButton,
     FloatButtonGroup,
     Form,
@@ -247,6 +249,7 @@ export function antDesignVue4Components() {
     [Dropdown, Dropdown.name, '<a-dropdown></a-dropdown>'],
     [DropdownButton, DropdownButton.name, '<a-dropdown-button></a-dropdown-button>'],
     [Empty, Empty.name, '<a-empty></a-empty>'],
+    [Flex, Flex.name, '<a-flex></a-flex>'],
     [FloatButton, FloatButton.name, '<a-float-button></a-float-button>'],
     [FloatButtonGroup, FloatButtonGroup.name, '<a-float-button-group></a-float-button-group>'],
     [Form, Form.name, '<a-form></a-form>'],
