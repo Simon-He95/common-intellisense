@@ -4,6 +4,7 @@ import { parse } from '@vue/compiler-sfc'
 import type { SFCTemplateBlock } from '@vue/compiler-sfc'
 import { parse as tsParser } from '@typescript-eslint/typescript-estree'
 import { findUp } from 'find-up'
+import { getActiveTextEditor } from '@vscode-use/utils'
 import { UINames } from './constants'
 
 const { parse: svelteParser } = require('svelte/compiler')
@@ -71,19 +72,36 @@ function dfs(children: any, parent: any, position: vscode.Position) {
     if (props && props.length) {
       for (const prop of props) {
         if (isInPosition(prop.loc, position)) {
-          if (!isStartTag(child.loc, position, child.tag.length))
+          if (!isInAttribute(child, position))
             return false
-          return {
-            tag,
-            propName: prop.name,
-            props,
-            type: 'props',
-            isInTemplate: true,
-            isValue: !!prop?.value?.content,
-            parent: {
-              tag: parent.tag ? parent.tag : 'template',
-              props: parent.props || [],
-            },
+          if ((prop.name === 'bind' || prop.name === 'on') && prop.arg) {
+            return {
+              tag,
+              propName: prop.arg.content,
+              props,
+              type: 'props',
+              isInTemplate: true,
+              isValue: !!prop?.value?.content,
+              parent: {
+                tag: parent.tag ? parent.tag : 'template',
+                props: parent.props || [],
+              },
+              isEvent: prop.name === 'on',
+            }
+          }
+          else {
+            return {
+              tag,
+              propName: prop.name,
+              props,
+              type: 'props',
+              isInTemplate: true,
+              isValue: !!prop?.value?.content,
+              parent: {
+                tag: parent.tag ? parent.tag : 'template',
+                props: parent.props || [],
+              },
+            }
           }
         }
       }
@@ -94,7 +112,7 @@ function dfs(children: any, parent: any, position: vscode.Position) {
         return result
     }
     if (child.tag) {
-      if (!child.isSelfClosing && !isStartTag(child.loc, position, child.tag.length))
+      if (!isInAttribute(child, position))
         return false
       return {
         type: 'props',
@@ -182,8 +200,15 @@ function jsxDfs(children: any, parent: any, position: vscode.Position) {
             propType: prop.type,
             type: 'props',
             isInTemplate,
-            isValue: Array.isArray(prop?.value) ? !!prop.value[0]?.raw : prop.value.type === 'JSXExpressionContainer' ? !!prop.value?.expression : !!prop?.value?.value,
+            isValue: prop.value
+              ? Array.isArray(prop.value)
+                ? !!prop.value[0]?.raw
+                : prop.value.type === 'JSXExpressionContainer'
+                  ? !!prop.value?.expression
+                  : !!prop?.value?.value
+              : false,
             parent,
+            isEvent: prop.type === 'EventHandler' || (prop.type === 'JSXAttribute' && prop.name.name.startsWith('on')),
           }
         }
       }
@@ -194,6 +219,8 @@ function jsxDfs(children: any, parent: any, position: vscode.Position) {
 
     if (child.children)
       children = child.children
+    else if (type === 'ExportNamedDeclaration')
+      children = child.declaration.body
     else if (type === 'ObjectExpression')
       children = child.properties
     else if (type === 'Property' && child.value.type === 'FunctionExpression')
@@ -235,13 +262,13 @@ function jsxDfs(children: any, parent: any, position: vscode.Position) {
             ? `${openingElement.name.object.name}.${openingElement.name.property.name}`
             : openingElement.name.name,
           props: openingElement.attributes,
-          propName: target.value === null
-            ? target?.name?.name ?? ''
-            : typeof target.name === 'string'
+          propName: target.value
+            ? typeof target.name === 'string'
               ? target.type === 'EventHandler'
                 ? 'on'
                 : target.name
-              : target.name.name,
+              : target.name.name
+            : '',
           propType: target.type,
           isInTemplate,
           parent,
@@ -385,15 +412,56 @@ export function transformTagName(name: string) {
   return name[0].toUpperCase() + name.replace(/(-\w)/g, (match: string) => match[1].toUpperCase()).slice(1)
 }
 
-export function isStartTag(loc: any, position: vscode.Position, tagLen: number) {
-  const posLine = position.line + 1
-  const posCharacter = position.character + 3 + tagLen
-  if (loc.start.line <= posLine) {
-    if (loc.end.line !== posLine)
-      return true
-    return loc.end.column >= posCharacter
+export function isInAttribute(child: any, position: any) {
+  const len = child.props.length
+  let end = null
+  let start = null
+  if (!len) {
+    const childNode = child.children?.[0]
+    start = {
+      column: child.loc.start.column + child.tag.length + 1,
+      line: child.loc.start.line,
+      offset: child.loc.start.offset + child.tag.length + 1,
+    }
+    if (childNode) {
+      end = {
+        line: childNode.loc.start.line,
+        column: childNode.loc.start.column - 1,
+        offset: childNode.loc.start.offset - 1,
+      }
+    }
+    else {
+      if (child.isSelfClosing) {
+        end = {
+          line: child.loc.end.line,
+          column: child.loc.end.column - 2,
+          offset: child.loc.end.offset - 2,
+        }
+      }
+      else {
+        const startOffset = start.offset
+        const match = child.loc.source.slice(child.tag.length + 1).match('>')!
+        const endOffset = startOffset + match.index
+        const offset = getOffsetFromPosition(position)
+        return (startOffset < offset) && (offset < endOffset)
+      }
+    }
   }
-  return false
+  else {
+    const offsetX = child.props[len - 1].loc.end.offset - child.loc.start.offset
+    const x = child.loc.source.slice(offsetX).match('>').index!
+    end = {
+      column: child.props[len - 1].loc.end.column + 1 + x,
+      line: child.props[len - 1].loc.end.line,
+      offset: child.props[len - 1].loc.end.offset + 1 + x,
+    }
+    start = child.props[0].loc.start
+  }
+
+  const offset = getOffsetFromPosition(position)
+  const startOffset = start.offset
+  const endOffset = end.offset
+  return (startOffset < offset) && (offset < endOffset)
 }
 
 export function convertPositionToLoc(data: any) {
@@ -417,4 +485,14 @@ function convertOffsetToLineColumn(document: vscode.TextDocument, offset: number
   const lineOffset = document.offsetAt(position)
 
   return { line, column, lineText, lineOffset }
+}
+
+export function getOffsetFromPosition(position: any, code?: string) {
+  if (code) {
+    return code.split('\n').slice(0, position.line).reduce((prev, cur) => {
+      return prev + cur.length + 1
+    }, 0) + (position.character || 0)
+  }
+
+  return getActiveTextEditor()?.document.offsetAt(position)
 }

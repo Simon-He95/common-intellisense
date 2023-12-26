@@ -16,7 +16,7 @@ export function propsReducer(uiName: string, map: string[], iconData?: { prefix:
       const imagePath = vscode.Uri.file(extensionContext.asAbsolutePath(`images/${iconData.type}/${icon}.svg`))
       const documentation = new vscode.MarkdownString(`![img](${imagePath})`)
       const snippet = `${prefix}-${icon}`
-      return createCompletionItem({ content: icon, type: 19, documentation, snippet, params: uiName })
+      return createCompletionItem({ content: icon, type: 19, documentation, snippet, params: [uiName] })
     })
     result.icons = icons
   }
@@ -33,12 +33,12 @@ export function propsReducer(uiName: string, map: string[], iconData?: { prefix:
       const data = [
         'id',
         isVue ? 'class' : 'className',
-      ].map(item => createCompletionItem({ content: item, snippet: `${item}="$1"`, type: 5 }))
+      ].map(item => createCompletionItem({ content: item, snippet: `${item}="$1"`, type: 5, params: [] }))
 
       if (isVue)
-        data.push(createCompletionItem({ content: 'style', snippet: 'style="$1"', type: 5 }))
+        data.push(createCompletionItem({ content: 'style', snippet: 'style="$1"', type: 5, params: [] }))
       else
-        data.push(createCompletionItem({ content: 'style', snippet: 'style={$1}', type: 5 }))
+        data.push(createCompletionItem({ content: 'style', snippet: 'style={$1}', type: 5, params: [] }))
 
       Object.keys(item.props!).forEach((key) => {
         const value = (item.props as any)[key]
@@ -126,7 +126,7 @@ export function propsReducer(uiName: string, map: string[], iconData?: { prefix:
           }
           content += `  ${isZh ? (value.description_zh || value.description) : value.description}${value.default ? `  ${isZh ? '默认' : 'default'}：${value.default}` : ''}`
 
-          return createCompletionItem({ content, snippet, type, documentation, preselect: true, sortText: 'a', params: uiName })
+          return createCompletionItem({ content, snippet, type, documentation, preselect: true, sortText: 'a', params: [uiName, key.replace(/^:/, '')] })
         },
         ))
       })
@@ -150,7 +150,7 @@ export function propsReducer(uiName: string, map: string[], iconData?: { prefix:
                 ? 'on:click'
                 : 'onClick',
             description: isZh ? '点击事件' : 'click event',
-            params: '',
+            params: [],
           },
         ]
 
@@ -199,7 +199,7 @@ export function propsReducer(uiName: string, map: string[], iconData?: { prefix:
           documentation.isTrusted = true
           documentation.supportHtml = true
           documentation.appendMarkdown(detail.join('\n\n'))
-          return createCompletionItem({ content, snippet, documentation, type: vscode.CompletionItemKind.Event, sortText: 'b', preselect: true, params: uiName })
+          return createCompletionItem({ content, snippet, documentation, type: vscode.CompletionItemKind.Event, sortText: 'b', preselect: true, params: [uiName, name] })
         },
         )
       }

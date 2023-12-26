@@ -85,7 +85,6 @@ export function activate(context: vscode.ExtensionContext) {
     const { character } = position
     const isPreEmpty = lineText[character - 1] === ' '
     const isValue = result.isValue
-
     if (!result.isInTemplate && result.refs && !isPreEmpty) {
       if (result.refsMap && Object.keys(result.refsMap).length) {
         if (lineText?.slice(-1)[0] === '.') {
@@ -159,12 +158,12 @@ export function activate(context: vscode.ExtensionContext) {
         }).filter(Boolean)
         : []
       if (propName === 'on') {
-        return eventCallbacks.get(name).filter((item: any) => !hasProps.find((prop: any) => isSamePrefix(item.label, prop)))
+        return eventCallbacks.get(name).filter((item: any) => !hasProps.find((prop: any) => item?.params?.[1] === prop))
       }
       else if (propName) {
         const result = completionsCallback.filter((item: any) => isValue
-          ? hasProps.find((prop: any) => isSamePrefix(item.label, prop))
-          : !hasProps.find((prop: any) => isSamePrefix(item.label, prop))).filter((item: any) => item.label.startsWith(propName)).map((item: any) =>
+          ? hasProps.find((prop: any) => item?.params?.[1] === prop)
+          : !hasProps.find((prop: any) => item?.params?.[1] === prop)).filter((item: any) => item.label.startsWith(propName)).map((item: any) =>
           item.label.match(/^\w+={[^}]*}/)
             ? undefined
             : createCompletionItem(isValue
@@ -186,14 +185,14 @@ export function activate(context: vscode.ExtensionContext) {
           ? []
           : isValue
             ? []
-            : eventCallbacks.get(name).filter((item: any) => !hasProps.find((prop: any) => isSamePrefix(item.label, prop)))
+            : eventCallbacks.get(name).filter((item: any) => !hasProps.find((prop: any) => item?.params?.[1] === prop))
         if (propName === 'o')
           return [...events, ...result]
 
         return [...result, ...events]
       }
       else if (hasProps.length) {
-        return completionsCallback.filter((item: any) => !hasProps.find((prop: any) => isSamePrefix(item.label, prop)))
+        return completionsCallback.filter((item: any) => !hasProps.find((prop: any) => item?.params?.[1] === prop))
       }
       else {
         return completionsCallback
@@ -283,8 +282,23 @@ export function activate(context: vscode.ExtensionContext) {
       const word = document.getText(range)
       // 只针对template中的内容才提示
       const lineText = getLineText(position.line)
-      if (lineText[range.start.character - 1] !== '<')
-        return
+      if (lineText[range.start.character - 1] !== '<') {
+        const result = parser(document.getText(), position as any)
+        if (!result)
+          return
+        if (!result.propName)
+          return
+        const propName = result.propName === 'bind' ? result.props[0].arg.content : result.propName
+        const tag = toCamel(result.tag)[0].toUpperCase() + toCamel(result.tag).slice(1)
+        const r = UiCompletions[tag] || await findDynamicComponent(tag, {})
+        const completions = result.isEvent ? r.events[0]?.() : r.completions[0]?.()
+        if (!completions)
+          return
+        const detail = getHoverAttribute(completions, propName)
+        if (!detail)
+          return
+        return new vscode.Hover(`## Details \n\n${detail}`)
+      }
       const data = optionsComponents.data.map((c: any) => c()).flat()
       if (!data.length || !word)
         return new vscode.Hover('')
@@ -386,7 +400,7 @@ function findUI() {
   }
 }
 
-function isSamePrefix(label: string, key: string) {
+export function isSamePrefix(label: string, key: string) {
   let labelName = label.split('=')[0]
   if (labelName.indexOf(' ')) {
     // 防止匹配到描述中的=
@@ -477,4 +491,10 @@ function getEffectWord(preText: string) {
     i--
   }
   return active
+}
+
+function getHoverAttribute(attributeList: any[], attr: string) {
+  return attributeList.filter((a) => {
+    return a?.params?.[1] === attr
+  }).map(i => `- ${i.label}`).join('\n\n')
 }
