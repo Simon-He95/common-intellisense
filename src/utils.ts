@@ -4,7 +4,7 @@ import { parse } from '@vue/compiler-sfc'
 import type { SFCTemplateBlock } from '@vue/compiler-sfc'
 import { parse as tsParser } from '@typescript-eslint/typescript-estree'
 import { findUp } from 'find-up'
-import { getActiveTextEditor } from '@vscode-use/utils'
+import { getOffsetFromPosition } from '@vscode-use/utils'
 import { UINames } from './constants'
 
 const { parse: svelteParser } = require('svelte/compiler')
@@ -415,14 +415,13 @@ export function transformTagName(name: string) {
 export function isInAttribute(child: any, position: any) {
   const len = child.props.length
   let end = null
-  let start = null
+  const start = {
+    column: child.loc.start.column + child.tag.length + 1,
+    line: child.loc.start.line,
+    offset: child.loc.start.offset + child.tag.length + 1,
+  }
   if (!len) {
     const childNode = child.children?.[0]
-    start = {
-      column: child.loc.start.column + child.tag.length + 1,
-      line: child.loc.start.line,
-      offset: child.loc.start.offset + child.tag.length + 1,
-    }
     if (childNode) {
       end = {
         line: childNode.loc.start.line,
@@ -442,7 +441,7 @@ export function isInAttribute(child: any, position: any) {
         const startOffset = start.offset
         const match = child.loc.source.slice(child.tag.length + 1).match('>')!
         const endOffset = startOffset + match.index
-        const offset = getOffsetFromPosition(position)
+        const offset = getOffsetFromPosition(position)!
         return (startOffset < offset) && (offset < endOffset)
       }
     }
@@ -455,10 +454,9 @@ export function isInAttribute(child: any, position: any) {
       line: child.props[len - 1].loc.end.line,
       offset: child.props[len - 1].loc.end.offset + 1 + x,
     }
-    start = child.props[0].loc.start
   }
 
-  const offset = getOffsetFromPosition(position)
+  const offset = getOffsetFromPosition(position)!
   const startOffset = start.offset
   const endOffset = end.offset
   return (startOffset < offset) && (offset < endOffset)
@@ -485,14 +483,4 @@ function convertOffsetToLineColumn(document: vscode.TextDocument, offset: number
   const lineOffset = document.offsetAt(position)
 
   return { line, column, lineText, lineOffset }
-}
-
-export function getOffsetFromPosition(position: any, code?: string) {
-  if (code) {
-    return code.split('\n').slice(0, position.line).reduce((prev, cur) => {
-      return prev + cur.length + 1
-    }, 0) + (position.character || 0)
-  }
-
-  return getActiveTextEditor()?.document.offsetAt(position)
 }
