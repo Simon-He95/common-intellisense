@@ -281,7 +281,7 @@ export function activate(context: vscode.ExtensionContext) {
       const range = document.getWordRangeAtPosition(position) as any
       const word = document.getText(range)
       // 只针对template中的内容才提示
-      const lineText = getLineText(position.line)
+      const lineText = getLineText(position.line)!
       if (lineText[range.start.character - 1] !== '<') {
         const result = parser(document.getText(), position as any)
         if (!result)
@@ -425,7 +425,7 @@ export function getImportDeps(text: string) {
 }
 
 export function getAbsoluteUrl(url: string) {
-  return path.resolve(getCurrentFileUrl(), '..', url)
+  return path.resolve(getCurrentFileUrl()!, '..', url)
 }
 
 async function getTemplateParentElementName(url: string) {

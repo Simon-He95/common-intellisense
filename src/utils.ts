@@ -442,7 +442,7 @@ export function isInAttribute(child: any, position: any) {
         const match = child.loc.source.slice(child.tag.length + 1).match('>')!
         const endOffset = startOffset + match.index
         const offset = getOffsetFromPosition(position)!
-        return (startOffset < offset) && (offset < endOffset)
+        return (startOffset < offset) && (offset <= endOffset)
       }
     }
   }
