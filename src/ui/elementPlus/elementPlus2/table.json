@@ -1,0 +1,424 @@
+{
+  "name": "ElTable",
+  "props": {
+    ":data": {
+      "value": "",
+      "description": "The data displayed",
+      "default": "—",
+      "type": "array",
+      "required": true,
+      "description_zh": "显示的数据"
+    },
+    "height": {
+      "value": "",
+      "description": "The height of the table, which defaults to the automatic height. If height is of type number, the unit is px; If height is of type string, this height is set to the value of style.height of the Table, and the height of the Table is controlled by the outer style.",
+      "default": "—",
+      "type": "string | number",
+      "description_zh": "Table 的高度，默认为自动高度。如果 height 为 number 类型，单位 px；如果 height 为 string 类型，则这个高度会设置为 Table 的 style.height 的值，Table 的高度会受控于外部样式。"
+    },
+    "max-height": {
+      "value": "",
+      "description": "The maximum height of the Table. A valid value is a number or the height in px.",
+      "default": "—",
+      "type": "string | number",
+      "description_zh": "Table 的最大高度。合法的值为数字或者单位为 px 的高度。"
+    },
+    "stripe": {
+      "value": "",
+      "description": "Whether it is a zebra table",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "是否为斑马纹 table"
+    },
+    "border": {
+      "value": "",
+      "description": "Whether or not it comes with a longitudinal border",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "是否带有纵向边框"
+    },
+    "size": {
+      "value": [
+        "medium",
+        "small",
+        "mini"
+      ],
+      "description": "The size of the Table",
+      "default": "—",
+      "type": "string",
+      "description_zh": "Table 的尺寸"
+    },
+    "fit": {
+      "value": "",
+      "description": "Whether the width of the column is self-stretching",
+      "default": "true",
+      "type": "boolean",
+      "description_zh": "列的宽度是否自撑开"
+    },
+    "show-header": {
+      "value": "",
+      "description": "Whether to display the header",
+      "default": true,
+      "type": "boolean",
+      "description_zh": "是否显示表头"
+    },
+    "highlight-current-row": {
+      "value": "",
+      "description": "Whether you want to highlight the current row",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "是否要高亮当前行"
+    },
+    "current-row-key": {
+      "value": "",
+      "description": "The key of the current line, and only the attribute is written",
+      "default": "—",
+      "type": "string | number",
+      "description_zh": "当前行的 key，只写属性"
+    },
+    "row-class-name": {
+      "value": "",
+      "description": "className of the row, you can also use a string to set a fixed className for all rows.",
+      "default": "—",
+      "type": "string | number",
+      "description_zh": "行的 className 的回调方法，也可以使用字符串为所有行设置一个固定的 className。"
+    },
+    "row-style": {
+      "value": "",
+      "description": "The key of the current line, and only the attribute is written",
+      "default": "—",
+      "type": "string | number",
+      "description_zh": "当前行的 key，只写属性"
+    },
+    ":cell-class-name": {
+      "value": "",
+      "description": "The callback method of the className of the cell, you can also use a string to set a fixed className for all cells.",
+      "default": "—",
+      "type": "Function({row, column, rowIndex, columnIndex}) | String",
+      "description_zh": "单元格的 className 的回调方法，也可以使用字符串为所有单元格设置一个固定的 className。"
+    },
+    ":cell-style": {
+      "value": "",
+      "description": "The callback method of the className of the cell, you can also use a string to set a fixed className for all cells.",
+      "default": "—",
+      "type": "Function({row, column, rowIndex, columnIndex}) | String",
+      "description_zh": "单元格的 className 的回调方法，也可以使用字符串为所有单元格设置一个固定的 className。"
+    },
+    ":header-row-class-name": {
+      "value": "",
+      "description": "You can also use a string to set a fixed className for all header rows.",
+      "default": "—",
+      "type": "Function({row, rowIndex}) | String",
+      "description_zh": "表头行的 className 的回调方法，也可以使用字符串为所有表头行设置一个固定的 className。"
+    },
+    ":header-row-style": {
+      "value": "",
+      "description": "You can also use a fixed object to set the same style for all header rows.",
+      "default": "—",
+      "type": "Function({row, rowIndex}) | Object",
+      "description_zh": "表头行的 style 的回调方法，也可以使用一个固定的 Object 为所有表头行设置一样的 Style。"
+    },
+    ":header-cell-style": {
+      "value": "",
+      "description": "You can also use a fixed object to set the same style for all header cells.",
+      "default": "—",
+      "type": "Function({row, column, rowIndex, columnIndex}) | Object",
+      "description_zh": "表头单元格的 style 的回调方法，也可以使用一个固定的 Object 为所有表头单元格设置一样的 Style。"
+    },
+    ":row-key": {
+      "value": "",
+      "description": "The key of the row data, which is used to optimize the rendering of the table; This attribute is required when using the reserve-selection function and displaying tree data. If the type is String, multi-layer access is supported: user.info.id, but user.info[0].id is not supported.",
+      "default": "—",
+      "type": "Function(row) | String",
+      "description_zh": "行数据的 Key，用来优化 Table 的渲染；在使用 reserve-selection 功能与显示树形数据时，该属性是必填的。类型为 String 时，支持多层访问：user.info.id，但不支持 user.info[0].id，此种情况请使用 Function。"
+    },
+    "empty-text": {
+      "value": "",
+      "description": "The text content displayed when the data is empty can also be set by slot=\"empty\".",
+      "default": "暂无数据",
+      "type": "string",
+      "description_zh": "空数据时显示的文本内容，也可以通过 slot=\"empty\" 设置"
+    },
+    "default-expand-all": {
+      "value": "",
+      "description": "Whether to expand all rows by default, when Table contains expanded rows, exists, or is a tree table",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "是否默认展开所有行，当 Table 包含展开行存在或者为树形表格时有效"
+    },
+    "default-sort": {
+      "value": [
+        "ascending",
+        "descending"
+      ],
+      "description": "The default sort of prop and order. Its prop property specifies the default sorted column, and order specifies the default sort order",
+      "default": "ascending",
+      "type": "Object",
+      "description_zh": "默认的排序列的 prop 和顺序。它的prop属性指定默认的排序的列，order指定默认排序的顺序"
+    },
+    "tooltip-effect": {
+      "value": [
+        "dark",
+        "light"
+      ],
+      "description": "tooltip effect property",
+      "default": "—",
+      "type": "string",
+      "description_zh": "tooltip effect 属性"
+    },
+    "show-summary": {
+      "value": "",
+      "description": "Whether to display the total row in the footer",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "是否在表尾显示合计行"
+    },
+    "sum-text": {
+      "value": "",
+      "description": "Total the text of the first column of the row",
+      "default": "合计",
+      "type": "string",
+      "description_zh": "合计行第一列的文本"
+    },
+    ":summary-method": {
+      "value": "",
+      "description": "Custom totaling methods",
+      "default": "false",
+      "type": "Function({ columns, data })",
+      "description_zh": "自定义的合计计算方法"
+    },
+    ":span-method": {
+      "value": "",
+      "description": "The calculation method for combining rows or columns",
+      "default": "—",
+      "type": "Function({ row, column, rowIndex, columnIndex })",
+      "description_zh": "合并行或列的计算方法"
+    },
+    "select-on-indeterminate": {
+      "value": "",
+      "description": "In a multi-select table, the behavior of clicking the multi-check box in the header when only some rows are selected. If true, all rows are selected; If false, all rows are deselected",
+      "default": "true",
+      "type": "boolean",
+      "description_zh": "在多选表格中，当仅有部分行被选中时，点击表头的多选框时的行为。若为 true，则选中所有行；若为 false，则取消选择所有行"
+    },
+    ":indent": {
+      "value": "",
+      "description": "The indentation of tree nodes when displaying tree data",
+      "default": "16",
+      "type": "number",
+      "description_zh": "展示树形数据时，树节点的缩进"
+    },
+    ":load": {
+      "value": "",
+      "description": "The function that loads the data of the child node, which takes effect when lazy is true, contains the hierarchical information of the node",
+      "default": "—",
+      "type": "Function(row, treeNode, resolve)",
+      "description_zh": "加载子节点数据的函数，lazy 为 true 时生效，函数第二个参数包含了节点的层级信息"
+    },
+    ":tree-props": {
+      "value": "",
+      "description": "Configuration options for rendering nested data",
+      "default": "{ hasChildren: 'hasChildren', children: 'children' }",
+      "type": "Object",
+      "description_zh": "渲染嵌套数据的配置选项"
+    }
+  },
+  "methods": [
+    {
+      "name": "clearSelection",
+      "description": "Used for multi-select tables to clear the user's selection",
+      "params": "—",
+      "description_zh": "用于多选表格，清空用户的选择",
+      "value": ""
+    },
+    {
+      "name": "toggleRowSelection",
+      "description": "It is used for multi-select tables, toggle the selection status of a row, if the second parameter is used, it is to set whether the row is selected or not (selected is true if it is selected)",
+      "params": "row, selected",
+      "description_zh": "用于多选表格，切换某一行的选中状态，如果使用了第二个参数，则是设置这一行选中与否（selected 为 true 则选中）",
+      "value": ""
+    },
+    {
+      "name": "toggleAllSelection",
+      "description": "Used for multi-select tables to toggle the selected status of all rows",
+      "params": "-",
+      "description_zh": "用于多选表格，切换所有行的选中状态",
+      "value": ""
+    },
+    {
+      "name": "toggleRowExpansion",
+      "description": "It is used to toggle the expansion state of a row between an expandable table and a tree table, and if the second parameter is used, it is to set whether the row is expanded or not (expanded is true to expand)",
+      "params": "row, expanded",
+      "description_zh": "用于可展开表格与树形表格，切换某一行的展开状态，如果使用了第二个参数，则是设置这一行展开与否（expanded 为 true 则展开）",
+      "value": ""
+    },
+    {
+      "name": "setCurrentRow",
+      "description": "Used in a radio table, set a certain line to select a row, if the call is not parameterized, the current highlighted row will be unselected.",
+      "params": "row",
+      "description_zh": "用于单选表格，设定某一行为选中行，如果调用时不加参数，则会取消目前高亮行的选中状态。",
+      "value": ""
+    },
+    {
+      "name": "clearSort",
+      "description": "Used to clear the sorting condition, the data will be restored to the unsorted state",
+      "params": "—",
+      "description_zh": "用于清空排序条件，数据会恢复成未排序的状态",
+      "value": ""
+    },
+    {
+      "name": "clearFilter",
+      "description": "If no parameter is passed, it can be used to clear all filter conditions and the data will be restored to an unfiltered state, or an array composed of columnKeys can be passed in to clear the filter conditions of the specified column",
+      "params": "columnKey",
+      "description_zh": "不传入参数时用于清空所有过滤条件，数据会恢复成未过滤的状态，也可传入由columnKey组成的数组以清除指定列的过滤条件",
+      "value": ""
+    },
+    {
+      "name": "doLayout",
+      "description": "Rearrange the Table. You may need to call this method when the Table or its ancestor element is switched from hidden to displayed",
+      "params": "—",
+      "description_zh": "对 Table 进行重新布局。当 Table 或其祖先元素由隐藏切换为显示时，可能需要调用此方法",
+      "value": ""
+    },
+    {
+      "name": "sort",
+      "description": "Sort the table manually. The 'prop' property specifies the sort order, and 'order' specifies the sort order.",
+      "params": "prop: string, order: string",
+      "description_zh": "手动对 Table 进行排序。参数`prop`属性指定排序列，`order`指定排序顺序。",
+      "value": ""
+    }
+  ],
+  "events": [
+    {
+      "name": "select",
+      "description": "An event that is triggered when a user manually checks the checkbox for a row of data",
+      "params": "selection, row",
+      "description_zh": "当用户手动勾选数据行的 Checkbox 时触发的事件",
+      "value": ""
+    },
+    {
+      "name": "select-all",
+      "description": "An event that is triggered when a user manually checks Checkbox all",
+      "params": "selection",
+      "description_zh": "当用户手动勾选全选 Checkbox 时触发的事件",
+      "value": ""
+    },
+    {
+      "name": "selection-change",
+      "description": "This event is triggered when the selection changes",
+      "params": "selection",
+      "description_zh": "当选择项发生变化时会触发该事件",
+      "value": ""
+    },
+    {
+      "name": "cell-mouse-enter",
+      "description": "The event is triggered when a cell hover enters",
+      "params": "row, column, cell, event",
+      "description_zh": "当单元格 hover 进入时会触发该事件",
+      "value": ""
+    },
+    {
+      "name": "cell-mouse-leave",
+      "description": "The event is triggered when a cell hover exits",
+      "params": "row, column, cell, event",
+      "description_zh": "当单元格 hover 退出时会触发该事件",
+      "value": ""
+    },
+    {
+      "name": "cell-click",
+      "description": "The event is triggered when a cell is clicked",
+      "params": "row, column, cell, event",
+      "description_zh": "当某个单元格被点击时会触发该事件",
+      "value": ""
+    },
+    {
+      "name": "cell-dblclick",
+      "description": "This event is triggered when a cell is double-clicked",
+      "params": "row, column, cell, event",
+      "description_zh": "当某个单元格被双击击时会触发该事件",
+      "value": ""
+    },
+    {
+      "name": "row-click",
+      "description": "This event is triggered when a row is clicked",
+      "params": "row, column, event",
+      "description_zh": "当某一行被点击时会触发该事件",
+      "value": ""
+    },
+    {
+      "name": "row-contextmenu",
+      "description": "This event is triggered when a row is right-clicked",
+      "params": "row, column, event",
+      "description_zh": "当某一行被鼠标右键点击时会触发该事件",
+      "value": ""
+    },
+    {
+      "name": "row-dblclick",
+      "description": "This event is triggered when a row is double-clicked",
+      "params": "row, column, event",
+      "description_zh": "当某一行被双击时会触发该事件",
+      "value": ""
+    },
+    {
+      "name": "header-click",
+      "description": "This event is triggered when the header of a column is clicked",
+      "params": "column, event",
+      "description_zh": "当某一列的表头被点击时会触发该事件",
+      "value": ""
+    },
+    {
+      "name": "header-contextmenu",
+      "description": "This event is triggered when the header of a column is right-clicked",
+      "params": "column, event",
+      "description_zh": "当某一列的表头被鼠标右键点击时触发该事件",
+      "value": ""
+    },
+    {
+      "name": "sort-change",
+      "description": "This event is triggered when the sorting criteria of the table change",
+      "params": "{ column, prop, order }",
+      "description_zh": "当表格的排序条件发生变化的时候会触发该事件",
+      "value": ""
+    },
+    {
+      "name": "filter-change",
+      "description": "When the filter condition of the table changes, the value of the parameter is an object, the key of the object is the columnKey of the column, and the corresponding value is the array of filter conditions selected by the user.",
+      "params": "filters",
+      "description_zh": "当表格的筛选条件发生变化的时候会触发该事件，参数的值是一个对象，对象的 key 是 column 的 columnKey，对应的 value 为用户选择的筛选条件的数组。",
+      "value": ""
+    },
+    {
+      "name": "current-change",
+      "description": "This event is triggered when the current row of the table changes, and if you want to highlight the current row, open the highlight-current-row property of the table",
+      "params": "currentRow, oldCurrentRow",
+      "description_zh": "当表格的当前行发生变化的时候会触发该事件，如果要高亮当前行，请打开表格的 highlight-current-row 属性",
+      "value": ""
+    },
+    {
+      "name": "header-dragend",
+      "description": "This event is triggered when dragging the header changes the width of a column",
+      "params": "newWidth, oldWidth, column, event",
+      "description_zh": "当拖动表头改变了列的宽度的时候会触发该事件",
+      "value": ""
+    },
+    {
+      "name": "expand-change",
+      "description": "This event is triggered when the user expands or closes a row (when expanding a row, the second parameter of the callback is expandedRows; The second parameter is expanded)",
+      "params": "row, (expandedRows | expanded)",
+      "description_zh": "当用户对某一行展开或者关闭的时候会触发该事件（展开行时，回调的第二个参数为 expandedRows；树形表格时第二参数为 expanded）",
+      "value": ""
+    }
+  ],
+  "slots": [
+    {
+      "name": "append",
+      "description": "This slot may be used if you need to scroll the contents of the table indefinitely. If the table has a total row, the slot will be on top of the total row.",
+      "description_zh": "插入至表格最后一行之后的内容，如果需要对表格的内容进行无限滚动操作，可能需要用到这个 slot。若表格有合计行，该 slot 会位于合计行之上。"
+    }
+  ],
+  "suggestions": [
+    "el-table-column"
+  ],
+  "link": "https://element-plus.org/en-US/component/table.html",
+  "link_zh": "https://element-plus.org/zh-CN/component/table.html"
+}

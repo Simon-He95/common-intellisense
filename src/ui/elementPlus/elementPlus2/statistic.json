@@ -1,0 +1,140 @@
+{
+  "name": "ElStatistic",
+  "props": {
+    ":value": {
+      "value": "",
+      "description": "Required value, enter the binding value",
+      "default": "—",
+      "type": "string",
+      "description_zh": "必填值，输入绑定值",
+      "required": true
+    },
+    "decimal-separator": {
+      "value": "",
+      "description": "Set the decimal point",
+      "default": "—",
+      "type": "string",
+      "description_zh": "设置小数点"
+    },
+    ":formatter": {
+      "value": "",
+      "description": "Custom numerical display",
+      "default": "—",
+      "type": "v-slot |({value}) => VNode",
+      "description_zh": "自定义数值展示"
+    },
+    "group-separator": {
+      "value": "",
+      "description": "Set the thousandth identifier",
+      "default": "—",
+      "type": "string",
+      "description_zh": "设置千分位标识符"
+    },
+    ":precision": {
+      "value": "",
+      "description": "Numerical precision",
+      "default": "—",
+      "type": "number",
+      "description_zh": "数值精度"
+    },
+    "prefix": {
+      "value": "",
+      "description": "Set the prefix of the numeric value",
+      "default": "—",
+      "type": "string | v-slot",
+      "description_zh": "设置数值的前缀"
+    },
+    "suffix": {
+      "value": "",
+      "description": "Set the suffix of the numeric value",
+      "default": "—",
+      "type": "string | v-slot",
+      "description_zh": "设置数值的后缀"
+    },
+    "title": {
+      "value": "",
+      "description": "The title of the numeric value",
+      "default": "—",
+      "type": "string | v-slot",
+      "description_zh": "数值的标题",
+      "required": true
+    },
+    ":value-style": {
+      "value": "",
+      "description": "Sets the style of the numeric value",
+      "default": "—",
+      "type": "object",
+      "description_zh": "设置数值的样式"
+    },
+    ":rate": {
+      "value": "",
+      "description": "Set the magnification",
+      "default": "—",
+      "type": "number",
+      "description_zh": "设置倍率"
+    },
+    "time-indices": {
+      "value": "",
+      "description": "Whether to enable the countdown function",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "是否开启倒计时功能"
+    },
+    "format": {
+      "value": "",
+      "description": "Format the countdown display",
+      "default": "—",
+      "type": "string",
+      "description_zh": "格式化倒计时展示"
+    }
+  },
+  "methods": [
+    {
+      "name": "suspend",
+      "description": "Pause the countdown",
+      "params": "(value:boolean)",
+      "description_zh": "暂停倒计时",
+      "value": ""
+    }
+  ],
+  "events": [
+    {
+      "name": "change",
+      "description": "Enabled in the 'Countdown' function",
+      "params": "(value: Date)",
+      "description_zh": "在`倒计时`的功能中开启",
+      "value": ""
+    },
+    {
+      "name": "finish",
+      "description": "Starts when the 'countdown' is complete",
+      "params": "(value: boolean)",
+      "description_zh": "在`倒计时` 完成后启动",
+      "value": ""
+    }
+  ],
+  "slots": [
+    {
+      "name": "prefix",
+      "description": "The prefix of the numeric value",
+      "description_zh": "数值的前缀"
+    },
+    {
+      "name": "suffix",
+      "description": "The suffix of the numeric value",
+      "description_zh": "数值的后缀"
+    },
+    {
+      "name": "formatter",
+      "description": "Numerical content",
+      "description_zh": "数值内容"
+    },
+    {
+      "name": "title",
+      "description": "The title of the numeric value",
+      "description_zh": "数值的标题"
+    }
+  ],
+  "link": "https://element-plus.org/en-US/component/statistic.html",
+  "link_zh": "https://element-plus.org/zh-CN/component/statistic.html"
+}

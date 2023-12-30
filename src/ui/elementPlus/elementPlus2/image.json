@@ -1,0 +1,107 @@
+{
+  "name": "ElImage",
+  "props": {
+    "src": {
+      "value": "",
+      "description": "Image source, same as original",
+      "default": "—",
+      "type": "string",
+      "description_zh": "图片源，同原生",
+      "required": true
+    },
+    "fit": {
+      "value": [
+        "fill",
+        "contain",
+        "cover",
+        "none",
+        "scale-down"
+      ],
+      "description": "Determine how the image fits into the container box, the same as native [object-fit](https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit)",
+      "default": "fill | contain | cover | none | scale-down",
+      "type": "string",
+      "description_zh": "确定图片如何适应容器框，同原生 [object-fit](https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit)"
+    },
+    "alt": {
+      "value": "",
+      "description": "Native alt",
+      "default": "-",
+      "type": "string",
+      "description_zh": "原生 alt",
+      "required": true
+    },
+    "referrer-policy": {
+      "value": "",
+      "description": "Native referrerPolicy",
+      "default": "-",
+      "type": "string",
+      "description_zh": "原生 referrerPolicy"
+    },
+    "lazy": {
+      "value": "",
+      "description": "Whether to enable lazy loading",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "是否开启懒加载"
+    },
+    "scroll-container": {
+      "value": "",
+      "description": "After lazy loading is enabled, listen to the container for scroll events",
+      "default": "—",
+      "type": "string | HTMLElement",
+      "description_zh": "开启懒加载后，监听 scroll 事件的容器"
+    },
+    ":preview-src-list": {
+      "value": "",
+      "description": "Turn on the image preview feature",
+      "default": "—",
+      "type": "Array",
+      "description_zh": "开启图片预览功能"
+    },
+    ":z-index": {
+      "value": "",
+      "description": "Set the z-index of the image preview",
+      "default": "—",
+      "type": "number",
+      "description_zh": "设置图片预览的 z-index"
+    },
+    ":initial-index": {
+      "value": "",
+      "description": "Image preview: initial image index",
+      "default": "—",
+      "type": "number",
+      "description_zh": "图片预览初始图片index"
+    }
+  },
+  "events": [
+    {
+      "name": "load",
+      "description": "The image is triggered when it loads successfully",
+      "params": "(e: Event)",
+      "description_zh": "图片加载成功触发",
+      "value": ""
+    },
+    {
+      "name": "error",
+      "description": "Triggered when the image fails to load",
+      "params": "(e: Error)",
+      "description_zh": "图片加载失败触发",
+      "value": ""
+    }
+  ],
+  "slots": [
+    {
+      "name": "placeholder",
+      "description": "Placeholder content that isn't loaded in the image",
+      "description_zh": "图片未加载的占位内容"
+    },
+    {
+      "name": "error",
+      "description": "Failed to load content",
+      "description_zh": "加载失败的内容"
+    }
+  ],
+  "link": "https://element-plus.org/en-US/component/image.html",
+  "link_zh": "https://element-plus.org/zh-CN/component/image.html",
+  "methods": []
+}

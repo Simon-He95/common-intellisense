@@ -1,0 +1,106 @@
+{
+  "name": "ElProgress",
+  "props": {
+    ":percentage": {
+      "value": "",
+      "description": "**Percentage (required)**",
+      "default": "0-100",
+      "type": "number",
+      "description_zh": "**百分比（必填）**",
+      "required": true
+    },
+    "type": {
+      "value": [
+        "line",
+        "circle",
+        "dashboard"
+      ],
+      "description": "The type of progress bar",
+      "default": "line | circle | dashboard",
+      "type": "string",
+      "description_zh": "进度条类型"
+    },
+    "stroke-width": {
+      "value": "",
+      "description": "The width of the progress bar, in px",
+      "default": "—",
+      "type": "number",
+      "description_zh": "进度条的宽度，单位 px"
+    },
+    "text-inside": {
+      "value": "",
+      "description": "The progress bar display text is built into the progress bar (only available when type=line)",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "进度条显示文字内置在进度条内（只在 type=line 时可用）"
+    },
+    "status": {
+      "value": [
+        "success",
+        "exception",
+        "warning"
+      ],
+      "description": "The current status of the progress bar",
+      "default": "success | exception | warning",
+      "type": "string",
+      "description_zh": "进度条当前状态"
+    },
+    "color": {
+      "value": "",
+      "description": "Progress bar background color (overrides the status color)",
+      "default": "—",
+      "type": "string | function | array",
+      "description_zh": "进度条背景色（会覆盖 status 状态颜色）"
+    },
+    ":width": {
+      "value": "",
+      "description": "Circular progress bar canvas width (only available when type is Circle or Dashboard)",
+      "default": "",
+      "type": "number",
+      "description_zh": "环形进度条画布宽度（只在 type 为 circle 或 dashboard 时可用）"
+    },
+    "show-text": {
+      "value": "",
+      "description": "Whether to display the text content of the progress bar",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "是否显示进度条文字内容"
+    },
+    "stroke-linecap": {
+      "value": [
+        "butt",
+        "round",
+        "square"
+      ],
+      "description": "circle/dashboard type, shape at both ends of the path",
+      "default": "butt | round | square",
+      "type": "string",
+      "description_zh": "circle/dashboard 类型路径两端的形状"
+    },
+    ":format": {
+      "value": "",
+      "description": "Specify the text content of the progress bar",
+      "default": "—",
+      "type": "function(percentage)",
+      "description_zh": "指定进度条文字内容"
+    },
+    "define-back-color": {
+      "value": "",
+      "description": "Specify the background color of the progress bar (hex format supported)",
+      "default": "—",
+      "type": "string",
+      "description_zh": "指定进度条底色（支持 hex 格式）"
+    },
+    "text-color": {
+      "value": "",
+      "description": "Specify the progress bar font color (supports hex format)",
+      "default": "—",
+      "type": "string",
+      "description_zh": "指定进度条字体颜色（支持 hex 格式）"
+    }
+  },
+  "events": [],
+  "link": "https://element-plus.org/en-US/component/progress.html",
+  "link_zh": "https://element-plus.org/zh-CN/component/progress.html",
+  "methods": []
+}

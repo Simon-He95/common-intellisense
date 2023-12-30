@@ -1,0 +1,163 @@
+{
+  "name": "ElSlider",
+  "props": {
+    ":value": {
+      "value": "",
+      "description": "Binding value",
+      "default": "—",
+      "type": "number",
+      "description_zh": "绑定值"
+    },
+    ":v-model": {
+      "value": "",
+      "description": "Binding value",
+      "default": "—",
+      "type": "number",
+      "description_zh": "绑定值",
+      "required": true
+    },
+    ":min": {
+      "value": "",
+      "description": "minimum",
+      "default": "—",
+      "type": "number",
+      "description_zh": "最小值"
+    },
+    ":max": {
+      "value": "",
+      "description": "maximum",
+      "default": "—",
+      "type": "number",
+      "description_zh": "最大值"
+    },
+    "disabled": {
+      "value": "",
+      "description": "Whether to disable or not",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "是否禁用"
+    },
+    ":step": {
+      "value": "",
+      "description": "Step",
+      "default": "—",
+      "type": "number",
+      "description_zh": "步长"
+    },
+    "show-input": {
+      "value": "",
+      "description": "Whether or not to display the input box is only valid when the range is not selected",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "是否显示输入框，仅在非范围选择时有效"
+    },
+    "show-input-controls": {
+      "value": "",
+      "description": "In the case of an input box, whether to display the control buttons of the input box",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "在显示输入框的情况下，是否显示输入框的控制按钮"
+    },
+    "input-size": {
+      "value": [
+        "large",
+        "medium",
+        "small",
+        "mini"
+      ],
+      "description": "Enter the dimensions of the box",
+      "default": "large | medium | small | mini",
+      "type": "string",
+      "description_zh": "输入框的尺寸"
+    },
+    "show-stops": {
+      "value": "",
+      "description": "Whether to display a break point",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "是否显示间断点"
+    },
+    "show-tooltip": {
+      "value": "",
+      "description": "Whether to display the tooltip",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "是否显示 tooltip"
+    },
+    ":format-tooltip": {
+      "value": "",
+      "description": "Format the tooltip message",
+      "default": "—",
+      "type": "function(value)",
+      "description_zh": "格式化 tooltip message"
+    },
+    "range": {
+      "value": "",
+      "description": "Whether or not to select a scope",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "是否为范围选择"
+    },
+    "vertical": {
+      "value": "",
+      "description": "Whether or not to be in portrait mode",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "是否竖向模式"
+    },
+    "height": {
+      "value": "",
+      "description": "Slider height, required in portrait mode",
+      "default": "—",
+      "type": "string",
+      "description_zh": "Slider 高度，竖向模式时必填"
+    },
+    "label": {
+      "value": "",
+      "description": "Screen reader labels",
+      "default": "—",
+      "type": "string",
+      "description_zh": "屏幕阅读器标签"
+    },
+    ":debounce": {
+      "value": "",
+      "description": "The debounce delay on input, in milliseconds, is only valid when 'show-input' is equal to true",
+      "default": "—",
+      "type": "number",
+      "description_zh": "输入时的去抖延迟，毫秒，仅在`show-input`等于true时有效"
+    },
+    "tooltip-class": {
+      "value": "",
+      "description": "tooltip",
+      "default": "—",
+      "type": "string",
+      "description_zh": "tooltip 的自定义类名"
+    },
+    ":marks": {
+      "value": "",
+      "description": "tags, the type of key must be number and the value must be in the closed interval '[min, max]', and each token can be styled separately",
+      "default": "—",
+      "type": "object",
+      "description_zh": "标记， key 的类型必须为 number 且取值在闭区间 `[min, max]` 内，每个标记可以单独设置样式"
+    }
+  },
+  "events": [
+    {
+      "name": "change",
+      "description": "Triggers when the value changes (when dragging with the mouse, it only triggers when the mouse is released)",
+      "params": "改变后的值",
+      "description_zh": "值改变时触发（使用鼠标拖曳时，只在松开鼠标后触发）",
+      "value": ""
+    },
+    {
+      "name": "input",
+      "description": "Triggered when data changes (when dragging with the mouse, the activity process is triggered in real time)",
+      "params": "改变后的值",
+      "description_zh": "数据改变时触发（使用鼠标拖曳时，活动过程实时触发）",
+      "value": ""
+    }
+  ],
+  "link": "https://element-plus.org/en-US/component/slider.html",
+  "link_zh": "https://element-plus.org/zh-CN/component/slider.html",
+  "methods": []
+}

@@ -11,6 +11,7 @@
 ### 🍬 目前支持
 - vant 4
 - element-ui 2
+- element-plus 2
 - antd 4、5
 - antdv 4
 - varlet 2

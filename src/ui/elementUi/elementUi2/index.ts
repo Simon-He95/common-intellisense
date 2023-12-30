@@ -47,6 +47,7 @@ import ElDescriptions from './descriptions.json'
 import ElDescriptionItem from './descriptionItem.json'
 import ElDatePicker from './datePicker.json'
 import ElDatetimePicker from './datetimePicker.json'
+import ElMain from './main.json'
 import ElMenu from './menu.json'
 import ElMenuItem from './menuItem.json'
 import ElPageHeader from './pageHeader.json'
@@ -129,6 +130,7 @@ export function elementUi2(extensionContext: any) {
     ElDescriptionItem,
     ElDatePicker,
     ElDatetimePicker,
+    ElMain,
     ElMenu,
     ElMenuItem,
     ElPageHeader,
@@ -697,6 +699,12 @@ export function elementUi2Components() {
           ElAlert,
           '警告',
           '<el-alert></el-alert>',
+        ],
+
+        [
+          ElMain,
+          '主要区域容器',
+          '<el-main></el-main>',
         ],
         [
           ElMenu,

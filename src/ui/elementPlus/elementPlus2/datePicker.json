@@ -1,0 +1,281 @@
+{
+  "name": "ElDatePicker",
+  "props": {
+    ":value": {
+      "value": "",
+      "description": "Binding value",
+      "default": "—",
+      "type": "date(DatePicker) | array(DateRangePicker)",
+      "description_zh": "绑定值"
+    },
+    ":v-model": {
+      "value": "",
+      "description": "Binding value",
+      "default": "—",
+      "type": "date(DatePicker) | array(DateRangePicker)",
+      "required": true,
+      "description_zh": "绑定值"
+    },
+    "readonly": {
+      "value": "",
+      "description": "Completely read-only",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "完全只读"
+    },
+    "disabled": {
+      "value": "",
+      "description": "disable",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "禁用"
+    },
+    "editable": {
+      "value": "",
+      "description": "Text boxes can be entered",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "文本框可输入"
+    },
+    "clearable": {
+      "value": "",
+      "description": "Whether or not to display a clear button",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "是否显示清除按钮"
+    },
+    "size": {
+      "value": "",
+      "description": "Enter the size of the field",
+      "default": "large, small, mini",
+      "type": "string",
+      "description_zh": "输入框尺寸"
+    },
+    "placeholder": {
+      "value": "",
+      "description": "Placeholder content when not in scope",
+      "default": "—",
+      "type": "string",
+      "required": true,
+      "description_zh": "非范围选择时的占位内容"
+    },
+    "start-placeholder": {
+      "value": "",
+      "description": "The placeholder content for the start date when the range is selected",
+      "default": "—",
+      "type": "string",
+      "description_zh": "范围选择时开始日期的占位内容"
+    },
+    "end-placeholder": {
+      "value": "",
+      "description": "The placeholder content for the end date when the scope is selected",
+      "default": "—",
+      "type": "string",
+      "description_zh": "范围选择时结束日期的占位内容"
+    },
+    "type": {
+      "value": [
+        "year",
+        "month",
+        "date",
+        "dates",
+        "months",
+        "years week",
+        "datetime",
+        "datetimerange",
+        "daterange",
+        "monthrange"
+      ],
+      "description": "Display type",
+      "default": "year | month | date | dates | months | years week | datetime | datetimerange | daterange | monthrange",
+      "type": "string",
+      "description_zh": "显示类型"
+    },
+    "format": {
+      "value": [
+        "yyyy-MM-dd",
+        "timestamp",
+        "yyyy"
+      ],
+      "description": "The format that appears in the input box",
+      "default": "yyyy-MM-dd",
+      "type": "string",
+      "description_zh": "显示在输入框中的格式"
+    },
+    "align": {
+      "value": [
+        "left",
+        "center",
+        "right"
+      ],
+      "description": "Alignment",
+      "default": "left, center, right",
+      "type": "string",
+      "description_zh": "对齐方式"
+    },
+    "popper-class": {
+      "value": "",
+      "description": "The class name of the DatePicker drop-down box",
+      "default": "—",
+      "type": "string",
+      "description_zh": "DatePicker 下拉框的类名"
+    },
+    ":picker-options": {
+      "value": "",
+      "description": "Refer to the following table for options specific to the current time date selector",
+      "default": "—",
+      "type": "object",
+      "description_zh": "当前时间日期选择器特有的选项参考下表"
+    },
+    "range-separator": {
+      "value": "",
+      "description": "Separator when selecting a range",
+      "default": "—",
+      "type": "string",
+      "description_zh": "选择范围时的分隔符"
+    },
+    ":default-value": {
+      "value": "",
+      "description": "Optionally, the time displayed by default when the selector is turned on",
+      "default": "可被`new Date()`解析",
+      "type": "Date",
+      "description_zh": "可选，选择器打开时默认显示的时间"
+    },
+    ":default-time": {
+      "value": "",
+      "description": "When selecting a range, select the specific time of the day to use the date",
+      "default": "数组，长度为 2，每项值为字符串，形如`12:00:00`，第一项指定开始日期的时刻，第二项指定结束日期的时刻，不指定会使用时刻 `00:00:00`",
+      "type": "string[]",
+      "description_zh": "范围选择时选中日期所使用的当日内具体时刻"
+    },
+    "value-format": {
+      "value": [
+        "yyyy-MM-dd",
+        "timestamp",
+        "yyyy"
+      ],
+      "description": "Optionally, the format of the bound value. If not specified, the binding value is a Date object",
+      "default": "yyyy-MM-dd",
+      "type": "string",
+      "description_zh": "可选，绑定值的格式。不指定则绑定值为 Date 对象"
+    },
+    "name": {
+      "value": "",
+      "description": "Native attributes",
+      "default": "—",
+      "type": "string",
+      "description_zh": "原生属性"
+    },
+    "unlink-panels": {
+      "value": "",
+      "description": "Unlink the two date panels in the range selector",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "在范围选择器里取消两个日期面板之间的联动"
+    },
+    "prefix-icon": {
+      "value": "",
+      "description": "Customize the class name of the head icon",
+      "default": "—",
+      "type": "string",
+      "description_zh": "自定义头部图标的类名"
+    },
+    "clear-icon": {
+      "value": "",
+      "description": "Customize the class name of the clear icon",
+      "default": "—",
+      "type": "string",
+      "description_zh": "自定义清空图标的类名"
+    },
+    "validate-event": {
+      "value": "",
+      "description": "Whether the validation of the form is triggered when input",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "输入时是否触发表单的校验"
+    },
+    "append-to-body": {
+      "value": "",
+      "description": "Whether the DatePicker itself is inserted on the body element.",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "DatePicker 自身是否插入至 body 元素上。"
+    }
+  },
+  "methods": [
+    {
+      "name": "focus",
+      "description": "Make input get focus",
+      "params": "—",
+      "description_zh": "使 input 获取焦点",
+      "value": ""
+    }
+  ],
+  "events": [
+    {
+      "name": "change",
+      "description": "Triggered when the user confirms the selected value",
+      "callback": "组件绑定值。格式与绑定值一致，可受 `value-format` 控制",
+      "description_zh": "用户确认选定的值时触发",
+      "value": ""
+    },
+    {
+      "name": "blur",
+      "description": "Triggers when input loses focus",
+      "callback": "组件实例",
+      "description_zh": "当 input 失去焦点时触发",
+      "value": ""
+    },
+    {
+      "name": "focus",
+      "description": "Triggers when input gains focus",
+      "callback": "组件实例",
+      "description_zh": "当 input 获得焦点时触发",
+      "value": ""
+    }
+  ],
+  "typeDetail": {
+    "pickerOptions": [
+      {
+        "name": "shortcuts",
+        "description": "设置快捷选项，需要传入 { text, onClick } 对象用法参考 demo 或下表",
+        "type": "Object[]"
+      },
+      {
+        "name": "disabledDate",
+        "description": "设置禁用状态，参数为当前日期，要求返回 Boolean",
+        "type": "Function"
+      },
+      {
+        "name": "cellClassName",
+        "description": "设置日期的 className",
+        "type": "Function(Date)"
+      },
+      {
+        "name": "firstDayOfWeek",
+        "description": "周起始日",
+        "type": "1 到 7",
+        "default": 7
+      },
+      {
+        "name": "onPick",
+        "description": "选中日期后会执行的回调，只有当 `daterange` 或 `datetimerange` 才生效",
+        "type": "Function({ maxDate, minDate })"
+      }
+    ],
+    "Shortcuts": [
+      {
+        "name": "text",
+        "description": "文本",
+        "type": "string"
+      },
+      {
+        "name": "onClick",
+        "description": "选中后的回调函数，参数是 vm，可通过触发 'pick' 事件设置选择器的值。例如 vm.$emit('pick', new Date())",
+        "type": "function"
+      }
+    ]
+  },
+  "link": "https://element-plus.org/en-US/component/date-picker.html",
+  "link_zh": "https://element-plus.org/zh-CN/component/date-picker.html"
+}

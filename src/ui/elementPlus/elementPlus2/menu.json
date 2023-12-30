@@ -1,0 +1,133 @@
+{
+  "name": "ElMenu",
+  "props": {
+    "mode": {
+      "value": [
+        "horizontal",
+        "vertical"
+      ],
+      "description": "mode",
+      "default": "horizontal | vertical",
+      "type": "string",
+      "description_zh": "模式"
+    },
+    "collapse": {
+      "value": "",
+      "description": "Whether to collapse the collapse menu horizontally (only available when mode is vertical)",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "是否水平折叠收起菜单（仅在 mode 为 vertical 时可用）"
+    },
+    "background-color": {
+      "value": "",
+      "description": "Background color of the menu (hex format only)",
+      "default": "—",
+      "type": "string",
+      "description_zh": "菜单的背景色（仅支持 hex 格式）"
+    },
+    "text-color": {
+      "value": "",
+      "description": "Text color for menus (hex format only)",
+      "default": "—",
+      "type": "string",
+      "description_zh": "菜单的文字颜色（仅支持 hex 格式）"
+    },
+    "active-text-color": {
+      "value": "",
+      "description": "The text color of the currently active menu (hex format only)",
+      "default": "—",
+      "type": "string",
+      "description_zh": "当前激活菜单的文字颜色（仅支持 hex 格式）"
+    },
+    "default-active": {
+      "value": "",
+      "description": "The index of the currently active menu",
+      "default": "—",
+      "type": "string",
+      "description_zh": "当前激活菜单的 index"
+    },
+    "default-openeds": {
+      "value": "",
+      "description": "An array of the index of the currently open sub-menu",
+      "default": "—",
+      "type": "Array",
+      "description_zh": "当前打开的 sub-menu 的 index 的数组"
+    },
+    "unique-opened": {
+      "value": "",
+      "description": "Whether to keep only one submenu expanded",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "是否只保持一个子菜单的展开"
+    },
+    "menu-trigger": {
+      "value": [
+        "hover",
+        "click"
+      ],
+      "description": "How to trigger a submenu opening (only works when mode is horizontal)",
+      "default": "hover | click",
+      "type": "string",
+      "description_zh": "子菜单打开的触发方式(只在 mode 为 horizontal 时有效)"
+    },
+    "router": {
+      "value": "",
+      "description": "Whether or not to use vue-router's mode, enabling this mode will route the route jump with index as the path when the navigation is activated",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "是否使用 vue-router 的模式，启用该模式会在激活导航时以 index 作为 path 进行路由跳转"
+    },
+    "collapse-transition": {
+      "value": "",
+      "description": "Whether to turn on the collapse animation",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "是否开启折叠动画"
+    }
+  },
+  "methods": [
+    {
+      "name": "open",
+      "description": "Expands the specified sub-menu",
+      "params": "index: 需要打开的 sub-menu 的 index",
+      "description_zh": "展开指定的 sub-menu",
+      "value": ""
+    },
+    {
+      "name": "close",
+      "description": "Collapses the specified sub-menu",
+      "params": "index: 需要收起的 sub-menu 的 index",
+      "description_zh": "收起指定的 sub-menu",
+      "value": ""
+    }
+  ],
+  "events": [
+    {
+      "name": "select",
+      "description": "menu to activate the callback",
+      "params": "index: 选中菜单项的 index, indexPath: 选中菜单项的 index path",
+      "description_zh": "菜单激活回调",
+      "value": ""
+    },
+    {
+      "name": "open",
+      "description": "sub-menu expanded callback",
+      "params": "index: 打开的 sub-menu 的 index， indexPath: 打开的 sub-menu 的 index path",
+      "description_zh": "sub-menu 展开的回调",
+      "value": ""
+    },
+    {
+      "name": "close",
+      "description": "sub-menu collapsed callbacks",
+      "params": "index: 收起的 sub-menu 的 index， indexPath: 收起的 sub-menu 的 index path",
+      "description_zh": "sub-menu 收起的回调",
+      "value": ""
+    }
+  ],
+  "suggestions": [
+    "el-menu-item",
+    "el-submenu"
+  ],
+  "link": "https://element-plus.org/en-US/component/menu.html",
+  "link_zh": "https://element-plus.org/zh-CN/component/menu.html"
+}

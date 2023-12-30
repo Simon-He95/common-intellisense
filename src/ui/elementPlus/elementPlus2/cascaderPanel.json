@@ -1,0 +1,61 @@
+{
+  "name": "ElCascaderPanel",
+  "props": {
+    "value": {
+      "value": "",
+      "description": "The selected item binds a value",
+      "default": "—",
+      "type": "default",
+      "description_zh": "选中项绑定值"
+    },
+    ":options": {
+      "value": "",
+      "description": "Selectable data source, key name configurable via the 'Props' property",
+      "default": "—",
+      "type": "array",
+      "required": true,
+      "description_zh": "可选项数据源，键名可通过 `Props` 属性配置"
+    },
+    ":props": {
+      "value": "",
+      "description": "The following table describes the configuration options",
+      "default": "—",
+      "type": "object",
+      "description_zh": "配置选项，具体见下表"
+    }
+  },
+  "events": [
+    {
+      "name": "change",
+      "description": "Triggered when a node is selected",
+      "params": "选中节点的值",
+      "description_zh": "当选中节点变化时触发",
+      "value": ""
+    },
+    {
+      "name": "expand-change",
+      "description": "Triggered when the expansion node changes",
+      "params": "各父级选项值组成的数组",
+      "description_zh": "当展开节点发生变化时触发",
+      "value": ""
+    }
+  ],
+  "link": "https://element-plus.org/en-US/component/cascader-panel.html",
+  "link_zh": "https://element-plus.org/zh-CN/component/cascader-panel.html",
+  "methods": [
+    {
+      "name": "getCheckedNodes",
+      "description": "Gets an array of currently selected nodes. (just flyers) whether to return only the nodes selected by the leaf is false by default",
+      "params": "(leafOnly: boolean) => CascaderNode[] | undefined",
+      "description_zh": "获取一个当前选中节点的数组。(仅仅是传单) 是否只返回叶选中的节点，默认是 false",
+      "value": ""
+    },
+    {
+      "name": "clearCheckedNodes",
+      "description": "Clears the selected nodes",
+      "params": "() => void",
+      "description_zh": "清空选中的节点",
+      "value": ""
+    }
+  ]
+}

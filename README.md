@@ -11,6 +11,7 @@ Install the supported ui component library in your project and install the plug-
 ### 🍬 Currently supported
 - vant 4
 - element 2
+- element-plus 2
 - antd 4、5
 - antdv 4
 - varlet 2

@@ -1,0 +1,278 @@
+{
+  "name": "ElSelect",
+  "props": {
+    "value": {
+      "value": "",
+      "description": "Binding value",
+      "default": "—",
+      "type": "boolean | string | number",
+      "description_zh": "绑定值"
+    },
+    ":v-model": {
+      "value": "",
+      "description": "Binding value",
+      "default": "—",
+      "type": "boolean | string | number",
+      "description_zh": "绑定值",
+      "required": true
+    },
+    "multiple": {
+      "value": "",
+      "description": "Whether to select more than one",
+      "default": "—",
+      "type": "boolean",
+      "description_zh": "是否多选"
+    },
+    "disabled": {
+      "value": "",
+      "description": "Whether to disable or not",
+      "default": "—",
+      "type": "boolean",
+      "description_zh": "是否禁用"
+    },
+    "value-key": {
+      "value": "",
+      "description": "As a key name that is uniquely identified by value, it is required if the binding value is an object type",
+      "default": "—",
+      "type": "string",
+      "description_zh": "作为 value 唯一标识的键名，绑定值为对象类型时必填"
+    },
+    "size": {
+      "value": [
+        "medium",
+        "small",
+        "mini"
+      ],
+      "description": "Enter the size of the field",
+      "default": "medium | small | mini",
+      "type": "string",
+      "description_zh": "输入框尺寸"
+    },
+    "clearable": {
+      "value": "",
+      "description": "Whether the option can be cleared",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "是否可以清空选项"
+    },
+    "collapse-tags": {
+      "value": "",
+      "description": "When multiple selections are made, whether the selected values are displayed in the form of text",
+      "default": "—",
+      "type": "boolean",
+      "description_zh": "多选时是否将选中值按文字的形式展示"
+    },
+    ":multiple-limit": {
+      "value": "",
+      "description": "When multi-selecting, the maximum number of items that a user can select is not limited if it is 0",
+      "default": "—",
+      "type": "number",
+      "description_zh": "多选时用户最多可以选择的项目数，为 0 则不限制"
+    },
+    "name": {
+      "value": "",
+      "description": "name attribute of select input",
+      "default": "—",
+      "type": "string",
+      "description_zh": "select input 的 name 属性"
+    },
+    "autocomplete": {
+      "value": "",
+      "description": "select input's autocomplete property",
+      "default": "—",
+      "type": "string",
+      "description_zh": "select input 的 autocomplete 属性"
+    },
+    "auto-complete": {
+      "value": "",
+      "description": "The next major version is deprecated",
+      "default": "—",
+      "type": "string",
+      "description_zh": "下个主版本弃用"
+    },
+    "placeholder": {
+      "value": "",
+      "description": "Placeholders",
+      "default": "—",
+      "type": "string",
+      "required": true,
+      "description_zh": "占位符"
+    },
+    "filterable": {
+      "value": "",
+      "description": "Whether it is searchable",
+      "default": "—",
+      "type": "boolean",
+      "description_zh": "是否可搜索"
+    },
+    "allow-create": {
+      "value": "",
+      "description": "Whether or not to allow users to create new entries needs to be used with 'filterable'",
+      "default": "—",
+      "type": "boolean",
+      "description_zh": "是否允许用户创建新条目，需配合 `filterable` 使用"
+    },
+    ":filter-method": {
+      "value": "",
+      "description": "Customize the search method",
+      "default": "—",
+      "type": "function",
+      "description_zh": "自定义搜索方法"
+    },
+    "remote": {
+      "value": "",
+      "description": "Whether it is a remote search",
+      "default": "—",
+      "type": "boolean",
+      "description_zh": "是否为远程搜索"
+    },
+    ":remote-method": {
+      "value": "",
+      "description": "Remote search methods",
+      "default": "—",
+      "type": "function",
+      "description_zh": "远程搜索方法"
+    },
+    "loading": {
+      "value": "",
+      "description": "Whether data is being obtained from a remote location",
+      "default": "—",
+      "type": "boolean",
+      "description_zh": "是否正在从远程获取数据"
+    },
+    "loading-text": {
+      "value": "",
+      "description": "The text that is displayed when loaded remotely",
+      "default": "—",
+      "type": "string",
+      "description_zh": "远程加载时显示的文字"
+    },
+    "no-match-text": {
+      "value": "",
+      "description": "If the search conditions do not match, you can also use the 'slot=\"empty\"' setting",
+      "default": "—",
+      "type": "string",
+      "description_zh": "搜索条件无匹配时显示的文字，也可以使用`slot=\"empty\"`设置"
+    },
+    "no-data-text": {
+      "value": "",
+      "description": "The text that is displayed when the option is empty, you can also use the 'slot=\"empty\" setting",
+      "default": "—",
+      "type": "string",
+      "description_zh": "选项为空时显示的文字，也可以使用`slot=\"empty\"`设置"
+    },
+    "popper-class": {
+      "value": "",
+      "description": "Select drop-down box",
+      "default": "—",
+      "type": "string",
+      "description_zh": "Select 下拉框的类名"
+    },
+    "reserve-keyword": {
+      "value": "",
+      "description": "If you have multiple selections and are searchable, whether to keep the current search terms after selecting an option",
+      "default": "—",
+      "type": "boolean",
+      "description_zh": "多选且可搜索时，是否在选中一个选项后保留当前的搜索关键词"
+    },
+    "default-first-option": {
+      "value": "",
+      "description": "Press Enter in the input box and select the first match. Requires use with 'filterable' or 'remote'",
+      "default": "—",
+      "type": "boolean",
+      "description_zh": "在输入框按下回车，选择第一个匹配项。需配合 `filterable` 或 `remote` 使用"
+    },
+    "popper-append-to-body": {
+      "value": "",
+      "description": "Whether to insert a popover into the body element. If there is a problem with the positioning of the popover, you can set the property to false",
+      "default": "—",
+      "type": "boolean",
+      "description_zh": "是否将弹出框插入至 body 元素。在弹出框的定位出现问题时，可将该属性设置为 false"
+    },
+    "automatic-dropdown": {
+      "value": "",
+      "description": "For non-searchable Select, whether the options menu will automatically pop up after the input box gains focus",
+      "default": "—",
+      "type": "boolean",
+      "description_zh": "对于不可搜索的 Select，是否在输入框获得焦点后自动弹出选项菜单"
+    }
+  },
+  "methods": [
+    {
+      "name": "focus",
+      "description": "Make input get focus",
+      "params": "-",
+      "description_zh": "使 input 获取焦点",
+      "value": ""
+    },
+    {
+      "name": "blur",
+      "description": "Makes input lose focus and hides the drop-down box",
+      "params": "-",
+      "description_zh": "使 input 失去焦点，并隐藏下拉框",
+      "value": ""
+    }
+  ],
+  "events": [
+    {
+      "name": "change",
+      "description": "Triggered when the selected value changes",
+      "params": "目前的选中值",
+      "description_zh": "选中值发生变化时触发",
+      "value": ""
+    },
+    {
+      "name": "visible-change",
+      "description": "Triggered when the drop-down box appears/hides",
+      "params": "出现则为 true，隐藏则为 false",
+      "description_zh": "下拉框出现/隐藏时触发",
+      "value": ""
+    },
+    {
+      "name": "remove-tag",
+      "description": "Triggered when a tag is removed in multi-select mode",
+      "params": "移除的tag值",
+      "description_zh": "多选模式下移除tag时触发",
+      "value": ""
+    },
+    {
+      "name": "clear",
+      "description": "Clearable radio mode is triggered when the user clicks the clear button",
+      "params": "",
+      "description_zh": "可清空的单选模式下用户点击清空按钮时触发",
+      "value": ""
+    },
+    {
+      "name": "blur",
+      "description": "Triggers when input loses focus",
+      "params": "(event: Event)",
+      "description_zh": "当 input 失去焦点时触发",
+      "value": ""
+    },
+    {
+      "name": "focus",
+      "description": "Triggers when input gains focus",
+      "params": "(event: Event)",
+      "description_zh": "当 input 获得焦点时触发",
+      "value": ""
+    }
+  ],
+  "slots": [
+    {
+      "name": "prefix",
+      "description": "Select component header contents",
+      "description_zh": "Select 组件头部内容"
+    },
+    {
+      "name": "empty",
+      "description": "A list when there are no options",
+      "description_zh": "无选项时的列表"
+    }
+  ],
+  "suggestions": [
+    "el-option",
+    "el-option-group"
+  ],
+  "link": "https://element-plus.org/en-US/component/select.html",
+  "link_zh": "https://element-plus.org/zh-CN/component/select.html"
+}

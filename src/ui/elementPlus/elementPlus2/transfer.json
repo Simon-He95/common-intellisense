@@ -1,0 +1,155 @@
+{
+  "name": "ElTransfer",
+  "props": {
+    ":value": {
+      "value": "",
+      "description": "Binding value",
+      "default": "—",
+      "type": "array",
+      "description_zh": "绑定值"
+    },
+    ":v-model": {
+      "value": "",
+      "description": "Binding value",
+      "default": "—",
+      "type": "array",
+      "required": true,
+      "description_zh": "绑定值"
+    },
+    ":data": {
+      "value": "",
+      "description": "The data source for Transfer",
+      "default": "—",
+      "type": "array[{ key, label, disabled }]",
+      "description_zh": "Transfer 的数据源",
+      "required": true
+    },
+    "filterable": {
+      "value": "",
+      "description": "Whether it is searchable",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "是否可搜索"
+    },
+    "filter-placeholder": {
+      "value": "",
+      "description": "Search box placeholder",
+      "default": "—",
+      "type": "string",
+      "description_zh": "搜索框占位符"
+    },
+    ":filter-method": {
+      "value": "",
+      "description": "Customize the search method",
+      "default": "—",
+      "type": "function",
+      "description_zh": "自定义搜索方法"
+    },
+    "target-order": {
+      "value": [
+        "original",
+        "push",
+        "unshift"
+      ],
+      "description": "Sort strategy for the list elements on the right: if 'original', keep the same order as the data source; If it's 'push', the new element will be added last; If it's 'unshift', the new element will be added first",
+      "default": "original | push | unshift",
+      "type": "string",
+      "description_zh": "右侧列表元素的排序策略：若为 `original`，则保持与数据源相同的顺序；若为 `push`，则新加入的元素排在最后；若为 `unshift`，则新加入的元素排在最前"
+    },
+    ":titles": {
+      "value": "",
+      "description": "Customize the list title",
+      "default": "—",
+      "type": "array",
+      "description_zh": "自定义列表标题"
+    },
+    ":button-texts": {
+      "value": "",
+      "description": "Customize the button copy",
+      "default": "—",
+      "type": "array",
+      "description_zh": "自定义按钮文案"
+    },
+    ":render-content": {
+      "value": "",
+      "description": "Custom data item rendering functions",
+      "default": "—",
+      "type": "function(h, option)",
+      "description_zh": "自定义数据项渲染函数"
+    },
+    ":format": {
+      "value": "",
+      "description": "Select the status text at the top of the list",
+      "default": "—",
+      "type": "object{noChecked, hasChecked}",
+      "description_zh": "列表顶部勾选状态文案"
+    },
+    ":props": {
+      "value": "",
+      "description": "The field alias of the data source",
+      "default": "—",
+      "type": "object{key, label, disabled}",
+      "description_zh": "数据源的字段别名"
+    },
+    ":left-default-checked": {
+      "value": "",
+      "description": "An array of keys with checks in the left list in the initial state",
+      "default": "—",
+      "type": "array",
+      "description_zh": "初始状态下左侧列表的已勾选项的 key 数组"
+    },
+    ":right-default-checked": {
+      "value": "",
+      "description": "An array of keys with checked options in the list on the right in the initial state",
+      "default": "—",
+      "type": "array",
+      "description_zh": "初始状态下右侧列表的已勾选项的 key 数组"
+    }
+  },
+  "methods": [
+    {
+      "name": "clearQuery",
+      "description": "Clear the search keywords for a panel",
+      "params": "'left' | 'right'，指定需要清空的面板",
+      "description_zh": "清空某个面板的搜索关键词",
+      "value": ""
+    }
+  ],
+  "events": [
+    {
+      "name": "change",
+      "description": "Triggered when the list element on the right changes",
+      "params": "当前值、数据移动的方向（'left' / 'right'）、发生移动的数据 key 数组",
+      "description_zh": "右侧列表元素变化时触发",
+      "value": ""
+    },
+    {
+      "name": "left-check-change",
+      "description": "Triggered when the left list element is selected/unchecked by the user",
+      "params": "当前被选中的元素的 key 数组、选中状态发生变化的元素的 key 数组",
+      "description_zh": "左侧列表元素被用户选中 / 取消选中时触发",
+      "value": ""
+    },
+    {
+      "name": "right-check-change",
+      "description": "Triggered when the list element on the right is selected/unchecked by the user",
+      "params": "当前被选中的元素的 key 数组、选中状态发生变化的元素的 key 数组",
+      "description_zh": "右侧列表元素被用户选中 / 取消选中时触发",
+      "value": ""
+    }
+  ],
+  "slots": [
+    {
+      "name": "left-footer",
+      "description": "What's at the bottom of the list on the right",
+      "description_zh": "右侧列表底部的内容"
+    },
+    {
+      "name": "right-footer",
+      "description": "What's at the bottom of the list on the right",
+      "description_zh": "右侧列表底部的内容"
+    }
+  ],
+  "link": "https://element-plus.org/en-US/component/transfer.html",
+  "link_zh": "https://element-plus.org/zh-CN/component/transfer.html"
+}
