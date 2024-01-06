@@ -355,9 +355,9 @@ export function componentsReducer(map: any[][], isSeperatorByHyphen = true, pref
             const suggestionTag = content.suggestions[0]
             const suggestion = findTargetMap(map, suggestionTag)
             if (suggestion) {
-              const [childRquireProps, _index] = getRequireProp(suggestion, index, isVue)
+              const [childRequiredProps, _index] = getRequireProp(suggestion, index, isVue)
               index = _index
-              snippet = `<${tag}${requiredProps.length ? ` ${requiredProps.join(' ')}` : ''}>\n  <${suggestionTag}${childRquireProps.length ? ` ${childRquireProps.join(' ')}` : ''}>\$${++index}</${suggestionTag}>\n</${tag}>`
+              snippet = `<${tag}${requiredProps.length ? ` ${requiredProps.join(' ')}` : ''}>\n  <${suggestionTag}${childRequiredProps.length ? ` ${childRequiredProps.join(' ')}` : ''}>\$${++index}</${suggestionTag}>\n</${tag}>`
             }
             else {
               snippet = `<${tag}>\$${++index}</${tag}>`
@@ -372,9 +372,9 @@ export function componentsReducer(map: any[][], isSeperatorByHyphen = true, pref
             const suggestionTag = content.suggestions[0]
             const suggestion = findTargetMap(map, suggestionTag)
             if (suggestion) {
-              const [childRquireProps, _index] = getRequireProp(suggestion, index, isVue)
+              const [childRequiredProps, _index] = getRequireProp(suggestion, index, isVue)
               index = _index
-              snippet = `<${tag}>\n  <${suggestionTag}${childRquireProps.length ? ` ${childRquireProps.join(' ')}` : ''}>\$${++index}</${suggestionTag}>\n</${tag}>`
+              snippet = `<${tag}>\n  <${suggestionTag}${childRequiredProps.length ? ` ${childRequiredProps.join(' ')}` : ''}>\$${++index}</${suggestionTag}>\n</${tag}>`
             }
             else {
               snippet = `<${tag}>$1</${tag}>`
