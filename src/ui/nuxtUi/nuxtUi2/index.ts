@@ -289,5 +289,5 @@ export function nuxtui2Components() {
       `<${UChip.name}></${UChip.name}>`,
     ],
   ]
-  return componentsReducer(map, false)
+  return componentsReducer(map, false, '', '@nuxt/ui')
 }

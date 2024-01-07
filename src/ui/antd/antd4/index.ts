@@ -56,7 +56,7 @@ import Carousel from './carousel.json'
 import Collapse from './collapse.json'
 import CollapsePanel from './collapsePanel.json'
 import Descriptions from './descriptions.json'
-import DescriptionItem from './descriptionItem.json'
+import DescriptionsItem from './descriptionsItem.json'
 import Empty from './empty.json'
 import Image from './image.json'
 import ImagePreviewGroup from './imagePreviewGroup.json'
@@ -142,7 +142,7 @@ export function antd4() {
     Collapse,
     CollapsePanel,
     Descriptions,
-    DescriptionItem,
+    DescriptionsItem,
     Empty,
     Image,
     ImagePreviewGroup,
@@ -672,5 +672,5 @@ export function antd4Components() {
    <div style={{ height: 500 }} />
 </Watermark>`],
       ]
-  return componentsReducer(map, false)
+  return componentsReducer(map, false, '', 'antd')
 }

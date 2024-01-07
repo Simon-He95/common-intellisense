@@ -563,5 +563,5 @@ export function shadcnVue0Components() {
     [RadioGroupRoot, '一组可检查的按钮（称为单选按钮），一次只能选中一个按钮', '<RadioGroupRoot></RadioGroupRoot>'],
 
   ]
-  return componentsReducer(map, false)
+  return componentsReducer(map, false, '', 'shadcn-vue')
 }

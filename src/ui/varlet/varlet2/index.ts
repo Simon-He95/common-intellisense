@@ -440,5 +440,5 @@ export function varlet2Components() {
 </var-tooltip>`],
         [uploader, 'File upload provides file reading and image/video preview capabilities. Obtain the file upload server by listening to the after-read event. ', '<var-uploader v-model="files" @after-read="handleAfterRead"/>'],
       ]
-  return componentsReducer(map, true, 'var')
+  return componentsReducer(map, true, 'var', 'varlet')
 }

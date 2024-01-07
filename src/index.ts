@@ -1,7 +1,7 @@
 import fsp from 'node:fs/promises'
 import path from 'node:path'
 import * as vscode from 'vscode'
-import { addEventListener, createCompletionItem, createSelect, getActiveText, getActiveTextEditorLanguageId, getConfiguration, getCurrentFileUrl, getLineText, getLocale, getSelection, message, openExternalUrl, registerCommand, registerCompletionItemProvider, setCopyText } from '@vscode-use/utils'
+import { addEventListener, createCompletionItem, createPosition, createRange, createSelect, getActiveText, getActiveTextEditorLanguageId, getConfiguration, getCurrentFileUrl, getLineText, getLocale, getSelection, message, openExternalUrl, registerCommand, registerCompletionItemProvider, setConfiguration, setCopyText, updateText } from '@vscode-use/utils'
 import { CreateWebview } from '@vscode-use/createwebview'
 import { parse } from '@vue/compiler-sfc'
 import { findPkgUI, parser } from './utils'
@@ -44,14 +44,13 @@ export function activate(context: vscode.ExtensionContext) {
   }))
 
   context.subscriptions.push(registerCommand('common-intellisense.pickUI', () => {
-    const config = getConfiguration('common-intellisense')
     if (currentPkgUiNames && currentPkgUiNames.length) {
       createSelect(currentPkgUiNames, {
         canPickMany: true,
         placeHolder: isZh ? '请指定你需要提示的 UI 库' : 'Please specify the UI library you need to prompt.',
         title: 'common intellisense',
       }).then((data) => {
-        config.update('ui', data)
+        setConfiguration('common-intellisense.ui', data)
       })
     }
     else {
@@ -65,6 +64,35 @@ export function activate(context: vscode.ExtensionContext) {
     if (e.affectsConfiguration('common-intellisense.ui'))
       findUI()
   }))
+  registerCommand('common-intellisense.import', (params) => {
+    if (!params)
+      return
+    const [data, lib] = params
+    const name = data.name.split('.')[0]
+    const code = getActiveText()!
+    const uiComponents = getImportUiComponents(code)
+    if (uiComponents[lib]) {
+      if (uiComponents[lib].components.includes(name))
+        return
+      uiComponents[lib].components.push(name)
+      const offsetStart = code.match(uiComponents[lib].match[0])!.index!
+      const offsetEnd = offsetStart + uiComponents[lib].match[0].length
+      const posStart = getPosition(offsetStart)
+      const posEnd = getPosition(offsetEnd)
+
+      const str = `import { ${uiComponents[lib].components.join(', ')} } from '${lib}'`
+      updateText((edit) => {
+        edit.replace(createRange(posStart, posEnd), str)
+      })
+    }
+    else {
+      // 顶部导入
+      const str = `import { ${name} } from '${lib}'\n`
+      updateText((edit) => {
+        edit.insert(createPosition(0, 0), str)
+      })
+    }
+  })
 
   findUI()
 
@@ -81,7 +109,8 @@ export function activate(context: vscode.ExtensionContext) {
 
     const lan = getActiveTextEditorLanguageId()
     const isVue = lan === 'vue'
-    const deps = isVue ? getImportDeps(getActiveText()!) : {}
+    const code = getActiveText()!
+    const deps = isVue ? getImportDeps(code) : {}
     const { character } = position
     const isPreEmpty = lineText[character - 1] === ' '
     const isValue = result.isValue
@@ -223,6 +252,15 @@ export function activate(context: vscode.ExtensionContext) {
 
       return data
     }
+  }, (item: any) => {
+    if (item.type === vscode.CompletionItemKind.TypeParameter) {
+      item.command = {
+        title: 'common-intellisense-import',
+        command: 'common-intellisense.import',
+        arguments: [item.params],
+      }
+    }
+    return item
   }, ['"', '\'', '-', ' ', '@', '.']))
 
   const provider = new CreateWebview(context.extensionUri, {
@@ -332,8 +370,7 @@ function findUI() {
   optionsComponents = null
   UiCompletions = null
 
-  const config = vscode.workspace.getConfiguration('common-intellisense')
-  const selectedUIs = config.get('ui') as string[]
+  const selectedUIs = getConfiguration('common-intellisense.ui') as string[]
 
   const cwd = vscode.window.activeTextEditor?.document.uri.fsPath
   const suffix = cwd?.split('.').slice(-1)[0]
@@ -497,4 +534,48 @@ function getHoverAttribute(attributeList: any[], attr: string) {
   return attributeList.filter((a) => {
     return a?.params?.[1] === attr
   }).map(i => `- ${i.label}`).join('\n\n')
+}
+
+const IMPORT_UI_REG = /import\s+{([^\}]+)}\s+from\s+['"]([^"']+)['"]/g
+
+const DEMAND_UI = ['antd', '@nextui-org/react', '@arco-design/web-react']
+function getImportUiComponents(text: string) {
+  // 读取需要按需导入的ui库， 例如 antd ,拿出导入的components
+  const deps: Record<string, any> = {}
+  for (const match of text.matchAll(IMPORT_UI_REG)) {
+    if (!match)
+      continue
+    const from = match[2]
+    if (/^[\.\/\@]/.test(from) || !DEMAND_UI.includes(from))
+      continue
+    deps[from] = {
+      match,
+      components: match[1].split(',').map(i => i.trim()),
+    }
+  }
+  return deps
+}
+export function getPosition(offset: number, content: string = getActiveText()!) {
+  const contents = content.split('\n')
+  const max = contents.length
+  let num = 0
+  let line = 0
+  let column = 0
+  for (let n = 0; n < max; n++) {
+    const cur = num + contents[n].length + (n > 0 ? 1 : 0)
+    if (num <= offset && cur >= offset) {
+      line = n
+      column = offset - num - (n > 0 ? 1 : 0)
+      break
+    }
+
+    num = cur
+  }
+  return {
+    line,
+    column,
+    character: column,
+    offset,
+    position: new vscode.Position(line, column),
+  }
 }

@@ -411,5 +411,5 @@ export function vuetify3Components() {
         [menu, 'Menu can display a menu at the position of an active menu element. ', '<v-menu></v-menu>'],
         [overlay, 'mask layer', '<v-overlay v-model="overlay"></v-overlay>'],
       ]
-  return componentsReducer(map, true, 'v')
+  return componentsReducer(map, true, 'v', 'vuetify')
 }

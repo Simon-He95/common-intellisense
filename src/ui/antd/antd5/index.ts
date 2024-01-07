@@ -25,7 +25,7 @@ import Collapse from './Collapse.json'
 import CollapsePanel from './CollapsePanel.json'
 import ColorPicker from './ColorPicker.json'
 import DatePicker from './DatePicker.json'
-import DescriptionItem from './DescriptionItem.json'
+import DescriptionsItem from './DescriptionsItem.json'
 import Descriptions from './Descriptions.json'
 import Divider from './Divider.json'
 import Drawer from './Drawer.json'
@@ -45,7 +45,6 @@ import InputTextArea from './InputTextArea.json'
 import Layout from './Layout.json'
 import LayoutSider from './LayoutSider.json'
 import List from './List.json'
-import ListGrid from './ListGrid.json'
 import ListItem from './ListItem.json'
 import ListItemMeta from './ListItemMeta.json'
 import Mentions from './Mentions.json'
@@ -127,7 +126,7 @@ export function antd5() {
     CollapsePanel,
     ColorPicker,
     DatePicker,
-    DescriptionItem,
+    DescriptionsItem,
     Descriptions,
     Divider,
     Drawer,
@@ -147,7 +146,6 @@ export function antd5() {
     Layout,
     LayoutSider,
     List,
-    ListGrid,
     ListItem,
     ListItemMeta,
     Mentions,
@@ -361,7 +359,7 @@ export function antd5Components() {
   <p>{text}</p>
 </Panel>`],
         [Descriptions, '描述列表'],
-        [DescriptionItem, '描述列表'],
+        [DescriptionsItem, '描述列表'],
         [Empty, '空状态', '<Empty />'],
         [Image, '图片', `<Image
   width={200}
@@ -381,9 +379,6 @@ export function antd5Components() {
         [ListItem, '列表项', `<List.Item>
 <Typography.Text mark>[ITEM]</Typography.Text> {item}
 </List.Item>`],
-        [ListGrid, '列表项', `<List.Grid>
-<Typography.Text mark>[ITEM]</Typography.Text> {item}
-</List.Grid>`],
         [Popover, '气泡卡片', `<Popover content={content} title="Title">
   <Button type="primary">Hover me</Button>
 </Popover>`],
@@ -616,7 +611,7 @@ export function antd5Components() {
    <p>{text}</p>
 </Panel>`],
         [Descriptions, 'Description list'],
-        [DescriptionItem, 'Description list'],
+        [DescriptionsItem, 'Description list'],
         [Empty, 'Empty state', '<Empty />'],
         [Image, 'picture', `<Image
    width={200}
@@ -713,5 +708,5 @@ export function antd5Components() {
    <div style={{ height: 500 }} />
 </Watermark>`],
       ]
-  return componentsReducer(map, false)
+  return componentsReducer(map, false, '', 'antd')
 }

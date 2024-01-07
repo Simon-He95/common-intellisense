@@ -971,5 +971,5 @@ export function elementPlus2Components() {
           '<el-autocomplete></el-autocomplete>',
         ],
       ]
-  return componentsReducer(map, true, 'el')
+  return componentsReducer(map, true, 'el', 'element-plus')
 }

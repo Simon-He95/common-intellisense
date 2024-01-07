@@ -244,5 +244,5 @@ export function quasar2Components() {
     [QVideo, QVideo.name, '<q-video></q-video>'],
     [QVirtualScroll, QVirtualScroll.name, '<q-virtual-scroll></q-virtual-scroll>'],
   ]
-  return componentsReducer(map, true, 'q')
+  return componentsReducer(map, true, 'q', 'quasar')
 }

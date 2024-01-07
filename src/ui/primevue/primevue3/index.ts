@@ -577,5 +577,5 @@ export function primevue3Components() {
       '<Terminal></Terminal>',
     ],
   ]
-  return componentsReducer(map, false)
+  return componentsReducer(map, false, '', 'primevue')
 }
