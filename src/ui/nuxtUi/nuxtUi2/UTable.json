@@ -42,17 +42,17 @@
     },
     "loadingState": {
       "type": "{ icon: string; label: string; }",
-      "default": "config.default.loadingState",
+      "default": "config{ \"icon\": \"i-heroicons-arrow-path-20-solid\", \"label\": \"Loading...\"}",
       "value": "",
       "description": "",
       "description_zh": ""
     },
     "emptyState": {
       "type": "{ icon: string; label: string; }",
-      "default": "config.default.emptyState",
+      "default": "{\"icon\": \"i-heroicons-circle-stack-20-solid\", \"label\": \"No items.\"}",
       "value": "",
-      "description": "",
-      "description_zh": ""
+      "description": "An empty state will be displayed when there are no results.",
+      "description_zh": "An empty state will be displayed when there are no results."
     },
     ":columns": {
       "type": "{ [key: string]: any; key: string; sortable?: boolean; direction?: \"asc\" | \"desc\"; class?: string; }[]",
@@ -71,21 +71,21 @@
     },
     "sortButton": {
       "type": "Button",
-      "default": "config.default.sortButton as Button",
+      "default": "{\"icon\": \"i-heroicons-arrows-up-down-20-solid\",\"trailing\": true,\"square\": true,\"color\": \"gray\",\"variant\": \"ghost\",\"class\": \"-m-1.5\"}",
       "value": "",
       "description": "",
       "description_zh": ""
     },
     "sortAscIcon": {
       "type": "string",
-      "default": "config.default.sortAscIcon",
+      "default": "i-heroicons-bars-arrow-up-20-solid",
       "value": "",
       "description": "",
       "description_zh": ""
     },
     "sortDescIcon": {
       "type": "string",
-      "default": "config.default.sortDescIcon",
+      "default": "i-heroicons-bars-arrow-down-20-solid",
       "value": "",
       "description": "",
       "description_zh": ""
@@ -94,8 +94,8 @@
       "type": "boolean",
       "default": "false",
       "value": "",
-      "description": "",
-      "description_zh": ""
+      "description": "Use the loading prop to display a loading state.",
+      "description_zh": "Use the loading prop to display a loading state."
     }
   },
   "slots": [

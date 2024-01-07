@@ -16,8 +16,8 @@
       "default": "",
       "value": "",
       "required": true,
-      "description": "",
-      "description_zh": ""
+      "description": "Pass a title to your Notification.",
+      "description_zh": "Pass a title to your Notification."
     },
     "ui": {
       "type": "any",
@@ -28,21 +28,21 @@
     },
     "icon": {
       "type": "string",
-      "default": "config.default.icon",
-      "value": "",
-      "description": "",
-      "description_zh": ""
-    },
-    "avatar": {
-      "type": "any",
       "default": "null",
       "value": "",
       "description": "",
       "description_zh": ""
     },
+    ":avatar": {
+      "type": "any",
+      "default": "null",
+      "value": "",
+      "description": "Use the avatar prop as an object and configure it with any of its props.",
+      "description_zh": "Use the avatar prop as an object and configure it with any of its props."
+    },
     "color": {
       "type": "any",
-      "default": "config.default.color",
+      "default": "primary",
       "value": "",
       "description": "",
       "description_zh": ""
@@ -51,30 +51,30 @@
       "type": "string",
       "default": "null",
       "value": "",
-      "description": "",
-      "description_zh": "",
+      "description": "You can add a description in addition of the title.",
+      "description_zh": "You can add a description in addition of the title.",
       "required": true
     },
     "closeButton": {
       "type": "Button",
-      "default": "config.default.closeButton as Button",
+      "default": "{\"icon\": \"i-heroicons-x-mark-20-solid\",\"color\": \"gray\",\"variant\": \"link\",\"padded\": false}",
       "value": "",
-      "description": "",
-      "description_zh": ""
+      "description": "Use the close-button prop to hide or customize the close button on the Notification.",
+      "description_zh": "Use the close-button prop to hide or customize the close button on the Notification."
     },
     ":timeout": {
       "type": "number",
       "default": "5000",
       "value": "",
-      "description": "",
-      "description_zh": ""
+      "description": "Use the timeout prop to configure how long the Notification will remain. Set it to 0 to disable the timeout.",
+      "description_zh": "Use the timeout prop to configure how long the Notification will remain. Set it to 0 to disable the timeout."
     },
     ":actions": {
       "type": "NotificationAction[]",
       "default": "[]",
       "value": "",
-      "description": "",
-      "description_zh": ""
+      "description": "Use the actions prop to add actions to the Notification.",
+      "description_zh": "Use the actions prop to add actions to the Notification."
     },
     ":callback": {
       "type": "Function",
@@ -83,6 +83,190 @@
       "description": "",
       "description_zh": ""
     }
+  },
+  "typeDetail": {
+    "NotificationAction": [
+      {
+        "name": "click",
+        "description": "",
+        "type": "Function"
+      },
+      {
+        "name": "type",
+        "description": "",
+        "type": "string"
+      },
+      {
+        "name": "block",
+        "description": "",
+        "type": "boolean"
+      },
+      {
+        "name": "label",
+        "description": "",
+        "type": "string"
+      },
+      {
+        "name": "loading",
+        "description": "",
+        "type": "boolean"
+      },
+      {
+        "name": "disabled",
+        "description": "",
+        "type": "boolean"
+      },
+      {
+        "name": "padded",
+        "description": "",
+        "type": "boolean"
+      },
+      {
+        "name": "size",
+        "description": "'md' | '2xs' | 'xs' | 'sm' | 'lg' | 'xl'",
+        "type": "ButtonSize"
+      },
+      {
+        "name": "color",
+        "description": "",
+        "type": "string"
+      },
+      {
+        "name": "variant",
+        "description": "'link' | 'outline' | 'solid' | 'soft' | 'ghost'",
+        "type": "ButtonVariant"
+      },
+      {
+        "name": "icon",
+        "description": "",
+        "type": "string"
+      },
+      {
+        "name": "loadingIcon",
+        "description": "",
+        "type": "string"
+      },
+      {
+        "name": "leadingIcon",
+        "description": "",
+        "type": "string"
+      },
+      {
+        "name": "trailingIcon",
+        "description": "",
+        "type": "string"
+      },
+      {
+        "name": "trailing",
+        "description": "",
+        "type": "boolean"
+      },
+      {
+        "name": "leading",
+        "description": "",
+        "type": "boolean"
+      },
+      {
+        "name": "to",
+        "description": "",
+        "type": "string | object"
+      },
+      {
+        "name": "target",
+        "description": "",
+        "type": "string"
+      },
+      {
+        "name": "square",
+        "description": "",
+        "type": "boolean"
+      },
+      {
+        "name": "truncate",
+        "description": "",
+        "type": "boolean"
+      },
+      {
+        "name": "active",
+        "description": "",
+        "type": "boolean"
+      },
+      {
+        "name": "exact",
+        "description": "",
+        "type": "boolean"
+      },
+      {
+        "name": "exactQuery",
+        "description": "",
+        "type": "boolean"
+      },
+      {
+        "name": "exactMatch",
+        "description": "",
+        "type": "boolean"
+      },
+      {
+        "name": "inactiveClass",
+        "description": "",
+        "type": "Function"
+      },
+      {
+        "name": "href",
+        "description": "",
+        "type": "RouteLocationRaw"
+      },
+      {
+        "name": "external",
+        "description": "",
+        "type": "boolean"
+      },
+      {
+        "name": "replace",
+        "description": "",
+        "type": "boolean"
+      },
+      {
+        "name": "custom",
+        "description": "",
+        "type": "boolean"
+      },
+      {
+        "name": "rel",
+        "description": "",
+        "type": "string"
+      },
+      {
+        "name": "noRel",
+        "description": "",
+        "type": "boolean"
+      },
+      {
+        "name": "prefetch",
+        "description": "",
+        "type": "boolean"
+      },
+      {
+        "name": "noPrefetch",
+        "description": "",
+        "type": "boolean"
+      },
+      {
+        "name": "activeClass",
+        "description": "",
+        "type": "string"
+      },
+      {
+        "name": "exactActiveClass",
+        "description": "",
+        "type": "string"
+      },
+      {
+        "name": "ariaCurrentValue",
+        "description": "",
+        "type": "string"
+      }
+    ]
   },
   "slots": [
     {
