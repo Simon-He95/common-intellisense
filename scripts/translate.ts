@@ -8,7 +8,7 @@ let stack = 0
 let limit = 10
 const hasDone = new Set()
 async function setup() {
-  const cwd = path.resolve(root, 'src/ui/elementPlus/elementPlus2')
+  const cwd = path.resolve(root, 'src/ui/nuxtUi/nuxtUi2')
   const entry = await fg(['**/*.json'], { dot: true, cwd })
   // entry.forEach(async (url: string) => {
   //   const _url = path.resolve(cwd, url)
@@ -29,8 +29,8 @@ async function setup() {
     const content = await fsp.readFile(newUrl, 'utf8')
     if (!content) return
     const obj = JSON.parse(content)
-    obj['link_zh'] = `https://element-plus.org/zh-CN/component/${hyphenate(obj.name.slice(2))}.html`
-    obj.link = `https://element-plus.org/en-US/component/${hyphenate(obj.name.slice(2))}.html`
+    // obj['link_zh'] = `https://element-plus.org/zh-CN/component/${hyphenate(obj.name.slice(2))}.html`
+    // obj.link = `https://element-plus.org/en-US/component/${hyphenate(obj.name.slice(2))}.html`
     // if (!obj['link_zh'])
     //   obj['link_zh'] = obj.link
     for (const key in obj.props) {
