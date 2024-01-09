@@ -337,7 +337,7 @@ export function propsReducer(uiName: string, map: string[], iconData?: { prefix:
   }, result)
 }
 
-export function componentsReducer(map: any[][], isSeperatorByHyphen = true, prefix = '', lib: string) {
+export function componentsReducer(map: any[][], isSeperatorByHyphen = true, prefix = '', lib: string, isReact = false) {
   const isZh = getLocale().includes('zh')
 
   return {
@@ -402,7 +402,7 @@ export function componentsReducer(map: any[][], isSeperatorByHyphen = true, pref
         documentation.appendMarkdown(`\n<a href="command:intellisense.copyDemo">${copyIcon}</a>\n`)
       }
 
-      return createCompletionItem({ content: _content, snippet, documentation, type: vscode.CompletionItemKind.TypeParameter, sortText: 'a', params: [content, lib] })
+      return createCompletionItem({ content: _content, snippet, documentation, type: vscode.CompletionItemKind.TypeParameter, sortText: 'a', params: [content, lib, isReact] })
     }),
   }
 }

@@ -444,5 +444,5 @@ export function nextui2Components() {
       '<User></User>',
     ],
   ]
-  return componentsReducer(map, false, '', '@nextui-org/react')
+  return componentsReducer(map, false, '', '@nextui-org/react', true)
 }

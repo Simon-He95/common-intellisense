@@ -71,23 +71,32 @@ export function activate(context: vscode.ExtensionContext) {
     const name = data.name.split('.')[0]
     const code = getActiveText()!
     const uiComponents = getImportUiComponents(code)
+    let deps = data.suggestions || []
+
+    if (uiComponents[lib])
+      deps.push(...uiComponents[lib].components)
+    else
+      deps.push(name)
+
+    deps = [...new Set(deps)]
     if (uiComponents[lib]) {
-      if (uiComponents[lib].components.includes(name))
+      if (deps.includes(name))
         return
-      uiComponents[lib].components.push(name)
+      deps.push(name)
+
       const offsetStart = code.match(uiComponents[lib].match[0])!.index!
       const offsetEnd = offsetStart + uiComponents[lib].match[0].length
       const posStart = getPosition(offsetStart)
       const posEnd = getPosition(offsetEnd)
 
-      const str = `import { ${uiComponents[lib].components.join(', ')} } from '${lib}'`
+      const str = `import { ${deps.join(', ')} } from '${lib}'`
       updateText((edit) => {
         edit.replace(createRange(posStart, posEnd), str)
       })
     }
     else {
       // 顶部导入
-      const str = `import { ${name} } from '${lib}'\n`
+      const str = `import { ${deps.join(', ')} } from '${lib}'\n`
       updateText((edit) => {
         edit.insert(createPosition(0, 0), str)
       })
@@ -253,7 +262,7 @@ export function activate(context: vscode.ExtensionContext) {
       return data
     }
   }, (item: any) => {
-    if (item.type === vscode.CompletionItemKind.TypeParameter) {
+    if (item.params[2]) {
       item.command = {
         title: 'common-intellisense-import',
         command: 'common-intellisense.import',

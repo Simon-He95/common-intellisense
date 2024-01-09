@@ -1,4 +1,5 @@
-export const UINames = ['element-ui',
+export const UINames = [
+  'element-ui',
   'element-plus',
   'antd',
   'ant-design-vue',
