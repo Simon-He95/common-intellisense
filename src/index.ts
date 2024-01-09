@@ -71,7 +71,7 @@ export function activate(context: vscode.ExtensionContext) {
     const name = data.name.split('.')[0]
     const code = getActiveText()!
     const uiComponents = getImportUiComponents(code)
-    let deps = data.suggestions || []
+    let deps = data.suggestions?.length === 1 ? data.suggestions : []
 
     if (uiComponents[lib])
       deps.push(...uiComponents[lib].components)
@@ -555,11 +555,11 @@ function getImportUiComponents(text: string) {
     if (!match)
       continue
     const from = match[2]
-    if (/^[\.\/\@]/.test(from) || !DEMAND_UI.includes(from))
-      continue
-    deps[from] = {
-      match,
-      components: match[1].split(',').map(i => i.trim()),
+    if (DEMAND_UI.includes(from)) {
+      deps[from] = {
+        match,
+        components: match[1].split(',').map(i => i.trim()),
+      }
     }
   }
   return deps
