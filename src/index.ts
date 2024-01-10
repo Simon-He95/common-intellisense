@@ -199,35 +199,49 @@ export function activate(context: vscode.ExtensionContext) {
         return eventCallbacks.get(name).filter((item: any) => !hasProps.find((prop: any) => item?.params?.[1] === prop))
       }
       else if (propName) {
-        const result = completionsCallback.filter((item: any) => isValue
+        const r = completionsCallback.filter((item: any) => isValue
           ? hasProps.find((prop: any) => item?.params?.[1] === prop)
-          : !hasProps.find((prop: any) => item?.params?.[1] === prop)).filter((item: any) => item.label.startsWith(propName)).map((item: any) =>
-          item.label.match(/^\w+={[^}]*}/)
-            ? undefined
-            : createCompletionItem(isValue
-              ? ({
-                  content: item.label,
-                  snippet: item.label.replace(/^\w+=\"([^"]+)\".*/, '$1'),
-                  documentation: item.documentation,
-                  detail: item.detail,
-                  type: item.kind,
-                })
-              : ({
-                  content: item.label,
-                  documentation: item.documentation,
-                  detail: item.detail,
-                  type: item.kind,
-                })),
-        ).filter(Boolean)
+          : !hasProps.find((prop: any) => item?.params?.[1] === prop))
+          .filter((item: any) => {
+            const reg = propName === 'bind'
+              ? new RegExp('^:')
+              : new RegExp(`^:?${propName}`)
+            return reg.test(item.label)
+          })
+          .map((item: any) => {
+            let label = item.label
+            if (result.isDynamic && label[0] === ':')
+              label = label.slice(1)
+
+            return item.label.match(/^\w+={[^}]*}/)
+              ? undefined
+              : createCompletionItem(isValue
+                ? ({
+                    content: label,
+                    snippet: label.replace(/^\w+=\"([^"]+)\".*/, '$1'),
+                    documentation: item.documentation,
+                    detail: item.detail,
+                    type: item.kind,
+                  })
+                : ({
+                    content: label,
+                    snippet: label.split(' ')[0],
+                    documentation: item.documentation,
+                    detail: item.detail,
+                    type: item.kind,
+                  }))
+          },
+
+          ).filter(Boolean)
         const events = isVue
           ? []
           : isValue
             ? []
             : eventCallbacks.get(name).filter((item: any) => !hasProps.find((prop: any) => item?.params?.[1] === prop))
         if (propName === 'o')
-          return [...events, ...result]
+          return [...events, ...r]
 
-        return [...result, ...events]
+        return [...r, ...events]
       }
       else if (hasProps.length) {
         return completionsCallback.filter((item: any) => !hasProps.find((prop: any) => item?.params?.[1] === prop))
@@ -270,7 +284,7 @@ export function activate(context: vscode.ExtensionContext) {
       }
     }
     return item
-  }, ['"', '\'', '-', ' ', '@', '.']))
+  }, ['"', '\'', '-', ' ', '@', '.', ':']))
 
   const provider = new CreateWebview(context.extensionUri, {
     viewColumn: vscode.ViewColumn.Beside,

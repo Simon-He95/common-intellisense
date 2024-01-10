@@ -86,6 +86,7 @@ function dfs(children: any, parent: any, position: vscode.Position) {
                 tag: parent.tag ? parent.tag : 'template',
                 props: parent.props || [],
               },
+              isDynamic: prop.name === 'bind',
               isEvent: prop.name === 'on',
             }
           }
