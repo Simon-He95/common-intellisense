@@ -1,7 +1,7 @@
 <p align="center">
 <img height="200" src="./assets/kv.png" alt="common-intellisense">
 </p>
-<p align="center"> <a href="./README.md">English</a> | 简体中文</p>
+<p align="center"> <a href="https://github.com/Simon-He95/vscode-common-intellisense/blob/main/README.md">English</a> | 简体中文</p>
 
 希望能给予开发者一个更加友好的开发体验，提供一些组件库的使用提示，帮助在开发阶段能够加高效的coding。
 

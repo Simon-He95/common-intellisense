@@ -1,7 +1,7 @@
 <p align="center">
 <img height="200" src="./assets/kv.png" alt="common-intellisense">
 </p>
-<p align="center"> English | <a href="./README_zh.md">简体中文</a></p>
+<p align="center"> English | <a href="https://github.com/Simon-He95/vscode-common-intellisense/blob/main/README_zh.md">简体中文</a></p>
 
 It is hoped to give developers a more friendly development experience and provide some tips on the use of component libraries to help add efficient coding in the development stage.
 
