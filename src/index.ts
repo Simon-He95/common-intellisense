@@ -64,7 +64,8 @@ export function activate(context: vscode.ExtensionContext) {
     if (e.affectsConfiguration('common-intellisense.ui'))
       findUI()
   }))
-  registerCommand('common-intellisense.import', (params) => {
+
+  context.subscriptions.push(registerCommand('common-intellisense.import', (params) => {
     if (!params)
       return
     const [data, lib] = params
@@ -101,7 +102,7 @@ export function activate(context: vscode.ExtensionContext) {
         edit.insert(createPosition(0, 0), str)
       })
     }
-  })
+  }))
 
   findUI()
 
