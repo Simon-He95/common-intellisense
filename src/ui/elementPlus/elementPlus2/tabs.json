@@ -22,7 +22,7 @@
         "border-card"
       ],
       "description": "Type of style",
-      "default": "card | border-card",
+      "default": "-",
       "type": "string",
       "description_zh": "风格类型"
     },
@@ -55,7 +55,7 @@
         "left"
       ],
       "description": "The location of the tab",
-      "default": "top | right | bottom | left",
+      "default": "top",
       "type": "string",
       "description_zh": "选项卡所在位置"
     },
@@ -78,14 +78,21 @@
     {
       "name": "tab-click",
       "description": "Triggered when tab is selected",
-      "params": "被选中的标签 tab 实例",
+      "params": "(pane: TabsPaneContext, ev: Event)",
       "description_zh": "tab 被选中时触发",
+      "value": ""
+    },
+    {
+      "name": "tab-change",
+      "description": "Triggers when `activeName` is changed",
+      "params": "(name: TabPaneName)",
+      "description_zh": "activeName 改变时触发",
       "value": ""
     },
     {
       "name": "tab-remove",
       "description": "Triggered by clicking the tab remove button",
-      "params": "被删除的标签的 name",
+      "params": "(name: TabPaneName)",
       "description_zh": "点击 tab 移除按钮后触发",
       "value": ""
     },
@@ -99,9 +106,16 @@
     {
       "name": "edit",
       "description": "Clicks the Add button on tabs or triggers when tabs are closed",
-      "params": "(targetName, action)",
+      "params": "(paneName: TabPaneName | undefined, action: 'remove' | 'add')",
       "description_zh": "点击 tabs 的新增按钮或 tab 被关闭后触发",
       "value": ""
+    }
+  ],
+  "slots": [
+    {
+      "value": "addIcon",
+      "description": "Customize add button icon",
+      "description_zh": "自定义添加按钮图标"
     }
   ],
   "suggestions": [

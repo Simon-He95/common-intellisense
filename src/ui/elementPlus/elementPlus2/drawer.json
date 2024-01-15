@@ -8,6 +8,13 @@
       "type": "boolean",
       "description_zh": "Drawer 自身是否插入至 body 元素上。嵌套的 Drawer 必须指定该属性并赋值为 true"
     },
+    "lock-scroll": {
+      "value": "",
+      "description": "Whether scroll of body is disabled while Drawer is displayed",
+      "default": "true",
+      "type": "boolean",
+      "description_zh": "是否在 Drawer 出现时将 body 滚动锁定"
+    },
     ":before-close": {
       "value": "",
       "description": "The callback before closing will pause the closing of the drawer",
@@ -15,12 +22,33 @@
       "type": "function(done)，done 用于关闭 Drawer",
       "description_zh": "关闭前的回调，会暂停 Drawer 的关闭"
     },
+    "close-on-click-modal": {
+      "value": "",
+      "description": "Whether the Drawer can be closed by clicking the mask",
+      "default": "true",
+      "type": "boolean",
+      "description_zh": "是否可以通过点击 modal 关闭 Drawer"
+    },
     "close-on-press-escape": {
       "value": "",
       "description": "Is it possible to turn off the Drawer by pressing ESC",
       "default": "false",
       "type": "boolean",
       "description_zh": "是否可以通过按下 ESC 关闭 Drawer"
+    },
+    "open-delay": {
+      "value": "",
+      "description": "Time(milliseconds) before open",
+      "default": "0",
+      "type": "number",
+      "description_zh": "Drawer 打开的延时时间，单位毫秒"
+    },
+    "close-delay": {
+      "value": "",
+      "description": "Time(milliseconds) before close",
+      "default": "0",
+      "type": "number",
+      "description_zh": "Drawer 关闭的延时时间，单位毫秒"
     },
     "custom-class": {
       "value": "",
@@ -58,21 +86,21 @@
         "btt"
       ],
       "description": "The direction in which the Drawer opens",
-      "default": "rtl | ltr | ttb | btt",
+      "default": "rtl",
       "type": "Direction",
       "description_zh": "Drawer 打开的方向"
     },
     "show-close": {
       "value": "",
       "description": "Whether or not to display a close button",
-      "default": "false",
+      "default": "true",
       "type": "boolean",
       "description_zh": "是否显示关闭按钮"
     },
     "size": {
       "value": "",
       "description": "The size of the Drawer form, in pixels when using the 'number' type, and 'x%' when using the 'string' type, otherwise it will be interpreted as the 'number' type",
-      "default": "-",
+      "default": "30%",
       "type": "number | string",
       "description_zh": "Drawer 窗体的大小, 当使用 `number` 类型时, 以像素为单位, 当使用 `string` 类型时, 请传入 'x%', 否则便会以 `number` 类型解释"
     },
@@ -97,12 +125,26 @@
       "type": "boolean",
       "description_zh": "点击遮罩层是否可以关闭 Drawer"
     },
-    "withHeader": {
+    "with-header": {
       "value": "",
       "description": "Controls whether the header bar is displayed, which is true by default, and when this is false, neither the title attribute nor the title slot will take effect",
-      "default": "false",
+      "default": "true",
       "type": "boolean",
       "description_zh": "控制是否显示 header 栏, 默认为 true, 当此项为 false 时, title attribute 和 title slot 均不生效"
+    },
+    "modal-class": {
+      "value": "",
+      "description": "Extra class names for shadowing layer",
+      "default": "—",
+      "type": "string",
+      "description_zh": "遮罩层的自定义类名"
+    },
+    "z-index": {
+      "value": "",
+      "description": "Set z-index",
+      "default": "—",
+      "type": "number",
+      "description_zh": "设置 z-index"
     }
   },
   "events": [
@@ -140,6 +182,16 @@
       "name": "title",
       "description": "Drawer header area",
       "description_zh": "Drawer 标题区的内容"
+    },
+    {
+      "name": "header",
+      "description": "Drawer header section; Replacing this removes the title, but does not remove the close button",
+      "description_zh": "Drawer 标题的内容；会替换标题部分，但不会移除关闭按钮"
+    },
+    {
+      "name": "footer",
+      "description": "Drawer footer",
+      "description_zh": "Drawer 页脚部分"
     }
   ],
   "link": "https://element-plus.org/en-US/component/drawer.html",
