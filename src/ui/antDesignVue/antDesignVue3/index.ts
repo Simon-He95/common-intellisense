@@ -271,6 +271,5 @@ export function antDesignVue3Components() {
     [TypographyTitle, TypographyTitle.name, '<a-typography-title></a-typography-title>'],
     [Upload, Upload.name, '<a-upload></a-upload>'],
   ]
-  return componentsReducer(map, true, 'a', 'ant-design-vue3')
+  return componentsReducer(map, true, 'a', 'ant-design-vue')
 }
-
