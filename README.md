@@ -13,7 +13,7 @@ Install the supported ui component library in your project and install the plug-
 - element 2
 - element-plus 2
 - antd 4、5
-- antdv 4
+- antdv 3、4
 - varlet 2
 - naive 2
 - primevue 3
