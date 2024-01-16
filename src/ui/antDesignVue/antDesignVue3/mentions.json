@@ -1,0 +1,167 @@
+{
+  "name": "AMentions",
+  "props": {
+    "autofocus": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Auto get focus when component mounted",
+      "description_zh": "Auto get focus when component mounted"
+    },
+    "defaultValue": {
+      "default": "",
+      "value": "",
+      "type": "string",
+      "description": "Default value",
+      "description_zh": "Default value"
+    },
+    ":filterOption": {
+      "default": "",
+      "value": "",
+      "type": "false | (input: string, option: OptionProps) => boolean",
+      "description": "Customize filter option logic",
+      "description_zh": "Customize filter option logic"
+    },
+    ":getPopupContainer": {
+      "default": "",
+      "value": "",
+      "type": "() => HTMLElement",
+      "description": "Set the mount HTML node for suggestions",
+      "description_zh": "Set the mount HTML node for suggestions"
+    },
+    "notFoundContent": {
+      "default": "'Not Found'",
+      "value": "",
+      "type": "string | slot",
+      "description": "Set mentions content when not match",
+      "description_zh": "Set mentions content when not match"
+    },
+    "placement": {
+      "default": "bottom",
+      "value": ["top", "bottom"],
+      "type": "top | bottom",
+      "description": "Set popup placement",
+      "description_zh": "Set popup placement"
+    },
+    "prefix": {
+      "default": "'@'",
+      "value": "",
+      "type": "string | string[]",
+      "description": "Set trigger prefix keyword",
+      "description_zh": "Set trigger prefix keyword"
+    },
+    "split": {
+      "default": "' '",
+      "value": "",
+      "type": "string",
+      "description": "Set split string before and after selected mention",
+      "description_zh": "Set split string before and after selected mention"
+    },
+    "status": {
+      "default": "-",
+      "value": ["error", "warning", "success", "validating"],
+      "type": "'error' | 'warning' | 'success' | 'validating'",
+      "description": "Set validation status",
+      "description_zh": "Set validation status"
+    },
+    ":validateSearch": {
+      "default": "",
+      "value": "",
+      "type": "(text: string, props: MentionsProps) => void",
+      "description": "Customize trigger search logic",
+      "description_zh": "Customize trigger search logic"
+    },
+    "v-model:value": {
+      "default": "",
+      "value": "",
+      "type": "string",
+      "description": "Set value of mentions",
+      "description_zh": "Set value of mentions",
+      "required": true
+    },
+    ":options": {
+      "default": "[]",
+      "value": "",
+      "type": "Options",
+      "description": "Option Configuration",
+      "description_zh": "Option Configuration",
+      "required": true
+    },
+    ":option": {
+      "default": "-",
+      "value": "",
+      "type": "v-slot:option=\"option\"",
+      "description": "custom option label",
+      "description_zh": "custom option label"
+    }
+  },
+  "methods": [],
+  "events": [
+    {
+      "name": "blur",
+      "description": "Callbacks when focus is lost",
+      "params": "function",
+      "description_zh": "失去焦点的时回调"
+    },
+    {
+      "name": "change",
+      "description": "Triggered when the value changes",
+      "params": "function(value: string)",
+      "description_zh": "值改变时触发"
+    },
+    {
+      "name": "focus",
+      "description": "Callback when focus is gained",
+      "params": "function",
+      "description_zh": "获得焦点时回调"
+    },
+    {
+      "name": "search",
+      "description": "Callback when the value of the text box changes",
+      "params": "function(value: string, prefix: string)",
+      "description_zh": "文本框值变化时回调"
+    },
+    {
+      "name": "select",
+      "description": "Triggered when an option is selected",
+      "params": "function(option: OptionProps, prefix: string)",
+      "description_zh": "选择选项时触发"
+    }
+  ],
+  "typeDetail": {
+    "Option": [
+      {
+        "name": "value",
+        "description": "选择时填充的值",
+        "type": "string | number"
+      },
+      {
+        "name": "label",
+        "description": "选项的标题",
+        "type": "VueNode | (o: Option)=> VueNode"
+      },
+      {
+        "name": "disabled",
+        "description": "是否可选",
+        "type": "boolean"
+      },
+      {
+        "name": "class",
+        "description": "css 类名",
+        "type": "string"
+      },
+      {
+        "name": "style",
+        "description": "选项样式",
+        "type": "CSSProperties"
+      },
+      {
+        "name": "payload",
+        "description": "其它数据",
+        "type": "object"
+      }
+    ]
+  },
+  "link": "https://antdv.com/components/mentions",
+  "link_zh": "https://antdv.com/components/mentions-cn"
+}
