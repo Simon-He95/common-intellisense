@@ -1,0 +1,194 @@
+{
+  "name": "ATableColumn",
+  "props": {
+    "align": {
+      "default": "left",
+      "value": [
+        "left",
+        "right",
+        "center"
+      ],
+      "type": "left | right | center",
+      "description": "specify how content is aligned",
+      "description_zh": "设置列内容的对齐方式"
+    },
+    "ellipsis": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "ellipsize cell content, not working with sorter and filters for now. tableLayout would be fixed when ellipsis is true.",
+      "description_zh": "超过宽度将自动省略，暂不支持和排序筛选一起使用。设置为 true 时，表格布局将变成 tableLayout=\"fixed\"。"
+    },
+    ":colSpan": {
+      "default": "",
+      "value": "",
+      "type": "number",
+      "description": "Span of this column's title",
+      "description_zh": "表头列合并,设置为 0 时，不渲染"
+    },
+    "dataIndex": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "Display field of the data record, could be set like a.b.c",
+      "description_zh": "列数据在数据项中对应的 key，支持 a.b.c 的嵌套写法"
+    },
+    "defaultFilteredValue": {
+      "default": "-",
+      "value": "",
+      "type": "string[]",
+      "description": "Default filtered values",
+      "description_zh": "默认筛选值"
+    },
+    "filterDropdown": {
+      "default": "-",
+      "value": "",
+      "type": "VNode | slot-scope",
+      "description": "Customized filter overlay",
+      "description_zh": "可以自定义筛选菜单，此函数只负责渲染图层，需要自行编写各种交互"
+    },
+    "filterDropdownVisible": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether filterDropdown is visible. Can be used with .sync in template, see update:filterDropdownVisible",
+      "description_zh": "用于控制自定义筛选菜单是否可见。在 template 中可用 .sync 后缀, 参见 update:filterDropdownVisible"
+    },
+    "filtered": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the dataSource is filtered",
+      "description_zh": "标识数据是否经过过滤，筛选图标会高亮"
+    },
+    "filteredValue": {
+      "default": "-",
+      "value": "",
+      "type": "string[]",
+      "description": "Controlled filtered value, filter icon will highlight",
+      "description_zh": "筛选的受控属性，外界可用此控制列的筛选状态，值为已筛选的 value 数组"
+    },
+    "filterIcon": {
+      "default": "false",
+      "value": "",
+      "type": "VNode | (filtered: boolean, column: Column) => vNode |slot |slot-scope",
+      "description": "Customized filter icon",
+      "description_zh": "自定义 filter 图标。"
+    },
+    "filterMultiple": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether multiple filters can be selected",
+      "description_zh": "是否多选"
+    },
+    ":filters": {
+      "default": "-",
+      "value": "",
+      "type": "object[]",
+      "description": "Filter menu config",
+      "description_zh": "表头的筛选菜单项"
+    },
+    "fixed": {
+      "default": "false",
+      "value": "",
+      "type": "boolean|string",
+      "description": "Set column to be fixed: true(same as left) 'left' 'right'",
+      "description_zh": "列是否固定，可选 true(等效于 left) 'left' 'right'"
+    },
+    "key": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "Unique key of this column, you can ignore this prop if you're not using template style api and you've set a unique dataIndex",
+      "description_zh": "Vue 需要的 key。如果没有使用 template 风格的 API，且已经设置了唯一的 dataIndex，可以忽略这个属性"
+    },
+    "customRender": {
+      "default": "-",
+      "value": "",
+      "type": "Function(text, record, index) {}|slot-scope",
+      "description": "Renderer of the table cell. The return value should be a VNode, or an object for colSpan/rowSpan config",
+      "description_zh": "生成复杂数据的渲染函数，参数分别为当前行的值，当前行数据，行索引，@return 里面可以设置表格行/列合并,可参考 demo 表格行/列合并"
+    },
+    "sorter": {
+      "default": "-",
+      "value": "",
+      "type": "Function|boolean",
+      "description": "Sort function for local sort, see Array.sort's compareFunction. If you need sort buttons only, set to true",
+      "description_zh": "排序函数，本地排序使用一个函数(参考 Array.sort 的 compareFunction)，需要服务端排序可设为 true"
+    },
+    "sortOrder": {
+      "default": "-",
+      "value": "",
+      "type": "boolean|string",
+      "description": "Order of sorted values: 'ascend' 'descend' 'false'",
+      "description_zh": "排序的受控属性，外界可用此控制列的排序，可设置为 'ascend' 'descend' false"
+    },
+    "sortDirections": {
+      "default": "['ascend', 'descend']",
+      "value": "",
+      "type": "Array",
+      "description": "supported sort way, could be 'ascend', 'descend'",
+      "description_zh": "支持的排序方式，取值为 'ascend' 'descend'"
+    },
+    "title": {
+      "default": "-",
+      "value": "",
+      "type": "string|slot",
+      "description": "Title of this column",
+      "description_zh": "列头显示文字"
+    },
+    "width": {
+      "default": "-",
+      "value": "",
+      "type": "string|number",
+      "description": "Width of this column",
+      "description_zh": "列宽度"
+    },
+    "customCell": {
+      "default": "-",
+      "value": "",
+      "type": "Function(record, rowIndex)",
+      "description": "Width of this column",
+      "description_zh": "设置单元格属性"
+    },
+    "customHeaderCell": {
+      "default": "-",
+      "value": "",
+      "type": "Function(column)",
+      "description": "Set props on per header cell",
+      "description_zh": "设置头部单元格属性"
+    },
+    ":slots": {
+      "default": "-",
+      "value": "",
+      "type": "object",
+      "description": "When using columns, you can use this property to configure the properties that support the slot, such as slots: { filterIcon: 'XXX'}",
+      "description_zh": "使用 columns 时，可以通过该属性配置支持 slot 的属性，如 slots: { filterIcon: 'XXX'}"
+    },
+    ":scopedSlots": {
+      "default": "-",
+      "value": "",
+      "type": "object",
+      "description": "When using columns, you can use this property to configure the properties that support the slot-scope, such as scopedSlots: { customRender: 'XXX'}",
+      "description_zh": "使用 columns 时，可以通过该属性配置支持 slot-scope 的属性，如 scopedSlots: { customRender: 'XXX'}"
+    }
+  },
+  "methods": [],
+  "events": [
+    {
+      "name": "onFilter",
+      "description": "In local mode, the function that determines the filter is used as a 'filter' event when using template or jsx",
+      "params": "Function",
+      "description_zh": "本地模式下，确定筛选的运行函数, 使用 template 或 jsx 时作为`filter`事件使用"
+    },
+    {
+      "name": "onFilterDropdownVisibleChange",
+      "description": "The custom filter menu is called when the change is visible, and is used as a 'onFilterDropdownVisibleChange' event when using template or jsx",
+      "params": "function(open) {}",
+      "description_zh": "自定义筛选菜单可见变化时调用，使用 template 或 jsx 时作为`onFilterDropdownVisibleChange`事件使用"
+    }
+  ],
+  "link": "https://1x.antdv.com/components/table",
+  "link_zh": "https://1x.antdv.com/components/table-cn"
+}

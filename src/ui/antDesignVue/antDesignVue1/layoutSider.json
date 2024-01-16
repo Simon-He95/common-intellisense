@@ -1,0 +1,116 @@
+{
+  "name": "ALayoutSider",
+  "props": {
+    "breakpoint": {
+      "default": "-",
+      "value": [
+        "xs",
+        "sm",
+        "md",
+        "lg",
+        "xl",
+        "xxl"
+      ],
+      "type": "Enum { 'xs', 'sm', 'md', 'lg', 'xl', 'xxl' }",
+      "description": "breakpoints of the responsive layout",
+      "description_zh": "触发响应式布局的断点"
+    },
+    "class": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "container className",
+      "description_zh": "容器 class"
+    },
+    "v-model": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "to set the current status",
+      "description_zh": "当前收起状态"
+    },
+    ":collapsedWidth": {
+      "default": "80",
+      "value": "",
+      "type": "number",
+      "description": "width of the collapsed sidebar, by setting to `0` a special trigger will appear",
+      "description_zh": "收缩宽度，设置为 0 会出现特殊 trigger"
+    },
+    "collapsible": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "whether can be collapsed",
+      "description_zh": "是否可收起"
+    },
+    "defaultCollapsed": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "to set the initial status",
+      "description_zh": "是否默认收起"
+    },
+    "reverseArrow": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "reverse direction of arrow, for a sider that expands from the right",
+      "description_zh": "翻转折叠提示箭头的方向，当 Sider 在右边时可以使用"
+    },
+    ":style": {
+      "default": "-",
+      "value": "",
+      "type": "object|string",
+      "description": "to customize the styles",
+      "description_zh": "指定样式"
+    },
+    "theme": {
+      "default": "dark",
+      "value": [
+        "light",
+        "dark"
+      ],
+      "type": "string: light dark",
+      "description": "color theme of the sidebar",
+      "description_zh": "主题颜色"
+    },
+    "trigger": {
+      "default": "-",
+      "value": "",
+      "type": "string|slot",
+      "description": "specify the customized trigger, set to null to hide the trigger",
+      "description_zh": "自定义 trigger，设置为 null 时隐藏 trigger"
+    },
+    "width": {
+      "default": "200",
+      "value": "",
+      "type": "number|string",
+      "description": "width of the sidebar",
+      "description_zh": "宽度"
+    },
+    ":zeroWidthTriggerStyle": {
+      "default": "-",
+      "value": "",
+      "type": "object",
+      "description": "to customize the styles of the special trigger that appears when collapsedWidth is 0",
+      "description_zh": "指定当 collapsedWidth 为 0 时出现的特殊 trigger 的样式"
+    }
+  },
+  "methods": [],
+  "events": [
+    {
+      "name": "breakpoint",
+      "description": "the callback function, executed when [breakpoints](/components/grid#api) changed",
+      "params": "(broken) => {}",
+      "description_zh": "触发响应式布局[断点](/components/grid#api)时的回调"
+    },
+    {
+      "name": "collapse",
+      "description": "the callback function, executed by clicking the trigger or activating the responsive layout",
+      "params": "(collapsed, type) => {}",
+      "description_zh": "展开-收起时的回调函数，有点击 trigger 以及响应式反馈两种方式可以触发"
+    }
+  ],
+  "link": "https://1x.antdv.com/components/layout",
+  "link_zh": "https://1x.antdv.com/components/layout-cn"
+}

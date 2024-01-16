@@ -1,0 +1,118 @@
+{
+  "name": "AInputSearch",
+  "props": {
+    ":addonAfter": {
+      "default": "",
+      "value": "",
+      "type": "string|slot",
+      "description": "The label text displayed after (on the right side of) the input field.",
+      "description_zh": "带标签的 input，设置后置标签"
+    },
+    ":addonBefore": {
+      "default": "",
+      "value": "",
+      "type": "string|slot",
+      "description": "The label text displayed before (on the left side of) the input field.",
+      "description_zh": "带标签的 input，设置前置标签"
+    },
+    "defaultValue": {
+      "default": "",
+      "value": "",
+      "type": "string",
+      "description": "The initial input content",
+      "description_zh": "输入框默认内容"
+    },
+    "disabled": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the input is disabled.",
+      "description_zh": "是否禁用状态，默认为 false"
+    },
+    "id": {
+      "default": "",
+      "value": "",
+      "type": "string",
+      "description": "The ID for input",
+      "description_zh": "输入框的 id"
+    },
+    ":maxLength": {
+      "default": "",
+      "value": "",
+      "type": "number",
+      "description": "max length",
+      "description_zh": "最大长度"
+    },
+    "prefix": {
+      "default": "",
+      "value": "",
+      "type": "string|slot",
+      "description": "The prefix icon for the Input.",
+      "description_zh": "带有前缀图标的 input"
+    },
+    "size": {
+      "default": "default",
+      "value": [
+        "large",
+        "default",
+        "small"
+      ],
+      "type": "string",
+      "description": "The size of the input box. Note: in the context of a form, the `large` size is used. Available: `large` `default` `small`",
+      "description_zh": "控件大小。注：标准表单内的输入框大小限制为 `large`。可选 `large` `default` `small`"
+    },
+    "suffix": {
+      "default": "",
+      "value": "",
+      "type": "string|slot",
+      "description": "The suffix icon for the Input.",
+      "description_zh": "带有后缀图标的 input"
+    },
+    "type": {
+      "default": "text",
+      "value": "",
+      "type": "string",
+      "description": "The type of input, see: MDN(use Input.TextArea instead of type=\"textarea\")",
+      "description_zh": "声明 input 类型，同原生 input 标签的 type 属性，见：MDN(请直接使用 Input.TextArea 代替 type=\"textarea\")。"
+    },
+    "v-model": {
+      "default": "",
+      "value": "",
+      "type": "string",
+      "description": "The input content value",
+      "description_zh": "输入框内容"
+    },
+    "allowClear": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "allow to remove input content with clear icon",
+      "description_zh": "可以点击清除图标删除内容"
+    },
+    "enterButton": {
+      "default": "false",
+      "value": "",
+      "type": "boolean|slot",
+      "description": "to show an enter button after input. This prop is conflict with addon.",
+      "description_zh": "是否有确认按钮，可设为按钮文字。该属性会与 addon 冲突。"
+    },
+    "loading": {
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "description": "loading status of button",
+      "description_zh": "搜索 loading"
+    }
+  },
+  "methods": [],
+  "events": [
+    {
+      "name": "search",
+      "description": "The callback function that is triggered when search button is clicked or Enter key is pressed.",
+      "params": "function(value, event)",
+      "description_zh": "点击搜索或按下回车键时的回调"
+    }
+  ],
+  "link": "https://1x.antdv.com/components/input",
+  "link_zh": "https://1x.antdv.com/components/input-cn"
+}

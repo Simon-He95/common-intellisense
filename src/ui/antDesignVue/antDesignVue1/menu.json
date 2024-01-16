@@ -1,0 +1,141 @@
+{
+  "name": "AMenu",
+  "props": {
+    ":defaultOpenKeys": {
+      "default": "",
+      "value": "",
+      "type": "",
+      "description": "array with the keys of default opened sub menus",
+      "description_zh": "初始展开的 SubMenu 菜单项 key 数组"
+    },
+    ":defaultSelectedKeys": {
+      "default": "",
+      "value": "",
+      "type": "string[]",
+      "description": "array with the keys of default opened sub menus",
+      "description_zh": "初始选中的菜单项 key 数组"
+    },
+    "forceSubMenuRender": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "render submenu into DOM before it shows",
+      "description_zh": "在子菜单展示之前就渲染进 DOM"
+    },
+    "inlineCollapsed": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "specifies the collapsed status when menu is inline mode",
+      "description_zh": "inline 时菜单是否收起状态"
+    },
+    ":inlineIndent": {
+      "default": "24",
+      "value": "",
+      "type": "number",
+      "description": "indent px of inline menu item on each level",
+      "description_zh": "inline 模式的菜单缩进宽度"
+    },
+    "mode": {
+      "default": "vertical",
+      "value": [
+        "vertical",
+        "vertical-right",
+        "horizontal",
+        "inline"
+      ],
+      "type": "string: vertical vertical-right horizontal inline",
+      "description": "type of the menu; vertical, horizontal, and inline modes are supported",
+      "description_zh": "菜单类型，现在支持垂直、水平、和内嵌模式三种"
+    },
+    "multiple": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Allow selection of multiple items",
+      "description_zh": "是否允许多选"
+    },
+    ":openKeys.sync": {
+      "default": "",
+      "value": "",
+      "type": "string[]",
+      "description": "array with the keys of currently opened sub menus",
+      "description_zh": "当前展开的 SubMenu 菜单项 key 数组"
+    },
+    "selectable": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "allow selecting menu items",
+      "description_zh": "是否允许选中"
+    },
+    "v-model": {
+      "default": "",
+      "value": "",
+      "type": "string[]",
+      "description": "array with the keys of currently selected menu items",
+      "description_zh": "当前选中的菜单项 key 数组"
+    },
+    ":subMenuCloseDelay": {
+      "default": "0.1",
+      "value": "",
+      "type": "number",
+      "description": "delay time to hide submenu when mouse leave, unit: second",
+      "description_zh": "用户鼠标离开子菜单后关闭延时，单位：秒"
+    },
+    ":subMenuOpenDelay": {
+      "default": "0",
+      "value": "",
+      "type": "number",
+      "description": "delay time to show submenu when mouse enter, unit: second",
+      "description_zh": "用户鼠标进入子菜单后开启延时，单位：秒"
+    },
+    "theme": {
+      "default": "light",
+      "value": [
+        "light",
+        "dark"
+      ],
+      "type": "string: light dark",
+      "description": "color theme of the menu",
+      "description_zh": "主题颜色"
+    },
+    ":overflowedIndicator": {
+      "default": "<span>···</span>",
+      "value": "",
+      "type": "DOM",
+      "description": "Customized icon when menu is collapsed",
+      "description_zh": "自定义 Menu 折叠时的图标"
+    }
+  },
+  "methods": [],
+  "events": [
+    {
+      "name": "click",
+      "description": "callback executed when a menu item is clicked",
+      "params": "function({ item, key, keyPath })",
+      "description_zh": "点击 MenuItem 调用此函数"
+    },
+    {
+      "name": "deselect",
+      "description": "callback executed when a menu item is deselected, only supported for multiple mode",
+      "params": "function({ item, key, selectedKeys })",
+      "description_zh": "取消选中时调用，仅在 multiple 生效"
+    },
+    {
+      "name": "openChange",
+      "description": "called when open/close sub menu",
+      "params": "function(openKeys: string[])",
+      "description_zh": "SubMenu 展开/关闭的回调"
+    },
+    {
+      "name": "select",
+      "description": "callback executed when a menu item is selected",
+      "params": "function({ item, key, selectedKeys })",
+      "description_zh": "被选中时调用"
+    }
+  ],
+  "suggestions": ["a-menu-item"],
+  "link": "https://1x.antdv.com/components/menu",
+  "link_zh": "https://1x.antdv.com/components/menu-cn"
+}

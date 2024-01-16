@@ -1,0 +1,234 @@
+{
+  "name": "ATable",
+  "props": {
+    "tableLayout": {
+      "default": "无固定表头/列或使用了 column.ellipsis 时，默认值为 fixed",
+      "value": "",
+      "type": "- | 'auto' | 'fixed'",
+      "description": "table-layout attribute of table element",
+      "description_zh": "表格元素的 table-layout 属性，设为 fixed 表示内容不会影响列的布局"
+    },
+    "bordered": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to show all table borders",
+      "description_zh": "是否展示外边框和列边框"
+    },
+    "childrenColumnName": {
+      "default": "children",
+      "value": "",
+      "type": "string[]",
+      "description": "The column contains children to display",
+      "description_zh": "指定树形结构的列名"
+    },
+    "columns": {
+      "default": "-",
+      "value": "",
+      "type": "array",
+      "description": "Columns of table config",
+      "description_zh": "表格列的配置描述，具体项见下表"
+    },
+    ":components": {
+      "default": "-",
+      "value": "",
+      "type": "object",
+      "description": "Override default table elements",
+      "description_zh": "覆盖默认的 table 元素"
+    },
+    "dataSource": {
+      "default": "",
+      "value": "",
+      "type": "any[]",
+      "description": "Data record array to be displayed",
+      "description_zh": "数据数组"
+    },
+    "defaultExpandAllRows": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Expand all rows initially",
+      "description_zh": "初始时，是否展开所有行"
+    },
+    "defaultExpandedRowKeys": {
+      "default": "-",
+      "value": "",
+      "type": "string[]",
+      "description": "Initial expanded row keys",
+      "description_zh": "默认展开的行"
+    },
+    "expandedRowKeys": {
+      "default": "-",
+      "value": "",
+      "type": "string[]",
+      "description": "Current expanded row keys. Can be used with .sync, see update:expandedRowKeys.",
+      "description_zh": "展开的行，控制属性。可用 .sync 后缀, 参见 update:expandedRowKeys"
+    },
+    "expandedRowRender": {
+      "default": "-",
+      "value": "",
+      "type": "Function(record, index, indent, expanded):VNode | slot=\"expandedRowRender\" slot-scope=\"record, index, indent, expanded\"",
+      "description": "Expanded container render for each row",
+      "description_zh": "额外的展开行"
+    },
+    "expandIcon": {
+      "default": "-",
+      "value": "",
+      "type": "Function(props):VNode | slot=\"expandIcon\" slot-scope=\"props\"",
+      "description": "Customize row expand Icon.",
+      "description_zh": "自定义展开图标"
+    },
+    "expandRowByClick": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to expand row by clicking anywhere in the whole row",
+      "description_zh": "通过点击行来展开子行"
+    },
+    ":expandIconColumnIndex": {
+      "default": "",
+      "value": "",
+      "type": "number",
+      "description": "The index of expandIcon which column will be inserted when expandIconAsCell is false",
+      "description_zh": "展开的图标显示在哪一列，如果没有 rowSelection，默认显示在第一列，否则显示在选择框后面"
+    },
+    "footer": {
+      "default": "",
+      "value": "",
+      "type": "Function(currentPageData)|slot-scope",
+      "description": "Table footer renderer",
+      "description_zh": "表格尾部"
+    },
+    ":indentSize": {
+      "default": "15",
+      "value": "",
+      "type": "number",
+      "description": "Indent size in pixels of tree data",
+      "description_zh": "展示树形数据时，每层缩进的宽度，以 px 为单位"
+    },
+    "loading": {
+      "default": "false",
+      "value": "",
+      "type": "boolean|object",
+      "description": "Loading status of table",
+      "description_zh": "页面是否加载中"
+    },
+    ":locale": {
+      "default": "filterConfirm: '确定'  filterReset: '重置'  emptyText: '暂无数据'",
+      "value": "",
+      "type": "object",
+      "description": "i18n text including filter, sort, empty text, etc",
+      "description_zh": "默认文案设置，目前包括排序、过滤、空数据文案"
+    },
+    ":pagination": {
+      "default": "",
+      "value": "",
+      "type": "object",
+      "description": "Config of pagination. You can ref table pagination config or full pagination document, hide it by setting it to false",
+      "description_zh": "分页器，参考配置项或 pagination文档，设为 false 时不展示和进行分页"
+    },
+    "rowClassName": {
+      "default": "-",
+      "value": "",
+      "type": "Function(record, index):string",
+      "description": "Row's className",
+      "description_zh": "表格行的类名"
+    },
+    "rowKey": {
+      "default": "'key'",
+      "value": "",
+      "type": "string|Function(record):string",
+      "description": "Row's unique key, could be a string or function that returns a string",
+      "description_zh": "表格行 key 的取值，可以是字符串或一个函数"
+    },
+    ":rowSelection": {
+      "default": "null",
+      "value": "",
+      "type": "object",
+      "description": "Row selection config",
+      "description_zh": "列表项是否可选择，配置项"
+    },
+    "scroll": {
+      "default": "-",
+      "value": "",
+      "type": "{ x: number | true, y: number }",
+      "description": "Set horizontal or vertical scrolling, can also be used to specify the width and height of the scroll area. It is recommended to set a number for x, if you want to set it to true, you need to add style .ant-table td { white-space: nowrap; }.",
+      "description_zh": "设置横向或纵向滚动，也可用于指定滚动区域的宽和高，建议为 x 设置一个数字，如果要设置为 true，需要配合样式 .ant-table td { white-space: nowrap; }"
+    },
+    "showHeader": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to show table header",
+      "description_zh": "是否显示表头"
+    },
+    "size": {
+      "default": "default",
+      "value": [
+        "middle",
+        "small"
+      ],
+      "type": "default | middle | small",
+      "description": "Size of table",
+      "description_zh": "表格大小"
+    },
+    "title": {
+      "default": "",
+      "value": "",
+      "type": "Function(currentPageData)|slot-scope",
+      "description": "Table title renderer",
+      "description_zh": "表格标题"
+    },
+    "customHeaderRow": {
+      "default": "-",
+      "value": "",
+      "type": "Function(column, index)",
+      "description": "Set props on per header row",
+      "description_zh": "设置头部行属性"
+    },
+    "customRow": {
+      "default": "-",
+      "value": "",
+      "type": "Function(record, index)",
+      "description": "Set props on per row",
+      "description_zh": "设置行属性"
+    },
+    "getPopupContainer": {
+      "default": "() => TableHtmlElement",
+      "value": "",
+      "type": "(triggerNode) => HTMLElement",
+      "description": "the render container of dropdowns in table",
+      "description_zh": "设置表格内各类浮层的渲染节点，如筛选菜单"
+    },
+    "transformCellText": {
+      "default": "-",
+      "value": "",
+      "type": "Function({ text, column, record, index }) => any",
+      "description": "Data can be changed again before rendering. The default configuration of general user empty data. You can configured globally through ConfigProvider",
+      "description_zh": "数据渲染前可以再次改变，一般用户空数据的默认配置，可以通过 ConfigProvider 全局统一配置"
+    }
+  },
+  "methods": [],
+  "events": [
+    {
+      "name": "change",
+      "description": "Triggered when there are changes in pagination, sorting, and filtering",
+      "params": "Function(pagination, filters, sorter, { currentDataSource })",
+      "description_zh": "分页、排序、筛选变化时触发"
+    },
+    {
+      "name": "expand",
+      "description": "Triggered when the expand icon is clicked",
+      "params": "Function(expanded, record)",
+      "description_zh": "点击展开图标时触发"
+    },
+    {
+      "name": "expandedRowsChange",
+      "description": "Triggered when the expanded row changes",
+      "params": "Function(expandedRows)",
+      "description_zh": "展开的行变化时触发"
+    }
+  ],
+  "link": "https://1x.antdv.com/components/table",
+  "link_zh": "https://1x.antdv.com/components/table-cn"
+}

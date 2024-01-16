@@ -1,0 +1,127 @@
+{
+  "name": "APagination",
+  "props": {
+    "v-model": {
+      "default": "-",
+      "value": "",
+      "type": "number",
+      "description": "current page number",
+      "description_zh": "当前页数"
+    },
+    ":defaultCurrent": {
+      "default": "1",
+      "value": "",
+      "type": "number",
+      "description": "default initial page number",
+      "description_zh": "默认的当前页数"
+    },
+    ":defaultPageSize": {
+      "default": "10",
+      "value": "",
+      "type": "number",
+      "description": "default number of data items per page",
+      "description_zh": "默认的每页条数"
+    },
+    "disabled": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Disable pagination",
+      "description_zh": "禁用分页"
+    },
+    "hideOnSinglePage": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to hide pager on single page",
+      "description_zh": "只有一页时是否隐藏分页器"
+    },
+    ":itemRender": {
+      "default": "-",
+      "value": "",
+      "type": "(page, type: 'page' | 'prev' | 'next', originalElement) => vNode",
+      "description": "to customize item innerHTML",
+      "description_zh": "用于自定义页码的结构，可用于优化 SEO"
+    },
+    ":pageSize.sync": {
+      "default": "-",
+      "value": "",
+      "type": "number",
+      "description": "number of data items per page",
+      "description_zh": "每页条数"
+    },
+    ":pageSizeOptions": {
+      "default": "['10', '20', '30', '40']",
+      "value": "",
+      "type": "string[]",
+      "description": "specify the sizeChanger options",
+      "description_zh": "指定每页可以显示多少条"
+    },
+    "showLessItems": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "show less page items",
+      "description_zh": "显示更少的页面项目"
+    },
+    "showQuickJumper": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "determine whether you can jump to pages directly",
+      "description_zh": "是否可以快速跳转至某页"
+    },
+    "showSizeChanger": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "determine whether pageSize can be changed",
+      "description_zh": "是否可以改变 pageSize"
+    },
+    ":showTotal": {
+      "default": "-",
+      "value": "",
+      "type": "Function(total, range)",
+      "description": "to display the total number and range",
+      "description_zh": "用于显示数据总量和当前数据顺序"
+    },
+    "simple": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "whether to use simple mode",
+      "description_zh": "当添加该属性时，显示为简单分页"
+    },
+    "size": {
+      "default": "\"\"",
+      "value": "",
+      "type": "string",
+      "description": "specify the size of Pagination, can be set to small",
+      "description_zh": "当为「small」时，是小尺寸分页"
+    },
+    ":total": {
+      "default": "0",
+      "value": "",
+      "type": "number",
+      "description": "total number of data items",
+      "description_zh": "数据总数"
+    }
+  },
+  "methods": [],
+  "events": [
+    {
+      "name": "change",
+      "description": "Page number or 'pageSize' is the callback for changing the page number and the number of pages per page",
+      "params": "Function(page, pageSize)",
+      "description_zh": "页码或 `pageSize` 改变的回调，参数是改变后的页码及每页条数"
+    },
+    {
+      "name": "showSizeChange",
+      "description": "pageSize change",
+      "params": "Function(current, size)",
+      "description_zh": "pageSize 变化的回调"
+    }
+  ],
+  "link": "https://1x.antdv.com/components/pagination",
+  "link_zh": "https://1x.antdv.com/components/pagination-cn"
+}

@@ -1,0 +1,169 @@
+{
+  "name": "ATransfer",
+  "props": {
+    ":dataSource": {
+      "value": "",
+      "description": "Data source, where the data will be rendered to the left column, except as specified in 'targetKeys'.",
+      "default": "\\[]",
+      "type": "\\[{key: string.isRequired,title: string.isRequired,description: string,disabled: bool}]\\[]",
+      "description_zh": "数据源，其中的数据将会被渲染到左边一栏中，`targetKeys` 中指定的除外。",
+      "required": true
+    },
+    "disabled": {
+      "value": "",
+      "description": "Whether to disable or not",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "是否禁用"
+    },
+    ":filterOption": {
+      "value": "",
+      "description": "Receive two parameters, 'inputValue' and 'option', when 'option' meets the filter conditions, it should return 'true', otherwise it should return 'false'.",
+      "default": "",
+      "type": "(inputValue, option): boolean",
+      "description_zh": "接收 `inputValue` `option` 两个参数，当 `option` 符合筛选条件时，应返回 `true`，反之则返回 `false`。"
+    },
+    ":footer": {
+      "value": "",
+      "description": "Can be set to a scoped slot",
+      "default": "",
+      "type": "slot=\"footer\" slot-scope=\"props\"",
+      "description_zh": "可以设置为一个 作用域插槽"
+    },
+    "lazy": {
+      "value": "",
+      "description": "Transfer uses [vc-lazy-load] to optimize performance, and relevant parameters can be set here. Set to false to turn off lazy loading.",
+      "default": "{ height: 32, offset: 32 }",
+      "type": "object|boolean",
+      "description_zh": "Transfer 使用了 [vc-lazy-load]优化性能，这里可以设置相关参数。设为 false 可以关闭懒加载。"
+    },
+    ":listStyle": {
+      "value": "",
+      "description": "Custom styles for two shuttle boxes",
+      "default": "",
+      "type": "CSSProperties",
+      "description_zh": "两个穿梭框的自定义样式"
+    },
+    ":locale": {
+      "value": "",
+      "description": "Various languages",
+      "default": "`{ itemUnit: '项', itemsUnit: '项', notFoundContent: '列表为空', searchPlaceholder: '请输入搜索内容' }`",
+      "type": "object",
+      "description_zh": "各种语言"
+    },
+    ":operations": {
+      "value": "",
+      "description": "Manipulate collections of copy, in order from top to bottom",
+      "default": "\\['>', '<']",
+      "type": "string\\[]",
+      "description_zh": "操作文案集合，顺序从上至下"
+    },
+    ":render": {
+      "value": "",
+      "description": "Each row of data renders a function with an input parameter of 'dataSource' and a return value of element. Or return a normal object where the 'label' field is element and the 'value' field is title",
+      "default": "",
+      "type": "Function(record)",
+      "description_zh": "每行数据渲染函数，该函数的入参为 `dataSource` 中的项，返回值为 element。或者返回一个普通对象，其中 `label` 字段为 element，`value` 字段为 title"
+    },
+    ":selectedKeys": {
+      "value": "",
+      "description": "Sets which items should be selected",
+      "default": "\\[]",
+      "type": "string\\[]",
+      "description_zh": "设置哪些项应该被选中",
+      "required": true
+    },
+    "showSearch": {
+      "value": "",
+      "description": "Whether or not to display a search box",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "是否显示搜索框"
+    },
+    "showSelectAll": {
+      "value": "",
+      "description": "Whether to display the All check box",
+      "default": "true",
+      "type": "boolean",
+      "description_zh": "是否展示全选勾选框"
+    },
+    ":targetKeys": {
+      "value": "",
+      "description": "A collection of keys that are displayed in the right-hand box for the data",
+      "default": "\\[]",
+      "type": "string\\[]",
+      "description_zh": "显示在右侧框数据的 key 集合",
+      "required": true
+    },
+    ":titles": {
+      "value": "",
+      "description": "A collection of titles, in order from left to right",
+      "default": "\\['', '']",
+      "type": "string\\[]",
+      "description_zh": "标题集合，顺序从左至右"
+    }
+  },
+  "methods": [],
+  "events": [
+    {
+      "name": "change",
+      "description": "option to transfer the callback function when moving between the two columns",
+      "params": "(targetKeys, direction, moveKeys): void",
+      "description_zh": "选项在两栏之间转移时的回调函数"
+    },
+    {
+      "name": "scroll",
+      "description": "Callback function when the picklist scrolls",
+      "params": "(direction, event): void",
+      "description_zh": "选项列表滚动时的回调函数"
+    },
+    {
+      "name": "search",
+      "description": "A callback function when the contents of the search box are changed",
+      "params": "(direction: 'left'|'right', value: string): void",
+      "description_zh": "搜索框内容时改变时的回调函数"
+    },
+    {
+      "name": "selectChange",
+      "description": "The callback function when the selected item changes",
+      "params": "(sourceSelectedKeys, targetSelectedKeys): void",
+      "description_zh": "选中项发生改变时的回调函数"
+    }
+  ],
+  "typeDetail": {
+    "Render": [
+      {
+        "name": "direction",
+        "description": "渲染列表的方向",
+        "type": "left | right"
+      },
+      {
+        "name": "disabled",
+        "description": "是否禁用列表",
+        "type": "Boolean"
+      },
+      {
+        "name": "filteredItems",
+        "description": "过滤后的数据",
+        "type": "TransferItem[]"
+      },
+      {
+        "name": "selectedKeys",
+        "description": "选中的条目",
+        "type": "string[]"
+      },
+      {
+        "name": "itemSelect",
+        "description": "勾选条目",
+        "type": "(key: string, selected: boolean)"
+      },
+      {
+        "name": "itemSelectAll",
+        "description": "勾选一组条目",
+        "type": "(keys: string[], selected: boolean)"
+      }
+    ]
+  },
+  "link": "https://1x.antdv.com/components/transfer",
+  "link_zh": "https://1x.antdv.com/components/transfer-cn"
+}
