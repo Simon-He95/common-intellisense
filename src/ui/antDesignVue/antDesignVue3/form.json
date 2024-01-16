@@ -1,0 +1,166 @@
+{
+  "name": "AForm",
+  "props": {
+    "colon": {
+      "value": "",
+      "description": "Configure the default value for colon for Form.Item (only valid if the property layout is horizontal)",
+      "default": "true",
+      "type": "boolean",
+      "description_zh": "配置 Form.Item 的 colon 的默认值 (只有在属性 layout 为 horizontal 时有效)"
+    },
+    "hideRequiredMark": {
+      "value": "",
+      "description": "Hides required marks for all form items",
+      "default": "false",
+      "type": "Boolean",
+      "description_zh": "隐藏所有表单项的必选标记"
+    },
+    "labelAlign": {
+      "value": ["left", "right"],
+      "description": "The text alignment of the label label",
+      "default": "right",
+      "type": "'left' | 'right'",
+      "description_zh": "label 标签的文本对齐方式"
+    },
+    ":labelCol": {
+      "value": "",
+      "description": "label layout, with the ''' component, set the 'span' 'offset' value, such as '{span: 3, offset: 12}' <Col>or 'sm: {span: 3, offset: 12}'",
+      "default": "",
+      "type": "[object]( | components | grid-cn | #col)",
+      "description_zh": "label 标签布局，同 `<Col>` 组件，设置 `span` `offset` 值，如 `{span: 3, offset: 12}` 或 `sm: {span: 3, offset: 12}`"
+    },
+    "labelWrap": {
+      "value": "",
+      "description": "The way the text wraps for label labels",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "label 标签的文本换行方式"
+    },
+    "layout": {
+      "value": ["horizontal", "vertical", "inline"],
+      "description": "Form layout",
+      "default": "horizontal",
+      "type": "'horizontal'|'vertical'|'inline'",
+      "description_zh": "表单布局"
+    },
+    ":model": {
+      "value": "",
+      "description": "Form data object",
+      "default": "",
+      "type": "object",
+      "description_zh": "表单数据对象",
+      "required": true
+    },
+    "name": {
+      "value": "",
+      "description": "The form name, which is prefixed with the form field 'id'",
+      "default": "-",
+      "type": "string",
+      "description_zh": "表单名称，会作为表单字段 `id` 前缀使用",
+      "required": true
+    },
+    "noStyle": {
+      "value": "",
+      "description": "'true' is not styled and is used as a pure field control",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "为 `true` 时不带样式，作为纯字段控件使用"
+    },
+    ":rules": {
+      "value": "",
+      "description": "Form validation rules",
+      "default": "",
+      "type": "object",
+      "description_zh": "表单验证规则"
+    },
+    "scrollToFirstError": {
+      "value": "",
+      "description": "Submission failures automatically scroll to the first error field",
+      "default": "false",
+      "type": "boolean | options",
+      "description_zh": "提交失败自动滚动到第一个错误字段"
+    },
+    "validateOnRuleChange": {
+      "value": "",
+      "description": "Whether to trigger a validation as soon as the rules property is changed",
+      "default": "true",
+      "type": "boolean",
+      "description_zh": "是否在 rules 属性改变后立即触发一次验证"
+    },
+    "validateTrigger": {
+      "value": "",
+      "description": "Configure field validation rules in a unified manner",
+      "default": "change",
+      "type": "string | string\\[]",
+      "description_zh": "统一设置字段校验规则"
+    },
+    ":wrapperCol": {
+      "value": "",
+      "description": "Use this property when you need to style a layout for an input control, and use it in the same way as labelCol",
+      "default": "",
+      "type": "[object]( | components | grid-cn | #col)",
+      "description_zh": "需要为输入控件设置布局样式时，使用该属性，用法同 labelCol"
+    }
+  },
+  "methods": [
+    {
+      "name": "clearValidate",
+      "description": "",
+      "params": "(nameList?: NamePath[]) => void",
+      "description_zh": "移除表单项的校验结果。传入待移除的表单项的 name 属性或者 name 组成的数组，如不传则移除整个表单的校验结果"
+    },
+    {
+      "name": "resetFields",
+      "description": "",
+      "params": "(nameList?: NamePath[]) => void",
+      "description_zh": "对整个表单进行重置，将所有字段值重置为初始值并移除校验结果"
+    },
+    {
+      "name": "scrollToField",
+      "description": "",
+      "params": "(name: NamePath, options: [ScrollOptions]) => void",
+      "description_zh": "滚动到对应字段位置"
+    },
+    {
+      "name": "validate",
+      "description": "",
+      "params": "(nameList?: NamePath[]) => Promise",
+      "description_zh": "触发表单验证, 同 validateFields"
+    },
+    {
+      "name": "validateFields",
+      "description": "",
+      "params": "(nameList?: NamePath[]) => Promise",
+      "description_zh": "触发表单验证"
+    }
+  ],
+  "events": [
+    {
+      "name": "finish",
+      "description": "After the form is submitted and the data is validated, the event is called",
+      "params": "function(values)",
+      "description_zh": "提交表单且数据验证成功后回调事件"
+    },
+    {
+      "name": "finishFailed",
+      "description": "Callback events are called after the form is submitted and the data validation fails",
+      "params": "function({ values, errorFields, outOfDate })",
+      "description_zh": "提交表单且数据验证失败后回调事件"
+    },
+    {
+      "name": "submit",
+      "description": "After the data validation is successful, the event is called",
+      "params": "Function(e:Event)",
+      "description_zh": "数据验证成功后回调事件"
+    },
+    {
+      "name": "validate",
+      "description": "Triggered when any form item is verified",
+      "params": "Function(name, status, errorMsgs)",
+      "description_zh": "任一表单项被校验后触发"
+    }
+  ],
+  "suggestions": ["a-form-item"],
+  "link": "https://antdv.com/components/form",
+  "link_zh": "https://antdv.com/components/form-cn"
+}
