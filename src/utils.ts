@@ -4,8 +4,9 @@ import { parse } from '@vue/compiler-sfc'
 import type { SFCTemplateBlock } from '@vue/compiler-sfc'
 import { parse as tsParser } from '@typescript-eslint/typescript-estree'
 import { findUp } from 'find-up'
-import { getOffsetFromPosition } from '@vscode-use/utils'
+import { createRange, getActiveText, getOffsetFromPosition, registerCodeLensProvider } from '@vscode-use/utils'
 import { UINames } from './constants'
+import { toCamel } from './ui/utils'
 
 const { parse: svelteParser } = require('svelte/compiler')
 
@@ -484,4 +485,79 @@ function convertOffsetToLineColumn(document: vscode.TextDocument, offset: number
   const lineOffset = document.offsetAt(position)
 
   return { line, column, lineText, lineOffset }
+}
+
+export let dispose: vscode.Disposable
+export function detectSlots(UiCompletions: any) {
+  const children = getTemplateAst(UiCompletions)
+  if (!children || !children.length)
+    return
+
+  if (dispose)
+    dispose.dispose()
+
+  dispose = registerCodeLensProvider(['vue'], {
+    provideCodeLenses() {
+      const result: vscode.CodeLens[] = []
+      children.forEach((m) => {
+        const { child, slots } = m
+        const range = child.loc
+        const filters: string[] = []
+
+        for (const c of Array.from(child.children) as any) {
+          if (c.tag === 'template' && c.props) {
+            for (const p of c.props) {
+              if (p.name === 'slot') {
+                const slotName = p.arg.content
+                filters.push(slotName)
+                break
+              }
+            }
+          }
+        }
+
+        slots.filter((s: any) => !filters.includes(s.name)).forEach((s: any, i: number) => {
+          const { name, description } = s
+          result.push(new vscode.CodeLens(createRange(range.start.line - 1, range.start.column, range.end.line - 1, range.end.column), {
+            title: `${i === 0 ? 'Slots: ' : ''}${name}`,
+            tooltip: description,
+            command: 'common-intellisense.slots',
+            arguments: [child, name],
+          }))
+        })
+      })
+      return result
+    },
+  })
+}
+
+function getTemplateAst(UiCompletions: any) {
+  const code = getActiveText()!
+  const {
+    descriptor: { template },
+  } = parse(code)
+  if (!template)
+    return
+  return findUiTag(template.ast.children, UiCompletions)
+}
+
+function findUiTag(children: any, UiCompletions: any, result: any[] = []) {
+  for (const child of children) {
+    if (!child.tag)
+      continue
+    const nextChildren = child.children
+
+    if (nextChildren)
+      findUiTag(nextChildren, UiCompletions, result)
+
+    const tag = toCamel(`-${child.tag}`)
+    const target = UiCompletions[tag]
+    if (!target || !target.rawSlots?.length)
+      continue
+    result.push({
+      child,
+      slots: target.rawSlots,
+    })
+  }
+  return result
 }

@@ -332,7 +332,7 @@ export function propsReducer(uiName: string, map: string[], iconData?: { prefix:
     }
     const tableDocument = createTableDocument()
 
-    result[item.name!] = { completions, events, methods, slots, suggestions: item.suggestions || [], tableDocument }
+    result[item.name!] = { completions, events, methods, slots, suggestions: item.suggestions || [], tableDocument, rawSlots: item.slots }
     return result
   }, result)
 }
@@ -402,7 +402,7 @@ export function componentsReducer(map: any[][], isSeperatorByHyphen = true, pref
         documentation.appendMarkdown(`\n<a href="command:intellisense.copyDemo">${copyIcon}</a>\n`)
       }
 
-      return createCompletionItem({ content: _content, snippet, documentation, type: vscode.CompletionItemKind.TypeParameter, sortText: 'a', params: [content, lib, isReact] })
+      return createCompletionItem({ content: _content, snippet, documentation, type: vscode.CompletionItemKind.TypeParameter, sortText: 'a', params: [content, lib, isReact], nihao: '122' })
     }),
   }
 }

@@ -1,10 +1,10 @@
 import fsp from 'node:fs/promises'
 import path from 'node:path'
 import * as vscode from 'vscode'
-import { addEventListener, createCompletionItem, createPosition, createRange, createSelect, getActiveText, getActiveTextEditorLanguageId, getConfiguration, getCurrentFileUrl, getLineText, getLocale, getSelection, message, openExternalUrl, registerCommand, registerCompletionItemProvider, setConfiguration, setCopyText, updateText } from '@vscode-use/utils'
+import { addEventListener, createCompletionItem, createPosition, createRange, createSelect, getActiveText, getActiveTextEditorLanguageId, getConfiguration, getCurrentFileUrl, getLineText, getLocale, getSelection, message, nextTick, openExternalUrl, registerCommand, registerCompletionItemProvider, setConfiguration, setCopyText, updateText } from '@vscode-use/utils'
 import { CreateWebview } from '@vscode-use/createwebview'
 import { parse } from '@vue/compiler-sfc'
-import { findPkgUI, parser } from './utils'
+import { detectSlots, findPkgUI, parser } from './utils'
 import UI from './ui'
 import { nameMap } from './constants'
 import { toCamel } from './ui/utils'
@@ -106,6 +106,37 @@ export function activate(context: vscode.ExtensionContext) {
 
   findUI()
 
+  context.subscriptions.push(registerCommand('common-intellisense.slots', (child, name) => {
+    if (!child && UiCompletions) {
+      detectSlots(UiCompletions)
+      return
+    }
+    const lastChild = child.children[child.children.length - 1]
+    if (lastChild) {
+      const pos = lastChild.loc.end
+      const empty = ' '.repeat(pos.column - 1)
+      updateText((edit) => {
+        edit.insert(createPosition(pos.line - 1, pos.column - 1), `${empty}<template #${name}></template>\n${empty}`)
+      })
+    }
+    else {
+      const index = child.loc.start.offset + child.loc.source.indexOf('></') + 1
+      const pos = getPosition(index)
+      const empty = ' '.repeat(child.loc.start.column - 1)
+      updateText((edit) => {
+        edit.insert(createPosition(pos), `\n${empty}  <template #${name}></template>\n${empty}`)
+      })
+    }
+    nextTick(() => {
+      detectSlots(UiCompletions)
+    })
+  }))
+
+  context.subscriptions.push(addEventListener('text-save', () => {
+    if (getActiveTextEditorLanguageId() === 'vue' && UiCompletions)
+      detectSlots(UiCompletions)
+  }))
+
   context.subscriptions.push(registerCompletionItemProvider(filter, async (document, position) => {
     const { lineText } = getSelection()!
     const p: any = position
@@ -124,6 +155,7 @@ export function activate(context: vscode.ExtensionContext) {
     const { character } = position
     const isPreEmpty = lineText[character - 1] === ' '
     const isValue = result.isValue
+
     if (!result.isInTemplate && result.refs && !isPreEmpty) {
       if (result.refsMap && Object.keys(result.refsMap).length) {
         if (lineText?.slice(-1)[0] === '.') {
@@ -282,6 +314,13 @@ export function activate(context: vscode.ExtensionContext) {
         title: 'common-intellisense-import',
         command: 'common-intellisense.import',
         arguments: [item.params],
+      }
+    }
+    else {
+      item.command = {
+        title: 'common-intellisense.slots',
+        command: 'common-intellisense.slots',
+        arguments: [],
       }
     }
     return item
