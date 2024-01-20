@@ -1,7 +1,7 @@
 import fsp from 'node:fs/promises'
 import path from 'node:path'
 import * as vscode from 'vscode'
-import { addEventListener, createCompletionItem, createPosition, createRange, createSelect, getActiveText, getActiveTextEditorLanguageId, getConfiguration, getCurrentFileUrl, getLineText, getLocale, getSelection, message, nextTick, openExternalUrl, registerCommand, registerCompletionItemProvider, setConfiguration, setCopyText, updateText } from '@vscode-use/utils'
+import { addEventListener, createCompletionItem, createPosition, createRange, createSelect, getActiveText, getActiveTextEditorLanguageId, getConfiguration, getCurrentFileUrl, getLineText, getLocale, getSelection, message, openExternalUrl, registerCommand, registerCompletionItemProvider, setConfiguration, setCopyText, updateText } from '@vscode-use/utils'
 import { CreateWebview } from '@vscode-use/createwebview'
 import { parse } from '@vue/compiler-sfc'
 import { detectSlots, findPkgUI, parser } from './utils'
@@ -148,12 +148,9 @@ export function activate(context: vscode.ExtensionContext) {
         edit.insert(createPosition(pos), `\n${empty}  <template ${slotName}></template>\n${empty}`)
       })
     }
-    nextTick(() => {
-      detectSlots(UiCompletions)
-    })
   }))
 
-  context.subscriptions.push(addEventListener('text-save', () => {
+  context.subscriptions.push(addEventListener('text-change', () => {
     if (getActiveTextEditorLanguageId() === 'vue' && UiCompletions)
       detectSlots(UiCompletions)
   }))

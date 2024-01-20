@@ -500,11 +500,12 @@ function convertOffsetToLineColumn(document: vscode.TextDocument, offset: number
 export let dispose: vscode.Disposable
 export async function detectSlots(UiCompletions: any) {
   const [children, offset] = await getTemplateAst(UiCompletions)
+  if (dispose)
+    dispose.dispose()
+
   if (!children || !children?.length)
     return
 
-  if (dispose)
-    dispose.dispose()
   const isZh = getLocale().includes('zh')
 
   dispose = registerCodeLensProvider(['vue'], {
@@ -597,9 +598,8 @@ async function findUiTag(children: any, UiCompletions: any, result: any[] = []) 
 const originTag = ['div', 'span', 'ul', 'li', 'ol', 'p', 'main', 'header', 'footer']
 function findAllJsxElements(code: string) {
   const ast = tsParser(code, { jsx: true, loc: true, range: true })
-  const exportDefault = ast.body.find((i: any) => i.type === 'ExportDefaultDeclaration')
   const results: any = []
-  traverse(exportDefault, (node) => {
+  traverse(ast, (node) => {
     if (node.type === 'JSXElement') {
       results.push(node)
     }
