@@ -106,25 +106,46 @@ export function activate(context: vscode.ExtensionContext) {
 
   findUI()
 
-  context.subscriptions.push(registerCommand('common-intellisense.slots', (child, name) => {
+  context.subscriptions.push(registerCommand('common-intellisense.slots', (child, name, offset = 0) => {
     if (!child && UiCompletions) {
       detectSlots(UiCompletions)
       return
     }
+
     const lastChild = child.children[child.children.length - 1]
+    let slotName = `#${name}`
+    if (child.range)
+      slotName = `v-slot:${name}`
+
     if (lastChild) {
-      const pos = lastChild.loc.end
-      const empty = ' '.repeat(pos.column - 1)
-      updateText((edit) => {
-        edit.insert(createPosition(pos.line - 1, pos.column - 1), `${empty}<template #${name}></template>\n${empty}`)
-      })
+      let pos = lastChild.loc.end
+      if (lastChild.range) {
+        pos = getPosition(lastChild.range[1] + offset + 1)
+        const repeatColumn = pos.column - 1 < 0 ? 0 : pos.column - 1
+        const empty = ' '.repeat(repeatColumn)
+        updateText((edit) => {
+          edit.insert(createPosition(pos.line, pos.column - 1 < 0 ? 0 : pos.column - 1), `  <template ${slotName}></template>\n${empty}`)
+        })
+      }
+      else {
+        const repeatColumn = pos.column - 1 < 0 ? 0 : pos.column - 1
+        const empty = ' '.repeat(repeatColumn)
+        updateText((edit) => {
+          edit.insert(createPosition(pos.line - 1, pos.column - 1 < 0 ? 0 : pos.column - 1), `${empty}<template ${slotName}></template>\n${empty}`)
+        })
+      }
     }
     else {
-      const index = child.loc.start.offset + child.loc.source.indexOf('></') + 1
+      let index: number
+      if (child.range)
+        index = child.openingElement.range[1] + offset
+      else
+        index = child.loc.start.offset + child.loc.source.indexOf('></') + 1
+
       const pos = getPosition(index)
       const empty = ' '.repeat(child.loc.start.column - 1)
       updateText((edit) => {
-        edit.insert(createPosition(pos), `\n${empty}  <template #${name}></template>\n${empty}`)
+        edit.insert(createPosition(pos), `\n${empty}  <template ${slotName}></template>\n${empty}`)
       })
     }
     nextTick(() => {
@@ -147,9 +168,8 @@ export function activate(context: vscode.ExtensionContext) {
     const result = parser(document.getText(), p)
     if (!result)
       return
-
     const lan = getActiveTextEditorLanguageId()
-    const isVue = lan === 'vue'
+    const isVue = lan === 'vue' && result.template
     const code = getActiveText()!
     const deps = isVue ? getImportDeps(code) : {}
     const { character } = position
@@ -199,13 +219,13 @@ export function activate(context: vscode.ExtensionContext) {
 
       const { events, completions } = target
       if (!completionsCallbacks.has(name)) {
-        const _events = events[0]()
+        const _events = events[0](isVue)
         eventCallbacks.set(name, _events)
-        completionsCallbacks.set(name, [...completions[0](), ...(isVue ? [] : _events)])
+        completionsCallbacks.set(name, [...completions[0](isVue), ...(isVue ? [] : _events)])
       }
 
       if (!eventCallbacks.has(name))
-        eventCallbacks.set(name, events[0]())
+        eventCallbacks.set(name, events[0](isVue))
 
       completionsCallback = completionsCallbacks.get(name)
       const hasProps = result.props
@@ -497,6 +517,8 @@ function findUI() {
       return Object.assign(result, completion)
     }
     , {} as any)
+
+    detectSlots(UiCompletions)
   }
 }
 
@@ -554,7 +576,7 @@ async function getTemplateParentElementName(url: string) {
   return result
 }
 
-async function findDynamicComponent(name: string, deps: Record<string, string>) {
+export async function findDynamicComponent(name: string, deps: Record<string, string>) {
   const prefix = optionsComponents.prefix
   let target = findDynamic(name, prefix)
 

@@ -4,9 +4,11 @@ import { parse } from '@vue/compiler-sfc'
 import type { SFCTemplateBlock } from '@vue/compiler-sfc'
 import { parse as tsParser } from '@typescript-eslint/typescript-estree'
 import { findUp } from 'find-up'
-import { createRange, getActiveText, getOffsetFromPosition, registerCodeLensProvider } from '@vscode-use/utils'
+import { createRange, getActiveText, getLocale, getOffsetFromPosition, registerCodeLensProvider } from '@vscode-use/utils'
+import { traverse } from '@babel/types'
 import { UINames } from './constants'
 import { toCamel } from './ui/utils'
+import { findDynamicComponent } from '.'
 
 const { parse: svelteParser } = require('svelte/compiler')
 
@@ -23,7 +25,9 @@ export function parser(code: string, position: vscode.Position & { active: strin
   isInTemplate = false
   if (suffix === 'vue') {
     const result = transformVue(code, position)
-    if (!result.refs)
+    if (!result)
+      return
+    if (!result.refs?.length || !result.template)
       return result
     const refsMap = findRefs(result.template)
     return Object.assign(result, { refsMap })
@@ -42,9 +46,15 @@ export function transformVue(code: string, position: vscode.Position) {
     descriptor: { template, script, scriptSetup },
     errors,
   } = parse(code)
-  if (errors.length || !template)
+
+  if (errors.length)
     return
   const _script = script || scriptSetup
+  if (!template) {
+    if (_script?.lang === 'tsx')
+      return parserJSX(_script.content, position)
+    return
+  }
   if (_script && isInPosition(_script.loc, position)) {
     const content = _script.content!
     const refs: string[] = []
@@ -488,24 +498,36 @@ function convertOffsetToLineColumn(document: vscode.TextDocument, offset: number
 }
 
 export let dispose: vscode.Disposable
-export function detectSlots(UiCompletions: any) {
-  const children = getTemplateAst(UiCompletions)
-  if (!children || !children.length)
+export async function detectSlots(UiCompletions: any) {
+  const [children, offset] = await getTemplateAst(UiCompletions)
+  if (!children || !children?.length)
     return
 
   if (dispose)
     dispose.dispose()
+  const isZh = getLocale().includes('zh')
 
   dispose = registerCodeLensProvider(['vue'], {
     provideCodeLenses() {
       const result: vscode.CodeLens[] = []
-      children.forEach((m) => {
+      children.forEach((m: any) => {
         const { child, slots } = m
         const range = child.loc
         const filters: string[] = []
-
         for (const c of Array.from(child.children) as any) {
-          if (c.tag === 'template' && c.props) {
+          if (c.type === 'JSXElement') {
+            if (c.openingElement.name.name !== 'template')
+              continue
+            for (const p of c.openingElement.attributes) {
+              const namespace = p.name.namespace.name
+              if (namespace === 'v-slot') {
+                const slotName = p.name.name.name
+                filters.push(slotName)
+                break
+              }
+            }
+          }
+          else if (c.tag === 'template' && c.props) {
             for (const p of c.props) {
               if (p.name === 'slot') {
                 const slotName = p.arg.content
@@ -517,12 +539,12 @@ export function detectSlots(UiCompletions: any) {
         }
 
         slots.filter((s: any) => !filters.includes(s.name)).forEach((s: any, i: number) => {
-          const { name, description } = s
+          const { name, description, description_zh } = s
           result.push(new vscode.CodeLens(createRange(range.start.line - 1, range.start.column, range.end.line - 1, range.end.column), {
             title: `${i === 0 ? 'Slots: ' : ''}${name}`,
-            tooltip: description,
+            tooltip: isZh ? description_zh : description,
             command: 'common-intellisense.slots',
-            arguments: [child, name],
+            arguments: [child, name, offset],
           }))
         })
       })
@@ -531,27 +553,37 @@ export function detectSlots(UiCompletions: any) {
   })
 }
 
-function getTemplateAst(UiCompletions: any) {
+async function getTemplateAst(UiCompletions: any): Promise<[any, number?] | []> {
   const code = getActiveText()!
   const {
-    descriptor: { template },
+    descriptor: { template, script, scriptSetup },
   } = parse(code)
-  if (!template)
-    return
-  return findUiTag(template.ast.children, UiCompletions)
+  const _script = script || scriptSetup
+  if (!template) {
+    if (_script?.lang === 'tsx') {
+      const children = findAllJsxElements(_script.content)
+      return [await findUiTag(children, UiCompletions), _script.loc.start.offset]
+    }
+    return []
+  }
+  return [await findUiTag(template.ast.children, UiCompletions)]
 }
 
-function findUiTag(children: any, UiCompletions: any, result: any[] = []) {
+async function findUiTag(children: any, UiCompletions: any, result: any[] = []) {
   for (const child of children) {
-    if (!child.tag)
+    let tag: string = child.tag
+    if (child.type === 'JSXElement')
+      tag = child.openingElement.name.name
+
+    if (!tag)
       continue
     const nextChildren = child.children
 
-    if (nextChildren)
-      findUiTag(nextChildren, UiCompletions, result)
+    if (nextChildren?.length)
+      await findUiTag(nextChildren, UiCompletions, result)
 
-    const tag = toCamel(`-${child.tag}`)
-    const target = UiCompletions[tag]
+    const tagName = toCamel(`-${tag}`)
+    const target = UiCompletions[tagName] || await findDynamicComponent(tagName, {})
     if (!target || !target.rawSlots?.length)
       continue
     result.push({
@@ -560,4 +592,31 @@ function findUiTag(children: any, UiCompletions: any, result: any[] = []) {
     })
   }
   return result
+}
+
+const originTag = ['div', 'span', 'ul', 'li', 'ol', 'p', 'main', 'header', 'footer']
+function findAllJsxElements(code: string) {
+  const ast = tsParser(code, { jsx: true, loc: true, range: true })
+  const exportDefault = ast.body.find((i: any) => i.type === 'ExportDefaultDeclaration')
+  const results: any = []
+  traverse(exportDefault, (node) => {
+    if (node.type === 'JSXElement') {
+      results.push(node)
+    }
+    else if (node.type === 'ObjectExpression') {
+      const _node: any = node.properties?.find((p: any) => p.key.name === 'render')
+        || node.properties?.find((p: any) => p.key.name === 'setup')
+      const t = _node?.value
+      if (t) {
+        traverse(t, (nextNode) => {
+          if (nextNode.type === 'JSXElement') {
+            const tag = (nextNode.openingElement.name as any)?.name
+            if (tag && !originTag.includes(tag))
+              results.push(nextNode)
+          }
+        })
+      }
+    }
+  })
+  return results
 }

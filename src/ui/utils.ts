@@ -27,9 +27,7 @@ export function propsReducer(uiName: string, map: string[], iconData?: { prefix:
     const slots: any[] = []
     const isZh = getLocale().includes('zh')
 
-    const completionsDeferCallback = () => {
-      const lan = getActiveTextEditorLanguageId()
-      const isVue = lan === 'vue'
+    const completionsDeferCallback = (isVue: boolean) => {
       const data = [
         'id',
         isVue ? 'class' : 'className',
@@ -139,9 +137,8 @@ export function propsReducer(uiName: string, map: string[], iconData?: { prefix:
       item.events = []
 
     if (item.events) {
-      const deferEventsCall = () => {
+      const deferEventsCall = (isVue: boolean) => {
         const lan = getActiveTextEditorLanguageId()
-        const isVue = lan === 'vue'
         const originEvent = [
           {
             name: isVue
