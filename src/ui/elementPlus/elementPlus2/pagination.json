@@ -1,0 +1,138 @@
+{
+  "name": "ElPagination",
+  "props": {
+    "small": {
+      "value": "",
+      "description": "Whether to use a small pagination style",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "是否使用小型分页样式"
+    },
+    "background": {
+      "value": "",
+      "description": "Whether to add a background color to the pagination button",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "是否为分页按钮添加背景色"
+    },
+    ":page-size": {
+      "value": "",
+      "description": "Displays the number of entries per page and supports the .sync modifier",
+      "default": "—",
+      "type": "number",
+      "description_zh": "每页显示条目个数，支持 .sync 修饰符"
+    },
+    ":total": {
+      "value": "",
+      "description": "Total number of entries",
+      "default": "—",
+      "type": "number",
+      "description_zh": "总条目数",
+      "required": true
+    },
+    ":page-count": {
+      "value": "",
+      "description": "Total number of pages, total and page-count can be set to achieve the function of displaying page numbers; If you want to support changes to page-sizes, you'll need to use the total attribute",
+      "default": "—",
+      "type": "number",
+      "description_zh": "总页数，total 和 page-count 设置任意一个就可以达到显示页码的功能；如果要支持 page-sizes 的更改，则需要使用 total 属性"
+    },
+    ":pager-count": {
+      "value": "",
+      "description": "The number of page number buttons, which collapses when the total number of pages exceeds this value",
+      "default": "大于等于 5 且小于等于 21 的奇数",
+      "type": "number",
+      "description_zh": "页码按钮的数量，当总页数超过该值时会折叠"
+    },
+    ":current-page": {
+      "value": "",
+      "description": "The current number of pages, with support for the .sync modifier",
+      "default": "—",
+      "type": "number",
+      "description_zh": "当前页数，支持 .sync 修饰符"
+    },
+    "layout": {
+      "value": "",
+      "description": "Component layout, with child component names separated by commas",
+      "default": "sizes, prev, pager, next, jumper, `->`, total, slot",
+      "type": "string",
+      "description_zh": "组件布局，子组件名用逗号分隔",
+      "required": true
+    },
+    ":page-sizes": {
+      "value": "",
+      "description": "Option settings for the number of display selectors per page",
+      "default": "—",
+      "type": "number[]",
+      "description_zh": "每页显示个数选择器的选项设置"
+    },
+    "popper-class": {
+      "value": "",
+      "description": "The drop-down box class name of the number selector is displayed on each page",
+      "default": "—",
+      "type": "string",
+      "description_zh": "每页显示个数选择器的下拉框类名"
+    },
+    "prev-text": {
+      "value": "",
+      "description": "Override icon to display the previous page text",
+      "default": "—",
+      "type": "string",
+      "description_zh": "替代图标显示的上一页文字"
+    },
+    "next-text": {
+      "value": "",
+      "description": "The text on the next page displayed by the alternate icon",
+      "default": "—",
+      "type": "string",
+      "description_zh": "替代图标显示的下一页文字"
+    },
+    "disabled": {
+      "value": "",
+      "description": "Whether to disable or not",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "是否禁用"
+    },
+    "hide-on-single-page": {
+      "value": "",
+      "description": "Whether it is hidden when there is only one page",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "只有一页时是否隐藏"
+    }
+  },
+  "events": [
+    {
+      "name": "size-change",
+      "description": "pageSize is triggered",
+      "params": "每页条数",
+      "description_zh": "pageSize 改变时会触发",
+      "value": ""
+    },
+    {
+      "name": "current-change",
+      "description": "currentPage is triggered when it changes",
+      "params": "当前页",
+      "description_zh": "currentPage 改变时会触发",
+      "value": ""
+    },
+    {
+      "name": "prev-click",
+      "description": "It is triggered when the user clicks the Previous button to change the current page",
+      "params": "当前页",
+      "description_zh": "用户点击上一页按钮改变当前页后触发",
+      "value": ""
+    },
+    {
+      "name": "next-click",
+      "description": "It is triggered when the user clicks the next page button to change the current page",
+      "params": "当前页",
+      "description_zh": "用户点击下一页按钮改变当前页后触发",
+      "value": ""
+    }
+  ],
+  "link": "https://element-plus.org/en-US/component/pagination.html",
+  "link_zh": "https://element-plus.org/zh-CN/component/pagination.html",
+  "methods": []
+}

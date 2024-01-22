@@ -28,7 +28,7 @@ export function chakraUiReact2() {
     IconButton,
   ]
 
-  return propsReducer(map)
+  return propsReducer('@chakra-ui/react', map)
 }
 
 export function chakraUiReact2Components() {
@@ -46,5 +46,5 @@ export function chakraUiReact2Components() {
     [ButtonGroup.name, '按钮组', '<ButtonGroup></ButtonGroup>'],
     [IconButton.name, '单独的图标按钮', '<IconButton aria-label=\'Add to friends\' icon={<AddIcon />} />'],
   ]
-  return componentsReducer(map, false)
+  return componentsReducer(map, false, '', '@chakra-ui/react')
 }

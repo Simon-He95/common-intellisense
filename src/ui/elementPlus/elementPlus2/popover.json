@@ -1,0 +1,242 @@
+{
+  "name": "ElPopover",
+  "props": {
+    "trigger": {
+      "value": ["click", "focus", "hover", "manual"],
+      "description": "Trigger mode",
+      "default": "hover",
+      "type": "string",
+      "description_zh": "触发方式"
+    },
+    "title": {
+      "value": "",
+      "description": "title",
+      "default": "—",
+      "type": "string",
+      "description_zh": "标题",
+      "required": true
+    },
+    "effect": {
+      "value": ["dark", "light"],
+      "description": "Tooltip theme, built-in theme: `dark` / `light`",
+      "default": "light",
+      "type": "string",
+      "description_zh": "Tooltip 主题，Element Plus 内置了 dark / light 两种主题"
+    },
+    "content": {
+      "value": "",
+      "description": "The displayed content can also be passed into the DOM via a 'slot'",
+      "default": "—",
+      "type": "string",
+      "description_zh": "显示的内容，也可以通过 `slot` 传入 DOM",
+      "required": true
+    },
+    "width": {
+      "value": "",
+      "description": "width",
+      "default": "—",
+      "type": "string / number",
+      "description_zh": "宽度"
+    },
+    "placement": {
+      "value": [
+        "top",
+        "top-start",
+        "top-end",
+        "bottom",
+        "bottom-start",
+        "bottom-end",
+        "left",
+        "left-start",
+        "left-end",
+        "right",
+        "right-start",
+        "right-end"
+      ],
+      "description": "Location of appearance",
+      "default": "bottom",
+      "type": "string",
+      "description_zh": "出现位置"
+    },
+    "disabled": {
+      "value": "",
+      "description": "Whether Popover is available",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "Popover 是否可用"
+    },
+    "value": {
+      "value": "",
+      "description": "Whether the status is visible or not",
+      "default": "—",
+      "type": "boolean",
+      "description_zh": "状态是否可见"
+    },
+    ":v-model": {
+      "value": "",
+      "description": "Whether the status is visible or not",
+      "default": "—",
+      "type": "boolean",
+      "description_zh": "状态是否可见"
+    },
+    "offset": {
+      "value": "",
+      "description": "The offset of the occurrence position",
+      "default": "0",
+      "type": "number",
+      "description_zh": "出现位置的偏移量"
+    },
+    "transition": {
+      "value": "",
+      "description": "Define the gradient animation",
+      "default": "el-fade-in-linear",
+      "type": "string",
+      "description_zh": "定义渐变动画"
+    },
+    "show-arrow": {
+      "value": "",
+      "description": "Whether a tooltip arrow is displayed or not. For more info, please refer to [ElPopper](https://github.com/element-plus/element-plus/tree/dev/packages/components/popper) ",
+      "default": "true",
+      "type": "boolean",
+      "description_zh": "是否显示 Tooltip 箭头， 欲了解更多信息，请参考 ElPopper"
+    },
+    "visible-arrow": {
+      "value": "",
+      "description": "Whether or not to display the Tooltip arrow, more parameters can be seen in [vue-popper](https://github.com/element-component/vue-popper)",
+      "default": "—",
+      "type": "boolean",
+      "description_zh": "是否显示 Tooltip 箭头，更多参数可见[Vue-popper](https://github.com/element-component/vue-popper)"
+    },
+    ":popper-options": {
+      "value": "",
+      "description": "[popper.js] (https://popper.js.org/docs/v2/).",
+      "default": "{ boundariesElement: 'body', gpuAcceleration: false }",
+      "type": "Object",
+      "description_zh": "[popper.js](https://popper.js.org/docs/v2/) 的参数"
+    },
+    "popper-class": {
+      "value": "",
+      "description": "Add a class name for the popper",
+      "default": "—",
+      "type": "string",
+      "description_zh": "为 popper 添加类名"
+    },
+    "popper-style": {
+      "value": "",
+      "description": "Custom style for popover",
+      "default": "—",
+      "type": "string / object",
+      "description_zh": "为 popper 自定义样式"
+    },
+    "show-after": {
+      "value": "",
+      "description": "Delay of appearance, in millisecond",
+      "default": "0",
+      "type": "number",
+      "description_zh": "在触发后多久显示内容，单位毫秒"
+    },
+    "hide-after": {
+      "value": "",
+      "description": "Delay of disappear, in millisecond",
+      "default": "200",
+      "type": "number",
+      "description_zh": "延迟关闭，单位毫秒"
+    },
+    "auto-close": {
+      "value": "",
+      "description": "Timeout in milliseconds to hide tooltip",
+      "default": "0",
+      "type": "number",
+      "description_zh": "tooltip 出现后自动隐藏延时，单位毫秒"
+    },
+    "open-delay": {
+      "value": "",
+      "description": "The display delay in milliseconds when the trigger mode is Hover",
+      "default": "—",
+      "type": "number",
+      "description_zh": "触发方式为 hover 时的显示延迟，单位为毫秒"
+    },
+    ":close-delay": {
+      "value": "",
+      "description": "Hidden delay in milliseconds when triggered by hover",
+      "default": "—",
+      "type": "number",
+      "description_zh": "触发方式为 hover 时的隐藏延迟，单位为毫秒"
+    },
+    ":tabindex": {
+      "value": "",
+      "description": "[tabindex](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex) for the Popover component",
+      "default": "—",
+      "type": "number",
+      "description_zh": "Popover 组件的 [tabindex](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex)"
+    },
+    "teleported": {
+      "value": [true, false],
+      "description": "Whether popover dropdown is teleported to the body",
+      "default": "true",
+      "type": "boolean",
+      "description_zh": "是否将 popover 的下拉列表插入至 body 元素"
+    },
+    "persistent": {
+      "value": "",
+      "description": "When popover inactive and `persistent` is `false` , popover will be destroyed",
+      "default": "true",
+      "type": "boolean",
+      "description_zh": "当 popover 组件长时间不触发且 persistent 属性设置为 false 时, popover 将会被删除"
+    }
+  },
+  "events": [
+    {
+      "name": "show",
+      "description": "Triggered when displayed",
+      "params": "—",
+      "description_zh": "显示时触发",
+      "value": ""
+    },
+    {
+      "name": "before-enter",
+      "description": "Triggers when the entering transition before",
+      "params": "—",
+      "description_zh": "显示动画播放前触发",
+      "value": ""
+    },
+    {
+      "name": "after-enter",
+      "description": "Triggered when the display animation finishes playing",
+      "params": "—",
+      "description_zh": "显示动画播放完毕后触发",
+      "value": ""
+    },
+    {
+      "name": "hide",
+      "description": "Triggered when hidden",
+      "params": "—",
+      "description_zh": "隐藏时触发",
+      "value": ""
+    },
+    {
+      "name": "before-leave",
+      "description": "Triggers when the leaving transition before",
+      "params": "—",
+      "description_zh": "隐藏动画播放前触发",
+      "value": ""
+    },
+    {
+      "name": "after-leave",
+      "description": "Triggers when the hidden animation finishes playing",
+      "params": "—",
+      "description_zh": "隐藏动画播放完毕后触发",
+      "value": ""
+    }
+  ],
+  "slots": [
+    {
+      "name": "reference",
+      "description": "The HTML element that triggers the popover display",
+      "description_zh": "触发 Popover 显示的 HTML 元素"
+    }
+  ],
+  "link": "https://element-plus.org/en-US/component/popover.html",
+  "link_zh": "https://element-plus.org/zh-CN/component/popover.html",
+  "methods": []
+}

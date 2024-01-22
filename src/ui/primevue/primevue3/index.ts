@@ -166,7 +166,7 @@ export function primevue3() {
     Terminal,
   ]
 
-  return propsReducer(map)
+  return propsReducer('primevue', map)
 }
 
 export function primevue3Components() {
@@ -577,5 +577,5 @@ export function primevue3Components() {
       '<Terminal></Terminal>',
     ],
   ]
-  return componentsReducer(map)
+  return componentsReducer(map, false, '', 'primevue')
 }

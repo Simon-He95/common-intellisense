@@ -6,9 +6,9 @@ import { antDesignVue1, antDesignVue1Components, antDesignVue2, antDesignVue2Com
 import { varlet2, varlet2Components } from './varlet'
 import { naiveUi2, naiveUi2Components } from './naiveUi'
 import { vuetify3, vuetify3Components } from './vuetify'
-import { uview2, uview2Components } from './uview'
+// import { uview2, uview2Components } from './uview'
 import { chakraUiReact2, chakraUiReact2Components } from './chakraUi'
-import { skeleton2, skeleton2Components } from './skeleton'
+// import { skeleton2, skeleton2Components } from './skeleton'
 import { primevue3, primevue3Components } from './primevue'
 import { quasar2, quasar2Components } from './quasar'
 import { nextui2, nextui2Components } from './nextUi'
@@ -31,9 +31,9 @@ export default {
   antDesignVue1,
   varlet2,
   vuetify3,
-  uview2,
+  // uview2,
   chakraUiReact2,
-  skeleton2,
+  // skeleton2,
   primevue3,
   quasar2,
   nextui2,
@@ -54,9 +54,9 @@ export default {
   naiveUi2Components,
   varlet2Components,
   vuetify3Components,
-  uview2Components,
+  // uview2Components,
   chakraUiReact2Components,
-  skeleton2Components,
+  // skeleton2Components,
   primevue3Components,
   quasar2Components,
   nextui2Components,

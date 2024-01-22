@@ -8,7 +8,15 @@
       "default": "-",
       "description": "The contents of the dropdown section. Usually a list of `DropdownItem` components. (static)",
       "value": "",
-      "description_zh": "下拉部分的内容。通常是“DropdownItem”组件的列表。（静态）"
+      "description_zh": "下拉部分的内容。通常是“DropdownItem”组件的列表。（静态）",
+      "required": true
+    },
+    "key": {
+      "type": "React.Key",
+      "default": "-",
+      "description": "The unique key for the dropdown item.",
+      "value": "",
+      "description_zh": "下拉项目的唯一密钥。"
     },
     "title": {
       "type": "string",
@@ -17,12 +25,12 @@
       "value": "",
       "description_zh": "下拉部分的标题。"
     },
-    ":items": {
-      "type": "[`Iterable<T>`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols)",
+    "textValue": {
+      "type": "string",
       "default": "-",
-      "description": "Item objects in the collection. (dynamic)",
+      "description": "A string representation of the item's contents, used for features like typeahead.",
       "value": "",
-      "description_zh": "集合中的 Item 对象。（动态）"
+      "description_zh": "项目内容的字符串表示，用于headtypeahead等功能。"
     },
     "showDivider": {
       "type": "boolean",
@@ -31,8 +39,43 @@
       "value": "",
       "description_zh": "是否显示组之间的分隔线。"
     },
+    "description": {
+      "type": "string | ReactNode",
+      "default": "false",
+      "description": "The description of the dropdown item.",
+      "value": "",
+      "description_zh": "下拉项目的描述。"
+    },
+    "shortcut": {
+      "type": "string | ReactNode",
+      "default": "false",
+      "description": "The dropdown item keyboard shortcut.",
+      "value": "",
+      "description_zh": "下拉项目键盘快捷键。"
+    },
+    "startContent": {
+      "type": "ReactNode",
+      "default": "false",
+      "description": "The start content of the dropdown item.",
+      "value": "",
+      "description_zh": "下拉项目的开始内容。"
+    },
+    "endContent": {
+      "type": "ReactNode",
+      "default": "false",
+      "description": "The end content of the dropdown item. This is positioned after the shortcut and the selected icon.",
+      "value": "",
+      "description_zh": "下拉项目的结束内容。这位于快捷方式和所选图标之后。"
+    },
+    "selectedIcon": {
+      "type": "ReactNode",
+      "default": "false",
+      "description": "Custom icon to render when the item is selected.",
+      "value": "",
+      "description_zh": "选择项目时要渲染的自定义图标。"
+    },
     ":DividerProps": {
-      "type": "[DividerProps](/docs/components/divider)",
+      "type": "DividerProps",
       "default": "-",
       "description": "The divider component props.",
       "value": "",
@@ -56,6 +99,25 @@
   "suggestions": [
     "DropdownItem"
   ],
+  "typeDetail": {
+    "DropdownItemSelectedIconProps": [
+      {
+        "name": "icon",
+        "description": "当前图标，通常是勾号图标。",
+        "type": "ReactNode"
+      },
+      {
+        "name": "isSelected",
+        "description": "当前图标，通常是勾号图标。",
+        "type": "ReactNode"
+      },
+      {
+        "name": "isDisabled",
+        "description": "当前禁用状态。",
+        "type": "boolean"
+      }
+    ]
+  },
   "slots": [
     {
       "name": "base",

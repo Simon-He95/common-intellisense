@@ -1,0 +1,199 @@
+{
+  "name": "ElCascader",
+  "props": {
+    "v-model": {
+      "value": "",
+      "description": "The selected item binds a value",
+      "default": "—",
+      "type": "default",
+      "description_zh": "选中项绑定值"
+    },
+    ":options": {
+      "value": "",
+      "description": "Selectable data source, key name configurable via the 'Props' property",
+      "default": "—",
+      "type": "array",
+      "description_zh": "可选项数据源，键名可通过 `Props` 属性配置",
+      "required": true
+    },
+    ":props": {
+      "value": "",
+      "description": "The following table describes the configuration options",
+      "default": "—",
+      "type": "object",
+      "description_zh": "配置选项，具体见下表"
+    },
+    "size": {
+      "value": [
+        "medium",
+        "small",
+        "mini"
+      ],
+      "description": "size",
+      "default": "medium | small | mini",
+      "type": "string",
+      "description_zh": "尺寸"
+    },
+    "placeholder": {
+      "value": "",
+      "description": "Input box placeholder text",
+      "default": "—",
+      "type": "string",
+      "required": true,
+      "description_zh": "输入框占位文本"
+    },
+    "disabled": {
+      "value": "",
+      "description": "Whether to disable or not",
+      "default": "—",
+      "type": "boolean",
+      "description_zh": "是否禁用"
+    },
+    "clearable": {
+      "value": "",
+      "description": "Whether the purge option is supported",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "是否支持清空选项"
+    },
+    "show-all-levels": {
+      "value": "",
+      "description": "Whether or not to display the full path of the selected value in the input box",
+      "default": "—",
+      "type": "boolean",
+      "description_zh": "输入框中是否显示选中值的完整路径"
+    },
+    "collapse-tags": {
+      "value": "",
+      "description": "Whether to fold the tag in multi-select mode",
+      "default": "—",
+      "type": "boolean",
+      "description_zh": "多选模式下是否折叠Tag"
+    },
+    "separator": {
+      "value": "",
+      "description": "Option separator",
+      "default": "—",
+      "type": "string",
+      "description_zh": "选项分隔符"
+    },
+    "filterable": {
+      "value": "",
+      "description": "Whether the option is searchable",
+      "default": "—",
+      "type": "boolean",
+      "description_zh": "是否可搜索选项"
+    },
+    ":filter-method": {
+      "value": "",
+      "description": "Customize the search logic, the first parameter is the node 'node', the second parameter is the search keyword 'keyword', and the boolean value is returned to indicate whether it is hit",
+      "default": "—",
+      "type": "function(node, keyword)",
+      "description_zh": "自定义搜索逻辑，第一个参数是节点`node`，第二个参数是搜索关键词`keyword`，通过返回布尔值表示是否命中"
+    },
+    ":debounce": {
+      "value": "",
+      "description": "The debounce delay of the search keyword input, in milliseconds",
+      "default": "—",
+      "type": "number",
+      "description_zh": "搜索关键词输入的去抖延迟，毫秒"
+    },
+    ":before-filter": {
+      "value": "",
+      "description": "The hook before filtering, the parameter is the input value, if it returns false or returns a Promise and is rejected, the filter will be stopped",
+      "default": "—",
+      "type": "function(value)",
+      "description_zh": "筛选之前的钩子，参数为输入的值，若返回 false 或者返回 Promise 且被 reject，则停止筛选"
+    },
+    "popper-class": {
+      "value": "",
+      "description": "Customize the name of the floating layer class",
+      "default": "—",
+      "type": "string",
+      "description_zh": "自定义浮层类名"
+    }
+  },
+  "methods": [
+    {
+      "name": "getCheckedNodes",
+      "description": "Gets the selected array of nodes",
+      "params": "(leafOnly: boolean) => CascaderNode[] | undefined",
+      "description_zh": "获取选中的节点数组",
+      "value": ""
+    },
+    {
+      "name": "togglePopperVisible",
+      "description": "Toggle the popper visible state",
+      "params": "(visible?: boolean) => void",
+      "description_zh": "切换 popper 可见状态",
+      "value": ""
+    },
+    {
+      "name": "cascaderPanelRef",
+      "description": "Ref of the Cascader panel",
+      "params": "ComputedRef<any>",
+      "description_zh": "cascader 面板的 ref",
+      "value": ""
+    },
+    {
+      "name": "contentRef",
+      "description": "The ref of the Cascader content",
+      "params": "ComputedRef<any>",
+      "description_zh": "cascader 内容的 ref",
+      "value": ""
+    }
+  ],
+  "events": [
+    {
+      "name": "change",
+      "description": "Triggered when a node is selected",
+      "params": "选中节点的值",
+      "description_zh": "当选中节点变化时触发",
+      "value": ""
+    },
+    {
+      "name": "expand-change",
+      "description": "Triggered when the expansion node changes",
+      "params": "各父级选项值组成的数组",
+      "description_zh": "当展开节点发生变化时触发",
+      "value": ""
+    },
+    {
+      "name": "blur",
+      "description": "Triggers when focus is lost",
+      "params": "(event: Event)",
+      "description_zh": "当失去焦点时触发",
+      "value": ""
+    },
+    {
+      "name": "focus",
+      "description": "Triggers when focus is gained",
+      "params": "(event: Event)",
+      "description_zh": "当获得焦点时触发",
+      "value": ""
+    },
+    {
+      "name": "visible-change",
+      "description": "Triggered when the drop-down box appears/hides",
+      "params": "出现则为 true，隐藏则为 false",
+      "description_zh": "下拉框出现/隐藏时触发",
+      "value": ""
+    },
+    {
+      "name": "remove-tag",
+      "description": "In multi-select mode, it is triggered when the tag is removed",
+      "params": "移除的Tag对应的节点的值",
+      "description_zh": "在多选模式下，移除Tag时触发",
+      "value": ""
+    }
+  ],
+  "slots": [
+    {
+      "name": "empty",
+      "description": "What to do when there are no matching options",
+      "description_zh": "无匹配选项时的内容"
+    }
+  ],
+  "link": "https://element-plus.org/en-US/component/cascader.html",
+  "link_zh": "https://element-plus.org/zh-CN/component/cascader.html"
+}

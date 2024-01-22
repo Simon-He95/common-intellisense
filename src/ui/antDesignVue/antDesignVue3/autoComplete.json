@@ -1,0 +1,174 @@
+{
+  "name": "AAutoComplete",
+  "props": {
+    "allowClear": {
+      "value": "",
+      "description": "Support clearing, radio mode is effective",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "支持清除, 单选模式有效"
+    },
+    "autofocus": {
+      "value": "",
+      "description": "Automatically get focus",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "自动获取焦点"
+    },
+    "backfill": {
+      "value": "",
+      "description": "When using the keyboard to select options, backfill the selected items into the input box",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "使用键盘选择选项的时候把选中项回填到输入框中"
+    },
+    "default": {
+      "value": "",
+      "description": "Customize the input box",
+      "default": "`<Input | >`",
+      "type": "slot",
+      "description_zh": "自定义输入框"
+    },
+    "defaultActiveFirstOption": {
+      "value": "",
+      "description": "Whether to highlight the first option by default.",
+      "default": "true",
+      "type": "boolean",
+      "description_zh": "是否默认高亮第一个选项。"
+    },
+    "defaultOpen": {
+      "value": "",
+      "description": "Whether to expand the drop-down menu by default",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "是否默认展开下拉菜单"
+    },
+    "disabled": {
+      "value": "",
+      "description": "Whether to disable or not",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "是否禁用"
+    },
+    "popupClassName": {
+      "value": "",
+      "description": "drop-down menu",
+      "default": "-",
+      "type": "string",
+      "description_zh": "下拉菜单的 className 属性"
+    },
+    ":dropdownMatchSelectWidth": {
+      "value": "",
+      "description": "The drop-down menu is the same width as the selector. 'min-width' is set by default and is ignored when the value is less than the width of the selection box. false, which turns off virtual scrolling",
+      "default": "true",
+      "type": "boolean | number",
+      "description_zh": "下拉菜单和选择器同宽。默认将设置 `min-width`，当值小于选择框宽度时会被忽略。false 时会关闭虚拟滚动"
+    },
+    ":dropdownMenuStyle": {
+      "value": "",
+      "description": "Dropdown menu custom styles",
+      "default": "",
+      "type": "object",
+      "description_zh": "dropdown 菜单自定义样式"
+    },
+    ":filterOption": {
+      "value": "",
+      "description": "Whether to filter based on inputs. When it is a function, it will receive two parameters, 'inputValue' and 'option', and when 'option' meets the filter conditions, it should return 'true', otherwise it should return 'false'.",
+      "default": "true",
+      "type": "boolean or function(inputValue, option)",
+      "description_zh": "是否根据输入项进行筛选。当其为一个函数时，会接收 `inputValue` `option` 两个参数，当 `option` 符合筛选条件时，应返回 `true`，反之则返回 `false`。"
+    },
+    "open": {
+      "value": "",
+      "description": "Whether to expand the drop-down menu",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "是否展开下拉菜单"
+    },
+    ":option": {
+      "value": "",
+      "description": "Through the option slot, customize the node",
+      "default": "-",
+      "type": "v-slot:option=\"{value, label, [disabled, key, title]}\"",
+      "description_zh": "通过 option 插槽，自定义节点"
+    },
+    ":options": {
+      "value": "",
+      "description": "Autocomplete data sources",
+      "default": "",
+      "type": "DataSourceItemType",
+      "description_zh": "自动完成的数据源",
+      "required": true
+    },
+    "placeholder": {
+      "value": "",
+      "description": "Input box prompt",
+      "default": "-",
+      "type": "string | slot",
+      "description_zh": "输入框提示",
+      "required": true
+    },
+    "v-model:value": {
+      "value": "",
+      "description": "Specifies the currently selected entry",
+      "default": "无",
+      "type": "string | string[]|{ key: string, label: string | vNodes }|Array<{ key: string, label: string | vNodes }>",
+      "description_zh": "指定当前选中的条目",
+      "required": true
+    }
+  },
+  "methods": [
+    {
+      "name": "blur",
+      "description": "Remove the focus",
+      "params": "",
+      "description_zh": "移除焦点"
+    },
+    {
+      "name": "focus",
+      "description": "Get focus",
+      "params": "",
+      "description_zh": "获取焦点"
+    }
+  ],
+  "events": [
+    {
+      "name": "blur",
+      "description": "Callbacks when you lose focus",
+      "params": "function()",
+      "description_zh": "失去焦点时的回调"
+    },
+    {
+      "name": "change",
+      "description": "This function is called when option is selected, or when the value of input changes",
+      "params": "function(value)",
+      "description_zh": "选中 option，或 input 的 value 变化时，调用此函数"
+    },
+    {
+      "name": "dropdownVisibleChange",
+      "description": "Expand the callback for the drop-down menu",
+      "params": "function(open)",
+      "description_zh": "展开下拉菜单的回调"
+    },
+    {
+      "name": "focus",
+      "description": "Callbacks when gaining focus",
+      "params": "function()",
+      "description_zh": "获得焦点时的回调"
+    },
+    {
+      "name": "search",
+      "description": "It is called when searching for a completion item",
+      "params": "function(value)",
+      "description_zh": "搜索补全项的时候调用"
+    },
+    {
+      "name": "select",
+      "description": "Called when selected, the parameter is the value value of the selected item",
+      "params": "function(value, option)",
+      "description_zh": "被选中时调用，参数为选中项的 value 值"
+    }
+  ],
+  "link": "https://antdv.com/components/auto-complete-cn",
+  "link_zh": "https://antdv.com/components/auto-complete-cn"
+}

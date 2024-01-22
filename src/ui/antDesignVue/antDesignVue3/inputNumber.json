@@ -1,0 +1,175 @@
+{
+  "name": "AInputNumber",
+  "props": {
+    ":addonAfter": {
+      "value": "",
+      "description": "Input with labels, set the post-labels",
+      "default": "-",
+      "type": "slot",
+      "description_zh": "带标签的 input，设置后置标签"
+    },
+    ":addonBefore": {
+      "value": "",
+      "description": "Input with a label to set the pre-label",
+      "default": "-",
+      "type": "slot",
+      "description_zh": "带标签的 input，设置前置标签"
+    },
+    "autofocus": {
+      "value": "",
+      "description": "Automatically get focus",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "自动获取焦点"
+    },
+    "bordered": {
+      "value": "",
+      "description": "Whether there is a border or not",
+      "default": "true",
+      "type": "boolean",
+      "description_zh": "是否有边框"
+    },
+    "controls": {
+      "value": "",
+      "description": "Whether to display the increase or decrease button",
+      "default": "true",
+      "type": "boolean",
+      "description_zh": "是否显示增减按钮"
+    },
+    "decimalSeparator": {
+      "value": "",
+      "description": "decimal point",
+      "default": "-",
+      "type": "string",
+      "description_zh": "小数点"
+    },
+    ":defaultValue": {
+      "value": "",
+      "description": "Initial value",
+      "default": "",
+      "type": "number",
+      "description_zh": "初始值"
+    },
+    "disabled": {
+      "value": "",
+      "description": "disable",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "禁用"
+    },
+    ":formatter": {
+      "value": "",
+      "description": "Specifies the format in which the input box displays the values",
+      "default": "-",
+      "type": "function(value: number | string, info: { userTyping: boolean, input: string }): string",
+      "description_zh": "指定输入框展示值的格式"
+    },
+    "keyboard": {
+      "value": "",
+      "description": "Whether to enable keyboard shortcuts",
+      "default": "true",
+      "type": "boolean",
+      "description_zh": "是否启用键盘快捷行为"
+    },
+    ":max": {
+      "value": "",
+      "description": "maximum",
+      "default": "Infinity",
+      "type": "number",
+      "description_zh": "最大值"
+    },
+    ":min": {
+      "value": "",
+      "description": "minimum",
+      "default": "-Infinity",
+      "type": "number",
+      "description_zh": "最小值"
+    },
+    ":parser": {
+      "value": "",
+      "description": "Specify how to convert back to numbers from ForMatter, and use it with ForMatter",
+      "default": "-",
+      "type": "function( string): number",
+      "description_zh": "指定从 formatter 里转换回数字的方式，和 formatter 搭配使用"
+    },
+    ":precision": {
+      "value": "",
+      "description": "Numerical precision",
+      "default": "-",
+      "type": "number",
+      "description_zh": "数值精度"
+    },
+    ":prefix": {
+      "value": "",
+      "description": "Input with a prefix icon",
+      "default": "-",
+      "type": "slot",
+      "description_zh": "带有前缀图标的 input"
+    },
+    "size": {
+      "value": "",
+      "description": "Enter the size of the field",
+      "default": "无",
+      "type": "string",
+      "description_zh": "输入框大小"
+    },
+    "step": {
+      "value": "",
+      "description": "Each time you change the number of steps, it can be a decimal",
+      "default": "1",
+      "type": "number | string",
+      "description_zh": "每次改变步数，可以为小数"
+    },
+    "stringMode": {
+      "value": "",
+      "description": "Character value mode, which supports high-precision decimal values when enabled. At the same time, the 'change' event will return a string type",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "字符值模式，开启后支持高精度小数。同时 `change` 事件将返回 string 类型"
+    },
+    "v-model:value": {
+      "value": "",
+      "description": "Current value",
+      "default": "",
+      "type": "number",
+      "description_zh": "当前值",
+      "required": true
+    }
+  },
+  "methods": [
+    {
+      "name": "blur",
+      "description": "Remove the focus",
+      "params": "",
+      "description_zh": "移除焦点"
+    },
+    {
+      "name": "focus",
+      "description": "Get focus",
+      "params": "",
+      "description_zh": "获取焦点"
+    }
+  ],
+  "events": [
+    {
+      "name": "change",
+      "description": "Change callbacks",
+      "params": "Function(value: number | string)",
+      "description_zh": "变化回调"
+    },
+    {
+      "name": "pressEnter",
+      "description": "Press the callback of Enter",
+      "params": "function(e)",
+      "description_zh": "按下回车的回调"
+    },
+    {
+      "name": "step",
+      "description": "Click on the callback for the up and down arrows",
+      "params": "(value: number, info: { offset: number, type: 'up' | 'down' }) => void",
+      "description_zh": "点击上下箭头的回调"
+    }
+  ],
+  "link": "https://antdv.com/components/input-number-cn",
+  "link_zh": "https://antdv.com/components/input-number-cn"
+}

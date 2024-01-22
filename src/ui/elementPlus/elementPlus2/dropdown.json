@@ -1,0 +1,176 @@
+{
+  "name": "ElDropdown",
+  "props": {
+    "type": {
+      "value": "",
+      "description": "Menu button type, same as Button component (only valid if 'split-button' is true)",
+      "default": "—",
+      "type": "string",
+      "description_zh": "菜单按钮类型，同 Button 组件(只在`split-button`为 true 的情况下有效)"
+    },
+    "size": {
+      "value": [
+        "larget",
+        "defalut",
+        "small"
+      ],
+      "description": "Menu size, which also works for trigger buttons if 'split-button' is true",
+      "default": "default",
+      "type": "large | default | small",
+      "description_zh": "菜单尺寸，在 split-button 为 true 的情况下也对触发按钮生效。"
+    },
+    "max-height": {
+      "value": "",
+      "description": "The maximum height of the Menu",
+      "description_zh": "菜单最大高度",
+      "default": "—",
+      "type": "string / number"
+    },
+    "split-button": {
+      "value": "",
+      "description": "Drop-down trigger elements are rendered as groups of buttons",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "下拉触发元素呈现为按钮组"
+    },
+    "placement": {
+      "value": [
+        "top",
+        "top-start",
+        "top-end",
+        "bottom",
+        "bottom-start",
+        "bottom-end"
+      ],
+      "description": "Menu pop-up location",
+      "default": "bottom",
+      "type": "top | top-start | top-end | bottom | bottom-start | bottom-end",
+      "description_zh": "菜单弹出位置"
+    },
+    "trigger": {
+      "value": [
+        "hover",
+        "click",
+        "contextmenu"
+      ],
+      "description": "Triggers the act of pulling down",
+      "default": "hover",
+      "type": "string",
+      "description_zh": "触发下拉的行为"
+    },
+    "hide-on-click": {
+      "value": "",
+      "description": "Whether to hide the menu after clicking on the menu item",
+      "default": "true",
+      "type": "boolean",
+      "description_zh": "是否在点击菜单项后隐藏菜单"
+    },
+    ":show-timeout": {
+      "value": "",
+      "description": "Expand the delay of the drop-down menu (only valid if the trigger is hover)",
+      "default": "250",
+      "type": "number",
+      "description_zh": "展开下拉菜单的延时（仅在 trigger 为 hover 时有效）"
+    },
+    ":hide-timeout": {
+      "value": "",
+      "description": "Collapse drop-down menu delay (only works when trigger is hover)",
+      "default": "150",
+      "type": "number",
+      "description_zh": "收起下拉菜单的延时（仅在 trigger 为 hover 时有效）"
+    },
+    "role": {
+      "value": "",
+      "description": "The ARIA role attribute for the dropdown menu. Depending on the use case, you may want to change this to 'navigation' | string",
+      "default": "menu",
+      "type": "string",
+      "description_zh": "下拉菜单的 ARIA 属性。 根据具体场景，您可能想要将此更改为“navigation”"
+    },
+    ":tabindex": {
+      "value": "",
+      "description": "[tabindex](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex) for the Dropdown component",
+      "default": "0",
+      "type": "number",
+      "description_zh": "Dropdown 组件的 [tabindex](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex)"
+    },
+    "popper-class": {
+      "value": "",
+      "description": "Custom class name for Dropdown's dropdown",
+      "default": "—",
+      "type": "string",
+      "description_zh": "自定义浮层类名"
+    },
+    ":popper-options": {
+      "value": "",
+      "description": "[popper.js] (https://popper.js.org/docs/v2/).",
+      "default": "{modifiers: [{name: 'computeStyles',options: {gpuAcceleration: false}}]}",
+      "type": "Object",
+      "description_zh": "[popper.js](https://popper.js.org/docs/v2/) 的参数"
+    },
+    "teleported": {
+      "value": "",
+      "description": "Whether the dropdown popup is teleported to the body",
+      "default": "true",
+      "type": "boolean",
+      "description_zh": "是否将下拉列表插入至 body 元素"
+    },
+    "disabled": {
+      "value": "",
+      "description": "Whether to disable or not",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "是否禁用"
+    }
+  },
+  "events": [
+    {
+      "name": "click",
+      "description": "'split-button' is true, click the callback of the button on the left",
+      "params": "—",
+      "description_zh": "`split-button` 为 true 时，点击左侧按钮的回调",
+      "value": ""
+    },
+    {
+      "name": "command",
+      "description": "Click on the event callback triggered by the menu item",
+      "params": "dropdown-item 的指令",
+      "description_zh": "点击菜单项触发的事件回调",
+      "value": ""
+    },
+    {
+      "name": "visible-change",
+      "description": "Triggered when the drop-down box appears/hides",
+      "params": "出现则为 true，隐藏则为 false",
+      "description_zh": "下拉框出现/隐藏时触发",
+      "value": ""
+    }
+  ],
+  "slots": [
+    {
+      "name": "dropdown",
+      "description": "drop-down list, usually <el-dropdown-menu> a component",
+      "description_zh": "下拉列表，通常是 <el-dropdown-menu> 组件"
+    }
+  ],
+  "suggestions": [
+    "el-dropdown-menu"
+  ],
+  "link": "https://element-plus.org/en-US/component/dropdown.html",
+  "link_zh": "https://element-plus.org/zh-CN/component/dropdown.html",
+  "methods": [
+    {
+      "name": "handleOpen",
+      "description": "Open the dropdown menu",
+      "params": "",
+      "description_zh": "打开下拉菜单",
+      "value": ""
+    },
+    {
+      "name": "handleClose",
+      "description": "Close the dropdown menu",
+      "params": "",
+      "description_zh": "关闭下拉菜单",
+      "value": ""
+    }
+  ]
+}

@@ -6,12 +6,12 @@ export function chakraUiVue0() {
     Accordion,
   ]
 
-  return propsReducer(map)
+  return propsReducer('@chakra-ui/vue', map)
 }
 
 export function chakraUiVue0Components() {
   const map = [
     ['Accordion', '手风琴', '<Accordion></Accordion>'],
   ]
-  return componentsReducer(map)
+  return componentsReducer(map, false, '', '@chakra-ui/vue')
 }

@@ -4,7 +4,11 @@ import { parse } from '@vue/compiler-sfc'
 import type { SFCTemplateBlock } from '@vue/compiler-sfc'
 import { parse as tsParser } from '@typescript-eslint/typescript-estree'
 import { findUp } from 'find-up'
+import { createRange, getActiveText, getLocale, getOffsetFromPosition, registerCodeLensProvider } from '@vscode-use/utils'
+import { traverse } from '@babel/types'
 import { UINames } from './constants'
+import { toCamel } from './ui/utils'
+import { findDynamicComponent } from '.'
 
 const { parse: svelteParser } = require('svelte/compiler')
 
@@ -21,7 +25,9 @@ export function parser(code: string, position: vscode.Position & { active: strin
   isInTemplate = false
   if (suffix === 'vue') {
     const result = transformVue(code, position)
-    if (!result.refs)
+    if (!result)
+      return
+    if (!result.refs?.length || !result.template)
       return result
     const refsMap = findRefs(result.template)
     return Object.assign(result, { refsMap })
@@ -40,9 +46,15 @@ export function transformVue(code: string, position: vscode.Position) {
     descriptor: { template, script, scriptSetup },
     errors,
   } = parse(code)
-  if (errors.length || !template)
+
+  if (errors.length)
     return
   const _script = script || scriptSetup
+  if (!template) {
+    if (_script?.lang === 'tsx')
+      return parserJSX(_script.content, position)
+    return
+  }
   if (_script && isInPosition(_script.loc, position)) {
     const content = _script.content!
     const refs: string[] = []
@@ -71,19 +83,37 @@ function dfs(children: any, parent: any, position: vscode.Position) {
     if (props && props.length) {
       for (const prop of props) {
         if (isInPosition(prop.loc, position)) {
-          if (!isStartTag(child.loc, position, child.tag.length))
+          if (!isInAttribute(child, position))
             return false
-          return {
-            tag,
-            propName: prop.name,
-            props,
-            type: 'props',
-            isInTemplate: true,
-            isValue: !!prop?.value?.content,
-            parent: {
-              tag: parent.tag ? parent.tag : 'template',
-              props: parent.props || [],
-            },
+          if ((prop.name === 'bind' || prop.name === 'on') && prop.arg) {
+            return {
+              tag,
+              propName: prop.arg.content,
+              props,
+              type: 'props',
+              isInTemplate: true,
+              isValue: !!prop?.value?.content,
+              parent: {
+                tag: parent.tag ? parent.tag : 'template',
+                props: parent.props || [],
+              },
+              isDynamic: prop.name === 'bind',
+              isEvent: prop.name === 'on',
+            }
+          }
+          else {
+            return {
+              tag,
+              propName: prop.name,
+              props,
+              type: 'props',
+              isInTemplate: true,
+              isValue: !!prop?.value?.content,
+              parent: {
+                tag: parent.tag ? parent.tag : 'template',
+                props: parent.props || [],
+              },
+            }
           }
         }
       }
@@ -94,7 +124,7 @@ function dfs(children: any, parent: any, position: vscode.Position) {
         return result
     }
     if (child.tag) {
-      if (!child.isSelfClosing && !isStartTag(child.loc, position, child.tag.length))
+      if (!isInAttribute(child, position))
         return false
       return {
         type: 'props',
@@ -182,19 +212,33 @@ function jsxDfs(children: any, parent: any, position: vscode.Position) {
             propType: prop.type,
             type: 'props',
             isInTemplate,
-            isValue: Array.isArray(prop?.value) ? !!prop.value[0]?.raw : prop.value.type === 'JSXExpressionContainer' ? !!prop.value?.expression : !!prop?.value?.value,
+            isValue: prop.value
+              ? Array.isArray(prop.value)
+                ? !!prop.value[0]?.raw
+                : prop.value.type === 'JSXExpressionContainer'
+                  ? !!prop.value?.expression
+                  : !!prop?.value?.value
+              : false,
             parent,
+            isEvent: prop.type === 'EventHandler' || (prop.type === 'JSXAttribute' && prop.name.name.startsWith('on')),
           }
         }
       }
     }
 
-    if (type === 'JSXElement' || type === 'Element' || (type === 'ReturnStatement' && argument.type === 'JSXElement'))
+    if (type === 'JSXElement' || type === 'Element' || (type === 'ReturnStatement' && (argument.type === 'JSXElement' || argument.type === 'JSXFragment')))
       isInTemplate = true
 
     if (child.children)
       children = child.children
-
+    else if (type === 'ExportNamedDeclaration')
+      children = child.declaration
+    else if (type === 'ObjectExpression')
+      children = child.properties
+    else if (type === 'Property' && child.value.type === 'FunctionExpression')
+      children = child.value.body.body
+    else if (type === 'ExportDefaultDeclaration')
+      children = child.declaration.arguments
     else if (type === 'VariableDeclaration')
       children = declarations
     else if (type === 'VariableDeclarator')
@@ -230,13 +274,13 @@ function jsxDfs(children: any, parent: any, position: vscode.Position) {
             ? `${openingElement.name.object.name}.${openingElement.name.property.name}`
             : openingElement.name.name,
           props: openingElement.attributes,
-          propName: target.value === null
-            ? target?.name?.name ?? ''
-            : typeof target.name === 'string'
+          propName: target.value
+            ? typeof target.name === 'string'
               ? target.type === 'EventHandler'
                 ? 'on'
                 : target.name
-              : target.name.name,
+              : target.name.name
+            : '',
           propType: target.type,
           isInTemplate,
           parent,
@@ -380,15 +424,54 @@ export function transformTagName(name: string) {
   return name[0].toUpperCase() + name.replace(/(-\w)/g, (match: string) => match[1].toUpperCase()).slice(1)
 }
 
-export function isStartTag(loc: any, position: vscode.Position, tagLen: number) {
-  const posLine = position.line + 1
-  const posCharacter = position.character + 3 + tagLen
-  if (loc.start.line === posLine) {
-    if (loc.end.line !== posLine)
-      return true
-    return loc.end.column >= posCharacter
+export function isInAttribute(child: any, position: any) {
+  const len = child.props.length
+  let end = null
+  const start = {
+    column: child.loc.start.column + child.tag.length + 1,
+    line: child.loc.start.line,
+    offset: child.loc.start.offset + child.tag.length + 1,
   }
-  return false
+  if (!len) {
+    const childNode = child.children?.[0]
+    if (childNode) {
+      end = {
+        line: childNode.loc.start.line,
+        column: childNode.loc.start.column - 1,
+        offset: childNode.loc.start.offset - 1,
+      }
+    }
+    else {
+      if (child.isSelfClosing) {
+        end = {
+          line: child.loc.end.line,
+          column: child.loc.end.column - 2,
+          offset: child.loc.end.offset - 2,
+        }
+      }
+      else {
+        const startOffset = start.offset
+        const match = child.loc.source.slice(child.tag.length + 1).match('>')!
+        const endOffset = startOffset + match.index
+        const offset = getOffsetFromPosition(position)!
+        return (startOffset < offset) && (offset <= endOffset)
+      }
+    }
+  }
+  else {
+    const offsetX = child.props[len - 1].loc.end.offset - child.loc.start.offset
+    const x = child.loc.source.slice(offsetX).match('>').index!
+    end = {
+      column: child.props[len - 1].loc.end.column + 1 + x,
+      line: child.props[len - 1].loc.end.line,
+      offset: child.props[len - 1].loc.end.offset + 1 + x,
+    }
+  }
+
+  const offset = getOffsetFromPosition(position)!
+  const startOffset = start.offset
+  const endOffset = end.offset
+  return (startOffset < offset) && (offset <= endOffset)
 }
 
 export function convertPositionToLoc(data: any) {
@@ -412,4 +495,128 @@ function convertOffsetToLineColumn(document: vscode.TextDocument, offset: number
   const lineOffset = document.offsetAt(position)
 
   return { line, column, lineText, lineOffset }
+}
+
+export let dispose: vscode.Disposable
+export async function detectSlots(UiCompletions: any) {
+  const [children, offset] = await getTemplateAst(UiCompletions)
+  if (dispose)
+    dispose.dispose()
+
+  if (!children || !children?.length)
+    return
+
+  const isZh = getLocale().includes('zh')
+
+  dispose = registerCodeLensProvider(['vue'], {
+    provideCodeLenses() {
+      const result: vscode.CodeLens[] = []
+      children.forEach((m: any) => {
+        const { child, slots } = m
+        const range = child.loc
+        const filters: string[] = []
+        for (const c of Array.from(child.children) as any) {
+          if (c.type === 'JSXElement') {
+            if (c.openingElement.name.name !== 'template')
+              continue
+            for (const p of c.openingElement.attributes) {
+              const namespace = p.name.namespace.name
+              if (namespace === 'v-slot') {
+                const slotName = p.name.name.name
+                filters.push(slotName)
+                break
+              }
+            }
+          }
+          else if (c.tag === 'template' && c.props) {
+            for (const p of c.props) {
+              if (p.name === 'slot') {
+                const slotName = p.arg.content
+                filters.push(slotName)
+                break
+              }
+            }
+          }
+        }
+
+        slots.filter((s: any) => !filters.includes(s.name)).forEach((s: any, i: number) => {
+          const { name, description, description_zh } = s
+          result.push(new vscode.CodeLens(createRange(range.start.line - 1, range.start.column, range.end.line - 1, range.end.column), {
+            title: `${i === 0 ? 'Slots: ' : ''}${name}`,
+            tooltip: isZh ? description_zh : description,
+            command: 'common-intellisense.slots',
+            arguments: [child, name, offset],
+          }))
+        })
+      })
+      return result
+    },
+  })
+}
+
+async function getTemplateAst(UiCompletions: any): Promise<[any, number?] | []> {
+  const code = getActiveText()!
+  const {
+    descriptor: { template, script, scriptSetup },
+  } = parse(code)
+  const _script = script || scriptSetup
+  if (!template) {
+    if (_script?.lang === 'tsx') {
+      const children = findAllJsxElements(_script.content)
+      return [await findUiTag(children, UiCompletions), _script.loc.start.offset]
+    }
+    return []
+  }
+  return [await findUiTag(template.ast.children, UiCompletions)]
+}
+
+async function findUiTag(children: any, UiCompletions: any, result: any[] = []) {
+  for (const child of children) {
+    let tag: string = child.tag
+    if (child.type === 'JSXElement')
+      tag = child.openingElement.name.name
+
+    if (!tag)
+      continue
+    const nextChildren = child.children
+
+    if (nextChildren?.length)
+      await findUiTag(nextChildren, UiCompletions, result)
+
+    const tagName = toCamel(`-${tag}`)
+    const target = UiCompletions[tagName] || await findDynamicComponent(tagName, {})
+    if (!target || !target.rawSlots?.length)
+      continue
+    result.push({
+      child,
+      slots: target.rawSlots,
+    })
+  }
+  return result
+}
+
+const originTag = ['div', 'span', 'ul', 'li', 'ol', 'p', 'main', 'header', 'footer']
+function findAllJsxElements(code: string) {
+  const ast = tsParser(code, { jsx: true, loc: true, range: true })
+  const results: any = []
+  traverse(ast, (node) => {
+    if (node.type === 'JSXElement') {
+      results.push(node)
+    }
+    else if (node.type === 'ObjectExpression') {
+      const _node: any = node.properties?.find((p: any) => p.key.name === 'render')
+        || node.properties?.find((p: any) => p.key.name === 'setup')
+      const t = _node?.value
+      if (t) {
+        traverse(t, (nextNode) => {
+          if (nextNode.type === 'JSXElement') {
+            const tag = (nextNode.openingElement.name as any)?.name
+            if (tag && !originTag.includes(tag))
+              results.push(nextNode)
+          }
+        })
+      }
+    }
+  })
+  return results
 }

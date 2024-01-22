@@ -37,6 +37,8 @@ import UDivider from './UDivider.json'
 import UMeter from './UMeter.json'
 import UMeterGroup from './UMeterGroup.json'
 import UProgress from './UProgress.json'
+import UBreadcrumb from './UBreadcrumb.json'
+import UChip from './UChip.json'
 
 export function nuxtui2() {
   const map: any = [
@@ -77,9 +79,11 @@ export function nuxtui2() {
     UMeter,
     UMeterGroup,
     UProgress,
+    UBreadcrumb,
+    UChip,
   ]
 
-  return propsReducer(map)
+  return propsReducer('@nuxt/ui', map)
 }
 
 export function nuxtui2Components() {
@@ -274,6 +278,16 @@ export function nuxtui2Components() {
       UProgress.name,
       `<${UProgress.name}></${UProgress.name}>`,
     ],
+    [
+      UBreadcrumb,
+      UBreadcrumb.name,
+      `<${UBreadcrumb.name}></${UBreadcrumb.name}>`,
+    ],
+    [
+      UChip,
+      UChip.name,
+      `<${UChip.name}></${UChip.name}>`,
+    ],
   ]
-  return componentsReducer(map, false)
+  return componentsReducer(map, false, '', '@nuxt/ui')
 }

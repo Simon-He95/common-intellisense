@@ -128,7 +128,7 @@ export function nextui2() {
     User,
   ]
 
-  return propsReducer(map)
+  return propsReducer('@nextui-org/react', map)
 }
 
 export function nextui2Components() {
@@ -444,5 +444,5 @@ export function nextui2Components() {
       '<User></User>',
     ],
   ]
-  return componentsReducer(map, false)
+  return componentsReducer(map, false, '', '@nextui-org/react', true)
 }

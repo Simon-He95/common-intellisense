@@ -1,0 +1,213 @@
+{
+  "name": "ElTooltip",
+  "props": {
+    "append-to": {
+      "value": "",
+      "description": "Which element the tooltip CONTENT appends",
+      "default": "-",
+      "type": "CSSSelector | HTMLElement",
+      "description_zh": "指示 Tooltip 的内容将附加在哪一个网页元素上"
+    },
+    "effect": {
+      "value": ["dark", "light"],
+      "description": "Themes are provided by default",
+      "default": "dark",
+      "type": "'dark' | 'light'",
+      "description_zh": "Tooltip 主题，内置了 dark / light 两种"
+    },
+    "content": {
+      "value": "",
+      "description": "The displayed content can also be passed into the DOM via 'slot#content'",
+      "default": "—",
+      "type": "string",
+      "description_zh": "显示的内容，也可以通过 `slot#content` 传入 DOM",
+      "required": true
+    },
+    "raw-content": {
+      "value": "",
+      "description": "Whether `content` is treated as HTML",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "content 中的内容是否作为 HTML 字符串处理"
+    },
+    "placement": {
+      "value": [
+        "top",
+        "top-start",
+        "top-end",
+        "bottom",
+        "bottom-start",
+        "bottom-end",
+        "left",
+        "left-start",
+        "left-end",
+        "right",
+        "right-start",
+        "right-end"
+      ],
+      "description": "The location of the Tooltip",
+      "default": "bottom",
+      "type": "string",
+      "description_zh": "Tooltip 组件出现的位置"
+    },
+    "value": {
+      "value": "",
+      "description": "Whether the status is visible or not",
+      "default": "—",
+      "type": "boolean",
+      "description_zh": "状态是否可见"
+    },
+    ":v-model": {
+      "value": "",
+      "description": "Whether the status is visible or not",
+      "default": "—",
+      "type": "boolean",
+      "description_zh": "状态是否可见"
+    },
+    "disabled": {
+      "value": "",
+      "description": "Whether Tooltip is available",
+      "default": "—",
+      "type": "boolean",
+      "description_zh": "Tooltip 是否可用"
+    },
+    ":offset": {
+      "value": "",
+      "description": "The offset of the occurrence position",
+      "default": "—",
+      "type": "number",
+      "description_zh": "出现位置的偏移量"
+    },
+    "transition": {
+      "value": "",
+      "description": "Define the gradient animation",
+      "default": "—",
+      "type": "string",
+      "description_zh": "定义渐变动画"
+    },
+    "visible-arrow": {
+      "value": "",
+      "description": "Whether or not to display the Tooltip arrow, more parameters can be seen in [vue-popper](https://github.com/element-component/vue-popper)",
+      "default": "—",
+      "type": "boolean",
+      "description_zh": "是否显示 Tooltip 箭头，更多参数可见[Vue-popper](https://github.com/element-component/vue-popper)"
+    },
+    ":popper-options": {
+      "value": "",
+      "description": "[popper.js] (https://popper.js.org/documentation.html).",
+      "default": "{ boundariesElement: 'body', gpuAcceleration: false }",
+      "type": "Object",
+      "description_zh": "[popper.js](https://popper.js.org/documentation.html) 的参数"
+    },
+    "open-delay": {
+      "value": "",
+      "description": "Latency occurs, in milliseconds",
+      "default": "—",
+      "type": "number",
+      "description_zh": "延迟出现，单位毫秒"
+    },
+    "manual": {
+      "value": "",
+      "description": "Manual control mode, when set to true, the mouseenter and mouseleave events will not take effect",
+      "default": "—",
+      "type": "boolean",
+      "description_zh": "手动控制模式，设置为 true 后，mouseenter 和 mouseleave 事件将不会生效"
+    },
+    "show-after": {
+      "value": "",
+      "description": "Delay of appearance, in millisecond",
+      "default": "0",
+      "type": "number",
+      "description_zh": "在触发后多久显示内容，单位毫秒"
+    },
+    "show-arrow": {
+      "value": "",
+      "description": "Whether the tooltip content has an arrow",
+      "default": "true",
+      "type": "boolean",
+      "description_zh": "tooltip 的内容是否有箭头"
+    },
+    "popper-class": {
+      "value": "",
+      "description": "Add a class name to the popper of Tooltip",
+      "default": "—",
+      "type": "string",
+      "description_zh": "为 Tooltip 的 popper 添加类名"
+    },
+    "enterable": {
+      "value": "",
+      "description": "Whether the mouse can enter the tooltip",
+      "default": "true",
+      "type": "boolean",
+      "description_zh": "鼠标是否可进入到 tooltip 中"
+    },
+    "hide-after": {
+      "value": "",
+      "description": "Delay of disappear, in millisecond",
+      "default": "200",
+      "type": "number",
+      "description_zh": "延迟关闭，单位毫秒"
+    },
+    ":tabindex": {
+      "value": "",
+      "description": "[tabindex](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex) for the Tooltip component",
+      "default": "—",
+      "type": "number",
+      "description_zh": "Tooltip 组件的 [tabindex](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex)"
+    },
+    "auto-close": {
+      "value": "",
+      "description": "Timeout in milliseconds to hide tooltip",
+      "default": "0",
+      "type": "number",
+      "description_zh": "tooltip 出现后自动隐藏延时，单位毫秒"
+    },
+    "teleported": {
+      "value": "",
+      "description": "Whether tooltip content is teleported, if `true` it will be teleported to where `append-to` sets",
+      "default": "true",
+      "type": "boolean",
+      "description_zh": "是否使用 teleport。设置成 true则会被追加到 append-to 的位置"
+    },
+    "trigger": {
+      "value": "",
+      "description": "How should the tooltip be triggered (to show)",
+      "default": "hover",
+      "type": "'hover' | 'click' | 'focus' | 'contextmenu'",
+      "description_zh": "如何触发 Tooltip"
+    },
+    "virtual-triggering": {
+      "value": "",
+      "description": "Indicates whether virtual triggering is enabled",
+      "default": "-",
+      "type": "boolean",
+      "description_zh": "用来标识虚拟触发是否被启用"
+    },
+    "virtual-ref": {
+      "value": "",
+      "description": "Indicates the reference element to which the tooltip is attached",
+      "default": "-",
+      "type": "HTMLElement",
+      "description_zh": "标识虚拟触发时的触发元素"
+    },
+    "trigger-keys": {
+      "value": "",
+      "description": "When you click the mouse to focus on the trigger element, you can define a set of keyboard codes to control the display of tooltip through the keyboard",
+      "default": "['Enter','Space']",
+      "type": "Array",
+      "description_zh": "当鼠标点击或者聚焦在触发元素上时， 可以定义一组键盘按键并且通过它们来控制 Tooltip 的显示"
+    },
+    "persistent": {
+      "value": "",
+      "description": "When tooltip inactive and `persistent` is `false` , popconfirm will be destroyed",
+      "default": "-",
+      "type": "boolean",
+      "description_zh": "当 tooltip 组件长时间不触发且 persistent 属性设置为 false 时, popconfirm 将会被删除"
+    }
+  },
+  "suggestions": ["el-button"],
+  "events": [],
+  "link": "https://element-plus.org/en-US/component/tooltip.html",
+  "link_zh": "https://element-plus.org/zh-CN/component/tooltip.html",
+  "methods": []
+}

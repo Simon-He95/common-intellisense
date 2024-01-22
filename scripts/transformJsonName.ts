@@ -3,7 +3,7 @@ const root = process.cwd()
 const path = require('path')
 const IMPORT_REG = /import (\w+) from/g
 export async function transformJsonName() {
-  const url = path.resolve(root, 'src/ui/arcoDesignVue/arcoDesignVue2/index.ts')
+  const url = path.resolve(root, 'src/ui/elementPlus/elementPlus2/index.ts')
   const content = await fsp.readFile(url, 'utf-8')
   const imports = []
   for (const match of content.matchAll(IMPORT_REG)) {

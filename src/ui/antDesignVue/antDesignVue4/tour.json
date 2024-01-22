@@ -45,12 +45,13 @@
       "type": "default | primary",
       "description_zh": "类型，影响底色与文字颜色"
     },
-    "open": {
+    ":open": {
       "value": "",
       "description": "Turn on the boot",
       "default": "-",
       "type": "boolean",
-      "description_zh": "打开引导"
+      "description_zh": "打开引导",
+      "required": true
     },
     "v-model:current": {
       "value": "",
@@ -83,7 +84,94 @@
     }
   },
   "methods": [],
-  "events": [],
+  "events": [
+    {
+      "name": "close",
+      "description": "Callback function on shutdown",
+      "description_zh": "Callback function on shutdown",
+      "params": "Function"
+    },
+    {
+      "name": "finish",
+      "description": "Callback function on finished",
+      "description_zh": "Callback function on finished",
+      "params": "Function"
+    },
+    {
+      "name": "change",
+      "description": "Callback when the step changes. Current is the previous step",
+      "description_zh": "Callback when the step changes. Current is the previous step",
+      "params": "(current: number) => void"
+    }
+  ],
+  "typeDetail": [
+    {
+      "name": "target",
+      "type": "() => HTMLElement HTMLElement",
+      "description": "Get the element the guide card points to. Empty makes it show in center of screen",
+      "default": "-"
+    },
+    {
+      "name": "arrow",
+      "type": "boolean { pointAtCenter: boolean}",
+      "description": "Whether to show the arrow, including the configuration whether to point to the center of the element",
+      "default": "true"
+    },
+    {
+      "name": "cover",
+      "type": "VueNode",
+      "description": "Displayed pictures or videos",
+      "default": "-"
+    },
+    {
+      "name": "title",
+      "type": "VueNode",
+      "description": "title",
+      "default": "-"
+    },
+    {
+      "name": "description",
+      "type": "VueNode",
+      "description": "description",
+      "default": "-"
+    },
+    {
+      "name": "placement",
+      "type": "left leftTop leftBottom right rightTop rightBottom top topLeft topRight bottom bottomLeft bottomRight",
+      "description": "Position of the guide card relative to the target element",
+      "default": "bottom"
+    },
+    {
+      "name": "mask",
+      "type": "boolean | { style?: CSSProperties; color?: string; }",
+      "description": "Whether to enable masking, change mask style and fill color by pass custom props, the default follows the mask property of Tour",
+      "default": "true"
+    },
+    {
+      "name": "type",
+      "type": "default primary",
+      "description": "Type, affects the background color and text color",
+      "default": "default"
+    },
+    {
+      "name": "nextButtonProps",
+      "type": "{ children: VueNode; onClick: Function }",
+      "description": "Properties of the Next button",
+      "default": "-"
+    },
+    {
+      "name": "prevButtonProps",
+      "type": "{ children: VueNode; onClick: Function }",
+      "description": "Properties of the previous button",
+      "default": "-"
+    },
+    {
+      "name": "scrollIntoViewOptions",
+      "type": "boolean | ScrollIntoViewOptions",
+      "description": "support pass custom scrollIntoView options, the default follows the scrollIntoViewOptions property of Tour",
+      "default": "true"
+    }
+  ],
   "link": "https://antdv.com/components/tour",
   "link_zh": "https://antdv.com/components/tour-cn"
 }

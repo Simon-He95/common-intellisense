@@ -1,0 +1,237 @@
+{
+  "name": "ElTableColumn",
+  "props": {
+    "type": {
+      "value": [
+        "selection",
+        "index",
+        "expand"
+      ],
+      "description": "The type of the corresponding column. If selection is set, a multi-check box is displayed; If index is set, the index for that row is displayed (calculated from 1); If expand is set, it appears as an expandable button",
+      "default": "—",
+      "type": "string",
+      "description_zh": "对应列的类型。如果设置了 selection 则显示多选框；如果设置了 index 则显示该行的索引（从 1 开始计算）；如果设置了 expand 则显示为一个可展开的按钮"
+    },
+    ":index": {
+      "value": "",
+      "description": "If type=index is set, you can customize the index by passing the index attribute",
+      "default": "—",
+      "type": "number | Function(index)",
+      "description_zh": "如果设置了 type=index，可以通过传递 index 属性来自定义索引"
+    },
+    "column-key": {
+      "value": "",
+      "description": "The key of the column, if you want to use the filter-change event, you need this property to identify which column is the filter condition",
+      "default": "—",
+      "type": "string",
+      "description_zh": "column 的 key，如果需要使用 filter-change 事件，则需要此属性标识是哪个 column 的筛选条件"
+    },
+    "label": {
+      "value": "",
+      "description": "The title that appears",
+      "default": "—",
+      "type": "string",
+      "required": true,
+      "description_zh": "显示的标题"
+    },
+    "prop": {
+      "value": "",
+      "description": "You can also use the property property for the field name of the corresponding column content",
+      "default": "—",
+      "type": "string",
+      "required": true,
+      "description_zh": "对应列内容的字段名，也可以使用 property 属性"
+    },
+    "width": {
+      "value": "",
+      "description": "The width of the corresponding column",
+      "default": "—",
+      "type": "string",
+      "description_zh": "对应列的宽度"
+    },
+    "min-width": {
+      "value": "",
+      "description": "The difference between the minimum width of the corresponding column and width is that width is fixed, and min-width will distribute the remaining width proportionally to the column with min-width set",
+      "default": "—",
+      "type": "string",
+      "description_zh": "对应列的最小宽度，与 width 的区别是 width 是固定的，min-width 会把剩余宽度按比例分配给设置了 min-width 的列"
+    },
+    "fixed": {
+      "value": [
+        "true",
+        "left",
+        "right"
+      ],
+      "description": "Whether the column is fixed on the left or right, true means fixed on the left",
+      "default": true,
+      "type": "string | boolean",
+      "description_zh": "列是否固定在左侧或者右侧，true 表示固定在左侧"
+    },
+    ":render-header": {
+      "value": "",
+      "description": "The Function used by the Column Header Label area rendering",
+      "default": "—",
+      "type": "Function(h, { column, $index })",
+      "description_zh": "列标题 Label 区域渲染使用的 Function"
+    },
+    "sortable": {
+      "value": [
+        "true",
+        "false",
+        "custom"
+      ],
+      "description": "If the corresponding column can be sorted, if it is set to 'custom', it means that the user wants to sort remotely, and needs to listen to the sort-change event of the table",
+      "default": "false",
+      "type": "boolean | string",
+      "description_zh": "对应列是否可以排序，如果设置为 'custom'，则代表用户希望远程排序，需要监听 Table 的 sort-change 事件"
+    },
+    ":sort-method": {
+      "value": "",
+      "description": "The method used to sort the data is only valid when sortable is set to true, and it needs to return a number, which is the same as Array.sort",
+      "default": "—",
+      "type": "Function(a, b)",
+      "description_zh": "对数据进行排序的时候使用的方法，仅当 sortable 设置为 true 的时候有效，需返回一个数字，和 Array.sort 表现一致"
+    },
+    "sort-by": {
+      "value": "",
+      "description": "Specifies the property by which the data is sorted, which is only valid if sortable is set to true and no sort-method is set. If sort-by is an array, it is sorted by the 1st attribute, if the 1st is equal, then by the 2nd, and so on",
+      "default": "—",
+      "type": "String | Array | Function(row, index)",
+      "description_zh": "指定数据按照哪个属性进行排序，仅当 sortable 设置为 true 且没有设置 sort-method 的时候有效。如果 sort-by 为数组，则先按照第 1 个属性排序，如果第 1 个相等，再按照第 2 个排序，以此类推"
+    },
+    "sort-orders": {
+      "value": [
+        "ascending",
+        "descending",
+        "null"
+      ],
+      "description": "The rotation order of the sort policy used when sorting the data is only valid if sortable is true. An array is passed in, and as the user clicks on the header, the columns are sorted in the order of the elements in the array",
+      "default": "['ascending', 'descending', null]",
+      "type": "array",
+      "description_zh": "数据在排序时所使用排序策略的轮转顺序，仅当 sortable 为 true 时有效。需传入一个数组，随着用户点击表头，该列依次按照数组中元素的顺序进行排序"
+    },
+    "resizable": {
+      "value": "",
+      "description": "Whether the width of the corresponding column can be changed by dragging (you need to set the border property to true on el-table)",
+      "default": "true",
+      "type": "boolean",
+      "description_zh": "对应列是否可以通过拖动改变宽度（需要在 el-table 上设置 border 属性为真）"
+    },
+    ":formatter": {
+      "value": "",
+      "description": "Used to format content",
+      "default": "—",
+      "type": "Function(row, column, cellValue, index)",
+      "description_zh": "用来格式化内容"
+    },
+    "show-overflow-tooltip": {
+      "value": "",
+      "description": "Displays tooltip when content is too long and hidden",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "当内容过长被隐藏时显示 tooltip"
+    },
+    "align": {
+      "value": [
+        "left",
+        "center",
+        "right"
+      ],
+      "description": "Alignment",
+      "default": "left",
+      "type": "string",
+      "description_zh": "对齐方式"
+    },
+    "header-align": {
+      "value": [
+        "left",
+        "center",
+        "right"
+      ],
+      "description": "Header alignment, if not set, the table alignment is used",
+      "default": "—",
+      "type": "string",
+      "description_zh": "表头对齐方式，若不设置该项，则使用表格的对齐方式"
+    },
+    "class-name": {
+      "value": "",
+      "description": "The className of the column",
+      "default": "—",
+      "type": "string",
+      "description_zh": "列的 className"
+    },
+    "label-class-name": {
+      "value": "",
+      "description": "Custom class name for the current column header",
+      "default": "—",
+      "type": "string",
+      "description_zh": "当前列标题的自定义类名"
+    },
+    ":selectable": {
+      "value": "",
+      "description": "It is valid only for the type=selection column, the type is Function, and the return value of Function is used to determine whether the CheckBox of this row can be checked",
+      "default": "—",
+      "type": "Function(row, index)",
+      "description_zh": "仅对 type=selection 的列有效，类型为 Function，Function 的返回值用来决定这一行的 CheckBox 是否可以勾选"
+    },
+    "reserve-selection": {
+      "value": "",
+      "description": "Only valid for columns with type=selection, type Boolean, true will keep the previously selected data after the data update (row-key needs to be specified)",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "仅对 type=selection 的列有效，类型为 Boolean，为 true 则会在数据更新之后保留之前选中的数据（需指定 row-key）"
+    },
+    ":filters": {
+      "value": "",
+      "description": "Options for data filtering, array formatting, elements in the array need to have text and value attributes.",
+      "default": "—",
+      "type": "Array[{ text, value }]",
+      "description_zh": "数据过滤的选项，数组格式，数组中的元素需要有 text 和 value 属性。"
+    },
+    "filter-placement": {
+      "value": [
+        "top",
+        "top-start",
+        "top-end",
+        "bottom",
+        "bottom-start",
+        "bottom-end",
+        "left",
+        "left-start",
+        "left-end",
+        "right",
+        "right-start",
+        "right-end"
+      ],
+      "description": "Filter the positioning of the pop-up",
+      "default": "—",
+      "type": "string",
+      "description_zh": "过滤弹出框的定位"
+    },
+    "filter-multiple": {
+      "value": "",
+      "description": "Whether to select multiple options for data filtering",
+      "default": "true",
+      "type": "boolean",
+      "description_zh": "数据过滤的选项是否多选"
+    },
+    "filter-method": {
+      "value": "",
+      "description": "If it is a multi-select filter, it will be executed multiple times for each piece of data, and any time it returns true, it will be displayed.",
+      "default": "—",
+      "type": "Function(value, row, column)",
+      "description_zh": "数据过滤使用的方法，如果是多选的筛选项，对每一条数据会执行多次，任意一次返回 true 就会显示。"
+    },
+    "filtered-value": {
+      "value": "",
+      "description": "If you want to customize the rendering method of the header filter, you may need this property for the selected data filter.",
+      "default": "—",
+      "type": "Array",
+      "description_zh": "选中的数据过滤项，如果需要自定义表头过滤的渲染方式，可能会需要此属性。"
+    }
+  },
+  "link": "https://element-plus.org/en-US/component/table-column.html",
+  "link_zh": "https://element-plus.org/zh-CN/component/table-column.html",
+  "methods": [],
+  "events": []
+}

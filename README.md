@@ -1,7 +1,7 @@
 <p align="center">
 <img height="200" src="./assets/kv.png" alt="common-intellisense">
 </p>
-<p align="center"> English | <a href="./README_zh.md">简体中文</a></p>
+<p align="center"> English | <a href="https://github.com/Simon-He95/vscode-common-intellisense/blob/main/README_zh.md">简体中文</a></p>
 
 It is hoped to give developers a more friendly development experience and provide some tips on the use of component libraries to help add efficient coding in the development stage.
 
@@ -11,8 +11,9 @@ Install the supported ui component library in your project and install the plug-
 ### 🍬 Currently supported
 - vant 4
 - element 2
+- element-plus 2
 - antd 4、5
-- antdv 4
+- antdv 3、4
 - varlet 2
 - naive 2
 - primevue 3
@@ -48,6 +49,10 @@ Install the supported ui component library in your project and install the plug-
 ### [arco-design/react demo](assets/arco-design.gif)
 
 ### [arco-design/vue demo](assets/acro-design-vue.gif)
+
+## Select the specified UI library (resolve multiple UI library naming conflicts)
+
+- `cmd+shift+p` -> Select `Specify the UI library you need to prompt`
 
 ## :coffee:
 

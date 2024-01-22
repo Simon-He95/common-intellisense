@@ -1,0 +1,272 @@
+{
+  "name": "ElAutocomplete",
+  "props": {
+    "placeholder": {
+      "value": "",
+      "description": "Input box placeholder text",
+      "default": "—",
+      "type": "string",
+      "required": true,
+      "description_zh": "输入框占位文本"
+    },
+    "disabled": {
+      "value": "",
+      "description": "disable",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "禁用"
+    },
+    "value-key": {
+      "value": "",
+      "description": "Enter the name of the key to be displayed in the suggested object",
+      "default": "value",
+      "type": "string",
+      "description_zh": "输入建议对象中用于显示的键名"
+    },
+    "value": {
+      "value": "",
+      "description": "Required value, enter the binding value",
+      "default": "—",
+      "type": "string",
+      "description_zh": "必填值，输入绑定值"
+    },
+    ":debounce": {
+      "value": "",
+      "description": "Get the input suggested debounce delay",
+      "default": "300",
+      "type": "number",
+      "description_zh": "获取输入建议的去抖延时"
+    },
+    "placement": {
+      "value": [
+        "top",
+        "top-start",
+        "top-end",
+        "bottom",
+        "bottom-start",
+        "bottom-end"
+      ],
+      "description": "Menu pop-up location",
+      "default": "bottom-start",
+      "type": "string",
+      "description_zh": "菜单弹出位置"
+    },
+    ":fetch-suggestions": {
+      "value": "",
+      "description": "Returns an input suggestion method, only when your input suggests data Resolve, by calling callback(data:[]).",
+      "default": "—",
+      "type": "Function(queryString, callback)",
+      "description_zh": "返回输入建议的方法，仅当你的输入建议数据 resolve 时，通过调用 callback(data:[]) 来返回它"
+    },
+    "popper-class": {
+      "value": "",
+      "description": "The class name of the Autocomplete drop-down list",
+      "default": "—",
+      "type": "string",
+      "description_zh": "Autocomplete 下拉列表的类名"
+    },
+    "trigger-on-focus": {
+      "value": "",
+      "description": "Whether to display a list of suggestions when the input box is focused",
+      "default": "true",
+      "type": "boolean",
+      "description_zh": "是否在输入框 focus 时显示建议列表"
+    },
+    "name": {
+      "value": "",
+      "description": "Native attributes",
+      "default": "—",
+      "type": "string",
+      "description_zh": "原生属性"
+    },
+    "select-when-unmatched": {
+      "value": "",
+      "description": "In the absence of any matching suggestions, press enter to trigger the select event",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "在输入没有任何匹配建议的情况下，按下回车是否触发 select 事件"
+    },
+    "label": {
+      "value": "",
+      "description": "Enter the label text associated with the field",
+      "default": "_",
+      "type": "string",
+      "description_zh": "输入框关联的label文字"
+    },
+    "prefix-icon": {
+      "value": "",
+      "description": "Input box header icon",
+      "default": "—",
+      "type": "string",
+      "description_zh": "输入框头部图标"
+    },
+    "suffix-icon": {
+      "value": "",
+      "description": "Input box end icon",
+      "default": "—",
+      "type": "string",
+      "description_zh": "输入框尾部图标"
+    },
+    "hide-loading": {
+      "value": "",
+      "description": "Whether to hide the loading icon when loading remotely",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "是否隐藏远程加载时的加载图标"
+    },
+    "popper-append-to-body": {
+      "value": "",
+      "description": "Whether to insert a drop-down list into the body element. If there is a problem with the positioning of the drop-down list, you can set the property to false",
+      "default": "true",
+      "type": "boolean",
+      "description_zh": "是否将下拉列表插入至 body 元素。在下拉列表的定位出现问题时，可将该属性设置为 false"
+    },
+    "teleported": {
+      "value": "",
+      "description": "Whether to insert the drop-down list element under the element that the append-to points to",
+      "default": "true",
+      "type": "boolean",
+      "description_zh": "是否将下拉列表元素插入 append-to 指向的元素下"
+    },
+    "highlight-first-item": {
+      "value": "",
+      "description": "Whether the first item in the remote search suggestion is highlighted by default",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "是否默认突出显示远程搜索建议中的第一项"
+    },
+    "fit-input-width": {
+      "value": "",
+      "description": "Check whether the width of the drop-down box is the same as that of the input box",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "下拉框的宽度是否与输入框相同"
+    }
+  },
+  "methods": [
+    {
+      "name": "activated",
+      "description": "Whether the autocomplete input box is activated",
+      "params": "Ref<boolean>",
+      "description_zh": "自动补全输入框是否被激活",
+      "value": ""
+    },
+    {
+      "name": "blur",
+      "description": "Makes the input out of focus",
+      "params": "() => void",
+      "description_zh": "使 input 失去焦点",
+      "value": ""
+    },
+    {
+      "name": "close",
+      "description": "Collapse the list of suggestions",
+      "params": "() => void",
+      "description_zh": "折叠建议列表",
+      "value": ""
+    },
+    {
+      "name": "focus",
+      "description": "Make input get focus",
+      "params": "-",
+      "description_zh": "使 input 获取焦点",
+      "value": ""
+    },
+    {
+      "name": "handleSelect",
+      "description": "Manually trigger the selected suggested event",
+      "params": "(item: any) => promise<void>",
+      "description_zh": "手动触发选中建议事件",
+      "value": ""
+    },
+    {
+      "name": "handleKeyEnter",
+      "description": "Manually trigger a keyboard enter event",
+      "params": "() => promise<void>",
+      "description_zh": "手动触发键盘回车事件",
+      "value": ""
+    },
+    {
+      "name": "highlightedIndex",
+      "description": "The index of the current highlighting option",
+      "params": "Ref<number>",
+      "description_zh": "当前高亮显示选项的索引",
+      "value": ""
+    },
+    {
+      "name": "highlight",
+      "description": "Highlight an item in the suggestion",
+      "params": "(itemIndex: number) => void",
+      "description_zh": "在建议中高亮显示一个项目",
+      "value": ""
+    },
+    {
+      "name": "inputRef",
+      "description": "el-input component instance",
+      "params": "Ref<ElInputInstance>",
+      "description_zh": "el-input 组件实例",
+      "value": ""
+    },
+    {
+      "name": "loading",
+      "description": "Remotely get a loading status indicator for the prompt content",
+      "params": "Ref<boolean>",
+      "description_zh": "远程获取提示内容的加载状态指示器",
+      "value": ""
+    },
+    {
+      "name": "popperRef",
+      "description": "el-tooltip component",
+      "params": "Ref<ElTooltipInstance>",
+      "description_zh": "el-tooltip 组件实例",
+      "value": ""
+    },
+    {
+      "name": "suggestions",
+      "description": "Get the autocomplete result",
+      "params": "Ref<record<string, any>>",
+      "description_zh": "获取自动补全结果",
+      "value": ""
+    }
+  ],
+  "events": [
+    {
+      "name": "select",
+      "description": "Triggered when you click to select a suggestion",
+      "params": "选中建议项",
+      "description_zh": "点击选中建议项时触发",
+      "value": ""
+    },
+    {
+      "name": "change",
+      "description": "Triggers when the Input value changes",
+      "params": "(value: string | number)",
+      "description_zh": "在 Input 值改变时触发",
+      "value": ""
+    }
+  ],
+  "slots": [
+    {
+      "name": "prefix",
+      "description": "Enter the content of the header of the box",
+      "description_zh": "输入框头部内容"
+    },
+    {
+      "name": "suffix",
+      "description": "Enter the content at the end of the box",
+      "description_zh": "输入框尾部内容"
+    },
+    {
+      "name": "prepend",
+      "description": "The input box is preceded by content",
+      "description_zh": "输入框前置内容"
+    },
+    {
+      "name": "append",
+      "description": "The input box is followed by the content",
+      "description_zh": "输入框后置内容"
+    }
+  ],
+  "link": "https://element-plus.org/en-US/component/autocomplete.html",
+  "link_zh": "https://element-plus.org/zh-CN/component/autocomplete.html"
+}
