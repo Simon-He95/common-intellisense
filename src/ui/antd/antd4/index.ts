@@ -14,6 +14,7 @@ import Title from './title.json'
 import Paragraph from './paragraph.json'
 import Anchor from './anchor.json'
 import Breadcrumb from './breadcrumb.json'
+import BreadcrumbItem from './breadcrumbItem.json'
 import Dropdown from './dropdown.json'
 import DropdownButton from './dropdownButton.json'
 import Menu from './menu.json'
@@ -100,6 +101,7 @@ export function antd4() {
     Paragraph,
     Anchor,
     Breadcrumb,
+    BreadcrumbItem,
     Dropdown,
     DropdownButton,
     Menu,
@@ -195,6 +197,7 @@ export function antd4Components() {
         [Space, '间距'],
         [Anchor, '锚点'],
         [Breadcrumb, '面包屑'],
+        [BreadcrumbItem, '面包屑子项'],
         [Dropdown, '下拉菜单'],
         [Menu, '导航菜单'],
         [Pagination, '分页', '<Pagination defaultCurrent={1} total={50} />'],
@@ -443,6 +446,7 @@ export function antd4Components() {
         [Space, 'spacing'],
         [Anchor, 'anchor'],
         [Breadcrumb, 'breadcrumb'],
+        [BreadcrumbItem, 'breadcrumbItem'],
         [Dropdown, 'Dropdown menu'],
         [Menu, 'Navigation menu'],
         [Pagination, 'Pagination', '<Pagination defaultCurrent={1} total={50} />'],

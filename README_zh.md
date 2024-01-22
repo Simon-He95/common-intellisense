@@ -12,7 +12,7 @@
 - vant 4
 - element-ui 2
 - element-plus 2
-- antd 4、5
+- antd 1、4、5
 - antdv 3、4
 - varlet 2
 - naive 2
