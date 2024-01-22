@@ -232,7 +232,7 @@ function jsxDfs(children: any, parent: any, position: vscode.Position) {
     if (child.children)
       children = child.children
     else if (type === 'ExportNamedDeclaration')
-      children = child.declaration.body
+      children = child.declaration
     else if (type === 'ObjectExpression')
       children = child.properties
     else if (type === 'Property' && child.value.type === 'FunctionExpression')
@@ -471,7 +471,7 @@ export function isInAttribute(child: any, position: any) {
   const offset = getOffsetFromPosition(position)!
   const startOffset = start.offset
   const endOffset = end.offset
-  return (startOffset < offset) && (offset < endOffset)
+  return (startOffset < offset) && (offset <= endOffset)
 }
 
 export function convertPositionToLoc(data: any) {
