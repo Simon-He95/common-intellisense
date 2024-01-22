@@ -99,6 +99,7 @@ function dfs(children: any, parent: any, position: vscode.Position) {
               },
               isDynamic: prop.name === 'bind',
               isEvent: prop.name === 'on',
+              template: parent,
             }
           }
           else {
@@ -113,6 +114,7 @@ function dfs(children: any, parent: any, position: vscode.Position) {
                 tag: parent.tag ? parent.tag : 'template',
                 props: parent.props || [],
               },
+              template: parent,
             }
           }
         }
@@ -135,6 +137,7 @@ function dfs(children: any, parent: any, position: vscode.Position) {
           tag: parent.tag ? parent.tag : 'template',
           props: parent.props || [],
         },
+        template: parent,
       }
     }
     if (child.type === 2) {
@@ -146,6 +149,7 @@ function dfs(children: any, parent: any, position: vscode.Position) {
           tag: parent.tag ? parent.tag : 'template',
           props: parent.props || [],
         },
+        template: parent,
       }
     }
     return

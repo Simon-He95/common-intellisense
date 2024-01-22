@@ -472,7 +472,6 @@ function findUI() {
 
   function updateCompletions(uis: any) {
     const uisName: string[] = []
-
     uis.forEach(([uiName, version]: any) => {
       const _version = version.match(/[^~]?([0-9]+)./)![1]
       const name = uiName.replace(/-(\w)/g, (_: string, v: string) => v.toUpperCase())

@@ -180,7 +180,7 @@ export function antDesignVue1() {
     ATag,
     ATree,
   ]
-  return propsReducer(map)
+  return propsReducer('ant-design-vue', map)
 }
 
 export function antDesignVue1Components() {
@@ -370,5 +370,5 @@ export function antDesignVue1Components() {
         [AListItem, 'list item'],
         [AListItemMeta, 'List element graph'],
       ]
-  return componentsReducer(map)
+  return componentsReducer(map, true, 'a', 'ant-design-vue')
 }
