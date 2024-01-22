@@ -1,0 +1,225 @@
+{
+  "name": "ATimePicker",
+  "props": {
+    "addon": {
+      "value": "",
+      "description": "Display custom content at the bottom of the selection box",
+      "default": "无",
+      "type": "slot | slot-scope",
+      "description_zh": "选择框底部显示自定义的内容"
+    },
+    "allowClear": {
+      "value": "",
+      "description": "Whether or not to display a clear button",
+      "default": "true",
+      "type": "boolean",
+      "description_zh": "是否展示清除按钮"
+    },
+    "autoFocus": {
+      "value": "",
+      "description": "Automatically get focus",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "自动获取焦点"
+    },
+    "clearText": {
+      "value": "",
+      "description": "Clear the tooltip copy for the button",
+      "default": "clear",
+      "type": "string",
+      "description_zh": "清除按钮的提示文案"
+    },
+    ":defaultOpenValue": {
+      "value": "",
+      "description": "When defaultValue/value does not exist, you can set the value selected by default when the panel is opened",
+      "default": "moment()",
+      "type": "moment",
+      "description_zh": "当 defaultValue/value 不存在时，可以设置面板打开时默认选中的值"
+    },
+    "defaultValue": {
+      "value": "",
+      "description": "Default time",
+      "default": "无",
+      "type": "dayjs",
+      "description_zh": "默认时间"
+    },
+    "disabled": {
+      "value": "",
+      "description": "Disable all operations",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "禁用全部操作"
+    },
+    "disabledHours": {
+      "value": "",
+      "description": "Disable hours",
+      "default": "无",
+      "type": "function()",
+      "description_zh": "禁止选择部分小时选项"
+    },
+    "disabledMinutes": {
+      "value": "",
+      "description": "Disable minutes",
+      "default": "无",
+      "type": "function(selectedHour)",
+      "description_zh": "禁止选择部分分钟选项"
+    },
+    "disabledSeconds": {
+      "value": "",
+      "description": "Disable seconds",
+      "default": "无",
+      "type": "function(selectedHour, selectedMinute)",
+      "description_zh": "禁止选择部分秒选项"
+    },
+    "format": {
+      "value": "",
+      "description": "The time format of the presentation",
+      "default": "`HH:mm:ss`",
+      "type": "string",
+      "description_zh": "展示的时间格式"
+    },
+    ":getPopupContainer": {
+      "value": "",
+      "description": "The container that defines the floating layer, defaults to a new div on the body",
+      "default": "-",
+      "type": "function(trigger)",
+      "description_zh": "定义浮层的容器，默认为 body 上新建 div"
+    },
+    "hideDisabledOptions": {
+      "value": "",
+      "description": "Hide the option to prohibit selection",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "隐藏禁止选择的选项"
+    },
+    ":hourStep": {
+      "value": "",
+      "description": "Hour option interval",
+      "default": "1",
+      "type": "number",
+      "description_zh": "小时选项间隔"
+    },
+    "inputReadOnly": {
+      "value": "",
+      "description": "Make input boxes read-only (avoid opening the virtual keyboard on mobile devices)",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "设置输入框为只读（避免在移动设备上打开虚拟键盘）"
+    },
+    ":minuteStep": {
+      "value": "",
+      "description": "Minute option interval",
+      "default": "1",
+      "type": "number",
+      "description_zh": "分钟选项间隔"
+    },
+    "open.sync": {
+      "value": "",
+      "description": "Whether the panel is open",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "面板是否打开"
+    },
+    "placeholder": {
+      "value": "",
+      "description": "What is displayed when there is no value",
+      "default": "",
+      "type": "string | \\[string, string]",
+      "description_zh": "没有值的时候显示的内容"
+    },
+    "popupClassName": {
+      "value": "",
+      "description": "The layer class name pops up",
+      "default": "-",
+      "type": "string",
+      "description_zh": "弹出层类名"
+    },
+    ":popupStyle": {
+      "value": "",
+      "description": "Pop up a layer style object",
+      "default": "-",
+      "type": "object",
+      "description_zh": "弹出层样式对象"
+    },
+    ":secondStep": {
+      "value": "",
+      "description": "Seconds option interval",
+      "default": "1",
+      "type": "number",
+      "description_zh": "秒选项间隔"
+    },
+    ":suffixIcon": {
+      "value": "",
+      "description": "Custom selection box suffix icon",
+      "default": "-",
+      "type": "v-slot:suffixIcon",
+      "description_zh": "自定义的选择框后缀图标"
+    },
+    ":clearIcon": {
+      "value": "",
+      "description": "Customized clear icon",
+      "default": "-",
+      "type": "string | VNode | slot",
+      "description_zh": "自定义的清除图标"
+    },
+    "use12Hours": {
+      "value": "",
+      "description": "Using the 12-hour format, 'format' defaults to 'h:mm:ss a' when true",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "使用 12 小时制，为 true 时 `format` 默认为 `h:mm:ss a`"
+    },
+    "v-model": {
+      "value": "",
+      "description": "The current time",
+      "default": "-",
+      "type": "dayjs",
+      "description_zh": "当前时间",
+      "required": true
+    },
+    "align": {
+      "value": "",
+      "description": "The value will be merged into the placement's configuration, setting the reference to dom-align",
+      "default": "无",
+      "type": "object",
+      "description_zh": "该值将合并到 placement 的配置中，设置参考 dom-align"
+    },
+    "valueFormat": {
+      "value": "",
+      "description": "Optionally, the format of the bound value has effect on value and defaultValue. If not specified, the binding value is a dayjs object",
+      "default": "-",
+      "type": "string",
+      "description_zh": "可选，绑定值的格式，对 value、defaultValue 起作用。不指定则绑定值为 dayjs 对象"
+    }
+  },
+  "methods": [
+    {
+      "name": "blur",
+      "description": "Remove the focus",
+      "params": "",
+      "description_zh": "移除焦点"
+    },
+    {
+      "name": "focus",
+      "description": "Get focus",
+      "params": "",
+      "description_zh": "获取焦点"
+    }
+  ],
+  "events": [
+    {
+      "name": "change",
+      "description": "Callbacks where time changes",
+      "params": "function(time: dayjs | string, timeString: string): void",
+      "description_zh": "时间发生变化的回调"
+    },
+    {
+      "name": "openChange",
+      "description": "Callback when the panel is opened/closed",
+      "params": "(open: boolean): void",
+      "description_zh": "面板打开/关闭时的回调"
+    }
+  ],
+  "link": "https://1x.antdv.com/components/time-picker",
+  "link_zh": "https://1x.antdv.com/components/time-picker-cn"
+}

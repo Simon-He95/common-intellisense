@@ -1,0 +1,119 @@
+{
+  "name": "AInputNumber",
+  "props": {
+    "autoFocus": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "get focus when component mounted",
+      "description_zh": "自动获取焦点"
+    },
+    ":defaultValue": {
+      "default": "",
+      "value": "",
+      "type": "number",
+      "description": "initial value",
+      "description_zh": "初始值"
+    },
+    "disabled": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "disable the input",
+      "description_zh": "禁用"
+    },
+    ":formatter": {
+      "default": "-",
+      "value": "",
+      "type": "function(value: number | string): string",
+      "description": "Specifies the format of the value presented",
+      "description_zh": "指定输入框展示值的格式"
+    },
+    ":max": {
+      "default": "Infinity",
+      "value": "",
+      "type": "number",
+      "description": "max value",
+      "description_zh": "最大值"
+    },
+    ":min": {
+      "default": "-Infinity",
+      "value": "",
+      "type": "number",
+      "description": "min value",
+      "description_zh": "最小值"
+    },
+    ":parser": {
+      "default": "-",
+      "value": "",
+      "type": "function( string): number",
+      "description": "Specifies the value extracted from formatter",
+      "description_zh": "指定从 formatter 里转换回数字的方式，和 formatter 搭配使用"
+    },
+    ":precision": {
+      "default": "-",
+      "value": "",
+      "type": "number",
+      "description": "precision of input value",
+      "description_zh": "数值精度"
+    },
+    "decimalSeparator": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "decimal separator",
+      "description_zh": "小数点"
+    },
+    "size": {
+      "default": "无",
+      "value": "",
+      "type": "string",
+      "description": "height of input box",
+      "description_zh": "输入框大小"
+    },
+    "step": {
+      "default": "1",
+      "value": "",
+      "type": "number|string",
+      "description": "The number to which the current value is increased or decreased. It can be an integer or decimal.",
+      "description_zh": "每次改变步数，可以为小数"
+    },
+    "v-model": {
+      "default": "",
+      "value": "",
+      "type": "number",
+      "description": "current value",
+      "description_zh": "当前值"
+    }
+  },
+  "methods": [
+    {
+      "name": "blur",
+      "description": "Remove the focus",
+      "params": "",
+      "description_zh": "移除焦点"
+    },
+    {
+      "name": "focus",
+      "description": "Get focus",
+      "params": "",
+      "description_zh": "获取焦点"
+    }
+  ],
+  "events": [
+    {
+      "name": "change",
+      "description": "The callback triggered when the value is changed.",
+      "params": "Function(value: number | string)",
+      "description_zh": "变化回调"
+    },
+    {
+      "name": "pressEnter",
+      "description": "The callback function that is triggered when Enter key is pressed.",
+      "params": "function(e)",
+      "description_zh": "按下回车的回调"
+    }
+  ],
+  "link": "https://1x.antdv.com/components/input-number",
+  "link_zh": "https://1x.antdv.com/components/input-number-cn"
+}

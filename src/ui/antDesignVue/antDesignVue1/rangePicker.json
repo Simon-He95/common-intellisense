@@ -1,0 +1,242 @@
+{
+  "name": "ARangePicker",
+  "props": {
+    "allowClear": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "是否显示清除按钮",
+      "description_zh": "是否显示清除按钮"
+    },
+    "autoFocus": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "自动获取焦点",
+      "description_zh": "自动获取焦点"
+    },
+    "dateRender": {
+      "default": "-",
+      "value": "",
+      "type": "slot=\"dateRender\" slot-scope=\"current, today\"",
+      "description": "作用域插槽，自定义日期单元格的内容",
+      "description_zh": "作用域插槽，自定义日期单元格的内容"
+    },
+    "disabled": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "禁用",
+      "description_zh": "禁用"
+    },
+    "disabledDate": {
+      "default": "无",
+      "value": "",
+      "type": "(currentDate: moment) => boolean",
+      "description": "不可选择的日期",
+      "description_zh": "不可选择的日期"
+    },
+    "getCalendarContainer": {
+      "default": "无",
+      "value": "",
+      "type": "function(trigger)",
+      "description": "定义浮层的容器，默认为 body 上新建 div",
+      "description_zh": "定义浮层的容器，默认为 body 上新建 div"
+    },
+    ":locale": {
+      "default": "默认配置",
+      "value": "",
+      "type": "object",
+      "description": "国际化配置",
+      "description_zh": "国际化配置"
+    },
+    "mode": {
+      "default": "'date'",
+      "value": "",
+      "type": "time|date|month|year|decade",
+      "description": "日期面板的状态（设置后无法选择年份/月份？）",
+      "description_zh": "日期面板的状态（设置后无法选择年份/月份？）"
+    },
+    "open": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "控制弹层是否展开",
+      "description_zh": "控制弹层是否展开"
+    },
+    "placeholder": {
+      "default": "-",
+      "value": "",
+      "type": "string|RangePicker[]",
+      "description": "输入框提示文字",
+      "description_zh": "输入框提示文字"
+    },
+    ":popupStyle": {
+      "default": "{}",
+      "value": "",
+      "type": "object",
+      "description": "额外的弹出日历样式",
+      "description_zh": "额外的弹出日历样式"
+    },
+    "dropdownClassName": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "额外的弹出日历 className",
+      "description_zh": "额外的弹出日历 className"
+    },
+    "size": {
+      "default": "无",
+      "value": "",
+      "type": "string",
+      "description": "输入框大小，large 高度为 40px，small 为 24px，默认是 32px",
+      "description_zh": "输入框大小，large 高度为 40px，small 为 24px，默认是 32px"
+    },
+    "suffixIcon": {
+      "default": "-",
+      "value": "",
+      "type": "VNode | slot",
+      "description": "自定义的选择框后缀图标",
+      "description_zh": "自定义的选择框后缀图标"
+    },
+    "inputReadOnly": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "设置输入框为只读（避免在移动设备上打开虚拟键盘）",
+      "description_zh": "设置输入框为只读（避免在移动设备上打开虚拟键盘）"
+    },
+    "align": {
+      "default": "无",
+      "value": "",
+      "type": "Object",
+      "description": "该值将合并到 placement 的配置中，设置参考 dom-align",
+      "description_zh": "该值将合并到 placement 的配置中，设置参考 dom-align"
+    },
+    "valueFormat": {
+      "default": "-",
+      "value": "",
+      "type": "string，具体格式",
+      "description": "可选，绑定值的格式，对 value、defaultValue、defaultPickerValue 起作用。不指定则绑定值为 moment 对象",
+      "description_zh": "可选，绑定值的格式，对 value、defaultValue、defaultPickerValue 起作用。不指定则绑定值为 moment 对象"
+    },
+    "defaultValue": {
+      "default": "无",
+      "value": "",
+      "type": "moment[]",
+      "description": "默认日期",
+      "description_zh": "默认日期"
+    },
+    "defaultPickerValue": {
+      "default": "无",
+      "value": "",
+      "type": "moment[]",
+      "description": "默认面板日期",
+      "description_zh": "默认面板日期"
+    },
+    "disabledTime": {
+      "default": "无",
+      "value": "",
+      "type": "function(dates: [moment, moment], partial: 'start'|'end')",
+      "description": "不可选择的时间",
+      "description_zh": "不可选择的时间"
+    },
+    "format": {
+      "default": "\"YYYY-MM-DD HH:mm:ss\"",
+      "value": "",
+      "type": "string",
+      "description": "展示的日期格式",
+      "description_zh": "展示的日期格式"
+    },
+    "ranges": {
+      "default": "无",
+      "value": "",
+      "type": "{ [range: string]: moment[] } | { [range: string]: () => moment[] }",
+      "description": "预设时间范围快捷选择",
+      "description_zh": "预设时间范围快捷选择"
+    },
+    "renderExtraFooter": {
+      "default": "-",
+      "value": "",
+      "type": "slot=\"renderExtraFooter\" slot-scope=\"mode\"",
+      "description": "在面板中添加额外的页脚",
+      "description_zh": "在面板中添加额外的页脚"
+    },
+    "separator": {
+      "default": "'~'",
+      "value": "",
+      "type": "string",
+      "description": "设置分隔符",
+      "description_zh": "设置分隔符"
+    },
+    "showTime": {
+      "default": "TimePicker Options",
+      "value": "",
+      "type": "Object|boolean",
+      "description": "增加时间选择功能",
+      "description_zh": "增加时间选择功能"
+    },
+    "showTime.defaultValue": {
+      "default": "[moment(), moment()]",
+      "value": "",
+      "type": "moment[]",
+      "description": "设置用户选择日期时默认的时分秒",
+      "description_zh": "设置用户选择日期时默认的时分秒"
+    },
+    "v-model": {
+      "default": "无",
+      "value": "",
+      "type": "moment[]",
+      "description": "日期",
+      "description_zh": "日期"
+    }
+  },
+  "methods": [
+    {
+      "name": "blur",
+      "description": "Remove the focus",
+      "params": "",
+      "description_zh": "移除焦点"
+    },
+    {
+      "name": "focus",
+      "description": "Get focus",
+      "params": "",
+      "description_zh": "获取焦点"
+    }
+  ],
+  "events": [
+    {
+      "name": "openChange",
+      "description": "Callback when the popup calendar opens or closes",
+      "params": "function(status)",
+      "description_zh": "弹出日历和关闭日历的回调"
+    },
+    {
+      "name": "panelChange",
+      "description": "Callback when the date range changes",
+      "params": "function(value, mode)",
+      "description_zh": "日期面板变化时的回调"
+    },
+    {
+      "name": "calendarChange",
+      "description": "Callbacks for changes in the pending date",
+      "params": "function(dates: [moment, moment] | [string, string], dateStrings: [string, string])",
+      "description_zh": "待选日期发生变化的回调"
+    },
+    {
+      "name": "change",
+      "description": "Callbacks for changes in the date range",
+      "params": "function(dates: [moment, moment] | [string, string], dateStrings: [string, string])",
+      "description_zh": "日期范围发生变化的回调"
+    },
+    {
+      "name": "ok",
+      "description": "Click the callback of the OK button",
+      "params": "function(dates: [moment, moment] | [string, string])",
+      "description_zh": "点击确定按钮的回调"
+    }
+  ],
+  "link": "https://1x.antdv.com/components/date-picker",
+  "link_zh": "https://1x.antdv.com/components/date-picker-cn"
+}

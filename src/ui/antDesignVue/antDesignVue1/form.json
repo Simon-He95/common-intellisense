@@ -1,0 +1,80 @@
+{
+  "name": "AForm",
+  "props": {
+    ":form": {
+      "default": "无",
+      "value": "",
+      "type": "object",
+      "description": "Decorated by `Form.create()` will be automatically set this.form property, so just pass to form. If you use the template syntax, you can use `this.$form.createForm(this, options)`",
+      "description_zh": "经 `Form.create()` 包装过的组件会自带 this.form 属性，如果使用 template 语法，可以使用 `this.$form.createForm(this, options)`"
+    },
+    "hideRequiredMark": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "Hide required mark of all form items",
+      "description_zh": "隐藏所有表单项的必选标记"
+    },
+    "labelAlign": {
+      "default": "'right'",
+      "value": [
+        "right",
+        "left"
+      ],
+      "type": "'left' | 'right'",
+      "description": "text align of label of all items",
+      "description_zh": "label 标签的文本对齐方式"
+    },
+    "layout": {
+      "default": "'horizontal'",
+      "value": [
+        "horizontal",
+        "vertical",
+        "inline"
+      ],
+      "type": "'horizontal'|'vertical'|'inline'",
+      "description": "Define form layout",
+      "description_zh": "表单布局"
+    },
+    ":labelCol": {
+      "default": "",
+      "value": "",
+      "type": "object",
+      "description": "The layout of label. You can set `span offset` to something like `{span: 3, offset: 12}` or `sm: {span: 3, offset: 12}` same as with `<Col>`",
+      "description_zh": "label 标签布局，同 `<Col>` 组件，设置 `span offset` 值，如 `{span: 3, offset: 12}` 或 `sm: {span: 3, offset: 12}`"
+    },
+    ":wrapperCol": {
+      "default": "",
+      "value": "",
+      "type": "object",
+      "description": "The layout for input controls, same as labelCol",
+      "description_zh": "需要为输入控件设置布局样式时，使用该属性，用法同 labelCol"
+    },
+    "selfUpdate": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Custom field update logic, see below, need to 1.3.17 version or above",
+      "description_zh": "自定义字段更新逻辑，说明见下，需 1.3.17 版本以上"
+    },
+    "colon": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "change default props colon value of Form.Item (only effective when prop layout is horizontal)",
+      "description_zh": "配置 Form.Item 的 colon 的默认值 (只有在属性 layout 为 horizontal 时有效)"
+    }
+  },
+  "methods": [],
+  "events": [
+    {
+      "name": "submit",
+      "description": "After the data validation is successful, the event is called",
+      "params": "Function(e:Event)",
+      "description_zh": "数据验证成功后回调事件"
+    }
+  ],
+  "suggestions": ["a-form-item"],
+  "link": "https://1x.antdv.com/components/form",
+  "link_zh": "https://1x.antdv.com/components/form-cn"
+}

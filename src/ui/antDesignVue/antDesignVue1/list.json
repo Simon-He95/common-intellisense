@@ -1,0 +1,161 @@
+{
+  "name": "AList",
+  "props": {
+    "bordered": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Toggles rendering of the border around the list",
+      "description_zh": "是否展示边框"
+    },
+    "footer": {
+      "default": "-",
+      "value": "",
+      "type": "string|slot",
+      "description": "List footer renderer",
+      "description_zh": "列表底部"
+    },
+    ":grid": {
+      "default": "-",
+      "value": "",
+      "type": "object",
+      "description": "The grid type of list. You can set grid to something like {gutter: 16, column: 4}",
+      "description_zh": "列表栅格配置"
+    },
+    "header": {
+      "default": "-",
+      "value": "",
+      "type": "string|slot",
+      "description": "List header renderer",
+      "description_zh": "列表头部"
+    },
+    "itemLayout": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "The layout of list, default is horizontal, If a vertical list is desired, set the itemLayout property to vertical",
+      "description_zh": "设置 List.Item 布局, 设置成 vertical 则竖直样式显示, 默认横排"
+    },
+    "loading": {
+      "default": "false",
+      "value": "",
+      "type": "boolean|object",
+      "description": "Shows a loading indicator while the contents of the list are being fetched",
+      "description_zh": "当卡片内容还在加载中时，可以用 loading 展示一个占位"
+    },
+    "loadMore": {
+      "default": "-",
+      "value": "",
+      "type": "string|slot",
+      "description": "Shows a load more content",
+      "description_zh": "加载更多"
+    },
+    ":locale": {
+      "default": "emptyText: '暂无数据'",
+      "value": "",
+      "type": "object",
+      "description": "i18n text including empty text",
+      "description_zh": "默认文案设置，目前包括空数据文案"
+    },
+    ":pagination": {
+      "default": "false",
+      "value": "",
+      "type": "boolean|object",
+      "description": "Pagination config, hide it by setting it to false",
+      "description_zh": "对应的 pagination 配置, 设置 false 不显示"
+    },
+    "size": {
+      "default": "default",
+      "value": [
+        "default",
+        "middle",
+        "small"
+      ],
+      "type": "default | middle | small",
+      "description": "The size of list",
+      "description_zh": "list 的尺寸"
+    },
+    "split": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Toggles rendering of the split under the list item",
+      "description_zh": "是否展示分割线"
+    },
+    ":dataSource": {
+      "default": "-",
+      "value": "",
+      "type": "any[]",
+      "description": "dataSource array for list",
+      "description_zh": "列表数据源"
+    },
+    ":renderItem": {
+      "default": "",
+      "value": "",
+      "type": "(item, index) => vNode",
+      "description": "Custom item renderer, slot=\"renderItem\" and slot-scope=\"item, index\"",
+      "description_zh": "自定义Item函数，也可使用 slot=\"renderItem\" 和 slot-scope=\"item, index\""
+    },
+    ":rowKey": {
+      "default": "",
+      "value": "",
+      "type": "item => string|number",
+      "description": "Item's unique key, could be a string or function that returns a string",
+      "description_zh": "各项 key 的取值，可以是字符串或一个函数"
+    }
+  },
+  "methods": [],
+  "events": [],
+  "typeDetail": {
+    "ListGrid": [
+      {
+        "name": "column",
+        "description": "列数",
+        "type": "number oneOf [ 1, 2, 3, 4, 6, 8, 12, 24]"
+      },
+      {
+        "name": "gutter",
+        "description": "栅格间隔",
+        "type": "number"
+      },
+      {
+        "name": "xxxl",
+        "description": "`≥2000px` 展示的列数",
+        "type": "number"
+      },
+      {
+        "name": "xs",
+        "description": "`<576px` 展示的列数",
+        "type": "number"
+      },
+      {
+        "name": "sm",
+        "description": "`≥576px` 展示的列数",
+        "type": "number"
+      },
+      {
+        "name": "md",
+        "description": "`≥768px` 展示的列数",
+        "type": "number"
+      },
+      {
+        "name": "lg",
+        "description": "`≥992px` 展示的列数",
+        "type": "number"
+      },
+      {
+        "name": "xl",
+        "description": "`≥1200px` 展示的列数",
+        "type": "number"
+      },
+      {
+        "name": "xxl",
+        "description": "`≥1600px` 展示的列数",
+        "type": "number"
+      }
+    ]
+  },
+  "suggestions": ["a-list-item"],
+  "link": "https://1x.antdv.com/components/list",
+  "link_zh": "https://1x.antdv.com/components/list-cn"
+}

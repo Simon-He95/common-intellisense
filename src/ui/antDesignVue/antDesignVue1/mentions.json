@@ -1,0 +1,133 @@
+{
+  "name": "AMentions",
+  "props": {
+    "autoFocus": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Auto get focus when component mounted",
+      "description_zh": "自动获得焦点"
+    },
+    "defaultValue": {
+      "default": "",
+      "value": "",
+      "type": "string",
+      "description": "Default value",
+      "description_zh": "默认值"
+    },
+    ":filterOption": {
+      "default": "",
+      "value": "",
+      "type": "false | (input: string, option: OptionProps) => boolean",
+      "description": "Customize filter option logic",
+      "description_zh": "自定义过滤逻辑"
+    },
+    "notFoundContent": {
+      "default": "'Not Found'",
+      "value": "",
+      "type": "ReactNode",
+      "description": "Set mentions content when not match",
+      "description_zh": "当下拉列表为空时显示的内容"
+    },
+    "placement": {
+      "default": "bottom",
+      "value": [
+        "top",
+        "bottom"
+      ],
+      "type": "top | bottom",
+      "description": "Set popup placement",
+      "description_zh": "弹出层展示位置"
+    },
+    "prefix": {
+      "default": "'@'",
+      "value": "",
+      "type": "string | string[]",
+      "description": "Set trigger prefix keyword",
+      "description_zh": "设置触发关键字"
+    },
+    "split": {
+      "default": "' '",
+      "value": "",
+      "type": "string",
+      "description": "Set split string before and after selected mention",
+      "description_zh": "设置选中项前后分隔符"
+    },
+    ":validateSearch": {
+      "default": "",
+      "value": "",
+      "type": "(text: string, props: MentionsProps) => void",
+      "description": "Customize trigger search logic",
+      "description_zh": "自定义触发验证逻辑"
+    },
+    "v-model": {
+      "default": "",
+      "value": "",
+      "type": "string",
+      "description": "Set value of mentions",
+      "description_zh": "设置值"
+    },
+    ":getPopupContainer": {
+      "default": "",
+      "value": "",
+      "type": "() => HTMLElement",
+      "description": "Set the mount HTML node for suggestions",
+      "description_zh": "指定建议框挂载的 HTML 节点"
+    }
+  },
+  "methods": [
+    {
+      "name": "blur",
+      "description": "Remove focus",
+      "description_zh": "移除焦点"
+    },
+    {
+      "name": "focus",
+      "description": "Get focus",
+      "description_zh": "获取焦点"
+    }
+  ],
+  "events": [
+    {
+      "name": "blur",
+      "description": "Callbacks when focus is lost",
+      "params": "function",
+      "description_zh": "失去焦点的时回调"
+    },
+    {
+      "name": "change",
+      "description": "Triggered when the value changes",
+      "params": "function(value: string)",
+      "description_zh": "值改变时触发"
+    },
+    {
+      "name": "focus",
+      "description": "Callback when focus is gained",
+      "params": "function",
+      "description_zh": "获得焦点时回调"
+    },
+    {
+      "name": "search",
+      "description": "Callback when the value of the text box changes",
+      "params": "function(value: string, prefix: string)",
+      "description_zh": "文本框值变化时回调"
+    },
+    {
+      "name": "select",
+      "description": "Triggered when an option is selected",
+      "params": "function(option: OptionProps, prefix: string)",
+      "description_zh": "选择选项时触发"
+    }
+  ],
+  "typeDetail": {
+    "Option": [
+      {
+        "name": "value",
+        "description": "选择时填充的值",
+        "type": "string"
+      }
+    ]
+  },
+  "link": "https://1x.antdv.com/components/mentions",
+  "link_zh": "https://1x.antdv.com/components/mentions-cn"
+}

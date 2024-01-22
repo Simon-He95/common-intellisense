@@ -1,0 +1,110 @@
+{
+  "name": "AProgress",
+  "props": {
+    "type": {
+      "default": "line",
+      "value": [
+        "line",
+        "circle",
+        "dashboard"
+      ],
+      "type": "string",
+      "description": "to set the type, options: `line` `circle` `dashboard`",
+      "description_zh": "类型，可选 `line` `circle` `dashboard`"
+    },
+    ":format": {
+      "default": "percent => percent + '%'",
+      "value": "",
+      "type": "function(percent, successPercent) | v-slot:format=\"percent, successPercent\"",
+      "description": "template function of the content",
+      "description_zh": "内容的模板函数"
+    },
+    ":percent": {
+      "default": "0",
+      "value": "",
+      "type": "number",
+      "description": "to set the completion percentage",
+      "description_zh": "百分比"
+    },
+    "showInfo": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "whether to display the progress value and the status icon",
+      "description_zh": "是否显示进度数值或状态图标"
+    },
+    "status": {
+      "default": "-",
+      "value": [
+        "success",
+        "exception",
+        "normal",
+        "active"
+      ],
+      "type": "string",
+      "description": "to set the status of the Progress, options: success exception normal active(line only)",
+      "description_zh": "状态，可选：success exception normal active(仅限 line)"
+    },
+    "strokeLinecap": {
+      "default": "round",
+      "value": [
+        "round",
+        "square"
+      ],
+      "type": "Enum{ 'round', 'square' }",
+      "description": "to set the style of the progress linecap",
+      "description_zh": "设置进度线帽的样式"
+    },
+    "strokeColor": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "color of progress bar",
+      "description_zh": "进度条的色彩"
+    },
+    ":successPercent": {
+      "default": "0",
+      "value": "",
+      "type": "number",
+      "description": "segmented success percent",
+      "description_zh": "已完成的分段百分比"
+    },
+    ":strokeWidth": {
+      "default": "10",
+      "value": "",
+      "type": "number",
+      "description": "width of progress bar, unit: px",
+      "description_zh": "进度条线的宽度，单位 px"
+    },
+    ":width": {
+      "default": "132",
+      "value": "",
+      "type": "number",
+      "description": "width of progress bar canvas, unit: px",
+      "description_zh": "圆形进度条画布宽度，单位 px"
+    },
+    ":gapDegree": {
+      "default": "0",
+      "value": "",
+      "type": "number",
+      "description": "gap degree of half circle, 0 ~ 360",
+      "description_zh": "仪表盘进度条缺口角度，可取值 0 ~ 360"
+    },
+    "gapPosition": {
+      "default": "top",
+      "value": [
+        "top",
+        "bottom",
+        "left",
+        "right"
+      ],
+      "type": "Enum{ 'top', 'bottom', 'left', 'right' }",
+      "description": "gap position of half circle",
+      "description_zh": "仪表盘进度条缺口位置"
+    }
+  },
+  "methods": [],
+  "events": [],
+  "link": "https://1x.antdv.com/components/progress",
+  "link_zh": "https://antdv.com/components/progress-cn"
+}
