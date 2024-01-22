@@ -1,0 +1,241 @@
+{
+  "name": "VanPopover",
+  "props": {
+    "v-model:show": {
+      "value": "",
+      "description": "Whether or not to display a bubble pop-out layer",
+      "default": "false",
+      "type": "boolean",
+      "required": true,
+      "description_zh": "是否展示气泡弹出层"
+    },
+    ":actions": {
+      "value": "",
+      "description": "List of options",
+      "default": "[]",
+      "type": "PopoverAction[]",
+      "description_zh": "选项列表",
+      "required": true
+    },
+    "actions-direction": {
+      "value": [
+        "vertical",
+        "horizontal"
+      ],
+      "description": "The direction in which the picklist is arranged, with the optional value being horizontal",
+      "default": "vertical",
+      "type": "PopoverActionsDirection",
+      "description_zh": "选项列表的排列方向，可选值为 horizontal"
+    },
+    "placement": {
+      "value": [
+        "top",
+        "top-start",
+        "top-end",
+        "bottom",
+        "bottom-start",
+        "bottom-end",
+        "left",
+        "left-start",
+        "left-end",
+        "right",
+        "right-start",
+        "right-end"
+      ],
+      "description": "Ejection position",
+      "default": "bottom",
+      "type": "PopoverPlacement",
+      "description_zh": "弹出位置"
+    },
+    "theme": {
+      "value": [
+        "light",
+        "dark"
+      ],
+      "description": "Theme style, optionally dark",
+      "default": "light",
+      "type": "PopoverTheme",
+      "description_zh": "主题风格，可选值为 dark"
+    },
+    "trigger": {
+      "value": [
+        "click",
+        "manual"
+      ],
+      "description": "Trigger mode, the optional value is manual",
+      "default": "click",
+      "type": "PopoverTrigger",
+      "description_zh": "触发方式，可选值为 manual"
+    },
+    "duration": {
+      "value": "",
+      "description": "Animation duration, in seconds, is set to 0 to disable animation",
+      "default": "0.3",
+      "type": "number | string",
+      "description_zh": "动画时长，单位秒，设置为 0 可以禁用动画"
+    },
+    ":offset": {
+      "value": "",
+      "description": "The offset of the occurrence position",
+      "default": "[0, 8]",
+      "type": "[number, number]",
+      "description_zh": "出现位置的偏移量"
+    },
+    "overlay": {
+      "value": "",
+      "description": "Whether or not to display the mask layer",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "是否显示遮罩层"
+    },
+    "overlay-class": {
+      "value": "",
+      "description": "Customize the mask layer class name",
+      "default": "-",
+      "type": "string | Array | object",
+      "description_zh": "自定义遮罩层类名"
+    },
+    ":overlay-style": {
+      "value": "",
+      "description": "Customize the mask layer style",
+      "default": "-",
+      "type": "object",
+      "description_zh": "自定义遮罩层样式"
+    },
+    "show-arrow": {
+      "value": "",
+      "description": "Whether or not to display small arrows",
+      "default": "true",
+      "type": "boolean",
+      "description_zh": "是否展示小箭头"
+    },
+    "close-on-click-action": {
+      "value": "",
+      "description": "Whether or not to turn off after clicking on the option",
+      "default": "true",
+      "type": "boolean",
+      "description_zh": "是否在点击选项后关闭"
+    },
+    "close-on-click-outside": {
+      "value": "",
+      "description": "Whether or not to close the menu after clicking on an external element",
+      "default": "true",
+      "type": "boolean",
+      "description_zh": "是否在点击外部元素后关闭菜单"
+    },
+    "close-on-click-overlay": {
+      "value": "",
+      "description": "Whether to close the menu after clicking on the mask layer",
+      "default": "true",
+      "type": "boolean",
+      "description_zh": "是否在点击遮罩层后关闭菜单"
+    },
+    "teleport": {
+      "value": "",
+      "description": "Specifies the node to be mounted, which is equivalent to the [to property](https://cn.vuejs.org/api/built-in-components.html#teleport) of the Teleport component",
+      "default": "body",
+      "type": "string | Element",
+      "description_zh": "指定挂载的节点，等同于 Teleport 组件的 [to 属性](https://cn.vuejs.org/api/built-in-components.html#teleport)"
+    },
+    "icon-prefix": {
+      "value": "",
+      "description": "Icon class name prefix, equivalent to the [class-prefix property](https://vant-docs.netlify.app/#/en-US/icon#props) of the Icon component",
+      "default": "van-icon",
+      "type": "string",
+      "description_zh": "图标类名前缀，等同于 Icon 组件的 [class-prefix 属性](https://vant-docs.netlify.app/#/zh-CN/icon#props)"
+    }
+  },
+  "methods": [],
+  "typeDetail": {
+    "PopoverAction": [
+      {
+        "name": "text",
+        "description": "选项文字",
+        "type": "string"
+      },
+      {
+        "name": "icon",
+        "description": "文字左侧的图标，支持传入图标名称或图片链接，等同于 Icon 组件的 [name 属性](https://vant-docs.netlify.app/#/zh-CN/icon#props)",
+        "type": "string"
+      },
+      {
+        "name": "color",
+        "description": "选项文字颜色",
+        "type": "string"
+      },
+      {
+        "name": "disabled",
+        "description": "是否为禁用状态",
+        "type": "boolean"
+      },
+      {
+        "name": "className",
+        "description": "为对应选项添加额外的类名",
+        "type": "string | Array | object"
+      }
+    ]
+  },
+  "events": [
+    {
+      "name": "select",
+      "description": "Triggered when you click on an option",
+      "params": "action: PopoverAction, index: number",
+      "description_zh": "点击选项时触发",
+      "value": ""
+    },
+    {
+      "name": "open",
+      "description": "Triggered when the menu is opened",
+      "params": "-",
+      "description_zh": "打开菜单时触发",
+      "value": ""
+    },
+    {
+      "name": "close",
+      "description": "Triggered when the menu is closed",
+      "params": "-",
+      "description_zh": "关闭菜单时触发",
+      "value": ""
+    },
+    {
+      "name": "opened",
+      "description": "The menu opens and triggers when the animation ends",
+      "params": "-",
+      "description_zh": "打开菜单且动画结束后触发",
+      "value": ""
+    },
+    {
+      "name": "closed",
+      "description": "Close the menu and trigger after the animation ends",
+      "params": "-",
+      "description_zh": "关闭菜单且动画结束后触发",
+      "value": ""
+    },
+    {
+      "name": "click-overlay",
+      "description": "Triggered when the mask layer is clicked",
+      "params": "event: MouseEvent",
+      "description_zh": "点击遮罩层时触发",
+      "value": ""
+    }
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "description": "Customize menu content",
+      "description_zh": "自定义菜单内容"
+    },
+    {
+      "name": "reference",
+      "description": "The content of the element that triggers the popover display",
+      "description_zh": "触发 Popover 显示的元素内容"
+    },
+    {
+      "name": "action",
+      "description": "Customize the option content",
+      "description_zh": "自定义选项内容"
+    }
+  ],
+  "link": "https://vant-contrib.gitee.io/vant/#/zh-CN/popover",
+  "link_zh": "https://vant-contrib.gitee.io/vant/#/zh-CN/popover"
+}

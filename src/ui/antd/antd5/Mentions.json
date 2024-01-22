@@ -1,0 +1,184 @@
+{
+  "name": "Mentions",
+  "props": {
+    "autoFocus": {
+      "value": "",
+      "description": "Automatically gain focus",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "自动获得焦点"
+    },
+    "autoSize": {
+      "value": "",
+      "description": "Adaptive content height, which can be set to true | false or object: { minRows: 2, maxRows: 6 }",
+      "default": "false",
+      "type": "boolean | object",
+      "description_zh": "自适应内容高度，可设置为 true | false 或对象：{ minRows: 2, maxRows: 6 }"
+    },
+    "defaultValue": {
+      "value": "",
+      "description": "Default value",
+      "default": "-",
+      "type": "string",
+      "description_zh": "默认值"
+    },
+    "filterOption": {
+      "value": "",
+      "description": "Custom filtering logic",
+      "default": "-",
+      "type": "false | (input: string, option: OptionProps) => boolean",
+      "description_zh": "自定义过滤逻辑"
+    },
+    ":getPopupContainer": {
+      "value": "",
+      "description": "Specifies the HTML node on which the suggestion box is mounted",
+      "default": "-",
+      "type": "() => HTMLElement",
+      "description_zh": "指定建议框挂载的 HTML 节点"
+    },
+    ":notFoundContent": {
+      "value": "",
+      "description": "What is displayed when the drop-down list is empty",
+      "default": "`Not Found`",
+      "type": "ReactNode",
+      "description_zh": "当下拉列表为空时显示的内容"
+    },
+    "placement": {
+      "value": [
+        "top",
+        "bottom"
+      ],
+      "description": "Pop-up tier placements",
+      "default": "bottom",
+      "type": "top | bottom",
+      "description_zh": "弹出层展示位置"
+    },
+    ":prefix": {
+      "value": "",
+      "description": "Set up trigger keywords",
+      "default": "`@`",
+      "type": "string | string[]",
+      "description_zh": "设置触发关键字"
+    },
+    "split": {
+      "value": "",
+      "description": "Sets the separator before and after the selection",
+      "default": "` `",
+      "type": "string",
+      "description_zh": "设置选中项前后分隔符"
+    },
+    "status": {
+      "value": [
+        "error",
+        "warning"
+      ],
+      "description": "Set the verification status",
+      "default": "-",
+      "type": "'error' | 'warning'",
+      "description_zh": "设置校验状态"
+    },
+    ":validateSearch": {
+      "value": "",
+      "description": "Customize the trigger validation logic",
+      "default": "-",
+      "type": "(text: string, props: MentionsProps) => void",
+      "description_zh": "自定义触发验证逻辑"
+    },
+    "value": {
+      "value": "",
+      "description": "Set the value",
+      "default": "-",
+      "type": "string",
+      "description_zh": "设置值"
+    },
+    ":options": {
+      "value": "",
+      "description": "option configuration",
+      "default": "[]",
+      "type": "Options",
+      "description_zh": "选项配置",
+      "required": true
+    }
+  },
+  "methods": [],
+  "events": [
+    {
+      "name": "onBlur",
+      "description": "Triggers when focus is lost",
+      "params": "() => void",
+      "description_zh": "失去焦点时触发",
+      "value": ""
+    },
+    {
+      "name": "onChange",
+      "description": "Triggered when the value changes",
+      "params": "(text: string) => void",
+      "description_zh": "值改变时触发",
+      "value": ""
+    },
+    {
+      "name": "onFocus",
+      "description": "Triggers when focus is gained",
+      "params": "() => void",
+      "description_zh": "获得焦点时触发",
+      "value": ""
+    },
+    {
+      "name": "onResize",
+      "description": "resize callback",
+      "params": "function({ width, height })",
+      "description_zh": "resize 回调",
+      "value": ""
+    },
+    {
+      "name": "onSearch",
+      "description": "Triggered when searching",
+      "params": "(text: string, prefix: string) => void",
+      "description_zh": "搜索时触发",
+      "value": ""
+    },
+    {
+      "name": "onSelect",
+      "description": "Triggered when an option is selected",
+      "params": "(option: OptionProps, prefix: string) => void",
+      "description_zh": "选择选项时触发",
+      "value": ""
+    }
+  ],
+  "typeDetail": {
+    "Option": [
+      {
+        "name": "value",
+        "description": "选择时填充的值",
+        "type": "string"
+      },
+      {
+        "name": "label",
+        "description": "选项的标题",
+        "type": "React.ReactNode"
+      },
+      {
+        "name": "key",
+        "description": "选项的 key 值",
+        "type": "string"
+      },
+      {
+        "name": "disabled",
+        "description": "是否可选",
+        "type": "boolean"
+      },
+      {
+        "name": "className",
+        "description": "css 类名",
+        "type": "string"
+      },
+      {
+        "name": "style",
+        "description": "选项样式",
+        "type": "React.CSSProperties"
+      }
+    ]
+  },
+  "link": "hReact.CSSPropertiestps://ant.design/components//mentions",
+  "link_zh": "hReact.CSSPropertiestps://ant.design/components//mentions"
+}

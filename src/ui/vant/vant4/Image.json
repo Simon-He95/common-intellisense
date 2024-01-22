@@ -1,0 +1,196 @@
+{
+  "name": "VanImage",
+  "props": {
+    "src": {
+      "value": "",
+      "description": "Link to image",
+      "default": "-",
+      "type": "string",
+      "required": true,
+      "description_zh": "图片链接"
+    },
+    "fit": {
+      "value": "",
+      "description": "Image fill mode, which is equivalent to the native [object-fit](https://developer.mozilla.org/zh-CN/docs/Web/CSS/object-fit) property",
+      "default": "fill",
+      "type": "string",
+      "description_zh": "图片填充模式，等同于原生的 [object-fit](https://developer.mozilla.org/zh-CN/docs/Web/CSS/object-fit) 属性"
+    },
+    "position": {
+      "value": [
+        "center",
+        "top",
+        "right",
+        "bottom",
+        "left"
+      ],
+      "description": "Image position, equivalent to the native [object-position](https://developer.mozilla.org/zh-CN/docs/Web/CSS/object-position) property, with optional values of 'top', 'right', 'bottom', 'left', or string",
+      "default": "center",
+      "type": "string",
+      "description_zh": "图片位置，等同于原生的 [object-position](https://developer.mozilla.org/zh-CN/docs/Web/CSS/object-position) 属性，可选值为 `top` `right` `bottom` `left` 或 string"
+    },
+    "alt": {
+      "value": "",
+      "description": "Alt text",
+      "default": "-",
+      "type": "string",
+      "description_zh": "替代文本"
+    },
+    "width": {
+      "value": "",
+      "description": "Width, default unit is px",
+      "default": "-",
+      "type": "number | string",
+      "description_zh": "宽度，默认单位为 px"
+    },
+    "height": {
+      "value": "",
+      "description": "Height, the default unit is px",
+      "default": "-",
+      "type": "number | string",
+      "description_zh": "高度，默认单位为 px"
+    },
+    "radius": {
+      "value": "",
+      "description": "The size of the fillet, the default unit is px",
+      "default": "0",
+      "type": "number | string",
+      "description_zh": "圆角大小，默认单位为 px"
+    },
+    "round": {
+      "value": "",
+      "description": "Whether it is displayed as a circle",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "是否显示为圆形"
+    },
+    "block": {
+      "value": "",
+      "description": "Whether to set the root node to a block-level element, which is the 'inline-block' element by default",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "是否将根节点设置为块级元素，默认情况下为 `inline-block` 元素"
+    },
+    "lazy-load": {
+      "value": "",
+      "description": "Whether to enable lazy loading of images must be used in conjunction with the [Lazyload](#/en-CN/lazyload) component",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "是否开启图片懒加载，须配合 [Lazyload](https://vant-docs.netlify.app/#/zh-CN/lazyload) 组件使用"
+    },
+    "show-error": {
+      "value": "",
+      "description": "Whether to display a message indicating that the image failed to load",
+      "default": "true",
+      "type": "boolean",
+      "description_zh": "是否展示图片加载失败提示"
+    },
+    "show-loading": {
+      "value": "",
+      "description": "Whether to display the prompt in the loading of the image",
+      "default": "true",
+      "type": "boolean",
+      "description_zh": "是否展示图片加载中提示"
+    },
+    "error-icon": {
+      "value": "",
+      "description": "The icon name or image link prompted when it fails is equivalent to the [name attribute](#/en-CN/icon#props) of the Icon component.",
+      "default": "photo-fail",
+      "type": "string",
+      "description_zh": "失败时提示的图标名称或图片链接，等同于 Icon 组件的 [name 属性](https://vant-docs.netlify.app/#/zh-CN/icon#props)"
+    },
+    "loading-icon": {
+      "value": "",
+      "description": "The icon name or image link prompted when loading is equivalent to the [name attribute](#/en-CN/icon#props) of the Icon component.",
+      "default": "photo",
+      "type": "string",
+      "description_zh": "加载时提示的图标名称或图片链接，等同于 Icon 组件的 [name 属性](https://vant-docs.netlify.app/#/zh-CN/icon#props)"
+    },
+    "icon-size": {
+      "value": "",
+      "description": "The size of the load icon and the failure icon",
+      "default": "32px",
+      "type": "number | string",
+      "description_zh": "加载图标和失败图标的大小"
+    },
+    "icon-prefix": {
+      "value": "",
+      "description": "Icon class name prefix, equivalent to the [class-prefix property](https://vant-docs.netlify.app/#/en-US/icon#props) of the Icon component",
+      "default": "van-icon",
+      "type": "string",
+      "description_zh": "图标类名前缀，等同于 Icon 组件的 [class-prefix 属性](https://vant-docs.netlify.app/#/zh-CN/icon#props)"
+    }
+  },
+  "methods": [],
+  "typeDetail": {
+    "Fit": [
+      {
+        "name": "contain",
+        "description": "保持宽高缩放图片，使图片的长边能完全显示出来",
+        "type": ""
+      },
+      {
+        "name": "cover",
+        "description": "保持宽高缩放图片，使图片的短边能完全显示出来，裁剪长边",
+        "type": ""
+      },
+      {
+        "name": "fill",
+        "description": "拉伸图片，使图片填满元素",
+        "type": ""
+      },
+      {
+        "name": "none",
+        "description": "保持图片原有尺寸",
+        "type": ""
+      },
+      {
+        "name": "scale-down",
+        "description": "取 `none` 或 `contain` 中较小的一个",
+        "type": ""
+      }
+    ]
+  },
+  "events": [
+    {
+      "name": "click",
+      "description": "Triggered when an image is clicked",
+      "params": "event: MouseEvent",
+      "description_zh": "点击图片时触发",
+      "value": ""
+    },
+    {
+      "name": "load",
+      "description": "Triggered when the image is loaded",
+      "params": "event: Event",
+      "description_zh": "图片加载完毕时触发",
+      "value": ""
+    },
+    {
+      "name": "error",
+      "description": "Triggered when an image fails to load",
+      "params": "-",
+      "description_zh": "图片加载失败时触发",
+      "value": ""
+    }
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "description": "Customize the content below the image",
+      "description_zh": "自定义图片下方的内容"
+    },
+    {
+      "name": "loading",
+      "description": "Customize the prompt content in loading",
+      "description_zh": "自定义加载中的提示内容"
+    },
+    {
+      "name": "error",
+      "description": "Customize the content of the prompt when the load fails",
+      "description_zh": "自定义加载失败时的提示内容"
+    }
+  ],
+  "link": "https://vant-contrib.gitee.io/vant/#/zh-CN/image",
+  "link_zh": "https://vant-contrib.gitee.io/vant/#/zh-CN/image"
+}

@@ -1,0 +1,126 @@
+{
+  "name": "VanList",
+  "props": {
+    "v-model:loading": {
+      "value": "",
+      "description": "Whether it is in the loading state, and the 'load' event is not triggered during the loading process",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "是否处于加载状态，加载过程中不触发 `load` 事件",
+      "readonly": true
+    },
+    "v-model:error": {
+      "value": "",
+      "description": "Whether the loading fails, click the error prompt after the loading failure to retrigger the 'load' event",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "是否加载失败，加载失败后点击错误提示可以重新触发 `load` 事件"
+    },
+    ":finished": {
+      "value": "",
+      "description": "Whether the load is complete, the 'load' event will no longer be triggered after the load is completed",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "是否已加载完成，加载完成后不再触发 `load` 事件",
+      "readonly": true
+    },
+    "offset": {
+      "value": "",
+      "description": "The 'load' event is triggered when the distance between the scrollbar and the bottom is less than the offset",
+      "default": "300",
+      "type": "number | string",
+      "description_zh": "滚动条与底部距离小于 offset 时触发 `load` 事件"
+    },
+    "loading-text": {
+      "value": "",
+      "description": "Prompt copy during the loading process",
+      "default": "加载中...",
+      "type": "string",
+      "description_zh": "加载过程中的提示文案"
+    },
+    "finished-text": {
+      "value": "",
+      "description": "Prompt copy after loading is complete",
+      "default": "-",
+      "type": "string",
+      "description_zh": "加载完成后的提示文案"
+    },
+    "error-text": {
+      "value": "",
+      "description": "Prompt copy after loading failure",
+      "default": "-",
+      "type": "string",
+      "description_zh": "加载失败后的提示文案"
+    },
+    "immediate-check": {
+      "value": "",
+      "description": "Whether the scroll position check is performed immediately upon initialization",
+      "default": "true",
+      "type": "boolean",
+      "description_zh": "是否在初始化时立即执行滚动位置检查"
+    },
+    "disabled": {
+      "value": "",
+      "description": "Whether to disable scroll loading",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "是否禁用滚动加载"
+    },
+    "direction": {
+      "value": [
+        "up",
+        "down"
+      ],
+      "description": "The scroll triggers the direction of loading, optionally up",
+      "default": "down",
+      "type": "string",
+      "description_zh": "滚动触发加载的方向，可选值为 up"
+    }
+  },
+  "methods": [
+    {
+      "name": "check",
+      "description": "Check the current scroll position, and if you have scrolled to the bottom, a load event will be triggered",
+      "params": "-",
+      "description_zh": "检查当前的滚动位置，若已滚动至底部，则会触发 load 事件",
+      "value": ""
+    }
+  ],
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "load",
+      "description": "Triggered when the distance between the scrollbar and the bottom is less than offset",
+      "params": "-",
+      "description_zh": "滚动条与底部距离小于 offset 时触发",
+      "value": ""
+    }
+  ],
+  "suggestions": [
+    "van-cell"
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "description": "List contents",
+      "description_zh": "列表内容"
+    },
+    {
+      "name": "loading",
+      "description": "Customize the bottom loading prompt",
+      "description_zh": "自定义底部加载中提示"
+    },
+    {
+      "name": "finished",
+      "description": "Customize the prompt copy after the load is complete",
+      "description_zh": "自定义加载完成后的提示文案"
+    },
+    {
+      "name": "error",
+      "description": "Customize the prompt text after loading failures",
+      "description_zh": "自定义加载失败后的提示文案"
+    }
+  ],
+  "link": "https://vant-contrib.gitee.io/vant/#/zh-CN/list",
+  "link_zh": "https://vant-contrib.gitee.io/vant/#/zh-CN/list"
+}

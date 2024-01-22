@@ -1,0 +1,103 @@
+{
+  "name": "VanSteps",
+  "props": {
+    ":active": {
+      "value": "",
+      "description": "The index value corresponding to the current step",
+      "default": "0",
+      "type": "number | string",
+      "required": true,
+      "description_zh": "当前步骤对应的索引值"
+    },
+    "direction": {
+      "value": [
+        "horizontal",
+        "vertical"
+      ],
+      "description": "Step bar direction, optionally vertical",
+      "default": "horizontal",
+      "type": "string",
+      "description_zh": "步骤条方向，可选值为 vertical"
+    },
+    "active-icon": {
+      "value": "",
+      "description": "The bottom icon corresponding to the current step, the optional values are shown in [Icon Component](https://vant-docs.netlify.app/#/en-US/icon)",
+      "default": "checked",
+      "type": "string",
+      "description_zh": "当前步骤对应的底部图标，可选值见 [Icon 组件](https://vant-docs.netlify.app/#/zh-CN/icon)"
+    },
+    "inactive-icon": {
+      "value": "",
+      "description": "The bottom icon that is not the corresponding to the current step, and the optional values can be found in [Icon Component](https://vant-docs.netlify.app/#/en-US/icon)",
+      "default": "-",
+      "type": "string",
+      "description_zh": "非当前步骤对应的底部图标，可选值见 [Icon 组件](https://vant-docs.netlify.app/#/zh-CN/icon)"
+    },
+    "finish-icon": {
+      "value": "",
+      "description": "The bottom icon corresponding to the completed step, the priority is higher than 'inactive-icon', and the optional values can be found in [Icon Component](https://vant-docs.netlify.app/#/en-US/icon)",
+      "default": "-",
+      "type": "string",
+      "description_zh": "已完成步骤对应的底部图标，优先级高于 `inactive-icon`，可选值见 [Icon 组件](https://vant-docs.netlify.app/#/zh-CN/icon)"
+    },
+    "active-color": {
+      "value": "",
+      "description": "The color of the current and completed steps",
+      "default": "#07c160",
+      "type": "string",
+      "description_zh": "当前步骤和已完成步骤的颜色"
+    },
+    "inactive-color": {
+      "value": "",
+      "description": "The color of the inactive step",
+      "default": "#969799",
+      "type": "string",
+      "description_zh": "未激活步骤的颜色"
+    },
+    "icon-prefix": {
+      "value": "",
+      "description": "Icon class name prefix, equivalent to the [class-prefix property](https://vant-docs.netlify.app/#/en-US/icon#props) of the Icon component",
+      "default": "van-icon",
+      "type": "string",
+      "description_zh": "图标类名前缀，等同于 Icon 组件的 [class-prefix 属性](https://vant-docs.netlify.app/#/zh-CN/icon#props)"
+    }
+  },
+  "methods": [],
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "click-step",
+      "description": "Triggered when you click on the title or icon of a step",
+      "params": "index: number",
+      "description_zh": "点击步骤的标题或图标时触发",
+      "value": ""
+    }
+  ],
+  "suggestions": [
+    "van-step"
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "description": "Step content",
+      "description_zh": "步骤内容"
+    },
+    {
+      "name": "active-icon",
+      "description": "Customize the activation status icon",
+      "description_zh": "自定义激活状态图标"
+    },
+    {
+      "name": "inactive-icon",
+      "description": "Customize the inactive status icon",
+      "description_zh": "自定义未激活状态图标"
+    },
+    {
+      "name": "finish-icon",
+      "description": "Customize the bottom icon for completed steps, with priority over inactive-icon",
+      "description_zh": "自定义已完成步骤对应的底部图标，优先级高于 inactive-icon"
+    }
+  ],
+  "link": "https://vant-contrib.gitee.io/vant/#/zh-CN/steps",
+  "link_zh": "https://vant-contrib.gitee.io/vant/#/zh-CN/steps"
+}

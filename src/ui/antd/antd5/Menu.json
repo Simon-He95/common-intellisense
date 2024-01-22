@@ -1,0 +1,276 @@
+{
+  "name": "Menu",
+  "props": {
+    ":defaultOpenKeys": {
+      "value": "",
+      "description": "Initially expanded SubMenu menu item key array",
+      "default": "",
+      "type": "string[]",
+      "description_zh": "初始展开的 SubMenu 菜单项 key 数组"
+    },
+    ":defaultSelectedKeys": {
+      "value": "",
+      "description": "Initially selected menu item key array",
+      "default": "",
+      "type": "string[]",
+      "description_zh": "初始选中的菜单项 key 数组"
+    },
+    ":expandIcon": {
+      "value": "",
+      "description": "Customize the expand icon",
+      "default": "",
+      "type": "ReactNode | (props: SubMenuProps & { isSubMenu: boolean }) => ReactNode",
+      "description_zh": "自定义展开图标"
+    },
+    "forceSubMenuRender": {
+      "value": "",
+      "description": "Render into the DOM before the submenu is displayed",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "在子菜单展示之前就渲染进 DOM"
+    },
+    "inlineCollapsed": {
+      "value": "",
+      "description": "inline",
+      "default": "",
+      "type": "boolean",
+      "description_zh": "inline 时菜单是否收起状态"
+    },
+    ":inlineIndent": {
+      "value": "",
+      "description": "Inline mode's menu indent width",
+      "default": "24",
+      "type": "number",
+      "description_zh": "inline 模式的菜单缩进宽度"
+    },
+    ":items": {
+      "value": "",
+      "description": "Menu contents",
+      "default": "",
+      "type": "MenuItemType[] | SubMenuType[] | MenuItemGroupType[] | MenuDividerType[]",
+      "required": true,
+      "description_zh": "菜单内容"
+    },
+    "mode": {
+      "value": [
+        "vertical",
+        "horizontal",
+        "inline"
+      ],
+      "description": "Menu types are now available in vertical, horizontal, and inline modes",
+      "default": "vertical",
+      "type": "vertical | horizontal | inline",
+      "description_zh": "菜单类型，现在支持垂直、水平、和内嵌模式三种"
+    },
+    "multiple": {
+      "value": "",
+      "description": "Whether to allow multiple selections",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "是否允许多选"
+    },
+    ":openKeys": {
+      "value": "",
+      "description": "The currently expanded SubMenu menu item key array",
+      "default": "",
+      "type": "string[]",
+      "description_zh": "当前展开的 SubMenu 菜单项 key 数组"
+    },
+    ":overflowedIndicator": {
+      "value": "",
+      "description": "An icon to customize the omitted shrinkage of the Menu when there is not enough horizontal space",
+      "default": "`<EllipsisOutlined />`",
+      "type": "ReactNode",
+      "description_zh": "用于自定义 Menu 水平空间不足时的省略收缩的图标"
+    },
+    "selectable": {
+      "value": "",
+      "description": "Whether to allow selection",
+      "default": "true",
+      "type": "boolean",
+      "description_zh": "是否允许选中"
+    },
+    ":selectedKeys": {
+      "value": "",
+      "description": "The currently selected menu item key array",
+      "default": "",
+      "type": "string[]",
+      "description_zh": "当前选中的菜单项 key 数组",
+      "required": true
+    },
+    ":style": {
+      "value": "",
+      "description": "Root node style",
+      "default": "",
+      "type": "CSSProperties",
+      "description_zh": "根节点样式"
+    },
+    ":subMenuCloseDelay": {
+      "value": "",
+      "description": "The delay is turned off after the user leaves the submenu, in seconds",
+      "default": "0.1",
+      "type": "number",
+      "description_zh": "用户鼠标离开子菜单后关闭延时，单位：秒"
+    },
+    ":subMenuOpenDelay": {
+      "value": "",
+      "description": "After the user enters the submenu, the delay is enabled, unit: seconds",
+      "default": "0",
+      "type": "number",
+      "description_zh": "用户鼠标进入子菜单后开启延时，单位：秒"
+    },
+    "theme": {
+      "value": [
+        "light",
+        "dark"
+      ],
+      "description": "Theme colors",
+      "default": "light",
+      "type": "light | dark",
+      "description_zh": "主题颜色"
+    },
+    "triggerSubMenuAction": {
+      "value": [
+        "hover",
+        "click"
+      ],
+      "description": "Trigger behavior for SubMenu expansion/closure",
+      "default": "hover",
+      "type": "hover | click",
+      "description_zh": "SubMenu 展开/关闭的触发行为"
+    }
+  },
+  "events": [
+    {
+      "name": "onClick",
+      "description": "Click MenuItem to call this function",
+      "callback": "function({ item, key, keyPath, domEvent })",
+      "description_zh": "点击 MenuItem 调用此函数",
+      "value": ""
+    },
+    {
+      "name": "onDeselect",
+      "description": "Called when unchecked, only for multiple",
+      "callback": "function({ item, key, keyPath, selectedKeys, domEvent })",
+      "description_zh": "取消选中时调用，仅在 multiple 生效",
+      "value": ""
+    },
+    {
+      "name": "onOpenChange",
+      "description": "Callbacks for SubMenu to expand/close",
+      "callback": "function(openKeys: string[])",
+      "description_zh": "SubMenu 展开/关闭的回调",
+      "value": ""
+    },
+    {
+      "name": "onSelect",
+      "description": "Called when selected",
+      "callback": "function({ item, key, keyPath, selectedKeys, domEvent })",
+      "description_zh": "被选中时调用",
+      "value": ""
+    }
+  ],
+  "typeDetail": {
+    "MenuItemType": [
+      {
+        "name": "danger",
+        "description": "展示错误状态样式",
+        "type": "boolean"
+      },
+      {
+        "name": "disabled",
+        "description": "是否禁用",
+        "type": "boolean"
+      },
+      {
+        "name": "icon",
+        "description": "菜单图标",
+        "type": "ReactNode"
+      },
+      {
+        "name": "key",
+        "description": "item 的唯一标志",
+        "type": "string"
+      },
+      {
+        "name": "label",
+        "description": "菜单项标题",
+        "type": "ReactNode"
+      },
+      {
+        "name": "title",
+        "description": "设置收缩时展示的悬浮标题",
+        "type": "string"
+      }
+    ],
+    "SubMenuType": [
+      {
+        "name": "children",
+        "description": "子菜单的菜单项",
+        "type": "ItemType[]"
+      },
+      {
+        "name": "disabled",
+        "description": "是否禁用",
+        "type": "boolean"
+      },
+      {
+        "name": "icon",
+        "description": "菜单图标",
+        "type": "ReactNode"
+      },
+      {
+        "name": "key",
+        "description": "item 的唯一标志",
+        "type": "string"
+      },
+      {
+        "name": "label",
+        "description": "菜单项标题",
+        "type": "ReactNode"
+      },
+      {
+        "name": "popupClassName",
+        "description": "子菜单样式，`mode=\"inline\"` 时无效",
+        "type": "string"
+      },
+      {
+        "name": "popupOffset",
+        "description": "子菜单偏移量，`mode=\"inline\"` 时无效",
+        "type": "[number, number]"
+      },
+      {
+        "name": "theme",
+        "description": "设置子菜单的主题，默认从 Menu 上继承",
+        "type": "light | dark"
+      },
+      {
+        "name": "onTitleClick",
+        "description": "点击子菜单标题",
+        "callback": "function({ key, domEvent })"
+      }
+    ],
+    "MenuItemGroupType": [
+      {
+        "name": "children",
+        "description": "分组的菜单项",
+        "type": "MenuItemType[]"
+      },
+      {
+        "name": "label",
+        "description": "分组标题",
+        "type": "ReactNode"
+      }
+    ],
+    "MenuDividerType": [
+      {
+        "name": "dashed",
+        "description": "是否虚线",
+        "type": "boolean"
+      }
+    ]
+  },
+  "link": "https://ant.design/components//menu",
+  "link_zh": "https://ant.design/components//menu",
+  "methods": []
+}

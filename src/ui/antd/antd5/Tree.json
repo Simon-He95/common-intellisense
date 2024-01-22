@@ -1,0 +1,304 @@
+{
+  "name": "Tree",
+  "props": {
+    ":allowDrop": {
+      "value": "",
+      "description": "Whether to allow dragging and dropping on the node",
+      "default": "-",
+      "type": "({ dropNode, dropPosition }) => boolean",
+      "description_zh": "是否允许拖拽时放置在该节点"
+    },
+    "autoExpandParent": {
+      "value": "",
+      "description": "Whether to automatically expand the parent node",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "是否自动展开父节点"
+    },
+    "blockNode": {
+      "value": "",
+      "description": "Whether the node occupies a row",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "是否节点占据一行"
+    },
+    "checkable": {
+      "value": "",
+      "description": "node",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "节点前添加 Checkbox 复选框"
+    },
+    ":checkedKeys": {
+      "value": "",
+      "description": "(controlled) the tree node with the checkbox selected (Note: the parent node is associated, if the parent node key is passed, the child node is automatically selected; The key of the corresponding child node is passed in, and the parent node is automatically selected. When 'checkable' and 'checkStrictly' are set, it is an object with 'checked' and 'halfChecked' attributes, and the selection or absence of the parent node is no longer associated",
+      "default": "[]",
+      "type": "string[] | {checked: string[], halfChecked: string[]}",
+      "description_zh": "（受控）选中复选框的树节点（注意：父子节点有关联，如果传入父节点 key，则子节点自动选中；相应当子节点 key 都传入，父节点也自动选中。当设置 `checkable` 和 `checkStrictly`，它是一个有`checked`和`halfChecked`属性的对象，并且父子节点的选中与否不再关联"
+    },
+    "checkStrictly": {
+      "value": "",
+      "description": "Node selection is fully controlled in the checkable state (the selected state of the parent and child nodes is no longer associated)",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "checkable 状态下节点选择完全受控（父子节点选中状态不再关联）"
+    },
+    ":defaultCheckedKeys": {
+      "value": "",
+      "description": "By default, a tree node with the checkbox selected",
+      "default": "[]",
+      "type": "string[]",
+      "description_zh": "默认选中复选框的树节点"
+    },
+    "defaultExpandAll": {
+      "value": "",
+      "description": "By default, all tree nodes are expanded",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "默认展开所有树节点"
+    },
+    ":defaultExpandedKeys": {
+      "value": "",
+      "description": "By default, the specified tree node is expanded",
+      "default": "[]",
+      "type": "string[]",
+      "description_zh": "默认展开指定的树节点"
+    },
+    "defaultExpandParent": {
+      "value": "",
+      "description": "By default, the parent node is expanded",
+      "default": "true",
+      "type": "boolean",
+      "description_zh": "默认展开父节点"
+    },
+    ":defaultSelectedKeys": {
+      "value": "",
+      "description": "The tree node is selected by default",
+      "default": "[]",
+      "type": "string[]",
+      "description_zh": "默认选中的树节点"
+    },
+    "disabled": {
+      "value": "",
+      "description": "Disable the tree",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "将树禁用"
+    },
+    "draggable": {
+      "value": "",
+      "description": "The setting node can be dragged and the drag-and-drop tooltip icon can be turned off by 'icon: false'",
+      "default": "false",
+      "type": "boolean | ((node: DataNode) => boolean) | { icon?: React.ReactNode | false, nodeDraggable?: (node: DataNode) => boolean }",
+      "description_zh": "设置节点可拖拽，可以通过 `icon: false` 关闭拖拽提示图标"
+    },
+    ":expandedKeys": {
+      "value": "",
+      "description": "(Controlled) expands the specified tree node",
+      "default": "[]",
+      "type": "string[]",
+      "description_zh": "（受控）展开指定的树节点"
+    },
+    ":fieldNames": {
+      "value": "",
+      "description": "Customize the fields of title, key, and children of the node",
+      "default": "{ title: title, key: key, children: `children` }",
+      "type": "object",
+      "description_zh": "自定义节点 title、key、children 的字段"
+    },
+    ":filterTreeNode": {
+      "value": "",
+      "description": "Filter tree nodes (highlighted) as needed and return true",
+      "default": "-",
+      "type": "function(node)",
+      "description_zh": "按需筛选树节点（高亮），返回 true"
+    },
+    ":height": {
+      "value": "",
+      "description": "Set the height of the virtual scrolling container, after which the internal nodes no longer support horizontal scrolling",
+      "default": "-",
+      "type": "number",
+      "description_zh": "设置虚拟滚动容器高度，设置后内部节点不再支持横向滚动"
+    },
+    ":icon": {
+      "value": "",
+      "description": "Customize the tree node icon.",
+      "default": "-",
+      "type": "ReactNode | (props) => ReactNode",
+      "description_zh": "自定义树节点图标。"
+    },
+    ":loadData": {
+      "value": "",
+      "description": "Load data asynchronously",
+      "default": "-",
+      "type": "function(node)",
+      "description_zh": "异步加载数据"
+    },
+    ":loadedKeys": {
+      "value": "",
+      "description": "(controlled) nodes that have already been loaded, and need to be used with 'loadData'",
+      "default": "[]",
+      "type": "string[]",
+      "description_zh": "（受控）已经加载的节点，需要配合 `loadData` 使用"
+    },
+    "multiple": {
+      "value": "",
+      "description": "Support for clicking on multiple nodes (node itself)",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "支持点选多个节点（节点本身）"
+    },
+    "rootClassName": {
+      "value": "",
+      "description": "Add the className to the outermost layer of the tree",
+      "default": "-",
+      "type": "string",
+      "description_zh": "添加在 Tree 最外层的 className"
+    },
+    ":rootStyle": {
+      "value": "",
+      "description": "Add a style to the outermost layer of the tree",
+      "default": "-",
+      "type": "CSSProperties",
+      "description_zh": "添加在 Tree 最外层的 style"
+    },
+    "selectable": {
+      "value": "",
+      "description": "Optional",
+      "default": "true",
+      "type": "boolean",
+      "description_zh": "是否可选中"
+    },
+    ":selectedKeys": {
+      "value": "",
+      "description": "(Controlled) sets the selected tree nodes, and for multiple selections, set 'multiple' to true",
+      "default": "-",
+      "type": "string\\[]",
+      "description_zh": "（受控）设置选中的树节点，多选需设置 `multiple` 为 true"
+    },
+    "showIcon": {
+      "value": "",
+      "description": "There is no default style for displaying the icon before the TreeNode title, if it is set to true, you need to define the icon related style",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "是否展示 TreeNode title 前的图标，没有默认样式，如设置为 true，需要自行定义图标相关样式"
+    },
+    "showLine": {
+      "value": "",
+      "description": "Whether or not to display the connection line",
+      "default": "false",
+      "type": "boolean | {showLeafIcon: boolean | ReactNode | ((props: AntTreeNodeProps) => ReactNode)}",
+      "description_zh": "是否展示连接线"
+    },
+    ":switcherIcon": {
+      "value": "",
+      "description": "Customize the expand/collapse icon for the tree node",
+      "default": "-",
+      "type": "ReactNode | ((props: AntTreeNodeProps) => ReactNode)",
+      "description_zh": "自定义树节点的展开/折叠图标"
+    },
+    ":titleRender": {
+      "value": "",
+      "description": "Custom render nodes",
+      "default": "-",
+      "type": "(nodeData) => ReactNode",
+      "description_zh": "自定义渲染节点"
+    },
+    ":treeData": {
+      "value": "",
+      "description": "treeNodes data, if set then you don't need to manually construct a TreeNode node (the key is unique across the tree)",
+      "default": "-",
+      "type": "array<{key, title, children, [disabled, selectable]}>",
+      "description_zh": "treeNodes 数据，如果设置则不需要手动构造 TreeNode 节点（key 在整个树范围内唯一）"
+    },
+    "virtual": {
+      "value": "",
+      "description": "Turn off virtual scrolling when set to false",
+      "default": "true",
+      "type": "boolean",
+      "description_zh": "设置 false 时关闭虚拟滚动"
+    }
+  },
+  "methods": [],
+  "events": [
+    {
+      "name": "onCheck",
+      "description": "Click the checkbox to trigger",
+      "params": "function(checkedKeys, e:{checked: bool, checkedNodes, node, event, halfCheckedKeys})",
+      "description_zh": "点击复选框触发",
+      "value": ""
+    },
+    {
+      "name": "onDragEnd",
+      "description": "DragEnd is called when triggered",
+      "params": "function({event, node})",
+      "description_zh": "dragend 触发时调用",
+      "value": ""
+    },
+    {
+      "name": "onDragEnter",
+      "description": "DragEnter is called when triggered",
+      "params": "function({event, node, expandedKeys})",
+      "description_zh": "dragenter 触发时调用",
+      "value": ""
+    },
+    {
+      "name": "onDragLeave",
+      "description": "DragLeave is called when triggered",
+      "params": "function({event, node})",
+      "description_zh": "dragleave 触发时调用",
+      "value": ""
+    },
+    {
+      "name": "onDragOver",
+      "description": "Dragover is invoked when triggered",
+      "params": "function({event, node})",
+      "description_zh": "dragover 触发时调用",
+      "value": ""
+    },
+    {
+      "name": "onDragStart",
+      "description": "Called when you start dragging",
+      "params": "function({event, node})",
+      "description_zh": "开始拖拽时调用",
+      "value": ""
+    },
+    {
+      "name": "onDrop",
+      "description": "drop is called when triggered",
+      "params": "function({event, node, dragNode, dragNodesKeys})",
+      "description_zh": "drop 触发时调用",
+      "value": ""
+    },
+    {
+      "name": "onExpand",
+      "description": "Triggered when a node is expanded/collapsed",
+      "params": "function(expandedKeys, {expanded: bool, node})",
+      "description_zh": "展开/收起节点时触发",
+      "value": ""
+    },
+    {
+      "name": "onLoad",
+      "description": "Triggered when the node is loaded",
+      "params": "function(loadedKeys, {event, node})",
+      "description_zh": "节点加载完毕时触发",
+      "value": ""
+    },
+    {
+      "name": "onRightClick",
+      "description": "Respond to right-clicks",
+      "params": "function({event, node})",
+      "description_zh": "响应右键点击",
+      "value": ""
+    },
+    {
+      "name": "onSelect",
+      "description": "Click on the tree node to trigger",
+      "params": "function(selectedKeys, e:{selected: bool, selectedNodes, node, event})",
+      "description_zh": "点击树节点触发",
+      "value": ""
+    }
+  ],
+  "link": "https://ant.design/components//tree",
+  "link_zh": "https://ant.design/components//tree"
+}

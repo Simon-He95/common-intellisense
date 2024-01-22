@@ -1,0 +1,357 @@
+{
+  "name": "VanTabs",
+  "props": {
+    "v-model:active": {
+      "value": "",
+      "description": "Bind the identifier of the currently selected tag",
+      "default": "0",
+      "type": "number | string",
+      "required": true,
+      "description_zh": "绑定当前选中标签的标识符"
+    },
+    "type": {
+      "value": [
+        "line",
+        "card"
+      ],
+      "description": "Style style type, optionally card",
+      "default": "line",
+      "type": "string",
+      "description_zh": "样式风格类型，可选值为 card"
+    },
+    "color": {
+      "value": "",
+      "description": "Tag accent color",
+      "default": "#1989fa",
+      "type": "string",
+      "description_zh": "标签主题色"
+    },
+    "background": {
+      "value": "",
+      "description": "Tab bar background color",
+      "default": "white",
+      "type": "string",
+      "description_zh": "标签栏背景色"
+    },
+    "duration": {
+      "value": "",
+      "description": "Animation time, in seconds, is set to 0 to disable animation",
+      "default": "0.3",
+      "type": "number | string",
+      "description_zh": "动画时间，单位秒，设置为 0 可以禁用动画"
+    },
+    "line-width": {
+      "value": "",
+      "description": "The bottom bar width, default unit px",
+      "default": "40px",
+      "type": "number | string",
+      "description_zh": "底部条宽度，默认单位 px"
+    },
+    "line-height": {
+      "value": "",
+      "description": "The height of the bottom bar, the default unit is px",
+      "default": "3px",
+      "type": "number | string",
+      "description_zh": "底部条高度，默认单位 px"
+    },
+    "animated": {
+      "value": "",
+      "description": "Whether to enable transitions when switching tab content",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "是否开启切换标签内容时的转场动画"
+    },
+    "border": {
+      "value": "",
+      "description": "Whether or not to display the outer border of the tab bar, only when 'type=\"line\"' is displayed",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "是否显示标签栏外边框，仅在 `type=\"line\"` 时有效"
+    },
+    "ellipsis": {
+      "value": "",
+      "description": "Whether or not to omit excessively long title text",
+      "default": "true",
+      "type": "boolean",
+      "description_zh": "是否省略过长的标题文字"
+    },
+    "sticky": {
+      "value": "",
+      "description": "Whether or not to use a sticky layout",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "是否使用粘性布局"
+    },
+    "shrink": {
+      "value": "",
+      "description": "Whether to enable the left shrink layout",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "是否开启左侧收缩布局"
+    },
+    "swipeable": {
+      "value": "",
+      "description": "Whether to enable gesture left and right swipe switching",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "是否开启手势左右滑动切换"
+    },
+    "lazy-render": {
+      "value": "",
+      "description": "Whether to turn on deferred rendering (content rendering is triggered when switching to a tag for the first time)",
+      "default": "true",
+      "type": "boolean",
+      "description_zh": "是否开启延迟渲染（首次切换到标签时才触发内容渲染）"
+    },
+    "scrollspy": {
+      "value": "",
+      "description": "Whether to turn on scrolling navigation",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "是否开启滚动导航"
+    },
+    "offset-top": {
+      "value": "",
+      "description": "The distance from the top of the ceiling under the sticky layout, supporting 'px' 'vw' 'vh' 'rem' units, default px",
+      "default": "0",
+      "type": "number | string",
+      "description_zh": "粘性布局下吸顶时与顶部的距离，支持 `px` `vw` `vh` `rem` 单位，默认 px"
+    },
+    "swipe-threshold": {
+      "value": "",
+      "description": "Scrolling threshold, when the number of labels exceeds the threshold and the total width exceeds the width of the tab bar, horizontal scrolling begins",
+      "default": "5",
+      "type": "number | string",
+      "description_zh": "滚动阈值，标签数量超过阈值且总宽度超过标签栏宽度时开始横向滚动"
+    },
+    "title-active-color": {
+      "value": "",
+      "description": "The title is selected in color",
+      "default": "-",
+      "type": "string",
+      "description_zh": "标题选中态颜色"
+    },
+    "title-inactive-color": {
+      "value": "",
+      "description": "The title is the default state color",
+      "default": "-",
+      "type": "string",
+      "description_zh": "标题默认态颜色"
+    },
+    ":before-change": {
+      "value": "",
+      "description": "The callback function before switching tags, returning 'false' to prevent switching, supports returning Promise",
+      "default": "-",
+      "type": "(name: number | string) => boolean | Promise\\<boolean\\>",
+      "description_zh": "切换标签前的回调函数，返回 `false` 可阻止切换，支持返回 Promise"
+    }
+  },
+  "methods": [],
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "click-tab",
+      "description": "Triggered when a tag is clicked",
+      "params": "{ name: string | number, title: string, event: MouseEvent, disabled: boolean }",
+      "description_zh": "点击标签时触发",
+      "value": ""
+    },
+    {
+      "name": "change",
+      "description": "Triggers when the currently active tag changes",
+      "params": "name: string | number, title: string ",
+      "description_zh": "当前激活的标签改变时触发",
+      "value": ""
+    },
+    {
+      "name": "rendered",
+      "description": "Triggered when tag content is rendered for the first time (only when deferred rendering is enabled)",
+      "params": "name: string | number, title: string",
+      "description_zh": "标签内容首次渲染时触发（仅在开启延迟渲染后触发）",
+      "value": ""
+    },
+    {
+      "name": "scroll",
+      "description": "Triggered on scrolling, only in sticky mode",
+      "params": "{ scrollTop: number, isFixed: boolean }",
+      "description_zh": "滚动时触发，仅在 sticky 模式下生效",
+      "value": ""
+    },
+    {
+      "name": "参数",
+      "description": "illustrate",
+      "params": "说明",
+      "description_zh": "说明",
+      "value": ""
+    },
+    {
+      "name": "---",
+      "description": "---",
+      "params": "---",
+      "description_zh": "---",
+      "value": ""
+    },
+    {
+      "name": "v-model:active",
+      "description": "Bind the identifier of the currently selected tag",
+      "params": "绑定当前选中标签的标识符",
+      "description_zh": "绑定当前选中标签的标识符",
+      "value": ""
+    },
+    {
+      "name": "type",
+      "description": "Style style type, optionally card",
+      "params": "样式风格类型，可选值为 card",
+      "description_zh": "样式风格类型，可选值为 card",
+      "value": ""
+    },
+    {
+      "name": "color",
+      "description": "Tag accent color",
+      "params": "标签主题色",
+      "description_zh": "标签主题色",
+      "value": ""
+    },
+    {
+      "name": "background",
+      "description": "Tab bar background color",
+      "params": "标签栏背景色",
+      "description_zh": "标签栏背景色",
+      "value": ""
+    },
+    {
+      "name": "duration",
+      "description": "Animation time, in seconds, is set to 0 to disable animation",
+      "params": "动画时间，单位秒，设置为 0 可以禁用动画",
+      "description_zh": "动画时间，单位秒，设置为 0 可以禁用动画",
+      "value": ""
+    },
+    {
+      "name": "line-width",
+      "description": "The bottom bar width, default unit px",
+      "params": "底部条宽度，默认单位 px",
+      "description_zh": "底部条宽度，默认单位 px",
+      "value": ""
+    },
+    {
+      "name": "line-height",
+      "description": "The height of the bottom bar, the default unit is px",
+      "params": "底部条高度，默认单位 px",
+      "description_zh": "底部条高度，默认单位 px",
+      "value": ""
+    },
+    {
+      "name": "animated",
+      "description": "Whether to enable transitions when switching tab content",
+      "params": "是否开启切换标签内容时的转场动画",
+      "description_zh": "是否开启切换标签内容时的转场动画",
+      "value": ""
+    },
+    {
+      "name": "border",
+      "description": "Whether or not to display the outer border of the tab bar, only when 'type=\"line\"' is displayed",
+      "params": "是否显示标签栏外边框，仅在 `type=\"line\"` 时有效",
+      "description_zh": "是否显示标签栏外边框，仅在 `type=\"line\"` 时有效",
+      "value": ""
+    },
+    {
+      "name": "ellipsis",
+      "description": "Whether or not to omit excessively long title text",
+      "params": "是否省略过长的标题文字",
+      "description_zh": "是否省略过长的标题文字",
+      "value": ""
+    },
+    {
+      "name": "sticky",
+      "description": "Whether or not to use a sticky layout",
+      "params": "是否使用粘性布局",
+      "description_zh": "是否使用粘性布局",
+      "value": ""
+    },
+    {
+      "name": "shrink",
+      "description": "Whether to enable the left shrink layout",
+      "params": "是否开启左侧收缩布局",
+      "description_zh": "是否开启左侧收缩布局",
+      "value": ""
+    },
+    {
+      "name": "swipeable",
+      "description": "Whether to enable gesture left and right swipe switching",
+      "params": "是否开启手势左右滑动切换",
+      "description_zh": "是否开启手势左右滑动切换",
+      "value": ""
+    },
+    {
+      "name": "lazy-render",
+      "description": "Whether to turn on deferred rendering (content rendering is triggered when switching to a tag for the first time)",
+      "params": "是否开启延迟渲染（首次切换到标签时才触发内容渲染）",
+      "description_zh": "是否开启延迟渲染（首次切换到标签时才触发内容渲染）",
+      "value": ""
+    },
+    {
+      "name": "scrollspy",
+      "description": "Whether to turn on scrolling navigation",
+      "params": "是否开启滚动导航",
+      "description_zh": "是否开启滚动导航",
+      "value": ""
+    },
+    {
+      "name": "offset-top",
+      "description": "The distance from the top of the ceiling under the sticky layout, supporting 'px' 'vw' 'vh' 'rem' units, default px",
+      "params": "粘性布局下吸顶时与顶部的距离，支持 `px` `vw` `vh` `rem` 单位，默认 px",
+      "description_zh": "粘性布局下吸顶时与顶部的距离，支持 `px` `vw` `vh` `rem` 单位，默认 px",
+      "value": ""
+    },
+    {
+      "name": "swipe-threshold",
+      "description": "Scrolling threshold, when the number of labels exceeds the threshold and the total width exceeds the width of the tab bar, horizontal scrolling begins",
+      "params": "滚动阈值，标签数量超过阈值且总宽度超过标签栏宽度时开始横向滚动",
+      "description_zh": "滚动阈值，标签数量超过阈值且总宽度超过标签栏宽度时开始横向滚动",
+      "value": ""
+    },
+    {
+      "name": "title-active-color",
+      "description": "The title is selected in color",
+      "params": "标题选中态颜色",
+      "description_zh": "标题选中态颜色",
+      "value": ""
+    },
+    {
+      "name": "title-inactive-color",
+      "description": "The title is the default state color",
+      "params": "标题默认态颜色",
+      "description_zh": "标题默认态颜色",
+      "value": ""
+    },
+    {
+      "name": "before-change",
+      "description": "The callback function before switching tags, returning 'false' to prevent switching, supports returning Promise",
+      "params": "切换标签前的回调函数，返回 `false` 可阻止切换，支持返回 Promise",
+      "description_zh": "切换标签前的回调函数，返回 `false` 可阻止切换，支持返回 Promise",
+      "value": ""
+    }
+  ],
+  "suggestions": [
+    "van-tab"
+  ],
+  "slots": [
+    {
+      "name": "nav-left",
+      "description": "Content on the left side of the tab bar",
+      "description_zh": "标签栏左侧内容"
+    },
+    {
+      "name": "nav-right",
+      "description": "Content on the right side of the tab bar",
+      "description_zh": "标签栏右侧内容"
+    },
+    {
+      "name": "nav-bottom",
+      "description": "Below the tab bar",
+      "description_zh": "标签栏下方内容"
+    }
+  ],
+  "link": "https://vant-contrib.gitee.io/vant/#/zh-CN/tab",
+  "link_zh": "https://vant-contrib.gitee.io/vant/#/zh-CN/tab"
+}

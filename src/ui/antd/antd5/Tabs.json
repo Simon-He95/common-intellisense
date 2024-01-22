@@ -1,0 +1,178 @@
+{
+  "name": "Tabs",
+  "props": {
+    "activeKey": {
+      "value": "",
+      "description": "The key of the currently active tab panel",
+      "default": "-",
+      "type": "string",
+      "description_zh": "当前激活 tab 面板的 key"
+    },
+    ":addIcon": {
+      "value": "",
+      "description": "Customize the Add button",
+      "default": "-",
+      "type": "ReactNode",
+      "description_zh": "自定义添加按钮"
+    },
+    "animated": {
+      "value": "",
+      "description": "Whether or not to use animation to switch tabs, only for 'tabPosition=\"top\"'",
+      "default": "{ inkBar: true, tabPane: false }",
+      "type": "boolean| { inkBar: boolean, tabPane: boolean }",
+      "description_zh": "是否使用动画切换 Tabs, 仅生效于 `tabPosition=\"top\"`"
+    },
+    "centered": {
+      "value": "",
+      "description": "Tags are displayed in the center",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "标签居中展示"
+    },
+    "defaultActiveKey": {
+      "value": "",
+      "description": "Initialize the key of the selected panel, if you do not set the activeKey",
+      "default": "第一个面板",
+      "type": "string",
+      "description_zh": "初始化选中面板的 key，如果没有设置 activeKey"
+    },
+    "hideAdd": {
+      "value": "",
+      "description": "Whether to hide the plus icon, which is valid when 'type=\"editable-card\"'",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "是否隐藏加号图标，在 `type=\"editable-card\"` 时有效"
+    },
+    "indicatorSize": {
+      "value": "",
+      "description": "Customize the length of the bar, which is the same width as the tab by default",
+      "default": "",
+      "type": "number | (origin: number) => number",
+      "description_zh": "自定义指示条长度，默认与 tab 等宽"
+    },
+    ":items": {
+      "value": "",
+      "description": "Configure the tab contents",
+      "default": "[]",
+      "type": "TabItemType",
+      "description_zh": "配置选项卡内容",
+      "required": true
+    },
+    ":moreIcon": {
+      "value": "",
+      "description": "Customize the collapse icon",
+      "default": "<EllipsisOutlined />",
+      "type": "ReactNode",
+      "description_zh": "自定义折叠 icon"
+    },
+    "popupClassName": {
+      "value": "",
+      "description": "className for the More menu",
+      "default": "-",
+      "type": "string",
+      "description_zh": "更多菜单的 className"
+    },
+    ":renderTabBar": {
+      "value": "",
+      "description": "Replaces the TabBar for the secondary encapsulation of the label header",
+      "default": "-",
+      "type": "(props: DefaultTabBarProps, DefaultTabBar: React.ComponentClass) => React.ReactElement",
+      "description_zh": "替换 TabBar，用于二次封装标签头"
+    },
+    "size": {
+      "value": [
+        "large",
+        "middle",
+        "small"
+      ],
+      "description": "Size, available in 'large', 'middle' and 'small' sizes",
+      "default": "middle",
+      "type": "string",
+      "description_zh": "大小，提供 `large` `middle` 和 `small` 三种大小"
+    },
+    ":tabBarExtraContent": {
+      "value": "",
+      "description": "tab bar",
+      "default": "-",
+      "type": "ReactNode | {left?: ReactNode, right?: ReactNode}",
+      "description_zh": "tab bar 上额外的元素"
+    },
+    ":tabBarGutter": {
+      "value": "",
+      "description": "tabs",
+      "default": "-",
+      "type": "number",
+      "description_zh": "tabs 之间的间隙"
+    },
+    ":tabBarStyle": {
+      "value": "",
+      "description": "tab bar",
+      "default": "-",
+      "type": "CSSProperties",
+      "description_zh": "tab bar 的样式对象"
+    },
+    "tabPosition": {
+      "value": [
+        "top",
+        "right",
+        "bottom",
+        "left"
+      ],
+      "description": "The tabbed position can be 'top', 'right', 'bottom' left",
+      "default": "top",
+      "type": "string",
+      "description_zh": "页签位置，可选值有 `top` `right` `bottom` left"
+    },
+    "destroyInactiveTabPane": {
+      "value": "",
+      "description": "Whether or not to destroy the DOM structure when hidden",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "被隐藏时是否销毁 DOM 结构"
+    },
+    "type": {
+      "value": [
+        "line",
+        "card",
+        "editable-card"
+      ],
+      "description": "The basic style of the tab, you can choose 'line', 'card', 'editable-card' type",
+      "default": "line",
+      "type": "string",
+      "description_zh": "页签的基本样式，可选 `line`、`card` `editable-card` 类型"
+    }
+  },
+  "methods": [],
+  "events": [
+    {
+      "name": "onChange",
+      "description": "Toggle the callback of the panel",
+      "params": "function(activeKey) {}",
+      "description_zh": "切换面板的回调",
+      "value": ""
+    },
+    {
+      "name": "onEdit",
+      "description": "Callbacks for adding and removing tabs are valid when 'type=\"editable-card\"'",
+      "params": "(action === 'add' ? event : targetKey, action): void",
+      "description_zh": "新增和删除页签的回调，在 `type=\"editable-card\"` 时有效",
+      "value": ""
+    },
+    {
+      "name": "onTabClick",
+      "description": "The callback on which the tab was clicked",
+      "params": "function(key: string, event: MouseEvent)",
+      "description_zh": "tab 被点击的回调",
+      "value": ""
+    },
+    {
+      "name": "onTabScroll",
+      "description": "Triggered when the tab scrolls",
+      "params": "function({ direction: `left` | right | top | `bottom` })",
+      "description_zh": "tab 滚动时触发",
+      "value": ""
+    }
+  ],
+  "link": "https://ant.design/components//tabs",
+  "link_zh": "https://ant.design/components//tabs"
+}

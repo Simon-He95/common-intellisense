@@ -1,0 +1,128 @@
+{
+  "name": "VanPullRefresh",
+  "props": {
+    ":v-model": {
+      "value": "",
+      "description": "Whether it is in the loading state",
+      "default": "false",
+      "type": "boolean",
+      "required": true,
+      "description_zh": "是否处于加载中状态"
+    },
+    "pulling-text": {
+      "value": "",
+      "description": "The drop-down process prompts the copy",
+      "default": "下拉即可刷新...",
+      "type": "string",
+      "description_zh": "下拉过程提示文案"
+    },
+    "loosing-text": {
+      "value": "",
+      "description": "Prompt copy for the release process",
+      "default": "释放即可刷新...",
+      "type": "string",
+      "description_zh": "释放过程提示文案"
+    },
+    "loading-text": {
+      "value": "",
+      "description": "Prompt copy for the loading process",
+      "default": "加载中...",
+      "type": "string",
+      "description_zh": "加载过程提示文案"
+    },
+    "success-text": {
+      "value": "",
+      "description": "Refresh the success prompt copy",
+      "default": "-",
+      "type": "string",
+      "description_zh": "刷新成功提示文案"
+    },
+    "success-duration": {
+      "value": "",
+      "description": "Impression duration (ms) when the refresh is successful",
+      "default": "500",
+      "type": "number | string",
+      "description_zh": "刷新成功提示展示时长(ms)"
+    },
+    "animation-duration": {
+      "value": "",
+      "description": "Animation duration",
+      "default": "300",
+      "type": "number | string",
+      "description_zh": "动画时长"
+    },
+    "head-height": {
+      "value": "",
+      "description": "Top content height",
+      "default": "50",
+      "type": "number | string",
+      "description_zh": "顶部内容高度"
+    },
+    "pull-distance": {
+      "value": "",
+      "description": "The distance at which the pull-down refresh is triggered",
+      "default": "与 head-height 一致",
+      "type": "number | string",
+      "description_zh": "触发下拉刷新的距离"
+    },
+    "disabled": {
+      "value": "",
+      "description": "Whether to disable pull-down refresh",
+      "default": "false",
+      "type": "boolean",
+      "description_zh": "是否禁用下拉刷新"
+    }
+  },
+  "methods": [],
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "refresh",
+      "description": "Triggered when a pull-down refresh",
+      "params": "-",
+      "description_zh": "下拉刷新时触发",
+      "value": ""
+    },
+    {
+      "name": "change",
+      "description": "Triggers when dragging or when the state changes",
+      "params": "{ status: string, distance: number }",
+      "description_zh": "拖动时或状态改变时触发",
+      "value": ""
+    }
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "description": "Customize your content",
+      "description_zh": "自定义内容"
+    },
+    {
+      "name": "normal",
+      "description": "When the top content is not in a pull-down state",
+      "description_zh": "非下拉状态时顶部内容"
+    },
+    {
+      "name": "pulling",
+      "description": "Drop-down process top content",
+      "description_zh": "下拉过程中顶部内容"
+    },
+    {
+      "name": "loosing",
+      "description": "The top content during the release process",
+      "description_zh": "释放过程中顶部内容"
+    },
+    {
+      "name": "loading",
+      "description": "The top content during the loading process",
+      "description_zh": "加载过程中顶部内容"
+    },
+    {
+      "name": "success",
+      "description": "Contents of the successful presentation of the renewal",
+      "description_zh": "刷新成功提示内容"
+    }
+  ],
+  "link": "https://vant-contrib.gitee.io/vant/#/zh-CN/pull-refresh",
+  "link_zh": "https://vant-contrib.gitee.io/vant/#/zh-CN/pull-refresh"
+}
