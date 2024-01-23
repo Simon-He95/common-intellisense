@@ -54,6 +54,15 @@
 
 - `cmd+shift+p` -> 选择 `Specify the UI library you need to prompt`
 
+## configuration
+```
+"common-intellisense.showSlots": {
+          "type": "boolean",
+          "default": true,
+          "description": "控制是否要展示slots节点"
+}
+```
+
 ## :coffee:
 
 [请我喝一杯咖啡](https://github.com/Simon-He95/sponsor)

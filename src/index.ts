@@ -23,6 +23,8 @@ let extensionContext: any = null
 let eventCallbacks: any = new Map()
 let completionsCallbacks: any = new Map()
 let currentPkgUiNames: null | string[] = null
+const isShowSlots = getConfiguration('common-intellisense.showSlots')
+
 export function activate(context: vscode.ExtensionContext) {
   extensionContext = context
   const isZh = getLocale().includes('zh')
@@ -105,55 +107,56 @@ export function activate(context: vscode.ExtensionContext) {
   }))
 
   findUI()
+  if (isShowSlots) {
+    context.subscriptions.push(registerCommand('common-intellisense.slots', (child, name, offset = 0) => {
+      if (!child && UiCompletions) {
+        detectSlots(UiCompletions)
+        return
+      }
 
-  context.subscriptions.push(registerCommand('common-intellisense.slots', (child, name, offset = 0) => {
-    if (!child && UiCompletions) {
-      detectSlots(UiCompletions)
-      return
-    }
+      const lastChild = child.children[child.children.length - 1]
+      let slotName = `#${name}`
+      if (child.range)
+        slotName = `v-slot:${name}`
 
-    const lastChild = child.children[child.children.length - 1]
-    let slotName = `#${name}`
-    if (child.range)
-      slotName = `v-slot:${name}`
-
-    if (lastChild) {
-      let pos = lastChild.loc.end
-      if (lastChild.range) {
-        pos = getPosition(lastChild.range[1] + offset + 1)
-        const repeatColumn = pos.column - 1 < 0 ? 0 : pos.column - 1
-        const empty = ' '.repeat(repeatColumn)
-        updateText((edit) => {
-          edit.insert(createPosition(pos.line, pos.column - 1 < 0 ? 0 : pos.column - 1), `  <template ${slotName}></template>\n${empty}`)
-        })
+      if (lastChild) {
+        let pos = lastChild.loc.end
+        if (lastChild.range) {
+          pos = getPosition(lastChild.range[1] + offset + 1)
+          const repeatColumn = pos.column - 1 < 0 ? 0 : pos.column - 1
+          const empty = ' '.repeat(repeatColumn)
+          updateText((edit) => {
+            edit.insert(createPosition(pos.line, pos.column - 1 < 0 ? 0 : pos.column - 1), `  <template ${slotName}></template>\n${empty}`)
+          })
+        }
+        else {
+          const repeatColumn = pos.column - 1 < 0 ? 0 : pos.column - 1
+          const empty = ' '.repeat(repeatColumn)
+          updateText((edit) => {
+            edit.insert(createPosition(pos.line - 1, pos.column - 1 < 0 ? 0 : pos.column - 1), `${empty}<template ${slotName}></template>\n${empty}`)
+          })
+        }
       }
       else {
-        const repeatColumn = pos.column - 1 < 0 ? 0 : pos.column - 1
-        const empty = ' '.repeat(repeatColumn)
+        let index: number
+        if (child.range)
+          index = child.openingElement.range[1] + offset
+        else
+          index = child.loc.start.offset + child.loc.source.indexOf('></') + 1
+
+        const pos = getPosition(index)
+        const empty = ' '.repeat(child.loc.start.column - 1)
         updateText((edit) => {
-          edit.insert(createPosition(pos.line - 1, pos.column - 1 < 0 ? 0 : pos.column - 1), `${empty}<template ${slotName}></template>\n${empty}`)
+          edit.insert(createPosition(pos), `\n${empty}  <template ${slotName}></template>\n${empty}`)
         })
       }
-    }
-    else {
-      let index: number
-      if (child.range)
-        index = child.openingElement.range[1] + offset
-      else
-        index = child.loc.start.offset + child.loc.source.indexOf('></') + 1
+    }))
 
-      const pos = getPosition(index)
-      const empty = ' '.repeat(child.loc.start.column - 1)
-      updateText((edit) => {
-        edit.insert(createPosition(pos), `\n${empty}  <template ${slotName}></template>\n${empty}`)
-      })
-    }
-  }))
-
-  context.subscriptions.push(addEventListener('text-change', () => {
-    if (getActiveTextEditorLanguageId() === 'vue' && UiCompletions)
-      detectSlots(UiCompletions)
-  }))
+    context.subscriptions.push(addEventListener('text-change', () => {
+      if (getActiveTextEditorLanguageId() === 'vue' && UiCompletions)
+        detectSlots(UiCompletions)
+    }))
+  }
 
   context.subscriptions.push(registerCompletionItemProvider(filter, async (document, position) => {
     const { lineText } = getSelection()!
@@ -513,8 +516,8 @@ function findUI() {
       return Object.assign(result, completion)
     }
     , {} as any)
-
-    detectSlots(UiCompletions)
+    if (isShowSlots)
+      detectSlots(UiCompletions)
   }
 }
 

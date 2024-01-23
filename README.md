@@ -54,6 +54,15 @@ Install the supported ui component library in your project and install the plug-
 
 - `cmd+shift+p` -> Select `Specify the UI library you need to prompt`
 
+## configuration
+```
+"common-intellisense.showSlots": {
+          "type": "boolean",
+          "default": true,
+          "description": "Whether to show the slots on template completion."
+}
+```
+
 ## :coffee:
 
 [buy me a cup of coffee](https://github.com/Simon-He95/sponsor)
