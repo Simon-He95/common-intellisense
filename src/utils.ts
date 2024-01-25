@@ -508,8 +508,11 @@ const modules: any = {
 export async function detectSlots(UiCompletions: any) {
   const [children, offset] = await getTemplateAst(UiCompletions)
 
-  if (!children || !children?.length)
+  if (!children || !children?.length) {
+    modules.children = []
+    modules.offset = 0
     return
+  }
 
   modules.children = children
   modules.offset = offset
