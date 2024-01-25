@@ -4,7 +4,7 @@ import { parse } from '@vue/compiler-sfc'
 import type { SFCTemplateBlock } from '@vue/compiler-sfc'
 import { parse as tsParser } from '@typescript-eslint/typescript-estree'
 import { findUp } from 'find-up'
-import { createRange, getActiveText, getLocale, getOffsetFromPosition, registerCodeLensProvider } from '@vscode-use/utils'
+import { createRange, getActiveText, getActiveTextEditorLanguageId, getLocale, getOffsetFromPosition, registerCodeLensProvider } from '@vscode-use/utils'
 import { traverse } from '@babel/types'
 import { UINames } from './constants'
 import { toCamel } from './ui/utils'
@@ -85,7 +85,7 @@ function dfs(children: any, parent: any, position: vscode.Position) {
         if (isInPosition(prop.loc, position)) {
           if (!isInAttribute(child, position))
             return false
-          if ((prop.name === 'bind' || prop.name === 'on') && prop.arg) {
+          if ((prop.name === 'bind' || prop.name === 'on') && prop.arg && isInPosition(prop.arg.loc, position)) {
             return {
               tag,
               propName: prop.arg.content,
@@ -103,9 +103,15 @@ function dfs(children: any, parent: any, position: vscode.Position) {
             }
           }
           else {
+            let propName = prop.name
+            if (prop.arg && isInPosition(prop.arg.loc, position))
+              propName = prop.arg.content
+            else if (prop.exp && isInPosition(prop.exp.loc, position))
+              propName = prop.exp.content
+
             return {
               tag,
-              propName: prop.name,
+              propName,
               props,
               type: 'props',
               isInTemplate: true,
@@ -520,7 +526,7 @@ export async function detectSlots(UiCompletions: any) {
 
 export function registerCodeLensProviderFn() {
   const isZh = getLocale().includes('zh')
-  return registerCodeLensProvider(['vue'], {
+  return registerCodeLensProvider(['vue', 'javascriptreact', 'typescriptreact'], {
     provideCodeLenses() {
       const result: vscode.CodeLens[] = []
       const children = modules.children
@@ -570,19 +576,29 @@ export function registerCodeLensProviderFn() {
 
 async function getTemplateAst(UiCompletions: any): Promise<[any, number?] | []> {
   const code = getActiveText()!
-  const {
-    descriptor: { template, script, scriptSetup },
-  } = parse(code)
-  const _script = script || scriptSetup
-  if (!template) {
-    if (_script?.lang === 'tsx') {
-      const children = findAllJsxElements(_script.content)
-      return [await findUiTag(children, UiCompletions), _script.loc.start.offset]
+  const lan = getActiveTextEditorLanguageId() || ''
+
+  if (lan === 'vue') {
+    const {
+      descriptor: { template, script, scriptSetup },
+    } = parse(code)
+    const _script = script || scriptSetup
+    if (!template) {
+      if (_script?.lang === 'tsx') {
+        const children = findAllJsxElements(_script.content)
+        return [await findUiTag(children, UiCompletions), _script.loc.start.offset]
+      }
+      return []
     }
-    return []
+    return [await findUiTag(template.ast.children, UiCompletions), 0]
   }
-  return [await findUiTag(template.ast.children, UiCompletions)]
+  else if (['javascriptreact', 'typescriptreact'].includes(lan)) {
+    const children = findAllJsxElements(code)
+    return [await findUiTag(children, UiCompletions), 0]
+  }
+  return []
 }
+const originTag = ['div', 'span', 'ul', 'li', 'ol', 'p', 'main', 'header', 'footer', 'template']
 
 async function findUiTag(children: any, UiCompletions: any, result: any[] = []) {
   for (const child of children) {
@@ -597,6 +613,8 @@ async function findUiTag(children: any, UiCompletions: any, result: any[] = []) 
     if (nextChildren?.length)
       await findUiTag(nextChildren, UiCompletions, result)
 
+    if (originTag.includes(tag))
+      continue
     const tagName = toCamel(`-${tag}`)
     const target = UiCompletions[tagName] || await findDynamicComponent(tagName, {})
     if (!target || !target.rawSlots?.length)
@@ -609,7 +627,6 @@ async function findUiTag(children: any, UiCompletions: any, result: any[] = []) 
   return result
 }
 
-const originTag = ['div', 'span', 'ul', 'li', 'ol', 'p', 'main', 'header', 'footer']
 function findAllJsxElements(code: string) {
   const ast = tsParser(code, { jsx: true, loc: true, range: true })
   const results: any = []

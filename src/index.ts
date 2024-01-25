@@ -155,7 +155,7 @@ export function activate(context: vscode.ExtensionContext) {
     }))
 
     context.subscriptions.push(addEventListener('text-change', () => {
-      if (getActiveTextEditorLanguageId() === 'vue' && UiCompletions)
+      if (UiCompletions)
         detectSlots(UiCompletions)
     }))
   }
@@ -618,7 +618,7 @@ function getEffectWord(preText: string) {
 
 function getHoverAttribute(attributeList: any[], attr: string) {
   return attributeList.filter((a) => {
-    return a?.params?.[1] === attr
+    return a?.params?.[1]?.replace('v-model:', '') === toCamel(attr)
   }).map(i => `- ${i.label}`).join('\n\n')
 }
 
