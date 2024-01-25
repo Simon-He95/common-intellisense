@@ -4,7 +4,7 @@ import * as vscode from 'vscode'
 import { addEventListener, createCompletionItem, createPosition, createRange, createSelect, getActiveText, getActiveTextEditorLanguageId, getConfiguration, getCurrentFileUrl, getLineText, getLocale, getSelection, message, openExternalUrl, registerCommand, registerCompletionItemProvider, setConfiguration, setCopyText, updateText } from '@vscode-use/utils'
 import { CreateWebview } from '@vscode-use/createwebview'
 import { parse } from '@vue/compiler-sfc'
-import { detectSlots, findPkgUI, parser } from './utils'
+import { detectSlots, findPkgUI, parser, registerCodeLensProviderFn } from './utils'
 import UI from './ui'
 import { nameMap } from './constants'
 import { toCamel } from './ui/utils'
@@ -28,6 +28,8 @@ const isShowSlots = getConfiguration('common-intellisense.showSlots')
 export function activate(context: vscode.ExtensionContext) {
   extensionContext = context
   const isZh = getLocale().includes('zh')
+
+  context.subscriptions.push(registerCodeLensProviderFn())
   global.commonIntellisense = {
     copyDom: '',
   }

@@ -501,20 +501,27 @@ function convertOffsetToLineColumn(document: vscode.TextDocument, offset: number
   return { line, column, lineText, lineOffset }
 }
 
-export let dispose: vscode.Disposable
+const modules: any = {
+  children: [],
+  offset: 0,
+}
 export async function detectSlots(UiCompletions: any) {
   const [children, offset] = await getTemplateAst(UiCompletions)
-  if (dispose)
-    dispose.dispose()
 
   if (!children || !children?.length)
     return
 
-  const isZh = getLocale().includes('zh')
+  modules.children = children
+  modules.offset = offset
+}
 
-  dispose = registerCodeLensProvider(['vue'], {
+export function registerCodeLensProviderFn() {
+  const isZh = getLocale().includes('zh')
+  return registerCodeLensProvider(['vue'], {
     provideCodeLenses() {
       const result: vscode.CodeLens[] = []
+      const children = modules.children
+      const offset = modules.offset
       children.forEach((m: any) => {
         const { child, slots } = m
         const range = child.loc
