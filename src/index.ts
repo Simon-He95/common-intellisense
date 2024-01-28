@@ -9,12 +9,6 @@ import UI from './ui'
 import { nameMap } from './constants'
 import { toCamel } from './ui/utils'
 
-declare const global: {
-  commonIntellisense: {
-    copyDom: string
-  }
-}
-
 let UINames: any = []
 let optionsComponents: any = null
 let UiCompletions: any = null
@@ -25,14 +19,13 @@ let completionsCallbacks: any = new Map()
 let currentPkgUiNames: null | string[] = null
 const isShowSlots = getConfiguration('common-intellisense.showSlots')
 
+// todo: 补充example
 export function activate(context: vscode.ExtensionContext) {
   extensionContext = context
   const isZh = getLocale().includes('zh')
 
   context.subscriptions.push(registerCodeLensProviderFn())
-  global.commonIntellisense = {
-    copyDom: '',
-  }
+
   const filter = ['javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'vue', 'svelte']
   context.subscriptions.push(addEventListener('activeText-change', (editor: vscode.TextEditor) => {
     // 找到当前活动的编辑器
@@ -42,8 +35,8 @@ export function activate(context: vscode.ExtensionContext) {
       findUI()
   }))
 
-  context.subscriptions.push(registerCommand('intellisense.copyDemo', () => {
-    setCopyText(global.commonIntellisense.copyDom)
+  context.subscriptions.push(registerCommand('intellisense.copyDemo', (demo) => {
+    setCopyText(demo)
     message.info('copy successfully')
   }))
 
