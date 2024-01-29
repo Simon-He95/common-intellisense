@@ -122,6 +122,8 @@ import PopoverRoot from './PopoverRoot.json'
 import PopoverTrigger from './PopoverTrigger.json'
 import ProgressIndicator from './ProgressIndicator.json'
 import ProgressRoot from './ProgressRoot.json'
+import PinInputInput from './PinInputInput.json'
+import PinInputRoot from './PinInputRoot.json'
 import ScrollAreaCorner from './ScrollAreaCorner.json'
 import ScrollAreaRoot from './ScrollAreaRoot.json'
 import ScrollAreaScrollbar from './ScrollAreaScrollbar.json'
@@ -150,6 +152,12 @@ import SliderThumb from './SliderThumb.json'
 import SliderTrack from './SliderTrack.json'
 import SwitchRoot from './SwitchRoot.json'
 import SwitchThumb from './SwitchThumb.json'
+import TagsInputClear from './TagsInputClear.json'
+import TagsInputInput from './TagsInputInput.json'
+import TagsInputItem from './TagsInputItem.json'
+import TagsInputItemDelete from './TagsInputItemDelete.json'
+import TagsInputItemText from './TagsInputItemText.json'
+import TagsInputRoot from './TagsInputRoot.json'
 import TabsContent from './TabsContent.json'
 import TabsList from './TabsList.json'
 import TabsRoot from './TabsRoot.json'
@@ -295,13 +303,14 @@ export function radixVue1() {
     PopoverTrigger,
     ProgressIndicator,
     ProgressRoot,
+    PinInputInput,
+    PinInputRoot,
     ScrollAreaCorner,
     ScrollAreaRoot,
     ScrollAreaScrollbar,
     ScrollAreaThumb,
     ScrollAreaViewport,
     ScrollAreaCorner,
-    ScrollAreaViewport,
     SelectArrow,
     SelectContent,
     SelectGroup,
@@ -325,6 +334,12 @@ export function radixVue1() {
     SliderTrack,
     SwitchRoot,
     SwitchThumb,
+    TagsInputClear,
+    TagsInputInput,
+    TagsInputItem,
+    TagsInputItemDelete,
+    TagsInputItemText,
+    TagsInputRoot,
     TabsContent,
     TabsList,
     TabsRoot,
@@ -499,7 +514,9 @@ export function radixVue1Components() {
     [PopoverRoot, '弹出框', '<PopoverRoot></PopoverRoot>'],
     [PopoverTrigger, '弹出框', '<PopoverTrigger></PopoverTrigger>'],
     [ProgressIndicator, '单选按钮组', '<ProgressIndicator></ProgressIndicator>'],
-    [ProgressIndicator, '单选按钮组', '<ProgressIndicator></ProgressIndicator>'],
+    [ProgressRoot, '单选按钮组', '<ProgressRoot></ProgressRoot>'],
+    [PinInputInput, '引脚输入', '<PinInputInput></PinInputInput>'],
+    [PinInputRoot, '引脚输入', '<PinInputRoot></PinInputRoot>'],
     [ScrollAreaCorner, '滚动区域', '<ScrollAreaCorner></ScrollAreaCorner>'],
     [ScrollAreaRoot, '滚动区域', '<ScrollAreaRoot></ScrollAreaRoot>'],
     [ScrollAreaScrollbar, '滚动区域', '<ScrollAreaScrollbar></ScrollAreaScrollbar>'],
@@ -529,6 +546,12 @@ export function radixVue1Components() {
     [SliderTrack, '滑块', '<SliderTrack></SliderTrack>'],
     [SwitchRoot, '允许用户在选中和未选中之间切换的控件', '<SwitchRoot></SwitchRoot>'],
     [SwitchThumb, '允许用户在选中和未选中之间切换的控件', '<SwitchThumb></SwitchThumb>'],
+    [TagsInputClear, '标签输入', '<TagsInputClear></TagsInputClear>'],
+    [TagsInputInput, '标签输入', '<TagsInputInput></TagsInputInput>'],
+    [TagsInputItem, '标签输入', '<TagsInputItem></TagsInputItem>'],
+    [TagsInputItemDelete, '标签输入', '<TagsInputItemDelete></TagsInputItemDelete>'],
+    [TagsInputItemText, '标签输入', '<TagsInputItemText></TagsInputItemText>'],
+    [TagsInputRoot, '标签输入', '<TagsInputRoot></TagsInputRoot>'],
     [TabsContent, '一组分层的内容部分（称为选项卡面板），一次显示一个。', '<TabsContent></TabsContent>'],
     [TabsList, '一组分层的内容部分（称为选项卡面板），一次显示一个。', '<TabsList></TabsList>'],
     [TabsRoot, '一组分层的内容部分（称为选项卡面板），一次显示一个。', '<TabsRoot></TabsRoot>'],
@@ -561,7 +584,6 @@ export function radixVue1Components() {
     [RadioGroupIndicator, '将 Radix 的功能组合到替代元素类型或你自己的 Vue 组件上', '<RadioGroupIndicator></RadioGroupIndicator>'],
     [RadioGroupItem, '一组可检查的按钮（称为单选按钮），一次只能选中一个按钮', '<RadioGroupItem></RadioGroupItem>'],
     [RadioGroupRoot, '一组可检查的按钮（称为单选按钮），一次只能选中一个按钮', '<RadioGroupRoot></RadioGroupRoot>'],
-
   ]
   return componentsReducer(map, false, '', 'radix-vue')
 }

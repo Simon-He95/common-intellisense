@@ -1,0 +1,116 @@
+{
+  "name": "TagsInputRoot",
+  "props": {
+    "as": {
+      "default": "div",
+      "value": "",
+      "type": "string | Component",
+      "description": "The element or component the current element should render as.",
+      "description_zh": "当前元素应呈现为的元素或组件。"
+    },
+    "asChild": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Change the default rendered element for the one passed as a child, merging their props and behavior.",
+      "description_zh": "更改作为子元素传递的默认渲染元素，合并其道具和行为。"
+    },
+    "defaultValue": {
+      "default": "''",
+      "value": "",
+      "type": "string[]",
+      "description": "The default value of the input.",
+      "description_zh": "输入的默认值。"
+    },
+    ":v-model": {
+      "default": "''",
+      "value": "",
+      "type": "string[]",
+      "description": "The value of the input.",
+      "description_zh": "输入的值。"
+    },
+    "addOnPaste": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "When true, allow adding tags on paste. Work in conjunction with delimiter prop.",
+      "description_zh": "为真时，允许在粘贴时添加标记。与分隔符道具配合使用。"
+    },
+    "delimiter": {
+      "default": ", (comma)",
+      "value": "",
+      "type": "string",
+      "description": "The character to trigger the addition of a new tag. Also used to split tags for @paste event",
+      "description_zh": "用于触发添加新标签的字符。也用于在 @paste 事件中分割标签"
+    },
+    "duplicate": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "When true, allow duplicated tags.",
+      "description_zh": "当为true时，允许重复标记。"
+    },
+    "dir": {
+      "default": [
+        "ltr",
+        "rtl"
+      ],
+      "value": "",
+      "type": "\"ltr\" | \"rtl\"",
+      "description": "The reading direction of the tabs If omitted, inherits globally from DirectionProvider or assumes LTR (left-to-right) reading mode.",
+      "description_zh": "制表符的读取方向 如果省略，则全局继承自 DirectionProvider 或假定为 LTR（从左到右）读取模式。"
+    },
+    "disabled": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "When true, the input will be disabled.",
+      "description_zh": "为真时，输入将被禁用。"
+    },
+    "required": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "When true, the input will be required.",
+      "description_zh": "为真时，输入将被要求。"
+    },
+    "max": {
+      "default": "",
+      "value": "",
+      "type": "number",
+      "description": "Maximum number of tags.",
+      "description_zh": "最大标签数。"
+    },
+    "name": {
+      "default": "''",
+      "value": "",
+      "type": "string",
+      "description": "The name of the input.",
+      "description_zh": "输入的名称。"
+    }
+  },
+  "events": [
+    {
+      "name": "update:modelValue",
+      "params": "(value: string) => void",
+      "description": "Event handler called when the value state of the pin input changes.",
+      "description_zh": "当引脚输入的值状态改变时调用的事件处理程序。",
+      "value": ""
+    },
+    {
+      "name": "invalid",
+      "params": "(value: string) => void",
+      "description": "Event handler called when the value is invalid",
+      "description_zh": "值无效时调用的事件处理程序",
+      "value": ""
+    }
+  ],
+  "methods": [],
+  "suggestions": [
+    "TagsInputItem",
+    "TagsInputInput",
+    "TagsInputClear"
+  ],
+  "link": "https://www.radix-vue.com/utilities/tags-input.html",
+  "link_zh": "https://www.radix-vue.com/utilities/tags-input.html"
+}
