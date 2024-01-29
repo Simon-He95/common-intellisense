@@ -585,5 +585,5 @@ export function radixVue1Components() {
     [RadioGroupItem, '一组可检查的按钮（称为单选按钮），一次只能选中一个按钮', '<RadioGroupItem></RadioGroupItem>'],
     [RadioGroupRoot, '一组可检查的按钮（称为单选按钮），一次只能选中一个按钮', '<RadioGroupRoot></RadioGroupRoot>'],
   ]
-  return componentsReducer(map, false, '', 'radix-vue')
+  return componentsReducer(map, false, '', 'radix-vue', true)
 }

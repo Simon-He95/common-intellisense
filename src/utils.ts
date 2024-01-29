@@ -51,8 +51,11 @@ export function transformVue(code: string, position: vscode.Position) {
     return
   const _script = script || scriptSetup
   if (!template) {
-    if (_script?.lang === 'tsx')
-      return parserJSX(_script.content, position)
+    if (_script?.lang === 'tsx') {
+      const r = parserJSX(_script.content, position)
+      r.loc = _script.loc
+      return r
+    }
     return
   }
   if (_script && isInPosition(_script.loc, position)) {
@@ -72,7 +75,13 @@ export function transformVue(code: string, position: vscode.Position) {
     return
   // 在template中
   const { ast } = template
-  return dfs(ast.children, template, position)
+
+  const r = dfs(ast.children, template, position)
+  if (r) {
+    r.loc = _script?.loc
+    return r
+  }
+  return r
 }
 
 function dfs(children: any, parent: any, position: vscode.Position) {

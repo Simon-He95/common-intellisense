@@ -62,7 +62,7 @@ export function activate(context: vscode.ExtensionContext) {
       findUI()
   }))
 
-  context.subscriptions.push(registerCommand('common-intellisense.import', (params) => {
+  context.subscriptions.push(registerCommand('common-intellisense.import', (params, loc) => {
     if (!params)
       return
     const [data, lib] = params
@@ -94,9 +94,29 @@ export function activate(context: vscode.ExtensionContext) {
     }
     else {
       // 顶部导入
-      const str = `import { ${deps.join(', ')} } from '${lib}'\n`
+      let str = `import { ${deps.join(', ')} } from '${lib}'\n`
+      const isVue = getActiveTextEditorLanguageId() === 'vue'
+      let pos: any = null
+      if (isVue) {
+        if (loc) {
+          pos = createPosition(loc.start.line, 0)
+        }
+        else {
+          const match = code.match(/<script[^>]*>/)
+          if (match) {
+            const offset = match.index! + match[0].length
+            pos = getPosition(offset)
+            str = `\n${str}`
+          }
+          else {
+            pos = createPosition(0, 0)
+            str = `<script setup>\n${str}</script>`
+          }
+        }
+      }
+      else { pos = createPosition(0, 0) }
       updateText((edit) => {
-        edit.insert(createPosition(0, 0), str)
+        edit.insert(pos, str)
       })
     }
   }))
@@ -312,11 +332,13 @@ export function activate(context: vscode.ExtensionContext) {
           data.forEach((child: any) => {
             const label = child.label.split(' ')[0]
             child.sortText = suggestions.includes(label) ? '1' : '2'
+            child.loc = result.loc
           })
         }
         else {
           data.forEach((child: any) => {
             child.sortText = '2'
+            child.loc = result.loc
           })
         }
       }
@@ -328,7 +350,7 @@ export function activate(context: vscode.ExtensionContext) {
       item.command = {
         title: 'common-intellisense-import',
         command: 'common-intellisense.import',
-        arguments: [item.params],
+        arguments: [item.params, item.loc],
       }
     }
     else {
@@ -617,7 +639,7 @@ function getHoverAttribute(attributeList: any[], attr: string) {
 
 const IMPORT_UI_REG = /import\s+{([^\}]+)}\s+from\s+['"]([^"']+)['"]/g
 
-const DEMAND_UI = ['antd', '@nextui-org/react', '@arco-design/web-react']
+const DEMAND_UI = ['antd', '@nextui-org/react', '@arco-design/web-react', 'radix-vue']
 function getImportUiComponents(text: string) {
   // 读取需要按需导入的ui库， 例如 antd ,拿出导入的components
   const deps: Record<string, any> = {}
