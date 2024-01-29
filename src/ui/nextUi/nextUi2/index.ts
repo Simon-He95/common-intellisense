@@ -49,6 +49,7 @@ import ShadowScroll from './ShadowScroll.json'
 import Skeleton from './Skeleton.json'
 import Snippet from './Snippet.json'
 import Spacer from './Spacer.json'
+import Spinner from './Spinner.json'
 import Switch from './Switch.json'
 import Tab from './Tab.json'
 import Table from './Table.json'
@@ -114,6 +115,7 @@ export function nextui2() {
     Skeleton,
     Snippet,
     Spacer,
+    Spinner,
     Switch,
     Tab,
     Table,
@@ -382,6 +384,11 @@ export function nextui2Components() {
       Spacer,
       'Spacer',
       '<Spacer></Spacer>',
+    ],
+    [
+      Spinner,
+      'Spinner',
+      '<Spinner></Spinner>',
     ],
     [
       Switch,
