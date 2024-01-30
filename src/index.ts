@@ -122,6 +122,7 @@ export function activate(context: vscode.ExtensionContext) {
   }))
 
   findUI()
+  // 监听pkg变化
   if (isShowSlots) {
     context.subscriptions.push(registerCommand('common-intellisense.slots', (child, name, offset = 0) => {
       if (!child && UiCompletions) {
@@ -463,29 +464,32 @@ export function deactivate() {
   completionsCallbacks = null
 }
 
-const filters = ['js', 'ts', 'jsx', 'tsx', 'vue', 'svelte']
-const urlCache = new Map()
-function findUI() {
+// const filters = ['js', 'ts', 'jsx', 'tsx', 'vue', 'svelte']
+export const urlCache = new Map()
+export function findUI() {
   UINames = []
   optionsComponents = null
   UiCompletions = null
+  eventCallbacks.clear()
+  completionsCallbacks.clear()
+  currentPkgUiNames = null
+  cacheMap.clear()
 
   const selectedUIs = getConfiguration('common-intellisense.ui') as string[]
 
   const cwd = vscode.window.activeTextEditor?.document.uri.fsPath
-  const suffix = cwd?.split('.').slice(-1)[0]
-  if (!suffix || !filters.includes(suffix))
-    return
+  // const suffix = cwd?.split('.').slice(-1)[0]
 
   if (urlCache.has(cwd)) {
     const uis = urlCache.get(cwd)
-    updateCompletions(uis)
+    if (uis.length)
+      updateCompletions(uis)
     return
   }
 
   findPkgUI(cwd).then(({ uis }: any) => {
     urlCache.set(cwd, uis)
-    if (!uis)
+    if (!uis || !uis.length)
       return
     updateCompletions(uis)
   })

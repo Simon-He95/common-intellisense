@@ -4,11 +4,11 @@ import { parse } from '@vue/compiler-sfc'
 import type { SFCTemplateBlock } from '@vue/compiler-sfc'
 import { parse as tsParser } from '@typescript-eslint/typescript-estree'
 import { findUp } from 'find-up'
-import { createRange, getActiveText, getActiveTextEditorLanguageId, getLocale, getOffsetFromPosition, registerCodeLensProvider } from '@vscode-use/utils'
+import { createRange, getActiveText, getActiveTextEditorLanguageId, getLocale, getOffsetFromPosition, registerCodeLensProvider, watchFiles } from '@vscode-use/utils'
 import { traverse } from '@babel/types'
 import { UINames } from './constants'
 import { toCamel } from './ui/utils'
-import { findDynamicComponent } from '.'
+import { findDynamicComponent, findUI, urlCache } from '.'
 
 const { parse: svelteParser } = require('svelte/compiler')
 
@@ -415,12 +415,21 @@ export function parserSvelte(code: string, position: vscode.Position) {
   }
 }
 
+let stop: any = null
 export async function findPkgUI(cwd?: string) {
   if (!cwd)
     return
   const pkg = await findUp('package.json', { cwd })
   if (!pkg)
     return
+  if (stop)
+    stop()
+  stop = watchFiles(pkg, {
+    onChange() {
+      urlCache.clear()
+      findUI()
+    },
+  })
   const p = JSON.parse(await fsp.readFile(pkg, 'utf-8'))
   const { dependencies, devDependencies } = p
   const result = []
@@ -609,7 +618,7 @@ async function getTemplateAst(UiCompletions: any): Promise<[any, number?] | []> 
 }
 const originTag = ['div', 'span', 'ul', 'li', 'ol', 'p', 'main', 'header', 'footer', 'template']
 
-async function findUiTag(children: any, UiCompletions: any, result: any[] = []) {
+async function findUiTag(children: any, UiCompletions: any, result: any[] = [], cacheMap = new Set()) {
   for (const child of children) {
     let tag: string = child.tag
     if (child.type === 'JSXElement')
@@ -620,14 +629,18 @@ async function findUiTag(children: any, UiCompletions: any, result: any[] = []) 
     const nextChildren = child.children
 
     if (nextChildren?.length)
-      await findUiTag(nextChildren, UiCompletions, result)
+      await findUiTag(nextChildren, UiCompletions, result, cacheMap)
+    const range = child.range
 
+    if (cacheMap.has(range))
+      continue
     if (originTag.includes(tag))
       continue
     const tagName = toCamel(`-${tag}`)
     const target = UiCompletions[tagName] || await findDynamicComponent(tagName, {})
     if (!target || !target.rawSlots?.length)
       continue
+    cacheMap.add(range)
     result.push({
       child,
       slots: target.rawSlots,
