@@ -1,0 +1,228 @@
+{
+  "name": "VCalendar",
+  "props": {
+    "allowed-dates": {
+      "default": "undefined",
+      "value": "",
+      "type": "unknown[] | ((date: unknown) => boolean)",
+      "description": "Determine the dates you can choose from.",
+      "description_zh": "确定可选择的日期。"
+    },
+    "day": {
+      "default": "{}",
+      "value": "",
+      "type": "unknown",
+      "description": "Represents a specific date associated with the time interval.",
+      "description_zh": "代表与时间间隔相关的具体日期。"
+    },
+    ":day-index": {
+      "default": "undefined",
+      "value": "",
+      "type": "number",
+      "description": "Index of the day this interval is a part of, in a week or month view.",
+      "description_zh": "此区间所属日期的索引，以周或月视图表示。"
+    },
+    "disabled": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Remove the component's click or target functionality.",
+      "description_zh": "移除组件的单击或 target 功能。"
+    },
+    "display-value": {
+      "default": "undefined",
+      "value": "",
+      "type": "unknown",
+      "description": "Value to display for the component, possibly a formatted date.",
+      "description_zh": "要为组件显示的值，可能是格式化的日期。"
+    },
+    "events": {
+      "default": "undefined",
+      "value": "",
+      "type": "any[]",
+      "description": "Array of events specific to this interval.",
+      "description_zh": "特定于此间隔的事件数组。"
+    },
+    "hide-day-header": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Determines whether the day header is visible in the calendar day view.",
+      "description_zh": "确定日期标题在日历日视图中是否可见。"
+    },
+    "hide-header": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Determines whether the header is hidden in the calendar view.",
+      "description_zh": "确定标题是否在日历视图中隐藏。"
+    },
+    "hide-week-number": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Toggles the display of week numbers in a calendar view.",
+      "description_zh": "切换日历视图中周数的显示。"
+    },
+    ":interval-divisions": {
+      "default": "2",
+      "value": "",
+      "type": "number",
+      "description": "Number of subdivisions within this interval.",
+      "description_zh": "此间隔内的细分数。"
+    },
+    ":interval-duration": {
+      "default": "60",
+      "value": "",
+      "type": "number",
+      "description": "Duration of this specific interval in minutes.",
+      "description_zh": "此特定时间间隔的持续时间（以分钟为单位）。"
+    },
+    "interval-format": {
+      "default": "'fullTime12h'",
+      "value": "",
+      "type": "string | Function",
+      "description": "Formatting rule for displaying the interval, as a string or function.",
+      "description_zh": "用于将间隔显示为字符串或函数的格式规则。"
+    },
+    ":interval-height": {
+      "default": "48",
+      "value": "",
+      "type": "number",
+      "description": "Height of the interval in pixels in the calendar view.",
+      "description_zh": "日历视图中间隔的高度（以像素为单位）。"
+    },
+    ":intervals": {
+      "default": "24",
+      "value": "",
+      "type": "number",
+      "description": "Total number of intervals in a day view.",
+      "description_zh": "日视图中的间隔总数。"
+    },
+    ":interval-start": {
+      "default": "0",
+      "value": "",
+      "type": "number",
+      "description": "Starting time for this specific interval.",
+      "description_zh": "此特定时间间隔的开始时间。"
+    },
+    "max": {
+      "default": "undefined",
+      "value": "",
+      "type": "unknown",
+      "description": "Maximum date or value that can be selected.",
+      "description_zh": "可以选择的最大日期或值。"
+    },
+    "min": {
+      "default": "undefined",
+      "value": "",
+      "type": "unknown",
+      "description": "Minimum date or value that can be selected.",
+      "description_zh": "可以选择的最小日期或值。"
+    },
+    ":v-model": {
+      "default": "undefined",
+      "value": "",
+      "type": "unknown[]",
+      "description": "The value of the component v-mode. If the component supports variants, the default is an empty array.",
+      "description_zh": "组件 v-mode 的值。如果组件支持多属性，默认为空数组。"
+    },
+    "month": {
+      "default": "undefined",
+      "value": "",
+      "type": "string | number",
+      "description": "Specifies the month for the calendar view.",
+      "description_zh": "指定日历视图的月份。"
+    },
+    "next-icon": {
+      "default": "'$next'",
+      "value": "",
+      "type": "string",
+      "description": "The icon to use for the next button.",
+      "description_zh": "用于下一个按钮的图标。"
+    },
+    "prev-icon": {
+      "default": "'$prev'",
+      "value": "",
+      "type": "string",
+      "description": "The icon to use for the prev button.",
+      "description_zh": "用于上一个按钮的图标。"
+    },
+    "show-adjacent-months": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Shows or hides days from adjacent months.",
+      "description_zh": "显示或隐藏相邻月份的天数。"
+    },
+    "text": {
+      "default": "'$vuetify.calendar.today'",
+      "value": "",
+      "type": "string",
+      "description": "Sets the content text of the component.",
+      "description_zh": "设置组件的内容文本。"
+    },
+    "title": {
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "description": "Specify a title text for the component.",
+      "description_zh": "指定组件的标题文本。"
+    },
+    "view-mode": {
+      "default": "'month'",
+      "value": "",
+      "type": "'month' | 'day' | 'week'",
+      "description": "The current view mode of the calendar.",
+      "description_zh": "日历的当前视图模式。"
+    },
+    "weekdays": {
+      "default": "[0, 1, 2, 3, 4, 5, 6]",
+      "value": "",
+      "type": "number[]",
+      "description": "Specifies which days of the week to display.",
+      "description_zh": "指定要显示一周中的哪几天。"
+    },
+    "year": {
+      "default": "undefined",
+      "value": "",
+      "type": "string | number",
+      "description": "Specifies the year for the calendar view.",
+      "description_zh": "指定日历视图的年份。"
+    }
+  },
+  "link": "https://vuetifyjs.com/zh-Hans/api/v-calendar/#links",
+  "link_zh": "https://vuetifyjs.com/zh-Hans/api/v-calendar/#links",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "next",
+      "description": "Emitted when moving to the next time period.",
+      "description_zh": "移动到下一个时间段时发出。",
+      "params": "any[]",
+      "value": ""
+    },
+    {
+      "name": "prev",
+      "description": "Emitted when moving to the previous time period.",
+      "description_zh": "移动到上一个时间段时发出。",
+      "params": "any[]",
+      "value": ""
+    },
+    {
+      "name": "update:modelValue",
+      "description": "An event that is raised when a component's model-value changes.",
+      "description_zh": "当组件的 model-value 更改时引发的事件。",
+      "params": "any[]",
+      "value": ""
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "header",
+      "description": "Slot for custom header content.",
+      "description_zh": "用于自定义标题内容的插槽。"
+    }
+  ]
+}

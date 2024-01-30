@@ -2,264 +2,297 @@
   "name": "VListItem",
   "props": {
     "active": {
+      "default": "undefined",
       "value": "",
-      "description": "Controls the active status of the project. Typically used to highlight components",
-      "default": "false",
       "type": "boolean",
-      "description_zh": "控制项目的 active 状态。 通常用于突出显示组件"
+      "description": "Control the active state of the item. This is typically used to highlight components.",
+      "description_zh": "控制项的 active 状态。这通常用于高亮显示组件。"
     },
     "active-class": {
-      "value": "",
-      "description": "The class that is applied when the component is in the active state",
       "default": "undefined",
+      "value": "",
       "type": "string",
-      "description_zh": "当组件处于 active 状态时应用的类"
+      "description": "The class applied to the component when it matches the current route. Find more information about the active-class prop on the vue-router documentation.",
+      "description_zh": "当组件与当前路由匹配时应用于组件的类。在 vue-router 文档中找到更多关于 active-class 属性的信息。"
     },
     "active-color": {
-      "value": "",
-      "description": "The color applied when the component is in the active state",
       "default": "undefined",
+      "value": "",
       "type": "string",
-      "description_zh": "当组件处于 active 状态时应用的颜色"
+      "description": "The applied color when the component is in an active state.",
+      "description_zh": "组件处于活动状态时应用的颜色。"
     },
     "append-avatar": {
-      "value": "",
-      "description": "Create a v-avatar component after the default contents of the append slot",
       "default": "undefined",
+      "value": "",
       "type": "string",
-      "description_zh": "在 append 插槽的默认内容后创建一个 v-avatar组件"
+      "description": "Appends a v-avatar component after default content in the append slot.",
+      "description_zh": "在 append 插槽中的默认内容后附加一个 v-avatar 组件。"
     },
     "append-icon": {
-      "value": "",
-      "description": "Create a v-icon component after the default contents of the append slot",
       "default": "undefined",
-      "type": "string | (string | [string, number])[] | (new () => any) | FunctionalComponent",
-      "description_zh": "在 append 插槽的默认内容后创建一个 v-icon组件"
+      "value": "",
+      "type": "any",
+      "description": "Creates a v-icon component after default content in the append slot.",
+      "description_zh": "在追加槽中的默认内容之后创建一个 v-icon 组件。"
     },
-    "base-color": {
-      "value": "",
-      "description": "MISSING DESCRIPTION",
+    "base-color3.3.0 版本的新特色": {
       "default": "undefined",
+      "value": "",
       "type": "string",
-      "description_zh": "缺少描述"
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "缺少描述 （在 github 中编辑）"
     },
     "border": {
-      "value": "",
-      "description": "Apply a border style to the component.",
       "default": "false",
+      "value": "",
       "type": "string | number | boolean",
+      "description": "Apply a border style to the component.",
       "description_zh": "应用边框样式到组件。"
     },
     "color": {
-      "value": "",
-      "description": "Specify the control color, which can be any Material color (e.g. success or purple) or Css color (e.g. #033 or rgba (255, 0, 0, 0.5)). You can find a list of built-in color classes in the Colors page.",
       "default": "undefined",
+      "value": "",
       "type": "string",
-      "description_zh": "指定控件颜色，颜色值可以是任意 Material 颜色（例如 success 或者 purple ）也可以是 Css 颜色 （例如 #033 或者 rgba(255, 0, 0, 0.5)）。在 颜色页中可以找到内置的颜色类列表。"
+      "description": "Applies specified color to the control when in an active state or input-value is true - supports utility colors (for example success or purple) or css color (for example success or purple) or css color (#033 or rgba(255, 0, 0, 0.5)). Find a list of built-in classes on the colors page,",
+      "description_zh": "当处于活动状态或输入值为 true 时，将指定的颜色应用于控件 - 支持实用程序颜色（例如，成功或紫色）或 css 颜色（例如，成功或紫色）或 css 颜色（#033 或 rgba（255， 0， 0， 0.5））。在颜色页面上查找内置类列表，"
     },
     "density": {
-      "value": ["default", "comfortable", "compact"],
-      "description": "Adjusts the vertical height used by the component.",
-      "default": "default",
+      "default": "'default'",
+      "value": "",
       "type": "'default' | 'comfortable' | 'compact'",
+      "description": "Adjusts the vertical height used by the component.",
       "description_zh": "调整组件使用的垂直高度。"
     },
     "disabled": {
-      "value": "",
-      "description": "Remove the ability to click or select a component to make it unavailable.",
       "default": "false",
+      "value": "",
       "type": "boolean",
-      "description_zh": "移除单击组件或选中组件的能力，将组件设置为不可用状态。"
+      "description": "Remove the component's click or target functionality.",
+      "description_zh": "移除组件的单击或 target 功能。"
     },
     "elevation": {
-      "value": "",
-      "description": "The elevation of the component is acceptable from 0 to 24. You can find more information on the elevation page.",
       "default": "undefined",
+      "value": "",
       "type": "string | number",
-      "description_zh": "组件的海拔可接受 0 到 24 之间的值。你可以在 elevation page浏览更多信息。"
+      "description": "The elevation of the component is acceptable from 0 to 24. You can read more on the Elevation page.",
+      "description_zh": "组件的海拔可接受 0 到 24 之间的值。你可以在 elevation page 浏览更多信息。"
     },
     "exact": {
-      "value": "",
-      "description": "Exact match link. Without this link, '/' will match each route. You can read more about Exactprop in the vue-router documentation.",
       "default": "false",
+      "value": "",
       "type": "boolean",
-      "description_zh": "完全匹配链接。如果没有这个链接，‘/’ 将匹配每个路由。你能够在 vue-router 文档浏览更多 exactprop。"
+      "description": "Exact match link. Without this link, '/' will match each route. You can read more exact props in the vue-router documentation.",
+      "description_zh": "完全匹配链接。如果没有这个链接，‘/’ 将匹配每个路由。你能够在 vue-router 文档浏览更多 exact prop。"
     },
     "height": {
-      "value": "",
-      "description": "Sets the height of the component.",
       "default": "undefined",
+      "value": "",
       "type": "string | number",
+      "description": "Sets the height of the component.",
       "description_zh": "设定组件的高度。"
     },
     "href": {
-      "value": "",
-      "description": "Specify the component as an anchor and apply the href attribute.",
       "default": "undefined",
+      "value": "",
       "type": "string",
+      "description": "Specify the component as the anchor and apply the href attribute.",
       "description_zh": "指定组件为锚点并应用 href 属性。"
     },
     "lines": {
-      "value": ["one", "two", "three"],
-      "description": "MISSING DESCRIPTION (edit in github)",
       "default": "undefined",
+      "value": "",
       "type": "'one' | 'two' | 'three'",
+      "description": "MISSING DESCRIPTION (edit in github)",
       "description_zh": "缺少描述 （在 github 中编辑）"
     },
     "link": {
+      "default": "undefined",
       "value": "",
-      "description": "Designates that the component is a link. This is automatic when using the href or to prop.",
-      "default": "false",
       "type": "boolean",
+      "description": "Designates that the component is a link. This is automatic when using the href or to prop.",
       "description_zh": "指定组件是链接。当使用 href 或 to prop 时，这是自动的。"
     },
     "max-height": {
-      "value": "",
-      "description": "Sets the maximum height of the component.",
       "default": "undefined",
+      "value": "",
       "type": "string | number",
+      "description": "Sets the maximum height of the component.",
       "description_zh": "设定组件的最大高度。"
     },
     "max-width": {
-      "value": "",
-      "description": "Sets the maximum width of the component.",
       "default": "undefined",
+      "value": "",
       "type": "string | number",
+      "description": "Sets the maximum width of the component.",
       "description_zh": "设定组件的最大宽度。"
     },
     "min-height": {
-      "value": "",
-      "description": "Sets the minimum height of the component.",
       "default": "undefined",
+      "value": "",
       "type": "string | number",
+      "description": "Sets the minimum height of the component.",
       "description_zh": "设定组件的最小高度。"
     },
     "min-width": {
-      "value": "",
-      "description": "Sets the minimum width of the component.",
       "default": "undefined",
+      "value": "",
       "type": "string | number",
+      "description": "Sets the minimum width of the component.",
       "description_zh": "设定组件的最小宽度。"
     },
     "nav": {
-      "value": "",
-      "description": "Another style can reduce the width of the v-list-item and round it. Usually used with v-navigation-drawer",
       "default": "false",
+      "value": "",
       "type": "boolean",
-      "description_zh": "另一种样式可以减小 v-list-item 的宽度并圆角化。 通常与 v-navigation-drawer一起使用"
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "缺少描述 （在 github 中编辑）"
     },
     "prepend-avatar": {
-      "value": "",
-      "description": "Create a v-avatar component before the default content of the prepend slot",
       "default": "undefined",
+      "value": "",
       "type": "string",
-      "description_zh": "在 prepend 插槽的默认内容前创建一个 v-avatar组件"
+      "description": "Prepends a v-avatar component in the prepend slot before default content.",
+      "description_zh": "在默认内容之前的 prepend 插槽中预置 v-avatar 组件。"
     },
     "prepend-icon": {
-      "value": "",
-      "description": "Create a v-icon component before the default content of the prepend slot",
       "default": "undefined",
-      "type": "string | (string | [string, number])[] | (new () => any) | FunctionalComponent",
-      "description_zh": "在 prepend 插槽的默认内容前创建一个 v-icon组件"
+      "value": "",
+      "type": "any",
+      "description": "Creates a v-icon component in the prepend slot before default content.",
+      "description_zh": "在默认内容前面的预置槽中创建一个 v-icon 组件。"
     },
     "replace": {
-      "value": "",
-      "description": "Setting the replace property will call router.replace() instead of router.push() on click, so navigation doesn't leave a history. You can explore more replaceprops in the vue-router documentation.",
       "default": "false",
+      "value": "",
       "type": "boolean",
-      "description_zh": "设置 replace 属性会在点击时调用 router.replace() 而不是 router.push()，这样导航就不会留下历史记录。您可以在 vue-router 文档中浏览更多 replaceprop。"
+      "description": "Setting replace prop will call router.replace() instead of router.push() when clicked, so the navigation will not leave a history record. You can find more information about the replace prop on the vue-router documentation.",
+      "description_zh": "设置 replace prop 会在点击时调用 router.replace（） 而不是 router.push（），因此导航不会留下历史记录。你可以在 vue-router 文档中找到更多关于 replace 属性的信息。"
     },
     "ripple": {
-      "value": "",
-      "description": "Apply the v-ripple directive.",
       "default": "true",
+      "value": "",
       "type": "boolean | { class: string }",
-      "description_zh": "应用 v-ripple指令。"
+      "description": "Apply the v-ripple directive.",
+      "description_zh": "应用 v-ripple 指令。"
     },
     "rounded": {
+      "default": "undefined",
       "value": "",
-      "description": "Applies the border-radius style to the specified component. You can get more information about this on the Corner Radius of Borders page",
-      "default": "false",
       "type": "string | number | boolean",
-      "description_zh": "对指定的组件应用 border-radius 样式。您可以在 边框的圆角半径页面获取更多有关信息"
+      "description": "Applies the border-radius style to the specified component. You can get more information about this on the Corner Radius of Borders page",
+      "description_zh": "对指定的组件应用 border-radius 样式。您可以在 边框的圆角半径页面 获取更多有关信息"
+    },
+    "slim": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "缺少描述 （在 github 中编辑）"
     },
     "subtitle": {
+      "default": "undefined",
       "value": "",
+      "type": "string | number",
       "description": "Specify a subtitle text for the component.",
-      "default": "false",
-      "type": "string | number | boolean",
       "description_zh": "指定组件的副标题文本。"
     },
     "tag": {
+      "default": "'div'",
       "value": "",
-      "description": "Specifies the custom tag to be used on the root element.",
-      "default": "button",
       "type": "string",
+      "description": "Specifies the custom tag to be used on the root element.",
       "description_zh": "指定在根元素上使用的自定义标签。"
     },
     "theme": {
-      "value": "",
-      "description": "Specifies the theme of this component and all of its subcomponents",
       "default": "undefined",
+      "value": "",
       "type": "string",
-      "description_zh": "指定此组件及其所有子组件的主题"
+      "description": "Specify a theme for this component and all of its children.",
+      "description_zh": "为此组件及其所有子组件指定主题。"
     },
     "title": {
+      "default": "undefined",
       "value": "",
-      "description": "Generates a v-list-item-title component with the supplied value",
-      "default": "false",
-      "type": "string | number | boolean",
-      "foreach": true,
-      "description_zh": "使用提供的值生成 v-list-item-title 组件",
+      "type": "string | number",
+      "description": "Generates a v-list-item-title component with the supplied value. Note that this overrides the native title attribute, that must be set with v-bind:title.attr instead.",
+      "description_zh": "使用提供的值生成 v-list-item-title 组件。请注意，这将覆盖本机 title 属性，该属性必须改用 v-bind：title.attr 进行设置。",
       "required": true
     },
     "to": {
-      "value": "",
-      "description": "Indicates the target route of the link. You can read more about toprops in the vue-router documentation",
       "default": "undefined",
-      "type": "unknown",
-      "description_zh": "表示链接的目标路由。你可以在 vue-router 文档浏览更多 toprop"
+      "value": "",
+      "type": "RouteLocationRaw",
+      "description": "Indicates the target route of the link. You can read more about to props in the vue-router documentation.",
+      "description_zh": "表示链接的目标路由。你可以在 vue-router 文档浏览更多 to prop。"
     },
     "value": {
-      "value": "",
-      "description": "The value used for selection.",
       "default": "undefined",
+      "value": "",
       "type": "any",
+      "description": "The value used for selection.",
       "description_zh": "用于选择的值。"
     },
     "variant": {
-      "value": ["text", "flat", "elevated", "tonal", "outlined", "plain"],
-      "description": "Applies the border-radius style to the specified component. You can get more information about this on the Corner Radius of Borders page",
-      "default": "false",
-      "type": "'text' | 'flat' | 'elevated' | 'tonal' | 'outlined' | 'plain'",
-      "description_zh": "对指定的组件应用 border-radius 样式。您可以在 边框的圆角半径页面获取更多有关信息"
+      "default": "'text'",
+      "value": "",
+      "type": "'flat' | 'elevated' | 'tonal' | 'outlined' | 'text' | 'plain'",
+      "description": "Applies a distinct style to the component.",
+      "description_zh": "对组件应用不同的样式。"
     },
     "width": {
-      "value": "",
-      "description": "Sets the width of the component.",
       "default": "undefined",
+      "value": "",
       "type": "string | number",
+      "description": "Sets the width of the component.",
       "description_zh": "设定组件的宽度。"
     }
   },
-  "methods": [],
+  "link": "https://vuetifyjs.com/zh-Hans/api/v-list-item/#links",
+  "link_zh": "https://vuetifyjs.com/zh-Hans/api/v-list-item/#links",
   "typeDetail": {},
   "events": [
     {
       "name": "click",
-      "description": "MISSING DESCRIPTION (edit in github)",
+      "description": "Event that is emitted when the component is clicked.",
+      "description_zh": "单击组件时发出的事件。",
       "params": "[MouseEvent | KeyboardEvent]",
-      "description_zh": "缺少描述 （在 github 中编辑）",
       "value": ""
     },
     {
       "name": "clickOnce",
       "description": "MISSING DESCRIPTION (edit in github)",
-      "params": "never",
       "description_zh": "缺少描述 （在 github 中编辑）",
+      "params": "[MouseEvent]",
       "value": ""
     }
   ],
-  "link": "https://vuetifyjs.com/en/api/v-list/",
-  "link_zh": "https://vuetifyjs.com/zh-Hans/api/v-list/"
+  "methods": [],
+  "slots": [
+    {
+      "name": "append",
+      "description": "Adds an item inside the input and after input content.",
+      "description_zh": "在输入内容内部和之后添加一个项目。"
+    },
+    {
+      "name": "default",
+      "description": "Default Vue slot.",
+      "description_zh": "默认Vue 插槽。"
+    },
+    {
+      "name": "prepend",
+      "description": "Adds an item outside the input and before input content.",
+      "description_zh": "在输入内容之外和输入内容之前添加一个项目。"
+    },
+    {
+      "name": "subtitle",
+      "description": "Slot for the component’s subtitle content.",
+      "description_zh": "组件字幕内容的插槽。"
+    },
+    {
+      "name": "title",
+      "description": "Slot for the component’s title content.",
+      "description_zh": "组件标题内容的槽。"
+    }
+  ]
 }

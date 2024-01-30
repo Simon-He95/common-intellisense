@@ -2,58 +2,85 @@
   "name": "VCardItem",
   "props": {
     "append-avatar": {
-      "value": "",
-      "description": "Create a v-avatar component after the default contents of the append slot",
       "default": "undefined",
+      "value": "",
       "type": "string",
-      "description_zh": "在 append 插槽的默认内容后创建一个 v-avatar组件"
+      "description": "Appends a v-avatar component after default content in the append slot.",
+      "description_zh": "在 append 插槽中的默认内容后附加一个 v-avatar 组件。"
     },
     "append-icon": {
-      "value": "",
-      "description": "Create a v-icon component after the default contents of the append slot",
       "default": "undefined",
-      "type": "string | (string | [string, number])[] | (new () => any) | FunctionalComponent",
-      "description_zh": "在 append 插槽的默认内容后创建一个 v-icon组件"
+      "value": "",
+      "type": "any",
+      "description": "Creates a v-icon component after default content in the append slot.",
+      "description_zh": "在追加槽中的默认内容之后创建一个 v-icon 组件。"
     },
     "density": {
-      "value": ["default", "comfortable", "compact"],
-      "description": "Adjusts the vertical height used by the component.",
-      "default": "default",
+      "default": "'default'",
+      "value": "",
       "type": "'default' | 'comfortable' | 'compact'",
+      "description": "Adjusts the vertical height used by the component.",
       "description_zh": "调整组件使用的垂直高度。"
     },
     "prepend-avatar": {
-      "value": "",
-      "description": "Create a v-avatar component before the default content of the prepend slot",
       "default": "undefined",
+      "value": "",
       "type": "string",
-      "description_zh": "在 prepend 插槽的默认内容前创建一个 v-avatar组件"
+      "description": "Prepends a v-avatar component in the prepend slot before default content.",
+      "description_zh": "在默认内容之前的 prepend 插槽中预置 v-avatar 组件。"
     },
     "prepend-icon": {
-      "value": "",
-      "description": "Create a v-icon component before the default content of the prepend slot",
       "default": "undefined",
-      "type": "string | (string | [string, number])[] | (new () => any) | FunctionalComponent",
-      "description_zh": "在 prepend 插槽的默认内容前创建一个 v-icon组件"
+      "value": "",
+      "type": "any",
+      "description": "Creates a v-icon component in the prepend slot before default content.",
+      "description_zh": "在默认内容前面的预置槽中创建一个 v-icon 组件。"
     },
     "subtitle": {
-      "value": "",
-      "description": "Specify a subtitle text for the component.",
       "default": "undefined",
-      "type": "string",
+      "value": "",
+      "type": "string | number",
+      "description": "Specify a subtitle text for the component.",
       "description_zh": "指定组件的副标题文本。"
     },
     "title": {
-      "value": "",
-      "description": "Specify a title text for the component.",
       "default": "undefined",
-      "type": "string",
+      "value": "",
+      "type": "string | number",
+      "description": "Specify a title text for the component.",
       "description_zh": "指定组件的标题文本。"
     }
   },
-  "methods": [],
+  "link": "https://vuetifyjs.com/zh-Hans/api/v-card-item/#links",
+  "link_zh": "https://vuetifyjs.com/zh-Hans/api/v-card-item/#links",
   "typeDetail": {},
   "events": [],
-  "link": "https://vuetifyjs.com/en/components/cards/",
-  "link_zh": "https://vuetifyjs.com/en/components/cards/"
+  "methods": [],
+  "slots": [
+    {
+      "name": "append",
+      "description": "Adds an item inside the input and after input content.",
+      "description_zh": "在输入内容内部和之后添加一个项目。"
+    },
+    {
+      "name": "default",
+      "description": "Default Vue slot.",
+      "description_zh": "默认Vue 插槽。"
+    },
+    {
+      "name": "prepend",
+      "description": "Adds an item outside the input and before input content.",
+      "description_zh": "在输入内容之外和输入内容之前添加一个项目。"
+    },
+    {
+      "name": "subtitle",
+      "description": "Slot for the component’s subtitle content.",
+      "description_zh": "组件字幕内容的插槽。"
+    },
+    {
+      "name": "title",
+      "description": "Slot for the component’s title content.",
+      "description_zh": "组件标题内容的槽。"
+    }
+  ]
 }

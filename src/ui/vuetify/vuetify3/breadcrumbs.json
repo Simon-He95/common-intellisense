@@ -3,89 +3,117 @@
   "props": {
     "active-class": {
       "default": "undefined",
-      "description": "The class applied to the component when it is in an active state.",
+      "value": "",
       "type": "string",
-      "description_zh": "当组件处于活动状态时应用于组件的类。",
-      "value": ""
+      "description": "The class applied to the component when it is in an active state.",
+      "description_zh": "当组件处于活动状态时应用于组件的类。"
     },
     "active-color": {
       "default": "undefined",
-      "description": "The applied color when the component is in an active state.",
+      "value": "",
       "type": "string",
-      "description_zh": "组件处于活动状态时应用的颜色。",
-      "value": ""
+      "description": "The applied color when the component is in an active state.",
+      "description_zh": "组件处于活动状态时应用的颜色。"
     },
     "bg-color": {
       "default": "undefined",
-      "description": "Applies specified color to the control’s background. Used on components that also support the color prop. - supports utility colors (for example success or purple) or css color (#033 or rgba(255, 0, 0, 0.5)). Find a list of built-in classes on the colors page.",
+      "value": "",
       "type": "string",
-      "description_zh": "将指定的颜色应用于控件的背景。用于也支持 color 属性的组件。- 支持实用程序颜色（例如成功或紫色）或 CSS 颜色（#033 或 rgba（255， 0， 0， 0.5））。在颜色页面上查找内置类的列表。",
-      "value": ""
+      "description": "Applies specified color to the control’s background. Used on components that also support the color prop. - supports utility colors (for example success or purple) or css color (#033 or rgba(255, 0, 0, 0.5)). Find a list of built-in classes on the colors page.",
+      "description_zh": "将指定的颜色应用于控件的背景。用于也支持 color 属性的组件。- 支持实用程序颜色（例如成功或紫色）或 CSS 颜色（#033 或 rgba（255， 0， 0， 0.5））。在颜色页面上查找内置类的列表。"
     },
     "color": {
       "default": "undefined",
-      "description": "Applies specified color to the control - supports utility colors (for example success or purple) or css color (for example success or purple) or css color (#033 or rgba(255, 0, 0, 0.5)). Find a list of built-in classes on the colors page.",
+      "value": "",
       "type": "string",
-      "description_zh": "将指定的颜色应用于控件 - 支持实用程序颜色（例如，成功或紫色）或 css 颜色（例如，成功或紫色）或 css 颜色（#033 或 rgba（255， 0， 0， 0.5））。在颜色页面上查找内置类的列表。",
-      "value": ""
+      "description": "Applies specified color to the control - supports utility colors (for example success or purple) or css color (for example success or purple) or css color (#033 or rgba(255, 0, 0, 0.5)). Find a list of built-in classes on the colors page.",
+      "description_zh": "将指定的颜色应用于控件 - 支持实用程序颜色（例如成功或紫色）或 css 颜色（例如成功或紫色）或 css 颜色（#033 或 rgba（255， 0， 0， 0.5））。在颜色页面上查找内置类的列表。"
     },
     "density": {
-      "default": "default",
-      "description": "Adjusts the vertical height used by the component.",
+      "default": "'default'",
+      "value": "",
       "type": "'default' | 'comfortable' | 'compact'",
-      "description_zh": "调整组件使用的垂直高度。",
-      "value": [
-        "default",
-        "comfortable",
-        "compact"
-      ]
+      "description": "Adjusts the vertical height used by the component.",
+      "description_zh": "调整组件使用的垂直高度。"
     },
     "disabled": {
       "default": "false",
-      "description": "Remove the component's click or target functionality.",
+      "value": "",
       "type": "boolean",
-      "description_zh": "移除组件的单击或 target 功能。",
-      "value": ""
+      "description": "Remove the component's click or target functionality.",
+      "description_zh": "移除组件的单击或 target 功能。"
     },
     "divider": {
       "default": "'/'",
-      "description": "Specifies the separator between items.",
+      "value": "",
       "type": "string",
-      "description_zh": "指定项之间的分隔字符。",
-      "value": ""
+      "description": "Specifies the separator between items.",
+      "description_zh": "指定项之间的分隔字符。"
     },
     "icon": {
       "default": "undefined",
+      "value": "",
+      "type": "any",
       "description": "Assign a v-icon icon to the button.",
-      "type": "string | (string | [string, number])[] | (new () => any) | FunctionalComponent",
-      "description_zh": "为按钮指定一个 v-icon 图标。",
-      "value": ""
+      "description_zh": "为按钮指定一个 v-icon 图标。"
     },
-    "items": {
+    ":items": {
       "default": "[]",
+      "value": "",
+      "type": "(  | string  | (Partial<LinkProps> & { title: string; disabled: boolean }))[]",
       "description": "An array of strings or objects used for automatically generating children components.",
-      "type": "(string | (Partial<LinkProps> & { title: string; disabled?: boolean }))[]",
       "description_zh": "用于自动生成子组件的字符串或对象的数组。",
-      "value": ""
+      "required": true
     },
     "rounded": {
-      "default": "false",
-      "description": "Applies the border-radius style to the specified component. You can get more information about this on the Corner Radius of Borders page",
+      "default": "undefined",
+      "value": "",
       "type": "string | number | boolean",
-      "description_zh": "对指定的组件应用 border-radius 样式。您可以在 边框的圆角半径页面 获取更多有关信息",
-      "value": ""
+      "description": "Applies the border-radius style to the specified component. You can get more information about this on the Corner Radius of Borders page",
+      "description_zh": "对指定的组件应用 border-radius 样式。您可以在 边框的圆角半径页面 获取更多有关信息"
     },
     "tag": {
-      "default": "ul",
-      "description": "Specifies the custom tag to be used on the root element.",
+      "default": "'ul'",
+      "value": "",
       "type": "string",
-      "description_zh": "指定在根元素上使用的自定义标签。",
-      "value": ""
+      "description": "Specifies the custom tag to be used on the root element.",
+      "description_zh": "指定在根元素上使用的自定义标签。"
     }
   },
-  "methods": [],
+  "link": "https://vuetifyjs.com/zh-Hans/api/v-breadcrumbs/#links",
+  "link_zh": "https://vuetifyjs.com/zh-Hans/api/v-breadcrumbs/#links",
   "typeDetail": {},
   "events": [],
-  "link": "https://vuetifyjs.com/en/api/v-breadcrumbs/#links",
-  "link_zh": "https://vuetifyjs.com/zh-Hans/api/v-breadcrumbs/#links"
+  "methods": [],
+  "slots": [
+    {
+      "name": "default",
+      "description": "Default Vue slot.",
+      "description_zh": "默认Vue 插槽。"
+    },
+    {
+      "name": "divider",
+      "description": "Slots for dividers.",
+      "description_zh": "用于分隔器的插槽。"
+    },
+    {
+      "name": "item",
+      "description": "Define a custom item appearance.",
+      "description_zh": "定义自定义项目外观。"
+    },
+    {
+      "name": "prepend",
+      "description": "The slot used for prepend content.",
+      "description_zh": "用于预置内容的槽。"
+    },
+    {
+      "name": "title",
+      "description": "The slot used to display the title of each breadcrumb.",
+      "description_zh": "用于显示每个痕迹导航标题的槽。"
+    }
+  ],
+  "suggestions": [
+    "v-breadcrumbs-item",
+    "v-breadcrumbs-divider"
+  ]
 }

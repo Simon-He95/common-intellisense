@@ -1,0 +1,272 @@
+{
+  "name": "VDataIterator",
+  "props": {
+    "custom-filter": {
+      "default": "undefined",
+      "value": "",
+      "type": "FilterFunction",
+      "description": "Function to filter items.",
+      "description_zh": "筛选项目的功能。"
+    },
+    "custom-key-filter": {
+      "default": "undefined",
+      "value": "",
+      "type": "unknown",
+      "description": "Function used on specific keys within the item object. customFilter is skipped for columns with customKeyFilter specified.",
+      "description_zh": "用于 item 对象中特定键的函数。对于指定了 customKeyFilter 的列，将跳过 customFilter。"
+    },
+    "custom-key-sort": {
+      "default": "undefined",
+      "value": "",
+      "type": "unknown",
+      "description": "Function used on specific keys within the item object. customSort is skipped for columns with customKeySort specified.",
+      "description_zh": "用于 item 对象中特定键的函数。对于指定了 customKeySort 的列，将跳过 customSort。"
+    },
+    "expanded": {
+      "default": "[]",
+      "value": "",
+      "type": "string[]",
+      "description": "Array of expanded items. Can be used with .sync modifier.",
+      "description_zh": "展开项的数组。可与 .sync 修饰符一起使用。"
+    },
+    "expand-on-click": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Expands item when the row is clicked.",
+      "description_zh": "单击行时展开项目。"
+    },
+    "filter-keys": {
+      "default": "undefined",
+      "value": "",
+      "type": "string | string[]",
+      "description": "Array of specific keys to filter on the item.",
+      "description_zh": "要对项目进行筛选的特定键的数组。"
+    },
+    "filter-mode": {
+      "default": "'intersection'",
+      "value": "",
+      "type": "'every' | 'some' | 'union' | 'intersection'",
+      "description": "Controls how the results of customFilter and customKeyFilter are combined. All modes only apply customFilter to columns not specified in customKeyFilter.some: There is at least one match from either the custom filter or the custom key filter.every: All columns match either the custom filter or the custom key filter.union: There is at least one match from the custom filter, or all columns match the custom key filters.intersection: There is at least one match from the custom filter, and all columns match the custom key filters.",
+      "description_zh": "控制 customFilter 和 customKeyFilter 的结果的组合方式。所有模式仅将 customFilter 应用于 customKeyFilter 中未指定的列。some：自定义筛选器或自定义键 filter 中至少有一个匹配项。every：所有列都与自定义筛选器或自定义键 filter 匹配。union：自定义筛选器中至少有一个匹配项，或者所有列都与自定义键 filters.intersection： 自定义筛选器中至少有一个匹配项，并且所有列都与自定义键筛选器匹配。"
+    },
+    "group-by": {
+      "default": "[]",
+      "value": "",
+      "type": "SortItem[]",
+      "description": "Changes which item property should be used for grouping items. Currently only supports a single grouping in the format: group or ['group']. When using an array, only the first element is considered. Can be used with .sync modifier.",
+      "description_zh": "更改应用于对项目进行分组的项属性。目前仅支持以下格式的单个分组：group 或 ['group']。使用数组时，只考虑第一个元素。可与 .sync 修饰符一起使用。"
+    },
+    ":items": {
+      "default": "[]",
+      "value": "",
+      "type": "any[]",
+      "description": "An array of strings or objects used for automatically generating children components.",
+      "description_zh": "用于自动生成子组件的字符串或对象的数组。",
+      "required": true
+    },
+    "item-selectable": {
+      "default": "null",
+      "value": "",
+      "type": "SelectItemKey",
+      "description": "Property on supplied items that contains the boolean value indicating if the item is selectable.",
+      "description_zh": "所提供项的属性，该属性包含指示项是否可选的布尔值。"
+    },
+    "items-per-page": {
+      "default": "5",
+      "value": "",
+      "type": "string | number",
+      "description": "Changes how many items per page should be visible. Can be used with .sync modifier. Setting this prop to -1 will display all items on the page.",
+      "description_zh": "更改每页应可见的项目数。可与 .sync 修饰符一起使用。将此道具设置为 -1 将显示页面上的所有项目。"
+    },
+    "item-value": {
+      "default": "'id'",
+      "value": "",
+      "type": "SelectItemKey",
+      "description": "Property on supplied items that contains its value.",
+      "description_zh": "所提供项的属性，其中包含其值。"
+    },
+    "loading": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "If true and no items are provided, then a loading text will be shown.",
+      "description_zh": "如果为 true 且未提供任何项目，则将显示加载文本。"
+    },
+    ":v-model": {
+      "default": "[]",
+      "value": "",
+      "type": "any[]",
+      "description": "The value of the component v-mode. If the component supports variants, the default is an empty array.",
+      "description_zh": "组件 v-mode 的值。如果组件支持多属性，默认为空数组。"
+    },
+    "multi-sort": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "If true then one can sort on multiple properties.",
+      "description_zh": "如果为 true，则可以对多个属性进行排序。"
+    },
+    "must-sort": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "If true then one can not disable sorting, it will always switch between ascending and descending.",
+      "description_zh": "如果为 true，则不能禁用排序，它将始终在升序和降序之间切换。"
+    },
+    "no-filter": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Disables all item filtering.",
+      "description_zh": "禁用所有项目筛选。"
+    },
+    "page": {
+      "default": "1",
+      "value": "",
+      "type": "string | number",
+      "description": "The current displayed page number (1-indexed).",
+      "description_zh": "当前显示的页码（1 索引）。"
+    },
+    "return-object": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Changes the selection behavior to return the object directly rather than the value specified with item-value.",
+      "description_zh": "更改选择行为以直接返回对象，而不是返回使用 item-value 指定的值。"
+    },
+    "search": {
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "description": "Text input used to filter items.",
+      "description_zh": "用于筛选项目的文本输入。"
+    },
+    "select-strategy": {
+      "default": "'page'",
+      "value": "",
+      "type": "'single' | 'page' | 'all'",
+      "description": "Defines the strategy of selecting items in the list. Possible values are: ‘single’ (only one item can be selected at a time), ‘page’ (‘Select all’ button will select only items on the current page), ‘all’ (‘Select all’ button will select all items in the list).",
+      "description_zh": "定义在列表中选择项的策略。可能的值为：“single”（一次只能选择一个项目）、“page”（“全选”按钮将仅选择当前页面上的项目）、“all”（“全选”按钮将选择列表中的所有项目）。"
+    },
+    "show-expand": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Shows the expand icon.",
+      "description_zh": "显示展开图标。"
+    },
+    "show-select": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Shows the column with checkboxes for selecting items in the list.",
+      "description_zh": "显示带有复选框的列，用于选择列表中的项。"
+    },
+    "sort-by": {
+      "default": "[]",
+      "value": "",
+      "type": "SortItem[]",
+      "description": "Changes which item property (or properties) should be used for sort order. Can be used with .sync modifier.",
+      "description_zh": "更改应用于排序顺序的项属性。可与 .sync 修饰符一起使用。"
+    },
+    "tag": {
+      "default": "'div'",
+      "value": "",
+      "type": "string",
+      "description": "Specifies the custom tag to be used on the root element.",
+      "description_zh": "指定在根元素上使用的自定义标签。"
+    },
+    "value-comparator": {
+      "default": "undefined",
+      "value": "",
+      "type": "(a: any, b: any) => boolean",
+      "description": "Apply a custom comparison algorithm to compare model-value and values contains in the items prop.",
+      "description_zh": "应用自定义比较算法来比较模型值和 items 属性中包含的值。"
+    }
+  },
+  "link": "https://vuetifyjs.com/zh-Hans/api/v-data-iterator/#links",
+  "link_zh": "https://vuetifyjs.com/zh-Hans/api/v-data-iterator/#links",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "update:currentItems",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "缺少描述 （在 github 中编辑）",
+      "params": "[any]",
+      "value": ""
+    },
+    {
+      "name": "update:expanded",
+      "description": "The .sync event for expanded prop.",
+      "description_zh": "扩展道具的 .sync 事件。",
+      "params": "[any]",
+      "value": ""
+    },
+    {
+      "name": "update:groupBy",
+      "description": "The .sync event for groupBy prop.",
+      "description_zh": "groupBy 属性的 .sync 事件。",
+      "params": "[any]",
+      "value": ""
+    },
+    {
+      "name": "update:itemsPerPage",
+      "description": "The .sync event for itemsPerPage prop.",
+      "description_zh": "itemsPerPage 属性的 .sync 事件。",
+      "params": "[number]",
+      "value": ""
+    },
+    {
+      "name": "update:modelValue",
+      "description": "An event that is raised when a component's model-value changes.",
+      "description_zh": "当组件的 model-value 更改时引发的事件。",
+      "params": "[any[]]",
+      "value": ""
+    },
+    {
+      "name": "update:options",
+      "description": "The .sync event for options prop.",
+      "description_zh": "options 属性的 .sync 事件。",
+      "params": "[any]",
+      "value": ""
+    },
+    {
+      "name": "update:page",
+      "description": "The .sync event for page prop.",
+      "description_zh": "page 属性的 .sync 事件。",
+      "params": "[number]",
+      "value": ""
+    },
+    {
+      "name": "update:sortBy",
+      "description": "The .sync event for sortBy prop.",
+      "description_zh": "sortBy 属性的 .sync 事件。",
+      "params": "[any]",
+      "value": ""
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "default",
+      "description": "The default slot. Use this to render your items.",
+      "description_zh": "默认插槽。使用它来渲染您的项目。"
+    },
+    {
+      "name": "footer",
+      "description": "Defines a footer below the items.",
+      "description_zh": "定义项下方的页脚。"
+    },
+    {
+      "name": "header",
+      "description": "Defines a header above the items.",
+      "description_zh": "定义项上方的标题。"
+    },
+    {
+      "name": "no-data",
+      "description": "Defines content for when no items are provided.",
+      "description_zh": "定义未提供任何项时的内容。"
+    }
+  ]
+}

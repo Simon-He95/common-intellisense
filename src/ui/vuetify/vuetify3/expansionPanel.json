@@ -2,129 +2,154 @@
   "name": "VExpansionPanel",
   "props": {
     "bg-color": {
-      "value": "",
-      "description": "Applies specified color to the control’s background. Used on components that also support the color prop. - supports utility colors (for example success or purple) or css color (#033 or rgba(255, 0, 0, 0.5)). Find a list of built-in classes on the colors page",
       "default": "undefined",
+      "value": "",
       "type": "string",
-      "description_zh": "将指定的颜色应用于控件的背景。用于也支持 color 属性的组件。- 支持实用程序颜色（例如成功或紫色）或 CSS 颜色（#033 或 rgba（255， 0， 0， 0.5））。在颜色页面上查找内置类的列表"
+      "description": "Applies specified color to the control’s background. Used on components that also support the color prop. - supports utility colors (for example success or purple) or css color (#033 or rgba(255, 0, 0, 0.5)). Find a list of built-in classes on the colors page.",
+      "description_zh": "将指定的颜色应用于控件的背景。用于也支持 color 属性的组件。- 支持实用程序颜色（例如成功或紫色）或 CSS 颜色（#033 或 rgba（255， 0， 0， 0.5））。在颜色页面上查找内置类的列表。"
     },
     "collapse-icon": {
+      "default": "'$collapse'",
       "value": "",
-      "description": "MISSING DESCRIPTION (edit in github)",
-      "default": "$collapse",
-      "type": "string | (string | [string, number])[] | (new () => any) | FunctionalComponent",
-      "description_zh": "缺少描述 （在 github 中编辑）"
+      "type": "any",
+      "description": "Icon used when the expansion panel is in a collapsable state.",
+      "description_zh": "当扩展面板处于可折叠状态时使用的图标。"
     },
     "color": {
-      "value": "",
-      "description": "Specify the control color, which can be any Material color (e.g. success or purple) or Css color (e.g. #033 or rgba (255, 0, 0, 0.5)). You can find a list of built-in color classes in the Colors page.",
       "default": "undefined",
+      "value": "",
       "type": "string",
-      "description_zh": "指定控件颜色，颜色值可以是任意 Material 颜色（例如 success 或者 purple ）也可以是 Css 颜色 （例如 #033 或者 rgba(255, 0, 0, 0.5)）。在 颜色页中可以找到内置的颜色类列表。"
+      "description": "Applies specified color to the control - supports utility colors (for example success or purple) or css color (for example success or purple) or css color (#033 or rgba(255, 0, 0, 0.5)). Find a list of built-in classes on the colors page.",
+      "description_zh": "将指定的颜色应用于控件 - 支持实用程序颜色（例如成功或紫色）或 css 颜色（例如成功或紫色）或 css 颜色（#033 或 rgba（255， 0， 0， 0.5））。在颜色页面上查找内置类的列表。"
     },
     "disabled": {
-      "value": "",
-      "description": "Puts all children components into a disabled state",
       "default": "false",
+      "value": "",
       "type": "boolean",
-      "description_zh": "将所有子组件置于禁用状态"
+      "description": "Disables the expansion-panel content.",
+      "description_zh": "禁用扩展面板内容。"
     },
     "eager": {
-      "value": "",
-      "description": "Forces the component’s content to render when it mounts. This is useful if you have content that will not be rendered in the DOM that you want crawled for SEO.",
       "default": "false",
+      "value": "",
       "type": "boolean",
-      "description_zh": "强制在装入组件时呈现组件的内容。如果您的内容不会在 DOM 中呈现，而您希望为 SEO 进行抓取，这将非常有用。"
+      "description": "Forces the component’s content to render when it mounts. This is useful if you have content that will not be rendered in the DOM that you want crawled for SEO.",
+      "description_zh": "强制在装入组件时呈现组件的内容。如果您的内容不会在 DOM 中呈现，而您希望为 SEO 进行爬网，这将非常有用。"
     },
     "elevation": {
-      "value": "",
-      "description": "The elevation of the component is acceptable from 0 to 24. You can find more information on the elevation page.",
       "default": "undefined",
+      "value": "",
       "type": "string | number",
-      "description_zh": "组件的海拔可接受 0 到 24 之间的值。你可以在 elevation page浏览更多信息。"
+      "description": "The elevation of the component is acceptable from 0 to 24. You can read more on the Elevation page.",
+      "description_zh": "组件的海拔可接受 0 到 24 之间的值。你可以在 elevation page 浏览更多信息。"
     },
     "expand-icon": {
+      "default": "'$expand'",
       "value": "",
-      "description": "MISSING DESCRIPTION (edit in github)",
-      "default": "$expand",
-      "type": "string | (string | [string, number])[] | (new () => any) | FunctionalComponent",
-      "description_zh": "缺少描述 （在 github 中编辑）"
+      "type": "any",
+      "description": "Icon used when the expansion panel is in a expandable state.",
+      "description_zh": "当扩展面板处于可展开状态时使用的图标。"
     },
     "hide-actions": {
-      "value": "",
-      "description": "MISSING DESCRIPTION (edit in github)",
       "default": "false",
+      "value": "",
       "type": "boolean",
-      "description_zh": "缺少描述 （在 github 中编辑）"
+      "description": "Hide the expand icon in the content title.",
+      "description_zh": "隐藏内容标题中的展开图标。"
     },
     "readonly": {
-      "value": "",
-      "description": "Make the entire extension panel read-only.",
       "default": "false",
+      "value": "",
       "type": "boolean",
-      "description_zh": "使整个扩展面板为只读。"
+      "description": "Make the Extension Panel content read-only.",
+      "description_zh": "使扩展面板内容为只读。"
     },
     "ripple": {
-      "value": "",
-      "description": "Apply the v-ripple directive.",
       "default": "false",
+      "value": "",
       "type": "boolean | { class: string }",
-      "description_zh": "应用 v-ripple指令。"
+      "description": "Apply the v-ripple directive.",
+      "description_zh": "应用 v-ripple 指令。"
     },
     "rounded": {
+      "default": "undefined",
       "value": "",
-      "description": "Applies the border-radius style to the specified component. You can get more information about this on the Corner Radius of Borders page",
-      "default": "false",
       "type": "string | number | boolean",
-      "description_zh": "对指定的组件应用 border-radius 样式。您可以在 边框的圆角半径页面获取更多有关信息"
+      "description": "Applies the border-radius style to the specified component. You can get more information about this on the Corner Radius of Borders page",
+      "description_zh": "对指定的组件应用 border-radius 样式。您可以在 边框的圆角半径页面 获取更多有关信息"
     },
     "selected-class": {
-      "value": "",
-      "description": "Configure the name of the CSS class that will be applied when the selected item is selected.",
       "default": "undefined",
+      "value": "",
       "type": "string",
+      "description": "Configure the name of the CSS class that will be applied when the selected item is selected.",
       "description_zh": "配置被选中项目时应用的 CSS 类名。"
     },
-    "tag": {
+    "static": {
+      "default": "false",
       "value": "",
-      "description": "Specifies the custom tag to be used on the root element.",
-      "default": "div",
+      "type": "boolean",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "缺少描述 （在 github 中编辑）"
+    },
+    "tag": {
+      "default": "'div'",
+      "value": "",
       "type": "string",
+      "description": "Specifies the custom tag to be used on the root element.",
       "description_zh": "指定在根元素上使用的自定义标签。"
     },
     "text": {
-      "value": "",
-      "description": "Sets the content text of the component.",
       "default": "undefined",
+      "value": "",
       "type": "string",
+      "description": "Sets the content text of the component.",
       "description_zh": "设置组件的内容文本。"
     },
     "title": {
-      "value": "",
-      "description": "MISSING DESCRIPTION (edit in github)",
       "default": "undefined",
+      "value": "",
       "type": "string",
-      "description_zh": "缺少描述 （在 github 中编辑）"
+      "description": "Specify a title text for the component.",
+      "description_zh": "指定组件的标题文本。",
+      "required": true
     },
     "value": {
-      "value": "",
-      "description": "Controls the On/Off status of content",
       "default": "undefined",
+      "value": "",
       "type": "any",
-      "description_zh": "控制内容的 打开/关闭 状态"
+      "description": "Controls the opened/closed state of content.",
+      "description_zh": "控制内容的打开/关闭状态。"
     }
   },
-  "methods": [],
+  "link": "https://vuetifyjs.com/zh-Hans/api/v-expansion-panel/#links",
+  "link_zh": "https://vuetifyjs.com/zh-Hans/api/v-expansion-panel/#links",
   "typeDetail": {},
   "events": [
     {
       "name": "group:selected",
       "description": "Event that is emitted when an item is selected within a group.",
-      "params": "[{ value: boolean }]",
       "description_zh": "在组中选择项目时发出的事件。",
+      "params": "[{ value: boolean }]",
       "value": ""
     }
   ],
-  "link": "https://vuetifyjs.com/en/components/expansion-panels/",
-  "link_zh": "https://vuetifyjs.com/en/components/expansion-panels/"
+  "methods": [],
+  "slots": [
+    {
+      "name": "default",
+      "description": "Default Vue slot.",
+      "description_zh": "默认Vue 插槽。"
+    },
+    {
+      "name": "text",
+      "description": "Slot for the component’s text content.",
+      "description_zh": "组件文本内容的插槽。"
+    },
+    {
+      "name": "title",
+      "description": "Slot for the component’s title content.",
+      "description_zh": "组件标题内容的槽。"
+    }
+  ]
 }

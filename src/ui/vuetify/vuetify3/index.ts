@@ -1,6 +1,77 @@
 import { getLocale } from '@vscode-use/utils'
-import { componentsReducer, propsReducer } from '../../utils'
-import button from './button.json'
+import { componentsReducer, hyphenate, propsReducer } from '../../utils'
+import app from './app.json'
+import bottomSheet from './bottomSheet.json'
+import calendar from './calendar.json'
+import calendarDay from './calendarDay.json'
+import calendarHeader from './calendarHeader.json'
+import calendarInterval from './calendarInterval.json'
+import calendarIntervalEvent from './calendarIntervalEvent.json'
+import calendarMonthDay from './calendarMonthDay.json'
+import cardActions from './cardActions.json'
+import checkboxBtn from './checkboxBtn.json'
+import classIcon from './classIcon.json'
+import code from './code.json'
+import componentIcon from './componentIcon.json'
+import confirmEdit from './confirmEdit.json'
+import counter from './counter.json'
+import dataIterator from './dataIterator.json'
+import dataTable from './dataTable.json'
+import dataTableFooter from './dataTableFooter.json'
+import dataTableRow from './dataTableRow.json'
+import dataTableRows from './dataTableRows.json'
+import dataTableServer from './dataTableServer.json'
+import dataTableVirtual from './dataTableVirtual.json'
+import datePicker from './datePicker.json'
+import datePickerControls from './datePickerControls.json'
+import datePickerHeader from './datePickerHeader.json'
+import datePickerMonth from './datePickerMonth.json'
+import datePickerMonths from './datePickerMonths.json'
+import datePickerYears from './datePickerYears.json'
+import dialogBottomTransition from './dialogBottomTransition.json'
+import dialogTopTransition from './dialogTopTransition.json'
+import dialogTransition from './dialogTransition.json'
+import expandTransition from './expandTransition.json'
+import expandXTransition from './expandXTransition.json'
+import fabTransition from './fabTransition.json'
+import fadeTransition from './fadeTransition.json'
+import field from './field.json'
+import fieldLabel from './fieldLabel.json'
+import infiniteScroll from './infiniteScroll.json'
+import kbd from './kbd.json'
+import label from './label.json'
+import layout from './layout.json'
+import layoutItem from './layoutItem.json'
+import ligatureIcon from './ligatureIcon.json'
+import main from './main.json'
+import messages from './messages.json'
+import noSsr from './noSsr.json'
+import otpInput from './otpInput.json'
+import picker from './picker.json'
+import pickerTitle from './pickerTitle.json'
+import scaleTransition from './scaleTransition.json'
+import scrollXReverseTransition from './scrollXReverseTransition.json'
+import scrollXTransition from './scrollXTransition.json'
+import scrollYReverseTransition from './scrollYReverseTransition.json'
+import scrollYTransition from './scrollYTransition.json'
+import selectionControl from './selectionControl.json'
+import selectionControlGroup from './selectionControlGroup.json'
+import skeletonLoader from './skeletonLoader.json'
+import slideGroup from './slideGroup.json'
+import slideGroupItem from './slideGroupItem.json'
+import slideXReverseTransition from './slideXReverseTransition.json'
+import slideXTransition from './slideXTransition.json'
+import slideYTransition from './slideYTransition.json'
+import slideYReverseTransition from './slideYReverseTransition.json'
+import stepper from './stepper.json'
+import stepperActions from './stepperActions.json'
+import stepperHeader from './stepperHeader.json'
+import stepperItem from './stepperItem.json'
+import stepperWindow from './stepperWindow.json'
+import stepperWindowItem from './stepperWindowItem.json'
+import svgIcon from './svgIcon.json'
+import validation from './validation.json'
+import btn from './btn.json'
 import card from './card.json'
 import cardItem from './cardItem.json'
 import cardTitle from './cardTitle.json'
@@ -98,7 +169,78 @@ import colorPicker from './colorPicker.json'
 
 export function vuetify3() {
   const map: any = [
-    button,
+    app,
+    bottomSheet,
+    calendar,
+    calendarDay,
+    calendarHeader,
+    calendarInterval,
+    calendarIntervalEvent,
+    calendarMonthDay,
+    cardActions,
+    checkboxBtn,
+    classIcon,
+    code,
+    componentIcon,
+    confirmEdit,
+    counter,
+    dataIterator,
+    dataTable,
+    dataTableFooter,
+    dataTableRow,
+    dataTableRows,
+    dataTableServer,
+    dataTableVirtual,
+    datePicker,
+    datePickerControls,
+    datePickerHeader,
+    datePickerMonth,
+    datePickerMonths,
+    datePickerYears,
+    dialogBottomTransition,
+    dialogTopTransition,
+    dialogTransition,
+    expandTransition,
+    expandXTransition,
+    fabTransition,
+    fadeTransition,
+    field,
+    fieldLabel,
+    infiniteScroll,
+    kbd,
+    label,
+    layout,
+    layoutItem,
+    ligatureIcon,
+    main,
+    messages,
+    noSsr,
+    otpInput,
+    picker,
+    pickerTitle,
+    scaleTransition,
+    scrollXReverseTransition,
+    scrollXTransition,
+    scrollYReverseTransition,
+    scrollYTransition,
+    selectionControl,
+    selectionControlGroup,
+    skeletonLoader,
+    slideGroup,
+    slideGroupItem,
+    slideXReverseTransition,
+    slideXTransition,
+    slideYTransition,
+    slideYReverseTransition,
+    stepper,
+    stepperActions,
+    stepperHeader,
+    stepperItem,
+    stepperWindow,
+    stepperWindowItem,
+    svgIcon,
+    validation,
+    btn,
     card,
     chip,
     dialog,
@@ -203,7 +345,77 @@ export function vuetify3Components() {
 
   const map: any[] = isZh
     ? [
-        ['v-no-ssr', '客户端渲染', '<v-no-ssr></v-no-ssr>'],
+        [app, 'app', `<${hyphenate(app.name).slice(1)}></${hyphenate(app.name).slice(1)}>`],
+        [bottomSheet, 'bottomSheet', `<${hyphenate(bottomSheet.name).slice(1)}></${hyphenate(bottomSheet.name).slice(1)}>`],
+        [calendar, 'calendar', `<${hyphenate(calendar.name).slice(1)}></${hyphenate(calendar.name).slice(1)}>`],
+        [calendarDay, 'calendarDay', `<${hyphenate(calendarDay.name).slice(1)}></${hyphenate(calendarDay.name).slice(1)}>`],
+        [calendarHeader, 'calendarHeader', `<${hyphenate(calendarHeader.name).slice(1)}></${hyphenate(calendarHeader.name).slice(1)}>`],
+        [calendarInterval, 'calendarInterval', `<${hyphenate(calendarInterval.name).slice(1)}></${hyphenate(calendarInterval.name).slice(1)}>`],
+        [calendarIntervalEvent, 'calendarIntervalEvent', `<${hyphenate(calendarIntervalEvent.name).slice(1)}></${hyphenate(calendarIntervalEvent.name).slice(1)}>`],
+        [calendarMonthDay, 'calendarMonthDay', `<${hyphenate(calendarMonthDay.name).slice(1)}></${hyphenate(calendarMonthDay.name).slice(1)}>`],
+        [cardActions, 'cardActions', `<${hyphenate(cardActions.name).slice(1)}></${hyphenate(cardActions.name).slice(1)}>`],
+        [checkboxBtn, 'checkboxBtn', `<${hyphenate(checkboxBtn.name).slice(1)}></${hyphenate(checkboxBtn.name).slice(1)}>`],
+        [classIcon, 'classIcon', `<${hyphenate(classIcon.name).slice(1)}></${hyphenate(classIcon.name).slice(1)}>`],
+        [code, 'code', `<${hyphenate(code.name).slice(1)}></${hyphenate(code.name).slice(1)}>`],
+        [componentIcon, 'componentIcon', `<${hyphenate(componentIcon.name).slice(1)}></${hyphenate(componentIcon.name).slice(1)}>`],
+        [confirmEdit, 'confirmEdit', `<${hyphenate(confirmEdit.name).slice(1)}></${hyphenate(confirmEdit.name).slice(1)}>`],
+        [counter, 'counter', `<${hyphenate(counter.name).slice(1)}></${hyphenate(counter.name).slice(1)}>`],
+        [dataIterator, 'dataIterator', `<${hyphenate(dataIterator.name).slice(1)}></${hyphenate(dataIterator.name).slice(1)}>`],
+        [dataTable, 'dataTable', `<${hyphenate(dataTable.name).slice(1)}></${hyphenate(dataTable.name).slice(1)}>`],
+        [dataTableFooter, 'dataTableFooter', `<${hyphenate(dataTableFooter.name).slice(1)}></${hyphenate(dataTableFooter.name).slice(1)}>`],
+        [dataTableRow, 'dataTableRow', `<${hyphenate(dataTableRow.name).slice(1)}></${hyphenate(dataTableRow.name).slice(1)}>`],
+        [dataTableRows, 'dataTableRows', `<${hyphenate(dataTableRows.name).slice(1)}></${hyphenate(dataTableRows.name).slice(1)}>`],
+        [dataTableServer, 'dataTableServer', `<${hyphenate(dataTableServer.name).slice(1)}></${hyphenate(dataTableServer.name).slice(1)}>`],
+        [dataTableVirtual, 'dataTableVirtual', `<${hyphenate(dataTableVirtual.name).slice(1)}></${hyphenate(dataTableVirtual.name).slice(1)}>`],
+        [datePicker, 'datePicker', `<${hyphenate(datePicker.name).slice(1)}></${hyphenate(datePicker.name).slice(1)}>`],
+        [datePickerControls, 'datePickerControls', `<${hyphenate(datePickerControls.name).slice(1)}></${hyphenate(datePickerControls.name).slice(1)}>`],
+        [datePickerHeader, 'datePickerHeader', `<${hyphenate(datePickerHeader.name).slice(1)}></${hyphenate(datePickerHeader.name).slice(1)}>`],
+        [datePickerMonth, 'datePickerMonth', `<${hyphenate(datePickerMonth.name).slice(1)}></${hyphenate(datePickerMonth.name).slice(1)}>`],
+        [datePickerMonths, 'datePickerMonths', `<${hyphenate(datePickerMonths.name).slice(1)}></${hyphenate(datePickerMonths.name).slice(1)}>`],
+        [datePickerYears, 'datePickerYears', `<${hyphenate(datePickerYears.name).slice(1)}></${hyphenate(datePickerYears.name).slice(1)}>`],
+        [dialogBottomTransition, 'dialogBottomTransition', `<${hyphenate(dialogBottomTransition.name).slice(1)}></${hyphenate(dialogBottomTransition.name).slice(1)}>`],
+        [dialogTopTransition, 'dialogTopTransition', `<${hyphenate(dialogTopTransition.name).slice(1)}></${hyphenate(dialogTopTransition.name).slice(1)}>`],
+        [dialogTransition, 'dialogTransition', `<${hyphenate(dialogTransition.name).slice(1)}></${hyphenate(dialogTransition.name).slice(1)}>`],
+        [expandTransition, 'expandTransition', `<${hyphenate(expandTransition.name).slice(1)}></${hyphenate(expandTransition.name).slice(1)}>`],
+        [expandXTransition, 'expandXTransition', `<${hyphenate(expandXTransition.name).slice(1)}></${hyphenate(expandXTransition.name).slice(1)}>`],
+        [fabTransition, 'fabTransition', `<${hyphenate(fabTransition.name).slice(1)}></${hyphenate(fabTransition.name).slice(1)}>`],
+        [fadeTransition, 'fadeTransition', `<${hyphenate(fadeTransition.name).slice(1)}></${hyphenate(fadeTransition.name).slice(1)}>`],
+        [field, 'field', `<${hyphenate(field.name).slice(1)}></${hyphenate(field.name).slice(1)}>`],
+        [fieldLabel, 'fieldLabel', `<${hyphenate(fieldLabel.name).slice(1)}></${hyphenate(fieldLabel.name).slice(1)}>`],
+        [infiniteScroll, 'infiniteScroll', `<${hyphenate(infiniteScroll.name).slice(1)}></${hyphenate(infiniteScroll.name).slice(1)}>`],
+        [kbd, 'kbd', `<${hyphenate(kbd.name).slice(1)}></${hyphenate(kbd.name).slice(1)}>`],
+        [label, 'label', `<${hyphenate(label.name).slice(1)}></${hyphenate(label.name).slice(1)}>`],
+        [layout, 'layout', `<${hyphenate(layout.name).slice(1)}></${hyphenate(layout.name).slice(1)}>`],
+        [layoutItem, 'layoutItem', `<${hyphenate(layoutItem.name).slice(1)}></${hyphenate(layoutItem.name).slice(1)}>`],
+        [ligatureIcon, 'ligatureIcon', `<${hyphenate(ligatureIcon.name).slice(1)}></${hyphenate(ligatureIcon.name).slice(1)}>`],
+        [main, 'main', `<${hyphenate(main.name).slice(1)}></${hyphenate(main.name).slice(1)}>`],
+        [messages, 'messages', `<${hyphenate(messages.name).slice(1)}></${hyphenate(messages.name).slice(1)}>`],
+        [noSsr, 'noSsr', `<${hyphenate(noSsr.name).slice(1)}></${hyphenate(noSsr.name).slice(1)}>`],
+        [otpInput, 'otpInput', `<${hyphenate(otpInput.name).slice(1)}></${hyphenate(otpInput.name).slice(1)}>`],
+        [picker, 'picker', `<${hyphenate(picker.name).slice(1)}></${hyphenate(picker.name).slice(1)}>`],
+        [pickerTitle, 'pickerTitle', `<${hyphenate(pickerTitle.name).slice(1)}></${hyphenate(pickerTitle.name).slice(1)}>`],
+        [scaleTransition, 'scaleTransition', `<${hyphenate(scaleTransition.name).slice(1)}></${hyphenate(scaleTransition.name).slice(1)}>`],
+        [scrollXReverseTransition, 'scrollXReverseTransition', `<${hyphenate(scrollXReverseTransition.name).slice(1)}></${hyphenate(scrollXReverseTransition.name).slice(1)}>`],
+        [scrollXTransition, 'scrollXTransition', `<${hyphenate(scrollXTransition.name).slice(1)}></${hyphenate(scrollXTransition.name).slice(1)}>`],
+        [scrollYReverseTransition, 'scrollYReverseTransition', `<${hyphenate(scrollYReverseTransition.name).slice(1)}></${hyphenate(scrollYReverseTransition.name).slice(1)}>`],
+        [scrollYTransition, 'scrollYTransition', `<${hyphenate(scrollYTransition.name).slice(1)}></${hyphenate(scrollYTransition.name).slice(1)}>`],
+        [selectionControl, 'selectionControl', `<${hyphenate(selectionControl.name).slice(1)}></${hyphenate(selectionControl.name).slice(1)}>`],
+        [selectionControlGroup, 'selectionControlGroup', `<${hyphenate(selectionControlGroup.name).slice(1)}></${hyphenate(selectionControlGroup.name).slice(1)}>`],
+        [skeletonLoader, 'skeletonLoader', `<${hyphenate(skeletonLoader.name).slice(1)}></${hyphenate(skeletonLoader.name).slice(1)}>`],
+        [slideGroup, 'slideGroup', `<${hyphenate(slideGroup.name).slice(1)}></${hyphenate(slideGroup.name).slice(1)}>`],
+        [slideGroupItem, 'slideGroupItem', `<${hyphenate(slideGroupItem.name).slice(1)}></${hyphenate(slideGroupItem.name).slice(1)}>`],
+        [slideXReverseTransition, 'slideXReverseTransition', `<${hyphenate(slideXReverseTransition.name).slice(1)}></${hyphenate(slideXReverseTransition.name).slice(1)}>`],
+        [slideXTransition, 'slideXTransition', `<${hyphenate(slideXTransition.name).slice(1)}></${hyphenate(slideXTransition.name).slice(1)}>`],
+        [slideYTransition, 'slideYTransition', `<${hyphenate(slideYTransition.name).slice(1)}></${hyphenate(slideYTransition.name).slice(1)}>`],
+        [slideYReverseTransition, 'slideYReverseTransition', `<${hyphenate(slideYReverseTransition.name).slice(1)}></${hyphenate(slideYReverseTransition.name).slice(1)}>`],
+        [stepper, 'stepper', `<${hyphenate(stepper.name).slice(1)}></${hyphenate(stepper.name).slice(1)}>`],
+        [stepperActions, 'stepperActions', `<${hyphenate(stepperActions.name).slice(1)}></${hyphenate(stepperActions.name).slice(1)}>`],
+        [stepperHeader, 'stepperHeader', `<${hyphenate(stepperHeader.name).slice(1)}></${hyphenate(stepperHeader.name).slice(1)}>`],
+        [stepperItem, 'stepperItem', `<${hyphenate(stepperItem.name).slice(1)}></${hyphenate(stepperItem.name).slice(1)}>`],
+        [stepperWindow, 'stepperWindow', `<${hyphenate(stepperWindow.name).slice(1)}></${hyphenate(stepperWindow.name).slice(1)}>`],
+        [stepperWindowItem, 'stepperWindowItem', `<${hyphenate(stepperWindowItem.name).slice(1)}></${hyphenate(stepperWindowItem.name).slice(1)}>`],
+        [svgIcon, 'svgIcon', `<${hyphenate(svgIcon.name).slice(1)}></${hyphenate(svgIcon.name).slice(1)}>`],
+        [validation, 'validation', `<${hyphenate(validation.name).slice(1)}></${hyphenate(validation.name).slice(1)}>`],
         [avatar, '头像', '<v-avatar></v-avatar>'],
         [icon, '图标', '<v-icon></v-icon>'],
         [colorPicker, '颜色选择器', '<v-color-picker></v-color-picker>'],
@@ -274,7 +486,7 @@ export function vuetify3Components() {
         [toolbar, '工具栏', '<v-toolbar title="Application"></v-toolbar>'],
         [toolbarItems, '工具栏', '<v-toolbar-items></v-toolbar-items>'],
         [toolbarTitle, '工具栏', '<v-toolbar-title></v-toolbar-title>'],
-        [button, '按钮', '<v-btn>Button</v-btn>'],
+        [btn, '按钮', '<v-btn>Button</v-btn>'],
         [card, '卡片', '<v-card text="..."></v-card>'],
         [cardItem, '卡片', '<v-card-item></v-card-item>'],
         [sheet, '工作区', '<v-sheet :height="200" :width="200"></v-sheet>'],
@@ -308,7 +520,77 @@ export function vuetify3Components() {
         [overlay, '遮罩层', '<v-overlay v-model="overlay"></v-overlay>'],
       ]
     : [
-        ['v-no-ssr', 'Client rendering', '<v-no-ssr></v-no-ssr>'],
+        [app, 'app', `<${hyphenate(app.name).slice(1)}></${hyphenate(app.name).slice(1)}>`],
+        [bottomSheet, 'bottomSheet', `<${hyphenate(bottomSheet.name).slice(1)}></${hyphenate(bottomSheet.name).slice(1)}>`],
+        [calendar, 'calendar', `<${hyphenate(calendar.name).slice(1)}></${hyphenate(calendar.name).slice(1)}>`],
+        [calendarDay, 'calendarDay', `<${hyphenate(calendarDay.name).slice(1)}></${hyphenate(calendarDay.name).slice(1)}>`],
+        [calendarHeader, 'calendarHeader', `<${hyphenate(calendarHeader.name).slice(1)}></${hyphenate(calendarHeader.name).slice(1)}>`],
+        [calendarInterval, 'calendarInterval', `<${hyphenate(calendarInterval.name).slice(1)}></${hyphenate(calendarInterval.name).slice(1)}>`],
+        [calendarIntervalEvent, 'calendarIntervalEvent', `<${hyphenate(calendarIntervalEvent.name).slice(1)}></${hyphenate(calendarIntervalEvent.name).slice(1)}>`],
+        [calendarMonthDay, 'calendarMonthDay', `<${hyphenate(calendarMonthDay.name).slice(1)}></${hyphenate(calendarMonthDay.name).slice(1)}>`],
+        [cardActions, 'cardActions', `<${hyphenate(cardActions.name).slice(1)}></${hyphenate(cardActions.name).slice(1)}>`],
+        [checkboxBtn, 'checkboxBtn', `<${hyphenate(checkboxBtn.name).slice(1)}></${hyphenate(checkboxBtn.name).slice(1)}>`],
+        [classIcon, 'classIcon', `<${hyphenate(classIcon.name).slice(1)}></${hyphenate(classIcon.name).slice(1)}>`],
+        [code, 'code', `<${hyphenate(code.name).slice(1)}></${hyphenate(code.name).slice(1)}>`],
+        [componentIcon, 'componentIcon', `<${hyphenate(componentIcon.name).slice(1)}></${hyphenate(componentIcon.name).slice(1)}>`],
+        [confirmEdit, 'confirmEdit', `<${hyphenate(confirmEdit.name).slice(1)}></${hyphenate(confirmEdit.name).slice(1)}>`],
+        [counter, 'counter', `<${hyphenate(counter.name).slice(1)}></${hyphenate(counter.name).slice(1)}>`],
+        [dataIterator, 'dataIterator', `<${hyphenate(dataIterator.name).slice(1)}></${hyphenate(dataIterator.name).slice(1)}>`],
+        [dataTable, 'dataTable', `<${hyphenate(dataTable.name).slice(1)}></${hyphenate(dataTable.name).slice(1)}>`],
+        [dataTableFooter, 'dataTableFooter', `<${hyphenate(dataTableFooter.name).slice(1)}></${hyphenate(dataTableFooter.name).slice(1)}>`],
+        [dataTableRow, 'dataTableRow', `<${hyphenate(dataTableRow.name).slice(1)}></${hyphenate(dataTableRow.name).slice(1)}>`],
+        [dataTableRows, 'dataTableRows', `<${hyphenate(dataTableRows.name).slice(1)}></${hyphenate(dataTableRows.name).slice(1)}>`],
+        [dataTableServer, 'dataTableServer', `<${hyphenate(dataTableServer.name).slice(1)}></${hyphenate(dataTableServer.name).slice(1)}>`],
+        [dataTableVirtual, 'dataTableVirtual', `<${hyphenate(dataTableVirtual.name).slice(1)}></${hyphenate(dataTableVirtual.name).slice(1)}>`],
+        [datePicker, 'datePicker', `<${hyphenate(datePicker.name).slice(1)}></${hyphenate(datePicker.name).slice(1)}>`],
+        [datePickerControls, 'datePickerControls', `<${hyphenate(datePickerControls.name).slice(1)}></${hyphenate(datePickerControls.name).slice(1)}>`],
+        [datePickerHeader, 'datePickerHeader', `<${hyphenate(datePickerHeader.name).slice(1)}></${hyphenate(datePickerHeader.name).slice(1)}>`],
+        [datePickerMonth, 'datePickerMonth', `<${hyphenate(datePickerMonth.name).slice(1)}></${hyphenate(datePickerMonth.name).slice(1)}>`],
+        [datePickerMonths, 'datePickerMonths', `<${hyphenate(datePickerMonths.name).slice(1)}></${hyphenate(datePickerMonths.name).slice(1)}>`],
+        [datePickerYears, 'datePickerYears', `<${hyphenate(datePickerYears.name).slice(1)}></${hyphenate(datePickerYears.name).slice(1)}>`],
+        [dialogBottomTransition, 'dialogBottomTransition', `<${hyphenate(dialogBottomTransition.name).slice(1)}></${hyphenate(dialogBottomTransition.name).slice(1)}>`],
+        [dialogTopTransition, 'dialogTopTransition', `<${hyphenate(dialogTopTransition.name).slice(1)}></${hyphenate(dialogTopTransition.name).slice(1)}>`],
+        [dialogTransition, 'dialogTransition', `<${hyphenate(dialogTransition.name).slice(1)}></${hyphenate(dialogTransition.name).slice(1)}>`],
+        [expandTransition, 'expandTransition', `<${hyphenate(expandTransition.name).slice(1)}></${hyphenate(expandTransition.name).slice(1)}>`],
+        [expandXTransition, 'expandXTransition', `<${hyphenate(expandXTransition.name).slice(1)}></${hyphenate(expandXTransition.name).slice(1)}>`],
+        [fabTransition, 'fabTransition', `<${hyphenate(fabTransition.name).slice(1)}></${hyphenate(fabTransition.name).slice(1)}>`],
+        [fadeTransition, 'fadeTransition', `<${hyphenate(fadeTransition.name).slice(1)}></${hyphenate(fadeTransition.name).slice(1)}>`],
+        [field, 'field', `<${hyphenate(field.name).slice(1)}></${hyphenate(field.name).slice(1)}>`],
+        [fieldLabel, 'fieldLabel', `<${hyphenate(fieldLabel.name).slice(1)}></${hyphenate(fieldLabel.name).slice(1)}>`],
+        [infiniteScroll, 'infiniteScroll', `<${hyphenate(infiniteScroll.name).slice(1)}></${hyphenate(infiniteScroll.name).slice(1)}>`],
+        [kbd, 'kbd', `<${hyphenate(kbd.name).slice(1)}></${hyphenate(kbd.name).slice(1)}>`],
+        [label, 'label', `<${hyphenate(label.name).slice(1)}></${hyphenate(label.name).slice(1)}>`],
+        [layout, 'layout', `<${hyphenate(layout.name).slice(1)}></${hyphenate(layout.name).slice(1)}>`],
+        [layoutItem, 'layoutItem', `<${hyphenate(layoutItem.name).slice(1)}></${hyphenate(layoutItem.name).slice(1)}>`],
+        [ligatureIcon, 'ligatureIcon', `<${hyphenate(ligatureIcon.name).slice(1)}></${hyphenate(ligatureIcon.name).slice(1)}>`],
+        [main, 'main', `<${hyphenate(main.name).slice(1)}></${hyphenate(main.name).slice(1)}>`],
+        [messages, 'messages', `<${hyphenate(messages.name).slice(1)}></${hyphenate(messages.name).slice(1)}>`],
+        [noSsr, 'noSsr', `<${hyphenate(noSsr.name).slice(1)}></${hyphenate(noSsr.name).slice(1)}>`],
+        [otpInput, 'otpInput', `<${hyphenate(otpInput.name).slice(1)}></${hyphenate(otpInput.name).slice(1)}>`],
+        [picker, 'picker', `<${hyphenate(picker.name).slice(1)}></${hyphenate(picker.name).slice(1)}>`],
+        [pickerTitle, 'pickerTitle', `<${hyphenate(pickerTitle.name).slice(1)}></${hyphenate(pickerTitle.name).slice(1)}>`],
+        [scaleTransition, 'scaleTransition', `<${hyphenate(scaleTransition.name).slice(1)}></${hyphenate(scaleTransition.name).slice(1)}>`],
+        [scrollXReverseTransition, 'scrollXReverseTransition', `<${hyphenate(scrollXReverseTransition.name).slice(1)}></${hyphenate(scrollXReverseTransition.name).slice(1)}>`],
+        [scrollXTransition, 'scrollXTransition', `<${hyphenate(scrollXTransition.name).slice(1)}></${hyphenate(scrollXTransition.name).slice(1)}>`],
+        [scrollYReverseTransition, 'scrollYReverseTransition', `<${hyphenate(scrollYReverseTransition.name).slice(1)}></${hyphenate(scrollYReverseTransition.name).slice(1)}>`],
+        [scrollYTransition, 'scrollYTransition', `<${hyphenate(scrollYTransition.name).slice(1)}></${hyphenate(scrollYTransition.name).slice(1)}>`],
+        [selectionControl, 'selectionControl', `<${hyphenate(selectionControl.name).slice(1)}></${hyphenate(selectionControl.name).slice(1)}>`],
+        [selectionControlGroup, 'selectionControlGroup', `<${hyphenate(selectionControlGroup.name).slice(1)}></${hyphenate(selectionControlGroup.name).slice(1)}>`],
+        [skeletonLoader, 'skeletonLoader', `<${hyphenate(skeletonLoader.name).slice(1)}></${hyphenate(skeletonLoader.name).slice(1)}>`],
+        [slideGroup, 'slideGroup', `<${hyphenate(slideGroup.name).slice(1)}></${hyphenate(slideGroup.name).slice(1)}>`],
+        [slideGroupItem, 'slideGroupItem', `<${hyphenate(slideGroupItem.name).slice(1)}></${hyphenate(slideGroupItem.name).slice(1)}>`],
+        [slideXReverseTransition, 'slideXReverseTransition', `<${hyphenate(slideXReverseTransition.name).slice(1)}></${hyphenate(slideXReverseTransition.name).slice(1)}>`],
+        [slideXTransition, 'slideXTransition', `<${hyphenate(slideXTransition.name).slice(1)}></${hyphenate(slideXTransition.name).slice(1)}>`],
+        [slideYTransition, 'slideYTransition', `<${hyphenate(slideYTransition.name).slice(1)}></${hyphenate(slideYTransition.name).slice(1)}>`],
+        [slideYReverseTransition, 'slideYReverseTransition', `<${hyphenate(slideYReverseTransition.name).slice(1)}></${hyphenate(slideYReverseTransition.name).slice(1)}>`],
+        [stepper, 'stepper', `<${hyphenate(stepper.name).slice(1)}></${hyphenate(stepper.name).slice(1)}>`],
+        [stepperActions, 'stepperActions', `<${hyphenate(stepperActions.name).slice(1)}></${hyphenate(stepperActions.name).slice(1)}>`],
+        [stepperHeader, 'stepperHeader', `<${hyphenate(stepperHeader.name).slice(1)}></${hyphenate(stepperHeader.name).slice(1)}>`],
+        [stepperItem, 'stepperItem', `<${hyphenate(stepperItem.name).slice(1)}></${hyphenate(stepperItem.name).slice(1)}>`],
+        [stepperWindow, 'stepperWindow', `<${hyphenate(stepperWindow.name).slice(1)}></${hyphenate(stepperWindow.name).slice(1)}>`],
+        [stepperWindowItem, 'stepperWindowItem', `<${hyphenate(stepperWindowItem.name).slice(1)}></${hyphenate(stepperWindowItem.name).slice(1)}>`],
+        [svgIcon, 'svgIcon', `<${hyphenate(svgIcon.name).slice(1)}></${hyphenate(svgIcon.name).slice(1)}>`],
+        [validation, 'validation', `<${hyphenate(validation.name).slice(1)}></${hyphenate(validation.name).slice(1)}>`],
         [avatar, 'avatar', '<v-avatar></v-avatar>'],
         [icon, 'icon', '<v-icon></v-icon>'],
         [colorPicker, 'Color picker', '<v-color-picker></v-color-picker>'],
@@ -378,7 +660,7 @@ export function vuetify3Components() {
         [toolbar, 'Toolbar', '<v-toolbar title="Application"></v-toolbar>'],
         [toolbarItems, 'Toolbar', '<v-toolbar-items></v-toolbar-items>'],
         [toolbarTitle, 'Toolbar', '<v-toolbar-title></v-toolbar-title>'],
-        [button, 'Button', '<v-btn>Button</v-btn>'],
+        [btn, 'Button', '<v-btn>Button</v-btn>'],
         [card, 'card', '<v-card text="..."></v-card>'],
         [cardItem, 'card', '<v-card-item></v-card-item>'],
         [sheet, 'Workspace', '<v-sheet :height="200" :width="200"></v-sheet>'],

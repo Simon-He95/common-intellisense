@@ -2,94 +2,113 @@
   "name": "VExpansionPanels",
   "props": {
     "color": {
-      "value": "",
-      "description": "Specify the control color, which can be any Material color (e.g. success or purple) or Css color (e.g. #033 or rgba (255, 0, 0, 0.5)). You can find a list of built-in color classes in the Colors page.",
       "default": "undefined",
+      "value": "",
       "type": "string",
-      "description_zh": "指定控件颜色，颜色值可以是任意 Material 颜色（例如 success 或者 purple ）也可以是 Css 颜色 （例如 #033 或者 rgba(255, 0, 0, 0.5)）。在 颜色页中可以找到内置的颜色类列表。"
+      "description": "Applies specified color to the control - supports utility colors (for example success or purple) or css color (for example success or purple) or css color (#033 or rgba(255, 0, 0, 0.5)). Find a list of built-in classes on the colors page.",
+      "description_zh": "将指定的颜色应用于控件 - 支持实用程序颜色（例如成功或紫色）或 css 颜色（例如成功或紫色）或 css 颜色（#033 或 rgba（255， 0， 0， 0.5））。在颜色页面上查找内置类的列表。"
     },
     "disabled": {
-      "value": "",
-      "description": "Puts all children components into a disabled state",
       "default": "false",
+      "value": "",
       "type": "boolean",
-      "description_zh": "将所有子组件置于禁用状态"
+      "description": "Set all child components to a disabled state.",
+      "description_zh": "将所有子组件设置为禁用状态。"
     },
     "mandatory": {
-      "value": "",
-      "description": "Force at least one item to be selected, if available.",
       "default": "false",
+      "value": "",
       "type": "boolean | 'force'",
+      "description": "Force at least one item to be selected, if available.",
       "description_zh": "强制至少选择一个项目（如果可用）。"
     },
-    "max": {
-      "value": "",
-      "description": "Set the maximum number that can be selected.",
+    ":max": {
       "default": "undefined",
+      "value": "",
       "type": "number",
+      "description": "Set the maximum number that can be selected.",
       "description_zh": "设置可以选择的最大数量。"
     },
     ":v-model": {
-      "value": "",
-      "description": "The v-model value of the component. If component supports the multiple prop, this defaults to an empty array",
       "default": "undefined",
+      "value": "",
       "type": "any",
-      "description_zh": "组件的 v 模型值。如果组件支持 multiple 属性，则默认为空数组"
+      "description": "The value of the component v-mode. If the component supports variants, the default is an empty array.",
+      "description_zh": "组件 v-mode 的值。如果组件支持多属性，默认为空数组。"
     },
     "multiple": {
-      "value": "",
-      "description": "Multiple items are allowed to be selected.",
       "default": "false",
+      "value": "",
       "type": "boolean",
-      "description_zh": "允许选择多个项目。"
+      "description": "Allows you to select multiple options.",
+      "description_zh": "允许您选择多个选项。"
     },
     "readonly": {
-      "value": "",
-      "description": "Make the entire extension panel read-only.",
       "default": "false",
+      "value": "",
       "type": "boolean",
+      "description": "Make the entire extension panel read-only.",
       "description_zh": "使整个扩展面板为只读。"
     },
     "selected-class": {
-      "value": "",
-      "description": "Configure the name of the CSS class that will be applied when the selected item is selected.",
       "default": "undefined",
+      "value": "",
       "type": "string",
+      "description": "Configure the name of the CSS class that will be applied when the selected item is selected.",
       "description_zh": "配置被选中项目时应用的 CSS 类名。"
     },
-    "tag": {
+    "static": {
+      "default": "false",
       "value": "",
-      "description": "Specifies the custom tag to be used on the root element.",
-      "default": "div",
+      "type": "boolean",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "缺少描述 （在 github 中编辑）"
+    },
+    "tag": {
+      "default": "'div'",
+      "value": "",
       "type": "string",
+      "description": "Specifies the custom tag to be used on the root element.",
       "description_zh": "指定在根元素上使用的自定义标签。"
     },
     "theme": {
-      "value": "",
-      "description": "Specifies the theme of this component and all of its subcomponents",
       "default": "undefined",
+      "value": "",
       "type": "string",
-      "description_zh": "指定此组件及其所有子组件的主题"
+      "description": "Specify a theme for this component and all of its children.",
+      "description_zh": "为此组件及其所有子组件指定主题。"
     },
     "variant": {
-      "value": ["default", "inset", "accordion", "popout"],
-      "description": "Applies a distinct style to the component",
-      "default": "default",
-      "type": "'default' | 'inset' | 'accordion' | 'popout'",
-      "description_zh": "对组件应用不同的样式"
+      "default": "'default'",
+      "value": "",
+      "type": "'default' | 'accordion' | 'inset' | 'popout'",
+      "description": "Applies a distinct style to the component.",
+      "description_zh": "对组件应用不同的样式。"
     }
   },
-  "methods": [],
+  "link": "https://vuetifyjs.com/zh-Hans/api/v-expansion-panels/#links",
+  "link_zh": "https://vuetifyjs.com/zh-Hans/api/v-expansion-panels/#links",
   "typeDetail": {},
   "events": [
     {
       "name": "update:modelValue",
-      "description": "Event that is emitted when the component’s model changes",
-      "params": "[boolean]",
-      "description_zh": "组件模型更改时发出的事件",
+      "description": "An event that is raised when a component's model-value changes.",
+      "description_zh": "当组件的 model-value 更改时引发的事件。",
+      "params": "[unknown]",
       "value": ""
     }
   ],
-  "link": "https://vuetifyjs.com/en/components/expansion-panels/",
-  "link_zh": "https://vuetifyjs.com/en/components/expansion-panels/"
+  "methods": [],
+  "slots": [
+    {
+      "name": "default",
+      "description": "Default Vue slot.",
+      "description_zh": "默认Vue 插槽。"
+    }
+  ],
+  "suggestions": [
+    "v-expansion-panel",
+    "v-expansion-panel-title",
+    "v-expansion-panel-text"
+  ]
 }

@@ -630,7 +630,7 @@ async function findUiTag(children: any, UiCompletions: any, result: any[] = [], 
 
     if (nextChildren?.length)
       await findUiTag(nextChildren, UiCompletions, result, cacheMap)
-    const range = child.range
+    const range = child.range ?? child.loc
 
     if (cacheMap.has(range))
       continue

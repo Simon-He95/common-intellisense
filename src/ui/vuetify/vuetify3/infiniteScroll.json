@@ -1,0 +1,143 @@
+{
+  "name": "VInfiniteScroll",
+  "props": {
+    "color": {
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "description": "Applies specified color to the control - supports utility colors (for example success or purple) or css color (for example success or purple) or css color (#033 or rgba(255, 0, 0, 0.5)). Find a list of built-in classes on the colors page.",
+      "description_zh": "将指定的颜色应用于控件 - 支持实用程序颜色（例如成功或紫色）或 css 颜色（例如成功或紫色）或 css 颜色（#033 或 rgba（255， 0， 0， 0.5））。在颜色页面上查找内置类的列表。"
+    },
+    "direction": {
+      "default": "'vertical'",
+      "value": "",
+      "type": "'vertical' | 'horizontal'",
+      "description": "Specifies if scroller is vertical or horizontal.",
+      "description_zh": "指定滚动条是垂直的还是水平的。"
+    },
+    "empty-text": {
+      "default": "'$vuetify.infiniteScroll.empty'",
+      "value": "",
+      "type": "string",
+      "description": "Text shown when there is no more content to load.",
+      "description_zh": "当没有更多内容要加载时显示的文本。"
+    },
+    "height": {
+      "default": "undefined",
+      "value": "",
+      "type": "string | number",
+      "description": "Sets the height of the component.",
+      "description_zh": "设定组件的高度。"
+    },
+    "load-more-text": {
+      "default": "'$vuetify.infiniteScroll.loadMore'",
+      "value": "",
+      "type": "string",
+      "description": "Text shown in default load more button, when in manual mode.",
+      "description_zh": "在手动模式下，默认加载更多按钮中显示的文本。"
+    },
+    "margin": {
+      "default": "undefined",
+      "value": "",
+      "type": "string | number",
+      "description": "Value sent to the intersection observer. Will make the observer trigger earlier, by the margin (px) value supplied.",
+      "description_zh": "发送到交叉点观察点的值。将使观察者通过提供的边距 （px） 值更早触发。"
+    },
+    "max-height": {
+      "default": "undefined",
+      "value": "",
+      "type": "string | number",
+      "description": "Sets the maximum height of the component.",
+      "description_zh": "设定组件的最大高度。"
+    },
+    "max-width": {
+      "default": "undefined",
+      "value": "",
+      "type": "string | number",
+      "description": "Sets the maximum width of the component.",
+      "description_zh": "设定组件的最大宽度。"
+    },
+    "min-height": {
+      "default": "undefined",
+      "value": "",
+      "type": "string | number",
+      "description": "Sets the minimum height of the component.",
+      "description_zh": "设定组件的最小高度。"
+    },
+    "min-width": {
+      "default": "undefined",
+      "value": "",
+      "type": "string | number",
+      "description": "Sets the minimum width of the component.",
+      "description_zh": "设定组件的最小宽度。"
+    },
+    "mode": {
+      "default": "'intersect'",
+      "value": "",
+      "type": "'intersect' | 'manual'",
+      "description": "Specifies if content should load automatically when scrolling (intersect) or manually (manual).",
+      "description_zh": "指定内容是在滚动（相交）时自动加载还是手动加载（手动）。"
+    },
+    "side": {
+      "default": "'end'",
+      "value": "",
+      "type": "'start' | 'end' | 'both'",
+      "description": "Specifies the side where new content should appear. Either the start, end, or both sides.",
+      "description_zh": "指定应显示新内容的一侧。开始、结束或两侧。"
+    },
+    "tag": {
+      "default": "'div'",
+      "value": "",
+      "type": "string",
+      "description": "Specifies the custom tag to be used on the root element.",
+      "description_zh": "指定在根元素上使用的自定义标签。"
+    },
+    "width": {
+      "default": "undefined",
+      "value": "",
+      "type": "string | number",
+      "description": "Sets the width of the component.",
+      "description_zh": "设定组件的宽度。"
+    }
+  },
+  "link": "https://vuetifyjs.com/zh-Hans/api/v-infinite-scroll/#links",
+  "link_zh": "https://vuetifyjs.com/zh-Hans/api/v-infinite-scroll/#links",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "load",
+      "description": "Emitted when reaching the start / end threshold, or if triggered when using manual mode.",
+      "description_zh": "达到开始/结束阈值时发出，或使用手动模式时触发。",
+      "params": "[  {    side: 'start' | 'end' | 'both'    done: (status: 'loading' | 'error' | 'empty' | 'ok') => void  },]",
+      "value": ""
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "default",
+      "description": "Default Vue slot.",
+      "description_zh": "默认Vue 插槽。"
+    },
+    {
+      "name": "empty",
+      "description": "Shown when load returned status ‘empty’.",
+      "description_zh": "当加载返回状态“空”时显示。"
+    },
+    {
+      "name": "error",
+      "description": "Shown when load returned status ‘error’.",
+      "description_zh": "当加载返回状态“错误”时显示。"
+    },
+    {
+      "name": "load-more",
+      "description": "Shown when scrolled to either side of the content, in manual mode.",
+      "description_zh": "在手动模式下滚动到内容的任一侧时显示。"
+    },
+    {
+      "name": "loading",
+      "description": "Shown when content is loading.",
+      "description_zh": "加载内容时显示。"
+    }
+  ]
+}

@@ -3,246 +3,274 @@
   "props": {
     "activator": {
       "default": "undefined",
+      "value": "",
+      "type": "Element | 'parent' | (string & {}) | ComponentPublicInstance",
       "description": "Explicitly sets the overlay’s activator.",
-      "type": "string | Element | ComponentPublicInstance",
-      "description_zh": "显式设置覆盖的激活器。",
-      "value": ""
+      "description_zh": "显式设置覆盖的激活器。"
     },
     "activator-props": {
       "default": "{}",
+      "value": "",
+      "type": "unknown",
       "description": "Apply custom properties to the activator.",
-      "type": "{}",
-      "description_zh": "将自定义属性应用于激活器。",
-      "value": ""
+      "description_zh": "将自定义属性应用于激活器。"
     },
     "attach": {
       "default": "false",
-      "description": "Specifies which DOM element the overlay content should teleport to. Can be a direct element reference, querySelector string, or true to disable teleporting. Uses body by default.",
+      "value": "",
       "type": "string | boolean | Element",
-      "description_zh": "指定覆盖内容应传送到哪个 DOM 元素。可以是直接元素引用、querySelector 字符串或 true 以禁用传送。默认使用 body。",
-      "value": ""
+      "description": "Specifies which DOM element the overlay content should teleport to. Can be a direct element reference, querySelector string, or true to disable teleporting. Uses body by default.",
+      "description_zh": "指定覆盖内容应传送到哪个 DOM 元素。可以是直接元素引用、querySelector 字符串或 true 以禁用传送。默认使用 body。"
     },
     "close-delay": {
       "default": "undefined",
-      "description": "Delay (in ms) after which menu closes (when open-on-hover prop is set to true).",
+      "value": "",
       "type": "string | number",
-      "description_zh": "延迟（以毫秒为单位），在此之后菜单关闭（当悬停时打开道具设置为 true 时）。",
-      "value": ""
+      "description": "Delay (in ms) after which menu closes (when open-on-hover prop is set to true).",
+      "description_zh": "延迟（以毫秒为单位），在此之后菜单关闭（当悬停时打开道具设置为 true 时）。"
     },
     "close-on-back": {
       "default": "false",
-      "description": "Closes the overlay content when the browser’s back button is pressed or $router.back() is called, cancelling the original navigation. persistent overlays will cancel navigation and animate as if they were clicked outside instead of closing.",
+      "value": "",
       "type": "boolean",
-      "description_zh": "当按下浏览器的后退按钮或调用 $router.back（） 时关闭覆盖内容，从而取消原始导航。持久叠加将取消导航并制作动画，就好像它们在外部单击而不是关闭一样。",
-      "value": ""
+      "description": "Closes the overlay content when the browser’s back button is pressed or $router.back() is called, cancelling the original navigation. persistent overlays will cancel navigation and animate as if they were clicked outside instead of closing.",
+      "description_zh": "当按下浏览器的后退按钮或调用 $router.back（） 时关闭覆盖内容，从而取消原始导航。持久叠加将取消导航并制作动画，就好像它们在外部单击而不是关闭一样。"
     },
     "close-on-content-click": {
       "default": "false",
-      "description": "Closes component when you click on its content.",
+      "value": "",
       "type": "boolean",
-      "description_zh": "单击组件内容时关闭组件。",
-      "value": ""
+      "description": "Closes component when you click on its content.",
+      "description_zh": "单击组件内容时关闭组件。"
     },
     "contained": {
       "default": "false",
-      "description": "Limits the size of the component and scrim to its offset parent. Implies absolute and attach. (Note: The parent element must have position: relative.).",
+      "value": "",
       "type": "boolean",
-      "description_zh": "将元件和稀松布的大小限制为其偏移父项。表示绝对和附加。（注意：父元素必须具有 position： relative。",
-      "value": ""
+      "description": "Limits the size of the component and scrim to its offset parent. Implies absolute and attach. (Note: The parent element must have position: relative.).",
+      "description_zh": "将元件和稀松布的大小限制为其偏移父项。表示绝对和附加。（注意：父元素必须具有 position： relative。"
     },
     "content-class": {
       "default": "undefined",
-      "description": "Apply a custom class to the detached element. This is useful since the contents of this element will be appended to the beginning of the V-App component (unless you set the attach attribute), and the class attribute will not pass the CSS class directly to the component.",
+      "value": "",
       "type": "any",
-      "description_zh": "将自定义的class应用于被分离的此元素。由于此元素的内容将被附加到v-app组件开头(除非你设置了attach属性)，并且class属性不会将css类直接传递给组件，所以这个实行非常有用。",
-      "value": ""
+      "description": "Apply a custom class to the detached element. This implementation is useful since the contents of this element will be appended to the beginning of the v-app component (unless you set the attach attribute), and the class attribute will not pass the CSS class directly to the component.",
+      "description_zh": "将自定义的class应用于被分离的此元素。由于此元素的内容将被附加到v-app组件开头(除非你设置了attach属性)，并且class属性不会将css类直接传递给组件，所以这个实行非常有用。"
     },
     "content-props": {
       "default": "undefined",
-      "description": "Apply custom properties to the content.",
+      "value": "",
       "type": "any",
-      "description_zh": "将自定义属性应用于内容。",
-      "value": ""
+      "description": "Apply custom properties to the content.",
+      "description_zh": "将自定义属性应用于内容。"
     },
     "disabled": {
       "default": "false",
+      "value": "",
+      "type": "boolean",
       "description": "Remove the component's click or target functionality.",
-      "type": "boolean",
-      "description_zh": "移除组件的单击或 target 功能。",
-      "value": ""
+      "description_zh": "移除组件的单击或 target 功能。"
     },
-    "eager": {
+    "eager3.2.0 版本的新特色": {
       "default": "true",
-      "description": "Forces the component’s content to render when it mounts. This is useful if you have content that will not be rendered in the DOM that you want crawled for SEO.",
+      "value": "",
       "type": "boolean",
-      "description_zh": "强制在装入组件时呈现组件的内容。如果您的内容不会在 DOM 中呈现，而您希望为 SEO 进行抓取，这将非常有用。",
-      "value": ""
+      "description": "Forces the component’s content to render when it mounts. This is useful if you have content that will not be rendered in the DOM that you want crawled for SEO.",
+      "description_zh": "强制在装入组件时呈现组件的内容。如果您的内容不会在 DOM 中呈现，而您希望为 SEO 进行爬网，这将非常有用。"
     },
     "height": {
       "default": "undefined",
-      "description": "Sets the height of the component.",
+      "value": "",
       "type": "string | number",
-      "description_zh": "设定组件的高度。",
-      "value": ""
+      "description": "Sets the height of the component.",
+      "description_zh": "设定组件的高度。"
     },
     "id": {
       "default": "undefined",
-      "description": "HTML id attribute of the tooltip overlay. If not set, a globally unique id will be used.",
+      "value": "",
       "type": "string",
-      "description_zh": "工具提示覆盖的 HTML id 属性。如果未设置，将使用全局唯一 ID。",
-      "value": ""
+      "description": "HTML id attribute of the tooltip overlay. If not set, a globally unique id will be used.",
+      "description_zh": "工具提示覆盖的 HTML id 属性。如果未设置，将使用全局唯一 ID。"
     },
     "location": {
-      "default": "end",
-      "description": "Specifies the anchor point for positioning the component, using directional cues to align it either horizontally, vertically, or both…",
+      "default": "'end'",
+      "value": "",
       "type": "Anchor",
-      "description_zh": "指定用于定位组件的锚点，使用方向提示将其水平、垂直或两者对齐...",
-      "value": ""
+      "description": "Specifies the anchor point for positioning the component, using directional cues to align it either horizontally, vertically, or both…",
+      "description_zh": "指定用于定位组件的锚点，使用方向提示将其水平、垂直或两者对齐..."
     },
     "location-strategy": {
-      "default": "connected",
-      "description": "A function used to specifies how the component should position relative to its activator.",
+      "default": "'connected'",
+      "value": "",
       "type": "'static' | 'connected' | LocationStrategyFn",
-      "description_zh": "一个函数，用于指定组件相对于其激活器应如何定位。",
-      "value": ["static", "connected", "LocationStrategyFn"]
+      "description": "A function used to specifies how the component should position relative to its activator.",
+      "description_zh": "一个函数，用于指定组件相对于其激活器应如何定位。"
     },
     "max-height": {
       "default": "undefined",
-      "description": "Sets the maximum height of the component.",
+      "value": "",
       "type": "string | number",
-      "description_zh": "设定组件的最大高度。",
-      "value": ""
+      "description": "Sets the maximum height of the component.",
+      "description_zh": "设定组件的最大高度。"
     },
     "max-width": {
       "default": "undefined",
-      "description": "Sets the maximum width of the component.",
+      "value": "",
       "type": "string | number",
-      "description_zh": "设定组件的最大宽度。",
-      "value": ""
+      "description": "Sets the maximum width of the component.",
+      "description_zh": "设定组件的最大宽度。"
     },
     "min-height": {
       "default": "undefined",
-      "description": "Sets the minimum height of the component.",
+      "value": "",
       "type": "string | number",
-      "description_zh": "设定组件的最小高度。",
-      "value": ""
+      "description": "Sets the minimum height of the component.",
+      "description_zh": "设定组件的最小高度。"
     },
     "min-width": {
       "default": "0",
-      "description": "Sets the minimum width of the component.",
+      "value": "",
       "type": "string | number",
-      "description_zh": "设定组件的最小宽度。",
-      "value": ""
+      "description": "Sets the minimum width of the component.",
+      "description_zh": "设定组件的最小宽度。"
     },
     ":v-model": {
       "default": "false",
-      "description": "The v-model value of the component. If component supports the multiple prop, this defaults to an empty array.",
+      "value": "",
       "type": "boolean",
-      "description_zh": "组件的 v 模型值。如果组件支持 multiple 属性，则默认为空数组。",
-      "value": ""
+      "description": "The value of the component v-mode. If the component supports variants, the default is an empty array.",
+      "description_zh": "组件 v-mode 的值。如果组件支持多属性，默认为空数组。"
     },
     "no-click-animation": {
       "default": "false",
-      "description": "Disables the bounce effect when clicking outside of the content element when using the persistent prop.",
+      "value": "",
       "type": "boolean",
-      "description_zh": "禁用在使用持久性道具时单击内容元素外部时的反弹效果。",
-      "value": ""
+      "description": "Disables the bounce effect when clicking outside of the content element when using the persistent prop.",
+      "description_zh": "禁用在使用持久性道具时单击内容元素外部时的反弹效果。"
     },
     "offset": {
       "default": "10",
-      "description": "A single value that offsets content away from the target based upon what side it is on.",
+      "value": "",
       "type": "string | number | number[]",
-      "description_zh": "一个值，它根据内容所在的一侧将内容与目标偏移。",
-      "value": ""
+      "description": "A single value that offsets content away from the target based upon what side it is on.",
+      "description_zh": "一个值，它根据内容所在的一侧将内容与目标偏移。"
     },
     "open-delay": {
       "default": "undefined",
-      "description": "Delay (in ms) after which tooltip opens (when open-on-hover prop is set to true).",
+      "value": "",
       "type": "string | number",
-      "description_zh": "工具提示打开的延迟（以毫秒为单位）（当悬停时打开道具设置为 true 时）。",
-      "value": ""
+      "description": "Delay (in ms) after which tooltip opens (when open-on-hover prop is set to true).",
+      "description_zh": "工具提示打开的延迟（以毫秒为单位）（当悬停时打开道具设置为 true 时）。"
     },
     "open-on-click": {
       "default": "false",
-      "description": "Designates whether the tooltip should open on activator click.",
+      "value": "",
       "type": "boolean",
-      "description_zh": "指定工具提示是否应在激活器单击时打开。",
-      "value": ""
+      "description": "Designates whether the tooltip should open on activator click.",
+      "description_zh": "指定工具提示是否应在激活器单击时打开。"
     },
     "open-on-focus": {
-      "default": "false",
-      "description": "Activate the component when the activator is focused.",
+      "default": "undefined",
+      "value": "",
       "type": "boolean",
-      "description_zh": "当激活器聚焦时激活组件。",
-      "value": ""
+      "description": "Activate the component when the activator is focused.",
+      "description_zh": "当激活器聚焦时激活组件。"
     },
     "open-on-hover": {
       "default": "true",
-      "description": "Designates whether the tooltip should open on activator hover.",
+      "value": "",
       "type": "boolean",
-      "description_zh": "指定工具提示是否应在激活器悬停时打开。",
-      "value": ""
+      "description": "Designates whether the tooltip should open on activator hover.",
+      "description_zh": "指定工具提示是否应在激活器悬停时打开。"
     },
     "origin": {
-      "default": "auto",
-      "description": "Sets the origin of the animation on the element. You can explore more for transition origin on the MDN documentation",
+      "default": "'auto'",
+      "value": "",
       "type": "Anchor | 'auto' | 'overlap'",
-      "description_zh": "设置元素上的动画原点。您可以在 MDN 文档上浏览更多 for transition origin",
-      "value": ["Anchor", "auto", "overlap"]
+      "description": "Sets the origin of the animation on the element. You can explore more for transition origin on the MDN documentation",
+      "description_zh": "设置元素上的动画原点。您可以在 MDN 文档上浏览更多 for transition origin"
     },
     "scrim": {
       "default": "false",
-      "description": "Accepts true/false to enable background, and string to define color.",
+      "value": "",
       "type": "string | boolean",
-      "description_zh": "接受 true/false 以启用背景，接受 string 以定义颜色。",
-      "value": ""
+      "description": "Accepts true/false to enable background, and string to define color.",
+      "description_zh": "接受 true/false 以启用背景，接受 string 以定义颜色。"
     },
     "scroll-strategy": {
-      "default": "reposition",
+      "default": "'reposition'",
+      "value": "",
+      "type": "'none' | 'close' | 'block' | 'reposition' | ScrollStrategyFn",
       "description": "Strategy used when the component is activate and user scrolls.",
-      "type": "'close' | 'block' | 'none' | 'reposition' | ScrollStrategyFn",
-      "description_zh": "激活组件且用户滚动时使用的策略。",
-      "value": ["close", "block", "none", "reposition", "ScrollStrategyFn"]
+      "description_zh": "激活组件且用户滚动时使用的策略。"
+    },
+    "target": {
+      "default": "undefined",
+      "value": "",
+      "type": "  | Element  | 'parent'  | 'cursor'  | (string & {})  | ComponentPublicInstance  | [number, number]",
+      "description": "For locationStrategy=“connected”, specify an element or array of x,y coordinates that the overlay should position itself relative to. This will be the activator element by default.",
+      "description_zh": "对于 locationStrategy=“connected”，指定一个元素或 x，y 坐标数组，叠加应相对于该元素或数组定位自身。默认情况下，这将是 activator 元素。"
     },
     "text": {
       "default": "undefined",
-      "description": "Sets the content text of the component.",
+      "value": "",
       "type": "string",
+      "description": "Sets the content text of the component.",
       "description_zh": "设置组件的内容文本。",
-      "value": ""
+      "required": true
     },
     "theme": {
       "default": "undefined",
-      "description": "Specify a theme for this component and all of its children.",
+      "value": "",
       "type": "string",
-      "description_zh": "为此组件及其所有子组件指定主题。",
-      "value": ""
+      "description": "Specify a theme for this component and all of its children.",
+      "description_zh": "为此组件及其所有子组件指定主题。"
     },
     "transition": {
       "default": "false",
+      "value": "",
+      "type": "string | boolean | (TransitionProps & { component: Component })",
       "description": "Sets the component transition. Can be one of the built in or custom transition.",
-      "type": "string | boolean",
-      "description_zh": "设置组件过渡。可以是内置过渡或自定义过渡之一。",
-      "value": ""
+      "description_zh": "设置组件过渡。可以是内置过渡或自定义过渡之一。"
     },
     "width": {
       "default": "undefined",
-      "description": "Sets the width of the component.",
+      "value": "",
       "type": "string | number",
-      "description_zh": "设定组件的宽度。",
-      "value": ""
+      "description": "Sets the width of the component.",
+      "description_zh": "设定组件的宽度。"
     },
     "z-index": {
       "default": "2000",
-      "description": "The z-index used for the component.",
+      "value": "",
       "type": "string | number",
-      "description_zh": "用于组件的 z 索引。",
-      "value": ""
+      "description": "The z-index used for the component.",
+      "description_zh": "用于组件的 z 索引。"
     }
   },
-  "methods": [],
+  "link": "https://vuetifyjs.com/zh-Hans/api/v-tooltip/#links",
+  "link_zh": "https://vuetifyjs.com/zh-Hans/api/v-tooltip/#links",
   "typeDetail": {},
-  "events": [],
-  "link": "https://vuetifyjs.com/en/api/v-tooltip/#links",
-  "link_zh": "https://vuetifyjs.com/zh-Hans/api/v-tooltip/#links"
+  "events": [
+    {
+      "name": "update:modelValue",
+      "description": "An event that is raised when a component's model-value changes.",
+      "description_zh": "当组件的 model-value 更改时引发的事件。",
+      "params": "[boolean]",
+      "value": ""
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "activator",
+      "description": "When used, will activate the component when clicked (or hover for specific components). This manually stops the event propagation. Without this slot, if you open the component through its model, you will need to manually stop the event propagation.",
+      "description_zh": "使用时，将在单击（或悬停在特定组件上）时激活组件。这将手动停止事件传播。如果没有此插槽，如果通过其模型打开组件，则需要手动停止事件传播。"
+    },
+    {
+      "name": "default",
+      "description": "Default Vue slot.",
+      "description_zh": "默认Vue 插槽。"
+    }
+  ]
 }

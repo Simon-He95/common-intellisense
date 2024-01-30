@@ -2,93 +2,105 @@
   "name": "VListGroup",
   "props": {
     "active-color": {
-      "value": "",
-      "description": "The color applied when the component is in the active state",
       "default": "undefined",
+      "value": "",
       "type": "string",
-      "description_zh": "当组件处于 active 状态时应用的颜色"
+      "description": "The applied color when the component is in an active state.",
+      "description_zh": "组件处于活动状态时应用的颜色。"
     },
     "append-icon": {
-      "value": "",
-      "description": "Create a v-icon component after the default contents of the append slot",
       "default": "undefined",
-      "type": "string | (string | [string, number])[] | (new () => any) | FunctionalComponent",
-      "description_zh": "在 append 插槽的默认内容后创建一个 v-icon组件"
+      "value": "",
+      "type": "any",
+      "description": "Creates a v-icon component after default content in the append slot.",
+      "description_zh": "在追加槽中的默认内容之后创建一个 v-icon 组件。"
     },
     "base-color": {
-      "value": "",
-      "description": "MISSING DESCRIPTION",
       "default": "undefined",
+      "value": "",
       "type": "string",
-      "description_zh": "缺少描述"
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "缺少描述 （在 github 中编辑）"
     },
     "collapse-icon": {
+      "default": "'$collapse'",
       "value": "",
+      "type": "any",
       "description": "MISSING DESCRIPTION (edit in github)",
-      "default": "$collapse",
-      "type": "string | (string | [string, number])[] | (new () => any) | FunctionalComponent",
       "description_zh": "缺少描述 （在 github 中编辑）"
     },
     "color": {
-      "value": "",
-      "description": "Specify the control color, which can be any Material color (e.g. success or purple) or Css color (e.g. #033 or rgba (255, 0, 0, 0.5)). You can find a list of built-in color classes in the Colors page.",
       "default": "undefined",
+      "value": "",
       "type": "string",
-      "description_zh": "指定控件颜色，颜色值可以是任意 Material 颜色（例如 success 或者 purple ）也可以是 Css 颜色 （例如 #033 或者 rgba(255, 0, 0, 0.5)）。在 颜色页中可以找到内置的颜色类列表。"
+      "description": "Applies specified color to the control - supports utility colors (for example success or purple) or css color (for example success or purple) or css color (#033 or rgba(255, 0, 0, 0.5)). Find a list of built-in classes on the colors page.",
+      "description_zh": "将指定的颜色应用于控件 - 支持实用程序颜色（例如成功或紫色）或 css 颜色（例如成功或紫色）或 css 颜色（#033 或 rgba（255， 0， 0， 0.5））。在颜色页面上查找内置类的列表。"
     },
     "expand-icon": {
+      "default": "'$expand'",
       "value": "",
+      "type": "any",
       "description": "MISSING DESCRIPTION (edit in github)",
-      "default": "$expand",
-      "type": "string | (string | [string, number])[] | (new () => any) | FunctionalComponent",
       "description_zh": "缺少描述 （在 github 中编辑）"
     },
     "fluid": {
-      "value": "",
-      "description": "MISSING DESCRIPTION (edit in github)",
       "default": "false",
+      "value": "",
       "type": "boolean",
+      "description": "MISSING DESCRIPTION (edit in github)",
       "description_zh": "缺少描述 （在 github 中编辑）"
     },
     "prepend-icon": {
-      "value": "",
-      "description": "Add an icon in front of the component, using the same syntax as v-icon",
       "default": "undefined",
-      "type": "string | (string | [string, number])[] | (new () => any) | FunctionalComponent",
-      "description_zh": "在组件前添加一个图标，使用与 v-icon 相同的语法"
+      "value": "",
+      "type": "any",
+      "description": "Prepends an icon to the component, uses the same syntax as v-icon.",
+      "description_zh": "在组件前面添加一个图标，使用与 v-icon 相同的语法。"
     },
     "subgroup": {
-      "value": "",
-      "description": "MISSING DESCRIPTION (edit in github)",
       "default": "false",
+      "value": "",
       "type": "boolean",
+      "description": "MISSING DESCRIPTION (edit in github)",
       "description_zh": "缺少描述 （在 github 中编辑）"
     },
     "tag": {
+      "default": "'div'",
       "value": "",
-      "description": "Specifies the custom tag to be used on the root element.",
-      "default": "button",
       "type": "string",
+      "description": "Specifies the custom tag to be used on the root element.",
       "description_zh": "指定在根元素上使用的自定义标签。"
     },
     "title": {
-      "value": "",
-      "description": "MISSING DESCRIPTION (edit in github)",
       "default": "undefined",
+      "value": "",
       "type": "string",
-      "description_zh": "缺少描述 （在 github 中编辑）"
+      "description": "Specify a title text for the component.",
+      "description_zh": "指定组件的标题文本。"
     },
     "value": {
-      "value": "",
-      "description": "Expand/collapse the list group",
       "default": "undefined",
+      "value": "",
       "type": "any",
-      "description_zh": "展开/折叠列表组"
+      "description": "Expands / Collapse the list-group.",
+      "description_zh": "展开/折叠列表组。"
     }
   },
-  "methods": [],
+  "link": "https://vuetifyjs.com/zh-Hans/api/v-list-group/#links",
+  "link_zh": "https://vuetifyjs.com/zh-Hans/api/v-list-group/#links",
   "typeDetail": {},
   "events": [],
-  "link": "https://vuetifyjs.com/en/api/v-list/",
-  "link_zh": "https://vuetifyjs.com/zh-Hans/api/v-list/"
+  "methods": [],
+  "slots": [
+    {
+      "name": "activator",
+      "description": "When used, will activate the component when clicked (or hover for specific components). This manually stops the event propagation. Without this slot, if you open the component through its model, you will need to manually stop the event propagation.",
+      "description_zh": "使用时，将在单击（或悬停在特定组件上）时激活组件。这将手动停止事件传播。如果没有此插槽，如果通过其模型打开组件，则需要手动停止事件传播。"
+    },
+    {
+      "name": "default",
+      "description": "Default Vue slot.",
+      "description_zh": "默认Vue 插槽。"
+    }
+  ]
 }

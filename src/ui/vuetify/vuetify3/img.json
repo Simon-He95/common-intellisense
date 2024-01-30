@@ -3,141 +3,227 @@
   "props": {
     "alt": {
       "default": "undefined",
-      "description": "Alternate text for screen readers. Leave blank for decorative images.",
+      "value": "",
       "type": "string",
-      "description_zh": "屏幕阅读器的备用文本。 留空用于装饰性图像。",
-      "value": ""
+      "description": "Alternate text for screen readers. Leave blank for decorative images.",
+      "description_zh": "屏幕阅读器的备用文本。 留空用于装饰性图像。"
     },
     "aspect-ratio": {
       "default": "undefined",
-      "description": "Calculated as width/height, so for a 1920x1080px image, the value is 1.7778. If omitted, it will be calculated automatically.",
+      "value": "",
       "type": "string | number",
-      "description_zh": "计算为 width/height，因此对于 1920x1080px 的图片，其值为 1.7778。 如果省略，将自动计算。",
-      "value": ""
+      "description": "Calculated as width/height, so for a 1920x1080px image, the value is 1.7778. If omitted, it will be calculated automatically.",
+      "description_zh": "计算为 width/height，因此对于 1920x1080px 的图片，其值为 1.7778。 如果省略，将自动计算。"
+    },
+    "color": {
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "description": "Applies specified color to the control - supports utility colors (for example success or purple) or css color (for example success or purple) or css color (#033 or rgba(255, 0, 0, 0.5)). Find a list of built-in classes on the colors page.",
+      "description_zh": "将指定的颜色应用于控件 - 支持实用程序颜色（例如成功或紫色）或 css 颜色（例如成功或紫色）或 css 颜色（#033 或 rgba（255， 0， 0， 0.5））。在颜色页面上查找内置类的列表。"
     },
     "content-class": {
       "default": "undefined",
-      "description": "Apply a custom class to the internal content element.",
+      "value": "",
       "type": "string",
-      "description_zh": "将自定义类应用于内部内容元素。",
-      "value": ""
+      "description": "Apply a custom class to the internal content element.",
+      "description_zh": "将自定义类应用于内部内容元素。"
     },
     "cover": {
       "default": "false",
-      "description": "Adjust the background image to cover the entire container.",
+      "value": "",
       "type": "boolean",
-      "description_zh": "调整背景图像以覆盖整个容器。",
-      "value": ""
+      "description": "Adjust the background image to cover the entire container.",
+      "description_zh": "调整背景图像以覆盖整个容器。"
+    },
+    "crossorigin": {
+      "default": "undefined",
+      "value": "",
+      "type": "'' | 'anonymous' | 'use-credentials'",
+      "description": "Specify that images should be fetched with CORS enabled MDN",
+      "description_zh": "指定应使用启用了 CORS 的 MDN 获取图像"
+    },
+    "draggable": {
+      "default": "undefined",
+      "value": "",
+      "type": "boolean | 'true' | 'false'",
+      "description": "Controls the draggable behavior of the image. See MDN.",
+      "description_zh": "控制图像的可拖动行为。请参阅 MDN。"
     },
     "eager": {
       "default": "false",
-      "description": "Forces the component’s content to render when it mounts. This is useful if you have content that will not be rendered in the DOM that you want crawled for SEO.",
+      "value": "",
       "type": "boolean",
-      "description_zh": "强制在装入组件时呈现组件的内容。如果您的内容不会在 DOM 中呈现，而您希望为 SEO 进行抓取，这将非常有用。",
-      "value": ""
+      "description": "Forces the component’s content to render when it mounts. This is useful if you have content that will not be rendered in the DOM that you want crawled for SEO.",
+      "description_zh": "强制在装入组件时呈现组件的内容。如果您的内容不会在 DOM 中呈现，而您希望为 SEO 进行爬网，这将非常有用。"
     },
     "gradient": {
       "default": "undefined",
-      "description": "The gradient to apply to the image. This can be any valid CSS gradient declaration. You can find more information on the MDN documentation for gradients.",
+      "value": "",
       "type": "string",
-      "description_zh": "要应用于图像的渐变。这可以是任何有效的 CSS 渐变声明。你可以在渐变的 MDN 文档中找到更多信息。",
-      "value": ""
+      "description": "The gradient to apply to the image. This can be any valid CSS gradient declaration. You can find more information on the MDN documentation for gradients.",
+      "description_zh": "要应用于图像的渐变。这可以是任何有效的 CSS 渐变声明。你可以在渐变的 MDN 文档中找到更多信息。"
     },
     "height": {
       "default": "undefined",
-      "description": "Sets the height of the component.",
+      "value": "",
       "type": "string | number",
-      "description_zh": "设定组件的高度。",
-      "value": ""
+      "description": "Sets the height of the component.",
+      "description_zh": "设定组件的高度。"
     },
     "inline": {
       "default": "false",
-      "description": "Display as an inline element instead of a block, also disables flex-grow.",
+      "value": "",
       "type": "boolean",
-      "description_zh": "显示为内联元素而不是块，也会禁用 flex-grow。",
-      "value": ""
+      "description": "Display as an inline element instead of a block, also disables flex-grow.",
+      "description_zh": "显示为内联元素而不是块，也会禁用 flex-grow。"
     },
     "lazy-src": {
       "default": "undefined",
-      "description": "Something to show while waiting for the main image to load, typically a small base64-encoded thumbnail. Has a slight blur filter applied.Use vuetify-loader to generate automatically. NOTE: This prop has no effect unless either height or aspect-ratio are provided.",
+      "value": "",
       "type": "string",
-      "description_zh": "等待主图像加载时要显示的内容，通常是 base64 编码的小缩略图。应用了轻微的模糊滤镜。使用 vuetify-loader 自动生成。注意：除非提供高度或纵横比，否则此道具无效。",
-      "value": ""
+      "description": "Something to show while waiting for the main image to load, typically a small base64-encoded thumbnail. Has a slight blur filter applied.Use vuetify-loader to generate automatically. NOTE: This prop has no effect unless either height or aspect-ratio are provided.",
+      "description_zh": "等待主图像加载时要显示的内容，通常是 base64 编码的小缩略图。应用了轻微的模糊滤镜。使用 vuetify-loader 自动生成。注意：除非提供高度或纵横比，否则此道具无效。"
     },
     "max-height": {
       "default": "undefined",
-      "description": "Sets the maximum height of the component.",
+      "value": "",
       "type": "string | number",
-      "description_zh": "设定组件的最大高度。",
-      "value": ""
+      "description": "Sets the maximum height of the component.",
+      "description_zh": "设定组件的最大高度。"
     },
     "max-width": {
       "default": "undefined",
-      "description": "Sets the maximum width of the component.",
+      "value": "",
       "type": "string | number",
-      "description_zh": "设定组件的最大宽度。",
-      "value": ""
+      "description": "Sets the maximum width of the component.",
+      "description_zh": "设定组件的最大宽度。"
     },
     "min-height": {
       "default": "undefined",
-      "description": "Sets the minimum height of the component.",
+      "value": "",
       "type": "string | number",
-      "description_zh": "设定组件的最小高度。",
-      "value": ""
+      "description": "Sets the minimum height of the component.",
+      "description_zh": "设定组件的最小高度。"
     },
     "min-width": {
       "default": "undefined",
-      "description": "Sets the minimum width of the component.",
+      "value": "",
       "type": "string | number",
-      "description_zh": "设定组件的最小宽度。",
-      "value": ""
+      "description": "Sets the minimum width of the component.",
+      "description_zh": "设定组件的最小宽度。"
     },
     "options": {
       "default": "{\n  root: undefined,\n  rootMargin: undefined,\n  threshold: undefined\n}",
-      "description": "The option passed to the Intersection observer constructor.",
-      "type": "{ root: any; rootMargin: any; threshold: any }",
-      "description_zh": "传递给 Intersection observer 构造函数的选项。",
-      "value": ""
+      "value": "",
+      "type": "IntersectionObserverInit",
+      "description": "传递给 Intersection observer 构造函数的选项。",
+      "description_zh": "传递给 Intersection observer 构造函数的选项。"
+    },
+    "position": {
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "description": "Applies object-position styles to the image and placeholder elements.",
+      "description_zh": "将对象位置样式应用于图像和占位符元素。"
+    },
+    "referrerpolicy": {
+      "default": "undefined",
+      "value": "",
+      "type": "  | 'no-referrer'  | 'no-referrer-when-downgrade'  | 'origin'  | 'origin-when-cross-origin'  | 'same-origin'  | 'strict-origin'  | 'strict-origin-when-cross-origin'  | 'unsafe-url'",
+      "description": "Define which referrer is sent when fetching the resource MDN",
+      "description_zh": "定义获取资源 MDN 时发送的引用"
+    },
+    "rounded": {
+      "default": "undefined",
+      "value": "",
+      "type": "string | number | boolean",
+      "description": "Applies the border-radius style to the specified component. You can get more information about this on the Corner Radius of Borders page",
+      "description_zh": "对指定的组件应用 border-radius 样式。您可以在 边框的圆角半径页面 获取更多有关信息"
     },
     "sizes": {
       "default": "undefined",
-      "description": "To use srcset, see MDN.",
+      "value": "",
       "type": "string",
-      "description_zh": "使用 srcset，请参见 MDN.",
-      "value": ""
+      "description": "To use srcset, see MDN.",
+      "description_zh": "使用 srcset，请参见 MDN."
     },
     "src": {
       "default": "",
+      "value": "",
+      "type": "  | string  | { src: string; srcset: string; lazySrc: string; aspect: number }",
       "description": "The URL of the image. Required attributes.",
-      "type": "string | { src: string; srcset: string; lazySrc: string; aspect: number }",
-      "description_zh": "图像的 URL。必填属性。",
-      "value": ""
+      "description_zh": "图像的 URL。必填属性。"
     },
     "srcset": {
       "default": "undefined",
-      "description": "A set of alternate images to use based on the size of the device. Read more....",
+      "value": "",
       "type": "string",
-      "description_zh": "根据设备大小使用的一组备用图像。Read more….",
-      "value": ""
+      "description": "A set of alternate images to use based on the size of the device. Read more....",
+      "description_zh": "根据设备大小使用的一组备用图像。Read more…."
     },
     "transition": {
       "default": "'fade-transition'",
+      "value": "",
+      "type": "string | boolean | (TransitionProps & { component: Component })",
       "description": "The transition to use when switching from lazy-src to src. Can be one of the built in or custom transition.",
-      "type": "string",
-      "description_zh": "从 lazy-src 切换到 src 时要使用的转换。可以是内置过渡或自定义过渡之一。",
-      "value": ""
+      "description_zh": "从 lazy-src 切换到 src 时要使用的转换。可以是内置过渡或自定义过渡之一。"
     },
     "width": {
       "default": "undefined",
-      "description": "Sets the width of the component.",
+      "value": "",
       "type": "string | number",
-      "description_zh": "设定组件的宽度。",
-      "value": ""
+      "description": "Sets the width of the component.",
+      "description_zh": "设定组件的宽度。"
     }
   },
-  "methods": [],
+  "link": "https://vuetifyjs.com/zh-Hans/api/v-img/#links",
+  "link_zh": "https://vuetifyjs.com/zh-Hans/api/v-img/#links",
   "typeDetail": {},
-  "events": [],
-  "link": "https://vuetifyjs.com/en/api/v-img/#links",
-  "link_zh": "https://vuetifyjs.com/zh-Hans/api/v-img/#links"
+  "events": [
+    {
+      "name": "error",
+      "description": "Emitted if the image fails to load.",
+      "description_zh": "如果映像加载失败，则发出。",
+      "params": "[string]",
+      "value": ""
+    },
+    {
+      "name": "load",
+      "description": "Emitted when the image is loaded.",
+      "description_zh": "加载图像时发出。",
+      "params": "[string]",
+      "value": ""
+    },
+    {
+      "name": "loadstart",
+      "description": "Emitted when the image starts to load.",
+      "description_zh": "在图像开始加载时发出。",
+      "params": "[string]",
+      "value": ""
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "default",
+      "description": "Default Vue slot.",
+      "description_zh": "默认Vue 插槽。"
+    },
+    {
+      "name": "error",
+      "description": "Will be shown if the image fails to load, replacing the placeholder slot.",
+      "description_zh": "如果图像加载失败，将显示，替换占位符插槽。"
+    },
+    {
+      "name": "placeholder",
+      "description": "Display an overlay while the image is loading.",
+      "description_zh": "加载图像时显示叠加层。"
+    },
+    {
+      "name": "sources",
+      "description": "A list of <source> elements. If this slot is used v-img will render a <picture> instead of <img>.",
+      "description_zh": "<source> 元素列表。如果使用此插槽，v-img 将呈现一个 <picture> <img>而不是 ."
+    }
+  ]
 }

@@ -2,276 +2,308 @@
   "name": "VChip",
   "props": {
     "active-class": {
-      "value": "",
-      "description": "Create a v-avatar component after the default contents of the append slot",
       "default": "undefined",
+      "value": "",
       "type": "string",
-      "description_zh": "在 append 插槽的默认内容后创建一个 v-avatar组件"
+      "description": "The class applied to the component when it matches the current route. Find more information about the active-class prop on the vue-router documentation.",
+      "description_zh": "当组件与当前路由匹配时应用于组件的类。在 vue-router 文档中找到更多关于 active-class 属性的信息。"
+    },
+    "append-avatar": {
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "description": "Appends a v-avatar component after default content in the append slot.",
+      "description_zh": "在 append 插槽中的默认内容后附加一个 v-avatar 组件。"
     },
     "append-icon": {
-      "value": "",
-      "description": "Create a v-icon component after the default contents of the append slot",
       "default": "undefined",
-      "type": "string | (string | [string, number])[] | (new () => any) | FunctionalComponent",
-      "description_zh": "在 append 插槽的默认内容后创建一个 v-icon组件"
+      "value": "",
+      "type": "any",
+      "description": "Creates a v-icon component after default content in the append slot.",
+      "description_zh": "在追加槽中的默认内容之后创建一个 v-icon 组件。"
     },
     "border": {
-      "value": "",
-      "description": "Apply a border style to the component.",
       "default": "false",
+      "value": "",
       "type": "string | number | boolean",
+      "description": "Apply a border style to the component.",
       "description_zh": "应用边框样式到组件。"
     },
     "closable": {
-      "value": "",
-      "description": "Adds remove button and then a chip can be closed",
       "default": "false",
+      "value": "",
       "type": "boolean",
-      "description_zh": "添加移除按钮，然后可以关闭芯片"
+      "description": "Adds remove button and then a chip can be closed.",
+      "description_zh": "添加移除按钮，然后可以关闭芯片。"
     },
     "close-icon": {
+      "default": "'$delete'",
       "value": "",
-      "description": "Change the default icon used for close sheets",
-      "default": "$delete",
-      "type": "string | (string | [string, number])[] | (new () => any) | FunctionalComponent",
-      "description_zh": "更改用于 close 纸片的默认图标"
+      "type": "any",
+      "description": "Change the default icon used for close chips.",
+      "description_zh": "更改用于关闭筹码的默认图标。"
     },
     "close-label": {
+      "default": "'$vuetify.close'",
       "value": "",
-      "description": "Text used for aria-label on the close button in close chips. Can also be customized globally in Internationalization",
-      "default": "'vuetify.close",
       "type": "string",
-      "description_zh": "用于关闭筹码中关闭按钮上的咏叹调标签的文本。也可在国际化方面进行全球定制"
+      "description": "The text of the aria-label used to close the button in the Close fragment. It is also possible to customize globally in Internationalization.",
+      "description_zh": "在 关闭 碎片中用于关闭按钮的 aria-label 的文字。也可以在 国际化 中进行全局定制化。"
     },
     "color": {
-      "value": "",
-      "description": "Specify the control color, which can be any Material color (e.g. success or purple) or Css color (e.g. #033 or rgba (255, 0, 0, 0.5)). You can find a list of built-in color classes in the Colors page.",
       "default": "undefined",
+      "value": "",
       "type": "string",
-      "description_zh": "指定控件颜色，颜色值可以是任意 Material 颜色（例如 success 或者 purple ）也可以是 Css 颜色 （例如 #033 或者 rgba(255, 0, 0, 0.5)）。在 颜色页中可以找到内置的颜色类列表。"
+      "description": "Applies specified color to the control - supports utility colors (for example success or purple) or css color (for example success or purple) or css color (#033 or rgba(255, 0, 0, 0.5)). Find a list of built-in classes on the colors page.",
+      "description_zh": "将指定的颜色应用于控件 - 支持实用程序颜色（例如成功或紫色）或 css 颜色（例如成功或紫色）或 css 颜色（#033 或 rgba（255， 0， 0， 0.5））。在颜色页面上查找内置类的列表。"
     },
     "density": {
+      "default": "'default'",
       "value": "",
-      "description": "Adjusts the vertical height used by the component.",
-      "default": "default",
       "type": "'default' | 'comfortable' | 'compact'",
+      "description": "Adjusts the vertical height used by the component.",
       "description_zh": "调整组件使用的垂直高度。"
     },
     "disabled": {
-      "value": "",
-      "description": "Remove the ability to click or select a component to make it unavailable.",
       "default": "false",
+      "value": "",
       "type": "boolean",
-      "description_zh": "移除单击组件或选中组件的能力，将组件设置为不可用状态。"
+      "description": "Remove the component's click or target functionality.",
+      "description_zh": "移除组件的单击或 target 功能。"
     },
     "draggable": {
-      "value": "",
-      "description": "Makes the paper draggable",
       "default": "false",
+      "value": "",
       "type": "boolean",
-      "description_zh": "使纸片可拖动"
+      "description": "Makes the chip draggable.",
+      "description_zh": "使芯片可拖动。"
     },
     "elevation": {
-      "value": "",
-      "description": "The elevation of the component is acceptable from 0 to 24. You can find more information on the elevation page.",
       "default": "undefined",
+      "value": "",
       "type": "string | number",
-      "description_zh": "组件的海拔可接受 0 到 24 之间的值。你可以在 elevation page浏览更多信息。"
+      "description": "The elevation of the component is acceptable from 0 to 24. You can read more on the Elevation page.",
+      "description_zh": "组件的海拔可接受 0 到 24 之间的值。你可以在 elevation page 浏览更多信息。"
     },
     "exact": {
-      "value": "",
-      "description": "Exact match link. Without this link, '/' will match each route. You can read more about Exactprop in the vue-router documentation.",
       "default": "false",
+      "value": "",
       "type": "boolean",
-      "description_zh": "完全匹配链接。如果没有这个链接，‘/’ 将匹配每个路由。你能够在 vue-router 文档浏览更多 exactprop。"
+      "description": "Exact match link. Without this link, '/' will match each route. You can read more exact props in the vue-router documentation.",
+      "description_zh": "完全匹配链接。如果没有这个链接，‘/’ 将匹配每个路由。你能够在 vue-router 文档浏览更多 exact prop。"
     },
     "filter": {
-      "value": "",
-      "description": "A selection icon is displayed when selected",
       "default": "false",
+      "value": "",
       "type": "boolean",
-      "description_zh": "选中时显示选择图标"
+      "description": "Displays a selection icon when selected.",
+      "description_zh": "选中时显示选择图标。"
     },
     "filter-icon": {
+      "default": "'$complete'",
       "value": "",
-      "description": "Change the default icon used for filter sheets",
-      "default": "$complete",
       "type": "string",
-      "description_zh": "更改用于 filter 纸片的默认图标"
+      "description": "Change the default icon used for filter chips.",
+      "description_zh": "更改用于滤光片的默认图标。"
     },
     "href": {
-      "value": "",
-      "description": "Specify the component as an anchor and apply the href attribute.",
       "default": "undefined",
+      "value": "",
       "type": "string",
+      "description": "Specify the component as the anchor and apply the href attribute.",
       "description_zh": "指定组件为锚点并应用 href 属性。"
     },
     "label": {
-      "value": "",
-      "description": "Applies a medium size border radius",
       "default": "false",
+      "value": "",
       "type": "boolean",
-      "description_zh": "应用中等大小的边框半径"
+      "description": "Applies a medium size border radius.",
+      "description_zh": "应用中等大小的边框半径。"
     },
     "link": {
+      "default": "undefined",
       "value": "",
-      "description": "Designates that the component is a link. This is automatic when using the href or to prop.",
-      "default": "false",
       "type": "boolean",
+      "description": "Designates that the component is a link. This is automatic when using the href or to prop.",
       "description_zh": "指定组件是链接。当使用 href 或 to prop 时，这是自动的。"
     },
     ":v-model": {
-      "value": "",
-      "description": "The v-model value of the component. If component supports the multiple prop, this defaults to an empty array",
       "default": "true",
+      "value": "",
       "type": "boolean",
-      "description_zh": "组件的 v 模型值。如果组件支持 multiple 属性，则默认为空数组"
+      "description": "The value of the component v-mode. If the component supports variants, the default is an empty array.",
+      "description_zh": "组件 v-mode 的值。如果组件支持多属性，默认为空数组。"
     },
     "pill": {
-      "value": "",
-      "description": "Remove the margins of the v-avatar",
       "default": "false",
+      "value": "",
       "type": "boolean",
-      "description_zh": "移除 v-avatar 的边距"
+      "description": "Remove v-avatar padding.",
+      "description_zh": "删除 V 形形象填充。"
     },
     "prepend-avatar": {
-      "value": "",
-      "description": "Create a v-avatar component before the default content of the prepend slot",
       "default": "undefined",
+      "value": "",
       "type": "string",
-      "description_zh": "在 prepend 插槽的默认内容前创建一个 v-avatar组件"
+      "description": "Prepends a v-avatar component in the prepend slot before default content.",
+      "description_zh": "在默认内容之前的 prepend 插槽中预置 v-avatar 组件。"
     },
     "prepend-icon": {
-      "value": "",
-      "description": "Create a v-icon component before the default content of the prepend slot",
       "default": "undefined",
-      "type": "string | (string | [string, number])[] | (new () => any) | FunctionalComponent",
-      "description_zh": "在 prepend 插槽的默认内容前创建一个 v-icon组件"
+      "value": "",
+      "type": "any",
+      "description": "Creates a v-icon component in the prepend slot before default content.",
+      "description_zh": "在默认内容前面的预置槽中创建一个 v-icon 组件。"
     },
     "replace": {
-      "value": "",
-      "description": "Setting the replace property will call router.replace() instead of router.push() on click, so navigation doesn't leave a history. You can explore more replaceprops in the vue-router documentation.",
       "default": "false",
+      "value": "",
       "type": "boolean",
-      "description_zh": "设置 replace 属性会在点击时调用 router.replace() 而不是 router.push()，这样导航就不会留下历史记录。您可以在 vue-router 文档中浏览更多 replaceprop。"
+      "description": "Setting replace prop will call router.replace() instead of router.push() when clicked, so the navigation will not leave a history record. You can find more information about the replace prop on the vue-router documentation.",
+      "description_zh": "设置 replace prop 会在点击时调用 router.replace（） 而不是 router.push（），因此导航不会留下历史记录。你可以在 vue-router 文档中找到更多关于 replace 属性的信息。"
     },
     "ripple": {
-      "value": "",
-      "description": "Apply the v-ripple directive.",
       "default": "true",
+      "value": "",
       "type": "boolean | { class: string }",
-      "description_zh": "应用 v-ripple指令。"
+      "description": "Apply the v-ripple directive.",
+      "description_zh": "应用 v-ripple 指令。"
     },
     "rounded": {
+      "default": "undefined",
       "value": "",
-      "description": "Applies the border-radius style to the specified component. You can get more information about this on the Corner Radius of Borders page",
-      "default": "false",
       "type": "string | number | boolean",
-      "description_zh": "对指定的组件应用 border-radius 样式。您可以在 边框的圆角半径页面获取更多有关信息"
+      "description": "Applies the border-radius style to the specified component. You can get more information about this on the Corner Radius of Borders page",
+      "description_zh": "对指定的组件应用 border-radius 样式。您可以在 边框的圆角半径页面 获取更多有关信息"
     },
     "selected-class": {
-      "value": "",
-      "description": "Applies the border-radius style to the specified component. You can get more information about this on the Corner Radius of Borders page",
       "default": "undefined",
+      "value": "",
       "type": "string",
-      "description_zh": "对指定的组件应用 border-radius 样式。您可以在 边框的圆角半径页面获取更多有关信息"
+      "description": "Configure the name of the CSS class that will be applied when the selected item is selected.",
+      "description_zh": "配置被选中项目时应用的 CSS 类名。"
     },
     "size": {
+      "default": "'default'",
       "value": "",
-      "description": "Set the height and width of the component. The default unit is px. You can also use the following predefined sizes: x-small, small, default, large, and x-large.",
-      "default": "default",
       "type": "string | number",
+      "description": "Set the height and width of the component. The default unit is px. You can also use the following predefined sizes: x-small, small, default, large, and x-large.",
       "description_zh": "设置组件的高度和宽度。默认单位是px。也可以使用以下预定义的大小：x-small、small、default、large和x-large。"
     },
     "tag": {
+      "default": "'span'",
       "value": "",
-      "description": "Specifies the custom tag to be used on the root element.",
-      "default": "button",
       "type": "string",
+      "description": "Specifies the custom tag to be used on the root element.",
       "description_zh": "指定在根元素上使用的自定义标签。"
     },
     "text": {
-      "value": "",
-      "description": "Sets the content text of the component.",
       "default": "undefined",
+      "value": "",
       "type": "string",
+      "description": "Sets the content text of the component.",
       "description_zh": "设置组件的内容文本。"
     },
     "theme": {
-      "value": "",
-      "description": "Specifies the theme of this component and all of its subcomponents",
       "default": "undefined",
+      "value": "",
       "type": "string",
-      "description_zh": "指定此组件及其所有子组件的主题"
+      "description": "Specify a theme for this component and all of its children.",
+      "description_zh": "为此组件及其所有子组件指定主题。"
     },
     "to": {
-      "value": "",
-      "description": "Indicates the target route of the link. You can read more about toprops in the vue-router documentation.",
       "default": "undefined",
-      "type": "unknown",
-      "description_zh": "表示链接的目标路由。你可以在 vue-router 文档浏览更多 toprop。"
+      "value": "",
+      "type": "RouteLocationRaw",
+      "description": "Indicates the target route of the link. You can read more about to props in the vue-router documentation.",
+      "description_zh": "表示链接的目标路由。你可以在 vue-router 文档浏览更多 to prop。"
     },
     "value": {
+      "default": "undefined",
       "value": "",
-      "description": "Remove the shadow effect of the button.",
-      "default": "false",
-      "type": "boolean",
-      "description_zh": "移除按钮的阴影效果。"
+      "type": "any",
+      "description": "v-chip-group.",
+      "description_zh": "v-chip-group 的子组时使用的值。"
     },
     "variant": {
-      "value": [
-        "text",
-        "flat",
-        "elevated",
-        "tonal",
-        "outlined",
-        "plain"
-      ],
-      "description": "Applies the border-radius style to the specified component. You can get more information about this on the Corner Radius of Borders page",
-      "default": "false",
-      "type": "'text' | 'flat' | 'elevated' | 'tonal' | 'outlined' | 'plain'",
-      "description_zh": "对指定的组件应用 border-radius 样式。您可以在 边框的圆角半径页面获取更多有关信息"
+      "default": "'tonal'",
+      "value": "",
+      "type": "'flat' | 'text' | 'elevated' | 'tonal' | 'outlined' | 'plain'",
+      "description": "Applies a distinct style to the component.",
+      "description_zh": "对组件应用不同的样式。"
     }
   },
-  "methods": [],
+  "link": "https://vuetifyjs.com/zh-Hans/api/v-chip/#links",
+  "link_zh": "https://vuetifyjs.com/zh-Hans/api/v-chip/#links",
   "typeDetail": {},
   "events": [
     {
       "name": "click",
-      "description": "Emitted when a component is clicked, switching chips (if included in the chipset) - unless a .native modifier is used, clicking will trigger a ripple in the component",
+      "description": "Emitted when component is clicked, toggles chip if contained in a chip group - Will trigger component to ripple when clicked unless the .native modifier is used.",
+      "description_zh": "单击组件时发出，如果芯片组中包含，则切换芯片 - 除非使用 .native 修饰符，否则单击时将触发组件波纹。",
       "params": "[MouseEvent | KeyboardEvent]",
-      "description_zh": "单击组件时发出，切换芯片（如果包含在芯片组中） - 除非使用 .native 修饰符，否则单击时将触发组件产生涟漪",
       "value": ""
     },
     {
       "name": "click:close",
-      "description": "Issued when the close icon is clicked",
+      "description": "Emitted when close icon is clicked.",
+      "description_zh": "单击关闭图标时发出。",
       "params": "[MouseEvent]",
-      "description_zh": "单击关闭图标时发出",
       "value": ""
     },
     {
       "name": "clickOnce",
-      "description": "MISSING DESCRIPTION",
-      "params": "never",
-      "description_zh": "缺少描述",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "缺少描述 （在 github 中编辑）",
+      "params": "[MouseEvent]",
       "value": ""
     },
     {
       "name": "group:selected",
       "description": "Event that is emitted when an item is selected within a group.",
-      "params": "[{ value: boolean }]",
       "description_zh": "在组中选择项目时发出的事件。",
+      "params": "[{ value: boolean }]",
       "value": ""
     },
     {
       "name": "update:modelValue",
-      "description": "Event that is emitted when the component’s model changes",
+      "description": "An event that is raised when a component's model-value changes.",
+      "description_zh": "当组件的 model-value 更改时引发的事件。",
       "params": "[boolean]",
-      "description_zh": "组件模型更改时发出的事件",
       "value": ""
     }
   ],
-  "link": "https://vuetifyjs.com/en/components/chips/",
-  "link_zh": "https://vuetifyjs.com/en/components/chips/"
+  "methods": [],
+  "slots": [
+    {
+      "name": "append",
+      "description": "Adds an item inside the input and after input content.",
+      "description_zh": "在输入内容内部和之后添加一个项目。"
+    },
+    {
+      "name": "close",
+      "description": "Slot for icon used in close prop.",
+      "description_zh": "关闭道具中使用的图标插槽。"
+    },
+    {
+      "name": "default",
+      "description": "Default Vue slot.",
+      "description_zh": "默认Vue 插槽。"
+    },
+    {
+      "name": "filter",
+      "description": "Slot for icon used in filter prop.",
+      "description_zh": "过滤器道具中使用的图标插槽。"
+    },
+    {
+      "name": "label",
+      "description": "The default slot of the v-label or v-field-label component.",
+      "description_zh": "v-label 或 v-field-label 组件的默认插槽。"
+    },
+    {
+      "name": "prepend",
+      "description": "Adds an item outside the input and before input content.",
+      "description_zh": "在输入内容之外和输入内容之前添加一个项目。"
+    }
+  ]
 }
