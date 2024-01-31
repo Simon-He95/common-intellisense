@@ -1,34 +1,50 @@
 {
   "name": "VarEllipsis",
   "props": {
+    "v-model:expand": {
+      "value": "",
+      "description": "Whether to expand",
+      "description_zh": "是否扩展",
+      "default": "false",
+      "type": "boolean"
+    },
     "expand-trigger": {
-      "value": [
-        "click",
-        "hover"
-      ],
-      "description": "Expand the trigger method, and the optional value is click",
+      "value": "",
+      "description": "Expand trigger method, optional value click",
+      "description_zh": "展开触发方式，可选值点击",
       "default": "-",
-      "type": "展开触发方式，可选值 click",
-      "description_zh": "展开触发方式，可选值 click"
+      "type": "string"
     },
     "line-clamp": {
       "value": "",
-      "description": "Maximum number of lines to display, see [line-clamp](https://caniuse.com/?search=line-clamp) for compatibility",
+      "description": "Maximum number of display lines, see line-clamp for compatibility",
+      "description_zh": "最大显示行数，有关兼容性，请参见 line-clamp",
       "default": "-",
-      "type": "最大显示行数，兼容性见 line-clamp",
-      "description_zh": "最大显示行数，兼容性见 [line-clamp](https://caniuse.com/?search=line-clamp)"
+      "type": "string"
     },
     "tooltip": {
       "value": "",
-      "description": "Tooltip component configuration for deep customization. For ease of use, 'sameWidth' defaults to true here",
-      "default": "-",
-      "type": "Tooltip 组件配置，用于深度定制。为了更方便使用，sameWidth 在这里默认为 true",
-      "description_zh": "Tooltip 组件配置，用于深度定制。为了更方便使用，`sameWidth` 在这里默认为 true"
+      "description": "Tooltip component props, for deep customization. For more convenience, sameWidth defaults to true here",
+      "description_zh": "工具提示组件 props，用于深度定制。为方便起见，此处 sameWidth 默认为 true",
+      "default": "true",
+      "type": "boolean | TooltipProps"
     }
   },
   "methods": [],
   "typeDetail": {},
   "events": [],
+  "slots": [
+    {
+      "name": "default",
+      "description": "Text content",
+      "description_zh": "文本内容"
+    },
+    {
+      "name": "tooltip-content",
+      "description": "Tooltip content",
+      "description_zh": "工具提示内容"
+    }
+  ],
   "link": "https://varlet.gitee.io/varlet-ui/#/en-US/ellipsis",
   "link_zh": "https://varlet.gitee.io/varlet-ui/#/zh-CN/ellipsis"
 }

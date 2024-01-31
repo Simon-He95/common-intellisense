@@ -1,5 +1,18 @@
 import { getLocale } from '@vscode-use/utils'
-import { componentsReducer, propsReducer } from '../../utils'
+import { componentsReducer, hyphenate, propsReducer } from '../../utils'
+import appBar from './appBar.json'
+import avatar from './avatar.json'
+import avatarGroup from './avatarGroup.json'
+import backTop from './backTop.json'
+import badge from './badge.json'
+import bottomNavigation from './bottomNavigation.json'
+import bottomNavigationItem from './bottomNavigationItem.json'
+import collapseTransition from './collapseTransition.json'
+import floatingPanel from './floatingPanel.json'
+import image from './image.json'
+import menuOption from './menuOption.json'
+import menuSelect from './menuSelect.json'
+import watermark from './watermark.json'
 import actionSheet from './actionSheet.json'
 import button from './button.json'
 import vswitch from './switch.json'
@@ -65,6 +78,19 @@ import uploader from './uploader.json'
 
 export function varlet2() {
   const map: any = [
+    appBar,
+    avatar,
+    avatarGroup,
+    backTop,
+    badge,
+    bottomNavigation,
+    bottomNavigationItem,
+    collapseTransition,
+    floatingPanel,
+    image,
+    menuOption,
+    menuSelect,
+    watermark,
     actionSheet,
     button,
     vswitch,
@@ -137,6 +163,19 @@ export function varlet2Components() {
 
   const map = isZh
     ? [
+        [appBar, '导航栏', `<${hyphenate(appBar.name).slice(1)}></${hyphenate(appBar.name).slice(1)}>`],
+        [avatar, '头像', `<${hyphenate(avatar.name).slice(1)}></${hyphenate(avatar.name).slice(1)}>`],
+        [avatarGroup, '头像', `<${hyphenate(avatarGroup.name).slice(1)}></${hyphenate(avatarGroup.name).slice(1)}>`],
+        [backTop, '回到顶部', `<${hyphenate(backTop.name).slice(1)}></${hyphenate(backTop.name).slice(1)}>`],
+        [badge, '徽标', `<${hyphenate(badge.name).slice(1)}></${hyphenate(badge.name).slice(1)}>`],
+        [bottomNavigation, '底部导航栏', `<${hyphenate(bottomNavigation.name).slice(1)}></${hyphenate(bottomNavigation.name).slice(1)}>`],
+        [bottomNavigationItem, '底部导航栏', `<${hyphenate(bottomNavigationItem.name).slice(1)}></${hyphenate(bottomNavigationItem.name).slice(1)}>`],
+        [collapseTransition, '折叠东校', `<${hyphenate(collapseTransition.name).slice(1)}></${hyphenate(collapseTransition.name).slice(1)}>`],
+        [floatingPanel, '浮动面板', `<${hyphenate(floatingPanel.name).slice(1)}></${hyphenate(floatingPanel.name).slice(1)}>`],
+        [image, '图片', `<${hyphenate(image.name).slice(1)}></${hyphenate(image.name).slice(1)}>`],
+        [menuOption, '菜单', `<${hyphenate(menuOption.name).slice(1)}></${hyphenate(menuOption.name).slice(1)}>`],
+        [menuSelect, '菜单', `<${hyphenate(menuSelect.name).slice(1)}></${hyphenate(menuSelect.name).slice(1)}>`],
+        [watermark, '水印', `<${hyphenate(watermark.name).slice(1)}></${hyphenate(watermark.name).slice(1)}>`],
         [actionSheet, '动作面板', `<var-action-sheet 
   :actions="actions"
   v-model:show="show"
@@ -289,6 +328,19 @@ export function varlet2Components() {
         [uploader, '文件上传 提供了文件读取、图片/视频预览能力。 通过监听 after-read 事件获取文件上传服务器。', '<var-uploader v-model="files" @after-read="handleAfterRead"/>'],
       ]
     : [
+        [appBar, appBar.name, `<${hyphenate(appBar.name).slice(1)}></${hyphenate(appBar.name).slice(1)}>`],
+        [avatar, avatar.name, `<${hyphenate(avatar.name).slice(1)}></${hyphenate(avatar.name).slice(1)}>`],
+        [avatarGroup, avatarGroup.name, `<${hyphenate(avatarGroup.name).slice(1)}></${hyphenate(avatarGroup.name).slice(1)}>`],
+        [backTop, backTop.name, `<${hyphenate(backTop.name).slice(1)}></${hyphenate(backTop.name).slice(1)}>`],
+        [badge, badge.name, `<${hyphenate(badge.name).slice(1)}></${hyphenate(badge.name).slice(1)}>`],
+        [bottomNavigation, bottomNavigation.name, `<${hyphenate(bottomNavigation.name).slice(1)}></${hyphenate(bottomNavigation.name).slice(1)}>`],
+        [bottomNavigationItem, bottomNavigationItem.name, `<${hyphenate(bottomNavigationItem.name).slice(1)}></${hyphenate(bottomNavigationItem.name).slice(1)}>`],
+        [collapseTransition, collapseTransition.name, `<${hyphenate(collapseTransition.name).slice(1)}></${hyphenate(collapseTransition.name).slice(1)}>`],
+        [floatingPanel, floatingPanel.name, `<${hyphenate(floatingPanel.name).slice(1)}></${hyphenate(floatingPanel.name).slice(1)}>`],
+        [image, image.name, `<${hyphenate(image.name).slice(1)}></${hyphenate(image.name).slice(1)}>`],
+        [menuOption, menuOption.name, `<${hyphenate(menuOption.name).slice(1)}></${hyphenate(menuOption.name).slice(1)}>`],
+        [menuSelect, menuSelect.name, `<${hyphenate(menuSelect.name).slice(1)}></${hyphenate(menuSelect.name).slice(1)}>`],
+        [watermark, watermark.name, `<${hyphenate(watermark.name).slice(1)}></${hyphenate(watermark.name).slice(1)}>`],
         [actionSheet, 'Action Panel', `<var-action-sheet
    :actions="actions"
    v-model:show="show"

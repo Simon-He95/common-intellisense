@@ -1,0 +1,116 @@
+{
+  "name": "VarImage",
+  "props": {
+    "src": {
+      "value": "",
+      "description": "Image src",
+      "description_zh": "图片来源",
+      "default": "-",
+      "type": "string"
+    },
+    "fit": {
+      "value": "",
+      "description": "Image fit mode, optional value is fill contain cover none scale-down",
+      "description_zh": "图像拟合模式，可选值为填充、包含覆盖、无缩小",
+      "default": "fill",
+      "type": "string"
+    },
+    "alt": {
+      "value": "",
+      "description": "Image alt text, the same as the native attribute of the img tag",
+      "description_zh": "图片替代文本，与 img 标签的 native 属性相同",
+      "default": "-",
+      "type": "string"
+    },
+    "width": {
+      "value": "",
+      "description": "Image title text, the same as the native attribute of the img tag",
+      "description_zh": "图片标题文本，与 img 标签的原生属性相同",
+      "default": "-",
+      "type": "string | number"
+    },
+    "height": {
+      "value": "",
+      "description": "Image height",
+      "description_zh": "图像高度",
+      "default": "-",
+      "type": "string | number"
+    },
+    "radius": {
+      "value": "",
+      "description": "Image radius",
+      "description_zh": "图像半径",
+      "default": "-",
+      "type": "string | number"
+    },
+    "lazy": {
+      "value": "",
+      "description": "Whether to enable lazy loading",
+      "description_zh": "是否开启延迟加载",
+      "default": "false",
+      "type": "boolean"
+    },
+    "loading": {
+      "value": "",
+      "description": "When lazy loading is enabled, the image displayed in loading",
+      "description_zh": "启用延迟加载时，加载中显示的图像",
+      "default": "-",
+      "type": "string"
+    },
+    "error": {
+      "value": "",
+      "description": "When lazy loading is enabled, the image displayed in error",
+      "description_zh": "启用延迟加载时，图像显示错误",
+      "default": "-",
+      "type": "string"
+    },
+    "ripple": {
+      "value": "",
+      "description": "Whether to enable ripple",
+      "description_zh": "是否开启纹波",
+      "default": "false",
+      "type": "boolean"
+    },
+    "block": {
+      "value": "",
+      "description": "Whether it is a block element",
+      "description_zh": "是否为块元素",
+      "default": "true",
+      "type": "boolean"
+    }
+  },
+  "methods": [],
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "click",
+      "description": "Triggered when you click on Image",
+      "params": "event: Event",
+      "description_zh": "单击图像时触发",
+      "value": ""
+    },
+    {
+      "name": "load",
+      "description": "Triggered when the image is successfully loaded (when the image fails in lazy loading mode, it will only be triggered when the image is successfully loaded)",
+      "params": "event: Event",
+      "description_zh": "镜像加载成功时触发（镜像在延迟加载模式下失败时，只有在镜像加载成功时才会触发）",
+      "value": ""
+    },
+    {
+      "name": "error",
+      "description": "Triggered when an image fails to load (when an image fails in lazy loading mode, it will only be triggered when the number of attempts ends)",
+      "params": "event: Event",
+      "description_zh": "镜像加载失败时触发（镜像在延迟加载模式下失败时，仅在尝试次数结束时触发）",
+      "value": ""
+    }
+  ],
+  "slots": [
+    {
+      "name": "error",
+      "description": "Load failure slot",
+      "description_zh": "加载故障插槽"
+    }
+  ],
+  "link": "https://varlet.gitee.io/varlet-ui/#/en-US/image",
+  "link_zh": "https://varlet.gitee.io/varlet-ui/#/zh-CN/image"
+}

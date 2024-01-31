@@ -1,0 +1,103 @@
+{
+  "name": "VarBottomNavigation",
+  "props": {
+    "v-model:active": {
+      "value": "",
+      "description": "Identifier of current tab",
+      "description_zh": "当前选项卡的标识符",
+      "default": "0",
+      "type": "number | string"
+    },
+    "fixed": {
+      "value": "",
+      "description": "Whether to fixed bottom",
+      "description_zh": "是否固定底部",
+      "default": "false",
+      "type": "boolean"
+    },
+    "border": {
+      "value": "",
+      "description": "Whether to show border",
+      "description_zh": "是否显示边框",
+      "default": "false",
+      "type": "boolean"
+    },
+    "safe-area": {
+      "value": "",
+      "description": "Whether to enable bottom safe area adaptation",
+      "description_zh": "是否启用底部安全区域适配",
+      "default": "false",
+      "type": "boolean"
+    },
+    "z-index": {
+      "value": "",
+      "description": "Z-index",
+      "description_zh": "Z 指数",
+      "default": "1",
+      "type": "number | string"
+    },
+    "active-color": {
+      "value": "",
+      "description": "Color of active tab item",
+      "description_zh": "活动选项卡项的颜色",
+      "default": "-",
+      "type": "string"
+    },
+    "inactive-color": {
+      "value": "",
+      "description": "Color of inactive tab item",
+      "description_zh": "非活动选项卡项的颜色",
+      "default": "-",
+      "type": "string"
+    },
+    "fab-props": {
+      "value": "",
+      "description": "Fab button props",
+      "description_zh": "Fab 按钮道具",
+      "default": "{type: \"primary\"}",
+      "type": "ButtonProps"
+    }
+  },
+  "methods": [],
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "before-change",
+      "description": "The callback function before switching labels, which returns falsy value to prevent switching, supports the return of promise",
+      "description_zh": "切换标签前的回调函数，返回虚假值以防止切换，支持返回 promise",
+      "params": "active: number | string",
+      "value": ""
+    },
+    {
+      "name": "change",
+      "description": "Triggered when switching labels",
+      "description_zh": "切换标签时触发",
+      "params": "active: number | string",
+      "value": ""
+    },
+    {
+      "name": "fab-click",
+      "description": "Triggered when clicking fab button",
+      "description_zh": "单击晶圆厂按钮时触发",
+      "params": "-",
+      "value": ""
+    }
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "description": "Content of bottom navigation",
+      "description_zh": "底部导航内容"
+    },
+    {
+      "name": "fab",
+      "description": "Support for inserting a custom Fab button into a component",
+      "description_zh": "支持将自定义 Fab 按钮插入组件"
+    }
+  ],
+  "suggestions": [
+    "var-bottom-navigation-item"
+  ],
+  "link": "https://varlet.gitee.io/varlet-ui/#/en-US/button",
+  "link_zh": "https://varlet.gitee.io/varlet-ui/#/zh-CN/button"
+}

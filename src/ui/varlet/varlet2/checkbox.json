@@ -5,7 +5,7 @@
       "value": "",
       "description": "The value of the binding",
       "default": "false",
-      "type": "绑定的值",
+      "type": "any",
       "required": true,
       "description_zh": "绑定的值"
     },
@@ -13,63 +13,63 @@
       "value": "",
       "description": "The value of the selected state",
       "default": "true",
-      "type": "选中状态的值",
+      "type": "any",
       "description_zh": "选中状态的值"
     },
     "unchecked-value": {
       "value": "",
       "description": "The value of the unchecked status",
       "default": "false",
-      "type": "未选中状态的值",
+      "type": "any",
       "description_zh": "未选中状态的值"
     },
     "checked-color": {
       "value": "",
       "description": "The color of the selected state",
       "default": "-",
-      "type": "选中状态的颜色",
+      "type": "string",
       "description_zh": "选中状态的颜色"
     },
     "unchecked-color": {
       "value": "",
       "description": "The color of the unchecked status",
       "default": "-",
-      "type": "未选中状态的颜色",
+      "type": "string",
       "description_zh": "未选中状态的颜色"
     },
     "icon-size": {
       "value": "",
       "description": "Icon size",
       "default": "-",
-      "type": "图标尺寸",
+      "type": "string | number",
       "description_zh": "图标尺寸"
     },
     "disabled": {
       "value": "",
       "description": "Whether to disable or not",
       "default": "false",
-      "type": "是否禁用",
+      "type": "boolean",
       "description_zh": "是否禁用"
     },
     "readonly": {
       "value": "",
       "description": "Whether it is read-only or not",
       "default": "false",
-      "type": "是否只读",
+      "type": "boolean",
       "description_zh": "是否只读"
     },
     "ripple": {
       "value": "",
       "description": "Whether to turn on the water ripples",
       "default": "true",
-      "type": "是否开启水波纹",
+      "type": "boolean",
       "description_zh": "是否开启水波纹"
     },
     "rules": {
       "value": "",
       "description": "Validation rules, which return 'true' to indicate that the validation is passed, and the rest of the values are converted to text as user prompts",
       "default": "-",
-      "type": "验证规则，返回 true 表示验证通过，其余的值则转换为文本作为用户提示",
+      "type": "Array<(value: any) => any>",
       "description_zh": "验证规则，返回 `true` 表示验证通过，其余的值则转换为文本作为用户提示"
     }
   },
@@ -78,25 +78,29 @@
       "name": "validate",
       "description": "Trigger the check",
       "params": "`-`",
-      "description_zh": "触发校验"
+      "description_zh": "触发校验",
+      "value": ""
     },
     {
       "name": "resetValidation",
       "description": "Clear the verification information",
       "params": "`-`",
-      "description_zh": "清空校验信息"
+      "description_zh": "清空校验信息",
+      "value": ""
     },
     {
       "name": "reset",
       "description": "Clear the bound value (set to 'unchecked-value') and validation information",
       "params": "`-`",
-      "description_zh": "清空绑定的值(设置为 `unchecked-value`)和校验信息"
+      "description_zh": "清空绑定的值(设置为 `unchecked-value`)和校验信息",
+      "value": ""
     },
     {
       "name": "toggle",
       "description": "Toggle the selected state, pass 'checked-value' to be selected, 'unchecked-value' to uncheck, and not to pass or in other cases to negate",
       "params": "`value: any`",
-      "description_zh": "切换选中状态，传 `checked-value` 为选中， `unchecked-value` 为取消选中，不传或其他情况为取反"
+      "description_zh": "切换选中状态，传 `checked-value` 为选中， `unchecked-value` 为取消选中，不传或其他情况为取反",
+      "value": ""
     }
   ],
   "typeDetail": {},
@@ -105,13 +109,37 @@
       "name": "click",
       "description": "Triggered when clicked",
       "params": "点击时触发",
-      "description_zh": "点击时触发"
+      "description_zh": "点击时触发",
+      "value": ""
     },
     {
       "name": "change",
       "description": "Triggered when the status changes",
       "params": "状态变更时触发",
-      "description_zh": "状态变更时触发"
+      "description_zh": "状态变更时触发",
+      "value": ""
+    }
+  ],
+  "slots": [
+    {
+      "name": "checked-icon",
+      "description": "Checked icon",
+      "description_zh": "选中图标"
+    },
+    {
+      "name": "unchecked-icon",
+      "description": "Unchecked icon",
+      "description_zh": "未选中图标"
+    },
+    {
+      "name": "indeterminate-icon",
+      "description": "Indeterminate icon",
+      "description_zh": "“不确定”图标"
+    },
+    {
+      "name": "default",
+      "description": "Displayed text",
+      "description_zh": "显示的文本"
     }
   ],
   "link": "https://varlet.gitee.io/varlet-ui/#/en-US/checkbox-group",

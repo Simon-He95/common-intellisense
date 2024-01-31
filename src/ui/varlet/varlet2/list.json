@@ -3,59 +3,59 @@
   "props": {
     "v-model:loading": {
       "value": "",
-      "description": "Loading status",
+      "description": "Loading state",
+      "description_zh": "加载状态",
       "default": "false",
-      "type": "加载状态",
-      "description_zh": "加载状态"
+      "type": "boolean"
     },
     "v-model:error": {
       "value": "",
-      "description": "Error status",
+      "description": "Error state",
+      "description_zh": "错误状态",
       "default": "false",
-      "type": "错误状态",
-      "description_zh": "错误状态"
+      "type": "boolean"
     },
     "immediate-check": {
       "value": "",
-      "description": "Whether the position is detected immediately when the component is initialized",
+      "description": "Whether the location is detected immediately when the List is initialized",
+      "description_zh": "初始化列表时是否立即检测到该位置",
       "default": "true",
-      "type": "是否在组件初始化时立刻检测位置",
-      "description_zh": "是否在组件初始化时立刻检测位置"
+      "type": "boolean"
     },
     "finished": {
       "value": "",
-      "description": "Whether it has been loaded",
+      "description": "Whether the load is complete",
+      "description_zh": "加载是否完成",
       "default": "false",
-      "type": "是否加载完毕",
-      "description_zh": "是否加载完毕"
+      "type": "boolean"
     },
     "offset": {
       "value": "",
-      "description": "The trigger distance from the bottom",
+      "description": "Trigger distance from the bottom",
+      "description_zh": "触发距离",
       "default": "0",
-      "type": "距离底部的触发距离",
-      "description_zh": "距离底部的触发距离"
+      "type": "string | number"
     },
     "loading-text": {
       "value": "",
-      "description": "Load status text",
-      "default": "加载中",
-      "type": "加载状态文字",
-      "description_zh": "加载状态文字"
+      "description": "Loading text",
+      "description_zh": "加载文本",
+      "default": "Loading",
+      "type": "string"
     },
     "finished-text": {
       "value": "",
-      "description": "Finished loading text",
-      "default": "没有更多了",
-      "type": "加载完毕文字",
-      "description_zh": "加载完毕文字"
+      "description": "Finished text",
+      "description_zh": "完成的文本",
+      "default": "No more",
+      "type": "string"
     },
     "error-text": {
       "value": "",
-      "description": "Loading failed text",
-      "default": "加载失败",
-      "type": "加载失败文字",
-      "description_zh": "加载失败文字"
+      "description": "Error text",
+      "description_zh": "错误文本",
+      "default": "Load fail",
+      "type": "string"
     }
   },
   "methods": [
@@ -63,7 +63,8 @@
       "name": "check",
       "description": "Triggers a position check and bottoms out to trigger a load event.",
       "params": "`-`",
-      "description_zh": "触发位置检查, 触底触发 load 事件。"
+      "description_zh": "触发位置检查, 触底触发 load 事件。",
+      "value": ""
     }
   ],
   "typeDetail": {},
@@ -72,7 +73,30 @@
       "name": "load",
       "description": "Triggers when the bottom is reached",
       "params": "触底时触发",
-      "description_zh": "触底时触发"
+      "description_zh": "触底时触发",
+      "value": ""
+    }
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "description": "List content",
+      "description_zh": "列表内容"
+    },
+    {
+      "name": "loading",
+      "description": "Loading content",
+      "description_zh": "加载内容"
+    },
+    {
+      "name": "error",
+      "description": "Error content",
+      "description_zh": "错误内容"
+    },
+    {
+      "name": "finished",
+      "description": "Finished content",
+      "description_zh": "完成内容"
     }
   ],
   "link": "https://varlet.gitee.io/varlet-ui/#/en-US/list",

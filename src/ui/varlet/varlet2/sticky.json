@@ -1,33 +1,33 @@
 {
   "name": "VarSticky",
   "props": {
-    ":offset-top": {
+    "offset-top": {
       "value": "",
-      "description": "Ceiling distance",
+      "description": "Sticky offset top",
+      "description_zh": "粘性偏置顶部",
       "default": "0",
-      "type": "吸顶距离",
-      "description_zh": "吸顶距离"
+      "type": "string | number"
     },
     "z-index": {
       "value": "",
-      "description": "The level at which the ceiling is raised",
-      "default": "0",
-      "type": "吸顶时的层级",
-      "description_zh": "吸顶时的层级"
+      "description": "Sticky z-index",
+      "description_zh": "粘性 z 指数",
+      "default": "10",
+      "type": "string | number"
     },
     "css-mode": {
       "value": "",
-      "description": "Turn on native 'CSS Sticky' mode",
+      "description": "Enable native css sticky mode",
+      "description_zh": "启用原生 css 粘性模式",
       "default": "false",
-      "type": "开启原生 css sticky 模式",
-      "description_zh": "开启原生 `css sticky` 模式"
+      "type": "boolean"
     },
     "disabled": {
       "value": "",
-      "description": "Disable Ceiling, when set to 'true', the element returns to the document flow",
+      "description": "Disable sticky, when set to true, the element will return to the document flow",
+      "description_zh": "禁用粘性，当设置为 true 时，元素将返回到文档流",
       "default": "false",
-      "type": "禁用吸顶, 设置为 true 时, 元素会回到文档流中",
-      "description_zh": "禁用吸顶, 设置为 `true` 时, 元素会回到文档流中"
+      "type": "boolean"
     }
   },
   "methods": [
@@ -35,7 +35,8 @@
       "name": "resize",
       "description": "Triggers sticky layout repaint",
       "params": "`-`",
-      "description_zh": "触发粘性布局重绘"
+      "description_zh": "触发粘性布局重绘",
+      "value": ""
     }
   ],
   "typeDetail": {},
@@ -44,7 +45,8 @@
       "name": "scroll",
       "description": "Triggered when the scroll container is rolling",
       "params": "当滚动容器滚动时触发",
-      "description_zh": "当滚动容器滚动时触发"
+      "description_zh": "当滚动容器滚动时触发",
+      "value": ""
     }
   ],
   "link": "https://varlet.gitee.io/varlet-ui/#/en-US/sticky",

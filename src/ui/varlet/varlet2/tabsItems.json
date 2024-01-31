@@ -3,25 +3,24 @@
   "props": {
     "v-model:active": {
       "value": "",
-      "description": "The name of the active tab",
+      "description": "The identity of the active tab",
+      "description_zh": "活动选项卡的标识",
       "default": "-",
-      "type": "激活的选项卡的名字",
-      "required": true,
-      "description_zh": "激活的选项卡的名字"
+      "type": "string | number"
     },
     "can-swipe": {
       "value": "",
-      "description": "Whether to allow sliding to switch",
+      "description": "Whether to allow swipe switch",
+      "description_zh": "是否允许刷卡开关",
       "default": "true",
-      "type": "是否允许滑动切换",
-      "description_zh": "是否允许滑动切换"
+      "type": "boolean"
     },
     "loop": {
       "value": "",
-      "description": "Whether to allow round-robin switching",
+      "description": "Whether to allow cycle switching",
+      "description_zh": "是否允许循环切换",
       "default": "false",
-      "type": "是否允许循环切换",
-      "description_zh": "是否允许循环切换"
+      "type": "boolean"
     }
   },
   "methods": [
@@ -29,7 +28,8 @@
       "name": "getSwipe",
       "description": "Get an instance of the 'swipe' component",
       "params": "`-`",
-      "description_zh": "获取 `swipe` 组件实例"
+      "description_zh": "获取 `swipe` 组件实例",
+      "value": ""
     }
   ],
   "typeDetail": {},

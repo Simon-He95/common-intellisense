@@ -3,123 +3,137 @@
   "props": {
     ":v-model": {
       "value": "",
-      "description": "Current score",
+      "description": "The current rating",
+      "description_zh": "当前额定值",
       "default": "0",
-      "type": "当前分数",
-      "required": true,
-      "description_zh": "当前分数"
+      "type": "number",
+      "required": true
     },
-    ":count": {
+    "count": {
       "value": "",
-      "description": "Total number of ratings",
+      "description": "Total rating",
+      "description_zh": "总评分",
       "default": "5",
-      "type": "评分总数",
-      "description_zh": "评分总数"
+      "type": "number | string"
     },
     "color": {
       "value": "",
       "description": "The color of the icon when selected",
+      "description_zh": "选择时图标的颜色",
       "default": "-",
-      "type": "选中时图标的颜色",
-      "description_zh": "选中时图标的颜色"
+      "type": "string"
     },
     "icon": {
       "value": "",
       "description": "The icon style when the entire icon is selected",
+      "description_zh": "选择整个图标时的图标样式",
       "default": "star",
-      "type": "选中整个图标时的图标样式",
-      "description_zh": "选中整个图标时的图标样式"
+      "type": "string"
     },
     "empty-color": {
       "value": "",
-      "description": "The color of the icon when it is unchecked",
-      "default": "-",
-      "type": "未选中时图标的颜色",
-      "description_zh": "未选中时图标的颜色"
+      "description": "The color of the icon when unchecked",
+      "description_zh": "取消选中时图标的颜色",
+      "default": "#bdbdbd",
+      "type": "string"
     },
     "empty-icon": {
       "value": "",
-      "description": "The style of the icon when unchecked",
+      "description": "Style of the icon when unchecked",
+      "description_zh": "取消选中时图标的样式",
       "default": "star-outline",
-      "type": "未选中时图标的样式",
-      "description_zh": "未选中时图标的样式"
+      "type": "string"
     },
     "size": {
       "value": "",
       "description": "Icon size, default unit is px",
+      "description_zh": "图标大小，默认单位为px",
       "default": "-",
-      "type": "图标大小，默认单位为 px",
-      "description_zh": "图标大小，默认单位为 px"
+      "type": "number | string"
     },
     "gap": {
       "value": "",
-      "description": "Icon interval, default unit is px",
+      "description": "Icon spacing, default unit is px",
+      "description_zh": "图标间距，默认单位为px",
       "default": "-",
-      "type": "图标间隔，默认单位为 px",
-      "description_zh": "图标间隔，默认单位为 px"
+      "type": "number | string"
     },
     "half": {
       "value": "",
-      "description": "Whether or not to allow half selection",
+      "description": "Whether half selection is allowed",
+      "description_zh": "是否允许半选",
       "default": "false",
-      "type": "是否允许半选",
-      "description_zh": "是否允许半选"
+      "type": "boolean"
     },
     "half-icon": {
       "value": "",
-      "description": "The style of the icon when half-selected is only valid if 'half' is 'true'",
+      "description": "The half-selected icon style only works if half is true",
+      "description_zh": "仅当一半为 true 时，半选图标样式才有效",
       "default": "star-half-full",
-      "type": "半选时图标的样式，只有在 half 为 true 时才有效",
-      "description_zh": "半选时图标的样式，只有在 `half` 为 `true` 时才有效"
+      "type": "string"
     },
     "namespace": {
       "value": "",
-      "description": "A namespace for icons that can be extended with a library of custom icons",
+      "description": "Icon namespace",
+      "description_zh": "图标命名空间",
       "default": "var-icon",
-      "type": "图标的命名空间, 可扩展自定义图标库",
-      "description_zh": "图标的命名空间, 可扩展自定义图标库"
+      "type": "string"
+    },
+    "empty-icon-namespace": {
+      "value": "",
+      "description": "Empty icon namespace",
+      "description_zh": "空图标命名空间",
+      "default": "var-icon",
+      "type": "string"
+    },
+    "half-icon-namespace": {
+      "value": "",
+      "description": "Half icon namespace",
+      "description_zh": "半图标命名空间",
+      "default": "var-icon",
+      "type": "string"
     },
     "disabled": {
       "value": "",
-      "description": "Whether grading is suppressed",
+      "description": "Whether to disable rating",
+      "description_zh": "是否禁用评级",
       "default": "false",
-      "type": "是否禁止评分",
-      "description_zh": "是否禁止评分"
+      "type": "boolean"
     },
     "disabled-color": {
       "value": "",
-      "description": "Disable the color of the icon when grading, only valid if 'disabled' is 'true', and take precedence over 'color', 'empty-color'",
-      "default": "#aaa",
-      "type": "禁止评分时图标的颜色，只有在 disabled 为 true 时才有效，优先级高于 color、empty-color",
-      "description_zh": "禁止评分时图标的颜色，只有在 `disabled` 为 `true` 时才有效，优先级高于 `color`、`empty-color`"
+      "description": "The color of the icon when disabling grading is only effective when disabled is true and has higher priority than color and empty-color",
+      "description_zh": "禁用分级时图标的颜色仅在禁用为 true 且优先级高于 color 和 empty-color 时有效",
+      "default": "-",
+      "type": "string"
     },
     "readonly": {
       "value": "",
-      "description": "Whether to use grading read-only",
+      "description": "Whether it is in readonly status. The rating cannot be modified in readonly status.",
+      "description_zh": "是否处于只读状态。在只读状态下无法修改评级。",
       "default": "false",
-      "type": "是否使用评分只读",
-      "description_zh": "是否使用评分只读"
+      "type": "boolean"
     },
     "clearable": {
       "value": "",
-      "description": "Whether or not to allow emptying",
+      "description": "whether to allow to clear",
+      "description_zh": "是否允许清除",
       "default": "false",
-      "type": "是否允许清空",
-      "description_zh": "是否允许清空"
+      "type": "boolean"
     },
     "ripple": {
       "value": "",
-      "description": "Whether or not to use water ripples",
+      "description": "Whether to use water ripple",
+      "description_zh": "是否使用水波纹",
       "default": "true",
-      "type": "是否使用水波纹",
-      "description_zh": "是否使用水波纹"
+      "type": "boolean"
     },
     "rules": {
       "value": "",
-      "description": "Validation rules, which return 'true' to indicate that the validation is passed, and the rest of the values are converted to text as user prompts",
+      "description": "The validation rules, returns true to indicate that the validation passed. The remaining values are converted to text as user prompts",
+      "description_zh": "验证规则返回 true 以指示验证已通过。其余值将转换为文本作为用户提示",
       "default": "-",
-      "type": "验证规则，返回 true 表示验证通过，其余的值则转换为文本作为用户提示",
-      "description_zh": "验证规则，返回 `true` 表示验证通过，其余的值则转换为文本作为用户提示"
+      "type": "Array<(v: number) => any>"
     }
   },
   "methods": [],
@@ -129,7 +143,8 @@
       "name": "change",
       "description": "Triggered when the rating changes",
       "params": "评分改变时触发",
-      "description_zh": "评分改变时触发"
+      "description_zh": "评分改变时触发",
+      "value": ""
     }
   ],
   "link": "https://varlet.gitee.io/varlet-ui/#/en-US/rate",

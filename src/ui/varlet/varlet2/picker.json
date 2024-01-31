@@ -1,97 +1,105 @@
 {
   "name": "VarPicker",
   "props": {
-    "columns": {
+    ":v-model": {
       "value": "",
-      "description": "Column contents",
+      "description": "Selected values",
+      "description_zh": "所选值",
       "default": "[]",
-      "type": "列内容",
-      "required": true,
-      "description_zh": "列内容"
+      "type": "(string | number)[]",
+      "required": true
+    },
+    ":columns": {
+      "value": "",
+      "description": "Column content",
+      "description_zh": "专栏内容",
+      "default": "[]",
+      "type": "PickerColumnOption[] | PickerColumnOption[][]",
+      "required": true
     },
     "title": {
       "value": "",
-      "description": "title",
-      "default": "提示",
-      "type": "标题",
-      "description_zh": "标题"
+      "description": "Title",
+      "description_zh": "标题",
+      "default": "Pick it",
+      "type": "string"
     },
     "text-key": {
       "value": "",
-      "description": "The property key of the text",
+      "description": "Text key",
+      "description_zh": "文本键",
       "default": "text",
-      "type": "文本的属性 key",
-      "description_zh": "文本的属性 key"
+      "type": "string"
+    },
+    "value-key": {
+      "value": "",
+      "description": "Value key",
+      "description_zh": "值键",
+      "default": "value",
+      "type": "string"
+    },
+    "children-key": {
+      "value": "",
+      "description": "Children key",
+      "description_zh": "儿童键",
+      "default": "children",
+      "type": "string"
     },
     "toolbar": {
       "value": "",
       "description": "Whether to display the upper toolbar",
+      "description_zh": "是否显示上方工具栏",
       "default": "true",
-      "type": "是否显示上方工具栏",
-      "description_zh": "是否显示上方工具栏"
+      "type": "boolean"
     },
     "cascade": {
       "value": "",
       "description": "Whether to enable cascade mode",
+      "description_zh": "是否启用级联模式",
       "default": "true",
-      "type": "是否开启级联模式",
-      "description_zh": "是否开启级联模式"
-    },
-    "cascade-initial-indexes": {
-      "value": "",
-      "description": "List of initialized indexes for cascading mode",
-      "default": "-",
-      "type": "级联模式的初始化索引列表",
-      "description_zh": "级联模式的初始化索引列表"
-    },
-    "text-formatter": {
-      "value": "",
-      "description": "Text formatting",
-      "default": "text => text",
-      "type": "文本格式化",
-      "description_zh": "文本格式化"
+      "type": "boolean"
     },
     "option-height": {
       "value": "",
-      "description": "Height of option (px rem)",
+      "description": "The height of the option",
+      "description_zh": "选项的高度",
       "default": "44",
-      "type": "选项的高度(px rem)",
-      "description_zh": "选项的高度(px rem)"
+      "type": "string | number"
     },
     "option-count": {
       "value": "",
-      "description": "The number of options that are visible",
+      "description": "Number of visible options",
+      "description_zh": "可见选项的数量",
       "default": "6",
-      "type": "可见的选项个数",
-      "description_zh": "可见的选项个数"
+      "type": "string | number"
     },
     "confirm-button-text": {
       "value": "",
-      "description": "Confirm the button text",
-      "default": "确认",
-      "type": "确认按钮文字",
-      "description_zh": "确认按钮文字"
+      "description": "Confirm button text",
+      "description_zh": "确认按钮文本",
+      "default": "Confirm",
+      "type": "string"
     },
     "cancel-button-text": {
       "value": "",
       "description": "Cancel button text",
-      "default": "取消",
-      "type": "取消按钮文字",
-      "description_zh": "取消按钮文字"
+      "description_zh": "“取消”按钮文本",
+      "default": "Cancel",
+      "type": "string"
     },
     "confirm-button-text-color": {
       "value": "",
-      "description": "Confirm the button text color",
+      "description": "Confirm button text color",
+      "description_zh": "确认按钮文本颜色",
       "default": "-",
-      "type": "确认按钮文字颜色",
-      "description_zh": "确认按钮文字颜色"
+      "type": "string"
     },
     "cancel-button-text-color": {
       "value": "",
-      "description": "Cancel the button text color",
+      "description": "Cancel button text color",
+      "description_zh": "“取消”按钮文本颜色",
       "default": "-",
-      "type": "取消按钮文字颜色",
-      "description_zh": "取消按钮文字颜色"
+      "type": "string"
     }
   },
   "methods": [
@@ -99,13 +107,15 @@
       "name": "confirm",
       "description": "Immediately stop scrolling and trigger the confirm event",
       "params": "`-`",
-      "description_zh": "立刻停止滚动并触发 confirm 事件"
+      "description_zh": "立刻停止滚动并触发 confirm 事件",
+      "value": ""
     },
     {
       "name": "cancel",
       "description": "Immediately stop scrolling and trigger the cancel event",
       "params": "`-`",
-      "description_zh": "立刻停止滚动并触发 cancel 事件"
+      "description_zh": "立刻停止滚动并触发 cancel 事件",
+      "value": ""
     }
   ],
   "typeDetail": {
@@ -251,19 +261,39 @@
       "name": "change",
       "description": "Triggers when the selection content changes",
       "params": "选择内容变化时触发",
-      "description_zh": "选择内容变化时触发"
+      "description_zh": "选择内容变化时触发",
+      "value": ""
     },
     {
       "name": "cancel",
       "description": "Triggered when the cancel button is clicked",
       "params": "点击取消按钮时触发",
-      "description_zh": "点击取消按钮时触发"
+      "description_zh": "点击取消按钮时触发",
+      "value": ""
     },
     {
       "name": "confirm",
       "description": "Triggered when the Confirm button is clicked",
       "params": "点击确认按钮时触发",
-      "description_zh": "点击确认按钮时触发"
+      "description_zh": "点击确认按钮时触发",
+      "value": ""
+    }
+  ],
+  "slots": [
+    {
+      "name": "title",
+      "description": "Title content",
+      "description_zh": "标题内容"
+    },
+    {
+      "name": "cancel",
+      "description": "Cancel button content",
+      "description_zh": "“取消”按钮内容"
+    },
+    {
+      "name": "confirm",
+      "description": "Confirm button content",
+      "description_zh": "确认按钮内容"
     }
   ],
   "link": "https://varlet.gitee.io/varlet-ui/#/en-US/picker",

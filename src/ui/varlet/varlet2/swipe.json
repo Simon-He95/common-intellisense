@@ -3,59 +3,66 @@
   "props": {
     "loop": {
       "value": "",
-      "description": "Whether to turn on the loop carousel",
+      "description": "Whether to swipe the loop",
+      "description_zh": "是否滑动循环",
       "default": "true",
-      "type": "是否开启循环轮播",
-      "description_zh": "是否开启循环轮播"
+      "type": "boolean"
     },
     "autoplay": {
       "value": "",
-      "description": "Autoplay Interval (ms)",
+      "description": "Auto play interval time (ms)",
+      "description_zh": "自动播放间隔时间（毫秒）",
       "default": "-",
-      "type": "自动播放间隔时间 (ms)",
-      "description_zh": "自动播放间隔时间 (ms)"
+      "type": "string | number"
     },
     "duration": {
       "value": "",
-      "description": "Toggle the transition time",
+      "description": "Transition time (ms)",
+      "description_zh": "转换时间（ms）",
       "default": "300",
-      "type": "切换过度时间",
-      "description_zh": "切换过度时间"
+      "type": "string | number"
     },
     "initial-index": {
       "value": "",
-      "description": "Initialize the displayed index",
+      "description": "Initializes the index displayed",
+      "description_zh": "初始化显示的索引",
       "default": "0",
-      "type": "初始化显示的索引",
-      "description_zh": "初始化显示的索引"
+      "type": "string | number"
     },
     "indicator": {
       "value": "",
-      "description": "Whether or not an indicator is displayed",
+      "description": "Whether to display the indicator",
+      "description_zh": "是否显示指标",
       "default": "true",
-      "type": "是否显示指示器",
-      "description_zh": "是否显示指示器"
+      "type": "boolean"
     },
     "indicator-color": {
       "value": "",
       "description": "Indicator color",
+      "description_zh": "指示灯颜色",
       "default": "-",
-      "type": "指示器颜色",
-      "description_zh": "指示器颜色"
+      "type": "string"
     },
     "vertical": {
       "value": "",
-      "description": "Whether to turn on vertical carousel",
+      "description": "Whether to enable vertical swipe",
+      "description_zh": "是否开启垂直滑动",
       "default": "false",
-      "type": "是否开启垂直轮播",
-      "description_zh": "是否开启垂直轮播"
+      "type": "boolean"
     },
     "touchable": {
       "value": "",
-      "description": "Whether it is possible to drag",
+      "description": "Whether to enable touch",
+      "description_zh": "是否启用触摸",
       "default": "true",
-      "type": "是否可以拖动",
-      "description_zh": "是否可以拖动"
+      "type": "boolean"
+    },
+    "navigation": {
+      "value": "",
+      "description": "Whether to show navigation arrows",
+      "description_zh": "是否显示导航箭头",
+      "default": "false",
+      "type": "boolean | string"
     }
   },
   "methods": [
@@ -63,25 +70,29 @@
       "name": "resize",
       "description": "This method can be called to redraw when a position size change occurs",
       "params": "`-`",
-      "description_zh": "产生位置大小变化时可以调用此方法进行重绘"
+      "description_zh": "产生位置大小变化时可以调用此方法进行重绘",
+      "value": ""
     },
     {
       "name": "prev",
       "description": "Previous",
       "params": "`options?: SwipeToOptions`",
-      "description_zh": "上一页"
+      "description_zh": "上一页",
+      "value": ""
     },
     {
       "name": "next",
       "description": "Next",
       "params": "`options?: SwipeToOptions`",
-      "description_zh": "下一页"
+      "description_zh": "下一页",
+      "value": ""
     },
     {
       "name": "to",
       "description": "Jump to the specified subscript",
       "params": "`index: number, options?: SwipeToOptions`",
-      "description_zh": "跳转到指定下标"
+      "description_zh": "跳转到指定下标",
+      "value": ""
     }
   ],
   "typeDetail": {
@@ -98,7 +109,8 @@
       "name": "change",
       "description": "Triggered when the rotation is switched",
       "params": "切换轮播时触发",
-      "description_zh": "切换轮播时触发"
+      "description_zh": "切换轮播时触发",
+      "value": ""
     }
   ],
   "link": "https://varlet.gitee.io/varlet-ui/#/en-US/swipe",

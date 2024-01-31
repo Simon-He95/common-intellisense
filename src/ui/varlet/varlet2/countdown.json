@@ -5,21 +5,21 @@
       "value": "",
       "description": "Countdown Duration (ms)",
       "default": "0",
-      "type": "倒计时时长（ms）",
+      "type": "string | number",
       "description_zh": "倒计时时长（ms）"
     },
     "format": {
       "value": "",
       "description": "Time format",
       "default": "HH : mm : ss",
-      "type": "时间格式",
+      "type": "string",
       "description_zh": "时间格式"
     },
     "auto-start": {
       "value": "",
       "description": "Whether or not to start the countdown automatically",
       "default": "true",
-      "type": "是否自动开始倒计时",
+      "type": "boolean",
       "description_zh": "是否自动开始倒计时"
     }
   },
@@ -28,19 +28,22 @@
       "name": "start",
       "description": "Start the countdown",
       "params": "`-`",
-      "description_zh": "开始倒计时"
+      "description_zh": "开始倒计时",
+      "value": ""
     },
     {
       "name": "pause",
       "description": "Pause the countdown",
       "params": "`-`",
-      "description_zh": "暂停倒计时"
+      "description_zh": "暂停倒计时",
+      "value": ""
     },
     {
       "name": "reset",
       "description": "Reset the countdown, if 'auto-start' is 'true', the countdown will start automatically after the reset",
       "params": "`-`",
-      "description_zh": "重设倒计时，若 `auto-start` 为 `true`，重设后会自动开始倒计时"
+      "description_zh": "重设倒计时，若 `auto-start` 为 `true`，重设后会自动开始倒计时",
+      "value": ""
     }
   ],
   "typeDetail": {
@@ -77,13 +80,15 @@
       "name": "end",
       "description": "Triggers at the end of the countdown",
       "params": "倒计时结束时触发",
-      "description_zh": "倒计时结束时触发"
+      "description_zh": "倒计时结束时触发",
+      "value": ""
     },
     {
       "name": "change",
       "description": "Triggered when the countdown changes",
       "params": "倒计时变化时触发",
-      "description_zh": "倒计时变化时触发"
+      "description_zh": "倒计时变化时触发",
+      "value": ""
     }
   ],
   "link": "https://varlet.gitee.io/varlet-ui/#/en-US/countdown",

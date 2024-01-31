@@ -123,49 +123,57 @@
       "name": "chooseFile",
       "description": "Triggers the Select File action to display a list of files",
       "params": "`-`",
-      "description_zh": "触发选择文件动作，显示文件列表"
+      "description_zh": "触发选择文件动作，显示文件列表",
+      "value": ""
     },
     {
       "name": "closePreview",
       "description": "Turn off the preview file ejection layer",
       "params": "`-`",
-      "description_zh": "关闭预览文件弹出层"
+      "description_zh": "关闭预览文件弹出层",
+      "value": ""
     },
     {
       "name": "getLoading",
       "description": "Gets a collection of files where 'state' equals 'loading'",
       "params": "`-`",
-      "description_zh": "获取 `state` 等于 `loading` 的文件集合"
+      "description_zh": "获取 `state` 等于 `loading` 的文件集合",
+      "value": ""
     },
     {
       "name": "getSuccess",
       "description": "Get a collection of files where 'state' equals 'success'",
       "params": "`-`",
-      "description_zh": "获取 `state` 等于 `success` 的文件集合"
+      "description_zh": "获取 `state` 等于 `success` 的文件集合",
+      "value": ""
     },
     {
       "name": "getError",
       "description": "Get a collection of files where 'state' equals 'error'",
       "params": "`-`",
-      "description_zh": "获取 `state` 等于 `error` 的文件集合"
+      "description_zh": "获取 `state` 等于 `error` 的文件集合",
+      "value": ""
     },
     {
       "name": "validate",
       "description": "Trigger the check",
       "params": "`-`",
-      "description_zh": "触发校验"
+      "description_zh": "触发校验",
+      "value": ""
     },
     {
       "name": "resetValidation",
       "description": "Clear the verification information",
       "params": "`-`",
-      "description_zh": "清空校验信息"
+      "description_zh": "清空校验信息",
+      "value": ""
     },
     {
       "name": "reset",
       "description": "Clear the bound value (set to '[]') and the validation information",
       "params": "`-`",
-      "description_zh": "清空绑定的值(设置为 `[]`)和校验信息"
+      "description_zh": "清空绑定的值(设置为 `[]`)和校验信息",
+      "value": ""
     }
   ],
   "typeDetail": {
@@ -229,37 +237,55 @@
       "name": "before-filter",
       "description": "'before-read' to filter the list of files",
       "params": "files: VarFile[]",
-      "description_zh": "`before-read` 前触发，对文件列表进行过滤"
+      "description_zh": "`before-read` 前触发，对文件列表进行过滤",
+      "value": ""
     },
     {
       "name": "before-read",
       "description": "Triggered before file read, returns a false value to prevent the file from being read (promises are supported)",
       "params": "files: VarFile[]",
-      "description_zh": "文件读取前触发，返回假值阻止文件读取(支持 promise)"
+      "description_zh": "文件读取前触发，返回假值阻止文件读取(支持 promise)",
+      "value": ""
     },
     {
       "name": "after-read",
       "description": "Triggered when the file is read",
       "params": "files: VarFile[]",
-      "description_zh": "文件读取后触发"
+      "description_zh": "文件读取后触发",
+      "value": ""
     },
     {
       "name": "oversize",
       "description": "Triggered when the file exceeds the limit size",
       "params": "files: VarFile[]",
-      "description_zh": "文件超过限制大小时触发"
+      "description_zh": "文件超过限制大小时触发",
+      "value": ""
     },
     {
       "name": "before-remove",
       "description": "Triggered before file deletion, returns a false value to prevent file deletion (promises are supported)",
       "params": "files: VarFile[]",
-      "description_zh": "文件删除前触发，返回假值阻止文件删除(支持 promise)"
+      "description_zh": "文件删除前触发，返回假值阻止文件删除(支持 promise)",
+      "value": ""
     },
     {
       "name": "remove",
       "description": "Triggered when a file is deleted",
       "params": "files: VarFile[]",
-      "description_zh": "文件删除时触发"
+      "description_zh": "文件删除时触发",
+      "value": ""
+    }
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "description": "Upload action content",
+      "description_zh": "上传操作内容"
+    },
+    {
+      "name": "extra-message",
+      "description": "Extra message",
+      "description_zh": "额外消息"
     }
   ],
   "link": "https://varlet.gitee.io/varlet-ui/#/en-US/uploader",

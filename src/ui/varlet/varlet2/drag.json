@@ -9,7 +9,7 @@
       ],
       "description": "Drag direction, optionally x, y, xy",
       "default": "xy",
-      "type": "拖拽方向，可选值 x, y, xy",
+      "type": "string",
       "description_zh": "拖拽方向，可选值 x, y, xy"
     },
     "attraction": {
@@ -20,35 +20,35 @@
       ],
       "description": "Snapping direction, optionally x, y, xy",
       "default": "-",
-      "type": "吸附方向，可选值 x, y, xy",
+      "type": "string",
       "description_zh": "吸附方向，可选值 x, y, xy"
     },
     "disabled": {
       "value": "",
       "description": "Whether to disable or not",
       "default": "false",
-      "type": "是否禁用",
+      "type": "boolean",
       "description_zh": "是否禁用"
     },
     "boundary": {
       "value": "",
       "description": "Drag range",
       "default": "{ top: 0, bottom: 0, left: 0, right: 0 }",
-      "type": "拖拽范围",
+      "type": "{ top?: number | string, bottom?: number | string, left?: number | string, right?: number | string }",
       "description_zh": "拖拽范围"
     },
     "z-index": {
       "value": "",
       "description": "Drag and drop the hierarchy of elements",
       "default": "90",
-      "type": "拖拽元素的层级",
+      "type": "string | number",
       "description_zh": "拖拽元素的层级"
     },
     "teleport": {
       "value": "",
       "description": "The location of the dragged element mount",
       "default": "body",
-      "type": "拖拽元素挂载的位置",
+      "type": "TeleportProps['to'] | false",
       "description_zh": "拖拽元素挂载的位置"
     }
   },
@@ -57,13 +57,15 @@
       "name": "resize",
       "description": "This method can be called to redraw when a position size change occurs",
       "params": "`-`",
-      "description_zh": "产生位置大小变化时可以调用此方法进行重绘"
+      "description_zh": "产生位置大小变化时可以调用此方法进行重绘",
+      "value": ""
     },
     {
       "name": "reset",
       "description": "Reset the location information at the time of initialization",
       "params": "`-`",
-      "description_zh": "重置初始化时的位置信息"
+      "description_zh": "重置初始化时的位置信息",
+      "value": ""
     }
   ],
   "typeDetail": {},

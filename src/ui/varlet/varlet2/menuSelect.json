@@ -1,0 +1,309 @@
+{
+  "name": "VarMenuSelect",
+  "props": {
+    "v-model": {
+      "value": "",
+      "description": "The value of the binding",
+      "description_zh": "绑定的值",
+      "default": "-",
+      "type": "any | any[]"
+    },
+    "v-model:show": {
+      "value": "",
+      "description": "Whether to show the menu",
+      "description_zh": "是否显示菜单",
+      "default": "false",
+      "type": "boolean"
+    },
+    "size": {
+      "value": "",
+      "description": "Menu size, optional values normal mini small large",
+      "description_zh": "菜单大小，可选值 正常 迷你 小 大",
+      "default": "normal",
+      "type": "string"
+    },
+    "multiple": {
+      "value": "",
+      "description": "Whether to select multiple",
+      "description_zh": "是否选择多个",
+      "default": "false",
+      "type": "boolean"
+    },
+    "scrollable": {
+      "value": "",
+      "description": "Whether to enable scrolling",
+      "description_zh": "是否启用滚动",
+      "default": "false",
+      "type": "boolean"
+    },
+    "close-on-select": {
+      "value": "",
+      "description": "Whether to close the menu when selected (selected options in multi-select mode never close the menu)",
+      "description_zh": "选择时是否关闭菜单（多选模式下的选定选项从不关闭菜单）",
+      "default": "true",
+      "type": "boolean"
+    },
+    "placement": {
+      "value": "",
+      "description": "Menu popup placement",
+      "description_zh": "菜单弹出位置",
+      "default": "cover-top-start",
+      "type": "Placement"
+    },
+    "strategy": {
+      "value": "",
+      "description": "Menu position strategy, optional value is absolute fixed",
+      "description_zh": "菜单位置策略，可选值绝对固定",
+      "default": "absolute",
+      "type": "string"
+    },
+    "offset-x": {
+      "value": "",
+      "description": "The x-axis offset, relative to the menu-aligned position",
+      "description_zh": "x 轴偏移量，相对于菜单对齐位置",
+      "default": "0",
+      "type": "number | string"
+    },
+    "offset-y": {
+      "value": "",
+      "description": "The y-axis offset, relative to the menu-aligned position",
+      "description_zh": "y 轴偏移量，相对于菜单对齐位置",
+      "default": "0",
+      "type": "number | string"
+    },
+    "teleport": {
+      "value": "",
+      "description": "The location of the menu mount",
+      "description_zh": "菜单安装的位置",
+      "default": "body",
+      "type": "TeleportProps['to'] | false"
+    },
+    "disabled": {
+      "value": "",
+      "description": "Whether to disable the menu",
+      "description_zh": "是否禁用菜单",
+      "default": "false",
+      "type": "boolean"
+    },
+    "trigger": {
+      "value": "",
+      "description": "Menu trigger method, optional value is click hover, click is triggered when clicked, hover is triggered when hovered",
+      "description_zh": "菜单触发方式，可选值为点击悬停，点击时触发点击，悬停时触发悬停",
+      "default": "click",
+      "type": "string"
+    },
+    "reference": {
+      "value": "",
+      "description": "The associated trigger element selector is used to specify specific child elements as trigger elements",
+      "description_zh": "关联的触发器元素选择器用于将特定的子元素指定为触发器元素",
+      "default": "-",
+      "type": "string"
+    },
+    "elevation": {
+      "value": "",
+      "description": "Elevation level, options true false and level of 0-24",
+      "description_zh": "高程级别，选项 true false，级别为 0-24",
+      "default": "true",
+      "type": "string | number | boolean"
+    },
+    "same-width": {
+      "value": "",
+      "description": "Whether to same width as trigger element",
+      "description_zh": "是否与触发元件的宽度相同",
+      "default": "false",
+      "type": "boolean"
+    },
+    "popover-class": {
+      "value": "",
+      "description": "Class of the popover",
+      "description_zh": "弹出框的类",
+      "default": "-",
+      "type": "string"
+    },
+    "close-on-click-reference": {
+      "value": "",
+      "description": "Whether to close the menu when clicking the reference element",
+      "description_zh": "单击引用元素时是否关闭菜单",
+      "default": "false",
+      "type": "boolean"
+    }
+  },
+  "methods": [
+    {
+      "name": "open",
+      "description": "Open Menu",
+      "params": "-",
+      "description_zh": "打开菜单",
+      "value": ""
+    },
+    {
+      "name": "close",
+      "description": "Close Menu",
+      "params": "-",
+      "description_zh": "关闭菜单",
+      "value": ""
+    },
+    {
+      "name": "resize",
+      "description": "This method can be called to redraw when the default slot element of Menu select changes its position and size",
+      "params": "-",
+      "description_zh": "当 Menu select 的默认槽元素更改其位置和大小时，可以调用此方法进行重绘",
+      "value": ""
+    }
+  ],
+  "typeDetail": {
+    "$Placement": [
+      {
+        "name": "top",
+        "description": "顶部中心位置",
+        "type": ""
+      },
+      {
+        "name": "`top-start`",
+        "description": "顶部左侧位置",
+        "type": ""
+      },
+      {
+        "name": "`top-end`",
+        "description": "顶部右侧位置",
+        "type": ""
+      },
+      {
+        "name": "bottom",
+        "description": "底部中心位置",
+        "type": ""
+      },
+      {
+        "name": "`bottom-start`",
+        "description": "底部左侧位置",
+        "type": ""
+      },
+      {
+        "name": "`bottom-end`",
+        "description": "底部右侧位置",
+        "type": ""
+      },
+      {
+        "name": "right",
+        "description": "右侧中心位置",
+        "type": ""
+      },
+      {
+        "name": "`right-start`",
+        "description": "右侧上方位置",
+        "type": ""
+      },
+      {
+        "name": "`right-end`",
+        "description": "右侧下方位置",
+        "type": ""
+      },
+      {
+        "name": "left",
+        "description": "左侧中心位置",
+        "type": ""
+      },
+      {
+        "name": "`left-start`",
+        "description": "左侧上方位置",
+        "type": ""
+      },
+      {
+        "name": "`left-end`",
+        "description": "左侧下方位置",
+        "type": ""
+      },
+      {
+        "name": "`cover-top`",
+        "description": "顶部中心位置, 覆盖触发器",
+        "type": ""
+      },
+      {
+        "name": "`cover-top-start`",
+        "description": "顶部左侧位置, 覆盖触发器",
+        "type": ""
+      },
+      {
+        "name": "`cover-top-end`",
+        "description": "顶部右侧位置, 覆盖触发器",
+        "type": ""
+      },
+      {
+        "name": "`cover-bottom`",
+        "description": "底部中心位置, 覆盖触发器",
+        "type": ""
+      },
+      {
+        "name": "`cover-bottom-start`",
+        "description": "底部左侧位置, 覆盖触发器",
+        "type": ""
+      },
+      {
+        "name": "`cover-bottom-end`",
+        "description": "底部右侧位置, 覆盖触发器",
+        "type": ""
+      },
+      {
+        "name": "`cover-left`",
+        "description": "左侧位置, 覆盖触发器",
+        "type": ""
+      },
+      {
+        "name": "`cover-right`",
+        "description": "右侧位置, 覆盖触发器",
+        "type": ""
+      }
+    ]
+  },
+  "events": [
+    {
+      "name": "open",
+      "description": "Triggered when the menu is opened",
+      "description_zh": "打开菜单时触发",
+      "params": "-",
+      "value": ""
+    },
+    {
+      "name": "opened",
+      "description": "Triggered when the open menu animation ends",
+      "description_zh": "在打开菜单动画结束时触发",
+      "params": "-",
+      "value": ""
+    },
+    {
+      "name": "close",
+      "description": "Triggered when the menu is closed",
+      "description_zh": "菜单关闭时触发",
+      "params": "-",
+      "value": ""
+    },
+    {
+      "name": "closed",
+      "description": "Triggered when the closing menu animation ends",
+      "description_zh": "关闭菜单动画结束时触发",
+      "params": "-",
+      "value": ""
+    },
+    {
+      "name": "click-outside",
+      "description": "Triggered when clicking outside the menu",
+      "description_zh": "在菜单外单击时触发",
+      "params": "event: Event",
+      "value": ""
+    }
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "description": "Menu select trigger element",
+      "description_zh": "菜单选择触发元素"
+    },
+    {
+      "name": "options",
+      "description": "Menu select options",
+      "description_zh": "菜单选择选项"
+    }
+  ],
+  "link": "https://varlet.gitee.io/varlet-ui/#/en-US/menu-select",
+  "link_zh": "https://varlet.gitee.io/varlet-ui/#/zh-CN/menu-select"
+}

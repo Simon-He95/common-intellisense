@@ -1,0 +1,145 @@
+{
+  "name": "VarAvatar",
+  "props": {
+    "round": {
+      "value": "",
+      "description": "Whether the avatar is round or not",
+      "description_zh": "头像是否圆",
+      "default": "true",
+      "type": "boolean"
+    },
+    "size": {
+      "value": "",
+      "description": "The size of the avatar, with optional values of mini small normal large",
+      "description_zh": "头像的大小，可选值为迷你小 正常大",
+      "default": "normal",
+      "type": "string | number"
+    },
+    "color": {
+      "value": "",
+      "description": "Background color of the avatar",
+      "description_zh": "头像的背景颜色",
+      "default": "-",
+      "type": "string"
+    },
+    "src": {
+      "value": "",
+      "description": "Address of avatar",
+      "description_zh": "头像地址",
+      "default": "-",
+      "type": "string"
+    },
+    "alt": {
+      "value": "",
+      "description": "Image alt text, the same as the native attribute of the img tag",
+      "description_zh": "图片替代文本，与 img 标签的 native 属性相同",
+      "default": "-",
+      "type": "string"
+    },
+    "fit": {
+      "value": "",
+      "description": "Filling mode of avatar image, optional value fill contain cover none scale-down",
+      "description_zh": "头像图片填充模式，可选值填充包含覆盖无缩小",
+      "default": "cover",
+      "type": "string"
+    },
+    "bordered": {
+      "value": "",
+      "description": "Avatar with or without border",
+      "description_zh": "带边框或不带边框的头像",
+      "default": "false",
+      "type": "boolean"
+    },
+    "border-color": {
+      "value": "",
+      "description": "Avatar border color",
+      "description_zh": "头像边框颜色",
+      "default": "-",
+      "type": "string"
+    },
+    "loading": {
+      "value": "",
+      "description": "When lazy loading is enabled, the image displayed in the load",
+      "description_zh": "启用延迟加载后，加载中显示的图像",
+      "default": "-",
+      "type": "string"
+    },
+    "error": {
+      "value": "",
+      "description": "When lazy loading is enabled, the image displayed when loading fails",
+      "description_zh": "启用延迟加载时，加载失败时显示的图像",
+      "default": "-",
+      "type": "string"
+    },
+    "lazy": {
+      "value": "",
+      "description": "Whether to enable lazy loading",
+      "description_zh": "是否开启延迟加载",
+      "default": "false",
+      "type": "boolean"
+    },
+    "hoverable": {
+      "value": "",
+      "description": "Whether to enable hover effect",
+      "description_zh": "是否开启悬停效果",
+      "default": "false",
+      "type": "boolean"
+    }
+  },
+  "methods": [
+    {
+      "name": "ActionSheet",
+      "description": "Displays the Actions panel",
+      "params": "options",
+      "description_zh": "显示动作面板",
+      "value": ""
+    },
+    {
+      "name": "ActionSheet.close",
+      "description": "Close the Actions panel",
+      "params": "-",
+      "description_zh": "关闭动作面板",
+      "value": ""
+    },
+    {
+      "name": "ActionSheet.setDefaultOptions",
+      "description": "Sets the default option configuration",
+      "params": "options",
+      "description_zh": "设置默认的选项配置",
+      "value": ""
+    },
+    {
+      "name": "ActionSheet.resetDefaultOptions",
+      "description": "Reset the default option configuration",
+      "params": "-",
+      "description_zh": "重置默认的选项配置",
+      "value": ""
+    }
+  ],
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "click",
+      "description": "Triggered when clicking on avatar",
+      "params": "`event: Event",
+      "description_zh": "点击头像时触发",
+      "value": ""
+    },
+    {
+      "name": "load",
+      "description": "Triggered when the avatar image is successfully loaded (failure in lazy loading mode will try to load the avatar image multiple times and will only be triggered when successfully loaded)",
+      "params": "event: Event",
+      "description_zh": "头像图片加载成功时触发（延迟加载模式失败会尝试多次加载头像图片，只有在加载成功后才会触发）",
+      "value": ""
+    },
+    {
+      "name": "error",
+      "description": "Triggered when the avatar image fails to load (failure in lazy loading mode will try to load the avatar image multiple times, will only be triggered at the end of the number of attempts)",
+      "params": "event: Event",
+      "description_zh": "头像图片加载失败时触发（延迟加载模式失败会多次尝试加载头像图片，只会在尝试次数结束时触发）",
+      "value": ""
+    }
+  ],
+  "link": "https://varlet.gitee.io/varlet-ui/#/en-US/action-sheet",
+  "link_zh": "https://varlet.gitee.io/varlet-ui/#/zh-CN/action-sheet"
+}

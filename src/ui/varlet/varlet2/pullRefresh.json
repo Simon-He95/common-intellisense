@@ -1,69 +1,68 @@
 {
   "name": "VarPullRefresh",
   "props": {
-    ":v-model": {
+    "v-model": {
       "value": "",
-      "description": "Whether it is in the loading state",
+      "description": "Loading status",
+      "description_zh": "加载状态",
       "default": "-",
-      "type": "是否处于加载中状态",
-      "required": true,
-      "description_zh": "是否处于加载中状态"
+      "type": "boolean"
     },
     "disabled": {
       "value": "",
-      "description": "Whether to disable pull-down refresh",
+      "description": "Whether to disable pull refresh",
+      "description_zh": "是否禁用拉取刷新",
       "default": "false",
-      "type": "是否禁用下拉刷新",
-      "description_zh": "是否禁用下拉刷新"
+      "type": "boolean"
     },
     "target": {
       "value": "",
-      "description": "The object that triggers scrolling, if undefined, listens to the closest scrollable ancestor node",
+      "description": "The target to trigger scroll. If it is undefined back top will listen to the nearest scrollable parent.",
+      "description_zh": "要触发滚动的目标。如果未定义，则后置将侦听最近的可滚动父项。",
       "default": "-",
-      "type": "触发滚动的对象，如果为 undefined 会监听距离最近的一个可滚动的祖先节点",
-      "description_zh": "触发滚动的对象，如果为 undefined 会监听距离最近的一个可滚动的祖先节点"
+      "type": "string | HTMLElement"
     },
     "animation-duration": {
       "value": "",
-      "description": "Animation duration to return to the initial position after loading (ms)",
+      "description": "The duration of the animation to return to the initial position after loading(ms)",
+      "description_zh": "加载后动画返回初始位置的持续时间（ms）",
       "default": "300",
-      "type": "加载结束后回到初始位置的动画时长（ms）",
-      "description_zh": "加载结束后回到初始位置的动画时长（ms）"
+      "type": "string | number"
     },
     "success-duration": {
       "value": "",
-      "description": "Duration of the success prompt (ms)",
+      "description": "Success text display duration(ms)",
+      "description_zh": "成功文本显示时长（ms）",
       "default": "2000",
-      "type": "成功提示展示时长（ms）",
-      "description_zh": "成功提示展示时长（ms）"
+      "type": "string | number"
     },
     "bg-color": {
       "value": "",
-      "description": "control",
+      "description": "BackgroundColor of control",
+      "description_zh": "控件的 BackgroundColor",
       "default": "#005CAF",
-      "type": "control 的背景颜色",
-      "description_zh": "control 的背景颜色"
+      "type": "string"
     },
     "color": {
       "value": "",
-      "description": "control",
+      "description": "Color of control",
+      "description_zh": "对照颜色",
       "default": "#ffffff",
-      "type": "control 的颜色",
-      "description_zh": "control 的颜色"
+      "type": "string"
     },
     "success-bg-color": {
       "value": "",
-      "description": "The background color of the control in the successful state",
+      "description": "BackgroundColor of control when the status is success",
+      "description_zh": "状态为“成功”时控件的 BackgroundColor",
       "default": "#4CAF50",
-      "type": "成功状态下 control 的背景颜色",
-      "description_zh": "成功状态下 control 的背景颜色"
+      "type": "string"
     },
     "success-color": {
       "value": "",
-      "description": "The color of the control in the successful state",
+      "description": "Color of control when the status is success",
+      "description_zh": "状态为“成功”时的控件颜色",
       "default": "ffffff",
-      "type": "成功状态下 control 的颜色",
-      "description_zh": "成功状态下 control 的颜色"
+      "type": "string"
     }
   },
   "methods": [],
@@ -73,7 +72,8 @@
       "name": "refresh",
       "description": "Triggered when a pull-down refresh",
       "params": "下拉刷新时触发",
-      "description_zh": "下拉刷新时触发"
+      "description_zh": "下拉刷新时触发",
+      "value": ""
     }
   ],
   "link": "https://varlet.gitee.io/varlet-ui/#/en-US/pull-refresh",

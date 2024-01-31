@@ -1,90 +1,103 @@
 {
   "name": "VarSwitch",
   "props": {
-    ":v-model": {
+    "v-model": {
       "value": "",
-      "description": "Toggle the selected state",
+      "description": "Check status of Switch",
+      "description_zh": "检查交换机的状态",
       "default": "false",
-      "type": "开关选中状态",
-      "required": true,
-      "description_zh": "开关选中状态"
+      "type": "any"
     },
     "active-value": {
       "value": "",
-      "description": "The value at which the switch is turned on",
+      "description": "The value when the switch is turned on",
+      "description_zh": "开关打开时的值",
       "default": "true",
-      "type": "开关打开时的值",
-      "description_zh": "开关打开时的值"
+      "type": "any"
     },
     "inactive-value": {
       "value": "",
-      "description": "The value at which the switch is off",
+      "description": "The value when the switch is turned off",
+      "description_zh": "开关关闭时的值",
       "default": "false",
-      "type": "开关关闭时的值",
-      "description_zh": "开关关闭时的值"
+      "type": "any"
     },
     "disabled": {
       "value": "",
-      "description": "Whether to disable or not",
+      "description": "Whether to disable switch",
+      "description_zh": "是否禁用开关",
       "default": "false",
-      "type": "是否禁用",
-      "description_zh": "是否禁用"
+      "type": "boolean"
     },
     "readonly": {
       "value": "",
-      "description": "Whether it is read-only or not",
+      "description": "Whether to readonly switch",
+      "description_zh": "是否只读开关",
       "default": "false",
-      "type": "是否只读",
-      "description_zh": "是否只读"
+      "type": "boolean"
     },
     "loading": {
       "value": "",
-      "description": "Whether it is loaded",
+      "description": "Whether to show loading icon",
+      "description_zh": "是否显示加载图标",
       "default": "false",
-      "type": "是否为加载状态",
-      "description_zh": "是否为加载状态"
+      "type": "boolean"
     },
     "ripple": {
       "value": "",
-      "description": "Whether to enable water ripple",
+      "description": "Whether to open ripple",
+      "description_zh": "是否打开涟漪",
       "default": "true",
-      "type": "是否启用水波纹",
-      "description_zh": "是否启用水波纹"
+      "type": "boolean"
     },
     "color": {
       "value": "",
-      "description": "Colors in the open state",
-      "default": "#2979ff",
-      "type": "打开状态下的颜色",
-      "description_zh": "打开状态下的颜色"
-    },
-    "loading-color": {
-      "value": "",
-      "description": "Load the color of the icon",
-      "default": "#fff",
-      "type": "加载图标的颜色",
-      "description_zh": "加载图标的颜色"
+      "description": "Background color when open",
+      "description_zh": "打开时的背景颜色",
+      "default": "-",
+      "type": "string"
     },
     "close-color": {
       "value": "",
-      "description": "The color in the turned off state",
-      "default": "#fff",
-      "type": "关闭状态下的颜色",
-      "description_zh": "关闭状态下的颜色"
+      "description": "Background color when close",
+      "description_zh": "关闭时的背景颜色",
+      "default": "-",
+      "type": "string"
+    },
+    "loading-color": {
+      "value": "",
+      "description": "Color of loading icon",
+      "description_zh": "加载图标的颜色",
+      "default": "-",
+      "type": "string"
     },
     "size": {
       "value": "",
-      "description": "The size of the switch",
+      "description": "Size of switch",
+      "description_zh": "开关尺寸",
       "default": "-",
-      "type": "switch 的大小",
-      "description_zh": "switch 的大小"
+      "type": "string | number"
     },
     "rules": {
       "value": "",
       "description": "Validation rules",
+      "description_zh": "验证规则",
       "default": "-",
-      "type": "校验规则",
-      "description_zh": "校验规则"
+      "type": "Array<(value: any) => any>"
+    },
+    "lazy-change": {
+      "value": "",
+      "description": "Whether to allow the before-change event to be triggered",
+      "description_zh": "是否允许触发 before-change 事件",
+      "default": "false",
+      "type": "boolean"
+    },
+    "validate-trigger": {
+      "value": "",
+      "description": "Timing to trigger verification, optional values are onChange onLazyChange",
+      "description_zh": "触发验证的时机，可选值为 onChange onLazyChange",
+      "default": "['onChange', 'onLazyChange']",
+      "type": "ValidateTriggers[]"
     }
   },
   "methods": [],
@@ -94,13 +107,15 @@
       "name": "click",
       "description": "Triggered when clicked",
       "params": "点击时触发",
-      "description_zh": "点击时触发"
+      "description_zh": "点击时触发",
+      "value": ""
     },
     {
       "name": "change",
       "description": "Triggered when the switch state is switched",
       "params": "开关状态切换时触发",
-      "description_zh": "开关状态切换时触发"
+      "description_zh": "开关状态切换时触发",
+      "value": ""
     }
   ],
   "link": "https://varlet.gitee.io/varlet-ui/#/en-US/switch",
