@@ -422,11 +422,12 @@ export function getRequireProp(content: any, index = 0, isVue: boolean): [string
     const v = item.value
     if (key.startsWith(':')) {
       const tagName = getComponentTagName(content.name)
+      const keyName = toCamel(key.split(':').slice(-1)[0])
       if (item.foreach) {
         if (requiredProps.some(p => p.includes('v-for=')))
-          attr = `${key}="item.\${${++index}:${key.slice(1)}}"`
+          attr = `${key}="item.\${${++index}:${keyName}}"`
         else
-          attr = `v-for="item in \${${++index}:${tagName}Options}" :key="item.\${${++index}:key}" ${key}="item.\${${++index}:${toCamel(key.slice(1))}}"`
+          attr = `v-for="item in \${${++index}:${tagName}Options}" :key="item.\${${++index}:key}" ${key}="item.\${${++index}:${keyName}}"`
       }
       else {
         const _key = key.replace('v-model', 'model')
@@ -434,13 +435,13 @@ export function getRequireProp(content: any, index = 0, isVue: boolean): [string
         ++index
         if (!v) {
           if (isVue)
-            attr = `${key}="\${${index}:${getComponentTagName(content.name)}${_key[1].toUpperCase()}${toCamel(_key.slice(2))}}"`
+            attr = `${key}="\${${index}:${tagName}${keyName[0].toUpperCase()}${keyName.slice(1)}}"`
           else
-            attr = `${key.slice(1)}={\${${index}:${getComponentTagName(content.name)}${_key[1].toUpperCase()}${toCamel(_key.slice(2))}}}`
+            attr = `${key.slice(1)}={\${${index}:${tagName}${keyName[0].toUpperCase()}${keyName.slice(1)}}}`
         }
         else {
           if (isVue)
-            attr = `${key}="\${${index}:${getComponentTagName(content.name)}${key[1].toUpperCase()}${toCamel(key.slice(2))}}"`
+            attr = `${key}="\${${index}:${tagName}${keyName[0].toUpperCase()}${keyName.slice(1)}}"`
           else
             attr = `${key.slice(1)}={\${${index}:${v}}}`
         }

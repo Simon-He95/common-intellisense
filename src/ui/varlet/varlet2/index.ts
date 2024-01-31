@@ -1,5 +1,7 @@
 import { getLocale } from '@vscode-use/utils'
 import { componentsReducer, hyphenate, propsReducer } from '../../utils'
+import icon from './icon.json'
+import option from './option.json'
 import appBar from './appBar.json'
 import avatar from './avatar.json'
 import avatarGroup from './avatarGroup.json'
@@ -78,6 +80,8 @@ import uploader from './uploader.json'
 
 export function varlet2() {
   const map: any = [
+    icon,
+    option,
     appBar,
     avatar,
     avatarGroup,
@@ -163,6 +167,8 @@ export function varlet2Components() {
 
   const map = isZh
     ? [
+        [icon, '图标', `<${hyphenate(icon.name).slice(1)}></${hyphenate(icon.name).slice(1)}>`],
+        [option, '下拉选项', `<${hyphenate(option.name).slice(1)}></${hyphenate(option.name).slice(1)}>`],
         [appBar, '导航栏', `<${hyphenate(appBar.name).slice(1)}></${hyphenate(appBar.name).slice(1)}>`],
         [avatar, '头像', `<${hyphenate(avatar.name).slice(1)}></${hyphenate(avatar.name).slice(1)}>`],
         [avatarGroup, '头像', `<${hyphenate(avatarGroup.name).slice(1)}></${hyphenate(avatarGroup.name).slice(1)}>`],
@@ -328,6 +334,8 @@ export function varlet2Components() {
         [uploader, '文件上传 提供了文件读取、图片/视频预览能力。 通过监听 after-read 事件获取文件上传服务器。', '<var-uploader v-model="files" @after-read="handleAfterRead"/>'],
       ]
     : [
+        [icon, icon.name, `<${hyphenate(icon.name).slice(1)}></${hyphenate(icon.name).slice(1)}>`],
+        [option, option.name, `<${hyphenate(option.name).slice(1)}></${hyphenate(option.name).slice(1)}>`],
         [appBar, appBar.name, `<${hyphenate(appBar.name).slice(1)}></${hyphenate(appBar.name).slice(1)}>`],
         [avatar, avatar.name, `<${hyphenate(avatar.name).slice(1)}></${hyphenate(avatar.name).slice(1)}>`],
         [avatarGroup, avatarGroup.name, `<${hyphenate(avatarGroup.name).slice(1)}></${hyphenate(avatarGroup.name).slice(1)}>`],
