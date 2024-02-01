@@ -276,6 +276,9 @@ export function antd5Components() {
   onFinishFailed={onFinishFailed}
   autoComplete="off"
 ></Form>`],
+        [FormList, '为字段提供数组化管理', '<Form.List></Form.List>'],
+        [FormErrorList, '4.7.0 新增。错误展示组件，仅限配合 Form.List 的 rules 一同使用', '<Form.ErrorList></Form.ErrorList>'],
+        [FormProvider, '提供表单间联动功能', '<Form.Provider></Form.Provider>'],
         [FormItem, '表单项', `<Form.Item
   label="Username"
   name="username"
