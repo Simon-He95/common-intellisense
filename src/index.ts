@@ -6,7 +6,7 @@ import { CreateWebview } from '@vscode-use/createwebview'
 import { parse } from '@vue/compiler-sfc'
 import { detectSlots, findPkgUI, parser, registerCodeLensProviderFn } from './utils'
 import UI from './ui'
-import { nameMap } from './constants'
+import { UINames as UINamesMap, nameMap } from './constants'
 import { toCamel } from './ui/utils'
 
 let UINames: any = []
@@ -188,6 +188,7 @@ export function activate(context: vscode.ExtensionContext) {
     const isVue = lan === 'vue' && result.template
     const code = getActiveText()!
     const deps = isVue ? getImportDeps(code) : {}
+    const uiDeps = getUiDeps(code)
     const { character } = position
     const isPreEmpty = lineText[character - 1] === ' '
     const isValue = result.isValue
@@ -228,22 +229,36 @@ export function activate(context: vscode.ExtensionContext) {
         return UiCompletions.icons
 
       const propName = result.propName
-      const target = UiCompletions[name] || await findDynamicComponent(name, deps)
+      let target = UiCompletions[name] || await findDynamicComponent(name, deps)
+      const importUiSource = uiDeps[name]
+      if (importUiSource && target.uiName !== importUiSource) {
+        for (const p of optionsComponents.prefix.filter(Boolean)) {
+          const realName = p[0].toUpperCase() + p.slice(1) + name
+          const newTarget = UiCompletions[realName]
+          if (!newTarget)
+            continue
+          if (newTarget.uiName === importUiSource) {
+            target = newTarget
+            break
+          }
+        }
+      }
 
       if (!target)
         return
 
-      const { events, completions } = target
-      if (!completionsCallbacks.has(name)) {
+      const { events, completions, uiName } = target
+      const key = uiName + name
+      if (!completionsCallbacks.has(key)) {
         const _events = events[0](isVue)
-        eventCallbacks.set(name, _events)
-        completionsCallbacks.set(name, [...completions[0](isVue), ...(isVue ? [] : _events)])
+        eventCallbacks.set(key, _events)
+        completionsCallbacks.set(key, [...completions[0](isVue), ...(isVue ? [] : _events)])
       }
 
-      if (!eventCallbacks.has(name))
-        eventCallbacks.set(name, events[0](isVue))
+      if (!eventCallbacks.has(key))
+        eventCallbacks.set(key, events[0](isVue))
 
-      completionsCallback = completionsCallbacks.get(name)
+      completionsCallback = completionsCallbacks.get(key)
       const hasProps = result.props
         ? result.props.map((item: any) => {
           if (item.name === 'on' && item.arg)
@@ -554,6 +569,7 @@ export function isSamePrefix(label: string, key: string) {
 const IMPORT_REG = /import\s+([^\s]+)\s+from\s+['"]([^"']+.vue)['"]/g
 
 export function getImportDeps(text: string) {
+  text = text.replace(/\/\*[\s\S]*?\*\/|\/\/.*/g, '')
   const deps: Record<string, string> = {}
   for (const match of text.matchAll(IMPORT_REG)) {
     if (!match)
@@ -566,6 +582,24 @@ export function getImportDeps(text: string) {
   return deps
 }
 
+const UIIMPORT_REG = /import\s+{([^}]+)}\s+from\s+['"]([^"']+)['"]/g
+
+export function getUiDeps(text: string) {
+  text = text.replace(/\/\*[\s\S]*?\*\/|\/\/.*/g, '')
+  const deps: any = {}
+  for (const match of text.matchAll(UIIMPORT_REG)) {
+    if (!match)
+      continue
+    const from = match[2]
+    if (!UINamesMap.includes(from))
+      continue
+    const _deps = match[1].trim().replace(/\s+/g, ' ').split(' ')
+    _deps.forEach((d) => {
+      deps[d] = from
+    })
+  }
+  return deps
+}
 export function getAbsoluteUrl(url: string) {
   return path.resolve(getCurrentFileUrl()!, '..', url)
 }

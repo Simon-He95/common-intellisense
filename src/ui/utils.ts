@@ -323,7 +323,7 @@ export function propsReducer(uiName: string, map: string[], iconData?: { prefix:
     }
     const tableDocument = createTableDocument()
 
-    result[item.name!] = { completions, events, methods, slots, suggestions: item.suggestions || [], tableDocument, rawSlots: item.slots }
+    result[item.name!] = { completions, events, methods, slots, suggestions: item.suggestions || [], tableDocument, rawSlots: item.slots, uiName }
     return result
   }, result)
 }
