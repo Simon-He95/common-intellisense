@@ -1,209 +1,203 @@
 {
   "name": "InputNumber",
   "props": {
-    ":addonAfter": {
-      "value": "",
-      "description": "Input with labels, set the post-labels",
+    "addonAfter": {
       "default": "-",
+      "value": "",
       "type": "ReactNode",
+      "description": "带标签的 input，设置后置标签",
       "description_zh": "带标签的 input，设置后置标签"
     },
-    ":addonBefore": {
-      "value": "",
-      "description": "Input with a label to set the pre-label",
+    "addonBefore": {
       "default": "-",
+      "value": "",
       "type": "ReactNode",
+      "description": "带标签的 input，设置前置标签",
       "description_zh": "带标签的 input，设置前置标签"
     },
-    "placeholder": {
-      "value": "",
-      "description": "placeholder",
-      "default": "",
-      "description_zh": "占位符",
-      "required": true
-    },
     "autoFocus": {
-      "value": "",
-      "description": "Automatically get focus",
       "default": "false",
+      "value": "",
       "type": "boolean",
+      "description": "自动获取焦点",
       "description_zh": "自动获取焦点"
     },
-    "bordered": {
-      "value": "",
-      "description": "Whether there is a border or not",
+    "changeOnBlur": {
       "default": "true",
+      "value": "",
       "type": "boolean",
-      "description_zh": "是否有边框"
+      "description": "是否在失去焦点时，触发 onChange 事件（例如值超出范围时，重新限制回范围并触发事件）",
+      "description_zh": "是否在失去焦点时，触发 onChange 事件（例如值超出范围时，重新限制回范围并触发事件）"
     },
     "controls": {
-      "value": "",
-      "description": "Whether to display the increase or decrease buttons, you can also set a custom arrow icon",
       "default": "-",
+      "value": "",
       "type": "boolean | { upIcon?: React.ReactNode; downIcon?: React.ReactNode; }",
+      "description": "是否显示增减按钮，也可设置自定义箭头图标",
       "description_zh": "是否显示增减按钮，也可设置自定义箭头图标"
     },
     "decimalSeparator": {
-      "value": "",
-      "description": "decimal point",
       "default": "-",
+      "value": "",
       "type": "string",
+      "description": "小数点",
       "description_zh": "小数点"
     },
-    ":defaultValue": {
-      "value": "",
-      "description": "Initial value",
+    "placeholder": {
       "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "占位符",
+      "description_zh": "占位符"
+    },
+    ":defaultValue": {
+      "default": "-",
+      "value": "",
       "type": "number",
+      "description": "初始值",
       "description_zh": "初始值"
     },
     "disabled": {
-      "value": "",
-      "description": "disable",
       "default": "false",
+      "value": "",
       "type": "boolean",
+      "description": "禁用",
       "description_zh": "禁用"
     },
-    ":formatter": {
-      "value": "",
-      "description": "Specifies the format in which the input box displays the values",
+    "formatter": {
       "default": "-",
+      "value": "",
       "type": "function(value: number | string, info: { userTyping: boolean, input: string }): string",
+      "description": "指定输入框展示值的格式",
       "description_zh": "指定输入框展示值的格式"
     },
     "keyboard": {
-      "value": "",
-      "description": "Whether to enable keyboard shortcuts",
       "default": "true",
+      "value": "",
       "type": "boolean",
+      "description": "是否启用键盘快捷行为",
       "description_zh": "是否启用键盘快捷行为"
     },
     ":max": {
-      "value": "",
-      "description": "maximum",
       "default": "Number.MAX_SAFE_INTEGER",
+      "value": "",
       "type": "number",
-      "description_zh": "最大值",
-      "required": true
+      "description": "最大值",
+      "description_zh": "最大值"
     },
     ":min": {
-      "value": "",
-      "description": "minimum",
       "default": "Number.MIN_SAFE_INTEGER",
-      "type": "number",
-      "description_zh": "最小值",
-      "required": true
-    },
-    ":parser": {
       "value": "",
-      "description": "Specifies how to convert back to numbers from 'formatter', and uses it with 'formatter'",
+      "type": "number",
+      "description": "最小值",
+      "description_zh": "最小值"
+    },
+    "parser": {
       "default": "-",
+      "value": "",
       "type": "function(string): number",
-      "description_zh": "指定从 `formatter` 里转换回数字的方式，和 `formatter` 搭配使用"
+      "description": "指定从 formatter 里转换回数字的方式，和 formatter 搭配使用",
+      "description_zh": "指定从 formatter 里转换回数字的方式，和 formatter 搭配使用"
     },
     ":precision": {
-      "value": "",
-      "description": "Numeric precision, 'formatter' will prevail when configuring 'formatter'",
       "default": "-",
+      "value": "",
       "type": "number",
-      "description_zh": "数值精度，配置 `formatter` 时会以 `formatter` 为准"
+      "description": "数值精度，配置 formatter 时会以 formatter 为准",
+      "description_zh": "数值精度，配置 formatter 时会以 formatter 为准"
     },
     "readOnly": {
-      "value": "",
-      "description": "read only",
       "default": "false",
+      "value": "",
       "type": "boolean",
+      "description": "只读",
       "description_zh": "只读"
     },
     "status": {
-      "value": [
-        "error",
-        "warning"
-      ],
-      "description": "Set the verification status",
       "default": "-",
+      "value": "",
       "type": "'error' | 'warning'",
+      "description": "设置校验状态",
       "description_zh": "设置校验状态"
     },
-    ":prefix": {
-      "value": "",
-      "description": "Input with a prefix icon",
+    "prefix": {
       "default": "-",
+      "value": "",
       "type": "ReactNode",
+      "description": "带有前缀图标的 input",
       "description_zh": "带有前缀图标的 input"
     },
     "size": {
-      "value": [
-        "large",
-        "middle",
-        "small"
-      ],
-      "description": "Enter the size of the field",
       "default": "-",
+      "value": "",
       "type": "large | middle | small",
+      "description": "输入框大小",
       "description_zh": "输入框大小"
     },
     "step": {
-      "value": "",
-      "description": "Each time you change the number of steps, it can be a decimal",
       "default": "1",
+      "value": "",
       "type": "number | string",
+      "description": "每次改变步数，可以为小数",
       "description_zh": "每次改变步数，可以为小数"
     },
     "stringMode": {
-      "value": "",
-      "description": "Character value mode, which supports high-precision decimal values when enabled. At the same time, 'onChange' will return a string type",
       "default": "false",
+      "value": "",
       "type": "boolean",
-      "description_zh": "字符值模式，开启后支持高精度小数。同时 `onChange` 将返回 string 类型"
+      "description": "字符值模式，开启后支持高精度小数。同时 onChange 将返回 string 类型",
+      "description_zh": "字符值模式，开启后支持高精度小数。同时 onChange 将返回 string 类型"
     },
     ":value": {
-      "value": "",
-      "description": "Current value",
       "default": "-",
+      "value": "",
       "type": "number",
+      "description": "当前值",
       "description_zh": "当前值"
+    },
+    "variant": {
+      "default": "outlined",
+      "value": "",
+      "type": "outlined | borderless | filled",
+      "description": "形态变体",
+      "description_zh": "形态变体"
     }
   },
   "methods": [
     {
       "name": "blur",
-      "description": "Remove the focus",
+      "description": "移除焦点",
       "params": "",
-      "description_zh": "移除焦点",
-      "value": ""
+      "description_zh": "移除焦点"
     },
     {
       "name": "focus",
-      "description": "Get focus",
+      "description": "获取焦点",
       "params": "",
-      "description_zh": "获取焦点",
-      "value": ""
+      "description_zh": "获取焦点"
     }
   ],
+  "link": "https://ant.design/components/input-number-cn",
+  "link_zh": "https://ant.design/components/input-number-cn",
   "events": [
     {
       "name": "onChange",
-      "description": "Change callbacks",
-      "params": "function(value: number | string | null)",
+      "description": "变化回调",
       "description_zh": "变化回调",
-      "value": ""
+      "params": "function(value: number | string | null)"
     },
     {
       "name": "onPressEnter",
-      "description": "Press the callback of Enter",
-      "params": "function(e)",
+      "description": "按下回车的回调",
       "description_zh": "按下回车的回调",
-      "value": ""
+      "params": "function(e)"
     },
     {
       "name": "onStep",
-      "description": "Click on the callback for the up and down arrows",
-      "params": "(value: number, info: { offset: number, type: 'up' | 'down' }) => void",
+      "description": "点击上下箭头的回调",
       "description_zh": "点击上下箭头的回调",
-      "value": ""
+      "params": "(value: number, info: { offset: number, type: 'up' | 'down' }) => void"
     }
   ],
-  "link": "https://ant.design/components//input-number",
-  "link_zh": "https://ant.design/components//input-number"
+  "typeDetail": {}
 }

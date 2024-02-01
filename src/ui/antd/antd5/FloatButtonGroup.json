@@ -2,44 +2,37 @@
   "name": "FloatButton.Group",
   "props": {
     "shape": {
-      "value": [
-        "circle",
-        "square"
-      ],
       "default": "circle",
+      "value": "",
       "type": "circle | square",
-      "description": "Sets the included FloatButton button shape",
+      "description": "设置包含的 FloatButton 按钮形状",
       "description_zh": "设置包含的 FloatButton 按钮形状"
     },
     "trigger": {
-      "value": [
-        "click",
-        "hover"
-      ],
       "default": "-",
+      "value": "",
       "type": "click | hover",
-      "description": "Trigger mode (menu mode is available)",
+      "description": "触发方式（有触发方式为菜单模式）",
       "description_zh": "触发方式（有触发方式为菜单模式）"
     },
     "open": {
+      "default": "false",
       "value": "",
-      "default": "-",
       "type": "boolean",
-      "description": "Controlled unfolding, to be used with triggers",
+      "description": "受控展开，需配合 trigger 一起使用",
       "description_zh": "受控展开，需配合 trigger 一起使用"
     }
   },
   "methods": [],
+  "link": "https://ant.design/components/float-button-cn#api",
+  "link_zh": "https://ant.design/components/float-button-cn#api",
   "events": [
     {
       "name": "onOpenChange",
-      "description": "When deploying the collapsed callback, it needs to be used with the trigger",
-      "params": "(open: boolean) => void",
+      "description": "展开收起时的回调，需配合 trigger 一起使用",
       "description_zh": "展开收起时的回调，需配合 trigger 一起使用",
-      "value": ""
+      "params": "(open: boolean) => void"
     }
   ],
-  "suggestions": ["FloatButton"],
-  "link": "https://ant.design/components//button",
-  "link_zh": "https://ant.design/components//button"
+  "typeDetail": {}
 }

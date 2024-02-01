@@ -2,202 +2,159 @@
   "name": "ColorPicker",
   "props": {
     "allowClear": {
-      "value": "",
-      "description": "Allows you to clear the selected color",
       "default": "false",
+      "value": "",
       "type": "boolean",
+      "description": "允许清除选择的颜色",
       "description_zh": "允许清除选择的颜色"
     },
     "arrow": {
-      "value": "",
-      "description": "Configure the arrows that pop up",
       "default": "true",
+      "value": "",
       "type": "boolean | { pointAtCenter: boolean }",
+      "description": "配置弹出的箭头",
       "description_zh": "配置弹出的箭头"
     },
-    ":children": {
-      "value": "",
-      "description": "Triggers for color pickers",
+    "children": {
       "default": "-",
+      "value": "",
       "type": "React.ReactNode",
+      "description": "颜色选择器的触发器",
       "description_zh": "颜色选择器的触发器"
     },
     "defaultValue": {
-      "value": "",
-      "description": "The default value for the color",
       "default": "-",
+      "value": "",
       "type": "string | Color",
+      "description": "颜色默认的值",
       "description_zh": "颜色默认的值"
     },
-    "disabled": {
+    "defaultFormat": {
+      "default": "-",
       "value": "",
-      "description": "Disable the color picker",
+      "type": "rgb | hex | hsb",
+      "description": "颜色格式默认的值",
+      "description_zh": "颜色格式默认的值"
+    },
+    "disabled": {
       "default": "false",
+      "value": "",
       "type": "boolean",
+      "description": "禁用颜色选择器",
       "description_zh": "禁用颜色选择器"
     },
-    "destroyTooltipOnHide": {
-      "value": "",
-      "description": "Whether to destroy the pop-up window after it is closed",
+    "disabledAlpha": {
       "default": "false",
+      "value": "",
       "type": "boolean",
+      "description": "禁用透明度",
+      "description_zh": "禁用透明度"
+    },
+    "destroyTooltipOnHide": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "关闭后是否销毁弹窗",
       "description_zh": "关闭后是否销毁弹窗"
     },
     "format": {
-      "value": [
-        "rgb",
-        "hex",
-        "hsb"
-      ],
-      "description": "Color format",
       "default": "hex",
+      "value": "",
       "type": "rgb | hex | hsb",
+      "description": "颜色格式",
       "description_zh": "颜色格式"
     },
     "open": {
-      "value": "",
-      "description": "Whether or not to display a pop-up window",
       "default": "false",
+      "value": "",
       "type": "boolean",
+      "description": "是否显示弹出窗口",
       "description_zh": "是否显示弹出窗口"
     },
-    ":presets": {
-      "value": "",
-      "description": "Preset colors",
+    "presets": {
       "default": "-",
-      "type": "`{ label: ReactNode, colors: Array<string | Color> }[]`",
+      "value": "",
+      "type": "{ label: ReactNode, colors: Array<string | Color>, defaultOpen?: boolean }[]",
+      "description": "预设的颜色",
       "description_zh": "预设的颜色"
     },
     "placement": {
-      "value": [
-        "top",
-        "topLeft",
-        "topRight",
-        "bottom",
-        "bottomLeft",
-        "bottomRight"
-      ],
-      "description": "The location of the pop-up window",
       "default": "bottomLeft",
+      "value": "",
       "type": "top | topLeft | topRight | bottom | bottomLeft | bottomRight",
+      "description": "弹出窗口的位置",
       "description_zh": "弹出窗口的位置"
     },
-    ":panelRender": {
-      "value": "",
-      "description": "Customize the render panel",
+    "panelRender": {
       "default": "-",
-      "type": "`(panel: React.ReactNode, extra: { components: { Picker: FC; Presets: FC } }) => React.ReactNode`",
+      "value": "",
+      "type": "(panel: React.ReactNode, extra: { components: { Picker: FC; Presets: FC } }) => React.ReactNode",
+      "description": "自定义渲染面板",
       "description_zh": "自定义渲染面板"
     },
-    ":showText": {
-      "value": "",
-      "description": "Displays color text",
+    "showText": {
       "default": "-",
-      "type": "boolean | `(color: Color) => React.ReactNode`",
+      "value": "",
+      "type": "boolean | (color: Color) => React.ReactNode",
+      "description": "显示颜色文本",
       "description_zh": "显示颜色文本"
     },
     "size": {
-      "value": [
-        "large",
-        "middle",
-        "small"
-      ],
-      "description": "Set the trigger size",
       "default": "middle",
+      "value": "",
       "type": "large | middle | small",
+      "description": "设置触发器大小",
       "description_zh": "设置触发器大小"
     },
     "trigger": {
-      "value": [
-        "hover",
-        "click"
-      ],
-      "description": "The trigger mode of the color picker",
       "default": "click",
+      "value": "",
       "type": "hover | click",
+      "description": "颜色选择器的触发模式",
       "description_zh": "颜色选择器的触发模式"
     },
-    ":value": {
-      "value": "",
-      "description": "The value of the color",
+    "value": {
       "default": "-",
+      "value": "",
       "type": "string | Color",
-      "description_zh": "颜色的值",
-      "required": true
+      "description": "颜色的值",
+      "description_zh": "颜色的值"
     }
   },
   "methods": [],
-  "typeDetail": {
-    "Color": [
-      {
-        "name": "toHex",
-        "description": "转换成 `hex` 格式字符，返回格式如：1677ff",
-        "type": "`() => string`"
-      },
-      {
-        "name": "toHexString",
-        "description": "转换成 `hex` 格式颜色字符串，返回格式如：`#1677ff`",
-        "type": "`() => string`"
-      },
-      {
-        "name": "toHsb",
-        "description": "转换成 `hsb` 对象",
-        "type": "`() => ({ h: number, s: number, b: number, a number })`"
-      },
-      {
-        "name": "toHsbString",
-        "description": "转换成 `hsb` 格式颜色字符串，返回格式如：`hsb(215, 91%, 100%)`",
-        "type": "`() => string`"
-      },
-      {
-        "name": "toRgb",
-        "description": "转换成 `rgb` 对象",
-        "type": "`() => ({ r: number, g: number, b: number, a number })`"
-      },
-      {
-        "name": "toRgbString",
-        "description": "转换成 `rgb` 格式颜色字符串，返回格式如：`rgb(22, 119, 255)`",
-        "type": "`() => string`"
-      }
-    ]
-  },
+  "link": "https://ant.design/components/color-picker-cn",
+  "link_zh": "https://ant.design/components/color-picker-cn",
   "events": [
     {
       "name": "onChange",
-      "description": "Callbacks for color changes",
-      "params": "`(value: Color, hex: string) => void`",
+      "description": "颜色变化的回调",
       "description_zh": "颜色变化的回调",
-      "value": ""
+      "params": "(value: Color, hex: string) => void"
     },
     {
       "name": "onChangeComplete",
-      "description": "The callback for the completion of the color selection",
-      "params": "`(value: Color) => void`",
+      "description": "颜色选择完成的回调",
       "description_zh": "颜色选择完成的回调",
-      "value": ""
+      "params": "(value: Color) => void"
     },
     {
       "name": "onFormatChange",
-      "description": "Callbacks for color format changes",
-      "params": "`(format: 'hex' | 'rgb' | 'hsb') => void`",
+      "description": "颜色格式变化的回调",
       "description_zh": "颜色格式变化的回调",
-      "value": ""
+      "params": "(format: 'hex' | 'rgb' | 'hsb') => void"
     },
     {
       "name": "onOpenChange",
-      "description": "Callback when 'open' is changed",
-      "params": "`(open: boolean) => void`",
-      "description_zh": "当 `open` 被改变时的回调",
-      "value": ""
+      "description": "当 open 被改变时的回调",
+      "description_zh": "当 open 被改变时的回调",
+      "params": "(open: boolean) => void"
     },
     {
       "name": "onClear",
-      "description": "Clear callbacks",
-      "params": "`() => void`",
+      "description": "清除的回调",
       "description_zh": "清除的回调",
-      "value": ""
+      "params": "() => void"
     }
   ],
-  "link": "https://ant.design/components//color-picker",
-  "link_zh": "https://ant.design/components//color-picker"
+  "typeDetail": {}
 }

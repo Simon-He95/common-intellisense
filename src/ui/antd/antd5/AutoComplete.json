@@ -2,210 +2,212 @@
   "name": "AutoComplete",
   "props": {
     "allowClear": {
-      "value": "",
       "default": "false",
+      "value": "",
       "type": "boolean | { clearIcon?: ReactNode }",
-      "description": "Clearing is supported",
+      "description": "支持清除",
       "description_zh": "支持清除"
     },
     "autoFocus": {
-      "value": "",
       "default": "false",
+      "value": "",
       "type": "boolean",
-      "description": "Automatically get focus",
+      "description": "自动获取焦点",
       "description_zh": "自动获取焦点"
     },
     "backfill": {
-      "value": "",
       "default": "false",
+      "value": "",
       "type": "boolean",
-      "description": "When using the keyboard to select options, backfill the selected items into the input box",
+      "description": "使用键盘选择选项的时候把选中项回填到输入框中",
       "description_zh": "使用键盘选择选项的时候把选中项回填到输入框中"
     },
-    "bordered": {
+    "children (自动完成的数据源)": {
+      "default": "-",
       "value": "",
-      "default": "true",
-      "type": "boolean",
-      "description": "Whether there is a border or not",
-      "description_zh": "是否有边框"
+      "type": "React.ReactElement<OptionProps> | Array<React.ReactElement<OptionProps>>",
+      "description": "自动完成的数据源",
+      "description_zh": "自动完成的数据源"
     },
-    ":children": {
-      "value": "",
+    "children (自定义输入框)": {
       "default": "<Input />",
+      "value": "",
       "type": "HTMLInputElement | HTMLTextAreaElement | React.ReactElement<InputProps>",
-      "description": "Customize the input box",
+      "description": "自定义输入框",
       "description_zh": "自定义输入框"
     },
     "defaultActiveFirstOption": {
-      "value": "",
       "default": "true",
+      "value": "",
       "type": "boolean",
-      "description": "Whether to highlight the first option by default",
+      "description": "是否默认高亮第一个选项",
       "description_zh": "是否默认高亮第一个选项"
     },
     "defaultOpen": {
+      "default": "false",
       "value": "",
-      "default": "-",
       "type": "boolean",
-      "description": "Whether to expand the drop-down menu by default",
+      "description": "是否默认展开下拉菜单",
       "description_zh": "是否默认展开下拉菜单"
     },
     "defaultValue": {
-      "value": "",
       "default": "-",
+      "value": "",
       "type": "string",
-      "description": "Specifies the items that are selected by default",
+      "description": "指定默认选中的条目",
       "description_zh": "指定默认选中的条目"
     },
     "disabled": {
-      "value": "",
       "default": "false",
+      "value": "",
       "type": "boolean",
-      "description": "Whether to disable or not",
+      "description": "是否禁用",
       "description_zh": "是否禁用"
     },
-    "popupClassName": {
-      "value": "",
+    "dropdownRender": {
       "default": "-",
+      "value": "",
+      "type": "(menus: ReactNode) => ReactNode",
+      "description": "自定义下拉框内容",
+      "description_zh": "自定义下拉框内容"
+    },
+    "popupClassName": {
+      "default": "-",
+      "value": "",
       "type": "string",
-      "description": "drop-down menu",
+      "description": "下拉菜单的 className 属性",
       "description_zh": "下拉菜单的 className 属性"
     },
     "dropdownMatchSelectWidth": {
-      "value": "",
       "default": "true",
+      "value": "",
       "type": "boolean | number",
-      "description": "The drop-down menu is the same width as the selector. By default, min-width is set and is ignored when the value is less than the width of the selection box. false, which turns off virtual scrolling",
+      "description": "下拉菜单和选择器同宽。默认将设置 min-width，当值小于选择框宽度时会被忽略。false 时会关闭虚拟滚动",
       "description_zh": "下拉菜单和选择器同宽。默认将设置 min-width，当值小于选择框宽度时会被忽略。false 时会关闭虚拟滚动"
     },
     "filterOption": {
-      "value": "",
       "default": "true",
+      "value": "",
       "type": "boolean | function(inputValue, option)",
-      "description": "Whether to filter based on inputs. When it is a function, it will receive two parameters, inputValue option, and return true when the option meets the filter conditions, and false if it does not",
+      "description": "是否根据输入项进行筛选。当其为一个函数时，会接收 inputValue option 两个参数，当 option 符合筛选条件时，应返回 true，反之则返回 false",
       "description_zh": "是否根据输入项进行筛选。当其为一个函数时，会接收 inputValue option 两个参数，当 option 符合筛选条件时，应返回 true，反之则返回 false"
     },
-    ":getPopupContainer": {
-      "value": "",
+    "getPopupContainer": {
       "default": "() => document.body",
+      "value": "",
       "type": "function(triggerNode)",
-      "description": "The menu renders the parent node. By default, it is rendered to the body, and if you're having trouble scrolling the menu, try modifying the scrolling area and positioning it relative to it. example",
+      "description": "菜单渲染父节点。默认渲染到 body 上，如果你遇到菜单滚动定位问题，试试修改为滚动的区域，并相对其定位。示例",
       "description_zh": "菜单渲染父节点。默认渲染到 body 上，如果你遇到菜单滚动定位问题，试试修改为滚动的区域，并相对其定位。示例"
     },
-    ":notFoundContent": {
-      "value": "",
+    "notFoundContent": {
       "default": "-",
+      "value": "",
       "type": "ReactNode",
-      "description": "What is displayed when the drop-down list is empty",
+      "description": "当下拉列表为空时显示的内容",
       "description_zh": "当下拉列表为空时显示的内容"
     },
     "open": {
-      "value": "",
       "default": "false",
+      "value": "",
       "type": "boolean",
-      "description": "Whether to expand the drop-down menu",
+      "description": "是否展开下拉菜单",
       "description_zh": "是否展开下拉菜单"
     },
-    ":options": {
-      "value": "",
+    "options": {
       "default": "-",
+      "value": "",
       "type": "{ label, value }[]",
-      "description": "Data-based configuration options will get better rendering performance than JSX definitions",
-      "description_zh": "数据化配置选项内容，相比 jsx 定义会获得更好的渲染性能",
-      "required": true
+      "description": "数据化配置选项内容，相比 jsx 定义会获得更好的渲染性能",
+      "description_zh": "数据化配置选项内容，相比 jsx 定义会获得更好的渲染性能"
     },
     "placeholder": {
-      "value": "",
       "default": "-",
+      "value": "",
       "type": "string",
-      "description": "Input box prompt",
+      "description": "输入框提示",
       "description_zh": "输入框提示"
     },
     "status": {
-      "value": [
-        "error",
-        "warning"
-      ],
       "default": "-",
+      "value": "",
       "type": "'error' | 'warning'",
-      "description": "Set the verification status",
+      "description": "设置校验状态",
       "description_zh": "设置校验状态"
     },
     "value": {
-      "value": "",
       "default": "-",
+      "value": "",
       "type": "string",
-      "description": "Specifies the currently selected entry",
+      "description": "指定当前选中的条目",
       "description_zh": "指定当前选中的条目"
+    },
+    "variant": {
+      "default": "outlined",
+      "value": "",
+      "type": "outlined | borderless | filled",
+      "description": "形态变体",
+      "description_zh": "形态变体"
     }
   },
   "methods": [
     {
       "name": "blur",
-      "description": "Remove the focus",
+      "description": "移除焦点",
       "params": "",
-      "description_zh": "移除焦点",
-      "value": ""
+      "description_zh": "移除焦点"
     },
     {
       "name": "focus",
-      "description": "Get focus",
+      "description": "获取焦点",
       "params": "",
-      "description_zh": "获取焦点",
-      "value": ""
+      "description_zh": "获取焦点"
     }
   ],
+  "link": "https://ant.design/components/auto-complete-cn",
+  "link_zh": "https://ant.design/components/auto-complete-cn",
   "events": [
     {
       "name": "onBlur",
-      "description": "Callbacks when you lose focus",
-      "params": "function()",
+      "description": "失去焦点时的回调",
       "description_zh": "失去焦点时的回调",
-      "value": ""
+      "params": "function()"
     },
     {
       "name": "onChange",
-      "description": "This function is called when option is selected, or when the value of input changes",
-      "params": "function(value)",
+      "description": "选中 option，或 input 的 value 变化时，调用此函数",
       "description_zh": "选中 option，或 input 的 value 变化时，调用此函数",
-      "value": ""
+      "params": "function(value)"
     },
     {
       "name": "onDropdownVisibleChange",
-      "description": "Expand the callback for the drop-down menu",
-      "params": "function(open)",
+      "description": "展开下拉菜单的回调",
       "description_zh": "展开下拉菜单的回调",
-      "value": ""
+      "params": "function(open)"
     },
     {
       "name": "onFocus",
-      "description": "Callbacks when gaining focus",
-      "params": "function()",
+      "description": "获得焦点时的回调",
       "description_zh": "获得焦点时的回调",
-      "value": ""
+      "params": "function()"
     },
     {
       "name": "onSearch",
-      "description": "It is called when searching for a completion item",
-      "params": "function(value)",
+      "description": "搜索补全项的时候调用",
       "description_zh": "搜索补全项的时候调用",
-      "value": ""
+      "params": "function(value)"
     },
     {
       "name": "onSelect",
-      "description": "Called when selected, the parameter is the value value of the selected item",
-      "params": "function(value, option)",
+      "description": "被选中时调用，参数为选中项的 value 值",
       "description_zh": "被选中时调用，参数为选中项的 value 值",
-      "value": ""
+      "params": "function(value, option)"
     },
     {
       "name": "onClear",
-      "description": "Callbacks when content is cleared",
-      "params": "function",
+      "description": "清除内容时的回调",
       "description_zh": "清除内容时的回调",
-      "value": ""
+      "params": "function"
     }
   ],
-  "link": "https://ant.design/components//auto-complete",
-  "link_zh": "https://ant.design/components//auto-complete"
+  "typeDetail": {}
 }

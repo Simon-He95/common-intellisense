@@ -2,196 +2,100 @@
   "name": "Typography.Text",
   "props": {
     "code": {
-      "value": "",
-      "description": "Add code styles",
       "default": "false",
+      "value": "",
       "type": "boolean",
+      "description": "添加代码样式",
       "description_zh": "添加代码样式"
     },
     "copyable": {
-      "value": "",
-      "description": "Whether it can be copied or not, and various customizations can be made when it is an object",
       "default": "false",
+      "value": "",
       "type": "boolean | copyable",
+      "description": "是否可拷贝，为对象时可进行各种自定义",
       "description_zh": "是否可拷贝，为对象时可进行各种自定义"
     },
     "delete": {
-      "value": "",
-      "description": "Add a strikethrough style",
       "default": "false",
+      "value": "",
       "type": "boolean",
+      "description": "添加删除线样式",
       "description_zh": "添加删除线样式"
     },
     "disabled": {
-      "value": "",
-      "description": "Disable text",
       "default": "false",
+      "value": "",
       "type": "boolean",
+      "description": "禁用文本",
       "description_zh": "禁用文本"
     },
     "editable": {
-      "value": "",
-      "description": "Whether it is editable or not, and you can control the editing when it is an object",
       "default": "false",
+      "value": "",
       "type": "boolean | editable",
+      "description": "是否可编辑，为对象时可对编辑进行控制",
       "description_zh": "是否可编辑，为对象时可对编辑进行控制"
     },
     "ellipsis": {
-      "value": "",
-      "description": "Automatic overflow omitted, the number of omitted rows, whether it can be expanded, and onExpand expansion events cannot be set when it is an object. Unlike Typography.Paragraph, the Text component itself does not have a 100% width style, so by default the width does not change after the initial abbreviation. If you need adaptive width, configure the width style manually",
       "default": "false",
+      "value": "",
       "type": "boolean | Omit<ellipsis, 'expandable' | 'rows' | 'onExpand'>",
+      "description": "自动溢出省略，为对象时不能设置省略行数、是否可展开、onExpand 展开事件。不同于 Typography.Paragraph，Text 组件自身不带 100% 宽度样式，因而默认情况下初次缩略后宽度便不再变化。如果需要自适应宽度，请手工配置宽度样式",
       "description_zh": "自动溢出省略，为对象时不能设置省略行数、是否可展开、onExpand 展开事件。不同于 Typography.Paragraph，Text 组件自身不带 100% 宽度样式，因而默认情况下初次缩略后宽度便不再变化。如果需要自适应宽度，请手工配置宽度样式"
     },
     "keyboard": {
-      "value": "",
-      "description": "Add a keyboard style",
       "default": "false",
+      "value": "",
       "type": "boolean",
+      "description": "添加键盘样式",
       "description_zh": "添加键盘样式"
     },
     "mark": {
-      "value": "",
-      "description": "Add a marker style",
       "default": "false",
+      "value": "",
       "type": "boolean",
+      "description": "添加标记样式",
       "description_zh": "添加标记样式"
     },
     "strong": {
-      "value": "",
-      "description": "Whether to bold or not",
       "default": "false",
+      "value": "",
       "type": "boolean",
+      "description": "是否加粗",
       "description_zh": "是否加粗"
     },
     "italic": {
-      "value": "",
-      "description": "Italics or not",
       "default": "false",
+      "value": "",
       "type": "boolean",
+      "description": "是否斜体",
       "description_zh": "是否斜体"
     },
     "type": {
-      "value": [
-        "secondary",
-        "success",
-        "warning",
-        "danger"
-      ],
-      "description": "The type of text",
-      "default": "—",
+      "default": "-",
+      "value": "",
       "type": "secondary | success | warning | danger",
+      "description": "文本类型",
       "description_zh": "文本类型"
     },
     "underline": {
-      "value": "",
-      "description": "Add an underline style",
       "default": "false",
+      "value": "",
       "type": "boolean",
+      "description": "添加下划线样式",
       "description_zh": "添加下划线样式"
     }
   },
-  "typeDetail": {
-    "editableItem": [
-      {
-        "name": "autoSize",
-        "description": "自动 resize 文本域",
-        "type": "boolean | { minRows: number, maxRows: number }"
-      },
-      {
-        "name": "editing",
-        "description": "控制是否是编辑中状态",
-        "type": "boolean"
-      },
-      {
-        "name": "icon",
-        "description": "自定义编辑图标",
-        "type": "ReactNode"
-      },
-      {
-        "name": "maxLength",
-        "description": "编辑中文本域最大长度",
-        "type": "number"
-      },
-      {
-        "name": "tooltip",
-        "description": "自定义提示文本，为 false 时关闭",
-        "type": "boolean | ReactNode"
-      },
-      {
-        "name": "text",
-        "description": "显式地指定编辑文案，为空时将隐式地使用 children",
-        "type": "string"
-      },
-      {
-        "name": "triggerType",
-        "description": "编辑模式触发器类型，图标、文本或者两者都设置（不设置图标作为触发器时它会隐藏）",
-        "type": "['icon' | 'text']"
-      },
-      {
-        "name": "enterIcon",
-        "description": "在编辑段中自定义“enter”图标（传递“null”将删除图标）",
-        "type": "ReactNode"
-      },
-      {
-        "name": "onChange",
-        "description": "文本域编辑时触发",
-        "callback": "function(value: string)"
-      },
-      {
-        "name": "onCancel",
-        "description": "按 ESC 退出编辑状态时触发",
-        "callback": "function"
-      },
-      {
-        "name": "onStart",
-        "description": "进入编辑中状态时触发",
-        "callback": "function"
-      },
-      {
-        "name": "onEnd",
-        "description": "按 ENTER 结束编辑状态时触发",
-        "callback": "function"
-      }
-    ],
-    "copyableItem": [
-      {
-        "name": "format",
-        "description": "剪切板数据的 Mime Type",
-        "type": "'text | plain' | 'text | html'"
-      },
-      {
-        "name": "icon",
-        "description": "自定义拷贝图标：[默认图标, 拷贝后的图标]",
-        "type": "[ReactNode, ReactNode]"
-      },
-      {
-        "name": "text",
-        "description": "拷贝到剪切板里的文本",
-        "type": "string"
-      },
-      {
-        "name": "tooltips",
-        "description": "自定义提示文案，为 false 时隐藏文案",
-        "type": "[ReactNode, ReactNode]"
-      },
-      {
-        "name": "onCopy",
-        "description": "拷贝成功的回调函数",
-        "callback": "function"
-      }
-    ]
-  },
+  "methods": [],
+  "link": "https://ant.design/components/typography-cn#api",
+  "link_zh": "https://ant.design/components/typography-cn#api",
   "events": [
     {
       "name": "onClick",
-      "description": "Callback when you click Text",
-      "params": "(event) => void",
+      "description": "点击 Text 时的回调",
       "description_zh": "点击 Text 时的回调",
-      "value": ""
+      "params": "(event) => void"
     }
   ],
-  "link": "https://ant.design/components//typography",
-  "link_zh": "https://ant.design/components//typography",
-  "methods": []
+  "typeDetail": {}
 }

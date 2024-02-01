@@ -2,226 +2,93 @@
   "name": "Typography.Title",
   "props": {
     "code": {
-      "value": "",
-      "description": "Add code styles",
       "default": "false",
+      "value": "",
       "type": "boolean",
+      "description": "添加代码样式",
       "description_zh": "添加代码样式"
     },
     "copyable": {
-      "value": "",
-      "description": "Whether it can be copied or not, and various customizations can be made when it is an object",
       "default": "false",
+      "value": "",
       "type": "boolean | copyable",
+      "description": "是否可拷贝，为对象时可进行各种自定义",
       "description_zh": "是否可拷贝，为对象时可进行各种自定义"
     },
     "delete": {
-      "value": "",
-      "description": "Add a strikethrough style",
       "default": "false",
+      "value": "",
       "type": "boolean",
+      "description": "添加删除线样式",
       "description_zh": "添加删除线样式"
     },
     "disabled": {
-      "value": "",
-      "description": "Disable text",
       "default": "false",
+      "value": "",
       "type": "boolean",
+      "description": "禁用文本",
       "description_zh": "禁用文本"
     },
     "editable": {
-      "value": "",
-      "description": "Whether it is editable or not, and you can control the editing when it is an object",
       "default": "false",
+      "value": "",
       "type": "boolean | editable",
+      "description": "是否可编辑，为对象时可对编辑进行控制",
       "description_zh": "是否可编辑，为对象时可对编辑进行控制"
     },
     "ellipsis": {
-      "value": "",
-      "description": "Automatic overflow omitting, you can set the number of omitted rows, whether it can be expanded, add a suffix, etc. when it is an object",
       "default": "false",
+      "value": "",
       "type": "boolean | ellipsis",
+      "description": "自动溢出省略，为对象时可设置省略行数、是否可展开、添加后缀等",
       "description_zh": "自动溢出省略，为对象时可设置省略行数、是否可展开、添加后缀等"
     },
-    ":level": {
-      "value": "",
-      "description": "Importance, equivalent to h1, h2, h3, h4, h5",
+    "level": {
       "default": "1",
+      "value": "",
       "type": "number: 1, 2, 3, 4, 5",
+      "description": "重要程度，相当于 h1、h2、h3、h4、h5",
       "description_zh": "重要程度，相当于 h1、h2、h3、h4、h5"
     },
     "mark": {
-      "value": "",
-      "description": "Add a marker style",
       "default": "false",
+      "value": "",
       "type": "boolean",
+      "description": "添加标记样式",
       "description_zh": "添加标记样式"
     },
     "italic": {
-      "value": "",
-      "description": "Italics or not",
       "default": "false",
+      "value": "",
       "type": "boolean",
+      "description": "是否斜体",
       "description_zh": "是否斜体"
     },
     "type": {
-      "value": [
-        "secondary",
-        "success",
-        "warning",
-        "danger"
-      ],
-      "description": "The type of text",
-      "default": "—",
+      "default": "-",
+      "value": "",
       "type": "secondary | success | warning | danger",
+      "description": "文本类型",
       "description_zh": "文本类型"
     },
     "underline": {
-      "value": "",
-      "description": "Add an underline style",
       "default": "false",
+      "value": "",
       "type": "boolean",
+      "description": "添加下划线样式",
       "description_zh": "添加下划线样式"
     }
   },
-  "typeDetail": {
-    "copyableItem": [
-      {
-        "name": "format",
-        "description": "剪切板数据的 Mime Type",
-        "type": "'text | plain' | 'text | html'"
-      },
-      {
-        "name": "icon",
-        "description": "自定义拷贝图标：[默认图标, 拷贝后的图标]",
-        "type": "[ReactNode, ReactNode]"
-      },
-      {
-        "name": "text",
-        "description": "拷贝到剪切板里的文本",
-        "type": "string"
-      },
-      {
-        "name": "tooltips",
-        "description": "自定义提示文案，为 false 时隐藏文案",
-        "type": "[ReactNode, ReactNode]"
-      },
-      {
-        "name": "onCopy",
-        "description": "拷贝成功的回调函数",
-        "callback": "function"
-      }
-    ],
-    "ellipsisItem": [
-      {
-        "name": "expandable",
-        "description": "是否可展开",
-        "type": "boolean"
-      },
-      {
-        "name": "rows",
-        "description": "最多显示的行数",
-        "type": "number"
-      },
-      {
-        "name": "suffix",
-        "description": "自定义省略内容后缀",
-        "type": "string"
-      },
-      {
-        "name": "symbol",
-        "description": "自定义展开描述文案",
-        "type": "ReactNode"
-      },
-      {
-        "name": "tooltip",
-        "description": "省略时，展示提示信息",
-        "type": "boolean | ReactNode | [TooltipProps]"
-      },
-      {
-        "name": "onEllipsis",
-        "description": "触发省略时的回调",
-        "callback": "function(ellipsis)"
-      },
-      {
-        "name": "onExpand",
-        "description": "点击展开时的回调",
-        "callback": "function(event)"
-      }
-    ],
-    "editableItem": [
-      {
-        "name": "autoSize",
-        "description": "自动 resize 文本域",
-        "type": "boolean | { minRows: number, maxRows: number }"
-      },
-      {
-        "name": "editing",
-        "description": "控制是否是编辑中状态",
-        "type": "boolean"
-      },
-      {
-        "name": "icon",
-        "description": "自定义编辑图标",
-        "type": "ReactNode"
-      },
-      {
-        "name": "maxLength",
-        "description": "编辑中文本域最大长度",
-        "type": "number"
-      },
-      {
-        "name": "tooltip",
-        "description": "自定义提示文本，为 false 时关闭",
-        "type": "boolean | ReactNode"
-      },
-      {
-        "name": "text",
-        "description": "显式地指定编辑文案，为空时将隐式地使用 children",
-        "type": "string"
-      },
-      {
-        "name": "triggerType",
-        "description": "编辑模式触发器类型，图标、文本或者两者都设置（不设置图标作为触发器时它会隐藏）",
-        "type": "['icon' | 'text']"
-      },
-      {
-        "name": "enterIcon",
-        "description": "在编辑段中自定义“enter”图标（传递“null”将删除图标）",
-        "type": "ReactNode"
-      },
-      {
-        "name": "onChange",
-        "description": "文本域编辑时触发",
-        "callback": "function(value: string)"
-      },
-      {
-        "name": "onCancel",
-        "description": "按 ESC 退出编辑状态时触发",
-        "callback": "function"
-      },
-      {
-        "name": "onStart",
-        "description": "进入编辑中状态时触发",
-        "callback": "function"
-      },
-      {
-        "name": "onEnd",
-        "description": "按 ENTER 结束编辑状态时触发",
-        "callback": "function"
-      }
-    ]
-  },
+  "methods": [],
+  "link": "https://ant.design/components/typography-cn#api",
+  "link_zh": "https://ant.design/components/typography-cn#api",
   "events": [
     {
       "name": "onClick",
-      "description": "Callback when you click Title",
-      "params": "(event) => void",
+      "description": "点击 Title 时的回调",
       "description_zh": "点击 Title 时的回调",
-      "value": ""
+      "params": "(event) => void"
     }
   ],
-  "link": "https://ant.design/components//title",
-  "link_zh": "https://ant.design/components//title",
-  "methods": []
+  "typeDetail": {}
 }

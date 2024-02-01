@@ -1,5 +1,8 @@
 import { getLocale } from '@vscode-use/utils'
 import { componentsReducer, propsReducer } from '../../utils'
+import FormErrorList from './FormErrorList.json'
+import FormList from './FormList.json'
+import FormProvider from './FormProvider.json'
 import Affix from './Affix.json'
 import Alert from './Alert.json'
 import Anchor from './Anchor.json'
@@ -101,6 +104,9 @@ import Flex from './Flex.json'
 
 export function antd5() {
   const map: any = [
+    FormErrorList,
+    FormList,
+    FormProvider,
     Affix,
     Alert,
     Anchor,
@@ -522,6 +528,9 @@ export function antd5Components() {
    onFinishFailed={onFinishFailed}
    autoComplete="off"
 ></Form>`],
+        [FormList, 'FormList', '<Form.List></Form.List>'],
+        [FormErrorList, 'FormErrorList', '<Form.ErrorList></Form.ErrorList>'],
+        [FormProvider, 'FormProvider', '<Form.Provider></Form.Provider>'],
         [FormItem, 'Form item', `<Form.Item
    label="Username"
    name="username"

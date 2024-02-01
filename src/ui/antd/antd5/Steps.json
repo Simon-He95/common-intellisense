@@ -2,154 +2,100 @@
   "name": "Steps",
   "props": {
     "className": {
+      "default": "-",
       "value": "",
-      "description": "The name of the step bar class",
-      "default": "",
       "type": "string",
+      "description": "步骤条类名",
       "description_zh": "步骤条类名"
     },
     ":current": {
-      "value": "",
-      "description": "Specify the current step, starting with 0. In child step elements, the status can be overridden by the 'status' attribute",
       "default": "0",
+      "value": "",
       "type": "number",
-      "description_zh": "指定当前步骤，从 0 开始记数。在子 Step 元素中，可以通过 `status` 属性覆盖状态",
-      "required": true
+      "description": "指定当前步骤，从 0 开始记数。在子 Step 元素中，可以通过 status 属性覆盖状态",
+      "description_zh": "指定当前步骤，从 0 开始记数。在子 Step 元素中，可以通过 status 属性覆盖状态"
     },
     "direction": {
-      "value": [
-        "horizontal",
-        "vertical"
-      ],
-      "description": "Specify the step bar orientation. Currently, both horizontal and vertical orientations are supported",
       "default": "horizontal",
+      "value": "",
       "type": "string",
-      "description_zh": "指定步骤条方向。目前支持水平（`horizontal`）和竖直（vertical）两种方向"
+      "description": "指定步骤条方向。目前支持水平（horizontal）和竖直（vertical）两种方向",
+      "description_zh": "指定步骤条方向。目前支持水平（horizontal）和竖直（vertical）两种方向"
     },
     ":initial": {
-      "value": "",
-      "description": "The starting sequence number, starting from 0",
       "default": "0",
+      "value": "",
       "type": "number",
+      "description": "起始序号，从 0 开始记数",
       "description_zh": "起始序号，从 0 开始记数"
     },
     "labelPlacement": {
-      "value": [
-        "horizontal",
-        "vertical"
-      ],
-      "description": "Specify the position of the label, the default is to place the label horizontally on the right side of the icon, and optionally vertical to put it below the icon",
       "default": "horizontal",
+      "value": "",
       "type": "string",
+      "description": "指定标签放置位置，默认水平放图标右侧，可选 vertical 放图标下方",
       "description_zh": "指定标签放置位置，默认水平放图标右侧，可选 vertical 放图标下方"
     },
     ":percent": {
+      "default": "-",
       "value": "",
-      "description": "Progress bar progress displayed by the current 'process' step (only for basic type Steps)",
-      "default": "",
       "type": "number",
-      "description_zh": "当前 `process` 步骤显示的进度条进度（只对基本类型的 Steps 生效）"
+      "description": "当前 process 步骤显示的进度条进度（只对基本类型的 Steps 生效）",
+      "description_zh": "当前 process 步骤显示的进度条进度（只对基本类型的 Steps 生效）"
     },
     "progressDot": {
-      "value": "",
-      "description": "The dotted step bar can be set to a function, and labelPlacement will be forced to vertical",
       "default": "false",
+      "value": "",
       "type": "boolean | (iconDot, {index, status, title, description}) => ReactNode",
+      "description": "点状步骤条，可以设置为一个 function，labelPlacement 将强制为 vertical",
       "description_zh": "点状步骤条，可以设置为一个 function，labelPlacement 将强制为 vertical"
     },
     "responsive": {
-      "value": "",
-      "description": "When the screen width is less than '532px', it automatically changes to vertical mode",
       "default": "true",
+      "value": "",
       "type": "boolean",
-      "description_zh": "当屏幕宽度小于 `532px` 时自动变为垂直模式"
+      "description": "当屏幕宽度小于 532px 时自动变为垂直模式",
+      "description_zh": "当屏幕宽度小于 532px 时自动变为垂直模式"
     },
     "size": {
-      "value": [
-        "default",
-        "small"
-      ],
-      "description": "Specify the size, currently supports normal ('default') and mini ('small')",
-      "default": "",
+      "default": "default",
+      "value": "",
       "type": "string",
-      "description_zh": "指定大小，目前支持普通（`default`）和迷你（`small`）"
+      "description": "指定大小，目前支持普通（default）和迷你（small）",
+      "description_zh": "指定大小，目前支持普通（default）和迷你（small）"
     },
     "status": {
-      "value": [
-        "wait",
-        "process",
-        "finish",
-        "error"
-      ],
-      "description": "Specify the status of the current step, optionally 'wait', 'process', 'finish' error",
       "default": "process",
+      "value": "",
       "type": "string",
-      "description_zh": "指定当前步骤的状态，可选 `wait` `process` `finish` error"
+      "description": "指定当前步骤的状态，可选 wait process finish error",
+      "description_zh": "指定当前步骤的状态，可选 wait process finish error"
     },
     "type": {
-      "value": [
-        "default",
-        "navigation",
-        "inline"
-      ],
-      "description": "Step bar type, you can choose 'default' 'navigation' inline",
-      "default": "",
-      "type": "string",
-      "description_zh": "步骤条类型，可选 `default` `navigation` inline"
-    },
-    ":items": {
+      "default": "default",
       "value": "",
-      "description": "Configure the tab contents",
+      "type": "string",
+      "description": "步骤条类型，可选 default navigation inline",
+      "description_zh": "步骤条类型，可选 default navigation inline"
+    },
+    "items": {
       "default": "[]",
-      "type": "StepItem[]",
-      "description_zh": "配置选项卡内容",
-      "required": true
+      "value": "",
+      "type": "StepItem",
+      "description": "配置选项卡内容",
+      "description_zh": "配置选项卡内容"
     }
   },
-  "typeDetail": {
-    "StepItem": [
-      {
-        "name": "description",
-        "description": "步骤的详情描述，可选",
-        "type": "ReactNode"
-      },
-      {
-        "name": "disabled",
-        "description": "禁用点击",
-        "type": "boolean"
-      },
-      {
-        "name": "icon",
-        "description": "步骤图标的类型，可选",
-        "type": "ReactNode"
-      },
-      {
-        "name": "status",
-        "description": "指定状态。当不配置该属性时，会使用 Steps 的 `current` 来自动指定状态。可选：`wait` `process` `finish` error",
-        "type": "string"
-      },
-      {
-        "name": "subTitle",
-        "description": "子标题",
-        "type": "ReactNode"
-      },
-      {
-        "name": "title",
-        "description": "标题",
-        "type": "ReactNode"
-      }
-    ]
-  },
+  "methods": [],
+  "link": "https://ant.design/components/steps-cn",
+  "link_zh": "https://ant.design/components/steps-cn",
   "events": [
     {
       "name": "onChange",
-      "description": "Triggered when you click to switch steps",
-      "callback": "(current) => void",
+      "description": "点击切换步骤时触发",
       "description_zh": "点击切换步骤时触发",
-      "value": ""
+      "params": "(current) => void"
     }
   ],
-  "link": "https://ant.design/components//steps",
-  "link_zh": "https://ant.design/components//steps",
-  "methods": []
+  "typeDetail": {}
 }
