@@ -280,7 +280,7 @@ export function activate(context: vscode.ExtensionContext) {
         }).filter(Boolean)
         : []
       if (propName === 'on') {
-        return eventCallbacks.get(name).filter((item: any) => !hasProps.find((prop: any) => item?.params?.[1] === prop))
+        return eventCallbacks.get(key).filter((item: any) => !hasProps.find((prop: any) => item?.params?.[1] === prop))
       }
       else if (propName) {
         const r = completionsCallback.filter((item: any) => isValue
@@ -321,7 +321,7 @@ export function activate(context: vscode.ExtensionContext) {
           ? []
           : isValue
             ? []
-            : eventCallbacks.get(name).filter((item: any) => !hasProps.find((prop: any) => item?.params?.[1] === prop))
+            : eventCallbacks.get(key).filter((item: any) => !hasProps.find((prop: any) => item?.params?.[1] === prop))
         if (propName === 'o')
           return [...events, ...r]
 
