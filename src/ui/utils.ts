@@ -328,6 +328,7 @@ export function propsReducer(uiName: string, map: string[], iconData?: { prefix:
   }, result)
 }
 
+// todo: 提供第二次使用场景，将有前缀的UI，例如a-button，肯能存在局部导入的情况，需要支持Button的情况，然后将导入的路径插入
 export function componentsReducer(map: any[][], isSeperatorByHyphen = true, prefix = '', lib: string, isReact = false) {
   const isZh = getLocale().includes('zh')
 
