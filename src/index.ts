@@ -659,7 +659,9 @@ function findDynamic(tag: string, prefix: string[]) {
   let target = UiCompletions[tag]
   if (!target) {
     for (const p of prefix) {
-      const t = UiCompletions[p.toUpperCase() + tag]
+      if (!p)
+        continue
+      const t = UiCompletions[p[0].toUpperCase() + p.slice(1) + tag]
       if (t) {
         target = t
         break
@@ -695,7 +697,7 @@ function getImportUiComponents(text: string) {
     if (!match)
       continue
     const from = match[2]
-    if (UINames.includes(from)) {
+    if (UINamesMap.includes(from)) {
       deps[from] = {
         match,
         components: match[1].split(',').map(i => i.trim()),
