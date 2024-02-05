@@ -3,7 +3,7 @@
 </p>
 <p align="center"> <a href="https://github.com/Simon-He95/vscode-common-intellisense/blob/main/README.md">English</a> | 简体中文</p>
 
-希望能给予开发者一个更加友好的开发体验，提供一些组件库的使用提示，帮助在开发阶段能够加高效的coding。
+此插件能够提供超级强大的智能提示功能，包含属性、事件、插槽以及对应的注释和类型，实例上的方法等等，支持多个UI库，让你的开发效率更上一层楼。
 
 ### 🛠️️ 如何使用
 在你的项目中安装已支持的ui组件库并安装此插件即可。如果插件不能生效，可以重启vscode，如遇到问题可以打开一个issue

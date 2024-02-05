@@ -3,7 +3,7 @@
 </p>
 <p align="center"> English | <a href="https://github.com/Simon-He95/vscode-common-intellisense/blob/main/README_zh.md">简体中文</a></p>
 
-It is hoped to give developers a more friendly development experience and provide some tips on the use of component libraries to help add efficient coding in the development stage.
+This plugin can provide a super powerful smart prompt function, including properties, events, slots and corresponding annotations and types, methods on instances, etc. It supports multiple UI libraries, taking your development efficiency to the next level.
 
 ### 🛠️️ How to use
 Install the supported ui component library in your project and install the plug-in. If the plug-in does not work, you can restart vscode. If you encounter problems, you can open an issue.
