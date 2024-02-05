@@ -8,7 +8,7 @@ import { createRange, getActiveText, getActiveTextEditorLanguageId, getLocale, g
 import { traverse } from '@babel/types'
 import { UINames } from './constants'
 import { toCamel } from './ui/utils'
-import { findDynamicComponent, findUI, urlCache } from '.'
+import { findDynamicComponent, findUI, optionsComponents, urlCache } from '.'
 
 const { parse: svelteParser } = require('svelte/compiler')
 
@@ -529,8 +529,8 @@ const modules: any = {
   children: [],
   offset: 0,
 }
-export async function detectSlots(UiCompletions: any) {
-  const [children, offset] = await getTemplateAst(UiCompletions)
+export async function detectSlots(UiCompletions: any, uiDeps: any) {
+  const [children, offset] = await getTemplateAst(UiCompletions, uiDeps)
 
   if (!children || !children?.length) {
     modules.children = []
@@ -592,7 +592,7 @@ export function registerCodeLensProviderFn() {
   })
 }
 
-async function getTemplateAst(UiCompletions: any): Promise<[any, number?] | []> {
+async function getTemplateAst(UiCompletions: any, uiDeps: any): Promise<[any, number?] | []> {
   const code = getActiveText()!
   const lan = getActiveTextEditorLanguageId() || ''
 
@@ -604,21 +604,21 @@ async function getTemplateAst(UiCompletions: any): Promise<[any, number?] | []> 
     if (!template) {
       if (_script?.lang === 'tsx') {
         const children = findAllJsxElements(_script.content)
-        return [await findUiTag(children, UiCompletions), _script.loc.start.offset]
+        return [await findUiTag(children, UiCompletions, [], new Set(), uiDeps), _script.loc.start.offset]
       }
       return []
     }
-    return [await findUiTag(template.ast.children, UiCompletions), 0]
+    return [await findUiTag(template.ast.children, UiCompletions, [], new Set(), uiDeps), 0]
   }
   else if (['javascriptreact', 'typescriptreact'].includes(lan)) {
     const children = findAllJsxElements(code)
-    return [await findUiTag(children, UiCompletions), 0]
+    return [await findUiTag(children, UiCompletions, [], new Set(), uiDeps), 0]
   }
   return []
 }
 const originTag = ['div', 'span', 'ul', 'li', 'ol', 'p', 'main', 'header', 'footer', 'template']
 
-async function findUiTag(children: any, UiCompletions: any, result: any[] = [], cacheMap = new Set()) {
+async function findUiTag(children: any, UiCompletions: any, result: any[] = [], cacheMap = new Set(), uiDeps: any) {
   for (const child of children) {
     let tag: string = child.tag
     if (child.type === 'JSXElement')
@@ -629,7 +629,7 @@ async function findUiTag(children: any, UiCompletions: any, result: any[] = [], 
     const nextChildren = child.children
 
     if (nextChildren?.length)
-      await findUiTag(nextChildren, UiCompletions, result, cacheMap)
+      await findUiTag(nextChildren, UiCompletions, result, cacheMap, uiDeps)
     const range = child.range ?? child.loc
 
     if (cacheMap.has(range))
@@ -637,7 +637,21 @@ async function findUiTag(children: any, UiCompletions: any, result: any[] = [], 
     if (originTag.includes(tag))
       continue
     const tagName = toCamel(`-${tag}`)
-    const target = UiCompletions[tagName] || await findDynamicComponent(tagName, {})
+    let target = UiCompletions[tagName] || await findDynamicComponent(tagName, {})
+    const importUiSource = uiDeps[tagName]
+
+    if (importUiSource && target.uiName !== importUiSource) {
+      for (const p of optionsComponents.prefix.filter(Boolean)) {
+        const realName = p[0].toUpperCase() + p.slice(1) + tagName
+        const newTarget = UiCompletions[realName]
+        if (!newTarget)
+          continue
+        if (newTarget.uiName === importUiSource) {
+          target = newTarget
+          break
+        }
+      }
+    }
     if (!target || !target.rawSlots?.length)
       continue
     cacheMap.add(range)

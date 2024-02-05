@@ -10,7 +10,7 @@ import { UINames as UINamesMap, nameMap } from './constants'
 import { toCamel } from './ui/utils'
 
 let UINames: any = []
-let optionsComponents: any = null
+export let optionsComponents: any = null
 let UiCompletions: any = null
 const cacheMap: any = new Map()
 let extensionContext: any = null
@@ -133,7 +133,8 @@ export function activate(context: vscode.ExtensionContext) {
   if (isShowSlots) {
     context.subscriptions.push(registerCommand('common-intellisense.slots', (child, name, offset = 0) => {
       if (!child && UiCompletions) {
-        detectSlots(UiCompletions)
+        const uiDeps = getUiDeps(getActiveText()!)
+        detectSlots(UiCompletions, uiDeps)
         return
       }
 
@@ -176,8 +177,10 @@ export function activate(context: vscode.ExtensionContext) {
     }))
 
     context.subscriptions.push(addEventListener('text-change', () => {
-      if (UiCompletions)
-        detectSlots(UiCompletions)
+      if (UiCompletions) {
+        const uiDeps = getUiDeps(getActiveText()!)
+        detectSlots(UiCompletions, uiDeps)
+      }
     }))
   }
 
@@ -562,8 +565,10 @@ export function findUI() {
       return Object.assign(result, completion)
     }
     , {} as any)
-    if (isShowSlots)
-      detectSlots(UiCompletions)
+    if (isShowSlots) {
+      const uiDeps = getUiDeps(getActiveText()!)
+      detectSlots(UiCompletions, uiDeps)
+    }
   }
 }
 
