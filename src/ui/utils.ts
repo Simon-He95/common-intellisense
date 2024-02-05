@@ -331,8 +331,144 @@ export function propsReducer(uiName: string, map: string[], iconData?: { prefix:
 // todo: 提供第二次使用场景，将有前缀的UI，例如a-button，肯能存在局部导入的情况，需要支持Button的情况，然后将导入的路径插入
 export function componentsReducer(map: any[][], isSeperatorByHyphen = true, prefix = '', lib: string, isReact = false) {
   const isZh = getLocale().includes('zh')
+  if (!isReact && prefix) {
+    return [
+      {
+        prefix,
+        data: () => map.map(([content, detail, demo]) => {
+          const lan = getActiveTextEditorLanguageId()
+          const isVue = lan === 'vue'
+          let snippet = ''
+          let _content = ''
+          if (typeof content === 'object') {
+            let [requiredProps, index] = getRequireProp(content, 0, isVue)
+            const tag = isSeperatorByHyphen ? hyphenate(content.name) : content.name
+            if (requiredProps.length) {
+              if (content?.suggestions?.length === 1) {
+                const suggestionTag = content.suggestions[0]
+                const suggestion = findTargetMap(map, suggestionTag)
+                if (suggestion) {
+                  const [childRequiredProps, _index] = getRequireProp(suggestion, index, isVue)
+                  index = _index
+                  snippet = `<${tag}${requiredProps.length ? ` ${requiredProps.join(' ')}` : ''}>\n  <${suggestionTag}${childRequiredProps.length ? ` ${childRequiredProps.join(' ')}` : ''}>\$${++index}</${suggestionTag}>\n</${tag}>`
+                }
+                else {
+                  snippet = `<${tag}>\$${++index}</${tag}>`
+                }
+              }
+              else {
+                snippet = `<${tag}${requiredProps.length ? ` ${requiredProps.join(' ')}` : ''}>$${++index}</${tag}>`
+              }
+            }
+            else {
+              if (content?.suggestions?.length === 1) {
+                const suggestionTag = content.suggestions[0]
+                const suggestion = findTargetMap(map, suggestionTag)
+                if (suggestion) {
+                  const [childRequiredProps, _index] = getRequireProp(suggestion, index, isVue)
+                  index = _index
+                  snippet = `<${tag}>\n  <${suggestionTag}${childRequiredProps.length ? ` ${childRequiredProps.join(' ')}` : ''}>\$${++index}</${suggestionTag}>\n</${tag}>`
+                }
+                else {
+                  snippet = `<${tag}>$1</${tag}>`
+                }
+              }
+              else { snippet = `<${tag}>$1</${tag}>` }
+            }
+            _content = `${tag}  ${detail}`
+          }
+          else {
+            snippet = `<${content}>$1</${content}>`
+            _content = `${content}  ${detail}`
+          }
+          if (!demo)
+            demo = snippet
+          const documentation = new vscode.MarkdownString()
+          documentation.isTrusted = true
+          documentation.supportHtml = true
+          documentation.appendMarkdown(`#### 🍀 ${lib} ${detail}\n`)
+          if (demo) {
+            const copyIcon = '<img width="12" height="12" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxnIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2UyOWNkMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2Utd2lkdGg9IjEuNSI+PHBhdGggZD0iTTIwLjk5OCAxMGMtLjAxMi0yLjE3NS0uMTA4LTMuMzUzLS44NzctNC4xMjFDMTkuMjQzIDUgMTcuODI4IDUgMTUgNWgtM2MtMi44MjggMC00LjI0MyAwLTUuMTIxLjg3OUM2IDYuNzU3IDYgOC4xNzIgNiAxMXY1YzAgMi44MjggMCA0LjI0My44NzkgNS4xMjFDNy43NTcgMjIgOS4xNzIgMjIgMTIgMjJoM2MyLjgyOCAwIDQuMjQzIDAgNS4xMjEtLjg3OUMyMSAyMC4yNDMgMjEgMTguODI4IDIxIDE2di0xIi8+PHBhdGggZD0iTTMgMTB2NmEzIDMgMCAwIDAgMyAzTTE4IDVhMyAzIDAgMCAwLTMtM2gtNEM3LjIyOSAyIDUuMzQzIDIgNC4xNzIgMy4xNzJDMy41MTggMy44MjUgMy4yMjkgNC43IDMuMTAyIDYiLz48L2c+PC9zdmc+" />'
+            documentation.appendMarkdown(`#### 🌰 ${isZh ? '例子' : 'example'}\n`)
+            documentation.appendCodeblock(demo, 'html')
+            const params = setCommandParams(demo)
+            documentation.appendMarkdown(`\n<a href="command:intellisense.copyDemo?${params}">${copyIcon}</a>\n`)
+          }
 
-  return {
+          return createCompletionItem({ content: _content, snippet, documentation, type: vscode.CompletionItemKind.TypeParameter, sortText: 'a', params: [content, lib, isReact, prefix], demo })
+        }),
+      },
+      {
+        prefix: '',
+        data: () => map.map(([content, detail, demo]) => {
+          const lan = getActiveTextEditorLanguageId()
+          const isVue = lan === 'vue'
+          let snippet = ''
+          let _content = ''
+          if (typeof content === 'object') {
+            let [requiredProps, index] = getRequireProp(content, 0, isVue)
+            const tag = content.name.slice(prefix.length)
+            if (requiredProps.length) {
+              if (content?.suggestions?.length === 1) {
+                let suggestionTag = content.suggestions[0]
+                const suggestion = findTargetMap(map, suggestionTag)
+                if (suggestion) {
+                  suggestionTag = suggestion.name.slice(prefix.length)
+                  const [childRequiredProps, _index] = getRequireProp(suggestion, index, isVue)
+                  index = _index
+
+                  snippet = `<${tag}${requiredProps.length ? ` ${requiredProps.join(' ')}` : ''}>\n  <${suggestionTag}${childRequiredProps.length ? ` ${childRequiredProps.join(' ')}` : ''}>\$${++index}</${suggestionTag}>\n</${tag}>`
+                }
+                else {
+                  snippet = `<${tag}>\$${++index}</${tag}>`
+                }
+              }
+              else {
+                snippet = `<${tag}${requiredProps.length ? ` ${requiredProps.join(' ')}` : ''}>$${++index}</${tag}>`
+              }
+            }
+            else {
+              if (content?.suggestions?.length === 1) {
+                let suggestionTag = content.suggestions[0]
+                const suggestion = findTargetMap(map, suggestionTag)
+                if (suggestion) {
+                  suggestionTag = suggestion.name.slice(prefix.length)
+                  const [childRequiredProps, _index] = getRequireProp(suggestion, index, isVue)
+                  index = _index
+                  snippet = `<${tag}>\n  <${suggestionTag}${childRequiredProps.length ? ` ${childRequiredProps.join(' ')}` : ''}>\$${++index}</${suggestionTag}>\n</${tag}>`
+                }
+                else {
+                  snippet = `<${tag}>$1</${tag}>`
+                }
+              }
+              else { snippet = `<${tag}>$1</${tag}>` }
+            }
+            _content = `${tag}  ${detail}`
+          }
+          else {
+            snippet = `<${content}>$1</${content}>`
+            _content = `${content}  ${detail}`
+          }
+          if (!demo)
+            demo = snippet
+          const documentation = new vscode.MarkdownString()
+          documentation.isTrusted = true
+          documentation.supportHtml = true
+          documentation.appendMarkdown(`#### 🍀 ${lib} ${detail}\n`)
+          if (demo) {
+            const copyIcon = '<img width="12" height="12" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxnIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2UyOWNkMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2Utd2lkdGg9IjEuNSI+PHBhdGggZD0iTTIwLjk5OCAxMGMtLjAxMi0yLjE3NS0uMTA4LTMuMzUzLS44NzctNC4xMjFDMTkuMjQzIDUgMTcuODI4IDUgMTUgNWgtM2MtMi44MjggMC00LjI0MyAwLTUuMTIxLjg3OUM2IDYuNzU3IDYgOC4xNzIgNiAxMXY1YzAgMi44MjggMCA0LjI0My44NzkgNS4xMjFDNy43NTcgMjIgOS4xNzIgMjIgMTIgMjJoM2MyLjgyOCAwIDQuMjQzIDAgNS4xMjEtLjg3OUMyMSAyMC4yNDMgMjEgMTguODI4IDIxIDE2di0xIi8+PHBhdGggZD0iTTMgMTB2NmEzIDMgMCAwIDAgMyAzTTE4IDVhMyAzIDAgMCAwLTMtM2gtNEM3LjIyOSAyIDUuMzQzIDIgNC4xNzIgMy4xNzJDMy41MTggMy44MjUgMy4yMjkgNC43IDMuMTAyIDYiLz48L2c+PC9zdmc+" />'
+            documentation.appendMarkdown(`#### 🌰 ${isZh ? '例子' : 'example'}\n`)
+            documentation.appendCodeblock(demo, 'html')
+            const params = setCommandParams(demo)
+            documentation.appendMarkdown(`\n<a href="command:intellisense.copyDemo?${params}">${copyIcon}</a>\n`)
+          }
+
+          return createCompletionItem({ content: _content, snippet, documentation, type: vscode.CompletionItemKind.TypeParameter, sortText: 'a', params: [{ ...content, name: content.name.slice(prefix.length) }, lib, true, prefix], demo })
+        }),
+      },
+    ]
+  }
+  return [{
     prefix,
     data: () => map.map(([content, detail, demo]) => {
       const lan = getActiveTextEditorLanguageId()
@@ -385,7 +521,7 @@ export function componentsReducer(map: any[][], isSeperatorByHyphen = true, pref
       const documentation = new vscode.MarkdownString()
       documentation.isTrusted = true
       documentation.supportHtml = true
-      documentation.appendMarkdown(`#### 🍀 ${detail}\n`)
+      documentation.appendMarkdown(`#### 🍀 ${lib} ${detail}\n`)
       if (demo) {
         const copyIcon = '<img width="12" height="12" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxnIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2UyOWNkMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2Utd2lkdGg9IjEuNSI+PHBhdGggZD0iTTIwLjk5OCAxMGMtLjAxMi0yLjE3NS0uMTA4LTMuMzUzLS44NzctNC4xMjFDMTkuMjQzIDUgMTcuODI4IDUgMTUgNWgtM2MtMi44MjggMC00LjI0MyAwLTUuMTIxLjg3OUM2IDYuNzU3IDYgOC4xNzIgNiAxMXY1YzAgMi44MjggMCA0LjI0My44NzkgNS4xMjFDNy43NTcgMjIgOS4xNzIgMjIgMTIgMjJoM2MyLjgyOCAwIDQuMjQzIDAgNS4xMjEtLjg3OUMyMSAyMC4yNDMgMjEgMTguODI4IDIxIDE2di0xIi8+PHBhdGggZD0iTTMgMTB2NmEzIDMgMCAwIDAgMyAzTTE4IDVhMyAzIDAgMCAwLTMtM2gtNEM3LjIyOSAyIDUuMzQzIDIgNC4xNzIgMy4xNzJDMy41MTggMy44MjUgMy4yMjkgNC43IDMuMTAyIDYiLz48L2c+PC9zdmc+" />'
         documentation.appendMarkdown(`#### 🌰 ${isZh ? '例子' : 'example'}\n`)
@@ -394,9 +530,9 @@ export function componentsReducer(map: any[][], isSeperatorByHyphen = true, pref
         documentation.appendMarkdown(`\n<a href="command:intellisense.copyDemo?${params}">${copyIcon}</a>\n`)
       }
 
-      return createCompletionItem({ content: _content, snippet, documentation, type: vscode.CompletionItemKind.TypeParameter, sortText: 'a', params: [content, lib, isReact], demo })
+      return createCompletionItem({ content: _content, snippet, documentation, type: vscode.CompletionItemKind.TypeParameter, sortText: 'a', params: [content, lib, isReact, prefix], demo })
     }),
-  }
+  }]
 }
 
 function getComponentTagName(str: string) {
@@ -431,7 +567,6 @@ export function getRequireProp(content: any, index = 0, isVue: boolean): [string
           attr = `v-for="item in \${${++index}:${tagName}Options}" :key="item.\${${++index}:key}" ${key}="item.\${${++index}:${keyName}}"`
       }
       else {
-        const _key = key.replace('v-model', 'model')
         key = key.replace(':v-model', 'v-model')
         ++index
         if (!v) {

@@ -62,14 +62,21 @@ export function activate(context: vscode.ExtensionContext) {
       findUI()
   }))
 
-  context.subscriptions.push(registerCommand('common-intellisense.import', (params, loc) => {
+  context.subscriptions.push(registerCommand('common-intellisense.import', (params, loc, _lineOffset) => {
     if (!params)
       return
-    const [data, lib] = params
+    const [data, lib, _, prefix] = params
     const name = data.name.split('.')[0]
     const code = getActiveText()!
     const uiComponents = getImportUiComponents(code)
-    let deps = data.suggestions?.length === 1 ? data.suggestions : []
+    let deps = data.suggestions?.length === 1
+      ? data.suggestions.map((i: any) => {
+        if (i.includes('-'))
+          return toCamel(i).slice(prefix.length)
+
+        return i
+      })
+      : []
 
     if (uiComponents[lib])
       deps.push(...uiComponents[lib].components)
@@ -99,7 +106,7 @@ export function activate(context: vscode.ExtensionContext) {
       let pos: any = null
       if (isVue) {
         if (loc) {
-          pos = createPosition(loc.start.line, 0)
+          pos = createPosition(loc.start.line + _lineOffset, 0)
         }
         else {
           const match = code.match(/<script[^>]*>/)
@@ -366,7 +373,7 @@ export function activate(context: vscode.ExtensionContext) {
       item.command = {
         title: 'common-intellisense-import',
         command: 'common-intellisense.import',
-        arguments: [item.params, item.loc],
+        arguments: [item.params, item.loc, (item.snippet || item.content).split('\n').length - 1],
       }
     }
     else {
@@ -533,9 +540,12 @@ export function findUI() {
         cacheMap.set(name, componentsNames)
       }
       if (componentsNames) {
-        const { prefix, data } = componentsNames
-        result.prefix.push(prefix)
-        result.data.push(data)
+        for (const componentsName of componentsNames) {
+          const { prefix, data } = componentsName
+          if (!result.prefix.includes(prefix))
+            result.prefix.push(prefix)
+          result.data.push(data)
+        }
       }
       return result
     }, { prefix: [], data: [] })
@@ -677,7 +687,7 @@ function getHoverAttribute(attributeList: any[], attr: string) {
 
 const IMPORT_UI_REG = /import\s+{([^\}]+)}\s+from\s+['"]([^"']+)['"]/g
 
-const DEMAND_UI = ['antd', '@nextui-org/react', '@arco-design/web-react', 'radix-vue']
+// const DEMAND_UI = ['antd', 'ant-design-vue', '@nextui-org/react', '@arco-design/web-react', 'radix-vue']
 function getImportUiComponents(text: string) {
   // 读取需要按需导入的ui库， 例如 antd ,拿出导入的components
   const deps: Record<string, any> = {}
@@ -685,7 +695,7 @@ function getImportUiComponents(text: string) {
     if (!match)
       continue
     const from = match[2]
-    if (DEMAND_UI.includes(from)) {
+    if (UINames.includes(from)) {
       deps[from] = {
         match,
         components: match[1].split(',').map(i => i.trim()),
