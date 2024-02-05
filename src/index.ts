@@ -443,11 +443,12 @@ export function activate(context: vscode.ExtensionContext) {
       if (!editor)
         return
       const range = document.getWordRangeAtPosition(position) as any
-      const word = document.getText(range)
+      let word = document.getText(range)
       // 只针对template中的内容才提示
       const lineText = getLineText(position.line)!
+      const code = document.getText()
       if (lineText[range.start.character - 1] !== '<') {
-        const result = parser(document.getText(), position as any)
+        const result = parser(code, position as any)
         if (!result)
           return
         if (!result.propName)
@@ -466,8 +467,23 @@ export function activate(context: vscode.ExtensionContext) {
       const data = optionsComponents.data.map((c: any) => c()).flat()
       if (!data.length || !word)
         return new vscode.Hover('')
+      word = toCamel(word)[0].toUpperCase() + toCamel(word).slice(1)
+      let target = UiCompletions[word] || await findDynamicComponent(word, {})
 
-      const target = UiCompletions[toCamel(word)[0].toUpperCase() + toCamel(word).slice(1)] || await findDynamicComponent(word, {})
+      const uiDeps = getUiDeps(code)
+      const importUiSource = uiDeps[word]
+      if (importUiSource && target.uiName !== importUiSource) {
+        for (const p of optionsComponents.prefix.filter(Boolean)) {
+          const realName = p[0].toUpperCase() + p.slice(1) + word
+          const newTarget = UiCompletions[realName]
+          if (!newTarget)
+            continue
+          if (newTarget.uiName === importUiSource) {
+            target = newTarget
+            break
+          }
+        }
+      }
 
       if (!target)
         return
