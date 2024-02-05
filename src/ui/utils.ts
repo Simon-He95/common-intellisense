@@ -463,7 +463,7 @@ export function componentsReducer(map: any[][], isSeperatorByHyphen = true, pref
             documentation.appendMarkdown(`\n<a href="command:intellisense.copyDemo?${params}">${copyIcon}</a>\n`)
           }
 
-          return createCompletionItem({ content: _content, snippet, documentation, type: vscode.CompletionItemKind.TypeParameter, sortText: 'a', params: [{ ...content, name: content.name.slice(prefix.length) }, lib, true, prefix], demo })
+          return createCompletionItem({ content: _content, snippet, documentation, type: vscode.CompletionItemKind.TypeParameter, sortText: 'a', params: [{ ...content, name: content.name?.slice(prefix.length) }, lib, true, prefix], demo })
         }),
       },
     ]
