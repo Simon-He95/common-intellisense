@@ -528,7 +528,7 @@ export function findUI() {
     return
   }
 
-  findPkgUI(cwd).then(({ uis }: any) => {
+  findPkgUI(cwd).then(({ uis }: any = {}) => {
     urlCache.set(cwd, uis)
     if (!uis || !uis.length)
       return
