@@ -1,4 +1,5 @@
 import { componentsReducer, propsReducer } from '../../utils'
+import NextUIProvider from './NextUIProvider.json'
 import Accordion from './Accordion.json'
 import Autocomplete from './Autocomplete.json'
 import AutocompleteItem from './AutocompleteItem.json'
@@ -65,6 +66,7 @@ import User from './User.json'
 
 export function nextui2() {
   const map: any = [
+    NextUIProvider,
     Accordion,
     AccordionItem,
     Autocomplete,
@@ -135,6 +137,11 @@ export function nextui2() {
 
 export function nextui2Components() {
   const map = [
+    [
+      NextUIProvider,
+      'NextUIProvider',
+      '<NextUIProvider></NextUIProvider>',
+    ],
     [
       Accordion,
       'Accordion',
