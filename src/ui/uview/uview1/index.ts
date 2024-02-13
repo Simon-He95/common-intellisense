@@ -1,7 +1,7 @@
 import { componentsReducer, propsReducer } from '../../utils'
 import actionSheet from './actionSheet.json'
 
-export function uview1() {
+export function uview2() {
   const map: any = [
     actionSheet,
     button,
@@ -70,7 +70,7 @@ export function uview1() {
   return propsReducer(map)
 }
 
-export function uview1Components() {
+export function uview2Components() {
   const map = [
     ['u-action-sheet', '操作菜单', '<u-action-sheet :actions="list" :title="title" :show="show"></u-action-sheet>'],
   ]
