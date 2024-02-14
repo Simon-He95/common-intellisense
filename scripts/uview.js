@@ -10,7 +10,7 @@ function run() {
   Array.from(tbody.querySelectorAll('tbody tr')).forEach(item => {
     const name = item.children[0].firstChild.textContent
     const description = item.children[1].textContent
-    const type = !/(-|true|false)/.test(item.children[4].textContent) 
+    const type = !/(-|true|false)/.test(item.children[4].textContent)
       ? item.children[4].textContent
       : item.children[2].textContent
     const value = item.children[3].textContent
@@ -22,7 +22,10 @@ function run() {
       type
     }
   })
-  Array.from(document.querySelectorAll('#events + table tbody tr')).forEach(item => {
+  const eventBody = document.querySelector('#events + table')
+  ? document.querySelector('#events + table')
+  : document.querySelector('#events + * + table')
+  Array.from(eventBody.querySelectorAll('tbody tr')).forEach(item => {
     const name = item.children[0].textContent
     const description = item.children[1].textContent
     const params = item.children[2].textContent
