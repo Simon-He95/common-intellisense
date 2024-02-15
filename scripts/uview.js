@@ -47,3 +47,24 @@ function run() {
   const result = { name, props, link, link_zh: link, typeDetail: {}, events, methods, slots }
   console.log(result)
 }
+
+
+function getProps(){
+  const props = {}
+  $0.closest('tbody').querySelectorAll('tr').forEach(item => {
+    const name = item.children[0].firstChild.textContent
+    const description = item.children[1].textContent
+    const type = !/(-|true|false)/.test(item.children[4].textContent)
+      ? item.children[4].textContent
+      : item.children[2].textContent
+    const value = item.children[3].textContent
+    props[name] = {
+      description,
+      description_zh: description,
+      default: value,
+      value: '',
+      type
+    }
+  })
+  return props
+}
