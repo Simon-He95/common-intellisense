@@ -1,0 +1,245 @@
+{
+  "name": "UUpload",
+  "props": {
+    "action": {
+      "description": "服务器上传地址",
+      "description_zh": "服务器上传地址",
+      "default": "-",
+      "value": "",
+      "type": "String"
+    },
+    "max-count": {
+      "description": "最大选择图片的数量",
+      "description_zh": "最大选择图片的数量",
+      "default": "99",
+      "value": "",
+      "type": "String | Number"
+    },
+    "width": {
+      "description": "图片预览区域和添加图片按钮的宽度，单位rpx，不能是百分比，或者auto",
+      "description_zh": "图片预览区域和添加图片按钮的宽度，单位rpx，不能是百分比，或者auto",
+      "default": "200",
+      "value": "",
+      "type": "String | Number"
+    },
+    "height ": {
+      "description": "图片预览区域和添加图片按钮的高度，单位rpx，不能是百分比，或者auto",
+      "description_zh": "图片预览区域和添加图片按钮的高度，单位rpx，不能是百分比，或者auto",
+      "default": "200",
+      "value": "",
+      "type": "String | Number"
+    },
+    "custom-btn": {
+      "description": "如果需要自定义选择图片的按钮，设置为true",
+      "description_zh": "如果需要自定义选择图片的按钮，设置为true",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
+    },
+    "show-progress": {
+      "description": "是否显示进度条",
+      "description_zh": "是否显示进度条",
+      "default": "true",
+      "value": "",
+      "type": "Boolean"
+    },
+    "disabled": {
+      "description": "是否启用(显示/隐藏)组件",
+      "description_zh": "是否启用(显示/隐藏)组件",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
+    },
+    "image-mode": {
+      "description": "预览图片等显示模式，可选值为uni的image的mode属性值",
+      "description_zh": "预览图片等显示模式，可选值为uni的image的mode属性值",
+      "default": "aspectFill",
+      "value": "",
+      "type": "String"
+    },
+    "header": {
+      "description": "上传携带的头信息，对象形式",
+      "description_zh": "上传携带的头信息，对象形式",
+      "default": "{}",
+      "value": "",
+      "type": "Object"
+    },
+    "form-data": {
+      "description": "上传额外携带的参数",
+      "description_zh": "上传额外携带的参数",
+      "default": "{}",
+      "value": "",
+      "type": "Object"
+    },
+    "name": {
+      "description": "上传文件的字段名，供后端获取使用",
+      "description_zh": "上传文件的字段名，供后端获取使用",
+      "default": "file",
+      "value": "",
+      "type": "String"
+    },
+    "size-type": {
+      "description": "original 原图，compressed 压缩图，默认二者都有，H5无效",
+      "description_zh": "original 原图，compressed 压缩图，默认二者都有，H5无效",
+      "default": "['original', 'compressed']",
+      "value": "",
+      "type": "Array<String>"
+    },
+    "source-type": {
+      "description": "选择图片的来源，album-从相册选图，camera-使用相机，默认二者都有",
+      "description_zh": "选择图片的来源，album-从相册选图，camera-使用相机，默认二者都有",
+      "default": "['album', 'camera']",
+      "value": "",
+      "type": "Array<String>"
+    },
+    "preview-full-image": {
+      "description": "是否可以通过uni.previewImage预览已选择的图片",
+      "description_zh": "是否可以通过uni.previewImage预览已选择的图片",
+      "default": "true",
+      "value": "",
+      "type": "Boolean"
+    },
+    "multiple": {
+      "description": "是否开启图片多选，部分安卓机型不支持",
+      "description_zh": "是否开启图片多选，部分安卓机型不支持",
+      "default": "true",
+      "value": "",
+      "type": "Boolean"
+    },
+    "deletable": {
+      "description": "是否显示删除图片的按钮",
+      "description_zh": "是否显示删除图片的按钮",
+      "default": "true",
+      "value": "",
+      "type": "Boolean"
+    },
+    "max-size": {
+      "description": "选择单个文件的最大大小，单位B(byte)，默认不限制",
+      "description_zh": "选择单个文件的最大大小，单位B(byte)，默认不限制",
+      "default": "Number.MAX_VALUE",
+      "value": "",
+      "type": "String | Number"
+    },
+    "file-list": {
+      "description": "默认显示的图片列表，数组元素为对象，必须提供url属性",
+      "description_zh": "默认显示的图片列表，数组元素为对象，必须提供url属性",
+      "default": "-",
+      "value": "",
+      "type": "Array<Object>"
+    },
+    "upload-text": {
+      "description": "选择图片按钮的提示文字",
+      "description_zh": "选择图片按钮的提示文字",
+      "default": "选择图片",
+      "value": "",
+      "type": "String"
+    },
+    "auto-upload": {
+      "description": "选择完图片是否自动上传，见上方说明",
+      "description_zh": "选择完图片是否自动上传，见上方说明",
+      "default": "true",
+      "value": "",
+      "type": "Boolean"
+    },
+    "show-tips": {
+      "description": "特殊情况下是否自动提示toast，见上方说明",
+      "description_zh": "特殊情况下是否自动提示toast，见上方说明",
+      "default": "true",
+      "value": "",
+      "type": "Boolean"
+    },
+    "show-upload-list": {
+      "description": "是否显示组件内部的图片预览",
+      "description_zh": "是否显示组件内部的图片预览",
+      "default": "true",
+      "value": "",
+      "type": "Boolean"
+    },
+    "del-icon": {
+      "description": "右上角删除图标名称，只能为uView内置图标",
+      "description_zh": "右上角删除图标名称，只能为uView内置图标",
+      "default": "close",
+      "value": "",
+      "type": "String"
+    },
+    "del-bg-color": {
+      "description": "右上角关闭按钮的背景颜色",
+      "description_zh": "右上角关闭按钮的背景颜色",
+      "default": "#fa3534",
+      "value": "",
+      "type": "String"
+    },
+    "del-color": {
+      "description": "右上角关闭按钮图标的颜色",
+      "description_zh": "右上角关闭按钮图标的颜色",
+      "default": "#ffffff",
+      "value": "",
+      "type": "String"
+    },
+    "to-json ": {
+      "description": "如果上传后服务端返回的值为json字符串的话，是否自动转为json",
+      "description_zh": "如果上传后服务端返回的值为json字符串的话，是否自动转为json",
+      "default": "true",
+      "value": "",
+      "type": "Boolean"
+    },
+    "before-upload ": {
+      "description": "每个文件上传前触发的钩子回调函数，见上方说明，注意不要加括号",
+      "description_zh": "每个文件上传前触发的钩子回调函数，见上方说明，注意不要加括号",
+      "default": "-",
+      "value": "",
+      "type": "Function"
+    },
+    "limitType ": {
+      "description": "允许的图片后缀",
+      "description_zh": "允许的图片后缀",
+      "default": "['png', 'jpg', 'jpeg', 'webp', 'gif']",
+      "value": "",
+      "type": "Array"
+    },
+    "index  ": {
+      "description": "在各个回调事件中的最后一个参数返回，用于区别是哪一个组件的事件",
+      "description_zh": "在各个回调事件中的最后一个参数返回，用于区别是哪一个组件的事件",
+      "default": "-",
+      "value": "",
+      "type": "String | Number"
+    }
+  },
+  "link": "https://v1.uviewui.com/components/upload.html",
+  "link_zh": "https://v1.uviewui.com/components/upload.html",
+  "typeDetail": {},
+  "events": [],
+  "methods": [
+    {
+      "name": "upload",
+      "description": "调用此方法，手动上传图片",
+      "description_zh": "调用此方法，手动上传图片",
+      "params": ""
+    },
+    {
+      "name": "clear",
+      "description": "调用此方法，清空内部文件列表",
+      "description_zh": "调用此方法，清空内部文件列表",
+      "params": ""
+    },
+    {
+      "name": "reUpload",
+      "description": "调用此方法，重新上传内部上传失败或者尚未上传的图片",
+      "description_zh": "调用此方法，重新上传内部上传失败或者尚未上传的图片",
+      "params": ""
+    },
+    {
+      "name": "remove",
+      "description": "手动移除列表的某一个图片，index为lists数组的索引",
+      "description_zh": "手动移除列表的某一个图片，index为lists数组的索引",
+      "params": "(index)"
+    }
+  ],
+  "slots": [
+    {
+      "name": "addBtn",
+      "description": "自定义的选择图片按钮",
+      "description_zh": "自定义的选择图片按钮"
+    }
+  ]
+}
