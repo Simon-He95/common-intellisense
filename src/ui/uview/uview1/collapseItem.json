@@ -1,0 +1,83 @@
+{
+  "name": "UCollapseItem",
+  "props": {
+    "title": {
+      "description": "面板标题",
+      "description_zh": "面板标题",
+      "default": "-",
+      "value": "",
+      "type": "String"
+    },
+    "index": {
+      "description": "主要用于事件的回调，标识那个Item被点击",
+      "description_zh": "主要用于事件的回调，标识那个Item被点击",
+      "default": "-",
+      "value": "",
+      "type": "String / Number"
+    },
+    "disabled": {
+      "description": "面板是否可以打开或收起",
+      "description_zh": "面板是否可以打开或收起",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
+    },
+    "open": {
+      "description": "设置某个面板的初始状态是否打开",
+      "description_zh": "设置某个面板的初始状态是否打开",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
+    },
+    "name": {
+      "description": "唯一标识符，如不设置，默认用当前collapse-item的索引值",
+      "description_zh": "唯一标识符，如不设置，默认用当前collapse-item的索引值",
+      "default": "-",
+      "value": "",
+      "type": "String / Number"
+    },
+    "align": {
+      "description": "标题的对齐方式",
+      "description_zh": "标题的对齐方式",
+      "default": "left",
+      "value": "",
+      "type": "String"
+    },
+    "active-style": {
+      "description": "不显示箭头时，可以添加当前选择的collapse-item活动样式，对象形式",
+      "description_zh": "不显示箭头时，可以添加当前选择的collapse-item活动样式，对象形式",
+      "default": "-",
+      "value": "",
+      "type": "Object"
+    }
+  },
+  "link": "https://v1.uviewui.com/components/collapse.html",
+  "link_zh": "https://v1.uviewui.com/components/collapse.html",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "change",
+      "description": "某个item被打开或者收起时触发",
+      "description_zh": "某个item被打开或者收起时触发",
+      "params": "对象，{index: index, show: true | false }，index为collapse-item的index参数，show为true表示被打开，false表示被收起"
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "-",
+      "description": "主体部分的内容",
+      "description_zh": "主体部分的内容"
+    },
+    {
+      "name": "title",
+      "description": "头部的内容，不含右边的箭头",
+      "description_zh": "头部的内容，不含右边的箭头"
+    },
+    {
+      "name": "title-all",
+      "description": "整个头部的内容，包含右边的箭头",
+      "description_zh": "整个头部的内容，包含右边的箭头"
+    }
+  ]
+}

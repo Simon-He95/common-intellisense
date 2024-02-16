@@ -1,0 +1,59 @@
+{
+  "name": "UDropdownItem",
+  "props": {
+    "v-model": {
+      "description": "双向绑定选项卡选择值",
+      "description_zh": "双向绑定选项卡选择值",
+      "default": "-",
+      "value": "",
+      "type": "String | Number"
+    },
+    "title": {
+      "description": "菜单项标题",
+      "description_zh": "菜单项标题",
+      "default": "-",
+      "value": "",
+      "type": "String"
+    },
+    "options": {
+      "description": "选项数据，如果传入了默认slot，此参数无效，数据结构见上方说明",
+      "description_zh": "选项数据，如果传入了默认slot，此参数无效，数据结构见上方说明",
+      "default": "-",
+      "value": "",
+      "type": "Array[Object]"
+    },
+    "disabled": {
+      "description": "是否禁用此选项卡",
+      "description_zh": "是否禁用此选项卡",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
+    },
+    "height ": {
+      "description": "弹窗下拉内容的高度(内容超出将会滚动)，slot自定义内容时无效(自行使用scroll-view处理)，单位任意，默认rpx",
+      "description_zh": "弹窗下拉内容的高度(内容超出将会滚动)，slot自定义内容时无效(自行使用scroll-view处理)，单位任意，默认rpx",
+      "default": "auto",
+      "value": "",
+      "type": "String | Number"
+    }
+  },
+  "link": "https://v1.uviewui.com/components/dropdown.html",
+  "link_zh": "https://v1.uviewui.com/components/dropdown.html",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "change",
+      "description": "每个u-dropdown均有此回调，点击某个options选项时触发",
+      "description_zh": "每个u-dropdown均有此回调，点击某个options选项时触发",
+      "params": "(value) - 点击项绑定的value属性值"
+    }
+  ],
+  "methods": [
+    {
+      "name": "highlight",
+      "description": "index为需要设置高亮的菜单项的索引(从0开始)，不写表示清空内部的高亮",
+      "description_zh": "index为需要设置高亮的菜单项的索引(从0开始)，不写表示清空内部的高亮"
+    }
+  ],
+  "slots": []
+}

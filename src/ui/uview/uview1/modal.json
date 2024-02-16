@@ -1,0 +1,189 @@
+{
+  "name": "UModal",
+  "props": {
+    "show": {
+      "description": "是否显示模态框，请赋值给v-model",
+      "description_zh": "是否显示模态框，请赋值给v-model",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
+    },
+    "z-index": {
+      "description": "层级",
+      "description_zh": "层级",
+      "default": "1075",
+      "value": "",
+      "type": "String | Number"
+    },
+    "title": {
+      "description": "标题内容",
+      "description_zh": "标题内容",
+      "default": "提示",
+      "value": "",
+      "type": "String"
+    },
+    "width": {
+      "description": "模态框宽度，数值时单位为rpx",
+      "description_zh": "模态框宽度，数值时单位为rpx",
+      "default": "600",
+      "value": "",
+      "type": "百分比 / auto"
+    },
+    "content": {
+      "description": "模态框内容，如传入slot内容，则此参数无效",
+      "description_zh": "模态框内容，如传入slot内容，则此参数无效",
+      "default": "内容",
+      "value": "",
+      "type": "String"
+    },
+    "show-title": {
+      "description": "是否显示标题",
+      "description_zh": "是否显示标题",
+      "default": "true",
+      "value": "",
+      "type": "Boolean"
+    },
+    "show-confirm-button": {
+      "description": "是否显示确认按钮",
+      "description_zh": "是否显示确认按钮",
+      "default": "true",
+      "value": "",
+      "type": "Boolean"
+    },
+    "show-cancel-button": {
+      "description": "是否显示取消按钮",
+      "description_zh": "是否显示取消按钮",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
+    },
+    "confirm-text": {
+      "description": "确认按钮的文字",
+      "description_zh": "确认按钮的文字",
+      "default": "确认",
+      "value": "",
+      "type": "String"
+    },
+    "cancel-text": {
+      "description": "取消按钮的文字",
+      "description_zh": "取消按钮的文字",
+      "default": "取消",
+      "value": "",
+      "type": "String"
+    },
+    "cancel-color": {
+      "description": "取消按钮的颜色",
+      "description_zh": "取消按钮的颜色",
+      "default": "#606266",
+      "value": "",
+      "type": "String"
+    },
+    "confirm-color": {
+      "description": "确认按钮的颜色",
+      "description_zh": "确认按钮的颜色",
+      "default": "#2979ff",
+      "value": "",
+      "type": "String"
+    },
+    "border-radius": {
+      "description": "模态框圆角值，单位rpx",
+      "description_zh": "模态框圆角值，单位rpx",
+      "default": "16",
+      "value": "",
+      "type": "String | Number"
+    },
+    "title-style": {
+      "description": "自定义标题样式，对象形式",
+      "description_zh": "自定义标题样式，对象形式",
+      "default": "-",
+      "value": "",
+      "type": "Object"
+    },
+    "content-style": {
+      "description": "自定义内容样式，对象形式",
+      "description_zh": "自定义内容样式，对象形式",
+      "default": "-",
+      "value": "",
+      "type": "Object"
+    },
+    "cancel-style": {
+      "description": "自定义取消按钮样式，对象形式",
+      "description_zh": "自定义取消按钮样式，对象形式",
+      "default": "-",
+      "value": "",
+      "type": "Object"
+    },
+    "confirm-style": {
+      "description": "自定义确认按钮样式，对象形式",
+      "description_zh": "自定义确认按钮样式，对象形式",
+      "default": "-",
+      "value": "",
+      "type": "Object"
+    },
+    "zoom": {
+      "description": "是否开启缩放模式",
+      "description_zh": "是否开启缩放模式",
+      "default": "true",
+      "value": "",
+      "type": "Boolean"
+    },
+    "async-close": {
+      "description": "是否异步关闭，只对确定按钮有效，见上方说明",
+      "description_zh": "是否异步关闭，只对确定按钮有效，见上方说明",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
+    },
+    "mask-close-able": {
+      "description": "是否允许点击遮罩关闭Modal",
+      "description_zh": "是否允许点击遮罩关闭Modal",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
+    },
+    "negative-top": {
+      "description": "往上偏移的值，以避免可能弹出的键盘重合，单位任意，数值则默认为rpx单位 1.4.4",
+      "description_zh": "往上偏移的值，以避免可能弹出的键盘重合，单位任意，数值则默认为rpx单位 1.4.4",
+      "default": "0",
+      "value": "",
+      "type": "String | Number"
+    }
+  },
+  "link": "https://v1.uviewui.com/components/modal.html",
+  "link_zh": "https://v1.uviewui.com/components/modal.html",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "confirm",
+      "description": "点击确认按钮时触发",
+      "description_zh": "点击确认按钮时触发",
+      "params": "-"
+    },
+    {
+      "name": "cancel",
+      "description": "点击取消按钮时触发",
+      "description_zh": "点击取消按钮时触发",
+      "params": "-"
+    }
+  ],
+  "methods": [
+    {
+      "name": "clearLoading",
+      "description": "异步控制时，通过调用此方法，可以不关闭Modal，而单是清除loading状态",
+      "description_zh": "异步控制时，通过调用此方法，可以不关闭Modal，而单是清除loading状态",
+      "params": ""
+    }
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "description": "传入自定义内容，一般为富文本，见上方说明",
+      "description_zh": "传入自定义内容，一般为富文本，见上方说明"
+    },
+    {
+      "name": "confirm-button",
+      "description": "传入自定义按钮，用于在微信小程序弹窗通过按钮授权的场景",
+      "description_zh": "传入自定义按钮，用于在微信小程序弹窗通过按钮授权的场景"
+    }
+  ]
+}

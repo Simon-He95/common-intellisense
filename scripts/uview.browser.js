@@ -25,31 +25,39 @@ function run() {
         type
       }
     })
-  const eventBody = document.querySelector('#event + table')
+  const eventBody = (document.querySelector('#event + table')
     ? document.querySelector('#event + table')
-    : document.querySelector('#event + * + table')
+    : document.querySelector('#event + * + table'))
+    || (document.querySelector('#events + table')
+      ? document.querySelector('#events + table')
+      : document.querySelector('#events + * + table'))
+
   if (eventBody)
     Array.from(eventBody.querySelectorAll('tbody tr')).forEach(item => {
-      const name = item.children[0].textContent
+      const name = item.children[0].textContent.split(' ')[0]
       const description = item.children[1].textContent
       const params = item.children[2].textContent
       events.push({ name, description, description_zh: description, params })
     })
-  const slotBody = document.querySelectorAll('#slot + table tbody tr')
+  const slotBody = document.querySelectorAll('#slots + table tbody tr')?.length ? document.querySelectorAll('#slots + table tbody tr') : document.querySelectorAll('#slot + table tbody tr')
   if (slotBody)
     Array.from(slotBody).forEach(item => {
-      const name = item.children[0].textContent
+      let name = item.children[0].textContent.split(' ')[0]
       const description = item.children[1].textContent
-
+      if (name === '-' || !name)
+        name = 'default'
       slots.push({
         name,
         description,
         "description_zh": description
       })
     })
-  const methodsBody = document.querySelector('#methods + table')
+  const methodsBody = (document.querySelector('#methods + table')
     ? document.querySelector('#methods + table')
-    : document.querySelector('#methods + * + table')
+    : document.querySelector('#methods + * + table'))
+    || document.querySelector('#method + table')
+    ? document.querySelector('#method + table')
+    : document.querySelector('#method + * + table')
   if (methodsBody)
     Array.from(methodsBody.querySelectorAll('tbody tr')).forEach(item => {
       const name = item.children[0].textContent.split('(')[0]
