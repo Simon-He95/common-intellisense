@@ -18,6 +18,7 @@ export const UINames = [
   'radix-vue',
   '@arco-design/web-react',
   '@arco-design/web-vue',
+  'uview-ui',
 ]
 
 export const nameMap: any = {
@@ -29,4 +30,5 @@ export const nameMap: any = {
   '@nuxt/ui': 'nuxtui',
   '@arcoDesign/webReact': 'arcoDesign',
   '@arcoDesign/webVue': 'arcoDesignVue',
+  'uviewUi': 'uview',
 }

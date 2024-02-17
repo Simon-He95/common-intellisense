@@ -25,6 +25,7 @@
 - next-ui 2
 - arco-design/react 2
 - arco-design/vue 2
+- uview-ui 1
 
 ### [antdv demo](assets/antdv.gif)
 

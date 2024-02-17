@@ -2,49 +2,49 @@
   "name": "UCollapseItem",
   "props": {
     "title": {
-      "description": "面板标题",
+      "description": "Panel title",
       "description_zh": "面板标题",
       "default": "-",
       "value": "",
       "type": "String"
     },
     "index": {
-      "description": "主要用于事件的回调，标识那个Item被点击",
+      "description": "It is mainly used as a callback for an event to identify the item that was clicked",
       "description_zh": "主要用于事件的回调，标识那个Item被点击",
       "default": "-",
       "value": "",
       "type": "String / Number"
     },
     "disabled": {
-      "description": "面板是否可以打开或收起",
+      "description": "Whether the panel can be opened or collapsed",
       "description_zh": "面板是否可以打开或收起",
       "default": "false",
       "value": "",
       "type": "Boolean"
     },
     "open": {
-      "description": "设置某个面板的初始状态是否打开",
+      "description": "Sets whether the initial state of a panel is open",
       "description_zh": "设置某个面板的初始状态是否打开",
       "default": "false",
       "value": "",
       "type": "Boolean"
     },
     "name": {
-      "description": "唯一标识符，如不设置，默认用当前collapse-item的索引值",
+      "description": "If the unique identifier is not set, the index value of the current collapse-item is used by default",
       "description_zh": "唯一标识符，如不设置，默认用当前collapse-item的索引值",
       "default": "-",
       "value": "",
       "type": "String / Number"
     },
     "align": {
-      "description": "标题的对齐方式",
+      "description": "Alignment of titles",
       "description_zh": "标题的对齐方式",
       "default": "left",
       "value": "",
       "type": "String"
     },
     "active-style": {
-      "description": "不显示箭头时，可以添加当前选择的collapse-item活动样式，对象形式",
+      "description": "When the arrows are not displayed, you can add the currently selected collapse-item activity style, object form",
       "description_zh": "不显示箭头时，可以添加当前选择的collapse-item活动样式，对象形式",
       "default": "-",
       "value": "",
@@ -57,26 +57,27 @@
   "events": [
     {
       "name": "change",
-      "description": "某个item被打开或者收起时触发",
+      "description": "Triggered when an item is opened or collapsed",
       "description_zh": "某个item被打开或者收起时触发",
-      "params": "对象，{index: index, show: true | false }，index为collapse-item的index参数，show为true表示被打开，false表示被收起"
+      "params": "对象，{index: index, show: true | false }，index为collapse-item的index参数，show为true表示被打开，false表示被收起",
+      "value": ""
     }
   ],
   "methods": [],
   "slots": [
     {
-      "name": "-",
-      "description": "主体部分的内容",
+      "name": "default",
+      "description": "The content of the main body",
       "description_zh": "主体部分的内容"
     },
     {
       "name": "title",
-      "description": "头部的内容，不含右边的箭头",
+      "description": "The contents of the head, excluding the arrow on the right",
       "description_zh": "头部的内容，不含右边的箭头"
     },
     {
       "name": "title-all",
-      "description": "整个头部的内容，包含右边的箭头",
+      "description": "The entire head, including the arrow on the right",
       "description_zh": "整个头部的内容，包含右边的箭头"
     }
   ]

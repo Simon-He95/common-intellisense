@@ -2,42 +2,42 @@
   "name": "USticky",
   "props": {
     "offset-top": {
-      "description": "吸顶时与顶部的距离，单位rpx",
+      "description": "The distance from the top when the ceiling is raised, in rpx",
       "description_zh": "吸顶时与顶部的距离，单位rpx",
       "default": "0",
       "value": "",
       "type": "String | Number"
     },
     "index": {
-      "description": "自定义标识，用于区分是哪一个组件",
+      "description": "A custom identity to distinguish which component it is",
       "description_zh": "自定义标识，用于区分是哪一个组件",
       "default": "-",
       "value": "",
       "type": "String | Number"
     },
     "enable": {
-      "description": "是否开启吸顶功能",
+      "description": "Whether to turn on the ceiling function",
       "description_zh": "是否开启吸顶功能",
       "default": "true",
       "value": "",
       "type": "Boolean"
     },
     "bg-color": {
-      "description": "组件背景颜色",
+      "description": "Component background color",
       "description_zh": "组件背景颜色",
       "default": "#ffffff",
       "value": "",
       "type": "String"
     },
     "z-index": {
-      "description": "吸顶时的z-index值",
+      "description": "The value of the z-index at the time of ceiling lifting",
       "description_zh": "吸顶时的z-index值",
       "default": "970",
       "value": "",
       "type": "String | Number"
     },
     "h5-nav-height": {
-      "description": "导航栏高度，自定义导航栏时(无导航栏时需设置为0)，需要传入此值，单位px",
+      "description": "When customizing the navigation bar (set to 0 if there is no navigation bar), you need to pass this value in px",
       "description_zh": "导航栏高度，自定义导航栏时(无导航栏时需设置为0)，需要传入此值，单位px",
       "default": "44",
       "value": "",
@@ -50,15 +50,17 @@
   "events": [
     {
       "name": "fixed",
-      "description": "组件吸顶时触发",
+      "description": "Triggered when the component is raised",
       "description_zh": "组件吸顶时触发",
-      "params": "index: 通过props传递的index"
+      "params": "index: 通过props传递的index",
+      "value": ""
     },
     {
       "name": "unfixed",
-      "description": "组件取消吸顶时触发",
+      "description": "Triggered when the component cancels the ceiling",
       "description_zh": "组件取消吸顶时触发",
-      "params": "index: 通过props传递的index"
+      "params": "index: 通过props传递的index",
+      "value": ""
     }
   ],
   "methods": [],
