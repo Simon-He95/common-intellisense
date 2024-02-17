@@ -1,115 +1,91 @@
 {
   "name": "UActionSheet",
   "props": {
-    "show": {
-      "value": "",
-      "description": "Whether it is displayed or not",
+    ":v-model": {
+      "description": "You can control the pop-up and collapse of a v-model variable with a boolean value, and the value of the v-model is bound in both directions",
+      "description_zh": "通过v-model绑定一个值为布尔值的变量控制组件的弹出与收起，v-model的值是双向绑定的",
       "default": "false",
+      "value": "",
       "type": "Boolean",
-      "description_zh": "是否展示"
+      "required": true
     },
-    "title": {
-      "value": "",
-      "description": "Set the title",
-      "default": "-",
-      "type": "String",
-      "description_zh": "设置标题"
-    },
-    "description": {
-      "value": "",
-      "description": "For the description above the options, see the example above",
-      "default": "-",
-      "type": "String",
-      "description_zh": "选项上方的描述信息，见上方文档示例"
-    },
-    "actions": {
-      "value": "",
+    ":list": {
       "description": "The text array of the button is shown in the document above for an example",
+      "description_zh": "按钮的文字数组，见上方文档示例",
       "default": "[ ]",
-      "type": "Array\\<Object\\>",
-      "description_zh": "按钮的文字数组，见上方文档示例"
-    },
-    "cancelText": {
       "value": "",
-      "description": "The text of the cancel button is displayed when the button is not empty",
+      "type": "Array<Object>",
+      "required": true
+    },
+    "tips": {
+      "description": "For the prompt text at the top, see the example above",
+      "description_zh": "顶部的提示文字，见上方文档示例",
       "default": "-",
-      "type": "String",
-      "description_zh": "取消按钮的文字，不为空时显示按钮"
-    },
-    "closeOnClickAction": {
       "value": "",
-      "description": "Whether to close the pop-up window when clicking on a menu item is shown in the document example above",
-      "default": "-",
-      "type": "String",
-      "description_zh": "点击某个菜单项时是否关闭弹窗，见上方文档示例"
+      "type": "Object"
     },
-    "safeAreaInsetBottom": {
+    "cancel-btn": {
+      "description": "Whether to display the cancel button at the bottom",
+      "description_zh": "是否显示底部的取消按钮",
+      "default": "true",
       "value": "",
-      "description": "Whether to enable [Bottom Safe Area Adaptation] (/components/safeAreaInset.html#Description of the safe-area-set parameter of some components of uview)",
+      "type": "Boolean"
+    },
+    "border-radius": {
+      "description": "The fillet values on the left and right sides of the pop-up section in rpx",
+      "description_zh": "弹出部分顶部左右的圆角值，单位rpx",
+      "default": "0",
+      "value": "",
+      "type": "Number \\ String"
+    },
+    "mask-close-able": {
+      "description": "Click to see if the mask can be turned off",
+      "description_zh": "点击遮罩是否可以关闭",
+      "default": "true",
+      "value": "",
+      "type": "Boolean"
+    },
+    "safe-area-inset-bottom": {
+      "description": "Whether to enable the bottom safe zone adaptation",
+      "description_zh": "是否开启底部安全区适配",
       "default": "false",
-      "type": "Boolean",
-      "description_zh": "是否开启[底部安全区适配](/components/safeAreaInset.html#关于uview某些组件safe-area-inset参数的说明)"
-    },
-    "openType": {
       "value": "",
-      "description": "How the applet is opened",
-      "default": "-",
-      "type": "String",
-      "description_zh": "小程序的打开方式"
+      "type": "Boolean"
+    },
+    "z-index": {
+      "description": "z-index值",
+      "description_zh": "z-index值",
+      "default": "1075",
+      "value": "",
+      "type": "Number \\ String"
+    },
+    "cancel-text": {
+      "description": "Cancel button tooltip",
+      "description_zh": "取消按钮的提示文字",
+      "default": "取消",
+      "value": "",
+      "type": "String"
     }
   },
-  "methods": [],
+  "link": "https://v1.uviewui.com/components/actionSheet.html",
+  "link_zh": "https://v1.uviewui.com/components/actionSheet.html",
   "typeDetail": {},
   "events": [
     {
-      "name": "select",
+      "name": "click",
       "description": "Triggered when an ActionSheet list item is clicked",
-      "params": "-",
-      "description_zh": "点击ActionSheet列表项时触发"
+      "description_zh": "点击ActionSheet列表项时触发",
+      "params": "index: 点击了第几个，从0开始",
+      "value": ""
     },
     {
       "name": "close",
       "description": "Triggered when the cancel button is clicked",
+      "description_zh": "点击取消按钮时触发",
       "params": "-",
-      "description_zh": "点击取消按钮时触发"
-    },
-    {
-      "name": "getuserinfo",
-      "description": "When the user clicks this button, the obtained user information will be returned, and the detail data of the callback is the same as that returned by wx.getUserInfo, which is valid when openType=\"getUserInfo\".",
-      "params": "detail",
-      "description_zh": "用户点击该按钮时，会返回获取到的用户信息，回调的 detail 数据与 wx.getUserInfo 返回的一致，openType=\"getUserInfo\"时有效"
-    },
-    {
-      "name": "contact",
-      "description": "The callback of the customer service message is valid when openType=\"contact\".",
-      "params": "-",
-      "description_zh": "客服消息回调，openType=\"contact\"时有效"
-    },
-    {
-      "name": "getphonenumber",
-      "description": "The callback to get the user's mobile phone number is valid when openType=\"getPhoneNumber\".",
-      "params": "-",
-      "description_zh": "获取用户手机号回调，openType=\"getPhoneNumber\"时有效"
-    },
-    {
-      "name": "error",
-      "description": "When using open capability, an error callback occurs, which is valid when openType=\"error\" is used",
-      "params": "-",
-      "description_zh": "当使用开放能力时，发生错误的回调，openType=\"error\"时有效"
-    },
-    {
-      "name": "launchapp",
-      "description": "The callback of the successful opening of the APP, openType=\"launchApp\", is valid",
-      "params": "-",
-      "description_zh": "打开 APP 成功的回调，openType=\"launchApp\"时有效"
-    },
-    {
-      "name": "opensetting",
-      "description": "After opening the authorization settings page, the callback is valid when openType=\"openSetting\".",
-      "params": "-",
-      "description_zh": "在打开授权设置页后回调，openType=\"openSetting\"时有效"
+      "value": ""
     }
   ],
-  "link": "https://uviewui.com/components/actionSheet.html",
-  "link_zh": "https://uviewui.com/components/actionSheet.html"
+  "methods": [],
+  "slots": []
 }

@@ -1,12 +1,13 @@
 {
   "name": "UNoticeBar",
   "props": {
-    "list": {
+    ":list": {
       "description": "Scroll contents, in array form, as described above",
       "description_zh": "滚动内容，数组形式，见上方说明",
       "default": "-",
       "value": "",
-      "type": "Array"
+      "type": "Array",
+      "required": true
     },
     "type": {
       "description": "Topics displayed",
@@ -100,8 +101,8 @@
       "type": "String | Number"
     },
     "is-circular": {
-      "description": "fashion为horizontal时,指明是否水平衔接滚动",
-      "description_zh": "mode为horizontal时，指明是否水平衔接滚动",
+      "description": "If fashion is horizontal, indicate whether the scrolling is horizontal",
+      "description_zh": "fashion为horizontal时,指明是否水平衔接滚动",
       "default": "true",
       "value": "",
       "type": "Boolean"
@@ -149,7 +150,7 @@
     {
       "name": "click",
       "description": "点击通告文字触发,只有mode = vertical,或者mode = horizontal且is-circular = false时有效",
-      "description_zh": "点击通告文字触发，只有mode = vertical，或者mode = horizontal且is-circular = false时有效",
+      "description_zh": "点击通告文字触发,只有mode = vertical,或者mode = horizontal且is-circular = false时有效",
       "params": "index：当前文字所在list数组的索引值",
       "value": ""
     },

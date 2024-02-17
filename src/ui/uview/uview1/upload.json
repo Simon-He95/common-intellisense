@@ -1,12 +1,13 @@
 {
   "name": "UUpload",
   "props": {
-    "action": {
+    ":action": {
       "description": "Server upload address",
       "description_zh": "服务器上传地址",
       "default": "-",
       "value": "",
-      "type": "String"
+      "type": "String",
+      "required": true
     },
     "max-count": {
       "description": "The maximum number of images to select",
@@ -120,12 +121,13 @@
       "value": "",
       "type": "String | Number"
     },
-    "file-list": {
+    ":file-list": {
       "description": "The default display of the image list, the array element is an object, and the URL attribute must be provided",
       "description_zh": "默认显示的图片列表，数组元素为对象，必须提供url属性",
       "default": "-",
       "value": "",
-      "type": "Array<Object>"
+      "type": "Array<Object>",
+      "required": true
     },
     "upload-text": {
       "description": "Select the tooltip text for the image button",

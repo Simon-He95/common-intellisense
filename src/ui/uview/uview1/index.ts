@@ -7,6 +7,7 @@ import grid from './grid.json'
 import gridItem from './gridItem.json'
 import icon from './icon.json'
 import image from './image.json'
+import indexList from './indexList.json'
 import indexAnchor from './indexAnchor.json'
 import indexBar from './indexBar.json'
 import input from './input.json'
@@ -49,8 +50,10 @@ import tabs from './tabs.json'
 import tabSwiper from './tabSwiper.json'
 import tag from './tag.json'
 import td from './td.json'
+import tr from './tr.json'
 import th from './th.json'
 import timeLine from './timeLine.json'
+import timeLineItem from './timeLineItem.json'
 import toast from './toast.json'
 import topTips from './topTips.json'
 import upload from './upload.json'
@@ -109,8 +112,10 @@ export function uview1() {
     tabSwiper,
     tag,
     td,
+    tr,
     th,
     timeLine,
+    timeLineItem,
     toast,
     topTips,
     upload,
@@ -132,6 +137,7 @@ export function uview1Components() {
     [icon, icon.name, `<${icon.name}></${icon.name}>`],
     [image, image.name, `<${image.name}></${image.name}>`],
     [indexAnchor, indexAnchor.name, `<${indexAnchor.name}></${indexAnchor.name}>`],
+    [indexList, indexList.name, `<${indexList.name}></${indexList.name}>`],
     [indexBar, indexBar.name, `<${indexBar.name}></${indexBar.name}>`],
     [input, input.name, `<${input.name}></${input.name}>`],
     [keyboard, keyboard.name, `<${keyboard.name}></${keyboard.name}>`],
@@ -173,8 +179,10 @@ export function uview1Components() {
     [tabSwiper, tabSwiper.name, `<${tabSwiper.name}></${tabSwiper.name}>`],
     [tag, tag.name, `<${tag.name}></${tag.name}>`],
     [td, td.name, `<${td.name}></${td.name}>`],
+    [tr, tr.name, `<${tr.name}></${tr.name}>`],
     [th, th.name, `<${th.name}></${th.name}>`],
     [timeLine, timeLine.name, `<${timeLine.name}></${timeLine.name}>`],
+    [timeLineItem, timeLineItem.name, `<${timeLineItem.name}></${timeLineItem.name}>`],
     [toast, toast.name, `<${toast.name}></${toast.name}>`],
     [topTips, topTips.name, `<${topTips.name}></${topTips.name}>`],
     [upload, upload.name, `<${upload.name}></${upload.name}>`],

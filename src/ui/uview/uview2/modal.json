@@ -1,0 +1,201 @@
+{
+  "name": "UModal",
+  "props": {
+    ":v-model": {
+      "description": "The v-model binds a Boolean variable to control whether the modal is displayed or not",
+      "description_zh": "通过v-model绑定一个布尔变量来控制模态框的显示与否",
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "required": true
+    },
+    "show": {
+      "description": "Whether to display the modal box, assign a value to the v-model",
+      "description_zh": "是否显示模态框，请赋值给v-model",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
+    },
+    "z-index": {
+      "description": "Level",
+      "description_zh": "层级",
+      "default": "1075",
+      "value": "",
+      "type": "String | Number"
+    },
+    "title": {
+      "description": "Title content",
+      "description_zh": "标题内容",
+      "default": "提示",
+      "value": "",
+      "type": "String"
+    },
+    "width": {
+      "description": "The width of the modal, in rpx",
+      "description_zh": "模态框宽度，数值时单位为rpx",
+      "default": "600",
+      "value": "",
+      "type": "百分比 / auto"
+    },
+    "content": {
+      "description": "This parameter is invalid for modal content, such as slot content",
+      "description_zh": "模态框内容，如传入slot内容，则此参数无效",
+      "default": "内容",
+      "value": "",
+      "type": "String",
+      "required": true
+    },
+    "show-title": {
+      "description": "Whether or not to display the title",
+      "description_zh": "是否显示标题",
+      "default": "true",
+      "value": "",
+      "type": "Boolean"
+    },
+    "show-confirm-button": {
+      "description": "Whether or not to display a confirmation button",
+      "description_zh": "是否显示确认按钮",
+      "default": "true",
+      "value": "",
+      "type": "Boolean"
+    },
+    "show-cancel-button": {
+      "description": "Whether or not to display a cancel button",
+      "description_zh": "是否显示取消按钮",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
+    },
+    "confirm-text": {
+      "description": "Confirm the text of the button",
+      "description_zh": "确认按钮的文字",
+      "default": "确认",
+      "value": "",
+      "type": "String"
+    },
+    "cancel-text": {
+      "description": "The text of the cancel button",
+      "description_zh": "取消按钮的文字",
+      "default": "取消",
+      "value": "",
+      "type": "String"
+    },
+    "cancel-color": {
+      "description": "The color of the cancel button",
+      "description_zh": "取消按钮的颜色",
+      "default": "#606266",
+      "value": "",
+      "type": "String"
+    },
+    "confirm-color": {
+      "description": "Confirm the color of the button",
+      "description_zh": "确认按钮的颜色",
+      "default": "#2979ff",
+      "value": "",
+      "type": "String"
+    },
+    "border-radius": {
+      "description": "The value of the fillet of the modal box, in rpx",
+      "description_zh": "模态框圆角值，单位rpx",
+      "default": "16",
+      "value": "",
+      "type": "String | Number"
+    },
+    "title-style": {
+      "description": "Customize the title style, object form",
+      "description_zh": "自定义标题样式，对象形式",
+      "default": "-",
+      "value": "",
+      "type": "Object"
+    },
+    "content-style": {
+      "description": "Customize the content style, object form",
+      "description_zh": "自定义内容样式，对象形式",
+      "default": "-",
+      "value": "",
+      "type": "Object"
+    },
+    "cancel-style": {
+      "description": "Customize the cancel button style, object form",
+      "description_zh": "自定义取消按钮样式，对象形式",
+      "default": "-",
+      "value": "",
+      "type": "Object"
+    },
+    "confirm-style": {
+      "description": "Customize the confirmation button style, object form",
+      "description_zh": "自定义确认按钮样式，对象形式",
+      "default": "-",
+      "value": "",
+      "type": "Object"
+    },
+    "zoom": {
+      "description": "Whether to enable zoom mode",
+      "description_zh": "是否开启缩放模式",
+      "default": "true",
+      "value": "",
+      "type": "Boolean"
+    },
+    "async-close": {
+      "description": "Whether it is asynchronously closed or not is only valid for the OK button, as explained above",
+      "description_zh": "是否异步关闭，只对确定按钮有效，见上方说明",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
+    },
+    "mask-close-able": {
+      "description": "Whether to allow clicking on the mask to turn off Modal",
+      "description_zh": "是否允许点击遮罩关闭Modal",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
+    },
+    "negative-top": {
+      "description": "Offset the value upwards to avoid possible keyboard overlaps, the unit is arbitrary, and the value defaults to rpx unit 1.4.4",
+      "description_zh": "往上偏移的值，以避免可能弹出的键盘重合，单位任意，数值则默认为rpx单位 1.4.4",
+      "default": "0",
+      "value": "",
+      "type": "String | Number"
+    }
+  },
+  "link": "https://v1.uviewui.com/components/modal.html",
+  "link_zh": "https://v1.uviewui.com/components/modal.html",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "confirm",
+      "description": "Triggered when the Confirm button is clicked",
+      "description_zh": "点击确认按钮时触发",
+      "params": "-",
+      "value": ""
+    },
+    {
+      "name": "cancel",
+      "description": "Triggered when the cancel button is clicked",
+      "description_zh": "点击取消按钮时触发",
+      "params": "-",
+      "value": ""
+    }
+  ],
+  "methods": [
+    {
+      "name": "clearLoading",
+      "description": "When controlling asynchronously, you can call this method to clear the loading state without shutting down Modal",
+      "description_zh": "异步控制时，通过调用此方法，可以不关闭Modal，而单是清除loading状态",
+      "params": "",
+      "value": ""
+    }
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "description": "Custom content is passed in, usually rich text, as described above",
+      "description_zh": "传入自定义内容，一般为富文本，见上方说明"
+    },
+    {
+      "name": "confirm-button",
+      "description": "Enter a custom button for the scenario of authorization through the button in the pop-up window of the WeChat Mini Program",
+      "description_zh": "传入自定义按钮，用于在微信小程序弹窗通过按钮授权的场景"
+    }
+  ]
+}

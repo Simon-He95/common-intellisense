@@ -1,0 +1,94 @@
+{
+  "name": "UCollapse",
+  "props": {
+    "accordion": {
+      "description": "Accordion mode or not",
+      "description_zh": "是否手风琴模式",
+      "default": "true",
+      "value": "",
+      "type": "Boolean"
+    },
+    "arrow": {
+      "description": "Whether to display the arrow to the right of the title",
+      "description_zh": "是否显示标题右侧的箭头",
+      "default": "true",
+      "value": "",
+      "type": "Boolean"
+    },
+    "arrow-color": {
+      "description": "The color of the arrow to the right of the title",
+      "description_zh": "标题右侧箭头的颜色",
+      "default": "#909399",
+      "value": "",
+      "type": "String"
+    },
+    "item-style": {
+      "description": "Custom style for the entire Item, object form",
+      "description_zh": "整个Item的自定义样式，对象形式",
+      "default": "-",
+      "value": "",
+      "type": "Object"
+    },
+    "head-style": {
+      "description": "Item's title is custom styled, in the form of an object",
+      "description_zh": "Item的标题自定义样式，对象形式",
+      "default": "-",
+      "value": "",
+      "type": "Object"
+    },
+    "body-style": {
+      "description": "Item's body custom style, object form",
+      "description_zh": "Item的主体自定义样式，对象形式",
+      "default": "-",
+      "value": "",
+      "type": "Object"
+    },
+    "hover-class": {
+      "description": "The style class name is valid when pressed, the style must be written in the App.vue of the root directory or the global style introduced through it to be valid, and the none is ineffective and acts on the header area",
+      "description_zh": "样式类名，按下时有效，样式必须写在根目录的App.vue或通过其引入的全局样式中才有效，none为无效果，作用于头部标题区域",
+      "default": "u-hover-class",
+      "value": "",
+      "type": "none / 其他"
+    }
+  },
+  "link": "https://v1.uviewui.com/components/collapse.html",
+  "link_zh": "https://v1.uviewui.com/components/collapse.html",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "change",
+      "description": "Triggered when the current active panel is expanded (in accordion mode, the activeNames parameter is String, otherwise it is Array)",
+      "description_zh": "当前激活面板展开时触发(如果是手风琴模式，参数activeNames类型为String，否则为Array)",
+      "params": "activeNames: String / Array",
+      "value": ""
+    }
+  ],
+  "methods": [
+    {
+      "name": "init",
+      "description": "Reinitialize the internal height calculation for asynchronous fetching of content, please use it in conjunction with this.$nextTick().",
+      "description_zh": "重新初始化内部高度计算，用于异步获取内容的情形，请结合this.$nextTick()使用",
+      "value": ""
+    }
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "description": "The content of the main body",
+      "description_zh": "主体部分的内容"
+    },
+    {
+      "name": "title",
+      "description": "The contents of the head, excluding the arrow on the right",
+      "description_zh": "头部的内容，不含右边的箭头"
+    },
+    {
+      "name": "title-all",
+      "description": "The entire head, including the arrow on the right",
+      "description_zh": "整个头部的内容，包含右边的箭头"
+    }
+  ],
+  "suggestions": [
+    "u-collapse-item"
+  ]
+}

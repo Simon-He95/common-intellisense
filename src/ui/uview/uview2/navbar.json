@@ -1,0 +1,150 @@
+{
+  "name": "UNavbar",
+  "props": {
+    "height": {
+      "description": "The height of the navigation bar (excluding the height of the status bar, which is automatically added internally), note that the unit here is px",
+      "description_zh": "导航栏高度(不包括状态栏高度在内，内部自动加上)，注意这里的单位是px",
+      "default": "44",
+      "value": "",
+      "type": "String | Number"
+    },
+    "back-icon-color": {
+      "description": "The color of the icon is returned on the left",
+      "description_zh": "左边返回图标的颜色",
+      "default": "#606266",
+      "value": "",
+      "type": "String"
+    },
+    "back-icon-name": {
+      "description": "The name of the return icon on the left can only be the icon that comes with uView, and it has been adjusted from arrow-left to nav-back since 1.5.5",
+      "description_zh": "左边返回图标的名称，只能为uView自带的图标，1.5.5起由arrow-left调整为nav-back",
+      "default": "nav-back",
+      "value": "",
+      "type": "String"
+    },
+    "back-icon-size": {
+      "description": "The left returns the size of the icon, in rpx",
+      "description_zh": "左边返回图标的大小，单位rpx",
+      "default": "30",
+      "value": "",
+      "type": "String | Number"
+    },
+    "back-text": {
+      "description": "Return to the auxiliary text to the right of the icon",
+      "description_zh": "返回图标右边的辅助提示文字",
+      "default": "-",
+      "value": "",
+      "type": "String",
+      "required": true
+    },
+    "back-text-style": {
+      "description": "Return to the style of the auxiliary prompt text on the right side of the icon, in the form of an object",
+      "description_zh": "返回图标右边的辅助提示文字的样式，对象形式",
+      "default": "{ color: '#606266' }",
+      "value": "",
+      "type": "Object"
+    },
+    "title": {
+      "description": "The navigation bar title, if set to a null character, will hide the title placeholder area",
+      "description_zh": "导航栏标题，如设置为空字符，将会隐藏标题占位区域",
+      "default": "-",
+      "value": "",
+      "type": "String",
+      "required": true
+    },
+    "title-width": {
+      "description": "The maximum width of the navigation bar header, the content exceeds will be hidden by an ellipsis, in rpx",
+      "description_zh": "导航栏标题的最大宽度，内容超出会以省略号隐藏，单位rpx",
+      "default": "250",
+      "value": "",
+      "type": "String | Number"
+    },
+    "title-color": {
+      "description": "The color of the title",
+      "description_zh": "标题的颜色",
+      "default": "#606266",
+      "value": "",
+      "type": "String"
+    },
+    "title-size": {
+      "description": "The font size of the navigation bar header, unit: rpx, from 1.5.5, adjusted from 32 to 44",
+      "description_zh": "导航栏标题字体大小，单位rpx，1.5.5起由32调整为44",
+      "default": "44",
+      "value": "",
+      "type": "String | Number"
+    },
+    "z-index": {
+      "description": "The z-index value when fixed at the top",
+      "description_zh": "固定在顶部时的z-index值",
+      "default": "980",
+      "value": "",
+      "type": "String | Number"
+    },
+    "is-back": {
+      "description": "Whether to display the back icon and auxiliary text on the left side of the navigation bar",
+      "description_zh": "是否显示导航栏左边返回图标和辅助文字",
+      "default": "true",
+      "value": "",
+      "type": "Boolean"
+    },
+    "background": {
+      "description": "The background settings of the navigation bar (including the color of the status bar on the APP and Mini Program) are described above",
+      "description_zh": "导航栏背景设置(APP和小程序上包括状态栏的颜色)，见上方说明",
+      "default": "{ background: '#ffffff' }",
+      "value": "",
+      "type": "Object"
+    },
+    "is-fixed": {
+      "description": "Whether the navigation bar is pinned to the top",
+      "description_zh": "导航栏是否固定在顶部",
+      "default": "true",
+      "value": "",
+      "type": "Boolean"
+    },
+    "border-bottom": {
+      "description": "Whether or not to display a lower border at the bottom of the navigation bar, if a darker background color is defined, cancel this value",
+      "description_zh": "导航栏底部是否显示下边框，如定义了较深的背景颜色，可取消此值",
+      "default": "true",
+      "value": "",
+      "type": "Boolean"
+    },
+    "custom-back": {
+      "description": "Customize the return logic method, such as passing, click the back button to execute the function, otherwise it will return to the previous page normally, note that the template does not need to write parentheses for method parameters",
+      "description_zh": "自定义返回逻辑方法，如传入，点击返回按钮执行函数，否则正常返回上一页，注意模板中不需要写方法参数的括号",
+      "default": "-",
+      "value": "",
+      "type": "Function"
+    },
+    "immersive": {
+      "description": "Immersive, allows the navigation bar to collapse after fixed positioning, and takes effect only when fixed positioning",
+      "description_zh": "沉浸式，允许fixed定位后导航栏塌陷，仅fixed定位下生效",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
+    },
+    "title-bold": {
+      "description": "Whether the font of the navigation bar title is bold 1.7.8",
+      "description_zh": "导航栏标题字体是否加粗 1.7.8",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
+    }
+  },
+  "link": "https://v1.uviewui.com/components/navbar.html",
+  "link_zh": "https://v1.uviewui.com/components/navbar.html",
+  "typeDetail": {},
+  "events": [],
+  "methods": [],
+  "slots": [
+    {
+      "name": "default",
+      "description": "Customize the contents of the middle section",
+      "description_zh": "自定义中间部分的内容"
+    },
+    {
+      "name": "right",
+      "description": "Customize the right part of the content",
+      "description_zh": "自定义右侧部分内容"
+    }
+  ]
+}
