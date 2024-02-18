@@ -59,6 +59,8 @@ import topTips from './topTips.json'
 import upload from './upload.json'
 import verificationCode from './verificationCode.json'
 import waterfall from './waterfall.json'
+import cellItem from './cellItem.json'
+import cellGroup from './cellGroup.json'
 
 export function uview1() {
   const map: any = [
@@ -121,6 +123,8 @@ export function uview1() {
     upload,
     verificationCode,
     waterfall,
+    cellItem,
+    cellGroup,
   ]
 
   return propsReducer('uview', map)
@@ -188,6 +192,8 @@ export function uview1Components() {
     [upload, upload.name, `<${upload.name}></${upload.name}>`],
     [verificationCode, verificationCode.name, `<${verificationCode.name}></${verificationCode.name}>`],
     [waterfall, waterfall.name, `<${waterfall.name}></${waterfall.name}>`],
+    [cellItem, cellItem.name, `<${cellItem.name}></${cellItem.name}>`],
+    [cellGroup, cellGroup.name, `<${cellGroup.name}></${cellGroup.name}>`],
   ]
   return componentsReducer(map, true, 'u', 'uview-ui')
 }

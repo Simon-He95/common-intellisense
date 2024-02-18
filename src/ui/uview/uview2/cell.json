@@ -1,0 +1,185 @@
+{
+  "name": "UCell",
+  "props": {
+    "title": {
+      "description": "Header on the left",
+      "description_zh": "左侧标题",
+      "default": "-",
+      "value": "",
+      "type": "String | Number"
+    },
+    "label": {
+      "description": "Description below the title",
+      "description_zh": "标题下方的描述信息",
+      "default": "-",
+      "value": "",
+      "type": "String | Number"
+    },
+    "value": {
+      "description": "Content on the right",
+      "description_zh": "右侧的内容",
+      "default": "-",
+      "value": "",
+      "type": "String | Number"
+    },
+    "icon": {
+      "description": "The name of the icon on the left, or the link to the image (absolute address is recommended for local files)",
+      "description_zh": "左侧图标名称，或者图片链接(本地文件建议使用绝对地址)",
+      "default": "-",
+      "value": "",
+      "type": "String"
+    },
+    "disabled": {
+      "description": "Whether to disable the cell",
+      "description_zh": "是否禁用cell",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
+    },
+    "border": {
+      "description": "Whether to display the lower border",
+      "description_zh": "是否显示下边框",
+      "default": "true",
+      "value": "",
+      "type": "Boolean"
+    },
+    "center": {
+      "description": "Whether the content is vertically centered (mainly for the value part on the right)",
+      "description_zh": "内容是否垂直居中(主要是针对右侧的value部分)",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
+    },
+    "url": {
+      "description": "The URL address to which you will be redirected",
+      "description_zh": "点击后跳转的URL地址",
+      "default": "-",
+      "value": "",
+      "type": "String"
+    },
+    "linkType": {
+      "description": "The route method of the uView encapsulation is used internally, and the operation may be intercepted",
+      "description_zh": "链接跳转的方式，内部使用的是uView封装的route方法，可能会进行拦截操作",
+      "default": "navigateTo",
+      "value": "",
+      "type": "String"
+    },
+    "clickable": {
+      "description": "Whether to turn on click feedback (as if you click with a gray background)",
+      "description_zh": "是否开启点击反馈(表现为点击时加上灰色背景)",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
+    },
+    "isLink": {
+      "description": "Whether to show the arrow on the right and turn on click feedback",
+      "description_zh": "是否展示右侧箭头并开启点击反馈",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
+    },
+    "required": {
+      "description": "Whether to display a required asterisk in the form state (this component may be embedded in the input component)",
+      "description_zh": "是否显示表单状态下的必填星号(此组件可能会内嵌入input组件)",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
+    },
+    "rightIcon": {
+      "description": "Icon arrows on the right",
+      "description_zh": "右侧的图标箭头",
+      "default": "arrow-right",
+      "value": "",
+      "type": "String"
+    },
+    "arrowDirection": {
+      "description": "右侧箭头的方向，可选值为：left，up，down",
+      "description_zh": "右侧箭头的方向，可选值为：left，up，down",
+      "default": "right",
+      "value": "",
+      "type": "left|up|down"
+    },
+    "iconStyle": {
+      "description": "Left icon style",
+      "description_zh": "左侧图标样式",
+      "default": "-",
+      "value": "",
+      "type": "Object |\tString"
+    },
+    "rightIconStyle": {
+      "description": "The style of the arrow icon on the right",
+      "description_zh": "右侧箭头图标的样式",
+      "default": "-",
+      "value": "",
+      "type": "Object |\tString"
+    },
+    "titleStyle": {
+      "description": "The style of the title",
+      "description_zh": "标题的样式",
+      "default": "-",
+      "value": "",
+      "type": "Object |\tString"
+    },
+    "size": {
+      "description": "The size of the unit, optionally large",
+      "description_zh": "单位元的大小，可选值为large",
+      "default": "-",
+      "value": "",
+      "type": "String"
+    },
+    "stop": {
+      "description": "Click on cell to prevent the event from propagating",
+      "description_zh": "点击cell是否阻止事件传播",
+      "default": "true",
+      "value": "",
+      "type": "Boolean"
+    },
+    "name": {
+      "description": "Identifier to be used to return in the click event",
+      "description_zh": "标识符，用于在click事件中进行返回",
+      "default": "-",
+      "value": "",
+      "type": "String | Number"
+    }
+  },
+  "link": "https://uviewui.com/components/cell.html",
+  "link_zh": "https://uviewui.com/components/cell.html",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "click",
+      "description": "Triggered when you click on the cell list",
+      "description_zh": "点击cell列表时触发",
+      "params": "index: 通过props传递的index参数",
+      "value": ""
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "title",
+      "description": "If you want to customize the content of the title part on the left, do not define the title parameter or assign null values",
+      "description_zh": "自定义左侧标题部分的内容，如需使用，请勿定义title参数，或赋值null即可"
+    },
+    {
+      "name": "value",
+      "description": "Customize the content of the title section on the right, if you need to use it, do not define the value parameter, or assign the value null",
+      "description_zh": "自定义右侧标题部分的内容，如需使用，请勿定义value参数，或赋值null即可"
+    },
+    {
+      "name": "icon",
+      "description": "Customize the icon on the left",
+      "description_zh": "自定义左侧的图标"
+    },
+    {
+      "name": "right-icon",
+      "description": "To customize the content of the icon on the right, you need to set arrow to false for it to work",
+      "description_zh": "自定义右侧图标内容，需设置arrow为false才起作用"
+    },
+    {
+      "name": "label",
+      "description": "To customize the label content, you must also set use-label-slot to true",
+      "description_zh": "自定义label内容，需同时设置use-label-slot为true"
+    }
+  ]
+}
