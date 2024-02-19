@@ -2,7 +2,7 @@
   "name": "UPicker",
   "props": {
     ":show": {
-      "description": "用于控制选择器的弹出与收起",
+      "description": "Used to control the ejection and collapse of the selector",
       "description_zh": "用于控制选择器的弹出与收起",
       "default": "false",
       "value": "",
@@ -10,21 +10,21 @@
       "required": true
     },
     "showToolbar": {
-      "description": "是否显示顶部的操作栏",
+      "description": "Whether or not to display the action bar at the top",
       "description_zh": "是否显示顶部的操作栏",
       "default": "true",
       "value": "",
       "type": "Boolean"
     },
     "title": {
-      "description": "顶部中间的标题",
+      "description": "The title in the middle of the top",
       "description_zh": "顶部中间的标题",
       "default": "-",
       "value": "",
       "type": "String"
     },
     ":columns": {
-      "description": "设置每一列的数据，见上方说明",
+      "description": "Set the data for each column as described above",
       "description_zh": "设置每一列的数据，见上方说明",
       "default": "-",
       "value": "",
@@ -32,77 +32,77 @@
       "required": true
     },
     "loading": {
-      "description": "加载状态",
+      "description": "Loading status",
       "description_zh": "加载状态",
       "default": "false",
       "value": "",
       "type": "Boolean"
     },
     "itemHeight": {
-      "description": "各列中，单个选项的高度",
+      "description": "The height of each individual option in each column",
       "description_zh": "各列中，单个选项的高度",
       "default": "44",
       "value": "",
       "type": "String | Number"
     },
     "cancelText": {
-      "description": "取消按钮的文字",
+      "description": "The text of the cancel button",
       "description_zh": "取消按钮的文字",
       "default": "取消",
       "value": "",
       "type": "String"
     },
     "confirmText": {
-      "description": "确认按钮的文字",
+      "description": "Confirm the text of the button",
       "description_zh": "确认按钮的文字",
       "default": "确认",
       "value": "",
       "type": "String"
     },
     "cancelColor": {
-      "description": "取消按钮的颜色",
+      "description": "The color of the cancel button",
       "description_zh": "取消按钮的颜色",
       "default": "#909193",
       "value": "",
       "type": "String"
     },
     "confirmColor": {
-      "description": "确认按钮的颜色",
+      "description": "Confirm the color of the button",
       "description_zh": "确认按钮的颜色",
       "default": "#3c9cff",
       "value": "",
       "type": "String"
     },
     "visibleItemCount": {
-      "description": "每列中可见选项的数量",
+      "description": "The number of options visible in each column",
       "description_zh": "每列中可见选项的数量",
       "default": "5",
       "value": "",
       "type": "String | Number"
     },
     "keyName": {
-      "description": "自定义需要展示的text属性键名",
+      "description": "Customize the key name of the text attribute to be displayed",
       "description_zh": "自定义需要展示的text属性键名",
       "default": "text",
       "value": "",
       "type": "String"
     },
     "closeOnClickOverlay": {
-      "description": "是否允许点击遮罩关闭选择器（注意：关闭事件需要自行处理，只会在开启closeOnClickOverlay后点击遮罩层执行close回调）",
+      "description": "Whether to allow clicking on the mask to close the selector (Note: The closing event needs to be handled by yourself, and will only click on the mask layer to execute the close callback after closeOnClickOverlay is enabled)",
       "description_zh": "是否允许点击遮罩关闭选择器（注意：关闭事件需要自行处理，只会在开启closeOnClickOverlay后点击遮罩层执行close回调）",
       "default": "false",
       "value": "",
       "type": "Boolean"
     },
     "defaultIndex": {
-      "description": "各列的默认索引",
+      "description": "The default index for each column",
       "description_zh": "各列的默认索引",
       "default": "-",
       "value": "",
       "type": "Array"
     },
     "immediateChange ": {
-      "description": "是否在手指松开时立即触发change事件。若不开启则会在滚动动画结束后触发change事件，只在微信2.21.1及以上有效",
+      "description": "Whether the change event is triggered immediately when the finger is released. If it is not enabled, the change event will be triggered after the scrolling animation ends, which is only valid on WeChat 2.21.1 and above",
       "description_zh": "是否在手指松开时立即触发change事件。若不开启则会在滚动动画结束后触发change事件，只在微信2.21.1及以上有效",
       "default": "false",
       "value": "",
@@ -115,27 +115,31 @@
   "events": [
     {
       "name": "close",
-      "description": "关闭选择器时触发",
+      "description": "Triggered when the selector is closed",
       "description_zh": "关闭选择器时触发",
-      "params": "-"
+      "params": "-",
+      "value": ""
     },
     {
       "name": "confirm",
-      "description": "点击确定按钮，返回当前选择的值",
+      "description": "Click the OK button to return to the currently selected value",
       "description_zh": "点击确定按钮，返回当前选择的值",
-      "params": "Array: 见上方\"回调参数\"部分说明"
+      "params": "Array: 见上方\"回调参数\"部分说明",
+      "value": ""
     },
     {
       "name": "change",
-      "description": "当选择值变化时触发",
+      "description": "Triggered when the selection value changes",
       "description_zh": "当选择值变化时触发",
-      "params": "Array: 见上方\"回调参数\"部分说明"
+      "params": "Array: 见上方\"回调参数\"部分说明",
+      "value": ""
     },
     {
       "name": "cancel",
-      "description": "点击取消按钮",
+      "description": "Click the Cancel button",
       "description_zh": "点击取消按钮",
-      "params": "-"
+      "params": "-",
+      "value": ""
     }
   ],
   "methods": [],

@@ -1,7 +1,7 @@
 {
   "name": "UReadMore",
   "props": {
-    "show-height": {
+    "showHeight": {
       "description": "Content beyond this height will display the Expand Full Text button, in rpx",
       "description_zh": "内容超出此高度才会显示展开全文按钮，单位rpx",
       "default": "400",
@@ -15,21 +15,14 @@
       "value": "",
       "type": "Boolean"
     },
-    "close-text": {
+    "closeText": {
       "description": "Prompt text when closed",
       "description_zh": "关闭时的提示文字",
       "default": "展开阅读全文",
       "value": "",
       "type": "String"
     },
-    "font-size": {
-      "description": "The size of the prompt text, in rpx",
-      "description_zh": "提示文字的大小，单位rpx",
-      "default": "28",
-      "value": "",
-      "type": "String | Number"
-    },
-    "open-text": {
+    "openText": {
       "description": "Tooltip text when expanding",
       "description_zh": "展开时的提示文字",
       "default": "收起",
@@ -43,21 +36,28 @@
       "value": "",
       "type": "String"
     },
-    "shadow-style": {
+    "fontSize": {
+      "description": "The size of the prompt text, the default unit is px",
+      "description_zh": "提示文字的大小，默认单位px",
+      "default": "14",
+      "value": "",
+      "type": "String | Number"
+    },
+    "shadowStyle": {
       "description": "Custom handling of shadows, object form",
       "description_zh": "对阴影的自定义处理，对象形式",
       "default": "见上方说明",
       "value": "",
       "type": "Object"
     },
-    "text-indent": {
-      "description": "The number of characters to be indented in the first line of a paragraph should be set to 0 without indentation",
-      "description_zh": "段落首行缩进的字符个数，无需缩进请设置为0",
+    "textIndent": {
+      "description": "The number of characters indented in the first line of the paragraph",
+      "description_zh": "段落首行缩进的字符个数",
       "default": "2em",
       "value": "",
       "type": "String"
     },
-    "index": {
+    "name": {
       "description": "It is used to return as a callback parameter in the open and close events",
       "description_zh": "用于在open和close事件中当作回调参数返回",
       "default": "-",
@@ -65,22 +65,22 @@
       "type": "String | Number"
     }
   },
-  "link": "https://v1.uviewui.com/components/readMore.html",
-  "link_zh": "https://v1.uviewui.com/components/readMore.html",
+  "link": "https://uviewui.com/components/readMore.html",
+  "link_zh": "https://uviewui.com/components/readMore.html",
   "typeDetail": {},
   "events": [
     {
       "name": "open",
       "description": "Triggered when the content is expanded",
       "description_zh": "内容被展开时触发",
-      "params": "index - props中传入的index参数值",
+      "params": "name - props中传入的name参数值",
       "value": ""
     },
     {
       "name": "close",
       "description": "Triggered when content is collapsed",
       "description_zh": "内容被收起时触发",
-      "params": "index - props中传入的index参数值",
+      "params": "name - props中传入的name参数值",
       "value": ""
     }
   ],

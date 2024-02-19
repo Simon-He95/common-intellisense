@@ -1,12 +1,12 @@
 {
   "name": "UTabs",
   "props": {
-    "is-scroll": {
-      "description": "Whether tabs can be dragged left and right",
-      "description_zh": "tabs是否可以左右拖动",
-      "default": "true",
+    "duration": {
+      "description": "The time it takes for the slider to move once, in ms",
+      "description_zh": "滑块移动一次所需的时间，单位ms",
+      "default": "300",
       "value": "",
-      "type": "Boolean"
+      "type": "String | Number"
     },
     ":list": {
       "description": "An array of tags with elements as objects, e.g. [{name: 'recommended'}]",
@@ -16,143 +16,93 @@
       "type": "Array",
       "required": true
     },
-    ":current": {
-      "description": "Specify which tab is active",
-      "description_zh": "指定哪个tab为激活状态",
-      "default": "0，即list的第一项",
-      "value": "",
-      "type": "String | Number",
-      "required": true
-    },
-    "height": {
-      "description": "The height of the navigation bar, in rpx",
-      "description_zh": "导航栏的高度，单位rpx",
-      "default": "80",
-      "value": "",
-      "type": "String | Number"
-    },
-    "font-size": {
-      "description": "Tab text size, in rpx",
-      "description_zh": "tab文字大小，单位rpx",
-      "default": "30",
-      "value": "",
-      "type": "String | Number"
-    },
-    "duration": {
-      "description": "The time it takes for the slider to move once, in seconds",
-      "description_zh": "滑块移动一次所需的时间，单位秒",
-      "default": "0.5",
-      "value": "",
-      "type": "String | Number"
-    },
-    "active-color": {
-      "description": "slider and the color of the active tab text",
-      "description_zh": "滑块和激活tab文字的颜色",
-      "default": "#2979ff",
+    "lineColor": {
+      "description": "Slider color",
+      "description_zh": "滑块颜色",
+      "default": "#3c9cff",
       "value": "",
       "type": "String"
     },
-    "inactive-color": {
-      "description": "tabs text color",
-      "description_zh": "tabs文字颜色",
-      "default": "#303133",
+    "activeStyle": {
+      "description": "menu when selecting the style of the time",
+      "description_zh": "菜单选择中时的样式",
+      "default": "{ color: '#303133' }",
+      "value": "",
+      "type": "String | Object"
+    },
+    "inactiveStyle": {
+      "description": "The style of the menu when it is not selected",
+      "description_zh": "菜单非选中时的样式",
+      "default": "{ color: '#606266' }",
+      "value": "",
+      "type": "String | Object"
+    },
+    "lineWidth": {
+      "description": "Slider length",
+      "description_zh": "滑块长度",
+      "default": "20",
+      "value": "",
+      "type": "String | Number"
+    },
+    "lineHeight": {
+      "description": "Slider height",
+      "description_zh": "滑块高度",
+      "default": "3",
+      "value": "",
+      "type": "String | Number"
+    },
+    "lineBgSize ": {
+      "description": "The slider background shows the size, which is used when the slider background is set to the picture",
+      "description_zh": "滑块背景显示大小，当滑块背景设置为图片时使用",
+      "default": "cover",
       "value": "",
       "type": "String"
     },
-    "bar-width": {
-      "description": "Slider width, in rpx",
-      "description_zh": "滑块宽度，单位rpx",
-      "default": "40",
+    "itemStyle": {
+      "description": "The style of the menu item",
+      "description_zh": "菜单item的样式",
+      "default": "{ height: '44px' }",
+      "value": "",
+      "type": "String | Object"
+    },
+    "scrollable": {
+      "description": "Whether the menu is scrollable",
+      "description_zh": "菜单是否可滚动",
+      "default": "true",
+      "value": "",
+      "type": "Boolean"
+    },
+    "current": {
+      "description": "The index of the currently selected tag",
+      "description_zh": "当前选中标签的索引",
+      "default": "0",
       "value": "",
       "type": "String | Number"
     },
-    "bar-height": {
-      "description": "Slider height in rpx",
-      "description_zh": "滑块高度，单位rpx",
-      "default": "6",
-      "value": "",
-      "type": "String | Number"
-    },
-    "gutter": {
-      "description": "The sum of the left and right padding of a single tab tag, in rpx",
-      "description_zh": "单个tab标签的左右内边距之和，单位rpx",
-      "default": "40",
-      "value": "",
-      "type": "String | Number"
-    },
-    "bg-color": {
-      "description": "Tabs background color for the navigation bar",
-      "description_zh": "tabs导航栏的背景颜色",
-      "default": "#ffffff",
-      "value": "",
-      "type": "string"
-    },
-    "name": {
-      "description": "The attribute name (tab name) in the list parameter read by the component is described above",
-      "description_zh": "组件内部读取的list参数中的属性名（tab名称），见上方说明",
+    "keyName": {
+      "description": "The name of the key read from the list element object",
+      "description_zh": "从list元素对象中读取的键名",
       "default": "name",
       "value": "",
-      "type": "string"
-    },
-    "bold": {
-      "description": "Whether the font of the active option is bold",
-      "description_zh": "激活选项的字体是否加粗",
-      "default": "true",
-      "value": "",
-      "type": "Boolean"
-    },
-    "show-bar": {
-      "description": "Whether to display the slider at the bottom",
-      "description_zh": "是否显示底部的滑块",
-      "default": "true",
-      "value": "",
-      "type": "Boolean"
-    },
-    "bar-style": {
-      "description": "The style of the bottom slider, the form of the object",
-      "description_zh": "底部滑块的样式，对象形式",
-      "default": "{}",
-      "value": "",
-      "type": "Object"
-    },
-    "active-item-style": {
-      "description": "The style of the currently active item, in the form of the object",
-      "description_zh": "当前活动Item的样式，对象形式",
-      "default": "{}",
-      "value": "",
-      "type": "Object"
-    },
-    "item-width": {
-      "description": "The width of the label, in rpx",
-      "description_zh": "标签的宽度，单位rpx",
-      "default": "auto",
-      "value": "",
-      "type": "String | Number"
-    },
-    "count": {
-      "description": "The usage of the attribute name (badge logo) in the list parameter read inside the component is the same as that of name, as described above",
-      "description_zh": "组件内部读取的list参数中的属性名（badge徽标数），用法与name一致，见上方说明",
-      "default": "count",
-      "value": "",
-      "type": "string"
-    },
-    "offset": {
-      "description": "Set the position offset of the badge in the format [x, y], that is, set the values of top and right, in rpx.",
-      "description_zh": "设置badge的位置偏移，格式为 [x, y]，也即设置的为top和right的值，单位rpx。",
-      "default": "[5, 20]",
-      "value": "",
-      "type": "Array"
+      "type": "String"
     }
   },
-  "link": "https://v1.uviewui.com/components/tabs.html",
-  "link_zh": "https://v1.uviewui.com/components/tabs.html",
+  "link": "https://uviewui.com/components/tabs.html",
+  "link_zh": "https://uviewui.com/components/tabs.html",
   "typeDetail": {},
   "events": [
     {
-      "name": "change",
+      "name": "click",
       "description": "Triggered when a tag is clicked",
       "description_zh": "点击标签时触发",
-      "params": "index: 点击了第几个tab，索引从0开始",
+      "params": "index: 标签索引值，item: 传入的其他值",
+      "value": ""
+    },
+    {
+      "name": "change",
+      "description": "Triggered when the tag index is changed (not triggered when disalbed)",
+      "description_zh": "标签索引改变时触发(disalbed时不会触发)",
+      "params": "index: 标签索引值，item: 传入的其他值",
       "value": ""
     }
   ],

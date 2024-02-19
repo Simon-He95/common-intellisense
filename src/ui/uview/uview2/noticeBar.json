@@ -1,177 +1,114 @@
 {
   "name": "UNoticeBar",
   "props": {
-    ":list": {
-      "description": "Scroll contents, in array form, as described above",
-      "description_zh": "滚动内容，数组形式，见上方说明",
+    "text": {
+      "description": "The displayed content is an array when direction is column and a string when it is row",
+      "description_zh": "显示的内容，direction为column时要求为数组，\t为row时要求为字符串",
       "default": "-",
       "value": "",
-      "type": "Array",
+      "type": "Array |  String",
       "required": true
     },
-    "type": {
-      "description": "Topics displayed",
-      "description_zh": "显示的主题",
-      "default": "warning",
+    "direction": {
+      "description": "Advertise scrolling mode, row-horizontal scrolling, column-vertical scrolling",
+      "description_zh": "通告滚动模式，row-横向滚动，column-竖向滚动",
+      "default": "row",
       "value": "",
-      "type": "primary / info / error / success / none"
+      "type": "column"
     },
-    "volume-icon": {
-      "description": "Whether or not to display the small horn icon",
-      "description_zh": "是否显示小喇叭图标",
-      "default": "true",
-      "value": "",
-      "type": "Boolean"
-    },
-    "more-icon": {
-      "description": "Whether to display the right arrow on the right",
-      "description_zh": "是否显示右边的向右箭头",
+    "step": {
+      "description": "direction = row, whether to use step scrolling",
+      "description_zh": "direction = row时，是否使用步进形式滚动",
       "default": "false",
       "value": "",
       "type": "Boolean"
     },
-    "close-icon": {
-      "description": "Whether or not to display the close icon",
-      "description_zh": "是否显示关闭图标",
-      "default": "false",
+    "icon": {
+      "description": "Whether to display the volume icon on the left",
+      "description_zh": "是否显示左侧的音量图标",
+      "default": "volume",
       "value": "",
-      "type": "Boolean"
+      "type": "String"
     },
-    "autoplay": {
-      "description": "Whether or not to play automatically",
-      "description_zh": "是否自动播放",
-      "default": "true",
+    "mode": {
+      "description": "Advertise mode, link - show right arrow, closable - show right close icon",
+      "description_zh": "通告模式，link-显示右箭头，closable-显示右侧关闭图标",
+      "default": "-",
       "value": "",
-      "type": "Boolean"
+      "type": "link / closable"
     },
     "color": {
       "description": "Text color",
       "description_zh": "文字颜色",
-      "default": "-",
+      "default": "#f9ae3d",
       "value": "",
       "type": "String"
     },
-    "bg-color": {
+    "bgColor": {
       "description": "Background color",
       "description_zh": "背景颜色",
-      "default": "-",
+      "default": "#fdf6ec",
+      "value": "",
+      "type": "String"
+    },
+    "speed": {
+      "description": "The scrolling speed when scrolling horizontally, i.e., how many px (rpx) scrolls per second, helps to control the constant speed of the text no matter how much it is",
+      "description_zh": "水平滚动时的滚动速度，即每秒滚动多少px(rpx)，这有利于控制文字无论多少时，都能有一个恒定的速度",
+      "default": "80",
       "value": "",
       "type": "String | Number"
     },
-    "mode": {
-      "description": "Scroll mode",
-      "description_zh": "滚动模式",
-      "default": "horizontal(水平滚动)",
-      "value": "",
-      "type": "vertical(垂直滚动)"
-    },
-    "show": {
-      "description": "Whether it is displayed or not",
-      "description_zh": "是否显示",
-      "default": "true",
-      "value": "",
-      "type": "Boolean"
-    },
-    "volume-size": {
-      "description": "The size of the horn on the left",
-      "description_zh": "左边喇叭的大小",
-      "default": "34",
-      "value": "",
-      "type": "String | Number"
-    },
-    "font-size": {
-      "description": "Font size, in rpx",
-      "description_zh": "字体大小，单位rpx",
-      "default": "28",
+    "fontSize": {
+      "description": "Font size",
+      "description_zh": "字体大小",
+      "default": "14",
       "value": "",
       "type": "String | Number"
     },
     "duration": {
-      "description": "The length of the rolling cycle is only valid for the stepper mode, and the horizontal connection mode is invalid, in ms",
-      "description_zh": "滚动周期时长，只对步进模式有效，横向衔接模式无效，单位ms",
+      "description": "The time of rolling a cycle is long, in ms",
+      "description_zh": "滚动一个周期的时间长，单位ms",
       "default": "2000",
       "value": "",
       "type": "String | Number"
     },
-    "speed": {
-      "description": "The scroll speed when scrolling horizontally, i.e. how much distance is moved per second, is only valid for the horizontal articulation method, in rpx",
-      "description_zh": "水平滚动时的滚动速度，即每秒移动多少距离，只对水平衔接方式有效，单位rpx",
-      "default": "160",
-      "value": "",
-      "type": "String | Number"
-    },
-    "is-circular": {
-      "description": "If fashion is horizontal, indicate whether the scrolling is horizontal",
-      "description_zh": "fashion为horizontal时,指明是否水平衔接滚动",
+    "disableTouch": {
+      "description": "Whether to prohibit sliding and switching by hand (currently HX2.6.11, only App 2.5.5+, H5 2.5.5+, Alipay applet, ByteDance applet are supported)",
+      "description_zh": "是否禁止用手滑动切换（目前HX2.6.11，只支持App 2.5.5+、H5 2.5.5+、支付宝小程序、字节跳动小程序）",
       "default": "true",
       "value": "",
       "type": "Boolean"
     },
-    "play-state": {
-      "description": "播放状态，play - 播放，paused - 暂停",
-      "description_zh": "播放状态，play - 播放，paused - 暂停",
-      "default": "play",
-      "value": "",
-      "type": "paused"
-    },
-    "disable-touch": {
-      "description": "Whether to prohibit the manual swiping to switch notifications, only mode = vertical, or mode = horizontal and is-circular = false, only App 2.5.5+, H5 2.5.5+, Alipay Mini Program, and ByteDance Mini Program are supported",
-      "description_zh": "是否禁止通过手动滑动切换通知，只有mode = vertical，或者mode = horizontal且is-circular = false时有效；只支持App 2.5.5+、H5 2.5.5+、支付宝小程序、字节跳动小程序",
-      "default": "true",
-      "value": "",
-      "type": "Boolean"
-    },
-    "padding": {
-      "description": "Built-in padding for scroll notifications, strings, like \"16rpx 20rpx\"",
-      "description_zh": "内置滚动通知的内边距，字符串，类似\"16rpx 20rpx\"",
-      "default": "18rpx 24rpx",
+    "url": {
+      "description": "The page path to which you jumped",
+      "description_zh": "跳转的页面路径",
+      "default": "-",
       "value": "",
       "type": "String"
     },
-    "border-radius": {
-      "description": "Fillet value in rpx",
-      "description_zh": "圆角值，单位rpx",
-      "default": "0",
+    "linkType": {
+      "description": "The type of page redirect",
+      "description_zh": "页面跳转的类型",
+      "default": "navigateTo",
       "value": "",
-      "type": "String \\ Number"
-    },
-    "no-list-hidden": {
-      "description": "If the list is an empty array, whether to display the component",
-      "description_zh": "list为空数组时，是否显示组件",
-      "default": "true",
-      "value": "",
-      "type": "Boolean"
+      "type": "String"
     }
   },
-  "link": "https://v1.uviewui.com/components/noticeBar.html",
-  "link_zh": "https://v1.uviewui.com/components/noticeBar.html",
+  "link": "https://uviewui.com/components/noticeBar.html",
+  "link_zh": "https://uviewui.com/components/noticeBar.html",
   "typeDetail": {},
   "events": [
     {
       "name": "click",
-      "description": "点击通告文字触发,只有mode = vertical,或者mode = horizontal且is-circular = false时有效",
-      "description_zh": "点击通告文字触发,只有mode = vertical,或者mode = horizontal且is-circular = false时有效",
-      "params": "index：当前文字所在list数组的索引值",
+      "description": "Click on the announcement text to trigger",
+      "description_zh": "点击通告文字触发",
+      "params": "index: 点击的text的索引",
       "value": ""
     },
     {
       "name": "close",
       "description": "Click the turn off icon on the right to trigger",
       "description_zh": "点击右侧关闭图标触发",
-      "params": "-",
-      "value": ""
-    },
-    {
-      "name": "getMore",
-      "description": "Click the right-to-right icon to trigger",
-      "description_zh": "点击右侧向右图标触发",
-      "params": "-",
-      "value": ""
-    },
-    {
-      "name": "end",
-      "description": "The message of the list is triggered every time it is played for one cycle, and it is only valid if mode = vertical, or mode = horizontal and is-circular = false",
-      "description_zh": "列表的消息每次被播放一个周期时触发，只有mode = vertical，或者mode = horizontal且is-circular = false时有效",
       "params": "-",
       "value": ""
     }

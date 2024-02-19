@@ -2,77 +2,77 @@
   "name": "UKeyboard",
   "props": {
     "mode": {
-      "description": "键盘的类型，number-数字键盘，card-身份证键盘，car-车牌号键盘",
+      "description": "Types of keyboards, number-numeric keypad, card-ID keypad, car-license plate number keypad",
       "description_zh": "键盘的类型，number-数字键盘，card-身份证键盘，car-车牌号键盘",
       "default": "car",
       "value": "",
       "type": "number / card"
     },
     "dotDisabled": {
-      "description": "是否显示\".\"按键，只在mode=number时有效",
+      "description": "Whether to display \".\" button, only valid when mode=number",
       "description_zh": "是否显示\".\"按键，只在mode=number时有效",
       "default": "false",
       "value": "",
       "type": "Boolean"
     },
     "tooltip": {
-      "description": "是否显示键盘顶部工具条",
+      "description": "Whether to display the toolbar at the top of the keyboard",
       "description_zh": "是否显示键盘顶部工具条",
       "default": "true",
       "value": "",
       "type": "Boolean"
     },
     "showTips": {
-      "description": "是否显示工具条中间的提示",
+      "description": "Whether to display the prompt in the middle of the toolbar",
       "description_zh": "是否显示工具条中间的提示",
       "default": "true",
       "value": "",
       "type": "Boolean"
     },
     "tips": {
-      "description": "工具条中间的提示文字，见上方基本使用的说明",
+      "description": "For the prompt text in the middle of the toolbar, see the basic instructions above",
       "description_zh": "工具条中间的提示文字，见上方基本使用的说明",
       "default": "-",
       "value": "",
       "type": "String"
     },
     "showCancel": {
-      "description": "是否显示工具条左边的\"取消\"按钮",
+      "description": "Whether to display the Cancel button on the left side of the toolbar",
       "description_zh": "是否显示工具条左边的\"取消\"按钮",
       "default": "true",
       "value": "",
       "type": "Boolean"
     },
     "showConfirm": {
-      "description": "是否显示工具条右边的\"完成\"按钮",
+      "description": "Whether to display the Done button on the right side of the toolbar",
       "description_zh": "是否显示工具条右边的\"完成\"按钮",
       "default": "true",
       "value": "",
       "type": "Boolean"
     },
     "random": {
-      "description": "是否打乱键盘按键的顺序",
+      "description": "Whether or not the order of keyboard keys is shuffled",
       "description_zh": "是否打乱键盘按键的顺序",
       "default": "false",
       "value": "",
       "type": "Boolean"
     },
     "safeAreaInsetBottom": {
-      "description": "是否开启底部安全区适配",
+      "description": "Whether to enable the bottom safe zone adaptation",
       "description_zh": "是否开启底部安全区适配",
       "default": "false",
       "value": "",
       "type": "Boolean"
     },
     "closeOnClickOverlay": {
-      "description": "是否允许点击遮罩收起键盘（注意：关闭事件需要自行处理，只会在开启closeOnClickOverlay后点击遮罩层执行close回调）",
+      "description": "Whether to allow clicking the mask to collapse the keyboard (Note: The closing event needs to be handled by yourself, and the close callback will only be executed by clicking the mask layer after closeOnClickOverlay is enabled)",
       "description_zh": "是否允许点击遮罩收起键盘（注意：关闭事件需要自行处理，只会在开启closeOnClickOverlay后点击遮罩层执行close回调）",
       "default": "true",
       "value": "",
       "type": "Boolean"
     },
     ":show": {
-      "description": "控制键盘的弹出与收起",
+      "description": "Control the ejection and retraction of the keyboard",
       "description_zh": "控制键盘的弹出与收起",
       "default": "true",
       "value": "",
@@ -80,42 +80,42 @@
       "required": true
     },
     "overlay": {
-      "description": "是否显示遮罩",
+      "description": "Whether or not to display a mask",
       "description_zh": "是否显示遮罩",
       "default": "true",
       "value": "",
       "type": "Boolean"
     },
     "zIndex": {
-      "description": "弹出键盘的z-index值",
+      "description": "The z-index value of the keyboard is displayed",
       "description_zh": "弹出键盘的z-index值",
       "default": "1075",
       "value": "",
       "type": "String | Number"
     },
     "confirmText": {
-      "description": "确认按钮的文字",
+      "description": "Confirm the text of the button",
       "description_zh": "确认按钮的文字",
       "default": "确认",
       "value": "",
       "type": "String"
     },
     "cancelText": {
-      "description": "取消按钮的文字",
+      "description": "The text of the cancel button",
       "description_zh": "取消按钮的文字",
       "default": "取消",
       "value": "",
       "type": "String"
     },
     "customStyle": {
-      "description": "自定义样式，对象形式",
+      "description": "Custom styles, object forms",
       "description_zh": "自定义样式，对象形式",
       "default": "{}",
       "value": "",
       "type": "Object"
     },
     "autoChange": {
-      "description": "mode为car下，输入文字后，是否自动切换为字母模式",
+      "description": "mode is car, whether to automatically switch to letter mode after entering text",
       "description_zh": "mode为car下，输入文字后，是否自动切换为字母模式",
       "default": "false",
       "value": "",
@@ -128,40 +128,45 @@
   "events": [
     {
       "name": "change",
-      "description": "按键被点击(不包含退格键被点击)",
+      "description": "Keys clicked (excluding backspace clicks)",
       "description_zh": "按键被点击(不包含退格键被点击)",
-      "params": "按键的值，见上方说明和示例"
+      "params": "按键的值，见上方说明和示例",
+      "value": ""
     },
     {
       "name": "close",
-      "description": "键盘关闭",
+      "description": "The keyboard is off",
       "description_zh": "键盘关闭",
-      "params": "-"
+      "params": "-",
+      "value": ""
     },
     {
       "name": "confirm",
-      "description": "键盘顶部工具条右边的\"完成\"按钮被点击",
+      "description": "The \"Done\" button to the right of the toolbar at the top of the keyboard is clicked",
       "description_zh": "键盘顶部工具条右边的\"完成\"按钮被点击",
-      "params": "-"
+      "params": "-",
+      "value": ""
     },
     {
       "name": "cancel",
-      "description": "键盘顶部工具条左边的\"取消\"按钮被点击",
+      "description": "The \"Cancel\" button on the left side of the toolbar at the top of the keyboard is clicked",
       "description_zh": "键盘顶部工具条左边的\"取消\"按钮被点击",
-      "params": "-"
+      "params": "-",
+      "value": ""
     },
     {
       "name": "backspace",
-      "description": "键盘退格键被点击",
+      "description": "The keyboard backspace key is clicked",
       "description_zh": "键盘退格键被点击",
-      "params": "-"
+      "params": "-",
+      "value": ""
     }
   ],
   "methods": [],
   "slots": [
     {
       "name": "default",
-      "description": "内容将会显示键盘的工具条上面，可以结合MessageInput 验证码输入组件实现类似支付宝输入密码时，上方显示输入内容的功能",
+      "description": "The content will be displayed on the toolbar of the keyboard, which can be combined with the MessageInput verification code input component to achieve a function similar to Alipay when entering a password",
       "description_zh": "内容将会显示键盘的工具条上面，可以结合MessageInput 验证码输入组件实现类似支付宝输入密码时，上方显示输入内容的功能"
     }
   ]

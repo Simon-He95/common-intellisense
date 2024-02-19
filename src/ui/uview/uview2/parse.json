@@ -1,41 +1,26 @@
 {
   "name": "UParse",
   "props": {
-    ":html": {
-      "description": "The HTML string to display",
-      "description_zh": "要显示的 html 字符串",
+    "bgColor": {
+      "description": "BACKGROUND COLOR, ONLY APPLICABLE WITH APP-PLUS-NVUE",
+      "description_zh": "背景颜色，只适用与APP-PLUS-NVUE",
       "default": "-",
       "value": "",
-      "type": "String",
-      "required": true
+      "type": "String"
     },
-    "autopause": {
-      "description": "Whether to allow other videos to be automatically paused when playing",
-      "description_zh": "是否允许播放视频时自动暂停其他视频",
+    "content": {
+      "description": "The rich text string to display",
+      "description_zh": "要显示的富文本字符串",
+      "default": "-",
+      "value": "",
+      "type": "String"
+    },
+    "copyLink": {
+      "description": "Whether to allow external links to be automatically copied when clicked",
+      "description_zh": "是否允许外部链接被点击时自动复制",
       "default": "true",
       "value": "",
       "type": "Boolean"
-    },
-    "autoscroll": {
-      "description": "Whether to automatically add a scroll layer to the table (so that the table can be scrolled independently)",
-      "description_zh": "是否自动给 table 加一个滚动层（使表格可以单独滚动）",
-      "default": "false",
-      "value": "",
-      "type": "Boolean"
-    },
-    "autosetTitle": {
-      "description": "Whether the content of the title tag is automatically set to the page title",
-      "description_zh": "是否自动将 title 标签的内容设置到页面标题",
-      "default": "true",
-      "value": "",
-      "type": "Boolean"
-    },
-    "compress": {
-      "description": "Compression level, you can choose whether to remove ID and class (not recommended)",
-      "description_zh": "压缩等级，可以选择是否移除 id 和 class(不建议修改)",
-      "default": "0",
-      "value": "",
-      "type": "1 / 2 / 3"
     },
     "domain": {
       "description": "The primary domain name will be automatically concatenated with the primary domain name or protocol name after setting",
@@ -44,67 +29,88 @@
       "value": "",
       "type": "String"
     },
-    "lazy-load": {
-      "description": "Whether to enable lazy image loading",
-      "description_zh": "是否开启图片懒加载",
-      "default": "false",
+    "errorImg": {
+      "description": "A link to the placemap when an image goes wrong",
+      "description_zh": "图片出错时的占位图链接",
+      "default": "-",
+      "value": "",
+      "type": "String"
+    },
+    "lazyLoad": {
+      "description": "Whether to enable lazy image loading is not supported by nvue",
+      "description_zh": "是否开启图片懒加载，nvue不支持此属性",
+      "default": "true",
       "value": "",
       "type": "Boolean"
     },
-    "loading-img": {
+    "loadingImg": {
       "description": "For a placeholder image before the image is loaded, see Placeholder Image",
       "description_zh": "图片加载完成前的占位图，详见 占位图",
       "default": "-",
       "value": "",
       "type": "String"
     },
+    "pauseVideo": {
+      "description": "Whether to automatically pause one video while playing",
+      "description_zh": "是否在播放一个视频时自动暂停其它视频",
+      "default": "true",
+      "value": "",
+      "type": "Boolean"
+    },
+    "previewImg": {
+      "description": "Whether to enable automatic preview when images are clicked",
+      "description_zh": "是否开启图片被点击时自动预览",
+      "default": "true",
+      "value": "",
+      "type": "Boolean"
+    },
+    "scrollTable": {
+      "description": "Whether to automatically add a scroll layer to the table (so that the table can be scrolled horizontally independently)",
+      "description_zh": "是否自动给 table 添加一个滚动层（使表格可以单独横向滚动）",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
+    },
     "selectable": {
-      "description": "Whether to allow long press to copy content",
-      "description_zh": "是否允许长按复制内容",
+      "description": "Whether to enable long-press to copy content",
+      "description_zh": "是否开启长按复制内容",
       "default": "false",
       "value": "",
       "type": "Boolean"
     },
-    "show-with-animation": {
-      "description": "Whether to use gradient animation",
-      "description_zh": "是否使用渐显动画",
-      "default": "false",
+    "setTitle": {
+      "description": "Whether the content of the title tag is automatically set to the page title",
+      "description_zh": "是否自动将 title 标签的内容设置到页面标题",
+      "default": "true",
       "value": "",
       "type": "Boolean"
     },
-    "tag-style": {
+    "showImgMenu": {
+      "description": "Whether to turn on the menu when the picture is long-lasting",
+      "description_zh": "是否开启图片被长按时显示菜单",
+      "default": "true",
+      "value": "",
+      "type": "Boolean"
+    },
+    "tagStyle": {
       "description": "Sets the default style for labels",
       "description_zh": "设置标签的默认样式",
       "default": "-",
       "value": "",
       "type": "Object"
     },
-    "use-anchor": {
+    "useAnchor": {
       "description": "Whether to use in-page anchors",
       "description_zh": "是否使用页面内锚点",
       "default": "false",
       "value": "",
-      "type": "Boolean"
-    },
-    "use-cache": {
-      "description": "Whether to use caching or not, open it multiple times after setting it and do not need to parse it repeatedly",
-      "description_zh": "是否使用缓存，设置后多次打开不用重复解析",
-      "default": "false",
-      "value": "",
-      "type": "Boolean"
+      "type": "Boolean/Number"
     }
   },
-  "link": "https://v1.uviewui.com/components/parse.html",
-  "link_zh": "https://v1.uviewui.com/components/parse.html",
+  "link": "https://uviewui.com/components/parse.html",
+  "link_zh": "https://uviewui.com/components/parse.html",
   "typeDetail": {},
   "events": [
-    {
-      "name": "parse",
-      "description": "Triggered when parsing is complete",
-      "description_zh": "解析完成时触发",
-      "params": "返回解析结果，可以对该结果进行自定义修改，将在渲染时生效",
-      "value": ""
-    },
     {
       "name": "load",
       "description": "Triggered when the DOM load is complete",
@@ -127,14 +133,14 @@
       "value": ""
     },
     {
-      "name": "imgtap",
+      "name": "imgTap",
       "description": "Triggered when an image is clicked",
       "description_zh": "图片被点击时触发",
       "params": "返回一个 object，其中 src 是图片链接，ignore 是一个函数，在事件中调用将不进行预览；可用于阻挡 onShow 的调用",
       "value": ""
     },
     {
-      "name": "linkpress",
+      "name": "linkTap",
       "description": "Triggers when a link is clicked",
       "description_zh": "在链接被点击时触发",
       "params": "返回一个 object，其中包含了被点击的 a 标签的所有属性，ignore 是一个函数，在事件中调用后将不自动跳转/复制；可在该事件中进行下载文档等进一步操作",

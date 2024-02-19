@@ -1,5 +1,5 @@
 {
-  "name": "ULoadMore",
+  "name": "ULoadmore",
   "props": {
     "status": {
       "description": "Component status",
@@ -8,10 +8,10 @@
       "value": "",
       "type": "loading / nomore"
     },
-    "bg-color": {
-      "description": "Component background color, which is used when the page is non-white (this parameter has been deprecated since 1.7.0, and the default parameter is transparent)",
-      "description_zh": "组件背景颜色，在页面是非白色时会用到(1.7.0起废弃此参数，默认为transparent)",
-      "default": "#ffffff",
+    "bgColor": {
+      "description": "Component background color, which is used when the page is non-white (transparent by default)",
+      "description_zh": "组件背景颜色，在页面是非白色时会用到(默认为transparent)",
+      "default": "transparent",
       "value": "",
       "type": "String"
     },
@@ -22,26 +22,19 @@
       "value": "",
       "type": "Boolean"
     },
-    "icon-type": {
-      "description": "The type of icon when loading,",
-      "description_zh": "加载中时的图标类型，",
-      "default": "circle",
+    "fontSize": {
+      "description": "Font size, in rpx",
+      "description_zh": "字体大小，单位rpx",
+      "default": "14",
       "value": "",
-      "type": "flower"
+      "type": "String | Number"
     },
-    "icon-color": {
-      "description": "icon-type is valid when circle, and the color of the animated icon is loaded",
-      "description_zh": "icon-type为circle时有效，加载中的动画图标的颜色",
-      "default": "#b7b7b7",
+    "iconSize": {
+      "description": "Icon size, in px",
+      "description_zh": "图标大小，单位px",
+      "default": "17",
       "value": "",
-      "type": "String"
-    },
-    "is-dot": {
-      "description": "When status is set to nomore, the content is displayed as a \"●\"",
-      "description_zh": "status为nomore时，内容显示为一个\"●\"",
-      "default": "false",
-      "value": "",
-      "type": "Boolean"
+      "type": "String | Number"
     },
     "color": {
       "description": "Font color",
@@ -50,37 +43,93 @@
       "value": "",
       "type": "String"
     },
-    "font-size": {
-      "description": "Font size, in rpx",
-      "description_zh": "字体大小，单位rpx",
-      "default": "28",
+    "loadingIcon": {
+      "description": "Loading status icon",
+      "description_zh": "加载中状态的图标",
+      "default": "circle",
       "value": "",
-      "type": "String | Number"
+      "type": "spinner / semicircle"
     },
-    "load-text": {
-      "description": "For a custom display of text, see the example above",
-      "description_zh": "自定义显示的文字，见上方说明示例",
-      "default": "-",
+    "loadmoreText": {
+      "description": "Pre-load prompts",
+      "description_zh": "加载前的提示语",
+      "default": "加载更多",
       "value": "",
-      "type": "Object"
+      "type": "String"
     },
-    "margin-top": {
+    "loadingText": {
+      "description": "Loading prompt",
+      "description_zh": "加载中提示语",
+      "default": "正在加载...",
+      "value": "",
+      "type": "String"
+    },
+    "nomoreText": {
+      "description": "No more prompts",
+      "description_zh": "没有更多的提示语",
+      "default": "没有更多了",
+      "value": "",
+      "type": "String"
+    },
+    "isDot": {
+      "description": "When status is set to nomore, the content is displayed as a \"●\"",
+      "description_zh": "status为nomore时，内容显示为一个\"●\"",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
+    },
+    "iconColor": {
+      "description": "The color of the animated icon in loading",
+      "description_zh": "加载中的动画图标的颜色",
+      "default": "#b7b7b7",
+      "value": "",
+      "type": "String"
+    },
+    "lineColor\t": {
+      "description": "Line color",
+      "description_zh": "线条颜色",
+      "default": "#E6E8EB",
+      "value": "",
+      "type": "String"
+    },
+    "dashed ": {
+      "description": "Whether it is a dashed line, false - solid line, true - dashed line",
+      "description_zh": "是否虚线，false-实线，true-虚线",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
+    },
+    "marginTop": {
       "description": "Distance from the previous element, in rpx",
       "description_zh": "与前一个元素的距离，单位rpx",
-      "default": "0",
+      "default": "10",
       "value": "",
       "type": "String | Number"
     },
-    "margin-bottom": {
+    "marginBottom": {
       "description": "Distance from the latter element, in rpx",
       "description_zh": "与后一个元素的距离，单位rpx",
-      "default": "0",
+      "default": "10",
       "value": "",
       "type": "String | Number"
+    },
+    "height": {
+      "description": "altitude",
+      "description_zh": "高度",
+      "default": "auto",
+      "value": "",
+      "type": "String | Number"
+    },
+    "line": {
+      "description": "Whether or not to display the left dividing line",
+      "description_zh": "是否显示左边分割线",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
     }
   },
-  "link": "https://v1.uviewui.com/components/loadMore.html",
-  "link_zh": "https://v1.uviewui.com/components/loadMore.html",
+  "link": "https://uviewui.com/components/loadMore.html",
+  "link_zh": "https://uviewui.com/components/loadMore.html",
   "typeDetail": {},
   "events": [
     {

@@ -1,15 +1,30 @@
 {
   "name": "UActionSheet",
   "props": {
-    ":v-model": {
-      "description": "You can control the pop-up and collapse of a v-model variable with a boolean value, and the value of the v-model is bound in both directions",
-      "description_zh": "通过v-model绑定一个值为布尔值的变量控制组件的弹出与收起，v-model的值是双向绑定的",
+    ":show": {
+      "description": "Whether it is displayed or not",
+      "description_zh": "是否展示",
       "default": "false",
       "value": "",
       "type": "Boolean",
       "required": true
     },
-    ":list": {
+    "title": {
+      "description": "Set the title",
+      "description_zh": "设置标题",
+      "default": "-",
+      "value": "",
+      "type": "String",
+      "required": true
+    },
+    "description": {
+      "description": "For the description above the options, see the example above",
+      "description_zh": "选项上方的描述信息，见上方文档示例",
+      "default": "-",
+      "value": "",
+      "type": "String"
+    },
+    ":actions": {
       "description": "The text array of the button is shown in the document above for an example",
       "description_zh": "按钮的文字数组，见上方文档示例",
       "default": "[ ]",
@@ -17,71 +32,155 @@
       "type": "Array<Object>",
       "required": true
     },
-    "tips": {
-      "description": "For the prompt text at the top, see the example above",
-      "description_zh": "顶部的提示文字，见上方文档示例",
+    "cancelText": {
+      "description": "The text of the cancel button is displayed when the button is not empty",
+      "description_zh": "取消按钮的文字，不为空时显示按钮",
       "default": "-",
       "value": "",
-      "type": "Object"
+      "type": "String"
     },
-    "cancel-btn": {
-      "description": "Whether to display the cancel button at the bottom",
-      "description_zh": "是否显示底部的取消按钮",
-      "default": "true",
+    "closeOnClickAction": {
+      "description": "Whether to close the pop-up window when clicking on a menu item is shown in the document example above",
+      "description_zh": "点击某个菜单项时是否关闭弹窗，见上方文档示例",
+      "default": "-",
       "value": "",
-      "type": "Boolean"
+      "type": "String"
     },
-    "border-radius": {
-      "description": "The fillet values on the left and right sides of the pop-up section in rpx",
-      "description_zh": "弹出部分顶部左右的圆角值，单位rpx",
-      "default": "0",
-      "value": "",
-      "type": "Number \\ String"
-    },
-    "mask-close-able": {
-      "description": "Click to see if the mask can be turned off",
-      "description_zh": "点击遮罩是否可以关闭",
-      "default": "true",
-      "value": "",
-      "type": "Boolean"
-    },
-    "safe-area-inset-bottom": {
+    "safeAreaInsetBottom": {
       "description": "Whether to enable the bottom safe zone adaptation",
       "description_zh": "是否开启底部安全区适配",
       "default": "false",
       "value": "",
       "type": "Boolean"
     },
-    "z-index": {
-      "description": "z-index值",
-      "description_zh": "z-index值",
-      "default": "1075",
+    "openType": {
+      "description": "How the applet is opened",
+      "description_zh": "小程序的打开方式",
+      "default": "-",
       "value": "",
-      "type": "Number \\ String"
+      "type": "String"
     },
-    "cancel-text": {
-      "description": "Cancel button tooltip",
-      "description_zh": "取消按钮的提示文字",
-      "default": "取消",
+    "closeOnClickOverlay": {
+      "description": "Whether to click on the mask to be closed, see the above document example (note: the closing event needs to be handled by yourself, and will only click on the mask layer to execute the close callback after closeOnClickOverlay is enabled)",
+      "description_zh": "点击遮罩是否允许关闭，见上方文档示例（注意：关闭事件需要自行处理，只会在开启closeOnClickOverlay后点击遮罩层执行close回调）",
+      "default": "-",
+      "value": "",
+      "type": "Boolean"
+    },
+    "round": {
+      "description": "Fillet value, no fillet by default",
+      "description_zh": "圆角值，默认无圆角",
+      "default": "0",
+      "value": "",
+      "type": "String | Number"
+    },
+    "lang": {
+      "description": "Specify the language in which the user information is returned, zh_CN Chinese Simplified, zh_TW Chinese Traditional, EN English",
+      "description_zh": "指定返回用户信息的语言，zh_CN 简体中文，zh_TW 繁体中文，en 英文",
+      "default": "en",
+      "value": "",
+      "type": "zh_CN | zh_TW | en"
+    },
+    "sessionFrom": {
+      "description": "The session source is valid when open-type=\"contact\". Only WeChat Mini Programs are valid",
+      "description_zh": "会话来源，open-type=\"contact\"时有效。只微信小程序有效",
+      "default": "-",
+      "value": "",
+      "type": "String"
+    },
+    "sendMessageTitle": {
+      "description": "The title of the in-session message card is valid if openType=\"contact\".",
+      "description_zh": "会话内消息卡片标题，openType=\"contact\"时有效",
+      "default": "-",
+      "value": "",
+      "type": "String"
+    },
+    "sendMessagePath": {
+      "description": "The in-session message card is valid when you click to jump to the path of the Mini Program, openType=\"contact\".",
+      "description_zh": "会话内消息卡片点击跳转小程序路径，openType=\"contact\"时有效",
+      "default": "-",
+      "value": "",
+      "type": "String"
+    },
+    "sendMessageImg": {
+      "description": "会话内消息卡片图片,openType=\"contact\"时有效",
+      "description_zh": "会话内消息卡片图片，openType=\"contact\"时有效",
+      "default": "-",
+      "value": "",
+      "type": "String"
+    },
+    "showMessageCard": {
+      "description": "Whether to display the in-session message card, set this parameter to true, the user will enter the customer service session will display a prompt of \"Mini Program may be sent\" in the lower right corner, and the user can quickly send the Mini Program message after clicking, which is valid when openType=\"contact\".",
+      "description_zh": "是否显示会话内消息卡片，设置此参数为 true，用户进入客服会话会在右下角显示\"可能要发送的小程序\"提示，用户点击后可以快速发送小程序消息，openType=\"contact\"时有效",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
+    },
+    "appParameter": {
+      "description": "When the APP is opened, the parameters passed to the APP, openType=launchApp, are valid",
+      "description_zh": "打开 APP 时，向 APP 传递的参数，openType=launchApp 时有效",
+      "default": "-",
       "value": "",
       "type": "String"
     }
   },
-  "link": "https://v1.uviewui.com/components/actionSheet.html",
-  "link_zh": "https://v1.uviewui.com/components/actionSheet.html",
+  "link": "https://uviewui.com/components/actionSheet.html",
+  "link_zh": "https://uviewui.com/components/actionSheet.html",
   "typeDetail": {},
   "events": [
     {
-      "name": "click",
+      "name": "select",
       "description": "Triggered when an ActionSheet list item is clicked",
       "description_zh": "点击ActionSheet列表项时触发",
-      "params": "index: 点击了第几个，从0开始",
+      "params": "-",
       "value": ""
     },
     {
       "name": "close",
       "description": "Triggered when the cancel button is clicked",
       "description_zh": "点击取消按钮时触发",
+      "params": "-",
+      "value": ""
+    },
+    {
+      "name": "getuserinfo",
+      "description": "When the user clicks this button, the obtained user information will be returned, and the detail data of the callback is the same as that returned by wx.getUserInfo, which is valid when openType=\"getUserInfo\".",
+      "description_zh": "用户点击该按钮时，会返回获取到的用户信息，回调的 detail 数据与 wx.getUserInfo 返回的一致，openType=\"getUserInfo\"时有效",
+      "params": "detail",
+      "value": ""
+    },
+    {
+      "name": "contact",
+      "description": "客服消息回调,openType=\"contact\"时有效",
+      "description_zh": "客服消息回调，openType=\"contact\"时有效",
+      "params": "-",
+      "value": ""
+    },
+    {
+      "name": "getphonenumber",
+      "description": "The callback to get the user's mobile phone number is valid when openType=\"getPhoneNumber\".",
+      "description_zh": "获取用户手机号回调，openType=\"getPhoneNumber\"时有效",
+      "params": "-",
+      "value": ""
+    },
+    {
+      "name": "error",
+      "description": "When using open capability, an error callback occurs, which is valid when openType=\"error\" occurs",
+      "description_zh": "当使用开放能力时，发生错误的回调，openType=\"error\"时有效",
+      "params": "-",
+      "value": ""
+    },
+    {
+      "name": "launchapp",
+      "description": "The callback of the successful opening of the APP, openType=\"launchApp\", is valid",
+      "description_zh": "打开 APP 成功的回调，openType=\"launchApp\"时有效",
+      "params": "-",
+      "value": ""
+    },
+    {
+      "name": "opensetting",
+      "description": "After opening the authorization settings page, the callback is valid when openType=\"openSetting\".",
+      "description_zh": "在打开授权设置页后回调，openType=\"openSetting\"时有效",
       "params": "-",
       "value": ""
     }

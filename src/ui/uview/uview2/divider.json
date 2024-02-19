@@ -1,79 +1,65 @@
 {
   "name": "UDivider",
   "props": {
-    "half-width": {
-      "description": "The width of the left or right line of the text, the value or percentage, in rpx",
-      "description_zh": "文字左或右边线条宽度，数值或百分比，数值时单位为rpx",
+    "dashed": {
+      "description": "Whether it is a dotted line",
+      "description_zh": "是否虚线",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
+    },
+    "hairline": {
+      "description": "Whether it is a thin line or not",
+      "description_zh": "是否细线",
+      "default": "true",
+      "value": "",
+      "type": "Boolean"
+    },
+    "dot": {
+      "description": "Whether or not to use dots instead of text, which takes precedence over the text field, works",
+      "description_zh": "是否以点替代文字，优先于text字段起作用",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
+    },
+    "textPosition": {
+      "description": "The position of the content text",
+      "description_zh": "内容文本的位置",
+      "default": "center",
+      "value": "",
+      "type": "left、right"
+    },
+    "text": {
+      "description": "Textual content",
+      "description_zh": "文本内容",
       "default": "-",
       "value": "",
-      "type": "150"
+      "type": "String | Number"
     },
-    "border-color": {
-      "description": "Line color, priority over type",
-      "description_zh": "线条颜色，优先级高于type",
-      "default": "#dcdfe6",
+    "textSize": {
+      "description": "Text size",
+      "description_zh": "文本大小",
+      "default": "14",
       "value": "",
-      "type": "String"
+      "type": "String | Number"
     },
-    "color": {
+    "textColor": {
       "description": "Text color",
-      "description_zh": "文字颜色",
+      "description_zh": "文本颜色",
       "default": "#909399",
       "value": "",
       "type": "String"
     },
-    "fontSize": {
-      "description": "Font size, in rpx",
-      "description_zh": "字体大小，单位rpx",
-      "default": "26",
-      "value": "",
-      "type": "String | Number"
-    },
-    "bg-color": {
-      "description": "The background color of the entire divider",
-      "description_zh": "整个divider的背景颜色",
-      "default": "#ffffff",
+    "lineColor": {
+      "description": "Line color",
+      "description_zh": "线条颜色",
+      "default": "#dcdfe6",
       "value": "",
       "type": "String"
-    },
-    "height": {
-      "description": "The height of the entire divider, in rpx",
-      "description_zh": "整个divider的高度，单位rpx",
-      "default": "40",
-      "value": "",
-      "type": "string | Number"
-    },
-    "type": {
-      "description": "Set the line as the accent color",
-      "description_zh": "将线条设置主题色",
-      "default": "primary",
-      "value": "",
-      "type": "info \\ success \\ warning \\ error"
-    },
-    "margin-top": {
-      "description": "Distance from the previous element, in rpx",
-      "description_zh": "与前一个元素的距离，单位rpx",
-      "default": "0",
-      "value": "",
-      "type": "String | Number"
-    },
-    "margin-bottom": {
-      "description": "Distance from the latter element, in rpx",
-      "description_zh": "与后一个元素的距离，单位rpx",
-      "default": "0",
-      "value": "",
-      "type": "String | Number"
-    },
-    "use-slot": {
-      "description": "Whether or not to use slots to pass in content, if not, there will be no gaps in between",
-      "description_zh": "是否使用slot传入内容，如果不传入，中间不会有空隙",
-      "default": "true",
-      "value": "",
-      "type": "Boolean"
     }
   },
-  "link": "https://v1.uviewui.com/components/divider.html",
-  "link_zh": "https://v1.uviewui.com/components/divider.html",
+  "link": "https://uviewui.com/components/divider.html",
+  "link_zh": "https://uviewui.com/components/divider.html",
   "typeDetail": {},
   "events": [
     {

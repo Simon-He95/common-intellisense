@@ -1,147 +1,55 @@
 {
   "name": "UCountDown",
   "props": {
-    ":timestamp": {
-      "description": "Countdown in seconds",
-      "description_zh": "倒计时，单位为秒",
+    ":time": {
+      "description": "Countdown duration, in ms",
+      "description_zh": "倒计时时长，单位ms",
       "default": "0",
       "value": "",
       "type": "String | Number",
       "required": true
     },
-    "autoplay": {
-      "description": "Whether to start the countdown automatically, if false, you need to manually call the start method. See description above",
-      "description_zh": "是否自动开始倒计时，如果为false，需手动调用开始方法。见上方说明",
+    "format": {
+      "description": "Time format, DD-day, HH-hour, mm-minute, ss-second, SSS-millisecond",
+      "description_zh": "时间格式，DD-日，HH-时，mm-分，ss-秒，SSS-毫秒",
+      "default": "HH:mm:ss",
+      "value": "",
+      "type": "String"
+    },
+    "autoStart": {
+      "description": "Whether or not to start the countdown automatically",
+      "description_zh": "是否自动开始倒计时",
       "default": "true",
       "value": "",
       "type": "Boolean"
     },
-    "separator": {
-      "description": "分隔符,colon为英文冒号,zh为中文",
-      "description_zh": "分隔符,colon为英文冒号,zh为中文",
-      "default": "colon",
-      "value": "",
-      "type": "zh"
-    },
-    "separator-size": {
-      "description": "The font size of the separator, in rpx",
-      "description_zh": "分隔符的字体大小，单位rpx",
-      "default": "30",
-      "value": "",
-      "type": "String | Number"
-    },
-    "separator-color": {
-      "description": "The color of the separator",
-      "description_zh": "分隔符的颜色",
-      "default": "#303133",
-      "value": "",
-      "type": "String"
-    },
-    "font-size": {
-      "description": "Countdown font size, in rpx",
-      "description_zh": "倒计时字体大小，单位rpx",
-      "default": "30",
-      "value": "",
-      "type": "String | Number"
-    },
-    "show-border": {
-      "description": "Whether to display the border of the countdown number",
-      "description_zh": "是否显示倒计时数字的边框",
+    "millisecond": {
+      "description": "Whether to display a millisecond countdown",
+      "description_zh": "是否展示毫秒倒计时",
       "default": "false",
-      "value": "",
-      "type": "Boolean"
-    },
-    "border-color": {
-      "description": "The color of the digital border",
-      "description_zh": "数字边框的颜色",
-      "default": "#303133",
-      "value": "",
-      "type": "String"
-    },
-    "bg-color": {
-      "description": "The background color of the countdown number",
-      "description_zh": "倒计时数字的背景颜色",
-      "default": "#ffffff",
-      "value": "",
-      "type": "String"
-    },
-    "color": {
-      "description": "The color of the countdown number",
-      "description_zh": "倒计时数字的颜色",
-      "default": "#303133",
-      "value": "",
-      "type": "String"
-    },
-    "height": {
-      "description": "The numeric height value (the width is equivalent to this value), depending on whether the border needs to be set when setting the border, in rpx",
-      "description_zh": "数字高度值(宽度等同此值)，设置边框时看情况是否需要设置此值，单位rpx",
-      "default": "auto",
-      "value": "",
-      "type": "String"
-    },
-    "show-days": {
-      "description": "Whether or not to display the Days portion of the countdown",
-      "description_zh": "是否显示倒计时的\"天\"部分",
-      "default": "true",
-      "value": "",
-      "type": "Boolean"
-    },
-    "show-hours": {
-      "description": "Whether to display the Time portion of the countdown",
-      "description_zh": "是否显示倒计时的\"时\"部分",
-      "default": "true",
-      "value": "",
-      "type": "Boolean"
-    },
-    "show-minutes": {
-      "description": "Whether or not to display the \"points\" part of the countdown",
-      "description_zh": "是否显示倒计时的\"分\"部分",
-      "default": "true",
-      "value": "",
-      "type": "Boolean"
-    },
-    "show-seconds": {
-      "description": "Whether to display the \"seconds\" part of the countdown",
-      "description_zh": "是否显示倒计时的\"秒\"部分",
-      "default": "true",
-      "value": "",
-      "type": "Boolean"
-    },
-    "hide-zero-day": {
-      "description": "When the Day part is 0, hide the field",
-      "description_zh": "当\"天\"的部分为0时，隐藏该字段",
-      "default": "true",
       "value": "",
       "type": "Boolean"
     }
   },
-  "link": "https://v1.uviewui.com/components/countDown.html",
-  "link_zh": "https://v1.uviewui.com/components/countDown.html",
+  "link": "https://uviewui.com/components/countDown.html",
+  "link_zh": "https://uviewui.com/components/countDown.html",
   "typeDetail": {},
   "events": [
     {
-      "name": "end",
+      "name": "change",
+      "description": "During the process, the countdown is triggered when it changes",
+      "description_zh": "过程中，倒计时变化时触发",
+      "params": "time: 剩余的时间",
+      "value": ""
+    },
+    {
+      "name": "finish",
       "description": "The countdown ends",
       "description_zh": "倒计时结束",
       "params": "-",
       "value": ""
-    },
-    {
-      "name": "change",
-      "description": "During the countdown process, it is triggered once per second",
-      "description_zh": "倒计过程中，每秒触发一次",
-      "params": "timestamp: 当前剩余的倒计秒数",
-      "value": ""
     }
   ],
-  "methods": [
-    {
-      "name": "start",
-      "description": "Start the countdown",
-      "description_zh": "开始倒计时",
-      "params": "",
-      "value": ""
-    }
-  ],
+  "methods": [],
   "slots": []
 }

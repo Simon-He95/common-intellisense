@@ -1,10 +1,38 @@
 {
   "name": "USticky",
   "props": {
-    "offset-top": {
+    "offsetTop": {
       "description": "The distance from the top when the ceiling is raised, in rpx",
       "description_zh": "吸顶时与顶部的距离，单位rpx",
       "default": "0",
+      "value": "",
+      "type": "String | Number"
+    },
+    "customNavHeight": {
+      "description": "Navigation bar height, this value is required when customizing the navigation bar",
+      "description_zh": "导航栏高度，自定义导航栏时，需要传入此值",
+      "default": "0",
+      "value": "",
+      "type": "String | Number"
+    },
+    "disabled": {
+      "description": "Whether to disable the ceiling function",
+      "description_zh": "是否禁用吸顶功能",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
+    },
+    "bgColor": {
+      "description": "Component background color",
+      "description_zh": "组件背景颜色",
+      "default": "#ffffff",
+      "value": "",
+      "type": "String"
+    },
+    "zIndex": {
+      "description": "The z-index value at the time of ceiling lifting, NVUE is invalid",
+      "description_zh": "吸顶时的z-index值，NVUE无效",
+      "default": "-",
       "value": "",
       "type": "String | Number"
     },
@@ -14,55 +42,12 @@
       "default": "-",
       "value": "",
       "type": "String | Number"
-    },
-    "enable": {
-      "description": "Whether to turn on the ceiling function",
-      "description_zh": "是否开启吸顶功能",
-      "default": "true",
-      "value": "",
-      "type": "Boolean"
-    },
-    "bg-color": {
-      "description": "Component background color",
-      "description_zh": "组件背景颜色",
-      "default": "#ffffff",
-      "value": "",
-      "type": "String"
-    },
-    "z-index": {
-      "description": "The value of the z-index at the time of ceiling lifting",
-      "description_zh": "吸顶时的z-index值",
-      "default": "970",
-      "value": "",
-      "type": "String | Number"
-    },
-    "h5-nav-height": {
-      "description": "When customizing the navigation bar (set to 0 if there is no navigation bar), you need to pass this value in px",
-      "description_zh": "导航栏高度，自定义导航栏时(无导航栏时需设置为0)，需要传入此值，单位px",
-      "default": "44",
-      "value": "",
-      "type": "String | Number"
     }
   },
-  "link": "https://v1.uviewui.com/components/sticky.html",
-  "link_zh": "https://v1.uviewui.com/components/sticky.html",
+  "link": "https://uviewui.com/components/sticky.html",
+  "link_zh": "https://uviewui.com/components/sticky.html",
   "typeDetail": {},
-  "events": [
-    {
-      "name": "fixed",
-      "description": "Triggered when the component is raised",
-      "description_zh": "组件吸顶时触发",
-      "params": "index: 通过props传递的index",
-      "value": ""
-    },
-    {
-      "name": "unfixed",
-      "description": "Triggered when the component cancels the ceiling",
-      "description_zh": "组件取消吸顶时触发",
-      "params": "index: 通过props传递的index",
-      "value": ""
-    }
-  ],
+  "events": [],
   "methods": [],
   "slots": []
 }

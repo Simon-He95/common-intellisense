@@ -2,7 +2,7 @@
   "name": "UCode",
   "props": {
     ":seconds": {
-      "description": "倒计时所需的秒数",
+      "description": "The number of seconds required for the countdown",
       "description_zh": "倒计时所需的秒数",
       "default": "60",
       "value": "",
@@ -10,35 +10,35 @@
       "required": true
     },
     "startText": {
-      "description": "开始前的提示语，见上方说明",
+      "description": "See above for the prompts before you begin",
       "description_zh": "开始前的提示语，见上方说明",
       "default": "获取验证码",
       "value": "",
       "type": "String"
     },
     "changeText": {
-      "description": "倒计时期间的提示语，必须带有字母\"x\"，见上方说明",
+      "description": "Prompts during the countdown must have the letter \"x\", as described above",
       "description_zh": "倒计时期间的提示语，必须带有字母\"x\"，见上方说明",
       "default": "X秒重新获取",
       "value": "",
       "type": "String"
     },
     "endText": {
-      "description": "倒计结束的提示语，见上方说明",
+      "description": "The reminder of the end of the countdown is described above",
       "description_zh": "倒计结束的提示语，见上方说明",
       "default": "重新获取",
       "value": "",
       "type": "String"
     },
     "keepRunning": {
-      "description": "是否在H5刷新或各端返回再进入时继续倒计时",
+      "description": "Whether to continue the countdown when H5 is refreshed or when each end returns to re-enter",
       "description_zh": "是否在H5刷新或各端返回再进入时继续倒计时",
       "default": "false",
       "value": "",
       "type": "Boolean"
     },
     "uniqueKey": {
-      "description": "多个组件之间继续倒计时的区分key，见上方说明",
+      "description": "The distinguishing key for continuing the countdown between multiple components is described above",
       "description_zh": "多个组件之间继续倒计时的区分key，见上方说明",
       "default": "-",
       "value": "",
@@ -51,21 +51,24 @@
   "events": [
     {
       "name": "change",
-      "description": "倒计时期间，每秒触发一次",
+      "description": "During the countdown, it is triggered once per second",
       "description_zh": "倒计时期间，每秒触发一次",
-      "params": "text: 当前剩余多少秒的状态，见上方说明"
+      "params": "text: 当前剩余多少秒的状态，见上方说明",
+      "value": ""
     },
     {
       "name": "start",
-      "description": "开始倒计时触发",
+      "description": "Start the countdown trigger",
       "description_zh": "开始倒计时触发",
-      "params": "-"
+      "params": "-",
+      "value": ""
     },
     {
       "name": "end",
-      "description": "结束倒计时触发",
+      "description": "End countdown triggers",
       "description_zh": "结束倒计时触发",
-      "params": "-"
+      "params": "-",
+      "value": ""
     }
   ],
   "methods": [],

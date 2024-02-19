@@ -15,6 +15,18 @@ import keyboard from './keyboard.json'
 import lazyLoad from './lazyLoad.json'
 import line from './line.json'
 import lineProgress from './lineProgress.json'
+import circleProgress from './circleProgress.json'
+import checkbox from './checkbox.json'
+import checkboxGroup from './checkboxGroup.json'
+import col from './col.json'
+import collapse from './collapse.json'
+import collapseItem from './collapseItem.json'
+import countDown from './countDown.json'
+import countTo from './countTo.json'
+import divider from './divider.json'
+import dropdown from './dropdown.json'
+import dropdownItem from './dropdownItem.json'
+import empty from './empty.json'
 import link from './link.json'
 import loading from './loading.json'
 import loadmore from './loadmore.json'
@@ -42,6 +54,15 @@ import steps from './steps.json'
 import sticky from './sticky.json'
 import subsection from './subsection.json'
 import swipeAction from './swipeAction.json'
+import actionSheet from './actionSheet.json'
+import alertTips from './alertTips.json'
+import avatar from './avatar.json'
+import avatarCropper from './avatarCropper.json'
+import backTop from './backTop.json'
+import badge from './badge.json'
+import button from './button.json'
+import calendar from './calendar.json'
+import card from './card.json'
 import swiper from './swiper.json'
 import uswitch from './switch.json'
 import tabbar from './tabbar.json'
@@ -79,6 +100,18 @@ export function uview1() {
     lazyLoad,
     line,
     lineProgress,
+    circleProgress,
+    checkbox,
+    checkboxGroup,
+    col,
+    collapse,
+    collapseItem,
+    countDown,
+    countTo,
+    divider,
+    dropdown,
+    dropdownItem,
+    empty,
     link,
     loading,
     loadmore,
@@ -106,6 +139,15 @@ export function uview1() {
     sticky,
     subsection,
     swipeAction,
+    actionSheet,
+    alertTips,
+    avatar,
+    avatarCropper,
+    backTop,
+    badge,
+    button,
+    calendar,
+    card,
     swiper,
     uswitch,
     tabbar,
@@ -148,6 +190,18 @@ export function uview1Components() {
     [lazyLoad, lazyLoad.name, `<${lazyLoad.name}></${lazyLoad.name}>`],
     [line, line.name, `<${line.name}></${line.name}>`],
     [lineProgress, lineProgress.name, `<${lineProgress.name}></${lineProgress.name}>`],
+    [circleProgress, circleProgress.name, `<${circleProgress.name}></${circleProgress.name}>`],
+    [checkbox, checkbox.name, `<${checkbox.name}></${checkbox.name}>`],
+    [checkboxGroup, checkboxGroup.name, `<${checkboxGroup.name}></${checkboxGroup.name}>`],
+    [col, col.name, `<${col.name}></${col.name}>`],
+    [collapse, collapse.name, `<${collapse.name}></${collapse.name}>`],
+    [collapseItem, collapseItem.name, `<${collapseItem.name}></${collapseItem.name}>`],
+    [countDown, countDown.name, `<${countDown.name}></${countDown.name}>`],
+    [countTo, countTo.name, `<${countTo.name}></${countTo.name}>`],
+    [divider, divider.name, `<${divider.name}></${divider.name}>`],
+    [dropdown, dropdown.name, `<${dropdown.name}></${dropdown.name}>`],
+    [dropdownItem, dropdownItem.name, `<${dropdownItem.name}></${dropdownItem.name}>`],
+    [empty, empty.name, `<${empty.name}></${empty.name}>`],
     [link, link.name, `<${link.name}></${link.name}>`],
     [loading, loading.name, `<${loading.name}></${loading.name}>`],
     [loadmore, loadmore.name, `<${loadmore.name}></${loadmore.name}>`],
@@ -175,6 +229,15 @@ export function uview1Components() {
     [sticky, sticky.name, `<${sticky.name}></${sticky.name}>`],
     [subsection, subsection.name, `<${subsection.name}></${subsection.name}>`],
     [swipeAction, swipeAction.name, `<${swipeAction.name}></${swipeAction.name}>`],
+    [actionSheet, actionSheet.name, `<${actionSheet.name}></${actionSheet.name}>`],
+    [alertTips, alertTips.name, `<${alertTips.name}></${alertTips.name}>`],
+    [avatar, avatar.name, `<${avatar.name}></${avatar.name}>`],
+    [avatarCropper, avatarCropper.name, `<${avatarCropper.name}></${avatarCropper.name}>`],
+    [backTop, backTop.name, `<${backTop.name}></${backTop.name}>`],
+    [badge, badge.name, `<${badge.name}></${badge.name}>`],
+    [button, button.name, `<${button.name}></${button.name}>`],
+    [calendar, calendar.name, `<${calendar.name}></${calendar.name}>`],
+    [card, card.name, `<${card.name}></${card.name}>`],
     [swiper, swiper.name, `<${swiper.name}></${swiper.name}>`],
     [uswitch, uswitch.name, `<${uswitch.name}></${uswitch.name}>`],
     [tabbar, tabbar.name, `<${tabbar.name}></${tabbar.name}>`],

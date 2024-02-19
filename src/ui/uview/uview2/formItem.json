@@ -2,88 +2,92 @@
   "name": "UFormItem",
   "props": {
     "label": {
-      "description": "左侧提示文字",
+      "description": "Tooltip text on the left",
       "description_zh": "左侧提示文字",
       "default": "-",
       "value": "",
       "type": "String"
     },
     "prop": {
-      "description": "表单域model对象的属性名，在使用 validate、resetFields 方法的情况下，该属性是必填的",
+      "description": "The property name of the model object in the form field, which is required if the validate and resetFields methods are used",
       "description_zh": "表单域model对象的属性名，在使用 validate、resetFields 方法的情况下，该属性是必填的",
       "default": "-",
       "value": "",
       "type": "String"
     },
     "borderBottom": {
-      "description": "是否显示下边框，如不需要下边框，需同时将u-form的同名参数设置为false",
+      "description": "Whether to display the lower border, if the lower border is not required, set the parameter with the same name of the u-form to false",
       "description_zh": "是否显示下边框，如不需要下边框，需同时将u-form的同名参数设置为false",
       "default": "true",
       "value": "",
       "type": "String | Boolean"
     },
     "labelWidth": {
-      "description": "提示文字的宽度，单位rpx，如设置，将覆盖u-form的同名参数",
+      "description": "The width of the prompt text, in rpx, if set, will override the parameter of the same name as the u-form",
       "description_zh": "提示文字的宽度，单位rpx，如设置，将覆盖u-form的同名参数",
       "default": "-",
       "value": "",
       "type": "String | Number"
     },
     "labelPosition ": {
-      "description": "label的位置",
+      "description": "label",
       "description_zh": "label的位置",
       "default": "-",
       "value": "",
       "type": "left / top"
     },
     "rightIcon": {
-      "description": "右侧自定义字体图标(限uView内置图标)或图片地址",
+      "description": "Custom font icon on the right (uView built-in icon only) or image address",
       "description_zh": "右侧自定义字体图标(限uView内置图标)或图片地址",
       "default": "-",
       "value": "",
       "type": "String"
     },
     "leftIcon": {
-      "description": "左侧自定义字体图标(限uView内置图标)或图片地址",
+      "description": "Custom font icon on the left (uView built-in icon only) or image address",
       "description_zh": "左侧自定义字体图标(限uView内置图标)或图片地址",
       "default": "-",
       "value": "",
       "type": "String"
     },
     "leftIconStyle": {
-      "description": "左侧自定义字体图标的样式",
+      "description": "Customize the style of the font icon on the left",
       "description_zh": "左侧自定义字体图标的样式",
       "default": "-",
       "value": "",
       "type": "String\t| Object"
     },
     "required": {
-      "description": "是否显示左边的\"*\"号，这里仅起展示作用，如需校验必填，请通过rules配置必填规则，如需在swiper标签内显示星号，需要给予swiper-item内第一个根节点一定的margin样式",
+      "description": "If you need to verify the required number, please configure the required rules through rules, if you need to display the asterisk in the swiper tag, you need to give the first root node in the swiper-item a certain margin style",
       "description_zh": "是否显示左边的\"*\"号，这里仅起展示作用，如需校验必填，请通过rules配置必填规则，如需在swiper标签内显示星号，需要给予swiper-item内第一个根节点一定的margin样式",
       "default": "false",
       "value": "",
       "type": "Boolean"
     }
   },
-  "link": "https://v1.uviewui.com/components/form.html",
-  "link_zh": "https://v1.uviewui.com/components/form.html",
+  "link": "https://uviewui.com/components/form.html",
+  "link_zh": "https://uviewui.com/components/form.html",
   "typeDetail": {},
   "events": [
     {
       "name": "click",
-      "description": "点击时触发",
+      "description": "Triggered when clicked",
       "description_zh": "点击时触发",
-      "params": ""
+      "params": "",
+      "value": ""
     }
   ],
   "methods": [],
-  "slots": [{
-    "name": "default",
-    "description": "Form Item 的内容",
-    "description_zh": "Form Item 的内容"
-  }, {
-    "name": "right",
-    "description": "右侧自定义内容，可以在此传入一个按钮，用于获取验证码等场景",
-    "description_zh": "右侧自定义内容，可以在此传入一个按钮，用于获取验证码等场景"
-  }]
+  "slots": [
+    {
+      "name": "default",
+      "description": "The contents of the Form Item",
+      "description_zh": "Form Item 的内容"
+    },
+    {
+      "name": "right",
+      "description": "Customize the content on the right, you can pass a button here to get the verification code and other scenarios",
+      "description_zh": "右侧自定义内容，可以在此传入一个按钮，用于获取验证码等场景"
+    }
+  ]
 }

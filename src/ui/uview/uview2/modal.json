@@ -1,133 +1,78 @@
 {
   "name": "UModal",
   "props": {
-    ":v-model": {
-      "description": "The v-model binds a Boolean variable to control whether the modal is displayed or not",
-      "description_zh": "通过v-model绑定一个布尔变量来控制模态框的显示与否",
+    ":show": {
+      "description": "Whether to display the modal box or not, please assign a value to show",
+      "description_zh": "是否显示模态框，请赋值给show",
       "default": "false",
       "value": "",
       "type": "Boolean",
       "required": true
     },
-    "show": {
-      "description": "Whether to display the modal box, assign a value to the v-model",
-      "description_zh": "是否显示模态框，请赋值给v-model",
-      "default": "false",
-      "value": "",
-      "type": "Boolean"
-    },
-    "z-index": {
-      "description": "Level",
-      "description_zh": "层级",
-      "default": "1075",
-      "value": "",
-      "type": "String | Number"
-    },
     "title": {
       "description": "Title content",
       "description_zh": "标题内容",
-      "default": "提示",
-      "value": "",
-      "type": "String"
-    },
-    "width": {
-      "description": "The width of the modal, in rpx",
-      "description_zh": "模态框宽度，数值时单位为rpx",
-      "default": "600",
-      "value": "",
-      "type": "百分比 / auto"
-    },
-    "content": {
-      "description": "This parameter is invalid for modal content, such as slot content",
-      "description_zh": "模态框内容，如传入slot内容，则此参数无效",
-      "default": "内容",
+      "default": "-",
       "value": "",
       "type": "String",
       "required": true
     },
-    "show-title": {
-      "description": "Whether or not to display the title",
-      "description_zh": "是否显示标题",
-      "default": "true",
+    "content": {
+      "description": "This parameter is invalid for modal content, such as slot content",
+      "description_zh": "模态框内容，如传入slot内容，则此参数无效",
+      "default": "-",
       "value": "",
-      "type": "Boolean"
+      "type": "String",
+      "required": true
     },
-    "show-confirm-button": {
-      "description": "Whether or not to display a confirmation button",
-      "description_zh": "是否显示确认按钮",
-      "default": "true",
-      "value": "",
-      "type": "Boolean"
-    },
-    "show-cancel-button": {
-      "description": "Whether or not to display a cancel button",
-      "description_zh": "是否显示取消按钮",
-      "default": "false",
-      "value": "",
-      "type": "Boolean"
-    },
-    "confirm-text": {
+    "confirmText": {
       "description": "Confirm the text of the button",
       "description_zh": "确认按钮的文字",
       "default": "确认",
       "value": "",
       "type": "String"
     },
-    "cancel-text": {
+    "cancelText": {
       "description": "The text of the cancel button",
       "description_zh": "取消按钮的文字",
       "default": "取消",
       "value": "",
       "type": "String"
     },
-    "cancel-color": {
-      "description": "The color of the cancel button",
-      "description_zh": "取消按钮的颜色",
-      "default": "#606266",
+    "showConfirmButton": {
+      "description": "Whether or not to display a confirmation button",
+      "description_zh": "是否显示确认按钮",
+      "default": "true",
       "value": "",
-      "type": "String"
+      "type": "Boolean"
     },
-    "confirm-color": {
+    "showCancelButton": {
+      "description": "Whether or not to display a cancel button",
+      "description_zh": "是否显示取消按钮",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
+    },
+    "confirmColor": {
       "description": "Confirm the color of the button",
       "description_zh": "确认按钮的颜色",
       "default": "#2979ff",
       "value": "",
       "type": "String"
     },
-    "border-radius": {
-      "description": "The value of the fillet of the modal box, in rpx",
-      "description_zh": "模态框圆角值，单位rpx",
-      "default": "16",
+    "cancelColor": {
+      "description": "The color of the cancel button",
+      "description_zh": "取消按钮的颜色",
+      "default": "#606266",
       "value": "",
-      "type": "String | Number"
+      "type": "String"
     },
-    "title-style": {
-      "description": "Customize the title style, object form",
-      "description_zh": "自定义标题样式，对象形式",
-      "default": "-",
+    "buttonReverse": {
+      "description": "Redirects the position of confirmation and cancellation",
+      "description_zh": "对调确认和取消的位置",
+      "default": "false",
       "value": "",
-      "type": "Object"
-    },
-    "content-style": {
-      "description": "Customize the content style, object form",
-      "description_zh": "自定义内容样式，对象形式",
-      "default": "-",
-      "value": "",
-      "type": "Object"
-    },
-    "cancel-style": {
-      "description": "Customize the cancel button style, object form",
-      "description_zh": "自定义取消按钮样式，对象形式",
-      "default": "-",
-      "value": "",
-      "type": "Object"
-    },
-    "confirm-style": {
-      "description": "Customize the confirmation button style, object form",
-      "description_zh": "自定义确认按钮样式，对象形式",
-      "default": "-",
-      "value": "",
-      "type": "Object"
+      "type": "Boolean"
     },
     "zoom": {
       "description": "Whether to enable zoom mode",
@@ -136,30 +81,44 @@
       "value": "",
       "type": "Boolean"
     },
-    "async-close": {
+    "asyncClose": {
       "description": "Whether it is asynchronously closed or not is only valid for the OK button, as explained above",
       "description_zh": "是否异步关闭，只对确定按钮有效，见上方说明",
       "default": "false",
       "value": "",
       "type": "Boolean"
     },
-    "mask-close-able": {
-      "description": "Whether to allow clicking on the mask to turn off Modal",
-      "description_zh": "是否允许点击遮罩关闭Modal",
+    "closeOnClickOverlay": {
+      "description": "Whether to allow Modal to be closed by clicking on the mask (Note: The closing event needs to be handled by yourself, and will only click on the mask layer to execute the close callback after the closeOnClickOverlay is enabled)",
+      "description_zh": "是否允许点击遮罩关闭Modal（注意：关闭事件需要自行处理，只会在开启closeOnClickOverlay后点击遮罩层执行close回调）",
       "default": "false",
       "value": "",
       "type": "Boolean"
     },
-    "negative-top": {
-      "description": "Offset the value upwards to avoid possible keyboard overlaps, the unit is arbitrary, and the value defaults to rpx unit 1.4.4",
-      "description_zh": "往上偏移的值，以避免可能弹出的键盘重合，单位任意，数值则默认为rpx单位 1.4.4",
+    "negativeTop": {
+      "description": "The value of the offset upwards is given a negative margin-top, and the value is offset upwards to avoid overlapping with the keyboard, the unit is arbitrary, and the value is rpx units by default",
+      "description_zh": "往上偏移的值，给一个负的margin-top，往上偏移，避免和键盘重合的情况，单位任意，数值则默认为rpx单位",
       "default": "0",
       "value": "",
       "type": "String | Number"
+    },
+    "width": {
+      "description": "modal width, percentage is not supported, can be numeric value, px, rpx units",
+      "description_zh": "modal宽度，不支持百分比，可以数值，px，rpx单位",
+      "default": "650rpx",
+      "value": "",
+      "type": "px | rpx"
+    },
+    "confirmButtonShape": {
+      "description": "If you set the style of the confirmation button, the cancel button will not be displayed",
+      "description_zh": "确认按钮的样式,如设置，将不会显示取消按钮",
+      "default": "-",
+      "value": "",
+      "type": "circle(圆形) | square(方形)"
     }
   },
-  "link": "https://v1.uviewui.com/components/modal.html",
-  "link_zh": "https://v1.uviewui.com/components/modal.html",
+  "link": "https://uviewui.com/components/modal.html",
+  "link_zh": "https://uviewui.com/components/modal.html",
   "typeDetail": {},
   "events": [
     {
@@ -175,17 +134,16 @@
       "description_zh": "点击取消按钮时触发",
       "params": "-",
       "value": ""
-    }
-  ],
-  "methods": [
+    },
     {
-      "name": "clearLoading",
-      "description": "When controlling asynchronously, you can call this method to clear the loading state without shutting down Modal",
-      "description_zh": "异步控制时，通过调用此方法，可以不关闭Modal，而单是清除loading状态",
-      "params": "",
+      "name": "close",
+      "description": "Clicking on the mask is triggered off, and closeOnClickOverlay is true for effect",
+      "description_zh": "点击遮罩关闭触发，closeOnClickOverlay为true有效",
+      "params": "-",
       "value": ""
     }
   ],
+  "methods": [],
   "slots": [
     {
       "name": "default",
@@ -193,7 +151,7 @@
       "description_zh": "传入自定义内容，一般为富文本，见上方说明"
     },
     {
-      "name": "confirm-button",
+      "name": "confirmButton",
       "description": "Enter a custom button for the scenario of authorization through the button in the pop-up window of the WeChat Mini Program",
       "description_zh": "传入自定义按钮，用于在微信小程序弹窗通过按钮授权的场景"
     }

@@ -12,14 +12,10 @@ import indexAnchor from './indexAnchor.json'
 import indexBar from './indexBar.json'
 import input from './input.json'
 import keyboard from './keyboard.json'
-import lazyLoad from './lazyLoad.json'
 import line from './line.json'
 import lineProgress from './lineProgress.json'
 import link from './link.json'
-import loading from './loading.json'
 import loadmore from './loadmore.json'
-import mask from './mask.json'
-import messageInput from './messageInput.json'
 import modal from './modal.json'
 import navbar from './navbar.json'
 import noNetwork from './noNetwork.json'
@@ -34,8 +30,6 @@ import rate from './rate.json'
 import readMore from './readMore.json'
 import row from './row.json'
 import search from './search.json'
-import section from './section.json'
-import select from './select.json'
 import skeleton from './skeleton.json'
 import slider from './slider.json'
 import steps from './steps.json'
@@ -45,20 +39,10 @@ import swipeAction from './swipeAction.json'
 import swiper from './swiper.json'
 import uswitch from './switch.json'
 import tabbar from './tabbar.json'
-import table from './table.json'
 import tabs from './tabs.json'
-import tabSwiper from './tabSwiper.json'
 import tag from './tag.json'
-import td from './td.json'
-import tr from './tr.json'
-import th from './th.json'
-import timeLine from './timeLine.json'
-import timeLineItem from './timeLineItem.json'
 import toast from './toast.json'
-import topTips from './topTips.json'
 import upload from './upload.json'
-import verificationCode from './verificationCode.json'
-import waterfall from './waterfall.json'
 import text from './text.json'
 import cell from './cell.json'
 import cellGroup from './cellGroup.json'
@@ -68,6 +52,18 @@ import datetimePicker from './datetimePicker.json'
 import loadingIcon from './loadingIcon.json'
 import loadingPage from './loadingPage.json'
 import textarea from './textarea.json'
+import alert from './alert.json'
+import avatarGroup from './avatarGroup.json'
+import codeInput from './codeInput.json'
+import list from './list.json'
+import listItem from './listItem.json'
+import notify from './notify.json'
+import overlay from './overlay.json'
+import scrollList from './scrollList.json'
+import stepsItem from './stepsItem.json'
+import swipeActionItem from './swipeActionItem.json'
+import tabbarItem from './tabbarItem.json'
+import transition from './transition.json'
 
 export function uview2() {
   const map: any = [
@@ -83,14 +79,10 @@ export function uview2() {
     indexBar,
     input,
     keyboard,
-    lazyLoad,
     line,
     lineProgress,
     link,
-    loading,
     loadmore,
-    mask,
-    messageInput,
     modal,
     navbar,
     noNetwork,
@@ -105,8 +97,6 @@ export function uview2() {
     readMore,
     row,
     search,
-    section,
-    select,
     skeleton,
     slider,
     steps,
@@ -116,20 +106,10 @@ export function uview2() {
     swiper,
     uswitch,
     tabbar,
-    table,
     tabs,
-    tabSwiper,
     tag,
-    td,
-    tr,
-    th,
-    timeLine,
-    timeLineItem,
     toast,
-    topTips,
     upload,
-    verificationCode,
-    waterfall,
     text,
     cell,
     cellGroup,
@@ -139,6 +119,18 @@ export function uview2() {
     loadingIcon,
     loadingPage,
     textarea,
+    alert,
+    avatarGroup,
+    codeInput,
+    list,
+    listItem,
+    notify,
+    overlay,
+    scrollList,
+    stepsItem,
+    swipeActionItem,
+    tabbarItem,
+    transition,
   ]
 
   return propsReducer('uview', map)
@@ -159,14 +151,10 @@ export function uview2Components() {
     [indexBar, indexBar.name, `<${indexBar.name}></${indexBar.name}>`],
     [input, input.name, `<${input.name}></${input.name}>`],
     [keyboard, keyboard.name, `<${keyboard.name}></${keyboard.name}>`],
-    [lazyLoad, lazyLoad.name, `<${lazyLoad.name}></${lazyLoad.name}>`],
     [line, line.name, `<${line.name}></${line.name}>`],
     [lineProgress, lineProgress.name, `<${lineProgress.name}></${lineProgress.name}>`],
     [link, link.name, `<${link.name}></${link.name}>`],
-    [loading, loading.name, `<${loading.name}></${loading.name}>`],
     [loadmore, loadmore.name, `<${loadmore.name}></${loadmore.name}>`],
-    [mask, mask.name, `<${mask.name}></${mask.name}>`],
-    [messageInput, messageInput.name, `<${messageInput.name}></${messageInput.name}>`],
     [modal, modal.name, `<${modal.name}></${modal.name}>`],
     [navbar, navbar.name, `<${navbar.name}></${navbar.name}>`],
     [noNetwork, noNetwork.name, `<${noNetwork.name}></${noNetwork.name}>`],
@@ -181,8 +169,6 @@ export function uview2Components() {
     [readMore, readMore.name, `<${readMore.name}></${readMore.name}>`],
     [row, row.name, `<${row.name}></${row.name}>`],
     [search, search.name, `<${search.name}></${search.name}>`],
-    [section, section.name, `<${section.name}></${section.name}>`],
-    [select, select.name, `<${select.name}></${select.name}>`],
     [skeleton, skeleton.name, `<${skeleton.name}></${skeleton.name}>`],
     [slider, slider.name, `<${slider.name}></${slider.name}>`],
     [steps, steps.name, `<${steps.name}></${steps.name}>`],
@@ -192,20 +178,10 @@ export function uview2Components() {
     [swiper, swiper.name, `<${swiper.name}></${swiper.name}>`],
     [uswitch, uswitch.name, `<${uswitch.name}></${uswitch.name}>`],
     [tabbar, tabbar.name, `<${tabbar.name}></${tabbar.name}>`],
-    [table, table.name, `<${table.name}></${table.name}>`],
     [tabs, tabs.name, `<${tabs.name}></${tabs.name}>`],
-    [tabSwiper, tabSwiper.name, `<${tabSwiper.name}></${tabSwiper.name}>`],
     [tag, tag.name, `<${tag.name}></${tag.name}>`],
-    [td, td.name, `<${td.name}></${td.name}>`],
-    [tr, tr.name, `<${tr.name}></${tr.name}>`],
-    [th, th.name, `<${th.name}></${th.name}>`],
-    [timeLine, timeLine.name, `<${timeLine.name}></${timeLine.name}>`],
-    [timeLineItem, timeLineItem.name, `<${timeLineItem.name}></${timeLineItem.name}>`],
     [toast, toast.name, `<${toast.name}></${toast.name}>`],
-    [topTips, topTips.name, `<${topTips.name}></${topTips.name}>`],
     [upload, upload.name, `<${upload.name}></${upload.name}>`],
-    [verificationCode, verificationCode.name, `<${verificationCode.name}></${verificationCode.name}>`],
-    [waterfall, waterfall.name, `<${waterfall.name}></${waterfall.name}>`],
     [text, text.name, `<${text.name}></${text.name}>`],
     [cell, cell.name, `<${cell.name}></${cell.name}>`],
     [cellGroup, cellGroup.name, `<${cellGroup.name}></${cellGroup.name}>`],
@@ -215,6 +191,18 @@ export function uview2Components() {
     [loadingIcon, loadingIcon.name, `<${loadingIcon.name}></${loadingIcon.name}>`],
     [loadingPage, loadingPage.name, `<${loadingPage.name}></${loadingPage.name}>`],
     [textarea, textarea.name, `<${textarea.name}></${textarea.name}>`],
+    [alert, alert.name, `<${alert.name}></${alert.name}>`],
+    [avatarGroup, avatarGroup.name, `<${avatarGroup.name}></${avatarGroup.name}>`],
+    [codeInput, codeInput.name, `<${codeInput.name}></${codeInput.name}>`],
+    [list, list.name, `<${list.name}></${list.name}>`],
+    [listItem, listItem.name, `<${listItem.name}></${listItem.name}>`],
+    [notify, notify.name, `<${notify.name}></${notify.name}>`],
+    [overlay, overlay.name, `<${overlay.name}></${overlay.name}>`],
+    [scrollList, scrollList.name, `<${scrollList.name}></${scrollList.name}>`],
+    [stepsItem, stepsItem.name, `<${stepsItem.name}></${stepsItem.name}>`],
+    [swipeActionItem, swipeActionItem.name, `<${swipeActionItem.name}></${swipeActionItem.name}>`],
+    [tabbarItem, tabbarItem.name, `<${tabbarItem.name}></${tabbarItem.name}>`],
+    [transition, transition.name, `<${transition.name}></${transition.name}>`],
   ]
   return componentsReducer(map, true, 'u', 'uview-ui')
 }

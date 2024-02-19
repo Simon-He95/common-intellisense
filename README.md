@@ -25,7 +25,7 @@ Install the supported ui component library in your project and install the plug-
 - next-ui 2
 - arco-design/react 2
 - arco-design/vue 2
-- uview-ui 1
+- uview-ui 1、2
 
 ### [antdv demo](assets/antdv.gif)
 

@@ -1,112 +1,67 @@
 {
   "name": "UTabbar",
   "props": {
-    ":list": {
-      "description": "For the configuration parameters of each item, see the description at the top, in the form of an array",
-      "description_zh": "各项的配置参数，见顶部说明，数组形式",
-      "default": "-",
+    "value": {
+      "description": "The name of the current match",
+      "description_zh": "当前匹配项的name",
+      "default": "null",
       "value": "",
-      "type": "Array",
-      "required": true
+      "type": "String | Number"
     },
-    "show": {
-      "description": "Whether or not to display the portlet",
-      "description_zh": "是否显示组件",
+    "safeAreaInsetBottom": {
+      "description": "Whether to leave a safe distance at the bottom for the iPhone X",
+      "description_zh": "是否为iPhoneX留出底部安全距离",
       "default": "true",
       "value": "",
       "type": "Boolean"
     },
-    ":v-model": {
-      "description": "The index value of the bidirectionally bound activation",
-      "description_zh": "双向绑定的激活项的索引值",
-      "default": "0",
-      "value": "",
-      "type": "String | Number",
-      "required": true
-    },
-    "bg-color": {
-      "description": "The background color of the component",
-      "description_zh": "组件的背景颜色",
-      "default": "#ffffff",
-      "value": "",
-      "type": "String"
-    },
-    "height": {
-      "description": "The height is arbitrary, and the value is rpx unit, which is not recommended",
-      "description_zh": "高度，单位任意，数值则为rpx单位，不建议修改",
-      "default": "50px",
-      "value": "",
-      "type": "String | Number"
-    },
-    "icon-size": {
-      "description": "The size of the non-central bump icon is arbitrary, and the value is rpx",
-      "description_zh": "非中部凸起图标的大小，单位任意，数值则为rpx单位",
-      "default": "40",
-      "value": "",
-      "type": "String | Number"
-    },
-    "mid-button-size": {
-      "description": "The size of the raised icon is arbitrary, and the value is rpx",
-      "description_zh": "凸起的图标的大小，单位任意，数值则为rpx单位",
-      "default": "90",
-      "value": "",
-      "type": "String | Number"
-    },
-    "active-color": {
-      "description": "The color of the text and font icons when they are active",
-      "description_zh": "文字和字体图标激活时的颜色",
-      "default": "#303133",
-      "value": "",
-      "type": "String"
-    },
-    "inactive-color": {
-      "description": "The color of the text and font icons when they are not activated",
-      "description_zh": "文字和字体图标未激活时的颜色",
-      "default": "#606266",
-      "value": "",
-      "type": "String"
-    },
-    "mid-button": {
-      "description": "If you configure this value, you still need to set the midButton of the raised item in the list parameter to true, as described above",
-      "description_zh": "是否需要中部凸起的按钮，配置了此值，依然需要配置list参数中需凸起项的midButton为true，见上方说明",
-      "default": "false",
-      "value": "",
-      "type": "Boolean"
-    },
-    "before-switch": {
-      "description": "The callback hook before the switch is described above",
-      "description_zh": "切换之前的回调钩子，见上方说明",
-      "default": "-",
-      "value": "",
-      "type": "Function"
-    },
-    "border-top": {
-      "description": "Whether to display the border at the top",
-      "description_zh": "是否显示顶部的边框",
+    "border": {
+      "description": "Whether or not to display the upper border",
+      "description_zh": "是否显示上方边框",
       "default": "true",
       "value": "",
       "type": "Boolean"
     },
-    "hide-tab-bar": {
-      "description": "Whether to hide the native tabbar",
-      "description_zh": "是否隐藏原生tabbar",
+    "zIndex": {
+      "description": "element-level z-index",
+      "description_zh": "元素层级z-index",
+      "default": "1",
+      "value": "",
+      "type": "String | Number"
+    },
+    "activeColor": {
+      "description": "Select the color of the label",
+      "description_zh": "选中标签的颜色",
+      "default": "#1989fa",
+      "value": "",
+      "type": "String"
+    },
+    "inactiveColor": {
+      "description": "The color of the label is unchecked",
+      "description_zh": "未选中标签的颜色",
+      "default": "#7d7e80",
+      "value": "",
+      "type": "String"
+    },
+    "fixed": {
+      "description": "Whether it is fixed at the bottom or not",
+      "description_zh": "是否固定在底部",
+      "default": "true",
+      "value": "",
+      "type": "Boolean"
+    },
+    "placeholder": {
+      "description": "When fixed positioning is fixed at the bottom, whether to generate a contour element to prevent collapse",
+      "description_zh": "fixed定位固定在底部时，是否生成一个等高元素防止塌陷",
       "default": "true",
       "value": "",
       "type": "Boolean"
     }
   },
-  "link": "https://v1.uviewui.com/components/tabbar.html",
-  "link_zh": "https://v1.uviewui.com/components/tabbar.html",
+  "link": "https://uviewui.com/components/tabbar.html",
+  "link_zh": "https://uviewui.com/components/tabbar.html",
   "typeDetail": {},
-  "events": [
-    {
-      "name": "change",
-      "description": "Triggered when the option is toggled",
-      "description_zh": "切换选项时触发",
-      "params": "index：当前要切换项的索引",
-      "value": ""
-    }
-  ],
+  "events": [],
   "methods": [],
   "slots": []
 }

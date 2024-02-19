@@ -9,135 +9,184 @@
       "type": "Array",
       "required": true
     },
-    "title": {
-      "description": "Whether to display the title text or not, you need to use the list parameter, as described above",
-      "description_zh": "是否显示标题文字，需要配合list参数，见上方说明",
+    "indicator": {
+      "description": "Whether or not to display a panel indicator",
+      "description_zh": "是否显示面板指示器",
       "default": "false",
       "value": "",
       "type": "Boolean"
     },
-    "mode": {
-      "description": "Indicator mode, see description above",
-      "description_zh": "指示器模式，见上方说明",
-      "default": "round",
+    "indicatorActiveColor": {
+      "description": "The color in which the indicator is activated",
+      "description_zh": "指示器激活的颜色",
+      "default": "#FFFFFF",
       "value": "",
-      "type": "rect / dot / number / none"
+      "type": "String"
     },
-    "height": {
-      "description": "Carousel component height, in rpx",
-      "description_zh": "轮播图组件高度，单位rpx",
-      "default": "250",
+    "indicatorInactiveColor": {
+      "description": "The indicator is not an active color",
+      "description_zh": "指示器非激活颜色",
+      "default": "rgba(255, 255, 255, 0.35)",
       "value": "",
-      "type": "String | Number"
+      "type": "String"
     },
-    "indicator-pos": {
-      "description": "The location of the indicator",
-      "description_zh": "指示器的位置",
-      "default": "bottomCenter",
+    "indicatorStyle": {
+      "description": "Indicator style, which can be positioned by bottom, left, right",
+      "description_zh": "指示器样式，可通过bottom，left，right进行定位",
+      "default": "-",
       "value": "",
-      "type": "topLeft / topCenter / topRight / bottomLeft / bottomRight"
+      "type": "String | Object"
     },
-    "effect3d": {
-      "description": "Whether to enable 3D effects",
-      "description_zh": "是否开启3D效果",
-      "default": "false",
+    "indicatorMode": {
+      "description": "Indicator mode",
+      "description_zh": "指示器模式",
+      "default": "line",
       "value": "",
-      "type": "Boolean"
+      "type": "dot"
     },
     "autoplay": {
-      "description": "Whether or not to play automatically",
-      "description_zh": "是否自动播放",
+      "description": "Whether or not to switch automatically",
+      "description_zh": "是否自动切换",
       "default": "true",
       "value": "",
       "type": "Boolean"
     },
+    "current": {
+      "description": "The index of the slider you are currently on",
+      "description_zh": "当前所在滑块的 index",
+      "default": "0",
+      "value": "",
+      "type": "Number | String"
+    },
+    "currentItemId": {
+      "description": "The item-id of the current slider cannot be specified at the same time as current",
+      "description_zh": "当前所在滑块的 item-id ，不能与 current 被同时指定",
+      "default": "-",
+      "value": "",
+      "type": "String"
+    },
     "interval": {
-      "description": "Automatic rotation interval, in ms",
-      "description_zh": "自动轮播时间间隔，单位ms",
-      "default": "2500",
+      "description": "Slider automatic switching interval (ms)",
+      "description_zh": "滑块自动切换时间间隔（ms）",
+      "default": "3000",
+      "value": "",
+      "type": "String | Number"
+    },
+    "duration": {
+      "description": "The time required for the slider switching process (ms) is not supported by NVUE",
+      "description_zh": "滑块切换过程所需时间（ms），nvue不支持",
+      "default": "300",
       "value": "",
       "type": "String | Number"
     },
     "circular": {
-      "description": "Whether it is played in connection or not, see the instructions above",
-      "description_zh": "是否衔接播放，见上方说明",
-      "default": "true",
+      "description": "Whether to return to the beginning after the end of the playback",
+      "description_zh": "播放到末尾后是否重新回到开头",
+      "default": "false",
       "value": "",
       "type": "Boolean"
     },
-    "duration": {
-      "description": "The time it takes to switch between a carousel, in ms",
-      "description_zh": "切换一张轮播图所需的时间，单位ms",
-      "default": "500",
+    "previousMargin": {
+      "description": "Front margin, which can be used to expose a small part of the previous item, which is not supported by NVUE and Alipay",
+      "description_zh": "前边距，可用于露出前一项的一小部分，nvue和支付宝不支持",
+      "default": "0",
       "value": "",
       "type": "String | Number"
     },
-    "border-radius": {
-      "description": "Carousel fillet value, in rpx",
-      "description_zh": "轮播图圆角值，单位rpx",
-      "default": "8",
+    "nextMargin": {
+      "description": "Back margin, which can be used to expose a small portion of the latter item, which is not supported by NVUE and Alipay",
+      "description_zh": "后边距，可用于露出后一项的一小部分，nvue和支付宝不支持",
+      "default": "0",
       "value": "",
       "type": "String | Number"
     },
-    "title-style": {
-      "description": "Customize the title style",
-      "description_zh": "自定义标题样式",
-      "default": "-",
+    "acceleration": {
+      "description": "When turned on, it will continuously slide multiple screens according to the sliding speed, which is not supported by Alipay",
+      "description_zh": "当开启时，会根据滑动速度，连续滑动多屏，支付宝不支持",
+      "default": "false",
       "value": "",
-      "type": "Object"
+      "type": "Boolean"
     },
-    "effect3d-previous-margin": {
-      "description": "In the case of effect3d = true mode, the distance between the active item and the front and back items, in rpx",
-      "description_zh": "effect3d = true模式的情况下，激活项与前后项之间的距离，单位rpx",
-      "default": "50",
+    "displayMultipleItems": {
+      "description": "The number of sliders displayed at the same time is not supported by NVUE and Alipay Mini Programs",
+      "description_zh": "同时显示的滑块数量，nvue、支付宝小程序不支持",
+      "default": "1",
       "value": "",
-      "type": "String | Number"
+      "type": "Number"
     },
-    "img-mode": {
-      "description": "图片的裁剪模式，详见image组件裁剪模式  (opens new window)",
-      "description_zh": "图片的裁剪模式，详见image组件裁剪模式  (opens new window)",
-      "default": "aspectFill",
+    "easingFunction": {
+      "description": "Specify the type of swiper toggle easing animation, which is only valid for WeChat Mini Programs",
+      "description_zh": "指定swiper切换缓动动画类型， 只对微信小程序有效",
+      "default": "default",
+      "value": "",
+      "type": "linear、easeInCubic、easeOutCubic、easeInOutCubic"
+    },
+    "keyName": {
+      "description": "list array",
+      "description_zh": "list数组中指定对象的目标属性名",
+      "default": "url",
       "value": "",
       "type": "String"
     },
-    "name": {
-      "description": "The attribute name in the list parameter read inside the component is described above",
-      "description_zh": "组件内部读取的list参数中的属性名，见上方说明",
-      "default": "name",
+    "imgMode": {
+      "description": "Cropping mode for the image",
+      "description_zh": "图片的裁剪模式",
+      "default": "aspectFill",
       "value": "",
-      "type": "string"
+      "type": "详见图片裁剪"
     },
-    "bg-color": {
+    "height": {
+      "description": "Component height",
+      "description_zh": "组件高度",
+      "default": "130",
+      "value": "",
+      "type": "String | Number"
+    },
+    "bgColor": {
       "description": "Background color",
       "description_zh": "背景颜色",
       "default": "#f3f4f6",
       "value": "",
-      "type": "string"
+      "type": "String"
     },
-    "current": {
-      "description": "When initialized, the first items are displayed by default",
-      "description_zh": "初始化时，默认显示第几项",
-      "default": "0",
+    "radius": {
+      "description": "Component rounded corners, numeric values, or strings with units",
+      "description_zh": "组件圆角，数值或带单位的字符串",
+      "default": "4",
       "value": "",
       "type": "String | Number"
+    },
+    "loading": {
+      "description": "Whether it is loading",
+      "description_zh": "是否加载中",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
+    },
+    "showTitle": {
+      "description": "Whether to display the title or not, the title attribute is required in the array object",
+      "description_zh": "是否显示标题，要求数组对象中有title属性",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
     }
   },
-  "link": "https://v1.uviewui.com/components/swiper.html",
-  "link_zh": "https://v1.uviewui.com/components/swiper.html",
+  "link": "https://uviewui.com/components/swiper.html",
+  "link_zh": "https://uviewui.com/components/swiper.html",
   "typeDetail": {},
   "events": [
+    {
+      "name": "change",
+      "description": "Triggered when the carousel is switched (automatically or manually)",
+      "description_zh": "轮播图切换时触发(自动或者手动切换)",
+      "params": "index：点击了第几张图片，从0开始",
+      "value": ""
+    },
     {
       "name": "click",
       "description": "Triggered when you click on the carousel",
       "description_zh": "点击轮播图时触发",
       "params": "index：点击了第几张图片，从0开始",
-      "value": ""
-    },
-    {
-      "name": "change",
-      "description": "Triggered when the carousel is switched (automatically or manually)",
-      "description_zh": "轮播图切换时触发(自动或者手动切换)",
-      "params": "index：切换到了第几张图片，从0开始",
       "value": ""
     }
   ],

@@ -2,7 +2,7 @@
   "name": "UAlbum",
   "props": {
     ":urls": {
-      "description": "图片地址列表 支持 Array<String> | Array<Object>形式",
+      "description": "Picture address list Array<String> | <Object>Array",
       "description_zh": "图片地址列表 支持 Array<String> | Array<Object>形式",
       "default": "-",
       "value": "",
@@ -10,70 +10,70 @@
       "required": true
     },
     "keyName": {
-      "description": "指定从数组的对象元素中读取哪个属性作为图片地址",
+      "description": "Specifies which attribute is read from the object element of the array as the picture address",
       "description_zh": "指定从数组的对象元素中读取哪个属性作为图片地址",
       "default": "-",
       "value": "",
       "type": "String"
     },
     "singleSize": {
-      "description": "单图时，图片长边的长度",
+      "description": "The length of the long side of the image in a single image",
       "description_zh": "单图时，图片长边的长度",
       "default": "180",
       "value": "",
       "type": "String | Number"
     },
     "multipleSize": {
-      "description": "多图时，图片边长",
+      "description": "When there are multiple images, the edges of the images are long",
       "description_zh": "多图时，图片边长",
       "default": "70",
       "value": "",
       "type": "String | Number"
     },
     "space": {
-      "description": "多图时，图片水平和垂直之间的间隔",
+      "description": "When multi-image, the interval between the horizontal and vertical of the picture",
       "description_zh": "多图时，图片水平和垂直之间的间隔",
       "default": "6",
       "value": "",
       "type": "String | Number"
     },
     "singleMode": {
-      "description": "单图时，图片缩放裁剪的模式",
+      "description": "In the case of a single image, the image is scaled and cropped",
       "description_zh": "单图时，图片缩放裁剪的模式",
       "default": "scaleToFill",
       "value": "",
       "type": "String"
     },
     "multipleMode": {
-      "description": "多图时，图片缩放裁剪的模式",
+      "description": "When there are multiple images, the image is scaled and cropped mode",
       "description_zh": "多图时，图片缩放裁剪的模式",
       "default": "aspectFill",
       "value": "",
       "type": "String"
     },
     "maxCount": {
-      "description": "最多展示的图片数量，超出时最后一个位置将会显示剩余图片数量",
+      "description": "The maximum number of images to be displayed, after which the remaining number of images will be displayed in the last position",
       "description_zh": "最多展示的图片数量，超出时最后一个位置将会显示剩余图片数量",
       "default": "9",
       "value": "",
       "type": "String | Number"
     },
     "previewFullImage": {
-      "description": "是否可以预览图片",
+      "description": "Whether you can preview the picture",
       "description_zh": "是否可以预览图片",
       "default": "true",
       "value": "",
       "type": "Boolean"
     },
     "rowCount": {
-      "description": "每行展示图片数量，如设置，singleSize和multipleSize将会无效",
+      "description": "每行展示图片数量,如设置,singleSize和multipleSize将会无效",
       "description_zh": "每行展示图片数量，如设置，singleSize和multipleSize将会无效",
       "default": "3",
       "value": "",
       "type": "String | Number"
     },
     "showMore": {
-      "description": "超出maxCount时是否显示查看更多的提示",
+      "description": "When maxCount is exceeded, whether to display a prompt to view more information",
       "description_zh": "超出maxCount时是否显示查看更多的提示",
       "default": "true",
       "value": "",
@@ -86,9 +86,10 @@
   "events": [
     {
       "name": "albumWidth",
-      "description": "某些特殊的情况下，需要让文字与相册的宽度相等，这里事件的形式对外发送",
+      "description": "In some special cases, it is necessary to make the width of the text and the album equal, and here the form of the event is sent to the outside world",
       "description_zh": "某些特殊的情况下，需要让文字与相册的宽度相等，这里事件的形式对外发送",
-      "params": "width"
+      "params": "width",
+      "value": ""
     }
   ],
   "methods": [],
