@@ -1,173 +1,319 @@
 {
   "name": "UInput",
   "props": {
-    "type": {
-      "description": "Mode selection, see instructions above",
-      "description_zh": "模式选择，见上方说明",
-      "default": "text",
-      "value": "",
-      "type": "select / password / textarea / number"
-    },
-    "clearable": {
-      "description": "Whether to display the clear icon on the right, type = select is invalid",
-      "description_zh": "是否显示右侧的清除图标，type = select时无效",
-      "default": "true",
-      "value": "",
-      "type": "Boolean"
-    },
     ":v-model": {
-      "description": "Used to bind the value of the input box bidirectionally",
-      "description_zh": "用于双向绑定输入框的值",
+      "description": "绑定value初始值，此值是双向绑定的",
+      "description_zh": "绑定value初始值，此值是双向绑定的",
       "default": "-",
       "value": "",
-      "type": "-",
+      "type": "String | Number",
       "required": true
     },
-    "input-align": {
-      "description": "The alignment of the text in the input box",
-      "description_zh": "输入框文字的对齐方式",
-      "default": "left",
+    "value": {
+      "description": "输入的值",
+      "description_zh": "输入的值",
+      "default": "-",
       "value": "",
-      "type": "center / right"
+      "type": "Number | String"
     },
-    "placeholder": {
-      "description": "placeholder显示值",
-      "description_zh": "placeholder显示值",
-      "default": "请输入内容",
+    "type": {
+      "description": "输入框类型，见上方说明",
+      "description_zh": "输入框类型，见上方说明",
+      "default": "text",
       "value": "",
-      "type": "String"
+      "type": "number | idcard | digit | password"
     },
     "disabled": {
-      "description": "Whether to disable the input field",
+      "description": "是否禁用输入框",
       "description_zh": "是否禁用输入框",
       "default": "false",
       "value": "",
       "type": "Boolean"
     },
-    "maxlength": {
-      "description": "The maximum length that can be entered in the input box",
-      "description_zh": "输入框的最大可输入长度",
-      "default": "140",
-      "value": "",
-      "type": "Number | String"
-    },
-    "placeholder-style": {
-      "description": "placeholder的样式，字符串形式，如\"color: red;\"",
-      "description_zh": "placeholder的样式，字符串形式，如\"color: red;\"",
-      "default": "\"color: #c0c4cc;\"",
+    "disabledColor": {
+      "description": "禁用状态时的背景色",
+      "description_zh": "禁用状态时的背景色",
+      "default": "#f5f7fa",
       "value": "",
       "type": "String"
     },
-    "confirm-type": {
-      "description": "Set the text of the button in the lower right corner of the keyboard to take effect only when type is text",
-      "description_zh": "设置键盘右下角按钮的文字，仅在type为text时生效",
+    "clearable": {
+      "description": "是否显示清除控件",
+      "description_zh": "是否显示清除控件",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
+    },
+    "password": {
+      "description": "是否密码类型",
+      "description_zh": "是否密码类型",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
+    },
+    "maxlength": {
+      "description": "最大输入长度，设置为 -1 的时候不限制最大长度",
+      "description_zh": "最大输入长度，设置为 -1 的时候不限制最大长度",
+      "default": "-1",
+      "value": "",
+      "type": "String | Number"
+    },
+    "placeholder": {
+      "description": "输入框为空时的占位符",
+      "description_zh": "输入框为空时的占位符",
+      "default": "-",
+      "value": "",
+      "type": "String",
+      "required": true
+    },
+    "placeholderClass": {
+      "description": "指定placeholder的样式类，注意页面或组件的style中写了scoped时，需要在类名前写/deep/",
+      "description_zh": "指定placeholder的样式类，注意页面或组件的style中写了scoped时，需要在类名前写/deep/",
+      "default": "input-placeholder",
+      "value": "",
+      "type": "String"
+    },
+    "placeholderStyle": {
+      "description": "指定placeholder的样式，字符串/对象形式，如\"color: red;\"",
+      "description_zh": "指定placeholder的样式，字符串/对象形式，如\"color: red;\"",
+      "default": "color: #c0c4cc",
+      "value": "",
+      "type": "String | Object"
+    },
+    "showWordLimit": {
+      "description": "是否显示输入字数统计，只在 type =\"text\"或type =\"textarea\"时有效",
+      "description_zh": "是否显示输入字数统计，只在 type =\"text\"或type =\"textarea\"时有效",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
+    },
+    "confirmType": {
+      "description": "设置右下角按钮的文字，兼容性详见uni-app文档",
+      "description_zh": "设置右下角按钮的文字，兼容性详见uni-app文档",
       "default": "done",
       "value": "",
+      "type": "send | search | next | go | done"
+    },
+    "confirmHold": {
+      "description": "点击键盘右下角按钮时是否保持键盘不收起，H5无效",
+      "description_zh": "点击键盘右下角按钮时是否保持键盘不收起，H5无效",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
+    },
+    "holdKeyboard": {
+      "description": "focus时，点击页面的时候不收起键盘，微信小程序有效",
+      "description_zh": "focus时，点击页面的时候不收起键盘，微信小程序有效",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
+    },
+    "focus": {
+      "description": "自动获取焦点，在 H5 平台能否聚焦以及软键盘是否跟随弹出，取决于当前浏览器本身的实现。nvue 页面不支持，需使用组件的 focus()、blur() 方法控制焦点",
+      "description_zh": "自动获取焦点，在 H5 平台能否聚焦以及软键盘是否跟随弹出，取决于当前浏览器本身的实现。nvue 页面不支持，需使用组件的 focus()、blur() 方法控制焦点",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
+    },
+    "autoBlur": {
+      "description": "键盘收起时，是否自动失去焦点，目前仅App3.0.0+有效",
+      "description_zh": "键盘收起时，是否自动失去焦点，目前仅App3.0.0+有效",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
+    },
+    "ignoreCompositionEvent ": {
+      "description": "是否忽略组件内对文本合成系统事件的处理。为 false 时将触发 compositionstart、compositionend、compositionupdate 事件，且在文本合成期间会触发 input 事件",
+      "description_zh": "是否忽略组件内对文本合成系统事件的处理。为 false 时将触发 compositionstart、compositionend、compositionupdate 事件，且在文本合成期间会触发 input 事件",
+      "default": "true",
+      "value": "",
+      "type": "Boolean"
+    },
+    "disableDefaultPadding": {
+      "description": "是否去掉 iOS 下的默认内边距，仅微信小程序，且type=textarea时有效",
+      "description_zh": "是否去掉 iOS 下的默认内边距，仅微信小程序，且type=textarea时有效",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
+    },
+    "cursor": {
+      "description": "指定focus时光标的位置",
+      "description_zh": "指定focus时光标的位置",
+      "default": "-1",
+      "value": "",
+      "type": "String | Number"
+    },
+    "cursorSpacing": {
+      "description": "输入框聚焦时底部与键盘的距离",
+      "description_zh": "输入框聚焦时底部与键盘的距离",
+      "default": "30",
+      "value": "",
+      "type": "String | Number"
+    },
+    "selectionStart": {
+      "description": "光标起始位置，自动聚集时有效，需与selection-end搭配使用",
+      "description_zh": "光标起始位置，自动聚集时有效，需与selection-end搭配使用",
+      "default": "-1",
+      "value": "",
+      "type": "String | Number"
+    },
+    "selectionEnd": {
+      "description": "光标结束位置，自动聚集时有效，需与selection-start搭配使用",
+      "description_zh": "光标结束位置，自动聚集时有效，需与selection-start搭配使用",
+      "default": "-1",
+      "value": "",
+      "type": "String | Number"
+    },
+    "adjustPosition": {
+      "description": "键盘弹起时，是否自动上推页面",
+      "description_zh": "键盘弹起时，是否自动上推页面",
+      "default": "true",
+      "value": "",
+      "type": "Boolean"
+    },
+    "inputAlign": {
+      "description": "输入框内容对齐方式",
+      "description_zh": "输入框内容对齐方式",
+      "default": "left",
+      "value": "",
+      "type": "left | center | right"
+    },
+    "fontSize": {
+      "description": "输入框字体的大小",
+      "description_zh": "输入框字体的大小",
+      "default": "15px",
+      "value": "",
+      "type": "String | Number"
+    },
+    "color": {
+      "description": "输入框字体颜色",
+      "description_zh": "输入框字体颜色",
+      "default": "#303133",
+      "value": "",
       "type": "String"
     },
-    "custom-style": {
-      "description": "Customize the style of the input box, the form of the object",
-      "description_zh": "自定义输入框的样式，对象形式",
+    "prefixIcon": {
+      "description": "输入框前置图标",
+      "description_zh": "输入框前置图标",
+      "default": "-",
+      "value": "",
+      "type": "String"
+    },
+    "prefixIconStyle": {
+      "description": "前置图标样式，对象或字符串",
+      "description_zh": "前置图标样式，对象或字符串",
+      "default": "-",
+      "value": "",
+      "type": "String | Object"
+    },
+    "suffixIcon": {
+      "description": "输入框后置图标",
+      "description_zh": "输入框后置图标",
+      "default": "-",
+      "value": "",
+      "type": "String"
+    },
+    "suffixIconStyle": {
+      "description": "后置图标样式，对象或字符串",
+      "description_zh": "后置图标样式，对象或字符串",
+      "default": "-",
+      "value": "",
+      "type": "String | Object"
+    },
+    "border": {
+      "description": "边框类型，surround-四周边框，bottom-底部边框，none-无边框",
+      "description_zh": "边框类型，surround-四周边框，bottom-底部边框，none-无边框",
+      "default": "surround",
+      "value": "",
+      "type": "bottom | none"
+    },
+    "readonly": {
+      "description": "是否只读，与disabled不同之处在于disabled会置灰组件，而readonly则不会",
+      "description_zh": "是否只读，与disabled不同之处在于disabled会置灰组件，而readonly则不会",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
+    },
+    "shape": {
+      "description": "输入框形状，circle-圆形，square-方形",
+      "description_zh": "输入框形状，circle-圆形，square-方形",
+      "default": "square",
+      "value": "",
+      "type": "circle"
+    },
+    "formatter": {
+      "description": "输入过滤或格式化函数(如需兼容微信小程序，则只能通过setFormatter方法)",
+      "description_zh": "输入过滤或格式化函数(如需兼容微信小程序，则只能通过setFormatter方法)",
+      "default": "null",
+      "value": "",
+      "type": "Function"
+    },
+    "customStyle": {
+      "description": "定义需要用到的外部样式",
+      "description_zh": "定义需要用到的外部样式",
       "default": "-",
       "value": "",
       "type": "Object"
-    },
-    "focus": {
-      "description": "Whether or not to get focus automatically",
-      "description_zh": "是否自动获得焦点",
-      "default": "false",
-      "value": "",
-      "type": "Boolean"
-    },
-    "fixed": {
-      "description": "If type is textarea and is in the \"position:fixed\" area, this parameter must be true",
-      "description_zh": "如果type为textarea，且在一个\"position:fixed\"的区域，需要指明为true",
-      "default": "false",
-      "value": "",
-      "type": "Boolean"
-    },
-    "password-icon": {
-      "description": "If type is set to password, whether to display the password view icon on the right",
-      "description_zh": "type为password时，是否显示右侧的密码查看图标",
-      "default": "true",
-      "value": "",
-      "type": "Boolean"
-    },
-    "border": {
-      "description": "Whether or not to display a border",
-      "description_zh": "是否显示边框",
-      "default": "false",
-      "value": "",
-      "type": "Boolean"
-    },
-    "border-color": {
-      "description": "The color of the border for the input box",
-      "description_zh": "输入框的边框颜色",
-      "default": "#dcdfe6",
-      "value": "",
-      "type": "String"
-    },
-    "auto-height": {
-      "description": "Whether to automatically increase the input area, which is valid when the type is set to textarea",
-      "description_zh": "是否自动增高输入区域，type为textarea时有效",
-      "default": "true",
-      "value": "",
-      "type": "Boolean"
-    },
-    "height": {
-      "description": "Height, unit: rpx",
-      "description_zh": "高度，单位rpx",
-      "default": "text类型时为70，textarea时为100",
-      "value": "",
-      "type": "Number | String"
-    },
-    "cursor-spacing": {
-      "description": "Specifies the distance between the cursor and the keyboard, in px",
-      "description_zh": "指定光标与键盘的距离，单位px",
-      "default": "0",
-      "value": "",
-      "type": "Number | String"
-    },
-    "selection-start": {
-      "description": "Cursor start position, effective when autofocusing, needs to be used with selection-end",
-      "description_zh": "光标起始位置，自动聚焦时有效，需与selection-end搭配使用",
-      "default": "-1",
-      "value": "",
-      "type": "Number | String"
-    },
-    "selection-end": {
-      "description": "The end of the cursor is effective when autofocusing, and needs to be used in conjunction with selection-start",
-      "description_zh": "光标结束位置，自动聚焦时有效，需与selection-start搭配使用",
-      "default": "-1",
-      "value": "",
-      "type": "Number | String"
-    },
-    "trim": {
-      "description": "Whether to automatically remove spaces at both ends",
-      "description_zh": "是否自动去除两端的空格",
-      "default": "true",
-      "value": "",
-      "type": "Boolean"
-    },
-    "show-confirmbar": {
-      "description": "Whether to display the bar with the Done button at the top of the keyboard",
-      "description_zh": "是否显示键盘上方带有”完成“按钮那一栏",
-      "default": "true",
-      "value": "",
-      "type": "Boolean"
-    },
-    "adjust-position": {
-      "description": "Whether the height is automatically adjusted when the keyboard is ejected",
-      "description_zh": "弹出键盘时是否自动调节高度",
-      "default": "true",
-      "value": "",
-      "type": "Boolean"
     }
   },
-  "link": "https://v1.uviewui.com/components/input.html",
-  "link_zh": "https://v1.uviewui.com/components/input.html",
+  "link": "https://uviewui.com/components/input.html",
+  "link_zh": "https://uviewui.com/components/input.html",
   "typeDetail": {},
-  "events": [],
+  "events": [
+    {
+      "name": "blur",
+      "description": "输入框失去焦点时触发",
+      "description_zh": "输入框失去焦点时触发",
+      "params": "value：内容值"
+    },
+    {
+      "name": "focus",
+      "description": "输入框聚焦时触发",
+      "description_zh": "输入框聚焦时触发",
+      "params": "-"
+    },
+    {
+      "name": "confirm",
+      "description": "点击完成按钮时触发",
+      "description_zh": "点击完成按钮时触发",
+      "params": "value：内容值"
+    },
+    {
+      "name": "keyboardheightchange",
+      "description": "键盘高度发生变化的时候触发此事件",
+      "description_zh": "键盘高度发生变化的时候触发此事件",
+      "params": "-"
+    },
+    {
+      "name": "input",
+      "description": "内容发生变化触发此事件",
+      "description_zh": "内容发生变化触发此事件",
+      "params": "value：内容值"
+    },
+    {
+      "name": "change",
+      "description": "内容发生变化触发此事件",
+      "description_zh": "内容发生变化触发此事件",
+      "params": "value：内容值"
+    },
+    {
+      "name": "clear",
+      "description": "点击清空内容",
+      "description_zh": "点击清空内容",
+      "params": "-"
+    }
+  ],
   "methods": [],
-  "slots": []
+  "slots": [
+    {
+      "name": "prefix",
+      "description": "输入框前置内容，nuve环境需u--input有效，非nvue环境需u-input才有效",
+      "description_zh": "输入框前置内容，nuve环境需u--input有效，非nvue环境需u-input才有效"
+    },
+    {
+      "name": "suffix",
+      "description": "输入框后置内容，nuve环境需u--input有效，非nvue环境需u-input才有效",
+      "description_zh": "输入框后置内容，nuve环境需u--input有效，非nvue环境需u-input才有效"
+    }
+  ]
 }

@@ -1,194 +1,214 @@
 {
   "name": "UCalendar",
   "props": {
-    "mode": {
-      "description": "Select the mode for the date, date - for a single date, range - for the selected date range",
-      "description_zh": "选择日期的模式，date-为单个日期，range-为选择日期范围",
-      "default": "date",
+    "title": {
+      "description": "标题内容",
+      "description_zh": "标题内容",
+      "default": "日期选择",
       "value": "",
-      "type": "range"
+      "type": "String"
     },
-    ":v-model": {
-      "description": "Boolean variables to control the pop-up and collapse of the calendar",
-      "description_zh": "布尔值变量，用于控制日历的弹出与收起",
+    "showTitle": {
+      "description": "是否显示标题",
+      "description_zh": "是否显示标题",
+      "default": "true",
+      "value": "",
+      "type": "Boolean"
+    },
+    "showSubtitle": {
+      "description": "是否显示副标题",
+      "description_zh": "是否显示副标题",
+      "default": "true",
+      "value": "",
+      "type": "Boolean"
+    },
+    "mode": {
+      "description": "日期类型选择",
+      "description_zh": "日期类型选择",
+      "default": "single",
+      "value": "",
+      "type": "String"
+    },
+    "startText": {
+      "description": "mode=range时，第一个日期底部的提示文字",
+      "description_zh": "mode=range时，第一个日期底部的提示文字",
+      "default": "开始",
+      "value": "",
+      "type": "String"
+    },
+    "endText": {
+      "description": "mode=range时，最后一个日期底部的提示文字",
+      "description_zh": "mode=range时，最后一个日期底部的提示文字",
+      "default": "结束",
+      "value": "",
+      "type": "String"
+    },
+    "customList": {
+      "description": "自定义列表",
+      "description_zh": "自定义列表",
+      "default": "[]",
+      "value": "",
+      "type": "[]"
+    },
+    "color": {
+      "description": "主题色，对底部按钮和选中日期有效",
+      "description_zh": "主题色，对底部按钮和选中日期有效",
+      "default": "#3c9cff",
+      "value": "",
+      "type": "String"
+    },
+    "minDate": {
+      "description": "最小的可选日期",
+      "description_zh": "最小的可选日期",
+      "default": "0",
+      "value": "",
+      "type": "Number | String"
+    },
+    "maxDate": {
+      "description": "最大可选日期",
+      "description_zh": "最大可选日期",
+      "default": "0",
+      "value": "",
+      "type": "Number | String"
+    },
+    "defaultDate": {
+      "description": "默认选中的日期，mode为multiple或range是必须为数组格式",
+      "description_zh": "默认选中的日期，mode为multiple或range是必须为数组格式",
+      "default": "null",
+      "value": "",
+      "type": "Array | String | Date"
+    },
+    "maxCount": {
+      "description": "mode=multiple时，最多可选多少个日期",
+      "description_zh": "mode=multiple时，最多可选多少个日期",
+      "default": "Number.MAX_SAFE_INTEGER",
+      "value": "",
+      "type": "Number | String"
+    },
+    "rowHeight": {
+      "description": "日期行高",
+      "description_zh": "日期行高",
+      "default": "56",
+      "value": "",
+      "type": "Number |String"
+    },
+    "formatter": {
+      "description": "日期格式化函数(如需兼容微信小程序，则只能通过setFormatter方法)",
+      "description_zh": "日期格式化函数(如需兼容微信小程序，则只能通过setFormatter方法)",
+      "default": "null",
+      "value": "",
+      "type": "Function"
+    },
+    "showLunar": {
+      "description": "是否显示农历",
+      "description_zh": "是否显示农历",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
+    },
+    "showMark": {
+      "description": "是否显示月份背景色",
+      "description_zh": "是否显示月份背景色",
+      "default": "true",
+      "value": "",
+      "type": "Boolean"
+    },
+    "confirmText": {
+      "description": "确定按钮的文字",
+      "description_zh": "确定按钮的文字",
+      "default": "确定",
+      "value": "",
+      "type": "String"
+    },
+    "confirmDisabledText": {
+      "description": "确认按钮处于禁用状态时的文字",
+      "description_zh": "确认按钮处于禁用状态时的文字",
+      "default": "确定",
+      "value": "",
+      "type": "String"
+    },
+    ":show": {
+      "description": "是否显示日历弹窗",
+      "description_zh": "是否显示日历弹窗",
       "default": "false",
       "value": "",
       "type": "Boolean",
       "required": true
     },
-    "safe-area-inset-bottom": {
-      "description": "Whether to enable the bottom safe zone adaptation",
-      "description_zh": "是否开启底部安全区适配",
+    "closeOnClickOverlay": {
+      "description": "是否允许点击遮罩关闭日历\t（注意：关闭事件需要自行处理，只会在开启closeOnClickOverlay后点击遮罩层执行close回调）",
+      "description_zh": "是否允许点击遮罩关闭日历\t（注意：关闭事件需要自行处理，只会在开启closeOnClickOverlay后点击遮罩层执行close回调）",
       "default": "false",
       "value": "",
       "type": "Boolean"
     },
-    "change-year": {
-      "description": "Whether to display the button at the top to toggle the year direction",
-      "description_zh": "是否显示顶部的切换年份方向的按钮",
+    "readonly": {
+      "description": "是否为只读状态，只读状态下禁止选择日期",
+      "description_zh": "是否为只读状态，只读状态下禁止选择日期",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
+    },
+    "maxRange": {
+      "description": "日期区间最多可选天数，默认无限制，mode = range时有效",
+      "description_zh": "日期区间最多可选天数，默认无限制，mode = range时有效",
+      "default": "无限制",
+      "value": "",
+      "type": "Number | String"
+    },
+    "rangePrompt": {
+      "description": "范围选择超过最多可选天数时的提示文案，mode = range时有效",
+      "description_zh": "范围选择超过最多可选天数时的提示文案，mode = range时有效",
+      "default": "选择天数不能超过 xx 天",
+      "value": "",
+      "type": "String | null"
+    },
+    "showRangePrompt": {
+      "description": "范围选择超过最多可选天数时，是否展示提示文案，mode = range时有效",
+      "description_zh": "范围选择超过最多可选天数时，是否展示提示文案，mode = range时有效",
       "default": "true",
       "value": "",
       "type": "Boolean"
     },
-    "change-month": {
-      "description": "Whether to display the button at the top to switch the direction of the month",
-      "description_zh": "是否显示顶部的切换月份方向的按钮",
-      "default": "true",
+    "allowSameDay": {
+      "description": "是否允许日期范围的起止时间为同一天，mode = range时有效",
+      "description_zh": "是否允许日期范围的起止时间为同一天，mode = range时有效",
+      "default": "false",
       "value": "",
       "type": "Boolean"
     },
-    "max-year": {
-      "description": "The maximum year that can be switched",
-      "description_zh": "可切换的最大年份",
-      "default": "2050",
-      "value": "",
-      "type": "Number | String"
-    },
-    "min-year": {
-      "description": "The smallest year that can be switched",
-      "description_zh": "可切换的最小年份",
-      "default": "1950",
-      "value": "",
-      "type": "Number | String"
-    },
-    "min-date": {
-      "description": "Minimum available date",
-      "description_zh": "最小可选日期",
-      "default": "1950-01-01",
-      "value": "",
-      "type": "Number | String"
-    },
-    "max-date": {
-      "description": "Maximum available dates",
-      "description_zh": "最大可选日期",
-      "default": "当前日期",
-      "value": "",
-      "type": "Number | String"
-    },
-    "border-radius": {
-      "description": "The fillet values on the left and right sides of the top pop-up window, in rpx",
-      "description_zh": "弹窗顶部左右两边的圆角值，单位rpx",
-      "default": "20",
-      "value": "",
-      "type": "Number | String"
-    },
-    "mask-close-able": {
-      "description": "Whether to allow the calendar to be turned off by clicking on the mask",
-      "description_zh": "是否允许通过点击遮罩关闭日历",
-      "default": "true",
-      "value": "",
-      "type": "Boolean"
-    },
-    "month-arrow-color": {
-      "description": "Month toggle button arrow color",
-      "description_zh": "月份切换按钮箭头颜色",
-      "default": "#606266",
-      "value": "",
-      "type": "String"
-    },
-    "year-arrow-color": {
-      "description": "Year toggle button arrow color",
-      "description_zh": "年份切换按钮箭头颜色",
-      "default": "#909399",
-      "value": "",
-      "type": "String"
-    },
-    "color": {
-      "description": "The default color of the date font",
-      "description_zh": "日期字体的默认颜色",
-      "default": "#303133",
-      "value": "",
-      "type": "String"
-    },
-    "active-bg-color": {
-      "description": "The background color of the start/end date buttons",
-      "description_zh": "起始/结束日期按钮的背景色",
-      "default": "#2979ff",
-      "value": "",
-      "type": "String"
-    },
-    "z-index": {
-      "description": "The value of the z-index when it pops up",
-      "description_zh": "弹出时的z-index值",
-      "default": "10075",
+    "round": {
+      "description": "圆角值，默认无圆角",
+      "description_zh": "圆角值，默认无圆角",
+      "default": "0",
       "value": "",
       "type": "String | Number"
     },
-    "active-color": {
-      "description": "The font color of the start/end date buttons",
-      "description_zh": "起始/结束日期按钮的字体颜色",
-      "default": "#ffffff",
+    "monthNum ": {
+      "description": "最大展示的月份数量",
+      "description_zh": "最大展示的月份数量",
+      "default": "3",
       "value": "",
-      "type": "String"
-    },
-    "range-bg-color": {
-      "description": "The background color of the area between the start/end dates",
-      "description_zh": "起始/结束日期之间的区域的背景颜色",
-      "default": "rgba(41,121,255,0.13)",
-      "value": "",
-      "type": "String"
-    },
-    "range-color": {
-      "description": "Select the font color in the range",
-      "description_zh": "选择范围内字体颜色",
-      "default": "#2979ff",
-      "value": "",
-      "type": "String"
-    },
-    "start-text": {
-      "description": "Tooltip text at the bottom of the start date",
-      "description_zh": "起始日期底部的提示文字",
-      "default": "开始",
-      "value": "",
-      "type": "String"
-    },
-    "end-text": {
-      "description": "Tooltip text at the bottom of the end date",
-      "description_zh": "结束日期底部的提示文字",
-      "default": "结束",
-      "value": "",
-      "type": "String"
-    },
-    "btn-type": {
-      "description": "At the bottom, determine the theme of the button",
-      "description_zh": "底部确定按钮的主题",
-      "default": "primary",
-      "value": "",
-      "type": "default / success / info/ warning / error"
-    },
-    "toolTip": {
-      "description": "If you set a slot named tooltip, this parameter will not work",
-      "description_zh": "顶部提示文字，如设置名为tooltip的slot，此参数将失效",
-      "default": "选择日期",
-      "value": "",
-      "type": "String"
-    },
-    "closeable": {
-      "description": "Whether to display the close icon in the upper right corner",
-      "description_zh": "是否显示右上角的关闭图标",
-      "default": "true",
-      "value": "",
-      "type": "Boolean"
+      "type": "String | Number"
     }
   },
-  "link": "https://v1.uviewui.com/components/calendar.html",
-  "link_zh": "https://v1.uviewui.com/components/calendar.html",
+  "link": "https://uviewui.com/components/calendar.html",
+  "link_zh": "https://uviewui.com/components/calendar.html",
   "typeDetail": {},
   "events": [
     {
-      "name": "change",
-      "description": "Triggered when you click the OK button in the upper right corner",
-      "description_zh": "点击右上角确定按钮时触发",
-      "params": "选择日期相关的返回参数",
-      "value": ""
+      "name": "confirm",
+      "description": "日期选择完成后触发，若show-confirm为true，则点击确认按钮后触发",
+      "description_zh": "日期选择完成后触发，若show-confirm为true，则点击确认按钮后触发",
+      "params": "选择日期相关的返回参数"
+    },
+    {
+      "name": "close",
+      "description": "日历关闭时触发",
+      "description_zh": "日历关闭时触发",
+      "params": "可定义页面关闭时的回调事件"
     }
   ],
   "methods": [],
-  "slots": [
-    {
-      "name": "tooltip",
-      "description": "Customize what's at the top of the calendar",
-      "description_zh": "自定义日历顶部的内容"
-    }
-  ]
+  "slots": []
 }

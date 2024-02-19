@@ -2,86 +2,64 @@
   "name": "UFormItem",
   "props": {
     "label": {
-      "description": "Tooltip text on the left",
+      "description": "左侧提示文字",
       "description_zh": "左侧提示文字",
       "default": "-",
       "value": "",
-      "type": "String",
-      "required": true
+      "type": "String"
     },
     "prop": {
-      "description": "The property name of the model object in the form field, which is required if the validate and resetFields methods are used",
+      "description": "表单域model对象的属性名，在使用 validate、resetFields 方法的情况下，该属性是必填的",
       "description_zh": "表单域model对象的属性名，在使用 validate、resetFields 方法的情况下，该属性是必填的",
       "default": "-",
       "value": "",
       "type": "String"
     },
-    "border-bottom": {
-      "description": "Whether to display the lower border, if the lower border is not required, set the parameter with the same name of the u-form to false",
+    "borderBottom": {
+      "description": "是否显示下边框，如不需要下边框，需同时将u-form的同名参数设置为false",
       "description_zh": "是否显示下边框，如不需要下边框，需同时将u-form的同名参数设置为false",
       "default": "true",
       "value": "",
-      "type": "Boolean"
+      "type": "String | Boolean"
     },
-    "label-position": {
-      "description": "The position of the form field hint text, left-left, top-top, if set, will override the parameter of the same name of the u-form",
-      "description_zh": "表单域提示文字的位置，left-左侧，top-上方，如设置，将覆盖u-form的同名参数",
-      "default": "-",
-      "value": "",
-      "type": "left / top"
-    },
-    "label-width": {
-      "description": "The width of the prompt text, in rpx, if set, will override the parameter of the same name as the u-form",
+    "labelWidth": {
+      "description": "提示文字的宽度，单位rpx，如设置，将覆盖u-form的同名参数",
       "description_zh": "提示文字的宽度，单位rpx，如设置，将覆盖u-form的同名参数",
       "default": "-",
       "value": "",
       "type": "String | Number"
     },
-    "label-style": {
-      "description": "The lable style, object form, as set up, will override the u-form's parameter of the same name",
-      "description_zh": "lable的样式，对象形式，如设置，将覆盖u-form的同名参数",
+    "labelPosition ": {
+      "description": "label的位置",
+      "description_zh": "label的位置",
       "default": "-",
       "value": "",
-      "type": "Object"
+      "type": "left / top"
     },
-    "label-align": {
-      "description": "The alignment of the lable, if set, will override the u-form's parameter of the same name",
-      "description_zh": "lable的对齐方式，如设置，将覆盖u-form的同名参数",
+    "rightIcon": {
+      "description": "右侧自定义字体图标(限uView内置图标)或图片地址",
+      "description_zh": "右侧自定义字体图标(限uView内置图标)或图片地址",
       "default": "-",
       "value": "",
       "type": "String"
     },
-    "right-icon": {
-      "description": "Custom font icon on the right (uView built-in icon only) or image address",
-      "description_zh": "右侧自定义字体图标(限uView内置图标)或图片地址",
-      "default": "-",
-      "value": "",
-      "type": ""
-    },
-    "left-icon": {
-      "description": "Custom font icon on the left (uView built-in icon only) or image address",
+    "leftIcon": {
+      "description": "左侧自定义字体图标(限uView内置图标)或图片地址",
       "description_zh": "左侧自定义字体图标(限uView内置图标)或图片地址",
       "default": "-",
       "value": "",
-      "type": ""
+      "type": "String"
     },
-    "left-icon-style": {
-      "description": "The style of the icon on the left, in the form of an object",
-      "description_zh": "左侧图标的样式，对象形式",
+    "leftIconStyle": {
+      "description": "左侧自定义字体图标的样式",
+      "description_zh": "左侧自定义字体图标的样式",
       "default": "-",
       "value": "",
-      "type": "Object"
-    },
-    "right-icon-style": {
-      "description": "The style of the icon on the right, in the form of an object",
-      "description_zh": "右侧图标的样式，对象形式",
-      "default": "-",
-      "value": "",
-      "type": "Object"
+      "type": "String\t| Object"
     },
     "required": {
-      "description": "Whether to display the \"*\" sign on the left, here is only for display, if you need to verify the required field, please configure the required rule through rules",
-      "description_zh": "是否显示左边的\"*\"号，这里仅起展示作用，如需校验必填，请通过rules配置必填规则",
+      "description": "是否显示左边的\"*\"号，这里仅起展示作用，如需校验必填，请通过rules配置必填规则，如需在swiper标签内显示星号，需要给予swiper-item内第一个根节点一定的margin样式",
+      "description_zh": "是否显示左边的\"*\"号，这里仅起展示作用，如需校验必填，请通过rules配置必填规则，如需在swiper标签内显示星号，需要给予swiper-item内第一个根节点一定的margin样式",
       "default": "false",
       "value": "",
       "type": "Boolean"
@@ -90,7 +68,22 @@
   "link": "https://v1.uviewui.com/components/form.html",
   "link_zh": "https://v1.uviewui.com/components/form.html",
   "typeDetail": {},
-  "events": [],
+  "events": [
+    {
+      "name": "click",
+      "description": "点击时触发",
+      "description_zh": "点击时触发",
+      "params": ""
+    }
+  ],
   "methods": [],
-  "slots": []
+  "slots": [{
+    "name": "default",
+    "description": "Form Item 的内容",
+    "description_zh": "Form Item 的内容"
+  }, {
+    "name": "right",
+    "description": "右侧自定义内容，可以在此传入一个按钮，用于获取验证码等场景",
+    "description_zh": "右侧自定义内容，可以在此传入一个按钮，用于获取验证码等场景"
+  }]
 }

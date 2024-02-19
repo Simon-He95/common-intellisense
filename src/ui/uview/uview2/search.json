@@ -2,7 +2,7 @@
   "name": "USearch",
   "props": {
     ":v-model": {
-      "description": "Bind the input box to search for a value in both directions",
+      "description": "双向绑定输入框搜索值",
       "description_zh": "双向绑定输入框搜索值",
       "default": "-",
       "value": "",
@@ -10,28 +10,21 @@
       "required": true
     },
     "shape": {
-      "description": "Search box shape, round-round, square-square",
+      "description": "搜索框形状，round-圆形，square-方形",
       "description_zh": "搜索框形状，round-圆形，square-方形",
       "default": "round",
       "value": "",
       "type": "square"
     },
-    "bg-color": {
-      "description": "Search box background color",
+    "bgColor": {
+      "description": "搜索框背景颜色",
       "description_zh": "搜索框背景颜色",
       "default": "#f2f2f2",
       "value": "",
       "type": "String"
     },
-    "border-color": {
-      "description": "Border color, if the color is configured, there will be a border",
-      "description_zh": "边框颜色，配置了颜色，才会有边框",
-      "default": "-",
-      "value": "",
-      "type": "String"
-    },
     "placeholder": {
-      "description": "Occupancy character content",
+      "description": "占位文字内容",
       "description_zh": "占位文字内容",
       "default": "请输入关键字",
       "value": "",
@@ -39,122 +32,199 @@
       "required": true
     },
     "clearabled": {
-      "description": "Whether to enable the purge control",
+      "description": "是否启用清除控件",
       "description_zh": "是否启用清除控件",
       "default": "true",
       "value": "",
       "type": "Boolean"
     },
     "focus": {
-      "description": "Whether or not to get focus automatically",
+      "description": "是否自动获得焦点",
       "description_zh": "是否自动获得焦点",
       "default": "false",
       "value": "",
       "type": "Boolean"
     },
-    "show-action": {
-      "description": "Whether to display the right control (the \"Search\" button on the right)",
+    "showAction": {
+      "description": "是否显示右侧控件(右侧的\"搜索\"按钮)",
       "description_zh": "是否显示右侧控件(右侧的\"搜索\"按钮)",
       "default": "true",
       "value": "",
       "type": "Boolean"
     },
-    "action-text": {
-      "description": "Control text on the right",
-      "description_zh": "右侧控件文字",
-      "default": "搜索",
-      "value": "",
-      "type": "String"
-    },
-    "action-style": {
-      "description": "The style of the control on the right, in the form of an object",
+    "actionStyle": {
+      "description": "右侧控件的样式，对象形式",
       "description_zh": "右侧控件的样式，对象形式",
       "default": "-",
       "value": "",
       "type": "Object"
     },
-    "input-align": {
-      "description": "Horizontal alignment of input box content",
+    "actionText": {
+      "description": "右侧控件文字",
+      "description_zh": "右侧控件文字",
+      "default": "搜索",
+      "value": "",
+      "type": "String"
+    },
+    "inputAlign": {
+      "description": "输入框内容水平对齐方式",
       "description_zh": "输入框内容水平对齐方式",
       "default": "left",
       "value": "",
       "type": "center / right"
     },
+    "inputStyle": {
+      "description": "自定义输入框样式，对象形式",
+      "description_zh": "自定义输入框样式，对象形式",
+      "default": "-",
+      "value": "",
+      "type": "Object"
+    },
     "disabled": {
-      "description": "Whether to enable the input box",
+      "description": "是否启用输入框",
       "description_zh": "是否启用输入框",
       "default": "false",
       "value": "",
       "type": "Boolean"
     },
-    "animation": {
-      "description": "Whether to enable animation, see the instructions above",
-      "description_zh": "是否开启动画，见上方说明",
-      "default": "false",
-      "value": "",
-      "type": "Boolean"
-    },
-    "height": {
-      "description": "Enter the height of the box, in rpx",
-      "description_zh": "输入框高度，单位rpx",
-      "default": "64",
-      "value": "",
-      "type": "String | Number"
-    },
-    "search-icon-color": {
-      "description": "The color of the search icon is the same as the font color of the input box by default",
-      "description_zh": "搜索图标的颜色，默认同输入框字体颜色",
-      "default": "-",
+    "borderColor": {
+      "description": "边框颜色，配置了颜色，才会有边框",
+      "description_zh": "边框颜色，配置了颜色，才会有边框",
+      "default": "transparent",
       "value": "",
       "type": "String"
     },
+    "searchIconColor": {
+      "description": "搜索图标的颜色，默认同输入框字体颜色",
+      "description_zh": "搜索图标的颜色，默认同输入框字体颜色",
+      "default": "#909399",
+      "value": "",
+      "type": "String"
+    },
+    "searchIconSize": {
+      "description": "搜索图标的大小",
+      "description_zh": "搜索图标的大小",
+      "default": "22",
+      "value": "",
+      "type": "Number"
+    },
     "color": {
-      "description": "Enter the font color of the input box",
+      "description": "输入框字体颜色",
       "description_zh": "输入框字体颜色",
       "default": "#606266",
       "value": "",
       "type": "String"
     },
-    "placeholder-color": {
+    "placeholderColor": {
       "description": "placeholder的颜色",
       "description_zh": "placeholder的颜色",
       "default": "#909399",
       "value": "",
       "type": "String"
     },
+    "searchIcon": {
+      "description": "输入框左边的图标，可以为uView图标名称或图片路径",
+      "description_zh": "输入框左边的图标，可以为uView图标名称或图片路径",
+      "default": "search",
+      "value": "",
+      "type": "String"
+    },
     "margin": {
-      "description": "The distance between the component and other elements on the top, bottom, left, and right, in the form of a string with units, such as \"30rpx\", \"30rpx 20rpx\", etc",
+      "description": "组件与其他上下左右元素之间的距离，带单位的字符串形式，如\"30rpx\"、\"30rpx 20rpx\"等写法",
       "description_zh": "组件与其他上下左右元素之间的距离，带单位的字符串形式，如\"30rpx\"、\"30rpx 20rpx\"等写法",
+      "default": "0",
+      "value": "",
+      "type": "String"
+    },
+    "animation": {
+      "description": "是否开启动画，见上方说明",
+      "description_zh": "是否开启动画，见上方说明",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
+    },
+    "value": {
+      "description": "输入框初始值",
+      "description_zh": "输入框初始值",
       "default": "-",
       "value": "",
       "type": "String"
     },
     "maxlength": {
-      "description": "The maximum length that can be entered in the input field, -1 is the unlimited length",
+      "description": "输入框最大能输入的长度，-1为不限制长度",
       "description_zh": "输入框最大能输入的长度，-1为不限制长度",
       "default": "-1",
       "value": "",
       "type": "String | Number"
     },
-    "input-style": {
-      "description": "Customize the input box style, object form",
-      "description_zh": "自定义输入框样式，对象形式",
+    "height": {
+      "description": "输入框高度，单位rpx",
+      "description_zh": "输入框高度，单位rpx",
+      "default": "64",
+      "value": "",
+      "type": "String | Number"
+    },
+    "label": {
+      "description": "搜索左侧文本信息",
+      "description_zh": "搜索左侧文本信息",
       "default": "-",
       "value": "",
-      "type": "Object"
-    },
-    "search-icon": {
-      "description": "The icon on the left side of the input box can be the uView icon name or the image path",
-      "description_zh": "输入框左边的图标，可以为uView图标名称或图片路径",
-      "default": "search",
-      "value": "",
-      "type": "String"
+      "type": "String | Number"
     }
   },
-  "link": "https://v1.uviewui.com/components/search.html",
-  "link_zh": "https://v1.uviewui.com/components/search.html",
+  "link": "https://uviewui.com/components/search.html",
+  "link_zh": "https://uviewui.com/components/search.html",
   "typeDetail": {},
-  "events": [],
+  "events": [
+    {
+      "name": "change",
+      "description": "输入框内容发生变化时触发",
+      "description_zh": "输入框内容发生变化时触发",
+      "params": "value：输入框的值"
+    },
+    {
+      "name": "search",
+      "description": "用户确定搜索时触发，用户按回车键，或者手机键盘右下角的\"搜索\"键时触发",
+      "description_zh": "用户确定搜索时触发，用户按回车键，或者手机键盘右下角的\"搜索\"键时触发",
+      "params": "value：输入框的值"
+    },
+    {
+      "name": "custom",
+      "description": "用户点击右侧控件时触发",
+      "description_zh": "用户点击右侧控件时触发",
+      "params": "value：输入框的值"
+    },
+    {
+      "name": "blur",
+      "description": "输入框失去焦点时触发",
+      "description_zh": "输入框失去焦点时触发",
+      "params": "value：输入框的值"
+    },
+    {
+      "name": "focus",
+      "description": "输入框获得焦点时触发",
+      "description_zh": "输入框获得焦点时触发",
+      "params": "value：输入框的值"
+    },
+    {
+      "name": "clear",
+      "description": "配置了clearabled后，清空内容时会发出此事件",
+      "description_zh": "配置了clearabled后，清空内容时会发出此事件",
+      "params": "-"
+    },
+    {
+      "name": "click",
+      "description": "disabled为true时，点击输入框，发出此事件，用于跳转搜索页",
+      "description_zh": "disabled为true时，点击输入框，发出此事件，用于跳转搜索页",
+      "params": "-"
+    },
+    {
+      "name": "clickIcon",
+      "description": "左侧icon点击时候时触发",
+      "description_zh": "左侧icon点击时候时触发",
+      "params": "-"
+    }
+  ],
   "methods": [],
   "slots": []
 }

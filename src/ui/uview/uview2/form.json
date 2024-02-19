@@ -2,65 +2,64 @@
   "name": "UForm",
   "props": {
     "model": {
-      "description": "Form data object",
+      "description": "表单数据对象",
       "description_zh": "表单数据对象",
-      "default": "-",
-      "value": "",
-      "type": "Object",
-      "required": true
-    },
-    "rules": {
-      "description": "This is set by ref, as described above",
-      "description_zh": "通过ref设置，见上方说明",
       "default": "-",
       "value": "",
       "type": "Object"
     },
-    "error-type": {
-      "description": "The error prompt, in the form of an array, is described above",
-      "description_zh": "错误的提示方式，数组形式，见上方说明",
-      "default": "['message']",
+    "rules": {
+      "description": "通过ref设置，如果rules中有自定义方法等，需要使用setRules方法设置规则，见上方说明",
+      "description_zh": "通过ref设置，如果rules中有自定义方法等，需要使用setRules方法设置规则，见上方说明",
+      "default": "-",
       "value": "",
-      "type": "Array"
+      "type": "Object|Function|Array"
     },
-    "border-bottom": {
-      "description": "Whether to display the underlined borders of the form fields",
+    "errorType": {
+      "description": "错误的提示方式，见上方说明",
+      "description_zh": "错误的提示方式，见上方说明",
+      "default": "message",
+      "value": "",
+      "type": "String"
+    },
+    "borderBottom": {
+      "description": "是否显示表单域的下划线边框",
       "description_zh": "是否显示表单域的下划线边框",
       "default": "true",
       "value": "",
       "type": "Boolean"
     },
-    "label-position": {
-      "description": "The position of the form field hint text, left-left, top-top",
+    "labelPosition": {
+      "description": "表单域提示文字的位置，left-左侧，top-上方",
       "description_zh": "表单域提示文字的位置，left-左侧，top-上方",
       "default": "left",
       "value": "",
       "type": "top"
     },
-    "label-width": {
-      "description": "The width of the prompt text, in rpx",
-      "description_zh": "提示文字的宽度，单位rpx",
-      "default": "90",
+    "labelWidth": {
+      "description": "提示文字的宽度，单位px",
+      "description_zh": "提示文字的宽度，单位px",
+      "default": "45",
       "value": "",
       "type": "数值 / auto"
     },
-    "label-style": {
-      "description": "label, object form",
-      "description_zh": "label的样式，对象形式",
-      "default": "-",
-      "value": "",
-      "type": "Object"
-    },
-    "label-align": {
-      "description": "label",
-      "description_zh": "label的对齐方式",
+    "labelAlign": {
+      "description": "lable字体的对齐方式",
+      "description_zh": "lable字体的对齐方式",
       "default": "left",
       "value": "",
       "type": "center / right"
+    },
+    "labelStyle": {
+      "description": "lable的样式，对象形式",
+      "description_zh": "lable的样式，对象形式",
+      "default": "-",
+      "value": "",
+      "type": "Object"
     }
   },
-  "link": "https://v1.uviewui.com/components/form.html",
-  "link_zh": "https://v1.uviewui.com/components/form.html",
+  "link": "https://uviewui.com/components/form.html",
+  "link_zh": "https://uviewui.com/components/form.html",
   "typeDetail": {},
   "events": [],
   "suggestions": [
@@ -68,10 +67,24 @@
   ],
   "methods": [
     {
+      "name": "validate",
+      "description": "A method for validating the entire form",
+      "params": "Function(callback: Function(boolean))",
+      "description_zh": "对整个表单进行校验的方法",
+      "value": ""
+    },
+    {
       "name": "setRules",
       "description": "Call this method to set the validation rule",
       "params": "Function(rules)",
       "description_zh": "调用此方法，设置校验规则",
+      "value": ""
+    },
+    {
+      "name": "validateField",
+      "description": "对部分表单字段进行校验",
+      "params": "Function(value, Function(errorsRes))",
+      "description_zh": "对部分表单字段进行校验",
       "value": ""
     },
     {
@@ -82,10 +95,10 @@
       "value": ""
     },
     {
-      "name": "validate",
-      "description": "A method for validating the entire form",
-      "params": "Function(callback: Function(boolean))",
-      "description_zh": "对整个表单进行校验的方法",
+      "name": "clearValidate",
+      "description": "清空校验结果",
+      "params": "Function(props)",
+      "description_zh": "对清空校验结果",
       "value": ""
     }
   ],

@@ -1,5 +1,5 @@
 {
-  "name": "UPicker",
+  "name": "UDatetimePicker",
   "props": {
     ":show": {
       "description": "用于控制选择器的弹出与收起",
@@ -16,24 +16,87 @@
       "value": "",
       "type": "Boolean"
     },
+    ":v-model": {
+      "description": "绑定值",
+      "description_zh": "绑定值",
+      "default": "-",
+      "value": "",
+      "type": "String | Number",
+      "required": true
+    },
     "title": {
-      "description": "顶部中间的标题",
-      "description_zh": "顶部中间的标题",
+      "description": "顶部标题",
+      "description_zh": "顶部标题",
       "default": "-",
       "value": "",
       "type": "String"
     },
-    ":columns": {
-      "description": "设置每一列的数据，见上方说明",
-      "description_zh": "设置每一列的数据，见上方说明",
-      "default": "-",
+    "mode": {
+      "description": "展示格式",
+      "description_zh": "展示格式",
+      "default": "datetime",
       "value": "",
-      "type": "Array",
-      "required": true
+      "type": "String"
+    },
+    "maxDate": {
+      "description": "可选的最大时间（时间戳毫秒）",
+      "description_zh": "可选的最大时间（时间戳毫秒）",
+      "default": "最大默认值为后10年",
+      "value": "",
+      "type": "Number"
+    },
+    "minDate": {
+      "description": "可选的最小时间（时间戳毫秒）",
+      "description_zh": "可选的最小时间（时间戳毫秒）",
+      "default": "最小默认值为前10年",
+      "value": "",
+      "type": "Number"
+    },
+    "minHour": {
+      "description": "可选的最小小时，仅mode=time有效",
+      "description_zh": "可选的最小小时，仅mode=time有效",
+      "default": "0",
+      "value": "",
+      "type": "Number"
+    },
+    "maxHour": {
+      "description": "可选的最大小时，仅mode=time有效",
+      "description_zh": "可选的最大小时，仅mode=time有效",
+      "default": "23",
+      "value": "",
+      "type": "Number"
+    },
+    "minMinute": {
+      "description": "可选的最小分钟，仅mode=time有效",
+      "description_zh": "可选的最小分钟，仅mode=time有效",
+      "default": "0",
+      "value": "",
+      "type": "Number"
+    },
+    "maxMinute": {
+      "description": "可选的最大分钟，仅mode=time有效",
+      "description_zh": "可选的最大分钟，仅mode=time有效",
+      "default": "59",
+      "value": "",
+      "type": "Number"
+    },
+    "filter": {
+      "description": "选项过滤函数",
+      "description_zh": "选项过滤函数",
+      "default": "null",
+      "value": "",
+      "type": "Function"
+    },
+    "formatter": {
+      "description": "输入过滤或格式化函数(如需兼容微信小程序，则只能通过setFormatter方法)",
+      "description_zh": "输入过滤或格式化函数(如需兼容微信小程序，则只能通过setFormatter方法)",
+      "default": "null",
+      "value": "",
+      "type": "Function"
     },
     "loading": {
-      "description": "加载状态",
-      "description_zh": "加载状态",
+      "description": "是否显示加载中状态",
+      "description_zh": "是否显示加载中状态",
       "default": "false",
       "value": "",
       "type": "Boolean"
@@ -80,13 +143,6 @@
       "value": "",
       "type": "String | Number"
     },
-    "keyName": {
-      "description": "自定义需要展示的text属性键名",
-      "description_zh": "自定义需要展示的text属性键名",
-      "default": "text",
-      "value": "",
-      "type": "String"
-    },
     "closeOnClickOverlay": {
       "description": "是否允许点击遮罩关闭选择器（注意：关闭事件需要自行处理，只会在开启closeOnClickOverlay后点击遮罩层执行close回调）",
       "description_zh": "是否允许点击遮罩关闭选择器（注意：关闭事件需要自行处理，只会在开启closeOnClickOverlay后点击遮罩层执行close回调）",
@@ -97,20 +153,13 @@
     "defaultIndex": {
       "description": "各列的默认索引",
       "description_zh": "各列的默认索引",
-      "default": "-",
+      "default": "[]",
       "value": "",
       "type": "Array"
-    },
-    "immediateChange ": {
-      "description": "是否在手指松开时立即触发change事件。若不开启则会在滚动动画结束后触发change事件，只在微信2.21.1及以上有效",
-      "description_zh": "是否在手指松开时立即触发change事件。若不开启则会在滚动动画结束后触发change事件，只在微信2.21.1及以上有效",
-      "default": "false",
-      "value": "",
-      "type": "Boolean"
     }
   },
-  "link": "https://uviewui.com/components/picker.html",
-  "link_zh": "https://uviewui.com/components/picker.html",
+  "link": "https://uviewui.com/components/datetimePicker.html",
+  "link_zh": "https://uviewui.com/components/datetimePicker.html",
   "typeDetail": {},
   "events": [
     {
@@ -121,15 +170,15 @@
     },
     {
       "name": "confirm",
-      "description": "点击确定按钮，返回当前选择的值",
-      "description_zh": "点击确定按钮，返回当前选择的值",
-      "params": "Array: 见上方\"回调参数\"部分说明"
+      "description": "点击确定按钮时触发",
+      "description_zh": "点击确定按钮时触发",
+      "params": "value:返回所选时间戳，mode:当前模式"
     },
     {
       "name": "change",
       "description": "当选择值变化时触发",
       "description_zh": "当选择值变化时触发",
-      "params": "Array: 见上方\"回调参数\"部分说明"
+      "params": "value:返回所选时间戳，mode:当前模式"
     },
     {
       "name": "cancel",

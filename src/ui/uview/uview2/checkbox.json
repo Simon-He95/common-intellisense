@@ -1,86 +1,103 @@
 {
   "name": "UCheckbox",
   "props": {
-    ":v-model": {
-      "description": "Bind the value of a checkbox bidirectionally, and if the variable is set to true, it will be selected",
-      "description_zh": "双向绑定某一个checkbox的值，如果将该变量设置为true，将会被选中",
+    "name": {
+      "description": "checkbox的名称",
+      "description_zh": "checkbox的名称",
       "default": "-",
       "value": "",
-      "type": "String \\ Number",
-      "foreach": true,
-      "required": true
-    },
-    "size": {
-      "description": "The size of the component as a whole, in rpx",
-      "description_zh": "组件整体的大小，单位rpx",
-      "default": "-",
-      "value": "",
-      "type": "String \\ Number"
-    },
-    "label-size": {
-      "description": "label font size, in rpx",
-      "description_zh": "label字体大小，单位rpx",
-      "default": "-",
-      "value": "",
-      "type": "String \\ Number"
-    },
-    "icon-size": {
-      "description": "Icon size, in rpx",
-      "description_zh": "图标大小，单位rpx",
-      "default": "-",
-      "value": "",
-      "type": "String \\ Number"
-    },
-    ":name": {
-      "description": "Checkbox component",
-      "description_zh": "checkbox组件的标示符",
-      "default": "-",
-      "value": "",
-      "type": "String \\ Number",
-      "foreach": true,
-      "required": true
+      "type": "String \\ Number \\ Boolean"
     },
     "shape": {
-      "description": "Shapes, see description above",
-      "description_zh": "形状，见上方说明",
+      "description": "形状，square为方形，circle为圆型",
+      "description_zh": "形状，square为方形，circle为圆型",
+      "default": "square",
+      "value": "",
+      "type": "circle"
+    },
+    "size": {
+      "description": "整体的大小",
+      "description_zh": "整体的大小",
       "default": "-",
       "value": "",
-      "type": "square"
+      "type": "String \\ Number"
+    },
+    "checked": {
+      "description": "是否默认选中",
+      "description_zh": "是否默认选中",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
     },
     "disabled": {
-      "description": "Whether to disable or not",
+      "description": "是否禁用",
       "description_zh": "是否禁用",
       "default": "-",
       "value": "",
-      "type": "Boolean"
+      "type": "String \\ Boolean"
     },
-    "label-disabled": {
-      "description": "Whether to disable clicking on the text action checkbox",
-      "description_zh": "是否禁止点击文本操作checkbox",
-      "default": "-",
-      "value": "",
-      "type": "Boolean"
-    },
-    "active-color": {
-      "description": "If you select the color when you set the active-color of CheckboxGroup, it will not work",
-      "description_zh": "选中时的颜色，如设置CheckboxGroup的active-color将失效",
+    "activeColor": {
+      "description": "选中状态下的颜色，如设置此值，将会覆盖parent的activeColor值",
+      "description_zh": "选中状态下的颜色，如设置此值，将会覆盖parent的activeColor值",
       "default": "-",
       "value": "",
       "type": "String"
+    },
+    "inactiveColor": {
+      "description": "未选中的颜色",
+      "description_zh": "未选中的颜色",
+      "default": "-",
+      "value": "",
+      "type": "String"
+    },
+    "iconSize": {
+      "description": "图标的大小，单位px",
+      "description_zh": "图标的大小，单位px",
+      "default": "-",
+      "value": "",
+      "type": "String \\ Number"
+    },
+    "iconColor": {
+      "description": "图标颜色",
+      "description_zh": "图标颜色",
+      "default": "-",
+      "value": "",
+      "type": "String"
+    },
+    "label": {
+      "description": "label提示文字，因为nvue下，直接slot进来的文字，由于特殊的结构，无法修改样式",
+      "description_zh": "label提示文字，因为nvue下，直接slot进来的文字，由于特殊的结构，无法修改样式",
+      "default": "-",
+      "value": "",
+      "type": "String \\ Number",
+      "required": true
+    },
+    "labelSize": {
+      "description": "label的字体大小，px单位",
+      "description_zh": "label的字体大小，px单位",
+      "default": "-",
+      "value": "",
+      "type": "String \\ Number"
+    },
+    "labelColor": {
+      "description": "label的颜色",
+      "description_zh": "label的颜色",
+      "default": "-",
+      "value": "",
+      "type": "String"
+    },
+    "labelDisabled": {
+      "description": "是否禁止点击提示语选中复选框",
+      "description_zh": "是否禁止点击提示语选中复选框",
+      "default": "-",
+      "value": "",
+      "type": "String \\ Boolean"
     }
   },
-  "link": "https://v1.uviewui.com/components/checkbox.html",
-  "link_zh": "https://v1.uviewui.com/components/checkbox.html",
+  "link": "https://uviewui.com/components/checkbox.html",
+  "link_zh": "https://uviewui.com/components/checkbox.html",
   "typeDetail": {},
-  "events": [
-    {
-      "name": "change",
-      "description": "Triggered when the state of a checkbox changes, the callback is made to an object",
-      "description_zh": "某个checkbox状态发生变化时触发，回调为一个对象",
-      "params": "detail = {value: [true或者false，true为被选中，否则反之], name: [通过props传递的name参数] }",
-      "value": ""
-    }
-  ],
+  "events": [],
   "methods": [],
   "slots": []
 }

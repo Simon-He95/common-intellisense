@@ -62,6 +62,12 @@ import waterfall from './waterfall.json'
 import text from './text.json'
 import cell from './cell.json'
 import cellGroup from './cellGroup.json'
+import album from './album.json'
+import code from './code.json'
+import datetimePicker from './datetimePicker.json'
+import loadingIcon from './loadingIcon.json'
+import loadingPage from './loadingPage.json'
+import textarea from './textarea.json'
 
 export function uview2() {
   const map: any = [
@@ -127,6 +133,12 @@ export function uview2() {
     text,
     cell,
     cellGroup,
+    album,
+    code,
+    datetimePicker,
+    loadingIcon,
+    loadingPage,
+    textarea,
   ]
 
   return propsReducer('uview', map)
@@ -197,6 +209,12 @@ export function uview2Components() {
     [text, text.name, `<${text.name}></${text.name}>`],
     [cell, cell.name, `<${cell.name}></${cell.name}>`],
     [cellGroup, cellGroup.name, `<${cellGroup.name}></${cellGroup.name}>`],
+    [album, album.name, `<${album.name}></${album.name}>`],
+    [code, code.name, `<${code.name}></${code.name}>`],
+    [datetimePicker, datetimePicker.name, `<${datetimePicker.name}></${datetimePicker.name}>`],
+    [loadingIcon, loadingIcon.name, `<${loadingIcon.name}></${loadingIcon.name}>`],
+    [loadingPage, loadingPage.name, `<${loadingPage.name}></${loadingPage.name}>`],
+    [textarea, textarea.name, `<${textarea.name}></${textarea.name}>`],
   ]
   return componentsReducer(map, true, 'u', 'uview-ui')
 }

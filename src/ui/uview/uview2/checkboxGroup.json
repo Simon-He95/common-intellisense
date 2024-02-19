@@ -1,72 +1,122 @@
 {
   "name": "UCheckboxGroup",
   "props": {
-    "max": {
-      "description": "The maximum number of checkboxes that can be selected",
-      "description_zh": "最多能选中多少个checkbox",
-      "default": "999",
+    ":v-model": {
+      "description": "绑定的值",
+      "description_zh": "绑定的值",
+      "default": "[]",
       "value": "",
-      "type": "String \\ Number"
+      "type": "Array",
+      "required": true
+    },
+    "name": {
+      "description": "标识符",
+      "description_zh": "标识符",
+      "default": "-",
+      "value": "",
+      "type": "String"
+    },
+    "value": {
+      "description": "绑定的值",
+      "description_zh": "绑定的值",
+      "default": "[]",
+      "value": "",
+      "type": "Array"
+    },
+    "shape": {
+      "description": "形状，circle-圆形，square-方形",
+      "description_zh": "形状，circle-圆形，square-方形",
+      "default": "square",
+      "value": "",
+      "type": "circle"
     },
     "disabled": {
-      "description": "Whether to disable all checkboxes",
-      "description_zh": "是否禁用所有checkbox",
+      "description": "是否禁用全部checkbox",
+      "description_zh": "是否禁用全部checkbox",
       "default": "false",
       "value": "",
       "type": "Boolean"
     },
-    "icon-size": {
-      "description": "Icon size, in rpx",
-      "description_zh": "图标大小，单位rpx",
-      "default": "20",
-      "value": "",
-      "type": "String \\ Number"
-    },
-    "size": {
-      "description": "The size of the component as a whole, in rpx",
-      "description_zh": "组件整体的大小，单位rpx",
-      "default": "34",
-      "value": "",
-      "type": "String \\ Number"
-    },
-    "shape": {
-      "description": "Shapes, see description above",
-      "description_zh": "形状，见上方说明",
-      "default": "circle",
-      "value": "",
-      "type": "square"
-    },
-    "active-color": {
-      "description": "When selected, the color is applied to all child Checkbox components",
-      "description_zh": "选中时的颜色，应用到所有子Checkbox组件",
+    "activeColor": {
+      "description": "选中状态下的颜色，如子Checkbox组件设置此值，将会覆盖本值",
+      "description_zh": "选中状态下的颜色，如子Checkbox组件设置此值，将会覆盖本值",
       "default": "#2979ff",
       "value": "",
       "type": "String"
     },
-    "label-disabled": {
-      "description": "Whether to disable clicking on the text action checkbox",
-      "description_zh": "是否禁止点击文本操作checkbox",
+    "inactiveColor": {
+      "description": "未选中的颜色",
+      "description_zh": "未选中的颜色",
+      "default": "#c8c9cc",
+      "value": "",
+      "type": "String"
+    },
+    "size": {
+      "description": "整个组件的尺寸，默认px",
+      "description_zh": "整个组件的尺寸，默认px",
+      "default": "18",
+      "value": "",
+      "type": "String"
+    },
+    "placement": {
+      "description": "布局方式，row-横向，column-纵向",
+      "description_zh": "布局方式，row-横向，column-纵向",
+      "default": "row",
+      "value": "",
+      "type": "column"
+    },
+    "labelSize": {
+      "description": "label的字体大小，px单位",
+      "description_zh": "label的字体大小，px单位",
+      "default": "14",
+      "value": "",
+      "type": "String \\ Number"
+    },
+    "labelColor": {
+      "description": "label的字体颜色",
+      "description_zh": "label的字体颜色",
+      "default": "#303133",
+      "value": "",
+      "type": "String"
+    },
+    "labelDisabled": {
+      "description": "是否禁止点击文本操作",
+      "description_zh": "是否禁止点击文本操作",
       "default": "false",
       "value": "",
       "type": "Boolean"
     },
-    "width": {
-      "description": "checkbox的宽度，需带单位，如50%，150rpx",
-      "description_zh": "checkbox的宽度，需带单位，如50%，150rpx",
-      "default": "auto",
+    "iconColor": {
+      "description": "图标颜色",
+      "description_zh": "图标颜色",
+      "default": "#ffffff",
       "value": "",
       "type": "String"
     },
-    "wrap": {
-      "description": "Whether each checkbox occupies a row",
-      "description_zh": "是否每个checkbox占一行",
+    "iconSize": {
+      "description": "图标的大小，单位px",
+      "description_zh": "图标的大小，单位px",
+      "default": "12",
+      "value": "",
+      "type": "String \\ Number"
+    },
+    "iconPlacement": {
+      "description": "勾选图标的对齐方式，left-左边，right-右边",
+      "description_zh": "勾选图标的对齐方式，left-左边，right-右边",
+      "default": "left",
+      "value": "",
+      "type": "right"
+    },
+    "borderBottom": {
+      "description": "竖向配列时，是否显示下划线",
+      "description_zh": "竖向配列时，是否显示下划线",
       "default": "false",
       "value": "",
       "type": "Boolean"
     }
   },
-  "link": "https://v1.uviewui.com/components/checkbox.html",
-  "link_zh": "https://v1.uviewui.com/components/checkbox.html",
+  "link": "https://uviewui.com/components/checkbox.html",
+  "link_zh": "https://uviewui.com/components/checkbox.html",
   "typeDetail": {},
   "events": [
     {
