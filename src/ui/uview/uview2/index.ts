@@ -1,7 +1,6 @@
 import { componentsReducer, propsReducer } from '../../utils'
 import formItem from './formItem.json'
 import form from './form.json'
-import field from './field.json'
 import gap from './gap.json'
 import grid from './grid.json'
 import gridItem from './gridItem.json'
@@ -69,7 +68,6 @@ export function uview2() {
   const map: any = [
     formItem,
     form,
-    field,
     gap,
     grid,
     gridItem,
@@ -140,7 +138,6 @@ export function uview2Components() {
   const map = [
     [formItem, formItem.name, `<${formItem.name}></${formItem.name}>`],
     [form, form.name, `<${form.name}></${form.name}>`],
-    [field, field.name, `<${field.name}></${field.name}>`],
     [gap, gap.name, `<${gap.name}></${gap.name}>`],
     [grid, grid.name, `<${grid.name}></${grid.name}>`],
     [gridItem, gridItem.name, `<${gridItem.name}></${gridItem.name}>`],

@@ -64,10 +64,6 @@
 }
 ```
 
-## 🪴 Project Activity
-
-![Alt](https://repobeats.axiom.co/api/embed/f10c064d5ec1d5f2ad1d829a00625ed361812bfd.svg "Repobeats analytics image")
-
 ## :coffee:
 
 [请我喝一杯咖啡](https://github.com/Simon-He95/sponsor)

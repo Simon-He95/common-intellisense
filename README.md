@@ -64,10 +64,6 @@ Install the supported ui component library in your project and install the plug-
 }
 ```
 
-## 🪴 Project Activity
-
-![Alt](https://repobeats.axiom.co/api/embed/f10c064d5ec1d5f2ad1d829a00625ed361812bfd.svg "Repobeats analytics image")
-
 ## :coffee:
 
 [buy me a cup of coffee](https://github.com/Simon-He95/sponsor)
