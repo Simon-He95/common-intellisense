@@ -19,6 +19,7 @@ export const UINames = [
   '@arco-design/web-react',
   '@arco-design/web-vue',
   'uview-ui',
+  '@tarojs/components',
 ]
 
 export const nameMap: any = {
@@ -31,4 +32,5 @@ export const nameMap: any = {
   '@arcoDesign/webReact': 'arcoDesign',
   '@arcoDesign/webVue': 'arcoDesignVue',
   'uviewUi': 'uview',
+  '@tarojs/components': 'taro',
 }
