@@ -1,0 +1,147 @@
+{
+  "name": "Navigator",
+  "props": {
+    "target": {
+      "description": "在哪个目标上发生跳转，默认当前小程序",
+      "description_zh": "在哪个目标上发生跳转，默认当前小程序",
+      "default": "\"self\"",
+      "value": "",
+      "type": "keyof Target",
+      "required": false
+    },
+    "url": {
+      "description": "当前小程序内的跳转链接",
+      "description_zh": "当前小程序内的跳转链接",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "openType": {
+      "description": "跳转方式",
+      "description_zh": "跳转方式",
+      "default": "\"navigate\"",
+      "value": "",
+      "type": "keyof OpenType",
+      "required": false
+    },
+    "delta": {
+      "description": "当 open-type 为 'navigateBack' 时有效，表示回退的层数",
+      "description_zh": "当 open-type 为 'navigateBack' 时有效，表示回退的层数",
+      "default": "",
+      "value": "",
+      "type": "number",
+      "required": false
+    },
+    "appId": {
+      "description": "当 target=\"miniProgram\" 时有效，要打开的小程序 appId",
+      "description_zh": "当 target=\"miniProgram\" 时有效，要打开的小程序 appId",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "path": {
+      "description": "当 target=\"miniProgram\" 时有效，打开的页面路径，如果为空则打开首页",
+      "description_zh": "当 target=\"miniProgram\" 时有效，打开的页面路径，如果为空则打开首页",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "extraData": {
+      "description": "当 target=\"miniProgram\" 时有效，需要传递给目标小程序的数据，目标小程序可在 App.onLaunch()，App.onShow() 中获取到这份数据.",
+      "description_zh": "当 target=\"miniProgram\" 时有效，需要传递给目标小程序的数据，目标小程序可在 App.onLaunch()，App.onShow() 中获取到这份数据.",
+      "default": "",
+      "value": "",
+      "type": "object",
+      "required": false
+    },
+    "version": {
+      "description": "当 target=\"miniProgram\" 时有效，要打开的小程序版本",
+      "description_zh": "当 target=\"miniProgram\" 时有效，要打开的小程序版本",
+      "default": "",
+      "value": "",
+      "type": "keyof Version",
+      "required": false
+    },
+    "hoverClass": {
+      "description": "指定按下去的样式类。当 hover-class=\"none\" 时，没有点击态效果",
+      "description_zh": "指定按下去的样式类。当 hover-class=\"none\" 时，没有点击态效果",
+      "default": "\"navigator-hover\"",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "hoverStopPropagation": {
+      "description": "指定是否阻止本节点的祖先节点出现点击态",
+      "description_zh": "指定是否阻止本节点的祖先节点出现点击态",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "hoverStartTime": {
+      "description": "按住后多久出现点击态，单位毫秒",
+      "description_zh": "按住后多久出现点击态，单位毫秒",
+      "default": "50",
+      "value": "",
+      "type": "number",
+      "required": false
+    },
+    "hoverStayTime": {
+      "description": "手指松开后点击态保留时间，单位毫秒",
+      "description_zh": "手指松开后点击态保留时间，单位毫秒",
+      "default": "600",
+      "value": "",
+      "type": "number",
+      "required": false
+    },
+    "shortLink": {
+      "description": "当target=\"miniProgram\"时有效，当传递该参数后，可以不传 app-id 和 path。链接可以通过【小程序菜单】->【复制链接】获取。",
+      "description_zh": "当target=\"miniProgram\"时有效，当传递该参数后，可以不传 app-id 和 path。链接可以通过【小程序菜单】->【复制链接】获取。",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "ariaLabel": {
+      "description": "无障碍访问，（属性）元素的额外描述",
+      "description_zh": "无障碍访问，（属性）元素的额外描述",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "onSuccess": {
+      "description": "当 target=\"miniProgram\" 时有效，跳转小程序成功",
+      "description_zh": "当 target=\"miniProgram\" 时有效，跳转小程序成功",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction",
+      "required": false
+    },
+    "onFail": {
+      "description": "当 target=\"miniProgram\" 时有效，跳转小程序失败",
+      "description_zh": "当 target=\"miniProgram\" 时有效，跳转小程序失败",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction",
+      "required": false
+    },
+    "onComplete": {
+      "description": "当 target=\"miniProgram\" 时有效，跳转小程序完成",
+      "description_zh": "当 target=\"miniProgram\" 时有效，跳转小程序完成",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction",
+      "required": false
+    }
+  },
+  "link": "https://docs.taro.zone/docs/components/navig/navigator",
+  "link_zh": "https://docs.taro.zone/docs/components/navig/navigator",
+  "typeDetail": {},
+  "events": [],
+  "methods": [],
+  "slots": []
+}

@@ -1,0 +1,443 @@
+{
+  "name": "Button",
+  "props": {
+    "size": {
+      "description": "按钮的大小",
+      "description_zh": "按钮的大小",
+      "default": "default",
+      "value": "",
+      "type": "keyof Size",
+      "required": false
+    },
+    "type": {
+      "description": "按钮的样式类型",
+      "description_zh": "按钮的样式类型",
+      "default": "default",
+      "value": "",
+      "type": "keyof Type",
+      "required": false
+    },
+    "plain": {
+      "description": "按钮是否镂空，背景色透明",
+      "description_zh": "按钮是否镂空，背景色透明",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "disabled": {
+      "description": "是否禁用",
+      "description_zh": "是否禁用",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "loading": {
+      "description": "名称前是否带 loading 图标",
+      "description_zh": "名称前是否带 loading 图标",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "formType": {
+      "description": "用于 <form/> 组件，点击分别会触发 <form/> 组件的 submit/reset 事件",
+      "description_zh": "用于 <form/> 组件，点击分别会触发 <form/> 组件的 submit/reset 事件",
+      "default": "",
+      "value": "",
+      "type": "keyof FormType",
+      "required": false
+    },
+    "openType": {
+      "description": "微信开放能力",
+      "description_zh": "微信开放能力",
+      "default": "",
+      "value": "",
+      "type": "OpenType",
+      "required": false
+    },
+    "hoverClass": {
+      "description": "指定按下去的样式类。当 hover-class=\"none\" 时，没有点击态效果",
+      "description_zh": "指定按下去的样式类。当 hover-class=\"none\" 时，没有点击态效果",
+      "default": "button-hover",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "hoverStyle": {
+      "description": "由于 RN 不支持 hoverClass，故 RN 端的 Button 组件实现了 hoverStyle属性，写法和 style 类似，只不过 hoverStyle 的样式是指定按下去的样式。",
+      "description_zh": "由于 RN 不支持 hoverClass，故 RN 端的 Button 组件实现了 hoverStyle属性，写法和 style 类似，只不过 hoverStyle 的样式是指定按下去的样式。",
+      "default": "none",
+      "value": "",
+      "type": "StyleProp<ViewStyle>",
+      "required": false
+    },
+    "hoverStopPropagation": {
+      "description": "指定是否阻止本节点的祖先节点出现点击态",
+      "description_zh": "指定是否阻止本节点的祖先节点出现点击态",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "hoverStartTime": {
+      "description": "按住后多久出现点击态，单位毫秒",
+      "description_zh": "按住后多久出现点击态，单位毫秒",
+      "default": "20",
+      "value": "",
+      "type": "number",
+      "required": false
+    },
+    "hoverStayTime": {
+      "description": "手指松开后点击态保留时间，单位毫秒",
+      "description_zh": "手指松开后点击态保留时间，单位毫秒",
+      "default": "70",
+      "value": "",
+      "type": "number",
+      "required": false
+    },
+    "lang": {
+      "description": "指定返回用户信息的语言，zh_CN 简体中文，zh_TW 繁体中文，en 英文。生效时机: open-type=\"getUserInfo\"",
+      "description_zh": "指定返回用户信息的语言，zh_CN 简体中文，zh_TW 繁体中文，en 英文。生效时机: open-type=\"getUserInfo\"",
+      "default": "",
+      "value": "",
+      "type": "keyof Lang",
+      "required": false
+    },
+    "sessionFrom": {
+      "description": "会话来源生效时机：open-type=\"contact\"",
+      "description_zh": "会话来源生效时机：open-type=\"contact\"",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "sendMessageTitle": {
+      "description": "会话内消息卡片标题生效时机：open-type=\"contact\"",
+      "description_zh": "会话内消息卡片标题生效时机：open-type=\"contact\"",
+      "default": "当前标题",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "sendMessagePath": {
+      "description": "会话内消息卡片点击跳转小程序路径生效时机：open-type=\"contact\"",
+      "description_zh": "会话内消息卡片点击跳转小程序路径生效时机：open-type=\"contact\"",
+      "default": "当前标题",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "sendMessageImg": {
+      "description": "会话内消息卡片图片生效时机：open-type=\"contact\"",
+      "description_zh": "会话内消息卡片图片生效时机：open-type=\"contact\"",
+      "default": "截图",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "appParameter": {
+      "description": "打开 APP 时，向 APP 传递的参数生效时机：open-type=\"launchApp\"",
+      "description_zh": "打开 APP 时，向 APP 传递的参数生效时机：open-type=\"launchApp\"",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "scope": {
+      "description": "支付宝小程序 scope生效时机：open-type=\"getAuthorize\"",
+      "description_zh": "支付宝小程序 scope生效时机：open-type=\"getAuthorize\"",
+      "default": "",
+      "value": "",
+      "type": "userInfo / phoneNumber",
+      "required": false
+    },
+    "showMessageCard": {
+      "description": "显示会话内消息卡片生效时机：open-type=\"contact\"",
+      "description_zh": "显示会话内消息卡片生效时机：open-type=\"contact\"",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "publicId": {
+      "description": "生活号 id，必须是当前小程序同主体且已关联的生活号，open-type=\"lifestyle\" 时有效。",
+      "description_zh": "生活号 id，必须是当前小程序同主体且已关联的生活号，open-type=\"lifestyle\" 时有效。",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "templateId": {
+      "description": "发送订阅类模板消息所用的模板库标题 ID ，可通过 getTemplateLibraryList 获取当参数类型为 Array 时，可传递 1~3 个模板库标题 ID",
+      "description_zh": "发送订阅类模板消息所用的模板库标题 ID ，可通过 getTemplateLibraryList 获取当参数类型为 Array 时，可传递 1~3 个模板库标题 ID",
+      "default": "",
+      "value": "",
+      "type": "string or string[]",
+      "required": false
+    },
+    "subscribeId": {
+      "description": "发送订阅类模板消息时所使用的唯一标识符，内容由开发者自定义，用来标识订阅场景注意：同一用户在同一 subscribe-id 下的多次授权不累积下发权限，只能下发一条。若要订阅多条，需要不同 subscribe-id",
+      "description_zh": "发送订阅类模板消息时所使用的唯一标识符，内容由开发者自定义，用来标识订阅场景注意：同一用户在同一 subscribe-id 下的多次授权不累积下发权限，只能下发一条。若要订阅多条，需要不同 subscribe-id",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "groupId": {
+      "description": "群聊 id",
+      "description_zh": "群聊 id",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "guildId": {
+      "description": "打开频道页面时，传递的频道号",
+      "description_zh": "打开频道页面时，传递的频道号",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "shareType": {
+      "description": "分享类型集合，请参考下面share-type有效值说明。share-type后续将不再维护，请更新为share-mode",
+      "description_zh": "分享类型集合，请参考下面share-type有效值说明。share-type后续将不再维护，请更新为share-mode",
+      "default": "27",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "shareMode": {
+      "description": "分享类型集合，请参考下面share-mode有效值说明",
+      "description_zh": "分享类型集合，请参考下面share-mode有效值说明",
+      "default": "['qq', 'qzone']",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "ariaLabel": {
+      "description": "无障碍访问，（属性）元素的额外描述",
+      "description_zh": "无障碍访问，（属性）元素的额外描述",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "openId": {
+      "description": "添加好友时，对方的 openid",
+      "description_zh": "添加好友时，对方的 openid",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "shareMessageFriendInfo": {
+      "description": "发送对象的 FriendInfo",
+      "description_zh": "发送对象的 FriendInfo",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "shareMessageTitle": {
+      "description": "转发标题，不传则默认使用当前小程序的昵称。 FriendInfo",
+      "description_zh": "转发标题，不传则默认使用当前小程序的昵称。 FriendInfo",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "shareMessageImg": {
+      "description": "转发显示图片的链接，可以是网络图片路径（仅 QQ CDN 域名路径）或本地图片文件路径或相对代码包根目录的图片文件路径。显示图片长宽比是 5:4FriendInfo",
+      "description_zh": "转发显示图片的链接，可以是网络图片路径（仅 QQ CDN 域名路径）或本地图片文件路径或相对代码包根目录的图片文件路径。显示图片长宽比是 5:4FriendInfo",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "dataAwemeId": {
+      "description": "跳转抖音号个人页，只支持小程序绑定的品牌号、员工号、合作号",
+      "description_zh": "跳转抖音号个人页，只支持小程序绑定的品牌号、员工号、合作号",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "dataIsHalfPage": {
+      "description": "是否开启半屏模式",
+      "description_zh": "是否开启半屏模式",
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "onGetUserInfo": {
+      "description": "用户点击该按钮时，会返回获取到的用户信息，回调的detail数据与 Taro.getUserInfo 返回的一致生效时机: open-type=\"getUserInfo\"",
+      "description_zh": "用户点击该按钮时，会返回获取到的用户信息，回调的detail数据与 Taro.getUserInfo 返回的一致生效时机: open-type=\"getUserInfo\"",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction<onGetUserInfoEventDetail>",
+      "required": false
+    },
+    "onGetAuthorize": {
+      "description": "支付宝获取会员基础信息授权回调生效时机：open-type=\"getAuthorize\"",
+      "description_zh": "支付宝获取会员基础信息授权回调生效时机：open-type=\"getAuthorize\"",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction",
+      "required": false
+    },
+    "onContact": {
+      "description": "客服消息回调生效时机：open-type=\"contact\"",
+      "description_zh": "客服消息回调生效时机：open-type=\"contact\"",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction<onContactEventDetail>",
+      "required": false
+    },
+    "onGetPhoneNumber": {
+      "description": "获取用户手机号回调生效时机：open-type=\"getPhoneNumber\"",
+      "description_zh": "获取用户手机号回调生效时机：open-type=\"getPhoneNumber\"",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction<onGetPhoneNumberEventDetail>",
+      "required": false
+    },
+    "onGetRealTimePhoneNumber": {
+      "description": "手机号实时验证回调，open-type=\"getRealtimePhoneNumber\" 时有效",
+      "description_zh": "手机号实时验证回调，open-type=\"getRealtimePhoneNumber\" 时有效",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction<onGetRealTimePhoneNumberEventDetail>",
+      "required": false
+    },
+    "onError": {
+      "description": "当使用开放能力时，发生错误的回调生效时机：open-type=\"launchApp\"",
+      "description_zh": "当使用开放能力时，发生错误的回调生效时机：open-type=\"launchApp\"",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction",
+      "required": false
+    },
+    "onOpenSetting": {
+      "description": "在打开授权设置页后回调生效时机：open-type=\"openSetting\"",
+      "description_zh": "在打开授权设置页后回调生效时机：open-type=\"openSetting\"",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction<onOpenSettingEventDetail>",
+      "required": false
+    },
+    "onLaunchApp": {
+      "description": "打开 APP 成功的回调生效时机：open-type=\"launchApp\"",
+      "description_zh": "打开 APP 成功的回调生效时机：open-type=\"launchApp\"",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction",
+      "required": false
+    },
+    "onChooseAvatar": {
+      "description": "获取用户头像回调生效时机：open-type=\"chooseAvatar\"",
+      "description_zh": "获取用户头像回调生效时机：open-type=\"chooseAvatar\"",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction",
+      "required": false
+    },
+    "onAgreePrivacyAuthorization": {
+      "description": "用户同意隐私协议事件回调，open-type=\"agreePrivacyAuthorization\"时有效",
+      "description_zh": "用户同意隐私协议事件回调，open-type=\"agreePrivacyAuthorization\"时有效",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction",
+      "required": false
+    },
+    "onTap": {
+      "description": "点击。说明： 每点击一次会触发一次事件，建议自行使用代码防止重复点击,可以使用 js 防抖和节流实现。",
+      "description_zh": "点击。说明： 每点击一次会触发一次事件，建议自行使用代码防止重复点击,可以使用 js 防抖和节流实现。",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction",
+      "required": false
+    },
+    "onFollowLifestyle": {
+      "description": "当 open-type 为 lifestyle 时有效。当点击按钮时触发。event.detail = { followStatus }，followStatus 合法值有 1、2、3，其中 1 表示已关注。2 表示用户不允许关注。3 表示发生未知错误；已知问题：基础库 1.0，当用户在点击按钮前已关注生活号，event.detail.followStatus 的值为 true。",
+      "description_zh": "当 open-type 为 lifestyle 时有效。当点击按钮时触发。event.detail = { followStatus }，followStatus 合法值有 1、2、3，其中 1 表示已关注。2 表示用户不允许关注。3 表示发生未知错误；已知问题：基础库 1.0，当用户在点击按钮前已关注生活号，event.detail.followStatus 的值为 true。",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction<{ followStatus: true or 1 or 2 or 3; }>",
+      "required": false
+    },
+    "onChooseAddress": {
+      "description": "用户点击该按钮时，调起用户编辑收货地址原生界面，并在编辑完成后返回用户选择的地址，从返回参数的 detail 中获取，和 swan.chooseAddress 一样的。和 open-type 搭配使用，使用时机：open-type=\"chooseAddress\"",
+      "description_zh": "用户点击该按钮时，调起用户编辑收货地址原生界面，并在编辑完成后返回用户选择的地址，从返回参数的 detail 中获取，和 swan.chooseAddress 一样的。和 open-type 搭配使用，使用时机：open-type=\"chooseAddress\"",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction",
+      "required": false
+    },
+    "onChooseInvoiceTitle": {
+      "description": "用户点击该按钮时，选择用户的发票抬头，和 swan.chooseInvoiceTitle 一样的。和 open-type 搭配使用，使用时机：open-type=\"chooseInvoiceTitle\"",
+      "description_zh": "用户点击该按钮时，选择用户的发票抬头，和 swan.chooseInvoiceTitle 一样的。和 open-type 搭配使用，使用时机：open-type=\"chooseInvoiceTitle\"",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction",
+      "required": false
+    },
+    "onLogin": {
+      "description": "登录回调，和 open-type 搭配使用，使用时机：open-type=\"login\"。可以通过返回参数的 detail 判断是否登录成功，当 errMsg 为'login:ok'时即为成功。如想获取登录凭证请使用 swan.getLoginCode",
+      "description_zh": "登录回调，和 open-type 搭配使用，使用时机：open-type=\"login\"。可以通过返回参数的 detail 判断是否登录成功，当 errMsg 为'login:ok'时即为成功。如想获取登录凭证请使用 swan.getLoginCode",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction",
+      "required": false
+    },
+    "onSubscribe": {
+      "description": "订阅消息授权回调，和 open-type 搭配使用，使用时机：open-type=\"subscribe\"",
+      "description_zh": "订阅消息授权回调，和 open-type 搭配使用，使用时机：open-type=\"subscribe\"",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction",
+      "required": false
+    },
+    "onAddFriend": {
+      "description": "添加好友的回调",
+      "description_zh": "添加好友的回调",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction",
+      "required": false
+    },
+    "onAddGroupApp": {
+      "description": "添加群应用的回调。errCode 错误码：41004（当前用户非管理员或群主，无权操作），41005（超过可添加群应用的群数量）",
+      "description_zh": "添加群应用的回调。errCode 错误码：41004（当前用户非管理员或群主，无权操作），41005（超过可添加群应用的群数量）",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction",
+      "required": false
+    },
+    "onOpenAwemeUserProfile": {
+      "description": "监听跳转抖音号个人页的回调生效时机：open-type=\"openAwemeUserProfile\"",
+      "description_zh": "监听跳转抖音号个人页的回调生效时机：open-type=\"openAwemeUserProfile\"",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction",
+      "required": false
+    },
+    "onJoinGroup": {
+      "description": "加群后触发",
+      "description_zh": "加群后触发",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction<{ errMsg: string; errNo: number; }>",
+      "required": false
+    }
+  },
+  "link": "https://docs.taro.zone/docs/components/forms/button",
+  "link_zh": "https://docs.taro.zone/docs/components/forms/button",
+  "typeDetail": {},
+  "events": [],
+  "methods": [],
+  "slots": []
+}

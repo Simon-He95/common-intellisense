@@ -1,0 +1,227 @@
+{
+  "name": "MovableView",
+  "props": {
+    "direction": {
+      "description": "movable-view 的移动方向，属性值有all、vertical、horizontal、none",
+      "description_zh": "movable-view 的移动方向，属性值有all、vertical、horizontal、none",
+      "default": "none",
+      "value": "",
+      "type": "all / vertical / horizontal / none",
+      "required": false
+    },
+    "inertia": {
+      "description": "movable-view 是否带有惯性",
+      "description_zh": "movable-view 是否带有惯性",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "outOfBounds": {
+      "description": "超过可移动区域后，movable-view 是否还可以移动",
+      "description_zh": "超过可移动区域后，movable-view 是否还可以移动",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "x": {
+      "description": "定义 x 轴方向的偏移，如果 x 的值不在可移动范围内，会自动移动到可移动范围；改变 x 的值会触发动画",
+      "description_zh": "定义 x 轴方向的偏移，如果 x 的值不在可移动范围内，会自动移动到可移动范围；改变 x 的值会触发动画",
+      "default": "",
+      "value": "",
+      "type": "string or number",
+      "required": false
+    },
+    "y": {
+      "description": "定义 y 轴方向的偏移，如果 y 的值不在可移动范围内，会自动移动到可移动范围；改变 y 的值会触发动画",
+      "description_zh": "定义 y 轴方向的偏移，如果 y 的值不在可移动范围内，会自动移动到可移动范围；改变 y 的值会触发动画",
+      "default": "",
+      "value": "",
+      "type": "string or number",
+      "required": false
+    },
+    "damping": {
+      "description": "阻尼系数，用于控制x或y改变时的动画和过界回弹的动画，值越大移动越快",
+      "description_zh": "阻尼系数，用于控制x或y改变时的动画和过界回弹的动画，值越大移动越快",
+      "default": "20",
+      "value": "",
+      "type": "number",
+      "required": false
+    },
+    "friction": {
+      "description": "摩擦系数，用于控制惯性滑动的动画，值越大摩擦力越大，滑动越快停止；必须大于 0，否则会被设置成默认值",
+      "description_zh": "摩擦系数，用于控制惯性滑动的动画，值越大摩擦力越大，滑动越快停止；必须大于 0，否则会被设置成默认值",
+      "default": "2",
+      "value": "",
+      "type": "number",
+      "required": false
+    },
+    "disabled": {
+      "description": "是否禁用",
+      "description_zh": "是否禁用",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "scale": {
+      "description": "是否支持双指缩放，默认缩放手势生效区域是在 movable-view 内",
+      "description_zh": "是否支持双指缩放，默认缩放手势生效区域是在 movable-view 内",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "scaleMin": {
+      "description": "定义缩放倍数最小值",
+      "description_zh": "定义缩放倍数最小值",
+      "default": "0.5",
+      "value": "",
+      "type": "number",
+      "required": false
+    },
+    "scaleMax": {
+      "description": "定义缩放倍数最大值",
+      "description_zh": "定义缩放倍数最大值",
+      "default": "10",
+      "value": "",
+      "type": "number",
+      "required": false
+    },
+    "scaleValue": {
+      "description": "定义缩放倍数，取值范围为 0.5 - 10",
+      "description_zh": "定义缩放倍数，取值范围为 0.5 - 10",
+      "default": "1",
+      "value": "",
+      "type": "number",
+      "required": false
+    },
+    "animation": {
+      "description": "是否使用动画",
+      "description_zh": "是否使用动画",
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "onChange": {
+      "description": "拖动过程中触发的事件",
+      "description_zh": "拖动过程中触发的事件",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction<onChangeEventDetail>",
+      "required": false
+    },
+    "onChangeEnd": {
+      "description": "拖动结束触发的事件",
+      "description_zh": "拖动结束触发的事件",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction<onChangeEventDetail>",
+      "required": false
+    },
+    "onDragStart": {
+      "description": "开始拖动时触发",
+      "description_zh": "开始拖动时触发",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction",
+      "required": false
+    },
+    "onDragEnd": {
+      "description": "拖动结束时触发",
+      "description_zh": "拖动结束时触发",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction",
+      "required": false
+    },
+    "onScale": {
+      "description": "缩放过程中触发的事件",
+      "description_zh": "缩放过程中触发的事件",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction<onScaleEventDetail>",
+      "required": false
+    },
+    "onTouchStart": {
+      "description": "触摸动作开始，事件会向父节点传递。",
+      "description_zh": "触摸动作开始，事件会向父节点传递。",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction",
+      "required": false
+    },
+    "onTouchMove": {
+      "description": "触摸动作开始，事件仅作用于组件，不向父节点传递。",
+      "description_zh": "触摸动作开始，事件仅作用于组件，不向父节点传递。",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction",
+      "required": false
+    },
+    "onTouchEnd": {
+      "description": "手指触摸动作结束",
+      "description_zh": "手指触摸动作结束",
+      "default": "",
+      "value": "",
+      "type": "TouchEventFunction",
+      "required": false
+    },
+    "onTouchCancel": {
+      "description": "触摸动作被打断，如来电提醒、弹窗。",
+      "description_zh": "触摸动作被打断，如来电提醒、弹窗。",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction",
+      "required": false
+    },
+    "onHTouchMove": {
+      "description": "初次手指触摸后移动为横向的移动，如果 catch 此事件，则意味着 touchmove 事件也被 catch",
+      "description_zh": "初次手指触摸后移动为横向的移动，如果 catch 此事件，则意味着 touchmove 事件也被 catch",
+      "default": "",
+      "value": "",
+      "type": "TouchEventFunction",
+      "required": false
+    },
+    "onVTouchMove": {
+      "description": "初次手指触摸后移动为纵向的移动，如果 catch 此事件，则意味着 touchmove 事件也被 catch",
+      "description_zh": "初次手指触摸后移动为纵向的移动，如果 catch 此事件，则意味着 touchmove 事件也被 catch",
+      "default": "",
+      "value": "",
+      "type": "TouchEventFunction",
+      "required": false
+    },
+    "catchTouchStart": {
+      "description": "触摸移动事件，事件仅作用于组件，不向父节点传递。",
+      "description_zh": "触摸移动事件，事件仅作用于组件，不向父节点传递。",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction",
+      "required": false
+    },
+    "catchTouchMove": {
+      "description": "触摸移动事件，事件仅作用于组件，不向父节点传递。",
+      "description_zh": "触摸移动事件，事件仅作用于组件，不向父节点传递。",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction",
+      "required": false
+    },
+    "catchTouchEnd": {
+      "description": "触摸动作结束，事件仅作用于组件，不向父节点传递。",
+      "description_zh": "触摸动作结束，事件仅作用于组件，不向父节点传递。",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction",
+      "required": false
+    }
+  },
+  "link": "https://docs.taro.zone/docs/components/viewContainer/movable-view",
+  "link_zh": "https://docs.taro.zone/docs/components/viewContainer/movable-view",
+  "typeDetail": {},
+  "events": [],
+  "methods": [],
+  "slots": []
+}

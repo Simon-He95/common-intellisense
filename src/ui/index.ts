@@ -17,6 +17,7 @@ import { shadcnVue0, shadcnVue0Components } from './shadcn-vue'
 import { radixVue1, radixVue1Components } from './radix-vue'
 import { arcoDesign2, arcoDesign2Components } from './arcoDesign'
 import { arcoDesignVue2, arcoDesignVue2Components } from './arcoDesignVue'
+import { taro3, taro3Components } from './taro'
 
 export default {
   elementUi2,
@@ -34,6 +35,7 @@ export default {
   uview1,
   uview2,
   chakraUiReact2,
+  taro3,
   // skeleton2,
   primevue3,
   quasar2,
@@ -67,4 +69,5 @@ export default {
   radixVue1Components,
   arcoDesign2Components,
   arcoDesignVue2Components,
+  taro3Components,
 }

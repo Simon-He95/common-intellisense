@@ -67,7 +67,7 @@ function run() {
         : ''
       methods.push({ name, description, description_zh: description, params })
     })
-  const name = 'U' + link.split('/').slice(-1)[0].split('.')[0].split('-').map(i => {
+  const name = link.split('/').slice(-1)[0].split('.')[0].split('-').map(i => {
     return i[0].toUpperCase() + i.slice(1)
   }).join('')
   const result = { name, props, link, link_zh: link, typeDetail: {}, events, methods, slots }
@@ -87,6 +87,27 @@ function getProps() {
       description,
       description_zh: description,
       default: value,
+      value: '',
+      type,
+      required
+    }
+  })
+  return props
+}
+
+
+
+function getProps() {
+  const props = {}
+  $0.closest('tbody').querySelectorAll('tr').forEach(item => {
+    const name = item.children[0].firstChild.textContent
+    const type = item.children[1].textContent
+    const description = item.children[3].textContent
+    const required = item.children[2].textContent ==='是'
+    props[name] = {
+      description,
+      description_zh: description,
+      default: '',
       value: '',
       type,
       required

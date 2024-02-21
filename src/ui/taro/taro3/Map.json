@@ -1,0 +1,459 @@
+{
+  "name": "Map",
+  "props": {
+    "longitude": {
+      "description": "中心经度",
+      "description_zh": "中心经度",
+      "default": "",
+      "value": "",
+      "type": "number",
+      "required": true
+    },
+    "latitude": {
+      "description": "中心纬度",
+      "description_zh": "中心纬度",
+      "default": "",
+      "value": "",
+      "type": "number",
+      "required": true
+    },
+    "scale": {
+      "description": "缩放级别，取值范围为 3-20",
+      "description_zh": "缩放级别，取值范围为 3-20",
+      "default": "16",
+      "value": "",
+      "type": "number",
+      "required": false
+    },
+    "minScale": {
+      "description": "最小缩放级别 3-20",
+      "description_zh": "最小缩放级别 3-20",
+      "default": "3",
+      "value": "",
+      "type": "number",
+      "required": false
+    },
+    "maxScale": {
+      "description": "最大缩放级别 3-20",
+      "description_zh": "最大缩放级别 3-20",
+      "default": "20",
+      "value": "",
+      "type": "number",
+      "required": false
+    },
+    "markers": {
+      "description": "标记点",
+      "description_zh": "标记点",
+      "default": "",
+      "value": "",
+      "type": "marker[]",
+      "required": false
+    },
+    "covers": {
+      "description": "即将移除，请使用 markers不推荐使用",
+      "description_zh": "即将移除，请使用 markers不推荐使用",
+      "default": "",
+      "value": "",
+      "type": "any[]",
+      "required": false
+    },
+    "polyline": {
+      "description": "路线",
+      "description_zh": "路线",
+      "default": "",
+      "value": "",
+      "type": "polyline[]",
+      "required": false
+    },
+    "circles": {
+      "description": "圆",
+      "description_zh": "圆",
+      "default": "",
+      "value": "",
+      "type": "circle[]",
+      "required": false
+    },
+    "controls": {
+      "description": "控件（即将废弃，建议使用 cover-view 代替）不推荐使用",
+      "description_zh": "控件（即将废弃，建议使用 cover-view 代替）不推荐使用",
+      "default": "",
+      "value": "",
+      "type": "control[]",
+      "required": false
+    },
+    "includePoints": {
+      "description": "缩放视野以包含所有给定的坐标点",
+      "description_zh": "缩放视野以包含所有给定的坐标点",
+      "default": "",
+      "value": "",
+      "type": "point[]",
+      "required": false
+    },
+    "showLocation": {
+      "description": "显示带有方向的当前定位点",
+      "description_zh": "显示带有方向的当前定位点",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "polygons": {
+      "description": "多边形",
+      "description_zh": "多边形",
+      "default": "",
+      "value": "",
+      "type": "polygon[]",
+      "required": false
+    },
+    "subkey": {
+      "description": "个性化地图使用的 key",
+      "description_zh": "个性化地图使用的 key",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "layerStyle": {
+      "description": "个性化地图配置的 style，不支持动态修改",
+      "description_zh": "个性化地图配置的 style，不支持动态修改",
+      "default": "1",
+      "value": "",
+      "type": "number",
+      "required": false
+    },
+    "rotate": {
+      "description": "旋转角度，范围 0 ~ 360, 地图正北和设备 y 轴角度的夹角",
+      "description_zh": "旋转角度，范围 0 ~ 360, 地图正北和设备 y 轴角度的夹角",
+      "default": "0",
+      "value": "",
+      "type": "number",
+      "required": false
+    },
+    "skew": {
+      "description": "倾斜角度，范围 0 ~ 40 , 关于 z 轴的倾角",
+      "description_zh": "倾斜角度，范围 0 ~ 40 , 关于 z 轴的倾角",
+      "default": "0",
+      "value": "",
+      "type": "number",
+      "required": false
+    },
+    "showCompass": {
+      "description": "显示指南针",
+      "description_zh": "显示指南针",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "showScale": {
+      "description": "显示比例尺",
+      "description_zh": "显示比例尺",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "enableOverlooking": {
+      "description": "开启俯视",
+      "description_zh": "开启俯视",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "enableZoom": {
+      "description": "是否支持缩放",
+      "description_zh": "是否支持缩放",
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "enableScroll": {
+      "description": "是否支持拖动",
+      "description_zh": "是否支持拖动",
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "enableRotate": {
+      "description": "是否支持旋转",
+      "description_zh": "是否支持旋转",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "enableSatellite": {
+      "description": "是否开启卫星图",
+      "description_zh": "是否开启卫星图",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "enableTraffic": {
+      "description": "是否开启实时路况",
+      "description_zh": "是否开启实时路况",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "setting": {
+      "description": "配置项提供 setting 对象统一设置地图配置。同时对于一些动画属性如 rotate 和 skew，通过 setData 分开设置时无法同时生效，需通过 settting 统一修改。",
+      "description_zh": "配置项提供 setting 对象统一设置地图配置。同时对于一些动画属性如 rotate 和 skew，通过 setData 分开设置时无法同时生效，需通过 settting 统一修改。",
+      "default": "",
+      "value": "",
+      "type": "MapProps or { [key: string]: any; }",
+      "required": false
+    },
+    "includePadding": {
+      "description": "视野在地图 padding 范围内展示",
+      "description_zh": "视野在地图 padding 范围内展示",
+      "default": "",
+      "value": "",
+      "type": "{ left: string or number; right: string or number; top: string or number; bottom: string or number; }",
+      "required": false
+    },
+    "groundOverlays": {
+      "description": "覆盖物，自定义贴图",
+      "description_zh": "覆盖物，自定义贴图",
+      "default": "",
+      "value": "",
+      "type": "groundOverlays[]",
+      "required": false
+    },
+    "tileOverlay": {
+      "description": "覆盖物，网格贴图",
+      "description_zh": "覆盖物，网格贴图",
+      "default": "",
+      "value": "",
+      "type": "tileOverlay",
+      "required": false
+    },
+    "enablePoi": {
+      "description": "是否展示 POI 点",
+      "description_zh": "是否展示 POI 点",
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "enableBuilding": {
+      "description": "是否展示建筑物",
+      "description_zh": "是否展示建筑物",
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "polygon": {
+      "description": "覆盖物，多边形。",
+      "description_zh": "覆盖物，多边形。",
+      "default": "",
+      "value": "",
+      "type": "polygon[]",
+      "required": false
+    },
+    "customMapStyle": {
+      "description": "设置地图样式。default：默认样式light：精简样式",
+      "description_zh": "设置地图样式。default：默认样式light：精简样式",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "panels": {
+      "description": "基于 map 高级定制渲染，设置覆盖在地图上的 view。",
+      "description_zh": "基于 map 高级定制渲染，设置覆盖在地图上的 view。",
+      "default": "",
+      "value": "",
+      "type": "panels[]",
+      "required": false
+    },
+    "theme": {
+      "description": "否",
+      "description_zh": "否",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "optimize": {
+      "description": "保持缩放比例不变",
+      "description_zh": "保持缩放比例不变",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "enableAutoMaxOverlooking": {
+      "description": "开启最大俯视角，俯视角度从 45 度拓展到 75 度",
+      "description_zh": "开启最大俯视角，俯视角度从 45 度拓展到 75 度",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "enable3D": {
+      "description": "展示3D楼块",
+      "description_zh": "展示3D楼块",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "onTap": {
+      "description": "点击地图时触发",
+      "description_zh": "点击地图时触发",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction",
+      "required": false
+    },
+    "onMarkerTap": {
+      "description": "点击标记点时触发，e.detail = {markerId}",
+      "description_zh": "点击标记点时触发，e.detail = {markerId}",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction<onMarkerTapEventDetail>",
+      "required": false
+    },
+    "onLabelTap": {
+      "description": "点击label时触发，e.detail = {markerId}",
+      "description_zh": "点击label时触发，e.detail = {markerId}",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction<onLabelTapEventDetail>",
+      "required": false
+    },
+    "onControlTap": {
+      "description": "点击控件时触发，e.detail = {controlId}",
+      "description_zh": "点击控件时触发，e.detail = {controlId}",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction<onControlTapEventDetail>",
+      "required": false
+    },
+    "onCalloutTap": {
+      "description": "点击标记点对应的气泡时触发，e.detail = {markerId}",
+      "description_zh": "点击标记点对应的气泡时触发，e.detail = {markerId}",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction<onCalloutTapEventDetail>",
+      "required": false
+    },
+    "onUpdated": {
+      "description": "在地图渲染更新完成时触发",
+      "description_zh": "在地图渲染更新完成时触发",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction",
+      "required": false
+    },
+    "onRegionChange": {
+      "description": "视野发生变化时触发",
+      "description_zh": "视野发生变化时触发",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction<onRegionEventDetail<\"begin\"> or onRegionEventDetail<\"end\">>",
+      "required": false
+    },
+    "onPoiTap": {
+      "description": "点击地图poi点时触发，e.detail = {name, longitude, latitude}",
+      "description_zh": "点击地图poi点时触发，e.detail = {name, longitude, latitude}",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction<onPoiTapEventDetail>",
+      "required": false
+    },
+    "onPolylineTap": {
+      "description": "点击地图路线时触发，e.detail = {longitude, latitude}",
+      "description_zh": "点击地图路线时触发，e.detail = {longitude, latitude}",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction<onPolylineTapEventDetail>",
+      "required": false
+    },
+    "onAbilitySuccess": {
+      "description": "地图能力生效时触发，e.detail = {ability, errCode, errMsg}",
+      "description_zh": "地图能力生效时触发，e.detail = {ability, errCode, errMsg}",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction<onAbilityEventDetail>",
+      "required": false
+    },
+    "onAbilityFailed": {
+      "description": "地图能力失败时触发，e.detail = {ability, errCode, errMsg}",
+      "description_zh": "地图能力失败时触发，e.detail = {ability, errCode, errMsg}",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction<onAbilityEventDetail>",
+      "required": false
+    },
+    "onAuthSuccess": {
+      "description": "地图鉴权结果成功时触发，e.detail = {errCode, errMsg}",
+      "description_zh": "地图鉴权结果成功时触发，e.detail = {errCode, errMsg}",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction<{ errCode: number; errMsg: string; }>",
+      "required": false
+    },
+    "onInterpolatePoint": {
+      "description": "MapContext.moveAlong 插值动画时触发。e.detail = {markerId, longitude, latitude, animationStatus: \"interpolating\" or \"complete\"}",
+      "description_zh": "MapContext.moveAlong 插值动画时触发。e.detail = {markerId, longitude, latitude, animationStatus: \"interpolating\" or \"complete\"}",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction<onInterpolatePointEventDetail>",
+      "required": false
+    },
+    "onError": {
+      "description": "组件错误时触发，例如创建或鉴权失败，e.detail = {longitude, latitude}",
+      "description_zh": "组件错误时触发，例如创建或鉴权失败，e.detail = {longitude, latitude}",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction<point>",
+      "required": true
+    },
+    "onCallOutTap": {
+      "description": "点击标记点对应的气泡时触发e.detail = {markerId}",
+      "description_zh": "点击标记点对应的气泡时触发e.detail = {markerId}",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction<onCalloutTapEventDetail>",
+      "required": false
+    },
+    "onAnchorPointTap": {
+      "description": "点击定位标时触发，e.detail = {longitude, latitude}",
+      "description_zh": "点击定位标时触发，e.detail = {longitude, latitude}",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction<point>",
+      "required": false
+    },
+    "onPanelTap": {
+      "description": "点击 panel 时触发。",
+      "description_zh": "点击 panel 时触发。",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction<{ panelId: any; layoutId: any; }>",
+      "required": false
+    },
+    "onInitComplete": {
+      "description": "地图初始化完成即将开始渲染第一帧时触发。",
+      "description_zh": "地图初始化完成即将开始渲染第一帧时触发。",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction",
+      "required": false
+    }
+  },
+  "link": "https://docs.taro.zone/docs/components/maps/map",
+  "link_zh": "https://docs.taro.zone/docs/components/maps/map",
+  "typeDetail": {},
+  "events": [],
+  "methods": [],
+  "slots": []
+}

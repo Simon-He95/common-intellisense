@@ -1,0 +1,291 @@
+{
+  "name": "Swiper",
+  "props": {
+    "indicatorDots": {
+      "description": "是否显示面板指示点",
+      "description_zh": "是否显示面板指示点",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "indicatorColor": {
+      "description": "指示点颜色",
+      "description_zh": "指示点颜色",
+      "default": "\"rgba(0, 0, 0, .3)\"",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "indicatorActiveColor": {
+      "description": "当前选中的指示点颜色",
+      "description_zh": "当前选中的指示点颜色",
+      "default": "\"#000000\"",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "autoplay": {
+      "description": "是否自动切换",
+      "description_zh": "是否自动切换",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "current": {
+      "description": "当前所在滑块的 index",
+      "description_zh": "当前所在滑块的 index",
+      "default": "0",
+      "value": "",
+      "type": "number",
+      "required": false
+    },
+    "currentItemId": {
+      "description": "当前所在滑块的 item-id ，不能与 current 被同时指定",
+      "description_zh": "当前所在滑块的 item-id ，不能与 current 被同时指定",
+      "default": "\"\"",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "interval": {
+      "description": "自动切换时间间隔",
+      "description_zh": "自动切换时间间隔",
+      "default": "5000",
+      "value": "",
+      "type": "number",
+      "required": false
+    },
+    "duration": {
+      "description": "滑动动画时长",
+      "description_zh": "滑动动画时长",
+      "default": "500",
+      "value": "",
+      "type": "number",
+      "required": false
+    },
+    "circular": {
+      "description": "是否采用衔接滑动",
+      "description_zh": "是否采用衔接滑动",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "vertical": {
+      "description": "滑动方向是否为纵向",
+      "description_zh": "滑动方向是否为纵向",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "previousMargin": {
+      "description": "前边距，可用于露出前一项的一小部分，接受 px 和 rpx 值",
+      "description_zh": "前边距，可用于露出前一项的一小部分，接受 px 和 rpx 值",
+      "default": "\"0px\"",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "nextMargin": {
+      "description": "后边距，可用于露出后一项的一小部分，接受 px 和 rpx 值",
+      "description_zh": "后边距，可用于露出后一项的一小部分，接受 px 和 rpx 值",
+      "default": "\"0px\"",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "snapToEdge": {
+      "description": "当 swiper-item 的个数大于等于 2，关闭 circular 并且开启 previous-margin 或 next-margin 的时候，可以指定这个边距是否应用到第一个、最后一个元素",
+      "description_zh": "当 swiper-item 的个数大于等于 2，关闭 circular 并且开启 previous-margin 或 next-margin 的时候，可以指定这个边距是否应用到第一个、最后一个元素",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "displayMultipleItems": {
+      "description": "同时显示的滑块数量",
+      "description_zh": "同时显示的滑块数量",
+      "default": "1",
+      "value": "",
+      "type": "number",
+      "required": false
+    },
+    "skipHiddenItemLayout": {
+      "description": "是否跳过未显示的滑块布局，设为 true 可优化复杂情况下的滑动性能，但会丢失隐藏状态滑块的布局信息",
+      "description_zh": "是否跳过未显示的滑块布局，设为 true 可优化复杂情况下的滑动性能，但会丢失隐藏状态滑块的布局信息",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "easingFunction": {
+      "description": "指定 swiper 切换缓动动画类型",
+      "description_zh": "指定 swiper 切换缓动动画类型",
+      "default": "\"default\"",
+      "value": "",
+      "type": "keyof TEasingFunction",
+      "required": false
+    },
+    "disableTouch": {
+      "description": "是否禁止用户 touch 操作",
+      "description_zh": "是否禁止用户 touch 操作",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "zoom": {
+      "description": "是否启用缩放",
+      "description_zh": "是否启用缩放",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "full": {
+      "description": "是否开启全屏",
+      "description_zh": "是否开启全屏",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "activeClass": {
+      "description": "swiper-item 可见时的 class。",
+      "description_zh": "swiper-item 可见时的 class。",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "changingClass": {
+      "description": "acceleration 设置为 {{true}} 时且处于滑动过程中，中间若干屏处于可见时的 class。",
+      "description_zh": "acceleration 设置为 {{true}} 时且处于滑动过程中，中间若干屏处于可见时的 class。",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "acceleration": {
+      "description": "当开启时，会根据滑动速度，连续滑动多屏。",
+      "description_zh": "当开启时，会根据滑动速度，连续滑动多屏。",
+      "default": "false",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "disableProgrammaticAnimation": {
+      "description": "是否禁用代码变动触发 swiper 切换时使用动画。",
+      "description_zh": "是否禁用代码变动触发 swiper 切换时使用动画。",
+      "default": "false",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "swipeRatio": {
+      "description": "滑动距离阈值，当滑动距离超过阈值时进行 swiper-item 切换。",
+      "description_zh": "滑动距离阈值，当滑动距离超过阈值时进行 swiper-item 切换。",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "swipeSpeed": {
+      "description": "滑动综合速度阈值，当超过阈值时进行 swiper-item 切换，数值越小越敏感。",
+      "description_zh": "滑动综合速度阈值，当超过阈值时进行 swiper-item 切换，数值越小越敏感。",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "touchAngle": {
+      "description": "计算用户手势时所依赖的滑动角度。角度根据 touchstart 事件和首次 touchmove 事件的坐标计算得出。数值越小越对用户的滑动方向准确度要求越高。",
+      "description_zh": "计算用户手势时所依赖的滑动角度。角度根据 touchstart 事件和首次 touchmove 事件的坐标计算得出。数值越小越对用户的滑动方向准确度要求越高。",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "adjustHeight": {
+      "description": "自动以指定滑块的高度为整个容器的高度。当 vertical 为 true 时，默认不调整。可选值为：",
+      "description_zh": "自动以指定滑块的高度为整个容器的高度。当 vertical 为 true 时，默认不调整。可选值为：",
+      "default": "",
+      "value": "",
+      "type": "first / current / highest / none",
+      "required": false
+    },
+    "adjustVerticalHeight": {
+      "description": "vertical 为 true 时强制使 adjust-height 生效。",
+      "description_zh": "vertical 为 true 时强制使 adjust-height 生效。",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "disableTouchmove": {
+      "description": "是否停止响应用户 touchmove 操作",
+      "description_zh": "是否停止响应用户 touchmove 操作",
+      "default": "false",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "scrollWithAnimation": {
+      "description": "改变 current 时使用动画过渡",
+      "description_zh": "改变 current 时使用动画过渡",
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "cacheExtent": {
+      "description": "缓存区域大小，值为 1 表示提前渲染上下各一屏区域（swiper 容器大小）",
+      "description_zh": "缓存区域大小，值为 1 表示提前渲染上下各一屏区域（swiper 容器大小）",
+      "default": "0",
+      "value": "",
+      "type": "number",
+      "required": false
+    },
+    "onChange": {
+      "description": "current 改变时会触发 change 事件",
+      "description_zh": "current 改变时会触发 change 事件",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction<onChangeEventDetail>",
+      "required": false
+    },
+    "onTransition": {
+      "description": "swiper-item 的位置发生改变时会触发 transition 事件",
+      "description_zh": "swiper-item 的位置发生改变时会触发 transition 事件",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction<onTransitionEventDetail>",
+      "required": false
+    },
+    "onAnimationFinish": {
+      "description": "动画结束时会触发 animationfinish 事件",
+      "description_zh": "动画结束时会触发 animationfinish 事件",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction<onChangeEventDetail>",
+      "required": false
+    },
+    "onAnimationEnd": {
+      "description": "动画结束时会触发 animationEnd 事件",
+      "description_zh": "动画结束时会触发 animationEnd 事件",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction<onCommonEventDetail>",
+      "required": false
+    }
+  },
+  "link": "https://docs.taro.zone/docs/components/viewContainer/swiper",
+  "link_zh": "https://docs.taro.zone/docs/components/viewContainer/swiper",
+  "typeDetail": {},
+  "events": [],
+  "methods": [],
+  "slots": []
+}

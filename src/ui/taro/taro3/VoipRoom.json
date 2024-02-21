@@ -1,0 +1,51 @@
+{
+  "name": "VoipRoom",
+  "props": {
+    "mode": {
+      "description": "对话窗口类型，自身传入 camera，其它用户传入 video",
+      "description_zh": "对话窗口类型，自身传入 camera，其它用户传入 video",
+      "default": "camera",
+      "value": "",
+      "type": "keyof Mode",
+      "required": false
+    },
+    "devicePosition": {
+      "description": "仅在 mode 为 camera 时有效，前置或后置，值为front, back",
+      "description_zh": "仅在 mode 为 camera 时有效，前置或后置，值为front, back",
+      "default": "front",
+      "value": "",
+      "type": "keyof DevicePosition",
+      "required": false
+    },
+    "openId": {
+      "description": "进入房间用户的 openid",
+      "description_zh": "进入房间用户的 openid",
+      "default": "\"none\"",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "objectFit": {
+      "description": "画面与容器比例不一致时，画面的表现形式",
+      "description_zh": "画面与容器比例不一致时，画面的表现形式",
+      "default": "\"fill\"",
+      "value": "",
+      "type": "\"fill\" or \"contain\" or \"cover\"",
+      "required": false
+    },
+    "onError": {
+      "description": "创建对话窗口失败时触发",
+      "description_zh": "创建对话窗口失败时触发",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction",
+      "required": false
+    }
+  },
+  "link": "https://docs.taro.zone/docs/components/media/voip-room",
+  "link_zh": "https://docs.taro.zone/docs/components/media/voip-room",
+  "typeDetail": {},
+  "events": [],
+  "methods": [],
+  "slots": []
+}

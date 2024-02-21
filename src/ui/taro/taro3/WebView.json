@@ -1,0 +1,59 @@
+{
+  "name": "WebView",
+  "props": {
+    "src": {
+      "description": "webview 指向网页的链接。可打开关联的公众号的文章，其它网页需登录小程序管理后台配置业务域名。",
+      "description_zh": "webview 指向网页的链接。可打开关联的公众号的文章，其它网页需登录小程序管理后台配置业务域名。",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": true
+    },
+    "progressbarColor": {
+      "description": "webview 的进度条颜色",
+      "description_zh": "webview 的进度条颜色",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "type": {
+      "description": "若使用web-view组件引入第三方客服，必须填写type=\"im\"",
+      "description_zh": "若使用web-view组件引入第三方客服，必须填写type=\"im\"",
+      "default": "default",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "onMessage": {
+      "description": "网页向小程序 postMessage 时，会在特定时机（小程序后退、组件销毁、分享）触发并收到消息。e.detail = { data }",
+      "description_zh": "网页向小程序 postMessage 时，会在特定时机（小程序后退、组件销毁、分享）触发并收到消息。e.detail = { data }",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction<onMessageEventDetail>",
+      "required": false
+    },
+    "onLoad": {
+      "description": "网页加载成功时候触发此事件。e.detail = { src }",
+      "description_zh": "网页加载成功时候触发此事件。e.detail = { src }",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction<onLoadEventDetail>",
+      "required": false
+    },
+    "onError": {
+      "description": "网页加载失败的时候触发此事件。e.detail = { src }",
+      "description_zh": "网页加载失败的时候触发此事件。e.detail = { src }",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction<onErrorEventDetail>",
+      "required": false
+    }
+  },
+  "link": "https://docs.taro.zone/docs/components/open/web-view",
+  "link_zh": "https://docs.taro.zone/docs/components/open/web-view",
+  "typeDetail": {},
+  "events": [],
+  "methods": [],
+  "slots": []
+}

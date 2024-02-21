@@ -2,74 +2,81 @@
   "name": "Alert",
   "props": {
     "action": {
-      "value": "",
-      "description": "Custom action items",
+      "description": "The action of Alert",
+      "description_zh": "The action of Alert",
       "default": "-",
-      "type": "自定义操作项",
-      "description_zh": "自定义操作项"
+      "value": "",
+      "type": "ReactNode"
     },
     "afterClose": {
-      "value": "",
-      "description": "Turn off the callback function that fires after the animation ends",
+      "description": "Called when close animation is finished",
+      "description_zh": "Called when close animation is finished",
       "default": "-",
-      "type": "关闭动画结束后触发的回调函数",
-      "description_zh": "关闭动画结束后触发的回调函数"
+      "value": "",
+      "type": "() => void"
     },
     "banner": {
-      "value": "",
-      "description": "Whether to use it as a top announcement",
+      "description": "Whether to show as banner",
+      "description_zh": "Whether to show as banner",
       "default": "false",
-      "type": "是否用作顶部公告",
-      "description_zh": "是否用作顶部公告"
+      "value": "",
+      "type": "boolean"
+    },
+    "closable": {
+      "description": "Whether Alert can be closed",
+      "description_zh": "Whether Alert can be closed",
+      "default": "-",
+      "value": "",
+      "type": "boolean"
+    },
+    "closeText": {
+      "description": "Close text to show",
+      "description_zh": "Close text to show",
+      "default": "-",
+      "value": "",
+      "type": "ReactNode"
     },
     "closeIcon": {
-      "value": [
-        "<CloseOutlined/>"
-      ],
-      "description": "Custom close icon, >=5.7.0: Hide the close button when set to 'null' or 'false'",
-      "default": "<CloseOutlined | >",
-      "type": "自定义关闭 Icon，>=5.7.0: 设置为 null 或 false 时隐藏关闭按钮",
-      "description_zh": "自定义关闭 Icon，>=5.7.0: 设置为 `null` 或 `false` 时隐藏关闭按钮"
+      "description": "Custom close icon",
+      "description_zh": "Custom close icon",
+      "default": "<CloseOutlined />",
+      "value": "",
+      "type": "ReactNode"
     },
     "description": {
+      "description": "Additional content of Alert",
+      "description_zh": "Additional content of Alert",
+      "default": "-",
       "value": "",
-      "description": "Customize the error content, if not specified, the error stack will be displayed",
-      "default": "{{ error stack }}",
-      "type": "自定义错误内容，如果未指定会展示报错堆栈",
-      "description_zh": "自定义错误内容，如果未指定会展示报错堆栈"
+      "type": "ReactNode"
     },
     "icon": {
-      "value": "",
-      "description": "Custom icon, 'showIcon' is true for good",
+      "description": "Custom icon, effective when showIcon is true",
+      "description_zh": "Custom icon, effective when showIcon is true",
       "default": "-",
-      "type": "自定义图标，showIcon 为 true 时有效",
-      "description_zh": "自定义图标，`showIcon` 为 true 时有效"
+      "value": "",
+      "type": "ReactNode"
     },
     "message": {
+      "description": "Content of Alert",
+      "description_zh": "Content of Alert",
+      "default": "-",
       "value": "",
-      "description": "Customize the error title, if not specified, display the native error message",
-      "default": "{{ error }}",
-      "type": "自定义错误标题，如果未指定会展示原生报错信息",
-      "description_zh": "自定义错误标题，如果未指定会展示原生报错信息"
+      "type": "ReactNode"
     },
     "showIcon": {
+      "description": "Whether to show icon",
+      "description_zh": "Whether to show icon",
+      "default": "false, in banner mode default is true",
       "value": "",
-      "description": "Whether or not to display secondary icons",
-      "default": "false，banner 模式下默认值为 true",
-      "type": "是否显示辅助图标",
-      "description_zh": "是否显示辅助图标"
+      "type": "boolean"
     },
     "type": {
-      "value": [
-        "success",
-        "info",
-        "warning",
-        "error"
-      ],
-      "description": "Specify the style of the warning prompt, there are four options 'success', 'info', 'warning', error",
-      "default": "info，banner 模式下默认值为 warning",
-      "type": "指定警告提示的样式，有四种选择 success、info、warning、error",
-      "description_zh": "指定警告提示的样式，有四种选择 `success`、`info`、`warning`、error"
+      "description": "Type of Alert styles, options: success, info, warning, error",
+      "description_zh": "Type of Alert styles, options: success, info, warning, error",
+      "default": "info, in banner mode default is warning",
+      "value": "",
+      "type": "string"
     }
   },
   "methods": [],

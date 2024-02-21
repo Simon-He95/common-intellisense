@@ -1,0 +1,187 @@
+{
+  "name": "Ad",
+  "props": {
+    "unitId": {
+      "description": "广告单元id，可在小程序管理后台的流量主模块新建",
+      "description_zh": "广告单元id，可在小程序管理后台的流量主模块新建",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": true
+    },
+    "adIntervals": {
+      "description": "广告自动刷新的间隔时间，单位为秒，参数值必须大于等于30（该参数不传入时 Banner 广告不会自动刷新）",
+      "description_zh": "广告自动刷新的间隔时间，单位为秒，参数值必须大于等于30（该参数不传入时 Banner 广告不会自动刷新）",
+      "default": "",
+      "value": "",
+      "type": "number",
+      "required": false
+    },
+    "adType": {
+      "description": "广告类型，默认为展示banner，可通过设置该属性为video展示视频广告, grid为格子广告",
+      "description_zh": "广告类型，默认为展示banner，可通过设置该属性为video展示视频广告, grid为格子广告",
+      "default": "",
+      "value": "",
+      "type": "\"banner\" or \"video\" or \"grid\"",
+      "required": false
+    },
+    "adTheme": {
+      "description": "广告主题样式设置",
+      "description_zh": "广告主题样式设置",
+      "default": "",
+      "value": "",
+      "type": "\"white\" or \"black\"",
+      "required": false
+    },
+    "appid": {
+      "description": "小程序应用 ID",
+      "description_zh": "小程序应用 ID",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "apid": {
+      "description": "小程序广告位 ID",
+      "description_zh": "小程序广告位 ID",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "type": {
+      "description": "广告类型：banner、feed ，需和百青藤平台上的代码位类型相匹配",
+      "description_zh": "广告类型：banner、feed ，需和百青藤平台上的代码位类型相匹配",
+      "default": "feed",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "updatetime": {
+      "description": "更改该属性，可以触发广告刷新",
+      "description_zh": "更改该属性，可以触发广告刷新",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "fixed": {
+      "description": "广告是否在屏幕中固定展示",
+      "description_zh": "广告是否在屏幕中固定展示",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "scale": {
+      "description": "广告的缩放比例，100 为标准尺寸",
+      "description_zh": "广告的缩放比例，100 为标准尺寸",
+      "default": "100",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "adLeft": {
+      "description": "type 为 feeds 时广告左边距（px），必须大于 0",
+      "description_zh": "type 为 feeds 时广告左边距（px），必须大于 0",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "adTop": {
+      "description": "type 为 feeds 时广告上边距（px），必须大于 0",
+      "description_zh": "type 为 feeds 时广告上边距（px），必须大于 0",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "adWidth": {
+      "description": "type 为 feeds 时广告宽度（px），默认 100%，最大值为屏幕宽度，最小值为 265",
+      "description_zh": "type 为 feeds 时广告宽度（px），默认 100%，最大值为屏幕宽度，最小值为 265",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "adHeight": {
+      "description": "type 为 feeds 时广告高度（px），最小 85，最大 160",
+      "description_zh": "type 为 feeds 时广告高度（px），最小 85，最大 160",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "blockSize": {
+      "description": "type 为 block 时请求积木广告数量（展示以实际拉取广告数量为准）",
+      "description_zh": "type 为 block 时请求积木广告数量（展示以实际拉取广告数量为准）",
+      "default": "1",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "blockOrientation": {
+      "description": "type 为 block 时请求积木广告排列方向",
+      "description_zh": "type 为 block 时请求积木广告排列方向",
+      "default": "landscape",
+      "value": "",
+      "type": "\"vertical\" or \"landscape\"",
+      "required": false
+    },
+    "testBannerType": {
+      "description": "开发者工具下，type 为 banner 时，指定 banner 广告展示三图文还是单图",
+      "description_zh": "开发者工具下，type 为 banner 时，指定 banner 广告展示三图文还是单图",
+      "default": "three",
+      "value": "",
+      "type": "\"one\" or \"three\"",
+      "required": false
+    },
+    "onLoad": {
+      "description": "广告加载成功的回调",
+      "description_zh": "广告加载成功的回调",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction",
+      "required": false
+    },
+    "onError": {
+      "description": "当广告发生错误时，触发的事件，可以通过该事件获取错误码及原因，事件对象 event.detail = {errCode: 1002}",
+      "description_zh": "当广告发生错误时，触发的事件，可以通过该事件获取错误码及原因，事件对象 event.detail = {errCode: 1002}",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction<onErrorEventDetail>",
+      "required": false
+    },
+    "onClose": {
+      "description": "广告关闭的回调",
+      "description_zh": "广告关闭的回调",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction",
+      "required": false
+    },
+    "onStatus": {
+      "description": "贴片类型广告播放期间触发",
+      "description_zh": "贴片类型广告播放期间触发",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction",
+      "required": false
+    },
+    "onSize": {
+      "description": "type 为 feeds 时广告实际宽高回调",
+      "description_zh": "type 为 feeds 时广告实际宽高回调",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction<onSizeEventDetail>",
+      "required": false
+    }
+  },
+  "link": "https://docs.taro.zone/docs/components/open/ad",
+  "link_zh": "https://docs.taro.zone/docs/components/open/ad",
+  "typeDetail": {},
+  "events": [],
+  "methods": [],
+  "slots": []
+}

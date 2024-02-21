@@ -2,24 +2,24 @@
   "name": "SelectContent",
   "props": {
     "position": {
-      "default": "\"item-aligned\"",
+      "default": "item-aligned",
       "value": [
         "item-aligned",
         "popper"
       ],
-      "type": "\"item-aligned\" | \"popper\"",
+      "type": "item-aligned / popper",
       "description": "The positioning mode to use, item-aligned is the default and behaves similarly to a native MacOS menu by positioning content relative to the active item. popper positions content in the same way as our other primitives, for example Popover or DropdownMenu.",
       "description_zh": "要使用的定位模式“项目对齐”是默认模式，其行为类似于本机 MacOS 菜单，方法是将内容相对于活动项目进行定位。popper 以与其他基元相同的方式定位内容，例如 Popover 或 DropdownMenu。"
     },
     "side": {
-      "default": "\"bottom\"",
+      "default": "bottom",
       "value": [
         "top",
         "right",
         "bottom",
         "left"
       ],
-      "type": "\"top\" | \"right\" | \"bottom\" | \"left\"",
+      "type": "top / right / bottom / left",
       "description": "The preferred side of the anchor to render against when open. Will be reversed when collisions occur and avoidCollisions is enabled. Only available when position is set to popper.",
       "description_zh": "锚点的首选侧，在打开时呈现。当发生冲突并启用 avoidCollisions 时，将反转。仅当 position 设置为 popper 时可用。"
     },
@@ -31,13 +31,13 @@
       "description_zh": "与锚点的距离（以像素为单位）。仅当 position 设置为 popper 时可用。"
     },
     "align": {
-      "default": "\"start\"",
+      "default": "start",
       "value": [
         "start",
         "center",
         "end"
       ],
-      "type": "\"start\" | \"center\" | \"end\"",
+      "type": "start / center / end",
       "description": "The preferred alignment against the anchor. May change when collisions occur. Only available when position is set to popper.",
       "description_zh": "与锚点的首选对齐方式。发生碰撞时可能会发生变化。仅当 position 设置为 popper 时可用。"
     },
@@ -77,13 +77,13 @@
       "description_zh": "箭头和内容边缘之间的填充。如果您的内容具有边框半径，这将防止它溢出角落。仅当 position 设置为 popper 时可用。"
     },
     "sticky": {
-      "default": "\"partial\"",
+      "default": "partial",
       "value": [
         "partial",
         "always"
       ],
-      "type": "\"partial\" | \"always\"",
-      "description": "The sticky behavior on the align axis. \"partial\" will keep the content in the boundary as long as the trigger is at least partially in the boundary whilst \"always\" will keep the content in the boundary regardless. Only available when position is set to popper.",
+      "type": "partial / always",
+      "description": "The sticky behavior on the align axis. partial will keep the content in the boundary as long as the trigger is at least partially in the boundary whilst \"always\" will keep the content in the boundary regardless. Only available when position is set to popper.",
       "description_zh": "对齐轴上的粘性行为。只要触发器至少部分在边界中，“partial”就会将内容保留在边界中，而“always”将始终将内容保留在边界中。仅当 position 设置为 popper 时可用。"
     },
     "hideWhenDetached": {

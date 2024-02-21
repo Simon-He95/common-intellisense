@@ -293,7 +293,8 @@ export function activate(context: vscode.ExtensionContext) {
         return eventCallbacks.get(key).filter((item: any) => !hasProps.find((prop: any) => item?.params?.[1] === prop))
       }
       else if (propName) {
-        const r = completionsCallback.filter((item: any) => isValue
+        const r: any[] = []
+        completionsCallback.filter((item: any) => isValue
           ? hasProps.find((prop: any) => item?.params?.[1] === prop)
           : !hasProps.find((prop: any) => item?.params?.[1] === prop))
           .filter((item: any) => {
@@ -307,6 +308,15 @@ export function activate(context: vscode.ExtensionContext) {
             if (result.isDynamic && label[0] === ':')
               label = label.slice(1)
 
+            item.propType.split('/').forEach((p: string) => {
+              r.push(createCompletionItem({
+                content: p.trim(),
+                snippet: p.trim().replace(/'`/g, ''),
+                documentation: item.documentation,
+                detail: item.detail,
+                type: item.kind,
+              }))
+            })
             return item.label.match(/^\w+={[^}]*}/)
               ? undefined
               : createCompletionItem(isValue
@@ -372,20 +382,23 @@ export function activate(context: vscode.ExtensionContext) {
       return data
     }
   }, (item: any) => {
-    if (item.params[2]) {
-      item.command = {
-        title: 'common-intellisense-import',
-        command: 'common-intellisense.import',
-        arguments: [item.params, item.loc, (item.snippet || item.content).split('\n').length - 1],
+    if (!item.command) {
+      if (item.params[2]) {
+        item.command = {
+          title: 'common-intellisense-import',
+          command: 'common-intellisense.import',
+          arguments: [item.params, item.loc, (item.snippet || item.content).split('\n').length - 1],
+        }
+      }
+      else {
+        item.command = {
+          title: 'common-intellisense.slots',
+          command: 'common-intellisense.slots',
+          arguments: [],
+        }
       }
     }
-    else {
-      item.command = {
-        title: 'common-intellisense.slots',
-        command: 'common-intellisense.slots',
-        arguments: [],
-      }
-    }
+
     return item
   }, ['"', '\'', '-', ' ', '@', '.', ':']))
 
@@ -703,9 +716,9 @@ function getEffectWord(preText: string) {
 }
 
 function getHoverAttribute(attributeList: any[], attr: string) {
-  return attributeList.filter((a) => {
-    return a?.params?.[1]?.replace('v-model:', '') === toCamel(attr)
-  }).map(i => `- ${i.label}`).join('\n\n')
+  return attributeList.filter(a =>
+    toCamel(a?.params?.[1]?.replace('v-model:', '') || '') === toCamel(attr),
+  ).map(i => `- ${i.label}`).join('\n\n')
 }
 
 const IMPORT_UI_REG = /import\s+{([^\}]+)}\s+from\s+['"]([^"']+)['"]/g

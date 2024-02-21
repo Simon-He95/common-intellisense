@@ -1,0 +1,91 @@
+{
+  "name": "OpenData",
+  "props": {
+    "type": {
+      "description": "开放数据类型",
+      "description_zh": "开放数据类型",
+      "default": "",
+      "value": "",
+      "type": "keyof Type",
+      "required": true
+    },
+    "openGid": {
+      "description": "当 type=\"groupName\" 时生效, 群id",
+      "description_zh": "当 type=\"groupName\" 时生效, 群id",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "lang": {
+      "description": "当 type=\"user*\" 时生效，以哪种语言展示 userInfo",
+      "description_zh": "当 type=\"user*\" 时生效，以哪种语言展示 userInfo",
+      "default": "\"en\"",
+      "value": "",
+      "type": "keyof Lang",
+      "required": false
+    },
+    "defaultText": {
+      "description": "数据为空时的默认文案",
+      "description_zh": "数据为空时的默认文案",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "defaultAvatar": {
+      "description": "用户头像为空时的默认图片，支持相对路径和网络图片路径",
+      "description_zh": "用户头像为空时的默认图片，支持相对路径和网络图片路径",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "useEmptyValue": {
+      "description": "当数据为空且未设置默认值时，是否显示官方默认值",
+      "description_zh": "当数据为空且未设置默认值时，是否显示官方默认值",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "shareTicket": {
+      "description": "当 type=groupCloudStorage 时有效，群分享对应的 shareTicket",
+      "description_zh": "当 type=groupCloudStorage 时有效，群分享对应的 shareTicket",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "keyList": {
+      "description": "当 type=*CloudStorage 时有效，指定要拉取的 key 列表",
+      "description_zh": "当 type=*CloudStorage 时有效，指定要拉取的 key 列表",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "componentData": {
+      "description": "当 type=*CloudStorage 时有效，从主域透传给开放数据域的数据，会自动注入到自定义开放数据域组件的 properties 中",
+      "description_zh": "当 type=*CloudStorage 时有效，从主域透传给开放数据域的数据，会自动注入到自定义开放数据域组件的 properties 中",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "onError": {
+      "description": "群名称或用户信息为空时触发",
+      "description_zh": "群名称或用户信息为空时触发",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction",
+      "required": false
+    }
+  },
+  "link": "https://docs.taro.zone/docs/components/open/open-data",
+  "link_zh": "https://docs.taro.zone/docs/components/open/open-data",
+  "typeDetail": {},
+  "events": [],
+  "methods": [],
+  "slots": []
+}

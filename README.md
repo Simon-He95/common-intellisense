@@ -26,6 +26,7 @@ Install the supported ui component library in your project and install the plug-
 - arco-design/react 2
 - arco-design/vue 2
 - uview-ui 1、2
+- taro 3
 
 ### [antdv demo](assets/antdv.gif)
 

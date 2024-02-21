@@ -1,0 +1,99 @@
+{
+  "name": "Camera",
+  "props": {
+    "mode": {
+      "description": "模式，有效值为normal, scanCode",
+      "description_zh": "模式，有效值为normal, scanCode",
+      "default": "\"normal\"",
+      "value": "",
+      "type": "keyof Mode",
+      "required": false
+    },
+    "resolution": {
+      "description": "分辨率，不支持动态修改",
+      "description_zh": "分辨率，不支持动态修改",
+      "default": "\"medium\"",
+      "value": "",
+      "type": "keyof Resolution",
+      "required": false
+    },
+    "devicePosition": {
+      "description": "摄像头朝向",
+      "description_zh": "摄像头朝向",
+      "default": "\"back\"",
+      "value": "",
+      "type": "keyof DevicePosition",
+      "required": false
+    },
+    "flash": {
+      "description": "闪光灯",
+      "description_zh": "闪光灯",
+      "default": "\"auto\"",
+      "value": "",
+      "type": "keyof Flash",
+      "required": false
+    },
+    "frameSize": {
+      "description": "指定期望的相机帧数据尺寸",
+      "description_zh": "指定期望的相机帧数据尺寸",
+      "default": "\"medium\"",
+      "value": "",
+      "type": "keyof FrameSize",
+      "required": false
+    },
+    "outputDimension": {
+      "description": "相机拍照，录制的分辨率。",
+      "description_zh": "相机拍照，录制的分辨率。",
+      "default": "\"720P\"",
+      "value": "",
+      "type": "\"360P\" or \"540P\" or \"720P\" or \"1080P\" or \"max\"",
+      "required": false
+    },
+    "onStop": {
+      "description": "摄像头在非正常终止时触发，如退出后台等情况",
+      "description_zh": "摄像头在非正常终止时触发，如退出后台等情况",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction",
+      "required": false
+    },
+    "onError": {
+      "description": "用户不允许使用摄像头时触发",
+      "description_zh": "用户不允许使用摄像头时触发",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction",
+      "required": false
+    },
+    "onInitDone": {
+      "description": "相机初始化完成时触发",
+      "description_zh": "相机初始化完成时触发",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction<onInitDoneEventDetail>",
+      "required": false
+    },
+    "onReady": {
+      "description": "相机初始化成功时触发。",
+      "description_zh": "相机初始化成功时触发。",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction<onInitDoneEventDetail>",
+      "required": false
+    },
+    "onScanCode": {
+      "description": "在成功识别到一维码时触发，仅在 mode=\"scanCode\" 时生效",
+      "description_zh": "在成功识别到一维码时触发，仅在 mode=\"scanCode\" 时生效",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction<onScanCodeEventDetail>",
+      "required": false
+    }
+  },
+  "link": "https://docs.taro.zone/docs/components/media/camera",
+  "link_zh": "https://docs.taro.zone/docs/components/media/camera",
+  "typeDetail": {},
+  "events": [],
+  "methods": [],
+  "slots": []
+}

@@ -671,8 +671,8 @@ function findAllJsxElements(code: string) {
       results.push(node)
     }
     else if (node.type === 'ObjectExpression') {
-      const _node: any = node.properties?.find((p: any) => p.key.name === 'render')
-        || node.properties?.find((p: any) => p.key.name === 'setup')
+      const _node: any = node.properties?.find((p: any) => p?.key?.name === 'render')
+        || node.properties?.find((p: any) => p?.key?.name === 'setup')
       const t = _node?.value
       if (t) {
         traverse(t, (nextNode) => {

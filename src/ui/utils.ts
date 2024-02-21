@@ -35,92 +35,86 @@ export function propsReducer(uiName: string, map: string[], iconData?: { prefix:
       Object.keys(item.props!).forEach((key) => {
         const value = (item.props as any)[key]
         let type = vscode.CompletionItemKind.Property
-        if (typeof value.value === 'string')
-          value.value = [value.value]
-        else
+        if (typeof value.value !== 'string')
           type = vscode.CompletionItemKind.Enum
 
-        data.push(...value.value.map((v: string) => {
-          const documentation = new vscode.MarkdownString()
-          documentation.isTrusted = true
-          documentation.supportHtml = true
-          const detail = []
+        const documentation = new vscode.MarkdownString()
+        documentation.isTrusted = true
+        documentation.supportHtml = true
+        const detail = []
 
-          detail.push(`## ${uiName} [${item.name}]`)
+        detail.push(`## ${uiName} [${item.name}]`)
 
-          if (value.default !== undefined && value.default !== '')
-            detail.push(`#### 💎 ${isZh ? '默认值' : 'default'}:    ***\`${value.default.toString().replace(/`/g, '')}\`***`)
+        if (value.default !== undefined && value.default !== '')
+          detail.push(`#### 💎 ${isZh ? '默认值' : 'default'}:    ***\`${value.default.toString().replace(/`/g, '')}\`***`)
 
-          if (value.description) {
-            if (isZh)
-              detail.push(`#### 🔦 说明:    ***\`${value.description_zh || value.description}\`***`)
-            else
-              detail.push(`#### 🔦 description:    ***\`${value.description}\`***`)
-          }
+        if (value.description) {
+          if (isZh)
+            detail.push(`#### 🔦 说明:    ***\`${value.description_zh || value.description}\`***`)
+          else
+            detail.push(`#### 🔦 description:    ***\`${value.description}\`***`)
+        }
 
-          if (value.type)
-            detail.push(`#### 💡 ${isZh ? '类型' : 'type'}:    ***\`${value.type.replace(/`/g, '')}\`***`)
-          documentation.appendMarkdown(detail.join('\n\n'))
+        if (value.type)
+          detail.push(`#### 💡 ${isZh ? '类型' : 'type'}:    ***\`${value.type.replace(/`/g, '')}\`***`)
+        documentation.appendMarkdown(detail.join('\n\n'))
 
-          if (item.typeDetail && Object.keys(item.typeDetail).length) {
-            const data = `🌈 类型详情:\n${Object.keys(item.typeDetail).reduce((result, key) => result += key[0] === '$'
-              ? `\ntype ${key.slice(1).replace(/-(\w)/g, v => v.toUpperCase())} = \n${item.typeDetail[key].map((typeItem: any) => `${typeItem.name} /*${typeItem.description}*/`).join('\n| ')}\n\n`
-              : `\ninterface ${key} {\n  ${item.typeDetail[key].map((typeItem: any) => `${typeItem.name}${typeItem.optional ? '?' : ''}: ${typeItem.type} /*${typeItem.description}${typeItem.default ? ` 默认值: ***${typeItem.default}***` : ''}*/`).join('\n  ')}\n}`, '')}`
-            documentation.appendCodeblock(data, 'typescript')
-          }
+        if (item.typeDetail && Object.keys(item.typeDetail).length) {
+          const data = `🌈 类型详情:\n${Object.keys(item.typeDetail).reduce((result, key) => result += key[0] === '$'
+            ? `\ntype ${key.slice(1).replace(/-(\w)/g, v => v.toUpperCase())} = \n${item.typeDetail[key].map((typeItem: any) => `${typeItem.name} /*${typeItem.description}*/`).join('\n| ')}\n\n`
+            : `\ninterface ${key} {\n  ${item.typeDetail[key].map((typeItem: any) => `${typeItem.name}${typeItem.optional ? '?' : ''}: ${typeItem.type} /*${typeItem.description}${typeItem.default ? ` 默认值: ***${typeItem.default}***` : ''}*/`).join('\n  ')}\n}`, '')}`
+          documentation.appendCodeblock(data, 'typescript')
+        }
 
-          // command:extension.openDocumentLink?%7B%22link%22%3A%22https%3A%2F%2Fexample.com%2F%22%7D
-          if (item.link)
-            documentation.appendMarkdown(`\n[🔗 ${isZh ? '文档链接' : 'Documentation link'}](command:intellisense.openDocument?%7B%22link%22%3A%22${encodeURIComponent(isZh ? item.link_zh : item.link)}%22%7D)\`       \`[🔗 ${isZh ? '外部文档链接' : 'External document links'}](command:intellisense.openDocumentExternal?%7B%22link%22%3A%22${encodeURIComponent(isZh ? item.link_zh : item.link)}%22%7D)`)
+        // command:extension.openDocumentLink?%7B%22link%22%3A%22https%3A%2F%2Fexample.com%2F%22%7D
+        if (item.link)
+          documentation.appendMarkdown(`\n[🔗 ${isZh ? '文档链接' : 'Documentation link'}](command:intellisense.openDocument?%7B%22link%22%3A%22${encodeURIComponent(isZh ? item.link_zh : item.link)}%22%7D)\`       \`[🔗 ${isZh ? '外部文档链接' : 'External document links'}](command:intellisense.openDocumentExternal?%7B%22link%22%3A%22${encodeURIComponent(isZh ? item.link_zh : item.link)}%22%7D)`)
 
-          let content = ''
-          let snippet = ''
-          if (value.type && value.type.trim() === 'boolean' && value.default === 'false') {
-            content = snippet = key
-          }
-          else if (value.type && value.type.trim() === 'boolean' && value.default === 'true') {
-            if (isVue) {
-              content = key
-              snippet = `:${key}="false"`
-            }
-            else {
-              content = key
-              snippet = `${key}={false}`
-            }
-          }
-          else if (key.startsWith(':')) {
-            if (!v) {
-              if (isVue) {
-                const _key = key.replace('v-model', 'model')
-                content = `${key.replace(':v-model', 'v-model')}="${getComponentTagName(item.name)}${_key[1].toUpperCase()}${toCamel(_key.slice(2))}"`
-                snippet = `${key.replace(':v-model', 'v-model')}="\${1:${getComponentTagName(item.name)}${_key[1].toUpperCase()}${toCamel(_key.slice(2))}}"$2`
-              }
-              else {
-                content = `${key.slice(1)}={${getComponentTagName(item.name)}${key[1].toUpperCase()}${toCamel(key.slice(2))}}`
-                snippet = `${key.slice(1)}={\${1:${getComponentTagName(item.name)}${key[1].toUpperCase()}${toCamel(key.slice(2))}}}$2`
-              }
-            }
-            else {
-              if (isVue) {
-                const _key = key.replace('v-model', 'model')
-                content = `${key.replace(':v-model', 'v-model')}="${getComponentTagName(item.name)}${_key[1].toUpperCase()}${toCamel(_key.slice(2))}"`
-                snippet = `${key.replace(':v-model', 'v-model')}="\${1:${getComponentTagName(item.name)}${_key[1].toUpperCase()}${toCamel(_key.slice(2))}}"$2`
-              }
-              else {
-                content = `${key.slice(1)}={${v}}`
-                snippet = `${key.slice(1)}={\${1:${v}}}$2`
-              }
-            }
+        let content = ''
+        let snippet = ''
+        if (value.type && value.type.trim() === 'boolean' && value.default === 'false') {
+          content = snippet = key
+        }
+        else if (value.type && value.type.trim() === 'boolean' && value.default === 'true') {
+          if (isVue) {
+            content = key
+            snippet = `:${key}="false"`
           }
           else {
-            content = `${key}="${v}"`
-            snippet = `${key}="$\{1:${v}\}$2"`
+            content = key
+            snippet = `${key}={false}`
           }
-          content += `  ${isZh ? (value.description_zh || value.description) : value.description}${value.default ? `  ${isZh ? '默认' : 'default'}：${value.default}` : ''}`
-
-          return createCompletionItem({ content, snippet, type, documentation, preselect: true, sortText: 'a', params: [uiName, key.replace(/^:/, '')] })
-        },
-        ))
+        }
+        else if (key.startsWith(':')) {
+          if (isVue) {
+            const _key = key.replace('v-model', 'model')
+            content = `${key.replace(':v-model', 'v-model')}="${getComponentTagName(item.name)}${_key[1].toUpperCase()}${toCamel(_key.slice(2))}"`
+            snippet = `${key.replace(':v-model', 'v-model')}="\${1:${getComponentTagName(item.name)}${_key[1].toUpperCase()}${toCamel(_key.slice(2))}}"$2`
+          }
+          else {
+            content = `${key.slice(1)}={${getComponentTagName(item.name)}${key[1].toUpperCase()}${toCamel(key.slice(2))}}`
+            snippet = `${key.slice(1)}={\${1:${getComponentTagName(item.name)}${key[1].toUpperCase()}${toCamel(key.slice(2))}}}$2`
+          }
+        }
+        else {
+          content = `${key}=""`
+          snippet = `${key}="\${1:  }"`
+        }
+        content += `  ${isZh ? (value.description_zh || value.description) : value.description}${value.default ? `  ${isZh ? '默认' : 'default'}：${value.default}` : ''}`
+        data.push(createCompletionItem({
+          content,
+          snippet,
+          type,
+          documentation,
+          preselect: true,
+          sortText: 'a',
+          params: [uiName, key.replace(/^:/, '')],
+          propType: value.type,
+          command: {
+            command: 'editor.action.triggerSuggest', // 这个命令会触发代码提示
+            title: 'Trigger Suggest',
+          },
+        }))
       })
       return data
     }

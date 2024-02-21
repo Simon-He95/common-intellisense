@@ -2,110 +2,68 @@
   "name": "Progress",
   "props": {
     "format": {
-      "value": "",
-      "description": "Template functions for the content",
+      "description": "The template function of the content",
+      "description_zh": "The template function of the content",
       "default": "(percent) => percent + %",
-      "type": "内容的模板函数",
-      "description_zh": "内容的模板函数"
-    },
-    "percent": {
       "value": "",
-      "description": "percentage",
+      "type": "function(percent, successPercent)"
+    },
+    ":percent": {
+      "description": "To set the completion percentage",
+      "description_zh": "To set the completion percentage",
       "default": "0",
-      "type": "百分比",
-      "description_zh": "百分比"
+      "value": "",
+      "type": "number",
+      "required": true
     },
     "showInfo": {
-      "value": "",
-      "description": "Whether to display a progress value or status icon",
+      "description": "Whether to display the progress value and the status icon",
+      "description_zh": "Whether to display the progress value and the status icon",
       "default": "true",
-      "type": "是否显示进度数值或状态图标",
-      "description_zh": "是否显示进度数值或状态图标"
+      "value": "",
+      "type": "boolean"
     },
     "status": {
-      "value": "",
-      "description": "Status, optional: 'success' 'exception' 'normal' 'active' (line only)",
+      "description": "To set the status of the Progress, options: success exception normal active(line only)",
+      "description_zh": "To set the status of the Progress, options: success exception normal active(line only)",
       "default": "-",
-      "type": "状态，可选：success exception normal active(仅限 line)",
-      "description_zh": "状态，可选：`success` `exception` `normal` `active`(仅限 line)"
+      "value": "",
+      "type": "string"
     },
     "strokeColor": {
-      "value": "",
-      "description": "The color of the circular progress bar, which is a gradient when passed into the object",
+      "description": "The color of progress bar",
+      "description_zh": "The color of progress bar",
       "default": "-",
-      "type": "圆形进度条线的色彩，传入 object 时为渐变",
-      "description_zh": "圆形进度条线的色彩，传入 object 时为渐变"
+      "value": "",
+      "type": "string"
     },
     "strokeLinecap": {
-      "value": [
-        "round",
-        "butt",
-        "square"
-      ],
-      "description": "The style of the progress bar",
+      "description": "To set the style of the progress linecap",
+      "description_zh": "To set the style of the progress linecap",
       "default": "round",
-      "type": "进度条的样式",
-      "description_zh": "进度条的样式"
+      "value": "",
+      "type": "round | butt | square, see stroke-linecap"
     },
     "success": {
-      "value": "",
-      "description": "Configure the success progress bar",
+      "description": "Configs of successfully progress bar",
+      "description_zh": "Configs of successfully progress bar",
       "default": "-",
-      "type": "成功进度条相关配置",
-      "description_zh": "成功进度条相关配置"
+      "value": "",
+      "type": "{ percent: number, strokeColor: string }"
     },
     "trailColor": {
-      "value": "",
-      "description": "The color of the unfinished segment",
+      "description": "The color of unfilled part",
+      "description_zh": "The color of unfilled part",
       "default": "-",
-      "type": "未完成的分段的颜色",
-      "description_zh": "未完成的分段的颜色"
+      "value": "",
+      "type": "string"
     },
     "type": {
-      "value": [
-        "line",
-        "circle",
-        "dashboard"
-      ],
-      "description": "Type, optional 'line' or 'circle' dashboard",
+      "description": "To set the type, options: line circle dashboard",
+      "description_zh": "To set the type, options: line circle dashboard",
       "default": "line",
-      "type": "类型，可选 line circle dashboard",
-      "description_zh": "类型，可选 `line` `circle` dashboard"
-    },
-    "size": {
       "value": "",
-      "description": "The size of the progress bar",
-      "default": "default",
-      "type": "进度条的尺寸",
-      "description_zh": "进度条的尺寸"
-    },
-    "steps": {
-      "value": "",
-      "description": "The total number of steps in the progress bar",
-      "default": "-",
-      "type": "进度条总共步数",
-      "description_zh": "进度条总共步数"
-    },
-    "strokeWidth": {
-      "value": "",
-      "description": "The width of the dashboard progress bar line, in percentage of the width of the progress bar canvas",
-      "default": "6",
-      "type": "仪表盘进度条线的宽度，单位是进度条画布宽度的百分比",
-      "description_zh": "仪表盘进度条线的宽度，单位是进度条画布宽度的百分比"
-    },
-    "gapDegree": {
-      "value": "",
-      "description": "The notch angle of the dashboard progress bar can be 0 ~ 295",
-      "default": "75",
-      "type": "仪表盘进度条缺口角度，可取值 0 ~ 295",
-      "description_zh": "仪表盘进度条缺口角度，可取值 0 ~ 295"
-    },
-    "gapPosition": {
-      "value": "",
-      "description": "Notch position of the dashboard progress bar",
-      "default": "bottom",
-      "type": "仪表盘进度条缺口位置",
-      "description_zh": "仪表盘进度条缺口位置"
+      "type": "string"
     }
   },
   "methods": [],

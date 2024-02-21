@@ -1,0 +1,83 @@
+{
+  "name": "InlinePaymentPanel",
+  "props": {
+    "totalAmount": {
+      "description": "总金额，金额单位分，tip：仅支持整数型字符串",
+      "description_zh": "总金额，金额单位分，tip：仅支持整数型字符串",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "dealId": {
+      "description": "百度收银台的财务结算凭证，详见平台术语",
+      "description_zh": "百度收银台的财务结算凭证，详见平台术语",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "appKey": {
+      "description": "支付能力开通后分配的支付 appKey，详见平台术语",
+      "description_zh": "支付能力开通后分配的支付 appKey，详见平台术语",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "promotionTag": {
+      "description": "平台营销信息，此处传当前订单中可使用平台券的 spuid，同时需在 支付能力中搭配使用传入该参数；注：仅与百度合作平台类目券的开发者需要填写该参数",
+      "description_zh": "平台营销信息，此处传当前订单中可使用平台券的 spuid，同时需在 支付能力中搭配使用传入该参数；注：仅与百度合作平台类目券的开发者需要填写该参数",
+      "default": "",
+      "value": "",
+      "type": "string or string[]",
+      "required": false
+    },
+    "enablePageBackModal": {
+      "description": "是否设置挽留弹窗",
+      "description_zh": "是否设置挽留弹窗",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "customStyle": {
+      "description": "自定义样式设置",
+      "description_zh": "自定义样式设置",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "styleType": {
+      "description": "自定义样式档位配置，各档位配置项包括支付渠道/优惠券条高度、渠道图标大小、支付渠道文案字体大小、营销文案字体大小、选择器图标大小",
+      "description_zh": "自定义样式档位配置，各档位配置项包括支付渠道/优惠券条高度、渠道图标大小、支付渠道文案字体大小、营销文案字体大小、选择器图标大小",
+      "default": "\"default\"",
+      "value": "",
+      "type": "\"tiny\" or \"small\" or \"default\" or \"medium\" or \"large\"",
+      "required": false
+    },
+    "onGetPaymentInfo": {
+      "description": "获取支付相关信息，具体信息在返回值的 detail 字段中",
+      "description_zh": "获取支付相关信息，具体信息在返回值的 detail 字段中",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction",
+      "required": false
+    },
+    "onError": {
+      "description": "当发生错误时触发 error 事件，具体信息在返回值的 detail 字段中，例如 {detail: {errMsg: \"something is wrong\"}}",
+      "description_zh": "当发生错误时触发 error 事件，具体信息在返回值的 detail 字段中，例如 {detail: {errMsg: \"something is wrong\"}}",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction",
+      "required": false
+    }
+  },
+  "link": "https://docs.taro.zone/docs/components/open/inline-payment-panel",
+  "link_zh": "https://docs.taro.zone/docs/components/open/inline-payment-panel",
+  "typeDetail": {},
+  "events": [],
+  "methods": [],
+  "slots": []
+}

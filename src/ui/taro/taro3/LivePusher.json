@@ -1,0 +1,395 @@
+{
+  "name": "LivePusher",
+  "props": {
+    "url": {
+      "description": "推流地址。目前仅支持 rtmp 格式",
+      "description_zh": "推流地址。目前仅支持 rtmp 格式",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "mode": {
+      "description": "SD（标清）, HD（高清）, FHD（超清）, RTC（实时通话）",
+      "description_zh": "SD（标清）, HD（高清）, FHD（超清）, RTC（实时通话）",
+      "default": "\"RTC\"",
+      "value": "",
+      "type": "\"SD\" or \"HD\" or \"FHD\" or \"RTC\"",
+      "required": false
+    },
+    "autopush": {
+      "description": "自动推流",
+      "description_zh": "自动推流",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "enableVideoCustomRender": {
+      "description": "自定义渲染，允许开发者自行处理所采集的视频帧",
+      "description_zh": "自定义渲染，允许开发者自行处理所采集的视频帧",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "muted": {
+      "description": "是否静音。即将废弃，可用 enable-mic 替代不推荐使用",
+      "description_zh": "是否静音。即将废弃，可用 enable-mic 替代不推荐使用",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "enableCamera": {
+      "description": "开启摄像头",
+      "description_zh": "开启摄像头",
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "autoFocus": {
+      "description": "自动聚集",
+      "description_zh": "自动聚集",
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "orientation": {
+      "description": "画面方向",
+      "description_zh": "画面方向",
+      "default": "\"vertical\"",
+      "value": "",
+      "type": "keyof Orientation",
+      "required": false
+    },
+    "beauty": {
+      "description": "美颜，取值范围 0-9 ，0 表示关闭",
+      "description_zh": "美颜，取值范围 0-9 ，0 表示关闭",
+      "default": "0",
+      "value": "",
+      "type": "number",
+      "required": false
+    },
+    "whiteness": {
+      "description": "美白，取值范围 0-9 ，0 表示关闭",
+      "description_zh": "美白，取值范围 0-9 ，0 表示关闭",
+      "default": "0",
+      "value": "",
+      "type": "number",
+      "required": false
+    },
+    "aspect": {
+      "description": "宽高比，可选值有 3:4, 9:16",
+      "description_zh": "宽高比，可选值有 3:4, 9:16",
+      "default": "\"9:16\"",
+      "value": "",
+      "type": "\"9:16\" or \"3:4\"",
+      "required": false
+    },
+    "minBitrate": {
+      "description": "最小码率",
+      "description_zh": "最小码率",
+      "default": "200",
+      "value": "",
+      "type": "number",
+      "required": false
+    },
+    "maxBitrate": {
+      "description": "最大码率",
+      "description_zh": "最大码率",
+      "default": "1000",
+      "value": "",
+      "type": "number",
+      "required": false
+    },
+    "audioQuality": {
+      "description": "高音质(48KHz)或低音质(16KHz)，值为high, low",
+      "description_zh": "高音质(48KHz)或低音质(16KHz)，值为high, low",
+      "default": "\"high\"",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "waitingImage": {
+      "description": "进入后台时推流的等待画面",
+      "description_zh": "进入后台时推流的等待画面",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "waitingImageHash": {
+      "description": "等待画面资源的MD5值",
+      "description_zh": "等待画面资源的MD5值",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "zoom": {
+      "description": "调整焦距",
+      "description_zh": "调整焦距",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "devicePosition": {
+      "description": "前置或后置，值为front, back",
+      "description_zh": "前置或后置，值为front, back",
+      "default": "\"front\"",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "backgroundMute": {
+      "description": "进入后台时是否静音",
+      "description_zh": "进入后台时是否静音",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "mirror": {
+      "description": "设置推流画面是否镜像，产生的效果在 LivePlayer 反应到",
+      "description_zh": "设置推流画面是否镜像，产生的效果在 LivePlayer 反应到",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "remoteMirror": {
+      "description": "设置推流画面是否镜像，产生的效果在 LivePlayer 反应到Note: 同 mirror 属性，后续 mirror 将废弃",
+      "description_zh": "设置推流画面是否镜像，产生的效果在 LivePlayer 反应到Note: 同 mirror 属性，后续 mirror 将废弃",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "localMirror": {
+      "description": "控制本地预览画面是否镜像",
+      "description_zh": "控制本地预览画面是否镜像",
+      "default": "\"auto\"",
+      "value": "",
+      "type": "keyof LocalMirror",
+      "required": false
+    },
+    "audioReverbType": {
+      "description": "音频混响类型",
+      "description_zh": "音频混响类型",
+      "default": "0",
+      "value": "",
+      "type": "keyof AudioReverbType",
+      "required": false
+    },
+    "enableMic": {
+      "description": "开启或关闭麦克风",
+      "description_zh": "开启或关闭麦克风",
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "enableAgc": {
+      "description": "是否开启音频自动增益",
+      "description_zh": "是否开启音频自动增益",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "enableAns": {
+      "description": "是否开启音频噪声抑制",
+      "description_zh": "是否开启音频噪声抑制",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "audioVolumeType": {
+      "description": "音量类型",
+      "description_zh": "音量类型",
+      "default": "\"voicecall\"",
+      "value": "",
+      "type": "keyof AudioVolumeType",
+      "required": false
+    },
+    "videoWidth": {
+      "description": "上推的视频流的分辨率宽度",
+      "description_zh": "上推的视频流的分辨率宽度",
+      "default": "360",
+      "value": "",
+      "type": "number",
+      "required": false
+    },
+    "videoHeight": {
+      "description": "上推的视频流的分辨率高度",
+      "description_zh": "上推的视频流的分辨率高度",
+      "default": "640",
+      "value": "",
+      "type": "number",
+      "required": false
+    },
+    "beautyStyle": {
+      "description": "设置美颜类型",
+      "description_zh": "设置美颜类型",
+      "default": "smooth",
+      "value": "",
+      "type": "keyof BeautyStyleType",
+      "required": false
+    },
+    "filter": {
+      "description": "设置色彩滤镜",
+      "description_zh": "设置色彩滤镜",
+      "default": "standard",
+      "value": "",
+      "type": "keyof FilterType",
+      "required": false
+    },
+    "pictureInPictureMode": {
+      "description": "设置小窗模式： push, pop，空字符串或通过数组形式设置多种模式（如： [\"push\", \"pop\"]）",
+      "description_zh": "设置小窗模式： push, pop，空字符串或通过数组形式设置多种模式（如： [\"push\", \"pop\"]）",
+      "default": "",
+      "value": "",
+      "type": "string or any[]",
+      "required": false
+    },
+    "customEffect": {
+      "description": "是否启动自定义特效，设定后不能更改",
+      "description_zh": "是否启动自定义特效，设定后不能更改",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "skinWhiteness": {
+      "description": "自定义特效美白效果，取值 0~1。需要开启 custom-effect",
+      "description_zh": "自定义特效美白效果，取值 0~1。需要开启 custom-effect",
+      "default": "0",
+      "value": "",
+      "type": "number",
+      "required": false
+    },
+    "skinSmoothness": {
+      "description": "自定义特效磨皮效果，取值 0~1。需要开启 custom-effect",
+      "description_zh": "自定义特效磨皮效果，取值 0~1。需要开启 custom-effect",
+      "default": "0",
+      "value": "",
+      "type": "number",
+      "required": false
+    },
+    "faceThinness": {
+      "description": "自定义特效瘦脸效果，取值 0~1。需要开启 custom-effect",
+      "description_zh": "自定义特效瘦脸效果，取值 0~1。需要开启 custom-effect",
+      "default": "0",
+      "value": "",
+      "type": "number",
+      "required": false
+    },
+    "eyeBigness": {
+      "description": "自定义特效大眼效果，取值 0~1。需要开启 custom-effect",
+      "description_zh": "自定义特效大眼效果，取值 0~1。需要开启 custom-effect",
+      "default": "0",
+      "value": "",
+      "type": "number",
+      "required": false
+    },
+    "voiceChangerType": {
+      "description": "0：关闭变声；1：熊孩子；2：萝莉；3：大叔；4：重金属；6：外国人；7：困兽；8：死肥仔；9：强电流；10：重机械；11：空灵",
+      "description_zh": "0：关闭变声；1：熊孩子；2：萝莉；3：大叔；4：重金属；6：外国人；7：困兽；8：死肥仔；9：强电流；10：重机械；11：空灵",
+      "default": "0",
+      "value": "",
+      "type": "number",
+      "required": false
+    },
+    "fps": {
+      "description": "帧率，有效值为 1~30",
+      "description_zh": "帧率，有效值为 1~30",
+      "default": "15",
+      "value": "",
+      "type": "number",
+      "required": false
+    },
+    "onStateChange": {
+      "description": "状态变化事件，detail = {code}",
+      "description_zh": "状态变化事件，detail = {code}",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction<onStateChangeEventDetail>",
+      "required": false
+    },
+    "onError": {
+      "description": "渲染错误事件，detail = {errMsg, errCode}",
+      "description_zh": "渲染错误事件，detail = {errMsg, errCode}",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction<onErrorEventDetail>",
+      "required": false
+    },
+    "onBgmProgress": {
+      "description": "背景音进度变化时触发，detail = {progress, duration}",
+      "description_zh": "背景音进度变化时触发，detail = {progress, duration}",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction<onBgmProgressEventDetail>",
+      "required": false
+    },
+    "onBgmComplete": {
+      "description": "背景音播放完成时触发",
+      "description_zh": "背景音播放完成时触发",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction",
+      "required": false
+    },
+    "onAudioVolumeNotify": {
+      "description": "返回麦克风采集的音量大小",
+      "description_zh": "返回麦克风采集的音量大小",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction",
+      "required": false
+    },
+    "onNetStatus": {
+      "description": "网络状态通知，detail = {info}",
+      "description_zh": "网络状态通知，detail = {info}",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction",
+      "required": false
+    },
+    "onEnterPictureInPicture": {
+      "description": "进入小窗",
+      "description_zh": "进入小窗",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "onLeavePictureInPicture": {
+      "description": "退出小窗",
+      "description_zh": "退出小窗",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "onBgmStart": {
+      "description": "背景音开始播放时触发",
+      "description_zh": "背景音开始播放时触发",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction",
+      "required": false
+    }
+  },
+  "link": "https://docs.taro.zone/docs/components/media/live-pusher",
+  "link_zh": "https://docs.taro.zone/docs/components/media/live-pusher",
+  "typeDetail": {},
+  "events": [],
+  "methods": [],
+  "slots": []
+}

@@ -1,0 +1,251 @@
+{
+  "name": "LivePlayer",
+  "props": {
+    "src": {
+      "description": "音视频地址。目前仅支持 flv, rtmp 格式",
+      "description_zh": "音视频地址。目前仅支持 flv, rtmp 格式",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "mode": {
+      "description": "模式",
+      "description_zh": "模式",
+      "default": "\"live\"",
+      "value": "",
+      "type": "keyof Mode",
+      "required": false
+    },
+    "autoplay": {
+      "description": "自动播放",
+      "description_zh": "自动播放",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "muted": {
+      "description": "是否静音",
+      "description_zh": "是否静音",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "orientation": {
+      "description": "画面方向",
+      "description_zh": "画面方向",
+      "default": "\"vertical\"",
+      "value": "",
+      "type": "keyof Orientation",
+      "required": false
+    },
+    "objectFit": {
+      "description": "填充模式",
+      "description_zh": "填充模式",
+      "default": "\"contain\"",
+      "value": "",
+      "type": "keyof objectFit",
+      "required": false
+    },
+    "backgroundMute": {
+      "description": "进入后台时是否静音（已废弃，默认退台静音）不推荐使用",
+      "description_zh": "进入后台时是否静音（已废弃，默认退台静音）不推荐使用",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "minCache": {
+      "description": "最小缓冲区，单位s",
+      "description_zh": "最小缓冲区，单位s",
+      "default": "1",
+      "value": "",
+      "type": "number",
+      "required": false
+    },
+    "maxCache": {
+      "description": "最大缓冲区，单位s",
+      "description_zh": "最大缓冲区，单位s",
+      "default": "3",
+      "value": "",
+      "type": "number",
+      "required": false
+    },
+    "soundMode": {
+      "description": "声音输出方式",
+      "description_zh": "声音输出方式",
+      "default": "\"speaker\"",
+      "value": "",
+      "type": "keyof soundMode",
+      "required": false
+    },
+    "autoPauseIfNavigate": {
+      "description": "当跳转到本小程序的其他页面时，是否自动暂停本页面的实时音视频播放",
+      "description_zh": "当跳转到本小程序的其他页面时，是否自动暂停本页面的实时音视频播放",
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "pictureInPictureMode": {
+      "description": "设置小窗模式： push, pop，空字符串或通过数组形式设置多种模式（如： [\"push\", \"pop\"]）",
+      "description_zh": "设置小窗模式： push, pop，空字符串或通过数组形式设置多种模式（如： [\"push\", \"pop\"]）",
+      "default": "",
+      "value": "",
+      "type": "\"\" or \"push\" or \"pop\" or (\"push\" or \"pop\")[]",
+      "required": false
+    },
+    "autoPauseIfOpenNative": {
+      "description": "当跳转到其它微信原生页面时，是否自动暂停本页面的实时音视频播放",
+      "description_zh": "当跳转到其它微信原生页面时，是否自动暂停本页面的实时音视频播放",
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "referrerPolicy": {
+      "description": "格式固定为 https://servicewechat.com/{appid}/{version}/page-frame.html ，其中 {appid} 为小程序的 appid，{version} 为小程序的版本号，版本号为 0 表示为开发版、体验版以及审核版本，版本号为 devtools 表示为开发者工具，其余为正式版本；",
+      "description_zh": "格式固定为 https://servicewechat.com/{appid}/{version}/page-frame.html ，其中 {appid} 为小程序的 appid，{version} 为小程序的版本号，版本号为 0 表示为开发版、体验版以及审核版本，版本号为 devtools 表示为开发者工具，其余为正式版本；",
+      "default": "'no-referrer'",
+      "value": "",
+      "type": "\"origin\" or \"no-referrer\"",
+      "required": false
+    },
+    "signature": {
+      "description": "设置署名水印",
+      "description_zh": "设置署名水印",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "enableMetadata": {
+      "description": "是否回调metadata",
+      "description_zh": "是否回调metadata",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "id": {
+      "description": "live-player 属性的唯一标志符",
+      "description_zh": "live-player 属性的唯一标志符",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "enableAutoRotation": {
+      "description": "是否开启手机横屏时自动全屏，当系统设置开启自动旋转时生效",
+      "description_zh": "是否开启手机横屏时自动全屏，当系统设置开启自动旋转时生效",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "enableCasting": {
+      "description": "是否支持投屏。开启后，可以通过 LivePlayerContext 上相关方法进行操作。",
+      "description_zh": "是否支持投屏。开启后，可以通过 LivePlayerContext 上相关方法进行操作。",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "onStateChange": {
+      "description": "播放状态变化事件，detail = {code}",
+      "description_zh": "播放状态变化事件，detail = {code}",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction<onStateChangeEventDetail>",
+      "required": false
+    },
+    "onFullScreenChange": {
+      "description": "全屏变化事件，detail = {direction, fullScreen}",
+      "description_zh": "全屏变化事件，detail = {direction, fullScreen}",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction<onFullScreenChangeEventDetail>",
+      "required": false
+    },
+    "onNetStatus": {
+      "description": "网络状态通知，detail = {info}",
+      "description_zh": "网络状态通知，detail = {info}",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction<onNetStatusEventDetail>",
+      "required": false
+    },
+    "onAudioVolumeNotify": {
+      "description": "播放音量大小通知，detail = {}",
+      "description_zh": "播放音量大小通知，detail = {}",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction<{}>",
+      "required": false
+    },
+    "onEnterPictureInPicture": {
+      "description": "播放器进入小窗",
+      "description_zh": "播放器进入小窗",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction",
+      "required": false
+    },
+    "onLeavePictureInPicture": {
+      "description": "播放器退出小窗",
+      "description_zh": "播放器退出小窗",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction",
+      "required": false
+    },
+    "onError": {
+      "description": "播放错误事件",
+      "description_zh": "播放错误事件",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction",
+      "required": false
+    },
+    "onMetaDataChange": {
+      "description": "metadata通知，detail = {info}",
+      "description_zh": "metadata通知，detail = {info}",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction",
+      "required": false
+    },
+    "onCastingUserSelect": {
+      "description": "用户选择投屏设备时触发 detail = { state: \"success\"/\"fail\" }",
+      "description_zh": "用户选择投屏设备时触发 detail = { state: \"success\"/\"fail\" }",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction<{ state: \"success\" or \"fail\"; }>",
+      "required": false
+    },
+    "onCastingStateChange": {
+      "description": "投屏成功/失败时触发 detail = { type, state: \"success\"/\"fail\" }",
+      "description_zh": "投屏成功/失败时触发 detail = { type, state: \"success\"/\"fail\" }",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction<{ type: any; state: \"success\" or \"fail\"; }>",
+      "required": false
+    },
+    "onCastingInterrupt": {
+      "description": "投屏被中断时触发",
+      "description_zh": "投屏被中断时触发",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction",
+      "required": false
+    }
+  },
+  "link": "https://docs.taro.zone/docs/components/media/live-player",
+  "link_zh": "https://docs.taro.zone/docs/components/media/live-player",
+  "typeDetail": {},
+  "events": [],
+  "methods": [],
+  "slots": []
+}

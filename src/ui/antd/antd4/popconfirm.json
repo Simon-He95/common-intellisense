@@ -1,78 +1,69 @@
 {
   "name": "Popconfirm",
   "props": {
-    "cancelButtonProps": {
-      "value": "",
-      "description": "cancel button props",
+    ":cancelButtonProps": {
+      "description": "The cancel button props",
+      "description_zh": "The cancel button props",
       "default": "-",
-      "type": "cancel 按钮 props",
-      "description_zh": "cancel 按钮 props"
+      "value": "",
+      "type": "ButtonProps"
     },
     "cancelText": {
+      "description": "The text of the Cancel button",
+      "description_zh": "The text of the Cancel button",
+      "default": "Cancel",
       "value": "",
-      "description": "Cancel button text",
-      "default": "取消",
-      "type": "取消按钮文字",
-      "description_zh": "取消按钮文字"
+      "type": "string"
     },
     "disabled": {
-      "value": "",
-      "description": "Prevent the confirmation box from popping up when the Popconfirm child element is clicked",
+      "description": "Whether show popconfirm when click its childrenNode",
+      "description_zh": "Whether show popconfirm when click its childrenNode",
       "default": "false",
-      "type": "阻止点击 Popconfirm 子元素时弹出确认框",
-      "description_zh": "阻止点击 Popconfirm 子元素时弹出确认框"
-    },
-    "icon": {
-      "value": [
-        "<ExclamationCircle",
-        ">"
-      ],
-      "description": "Customize the pop-up bubble icon icon",
-      "default": "<ExclamationCircle / >",
-      "type": "自定义弹出气泡 Icon 图标",
-      "description_zh": "自定义弹出气泡 Icon 图标"
-    },
-    "okButtonProps": {
       "value": "",
-      "description": "OK button props",
+      "type": "boolean"
+    },
+    ":icon": {
+      "description": "Customize icon of confirmation",
+      "description_zh": "Customize icon of confirmation",
+      "default": "<ExclamationCircle />",
+      "value": "",
+      "type": "ReactNode"
+    },
+    ":okButtonProps": {
+      "description": "The ok button props",
+      "description_zh": "The ok button props",
       "default": "-",
-      "type": "ok 按钮 props",
-      "description_zh": "ok 按钮 props"
+      "value": "",
+      "type": "ButtonProps"
     },
     "okText": {
+      "description": "The text of the Confirm button",
+      "description_zh": "The text of the Confirm button",
+      "default": "OK",
       "value": "",
-      "description": "Confirm the button text",
-      "default": "确定",
-      "type": "确认按钮文字",
-      "description_zh": "确认按钮文字"
+      "type": "string"
     },
     "okType": {
-      "value": "",
-      "description": "Confirm the button type",
+      "description": "Button type of the Confirm button",
+      "description_zh": "Button type of the Confirm button",
       "default": "primary",
-      "type": "确认按钮类型",
-      "description_zh": "确认按钮类型"
+      "value": "",
+      "type": "string"
     },
     "showCancel": {
-      "value": "",
-      "description": "Whether or not to display a cancel button",
+      "description": "Show cancel button",
+      "description_zh": "Show cancel button",
       "default": "true",
-      "type": "是否显示取消按钮",
-      "description_zh": "是否显示取消按钮"
+      "value": "",
+      "type": "boolean"
     },
     "title": {
-      "value": "",
-      "description": "Confirm the box title",
+      "description": "The title of the confirmation box",
+      "description_zh": "The title of the confirmation box",
       "default": "-",
-      "type": "确认框标题",
-      "description_zh": "确认框标题"
-    },
-    "description": {
       "value": "",
-      "description": "Confirm the detailed description of the contents",
-      "default": "-",
-      "type": "确认内容的详细描述",
-      "description_zh": "确认内容的详细描述"
+      "type": "ReactNode | () => ReactNode",
+      "required": true
     }
   },
   "methods": [],

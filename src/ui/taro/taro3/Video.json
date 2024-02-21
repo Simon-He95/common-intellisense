@@ -1,0 +1,795 @@
+{
+  "name": "Video",
+  "props": {
+    "src": {
+      "description": "要播放视频的资源地址",
+      "description_zh": "要播放视频的资源地址",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": true
+    },
+    "duration": {
+      "description": "指定视频时长",
+      "description_zh": "指定视频时长",
+      "default": "",
+      "value": "",
+      "type": "number",
+      "required": false
+    },
+    "controls": {
+      "description": "是否显示默认播放控件（播放/暂停按钮、播放进度、时间）",
+      "description_zh": "是否显示默认播放控件（播放/暂停按钮、播放进度、时间）",
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "danmuList": {
+      "description": "弹幕列表",
+      "description_zh": "弹幕列表",
+      "default": "",
+      "value": "",
+      "type": "any[]",
+      "required": false
+    },
+    "danmuBtn": {
+      "description": "是否显示弹幕按钮，只在初始化时有效，不能动态变更",
+      "description_zh": "是否显示弹幕按钮，只在初始化时有效，不能动态变更",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "enableDanmu": {
+      "description": "是否展示弹幕，只在初始化时有效，不能动态变更",
+      "description_zh": "是否展示弹幕，只在初始化时有效，不能动态变更",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "autoplay": {
+      "description": "是否自动播放",
+      "description_zh": "是否自动播放",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "loop": {
+      "description": "是否循环播放",
+      "description_zh": "是否循环播放",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "muted": {
+      "description": "是否静音播放",
+      "description_zh": "是否静音播放",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "initialTime": {
+      "description": "指定视频初始播放位置",
+      "description_zh": "指定视频初始播放位置",
+      "default": "",
+      "value": "",
+      "type": "number",
+      "required": false
+    },
+    "pageGesture": {
+      "description": "在非全屏模式下，是否开启亮度与音量调节手势",
+      "description_zh": "在非全屏模式下，是否开启亮度与音量调节手势",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "direction": {
+      "description": "设置全屏时视频的方向，不指定则根据宽高比自动判断。有效值为 0（正常竖向）, 90（屏幕逆时针90度）, -90（屏幕顺时针90度）",
+      "description_zh": "设置全屏时视频的方向，不指定则根据宽高比自动判断。有效值为 0（正常竖向）, 90（屏幕逆时针90度）, -90（屏幕顺时针90度）",
+      "default": "",
+      "value": "",
+      "type": "number",
+      "required": false
+    },
+    "showProgress": {
+      "description": "若不设置，宽度大于240时才会显示",
+      "description_zh": "若不设置，宽度大于240时才会显示",
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "showFullscreenBtn": {
+      "description": "是否显示全屏按钮",
+      "description_zh": "是否显示全屏按钮",
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "showPlayBtn": {
+      "description": "是否显示视频底部控制栏的播放按钮",
+      "description_zh": "是否显示视频底部控制栏的播放按钮",
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "showCenterPlayBtn": {
+      "description": "是否显示视频中间的播放按钮",
+      "description_zh": "是否显示视频中间的播放按钮",
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "enableProgressGesture": {
+      "description": "是否开启控制进度的手势",
+      "description_zh": "是否开启控制进度的手势",
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "objectFit": {
+      "description": "当视频大小与 video 容器大小不一致时，视频的表现形式",
+      "description_zh": "当视频大小与 video 容器大小不一致时，视频的表现形式",
+      "default": "\"contain\"",
+      "value": "",
+      "type": "keyof ObjectFit",
+      "required": false
+    },
+    "poster": {
+      "description": "视频封面的图片网络资源地址，如果 controls 属性值为 false 则设置 poster 无效",
+      "description_zh": "视频封面的图片网络资源地址，如果 controls 属性值为 false 则设置 poster 无效",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "showMuteBtn": {
+      "description": "是否显示静音按钮",
+      "description_zh": "是否显示静音按钮",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "title": {
+      "description": "视频的标题，全屏时在顶部展示",
+      "description_zh": "视频的标题，全屏时在顶部展示",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "playBtnPosition": {
+      "description": "播放按钮的位置- bottom: controls bar 上- center: 视频中间",
+      "description_zh": "播放按钮的位置- bottom: controls bar 上- center: 视频中间",
+      "default": "'bottom'",
+      "value": "",
+      "type": "keyof PlayBtnPosition",
+      "required": false
+    },
+    "enablePlayGesture": {
+      "description": "是否开启播放手势，即双击切换播放/暂停",
+      "description_zh": "是否开启播放手势，即双击切换播放/暂停",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "autoPauseIfNavigate": {
+      "description": "当跳转到其它小程序页面时，是否自动暂停本页面的视频",
+      "description_zh": "当跳转到其它小程序页面时，是否自动暂停本页面的视频",
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "autoPauseIfOpenNative": {
+      "description": "当跳转到其它微信原生页面时，是否自动暂停本页面的视频",
+      "description_zh": "当跳转到其它微信原生页面时，是否自动暂停本页面的视频",
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "vslideGesture": {
+      "description": "在非全屏模式下，是否开启亮度与音量调节手势（同 page-gesture）",
+      "description_zh": "在非全屏模式下，是否开启亮度与音量调节手势（同 page-gesture）",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "vslideGestureInFullscreen": {
+      "description": "在全屏模式下，是否开启亮度与音量调节手势",
+      "description_zh": "在全屏模式下，是否开启亮度与音量调节手势",
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "adUnitId": {
+      "description": "视频前贴广告单元ID，更多详情可参考开放能力视频前贴广告",
+      "description_zh": "视频前贴广告单元ID，更多详情可参考开放能力视频前贴广告",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "posterForCrawler": {
+      "description": "用于给搜索等场景作为视频封面展示，建议使用无播放 icon 的视频封面图，只支持网络地址",
+      "description_zh": "用于给搜索等场景作为视频封面展示，建议使用无播放 icon 的视频封面图，只支持网络地址",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "showCastingButton": {
+      "description": "显示投屏按钮。只安卓且同层渲染下生效，支持 DLNA 协议",
+      "description_zh": "显示投屏按钮。只安卓且同层渲染下生效，支持 DLNA 协议",
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "pictureInPictureMode": {
+      "description": "设置小窗模式： push, pop，空字符串或通过数组形式设置多种模式（如： [\"push\", \"pop\"]）",
+      "description_zh": "设置小窗模式： push, pop，空字符串或通过数组形式设置多种模式（如： [\"push\", \"pop\"]）",
+      "default": "",
+      "value": "",
+      "type": "\"\" or \"push\" or \"pop\" or (\"push\" or \"pop\")[]",
+      "required": false
+    },
+    "enableAutoRotation": {
+      "description": "是否开启手机横屏时自动全屏，当系统设置开启自动旋转时生效",
+      "description_zh": "是否开启手机横屏时自动全屏，当系统设置开启自动旋转时生效",
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "showScreenLockButton": {
+      "description": "是否显示锁屏按钮，仅在全屏时显示，锁屏后控制栏的操作",
+      "description_zh": "是否显示锁屏按钮，仅在全屏时显示，锁屏后控制栏的操作",
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "showSnapshotButton": {
+      "description": "是否显示截屏按钮，仅在全屏时显示",
+      "description_zh": "是否显示截屏按钮，仅在全屏时显示",
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "showBackgroundPlaybackButton": {
+      "description": "是否展示后台音频播放按钮",
+      "description_zh": "是否展示后台音频播放按钮",
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "backgroundPoster": {
+      "description": "进入后台音频播放后的通知栏图标（Android 独有）",
+      "description_zh": "进入后台音频播放后的通知栏图标（Android 独有）",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "nativeProps": {
+      "description": "用于透传 WebComponents 上的属性到内部 H5 标签上",
+      "description_zh": "用于透传 WebComponents 上的属性到内部 H5 标签上",
+      "default": "",
+      "value": "",
+      "type": "Record<string, unknown>",
+      "required": false
+    },
+    "showBottomProgress": {
+      "description": "是否展示底部进度条",
+      "description_zh": "是否展示底部进度条",
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "pictureInPictureShowProgress": {
+      "description": "是否在小窗模式下显示播放进度",
+      "description_zh": "是否在小窗模式下显示播放进度",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "referrerPolicy": {
+      "description": "格式固定为 https://servicewechat.com/{appid}/{version}/page-frame.html，其中 {appid} 为小程序的 appid，{version} 为小程序的版本号，版本号为 0 表示为开发版、体验版以及审核版本，版本号为 devtools 表示为开发者工具，其余为正式版本；",
+      "description_zh": "格式固定为 https://servicewechat.com/{appid}/{version}/page-frame.html，其中 {appid} 为小程序的 appid，{version} 为小程序的版本号，版本号为 0 表示为开发版、体验版以及审核版本，版本号为 devtools 表示为开发者工具，其余为正式版本；",
+      "default": "",
+      "value": "",
+      "type": "\"origin\" or \"no-referrer\"",
+      "required": false
+    },
+    "isDrm": {
+      "description": "是否是 DRM 视频源",
+      "description_zh": "是否是 DRM 视频源",
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "provisionUrl": {
+      "description": "DRM 设备身份认证 url，仅 is-drm 为 true 时生效 (Android)",
+      "description_zh": "DRM 设备身份认证 url，仅 is-drm 为 true 时生效 (Android)",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "certificateUrl": {
+      "description": "DRM 设备身份认证 url，仅 is-drm 为 true 时生效 (iOS)",
+      "description_zh": "DRM 设备身份认证 url，仅 is-drm 为 true 时生效 (iOS)",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "licenseUrl": {
+      "description": "DRM 获取加密信息 url，仅 is-drm 为 true 时生效",
+      "description_zh": "DRM 获取加密信息 url，仅 is-drm 为 true 时生效",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "posterSize": {
+      "description": "当 poster 高宽比跟视频高宽不匹配时，如何显示 poster，设置规则同 background-size 一致。",
+      "description_zh": "当 poster 高宽比跟视频高宽不匹配时，如何显示 poster，设置规则同 background-size 一致。",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "showThinProgressBar": {
+      "description": "当底部工具条隐藏时，是否显示细进度条（controls=false 时设置无效）。",
+      "description_zh": "当底部工具条隐藏时，是否显示细进度条（controls=false 时设置无效）。",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "mobilenetHintType": {
+      "description": "移动网络提醒样式。0 - 不提醒1 - tip 提醒2 - 阻塞提醒(无消耗流量大小)3 - 阻塞提醒(有消耗流量大小提醒)",
+      "description_zh": "移动网络提醒样式。0 - 不提醒1 - tip 提醒2 - 阻塞提醒(无消耗流量大小)3 - 阻塞提醒(有消耗流量大小提醒)",
+      "default": "",
+      "value": "",
+      "type": "number",
+      "required": false
+    },
+    "floatingMode": {
+      "description": "浮窗设置。暂时不支持全局浮窗。可选值：none：无浮窗。page：页面内浮窗。",
+      "description_zh": "浮窗设置。暂时不支持全局浮窗。可选值：none：无浮窗。page：页面内浮窗。",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "showNoWifiTip": {
+      "description": "非 wifi 环境下是否显示继续播放浮层",
+      "description_zh": "非 wifi 环境下是否显示继续播放浮层",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "showLockBtn": {
+      "description": "全屏模式下，是否显示锁屏按钮",
+      "description_zh": "全屏模式下，是否显示锁屏按钮",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "showRateBtn": {
+      "description": "是否显示倍速播放按钮",
+      "description_zh": "是否显示倍速播放按钮",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "showVslideBtnInFullscreen": {
+      "description": "全屏模式下，是否显示侧边栏控制按钮",
+      "description_zh": "全屏模式下，是否显示侧边栏控制按钮",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "silentPlay": {
+      "description": "是否进入无声视频模式，进入无声视频模式后，视频将静音播放且不响应系统物理音量变化，点击播放器提示无声视频，手势调节失效",
+      "description_zh": "是否进入无声视频模式，进入无声视频模式后，视频将静音播放且不响应系统物理音量变化，点击播放器提示无声视频，手势调节失效",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "preRollUnitId": {
+      "description": "前贴广告的 unit id",
+      "description_zh": "前贴广告的 unit id",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "postRollUnitId": {
+      "description": "后贴广告的 unit id",
+      "description_zh": "后贴广告的 unit id",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "showPlaybackRateBtn": {
+      "description": "是否显示倍速控件，点击倍速控件后可选择倍速，可选值： 0.75/1.0/1.25/1.5/2",
+      "description_zh": "是否显示倍速控件，点击倍速控件后可选择倍速，可选值： 0.75/1.0/1.25/1.5/2",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "enablePlayInBackground": {
+      "description": "video 播放时宿主退出后台后开启小窗播放，iOS 14 及以上版本支持。开启时首次退出后台后给予弹窗提示用户授权，授权完成后可以到小程序「设置」中重设。支持场景见后台小窗播放",
+      "description_zh": "video 播放时宿主退出后台后开启小窗播放，iOS 14 及以上版本支持。开启时首次退出后台后给予弹窗提示用户授权，授权完成后可以到小程序「设置」中重设。支持场景见后台小窗播放",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "signature": {
+      "description": "设置署名水印",
+      "description_zh": "设置署名水印",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "preferredPeakBitRate": {
+      "description": "指定码率上界，单位为比特每秒",
+      "description_zh": "指定码率上界，单位为比特每秒",
+      "default": "",
+      "value": "",
+      "type": "number",
+      "required": false
+    },
+    "isLive": {
+      "description": "是否为直播源",
+      "description_zh": "是否为直播源",
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "definition": {
+      "description": "清晰度，设置清晰度列表和默认播放的清晰度。切换清晰度按钮仅在全屏时展示，属性说明详见 Definition 类型说明。需要保证 src 和 definition 中有一个为必填，若同时设置了 src 和 definition，definition 优先级高于 src",
+      "description_zh": "清晰度，设置清晰度列表和默认播放的清晰度。切换清晰度按钮仅在全屏时展示，属性说明详见 Definition 类型说明。需要保证 src 和 definition 中有一个为必填，若同时设置了 src 和 definition，definition 优先级高于 src",
+      "default": "",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "onPlay": {
+      "description": "当开始/继续播放时触发 play 事件",
+      "description_zh": "当开始/继续播放时触发 play 事件",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction",
+      "required": false
+    },
+    "onPause": {
+      "description": "当暂停播放时触发 pause 事件",
+      "description_zh": "当暂停播放时触发 pause 事件",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction",
+      "required": false
+    },
+    "onEnded": {
+      "description": "当播放到末尾时触发 ended 事件",
+      "description_zh": "当播放到末尾时触发 ended 事件",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction",
+      "required": false
+    },
+    "onTimeUpdate": {
+      "description": "播放进度变化时触发, 触发频率 250ms 一次",
+      "description_zh": "播放进度变化时触发, 触发频率 250ms 一次",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction<onTimeUpdateEventDetail>",
+      "required": false
+    },
+    "onFullscreenChange": {
+      "description": "当视频进入和退出全屏时触发",
+      "description_zh": "当视频进入和退出全屏时触发",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction<onFullscreenChangeEventDetail>",
+      "required": false
+    },
+    "onWaiting": {
+      "description": "视频出现缓冲时触发",
+      "description_zh": "视频出现缓冲时触发",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction<onWaitingEventDetail>",
+      "required": false
+    },
+    "onError": {
+      "description": "视频播放出错时触发",
+      "description_zh": "视频播放出错时触发",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction",
+      "required": false
+    },
+    "onProgress": {
+      "description": "加载进度变化时触发，只支持一段加载",
+      "description_zh": "加载进度变化时触发，只支持一段加载",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction<onProgressEventDetail>",
+      "required": false
+    },
+    "onLoadedMetaData": {
+      "description": "视频元数据加载完成时触发",
+      "description_zh": "视频元数据加载完成时触发",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction<onLoadedMetaDataEventDetail>",
+      "required": false
+    },
+    "onEnterPictureInPicture": {
+      "description": "播放器进入小窗",
+      "description_zh": "播放器进入小窗",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction",
+      "required": false
+    },
+    "onLeavePictureInPicture": {
+      "description": "播放器退出小窗",
+      "description_zh": "播放器退出小窗",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction",
+      "required": false
+    },
+    "onSeekComplete": {
+      "description": "seek 完成时触发",
+      "description_zh": "seek 完成时触发",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction",
+      "required": false
+    },
+    "onFullScreenChange": {
+      "description": "视频进入和退出全屏时触发",
+      "description_zh": "视频进入和退出全屏时触发",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction<onFullscreenChangeEventDetail>",
+      "required": false
+    },
+    "onControlsToggle": {
+      "description": "切换 controls 显示隐藏时触发。",
+      "description_zh": "切换 controls 显示隐藏时触发。",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction<onControlsToggleEventDetail>",
+      "required": false
+    },
+    "onLoading": {
+      "description": "视频出现缓冲时触发。",
+      "description_zh": "视频出现缓冲时触发。",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction",
+      "required": false
+    },
+    "onTap": {
+      "description": "点击视频 view 时触发",
+      "description_zh": "点击视频 view 时触发",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction<onTapEventDetail>",
+      "required": false
+    },
+    "onUserAction": {
+      "description": "用户操作事件",
+      "description_zh": "用户操作事件",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction<onUserActionEventDetail>",
+      "required": false
+    },
+    "onStop": {
+      "description": "视频播放终止。",
+      "description_zh": "视频播放终止。",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction",
+      "required": false
+    },
+    "onRenderStart": {
+      "description": "当视频加载完真正开始播放时触发。",
+      "description_zh": "当视频加载完真正开始播放时触发。",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction",
+      "required": false
+    },
+    "onAdStart": {
+      "description": "贴片广告开始播放时触发",
+      "description_zh": "贴片广告开始播放时触发",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction<onAdTypeCommonEventDetail>",
+      "required": false
+    },
+    "onAdEnded": {
+      "description": "贴片广告播放结束时触发",
+      "description_zh": "贴片广告播放结束时触发",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction<onAdTypeCommonEventDetail>",
+      "required": false
+    },
+    "onAdClose": {
+      "description": "贴片广告非自然结束时触发，如：用户关闭广告或广告播放过程中 video 组件被销毁",
+      "description_zh": "贴片广告非自然结束时触发，如：用户关闭广告或广告播放过程中 video 组件被销毁",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction<onAdTypeCommonEventDetail>",
+      "required": false
+    },
+    "onAdError": {
+      "description": "贴片广告加载失败时触发",
+      "description_zh": "贴片广告加载失败时触发",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction<onAdTypeCommonEventDetail>",
+      "required": false
+    },
+    "onPlayBackRateChange": {
+      "description": "视频倍速改变完成时触发。返回改变后的倍速值",
+      "description_zh": "视频倍速改变完成时触发。返回改变后的倍速值",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction<{ playbackRate: string; }>",
+      "required": false
+    },
+    "onMuteChange": {
+      "description": "静音状态改变完成时触发。返回当前是否静音",
+      "description_zh": "静音状态改变完成时触发。返回当前是否静音",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction<{ isMuted: boolean; }>",
+      "required": false
+    },
+    "onControlTap": {
+      "description": "点击控件时触发。返回当前点击的控件类型",
+      "description_zh": "点击控件时触发。返回当前点击的控件类型",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction<{ controlType: any; }>",
+      "required": false
+    },
+    "onEnterBackground": {
+      "description": "进入小窗播放时触发",
+      "description_zh": "进入小窗播放时触发",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction",
+      "required": false
+    },
+    "onCloseBackground": {
+      "description": "关闭小窗播放时触发",
+      "description_zh": "关闭小窗播放时触发",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction",
+      "required": false
+    },
+    "onLeaveBackground": {
+      "description": "离开小窗进入 app 事件时触发",
+      "description_zh": "离开小窗进入 app 事件时触发",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction",
+      "required": false
+    },
+    "onLoadedData": {
+      "description": "否",
+      "description_zh": "否",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction",
+      "required": false
+    },
+    "onLoadStart": {
+      "description": "否",
+      "description_zh": "否",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction",
+      "required": false
+    },
+    "onSeeked": {
+      "description": "否",
+      "description_zh": "否",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction",
+      "required": false
+    },
+    "onSeeking": {
+      "description": "否",
+      "description_zh": "否",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction",
+      "required": false
+    },
+    "onAdLoad": {
+      "description": "贴片广告加载成功时触发，event.detail = { adType: 'preRollAd' or 'postRollAd' }",
+      "description_zh": "贴片广告加载成功时触发，event.detail = { adType: 'preRollAd' or 'postRollAd' }",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction",
+      "required": false
+    },
+    "onCastingUserSelect": {
+      "description": "用户选择投屏设备时触发 detail = { state: \"success\"/\"fail\" }",
+      "description_zh": "用户选择投屏设备时触发 detail = { state: \"success\"/\"fail\" }",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction",
+      "required": false
+    },
+    "onCastingStateChange": {
+      "description": "投屏成功/失败时触发 detail = { type, state: \"success\"/\"fail\" }",
+      "description_zh": "投屏成功/失败时触发 detail = { type, state: \"success\"/\"fail\" }",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction",
+      "required": false
+    },
+    "onCastingInterrupt": {
+      "description": "投屏被中断时触发",
+      "description_zh": "投屏被中断时触发",
+      "default": "",
+      "value": "",
+      "type": "CommonEventFunction",
+      "required": false
+    }
+  },
+  "link": "https://docs.taro.zone/docs/components/media/video",
+  "link_zh": "https://docs.taro.zone/docs/components/media/video",
+  "typeDetail": {},
+  "events": [],
+  "methods": [],
+  "slots": []
+}
