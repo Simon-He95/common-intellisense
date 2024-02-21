@@ -72,10 +72,10 @@ export function propsReducer(uiName: string, map: string[], iconData?: { prefix:
 
         let content = ''
         let snippet = ''
-        if (value.type && value.type.trim() === 'boolean' && value.default === 'false') {
+        if (value.type && value.type.toLowerCase().trim() === 'boolean' && value.default === 'false') {
           content = snippet = key
         }
-        else if (value.type && value.type.trim() === 'boolean' && value.default === 'true') {
+        else if (value.type && value.type.toLowerCase().trim() === 'boolean' && value.default === 'true') {
           if (isVue) {
             content = key
             snippet = `:${key}="false"`
