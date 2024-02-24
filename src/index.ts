@@ -459,7 +459,9 @@ export function activate(context: vscode.ExtensionContext) {
       const editor = getActiveTextEditor()
       if (!editor)
         return
-      const range = document.getWordRangeAtPosition(position) as any
+      const range = document.getWordRangeAtPosition(position)
+      if (!range)
+        return
       let word = document.getText(range)
       // 只针对template中的内容才提示
       const lineText = getLineText(position.line)!
