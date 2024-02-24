@@ -82,6 +82,8 @@ import ElAvatar from './avatar.json'
 import ElBacktop from './backtop.json'
 import ElOption from './option.json'
 import ElOptionGroup from './optionGroup.json'
+import ElTour from './tour.json'
+import ElTourStep from './tourStep.json'
 
 export function elementPlus2() {
   const map: any = [
@@ -167,6 +169,8 @@ export function elementPlus2() {
     ElBacktop,
     ElOption,
     ElOptionGroup,
+    ElTour,
+    ElTourStep,
   ]
 
   return propsReducer('element-plus', map)
@@ -583,6 +587,16 @@ export function elementPlus2Components() {
           '远程搜索',
           '<el-autocomplete></el-autocomplete>',
         ],
+        [
+          ElTour,
+          '漫游式引导',
+          '<el-tour></el-tour>',
+        ],
+        [
+          ElTourStep,
+          '漫游式引导步骤',
+          '<el-tour-step></el-tour-step>',
+        ],
       ]
     : [
         [
@@ -969,6 +983,16 @@ export function elementPlus2Components() {
           ElAutocomplete,
           'Remote search',
           '<el-autocomplete></el-autocomplete>',
+        ],
+        [
+          ElTour,
+          'tour',
+          '<el-tour></el-tour>',
+        ],
+        [
+          ElTourStep,
+          'tour step',
+          '<el-tour-step></el-tour-step>',
         ],
       ]
   return componentsReducer(map, true, 'el', 'element-plus')
