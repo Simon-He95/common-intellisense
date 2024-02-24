@@ -1,7 +1,7 @@
 import fsp from 'node:fs/promises'
 import path from 'node:path'
 import * as vscode from 'vscode'
-import { addEventListener, createCompletionItem, createPosition, createRange, createSelect, getActiveText, getActiveTextEditorLanguageId, getConfiguration, getCurrentFileUrl, getLineText, getLocale, getSelection, message, openExternalUrl, registerCommand, registerCompletionItemProvider, setConfiguration, setCopyText, updateText } from '@vscode-use/utils'
+import { addEventListener, createCompletionItem, createPosition, createRange, createSelect, getActiveText, getActiveTextEditor, getActiveTextEditorLanguageId, getConfiguration, getCurrentFileUrl, getLineText, getLocale, getPosition, getSelection, message, openExternalUrl, registerCommand, registerCompletionItemProvider, setConfiguration, setCopyText, updateText } from '@vscode-use/utils'
 import { CreateWebview } from '@vscode-use/createwebview'
 import { parse } from '@vue/compiler-sfc'
 import { detectSlots, findPkgUI, parser, registerCodeLensProviderFn } from './utils'
@@ -106,7 +106,7 @@ export function activate(context: vscode.ExtensionContext) {
       let pos: any = null
       if (isVue) {
         if (loc) {
-          pos = createPosition(loc.start.line + _lineOffset, 0)
+          pos = createPosition(loc.start.line, 0)
         }
         else {
           const match = code.match(/<script[^>]*>/)
@@ -187,7 +187,10 @@ export function activate(context: vscode.ExtensionContext) {
   context.subscriptions.push(registerCompletionItemProvider(filter, async (document, position) => {
     const { lineText } = getSelection()!
     const p: any = position
-    const preText = lineText.slice(0, vscode.window.activeTextEditor?.selection.active.character)
+    const activeTextEditor = getActiveTextEditor()
+    if (!activeTextEditor)
+      return
+    const preText = lineText.slice(0, activeTextEditor.selection.active.character)
     let completionsCallback: any = null
     p.active = getEffectWord(preText)
 
@@ -433,8 +436,9 @@ export function activate(context: vscode.ExtensionContext) {
       `, ({ data, type }) => {
       // callback 获取js层的postMessage数据
       if (type === 'copy') {
-        vscode.env.clipboard.writeText(data).then(() => {
-          vscode.window.showInformationMessage('复制成功!  ✅')
+        setCopyText(data).then(() => {
+          const isZh = getLocale().includes('zh')
+          message.info(`${isZh ? '复制成功' : 'copy successfully'}!  ✅`)
         })
       }
     })
@@ -452,7 +456,7 @@ export function activate(context: vscode.ExtensionContext) {
 
   context.subscriptions.push(vscode.languages.registerHoverProvider(LANS, {
     async provideHover(document, position) {
-      const editor = vscode.window.activeTextEditor
+      const editor = getActiveTextEditor()
       if (!editor)
         return
       const range = document.getWordRangeAtPosition(position) as any
@@ -531,8 +535,9 @@ export function findUI() {
 
   const selectedUIs = getConfiguration('common-intellisense.ui') as string[]
 
-  const cwd = vscode.window.activeTextEditor?.document.uri.fsPath
-  // const suffix = cwd?.split('.').slice(-1)[0]
+  const cwd = getCurrentFileUrl()
+  if (!cwd)
+    return
 
   if (urlCache.has(cwd)) {
     const uis = urlCache.get(cwd)
@@ -723,7 +728,6 @@ function getHoverAttribute(attributeList: any[], attr: string) {
 
 const IMPORT_UI_REG = /import\s+{([^\}]+)}\s+from\s+['"]([^"']+)['"]/g
 
-// const DEMAND_UI = ['antd', 'ant-design-vue', '@nextui-org/react', '@arco-design/web-react', 'radix-vue']
 function getImportUiComponents(text: string) {
   // 读取需要按需导入的ui库， 例如 antd ,拿出导入的components
   const deps: Record<string, any> = {}
@@ -739,28 +743,4 @@ function getImportUiComponents(text: string) {
     }
   }
   return deps
-}
-export function getPosition(offset: number, content: string = getActiveText()!) {
-  const contents = content.split('\n')
-  const max = contents.length
-  let num = 0
-  let line = 0
-  let column = 0
-  for (let n = 0; n < max; n++) {
-    const cur = num + contents[n].length + (n > 0 ? 1 : 0)
-    if (num <= offset && cur >= offset) {
-      line = n
-      column = offset - num - (n > 0 ? 1 : 0)
-      break
-    }
-
-    num = cur
-  }
-  return {
-    line,
-    column,
-    character: column,
-    offset,
-    position: new vscode.Position(line, column),
-  }
 }

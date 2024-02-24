@@ -4,7 +4,7 @@ import { parse } from '@vue/compiler-sfc'
 import type { SFCTemplateBlock } from '@vue/compiler-sfc'
 import { parse as tsParser } from '@typescript-eslint/typescript-estree'
 import { findUp } from 'find-up'
-import { createRange, getActiveText, getActiveTextEditorLanguageId, getLocale, getOffsetFromPosition, registerCodeLensProvider, watchFiles } from '@vscode-use/utils'
+import { createRange, getActiveText, getActiveTextEditor, getActiveTextEditorLanguageId, getCurrentFileUrl, getLocale, getOffsetFromPosition, registerCodeLensProvider, watchFiles } from '@vscode-use/utils'
 import { traverse } from '@babel/types'
 import { UINames } from './constants'
 import { toCamel } from './ui/utils'
@@ -16,7 +16,7 @@ const { parse: svelteParser } = require('svelte/compiler')
 let isInTemplate = false
 
 export function parser(code: string, position: vscode.Position & { active: string }) {
-  const entry = vscode.window.activeTextEditor?.document.uri.fsPath
+  const entry = getCurrentFileUrl()
   if (!entry)
     return
   const suffix = entry.slice(entry.lastIndexOf('.') + 1)
@@ -504,7 +504,9 @@ export function isInAttribute(child: any, position: any) {
 
 export function convertPositionToLoc(data: any) {
   const { start, end } = data
-  const document = vscode.window.activeTextEditor!.document
+  const activeTextEditor = getActiveTextEditor()!
+
+  const document = activeTextEditor.document
   return {
     start: convertOffsetToLineColumn(document, start),
     end: convertOffsetToLineColumn(document, end),
