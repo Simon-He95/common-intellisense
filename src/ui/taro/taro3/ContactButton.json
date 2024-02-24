@@ -2,7 +2,7 @@
   "name": "ContactButton",
   "props": {
     "tntInstId": {
-      "description": "必填。企业唯一编码，一个企业支付宝账号对应一个编码。",
+      "description": "Required. Enterprise unique code, one enterprise Alipay account corresponds to one code.",
       "description_zh": "必填。企业唯一编码，一个企业支付宝账号对应一个编码。",
       "default": "",
       "value": "",
@@ -10,7 +10,7 @@
       "required": true
     },
     "scene": {
-      "description": "必填。聊天窗编码，每个聊天窗的唯一编码。",
+      "description": "Required. Chat window encoding, a unique encoding for each chat window.",
       "description_zh": "必填。聊天窗编码，每个聊天窗的唯一编码。",
       "default": "",
       "value": "",
@@ -18,7 +18,7 @@
       "required": true
     },
     "size": {
-      "description": "选填。咨询按钮大小，正方形设置边长（如25*25 px）。",
+      "description": "Optional. Consult the button size, and set the side length of the square (e.g. 25*25 px).",
       "description_zh": "选填。咨询按钮大小，正方形设置边长（如25*25 px）。",
       "default": "25",
       "value": "",
@@ -26,7 +26,7 @@
       "required": false
     },
     "color": {
-      "description": "选填。咨询按钮颜色，默认白底蓝色。",
+      "description": "Optional. Consult the button color, blue on white by default.",
       "description_zh": "选填。咨询按钮颜色，默认白底蓝色。",
       "default": "\"#00A3FF\"",
       "value": "",
@@ -34,7 +34,7 @@
       "required": false
     },
     "icon": {
-      "description": "选填。咨询按钮头像。",
+      "description": "Optional. Consult button avatar.",
       "description_zh": "选填。咨询按钮头像。",
       "default": "",
       "value": "",
@@ -42,7 +42,7 @@
       "required": false
     },
     "alipayCardNo": {
-      "description": "选填。支付宝访客用户ID（2088开头）。说明： 客服回答问题时，如客户已离开咨询窗口，则通过推送消息到支付宝 card 中提醒客户。",
+      "description": "Optional. Alipay guest user ID (starting with 2088). Note: When the customer service answers the question, if the customer has left the consultation window, the customer will be reminded by pushing a message to the Alipay card.",
       "description_zh": "选填。支付宝访客用户ID（2088开头）。说明： 客服回答问题时，如客户已离开咨询窗口，则通过推送消息到支付宝 card 中提醒客户。",
       "default": "",
       "value": "",
@@ -50,7 +50,7 @@
       "required": false
     },
     "extInfo": {
-      "description": "选填。该属性主要用于传递一些扩展信息给组件，以实现一些高级功能。该属性值的生成方式为：encodeURIComponent({\"字段名\":\"字段值\"})， 其中，字段名和字段值要根据实际使用的功能进行替换。目前通过传入扩展信息可支持的 3 个功能：1.访客名片。需传 cinfo 和 key 两个扩展字段，代码形如在云客服中进入 设置 > 服务窗配置 > 聊天窗 URL。点击操作栏中的 聊天窗 URL ，获取 tntInstId（企业编码）和 scene（聊天窗编码）。encodeURIComponent({\"cinfo\":\"生成的 cinfo\",\"key\":\"生成的key\"})，cinfo 和 key 的值说明 支付宝小程序接入访客名片；2.聊天窗默认带出用户的小程序订单数据。需传 appId 字段，代码形如encodeURIComponent({\"appId\":\"商户小程序appid\"})3.未读客服消息同步至\"我的小程序-我的\"。同样需传 appId 字段，代码形如 encodeURIComponent({\"appId\":\"商户小程序appid\"})。",
+      "description": "Optional. This property is mainly used to pass some extension information to the component to implement some advanced functions. The value of this attribute is generated in the following way: encodeURIComponent({\"field name\":\"field value\"}), where the field name and field value should be replaced according to the actual function. There are currently 3 functions that can be supported by incoming extended information: 1. Guest business cards. You need to pass the two extension fields of cinfo and key, and the code is like entering Settings > Service Window Configuration > Chat Window URL in the cloud learning service. Click the Chat URL in the action bar to get the tntInstId (enterprise code) and scene (chat code). encodeURIComponent({\"cinfo\":\"generated cinfo\",\"key\":\"generated key\"}), value description of cinfo and key Alipay Mini Program access to the visitor's business card;2. The chat window brings out the user's Mini Program order data by default. You need to pass the appId field, the code is like encodeURIComponent({\"appId\":\"merchant appid\"}) 3. Unread customer service messages are synchronized to \"My Mini Program-My\". You also need to pass the appId field, which is like encodeURIComponent({\"appId\":\"merchant appid\"}).",
       "description_zh": "选填。该属性主要用于传递一些扩展信息给组件，以实现一些高级功能。该属性值的生成方式为：encodeURIComponent({\"字段名\":\"字段值\"})， 其中，字段名和字段值要根据实际使用的功能进行替换。目前通过传入扩展信息可支持的 3 个功能：1.访客名片。需传 cinfo 和 key 两个扩展字段，代码形如在云客服中进入 设置 > 服务窗配置 > 聊天窗 URL。点击操作栏中的 聊天窗 URL ，获取 tntInstId（企业编码）和 scene（聊天窗编码）。encodeURIComponent({\"cinfo\":\"生成的 cinfo\",\"key\":\"生成的key\"})，cinfo 和 key 的值说明 支付宝小程序接入访客名片；2.聊天窗默认带出用户的小程序订单数据。需传 appId 字段，代码形如encodeURIComponent({\"appId\":\"商户小程序appid\"})3.未读客服消息同步至\"我的小程序-我的\"。同样需传 appId 字段，代码形如 encodeURIComponent({\"appId\":\"商户小程序appid\"})。",
       "default": "",
       "value": "",

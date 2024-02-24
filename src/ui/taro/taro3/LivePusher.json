@@ -2,7 +2,7 @@
   "name": "LivePusher",
   "props": {
     "url": {
-      "description": "推流地址。目前仅支持 rtmp 格式",
+      "description": "Ingest URL. Currently, only the RTMP format is supported",
       "description_zh": "推流地址。目前仅支持 rtmp 格式",
       "default": "",
       "value": "",
@@ -10,7 +10,7 @@
       "required": false
     },
     "mode": {
-      "description": "SD（标清）, HD（高清）, FHD（超清）, RTC（实时通话）",
+      "description": "SD (Standard Definition), HD (High Definition), FHD (Ultra Definition), RTC (Live Call)",
       "description_zh": "SD（标清）, HD（高清）, FHD（超清）, RTC（实时通话）",
       "default": "\"RTC\"",
       "value": "",
@@ -18,7 +18,7 @@
       "required": false
     },
     "autopush": {
-      "description": "自动推流",
+      "description": "Automatically ingest streams",
       "description_zh": "自动推流",
       "default": "false",
       "value": "",
@@ -26,7 +26,7 @@
       "required": false
     },
     "enableVideoCustomRender": {
-      "description": "自定义渲染，允许开发者自行处理所采集的视频帧",
+      "description": "Custom rendering, which allows developers to process the captured video frames themselves",
       "description_zh": "自定义渲染，允许开发者自行处理所采集的视频帧",
       "default": "false",
       "value": "",
@@ -34,7 +34,7 @@
       "required": false
     },
     "muted": {
-      "description": "是否静音。即将废弃，可用 enable-mic 替代不推荐使用",
+      "description": "Whether to mute or not. It is about to be deprecated and can be replaced with enable-mic",
       "description_zh": "是否静音。即将废弃，可用 enable-mic 替代不推荐使用",
       "default": "false",
       "value": "",
@@ -42,7 +42,7 @@
       "required": false
     },
     "enableCamera": {
-      "description": "开启摄像头",
+      "description": "Turn on your camera",
       "description_zh": "开启摄像头",
       "default": "true",
       "value": "",
@@ -50,7 +50,7 @@
       "required": false
     },
     "autoFocus": {
-      "description": "自动聚集",
+      "description": "Automatic aggregation",
       "description_zh": "自动聚集",
       "default": "true",
       "value": "",
@@ -58,7 +58,7 @@
       "required": false
     },
     "orientation": {
-      "description": "画面方向",
+      "description": "Screen orientation",
       "description_zh": "画面方向",
       "default": "\"vertical\"",
       "value": "",
@@ -66,7 +66,7 @@
       "required": false
     },
     "beauty": {
-      "description": "美颜，取值范围 0-9 ，0 表示关闭",
+      "description": "Beautify, the value range is 0-9, and 0 indicates that it is off",
       "description_zh": "美颜，取值范围 0-9 ，0 表示关闭",
       "default": "0",
       "value": "",
@@ -74,7 +74,7 @@
       "required": false
     },
     "whiteness": {
-      "description": "美白，取值范围 0-9 ，0 表示关闭",
+      "description": "Whitening, the value range is 0-9, 0 means off",
       "description_zh": "美白，取值范围 0-9 ，0 表示关闭",
       "default": "0",
       "value": "",
@@ -82,7 +82,7 @@
       "required": false
     },
     "aspect": {
-      "description": "宽高比，可选值有 3:4, 9:16",
+      "description": "Aspect ratios, available values are 3:4, 9:16",
       "description_zh": "宽高比，可选值有 3:4, 9:16",
       "default": "\"9:16\"",
       "value": "",
@@ -90,7 +90,7 @@
       "required": false
     },
     "minBitrate": {
-      "description": "最小码率",
+      "description": "Minimum 码率",
       "description_zh": "最小码率",
       "default": "200",
       "value": "",
@@ -98,7 +98,7 @@
       "required": false
     },
     "maxBitrate": {
-      "description": "最大码率",
+      "description": "Maximum bitrate",
       "description_zh": "最大码率",
       "default": "1000",
       "value": "",
@@ -114,7 +114,7 @@
       "required": false
     },
     "waitingImage": {
-      "description": "进入后台时推流的等待画面",
+      "description": "The waiting screen for streaming when entering the background",
       "description_zh": "进入后台时推流的等待画面",
       "default": "",
       "value": "",
@@ -122,7 +122,7 @@
       "required": false
     },
     "waitingImageHash": {
-      "description": "等待画面资源的MD5值",
+      "description": "Wait for the MD5 value of the screen resource",
       "description_zh": "等待画面资源的MD5值",
       "default": "",
       "value": "",
@@ -130,7 +130,7 @@
       "required": false
     },
     "zoom": {
-      "description": "调整焦距",
+      "description": "Adjust the focal length",
       "description_zh": "调整焦距",
       "default": "false",
       "value": "",
@@ -146,7 +146,7 @@
       "required": false
     },
     "backgroundMute": {
-      "description": "进入后台时是否静音",
+      "description": "Whether or not to mute when entering the background",
       "description_zh": "进入后台时是否静音",
       "default": "false",
       "value": "",
@@ -154,7 +154,7 @@
       "required": false
     },
     "mirror": {
-      "description": "设置推流画面是否镜像，产生的效果在 LivePlayer 反应到",
+      "description": "Set whether the ingest screen is mirrored or not, and the resulting effect will be reflected in LivePlayer",
       "description_zh": "设置推流画面是否镜像，产生的效果在 LivePlayer 反应到",
       "default": "false",
       "value": "",
@@ -162,7 +162,7 @@
       "required": false
     },
     "remoteMirror": {
-      "description": "设置推流画面是否镜像，产生的效果在 LivePlayer 反应到Note: 同 mirror 属性，后续 mirror 将废弃",
+      "description": "Set whether the streaming screen is mirrored, and the effect will be reflected in the LivePlayerNote: with the mirror attribute, the subsequent mirror will be discarded",
       "description_zh": "设置推流画面是否镜像，产生的效果在 LivePlayer 反应到Note: 同 mirror 属性，后续 mirror 将废弃",
       "default": "false",
       "value": "",
@@ -170,7 +170,7 @@
       "required": false
     },
     "localMirror": {
-      "description": "控制本地预览画面是否镜像",
+      "description": "Controls whether the local preview screen is mirrored",
       "description_zh": "控制本地预览画面是否镜像",
       "default": "\"auto\"",
       "value": "",
@@ -178,7 +178,7 @@
       "required": false
     },
     "audioReverbType": {
-      "description": "音频混响类型",
+      "description": "Audio reverb type",
       "description_zh": "音频混响类型",
       "default": "0",
       "value": "",
@@ -186,7 +186,7 @@
       "required": false
     },
     "enableMic": {
-      "description": "开启或关闭麦克风",
+      "description": "Turn the microphone on or off",
       "description_zh": "开启或关闭麦克风",
       "default": "true",
       "value": "",
@@ -194,7 +194,7 @@
       "required": false
     },
     "enableAgc": {
-      "description": "是否开启音频自动增益",
+      "description": "Whether to turn on audio auto-gain",
       "description_zh": "是否开启音频自动增益",
       "default": "false",
       "value": "",
@@ -202,7 +202,7 @@
       "required": false
     },
     "enableAns": {
-      "description": "是否开启音频噪声抑制",
+      "description": "Whether to turn on audio noise suppression",
       "description_zh": "是否开启音频噪声抑制",
       "default": "false",
       "value": "",
@@ -210,7 +210,7 @@
       "required": false
     },
     "audioVolumeType": {
-      "description": "音量类型",
+      "description": "Volume type",
       "description_zh": "音量类型",
       "default": "\"voicecall\"",
       "value": "",
@@ -218,7 +218,7 @@
       "required": false
     },
     "videoWidth": {
-      "description": "上推的视频流的分辨率宽度",
+      "description": "The resolution width of the video stream that is pushed up",
       "description_zh": "上推的视频流的分辨率宽度",
       "default": "360",
       "value": "",
@@ -226,7 +226,7 @@
       "required": false
     },
     "videoHeight": {
-      "description": "上推的视频流的分辨率高度",
+      "description": "The resolution height of the up-pushed video stream",
       "description_zh": "上推的视频流的分辨率高度",
       "default": "640",
       "value": "",
@@ -234,7 +234,7 @@
       "required": false
     },
     "beautyStyle": {
-      "description": "设置美颜类型",
+      "description": "Set the beauty type",
       "description_zh": "设置美颜类型",
       "default": "smooth",
       "value": "",
@@ -242,7 +242,7 @@
       "required": false
     },
     "filter": {
-      "description": "设置色彩滤镜",
+      "description": "Set up a color filter",
       "description_zh": "设置色彩滤镜",
       "default": "standard",
       "value": "",
@@ -250,7 +250,7 @@
       "required": false
     },
     "pictureInPictureMode": {
-      "description": "设置小窗模式： push, pop，空字符串或通过数组形式设置多种模式（如： [\"push\", \"pop\"]）",
+      "description": "Set the window mode: push, pop, empty string or set multiple modes in array form (e.g. [\"push\", \"pop\"])",
       "description_zh": "设置小窗模式： push, pop，空字符串或通过数组形式设置多种模式（如： [\"push\", \"pop\"]）",
       "default": "",
       "value": "",
@@ -258,7 +258,7 @@
       "required": false
     },
     "customEffect": {
-      "description": "是否启动自定义特效，设定后不能更改",
+      "description": "Whether or not to enable custom effects cannot be changed after setting",
       "description_zh": "是否启动自定义特效，设定后不能更改",
       "default": "false",
       "value": "",
@@ -266,7 +266,7 @@
       "required": false
     },
     "skinWhiteness": {
-      "description": "自定义特效美白效果，取值 0~1。需要开启 custom-effect",
+      "description": "Custom special effect whitening effect, the value is 0~1. Custom-effect needs to be turned on",
       "description_zh": "自定义特效美白效果，取值 0~1。需要开启 custom-effect",
       "default": "0",
       "value": "",
@@ -274,7 +274,7 @@
       "required": false
     },
     "skinSmoothness": {
-      "description": "自定义特效磨皮效果，取值 0~1。需要开启 custom-effect",
+      "description": "Custom special effect microdermabrasion effect, the value is 0~1. Custom-effect needs to be turned on",
       "description_zh": "自定义特效磨皮效果，取值 0~1。需要开启 custom-effect",
       "default": "0",
       "value": "",
@@ -282,7 +282,7 @@
       "required": false
     },
     "faceThinness": {
-      "description": "自定义特效瘦脸效果，取值 0~1。需要开启 custom-effect",
+      "description": "Custom special effect face slimming effect, the value is 0~1. Custom-effect needs to be turned on",
       "description_zh": "自定义特效瘦脸效果，取值 0~1。需要开启 custom-effect",
       "default": "0",
       "value": "",
@@ -290,7 +290,7 @@
       "required": false
     },
     "eyeBigness": {
-      "description": "自定义特效大眼效果，取值 0~1。需要开启 custom-effect",
+      "description": "Customize the special effect Big Eye Effect, with a value of 0~1. Custom-effect needs to be turned on",
       "description_zh": "自定义特效大眼效果，取值 0~1。需要开启 custom-effect",
       "default": "0",
       "value": "",
@@ -298,7 +298,7 @@
       "required": false
     },
     "voiceChangerType": {
-      "description": "0：关闭变声；1：熊孩子；2：萝莉；3：大叔；4：重金属；6：外国人；7：困兽；8：死肥仔；9：强电流；10：重机械；11：空灵",
+      "description": "0: Turn off the voice, 1: Bear child, 2: Lori, 3: Uncle, 4: Heavy metal, 6: Foreigner, 7: Trapped beast, 8: Dead fat boy, 9: Strong current, 10: Heavy machinery, 11: Ethereal",
       "description_zh": "0：关闭变声；1：熊孩子；2：萝莉；3：大叔；4：重金属；6：外国人；7：困兽；8：死肥仔；9：强电流；10：重机械；11：空灵",
       "default": "0",
       "value": "",
@@ -306,7 +306,7 @@
       "required": false
     },
     "fps": {
-      "description": "帧率，有效值为 1~30",
+      "description": "Frame rate, valid values are 1~30",
       "description_zh": "帧率，有效值为 1~30",
       "default": "15",
       "value": "",
@@ -322,7 +322,7 @@
       "required": false
     },
     "onError": {
-      "description": "渲染错误事件，detail = {errMsg, errCode}",
+      "description": "渲染错误事件,detail = {errMsg, errCode}",
       "description_zh": "渲染错误事件，detail = {errMsg, errCode}",
       "default": "",
       "value": "",
@@ -338,7 +338,7 @@
       "required": false
     },
     "onBgmComplete": {
-      "description": "背景音播放完成时触发",
+      "description": "Triggered when background sound playback is complete",
       "description_zh": "背景音播放完成时触发",
       "default": "",
       "value": "",
@@ -346,7 +346,7 @@
       "required": false
     },
     "onAudioVolumeNotify": {
-      "description": "返回麦克风采集的音量大小",
+      "description": "Returns the volume captured by the microphone",
       "description_zh": "返回麦克风采集的音量大小",
       "default": "",
       "value": "",
@@ -362,7 +362,7 @@
       "required": false
     },
     "onEnterPictureInPicture": {
-      "description": "进入小窗",
+      "description": "Enter the small window",
       "description_zh": "进入小窗",
       "default": "",
       "value": "",
@@ -370,7 +370,7 @@
       "required": false
     },
     "onLeavePictureInPicture": {
-      "description": "退出小窗",
+      "description": "Exit the small window",
       "description_zh": "退出小窗",
       "default": "",
       "value": "",
@@ -378,7 +378,7 @@
       "required": false
     },
     "onBgmStart": {
-      "description": "背景音开始播放时触发",
+      "description": "Triggered when the background sound starts playing",
       "description_zh": "背景音开始播放时触发",
       "default": "",
       "value": "",
