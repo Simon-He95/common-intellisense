@@ -20,6 +20,7 @@ export const UINames = [
   '@arco-design/web-vue',
   'uview-ui',
   '@tarojs/components',
+  '@nuxt/ui-pro',
 ]
 
 export const nameMap: any = {
@@ -33,4 +34,5 @@ export const nameMap: any = {
   '@arcoDesign/webVue': 'arcoDesignVue',
   'uviewUi': 'uview',
   '@tarojs/components': 'taro',
+  '@nuxt/uiPro': 'nuxtuiPro',
 }

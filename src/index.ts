@@ -464,7 +464,9 @@ export function activate(context: vscode.ExtensionContext) {
         return
       let word = document.getText(range)
       // 只针对template中的内容才提示
-      const lineText = getLineText(position.line)!
+      const lineText = getLineText(position.line)
+      if (!lineText)
+        return
       const code = document.getText()
       if (lineText[range.start.character - 1] !== '<') {
         const result = parser(code, position as any)
@@ -473,8 +475,12 @@ export function activate(context: vscode.ExtensionContext) {
         if (!result.propName)
           return
         const propName = result.propName === 'bind' ? result.props[0].arg.content : result.propName
+        if (['class', 'className', 'style', 'id'].includes(propName))
+          return
         const tag = toCamel(result.tag)[0].toUpperCase() + toCamel(result.tag).slice(1)
         const r = UiCompletions[tag] || await findDynamicComponent(tag, {})
+        if (!r)
+          return
         const completions = result.isEvent ? r.events[0]?.() : r.completions[0]?.()
         if (!completions)
           return
@@ -483,12 +489,15 @@ export function activate(context: vscode.ExtensionContext) {
           return
         return new vscode.Hover(`## Details \n\n${detail}`)
       }
+      if (!optionsComponents)
+        return
       const data = optionsComponents.data.map((c: any) => c()).flat()
       if (!data.length || !word)
         return new vscode.Hover('')
       word = toCamel(word)[0].toUpperCase() + toCamel(word).slice(1)
       let target = UiCompletions[word] || await findDynamicComponent(word, {})
-
+      if (!target)
+        return
       const uiDeps = getUiDeps(code)
       const importUiSource = uiDeps[word]
       if (importUiSource && target.uiName !== importUiSource) {
@@ -538,7 +547,7 @@ export function findUI() {
   const selectedUIs = getConfiguration('common-intellisense.ui') as string[]
 
   const cwd = getCurrentFileUrl()
-  if (!cwd)
+  if (!cwd || cwd === 'exthhost')
     return
 
   if (urlCache.has(cwd)) {

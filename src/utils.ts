@@ -188,16 +188,21 @@ function isInPosition(loc: any, position: vscode.Position) {
 }
 
 export function parserJSX(code: string, position: vscode.Position) {
-  const ast = tsParser(code, { jsx: true, loc: true })
-  const children = ast.body
-  const result = jsxDfs(children, null, position)
-  const map = findJsxRefs(children)
-  if (result)
-    return Object.assign(result, map)
+  try {
+    const ast = tsParser(code, { jsx: true, loc: true })
+    const children = ast.body
+    const result = jsxDfs(children, null, position)
+    const map = findJsxRefs(children)
+    if (result)
+      return Object.assign(result, map)
 
-  return {
-    type: 'script',
-    ...map,
+    return {
+      type: 'script',
+      ...map,
+    }
+  }
+  catch (error) {
+
   }
 }
 

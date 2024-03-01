@@ -18,6 +18,7 @@ import { radixVue1, radixVue1Components } from './radix-vue'
 import { arcoDesign2, arcoDesign2Components } from './arcoDesign'
 import { arcoDesignVue2, arcoDesignVue2Components } from './arcoDesignVue'
 import { taro3, taro3Components } from './taro'
+import { nuxtuiPro1, nuxtuiPro1Components } from './nuxtUiPro'
 
 export default {
   elementUi2,
@@ -45,6 +46,7 @@ export default {
   radixVue1,
   arcoDesign2,
   arcoDesignVue2,
+  nuxtuiPro1,
   elementUi2Components,
   antd4Components,
   antd5Components,
@@ -70,4 +72,5 @@ export default {
   arcoDesign2Components,
   arcoDesignVue2Components,
   taro3Components,
+  nuxtuiPro1Components,
 }
