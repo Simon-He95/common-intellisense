@@ -160,7 +160,7 @@ export function quasar2() {
     QVirtualScroll,
   ]
 
-  return propsReducer('quasar', map)
+  return propsReducer('quasar', map, 'q')
 }
 
 export function quasar2Components() {

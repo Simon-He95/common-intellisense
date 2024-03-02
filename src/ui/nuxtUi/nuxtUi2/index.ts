@@ -83,7 +83,7 @@ export function nuxtui2() {
     UChip,
   ]
 
-  return propsReducer('@nuxt/ui', map)
+  return propsReducer('@nuxt/ui', map, 'U')
 }
 
 export function nuxtui2Components() {

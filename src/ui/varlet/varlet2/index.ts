@@ -159,7 +159,7 @@ export function varlet2() {
     radioGroup,
   ]
 
-  return propsReducer('varlet', map)
+  return propsReducer('varlet', map, 'var')
 }
 
 export function varlet2Components() {

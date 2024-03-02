@@ -6,7 +6,7 @@ export function nuxtuiPro1() {
     Aside,
   ]
 
-  return propsReducer('@nuxt/ui-pro', map)
+  return propsReducer('@nuxt/ui-pro', map, '')
 }
 
 export function nuxtuiPro1Components() {

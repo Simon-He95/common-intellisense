@@ -447,7 +447,7 @@ export function elementUi2(extensionContext: any) {
     'ice-cream-round',
   ]
 
-  return propsReducer('element-ui', map, { prefix: 'el-icon', type: 'elementUi', icons }, extensionContext)
+  return propsReducer('element-ui', map, 'el', { prefix: 'el-icon', type: 'elementUi', icons }, extensionContext)
 }
 
 export function elementUi2Components() {

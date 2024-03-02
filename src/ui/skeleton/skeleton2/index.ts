@@ -6,12 +6,12 @@ export function skeleton2() {
     Accordion,
   ]
 
-  return propsReducer(map)
+  return propsReducer('skeleton', map, '')
 }
 
 export function skeleton2Components() {
   const map = [
     [Accordion.name, '手风琴', '<Accordion autocollapse></Accordion>'],
   ]
-  return componentsReducer(map)
+  return componentsReducer(map, false, '', 'skeleton')
 }

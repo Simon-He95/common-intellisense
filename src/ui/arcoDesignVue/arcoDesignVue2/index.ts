@@ -240,7 +240,7 @@ export function arcoDesignVue2() {
     YearPicker,
   ]
 
-  return propsReducer('@arco-design/web-vue', map)
+  return propsReducer('@arco-design/web-vue', map, 'a')
 }
 
 export function arcoDesignVue2Components() {

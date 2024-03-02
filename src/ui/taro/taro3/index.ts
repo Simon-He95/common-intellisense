@@ -158,7 +158,7 @@ export function taro3() {
     WebView,
   ]
 
-  return propsReducer('@tarojs/components', map)
+  return propsReducer('@tarojs/components', map, 'A')
 }
 
 export function taro3Components() {

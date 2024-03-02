@@ -372,7 +372,7 @@ export function shadcnVue0() {
     RadioGroupRoot,
   ]
 
-  return propsReducer('shadcn-vue', map)
+  return propsReducer('shadcn-vue', map, '')
 }
 
 export function shadcnVue0Components() {

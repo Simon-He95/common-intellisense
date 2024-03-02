@@ -180,7 +180,7 @@ export function antDesignVue1() {
     ATag,
     ATree,
   ]
-  return propsReducer('ant-design-vue', map)
+  return propsReducer('ant-design-vue', map, 'a')
 }
 
 export function antDesignVue1Components() {

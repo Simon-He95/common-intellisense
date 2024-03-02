@@ -178,7 +178,7 @@ export function antDesignVue3() {
     Upload,
   ]
 
-  return propsReducer('ant-design-vue3', map)
+  return propsReducer('ant-design-vue3', map, 'a')
 }
 
 export function antDesignVue3Components() {

@@ -219,12 +219,12 @@ export function activate(context: vscode.ExtensionContext) {
               return UiCompletions[value].methods
           }
         }
-      }
-      if (isVue && lineText.slice(character, character + 6) !== '.value' && !/\.value\.?$/.test(lineText.slice(0, character)))
-        return result.refs.map((refName: string) => createCompletionItem({ content: refName, snippet: `${refName}.value`, documentation: `${refName}.value`, preselect: true, sortText: 'a' }))
+        if (isVue && lineText.slice(character, character + 6) !== '.value' && !/\.value\.?$/.test(lineText.slice(0, character)))
+          return result.refs.map((refName: string) => createCompletionItem({ content: refName, snippet: `${refName}.value`, documentation: `${refName}.value`, preselect: true, sortText: 'a' }))
 
-      if (!isVue && lineText.slice(character, character + 8) !== '.current' && !/\.current\.?$/.test(lineText.slice(0, character)))
-        return result.refs.map((refName: string) => createCompletionItem({ content: refName, snippet: `${refName}.current`, documentation: `${refName}.current`, preselect: true, sortText: 'a' }))
+        if (!isVue && lineText.slice(character, character + 8) !== '.current' && !/\.current\.?$/.test(lineText.slice(0, character)))
+          return result.refs.map((refName: string) => createCompletionItem({ content: refName, snippet: `${refName}.current`, documentation: `${refName}.current`, preselect: true, sortText: 'a' }))
+      }
     }
 
     if (result.parent && result.tag === 'template') {
@@ -326,19 +326,19 @@ export function activate(context: vscode.ExtensionContext) {
               ? undefined
               : createCompletionItem(isValue
                 ? ({
-                  content: label,
-                  snippet: label.replace(/^\w+=\"([^"]+)\".*/, '$1'),
-                  documentation: item.documentation,
-                  detail: item.detail,
-                  type: item.kind,
-                })
+                    content: label,
+                    snippet: label.replace(/^\w+=\"([^"]+)\".*/, '$1'),
+                    documentation: item.documentation,
+                    detail: item.detail,
+                    type: item.kind,
+                  })
                 : ({
-                  content: label,
-                  snippet: label.split(' ')[0],
-                  documentation: item.documentation,
-                  detail: item.detail,
-                  type: item.kind,
-                }))
+                    content: label,
+                    snippet: label.split(' ')[0],
+                    documentation: item.documentation,
+                    detail: item.detail,
+                    type: item.kind,
+                  }))
           },
 
           ).filter(Boolean)
@@ -611,7 +611,7 @@ export function findUI() {
       }
       return Object.assign(result, completion)
     }
-      , {} as any)
+    , {} as any)
     if (isShowSlots) {
       const uiDeps = getUiDeps(getActiveText()!)
       detectSlots(UiCompletions, uiDeps)

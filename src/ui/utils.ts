@@ -1,7 +1,7 @@
 import * as vscode from 'vscode'
 import { createCompletionItem, getActiveTextEditorLanguageId, getLocale, setCommandParams } from '@vscode-use/utils'
 
-export function propsReducer(uiName: string, map: string[], iconData?: { prefix: string; type: string; icons: any[] }, extensionContext?: any) {
+export function propsReducer(uiName: string, map: string[], prefix: string, iconData?: { prefix: string; type: string; icons: any[] }, extensionContext?: any) {
   const result: any = {}
   let icons
   if (iconData) {
@@ -25,7 +25,7 @@ export function propsReducer(uiName: string, map: string[], iconData?: { prefix:
       const data = [
         'id',
         isVue ? 'class' : 'className',
-      ].map(item => createCompletionItem({ content: item, snippet: `${item}="$1"`, type: 5, params: [] }))
+      ].map(item => createCompletionItem({ content: item, snippet: `${item}="\${1:  }"`, type: 5, params: [] }))
 
       if (isVue)
         data.push(createCompletionItem({ content: 'style', snippet: 'style="$1"', type: 5, params: [] }))
@@ -89,11 +89,11 @@ export function propsReducer(uiName: string, map: string[], iconData?: { prefix:
           if (isVue) {
             const _key = key.replace('v-model', 'model')
             content = `${key.replace(':v-model', 'v-model')}="${getComponentTagName(item.name)}${_key[1].toUpperCase()}${toCamel(_key.slice(2))}"`
-            snippet = `${key.replace(':v-model', 'v-model')}="\${1:${getComponentTagName(item.name)}${_key[1].toUpperCase()}${toCamel(_key.slice(2))}}"$2`
+            snippet = `${key.replace(':v-model', 'v-model')}="\${1|${generateSnippetNameOptions(item, _key, prefix)}|}"$2`
           }
           else {
             content = `${key.slice(1)}={${getComponentTagName(item.name)}${key[1].toUpperCase()}${toCamel(key.slice(2))}}`
-            snippet = `${key.slice(1)}={\${1:${getComponentTagName(item.name)}${key[1].toUpperCase()}${toCamel(key.slice(2))}}}$2`
+            snippet = `${key.slice(1)}={\${1|${generateSnippetNameOptions(item, key, prefix)}|}}$2`
           }
         }
         else {
@@ -610,4 +610,22 @@ function findTargetMap(maps: any, label: string) {
       return map
     }
   }
+}
+
+/**
+ * generateSnippetNameOptions
+ * return string name1,name2,name3
+ */
+function generateSnippetNameOptions(item: any, keyName: string, prefix: string) {
+  if (keyName[0] === ':')
+    keyName = keyName.slice(1)
+  keyName = toCamel(keyName.replace(/:.*/, ''))
+  const componentName = item.name[prefix.length].toLowerCase() + item.name.slice(prefix.length + 1)
+  return [
+    keyName,
+    `${keyName}Value`,
+    `is${keyName[0].toUpperCase()}${keyName.slice(1)}`,
+    `${componentName}${keyName[0].toUpperCase()}${keyName.slice(1)}`,
+    `${componentName}_${keyName}`,
+  ].join(',')
 }

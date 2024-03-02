@@ -337,7 +337,7 @@ export function vuetify3() {
     listItemSubtitle,
   ]
 
-  return propsReducer('vuetify', map)
+  return propsReducer('vuetify', map, 'v')
 }
 
 export function vuetify3Components() {

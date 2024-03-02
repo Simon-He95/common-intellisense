@@ -167,7 +167,7 @@ export function naiveUi2() {
     watermark,
   ]
 
-  return propsReducer('naive-ui', map)
+  return propsReducer('naive-ui', map, 'n')
 }
 
 export function naiveUi2Components() {

@@ -210,7 +210,7 @@ export function antDesignVue4() {
     Watermark,
   ]
 
-  return propsReducer('ant-design-vue', map)
+  return propsReducer('ant-design-vue', map, 'a')
 }
 
 export function antDesignVue4Components() {
