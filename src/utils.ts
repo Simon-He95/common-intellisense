@@ -253,24 +253,46 @@ function jsxDfs(children: any, parent: any, position: vscode.Position) {
     if (type === 'JSXElement' || type === 'Element' || (type === 'ReturnStatement' && (argument.type === 'JSXElement' || argument.type === 'JSXFragment')))
       isInTemplate = true
 
-    if (child.children)
-      children = child.children
-    else if (type === 'ExportNamedDeclaration')
-      children = child.declaration
-    else if (type === 'ObjectExpression')
-      children = child.properties
-    else if (type === 'Property' && child.value.type === 'FunctionExpression')
-      children = child.value.body.body
-    else if (type === 'ExportDefaultDeclaration')
-      children = child.declaration.arguments
-    else if (type === 'VariableDeclaration')
-      children = declarations
-    else if (type === 'VariableDeclarator')
-      children = init
-    else if (type === 'ReturnStatement')
-      children = argument
-    else if (type === 'JSXElement')
-      children = child.children
+    if (child.children) { children = child.children }
+    else if (type === 'ExportNamedDeclaration') { children = child.declaration }
+    else if (type === 'ObjectExpression') { children = child.properties }
+    else if (type === 'Property' && child.value.type === 'FunctionExpression') { children = child.value.body.body }
+    else if (type === 'ExportDefaultDeclaration') {
+      if (child.declaration.type === 'FunctionDeclaration')
+        children = child.declaration.body.body
+      else
+        children = child.declaration.arguments
+    }
+    else if (type === 'JSXExpressionContainer') {
+      if (child.expression.type === 'CallExpression') { children = child.expression.arguments }
+      else if (child.expression.type === 'ConditionalExpression') {
+        children = [
+          child.expression.alternate,
+          child.expression.consequent,
+        ].filter(Boolean)
+      }
+      else { children = child.expression }
+    }
+    else if (type === 'TemplateLiteral') {
+      children = child.expressions
+    }
+    else if (type === 'ConditionalExpression') {
+      children = [
+        child.alternate,
+        child.consequent,
+      ].filter(Boolean)
+    }
+    else if (type === 'ArrowFunctionExpression') {
+      children = child.body
+    }
+    else if (type === 'VariableDeclaration') { children = declarations }
+    else if (type === 'VariableDeclarator') { children = init }
+    else if (type === 'ReturnStatement') { children = argument }
+    else if (type === 'JSXElement') { children = child.children }
+    else if (type === 'ExportNamedDeclaration') { children = child.declaration.body }
+    else if (type === 'CallExpression') {
+      children = child.arguments
+    }
     if (children && !Array.isArray(children))
       children = [children]
 
