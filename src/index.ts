@@ -57,7 +57,7 @@ export function activate(context: vscode.ExtensionContext) {
     }
   }))
 
-  context.subscriptions.push(vscode.workspace.onDidChangeConfiguration((e) => {
+  context.subscriptions.push(addEventListener('config-change', (e) => {
     if (e.affectsConfiguration('common-intellisense.ui'))
       findUI()
   }))
@@ -66,6 +66,8 @@ export function activate(context: vscode.ExtensionContext) {
     if (!params)
       return
     const [data, lib, _, prefix] = params
+    if (!prefix)
+      return
     const name = data.name.split('.')[0]
     const code = getActiveText()!
     const uiComponents = getImportUiComponents(code)
@@ -132,8 +134,11 @@ export function activate(context: vscode.ExtensionContext) {
   // 监听pkg变化
   if (isShowSlots) {
     context.subscriptions.push(registerCommand('common-intellisense.slots', (child, name, offset = 0) => {
+      const activeText = getActiveText()
+      if (!activeText)
+        return
       if (!child && UiCompletions) {
-        const uiDeps = getUiDeps(getActiveText()!)
+        const uiDeps = getUiDeps(activeText)
         detectSlots(UiCompletions, uiDeps)
         return
       }
@@ -177,8 +182,9 @@ export function activate(context: vscode.ExtensionContext) {
     }))
 
     context.subscriptions.push(addEventListener('text-change', () => {
-      if (UiCompletions) {
-        const uiDeps = getUiDeps(getActiveText()!)
+      const activeText = getActiveText()
+      if (UiCompletions && activeText) {
+        const uiDeps = getUiDeps(activeText)
         detectSlots(UiCompletions, uiDeps)
       }
     }))
@@ -458,17 +464,23 @@ export function activate(context: vscode.ExtensionContext) {
 
   context.subscriptions.push(vscode.languages.registerHoverProvider(LANS, {
     async provideHover(document, position) {
+      if (!optionsComponents || !UiCompletions)
+        return
+
       const editor = getActiveTextEditor()
       if (!editor)
         return
+
       const range = document.getWordRangeAtPosition(position)
       if (!range)
         return
+
       let word = document.getText(range)
       // 只针对template中的内容才提示
       const lineText = getLineText(position.line)
       if (!lineText)
         return
+
       const code = document.getText()
       if (lineText[range.start.character - 1] !== '<') {
         const result = parser(code, position as any)
@@ -491,10 +503,8 @@ export function activate(context: vscode.ExtensionContext) {
           return
         return new vscode.Hover(`## Details \n\n${detail}`)
       }
-      if (!optionsComponents)
-        return
       const data = optionsComponents.data.map((c: any) => c()).flat()
-      if (!data.length || !word)
+      if (!data?.length || !word)
         return new vscode.Hover('')
       word = toCamel(word)[0].toUpperCase() + toCamel(word).slice(1)
       let target = UiCompletions[word] || await findDynamicComponent(word, {})
@@ -613,8 +623,9 @@ export function findUI() {
     }
     , {} as any)
     if (isShowSlots) {
-      const uiDeps = getUiDeps(getActiveText()!)
-      detectSlots(UiCompletions, uiDeps)
+      const activeText = getActiveText()
+      if (activeText)
+        detectSlots(UiCompletions, getUiDeps(activeText))
     }
   }
 }
@@ -647,6 +658,8 @@ export function getImportDeps(text: string) {
 const UIIMPORT_REG = /import\s+{([^}]+)}\s+from\s+['"]([^"']+)['"]/g
 
 export function getUiDeps(text: string) {
+  if (!text)
+    return
   text = text.replace(/\/\*[\s\S]*?\*\/|\/\/.*/g, '')
   const deps: any = {}
   for (const match of text.matchAll(UIIMPORT_REG)) {
