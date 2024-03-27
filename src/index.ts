@@ -564,7 +564,7 @@ export function findUI() {
 
   if (urlCache.has(cwd)) {
     const uis = urlCache.get(cwd)
-    if (uis.length)
+    if (uis && uis.length)
       updateCompletions(uis)
     return
   }
