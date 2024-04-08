@@ -201,7 +201,7 @@ export function varlet2Components() {
   <var-radio :checked-value="1">睡觉</var-radio>
 </var-radio-group>`],
         [button, '按钮', '<var-button>默认按钮</var-button>'],
-        ['var-switch', '开关', '<var-switch v-model="value" />'],
+        [vswitch, '开关', '<var-switch v-model="value" />'],
         [buttonGroup, '按钮组', `<var-button-group type="primary" mode="text">
   <var-button>按钮</var-button>
   <var-button>按钮</var-button>
@@ -248,7 +248,7 @@ export function varlet2Components() {
         [col, '布局 提供 span 属性设置这一列所占的份数，offset 属性设置这一列偏移的份数。', '<var-col :span="8">span: 8</var-col>'],
         [row, '布局 组件把一行平均划分为 24列 栅格( 24份 )', '<var-row></varrow>'],
         [collapse, '折叠面板 可以折叠/展开的内容区域。', '<var-collapse v-model="value" @change="changeHandle"></varrow>'],
-        [collapse, '折叠面板 可以折叠/展开的内容区域。', '<var-collapse-item title="标题" name="1">文本</var-collapse-item>'],
+        [collapseItem, '折叠面板 可以折叠/展开的内容区域。', '<var-collapse-item title="标题" name="1">文本</var-collapse-item>'],
         [countdown, '倒计时 用于实时展示倒计时数值，支持毫秒精度。', '<var-countdown :time="time" />'],
         [counter, '计数器', '<var-counter v-model="value"/>'],
         [datePicker, '日期选择器 用于选择日期或日期范围。', '<var-date-picker v-model="date" />'],
@@ -368,7 +368,7 @@ export function varlet2Components() {
    <var-radio :checked-value="1">Sleep</var-radio>
 </var-radio-group>`],
         [button, 'Button', '<var-button>Default button</var-button>'],
-        ['var-switch', 'switch', '<var-switch v-model="value" />'],
+        [vswitch, 'switch', '<var-switch v-model="value" />'],
         [buttonGroup, 'Button group', `<var-button-group type="primary" mode="text">
    <var-button>Button</var-button>
    <var-button>Button</var-button>
@@ -415,7 +415,7 @@ export function varlet2Components() {
         [col, 'Layout provides the span attribute to set the number of shares occupied by this column, and the offset attribute sets the number of shares offset by this column. ', '<var-col :span="8">span: 8</var-col>'],
         [row, 'The layout component divides a row evenly into a 24-column grid (24 copies)', '<var-row></varrow>'],
         [collapse, 'Collapse panel A content area that can be collapsed/expanded. ', '<var-collapse v-model="value" @change="changeHandle"></varrow>'],
-        [collapse, 'Collapse panel A content area that can be collapsed/expanded. ', '<var-collapse-item title="title" name="1">Text</var-collapse-item>'],
+        [collapseItem, 'Collapse panel A content area that can be collapsed/expanded. ', '<var-collapse-item title="title" name="1">Text</var-collapse-item>'],
         [countdown, 'Countdown is used to display the countdown value in real time, supporting millisecond precision. ', '<var-countdown :time="time" />'],
         [counter, 'Counter', '<var-counter v-model="value"/>'],
         [datePicker, 'Date picker is used to select a date or date range. ', '<var-date-picker v-model="date" />'],

@@ -1,0 +1,221 @@
+{
+  "name": "VarFab",
+  "props": {
+    "v-model:active": {
+      "description": "Whether to activate the action menu",
+      "description_zh": "Whether to activate the action menu",
+      "default": "false",
+      "value": "",
+      "type": "boolean"
+    },
+    "show": {
+      "description": "Whether to show trigger",
+      "description_zh": "Whether to show trigger",
+      "default": "true",
+      "value": "",
+      "type": "boolean"
+    },
+    "drag": {
+      "description": "Drag component props, for deep customization (support direction attraction boundary)",
+      "description_zh": "Drag component props, for deep customization (support direction attraction boundary)",
+      "default": "false",
+      "value": "",
+      "type": "boolean | DragProps"
+    },
+    "type": {
+      "description": "type, optional values are default primary info success warning danger",
+      "description_zh": "type, optional values are default primary info success warning danger",
+      "default": "primary",
+      "value": "",
+      "type": "string"
+    },
+    "position": {
+      "description": "trigger position, optional values are left-top right-top left-bottom right-bottom",
+      "description_zh": "trigger position, optional values are left-top right-top left-bottom right-bottom",
+      "default": "right-bottom",
+      "value": "",
+      "type": "string"
+    },
+    "direction": {
+      "description": "Action menu popup direction, optional values are top bottom left right",
+      "description_zh": "Action menu popup direction, optional values are top bottom left right",
+      "default": "top",
+      "value": "",
+      "type": "string"
+    },
+    "trigger": {
+      "description": "trigger method click hover",
+      "description_zh": "trigger method click hover",
+      "default": "click",
+      "value": "",
+      "type": "string"
+    },
+    "disabled": {
+      "description": "Whether to disable",
+      "description_zh": "Whether to disable",
+      "default": "false",
+      "value": "",
+      "type": "boolean"
+    },
+    "color": {
+      "description": "trigger color",
+      "description_zh": "trigger color",
+      "default": "-",
+      "value": "",
+      "type": "string"
+    },
+    "inactive-icon": {
+      "description": "Inactive trigger icon",
+      "description_zh": "Inactive trigger icon",
+      "default": "plus",
+      "value": "",
+      "type": "string"
+    },
+    "active-icon": {
+      "description": "trigger icon when active",
+      "description_zh": "trigger icon when active",
+      "default": "window-close",
+      "value": "",
+      "type": "string"
+    },
+    "inactive-icon-size": {
+      "description": "Inactive trigger icon size",
+      "description_zh": "Inactive trigger icon size",
+      "default": "-",
+      "value": "",
+      "type": "string | number"
+    },
+    "active-icon-size": {
+      "description": "Trigger icon size when active",
+      "description_zh": "Trigger icon size when active",
+      "default": "-",
+      "value": "",
+      "type": "string | number"
+    },
+    "inactive-icon-namespace": {
+      "description": "Trigger icon namespace when inactive",
+      "description_zh": "Trigger icon namespace when inactive",
+      "default": "var-icon",
+      "value": "",
+      "type": "string"
+    },
+    "active-icon-namespace": {
+      "description": "Trigger icon namespace when active",
+      "description_zh": "Trigger icon namespace when active",
+      "default": "var-icon",
+      "value": "",
+      "type": "string"
+    },
+    "fixed": {
+      "description": "Whether to use fixed positioning, set to false to enable absolute positioning (absolute positioning prohibited from dragging)",
+      "description_zh": "Whether to use fixed positioning, set to false to enable absolute positioning (absolute positioning prohibited from dragging)",
+      "default": "true",
+      "value": "",
+      "type": "boolean"
+    },
+    "z-index": {
+      "description": "Same as css z-index, used for custom trigger level",
+      "description_zh": "Same as css z-index, used for custom trigger level",
+      "default": "90",
+      "value": "",
+      "type": "string | number"
+    },
+    "top": {
+      "description": "Same as css top, for custom trigger position",
+      "description_zh": "Same as css top, for custom trigger position",
+      "default": "-",
+      "value": "",
+      "type": "string | number"
+    },
+    "bottom": {
+      "description": "Same as css bottom, for custom trigger position",
+      "description_zh": "Same as css bottom, for custom trigger position",
+      "default": "-",
+      "value": "",
+      "type": "string | number"
+    },
+    "left": {
+      "description": "Same as css left, for custom trigger position",
+      "description_zh": "Same as css left, for custom trigger position",
+      "default": "-",
+      "value": "",
+      "type": "string | number"
+    },
+    "right": {
+      "description": "Same as css right, for custom trigger position",
+      "description_zh": "Same as css right, for custom trigger position",
+      "default": "-",
+      "value": "",
+      "type": "string | number"
+    },
+    "safe-area": {
+      "description": "Whether to enable bottom safe area adaptation",
+      "description_zh": "Whether to enable bottom safe area adaptation",
+      "default": "false",
+      "value": "",
+      "type": "boolean"
+    },
+    "teleport": {
+      "description": "element to which the component mounts",
+      "description_zh": "element to which the component mounts",
+      "default": "body",
+      "value": "",
+      "type": "TeleportProps['to'] | false"
+    },
+    "elevation": {
+      "description": "Elevation level, options true false and level of 0-24",
+      "description_zh": "Elevation level, options true false and level of 0-24",
+      "default": "true",
+      "value": "",
+      "type": "string | number | boolean"
+    }
+  },
+  "link": "https://varlet.gitee.io/varlet-ui/#/en-US/fab",
+  "link_zh": "https://varlet.gitee.io/varlet-ui/#/en-US/fab",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "click",
+      "description": "Triggered when the trigger is clicked, not triggered when disabled state is true",
+      "description_zh": "Triggered when the trigger is clicked, not triggered when disabled state is true",
+      "params": "active: boolean, event: Event"
+    },
+    {
+      "name": "open",
+      "description": "Fires when the action menu is activated and opened",
+      "description_zh": "Fires when the action menu is activated and opened",
+      "params": "-"
+    },
+    {
+      "name": "opened",
+      "description": "Fires at the end of the animation that activates and opens the action menu",
+      "description_zh": "Fires at the end of the animation that activates and opens the action menu",
+      "params": "-"
+    },
+    {
+      "name": "close",
+      "description": "Triggered when the action menu is deactivated and closed",
+      "description_zh": "Triggered when the action menu is deactivated and closed",
+      "params": "-"
+    },
+    {
+      "name": "closed",
+      "description": "Fires when the animation of inactivating and closing the action menu ends",
+      "description_zh": "Fires when the animation of inactivating and closing the action menu ends",
+      "params": "-"
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "default",
+      "description": "Action menu",
+      "description_zh": "Action menu"
+    },
+    {
+      "name": "trigger",
+      "description": "Trigger",
+      "description_zh": "Trigger"
+    }
+  ]
+}
