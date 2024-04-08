@@ -1,7 +1,7 @@
 import * as vscode from 'vscode'
 import { createCompletionItem, getActiveTextEditorLanguageId, getLocale, setCommandParams } from '@vscode-use/utils'
 
-export function propsReducer(uiName: string, map: string[], prefix: string, iconData?: { prefix: string; type: string; icons: any[] }, extensionContext?: any) {
+export function propsReducer(uiName: string, map: string[], prefix: string, iconData?: { prefix: string, type: string, icons: any[] }, extensionContext?: any) {
   const result: any = {}
   let icons
   if (iconData) {

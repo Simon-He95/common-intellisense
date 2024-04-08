@@ -15,7 +15,7 @@ const extendsMap: any = {
     type: 'String',
     description: 'Color name for component from the Quasar Color Palette',
     value: '',
-    default: ''
+    default: '',
   },
 }
 async function run() {
@@ -36,11 +36,11 @@ async function run() {
       Object.keys(_props).forEach((key) => {
         const value = _props[key]
         if (value.extends) {
-          if(value.type && Array.isArray(value.type)){
+          if (value.type && Array.isArray(value.type))
             value.type = value.type.join(' | ')
-          }
+
           props[key] = Object.assign(extendsMap[value.extends]
-            || {
+          || {
             value: '',
             type: 'String',
             description: '',

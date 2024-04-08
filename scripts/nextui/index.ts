@@ -30,7 +30,7 @@ async function run() {
           type: p.Type,
           default: p.Default,
           description: p.Description,
-          value: p.value || ''
+          value: p.value || '',
         }
       })
     }
@@ -57,7 +57,7 @@ async function run() {
         events.push({
           name: e.Attribute,
           description: e.Description,
-          params: e.Type
+          params: e.Type,
         })
       })
     }
@@ -69,7 +69,6 @@ async function run() {
       link,
     }
     fsp.writeFile(path.resolve(base, `src/ui/nextui/nextui2/${item}`), JSON.stringify(newJson, null, 2), 'utf-8')
-
   })
 
   generateIndex()

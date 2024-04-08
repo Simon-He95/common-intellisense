@@ -73,7 +73,6 @@ Install the supported ui component library in your project and install the plug-
 
 [MIT](./license)
 
-
 ## Sponsors
 
 <p align="center">

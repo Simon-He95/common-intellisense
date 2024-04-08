@@ -620,8 +620,7 @@ export function findUI() {
         cacheMap.set(option, completion)
       }
       return Object.assign(result, completion)
-    }
-    , {} as any)
+    }, {} as any)
     if (isShowSlots) {
       const activeText = getActiveText()
       if (activeText)

@@ -1,5 +1,4 @@
 (function () {
-  // eslint-disable-next-line no-undef
   const vscode = acquireVsCodeApi()
   window.addEventListener('message', (e) => {
     const data = e.data

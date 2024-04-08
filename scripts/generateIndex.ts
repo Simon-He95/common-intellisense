@@ -1,7 +1,7 @@
 const root = process.cwd()
-const path = require('path')
-const fg = require('fast-glob')
+const path = require('node:path')
 const fsp = require('node:fs/promises')
+const fg = require('fast-glob')
 
 export async function run() {
   const folder = 'src/ui/taro'
@@ -12,15 +12,15 @@ export async function run() {
   const imports = entry.map((_url: string) => `import ${_url.split('.')[0]} from './${_url}'`)
   let prefix = ''
   const map = entry.map((_url: string) => {
-    let tagName = 'A'+_url.split('.')[0]
+    let tagName = `A${_url.split('.')[0]}`
     if (isHyphen) {
       tagName = hyphenate(tagName)
-      prefix = '\'' + tagName.split('-')[0] + '\''
+      prefix = `'${tagName.split('-')[0]}'`
     }
     return `[${_url.split('.')[0]}, ${_url.split('.')[0]}.name, "<${tagName}></${tagName}>"],`
   })
-  const template =
-    `import { componentsReducer, propsReducer } from '../../utils'
+  const template
+    = `import { componentsReducer, propsReducer } from '../../utils'
 ${imports.join('\n')}
 
 export function ${name}() {
@@ -42,7 +42,6 @@ export function ${name}Components() {
 }
 
 run()
-
 
 function hyphenate(s: string): string {
   return s.replace(/([A-Z])/g, '-$1').toLowerCase().replace(/^-/, '')
