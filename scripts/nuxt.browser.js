@@ -11,7 +11,7 @@ function run() {
       const name = children[0].children[0].textContent
       const description = ''
       const type = children[0].children[1].textContent
-      const value = children[1].firstChild.textContent
+      const value = children[1].textContent
       props[name] = {
         description,
         description_zh: description,
@@ -58,9 +58,25 @@ function run() {
         : ''
       methods.push({ name, description, description_zh: description, params })
     })
+  else {
+    // api
+    const methodsBody = document.querySelector('#api + div')
+    ? document.querySelector('#api + div')
+    : document.querySelector('#api + * + div')
+    if(methodsBody){
+      Array.from(methodsBody.children).forEach(item => {
+        const name = item.children[0].textContent.split('(')[0]
+        const description = item.children[1].textContent
+        const params = item.children[0].textContent.split('(')[1]
+          ? '(' + item.children[0].textContent.split('(')[1]
+          : ''
+        methods.push({ name, description, description_zh: description, params })
+      })
+    }
+  }
   const name = 'U' + link.split('/').slice(-1)[0].split('.')[0].split('-').map(i => {
     return i[0].toUpperCase() + i.slice(1)
-  }).join('')
+  }).join('').split('#')[0]
   const result = { name, props, link, link_zh: link, typeDetail: {}, events, methods, slots }
   console.log(result)
 }

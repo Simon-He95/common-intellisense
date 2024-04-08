@@ -39,6 +39,9 @@ import UMeterGroup from './UMeterGroup.json'
 import UProgress from './UProgress.json'
 import UBreadcrumb from './UBreadcrumb.json'
 import UChip from './UChip.json'
+import UCarousel from './UCarousel.json'
+import UHorizontalNavigation from './UHorizontalNavigation.json'
+import UInputMenu from './UInputMenu.json'
 
 export function nuxtui2() {
   const map: any = [
@@ -81,6 +84,9 @@ export function nuxtui2() {
     UProgress,
     UBreadcrumb,
     UChip,
+    UCarousel,
+    UHorizontalNavigation,
+    UInputMenu,
   ]
 
   return propsReducer('@nuxt/ui', map, 'U')
@@ -287,6 +293,21 @@ export function nuxtui2Components() {
       UChip,
       UChip.name,
       `<${UChip.name}></${UChip.name}>`,
+    ],
+    [
+      UCarousel,
+      UCarousel.name,
+      `<${UCarousel.name}></${UCarousel.name}>`,
+    ],
+    [
+      UHorizontalNavigation,
+      UHorizontalNavigation.name,
+      `<${UHorizontalNavigation.name}></${UHorizontalNavigation.name}>`,
+    ],
+    [
+      UInputMenu,
+      UInputMenu.name,
+      `<${UInputMenu.name}></${UInputMenu.name}>`,
     ],
   ]
   return componentsReducer(map, false, '', '@nuxt/ui')
