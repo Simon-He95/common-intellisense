@@ -12,6 +12,7 @@ import image from './image.json'
 import avatar from './avatar.json'
 import avatarGroup from './avatarGroup.json'
 import loading from './loading.json'
+import chip from './chip.json'
 
 // import option from './option.json'
 // import appBar from './appBar.json'
@@ -35,7 +36,6 @@ import loading from './loading.json'
 // import tabs from './tabs.json'
 // import table from './table.json'
 // import card from './card.json'
-// import chip from './chip.json'
 // import col from './col.json'
 // import row from './row.json'
 // import collapse from './collapse.json'
@@ -92,6 +92,7 @@ export function varlet3() {
     avatar,
     avatarGroup,
     loading,
+    chip,
 
     // option,
     // appBar,
@@ -115,7 +116,6 @@ export function varlet3() {
     // tabs,
     // table,
     // card,
-    // chip,
     // col,
     // row,
     // collapse,
@@ -185,6 +185,7 @@ export function varlet3Components() {
         [avatar, '头像', `<${hyphenate(avatar.name).slice(1)}></${hyphenate(avatar.name).slice(1)}>`],
         [avatarGroup, '头像', `<${hyphenate(avatarGroup.name).slice(1)}></${hyphenate(avatarGroup.name).slice(1)}>`],
         [loading, '加载 加载组件,用于数据加载时执行动画.', '<var-loading type="circle" />'],
+        [chip, '纸片', '<var-chip>默认纸片</var-chip>'],
 
       // [appBar, '导航栏', `<${hyphenate(appBar.name).slice(1)}></${hyphenate(appBar.name).slice(1)}>`],
       //       [option, '下拉选项', `<${hyphenate(option.name).slice(1)}></${hyphenate(option.name).slice(1)}>`],
@@ -250,7 +251,6 @@ export function varlet3Components() {
       //   title="本草纲目"
       //   description="如果华佗再世,崇洋都被医治,外邦来学汉字,激发我民族意识.马钱子、决明子、苍耳子,还有莲子;黄药子、苦豆子、川楝子,我要面子.用我的方式,改写一部历史.没什么别的事,跟着我念几个字.山药当归枸杞 GO,山药 当归 枸杞 GO,看我抓一把中药,服下一帖骄傲~"
       // />`],
-      //       [chip, '纸片', '<var-chip>默认纸片</var-chip>'],
       //       [col, '布局 提供 span 属性设置这一列所占的份数,offset 属性设置这一列偏移的份数.', '<var-col :span="8">span: 8</var-col>'],
       //       [row, '布局 组件把一行平均划分为 24列 栅格( 24份 )', '<var-row></varrow>'],
       //       [collapse, '折叠面板 可以折叠/展开的内容区域.', '<var-collapse v-model="value" @change="changeHandle"></varrow>'],
@@ -353,6 +353,7 @@ export function varlet3Components() {
         [avatar, avatar.name, `<${hyphenate(avatar.name).slice(1)}></${hyphenate(avatar.name).slice(1)}>`],
         [avatarGroup, avatarGroup.name, `<${hyphenate(avatarGroup.name).slice(1)}></${hyphenate(avatarGroup.name).slice(1)}>`],
         [loading, 'Loading loading component, used to perform animation when data is loaded. ', '<var-loading type="circle" />'],
+        [chip, 'paper', '<var-chip>default paper</var-chip>'],
 
       //       [option, option.name, `<${hyphenate(option.name).slice(1)}></${hyphenate(option.name).slice(1)}>`],
       //       [appBar, appBar.name, `<${hyphenate(appBar.name).slice(1)}></${hyphenate(appBar.name).slice(1)}>`],
@@ -418,7 +419,6 @@ export function varlet3Components() {
       //    title="Compendium of Materia Medica"
       //    description="If Hua Tuo is reincarnated, all worship of foreigners will be cured, and foreigners will come to learn Chinese characters and stimulate our national consciousness. Nux vomica, cassia seed, Xanthium seed, and lotus seeds; yellow Yaozi, bitter bean seeds, and Sophora indica, I want face. Rewrite a piece of history in my own way. Nothing else, just read a few words after me. Yam, Angelica and Wolfberry GO, Yam, Angelica and Wolfberry GO, watch me grab a handful of Chinese medicine and take it and be proud~"
       // />`],
-      //       [chip, 'paper', '<var-chip>default paper</var-chip>'],
       //       [col, 'Layout provides the span attribute to set the number of shares occupied by this column, and the offset attribute sets the number of shares offset by this column. ', '<var-col :span="8">span: 8</var-col>'],
       //       [row, 'The layout component divides a row evenly into a 24-column grid (24 copies)', '<var-row></varrow>'],
       //       [collapse, 'Collapse panel A content area that can be collapsed/expanded. ', '<var-collapse v-model="value" @change="changeHandle"></varrow>'],
