@@ -13,11 +13,11 @@ import avatar from './avatar.json'
 import avatarGroup from './avatarGroup.json'
 import loading from './loading.json'
 import chip from './chip.json'
+import badge from './badge.json'
 
 // import option from './option.json'
 // import appBar from './appBar.json'
 // import backTop from './backTop.json'
-// import badge from './badge.json'
 // import bottomNavigation from './bottomNavigation.json'
 // import bottomNavigationItem from './bottomNavigationItem.json'
 // import collapseTransition from './collapseTransition.json'
@@ -93,11 +93,11 @@ export function varlet3() {
     avatarGroup,
     loading,
     chip,
+    badge,
 
     // option,
     // appBar,
     // backTop,
-    // badge,
     // bottomNavigation,
     // bottomNavigationItem,
     // collapseTransition,
@@ -186,11 +186,11 @@ export function varlet3Components() {
         [avatarGroup, '头像', `<${hyphenate(avatarGroup.name).slice(1)}></${hyphenate(avatarGroup.name).slice(1)}>`],
         [loading, '加载 加载组件,用于数据加载时执行动画.', '<var-loading type="circle" />'],
         [chip, '纸片', '<var-chip>默认纸片</var-chip>'],
+        [badge, '徽标', `<${hyphenate(badge.name).slice(1)}></${hyphenate(badge.name).slice(1)}>`],
 
       // [appBar, '导航栏', `<${hyphenate(appBar.name).slice(1)}></${hyphenate(appBar.name).slice(1)}>`],
       //       [option, '下拉选项', `<${hyphenate(option.name).slice(1)}></${hyphenate(option.name).slice(1)}>`],
       //       [backTop, '回到顶部', `<${hyphenate(backTop.name).slice(1)}></${hyphenate(backTop.name).slice(1)}>`],
-      //       [badge, '徽标', `<${hyphenate(badge.name).slice(1)}></${hyphenate(badge.name).slice(1)}>`],
       //       [bottomNavigation, '底部导航栏', `<${hyphenate(bottomNavigation.name).slice(1)}></${hyphenate(bottomNavigation.name).slice(1)}>`],
       //       [bottomNavigationItem, '底部导航栏', `<${hyphenate(bottomNavigationItem.name).slice(1)}></${hyphenate(bottomNavigationItem.name).slice(1)}>`],
       //       [collapseTransition, '折叠东校', `<${hyphenate(collapseTransition.name).slice(1)}></${hyphenate(collapseTransition.name).slice(1)}>`],
@@ -354,11 +354,11 @@ export function varlet3Components() {
         [avatarGroup, avatarGroup.name, `<${hyphenate(avatarGroup.name).slice(1)}></${hyphenate(avatarGroup.name).slice(1)}>`],
         [loading, 'Loading loading component, used to perform animation when data is loaded. ', '<var-loading type="circle" />'],
         [chip, 'paper', '<var-chip>default paper</var-chip>'],
+        [badge, badge.name, `<${hyphenate(badge.name).slice(1)}></${hyphenate(badge.name).slice(1)}>`],
 
       //       [option, option.name, `<${hyphenate(option.name).slice(1)}></${hyphenate(option.name).slice(1)}>`],
       //       [appBar, appBar.name, `<${hyphenate(appBar.name).slice(1)}></${hyphenate(appBar.name).slice(1)}>`],
       //       [backTop, backTop.name, `<${hyphenate(backTop.name).slice(1)}></${hyphenate(backTop.name).slice(1)}>`],
-      //       [badge, badge.name, `<${hyphenate(badge.name).slice(1)}></${hyphenate(badge.name).slice(1)}>`],
       //       [bottomNavigation, bottomNavigation.name, `<${hyphenate(bottomNavigation.name).slice(1)}></${hyphenate(bottomNavigation.name).slice(1)}>`],
       //       [bottomNavigationItem, bottomNavigationItem.name, `<${hyphenate(bottomNavigationItem.name).slice(1)}></${hyphenate(bottomNavigationItem.name).slice(1)}>`],
       //       [collapseTransition, collapseTransition.name, `<${hyphenate(collapseTransition.name).slice(1)}></${hyphenate(collapseTransition.name).slice(1)}>`],
