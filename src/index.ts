@@ -142,7 +142,8 @@ export function activate(context: vscode.ExtensionContext) {
         detectSlots(UiCompletions, uiDeps)
         return
       }
-
+      if (!child.children)
+        return
       const lastChild = child.children[child.children.length - 1]
       let slotName = `#${name}`
       if (child.range)

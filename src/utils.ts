@@ -668,7 +668,8 @@ async function findUiTag(children: any, UiCompletions: any, result: any[] = [], 
     const tagName = toCamel(`-${tag}`)
     let target = UiCompletions[tagName] || await findDynamicComponent(tagName, {})
     const importUiSource = uiDeps[tagName]
-
+    if (!target)
+      continue
     if (importUiSource && target.uiName !== importUiSource) {
       for (const p of optionsComponents.prefix.filter(Boolean)) {
         const realName = p[0].toUpperCase() + p.slice(1) + tagName
