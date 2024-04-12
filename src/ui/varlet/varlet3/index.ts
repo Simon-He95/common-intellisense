@@ -7,8 +7,8 @@ import breadcrumbs from './breadcrumbs.json'
 import breadcrumb from './breadcrumb.json'
 import link from './link.json'
 import cell from './cell.json'
+import icon from './icon.json'
 
-// import icon from './icon.json'
 // import option from './option.json'
 // import appBar from './appBar.json'
 // import avatar from './avatar.json'
@@ -180,8 +180,8 @@ export function varlet3Components() {
         [breadcrumb, '面包屑', '<var-breadcrumb></var-breadcrumb>'],
         [link, '链接 链接组件,用于页面跳转.', '<var-link>默认链接</var-link>'],
         [cell, '单元格', '<var-cell>这是单元格</var-cell>'],
+        [icon, '图标', `<${hyphenate(icon.name).slice(1)}></${hyphenate(icon.name).slice(1)}>`],
 
-      //       [icon, '图标', `<${hyphenate(icon.name).slice(1)}></${hyphenate(icon.name).slice(1)}>`],
       //       [option, '下拉选项', `<${hyphenate(option.name).slice(1)}></${hyphenate(option.name).slice(1)}>`],
       //       [appBar, '导航栏', `<${hyphenate(appBar.name).slice(1)}></${hyphenate(appBar.name).slice(1)}>`],
       //       [avatar, '头像', `<${hyphenate(avatar.name).slice(1)}></${hyphenate(avatar.name).slice(1)}>`],
@@ -348,8 +348,8 @@ export function varlet3Components() {
         [breadcrumb, 'breadcrumb', '<var-breadcrumb></var-breadcrumb>'],
         [link, 'Link link component, used for page jumps. ', '<var-link>Default link</var-link>'],
         [cell, 'cell', '<var-cell>This is the cell</var-cell>'],
+        [icon, icon.name, `<${hyphenate(icon.name).slice(1)}></${hyphenate(icon.name).slice(1)}>`],
 
-      //       [icon, icon.name, `<${hyphenate(icon.name).slice(1)}></${hyphenate(icon.name).slice(1)}>`],
       //       [option, option.name, `<${hyphenate(option.name).slice(1)}></${hyphenate(option.name).slice(1)}>`],
       //       [appBar, appBar.name, `<${hyphenate(appBar.name).slice(1)}></${hyphenate(appBar.name).slice(1)}>`],
       //       [avatar, avatar.name, `<${hyphenate(avatar.name).slice(1)}></${hyphenate(avatar.name).slice(1)}>`],

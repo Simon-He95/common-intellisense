@@ -10,7 +10,6 @@ function run() {
       ? document.querySelector('#Props + * + table')
       : document.querySelector('#Props + * + * + table')
   if (tbody) {
-    console.log({ tbody })
     Array.from(tbody.querySelectorAll('tbody tr')).forEach((item) => {
       const name = item.children[0].textContent
       const description = item.children[1].textContent
