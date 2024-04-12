@@ -9,11 +9,11 @@ import link from './link.json'
 import cell from './cell.json'
 import icon from './icon.json'
 import image from './image.json'
+import avatar from './avatar.json'
+import avatarGroup from './avatarGroup.json'
 
 // import option from './option.json'
 // import appBar from './appBar.json'
-// import avatar from './avatar.json'
-// import avatarGroup from './avatarGroup.json'
 // import backTop from './backTop.json'
 // import badge from './badge.json'
 // import bottomNavigation from './bottomNavigation.json'
@@ -89,11 +89,11 @@ export function varlet3() {
     cell,
     icon,
     image,
+    avatar,
+    avatarGroup,
 
     // option,
     // appBar,
-    // avatar,
-    // avatarGroup,
     // backTop,
     // badge,
     // bottomNavigation,
@@ -182,11 +182,11 @@ export function varlet3Components() {
         [cell, '单元格', '<var-cell>这是单元格</var-cell>'],
         [icon, '图标', `<${hyphenate(icon.name).slice(1)}></${hyphenate(icon.name).slice(1)}>`],
         [image, '图片', `<${hyphenate(image.name).slice(1)}></${hyphenate(image.name).slice(1)}>`],
+        [avatar, '头像', `<${hyphenate(avatar.name).slice(1)}></${hyphenate(avatar.name).slice(1)}>`],
+        [avatarGroup, '头像', `<${hyphenate(avatarGroup.name).slice(1)}></${hyphenate(avatarGroup.name).slice(1)}>`],
 
+      // [appBar, '导航栏', `<${hyphenate(appBar.name).slice(1)}></${hyphenate(appBar.name).slice(1)}>`],
       //       [option, '下拉选项', `<${hyphenate(option.name).slice(1)}></${hyphenate(option.name).slice(1)}>`],
-      //       [appBar, '导航栏', `<${hyphenate(appBar.name).slice(1)}></${hyphenate(appBar.name).slice(1)}>`],
-      //       [avatar, '头像', `<${hyphenate(avatar.name).slice(1)}></${hyphenate(avatar.name).slice(1)}>`],
-      //       [avatarGroup, '头像', `<${hyphenate(avatarGroup.name).slice(1)}></${hyphenate(avatarGroup.name).slice(1)}>`],
       //       [backTop, '回到顶部', `<${hyphenate(backTop.name).slice(1)}></${hyphenate(backTop.name).slice(1)}>`],
       //       [badge, '徽标', `<${hyphenate(badge.name).slice(1)}></${hyphenate(badge.name).slice(1)}>`],
       //       [bottomNavigation, '底部导航栏', `<${hyphenate(bottomNavigation.name).slice(1)}></${hyphenate(bottomNavigation.name).slice(1)}>`],
@@ -350,11 +350,11 @@ export function varlet3Components() {
         [cell, 'cell', '<var-cell>This is the cell</var-cell>'],
         [icon, icon.name, `<${hyphenate(icon.name).slice(1)}></${hyphenate(icon.name).slice(1)}>`],
         [image, image.name, `<${hyphenate(image.name).slice(1)}></${hyphenate(image.name).slice(1)}>`],
+        [avatar, avatar.name, `<${hyphenate(avatar.name).slice(1)}></${hyphenate(avatar.name).slice(1)}>`],
+        [avatarGroup, avatarGroup.name, `<${hyphenate(avatarGroup.name).slice(1)}></${hyphenate(avatarGroup.name).slice(1)}>`],
 
       //       [option, option.name, `<${hyphenate(option.name).slice(1)}></${hyphenate(option.name).slice(1)}>`],
       //       [appBar, appBar.name, `<${hyphenate(appBar.name).slice(1)}></${hyphenate(appBar.name).slice(1)}>`],
-      //       [avatar, avatar.name, `<${hyphenate(avatar.name).slice(1)}></${hyphenate(avatar.name).slice(1)}>`],
-      //       [avatarGroup, avatarGroup.name, `<${hyphenate(avatarGroup.name).slice(1)}></${hyphenate(avatarGroup.name).slice(1)}>`],
       //       [backTop, backTop.name, `<${hyphenate(backTop.name).slice(1)}></${hyphenate(backTop.name).slice(1)}>`],
       //       [badge, badge.name, `<${hyphenate(badge.name).slice(1)}></${hyphenate(badge.name).slice(1)}>`],
       //       [bottomNavigation, bottomNavigation.name, `<${hyphenate(bottomNavigation.name).slice(1)}></${hyphenate(bottomNavigation.name).slice(1)}>`],
