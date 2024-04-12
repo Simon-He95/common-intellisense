@@ -1,5 +1,5 @@
 import { getLocale } from '@vscode-use/utils'
-import { componentsReducer, propsReducer } from '../../utils'
+import { componentsReducer, hyphenate, propsReducer } from '../../utils'
 import button from './button.json'
 import buttonGroup from './buttonGroup.json'
 import fab from './fab.json'
@@ -8,6 +8,7 @@ import breadcrumb from './breadcrumb.json'
 import link from './link.json'
 import cell from './cell.json'
 import icon from './icon.json'
+import image from './image.json'
 
 // import option from './option.json'
 // import appBar from './appBar.json'
@@ -19,7 +20,6 @@ import icon from './icon.json'
 // import bottomNavigationItem from './bottomNavigationItem.json'
 // import collapseTransition from './collapseTransition.json'
 // import floatingPanel from './floatingPanel.json'
-// import image from './image.json'
 // import menuOption from './menuOption.json'
 // import menuSelect from './menuSelect.json'
 // import watermark from './watermark.json'
@@ -87,8 +87,9 @@ export function varlet3() {
     breadcrumbs,
     breadcrumb,
     cell,
+    icon,
+    image,
 
-    // icon,
     // option,
     // appBar,
     // avatar,
@@ -99,7 +100,6 @@ export function varlet3() {
     // bottomNavigationItem,
     // collapseTransition,
     // floatingPanel,
-    // image,
     // menuOption,
     // menuSelect,
     // watermark,
@@ -181,6 +181,7 @@ export function varlet3Components() {
         [link, '链接 链接组件,用于页面跳转.', '<var-link>默认链接</var-link>'],
         [cell, '单元格', '<var-cell>这是单元格</var-cell>'],
         [icon, '图标', `<${hyphenate(icon.name).slice(1)}></${hyphenate(icon.name).slice(1)}>`],
+        [image, '图片', `<${hyphenate(image.name).slice(1)}></${hyphenate(image.name).slice(1)}>`],
 
       //       [option, '下拉选项', `<${hyphenate(option.name).slice(1)}></${hyphenate(option.name).slice(1)}>`],
       //       [appBar, '导航栏', `<${hyphenate(appBar.name).slice(1)}></${hyphenate(appBar.name).slice(1)}>`],
@@ -192,7 +193,6 @@ export function varlet3Components() {
       //       [bottomNavigationItem, '底部导航栏', `<${hyphenate(bottomNavigationItem.name).slice(1)}></${hyphenate(bottomNavigationItem.name).slice(1)}>`],
       //       [collapseTransition, '折叠东校', `<${hyphenate(collapseTransition.name).slice(1)}></${hyphenate(collapseTransition.name).slice(1)}>`],
       //       [floatingPanel, '浮动面板', `<${hyphenate(floatingPanel.name).slice(1)}></${hyphenate(floatingPanel.name).slice(1)}>`],
-      //       [image, '图片', `<${hyphenate(image.name).slice(1)}></${hyphenate(image.name).slice(1)}>`],
       //       [menuOption, '菜单', `<${hyphenate(menuOption.name).slice(1)}></${hyphenate(menuOption.name).slice(1)}>`],
       //       [menuSelect, '菜单', `<${hyphenate(menuSelect.name).slice(1)}></${hyphenate(menuSelect.name).slice(1)}>`],
       //       [watermark, '水印', `<${hyphenate(watermark.name).slice(1)}></${hyphenate(watermark.name).slice(1)}>`],
@@ -349,6 +349,7 @@ export function varlet3Components() {
         [link, 'Link link component, used for page jumps. ', '<var-link>Default link</var-link>'],
         [cell, 'cell', '<var-cell>This is the cell</var-cell>'],
         [icon, icon.name, `<${hyphenate(icon.name).slice(1)}></${hyphenate(icon.name).slice(1)}>`],
+        [image, image.name, `<${hyphenate(image.name).slice(1)}></${hyphenate(image.name).slice(1)}>`],
 
       //       [option, option.name, `<${hyphenate(option.name).slice(1)}></${hyphenate(option.name).slice(1)}>`],
       //       [appBar, appBar.name, `<${hyphenate(appBar.name).slice(1)}></${hyphenate(appBar.name).slice(1)}>`],
@@ -360,7 +361,6 @@ export function varlet3Components() {
       //       [bottomNavigationItem, bottomNavigationItem.name, `<${hyphenate(bottomNavigationItem.name).slice(1)}></${hyphenate(bottomNavigationItem.name).slice(1)}>`],
       //       [collapseTransition, collapseTransition.name, `<${hyphenate(collapseTransition.name).slice(1)}></${hyphenate(collapseTransition.name).slice(1)}>`],
       //       [floatingPanel, floatingPanel.name, `<${hyphenate(floatingPanel.name).slice(1)}></${hyphenate(floatingPanel.name).slice(1)}>`],
-      //       [image, image.name, `<${hyphenate(image.name).slice(1)}></${hyphenate(image.name).slice(1)}>`],
       //       [menuOption, menuOption.name, `<${hyphenate(menuOption.name).slice(1)}></${hyphenate(menuOption.name).slice(1)}>`],
       //       [menuSelect, menuSelect.name, `<${hyphenate(menuSelect.name).slice(1)}></${hyphenate(menuSelect.name).slice(1)}>`],
       //       [watermark, watermark.name, `<${hyphenate(watermark.name).slice(1)}></${hyphenate(watermark.name).slice(1)}>`],
