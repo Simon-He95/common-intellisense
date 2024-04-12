@@ -15,6 +15,10 @@ import loading from './loading.json'
 import chip from './chip.json'
 import badge from './badge.json'
 import eclipsis from './eclipsis.json'
+import paper from './paper.json'
+import skeleton from './skeleton.json'
+import collapse from './collapse.json'
+import collapseItem from './collapseItem.json'
 
 // import option from './option.json'
 // import appBar from './appBar.json'
@@ -39,8 +43,6 @@ import eclipsis from './eclipsis.json'
 // import card from './card.json'
 // import col from './col.json'
 // import row from './row.json'
-// import collapse from './collapse.json'
-// import collapseItem from './collapseItem.json'
 // import countdown from './countdown.json'
 // import counter from './counter.json'
 // import datePicker from './datePicker.json'
@@ -56,7 +58,6 @@ import eclipsis from './eclipsis.json'
 // import list from './list.json'
 // import menu from './menu.json'
 // import overlay from './overlay.json'
-// import paper from './paper.json'
 // import picker from './picker.json'
 // import popup from './popup.json'
 // import progress from './progress.json'
@@ -66,7 +67,6 @@ import eclipsis from './eclipsis.json'
 // import radioGroup from './radioGroup.json'
 // import result from './result.json'
 // import select from './select.json'
-// import skeleton from './skeleton.json'
 // import slider from './slider.json'
 // import snackbar from './snackbar.json'
 // import space from './space.json'
@@ -96,6 +96,11 @@ export function varlet3() {
     chip,
     badge,
     eclipsis,
+    paper,
+    skeleton,
+    collapse,
+    collapseItem,
+
     // option,
     // appBar,
     // backTop,
@@ -119,8 +124,7 @@ export function varlet3() {
     // card,
     // col,
     // row,
-    // collapse,
-    // collapseItem,
+
     // countdown,
     // counter,
     // datePicker,
@@ -136,7 +140,6 @@ export function varlet3() {
     // list,
     // menu,
     // overlay,
-    // paper,
     // picker,
     // popup,
     // progress,
@@ -144,7 +147,6 @@ export function varlet3() {
     // rate,
     // result,
     // select,
-    // skeleton,
     // slider,
     // snackbar,
     // space,
@@ -189,74 +191,76 @@ export function varlet3Components() {
         [chip, '纸片', '<var-chip>默认纸片</var-chip>'],
         [badge, '徽标', `<${hyphenate(badge.name).slice(1)}></${hyphenate(badge.name).slice(1)}>`],
         [eclipsis, '省略', `<${hyphenate(eclipsis.name).slice(1)}></${hyphenate(eclipsis.name).slice(1)}>`],
+        [paper, '纸张 创建一个更容易的使用海拔效果和水波效果的容器', '<var-paper :elevation="2" :width="100" :height="100" ripple />'],
+        [skeleton, '骨架屏 显示一些带过渡效果的占位元素,优化加载过程.', '<var-skeleton :loading="loading">加载的数据</var-skeleton>'],
+        [collapse, '折叠面板 可以折叠/展开的内容区域.', '<var-collapse v-model="value" @change="changeHandle"></varrow>'],
+        [collapseItem, '折叠面板 可以折叠/展开的内容区域.', '<var-collapse-item title="标题" name="1">文本</var-collapse-item>'],
+        // [appBar, '导航栏', `<${hyphenate(appBar.name).slice(1)}></${hyphenate(appBar.name).slice(1)}>`],
+        //       [option, '下拉选项', `<${hyphenate(option.name).slice(1)}></${hyphenate(option.name).slice(1)}>`],
+        //       [backTop, '回到顶部', `<${hyphenate(backTop.name).slice(1)}></${hyphenate(backTop.name).slice(1)}>`],
+        //       [bottomNavigation, '底部导航栏', `<${hyphenate(bottomNavigation.name).slice(1)}></${hyphenate(bottomNavigation.name).slice(1)}>`],
+        //       [bottomNavigationItem, '底部导航栏', `<${hyphenate(bottomNavigationItem.name).slice(1)}></${hyphenate(bottomNavigationItem.name).slice(1)}>`],
+        //       [collapseTransition, '折叠东校', `<${hyphenate(collapseTransition.name).slice(1)}></${hyphenate(collapseTransition.name).slice(1)}>`],
+        //       [floatingPanel, '浮动面板', `<${hyphenate(floatingPanel.name).slice(1)}></${hyphenate(floatingPanel.name).slice(1)}>`],
+        //       [menuOption, '菜单', `<${hyphenate(menuOption.name).slice(1)}></${hyphenate(menuOption.name).slice(1)}>`],
+        //       [menuSelect, '菜单', `<${hyphenate(menuSelect.name).slice(1)}></${hyphenate(menuSelect.name).slice(1)}>`],
+        //       [watermark, '水印', `<${hyphenate(watermark.name).slice(1)}></${hyphenate(watermark.name).slice(1)}>`],
+        //       [actionSheet, '动作面板', `<var-action-sheet
+        //   :actions="actions"
+        //   v-model:show="show"
+        //   @select="handleSelect"
+        // />`],
+        //       [dialog, '对话框', `<var-dialog
+        //     title="兰亭序"
+        //     message="兰亭临帖 行书如行云流水"
+        //     v-model:show="show"
+        //     @confirm="() => Snackbar.success('confirm')"
+        //     @cancel="() => Snackbar.error('cancel')"
+        //     @closed="() => Snackbar.info('closed')"
+        //   />`],
+        //       [radio, '单选框', '<var-radio v-model="value">当前的值: {{ value }}</var-radio>'],
+        //       [radioGroup, '单选框组', `<var-radio-group v-model="value">
+        //   <var-radio :checked-value="0">吃饭</var-radio>
+        //   <var-radio :checked-value="1">睡觉</var-radio>
+        // </var-radio-group>`],
+        //       [vswitch, '开关', '<var-switch v-model="value" />'],
+        //       [checkbox, '复选框', '<var-checkbox v-model="value">当前的值: {{ value }}</var-checkbox>'],
+        //       [checkboxGroup, '复选框组', `<var-checkbox-group
+        //   v-model="value"
+        //   :rules="[v => v.length === 2 || '请全选']"
+        // >
+        //   <var-checkbox :checked-value="0">吃饭</var-checkbox>
+        //   <var-checkbox :checked-value="1">睡觉</var-checkbox>
+        // </var-checkbox-group>`],
+        //       [form, '表单', `<var-form
+        //     ref="form"
+        //     :disabled="disabled"
+        //     :readonly="readonly"
+        //     scroll-to-error="start"
+        //   ></var-form>`],
+        //       [pagination, '分页', '<var-pagination :current="3" :total="120" />'],
+        //       [tabs, '选项卡组', `<var-tabs
+        //   elevation
+        //   color="var(--color-primary)"
+        //   active-color="#fff"
+        //   inactive-color="hsla(0, 0%, 100%, .6)"
+        //   disabled-color="#aaa"
+        //   v-model:active="active"
+        // >
+        //   <var-tab>选项1</var-tab>
+        //   <var-tab>选项2</var-tab>
+        //   <var-tab disabled>禁用选项</var-tab>
+        // </var-tabs>`],
+        //       [tab, '选项卡', '<var-tab>选项1</var-tab>'],
+        //       [tabItem, '选项卡', '<var-tab-item>选项1</var-tab-item>'],
+        //       [table, '表格', '<var-table>选项1</var-table>'],
+        //       [card, '卡片', `<var-card
+        //   title="本草纲目"
+        //   description="如果华佗再世,崇洋都被医治,外邦来学汉字,激发我民族意识.马钱子、决明子、苍耳子,还有莲子;黄药子、苦豆子、川楝子,我要面子.用我的方式,改写一部历史.没什么别的事,跟着我念几个字.山药当归枸杞 GO,山药 当归 枸杞 GO,看我抓一把中药,服下一帖骄傲~"
+        // />`],
+        //       [col, '布局 提供 span 属性设置这一列所占的份数,offset 属性设置这一列偏移的份数.', '<var-col :span="8">span: 8</var-col>'],
+        //       [row, '布局 组件把一行平均划分为 24列 栅格( 24份 )', '<var-row></varrow>'],
 
-      // [appBar, '导航栏', `<${hyphenate(appBar.name).slice(1)}></${hyphenate(appBar.name).slice(1)}>`],
-      //       [option, '下拉选项', `<${hyphenate(option.name).slice(1)}></${hyphenate(option.name).slice(1)}>`],
-      //       [backTop, '回到顶部', `<${hyphenate(backTop.name).slice(1)}></${hyphenate(backTop.name).slice(1)}>`],
-      //       [bottomNavigation, '底部导航栏', `<${hyphenate(bottomNavigation.name).slice(1)}></${hyphenate(bottomNavigation.name).slice(1)}>`],
-      //       [bottomNavigationItem, '底部导航栏', `<${hyphenate(bottomNavigationItem.name).slice(1)}></${hyphenate(bottomNavigationItem.name).slice(1)}>`],
-      //       [collapseTransition, '折叠东校', `<${hyphenate(collapseTransition.name).slice(1)}></${hyphenate(collapseTransition.name).slice(1)}>`],
-      //       [floatingPanel, '浮动面板', `<${hyphenate(floatingPanel.name).slice(1)}></${hyphenate(floatingPanel.name).slice(1)}>`],
-      //       [menuOption, '菜单', `<${hyphenate(menuOption.name).slice(1)}></${hyphenate(menuOption.name).slice(1)}>`],
-      //       [menuSelect, '菜单', `<${hyphenate(menuSelect.name).slice(1)}></${hyphenate(menuSelect.name).slice(1)}>`],
-      //       [watermark, '水印', `<${hyphenate(watermark.name).slice(1)}></${hyphenate(watermark.name).slice(1)}>`],
-      //       [actionSheet, '动作面板', `<var-action-sheet
-      //   :actions="actions"
-      //   v-model:show="show"
-      //   @select="handleSelect"
-      // />`],
-      //       [dialog, '对话框', `<var-dialog
-      //     title="兰亭序"
-      //     message="兰亭临帖 行书如行云流水"
-      //     v-model:show="show"
-      //     @confirm="() => Snackbar.success('confirm')"
-      //     @cancel="() => Snackbar.error('cancel')"
-      //     @closed="() => Snackbar.info('closed')"
-      //   />`],
-      //       [radio, '单选框', '<var-radio v-model="value">当前的值: {{ value }}</var-radio>'],
-      //       [radioGroup, '单选框组', `<var-radio-group v-model="value">
-      //   <var-radio :checked-value="0">吃饭</var-radio>
-      //   <var-radio :checked-value="1">睡觉</var-radio>
-      // </var-radio-group>`],
-      //       [vswitch, '开关', '<var-switch v-model="value" />'],
-      //       [checkbox, '复选框', '<var-checkbox v-model="value">当前的值: {{ value }}</var-checkbox>'],
-      //       [checkboxGroup, '复选框组', `<var-checkbox-group
-      //   v-model="value"
-      //   :rules="[v => v.length === 2 || '请全选']"
-      // >
-      //   <var-checkbox :checked-value="0">吃饭</var-checkbox>
-      //   <var-checkbox :checked-value="1">睡觉</var-checkbox>
-      // </var-checkbox-group>`],
-      //       [form, '表单', `<var-form
-      //     ref="form"
-      //     :disabled="disabled"
-      //     :readonly="readonly"
-      //     scroll-to-error="start"
-      //   ></var-form>`],
-      //       [pagination, '分页', '<var-pagination :current="3" :total="120" />'],
-      //       [tabs, '选项卡组', `<var-tabs
-      //   elevation
-      //   color="var(--color-primary)"
-      //   active-color="#fff"
-      //   inactive-color="hsla(0, 0%, 100%, .6)"
-      //   disabled-color="#aaa"
-      //   v-model:active="active"
-      // >
-      //   <var-tab>选项1</var-tab>
-      //   <var-tab>选项2</var-tab>
-      //   <var-tab disabled>禁用选项</var-tab>
-      // </var-tabs>`],
-      //       [tab, '选项卡', '<var-tab>选项1</var-tab>'],
-      //       [tabItem, '选项卡', '<var-tab-item>选项1</var-tab-item>'],
-      //       [table, '表格', '<var-table>选项1</var-table>'],
-      //       [card, '卡片', `<var-card
-      //   title="本草纲目"
-      //   description="如果华佗再世,崇洋都被医治,外邦来学汉字,激发我民族意识.马钱子、决明子、苍耳子,还有莲子;黄药子、苦豆子、川楝子,我要面子.用我的方式,改写一部历史.没什么别的事,跟着我念几个字.山药当归枸杞 GO,山药 当归 枸杞 GO,看我抓一把中药,服下一帖骄傲~"
-      // />`],
-      //       [col, '布局 提供 span 属性设置这一列所占的份数,offset 属性设置这一列偏移的份数.', '<var-col :span="8">span: 8</var-col>'],
-      //       [row, '布局 组件把一行平均划分为 24列 栅格( 24份 )', '<var-row></varrow>'],
-      //       [collapse, '折叠面板 可以折叠/展开的内容区域.', '<var-collapse v-model="value" @change="changeHandle"></varrow>'],
-      //       [collapseItem, '折叠面板 可以折叠/展开的内容区域.', '<var-collapse-item title="标题" name="1">文本</var-collapse-item>'],
       //       [countdown, '倒计时 用于实时展示倒计时数值,支持毫秒精度.', '<var-countdown :time="time" />'],
       //       [counter, '计数器', '<var-counter v-model="value"/>'],
       //       [datePicker, '日期选择器 用于选择日期或日期范围.', '<var-date-picker v-model="date" />'],
@@ -285,7 +289,6 @@ export function varlet3Components() {
       // </var-list>`],
       //       [menu, '菜单 当元素点击时显示一个菜单,通过控制弹出位置和偏移量改变菜单的显示位置.', '<var-menu></var-menu>'],
       //       [overlay, '遮罩层 创建一个遮罩层,用于强调特定的页面元素.', '<var-overlay v-model:show="show" />'],
-      //       [paper, '纸张 创建一个更容易的使用海拔效果和水波效果的容器', '<var-paper :elevation="2" :width="100" :height="100" ripple />'],
       //       [picker, '多列选择器 提供了函数和组件两种调用方式.同时支持级联模式,可以处理多级联动.', '<var-picker :columns="columns" />'],
       //       [popup, '弹出层 创建一个可以从上、下、左、右、中心弹出的容器,用于展示信息.默认使用 teleport 插入到 body 尾部.', '<var-popup v-model:show="center"></var-popup>'],
       //       [progress, '进度条 展示操作的当前进度.', '<var-progress :value="20" />'],
@@ -304,7 +307,6 @@ export function varlet3Components() {
       //   <var-option label="吃饭" :value="1" />
       //   <var-option label="睡觉" :value="2" />
       // </var-select>`],
-      //       [skeleton, '骨架屏 显示一些带过渡效果的占位元素,优化加载过程.', '<var-skeleton :loading="loading">加载的数据</var-skeleton>'],
       //       [slider, '滑块 用于在给定范围内取值.', '<var-slider v-model="value" />'],
       //       [snackbar, '消息条 用于向用户显示快速消息.', '<var-snackbar v-model:show="show">这是一个消息条!!</var-snackbar>'],
       //       [space, '间隔 组件库提供了 <var-space> 布局的组件,使您更有效率的进行 flex 布局.', '<var-space></var-space'],
@@ -355,77 +357,79 @@ export function varlet3Components() {
         [avatar, avatar.name, `<${hyphenate(avatar.name).slice(1)}></${hyphenate(avatar.name).slice(1)}>`],
         [avatarGroup, avatarGroup.name, `<${hyphenate(avatarGroup.name).slice(1)}></${hyphenate(avatarGroup.name).slice(1)}>`],
         [loading, 'Loading loading component, used to perform animation when data is loaded. ', '<var-loading type="circle" />'],
-        [chip, 'paper', '<var-chip>default paper</var-chip>'],
+        [chip, 'Chip', '<var-chip>default paper</var-chip>'],
         [badge, badge.name, `<${hyphenate(badge.name).slice(1)}></${hyphenate(badge.name).slice(1)}>`],
-        [eclipsis, 'eclipsis', `<${hyphenate(eclipsis.name).slice(1)}></${hyphenate(eclipsis.name).slice(1)}>`],
+        [eclipsis, 'Eclipsis', `<${hyphenate(eclipsis.name).slice(1)}></${hyphenate(eclipsis.name).slice(1)}>`],
+        [paper, 'Paper creates a container that makes it easier to use elevation and ripple effects', '<var-paper :elevation="2" :width="100" :height="100" ripple /> '],
+        [skeleton, 'Skeleton screen displays some placeholder elements with transition effects to optimize the loading process. ', '<var-skeleton :loading="loading">Loading data</var-skeleton>'],
+        [collapse, 'Collapse panel A content area that can be collapsed/expanded. ', '<var-collapse v-model="value" @change="changeHandle"></varrow>'],
+        [collapseItem, 'Collapse panel A content area that can be collapsed/expanded. ', '<var-collapse-item title="title" name="1">Text</var-collapse-item>'],
+        //       [option, option.name, `<${hyphenate(option.name).slice(1)}></${hyphenate(option.name).slice(1)}>`],
+        //       [appBar, appBar.name, `<${hyphenate(appBar.name).slice(1)}></${hyphenate(appBar.name).slice(1)}>`],
+        //       [backTop, backTop.name, `<${hyphenate(backTop.name).slice(1)}></${hyphenate(backTop.name).slice(1)}>`],
+        //       [bottomNavigation, bottomNavigation.name, `<${hyphenate(bottomNavigation.name).slice(1)}></${hyphenate(bottomNavigation.name).slice(1)}>`],
+        //       [bottomNavigationItem, bottomNavigationItem.name, `<${hyphenate(bottomNavigationItem.name).slice(1)}></${hyphenate(bottomNavigationItem.name).slice(1)}>`],
+        //       [collapseTransition, collapseTransition.name, `<${hyphenate(collapseTransition.name).slice(1)}></${hyphenate(collapseTransition.name).slice(1)}>`],
+        //       [floatingPanel, floatingPanel.name, `<${hyphenate(floatingPanel.name).slice(1)}></${hyphenate(floatingPanel.name).slice(1)}>`],
+        //       [menuOption, menuOption.name, `<${hyphenate(menuOption.name).slice(1)}></${hyphenate(menuOption.name).slice(1)}>`],
+        //       [menuSelect, menuSelect.name, `<${hyphenate(menuSelect.name).slice(1)}></${hyphenate(menuSelect.name).slice(1)}>`],
+        //       [watermark, watermark.name, `<${hyphenate(watermark.name).slice(1)}></${hyphenate(watermark.name).slice(1)}>`],
+        //       [actionSheet, 'Action Panel', `<var-action-sheet
+        //    :actions="actions"
+        //    v-model:show="show"
+        //    @select="handleSelect"
+        // />`],
+        //       [dialog, 'Dialog', `<var-dialog
+        //      title="Lanting Preface"
+        //      message="Lanting's calligraphy is like flowing clouds and flowing water"
+        //      v-model:show="show"
+        //      @confirm="() => Snackbar.success('confirm')"
+        //      @cancel="() => Snackbar.error('cancel')"
+        //      @closed="() => Snackbar.info('closed')"
+        //    />`],
+        //       [radio, 'Radio button', '<var-radio v-model="value">Current value: {{ value }}</var-radio>'],
+        //       [radioGroup, 'Radio button group', `<var-radio-group v-model="value">
+        //    <var-radio :checked-value="0">Eat</var-radio>
+        //    <var-radio :checked-value="1">Sleep</var-radio>
+        // </var-radio-group>`],
+        //       [vswitch, 'switch', '<var-switch v-model="value" />'],
+        //       [checkbox, 'checkbox', '<var-checkbox v-model="value">Current value: {{ value }}</var-checkbox>'],
+        //       [checkboxGroup, 'checkbox group', `<var-checkbox-group
+        //    v-model="value"
+        //    :rules="[v => v.length === 2 || 'Please select all']"
+        // >
+        //    <var-checkbox :checked-value="0">Eat</var-checkbox>
+        //    <var-checkbox :checked-value="1">Sleep</var-checkbox>
+        // </var-checkbox-group>`],
+        //       [form, 'form', `<var-form
+        //      ref="form"
+        //      :disabled="disabled"
+        //      :readonly="readonly"
+        //      scroll-to-error="start"
+        //    ></var-form>`],
+        //       [pagination, 'pagination', '<var-pagination :current="3" :total="120" />'],
+        //       [tabs, 'tab group', `<var-tabs
+        //    elevation
+        //    color="var(--color-primary)"
+        //    active-color="#fff"
+        //    inactive-color="hsla(0, 0%, 100%, .6)"
+        //    disabled-color="#aaa"
+        //    v-model:active="active"
+        // >
+        //    <var-tab>Option 1</var-tab>
+        //    <var-tab>Option 2</var-tab>
+        //    <var-tab disabled>Disabled option</var-tab>
+        // </var-tabs>`],
+        //       [tab, 'tab', '<var-tab>Option 1</var-tab>'],
+        //       [tabItem, 'tab', '<var-tab-item>Option 1</var-tab-item>'],
+        //       [table, 'table', '<var-table>Option 1</var-table>'],
+        //       [card, 'card', `<var-card
+        //    title="Compendium of Materia Medica"
+        //    description="If Hua Tuo is reincarnated, all worship of foreigners will be cured, and foreigners will come to learn Chinese characters and stimulate our national consciousness. Nux vomica, cassia seed, Xanthium seed, and lotus seeds; yellow Yaozi, bitter bean seeds, and Sophora indica, I want face. Rewrite a piece of history in my own way. Nothing else, just read a few words after me. Yam, Angelica and Wolfberry GO, Yam, Angelica and Wolfberry GO, watch me grab a handful of Chinese medicine and take it and be proud~"
+        // />`],
+        //       [col, 'Layout provides the span attribute to set the number of shares occupied by this column, and the offset attribute sets the number of shares offset by this column. ', '<var-col :span="8">span: 8</var-col>'],
+        //       [row, 'The layout component divides a row evenly into a 24-column grid (24 copies)', '<var-row></varrow>'],
 
-      //       [option, option.name, `<${hyphenate(option.name).slice(1)}></${hyphenate(option.name).slice(1)}>`],
-      //       [appBar, appBar.name, `<${hyphenate(appBar.name).slice(1)}></${hyphenate(appBar.name).slice(1)}>`],
-      //       [backTop, backTop.name, `<${hyphenate(backTop.name).slice(1)}></${hyphenate(backTop.name).slice(1)}>`],
-      //       [bottomNavigation, bottomNavigation.name, `<${hyphenate(bottomNavigation.name).slice(1)}></${hyphenate(bottomNavigation.name).slice(1)}>`],
-      //       [bottomNavigationItem, bottomNavigationItem.name, `<${hyphenate(bottomNavigationItem.name).slice(1)}></${hyphenate(bottomNavigationItem.name).slice(1)}>`],
-      //       [collapseTransition, collapseTransition.name, `<${hyphenate(collapseTransition.name).slice(1)}></${hyphenate(collapseTransition.name).slice(1)}>`],
-      //       [floatingPanel, floatingPanel.name, `<${hyphenate(floatingPanel.name).slice(1)}></${hyphenate(floatingPanel.name).slice(1)}>`],
-      //       [menuOption, menuOption.name, `<${hyphenate(menuOption.name).slice(1)}></${hyphenate(menuOption.name).slice(1)}>`],
-      //       [menuSelect, menuSelect.name, `<${hyphenate(menuSelect.name).slice(1)}></${hyphenate(menuSelect.name).slice(1)}>`],
-      //       [watermark, watermark.name, `<${hyphenate(watermark.name).slice(1)}></${hyphenate(watermark.name).slice(1)}>`],
-      //       [actionSheet, 'Action Panel', `<var-action-sheet
-      //    :actions="actions"
-      //    v-model:show="show"
-      //    @select="handleSelect"
-      // />`],
-      //       [dialog, 'Dialog', `<var-dialog
-      //      title="Lanting Preface"
-      //      message="Lanting's calligraphy is like flowing clouds and flowing water"
-      //      v-model:show="show"
-      //      @confirm="() => Snackbar.success('confirm')"
-      //      @cancel="() => Snackbar.error('cancel')"
-      //      @closed="() => Snackbar.info('closed')"
-      //    />`],
-      //       [radio, 'Radio button', '<var-radio v-model="value">Current value: {{ value }}</var-radio>'],
-      //       [radioGroup, 'Radio button group', `<var-radio-group v-model="value">
-      //    <var-radio :checked-value="0">Eat</var-radio>
-      //    <var-radio :checked-value="1">Sleep</var-radio>
-      // </var-radio-group>`],
-      //       [vswitch, 'switch', '<var-switch v-model="value" />'],
-      //       [checkbox, 'checkbox', '<var-checkbox v-model="value">Current value: {{ value }}</var-checkbox>'],
-      //       [checkboxGroup, 'checkbox group', `<var-checkbox-group
-      //    v-model="value"
-      //    :rules="[v => v.length === 2 || 'Please select all']"
-      // >
-      //    <var-checkbox :checked-value="0">Eat</var-checkbox>
-      //    <var-checkbox :checked-value="1">Sleep</var-checkbox>
-      // </var-checkbox-group>`],
-      //       [form, 'form', `<var-form
-      //      ref="form"
-      //      :disabled="disabled"
-      //      :readonly="readonly"
-      //      scroll-to-error="start"
-      //    ></var-form>`],
-      //       [pagination, 'pagination', '<var-pagination :current="3" :total="120" />'],
-      //       [tabs, 'tab group', `<var-tabs
-      //    elevation
-      //    color="var(--color-primary)"
-      //    active-color="#fff"
-      //    inactive-color="hsla(0, 0%, 100%, .6)"
-      //    disabled-color="#aaa"
-      //    v-model:active="active"
-      // >
-      //    <var-tab>Option 1</var-tab>
-      //    <var-tab>Option 2</var-tab>
-      //    <var-tab disabled>Disabled option</var-tab>
-      // </var-tabs>`],
-      //       [tab, 'tab', '<var-tab>Option 1</var-tab>'],
-      //       [tabItem, 'tab', '<var-tab-item>Option 1</var-tab-item>'],
-      //       [table, 'table', '<var-table>Option 1</var-table>'],
-      //       [card, 'card', `<var-card
-      //    title="Compendium of Materia Medica"
-      //    description="If Hua Tuo is reincarnated, all worship of foreigners will be cured, and foreigners will come to learn Chinese characters and stimulate our national consciousness. Nux vomica, cassia seed, Xanthium seed, and lotus seeds; yellow Yaozi, bitter bean seeds, and Sophora indica, I want face. Rewrite a piece of history in my own way. Nothing else, just read a few words after me. Yam, Angelica and Wolfberry GO, Yam, Angelica and Wolfberry GO, watch me grab a handful of Chinese medicine and take it and be proud~"
-      // />`],
-      //       [col, 'Layout provides the span attribute to set the number of shares occupied by this column, and the offset attribute sets the number of shares offset by this column. ', '<var-col :span="8">span: 8</var-col>'],
-      //       [row, 'The layout component divides a row evenly into a 24-column grid (24 copies)', '<var-row></varrow>'],
-      //       [collapse, 'Collapse panel A content area that can be collapsed/expanded. ', '<var-collapse v-model="value" @change="changeHandle"></varrow>'],
-      //       [collapse, 'Collapse panel A content area that can be collapsed/expanded. ', '<var-collapse-item title="title" name="1">Text</var-collapse-item>'],
       //       [countdown, 'Countdown is used to display the countdown value in real time, supporting millisecond precision. ', '<var-countdown :time="time" />'],
       //       [counter, 'Counter', '<var-counter v-model="value"/>'],
       //       [datePicker, 'Date picker is used to select a date or date range. ', '<var-date-picker v-model="date" />'],
@@ -454,7 +458,6 @@ export function varlet3Components() {
       // </var-list>`],
       //       [menu, 'Menu Displays a menu when the element is clicked, and changes the display position of the menu by controlling the pop-up position and offset. ', '<var-menu></var-menu>'],
       //       [overlay, 'Overlay Create an overlay to emphasize specific page elements. ', '<var-overlay v-model:show="show" />'],
-      //       [paper, 'Paper creates a container that makes it easier to use elevation and ripple effects', '<var-paper :elevation="2" :width="100" :height="100" ripple /> '],
       //       [picker, 'Multi-column picker provides two calling methods: function and component. It also supports cascade mode and can handle multi-level linkage. ', '<var-picker :columns="columns" />'],
       //       [popup, 'Popup layer creates a container that can pop up from top, bottom, left, right, and center to display information. By default, teleport is used to insert at the end of the body. ', '<var-popup v-model:show="center"></var-popup>'],
       //       [progress, 'Progress bar displays the current progress of the operation. ', '<var-progress :value="20" />'],
@@ -473,7 +476,6 @@ export function varlet3Components() {
       //    <var-option label="Eat" :value="1" />
       //    <var-option label="Sleep" :value="2" />
       // </var-select>`],
-      //       [skeleton, 'Skeleton screen displays some placeholder elements with transition effects to optimize the loading process. ', '<var-skeleton :loading="loading">Loading data</var-skeleton>'],
       //       [slider, 'Slider is used to take a value within a given range. ', '<var-slider v-model="value" />'],
       //       [snackbar, 'Message bar is used to display quick messages to the user. ', '<var-snackbar v-model:show="show">This is a message bar! ! </var-snackbar>'],
       //       [space, 'Spacer The component library provides <var-space> layout components, allowing you to perform flex layout more efficiently. ', '<var-space></var-space'],
