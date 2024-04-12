@@ -14,6 +14,7 @@ import avatarGroup from './avatarGroup.json'
 import loading from './loading.json'
 import chip from './chip.json'
 import badge from './badge.json'
+import eclipsis from './eclipsis.json'
 
 // import option from './option.json'
 // import appBar from './appBar.json'
@@ -94,7 +95,7 @@ export function varlet3() {
     loading,
     chip,
     badge,
-
+    eclipsis,
     // option,
     // appBar,
     // backTop,
@@ -187,6 +188,7 @@ export function varlet3Components() {
         [loading, '加载 加载组件,用于数据加载时执行动画.', '<var-loading type="circle" />'],
         [chip, '纸片', '<var-chip>默认纸片</var-chip>'],
         [badge, '徽标', `<${hyphenate(badge.name).slice(1)}></${hyphenate(badge.name).slice(1)}>`],
+        [eclipsis, '省略', `<${hyphenate(eclipsis.name).slice(1)}></${hyphenate(eclipsis.name).slice(1)}>`],
 
       // [appBar, '导航栏', `<${hyphenate(appBar.name).slice(1)}></${hyphenate(appBar.name).slice(1)}>`],
       //       [option, '下拉选项', `<${hyphenate(option.name).slice(1)}></${hyphenate(option.name).slice(1)}>`],
@@ -355,6 +357,7 @@ export function varlet3Components() {
         [loading, 'Loading loading component, used to perform animation when data is loaded. ', '<var-loading type="circle" />'],
         [chip, 'paper', '<var-chip>default paper</var-chip>'],
         [badge, badge.name, `<${hyphenate(badge.name).slice(1)}></${hyphenate(badge.name).slice(1)}>`],
+        [eclipsis, 'eclipsis', `<${hyphenate(eclipsis.name).slice(1)}></${hyphenate(eclipsis.name).slice(1)}>`],
 
       //       [option, option.name, `<${hyphenate(option.name).slice(1)}></${hyphenate(option.name).slice(1)}>`],
       //       [appBar, appBar.name, `<${hyphenate(appBar.name).slice(1)}></${hyphenate(appBar.name).slice(1)}>`],
