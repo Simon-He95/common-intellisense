@@ -11,6 +11,7 @@ import icon from './icon.json'
 import image from './image.json'
 import avatar from './avatar.json'
 import avatarGroup from './avatarGroup.json'
+import loading from './loading.json'
 
 // import option from './option.json'
 // import appBar from './appBar.json'
@@ -52,7 +53,6 @@ import avatarGroup from './avatarGroup.json'
 // import indexAnchor from './indexAnchor.json'
 // import input from './input.json'
 // import list from './list.json'
-// import loading from './loading.json'
 // import menu from './menu.json'
 // import overlay from './overlay.json'
 // import paper from './paper.json'
@@ -91,6 +91,7 @@ export function varlet3() {
     image,
     avatar,
     avatarGroup,
+    loading,
 
     // option,
     // appBar,
@@ -132,7 +133,6 @@ export function varlet3() {
     // input,
     // link,
     // list,
-    // loading,
     // menu,
     // overlay,
     // paper,
@@ -184,6 +184,7 @@ export function varlet3Components() {
         [image, '图片', `<${hyphenate(image.name).slice(1)}></${hyphenate(image.name).slice(1)}>`],
         [avatar, '头像', `<${hyphenate(avatar.name).slice(1)}></${hyphenate(avatar.name).slice(1)}>`],
         [avatarGroup, '头像', `<${hyphenate(avatarGroup.name).slice(1)}></${hyphenate(avatarGroup.name).slice(1)}>`],
+        [loading, '加载 加载组件,用于数据加载时执行动画.', '<var-loading type="circle" />'],
 
       // [appBar, '导航栏', `<${hyphenate(appBar.name).slice(1)}></${hyphenate(appBar.name).slice(1)}>`],
       //       [option, '下拉选项', `<${hyphenate(option.name).slice(1)}></${hyphenate(option.name).slice(1)}>`],
@@ -280,7 +281,6 @@ export function varlet3Components() {
       //     列表项: {{ item }}
       //   </var-cell>
       // </var-list>`],
-      //       [loading, '加载 加载组件,用于数据加载时执行动画.', '<var-loading type="circle" />'],
       //       [menu, '菜单 当元素点击时显示一个菜单,通过控制弹出位置和偏移量改变菜单的显示位置.', '<var-menu></var-menu>'],
       //       [overlay, '遮罩层 创建一个遮罩层,用于强调特定的页面元素.', '<var-overlay v-model:show="show" />'],
       //       [paper, '纸张 创建一个更容易的使用海拔效果和水波效果的容器', '<var-paper :elevation="2" :width="100" :height="100" ripple />'],
@@ -352,6 +352,7 @@ export function varlet3Components() {
         [image, image.name, `<${hyphenate(image.name).slice(1)}></${hyphenate(image.name).slice(1)}>`],
         [avatar, avatar.name, `<${hyphenate(avatar.name).slice(1)}></${hyphenate(avatar.name).slice(1)}>`],
         [avatarGroup, avatarGroup.name, `<${hyphenate(avatarGroup.name).slice(1)}></${hyphenate(avatarGroup.name).slice(1)}>`],
+        [loading, 'Loading loading component, used to perform animation when data is loaded. ', '<var-loading type="circle" />'],
 
       //       [option, option.name, `<${hyphenate(option.name).slice(1)}></${hyphenate(option.name).slice(1)}>`],
       //       [appBar, appBar.name, `<${hyphenate(appBar.name).slice(1)}></${hyphenate(appBar.name).slice(1)}>`],
@@ -448,7 +449,6 @@ export function varlet3Components() {
       //      List items: {{ item }}
       //    </var-cell>
       // </var-list>`],
-      //       [loading, 'Loading loading component, used to perform animation when data is loaded. ', '<var-loading type="circle" />'],
       //       [menu, 'Menu Displays a menu when the element is clicked, and changes the display position of the menu by controlling the pop-up position and offset. ', '<var-menu></var-menu>'],
       //       [overlay, 'Overlay Create an overlay to emphasize specific page elements. ', '<var-overlay v-model:show="show" />'],
       //       [paper, 'Paper creates a container that makes it easier to use elevation and ripple effects', '<var-paper :elevation="2" :width="100" :height="100" ripple /> '],
