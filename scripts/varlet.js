@@ -72,7 +72,7 @@ function run() {
   const name = `Var${link.split('/').slice(-1)[0].split('.')[0].split('-').map((i) => {
     return i[0].toUpperCase() + i.slice(1)
   }).join('')}`
-  const result = { name, props, link, link_zh: link, typeDetail: {}, events, methods, slots }
+  const result = { name, props, link, link_zh: link.replace('en-US','zh-CN'), typeDetail: {}, events, methods, slots, suggestions: [] }
   console.log(result)
 }
 

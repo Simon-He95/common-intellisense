@@ -19,13 +19,17 @@ import paper from './paper.json'
 import skeleton from './skeleton.json'
 import collapse from './collapse.json'
 import collapseItem from './collapseItem.json'
+import collapseTransition from './collapseTransition.json'
+import col from './col.json'
+import row from './row.json'
+import space from './space.json'
+import sticky from './sticky.json'
 
 // import option from './option.json'
 // import appBar from './appBar.json'
 // import backTop from './backTop.json'
 // import bottomNavigation from './bottomNavigation.json'
 // import bottomNavigationItem from './bottomNavigationItem.json'
-// import collapseTransition from './collapseTransition.json'
 // import floatingPanel from './floatingPanel.json'
 // import menuOption from './menuOption.json'
 // import menuSelect from './menuSelect.json'
@@ -41,8 +45,7 @@ import collapseItem from './collapseItem.json'
 // import tabs from './tabs.json'
 // import table from './table.json'
 // import card from './card.json'
-// import col from './col.json'
-// import row from './row.json'
+
 // import countdown from './countdown.json'
 // import counter from './counter.json'
 // import datePicker from './datePicker.json'
@@ -69,10 +72,9 @@ import collapseItem from './collapseItem.json'
 // import select from './select.json'
 // import slider from './slider.json'
 // import snackbar from './snackbar.json'
-// import space from './space.json'
+
 // import step from './step.json'
 // import steps from './steps.json'
-// import sticky from './sticky.json'
 // import swipe from './swipe.json'
 // import swipeItem from './swipeItem.json'
 // import tabsItems from './tabsItems.json'
@@ -100,7 +102,11 @@ export function varlet3() {
     skeleton,
     collapse,
     collapseItem,
-
+    collapseTransition,
+    col,
+    row,
+    space,
+    sticky,
     // option,
     // appBar,
     // backTop,
@@ -122,9 +128,6 @@ export function varlet3() {
     // tabs,
     // table,
     // card,
-    // col,
-    // row,
-
     // countdown,
     // counter,
     // datePicker,
@@ -149,10 +152,8 @@ export function varlet3() {
     // select,
     // slider,
     // snackbar,
-    // space,
     // step,
     // steps,
-    // sticky,
     // swipe,
     // swipeItem,
     // tabsItems,
@@ -195,12 +196,18 @@ export function varlet3Components() {
         [skeleton, '骨架屏 显示一些带过渡效果的占位元素,优化加载过程.', '<var-skeleton :loading="loading">加载的数据</var-skeleton>'],
         [collapse, '折叠面板 可以折叠/展开的内容区域.', '<var-collapse v-model="value" @change="changeHandle"></varrow>'],
         [collapseItem, '折叠面板 可以折叠/展开的内容区域.', '<var-collapse-item title="标题" name="1">文本</var-collapse-item>'],
+        [collapseTransition, '折叠东校', `<${hyphenate(collapseTransition.name).slice(1)}></${hyphenate(collapseTransition.name).slice(1)}>`],
+        [col, '布局 提供 span 属性设置这一列所占的份数,offset 属性设置这一列偏移的份数.', '<var-col :span="8">span: 8</var-col>'],
+        [row, '布局 组件把一行平均划分为 24列 栅格( 24份 )', '<var-row></varrow>'],
+        [space, '间隔 组件库提供了 <var-space> 布局的组件,使您更有效率的进行 flex 布局.', '<var-space></var-space'],
+        [sticky, '粘性布局 粘性布局默认使用监听容器滚动事件的 scroll 模式,如有需要可以切换成基于 css sticky 的模式来提升性能.', `<var-sticky :offset-top="54">
+        <var-button type="primary">基本使用</var-button>
+      </var-sticky>`],
         // [appBar, '导航栏', `<${hyphenate(appBar.name).slice(1)}></${hyphenate(appBar.name).slice(1)}>`],
         //       [option, '下拉选项', `<${hyphenate(option.name).slice(1)}></${hyphenate(option.name).slice(1)}>`],
         //       [backTop, '回到顶部', `<${hyphenate(backTop.name).slice(1)}></${hyphenate(backTop.name).slice(1)}>`],
         //       [bottomNavigation, '底部导航栏', `<${hyphenate(bottomNavigation.name).slice(1)}></${hyphenate(bottomNavigation.name).slice(1)}>`],
         //       [bottomNavigationItem, '底部导航栏', `<${hyphenate(bottomNavigationItem.name).slice(1)}></${hyphenate(bottomNavigationItem.name).slice(1)}>`],
-        //       [collapseTransition, '折叠东校', `<${hyphenate(collapseTransition.name).slice(1)}></${hyphenate(collapseTransition.name).slice(1)}>`],
         //       [floatingPanel, '浮动面板', `<${hyphenate(floatingPanel.name).slice(1)}></${hyphenate(floatingPanel.name).slice(1)}>`],
         //       [menuOption, '菜单', `<${hyphenate(menuOption.name).slice(1)}></${hyphenate(menuOption.name).slice(1)}>`],
         //       [menuSelect, '菜单', `<${hyphenate(menuSelect.name).slice(1)}></${hyphenate(menuSelect.name).slice(1)}>`],
@@ -258,68 +265,64 @@ export function varlet3Components() {
         //   title="本草纲目"
         //   description="如果华佗再世,崇洋都被医治,外邦来学汉字,激发我民族意识.马钱子、决明子、苍耳子,还有莲子;黄药子、苦豆子、川楝子,我要面子.用我的方式,改写一部历史.没什么别的事,跟着我念几个字.山药当归枸杞 GO,山药 当归 枸杞 GO,看我抓一把中药,服下一帖骄傲~"
         // />`],
-        //       [col, '布局 提供 span 属性设置这一列所占的份数,offset 属性设置这一列偏移的份数.', '<var-col :span="8">span: 8</var-col>'],
-        //       [row, '布局 组件把一行平均划分为 24列 栅格( 24份 )', '<var-row></varrow>'],
 
-      //       [countdown, '倒计时 用于实时展示倒计时数值,支持毫秒精度.', '<var-countdown :time="time" />'],
-      //       [counter, '计数器', '<var-counter v-model="value"/>'],
-      //       [datePicker, '日期选择器 用于选择日期或日期范围.', '<var-date-picker v-model="date" />'],
-      //       [divider, '分割线 用于分隔列表或布局的各个部分.', '<var-divider />'],
-      //       [drag, '拖拽 使元素可以自由拖拽.', `<var-drag>
-      //   <var-button type="primary">基本使用</var-button>
-      // </var-drag>`],
-      //       [ellipsis, '文本省略 主要用于省略单行文字和多行文字.', `<var-ellipsis style="max-width: 170px">
-      //   其实没有什么事情是不可能的,我都拿到世界冠军了,真的没有什么事情是不可能的.
-      // </var-ellipsis>`],
-      //       [formDetails, '表单 提供了对所有表单组件进行控制的能力.', '<var-form-details :error-message="errorMessage" :extra-message="extraMessage" />'],
-      //       [imagePreview, '图片预览 图片放大预览,支持双击倍数放大,支持函数调用和组件调用两种方式.', '<var-image-preview :images="images" v-model:show="show" />'],
-      //       [indexBar, '索引栏 用于跳转到页面指定位置.', '<var-index-bar duration="300" @change="change"></var-index-bar>'],
-      //       [indexAnchor, '索引栏 用于跳转到页面指定位置.', `<var-index-anchor :index="item" class="anchor">
-      //   标题 {{ item }}
-      // </var-index-anchor>`],
-      //       [input, '输入框 输入框的行为和基本原生一致,用户输入时始终获得一个符合 type 规则的字符串,可选择 standard 和 outlined 两种风格,默认为 standard.', '<var-input placeholder="请输入文本" v-model="value" />'],
-      //       [list, '无限滚动列表 无限滚动加载列表、触底加载,支持手动检查位置并加载.支持自定义加载状态、错误状态、数据加载完成状态.', `<var-list
-      //   :finished="finished"
-      //   v-model:loading="loading"
-      //   @load="load"
-      // >
-      //   <var-cell :key="item" v-for="item in list">
-      //     列表项: {{ item }}
-      //   </var-cell>
-      // </var-list>`],
-      //       [menu, '菜单 当元素点击时显示一个菜单,通过控制弹出位置和偏移量改变菜单的显示位置.', '<var-menu></var-menu>'],
-      //       [overlay, '遮罩层 创建一个遮罩层,用于强调特定的页面元素.', '<var-overlay v-model:show="show" />'],
-      //       [picker, '多列选择器 提供了函数和组件两种调用方式.同时支持级联模式,可以处理多级联动.', '<var-picker :columns="columns" />'],
-      //       [popup, '弹出层 创建一个可以从上、下、左、右、中心弹出的容器,用于展示信息.默认使用 teleport 插入到 body 尾部.', '<var-popup v-model:show="center"></var-popup>'],
-      //       [progress, '进度条 展示操作的当前进度.', '<var-progress :value="20" />'],
-      //       [pullRefresh, '下拉刷新 用于提供下拉刷新的交互操作', ' <var-pull-refresh v-model="isRefresh" @refresh="refresh"></var-pull-refresh>'],
-      //       [rate, '评分', '<var-rate v-model="score" :count="8"/>'],
-      //       [result, '结果 用于向用户展示结果.', `<var-result
-      //   type="success"
-      //   title="成功"
-      //   description="嗨~ 我是结果页的一段描述~"
-      // >
-      //   <template #footer>
-      //     <var-button type="success">知道了</var-button>
-      //   </template>
-      // </var-result>`],
-      //       [select, '选择框 通过下拉菜单展示并选择内容.', `<var-select placeholder="文本关联值" v-model="value2">
-      //   <var-option label="吃饭" :value="1" />
-      //   <var-option label="睡觉" :value="2" />
-      // </var-select>`],
-      //       [slider, '滑块 用于在给定范围内取值.', '<var-slider v-model="value" />'],
-      //       [snackbar, '消息条 用于向用户显示快速消息.', '<var-snackbar v-model:show="show">这是一个消息条!!</var-snackbar>'],
-      //       [space, '间隔 组件库提供了 <var-space> 布局的组件,使您更有效率的进行 flex 布局.', '<var-space></var-space'],
-      //       [steps, '步骤条 引导用户按照流程完成任务的导航条.', `<var-steps :active="active">
-      //   <var-step>步骤1</var-step>
-      //   <var-step>步骤2</var-step>
-      //   <var-step>步骤3</var-step>
-      //   <var-step>步骤4</var-step>
-      // </var-steps>`],
-      //       [step, '步骤条 引导用户按照流程完成任务的导航条.', '<var-step>步骤1</var-step>'],
-      //       [sticky, '粘性布局 粘性布局默认使用监听容器滚动事件的 scroll 模式,如有需要可以切换成基于 css sticky 的模式来提升性能.', `<var-sticky :offset-top="54">
-      //   <var-button type="primary">基本使用</var-button>
-      // </var-sticky>`],
+        //       [countdown, '倒计时 用于实时展示倒计时数值,支持毫秒精度.', '<var-countdown :time="time" />'],
+        //       [counter, '计数器', '<var-counter v-model="value"/>'],
+        //       [datePicker, '日期选择器 用于选择日期或日期范围.', '<var-date-picker v-model="date" />'],
+        //       [divider, '分割线 用于分隔列表或布局的各个部分.', '<var-divider />'],
+        //       [drag, '拖拽 使元素可以自由拖拽.', `<var-drag>
+        //   <var-button type="primary">基本使用</var-button>
+        // </var-drag>`],
+        //       [ellipsis, '文本省略 主要用于省略单行文字和多行文字.', `<var-ellipsis style="max-width: 170px">
+        //   其实没有什么事情是不可能的,我都拿到世界冠军了,真的没有什么事情是不可能的.
+        // </var-ellipsis>`],
+        //       [formDetails, '表单 提供了对所有表单组件进行控制的能力.', '<var-form-details :error-message="errorMessage" :extra-message="extraMessage" />'],
+        //       [imagePreview, '图片预览 图片放大预览,支持双击倍数放大,支持函数调用和组件调用两种方式.', '<var-image-preview :images="images" v-model:show="show" />'],
+        //       [indexBar, '索引栏 用于跳转到页面指定位置.', '<var-index-bar duration="300" @change="change"></var-index-bar>'],
+        //       [indexAnchor, '索引栏 用于跳转到页面指定位置.', `<var-index-anchor :index="item" class="anchor">
+        //   标题 {{ item }}
+        // </var-index-anchor>`],
+        //       [input, '输入框 输入框的行为和基本原生一致,用户输入时始终获得一个符合 type 规则的字符串,可选择 standard 和 outlined 两种风格,默认为 standard.', '<var-input placeholder="请输入文本" v-model="value" />'],
+        //       [list, '无限滚动列表 无限滚动加载列表、触底加载,支持手动检查位置并加载.支持自定义加载状态、错误状态、数据加载完成状态.', `<var-list
+        //   :finished="finished"
+        //   v-model:loading="loading"
+        //   @load="load"
+        // >
+        //   <var-cell :key="item" v-for="item in list">
+        //     列表项: {{ item }}
+        //   </var-cell>
+        // </var-list>`],
+        //       [menu, '菜单 当元素点击时显示一个菜单,通过控制弹出位置和偏移量改变菜单的显示位置.', '<var-menu></var-menu>'],
+        //       [overlay, '遮罩层 创建一个遮罩层,用于强调特定的页面元素.', '<var-overlay v-model:show="show" />'],
+        //       [picker, '多列选择器 提供了函数和组件两种调用方式.同时支持级联模式,可以处理多级联动.', '<var-picker :columns="columns" />'],
+        //       [popup, '弹出层 创建一个可以从上、下、左、右、中心弹出的容器,用于展示信息.默认使用 teleport 插入到 body 尾部.', '<var-popup v-model:show="center"></var-popup>'],
+        //       [progress, '进度条 展示操作的当前进度.', '<var-progress :value="20" />'],
+        //       [pullRefresh, '下拉刷新 用于提供下拉刷新的交互操作', ' <var-pull-refresh v-model="isRefresh" @refresh="refresh"></var-pull-refresh>'],
+        //       [rate, '评分', '<var-rate v-model="score" :count="8"/>'],
+        //       [result, '结果 用于向用户展示结果.', `<var-result
+        //   type="success"
+        //   title="成功"
+        //   description="嗨~ 我是结果页的一段描述~"
+        // >
+        //   <template #footer>
+        //     <var-button type="success">知道了</var-button>
+        //   </template>
+        // </var-result>`],
+        //       [select, '选择框 通过下拉菜单展示并选择内容.', `<var-select placeholder="文本关联值" v-model="value2">
+        //   <var-option label="吃饭" :value="1" />
+        //   <var-option label="睡觉" :value="2" />
+        // </var-select>`],
+        //       [slider, '滑块 用于在给定范围内取值.', '<var-slider v-model="value" />'],
+        //       [snackbar, '消息条 用于向用户显示快速消息.', '<var-snackbar v-model:show="show">这是一个消息条!!</var-snackbar>'],
+
+        //       [steps, '步骤条 引导用户按照流程完成任务的导航条.', `<var-steps :active="active">
+        //   <var-step>步骤1</var-step>
+        //   <var-step>步骤2</var-step>
+        //   <var-step>步骤3</var-step>
+        //   <var-step>步骤4</var-step>
+        // </var-steps>`],
+        //       [step, '步骤条 引导用户按照流程完成任务的导航条.', '<var-step>步骤1</var-step>'],
+
       //       [swipe, '轮播', `<var-swipe class="swipe-example">
       // <var-swipe-item>
       //   <img class="swipe-example-image" src="https://varlet.gitee.io/varlet-ui/cat.jpg">
@@ -364,12 +367,19 @@ export function varlet3Components() {
         [skeleton, 'Skeleton screen displays some placeholder elements with transition effects to optimize the loading process. ', '<var-skeleton :loading="loading">Loading data</var-skeleton>'],
         [collapse, 'Collapse panel A content area that can be collapsed/expanded. ', '<var-collapse v-model="value" @change="changeHandle"></varrow>'],
         [collapseItem, 'Collapse panel A content area that can be collapsed/expanded. ', '<var-collapse-item title="title" name="1">Text</var-collapse-item>'],
+        [collapseTransition, collapseTransition.name, `<${hyphenate(collapseTransition.name).slice(1)}></${hyphenate(collapseTransition.name).slice(1)}>`],
+        [col, 'Layout provides the span attribute to set the number of shares occupied by this column, and the offset attribute sets the number of shares offset by this column. ', '<var-col :span="8">span: 8</var-col>'],
+        [row, 'The layout component divides a row evenly into a 24-column grid (24 copies)', '<var-row></varrow>'],
+        [space, 'Spacer The component library provides <var-space> layout components, allowing you to perform flex layout more efficiently. ', '<var-space></var-space'],
+        [sticky, 'Sticky layout Sticky layout uses the scroll mode that listens to container scroll events by default. If necessary, you can switch to a css sticky-based mode to improve performance. ', `<var-sticky :offset-top="54">
+         <var-button type="primary">Basic use</var-button>
+      </var-sticky>`],
         //       [option, option.name, `<${hyphenate(option.name).slice(1)}></${hyphenate(option.name).slice(1)}>`],
         //       [appBar, appBar.name, `<${hyphenate(appBar.name).slice(1)}></${hyphenate(appBar.name).slice(1)}>`],
         //       [backTop, backTop.name, `<${hyphenate(backTop.name).slice(1)}></${hyphenate(backTop.name).slice(1)}>`],
         //       [bottomNavigation, bottomNavigation.name, `<${hyphenate(bottomNavigation.name).slice(1)}></${hyphenate(bottomNavigation.name).slice(1)}>`],
         //       [bottomNavigationItem, bottomNavigationItem.name, `<${hyphenate(bottomNavigationItem.name).slice(1)}></${hyphenate(bottomNavigationItem.name).slice(1)}>`],
-        //       [collapseTransition, collapseTransition.name, `<${hyphenate(collapseTransition.name).slice(1)}></${hyphenate(collapseTransition.name).slice(1)}>`],
+
         //       [floatingPanel, floatingPanel.name, `<${hyphenate(floatingPanel.name).slice(1)}></${hyphenate(floatingPanel.name).slice(1)}>`],
         //       [menuOption, menuOption.name, `<${hyphenate(menuOption.name).slice(1)}></${hyphenate(menuOption.name).slice(1)}>`],
         //       [menuSelect, menuSelect.name, `<${hyphenate(menuSelect.name).slice(1)}></${hyphenate(menuSelect.name).slice(1)}>`],
@@ -427,68 +437,64 @@ export function varlet3Components() {
         //    title="Compendium of Materia Medica"
         //    description="If Hua Tuo is reincarnated, all worship of foreigners will be cured, and foreigners will come to learn Chinese characters and stimulate our national consciousness. Nux vomica, cassia seed, Xanthium seed, and lotus seeds; yellow Yaozi, bitter bean seeds, and Sophora indica, I want face. Rewrite a piece of history in my own way. Nothing else, just read a few words after me. Yam, Angelica and Wolfberry GO, Yam, Angelica and Wolfberry GO, watch me grab a handful of Chinese medicine and take it and be proud~"
         // />`],
-        //       [col, 'Layout provides the span attribute to set the number of shares occupied by this column, and the offset attribute sets the number of shares offset by this column. ', '<var-col :span="8">span: 8</var-col>'],
-        //       [row, 'The layout component divides a row evenly into a 24-column grid (24 copies)', '<var-row></varrow>'],
 
-      //       [countdown, 'Countdown is used to display the countdown value in real time, supporting millisecond precision. ', '<var-countdown :time="time" />'],
-      //       [counter, 'Counter', '<var-counter v-model="value"/>'],
-      //       [datePicker, 'Date picker is used to select a date or date range. ', '<var-date-picker v-model="date" />'],
-      //       [divider, 'Divider lines are used to separate parts of a list or layout. ', '<var-divider />'],
-      //       [drag, 'Drag allows elements to be dragged freely. ', `<var-drag>
-      //    <var-button type="primary">Basic use</var-button>
-      // </var-drag>`],
-      //       [ellipsis, 'Text omission is mainly used to omit single-line text and multi-line text. ', `<var-ellipsis style="max-width: 170px">
-      //    In fact, nothing is impossible. I have won the world championship, so nothing is impossible.
-      // </var-ellipsis>`],
-      //       [formDetails, 'Form provides the ability to control all form components. ', '<var-form-details :error-message="errorMessage" :extra-message="extraMessage" />'],
-      //       [imagePreview, 'Image preview: Image enlargement preview, supports double-click magnification, supports function calling and component calling. ', '<var-image-preview :images="images" v-model:show="show" />'],
-      //       [indexBar, 'The index bar is used to jump to the specified location on the page. ', '<var-index-bar duration="300" @change="change"></var-index-bar>'],
-      //       [indexAnchor, 'The index column is used to jump to the specified position on the page. ', `<var-index-anchor :index="item" class="anchor">
-      //    Title {{ item }}
-      // </var-index-anchor>`],
-      //       [input, 'Input box The behavior of the input box is basically the same as the native one. When the user inputs, he always gets a string that conforms to the type rules. There are two styles: standard and outlined. The default is standard. ', '<var-input placeholder="Please enter text" v-model="value" />'],
-      //       [list, 'Infinite scrolling list infinite scrolling loading list, bottom loading, supports manual position checking and loading. Supports custom loading status, error status, and data loading completion status. ', `<var-list
-      //    :finished="finished"
-      //    v-model:loading="loading"
-      //    @load="load"
-      // >
-      //    <var-cell :key="item" v-for="item in list">
-      //      List items: {{ item }}
-      //    </var-cell>
-      // </var-list>`],
-      //       [menu, 'Menu Displays a menu when the element is clicked, and changes the display position of the menu by controlling the pop-up position and offset. ', '<var-menu></var-menu>'],
-      //       [overlay, 'Overlay Create an overlay to emphasize specific page elements. ', '<var-overlay v-model:show="show" />'],
-      //       [picker, 'Multi-column picker provides two calling methods: function and component. It also supports cascade mode and can handle multi-level linkage. ', '<var-picker :columns="columns" />'],
-      //       [popup, 'Popup layer creates a container that can pop up from top, bottom, left, right, and center to display information. By default, teleport is used to insert at the end of the body. ', '<var-popup v-model:show="center"></var-popup>'],
-      //       [progress, 'Progress bar displays the current progress of the operation. ', '<var-progress :value="20" />'],
-      //       [pullRefresh, 'Pull-refresh is used to provide interactive operations of pull-down refresh', ' <var-pull-refresh v-model="isRefresh" @refresh="refresh"></var-pull-refresh >'],
-      //       [rate, 'score', '<var-rate v-model="score" :count="8"/>'],
-      //       [result, 'Result is used to display the results to the user. ', `<var-result
-      //    type="success"
-      //    title="success"
-      //    description="Hi~ I am a description of the results page~"
-      // >
-      //    <template #footer>
-      //      <var-button type="success">Got it</var-button>
-      //    </template>
-      // </var-result>`],
-      //       [select, 'Select box displays and selects content through drop-down menu. ', `<var-select placeholder="Text associated value" v-model="value2">
-      //    <var-option label="Eat" :value="1" />
-      //    <var-option label="Sleep" :value="2" />
-      // </var-select>`],
-      //       [slider, 'Slider is used to take a value within a given range. ', '<var-slider v-model="value" />'],
-      //       [snackbar, 'Message bar is used to display quick messages to the user. ', '<var-snackbar v-model:show="show">This is a message bar! ! </var-snackbar>'],
-      //       [space, 'Spacer The component library provides <var-space> layout components, allowing you to perform flex layout more efficiently. ', '<var-space></var-space'],
-      //       [steps, 'Step bar is a navigation bar that guides users to complete tasks according to the process. ', `<var-steps :active="active">
-      //    <var-step>Step 1</var-step>
-      //    <var-step>Step 2</var-step>
-      //    <var-step>Step 3</var-step>
-      //    <var-step>Step 4</var-step>
-      // </var-steps>`],
-      //       [step, 'Step bar is a navigation bar that guides users to complete tasks according to the process. ', '<var-step>Step 1</var-step>'],
-      //       [sticky, 'Sticky layout Sticky layout uses the scroll mode that listens to container scroll events by default. If necessary, you can switch to a css sticky-based mode to improve performance. ', `<var-sticky :offset-top="54">
-      //    <var-button type="primary">Basic use</var-button>
-      // </var-sticky>`],
+        //       [countdown, 'Countdown is used to display the countdown value in real time, supporting millisecond precision. ', '<var-countdown :time="time" />'],
+        //       [counter, 'Counter', '<var-counter v-model="value"/>'],
+        //       [datePicker, 'Date picker is used to select a date or date range. ', '<var-date-picker v-model="date" />'],
+        //       [divider, 'Divider lines are used to separate parts of a list or layout. ', '<var-divider />'],
+        //       [drag, 'Drag allows elements to be dragged freely. ', `<var-drag>
+        //    <var-button type="primary">Basic use</var-button>
+        // </var-drag>`],
+        //       [ellipsis, 'Text omission is mainly used to omit single-line text and multi-line text. ', `<var-ellipsis style="max-width: 170px">
+        //    In fact, nothing is impossible. I have won the world championship, so nothing is impossible.
+        // </var-ellipsis>`],
+        //       [formDetails, 'Form provides the ability to control all form components. ', '<var-form-details :error-message="errorMessage" :extra-message="extraMessage" />'],
+        //       [imagePreview, 'Image preview: Image enlargement preview, supports double-click magnification, supports function calling and component calling. ', '<var-image-preview :images="images" v-model:show="show" />'],
+        //       [indexBar, 'The index bar is used to jump to the specified location on the page. ', '<var-index-bar duration="300" @change="change"></var-index-bar>'],
+        //       [indexAnchor, 'The index column is used to jump to the specified position on the page. ', `<var-index-anchor :index="item" class="anchor">
+        //    Title {{ item }}
+        // </var-index-anchor>`],
+        //       [input, 'Input box The behavior of the input box is basically the same as the native one. When the user inputs, he always gets a string that conforms to the type rules. There are two styles: standard and outlined. The default is standard. ', '<var-input placeholder="Please enter text" v-model="value" />'],
+        //       [list, 'Infinite scrolling list infinite scrolling loading list, bottom loading, supports manual position checking and loading. Supports custom loading status, error status, and data loading completion status. ', `<var-list
+        //    :finished="finished"
+        //    v-model:loading="loading"
+        //    @load="load"
+        // >
+        //    <var-cell :key="item" v-for="item in list">
+        //      List items: {{ item }}
+        //    </var-cell>
+        // </var-list>`],
+        //       [menu, 'Menu Displays a menu when the element is clicked, and changes the display position of the menu by controlling the pop-up position and offset. ', '<var-menu></var-menu>'],
+        //       [overlay, 'Overlay Create an overlay to emphasize specific page elements. ', '<var-overlay v-model:show="show" />'],
+        //       [picker, 'Multi-column picker provides two calling methods: function and component. It also supports cascade mode and can handle multi-level linkage. ', '<var-picker :columns="columns" />'],
+        //       [popup, 'Popup layer creates a container that can pop up from top, bottom, left, right, and center to display information. By default, teleport is used to insert at the end of the body. ', '<var-popup v-model:show="center"></var-popup>'],
+        //       [progress, 'Progress bar displays the current progress of the operation. ', '<var-progress :value="20" />'],
+        //       [pullRefresh, 'Pull-refresh is used to provide interactive operations of pull-down refresh', ' <var-pull-refresh v-model="isRefresh" @refresh="refresh"></var-pull-refresh >'],
+        //       [rate, 'score', '<var-rate v-model="score" :count="8"/>'],
+        //       [result, 'Result is used to display the results to the user. ', `<var-result
+        //    type="success"
+        //    title="success"
+        //    description="Hi~ I am a description of the results page~"
+        // >
+        //    <template #footer>
+        //      <var-button type="success">Got it</var-button>
+        //    </template>
+        // </var-result>`],
+        //       [select, 'Select box displays and selects content through drop-down menu. ', `<var-select placeholder="Text associated value" v-model="value2">
+        //    <var-option label="Eat" :value="1" />
+        //    <var-option label="Sleep" :value="2" />
+        // </var-select>`],
+        //       [slider, 'Slider is used to take a value within a given range. ', '<var-slider v-model="value" />'],
+        //       [snackbar, 'Message bar is used to display quick messages to the user. ', '<var-snackbar v-model:show="show">This is a message bar! ! </var-snackbar>'],
+
+        //       [steps, 'Step bar is a navigation bar that guides users to complete tasks according to the process. ', `<var-steps :active="active">
+        //    <var-step>Step 1</var-step>
+        //    <var-step>Step 2</var-step>
+        //    <var-step>Step 3</var-step>
+        //    <var-step>Step 4</var-step>
+        // </var-steps>`],
+        //       [step, 'Step bar is a navigation bar that guides users to complete tasks according to the process. ', '<var-step>Step 1</var-step>'],
+
       //       [swipe, 'carousel', `<var-swipe class="swipe-example">
       // <var-swipe-item>
       //    <img class="swipe-example-image" src="https://varlet.gitee.io/varlet-ui/cat.jpg">
