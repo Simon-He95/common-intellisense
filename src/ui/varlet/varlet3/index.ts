@@ -26,6 +26,8 @@ import space from './space.json'
 import sticky from './sticky.json'
 import progress from './progress.json'
 import list from './list.json'
+import swipe from './swipe.json'
+import swipeItem from './swipeItem.json'
 
 // import option from './option.json'
 // import appBar from './appBar.json'
@@ -75,8 +77,6 @@ import list from './list.json'
 
 // import step from './step.json'
 // import steps from './steps.json'
-// import swipe from './swipe.json'
-// import swipeItem from './swipeItem.json'
 // import tabsItems from './tabsItems.json'
 // import timePicker from './timePicker.json'
 // import tooltip from './tooltip.json'
@@ -109,6 +109,8 @@ export function varlet3() {
     sticky,
     progress,
     list,
+    swipe,
+    swipeItem,
 
     // option,
     // appBar,
@@ -155,8 +157,6 @@ export function varlet3() {
     // snackbar,
     // step,
     // steps,
-    // swipe,
-    // swipeItem,
     // tabsItems,
     // timePicker,
     // tooltip,
@@ -214,6 +214,14 @@ export function varlet3Components() {
             列表项: {{ item }}
           </var-cell>
         </var-list>`],
+        [swipe, '轮播', `<var-swipe class="swipe-example">
+      <var-swipe-item>
+        <img class="swipe-example-image" src="https://varlet.gitee.io/varlet-ui/cat.jpg">
+      </var-swipe-item>
+      </var-swipe>`],
+        [swipeItem, '轮播', `<var-swipe-item>
+        <img class="swipe-example-image" src="https://varlet.gitee.io/varlet-ui/cat.jpg">
+      </var-swipe-item>`],
         // [appBar, '导航栏', `<${hyphenate(appBar.name).slice(1)}></${hyphenate(appBar.name).slice(1)}>`],
         //       [option, '下拉选项', `<${hyphenate(option.name).slice(1)}></${hyphenate(option.name).slice(1)}>`],
         //       [backTop, '回到顶部', `<${hyphenate(backTop.name).slice(1)}></${hyphenate(backTop.name).slice(1)}>`],
@@ -324,14 +332,6 @@ export function varlet3Components() {
         // </var-steps>`],
         //       [step, '步骤条 引导用户按照流程完成任务的导航条.', '<var-step>步骤1</var-step>'],
 
-      //       [swipe, '轮播', `<var-swipe class="swipe-example">
-      // <var-swipe-item>
-      //   <img class="swipe-example-image" src="https://varlet.gitee.io/varlet-ui/cat.jpg">
-      // </var-swipe-item>
-      // </var-swipe>`],
-      //       [swipeItem, '轮播', `<var-swipe-item>
-      //   <img class="swipe-example-image" src="https://varlet.gitee.io/varlet-ui/cat.jpg">
-      // </var-swipe-item>`],
       //       [tabsItems, '选项卡组 使用 Tabs、Tab 实现选项卡组的切换.使用 TabsItems、TabItem 实现和选项卡组的视图联动', `<var-tabs-items v-model:active="active">
       //   <var-tab-item>
       //     呜啦啦啦火车笛,随着奔腾的马蹄. 小妹妹吹着口琴,夕阳下美了剪影. 我用子弹写日记,介绍完了风景.
@@ -385,6 +385,14 @@ export function varlet3Components() {
            List items: {{ item }}
          </var-cell>
       </var-list>`],
+        [swipe, 'carousel', `<var-swipe class="swipe-example">
+      <var-swipe-item>
+         <img class="swipe-example-image" src="https://varlet.gitee.io/varlet-ui/cat.jpg">
+      </var-swipe-item>
+      </var-swipe>`],
+        [swipeItem, 'carousel', `<var-swipe-item>
+         <img class="swipe-example-image" src="https://varlet.gitee.io/varlet-ui/cat.jpg">
+      </var-swipe-item>`],
 
         //       [option, option.name, `<${hyphenate(option.name).slice(1)}></${hyphenate(option.name).slice(1)}>`],
         //       [appBar, appBar.name, `<${hyphenate(appBar.name).slice(1)}></${hyphenate(appBar.name).slice(1)}>`],
@@ -497,14 +505,6 @@ export function varlet3Components() {
         // </var-steps>`],
         //       [step, 'Step bar is a navigation bar that guides users to complete tasks according to the process. ', '<var-step>Step 1</var-step>'],
 
-      //       [swipe, 'carousel', `<var-swipe class="swipe-example">
-      // <var-swipe-item>
-      //    <img class="swipe-example-image" src="https://varlet.gitee.io/varlet-ui/cat.jpg">
-      // </var-swipe-item>
-      // </var-swipe>`],
-      //       [swipeItem, 'carousel', `<var-swipe-item>
-      //    <img class="swipe-example-image" src="https://varlet.gitee.io/varlet-ui/cat.jpg">
-      // </var-swipe-item>`],
       //       [tabsItems, 'Tab group uses Tabs and Tab to switch tab groups. Use TabsItems and TabItem to implement view linkage with the tab group', `<var-tabs-items v-model:active="active">
       //    <var-tab-item>
       //      The train whistle whistles, along with the galloping horse hooves. The little sister plays the harmonica, and her silhouette is beautiful under the sunset. I wrote a bullet journal and finished introducing the scenery.
