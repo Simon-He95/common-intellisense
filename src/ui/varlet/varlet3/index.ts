@@ -28,6 +28,10 @@ import progress from './progress.json'
 import list from './list.json'
 import swipe from './swipe.json'
 import swipeItem from './swipeItem.json'
+import card from './card.json'
+import imagePreview from './imagePreview.json'
+import step from './step.json'
+import steps from './steps.json'
 
 // import option from './option.json'
 // import appBar from './appBar.json'
@@ -48,8 +52,6 @@ import swipeItem from './swipeItem.json'
 // import tabItem from './tabItem.json'
 // import tabs from './tabs.json'
 // import table from './table.json'
-// import card from './card.json'
-
 // import countdown from './countdown.json'
 // import counter from './counter.json'
 // import datePicker from './datePicker.json'
@@ -58,7 +60,6 @@ import swipeItem from './swipeItem.json'
 // import drag from './drag.json'
 // import ellipsis from './ellipsis.json'
 // import formDetails from './formDetails.json'
-// import imagePreview from './imagePreview.json'
 // import indexBar from './indexBar.json'
 // import indexAnchor from './indexAnchor.json'
 // import input from './input.json'
@@ -74,9 +75,6 @@ import swipeItem from './swipeItem.json'
 // import select from './select.json'
 // import slider from './slider.json'
 // import snackbar from './snackbar.json'
-
-// import step from './step.json'
-// import steps from './steps.json'
 // import tabsItems from './tabsItems.json'
 // import timePicker from './timePicker.json'
 // import tooltip from './tooltip.json'
@@ -111,6 +109,10 @@ export function varlet3() {
     list,
     swipe,
     swipeItem,
+    step,
+    steps,
+    card,
+    imagePreview,
 
     // option,
     // appBar,
@@ -132,7 +134,6 @@ export function varlet3() {
     // tabItem,
     // tabs,
     // table,
-    // card,
     // countdown,
     // counter,
     // datePicker,
@@ -140,7 +141,6 @@ export function varlet3() {
     // drag,
     // ellipsis,
     // formDetails,
-    // imagePreview,
     // indexBar,
     // indexAnchor,
     // input,
@@ -155,8 +155,6 @@ export function varlet3() {
     // select,
     // slider,
     // snackbar,
-    // step,
-    // steps,
     // tabsItems,
     // timePicker,
     // tooltip,
@@ -222,6 +220,20 @@ export function varlet3Components() {
         [swipeItem, '轮播', `<var-swipe-item>
         <img class="swipe-example-image" src="https://varlet.gitee.io/varlet-ui/cat.jpg">
       </var-swipe-item>`],
+        [card, '卡片', `<var-card
+          title="本草纲目"
+          description="如果华佗再世,崇洋都被医治,外邦来学汉字,激发我民族意识.马钱子、决明子、苍耳子,还有莲子;黄药子、苦豆子、川楝子,我要面子.用我的方式,改写一部历史.没什么别的事,跟着我念几个字.山药当归枸杞 GO,山药 当归 枸杞 GO,看我抓一把中药,服下一帖骄傲~"
+        />`],
+        [imagePreview, '图片预览 图片放大预览,支持双击倍数放大,支持函数调用和组件调用两种方式.', '<var-image-preview :images="images" v-model:show="show" />'],
+
+        //       [steps, '步骤条 引导用户按照流程完成任务的导航条.', `<var-steps :active="active">
+        //   <var-step>步骤1</var-step>
+        //   <var-step>步骤2</var-step>
+        //   <var-step>步骤3</var-step>
+        //   <var-step>步骤4</var-step>
+        // </var-steps>`],
+        //       [step, '步骤条 引导用户按照流程完成任务的导航条.', '<var-step>步骤1</var-step>'],
+
         // [appBar, '导航栏', `<${hyphenate(appBar.name).slice(1)}></${hyphenate(appBar.name).slice(1)}>`],
         //       [option, '下拉选项', `<${hyphenate(option.name).slice(1)}></${hyphenate(option.name).slice(1)}>`],
         //       [backTop, '回到顶部', `<${hyphenate(backTop.name).slice(1)}></${hyphenate(backTop.name).slice(1)}>`],
@@ -280,10 +292,6 @@ export function varlet3Components() {
         //       [tab, '选项卡', '<var-tab>选项1</var-tab>'],
         //       [tabItem, '选项卡', '<var-tab-item>选项1</var-tab-item>'],
         //       [table, '表格', '<var-table>选项1</var-table>'],
-        //       [card, '卡片', `<var-card
-        //   title="本草纲目"
-        //   description="如果华佗再世,崇洋都被医治,外邦来学汉字,激发我民族意识.马钱子、决明子、苍耳子,还有莲子;黄药子、苦豆子、川楝子,我要面子.用我的方式,改写一部历史.没什么别的事,跟着我念几个字.山药当归枸杞 GO,山药 当归 枸杞 GO,看我抓一把中药,服下一帖骄傲~"
-        // />`],
 
         //       [countdown, '倒计时 用于实时展示倒计时数值,支持毫秒精度.', '<var-countdown :time="time" />'],
         //       [counter, '计数器', '<var-counter v-model="value"/>'],
@@ -296,7 +304,6 @@ export function varlet3Components() {
         //   其实没有什么事情是不可能的,我都拿到世界冠军了,真的没有什么事情是不可能的.
         // </var-ellipsis>`],
         //       [formDetails, '表单 提供了对所有表单组件进行控制的能力.', '<var-form-details :error-message="errorMessage" :extra-message="extraMessage" />'],
-        //       [imagePreview, '图片预览 图片放大预览,支持双击倍数放大,支持函数调用和组件调用两种方式.', '<var-image-preview :images="images" v-model:show="show" />'],
         //       [indexBar, '索引栏 用于跳转到页面指定位置.', '<var-index-bar duration="300" @change="change"></var-index-bar>'],
         //       [indexAnchor, '索引栏 用于跳转到页面指定位置.', `<var-index-anchor :index="item" class="anchor">
         //   标题 {{ item }}
@@ -323,14 +330,6 @@ export function varlet3Components() {
         // </var-select>`],
         //       [slider, '滑块 用于在给定范围内取值.', '<var-slider v-model="value" />'],
         //       [snackbar, '消息条 用于向用户显示快速消息.', '<var-snackbar v-model:show="show">这是一个消息条!!</var-snackbar>'],
-
-        //       [steps, '步骤条 引导用户按照流程完成任务的导航条.', `<var-steps :active="active">
-        //   <var-step>步骤1</var-step>
-        //   <var-step>步骤2</var-step>
-        //   <var-step>步骤3</var-step>
-        //   <var-step>步骤4</var-step>
-        // </var-steps>`],
-        //       [step, '步骤条 引导用户按照流程完成任务的导航条.', '<var-step>步骤1</var-step>'],
 
       //       [tabsItems, '选项卡组 使用 Tabs、Tab 实现选项卡组的切换.使用 TabsItems、TabItem 实现和选项卡组的视图联动', `<var-tabs-items v-model:active="active">
       //   <var-tab-item>
@@ -393,6 +392,18 @@ export function varlet3Components() {
         [swipeItem, 'carousel', `<var-swipe-item>
          <img class="swipe-example-image" src="https://varlet.gitee.io/varlet-ui/cat.jpg">
       </var-swipe-item>`],
+        [card, 'card', `<var-card
+         title="Compendium of Materia Medica"
+         description="If Hua Tuo is reincarnated, all worship of foreigners will be cured, and foreigners will come to learn Chinese characters and stimulate our national consciousness. Nux vomica, cassia seed, Xanthium seed, and lotus seeds; yellow Yaozi, bitter bean seeds, and Sophora indica, I want face. Rewrite a piece of history in my own way. Nothing else, just read a few words after me. Yam, Angelica and Wolfberry GO, Yam, Angelica and Wolfberry GO, watch me grab a handful of Chinese medicine and take it and be proud~"
+      />`],
+        [steps, 'Step bar is a navigation bar that guides users to complete tasks according to the process. ', `<var-steps :active="active">
+         <var-step>Step 1</var-step>
+         <var-step>Step 2</var-step>
+         <var-step>Step 3</var-step>
+         <var-step>Step 4</var-step>
+      </var-steps>`],
+        [step, 'Step bar is a navigation bar that guides users to complete tasks according to the process. ', '<var-step>Step 1</var-step>'],
+        [imagePreview, 'Image preview: Image enlargement preview, supports double-click magnification, supports function calling and component calling. ', '<var-image-preview :images="images" v-model:show="show" />'],
 
         //       [option, option.name, `<${hyphenate(option.name).slice(1)}></${hyphenate(option.name).slice(1)}>`],
         //       [appBar, appBar.name, `<${hyphenate(appBar.name).slice(1)}></${hyphenate(appBar.name).slice(1)}>`],
@@ -453,58 +464,44 @@ export function varlet3Components() {
         //       [tab, 'tab', '<var-tab>Option 1</var-tab>'],
         //       [tabItem, 'tab', '<var-tab-item>Option 1</var-tab-item>'],
         //       [table, 'table', '<var-table>Option 1</var-table>'],
-        //       [card, 'card', `<var-card
-        //    title="Compendium of Materia Medica"
-        //    description="If Hua Tuo is reincarnated, all worship of foreigners will be cured, and foreigners will come to learn Chinese characters and stimulate our national consciousness. Nux vomica, cassia seed, Xanthium seed, and lotus seeds; yellow Yaozi, bitter bean seeds, and Sophora indica, I want face. Rewrite a piece of history in my own way. Nothing else, just read a few words after me. Yam, Angelica and Wolfberry GO, Yam, Angelica and Wolfberry GO, watch me grab a handful of Chinese medicine and take it and be proud~"
-        // />`],
 
-        //       [countdown, 'Countdown is used to display the countdown value in real time, supporting millisecond precision. ', '<var-countdown :time="time" />'],
-        //       [counter, 'Counter', '<var-counter v-model="value"/>'],
-        //       [datePicker, 'Date picker is used to select a date or date range. ', '<var-date-picker v-model="date" />'],
-        //       [divider, 'Divider lines are used to separate parts of a list or layout. ', '<var-divider />'],
-        //       [drag, 'Drag allows elements to be dragged freely. ', `<var-drag>
-        //    <var-button type="primary">Basic use</var-button>
-        // </var-drag>`],
-        //       [ellipsis, 'Text omission is mainly used to omit single-line text and multi-line text. ', `<var-ellipsis style="max-width: 170px">
-        //    In fact, nothing is impossible. I have won the world championship, so nothing is impossible.
-        // </var-ellipsis>`],
-        //       [formDetails, 'Form provides the ability to control all form components. ', '<var-form-details :error-message="errorMessage" :extra-message="extraMessage" />'],
-        //       [imagePreview, 'Image preview: Image enlargement preview, supports double-click magnification, supports function calling and component calling. ', '<var-image-preview :images="images" v-model:show="show" />'],
-        //       [indexBar, 'The index bar is used to jump to the specified location on the page. ', '<var-index-bar duration="300" @change="change"></var-index-bar>'],
-        //       [indexAnchor, 'The index column is used to jump to the specified position on the page. ', `<var-index-anchor :index="item" class="anchor">
-        //    Title {{ item }}
-        // </var-index-anchor>`],
-        //       [input, 'Input box The behavior of the input box is basically the same as the native one. When the user inputs, he always gets a string that conforms to the type rules. There are two styles: standard and outlined. The default is standard. ', '<var-input placeholder="Please enter text" v-model="value" />'],
-        //       [menu, 'Menu Displays a menu when the element is clicked, and changes the display position of the menu by controlling the pop-up position and offset. ', '<var-menu></var-menu>'],
-        //       [overlay, 'Overlay Create an overlay to emphasize specific page elements. ', '<var-overlay v-model:show="show" />'],
-        //       [picker, 'Multi-column picker provides two calling methods: function and component. It also supports cascade mode and can handle multi-level linkage. ', '<var-picker :columns="columns" />'],
-        //       [popup, 'Popup layer creates a container that can pop up from top, bottom, left, right, and center to display information. By default, teleport is used to insert at the end of the body. ', '<var-popup v-model:show="center"></var-popup>'],
-        //       [pullRefresh, 'Pull-refresh is used to provide interactive operations of pull-down refresh', ' <var-pull-refresh v-model="isRefresh" @refresh="refresh"></var-pull-refresh >'],
-        //       [rate, 'score', '<var-rate v-model="score" :count="8"/>'],
-        //       [result, 'Result is used to display the results to the user. ', `<var-result
-        //    type="success"
-        //    title="success"
-        //    description="Hi~ I am a description of the results page~"
-        // >
-        //    <template #footer>
-        //      <var-button type="success">Got it</var-button>
-        //    </template>
-        // </var-result>`],
-        //       [select, 'Select box displays and selects content through drop-down menu. ', `<var-select placeholder="Text associated value" v-model="value2">
-        //    <var-option label="Eat" :value="1" />
-        //    <var-option label="Sleep" :value="2" />
-        // </var-select>`],
-        //       [slider, 'Slider is used to take a value within a given range. ', '<var-slider v-model="value" />'],
-        //       [snackbar, 'Message bar is used to display quick messages to the user. ', '<var-snackbar v-model:show="show">This is a message bar! ! </var-snackbar>'],
-
-        //       [steps, 'Step bar is a navigation bar that guides users to complete tasks according to the process. ', `<var-steps :active="active">
-        //    <var-step>Step 1</var-step>
-        //    <var-step>Step 2</var-step>
-        //    <var-step>Step 3</var-step>
-        //    <var-step>Step 4</var-step>
-        // </var-steps>`],
-        //       [step, 'Step bar is a navigation bar that guides users to complete tasks according to the process. ', '<var-step>Step 1</var-step>'],
-
+      //       [countdown, 'Countdown is used to display the countdown value in real time, supporting millisecond precision. ', '<var-countdown :time="time" />'],
+      //       [counter, 'Counter', '<var-counter v-model="value"/>'],
+      //       [datePicker, 'Date picker is used to select a date or date range. ', '<var-date-picker v-model="date" />'],
+      //       [divider, 'Divider lines are used to separate parts of a list or layout. ', '<var-divider />'],
+      //       [drag, 'Drag allows elements to be dragged freely. ', `<var-drag>
+      //    <var-button type="primary">Basic use</var-button>
+      // </var-drag>`],
+      //       [ellipsis, 'Text omission is mainly used to omit single-line text and multi-line text. ', `<var-ellipsis style="max-width: 170px">
+      //    In fact, nothing is impossible. I have won the world championship, so nothing is impossible.
+      // </var-ellipsis>`],
+      //       [formDetails, 'Form provides the ability to control all form components. ', '<var-form-details :error-message="errorMessage" :extra-message="extraMessage" />'],
+      //       [indexBar, 'The index bar is used to jump to the specified location on the page. ', '<var-index-bar duration="300" @change="change"></var-index-bar>'],
+      //       [indexAnchor, 'The index column is used to jump to the specified position on the page. ', `<var-index-anchor :index="item" class="anchor">
+      //    Title {{ item }}
+      // </var-index-anchor>`],
+      //       [input, 'Input box The behavior of the input box is basically the same as the native one. When the user inputs, he always gets a string that conforms to the type rules. There are two styles: standard and outlined. The default is standard. ', '<var-input placeholder="Please enter text" v-model="value" />'],
+      //       [menu, 'Menu Displays a menu when the element is clicked, and changes the display position of the menu by controlling the pop-up position and offset. ', '<var-menu></var-menu>'],
+      //       [overlay, 'Overlay Create an overlay to emphasize specific page elements. ', '<var-overlay v-model:show="show" />'],
+      //       [picker, 'Multi-column picker provides two calling methods: function and component. It also supports cascade mode and can handle multi-level linkage. ', '<var-picker :columns="columns" />'],
+      //       [popup, 'Popup layer creates a container that can pop up from top, bottom, left, right, and center to display information. By default, teleport is used to insert at the end of the body. ', '<var-popup v-model:show="center"></var-popup>'],
+      //       [pullRefresh, 'Pull-refresh is used to provide interactive operations of pull-down refresh', ' <var-pull-refresh v-model="isRefresh" @refresh="refresh"></var-pull-refresh >'],
+      //       [rate, 'score', '<var-rate v-model="score" :count="8"/>'],
+      //       [result, 'Result is used to display the results to the user. ', `<var-result
+      //    type="success"
+      //    title="success"
+      //    description="Hi~ I am a description of the results page~"
+      // >
+      //    <template #footer>
+      //      <var-button type="success">Got it</var-button>
+      //    </template>
+      // </var-result>`],
+      //       [select, 'Select box displays and selects content through drop-down menu. ', `<var-select placeholder="Text associated value" v-model="value2">
+      //    <var-option label="Eat" :value="1" />
+      //    <var-option label="Sleep" :value="2" />
+      // </var-select>`],
+      //       [slider, 'Slider is used to take a value within a given range. ', '<var-slider v-model="value" />'],
+      //       [snackbar, 'Message bar is used to display quick messages to the user. ', '<var-snackbar v-model:show="show">This is a message bar! ! </var-snackbar>'],
       //       [tabsItems, 'Tab group uses Tabs and Tab to switch tab groups. Use TabsItems and TabItem to implement view linkage with the tab group', `<var-tabs-items v-model:active="active">
       //    <var-tab-item>
       //      The train whistle whistles, along with the galloping horse hooves. The little sister plays the harmonica, and her silhouette is beautiful under the sunset. I wrote a bullet journal and finished introducing the scenery.

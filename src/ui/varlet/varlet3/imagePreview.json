@@ -1,0 +1,148 @@
+{
+  "name": "VarImagePreview",
+  "props": {
+    "v-model:show": {
+      "description": "Whether or display",
+      "description_zh": "Whether or display",
+      "default": "false",
+      "value": "",
+      "type": "boolean"
+    },
+    "images": {
+      "description": "Need to preview the image URL",
+      "description_zh": "Need to preview the image URL",
+      "default": "[]",
+      "value": "",
+      "type": "string[]"
+    },
+    "initial-index": {
+      "description": "Index from which the image preview starts",
+      "description_zh": "Index from which the image preview starts",
+      "default": "0",
+      "value": "",
+      "type": "string | number"
+    },
+    "zoom": {
+      "description": "Double-click to zoom in",
+      "description_zh": "Double-click to zoom in",
+      "default": "2",
+      "value": "",
+      "type": "string | number"
+    },
+    "closeable": {
+      "description": "Whether to show the close button",
+      "description_zh": "Whether to show the close button",
+      "default": "false",
+      "value": "",
+      "type": "boolean"
+    },
+    "close-on-key-escape": {
+      "description": "Whether to support keyboard ESC to close the image-preview",
+      "description_zh": "Whether to support keyboard ESC to close the image-preview",
+      "default": "true",
+      "value": "",
+      "type": "boolean"
+    },
+    "loop": {
+      "description": "Whether to open loop playback",
+      "description_zh": "Whether to open loop playback",
+      "default": "true",
+      "value": "",
+      "type": "boolean"
+    },
+    "indicator": {
+      "description": "Whether to show paging",
+      "description_zh": "Whether to show paging",
+      "default": "true",
+      "value": "",
+      "type": "boolean"
+    },
+    "lock-scroll": {
+      "description": "Lock scroll",
+      "description_zh": "Lock scroll",
+      "default": "true",
+      "value": "",
+      "type": "boolean"
+    },
+    "teleport": {
+      "description": "The location of the pop-up layer to mount",
+      "description_zh": "The location of the pop-up layer to mount",
+      "default": "body",
+      "value": "",
+      "type": "TeleportProps['to'] | false"
+    },
+    "image-prevent-default": {
+      "description": "Whether to disable the default behavior of images",
+      "description_zh": "Whether to disable the default behavior of images",
+      "default": "false",
+      "value": "",
+      "type": "boolean"
+    }
+  },
+  "link": "https://varlet.gitee.io/varlet-ui/#/en-US/image-preview",
+  "link_zh": "https://varlet.gitee.io/varlet-ui/#/zh-CN/image-preview",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "change",
+      "description": "The callback function when switching images, the callback parameter is the current index",
+      "description_zh": "The callback function when switching images, the callback parameter is the current index",
+      "params": "index: number Image indexing"
+    },
+    {
+      "name": "open",
+      "description": "Triggered when Image-Preview is turned on",
+      "description_zh": "Triggered when Image-Preview is turned on",
+      "params": "-"
+    },
+    {
+      "name": "opened",
+      "description": "Triggered at the end of the open image-preview animation",
+      "description_zh": "Triggered at the end of the open image-preview animation",
+      "params": "-"
+    },
+    {
+      "name": "close",
+      "description": "Triggered when Image-Preview is off",
+      "description_zh": "Triggered when Image-Preview is off",
+      "params": "-"
+    },
+    {
+      "name": "closed",
+      "description": "Triggered when the animation that closes the image-preview ends",
+      "description_zh": "Triggered when the animation that closes the image-preview ends",
+      "params": "-"
+    },
+    {
+      "name": "long-press",
+      "description": "The callback function when long pressing an image, the callback parameter is the current index",
+      "description_zh": "The callback function when long pressing an image, the callback parameter is the current index",
+      "params": "index: number Image indexing"
+    },
+    {
+      "name": "key-escape",
+      "description": "Triggered when click keyboard ESC",
+      "description_zh": "Triggered when click keyboard ESC",
+      "params": "-"
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "indicator",
+      "description": "Paging indicator",
+      "description_zh": "Paging indicator"
+    },
+    {
+      "name": "close-icon",
+      "description": "Close button",
+      "description_zh": "Close button"
+    },
+    {
+      "name": "extra",
+      "description": "Extra slots",
+      "description_zh": "Extra slots"
+    }
+  ],
+  "suggestions": []
+}
