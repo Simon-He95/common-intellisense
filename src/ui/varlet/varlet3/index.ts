@@ -32,6 +32,13 @@ import card from './card.json'
 import imagePreview from './imagePreview.json'
 import step from './step.json'
 import steps from './steps.json'
+import tab from './tab.json'
+import tabItem from './tabItem.json'
+import tabs from './tabs.json'
+import tabsItems from './tabsItems.json'
+import table from './table.json'
+import divider from './divider.json'
+import watermark from './watermark.json'
 
 // import option from './option.json'
 // import appBar from './appBar.json'
@@ -41,22 +48,17 @@ import steps from './steps.json'
 // import floatingPanel from './floatingPanel.json'
 // import menuOption from './menuOption.json'
 // import menuSelect from './menuSelect.json'
-// import watermark from './watermark.json'
 // import actionSheet from './actionSheet.json'
 // import vswitch from './switch.json'
 // import checkbox from './checkbox.json'
 // import checkboxGroup from './checkboxGroup.json'
 // import form from './form.json'
 // import pagination from './pagination.json'
-// import tab from './tab.json'
-// import tabItem from './tabItem.json'
-// import tabs from './tabs.json'
-// import table from './table.json'
+
 // import countdown from './countdown.json'
 // import counter from './counter.json'
 // import datePicker from './datePicker.json'
 // import dialog from './dialog.json'
-// import divider from './divider.json'
 // import drag from './drag.json'
 // import ellipsis from './ellipsis.json'
 // import formDetails from './formDetails.json'
@@ -75,7 +77,6 @@ import steps from './steps.json'
 // import select from './select.json'
 // import slider from './slider.json'
 // import snackbar from './snackbar.json'
-// import tabsItems from './tabsItems.json'
 // import timePicker from './timePicker.json'
 // import tooltip from './tooltip.json'
 // import uploader from './uploader.json'
@@ -113,7 +114,13 @@ export function varlet3() {
     steps,
     card,
     imagePreview,
-
+    watermark,
+    tab,
+    tabItem,
+    tabs,
+    tabsItems,
+    divider,
+    table,
     // option,
     // appBar,
     // backTop,
@@ -123,21 +130,16 @@ export function varlet3() {
     // floatingPanel,
     // menuOption,
     // menuSelect,
-    // watermark,
     // actionSheet,
     // vswitch,
     // checkbox,
     // checkboxGroup,
     // form,
     // pagination,
-    // tab,
-    // tabItem,
-    // tabs,
-    // table,
+
     // countdown,
     // counter,
     // datePicker,
-    // divider,
     // drag,
     // ellipsis,
     // formDetails,
@@ -155,7 +157,6 @@ export function varlet3() {
     // select,
     // slider,
     // snackbar,
-    // tabsItems,
     // timePicker,
     // tooltip,
     // uploader,
@@ -226,13 +227,36 @@ export function varlet3Components() {
         />`],
         [imagePreview, '图片预览 图片放大预览,支持双击倍数放大,支持函数调用和组件调用两种方式.', '<var-image-preview :images="images" v-model:show="show" />'],
 
-        //       [steps, '步骤条 引导用户按照流程完成任务的导航条.', `<var-steps :active="active">
-        //   <var-step>步骤1</var-step>
-        //   <var-step>步骤2</var-step>
-        //   <var-step>步骤3</var-step>
-        //   <var-step>步骤4</var-step>
-        // </var-steps>`],
-        //       [step, '步骤条 引导用户按照流程完成任务的导航条.', '<var-step>步骤1</var-step>'],
+        [steps, '步骤条 引导用户按照流程完成任务的导航条.', `<var-steps :active="active">
+          <var-step>步骤1</var-step>
+          <var-step>步骤2</var-step>
+          <var-step>步骤3</var-step>
+          <var-step>步骤4</var-step>
+        </var-steps>`],
+        [step, '步骤条 引导用户按照流程完成任务的导航条.', '<var-step>步骤1</var-step>'],
+        [watermark, '水印', `<${hyphenate(watermark.name).slice(1)}></${hyphenate(watermark.name).slice(1)}>`],
+        [tabs, '选项卡组', `<var-tabs
+        elevation
+        color="var(--color-primary)"
+        active-color="#fff"
+        inactive-color="hsla(0, 0%, 100%, .6)"
+        disabled-color="#aaa"
+        v-model:active="active"
+      >
+        <var-tab>选项1</var-tab>
+        <var-tab>选项2</var-tab>
+        <var-tab disabled>禁用选项</var-tab>
+      </var-tabs>`],
+        [tab, '选项卡', '<var-tab>选项1</var-tab>'],
+        [tabItem, '选项卡', '<var-tab-item>选项1</var-tab-item>'],
+        [table, '表格', '<var-table>选项1</var-table>'],
+        [divider, '分割线 用于分隔列表或布局的各个部分.', '<var-divider />'],
+        [tabsItems, '选项卡组 使用 Tabs、Tab 实现选项卡组的切换.使用 TabsItems、TabItem 实现和选项卡组的视图联动', `<var-tabs-items v-model:active="active">
+        <var-tab-item>
+          呜啦啦啦火车笛,随着奔腾的马蹄. 小妹妹吹着口琴,夕阳下美了剪影. 我用子弹写日记,介绍完了风景.
+          接下来换介绍我自己. 我虽然是个牛仔,在酒吧只点牛奶. 为什么不喝啤酒,因为啤酒伤身体.
+        </var-tab-item>
+      </var-tabs-items`],
 
         // [appBar, '导航栏', `<${hyphenate(appBar.name).slice(1)}></${hyphenate(appBar.name).slice(1)}>`],
         //       [option, '下拉选项', `<${hyphenate(option.name).slice(1)}></${hyphenate(option.name).slice(1)}>`],
@@ -242,7 +266,6 @@ export function varlet3Components() {
         //       [floatingPanel, '浮动面板', `<${hyphenate(floatingPanel.name).slice(1)}></${hyphenate(floatingPanel.name).slice(1)}>`],
         //       [menuOption, '菜单', `<${hyphenate(menuOption.name).slice(1)}></${hyphenate(menuOption.name).slice(1)}>`],
         //       [menuSelect, '菜单', `<${hyphenate(menuSelect.name).slice(1)}></${hyphenate(menuSelect.name).slice(1)}>`],
-        //       [watermark, '水印', `<${hyphenate(watermark.name).slice(1)}></${hyphenate(watermark.name).slice(1)}>`],
         //       [actionSheet, '动作面板', `<var-action-sheet
         //   :actions="actions"
         //   v-model:show="show"
@@ -277,66 +300,43 @@ export function varlet3Components() {
         //     scroll-to-error="start"
         //   ></var-form>`],
         //       [pagination, '分页', '<var-pagination :current="3" :total="120" />'],
-        //       [tabs, '选项卡组', `<var-tabs
-        //   elevation
-        //   color="var(--color-primary)"
-        //   active-color="#fff"
-        //   inactive-color="hsla(0, 0%, 100%, .6)"
-        //   disabled-color="#aaa"
-        //   v-model:active="active"
-        // >
-        //   <var-tab>选项1</var-tab>
-        //   <var-tab>选项2</var-tab>
-        //   <var-tab disabled>禁用选项</var-tab>
-        // </var-tabs>`],
-        //       [tab, '选项卡', '<var-tab>选项1</var-tab>'],
-        //       [tabItem, '选项卡', '<var-tab-item>选项1</var-tab-item>'],
-        //       [table, '表格', '<var-table>选项1</var-table>'],
 
-        //       [countdown, '倒计时 用于实时展示倒计时数值,支持毫秒精度.', '<var-countdown :time="time" />'],
-        //       [counter, '计数器', '<var-counter v-model="value"/>'],
-        //       [datePicker, '日期选择器 用于选择日期或日期范围.', '<var-date-picker v-model="date" />'],
-        //       [divider, '分割线 用于分隔列表或布局的各个部分.', '<var-divider />'],
-        //       [drag, '拖拽 使元素可以自由拖拽.', `<var-drag>
-        //   <var-button type="primary">基本使用</var-button>
-        // </var-drag>`],
-        //       [ellipsis, '文本省略 主要用于省略单行文字和多行文字.', `<var-ellipsis style="max-width: 170px">
-        //   其实没有什么事情是不可能的,我都拿到世界冠军了,真的没有什么事情是不可能的.
-        // </var-ellipsis>`],
-        //       [formDetails, '表单 提供了对所有表单组件进行控制的能力.', '<var-form-details :error-message="errorMessage" :extra-message="extraMessage" />'],
-        //       [indexBar, '索引栏 用于跳转到页面指定位置.', '<var-index-bar duration="300" @change="change"></var-index-bar>'],
-        //       [indexAnchor, '索引栏 用于跳转到页面指定位置.', `<var-index-anchor :index="item" class="anchor">
-        //   标题 {{ item }}
-        // </var-index-anchor>`],
-        //       [input, '输入框 输入框的行为和基本原生一致,用户输入时始终获得一个符合 type 规则的字符串,可选择 standard 和 outlined 两种风格,默认为 standard.', '<var-input placeholder="请输入文本" v-model="value" />'],
-        //       [menu, '菜单 当元素点击时显示一个菜单,通过控制弹出位置和偏移量改变菜单的显示位置.', '<var-menu></var-menu>'],
-        //       [overlay, '遮罩层 创建一个遮罩层,用于强调特定的页面元素.', '<var-overlay v-model:show="show" />'],
-        //       [picker, '多列选择器 提供了函数和组件两种调用方式.同时支持级联模式,可以处理多级联动.', '<var-picker :columns="columns" />'],
-        //       [popup, '弹出层 创建一个可以从上、下、左、右、中心弹出的容器,用于展示信息.默认使用 teleport 插入到 body 尾部.', '<var-popup v-model:show="center"></var-popup>'],
-        //       [pullRefresh, '下拉刷新 用于提供下拉刷新的交互操作', ' <var-pull-refresh v-model="isRefresh" @refresh="refresh"></var-pull-refresh>'],
-        //       [rate, '评分', '<var-rate v-model="score" :count="8"/>'],
-        //       [result, '结果 用于向用户展示结果.', `<var-result
-        //   type="success"
-        //   title="成功"
-        //   description="嗨~ 我是结果页的一段描述~"
-        // >
-        //   <template #footer>
-        //     <var-button type="success">知道了</var-button>
-        //   </template>
-        // </var-result>`],
-        //       [select, '选择框 通过下拉菜单展示并选择内容.', `<var-select placeholder="文本关联值" v-model="value2">
-        //   <var-option label="吃饭" :value="1" />
-        //   <var-option label="睡觉" :value="2" />
-        // </var-select>`],
-        //       [slider, '滑块 用于在给定范围内取值.', '<var-slider v-model="value" />'],
-        //       [snackbar, '消息条 用于向用户显示快速消息.', '<var-snackbar v-model:show="show">这是一个消息条!!</var-snackbar>'],
-
-      //       [tabsItems, '选项卡组 使用 Tabs、Tab 实现选项卡组的切换.使用 TabsItems、TabItem 实现和选项卡组的视图联动', `<var-tabs-items v-model:active="active">
-      //   <var-tab-item>
-      //     呜啦啦啦火车笛,随着奔腾的马蹄. 小妹妹吹着口琴,夕阳下美了剪影. 我用子弹写日记,介绍完了风景.
-      //     接下来换介绍我自己. 我虽然是个牛仔,在酒吧只点牛奶. 为什么不喝啤酒,因为啤酒伤身体.
-      //   </var-tab-item>
-      // </var-tabs-items`],
+      //       [countdown, '倒计时 用于实时展示倒计时数值,支持毫秒精度.', '<var-countdown :time="time" />'],
+      //       [counter, '计数器', '<var-counter v-model="value"/>'],
+      //       [datePicker, '日期选择器 用于选择日期或日期范围.', '<var-date-picker v-model="date" />'],
+      //       [drag, '拖拽 使元素可以自由拖拽.', `<var-drag>
+      //   <var-button type="primary">基本使用</var-button>
+      // </var-drag>`],
+      //       [ellipsis, '文本省略 主要用于省略单行文字和多行文字.', `<var-ellipsis style="max-width: 170px">
+      //   其实没有什么事情是不可能的,我都拿到世界冠军了,真的没有什么事情是不可能的.
+      // </var-ellipsis>`],
+      //       [formDetails, '表单 提供了对所有表单组件进行控制的能力.', '<var-form-details :error-message="errorMessage" :extra-message="extraMessage" />'],
+      //       [indexBar, '索引栏 用于跳转到页面指定位置.', '<var-index-bar duration="300" @change="change"></var-index-bar>'],
+      //       [indexAnchor, '索引栏 用于跳转到页面指定位置.', `<var-index-anchor :index="item" class="anchor">
+      //   标题 {{ item }}
+      // </var-index-anchor>`],
+      //       [input, '输入框 输入框的行为和基本原生一致,用户输入时始终获得一个符合 type 规则的字符串,可选择 standard 和 outlined 两种风格,默认为 standard.', '<var-input placeholder="请输入文本" v-model="value" />'],
+      //       [menu, '菜单 当元素点击时显示一个菜单,通过控制弹出位置和偏移量改变菜单的显示位置.', '<var-menu></var-menu>'],
+      //       [overlay, '遮罩层 创建一个遮罩层,用于强调特定的页面元素.', '<var-overlay v-model:show="show" />'],
+      //       [picker, '多列选择器 提供了函数和组件两种调用方式.同时支持级联模式,可以处理多级联动.', '<var-picker :columns="columns" />'],
+      //       [popup, '弹出层 创建一个可以从上、下、左、右、中心弹出的容器,用于展示信息.默认使用 teleport 插入到 body 尾部.', '<var-popup v-model:show="center"></var-popup>'],
+      //       [pullRefresh, '下拉刷新 用于提供下拉刷新的交互操作', ' <var-pull-refresh v-model="isRefresh" @refresh="refresh"></var-pull-refresh>'],
+      //       [rate, '评分', '<var-rate v-model="score" :count="8"/>'],
+      //       [result, '结果 用于向用户展示结果.', `<var-result
+      //   type="success"
+      //   title="成功"
+      //   description="嗨~ 我是结果页的一段描述~"
+      // >
+      //   <template #footer>
+      //     <var-button type="success">知道了</var-button>
+      //   </template>
+      // </var-result>`],
+      //       [select, '选择框 通过下拉菜单展示并选择内容.', `<var-select placeholder="文本关联值" v-model="value2">
+      //   <var-option label="吃饭" :value="1" />
+      //   <var-option label="睡觉" :value="2" />
+      // </var-select>`],
+      //       [slider, '滑块 用于在给定范围内取值.', '<var-slider v-model="value" />'],
+      //       [snackbar, '消息条 用于向用户显示快速消息.', '<var-snackbar v-model:show="show">这是一个消息条!!</var-snackbar>'],
       //       [timePicker, '时间选择器 用于选择时间.', '<var-time-picker v-model="date" />'],
       //       [tooltip, '提示 当元素点击或悬停时显示一个提示,通过控制弹出位置和偏移量改变提示的显示位置.', `<var-tooltip content="Tooltip">
       //   <var-button type="primary">基本使用</var-button>
@@ -404,6 +404,29 @@ export function varlet3Components() {
       </var-steps>`],
         [step, 'Step bar is a navigation bar that guides users to complete tasks according to the process. ', '<var-step>Step 1</var-step>'],
         [imagePreview, 'Image preview: Image enlargement preview, supports double-click magnification, supports function calling and component calling. ', '<var-image-preview :images="images" v-model:show="show" />'],
+        [tabs, 'tab group', `<var-tabs
+         elevation
+         color="var(--color-primary)"
+         active-color="#fff"
+         inactive-color="hsla(0, 0%, 100%, .6)"
+         disabled-color="#aaa"
+         v-model:active="active"
+      >
+         <var-tab>Option 1</var-tab>
+         <var-tab>Option 2</var-tab>
+         <var-tab disabled>Disabled option</var-tab>
+      </var-tabs>`],
+        [tab, 'tab', '<var-tab>Option 1</var-tab>'],
+        [tabItem, 'tab', '<var-tab-item>Option 1</var-tab-item>'],
+        [table, 'table', '<var-table>Option 1</var-table>'],
+        [divider, 'Divider lines are used to separate parts of a list or layout. ', '<var-divider />'],
+        [tabsItems, 'Tab group uses Tabs and Tab to switch tab groups. Use TabsItems and TabItem to implement view linkage with the tab group', `<var-tabs-items v-model:active="active">
+         <var-tab-item>
+           The train whistle whistles, along with the galloping horse hooves. The little sister plays the harmonica, and her silhouette is beautiful under the sunset. I wrote a bullet journal and finished introducing the scenery.
+           Next, let me introduce myself. Even though I'm a cowboy, I only order milk at the bar. Why not drink beer, because beer is harmful to the body.
+         </var-tab-item>
+      </var-tabs-items`],
+        [watermark, watermark.name, `<${hyphenate(watermark.name).slice(1)}></${hyphenate(watermark.name).slice(1)}>`],
 
         //       [option, option.name, `<${hyphenate(option.name).slice(1)}></${hyphenate(option.name).slice(1)}>`],
         //       [appBar, appBar.name, `<${hyphenate(appBar.name).slice(1)}></${hyphenate(appBar.name).slice(1)}>`],
@@ -414,7 +437,6 @@ export function varlet3Components() {
         //       [floatingPanel, floatingPanel.name, `<${hyphenate(floatingPanel.name).slice(1)}></${hyphenate(floatingPanel.name).slice(1)}>`],
         //       [menuOption, menuOption.name, `<${hyphenate(menuOption.name).slice(1)}></${hyphenate(menuOption.name).slice(1)}>`],
         //       [menuSelect, menuSelect.name, `<${hyphenate(menuSelect.name).slice(1)}></${hyphenate(menuSelect.name).slice(1)}>`],
-        //       [watermark, watermark.name, `<${hyphenate(watermark.name).slice(1)}></${hyphenate(watermark.name).slice(1)}>`],
         //       [actionSheet, 'Action Panel', `<var-action-sheet
         //    :actions="actions"
         //    v-model:show="show"
@@ -449,65 +471,44 @@ export function varlet3Components() {
         //      scroll-to-error="start"
         //    ></var-form>`],
         //       [pagination, 'pagination', '<var-pagination :current="3" :total="120" />'],
-        //       [tabs, 'tab group', `<var-tabs
-        //    elevation
-        //    color="var(--color-primary)"
-        //    active-color="#fff"
-        //    inactive-color="hsla(0, 0%, 100%, .6)"
-        //    disabled-color="#aaa"
-        //    v-model:active="active"
-        // >
-        //    <var-tab>Option 1</var-tab>
-        //    <var-tab>Option 2</var-tab>
-        //    <var-tab disabled>Disabled option</var-tab>
-        // </var-tabs>`],
-        //       [tab, 'tab', '<var-tab>Option 1</var-tab>'],
-        //       [tabItem, 'tab', '<var-tab-item>Option 1</var-tab-item>'],
-        //       [table, 'table', '<var-table>Option 1</var-table>'],
 
-      //       [countdown, 'Countdown is used to display the countdown value in real time, supporting millisecond precision. ', '<var-countdown :time="time" />'],
-      //       [counter, 'Counter', '<var-counter v-model="value"/>'],
-      //       [datePicker, 'Date picker is used to select a date or date range. ', '<var-date-picker v-model="date" />'],
-      //       [divider, 'Divider lines are used to separate parts of a list or layout. ', '<var-divider />'],
-      //       [drag, 'Drag allows elements to be dragged freely. ', `<var-drag>
-      //    <var-button type="primary">Basic use</var-button>
-      // </var-drag>`],
-      //       [ellipsis, 'Text omission is mainly used to omit single-line text and multi-line text. ', `<var-ellipsis style="max-width: 170px">
-      //    In fact, nothing is impossible. I have won the world championship, so nothing is impossible.
-      // </var-ellipsis>`],
-      //       [formDetails, 'Form provides the ability to control all form components. ', '<var-form-details :error-message="errorMessage" :extra-message="extraMessage" />'],
-      //       [indexBar, 'The index bar is used to jump to the specified location on the page. ', '<var-index-bar duration="300" @change="change"></var-index-bar>'],
-      //       [indexAnchor, 'The index column is used to jump to the specified position on the page. ', `<var-index-anchor :index="item" class="anchor">
-      //    Title {{ item }}
-      // </var-index-anchor>`],
-      //       [input, 'Input box The behavior of the input box is basically the same as the native one. When the user inputs, he always gets a string that conforms to the type rules. There are two styles: standard and outlined. The default is standard. ', '<var-input placeholder="Please enter text" v-model="value" />'],
-      //       [menu, 'Menu Displays a menu when the element is clicked, and changes the display position of the menu by controlling the pop-up position and offset. ', '<var-menu></var-menu>'],
-      //       [overlay, 'Overlay Create an overlay to emphasize specific page elements. ', '<var-overlay v-model:show="show" />'],
-      //       [picker, 'Multi-column picker provides two calling methods: function and component. It also supports cascade mode and can handle multi-level linkage. ', '<var-picker :columns="columns" />'],
-      //       [popup, 'Popup layer creates a container that can pop up from top, bottom, left, right, and center to display information. By default, teleport is used to insert at the end of the body. ', '<var-popup v-model:show="center"></var-popup>'],
-      //       [pullRefresh, 'Pull-refresh is used to provide interactive operations of pull-down refresh', ' <var-pull-refresh v-model="isRefresh" @refresh="refresh"></var-pull-refresh >'],
-      //       [rate, 'score', '<var-rate v-model="score" :count="8"/>'],
-      //       [result, 'Result is used to display the results to the user. ', `<var-result
-      //    type="success"
-      //    title="success"
-      //    description="Hi~ I am a description of the results page~"
-      // >
-      //    <template #footer>
-      //      <var-button type="success">Got it</var-button>
-      //    </template>
-      // </var-result>`],
-      //       [select, 'Select box displays and selects content through drop-down menu. ', `<var-select placeholder="Text associated value" v-model="value2">
-      //    <var-option label="Eat" :value="1" />
-      //    <var-option label="Sleep" :value="2" />
-      // </var-select>`],
-      //       [slider, 'Slider is used to take a value within a given range. ', '<var-slider v-model="value" />'],
-      //       [snackbar, 'Message bar is used to display quick messages to the user. ', '<var-snackbar v-model:show="show">This is a message bar! ! </var-snackbar>'],
-      //       [tabsItems, 'Tab group uses Tabs and Tab to switch tab groups. Use TabsItems and TabItem to implement view linkage with the tab group', `<var-tabs-items v-model:active="active">
-      //    <var-tab-item>
-      //      The train whistle whistles, along with the galloping horse hooves. The little sister plays the harmonica, and her silhouette is beautiful under the sunset. I wrote a bullet journal and finished introducing the scenery.
-      //      Next, let me introduce myself. Even though I'm a cowboy, I only order milk at the bar. Why not drink beer, because beer is harmful to the body.
-      //    </var-tab-item>
-      // </var-tabs-items`],
+        //       [countdown, 'Countdown is used to display the countdown value in real time, supporting millisecond precision. ', '<var-countdown :time="time" />'],
+        //       [counter, 'Counter', '<var-counter v-model="value"/>'],
+        //       [datePicker, 'Date picker is used to select a date or date range. ', '<var-date-picker v-model="date" />'],
+        //       [drag, 'Drag allows elements to be dragged freely. ', `<var-drag>
+        //    <var-button type="primary">Basic use</var-button>
+        // </var-drag>`],
+        //       [ellipsis, 'Text omission is mainly used to omit single-line text and multi-line text. ', `<var-ellipsis style="max-width: 170px">
+        //    In fact, nothing is impossible. I have won the world championship, so nothing is impossible.
+        // </var-ellipsis>`],
+        //       [formDetails, 'Form provides the ability to control all form components. ', '<var-form-details :error-message="errorMessage" :extra-message="extraMessage" />'],
+        //       [indexBar, 'The index bar is used to jump to the specified location on the page. ', '<var-index-bar duration="300" @change="change"></var-index-bar>'],
+        //       [indexAnchor, 'The index column is used to jump to the specified position on the page. ', `<var-index-anchor :index="item" class="anchor">
+        //    Title {{ item }}
+        // </var-index-anchor>`],
+        //       [input, 'Input box The behavior of the input box is basically the same as the native one. When the user inputs, he always gets a string that conforms to the type rules. There are two styles: standard and outlined. The default is standard. ', '<var-input placeholder="Please enter text" v-model="value" />'],
+        //       [menu, 'Menu Displays a menu when the element is clicked, and changes the display position of the menu by controlling the pop-up position and offset. ', '<var-menu></var-menu>'],
+        //       [overlay, 'Overlay Create an overlay to emphasize specific page elements. ', '<var-overlay v-model:show="show" />'],
+        //       [picker, 'Multi-column picker provides two calling methods: function and component. It also supports cascade mode and can handle multi-level linkage. ', '<var-picker :columns="columns" />'],
+        //       [popup, 'Popup layer creates a container that can pop up from top, bottom, left, right, and center to display information. By default, teleport is used to insert at the end of the body. ', '<var-popup v-model:show="center"></var-popup>'],
+        //       [pullRefresh, 'Pull-refresh is used to provide interactive operations of pull-down refresh', ' <var-pull-refresh v-model="isRefresh" @refresh="refresh"></var-pull-refresh >'],
+        //       [rate, 'score', '<var-rate v-model="score" :count="8"/>'],
+        //       [result, 'Result is used to display the results to the user. ', `<var-result
+        //    type="success"
+        //    title="success"
+        //    description="Hi~ I am a description of the results page~"
+        // >
+        //    <template #footer>
+        //      <var-button type="success">Got it</var-button>
+        //    </template>
+        // </var-result>`],
+        //       [select, 'Select box displays and selects content through drop-down menu. ', `<var-select placeholder="Text associated value" v-model="value2">
+        //    <var-option label="Eat" :value="1" />
+        //    <var-option label="Sleep" :value="2" />
+        // </var-select>`],
+        //       [slider, 'Slider is used to take a value within a given range. ', '<var-slider v-model="value" />'],
+        //       [snackbar, 'Message bar is used to display quick messages to the user. ', '<var-snackbar v-model:show="show">This is a message bar! ! </var-snackbar>'],
+
       //       [timePicker, 'Time picker is used to select time. ', '<var-time-picker v-model="date" />'],
       //       [tooltip, 'Tip displays a tip when the element is clicked or hovered, and changes the display position of the tip by controlling the pop-up position and offset. ', `<var-tooltip content="Tooltip">
       //    <var-button type="primary">Basic use</var-button>
