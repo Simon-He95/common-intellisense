@@ -1,0 +1,168 @@
+{
+  "name": "VarDatePicker",
+  "props": {
+    "v-model": {
+      "description": "Selected date（ISO 8601 format, YYYY-MM-DD or YYYY-MM）",
+      "description_zh": "Selected date（ISO 8601 format, YYYY-MM-DD or YYYY-MM）",
+      "default": "undefined",
+      "value": "",
+      "type": "string[] | string"
+    },
+    "type": {
+      "description": "Picker type, optional values date month year",
+      "description_zh": "Picker type, optional values date month year",
+      "default": "date",
+      "value": "",
+      "type": "string"
+    },
+    "allowed-dates": {
+      "description": "Restricts which dates can be selected",
+      "description_zh": "Restricts which dates can be selected",
+      "default": "-",
+      "value": "",
+      "type": "function"
+    },
+    "color": {
+      "description": "Picker color",
+      "description_zh": "Picker color",
+      "default": "-",
+      "value": "",
+      "type": "string"
+    },
+    "title-color": {
+      "description": "Color of picker title. If not specified it will use color prop or the default picker color.",
+      "description_zh": "Color of picker title. If not specified it will use color prop or the default picker color.",
+      "default": "-",
+      "value": "",
+      "type": "string"
+    },
+    "hint": {
+      "description": "Picker hint",
+      "description_zh": "Picker hint",
+      "default": "SELECT DATE",
+      "value": "",
+      "type": "string"
+    },
+    "elevation": {
+      "description": "Elevation level, options true false and level of 0-24",
+      "description_zh": "Elevation level, options true false and level of 0-24",
+      "default": "false",
+      "value": "",
+      "type": "string | number | boolean"
+    },
+    "button-elevation": {
+      "description": "Elevation level of Button",
+      "description_zh": "Elevation level of Button",
+      "default": "true",
+      "value": "",
+      "type": "string | number | boolean"
+    },
+    "first-day-of-week": {
+      "description": "Sets the first day of the week, starting with 0 for Sunday.",
+      "description_zh": "Sets the first day of the week, starting with 0 for Sunday.",
+      "default": "0",
+      "value": "",
+      "type": "string | number"
+    },
+    "min": {
+      "description": "Minimum allowed date/month (ISO 8601 format)",
+      "description_zh": "Minimum allowed date/month (ISO 8601 format)",
+      "default": "-",
+      "value": "",
+      "type": "string"
+    },
+    "max": {
+      "description": "Maximum allowed date/month (ISO 8601 format)",
+      "description_zh": "Maximum allowed date/month (ISO 8601 format)",
+      "default": "-",
+      "value": "",
+      "type": "string"
+    },
+    "show-current": {
+      "description": "Whether to display the current date",
+      "description_zh": "Whether to display the current date",
+      "default": "true",
+      "value": "",
+      "type": "boolean"
+    },
+    "readonly": {
+      "description": "readonly",
+      "description_zh": "readonly",
+      "default": "false",
+      "value": "",
+      "type": "boolean"
+    },
+    "multiple": {
+      "description": "Allow the selection of multiple dates",
+      "description_zh": "Allow the selection of multiple dates",
+      "default": "false",
+      "value": "",
+      "type": "boolean"
+    },
+    "range": {
+      "description": "Allow the selection of date range",
+      "description_zh": "Allow the selection of date range",
+      "default": "false",
+      "value": "",
+      "type": "boolean"
+    },
+    "touchable": {
+      "description": "Allow switch panel by touch",
+      "description_zh": "Allow switch panel by touch",
+      "default": "true",
+      "value": "",
+      "type": "boolean"
+    }
+  },
+  "link": "https://varlet.gitee.io/varlet-ui/#/en-US/date-picker",
+  "link_zh": "https://varlet.gitee.io/varlet-ui/#/zh-CN/date-picker",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "preview",
+      "description": "Emitted after date switched",
+      "description_zh": "Emitted after date switched",
+      "params": "year: number month: number day?: number"
+    },
+    {
+      "name": "change",
+      "description": "Emitted after date changed",
+      "description_zh": "Emitted after date changed",
+      "params": "value: string | string[]"
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "year",
+      "description": "Custom the year in the title",
+      "description_zh": "Custom the year in the title"
+    },
+    {
+      "name": "month",
+      "description": "Custom the month in the title",
+      "description_zh": "Custom the month in the title"
+    },
+    {
+      "name": "date",
+      "description": "Custom the date in the title",
+      "description_zh": "Custom the date in the title"
+    },
+    {
+      "name": "range",
+      "description": "Custom the range in the title",
+      "description_zh": "Custom the range in the title"
+    },
+    {
+      "name": "multiple",
+      "description": "Custom the multiple in the title",
+      "description_zh": "Custom the multiple in the title"
+    },
+    {
+      "name": "actions",
+      "description": "Custom the views in the action panel",
+      "description_zh": "Custom the views in the action panel"
+    }
+  ],
+  "suggestions": []
+}

@@ -62,25 +62,25 @@ import menu from './menu.json'
 import popup from './popup.json'
 import snackbar from './snackbar.json'
 import tooltip from './tooltip.json'
+import option from './option.json'
+import form from './form.json'
+import input from './input.json'
+import picker from './picker.json'
+import radio from './radio.json'
+import radioGroup from './radioGroup.json'
+import select from './select.json'
+import datePicker from './datePicker.json'
+import timePicker from './timePicker.json'
+import formDetails from './formDetails.json'
 
-// import option from './option.json'
 // import vswitch from './switch.json'
 // import checkbox from './checkbox.json'
 // import checkboxGroup from './checkboxGroup.json'
-// import form from './form.json'
 // import counter from './counter.json'
-// import datePicker from './datePicker.json'
 // import ellipsis from './ellipsis.json'
-// import formDetails from './formDetails.json'
 // import indexAnchor from './indexAnchor.json'
-// import input from './input.json'
-// import picker from './picker.json'
 // import rate from './rate.json'
-// import radio from './radio.json'
-// import radioGroup from './radioGroup.json'
-// import select from './select.json'
 // import slider from './slider.json'
-// import timePicker from './timePicker.json'
 // import uploader from './uploader.json'
 
 export function varlet3() {
@@ -145,28 +145,27 @@ export function varlet3() {
     pullRefresh,
     snackbar,
     tooltip,
-
-    // option,
+    dialog,
+    option,
+    form,
+    timePicker,
+    radio,
+    radioGroup,
+    datePicker,
+    input,
+    select,
+    picker,
+    formDetails,
     // vswitch,
     // checkbox,
     // checkboxGroup,
-    // form,
-
     // counter,
-    // datePicker,
     // ellipsis,
-    // formDetails,
     // indexAnchor,
-    // input,
-    // picker,
     // rate,
-    // select,
     // slider,
-    // timePicker,
     // uploader,
-    // dialog,
-    // radio,
-    // radioGroup,
+
   ]
 
   return propsReducer('varlet', map, 'var')
@@ -307,13 +306,28 @@ export function varlet3Components() {
         [floatingPanel, '浮动面板', `<${hyphenate(floatingPanel.name).slice(1)}></${hyphenate(floatingPanel.name).slice(1)}>`],
         [loadingBar, '加载条', `<${hyphenate(loadingBar.name).slice(1)}></${hyphenate(loadingBar.name).slice(1)}>`],
 
-        //       [option, '下拉选项', `<${hyphenate(option.name).slice(1)}></${hyphenate(option.name).slice(1)}>`],
+        [option, '下拉选项', `<${hyphenate(option.name).slice(1)}></${hyphenate(option.name).slice(1)}>`],
+        [radio, '单选框', '<var-radio v-model="value">当前的值: {{ value }}</var-radio>'],
+        [radioGroup, '单选框组', `<var-radio-group v-model="value">
+          <var-radio :checked-value="0">吃饭</var-radio>
+          <var-radio :checked-value="1">睡觉</var-radio>
+        </var-radio-group>`],
+        [form, '表单', `<var-form
+            ref="form"
+            :disabled="disabled"
+            :readonly="readonly"
+            scroll-to-error="start"
+          ></var-form>`],
+        [formDetails, '表单 提供了对所有表单组件进行控制的能力.', '<var-form-details :error-message="errorMessage" :extra-message="extraMessage" />'],
+        [input, '输入框 输入框的行为和基本原生一致,用户输入时始终获得一个符合 type 规则的字符串,可选择 standard 和 outlined 两种风格,默认为 standard.', '<var-input placeholder="请输入文本" v-model="value" />'],
+        [picker, '多列选择器 提供了函数和组件两种调用方式.同时支持级联模式,可以处理多级联动.', '<var-picker :columns="columns" />'],
+        [select, '选择框 通过下拉菜单展示并选择内容.', `<var-select placeholder="文本关联值" v-model="value2">
+      <var-option label="吃饭" :value="1" />
+      <var-option label="睡觉" :value="2" />
+    </var-select>`],
+        [timePicker, '时间选择器 用于选择时间.', '<var-time-picker v-model="date" />'],
+        [datePicker, '日期选择器 用于选择日期或日期范围.', '<var-date-picker v-model="date" />'],
 
-        //       [radio, '单选框', '<var-radio v-model="value">当前的值: {{ value }}</var-radio>'],
-        //       [radioGroup, '单选框组', `<var-radio-group v-model="value">
-        //   <var-radio :checked-value="0">吃饭</var-radio>
-        //   <var-radio :checked-value="1">睡觉</var-radio>
-        // </var-radio-group>`],
         //       [vswitch, '开关', '<var-switch v-model="value" />'],
         //       [checkbox, '复选框', '<var-checkbox v-model="value">当前的值: {{ value }}</var-checkbox>'],
         //       [checkboxGroup, '复选框组', `<var-checkbox-group
@@ -323,34 +337,18 @@ export function varlet3Components() {
         //   <var-checkbox :checked-value="0">吃饭</var-checkbox>
         //   <var-checkbox :checked-value="1">睡觉</var-checkbox>
         // </var-checkbox-group>`],
-        //       [form, '表单', `<var-form
-        //     ref="form"
-        //     :disabled="disabled"
-        //     :readonly="readonly"
-        //     scroll-to-error="start"
-        //   ></var-form>`],
 
         // [counter, '计数器', '<var-counter v-model="value"/>'],
-        //       [datePicker, '日期选择器 用于选择日期或日期范围.', '<var-date-picker v-model="date" />'],
-
         //       [ellipsis, '文本省略 主要用于省略单行文字和多行文字.', `<var-ellipsis style="max-width: 170px">
         //   其实没有什么事情是不可能的,我都拿到世界冠军了,真的没有什么事情是不可能的.
         // </var-ellipsis>`],
-        //       [formDetails, '表单 提供了对所有表单组件进行控制的能力.', '<var-form-details :error-message="errorMessage" :extra-message="extraMessage" />'],
         //       [indexAnchor, '索引栏 用于跳转到页面指定位置.', `<var-index-anchor :index="item" class="anchor">
         //   标题 {{ item }}
         // </var-index-anchor>`],
-        //       [input, '输入框 输入框的行为和基本原生一致,用户输入时始终获得一个符合 type 规则的字符串,可选择 standard 和 outlined 两种风格,默认为 standard.', '<var-input placeholder="请输入文本" v-model="value" />'],
 
-        // [picker, '多列选择器 提供了函数和组件两种调用方式.同时支持级联模式,可以处理多级联动.', '<var-picker :columns="columns" />'],
         //       [rate, '评分', '<var-rate v-model="score" :count="8"/>'],
 
-      //       [select, '选择框 通过下拉菜单展示并选择内容.', `<var-select placeholder="文本关联值" v-model="value2">
-      //   <var-option label="吃饭" :value="1" />
-      //   <var-option label="睡觉" :value="2" />
-      // </var-select>`],
       //       [slider, '滑块 用于在给定范围内取值.', '<var-slider v-model="value" />'],
-      //       [timePicker, '时间选择器 用于选择时间.', '<var-time-picker v-model="date" />'],
       //       [uploader, '文件上传 提供了文件读取、图片/视频预览能力. 通过监听 after-read 事件获取文件上传服务器.', '<var-uploader v-model="files" @after-read="handleAfterRead"/>'],
       ]
     : [
@@ -481,13 +479,25 @@ export function varlet3Components() {
         [pullRefresh, 'Pull-refresh is used to provide interactive operations of pull-down refresh', ' <var-pull-refresh v-model="isRefresh" @refresh="refresh"></var-pull-refresh >'],
         [loadingBar, 'Loading Bar', `<${hyphenate(loadingBar.name).slice(1)}></${hyphenate(loadingBar.name).slice(1)}>`],
 
-        //       [option, option.name, `<${hyphenate(option.name).slice(1)}></${hyphenate(option.name).slice(1)}>`],
+        [option, option.name, `<${hyphenate(option.name).slice(1)}></${hyphenate(option.name).slice(1)}>`],
 
-        //       [radio, 'Radio button', '<var-radio v-model="value">Current value: {{ value }}</var-radio>'],
-        //       [radioGroup, 'Radio button group', `<var-radio-group v-model="value">
-        //    <var-radio :checked-value="0">Eat</var-radio>
-        //    <var-radio :checked-value="1">Sleep</var-radio>
-        // </var-radio-group>`],
+        [radio, 'Radio button', '<var-radio v-model="value">Current value: {{ value }}</var-radio>'],
+        [radioGroup, 'Radio button group', `<var-radio-group v-model="value">
+         <var-radio :checked-value="0">Eat</var-radio>
+         <var-radio :checked-value="1">Sleep</var-radio>
+      </var-radio-group>`],
+        [datePicker, 'Date picker is used to select a date or date range. ', '<var-date-picker v-model="date" />'],
+        [formDetails, 'Form provides the ability to control all form components. ', '<var-form-details :error-message="errorMessage" :extra-message="extraMessage" />'],
+        [input, 'Input box The behavior of the input box is basically the same as the native one. When the user inputs, he always gets a string that conforms to the type rules. There are two styles: standard and outlined. The default is standard. ', '<var-input placeholder="Please enter text" v-model="value" />'],
+
+        [picker, 'Multi-column picker provides two calling methods: function and component. It also supports cascade mode and can handle multi-level linkage. ', '<var-picker :columns="columns" />'],
+        [select, 'Select box displays and selects content through drop-down menu. ', `<var-select placeholder="Text associated value" v-model="value2">
+         <var-option label="Eat" :value="1" />
+         <var-option label="Sleep" :value="2" />
+      </var-select>`],
+        [snackbar, 'Message bar is used to display quick messages to the user. ', '<var-snackbar v-model:show="show">This is a message bar! ! </var-snackbar>'],
+
+        [timePicker, 'Time picker is used to select time. ', '<var-time-picker v-model="date" />'],
         //       [vswitch, 'switch', '<var-switch v-model="value" />'],
         //       [checkbox, 'checkbox', '<var-checkbox v-model="value">Current value: {{ value }}</var-checkbox>'],
         //       [checkboxGroup, 'checkbox group', `<var-checkbox-group
@@ -505,28 +515,17 @@ export function varlet3Components() {
         //    ></var-form>`],
 
         //       [counter, 'Counter', '<var-counter v-model="value"/>'],
-        //       [datePicker, 'Date picker is used to select a date or date range. ', '<var-date-picker v-model="date" />'],
 
         //       [ellipsis, 'Text omission is mainly used to omit single-line text and multi-line text. ', `<var-ellipsis style="max-width: 170px">
         //    In fact, nothing is impossible. I have won the world championship, so nothing is impossible.
         // </var-ellipsis>`],
-        //       [formDetails, 'Form provides the ability to control all form components. ', '<var-form-details :error-message="errorMessage" :extra-message="extraMessage" />'],
         //       [indexAnchor, 'The index column is used to jump to the specified position on the page. ', `<var-index-anchor :index="item" class="anchor">
         //    Title {{ item }}
         // </var-index-anchor>`],
-        //       [input, 'Input box The behavior of the input box is basically the same as the native one. When the user inputs, he always gets a string that conforms to the type rules. There are two styles: standard and outlined. The default is standard. ', '<var-input placeholder="Please enter text" v-model="value" />'],
 
-        // [picker, 'Multi-column picker provides two calling methods: function and component. It also supports cascade mode and can handle multi-level linkage. ', '<var-picker :columns="columns" />'],
         //       [rate, 'score', '<var-rate v-model="score" :count="8"/>'],
 
-        //       [select, 'Select box displays and selects content through drop-down menu. ', `<var-select placeholder="Text associated value" v-model="value2">
-        //    <var-option label="Eat" :value="1" />
-        //    <var-option label="Sleep" :value="2" />
-        // </var-select>`],
         //       [slider, 'Slider is used to take a value within a given range. ', '<var-slider v-model="value" />'],
-        //       [snackbar, 'Message bar is used to display quick messages to the user. ', '<var-snackbar v-model:show="show">This is a message bar! ! </var-snackbar>'],
-
-        //       [timePicker, 'Time picker is used to select time. ', '<var-time-picker v-model="date" />'],
 
       //       [uploader, 'File upload provides file reading and image/video preview capabilities. Obtain the file upload server by listening to the after-read event. ', '<var-uploader v-model="files" @after-read="handleAfterRead"/>'],
       ]
