@@ -14,7 +14,7 @@
 - element-plus 2
 - antd 1、4、5
 - antdv 3、4
-- varlet 2
+- varlet 2、3
 - naive 2
 - primevue 3
 - quasar 2
