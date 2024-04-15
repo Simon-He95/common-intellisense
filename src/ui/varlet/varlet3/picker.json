@@ -3,105 +3,105 @@
   "props": {
     "v-model": {
       "description": "Selected values",
-      "description_zh": "Selected values",
+      "description_zh": "所选值",
       "default": "[]",
       "value": "",
       "type": "(string | number)[]"
     },
     "columns": {
       "description": "Column content",
-      "description_zh": "Column content",
+      "description_zh": "列内容",
       "default": "[]",
       "value": "",
       "type": "PickerColumnOption[] | PickerColumnOption[][]"
     },
     "title": {
       "description": "Title",
-      "description_zh": "Title",
+      "description_zh": "标题",
       "default": "Pick it",
       "value": "",
       "type": "string"
     },
     "text-key": {
       "description": "Text key",
-      "description_zh": "Text key",
+      "description_zh": "文本键",
       "default": "text",
       "value": "",
       "type": "string"
     },
     "value-key": {
       "description": "Value key",
-      "description_zh": "Value key",
+      "description_zh": "值键",
       "default": "value",
       "value": "",
       "type": "string"
     },
     "children-key": {
       "description": "Children key",
-      "description_zh": "Children key",
+      "description_zh": "儿童键",
       "default": "children",
       "value": "",
       "type": "string"
     },
     "toolbar": {
       "description": "Whether to display the upper toolbar",
-      "description_zh": "Whether to display the upper toolbar",
+      "description_zh": "是否显示上部工具栏",
       "default": "true",
       "value": "",
       "type": "boolean"
     },
     "cascade": {
       "description": "Whether to enable cascade mode",
-      "description_zh": "Whether to enable cascade mode",
+      "description_zh": "是否开启级联模式",
       "default": "true",
       "value": "",
       "type": "boolean"
     },
     "option-height": {
       "description": "The height of the option",
-      "description_zh": "The height of the option",
+      "description_zh": "选项的高度",
       "default": "44",
       "value": "",
       "type": "string | number"
     },
     "option-count": {
       "description": "Number of visible options",
-      "description_zh": "Number of visible options",
+      "description_zh": "可见选项数",
       "default": "6",
       "value": "",
       "type": "string | number"
     },
     "confirm-button-text": {
       "description": "Confirm button text",
-      "description_zh": "Confirm button text",
+      "description_zh": "确认按钮文本",
       "default": "Confirm",
       "value": "",
       "type": "string"
     },
     "cancel-button-text": {
       "description": "Cancel button text",
-      "description_zh": "Cancel button text",
+      "description_zh": "取消按钮文本",
       "default": "Cancel",
       "value": "",
       "type": "string"
     },
     "confirm-button-text-color": {
       "description": "Confirm button text color",
-      "description_zh": "Confirm button text color",
+      "description_zh": "确认按钮文本颜色",
       "default": "-",
       "value": "",
       "type": "string"
     },
     "cancel-button-text-color": {
       "description": "Cancel button text color",
-      "description_zh": "Cancel button text color",
+      "description_zh": "取消按钮文本颜色",
       "default": "-",
       "value": "",
       "type": "string"
     },
     "close-on-key-escape": {
       "description": "Whether to support keyboard ESC to close the picker",
-      "description_zh": "Whether to support keyboard ESC to close the picker",
+      "description_zh": "是否支持键盘ESC关闭选择器",
       "default": "true",
       "value": "",
       "type": "boolean"
@@ -114,44 +114,63 @@
     {
       "name": "change",
       "description": "Triggered when the pick content changes",
-      "description_zh": "Triggered when the pick content changes",
-      "params": "values: (string | number)[] Selected Values  indexes: number[] Selected indexes  options: PickerColumnOption[] Selected options"
+      "description_zh": "在拣选内容更改时触发",
+      "params": "values: (string | number)[] Selected Values  indexes: number[] Selected indexes  options: PickerColumnOption[] Selected options",
+      "value": ""
     },
     {
       "name": "cancel",
       "description": "Triggered when you click the cancel button",
-      "description_zh": "Triggered when you click the cancel button",
-      "params": "values: (string | number)[] Selected Values  indexes: number[] Selected indexes  options: PickerColumnOption[] Selected options"
+      "description_zh": "单击取消按钮时触发",
+      "params": "values: (string | number)[] Selected Values  indexes: number[] Selected indexes  options: PickerColumnOption[] Selected options",
+      "value": ""
     },
     {
       "name": "confirm",
       "description": "Triggered when you click the confirm button",
-      "description_zh": "Triggered when you click the confirm button",
-      "params": "values: (string | number)[] Selected Values  indexes: number[] Selected indexes  options: PickerColumnOption[] Selected options"
+      "description_zh": "单击确认按钮时触发",
+      "params": "values: (string | number)[] Selected Values  indexes: number[] Selected indexes  options: PickerColumnOption[] Selected options",
+      "value": ""
     },
     {
       "name": "key-escape",
       "description": "Triggered when click keyboard ESC",
-      "description_zh": "Triggered when click keyboard ESC",
-      "params": "-"
+      "description_zh": "单击键盘 ESC 时触发",
+      "params": "-",
+      "value": ""
     }
   ],
-  "methods": [],
+  "methods": [
+    {
+      "name": "confirm",
+      "description": "Immediately stop scrolling and trigger the confirm event",
+      "description_zh": "立即停止滚动并触发确认事件",
+      "params": "",
+      "value": ""
+    },
+    {
+      "name": "cancel",
+      "description": "Immediately stop scrolling and trigger the cancel event",
+      "description_zh": "立即停止滚动并触发取消事件",
+      "params": "",
+      "value": ""
+    }
+  ],
   "slots": [
     {
       "name": "title",
       "description": "Title content",
-      "description_zh": "Title content"
+      "description_zh": "标题内容"
     },
     {
       "name": "cancel",
       "description": "Cancel button content",
-      "description_zh": "Cancel button content"
+      "description_zh": "取消按钮内容"
     },
     {
       "name": "confirm",
       "description": "Confirm button content",
-      "description_zh": "Confirm button content"
+      "description_zh": "确认按钮内容"
     }
   ],
   "suggestions": []

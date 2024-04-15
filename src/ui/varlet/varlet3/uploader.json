@@ -1,0 +1,256 @@
+{
+  "name": "VarUploader",
+  "props": {
+    "v-model": {
+      "description": "File list",
+      "description_zh": "文件列表",
+      "default": "[]",
+      "value": "",
+      "type": "VarFile[]"
+    },
+    "accept": {
+      "description": "Accepted file type, consistent with the native attribute",
+      "description_zh": "接受的文件类型，与本机属性一致",
+      "default": "image/*",
+      "value": "",
+      "type": "string"
+    },
+    "capture": {
+      "description": "Get the file, the same as the native property",
+      "description_zh": "获取与本机属性相同的文件",
+      "default": "-",
+      "value": "",
+      "type": "string"
+    },
+    "multiple": {
+      "description": "Whether to select multiple files",
+      "description_zh": "是否选择多个文件",
+      "default": "false",
+      "value": "",
+      "type": "boolean"
+    },
+    "readonly": {
+      "description": "Whether the readonly",
+      "description_zh": "是否只读",
+      "default": "false",
+      "value": "",
+      "type": "boolean"
+    },
+    "disabled": {
+      "description": "Whether the disabled",
+      "description_zh": "是否残障人士",
+      "default": "false",
+      "value": "",
+      "type": "boolean"
+    },
+    "elevation": {
+      "description": "Elevation level, options true false and level of 0-24, not in simple mode",
+      "description_zh": "高程级别，选项 true false 和 0-24 级别，不在简单模式下",
+      "default": "true",
+      "value": "",
+      "type": "string | number | boolean"
+    },
+    "removable": {
+      "description": "Whether the removable",
+      "description_zh": "是否可移动",
+      "default": "true",
+      "value": "",
+      "type": "boolean"
+    },
+    "maxlength": {
+      "description": "Maximum number of files",
+      "description_zh": "最大文件数",
+      "default": "-",
+      "value": "",
+      "type": "string | number"
+    },
+    "maxsize": {
+      "description": "Maximum file size, the unit is byte",
+      "description_zh": "最大文件大小，单位为字节",
+      "default": "-",
+      "value": "",
+      "type": "string | number"
+    },
+    "previewed": {
+      "description": "Whether to allow preview",
+      "description_zh": "是否允许预览",
+      "default": "true",
+      "value": "",
+      "type": "boolean"
+    },
+    "prevent-default-preview": {
+      "description": "Prevent default preview behavior",
+      "description_zh": "阻止默认预览行为",
+      "default": "false",
+      "value": "",
+      "type": "boolean"
+    },
+    "ripple": {
+      "description": "Whether to open ripple",
+      "description_zh": "是否打开瑞波币",
+      "default": "true",
+      "value": "",
+      "type": "boolean"
+    },
+    "hide-list": {
+      "description": "Whether to hide the file list",
+      "description_zh": "是否隐藏文件列表",
+      "default": "false",
+      "value": "",
+      "type": "boolean"
+    },
+    "resolve-type": {
+      "description": "The file preprocessing type, can be set to default file data-url (default, the image type contains dataURL and File object, other types contain only File object. file, which contains only File object. data-url, all file types contain dataURL and File object)",
+      "description_zh": "文件预处理类型，可以设置为默认文件 data-url（默认，图像类型包含 dataURL 和 File 对象，其他类型只包含 File 对象。 file，只包含 File 对象。 data-url，所有文件类型都包含 dataURL 和 File 对象）",
+      "default": "default",
+      "value": "",
+      "type": "string"
+    },
+    "validate-trigger": {
+      "description": "Timing to trigger validation. The optional value is onChange onRemove",
+      "description_zh": "触发验证的时间。可选值为 onChange onRemove",
+      "default": "['onChange', 'onRemove']",
+      "value": "",
+      "type": "ValidateTriggers[]"
+    },
+    "rules": {
+      "description": "The validation rules, return true to indicate that the validation passed. The remaining values are converted to text as user prompts",
+      "description_zh": "验证规则返回 true 以指示验证通过。其余值将转换为用户提示时的文本",
+      "default": "-",
+      "value": "",
+      "type": "Array<(v: VarFile, u: VarFileUtils) => any>"
+    }
+  },
+  "link": "https://varlet.gitee.io/varlet-ui/#/en-US/uploader",
+  "link_zh": "https://varlet.gitee.io/varlet-ui/#/zh-CN/uploader",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "before-filter",
+      "description": "Triggered before the event before-read to filter the file list",
+      "description_zh": "在事件之前触发 before-read 以筛选文件列表",
+      "params": "files: VarFile[]",
+      "value": ""
+    },
+    {
+      "name": "before-read",
+      "description": "Triggered returns a false value before a file is read to prevent the file from being read(support promise)",
+      "description_zh": "Triggered 在读取文件之前返回一个 false 值，以防止文件被读取（支持 promise）",
+      "params": "file: VarFile",
+      "value": ""
+    },
+    {
+      "name": "after-read",
+      "description": "Triggered after the file is read",
+      "description_zh": "读取文件后触发",
+      "params": "file: VarFile",
+      "value": ""
+    },
+    {
+      "name": "oversize",
+      "description": "Triggered when the file size limit is exceeded",
+      "description_zh": "超出文件大小限制时触发",
+      "params": "file: VarFile",
+      "value": ""
+    },
+    {
+      "name": "before-remove",
+      "description": "Triggered before file deletion, return false value to prevent file deletion (support promise)",
+      "description_zh": "在文件删除前触发，返回 false 值以防止文件删除（支持承诺）",
+      "params": "file: VarFile",
+      "value": ""
+    },
+    {
+      "name": "remove",
+      "description": "Triggered when deleting a file. There is a true value to prevent deleting a file (support promise)",
+      "description_zh": "删除文件时触发。有一个 true 值可以防止删除文件（支持承诺）",
+      "params": "file: VarFile",
+      "value": ""
+    },
+    {
+      "name": "preview",
+      "description": "Triggered when a file is previewed",
+      "description_zh": "预览文件时触发",
+      "params": "file: VarFile",
+      "value": ""
+    },
+    {
+      "name": "click-action",
+      "description": "Intercept click behavior of upload button",
+      "description_zh": "拦截上传按钮的点击行为",
+      "params": "chooseFile: () => void, event: Event",
+      "value": ""
+    }
+  ],
+  "methods": [
+    {
+      "name": "chooseFile",
+      "description": "Trigger the file selection action and display the file list",
+      "description_zh": "触发文件选择操作并显示文件列表",
+      "params": "",
+      "value": ""
+    },
+    {
+      "name": "closePreview",
+      "description": "Close preview file popup",
+      "description_zh": "关闭预览文件弹出窗口",
+      "params": "",
+      "value": ""
+    },
+    {
+      "name": "getLoading",
+      "description": "Gets a collection of files for state is loading",
+      "description_zh": "获取状态正在加载的文件集合",
+      "params": "",
+      "value": ""
+    },
+    {
+      "name": "getSuccess",
+      "description": "Gets a collection of files for state is success",
+      "description_zh": "获取状态为成功的文件集合",
+      "params": "",
+      "value": ""
+    },
+    {
+      "name": "getError",
+      "description": "Gets a collection of files for state is error",
+      "description_zh": "获取状态为 error 的文件集合",
+      "params": "",
+      "value": ""
+    },
+    {
+      "name": "validate",
+      "description": "Trigger validate",
+      "description_zh": "触发验证",
+      "params": "",
+      "value": ""
+    },
+    {
+      "name": "resetValidation",
+      "description": "Clearing validate messages",
+      "description_zh": "清除验证邮件",
+      "params": "",
+      "value": ""
+    },
+    {
+      "name": "reset",
+      "description": "Clear the value of the binding(set to [])and validate messages",
+      "description_zh": "清除 binding（set to []） 的值并验证消息",
+      "params": "",
+      "value": ""
+    }
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "description": "Upload action content",
+      "description_zh": "上传操作内容"
+    },
+    {
+      "name": "extra-message",
+      "description": "Extra message",
+      "description_zh": "额外消息"
+    }
+  ],
+  "suggestions": []
+}

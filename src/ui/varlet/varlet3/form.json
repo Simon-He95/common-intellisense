@@ -3,28 +3,28 @@
   "props": {
     "readonly": {
       "description": "Whether the readonly",
-      "description_zh": "Whether the readonly",
+      "description_zh": "是否只读",
       "default": "false",
       "value": "",
       "type": "boolean"
     },
     "disabled": {
       "description": "Whether the disabled",
-      "description_zh": "Whether the disabled",
+      "description_zh": "是否残障人士",
       "default": "false",
       "value": "",
       "type": "boolean"
     },
     "scroll-to-error": {
       "description": "Whether to scroll to the failed form item when the validation fails, the optional value is start end",
-      "description_zh": "Whether to scroll to the failed form item when the validation fails, the optional value is start end",
+      "description_zh": "验证失败时是否滚动到失败的表单项，可选值为 start end",
       "default": "-",
       "value": "",
       "type": "string"
     },
     "scroll-to-error-offset-y": {
       "description": "Scroll to the position offset of the form item that fails validation",
-      "description_zh": "Scroll to the position offset of the form item that fails validation",
+      "description_zh": "滚动到未通过验证的表单项的位置偏移量",
       "default": "0",
       "value": "",
       "type": "number | string"
@@ -37,22 +37,46 @@
     {
       "name": "submit",
       "description": "Triggered when the form is submitted",
-      "description_zh": "Triggered when the form is submitted",
-      "params": "valid: boolean Whether to pass the form verification"
+      "description_zh": "提交表单时触发",
+      "params": "valid: boolean Whether to pass the form verification",
+      "value": ""
     },
     {
       "name": "reset",
       "description": "Fired when the form is reset",
-      "description_zh": "Fired when the form is reset",
-      "params": "-"
+      "description_zh": "重置窗体时触发",
+      "params": "-",
+      "value": ""
     }
   ],
-  "methods": [],
+  "methods": [
+    {
+      "name": "validate",
+      "description": "Trigger validation for all form components",
+      "description_zh": "所有表单组件的触发器验证",
+      "params": "",
+      "value": ""
+    },
+    {
+      "name": "resetValidation",
+      "description": "Clear the validation messages for all form components",
+      "description_zh": "清除所有表单组件的验证消息",
+      "params": "",
+      "value": ""
+    },
+    {
+      "name": "reset",
+      "description": "Clear all form component bindings of values and validation messages",
+      "description_zh": "清除值和验证消息的所有表单组件绑定",
+      "params": "",
+      "value": ""
+    }
+  ],
   "slots": [
     {
       "name": "default",
       "description": "Form content",
-      "description_zh": "Form content"
+      "description_zh": "表单内容"
     }
   ],
   "suggestions": []

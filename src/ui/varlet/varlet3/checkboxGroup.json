@@ -1,12 +1,19 @@
 {
-  "name": "VarRadioGroup",
+  "name": "VarCheckboxGroup",
   "props": {
     "v-model": {
       "description": "The value of the binding",
       "description_zh": "绑定的值",
+      "default": "[]",
+      "value": "",
+      "type": "any[]"
+    },
+    "max": {
+      "description": "Maximum number of checked",
+      "description_zh": "最大检查次数",
       "default": "-",
       "value": "",
-      "type": "any"
+      "type": "string | number"
     },
     "direction": {
       "description": "The layout direction, optional value is horizontal vertical",
@@ -20,18 +27,18 @@
       "description_zh": "验证规则返回 true 以指示验证通过。其余值将转换为用户提示时的文本",
       "default": "-",
       "value": "",
-      "type": "Array<(value: any) => any>"
+      "type": "Array<(value: any[]) => any>"
     }
   },
-  "link": "https://varlet.gitee.io/varlet-ui/#/en-US/radio-group",
-  "link_zh": "https://varlet.gitee.io/varlet-ui/#/zh-CN/radio-group",
+  "link": "https://varlet.gitee.io/varlet-ui/#/en-US/checkbox-group",
+  "link_zh": "https://varlet.gitee.io/varlet-ui/#/zh-CN/checkbox-group",
   "typeDetail": {},
   "events": [
     {
       "name": "change",
       "description": "Triggered on change",
       "description_zh": "在更改时触发",
-      "params": "value: any",
+      "params": "value: any[]",
       "value": ""
     }
   ],
@@ -45,15 +52,29 @@
     },
     {
       "name": "resetValidation",
-      "description": "Clear validate messages",
+      "description": "Clearing validate messages",
       "description_zh": "清除验证邮件",
       "params": "",
       "value": ""
     },
     {
       "name": "reset",
-      "description": "Clear the value of the binding(set to undefined) and validate messages",
-      "description_zh": "清除 binding（set to undefined） 的值并验证消息",
+      "description": "Clear the value of the binding(set to []) and validate messages",
+      "description_zh": "清除 binding（set to []） 的值并验证消息",
+      "params": "",
+      "value": ""
+    },
+    {
+      "name": "checkAll",
+      "description": "Check all",
+      "description_zh": "全部选中",
+      "params": "",
+      "value": ""
+    },
+    {
+      "name": "inverseAll",
+      "description": "Inverse all",
+      "description_zh": "全部反转",
       "params": "",
       "value": ""
     }
@@ -61,9 +82,11 @@
   "slots": [
     {
       "name": "default",
-      "description": "Radio Group content",
-      "description_zh": "Radio Group 内容"
+      "description": "Checkbox Group content",
+      "description_zh": "复选框组内容"
     }
   ],
-  "suggestions": []
+  "suggestions": [
+    "var-checkbox"
+  ]
 }

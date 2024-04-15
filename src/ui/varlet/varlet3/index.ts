@@ -15,7 +15,7 @@ import loading from './loading.json'
 import loadingBar from './loadingBar.json'
 import chip from './chip.json'
 import badge from './badge.json'
-import eclipsis from './eclipsis.json'
+import ellipsis from './ellipsis.json'
 import paper from './paper.json'
 import skeleton from './skeleton.json'
 import collapse from './collapse.json'
@@ -45,9 +45,7 @@ import appBar from './appBar.json'
 import indexBar from './indexBar.json'
 import bottomNavigation from './bottomNavigation.json'
 import bottomNavigationItem from './bottomNavigationItem.json'
-
 import backTop from './backTop.json'
-
 import floatingPanel from './floatingPanel.json'
 import menuOption from './menuOption.json'
 import menuSelect from './menuSelect.json'
@@ -72,16 +70,14 @@ import select from './select.json'
 import datePicker from './datePicker.json'
 import timePicker from './timePicker.json'
 import formDetails from './formDetails.json'
-
-// import vswitch from './switch.json'
-// import checkbox from './checkbox.json'
-// import checkboxGroup from './checkboxGroup.json'
-// import counter from './counter.json'
-// import ellipsis from './ellipsis.json'
-// import indexAnchor from './indexAnchor.json'
-// import rate from './rate.json'
-// import slider from './slider.json'
-// import uploader from './uploader.json'
+import indexAnchor from './indexAnchor.json'
+import vswitch from './switch.json'
+import checkbox from './checkbox.json'
+import checkboxGroup from './checkboxGroup.json'
+import counter from './counter.json'
+import rate from './rate.json'
+import slider from './slider.json'
+import uploader from './uploader.json'
 
 export function varlet3() {
   const map: any = [
@@ -99,7 +95,6 @@ export function varlet3() {
     loadingBar,
     chip,
     badge,
-    eclipsis,
     paper,
     skeleton,
     collapse,
@@ -156,16 +151,15 @@ export function varlet3() {
     select,
     picker,
     formDetails,
-    // vswitch,
-    // checkbox,
-    // checkboxGroup,
-    // counter,
-    // ellipsis,
-    // indexAnchor,
-    // rate,
-    // slider,
-    // uploader,
-
+    vswitch,
+    checkbox,
+    checkboxGroup,
+    counter,
+    ellipsis,
+    indexAnchor,
+    rate,
+    slider,
+    uploader,
   ]
 
   return propsReducer('varlet', map, 'var')
@@ -194,7 +188,6 @@ export function varlet3Components() {
         [loading, '加载 加载组件,用于数据加载时执行动画.', '<var-loading type="circle" />'],
         [chip, '纸片', '<var-chip>默认纸片</var-chip>'],
         [badge, '徽标', `<${hyphenate(badge.name).slice(1)}></${hyphenate(badge.name).slice(1)}>`],
-        [eclipsis, '省略', `<${hyphenate(eclipsis.name).slice(1)}></${hyphenate(eclipsis.name).slice(1)}>`],
         [paper, '纸张 创建一个更容易的使用海拔效果和水波效果的容器', '<var-paper :elevation="2" :width="100" :height="100" ripple />'],
         [skeleton, '骨架屏 显示一些带过渡效果的占位元素,优化加载过程.', '<var-skeleton :loading="loading">加载的数据</var-skeleton>'],
         [collapse, '折叠面板 可以折叠/展开的内容区域.', '<var-collapse v-model="value" @change="changeHandle"></varrow>'],
@@ -290,7 +283,6 @@ export function varlet3Components() {
             @closed="() => Snackbar.info('closed')"
           />`],
         [pagination, '分页', '<var-pagination :current="3" :total="120" />'],
-
         [countdown, '倒计时 用于实时展示倒计时数值,支持毫秒精度.', '<var-countdown :time="time" />'],
         [drag, '拖拽 使元素可以自由拖拽.', `<var-drag>
           <var-button type="primary">基本使用</var-button>
@@ -305,7 +297,6 @@ export function varlet3Components() {
     </var-tooltip>`],
         [floatingPanel, '浮动面板', `<${hyphenate(floatingPanel.name).slice(1)}></${hyphenate(floatingPanel.name).slice(1)}>`],
         [loadingBar, '加载条', `<${hyphenate(loadingBar.name).slice(1)}></${hyphenate(loadingBar.name).slice(1)}>`],
-
         [option, '下拉选项', `<${hyphenate(option.name).slice(1)}></${hyphenate(option.name).slice(1)}>`],
         [radio, '单选框', '<var-radio v-model="value">当前的值: {{ value }}</var-radio>'],
         [radioGroup, '单选框组', `<var-radio-group v-model="value">
@@ -328,28 +319,25 @@ export function varlet3Components() {
         [timePicker, '时间选择器 用于选择时间.', '<var-time-picker v-model="date" />'],
         [datePicker, '日期选择器 用于选择日期或日期范围.', '<var-date-picker v-model="date" />'],
 
-        //       [vswitch, '开关', '<var-switch v-model="value" />'],
-        //       [checkbox, '复选框', '<var-checkbox v-model="value">当前的值: {{ value }}</var-checkbox>'],
-        //       [checkboxGroup, '复选框组', `<var-checkbox-group
-        //   v-model="value"
-        //   :rules="[v => v.length === 2 || '请全选']"
-        // >
-        //   <var-checkbox :checked-value="0">吃饭</var-checkbox>
-        //   <var-checkbox :checked-value="1">睡觉</var-checkbox>
-        // </var-checkbox-group>`],
-
-        // [counter, '计数器', '<var-counter v-model="value"/>'],
-        //       [ellipsis, '文本省略 主要用于省略单行文字和多行文字.', `<var-ellipsis style="max-width: 170px">
-        //   其实没有什么事情是不可能的,我都拿到世界冠军了,真的没有什么事情是不可能的.
-        // </var-ellipsis>`],
-        //       [indexAnchor, '索引栏 用于跳转到页面指定位置.', `<var-index-anchor :index="item" class="anchor">
-        //   标题 {{ item }}
-        // </var-index-anchor>`],
-
-        //       [rate, '评分', '<var-rate v-model="score" :count="8"/>'],
-
-      //       [slider, '滑块 用于在给定范围内取值.', '<var-slider v-model="value" />'],
-      //       [uploader, '文件上传 提供了文件读取、图片/视频预览能力. 通过监听 after-read 事件获取文件上传服务器.', '<var-uploader v-model="files" @after-read="handleAfterRead"/>'],
+        [vswitch, '开关', '<var-switch v-model="value" />'],
+        [checkbox, '复选框', '<var-checkbox v-model="value">当前的值: {{ value }}</var-checkbox>'],
+        [checkboxGroup, '复选框组', `<var-checkbox-group
+          v-model="value"
+          :rules="[v => v.length === 2 || '请全选']"
+        >
+          <var-checkbox :checked-value="0">吃饭</var-checkbox>
+          <var-checkbox :checked-value="1">睡觉</var-checkbox>
+        </var-checkbox-group>`],
+        [counter, '计数器', '<var-counter v-model="value"/>'],
+        [ellipsis, '文本省略 主要用于省略单行文字和多行文字.', `<var-ellipsis style="max-width: 170px">
+          其实没有什么事情是不可能的,我都拿到世界冠军了,真的没有什么事情是不可能的.
+        </var-ellipsis>`],
+        [indexAnchor, '索引栏 用于跳转到页面指定位置.', `<var-index-anchor :index="item" class="anchor">
+          标题 {{ item }}
+        </var-index-anchor>`],
+        [rate, '评分', '<var-rate v-model="score" :count="8"/>'],
+        [slider, '滑块 用于在给定范围内取值.', '<var-slider v-model="value" />'],
+        [uploader, '文件上传 提供了文件读取、图片/视频预览能力. 通过监听 after-read 事件获取文件上传服务器.', '<var-uploader v-model="files" @after-read="handleAfterRead"/>'],
       ]
     : [
         [button, 'Button', '<var-button>Default button</var-button>'],
@@ -370,7 +358,6 @@ export function varlet3Components() {
         [loading, 'Loading loading component, used to perform animation when data is loaded. ', '<var-loading type="circle" />'],
         [chip, 'Chip', '<var-chip>default paper</var-chip>'],
         [badge, badge.name, `<${hyphenate(badge.name).slice(1)}></${hyphenate(badge.name).slice(1)}>`],
-        [eclipsis, 'Eclipsis', `<${hyphenate(eclipsis.name).slice(1)}></${hyphenate(eclipsis.name).slice(1)}>`],
         [paper, 'Paper creates a container that makes it easier to use elevation and ripple effects', '<var-paper :elevation="2" :width="100" :height="100" ripple /> '],
         [skeleton, 'Skeleton screen displays some placeholder elements with transition effects to optimize the loading process. ', '<var-skeleton :loading="loading">Loading data</var-skeleton>'],
         [collapse, 'Collapse panel A content area that can be collapsed/expanded. ', '<var-collapse v-model="value" @change="changeHandle"></varrow>'],
@@ -478,9 +465,7 @@ export function varlet3Components() {
 </var-tooltip>`],
         [pullRefresh, 'Pull-refresh is used to provide interactive operations of pull-down refresh', ' <var-pull-refresh v-model="isRefresh" @refresh="refresh"></var-pull-refresh >'],
         [loadingBar, 'Loading Bar', `<${hyphenate(loadingBar.name).slice(1)}></${hyphenate(loadingBar.name).slice(1)}>`],
-
         [option, option.name, `<${hyphenate(option.name).slice(1)}></${hyphenate(option.name).slice(1)}>`],
-
         [radio, 'Radio button', '<var-radio v-model="value">Current value: {{ value }}</var-radio>'],
         [radioGroup, 'Radio button group', `<var-radio-group v-model="value">
          <var-radio :checked-value="0">Eat</var-radio>
@@ -489,45 +474,38 @@ export function varlet3Components() {
         [datePicker, 'Date picker is used to select a date or date range. ', '<var-date-picker v-model="date" />'],
         [formDetails, 'Form provides the ability to control all form components. ', '<var-form-details :error-message="errorMessage" :extra-message="extraMessage" />'],
         [input, 'Input box The behavior of the input box is basically the same as the native one. When the user inputs, he always gets a string that conforms to the type rules. There are two styles: standard and outlined. The default is standard. ', '<var-input placeholder="Please enter text" v-model="value" />'],
-
         [picker, 'Multi-column picker provides two calling methods: function and component. It also supports cascade mode and can handle multi-level linkage. ', '<var-picker :columns="columns" />'],
         [select, 'Select box displays and selects content through drop-down menu. ', `<var-select placeholder="Text associated value" v-model="value2">
          <var-option label="Eat" :value="1" />
          <var-option label="Sleep" :value="2" />
       </var-select>`],
         [snackbar, 'Message bar is used to display quick messages to the user. ', '<var-snackbar v-model:show="show">This is a message bar! ! </var-snackbar>'],
-
         [timePicker, 'Time picker is used to select time. ', '<var-time-picker v-model="date" />'],
-        //       [vswitch, 'switch', '<var-switch v-model="value" />'],
-        //       [checkbox, 'checkbox', '<var-checkbox v-model="value">Current value: {{ value }}</var-checkbox>'],
-        //       [checkboxGroup, 'checkbox group', `<var-checkbox-group
-        //    v-model="value"
-        //    :rules="[v => v.length === 2 || 'Please select all']"
-        // >
-        //    <var-checkbox :checked-value="0">Eat</var-checkbox>
-        //    <var-checkbox :checked-value="1">Sleep</var-checkbox>
-        // </var-checkbox-group>`],
-        //       [form, 'form', `<var-form
-        //      ref="form"
-        //      :disabled="disabled"
-        //      :readonly="readonly"
-        //      scroll-to-error="start"
-        //    ></var-form>`],
-
-        //       [counter, 'Counter', '<var-counter v-model="value"/>'],
-
-        //       [ellipsis, 'Text omission is mainly used to omit single-line text and multi-line text. ', `<var-ellipsis style="max-width: 170px">
-        //    In fact, nothing is impossible. I have won the world championship, so nothing is impossible.
-        // </var-ellipsis>`],
-        //       [indexAnchor, 'The index column is used to jump to the specified position on the page. ', `<var-index-anchor :index="item" class="anchor">
-        //    Title {{ item }}
-        // </var-index-anchor>`],
-
-        //       [rate, 'score', '<var-rate v-model="score" :count="8"/>'],
-
-        //       [slider, 'Slider is used to take a value within a given range. ', '<var-slider v-model="value" />'],
-
-      //       [uploader, 'File upload provides file reading and image/video preview capabilities. Obtain the file upload server by listening to the after-read event. ', '<var-uploader v-model="files" @after-read="handleAfterRead"/>'],
+        [vswitch, 'switch', '<var-switch v-model="value" />'],
+        [checkbox, 'checkbox', '<var-checkbox v-model="value">Current value: {{ value }}</var-checkbox>'],
+        [checkboxGroup, 'checkbox group', `<var-checkbox-group
+         v-model="value"
+         :rules="[v => v.length === 2 || 'Please select all']"
+      >
+         <var-checkbox :checked-value="0">Eat</var-checkbox>
+         <var-checkbox :checked-value="1">Sleep</var-checkbox>
+      </var-checkbox-group>`],
+        [form, 'form', `<var-form
+           ref="form"
+           :disabled="disabled"
+           :readonly="readonly"
+           scroll-to-error="start"
+         ></var-form>`],
+        [counter, 'Counter', '<var-counter v-model="value"/>'],
+        [ellipsis, 'Text omission is mainly used to omit single-line text and multi-line text. ', `<var-ellipsis style="max-width: 170px">
+           In fact, nothing is impossible. I have won the world championship, so nothing is impossible.
+        </var-ellipsis>`],
+        [indexAnchor, 'The index column is used to jump to the specified position on the page. ', `<var-index-anchor :index="item" class="anchor">
+         Title {{ item }}
+      </var-index-anchor>`],
+        [rate, 'score', '<var-rate v-model="score" :count="8"/>'],
+        [slider, 'Slider is used to take a value within a given range. ', '<var-slider v-model="value" />'],
+        [uploader, 'File upload provides file reading and image/video preview capabilities. Obtain the file upload server by listening to the after-read event. ', '<var-uploader v-model="files" @after-read="handleAfterRead"/>'],
       ]
   return componentsReducer(map, true, 'var', 'varlet')
 }

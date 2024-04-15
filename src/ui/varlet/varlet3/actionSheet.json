@@ -3,84 +3,84 @@
   "props": {
     "v-model:show": {
       "description": "Whether to display the action sheet",
-      "description_zh": "Whether to display the action sheet",
+      "description_zh": "是否显示操作表",
       "default": "false",
       "value": "",
       "type": "boolean"
     },
     "actions": {
       "description": "Action list",
-      "description_zh": "Action list",
+      "description_zh": "操作列表",
       "default": "[]",
       "value": "",
       "type": "Actions"
     },
     "title": {
       "description": "Action sheet title",
-      "description_zh": "Action sheet title",
+      "description_zh": "操作表标题",
       "default": "Select One",
       "value": "",
       "type": "string"
     },
     "overlay": {
       "description": "Whether to display the overlay",
-      "description_zh": "Whether to display the overlay",
+      "description_zh": "是否显示叠加",
       "default": "true",
       "value": "",
       "type": "boolean"
     },
     "overlay-class": {
       "description": "Custom overlay class",
-      "description_zh": "Custom overlay class",
+      "description_zh": "自定义叠加类",
       "default": "-",
       "value": "",
       "type": "string"
     },
     "overlay-style": {
       "description": "Custom overlay style",
-      "description_zh": "Custom overlay style",
+      "description_zh": "自定义叠加样式",
       "default": "-",
       "value": "",
       "type": "object"
     },
     "lock-scroll": {
       "description": "Whether to disable scrolling penetration, scrolling the Dialog when disabled will not cause the body to scroll",
-      "description_zh": "Whether to disable scrolling penetration, scrolling the Dialog when disabled will not cause the body to scroll",
+      "description_zh": "是否禁用滚动渗透，禁用时滚动对话框不会导致正文滚动",
       "default": "true",
       "value": "",
       "type": "boolean"
     },
     "close-on-click-action": {
       "description": "Whether to close the actions sheet when clicking action",
-      "description_zh": "Whether to close the actions sheet when clicking action",
+      "description_zh": "是否在单击操作时关闭操作表",
       "default": "true",
       "value": "",
       "type": "boolean"
     },
     "close-on-click-overlay": {
       "description": "Whether to click the overlay to close the action sheet",
-      "description_zh": "Whether to click the overlay to close the action sheet",
+      "description_zh": "是否单击叠加层以关闭操作表",
       "default": "true",
       "value": "",
       "type": "boolean"
     },
     "close-on-key-escape": {
       "description": "Whether to support keyboard ESC to close the action sheet",
-      "description_zh": "Whether to support keyboard ESC to close the action sheet",
+      "description_zh": "是否支持键盘ESC关闭操作表",
       "default": "true",
       "value": "",
       "type": "boolean"
     },
     "safe-area": {
       "description": "Whether to enable bottom safety zone adaptation",
-      "description_zh": "Whether to enable bottom safety zone adaptation",
+      "description_zh": "是否启用底部安全区适配",
       "default": "false",
       "value": "",
       "type": "boolean"
     },
     "teleport": {
       "description": "The location of the action sheet to mount",
-      "description_zh": "The location of the action sheet to mount",
+      "description_zh": "要装载的操作表的位置",
       "default": "body",
       "value": "",
       "type": "TeleportProps['to'] | false"
@@ -93,57 +93,93 @@
     {
       "name": "select",
       "description": "Triggered when selecting an action sheet",
-      "description_zh": "Triggered when selecting an action sheet",
-      "params": "action: Action"
+      "description_zh": "选择操作表时触发",
+      "params": "action: Action",
+      "value": ""
     },
     {
       "name": "open",
       "description": "Triggered when opening an action sheet",
-      "description_zh": "Triggered when opening an action sheet",
-      "params": "-"
+      "description_zh": "打开操作表时触发",
+      "params": "-",
+      "value": ""
     },
     {
       "name": "opened",
       "description": "Triggered when an action sheet open-animation ends",
-      "description_zh": "Triggered when an action sheet open-animation ends",
-      "params": "-"
+      "description_zh": "在操作表打开动画结束时触发",
+      "params": "-",
+      "value": ""
     },
     {
       "name": "close",
       "description": "Triggered when closing an action sheet",
-      "description_zh": "Triggered when closing an action sheet",
-      "params": "-"
+      "description_zh": "关闭操作表时触发",
+      "params": "-",
+      "value": ""
     },
     {
       "name": "closed",
       "description": "Triggered when an action sheet close-animation ends",
-      "description_zh": "Triggered when an action sheet close-animation ends",
-      "params": "-"
+      "description_zh": "在操作表关闭动画结束时触发",
+      "params": "-",
+      "value": ""
     },
     {
       "name": "click-overlay",
       "description": "Triggered when clicking on overlay",
-      "description_zh": "Triggered when clicking on overlay",
-      "params": "-"
+      "description_zh": "单击叠加层时触发",
+      "params": "-",
+      "value": ""
     },
     {
       "name": "key-escape",
       "description": "Triggered when click keyboard ESC",
-      "description_zh": "Triggered when click keyboard ESC",
-      "params": "-"
+      "description_zh": "单击键盘 ESC 时触发",
+      "params": "-",
+      "value": ""
     }
   ],
-  "methods": [],
+  "methods": [
+    {
+      "name": "ActionSheet",
+      "description": "Show action sheet",
+      "description_zh": "显示操作表",
+      "params": "",
+      "value": ""
+    },
+    {
+      "name": "ActionSheet.close",
+      "description": "Close action sheet",
+      "description_zh": "关闭操作表",
+      "params": "",
+      "value": ""
+    },
+    {
+      "name": "ActionSheet.setDefaultOptions",
+      "description": "Set default option configuration",
+      "description_zh": "设置默认选项配置",
+      "params": "",
+      "value": ""
+    },
+    {
+      "name": "ActionSheet.resetDefaultOptions",
+      "description": "Reset default option configuration",
+      "description_zh": "重置默认选项配置",
+      "params": "",
+      "value": ""
+    }
+  ],
   "slots": [
     {
       "name": "actions",
       "description": "Action list",
-      "description_zh": "Action list"
+      "description_zh": "操作列表"
     },
     {
       "name": "title",
       "description": "Action sheet title",
-      "description_zh": "Action sheet title"
+      "description_zh": "操作表标题"
     }
   ],
   "suggestions": []

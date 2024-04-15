@@ -3,77 +3,77 @@
   "props": {
     "v-model:show": {
       "description": "Whether or display",
-      "description_zh": "Whether or display",
+      "description_zh": "是否显示",
       "default": "false",
       "value": "",
       "type": "boolean"
     },
     "images": {
       "description": "Need to preview the image URL",
-      "description_zh": "Need to preview the image URL",
+      "description_zh": "需要预览图片 URL",
       "default": "[]",
       "value": "",
       "type": "string[]"
     },
     "initial-index": {
       "description": "Index from which the image preview starts",
-      "description_zh": "Index from which the image preview starts",
+      "description_zh": "图像预览从中开始的索引",
       "default": "0",
       "value": "",
       "type": "string | number"
     },
     "zoom": {
       "description": "Double-click to zoom in",
-      "description_zh": "Double-click to zoom in",
+      "description_zh": "双击放大",
       "default": "2",
       "value": "",
       "type": "string | number"
     },
     "closeable": {
       "description": "Whether to show the close button",
-      "description_zh": "Whether to show the close button",
+      "description_zh": "是否显示关闭按钮",
       "default": "false",
       "value": "",
       "type": "boolean"
     },
     "close-on-key-escape": {
       "description": "Whether to support keyboard ESC to close the image-preview",
-      "description_zh": "Whether to support keyboard ESC to close the image-preview",
+      "description_zh": "是否支持键盘ESC关闭镜像预览",
       "default": "true",
       "value": "",
       "type": "boolean"
     },
     "loop": {
       "description": "Whether to open loop playback",
-      "description_zh": "Whether to open loop playback",
+      "description_zh": "是否开环播放",
       "default": "true",
       "value": "",
       "type": "boolean"
     },
     "indicator": {
       "description": "Whether to show paging",
-      "description_zh": "Whether to show paging",
+      "description_zh": "是否显示分页",
       "default": "true",
       "value": "",
       "type": "boolean"
     },
     "lock-scroll": {
       "description": "Lock scroll",
-      "description_zh": "Lock scroll",
+      "description_zh": "锁定滚动",
       "default": "true",
       "value": "",
       "type": "boolean"
     },
     "teleport": {
       "description": "The location of the pop-up layer to mount",
-      "description_zh": "The location of the pop-up layer to mount",
+      "description_zh": "要挂载的弹出图层的位置",
       "default": "body",
       "value": "",
       "type": "TeleportProps['to'] | false"
     },
     "image-prevent-default": {
       "description": "Whether to disable the default behavior of images",
-      "description_zh": "Whether to disable the default behavior of images",
+      "description_zh": "是否禁用镜像的默认行为",
       "default": "false",
       "value": "",
       "type": "boolean"
@@ -86,62 +86,126 @@
     {
       "name": "change",
       "description": "The callback function when switching images, the callback parameter is the current index",
-      "description_zh": "The callback function when switching images, the callback parameter is the current index",
-      "params": "index: number Image indexing"
+      "description_zh": "切换图像时的回调函数，回调参数为当前索引",
+      "params": "index: number Image indexing",
+      "value": ""
     },
     {
       "name": "open",
       "description": "Triggered when Image-Preview is turned on",
-      "description_zh": "Triggered when Image-Preview is turned on",
-      "params": "-"
+      "description_zh": "在打开图像预览时触发",
+      "params": "-",
+      "value": ""
     },
     {
       "name": "opened",
       "description": "Triggered at the end of the open image-preview animation",
-      "description_zh": "Triggered at the end of the open image-preview animation",
-      "params": "-"
+      "description_zh": "在打开的图像预览动画结束时触发",
+      "params": "-",
+      "value": ""
     },
     {
       "name": "close",
       "description": "Triggered when Image-Preview is off",
-      "description_zh": "Triggered when Image-Preview is off",
-      "params": "-"
+      "description_zh": "在图像预览关闭时触发",
+      "params": "-",
+      "value": ""
     },
     {
       "name": "closed",
       "description": "Triggered when the animation that closes the image-preview ends",
-      "description_zh": "Triggered when the animation that closes the image-preview ends",
-      "params": "-"
+      "description_zh": "在关闭图像预览的动画结束时触发",
+      "params": "-",
+      "value": ""
     },
     {
       "name": "long-press",
       "description": "The callback function when long pressing an image, the callback parameter is the current index",
-      "description_zh": "The callback function when long pressing an image, the callback parameter is the current index",
-      "params": "index: number Image indexing"
+      "description_zh": "回调函数 当长按图像时，回调参数为当前索引",
+      "params": "index: number Image indexing",
+      "value": ""
     },
     {
       "name": "key-escape",
       "description": "Triggered when click keyboard ESC",
-      "description_zh": "Triggered when click keyboard ESC",
-      "params": "-"
+      "description_zh": "单击键盘 ESC 时触发",
+      "params": "-",
+      "value": ""
     }
   ],
-  "methods": [],
+  "methods": [
+    {
+      "name": "ImagePreview",
+      "description": "Open image-preview",
+      "description_zh": "打开镜像预览",
+      "params": "",
+      "value": ""
+    },
+    {
+      "name": "ImagePreview.close",
+      "description": "Close image-preview",
+      "description_zh": "关闭图像预览",
+      "params": "",
+      "value": ""
+    },
+    {
+      "name": "ImagePreview.setDefaultOptions",
+      "description": "Set default option configuration",
+      "description_zh": "设置默认选项配置",
+      "params": "",
+      "value": ""
+    },
+    {
+      "name": "ImagePreview.resetDefaultOptions",
+      "description": "Reset default option configuration",
+      "description_zh": "重置默认选项配置",
+      "params": "",
+      "value": ""
+    },
+    {
+      "name": "prev",
+      "description": "Previous page",
+      "description_zh": "上一页",
+      "params": "",
+      "value": ""
+    },
+    {
+      "name": "next",
+      "description": "Next page",
+      "description_zh": "下一页",
+      "params": "",
+      "value": ""
+    },
+    {
+      "name": "to",
+      "description": "To index page",
+      "description_zh": "到索引页",
+      "params": "",
+      "value": ""
+    },
+    {
+      "name": "zoom",
+      "description": "Enlarge or reduce the picture",
+      "description_zh": "放大或缩小图片",
+      "params": "",
+      "value": ""
+    }
+  ],
   "slots": [
     {
       "name": "indicator",
       "description": "Paging indicator",
-      "description_zh": "Paging indicator"
+      "description_zh": "寻呼指示器"
     },
     {
       "name": "close-icon",
       "description": "Close button",
-      "description_zh": "Close button"
+      "description_zh": "“关闭”按钮"
     },
     {
       "name": "extra",
       "description": "Extra slots",
-      "description_zh": "Extra slots"
+      "description_zh": "额外插槽"
     }
   ],
   "suggestions": []

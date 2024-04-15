@@ -3,91 +3,91 @@
   "props": {
     "width": {
       "description": "Watermark width",
-      "description_zh": "Watermark width",
+      "description_zh": "水印宽度",
       "default": "100",
       "value": "",
       "type": "number"
     },
     "height": {
       "description": "Watermark height",
-      "description_zh": "Watermark height",
+      "description_zh": "水印高度",
       "default": "100",
       "value": "",
       "type": "number"
     },
     "content": {
       "description": "Watermark text content",
-      "description_zh": "Watermark text content",
+      "description_zh": "水印文本内容",
       "default": "-",
       "value": "",
       "type": "string"
     },
     "image": {
       "description": "The path of the image watermark has a higher priority than content",
-      "description_zh": "The path of the image watermark has a higher priority than content",
+      "description_zh": "图像水印的路径比内容具有更高的优先级",
       "default": "-",
       "value": "",
       "type": "string"
     },
     "rotate": {
       "description": "Watermark rotation angle",
-      "description_zh": "Watermark rotation angle",
+      "description_zh": "水印旋转角度",
       "default": "-22",
       "value": "",
       "type": "number"
     },
     "offset-x": {
       "description": "Offset of the watermark from the container's x-axis",
-      "description_zh": "Offset of the watermark from the container's x-axis",
+      "description_zh": "水印与容器 x 轴的偏移量",
       "default": "0",
       "value": "",
       "type": "number"
     },
     "offset-y": {
       "description": "Offset of the watermark from the container's y-axis",
-      "description_zh": "Offset of the watermark from the container's y-axis",
+      "description_zh": "水印与容器 y 轴的偏移量",
       "default": "0",
       "value": "",
       "type": "number"
     },
     "gap-x": {
       "description": "Spacing in the horizontal direction of the watermark",
-      "description_zh": "Spacing in the horizontal direction of the watermark",
+      "description_zh": "水印水平方向的间距",
       "default": "0",
       "value": "",
       "type": "number"
     },
     "gap-y": {
       "description": "Spacing in the vertical direction of the watermark",
-      "description_zh": "Spacing in the vertical direction of the watermark",
+      "description_zh": "水印垂直方向的间距",
       "default": "0",
       "value": "",
       "type": "number"
     },
     "z-index": {
       "description": "Watermark z-index",
-      "description_zh": "Watermark z-index",
+      "description_zh": "水印 z 索引",
       "default": "10",
       "value": "",
       "type": "number | string"
     },
     "opacity": {
       "description": "Watermark opacity",
-      "description_zh": "Watermark opacity",
+      "description_zh": "水印不透明度",
       "default": "0.5",
       "value": "",
       "type": "number | string"
     },
     "fullscreen": {
       "description": "Whether to display watermark in fullscreen mode",
-      "description_zh": "Whether to display watermark in fullscreen mode",
+      "description_zh": "是否在全屏模式下显示水印",
       "default": "false",
       "value": "",
       "type": "boolean"
     },
     "font": {
       "description": "Watermark text style",
-      "description_zh": "Watermark text style",
+      "description_zh": "水印文本样式",
       "default": "-",
       "value": "",
       "type": "WatermarkFont"
@@ -97,12 +97,20 @@
   "link_zh": "https://varlet.gitee.io/varlet-ui/#/zh-CN/watermark",
   "typeDetail": {},
   "events": [],
-  "methods": [],
+  "methods": [
+    {
+      "name": "resize",
+      "description": "This method can be called for redrawing when the watermark attribute changes",
+      "description_zh": "当水印属性发生变化时，可以调用此方法进行重绘",
+      "params": "",
+      "value": ""
+    }
+  ],
   "slots": [
     {
       "name": "content",
       "description": "The content of HTML Watermark, only supports inline styles, does not support passing in self closing tags, priority higher than content or image attributes",
-      "description_zh": "The content of HTML Watermark, only supports inline styles, does not support passing in self closing tags, priority higher than content or image attributes"
+      "description_zh": "HTML Watermark 的内容，仅支持内联样式，不支持传入自闭合标签，优先级高于内容或图像属性"
     }
   ],
   "suggestions": []

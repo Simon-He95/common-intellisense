@@ -1,5 +1,5 @@
 {
-  "name": "VarRadio",
+  "name": "VarCheckbox",
   "props": {
     "v-model": {
       "description": "The value of the binding",
@@ -43,6 +43,13 @@
       "value": "",
       "type": "string | number"
     },
+    "disabled": {
+      "description": "Whether the disabled",
+      "description_zh": "是否残障人士",
+      "default": "false",
+      "value": "",
+      "type": "boolean"
+    },
     "readonly": {
       "description": "Whether the readonly",
       "description_zh": "是否只读",
@@ -50,9 +57,9 @@
       "value": "",
       "type": "boolean"
     },
-    "disabled": {
-      "description": "Whether the disabled",
-      "description_zh": "是否残障人士",
+    "indeterminate": {
+      "description": "Whether indeterminate status(style has the highest priority)",
+      "description_zh": "是否不确定状态（样式优先级最高）",
       "default": "false",
       "value": "",
       "type": "boolean"
@@ -72,14 +79,14 @@
       "type": "Array<(value: any) => any>"
     }
   },
-  "link": "https://varlet.gitee.io/varlet-ui/#/en-US/radio-group",
-  "link_zh": "https://varlet.gitee.io/varlet-ui/#/zh-CN/radio-group",
+  "link": "https://varlet.gitee.io/varlet-ui/#/en-US/checkbox-group",
+  "link_zh": "https://varlet.gitee.io/varlet-ui/#/zh-CN/checkbox-group",
   "typeDetail": {},
   "events": [
     {
       "name": "click",
-      "description": "Triggered on click",
-      "description_zh": "点击触发",
+      "description": "Triggered on Click",
+      "description_zh": "点击时触发",
       "params": "e: Event",
       "value": ""
     },
@@ -101,7 +108,7 @@
     },
     {
       "name": "resetValidation",
-      "description": "Clear validate messages",
+      "description": "Clearing validate messages",
       "description_zh": "清除验证邮件",
       "params": "",
       "value": ""
@@ -131,6 +138,11 @@
       "name": "unchecked-icon",
       "description": "Unchecked icon",
       "description_zh": "未选中的图标"
+    },
+    {
+      "name": "indeterminate-icon",
+      "description": "Indeterminate icon",
+      "description_zh": "不确定图标"
     },
     {
       "name": "default",

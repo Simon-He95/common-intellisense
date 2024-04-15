@@ -3,14 +3,14 @@
   "props": {
     "offset": {
       "description": "Avatar Offset within Avatar Group",
-      "description_zh": "Avatar Offset within Avatar Group",
+      "description_zh": "Avatar 组内的 Avatar 偏移量",
       "default": "-",
       "value": "",
       "type": "number | string"
     },
     "vertical": {
       "description": "Whether the group avatars are vertically aligned",
-      "description_zh": "Whether the group avatars are vertically aligned",
+      "description_zh": "群组头像是否垂直对齐",
       "default": "false",
       "value": "",
       "type": "boolean"
@@ -23,20 +23,23 @@
     {
       "name": "click",
       "description": "Triggered when clicking on avatar",
-      "description_zh": "Triggered when clicking on avatar",
-      "params": "event: Event"
+      "description_zh": "点击头像时触发",
+      "params": "event: Event",
+      "value": ""
     },
     {
       "name": "load",
       "description": "Triggered when the avatar image is successfully loaded (failure in lazy loading mode will try to load the avatar image multiple times and will only be triggered when successfully loaded)",
-      "description_zh": "Triggered when the avatar image is successfully loaded (failure in lazy loading mode will try to load the avatar image multiple times and will only be triggered when successfully loaded)",
-      "params": "event: Event"
+      "description_zh": "头像图像加载成功时触发（延迟加载模式失败会尝试多次加载头像图像，只有在成功加载时才会触发）",
+      "params": "event: Event",
+      "value": ""
     },
     {
       "name": "error",
       "description": "Triggered when the avatar image fails to load (failure in lazy loading mode will try to load the avatar image multiple times, will only be triggered at the end of the number of attempts)",
-      "description_zh": "Triggered when the avatar image fails to load (failure in lazy loading mode will try to load the avatar image multiple times, will only be triggered at the end of the number of attempts)",
-      "params": "event: Event"
+      "description_zh": "头像图像加载失败时触发（延迟加载模式失败会尝试多次加载头像图像，仅在尝试次数结束时触发）",
+      "params": "event: Event",
+      "value": ""
     }
   ],
   "methods": [],
@@ -44,7 +47,7 @@
     {
       "name": "default",
       "description": "Avatar group content",
-      "description_zh": "Avatar group content"
+      "description_zh": "头像群组内容"
     }
   ]
 }

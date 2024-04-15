@@ -3,42 +3,42 @@
   "props": {
     "direction": {
       "description": "Drag direction, optional value is x y xy",
-      "description_zh": "Drag direction, optional value is x y xy",
+      "description_zh": "拖动方向，可选值为 x y xy",
       "default": "xy",
       "value": "",
       "type": "string"
     },
     "attraction": {
       "description": "Attraction direction, optional value is x y xy",
-      "description_zh": "Attraction direction, optional value is x y xy",
+      "description_zh": "吸引方向，可选值为 x y xy",
       "default": "-",
       "value": "",
       "type": "string"
     },
     "disabled": {
       "description": "Whether to disable",
-      "description_zh": "Whether to disable",
+      "description_zh": "是否禁用",
       "default": "false",
       "value": "",
       "type": "boolean"
     },
     "boundary": {
       "description": "Drag boundary",
-      "description_zh": "Drag boundary",
+      "description_zh": "拖动边界",
       "default": "{ top: 0, bottom: 0, left: 0, right: 0 }",
       "value": "",
       "type": "{ top?: number | string, bottom?: number | string, left?: number | string, right?: number | string }"
     },
     "z-index": {
       "description": "Drag element z-index",
-      "description_zh": "Drag element z-index",
+      "description_zh": "拖动元素 z-index",
       "default": "90",
       "value": "",
       "type": "string | number"
     },
     "teleport": {
       "description": "The location where the dragged element is mounted",
-      "description_zh": "The location where the dragged element is mounted",
+      "description_zh": "拖动元素的挂载位置",
       "default": "body",
       "value": "",
       "type": "TeleportProps['to'] | false"
@@ -51,16 +51,32 @@
     {
       "name": "click",
       "description": "Triggered when clicking drag component",
-      "description_zh": "Triggered when clicking drag component",
-      "params": "event: Event"
+      "description_zh": "单击拖动组件时触发",
+      "params": "event: Event",
+      "value": ""
     }
   ],
-  "methods": [],
+  "methods": [
+    {
+      "name": "resize",
+      "description": "You can call this method to redraw when a drag element changes position size",
+      "description_zh": "可以调用此方法在拖动元素更改位置大小时重新绘制",
+      "params": "",
+      "value": ""
+    },
+    {
+      "name": "reset",
+      "description": "Reset initialized position information",
+      "description_zh": "重置初始化位置信息",
+      "params": "",
+      "value": ""
+    }
+  ],
   "slots": [
     {
       "name": "default",
       "description": "Drag element's content",
-      "description_zh": "Drag element's content"
+      "description_zh": "拖动元素的内容"
     }
   ],
   "suggestions": []

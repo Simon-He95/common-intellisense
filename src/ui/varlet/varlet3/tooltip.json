@@ -3,105 +3,105 @@
   "props": {
     "v-model:show": {
       "description": "Whether to show the tooltip",
-      "description_zh": "Whether to show the tooltip",
+      "description_zh": "是否显示工具提示",
       "default": "false",
       "value": "",
       "type": "boolean"
     },
     "content": {
       "description": "Display content",
-      "description_zh": "Display content",
+      "description_zh": "显示内容",
       "default": "-",
       "value": "",
       "type": "string"
     },
     "color": {
       "description": "Tooltip background color",
-      "description_zh": "Tooltip background color",
+      "description_zh": "工具提示背景颜色",
       "default": "-",
       "value": "",
       "type": "string"
     },
     "type": {
       "description": "Tooltip type, can be set to default primary info success warning danger",
-      "description_zh": "Tooltip type, can be set to default primary info success warning danger",
+      "description_zh": "工具提示类型，可设置为默认主信息成功警告危险",
       "default": "default",
       "value": "",
       "type": "string"
     },
     "placement": {
       "description": "Tooltip popup placement",
-      "description_zh": "Tooltip popup placement",
+      "description_zh": "工具提示弹出窗口放置",
       "default": "bottom",
       "value": "",
       "type": "Placement"
     },
     "strategy": {
       "description": "Tooltip position strategy, optional value is absolute fixed",
-      "description_zh": "Tooltip position strategy, optional value is absolute fixed",
+      "description_zh": "工具提示位置策略，可选值为绝对固定",
       "default": "absolute",
       "value": "",
       "type": "string"
     },
     "offset-x": {
       "description": "The x-axis offset, relative to the tooltip-aligned position",
-      "description_zh": "The x-axis offset, relative to the tooltip-aligned position",
+      "description_zh": "x 轴偏移量，相对于刀具提示对齐位置",
       "default": "0",
       "value": "",
       "type": "number | string"
     },
     "offset-y": {
       "description": "The y-axis offset, relative to the tooltip-aligned position",
-      "description_zh": "The y-axis offset, relative to the tooltip-aligned position",
+      "description_zh": "相对于工具提示对齐位置的 y 轴偏移量",
       "default": "0",
       "value": "",
       "type": "number | string"
     },
     "teleport": {
       "description": "The location of the tooltip mount",
-      "description_zh": "The location of the tooltip mount",
+      "description_zh": "工具提示装载的位置",
       "default": "body",
       "value": "",
       "type": "TeleportProps['to'] | false"
     },
     "same-width": {
       "description": "Whether to same width as trigger element",
-      "description_zh": "Whether to same width as trigger element",
+      "description_zh": "是否与触发元件的宽度相同",
       "default": "false",
       "value": "",
       "type": "boolean"
     },
     "disabled": {
       "description": "Whether to disable the tooltip",
-      "description_zh": "Whether to disable the tooltip",
+      "description_zh": "是否禁用工具提示",
       "default": "false",
       "value": "",
       "type": "boolean"
     },
     "trigger": {
       "description": "Tooltip trigger method, optional value is click hover, click is triggered when clicked, hover is triggered when hovered",
-      "description_zh": "Tooltip trigger method, optional value is click hover, click is triggered when clicked, hover is triggered when hovered",
+      "description_zh": "工具提示触发方式，可选值为点击悬停、点击时触发、悬停时触发悬停",
       "default": "hover",
       "value": "",
       "type": "string"
     },
     "reference": {
       "description": "The associated trigger element selector is used to specify specific child elements as trigger elements",
-      "description_zh": "The associated trigger element selector is used to specify specific child elements as trigger elements",
+      "description_zh": "关联的触发元素选择器用于将特定的子元素指定为触发元素",
       "default": "-",
       "value": "",
       "type": "string"
     },
     "close-on-click-reference": {
       "description": "Whether to close the menu when clicking the reference element",
-      "description_zh": "Whether to close the menu when clicking the reference element",
+      "description_zh": "单击引用元素时是否关闭菜单",
       "default": "false",
       "value": "",
       "type": "boolean"
     },
     "close-on-key-escape": {
       "description": "Whether to support keyboard ESC to close the tooltip",
-      "description_zh": "Whether to support keyboard ESC to close the tooltip",
+      "description_zh": "是否支持键盘ESC关闭工具提示",
       "default": "true",
       "value": "",
       "type": "boolean"
@@ -114,50 +114,77 @@
     {
       "name": "open",
       "description": "Triggered when the Tooltip is opened",
-      "description_zh": "Triggered when the Tooltip is opened",
-      "params": "-"
+      "description_zh": "打开工具提示时触发",
+      "params": "-",
+      "value": ""
     },
     {
       "name": "opened",
       "description": "Triggered when the open Tooltip animation ends",
-      "description_zh": "Triggered when the open Tooltip animation ends",
-      "params": "-"
+      "description_zh": "在打开的工具提示动画结束时触发",
+      "params": "-",
+      "value": ""
     },
     {
       "name": "close",
       "description": "Triggered when the Tooltip is closed",
-      "description_zh": "Triggered when the Tooltip is closed",
-      "params": "-"
+      "description_zh": "在工具提示关闭时触发",
+      "params": "-",
+      "value": ""
     },
     {
       "name": "closed",
       "description": "Triggered when the closing Tooltip animation ends",
-      "description_zh": "Triggered when the closing Tooltip animation ends",
-      "params": "-"
+      "description_zh": "在关闭工具提示动画结束时触发",
+      "params": "-",
+      "value": ""
     },
     {
       "name": "click-outside",
       "description": "Triggered when clicking outside the tooltip",
-      "description_zh": "Triggered when clicking outside the tooltip",
-      "params": "event: Event"
+      "description_zh": "在工具提示外部单击时触发",
+      "params": "event: Event",
+      "value": ""
     }
   ],
-  "methods": [],
+  "methods": [
+    {
+      "name": "open",
+      "description": "Open Tooltip",
+      "description_zh": "打开工具提示",
+      "params": "",
+      "value": ""
+    },
+    {
+      "name": "close",
+      "description": "Close Tooltip",
+      "description_zh": "关闭工具提示",
+      "params": "",
+      "value": ""
+    },
+    {
+      "name": "resize",
+      "description": "This method can be called to redraw when the default slot element of Tooltip changes its position and size",
+      "description_zh": "当工具提示的默认槽元素更改其位置和大小时，可以调用此方法进行重绘",
+      "params": "",
+      "value": ""
+    }
+  ],
   "slots": [
     {
       "name": "default",
       "description": "Tooltip trigger element",
-      "description_zh": "Tooltip trigger element"
+      "description_zh": "工具提示触发器元素"
     },
     {
       "name": "content",
       "description": "Tooltip content",
-      "description_zh": "Tooltip content"
+      "description_zh": "工具提示内容"
     },
     {
       "name": "click-outside",
       "description": "Triggered when clicking outside the menu",
-      "description_zh": "Triggered when clicking outside the menu"
+      "description_zh": "在菜单外单击时触发"
     }
   ],
   "suggestions": []

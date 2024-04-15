@@ -3,84 +3,84 @@
   "props": {
     "round": {
       "description": "Whether the avatar is round or not",
-      "description_zh": "Whether the avatar is round or not",
+      "description_zh": "头像是否是圆形的",
       "default": "true",
       "value": "",
       "type": "boolean"
     },
     "size": {
       "description": "The size of the avatar, with optional values of mini small normal large",
-      "description_zh": "The size of the avatar, with optional values of mini small normal large",
+      "description_zh": "头像大小，可选值为迷你小普通大",
       "default": "normal",
       "value": "",
       "type": "string | number"
     },
     "color": {
       "description": "Background color of the avatar",
-      "description_zh": "Background color of the avatar",
+      "description_zh": "头像的背景颜色",
       "default": "-",
       "value": "",
       "type": "string"
     },
     "src": {
       "description": "Address of avatar",
-      "description_zh": "Address of avatar",
+      "description_zh": "头像地址",
       "default": "-",
       "value": "",
       "type": "string"
     },
     "alt": {
       "description": "Image alt text, the same as the native attribute of the img tag",
-      "description_zh": "Image alt text, the same as the native attribute of the img tag",
+      "description_zh": "Image alt text，与 img 标签的原生属性相同",
       "default": "-",
       "value": "",
       "type": "string"
     },
     "fit": {
       "description": "Filling mode of avatar image, optional value fill contain cover none scale-down",
-      "description_zh": "Filling mode of avatar image, optional value fill contain cover none scale-down",
+      "description_zh": "头像图像填充模式，可选值填充包含封面无按比例缩小",
       "default": "cover",
       "value": "",
       "type": "string"
     },
     "bordered": {
       "description": "Avatar with or without border",
-      "description_zh": "Avatar with or without border",
+      "description_zh": "带或不带边框的头像",
       "default": "false",
       "value": "",
       "type": "boolean"
     },
     "border-color": {
       "description": "Avatar border color",
-      "description_zh": "Avatar border color",
+      "description_zh": "头像边框颜色",
       "default": "-",
       "value": "",
       "type": "string"
     },
     "loading": {
       "description": "When lazy loading is enabled, the image displayed in the load",
-      "description_zh": "When lazy loading is enabled, the image displayed in the load",
+      "description_zh": "启用延迟加载后，加载中显示的图像",
       "default": "-",
       "value": "",
       "type": "string"
     },
     "error": {
       "description": "When lazy loading is enabled, the image displayed when loading fails",
-      "description_zh": "When lazy loading is enabled, the image displayed when loading fails",
+      "description_zh": "启用延迟加载时，加载失败时显示的图像",
       "default": "-",
       "value": "",
       "type": "string"
     },
     "lazy": {
       "description": "Whether to enable lazy loading",
-      "description_zh": "Whether to enable lazy loading",
+      "description_zh": "是否启用延迟加载",
       "default": "false",
       "value": "",
       "type": "boolean"
     },
     "hoverable": {
       "description": "Whether to enable hover effect",
-      "description_zh": "Whether to enable hover effect",
+      "description_zh": "是否启用悬停效果",
       "default": "false",
       "value": "",
       "type": "boolean"
@@ -93,20 +93,23 @@
     {
       "name": "click",
       "description": "Triggered when clicking on avatar",
-      "description_zh": "Triggered when clicking on avatar",
-      "params": "event: Event"
+      "description_zh": "点击头像时触发",
+      "params": "event: Event",
+      "value": ""
     },
     {
       "name": "load",
       "description": "Triggered when the avatar image is successfully loaded (failure in lazy loading mode will try to load the avatar image multiple times and will only be triggered when successfully loaded)",
-      "description_zh": "Triggered when the avatar image is successfully loaded (failure in lazy loading mode will try to load the avatar image multiple times and will only be triggered when successfully loaded)",
-      "params": "event: Event"
+      "description_zh": "头像图像加载成功时触发（延迟加载模式失败会尝试多次加载头像图像，只有在成功加载时才会触发）",
+      "params": "event: Event",
+      "value": ""
     },
     {
       "name": "error",
       "description": "Triggered when the avatar image fails to load (failure in lazy loading mode will try to load the avatar image multiple times, will only be triggered at the end of the number of attempts)",
-      "description_zh": "Triggered when the avatar image fails to load (failure in lazy loading mode will try to load the avatar image multiple times, will only be triggered at the end of the number of attempts)",
-      "params": "event: Event"
+      "description_zh": "头像图像加载失败时触发（延迟加载模式失败会尝试多次加载头像图像，仅在尝试次数结束时触发）",
+      "params": "event: Event",
+      "value": ""
     }
   ],
   "methods": [],
@@ -114,7 +117,7 @@
     {
       "name": "default",
       "description": "Avatar content",
-      "description_zh": "Avatar content"
+      "description_zh": "头像内容"
     }
   ]
 }

@@ -2,56 +2,56 @@
   "name": "VarList",
   "props": {
     "v-model:loading": {
-      "description": "加载状态",
+      "description": "Loading status",
       "description_zh": "加载状态",
       "default": "false",
       "value": "",
       "type": "boolean"
     },
     "v-model:error": {
-      "description": "错误状态",
+      "description": "Error status",
       "description_zh": "错误状态",
       "default": "false",
       "value": "",
       "type": "boolean"
     },
     "immediate-check": {
-      "description": "是否在组件初始化时立刻检测位置",
+      "description": "Whether the position is detected immediately when the component is initialized",
       "description_zh": "是否在组件初始化时立刻检测位置",
       "default": "true",
       "value": "",
       "type": "boolean"
     },
     "finished": {
-      "description": "是否加载完毕",
+      "description": "Whether it has been loaded",
       "description_zh": "是否加载完毕",
       "default": "false",
       "value": "",
       "type": "boolean"
     },
     "offset": {
-      "description": "距离底部的触发距离",
+      "description": "The trigger distance from the bottom",
       "description_zh": "距离底部的触发距离",
       "default": "0",
       "value": "",
       "type": "string | number"
     },
     "loading-text": {
-      "description": "加载状态文字",
+      "description": "Load status text",
       "description_zh": "加载状态文字",
       "default": "加载中",
       "value": "",
       "type": "string"
     },
     "finished-text": {
-      "description": "加载完毕文字",
+      "description": "Finished loading text",
       "description_zh": "加载完毕文字",
       "default": "没有更多了",
       "value": "",
       "type": "string"
     },
     "error-text": {
-      "description": "加载失败文字",
+      "description": "Loading failed text",
       "description_zh": "加载失败文字",
       "default": "加载失败",
       "value": "",
@@ -64,31 +64,40 @@
   "events": [
     {
       "name": "load",
-      "description": "触底时触发",
+      "description": "Triggers when the bottom is reached",
       "description_zh": "触底时触发",
-      "params": "-"
+      "params": "-",
+      "value": ""
     }
   ],
-  "methods": [],
+  "methods": [
+    {
+      "name": "check",
+      "description": "Trigger position check, touch bottom trigger load event",
+      "description_zh": "触发位置检查，触底触发加载事件",
+      "params": "",
+      "value": ""
+    }
+  ],
   "slots": [
     {
       "name": "default",
-      "description": "列表内容",
+      "description": "List contents",
       "description_zh": "列表内容"
     },
     {
       "name": "loading",
-      "description": "加载中内容",
+      "description": "Loading",
       "description_zh": "加载中内容"
     },
     {
       "name": "error",
-      "description": "加载失败内容",
+      "description": "Failed to load content",
       "description_zh": "加载失败内容"
     },
     {
       "name": "finished",
-      "description": "加载完毕内容",
+      "description": "The content is loaded",
       "description_zh": "加载完毕内容"
     }
   ],

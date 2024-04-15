@@ -3,28 +3,28 @@
   "props": {
     "offset-top": {
       "description": "Sticky offset top",
-      "description_zh": "Sticky offset top",
+      "description_zh": "粘性偏置顶部",
       "default": "0",
       "value": "",
       "type": "string | number"
     },
     "z-index": {
       "description": "Sticky z-index",
-      "description_zh": "Sticky z-index",
+      "description_zh": "粘性 z 指数",
       "default": "10",
       "value": "",
       "type": "string | number"
     },
     "css-mode": {
       "description": "Enable native css sticky mode",
-      "description_zh": "Enable native css sticky mode",
+      "description_zh": "启用原生 css 粘性模式",
       "default": "false",
       "value": "",
       "type": "boolean"
     },
     "disabled": {
       "description": "Disable sticky, when set to true, the element will return to the document flow",
-      "description_zh": "Disable sticky, when set to true, the element will return to the document flow",
+      "description_zh": "禁用粘滞，设置为 true 时，元素将返回到文档流",
       "default": "false",
       "value": "",
       "type": "boolean"
@@ -37,16 +37,25 @@
     {
       "name": "scroll",
       "description": "Triggered when the scroll container rolls",
-      "description_zh": "Triggered when the scroll container rolls",
-      "params": "offsetTop: number  isFixed: boolean"
+      "description_zh": "滚动容器滚动时触发",
+      "params": "offsetTop: number  isFixed: boolean",
+      "value": ""
     }
   ],
-  "methods": [],
+  "methods": [
+    {
+      "name": "resize",
+      "description": "Triggered when sticky layout redraw",
+      "description_zh": "粘性布局重绘时触发",
+      "params": "",
+      "value": ""
+    }
+  ],
   "slots": [
     {
       "name": "default",
       "description": "Sticky content",
-      "description_zh": "Sticky content"
+      "description_zh": "粘性内容"
     }
   ],
   "suggestions": []

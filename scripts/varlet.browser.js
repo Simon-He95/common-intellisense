@@ -53,12 +53,20 @@ function run() {
       })
     })
   }
-  const methodsBody = (document.querySelector('#methods + table')
+  const methodsBody = ((document.querySelector('#methods + table')
     ? document.querySelector('#methods + table')
     : document.querySelector('#methods + * + table'))
-    || document.querySelector('#method + table')
+    || (document.querySelector('#method + table')
     ? document.querySelector('#method + table')
-    : document.querySelector('#method + * + table')
+    : document.querySelector('#method + * + table')))
+    || ((document.querySelector('#Methods + table')
+      ? document.querySelector('#Methods + table')
+      : document.querySelector('#Methods + * + table'))
+    || (document.querySelector('#Method + table')
+    ? document.querySelector('#Method + table')
+    : document.querySelector('#Method + * + table')))
+
+
   if (methodsBody) {
     Array.from(methodsBody.querySelectorAll('tbody tr')).forEach((item) => {
       const name = item.children[0].textContent.split('(')[0]
@@ -72,7 +80,7 @@ function run() {
   const name = `Var${link.split('/').slice(-1)[0].split('.')[0].split('-').map((i) => {
     return i[0].toUpperCase() + i.slice(1)
   }).join('')}`
-  const result = { name, props, link, link_zh: link.replace('en-US','zh-CN'), typeDetail: {}, events, methods, slots, suggestions: [] }
+  const result = { name, props, link, link_zh: link.replace('en-US', 'zh-CN'), typeDetail: {}, events, methods, slots, suggestions: [] }
   console.log(result)
 }
 
@@ -113,7 +121,7 @@ function getSlots() {
   return slots
 }
 
-function getMethods(){
+function getMethods() {
   const methods = []
   const methodsBody = $0.closest('tbody').querySelectorAll('tr')
   if (methodsBody) {
@@ -129,7 +137,7 @@ function getMethods(){
   return methods
 }
 
-function getEvents(){
+function getEvents() {
   const events = []
   const eventBody = $0.closest('tbody').querySelectorAll('tr')
   if (eventBody) {

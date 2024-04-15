@@ -2,63 +2,63 @@
   "name": "VarSwipe",
   "props": {
     "loop": {
-      "description": "是否开启循环轮播",
+      "description": "Whether to turn on the loop carousel",
       "description_zh": "是否开启循环轮播",
       "default": "true",
       "value": "",
       "type": "boolean"
     },
     "autoplay": {
-      "description": "自动播放间隔时间 (ms)",
+      "description": "Autoplay Interval (ms)",
       "description_zh": "自动播放间隔时间 (ms)",
       "default": "-",
       "value": "",
       "type": "string | number"
     },
     "duration": {
-      "description": "切换过渡时间 (ms)",
+      "description": "Transition Time (ms)",
       "description_zh": "切换过渡时间 (ms)",
       "default": "300",
       "value": "",
       "type": "string | number"
     },
     "initial-index": {
-      "description": "初始化显示的索引",
+      "description": "Initialize the displayed index",
       "description_zh": "初始化显示的索引",
       "default": "0",
       "value": "",
       "type": "string | number"
     },
     "indicator": {
-      "description": "是否显示指示器",
+      "description": "Whether or not an indicator is displayed",
       "description_zh": "是否显示指示器",
       "default": "true",
       "value": "",
       "type": "boolean"
     },
     "indicator-color": {
-      "description": "指示器颜色",
+      "description": "Indicator color",
       "description_zh": "指示器颜色",
       "default": "-",
       "value": "",
       "type": "string"
     },
     "vertical": {
-      "description": "是否开启垂直轮播",
+      "description": "Whether to turn on vertical carousel",
       "description_zh": "是否开启垂直轮播",
       "default": "false",
       "value": "",
       "type": "boolean"
     },
     "touchable": {
-      "description": "是否可以拖动",
+      "description": "Whether it is possible to drag",
       "description_zh": "是否可以拖动",
       "default": "true",
       "value": "",
       "type": "boolean"
     },
     "navigation": {
-      "description": "是否显示导航箭头。设置为 hover 时，指针悬浮会显示导航按钮",
+      "description": "Whether or not to display navigation arrows. When set to Hover, pointer hover displays navigation buttons",
       "description_zh": "是否显示导航箭头。设置为 hover 时，指针悬浮会显示导航按钮",
       "default": "false",
       "value": "",
@@ -71,56 +71,61 @@
   "events": [
     {
       "name": "change",
-      "description": "切换轮播时触发",
+      "description": "Triggered when the rotation is switched",
       "description_zh": "切换轮播时触发",
-      "params": "index: number 轮播索引"
+      "params": "index: number 轮播索引",
+      "value": ""
     }
   ],
   "methods": [
     {
       "name": "resize",
-      "description": "产生位置大小变化时可以调用此方法进行重绘",
+      "description": "This method can be called to redraw when a position size change occurs",
       "description_zh": "产生位置大小变化时可以调用此方法进行重绘",
-      "params": ""
+      "params": "",
+      "value": ""
     },
     {
       "name": "prev",
-      "description": "上一页",
+      "description": "Previous",
       "description_zh": "上一页",
-      "params": ""
+      "params": "",
+      "value": ""
     },
     {
       "name": "next",
-      "description": "下一页",
+      "description": "Next",
       "description_zh": "下一页",
-      "params": ""
+      "params": "",
+      "value": ""
     },
     {
       "name": "to",
-      "description": "跳转到指定下标",
+      "description": "Jump to the specified subscript",
       "description_zh": "跳转到指定下标",
-      "params": ""
+      "params": "",
+      "value": ""
     }
   ],
   "slots": [
     {
       "name": "default",
-      "description": "轮播内容",
+      "description": "Carousel content",
       "description_zh": "轮播内容"
     },
     {
       "name": "prev",
-      "description": "上一页按钮",
+      "description": "Previous button",
       "description_zh": "上一页按钮"
     },
     {
       "name": "next",
-      "description": "下一页按钮",
+      "description": "Next button",
       "description_zh": "下一页按钮"
     },
     {
       "name": "indicator",
-      "description": "指示器内容",
+      "description": "Indicator contents",
       "description_zh": "指示器内容"
     }
   ],

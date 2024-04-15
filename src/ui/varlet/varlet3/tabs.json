@@ -3,126 +3,126 @@
   "props": {
     "v-model:active": {
       "description": "The active tab identifier matches name first, followed by index",
-      "description_zh": "The active tab identifier matches name first, followed by index",
+      "description_zh": "活动选项卡标识符首先匹配名称，然后匹配索引",
       "default": "index",
       "value": "",
       "type": "string"
     },
     "layout-direction": {
       "description": "The layout direction of the tabs, optional value of horizontal vertical",
-      "description_zh": "The layout direction of the tabs, optional value of horizontal vertical",
+      "description_zh": "选项卡的布局方向，水平垂直的可选值",
       "default": "horizontal",
       "value": "",
       "type": "string"
     },
     "item-direction": {
       "description": "The layout direction of the tab, optional value of horizontal vertical",
-      "description_zh": "The layout direction of the tab, optional value of horizontal vertical",
+      "description_zh": "选项卡的布局方向，水平垂直的可选值",
       "default": "horizontal",
       "value": "",
       "type": "string"
     },
     "fixed-bottom": {
       "description": "Whether fixed to the bottom of the window, can be used for bottom navigation",
-      "description_zh": "Whether fixed to the bottom of the window, can be used for bottom navigation",
+      "description_zh": "是否固定在窗口底部，可用于底部导航",
       "default": "false",
       "value": "",
       "type": "boolean"
     },
     "color": {
       "description": "The background color of the tabs",
-      "description_zh": "The background color of the tabs",
+      "description_zh": "选项卡的背景颜色",
       "default": "-",
       "value": "",
       "type": "string"
     },
     "active-color": {
       "description": "The primary color that the tab is activates",
-      "description_zh": "The primary color that the tab is activates",
+      "description_zh": "选项卡激活的原色",
       "default": "-",
       "value": "",
       "type": "string"
     },
     "inactive-color": {
       "description": "The primary color that the tab is not activated",
-      "description_zh": "The primary color that the tab is not activated",
+      "description_zh": "选项卡未激活的原色",
       "default": "-",
       "value": "",
       "type": "string"
     },
     "disabled-color": {
       "description": "The primary color that the tab is disabled",
-      "description_zh": "The primary color that the tab is disabled",
+      "description_zh": "禁用选项卡的原色",
       "default": "-",
       "value": "",
       "type": "string"
     },
     "indicator-color": {
       "description": "The tab activates the color of the indicator",
-      "description_zh": "The tab activates the color of the indicator",
+      "description_zh": "选项卡激活指示器的颜色",
       "default": "-",
       "value": "",
       "type": "string"
     },
     "indicator-size": {
       "description": "Tab activates the size of the indicator",
-      "description_zh": "Tab activates the size of the indicator",
+      "description_zh": "Tab 键激活指标的大小",
       "default": "2px",
       "value": "",
       "type": "string | number"
     },
     "elevation": {
       "description": "Elevation level, options true false and level of 0-24",
-      "description_zh": "Elevation level, options true false and level of 0-24",
+      "description_zh": "高程级别，选项 true false 和 0-24 级别",
       "default": "false",
       "value": "",
       "type": "string | number | boolean"
     },
     "sticky": {
       "description": "Whether to enable sticky layouts",
-      "description_zh": "Whether to enable sticky layouts",
+      "description_zh": "是否启用粘性布局",
       "default": "false",
       "value": "",
       "type": "boolean"
     },
     "sticky-css-mode": {
       "description": "Whether to enable sticky layouts native css sticky mode",
-      "description_zh": "Whether to enable sticky layouts native css sticky mode",
+      "description_zh": "是否开启粘性布局原生CSS粘性模式",
       "default": "false",
       "value": "",
       "type": "boolean"
     },
     "sticky-z-index": {
       "description": "Sticky layouts z-index",
-      "description_zh": "Sticky layouts z-index",
+      "description_zh": "粘性布局 z-index",
       "default": "10",
       "value": "",
       "type": "number"
     },
     "safe-area": {
       "description": "Whether to enable bottom safe area adaptation",
-      "description_zh": "Whether to enable bottom safe area adaptation",
+      "description_zh": "是否启用底部安全区域适配",
       "default": "false",
       "value": "",
       "type": "boolean"
     },
     "offset-top": {
       "description": "Distance offset top",
-      "description_zh": "Distance offset top",
+      "description_zh": "距离偏移顶部",
       "default": "0",
       "value": "",
       "type": "string | number"
     },
     "scrollable": {
       "description": "Whether to enable scrollable, optional value of auto always",
-      "description_zh": "Whether to enable scrollable, optional value of auto always",
+      "description_zh": "是否启用可滚动，auto always 的可选值",
       "default": "auto",
       "value": "",
       "type": "string"
     },
     "indicator-position": {
       "description": "The position of the indicator, optional value of normal reverse",
-      "description_zh": "The position of the indicator, optional value of normal reverse",
+      "description_zh": "指标位置，可选值为正常反转",
       "default": "normal",
       "value": "",
       "type": "string"
@@ -135,23 +135,42 @@
     {
       "name": "click",
       "description": "Triggered when the tab is clicked, but not when the tab disabled status is true",
-      "description_zh": "Triggered when the tab is clicked, but not when the tab disabled status is true",
-      "params": "active: string | number"
+      "description_zh": "在单击选项卡时触发，但在选项卡禁用状态为 true 时不触发",
+      "params": "active: string | number",
+      "value": ""
     },
     {
       "name": "change",
       "description": "Triggered when switching tab",
-      "description_zh": "Triggered when switching tab",
-      "params": "active: string | number"
+      "description_zh": "切换选项卡时触发",
+      "params": "active: string | number",
+      "value": ""
     }
   ],
-  "methods": [],
+  "methods": [
+    {
+      "name": "resize",
+      "description": "Call this method to redraw when a tabs changes position size",
+      "description_zh": "调用此方法可在选项卡更改位置大小时重绘",
+      "params": "",
+      "value": ""
+    },
+    {
+      "name": "resizeSticky",
+      "description": "Call this method to redraw when a tabs sticky layouts changes position size",
+      "description_zh": "调用此方法可在选项卡粘性布局更改位置大小时重新绘制",
+      "params": "",
+      "value": ""
+    }
+  ],
   "slots": [
     {
       "name": "default",
       "description": "Tabs content",
-      "description_zh": "Tabs content"
+      "description_zh": "选项卡内容"
     }
   ],
-  "suggestions": ["var-tab"]
+  "suggestions": [
+    "var-tab"
+  ]
 }
