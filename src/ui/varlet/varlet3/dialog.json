@@ -1,0 +1,232 @@
+{
+  "name": "VarDialog",
+  "props": {
+    "v-model:show": {
+      "description": "Whether to display a Dialog",
+      "description_zh": "Whether to display a Dialog",
+      "default": "false",
+      "value": "",
+      "type": "boolean"
+    },
+    "title": {
+      "description": "Dialog title",
+      "description_zh": "Dialog title",
+      "default": "Hint",
+      "value": "",
+      "type": "string"
+    },
+    "width": {
+      "description": "Dialog width",
+      "description_zh": "Dialog width",
+      "default": "-",
+      "value": "",
+      "type": "string | number"
+    },
+    "message": {
+      "description": "Dialog message content",
+      "description_zh": "Dialog message content",
+      "default": "-",
+      "value": "",
+      "type": "string"
+    },
+    "message-align": {
+      "description": "Dialog message content text alignment, optional values center, left, right",
+      "description_zh": "Dialog message content text alignment, optional values center, left, right",
+      "default": "left",
+      "value": "",
+      "type": "string"
+    },
+    "confirm-button": {
+      "description": "Whether to display the confirm button",
+      "description_zh": "Whether to display the confirm button",
+      "default": "true",
+      "value": "",
+      "type": "boolean"
+    },
+    "cancel-button": {
+      "description": "Whether to display the cancel button",
+      "description_zh": "Whether to display the cancel button",
+      "default": "true",
+      "value": "",
+      "type": "boolean"
+    },
+    "confirm-button-text": {
+      "description": "Confirm button text",
+      "description_zh": "Confirm button text",
+      "default": "Confirm",
+      "value": "",
+      "type": "string"
+    },
+    "cancel-button-text": {
+      "description": "Cancel button text",
+      "description_zh": "Cancel button text",
+      "default": "Cancel",
+      "value": "",
+      "type": "string"
+    },
+    "confirm-button-text-color": {
+      "description": "Confirm button text color",
+      "description_zh": "Confirm button text color",
+      "default": "-",
+      "value": "",
+      "type": "string"
+    },
+    "cancel-button-text-color": {
+      "description": "Cancel button text color",
+      "description_zh": "Cancel button text color",
+      "default": "-",
+      "value": "",
+      "type": "string"
+    },
+    "confirm-button-color": {
+      "description": "Confirm button background color",
+      "description_zh": "Confirm button background color",
+      "default": "-",
+      "value": "",
+      "type": "string"
+    },
+    "cancel-button-color": {
+      "description": "Cancel button background color",
+      "description_zh": "Cancel button background color",
+      "default": "-",
+      "value": "",
+      "type": "string"
+    },
+    "dialog-class": {
+      "description": "Dialog body class",
+      "description_zh": "Dialog body class",
+      "default": "-",
+      "value": "",
+      "type": "string"
+    },
+    "dialog-style": {
+      "description": "Dialog body style",
+      "description_zh": "Dialog body style",
+      "default": "-",
+      "value": "",
+      "type": "object"
+    },
+    "overlay": {
+      "description": "Whether to display the overlay",
+      "description_zh": "Whether to display the overlay",
+      "default": "true",
+      "value": "",
+      "type": "boolean"
+    },
+    "overlay-class": {
+      "description": "Custom overlay class",
+      "description_zh": "Custom overlay class",
+      "default": "-",
+      "value": "",
+      "type": "string"
+    },
+    "overlay-style": {
+      "description": "Custom overlay style",
+      "description_zh": "Custom overlay style",
+      "default": "-",
+      "value": "",
+      "type": "string"
+    },
+    "lock-scroll": {
+      "description": "Whether to disable scrolling penetration, scrolling the Dialog when disabled will not cause the body to scroll",
+      "description_zh": "Whether to disable scrolling penetration, scrolling the Dialog when disabled will not cause the body to scroll",
+      "default": "true",
+      "value": "",
+      "type": "boolean"
+    },
+    "close-on-click-overlay": {
+      "description": "Whether to click the overlay to close the Dialog",
+      "description_zh": "Whether to click the overlay to close the Dialog",
+      "default": "true",
+      "value": "",
+      "type": "boolean"
+    },
+    "close-on-key-escape": {
+      "description": "Whether to support keyboard ESC to close the dialog",
+      "description_zh": "Whether to support keyboard ESC to close the dialog",
+      "default": "true",
+      "value": "",
+      "type": "boolean"
+    },
+    "teleport": {
+      "description": "The location of the Dialog to mount",
+      "description_zh": "The location of the Dialog to mount",
+      "default": "body",
+      "value": "",
+      "type": "TeleportProps['to'] | false"
+    }
+  },
+  "link": "https://varlet.gitee.io/varlet-ui/#/en-US/dialog",
+  "link_zh": "https://varlet.gitee.io/varlet-ui/#/zh-CN/dialog",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "open",
+      "description": "Triggered when the Dialog is open",
+      "description_zh": "Triggered when the Dialog is open",
+      "params": "-"
+    },
+    {
+      "name": "opened",
+      "description": "Triggered when the Dialog open-animation ends",
+      "description_zh": "Triggered when the Dialog open-animation ends",
+      "params": "-"
+    },
+    {
+      "name": "before-close",
+      "description": "Triggering before the Dialog closes prevents closure",
+      "description_zh": "Triggering before the Dialog closes prevents closure",
+      "params": "action: confirm | cancel | close  done: Function"
+    },
+    {
+      "name": "close",
+      "description": "Triggered when the Dialog is close",
+      "description_zh": "Triggered when the Dialog is close",
+      "params": "-"
+    },
+    {
+      "name": "closed",
+      "description": "Triggered when the Dialog close-animation ends",
+      "description_zh": "Triggered when the Dialog close-animation ends",
+      "params": "-"
+    },
+    {
+      "name": "confirm",
+      "description": "Triggered on confirm",
+      "description_zh": "Triggered on confirm",
+      "params": "-"
+    },
+    {
+      "name": "cancel",
+      "description": "Triggered on cancel",
+      "description_zh": "Triggered on cancel",
+      "params": "-"
+    },
+    {
+      "name": "click-overlay",
+      "description": "Triggered when clicking on overlay",
+      "description_zh": "Triggered when clicking on overlay",
+      "params": "-"
+    },
+    {
+      "name": "key-escape",
+      "description": "Triggered when click keyboard ESC",
+      "description_zh": "Triggered when click keyboard ESC",
+      "params": "-"
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "default",
+      "description": "Dialog content message",
+      "description_zh": "Dialog content message"
+    },
+    {
+      "name": "title",
+      "description": "Dialog title",
+      "description_zh": "Dialog title"
+    }
+  ],
+  "suggestions": []
+}

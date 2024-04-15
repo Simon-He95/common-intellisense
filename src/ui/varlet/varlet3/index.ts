@@ -12,6 +12,7 @@ import image from './image.json'
 import avatar from './avatar.json'
 import avatarGroup from './avatarGroup.json'
 import loading from './loading.json'
+import loadingBar from './loadingBar.json'
 import chip from './chip.json'
 import badge from './badge.json'
 import eclipsis from './eclipsis.json'
@@ -45,41 +46,41 @@ import indexBar from './indexBar.json'
 import bottomNavigation from './bottomNavigation.json'
 import bottomNavigationItem from './bottomNavigationItem.json'
 
-// import option from './option.json'
-// import backTop from './backTop.json'
+import backTop from './backTop.json'
 
-// import floatingPanel from './floatingPanel.json'
-// import menuOption from './menuOption.json'
-// import menuSelect from './menuSelect.json'
-// import actionSheet from './actionSheet.json'
+import floatingPanel from './floatingPanel.json'
+import menuOption from './menuOption.json'
+import menuSelect from './menuSelect.json'
+import actionSheet from './actionSheet.json'
+import pagination from './pagination.json'
+import countdown from './countdown.json'
+import dialog from './dialog.json'
+import drag from './drag.json'
+import overlay from './overlay.json'
+import pullRefresh from './pullRefresh.json'
+import menu from './menu.json'
+import popup from './popup.json'
+import snackbar from './snackbar.json'
+import tooltip from './tooltip.json'
+
+// import option from './option.json'
 // import vswitch from './switch.json'
 // import checkbox from './checkbox.json'
 // import checkboxGroup from './checkboxGroup.json'
 // import form from './form.json'
-// import pagination from './pagination.json'
-
-// import countdown from './countdown.json'
 // import counter from './counter.json'
 // import datePicker from './datePicker.json'
-// import dialog from './dialog.json'
-// import drag from './drag.json'
 // import ellipsis from './ellipsis.json'
 // import formDetails from './formDetails.json'
 // import indexAnchor from './indexAnchor.json'
 // import input from './input.json'
-// import menu from './menu.json'
-// import overlay from './overlay.json'
 // import picker from './picker.json'
-// import popup from './popup.json'
-// import pullRefresh from './pullRefresh.json'
 // import rate from './rate.json'
 // import radio from './radio.json'
 // import radioGroup from './radioGroup.json'
 // import select from './select.json'
 // import slider from './slider.json'
-// import snackbar from './snackbar.json'
 // import timePicker from './timePicker.json'
-// import tooltip from './tooltip.json'
 // import uploader from './uploader.json'
 
 export function varlet3() {
@@ -95,6 +96,7 @@ export function varlet3() {
     avatar,
     avatarGroup,
     loading,
+    loadingBar,
     chip,
     badge,
     eclipsis,
@@ -127,41 +129,40 @@ export function varlet3() {
     bottomNavigationItem,
     indexBar,
     result,
+    backTop,
+    collapseTransition,
+    floatingPanel,
+    menuOption,
+    menuSelect,
+    actionSheet,
+    pagination,
+    countdown,
+    drag,
+    link,
+    menu,
+    overlay,
+    popup,
+    pullRefresh,
+    snackbar,
+    tooltip,
 
     // option,
-    // backTop,
-
-    // collapseTransition,
-    // floatingPanel,
-    // menuOption,
-    // menuSelect,
-    // actionSheet,
     // vswitch,
     // checkbox,
     // checkboxGroup,
     // form,
-    // pagination,
 
-    // countdown,
     // counter,
     // datePicker,
-    // drag,
     // ellipsis,
     // formDetails,
     // indexAnchor,
     // input,
-    // link,
-    // menu,
-    // overlay,
     // picker,
-    // popup,
-    // pullRefresh,
     // rate,
     // select,
     // slider,
-    // snackbar,
     // timePicker,
-    // tooltip,
     // uploader,
     // dialog,
     // radio,
@@ -273,25 +274,41 @@ export function varlet3Components() {
         [bottomNavigation, '底部导航栏', `<${hyphenate(bottomNavigation.name).slice(1)}></${hyphenate(bottomNavigation.name).slice(1)}>`],
         [bottomNavigationItem, '底部导航栏', `<${hyphenate(bottomNavigationItem.name).slice(1)}></${hyphenate(bottomNavigationItem.name).slice(1)}>`],
         [indexBar, '索引栏 用于跳转到页面指定位置.', '<var-index-bar duration="300" @change="change"></var-index-bar>'],
+        [backTop, '回到顶部', `<${hyphenate(backTop.name).slice(1)}></${hyphenate(backTop.name).slice(1)}>`],
+        [menuOption, '菜单', `<${hyphenate(menuOption.name).slice(1)}></${hyphenate(menuOption.name).slice(1)}>`],
+        [menuSelect, '菜单', `<${hyphenate(menuSelect.name).slice(1)}></${hyphenate(menuSelect.name).slice(1)}>`],
+        [actionSheet, '动作面板', `<var-action-sheet
+          :actions="actions"
+          v-model:show="show"
+          @select="handleSelect"
+        />`],
+        [dialog, '对话框', `<var-dialog
+            title="兰亭序"
+            message="兰亭临帖 行书如行云流水"
+            v-model:show="show"
+            @confirm="() => Snackbar.success('confirm')"
+            @cancel="() => Snackbar.error('cancel')"
+            @closed="() => Snackbar.info('closed')"
+          />`],
+        [pagination, '分页', '<var-pagination :current="3" :total="120" />'],
+
+        [countdown, '倒计时 用于实时展示倒计时数值,支持毫秒精度.', '<var-countdown :time="time" />'],
+        [drag, '拖拽 使元素可以自由拖拽.', `<var-drag>
+          <var-button type="primary">基本使用</var-button>
+        </var-drag>`],
+        [menu, '菜单 当元素点击时显示一个菜单,通过控制弹出位置和偏移量改变菜单的显示位置.', '<var-menu></var-menu>'],
+        [overlay, '遮罩层 创建一个遮罩层,用于强调特定的页面元素.', '<var-overlay v-model:show="show" />'],
+        [popup, '弹出层 创建一个可以从上、下、左、右、中心弹出的容器,用于展示信息.默认使用 teleport 插入到 body 尾部.', '<var-popup v-model:show="center"></var-popup>'],
+        [pullRefresh, '下拉刷新 用于提供下拉刷新的交互操作', ' <var-pull-refresh v-model="isRefresh" @refresh="refresh"></var-pull-refresh>'],
+        [snackbar, '消息条 用于向用户显示快速消息.', '<var-snackbar v-model:show="show">这是一个消息条!!</var-snackbar>'],
+        [tooltip, '提示 当元素点击或悬停时显示一个提示,通过控制弹出位置和偏移量改变提示的显示位置.', `<var-tooltip content="Tooltip">
+      <var-button type="primary">基本使用</var-button>
+    </var-tooltip>`],
+        [floatingPanel, '浮动面板', `<${hyphenate(floatingPanel.name).slice(1)}></${hyphenate(floatingPanel.name).slice(1)}>`],
+        [loadingBar, '加载条', `<${hyphenate(loadingBar.name).slice(1)}></${hyphenate(loadingBar.name).slice(1)}>`],
 
         //       [option, '下拉选项', `<${hyphenate(option.name).slice(1)}></${hyphenate(option.name).slice(1)}>`],
-        //       [backTop, '回到顶部', `<${hyphenate(backTop.name).slice(1)}></${hyphenate(backTop.name).slice(1)}>`],
-        //       [floatingPanel, '浮动面板', `<${hyphenate(floatingPanel.name).slice(1)}></${hyphenate(floatingPanel.name).slice(1)}>`],
-        //       [menuOption, '菜单', `<${hyphenate(menuOption.name).slice(1)}></${hyphenate(menuOption.name).slice(1)}>`],
-        //       [menuSelect, '菜单', `<${hyphenate(menuSelect.name).slice(1)}></${hyphenate(menuSelect.name).slice(1)}>`],
-        //       [actionSheet, '动作面板', `<var-action-sheet
-        //   :actions="actions"
-        //   v-model:show="show"
-        //   @select="handleSelect"
-        // />`],
-        //       [dialog, '对话框', `<var-dialog
-        //     title="兰亭序"
-        //     message="兰亭临帖 行书如行云流水"
-        //     v-model:show="show"
-        //     @confirm="() => Snackbar.success('confirm')"
-        //     @cancel="() => Snackbar.error('cancel')"
-        //     @closed="() => Snackbar.info('closed')"
-        //   />`],
+
         //       [radio, '单选框', '<var-radio v-model="value">当前的值: {{ value }}</var-radio>'],
         //       [radioGroup, '单选框组', `<var-radio-group v-model="value">
         //   <var-radio :checked-value="0">吃饭</var-radio>
@@ -312,14 +329,10 @@ export function varlet3Components() {
         //     :readonly="readonly"
         //     scroll-to-error="start"
         //   ></var-form>`],
-        //       [pagination, '分页', '<var-pagination :current="3" :total="120" />'],
 
-        //       [countdown, '倒计时 用于实时展示倒计时数值,支持毫秒精度.', '<var-countdown :time="time" />'],
-        //       [counter, '计数器', '<var-counter v-model="value"/>'],
+        // [counter, '计数器', '<var-counter v-model="value"/>'],
         //       [datePicker, '日期选择器 用于选择日期或日期范围.', '<var-date-picker v-model="date" />'],
-        //       [drag, '拖拽 使元素可以自由拖拽.', `<var-drag>
-        //   <var-button type="primary">基本使用</var-button>
-        // </var-drag>`],
+
         //       [ellipsis, '文本省略 主要用于省略单行文字和多行文字.', `<var-ellipsis style="max-width: 170px">
         //   其实没有什么事情是不可能的,我都拿到世界冠军了,真的没有什么事情是不可能的.
         // </var-ellipsis>`],
@@ -328,11 +341,8 @@ export function varlet3Components() {
         //   标题 {{ item }}
         // </var-index-anchor>`],
         //       [input, '输入框 输入框的行为和基本原生一致,用户输入时始终获得一个符合 type 规则的字符串,可选择 standard 和 outlined 两种风格,默认为 standard.', '<var-input placeholder="请输入文本" v-model="value" />'],
-        //       [menu, '菜单 当元素点击时显示一个菜单,通过控制弹出位置和偏移量改变菜单的显示位置.', '<var-menu></var-menu>'],
-        //       [overlay, '遮罩层 创建一个遮罩层,用于强调特定的页面元素.', '<var-overlay v-model:show="show" />'],
-        //       [picker, '多列选择器 提供了函数和组件两种调用方式.同时支持级联模式,可以处理多级联动.', '<var-picker :columns="columns" />'],
-        //       [popup, '弹出层 创建一个可以从上、下、左、右、中心弹出的容器,用于展示信息.默认使用 teleport 插入到 body 尾部.', '<var-popup v-model:show="center"></var-popup>'],
-        //       [pullRefresh, '下拉刷新 用于提供下拉刷新的交互操作', ' <var-pull-refresh v-model="isRefresh" @refresh="refresh"></var-pull-refresh>'],
+
+        // [picker, '多列选择器 提供了函数和组件两种调用方式.同时支持级联模式,可以处理多级联动.', '<var-picker :columns="columns" />'],
         //       [rate, '评分', '<var-rate v-model="score" :count="8"/>'],
 
       //       [select, '选择框 通过下拉菜单展示并选择内容.', `<var-select placeholder="文本关联值" v-model="value2">
@@ -340,11 +350,7 @@ export function varlet3Components() {
       //   <var-option label="睡觉" :value="2" />
       // </var-select>`],
       //       [slider, '滑块 用于在给定范围内取值.', '<var-slider v-model="value" />'],
-      //       [snackbar, '消息条 用于向用户显示快速消息.', '<var-snackbar v-model:show="show">这是一个消息条!!</var-snackbar>'],
       //       [timePicker, '时间选择器 用于选择时间.', '<var-time-picker v-model="date" />'],
-      //       [tooltip, '提示 当元素点击或悬停时显示一个提示,通过控制弹出位置和偏移量改变提示的显示位置.', `<var-tooltip content="Tooltip">
-      //   <var-button type="primary">基本使用</var-button>
-      // </var-tooltip>`],
       //       [uploader, '文件上传 提供了文件读取、图片/视频预览能力. 通过监听 after-read 事件获取文件上传服务器.', '<var-uploader v-model="files" @after-read="handleAfterRead"/>'],
       ]
     : [
@@ -444,25 +450,39 @@ export function varlet3Components() {
         [bottomNavigation, bottomNavigation.name, `<${hyphenate(bottomNavigation.name).slice(1)}></${hyphenate(bottomNavigation.name).slice(1)}>`],
         [bottomNavigationItem, bottomNavigationItem.name, `<${hyphenate(bottomNavigationItem.name).slice(1)}></${hyphenate(bottomNavigationItem.name).slice(1)}>`],
         [indexBar, 'The index bar is used to jump to the specified location on the page. ', '<var-index-bar duration="300" @change="change"></var-index-bar>'],
-        //       [option, option.name, `<${hyphenate(option.name).slice(1)}></${hyphenate(option.name).slice(1)}>`],
-        //       [backTop, backTop.name, `<${hyphenate(backTop.name).slice(1)}></${hyphenate(backTop.name).slice(1)}>`],
+        [backTop, backTop.name, `<${hyphenate(backTop.name).slice(1)}></${hyphenate(backTop.name).slice(1)}>`],
+        [floatingPanel, floatingPanel.name, `<${hyphenate(floatingPanel.name).slice(1)}></${hyphenate(floatingPanel.name).slice(1)}>`],
+        [menuOption, menuOption.name, `<${hyphenate(menuOption.name).slice(1)}></${hyphenate(menuOption.name).slice(1)}>`],
+        [menuSelect, menuSelect.name, `<${hyphenate(menuSelect.name).slice(1)}></${hyphenate(menuSelect.name).slice(1)}>`],
+        [actionSheet, 'Action Panel', `<var-action-sheet
+         :actions="actions"
+         v-model:show="show"
+         @select="handleSelect"
+      />`],
+        [dialog, 'Dialog', `<var-dialog
+           title="Lanting Preface"
+           message="Lanting's calligraphy is like flowing clouds and flowing water"
+           v-model:show="show"
+           @confirm="() => Snackbar.success('confirm')"
+           @cancel="() => Snackbar.error('cancel')"
+           @closed="() => Snackbar.info('closed')"
+         />`],
+        [pagination, 'pagination', '<var-pagination :current="3" :total="120" />'],
+        [countdown, 'Countdown is used to display the countdown value in real time, supporting millisecond precision. ', '<var-countdown :time="time" />'],
+        [drag, 'Drag allows elements to be dragged freely. ', `<var-drag>
+      <var-button type="primary">Basic use</var-button>
+   </var-drag>`],
+        [menu, 'Menu Displays a menu when the element is clicked, and changes the display position of the menu by controlling the pop-up position and offset. ', '<var-menu></var-menu>'],
+        [overlay, 'Overlay Create an overlay to emphasize specific page elements. ', '<var-overlay v-model:show="show" />'],
+        [popup, 'Popup layer creates a container that can pop up from top, bottom, left, right, and center to display information. By default, teleport is used to insert at the end of the body. ', '<var-popup v-model:show="center"></var-popup>'],
+        [tooltip, 'Tip displays a tip when the element is clicked or hovered, and changes the display position of the tip by controlling the pop-up position and offset. ', `<var-tooltip content="Tooltip">
+<var-button type="primary">Basic use</var-button>
+</var-tooltip>`],
+        [pullRefresh, 'Pull-refresh is used to provide interactive operations of pull-down refresh', ' <var-pull-refresh v-model="isRefresh" @refresh="refresh"></var-pull-refresh >'],
+        [loadingBar, 'Loading Bar', `<${hyphenate(loadingBar.name).slice(1)}></${hyphenate(loadingBar.name).slice(1)}>`],
 
-        //       [floatingPanel, floatingPanel.name, `<${hyphenate(floatingPanel.name).slice(1)}></${hyphenate(floatingPanel.name).slice(1)}>`],
-        //       [menuOption, menuOption.name, `<${hyphenate(menuOption.name).slice(1)}></${hyphenate(menuOption.name).slice(1)}>`],
-        //       [menuSelect, menuSelect.name, `<${hyphenate(menuSelect.name).slice(1)}></${hyphenate(menuSelect.name).slice(1)}>`],
-        //       [actionSheet, 'Action Panel', `<var-action-sheet
-        //    :actions="actions"
-        //    v-model:show="show"
-        //    @select="handleSelect"
-        // />`],
-        //       [dialog, 'Dialog', `<var-dialog
-        //      title="Lanting Preface"
-        //      message="Lanting's calligraphy is like flowing clouds and flowing water"
-        //      v-model:show="show"
-        //      @confirm="() => Snackbar.success('confirm')"
-        //      @cancel="() => Snackbar.error('cancel')"
-        //      @closed="() => Snackbar.info('closed')"
-        //    />`],
+        //       [option, option.name, `<${hyphenate(option.name).slice(1)}></${hyphenate(option.name).slice(1)}>`],
+
         //       [radio, 'Radio button', '<var-radio v-model="value">Current value: {{ value }}</var-radio>'],
         //       [radioGroup, 'Radio button group', `<var-radio-group v-model="value">
         //    <var-radio :checked-value="0">Eat</var-radio>
@@ -483,14 +503,10 @@ export function varlet3Components() {
         //      :readonly="readonly"
         //      scroll-to-error="start"
         //    ></var-form>`],
-        //       [pagination, 'pagination', '<var-pagination :current="3" :total="120" />'],
 
-        //       [countdown, 'Countdown is used to display the countdown value in real time, supporting millisecond precision. ', '<var-countdown :time="time" />'],
         //       [counter, 'Counter', '<var-counter v-model="value"/>'],
         //       [datePicker, 'Date picker is used to select a date or date range. ', '<var-date-picker v-model="date" />'],
-        //       [drag, 'Drag allows elements to be dragged freely. ', `<var-drag>
-        //    <var-button type="primary">Basic use</var-button>
-        // </var-drag>`],
+
         //       [ellipsis, 'Text omission is mainly used to omit single-line text and multi-line text. ', `<var-ellipsis style="max-width: 170px">
         //    In fact, nothing is impossible. I have won the world championship, so nothing is impossible.
         // </var-ellipsis>`],
@@ -499,11 +515,8 @@ export function varlet3Components() {
         //    Title {{ item }}
         // </var-index-anchor>`],
         //       [input, 'Input box The behavior of the input box is basically the same as the native one. When the user inputs, he always gets a string that conforms to the type rules. There are two styles: standard and outlined. The default is standard. ', '<var-input placeholder="Please enter text" v-model="value" />'],
-        //       [menu, 'Menu Displays a menu when the element is clicked, and changes the display position of the menu by controlling the pop-up position and offset. ', '<var-menu></var-menu>'],
-        //       [overlay, 'Overlay Create an overlay to emphasize specific page elements. ', '<var-overlay v-model:show="show" />'],
-        //       [picker, 'Multi-column picker provides two calling methods: function and component. It also supports cascade mode and can handle multi-level linkage. ', '<var-picker :columns="columns" />'],
-        //       [popup, 'Popup layer creates a container that can pop up from top, bottom, left, right, and center to display information. By default, teleport is used to insert at the end of the body. ', '<var-popup v-model:show="center"></var-popup>'],
-        //       [pullRefresh, 'Pull-refresh is used to provide interactive operations of pull-down refresh', ' <var-pull-refresh v-model="isRefresh" @refresh="refresh"></var-pull-refresh >'],
+
+        // [picker, 'Multi-column picker provides two calling methods: function and component. It also supports cascade mode and can handle multi-level linkage. ', '<var-picker :columns="columns" />'],
         //       [rate, 'score', '<var-rate v-model="score" :count="8"/>'],
 
         //       [select, 'Select box displays and selects content through drop-down menu. ', `<var-select placeholder="Text associated value" v-model="value2">
@@ -513,10 +526,8 @@ export function varlet3Components() {
         //       [slider, 'Slider is used to take a value within a given range. ', '<var-slider v-model="value" />'],
         //       [snackbar, 'Message bar is used to display quick messages to the user. ', '<var-snackbar v-model:show="show">This is a message bar! ! </var-snackbar>'],
 
-      //       [timePicker, 'Time picker is used to select time. ', '<var-time-picker v-model="date" />'],
-      //       [tooltip, 'Tip displays a tip when the element is clicked or hovered, and changes the display position of the tip by controlling the pop-up position and offset. ', `<var-tooltip content="Tooltip">
-      //    <var-button type="primary">Basic use</var-button>
-      // </var-tooltip>`],
+        //       [timePicker, 'Time picker is used to select time. ', '<var-time-picker v-model="date" />'],
+
       //       [uploader, 'File upload provides file reading and image/video preview capabilities. Obtain the file upload server by listening to the after-read event. ', '<var-uploader v-model="files" @after-read="handleAfterRead"/>'],
       ]
   return componentsReducer(map, true, 'var', 'varlet')
