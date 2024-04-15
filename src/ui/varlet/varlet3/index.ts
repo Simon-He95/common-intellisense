@@ -39,12 +39,15 @@ import tabsItems from './tabsItems.json'
 import table from './table.json'
 import divider from './divider.json'
 import watermark from './watermark.json'
+import result from './result.json'
+import appBar from './appBar.json'
+import indexBar from './indexBar.json'
+import bottomNavigation from './bottomNavigation.json'
+import bottomNavigationItem from './bottomNavigationItem.json'
 
 // import option from './option.json'
-// import appBar from './appBar.json'
 // import backTop from './backTop.json'
-// import bottomNavigation from './bottomNavigation.json'
-// import bottomNavigationItem from './bottomNavigationItem.json'
+
 // import floatingPanel from './floatingPanel.json'
 // import menuOption from './menuOption.json'
 // import menuSelect from './menuSelect.json'
@@ -62,7 +65,6 @@ import watermark from './watermark.json'
 // import drag from './drag.json'
 // import ellipsis from './ellipsis.json'
 // import formDetails from './formDetails.json'
-// import indexBar from './indexBar.json'
 // import indexAnchor from './indexAnchor.json'
 // import input from './input.json'
 // import menu from './menu.json'
@@ -73,7 +75,6 @@ import watermark from './watermark.json'
 // import rate from './rate.json'
 // import radio from './radio.json'
 // import radioGroup from './radioGroup.json'
-// import result from './result.json'
 // import select from './select.json'
 // import slider from './slider.json'
 // import snackbar from './snackbar.json'
@@ -121,11 +122,15 @@ export function varlet3() {
     tabsItems,
     divider,
     table,
+    appBar,
+    bottomNavigation,
+    bottomNavigationItem,
+    indexBar,
+    result,
+
     // option,
-    // appBar,
     // backTop,
-    // bottomNavigation,
-    // bottomNavigationItem,
+
     // collapseTransition,
     // floatingPanel,
     // menuOption,
@@ -143,7 +148,6 @@ export function varlet3() {
     // drag,
     // ellipsis,
     // formDetails,
-    // indexBar,
     // indexAnchor,
     // input,
     // link,
@@ -153,7 +157,6 @@ export function varlet3() {
     // popup,
     // pullRefresh,
     // rate,
-    // result,
     // select,
     // slider,
     // snackbar,
@@ -257,12 +260,22 @@ export function varlet3Components() {
           接下来换介绍我自己. 我虽然是个牛仔,在酒吧只点牛奶. 为什么不喝啤酒,因为啤酒伤身体.
         </var-tab-item>
       </var-tabs-items`],
+        [result, '结果 用于向用户展示结果.', `<var-result
+        type="success"
+        title="成功"
+        description="嗨~ 我是结果页的一段描述~"
+      >
+        <template #footer>
+          <var-button type="success">知道了</var-button>
+        </template>
+      </var-result>`],
+        [appBar, '导航栏', `<${hyphenate(appBar.name).slice(1)}></${hyphenate(appBar.name).slice(1)}>`],
+        [bottomNavigation, '底部导航栏', `<${hyphenate(bottomNavigation.name).slice(1)}></${hyphenate(bottomNavigation.name).slice(1)}>`],
+        [bottomNavigationItem, '底部导航栏', `<${hyphenate(bottomNavigationItem.name).slice(1)}></${hyphenate(bottomNavigationItem.name).slice(1)}>`],
+        [indexBar, '索引栏 用于跳转到页面指定位置.', '<var-index-bar duration="300" @change="change"></var-index-bar>'],
 
-        // [appBar, '导航栏', `<${hyphenate(appBar.name).slice(1)}></${hyphenate(appBar.name).slice(1)}>`],
         //       [option, '下拉选项', `<${hyphenate(option.name).slice(1)}></${hyphenate(option.name).slice(1)}>`],
         //       [backTop, '回到顶部', `<${hyphenate(backTop.name).slice(1)}></${hyphenate(backTop.name).slice(1)}>`],
-        //       [bottomNavigation, '底部导航栏', `<${hyphenate(bottomNavigation.name).slice(1)}></${hyphenate(bottomNavigation.name).slice(1)}>`],
-        //       [bottomNavigationItem, '底部导航栏', `<${hyphenate(bottomNavigationItem.name).slice(1)}></${hyphenate(bottomNavigationItem.name).slice(1)}>`],
         //       [floatingPanel, '浮动面板', `<${hyphenate(floatingPanel.name).slice(1)}></${hyphenate(floatingPanel.name).slice(1)}>`],
         //       [menuOption, '菜单', `<${hyphenate(menuOption.name).slice(1)}></${hyphenate(menuOption.name).slice(1)}>`],
         //       [menuSelect, '菜单', `<${hyphenate(menuSelect.name).slice(1)}></${hyphenate(menuSelect.name).slice(1)}>`],
@@ -301,36 +314,27 @@ export function varlet3Components() {
         //   ></var-form>`],
         //       [pagination, '分页', '<var-pagination :current="3" :total="120" />'],
 
-      //       [countdown, '倒计时 用于实时展示倒计时数值,支持毫秒精度.', '<var-countdown :time="time" />'],
-      //       [counter, '计数器', '<var-counter v-model="value"/>'],
-      //       [datePicker, '日期选择器 用于选择日期或日期范围.', '<var-date-picker v-model="date" />'],
-      //       [drag, '拖拽 使元素可以自由拖拽.', `<var-drag>
-      //   <var-button type="primary">基本使用</var-button>
-      // </var-drag>`],
-      //       [ellipsis, '文本省略 主要用于省略单行文字和多行文字.', `<var-ellipsis style="max-width: 170px">
-      //   其实没有什么事情是不可能的,我都拿到世界冠军了,真的没有什么事情是不可能的.
-      // </var-ellipsis>`],
-      //       [formDetails, '表单 提供了对所有表单组件进行控制的能力.', '<var-form-details :error-message="errorMessage" :extra-message="extraMessage" />'],
-      //       [indexBar, '索引栏 用于跳转到页面指定位置.', '<var-index-bar duration="300" @change="change"></var-index-bar>'],
-      //       [indexAnchor, '索引栏 用于跳转到页面指定位置.', `<var-index-anchor :index="item" class="anchor">
-      //   标题 {{ item }}
-      // </var-index-anchor>`],
-      //       [input, '输入框 输入框的行为和基本原生一致,用户输入时始终获得一个符合 type 规则的字符串,可选择 standard 和 outlined 两种风格,默认为 standard.', '<var-input placeholder="请输入文本" v-model="value" />'],
-      //       [menu, '菜单 当元素点击时显示一个菜单,通过控制弹出位置和偏移量改变菜单的显示位置.', '<var-menu></var-menu>'],
-      //       [overlay, '遮罩层 创建一个遮罩层,用于强调特定的页面元素.', '<var-overlay v-model:show="show" />'],
-      //       [picker, '多列选择器 提供了函数和组件两种调用方式.同时支持级联模式,可以处理多级联动.', '<var-picker :columns="columns" />'],
-      //       [popup, '弹出层 创建一个可以从上、下、左、右、中心弹出的容器,用于展示信息.默认使用 teleport 插入到 body 尾部.', '<var-popup v-model:show="center"></var-popup>'],
-      //       [pullRefresh, '下拉刷新 用于提供下拉刷新的交互操作', ' <var-pull-refresh v-model="isRefresh" @refresh="refresh"></var-pull-refresh>'],
-      //       [rate, '评分', '<var-rate v-model="score" :count="8"/>'],
-      //       [result, '结果 用于向用户展示结果.', `<var-result
-      //   type="success"
-      //   title="成功"
-      //   description="嗨~ 我是结果页的一段描述~"
-      // >
-      //   <template #footer>
-      //     <var-button type="success">知道了</var-button>
-      //   </template>
-      // </var-result>`],
+        //       [countdown, '倒计时 用于实时展示倒计时数值,支持毫秒精度.', '<var-countdown :time="time" />'],
+        //       [counter, '计数器', '<var-counter v-model="value"/>'],
+        //       [datePicker, '日期选择器 用于选择日期或日期范围.', '<var-date-picker v-model="date" />'],
+        //       [drag, '拖拽 使元素可以自由拖拽.', `<var-drag>
+        //   <var-button type="primary">基本使用</var-button>
+        // </var-drag>`],
+        //       [ellipsis, '文本省略 主要用于省略单行文字和多行文字.', `<var-ellipsis style="max-width: 170px">
+        //   其实没有什么事情是不可能的,我都拿到世界冠军了,真的没有什么事情是不可能的.
+        // </var-ellipsis>`],
+        //       [formDetails, '表单 提供了对所有表单组件进行控制的能力.', '<var-form-details :error-message="errorMessage" :extra-message="extraMessage" />'],
+        //       [indexAnchor, '索引栏 用于跳转到页面指定位置.', `<var-index-anchor :index="item" class="anchor">
+        //   标题 {{ item }}
+        // </var-index-anchor>`],
+        //       [input, '输入框 输入框的行为和基本原生一致,用户输入时始终获得一个符合 type 规则的字符串,可选择 standard 和 outlined 两种风格,默认为 standard.', '<var-input placeholder="请输入文本" v-model="value" />'],
+        //       [menu, '菜单 当元素点击时显示一个菜单,通过控制弹出位置和偏移量改变菜单的显示位置.', '<var-menu></var-menu>'],
+        //       [overlay, '遮罩层 创建一个遮罩层,用于强调特定的页面元素.', '<var-overlay v-model:show="show" />'],
+        //       [picker, '多列选择器 提供了函数和组件两种调用方式.同时支持级联模式,可以处理多级联动.', '<var-picker :columns="columns" />'],
+        //       [popup, '弹出层 创建一个可以从上、下、左、右、中心弹出的容器,用于展示信息.默认使用 teleport 插入到 body 尾部.', '<var-popup v-model:show="center"></var-popup>'],
+        //       [pullRefresh, '下拉刷新 用于提供下拉刷新的交互操作', ' <var-pull-refresh v-model="isRefresh" @refresh="refresh"></var-pull-refresh>'],
+        //       [rate, '评分', '<var-rate v-model="score" :count="8"/>'],
+
       //       [select, '选择框 通过下拉菜单展示并选择内容.', `<var-select placeholder="文本关联值" v-model="value2">
       //   <var-option label="吃饭" :value="1" />
       //   <var-option label="睡觉" :value="2" />
@@ -427,12 +431,21 @@ export function varlet3Components() {
          </var-tab-item>
       </var-tabs-items`],
         [watermark, watermark.name, `<${hyphenate(watermark.name).slice(1)}></${hyphenate(watermark.name).slice(1)}>`],
-
+        [result, 'Result is used to display the results to the user. ', `<var-result
+      type="success"
+      title="success"
+      description="Hi~ I am a description of the results page~"
+   >
+      <template #footer>
+        <var-button type="success">Got it</var-button>
+      </template>
+   </var-result>`],
+        [appBar, appBar.name, `<${hyphenate(appBar.name).slice(1)}></${hyphenate(appBar.name).slice(1)}>`],
+        [bottomNavigation, bottomNavigation.name, `<${hyphenate(bottomNavigation.name).slice(1)}></${hyphenate(bottomNavigation.name).slice(1)}>`],
+        [bottomNavigationItem, bottomNavigationItem.name, `<${hyphenate(bottomNavigationItem.name).slice(1)}></${hyphenate(bottomNavigationItem.name).slice(1)}>`],
+        [indexBar, 'The index bar is used to jump to the specified location on the page. ', '<var-index-bar duration="300" @change="change"></var-index-bar>'],
         //       [option, option.name, `<${hyphenate(option.name).slice(1)}></${hyphenate(option.name).slice(1)}>`],
-        //       [appBar, appBar.name, `<${hyphenate(appBar.name).slice(1)}></${hyphenate(appBar.name).slice(1)}>`],
         //       [backTop, backTop.name, `<${hyphenate(backTop.name).slice(1)}></${hyphenate(backTop.name).slice(1)}>`],
-        //       [bottomNavigation, bottomNavigation.name, `<${hyphenate(bottomNavigation.name).slice(1)}></${hyphenate(bottomNavigation.name).slice(1)}>`],
-        //       [bottomNavigationItem, bottomNavigationItem.name, `<${hyphenate(bottomNavigationItem.name).slice(1)}></${hyphenate(bottomNavigationItem.name).slice(1)}>`],
 
         //       [floatingPanel, floatingPanel.name, `<${hyphenate(floatingPanel.name).slice(1)}></${hyphenate(floatingPanel.name).slice(1)}>`],
         //       [menuOption, menuOption.name, `<${hyphenate(menuOption.name).slice(1)}></${hyphenate(menuOption.name).slice(1)}>`],
@@ -482,7 +495,6 @@ export function varlet3Components() {
         //    In fact, nothing is impossible. I have won the world championship, so nothing is impossible.
         // </var-ellipsis>`],
         //       [formDetails, 'Form provides the ability to control all form components. ', '<var-form-details :error-message="errorMessage" :extra-message="extraMessage" />'],
-        //       [indexBar, 'The index bar is used to jump to the specified location on the page. ', '<var-index-bar duration="300" @change="change"></var-index-bar>'],
         //       [indexAnchor, 'The index column is used to jump to the specified position on the page. ', `<var-index-anchor :index="item" class="anchor">
         //    Title {{ item }}
         // </var-index-anchor>`],
@@ -493,15 +505,7 @@ export function varlet3Components() {
         //       [popup, 'Popup layer creates a container that can pop up from top, bottom, left, right, and center to display information. By default, teleport is used to insert at the end of the body. ', '<var-popup v-model:show="center"></var-popup>'],
         //       [pullRefresh, 'Pull-refresh is used to provide interactive operations of pull-down refresh', ' <var-pull-refresh v-model="isRefresh" @refresh="refresh"></var-pull-refresh >'],
         //       [rate, 'score', '<var-rate v-model="score" :count="8"/>'],
-        //       [result, 'Result is used to display the results to the user. ', `<var-result
-        //    type="success"
-        //    title="success"
-        //    description="Hi~ I am a description of the results page~"
-        // >
-        //    <template #footer>
-        //      <var-button type="success">Got it</var-button>
-        //    </template>
-        // </var-result>`],
+
         //       [select, 'Select box displays and selects content through drop-down menu. ', `<var-select placeholder="Text associated value" v-model="value2">
         //    <var-option label="Eat" :value="1" />
         //    <var-option label="Sleep" :value="2" />

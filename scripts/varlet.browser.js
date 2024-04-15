@@ -11,7 +11,7 @@ function run() {
       : document.querySelector('#Props + * + * + table')
   if (tbody) {
     Array.from(tbody.querySelectorAll('tbody tr')).forEach((item) => {
-      const name = item.children[0].textContent
+      const name = item.children[0].textContent.split(' ')[0]
       const description = item.children[1].textContent
       const type = item.children[2].textContent
       const value = item.children[3].textContent
@@ -79,7 +79,7 @@ function run() {
 function getProps() {
   const props = {}
   $0.closest('tbody').querySelectorAll('tr').forEach((item) => {
-    const name = item.children[0].textContent
+    const name = item.children[0].textContent.split(' ')[0]
     const description = item.children[1].textContent
     const type = item.children[2].textContent
     const value = item.children[3].textContent
