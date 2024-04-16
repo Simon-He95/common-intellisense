@@ -4,7 +4,7 @@ import * as vscode from 'vscode'
 import { addEventListener, createCompletionItem, createPosition, createRange, createSelect, getActiveText, getActiveTextEditor, getActiveTextEditorLanguageId, getConfiguration, getCurrentFileUrl, getLineText, getLocale, getPosition, getSelection, message, openExternalUrl, registerCommand, registerCompletionItemProvider, setConfiguration, setCopyText, updateText } from '@vscode-use/utils'
 import { CreateWebview } from '@vscode-use/createwebview'
 import { parse } from '@vue/compiler-sfc'
-import { detectSlots, findPkgUI, parser, registerCodeLensProviderFn } from './utils'
+import { alias, detectSlots, findPkgUI, parser, registerCodeLensProviderFn } from './utils'
 import UI from './ui'
 import { UINames as UINamesMap, nameMap } from './constants'
 import { toCamel } from './ui/utils'
@@ -580,7 +580,13 @@ export function findUI() {
   function updateCompletions(uis: any) {
     const uisName: string[] = []
     uis.forEach(([uiName, version]: any) => {
-      const _version = version.match(/[^~]?([0-9]+)./)![1]
+      let _version = version.match(/[^~]?([0-9]+)./)![1]
+      if (uiName in alias) {
+        const v = alias[uiName]
+        const m = v.match(/([^1-9^]+)\^?([0-9])/)!
+        uiName = m[1]
+        _version = m[2]
+      }
       const name = uiName.replace(/-(\w)/g, (_: string, v: string) => v.toUpperCase())
       uisName.push(`${nameMap[name] ?? name}${_version}`)
     })

@@ -4,7 +4,7 @@ import { parse } from '@vue/compiler-sfc'
 import type { SFCTemplateBlock } from '@vue/compiler-sfc'
 import { parse as tsParser } from '@typescript-eslint/typescript-estree'
 import { findUp } from 'find-up'
-import { createRange, getActiveText, getActiveTextEditor, getActiveTextEditorLanguageId, getCurrentFileUrl, getLocale, getOffsetFromPosition, registerCodeLensProvider, watchFiles } from '@vscode-use/utils'
+import { createRange, getActiveText, getActiveTextEditor, getActiveTextEditorLanguageId, getConfiguration, getCurrentFileUrl, getLocale, getOffsetFromPosition, registerCodeLensProvider, watchFiles } from '@vscode-use/utils'
 import { traverse } from '@babel/types'
 import { UINames } from './constants'
 import { toCamel } from './ui/utils'
@@ -443,6 +443,7 @@ export function parserSvelte(code: string, position: vscode.Position) {
 }
 
 let stop: any = null
+export const alias = getConfiguration('common-intellisense.alias') as Record<string, string>
 export async function findPkgUI(cwd?: string) {
   if (!cwd)
     return
@@ -460,15 +461,16 @@ export async function findPkgUI(cwd?: string) {
   const p = JSON.parse(await fsp.readFile(pkg, 'utf-8'))
   const { dependencies, devDependencies } = p
   const result = []
+  const aliasUiNames = Object.keys(alias)
   if (dependencies) {
     for (const key in dependencies) {
-      if (UINames.includes(key))
+      if (UINames.includes(key) || aliasUiNames.includes(key))
         result.push([key, dependencies[key]])
     }
   }
   if (devDependencies) {
     for (const key in devDependencies) {
-      if (UINames.includes(key))
+      if (UINames.includes(key) || aliasUiNames.includes(key))
         result.push([key, devDependencies[key]])
     }
   }

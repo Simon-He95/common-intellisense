@@ -62,6 +62,11 @@ Install the supported ui component library in your project and install the plug-
           "type": "boolean",
           "default": true,
           "description": "Whether to show the slots on template completion."
+},
+"common-intellisense.alias": {
+          "type": "object",
+          "default": {},
+          "description": "If you need to integrate the supported ui library, the secondary encapsulated library, and the prompt to integrate a certain version of the original ui, you can use the alias { \"@xxx/element\": \"elementUi2\" }"
 }
 ```
 
