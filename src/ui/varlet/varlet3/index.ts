@@ -78,6 +78,7 @@ import counter from './counter.json'
 import rate from './rate.json'
 import slider from './slider.json'
 import uploader from './uploader.json'
+import styleProvider from './styleProvider.json'
 
 export function varlet3() {
   const map: any = [
@@ -160,6 +161,7 @@ export function varlet3() {
     rate,
     slider,
     uploader,
+    styleProvider,
   ]
 
   return propsReducer('varlet', map, 'var')
@@ -338,6 +340,7 @@ export function varlet3Components() {
         [rate, '评分', '<var-rate v-model="score" :count="8"/>'],
         [slider, '滑块 用于在给定范围内取值.', '<var-slider v-model="value" />'],
         [uploader, '文件上传 提供了文件读取、图片/视频预览能力. 通过监听 after-read 事件获取文件上传服务器.', '<var-uploader v-model="files" @after-read="handleAfterRead"/>'],
+        [styleProvider, styleProvider.name, `<${hyphenate(styleProvider.name).slice(1)}></${hyphenate(styleProvider.name).slice(1)}>`],
       ]
     : [
         [button, 'Button', '<var-button>Default button</var-button>'],
@@ -506,6 +509,7 @@ export function varlet3Components() {
         [rate, 'score', '<var-rate v-model="score" :count="8"/>'],
         [slider, 'Slider is used to take a value within a given range. ', '<var-slider v-model="value" />'],
         [uploader, 'File upload provides file reading and image/video preview capabilities. Obtain the file upload server by listening to the after-read event. ', '<var-uploader v-model="files" @after-read="handleAfterRead"/>'],
+        [styleProvider, styleProvider.name, `<${hyphenate(styleProvider.name).slice(1)}></${hyphenate(styleProvider.name).slice(1)}>`],
       ]
   return componentsReducer(map, true, 'var', 'varlet')
 }
