@@ -110,6 +110,7 @@ export function propsReducer(uiName: string, map: string[], prefix: string, icon
           snippet,
           type,
           documentation,
+          preselect: true,
           sortText: 'a',
           params: [uiName, key.replace(/^:/, '')],
           propType: value.type,
@@ -187,7 +188,7 @@ export function propsReducer(uiName: string, map: string[], prefix: string, icon
           documentation.isTrusted = true
           documentation.supportHtml = true
           documentation.appendMarkdown(detail.join('\n\n'))
-          return createCompletionItem({ content, snippet, documentation, type: vscode.CompletionItemKind.Event, sortText: 'b', params: [uiName, name] })
+          return createCompletionItem({ content, snippet, documentation, type: vscode.CompletionItemKind.Event, sortText: 'b', preselect: true, params: [uiName, name] })
         },
         )
       }
