@@ -191,6 +191,19 @@ import RadioGroupIndicator from './RadioGroupIndicator.json'
 import RadioGroupItem from './RadioGroupItem.json'
 import RadioGroupRoot from './RadioGroupRoot.json'
 
+import CalendarCell from './CalendarCell.json'
+import CalendarCellTrigger from './CalendarCellTrigger.json'
+import CalendarGrid from './CalendarGrid.json'
+import CalendarGridBody from './CalendarGridBody.json'
+import CalendarGridHead from './CalendarGridHead.json'
+import CalendarGridRow from './CalendarGridRow.json'
+import CalendarHeadCell from './CalendarHeadCell.json'
+import CalendarHeader from './CalendarHeader.json'
+import CalendarHeading from './CalendarHeading.json'
+import CalendarNext from './CalendarNext.json'
+import CalendarPrev from './CalendarPrev.json'
+import CalendarRoot from './CalendarRoot.json'
+
 export function radixVue1() {
   const map: any = [
     AccordionContent,
@@ -385,6 +398,18 @@ export function radixVue1() {
     RadioGroupIndicator,
     RadioGroupItem,
     RadioGroupRoot,
+    CalendarCell,
+    CalendarCellTrigger,
+    CalendarGrid,
+    CalendarGridBody,
+    CalendarGridHead,
+    CalendarGridRow,
+    CalendarHeadCell,
+    CalendarHeader,
+    CalendarHeading,
+    CalendarNext,
+    CalendarPrev,
+    CalendarRoot,
   ]
 
   return propsReducer('radix-vue', map, '')
@@ -583,7 +608,19 @@ export function radixVue1Components() {
     [Primitive, '将 Radix 的功能组合到替代元素类型或你自己的 Vue 组件上', '<Primitive></Primitive>'],
     [RadioGroupIndicator, '将 Radix 的功能组合到替代元素类型或你自己的 Vue 组件上', '<RadioGroupIndicator></RadioGroupIndicator>'],
     [RadioGroupItem, '一组可检查的按钮（称为单选按钮），一次只能选中一个按钮', '<RadioGroupItem></RadioGroupItem>'],
-    [RadioGroupRoot, '一组可检查的按钮（称为单选按钮），一次只能选中一个按钮', '<RadioGroupRoot></RadioGroupRoot>'],
+    [RadioGroupRoot, '一组可检查的按钮()称为单选按钮),一次只能选中一个按钮', '<RadioGroupRoot></RadioGroupRoot>'],
+    [CalendarCell, '显示日期和星期几,促进与日期相关的交互.', '<CalendarCell></CalendarCell>'],
+    [CalendarCellTrigger, '显示日期和星期几,促进与日期相关的交互.', '<CalendarCellTrigger></CalendarCellTrigger>'],
+    [CalendarGrid, '显示日期和星期几,促进与日期相关的交互.', '<CalendarGrid></CalendarGrid>'],
+    [CalendarGridBody, '显示日期和星期几,促进与日期相关的交互.', '<CalendarGridBody></CalendarGridBody>'],
+    [CalendarGridHead, '显示日期和星期几,促进与日期相关的交互.', '<CalendarGridHead></CalendarGridHead>'],
+    [CalendarGridRow, '显示日期和星期几,促进与日期相关的交互.', '<CalendarGridRow></CalendarGridRow>'],
+    [CalendarHeadCell, '显示日期和星期几,促进与日期相关的交互.', '<CalendarHeadCell></CalendarHeadCell>'],
+    [CalendarHeader, '显示日期和星期几,促进与日期相关的交互.', '<CalendarHeader></CalendarHeader>'],
+    [CalendarHeading, '显示日期和星期几,促进与日期相关的交互.', '<CalendarHeading></CalendarHeading>'],
+    [CalendarNext, '显示日期和星期几,促进与日期相关的交互.', '<CalendarNext></CalendarNext>'],
+    [CalendarPrev, '显示日期和星期几,促进与日期相关的交互.', '<CalendarPrev></CalendarPrev>'],
+    [CalendarRoot, '显示日期和星期几,促进与日期相关的交互.', '<CalendarRoot></CalendarRoot>'],
   ]
   return componentsReducer(map, false, '', 'radix-vue', true)
 }

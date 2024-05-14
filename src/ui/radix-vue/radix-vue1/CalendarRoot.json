@@ -1,0 +1,215 @@
+{
+  "name": "CalendarRoot",
+  "props": {
+    "as": {
+      "default": "div",
+      "value": "",
+      "type": "AsTag | Component",
+      "description": "The element or component this component should render as. Can be overwrite by asChild\n",
+      "description_zh": "The element or component this component should render as. Can be overwrite by asChild\n"
+    },
+    "asChild": {
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "description": "Change the default rendered element for the one passed as a child, merging their props and behavior.\nRead our Composition guide for more details.\n",
+      "description_zh": "Change the default rendered element for the one passed as a child, merging their props and behavior.\nRead our Composition guide for more details.\n"
+    },
+    "calendarLabel": {
+      "default": "",
+      "value": "",
+      "type": "string",
+      "description": "The accessible label for the calendar\n",
+      "description_zh": "The accessible label for the calendar\n"
+    },
+    "defaultPlaceholder": {
+      "default": "",
+      "value": "",
+      "type": "DateValue",
+      "description": "The default placeholder date\n",
+      "description_zh": "The default placeholder date\n"
+    },
+    "defaultValue": {
+      "default": "",
+      "value": "",
+      "type": "DateValue",
+      "description": "The default value for the calendar\n",
+      "description_zh": "The default value for the calendar\n"
+    },
+    "dir": {
+      "default": "",
+      "value": "",
+      "type": "ltr | rtl",
+      "description": "The reading direction of the calendar when applicable.  If omitted, inherits globally from ConfigProvider or assumes LTR (left-to-right) reading mode.\n",
+      "description_zh": "The reading direction of the calendar when applicable.  If omitted, inherits globally from ConfigProvider or assumes LTR (left-to-right) reading mode.\n"
+    },
+    "disabled": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether or not the calendar is disabled\n",
+      "description_zh": "Whether or not the calendar is disabled\n"
+    },
+    "fixedWeeks": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether or not to always display 6 weeks in the calendar\n",
+      "description_zh": "Whether or not to always display 6 weeks in the calendar\n"
+    },
+    "initialFocus": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "If true, the calendar will focus the selected day, today, or the first day of the month depending on what is visible when the calendar is mounted\n",
+      "description_zh": "If true, the calendar will focus the selected day, today, or the first day of the month depending on what is visible when the calendar is mounted\n"
+    },
+    "isDateDisabled": {
+      "default": "",
+      "value": "",
+      "type": "Matcher",
+      "description": "A function that returns whether or not a date is disabled\n",
+      "description_zh": "A function that returns whether or not a date is disabled\n"
+    },
+    "isDateUnavailable": {
+      "default": "",
+      "value": "",
+      "type": "Matcher",
+      "description": "A function that returns whether or not a date is unavailable\n",
+      "description_zh": "A function that returns whether or not a date is unavailable\n"
+    },
+    "locale": {
+      "default": "en",
+      "value": "",
+      "type": "string",
+      "description": "The locale to use for formatting dates\n",
+      "description_zh": "The locale to use for formatting dates\n"
+    },
+    "maxValue": {
+      "default": "",
+      "value": "",
+      "type": "DateValue",
+      "description": "The maximum date that can be selected\n",
+      "description_zh": "The maximum date that can be selected\n"
+    },
+    "minValue": {
+      "default": "",
+      "value": "",
+      "type": "DateValue",
+      "description": "The minimum date that can be selected\n",
+      "description_zh": "The minimum date that can be selected\n"
+    },
+    "modelValue": {
+      "default": "",
+      "value": "",
+      "type": "DateValue | DateValue[]",
+      "description": "The controlled checked state of the calendar. Can be bound as v-model.\n",
+      "description_zh": "The controlled checked state of the calendar. Can be bound as v-model.\n"
+    },
+    "multiple": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether or not multiple dates can be selected\n",
+      "description_zh": "Whether or not multiple dates can be selected\n"
+    },
+    "numberOfMonths": {
+      "default": "1",
+      "value": "",
+      "type": "number",
+      "description": "The number of months to display at once\n",
+      "description_zh": "The number of months to display at once\n"
+    },
+    "pagedNavigation": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "This property causes the previous and next buttons to navigate by the number of months displayed at once, rather than one month\n",
+      "description_zh": "This property causes the previous and next buttons to navigate by the number of months displayed at once, rather than one month\n"
+    },
+    "placeholder": {
+      "default": "",
+      "value": "",
+      "type": "DateValue",
+      "description": "The placeholder date, which is used to determine what month to display when no date is selected. This updates as the user navigates the calendar and can be used to programmatically control the calendar view\n",
+      "description_zh": "The placeholder date, which is used to determine what month to display when no date is selected. This updates as the user navigates the calendar and can be used to programmatically control the calendar view\n"
+    },
+    "preventDeselect": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether or not to prevent the user from deselecting a date without selecting another date first\n",
+      "description_zh": "Whether or not to prevent the user from deselecting a date without selecting another date first\n"
+    },
+    "readonly": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether or not the calendar is readonly\n",
+      "description_zh": "Whether or not the calendar is readonly\n"
+    },
+    "weekdayFormat": {
+      "default": "narrow",
+      "value": "",
+      "type": "narrow | short | long",
+      "description": "The format to use for the weekday strings provided via the weekdays slot prop\n",
+      "description_zh": "The format to use for the weekday strings provided via the weekdays slot prop\n"
+    },
+    "weekStartsOn": {
+      "default": "0",
+      "value": "",
+      "type": "0 | 1 | 2 | 3 | 4 | 5 | 6",
+      "description": "The day of the week to start the calendar on\n",
+      "description_zh": "The day of the week to start the calendar on\n"
+    }
+  },
+  "events": [
+    {
+      "name": "modelValue",
+      "description": "Event handler called whenever the model value changes\n",
+      "description_zh": "Event handler called whenever the model value changes\n",
+      "params": "[date: DateValue]"
+    },
+    {
+      "name": "placeholder",
+      "description": "Event handler called whenever the placeholder value changes\n",
+      "description_zh": "Event handler called whenever the placeholder value changes\n",
+      "params": "[date: DateValue]"
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "date",
+      "description": "payload: DateValue\nThe current date of the placeholder\n",
+      "description_zh": "payload: DateValue\nThe current date of the placeholder\n"
+    },
+    {
+      "name": "grid",
+      "description": "payload: Grid<DateValue>[]\nThe grid of dates\n",
+      "description_zh": "payload: Grid<DateValue>[]\nThe grid of dates\n"
+    },
+    {
+      "name": "weekDays",
+      "description": "payload: string[]\nThe days of the week\n",
+      "description_zh": "payload: string[]\nThe days of the week\n"
+    },
+    {
+      "name": "weekStartsOn",
+      "description": "payload: 0 | 1 | 2 | 3 | 4 | 5 | 6\nThe start of the week\n",
+      "description_zh": "payload: 0 | 1 | 2 | 3 | 4 | 5 | 6\nThe start of the week\n"
+    },
+    {
+      "name": "locale",
+      "description": "payload: string\nThe calendar locale\n",
+      "description_zh": "payload: string\nThe calendar locale\n"
+    },
+    {
+      "name": "fixedWeeks",
+      "description": "payload: boolean\nWhether or not to always display 6 weeks in the calendar\n",
+      "description_zh": "payload: boolean\nWhether or not to always display 6 weeks in the calendar\n"
+    }
+  ],
+  "link": "https://www.radix-vue.com/components/calendar.html#root",
+  "link_zh": "https://www.radix-vue.com/components/calendar.html#root"
+}
