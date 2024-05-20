@@ -1,0 +1,249 @@
+{
+  "name": "DateRangePickerRoot",
+  "props": {
+    "as": {
+      "default": "div",
+      "value": "",
+      "type": "AsTag | Component",
+      "description": "The element or component this component should render as. Can be overwrite by asChild该组件应呈现为的元素或组件.可以被 asChild 覆盖\n",
+      "description_zh": "The element or component this component should render as. Can be overwrite by asChild该组件应呈现为的元素或组件.可以被 asChild 覆盖\n"
+    },
+    "asChild": {
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "description": "Change the default rendered element for the one passed as a child, merging their props and behavior.更改作为子级传递的元素的默认渲染元素,合并它们的道具和行为.\nRead our Composition guide for more details.请阅读我们的作文指南了解更多详细信息.\n",
+      "description_zh": "Change the default rendered element for the one passed as a child, merging their props and behavior.更改作为子级传递的元素的默认渲染元素,合并它们的道具和行为.\nRead our Composition guide for more details.请阅读我们的作文指南了解更多详细信息.\n"
+    },
+    "defaultOpen": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "The open state of the popover when it is initially rendered. Use when you do not need to control its open state.弹出窗口最初呈现时的打开状态.当不需要控制其打开状态时使用.\n",
+      "description_zh": "The open state of the popover when it is initially rendered. Use when you do not need to control its open state.弹出窗口最初呈现时的打开状态.当不需要控制其打开状态时使用.\n"
+    },
+    "defaultPlaceholder": {
+      "default": "",
+      "value": "",
+      "type": "DateValue",
+      "description": "The default placeholder date默认占位符日期\n",
+      "description_zh": "The default placeholder date默认占位符日期\n"
+    },
+    "defaultValue": {
+      "default": "{ start: undefined, end: undefined }",
+      "value": "",
+      "type": "DateRange",
+      "description": "The default value for the calendar\n",
+      "description_zh": "The default value for the calendar\n"
+    },
+    "dir": {
+      "default": "",
+      "value": "",
+      "type": "ltr | rtl",
+      "description": "The reading direction of the date field when applicable.  If omitted, inherits globally from ConfigProvider or assumes LTR (left-to-right) reading mode.\n",
+      "description_zh": "The reading direction of the date field when applicable.  If omitted, inherits globally from ConfigProvider or assumes LTR (left-to-right) reading mode.\n"
+    },
+    "disabled": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether or not the date field is disabled\n",
+      "description_zh": "Whether or not the date field is disabled\n"
+    },
+    "fixedWeeks": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether or not to always display 6 weeks in the calendar\n",
+      "description_zh": "Whether or not to always display 6 weeks in the calendar\n"
+    },
+    "granularity": {
+      "default": "",
+      "value": "",
+      "type": "day | hour | minute | second",
+      "description": "The granularity to use for formatting times. Defaults to day if a CalendarDate is provided, otherwise defaults to minute. The field will render segments for each part of the date up to and including the specified granularity\n",
+      "description_zh": "The granularity to use for formatting times. Defaults to day if a CalendarDate is provided, otherwise defaults to minute. The field will render segments for each part of the date up to and including the specified granularity\n"
+    },
+    "hideTimeZone": {
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether or not to hide the time zone segment of the field\n",
+      "description_zh": "Whether or not to hide the time zone segment of the field\n"
+    },
+    "hourCycle": {
+      "default": "",
+      "value": "",
+      "type": "12 | 24",
+      "description": "The hour cycle used for formatting times. Defaults to the local preference\n",
+      "description_zh": "The hour cycle used for formatting times. Defaults to the local preference\n"
+    },
+    "id": {
+      "default": "",
+      "value": "",
+      "type": "string",
+      "description": "Id of the element\n",
+      "description_zh": "Id of the element\n"
+    },
+    "isDateDisabled": {
+      "default": "",
+      "value": "",
+      "type": "Matcher",
+      "description": "A function that returns whether or not a date is disabled\n",
+      "description_zh": "A function that returns whether or not a date is disabled\n"
+    },
+    "isDateUnavailable": {
+      "default": "",
+      "value": "",
+      "type": "Matcher",
+      "description": "A function that returns whether or not a date is unavailable\n",
+      "description_zh": "A function that returns whether or not a date is unavailable\n"
+    },
+    "locale": {
+      "default": "en",
+      "value": "",
+      "type": "string",
+      "description": "The locale to use for formatting dates\n",
+      "description_zh": "The locale to use for formatting dates\n"
+    },
+    "maxValue": {
+      "default": "",
+      "value": "",
+      "type": "DateValue",
+      "description": "The maximum date that can be selected\n",
+      "description_zh": "The maximum date that can be selected\n"
+    },
+    "minValue": {
+      "default": "",
+      "value": "",
+      "type": "DateValue",
+      "description": "The minimum date that can be selected\n",
+      "description_zh": "The minimum date that can be selected\n"
+    },
+    "modal": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "The modality of the popover. When set to true, interaction with outside elements will be disabled and only popover content will be visible to screen readers.\n",
+      "description_zh": "The modality of the popover. When set to true, interaction with outside elements will be disabled and only popover content will be visible to screen readers.\n"
+    },
+    "modelValue": {
+      "default": "",
+      "value": "",
+      "type": "DateRange",
+      "description": "The controlled checked state of the calendar. Can be bound as v-model.\n",
+      "description_zh": "The controlled checked state of the calendar. Can be bound as v-model.\n"
+    },
+    "name": {
+      "default": "",
+      "value": "",
+      "type": "string",
+      "description": "The name of the date field. Submitted with its owning form as part of a name/value pair.\n",
+      "description_zh": "The name of the date field. Submitted with its owning form as part of a name/value pair.\n"
+    },
+    "numberOfMonths": {
+      "default": "1",
+      "value": "",
+      "type": "number",
+      "description": "The number of months to display at once\n",
+      "description_zh": "The number of months to display at once\n"
+    },
+    "open": {
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "description": "The controlled open state of the popover.\n",
+      "description_zh": "The controlled open state of the popover.\n"
+    },
+    "pagedNavigation": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "This property causes the previous and next buttons to navigate by the number of months displayed at once, rather than one month\n",
+      "description_zh": "This property causes the previous and next buttons to navigate by the number of months displayed at once, rather than one month\n"
+    },
+    "placeholder": {
+      "default": "",
+      "value": "",
+      "type": "DateValue",
+      "description": "The placeholder date, which is used to determine what month to display when no date is selected. This updates as the user navigates the calendar and can be used to programmatically control the calendar view\n",
+      "description_zh": "The placeholder date, which is used to determine what month to display when no date is selected. This updates as the user navigates the calendar and can be used to programmatically control the calendar view\n"
+    },
+    "preventDeselect": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether or not to prevent the user from deselecting a date without selecting another date first\n",
+      "description_zh": "Whether or not to prevent the user from deselecting a date without selecting another date first\n"
+    },
+    "readonly": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether or not the date field is readonly\n",
+      "description_zh": "Whether or not the date field is readonly\n"
+    },
+    "required": {
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "description": "When true, indicates that the user must check the date field before the owning form can be submitted.\n",
+      "description_zh": "When true, indicates that the user must check the date field before the owning form can be submitted.\n"
+    },
+    "weekdayFormat": {
+      "default": "narrow",
+      "value": "",
+      "type": "narrow | short | long",
+      "description": "The format to use for the weekday strings provided via the weekdays slot prop\n",
+      "description_zh": "The format to use for the weekday strings provided via the weekdays slot prop\n"
+    },
+    "weekStartsOn": {
+      "default": "0",
+      "value": "",
+      "type": "0 | 1 | 2 | 3 | 4 | 5 | 6",
+      "description": "The day of the week to start the calendar on\n",
+      "description_zh": "The day of the week to start the calendar on\n"
+    }
+  },
+  "events": [
+    {
+      "name": "modelValue",
+      "description": "Event handler called whenever the model value changes\n",
+      "description_zh": "Event handler called whenever the model value changes\n",
+      "params": "[date: DateRange]"
+    },
+    {
+      "name": "open",
+      "description": "Event handler called when the open state of the submenu changes.\n",
+      "description_zh": "Event handler called when the open state of the submenu changes.\n",
+      "params": "[value: boolean]"
+    },
+    {
+      "name": "placeholder",
+      "description": "Event handler called whenever the placeholder value changes\n",
+      "description_zh": "Event handler called whenever the placeholder value changes\n",
+      "params": "[date: DateValue]"
+    },
+    {
+      "name": "startValue",
+      "description": "Event handler called whenever the start value changes\n",
+      "description_zh": "Event handler called whenever the start value changes\n",
+      "params": "[date: DateValue]"
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "segments",
+      "description": "payload: { start: { part: SegmentPart; value: string; }[]; end: { part: SegmentPart; value: string; }[]; }\n",
+      "description_zh": "payload: { start: { part: SegmentPart; value: string; }[]; end: { part: SegmentPart; value: string; }[]; }\n"
+    },
+    {
+      "name": "modelValue",
+      "description": "payload: DateRange\n",
+      "description_zh": "payload: DateRange\n"
+    }
+  ],
+  "link": "https://www.radix-vue.com/components/date-range-picker.html",
+  "link_zh": "https://www.radix-vue.com/components/date-range-picker.html"
+}
