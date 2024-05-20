@@ -193,6 +193,7 @@ import RadioGroupRoot from './RadioGroupRoot.json'
 
 import CalendarCell from './CalendarCell.json'
 import CalendarCellTrigger from './CalendarCellTrigger.json'
+import CalendarRoot from './CalendarRoot.json'
 import CalendarGrid from './CalendarGrid.json'
 import CalendarGridBody from './CalendarGridBody.json'
 import CalendarGridHead from './CalendarGridHead.json'
@@ -202,7 +203,28 @@ import CalendarHeader from './CalendarHeader.json'
 import CalendarHeading from './CalendarHeading.json'
 import CalendarNext from './CalendarNext.json'
 import CalendarPrev from './CalendarPrev.json'
-import CalendarRoot from './CalendarRoot.json'
+import DateFieldAnchor from './DateFieldAnchor.json'
+import DateFieldInput from './DateFieldInput.json'
+import DateFieldRoot from './DateFieldRoot.json'
+import DatePickerArrow from './DatePickerArrow.json'
+import DatePickerCalendar from './DatePickerCalendar.json'
+import DatePickerCell from './DatePickerCell.json'
+import DatePickerCellTrigger from './DatePickerCellTrigger.json'
+import DatePickerClose from './DatePickerClose.json'
+import DatePickerContent from './DatePickerContent.json'
+import DatePickerField from './DatePickerField.json'
+import DatePickerGridBody from './DatePickerGridBody.json'
+import DatePickerGridHead from './DatePickerGridHead.json'
+import DatePickerGridRow from './DatePickerGridRow.json'
+import DatePickerHeadCell from './DatePickerHeadCell.json'
+import DatePickerHeader from './DatePickerHeader.json'
+import DatePickerHeading from './DatePickerHeading.json'
+import DatePickerInput from './DatePickerInput.json'
+import DatePickerNext from './DatePickerNext.json'
+import DatePickerPrev from './DatePickerPrev.json'
+import DatePickerRoot from './DatePickerRoot.json'
+import DatePickerTrigger from './DatePickerTrigger.json'
+import DatePickerGrid from './DatePickerGrid.json'
 
 export function radixVue1() {
   const map: any = [
@@ -410,6 +432,28 @@ export function radixVue1() {
     CalendarNext,
     CalendarPrev,
     CalendarRoot,
+    DateFieldAnchor,
+    DateFieldInput,
+    DateFieldRoot,
+    DatePickerArrow,
+    DatePickerCalendar,
+    DatePickerCell,
+    DatePickerCellTrigger,
+    DatePickerClose,
+    DatePickerContent,
+    DatePickerField,
+    DatePickerGridBody,
+    DatePickerGridHead,
+    DatePickerGridRow,
+    DatePickerHeadCell,
+    DatePickerHeader,
+    DatePickerHeading,
+    DatePickerInput,
+    DatePickerNext,
+    DatePickerPrev,
+    DatePickerRoot,
+    DatePickerTrigger,
+    DatePickerGrid,
   ]
 
   return propsReducer('radix-vue', map, '')
@@ -621,6 +665,28 @@ export function radixVue1Components() {
     [CalendarNext, '显示日期和星期几,促进与日期相关的交互.', '<CalendarNext></CalendarNext>'],
     [CalendarPrev, '显示日期和星期几,促进与日期相关的交互.', '<CalendarPrev></CalendarPrev>'],
     [CalendarRoot, '显示日期和星期几,促进与日期相关的交互.', '<CalendarRoot></CalendarRoot>'],
+    [DateFieldAnchor, '使用户能够在指定字段中输入特定日期.', '<DateFieldAnchor></DateFieldAnchor>'],
+    [DateFieldInput, '使用户能够在指定字段中输入特定日期.', '<DateFieldInput></DateFieldInput>'],
+    [DateFieldRoot, '使用户能够在指定字段中输入特定日期.', '<DateFieldRoot></DateFieldRoot>'],
+    [DatePickerArrow, '通过输入和基于日历的界面方便选择日期.', '<DatePickerArrow></DatePickerArrow>'],
+    [DatePickerCalendar, '通过输入和基于日历的界面方便选择日期.', '<DatePickerCalendar></DatePickerCalendar>'],
+    [DatePickerCell, '通过输入和基于日历的界面方便选择日期.', '<DatePickerCell></DatePickerCell>'],
+    [DatePickerCellTrigger, '通过输入和基于日历的界面方便选择日期.', '<DatePickerCellTrigger></DatePickerCellTrigger>'],
+    [DatePickerClose, '通过输入和基于日历的界面方便选择日期.', '<DatePickerClose></DatePickerClose>'],
+    [DatePickerContent, '通过输入和基于日历的界面方便选择日期.', '<DatePickerContent></DatePickerContent>'],
+    [DatePickerField, '通过输入和基于日历的界面方便选择日期.', '<DatePickerField></DatePickerField>'],
+    [DatePickerGridBody, '通过输入和基于日历的界面方便选择日期.', '<DatePickerGridBody></DatePickerGridBody>'],
+    [DatePickerGridHead, '通过输入和基于日历的界面方便选择日期.', '<DatePickerGridHead></DatePickerGridHead>'],
+    [DatePickerGridRow, '通过输入和基于日历的界面方便选择日期.', '<DatePickerGridRow></DatePickerGridRow>'],
+    [DatePickerHeadCell, '通过输入和基于日历的界面方便选择日期.', '<DatePickerHeadCell></DatePickerHeadCell>'],
+    [DatePickerHeader, '通过输入和基于日历的界面方便选择日期.', '<DatePickerHeader></DatePickerHeader>'],
+    [DatePickerHeading, '通过输入和基于日历的界面方便选择日期.', '<DatePickerHeading></DatePickerHeading>'],
+    [DatePickerInput, '通过输入和基于日历的界面方便选择日期.', '<DatePickerInput></DatePickerInput>'],
+    [DatePickerNext, '通过输入和基于日历的界面方便选择日期.', '<DatePickerNext></DatePickerNext>'],
+    [DatePickerPrev, '通过输入和基于日历的界面方便选择日期.', '<DatePickerPrev></DatePickerPrev>'],
+    [DatePickerRoot, '通过输入和基于日历的界面方便选择日期.', '<DatePickerRoot></DatePickerRoot>'],
+    [DatePickerTrigger, '通过输入和基于日历的界面方便选择日期.', '<DatePickerTrigger></DatePickerTrigger>'],
+    [DatePickerGrid, '通过输入和基于日历的界面方便选择日期.', '<DatePickerGrid></DatePickerGrid>'],
   ]
   return componentsReducer(map, false, '', 'radix-vue', true)
 }
