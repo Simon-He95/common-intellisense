@@ -1,0 +1,148 @@
+{
+  "name": "PopoverContent",
+  "props": {
+    "forceMount": {
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "description": "Used to force mounting when more control is needed. Useful when controlling animation with Vue.js animation libraries.",
+      "description_zh": "用于在需要更多控制时强制安装。在使用 Vue.js 动画库控制动画时很有用。"
+    },
+    "side": {
+      "default": "\"bottom\"",
+      "value": [
+        "top",
+        "right",
+        "bottom",
+        "left"
+      ],
+      "type": "top / right / bottom / left",
+      "description": "The preferred side of the trigger to render against when open. Will be reversed when collisions occur and avoidCollisions is enabled.",
+      "description_zh": "打开时要呈现的触发器的首选侧。当发生冲突并启用 avoidCollisions 时，将反转。"
+    },
+    ":sideOffset": {
+      "default": "0",
+      "value": "",
+      "type": "number",
+      "description": "The distance in pixels from the trigger.",
+      "description_zh": "与触发器的距离（以像素为单位）。"
+    },
+    "align": {
+      "default": "center",
+      "value": [
+        "start",
+        "center",
+        "end"
+      ],
+      "type": "start / center / end",
+      "description": "The preferred alignment against the trigger. May change when collisions occur.",
+      "description_zh": "与触发器的首选对齐方式。发生碰撞时可能会发生变化。"
+    },
+    ":alignOffset": {
+      "default": "0",
+      "value": "",
+      "type": "number",
+      "description": "An offset in pixels from the \"start\" or \"end\" alignment options.",
+      "description_zh": "与“开始”或“结束”对齐选项的偏移量（以像素为单位）。"
+    },
+    "avoidCollisions": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "When true, overrides the side and align preferences to prevent collisions with boundary edges.",
+      "description_zh": "如果为 true，则覆盖侧和对齐首选项，以防止与边界边发生冲突。"
+    },
+    "collisionBoundary": {
+      "default": "[]",
+      "value": "",
+      "type": "Element | null | Array<Element | null>",
+      "description": "The element used as the collision boundary. By default this is the viewport, though you can provide additional element(s) to be included in this check.",
+      "description_zh": "用作碰撞边界的元素。默认情况下，这是视口，但您可以提供要包含在此检查中的其他元素。"
+    },
+    ":collisionPadding": {
+      "default": "0",
+      "value": "",
+      "type": "number | Partial<Record<Side, number>>",
+      "description": "The distance in pixels from the boundary edges where collision detection should occur. Accepts a number (same for all sides), or a partial padding object, for example: {`{ top: 20, left: 20 }`} .",
+      "description_zh": "与应进行碰撞检测的边界边缘之间的距离（以像素为单位）。接受一个数字（所有边都相同）或一个部分填充对象，例如：{'{ top： 20， left： 20 }'} 。"
+    },
+    ":arrowPadding": {
+      "default": "0",
+      "value": "",
+      "type": "number",
+      "description": "The padding between the arrow and the edges of the content. If your content has border-radius, this will prevent it from overflowing the corners.",
+      "description_zh": "箭头和内容边缘之间的填充。如果您的内容具有边框半径，这将防止它溢出角落。"
+    },
+    "sticky": {
+      "default": "partial",
+      "value": [
+        "partial",
+        "always"
+      ],
+      "type": "partial / always",
+      "description": "The sticky behavior on the align axis. \"partial\" will keep the content in the boundary as long as the trigger is at least partially in the boundary whilst \"always\" will keep the content in the boundary regardless.",
+      "description_zh": "对齐轴上的粘性行为。只要触发器至少部分在边界中，“partial”就会将内容保留在边界中，而“always”将始终将内容保留在边界中。"
+    },
+    "hideWhenDetached": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to hide the content when the trigger becomes fully occluded.",
+      "description_zh": "是否在触发器完全遮挡时隐藏内容。"
+    },
+    "as": {
+      "default": "div",
+      "value": "",
+      "type": "string | Component",
+      "description": "The element or component this component should render as. Can be overwrite by asChild",
+      "description_zh": "此组件应呈现为的元素或组件。可以被 asChild 覆盖"
+    },
+    "asChild": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Change the default rendered element for the one passed as a child, merging their props and behavior.",
+      "description_zh": "更改作为子元素传递的默认渲染元素，合并其道具和行为。"
+    }
+  },
+  "events": [
+    {
+      "name": "openAutoFocus",
+      "params": "(event: Event) => void",
+      "description": "",
+      "description_zh": "",
+      "value": ""
+    },
+    {
+      "name": "closeAutoFocus",
+      "params": "(event: Event) => void",
+      "description": "",
+      "description_zh": "",
+      "value": ""
+    },
+    {
+      "name": "escapeKeyDown",
+      "params": "(event: KeyboardEvent) => void",
+      "description": "",
+      "description_zh": "",
+      "value": ""
+    },
+    {
+      "name": "pointerDownOutside",
+      "params": "(event: PointerDownOutsideEvent) => void",
+      "description": "",
+      "description_zh": "",
+      "value": ""
+    },
+    {
+      "name": "interactOutside",
+      "params": "(event: FocusEvent | MouseEvent | TouchEvent) => void",
+      "description": "",
+      "description_zh": "",
+      "value": ""
+    }
+  ],
+  "methods": [],
+  "link": "https://www.radix-vue.com/components/popover.html",
+  "link_zh": "https://www.radix-vue.com/components/popover.html"
+}

@@ -1,1 +1,1 @@
-export * from './shadcnVue0'
+export * from './shadcn-vue0'
