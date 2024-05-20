@@ -254,6 +254,19 @@ import EditablePreview from './EditablePreview.json'
 import EditableRoot from './EditableRoot.json'
 import EditableSubmitTrigger from './EditableSubmitTrigger.json'
 
+import RangeCalendarCell from './RangeCalendarCell.json'
+import RangeCalendarCellTrigger from './RangeCalendarCellTrigger.json'
+import RangeCalendarGrid from './RangeCalendarGrid.json'
+import RangeCalendarGridBody from './RangeCalendarGridBody.json'
+import RangeCalendarGridHead from './RangeCalendarGridHead.json'
+import RangeCalendarHeading from './RangeCalendarHeading.json'
+import RangeCalendarGridRow from './RangeCalendarGridRow.json'
+import RangeCalendarHeadCell from './RangeCalendarHeadCell.json'
+import RangeCalendarHeader from './RangeCalendarHeader.json'
+import RangeCalendarNext from './RangeCalendarNext.json'
+import RangeCalendarPrev from './RangeCalendarPrev.json'
+import RangeCalendarRoot from './RangeCalendarRoot.json'
+
 export function radixVue1() {
   const map: any = [
     AccordionContent,
@@ -509,6 +522,18 @@ export function radixVue1() {
     EditablePreview,
     EditableRoot,
     EditableSubmitTrigger,
+    RangeCalendarCell,
+    RangeCalendarCellTrigger,
+    RangeCalendarGrid,
+    RangeCalendarGridBody,
+    RangeCalendarGridHead,
+    RangeCalendarHeading,
+    RangeCalendarGridRow,
+    RangeCalendarHeadCell,
+    RangeCalendarHeader,
+    RangeCalendarNext,
+    RangeCalendarPrev,
+    RangeCalendarRoot,
   ]
 
   return propsReducer('radix-vue', map, '')
@@ -768,7 +793,19 @@ export function radixVue1Components() {
     [EditableInput, '显示用于编辑单行文本的输入字段，在加载时呈现为静态文本。当触发编辑交互时，它会转换为文本输入字段', '<EditableInput></EditableInput>'],
     [EditablePreview, '显示用于编辑单行文本的输入字段，在加载时呈现为静态文本。当触发编辑交互时，它会转换为文本输入字段', '<EditablePreview></EditablePreview>'],
     [EditableRoot, '显示用于编辑单行文本的输入字段，在加载时呈现为静态文本。当触发编辑交互时，它会转换为文本输入字段', '<EditableRoot></EditableRoot>'],
-    [EditableSubmitTrigger, '显示用于编辑单行文本的输入字段，在加载时呈现为静态文本。当触发编辑交互时，它会转换为文本输入字段', '<EditableSubmitTrigger></EditableSubmitTrigger>'],
+    [EditableSubmitTrigger, '显示用于编辑单行文本的输入字段,在加载时呈现为静态文本.当触发编辑交互时,它会转换为文本输入字段', '<EditableSubmitTrigger></EditableSubmitTrigger>'],
+    [RangeCalendarCell, '提供专为选择日期范围而定制的日历视图', '<RangeCalendarCell></RangeCalendarCell>'],
+    [RangeCalendarCellTrigger, '提供专为选择日期范围而定制的日历视图', '<RangeCalendarCellTrigger></RangeCalendarCellTrigger>'],
+    [RangeCalendarGrid, '提供专为选择日期范围而定制的日历视图', '<RangeCalendarGrid></RangeCalendarGrid>'],
+    [RangeCalendarGridBody, '提供专为选择日期范围而定制的日历视图', '<RangeCalendarGridBody></RangeCalendarGridBody>'],
+    [RangeCalendarGridHead, '提供专为选择日期范围而定制的日历视图', '<RangeCalendarGridHead></RangeCalendarGridHead>'],
+    [RangeCalendarHeading, '提供专为选择日期范围而定制的日历视图', '<RangeCalendarHeading></RangeCalendarHeading>'],
+    [RangeCalendarGridRow, '提供专为选择日期范围而定制的日历视图', '<RangeCalendarGridRow></RangeCalendarGridRow>'],
+    [RangeCalendarHeadCell, '提供专为选择日期范围而定制的日历视图', '<RangeCalendarHeadCell></RangeCalendarHeadCell>'],
+    [RangeCalendarHeader, '提供专为选择日期范围而定制的日历视图', '<RangeCalendarHeader></RangeCalendarHeader>'],
+    [RangeCalendarNext, '提供专为选择日期范围而定制的日历视图', '<RangeCalendarNext></RangeCalendarNext>'],
+    [RangeCalendarPrev, '提供专为选择日期范围而定制的日历视图', '<RangeCalendarPrev></RangeCalendarPrev>'],
+    [RangeCalendarRoot, '提供专为选择日期范围而定制的日历视图', '<RangeCalendarRoot></RangeCalendarRoot>'],
   ]
   return componentsReducer(map, false, '', 'radix-vue', true)
 }
