@@ -1,0 +1,74 @@
+{
+  "name": "SplitterGroup",
+  "props": {
+    "as": {
+      "default": "div",
+      "value": "",
+      "type": "AsTag | Component",
+      "description": "The element or component this component should render as. Can be overwrite by asChild\n",
+      "description_zh": "The element or component this component should render as. Can be overwrite by asChild\n"
+    },
+    "asChild": {
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "description": "Change the default rendered element for the one passed as a child, merging their props and behavior.\nRead our Composition guide for more details.\n",
+      "description_zh": "Change the default rendered element for the one passed as a child, merging their props and behavior.\nRead our Composition guide for more details.\n"
+    },
+    "autoSaveId": {
+      "default": "null",
+      "value": "",
+      "type": "string | null",
+      "description": "Unique id used to auto-save group arrangement via localStorage.\n",
+      "description_zh": "Unique id used to auto-save group arrangement via localStorage.\n"
+    },
+    "direction": {
+      "default": "",
+      "value": "",
+      "type": "vertical | horizontal",
+      "description": "The group orientation of splitter.\n",
+      "description_zh": "The group orientation of splitter.\n",
+      "required": true
+    },
+    "id": {
+      "default": "",
+      "value": "",
+      "type": "string | null",
+      "description": "Group id; falls back to useId when not provided.\n",
+      "description_zh": "Group id; falls back to useId when not provided.\n"
+    },
+    "keyboardResizeBy": {
+      "default": "10",
+      "value": "",
+      "type": "number | null",
+      "description": "Step size when arrow key was pressed.\n",
+      "description_zh": "Step size when arrow key was pressed.\n"
+    },
+    "storage": {
+      "default": "defaultStorage",
+      "value": "",
+      "type": "PanelGroupStorage",
+      "description": "Custom storage API; defaults to localStorage\n",
+      "description_zh": "Custom storage API; defaults to localStorage\n"
+    }
+  },
+  "events": [
+    {
+      "name": "layout",
+      "description": "Event handler called when group layout changes\n",
+      "description_zh": "Event handler called when group layout changes\n",
+      "params": "[val: number[]]"
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "layout",
+      "description": "payload: number[]\nCurrent size of layout\n",
+      "description_zh": "payload: number[]\nCurrent size of layout\n"
+    }
+  ],
+  "suggestions": ["HoverCardTrigger", "HoverCardPortal"],
+  "link": "https://www.radix-vue.com/components/splitter.html",
+  "link_zh": "https://www.radix-vue.com/components/splitter.html"
+}

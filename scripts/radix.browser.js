@@ -104,3 +104,20 @@ function getSlots() {
   console.log({ slots })
   return slots
 }
+
+function getMethods() {
+  const methods = []
+  Array.from($0.closest('tbody').children).forEach(child => {
+    const name = child.children[0].textContent.replace(/^update:/, '')
+    const params = child.children[1].querySelector('code').textContent.replaceAll('\'', '')
+    const description = child.children[1].querySelector('code + div').textContent
+    methods.push({
+      name,
+      description,
+      params,
+      description_zh: description
+    })
+  })
+  console.log({ methods })
+  return methods
+}

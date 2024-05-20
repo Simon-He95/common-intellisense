@@ -266,6 +266,9 @@ import RangeCalendarHeader from './RangeCalendarHeader.json'
 import RangeCalendarNext from './RangeCalendarNext.json'
 import RangeCalendarPrev from './RangeCalendarPrev.json'
 import RangeCalendarRoot from './RangeCalendarRoot.json'
+import SplitterGroup from './SplitterGroup.json'
+import SplitterPanel from './SplitterPanel.json'
+import SplitterResizeHandle from './SplitterResizeHandle.json'
 
 export function radixVue1() {
   const map: any = [
@@ -534,6 +537,9 @@ export function radixVue1() {
     RangeCalendarNext,
     RangeCalendarPrev,
     RangeCalendarRoot,
+    SplitterGroup,
+    SplitterPanel,
+    SplitterResizeHandle,
   ]
 
   return propsReducer('radix-vue', map, '')
@@ -806,6 +812,10 @@ export function radixVue1Components() {
     [RangeCalendarNext, '提供专为选择日期范围而定制的日历视图', '<RangeCalendarNext></RangeCalendarNext>'],
     [RangeCalendarPrev, '提供专为选择日期范围而定制的日历视图', '<RangeCalendarPrev></RangeCalendarPrev>'],
     [RangeCalendarRoot, '提供专为选择日期范围而定制的日历视图', '<RangeCalendarRoot></RangeCalendarRoot>'],
+    [SplitterGroup, '将布局划分为可调整大小的部分的组件', '<SplitterGroup></SplitterGroup>'],
+    [SplitterPanel, '将布局划分为可调整大小的部分的组件', '<SplitterPanel></SplitterPanel>'],
+    [SplitterResizeHandle, '将布局划分为可调整大小的部分的组件', '<SplitterResizeHandle></SplitterResizeHandle>'],
+
   ]
   return componentsReducer(map, false, '', 'radix-vue', true)
 }

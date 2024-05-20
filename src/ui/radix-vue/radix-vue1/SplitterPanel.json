@@ -1,0 +1,129 @@
+{
+  "name": "SplitterPanel",
+  "props": {
+    "as": {
+      "default": "div",
+      "value": "",
+      "type": "AsTag | Component",
+      "description": "The element or component this component should render as. Can be overwrite by asChild\n",
+      "description_zh": "The element or component this component should render as. Can be overwrite by asChild\n"
+    },
+    "asChild": {
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "description": "Change the default rendered element for the one passed as a child, merging their props and behavior.\nRead our Composition guide for more details.\n",
+      "description_zh": "Change the default rendered element for the one passed as a child, merging their props and behavior.\nRead our Composition guide for more details.\n"
+    },
+    "collapsedSize": {
+      "default": "",
+      "value": "",
+      "type": "number",
+      "description": "The size of panel when it is collapsed.\n",
+      "description_zh": "The size of panel when it is collapsed.\n"
+    },
+    "collapsible": {
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "description": "Should panel collapse when resized beyond its minSize. When true, it will be collapsed to collapsedSize.\n",
+      "description_zh": "Should panel collapse when resized beyond its minSize. When true, it will be collapsed to collapsedSize.\n"
+    },
+    "defaultSize": {
+      "default": "",
+      "value": "",
+      "type": "number",
+      "description": "Initial size of panel (numeric value between 1-100)\n",
+      "description_zh": "Initial size of panel (numeric value between 1-100)\n"
+    },
+    "id": {
+      "default": "",
+      "value": "",
+      "type": "string",
+      "description": "Panel id (unique within group); falls back to useId when not provided\n",
+      "description_zh": "Panel id (unique within group); falls back to useId when not provided\n"
+    },
+    "maxSize": {
+      "default": "",
+      "value": "",
+      "type": "number",
+      "description": "The maximum allowable size of panel (numeric value between 1-100); defaults to 100\n",
+      "description_zh": "The maximum allowable size of panel (numeric value between 1-100); defaults to 100\n"
+    },
+    "minSize": {
+      "default": "",
+      "value": "",
+      "type": "number",
+      "description": "The minimum allowable size of panel (numeric value between 1-100); defaults to 10\n",
+      "description_zh": "The minimum allowable size of panel (numeric value between 1-100); defaults to 10\n"
+    },
+    "order": {
+      "default": "",
+      "value": "",
+      "type": "number",
+      "description": "The order of panel within group; required for groups with conditionally rendered panels\n",
+      "description_zh": "The order of panel within group; required for groups with conditionally rendered panels\n"
+    }
+  },
+  "events": [
+    {
+      "name": "collapse",
+      "description": "Event handler called when panel is collapsed.\n",
+      "description_zh": "Event handler called when panel is collapsed.\n",
+      "params": "[]"
+    },
+    {
+      "name": "expand",
+      "description": "Event handler called when panel is expanded.\n",
+      "description_zh": "Event handler called when panel is expanded.\n",
+      "params": "[]"
+    },
+    {
+      "name": "resize",
+      "description": "Event handler called when panel is resized; size parameter is a numeric value between 1-100.\n",
+      "description_zh": "Event handler called when panel is resized; size parameter is a numeric value between 1-100.\n",
+      "params": "[size: number, prevSize: number]"
+    }
+  ],
+  "methods": [
+    {
+      "name": "collapse",
+      "description": "If panel is collapsible, collapse it fully.\n",
+      "params": "() => void",
+      "description_zh": "If panel is collapsible, collapse it fully.\n"
+    },
+    {
+      "name": "expand",
+      "description": "If panel is currently collapsed, expand it to its most recent size.\n",
+      "params": "() => void",
+      "description_zh": "If panel is currently collapsed, expand it to its most recent size.\n"
+    },
+    {
+      "name": "getSize",
+      "description": "Gets the current size of the panel as a percentage (1 - 100).\n",
+      "params": "() => number",
+      "description_zh": "Gets the current size of the panel as a percentage (1 - 100).\n"
+    },
+    {
+      "name": "resize",
+      "description": "Resize panel to the specified percentage (1 - 100).\n",
+      "params": "(size: number) => void",
+      "description_zh": "Resize panel to the specified percentage (1 - 100).\n"
+    }
+  ],
+  "slots": [
+    {
+      "name": "isCollapsed",
+      "description": "payload: boolean\nIs the panel collapsed\n",
+      "description_zh": "payload: boolean\nIs the panel collapsed\n"
+    },
+    {
+      "name": "isExpanded",
+      "description": "payload: boolean\nIs the panel expanded\n",
+      "description_zh": "payload: boolean\nIs the panel expanded\n"
+    }
+  ],
+  "suggestions": ["HoverCardTrigger", "HoverCardPortal"],
+  "link": "https://www.radix-vue.com/components/splitter.html",
+  "link_zh": "https://www.radix-vue.com/components/splitter.html"
+}
