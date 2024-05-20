@@ -246,6 +246,13 @@ import DateRangePickerNext from './DateRangePickerNext.json'
 import DateRangePickerPrev from './DateRangePickerPrev.json'
 import DateRangePickerRoot from './DateRangePickerRoot.json'
 import DateRangePickerTrigger from './DateRangePickerTrigger.json'
+import EditableArea from './EditableArea.json'
+import EditableCancelTrigger from './EditableCancelTrigger.json'
+import EditableEditTrigger from './EditableEditTrigger.json'
+import EditableInput from './EditableInput.json'
+import EditablePreview from './EditablePreview.json'
+import EditableRoot from './EditableRoot.json'
+import EditableSubmitTrigger from './EditableSubmitTrigger.json'
 
 export function radixVue1() {
   const map: any = [
@@ -495,6 +502,13 @@ export function radixVue1() {
     DateRangePickerPrev,
     DateRangePickerRoot,
     DateRangePickerTrigger,
+    EditableArea,
+    EditableCancelTrigger,
+    EditableEditTrigger,
+    EditableInput,
+    EditablePreview,
+    EditableRoot,
+    EditableSubmitTrigger,
   ]
 
   return propsReducer('radix-vue', map, '')
@@ -748,6 +762,13 @@ export function radixVue1Components() {
     [DateRangePickerPrev, '通过输入和基于日历的界面方便选择日期范围', '<DateRangePickerPrev></DateRangePickerPrev>'],
     [DateRangePickerRoot, '通过输入和基于日历的界面方便选择日期范围', '<DateRangePickerRoot></DateRangePickerRoot>'],
     [DateRangePickerTrigger, '通过输入和基于日历的界面方便选择日期范围', '<DateRangePickerTrigger></DateRangePickerTrigger>'],
+    [EditableArea, '显示用于编辑单行文本的输入字段，在加载时呈现为静态文本。当触发编辑交互时，它会转换为文本输入字段', '<EditableArea></EditableArea>'],
+    [EditableCancelTrigger, '显示用于编辑单行文本的输入字段，在加载时呈现为静态文本。当触发编辑交互时，它会转换为文本输入字段', '<EditableCancelTrigger></EditableCancelTrigger>'],
+    [EditableEditTrigger, '显示用于编辑单行文本的输入字段，在加载时呈现为静态文本。当触发编辑交互时，它会转换为文本输入字段', '<EditableEditTrigger></EditableEditTrigger>'],
+    [EditableInput, '显示用于编辑单行文本的输入字段，在加载时呈现为静态文本。当触发编辑交互时，它会转换为文本输入字段', '<EditableInput></EditableInput>'],
+    [EditablePreview, '显示用于编辑单行文本的输入字段，在加载时呈现为静态文本。当触发编辑交互时，它会转换为文本输入字段', '<EditablePreview></EditablePreview>'],
+    [EditableRoot, '显示用于编辑单行文本的输入字段，在加载时呈现为静态文本。当触发编辑交互时，它会转换为文本输入字段', '<EditableRoot></EditableRoot>'],
+    [EditableSubmitTrigger, '显示用于编辑单行文本的输入字段，在加载时呈现为静态文本。当触发编辑交互时，它会转换为文本输入字段', '<EditableSubmitTrigger></EditableSubmitTrigger>'],
   ]
   return componentsReducer(map, false, '', 'radix-vue', true)
 }

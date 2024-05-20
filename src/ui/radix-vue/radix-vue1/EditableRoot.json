@@ -1,0 +1,178 @@
+{
+  "name": "EditableRoot",
+  "props": {
+    "props": {
+      "activationMode": {
+        "default": "focus",
+        "value": "",
+        "type": "dblclick | focus | none",
+        "description": "The activation event of the editable field\n",
+        "description_zh": "The activation event of the editable field\n"
+      },
+      "as": {
+        "default": "div",
+        "value": "",
+        "type": "AsTag | Component",
+        "description": "The element or component this component should render as. Can be overwrite by asChild\n",
+        "description_zh": "The element or component this component should render as. Can be overwrite by asChild\n"
+      },
+      "asChild": {
+        "default": "",
+        "value": "",
+        "type": "boolean",
+        "description": "Change the default rendered element for the one passed as a child, merging their props and behavior.\nRead our Composition guide for more details.\n",
+        "description_zh": "Change the default rendered element for the one passed as a child, merging their props and behavior.\nRead our Composition guide for more details.\n"
+      },
+      "autoResize": {
+        "default": "false",
+        "value": "",
+        "type": "boolean",
+        "description": "Whether the editable field should auto resize\n",
+        "description_zh": "Whether the editable field should auto resize\n"
+      },
+      "defaultValue": {
+        "default": "",
+        "value": "",
+        "type": "string",
+        "description": "The default value of the editable field\n",
+        "description_zh": "The default value of the editable field\n"
+      },
+      "dir": {
+        "default": "",
+        "value": "",
+        "type": "ltr | rtl",
+        "description": "The reading direction of the calendar when applicable.  If omitted, inherits globally from ConfigProvider or assumes LTR (left-to-right) reading mode.\n",
+        "description_zh": "The reading direction of the calendar when applicable.  If omitted, inherits globally from ConfigProvider or assumes LTR (left-to-right) reading mode.\n"
+      },
+      "disabled": {
+        "default": "false",
+        "value": "",
+        "type": "boolean",
+        "description": "Whether the editable field is disabled\n",
+        "description_zh": "Whether the editable field is disabled\n"
+      },
+      "id": {
+        "default": "",
+        "value": "",
+        "type": "string",
+        "description": "The id of the field\n",
+        "description_zh": "The id of the field\n"
+      },
+      "maxLength": {
+        "default": "",
+        "value": "",
+        "type": "number",
+        "description": "The maximum number of characters allowed\n",
+        "description_zh": "The maximum number of characters allowed\n"
+      },
+      "modelValue": {
+        "default": "",
+        "value": "",
+        "type": "string",
+        "description": "The value of the editable field\n",
+        "description_zh": "The value of the editable field\n"
+      },
+      "name": {
+        "default": "",
+        "value": "",
+        "type": "string",
+        "description": "The name of the field\n",
+        "description_zh": "The name of the field\n"
+      },
+      "placeholder": {
+        "default": "Enter text...",
+        "value": "",
+        "type": "string | { edit: string; preview: string; }",
+        "description": "The placeholder for the editable field\n",
+        "description_zh": "The placeholder for the editable field\n"
+      },
+      "readonly": {
+        "default": "",
+        "value": "",
+        "type": "boolean",
+        "description": "Whether the editable field is read-only\n",
+        "description_zh": "Whether the editable field is read-only\n"
+      },
+      "selectOnFocus": {
+        "default": "false",
+        "value": "",
+        "type": "boolean",
+        "description": "Whether to select the text in the input when it is focused.\n",
+        "description_zh": "Whether to select the text in the input when it is focused.\n"
+      },
+      "startWithEditMode": {
+        "default": "",
+        "value": "",
+        "type": "boolean",
+        "description": "Whether to start with the edit mode active\n",
+        "description_zh": "Whether to start with the edit mode active\n"
+      },
+      "submitMode": {
+        "default": "blur",
+        "value": "",
+        "type": "blur | none | enter | both",
+        "description": "The submit event of the editable field\n",
+        "description_zh": "The submit event of the editable field\n"
+      }
+    }
+  },
+  "events": [
+    {
+      "name": "focusOutside",
+      "description": "Event handler called when the focus moves outside of the DismissableLayer.\nCan be prevented.\n",
+      "description_zh": "Event handler called when the focus moves outside of the DismissableLayer.\nCan be prevented.\n",
+      "params": "[event: FocusOutsideEvent]"
+    },
+    {
+      "name": "interactOutside",
+      "description": "Event handler called when an interaction happens outside the DismissableLayer.\nSpecifically, when a pointerdown event happens outside or focus moves outside of it.\nCan be prevented.\n",
+      "description_zh": "Event handler called when an interaction happens outside the DismissableLayer.\nSpecifically, when a pointerdown event happens outside or focus moves outside of it.\nCan be prevented.\n",
+      "params": "[event: PointerDownOutsideEvent | FocusOutsideEvent]"
+    },
+    {
+      "name": "pointerDownOutside",
+      "description": "Event handler called when the a pointerdown event happens outside of the DismissableLayer.\nCan be prevented.\n",
+      "description_zh": "Event handler called when the a pointerdown event happens outside of the DismissableLayer.\nCan be prevented.\n",
+      "params": "[event: PointerDownOutsideEvent]"
+    },
+    {
+      "name": "submit",
+      "description": "Event handler called when a value is submitted\n",
+      "description_zh": "Event handler called when a value is submitted\n",
+      "params": "[value: string]"
+    },
+    {
+      "name": "modelValue",
+      "description": "Event handler called whenever the model value changes\n",
+      "description_zh": "Event handler called whenever the model value changes\n",
+      "params": "[value: string]"
+    },
+    {
+      "name": "state",
+      "description": "Event handler called when the editable field changes state\n",
+      "description_zh": "Event handler called when the editable field changes state\n",
+      "params": "[state: cancel | submit | edit]"
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "isEditing",
+      "description": "payload: boolean\nWhether the editable field is in edit mode\n",
+      "description_zh": "payload: boolean\nWhether the editable field is in edit mode\n"
+    },
+    {
+      "name": "modelValue",
+      "description": "payload: string | undefined\nThe value of the editable field\n",
+      "description_zh": "payload: string | undefined\nThe value of the editable field\n"
+    },
+    {
+      "name": "isEmpty",
+      "description": "payload: boolean\nWhether the editable field is empty\n",
+      "description_zh": "payload: boolean\nWhether the editable field is empty\n"
+    }
+  ],
+  "suggestions": [],
+  "link": "https://www.radix-vue.com/components/editable.html",
+  "link_zh": "https://www.radix-vue.com/components/editable.html"
+}
