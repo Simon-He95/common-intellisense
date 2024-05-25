@@ -1,0 +1,368 @@
+{
+  "name": "VFab",
+  "props": {
+    "absolute": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Applies position: absolute to the component.对组件应用绝对位置。",
+      "description_zh": "Applies position: absolute to the component.对组件应用绝对位置。"
+    },
+    "active": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Controls the active state of the item. This is typically used to highlight the component.控制项目的活动状态。 这通常用于突出显示组件。",
+      "description_zh": "Controls the active state of the item. This is typically used to highlight the component.控制项目的活动状态。这通常用于突出显示组件。"
+    },
+    "app": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "If true, attaches to the closest layout and positions according to the value of location.如果为 true，则根据位置值附加到最近的布局和位置。",
+      "description_zh": "If true, attaches to the closest layout and positions according to the value of location.如果为 true，则根据位置值附加到最近的布局和位置。"
+    },
+    "appear": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Used to control the animation of the FAB.用于控制FAB的动画。",
+      "description_zh": "Used to control the animation of the FAB.用于控制FAB的动画。"
+    },
+    "append-icon": {
+      "default": "undefined",
+      "value": "",
+      "type": "any",
+      "description": "Creates a v-icon component after default content in the append slot.",
+      "description_zh": "在追加插槽中的默认内容之后创建一个 v-icon 组件。"
+    },
+    "base-color": {
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "description": "Sets the color of component when not focused.",
+      "description_zh": "设置未对焦时组件的颜色。"
+    },
+    "block": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Expands the button to 100% of available space.",
+      "description_zh": "将按钮展开到可用空间的 100%。"
+    },
+    "border": {
+      "default": "false",
+      "value": "",
+      "type": "string | number | boolean",
+      "description": "Designates the border-radius applied to the component. This can be xs, sm, md, lg, xl.",
+      "description_zh": "指定应用于组件的边框半径。这可以是 xs、sm、md、lg、xl。"
+    },
+    "color": {
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "description": "Applies specified color to the control - supports utility colors (for example success or purple) or css color (#033 or rgba(255, 0, 0, 0.5)). Find a list of built-in classes on the colors page.",
+      "description_zh": "将指定的颜色应用于控件 - 支持实用程序颜色（例如 success 或紫色）或 css 颜色（#033 或 rgba（255， 0， 0， 0.5））。在颜色页面上查找内置类的列表。"
+    },
+    "density": {
+      "default": "'default'",
+      "value": "",
+      "type": "'default' | 'comfortable' | 'compact'",
+      "description": "Adjusts the vertical height used by the component.",
+      "description_zh": "调整元件使用的垂直高度。"
+    },
+    "disabled": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Removes the ability to click or target the component.",
+      "description_zh": "删除了单击组件或将组件定位的功能。"
+    },
+    "elevation": {
+      "default": "undefined",
+      "value": "",
+      "type": "string | number",
+      "description": "Designates an elevation applied to the component between 0 and 24. You can find more information on the elevation page.",
+      "description_zh": "指定应用于组件的高程介于 0 和 24 之间。您可以在高程页面上找到更多信息。"
+    },
+    "exact": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Exactly match the link. Without this, ‘/’ will match every route. You can find more information about the exact prop on the vue-router documentation.",
+      "description_zh": "完全匹配链接。如果没有这个，“/”将匹配每个路由。你可以在 vue-router 文档中找到更多关于这个 prop 的信息。"
+    },
+    "extended": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "An alternate style for the FAB that expects text.",
+      "description_zh": "需要文本的 FAB 的替代样式。"
+    },
+    "flat": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Removes the button box shadow. This is different than using the ‘flat’ variant.",
+      "description_zh": "删除按钮框阴影。这与使用“扁平”变体不同。"
+    },
+    "height": {
+      "default": "undefined",
+      "value": "",
+      "type": "string | number",
+      "description": "Sets the height for the component.",
+      "description_zh": "设置组件的高度。"
+    },
+    "href": {
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "description": "Designates the component as anchor and applies the href attribute.",
+      "description_zh": "将组件指定为锚点并应用 href 属性。"
+    },
+    "icon": {
+      "default": "false",
+      "value": "",
+      "type": "any",
+      "description": "Apply a specific icon using the v-icon component. The button will become round.",
+      "description_zh": "使用 v-icon 组件应用特定图标。按钮将变为圆形。"
+    },
+    "layout": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "If true, will effect layout dimensions based on size and position.",
+      "description_zh": "如果为 true，则将根据大小和位置影响布局尺寸。"
+    },
+    "loading": {
+      "default": "false",
+      "value": "",
+      "type": "string | boolean",
+      "description": "Displays linear progress bar. Can either be a String which specifies which color is applied to the progress bar (any material color or theme color - primary, secondary, success, info, warning, error) or a Boolean which uses the component color (set by color prop - if it’s supported by the component) or the primary color.",
+      "description_zh": "显示线性进度条。可以是指定应用于进度条的颜色的 String（任何材质颜色或主题颜色 - 主要颜色、次要颜色、成功颜色、信息颜色、警告颜色、错误颜色）或布尔值，它使用组件颜色（由颜色属性设置 - 如果组件支持）或主要颜色。"
+    },
+    "location": {
+      "default": "'bottom end'",
+      "value": "",
+      "type": "'start' | 'end' | 'left' | 'right' | 'top' | 'bottom'",
+      "description": "The location of the fab relative to the layout. Only works when using app.",
+      "description_zh": "晶圆厂相对于布局的位置。仅在使用应用程序时有效。"
+    },
+    "max-height": {
+      "default": "undefined",
+      "value": "",
+      "type": "string | number",
+      "description": "Sets the maximum height for the component.",
+      "description_zh": "设置元件的最大高度。"
+    },
+    "max-width": {
+      "default": "undefined",
+      "value": "",
+      "type": "string | number",
+      "description": "Sets the maximum width for the component.",
+      "description_zh": "设置组件的最大宽度。"
+    },
+    "min-height": {
+      "default": "undefined",
+      "value": "",
+      "type": "string | number",
+      "description": "Sets the minimum height for the component.",
+      "description_zh": "设置元件的最小高度。"
+    },
+    "min-width": {
+      "default": "undefined",
+      "value": "",
+      "type": "string | number",
+      "description": "Sets the minimum width for the component.",
+      "description_zh": "设置组件的最小宽度。"
+    },
+    "v-model": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "The v-model value of the component. If component supports the multiple prop, this defaults to an empty array.",
+      "description_zh": "组件的 v 模型值。如果组件支持多 prop，则默认为空数组。"
+    },
+    "name": {
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "description": "Assign a specific name for layout registration.",
+      "description_zh": "为布局注册指定特定名称。"
+    },
+    "offset": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Translates the Fab up or down, depending on if location is set to top or bottom.",
+      "description_zh": "向上或向下平移 Fab，具体取决于位置是设置为顶部还是底部。"
+    },
+    "order": {
+      "default": "0",
+      "value": "",
+      "type": "string | number",
+      "description": "Adjust the order of the component in relation to its registration order.",
+      "description_zh": "根据组件的注册顺序调整组件的顺序。"
+    },
+    "position": {
+      "default": "undefined",
+      "value": "",
+      "type": "'static' | 'relative' | 'fixed' | 'absolute' | 'sticky'",
+      "description": "Sets the position for the component.",
+      "description_zh": "设置组件的位置。"
+    },
+    "prepend-icon": {
+      "default": "undefined",
+      "value": "",
+      "type": "any",
+      "description": "Creates a v-icon component in the prepend slot before default content.",
+      "description_zh": "在默认内容之前的前置插槽中创建一个 v-icon 组件。"
+    },
+    "readonly": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Puts the button in a readonly state. Cannot be clicked or navigated to by keyboard.",
+      "description_zh": "将按钮置于只读状态。无法通过键盘单击或导航到。"
+    },
+    "replace": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Setting replace prop will call router.replace() instead of router.push() when clicked, so the navigation will not leave a history record. You can find more information about the replace prop on the vue-router documentation.",
+      "description_zh": "设置 replace prop 将在单击时调用 router.replace（） 而不是 router.push（），因此导航不会留下历史记录。你可以在 vue-router 文档中找到更多关于 replace prop 的信息。"
+    },
+    "ripple": {
+      "default": "true",
+      "value": "",
+      "type": "boolean | { class: string }",
+      "description": "Applies the v-ripple directive.",
+      "description_zh": "应用 v-ripple 指令。"
+    },
+    "rounded": {
+      "default": "undefined",
+      "value": "",
+      "type": "string | number | boolean",
+      "description": "Designates the border-radius applied to the component. This can be 0, xs, sm, true, lg, xl, pill, circle, and shaped. Find more information on available border radius classes on the Border Radius page.",
+      "description_zh": "指定应用于组件的边框半径。这可以是 0、xs、sm、true、lg、xl、pill、circle 和 shaped。有关可用边框半径类的详细信息，请访问边框半径页面。"
+    },
+    "selected-class": {
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "description": "Configure the active CSS class applied when an item is selected.",
+      "description_zh": "配置选择项目时应用的活动 CSS 类。"
+    },
+    "size": {
+      "default": "'default'",
+      "value": "",
+      "type": "string | number",
+      "description": "Sets the height and width of the component. Default unit is px. Can also use the following predefined sizes: x-small, small, default, large, and x-large.",
+      "description_zh": "设置元件的高度和宽度。默认单位为 px。还可以使用以下预定义大小：x-small、small、default、large 和 x-large。"
+    },
+    "slim": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Reduces padding to 0 8px.",
+      "description_zh": "将填充减少到 0 8px。"
+    },
+    "stacked": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Displays the button as a flex-column.",
+      "description_zh": "将按钮显示为弹性列。"
+    },
+    "symbol": {
+      "default": "undefined",
+      "value": "",
+      "type": "any",
+      "description": "The Symbol used to hook into group functionality for components like v-btn-toggle and v-bottom-navigation.",
+      "description_zh": "用于挂接到 v-btn-toggle 和 v-bottom-navigation 等组件的组功能的 Symbol。"
+    },
+    "tag": {
+      "default": "'button'",
+      "value": "",
+      "type": "string",
+      "description": "Specify a custom tag used on the root element.",
+      "description_zh": "指定用于根元素的自定义标记。"
+    },
+    "text": {
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "description": "Specify content text for the component.",
+      "description_zh": "指定组件的内容文本。"
+    },
+    "theme": {
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "description": "Specify a theme for this component and all of its children.",
+      "description_zh": "为此组件及其所有子组件指定主题。"
+    },
+    "tile": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Removes any applied border-radius from the component.",
+      "description_zh": "从元件中移除任何应用的边框半径。"
+    },
+    "to": {
+      "default": "undefined",
+      "value": "",
+      "type": "RouteLocationRaw",
+      "description": "Denotes the target route of the link. You can find more information about the to prop on the vue-router documentation.",
+      "description_zh": "表示链路的目标路由。你可以在 vue-router 文档中找到更多关于 to prop 的信息。"
+    },
+    "transition": {
+      "default": "'fab-transition'",
+      "value": "",
+      "type": "string | boolean | (TransitionProps & { component: Component })",
+      "description": "Sets the component transition. Can be one of the built in or custom transition.",
+      "description_zh": "设置组件转换。可以是内置或自定义过渡之一。"
+    },
+    "value": {
+      "default": "undefined",
+      "value": "",
+      "type": "any",
+      "description": "The value used when the component is selected in a group. If not provided, a unique ID will be used.",
+      "description_zh": "在组中选择组件时使用的值。如果未提供，将使用唯一 ID。"
+    },
+    "variant": {
+      "default": "'elevated'",
+      "value": "",
+      "type": "'flat' | 'text' | 'elevated' | 'tonal' | 'outlined' | 'plain'",
+      "description": "Applies a distinct style to the component.",
+      "description_zh": "将不同的样式应用于组件。"
+    },
+    "width": {
+      "default": "undefined",
+      "value": "",
+      "type": "string | number",
+      "description": "Sets the width for the component.",
+      "description_zh": "设置元件的宽度。"
+    }
+  },
+  "link": "https://vuetifyjs.com/en/api/v-fab/#links",
+  "link_zh": "https://vuetifyjs.com/en/api/v-fab/#links",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "update:modelValue",
+      "description": "Event that is emitted when the component’s model changes.",
+      "description_zh": "组件模型更改时发出的事件。",
+      "params": "[boolean]",
+      "value": ""
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "default",
+      "description": "The default Vue slot.",
+      "description_zh": "默认的 Vue 插槽。"
+    }
+  ]
+}

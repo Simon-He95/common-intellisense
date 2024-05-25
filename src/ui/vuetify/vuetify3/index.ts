@@ -166,6 +166,10 @@ import parallax from './parallax.json'
 import icon from './icon.json'
 import avatar from './avatar.json'
 import colorPicker from './colorPicker.json'
+import emptyState from './emptyState.json'
+import sparkline from './sparkline.json'
+import speedDial from './speedDial.json'
+import fab from './fab.json'
 
 export function vuetify3() {
   const map: any = [
@@ -335,6 +339,10 @@ export function vuetify3() {
     colorPicker,
     listItemTitle,
     listItemSubtitle,
+    emptyState,
+    sparkline,
+    speedDial,
+    fab,
   ]
 
   return propsReducer('vuetify', map, 'v')
@@ -518,6 +526,23 @@ export function vuetify3Components() {
         [listItemMedia, '导航列表', '<v-list-item-media></v-list-item-media>'],
         [menu, '菜单 可以在某个激活菜单的元素位置显示一个菜单。', '<v-menu></v-menu>'],
         [overlay, '遮罩层', '<v-overlay v-model="overlay"></v-overlay>'],
+        [emptyState, 'v-empty-state 组件用于表示某个列表是空的或者搜索结果是空的。', `<v-empty-state
+      headline="Whoops, 404"
+      title="Page not found"
+      text="The page you were looking for does not exist"
+      image="https://vuetifyjs.b-cdn.net/docs/images/logos/v.png"
+    ></v-empty-state>`],
+        [sparkline, '迷你图表组件可以用来创建简单的图表，例如GitHub的贡献图。', `<v-sparkline
+        :fill="fill"
+        :gradient="selectedGradient"
+        :line-width="lineWidth"
+        :model-value="value"
+        :padding="padding"
+        :smooth="smooth"
+        auto-draw
+      ></v-sparkline>`],
+        [speedDial, 'v-speed-dial 组件可以用作浮动操作按钮，单击时可以显示其他操作', '<v-speedDial location="bottom center" transition="fade-transition"></v-speedDial>'],
+        [fab, 'v-fab 组件可以用作浮动操作按钮。这为应用程序提供了一个主要的操作点', '<v-fab icon="$vuetify"></v-fab>'],
       ]
     : [
         [app, 'app', `<${hyphenate(app.name).slice(1)}></${hyphenate(app.name).slice(1)}>`],
@@ -692,6 +717,23 @@ export function vuetify3Components() {
         [listItemMedia, 'Navigation list', '<v-list-item-media></v-list-item-media>'],
         [menu, 'Menu can display a menu at the position of an active menu element. ', '<v-menu></v-menu>'],
         [overlay, 'mask layer', '<v-overlay v-model="overlay"></v-overlay>'],
+        [emptyState, 'The v-empty-state component is used to indicate that a list is empty or that no search results were found.', `<v-empty-state
+      headline="Whoops, 404"
+      title="Page not found"
+      text="The page you were looking for does not exist"
+      image="https://vuetifyjs.b-cdn.net/docs/images/logos/v.png"
+    ></v-empty-state>`],
+        [sparkline, 'The sparkline component can be used to create simple graphs, like GitHub’s contribution chart.', `<v-sparkline
+        :fill="fill"
+        :gradient="selectedGradient"
+        :line-width="lineWidth"
+        :model-value="value"
+        :padding="padding"
+        :smooth="smooth"
+        auto-draw
+      ></v-sparkline>`],
+        [speedDial, 'The v-speed-dial component can be used as a floating action button that can reveal additional actions when clicked.', '<v-speedDial location="bottom center" transition="fade-transition"></v-speedDial>'],
+        [fab, 'The v-fab component can be used as a floating action button. This provides an application with a main point of action', '<v-fab icon="$vuetify"></v-fab>'],
       ]
   return componentsReducer(map, true, 'v', 'vuetify')
 }
