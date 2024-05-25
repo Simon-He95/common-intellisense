@@ -6,7 +6,7 @@
       "value": "",
       "type": "FilterFunction",
       "description": "Function to filter items.",
-      "description_zh": "筛选项目的功能。"
+      "description_zh": "过滤项目的功能。"
     },
     "custom-key-filter": {
       "default": "undefined",
@@ -34,43 +34,42 @@
       "value": "",
       "type": "boolean",
       "description": "Expands item when the row is clicked.",
-      "description_zh": "单击行时展开项目。"
+      "description_zh": "单击行时展开项。"
     },
     "filter-keys": {
       "default": "undefined",
       "value": "",
       "type": "string | string[]",
       "description": "Array of specific keys to filter on the item.",
-      "description_zh": "要对项目进行筛选的特定键的数组。"
+      "description_zh": "要筛选项目的特定键的数组。"
     },
     "filter-mode": {
       "default": "'intersection'",
       "value": "",
       "type": "'every' | 'some' | 'union' | 'intersection'",
       "description": "Controls how the results of customFilter and customKeyFilter are combined. All modes only apply customFilter to columns not specified in customKeyFilter.some: There is at least one match from either the custom filter or the custom key filter.every: All columns match either the custom filter or the custom key filter.union: There is at least one match from the custom filter, or all columns match the custom key filters.intersection: There is at least one match from the custom filter, and all columns match the custom key filters.",
-      "description_zh": "控制 customFilter 和 customKeyFilter 的结果的组合方式。所有模式仅将 customFilter 应用于 customKeyFilter 中未指定的列。some：自定义筛选器或自定义键 filter 中至少有一个匹配项。every：所有列都与自定义筛选器或自定义键 filter 匹配。union：自定义筛选器中至少有一个匹配项，或者所有列都与自定义键 filters.intersection： 自定义筛选器中至少有一个匹配项，并且所有列都与自定义键筛选器匹配。"
+      "description_zh": "控制 customFilter 和 customKeyFilter 的结果组合方式。所有模式仅将 customFilter 应用于 customKeyFilter.some 中未指定的列：自定义筛选器或自定义键 filter.every 中至少有一个匹配项：所有列都与自定义筛选器或自定义键 filter.union 匹配：自定义筛选器中至少有一个匹配项，或者所有列都与自定义键 filters.intersection 匹配： 自定义筛选器中至少有一个匹配项，并且所有列都与自定义键筛选器匹配。"
     },
     "group-by": {
       "default": "[]",
       "value": "",
       "type": "SortItem[]",
       "description": "Changes which item property should be used for grouping items. Currently only supports a single grouping in the format: group or ['group']. When using an array, only the first element is considered. Can be used with .sync modifier.",
-      "description_zh": "更改应用于对项目进行分组的项属性。目前仅支持以下格式的单个分组：group 或 ['group']。使用数组时，只考虑第一个元素。可与 .sync 修饰符一起使用。"
+      "description_zh": "更改应用于对项进行分组的项属性。目前仅支持以下格式的单个分组：group 或 ['group']。使用数组时，仅考虑第一个元素。可与 .sync 修饰符一起使用。"
     },
-    ":items": {
+    "items": {
       "default": "[]",
       "value": "",
-      "type": "any[]",
+      "type": "unknown[]",
       "description": "An array of strings or objects used for automatically generating children components.",
-      "description_zh": "用于自动生成子组件的字符串或对象的数组。",
-      "required": true
+      "description_zh": "用于自动生成子组件的字符串或对象数组。"
     },
     "item-selectable": {
       "default": "null",
       "value": "",
       "type": "SelectItemKey",
       "description": "Property on supplied items that contains the boolean value indicating if the item is selectable.",
-      "description_zh": "所提供项的属性，该属性包含指示项是否可选的布尔值。"
+      "description_zh": "提供的项的属性，该属性包含指示项是否可选的布尔值。"
     },
     "items-per-page": {
       "default": "5",
@@ -84,7 +83,7 @@
       "value": "",
       "type": "SelectItemKey",
       "description": "Property on supplied items that contains its value.",
-      "description_zh": "所提供项的属性，其中包含其值。"
+      "description_zh": "包含其值的已提供项的属性。"
     },
     "loading": {
       "default": "false",
@@ -93,12 +92,12 @@
       "description": "If true and no items are provided, then a loading text will be shown.",
       "description_zh": "如果为 true 且未提供任何项目，则将显示加载文本。"
     },
-    ":v-model": {
+    "v-model": {
       "default": "[]",
       "value": "",
       "type": "any[]",
-      "description": "The value of the component v-mode. If the component supports variants, the default is an empty array.",
-      "description_zh": "组件 v-mode 的值。如果组件支持多属性，默认为空数组。"
+      "description": "The v-model value of the component. If component supports the multiple prop, this defaults to an empty array.",
+      "description_zh": "组件的 v 模型值。如果组件支持多 prop，则默认为空数组。"
     },
     "multi-sort": {
       "default": "false",
@@ -112,7 +111,7 @@
       "value": "",
       "type": "boolean",
       "description": "If true then one can not disable sorting, it will always switch between ascending and descending.",
-      "description_zh": "如果为 true，则不能禁用排序，它将始终在升序和降序之间切换。"
+      "description_zh": "如果为 true，则无法禁用排序，它将始终在升序和降序之间切换。"
     },
     "no-filter": {
       "default": "false",
@@ -126,14 +125,14 @@
       "value": "",
       "type": "string | number",
       "description": "The current displayed page number (1-indexed).",
-      "description_zh": "当前显示的页码（1 索引）。"
+      "description_zh": "当前显示的页码（1-索引）。"
     },
     "return-object": {
       "default": "false",
       "value": "",
       "type": "boolean",
       "description": "Changes the selection behavior to return the object directly rather than the value specified with item-value.",
-      "description_zh": "更改选择行为以直接返回对象，而不是返回使用 item-value 指定的值。"
+      "description_zh": "更改选择行为以直接返回对象，而不是使用 item-value 指定的值。"
     },
     "search": {
       "default": "undefined",
@@ -145,9 +144,9 @@
     "select-strategy": {
       "default": "'page'",
       "value": "",
-      "type": "'single' / 'page' / 'all'",
+      "type": "'single' | 'page' | 'all'",
       "description": "Defines the strategy of selecting items in the list. Possible values are: ‘single’ (only one item can be selected at a time), ‘page’ (‘Select all’ button will select only items on the current page), ‘all’ (‘Select all’ button will select all items in the list).",
-      "description_zh": "定义在列表中选择项的策略。可能的值为：“single”（一次只能选择一个项目）、“page”（“全选”按钮将仅选择当前页面上的项目）、“all”（“全选”按钮将选择列表中的所有项目）。"
+      "description_zh": "定义在列表中选择项的策略。可能的值为：“单个”（一次只能选择一个项目）、“page”（“全选”按钮将仅选择当前页面上的项目）、“all”（“全选”按钮将选择列表中的所有项目）。"
     },
     "show-expand": {
       "default": "false",
@@ -161,45 +160,52 @@
       "value": "",
       "type": "boolean",
       "description": "Shows the column with checkboxes for selecting items in the list.",
-      "description_zh": "显示带有复选框的列，用于选择列表中的项。"
+      "description_zh": "显示带有用于选择列表中项目的复选框的列。"
     },
     "sort-by": {
       "default": "[]",
       "value": "",
       "type": "SortItem[]",
       "description": "Changes which item property (or properties) should be used for sort order. Can be used with .sync modifier.",
-      "description_zh": "更改应用于排序顺序的项属性。可与 .sync 修饰符一起使用。"
+      "description_zh": "更改应用于排序顺序的项属性（或属性）。可与 .sync 修饰符一起使用。"
     },
     "tag": {
       "default": "'div'",
       "value": "",
       "type": "string",
-      "description": "Specifies the custom tag to be used on the root element.",
-      "description_zh": "指定在根元素上使用的自定义标签。"
+      "description": "Specify a custom tag used on the root element.",
+      "description_zh": "指定用于根元素的自定义标记。"
+    },
+    "transition": {
+      "default": "{component: {name: 'fade-transition'}, hideOnLeave: true}",
+      "value": "",
+      "type": "  | { component: Component; hideOnLeave: boolean }  | string  | boolean  | (TransitionProps & { component: Component })",
+      "description": "Sets the component transition. Can be one of the built in or custom transition.",
+      "description_zh": "设置组件转换。可以是内置或自定义过渡之一。"
     },
     "value-comparator": {
       "default": "undefined",
       "value": "",
       "type": "(a: any, b: any) => boolean",
       "description": "Apply a custom comparison algorithm to compare model-value and values contains in the items prop.",
-      "description_zh": "应用自定义比较算法来比较模型值和 items 属性中包含的值。"
+      "description_zh": "应用自定义比较算法来比较 model-value 和 items prop 中包含的值。"
     }
   },
-  "link": "https://vuetifyjs.com/zh-Hans/api/v-data-iterator/#links",
-  "link_zh": "https://vuetifyjs.com/zh-Hans/api/v-data-iterator/#links",
+  "link": "https://vuetifyjs.com/en/api/v-data-iterator/#links",
+  "link_zh": "https://vuetifyjs.com/en/api/v-data-iterator/#links",
   "typeDetail": {},
   "events": [
     {
       "name": "update:currentItems",
       "description": "MISSING DESCRIPTION (edit in github)",
-      "description_zh": "缺少描述 （在 github 中编辑）",
+      "description_zh": "缺少描述（在 github 中编辑）",
       "params": "[any]",
       "value": ""
     },
     {
       "name": "update:expanded",
       "description": "The .sync event for expanded prop.",
-      "description_zh": "扩展道具的 .sync 事件。",
+      "description_zh": "展开 prop 的 .sync 事件。",
       "params": "[any]",
       "value": ""
     },
@@ -219,22 +225,22 @@
     },
     {
       "name": "update:modelValue",
-      "description": "An event that is raised when a component's model-value changes.",
-      "description_zh": "当组件的 model-value 更改时引发的事件。",
+      "description": "Event that is emitted when the component’s model changes.",
+      "description_zh": "组件模型更改时发出的事件。",
       "params": "[any[]]",
       "value": ""
     },
     {
       "name": "update:options",
       "description": "The .sync event for options prop.",
-      "description_zh": "options 属性的 .sync 事件。",
+      "description_zh": "options prop 的 .sync 事件。",
       "params": "[any]",
       "value": ""
     },
     {
       "name": "update:page",
       "description": "The .sync event for page prop.",
-      "description_zh": "page 属性的 .sync 事件。",
+      "description_zh": "page prop 的 .sync 事件。",
       "params": "[number]",
       "value": ""
     },
@@ -264,9 +270,14 @@
       "description_zh": "定义项上方的标题。"
     },
     {
+      "name": "loader",
+      "description": "Slot for custom loader (displayed when loading prop is equal to true).",
+      "description_zh": "自定义加载器的插槽（当加载道具等于 true 时显示）。"
+    },
+    {
       "name": "no-data",
       "description": "Defines content for when no items are provided.",
-      "description_zh": "定义未提供任何项时的内容。"
+      "description_zh": "定义未提供任何项目时的内容。"
     }
   ]
 }

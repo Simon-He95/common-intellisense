@@ -5,22 +5,22 @@
       "default": "undefined",
       "value": "",
       "type": "  | Record<string, any>  | ((      data: Pick<        ItemKeySlot<any>,        'value' | 'item' | 'index' | 'internalItem' | 'column'      >,    ) => Record<string, any>)",
-      "description": "MISSING DESCRIPTION (edit in github)",
-      "description_zh": "缺少描述 （在 github 中编辑）"
+      "description": "An object of additional props to be passed to each <td> in the table body. Also accepts a function that will be called for each cell. If the same prop is defined both here and in cellProps in a headers object, the value from the headers object will be used.",
+      "description_zh": "要传递<td>给表主体中每个属性的附加属性的对象。还接受将为每个单元格调用的函数。如果此处和 headers 对象的 cellProps 中都定义了相同的 prop，则将使用 headers 对象中的值。"
     },
     "hide-no-data": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "When there are no options to display, hide the menu. Used to prevent the menu from opening before the results are obtained asynchronously. There is also the effect of opening the menu when the items array changes if it is not already open.",
-      "description_zh": "当没有要显示的选项时，隐藏菜单。用于防止在异步获取结果之前打开菜单。也有打开菜单的效果，当“ items 数组改变，如果还没有打开。"
+      "description": "Hides the menu when there are no options to show. Useful for preventing the menu from opening before results are fetched asynchronously. Also has the effect of opening the menu when the items array changes if not already open.",
+      "description_zh": "当没有要显示的选项时隐藏菜单。可用于防止在异步获取结果之前打开菜单。还具有在项目数组更改时打开菜单（如果尚未打开）的效果。"
     },
     "items": {
       "default": "[]",
       "value": "",
       "type": "(DataTableItem | Group)[]",
       "description": "An array of strings or objects used for automatically generating children components.",
-      "description_zh": "用于自动生成子组件的字符串或对象的数组。"
+      "description_zh": "用于自动生成子组件的字符串或对象数组。"
     },
     "loading": {
       "default": "false",
@@ -36,56 +36,85 @@
       "description": "Text shown when the data is loading.",
       "description_zh": "加载数据时显示的文本。"
     },
+    "mobile": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Determines the display mode of the component. If true, the component will be displayed in mobile mode. If false, the component will be displayed in desktop mode. If null, will be based on the current mobile-breakpoint",
+      "description_zh": "确定组件的显示模式。如果为 true，则组件将以移动模式显示。如果为 false，则组件将以桌面模式显示。如果为 null，则将基于当前移动断点"
+    },
+    "mobile-breakpoint": {
+      "default": "undefined",
+      "value": "",
+      "type": "number | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'",
+      "description": "Overrides the display configuration default screen size that the component should be considered in mobile.",
+      "description_zh": "覆盖组件在移动设备中应考虑的显示配置默认屏幕大小。"
+    },
     "no-data-text": {
       "default": "'$vuetify.noDataText'",
       "value": "",
       "type": "string",
       "description": "Text shown when no items are provided to the component.",
-      "description_zh": "未向组件提供任何项时显示的文本。"
+      "description_zh": "未向组件提供任何项目时显示的文本。"
     },
     "row-props": {
       "default": "undefined",
       "value": "",
       "type": "  | Record<string, any>  | ((      data: Pick<ItemKeySlot<any>, 'item' | 'index' | 'internalItem'>,    ) => Record<string, any>)",
-      "description": "MISSING DESCRIPTION (edit in github)",
-      "description_zh": "缺少描述 （在 github 中编辑）"
+      "description": "An object of additional props to be passed to each <tr> in the table body. Also accepts a function that will be called for each row.",
+      "description_zh": "要传递<tr>给表主体中每个属性的附加属性的对象。还接受将为每行调用的函数。"
     }
   },
-  "link": "https://vuetifyjs.com/zh-Hans/api/v-data-table-rows/#links",
-  "link_zh": "https://vuetifyjs.com/zh-Hans/api/v-data-table-rows/#links",
+  "link": "https://vuetifyjs.com/en/api/v-data-table-rows/#links",
+  "link_zh": "https://vuetifyjs.com/en/api/v-data-table-rows/#links",
   "typeDetail": {},
   "events": [],
   "methods": [],
   "slots": [
     {
+      "name": "[`header.${string}`]",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "缺少描述（在 github 中编辑）"
+    },
+    {
       "name": "[`item.${string}`]",
       "description": "MISSING DESCRIPTION (edit in github)",
-      "description_zh": "缺少描述 （在 github 中编辑）"
+      "description_zh": "缺少描述（在 github 中编辑）"
     },
     {
       "name": "data-table-group",
       "description": "Slot for custom rendering of a group.",
-      "description_zh": "用于自定义渲染组的插槽。"
+      "description_zh": "用于自定义组渲染的插槽。"
     },
     {
       "name": "data-table-select",
       "description": "Slot for custom rendering of a header cell with the select checkbox.",
-      "description_zh": "用于自定义呈现标题单元格的插槽，带有选择复选框。"
+      "description_zh": "用于自定义呈现带有选择复选框的标题单元格的插槽。"
     },
     {
       "name": "expanded-row",
       "description": "Slot for custom rendering of an expanded row.",
-      "description_zh": "用于自定义呈现展开行的插槽。"
+      "description_zh": "用于自定义渲染扩展行的插槽。"
     },
     {
       "name": "group-header",
       "description": "Slot for custom rendering of a group header.",
-      "description_zh": "用于自定义呈现组标头的插槽。"
+      "description_zh": "用于自定义呈现组标题的插槽。"
+    },
+    {
+      "name": "header.data-table-expand",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "缺少描述（在 github 中编辑）"
+    },
+    {
+      "name": "header.data-table-select",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "缺少描述（在 github 中编辑）"
     },
     {
       "name": "item",
       "description": "Define a custom item appearance.",
-      "description_zh": "定义自定义项目外观。"
+      "description_zh": "定义自定义项外观。"
     },
     {
       "name": "item.data-table-expand",
@@ -95,17 +124,20 @@
     {
       "name": "item.data-table-select",
       "description": "Slot for custom rendering of a row cell with the select checkbox.",
-      "description_zh": "用于使用“选择”复选框自定义呈现行单元格的插槽。"
+      "description_zh": "用于使用选择复选框自定义呈现行单元格的插槽。"
     },
     {
       "name": "loading",
       "description": "Slot for custom rendering of the loading state.",
-      "description_zh": "用于自定义呈现加载状态的插槽。"
+      "description_zh": "用于自定义渲染加载状态的插槽。"
     },
     {
       "name": "no-data",
       "description": "Defines content for when no items are provided.",
-      "description_zh": "定义未提供任何项时的内容。"
+      "description_zh": "定义未提供任何项目时的内容。"
     }
+  ],
+  "suggestions": [
+    "VDataTableRow"
   ]
 }

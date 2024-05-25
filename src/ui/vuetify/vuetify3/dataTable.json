@@ -5,22 +5,22 @@
       "default": "undefined",
       "value": "",
       "type": "  | Record<string, any>  | ((      data: Pick<        ItemKeySlot<any>,        'value' | 'item' | 'index' | 'internalItem' | 'column'      >,    ) => Record<string, any>)",
-      "description": "MISSING DESCRIPTION (edit in github)",
-      "description_zh": "缺少描述 （在 github 中编辑）"
+      "description": "An object of additional props to be passed to each <td> in the table body. Also accepts a function that will be called for each cell. If the same prop is defined both here and in cellProps in a headers object, the value from the headers object will be used.",
+      "description_zh": "要传递<td>给表主体中每个属性的附加属性的对象。还接受将为每个单元格调用的函数。如果此处和 headers 对象的 cellProps 中都定义了相同的 prop，则将使用 headers 对象中的值。"
     },
     "color": {
       "default": "undefined",
       "value": "",
       "type": "string",
-      "description": "Applies specified color to the control - supports utility colors (for example success or purple) or css color (for example success or purple) or css color (#033 or rgba(255, 0, 0, 0.5)). Find a list of built-in classes on the colors page.",
-      "description_zh": "将指定的颜色应用于控件 - 支持实用程序颜色（例如成功或紫色）或 css 颜色（例如成功或紫色）或 css 颜色（#033 或 rgba（255， 0， 0， 0.5））。在颜色页面上查找内置类的列表。"
+      "description": "Applies specified color to the control - supports utility colors (for example success or purple) or css color (#033 or rgba(255, 0, 0, 0.5)). Find a list of built-in classes on the colors page.",
+      "description_zh": "将指定的颜色应用于控件 - 支持实用程序颜色（例如 success 或紫色）或 css 颜色（#033 或 rgba（255， 0， 0， 0.5））。在颜色页面上查找内置类的列表。"
     },
     "custom-filter": {
       "default": "undefined",
       "value": "",
       "type": "FilterFunction",
       "description": "Function to filter items.",
-      "description_zh": "筛选项目的功能。"
+      "description_zh": "过滤项目的功能。"
     },
     "custom-key-filter": {
       "default": "undefined",
@@ -39,9 +39,16 @@
     "density": {
       "default": "'default'",
       "value": "",
-      "type": "'default' / 'comfortable' / 'compact'",
+      "type": "'default' | 'comfortable' | 'compact'",
       "description": "Adjusts the vertical height of the table rows.",
       "description_zh": "调整表格行的垂直高度。"
+    },
+    "disable-sort": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Disables sorting completely.",
+      "description_zh": "完全禁用排序。"
     },
     "expanded": {
       "default": "[]",
@@ -55,21 +62,21 @@
       "value": "",
       "type": "boolean",
       "description": "Expands item when the row is clicked.",
-      "description_zh": "单击行时展开项目。"
+      "description_zh": "单击行时展开项。"
     },
     "filter-keys": {
       "default": "undefined",
       "value": "",
       "type": "string | string[]",
       "description": "Array of specific keys to filter on the item.",
-      "description_zh": "要对项目进行筛选的特定键的数组。"
+      "description_zh": "要筛选项目的特定键的数组。"
     },
     "filter-mode": {
       "default": "'intersection'",
       "value": "",
-      "type": "'every' / 'some' / 'union' / 'intersection'",
+      "type": "'every' | 'some' | 'union' | 'intersection'",
       "description": "Controls how the results of customFilter and customKeyFilter are combined. All modes only apply customFilter to columns not specified in customKeyFilter.some: There is at least one match from either the custom filter or the custom key filter.every: All columns match either the custom filter or the custom key filter.union: There is at least one match from the custom filter, or all columns match the custom key filters.intersection: There is at least one match from the custom filter, and all columns match the custom key filters.",
-      "description_zh": "控制 customFilter 和 customKeyFilter 的结果的组合方式。所有模式仅将 customFilter 应用于 customKeyFilter 中未指定的列。some：自定义筛选器或自定义键 filter 中至少有一个匹配项。every：所有列都与自定义筛选器或自定义键 filter 匹配。union：自定义筛选器中至少有一个匹配项，或者所有列都与自定义键 filters.intersection： 自定义筛选器中至少有一个匹配项，并且所有列都与自定义键筛选器匹配。"
+      "description_zh": "控制 customFilter 和 customKeyFilter 的结果组合方式。所有模式仅将 customFilter 应用于 customKeyFilter.some 中未指定的列：自定义筛选器或自定义键 filter.every 中至少有一个匹配项：所有列都与自定义筛选器或自定义键 filter.union 匹配：自定义筛选器中至少有一个匹配项，或者所有列都与自定义键 filters.intersection 匹配： 自定义筛选器中至少有一个匹配项，并且所有列都与自定义键筛选器匹配。"
     },
     "first-icon": {
       "default": "'$first'",
@@ -90,7 +97,7 @@
       "value": "",
       "type": "boolean",
       "description": "Use the fixed-footer prop together with the height prop to fix the footer to the bottom of the table.",
-      "description_zh": "将固定页脚道具与高度道具一起使用，将页脚固定在桌子底部。"
+      "description_zh": "将固定页脚支撑与高度支撑一起使用，将页脚固定到桌子底部。"
     },
     "fixed-header": {
       "default": "false",
@@ -104,21 +111,21 @@
       "value": "",
       "type": "SortItem[]",
       "description": "Changes which item property should be used for grouping items. Currently only supports a single grouping in the format: group or ['group']. When using an array, only the first element is considered. Can be used with .sync modifier.",
-      "description_zh": "更改应用于对项目进行分组的项属性。目前仅支持以下格式的单个分组：group 或 ['group']。使用数组时，只考虑第一个元素。可与 .sync 修饰符一起使用。"
+      "description_zh": "更改应用于对项进行分组的项属性。目前仅支持以下格式的单个分组：group 或 ['group']。使用数组时，仅考虑第一个元素。可与 .sync 修饰符一起使用。"
     },
     "header-props": {
       "default": "undefined",
       "value": "",
       "type": "unknown",
       "description": "Pass props to the default header. See v-data-table-header API for more information.",
-      "description_zh": "将 props 传递给默认标头。有关更多信息，请参阅 v-data-table-header API。"
+      "description_zh": "将 props 传递到默认标头。有关更多信息，请参阅 v-data-table-header API。"
     },
     "headers": {
       "default": "undefined",
       "value": "",
-      "type": "{  readonly key?:    | 'data-table-group'    | 'data-table-select'    | 'data-table-expand'    | (string & {})    | undefined  readonly value?: SelectItemKey  readonly title?: string | undefined  readonly fixed?: boolean | undefined  readonly align?: 'start' | 'end' | 'center' | undefined  readonly width?: string | number | undefined  readonly minWidth?: string | undefined  readonly maxWidth?: string | undefined  readonly headerProps?: { readonly [x: string]: any } | undefined  readonly cellProps?:    | { readonly [x: string]: any }    | ((        data: Pick<          ItemKeySlot<any>,          'value' | 'item' | 'index' | 'internalItem'        >,      ) => Record<string, any>)    | undefined  readonly sortable?: boolean | undefined  readonly sort?: DataTableCompareFunction<any> | undefined  readonly sortRaw?: DataTableCompareFunction<any> | undefined  readonly filter?: FilterFunction | undefined  readonly children?: readonly any[] | undefined}[]",
+      "type": "{  readonly key?:    | 'data-table-group'    | 'data-table-select'    | 'data-table-expand'    | (string & {})    | undefined  readonly value?: SelectItemKey<any>  readonly title?: string | undefined  readonly fixed?: boolean | undefined  readonly align?: 'start' | 'end' | 'center' | undefined  readonly width?: string | number | undefined  readonly minWidth?: string | undefined  readonly maxWidth?: string | undefined  readonly nowrap?: boolean | undefined  readonly headerProps?: { readonly [x: string]: any } | undefined  readonly cellProps?:    | { readonly [x: string]: any }    | ((        data: Pick<          ItemKeySlot<any>,          'value' | 'item' | 'index' | 'internalItem'        >,      ) => Record<string, any>)    | undefined  readonly sortable?: boolean | undefined  readonly sort?: DataTableCompareFunction<any> | undefined  readonly sortRaw?: DataTableCompareFunction<any> | undefined  readonly filter?: FilterFunction | undefined  readonly mobile?: boolean | undefined  readonly children?: readonly any[] | undefined}[]",
       "description": "An array of objects that each describe a header column. See the example below for a definition of all properties.",
-      "description_zh": "一个对象数组，每个对象描述一个标题列。有关所有属性的定义，请参阅以下示例。"
+      "description_zh": "每个对象描述一个标题列的对象数组。有关所有属性的定义，请参阅下面的示例。"
     },
     "height": {
       "default": "undefined",
@@ -127,12 +134,33 @@
       "description": "Set an explicit height of table.",
       "description_zh": "设置表的显式高度。"
     },
+    "hide-default-body": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Hides the default body.",
+      "description_zh": "隐藏默认正文。"
+    },
+    "hide-default-footer": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Hides the default footer. This has no effect on v-data-table-virtual.",
+      "description_zh": "隐藏默认页脚。这对 v-data-table-virtual 没有影响。"
+    },
+    "hide-default-header": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Hides the default header.",
+      "description_zh": "隐藏默认标头。"
+    },
     "hide-no-data": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "When there are no options to display, hide the menu. Used to prevent the menu from opening before the results are obtained asynchronously. There is also the effect of opening the menu when the items array changes if it is not already open.",
-      "description_zh": "当没有要显示的选项时，隐藏菜单。用于防止在异步获取结果之前打开菜单。也有打开菜单的效果，当“ items 数组改变，如果还没有打开。"
+      "description": "Hides the menu when there are no options to show. Useful for preventing the menu from opening before results are fetched asynchronously. Also has the effect of opening the menu when the items array changes if not already open.",
+      "description_zh": "当没有要显示的选项时隐藏菜单。可用于防止在异步获取结果之前打开菜单。还具有在项目数组更改时打开菜单（如果尚未打开）的效果。"
     },
     "hover": {
       "default": "false",
@@ -146,14 +174,14 @@
       "value": "",
       "type": "any[]",
       "description": "An array of strings or objects used for automatically generating children components.",
-      "description_zh": "用于自动生成子组件的字符串或对象的数组。"
+      "description_zh": "用于自动生成子组件的字符串或对象数组。"
     },
     "item-selectable": {
       "default": "null",
       "value": "",
       "type": "SelectItemKey<any>",
       "description": "Property on supplied items that indicates whether the item is selectable.",
-      "description_zh": "所提供项的属性，指示项是否可选。"
+      "description_zh": "提供的项的属性，指示项是否可选。"
     },
     "items-per-page": {
       "default": "10",
@@ -167,21 +195,21 @@
       "value": "",
       "type": "(number | { title: string; value: number })[]",
       "description": "Array of options to show in the items-per-page dropdown.",
-      "description_zh": "要在“每页项目数”下拉列表中显示的选项数组。"
+      "description_zh": "要在每页项目下拉列表中显示的选项数组。"
     },
     "items-per-page-text": {
       "default": "'$vuetify.dataFooter.itemsPerPageText'",
       "value": "",
       "type": "string",
       "description": "Text for items-per-page dropdown.",
-      "description_zh": "“每页项目数”下拉列表的文本。"
+      "description_zh": "每页项目下拉列表的文本。"
     },
     "item-value": {
       "default": "'id'",
       "value": "",
       "type": "SelectItemKey<any>",
       "description": "Property on supplied items that contains its value.",
-      "description_zh": "所提供项的属性，其中包含其值。"
+      "description_zh": "包含其值的已提供项的属性。"
     },
     "last-icon": {
       "default": "'$last'",
@@ -202,7 +230,7 @@
       "value": "",
       "type": "string | boolean",
       "description": "Displays linear progress bar. Can either be a String which specifies which color is applied to the progress bar (any material color or theme color - primary, secondary, success, info, warning, error) or a Boolean which uses the component color (set by color prop - if it’s supported by the component) or the primary color.",
-      "description_zh": "显示线性进度条。可以是指定应用于进度条的颜色的 String（任何材质颜色或主题颜色 - 主要、次要、成功、信息、警告、错误），也可以是使用组件颜色（由 color 属性设置 - 如果组件支持）或主要颜色的布尔值。"
+      "description_zh": "显示线性进度条。可以是指定应用于进度条的颜色的 String（任何材质颜色或主题颜色 - 主要颜色、次要颜色、成功颜色、信息颜色、警告颜色、错误颜色）或布尔值，它使用组件颜色（由颜色属性设置 - 如果组件支持）或主要颜色。"
     },
     "loading-text": {
       "default": "'$vuetify.dataIterator.loadingText'",
@@ -211,12 +239,26 @@
       "description": "Text shown when the data is loading.",
       "description_zh": "加载数据时显示的文本。"
     },
-    ":v-model": {
+    "mobile": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Determines the display mode of the component. If true, the component will be displayed in mobile mode. If false, the component will be displayed in desktop mode. If null, will be based on the current mobile-breakpoint",
+      "description_zh": "确定组件的显示模式。如果为 true，则组件将以移动模式显示。如果为 false，则组件将以桌面模式显示。如果为 null，则将基于当前移动断点"
+    },
+    "mobile-breakpoint": {
+      "default": "undefined",
+      "value": "",
+      "type": "number | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'",
+      "description": "Overrides the display configuration default screen size that the component should be considered in mobile.",
+      "description_zh": "覆盖组件在移动设备中应考虑的显示配置默认屏幕大小。"
+    },
+    "v-model": {
       "default": "[]",
       "value": "",
       "type": "unknown",
-      "description": "The value of the component v-mode. If the component supports variants, the default is an empty array.",
-      "description_zh": "组件 v-mode 的值。如果组件支持多属性，默认为空数组。"
+      "description": "The v-model value of the component. If component supports the multiple prop, this defaults to an empty array.",
+      "description_zh": "组件的 v 模型值。如果组件支持多 prop，则默认为空数组。"
     },
     "multi-sort": {
       "default": "false",
@@ -230,7 +272,7 @@
       "value": "",
       "type": "boolean",
       "description": "If true then one can not disable sorting, it will always switch between ascending and descending.",
-      "description_zh": "如果为 true，则不能禁用排序，它将始终在升序和降序之间切换。"
+      "description_zh": "如果为 true，则无法禁用排序，它将始终在升序和降序之间切换。"
     },
     "next-icon": {
       "default": "'$next'",
@@ -251,7 +293,7 @@
       "value": "",
       "type": "string",
       "description": "Text shown when no items are provided to the component.",
-      "description_zh": "未向组件提供任何项时显示的文本。"
+      "description_zh": "未向组件提供任何项目时显示的文本。"
     },
     "no-filter": {
       "default": "false",
@@ -265,14 +307,14 @@
       "value": "",
       "type": "string | number",
       "description": "The current displayed page number (1-indexed).",
-      "description_zh": "当前显示的页码（1 索引）。"
+      "description_zh": "当前显示的页码（1-索引）。"
     },
     "page-text": {
       "default": "'$vuetify.dataFooter.pageText'",
       "value": "",
       "type": "string",
       "description": "Label for page number.",
-      "description_zh": "页码标签。"
+      "description_zh": "页码的标签。"
     },
     "prev-icon": {
       "default": "'$prev'",
@@ -293,14 +335,14 @@
       "value": "",
       "type": "boolean",
       "description": "Changes the selection behavior to return the object directly rather than the value specified with item-value.",
-      "description_zh": "更改选择行为以直接返回对象，而不是返回使用 item-value 指定的值。"
+      "description_zh": "更改选择行为以直接返回对象，而不是使用 item-value 指定的值。"
     },
     "row-props": {
       "default": "undefined",
       "value": "",
       "type": "  | Record<string, any>  | ((      data: Pick<ItemKeySlot<any>, 'item' | 'index' | 'internalItem'>,    ) => Record<string, any>)",
-      "description": "MISSING DESCRIPTION (edit in github)",
-      "description_zh": "缺少描述 （在 github 中编辑）"
+      "description": "An object of additional props to be passed to each <tr> in the table body. Also accepts a function that will be called for each row.",
+      "description_zh": "要传递<tr>给表主体中每个属性的附加属性的对象。还接受将为每行调用的函数。"
     },
     "search": {
       "default": "undefined",
@@ -312,9 +354,9 @@
     "select-strategy": {
       "default": "'page'",
       "value": "",
-      "type": "'page' / 'single' / 'all'",
+      "type": "'page' | 'single' | 'all'",
       "description": "Defines the strategy of selecting items in the list. Possible values are: ‘single’ (only one item can be selected at a time), ‘page’ (‘Select all’ button will select only items on the current page), ‘all’ (‘Select all’ button will select all items in the list).",
-      "description_zh": "定义在列表中选择项的策略。可能的值为：“single”（一次只能选择一个项目）、“page”（“全选”按钮将仅选择当前页面上的项目）、“all”（“全选”按钮将选择列表中的所有项目）。"
+      "description_zh": "定义在列表中选择项的策略。可能的值为：“单个”（一次只能选择一个项目）、“page”（“全选”按钮将仅选择当前页面上的项目）、“all”（“全选”按钮将选择列表中的所有项目）。"
     },
     "show-current-page": {
       "default": "false",
@@ -349,7 +391,7 @@
       "value": "",
       "type": "SortItem[]",
       "description": "Changes which item property (or properties) should be used for sort order. Can be used with .sync modifier.",
-      "description_zh": "更改应用于排序顺序的项属性。可与 .sync 修饰符一起使用。"
+      "description_zh": "更改应用于排序顺序的项属性（或属性）。可与 .sync 修饰符一起使用。"
     },
     "sort-desc-icon": {
       "default": "'$sortDesc'",
@@ -363,14 +405,14 @@
       "value": "",
       "type": "boolean",
       "description": "Sticks the header to the top of the table.",
-      "description_zh": "将标题粘贴到表格的顶部。"
+      "description_zh": "将标题粘贴到表的顶部。"
     },
     "tag": {
       "default": "'div'",
       "value": "",
       "type": "string",
-      "description": "Specifies the custom tag to be used on the root element.",
-      "description_zh": "指定在根元素上使用的自定义标签。"
+      "description": "Specify a custom tag used on the root element.",
+      "description_zh": "指定用于根元素的自定义标记。"
     },
     "theme": {
       "default": "undefined",
@@ -384,31 +426,31 @@
       "value": "",
       "type": "(a: any, b: any) => boolean",
       "description": "Apply a custom comparison algorithm to compare model-value and values contains in the items prop.",
-      "description_zh": "应用自定义比较算法来比较模型值和 items 属性中包含的值。"
+      "description_zh": "应用自定义比较算法来比较 model-value 和 items prop 中包含的值。"
     },
     "width": {
       "default": "undefined",
       "value": "",
       "type": "string | number",
-      "description": "Sets the width of the component.",
-      "description_zh": "设定组件的宽度。"
+      "description": "Sets the width for the component.",
+      "description_zh": "设置元件的宽度。"
     }
   },
-  "link": "https://vuetifyjs.com/zh-Hans/api/v-data-table/#links",
-  "link_zh": "https://vuetifyjs.com/zh-Hans/api/v-data-table/#links",
+  "link": "https://vuetifyjs.com/en/api/v-data-table/#links",
+  "link_zh": "https://vuetifyjs.com/en/api/v-data-table/#links",
   "typeDetail": {},
   "events": [
     {
       "name": "update:currentItems",
       "description": "MISSING DESCRIPTION (edit in github)",
-      "description_zh": "缺少描述 （在 github 中编辑）",
+      "description_zh": "缺少描述（在 github 中编辑）",
       "params": "[any]",
       "value": ""
     },
     {
       "name": "update:expanded",
       "description": "Emits when the expanded property of the options prop is updated.",
-      "description_zh": "在更新 options 属性的 expanded 属性时发出。",
+      "description_zh": "在 options 属性的 expanded 属性更新时发出。",
       "params": "[any]",
       "value": ""
     },
@@ -422,14 +464,14 @@
     {
       "name": "update:itemsPerPage",
       "description": "Emits when the items-per-page property of the options prop is updated.",
-      "description_zh": "当 options 属性的 items-per-page 属性更新时发出。",
+      "description_zh": "在更新 options 属性的 items-per-page 属性时发出。",
       "params": "[number]",
       "value": ""
     },
     {
       "name": "update:modelValue",
       "description": "Emits when the component’s model changes.",
-      "description_zh": "当组件的模型更改时发出。",
+      "description_zh": "在组件的模型更改时发出。",
       "params": "[unknown]",
       "value": ""
     },
@@ -443,14 +485,14 @@
     {
       "name": "update:page",
       "description": "Emits when the page property of the options prop is updated.",
-      "description_zh": "当 options 属性的 page 属性更新时发出。",
+      "description_zh": "在 options 属性更新时发出 options 属性。",
       "params": "[number]",
       "value": ""
     },
     {
       "name": "update:sortBy",
       "description": "Emits when the sortBy property of the options prop is updated.",
-      "description_zh": "当 options 属性的 sortBy 属性更新时发出。",
+      "description_zh": "在更新选项属性的 sortBy 属性时发出。",
       "params": "[any]",
       "value": ""
     }
@@ -460,17 +502,17 @@
     {
       "name": "[`header.${string}`]",
       "description": "MISSING DESCRIPTION (edit in github)",
-      "description_zh": "缺少描述 （在 github 中编辑）"
+      "description_zh": "缺少描述（在 github 中编辑）"
     },
     {
       "name": "[`item.${string}`]",
       "description": "Slot for custom rendering of a row cell.",
-      "description_zh": "用于自定义呈现行单元格的插槽。"
+      "description_zh": "用于行单元格的自定义渲染的插槽。"
     },
     {
       "name": "body",
       "description": "Slot to replace the default table <tbody>.",
-      "description_zh": "用于替换默认表 <tbody>的插槽。"
+      "description_zh": "用于替换默认表的插槽<tbody>。"
     },
     {
       "name": "body.append",
@@ -480,7 +522,7 @@
     {
       "name": "body.prepend",
       "description": "Prepends elements to the start of the default table <tbody>.",
-      "description_zh": "将元素追加到默认表的开头<tbody>。"
+      "description_zh": "将元素预置到默认表的开头<tbody>。"
     },
     {
       "name": "bottom",
@@ -490,67 +532,67 @@
     {
       "name": "colgroup",
       "description": "Slot to replace the default rendering of the <colgroup> element.",
-      "description_zh": "用于替换元素默认呈现的槽<colgroup>。"
+      "description_zh": "槽来替换元素的默认渲染<colgroup>。"
     },
     {
       "name": "data-table-group",
       "description": "Slot for custom rendering of a group.",
-      "description_zh": "用于自定义渲染组的插槽。"
+      "description_zh": "用于自定义组渲染的插槽。"
     },
     {
       "name": "data-table-select",
       "description": "Slot for custom rendering of a header cell with the select checkbox.",
-      "description_zh": "用于自定义呈现标题单元格的插槽，带有选择复选框。"
+      "description_zh": "用于自定义呈现带有选择复选框的标题单元格的插槽。"
     },
     {
       "name": "default",
-      "description": "Default Vue slot.",
-      "description_zh": "默认Vue 插槽。"
+      "description": "The default Vue slot.",
+      "description_zh": "默认的 Vue 插槽。"
     },
     {
       "name": "expanded-row",
       "description": "Slot for custom rendering of an expanded row.",
-      "description_zh": "用于自定义呈现展开行的插槽。"
+      "description_zh": "用于自定义渲染扩展行的插槽。"
     },
     {
       "name": "footer.prepend",
       "description": "Adds content to the empty space in the footer.",
-      "description_zh": "将内容添加到页脚中的空白区域。"
+      "description_zh": "将内容添加到页脚的空白区域。"
     },
     {
       "name": "group-header",
       "description": "Slot for custom rendering of a group header.",
-      "description_zh": "用于自定义呈现组标头的插槽。"
+      "description_zh": "用于自定义呈现组标题的插槽。"
     },
     {
       "name": "header.data-table-expand",
       "description": "MISSING DESCRIPTION (edit in github)",
-      "description_zh": "缺少描述 （在 github 中编辑）"
+      "description_zh": "缺少描述（在 github 中编辑）"
     },
     {
       "name": "header.data-table-select",
-      "description": "Slot to replace the default v-simple-checkbox in header.",
-      "description_zh": "用于替换标头中默认 v-simple-复选框的插槽。"
+      "description": "Slot to replace the default v-checkbox-btn in header.",
+      "description_zh": "用于替换标头中默认的 v-checkbox-btn 的插槽。"
     },
     {
       "name": "headers",
       "description": "MISSING DESCRIPTION (edit in github)",
-      "description_zh": "缺少描述 （在 github 中编辑）"
+      "description_zh": "缺少描述（在 github 中编辑）"
     },
     {
       "name": "item",
       "description": "Slot to replace the default rendering of a row.",
-      "description_zh": "用于替换行的默认呈现的 Slot。"
+      "description_zh": "槽来替换行的默认呈现。"
     },
     {
       "name": "item.data-table-expand",
       "description": "Slot to replace the default v-icon used when expanding rows.",
-      "description_zh": "用于替换展开行时使用的默认 V 图标的插槽。"
+      "description_zh": "插槽，以替换扩展行时使用的默认 V 图标。"
     },
     {
       "name": "item.data-table-select",
-      "description": "Slot to replace the default v-simple-checkbox used when selecting rows.",
-      "description_zh": "用于替换选择行时使用的默认 v-simple-复选框的插槽。"
+      "description": "Slot to replace the default v-checkbox-btn used when selecting rows.",
+      "description_zh": "槽来替换选择行时使用的默认 v-checkbox-btn。"
     },
     {
       "name": "loader",
@@ -560,27 +602,27 @@
     {
       "name": "loading",
       "description": "Defines content for when loading is true and no items are provided.",
-      "description_zh": "定义加载为 true 且未提供任何项时的内容。"
+      "description_zh": "定义加载为 true 且未提供任何项目时的内容。"
     },
     {
       "name": "no-data",
       "description": "Defines content for when no items are provided.",
-      "description_zh": "定义未提供任何项时的内容。"
+      "description_zh": "定义未提供任何项目时的内容。"
     },
     {
       "name": "tbody",
       "description": "MISSING DESCRIPTION (edit in github)",
-      "description_zh": "缺少描述 （在 github 中编辑）"
+      "description_zh": "缺少描述（在 github 中编辑）"
     },
     {
       "name": "tfoot",
       "description": "MISSING DESCRIPTION (edit in github)",
-      "description_zh": "缺少描述 （在 github 中编辑）"
+      "description_zh": "缺少描述（在 github 中编辑）"
     },
     {
       "name": "thead",
       "description": "MISSING DESCRIPTION (edit in github)",
-      "description_zh": "缺少描述 （在 github 中编辑）"
+      "description_zh": "缺少描述（在 github 中编辑）"
     },
     {
       "name": "top",

@@ -6,35 +6,35 @@
       "value": "",
       "type": "boolean",
       "description": "Forces the selected chip to be centered.",
-      "description_zh": "强制所选芯片居中。"
+      "description_zh": "强制选定的芯片居中。"
     },
     "color": {
       "default": "undefined",
       "value": "",
       "type": "string",
-      "description": "Applies specified color to the control - supports utility colors (for example success or purple) or css color (for example success or purple) or css color (#033 or rgba(255, 0, 0, 0.5)). Find a list of built-in classes on the colors page.",
-      "description_zh": "将指定的颜色应用于控件 - 支持实用程序颜色（例如成功或紫色）或 css 颜色（例如成功或紫色）或 css 颜色（#033 或 rgba（255， 0， 0， 0.5））。在颜色页面上查找内置类的列表。"
+      "description": "Applies specified color to the control - supports utility colors (for example success or purple) or css color (#033 or rgba(255, 0, 0, 0.5)). Find a list of built-in classes on the colors page.",
+      "description_zh": "将指定的颜色应用于控件 - 支持实用程序颜色（例如 success 或紫色）或 css 颜色（#033 或 rgba（255， 0， 0， 0.5））。在颜色页面上查找内置类的列表。"
     },
     "column": {
       "default": "false",
       "value": "",
       "type": "boolean",
       "description": "Remove horizontal pagination and wrap items as needed.",
-      "description_zh": "删除水平分页并根据需要对项目进行换行。"
+      "description_zh": "根据需要删除水平分页并换行项目。"
     },
     "direction": {
       "default": "'horizontal'",
       "value": "",
-      "type": "'horizontal' / 'vertical'",
-      "description": "MISSING DESCRIPTION (edit in github)",
-      "description_zh": "缺少描述 （在 github 中编辑）"
+      "type": "'horizontal' | 'vertical'",
+      "description": "Switch between horizontal and vertical modes.",
+      "description_zh": "在水平和垂直模式之间切换。"
     },
     "disabled": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "Set all child components to a disabled state.",
-      "description_zh": "将所有子组件设置为禁用状态。"
+      "description": "Puts all children components into a disabled state.",
+      "description_zh": "将所有子组件置于禁用状态。"
     },
     "filter": {
       "default": "false",
@@ -46,37 +46,44 @@
     "mandatory": {
       "default": "false",
       "value": "",
-      "type": "true / false / 'force'",
-      "description": "Force at least one item to be selected, if available.",
-      "description_zh": "强制至少选择一个项目（如果可用）。"
+      "type": "boolean | 'force'",
+      "description": "Forces at least one item to always be selected (if available).",
+      "description_zh": "强制始终选择至少一个项目（如果可用）。"
     },
     ":max": {
       "default": "undefined",
       "value": "",
       "type": "number",
-      "description": "Set the maximum number that can be selected.",
-      "description_zh": "设置可以选择的最大数量。"
+      "description": "Sets a maximum number of selections that can be made.",
+      "description_zh": "设置可以进行的最大选择数。"
+    },
+    "mobile": {
+      "default": "null",
+      "value": "",
+      "type": "boolean",
+      "description": "Determines the display mode of the component. If true, the component will be displayed in mobile mode. If false, the component will be displayed in desktop mode. If null, will be based on the current mobile-breakpoint",
+      "description_zh": "确定组件的显示模式。如果为 true，则组件将以移动模式显示。如果为 false，则组件将以桌面模式显示。如果为 null，则将基于当前移动断点"
     },
     "mobile-breakpoint": {
       "default": "undefined",
       "value": "",
-      "type": "number / 'xs' / 'sm' / 'md' / 'lg' / 'xl' / 'xxl'",
-      "description": "Set and specify screen size breakpoints for mobile devices for components",
-      "description_zh": "为组件设置和指定移动设备的屏幕尺寸断点"
+      "type": "number | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'",
+      "description": "Sets the designated mobile breakpoint for the component.",
+      "description_zh": "为组件设置指定的移动断点。"
     },
-    ":v-model": {
+    "v-model": {
       "default": "undefined",
       "value": "",
       "type": "unknown",
-      "description": "The value of the component v-mode. If the component supports variants, the default is an empty array.",
-      "description_zh": "组件 v-mode 的值。如果组件支持多属性，默认为空数组。"
+      "description": "The v-model value of the component. If component supports the multiple prop, this defaults to an empty array.",
+      "description_zh": "组件的 v 模型值。如果组件支持多 prop，则默认为空数组。"
     },
     "multiple": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "Allows you to select multiple options.",
-      "description_zh": "允许您选择多个选项。"
+      "description": "Allows one to select multiple items.",
+      "description_zh": "允许一个人选择多个项目。"
     },
     "next-icon": {
       "default": "'$next'",
@@ -96,8 +103,8 @@
       "default": "'v-chip--selected'",
       "value": "",
       "type": "string",
-      "description": "Configure the name of the CSS class that will be applied when the selected item is selected.",
-      "description_zh": "配置被选中项目时应用的 CSS 类名。"
+      "description": "Configure the active CSS class applied when an item is selected.",
+      "description_zh": "配置选择项目时应用的活动 CSS 类。"
     },
     "show-arrows": {
       "default": "false",
@@ -111,14 +118,14 @@
       "value": "",
       "type": "any",
       "description": "The Symbol used to hook into group functionality for components like v-btn-toggle and v-bottom-navigation.",
-      "description_zh": "用于挂接到 v-btn-toggle 和 v-bottom-navigation 等组件的组功能的符号。"
+      "description_zh": "用于挂接到 v-btn-toggle 和 v-bottom-navigation 等组件的组功能的 Symbol。"
     },
     "tag": {
       "default": "'div'",
       "value": "",
       "type": "string",
-      "description": "Specifies the custom tag to be used on the root element.",
-      "description_zh": "指定在根元素上使用的自定义标签。"
+      "description": "Specify a custom tag used on the root element.",
+      "description_zh": "指定用于根元素的自定义标记。"
     },
     "theme": {
       "default": "undefined",
@@ -132,24 +139,24 @@
       "value": "",
       "type": "(a: any, b: any) => boolean",
       "description": "Apply a custom comparison algorithm to compare model-value and values contains in the items prop.",
-      "description_zh": "应用自定义比较算法来比较模型值和 items 属性中包含的值。"
+      "description_zh": "应用自定义比较算法来比较 model-value 和 items prop 中包含的值。"
     },
     "variant": {
       "default": "'tonal'",
       "value": "",
-      "type": "'flat' / 'elevated' / 'tonal' / 'outlined' / 'text' / 'plain'",
+      "type": "'flat' | 'elevated' | 'tonal' | 'outlined' | 'text' | 'plain'",
       "description": "Applies a distinct style to the component.",
-      "description_zh": "对组件应用不同的样式。"
+      "description_zh": "将不同的样式应用于组件。"
     }
   },
-  "link": "https://vuetifyjs.com/zh-Hans/api/v-chip-group/#links",
-  "link_zh": "https://vuetifyjs.com/zh-Hans/api/v-chip-group/#links",
+  "link": "https://vuetifyjs.com/en/api/v-chip-group/#links",
+  "link_zh": "https://vuetifyjs.com/en/api/v-chip-group/#links",
   "typeDetail": {},
   "events": [
     {
       "name": "update:modelValue",
-      "description": "An event that is raised when a component's model-value changes.",
-      "description_zh": "当组件的 model-value 更改时引发的事件。",
+      "description": "Event that is emitted when the component’s model changes.",
+      "description_zh": "组件模型更改时发出的事件。",
       "params": "[unknown]",
       "value": ""
     }
@@ -158,8 +165,8 @@
   "slots": [
     {
       "name": "default",
-      "description": "Default Vue slot.",
-      "description_zh": "默认Vue 插槽。"
+      "description": "The default Vue slot.",
+      "description_zh": "默认的 Vue 插槽。"
     }
   ],
   "suggestions": [
