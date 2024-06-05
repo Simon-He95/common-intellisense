@@ -1,0 +1,73 @@
+{
+  "name": "SwipeAction",
+  "props": {
+    "closeOnAction": {
+      "description": "Whether to return to the position automatically when the operation button is clicked",
+      "description_zh": "Whether to return to the position automatically when the operation button is clicked",
+      "default": "true",
+      "value": "",
+      "type": "boolean"
+    },
+    "closeOnTouchOutside": {
+      "description": "Whether to return to the position automatically when other areas is clicked",
+      "description_zh": "Whether to return to the position automatically when other areas is clicked",
+      "default": "true",
+      "value": "",
+      "type": "boolean"
+    },
+    "leftActions": {
+      "description": "List of operation buttons on the left",
+      "description_zh": "List of operation buttons on the left",
+      "default": "[]",
+      "value": "",
+      "type": "Action[]"
+    },
+    "rightActions": {
+      "description": "List of operation buttons on the right",
+      "description_zh": "List of operation buttons on the right",
+      "default": "[]",
+      "value": "",
+      "type": "Action[]"
+    },
+    "stopPropagation": {
+      "description": "Stop the propagation of some events.",
+      "description_zh": "Stop the propagation of some events.",
+      "default": "[]",
+      "value": "",
+      "type": "PropagationEvent[]"
+    }
+  },
+  "link": "https://mobile.ant.design/components/swipe-action",
+  "link_zh": "https://mobile.ant.design/components/swipe-action",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "onAction",
+      "description": "Triggered when operation button is clicked",
+      "description_zh": "Triggered when operation button is clicked",
+      "params": "(action: Action, e: React.MouseEvent) => void"
+    },
+    {
+      "name": "onActionsReveal",
+      "description": "Triggered when the operation button appears completely",
+      "description_zh": "Triggered when the operation button appears completely",
+      "params": "(side: 'left' | 'right') => void"
+    }
+  ],
+  "methods": [
+    {
+      "name": "close",
+      "description": "Let the slide bar return to the position",
+      "description_zh": "Let the slide bar return to the position",
+      "params": "() => void"
+    },
+    {
+      "name": "show",
+      "description": "Slide out the operation button, the side parameter defaults to right",
+      "description_zh": "Slide out the operation button, the side parameter defaults to right",
+      "params": "(side?: 'left' | 'right') => void"
+    }
+  ],
+  "slots": [],
+  "suggestions": []
+}

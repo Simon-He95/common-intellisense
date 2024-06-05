@@ -1,0 +1,122 @@
+{
+  "name": "ActionSheet",
+  "props": {
+    "actions": {
+      "description": "The option list of the the action sheet",
+      "description_zh": "The option list of the the action sheet",
+      "default": "[]",
+      "value": "",
+      "type": "Action[]"
+    },
+    "afterClose": {
+      "description": "Triggered when completely closed",
+      "description_zh": "Triggered when completely closed",
+      "default": "-",
+      "value": "",
+      "type": "() => void"
+    },
+    "cancelText": {
+      "description": "The text of the cancel button , if it is null, the cancel button would not be displayed",
+      "description_zh": "The text of the cancel button , if it is null, the cancel button would not be displayed",
+      "default": "-",
+      "value": "",
+      "type": "ReactNode"
+    },
+    "closeOnAction": {
+      "description": "Whether to close after clicking the option",
+      "description_zh": "Whether to close after clicking the option",
+      "default": "false",
+      "value": "",
+      "type": "boolean"
+    },
+    "closeOnMaskClick": {
+      "description": "Whether to close after clicking the mask layer",
+      "description_zh": "Whether to close after clicking the mask layer",
+      "default": "true",
+      "value": "",
+      "type": "boolean"
+    },
+    "destroyOnClose": {
+      "description": "Destroy dom when not visible",
+      "description_zh": "Destroy dom when not visible",
+      "default": "false",
+      "value": "",
+      "type": "boolean"
+    },
+    "forceRender": {
+      "description": "Render content forcely",
+      "description_zh": "Render content forcely",
+      "default": "false",
+      "value": "",
+      "type": "boolean"
+    },
+    "extra": {
+      "description": "The extra area at the top of the the action sheet",
+      "description_zh": "The extra area at the top of the the action sheet",
+      "default": "-",
+      "value": "",
+      "type": "ReactNode"
+    },
+    "getContainer": {
+      "description": "Get the specified mounted HTML node, the default is body, if null returned, it would be rendered to the current node",
+      "description_zh": "Get the specified mounted HTML node, the default is body, if null returned, it would be rendered to the current node",
+      "default": "document.body",
+      "value": "",
+      "type": "HTMLElement | () => HTMLElement | null"
+    },
+    "popupClassName": {
+      "description": "ActionSheet popup class name",
+      "description_zh": "ActionSheet popup class name",
+      "default": "-",
+      "value": "",
+      "type": "string"
+    },
+    "safeArea": {
+      "description": "Whether to enable safe area padding",
+      "description_zh": "Whether to enable safe area padding",
+      "default": "true",
+      "value": "",
+      "type": "boolean"
+    },
+    "visible": {
+      "description": "To show or hide the action sheet",
+      "description_zh": "To show or hide the action sheet",
+      "default": "false",
+      "value": "",
+      "type": "boolean"
+    },
+    "styles": {
+      "description": "Semantic structure style",
+      "description_zh": "Semantic structure style",
+      "default": "-",
+      "value": "",
+      "type": "Partial<Record<'body' | 'mask', CSSProperties>>"
+    }
+  },
+  "link": "https://mobile.ant.design/components/action-sheet",
+  "link_zh": "https://mobile.ant.design/components/action-sheet",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "onAction",
+      "description": "Triggered when an option is clicked, never triggered when the ActionSheet is disabled or loading",
+      "description_zh": "Triggered when an option is clicked, never triggered when the ActionSheet is disabled or loading",
+      "params": "(action: Action, index: number) => void"
+    },
+    {
+      "name": "onClose",
+      "description": "Triggered when closed",
+      "description_zh": "Triggered when closed",
+      "params": "() => void"
+    },
+    {
+      "name": "onMaskClick",
+      "description": "Triggered when the mask layer is clicked",
+      "description_zh": "Triggered when the mask layer is clicked",
+      "params": "() => void"
+    }
+  ],
+  "methods": [],
+  "slots": [],
+  "suggestions": []
+}

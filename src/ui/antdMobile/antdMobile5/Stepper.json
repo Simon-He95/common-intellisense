@@ -1,0 +1,134 @@
+{
+  "name": "Stepper",
+  "props": {
+    "allowEmpty": {
+      "description": "Whether to allow empty content.",
+      "description_zh": "Whether to allow empty content.",
+      "default": "false",
+      "value": "",
+      "type": "boolean"
+    },
+    "defaultValue": {
+      "description": "Default value",
+      "description_zh": "Default value",
+      "default": "0",
+      "value": "",
+      "type": "number | null"
+    },
+    "digits": {
+      "description": "Format to a fixed number of digits after the decimal point, set to 0 means format to integer. Will use formatter as display value when configured",
+      "description_zh": "Format to a fixed number of digits after the decimal point, set to 0 means format to integer. Will use formatter as display value when configured",
+      "default": "-",
+      "value": "",
+      "type": "number"
+    },
+    "disabled": {
+      "description": "Whether to disabled Stepper",
+      "description_zh": "Whether to disabled Stepper",
+      "default": "false",
+      "value": "",
+      "type": "boolean"
+    },
+    "formatter": {
+      "description": "Format value in input",
+      "description_zh": "Format value in input",
+      "default": "-",
+      "value": "",
+      "type": "(value?: number) => string"
+    },
+    "inputReadOnly": {
+      "description": "Whether input readonly or not",
+      "description_zh": "Whether input readonly or not",
+      "default": "false",
+      "value": "",
+      "type": "boolean"
+    },
+    "max": {
+      "description": "Max value",
+      "description_zh": "Max value",
+      "default": "-",
+      "value": "",
+      "type": "number"
+    },
+    "min": {
+      "description": "Min value",
+      "description_zh": "Min value",
+      "default": "-",
+      "value": "",
+      "type": "number"
+    },
+    "parser": {
+      "description": "Parse input text into number which should work with formatter",
+      "description_zh": "Parse input text into number which should work with formatter",
+      "default": "-",
+      "value": "",
+      "type": "(text: string) => number"
+    },
+    "step": {
+      "description": "The value to increase or decrease each time, can be a decimal",
+      "description_zh": "The value to increase or decrease each time, can be a decimal",
+      "default": "1",
+      "value": "",
+      "type": "number"
+    },
+    "stringMode": {
+      "description": "Set value as string to support high precision decimals. Will set defaultValue,value, min, max, onChange to string type",
+      "description_zh": "Set value as string to support high precision decimals. Will set defaultValue,value, min, max, onChange to string type",
+      "default": "false",
+      "value": "",
+      "type": "boolean"
+    },
+    "value": {
+      "description": "Current number, controlled value",
+      "description_zh": "Current number, controlled value",
+      "default": "-",
+      "value": "",
+      "type": "number | null"
+    }
+  },
+  "link": "https://mobile.ant.design/components/stepper",
+  "link_zh": "https://mobile.ant.design/components/stepper",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "onBlur",
+      "description": "Triggered when the input lose focus",
+      "description_zh": "Triggered when the input lose focus",
+      "params": "(e: React.FocusEvent<HTMLInputElement>) => void"
+    },
+    {
+      "name": "onChange",
+      "description": "Callback when value is changed",
+      "description_zh": "Callback when value is changed",
+      "params": "(value: number | null) => void"
+    },
+    {
+      "name": "onFocus",
+      "description": "Triggered when the input get focus",
+      "description_zh": "Triggered when the input get focus",
+      "params": "(e: React.FocusEvent<HTMLInputElement>) => void"
+    }
+  ],
+  "methods": [
+    {
+      "name": "blur",
+      "description": "Let the input box lose focus",
+      "description_zh": "Let the input box lose focus",
+      "params": "() => void"
+    },
+    {
+      "name": "focus",
+      "description": "Let the input box get focus",
+      "description_zh": "Let the input box get focus",
+      "params": "() => void"
+    },
+    {
+      "name": "nativeElement",
+      "description": "Native input element",
+      "description_zh": "Native input element",
+      "params": "HtmlInputElement | null"
+    }
+  ],
+  "slots": [],
+  "suggestions": []
+}

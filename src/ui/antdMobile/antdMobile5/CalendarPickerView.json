@@ -1,0 +1,122 @@
+{
+  "name": "CalendarPickerView",
+  "props": {
+    "allowClear": {
+      "description": "Whether to allow clearing after another click.",
+      "description_zh": "Whether to allow clearing after another click.",
+      "default": "true",
+      "value": "",
+      "type": "boolean"
+    },
+    "defaultValue": {
+      "description": "The default selected date or date range.",
+      "description_zh": "The default selected date or date range.",
+      "default": "-",
+      "value": "",
+      "type": "Same as value prop."
+    },
+    "max": {
+      "description": "Maximum value of a selectable range.",
+      "description_zh": "Maximum value of a selectable range.",
+      "default": "-",
+      "value": "",
+      "type": "Date"
+    },
+    "min": {
+      "description": "Minimum value of a selectable range.",
+      "description_zh": "Minimum value of a selectable range.",
+      "default": "-",
+      "value": "",
+      "type": "Date"
+    },
+    "renderTop": {
+      "description": "The top information of date render function.",
+      "description_zh": "The top information of date render function.",
+      "default": "-",
+      "value": "",
+      "type": "(date: Date) => ReactNode | null | undefined"
+    },
+    "renderBottom": {
+      "description": "The bottom information of date render function.",
+      "description_zh": "The bottom information of date render function.",
+      "default": "-",
+      "value": "",
+      "type": "(date: Date) => ReactNode | null | undefined"
+    },
+    "selectionMode": {
+      "description": "The selection mode. Disable selection when this prop is not set.",
+      "description_zh": "The selection mode. Disable selection when this prop is not set.",
+      "default": "-",
+      "value": "",
+      "type": "'single' | 'range'"
+    },
+    "shouldDisableDate": {
+      "description": "Set whether the date is disable selection. The min and max Settings are ignored",
+      "description_zh": "Set whether the date is disable selection. The min and max Settings are ignored",
+      "default": "-",
+      "value": "",
+      "type": "(date: Date) => boolean"
+    },
+    "title": {
+      "description": "The title of calendar",
+      "description_zh": "The title of calendar",
+      "default": "Date selection",
+      "value": "",
+      "type": "React.ReactNode"
+    },
+    "value": {
+      "description": "The selected date or date range.",
+      "description_zh": "The selected date or date range.",
+      "default": "-",
+      "value": "",
+      "type": "Date | null when selection mode is \"single\". [Date, Date] | null when selection mode is \"range\""
+    },
+    "weekStartsOn": {
+      "description": "Week starts on which day.",
+      "description_zh": "Week starts on which day.",
+      "default": "'Sunday'",
+      "value": "",
+      "type": "'Monday' | 'Sunday'"
+    },
+    "renderDate": {
+      "description": "Custom date rendering.",
+      "description_zh": "Custom date rendering.",
+      "default": "-",
+      "value": "",
+      "type": "(date: Date) => ReactNode"
+    }
+  },
+  "link": "https://mobile.ant.design/components/calendar-picker-view/calendar-picker-view",
+  "link_zh": "https://mobile.ant.design/components/calendar-picker-view/calendar-picker-view",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "onChange",
+      "description": "Trigger when selected date changes.",
+      "description_zh": "Trigger when selected date changes.",
+      "params": "(val: Date | null) => void when selection mode is \"single\". (val: [Date, Date] | null) => void when selection mode is \"range\"."
+    }
+  ],
+  "methods": [
+    {
+      "name": "jumpTo",
+      "description": "Jump to specified page",
+      "description_zh": "Jump to specified page",
+      "params": "(page: Page | ((page: Page) => Page)) => void"
+    },
+    {
+      "name": "jumpToToday",
+      "description": "Jump to today's page",
+      "description_zh": "Jump to today's page",
+      "params": "() => void"
+    },
+    {
+      "name": "getDateRange",
+      "description": "get date",
+      "description_zh": "get date",
+      "params": "[Date, Date]"
+    }
+  ],
+  "slots": [],
+  "suggestions": []
+}

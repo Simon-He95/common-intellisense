@@ -1,0 +1,150 @@
+{
+  "name": "Calendar",
+  "props": {
+    "allowClear": {
+      "description": "Whether to allow clearing after another click.",
+      "description_zh": "Whether to allow clearing after another click.",
+      "default": "true",
+      "value": "",
+      "type": "boolean"
+    },
+    "defaultValue": {
+      "description": "The default selected date or date range.",
+      "description_zh": "The default selected date or date range.",
+      "default": "-",
+      "value": "",
+      "type": "Same as value prop."
+    },
+    "max": {
+      "description": "Maximum value of a selectable range.",
+      "description_zh": "Maximum value of a selectable range.",
+      "default": "-",
+      "value": "",
+      "type": "Date"
+    },
+    "min": {
+      "description": "Minimum value of a selectable range.",
+      "description_zh": "Minimum value of a selectable range.",
+      "default": "-",
+      "value": "",
+      "type": "Date"
+    },
+    "maxPage": {
+      "description": "Maximum visible page of date.",
+      "description_zh": "Maximum visible page of date.",
+      "default": "",
+      "value": "",
+      "type": "Page"
+    },
+    "minPage": {
+      "description": "Minimum visible page of date.",
+      "description_zh": "Minimum visible page of date.",
+      "default": "-",
+      "value": "",
+      "type": "Page"
+    },
+    "nextMonthButton": {
+      "description": "Contents of the Next Month button on the navigation pane",
+      "description_zh": "Contents of the Next Month button on the navigation pane",
+      "default": ">",
+      "value": "",
+      "type": "React.ReactNode"
+    },
+    "nextYearButton": {
+      "description": "Contents of the next Year button on the navigation pane",
+      "description_zh": "Contents of the next Year button on the navigation pane",
+      "default": ">>",
+      "value": "",
+      "type": "React.ReactNode"
+    },
+    "prevMonthButton": {
+      "description": "Contents of the Last Month button on the navigation pane",
+      "description_zh": "Contents of the Last Month button on the navigation pane",
+      "default": "<",
+      "value": "",
+      "type": "React.ReactNode"
+    },
+    "prevYearButton": {
+      "description": "Contents of the Last year button on the navigation pane",
+      "description_zh": "Contents of the Last year button on the navigation pane",
+      "default": "<<",
+      "value": "",
+      "type": "React.ReactNode"
+    },
+    "renderLabel": {
+      "description": "The label render function.",
+      "description_zh": "The label render function.",
+      "default": "-",
+      "value": "",
+      "type": "(date: Date) => ReactNode | null | undefined"
+    },
+    "selectionMode": {
+      "description": "The selection mode. Disable selection when this prop is not set.",
+      "description_zh": "The selection mode. Disable selection when this prop is not set.",
+      "default": "-",
+      "value": "",
+      "type": "'single' | 'range'"
+    },
+    "shouldDisableDate": {
+      "description": "Set whether the date is disable selection. The min and max Settings are ignored",
+      "description_zh": "Set whether the date is disable selection. The min and max Settings are ignored",
+      "default": "-",
+      "value": "",
+      "type": "(date: Date) => boolean"
+    },
+    "value": {
+      "description": "The selected date or date range.",
+      "description_zh": "The selected date or date range.",
+      "default": "-",
+      "value": "",
+      "type": "Date | null when selection mode is \"single\". [Date, Date] | null when selection mode is \"range\""
+    },
+    "weekStartsOn": {
+      "description": "Week starts on which day.",
+      "description_zh": "Week starts on which day.",
+      "default": "'Sunday'",
+      "value": "",
+      "type": "'Monday' | 'Sunday'"
+    },
+    "renderDate": {
+      "description": "Custom date rendering.",
+      "description_zh": "Custom date rendering.",
+      "default": "-",
+      "value": "",
+      "type": "(date: Date) => ReactNode"
+    }
+  },
+  "link": "https://mobile.ant.design/components/calendar/calendar",
+  "link_zh": "https://mobile.ant.design/components/calendar/calendar",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "onChange",
+      "description": "Trigger when selected date changes.",
+      "description_zh": "Trigger when selected date changes.",
+      "params": "(val: Date | null) => void when selection mode is \"single\". (val: [Date, Date] | null) => void when selection mode is \"range\"."
+    },
+    {
+      "name": "onPageChange",
+      "description": "Trigger when changed year or month.",
+      "description_zh": "Trigger when changed year or month.",
+      "params": "(year: number, month: number) => void"
+    }
+  ],
+  "methods": [
+    {
+      "name": "jumpTo",
+      "description": "Jump to specified page",
+      "description_zh": "Jump to specified page",
+      "params": "(page: Page | ((page: Page) => Page)) => void"
+    },
+    {
+      "name": "jumpToToday",
+      "description": "Jump to today's page",
+      "description_zh": "Jump to today's page",
+      "params": "() => void"
+    }
+  ],
+  "slots": [],
+  "suggestions": []
+}

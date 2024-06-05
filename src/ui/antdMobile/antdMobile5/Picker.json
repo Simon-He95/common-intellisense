@@ -1,0 +1,175 @@
+{
+  "name": "Picker",
+  "props": {
+    "cancelText": {
+      "description": "Text of the cancel button",
+      "description_zh": "Text of the cancel button",
+      "default": "'取消'",
+      "value": "",
+      "type": "ReactNode"
+    },
+    "children": {
+      "description": "Render function of the selected options",
+      "description_zh": "Render function of the selected options",
+      "default": "-",
+      "value": "",
+      "type": "(items: PickerColumnItem[], actions: PickerActions) => ReactNode"
+    },
+    "closeOnMaskClick": {
+      "description": "Whether to close after clicking the mask layer",
+      "description_zh": "Whether to close after clicking the mask layer",
+      "default": "true",
+      "value": "",
+      "type": "boolean"
+    },
+    "columns": {
+      "description": "Options to configure each column",
+      "description_zh": "Options to configure each column",
+      "default": "-",
+      "value": "",
+      "type": "PickerColumn[] | ((value: PickerValue[]) => PickerColumn[])"
+    },
+    "confirmText": {
+      "description": "Text of the ok button",
+      "description_zh": "Text of the ok button",
+      "default": "'确定'",
+      "value": "",
+      "type": "ReactNode"
+    },
+    "defaultValue": {
+      "description": "Default selected options",
+      "description_zh": "Default selected options",
+      "default": "[]",
+      "value": "",
+      "type": "PickerValue[]"
+    },
+    "destroyOnClose": {
+      "description": "Destroy dom when not visible",
+      "description_zh": "Destroy dom when not visible",
+      "default": "false",
+      "value": "",
+      "type": "boolean"
+    },
+    "forceRender": {
+      "description": "Render content forcely",
+      "description_zh": "Render content forcely",
+      "default": "false",
+      "value": "",
+      "type": "boolean"
+    },
+    "mouseWheel": {
+      "description": "Whether to allow interact with mouse wheel",
+      "description_zh": "Whether to allow interact with mouse wheel",
+      "default": "false",
+      "value": "",
+      "type": "boolean"
+    },
+    "popupClassName": {
+      "description": "The custom class name of the popup",
+      "description_zh": "The custom class name of the popup",
+      "default": "-",
+      "value": "",
+      "type": "string"
+    },
+    "popupStyle": {
+      "description": "The custom style of the popup",
+      "description_zh": "The custom style of the popup",
+      "default": "-",
+      "value": "",
+      "type": "React.CSSProperties "
+    },
+    "renderLabel": {
+      "description": "The function to custom rendering the label shown on a column",
+      "description_zh": "The function to custom rendering the label shown on a column",
+      "default": "(item) => item.label",
+      "value": "",
+      "type": "(item: PickerColumnItem) => ReactNode"
+    },
+    "title": {
+      "description": "Title",
+      "description_zh": "Title",
+      "default": "-",
+      "value": "",
+      "type": "ReactNode"
+    },
+    "value": {
+      "description": "Selected options",
+      "description_zh": "Selected options",
+      "default": "-",
+      "value": "",
+      "type": "PickerValue[]"
+    },
+    "visible": {
+      "description": "Whether to show or hide the Picker",
+      "description_zh": "Whether to show or hide the Picker",
+      "default": "false",
+      "value": "",
+      "type": "boolean"
+    },
+    "loading": {
+      "description": "Should the Picker displays as loading state",
+      "description_zh": "Should the Picker displays as loading state",
+      "default": "false",
+      "value": "",
+      "type": "boolean"
+    },
+    "loadingContent": {
+      "description": "The loading content displayed in loading state",
+      "description_zh": "The loading content displayed in loading state",
+      "default": "provide a default SpinLoading content",
+      "value": "",
+      "type": "ReactNode"
+    }
+  },
+  "link": "https://mobile.ant.design/components/picker",
+  "link_zh": "https://mobile.ant.design/components/picker",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "onCancel",
+      "description": "Triggered when cancelling",
+      "description_zh": "Triggered when cancelling",
+      "params": "() => void"
+    },
+    {
+      "name": "onClose",
+      "description": "Triggered when confirming or cancelling",
+      "description_zh": "Triggered when confirming or cancelling",
+      "params": "() => void"
+    },
+    {
+      "name": "onConfirm",
+      "description": "Triggered when confirming",
+      "description_zh": "Triggered when confirming",
+      "params": "(value: PickerValue[], extend: PickerValueExtend) => void"
+    },
+    {
+      "name": "onSelect",
+      "description": "Triggered when the options are changed",
+      "description_zh": "Triggered when the options are changed",
+      "params": "(value: PickerValue[], extend: PickerValueExtend) => void"
+    }
+  ],
+  "methods": [
+    {
+      "name": "close",
+      "description": "Close Picker.",
+      "description_zh": "Close Picker.",
+      "params": "() => void"
+    },
+    {
+      "name": "open",
+      "description": "Open Picker.",
+      "description_zh": "Open Picker.",
+      "params": "() => void"
+    },
+    {
+      "name": "toggle",
+      "description": "Toggle the visible state of Picker.",
+      "description_zh": "Toggle the visible state of Picker.",
+      "params": "() => void"
+    }
+  ],
+  "slots": [],
+  "suggestions": []
+}

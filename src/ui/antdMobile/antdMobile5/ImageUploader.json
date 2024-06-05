@@ -1,0 +1,176 @@
+{
+  "name": "ImageUploader",
+  "props": {
+    "accept": {
+      "description": "The file types, image/gif image/jpeg image/jpg image/png",
+      "description_zh": "The file types, image/gif image/jpeg image/jpg image/png",
+      "default": "image/*",
+      "value": "",
+      "type": "string"
+    },
+    "beforeUpload": {
+      "description": "Callback function before file reading, return null to terminate file reading, support return Promise",
+      "description_zh": "Callback function before file reading, return null to terminate file reading, support return Promise",
+      "default": "-",
+      "value": "",
+      "type": "(file: File, files: File[]) => Promise<File | null> | File | null"
+    },
+    "capture": {
+      "description": "Picture selection mode, the optional value is camera (directly adjust the camera)",
+      "description_zh": "Picture selection mode, the optional value is camera (directly adjust the camera)",
+      "default": "-",
+      "value": "",
+      "type": "boolean | string"
+    },
+    "children": {
+      "description": "Custom upload button",
+      "description_zh": "Custom upload button",
+      "default": "-",
+      "value": "",
+      "type": "ReactNode"
+    },
+    "columns": {
+      "description": "Number of the displayed columns",
+      "description_zh": "Number of the displayed columns",
+      "default": "-",
+      "value": "",
+      "type": "number"
+    },
+    "defaultValue": {
+      "description": "Default list of uploaded files",
+      "description_zh": "Default list of uploaded files",
+      "default": "-",
+      "value": "",
+      "type": "ImageUploadItem[]"
+    },
+    "deletable": {
+      "description": "Whether to show the delete button",
+      "description_zh": "Whether to show the delete button",
+      "default": "true",
+      "value": "",
+      "type": "boolean"
+    },
+    "deleteIcon": {
+      "description": "The customized icon in delete button",
+      "description_zh": "The customized icon in delete button",
+      "default": "<CloseOutline />",
+      "value": "",
+      "type": "ReactNode"
+    },
+    "disableUpload": {
+      "description": "Whether to disable the upload button",
+      "description_zh": "Whether to disable the upload button",
+      "default": "false",
+      "value": "",
+      "type": "boolean"
+    },
+    "imageFit": {
+      "description": "The fill mode of the image, same as Image",
+      "description_zh": "The fill mode of the image, same as Image",
+      "default": "cover",
+      "value": "",
+      "type": "'contain' | 'cover' | 'fill' | 'none' | 'scale-down'"
+    },
+    "maxCount": {
+      "description": "To control how many pictures to be uploaded at most, the upload button would be automatically hidden if the number is exceeded, 0 means no limit",
+      "description_zh": "To control how many pictures to be uploaded at most, the upload button would be automatically hidden if the number is exceeded, 0 means no limit",
+      "default": "0",
+      "value": "",
+      "type": "number"
+    },
+    "multiple": {
+      "description": "Whether to support selecting multiple pictures",
+      "description_zh": "Whether to support selecting multiple pictures",
+      "default": "false",
+      "value": "",
+      "type": "boolean"
+    },
+    "preview": {
+      "description": "Whether to support preview",
+      "description_zh": "Whether to support preview",
+      "default": "true",
+      "value": "",
+      "type": "boolean"
+    },
+    "showFailed": {
+      "description": "Whether to display pictures in the failed uploading state",
+      "description_zh": "Whether to display pictures in the failed uploading state",
+      "default": "true",
+      "value": "",
+      "type": "boolean"
+    },
+    "showUpload": {
+      "description": "Whether to display the upload button",
+      "description_zh": "Whether to display the upload button",
+      "default": "true",
+      "value": "",
+      "type": "boolean"
+    },
+    "upload": {
+      "description": "Upload method, the input parameter is the file object that needs to be uploaded, after asynchronous processing, the upload result is returned",
+      "description_zh": "Upload method, the input parameter is the file object that needs to be uploaded, after asynchronous processing, the upload result is returned",
+      "default": "-",
+      "value": "",
+      "type": "(file: File) => Promise<ImageUploadItem>"
+    },
+    "value": {
+      "description": "List of uploaded files",
+      "description_zh": "List of uploaded files",
+      "default": "-",
+      "value": "",
+      "type": "ImageUploadItem[]"
+    },
+    "renderItem": {
+      "description": "Custom item of uploadList",
+      "description_zh": "Custom item of uploadList",
+      "default": "-",
+      "value": "",
+      "type": "(originNode: React.ReactElement, file: ImageUploadItem, fileList: ImageUploadItem[] ) => React.ReactNode"
+    }
+  },
+  "link": "https://mobile.ant.design/components/image-uploader",
+  "link_zh": "https://mobile.ant.design/components/image-uploader",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "onChange",
+      "description": "Triggered when the list of uploaded files changing",
+      "description_zh": "Triggered when the list of uploaded files changing",
+      "params": "(items: ImageUploadItem[]) => void"
+    },
+    {
+      "name": "onCountExceed",
+      "description": "Triggered when the number of pictures selected by the user exceeds the maximum limit",
+      "description_zh": "Triggered when the number of pictures selected by the user exceeds the maximum limit",
+      "params": "(exceed: number) => void"
+    },
+    {
+      "name": "onDelete",
+      "description": "Triggered when the successfully uploaded image is deleted, if it returns false, it means that it is prevented from being deleted, and it supports the return of Promise.",
+      "description_zh": "Triggered when the successfully uploaded image is deleted, if it returns false, it means that it is prevented from being deleted, and it supports the return of Promise.",
+      "params": "(item: ImageUploadItem) => boolean | Promise<boolean> | void"
+    },
+    {
+      "name": "onPreview",
+      "description": "Callback when the preview picture is clicked",
+      "description_zh": "Callback when the preview picture is clicked",
+      "params": "(index: number, item: ImageUploadItem) => void"
+    },
+    {
+      "name": "onUploadQueueChange",
+      "description": "Triggered when the image upload queue changes",
+      "description_zh": "Triggered when the image upload queue changes",
+      "params": "(tasks: UploadTask[]) => void"
+    }
+  ],
+  "methods": [
+    {
+      "name": "nativeElement",
+      "description": "native input element",
+      "description_zh": "native input element",
+      "params": "HTMLInputElement | null"
+    }
+  ],
+  "slots": [],
+  "suggestions": []
+}

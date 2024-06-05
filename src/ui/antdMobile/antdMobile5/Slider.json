@@ -1,0 +1,109 @@
+{
+  "name": "Slider",
+  "props": {
+    "defaultValue": {
+      "description": "Default value",
+      "description_zh": "Default value",
+      "default": "range ? [0, 0] : 0",
+      "value": "",
+      "type": "number | [number, number]"
+    },
+    "disabled": {
+      "description": "Whether disabled",
+      "description_zh": "Whether disabled",
+      "default": "false",
+      "value": "",
+      "type": "boolean"
+    },
+    "icon": {
+      "description": "The icon of slider",
+      "description_zh": "The icon of slider",
+      "default": "-",
+      "value": "",
+      "type": "ReactNode"
+    },
+    "marks": {
+      "description": "Tick marks",
+      "description_zh": "Tick marks",
+      "default": "-",
+      "value": "",
+      "type": "{ [key: number]: React.ReactNode }"
+    },
+    "max": {
+      "description": "Max value",
+      "description_zh": "Max value",
+      "default": "100",
+      "value": "",
+      "type": "number"
+    },
+    "min": {
+      "description": "Min value",
+      "description_zh": "Min value",
+      "default": "0",
+      "value": "",
+      "type": "number"
+    },
+    "popover": {
+      "description": "Whether to display the popover when dragging. Support passing in function to customize the rendering content.",
+      "description_zh": "Whether to display the popover when dragging. Support passing in function to customize the rendering content.",
+      "default": "false",
+      "value": "",
+      "type": "boolean | ((value: number) => ReactNode)"
+    },
+    "residentPopover": {
+      "description": "Whether the popover is permanently displayed , this attribute takes effect when popover exists",
+      "description_zh": "Whether the popover is permanently displayed , this attribute takes effect when popover exists",
+      "default": "false",
+      "value": "",
+      "type": "boolean "
+    },
+    "range": {
+      "description": "Whether it is a double sliders",
+      "description_zh": "Whether it is a double sliders",
+      "default": "false",
+      "value": "",
+      "type": "boolean"
+    },
+    "step": {
+      "description": "Step distance, the value must be greater than 0, and (max-min) can be divisible by step. When marks is not null, the configuration of step is invalid",
+      "description_zh": "Step distance, the value must be greater than 0, and (max-min) can be divisible by step. When marks is not null, the configuration of step is invalid",
+      "default": "1",
+      "value": "",
+      "type": "number"
+    },
+    "ticks": {
+      "description": "Whether to display the scale",
+      "description_zh": "Whether to display the scale",
+      "default": "false",
+      "value": "",
+      "type": "boolean"
+    },
+    "value": {
+      "description": "Current value",
+      "description_zh": "Current value",
+      "default": "-",
+      "value": "",
+      "type": "number | [number, number]"
+    }
+  },
+  "link": "https://mobile.ant.design/components/slider",
+  "link_zh": "https://mobile.ant.design/components/slider",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "onAfterChange",
+      "description": "Consistent with the trigger timing of touchend, pass the current value as a parameter",
+      "description_zh": "Consistent with the trigger timing of touchend, pass the current value as a parameter",
+      "params": "(value: number | [number, number]) => void"
+    },
+    {
+      "name": "onChange",
+      "description": "Triggered when the slider is dragged, and the current dragged value is passed in as a parameter",
+      "description_zh": "Triggered when the slider is dragged, and the current dragged value is passed in as a parameter",
+      "params": "(value: number | [number, number]) => void"
+    }
+  ],
+  "methods": [],
+  "slots": [],
+  "suggestions": []
+}

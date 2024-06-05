@@ -1,0 +1,194 @@
+{
+  "name": "Form",
+  "props": {
+    "disabled": {
+      "description": "Whether it is disabled",
+      "description_zh": "Whether it is disabled",
+      "default": "false",
+      "value": "",
+      "type": "boolean"
+    },
+    "footer": {
+      "description": "The footer content. Commonly used for placing submit buttons.",
+      "description_zh": "The footer content. Commonly used for placing submit buttons.",
+      "default": "-",
+      "value": "",
+      "type": "ReactNode"
+    },
+    "form": {
+      "description": "Form control instance created by Form.useForm(). Automatically created when not provided",
+      "description_zh": "Form control instance created by Form.useForm(). Automatically created when not provided",
+      "default": "-",
+      "value": "",
+      "type": "FormInstance"
+    },
+    "hasFeedback": {
+      "description": "Whether to show error feedback",
+      "description_zh": "Whether to show error feedback",
+      "default": "true",
+      "value": "",
+      "type": "boolean"
+    },
+    "initialValues": {
+      "description": "Set value by Form initialization or reset",
+      "description_zh": "Set value by Form initialization or reset",
+      "default": "-",
+      "value": "",
+      "type": "object"
+    },
+    "layout": {
+      "description": "Layout mode",
+      "description_zh": "Layout mode",
+      "default": "'vertical'",
+      "value": "",
+      "type": "'vertical' | 'horizontal'"
+    },
+    "mode": {
+      "description": "Support two modes: default and card.",
+      "description_zh": "Support two modes: default and card.",
+      "default": "'default'",
+      "value": "",
+      "type": "'default' | 'card'"
+    },
+    "name": {
+      "description": "Form name. Will be the prefix of Field id",
+      "description_zh": "Form name. Will be the prefix of Field id",
+      "default": "-",
+      "value": "",
+      "type": "string"
+    },
+    "preserve": {
+      "description": "Keep field value even when field removed",
+      "description_zh": "Keep field value even when field removed",
+      "default": "true",
+      "value": "",
+      "type": "boolean"
+    },
+    "requiredMarkStyle": {
+      "description": "The style of required or optional mark",
+      "description_zh": "The style of required or optional mark",
+      "default": "'asterisk'",
+      "value": "",
+      "type": "'asterisk' | 'text-required' | 'text-optional | 'none'"
+    },
+    "validateMessages": {
+      "description": "Validation prompt template, description see below",
+      "description_zh": "Validation prompt template, description see below",
+      "default": "-",
+      "value": "",
+      "type": "ValidateMessages"
+    },
+    "validateTrigger": {
+      "description": "Config field validate trigger",
+      "description_zh": "Config field validate trigger",
+      "default": "'onChange'",
+      "value": "",
+      "type": "string | string[]"
+    }
+  },
+  "link": "https://mobile.ant.design/components/form",
+  "link_zh": "https://mobile.ant.design/components/form",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "onFieldsChange",
+      "description": "Trigger when field updated",
+      "description_zh": "Trigger when field updated",
+      "params": "(changedFields, allFields) => void"
+    },
+    {
+      "name": "onFinish",
+      "description": "Trigger after submitting the form and verifying data successfully",
+      "description_zh": "Trigger after submitting the form and verifying data successfully",
+      "params": "(values) => void"
+    },
+    {
+      "name": "onFinishFailed",
+      "description": "Trigger after submitting the form and verifying data failed",
+      "description_zh": "Trigger after submitting the form and verifying data failed",
+      "params": "({ values, errorFields, outOfDate }) => void"
+    },
+    {
+      "name": "onValuesChange",
+      "description": "Trigger when value updated",
+      "description_zh": "Trigger when value updated",
+      "params": "(changedValues, allValues) => void"
+    }
+  ],
+  "methods": [
+    {
+      "name": "getFieldError",
+      "description": "Get the error messages by the field name",
+      "description_zh": "Get the error messages by the field name",
+      "params": "(name: NamePath) => string[]"
+    },
+    {
+      "name": "getFieldValue",
+      "description": "Get the value by the field name",
+      "description_zh": "Get the value by the field name",
+      "params": "(name: NamePath) => any"
+    },
+    {
+      "name": "getFieldsError",
+      "description": "Get the error messages by the fields name. Return as an array",
+      "description_zh": "Get the error messages by the fields name. Return as an array",
+      "params": "(nameList?: NamePath[]) => FieldError[]"
+    },
+    {
+      "name": "getFieldsValue",
+      "description": "Get values by a set of field names. Return according to the corresponding structure. Default return mounted field value, but you can use getFieldsValue(true) to get all values",
+      "description_zh": "Get values by a set of field names. Return according to the corresponding structure. Default return mounted field value, but you can use getFieldsValue(true) to get all values",
+      "params": "(nameList?: NamePath[], filterFunc?: (meta: { touched: boolean, validating: boolean }) => boolean) => any"
+    },
+    {
+      "name": "isFieldTouched",
+      "description": "Check if a field has been operated",
+      "description_zh": "Check if a field has been operated",
+      "params": "(name: NamePath) => boolean"
+    },
+    {
+      "name": "isFieldsTouched",
+      "description": "Check if fields have been operated. Check if all fields is touched when allTouched is true",
+      "description_zh": "Check if fields have been operated. Check if all fields is touched when allTouched is true",
+      "params": "(nameList?: NamePath[], allTouched?: boolean) => boolean"
+    },
+    {
+      "name": "resetFields",
+      "description": "Reset fields to initialValues initialValues",
+      "description_zh": "Reset fields to initialValues initialValues",
+      "params": "(fields?: FieldData[]) => void"
+    },
+    {
+      "name": "setFields",
+      "description": "Set fields status",
+      "description_zh": "Set fields status",
+      "params": "(fields: FieldData[]) => void"
+    },
+    {
+      "name": "setFieldValue",
+      "description": "Set the value by the field name",
+      "description_zh": "Set the value by the field name",
+      "params": "(name: NamePath, value: any) => void"
+    },
+    {
+      "name": "setFieldsValue",
+      "description": "Set fields value(Will directly pass to form store. If you do not want to modify passed object, please clone first)",
+      "description_zh": "Set fields value(Will directly pass to form store. If you do not want to modify passed object, please clone first)",
+      "params": "(values) => void"
+    },
+    {
+      "name": "submit",
+      "description": "Submit the form. It's same as click submit button",
+      "description_zh": "Submit the form. It's same as click submit button",
+      "params": "() => void"
+    },
+    {
+      "name": "validateFields",
+      "description": "Validate fields",
+      "description_zh": "Validate fields",
+      "params": "(nameList?: NamePath[]) => Promise"
+    }
+  ],
+  "slots": [],
+  "suggestions": []
+}

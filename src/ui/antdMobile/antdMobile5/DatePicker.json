@@ -1,0 +1,128 @@
+{
+  "name": "DatePicker",
+  "props": {
+    "children": {
+      "description": "The rendering function of the selected items",
+      "description_zh": "The rendering function of the selected items",
+      "default": "-",
+      "value": "",
+      "type": "(value: PickerDate, actions: PickerActions) => ReactNode"
+    },
+    "defaultValue": {
+      "description": "Default selected value",
+      "description_zh": "Default selected value",
+      "default": "-",
+      "value": "",
+      "type": "PickerDate"
+    },
+    "destroyOnClose": {
+      "description": "Destroy dom when not visible",
+      "description_zh": "Destroy dom when not visible",
+      "default": "false",
+      "value": "",
+      "type": "boolean"
+    },
+    "filter": {
+      "description": "Filter available time",
+      "description_zh": "Filter available time",
+      "default": "-",
+      "value": "",
+      "type": "DatePickerFilter"
+    },
+    "forceRender": {
+      "description": "Render content forcely",
+      "description_zh": "Render content forcely",
+      "default": "false",
+      "value": "",
+      "type": "boolean"
+    },
+    "max": {
+      "description": "Max value",
+      "description_zh": "Max value",
+      "default": "ten years later",
+      "value": "",
+      "type": "PickerDate"
+    },
+    "min": {
+      "description": "Minimum value",
+      "description_zh": "Minimum value",
+      "default": "ten years ago",
+      "value": "",
+      "type": "PickerDate"
+    },
+    "mouseWheel": {
+      "description": "Whether to allow interact with mouse wheel",
+      "description_zh": "Whether to allow interact with mouse wheel",
+      "default": "false",
+      "value": "",
+      "type": "boolean"
+    },
+    "precision": {
+      "description": "Precision",
+      "description_zh": "Precision",
+      "default": "'day'",
+      "value": "",
+      "type": "'year' | 'month' | 'day' | 'hour' | 'minute' | 'second' | 'week' | 'week-day'"
+    },
+    "renderLabel": {
+      "description": "The function to custom rendering the label shown on a column. type means any value in precision or now, data means the default number",
+      "description_zh": "The function to custom rendering the label shown on a column. type means any value in precision or now, data means the default number",
+      "default": "-",
+      "value": "",
+      "type": "(type: Precision | 'now', data: number) => ReactNode"
+    },
+    "tillNow": {
+      "description": "Show till now in list",
+      "description_zh": "Show till now in list",
+      "default": "-",
+      "value": "",
+      "type": "boolean"
+    },
+    "value": {
+      "description": "Selected value",
+      "description_zh": "Selected value",
+      "default": "-",
+      "value": "",
+      "type": "PickerDate"
+    }
+  },
+  "events": [
+    {
+      "name": "onConfirm",
+      "description": "Triggered when confirming",
+      "description_zh": "Triggered when confirming",
+      "params": "(value: PickerDate) => void"
+    },
+    {
+      "name": "onSelect",
+      "description": "Triggered when the options are changed",
+      "description_zh": "Triggered when the options are changed",
+      "params": "(value: PickerDate) => void"
+    }
+  ],
+  "link": "https://mobile.ant.design/components/page-indicator",
+  "link_zh": "https://mobile.ant.design/components/page-indicator",
+  "typeDetail": {},
+  "methods": [
+    {
+      "name": "close",
+      "description": "Close Picker.",
+      "description_zh": "Close Picker.",
+      "params": "() => void"
+    },
+    {
+      "name": "open",
+      "description": "Open Picker.",
+      "description_zh": "Open Picker.",
+      "params": "() => void"
+    },
+    {
+      "name": "toggle",
+      "description": "Toggle the visible state of Picker.",
+      "description_zh": "Toggle the visible state of Picker.",
+      "params": "() => void"
+    }
+  ],
+  "slots": [],
+  "suggestions": []
+}
