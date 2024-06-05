@@ -3,112 +3,112 @@
   "props": {
     "allowClear": {
       "description": "Whether to allow clearing after another click.",
-      "description_zh": "Whether to allow clearing after another click.",
+      "description_zh": "是否允许在再次单击后清除。",
       "default": "true",
       "value": "",
       "type": "boolean"
     },
     "defaultValue": {
       "description": "The default selected date or date range.",
-      "description_zh": "The default selected date or date range.",
+      "description_zh": "默认选择的日期或日期范围。",
       "default": "-",
       "value": "",
       "type": "Same as value prop."
     },
     "max": {
       "description": "Maximum value of a selectable range.",
-      "description_zh": "Maximum value of a selectable range.",
+      "description_zh": "可选范围的最大值。",
       "default": "-",
       "value": "",
       "type": "Date"
     },
     "min": {
       "description": "Minimum value of a selectable range.",
-      "description_zh": "Minimum value of a selectable range.",
+      "description_zh": "可选范围的最小值。",
       "default": "-",
       "value": "",
       "type": "Date"
     },
     "maxPage": {
       "description": "Maximum visible page of date.",
-      "description_zh": "Maximum visible page of date.",
+      "description_zh": "日期的最大可见页面。",
       "default": "",
       "value": "",
       "type": "Page"
     },
     "minPage": {
       "description": "Minimum visible page of date.",
-      "description_zh": "Minimum visible page of date.",
+      "description_zh": "日期的最小可见页面。",
       "default": "-",
       "value": "",
       "type": "Page"
     },
     "nextMonthButton": {
       "description": "Contents of the Next Month button on the navigation pane",
-      "description_zh": "Contents of the Next Month button on the navigation pane",
+      "description_zh": "导航窗格上的“下个月”按钮的内容",
       "default": ">",
       "value": "",
       "type": "React.ReactNode"
     },
     "nextYearButton": {
       "description": "Contents of the next Year button on the navigation pane",
-      "description_zh": "Contents of the next Year button on the navigation pane",
+      "description_zh": "导航窗格上的“下一年”按钮的内容",
       "default": ">>",
       "value": "",
       "type": "React.ReactNode"
     },
     "prevMonthButton": {
       "description": "Contents of the Last Month button on the navigation pane",
-      "description_zh": "Contents of the Last Month button on the navigation pane",
+      "description_zh": "导航窗格上的“上个月”按钮的内容",
       "default": "<",
       "value": "",
       "type": "React.ReactNode"
     },
     "prevYearButton": {
       "description": "Contents of the Last year button on the navigation pane",
-      "description_zh": "Contents of the Last year button on the navigation pane",
+      "description_zh": "导航窗格上的“去年”按钮的内容",
       "default": "<<",
       "value": "",
       "type": "React.ReactNode"
     },
     "renderLabel": {
       "description": "The label render function.",
-      "description_zh": "The label render function.",
+      "description_zh": "标签呈现函数。",
       "default": "-",
       "value": "",
       "type": "(date: Date) => ReactNode | null | undefined"
     },
     "selectionMode": {
       "description": "The selection mode. Disable selection when this prop is not set.",
-      "description_zh": "The selection mode. Disable selection when this prop is not set.",
+      "description_zh": "选择模式。未设置此道具时禁用选择。",
       "default": "-",
       "value": "",
       "type": "single / range"
     },
     "shouldDisableDate": {
       "description": "Set whether the date is disable selection. The min and max Settings are ignored",
-      "description_zh": "Set whether the date is disable selection. The min and max Settings are ignored",
+      "description_zh": "设置日期是否禁用选择。最小和最大设置将被忽略",
       "default": "-",
       "value": "",
       "type": "(date: Date) => boolean"
     },
     "value": {
       "description": "The selected date or date range.",
-      "description_zh": "The selected date or date range.",
+      "description_zh": "所选日期或日期范围。",
       "default": "-",
       "value": "",
       "type": "Date | null when selection mode is \"single\". [Date, Date] | null when selection mode is \"range\""
     },
     "weekStartsOn": {
       "description": "Week starts on which day.",
-      "description_zh": "Week starts on which day.",
+      "description_zh": "一周从哪一天开始。",
       "default": "'Sunday'",
       "value": "",
       "type": "Monday / Sunday"
     },
     "renderDate": {
       "description": "Custom date rendering.",
-      "description_zh": "Custom date rendering.",
+      "description_zh": "自定义日期呈现。",
       "default": "-",
       "value": "",
       "type": "(date: Date) => ReactNode"
@@ -121,28 +121,32 @@
     {
       "name": "onChange",
       "description": "Trigger when selected date changes.",
-      "description_zh": "Trigger when selected date changes.",
-      "params": "(val: Date | null) => void when selection mode is \"single\". (val: [Date, Date] | null) => void when selection mode is \"range\"."
+      "description_zh": "在所选日期更改时触发。",
+      "params": "(val: Date | null) => void when selection mode is \"single\". (val: [Date, Date] | null) => void when selection mode is \"range\".",
+      "value": ""
     },
     {
       "name": "onPageChange",
       "description": "Trigger when changed year or month.",
-      "description_zh": "Trigger when changed year or month.",
-      "params": "(year: number, month: number) => void"
+      "description_zh": "更改年份或月份时触发。",
+      "params": "(year: number, month: number) => void",
+      "value": ""
     }
   ],
   "methods": [
     {
       "name": "jumpTo",
       "description": "Jump to specified page",
-      "description_zh": "Jump to specified page",
-      "params": "(page: Page | ((page: Page) => Page)) => void"
+      "description_zh": "跳转到指定页面",
+      "params": "(page: Page | ((page: Page) => Page)) => void",
+      "value": ""
     },
     {
       "name": "jumpToToday",
       "description": "Jump to today's page",
-      "description_zh": "Jump to today's page",
-      "params": "() => void"
+      "description_zh": "跳转到今天的页面",
+      "params": "() => void",
+      "value": ""
     }
   ],
   "slots": [],

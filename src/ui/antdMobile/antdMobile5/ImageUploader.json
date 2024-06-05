@@ -3,126 +3,126 @@
   "props": {
     "accept": {
       "description": "The file types, image/gif image/jpeg image/jpg image/png",
-      "description_zh": "The file types, image/gif image/jpeg image/jpg image/png",
+      "description_zh": "文件类型：image/gif image/jpeg image/jpg image/png",
       "default": "image/*",
       "value": "",
       "type": "string"
     },
     "beforeUpload": {
       "description": "Callback function before file reading, return null to terminate file reading, support return Promise",
-      "description_zh": "Callback function before file reading, return null to terminate file reading, support return Promise",
+      "description_zh": "读取文件前的回调函数，return null 终止文件读取，支持返回 Promise",
       "default": "-",
       "value": "",
       "type": "(file: File, files: File[]) => Promise<File | null> | File | null"
     },
     "capture": {
       "description": "Picture selection mode, the optional value is camera (directly adjust the camera)",
-      "description_zh": "Picture selection mode, the optional value is camera (directly adjust the camera)",
+      "description_zh": "图片选择模式，可选值为相机（直接调整相机）",
       "default": "-",
       "value": "",
       "type": "boolean | string"
     },
     "children": {
       "description": "Custom upload button",
-      "description_zh": "Custom upload button",
+      "description_zh": "自定义上传按钮",
       "default": "-",
       "value": "",
       "type": "ReactNode"
     },
     "columns": {
       "description": "Number of the displayed columns",
-      "description_zh": "Number of the displayed columns",
+      "description_zh": "显示的列数",
       "default": "-",
       "value": "",
       "type": "number"
     },
     "defaultValue": {
       "description": "Default list of uploaded files",
-      "description_zh": "Default list of uploaded files",
+      "description_zh": "上传文件的默认列表",
       "default": "-",
       "value": "",
       "type": "ImageUploadItem[]"
     },
     "deletable": {
       "description": "Whether to show the delete button",
-      "description_zh": "Whether to show the delete button",
+      "description_zh": "是否显示删除按钮",
       "default": "true",
       "value": "",
       "type": "boolean"
     },
     "deleteIcon": {
       "description": "The customized icon in delete button",
-      "description_zh": "The customized icon in delete button",
+      "description_zh": "删除按钮中的自定义图标",
       "default": "<CloseOutline />",
       "value": "",
       "type": "ReactNode"
     },
     "disableUpload": {
       "description": "Whether to disable the upload button",
-      "description_zh": "Whether to disable the upload button",
+      "description_zh": "是否禁用上传按钮",
       "default": "false",
       "value": "",
       "type": "boolean"
     },
     "imageFit": {
       "description": "The fill mode of the image, same as Image",
-      "description_zh": "The fill mode of the image, same as Image",
+      "description_zh": "图像的填充模式，与图像相同",
       "default": "cover",
       "value": "",
       "type": "contain / cover / fill / none / scale-down"
     },
     "maxCount": {
       "description": "To control how many pictures to be uploaded at most, the upload button would be automatically hidden if the number is exceeded, 0 means no limit",
-      "description_zh": "To control how many pictures to be uploaded at most, the upload button would be automatically hidden if the number is exceeded, 0 means no limit",
+      "description_zh": "为了控制最多要上传的图片数量，如果超过数量，上传按钮会自动隐藏，0表示没有限制",
       "default": "0",
       "value": "",
       "type": "number"
     },
     "multiple": {
       "description": "Whether to support selecting multiple pictures",
-      "description_zh": "Whether to support selecting multiple pictures",
+      "description_zh": "是否支持选择多张图片",
       "default": "false",
       "value": "",
       "type": "boolean"
     },
     "preview": {
       "description": "Whether to support preview",
-      "description_zh": "Whether to support preview",
+      "description_zh": "是否支持预览",
       "default": "true",
       "value": "",
       "type": "boolean"
     },
     "showFailed": {
       "description": "Whether to display pictures in the failed uploading state",
-      "description_zh": "Whether to display pictures in the failed uploading state",
+      "description_zh": "是否显示上传失败状态下的图片",
       "default": "true",
       "value": "",
       "type": "boolean"
     },
     "showUpload": {
       "description": "Whether to display the upload button",
-      "description_zh": "Whether to display the upload button",
+      "description_zh": "是否显示上传按钮",
       "default": "true",
       "value": "",
       "type": "boolean"
     },
     "upload": {
       "description": "Upload method, the input parameter is the file object that needs to be uploaded, after asynchronous processing, the upload result is returned",
-      "description_zh": "Upload method, the input parameter is the file object that needs to be uploaded, after asynchronous processing, the upload result is returned",
+      "description_zh": "上传方式，输入参数是需要上传的文件对象，异步处理后返回上传结果",
       "default": "-",
       "value": "",
       "type": "(file: File) => Promise<ImageUploadItem>"
     },
     "value": {
       "description": "List of uploaded files",
-      "description_zh": "List of uploaded files",
+      "description_zh": "上传文件列表",
       "default": "-",
       "value": "",
       "type": "ImageUploadItem[]"
     },
     "renderItem": {
       "description": "Custom item of uploadList",
-      "description_zh": "Custom item of uploadList",
+      "description_zh": "uploadList 的自定义项",
       "default": "-",
       "value": "",
       "type": "(originNode: React.ReactElement, file: ImageUploadItem, fileList: ImageUploadItem[] ) => React.ReactNode"
@@ -135,40 +135,46 @@
     {
       "name": "onChange",
       "description": "Triggered when the list of uploaded files changing",
-      "description_zh": "Triggered when the list of uploaded files changing",
-      "params": "(items: ImageUploadItem[]) => void"
+      "description_zh": "当上传的文件列表发生变化时触发",
+      "params": "(items: ImageUploadItem[]) => void",
+      "value": ""
     },
     {
       "name": "onCountExceed",
       "description": "Triggered when the number of pictures selected by the user exceeds the maximum limit",
-      "description_zh": "Triggered when the number of pictures selected by the user exceeds the maximum limit",
-      "params": "(exceed: number) => void"
+      "description_zh": "当用户选择的图片数量超过最大限制时触发",
+      "params": "(exceed: number) => void",
+      "value": ""
     },
     {
       "name": "onDelete",
       "description": "Triggered when the successfully uploaded image is deleted, if it returns false, it means that it is prevented from being deleted, and it supports the return of Promise.",
-      "description_zh": "Triggered when the successfully uploaded image is deleted, if it returns false, it means that it is prevented from being deleted, and it supports the return of Promise.",
-      "params": "(item: ImageUploadItem) => boolean | Promise<boolean> | void"
+      "description_zh": "删除成功上传的图片时触发，如果返回false，则表示阻止删除，支持返回Promise。",
+      "params": "(item: ImageUploadItem) => boolean | Promise<boolean> | void",
+      "value": ""
     },
     {
       "name": "onPreview",
       "description": "Callback when the preview picture is clicked",
-      "description_zh": "Callback when the preview picture is clicked",
-      "params": "(index: number, item: ImageUploadItem) => void"
+      "description_zh": "点击预览图片时回调",
+      "params": "(index: number, item: ImageUploadItem) => void",
+      "value": ""
     },
     {
       "name": "onUploadQueueChange",
       "description": "Triggered when the image upload queue changes",
-      "description_zh": "Triggered when the image upload queue changes",
-      "params": "(tasks: UploadTask[]) => void"
+      "description_zh": "在图片上传队列更改时触发",
+      "params": "(tasks: UploadTask[]) => void",
+      "value": ""
     }
   ],
   "methods": [
     {
       "name": "nativeElement",
       "description": "native input element",
-      "description_zh": "native input element",
-      "params": "HTMLInputElement | null"
+      "description_zh": "本机输入元素",
+      "params": "HTMLInputElement | null",
+      "value": ""
     }
   ],
   "slots": [],

@@ -3,35 +3,35 @@
   "props": {
     "closeOnAction": {
       "description": "Whether to return to the position automatically when the operation button is clicked",
-      "description_zh": "Whether to return to the position automatically when the operation button is clicked",
+      "description_zh": "点击操作按钮时是否自动返回位置",
       "default": "true",
       "value": "",
       "type": "boolean"
     },
     "closeOnTouchOutside": {
       "description": "Whether to return to the position automatically when other areas is clicked",
-      "description_zh": "Whether to return to the position automatically when other areas is clicked",
+      "description_zh": "点击其他区域时是否自动返回位置",
       "default": "true",
       "value": "",
       "type": "boolean"
     },
     "leftActions": {
       "description": "List of operation buttons on the left",
-      "description_zh": "List of operation buttons on the left",
+      "description_zh": "左侧操作按钮列表",
       "default": "[]",
       "value": "",
       "type": "Action[]"
     },
     "rightActions": {
       "description": "List of operation buttons on the right",
-      "description_zh": "List of operation buttons on the right",
+      "description_zh": "右侧操作按钮列表",
       "default": "[]",
       "value": "",
       "type": "Action[]"
     },
     "stopPropagation": {
       "description": "Stop the propagation of some events.",
-      "description_zh": "Stop the propagation of some events.",
+      "description_zh": "停止某些事件的传播。",
       "default": "[]",
       "value": "",
       "type": "PropagationEvent[]"
@@ -44,28 +44,32 @@
     {
       "name": "onAction",
       "description": "Triggered when operation button is clicked",
-      "description_zh": "Triggered when operation button is clicked",
-      "params": "(action: Action, e: React.MouseEvent) => void"
+      "description_zh": "单击操作按钮时触发",
+      "params": "(action: Action, e: React.MouseEvent) => void",
+      "value": ""
     },
     {
       "name": "onActionsReveal",
       "description": "Triggered when the operation button appears completely",
-      "description_zh": "Triggered when the operation button appears completely",
-      "params": "(side: 'left' | 'right') => void"
+      "description_zh": "操作按钮完全出现时触发",
+      "params": "(side: 'left' | 'right') => void",
+      "value": ""
     }
   ],
   "methods": [
     {
       "name": "close",
       "description": "Let the slide bar return to the position",
-      "description_zh": "Let the slide bar return to the position",
-      "params": "() => void"
+      "description_zh": "让滑杆返回到该位置",
+      "params": "() => void",
+      "value": ""
     },
     {
       "name": "show",
       "description": "Slide out the operation button, the side parameter defaults to right",
-      "description_zh": "Slide out the operation button, the side parameter defaults to right",
-      "params": "(side?: 'left' | 'right') => void"
+      "description_zh": "滑出操作按钮，侧参数默认为右",
+      "params": "(side?: 'left' | 'right') => void",
+      "value": ""
     }
   ],
   "slots": [],

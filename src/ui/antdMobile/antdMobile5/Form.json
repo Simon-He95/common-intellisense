@@ -3,84 +3,84 @@
   "props": {
     "disabled": {
       "description": "Whether it is disabled",
-      "description_zh": "Whether it is disabled",
+      "description_zh": "是否禁用",
       "default": "false",
       "value": "",
       "type": "boolean"
     },
     "footer": {
       "description": "The footer content. Commonly used for placing submit buttons.",
-      "description_zh": "The footer content. Commonly used for placing submit buttons.",
+      "description_zh": "页脚内容。通常用于放置提交按钮。",
       "default": "-",
       "value": "",
       "type": "ReactNode"
     },
     "form": {
       "description": "Form control instance created by Form.useForm(). Automatically created when not provided",
-      "description_zh": "Form control instance created by Form.useForm(). Automatically created when not provided",
+      "description_zh": "由 Form.useForm（） 创建的表单控件实例。未提供时自动创建",
       "default": "-",
       "value": "",
       "type": "FormInstance"
     },
     "hasFeedback": {
       "description": "Whether to show error feedback",
-      "description_zh": "Whether to show error feedback",
+      "description_zh": "是否显示错误反馈",
       "default": "true",
       "value": "",
       "type": "boolean"
     },
     "initialValues": {
       "description": "Set value by Form initialization or reset",
-      "description_zh": "Set value by Form initialization or reset",
+      "description_zh": "通过表单初始化或重置设置值",
       "default": "-",
       "value": "",
       "type": "object"
     },
     "layout": {
       "description": "Layout mode",
-      "description_zh": "Layout mode",
+      "description_zh": "布局模式",
       "default": "'vertical'",
       "value": "",
       "type": "vertical / horizontal"
     },
     "mode": {
       "description": "Support two modes: default and card.",
-      "description_zh": "Support two modes: default and card.",
+      "description_zh": "支持两种模式：默认模式和卡模式。",
       "default": "'default'",
       "value": "",
       "type": "default / card"
     },
     "name": {
       "description": "Form name. Will be the prefix of Field id",
-      "description_zh": "Form name. Will be the prefix of Field id",
+      "description_zh": "窗体名称。将是字段 ID 的前缀",
       "default": "-",
       "value": "",
       "type": "string"
     },
     "preserve": {
       "description": "Keep field value even when field removed",
-      "description_zh": "Keep field value even when field removed",
+      "description_zh": "即使删除了字段，也要保留字段值",
       "default": "true",
       "value": "",
       "type": "boolean"
     },
     "requiredMarkStyle": {
       "description": "The style of required or optional mark",
-      "description_zh": "The style of required or optional mark",
+      "description_zh": "必填或可选标记的样式",
       "default": "'asterisk'",
       "value": "",
       "type": "asterisk / text-required / text-optional / none"
     },
     "validateMessages": {
       "description": "Validation prompt template, description see below",
-      "description_zh": "Validation prompt template, description see below",
+      "description_zh": "验证提示模板，说明见下文",
       "default": "-",
       "value": "",
       "type": "ValidateMessages"
     },
     "validateTrigger": {
       "description": "Config field validate trigger",
-      "description_zh": "Config field validate trigger",
+      "description_zh": "配置字段验证触发器",
       "default": "'onChange'",
       "value": "",
       "type": "string | string[]"
@@ -93,100 +93,116 @@
     {
       "name": "onFieldsChange",
       "description": "Trigger when field updated",
-      "description_zh": "Trigger when field updated",
-      "params": "(changedFields, allFields) => void"
+      "description_zh": "字段更新时触发",
+      "params": "(changedFields, allFields) => void",
+      "value": ""
     },
     {
       "name": "onFinish",
       "description": "Trigger after submitting the form and verifying data successfully",
-      "description_zh": "Trigger after submitting the form and verifying data successfully",
-      "params": "(values) => void"
+      "description_zh": "提交表单并成功验证数据后触发",
+      "params": "(values) => void",
+      "value": ""
     },
     {
       "name": "onFinishFailed",
       "description": "Trigger after submitting the form and verifying data failed",
-      "description_zh": "Trigger after submitting the form and verifying data failed",
-      "params": "({ values, errorFields, outOfDate }) => void"
+      "description_zh": "提交表单并验证数据失败后触发",
+      "params": "({ values, errorFields, outOfDate }) => void",
+      "value": ""
     },
     {
       "name": "onValuesChange",
       "description": "Trigger when value updated",
-      "description_zh": "Trigger when value updated",
-      "params": "(changedValues, allValues) => void"
+      "description_zh": "值更新时触发",
+      "params": "(changedValues, allValues) => void",
+      "value": ""
     }
   ],
   "methods": [
     {
       "name": "getFieldError",
       "description": "Get the error messages by the field name",
-      "description_zh": "Get the error messages by the field name",
-      "params": "(name: NamePath) => string[]"
+      "description_zh": "按字段名称获取错误消息",
+      "params": "(name: NamePath) => string[]",
+      "value": ""
     },
     {
       "name": "getFieldValue",
       "description": "Get the value by the field name",
-      "description_zh": "Get the value by the field name",
-      "params": "(name: NamePath) => any"
+      "description_zh": "按字段名称获取值",
+      "params": "(name: NamePath) => any",
+      "value": ""
     },
     {
       "name": "getFieldsError",
       "description": "Get the error messages by the fields name. Return as an array",
-      "description_zh": "Get the error messages by the fields name. Return as an array",
-      "params": "(nameList?: NamePath[]) => FieldError[]"
+      "description_zh": "按字段名称获取错误消息。以数组形式返回",
+      "params": "(nameList?: NamePath[]) => FieldError[]",
+      "value": ""
     },
     {
       "name": "getFieldsValue",
       "description": "Get values by a set of field names. Return according to the corresponding structure. Default return mounted field value, but you can use getFieldsValue(true) to get all values",
-      "description_zh": "Get values by a set of field names. Return according to the corresponding structure. Default return mounted field value, but you can use getFieldsValue(true) to get all values",
-      "params": "(nameList?: NamePath[], filterFunc?: (meta: { touched: boolean, validating: boolean }) => boolean) => any"
+      "description_zh": "通过一组字段名称获取值。按相应结构返回。默认返回挂载的字段值，但您可以使用 getFieldsValue（true） 获取所有值",
+      "params": "(nameList?: NamePath[], filterFunc?: (meta: { touched: boolean, validating: boolean }) => boolean) => any",
+      "value": ""
     },
     {
       "name": "isFieldTouched",
       "description": "Check if a field has been operated",
-      "description_zh": "Check if a field has been operated",
-      "params": "(name: NamePath) => boolean"
+      "description_zh": "检查字段是否已操作",
+      "params": "(name: NamePath) => boolean",
+      "value": ""
     },
     {
       "name": "isFieldsTouched",
       "description": "Check if fields have been operated. Check if all fields is touched when allTouched is true",
-      "description_zh": "Check if fields have been operated. Check if all fields is touched when allTouched is true",
-      "params": "(nameList?: NamePath[], allTouched?: boolean) => boolean"
+      "description_zh": "检查字段是否已操作。当 allTouched 为 true 时，检查是否触及了所有字段",
+      "params": "(nameList?: NamePath[], allTouched?: boolean) => boolean",
+      "value": ""
     },
     {
       "name": "resetFields",
       "description": "Reset fields to initialValues initialValues",
-      "description_zh": "Reset fields to initialValues initialValues",
-      "params": "(fields?: FieldData[]) => void"
+      "description_zh": "将字段重置为 initialValues initialValues",
+      "params": "(fields?: FieldData[]) => void",
+      "value": ""
     },
     {
       "name": "setFields",
       "description": "Set fields status",
-      "description_zh": "Set fields status",
-      "params": "(fields: FieldData[]) => void"
+      "description_zh": "设置字段状态",
+      "params": "(fields: FieldData[]) => void",
+      "value": ""
     },
     {
       "name": "setFieldValue",
       "description": "Set the value by the field name",
-      "description_zh": "Set the value by the field name",
-      "params": "(name: NamePath, value: any) => void"
+      "description_zh": "按字段名称设置值",
+      "params": "(name: NamePath, value: any) => void",
+      "value": ""
     },
     {
       "name": "setFieldsValue",
       "description": "Set fields value(Will directly pass to form store. If you do not want to modify passed object, please clone first)",
-      "description_zh": "Set fields value(Will directly pass to form store. If you do not want to modify passed object, please clone first)",
-      "params": "(values) => void"
+      "description_zh": "设置字段值（将直接传递给表单存储。如果不想修改传递的对象，请先克隆）",
+      "params": "(values) => void",
+      "value": ""
     },
     {
       "name": "submit",
       "description": "Submit the form. It's same as click submit button",
-      "description_zh": "Submit the form. It's same as click submit button",
-      "params": "() => void"
+      "description_zh": "提交表单。这与单击提交按钮相同",
+      "params": "() => void",
+      "value": ""
     },
     {
       "name": "validateFields",
       "description": "Validate fields",
-      "description_zh": "Validate fields",
-      "params": "(nameList?: NamePath[]) => Promise"
+      "description_zh": "验证字段",
+      "params": "(nameList?: NamePath[]) => Promise",
+      "value": ""
     }
   ],
   "slots": [],

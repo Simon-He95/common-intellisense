@@ -3,84 +3,84 @@
   "props": {
     "allowEmpty": {
       "description": "Whether to allow empty content.",
-      "description_zh": "Whether to allow empty content.",
+      "description_zh": "是否允许空内容。",
       "default": "false",
       "value": "",
       "type": "boolean"
     },
     "defaultValue": {
       "description": "Default value",
-      "description_zh": "Default value",
+      "description_zh": "默认值",
       "default": "0",
       "value": "",
       "type": "number | null"
     },
     "digits": {
       "description": "Format to a fixed number of digits after the decimal point, set to 0 means format to integer. Will use formatter as display value when configured",
-      "description_zh": "Format to a fixed number of digits after the decimal point, set to 0 means format to integer. Will use formatter as display value when configured",
+      "description_zh": "格式化为小数点后的固定位数，设置为 0 表示格式为整数。配置时将使用格式化程序作为显示值",
       "default": "-",
       "value": "",
       "type": "number"
     },
     "disabled": {
       "description": "Whether to disabled Stepper",
-      "description_zh": "Whether to disabled Stepper",
+      "description_zh": "是否禁用步进",
       "default": "false",
       "value": "",
       "type": "boolean"
     },
     "formatter": {
       "description": "Format value in input",
-      "description_zh": "Format value in input",
+      "description_zh": "设置输入值的格式",
       "default": "-",
       "value": "",
       "type": "(value?: number) => string"
     },
     "inputReadOnly": {
       "description": "Whether input readonly or not",
-      "description_zh": "Whether input readonly or not",
+      "description_zh": "输入是否只读",
       "default": "false",
       "value": "",
       "type": "boolean"
     },
     "max": {
       "description": "Max value",
-      "description_zh": "Max value",
+      "description_zh": "最大值",
       "default": "-",
       "value": "",
       "type": "number"
     },
     "min": {
       "description": "Min value",
-      "description_zh": "Min value",
+      "description_zh": "最小值",
       "default": "-",
       "value": "",
       "type": "number"
     },
     "parser": {
       "description": "Parse input text into number which should work with formatter",
-      "description_zh": "Parse input text into number which should work with formatter",
+      "description_zh": "将输入文本解析为应该与格式化程序一起使用的数字",
       "default": "-",
       "value": "",
       "type": "(text: string) => number"
     },
     "step": {
       "description": "The value to increase or decrease each time, can be a decimal",
-      "description_zh": "The value to increase or decrease each time, can be a decimal",
+      "description_zh": "每次增加或减少的值可以是小数",
       "default": "1",
       "value": "",
       "type": "number"
     },
     "stringMode": {
       "description": "Set value as string to support high precision decimals. Will set defaultValue,value, min, max, onChange to string type",
-      "description_zh": "Set value as string to support high precision decimals. Will set defaultValue,value, min, max, onChange to string type",
+      "description_zh": "将值设置为字符串以支持高精度小数。将 defaultValue，value， min， max， onChange 设置为字符串类型",
       "default": "false",
       "value": "",
       "type": "boolean"
     },
     "value": {
       "description": "Current number, controlled value",
-      "description_zh": "Current number, controlled value",
+      "description_zh": "当前数字，控制值",
       "default": "-",
       "value": "",
       "type": "number | null"
@@ -93,40 +93,46 @@
     {
       "name": "onBlur",
       "description": "Triggered when the input lose focus",
-      "description_zh": "Triggered when the input lose focus",
-      "params": "(e: React.FocusEvent<HTMLInputElement>) => void"
+      "description_zh": "当输入失焦时触发",
+      "params": "(e: React.FocusEvent<HTMLInputElement>) => void",
+      "value": ""
     },
     {
       "name": "onChange",
       "description": "Callback when value is changed",
-      "description_zh": "Callback when value is changed",
-      "params": "(value: number | null) => void"
+      "description_zh": "值更改时的回调",
+      "params": "(value: number | null) => void",
+      "value": ""
     },
     {
       "name": "onFocus",
       "description": "Triggered when the input get focus",
-      "description_zh": "Triggered when the input get focus",
-      "params": "(e: React.FocusEvent<HTMLInputElement>) => void"
+      "description_zh": "当输入获得焦点时触发",
+      "params": "(e: React.FocusEvent<HTMLInputElement>) => void",
+      "value": ""
     }
   ],
   "methods": [
     {
       "name": "blur",
       "description": "Let the input box lose focus",
-      "description_zh": "Let the input box lose focus",
-      "params": "() => void"
+      "description_zh": "让输入框失去焦点",
+      "params": "() => void",
+      "value": ""
     },
     {
       "name": "focus",
       "description": "Let the input box get focus",
-      "description_zh": "Let the input box get focus",
-      "params": "() => void"
+      "description_zh": "让输入框获得焦点",
+      "params": "() => void",
+      "value": ""
     },
     {
       "name": "nativeElement",
       "description": "Native input element",
-      "description_zh": "Native input element",
-      "params": "HtmlInputElement | null"
+      "description_zh": "本机输入元素",
+      "params": "HtmlInputElement | null",
+      "value": ""
     }
   ],
   "slots": [],

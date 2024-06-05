@@ -3,84 +3,84 @@
   "props": {
     "defaultValue": {
       "description": "Default value",
-      "description_zh": "Default value",
+      "description_zh": "默认值",
       "default": "range ? [0, 0] : 0",
       "value": "",
       "type": "number | [number, number]"
     },
     "disabled": {
       "description": "Whether disabled",
-      "description_zh": "Whether disabled",
+      "description_zh": "是否禁用",
       "default": "false",
       "value": "",
       "type": "boolean"
     },
     "icon": {
       "description": "The icon of slider",
-      "description_zh": "The icon of slider",
+      "description_zh": "滑块的图标",
       "default": "-",
       "value": "",
       "type": "ReactNode"
     },
     "marks": {
       "description": "Tick marks",
-      "description_zh": "Tick marks",
+      "description_zh": "刻度线",
       "default": "-",
       "value": "",
       "type": "{ [key: number]: React.ReactNode }"
     },
     "max": {
       "description": "Max value",
-      "description_zh": "Max value",
+      "description_zh": "最大值",
       "default": "100",
       "value": "",
       "type": "number"
     },
     "min": {
       "description": "Min value",
-      "description_zh": "Min value",
+      "description_zh": "最小值",
       "default": "0",
       "value": "",
       "type": "number"
     },
     "popover": {
       "description": "Whether to display the popover when dragging. Support passing in function to customize the rendering content.",
-      "description_zh": "Whether to display the popover when dragging. Support passing in function to customize the rendering content.",
+      "description_zh": "拖动时是否显示弹出窗口。支持传入函数自定义渲染内容。",
       "default": "false",
       "value": "",
       "type": "boolean | ((value: number) => ReactNode)"
     },
     "residentPopover": {
       "description": "Whether the popover is permanently displayed , this attribute takes effect when popover exists",
-      "description_zh": "Whether the popover is permanently displayed , this attribute takes effect when popover exists",
+      "description_zh": "弹出框是否永久显示，此属性在弹出框存在时生效",
       "default": "false",
       "value": "",
       "type": "boolean "
     },
     "range": {
       "description": "Whether it is a double sliders",
-      "description_zh": "Whether it is a double sliders",
+      "description_zh": "无论是双滑块",
       "default": "false",
       "value": "",
       "type": "boolean"
     },
     "step": {
       "description": "Step distance, the value must be greater than 0, and (max-min) can be divisible by step. When marks is not null, the configuration of step is invalid",
-      "description_zh": "Step distance, the value must be greater than 0, and (max-min) can be divisible by step. When marks is not null, the configuration of step is invalid",
+      "description_zh": "步距，该值必须大于 0，并且 （max-min） 可以按步长整除。当标记不为空时，步骤的配置无效",
       "default": "1",
       "value": "",
       "type": "number"
     },
     "ticks": {
       "description": "Whether to display the scale",
-      "description_zh": "Whether to display the scale",
+      "description_zh": "是否显示刻度",
       "default": "false",
       "value": "",
       "type": "boolean"
     },
     "value": {
       "description": "Current value",
-      "description_zh": "Current value",
+      "description_zh": "当前值",
       "default": "-",
       "value": "",
       "type": "number | [number, number]"
@@ -93,14 +93,16 @@
     {
       "name": "onAfterChange",
       "description": "Consistent with the trigger timing of touchend, pass the current value as a parameter",
-      "description_zh": "Consistent with the trigger timing of touchend, pass the current value as a parameter",
-      "params": "(value: number | [number, number]) => void"
+      "description_zh": "与 touchend 的触发时序一致，将当前值作为参数传递",
+      "params": "(value: number | [number, number]) => void",
+      "value": ""
     },
     {
       "name": "onChange",
       "description": "Triggered when the slider is dragged, and the current dragged value is passed in as a parameter",
-      "description_zh": "Triggered when the slider is dragged, and the current dragged value is passed in as a parameter",
-      "params": "(value: number | [number, number]) => void"
+      "description_zh": "在拖动滑块时触发，并将当前拖动的值作为参数传入",
+      "params": "(value: number | [number, number]) => void",
+      "value": ""
     }
   ],
   "methods": [],

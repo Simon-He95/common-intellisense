@@ -3,119 +3,119 @@
   "props": {
     "cancelText": {
       "description": "Text of the cancel button",
-      "description_zh": "Text of the cancel button",
+      "description_zh": "取消按钮的文本",
       "default": "'取消'",
       "value": "",
       "type": "ReactNode"
     },
     "children": {
       "description": "Render function of the selected options",
-      "description_zh": "Render function of the selected options",
+      "description_zh": "所选选项的渲染功能",
       "default": "-",
       "value": "",
       "type": "(items: PickerColumnItem[], actions: PickerActions) => ReactNode"
     },
     "closeOnMaskClick": {
       "description": "Whether to close after clicking the mask layer",
-      "description_zh": "Whether to close after clicking the mask layer",
+      "description_zh": "单击蒙版图层后是否关闭",
       "default": "true",
       "value": "",
       "type": "boolean"
     },
     "columns": {
       "description": "Options to configure each column",
-      "description_zh": "Options to configure each column",
+      "description_zh": "用于配置每列的选项",
       "default": "-",
       "value": "",
       "type": "PickerColumn[] | ((value: PickerValue[]) => PickerColumn[])"
     },
     "confirmText": {
       "description": "Text of the ok button",
-      "description_zh": "Text of the ok button",
+      "description_zh": "确定按钮的文本",
       "default": "'确定'",
       "value": "",
       "type": "ReactNode"
     },
     "defaultValue": {
       "description": "Default selected options",
-      "description_zh": "Default selected options",
+      "description_zh": "默认选择的选项",
       "default": "[]",
       "value": "",
       "type": "PickerValue[]"
     },
     "destroyOnClose": {
       "description": "Destroy dom when not visible",
-      "description_zh": "Destroy dom when not visible",
+      "description_zh": "在不可见时销毁 dom",
       "default": "false",
       "value": "",
       "type": "boolean"
     },
     "forceRender": {
       "description": "Render content forcely",
-      "description_zh": "Render content forcely",
+      "description_zh": "强制渲染内容",
       "default": "false",
       "value": "",
       "type": "boolean"
     },
     "mouseWheel": {
       "description": "Whether to allow interact with mouse wheel",
-      "description_zh": "Whether to allow interact with mouse wheel",
+      "description_zh": "是否允许与鼠标滚轮交互",
       "default": "false",
       "value": "",
       "type": "boolean"
     },
     "popupClassName": {
       "description": "The custom class name of the popup",
-      "description_zh": "The custom class name of the popup",
+      "description_zh": "弹出窗口的自定义类名",
       "default": "-",
       "value": "",
       "type": "string"
     },
     "popupStyle": {
       "description": "The custom style of the popup",
-      "description_zh": "The custom style of the popup",
+      "description_zh": "弹出窗口的自定义样式",
       "default": "-",
       "value": "",
       "type": "React.CSSProperties "
     },
     "renderLabel": {
       "description": "The function to custom rendering the label shown on a column",
-      "description_zh": "The function to custom rendering the label shown on a column",
+      "description_zh": "用于自定义呈现列上显示的标签的函数",
       "default": "(item) => item.label",
       "value": "",
       "type": "(item: PickerColumnItem) => ReactNode"
     },
     "title": {
       "description": "Title",
-      "description_zh": "Title",
+      "description_zh": "标题",
       "default": "-",
       "value": "",
       "type": "ReactNode"
     },
     "value": {
       "description": "Selected options",
-      "description_zh": "Selected options",
+      "description_zh": "已选选项",
       "default": "-",
       "value": "",
       "type": "PickerValue[]"
     },
     "visible": {
       "description": "Whether to show or hide the Picker",
-      "description_zh": "Whether to show or hide the Picker",
+      "description_zh": "是显示还是隐藏选取器",
       "default": "false",
       "value": "",
       "type": "boolean"
     },
     "loading": {
       "description": "Should the Picker displays as loading state",
-      "description_zh": "Should the Picker displays as loading state",
+      "description_zh": "选取器是否应显示为加载状态",
       "default": "false",
       "value": "",
       "type": "boolean"
     },
     "loadingContent": {
       "description": "The loading content displayed in loading state",
-      "description_zh": "The loading content displayed in loading state",
+      "description_zh": "加载状态下显示的加载内容",
       "default": "provide a default SpinLoading content",
       "value": "",
       "type": "ReactNode"
@@ -128,46 +128,53 @@
     {
       "name": "onCancel",
       "description": "Triggered when cancelling",
-      "description_zh": "Triggered when cancelling",
-      "params": "() => void"
+      "description_zh": "取消时触发",
+      "params": "() => void",
+      "value": ""
     },
     {
       "name": "onClose",
       "description": "Triggered when confirming or cancelling",
-      "description_zh": "Triggered when confirming or cancelling",
-      "params": "() => void"
+      "description_zh": "确认或取消时触发",
+      "params": "() => void",
+      "value": ""
     },
     {
       "name": "onConfirm",
       "description": "Triggered when confirming",
-      "description_zh": "Triggered when confirming",
-      "params": "(value: PickerValue[], extend: PickerValueExtend) => void"
+      "description_zh": "确认时触发",
+      "params": "(value: PickerValue[], extend: PickerValueExtend) => void",
+      "value": ""
     },
     {
       "name": "onSelect",
       "description": "Triggered when the options are changed",
-      "description_zh": "Triggered when the options are changed",
-      "params": "(value: PickerValue[], extend: PickerValueExtend) => void"
+      "description_zh": "更改选项时触发",
+      "params": "(value: PickerValue[], extend: PickerValueExtend) => void",
+      "value": ""
     }
   ],
   "methods": [
     {
       "name": "close",
       "description": "Close Picker.",
-      "description_zh": "Close Picker.",
-      "params": "() => void"
+      "description_zh": "关闭选取器。",
+      "params": "() => void",
+      "value": ""
     },
     {
       "name": "open",
       "description": "Open Picker.",
-      "description_zh": "Open Picker.",
-      "params": "() => void"
+      "description_zh": "打开选取器。",
+      "params": "() => void",
+      "value": ""
     },
     {
       "name": "toggle",
       "description": "Toggle the visible state of Picker.",
-      "description_zh": "Toggle the visible state of Picker.",
-      "params": "() => void"
+      "description_zh": "切换 Picker 的可见状态。",
+      "params": "() => void",
+      "value": ""
     }
   ],
   "slots": [],

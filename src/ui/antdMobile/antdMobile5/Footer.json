@@ -3,21 +3,21 @@
   "props": {
     "label": {
       "description": "The common content section",
-      "description_zh": "The common content section",
+      "description_zh": "共同内容部分",
       "default": "-",
       "value": "",
       "type": "string | ReactNode"
     },
     "links": {
       "description": "Links to content",
-      "description_zh": "Links to content",
+      "description_zh": "内容链接",
       "default": "-",
       "value": "",
       "type": "LinkItem[]"
     },
     "chips": {
       "description": "Chips, only one line of content is allowed. If the content exceeds the width, the content will be automatically intercepted",
-      "description_zh": "Chips, only one line of content is allowed. If the content exceeds the width, the content will be automatically intercepted",
+      "description_zh": "筹码，只允许一行内容。如果内容超过宽度，内容将被自动拦截",
       "default": "-",
       "value": "",
       "type": "ChipItem[]"
@@ -30,14 +30,16 @@
     {
       "name": "onTagClick",
       "description": "Click the bottom label to trigger, and it will only take effect when the label 'type' is' link '",
-      "description_zh": "Click the bottom label to trigger, and it will only take effect when the label 'type' is' link '",
-      "params": "(item: ChipItem, index: number) => void"
+      "description_zh": "点击底部标签触发，只有当标签'type'为'link'",
+      "params": "(item: ChipItem, index: number) => void",
+      "value": ""
     },
     {
       "name": "onLinkClick",
       "description": "Clicking the link triggers an event that intercepts the href jump to the A tag",
-      "description_zh": "Clicking the link triggers an event that intercepts the href jump to the A tag",
-      "params": "(item: LinkItem, index: number) => void"
+      "description_zh": "单击该链接会触发一个事件，该事件会拦截到 A 标记的 href 跳转",
+      "params": "(item: LinkItem, index: number) => void",
+      "value": ""
     }
   ],
   "methods": [],
