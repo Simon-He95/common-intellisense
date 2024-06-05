@@ -9,26 +9,32 @@ export async function run() {
   const url = path.resolve(root, folder)
   const entry = await fg(['**/*.json'], { dot: true, cwd: url })
   // console.log({ entry })
- 
-  for(const relative of entry){
+
+  for (const relative of entry) {
     const realUrl = path.resolve(url, relative)
-    const jsonStr = await fsp.readFile(realUrl,'utf8')
+    let jsonStr = await fsp.readFile(realUrl, 'utf8')
     try {
       const json = JSON.parse(jsonStr)
-      if(!json.props)
+      if (!json.props)
         continue
-      for(const k in json.props){
+      let changed = false
+      for (const k in json.props) {
         const value = json.props[k]
-        if(!value.type)
+        const type = value.type
+        if (!type)
           continue
-        if(!/(['"][^"']*['"]\s*\|)+/gm.test(value.type))
+        if (!/^\s*(['`"][^"`']*['`"]\s*\|)+\s*[`'"][^"`']*[`'"]/gm.test(type))
           continue
-        
+        const newType = type.replace(/['`"\s]/g, '').split('|').filter(Boolean).join(' / ')
+        value.type = newType
+        changed = true
       }
+      jsonStr = JSON.stringify(json, null, 2)
+      if (changed)
+        fsp.writeFile(realUrl, jsonStr)
     } catch (error) {
       continue
     }
-    console.log({json})
   }
 }
 run()
