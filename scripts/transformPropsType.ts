@@ -4,7 +4,7 @@ const root = process.cwd()
 const fsp = require('node:fs/promises')
 
 export async function run() {
-  const folder = 'src/ui/'
+  const folder = 'src/ui/nuxtUi'
   const isHyphen = false /** 生成的模板中的使用是 true ? a-affix : AAfix */
   const url = path.resolve(root, folder)
   const entry = await fg(['**/*.json'], { dot: true, cwd: url })

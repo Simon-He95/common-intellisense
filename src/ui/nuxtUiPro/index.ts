@@ -1,1 +1,1 @@
-export * from './nuxtUiProp1'
+export * from './nuxtUiPro1'

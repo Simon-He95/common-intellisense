@@ -35,5 +35,5 @@ export const nameMap: any = {
   '@arcoDesign/webVue': 'arcoDesignVue',
   'uviewUi': 'uview',
   '@tarojs/components': 'taro',
-  '@nuxt/uiPro': 'nuxtuiPro',
+  '@nuxt/uiPro': 'nuxtUiPro',
 }

@@ -4,9 +4,9 @@ const fsp = require('node:fs/promises')
 const fg = require('fast-glob')
 
 export async function run() {
-  const folder = 'src/ui/antDesignMobile'
-  const lib = 'ant-design-mobile'
-  const name = 'antDesignMobile5'
+  const folder = 'src/ui/nuxtUiPro'
+  const lib = 'nuxtUiPro1'
+  const name = 'nuxtUiPro1'
   const isHyphen = false /** 生成的模板中的使用是 true ? a-affix : AAfix */
   const url = path.resolve(root, `${folder}/${name}`)
   const entry = await fg(['**/*.json'], { dot: true, cwd: url })
