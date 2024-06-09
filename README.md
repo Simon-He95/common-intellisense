@@ -21,6 +21,7 @@ Install the supported ui component library in your project and install the plug-
 - quasar 2
 - @nextui-org/react 2
 - @nuxt/ui 2
+- @nuxt/ui-pro 1
 - vuetify 3
 - radix-vue 1
 - next-ui 2
