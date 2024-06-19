@@ -1,0 +1,180 @@
+{
+  "name": "UpActionSheet",
+  "props": {
+    "show": {
+      "description": "是否展示",
+      "description_zh": "是否展示",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
+    },
+    "title": {
+      "description": "设置标题",
+      "description_zh": "设置标题",
+      "default": "-",
+      "value": "",
+      "type": "String"
+    },
+    "description": {
+      "description": "选项上方的描述信息，见上方文档示例",
+      "description_zh": "选项上方的描述信息，见上方文档示例",
+      "default": "-",
+      "value": "",
+      "type": "String"
+    },
+    "actions": {
+      "description": "按钮的文字数组，见上方文档示例",
+      "description_zh": "按钮的文字数组，见上方文档示例",
+      "default": "[ ]",
+      "value": "",
+      "type": "Array<Object>"
+    },
+    "cancelText": {
+      "description": "取消按钮的文字，不为空时显示按钮",
+      "description_zh": "取消按钮的文字，不为空时显示按钮",
+      "default": "-",
+      "value": "",
+      "type": "String"
+    },
+    "closeOnClickAction": {
+      "description": "点击某个菜单项时是否关闭弹窗，见上方文档示例",
+      "description_zh": "点击某个菜单项时是否关闭弹窗，见上方文档示例",
+      "default": "-",
+      "value": "",
+      "type": "String"
+    },
+    "safeAreaInsetBottom": {
+      "description": "是否开启底部安全区适配",
+      "description_zh": "是否开启底部安全区适配",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
+    },
+    "openType": {
+      "description": "小程序的打开方式",
+      "description_zh": "小程序的打开方式",
+      "default": "-",
+      "value": "",
+      "type": "String"
+    },
+    "closeOnClickOverlay": {
+      "description": "点击遮罩是否允许关闭，见上方文档示例（注意：关闭事件需要自行处理，只会在开启closeOnClickOverlay后点击遮罩层执行close回调）",
+      "description_zh": "点击遮罩是否允许关闭，见上方文档示例（注意：关闭事件需要自行处理，只会在开启closeOnClickOverlay后点击遮罩层执行close回调）",
+      "default": "-",
+      "value": "",
+      "type": "Boolean"
+    },
+    "round": {
+      "description": "圆角值，默认无圆角",
+      "description_zh": "圆角值，默认无圆角",
+      "default": "0",
+      "value": "",
+      "type": "String | Number"
+    },
+    "lang": {
+      "description": "指定返回用户信息的语言，zh_CN 简体中文，zh_TW 繁体中文，en 英文",
+      "description_zh": "指定返回用户信息的语言，zh_CN 简体中文，zh_TW 繁体中文，en 英文",
+      "default": "en",
+      "value": "",
+      "type": "zh_CN | zh_TW | en"
+    },
+    "sessionFrom": {
+      "description": "会话来源，open-type=\"contact\"时有效。只微信小程序有效",
+      "description_zh": "会话来源，open-type=\"contact\"时有效。只微信小程序有效",
+      "default": "-",
+      "value": "",
+      "type": "String"
+    },
+    "sendMessageTitle": {
+      "description": "会话内消息卡片标题，openType=\"contact\"时有效",
+      "description_zh": "会话内消息卡片标题，openType=\"contact\"时有效",
+      "default": "-",
+      "value": "",
+      "type": "String"
+    },
+    "sendMessagePath": {
+      "description": "会话内消息卡片点击跳转小程序路径，openType=\"contact\"时有效",
+      "description_zh": "会话内消息卡片点击跳转小程序路径，openType=\"contact\"时有效",
+      "default": "-",
+      "value": "",
+      "type": "String"
+    },
+    "sendMessageImg": {
+      "description": "会话内消息卡片图片，openType=\"contact\"时有效",
+      "description_zh": "会话内消息卡片图片，openType=\"contact\"时有效",
+      "default": "-",
+      "value": "",
+      "type": "String"
+    },
+    "showMessageCard": {
+      "description": "是否显示会话内消息卡片，设置此参数为 true，用户进入客服会话会在右下角显示\"可能要发送的小程序\"提示，用户点击后可以快速发送小程序消息，openType=\"contact\"时有效",
+      "description_zh": "是否显示会话内消息卡片，设置此参数为 true，用户进入客服会话会在右下角显示\"可能要发送的小程序\"提示，用户点击后可以快速发送小程序消息，openType=\"contact\"时有效",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
+    },
+    "appParameter": {
+      "description": "打开 APP 时，向 APP 传递的参数，openType=launchApp 时有效",
+      "description_zh": "打开 APP 时，向 APP 传递的参数，openType=launchApp 时有效",
+      "default": "-",
+      "value": "",
+      "type": "String"
+    }
+  },
+  "link": "https://uiadmin.net/uview-plus/components/actionSheet.html",
+  "link_zh": "https://uiadmin.net/uview-plus/components/actionSheet.html",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "select",
+      "description": "点击ActionSheet列表项时触发",
+      "description_zh": "点击ActionSheet列表项时触发",
+      "params": "-"
+    },
+    {
+      "name": "close",
+      "description": "点击取消按钮时触发",
+      "description_zh": "点击取消按钮时触发",
+      "params": "-"
+    },
+    {
+      "name": "getuserinfo",
+      "description": "用户点击该按钮时，会返回获取到的用户信息，回调的 detail 数据与 wx.getUserInfo 返回的一致，openType=\"getUserInfo\"时有效",
+      "description_zh": "用户点击该按钮时，会返回获取到的用户信息，回调的 detail 数据与 wx.getUserInfo 返回的一致，openType=\"getUserInfo\"时有效",
+      "params": "detail"
+    },
+    {
+      "name": "contact",
+      "description": "客服消息回调，openType=\"contact\"时有效",
+      "description_zh": "客服消息回调，openType=\"contact\"时有效",
+      "params": "-"
+    },
+    {
+      "name": "getphonenumber",
+      "description": "获取用户手机号回调，openType=\"getPhoneNumber\"时有效",
+      "description_zh": "获取用户手机号回调，openType=\"getPhoneNumber\"时有效",
+      "params": "-"
+    },
+    {
+      "name": "error",
+      "description": "当使用开放能力时，发生错误的回调，openType=\"error\"时有效",
+      "description_zh": "当使用开放能力时，发生错误的回调，openType=\"error\"时有效",
+      "params": "-"
+    },
+    {
+      "name": "launchapp",
+      "description": "打开 APP 成功的回调，openType=\"launchApp\"时有效",
+      "description_zh": "打开 APP 成功的回调，openType=\"launchApp\"时有效",
+      "params": "-"
+    },
+    {
+      "name": "opensetting",
+      "description": "在打开授权设置页后回调，openType=\"openSetting\"时有效",
+      "description_zh": "在打开授权设置页后回调，openType=\"openSetting\"时有效",
+      "params": "-"
+    }
+  ],
+  "methods": [],
+  "slots": [],
+  "suggestions": []
+}

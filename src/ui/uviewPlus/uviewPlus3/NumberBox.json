@@ -1,0 +1,200 @@
+{
+  "name": "UpNumberBox",
+  "props": {
+    "name": {
+      "description": "步进器标识符，在change回调返回",
+      "description_zh": "步进器标识符，在change回调返回",
+      "default": "-",
+      "value": "",
+      "type": "String | Number"
+    },
+    "value": {
+      "description": "用于双向绑定的值，初始化时设置设为默认min值(最小值)",
+      "description_zh": "用于双向绑定的值，初始化时设置设为默认min值(最小值)",
+      "default": "1",
+      "value": "",
+      "type": "String | Number"
+    },
+    "min": {
+      "description": "用户可输入的最小值",
+      "description_zh": "用户可输入的最小值",
+      "default": "1",
+      "value": "",
+      "type": "String | Number"
+    },
+    "max": {
+      "description": "用户可输入的最大值",
+      "description_zh": "用户可输入的最大值",
+      "default": "Number.MAX_SAFE_INTEGER",
+      "value": "",
+      "type": "String | Number"
+    },
+    "step": {
+      "description": "步长，每次加或减的值， 支持小数值，如需小数",
+      "description_zh": "步长，每次加或减的值， 支持小数值，如需小数",
+      "default": "1",
+      "value": "",
+      "type": "String | Number"
+    },
+    "integer": {
+      "description": "是否只能输入正整数",
+      "description_zh": "是否只能输入正整数",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
+    },
+    "disabled": {
+      "description": "是否禁用操作，包括输入框，加减按钮",
+      "description_zh": "是否禁用操作，包括输入框，加减按钮",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
+    },
+    "disabledInput": {
+      "description": "是否禁止输入框",
+      "description_zh": "是否禁止输入框",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
+    },
+    "asyncChange": {
+      "description": "是否开启异步变更，开启后需要手动控制输入值",
+      "description_zh": "是否开启异步变更，开启后需要手动控制输入值",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
+    },
+    "inputWidth": {
+      "description": "输入框宽度，单位px",
+      "description_zh": "输入框宽度，单位px",
+      "default": "35",
+      "value": "",
+      "type": "String | Number"
+    },
+    "showMinus": {
+      "description": "是否显示减少按钮",
+      "description_zh": "是否显示减少按钮",
+      "default": "true",
+      "value": "",
+      "type": "Boolean"
+    },
+    "showPlus": {
+      "description": "是否显示增加按钮",
+      "description_zh": "是否显示增加按钮",
+      "default": "true",
+      "value": "",
+      "type": "Boolean"
+    },
+    "decimalLength": {
+      "description": "显示的小数位数",
+      "description_zh": "显示的小数位数",
+      "default": "-",
+      "value": "",
+      "type": "String | Number"
+    },
+    "longPress": {
+      "description": "是否允许长按进行加减",
+      "description_zh": "是否允许长按进行加减",
+      "default": "true",
+      "value": "",
+      "type": "Boolean"
+    },
+    "color": {
+      "description": "输入框文字和加减按钮图标的颜色",
+      "description_zh": "输入框文字和加减按钮图标的颜色",
+      "default": "#323233",
+      "value": "",
+      "type": "String"
+    },
+    "buttonSize": {
+      "description": "按钮大小，宽高等于此值，单位px，输入框高度和此值保持一致",
+      "description_zh": "按钮大小，宽高等于此值，单位px，输入框高度和此值保持一致",
+      "default": "30",
+      "value": "",
+      "type": "String | Number"
+    },
+    "bgColor": {
+      "description": "输入框和按钮的背景颜色",
+      "description_zh": "输入框和按钮的背景颜色",
+      "default": "#EBECEE",
+      "value": "",
+      "type": "String"
+    },
+    "cursorSpacing": {
+      "description": "指定光标于键盘的距离，避免键盘遮挡输入框，单位px",
+      "description_zh": "指定光标于键盘的距离，避免键盘遮挡输入框，单位px",
+      "default": "100",
+      "value": "",
+      "type": "String | Number"
+    },
+    "disablePlus": {
+      "description": "是否禁用增加按钮",
+      "description_zh": "是否禁用增加按钮",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
+    },
+    "disableMinus": {
+      "description": "是否禁用减少按钮",
+      "description_zh": "是否禁用减少按钮",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
+    },
+    "iconStyle": {
+      "description": "加减按钮图标的样式",
+      "description_zh": "加减按钮图标的样式",
+      "default": "-",
+      "value": "",
+      "type": "String"
+    }
+  },
+  "link": "https://uiadmin.net/uview-plus/components/numberBox.html",
+  "link_zh": "https://uiadmin.net/uview-plus/components/numberBox.html",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "focus",
+      "description": "输入框得到焦点触发(按钮可点击情况下)，对象形式",
+      "description_zh": "输入框得到焦点触发(按钮可点击情况下)，对象形式",
+      "params": "value：输入框当前值，name：步进器标识符"
+    },
+    {
+      "name": "blur",
+      "description": "输入框失去焦点时触发，对象形式",
+      "description_zh": "输入框失去焦点时触发，对象形式",
+      "params": "value：输入框当前值，name：步进器标识符"
+    },
+    {
+      "name": "change",
+      "description": "输入框内容发生变化时触发，对象形式",
+      "description_zh": "输入框内容发生变化时触发，对象形式",
+      "params": "value：输入框当前值，name：步进器标识符"
+    },
+    {
+      "name": "overlimit",
+      "description": "超过范围阈值时触发",
+      "description_zh": "超过范围阈值时触发",
+      "params": "type：（minus已达最小值，plus已达最大值）"
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "minus",
+      "description": "减少按钮",
+      "description_zh": "减少按钮"
+    },
+    {
+      "name": "input",
+      "description": "输入框",
+      "description_zh": "输入框"
+    },
+    {
+      "name": "plus",
+      "description": "增加按钮",
+      "description_zh": "增加按钮"
+    }
+  ],
+  "suggestions": []
+}

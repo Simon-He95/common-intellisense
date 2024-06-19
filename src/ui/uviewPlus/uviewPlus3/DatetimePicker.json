@@ -1,0 +1,226 @@
+{
+  "name": "UpDatetimePicker",
+  "props": {
+    "hasInput ": {
+      "description": "是否自带input输入框",
+      "description_zh": "是否自带input输入框",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
+    },
+    "format ": {
+      "description": "输入框显示日期格式",
+      "description_zh": "输入框显示日期格式",
+      "default": "'YYYY-MM-DD HH:mm'",
+      "value": "",
+      "type": ""
+    },
+    "placeholder ": {
+      "description": "输入框placeholder",
+      "description_zh": "输入框placeholder",
+      "default": "请选择",
+      "value": "",
+      "type": ""
+    },
+    "show": {
+      "description": "用于控制选择器的弹出与收起",
+      "description_zh": "用于控制选择器的弹出与收起",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
+    },
+    "popupMode": {
+      "description": "用于控制选择器的弹出方向",
+      "description_zh": "用于控制选择器的弹出方向",
+      "default": "bottom",
+      "value": "",
+      "type": "top、bottom、left、right"
+    },
+    "showToolbar": {
+      "description": "是否显示顶部的操作栏",
+      "description_zh": "是否显示顶部的操作栏",
+      "default": "true",
+      "value": "",
+      "type": "Boolean"
+    },
+    "v-model": {
+      "description": "绑定值",
+      "description_zh": "绑定值",
+      "default": "-",
+      "value": "",
+      "type": "String | Number"
+    },
+    "title": {
+      "description": "顶部标题",
+      "description_zh": "顶部标题",
+      "default": "-",
+      "value": "",
+      "type": "String"
+    },
+    "mode": {
+      "description": "展示格式",
+      "description_zh": "展示格式",
+      "default": "datetime",
+      "value": "",
+      "type": "String"
+    },
+    "maxDate": {
+      "description": "可选的最大时间（时间戳毫秒）",
+      "description_zh": "可选的最大时间（时间戳毫秒）",
+      "default": "最大默认值为后10年",
+      "value": "",
+      "type": "Number"
+    },
+    "minDate": {
+      "description": "可选的最小时间（时间戳毫秒）",
+      "description_zh": "可选的最小时间（时间戳毫秒）",
+      "default": "最小默认值为前10年",
+      "value": "",
+      "type": "Number"
+    },
+    "minHour": {
+      "description": "可选的最小小时，仅mode=time有效",
+      "description_zh": "可选的最小小时，仅mode=time有效",
+      "default": "0",
+      "value": "",
+      "type": "Number"
+    },
+    "maxHour": {
+      "description": "可选的最大小时，仅mode=time有效",
+      "description_zh": "可选的最大小时，仅mode=time有效",
+      "default": "23",
+      "value": "",
+      "type": "Number"
+    },
+    "minMinute": {
+      "description": "可选的最小分钟，仅mode=time有效",
+      "description_zh": "可选的最小分钟，仅mode=time有效",
+      "default": "0",
+      "value": "",
+      "type": "Number"
+    },
+    "maxMinute": {
+      "description": "可选的最大分钟，仅mode=time有效",
+      "description_zh": "可选的最大分钟，仅mode=time有效",
+      "default": "59",
+      "value": "",
+      "type": "Number"
+    },
+    "filter": {
+      "description": "选项过滤函数",
+      "description_zh": "选项过滤函数",
+      "default": "null",
+      "value": "",
+      "type": "Function"
+    },
+    "formatter": {
+      "description": "输入过滤或格式化函数(如需兼容微信小程序，则只能通过setFormatter方法)",
+      "description_zh": "输入过滤或格式化函数(如需兼容微信小程序，则只能通过setFormatter方法)",
+      "default": "null",
+      "value": "",
+      "type": "Function"
+    },
+    "loading": {
+      "description": "是否显示加载中状态",
+      "description_zh": "是否显示加载中状态",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
+    },
+    "itemHeight": {
+      "description": "各列中，单个选项的高度",
+      "description_zh": "各列中，单个选项的高度",
+      "default": "44",
+      "value": "",
+      "type": "String | Number"
+    },
+    "cancelText": {
+      "description": "取消按钮的文字",
+      "description_zh": "取消按钮的文字",
+      "default": "取消",
+      "value": "",
+      "type": "String"
+    },
+    "confirmText": {
+      "description": "确认按钮的文字",
+      "description_zh": "确认按钮的文字",
+      "default": "确认",
+      "value": "",
+      "type": "String"
+    },
+    "cancelColor": {
+      "description": "取消按钮的颜色",
+      "description_zh": "取消按钮的颜色",
+      "default": "#909193",
+      "value": "",
+      "type": "String"
+    },
+    "confirmColor": {
+      "description": "确认按钮的颜色",
+      "description_zh": "确认按钮的颜色",
+      "default": "#3c9cff",
+      "value": "",
+      "type": "String"
+    },
+    "visibleItemCount": {
+      "description": "每列中可见选项的数量",
+      "description_zh": "每列中可见选项的数量",
+      "default": "5",
+      "value": "",
+      "type": "String | Number"
+    },
+    "closeOnClickOverlay": {
+      "description": "是否允许点击遮罩关闭选择器（注意：关闭事件需要自行处理，只会在开启closeOnClickOverlay后点击遮罩层执行close回调）",
+      "description_zh": "是否允许点击遮罩关闭选择器（注意：关闭事件需要自行处理，只会在开启closeOnClickOverlay后点击遮罩层执行close回调）",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
+    },
+    "defaultIndex": {
+      "description": "各列的默认索引",
+      "description_zh": "各列的默认索引",
+      "default": "[]",
+      "value": "",
+      "type": "Array"
+    }
+  },
+  "link": "https://uiadmin.net/uview-plus/components/datetimePicker.html",
+  "link_zh": "https://uiadmin.net/uview-plus/components/datetimePicker.html",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "close",
+      "description": "关闭选择器时触发",
+      "description_zh": "关闭选择器时触发",
+      "params": "-"
+    },
+    {
+      "name": "confirm",
+      "description": "点击确定按钮，返回当前选择的值",
+      "description_zh": "点击确定按钮，返回当前选择的值",
+      "params": "-"
+    },
+    {
+      "name": "change",
+      "description": "当选择值变化时触发",
+      "description_zh": "当选择值变化时触发",
+      "params": "-"
+    },
+    {
+      "name": "cancel",
+      "description": "点击取消按钮",
+      "description_zh": "点击取消按钮",
+      "params": "-"
+    }
+  ],
+  "methods": [
+    {
+      "name": "setFormatter",
+      "description": "为兼容微信小程序而暴露的内部方法，见上方说明",
+      "description_zh": "为兼容微信小程序而暴露的内部方法，见上方说明",
+      "params": ""
+    }
+  ],
+  "slots": [],
+  "suggestions": []
+}

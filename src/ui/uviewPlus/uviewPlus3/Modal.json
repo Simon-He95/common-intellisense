@@ -1,0 +1,154 @@
+{
+  "name": "UpModal",
+  "props": {
+    "show": {
+      "description": "是否显示模态框，请赋值给show",
+      "description_zh": "是否显示模态框，请赋值给show",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
+    },
+    "title": {
+      "description": "标题内容",
+      "description_zh": "标题内容",
+      "default": "-",
+      "value": "",
+      "type": "String"
+    },
+    "content": {
+      "description": "模态框内容，如传入slot内容，则此参数无效",
+      "description_zh": "模态框内容，如传入slot内容，则此参数无效",
+      "default": "-",
+      "value": "",
+      "type": "String"
+    },
+    "confirmText": {
+      "description": "确认按钮的文字",
+      "description_zh": "确认按钮的文字",
+      "default": "确认",
+      "value": "",
+      "type": "String"
+    },
+    "cancelText": {
+      "description": "取消按钮的文字",
+      "description_zh": "取消按钮的文字",
+      "default": "取消",
+      "value": "",
+      "type": "String"
+    },
+    "showConfirmButton": {
+      "description": "是否显示确认按钮",
+      "description_zh": "是否显示确认按钮",
+      "default": "true",
+      "value": "",
+      "type": "Boolean"
+    },
+    "showCancelButton": {
+      "description": "是否显示取消按钮",
+      "description_zh": "是否显示取消按钮",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
+    },
+    "confirmColor": {
+      "description": "确认按钮的颜色",
+      "description_zh": "确认按钮的颜色",
+      "default": "#2979ff",
+      "value": "",
+      "type": "String"
+    },
+    "cancelColor": {
+      "description": "取消按钮的颜色",
+      "description_zh": "取消按钮的颜色",
+      "default": "#606266",
+      "value": "",
+      "type": "String"
+    },
+    "buttonReverse": {
+      "description": "对调确认和取消的位置",
+      "description_zh": "对调确认和取消的位置",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
+    },
+    "zoom": {
+      "description": "是否开启缩放模式",
+      "description_zh": "是否开启缩放模式",
+      "default": "true",
+      "value": "",
+      "type": "Boolean"
+    },
+    "asyncClose": {
+      "description": "是否异步关闭，只对确定按钮有效，见上方说明",
+      "description_zh": "是否异步关闭，只对确定按钮有效，见上方说明",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
+    },
+    "closeOnClickOverlay": {
+      "description": "是否允许点击遮罩关闭Modal（注意：关闭事件需要自行处理，只会在开启closeOnClickOverlay后点击遮罩层执行close回调）",
+      "description_zh": "是否允许点击遮罩关闭Modal（注意：关闭事件需要自行处理，只会在开启closeOnClickOverlay后点击遮罩层执行close回调）",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
+    },
+    "negativeTop": {
+      "description": "往上偏移的值，给一个负的margin-top，往上偏移，避免和键盘重合的情况，单位任意，数值则默认为rpx单位",
+      "description_zh": "往上偏移的值，给一个负的margin-top，往上偏移，避免和键盘重合的情况，单位任意，数值则默认为rpx单位",
+      "default": "0",
+      "value": "",
+      "type": "String | Number"
+    },
+    "width": {
+      "description": "modal宽度，不支持百分比，可以数值，px，rpx单位",
+      "description_zh": "modal宽度，不支持百分比，可以数值，px，rpx单位",
+      "default": "650rpx",
+      "value": "",
+      "type": "px | rpx"
+    },
+    "confirmButtonShape": {
+      "description": "确认按钮的样式,如设置，将不会显示取消按钮",
+      "description_zh": "确认按钮的样式,如设置，将不会显示取消按钮",
+      "default": "-",
+      "value": "",
+      "type": "circle(圆形) | square(方形)"
+    }
+  },
+  "link": "https://uiadmin.net/uview-plus/components/modal.html",
+  "link_zh": "https://uiadmin.net/uview-plus/components/modal.html",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "confirm",
+      "description": "点击确认按钮时触发",
+      "description_zh": "点击确认按钮时触发",
+      "params": "-"
+    },
+    {
+      "name": "cancel",
+      "description": "点击取消按钮时触发",
+      "description_zh": "点击取消按钮时触发",
+      "params": "-"
+    },
+    {
+      "name": "close",
+      "description": "点击遮罩关闭出发，closeOnClickOverlay为true有效",
+      "description_zh": "点击遮罩关闭出发，closeOnClickOverlay为true有效",
+      "params": "-"
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "default",
+      "description": "传入自定义内容，一般为富文本，见上方说明",
+      "description_zh": "传入自定义内容，一般为富文本，见上方说明"
+    },
+    {
+      "name": "confirmButton",
+      "description": "传入自定义按钮，用于在微信小程序弹窗通过按钮授权的场景",
+      "description_zh": "传入自定义按钮，用于在微信小程序弹窗通过按钮授权的场景"
+    }
+  ],
+  "suggestions": []
+}

@@ -1,0 +1,193 @@
+{
+  "name": "UpSwiper",
+  "props": {
+    "list": {
+      "description": "轮播图数据，见上方\"基本使用\"说明",
+      "description_zh": "轮播图数据，见上方\"基本使用\"说明",
+      "default": "-",
+      "value": "",
+      "type": "Array"
+    },
+    "indicator": {
+      "description": "是否显示面板指示器",
+      "description_zh": "是否显示面板指示器",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
+    },
+    "indicatorActiveColor": {
+      "description": "指示器激活的颜色",
+      "description_zh": "指示器激活的颜色",
+      "default": "#FFFFFF",
+      "value": "",
+      "type": "String"
+    },
+    "indicatorInactiveColor": {
+      "description": "指示器非激活颜色",
+      "description_zh": "指示器非激活颜色",
+      "default": "rgba(255, 255, 255, 0.35)",
+      "value": "",
+      "type": "String"
+    },
+    "indicatorStyle": {
+      "description": "指示器样式，可通过bottom，left，right进行定位",
+      "description_zh": "指示器样式，可通过bottom，left，right进行定位",
+      "default": "-",
+      "value": "",
+      "type": "String | Object"
+    },
+    "indicatorMode": {
+      "description": "指示器模式",
+      "description_zh": "指示器模式",
+      "default": "line",
+      "value": "",
+      "type": "dot"
+    },
+    "autoplay": {
+      "description": "是否自动切换",
+      "description_zh": "是否自动切换",
+      "default": "true",
+      "value": "",
+      "type": "Boolean"
+    },
+    "current": {
+      "description": "当前所在滑块的 index",
+      "description_zh": "当前所在滑块的 index",
+      "default": "0",
+      "value": "",
+      "type": "Number | String"
+    },
+    "currentItemId": {
+      "description": "当前所在滑块的 item-id ，不能与 current 被同时指定",
+      "description_zh": "当前所在滑块的 item-id ，不能与 current 被同时指定",
+      "default": "-",
+      "value": "",
+      "type": "String"
+    },
+    "interval": {
+      "description": "滑块自动切换时间间隔（ms）",
+      "description_zh": "滑块自动切换时间间隔（ms）",
+      "default": "3000",
+      "value": "",
+      "type": "String | Number"
+    },
+    "duration": {
+      "description": "滑块切换过程所需时间（ms），nvue不支持",
+      "description_zh": "滑块切换过程所需时间（ms），nvue不支持",
+      "default": "300",
+      "value": "",
+      "type": "String | Number"
+    },
+    "circular": {
+      "description": "播放到末尾后是否重新回到开头",
+      "description_zh": "播放到末尾后是否重新回到开头",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
+    },
+    "previousMargin": {
+      "description": "前边距，可用于露出前一项的一小部分，nvue和支付宝不支持",
+      "description_zh": "前边距，可用于露出前一项的一小部分，nvue和支付宝不支持",
+      "default": "0",
+      "value": "",
+      "type": "String | Number"
+    },
+    "nextMargin": {
+      "description": "后边距，可用于露出后一项的一小部分，nvue和支付宝不支持",
+      "description_zh": "后边距，可用于露出后一项的一小部分，nvue和支付宝不支持",
+      "default": "0",
+      "value": "",
+      "type": "String | Number"
+    },
+    "acceleration": {
+      "description": "当开启时，会根据滑动速度，连续滑动多屏，支付宝不支持",
+      "description_zh": "当开启时，会根据滑动速度，连续滑动多屏，支付宝不支持",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
+    },
+    "displayMultipleItems": {
+      "description": "同时显示的滑块数量，nvue、支付宝小程序不支持",
+      "description_zh": "同时显示的滑块数量，nvue、支付宝小程序不支持",
+      "default": "1",
+      "value": "",
+      "type": "Number"
+    },
+    "easingFunction": {
+      "description": "指定swiper切换缓动动画类型， 只对微信小程序有效",
+      "description_zh": "指定swiper切换缓动动画类型， 只对微信小程序有效",
+      "default": "default",
+      "value": "",
+      "type": "linear、easeInCubic、easeOutCubic、easeInOutCubic"
+    },
+    "keyName": {
+      "description": "list数组中指定对象的目标属性名",
+      "description_zh": "list数组中指定对象的目标属性名",
+      "default": "url",
+      "value": "",
+      "type": "String"
+    },
+    "imgMode": {
+      "description": "图片的裁剪模式",
+      "description_zh": "图片的裁剪模式",
+      "default": "aspectFill",
+      "value": "",
+      "type": "详见图片裁剪"
+    },
+    "height": {
+      "description": "组件高度",
+      "description_zh": "组件高度",
+      "default": "130",
+      "value": "",
+      "type": "String | Number"
+    },
+    "bgColor": {
+      "description": "背景颜色",
+      "description_zh": "背景颜色",
+      "default": "#f3f4f6",
+      "value": "",
+      "type": "String"
+    },
+    "radius": {
+      "description": "组件圆角，数值或带单位的字符串",
+      "description_zh": "组件圆角，数值或带单位的字符串",
+      "default": "4",
+      "value": "",
+      "type": "String | Number"
+    },
+    "loading": {
+      "description": "是否加载中",
+      "description_zh": "是否加载中",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
+    },
+    "showTitle": {
+      "description": "是否显示标题，要求数组对象中有title属性",
+      "description_zh": "是否显示标题，要求数组对象中有title属性",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
+    }
+  },
+  "link": "https://uiadmin.net/uview-plus/components/swiper.html",
+  "link_zh": "https://uiadmin.net/uview-plus/components/swiper.html",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "click",
+      "description": "点击轮播图时触发",
+      "description_zh": "点击轮播图时触发",
+      "params": "index：点击了第几张图片，从0开始"
+    },
+    {
+      "name": "change",
+      "description": "轮播图切换时触发(自动或者手动切换)",
+      "description_zh": "轮播图切换时触发(自动或者手动切换)",
+      "params": "index：切换到了第几张图片，从0开始"
+    }
+  ],
+  "methods": [],
+  "slots": [],
+  "suggestions": []
+}

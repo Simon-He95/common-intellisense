@@ -22,6 +22,7 @@ export const UINames = [
   '@tarojs/components',
   '@nuxt/ui-pro',
   'antd-mobile',
+  'uview-plus',
 ]
 
 export const nameMap: any = {

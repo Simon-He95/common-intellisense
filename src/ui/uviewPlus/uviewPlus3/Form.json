@@ -1,0 +1,99 @@
+{
+  "name": "UpForm",
+  "props": {
+    "model": {
+      "description": "表单数据对象",
+      "description_zh": "表单数据对象",
+      "default": "-",
+      "value": "",
+      "type": "Object"
+    },
+    "rules": {
+      "description": "通过ref设置，如果rules中有自定义方法等，需要使用setRules方法设置规则，见上方说明",
+      "description_zh": "通过ref设置，如果rules中有自定义方法等，需要使用setRules方法设置规则，见上方说明",
+      "default": "-",
+      "value": "",
+      "type": "Object|Function|Array"
+    },
+    "errorType": {
+      "description": "错误的提示方式，见上方说明",
+      "description_zh": "错误的提示方式，见上方说明",
+      "default": "message",
+      "value": "",
+      "type": "String"
+    },
+    "borderBottom": {
+      "description": "是否显示表单域的下划线边框",
+      "description_zh": "是否显示表单域的下划线边框",
+      "default": "true",
+      "value": "",
+      "type": "Boolean"
+    },
+    "labelPosition": {
+      "description": "表单域提示文字的位置，left-左侧，top-上方",
+      "description_zh": "表单域提示文字的位置，left-左侧，top-上方",
+      "default": "left",
+      "value": "",
+      "type": "top"
+    },
+    "labelWidth": {
+      "description": "提示文字的宽度，单位px",
+      "description_zh": "提示文字的宽度，单位px",
+      "default": "45",
+      "value": "",
+      "type": "数值 / auto"
+    },
+    "labelAlign": {
+      "description": "lable字体的对齐方式",
+      "description_zh": "lable字体的对齐方式",
+      "default": "left",
+      "value": "",
+      "type": "center / right"
+    },
+    "labelStyle": {
+      "description": "lable的样式，对象形式",
+      "description_zh": "lable的样式，对象形式",
+      "default": "-",
+      "value": "",
+      "type": "Object"
+    }
+  },
+  "link": "https://uiadmin.net/uview-plus/components/form.html",
+  "link_zh": "https://uiadmin.net/uview-plus/components/form.html",
+  "typeDetail": {},
+  "events": [],
+  "methods": [
+    {
+      "name": "validate",
+      "description": "对整个表单进行校验的方法",
+      "description_zh": "对整个表单进行校验的方法",
+      "params": "-"
+    },
+    {
+      "name": "setRules",
+      "description": "如果rules中有自定义方法等，需要用此方法设置rules规则，否则微信小程序无效",
+      "description_zh": "如果rules中有自定义方法等，需要用此方法设置rules规则，否则微信小程序无效",
+      "params": "Function(rules)"
+    },
+    {
+      "name": "validateField",
+      "description": "对部分表单字段进行校验",
+      "description_zh": "对部分表单字段进行校验",
+      "params": "Function(value, Function(errorsRes))"
+    },
+    {
+      "name": "resetFields",
+      "description": "对整个表单进行重置，将所有字段值重置为初始值并移除校验结果",
+      "description_zh": "对整个表单进行重置，将所有字段值重置为初始值并移除校验结果",
+      "params": "-"
+    },
+    {
+      "name": "clearValidate",
+      "description": "清空校验结果",
+      "description_zh": "清空校验结果",
+      "params": "Function(props)"
+    }
+  ],
+  "slots": [],
+  "suggestions": []
+}

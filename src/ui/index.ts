@@ -20,6 +20,7 @@ import { arcoDesignVue2, arcoDesignVue2Components } from './arcoDesignVue'
 import { taro3, taro3Components } from './taro'
 import { nuxtUiPro1, nuxtUiPro1Components } from './nuxtUiPro'
 import { antdMobile5, antdMobile5Components } from './antdMobile'
+import { uviewPlus3, uviewPlus3Components } from './uviewPlus'
 
 export default {
   elementUi2,
@@ -50,6 +51,7 @@ export default {
   arcoDesignVue2,
   nuxtUiPro1,
   antdMobile5,
+  uviewPlus3,
   elementUi2Components,
   antd4Components,
   antd5Components,
@@ -78,4 +80,5 @@ export default {
   taro3Components,
   nuxtUiPro1Components,
   antdMobile5Components,
+  uviewPlus3Components,
 }

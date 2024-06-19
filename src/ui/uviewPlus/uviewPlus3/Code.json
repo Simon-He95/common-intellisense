@@ -1,0 +1,86 @@
+{
+  "name": "UpCode",
+  "props": {
+    "seconds": {
+      "description": "倒计时所需的秒数",
+      "description_zh": "倒计时所需的秒数",
+      "default": "60",
+      "value": "",
+      "type": "Number | String"
+    },
+    "startText": {
+      "description": "开始前的提示语，见上方说明",
+      "description_zh": "开始前的提示语，见上方说明",
+      "default": "获取验证码",
+      "value": "",
+      "type": "String"
+    },
+    "changeText": {
+      "description": "倒计时期间的提示语，必须带有字母\"x\"，见上方说明",
+      "description_zh": "倒计时期间的提示语，必须带有字母\"x\"，见上方说明",
+      "default": "X秒重新获取",
+      "value": "",
+      "type": "String"
+    },
+    "endText": {
+      "description": "倒计结束的提示语，见上方说明",
+      "description_zh": "倒计结束的提示语，见上方说明",
+      "default": "重新获取",
+      "value": "",
+      "type": "String"
+    },
+    "keepRunning": {
+      "description": "是否在H5刷新或各端返回再进入时继续倒计时",
+      "description_zh": "是否在H5刷新或各端返回再进入时继续倒计时",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
+    },
+    "uniqueKey": {
+      "description": "多个组件之间继续倒计时的区分key，见上方说明",
+      "description_zh": "多个组件之间继续倒计时的区分key，见上方说明",
+      "default": "-",
+      "value": "",
+      "type": "String"
+    }
+  },
+  "link": "https://uiadmin.net/uview-plus/components/code.html",
+  "link_zh": "https://uiadmin.net/uview-plus/components/code.html",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "change",
+      "description": "倒计时期间，每秒触发一次",
+      "description_zh": "倒计时期间，每秒触发一次",
+      "params": "text: 当前剩余多少秒的状态，见上方说明"
+    },
+    {
+      "name": "start",
+      "description": "开始倒计时触发",
+      "description_zh": "开始倒计时触发",
+      "params": "-"
+    },
+    {
+      "name": "end",
+      "description": "结束倒计时触发",
+      "description_zh": "结束倒计时触发",
+      "params": "-"
+    }
+  ],
+  "methods": [
+    {
+      "name": "start",
+      "description": "开始倒计时",
+      "description_zh": "开始倒计时",
+      "params": ""
+    },
+    {
+      "name": "reset",
+      "description": "结束当前正在进行中的倒计时，设置组件为可以重新获取验证码的状态",
+      "description_zh": "结束当前正在进行中的倒计时，设置组件为可以重新获取验证码的状态",
+      "params": ""
+    }
+  ],
+  "slots": [],
+  "suggestions": []
+}

@@ -1,0 +1,59 @@
+{
+  "name": "UpCollapse",
+  "props": {
+    "value": {
+      "description": "当前展开面板的name，非手风琴模式：[<String | Number>]，手风琴模式：String | Number",
+      "description_zh": "当前展开面板的name，非手风琴模式：[<String | Number>]，手风琴模式：String | Number",
+      "default": "-",
+      "value": "",
+      "type": "String | Number |  Array"
+    },
+    "accordion": {
+      "description": "是否手风琴模式",
+      "description_zh": "是否手风琴模式",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
+    },
+    "border": {
+      "description": "是否显示外边框",
+      "description_zh": "是否显示外边框",
+      "default": "true",
+      "value": "",
+      "type": "Boolean"
+    }
+  },
+  "link": "https://uiadmin.net/uview-plus/components/collapse.html",
+  "link_zh": "https://uiadmin.net/uview-plus/components/collapse.html",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "change",
+      "description": "当前激活面板展开时触发(如果是手风琴模式，参数activeNames类型为String，否则为Array)",
+      "description_zh": "当前激活面板展开时触发(如果是手风琴模式，参数activeNames类型为String，否则为Array)",
+      "params": "activeNames: String |  Array"
+    },
+    {
+      "name": "open",
+      "description": "当前激活面板展开时触发(如果是手风琴模式，参数activeNames类型为String，否则为Array)",
+      "description_zh": "当前激活面板展开时触发(如果是手风琴模式，参数activeNames类型为String，否则为Array)",
+      "params": "activeNames: String |  Array"
+    },
+    {
+      "name": "close",
+      "description": "当前激活面板关闭时触发(如果是手风琴模式，参数activeNames类型为String，否则为Array)",
+      "description_zh": "当前激活面板关闭时触发(如果是手风琴模式，参数activeNames类型为String，否则为Array)",
+      "params": "activeNames: String |  Array"
+    }
+  ],
+  "methods": [
+    {
+      "name": "init",
+      "description": "重新初始化内部高度计算，用于异步获取内容的情形，请结合this.$nextTick()使用",
+      "description_zh": "重新初始化内部高度计算，用于异步获取内容的情形，请结合this.$nextTick()使用",
+      "params": ""
+    }
+  ],
+  "slots": [],
+  "suggestions": []
+}

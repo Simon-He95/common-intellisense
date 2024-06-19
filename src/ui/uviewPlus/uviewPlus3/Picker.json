@@ -1,0 +1,155 @@
+{
+  "name": "UpPicker",
+  "props": {
+    "show": {
+      "description": "用于控制选择器的弹出与收起",
+      "description_zh": "用于控制选择器的弹出与收起",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
+    },
+    "showToolbar": {
+      "description": "是否显示顶部的操作栏",
+      "description_zh": "是否显示顶部的操作栏",
+      "default": "true",
+      "value": "",
+      "type": "Boolean"
+    },
+    "title": {
+      "description": "顶部中间的标题",
+      "description_zh": "顶部中间的标题",
+      "default": "-",
+      "value": "",
+      "type": "String"
+    },
+    "columns": {
+      "description": "设置每一列的数据，见上方说明",
+      "description_zh": "设置每一列的数据，见上方说明",
+      "default": "-",
+      "value": "",
+      "type": "Array"
+    },
+    "loading": {
+      "description": "加载状态",
+      "description_zh": "加载状态",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
+    },
+    "itemHeight": {
+      "description": "各列中，单个选项的高度",
+      "description_zh": "各列中，单个选项的高度",
+      "default": "44",
+      "value": "",
+      "type": "String | Number"
+    },
+    "cancelText": {
+      "description": "取消按钮的文字",
+      "description_zh": "取消按钮的文字",
+      "default": "取消",
+      "value": "",
+      "type": "String"
+    },
+    "confirmText": {
+      "description": "确认按钮的文字",
+      "description_zh": "确认按钮的文字",
+      "default": "确认",
+      "value": "",
+      "type": "String"
+    },
+    "cancelColor": {
+      "description": "取消按钮的颜色",
+      "description_zh": "取消按钮的颜色",
+      "default": "#909193",
+      "value": "",
+      "type": "String"
+    },
+    "confirmColor": {
+      "description": "确认按钮的颜色",
+      "description_zh": "确认按钮的颜色",
+      "default": "#3c9cff",
+      "value": "",
+      "type": "String"
+    },
+    "visibleItemCount": {
+      "description": "每列中可见选项的数量",
+      "description_zh": "每列中可见选项的数量",
+      "default": "5",
+      "value": "",
+      "type": "String | Number"
+    },
+    "keyName": {
+      "description": "自定义需要展示的text属性键名",
+      "description_zh": "自定义需要展示的text属性键名",
+      "default": "text",
+      "value": "",
+      "type": "String"
+    },
+    "closeOnClickOverlay": {
+      "description": "是否允许点击遮罩关闭选择器（注意：关闭事件需要自行处理，只会在开启closeOnClickOverlay后点击遮罩层执行close回调）",
+      "description_zh": "是否允许点击遮罩关闭选择器（注意：关闭事件需要自行处理，只会在开启closeOnClickOverlay后点击遮罩层执行close回调）",
+      "default": "false",
+      "value": "",
+      "type": "Boolean"
+    },
+    "defaultIndex": {
+      "description": "各列的默认索引",
+      "description_zh": "各列的默认索引",
+      "default": "-",
+      "value": "",
+      "type": "Array"
+    },
+    "immediateChange ": {
+      "description": "是否在手指松开时立即触发change事件。若不开启则会在滚动动画结束后触发change事件，只在微信2.21.1及以上有效",
+      "description_zh": "是否在手指松开时立即触发change事件。若不开启则会在滚动动画结束后触发change事件，只在微信2.21.1及以上有效",
+      "default": "true",
+      "value": "",
+      "type": "Boolean"
+    }
+  },
+  "link": "https://uiadmin.net/uview-plus/components/picker.html",
+  "link_zh": "https://uiadmin.net/uview-plus/components/picker.html",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "close",
+      "description": "关闭选择器时触发",
+      "description_zh": "关闭选择器时触发",
+      "params": "-"
+    },
+    {
+      "name": "confirm",
+      "description": "点击确定按钮，返回当前选择的值",
+      "description_zh": "点击确定按钮，返回当前选择的值",
+      "params": "Array: 见上方\"回调参数\"部分说明"
+    },
+    {
+      "name": "change",
+      "description": "当选择值变化时触发",
+      "description_zh": "当选择值变化时触发",
+      "params": "Array: 见上方\"回调参数\"部分说明"
+    },
+    {
+      "name": "cancel",
+      "description": "点击取消按钮",
+      "description_zh": "点击取消按钮",
+      "params": "-"
+    }
+  ],
+  "methods": [
+    {
+      "name": "setIndexs",
+      "description": "(index, setLastIndex) 设置对应列的选择值",
+      "description_zh": "(index, setLastIndex) 设置对应列的选择值",
+      "params": ""
+    },
+    {
+      "name": "setColumnValues",
+      "description": "多列联动时需要用到，见上方说明，注意微信小程序的特殊用法",
+      "description_zh": "多列联动时需要用到，见上方说明，注意微信小程序的特殊用法",
+      "params": ""
+    }
+  ],
+  "slots": [],
+  "suggestions": []
+}
