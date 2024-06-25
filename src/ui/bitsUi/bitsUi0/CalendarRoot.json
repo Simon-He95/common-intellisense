@@ -1,0 +1,183 @@
+{
+  "name": "Calendar.Root",
+  "props": {
+    "value": {
+      "value": "",
+      "default": "_",
+      "type": "DateValue",
+      "description": "The selected date.",
+      "description_zh": "The selected date."
+    },
+    "onValueChange": {
+      "value": "",
+      "default": "_",
+      "type": "function",
+      "description": "A function that is called when the selected date changes.",
+      "description_zh": "A function that is called when the selected date changes."
+    },
+    "placeholder": {
+      "value": "",
+      "default": "_",
+      "type": "DateValue",
+      "description": "The placeholder date, which is used to determine what month to display when no date is selected. This updates as the user navigates the calendar, and can be used to programatically control the calendar's view.",
+      "description_zh": "The placeholder date, which is used to determine what month to display when no date is selected. This updates as the user navigates the calendar, and can be used to programatically control the calendar's view."
+    },
+    "onPlaceholderChange": {
+      "value": "",
+      "default": "_",
+      "type": "function",
+      "description": "A function that is called when the placeholder date changes.",
+      "description_zh": "A function that is called when the placeholder date changes."
+    },
+    "pagedNavigation": {
+      "value": "",
+      "default": "false",
+      "type": "boolean",
+      "description": "Whether or not to use paged navigation for the calendar. Paged navigation causes the previous and next buttons to navigate by the number of months displayed at once, rather than by one month.",
+      "description_zh": "Whether or not to use paged navigation for the calendar. Paged navigation causes the previous and next buttons to navigate by the number of months displayed at once, rather than by one month."
+    },
+    "preventDeselect": {
+      "value": "",
+      "default": "false",
+      "type": "boolean",
+      "description": "Whether or not to prevent the user from deselecting a date without selecting another date first.",
+      "description_zh": "Whether or not to prevent the user from deselecting a date without selecting another date first."
+    },
+    "weekStartsOn": {
+      "value": "",
+      "default": "0",
+      "type": "number",
+      "description": "The day of the week to start the calendar on. 0 is Sunday, 1 is Monday, etc.",
+      "description_zh": "The day of the week to start the calendar on. 0 is Sunday, 1 is Monday, etc."
+    },
+    "weekdayFormat": {
+      "value": "",
+      "default": "'narrow'",
+      "type": "enum",
+      "description": "The format to use for the weekday strings provided via the weekdays slot prop.",
+      "description_zh": "The format to use for the weekday strings provided via the weekdays slot prop."
+    },
+    "calendarLabel": {
+      "value": "",
+      "default": "_",
+      "type": "string",
+      "description": "The accessible label for the calendar.",
+      "description_zh": "The accessible label for the calendar."
+    },
+    "fixedWeeks": {
+      "value": "",
+      "default": "false",
+      "type": "boolean",
+      "description": "Whether or not to always display 6 weeks in the calendar.",
+      "description_zh": "Whether or not to always display 6 weeks in the calendar."
+    },
+    "isDateDisabled": {
+      "value": "",
+      "default": "_",
+      "type": "function",
+      "description": "A function that returns whether or not a date is disabled.",
+      "description_zh": "A function that returns whether or not a date is disabled."
+    },
+    "isDateUnavailable": {
+      "value": "",
+      "default": "_",
+      "type": "function",
+      "description": "A function that returns whether or not a date is unavailable.",
+      "description_zh": "A function that returns whether or not a date is unavailable."
+    },
+    "maxValue": {
+      "value": "",
+      "default": "_",
+      "type": "DateValue",
+      "description": "The maximum date that can be selected.",
+      "description_zh": "The maximum date that can be selected."
+    },
+    "minValue": {
+      "value": "",
+      "default": "_",
+      "type": "DateValue",
+      "description": "The minimum date that can be selected.",
+      "description_zh": "The minimum date that can be selected."
+    },
+    "locale": {
+      "value": "",
+      "default": "_",
+      "type": "string",
+      "description": "The locale to use for formatting dates.",
+      "description_zh": "The locale to use for formatting dates."
+    },
+    "multiple": {
+      "value": "",
+      "default": "false",
+      "type": "boolean",
+      "description": "Whether or not multiple dates can be selected.",
+      "description_zh": "Whether or not multiple dates can be selected."
+    },
+    "numberOfMonths": {
+      "value": "",
+      "default": "1",
+      "type": "number",
+      "description": "The number of months to display at once.",
+      "description_zh": "The number of months to display at once."
+    },
+    "disabled": {
+      "value": "",
+      "default": "false",
+      "type": "boolean",
+      "description": "Whether or not the accordion is disabled.",
+      "description_zh": "Whether or not the accordion is disabled."
+    },
+    "readonly": {
+      "value": "",
+      "default": "false",
+      "type": "boolean",
+      "description": "Whether or not the calendar is readonly.",
+      "description_zh": "Whether or not the calendar is readonly."
+    },
+    "initialFocus": {
+      "value": "",
+      "default": "false",
+      "type": "boolean",
+      "description": "If true, the calendar will focus the selected day, today, or the first day of the month in that order depending on what is visible when the calendar is mounted.",
+      "description_zh": "If true, the calendar will focus the selected day, today, or the first day of the month in that order depending on what is visible when the calendar is mounted."
+    },
+    "asChild": {
+      "value": "",
+      "default": "false",
+      "type": "boolean",
+      "description": "Whether to use render delegation with this component or not.",
+      "description_zh": "Whether to use render delegation with this component or not."
+    },
+    "el": {
+      "value": "",
+      "default": "_",
+      "type": "HTMLDivElement",
+      "description": "The underlying DOM element being rendered. You can bind to this to programatically interact with the element.",
+      "description_zh": "The underlying DOM element being rendered. You can bind to this to programatically interact with the element."
+    }
+  },
+  "description": "The root calendar component which contains all other calendar components.",
+  "link": "https://www.bits-ui.com/docs/components/calendar",
+  "link_zh": "https://www.bits-ui.com/docs/components/calendar",
+  "typeDetail": {},
+  "events": [],
+  "methods": [],
+  "slots": [
+    {
+      "name": "months",
+      "description": "The current months to display in the calendar. Used to render the calendar. ",
+      "description_zh": "The current months to display in the calendar. Used to render the calendar. "
+    },
+    {
+      "name": "weekdays",
+      "description": "The days of the week to display in the calendar, typically used within the table header. ",
+      "description_zh": "The days of the week to display in the calendar, typically used within the table header. "
+    },
+    {
+      "name": "builder",
+      "description": "The builder attributes and actions to apply to the element if using the asChild prop with delegation. ",
+      "description_zh": "The builder attributes and actions to apply to the element if using the asChild prop with delegation. "
+    }
+  ],
+  "filename": "CalendarRoot"
+}

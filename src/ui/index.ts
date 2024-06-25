@@ -21,6 +21,7 @@ import { taro3, taro3Components } from './taro'
 import { nuxtUiPro1, nuxtUiPro1Components } from './nuxtUiPro'
 import { antdMobile5, antdMobile5Components } from './antdMobile'
 import { uviewPlus3, uviewPlus3Components } from './uviewPlus'
+import { bitsUi0, bitsUi0Components } from './bitsUi'
 
 export default {
   elementUi2,
@@ -52,6 +53,7 @@ export default {
   nuxtUiPro1,
   antdMobile5,
   uviewPlus3,
+  bitsUi0,
   elementUi2Components,
   antd4Components,
   antd5Components,
@@ -81,4 +83,5 @@ export default {
   nuxtUiPro1Components,
   antdMobile5Components,
   uviewPlus3Components,
+  bitsUi0Components,
 }

@@ -1,0 +1,267 @@
+{
+  "name": "DateRangePicker.Root",
+  "props": {
+    "value": {
+      "value": "",
+      "default": "_",
+      "type": "DateRange",
+      "description": "The selected date range.",
+      "description_zh": "The selected date range."
+    },
+    "onValueChange": {
+      "value": "",
+      "default": "_",
+      "type": "function",
+      "description": "A function that is called when the selected date changes.",
+      "description_zh": "A function that is called when the selected date changes."
+    },
+    "placeholder": {
+      "value": "",
+      "default": "_",
+      "type": "DateValue",
+      "description": "The placeholder date, which is used to determine what month to display when no date is selected. This updates as the user navigates the calendar, and can be used to programatically control the calendar's view.",
+      "description_zh": "The placeholder date, which is used to determine what month to display when no date is selected. This updates as the user navigates the calendar, and can be used to programatically control the calendar's view."
+    },
+    "onPlaceholderChange": {
+      "value": "",
+      "default": "_",
+      "type": "function",
+      "description": "A function that is called when the placeholder date changes.",
+      "description_zh": "A function that is called when the placeholder date changes."
+    },
+    "pagedNavigation": {
+      "value": "",
+      "default": "false",
+      "type": "boolean",
+      "description": "Whether or not to use paged navigation for the calendar. Paged navigation causes the previous and next buttons to navigate by the number of months displayed at once, rather than by one month.",
+      "description_zh": "Whether or not to use paged navigation for the calendar. Paged navigation causes the previous and next buttons to navigate by the number of months displayed at once, rather than by one month."
+    },
+    "preventDeselect": {
+      "value": "",
+      "default": "false",
+      "type": "boolean",
+      "description": "Whether or not to prevent the user from deselecting a date without selecting another date first.",
+      "description_zh": "Whether or not to prevent the user from deselecting a date without selecting another date first."
+    },
+    "weekStartsOn": {
+      "value": "",
+      "default": "0",
+      "type": "number",
+      "description": "The day of the week to start the calendar on. 0 is Sunday, 1 is Monday, etc.",
+      "description_zh": "The day of the week to start the calendar on. 0 is Sunday, 1 is Monday, etc."
+    },
+    "weekdayFormat": {
+      "value": "",
+      "default": "'narrow'",
+      "type": "enum",
+      "description": "The format to use for the weekday strings provided via the weekdays slot prop.",
+      "description_zh": "The format to use for the weekday strings provided via the weekdays slot prop."
+    },
+    "calendarLabel": {
+      "value": "",
+      "default": "_",
+      "type": "string",
+      "description": "The accessible label for the calendar.",
+      "description_zh": "The accessible label for the calendar."
+    },
+    "fixedWeeks": {
+      "value": "",
+      "default": "false",
+      "type": "boolean",
+      "description": "Whether or not to always display 6 weeks in the calendar.",
+      "description_zh": "Whether or not to always display 6 weeks in the calendar."
+    },
+    "isDateDisabled": {
+      "value": "",
+      "default": "_",
+      "type": "function",
+      "description": "A function that returns whether or not a date is disabled.",
+      "description_zh": "A function that returns whether or not a date is disabled."
+    },
+    "isDateUnavailable": {
+      "value": "",
+      "default": "_",
+      "type": "function",
+      "description": "A function that returns whether or not a date is unavailable.",
+      "description_zh": "A function that returns whether or not a date is unavailable."
+    },
+    "maxValue": {
+      "value": "",
+      "default": "_",
+      "type": "DateValue",
+      "description": "The maximum date that can be selected.",
+      "description_zh": "The maximum date that can be selected."
+    },
+    "minValue": {
+      "value": "",
+      "default": "_",
+      "type": "DateValue",
+      "description": "The minimum date that can be selected.",
+      "description_zh": "The minimum date that can be selected."
+    },
+    "locale": {
+      "value": "",
+      "default": "_",
+      "type": "string",
+      "description": "The locale to use for formatting dates.",
+      "description_zh": "The locale to use for formatting dates."
+    },
+    "numberOfMonths": {
+      "value": "",
+      "default": "1",
+      "type": "number",
+      "description": "The number of months to display at once.",
+      "description_zh": "The number of months to display at once."
+    },
+    "disabled": {
+      "value": "",
+      "default": "false",
+      "type": "boolean",
+      "description": "Whether or not the accordion is disabled.",
+      "description_zh": "Whether or not the accordion is disabled."
+    },
+    "readonly": {
+      "value": "",
+      "default": "false",
+      "type": "boolean",
+      "description": "Whether or not the calendar is readonly.",
+      "description_zh": "Whether or not the calendar is readonly."
+    },
+    "hourCycle": {
+      "value": "",
+      "default": "_",
+      "type": "enum",
+      "description": "The hour cycle to use for formatting times. Defaults to the locale preference",
+      "description_zh": "The hour cycle to use for formatting times. Defaults to the locale preference"
+    },
+    "granularity": {
+      "value": "",
+      "default": "_",
+      "type": "enum",
+      "description": "The granularity to use for formatting the field. Defaults to 'day' if a CalendarDate is provided, otherwise defaults to 'minute'. The field will render segments for each part of the date up to and including the specified granularity.",
+      "description_zh": "The granularity to use for formatting the field. Defaults to 'day' if a CalendarDate is provided, otherwise defaults to 'minute'. The field will render segments for each part of the date up to and including the specified granularity."
+    },
+    "hideTimeZone": {
+      "value": "",
+      "default": "false",
+      "type": "boolean",
+      "description": "Whether or not to hide the time zone segment of the field.",
+      "description_zh": "Whether or not to hide the time zone segment of the field."
+    },
+    "validationId": {
+      "value": "",
+      "default": "_",
+      "type": "string",
+      "description": "The id of your validation message element, if any, which will be applied to the aria-describedby attribute of the appropriate elements when a validation error occurs.",
+      "description_zh": "The id of your validation message element, if any, which will be applied to the aria-describedby attribute of the appropriate elements when a validation error occurs."
+    },
+    "descriptionId": {
+      "value": "",
+      "default": "_",
+      "type": "string",
+      "description": "The id of your description element, if any, which will be applied to the aria-describedby attribute of the appropriate elements.",
+      "description_zh": "The id of your description element, if any, which will be applied to the aria-describedby attribute of the appropriate elements."
+    },
+    "disableFocusTrap": {
+      "value": "",
+      "default": "false",
+      "type": "boolean",
+      "description": "Whether or not to disable the focus trap that is applied to the popover when it's open.",
+      "description_zh": "Whether or not to disable the focus trap that is applied to the popover when it's open."
+    },
+    "preventScroll": {
+      "value": "",
+      "default": "false",
+      "type": "boolean",
+      "description": "Whether or not to prevent scrolling the body while the popover is open.",
+      "description_zh": "Whether or not to prevent scrolling the body while the popover is open."
+    },
+    "closeOnOutsideClick": {
+      "value": "",
+      "default": "true",
+      "type": "boolean",
+      "description": "Whether or not to close the popover when clicking outside of it.",
+      "description_zh": "Whether or not to close the popover when clicking outside of it."
+    },
+    "closeOnEscape": {
+      "value": "",
+      "default": "true",
+      "type": "boolean",
+      "description": "Whether or not to close the popover when pressing the escape key.",
+      "description_zh": "Whether or not to close the popover when pressing the escape key."
+    },
+    "open": {
+      "value": "",
+      "default": "false",
+      "type": "boolean",
+      "description": "The open state of the link popover component.",
+      "description_zh": "The open state of the link popover component."
+    },
+    "onOpenChange": {
+      "value": "",
+      "default": "_",
+      "type": "function",
+      "description": "A callback that fires when the open state changes.",
+      "description_zh": "A callback that fires when the open state changes."
+    },
+    "openFocus": {
+      "value": "",
+      "default": "_",
+      "type": "FocusProp",
+      "description": "Override the focus when the popover is opened.",
+      "description_zh": "Override the focus when the popover is opened."
+    },
+    "closeFocus": {
+      "value": "",
+      "default": "_",
+      "type": "FocusProp",
+      "description": "Override the focus when the popover is closed.",
+      "description_zh": "Override the focus when the popover is closed."
+    },
+    "portal": {
+      "value": "",
+      "default": "_",
+      "type": "union",
+      "description": "Where to render the popover when it is open. Defaults to the body. Can be disabled by passing null",
+      "description_zh": "Where to render the popover when it is open. Defaults to the body. Can be disabled by passing null"
+    },
+    "startValue": {
+      "value": "",
+      "default": "_",
+      "type": "union",
+      "description": "The start value of the date range, which can exist prior to the true value being set, which is only set once a start and end value are selected. You can bind:startValue to a value to receive updates, but modifying this value outside the component will have no effect. To programmatically control the start value, use bind:value and update the start property of the DateRange object. This is provided as a convenience for use cases where you want to display the selected start value outside the component before the value is set.",
+      "description_zh": "The start value of the date range, which can exist prior to the true value being set, which is only set once a start and end value are selected. You can bind:startValue to a value to receive updates, but modifying this value outside the component will have no effect. To programmatically control the start value, use bind:value and update the start property of the DateRange object. This is provided as a convenience for use cases where you want to display the selected start value outside the component before the value is set."
+    },
+    "onOutsideClick": {
+      "value": "",
+      "default": "_",
+      "type": "function",
+      "description": "A callback function called when a click occurs outside of the element. If event.preventDefault() is called, the default behavior of closing the element will be prevented.",
+      "description_zh": "A callback function called when a click occurs outside of the element. If event.preventDefault() is called, the default behavior of closing the element will be prevented."
+    }
+  },
+  "description": "The root date picker component.",
+  "link": "https://www.bits-ui.com/docs/components/date-range-picker",
+  "link_zh": "https://www.bits-ui.com/docs/components/date-range-picker",
+  "typeDetail": {},
+  "events": [],
+  "methods": [],
+  "slots": [
+    {
+      "name": "months",
+      "description": "The current months to display in the calendar. Used to render the calendar. ",
+      "description_zh": "The current months to display in the calendar. Used to render the calendar. "
+    },
+    {
+      "name": "weekdays",
+      "description": "The days of the week to display in the calendar, typically used within the table header. ",
+      "description_zh": "The days of the week to display in the calendar, typically used within the table header. "
+    },
+    {
+      "name": "builder",
+      "description": "The builder attributes and actions to apply to the element if using the asChild prop with delegation. ",
+      "description_zh": "The builder attributes and actions to apply to the element if using the asChild prop with delegation. "
+    }
+  ],
+  "filename": "DateRangePickerRoot"
+}
