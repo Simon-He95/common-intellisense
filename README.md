@@ -30,6 +30,8 @@ Install the supported ui component library in your project and install the plug-
 - uview-ui 1、2
 - uview-plus 3
 - taro 3
+- shacn-svelte 0
+- bits-ui 0
 
 ### [antdv demo](assets/antdv.gif)
 
@@ -54,6 +56,10 @@ Install the supported ui component library in your project and install the plug-
 ### [arco-design/react demo](assets/arco-design.gif)
 
 ### [arco-design/vue demo](assets/acro-design-vue.gif)
+
+### [shadcn-svelte demo](assets/shadcn-svelte.gif)
+
+### [bits-ui demo](assets/shadcn-svelte.gif)
 
 ## Select the specified UI library (resolve multiple UI library naming conflicts)
 

@@ -30,6 +30,8 @@
 - uview-ui 1、2
 - uview-plus 3
 - taro 3
+- shacn-svelte 0
+- bits-ui 0
 
 ### [antdv demo](assets/antdv.gif)
 
@@ -54,6 +56,10 @@
 ### [arco-design/react demo](assets/arco-design.gif)
 
 ### [arco-design/vue demo](assets/acro-design-vue.gif)
+
+### [shadcn-svelte demo](assets/shadcn-svelte.gif)
+
+### [bits-ui demo](assets/shadcn-svelte.gif)
 
 ## 选择指定的 UI 库（解决多个UI库命名冲突）
 
