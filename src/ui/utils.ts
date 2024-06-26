@@ -327,7 +327,7 @@ export function propsReducer(uiName: string, map: string[], prefix: string, icon
 }
 
 // todo: 提供第二次使用场景，将有前缀的UI，例如a-button，肯能存在局部导入的情况，需要支持Button的情况，然后将导入的路径插入
-export function componentsReducer(map: any[][], isSeperatorByHyphen = true, prefix = '', lib: string, isReact = false) {
+export function componentsReducer(map: any[][], isSeperatorByHyphen = true, prefix = '', lib: string, isReact = false, dynamicLib?: string, importWay?: 'as default' | 'default') {
   const isZh = getLocale().includes('zh')
   if (!isReact && prefix) {
     return [
@@ -393,7 +393,7 @@ export function componentsReducer(map: any[][], isSeperatorByHyphen = true, pref
             documentation.appendMarkdown(`\n<a href="command:intellisense.copyDemo?${params}">${copyIcon}</a>\n`)
           }
 
-          return createCompletionItem({ content: _content, snippet, documentation, type: vscode.CompletionItemKind.TypeParameter, sortText: 'a', params: [content, lib, isReact, prefix], demo })
+          return createCompletionItem({ content: _content, snippet, documentation, type: vscode.CompletionItemKind.TypeParameter, sortText: 'a', params: [content, lib, isReact, prefix, dynamicLib, importWay], demo })
         }),
       },
       {
@@ -461,7 +461,7 @@ export function componentsReducer(map: any[][], isSeperatorByHyphen = true, pref
             documentation.appendMarkdown(`\n<a href="command:intellisense.copyDemo?${params}">${copyIcon}</a>\n`)
           }
 
-          return createCompletionItem({ content: _content, snippet, documentation, type: vscode.CompletionItemKind.TypeParameter, sortText: 'a', params: [{ ...content, name: content.name?.slice(prefix.length) }, lib, true, prefix], demo })
+          return createCompletionItem({ content: _content, snippet, documentation, type: vscode.CompletionItemKind.TypeParameter, sortText: 'a', params: [{ ...content, name: content.name?.slice(prefix.length) }, lib, true, prefix, dynamicLib, importWay], demo })
         }),
       },
     ]
@@ -528,7 +528,7 @@ export function componentsReducer(map: any[][], isSeperatorByHyphen = true, pref
         documentation.appendMarkdown(`\n<a href="command:intellisense.copyDemo?${params}">${copyIcon}</a>\n`)
       }
 
-      return createCompletionItem({ content: _content, snippet, documentation, type: vscode.CompletionItemKind.TypeParameter, sortText: 'a', params: [content, lib, isReact, prefix], demo })
+      return createCompletionItem({ content: _content, snippet, documentation, type: vscode.CompletionItemKind.TypeParameter, sortText: 'a', params: [content, lib, isReact, prefix, dynamicLib, importWay], demo })
     }),
   }]
 }

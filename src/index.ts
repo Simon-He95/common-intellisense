@@ -27,7 +27,9 @@ export function activate(context: vscode.ExtensionContext) {
   context.subscriptions.push(registerCodeLensProviderFn())
 
   const filter = ['javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'vue', 'svelte']
-  context.subscriptions.push(addEventListener('activeText-change', (editor: vscode.TextEditor) => {
+  context.subscriptions.push(addEventListener('activeText-change', (editor?: vscode.TextEditor) => {
+    if (!editor)
+      return
     // 找到当前活动的编辑器
     const visibleEditors = vscode.window.visibleTextEditors
     const currentEditor = visibleEditors.find(e => e === editor)
@@ -42,11 +44,34 @@ export function activate(context: vscode.ExtensionContext) {
 
   context.subscriptions.push(registerCommand('common-intellisense.pickUI', () => {
     if (currentPkgUiNames && currentPkgUiNames.length) {
-      createSelect(currentPkgUiNames, {
-        canPickMany: true,
+      if (currentPkgUiNames.some(i => i.includes('bitsUi'))) {
+        currentPkgUiNames.filter(i => i.startsWith('bitsUi')).map(i => i.replace('bitsUi', 'shadcnSvelte')).forEach((i) => {
+          if (!currentPkgUiNames!.includes(i))
+            currentPkgUiNames!.push(i)
+        })
+      }
+      const currentSelect = getConfiguration('common-intellisense.ui')
+      let options: any[] = []
+      if (currentSelect) {
+        options = currentPkgUiNames.map((label) => {
+          if (currentSelect.includes(label)) {
+            return {
+              label,
+              picked: true,
+            }
+          }
+          else {
+            return {
+              label,
+            }
+          }
+        })
+      }
+      createSelect(options, {
+        canSelectMany: true,
         placeHolder: isZh ? '请指定你需要提示的 UI 库' : 'Please specify the UI library you need to prompt.',
         title: 'common intellisense',
-      }).then((data) => {
+      }).then((data: any) => {
         setConfiguration('common-intellisense.ui', data)
       })
     }
@@ -65,10 +90,9 @@ export function activate(context: vscode.ExtensionContext) {
   context.subscriptions.push(registerCommand('common-intellisense.import', (params, loc, _lineOffset) => {
     if (!params)
       return
-    const [data, lib, _, prefix] = params
-    if (!prefix)
-      return
+    const [data, lib, _, prefix, dynamidLib, importWay] = params
     const name = data.name.split('.')[0]
+    const from = dynamidLib ? dynamidLib.replace('${name}', name.toLowerCase()) : lib
     const code = getActiveText()!
     const uiComponents = getImportUiComponents(code)
     let deps = data.suggestions?.length === 1
@@ -96,14 +120,18 @@ export function activate(context: vscode.ExtensionContext) {
       const posStart = getPosition(offsetStart)
       const posEnd = getPosition(offsetEnd)
 
-      const str = `import { ${deps.join(', ')} } from '${lib}'`
+      const str = importWay === 'as default'
+        ? `import * as ${deps.join(', ')} from '${from}'`
+        : `import { ${deps.join(', ')} } from '${from}'`
       updateText((edit) => {
         edit.replace(createRange(posStart, posEnd), str)
       })
     }
     else {
       // 顶部导入
-      let str = `import { ${deps.join(', ')} } from '${lib}'\n`
+      let str = importWay === 'as default'
+        ? `import * as ${deps.join(', ')} from '${from}'`
+        : `import { ${deps.join(', ')} } from '${from}'`
       const isVue = getActiveTextEditorLanguageId() === 'vue'
       let pos: any = null
       if (isVue) {
@@ -123,7 +151,17 @@ export function activate(context: vscode.ExtensionContext) {
           }
         }
       }
-      else { pos = createPosition(0, 0) }
+      else {
+        const match = code.match(/<script[^>]*>/)
+        if (match) {
+          const offset = match.index! + match[0].length
+          pos = getPosition(offset)
+          str = `\n  ${str}`
+        }
+        else {
+          pos = createPosition(0, 0)
+        }
+      }
       updateText((edit) => {
         edit.insert(pos, str)
       })
@@ -200,7 +238,6 @@ export function activate(context: vscode.ExtensionContext) {
     const preText = lineText.slice(0, activeTextEditor.selection.active.character)
     let completionsCallback: any = null
     p.active = getEffectWord(preText)
-
     const result = parser(document.getText(), p)
     if (!result)
       return
@@ -483,7 +520,22 @@ export function activate(context: vscode.ExtensionContext) {
         return
 
       const code = document.getText()
-      if (lineText[range.start.character - 1] !== '<') {
+      // word 修正
+      if (lineText[range.end.character] === '.') {
+        let index = range.end.character
+        while (!/[>\s\/]/.test(lineText[index])) {
+          word += lineText[index]
+          index++
+        }
+      }
+      else if (lineText[range.start.character - 1] === '.') {
+        let index = range.start.character - 1
+        while (!/[<\s\/]/.test(lineText[index])) {
+          word = lineText[index] + word
+          index--
+        }
+      }
+      else if (lineText[range.start.character - 1] !== '<') {
         const result = parser(code, position as any)
         if (!result)
           return

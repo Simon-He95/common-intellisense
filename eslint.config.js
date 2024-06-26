@@ -17,6 +17,7 @@ module.exports = antfu(
       'import/no-mutable-exports': 'off',
       'prefer-regex-literals': 'off',
       'no-cond-assign': 'off',
+      'no-template-curly-in-string': 'off',
     },
   },
 )

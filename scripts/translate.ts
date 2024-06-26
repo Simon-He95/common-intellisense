@@ -7,7 +7,7 @@ let stack = 0
 const limit = 10
 const hasDone = new Set()
 async function setup() {
-  const cwd = path.resolve(root, 'src/ui/nuxtUiPro/nuxtUiPro1')
+  const cwd = path.resolve(root, 'src/ui/bitsUi/bitsUi0')
   const entry = await fg(['**/*.json'], { dot: true, cwd })
   // entry.forEach(async (url: string) => {
   //   const _url = path.resolve(cwd, url)

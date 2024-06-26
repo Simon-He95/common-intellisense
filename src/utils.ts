@@ -117,12 +117,18 @@ function dfs(children: any, parent: any, position: vscode.Position) {
               propName = prop.arg.content
             else if (prop.exp && isInPosition(prop.exp.loc, position))
               propName = prop.exp.content
-
+            const isTag = isInPosition({
+              start: loc.start,
+              end: {
+                line: loc.start.line,
+                column: loc.start.column + child.name.length,
+              },
+            }, position)
             return {
               tag,
               propName,
               props,
-              type: 'props',
+              type: isTag ? 'tag' : 'props',
               isInTemplate: true,
               isValue: !!prop?.value?.content,
               parent: {
@@ -332,8 +338,15 @@ function jsxDfs(children: any, parent: any, position: vscode.Position) {
           parent,
         }
       }
+      const isTag = isInPosition({
+        start: loc.start,
+        end: {
+          line: loc.start.line,
+          column: loc.start.column + child.name.length,
+        },
+      }, position)
       return {
-        type: 'props',
+        type: isTag ? 'tag' : 'props',
         tag: openingElement.name.type === 'JSXMemberExpression'
           ? `${openingElement.name.object.name}.${openingElement.name.property.name}`
           : openingElement.name.name,
