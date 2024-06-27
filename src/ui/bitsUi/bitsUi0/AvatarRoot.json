@@ -15,13 +15,6 @@
       "description": "The loading status of the avatars source image. You can bind a variable to track the status outside of the component and use it to show a loading indicator or error message.",
       "description_zh": "头像源图像的加载状态。您可以绑定变量来跟踪组件外部的状态，并使用它来显示加载指示器或错误消息。"
     },
-    "onLoadingStatusChange": {
-      "value": "",
-      "default": "_",
-      "type": "function",
-      "description": "A callback function called when the loading status of the image changes.",
-      "description_zh": "当图像的加载状态发生变化时调用的回调函数。"
-    },
     "asChild": {
       "value": "",
       "default": "false",
@@ -41,7 +34,13 @@
   "link": "https://www.bits-ui.com/docs/components/avatar",
   "link_zh": "https://www.bits-ui.com/docs/components/avatar",
   "typeDetail": {},
-  "events": [],
+  "events": [
+    {
+      "name": "onLoadingStatusChange",
+      "description": "A callback function called when the loading status of the image changes.",
+      "description_zh": "A callback function called when the loading status of the image changes."
+    }
+  ],
   "methods": [],
   "slots": [
     {
@@ -49,6 +48,10 @@
       "description": "Additional attributes to apply to the element if using the asChild prop with delegation. ",
       "description_zh": "如果使用带有委托的 asChild 属性，则应用于元素的其他属性。"
     }
+  ],
+  "suggestions": [
+    "Avatar.Image",
+    "Avatar.Fallback"
   ],
   "filename": "AvatarRoot"
 }

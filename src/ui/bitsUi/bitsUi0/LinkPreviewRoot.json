@@ -36,33 +36,30 @@
       "description": "The open state of the link preview component.",
       "description_zh": "链接预览组件的打开状态。"
     },
-    "onOpenChange": {
-      "value": "",
-      "default": "_",
-      "type": "function",
-      "description": "A callback that fires when the open state changes.",
-      "description_zh": "打开状态更改时触发的回调。"
-    },
     "portal": {
       "value": "",
       "default": "_",
       "type": "union",
       "description": "Where to render the link preview when it is open. Defaults to the body. Can be disabled by passing null",
       "description_zh": "链接预览打开时呈现链接预览的位置。默认为正文。可以通过传递 null 来禁用"
-    },
-    "onOutsideClick": {
-      "value": "",
-      "default": "_",
-      "type": "function",
-      "description": "A callback function called when a click occurs outside of the element. If event.preventDefault() is called, the default behavior of closing the element will be prevented.",
-      "description_zh": "在元素外部发生单击时调用的回调函数。如果调用 event.preventDefault（），则将阻止关闭元素的默认行为。"
     }
   },
   "description": "The root component used to manage the state of the state of the link preview.",
   "link": "https://www.bits-ui.com/docs/components/link-preview",
   "link_zh": "https://www.bits-ui.com/docs/components/link-preview",
   "typeDetail": {},
-  "events": [],
+  "events": [
+    {
+      "name": "onOpenChange",
+      "description": "A callback that fires when the open state changes.",
+      "description_zh": "A callback that fires when the open state changes."
+    },
+    {
+      "name": "onOutsideClick",
+      "description": "A callback function called when a click occurs outside of the element. If event.preventDefault() is called, the default behavior of closing the element will be prevented.",
+      "description_zh": "A callback function called when a click occurs outside of the element. If event.preventDefault() is called, the default behavior of closing the element will be prevented."
+    }
+  ],
   "methods": [],
   "slots": [
     {

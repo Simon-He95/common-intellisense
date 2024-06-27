@@ -4,9 +4,9 @@ const fsp = require('node:fs/promises')
 const fg = require('fast-glob')
 
 export async function run() {
-  const folder = 'src/ui/shadcnSvelte'
-  const lib = 'shadcnSvelte0'
-  const name = 'shadcnSvelte0'
+  const folder = 'src/ui/bitsUi'
+  const lib = 'bitsUi0'
+  const name = 'bitsUi0'
   const isHyphen = false /** 生成的模板中的使用是 true ? a-affix : AAfix */
   const url = path.resolve(root, `${folder}/${name}`)
   const entry = await fg(['**/*.json'], { dot: true, cwd: url })
@@ -26,19 +26,18 @@ export async function run() {
     = `import { componentsReducer, propsReducer } from '../../utils'
 ${imports.join('\n')}
 
-export function ${name}() {
-  const map: any = [
+const map: any = [
   ${entry.map((_url: string) => `${_url.split('.')[0]},`).join('\n  ')}
-  ]
-
+]
+export function ${name}() {
   return propsReducer('${lib}', map, '${prefix}')
 }
 
+const componentsMap = [
+  ${map.join('\n    ')}
+]
 export function ${name}Components() {
-  const map = [
-    ${map.join('\n    ')}
-  ]
-  return componentsReducer(map, ${isHyphen}, '${prefix}', '${lib}')
+  return componentsReducer(componentsMap, ${isHyphen}, '${prefix}', '${lib}')
 }
 `
   fsp.writeFile(path.resolve(root, `${folder}/${name}/index.ts`), template)

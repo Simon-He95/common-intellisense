@@ -1,0 +1,82 @@
+{
+  "name": "Command.Root",
+  "props": {
+    "state": {
+      "value": "",
+      "default": "",
+      "type": "Writable<State>",
+      "description": "Controlled state store for the command menu",
+      "description_zh": "Controlled state store for the command menu"
+    },
+    "label": {
+      "value": "",
+      "default": "",
+      "type": "string",
+      "description": "An accessible label for the command menu",
+      "description_zh": "An accessible label for the command menu"
+    },
+    "shouldFilter": {
+      "value": "",
+      "default": "true",
+      "type": "boolean",
+      "description": "Optionally set to `false` to turn off the automatic filtering and sorting. If `false`, you must conditionally render valid items yourself.",
+      "description_zh": "Optionally set to `false` to turn off the automatic filtering and sorting. If `false`, you must conditionally render valid items yourself."
+    },
+    "filter": {
+      "value": "",
+      "default": "",
+      "type": "(value: string, search: string) => number",
+      "description": "A custom filter function for whether each command item should match the query. It should return a number between `0` and `1`, with `1` being a perfect match, and `0` being no match, resulting in the item being hidden entirely.",
+      "description_zh": "A custom filter function for whether each command item should match the query. It should return a number between `0` and `1`, with `1` being a perfect match, and `0` being no match, resulting in the item being hidden entirely."
+    },
+    "value": {
+      "value": "",
+      "default": "",
+      "type": "string",
+      "description": "A function that is called when the selected command menu item changes. It receives the new value as an argument",
+      "description_zh": "A function that is called when the selected command menu item changes. It receives the new value as an argument"
+    },
+    "loop": {
+      "value": "",
+      "default": "",
+      "type": "boolean",
+      "description": "Optionally set to `true` to enable looping through the items when the user reaches the end of the list using the keyboard.",
+      "description_zh": "Optionally set to `true` to enable looping through the items when the user reaches the end of the list using the keyboard."
+    },
+    "ids": {
+      "value": "",
+      "default": "",
+      "type": "Partial<CommandIds>",
+      "description": "Optionally provide custom ids for the command menu elements. These ids should be unique and are only necessary in very specific cases. Use with caution",
+      "description_zh": "Optionally provide custom ids for the command menu elements. These ids should be unique and are only necessary in very specific cases. Use with caution"
+    },
+    "asChild": {
+      "value": "",
+      "default": "false",
+      "type": "boolean",
+      "description": "",
+      "description_zh": ""
+    }
+  },
+  "description": "Fast, composable, unstyled command menu for Svelte.",
+  "link": "https://shadcn-svelte.com/docs/components/command",
+  "link_zh": "https://shadcn-svelte.com/docs/components/command",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "onKeydown",
+      "params": "(e: KeyboardEvent) => void;"
+    },
+    {
+      "name": "onValueChange",
+      "params": "(value: string) => void;"
+    }
+  ],
+  "methods": [],
+  "slots": [],
+  "suggestions": [
+    "Command.Input",
+    "Command.List"
+  ],
+  "filename": "ComboboxRoot"
+}

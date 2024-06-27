@@ -8,26 +8,12 @@
       "description": "The selected date.",
       "description_zh": "所选日期。"
     },
-    "onValueChange": {
-      "value": "",
-      "default": "_",
-      "type": "function",
-      "description": "A function that is called when the selected date changes.",
-      "description_zh": "在所选日期更改时调用的函数。"
-    },
     "placeholder": {
       "value": "",
       "default": "_",
       "type": "DateValue",
       "description": "The placeholder date, which is used to determine what month to display when no date is selected. This updates as the user navigates the calendar, and can be used to programatically control the calendar's view.",
       "description_zh": "占位符日期，用于确定未选择日期时要显示的月份。这会在用户浏览日历时更新，并可用于以编程方式控制日历的视图。"
-    },
-    "onPlaceholderChange": {
-      "value": "",
-      "default": "_",
-      "type": "function",
-      "description": "A function that is called when the placeholder date changes.",
-      "description_zh": "当占位符日期更改时调用的函数。"
     },
     "pagedNavigation": {
       "value": "",
@@ -204,13 +190,6 @@
       "description": "The open state of the link popover component.",
       "description_zh": "链接弹出框组件的打开状态。"
     },
-    "onOpenChange": {
-      "value": "",
-      "default": "_",
-      "type": "function",
-      "description": "A callback that fires when the open state changes.",
-      "description_zh": "打开状态更改时触发的回调。"
-    },
     "openFocus": {
       "value": "",
       "default": "_",
@@ -231,20 +210,34 @@
       "type": "union",
       "description": "Where to render the popover when it is open. Defaults to the body. Can be disabled by passing null",
       "description_zh": "弹出窗口打开时渲染弹出窗口的位置。默认为正文。可以通过传递 null 来禁用"
-    },
-    "onOutsideClick": {
-      "value": "",
-      "default": "_",
-      "type": "function",
-      "description": "A callback function called when a click occurs outside of the element. If event.preventDefault() is called, the default behavior of closing the element will be prevented.",
-      "description_zh": "在元素外部发生单击时调用的回调函数。如果调用 event.preventDefault（），则将阻止关闭元素的默认行为。"
     }
   },
   "description": "The root date picker component.",
   "link": "https://www.bits-ui.com/docs/components/date-picker",
   "link_zh": "https://www.bits-ui.com/docs/components/date-picker",
   "typeDetail": {},
-  "events": [],
+  "events": [
+    {
+      "name": "onValueChange",
+      "description": "A function that is called when the selected date changes.",
+      "description_zh": "A function that is called when the selected date changes."
+    },
+    {
+      "name": "onPlaceholderChange",
+      "description": "A function that is called when the placeholder date changes.",
+      "description_zh": "A function that is called when the placeholder date changes."
+    },
+    {
+      "name": "onOpenChange",
+      "description": "A callback that fires when the open state changes.",
+      "description_zh": "A callback that fires when the open state changes."
+    },
+    {
+      "name": "onOutsideClick",
+      "description": "A callback function called when a click occurs outside of the element. If event.preventDefault() is called, the default behavior of closing the element will be prevented.",
+      "description_zh": "A callback function called when a click occurs outside of the element. If event.preventDefault() is called, the default behavior of closing the element will be prevented."
+    }
+  ],
   "methods": [],
   "slots": [
     {

@@ -36,13 +36,6 @@
       "description": "The open state of the  menu.",
       "description_zh": "菜单的打开状态。"
     },
-    "onOpenChange": {
-      "value": "",
-      "default": "_",
-      "type": "function",
-      "description": "A callback that is fired when the menu's open state changes.",
-      "description_zh": "当菜单的打开状态更改时触发的回调。"
-    },
     "dir": {
       "value": "",
       "default": "_",
@@ -84,20 +77,24 @@
       "type": "boolean",
       "description": "Whether or not to close the menu when an item is clicked.",
       "description_zh": "是否在单击项目时关闭菜单。"
-    },
-    "onOutsideClick": {
-      "value": "",
-      "default": "_",
-      "type": "function",
-      "description": "A callback function called when a click occurs outside of the element. If event.preventDefault() is called, the default behavior of closing the element will be prevented.",
-      "description_zh": "在元素外部发生单击时调用的回调函数。如果调用 event.preventDefault（），则将阻止关闭元素的默认行为。"
     }
   },
   "description": "The root component which manages & scopes the state of the dropdown menu.",
   "link": "https://www.bits-ui.com/docs/components/dropdown-menu",
   "link_zh": "https://www.bits-ui.com/docs/components/dropdown-menu",
   "typeDetail": {},
-  "events": [],
+  "events": [
+    {
+      "name": "onOpenChange",
+      "description": "A callback that is fired when the menu's open state changes.",
+      "description_zh": "A callback that is fired when the menu's open state changes."
+    },
+    {
+      "name": "onOutsideClick",
+      "description": "A callback function called when a click occurs outside of the element. If event.preventDefault() is called, the default behavior of closing the element will be prevented.",
+      "description_zh": "A callback function called when a click occurs outside of the element. If event.preventDefault() is called, the default behavior of closing the element will be prevented."
+    }
+  ],
   "methods": [],
   "slots": [
     {
@@ -105,6 +102,10 @@
       "description": "The ids of the elements within the component, useful when you don't necessarily want to provide a custom ID, but still want access to the ID being assigned (if any). ",
       "description_zh": "组件中元素的 ID，当您不一定希望提供自定义 ID，但仍希望访问正在分配的 ID（如果有）时，非常有用。"
     }
+  ],
+  "suggestions": [
+    "DropdownMenu.Trigger",
+    "DropdownMenu.Content"
   ],
   "filename": "DropdownMenuRoot"
 }

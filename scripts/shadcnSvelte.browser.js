@@ -19,7 +19,7 @@ function run() {
 
     const root = header.closest('div')
     const description = root.nextElementSibling.textContent
-    const result = { name, props, description, link, link_zh: link, typeDetail: {}, events, methods, slots, filename: name.replace(/\.(\w)/g, (_, v) => v.toUpperCase()) }
+    const result = { name, props, description, link, link_zh: link, typeDetail: {}, events, methods, slots, filename: name.replace(/\.(\w)/g, (_, v) => v.toUpperCase()), suggestions: [] }
     const main = Array.from(root.nextElementSibling.nextElementSibling.children)
 
     const propsChildren = main.find(item => item.querySelector('table>thead>tr>th').textContent.trim() === 'Property')
@@ -31,13 +31,16 @@ function run() {
         const type = item.children[1].textContent.split(' ')[0]
         const description = item.children[2].children[0].textContent
         const value = item.children[2].children[1].textContent.split(':')[1].trim().replace(/——/g, '_').replace('_ undefined', '_')
-        props[childname] = {
-          value: '',
-          default: value,
-          type,
-          description,
-          description_zh: description
-        }
+        if (childname.startsWith('on'))
+          events.push({ name: childname, description, description_zh: description })
+        else
+          props[childname] = {
+            value: '',
+            default: value,
+            type,
+            description,
+            description_zh: description
+          }
       })
     if (slotsChildren)
       Array.from(slotsChildren.querySelectorAll('tbody>tr')).forEach((item) => {

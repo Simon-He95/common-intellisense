@@ -50,26 +50,12 @@
       "description": "The open state of the combobox menu.",
       "description_zh": "组合框菜单的打开状态。"
     },
-    "onOpenChange": {
-      "value": "",
-      "default": "_",
-      "type": "function",
-      "description": "A callback that is fired when the combobox menu's open state changes.",
-      "description_zh": "当组合框菜单的打开状态更改时触发的回调。"
-    },
     "selected": {
       "value": "",
       "default": "_",
       "type": "object",
       "description": "The value of the currently selected item.",
       "description_zh": "当前选定项的值。"
-    },
-    "onSelectedChange": {
-      "value": "",
-      "default": "_",
-      "type": "function",
-      "description": "A callback that is fired when the combobox menu's value changes.",
-      "description_zh": "当组合框菜单的值更改时触发的回调。"
     },
     "portal": {
       "value": "",
@@ -120,13 +106,6 @@
       "description": "An array of items to add type-safety to the onSelectedChange callback.",
       "description_zh": "用于向 onSelectedChange 回调添加类型安全性的项数组。"
     },
-    "onOutsideClick": {
-      "value": "",
-      "default": "_",
-      "type": "function",
-      "description": "A callback function called when a click occurs outside of the element. If event.preventDefault() is called, the default behavior of closing the element will be prevented.",
-      "description_zh": "在元素外部发生单击时调用的回调函数。如果调用 event.preventDefault（），则将阻止关闭元素的默认行为。"
-    },
     "touchedInput": {
       "value": "",
       "default": "false",
@@ -139,7 +118,23 @@
   "link": "https://www.bits-ui.com/docs/components/combobox",
   "link_zh": "https://www.bits-ui.com/docs/components/combobox",
   "typeDetail": {},
-  "events": [],
+  "events": [
+    {
+      "name": "onOpenChange",
+      "description": "A callback that is fired when the combobox menu's open state changes.",
+      "description_zh": "A callback that is fired when the combobox menu's open state changes."
+    },
+    {
+      "name": "onSelectedChange",
+      "description": "A callback that is fired when the combobox menu's value changes.",
+      "description_zh": "A callback that is fired when the combobox menu's value changes."
+    },
+    {
+      "name": "onOutsideClick",
+      "description": "A callback function called when a click occurs outside of the element. If event.preventDefault() is called, the default behavior of closing the element will be prevented.",
+      "description_zh": "A callback function called when a click occurs outside of the element. If event.preventDefault() is called, the default behavior of closing the element will be prevented."
+    }
+  ],
   "methods": [],
   "slots": [
     {
@@ -147,6 +142,13 @@
       "description": "The ids of the elements within the component, useful when you don't necessarily want to provide a custom ID, but still want access to the ID being assigned (if any). ",
       "description_zh": "组件中元素的 ID，当您不一定希望提供自定义 ID，但仍希望访问正在分配的 ID（如果有）时，非常有用。"
     }
+  ],
+  "suggestions": [
+    "Combobox.Input",
+    "Combobox.Label",
+    "Combobox.Content",
+    "Combobox.Arrow",
+    "Combobox.HiddenInput"
   ],
   "filename": "ComboboxRoot"
 }

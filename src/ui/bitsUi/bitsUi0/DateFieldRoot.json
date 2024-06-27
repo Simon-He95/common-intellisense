@@ -8,26 +8,12 @@
       "description": "The selected date.",
       "description_zh": "所选日期。"
     },
-    "onValueChange": {
-      "value": "",
-      "default": "_",
-      "type": "function",
-      "description": "A function that is called when the selected date changes.",
-      "description_zh": "在所选日期更改时调用的函数。"
-    },
     "placeholder": {
       "value": "",
       "default": "_",
       "type": "DateValue",
       "description": "The placeholder date, which is used to determine what date to start the segments from when no value exists.",
       "description_zh": "占位符日期，用于确定在不存在值时从哪个日期开始区段。"
-    },
-    "onPlaceholderChange": {
-      "value": "",
-      "default": "_",
-      "type": "function",
-      "description": "A function that is called when the placeholder date changes.",
-      "description_zh": "当占位符日期更改时调用的函数。"
     },
     "isDateUnavailable": {
       "value": "",
@@ -118,7 +104,18 @@
   "link": "https://www.bits-ui.com/docs/components/date-field",
   "link_zh": "https://www.bits-ui.com/docs/components/date-field",
   "typeDetail": {},
-  "events": [],
+  "events": [
+    {
+      "name": "onValueChange",
+      "description": "A function that is called when the selected date changes.",
+      "description_zh": "A function that is called when the selected date changes."
+    },
+    {
+      "name": "onPlaceholderChange",
+      "description": "A function that is called when the placeholder date changes.",
+      "description_zh": "A function that is called when the placeholder date changes."
+    }
+  ],
   "methods": [],
   "slots": [
     {
@@ -131,6 +128,10 @@
       "description": "Whether or not the field is invalid. ",
       "description_zh": "该字段是否无效。"
     }
+  ],
+  "suggestions": [
+    "DateField.Label",
+    "DateField.Input"
   ],
   "filename": "DateFieldRoot"
 }

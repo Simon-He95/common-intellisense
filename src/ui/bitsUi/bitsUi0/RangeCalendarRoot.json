@@ -8,26 +8,12 @@
       "description": "The selected date range.",
       "description_zh": "所选日期范围。"
     },
-    "onValueChange": {
-      "value": "",
-      "default": "_",
-      "type": "function",
-      "description": "A function that is called when the selected date range changes.",
-      "description_zh": "在所选日期范围更改时调用的函数。"
-    },
     "placeholder": {
       "value": "",
       "default": "_",
       "type": "DateValue",
       "description": "The placeholder date, which is used to determine what month to display when no date range is selected. This updates as the user navigates the calendar, and can be used to programatically control the calendar's view.",
       "description_zh": "占位符日期，用于确定未选择日期范围时要显示的月份。这会在用户浏览日历时更新，并可用于以编程方式控制日历的视图。"
-    },
-    "onPlaceholderChange": {
-      "value": "",
-      "default": "_",
-      "type": "function",
-      "description": "A function that is called when the placeholder date changes.",
-      "description_zh": "当占位符日期更改时调用的函数。"
     },
     "pagedNavigation": {
       "value": "",
@@ -160,7 +146,18 @@
   "link": "https://www.bits-ui.com/docs/components/range-calendar",
   "link_zh": "https://www.bits-ui.com/docs/components/range-calendar",
   "typeDetail": {},
-  "events": [],
+  "events": [
+    {
+      "name": "onValueChange",
+      "description": "A function that is called when the selected date range changes.",
+      "description_zh": "A function that is called when the selected date range changes."
+    },
+    {
+      "name": "onPlaceholderChange",
+      "description": "A function that is called when the placeholder date changes.",
+      "description_zh": "A function that is called when the placeholder date changes."
+    }
+  ],
   "methods": [],
   "slots": [
     {
@@ -178,6 +175,10 @@
       "description": "The builder attributes and actions to apply to the element if using the asChild prop with delegation. ",
       "description_zh": "如果使用带有委托的 asChild 属性，则要应用于元素的构建器属性和操作。"
     }
+  ],
+  "suggestions": [
+    "RangeCalendar.Header",
+    "RangeCalendar.Grid"
   ],
   "filename": "RangeCalendarRoot"
 }
