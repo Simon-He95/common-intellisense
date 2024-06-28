@@ -1,0 +1,205 @@
+{
+  "name": "Tabs",
+  "props": {
+    "action": {
+      "description": "Callback fired when the component mounts. This is useful when you want to trigger an action programmatically. It supports two actions: updateIndicator() and updateScrollButtons()",
+      "description_zh": "组件挂载时触发回调。当您想要以编程方式触发操作时，这很有用。它支持两个操作：updateIndicator（） 和 updateScrollButtons（）",
+      "default": "-",
+      "value": "",
+      "type": "ref",
+      "required": false
+    },
+    "allowScrollButtonsMobile": {
+      "description": "If true, the scroll buttons aren't forced hidden on mobile. By default the scroll buttons are hidden on mobile and takes precedence over scrollButtons.",
+      "description_zh": "如果为 true，则滚动按钮不会在移动设备上强制隐藏。默认情况下，滚动按钮在移动设备上处于隐藏状态，并且优先于 scrollButtons。",
+      "default": "false",
+      "value": "",
+      "type": "bool",
+      "required": false
+    },
+    "aria-label": {
+      "description": "The label for the Tabs as a string.",
+      "description_zh": "字符串形式的选项卡标签。",
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "aria-labelledby": {
+      "description": "An id or list of ids separated by a space that label the Tabs.",
+      "description_zh": "由标记选项卡的空格分隔的 ID 或 ID 列表。",
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "centered": {
+      "description": "If true, the tabs are centered. This prop is intended for large views.",
+      "description_zh": "如果为 true，则选项卡居中。此道具适用于大视图。",
+      "default": "false",
+      "value": "",
+      "type": "bool",
+      "required": false
+    },
+    "children": {
+      "description": "The content of the component.",
+      "description_zh": "组件的内容。",
+      "default": "-",
+      "value": "",
+      "type": "node",
+      "required": false
+    },
+    "classes": {
+      "description": "Override or extend the styles applied to the component.See CSS classes API below for more details.",
+      "description_zh": "覆盖或扩展应用于组件的样式。有关详细信息，请参阅下面的 CSS 类 API。",
+      "default": "-",
+      "value": "",
+      "type": "object",
+      "required": false
+    },
+    "component": {
+      "description": "The component used for the root node. Either a string to use a HTML element or a component.",
+      "description_zh": "用于根节点的组件。使用 HTML 元素或组件的字符串。",
+      "default": "-",
+      "value": "",
+      "type": "elementType",
+      "required": false
+    },
+    "indicatorColor": {
+      "description": "Determines the color of the indicator.",
+      "description_zh": "确定指示器的颜色。",
+      "default": "'primary'",
+      "value": "",
+      "type": "primary| secondary| string",
+      "required": false
+    },
+    "onChange": {
+      "description": "Callback fired when the value changes.Signature:function(event: React.SyntheticEvent, value: any) => voidevent The event source of the callback. Warning: This is a generic event not a change event.value We default to the index of the child (number)",
+      "description_zh": "当值更改时触发回调。Signature：function（event： React.SyntheticEvent， value： any） => voidevent 回调的事件源。警告：这是一个通用事件，而不是更改 event.value 我们默认为子项（数字）的索引",
+      "default": "-",
+      "value": "",
+      "type": "func",
+      "required": false
+    },
+    "orientation": {
+      "description": "The component orientation (layout flow direction).",
+      "description_zh": "组件方向（布局流向）。",
+      "default": "'horizontal'",
+      "value": "",
+      "type": "horizontal| vertical",
+      "required": false
+    },
+    "ScrollButtonComponent": {
+      "description": "The component used to render the scroll buttons.",
+      "description_zh": "用于呈现滚动按钮的组件。",
+      "default": "TabScrollButton",
+      "value": "",
+      "type": "elementType",
+      "required": false
+    },
+    "scrollButtons": {
+      "description": "Determine behavior of scroll buttons when tabs are set to scroll:\n\nauto will only present them when not all the items are visible.\ntrue will always present them.\nfalse will never present them.\n\nBy default the scroll buttons are hidden on mobile.\nThis behavior can be disabled with allowScrollButtonsMobile.\n",
+      "description_zh": "确定选项卡设置为滚动时滚动按钮的行为：\n\n仅当并非所有项目都可见时，自动才会显示它们。\ntrue 将始终呈现它们。\nfalse 永远不会呈现它们。\n\n默认情况下，滚动按钮在移动设备上是隐藏的。\n可以使用 allowScrollButtonsMobile 禁用此行为。",
+      "default": "'auto'",
+      "value": "",
+      "type": "auto| false| true",
+      "required": false
+    },
+    "selectionFollowsFocus": {
+      "description": "If true the selected tab changes on focus. Otherwise it only changes on activation.",
+      "description_zh": "如果为 true，则选定的选项卡在焦点上发生变化。否则，它仅在激活时更改。",
+      "default": "-",
+      "value": "",
+      "type": "bool",
+      "required": false
+    },
+    "slotProps": {
+      "description": "The extra props for the slot components. You can override the existing props or add new ones.",
+      "description_zh": "插槽组件的额外道具。您可以覆盖现有道具或添加新道具。",
+      "default": "{}",
+      "value": "",
+      "type": "{ endScrollButtonIcon?: func| object, startScrollButtonIcon?: func| object }",
+      "required": false
+    },
+    "slots": {
+      "description": "The components used for each slot inside.",
+      "description_zh": "内部每个插槽使用的组件。",
+      "default": "{}",
+      "value": "",
+      "type": "{ EndScrollButtonIcon?: elementType, StartScrollButtonIcon?: elementType }",
+      "required": false
+    },
+    "sx": {
+      "description": "The system prop that allows defining system overrides as well as additional CSS styles.See the `sx` page for more details.",
+      "description_zh": "允许定义系统覆盖以及其他 CSS 样式的系统属性。有关更多详细信息，请参阅“sx”页面。",
+      "default": "-",
+      "value": "",
+      "type": "Array<func| object| bool>| func| object",
+      "required": false
+    },
+    "TabIndicatorProps": {
+      "description": "Props applied to the tab indicator element.",
+      "description_zh": "应用于选项卡指示符元素的道具。",
+      "default": "{}",
+      "value": "",
+      "type": "object",
+      "required": false
+    },
+    "TabScrollButtonProps": {
+      "description": "Props applied to the TabScrollButton element.",
+      "description_zh": "应用于 TabScrollButton 元素的道具。",
+      "default": "{}",
+      "value": "",
+      "type": "object",
+      "required": false
+    },
+    "textColor": {
+      "description": "Determines the color of the Tab.",
+      "description_zh": "确定选项卡的颜色。",
+      "default": "'primary'",
+      "value": "",
+      "type": "inherit| primary| secondary",
+      "required": false
+    },
+    "value": {
+      "description": "The value of the currently selected Tab. If you don't want any selected Tab, you can set this prop to false.",
+      "description_zh": "当前选定的选项卡的值。如果你不想要任何选定的 Tab，你可以将这个 prop 设置为 false。",
+      "default": "-",
+      "value": "",
+      "type": "any",
+      "required": false
+    },
+    "variant": {
+      "description": "Determines additional display behavior of the tabs:\n\nscrollable will invoke scrolling properties and allow for horizontally\n scrolling (or swiping) of the tab bar.\nfullWidth will make the tabs grow to use all the available space,\n which should be used for small views, like on mobile.\nstandard will render the default state.\n\n",
+      "description_zh": "确定选项卡的其他显示行为：\n\nscrollable 将调用滚动属性并允许水平\n 滚动（或滑动）选项卡栏。\nfullWidth 将使选项卡增长以使用所有可用空间，\n 它应该用于小视图，例如在移动设备上。\nStandard 将呈现默认状态。",
+      "default": "'standard'",
+      "value": "",
+      "type": "fullWidth| scrollable| standard",
+      "required": false
+    },
+    "visibleScrollbar": {
+      "description": "If true, the scrollbar is visible. It can be useful when displaying a long vertical list of tabs.",
+      "description_zh": "如果为 true，则滚动条可见。在显示一长串垂直选项卡时，它可能很有用。",
+      "default": "false",
+      "value": "",
+      "type": "bool",
+      "required": false
+    }
+  },
+  "link": "https://mui.com/material-ui/api/tabs/",
+  "link_zh": "https://mui.com/material-ui/api/tabs/",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "onChange",
+      "description": "Callback fired when the value changes.Signature:event The event source of the callback. Warning: This is a generic event not a change event.value We default to the index of the child (number)",
+      "description_zh": "当值更改时触发回调。Signature：event 回调的事件源。警告：这是一个通用事件，而不是更改 event.value 我们默认为子项（数字）的索引",
+      "params": "function(event: React.SyntheticEvent, value: any) => void",
+      "value": ""
+    }
+  ],
+  "methods": [],
+  "slots": [],
+  "suggestions": [],
+  "filename": "Tabs"
+}

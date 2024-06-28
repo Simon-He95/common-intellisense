@@ -20,20 +20,31 @@ function run() {
       let description = ''
       if (!children[3]) {
         description = children[2].textContent
+        if (name.startsWith('on')) {
+          const params = children[2].querySelector('code')?.textContent
+          const description = children[2].textContent.replace(params, '')
+          events.push({
+            name,
+            description,
+            description_zh: description,
+            params
+          })
+        }
       } else {
         value = children[2].textContent
         description = children[3].textContent
+        if (name.startsWith('on')) {
+          const params = children[3].querySelector('code')?.textContent
+          const description = children[3].textContent.replace(params, '')
+          events.push({
+            name,
+            description,
+            description_zh: description,
+            params
+          })
+        }
       }
-      if (name.startsWith('on')) {
-        const params = children[3].querySelector('code').textContent
-        const description = children[3].textContent.replace(params, '')
-        events.push({
-          name,
-          description,
-          description_zh: description,
-          params
-        })
-      }
+      
       const type = children[1].textContent.replace(/'/g, '').replace(/ /g, ' ')
       props[name] = {
         description,
@@ -108,24 +119,13 @@ function run() {
   return result
 }
 
-const storage = JSON.parse(localStorage.getItem('materialUi.data.cache') || '[]')
-function setup() {
-  const childNodes = $0.childNodes
-  for (let i = 0; i < childNodes.length; i++) {
-    const item = childNodes[i]
-    const href = item.querySelector('a').href
-    location.href = href
-    setTimeout(() => {
-      const item = run()
-
-      storage.push(item)
-      console.log({ storage })
-      localStorage.setItem('materialUi.data.cache', JSON.stringify(storage))
-      i++
-    }, 5000)
-  }
-  return results
-}
+// const storage = JSON.parse(localStorage.getItem('materialUi.data.cache') || '[]')
+// function setup() {
+//   const item = run()
+// storage.push(item)
+//   localStorage.setItem('materialUi.data.cache', JSON.stringify(storage))
+//   return storage
+// }
 
 
 
@@ -162,8 +162,10 @@ const cwd = process.cwd()
 generateJson(data)
 function generateJson() {
   const baseSrc = 'src/ui/materialUi/materialUi5'
-  const url = path.resolve(cwd, baseSrc, `${data.name}.json`)
-  fsp.writeFile(url, JSON.stringify(data, null, 2), 'utf-8')
+  data.forEach(item=>{
+    const url = path.resolve(cwd, baseSrc, `${item.name}.json`)
+    fsp.writeFile(url, JSON.stringify(item, null, 2), 'utf-8')
+  })
 }
 
 

@@ -1,0 +1,132 @@
+{
+  "name": "SwipeableDrawer",
+  "props": {
+    "onClose": {
+      "description": "Callback fired when the component requests to be closed.Signature:function(event: React.SyntheticEvent<{}>) => voidevent The event source of the callback.",
+      "description_zh": "当组件请求关闭时触发回调。Signature：function（event： React.SyntheticEvent<{}>） => voidevent 回调的事件源。",
+      "default": "-",
+      "value": "",
+      "type": "func",
+      "required": true
+    },
+    "onOpen": {
+      "description": "Callback fired when the component requests to be opened.Signature:function(event: React.SyntheticEvent<{}>) => voidevent The event source of the callback.",
+      "description_zh": "当组件请求打开时触发回调。Signature：function（event： React.SyntheticEvent<{}>） => voidevent 回调的事件源。",
+      "default": "-",
+      "value": "",
+      "type": "func",
+      "required": true
+    },
+    "allowSwipeInChildren": {
+      "description": "If set to true, the swipe event will open the drawer even if the user begins the swipe on one of the drawer's children. This can be useful in scenarios where the drawer is partially visible. You can customize it further with a callback that determines which children the user can drag over to open the drawer (for example, to ignore other elements that handle touch move events, like sliders).",
+      "description_zh": "如果设置为 true，则滑动事件将打开抽屉，即使用户开始在抽屉的子级之一上滑动也是如此。这在抽屉部分可见的情况下非常有用。您可以使用回调进一步自定义它，该回调确定用户可以拖动哪些子元素来打开抽屉（例如，忽略处理触摸移动事件的其他元素，如滑块）。",
+      "default": "false",
+      "value": "",
+      "type": "func| bool",
+      "required": false
+    },
+    "children": {
+      "description": "The content of the component.",
+      "description_zh": "组件的内容。",
+      "default": "-",
+      "value": "",
+      "type": "node",
+      "required": false
+    },
+    "disableBackdropTransition": {
+      "description": "Disable the backdrop transition. This can improve the FPS on low-end devices.",
+      "description_zh": "禁用背景过渡。这可以提高低端设备的 FPS。",
+      "default": "false",
+      "value": "",
+      "type": "bool",
+      "required": false
+    },
+    "disableDiscovery": {
+      "description": "If true, touching the screen near the edge of the drawer will not slide in the drawer a bit to promote accidental discovery of the swipe gesture.",
+      "description_zh": "如果为 true，则触摸靠近抽屉边缘的屏幕不会在抽屉中滑动一点，从而促进意外发现滑动手势。",
+      "default": "false",
+      "value": "",
+      "type": "bool",
+      "required": false
+    },
+    "disableSwipeToOpen": {
+      "description": "If true, swipe to open is disabled. This is useful in browsers where swiping triggers navigation actions. Swipe to open is disabled on iOS browsers by default.",
+      "description_zh": "如果为 true，则禁用滑动打开。这在滑动触发导航操作的浏览器中很有用。默认情况下，在 iOS 浏览器上禁用滑动打开。",
+      "default": "typeof navigator !== 'undefined' && /iPad|iPhone|iPod/.test(navigator.userAgent)",
+      "value": "",
+      "type": "bool",
+      "required": false
+    },
+    "hysteresis": {
+      "description": "Affects how far the drawer must be opened/closed to change its state. Specified as percent (0-1) of the width of the drawer",
+      "description_zh": "影响抽屉必须打开/关闭的程度才能更改其状态。指定为抽屉宽度的百分比 （0-1）",
+      "default": "0.52",
+      "value": "",
+      "type": "number",
+      "required": false
+    },
+    "minFlingVelocity": {
+      "description": "Defines, from which (average) velocity on, the swipe is defined as complete although hysteresis isn't reached. Good threshold is between 250 - 1000 px/s",
+      "description_zh": "定义，从中（平均）速度开始，尽管未达到滞后，但滑动定义为完成。良好的阈值介于 250 - 1000 px/s 之间",
+      "default": "450",
+      "value": "",
+      "type": "number",
+      "required": false
+    },
+    "open": {
+      "description": "If true, the component is shown.",
+      "description_zh": "如果为 true，则显示组件。",
+      "default": "false",
+      "value": "",
+      "type": "bool",
+      "required": false
+    },
+    "SwipeAreaProps": {
+      "description": "The element is used to intercept the touch events on the edge.",
+      "description_zh": "该元素用于拦截边缘上的触摸事件。",
+      "default": "-",
+      "value": "",
+      "type": "object",
+      "required": false
+    },
+    "swipeAreaWidth": {
+      "description": "The width of the left most (or right most) area in px that the drawer can be swiped open from.",
+      "description_zh": "最左边（或最右边）区域的宽度（以 px 为单位），可以从中滑动打开抽屉。",
+      "default": "20",
+      "value": "",
+      "type": "number",
+      "required": false
+    },
+    "transitionDuration": {
+      "description": "The duration for the transition, in milliseconds. You may specify a single timeout for all transitions, or individually with an object.",
+      "description_zh": "转换的持续时间，以毫秒为单位。您可以为所有过渡指定单个超时，也可以单独指定一个对象超时。",
+      "default": "{\n  enter: theme.transitions.duration.enteringScreen,\n  exit: theme.transitions.duration.leavingScreen,\n}",
+      "value": "",
+      "type": "number| { appear?: number, enter?: number, exit?: number }",
+      "required": false
+    }
+  },
+  "link": "https://mui.com/material-ui/api/swipeable-drawer/",
+  "link_zh": "https://mui.com/material-ui/api/swipeable-drawer/",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "onClose",
+      "description": "Callback fired when the component requests to be closed.Signature:event The event source of the callback.",
+      "description_zh": "当组件请求关闭时触发回调。Signature：event 回调的事件源。",
+      "params": "function(event: React.SyntheticEvent<{}>) => void",
+      "value": ""
+    },
+    {
+      "name": "onOpen",
+      "description": "Callback fired when the component requests to be opened.Signature:event The event source of the callback.",
+      "description_zh": "当组件请求打开时触发回调。Signature：event 回调的事件源。",
+      "params": "function(event: React.SyntheticEvent<{}>) => void",
+      "value": ""
+    }
+  ],
+  "methods": [],
+  "slots": [],
+  "suggestions": [],
+  "filename": "SwipeableDrawer"
+}

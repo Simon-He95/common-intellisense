@@ -1,0 +1,260 @@
+{
+  "name": "Tooltip",
+  "props": {
+    "children": {
+      "description": "Tooltip reference element.This needs to be able to hold a ref.",
+      "description_zh": "工具提示引用元素。这需要能够保存一个 ref。",
+      "default": "-",
+      "value": "",
+      "type": "element",
+      "required": true
+    },
+    "arrow": {
+      "description": "If true, adds an arrow to the tooltip.",
+      "description_zh": "如果为 true，则向工具提示添加一个箭头。",
+      "default": "false",
+      "value": "",
+      "type": "bool",
+      "required": false
+    },
+    "classes": {
+      "description": "Override or extend the styles applied to the component.See CSS classes API below for more details.",
+      "description_zh": "覆盖或扩展应用于组件的样式。有关详细信息，请参阅下面的 CSS 类 API。",
+      "default": "-",
+      "value": "",
+      "type": "object",
+      "required": false
+    },
+    "components": {
+      "description": "The components used for each slot inside.This prop is an alias for the slots prop. It's recommended to use the slots prop instead.",
+      "description_zh": "内部每个插槽使用的组件。此道具是插槽道具的别名。建议改用插槽道具。",
+      "default": "{}",
+      "value": "",
+      "type": "{ Arrow?: elementType, Popper?: elementType, Tooltip?: elementType, Transition?: elementType }",
+      "required": false
+    },
+    "componentsProps": {
+      "description": "The extra props for the slot components. You can override the existing props or add new ones.This prop is an alias for the slotProps prop. It's recommended to use the slotProps prop instead, as componentsProps will be deprecated in the future.",
+      "description_zh": "插槽组件的额外道具。您可以覆盖现有道具或添加新道具。此 prop 是 slotProps props 的别名。建议改用 slotProps prop，因为 componentsProps 将来会被弃用。",
+      "default": "{}",
+      "value": "",
+      "type": "{ arrow?: object, popper?: object, tooltip?: object, transition?: object }",
+      "required": false
+    },
+    "describeChild": {
+      "description": "Set to true if the title acts as an accessible description. By default the title acts as an accessible label for the child.",
+      "description_zh": "如果标题充当辅助说明，则设置为 true。默认情况下，标题充当子项的辅助标签。",
+      "default": "false",
+      "value": "",
+      "type": "bool",
+      "required": false
+    },
+    "disableFocusListener": {
+      "description": "Do not respond to focus-visible events.",
+      "description_zh": "不要响应焦点可见事件。",
+      "default": "false",
+      "value": "",
+      "type": "bool",
+      "required": false
+    },
+    "disableHoverListener": {
+      "description": "Do not respond to hover events.",
+      "description_zh": "不响应悬停事件。",
+      "default": "false",
+      "value": "",
+      "type": "bool",
+      "required": false
+    },
+    "disableInteractive": {
+      "description": "Makes a tooltip not interactive, i.e. it will close when the user hovers over the tooltip before the leaveDelay is expired.",
+      "description_zh": "使工具提示不具有交互性，即当用户在 leaveDelay 过期之前将鼠标悬停在工具提示上时，它将关闭。",
+      "default": "false",
+      "value": "",
+      "type": "bool",
+      "required": false
+    },
+    "disableTouchListener": {
+      "description": "Do not respond to long press touch events.",
+      "description_zh": "不要响应长按触摸事件。",
+      "default": "false",
+      "value": "",
+      "type": "bool",
+      "required": false
+    },
+    "enterDelay": {
+      "description": "The number of milliseconds to wait before showing the tooltip. This prop won't impact the enter touch delay (enterTouchDelay).",
+      "description_zh": "在显示工具提示之前等待的毫秒数。此道具不会影响 Enter 触摸延迟 （enterTouchDelay）。",
+      "default": "100",
+      "value": "",
+      "type": "number",
+      "required": false
+    },
+    "enterNextDelay": {
+      "description": "The number of milliseconds to wait before showing the tooltip when one was already recently opened.",
+      "description_zh": "最近打开工具提示时在显示工具提示之前等待的毫秒数。",
+      "default": "0",
+      "value": "",
+      "type": "number",
+      "required": false
+    },
+    "enterTouchDelay": {
+      "description": "The number of milliseconds a user must touch the element before showing the tooltip.",
+      "description_zh": "用户在显示工具提示之前必须触摸元素的毫秒数。",
+      "default": "700",
+      "value": "",
+      "type": "number",
+      "required": false
+    },
+    "followCursor": {
+      "description": "If true, the tooltip follow the cursor over the wrapped element.",
+      "description_zh": "如果为 true，则工具提示将光标跟随到包装的元素上。",
+      "default": "false",
+      "value": "",
+      "type": "bool",
+      "required": false
+    },
+    "id": {
+      "description": "This prop is used to help implement the accessibility logic. If you don't provide this prop. It falls back to a randomly generated id.",
+      "description_zh": "此道具用于帮助实现辅助功能逻辑。如果你不提供这个道具。它回退到随机生成的 id。",
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "leaveDelay": {
+      "description": "The number of milliseconds to wait before hiding the tooltip. This prop won't impact the leave touch delay (leaveTouchDelay).",
+      "description_zh": "隐藏工具提示之前要等待的毫秒数。此道具不会影响离开触摸延迟 （leaveTouchDelay）。",
+      "default": "0",
+      "value": "",
+      "type": "number",
+      "required": false
+    },
+    "leaveTouchDelay": {
+      "description": "The number of milliseconds after the user stops touching an element before hiding the tooltip.",
+      "description_zh": "用户在隐藏工具提示之前停止触摸元素后的毫秒数。",
+      "default": "1500",
+      "value": "",
+      "type": "number",
+      "required": false
+    },
+    "onClose": {
+      "description": "Callback fired when the component requests to be closed.Signature:function(event: React.SyntheticEvent) => voidevent The event source of the callback.",
+      "description_zh": "当组件请求关闭时触发回调。Signature：function（event： React.SyntheticEvent） => voidevent 回调的事件源。",
+      "default": "-",
+      "value": "",
+      "type": "func",
+      "required": false
+    },
+    "onOpen": {
+      "description": "Callback fired when the component requests to be open.Signature:function(event: React.SyntheticEvent) => voidevent The event source of the callback.",
+      "description_zh": "当组件请求打开时触发回调。Signature：function（event： React.SyntheticEvent） => voidevent 回调的事件源。",
+      "default": "-",
+      "value": "",
+      "type": "func",
+      "required": false
+    },
+    "open": {
+      "description": "If true, the component is shown.",
+      "description_zh": "如果为 true，则显示组件。",
+      "default": "-",
+      "value": "",
+      "type": "bool",
+      "required": false
+    },
+    "placement": {
+      "description": "Tooltip placement.",
+      "description_zh": "工具提示放置。",
+      "default": "'bottom'",
+      "value": "",
+      "type": "bottom-end| bottom-start| bottom| left-end| left-start| left| right-end| right-start| right| top-end| top-start| top",
+      "required": false
+    },
+    "PopperComponent": {
+      "description": "The component used for the popper.",
+      "description_zh": "用于爆破器的组件。",
+      "default": "Popper",
+      "value": "",
+      "type": "elementType",
+      "required": false
+    },
+    "PopperProps": {
+      "description": "Props applied to the Popper element.",
+      "description_zh": "应用于 Popper 元素的道具。",
+      "default": "{}",
+      "value": "",
+      "type": "object",
+      "required": false
+    },
+    "slotProps": {
+      "description": "The extra props for the slot components. You can override the existing props or add new ones.This prop is an alias for the componentsProps prop, which will be deprecated in the future.",
+      "description_zh": "插槽组件的额外道具。您可以覆盖现有道具或添加新道具。此 prop 是 componentsProps props prop 的别名，将来将弃用。",
+      "default": "{}",
+      "value": "",
+      "type": "{ arrow?: object, popper?: object, tooltip?: object, transition?: object }",
+      "required": false
+    },
+    "slots": {
+      "description": "The components used for each slot inside.This prop is an alias for the components prop, which will be deprecated in the future.",
+      "description_zh": "内部每个插槽使用的组件。此 prop 是组件 prop 的别名，将来将弃用。",
+      "default": "{}",
+      "value": "",
+      "type": "{ arrow?: elementType, popper?: elementType, tooltip?: elementType, transition?: elementType }",
+      "required": false
+    },
+    "sx": {
+      "description": "The system prop that allows defining system overrides as well as additional CSS styles.See the `sx` page for more details.",
+      "description_zh": "允许定义系统覆盖以及其他 CSS 样式的系统属性。有关更多详细信息，请参阅“sx”页面。",
+      "default": "-",
+      "value": "",
+      "type": "Array<func| object| bool>| func| object",
+      "required": false
+    },
+    "title": {
+      "description": "Tooltip title. Zero-length titles string, undefined, null and false are never displayed.",
+      "description_zh": "工具提示标题。从不显示长度为零的标题字符串、undefined、null 和 false。",
+      "default": "-",
+      "value": "",
+      "type": "node",
+      "required": false
+    },
+    "TransitionComponent": {
+      "description": "The component used for the transition. Follow this guide to learn more about the requirements for this component.",
+      "description_zh": "用于过渡的组件。按照本指南了解有关此组件要求的详细信息。",
+      "default": "Grow",
+      "value": "",
+      "type": "elementType",
+      "required": false
+    },
+    "TransitionProps": {
+      "description": "Props applied to the transition element. By default, the element is based on this Transition component.",
+      "description_zh": "应用于过渡元素的道具。默认情况下，该元素基于此 Transition 组件。",
+      "default": "-",
+      "value": "",
+      "type": "object",
+      "required": false
+    }
+  },
+  "link": "https://mui.com/material-ui/api/tooltip/",
+  "link_zh": "https://mui.com/material-ui/api/tooltip/",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "onClose",
+      "description": "Callback fired when the component requests to be closed.Signature:event The event source of the callback.",
+      "description_zh": "当组件请求关闭时触发回调。Signature：event 回调的事件源。",
+      "params": "function(event: React.SyntheticEvent) => void",
+      "value": ""
+    },
+    {
+      "name": "onOpen",
+      "description": "Callback fired when the component requests to be open.Signature:event The event source of the callback.",
+      "description_zh": "当组件请求打开时触发回调。Signature：event 回调的事件源。",
+      "params": "function(event: React.SyntheticEvent) => void",
+      "value": ""
+    }
+  ],
+  "methods": [],
+  "slots": [],
+  "suggestions": [],
+  "filename": "Tooltip"
+}

@@ -1,0 +1,173 @@
+{
+  "name": "ListItem",
+  "props": {
+    "alignItems": {
+      "description": "Defines the align-items style property.",
+      "description_zh": "定义 align-items 样式属性。",
+      "default": "'center'",
+      "value": "",
+      "type": "center| flex-start",
+      "required": false
+    },
+    "autoFocus": {
+      "description": "If true, the list item is focused during the first mount. Focus will also be triggered if the value changes from false to true.Deprecated - checkout ListItemButton instead",
+      "description_zh": "如果为 true，则列表项在第一次装载期间处于焦点位置。如果值从 false 变为 true，也会触发焦点。已弃用 - 改为 checkout ListItemButton",
+      "default": "false",
+      "value": "",
+      "type": "bool",
+      "required": false
+    },
+    "button": {
+      "description": "If true, the list item is a button (using ButtonBase). Props intended for ButtonBase can then be applied to ListItem.Deprecated - checkout ListItemButton instead",
+      "description_zh": "如果为 true，则列表项为按钮（使用 ButtonBase）。然后，可以将用于 ButtonBase 的 Props 应用于 ListItem.Deprecated - 改为 checkout ListItemButton",
+      "default": "false",
+      "value": "",
+      "type": "bool",
+      "required": false
+    },
+    "children": {
+      "description": "The content of the component if a ListItemSecondaryAction is used it must be the last child.",
+      "description_zh": "组件的内容，如果使用 ListItemSecondaryAction，则它必须是最后一个子项。",
+      "default": "-",
+      "value": "",
+      "type": "node",
+      "required": false
+    },
+    "classes": {
+      "description": "Override or extend the styles applied to the component.See CSS classes API below for more details.",
+      "description_zh": "覆盖或扩展应用于组件的样式。有关详细信息，请参阅下面的 CSS 类 API。",
+      "default": "-",
+      "value": "",
+      "type": "object",
+      "required": false
+    },
+    "component": {
+      "description": "The component used for the root node. Either a string to use a HTML element or a component.",
+      "description_zh": "用于根节点的组件。使用 HTML 元素或组件的字符串。",
+      "default": "-",
+      "value": "",
+      "type": "elementType",
+      "required": false
+    },
+    "components": {
+      "description": "The components used for each slot inside.This prop is an alias for the slots prop. It's recommended to use the slots prop instead.",
+      "description_zh": "内部每个插槽使用的组件。此道具是插槽道具的别名。建议改用插槽道具。",
+      "default": "{}",
+      "value": "",
+      "type": "{ Root?: elementType }",
+      "required": false
+    },
+    "componentsProps": {
+      "description": "The extra props for the slot components. You can override the existing props or add new ones.This prop is an alias for the slotProps prop. It's recommended to use the slotProps prop instead, as componentsProps will be deprecated in the future.",
+      "description_zh": "插槽组件的额外道具。您可以覆盖现有道具或添加新道具。此 prop 是 slotProps props 的别名。建议改用 slotProps prop，因为 componentsProps 将来会被弃用。",
+      "default": "{}",
+      "value": "",
+      "type": "{ root?: object }",
+      "required": false
+    },
+    "ContainerComponent": {
+      "description": "The container component used when a ListItemSecondaryAction is the last child.This needs to be able to hold a ref.Deprecated",
+      "description_zh": "当 ListItemSecondaryAction 是最后一个子项时使用的容器组件。这需要能够保存一个 ref。荒废的",
+      "default": "'li'",
+      "value": "",
+      "type": "element type",
+      "required": false
+    },
+    "ContainerProps": {
+      "description": "Props applied to the container component if used.Deprecated",
+      "description_zh": "应用于容器组件的道具（如果使用）。荒废的",
+      "default": "{}",
+      "value": "",
+      "type": "object",
+      "required": false
+    },
+    "dense": {
+      "description": "If true, compact vertical padding designed for keyboard and mouse input is used. The prop defaults to the value inherited from the parent List component.",
+      "description_zh": "如果为 true，则使用专为键盘和鼠标输入设计的紧凑型垂直填充。该 prop 默认为从父 List 组件继承的值。",
+      "default": "false",
+      "value": "",
+      "type": "bool",
+      "required": false
+    },
+    "disabled": {
+      "description": "If true, the component is disabled.Deprecated - checkout ListItemButton instead",
+      "description_zh": "如果为 true，则禁用该组件。已弃用 - 改为 checkout ListItemButton",
+      "default": "false",
+      "value": "",
+      "type": "bool",
+      "required": false
+    },
+    "disableGutters": {
+      "description": "If true, the left and right padding is removed.",
+      "description_zh": "如果为 true，则删除左右填充。",
+      "default": "false",
+      "value": "",
+      "type": "bool",
+      "required": false
+    },
+    "disablePadding": {
+      "description": "If true, all padding is removed.",
+      "description_zh": "如果为 true，则删除所有填充。",
+      "default": "false",
+      "value": "",
+      "type": "bool",
+      "required": false
+    },
+    "divider": {
+      "description": "If true, a 1px light border is added to the bottom of the list item.",
+      "description_zh": "如果为 true，则在列表项的底部添加一个 1px 的浅色边框。",
+      "default": "false",
+      "value": "",
+      "type": "bool",
+      "required": false
+    },
+    "secondaryAction": {
+      "description": "The element to display at the end of ListItem.",
+      "description_zh": "要在 ListItem 末尾显示的元素。",
+      "default": "-",
+      "value": "",
+      "type": "node",
+      "required": false
+    },
+    "selected": {
+      "description": "Use to apply selected styling.Deprecated - checkout ListItemButton instead",
+      "description_zh": "用于应用选定的样式。已弃用 - 改为 checkout ListItemButton",
+      "default": "false",
+      "value": "",
+      "type": "bool",
+      "required": false
+    },
+    "slotProps": {
+      "description": "The extra props for the slot components. You can override the existing props or add new ones.This prop is an alias for the componentsProps prop, which will be deprecated in the future.",
+      "description_zh": "插槽组件的额外道具。您可以覆盖现有道具或添加新道具。此 prop 是 componentsProps props prop 的别名，将来将弃用。",
+      "default": "{}",
+      "value": "",
+      "type": "{ root?: object }",
+      "required": false
+    },
+    "slots": {
+      "description": "The components used for each slot inside.This prop is an alias for the components prop, which will be deprecated in the future.",
+      "description_zh": "内部每个插槽使用的组件。此 prop 是组件 prop 的别名，将来将弃用。",
+      "default": "{}",
+      "value": "",
+      "type": "{ root?: elementType }",
+      "required": false
+    },
+    "sx": {
+      "description": "The system prop that allows defining system overrides as well as additional CSS styles.See the `sx` page for more details.",
+      "description_zh": "允许定义系统覆盖以及其他 CSS 样式的系统属性。有关更多详细信息，请参阅“sx”页面。",
+      "default": "-",
+      "value": "",
+      "type": "Array<func| object| bool>| func| object",
+      "required": false
+    }
+  },
+  "link": "https://mui.com/material-ui/api/list-item/",
+  "link_zh": "https://mui.com/material-ui/api/list-item/",
+  "typeDetail": {},
+  "events": [],
+  "methods": [],
+  "slots": [],
+  "suggestions": [],
+  "filename": "ListItem"
+}

@@ -1,0 +1,172 @@
+{
+  "name": "Rating",
+  "props": {
+    "classes": {
+      "description": "Override or extend the styles applied to the component.See CSS classes API below for more details.",
+      "description_zh": "覆盖或扩展应用于组件的样式。有关详细信息，请参阅下面的 CSS 类 API。",
+      "default": "-",
+      "value": "",
+      "type": "object",
+      "required": false
+    },
+    "defaultValue": {
+      "description": "The default value. Use when the component is not controlled.",
+      "description_zh": "默认值。在组件不受控制时使用。",
+      "default": "null",
+      "value": "",
+      "type": "number",
+      "required": false
+    },
+    "disabled": {
+      "description": "If true, the component is disabled.",
+      "description_zh": "如果为 true，则禁用该组件。",
+      "default": "false",
+      "value": "",
+      "type": "bool",
+      "required": false
+    },
+    "emptyIcon": {
+      "description": "The icon to display when empty.",
+      "description_zh": "空时显示的图标。",
+      "default": "<StarBorder fontSize=\"inherit\" />",
+      "value": "",
+      "type": "node",
+      "required": false
+    },
+    "emptyLabelText": {
+      "description": "The label read when the rating input is empty.",
+      "description_zh": "当评级输入为空时，标签会读取。",
+      "default": "'Empty'",
+      "value": "",
+      "type": "node",
+      "required": false
+    },
+    "getLabelText": {
+      "description": "Accepts a function which returns a string value that provides a user-friendly name for the current value of the rating. This is important for screen reader users.For localization purposes, you can use the provided translations.Signature:function(value: number) => stringvalue The rating label's value to format.",
+      "description_zh": "接受一个函数，该函数返回一个字符串值，该值为评级的当前值提供用户友好的名称。这对屏幕阅读器用户很重要。出于本地化目的，您可以使用提供的翻译。Signature：function（value： number） => stringvalue 要格式化的评级标签的值。",
+      "default": "function defaultLabelText(value) {\n  return `${value} Star${value !== 1 ? 's' : ''}`;\n}",
+      "value": "",
+      "type": "func",
+      "required": false
+    },
+    "highlightSelectedOnly": {
+      "description": "If true, only the selected icon will be highlighted.",
+      "description_zh": "如果为 true，则仅突出显示所选图标。",
+      "default": "false",
+      "value": "",
+      "type": "bool",
+      "required": false
+    },
+    "icon": {
+      "description": "The icon to display.",
+      "description_zh": "要显示的图标。",
+      "default": "<Star fontSize=\"inherit\" />",
+      "value": "",
+      "type": "node",
+      "required": false
+    },
+    "IconContainerComponent": {
+      "description": "The component containing the icon.",
+      "description_zh": "包含图标的组件。",
+      "default": "function IconContainer(props) {\n  const { value, ...other } = props;\n  return <span {...other} />;\n}",
+      "value": "",
+      "type": "elementType",
+      "required": false
+    },
+    "max": {
+      "description": "Maximum rating.",
+      "description_zh": "最大额定值。",
+      "default": "5",
+      "value": "",
+      "type": "number",
+      "required": false
+    },
+    "name": {
+      "description": "The name attribute of the radio input elements. This input name should be unique within the page. Being unique within a form is insufficient since the name is used to generated IDs.",
+      "description_zh": "无线电输入元素的 name 属性。此输入名称在页面中应该是唯一的。在表单中是唯一的是不够的，因为名称用于生成 ID。",
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "onChange": {
+      "description": "Callback fired when the value changes.Signature:function(event: React.SyntheticEvent, value: number | null) => voidevent The event source of the callback.value The new value.",
+      "description_zh": "当值更改时触发回调。Signature：function（event： React.SyntheticEvent， value： number | null） => voidevent callback.value 的事件源 新值。",
+      "default": "-",
+      "value": "",
+      "type": "func",
+      "required": false
+    },
+    "onChangeActive": {
+      "description": "Callback function that is fired when the hover state changes.Signature:function(event: React.SyntheticEvent, value: number) => voidevent The event source of the callback.value The new value.",
+      "description_zh": "当悬停状态更改时触发的回调函数。Signature：function（event： React.SyntheticEvent， value： number） => voidevent callback.value 的事件源 新值。",
+      "default": "-",
+      "value": "",
+      "type": "func",
+      "required": false
+    },
+    "precision": {
+      "description": "The minimum increment value change allowed.",
+      "description_zh": "允许的最小增量值更改。",
+      "default": "1",
+      "value": "",
+      "type": "number",
+      "required": false
+    },
+    "readOnly": {
+      "description": "Removes all hover effects and pointer events.",
+      "description_zh": "删除所有悬停效果和指针事件。",
+      "default": "false",
+      "value": "",
+      "type": "bool",
+      "required": false
+    },
+    "size": {
+      "description": "The size of the component.",
+      "description_zh": "组件的大小。",
+      "default": "'medium'",
+      "value": "",
+      "type": "small| medium| large| string",
+      "required": false
+    },
+    "sx": {
+      "description": "The system prop that allows defining system overrides as well as additional CSS styles.See the `sx` page for more details.",
+      "description_zh": "允许定义系统覆盖以及其他 CSS 样式的系统属性。有关更多详细信息，请参阅“sx”页面。",
+      "default": "-",
+      "value": "",
+      "type": "Array<func| object| bool>| func| object",
+      "required": false
+    },
+    "value": {
+      "description": "The rating value.",
+      "description_zh": "评级值。",
+      "default": "-",
+      "value": "",
+      "type": "number",
+      "required": false
+    }
+  },
+  "link": "https://mui.com/material-ui/api/rating/",
+  "link_zh": "https://mui.com/material-ui/api/rating/",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "onChange",
+      "description": "Callback fired when the value changes.Signature:event The event source of the callback.value The new value.",
+      "description_zh": "当值更改时触发回调。Signature：event callback.value 的事件源 新值。",
+      "params": "function(event: React.SyntheticEvent, value: number | null) => void",
+      "value": ""
+    },
+    {
+      "name": "onChangeActive",
+      "description": "Callback function that is fired when the hover state changes.Signature:event The event source of the callback.value The new value.",
+      "description_zh": "当悬停状态更改时触发的回调函数。Signature：event callback.value 的事件源 新值。",
+      "params": "function(event: React.SyntheticEvent, value: number) => void",
+      "value": ""
+    }
+  ],
+  "methods": [],
+  "slots": [],
+  "suggestions": [],
+  "filename": "Rating"
+}

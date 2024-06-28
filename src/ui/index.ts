@@ -22,6 +22,7 @@ import { nuxtUiPro1, nuxtUiPro1Components } from './nuxtUiPro'
 import { antdMobile5, antdMobile5Components } from './antdMobile'
 import { uviewPlus3, uviewPlus3Components } from './uviewPlus'
 import { bitsUi0, bitsUi0Components, shadcnSvelte0, shadcnSvelte0Components } from './bitsUi'
+import { materialUi5, materialUi5Components } from './materialUi'
 
 export default {
   elementUi2,
@@ -55,6 +56,7 @@ export default {
   uviewPlus3,
   bitsUi0,
   shadcnSvelte0,
+  materialUi5,
   elementUi2Components,
   antd4Components,
   antd5Components,
@@ -86,4 +88,5 @@ export default {
   uviewPlus3Components,
   bitsUi0Components,
   shadcnSvelte0Components,
+  materialUi5Components,
 }

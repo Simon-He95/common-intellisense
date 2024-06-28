@@ -32,6 +32,7 @@ Install the supported ui component library in your project and install the plug-
 - taro 3
 - shacn-svelte 0
 - bits-ui 0
+- material-ui 5
 
 ### [antdv demo](assets/antdv.gif)
 

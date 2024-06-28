@@ -1,0 +1,77 @@
+{
+  "name": "Slide",
+  "props": {
+    "children": {
+      "description": "A single child content element.This needs to be able to hold a ref.",
+      "description_zh": "单个子内容元素。这需要能够保存一个 ref。",
+      "default": "-",
+      "value": "",
+      "type": "element",
+      "required": true
+    },
+    "addEndListener": {
+      "description": "Add a custom transition end trigger. Called with the transitioning DOM node and a done callback. Allows for more fine grained transition end logic. Note: Timeouts are still used as a fallback if provided.",
+      "description_zh": "添加自定义过渡结束触发器。使用转换的 DOM 节点和完成的回调调用。允许更细粒度的过渡结束逻辑。注意：如果提供超时，仍用作回退。",
+      "default": "-",
+      "value": "",
+      "type": "func",
+      "required": false
+    },
+    "appear": {
+      "description": "Perform the enter transition when it first mounts if in is also true. Set this to false to disable this behavior.",
+      "description_zh": "如果 in 也为 true，则在首次挂载时执行 enter 转换。将此项设置为 false 可禁用此行为。",
+      "default": "true",
+      "value": "",
+      "type": "bool",
+      "required": false
+    },
+    "container": {
+      "description": "An HTML element, or a function that returns one. It's used to set the container the Slide is transitioning from.",
+      "description_zh": "一个 HTML 元素，或返回一个元素的函数。它用于设置幻灯片从中转换的容器。",
+      "default": "-",
+      "value": "",
+      "type": "HTML element| func",
+      "required": false
+    },
+    "direction": {
+      "description": "Direction the child node will enter from.",
+      "description_zh": "子节点将进入的方向。",
+      "default": "'down'",
+      "value": "",
+      "type": "down| left| right| up",
+      "required": false
+    },
+    "easing": {
+      "description": "The transition timing function. You may specify a single easing or a object containing enter and exit values.",
+      "description_zh": "转换时序函数。您可以指定单个缓动或包含 enter 和 exit 值的对象。",
+      "default": "{\n  enter: theme.transitions.easing.easeOut,\n  exit: theme.transitions.easing.sharp,\n}",
+      "value": "",
+      "type": "{ enter?: string, exit?: string }| string",
+      "required": false
+    },
+    "in": {
+      "description": "If true, the component will transition in.",
+      "description_zh": "如果为 true，则组件将转换。",
+      "default": "-",
+      "value": "",
+      "type": "bool",
+      "required": false
+    },
+    "timeout": {
+      "description": "The duration for the transition, in milliseconds. You may specify a single timeout for all transitions, or individually with an object.",
+      "description_zh": "转换的持续时间，以毫秒为单位。您可以为所有过渡指定单个超时，也可以单独指定一个对象超时。",
+      "default": "{\n  enter: theme.transitions.duration.enteringScreen,\n  exit: theme.transitions.duration.leavingScreen,\n}",
+      "value": "",
+      "type": "number| { appear?: number, enter?: number, exit?: number }",
+      "required": false
+    }
+  },
+  "link": "https://mui.com/material-ui/api/slide/",
+  "link_zh": "https://mui.com/material-ui/api/slide/",
+  "typeDetail": {},
+  "events": [],
+  "methods": [],
+  "slots": [],
+  "suggestions": [],
+  "filename": "Slide"
+}

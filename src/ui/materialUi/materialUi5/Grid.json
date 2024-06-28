@@ -1,0 +1,157 @@
+{
+  "name": "Grid",
+  "props": {
+    "children": {
+      "description": "The content of the component.",
+      "description_zh": "组件的内容。",
+      "default": "-",
+      "value": "",
+      "type": "node",
+      "required": false
+    },
+    "classes": {
+      "description": "See CSS classes API below for more details.",
+      "description_zh": "有关详细信息，请参阅下面的 CSS 类 API。",
+      "default": "-",
+      "value": "",
+      "type": "object",
+      "required": false
+    },
+    "columns": {
+      "description": "The number of columns.",
+      "description_zh": "列数。",
+      "default": "12",
+      "value": "",
+      "type": "Array<number>| number| object",
+      "required": false
+    },
+    "columnSpacing": {
+      "description": "Defines the horizontal space between the type item components. It overrides the value of the spacing prop.",
+      "description_zh": "定义类型项组件之间的水平空间。它覆盖了间距属性的值。",
+      "default": "-",
+      "value": "",
+      "type": "Array<number| string>| number| object| string",
+      "required": false
+    },
+    "component": {
+      "description": "",
+      "description_zh": "",
+      "default": "-",
+      "value": "",
+      "type": "elementType",
+      "required": false
+    },
+    "container": {
+      "description": "If true, the component will have the flex container behavior. You should be wrapping items with a container.",
+      "description_zh": "如果为 true，则组件将具有 flex 容器行为。您应该用容器包裹物品。",
+      "default": "false",
+      "value": "",
+      "type": "bool",
+      "required": false
+    },
+    "direction": {
+      "description": "Defines the flex-direction style property. It is applied for all screen sizes.",
+      "description_zh": "定义 flex-direction 样式属性。它适用于所有屏幕尺寸。",
+      "default": "'row'",
+      "value": "",
+      "type": "column-reverse| column| row-reverse| row| Array<column-reverse| column| row-reverse| row>| object",
+      "required": false
+    },
+    "item": {
+      "description": "",
+      "description_zh": "",
+      "default": "false",
+      "value": "",
+      "type": "bool",
+      "required": false
+    },
+    "lg": {
+      "description": "If a number, it sets the number of columns the grid item uses. It can't be greater than the total number of columns of the container (12 by default). If 'auto', the grid item's width matches its content. If false, the prop is ignored. If true, the grid item's width grows to use the space available in the grid container. The value is applied for the lg breakpoint and wider screens if not overridden.",
+      "description_zh": "如果是数字，则设置网格项使用的列数。它不能大于容器的列总数（默认为 12 列）。如果为“auto”，则网格项的宽度与其内容匹配。如果为 false，则忽略该 prop。如果为 true，则网格项的宽度将增加以使用网格容器中的可用空间。如果未覆盖，则该值将应用于 lg 断点和更宽的屏幕。",
+      "default": "false",
+      "value": "",
+      "type": "auto| number| bool",
+      "required": false
+    },
+    "md": {
+      "description": "If a number, it sets the number of columns the grid item uses. It can't be greater than the total number of columns of the container (12 by default). If 'auto', the grid item's width matches its content. If false, the prop is ignored. If true, the grid item's width grows to use the space available in the grid container. The value is applied for the md breakpoint and wider screens if not overridden.",
+      "description_zh": "如果是数字，则设置网格项使用的列数。它不能大于容器的列总数（默认为 12 列）。如果为“auto”，则网格项的宽度与其内容匹配。如果为 false，则忽略该 prop。如果为 true，则网格项的宽度将增加以使用网格容器中的可用空间。如果未覆盖，则该值将应用于 md 断点和更宽的屏幕。",
+      "default": "false",
+      "value": "",
+      "type": "auto| number| bool",
+      "required": false
+    },
+    "rowSpacing": {
+      "description": "Defines the vertical space between the type item components. It overrides the value of the spacing prop.",
+      "description_zh": "定义类型项组件之间的垂直空间。它覆盖了间距属性的值。",
+      "default": "-",
+      "value": "",
+      "type": "Array<number| string>| number| object| string",
+      "required": false
+    },
+    "sm": {
+      "description": "If a number, it sets the number of columns the grid item uses. It can't be greater than the total number of columns of the container (12 by default). If 'auto', the grid item's width matches its content. If false, the prop is ignored. If true, the grid item's width grows to use the space available in the grid container. The value is applied for the sm breakpoint and wider screens if not overridden.",
+      "description_zh": "如果是数字，则设置网格项使用的列数。它不能大于容器的列总数（默认为 12 列）。如果为“auto”，则网格项的宽度与其内容匹配。如果为 false，则忽略该 prop。如果为 true，则网格项的宽度将增加以使用网格容器中的可用空间。如果未覆盖，则该值将应用于 sm 断点和更宽的屏幕。",
+      "default": "false",
+      "value": "",
+      "type": "auto| number| bool",
+      "required": false
+    },
+    "spacing": {
+      "description": "Defines the space between the type item components. It can only be used on a type container component.",
+      "description_zh": "定义类型项组件之间的空间。它只能用于类型容器组件。",
+      "default": "0",
+      "value": "",
+      "type": "Array<number| string>| number| object| string",
+      "required": false
+    },
+    "sx": {
+      "description": "See the `sx` page for more details.",
+      "description_zh": "有关更多详细信息，请参阅“sx”页面。",
+      "default": "-",
+      "value": "",
+      "type": "Array<func| object| bool>| func| object",
+      "required": false
+    },
+    "wrap": {
+      "description": "Defines the flex-wrap style property. It's applied for all screen sizes.",
+      "description_zh": "定义 flex-wrap 样式属性。它适用于所有屏幕尺寸。",
+      "default": "'wrap'",
+      "value": "",
+      "type": "nowrap| wrap-reverse| wrap",
+      "required": false
+    },
+    "xl": {
+      "description": "If a number, it sets the number of columns the grid item uses. It can't be greater than the total number of columns of the container (12 by default). If 'auto', the grid item's width matches its content. If false, the prop is ignored. If true, the grid item's width grows to use the space available in the grid container. The value is applied for the xl breakpoint and wider screens if not overridden.",
+      "description_zh": "如果是数字，则设置网格项使用的列数。它不能大于容器的列总数（默认为 12 列）。如果为“auto”，则网格项的宽度与其内容匹配。如果为 false，则忽略该 prop。如果为 true，则网格项的宽度将增加以使用网格容器中的可用空间。如果未覆盖，则该值将应用于 xl 断点和更宽的屏幕。",
+      "default": "false",
+      "value": "",
+      "type": "auto| number| bool",
+      "required": false
+    },
+    "xs": {
+      "description": "If a number, it sets the number of columns the grid item uses. It can't be greater than the total number of columns of the container (12 by default). If 'auto', the grid item's width matches its content. If false, the prop is ignored. If true, the grid item's width grows to use the space available in the grid container. The value is applied for all the screen sizes with the lowest priority.",
+      "description_zh": "如果是数字，则设置网格项使用的列数。它不能大于容器的列总数（默认为 12 列）。如果为“auto”，则网格项的宽度与其内容匹配。如果为 false，则忽略该 prop。如果为 true，则网格项的宽度将增加以使用网格容器中的可用空间。该值适用于优先级最低的所有屏幕尺寸。",
+      "default": "false",
+      "value": "",
+      "type": "auto| number| bool",
+      "required": false
+    },
+    "zeroMinWidth": {
+      "description": "",
+      "description_zh": "",
+      "default": "false",
+      "value": "",
+      "type": "bool",
+      "required": false
+    }
+  },
+  "link": "https://mui.com/material-ui/api/grid/",
+  "link_zh": "https://mui.com/material-ui/api/grid/",
+  "typeDetail": {},
+  "events": [],
+  "methods": [],
+  "slots": [],
+  "suggestions": [],
+  "filename": "Grid"
+}

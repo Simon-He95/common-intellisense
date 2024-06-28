@@ -3,7 +3,7 @@
   "props": {
     "action": {
       "description": "The action to display. It renders after the message, at the end of the alert.",
-      "description_zh": "The action to display. It renders after the message, at the end of the alert.",
+      "description_zh": "要显示的操作。它会在消息之后呈现，在警报的末尾。",
       "default": "-",
       "value": "",
       "type": "node",
@@ -11,7 +11,7 @@
     },
     "children": {
       "description": "The content of the component.",
-      "description_zh": "The content of the component.",
+      "description_zh": "组件的内容。",
       "default": "-",
       "value": "",
       "type": "node",
@@ -19,7 +19,7 @@
     },
     "classes": {
       "description": "Override or extend the styles applied to the component.See CSS classes API below for more details.",
-      "description_zh": "Override or extend the styles applied to the component.See CSS classes API below for more details.",
+      "description_zh": "覆盖或扩展应用于组件的样式。有关详细信息，请参阅下面的 CSS 类 API。",
       "default": "-",
       "value": "",
       "type": "object",
@@ -27,7 +27,7 @@
     },
     "closeText": {
       "description": "Override the default label for the close popup icon button.For localization purposes, you can use the provided translations.",
-      "description_zh": "Override the default label for the close popup icon button.For localization purposes, you can use the provided translations.",
+      "description_zh": "覆盖关闭弹出图标按钮的默认标签。出于本地化目的，您可以使用提供的翻译。",
       "default": "'Close'",
       "value": "",
       "type": "string",
@@ -35,15 +35,15 @@
     },
     "color": {
       "description": "The color of the component. Unless provided, the value is taken from the severity prop. It supports both default and custom theme colors, which can be added as shown in the palette customization guide.",
-      "description_zh": "The color of the component. Unless provided, the value is taken from the severity prop. It supports both default and custom theme colors, which can be added as shown in the palette customization guide.",
+      "description_zh": "组件的颜色。除非提供，否则该值取自严重性 prop。它支持默认和自定义主题颜色，可以按照调色板自定义指南中所示进行添加。",
       "default": "-",
       "value": "",
-      "type": "'error'| 'info'| 'success'| 'warning'| string",
+      "type": "error| info| success| warning| string",
       "required": false
     },
     "components": {
       "description": "The components used for each slot inside.Deprecated - use the slots prop instead. This prop will be removed in v7. How to migrate.",
-      "description_zh": "The components used for each slot inside.Deprecated - use the slots prop instead. This prop will be removed in v7. How to migrate.",
+      "description_zh": "内部每个插槽使用的组件。已弃用 - 请改用插槽道具。这个道具将在 v7 中被移除。如何迁移。",
       "default": "{}",
       "value": "",
       "type": "{ CloseButton?: elementType, CloseIcon?: elementType }",
@@ -51,7 +51,7 @@
     },
     "componentsProps": {
       "description": "The extra props for the slot components. You can override the existing props or add new ones.Deprecated - use the slotProps prop instead. This prop will be removed in v7. How to migrate.",
-      "description_zh": "The extra props for the slot components. You can override the existing props or add new ones.Deprecated - use the slotProps prop instead. This prop will be removed in v7. How to migrate.",
+      "description_zh": "插槽组件的额外道具。您可以覆盖现有道具或添加新道具。已弃用 - 改用 slotProps 道具。这个道具将在 v7 中被移除。如何迁移。",
       "default": "{}",
       "value": "",
       "type": "{ closeButton?: object, closeIcon?: object }",
@@ -59,7 +59,7 @@
     },
     "icon": {
       "description": "Override the icon displayed before the children. Unless provided, the icon is mapped to the value of the severity prop. Set to false to remove the icon.",
-      "description_zh": "Override the icon displayed before the children. Unless provided, the icon is mapped to the value of the severity prop. Set to false to remove the icon.",
+      "description_zh": "覆盖在子项之前显示的图标。除非提供，否则该图标将映射到严重性属性的值。设置为 false 可删除图标。",
       "default": "-",
       "value": "",
       "type": "node",
@@ -67,7 +67,7 @@
     },
     "iconMapping": {
       "description": "The component maps the severity prop to a range of different icons, for instance success to <SuccessOutlined>. If you wish to change this mapping, you can provide your own. Alternatively, you can use the icon prop to override the icon displayed.",
-      "description_zh": "The component maps the severity prop to a range of different icons, for instance success to <SuccessOutlined>. If you wish to change this mapping, you can provide your own. Alternatively, you can use the icon prop to override the icon displayed.",
+      "description_zh": "该组件将严重性 prop 映射到一系列不同的图标，例如 success 映射到 <SuccessOutlined>.如果要更改此映射，可以提供自己的映射。或者，您可以使用图标道具来覆盖显示的图标。",
       "default": "-",
       "value": "",
       "type": "{ error?: node, info?: node, success?: node, warning?: node }",
@@ -75,7 +75,7 @@
     },
     "onClose": {
       "description": "Callback fired when the component requests to be closed. When provided and no action prop is set, a close icon button is displayed that triggers the callback when clicked.Signature:function(event: React.SyntheticEvent) => voidevent The event source of the callback.",
-      "description_zh": "Callback fired when the component requests to be closed. When provided and no action prop is set, a close icon button is displayed that triggers the callback when clicked.Signature:function(event: React.SyntheticEvent) => voidevent The event source of the callback.",
+      "description_zh": "当组件请求关闭时触发回调。如果提供且未设置操作道具，则会显示一个关闭图标按钮，单击该按钮时会触发回调。Signature：function（event： React.SyntheticEvent） => voidevent 回调的事件源。",
       "default": "-",
       "value": "",
       "type": "func",
@@ -83,7 +83,7 @@
     },
     "role": {
       "description": "The ARIA role attribute of the element.",
-      "description_zh": "The ARIA role attribute of the element.",
+      "description_zh": "元素的 ARIA 角色属性。",
       "default": "'alert'",
       "value": "",
       "type": "string",
@@ -91,15 +91,15 @@
     },
     "severity": {
       "description": "The severity of the alert. This defines the color and icon used.",
-      "description_zh": "The severity of the alert. This defines the color and icon used.",
+      "description_zh": "警报的严重性。这定义了使用的颜色和图标。",
       "default": "'success'",
       "value": "",
-      "type": "'error'| 'info'| 'success'| 'warning'| string",
+      "type": "error| info| success| warning| string",
       "required": false
     },
     "slotProps": {
       "description": "The props used for each slot inside.",
-      "description_zh": "The props used for each slot inside.",
+      "description_zh": "里面每个插槽使用的道具。",
       "default": "{}",
       "value": "",
       "type": "{ closeButton?: func| object, closeIcon?: func| object }",
@@ -107,7 +107,7 @@
     },
     "slots": {
       "description": "The components used for each slot inside.",
-      "description_zh": "The components used for each slot inside.",
+      "description_zh": "内部每个插槽使用的组件。",
       "default": "{}",
       "value": "",
       "type": "{ closeButton?: elementType, closeIcon?: elementType }",
@@ -115,7 +115,7 @@
     },
     "sx": {
       "description": "The system prop that allows defining system overrides as well as additional CSS styles.See the `sx` page for more details.",
-      "description_zh": "The system prop that allows defining system overrides as well as additional CSS styles.See the `sx` page for more details.",
+      "description_zh": "允许定义系统覆盖以及其他 CSS 样式的系统属性。有关更多详细信息，请参阅“sx”页面。",
       "default": "-",
       "value": "",
       "type": "Array<func| object| bool>| func| object",
@@ -123,10 +123,10 @@
     },
     "variant": {
       "description": "The variant to use.",
-      "description_zh": "The variant to use.",
+      "description_zh": "要使用的变体。",
       "default": "'standard'",
       "value": "",
-      "type": "'filled'| 'outlined'| 'standard'| string",
+      "type": "filled| outlined| standard| string",
       "required": false
     }
   },
@@ -137,8 +137,9 @@
     {
       "name": "onClose",
       "description": "Callback fired when the component requests to be closed. When provided and no  prop is set, a close icon button is displayed that triggers the callback when clicked.Signature:function(event: React.SyntheticEvent) => voidevent The event source of the callback.",
-      "description_zh": "Callback fired when the component requests to be closed. When provided and no  prop is set, a close icon button is displayed that triggers the callback when clicked.Signature:function(event: React.SyntheticEvent) => voidevent The event source of the callback.",
-      "params": "action"
+      "description_zh": "当组件请求关闭时触发回调。如果提供且未设置道具，则会显示一个关闭图标按钮，单击该按钮时会触发回调。Signature：function（event： React.SyntheticEvent） => voidevent 回调的事件源。",
+      "params": "action",
+      "value": ""
     }
   ],
   "methods": [],

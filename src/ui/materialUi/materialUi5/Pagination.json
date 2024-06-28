@@ -1,0 +1,173 @@
+{
+  "name": "Pagination",
+  "props": {
+    "boundaryCount": {
+      "description": "Number of always visible pages at the beginning and end.",
+      "description_zh": "开头和结尾始终可见的页数。",
+      "default": "1",
+      "value": "",
+      "type": "integer",
+      "required": false
+    },
+    "classes": {
+      "description": "Override or extend the styles applied to the component.See CSS classes API below for more details.",
+      "description_zh": "覆盖或扩展应用于组件的样式。有关详细信息，请参阅下面的 CSS 类 API。",
+      "default": "-",
+      "value": "",
+      "type": "object",
+      "required": false
+    },
+    "color": {
+      "description": "The active color. It supports both default and custom theme colors, which can be added as shown in the palette customization guide.",
+      "description_zh": "活动颜色。它支持默认和自定义主题颜色，可以按照调色板自定义指南中所示进行添加。",
+      "default": "'standard'",
+      "value": "",
+      "type": "primary| secondary| standard| string",
+      "required": false
+    },
+    "count": {
+      "description": "The total number of pages.",
+      "description_zh": "总页数。",
+      "default": "1",
+      "value": "",
+      "type": "integer",
+      "required": false
+    },
+    "defaultPage": {
+      "description": "The page selected by default when the component is uncontrolled.",
+      "description_zh": "组件不受控制时默认选择的页面。",
+      "default": "1",
+      "value": "",
+      "type": "integer",
+      "required": false
+    },
+    "disabled": {
+      "description": "If true, the component is disabled.",
+      "description_zh": "如果为 true，则禁用该组件。",
+      "default": "false",
+      "value": "",
+      "type": "bool",
+      "required": false
+    },
+    "getItemAriaLabel": {
+      "description": "Accepts a function which returns a string value that provides a user-friendly name for the current page. This is important for screen reader users.For localization purposes, you can use the provided translations.Signature:function(type: string, page: number, selected: bool) => stringtype The link or button type to format ('page' | 'first' | 'last' | 'next' | 'previous' | 'start-ellipsis' | 'end-ellipsis'). Defaults to 'page'.page The page number to format.selected If true, the current page is selected.",
+      "description_zh": "接受一个函数，该函数返回一个字符串值，该值为当前页提供用户友好的名称。这对屏幕阅读器用户很重要。出于本地化目的，您可以使用提供的翻译。Signature：function（type： string， page： number， selected： bool） => stringtype 要格式化的链接或按钮类型 （'page' |“第一” |“最后” |“下一个” |“上一个” |“开始省略号” |'end-ellipsis'）。默认为 'page'.page 要 format.selected 的页码 如果为 true，则选择当前页面。",
+      "default": "-",
+      "value": "",
+      "type": "func",
+      "required": false
+    },
+    "hideNextButton": {
+      "description": "If true, hide the next-page button.",
+      "description_zh": "如果为 true，则隐藏下一页按钮。",
+      "default": "false",
+      "value": "",
+      "type": "bool",
+      "required": false
+    },
+    "hidePrevButton": {
+      "description": "If true, hide the previous-page button.",
+      "description_zh": "如果为 true，则隐藏上一页按钮。",
+      "default": "false",
+      "value": "",
+      "type": "bool",
+      "required": false
+    },
+    "onChange": {
+      "description": "Callback fired when the page is changed.Signature:function(event: React.ChangeEvent, page: number) => voidevent The event source of the callback.page The page selected.",
+      "description_zh": "更改页面时触发回调。Signature：function（event： React.ChangeEvent， page： number） => voidevent callback.page 的事件源 所选页面。",
+      "default": "-",
+      "value": "",
+      "type": "func",
+      "required": false
+    },
+    "page": {
+      "description": "The current page. Unlike TablePagination, which starts numbering from 0, this pagination starts from 1.",
+      "description_zh": "当前页面。与从 0 开始编号的 TablePagination 不同，此分页从 1 开始。",
+      "default": "-",
+      "value": "",
+      "type": "integer",
+      "required": false
+    },
+    "renderItem": {
+      "description": "Render the item.Signature:function(params: PaginationRenderItemParams) => ReactNodeparams The props to spread on a PaginationItem.",
+      "description_zh": "渲染项目。Signature：function（params： PaginationRenderItemParams） => ReactNodeparams 要在 PaginationItem 上传播的道具。",
+      "default": "(item) => <PaginationItem {...item} />",
+      "value": "",
+      "type": "func",
+      "required": false
+    },
+    "shape": {
+      "description": "The shape of the pagination items.",
+      "description_zh": "分页项的形状。",
+      "default": "'circular'",
+      "value": "",
+      "type": "circular| rounded",
+      "required": false
+    },
+    "showFirstButton": {
+      "description": "If true, show the first-page button.",
+      "description_zh": "如果为 true，则显示首页按钮。",
+      "default": "false",
+      "value": "",
+      "type": "bool",
+      "required": false
+    },
+    "showLastButton": {
+      "description": "If true, show the last-page button.",
+      "description_zh": "如果为 true，则显示最后一页按钮。",
+      "default": "false",
+      "value": "",
+      "type": "bool",
+      "required": false
+    },
+    "siblingCount": {
+      "description": "Number of always visible pages before and after the current page.",
+      "description_zh": "当前页面之前和之后始终可见的页面数。",
+      "default": "1",
+      "value": "",
+      "type": "integer",
+      "required": false
+    },
+    "size": {
+      "description": "The size of the component.",
+      "description_zh": "组件的大小。",
+      "default": "'medium'",
+      "value": "",
+      "type": "small| medium| large| string",
+      "required": false
+    },
+    "sx": {
+      "description": "The system prop that allows defining system overrides as well as additional CSS styles.See the `sx` page for more details.",
+      "description_zh": "允许定义系统覆盖以及其他 CSS 样式的系统属性。有关更多详细信息，请参阅“sx”页面。",
+      "default": "-",
+      "value": "",
+      "type": "Array<func| object| bool>| func| object",
+      "required": false
+    },
+    "variant": {
+      "description": "The variant to use.",
+      "description_zh": "要使用的变体。",
+      "default": "'text'",
+      "value": "",
+      "type": "outlined| text| string",
+      "required": false
+    }
+  },
+  "link": "https://mui.com/material-ui/api/pagination/",
+  "link_zh": "https://mui.com/material-ui/api/pagination/",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "onChange",
+      "description": "Callback fired when the page is changed.Signature:event The event source of the callback.page The page selected.",
+      "description_zh": "更改页面时触发回调。Signature：event callback.page 的事件源 所选页面。",
+      "params": "function(event: React.ChangeEvent, page: number) => void",
+      "value": ""
+    }
+  ],
+  "methods": [],
+  "slots": [],
+  "suggestions": [],
+  "filename": "Pagination"
+}

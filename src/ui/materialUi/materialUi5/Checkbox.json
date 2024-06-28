@@ -1,0 +1,165 @@
+{
+  "name": "Checkbox",
+  "props": {
+    "checked": {
+      "description": "If true, the component is checked.",
+      "description_zh": "如果为 true，则选中该组件。",
+      "default": "-",
+      "value": "",
+      "type": "bool",
+      "required": false
+    },
+    "checkedIcon": {
+      "description": "The icon to display when the component is checked.",
+      "description_zh": "选中组件时显示的图标。",
+      "default": "<CheckBoxIcon />",
+      "value": "",
+      "type": "node",
+      "required": false
+    },
+    "classes": {
+      "description": "Override or extend the styles applied to the component.See CSS classes API below for more details.",
+      "description_zh": "覆盖或扩展应用于组件的样式。有关详细信息，请参阅下面的 CSS 类 API。",
+      "default": "-",
+      "value": "",
+      "type": "object",
+      "required": false
+    },
+    "color": {
+      "description": "The color of the component. It supports both default and custom theme colors, which can be added as shown in the palette customization guide.",
+      "description_zh": "组件的颜色。它支持默认和自定义主题颜色，可以按照调色板自定义指南中所示进行添加。",
+      "default": "'primary'",
+      "value": "",
+      "type": "default| primary| secondary| error| info| success| warning| string",
+      "required": false
+    },
+    "defaultChecked": {
+      "description": "The default checked state. Use when the component is not controlled.",
+      "description_zh": "默认检查状态。在组件不受控制时使用。",
+      "default": "-",
+      "value": "",
+      "type": "bool",
+      "required": false
+    },
+    "disabled": {
+      "description": "If true, the component is disabled.",
+      "description_zh": "如果为 true，则禁用该组件。",
+      "default": "false",
+      "value": "",
+      "type": "bool",
+      "required": false
+    },
+    "disableRipple": {
+      "description": "If true, the ripple effect is disabled.",
+      "description_zh": "如果为 true，则禁用涟漪效应。",
+      "default": "false",
+      "value": "",
+      "type": "bool",
+      "required": false
+    },
+    "icon": {
+      "description": "The icon to display when the component is unchecked.",
+      "description_zh": "未选中组件时显示的图标。",
+      "default": "<CheckBoxOutlineBlankIcon />",
+      "value": "",
+      "type": "node",
+      "required": false
+    },
+    "id": {
+      "description": "The id of the input element.",
+      "description_zh": "输入元素的 ID。",
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "indeterminate": {
+      "description": "If true, the component appears indeterminate. This does not set the native input element to indeterminate due to inconsistent behavior across browsers. However, we set a data-indeterminate attribute on the input.",
+      "description_zh": "如果为 true，则组件显示为不确定。这不会将本机输入元素设置为不确定，因为浏览器之间的行为不一致。但是，我们在输入上设置了一个数据不确定属性。",
+      "default": "false",
+      "value": "",
+      "type": "bool",
+      "required": false
+    },
+    "indeterminateIcon": {
+      "description": "The icon to display when the component is indeterminate.",
+      "description_zh": "组件不确定时要显示的图标。",
+      "default": "<IndeterminateCheckBoxIcon />",
+      "value": "",
+      "type": "node",
+      "required": false
+    },
+    "inputProps": {
+      "description": "Attributes applied to the input element.",
+      "description_zh": "应用于输入元素的属性。",
+      "default": "-",
+      "value": "",
+      "type": "object",
+      "required": false
+    },
+    "inputRef": {
+      "description": "Pass a ref to the input element.",
+      "description_zh": "将 ref 传递给输入元素。",
+      "default": "-",
+      "value": "",
+      "type": "ref",
+      "required": false
+    },
+    "onChange": {
+      "description": "Callback fired when the state is changed.Signature:function(event: React.ChangeEvent) => voidevent The event source of the callback. You can pull out the new checked state by accessing event.target.checked (boolean).",
+      "description_zh": "更改状态时触发回调。Signature：function（event： React.ChangeEvent） => voidevent 回调的事件源。您可以通过访问 event.target.checked（布尔值）来提取新的检查状态。",
+      "default": "-",
+      "value": "",
+      "type": "func",
+      "required": false
+    },
+    "required": {
+      "description": "If true, the input element is required.",
+      "description_zh": "如果为 true，则输入元素是必需的。",
+      "default": "false",
+      "value": "",
+      "type": "bool",
+      "required": false
+    },
+    "size": {
+      "description": "The size of the component. small is equivalent to the dense checkbox styling.",
+      "description_zh": "组件的大小。Small 等同于密集的复选框样式。",
+      "default": "'medium'",
+      "value": "",
+      "type": "medium| small| string",
+      "required": false
+    },
+    "sx": {
+      "description": "The system prop that allows defining system overrides as well as additional CSS styles.See the `sx` page for more details.",
+      "description_zh": "允许定义系统覆盖以及其他 CSS 样式的系统属性。有关更多详细信息，请参阅“sx”页面。",
+      "default": "-",
+      "value": "",
+      "type": "Array<func| object| bool>| func| object",
+      "required": false
+    },
+    "value": {
+      "description": "The value of the component. The DOM API casts this to a string. The browser uses \"on\" as the default value.",
+      "description_zh": "组件的值。DOM API 将其转换为字符串。浏览器使用“on”作为默认值。",
+      "default": "-",
+      "value": "",
+      "type": "any",
+      "required": false
+    }
+  },
+  "link": "https://mui.com/material-ui/api/checkbox/",
+  "link_zh": "https://mui.com/material-ui/api/checkbox/",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "onChange",
+      "description": "Callback fired when the state is changed.Signature:event The event source of the callback. You can pull out the new checked state by accessing event.target.checked (boolean).",
+      "description_zh": "更改状态时触发回调。Signature：event 回调的事件源。您可以通过访问 event.target.checked（布尔值）来提取新的检查状态。",
+      "params": "function(event: React.ChangeEvent) => void",
+      "value": ""
+    }
+  ],
+  "methods": [],
+  "slots": [],
+  "suggestions": [],
+  "filename": "Checkbox"
+}

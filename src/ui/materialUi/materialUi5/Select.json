@@ -1,0 +1,227 @@
+{
+  "name": "Select",
+  "props": {
+    "autoWidth": {
+      "description": "If true, the width of the popover will automatically be set according to the items inside the menu, otherwise it will be at least the width of the select input.",
+      "description_zh": "如果为 true，则弹出窗口的宽度将根据菜单中的项目自动设置，否则至少为选择输入的宽度。",
+      "default": "false",
+      "value": "",
+      "type": "bool",
+      "required": false
+    },
+    "children": {
+      "description": "The option elements to populate the select with. Can be some MenuItem when native is false and option when native is true.⚠️The MenuItem elements must be direct descendants when native is false.",
+      "description_zh": "要填充选择的选项元素。当 native 为 false 时，可以是 some MenuItem，当 native 为 true 时，可以是 option。⚠️当 native 为 false 时，MenuItem 元素必须是直接后代。",
+      "default": "-",
+      "value": "",
+      "type": "node",
+      "required": false
+    },
+    "classes": {
+      "description": "Override or extend the styles applied to the component.See CSS classes API below for more details.",
+      "description_zh": "覆盖或扩展应用于组件的样式。有关详细信息，请参阅下面的 CSS 类 API。",
+      "default": "{}",
+      "value": "",
+      "type": "object",
+      "required": false
+    },
+    "defaultOpen": {
+      "description": "If true, the component is initially open. Use when the component open state is not controlled (i.e. the open prop is not defined). You can only use it when the native prop is false (default).",
+      "description_zh": "如果为 true，则组件最初处于打开状态。在组件打开状态不受控制（即未定义打开属性）时使用。只有当原生 prop 为 false（默认）时才能使用它。",
+      "default": "false",
+      "value": "",
+      "type": "bool",
+      "required": false
+    },
+    "defaultValue": {
+      "description": "The default value. Use when the component is not controlled.",
+      "description_zh": "默认值。在组件不受控制时使用。",
+      "default": "-",
+      "value": "",
+      "type": "any",
+      "required": false
+    },
+    "displayEmpty": {
+      "description": "If true, a value is displayed even if no items are selected.In order to display a meaningful value, a function can be passed to the renderValue prop which returns the value to be displayed when no items are selected.⚠️ When using this prop, make sure the label doesn't overlap with the empty displayed value. The label should either be hidden or forced to a shrunk state.",
+      "description_zh": "如果为 true，则即使未选择任何项目，也会显示一个值。为了显示有意义的值，可以将一个函数传递给 renderValue 属性，该属性返回未选择任何项目时要显示的值。 ⚠️ 使用此道具时，请确保标签不与空显示值重叠。标签应隐藏或强制为收缩状态。",
+      "default": "false",
+      "value": "",
+      "type": "bool",
+      "required": false
+    },
+    "IconComponent": {
+      "description": "The icon that displays the arrow.",
+      "description_zh": "显示箭头的图标。",
+      "default": "ArrowDropDownIcon",
+      "value": "",
+      "type": "elementType",
+      "required": false
+    },
+    "id": {
+      "description": "The id of the wrapper element or the select element when native.",
+      "description_zh": "本机包装元素或 select 元素的 ID。",
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "input": {
+      "description": "An Input element; does not have to be a material-ui specific Input.",
+      "description_zh": "一个 Input 元素;不必是特定于 material-ui 的输入。",
+      "default": "-",
+      "value": "",
+      "type": "element",
+      "required": false
+    },
+    "inputProps": {
+      "description": "Attributes applied to the input element. When native is true, the attributes are applied on the select element.",
+      "description_zh": "应用于输入元素的属性。当 native 为 true 时，属性将应用于 select 元素。",
+      "default": "-",
+      "value": "",
+      "type": "object",
+      "required": false
+    },
+    "label": {
+      "description": "See OutlinedInput#label",
+      "description_zh": "参见 OutlinedInput#label",
+      "default": "-",
+      "value": "",
+      "type": "node",
+      "required": false
+    },
+    "labelId": {
+      "description": "The ID of an element that acts as an additional label. The Select will be labelled by the additional label and the selected value.",
+      "description_zh": "充当附加标签的元素的 ID。“选择”将由附加标签和所选值标记。",
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    "MenuProps": {
+      "description": "Props applied to the Menu element.",
+      "description_zh": "应用于 Menu 元素的道具。",
+      "default": "-",
+      "value": "",
+      "type": "object",
+      "required": false
+    },
+    "multiple": {
+      "description": "If true, value must be an array and the menu will support multiple selections.",
+      "description_zh": "如果为 true，则 value 必须为数组，并且菜单将支持多个选择。",
+      "default": "false",
+      "value": "",
+      "type": "bool",
+      "required": false
+    },
+    "native": {
+      "description": "If true, the component uses a native select element.",
+      "description_zh": "如果为 true，则组件使用本机 select 元素。",
+      "default": "false",
+      "value": "",
+      "type": "bool",
+      "required": false
+    },
+    "onChange": {
+      "description": "Callback fired when a menu item is selected.Signature:function(event: SelectChangeEvent, child?: object) => voidevent The event source of the callback. You can pull out the new value by accessing event.target.value (any). Warning: This is a generic event, not a change event, unless the change event is caused by browser autofill.child The react element that was selected when native is false (default).",
+      "description_zh": "选择菜单项时触发回调。Signature：function（event： SelectChangeEvent， child？： object） => voidevent 回调的事件源。您可以通过访问 event.target.value （any） 来提取新值。警告：这是一个通用事件，而不是更改事件，除非更改事件是由浏览器引起的 autofill.child 当 native 为 false（默认）时选择的 react 元素。",
+      "default": "-",
+      "value": "",
+      "type": "func",
+      "required": false
+    },
+    "onClose": {
+      "description": "Callback fired when the component requests to be closed. Use it in either controlled (see the open prop), or uncontrolled mode (to detect when the Select collapses).Signature:function(event: object) => voidevent The event source of the callback.",
+      "description_zh": "当组件请求关闭时触发回调。在受控模式（参见打开的道具）或不受控制模式下使用它（以检测选择何时折叠）。Signature：function（event： object） => voidevent 回调的事件源。",
+      "default": "-",
+      "value": "",
+      "type": "func",
+      "required": false
+    },
+    "onOpen": {
+      "description": "Callback fired when the component requests to be opened. Use it in either controlled (see the open prop), or uncontrolled mode (to detect when the Select expands).Signature:function(event: object) => voidevent The event source of the callback.",
+      "description_zh": "当组件请求打开时触发回调。在受控模式（参见打开道具）或不受控制模式（以检测“选择”何时展开）下使用它。Signature：function（event： object） => voidevent 回调的事件源。",
+      "default": "-",
+      "value": "",
+      "type": "func",
+      "required": false
+    },
+    "open": {
+      "description": "If true, the component is shown. You can only use it when the native prop is false (default).",
+      "description_zh": "如果为 true，则显示组件。只有当原生 prop 为 false（默认）时才能使用它。",
+      "default": "-",
+      "value": "",
+      "type": "bool",
+      "required": false
+    },
+    "renderValue": {
+      "description": "Render the selected value. You can only use it when the native prop is false (default).Signature:function(value: any) => ReactNodevalue The value provided to the component.",
+      "description_zh": "呈现所选值。只有当原生 prop 为 false（默认）时才能使用它。Signature：function（value： any） => ReactNodevalue 提供给组件的值。",
+      "default": "-",
+      "value": "",
+      "type": "func",
+      "required": false
+    },
+    "SelectDisplayProps": {
+      "description": "Props applied to the clickable div element.",
+      "description_zh": "应用于可点击 div 元素的道具。",
+      "default": "-",
+      "value": "",
+      "type": "object",
+      "required": false
+    },
+    "sx": {
+      "description": "The system prop that allows defining system overrides as well as additional CSS styles.See the `sx` page for more details.",
+      "description_zh": "允许定义系统覆盖以及其他 CSS 样式的系统属性。有关更多详细信息，请参阅“sx”页面。",
+      "default": "-",
+      "value": "",
+      "type": "Array<func| object| bool>| func| object",
+      "required": false
+    },
+    "value": {
+      "description": "The input value. Providing an empty string will select no options. Set to an empty string '' if you don't want any of the available options to be selected.If the value is an object it must have reference equality with the option in order to be selected. If the value is not an object, the string representation must match with the string representation of the option in order to be selected.",
+      "description_zh": "输入值。提供空字符串将不选择任何选项。如果您不希望选择任何可用选项，请设置为空字符串 ''。如果该值是一个对象，则它必须与选项具有引用相等才能被选中。如果该值不是对象，则字符串表示形式必须与选项的字符串表示形式匹配才能被选中。",
+      "default": "-",
+      "value": "",
+      "type": "| any",
+      "required": false
+    },
+    "variant": {
+      "description": "The variant to use.",
+      "description_zh": "要使用的变体。",
+      "default": "'outlined'",
+      "value": "",
+      "type": "filled| outlined| standard",
+      "required": false
+    }
+  },
+  "link": "https://mui.com/material-ui/api/select/",
+  "link_zh": "https://mui.com/material-ui/api/select/",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "onChange",
+      "description": "Callback fired when a menu item is selected.Signature:event The event source of the callback. You can pull out the new value by accessing event.target.value (any). Warning: This is a generic event, not a change event, unless the change event is caused by browser autofill.child The react element that was selected when native is false (default).",
+      "description_zh": "选择菜单项时触发回调。Signature：event 回调的事件源。您可以通过访问 event.target.value （any） 来提取新值。警告：这是一个通用事件，而不是更改事件，除非更改事件是由浏览器引起的 autofill.child 当 native 为 false（默认）时选择的 react 元素。",
+      "params": "function(event: SelectChangeEvent, child?: object) => void",
+      "value": ""
+    },
+    {
+      "name": "onClose",
+      "description": "Callback fired when the component requests to be closed. Use it in either controlled (see the  prop), or uncontrolled mode (to detect when the Select collapses).Signature:function(event: object) => voidevent The event source of the callback.",
+      "description_zh": "当组件请求关闭时触发回调。在受控模式（参见道具）或不受控制模式下使用它（以检测选择何时折叠）。Signature：function（event： object） => voidevent 回调的事件源。",
+      "params": "open",
+      "value": ""
+    },
+    {
+      "name": "onOpen",
+      "description": "Callback fired when the component requests to be ed. Use it in either controlled (see the open prop), or uncontrolled mode (to detect when the Select expands).Signature:function(event: object) => voidevent The event source of the callback.",
+      "description_zh": "当组件请求编辑时触发回调。在受控模式（参见打开道具）或不受控制模式（以检测“选择”何时展开）下使用它。Signature：function（event： object） => voidevent 回调的事件源。",
+      "params": "open",
+      "value": ""
+    }
+  ],
+  "methods": [],
+  "slots": [],
+  "suggestions": [],
+  "filename": "Select"
+}

@@ -1,0 +1,141 @@
+{
+  "name": "Menu",
+  "props": {
+    "open": {
+      "description": "If true, the component is shown.",
+      "description_zh": "如果为 true，则显示组件。",
+      "default": "-",
+      "value": "",
+      "type": "bool",
+      "required": true
+    },
+    "anchorEl": {
+      "description": "An HTML element, or a function that returns one. It's used to set the position of the menu.",
+      "description_zh": "一个 HTML 元素，或返回一个元素的函数。它用于设置菜单的位置。",
+      "default": "-",
+      "value": "",
+      "type": "HTML element| func",
+      "required": false
+    },
+    "autoFocus": {
+      "description": "If true (Default) will focus the [role=\"menu\"] if no focusable child is found. Disabled children are not focusable. If you set this prop to false focus will be placed on the parent modal container. This has severe accessibility implications and should only be considered if you manage focus otherwise.",
+      "description_zh": "如果为 true（默认），则如果没有找到可聚焦的子项，则将聚焦 [role=“menu”]。残疾儿童注意力不集中。如果将此 prop 设置为 false，则焦点将放置在父模态容器上。这具有严重的可访问性影响，只有在以其他方式管理焦点时才应考虑。",
+      "default": "true",
+      "value": "",
+      "type": "bool",
+      "required": false
+    },
+    "children": {
+      "description": "Menu contents, normally MenuItems.",
+      "description_zh": "菜单内容，通常为 MenuItems。",
+      "default": "-",
+      "value": "",
+      "type": "node",
+      "required": false
+    },
+    "classes": {
+      "description": "Override or extend the styles applied to the component.See CSS classes API below for more details.",
+      "description_zh": "覆盖或扩展应用于组件的样式。有关详细信息，请参阅下面的 CSS 类 API。",
+      "default": "-",
+      "value": "",
+      "type": "object",
+      "required": false
+    },
+    "disableAutoFocusItem": {
+      "description": "When opening the menu will not focus the active item but the [role=\"menu\"] unless autoFocus is also set to false. Not using the default means not following WAI-ARIA authoring practices. Please be considerate about possible accessibility implications.",
+      "description_zh": "打开菜单时，除非自动对焦也设置为 false，否则不会聚焦活动项目，而是聚焦 [role=“menu”]。不使用默认值意味着不遵循 WAI-ARIA 创作做法。请考虑可能的可访问性影响。",
+      "default": "false",
+      "value": "",
+      "type": "bool",
+      "required": false
+    },
+    "MenuListProps": {
+      "description": "Props applied to the MenuList element.",
+      "description_zh": "应用于 MenuList 元素的道具。",
+      "default": "{}",
+      "value": "",
+      "type": "object",
+      "required": false
+    },
+    "onClose": {
+      "description": "Callback fired when the component requests to be closed.Signature:function(event: object, reason: string) => voidevent The event source of the callback.reason Can be: \"escapeKeyDown\", \"backdropClick\", \"tabKeyDown\".",
+      "description_zh": "当组件请求关闭时触发回调。Signature：function（event： object， reason： string） => voidevent callback.reason 的事件源可以是：“escapeKeyDown”、“backdropClick”、“tabKeyDown”。",
+      "default": "-",
+      "value": "",
+      "type": "func",
+      "required": false
+    },
+    "PopoverClasses": {
+      "description": "classes prop applied to the Popover element.",
+      "description_zh": "应用于 Popover 元素的类 prop。",
+      "default": "-",
+      "value": "",
+      "type": "object",
+      "required": false
+    },
+    "slotProps": {
+      "description": "The extra props for the slot components. You can override the existing props or add new ones.",
+      "description_zh": "插槽组件的额外道具。您可以覆盖现有道具或添加新道具。",
+      "default": "{}",
+      "value": "",
+      "type": "{ paper?: func| object, root?: func| object }",
+      "required": false
+    },
+    "slots": {
+      "description": "The components used for each slot inside.",
+      "description_zh": "内部每个插槽使用的组件。",
+      "default": "{}",
+      "value": "",
+      "type": "{ paper?: elementType, root?: elementType }",
+      "required": false
+    },
+    "sx": {
+      "description": "The system prop that allows defining system overrides as well as additional CSS styles.See the `sx` page for more details.",
+      "description_zh": "允许定义系统覆盖以及其他 CSS 样式的系统属性。有关更多详细信息，请参阅“sx”页面。",
+      "default": "-",
+      "value": "",
+      "type": "Array<func| object| bool>| func| object",
+      "required": false
+    },
+    "transitionDuration": {
+      "description": "The length of the transition in ms, or 'auto'",
+      "description_zh": "转换的长度（以毫秒为单位），或“自动”",
+      "default": "'auto'",
+      "value": "",
+      "type": "auto| number| { appear?: number, enter?: number, exit?: number }",
+      "required": false
+    },
+    "TransitionProps": {
+      "description": "Props applied to the transition element. By default, the element is based on this Transition component.",
+      "description_zh": "应用于过渡元素的道具。默认情况下，该元素基于此 Transition 组件。",
+      "default": "{}",
+      "value": "",
+      "type": "object",
+      "required": false
+    },
+    "variant": {
+      "description": "The variant to use. Use menu to prevent selected items from impacting the initial focus.",
+      "description_zh": "要使用的变体。使用菜单可防止所选项目影响初始焦点。",
+      "default": "'selectedMenu'",
+      "value": "",
+      "type": "menu| selectedMenu",
+      "required": false
+    }
+  },
+  "link": "https://mui.com/material-ui/api/menu/",
+  "link_zh": "https://mui.com/material-ui/api/menu/",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "onClose",
+      "description": "Callback fired when the component requests to be closed.Signature:event The event source of the callback.reason Can be: \"escapeKeyDown\", \"backdropClick\", \"tabKeyDown\".",
+      "description_zh": "当组件请求关闭时触发回调。Signature：event callback.reason 的事件源可以是：“escapeKeyDown”、“backdropClick”、“tabKeyDown”。",
+      "params": "function(event: object, reason: string) => void",
+      "value": ""
+    }
+  ],
+  "methods": [],
+  "slots": [],
+  "suggestions": [],
+  "filename": "Menu"
+}

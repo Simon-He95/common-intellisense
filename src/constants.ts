@@ -24,6 +24,7 @@ export const UINames = [
   'antd-mobile',
   'uview-plus',
   'bits-ui',
+  '@mui/material',
 ]
 
 export const nameMap: any = {
@@ -39,4 +40,5 @@ export const nameMap: any = {
   '@tarojs/components': 'taro',
   '@nuxt/uiPro': 'nuxtUiPro',
   'bits-ui': 'shadcnSvelte',
+  '@mui/material': 'materialUi',
 }
