@@ -23,6 +23,7 @@ import { antdMobile5, antdMobile5Components } from './antdMobile'
 import { uviewPlus3, uviewPlus3Components } from './uviewPlus'
 import { bitsUi0, bitsUi0Components, shadcnSvelte0, shadcnSvelte0Components } from './bitsUi'
 import { materialUi5, materialUi5Components } from './materialUi'
+import { shadcnUi0, shadcnUi0Components } from './shadcnUi'
 
 export default {
   elementUi2,
@@ -57,6 +58,7 @@ export default {
   bitsUi0,
   shadcnSvelte0,
   materialUi5,
+  shadcnUi0,
   elementUi2Components,
   antd4Components,
   antd5Components,
@@ -89,4 +91,5 @@ export default {
   bitsUi0Components,
   shadcnSvelte0Components,
   materialUi5Components,
+  shadcnUi0Components,
 }

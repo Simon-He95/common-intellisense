@@ -25,6 +25,7 @@ export const UINames = [
   'uview-plus',
   'bits-ui',
   '@mui/material',
+  'shadcn-ui',
 ]
 
 export const nameMap: any = {

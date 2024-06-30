@@ -4,9 +4,9 @@ const fsp = require('node:fs/promises')
 const fg = require('fast-glob')
 
 export async function run() {
-  const folder = 'src/ui/materialUi'
-  const lib = 'materialUi5'
-  const name = 'materialUi5'
+  const folder = 'src/ui/shadcnUi'
+  const lib = 'shadcn-Ui'
+  const name = 'shadcnUi0'
   const isHyphen = false /** 生成的模板中的使用是 true ? a-affix : AAfix */
   const isReact = false
   const url = path.resolve(root, `${folder}/${name}`)

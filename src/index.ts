@@ -92,7 +92,8 @@ export function activate(context: vscode.ExtensionContext) {
       return
     const [data, lib, _, prefix, dynamidLib, importWay] = params
     const name = data.name.split('.')[0]
-    const from = dynamidLib ? dynamidLib.replace('${name}', name.toLowerCase()) : lib
+    const fromName = data.from
+    const from = fromName || dynamidLib ? dynamidLib.replace('${name}', name.toLowerCase()) : lib
     const code = getActiveText()!
     const uiComponents = getImportUiComponents(code)
     let deps = data.suggestions?.length === 1

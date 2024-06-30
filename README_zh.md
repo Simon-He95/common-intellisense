@@ -33,6 +33,7 @@
 - shacn-svelte 0
 - bits-ui 0
 - material-ui 5
+- shadcn-ui 0
 
 ### [antdv demo](assets/antdv.gif)
 
