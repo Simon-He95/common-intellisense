@@ -121,7 +121,7 @@ function dfs(children: any, parent: any, position: vscode.Position) {
               start: loc.start,
               end: {
                 line: loc.start.line,
-                column: loc.start.column + child.name.length,
+                column: loc.start.column + child.tag.length,
               },
             }, position)
             return {
