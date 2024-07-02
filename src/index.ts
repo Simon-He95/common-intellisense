@@ -90,10 +90,10 @@ export function activate(context: vscode.ExtensionContext) {
   context.subscriptions.push(registerCommand('common-intellisense.import', (params, loc, _lineOffset) => {
     if (!params)
       return
-    const [data, lib, _, prefix, dynamidLib, importWay] = params
+    const [data, lib, _, prefix, dynamicLib, importWay] = params
     const name = data.name.split('.')[0]
     const fromName = data.from
-    const from = fromName || dynamidLib ? dynamidLib.replace('${name}', name.toLowerCase()) : lib
+    const from = fromName || dynamicLib ? dynamicLib.replace('${name}', name.toLowerCase()) : lib
     const code = getActiveText()!
     const uiComponents = getImportUiComponents(code)
     let deps = data.suggestions?.length === 1

@@ -4,7 +4,7 @@ const root = process.cwd()
 const fsp = require('node:fs/promises')
 
 export async function run() {
-  const folder = 'src/ui/uviewPlus'
+  const folder = 'src/ui'
   const isHyphen = false /** 生成的模板中的使用是 true ? a-affix : AAfix */
   const url = path.resolve(root, folder)
   const entry = await fg(['**/*.json'], { dot: true, cwd: url })
@@ -23,9 +23,17 @@ export async function run() {
         const type = value.type
         if (!type)
           continue
-        if (!/^\s*(['`"][^"`']*['`"]\s*\|)+\s*[`'"][^"`']*[`'"]/gm.test(type))
+        if(type.includes('('))
           continue
-        const newType = type.replace(/['`"\s]/g, '').split('|').filter(Boolean).join(' / ')
+        if(type.includes('<'))
+          continue
+        if(type.includes('{'))
+          continue
+          if(type.includes('['))
+            continue
+        if (!/^\s*(['`"][^"`']*['`"]\s*\|)+\s*[`'"][^"`']*[`'"]/gm.test(type) && !type.includes('\''))
+          continue
+        const newType = type.replace(/['`"]/g, '').split('|').filter(Boolean).join(' / ').replace(/\s+/g,' ')
         value.type = newType
         changed = true
       }
