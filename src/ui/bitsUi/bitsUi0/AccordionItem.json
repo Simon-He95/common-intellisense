@@ -1,13 +1,6 @@
 {
   "name": "Accordion.Item",
   "props": {
-    "value * Required": {
-      "value": "",
-      "default": "_",
-      "type": "string",
-      "description": "The value of the accordion item.",
-      "description_zh": "折叠面板项的值。"
-    },
     "disabled": {
       "value": "",
       "default": "false",
@@ -28,6 +21,14 @@
       "type": "HTMLDivElement",
       "description": "The underlying DOM element being rendered. You can bind to this to programatically interact with the element.",
       "description_zh": "正在呈现的基础 DOM 元素。您可以绑定到此元素以编程方式与元素进行交互。"
+    },
+    "value": {
+      "value": "",
+      "default": "_",
+      "type": "string",
+      "description": "The value of the accordion item.",
+      "description_zh": "折叠面板项的值。",
+      "required": true
     }
   },
   "description": "An accordion item.",
@@ -43,6 +44,9 @@
       "description_zh": "如果使用带有委托的 asChild 属性，则要应用于元素的构建器属性和操作。"
     }
   ],
-  "suggestions": ["Accordion.Trigger", "Accordion.Content"],
+  "suggestions": [
+    "Accordion.Trigger",
+    "Accordion.Content"
+  ],
   "filename": "AccordionItem"
 }
