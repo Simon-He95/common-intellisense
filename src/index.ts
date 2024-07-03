@@ -524,14 +524,14 @@ export function activate(context: vscode.ExtensionContext) {
       // word 修正
       if (lineText[range.end.character] === '.') {
         let index = range.end.character
-        while (!/[>\s\/]/.test(lineText[index])) {
+        while (!/[>\s\/]/.test(lineText[index]) && index < lineText.length) {
           word += lineText[index]
           index++
         }
       }
       else if (lineText[range.start.character - 1] === '.') {
         let index = range.start.character - 1
-        while (!/[<\s\/]/.test(lineText[index])) {
+        while (!/[<\s\/]/.test(lineText[index]) && index > 0) {
           word = lineText[index] + word
           index--
         }
