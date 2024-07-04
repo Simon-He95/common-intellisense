@@ -84,6 +84,14 @@
           "type": "object",
           "default": {},
           "description": "Alias for the UI framework. If the UI framework you are using is not in the list, you can add an alias here. like { \"xxx\": \"elementUi2\" }"
+        },
+        "common-intellisense.exclude": {
+          "type": "array",
+          "default": [
+            "**/dist/**",
+            "**/node_modules/**"
+          ],
+          "description": "The directory you want to be skipped"
         }
       }
     },
@@ -95,7 +103,7 @@
     ]
   },
   "scripts": {
-    "dev": "pnpm build --watch",
+    "dev": "tsup src/index.ts --external vscode --watch",
     "test": "vitest",
     "build": "tsup src/index.ts --external vscode --minify",
     "pack": "vsce package --no-dependencies",
@@ -108,6 +116,7 @@
   "devDependencies": {
     "@antfu/eslint-config": "^2.12.2",
     "@babel/types": "^7.23.6",
+    "@rollup/pluginutils": "^5.1.0",
     "@types/node": "^18.15.11",
     "@types/vscode": "^1.77.0",
     "@typescript-eslint/typescript-estree": "^6.0.0",

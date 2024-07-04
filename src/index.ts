@@ -4,6 +4,7 @@ import * as vscode from 'vscode'
 import { addEventListener, createCompletionItem, createPosition, createRange, createSelect, getActiveText, getActiveTextEditor, getActiveTextEditorLanguageId, getConfiguration, getCurrentFileUrl, getLineText, getLocale, getPosition, getSelection, message, openExternalUrl, registerCommand, registerCompletionItemProvider, setConfiguration, setCopyText, updateText } from '@vscode-use/utils'
 import { CreateWebview } from '@vscode-use/createwebview'
 import { parse } from '@vue/compiler-sfc'
+import { createFilter } from '@rollup/pluginutils'
 import { alias, detectSlots, findPkgUI, parser, registerCodeLensProviderFn } from './utils'
 import UI from './ui'
 import { UINames as UINamesMap, nameMap } from './constants'
@@ -18,7 +19,13 @@ let eventCallbacks: any = new Map()
 let completionsCallbacks: any = new Map()
 let currentPkgUiNames: null | string[] = null
 const isShowSlots = getConfiguration('common-intellisense.showSlots')
-
+const defaultExclude = getConfiguration('common-intellisense.exclude')
+const filterId = createFilter(defaultExclude)
+const filter = ['javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'vue', 'svelte']
+function isSkip() {
+  const id = getActiveTextEditorLanguageId()
+  return !id || !filter.includes(id)
+}
 // todo: 补充example
 export function activate(context: vscode.ExtensionContext) {
   extensionContext = context
@@ -26,9 +33,11 @@ export function activate(context: vscode.ExtensionContext) {
 
   context.subscriptions.push(registerCodeLensProviderFn())
 
-  const filter = ['javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'vue', 'svelte']
   context.subscriptions.push(addEventListener('activeText-change', (editor?: vscode.TextEditor) => {
     if (!editor)
+      return
+
+    if (isSkip())
       return
     // 找到当前活动的编辑器
     const visibleEditors = vscode.window.visibleTextEditors
@@ -169,7 +178,9 @@ export function activate(context: vscode.ExtensionContext) {
     }
   }))
 
-  findUI()
+  if (!isSkip())
+    findUI()
+
   // 监听pkg变化
   if (isShowSlots) {
     context.subscriptions.push(registerCommand('common-intellisense.slots', (child, name, offset = 0) => {
@@ -222,6 +233,8 @@ export function activate(context: vscode.ExtensionContext) {
     }))
 
     context.subscriptions.push(addEventListener('text-change', () => {
+      if (isSkip())
+        return
       const activeText = getActiveText()
       if (UiCompletions && activeText) {
         const uiDeps = getUiDeps(activeText)
@@ -236,6 +249,10 @@ export function activate(context: vscode.ExtensionContext) {
     const activeTextEditor = getActiveTextEditor()
     if (!activeTextEditor)
       return
+
+    if (isSkip())
+      return
+
     const preText = lineText.slice(0, activeTextEditor.selection.active.character)
     let completionsCallback: any = null
     p.active = getEffectWord(preText)
@@ -510,6 +527,14 @@ export function activate(context: vscode.ExtensionContext) {
       if (!editor)
         return
 
+      const currentFileUrl = getCurrentFileUrl()
+
+      if (!currentFileUrl)
+        return
+
+      if (filterId(currentFileUrl))
+        return
+
       const range = document.getWordRangeAtPosition(position)
       if (!range)
         return
@@ -645,9 +670,12 @@ export function findUI() {
     })
 
     if (selectedUIs && selectedUIs.length && !selectedUIs.includes('auto'))
-      UINames = [...selectedUIs]
-    else
+      UINames = [...selectedUIs.filter(item => uisName.includes(item))]
+
+    if (!UINames.length) {
+      setConfiguration('common-intellisense.ui', [])
       UINames = uisName
+    }
 
     currentPkgUiNames = uisName
     optionsComponents = UINames.map((option: string) => `${option}Components`).reduce((result: any, name: string) => {
