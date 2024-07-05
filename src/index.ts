@@ -669,13 +669,14 @@ export function findUI() {
       uisName.push(`${nameMap[name] ?? name}${_version}`)
     })
 
-    if (selectedUIs && selectedUIs.length && !selectedUIs.includes('auto'))
+    if (selectedUIs && selectedUIs.length && !selectedUIs.includes('auto')) {
       UINames = [...selectedUIs.filter(item => uisName.includes(item))]
-
-    if (!UINames.length) {
-      setConfiguration('common-intellisense.ui', [])
-      UINames = uisName
+      if (!UINames.length)
+        setConfiguration('common-intellisense.ui', [])
     }
+
+    if (!UINames.length)
+      UINames = uisName
 
     currentPkgUiNames = uisName
     optionsComponents = UINames.map((option: string) => `${option}Components`).reduce((result: any, name: string) => {
