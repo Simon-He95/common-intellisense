@@ -18,6 +18,8 @@ module.exports = antfu(
       'prefer-regex-literals': 'off',
       'no-cond-assign': 'off',
       'no-template-curly-in-string': 'off',
+      'no-undef': 'off',
+      'regexp/no-dupe-disjunctions': 'off',
     },
   },
 )

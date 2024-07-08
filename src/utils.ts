@@ -61,7 +61,7 @@ export function transformVue(code: string, position: vscode.Position) {
   if (_script && isInPosition(_script.loc, position)) {
     const content = _script.content!
     const refs: string[] = []
-    for (const match of content.matchAll(/(const|let|var)\s+([\w\$_0-9]+)\s*=\s*ref[^\()]*\(/g)) {
+    for (const match of content.matchAll(/(const|let|var)\s+([\w$]+)\s*=\s*ref[^()]*\(/g)) {
       if (match)
         refs.push(match[2])
     }

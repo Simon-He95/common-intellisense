@@ -379,12 +379,12 @@ export function activate(context: vscode.ExtensionContext) {
                 type: item.kind,
               }))
             })
-            return item.label.match(/^\w+={[^}]*}/)
+            return item.label.match(/^\w+=\{[^}]*\}/)
               ? undefined
               : createCompletionItem(isValue
                 ? ({
                     content: label,
-                    snippet: label.replace(/^\w+=\"([^"]+)\".*/, '$1'),
+                    snippet: label.replace(/^\w+="([^"]+)".*/, '$1'),
                     documentation: item.documentation,
                     detail: item.detail,
                     type: item.kind,
@@ -544,14 +544,14 @@ export function activate(context: vscode.ExtensionContext) {
       // word 修正
       if (lineText[range.end.character] === '.') {
         let index = range.end.character
-        while (!/[>\s\/]/.test(lineText[index]) && index < lineText.length) {
+        while (!/[>\s/]/.test(lineText[index]) && index < lineText.length) {
           word += lineText[index]
           index++
         }
       }
       else if (lineText[range.start.character - 1] === '.') {
         let index = range.start.character - 1
-        while (!/[<\s\/]/.test(lineText[index]) && index > 0) {
+        while (!/[<\s/]/.test(lineText[index]) && index > 0) {
           word = lineText[index] + word
           index--
         }
@@ -653,10 +653,10 @@ export function findUI() {
   function updateCompletions(uis: any) {
     const uisName: string[] = []
     uis.forEach(([uiName, version]: any) => {
-      let _version = version.match(/[^~]?([0-9]+)./)![1]
+      let _version = version.match(/[^~]?(\d+)./)![1]
       if (uiName in alias) {
         const v = alias[uiName]
-        const m = v.match(/([^1-9^]+)\^?([0-9])/)!
+        const m = v.match(/([^1-9^]+)\^?(\d)/)!
         uiName = m[1]
         _version = m[2]
       }
@@ -722,7 +722,7 @@ export function isSamePrefix(label: string, key: string) {
   return labelName === key
 }
 
-const IMPORT_REG = /import\s+([^\s]+)\s+from\s+['"]([^"']+.vue)['"]/g
+const IMPORT_REG = /import\s+(\S+)\s+from\s+['"]([^"']+.vue)['"]/g
 
 export function getImportDeps(text: string) {
   text = text.replace(/\/\*[\s\S]*?\*\/|\/\/.*/g, '')
@@ -731,14 +731,14 @@ export function getImportDeps(text: string) {
     if (!match)
       continue
     const from = match[2]
-    if (!/^[\.\/\@]/.test(from))
+    if (!/^[./@]/.test(from))
       continue
     deps[match[1]] = from
   }
   return deps
 }
 
-const UIIMPORT_REG = /import\s+{([^}]+)}\s+from\s+['"]([^"']+)['"]/g
+const UIIMPORT_REG = /import\s+\{([^}]+)\}\s+from\s+['"]([^"']+)['"]/g
 
 export function getUiDeps(text: string) {
   if (!text)
@@ -769,7 +769,7 @@ async function getTemplateParentElementName(url: string) {
     descriptor: { template, script, scriptSetup },
   } = parse(code)
 
-  if (script?.content && /^\s*props:\s*{/.test(script.content))
+  if (script?.content && /^\s*props:\s*\{/.test(script.content))
     return
   if (scriptSetup?.content && /defineProps\(/.test(scriptSetup.content))
     return
@@ -835,7 +835,7 @@ function getHoverAttribute(attributeList: any[], attr: string) {
   ).map(i => `- ${i.label}`).join('\n\n')
 }
 
-const IMPORT_UI_REG = /import\s+{([^\}]+)}\s+from\s+['"]([^"']+)['"]/g
+const IMPORT_UI_REG = /import\s+\{([^}]+)\}\s+from\s+['"]([^"']+)['"]/g
 
 function getImportUiComponents(text: string) {
   // 读取需要按需导入的ui库， 例如 antd ,拿出导入的components
