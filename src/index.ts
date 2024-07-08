@@ -183,7 +183,7 @@ export function activate(context: vscode.ExtensionContext) {
 
   // 监听pkg变化
   if (isShowSlots) {
-    context.subscriptions.push(registerCommand('common-intellisense.slots', (child, name, offset = 0) => {
+    context.subscriptions.push(registerCommand('common-intellisense.slots', (child, name) => {
       const activeText = getActiveText()
       if (!activeText)
         return
@@ -194,41 +194,36 @@ export function activate(context: vscode.ExtensionContext) {
       }
       if (!child.children)
         return
-      const lastChild = child.children[child.children.length - 1]
+      const lastChild = child.children[child.children.findLastIndex((c: any) => c.type !== 2)]
       let slotName = `#${name}`
       if (child.range)
         slotName = `v-slot:${name}`
 
       if (lastChild) {
-        let pos = lastChild.loc.end
-        if (lastChild.range) {
-          pos = getPosition(lastChild.range[1] + offset + 1)
-          const repeatColumn = pos.column - 1 < 0 ? 0 : pos.column - 1
-          const empty = ' '.repeat(repeatColumn)
+        const pos = lastChild.loc.end
+        const repeatColumn = Math.max(lastChild.loc.start.column - 1, 0)
+        const empty = ' '.repeat(repeatColumn)
+        const endColumn = Math.max(pos.column - 1, 0)
+        updateText((edit) => {
+          edit.insert(createPosition(pos.line - 1, endColumn), `\n${empty}<template ${slotName}></template>`)
+        })
+      }
+      else {
+        const empty = ' '.repeat(Math.max(child.loc.start.column - 1, 0))
+
+        if (child.isSelfClosing) {
           updateText((edit) => {
-            edit.insert(createPosition(pos.line, pos.column - 1 < 0 ? 0 : pos.column - 1), `  <template ${slotName}></template>\n${empty}`)
+            edit.replace(createRange([child.loc.end.line - 1, child.loc.end.column - 3], [child.loc.end.line - 1, child.loc.end.column - 1]), `>\n${empty}  <template ${slotName}></template>\n${empty}</${child.tag}>`)
           })
         }
         else {
-          const repeatColumn = pos.column - 1 < 0 ? 0 : pos.column - 1
-          const empty = ' '.repeat(repeatColumn)
+          const isNeedLineBlock = child.loc.start.line === child.loc.end.line
+          const index = child.loc.start.offset + child.loc.source.indexOf(`</${child.tag}`) - (isNeedLineBlock ? 0 : (child.loc.end.column - `</${child.tag}>`.length - 1))
+          const pos = getPosition(index)
           updateText((edit) => {
-            edit.insert(createPosition(pos.line - 1, pos.column - 1 < 0 ? 0 : pos.column - 1), `${empty}<template ${slotName}></template>\n${empty}`)
+            edit.insert(createPosition(pos), `${isNeedLineBlock ? '\n' : ''}${empty}  <template ${slotName}></template>\n${isNeedLineBlock ? empty : ''}`)
           })
         }
-      }
-      else {
-        let index: number
-        if (child.range)
-          index = child.openingElement.range[1] + offset
-        else
-          index = child.loc.start.offset + child.loc.source.indexOf('></') + 1
-
-        const pos = getPosition(index)
-        const empty = ' '.repeat(child.loc.start.column - 1)
-        updateText((edit) => {
-          edit.insert(createPosition(pos), `\n${empty}  <template ${slotName}></template>\n${empty}`)
-        })
       }
     }))
 

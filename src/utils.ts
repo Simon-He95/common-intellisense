@@ -592,7 +592,6 @@ export function registerCodeLensProviderFn() {
     provideCodeLenses() {
       const result: vscode.CodeLens[] = []
       const children = modules.children
-      const offset = modules.offset
       children.forEach((m: any) => {
         const { child, slots } = m
         const range = child.loc
@@ -620,14 +619,13 @@ export function registerCodeLensProviderFn() {
             }
           }
         }
-
         slots.filter((s: any) => !filters.includes(s.name)).forEach((s: any, i: number) => {
           const { name, description, description_zh } = s
           result.push(new vscode.CodeLens(createRange(range.start.line - 1, range.start.column, range.end.line - 1, range.end.column), {
             title: `${i === 0 ? 'Slots: ' : ''}${name}`,
             tooltip: isZh ? description_zh : description,
             command: 'common-intellisense.slots',
-            arguments: [child, name, offset],
+            arguments: [child, name],
           }))
         })
       })
