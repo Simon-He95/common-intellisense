@@ -68,6 +68,7 @@ Install the supported ui component library in your project and install the plug-
 - `cmd+shift+p` -> Select `Specify the UI library you need to prompt`
 
 ## configuration
+
 ```
 "common-intellisense.showSlots": {
           "type": "boolean",
@@ -80,6 +81,11 @@ Install the supported ui component library in your project and install the plug-
           "description": "If you need to integrate the supported ui library, the secondary encapsulated library, and the prompt to integrate a certain version of the original ui, you can use the alias { \"@xxx/element\": \"elementUi2\" }"
 }
 ```
+
+## How to contribute
+
+This repository is maintained by an individual and needs to be updated with some ui libraries frequently. If you are interested in contributing, you can submit a PR or provide some new ui libraries or some new features. You are welcome to submit [issue](https://github.com/Simon-He95/vscode-common-intellisense/issues/56)
+By referring to the files in other directories, you can easily add new ui libraries, such as new library names and corresponding version numbers. Do not manually fill in json by referring to the document. Please write a script to automatically generate it. Refer to `xx.browser.js` under script, execute the function on the browser side, generate `json`, then create a json file and copy it in. Finally, you can use `scripts/generateIndex` to configure the directory to directly generate the corresponding `index.ts` file, and then import it into `ui/index`. If it is a new ui library, you need to enter `src/constants.ts` to configure it ~
 
 ## :coffee:
 

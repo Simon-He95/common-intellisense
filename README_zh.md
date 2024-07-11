@@ -67,7 +67,8 @@
 
 - `cmd+shift+p` -> 选择 `Specify the UI library you need to prompt`
 
-## configuration
+## configuration 设置
+
 ```
 "common-intellisense.showSlots": {
           "type": "boolean",
@@ -80,6 +81,11 @@
           "description": "如果你需要将基于支持的 ui 库，二次封装的库，集成原本 ui 某一个版本的提示，可以使用别名 { \"@xxx/element\": \"elementUi2\" }"
 }
 ```
+
+## 如何参与贡献
+
+此仓库是个人维护, 需要经常同步一些 ui 库的更新,如果你有兴趣参与贡献,可以提交 PR 或者提供一些新的 ui 库,或者提供一些新的功能,欢迎提交 [issue](https://github.com/Simon-He95/vscode-common-intellisense/issues/56)
+参考其他目录下的文件, 你可以很容易的添加新的 ui 库, 比如新的的库名和对应版本号, 千万不要自己去手动对照文档填写 json, 请编写一个脚本去自动化生成, 参考 script 下的 `xx.browser.js`, 在浏览器端执行函数, 生成 `json`, 再创建 json 文件, 将其复制进来, 最后可以通过 `scripts/generateIndex`, 配置目录直接生成对应的 `index.ts` 文件, 再将其导入到 `ui/index`, 如果是新的 ui 库, 需要进入到 `src/constants.ts` 配置一下 ~
 
 ## :coffee:
 
