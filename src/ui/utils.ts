@@ -25,7 +25,7 @@ export function propsReducer(uiName: string, map: string[], prefix: string, icon
       const data = [
         'id',
         isVue ? 'class' : 'className',
-      ].map(item => createCompletionItem({ content: item, snippet: `${item}="\${1:  }"`, type: 5, params: [] }))
+      ].map(item => createCompletionItem({ content: item, snippet: `${item}="\${1:}"`, type: 5, params: [] }))
 
       if (isVue)
         data.push(createCompletionItem({ content: 'style', snippet: 'style="$1"', type: 5, params: [] }))
@@ -100,9 +100,9 @@ export function propsReducer(uiName: string, map: string[], prefix: string, icon
           content = `${key}=""`
 
           if (value.type.includes('/'))
-            snippet = `${key}="\${1|${value.type.split('/').map((i: string) => i.trim().replace(/['`]/g, '')).join(',')}|}"`
+            snippet = `${key}="\${1|${value.type.split('/').map((i: string) => i.replace(/['`\s]/g, '').replace(/,/g, '\\,')).join(',')}|}"`
           else
-            snippet = `${key}="\${1:  }"`
+            snippet = `${key}="\${1}"`
         }
         content += `  ${isZh ? (value.description_zh || value.description) : value.description}${value.default ? `  ${isZh ? '默认' : 'default'}：${value.default}` : ''}`
         data.push(createCompletionItem({
