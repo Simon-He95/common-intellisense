@@ -208,7 +208,7 @@ export function parserJSX(code: string, position: vscode.Position) {
     }
   }
   catch (error) {
-
+    console.error(error)
   }
 }
 
@@ -658,7 +658,7 @@ async function getTemplateAst(UiCompletions: any, uiDeps: any): Promise<[any, nu
   }
   return []
 }
-const originTag = ['div', 'span', 'ul', 'li', 'ol', 'p', 'main', 'header', 'footer', 'template']
+const originTag = ['div', 'span', 'ul', 'li', 'ol', 'p', 'main', 'header', 'footer', 'template', 'img', 'aside', 'body', 'a', 'video', 'table', 'th', 'tr', 'td', 'form', 'input', 'label', 'button', 'article', 'section']
 
 async function findUiTag(children: any, UiCompletions: any, result: any[] = [], cacheMap = new Set(), uiDeps: any) {
   for (const child of children) {

@@ -9,6 +9,7 @@ import { alias, detectSlots, findPkgUI, parser, registerCodeLensProviderFn } fro
 import UI from './ui'
 import { UINames as UINamesMap, nameMap } from './constants'
 import { toCamel } from './ui/utils'
+// import {createWebviewPanel} from './webview/webview'
 
 let UINames: any = []
 export let optionsComponents: any = null
@@ -29,6 +30,8 @@ function isSkip() {
 // todo: 补充example
 export function activate(context: vscode.ExtensionContext) {
   extensionContext = context
+  // todo: createWebviewPanel
+  // createWebviewPanel(context)
   const isZh = getLocale().includes('zh')
 
   context.subscriptions.push(registerCodeLensProviderFn())
@@ -464,7 +467,7 @@ export function activate(context: vscode.ExtensionContext) {
     return item
   }, ['"', '\'', '-', ' ', '@', '.', ':']))
 
-  const provider = new CreateWebview(context.extensionUri, {
+  const provider = new CreateWebview(context, {
     viewColumn: vscode.ViewColumn.Beside,
     scripts: ['main.js'],
   })
