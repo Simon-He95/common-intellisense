@@ -1,0 +1,91 @@
+{
+  "name": "TinyRadioGroup",
+  "props": {
+    "disabled": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to disable radio groups",
+      "description_zh": "是否禁用单选组"
+    },
+    "display-only": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether it is read-only",
+      "description_zh": "是否只读状态"
+    },
+    "fill": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "button form to select the background color when selected",
+      "description_zh": "按钮形式单选选中时的背景颜色"
+    },
+    "v-model": {
+      "default": "--",
+      "value": "",
+      "type": "string[] | number[]",
+      "description": "The radio group binding",
+      "description_zh": "单选组绑定值"
+    },
+    "options": {
+      "default": "--",
+      "value": "",
+      "type": "IRadioGroupOptions[]",
+      "description": "A list of configurable radio group settings",
+      "description_zh": "配置式单选组设置列表"
+    },
+    "size": {
+      "default": "--",
+      "value": "",
+      "type": "medium / small / mini",
+      "description": "Radio group size",
+      "description_zh": "单选组尺寸"
+    },
+    "text-color": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "The color of the text when the button form radio is activated",
+      "description_zh": "按钮形式单选激活时的文本颜色"
+    },
+    "type": {
+      "default": "'radio'",
+      "value": "",
+      "type": "radio / button",
+      "description": "The display form of a configurable radio group",
+      "description_zh": "配置式单选组的展示形式"
+    },
+    "vertical": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Displays radio groups vertically",
+      "description_zh": "垂直显示单选组"
+    }
+  },
+  "link": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/radio",
+  "link_zh": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/radio",
+  "typeDetail": {
+    "IRadioGroupOptions": "interface IRadioGroupOptions {\n  label: string // 选中时对应的值\n  text?: number // 描述文本\n  events?: {\n    click?: (e: Event) => void // 点击事件\n    change?: (e: Event) => void // change事件\n  }\n}"
+  },
+  "events": [
+    {
+      "name": "change",
+      "description": "An event that is triggered when the binding value changes",
+      "description_zh": "绑定值变化时触发的事件",
+      "params": "(value: number[] | string[]) => void",
+      "value": ""
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "default",
+      "description": "radio-group 的默认插槽",
+      "description_zh": "radio-group 的默认插槽"
+    }
+  ],
+  "filename": "RadioGroup"
+}

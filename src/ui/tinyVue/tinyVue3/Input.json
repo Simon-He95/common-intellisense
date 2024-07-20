@@ -1,0 +1,322 @@
+{
+  "name": "TinyInput",
+  "props": {
+    "autocomplete": {
+      "default": "'off'",
+      "value": "",
+      "type": "string",
+      "description": "Native autocomplete property",
+      "description_zh": "原生 autocomplete 属性"
+    },
+    "autofocus": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Native attributes, when the page loads, the focus is automatically obtained",
+      "description_zh": "原生属性，页面加载时，自动获取焦点"
+    },
+    "autosize": {
+      "default": "false",
+      "value": "",
+      "type": "boolean | { minRows: number, maxRows: number }",
+      "description": "Adaptive content height, only valid for type=\"textarea\". Objects can be passed in, e.g., { minRows: 2, maxRows: 6 }",
+      "description_zh": "自适应内容高度，只对 type=\"textarea\" 有效。可传入对象，如，{ minRows: 2, maxRows: 6 }"
+    },
+    "clearable": {
+      "default": "--",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to display a clear button, which does not apply to type=\"textarea\"",
+      "description_zh": "是否显示清除按钮，该属性不适用于 type=\"textarea\""
+    },
+    "cols": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "Native property, which sets the width, is valid when type = \"textarea\".",
+      "description_zh": "原生属性，设置宽度，在 type =\"textarea\" 时有效"
+    },
+    "counter": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether or not to display the word count is only valid if type = \"text\" or type = \"textarea\".",
+      "description_zh": "是否显示字数统计，只在 type = \"text\" 或 type = \"textarea\" 时有效"
+    },
+    "disabled": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to disable or not",
+      "description_zh": "是否禁用"
+    },
+    "display-only": {
+      "default": "--",
+      "value": "",
+      "type": "boolean",
+      "description": "Set the text read-only state",
+      "description_zh": "设置文本只读态"
+    },
+    "display-only-content": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "When the text content area is set to read-only, if it is not used, the value of modelVale will be used as the read-only text",
+      "description_zh": "设置只读态时的文本内容区，如果没有则会使用 modelVale 的值作为只读文本"
+    },
+    "form": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "Native attributes",
+      "description_zh": "原生属性"
+    },
+    "hover-expand": {
+      "default": "--",
+      "value": "",
+      "type": "boolean",
+      "description": "Setting the text field to be expanded/collapsed by mouse hover, only works for 'type=textarea', preferably with autosize",
+      "description_zh": "设置文本域鼠标悬浮展开/收起，只对 `type=textarea` 有效，最好搭配 autosize 一起使用"
+    },
+    "label": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "等价于原生 input aria-label 属性",
+      "description_zh": "等价于原生 input aria-label 属性"
+    },
+    "mask": {
+      "default": "--",
+      "value": "",
+      "type": "boolean",
+      "description": "Mask function is enabled, and only takes effect in the disabled and display-only states",
+      "description_zh": "启用掩码功能，只在 disabled 和 display-only 状态下生效"
+    },
+    ":max": {
+      "default": "--",
+      "value": "",
+      "type": "number",
+      "description": "Native attributes, set the maximum value",
+      "description_zh": "原生属性，设置最大值"
+    },
+    ":maxlength": {
+      "default": "--",
+      "value": "",
+      "type": "number",
+      "description": "Native property, maximum input length",
+      "description_zh": "原生属性，最大输入长度"
+    },
+    ":memory-space": {
+      "default": "5",
+      "value": "",
+      "type": "number",
+      "description": "Set the addMemory method to the maximum number of entries that can be saved",
+      "description_zh": "设置 addMemory 方法中，最大能保存条目的数量"
+    },
+    ":min": {
+      "default": "--",
+      "value": "",
+      "type": "number",
+      "description": "Native attributes, set the minimum value",
+      "description_zh": "原生属性，设置最小值"
+    },
+    "v-model": {
+      "default": "--",
+      "value": "",
+      "type": "string | number",
+      "description": "Sets the binding value for the text",
+      "description_zh": "设置文本的绑定值"
+    },
+    "name": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "原生 input name 属性",
+      "description_zh": "原生 input name 属性"
+    },
+    "placeholder": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "Input box placeholder text",
+      "description_zh": "输入框占位文本"
+    },
+    "prefix-icon": {
+      "default": "--",
+      "value": "",
+      "type": "Component",
+      "description": "Input box header icon",
+      "description_zh": "输入框头部图标"
+    },
+    "readonly": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Native attributes, whether they are read-only",
+      "description_zh": "原生属性，是否只读"
+    },
+    "resize": {
+      "default": "--",
+      "value": "",
+      "type": "both / horizontal / vertical / none",
+      "description": "Controls whether it can be scaled by the user",
+      "description_zh": "控制是否能被用户缩放"
+    },
+    ":rows": {
+      "default": "2",
+      "value": "",
+      "type": "number",
+      "description": "Enter the number of lines in the box, which is valid only for type=\"textarea\".",
+      "description_zh": "输入框行数，只对 type=\"textarea\" 有效"
+    },
+    "show-password": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to display the switch password icon",
+      "description_zh": "是否显示切换密码图标"
+    },
+    "show-word-limit": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether or not to display the input word count is only valid when type = \"text\" or type = \"textarea\".",
+      "description_zh": "是否显示输入字数统计，只在 type = \"text\" 或 type = \"textarea\" 时有效"
+    },
+    "size": {
+      "default": "--",
+      "value": "",
+      "type": "medium / small / mini",
+      "description": "Enter the size of the box, which is only valid when type!=\"textarea\".",
+      "description_zh": "输入框尺寸，只在 type!=\"textarea\" 时有效"
+    },
+    ":step": {
+      "default": "--",
+      "value": "",
+      "type": "number",
+      "description": "Native property, which sets the legal numerical interval for the input field",
+      "description_zh": "原生属性，设置输入字段的合法数字间隔"
+    },
+    "suffix-icon": {
+      "default": "--",
+      "value": "",
+      "type": "Component",
+      "description": "Input box end icon",
+      "description_zh": "输入框尾部图标"
+    },
+    "tabindex": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "Native property, the tabindex of the input box",
+      "description_zh": "原生属性，输入框的 tabindex"
+    },
+    "type": {
+      "default": "'text'",
+      "value": "",
+      "type": "text / textarea / password / InputHTMLAttributes.type",
+      "description": "Set the type property of the input box, which defaults to \"text\", and optionally values \"text\", \"textarea\", and the type values of other native inputs",
+      "description_zh": "设置 input 框的 type 属性，默认为 \"text\",可选值 \"text\"，\"textarea\" 和其他 原生 input 的 type 值"
+    },
+    "validate-event": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the validation of the form is triggered when input",
+      "description_zh": "输入时是否触发表单的校验"
+    }
+  },
+  "link": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/input",
+  "link_zh": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/input",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "blur",
+      "description": "Triggers when Input loses focus",
+      "description_zh": "在 Input 失去焦点时触发",
+      "params": "(event: FocusEvent) => void",
+      "value": ""
+    },
+    {
+      "name": "change",
+      "description": "Triggers when the Input value changes",
+      "description_zh": "在 Input 值改变时触发",
+      "params": "(value: string | number) => void",
+      "value": ""
+    },
+    {
+      "name": "clear",
+      "description": "Triggers when the Clear button generated by the clearable property is clicked",
+      "description_zh": "在点击由 clearable 属性生成的清空按钮时触发",
+      "params": "() => void",
+      "value": ""
+    },
+    {
+      "name": "focus",
+      "description": "Triggers when Input gets focus",
+      "description_zh": "在 Input 获得焦点时触发",
+      "params": "(event: FocusEvent) => void",
+      "value": ""
+    },
+    {
+      "name": "input",
+      "description": "An event is triggered when a value is entered",
+      "description_zh": "输入值时触发事件",
+      "params": "(event: InputEvent) => void",
+      "value": ""
+    }
+  ],
+  "methods": [
+    {
+      "name": "addMemory",
+      "description": "How to memorize historical inputs",
+      "params": "(value: string) => void",
+      "description_zh": "历史输入内容的记忆方法",
+      "value": ""
+    },
+    {
+      "name": "blur",
+      "description": "Makes the input out of focus",
+      "params": "() => void",
+      "description_zh": "使 input 失去焦点",
+      "value": ""
+    },
+    {
+      "name": "focus",
+      "description": "Make input get focus",
+      "params": "() => void",
+      "description_zh": "使 input 获取焦点",
+      "value": ""
+    },
+    {
+      "name": "select",
+      "description": "Select the text in input",
+      "params": "() => void",
+      "description_zh": "选中 input 中的文字",
+      "value": ""
+    }
+  ],
+  "slots": [
+    {
+      "name": "append",
+      "description": "The content after the input box is only valid for type=\"text\".",
+      "description_zh": "输入框后置内容，只对 type=\"text\" 有效"
+    },
+    {
+      "name": "prefix",
+      "description": "The content of the input box header is only valid for type=\"text\".",
+      "description_zh": "输入框头部内容，只对 type=\"text\" 有效"
+    },
+    {
+      "name": "prepend",
+      "description": "The input box is preceded by the content, which is only valid for type=\"text\".",
+      "description_zh": "输入框前置内容，只对 type=\"text\" 有效"
+    },
+    {
+      "name": "suffix",
+      "description": "The content at the end of the input box is only valid for type=\"text\".",
+      "description_zh": "输入框尾部内容，只对 type=\"text\" 有效"
+    }
+  ],
+  "filename": "Input"
+}

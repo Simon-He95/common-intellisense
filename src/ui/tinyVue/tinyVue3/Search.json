@@ -1,0 +1,129 @@
+{
+  "name": "TinySearch",
+  "props": {
+    "clearable": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to display the Clear icon button",
+      "description_zh": "是否显示清空图标按钮"
+    },
+    "is-enter-search": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "是否在按下键盘 Enter 键时触发 search 事件",
+      "description_zh": "是否在按下键盘 Enter 键时触发 search 事件"
+    },
+    ":maxlength": {
+      "default": "--",
+      "value": "",
+      "type": "number",
+      "description": "The native property of the input box, limiting the maximum number of input characters [new in 3.14.0]",
+      "description_zh": "input 框的原生属性，限制最大输入字符数【3.14.0新增】"
+    },
+    "mini": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether it is mini mode or not, when configured to true, it will be displayed as a round button with an icon by default, which will be expanded after clicking",
+      "description_zh": "是否为迷你模式，配置为 true 时，默认显示为一个带图标的圆形按钮，点击后展开"
+    },
+    "placeholder": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "Search for the prompt placeholder text in the input box",
+      "description_zh": "搜索输入框内的提示占位文本"
+    },
+    "search-types": {
+      "default": "[]",
+      "value": "",
+      "type": "ITypeValue[]",
+      "description": "A list of options for the search type",
+      "description_zh": "搜索类型的选项列表"
+    },
+    "transparent": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether it is transparent mode, which is generally used in scenes with backgrounds",
+      "description_zh": "是否为透明模式，此模式一般用在带有背景的场景"
+    },
+    "type-value": {
+      "default": "--",
+      "value": "",
+      "type": "ITypeValue",
+      "description": "The default value for the search type. The default is the first item of the search type [new in 3.11.0]",
+      "description_zh": "搜索类型的默认值。默认为搜索类型的第一项【3.11.0新增】"
+    },
+    "v-model": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "Bind a search value",
+      "description_zh": "绑定搜索值"
+    }
+  },
+  "link": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/search",
+  "link_zh": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/search",
+  "typeDetail": {
+    "ITypeValue": "interface ITypeValue {\n  text: string\n  value: number\n}"
+  },
+  "events": [
+    {
+      "name": "change",
+      "description": "Enter a callback function that is triggered when it completes; value is the search type, and input is the current input value",
+      "description_zh": "输入完成时触发的回调函数； value 为搜索类型，input 为当前输入值",
+      "params": "(value: ITypeValue, input: string) => void",
+      "value": ""
+    },
+    {
+      "name": "clear",
+      "description": "The callback function triggered by the clear value",
+      "description_zh": "清空值触发的回调函数",
+      "params": "() => void",
+      "value": ""
+    },
+    {
+      "name": "input",
+      "description": "Enter a callback function that is triggered in real time; input is the current input value, value is the search type [new in 3.9.1]",
+      "description_zh": "输入实时触发的回调函数； input 为当前输入值，value 为搜索类型【3.9.1新增】",
+      "params": "(input: string, value: ITypeValue) => void",
+      "value": ""
+    },
+    {
+      "name": "search",
+      "description": "In the expansion mode, the callback function triggered when you click the search button; value is the search type, and input is the current input value",
+      "description_zh": "展开模式下，点击搜索按钮时触发的回调函数； value 为搜索类型，input 为当前输入值",
+      "params": "(value: ITypeValue, input: string) => void",
+      "value": ""
+    },
+    {
+      "name": "select",
+      "description": "a callback function that is triggered when the type is switched; value is the search type",
+      "description_zh": "切换类型时触发的回调函数； value 为搜索类型",
+      "params": "(value: ITypeValue) => void",
+      "value": ""
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "poplist",
+      "description": "Search for a pop-up list of slots",
+      "description_zh": "搜索的弹出列表插槽"
+    },
+    {
+      "name": "prefix",
+      "description": "Left slot",
+      "description_zh": "左侧插槽"
+    },
+    {
+      "name": "text",
+      "description": "Default search type slot",
+      "description_zh": "默认搜索类型插槽"
+    }
+  ],
+  "filename": "Search"
+}

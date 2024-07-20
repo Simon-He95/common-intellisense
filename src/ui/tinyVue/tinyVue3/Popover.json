@@ -1,0 +1,174 @@
+{
+  "name": "TinyPopover",
+  "props": {
+    "append-to-body": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to add it to the body",
+      "description_zh": "是否添加到body上"
+    },
+    ":arrow-offset": {
+      "default": "0",
+      "value": "",
+      "type": "number",
+      "description": "The position of the arrow offset of the pop-up layer",
+      "description_zh": "弹出层的箭头偏移位置"
+    },
+    ":close-delay": {
+      "default": "200",
+      "value": "",
+      "type": "number",
+      "description": "The hidden delay in milliseconds when the trigger mode is Hover",
+      "description_zh": "触发方式为 hover 时的隐藏延迟，单位为毫秒"
+    },
+    "content": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "The contents of the pop-up layer",
+      "description_zh": "弹出层的内容"
+    },
+    "disabled": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to disable or not",
+      "description_zh": "是否禁用"
+    },
+    "height": {
+      "default": "'auto'",
+      "value": "",
+      "type": "auto / number",
+      "description": "The height of the pop-up layer",
+      "description_zh": "弹出层高度"
+    },
+    ":offset": {
+      "default": "0",
+      "value": "",
+      "type": "number",
+      "description": "The offset of the pop-up layer",
+      "description_zh": "弹出层的偏移量"
+    },
+    ":open-delay": {
+      "default": "0",
+      "value": "",
+      "type": "number",
+      "description": "The display delay in milliseconds when the trigger mode is Hover",
+      "description_zh": "触发方式为 hover 时的显示延迟，单位为毫秒"
+    },
+    "placement": {
+      "default": "'bottom'",
+      "value": "",
+      "type": "IPopperPlacement",
+      "description": "The location where the pop-up layer appears",
+      "description_zh": "弹出层出现的位置"
+    },
+    "popper-class": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "Add a class name to the pop-up layer",
+      "description_zh": "为弹出层添加类名"
+    },
+    ":popper-options": {
+      "default": "{}",
+      "value": "",
+      "type": "object",
+      "description": "Pop-up layer parameters",
+      "description_zh": "弹出层参数"
+    },
+    "title": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "The title of the pop-up layer",
+      "description_zh": "弹出层的标题"
+    },
+    "transition": {
+      "default": "'fade-in-linear'",
+      "value": "",
+      "type": "string",
+      "description": "Define the gradient animation",
+      "description_zh": "定义渐变动画"
+    },
+    "trigger": {
+      "default": "'click'",
+      "value": "",
+      "type": "click / focus / hover / manual",
+      "description": "Trigger mode",
+      "description_zh": "触发方式"
+    },
+    "v-model / modelValue": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the status is visible or not, only valid if trigger=\"manual\".",
+      "description_zh": "状态是否可见，仅在  trigger=\"manual\"  时有效"
+    },
+    "visible-arrow": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to display an arrow for the pop-up layer",
+      "description_zh": "是否显示弹出层的箭头"
+    },
+    "width": {
+      "default": "'auto'",
+      "value": "",
+      "type": "auto / number",
+      "description": "The width of the pop-up layer",
+      "description_zh": "弹出层宽度"
+    }
+  },
+  "link": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/popover",
+  "link_zh": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/popover",
+  "typeDetail": {
+    "IPopperOption": "interface IPopperOption {\n  bubbling: boolean // 是否监听元素所有上级有滚动元素的scroll事件，监听到则更新popper的位置。用于解决某些弹出层位置在页面滚动时，位置不正确的场景，默认false\n  followReferenceHide: boolean // 当触发源隐藏时，自动隐藏弹出层，默认true\n  removeOnDestroy: boolean // 弹出层消失后，是否移除弹出层的DOM元素，布尔false\n  updateHiddenPopperOnScroll: boolean  // 滚动过程中是否更新隐藏的弹出层位置\n  boundariesElement: 'viewport' | 'body' | HTMLElement // 滚动过程中,弹出层的碰撞边界。 默认值为： 'viewport'\n}",
+    "IPopperPlacement": "type IPopperPlacement = 'top' | 'top-start' | 'top-end' | 'bottom' | 'bottom-start' | 'bottom-end' | 'left' | 'left-start' | 'left-end' | 'right' | 'right-start' | 'right-end'"
+  },
+  "events": [
+    {
+      "name": "after-enter",
+      "description": "It is triggered when the incoming animation finishes playing",
+      "description_zh": "进入的动画播放完毕后触发",
+      "params": "()=>void",
+      "value": ""
+    },
+    {
+      "name": "after-leave",
+      "description": "Triggered when the left animation finishes playing",
+      "description_zh": "离开的动画播放完毕后触发",
+      "params": "()=>void",
+      "value": ""
+    },
+    {
+      "name": "hide",
+      "description": "Triggered when hidden",
+      "description_zh": "隐藏时触发",
+      "params": "()=>void",
+      "value": ""
+    },
+    {
+      "name": "show",
+      "description": "Triggered when displayed",
+      "description_zh": "显示时触发",
+      "params": "()=>void",
+      "value": ""
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "default",
+      "description": "Pop up the Layer Element slot",
+      "description_zh": "弹出层元素插槽"
+    },
+    {
+      "name": "reference",
+      "description": "Triggers the source element slot, which is a required slot.",
+      "description_zh": "触发源元素插槽，该插槽是必传插槽。"
+    }
+  ],
+  "filename": "Popover"
+}

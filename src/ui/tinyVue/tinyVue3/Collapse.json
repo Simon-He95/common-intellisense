@@ -1,0 +1,62 @@
+{
+  "name": "TinyCollapse",
+  "props": {
+    "accordion": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Accordion mode or not",
+      "description_zh": "是否手风琴模式"
+    },
+    "before-close": {
+      "default": "--",
+      "value": "",
+      "type": "(item: Component, activeNames: string | number | Array) => boolean",
+      "description": "Prevents the collapse panel from switching",
+      "description_zh": "阻止折叠面板切换"
+    },
+    "v-model": {
+      "default": "--",
+      "value": "",
+      "type": "string | number | Array",
+      "description": "The currently active panel. In accordion mode, the binding value type needs to be string | number, otherwise Array",
+      "description_zh": "当前激活的面板。如果是手风琴模式，绑定值类型需要为 string | number，否则为 Array"
+    }
+  },
+  "link": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/collapse",
+  "link_zh": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/collapse",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "change",
+      "description": "Triggers when the current active panel changes. In accordion mode, the activeNames parameter is of type string | number, otherwise Array",
+      "description_zh": "当前激活面板改变时触发。如果是手风琴模式，参数 activeNames 类型为 string | number，否则为 Array",
+      "params": "(activeNames: string | number | Array) => void",
+      "value": ""
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "default",
+      "description": "Default slot",
+      "description_zh": "默认插槽"
+    },
+    {
+      "name": "icon",
+      "description": "Expand the collapse icon icon",
+      "description_zh": "展开折叠 icon 图标"
+    },
+    {
+      "name": "title",
+      "description": "title",
+      "description_zh": "标题"
+    },
+    {
+      "name": "title-right",
+      "description": "Customize the content to the right of the panel title",
+      "description_zh": "自定义面板标题右侧内容"
+    }
+  ],
+  "filename": "Collapse"
+}

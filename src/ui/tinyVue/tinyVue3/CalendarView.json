@@ -1,0 +1,174 @@
+{
+  "name": "TinyCalendarView",
+  "props": {
+    "day-times": {
+      "default": "--",
+      "value": "",
+      "type": "Array",
+      "description": "Configure the time range displayed in the timeline mode, which is set to [8,18] by default and can be configured with [0,23].",
+      "description_zh": "配置时间线模式下所展示的时间范围，默认为[8,18]，可配范围[0,23]。"
+    },
+    "disabled": {
+      "default": "--",
+      "value": "",
+      "type": "() => void",
+      "description": "Date disabled",
+      "description_zh": "日期禁用"
+    },
+    "events": {
+      "default": "--",
+      "value": "",
+      "type": "Array",
+      "description": "Schedule Incident",
+      "description_zh": "日程事件"
+    },
+    "height": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "Calendar height",
+      "description_zh": "日历高度"
+    },
+    "mark-color": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "The color of the dot marker",
+      "description_zh": "点标记的颜色"
+    },
+    "mode": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "Display mode, the optional values are timeline-timeline mode, schedule-schedule mode, month-month mode, and the default is month mode.",
+      "description_zh": "显示模式，可选值有 timeline-时间线模式、schedule-日程模式、month-月模式，默认为月模式。"
+    },
+    "modes": {
+      "default": "--",
+      "value": "",
+      "type": "Array",
+      "description": "Pattern groups, displaying any combination of modes",
+      "description_zh": "模式组，显示模式任意组合"
+    },
+    "month": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "The calendar currently displays the month",
+      "description_zh": "日历当前显示月份"
+    },
+    "multi-select": {
+      "default": "--",
+      "value": "",
+      "type": "boolean",
+      "description": "Multiple dates",
+      "description_zh": "日期多选"
+    },
+    "set-day-bg-color": {
+      "default": "--",
+      "value": "",
+      "type": "() => void",
+      "description": "Set the date background color",
+      "description_zh": "设置日期背景色"
+    },
+    "show-mark": {
+      "default": "--",
+      "value": "",
+      "type": "() => void",
+      "description": "Displays point markers",
+      "description_zh": "显示点标记"
+    },
+    "show-new-schedule": {
+      "default": "--",
+      "value": "",
+      "type": "() => void",
+      "description": "The Add Event button is displayed",
+      "description_zh": "显示新增日程按钮"
+    },
+    ":year": {
+      "default": "--",
+      "value": "",
+      "type": "number",
+      "description": "The calendar currently displays the year",
+      "description_zh": "日历当前显示年份"
+    }
+  },
+  "link": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/calendar-view",
+  "link_zh": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/calendar-view",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "month-change",
+      "description": "",
+      "description_zh": "",
+      "params": "月改变事件",
+      "value": ""
+    },
+    {
+      "name": "new-schedule",
+      "description": "",
+      "description_zh": "",
+      "params": "新增日程按钮点击事件",
+      "value": ""
+    },
+    {
+      "name": "next-week-click",
+      "description": "",
+      "description_zh": "",
+      "params": "下一周按钮点击事件",
+      "value": ""
+    },
+    {
+      "name": "prev-week-click",
+      "description": "",
+      "description_zh": "",
+      "params": "上一周按钮点击事件",
+      "value": ""
+    },
+    {
+      "name": "selected-date-change",
+      "description": "",
+      "description_zh": "",
+      "params": "选中日期改变事件",
+      "value": ""
+    },
+    {
+      "name": "week-change",
+      "description": "",
+      "description_zh": "",
+      "params": "周改变事件",
+      "value": ""
+    },
+    {
+      "name": "year-change",
+      "description": "",
+      "description_zh": "",
+      "params": "年改变事件",
+      "value": ""
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "header",
+      "description": "Head slot",
+      "description_zh": "头部插槽"
+    },
+    {
+      "name": "timeline",
+      "description": "Timeline slots, there are timeline1-timeline7 7 slots",
+      "description_zh": "时间线插槽，有timeline1-timeline7 7个插槽"
+    },
+    {
+      "name": "tool",
+      "description": "Toolbar slots",
+      "description_zh": "工具栏插槽"
+    },
+    {
+      "name": "weekday",
+      "description": "日程插槽，有weekday1-weekday7 7个插槽",
+      "description_zh": "日程插槽，有weekday1-weekday7 7个插槽"
+    }
+  ],
+  "filename": "CalendarView"
+}

@@ -1,0 +1,52 @@
+{
+  "name": "TinyDropdownMenu",
+  "props": {
+    "options": {
+      "default": "[]",
+      "value": "",
+      "type": "IItemData []",
+      "description": "Set the properties of the menu item through the configuration method",
+      "description_zh": "通过配置式设置菜单项的属性"
+    },
+    "placement": {
+      "default": "'bottom-end'",
+      "value": "",
+      "type": "IPlacementType",
+      "description": "Menu pop-up location",
+      "description_zh": "菜单弹出位置"
+    },
+    "popper-class": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "The class name of the drop-down box is used to customize the style",
+      "description_zh": "下拉弹框的类名，用于自定义样式"
+    },
+    "text-field": {
+      "default": "'label'",
+      "value": "",
+      "type": "string",
+      "description": "A field for the text of a menu item, used in conjunction with the options property",
+      "description_zh": "菜单项文本的字段,结合 options 属性使用"
+    }
+  },
+  "link": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/dropdown",
+  "link_zh": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/dropdown",
+  "methods": [],
+  "slots": [
+    {
+      "name": "default",
+      "description": "Drop-down pop-up area, usually using the tiny-dropdown-item component",
+      "description_zh": "下拉弹框区域，通常使用 tiny-dropdown-item 组件"
+    }
+  ],
+  "typeDetail": {
+    "IMenuOption": "interface IMenuOption {\n  options: IItemData[]\n  textField?: string\n  popperClass?: string\n  placement?: 'top' | 'top-start' | 'top-end' | 'bottom' | 'bottom-start' | 'bottom-end'\n}",
+    "IItemClickParam": "interface IItemClickParam {\n  itemData: IItemData\n  // dropdownItem 组件的实例\n  vm: {\n    selected: boolean\n    textField: string\n    tipPosition: string\n    $el: HTMLElement\n  }\n}",
+    "IItemData": "interface IItemData {\n  label?: string\n  disabled?: boolean\n  divided?: boolean\n}",
+    "IButtonType": "type IButtonType =  'primary' | 'success' | 'warning' | 'danger' | 'info' | 'text'",
+    "IPlacementType": "type IPlacementType =  'top' | 'top-start' | 'top-end' | 'bottom' | 'bottom-start' | 'bottom-end'"
+  },
+  "filename": "DropdownMenu",
+  "events": []
+}

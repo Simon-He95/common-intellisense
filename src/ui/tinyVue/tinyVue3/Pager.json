@@ -1,0 +1,196 @@
+{
+  "name": "TinyPager",
+  "props": {
+    "align": {
+      "default": "'left'",
+      "value": "",
+      "type": "left / center / right",
+      "description": "Pagination alignment, Aurora, SMB theme default is right",
+      "description_zh": "分页对齐方式，Aurora、SMB主题默认值为 right"
+    },
+    ":current-page": {
+      "default": "1",
+      "value": "",
+      "type": "number",
+      "description": "The page you are currently on",
+      "description_zh": "当前所在页"
+    },
+    "custom-total": {
+      "default": "false",
+      "value": "",
+      "type": "boolean | string",
+      "description": "If the total number of records is true, 100,000+ and 1,000,000+ will be displayed, and if the value is string, the incoming string will be displayed",
+      "description_zh": "自定义总条数，传值为 true 时，显示10万+、100万+，传值为字符串则显示传入的字符串"
+    },
+    "disabled": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to disable pagination",
+      "description_zh": "是否禁用分页"
+    },
+    "hide-on-single-page": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether it is hidden when there is only one page",
+      "description_zh": "只有一页时是否隐藏"
+    },
+    "is-before-page-change": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to enable the pre-processing feature, after it is enabled, page turning or changing the page size will not take effect immediately, and the user will handle the business logic",
+      "description_zh": "是否开启前置处理特性，开启后，翻页或者改变页大小不会立即生效，由用户处理业务逻辑"
+    },
+    "layout": {
+      "default": "'total, prev, pager, next, jumper'",
+      "value": "",
+      "type": "string",
+      "description": "组件布局，子组件名用英文逗号分隔，子组件类型有 sizes、 prev、 pager、 next、 jumper、 current、 total、 slot",
+      "description_zh": "组件布局，子组件名用英文逗号分隔，子组件类型有 sizes、 prev、 pager、 next、 jumper、 current、 total、 slot"
+    },
+    "mode": {
+      "default": "--",
+      "value": "",
+      "type": "number / simple / complete / fixed",
+      "description": "Sets the paginated component display mode, which takes precedence over layout",
+      "description_zh": "设置分页组件显示模式，此属性优先级大于 layout"
+    },
+    "next-text": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "The text on the next page displayed by the alternate icon",
+      "description_zh": "替代图标显示的下一页文字"
+    },
+    ":page-count": {
+      "default": "--",
+      "value": "",
+      "type": "number",
+      "description": "Total number of pages, total and page-count can be set to display page numbers, if you want to support page-sizes changes, you need to use the total attribute",
+      "description_zh": "总页数，total 和 page-count 设置任意一个就可以达到显示页码的功能，如果要支持 page-sizes 的更改，则需要使用 total 属性"
+    },
+    ":page-size/v-model:page-size": {
+      "default": "10",
+      "value": "",
+      "type": "number",
+      "description": "The number of entries displayed per page",
+      "description_zh": "每页显示条目数"
+    },
+    "page-sizes": {
+      "default": "[10, 20, 30, 40, 50, 100]",
+      "value": "",
+      "type": "number[]",
+      "description": "Set the option settings to specify the number of items to be displayed per page and the number of items to be displayed per page selector",
+      "description_zh": "设置指定可选择的每页显示条数，每页显示个数选择器的选项设置"
+    },
+    ":pager-count": {
+      "default": "7",
+      "value": "",
+      "type": "number",
+      "description": "Sets the maximum number of pages that the button needs to display, and collapses when the total number of pages exceeds that value, and the property has an odd number of 5 or more and 21 or less",
+      "description_zh": "设置页码按钮需要显示的最多个数，当总页数超过该值时会折叠，该属性的合法值为大于等于 5 且小于等于 21 的奇数"
+    },
+    "popper-append-to-body": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to insert a pop-up box into the body element, you can set this property to false (see Select Component)",
+      "description_zh": "是否将弹出框插入至 body 元素，可将该属性设置为 false（可参考 select 组件）"
+    },
+    "popper-class": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "Add a class name to the popper (see popover component)",
+      "description_zh": "为 popper 添加类名（可参考 popover 组件）"
+    },
+    "prev-text": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "Override icon to display the previous page text",
+      "description_zh": "替代图标显示的上一页文字"
+    },
+    "show-total-loading": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to display the total number of records is loading",
+      "description_zh": "是否显示总条数加载中"
+    },
+    "size": {
+      "default": "--",
+      "value": "",
+      "type": "mini",
+      "description": "Define the pagination size",
+      "description_zh": "定义分页尺寸"
+    },
+    ":total": {
+      "default": "--",
+      "value": "",
+      "type": "number",
+      "description": "Total number of entries",
+      "description_zh": "总条目数"
+    },
+    "total-fixed-left": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the total number of entries is fixed on the left, the default value of Aurora and SMB topics is true",
+      "description_zh": "总条目数是否固定在左侧，Aurora、SMB主题默认值为 true"
+    }
+  },
+  "link": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/pager",
+  "link_zh": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/pager",
+  "typeDetail": {
+    "IBeforeChangeEvent": "// 函数接受一个参数\ninterface IBeforeChangeEvent {\n  (param: IBeforeChangeParam): void\n}\ninterface IBeforeChangeParam {\n  callback: () => void   // 回调函数，调用则继续本次变更\n  rollback: () => void   // 回滚函数，调用则阻止本次变更\n  newPage: number // 变更后所在页\n  newPageSize: number // 变更后分页大小\n  currentPage: number // 当前所在页\n  currentPageSize: number // 当前分页大小\n}"
+  },
+  "events": [
+    {
+      "name": "before-page-change",
+      "description": "When is-before-page-change is set to true, this event will be triggered before turning the page or changing the page size, and the user can get the corresponding event and pagination related information in the parameters to control the subsequent logic",
+      "description_zh": "当 is-before-page-change 设置为 true 后，翻页或改变页大小前会触发此事件，用户可以在参数中获取相应事件和分页相关信息控制后续逻辑",
+      "params": "IBeforeChangeEvent",
+      "value": ""
+    },
+    {
+      "name": "current-change",
+      "description": "It is triggered when the current page changes",
+      "description_zh": "当前所在页改变时会触发",
+      "params": "(currentPage: number) => void",
+      "value": ""
+    },
+    {
+      "name": "next-click",
+      "description": "Click the Next button to change the current page",
+      "description_zh": "点击下一页按钮改变当前页后触发",
+      "params": "(currentPage: number) => void",
+      "value": ""
+    },
+    {
+      "name": "prev-click",
+      "description": "Click the Previous button to change the current page to trigger",
+      "description_zh": "点击上一页按钮改变当前页后触发",
+      "params": "(currentPage: number) => void",
+      "value": ""
+    },
+    {
+      "name": "size-change",
+      "description": "It is triggered when the number of entries displayed on each page changes",
+      "description_zh": "每页显示条目数改变后会触发",
+      "params": "(pageSize: number) => void",
+      "value": ""
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "default",
+      "description": "Custom content, which requires a slot to be listed in the layout",
+      "description_zh": "自定义内容，需要在 layout 中列出 slot"
+    }
+  ],
+  "filename": "Pager"
+}

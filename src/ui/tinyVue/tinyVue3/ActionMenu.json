@@ -1,0 +1,106 @@
+{
+  "name": "TinyActionMenu",
+  "props": {
+    ":max-show-num": {
+      "default": "2",
+      "value": "",
+      "type": "number",
+      "description": "The maximum number of menu buttons is displayed, and other menus are displayed in the drop-down pop-up box",
+      "description_zh": "最多显示菜单按钮的个数，其他菜单在下拉弹框显示"
+    },
+    "mode": {
+      "default": "\"default\"",
+      "value": "",
+      "type": "default / card",
+      "description": "Menu button mode",
+      "description_zh": "菜单按钮模式"
+    },
+    "more-text": {
+      "default": "'更多'",
+      "value": "",
+      "type": "string",
+      "description": "Drop-down button text",
+      "description_zh": "下拉按钮文本"
+    },
+    "options": {
+      "default": "[]",
+      "value": "",
+      "type": "IItemData[]",
+      "description": "Data for a list of menu items",
+      "description_zh": "菜单项列表的数据"
+    },
+    "popper-class": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "The class name of the drop-down box is used to customize the style",
+      "description_zh": "下拉弹框的类名，用于自定义样式"
+    },
+    "show-icon": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to display the drop-down trigger source icon",
+      "description_zh": "是否显示下拉触发源图标"
+    },
+    "spacing": {
+      "default": "'5px'",
+      "value": "",
+      "type": "string | number",
+      "description": "The spacing between the menu buttons",
+      "description_zh": "菜单按钮之间的间距"
+    },
+    "suffix-icon": {
+      "default": "--",
+      "value": "",
+      "type": "Component",
+      "description": "Pull down the trigger source icon",
+      "description_zh": "下拉触发源图标"
+    },
+    "text-field": {
+      "default": "'label'",
+      "value": "",
+      "type": "string",
+      "description": "The key value of the menu button text",
+      "description_zh": "菜单按钮文本的键值"
+    }
+  },
+  "link": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/action-menu",
+  "link_zh": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/action-menu",
+  "typeDetail": {
+    "IItemData": "interface IItemData {\n  label?: string           // 菜单项文本\n  disabled?: boolean       // 是否禁用\n  divided?: boolean        // 是否显示分割线\n  children?: IItemData[]   // 菜单项子集\n  icon?: Component      // 菜单项图标\n}",
+    "IItemClickParams": "interface IItemClickParams {\n  itemData: IItemData     // 菜单项配置\n  vm: {                   // 菜单项实例\n    selected: boolean\n    textField: string\n    tipPosition: string\n    $el: HTMLElement\n  }       \n}"
+  },
+  "events": [
+    {
+      "name": "item-click",
+      "description": "Listen for click events for menu items",
+      "description_zh": "监听菜单项的点击事件",
+      "params": "(data:IItemClickParams) => void",
+      "value": ""
+    },
+    {
+      "name": "more-click",
+      "description": "Listen for drop-down button clicks. trigger takes effect when it is click",
+      "description_zh": "监听下拉按钮的点击事件。trigger 为 click 时生效",
+      "params": "() => void",
+      "value": ""
+    },
+    {
+      "name": "visible-change",
+      "description": "Listen for the display or hide status changes of the drop-down pop-up",
+      "description_zh": "监听下拉弹框的显示或隐藏状态变化",
+      "params": "(status: boolean) => void",
+      "value": ""
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "item",
+      "description": "Menu option slots",
+      "description_zh": "菜单选项插槽"
+    }
+  ],
+  "filename": "ActionMenu"
+}

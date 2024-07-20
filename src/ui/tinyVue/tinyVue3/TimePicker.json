@@ -1,0 +1,178 @@
+{
+  "name": "TinyTimePicker",
+  "props": {
+    "arrow-control": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether or not to use arrows for time selection",
+      "description_zh": "是否使用箭头进行时间选择"
+    },
+    "clear-icon": {
+      "default": "IconOperationfaild",
+      "value": "",
+      "type": "Component",
+      "description": "Customize the clear icon",
+      "description_zh": "自定义清空图标"
+    },
+    "clearable": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether or not to display a clear button",
+      "description_zh": "是否显示清除按钮"
+    },
+    "default-value": {
+      "default": "--",
+      "value": "",
+      "type": "Date | string | number | Array",
+      "description": "If the selected date value is empty, the default time displayed when the selector panel is opened needs to be set to a value that can be parsed by new Date().",
+      "description_zh": "当选中的日期值为空时，选择器面板打开时默认显示的时间，需设置为可被 new Date() 解析的值"
+    },
+    "disabled": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "disable",
+      "description_zh": "禁用"
+    },
+    "editable": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Text boxes can be entered",
+      "description_zh": "文本框可输入"
+    },
+    "end-placeholder": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "The placeholder content for the end date when the scope is selected",
+      "description_zh": "范围选择时结束日期的占位内容"
+    },
+    "is-range": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to select a time range",
+      "description_zh": "是否为时间范围选择"
+    },
+    "v-model": {
+      "default": "--",
+      "value": "",
+      "type": "Date | string | number | Array",
+      "description": "Date value selected by the date picker to set the initial value of the selector",
+      "description_zh": "日期选择器选中的日期值，可设置选择器的初始值"
+    },
+    "name": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "原生 input name 属性",
+      "description_zh": "原生 input name 属性"
+    },
+    "picker-options": {
+      "default": "--",
+      "value": "",
+      "type": "IPickerOptions",
+      "description": "Configure the optional time range and format displayed in the drop-down list",
+      "description_zh": "配置可选的时间范围、下拉框中显示的格式"
+    },
+    "placeholder": {
+      "default": "''",
+      "value": "",
+      "type": "string",
+      "description": "Placeholder content when not scoped",
+      "description_zh": "非范围选择时的占位内容"
+    },
+    "popper-append-to-body": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to insert a popup into the body element, if there is a problem with the positioning of the popup, you can set this property to false",
+      "description_zh": "是否将弹出框插入至 body 元素，在弹出框的定位出现问题时，可将该属性设置为 false"
+    },
+    "popper-class": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "TimePicker 下拉框的 class 类名",
+      "description_zh": "TimePicker 下拉框的 class 类名"
+    },
+    "range-separator": {
+      "default": "'-'",
+      "value": "",
+      "type": "string",
+      "description": "Separator when selecting a range",
+      "description_zh": "选择范围时的分隔符"
+    },
+    "size": {
+      "default": "''",
+      "value": "",
+      "type": "medium / small / / mini",
+      "description": "Enter the size of the field",
+      "description_zh": "输入框尺寸"
+    },
+    "start-placeholder": {
+      "default": "''",
+      "value": "",
+      "type": "string",
+      "description": "The placeholder content for the start date when the range is selected",
+      "description_zh": "范围选择时开始日期的占位内容"
+    },
+    "step": {
+      "default": "--",
+      "value": "",
+      "type": "IStep",
+      "description": "Customize the time, minute, and second steps",
+      "description_zh": "自定义时分秒步长"
+    },
+    ":suffix-icon": {
+      "default": "IconCalendar",
+      "value": "",
+      "type": "object",
+      "description": "Customize the class name of the head icon",
+      "description_zh": "自定义头部图标的类名"
+    }
+  },
+  "link": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/time-picker",
+  "link_zh": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/time-picker",
+  "typeDetail": {
+    "IStep": "interface IStep {\n  hour: number\n  minute: number\n  second: number\n}",
+    "IPickerOptions": "interface IPickerOptions {\n  // 可选的时间范围\n  selectableRange: string\n  // 下拉框中显示的格式\n  format: string\n}"
+  },
+  "events": [
+    {
+      "name": "blur",
+      "description": "Triggers when input loses focus",
+      "description_zh": "当 input 失去焦点时触发",
+      "params": "() => void",
+      "value": ""
+    },
+    {
+      "name": "change",
+      "description": "Triggered when the user confirms the selected value",
+      "description_zh": "用户确认选定的值时触发",
+      "params": "(date: Date | Date[]) => void",
+      "value": ""
+    },
+    {
+      "name": "focus",
+      "description": "Triggers when input gains focus",
+      "description_zh": "当 input 获得焦点时触发",
+      "params": "() => void",
+      "value": ""
+    }
+  ],
+  "methods": [
+    {
+      "name": "focus",
+      "description": "Make input get focus",
+      "params": "() => void",
+      "description_zh": "使 input 获取焦点",
+      "value": ""
+    }
+  ],
+  "slots": [],
+  "filename": "TimePicker"
+}

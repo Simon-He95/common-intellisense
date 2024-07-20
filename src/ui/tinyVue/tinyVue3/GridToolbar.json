@@ -1,0 +1,175 @@
+{
+  "name": "TinyGridToolbar",
+  "props": {
+    "before-close-full-screen": {
+      "default": "--",
+      "value": "",
+      "type": "()=> boolean",
+      "description": "Disable the blocking method before full screen, return false to prevent full screen from being closed, and return true to not block",
+      "description_zh": "关闭全屏前的拦截方法，返回 false 则阻止关闭全屏，返回 true 则不阻止"
+    },
+    "before-open-full-screen": {
+      "default": "--",
+      "value": "",
+      "type": "()=> boolean",
+      "description": "The interception method before the full screen returns false to block the full screen, and true does not block it",
+      "description_zh": "全屏前的拦截方法，返回 false 则阻止全屏，返回 true 则不阻止"
+    },
+    "buttons": {
+      "default": "--",
+      "value": "",
+      "type": "{            code: string            name: string          }[]",
+      "description": "A list of buttons",
+      "description_zh": "按钮列表"
+    },
+    "full-screen": {
+      "default": "--",
+      "value": "",
+      "type": "boolean",
+      "description": "Set whether the table can be full-screen, or the container that needs to be full-screen; Sets whether the toolbar properties display a full-screen button",
+      "description_zh": "设置表格是否可以全屏，或者需要全屏的容器；设置工具栏属性是否显示全屏按钮"
+    },
+    "id": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "Unique ID identification",
+      "description_zh": "唯一 ID 标识"
+    },
+    "refresh": {
+      "default": "--",
+      "value": "",
+      "type": "boolean",
+      "description": "The toolbar component enables the table refresh function",
+      "description_zh": "工具栏组件开启表格刷新功能"
+    },
+    "resizable": {
+      "default": "--",
+      "value": "",
+      "type": "boolean | {storage: boolean}",
+      "description": "Column width drag configuration (ID required)",
+      "description_zh": "列宽拖动配置（需要设置 id）"
+    },
+    "setting": {
+      "default": "--",
+      "value": "",
+      "type": "boolean | IToolbarSetting",
+      "description": "Set whether the table properties display the personalization panel, which is valid when the name attribute of the table is set; Set whether toolbar properties display personalization (ID required)",
+      "description_zh": "设置表格属性是否显示个性化面板，当设置表格的 name 属性时有效；设置工具栏属性是否显示个性化配置（需要设置 id ）"
+    },
+    "size": {
+      "default": "--",
+      "value": "",
+      "type": "medium / small / mini",
+      "description": "The size of the table",
+      "description_zh": "表格的尺寸"
+    }
+  },
+  "link": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/grid",
+  "link_zh": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/grid",
+  "typeDetail": {
+    "IRow": "interface IRow {\n  // 表格行数据\n  [filed: string]: any\n}",
+    "IColumnConfig": "interface IColumnConfig {\n  type: 'index' | 'radio' | 'checkbox'\n  id: string\n  prop: string\n  rules: IValidRules\n  required: boolean\n  property: string\n  title: string\n  label: string\n  width: string | number\n  minWidth: string | number\n  resizable: boolean\n  fixed: boolean\n  align: 'left' | 'center' | 'right'\n  headerAlign: 'left' | 'center' | 'right'\n  footerAlign: 'left' | 'center' | 'right'\n  showOverflow: boolean | 'ellipsis' | 'tooltip' | 'title'\n  showHeaderOverflow: boolean | 'ellipsis' | 'tooltip' | 'title'\n  showTip: boolean\n  showHeaderTip: boolean\n  className: string\n  headerClassName: string\n  footerClassName: string\n}",
+    "IPagerConfig": "interface IPagerConfig {\n  component?: Component\n  attrs: {\n    currentPage: number\n    pageSize: number\n    pageSizes: number[]\n    total: number\n    // 分页组件布局默认值：'total, prev, pager, next, jumper, sizes'\n    layout: string\n  }\n}",
+    "IDataHandler": "interface IDataHandler {\n  api: ()=> Promise\n}",
+    "IRowGroup": "interface IRowGroup {\n  // 列标识符，行分组会将具有相同值的列进行分组展示\n  field: string\n}",
+    "IToolbarConfig": "interface IToolbarConfig {\n  component: GridToolbar\n  buttons: {\n    code: string\n    name: string\n  }[]\n}",
+    "IToolTipConfig": "interface IToolTipConfig {\n  placement?: 'top' | 'top-start' | 'top-end' | 'bottom' | 'bottom-start' | 'bottom-end' | 'left' | 'left-start' | 'left-end' | 'right' | 'right-start' | 'right-end'\n  visibleArrow?: boolean\n  enterable?: boolean\n  type?: 'normal' | 'warning' | 'error' | 'info' | 'success'\n  effect?: 'dark' | 'light'\n  // 自定义提示内容\n  contentMethod?: ()=> string | VNode\n}",
+    "IContextMenuConfig": "interface IMenuOptions {\n  code: string\n  name: string\n  visible?: boolean\n  disabled?: boolean\n}\n\ninterface IContextMenuConfig {\n  body?: { \n    options: IMenuOptions\n  }\n  footer?: { \n    options: IMenuOptions\n  }\n  visibleMethod?: ()=> boolean\n}",
+    "IValidRules": "interface IValidRules {\n [filed:string]: { \n  type?: string\n  required?: boolean\n  validator?: () => boolean\n  message?: string\n  min?: number\n  max?: number\n }\n}[]",
+    "IExpandConfig": "interface IExpandConfig {\n  // 默认展开所有行\n  expandAll?: boolean \n  // 触发方式 default（点击按钮触发）,cell（点击单元格触发）,row（点击行触发）\n  trigger?: 'default' | 'row' | cell\n  // 默认展开指定行（需要有 row-id）\n  expandRowKeys?: string[]\n  // 对于同一级的节点，每次只能展开一个\n  accordion?: boolean\n  // 控制是否渲染展开行\n  activeMethod?:({row: IRow})=> boolean\n  // 配置是否显示展开图标\n  showIcon?: boolean \n}",
+    "IOptimizationConfig": "interface IOptimizationConfig {\n  animat: boolean\n  delayHover: number\n  scrollX: {\n    // 指定大于多少范围时自动启动虚拟滚动（启用 X 虚拟滚动，必须固定所有列宽，否则无法兼容）默认100\n    gt?: number\n    // 当剩余数据少于指定范围时触发重新渲染 默认自动计算\n    oSize?: number\n    // 每次渲染条数 默认自动计算\n    rSize?: number\n    // 指定可视区域条数\n    vSize?: number\n  }\n  scrollY: {\n    // 指定大于多少范围时自动启动虚拟滚动（启用 Y 虚拟滚动，必须固定所有行高，否则无法兼容）默认500\n    gt?: number\n    // 当剩余数据少于指定范围时触发重新渲染 默认自动计算\n    oSize?: number \n    // 每次渲染条数 默认自动计算\n    rSize?: number\n    // 指定可视区域条数 默认自动计算\n    vSize?: number \n    // 指定行高 默认自动计算\n    rHeight?: number \n    // 自动适配最优的渲染方式 默认true\n    adaptive?: boolean \n  }\n}",
+    "IKeyboardConfig": "interface IKeyboardConfig {\n  // 启用方向键功能\n  isArrow?: boolean \n  isDel?: boolean\n  isTab?: boolean \n  isEdit?: boolean\n}",
+    "IMouseConfig": "interface IMouseConfig {\n  // 是否开启左键选中单元格功能（只对 editConfig.mode=cell 有效），默认为 false\n  selected: boolean \n}",
+    "IRadioConfig": "interface IRadioConfig {\n  // 触发选中的方式，可选项包括 cell（单击图标所在单元格触发） / row（点击行触发），默认点击图标触发\n  trigger?: 'cell' | 'row' \n  // 单选框显示的字段名，可以直接显示在单选框中\n  labelField?: string |\n  // 默认选中指定行（只会在初始化时被触发一次，需要有 row-id）\n  checkRowKey?: string\n  // 是否允许选中的方法，该方法的返回值用来决定这一行的 Radio 是否可以选中\n  checkMethod?: ()=> boolean\n}",
+    "ISelectConfig": "interface ISelectConfig {\n  // 触发选中的方式，可选项包括 cell（单击图标所在单元格触发） / row（点击行触发），默认点击图标触发\n  trigger?: 'cell' | 'row'\n  // 复选框显示的字段名，可以直接显示在复选框中\n  labelField?: string\n  // 默认勾选开指定行（只会在初始化时被触发一次，需要有 row-id）\n  checkRowKeys?: string[] \n  // 是否允许选中的方法，该方法的返回值用来决定这一行的 checkbox 是否可以勾选\n  checkMethod?: ()=> boolean \n  // 默认勾选所有（只会在初始化时被触发一次）}\n  checkAll?: boolean\n  // 是否显示全选按钮（如果 checkStrictly=true 则默认为 false）\n  showHeader?: boolean \n  // 是否严格的遵循父子不互相关联的做法\n  checkStrictly?: boolean\n  // 翻页操作是否保留历史选择数据\n  reserve?: boolean\n}",
+    "ISortConfig": "interface ISortConfig {\n  // 排序触发方式，可配置为 cell（点击头部单元格触发排序），不配置时默认为点击上下箭头触发排序\n  trigger?: 'cell'\n}",
+    "ITreeConfig": "interface ITreeConfig {\n  // 展开子级触发方式：'default'(点击按钮触发)；'cell'(点击单元格触发)；'row'(点击行触发)\n  trigger?: 'default' | 'cell' | 'row'\n  // 子级索引是否按数字递增显示：true(子级索引按数字递增显示，父级1，子级2)；false(子级索引在父级索引基础上增加，父级1，子级1.1)\n  ordered?: boolean\n  // 控制水平缩进距离，默认 16，单位 px\n  indent?: number\n  // 指定子级数据的字段名\n  children?: string\n  // 是否展开所有行\n  expandAll?: boolean\n  // 默认展开所给数组中的指定行，需要有row-id，可以由行的'_RID'属性获取\n  expandRowKeys?: string[]\n  // 对于同一级的多个子节点，是否只能同时展开一个子节点\n  accordion?: boolean\n}",
+    "IValidConfig": "interface IValidConfig {\n  // 校验提示类型，'inline'(内置提示)；'tooltip'(tooltip文字提示)\n  message?: 'inline' | 'tooltip'\n}",
+    "ISummaryConfig": "interface ISummaryConfig {\n  // 统计字段名 \n  fields: string[]\n  // 小数点后保留的小数位\n  fraction?: boolean\n  // 是否截断，默认为四舍五入，不截断\n  truncate?: boolean\n  // 统计显示的文本\n   text?: string\n}",
+    "IScrollLoadConfig": "interface IScrollLoadConfig {\n  // 是否连续\n  isInfinity: boolean\n  // 每次加载多少条\n  pageSize: number\n}",
+    "IEventsConfig": "interface IEventsConfig {\n  [field: string]: ()=> void\n}",
+    "IDropConfig": "interface IDropConfig {\n  // sortablejs 插件\n  plugin: Sortable\n  // 开启行拖拽\n  row: boolean\n  // 开启列拖拽\n  column: boolean\n  // 拖拽前函数，返回 false 取消拖动\n  onBeforeMove?: ()=> boolean\n  // 拖拽触发源选择器一般是class类名\n  trigger?: string\n  // 根据行的类名来控制是否可以拖动\n  filter?: string\n  // 如果变动了树层级，可以指定是否需要刷新数据\n  refresh?: boolean\n  }",
+    "IEditConfig": "interface IEditConfig {\n  // 激活触发方式\n  trigger: 'click' | 'dblclick' | 'manual'\n  // 激活类型单元格激活或者行\n  mode: 'cell' | 'row'\n  // 是否显示状态\n  showStatus?: boolean\n  // 自定义编辑规则，返回true可以编辑返回false则禁止编辑\n  activeMethod?: ({row: IRow, column: IColumnConfig})=> boolean\n}",
+    "IRecordset": "interface IRecordset {\n  insertRecords: IRow[]\n  removeRecords: IRow[]\n  updateRecords: IRow[]\n}",
+    "IPageChangeArgs": "interface IPageChangeArgs { \n  // table组件vue实例\n  $grid: Component\n  // 当前页码\n  currentPage: number\n  //当前分页组件布局信息 'total, prev, pager, next, jumper, sizes'\n  layout: string\n  // 当前每页显示条数\n  pageSize: number\n  //可切换的每页条数\n  pageSizes: number[] \n  //总数据条数\n  total: number \n}",
+    "IBeforePageChangeArgs": "interface IBeforePageChangeArgs { \n  //新页码\n  newPage: number\n  //新的分页大小 \n  newPageSize: number\n  //当前页码\n  currentPage: number\n  //当前的页大小\n  currentPageSize: number\n  //生效回调\n  callback: ()=> void\n  //失效回调\n  rollback: ()=> void\n}",
+    "IToolbarButtonClickArgs": "interface IToolbarButtonClickArgs { \n  //表格组件实例对象信息 \n  $grid: Component\n  //按钮信息对象 \n  button: {\n    code: string\n    name: string\n  }[]\n  // 按钮功能类型\n  code: string\n}",
+    "ICellClickArgs": "interface ICellClickArgs {\n  // 当前行\n  row: IRow,\n  // 当前行的下标\n  rowIndex: number\n  // 当前列\n  column: IColumnConfig\n  // 当前列的下标\n  columnIndex: number\n}",
+    "ICellContextMenuArgs": "interface ICellContextMenuArgs {\n  // 当前行\n  row: IRow\n}",
+    "ICellArgs": "interface ICellArgs {\n  //当前行\n  row: IRow\n  //当前行的下标\n  rowIndex: number\n  // 当前列 \n  column: IColumnConfig\n  // 当前列的下标 \n  columnIndex: number\n}",
+    "ICurrentChangeArgs": "interface ICurrentChangeArgs {\n  // 当前行\n  row: IRow\n}",
+    "IEditActivedArgs": "interface IEditActivedArgs {\n  // 当前行\n  row: IRow\n  // 当前列 \n  column: IColumnConfig\n}",
+    "IEditClosedArgs": "interface IEditClosedArgs {\n  // 当前行\n  row: IRow\n  // 当前列 \n  column: IColumnConfig\n}",
+    "IEditDisabledArgs": "interface IEditDisabledArgs {\n  //当前行\n  row: IRow\n  // 当前列 \n  column: IColumnConfig\n}",
+    "IFilterChangeArgs": "interface IFilterChangeArgs {\n  //表格的信息对象\n  $table: Component\n  //过滤列的过滤数据信息\n  filters: object\n}",
+    "IFooterCellClickArgs": "interface IFooterCellClickArgs {\n  $columnIndex: number\n  $rowIndex: number\n  // table组件vue实例\n  $table: Component\n  // 当前单元格节点 \n  cell: HTMLElement\n  // 当前列信息\n  column: IColumnConfig\n  columnIndex: number\n}",
+    "IContextMenuArgs": "interface IContextMenuArgs {\n  $columnIndex: number\n  $rowIndex: number\n  // table组件vue实例\n  $table: Component\n  // 当前单元格节点\n  cell: HTMLElement\n  // 当前列信息\n  column: IColumnConfig\n  columnIndex: number\n  // 配置清除等功能信息\n  options: object[]\n  // 表格区域类型\n  type: 'header' | 'footer' | 'body'\n}",
+    "IFooterCellDblClickArgs": "interface IFooterCellDblClickArgs {\n  $columnIndex: number\n  $rowIndex: number\n  // table组件vue实例\n  $table: Component\n  // 当前单元格节点\n  cell: HTMLElement\n  // 当前列信息\n  column: IColumnConfig\n  columnIndex: number\n}",
+    "IHeaderCellClickArgs": "interface IHeaderCellClickArgs {\n  $columnIndex: number\n  $rowIndex: number\n  // table组件vue实例\n  $table: Component\n  // 点击表头单元格\n  cell: HTMLElement\n  // 当前列信息\n  column: IColumnConfig\n  columnIndex: number\n  // 当前点击节点过滤标识\n  triggerFilter: boolean\n  // 当前点击节点排序标识\n  triggerSort: boolean\n}",
+    "IHeaderCellDblClickArgs": "interface IHeaderCellDblClickArgs {\n  // 列数据\n  column: IColumnConfig  \n  // 列索引\n  columnIndex: number\n  // table组件 vue实例 \n  $table: Component\n  // 点击的单元格dom\n  cell: HTMLElement\n}",
+    "IResizableChangeArgs": "interface IResizableChangeArgs {\n  // table组件的vue 实例 \n  $table: Component,\n  // 列配置信息 \n  column: IColumnConfig \n  // 拖动列的索引\n  columnIndex: number\n  // 是否固定列\n  fixed: boolean\n}",
+    "IScrollArgs": "interface IScrollArgs {\n  // 表格实例对象信息\n  $table: Component\n  fixed: boolean\n  // X轴滚动\n  isX: boolean\n  // Y轴滚动\n  isY: true\n  // X轴滚动距离\n  scrollLeft: number\n  // Y轴滚动距离\n  scrollTop: number\n  type: 'body' | 'header' | 'footer'\n}",
+    "ISelectAllArgs": "interface ISelectAllArgs {\n  $columnIndex: number\n  $rowIndex: number\n  $seq: string\n  // 表格实例对象信息\n  $table: Component \n  // 勾选状态\n  checked: boolean\n  // 列信息\n  column: IColumnConfig\n  // 列下标\n  columnIndex: number\n  // 表格数据\n  data: IRow[]\n  fixed: boolean\n  isHidden: boolean\n  level: number\n  // 勾选项的行数据信息\n  row: IRow\n  // 勾选项的行下标\n  rowIndex: number\n  // 选中的数据\n  selection: IRow[]\n  seq: number\n}",
+    "IToggleExpandChangeArgs": "interface IToggleExpandChangeArgs { \n  // 表格实例对象信息\n  $table: Component,\n  //点击展开行的数据信息对象\n  row: IRow\n  // 点击展开行的下标 \n  rowIndex: number\n}",
+    "IToggleTreeChangeArgs": "interface IToggleTreeChangeArgs { \n  // 表格实例对象信息\n  $table: Component,\n  //点击展开行的数据信息对象\n  row: IRow\n  // 点击展开行的下标 \n  rowIndex: number\n}",
+    "IValidErrorArgs": "interface IValidErrorArgs { \n  // 校验的单元格信息对象\n  cell: Cell\n  //校验单元格所在列的列配置信息对象\n  column: IColumnConfig\n  //校验单元格所在行的信息对象\n  row: IRow\n  // 校验规则信息对象 \n  rule: object\n}",
+    "ISortChangeArgs": "interface ISortChangeArgs { \n  // 表格实例对象信息\n  $grid: Component\n  // 列信息\n  column: IColumnConfig\n  // 排序的字段名\n  field: string \n  // 排序类型升序或降序\n  order: 'asc' | 'desc' \n  prop: string\n  property: string\n}",
+    "IClassNameArgs": "interface IClassNameArgs {\n  seq: number\n  row: IRow\n  rowIndex: number\n  $rowIndex: number\n  column: IColumnConfig\n  columnIndex: number\n  $columnIndex: number\n}",
+    "IIndexMethodArgs": "interface IIndexMethodArgs {\n  row: IRow\n  rowIndex: number\n  column: IColumnConfig\n  columnIndex: number\n}",
+    "IFormatConfig": "interface IFormatConfig {\n  // 列数据源\n  data: IColumnConfig[] \n  // 内置渲染器类型，与 format-text 属性取值相同\n  type: 'money' | 'enum' | 'select' | 'number' | 'integer' | 'filesize' | 'date' | 'dateTime' | 'longDateTime' | 'time' | 'longTime' | 'yearMonth' | 'ellipsis' | 'rate'\n  // 配置为 true 后，支持动态修改 data 的数据。还可以配置为对象，配置为对象时，对象中可以配置 splitConfig.enabled（是否启用分隔配置）、splitConfig.valueSplit（指定 value 值的分隔符）、splitConfig.textSplit（指定 text 的分隔符）、fetch（列数据异步渲染，请求数据）\n  async: true, \n  // 单元格显示内容的映射\n  label: string\n  // 单元格取值的映射\n  value: string\n}",
+    "IButtonClick": "interface IButtonClick { \n  // 表格组件实例对象信息\n  $grid: Component \n  // 按钮列表信息对象   \n  button: {\n    code: string\n    name: string\n  }[]\n   // 按钮类型 \n   code: string\n  }",
+    "ISettingConfigs": "interface ISettingConfigs {\n  sortType: 'page' | 'all'\n  pageSize: number\n  columns: {\n    property: string\n    order: 'asc' | 'desc' | null \n    visible: boolean\n    sortable: boolean\n  }[]\n}",
+    "ISpanMethodArgs": "interface ISpanMethodArgs {\n  // 行标\n  $rowIndex: number\n  // 列数据  \n  column: IColumnConfig\n  // 列下标 \n  columnIndex: number\n  // 一个数组，保存了当前合并和计算的数据\n  data: (string | number | null)[][]\n}",
+    "IExportCsvOptions": "interface IExportCsvOptions {\n  filename: string\n  original: boolean\n  isHeader: boolean\n  data: IRow[]\n}",
+    "IEditorConfig": "interface IEditorConfig {\n  // 内置组件名称或者自定义组件实例\n  component: 'input' | 'select' | Component\n  // 传递给组件的事件集合\n  events?: {\n    [event]: ()=> void\n  }\n  // 传递给编辑器组件的属性集合\n  attrs?: {\n    [prop]: any\n  }\n  // select 内置组件独有的下拉数据配置项\n  options?: object[]\n}",
+    "IFilterConfig": "interface IFilterConfig {\n  // 设置在显示枚举选项功能是否为多选, 仅在 enumable:true 下有效\n  multi: boolean\n  // 设置在过滤面板中显示枚举选项\n  enumable: boolean\n  // 设置在过滤面板中显示默认的筛选条件\n  defaultFilter: boolean\n  // 设置在过滤面板中显示输入筛选的项\n  inputFilter: boolean\n  // 设置在显示枚举选项功能(enumable)下制定静态数据源，也可以是函数返回一个Promise对象\n  values: {\n    // 设置枚举数据的显示值属性字段， 默认'label'\n    label: string\n    // 设置枚举数据的实际值属性字段， 默认'value'\n    value: string \n  }[] | ()=> Promise\n}",
+    "IOPConfig": "interface IOPConfig {\n  editConfig?: IEditConfig\n  pagerConfig?: IPagerConfig\n  columns: IColumnConfig[]\n  data: IRow[]\n}",
+    "IFormatText": "'money' | 'enum' | 'select' | 'number' | 'integer' | 'filesize' | 'date' | 'dateTime' | 'longDateTime' | 'time' | 'longTime' | 'yearMonth' | 'ellipsis' | 'rate' | 'boole' | (params)=> string",
+    "IToolbarSetting": "interface IToolbarSetting {\n        remote?: boolean\n        storage?: string\n        sortable?: Sortable \n      }"
+  },
+  "events": [
+    {
+      "name": "button-click",
+      "description": "This event is triggered when a button in the toolbar is clicked",
+      "description_zh": "当工具栏的按钮被点击时会后触发该事件",
+      "params": "(args: IButtonClick, event: Event)=> void",
+      "value": ""
+    },
+    {
+      "name": "cancel-setting",
+      "description": "Click the Cancel button in the personalization panel to trigger the event",
+      "description_zh": "点击个性化面板的取消按钮触发该事件",
+      "params": "(args: ISettingConfigs)=> void",
+      "value": ""
+    },
+    {
+      "name": "reset-setting",
+      "description": "Click the reset button in the personalization panel to trigger the event",
+      "description_zh": "点击个性化面板的重置按钮触发该事件",
+      "params": "()=> void",
+      "value": ""
+    },
+    {
+      "name": "save-setting",
+      "description": "Click the Confirm button in the personalization panel to trigger the event",
+      "description_zh": "点击个性化面板的确认按钮触发该事件",
+      "params": "(args: ISettingConfigs)=> void",
+      "value": ""
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "buttons",
+      "description": "A list of buttons",
+      "description_zh": "按钮列表"
+    },
+    {
+      "name": "toolbar",
+      "description": "Toolbar slots",
+      "description_zh": "工具栏插槽"
+    }
+  ],
+  "filename": "GridToolbar"
+}

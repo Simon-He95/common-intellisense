@@ -4,21 +4,21 @@ const fsp = require('node:fs/promises')
 const fg = require('fast-glob')
 
 export async function run() {
-  const folder = 'src/ui/shadcnUi'
-  const lib = 'shadcn-Ui'
-  const name = 'shadcnUi0'
-  const isHyphen = false /** 生成的模板中的使用是 true ? a-affix : AAfix */
+  const folder = 'src/ui/tinyVue'
+  const lib = '@opentiny/vue3'
+  const name = 'tinyVue3'
+  const isHyphen = true /** 生成的模板中的使用是 true ? a-affix : AAfix */
   const isReact = false
   const url = path.resolve(root, `${folder}/${name}`)
   const entry = await fg(['**/*.json'], { dot: true, cwd: url })
   const imports = entry.map((_url: string) => `import ${_url.split('.')[0]} from './${_url}'`)
-  let prefix = ''
+  let prefix = 'tiny'
   const map = entry.map((_url: string) => {
     let tagName = `${_url.split('.')[0]}`
     if (isHyphen) {
       tagName = hyphenate(tagName)
       // prefix = `'${tagName.split('-')[0]}'`
-      return `[${_url.split('.')[0]}, ${_url.split('.')[0]}.name, \`<${tagName}><${tagName}>\`],`
+      return `[${_url.split('.')[0]}, ${_url.split('.')[0]}.name, \`<${prefix ? prefix + '-' : ''}${tagName}></${prefix ? prefix + '-' : ''}${tagName}>\`],`
 
     }
     return `[${_url.split('.')[0]}, ${_url.split('.')[0]}.name, \`<\${${tagName}.name}></\${${tagName}.name}\`],`

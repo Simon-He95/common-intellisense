@@ -1,0 +1,173 @@
+{
+  "name": "TinyToolTip",
+  "props": {
+    "append-to-body": {
+      "default": " true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to add elements of the pop-up layer to the body",
+      "description_zh": "是否将弹出层的元素添加到body上"
+    },
+    ":close-delay": {
+      "default": "300",
+      "value": "",
+      "type": "number",
+      "description": "The length of time the delay is turned off, in milliseconds",
+      "description_zh": "延迟关闭的时长，单位毫秒"
+    },
+    "content": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "What is displayed",
+      "description_zh": "显示的内容"
+    },
+    "disabled": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether Tooltip is disabled",
+      "description_zh": "Tooltip 是否禁用"
+    },
+    "effect": {
+      "default": "'dark'",
+      "value": "",
+      "type": "dark / light",
+      "description": "Tips on the subject",
+      "description_zh": "提示的主题"
+    },
+    "enterable": {
+      "default": " true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the mouse can enter the pop-up layer of the tooltip",
+      "description_zh": "鼠标是否可进入到 tooltip 的弹出层中"
+    },
+    ":hide-after": {
+      "default": " 0",
+      "value": "",
+      "type": "number",
+      "description": "The duration of auto-hide after occurrence, in milliseconds, and 0 will not be auto-hidden",
+      "description_zh": "出现后自动隐藏的时长，单位毫秒，为 0 则不会自动隐藏"
+    },
+    "manual": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Manual control mode, when set to true, the mouseenter and mouseleave events will not take effect",
+      "description_zh": "手动控制模式，设置为 true 后，mouseenter 和 mouseleave 事件将不会生效"
+    },
+    "v-model": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "If manual = true is configured, the pop-up status is controlled",
+      "description_zh": "配置 manual = true时，控制弹出状态"
+    },
+    ":offset": {
+      "default": "0",
+      "value": "",
+      "type": "number",
+      "description": "The offset of where the pop-up layer appears",
+      "description_zh": "弹出层出现位置的偏移量"
+    },
+    ":open-delay": {
+      "default": "0",
+      "value": "",
+      "type": "number",
+      "description": "The duration of the delay occurring, in milliseconds",
+      "description_zh": "延迟出现的时长，单位毫秒"
+    },
+    "placement": {
+      "default": "'bottom'",
+      "value": "",
+      "type": "IPopperPlacement",
+      "description": "The location of the Tooltip",
+      "description_zh": "Tooltip 的出现位置"
+    },
+    "popper-class": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "Add a class name to the pop-up layer of Tooltip",
+      "description_zh": "为 Tooltip 的弹出层添加类名"
+    },
+    "popper-options": {
+      "default": " { }",
+      "value": "",
+      "type": "IPopperOption",
+      "description": "Pop-up layer parameters",
+      "description_zh": "弹出层参数"
+    },
+    "pre": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "content 文本是否预格式化",
+      "description_zh": "content 文本是否预格式化"
+    },
+    "renderContent": {
+      "default": "--",
+      "value": "",
+      "type": "(h: Vue.h, content:string)=> VNode",
+      "description": "Customize the rendering function to return the node content that needs to be rendered",
+      "description_zh": "自定义渲染函数,返回需要渲染的节点内容"
+    },
+    ":tabindex": {
+      "default": "--",
+      "value": "",
+      "type": "number",
+      "description": "Set the tabindex of the component's trigger source",
+      "description_zh": "设置组件的触发源的 tabindex"
+    },
+    "transition": {
+      "default": "'tiny-fade-in-linear'",
+      "value": "",
+      "type": "string",
+      "description": "Defines the class name for the gradient animation",
+      "description_zh": "定义渐变动画的类名"
+    },
+    "type": {
+      "default": "--",
+      "value": "",
+      "type": "normal / warning / error / info / success",
+      "description": "提示的类型， type 的优先级大于 effect",
+      "description_zh": "提示的类型， type 的优先级大于 effect "
+    },
+    "visible": {
+      "default": "'always'",
+      "value": "",
+      "type": " always / auto",
+      "description": "Patterns that appear intelligently for prompts",
+      "description_zh": "提示的智能出现的模式"
+    },
+    "visible-arrow": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether or not to display arrows",
+      "description_zh": "是否显示箭头"
+    }
+  },
+  "link": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/tooltip",
+  "link_zh": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/tooltip",
+  "typeDetail": {
+    "IPopperOption": "interface IPopperOption {\n  bubbling: boolean // 是否监听元素所有上级有滚动元素的scroll事件，监听到则更新popper的位置。用于解决某些弹出层位置在页面滚动时，位置不正确的场景，默认false\n  followReferenceHide: boolean // 当触发源隐藏时，自动隐藏弹出层，默认true\n  removeOnDestroy: boolean // 弹出层消失后，是否移除弹出层的DOM元素，布尔false\n  updateHiddenPopperOnScroll: boolean  // 滚动过程中是否更新隐藏的弹出层位置\n  boundariesElement: 'viewport' | 'body' | HTMLElement // 滚动过程中,弹出层的碰撞边界。 默认值为： 'viewport'\n}",
+    "IPopperPlacement": "type IPopperPlacement = 'top' | 'top-start' | 'top-end' | 'bottom' | 'bottom-start' | 'bottom-end' | 'left' | 'left-start' | 'left-end' | 'right' | 'right-start' | 'right-end'"
+  },
+  "events": [],
+  "methods": [],
+  "slots": [
+    {
+      "name": "content",
+      "description": "Content slots",
+      "description_zh": "内容插槽"
+    },
+    {
+      "name": "default",
+      "description": "Default slot",
+      "description_zh": "默认插槽"
+    }
+  ],
+  "filename": "ToolTip"
+}

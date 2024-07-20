@@ -1,0 +1,70 @@
+{
+  "name": "TinyNavMenu",
+  "props": {
+    "before-skip": {
+      "default": "--",
+      "value": "",
+      "type": "(item: IMenuItem) => boolean",
+      "description": "Click on the hook function before the menu jump, and return false will not be able to jump",
+      "description_zh": "点击菜单跳转前的钩子函数，返回 false 将无法跳转"
+    },
+    "data": {
+      "default": "--",
+      "value": "",
+      "type": "IDataItem[]",
+      "description": "Set the data for the navigation menu",
+      "description_zh": "设置导航菜单的数据"
+    },
+    "fetch-menu-data": {
+      "default": "--",
+      "value": "",
+      "type": "() => IDataItem[]",
+      "description": "Customize the menu data loading service to return a Promise object",
+      "description_zh": "自定义菜单数据加载服务，返回一个Promise对象"
+    },
+    "fields": {
+      "default": "{ textField: \"title\", urlField: \"url\", key: \"id\" }",
+      "value": "",
+      "type": "IFields",
+      "description": "Customize the mapping of menu data",
+      "description_zh": "自定义菜单数据的映射"
+    },
+    "overflow": {
+      "default": "auto",
+      "value": "",
+      "type": "IOverflow",
+      "description": "Sets how the first-level menu is displayed when it is not fully displayed in the current menu container",
+      "description_zh": "设置一级菜单无法在当前菜单容器里显示完全时的展示方式"
+    },
+    "prevent": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "If you are using the component's default service to get menu data, and you want to prevent the default jump behavior, you need to use before-skip with this property",
+      "description_zh": "若使用组件的默认服务获取菜单数据，并且要阻止默认的跳转行为，需要 before-skip 和此属性一起使用"
+    }
+  },
+  "link": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/nav-menu",
+  "link_zh": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/nav-menu",
+  "typeDetail": {
+    "IMenuItem": "interface IMenuItem {\n  id: string\n  isFullUrl: boolean\n  pid: string\n  route: string\n  target: string\n  title: string\n  url: string\n}",
+    "IDataItem": "interface IDataItem {\n  title: string\n  url: string\n  children?: IDataItem[]\n}",
+    "IFields": "interface IFields {\n  textField: string\n  urlField: string\n  key?: string\n}",
+    "IOverflow": "type IOverflow = 'auto' | 'retract' | 'fixed' | 'hidden'"
+  },
+  "events": [],
+  "methods": [],
+  "slots": [
+    {
+      "name": "logo",
+      "description": "Menu bar logo slot",
+      "description_zh": "菜单栏 Logo 插槽"
+    },
+    {
+      "name": "toolbar",
+      "description": "Customize the upper right part of the toolbar slot",
+      "description_zh": "自定义右上角部分 toolbar 插槽"
+    }
+  ],
+  "filename": "NavMenu"
+}

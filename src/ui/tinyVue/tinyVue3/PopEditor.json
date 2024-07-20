@@ -1,0 +1,293 @@
+{
+  "name": "TinyPopEditor",
+  "props": {
+    "auto-lookup": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether data is automatically requested at initialization",
+      "description_zh": "初始化时是否自动请求数据"
+    },
+    "auto-reset": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "After filtering, click Close to automatically reset the filter criteria",
+      "description_zh": "筛选后点击关闭是否自动重置筛选条件"
+    },
+    "before-close": {
+      "default": "--",
+      "value": "",
+      "type": "() => boolean",
+      "description": "You can configure a method to close the blocking pop-up window. If the method returns a false value, the interception pop-up window is closed, otherwise it is not blocked",
+      "description_zh": "可以配置一个拦截弹窗关闭的方法。如果方法返回 false 值，则拦截弹窗关闭，否则不拦截"
+    },
+    "before-reset": {
+      "default": "--",
+      "value": "",
+      "type": "() => boolean",
+      "description": "Hook function before reset",
+      "description_zh": "重置前的钩子函数"
+    },
+    "conditions": {
+      "default": "--",
+      "value": "",
+      "type": "IConditions[]",
+      "description": "If the pop-up panel is configured with a table, set the form query items in the pop-up panel",
+      "description_zh": "当弹出面板配置的是表格时，设置弹出面板中的表单查询项"
+    },
+    "dialog-class": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "Customize the class name of the pop-up window",
+      "description_zh": "自定义配置弹窗类名"
+    },
+    "disabled": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Disabled state",
+      "description_zh": "禁用状态"
+    },
+    "draggable": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Sets whether the pop-up window is draggable",
+      "description_zh": "设置弹出窗口是否可拖动"
+    },
+    "grid-op": {
+      "default": "--",
+      "value": "",
+      "type": "InstanceType<typeof TinyGrid>['$props']",
+      "description": "Set the configuration information of the table component in the pop-up panel",
+      "description_zh": "设置弹出面板中表格组件的配置信息"
+    },
+    "icon": {
+      "default": "IconPopup",
+      "value": "",
+      "type": "Component",
+      "description": "Customize the icon at the end of the selection box",
+      "description_zh": "自定义选择框尾部图标"
+    },
+    "v-model": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "Binding value",
+      "description_zh": "绑定值"
+    },
+    "multi": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Sets whether the data in the pop-up panel can be multi-selected",
+      "description_zh": "设置弹出面板中的数据是否可多选"
+    },
+    "pager-op": {
+      "default": "--",
+      "value": "",
+      "type": "InstanceType<typeof TinyPager>['$props']",
+      "description": "Set up the paging configuration",
+      "description_zh": "设置分页配置"
+    },
+    "placeholder": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "Placeholders",
+      "description_zh": "占位符"
+    },
+    "popseletor": {
+      "default": "'grid'",
+      "value": "",
+      "type": "string",
+      "description": "Sets the tree or table components that can be displayed in the pop-up panel",
+      "description_zh": "设置弹出面板中可显示的树或者表格组件"
+    },
+    "radio-change-close": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Select whether to close the pop-up window when selected",
+      "description_zh": "单选选中后是否关闭弹窗"
+    },
+    "readonly": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Set whether to read-only, set [3.0] to false, and click the Input box to pop up the selection box",
+      "description_zh": "设置是否只读，【3.0】设置为 false 后点击 Input 框可以弹出选择框"
+    },
+    "remote-search": {
+      "default": "--",
+      "value": "",
+      "type": "IRemoteSearch",
+      "description": "Configure remote search",
+      "description_zh": "配置远程搜索"
+    },
+    "resize": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to display the full-screen button in the pop-up box",
+      "description_zh": "是否显示弹框全屏按钮"
+    },
+    "selected-box-op": {
+      "default": "--",
+      "value": "",
+      "type": "ISelectedBoxOption",
+      "description": "通过属性 selected-box-op 指定 SelectedBox 组件配置,可以把已选表格显示为已选栏",
+      "description_zh": "通过属性 selected-box-op 指定 SelectedBox 组件配置，可以把已选表格显示为已选栏"
+    },
+    "show-clear-btn": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Sets whether to display a clear button on the right side of the input box",
+      "description_zh": "设置输入框中右侧是否显示清除按钮"
+    },
+    "show-history": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "When the pop-up panel is configured with a table, set whether the table is displayed on the History tab",
+      "description_zh": "当弹出面板配置的是表格时，设置历史记录标签页是否显示表格"
+    },
+    "show-pager": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Showcase pagination",
+      "description_zh": "展示分页"
+    },
+    "show-selected-box": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "For multi-select scenes, whether to display the selected table as a selected column",
+      "description_zh": "多选场景，是否将已选表格显示为已选栏"
+    },
+    "size": {
+      "default": "''",
+      "value": "",
+      "type": "medium / small / / mini",
+      "description": "size",
+      "description_zh": "尺寸"
+    },
+    "suggest": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Configure suggest to enable the prediction function, which will automatically trigger the prediction query after entering the input box, which needs to be used in conjunction with remote-search",
+      "description_zh": "配置 suggest 开启联想功能，输入框输入后自动触发联想查询，该功能需要联合 remote-search 使用"
+    },
+    "tabindex": {
+      "default": "'1'",
+      "value": "",
+      "type": "string",
+      "description": "Set the order of focus gain via the Tab key (valid when the readonly property is set to false)",
+      "description_zh": "设置通过 Tab 键获焦及获焦顺序（readonly 属性设置为 false 时有效）"
+    },
+    "text-field": {
+      "default": "'label'",
+      "value": "",
+      "type": "string",
+      "description": "Set the field to display the text in the input box, and the displayed text will not be submitted when data is submitted",
+      "description_zh": "设置输入框中显示文本的字段，提交数据时，不提交该显示文本"
+    },
+    "text-split": {
+      "default": "'/'",
+      "value": "",
+      "type": "string",
+      "description": "In the case of multiple selections, set the separator when multiple data is to be displayed in the input box",
+      "description_zh": "在多选的情况下，设置输入框中要显示多个数据时的分隔符"
+    },
+    "title": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "Set the title of the pop-up panel and support internationalization",
+      "description_zh": "设置弹出面板的标题，并且支持国际化"
+    },
+    "trigger": {
+      "default": "'default'",
+      "value": "",
+      "type": "default / cell / row",
+      "description": "The pop-up table shows the selected configuration of radio when radio is selected, configurable: default (default), cell (click on the cell to trigger), row (click on the row to trigger)",
+      "description_zh": "弹框表格中为单选时 radio 的选中配置，可配置：default（默认）, cell（点击单元格触发）, row（点击行触发）"
+    },
+    "value-field": {
+      "default": "'id'",
+      "value": "",
+      "type": "string",
+      "description": "Set the fields in the input box to submit data",
+      "description_zh": "设置输入框要提交数据的字段"
+    },
+    "value-split": {
+      "default": "';'",
+      "value": "",
+      "type": "string",
+      "description": "In the case of multiple selection, set the separator when the input box is to submit multiple data",
+      "description_zh": "在多选的情况下，设置输入框要提交多个数据时的分隔符"
+    },
+    "width": {
+      "default": "--",
+      "value": "",
+      "type": "number | string",
+      "description": "Set the width of the popup panel in pixels, with a minimum width of 900px when the component's multi = true, and a minimum width of 600px otherwise",
+      "description_zh": "设置弹出面板的宽度（单位像素），当组件的 multi = true 时，宽度最小为 900px，否则宽度最小为 600px"
+    }
+  },
+  "link": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/popeditor",
+  "link_zh": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/popeditor",
+  "typeDetail": {
+    "IConditions": "interface IConditions {\n  field: string\n  label: string\n}",
+    "IRemoteSearch": "type IRemoteSearch = ({ page: { currentPage: number, pageSize: number }, conditions: { [K in IConditions['field']]: string } }) => void"
+  },
+  "events": [
+    {
+      "name": "change",
+      "description": "数据发生变化的事件，commitValue 为选中数据的索引（value-field 配置的字段），selectedDatas 为选中的数据项",
+      "description_zh": "数据发生变化的事件，commitValue 为选中数据的索引（value-field 配置的字段），selectedDatas 为选中的数据项",
+      "params": "(commitValue: number, selectedDatas: Object) => void",
+      "value": ""
+    },
+    {
+      "name": "close",
+      "description": "An event that is triggered when the pop-up box is closed",
+      "description_zh": "弹框关闭时触发的事件",
+      "params": "() => void",
+      "value": ""
+    },
+    {
+      "name": "page-change",
+      "description": "In the tabular mode pagination switching event, page is the page number of the pagination switch",
+      "description_zh": "表格模式分页切换事件，page 为分页切换页码",
+      "params": "(page: number) => void",
+      "value": ""
+    },
+    {
+      "name": "popup",
+      "description": "An event that is triggered when a pop-up box is opened",
+      "description_zh": "弹框打开时触发的事件",
+      "params": "() => void",
+      "value": ""
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "footer",
+      "description": "Bottom area slots",
+      "description_zh": "底部区域插槽"
+    },
+    {
+      "name": "search",
+      "description": "Query criteria slot",
+      "description_zh": "查询条件插槽"
+    }
+  ],
+  "filename": "PopEditor"
+}

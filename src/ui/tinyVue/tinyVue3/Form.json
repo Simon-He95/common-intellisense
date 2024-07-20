@@ -1,0 +1,194 @@
+{
+  "name": "TinyForm",
+  "props": {
+    "disabled": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "If this parameter is set to true, the disabled attribute on the form component will no longer take effect",
+      "description_zh": "是否禁用该表单内的所有表单组件，若设置为 true，则表单内组件上的 disabled 属性不再生效"
+    },
+    "display-only": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to enable display-only mode",
+      "description_zh": "是否开启仅展示模式"
+    },
+    "hide-required-asterisk": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to hide the red asterisk next to the label of the required field, the default value is true under the SMB subject",
+      "description_zh": "是否隐藏必填字段的标签旁边的红色星号，SMB 主题下默认值为true"
+    },
+    "inline": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Inline layout mode",
+      "description_zh": "行内布局模式"
+    },
+    "inline-message": {
+      "default": "--",
+      "value": "",
+      "type": "boolean",
+      "description": "When validate-type is set to text, whether to display the verification information in the form of inline (message-type is recommended)",
+      "description_zh": "当 validate-type 设置为 text 时，是否以行内形式展示校验信息(推荐使用 message-type 设置)"
+    },
+    "label-align": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "When a required asterisk appears, whether the label text is aligned or not, is valid when label-position is 'right'",
+      "description_zh": "当出现必填星号时，标签文本是否对齐，当 label-position 为 'right' 时有效"
+    },
+    "label-position": {
+      "default": "'right'",
+      "value": "",
+      "type": "right / left / top",
+      "description": "The position of the layout of the labels in the form",
+      "description_zh": "表单中标签的布局位置"
+    },
+    "label-suffix": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "Label suffix in the form",
+      "description_zh": "表单中标签后缀"
+    },
+    "label-width": {
+      "default": "'80px'",
+      "value": "",
+      "type": "string",
+      "description": "The width of the label in the form",
+      "description_zh": "表单中标签占位宽度"
+    },
+    "message-type": {
+      "default": "--",
+      "value": "",
+      "type": "inline / block",
+      "description": "When validate-type is set to text, configure the text type error type, which can be configured at the in-line or block-level, and if not set, it will be set to absolute",
+      "description_zh": "当 validate-type 设置为 text 时，配置文本类型错误类型，可配置行内或者块级，不设置则为 absolute 定位"
+    },
+    "model": {
+      "default": "--",
+      "value": "",
+      "type": "{ [prop: string]: any }",
+      "description": "Form data object",
+      "description_zh": "表单数据对象"
+    },
+    "overflow-title": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the label is too long or not",
+      "description_zh": "标签超长是否显示提示"
+    },
+    "popper-options": {
+      "default": "--",
+      "value": "",
+      "type": "Popover.IPopperOption",
+      "description": "The configuration is transmitted to the popover component when the verification error message is displayed",
+      "description_zh": "校验错误提示配置，透传至 Popover 组件"
+    },
+    "rules": {
+      "default": "--",
+      "value": "",
+      "type": "{ [prop: string]: IFormRules | IFormRules[]  }",
+      "description": "Form validation rules",
+      "description_zh": "表单验证规则"
+    },
+    "show-message": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether a verification error message is displayed",
+      "description_zh": "是否显示校验错误信息"
+    },
+    "size": {
+      "default": "--",
+      "value": "",
+      "type": "medium / small / mini",
+      "description": "The size of the component in the form is the default size if not set",
+      "description_zh": "表单内组件的尺寸，不设置则为默认尺寸"
+    },
+    "validate-on-rule-change": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to trigger a validation as soon as the rules property is changed",
+      "description_zh": "是否在 rules 属性改变后立即触发一次验证"
+    },
+    "validate-position": {
+      "default": "'right'",
+      "value": "",
+      "type": "IFormPosition",
+      "description": "Specifies where the check prompt box is displayed",
+      "description_zh": "指定校验提示框显示的位置"
+    },
+    "validate-type": {
+      "default": "'tip'",
+      "value": "",
+      "type": "tip / text",
+      "description": "Check type",
+      "description_zh": "校验类型"
+    }
+  },
+  "link": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/form",
+  "link_zh": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/form",
+  "typeDetail": {
+    "IFormPosition": "type IFormPosition = 'top-start' | 'top' | 'top-end' | 'left-start' | 'left' | 'left-end' | 'right-start' | 'right' | 'right-end' | 'bottom-start' | 'bottom' | 'bottom-end'",
+    "IFormRules": "// 表单项检验触发时机\ntype IFormTrigger = 'change' | 'blur'\n\ninterface IFormRules {\n  required?: boolean // 是否必填\n  message?: number // 校验错误的提示\n  // 内置的类型校验\n  type?: 'date' | 'dateTime' | 'float' | 'array' | 'string' | 'number' | 'url' | 'time' | 'email' | 'object' | 'boolean' | 'enum'\n  // 校验触发时机， 默认为 ['change', 'blur'] 两种场景都触发，如果仅在主动调用校验方式时触发，可设置为空数组 []。\n  trigger?: IFormTrigger | IFormTrigger[] \n  // 同步检验函数，调用回调传递错误信息。\n  validator?: (\n    rule: IFormInnerRule, // from内部处理后的rule\n    value: any, // 表单model对应的值，根据表单项prop获取\n    callback: (e: Error) => void\n    data: object, // prop和value构造的对象\n    options: object // 检验配置，一般不需要用到\n  ) => void\n  // 异步校验函数，resolve则表示校验成功，reject表示校验失败。\n  asyncValidator?: (\n    rule: IFormInnerRule,\n    value: any,\n    callback: (e: Error) => void\n    data: object,\n    options: object\n  ) => Promise<any>\n}\n\ninterface IFormInnerRule {\n  field: string // 表单项prop\n  fullField: string // 表单项完整prop（嵌套检验时有用）\n  type: string // 内部使用\n}",
+    "IFormError": "// 校验错误返回对象\ninterface IFormError {\n  [prop: string]: IFormErrorField[]\n}\ninterface IFormErrorField {\n  message: string // 校验错误提示\n  field: string // 校验失败的prop\n}",
+    "IFormValidateMethod": "function IFormValidateMethod(callback: (isValid: boolean, fields: IFormError) => void ): Promise<boolean>",
+    "IFormValidateFieldMethod": "function IFormValidateFieldMethod(\n  prop: string | string[],\n  callback: (msg: string, field: IFormError) => void\n): void"
+  },
+  "events": [
+    {
+      "name": "validate",
+      "description": "Triggered when any form item is verified",
+      "description_zh": "任一表单项被校验后触发",
+      "params": "(prop: string, isValid: boolean, message: string) => void",
+      "value": ""
+    }
+  ],
+  "methods": [
+    {
+      "name": "clearValidate",
+      "description": "To remove the verification result of a form item, you can pass in the prop of the form item to be removed, or an array of props, if not, the verification result of the entire form will be removed",
+      "params": "(prop: string | string[]) => void",
+      "description_zh": "移除表单项的校验结果，可传入待移除的表单项的 prop ，或者 prop 组成的数组，如不传则移除整个表单的校验结果",
+      "value": ""
+    },
+    {
+      "name": "resetFields",
+      "description": "Reset the entire form, reset all field values to their default values, and remove the validation results",
+      "params": "() => void",
+      "description_zh": "对整个表单进行重置，将所有字段值重置为初始值并移除校验结果",
+      "value": ""
+    },
+    {
+      "name": "validate",
+      "description": "The method of verifying the entire form, the parameter is a callback function (the callback function will be called after the verification is completed, and two parameters will be passed in: 1, whether the verification is successful, 2, and the field that failed the verification) returns a promise",
+      "params": "IFormValidateMethod",
+      "description_zh": "对整个表单进行校验的方法，参数为一个回调函数（该回调函数会在校验结束后被调用，并传入两个参数：1、是否校验成功 2、未通过校验的字段）返回一个 promise",
+      "value": ""
+    },
+    {
+      "name": "validateField",
+      "description": "The first parameter is a single prop or prop array, and the second parameter is a callback function, which will be called sequentially after each form item is verified",
+      "params": "IFormValidateFieldMethod",
+      "description_zh": "对部分表单字段进行校验的方法, 第一个参数为单个 prop 或者 prop 数组，第二个参数是回调函数，每个表单项检验完后会依次调用该回调",
+      "value": ""
+    }
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "description": "Default slots, custom form content",
+      "description_zh": "默认插槽，自定义表单内容"
+    }
+  ],
+  "filename": "Form"
+}

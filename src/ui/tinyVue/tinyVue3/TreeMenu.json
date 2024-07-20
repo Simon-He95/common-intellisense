@@ -1,0 +1,341 @@
+{
+  "name": "TinyTreeMenu",
+  "props": {
+    "accordion": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether or not it is set to accordion effect (only one node of the same level can be expanded)",
+      "description_zh": "是否设置为手风琴效果（只能展开一个同级别的节点）"
+    },
+    "allow-drag": {
+      "default": "--",
+      "value": "",
+      "type": "(vm:ITreeNodeVm) => boolean",
+      "description": "The callback event before the drag starts, which defines the rule of whether the node allows dragging, and returns true to allow dragging, which is used with the draggable property",
+      "description_zh": "拖拽开始前的回调事件，定义节点是否允许拖拽的规则，返回 true 则允许拖拽，配合 draggable 属性使用"
+    },
+    "allow-drop": {
+      "default": "--",
+      "value": "",
+      "type": "(draggingNode: ITreeNodeVm, targetNode: ITreeNodeVm,type: \"prev\"|\"next\"|\"inner\") => boolean",
+      "description": "The callback event before the end of the drag-and-drop defines the rule of whether the node is allowed to be placed on the template node, and if it returns true, it is allowed to be placed, which is used with the draggable property",
+      "description_zh": "拖拽结束前的回调事件，定义节点是否允许放置到模板节点的规则，返回 true 则允许放置，配合 draggable 属性使用"
+    },
+    "check-strictly": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to follow the practice of strictly associating parents and children with the show-checkbox property",
+      "description_zh": "是否遵循父级和子级严格不相关联的做法，配合 show-checkbox 属性使用"
+    },
+    "collapsible": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to allow the expanded menu to collapse, when it is not used with show-number, you can still click the icon to collapse",
+      "description_zh": "是否允许展开后的菜单收起，未和 show-number 配套使用时，仍可以点击图标收起"
+    },
+    "customIcon": {
+      "default": "--",
+      "value": "",
+      "type": "VueComponent",
+      "description": "Set up a tree menu with icons",
+      "description_zh": "设置带图标树形菜单"
+    },
+    "data": {
+      "default": "[]",
+      "value": "",
+      "type": "ITreeNodeData[]",
+      "description": "Static data sources",
+      "description_zh": "静态数据源"
+    },
+    "default-checked-keys": {
+      "default": "[]",
+      "value": "",
+      "type": "Array",
+      "description": "By default, check the array of nodes' keys",
+      "description_zh": "默认勾选节点的 key 的数组"
+    },
+    "default-expand-all": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to expand all child nodes by default",
+      "description_zh": "是否默认展开所有子节点"
+    },
+    "default-expanded-keys": {
+      "default": "[]",
+      "value": "",
+      "type": "Array",
+      "description": "By default, expand an array of nodes' keys",
+      "description_zh": "默认展开节点的 key 的数组"
+    },
+    "default-expanded-keys-highlight": {
+      "default": "--",
+      "value": "",
+      "type": "number|string",
+      "description": "Sets the highlight of a node in the default expanded node, used with the default-expanded-keys property",
+      "description_zh": "设置默认展开节点中的某个节点高亮，配合 default-expanded-keys 属性使用"
+    },
+    "draggable": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the menu node can be dragged",
+      "description_zh": "是否可拖动菜单节点"
+    },
+    "ellipsis": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the text is too long and omitted to be displayed. Priority takes precedence over wrap",
+      "description_zh": "是否文字超长省略显示。优先级高于 wrap"
+    },
+    "empty-text": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "The content is the text that is displayed when it is empty",
+      "description_zh": "内容为空时展示的文本"
+    },
+    "expand-on-click-node": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether you can click on a node to expand/collapse. If configured as fasle, you can only expand/collapse by clicking the drop-down icon",
+      "description_zh": "是否能点击节点即展开/收起。配置为 fasle 则只能点击下拉图标展开/收起"
+    },
+    "filter-node-method": {
+      "default": "--",
+      "value": "",
+      "type": "(query:string, data:ITreeNodeData, node:ITreeNodeVm) => boolean",
+      "description": "Customize the method of filtering tree nodes, return true to indicate that the node can be displayed, and return false to indicate that the node will be hidden",
+      "description_zh": "自定义树节点过滤的方法，返回 true 表示这个节点可以显示，返回 false 则表示这个节点会被隐藏"
+    },
+    "get-menu-data-sync": {
+      "default": "--",
+      "value": "",
+      "type": "() => ITreeNodeData[]",
+      "description": "Customize the method to obtain the server-side data source and return a Promise object",
+      "description_zh": "自定义获取服务端数据源的方法，返回一个 Promise 对象"
+    },
+    ":indent": {
+      "default": "--",
+      "value": "",
+      "type": "number",
+      "description": "The horizontal indentation distance of the child relative to the parent node, in px",
+      "description_zh": "子级相对于父级节点的水平缩进距离，单位 px"
+    },
+    "lazy": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to lazy load child nodes, use with the load property",
+      "description_zh": "是否懒加载子节点，配合 load 属性使用"
+    },
+    "load": {
+      "default": "--",
+      "value": "",
+      "type": "(node:ITreeNodeVm, resolve:IResolveType) => IResolveType",
+      "description": "Methods for loading subtree data, which only take effect if the lazy property is true",
+      "description_zh": "加载子树数据的方法，仅当 lazy 属性为 true 时生效"
+    },
+    "menu-collapsible": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to display the side collapse and expand buttons",
+      "description_zh": "是否显示侧边折叠与展开按钮"
+    },
+    ":node-height": {
+      "default": "--",
+      "value": "",
+      "type": "number",
+      "description": "Node height",
+      "description_zh": "节点高度"
+    },
+    "node-key": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "Set the attribute of the unique key of each tree node, which is unique throughout the tree",
+      "description_zh": "设置每个树节点唯一标识（key）的属性，在整棵树中都是唯一的"
+    },
+    "only-check-children": {
+      "default": "false",
+      "value": "",
+      "type": "",
+      "description": "Whether the parent is not selectable, can only be expanded, and cannot be jumped",
+      "description_zh": "父级是否不可选，只能展开不能跳转"
+    },
+    "prefix-icon": {
+      "default": "--",
+      "value": "",
+      "type": "Component",
+      "description": "Customize the front icon",
+      "description_zh": "自定义前置图标"
+    },
+    "props": {
+      "default": "{\n  children: 'children'\n  label: 'label'\n  disabled: 'disabled'\n  isLeaf: 'isLeaf'\n} \n",
+      "value": "",
+      "type": "IProps",
+      "description": "Mapping fields",
+      "description_zh": "映射字段"
+    },
+    "search-icon": {
+      "default": "--",
+      "value": "",
+      "type": "Component",
+      "description": "Customize the search icon",
+      "description_zh": "自定义搜索图标"
+    },
+    "show-checkbox": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the node can be selected",
+      "description_zh": "节点是否可被选择"
+    },
+    "show-expand": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to enable the one-click expand/collapse function. Click the icon in the bottom left corner to expand/collapse the menuNote: When used with the customIcon property, this feature is not supported for plain text menus",
+      "description_zh": "是否启用一键展开/收起功能。点击左下角图标可展开/收起菜单注意：配合 customIcon 属性使用，纯文本菜单不支持此功能"
+    },
+    "show-filter": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether or not to display a search box allows you to search for filter nodes",
+      "description_zh": "是否显示搜索框，可搜索过滤节点"
+    },
+    "show-number": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the drop-down icon area on the right is displayed as the number content defined by the number property, it is recommended that it should not exceed 4 characters",
+      "description_zh": "右侧下拉图标区域是否显示为 number 属性定义的数字内容，建议不超过 4 个字符"
+    },
+    "show-title": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to display the title prompt of the node, triggered by hovering over the node",
+      "description_zh": "是否显示节点的 title 提示，鼠标悬浮节点之上触发"
+    },
+    "suffix-icon": {
+      "default": "--",
+      "value": "",
+      "type": "Component",
+      "description": "Customize the back icon",
+      "description_zh": "自定义后置图标"
+    },
+    "wrap": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether or not to wrap the line",
+      "description_zh": "是否换行显示"
+    }
+  },
+  "link": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/tree-menu",
+  "link_zh": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/tree-menu",
+  "typeDetail": {
+    "ITreeNodeVm": "interface ITreeNodeVm {\n  // 是否已勾选\n  \"checked\": boolean\n  // 子节点\n  \"childNodes\": ITreeNodeVm[]\n  // 节点数据\n  \"data\":  ITreeNodeData\n  // 是否展开\n  \"expanded\": boolean\n  // 唯一标识\n  \"id\": string | number\n  // 是否半选\n  \"indeterminate\": boolean\n  // 是否当前节点\n  \"isCurrent\": boolean\n  // 是否叶子节点\n  \"isLeaf\": boolean\n  // 层级\n  \"level\": number\n  // 是否已加载\n  \"loaded\": boolean\n  // 是否加载中\n  \"loading\": boolean\n  // 是否可见\n  \"visible\": boolean\n  // 是否禁用\n  \"disabled\": boolean\n  // 节点显示文本\n  \"label\": string\n}",
+    "ITreeNodeData": "interface ITreeNodeData {\n  // node-key='id' 设置节点的唯一标识\n  \"id\": number | string\n  // 节点显示文本\n  \"label\": string\n  // 子节点\n  \"children\"?: ITreeNodeData[]\n  // 链接\n  \"url\"?: string,\n  // show-number 时展示的字段\n  \"number\"?: number | string\n  // 自定义每个节点的图标\n  \"customIcon\": Component \n}",
+    "IProps": "interface IProps {\n  \"label\"?: string\n  \"children\"?: string\n  \"disabled\": string\n  \"isLeaf\": string\n}",
+    "IResolveType": "// Promise 的 resolve 回调函数\ntype IResolveType = (data:ITreeNodeData) => void",
+    "IDropType": "// 拖拽节点相对目标节点的位置\ntype IDropType = before | after | inner | none"
+  },
+  "events": [
+    {
+      "name": "check-change",
+      "description": "Listens for events when the check status of a node that can be selected changes",
+      "description_zh": "监听可勾选节点的勾选状态发生变化时的事件",
+      "params": "(node:ITreeNodeVm, checked:boolean, indeterminate:boolean) => void",
+      "value": ""
+    },
+    {
+      "name": "current-change",
+      "description": "Listens for events when the currently selected node changes",
+      "description_zh": "监听当前选中节点发生变化时的事件",
+      "params": "(nodeData:ITreeNodeData, node:ITreeNodeVm) => void",
+      "value": ""
+    },
+    {
+      "name": "node-click",
+      "description": "Listens for events when a node is clicked",
+      "description_zh": "监听节点被点击时的事件",
+      "params": "(nodeData:ITreeNodeData, node:ITreeNodeVm) => void",
+      "value": ""
+    },
+    {
+      "name": "node-collapse",
+      "description": "Listen for events when a node is clicked to collapse;",
+      "description_zh": "监听节点被点击收起时的事件;",
+      "params": "(nodeData:ITreeNodeData, node:ITreeNodeVm) => void",
+      "value": ""
+    },
+    {
+      "name": "node-drag-end",
+      "description": "Listens for events where the node is dragged to the end (which may not be successful).",
+      "description_zh": "监听节点拖拽结束（可能未成功）的事件",
+      "params": "(draggingNode:ITreeNodeVm, targetNode:ITreeNodeVm, dropType:IDropType, event:DragEvent) => void",
+      "value": ""
+    },
+    {
+      "name": "node-drag-start",
+      "description": "Listen for events where the node starts dragging",
+      "description_zh": "监听节点开始拖拽的事件",
+      "params": "(node:ITreeNodeVm, event:DragEvent) => void",
+      "value": ""
+    },
+    {
+      "name": "node-expand",
+      "description": "Listen for events when a node is clicked to expand;",
+      "description_zh": "监听节点被点击展开时的事件;",
+      "params": "(nodeData:ITreeNodeData, node:ITreeNodeVm) => void",
+      "value": ""
+    }
+  ],
+  "methods": [
+    {
+      "name": "getCurrentKey",
+      "description": "Get the key of the currently selected node, note: Use the node-key property to set the field of the key value of each node, only applicable to single selection",
+      "params": "() => string | number | null",
+      "description_zh": "获取当前选中节点的 key ，注意：配合 node-key 属性设置每个节点 key 值的字段,仅适用单选",
+      "value": ""
+    },
+    {
+      "name": "getCurrentNode",
+      "description": "To obtain the data of the currently selected node, note: Use the node-key property to set the field of the key value of each node, only for single selection",
+      "params": "() => ITreeNodeData|null",
+      "description_zh": "获得当前选中节点的数据,注意：配合 node-key 属性设置每个节点 key 值的字段,仅适用单选",
+      "value": ""
+    },
+    {
+      "name": "setCurrentKey",
+      "description": "Set a node to the currently selected node by using the key, note: Use the node-key property to set the field of the key value of each node",
+      "params": "(key:string|number) => void",
+      "description_zh": "通过 key 设置某个节点为当前选中的节点，注意：配合 node-key 属性设置每个节点 key 值的字段",
+      "value": ""
+    },
+    {
+      "name": "setCurrentNode",
+      "description": "Use nodeData to set a node as the currently selected node, note that the node-key property is used to set the field of each node's key value",
+      "params": "(nodeData:ITreeNodeData) => void",
+      "description_zh": "通过 nodeData 设置某个节点为当前选中的节点，注意：配合 node-key 属性设置每个节点 key 值的字段",
+      "value": ""
+    }
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "description": "Customize the content of the tree node, with { node, data } parameter",
+      "description_zh": "自定义树节点的内容，参数为 { node, data }"
+    }
+  ],
+  "filename": "TreeMenu"
+}

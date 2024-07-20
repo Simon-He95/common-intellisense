@@ -1,0 +1,76 @@
+{
+  "name": "TinyCascaderPanel",
+  "props": {
+    "v-model": {
+      "default": "--",
+      "value": "",
+      "type": "ICascaderPanelNodePropValue",
+      "description": "选中项绑定值, 其类型由 props.multiple、props.emitPath 共同决定",
+      "description_zh": "选中项绑定值, 其类型由 props.multiple、props.emitPath 共同决定"
+    },
+    "options": {
+      "default": "--",
+      "value": "",
+      "type": "ICascaderPanelData[]",
+      "description": "Optional data sources, key names configurable via the Props property",
+      "description_zh": "可选项数据源，键名可通过 Props 属性配置"
+    },
+    "props": {
+      "default": "--",
+      "value": "",
+      "type": "ICascaderPanelConfig",
+      "description": "Configuration options, see the ICascaderPanelConfig table",
+      "description_zh": "配置选项，具体见 ICascaderPanelConfig 表 "
+    }
+  },
+  "link": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/cascader-panel",
+  "link_zh": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/cascader-panel",
+  "typeDetail": {
+    "ICascaderPanelNodeValue": "type ICascaderPanelNodeValue = string | number",
+    "ICascaderPanelNodePropValue": "type ICascaderPanelNodePropValue =\n  | ICascaderPanelNodeValue\n  | ICascaderPanelNodeValue[]\n  | ICascaderPanelNodeValue[][]",
+    "ICascaderPanelData": "type ICascaderPanelData = {\n  value?: ICascaderPanelNodeValue\n  label?: string\n  children?: ICascaderPanelData[]\n  disabled?: boolean\n  leaf?: boolean\n  [key: string]: ICascaderPanelNodeValue | ICascaderPanelData[] | string | boolean | undefined\n}",
+    "ICascaderPanelConfig": "interface ICascaderPanelConfig {\n  emitPath: boolean\n  expandTrigger: 'click' | 'hover'\n  hoverThreshold: number\n  checkStrictly?: boolean\n  multiple?: boolean\n  lazy: boolean\n  lazyLoad: (\n    node: ICascaderPanelNode,\n    resolve: (dataList: ICascaderPanelData[]) => void\n  ) => void\n  value: string\n  label: string\n  children: string\n  disabled: string\n  leaf: string\n}",
+    "ICascaderPanelNode": "type ICascaderPanelNode = {\n  parent: ICascaderPanelNode | null\n  level: number\n  data: ICascaderPanelData\n  config: ICascaderPanelConfig\n  uid: number\n  value: ICascaderPanelNodeValue\n  label: string\n  pathNodes: Node[]\n  path: ICascaderPanelNodeValue[]\n  pathLabels: string[]\n  loaded: boolean\n  loading: boolean\n  hasChildren: boolean\n  children: Node[]\n  checked?: boolean\n  indeterminate?: boolean\n  root?: boolean\n}",
+    "ICascaderPanelLazyLoad": "type ICascaderPanelLazyLoad = (node: ICascaderPanelNode, resolve: (dataList: ICascaderPanelData[]) => void) => void"
+  },
+  "events": [
+    {
+      "name": "change",
+      "description": "Triggered when the selected node changes; The callback parameter is the value of the selected node",
+      "description_zh": "当选中节点变化时触发; 回调参数为 选中节点的值",
+      "params": "(value: ICascaderPanelNodePropValue) => void",
+      "value": ""
+    },
+    {
+      "name": "expand-change",
+      "description": "Triggered when the expansion node changes; The callback parameter is an array of parent option values (Array type)",
+      "description_zh": "当展开节点发生变化时触发; 回调参数为 各父级选项值组成的数组 (Array 类型)",
+      "params": "(value: ICascaderPanelNodeValue[]) => void",
+      "value": ""
+    }
+  ],
+  "methods": [
+    {
+      "name": "clearCheckedNodes",
+      "description": "Clears the selected nodes",
+      "params": "() => void",
+      "description_zh": "清空选中的节点",
+      "value": ""
+    },
+    {
+      "name": "getCheckedNodes",
+      "description": "Get the selected node; parameter (leafOnly) is false or not, the default value is false",
+      "params": "(leafOnly: boolean = false) => ICascaderPanelNode[]",
+      "description_zh": "获取选中的节点;参数为 (leafOnly) 是否只是获取子节点，默认值为 false",
+      "value": ""
+    }
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "description": "自定义备选项的节点内容,参数为 { node: ICascaderPanelNode, data: ICascaderPanelData },分别为当前节点的 Node 对象和数据",
+      "description_zh": "自定义备选项的节点内容，参数为 { node: ICascaderPanelNode, data: ICascaderPanelData }，分别为当前节点的 Node 对象和数据"
+    }
+  ],
+  "filename": "CascaderPanel"
+}

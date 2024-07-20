@@ -1,0 +1,113 @@
+{
+  "name": "TinyAlert",
+  "props": {
+    "center": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the text is centered or not",
+      "description_zh": "文字是否居中"
+    },
+    "closable": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the warning can be turned off",
+      "description_zh": "警告是否可以关闭"
+    },
+    "close-text": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "Close button custom text",
+      "description_zh": "关闭按钮自定义文本"
+    },
+    "custom-class": {
+      "default": "'customClass'",
+      "value": "",
+      "type": "string",
+      "description": "Custom class name",
+      "description_zh": "自定义类名"
+    },
+    "description": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "The prompt content of the warning",
+      "description_zh": "警告的提示内容"
+    },
+    "icon": {
+      "default": "--",
+      "value": "",
+      "type": "Component",
+      "description": "The icon of the custom warning of the incoming icon component will automatically use the corresponding icon based on the type value by default",
+      "description_zh": "传入图标组件自定义警告的图标，默认会根据 type 值自动使用对应图标"
+    },
+    "show-icon": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether or not to display the icon",
+      "description_zh": "是否显示图标"
+    },
+    "size": {
+      "default": "'normal'",
+      "value": "",
+      "type": "normal / large",
+      "description": "The size of the warning",
+      "description_zh": "警告的尺寸大小"
+    },
+    "title": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "The title of the warning, which is valid when size is large, is automatically set based on type by default",
+      "description_zh": "警告的标题，在 size 为 large 时有效，默认会根据 type 自动设置"
+    },
+    "type": {
+      "default": "'info'",
+      "value": "",
+      "type": "IType",
+      "description": "The type of warning",
+      "description_zh": "警告的类型"
+    }
+  },
+  "link": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/alert",
+  "link_zh": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/alert",
+  "typeDetail": {
+    "IType": "type IType = 'success' | 'warning' | 'info' | 'error' | 'simple'"
+  },
+  "events": [
+    {
+      "name": "close",
+      "description": "An event that is triggered when the alert is closed",
+      "description_zh": "关闭 alert 时触发的事件",
+      "params": "() => void",
+      "value": ""
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "close",
+      "description": "Custom close content, which works when the closable property is false",
+      "description_zh": "自定义关闭内容，当 closable 属性为 false 时有效"
+    },
+    {
+      "name": "default",
+      "description": "The default slot of the component, which is valid when size is set to large",
+      "description_zh": "组件默认插槽，当 size 设置为 large 后有效"
+    },
+    {
+      "name": "description",
+      "description": "Presentation content",
+      "description_zh": "提示内容"
+    },
+    {
+      "name": "title",
+      "description": "The content of the title, which is valid when size is set to large",
+      "description_zh": "标题的内容，当 size 设置为 large 后有效"
+    }
+  ],
+  "filename": "Alert"
+}

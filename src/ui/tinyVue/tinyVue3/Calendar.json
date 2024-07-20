@@ -1,0 +1,60 @@
+{
+  "name": "TinyCalendar",
+  "props": {
+    "events": {
+      "default": "--",
+      "value": "",
+      "type": "eventLists[]",
+      "description": "A list of events",
+      "description_zh": "事件列表"
+    },
+    "mode": {
+      "default": "'month'",
+      "value": "",
+      "type": "month / year",
+      "description": "Calendar display mode",
+      "description_zh": "日历显示模式"
+    },
+    ":month": {
+      "default": "--",
+      "value": "",
+      "type": "number",
+      "description": "Specify the month, the default is the current month",
+      "description_zh": "指定月份，默认当前月份"
+    },
+    "show-selected": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to display the selected date",
+      "description_zh": "是否显示选中的日期"
+    },
+    ":year": {
+      "default": "--",
+      "value": "",
+      "type": "number",
+      "description": "Specify the year, default current year",
+      "description_zh": "指定年份，默认当前年份"
+    }
+  },
+  "link": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/calendar",
+  "link_zh": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/calendar",
+  "typeDetail": {
+    "eventLists": "interface eventLists [{\n        time: 1534297845236, // 指定需要展示事件的日期\n        title: '消息', // 指定事件标题\n        content: '这是一条消息', // 指定事件的具体内容\n        type: 'info' // 事件主题类型，包括 warning、error、info、success。\n      }]"
+  },
+  "events": [],
+  "methods": [],
+  "slots": [
+    {
+      "name": "day",
+      "description": "Date cell slot",
+      "description_zh": "日期单元格插槽"
+    },
+    {
+      "name": "tool",
+      "description": "Calendar toolbar slot",
+      "description_zh": "日历工具栏插槽"
+    }
+  ],
+  "filename": "Calendar"
+}

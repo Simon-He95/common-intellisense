@@ -1,0 +1,190 @@
+{
+  "name": "TinyAutoComplete",
+  "props": {
+    "clearable": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether it can be emptied",
+      "description_zh": "是否可清空"
+    },
+    ":debounce": {
+      "default": "300",
+      "value": "",
+      "type": "number",
+      "description": "Get the input suggested debounce delay",
+      "description_zh": "获取输入建议的去抖延时"
+    },
+    "disabled": {
+      "default": "--",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to disable or not",
+      "description_zh": "是否禁用"
+    },
+    "display-only": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Set read-only",
+      "description_zh": "设置只读"
+    },
+    "fetch-suggestions": {
+      "default": "--",
+      "value": "",
+      "type": "IAutocompleteFetchSuggestions",
+      "description": "Returns the input suggestion method, and only returns it by calling callback when your input suggestion data resolves",
+      "description_zh": "返回输入建议的方法，仅当你的输入建议数据 resolve 时，通过调用 callback 来返回它"
+    },
+    "hide-loading": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to hide the loading icon when loading remotely",
+      "description_zh": "是否隐藏远程加载时的加载图标"
+    },
+    "highlight-first-item": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the first item in the remote search suggestion is highlighted by default",
+      "description_zh": "是否默认突出显示远程搜索建议中的第一项"
+    },
+    "label": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "等价于原生 input aria-label 属性",
+      "description_zh": "等价于原生 input aria-label 属性"
+    },
+    "name": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "input 元素的原生属性",
+      "description_zh": "input 元素的原生属性"
+    },
+    "placeholder": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "Input box placeholder text",
+      "description_zh": "输入框占位文本"
+    },
+    "placement": {
+      "default": "'bottom-start'",
+      "value": "",
+      "type": "IAutocompletePlacement",
+      "description": "Menu pop-up location",
+      "description_zh": "菜单弹出位置"
+    },
+    "popper-append-to-body": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to insert a drop-down list into the body element. If there is a problem with the positioning of the drop-down list, you can set the property to false",
+      "description_zh": "是否将下拉列表插入至 body 元素。在下拉列表的定位出现问题时，可将该属性设置为 false"
+    },
+    "popper-class": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "The class name of the drop-down list",
+      "description_zh": "下拉列表的类名"
+    },
+    "prefix-icon": {
+      "default": "--",
+      "value": "",
+      "type": "Component",
+      "description": "Input box header icon",
+      "description_zh": "输入框头部图标"
+    },
+    "select-when-unmatched": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "In the absence of any matching suggestions, press enter to trigger the select event",
+      "description_zh": "在输入没有任何匹配建议的情况下，按下回车是否触发 select 事件"
+    },
+    "size": {
+      "default": "--",
+      "value": "",
+      "type": "medium / small / mini",
+      "description": "Set the component size",
+      "description_zh": "设置组件大小"
+    },
+    "suffix-icon": {
+      "default": "--",
+      "value": "",
+      "type": "Component",
+      "description": "Input box end icon",
+      "description_zh": "输入框尾部图标"
+    },
+    "trigger-on-focus": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to display a list of suggestions when the input box is focused",
+      "description_zh": "是否在输入框 focus 时显示建议列表"
+    },
+    "v-model": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "Required value, enter the binding value",
+      "description_zh": "必填值，输入绑定值"
+    },
+    "value-key": {
+      "default": "'value'",
+      "value": "",
+      "type": "string",
+      "description": "In the input suggestion object, it is used to display and match the key name of the input",
+      "description_zh": "在输入建议对象中，用于显示和匹配输入的键名"
+    }
+  },
+  "link": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/autocomplete",
+  "link_zh": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/autocomplete",
+  "typeDetail": {
+    "IAutocompleteSuggestionItem": "interface IAutocompleteSuggestionItem {\n  [key: string]: string | undefined\n  value?: string\n}",
+    "IAutocompletePlacement": "type IAutocompletePlacement = \"top\" | \"top-start\" | \"top-end\" | \"bottom\" | \"bottom-start\" | \"bottom-end\"",
+    "IAutocompleteFetchSuggestions": "type IAutocompleteFetchSuggestions = (queryString: string, callback: (suggestions: IAutocompleteSuggestionItem[]) => void) => void"
+  },
+  "events": [
+    {
+      "name": "select",
+      "description": "Triggered when you click to select a suggested item, the callback parameter is the item passed in fetch-suggestions",
+      "description_zh": "点击选中建议项时触发，回调参数为 fetch-suggestions 中传入的项",
+      "params": "(selection: IAutocompleteSuggestionItem) => void",
+      "value": ""
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "append",
+      "description": "The input box is followed by the content",
+      "description_zh": "输入框后置内容"
+    },
+    {
+      "name": "default",
+      "description": "下拉列表项插槽，插槽参数: arg: { slotScope: IAutocompleteSuggestionItem }, 其中 slotScope 是 fetch-suggestions 中传入的项",
+      "description_zh": "下拉列表项插槽，插槽参数: arg: { slotScope: IAutocompleteSuggestionItem }, 其中 slotScope 是 fetch-suggestions 中传入的项"
+    },
+    {
+      "name": "prefix",
+      "description": "Enter the content of the header of the box",
+      "description_zh": "输入框头部内容"
+    },
+    {
+      "name": "prepend",
+      "description": "The input box is preceded by content",
+      "description_zh": "输入框前置内容"
+    },
+    {
+      "name": "suffix",
+      "description": "Enter the content at the end of the box",
+      "description_zh": "输入框尾部内容"
+    }
+  ],
+  "filename": "AutoComplete"
+}

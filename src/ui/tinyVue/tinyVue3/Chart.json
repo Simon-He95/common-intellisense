@@ -1,0 +1,141 @@
+{
+  "name": "TinyChart",
+  "props": {
+    "cancel-resize-check": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to disable container detection when resize is disabled",
+      "description_zh": "是否禁用 resize 时的容器检测"
+    },
+    ":change-delay": {
+      "default": "'0'",
+      "value": "",
+      "type": "number",
+      "description": "property modifies the delay in triggering the chart redraw callback",
+      "description_zh": "属性修改触发图表重绘回调的延迟"
+    },
+    ":data": {
+      "default": "--",
+      "value": "",
+      "type": "object",
+      "description": "Data is made up of metrics and dimensions, with \"dimensions\" referring to attributes of the data and \"metrics\" being quantitative measures",
+      "description_zh": "数据由指标和维度组成,“维度” 指的是数据的属性,“指标” 是量化衡量标准"
+    },
+    ":events": {
+      "default": "--",
+      "value": "",
+      "type": "object",
+      "description": "Event bindings",
+      "description_zh": "事件绑定"
+    },
+    "extend": {
+      "default": "--",
+      "value": "",
+      "type": "IChartProps",
+      "description": "echarts",
+      "description_zh": "echarts 的配置项"
+    },
+    "height": {
+      "default": "'400px'",
+      "value": "",
+      "type": "string",
+      "description": "Sets the height of the chart container.",
+      "description_zh": "设置图表容器的高度。"
+    },
+    ":init-options": {
+      "default": "--",
+      "value": "",
+      "type": "object",
+      "description": "init additional parameters",
+      "description_zh": "init 附加参数"
+    },
+    "judge-width": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether or not to handle the issue of width when generating charts",
+      "description_zh": "是否处理生成图表时的宽度问题"
+    },
+    "legend-visible": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether or not to display a legend",
+      "description_zh": "是否显示图例"
+    },
+    "not-set-unchange": {
+      "default": "--",
+      "value": "",
+      "type": "array",
+      "description": "The properties of setOption are not participated in when they have not changed",
+      "description_zh": "未发生变化时不参加 setOption 的属性"
+    },
+    ":resize-delay": {
+      "default": "'200'",
+      "value": "",
+      "type": "number",
+      "description": "The delay of the window resize event callback",
+      "description_zh": "窗口 resize 事件回调的延迟"
+    },
+    "resizeable": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether or not to handle the window resize event",
+      "description_zh": "是否处理窗口 resize 事件"
+    },
+    "set-option-opts": {
+      "default": "true",
+      "value": "",
+      "type": "boolean | object",
+      "description": "echarts setOption 的第二个参数",
+      "description_zh": "echarts setOption 的第二个参数"
+    },
+    ":theme": {
+      "default": "--",
+      "value": "",
+      "type": "object",
+      "description": "Custom topic name.; Customize the theme object.",
+      "description_zh": "自定义主题名称。;自定义主题对象。"
+    },
+    "theme-name": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "自定义主题名称,如果设置了 theme-name, 则 theme 无效",
+      "description_zh": "自定义主题名称,如果设置了 theme-name, 则 theme 无效"
+    },
+    "tooltip-visible": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether or not a prompt box is displayed",
+      "description_zh": "是否显示提示框"
+    },
+    "width": {
+      "default": "'auto'",
+      "value": "",
+      "type": "string",
+      "description": "Sets the width of the chart container.",
+      "description_zh": "设置图表容器的宽度。"
+    },
+    ":width-change-delay": {
+      "default": "'300'",
+      "value": "",
+      "type": "number",
+      "description": "Delay in the change in container width",
+      "description_zh": "容器宽度变化的延迟"
+    }
+  },
+  "link": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/chart",
+  "link_zh": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/chart",
+  "typeDetail": {
+    "IChartProps": "interface IChartProps {\n  afterConfig: () => void \n  afterSetOption: () => void \n  afterSetOptionOnce: () => void \n  animation: object\n  axisPointer: object | array\n  backgroundColor: object | string\n  beforeConfig: () => void \n  brush: object | array\n  cancelResizeCheck: boolean\n  changeDelay: number // 默认值 0 \n  colorMode: string\n  colors: array \n  data: object | array\n  dataEmpty: boolean\n  dataZoom: object | array\n  events: object \n  extend: object\n  geo: object | array\n  graphic: object | array\n  grid: object | array\n  height: string // 默认值 '400px' \n  initOptions: object\n  judgeWidth: boolean // 默认值 false \n  legend: object | array\n  legendPosition: string \n  legendVisible: boolean // 默认值 true \n  loading: boolean\n  markArea: object \n  markLine: object \n  markPoint: object \n  notSetUnchange: array\n  radar: object\n  resizeDelay: number // 默认值 200 \n  resizeable: boolean // 默认值 true \n  series: object | array\n  setOptionOpts: boolean | object // 默认值 true \n  settings: object\n  textStyle: object | array\n  theme: object\n  themeName: object | string\n  timeline: object | array\n  title: object | array\n  toolbox: object | array\n  tooltip: object\n  tooltipFormatter: () => void \n  tooltipVisible: boolean // 默认值 true \n  visualMap: object | array \n  width: string // 默认值 'auto' \n  widthChangeDelay: number // 默认值 300 \n  xAxis: object | array\n  yAxis: object | array\n}",
+    "IChartSettings": "interface IChartSettings {\n  type: string // 图表类型，可选值' bar '，' histogram '，' line ',' pie '，' ring '，' funnel '，' radar '，' waterfall '\n}"
+  },
+  "events": [],
+  "methods": [],
+  "slots": [],
+  "filename": "Chart"
+}

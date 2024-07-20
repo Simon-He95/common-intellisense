@@ -1,0 +1,173 @@
+{
+  "name": "TinyToggleMenu",
+  "props": {
+    "automatic-filtering": {
+      "default": "--",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to automatically filter content when entering content in the input box is true by default",
+      "description_zh": "输入框输入内容时是否自动过滤内容，默认是 true"
+    },
+    "data": {
+      "default": "--",
+      "value": "",
+      "type": "Array",
+      "description": "Set the data for the shrink menu",
+      "description_zh": "设置收缩菜单的数据"
+    },
+    "default-expand-all": {
+      "default": "--",
+      "value": "",
+      "type": "boolean",
+      "description": "The setting menu defaults to whether to expand all nodes, which is false",
+      "description_zh": "设置菜单默认是否展开所有节点，默认为 false"
+    },
+    "draggable": {
+      "default": "--",
+      "value": "",
+      "type": "boolean",
+      "description": "Set whether to enable the function of dragging nodes, the default value is false",
+      "description_zh": "设置是否开启拖拽节点的功能，默认值为false"
+    },
+    "ellipsis": {
+      "default": "--",
+      "value": "",
+      "type": "boolean",
+      "description": "If the menu content is too long, it is omitted and defaults to false",
+      "description_zh": "菜单内容超长时省略显示，默认为 false"
+    },
+    "expand-on-click-node": {
+      "default": "--",
+      "value": "",
+      "type": "boolean",
+      "description": "Sets whether the menu can be expanded/collapsed by clicking on the node, which defaults to false",
+      "description_zh": "设置是否可以通过点击节点展开/收起菜单，默认为 false"
+    },
+    "get-menu-data-async": {
+      "default": "--",
+      "value": "",
+      "type": "Function",
+      "description": "Customize the menu data service to return asynchronous data, and you need to return a Promise object",
+      "description_zh": "自定义菜单数据服务,返回异步数据,需返回Promise对象"
+    },
+    "get-menu-data-sync": {
+      "default": "--",
+      "value": "",
+      "type": "Function",
+      "description": "Customize the menu data service to return data directly (deprecated v3.4.0, removed v3.16.0; removal reason: if it is synchronous data, it is the same as :data function)",
+      "description_zh": "自定义菜单数据服务,直接返回数据（deprecated v3.4.0废弃, v3.16.0移除；移除原因：如果是同步数据则和:data功能重复）"
+    },
+    ":icon": {
+      "default": "--",
+      "value": "",
+      "type": "object",
+      "description": "Customize the icon on the left side of the menu",
+      "description_zh": "自定义菜单左侧图标"
+    },
+    "placeholder": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "Input box placeholders",
+      "description_zh": "输入框占位符"
+    },
+    ":props": {
+      "default": "该属性的默认值为 {children: 'children',label: 'label',disabled: 'disabled'}",
+      "value": "",
+      "type": "object",
+      "description": "The name of the mapping field for the configuration data option",
+      "description_zh": "配置数据选项的映射字段名称"
+    },
+    "show-filter": {
+      "default": "--",
+      "value": "",
+      "type": "boolean",
+      "description": "Set whether to display the filter search box, default is 'true'",
+      "description_zh": "设置是否展示过滤搜索框，默认为 `true`"
+    },
+    "wrap": {
+      "default": "--",
+      "value": "",
+      "type": "boolean",
+      "description": "When the menu content is very long, it is displayed in line breaks, and the default is false",
+      "description_zh": "菜单内容超长时换行显示，默认为 false"
+    }
+  },
+  "link": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/toggle-menu",
+  "link_zh": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/toggle-menu",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "node-click",
+      "description": "Events after clicking on a node.; The callback function triggered after clicking on the node; Parameter arg1: {children: child node of the clicked node, id: ID of the clicked node, label: title} // Parameter arg2: object The data information object of the currently clicked node",
+      "description_zh": "点击节点后的事件。;点击节点后触发的回调函数;//参数arg1:{children: 点击节点的子节点, id: 点击节点的id ,label: 点击节点的title} //参数arg2: object 当前点击节点的数据信息对象",
+      "params": "Function(arg1,arg2)",
+      "value": ""
+    },
+    {
+      "name": "node-collapse",
+      "description": "Events after shrinking a node.; Events that are triggered when a node is shut down; parameter arg1:object {children: child node of the clicked node, id: ID of the clicked node, label: title} of the clicked node// parameter arg2:object The data information object of the node currently clicked",
+      "description_zh": "收缩节点后的事件。;节点被关闭时触发的事件;//参数arg1:object {children: 点击节点的子节点,id: 点击节点的id,label: 点击节点的title}//参数arg2:object 当前点击节点的数据信息对象",
+      "params": "Function(arg1,arg2)",
+      "value": ""
+    },
+    {
+      "name": "node-drag-end",
+      "description": "The event that is triggered at the end of the drag (r may not be successful); An event that is triggered when the drag is successfully completed; Parameter arg1: objectThe data information object of the node currently dragged arg2: objectThe node data information object in the position after the node is currently clickedarg3: The type of dragging, for example: 'inner'arg4:event",
+      "description_zh": "拖拽结束时（r可能未成功）触发的事件;拖拽成功完成时触发的事件;//参数arg1: object当前拖拽节点的数据信息对象arg2: object当前点击节点拖拽后位置的节点数据信息对象arg3: 拖拽的类型，如：'inner'arg4:event",
+      "params": "Function(arg1,arg2,arg3,arg4)",
+      "value": ""
+    },
+    {
+      "name": "node-drag-enter",
+      "description": "Events triggered when dragging into other nodes; Events triggered when dragging into other nodes; Parameter arg1:object The data information object of the node currently dragged arg2: object The node data information object in the position after the node is currently clicked and dragged",
+      "description_zh": "拖拽进入其他节点时触发的事件;拖拽进入其他节点时触发的事件;//参数arg1:object 当前拖拽节点的数据信息对象arg2: object 当前点击节点拖拽后位置的节点数据信息对象",
+      "params": "Function(arg1,arg2)",
+      "value": ""
+    },
+    {
+      "name": "node-drag-leave",
+      "description": "An event that is triggered when a node is dragged away; An event that is triggered when a node is dragged away; Parameter arg1:object arg2: object The data object of the node after the current dragging",
+      "description_zh": "拖拽离开某个节点时触发的事件;拖拽离开某个节点时触发的事件;//参数arg1:object 当前拖拽节点的数据信息对象arg2: object 当前拖出后节点的数据信息对象",
+      "params": "Function(arg1,arg2)",
+      "value": ""
+    },
+    {
+      "name": "node-drag-over",
+      "description": "events that are triggered when a node is dragged (similar to a browser's mouseover event); events that are triggered when a node is dragged (similar to a browser's mouseover event); Parameter arg1:object arg2:object arg3:event of the node when the node is currently being dragged and dragged",
+      "description_zh": "在拖拽节点时触发的事件（类似浏览器的 mouseover 事件）;在拖拽节点时触发的事件（类似浏览器的 mouseover 事件）;//参数arg1:object 当前拖拽节点的数据信息对象arg2:object 当前拖拽节点拖拽时节点的数据信息对象 arg3:event",
+      "params": "Function(arg1,arg2,arg3)",
+      "value": ""
+    },
+    {
+      "name": "node-drag-start",
+      "description": "An event that is triggered when a node starts dragging.; An event that is triggered when a node starts dragging.; Parameter: arg1:object arg2:event is the data information object of the node you are currently dragging",
+      "description_zh": "节点开始拖拽时触发的事件。;节点开始拖拽时触发的事件。;//参数: arg1:object 当前拖拽节点的数据信息对象arg2:event",
+      "params": "Function(arg1,arg2)",
+      "value": ""
+    },
+    {
+      "name": "node-drop",
+      "description": "Events after dragging and dropping a node. Enabling the draggable property is valid if true.; Events after dragging and dropping a node. Enabling the draggable property is valid if true.; Parameter arg1:object The data information object of the node currently dragged arg2:object The position of the node after the current click is clicked, the data information object of the node arg3: the type of the dragg4:event",
+      "description_zh": "拖放节点后的事件。开启 draggable 属性为 true 有效。;拖放节点后的事件。开启 draggable 属性为 true 有效。;//参数arg1:object 当前拖拽节点的数据信息对象 arg2:object 当前点击节点拖拽后的位置节点的数据信息对象arg3: 拖拽的类型arg4:event",
+      "params": "Function(arg1,arg2)",
+      "value": ""
+    },
+    {
+      "name": "node-expand",
+      "description": "展开节点后的事件。; 节点被展开时触发的事件;//参数arg1:{children: 点击节点的子节点, id: 点击节点的id, label: 点击节点的title}//参数arg2:Component 点击节点的componet对象信息//参数arg3:{ children: 点击节点的子节点id: 点击节点的id, label: 点击节点的title}",
+      "description_zh": "展开节点后的事件。;节点被展开时触发的事件;//参数arg1:{children: 点击节点的子节点, id: 点击节点的id, label: 点击节点的title}//参数arg2:Component 点击节点的componet对象信息//参数arg3:{ children: 点击节点的子节点id: 点击节点的id, label: 点击节点的title}",
+      "params": "Function(arg1,arg2,arg3)",
+      "value": ""
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "node",
+      "description": "Custom slots",
+      "description_zh": "自定义插槽"
+    }
+  ],
+  "filename": "ToggleMenu"
+}

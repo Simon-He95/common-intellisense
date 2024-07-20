@@ -1,0 +1,183 @@
+{
+  "name": "TinyPopUpload",
+  "props": {
+    "accept": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "Accept the file type to be uploaded",
+      "description_zh": "接受上传的文件类型"
+    },
+    "action": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "Required parameters: Set the upload URL",
+      "description_zh": "必选参数，设置上传的地址"
+    },
+    "before-remove": {
+      "default": "--",
+      "value": "",
+      "type": "(file: IFile) => void",
+      "description": "Delete the hook function between files, if it returns false or returns a Promise and is rejected, the deletion will be canceled, otherwise the deletion will be executed; The input parameter is the file information that you click to delete",
+      "description_zh": "删除文件之间的钩子函数，若返回 false 或者返回 Promise 且被 reject，则取消删除，反之则执行删除；入参为点击删除的文件信息"
+    },
+    "before-upload": {
+      "default": "--",
+      "value": "",
+      "type": "(file: IFile) => void",
+      "description": "If the hook before uploading the file returns false or returns a Promise and is rejected, the upload will be stopped, otherwise the upload will continue. The input parameter is the uploaded file information",
+      "description_zh": "上传文件之前的钩子，若返回 false 或者返回 Promise 且被 reject，则停止上传，反之则继续上传；入参为上传的文件信息"
+    },
+    "cancel-button-text": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "Set the text of the cancel button in the file upload pop-up box; The default is Cancel",
+      "description_zh": "设置文件上传弹框中取消按钮的文本；默认为 取消"
+    },
+    "data": {
+      "default": "--",
+      "value": "",
+      "type": "ICustomObject",
+      "description": "Extra parameters that come with the upload",
+      "description_zh": "上传时附带的额外参数"
+    },
+    "dialog-title": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "Set the title of the file upload pop-up box; The default is File Upload",
+      "description_zh": "设置文件上传弹框的标题;默认为 文件上传"
+    },
+    "disabled": {
+      "default": "--",
+      "value": "",
+      "type": "boolean",
+      "description": "whether it is disabled or not; Defaults to false",
+      "description_zh": "是否禁用;默认为 false"
+    },
+    "headers": {
+      "default": "--",
+      "value": "",
+      "type": "ICustomObject",
+      "description": "Set the header of the uploaded request",
+      "description_zh": "设置上传的请求头部"
+    },
+    "http-request": {
+      "default": "--",
+      "value": "",
+      "type": "() => void",
+      "description": "Override the default upload behavior, and you can customize the implementation of the upload",
+      "description_zh": "覆盖默认的上传行为，可以自定义上传的实现"
+    },
+    ":limit": {
+      "default": "--",
+      "value": "",
+      "type": "number",
+      "description": "The maximum number of uploads allowed",
+      "description_zh": "最大允许上传个数"
+    },
+    ":max-upload-file-size": {
+      "default": "--",
+      "value": "",
+      "type": "number",
+      "description": "Maximum upload file size",
+      "description_zh": "最大上传文件大小"
+    },
+    "multiple": {
+      "default": "--",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether multi-select files are supported",
+      "description_zh": "是否支持多选文件"
+    },
+    "size": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "Set the component size",
+      "description_zh": "设置组件大小"
+    },
+    "submit-button-text": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "Set the text of the submit button in the file upload pop-up box; The default is Start Upload",
+      "description_zh": "设置文件上传弹框中提交按钮的文本;默认为 开始上传"
+    },
+    "upload-button-text": {
+      "default": "'选择文件'",
+      "value": "",
+      "type": "string",
+      "description": "Open the text configuration property of the pop-up button",
+      "description_zh": "打开弹出框的按钮的文本配置属性"
+    },
+    "upload-file-type": {
+      "default": "--",
+      "value": "",
+      "type": "Array",
+      "description": "The type of the uploaded file that is validated, e.g. ['.png', '.jpg']",
+      "description_zh": "对上传文件进行校验的类型，比如 ['.png', '.jpg']"
+    },
+    "upload-name": {
+      "default": "'file'",
+      "value": "",
+      "type": "string",
+      "description": "The name of the uploaded file field",
+      "description_zh": "上传的文件字段名"
+    },
+    "with-credentials": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Support for sending cookie credential information",
+      "description_zh": "支持发送 cookie 凭证信息"
+    }
+  },
+  "link": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/pop-upload",
+  "link_zh": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/pop-upload",
+  "typeDetail": {
+    "ICustomObject": "interface ICustomObject {\n  [propName: string]: any // 自定义属性\n}"
+  },
+  "events": [
+    {
+      "name": "error",
+      "description": "Events that are triggered when a file upload fails; file indicates the information about the file that has failed to be uploaded",
+      "description_zh": "文件上传失败时触发的事件； file 为当前上传失败文件信息",
+      "params": "(file: IFile) => void",
+      "value": ""
+    },
+    {
+      "name": "exceed",
+      "description": "An event that is triggered when the number of files exceeds the limit; files is the uploaded file",
+      "description_zh": "文件超出个数限制时触发的事件； files 为上传的文件",
+      "params": "(files: File | File[], fileList: IFile[]) => void",
+      "value": ""
+    },
+    {
+      "name": "progress",
+      "description": "An event that is triggered when a file is uploaded",
+      "description_zh": "文件上传时触发的事件",
+      "params": "(file: IFile) => void",
+      "value": ""
+    },
+    {
+      "name": "remove",
+      "description": "Events that are triggered when a file is removed from the file list; file is the information about the file that is currently being removed",
+      "description_zh": "从文件列表移除文件时触发的事件； file 为当前移除的文件信息",
+      "params": "(file: IFile, fileList: IFile[]) => void",
+      "value": ""
+    },
+    {
+      "name": "success",
+      "description": "The event that is triggered when a file is successfully uploaded; res is the response information event object after the upload is successful, and the file is the currently uploaded file",
+      "description_zh": "文件上传成功时触发的事件； res 为上传成功后的响应信息事件对象，file 为当前上传的文件",
+      "params": "(res: ProgressEvent, file: IFile) => void",
+      "value": ""
+    }
+  ],
+  "methods": [],
+  "slots": [],
+  "filename": "PopUpload"
+}

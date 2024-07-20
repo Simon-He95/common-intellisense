@@ -1,0 +1,311 @@
+{
+  "name": "TinyFileUpload",
+  "props": {
+    "accept": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "Restrict file types (this parameter is invalid in thumbnail-mode mode)",
+      "description_zh": "限制文件类型（thumbnail-mode 模式下此参数无效）"
+    },
+    "action": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "The uploaded address is a required parameter",
+      "description_zh": "上传的地址，必填参数"
+    },
+    "auto-upload": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to upload files as soon as they are selected",
+      "description_zh": "是否在选取文件后立即进行上传"
+    },
+    "before-add-file": {
+      "default": "--",
+      "value": "",
+      "type": "(callback: () => void) => void",
+      "description": "If the hook before file selection returns false or returns a Promise and is rejected, the file will be stopped. If you don't use the above two methods, you can also continue to upload by executing the callback function in the parameters [new in version 3.13.0]",
+      "description_zh": "文件选择之前的钩子，若返回 false 或者返回 Promise 且被 reject，则停止添加文件。如果不用以上 2 种方式，也可以通过执行参数中的回调函数继续进行上传【3.13.0版本新增】"
+    },
+    "before-remove": {
+      "default": "--",
+      "value": "",
+      "type": "(file: IFile, fileList: IFile[]) => boolean | Promise",
+      "description": "The checkmark before deleting a file, the parameter is the uploaded file and file list, if it returns false or returns a promise and is rejected, the deletion will be stopped",
+      "description_zh": "删除文件前的钩子，参数为上传的文件和文件列表，若返回 false 或者返回 Promise 且被 reject，则停止删除"
+    },
+    "before-upload": {
+      "default": "--",
+      "value": "",
+      "type": "(file: IFile) => boolean | Promise",
+      "description": "If the hook before uploading the file is the uploaded file, if it returns false or returns a Promise and is rejected, the upload will be stopped",
+      "description_zh": "上传文件之前的钩子，参数为上传的文件，若返回 false 或者返回 Promise 且被 reject，则停止上传"
+    },
+    "data": {
+      "default": "--",
+      "value": "",
+      "type": "IData",
+      "description": "Extra parameters attached to the upload, parameter customization",
+      "description_zh": "上传时附带的额外参数，参数自定义"
+    },
+    "disabled": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to disable or not",
+      "description_zh": "是否禁用"
+    },
+    "drag": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to enable drag-and-drop uploads",
+      "description_zh": "是否启用拖拽上传"
+    },
+    "encrypt-config": {
+      "default": "--",
+      "value": "",
+      "type": "IEncryptConfig",
+      "description": "Set up watermarks and encryption pop-ups",
+      "description_zh": "设置水印和加密弹窗"
+    },
+    "file-list": {
+      "default": "--",
+      "value": "",
+      "type": "IFileListItem[]",
+      "description": "A list of uploaded files",
+      "description_zh": "上传的文件列表"
+    },
+    "headers": {
+      "default": "--",
+      "value": "",
+      "type": "IHeaders",
+      "description": "Set the header of the uploaded request; Request information for the headers by setting the headers",
+      "description_zh": "设置上传的请求头部;通过设置 headers 为头部请求信息"
+    },
+    "http-request": {
+      "default": "--",
+      "value": "",
+      "type": "(file: IFile) => Promise",
+      "description": "Override the default upload behavior, and you can customize the implementation of the upload; Since TinyVue's official website is a mock upload, the upload cannot be performed",
+      "description_zh": "覆盖默认的上传行为，可以自定义上传的实现; 由于 TinyVue 官网为 Mock 上传不能执行上传"
+    },
+    "is-hidden": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "When the maximum number of uploads is reached, whether to hide the upload button is not hidden by default",
+      "description_zh": "达到最大上传个数时，是否隐藏上传按钮，默认不隐藏"
+    },
+    ":limit": {
+      "default": "--",
+      "value": "",
+      "type": "number",
+      "description": "The maximum number of uploads allowed",
+      "description_zh": "最大允许上传个数"
+    },
+    "list-type": {
+      "default": "'text'",
+      "value": "",
+      "type": "IListType",
+      "description": "The type of file list",
+      "description_zh": "文件列表的类型"
+    },
+    ":max-name-length": {
+      "default": "20",
+      "value": "",
+      "type": "number",
+      "description": "The maximum number of characters in the file name of a list item is hidden by default if it exceeds 20 characters",
+      "description_zh": "列表项的文件名最大字符数，默认超出20个字符隐藏"
+    },
+    "merge-service": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "If merge-service is set to true and multi-file upload is enabled, the default service will merge multiple upload services into one service upload",
+      "description_zh": "配置 merge-service 为 true 且开启多文件上传走默认服务会将多个上传服务合并为一个服务上传"
+    },
+    "multiple": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether multi-select files are supported",
+      "description_zh": "是否支持多选文件"
+    },
+    "name": {
+      "default": "'file'",
+      "value": "",
+      "type": "string",
+      "description": "The name of the uploaded file field",
+      "description_zh": "上传的文件字段名"
+    },
+    "open-download-file": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to enable Click to download files, it is not enabled by default",
+      "description_zh": "是否开启点击下载文件，默认不开启"
+    },
+    "paste-upload": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to enable the paste key shortcut upload function [new in version 3.11.0]",
+      "description_zh": "是否启用粘贴键快捷上传功能【3.11.0版本新增】"
+    },
+    "re-upload-tip": {
+      "default": "--",
+      "value": "",
+      "type": "(count: number) => string",
+      "description": "Customize the prompt text on the left side of the re-upload, which needs to be used with re-uploadable [new in version 3.12.0]",
+      "description_zh": "自定义重新上传的左侧提示文字，需要与 re-uploadable 搭配使用【3.12.0版本新增】"
+    },
+    "re-uploadable": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to enable the re-upload function [new in version 3.12.0]",
+      "description_zh": "是否启用重新上传功能【3.12.0版本新增】"
+    },
+    "show-file-list": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to display a list of uploaded files",
+      "description_zh": "是否显示已上传文件列表"
+    },
+    "thumb-option": {
+      "default": "--",
+      "value": "",
+      "type": "IThumbOption",
+      "description": "This parameter is configured if the display type of the file list is thumb",
+      "description_zh": "文件列表的显示类型为 thumb 时的相关配置"
+    },
+    "with-credentials": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Support for sending cookie credential information",
+      "description_zh": "支持发送 cookie 凭证信息"
+    }
+  },
+  "link": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/file-upload",
+  "link_zh": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/file-upload",
+  "typeDetail": {
+    "IData": "interface IData {\n  [propsName?: any]: any // 上传参数可自定义\n}",
+    "IFile": "interface IFile {\n  name: string // 上传文件名\n  percentage: string // 上传进度百分比\n  raw: File // 原始文件信息\n  size: number // 文件大小\n  status: string // 上传状态\n  uid: string // uid \n}",
+    "IEncryptConfig": "interface IEncryptConfig {\n  enabled: boolean // 是否开启设置，默认关闭\n  encrypt: boolean // 是否加密，默认否\n  watermark: string // 水印文字，默认为空\n}",
+    "IFileListItem": "interface IFileListItem {\n  name: string // 文件名\n  url: string // 文件url 例如：'https://xxx.cdn.com/xxx.jpg'\n}",
+    "IHeaders": "interface IHeaders {\n  'Accept-Language'?: string // 比如等于：'en,zh'\n  Authorization?: string // 比如等于：'Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ=='\n  [props: string]: any // headers的属性和属性值自定义\n}",
+    "IListType": "type IListType = 'text' | 'picture' | 'picture-card' | 'thumb' | 'saas' // saas为3.14.0版本新增",
+    "IThumbOption": "interface IThumbOption {\n  width: number // 弹窗宽度，默认270\n  showDownload: boolean // 是否显示下载按钮，默认false\n  showDel: boolean // 是否显示删除按钮，布尔false\n  showTooltip: boolean // 文件名超出隐藏显示时是否启用tip，默认false\n  popperClass: string // 弹窗列表自定义类名\n  downloadFile: (file) => void // 点击下载按钮执行函数\n  icon: string | Component // 列表结果前 icon ，默认为 'icon-attachment'\n}"
+  },
+  "events": [
+    {
+      "name": "change",
+      "description": "Events that are triggered when the file status changes, including when a file is added, when the upload is successful, and when the upload fails",
+      "description_zh": "文件状态改变时触发的事件，添加文件、上传成功和上传失败时都会被触发",
+      "params": "(file: IFile, fileList: IFile[]) => void",
+      "value": ""
+    },
+    {
+      "name": "drop-error",
+      "description": "The event triggered when the file is dragged and dragged is failed, and is valid when the drag and drop is enabled. file indicates the file information that failed to be uploaded",
+      "description_zh": "拖拽文件失败时触发的事件，开启拖拽时有效； file 为上传失败文件信息",
+      "params": "(file: IFile) => void",
+      "value": ""
+    },
+    {
+      "name": "error",
+      "description": "Events that are triggered when a file upload fails; message is the error message event object, file is the current upload failed file information, and fileList is the upload success file array",
+      "description_zh": "文件上传失败时触发的事件； message 为错误信息事件对象，file 为当前上传失败文件信息，fileList 为上传成功 file 数组",
+      "params": "(message: ProgressEvent, file: IFile, fileList: IFile[]) => void",
+      "value": ""
+    },
+    {
+      "name": "exceed",
+      "description": "An event that is triggered when the number of files exceeds the limit; files is the uploaded file",
+      "description_zh": "文件超出个数限制时触发的事件； files 为上传的文件",
+      "params": "(files: File | File[], fileList: IFile[]) => void",
+      "value": ""
+    },
+    {
+      "name": "hash-progress",
+      "description": "An event triggered by a hash value generated by a file upload; percentage is the progress value generated",
+      "description_zh": "文件上传生成 hash 值触发的事件； percentage 为生成的进度值",
+      "params": "(percentage: number) => void",
+      "value": ""
+    },
+    {
+      "name": "preview",
+      "description": "An event that is triggered when you click on an uploaded file in the file list",
+      "description_zh": "点击文件列表中已上传的文件时触发的事件",
+      "params": "(file: IFile) => void",
+      "value": ""
+    },
+    {
+      "name": "progress",
+      "description": "events that are triggered when a file is uploaded; message is a progress bar event object",
+      "description_zh": "文件上传时触发的事件； message 为进度条事件对象",
+      "params": "(message: ProgressEvent, file: IFile) => void",
+      "value": ""
+    },
+    {
+      "name": "remove",
+      "description": "Events that are triggered when a file is removed from the file list; file is the information about the file that is currently being removed",
+      "description_zh": "从文件列表移除文件时触发的事件； file 为当前移除的文件信息",
+      "params": "(file: IFile) => void",
+      "value": ""
+    },
+    {
+      "name": "success",
+      "description": "The event that is triggered when a file is successfully uploaded; res is the response information event object after the upload is successful, file is the currently uploaded file, and fileList is an array of all uploaded files",
+      "description_zh": "文件上传成功时触发的事件； res 为上传成功后的响应信息事件对象，file 为当前上传的文件，fileList 为所有上传文件数组",
+      "params": "(res: ProgressEvent, file: IFile, fileList: IFile[]) => void",
+      "value": ""
+    }
+  ],
+  "methods": [
+    {
+      "name": "abort",
+      "description": "Cancel the upload request",
+      "params": "() => void",
+      "description_zh": "取消上传请求",
+      "value": ""
+    },
+    {
+      "name": "clearFiles",
+      "description": "Clear the list of uploaded files (this method cannot be called in before-upload)",
+      "params": "() => void",
+      "description_zh": "清空已上传的文件列表（该方法不支持在 before-upload 中调用）",
+      "value": ""
+    },
+    {
+      "name": "submit",
+      "description": "Manually upload a list of files",
+      "params": "() => void",
+      "description_zh": "手动上传文件列表",
+      "value": ""
+    }
+  ],
+  "slots": [
+    {
+      "name": "file",
+      "description": "Define what the file displays",
+      "description_zh": "定义文件显示内容"
+    },
+    {
+      "name": "tip",
+      "description": "Prompt caption",
+      "description_zh": "提示说明文字"
+    },
+    {
+      "name": "trigger",
+      "description": "Triggers the contents of the file selection box",
+      "description_zh": "触发文件选择框的内容"
+    }
+  ],
+  "filename": "FileUpload"
+}

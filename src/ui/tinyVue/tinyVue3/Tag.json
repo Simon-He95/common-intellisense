@@ -1,0 +1,101 @@
+{
+  "name": "TinyTag",
+  "props": {
+    "before-delete": {
+      "default": "--",
+      "value": "",
+      "type": "(close: () => void) => void",
+      "description": "Delete the previous callback function",
+      "description_zh": "删除前回调函数"
+    },
+    "closable": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether it can be turned off",
+      "description_zh": "是否可关闭"
+    },
+    "color": {
+      "default": "--",
+      "value": "",
+      "type": "IColor | string[]",
+      "description": "To control the text color and background color of the label, you can use the preset value in the IColor type, or you can customize the value, if the custom value is a string, you can only set the background color of the label; If it is an array, the first value sets the background color, and the second value sets the text color; [Note: 3.15.0 adds support for array types]",
+      "description_zh": "控制标签文本色和背景色，可使用 IColor 类型中的预设值，也可自定义值，若自定义值为字符串则只能设置标签的背景色；若为数组则第一个值设置背景色，第二个设置文本色；【注：3.15.0新增支持数组类型】"
+    },
+    "disabled": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to disable or not",
+      "description_zh": "是否禁用"
+    },
+    "effect": {
+      "default": "'light'",
+      "value": "",
+      "type": "IEffect",
+      "description": "topic",
+      "description_zh": "主题"
+    },
+    "hit": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether there is a border or not",
+      "description_zh": "是否有边框"
+    },
+    "size": {
+      "default": "--",
+      "value": "",
+      "type": "ISize",
+      "description": "size",
+      "description_zh": "尺寸"
+    },
+    "type": {
+      "default": "--",
+      "value": "",
+      "type": "IType",
+      "description": "Display type",
+      "description_zh": "显示类型"
+    },
+    "value": {
+      "default": "--",
+      "value": "",
+      "type": "number | string",
+      "description": "Configurable labels, custom label content [new in 3.9.1]",
+      "description_zh": "配置式标签，自定义标签内容【3.9.1新增】"
+    }
+  },
+  "link": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/tag",
+  "link_zh": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/tag",
+  "typeDetail": {
+    "IColor": "type IColor = 'red' | 'orange' | 'green' | 'blue' | 'purple' | 'brown' | 'grey' | string // 除了预设值，也可以是其他任意自定义颜色值",
+    "IEffect": "type IEffect = 'dark' | 'light' | 'plain'",
+    "ISize": "type ISize = 'medium' | 'small' | 'mini' | ''",
+    "IType": "type IType = 'success' | 'info' | 'warning' | 'danger'"
+  },
+  "events": [
+    {
+      "name": "click",
+      "description": "An event that is triggered when a tag is clicked",
+      "description_zh": "点击标签时触发的事件",
+      "params": "(event: Event) => void",
+      "value": ""
+    },
+    {
+      "name": "close",
+      "description": "An event that is triggered when the close button is clicked",
+      "description_zh": "点击关闭按钮时触发的事件",
+      "params": "(event: Event)) => void",
+      "value": ""
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "default",
+      "description": "Label content",
+      "description_zh": "标签内容"
+    }
+  ],
+  "filename": "Tag"
+}

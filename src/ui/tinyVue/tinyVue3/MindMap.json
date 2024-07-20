@@ -1,0 +1,107 @@
+{
+  "name": "TinyMindMap",
+  "props": {
+    "modelValue": {
+      "default": "{}",
+      "value": "",
+      "type": "Object",
+      "description": "Default node data",
+      "description_zh": "默认节点数据"
+    },
+    "options": {
+      "default": "{contextMenu: false,toolBar: false,nodeMenu: false}",
+      "value": "",
+      "type": "IMindMaoOptions",
+      "description": "Configuration items",
+      "description_zh": "配置项"
+    }
+  },
+  "link": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/mind-map",
+  "link_zh": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/mind-map",
+  "typeDetail": {
+    "IMindMaoOptions": "interface options {\n  direction?: number\n  locale?: string\n  draggable?: boolean\n  editable?: boolean\n  contextMenu?: boolean\n  contextMenuOption?: any\n  toolBar?: boolean\n  keypress?: boolean\n  mouseSelectionButton?: 0 | 2\n  before?: Before\n  newTopicName?: string\n  allowUndo?: boolean\n  overflowHidden?: boolean\n  mainLinkStyle?: number\n  subLinkStyle?: number\n  mobileMenu?: boolean\n  theme?: Theme\n  nodeMenu?: boolean\n}",
+    "IMindMapOperation": "type onOperation = ({render, info}: {render:MindElixirInstance, info: Operation}) => void",
+    "IMindMapSelectNode": "type onSelectNode = ({render,nodeObj}: {render:MindElixirInstance,nodeObj:NodeObj}, e?: MouseEvent) => void",
+    "IMindMapSelectNewNode": "type selectNewNode: ({render,nodeObj}: {render:MindElixirInstance,nodeObj:NodeObj}) => void",
+    "IMindMapSelectNodes": "type selectNodes: ({render,nodeObj}: {render:MindElixirInstance,nodeObj:NodeObj[]}) => void",
+    "IMindMapUnselectNode": "type unselectNodes: ({render}: {render: MindElixirInstance}) => void",
+    "IMindMapUnselectNodes": "type unselectNodes: ({render}: {render: MindElixirInstance}) => void",
+    "IMindExpandNode": "type expandNode: ({render,nodeObj}: {render:MindElixirInstance,nodeObj:NodeObj}) => void",
+    "NodeObj": "export interface NodeObj {\n  topic: string\n  id: Uid\n  style?: {\n    fontSize?: string\n    color?: string\n    background?: string\n    fontWeight?: string\n  }\n  children?: NodeObj[]\n  tags?: string[]\n  icons?: string[]\n  hyperLink?: string\n  expanded?: boolean\n  direction?: number\n  root?: boolean\n  image?: {\n    url: string\n    width: number\n    height: number\n  }\n  branchColor?: string\n  parent?: NodeObj\n}"
+  },
+  "events": [
+    {
+      "name": "afterImport",
+      "description": "v-model更新后会触发",
+      "description_zh": "v-model更新后会触发",
+      "params": "({render, data}: {render:MindElixirInstance, data: })=>void",
+      "value": ""
+    },
+    {
+      "name": "beforeImport",
+      "description": "v-model更新前会触发",
+      "description_zh": "v-model更新前会触发",
+      "params": "({render, data}: {render:MindElixirInstance, data: })=>void",
+      "value": ""
+    },
+    {
+      "name": "create",
+      "description": "This event is triggered when the mindmap is created",
+      "description_zh": "mindmap创建时会触发该事件",
+      "params": "(render:MindElixirInstance)=>void",
+      "value": ""
+    },
+    {
+      "name": "expandNode",
+      "description": "This event is triggered when the node is expanded",
+      "description_zh": "展开节点时会触发该事件",
+      "params": "IMindnExpandNode",
+      "value": ""
+    },
+    {
+      "name": "operation",
+      "description": "When a node is recalculated, for example, if you drag node A to node B, node A is a child of node B",
+      "description_zh": "节点重新计算时, 例如将节点A拖拽到节点B, 使得节点A是节点B的子节点",
+      "params": "IMindMapOperation",
+      "value": ""
+    },
+    {
+      "name": "selectNewNode",
+      "description": "When a new node is created",
+      "description_zh": "创建新节点时",
+      "params": "IMindMapSelectNewNode",
+      "value": ""
+    },
+    {
+      "name": "selectNode",
+      "description": "When any node is selected, the event is triggered",
+      "description_zh": "选择任意一个节点时, 会触发该事件",
+      "params": "IMindMapSelectNode",
+      "value": ""
+    },
+    {
+      "name": "selectNodes",
+      "description": "This event is triggered when multiple nodes are selected",
+      "description_zh": "选择多个节点的时候会触发该事件",
+      "params": "IMindMapSelectNodes",
+      "value": ""
+    },
+    {
+      "name": "unselectNode",
+      "description": "This event is triggered when you deselect it",
+      "description_zh": "取消选择的时候会触发该事件",
+      "params": "IMindMapUnselectNode",
+      "value": ""
+    },
+    {
+      "name": "unselectNodes",
+      "description": "This event is triggered when multiple nodes are deselected",
+      "description_zh": "取消选择多个节点时会触发该事件",
+      "params": "IMindMapUnselectNodes",
+      "value": ""
+    }
+  ],
+  "methods": [],
+  "slots": [],
+  "filename": "MindMap"
+}

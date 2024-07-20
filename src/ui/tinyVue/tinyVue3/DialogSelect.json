@@ -1,0 +1,297 @@
+{
+  "name": "TinyDialogSelect",
+  "props": {
+    "before-close": {
+      "default": "--",
+      "value": "",
+      "type": "() => boolean",
+      "description": "The callback before the pop-up window closes, returning false will prevent the pop-up window from closing",
+      "description_zh": "弹窗关闭前的回调，返回 false 会阻止弹窗关闭"
+    },
+    "dialog-op": {
+      "default": "{}",
+      "value": "",
+      "type": "IDialogOption",
+      "description": "Used to configure the properties of the DialogBox dialog component, dialog events and slots are transparent",
+      "description_zh": "用于配置 DialogBox 对话框组件的属性，对话框事件和插槽已透传"
+    },
+    "grid-op": {
+      "default": "{}",
+      "value": "",
+      "type": "IGridOption",
+      "description": "tabular scene, configure the properties of the Grid component",
+      "description_zh": "表格场景时，配置 Grid 组件的属性"
+    },
+    "lookup-method": {
+      "default": "--",
+      "value": "",
+      "type": "() => Promise",
+      "description": "Initializes the loading method of the selected data",
+      "description_zh": "初始化选中数据的加载方法"
+    },
+    ":main-height": {
+      "default": "290",
+      "value": "",
+      "type": "number",
+      "description": "Configure the height of the table or tree area",
+      "description_zh": "配置表格或树区域的高度"
+    },
+    "multi": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to select more than one",
+      "description_zh": "是否多选"
+    },
+    "pager-op": {
+      "default": "{\n  currentPage: 1,\n  pageSize: 10,\n  pageSizes: [10, 20, 30, 40, 50, 100],\n  total: 0,\n  layout: 'total, prev, pager, next, jumper'\n}",
+      "value": "",
+      "type": "IPagerOption",
+      "description": "When using a table to display data, the property pagerOp is used to configure the properties of the pager pagination component, and the pagination event has been transparently transmitted",
+      "description_zh": "使用表格展示数据时，属性 pagerOp 用于配置 Pager 分页组件的属性，分页事件已透传"
+    },
+    "popseletor": {
+      "default": "'grid'",
+      "value": "",
+      "type": "string",
+      "description": "The component type that displays the data in the pop-up window currently supports: 'grid' / 'tree'",
+      "description_zh": "弹窗内展示数据的组件类型，目前支持：'grid' / 'tree'"
+    },
+    "remote-search": {
+      "default": "--",
+      "value": "",
+      "type": "() => Promise",
+      "description": "When you use a table to display data, configure the pagination query operation function of the table. When you use a tree to display data, configure a method to query all child data by pid",
+      "description_zh": "使用表格展示数据时，配置表格分页查询操作函数；使用树展示数据时，配置通过pid查询所有子数据的方法"
+    },
+    "selected-box-op": {
+      "default": "{}",
+      "value": "",
+      "type": "ISelectedBoxOption",
+      "description": "When using a table to display data, the property selectedBoxOp is used to configure the properties of the SelectedBox selected column component, and the selected box slot is transparent",
+      "description_zh": "使用表格展示数据时，属性 selectedBoxOp 用于配置 SelectedBox 已选栏组件的属性，已选栏插槽已透传"
+    },
+    "show-pager": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "When you use a table to display data, whether to display the pagination portlet",
+      "description_zh": "使用表格展示数据时，是否显示分页组件"
+    },
+    "show-selected-box": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "When displaying data in a table, whether or not to display the selected column portlet",
+      "description_zh": "使用表格展示数据时，是否显示已选栏组件"
+    },
+    "text-field": {
+      "default": "'label'",
+      "value": "",
+      "type": "string",
+      "description": "The display value field for the data item",
+      "description_zh": "数据项的显示值字段"
+    },
+    "text-split": {
+      "default": "'/'",
+      "value": "",
+      "type": "string",
+      "description": "The label field used to splice data items when multi-selected",
+      "description_zh": "多选时用于拼接数据项的 label 字段 "
+    },
+    "tree-op": {
+      "default": "{}",
+      "value": "",
+      "type": "ITreeOption",
+      "description": "When using a tree to display data, the configuration object of the tree component",
+      "description_zh": "使用树展示数据时，树组件的配置对象"
+    },
+    "value-field": {
+      "default": "'id'",
+      "value": "",
+      "type": "string",
+      "description": "The selected value field for the data item",
+      "description_zh": "数据项的选中值字段"
+    },
+    "value-split": {
+      "default": "';'",
+      "value": "",
+      "type": "string",
+      "description": "The selected value used to join data items when multi-select",
+      "description_zh": "多选时用于拼接数据项的选中值"
+    },
+    "visible": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Control the display and closure of pop-up boxes",
+      "description_zh": "控制弹出框显示与关闭"
+    }
+  },
+  "link": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/dialog-select",
+  "link_zh": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/dialog-select",
+  "typeDetail": {
+    "IDialogOption": "interface IDialogOption {\n  // 设置弹出框距离窗口顶部的高度，默认为 15vh\n  top: string,\n  // 弹出框的宽度,默认 500px\n  width: string\n  // 弹出框标题\n  title: string\n  beforeClose: () => boolean\n  // 自定义配置弹窗类名\n  dialogClass: string\n}",
+    "IGridOption": "interface IGridOption {\n  // 表格列配置\n  columns: IColumnConfig[]  \n  // 表格列数据\n  data: [] \n  // 表格多选配置\n  selectConfig: { \n    // 翻页操作是否保留历史选择数据\n    reserve: boolean  \n    // 嵌套表格多选时，设置默认表格选中的数据\n    checkRowKeys: Array<string|number> \n  }\n  // 表格单选配置\n  radioConfig: { \n    //嵌套表格单选时，设置默认表格选中的数据 \n    checkRowKey: string|number  \n  }\n}",
+    "IColumnConfig ": "interface IColumnConfig  {\n  type: 'index' | 'radio' | 'checkbox'\n  id: string\n  title: string\n  label: string\n  width: string | number\n}",
+    "IPagerOption": "interface IPagerOption {\n  // 当前页，默认 1\n  currentPage: number \n  // 每页显示条目个数，默认 10\n  pageSize: number   \n  // 每页显示个数选择器的选项设置，默认 [10, 20, 30, 40, 50, 100]\n  pageSizes: Array<number> \n  // 总条目数\n  total:number\n  // 分页布局，默认 'total, prev, pager, next, jumper'\n  layout: string \n}",
+    "ISelectedBoxOption": "interface ISelectedBoxOption {\n  config: {\n    pkField: string\n    pkFieldType: string,\n    showField: Array<string>,\n    // 传 sortablejs 插件\n    plugin: () => void   \n  }\n}",
+    "ITreeOption": "interface ITreeOption {\n  // 树节点的唯一标识\n  nodeKey: string \n  pathSplit: string\n  props: { \n    // 默认为 children\n    children:string  \n    // 默认为 label\n    label: string   \n    // 默认为 isLeaf'\n    isLeaf: string \n  },\n  // 是否为父子严格模式\n  checkStrictly: boolean \n  // 相邻级节点间的水平缩进，单位为像素\n  baseIndent: number \n  // 加载子树数据的方法\n  load: (node, resolve)=> void \n  // 使用树展示数据时，用于配置搜索过滤接口\n  queryPidsBySearch: () => ITreeNodeData \n  // 使用树展示数据时，用于配置初始化过滤接口 \n  queryPidsByIds: () => ITreeNodeData \n  // 默认勾选的节点的keys\n  defaultCheckedKeys: Array<string|number> \n}",
+    "ITreeNodeData": "interface ITreeNodeData {\n  // node-key='id' 设置节点的唯一标识\n  \"id\": number|string \n  // 节点显示文本  \n  \"label\": string \n  // 子节点\n  \"children\"?: ITreeNodeData[]  \n}",
+    "IChangeParam": "// 树组件的节点数据信息\ninterface ItreeData = {\n  id: number|string\n  label: string\n  pid: number|string\n}\n\n// 用户自定义的表格行数据\ninterface IGridData = {\n  id: number|string\n [otherKeys] :any\n}\n\ninterface IChangeParam = {\n values: Array<number|string>|number|string\n texts: string|Array<string>\n selectedDatas: ItreeData[]|IGridData[]\n}",
+    "IBeforeChangeParam": "interface IBeforeChangeParam {\ncallback: () => void   // 回调函数，调用则继续本次变更\nrollback: () => void   // 回滚函数，调用则阻止本次变更\nnewPage: number // 变更后所在页\nnewPageSize: number // 变更后分页大小\ncurrentPage: number // 当前所在页\ncurrentPageSize: number // 当前分页大小\n}",
+    "IResizeEvent": "interface IResizeEvent {\n  // 当前的全屏状态\n  fullscreen: boolean\n  // 弹窗的元素\n  dialog: HTMLElement\n}"
+  },
+  "events": [
+    {
+      "name": "before-page-change",
+      "description": "透传子组件 Pager 的 before-page-change 事件",
+      "description_zh": "透传子组件 Pager 的 before-page-change 事件",
+      "params": "(beforeChangeParam:IBeforeChangeParam) => void",
+      "value": ""
+    },
+    {
+      "name": "change",
+      "description": "Listen for events where the value of the pop-up selection changes",
+      "description_zh": "监听弹窗选择的值发生变化的事件",
+      "params": "(changeParam:IChangeParam) => void",
+      "value": ""
+    },
+    {
+      "name": "close",
+      "description": "The close event of the DialogBox subcomponent of the transparent transmission",
+      "description_zh": "透传子组件 DialogBox 的 close 事件",
+      "params": "() => void",
+      "value": ""
+    },
+    {
+      "name": "closed",
+      "description": "透传子组件 DialogBox 的 closed 事件",
+      "description_zh": "透传子组件 DialogBox 的 closed 事件",
+      "params": "() => void",
+      "value": ""
+    },
+    {
+      "name": "current-change",
+      "description": "透传子组件 Pager 的 current-change 事件",
+      "description_zh": "透传子组件 Pager 的 current-change 事件",
+      "params": "(currentPage: number) => void",
+      "value": ""
+    },
+    {
+      "name": "drag-end",
+      "description": "drag-end event of DialogBox",
+      "description_zh": "透传子组件 DialogBox 的 drag-end 事件",
+      "params": "() => void",
+      "value": ""
+    },
+    {
+      "name": "drag-move",
+      "description": "透传子组件 DialogBox 的 drag-move 事件",
+      "description_zh": "透传子组件 DialogBox 的 drag-move 事件",
+      "params": "() => void",
+      "value": ""
+    },
+    {
+      "name": "drag-start",
+      "description": "drag-start event of DialogBox",
+      "description_zh": "透传子组件 DialogBox 的 drag-start 事件",
+      "params": "() => void",
+      "value": ""
+    },
+    {
+      "name": "next-click",
+      "description": "透传子组件 Pager 的 next-click 事件",
+      "description_zh": "透传子组件 Pager 的 next-click 事件",
+      "params": "(currentPage: number) => void",
+      "value": ""
+    },
+    {
+      "name": "open",
+      "description": "The open event of the DialogBox subcomponent of transparent transmission",
+      "description_zh": "透传子组件 DialogBox 的 open 事件",
+      "params": "() => void",
+      "value": ""
+    },
+    {
+      "name": "opened",
+      "description": "透传子组件 DialogBox 的 opened 事件",
+      "description_zh": "透传子组件 DialogBox 的 opened 事件",
+      "params": "() => void",
+      "value": ""
+    },
+    {
+      "name": "prev-click",
+      "description": "透传子组件 Pager 的 prev-click 事件",
+      "description_zh": "透传子组件 Pager 的 prev-click 事件",
+      "params": "(currentPage: number) => void",
+      "value": ""
+    },
+    {
+      "name": "resize",
+      "description": "An event when the size of the pop-up changes, such as when switching to a full-screen state",
+      "description_zh": "弹窗大小变化时的事件，比如切换全屏状态时",
+      "params": "(ev: IResizeEvent) => void",
+      "value": ""
+    },
+    {
+      "name": "size-change",
+      "description": "透传子组件 Pager 的 size-change 事件",
+      "description_zh": "透传子组件 Pager 的 size-change 事件",
+      "params": "(pageSize: number) => void",
+      "value": ""
+    }
+  ],
+  "methods": [
+    {
+      "name": "queryGridData",
+      "description": "This is how to load tabular data when using a table to display data",
+      "params": "() => void",
+      "description_zh": "使用表格展示数据时，加载表格数据的方法",
+      "value": ""
+    }
+  ],
+  "slots": [
+    {
+      "name": "button",
+      "description": "When using a table to present data, customize the custom button area of the selected column",
+      "description_zh": "使用表格展示数据时，自定义已选栏的自定义按钮区域"
+    },
+    {
+      "name": "clear",
+      "description": "When using a table to display data, customize the Clear button area of the selected column",
+      "description_zh": "使用表格展示数据时，自定义已选栏的清空按钮区域"
+    },
+    {
+      "name": "close",
+      "description": "When using a table to display data, customize the delete button for the selected column options",
+      "description_zh": "使用表格展示数据时，自定义已选栏的选项的删除按钮"
+    },
+    {
+      "name": "footer",
+      "description": "Customize the bottom of the pop-up window",
+      "description_zh": "自定义弹窗底部"
+    },
+    {
+      "name": "option",
+      "description": "When using a table to present data, customize the options for the selected columns",
+      "description_zh": "使用表格展示数据时，自定义已选栏的选项"
+    },
+    {
+      "name": "search",
+      "description": "When you use a table to display data, you can customize the search area",
+      "description_zh": "使用表格展示数据时，自定义搜索区域"
+    },
+    {
+      "name": "select",
+      "description": "When you use a table to display data, customize the selected prompt area of the selected column",
+      "description_zh": "使用表格展示数据时，自定义已选栏的已选提示区域"
+    },
+    {
+      "name": "title",
+      "description": "Customize the title of the pop-up window",
+      "description_zh": "自定义弹窗标题"
+    }
+  ],
+  "filename": "DialogSelect"
+}

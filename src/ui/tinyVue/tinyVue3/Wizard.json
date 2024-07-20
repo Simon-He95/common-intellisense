@@ -1,0 +1,89 @@
+{
+  "name": "TinyWizard",
+  "props": {
+    "data": {
+      "default": "--",
+      "value": "",
+      "type": "IDataItem[]",
+      "description": "Set the node data",
+      "description_zh": "设置节点数据"
+    },
+    "page-guide": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Set up the Page Wizard mode",
+      "description_zh": "设置页向导模式"
+    },
+    "time-line-flow": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Set up the timeline",
+      "description_zh": "设置时间线"
+    },
+    "vertical": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Set to vertical mode",
+      "description_zh": "设置为垂直模式"
+    }
+  },
+  "link": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/wizard",
+  "link_zh": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/wizard",
+  "typeDetail": {
+    "IDataItem": "interface IDataItem {\n  name: string\n  status: string\n  showNode?: boolean\n  content?: string\n  imgUrl?: string\n  users?: string\n  userName?: string\n  roleNumber?: string\n  date?: string\n  values?: IDataItemValuesItem[]\n}\n\ninterface IDataItemValuesItem {\n  text: string\n  value: string\n}"
+  },
+  "events": [
+    {
+      "name": "btn-next",
+      "description": "In page wizard mode, click the \"Next\" button to trigger the callback event",
+      "description_zh": "页向导模式下，点击“下一步”按钮触发的回调事件",
+      "params": "(datas: IDataItem[]) => void",
+      "value": ""
+    },
+    {
+      "name": "btn-prev",
+      "description": "In page wizard mode, click the \"Back\" button to trigger the callback event",
+      "description_zh": "页向导模式下，点击“上一步”按钮触发的回调事件",
+      "params": "(datas: IDataItem[]) => void",
+      "value": ""
+    },
+    {
+      "name": "btn-save",
+      "description": "In page wizard mode, click the \"Save\" button to trigger the callback event",
+      "description_zh": "页向导模式下，点击“保存”按钮触发的回调事件",
+      "params": "(datas: IDataItem[]) => void",
+      "value": ""
+    },
+    {
+      "name": "btn-submit",
+      "description": "In page wizard mode, clicking \"Next\" causes the status of the last node to be \"doing\", and then clicking the \"Submit\" button triggers the callback event",
+      "description_zh": "页向导模式下，点击“下一步”导致最后一个节点的状态为 \"doing\" 时，点击“提交”按钮触发的回调事件",
+      "params": "(datas: IDataItem[]) => void",
+      "value": ""
+    },
+    {
+      "name": "node-click",
+      "description": "Node click event",
+      "description_zh": "节点点击事件",
+      "params": "(node: IDataItem, index: number, event: Event) => void",
+      "value": ""
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "base",
+      "description": "Basic slots",
+      "description_zh": "基本插槽"
+    },
+    {
+      "name": "stepbutton",
+      "description": "Page Wizard Mode button slot",
+      "description_zh": "页向导模式按钮插槽"
+    }
+  ],
+  "filename": "Wizard"
+}

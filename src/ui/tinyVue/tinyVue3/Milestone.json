@@ -1,0 +1,170 @@
+{
+  "name": "TinyMilestone",
+  "props": {
+    "completed-field": {
+      "default": "'completed'",
+      "value": "",
+      "type": "string",
+      "description": "Set the key value corresponding to the completion status of the node",
+      "description_zh": "设置节点完成状态对应的键值"
+    },
+    "data": {
+      "default": "--",
+      "value": "",
+      "type": "ICustomData | ICustomData[]",
+      "description": "Set the data of the step bar and customize the key-value mapping",
+      "description_zh": "设置步骤条的数据，可自定义键值映射"
+    },
+    "flag-before": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Sets whether the data of the flag is taken from the node in front or behind, and the data on the node behind is taken by default",
+      "description_zh": "设置旗子的数据是取自前面还是后面的节点，默认取后面节点上的数据"
+    },
+    "flag-content-field": {
+      "default": "'content'",
+      "value": "",
+      "type": "string",
+      "description": "Set the key name for the content description section of the flag",
+      "description_zh": "设置旗子内容描述部分对应的键名"
+    },
+    "flag-field": {
+      "default": "'flags'",
+      "value": "",
+      "type": "string",
+      "description": "Set the key name corresponding to the flag information array",
+      "description_zh": "设置旗子信息数组对应的键名"
+    },
+    "flag-name-field": {
+      "default": "'name'",
+      "value": "",
+      "type": "string",
+      "description": "Set the key name for the flag title",
+      "description_zh": "设置旗子标题对应的键名"
+    },
+    "flag-status-field": {
+      "default": "'status'",
+      "value": "",
+      "type": "string",
+      "description": "Set the key name for the flag status",
+      "description_zh": "设置旗子状态对应的键名"
+    },
+    "line-style": {
+      "default": "1",
+      "value": "",
+      "type": "number / string",
+      "description": "When the line color value mode is Numeric, only 1 and 2 can be selected; If it's a string, you need to pass in a hexadecimal color value\n              When set to the number 1, there are only two line colors, complete and incomplete, and the line color of the completed state is the same as the color of the completed state defined by milestones-status\n              When set to the number 2, the line color root follows the node state color\n              When set to a 16-base color value in the form of a string, such as #1890FF, the lines are unified into the set color regardless of the state",
+      "description_zh": "线条颜色取值模式为数字时，只有1和2可选；如果为字符串则需传入 16 进制颜色值\n              设置为数字 1 时只有完成与未完成两种状态的线条颜色，完成状态的线条颜色与 milestones-status 定义的 completed 状态的颜色一致\n              设置为数字 2 时线条颜色根随节点状态颜色\n              当设置为字符串形式的 16 进制色值时，如：#1890FF 时，线条不区分状态，全部统一为所设置的颜色"
+    },
+    "milestones-status": {
+      "default": "--",
+      "value": "",
+      "type": "IStatus",
+      "description": "Define the relationship between state and color, and the color value must be a hexadecimal color value or a subject variable of the component library",
+      "description_zh": "定义状态与颜色对应关系，颜色取值须是 16 进制颜色值或组件库的主题变量"
+    },
+    "name-field": {
+      "default": "'name'",
+      "value": "",
+      "type": "string",
+      "description": "Set the key name corresponding to the node name",
+      "description_zh": "设置节点名称对应的键名"
+    },
+    "show-number": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Specifies whether the sequence number is displayed for nodes in the incomplete state",
+      "description_zh": "设置未完成状态的节点是否显示序号"
+    },
+    "solid": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "In Milestone mode, the Completed node is displayed as solid and the glow is opaque",
+      "description_zh": "在里程碑模式下，设置已经完成节点显示为实心，且光晕不透明"
+    },
+    ":space": {
+      "default": "--",
+      "value": "",
+      "type": "number",
+      "description": "Sets the spacing of adjacent nodes, that is, the length of lines between nodes",
+      "description_zh": "设置相邻节点的间距，即节点间线条的长度"
+    },
+    ":start": {
+      "default": "-1",
+      "value": "",
+      "type": "number",
+      "description": "Set the starting value of the sequence number of the node, starting from the first node",
+      "description_zh": "设置节点的序号起始值，从首个节点开始计算"
+    },
+    "status-field": {
+      "default": "'status'",
+      "value": "",
+      "type": "string",
+      "description": "Set the key name corresponding to the node state",
+      "description_zh": "设置节点状态对应的键名"
+    },
+    "time-field": {
+      "default": "'time'",
+      "value": "",
+      "type": "string",
+      "description": "Set the key name corresponding to the node time",
+      "description_zh": "设置节点时间信息对应的键名"
+    }
+  },
+  "link": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/milestone",
+  "link_zh": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/milestone",
+  "typeDetail": {
+    "IStatus": "interface IStatus {\n  completed?: string // 可通过completed-field自定义completed键名\n  doing: string\n  back: string\n  end: string\n  cancel: string\n}",
+    "ICustomData": "interface ICustomData { \n  name?: string\n  time?: string\n  status?: string\n  flags?: string\n  content?: string\n  [propName: string]: string // 可自定义以上的默认属性\n}"
+  },
+  "events": [
+    {
+      "name": "click",
+      "description": "Node click events, parameters (index: node index, node: node data information)",
+      "description_zh": "节点的点击事件，参数（index:节点索引, node：节点数据信息）",
+      "params": "(index: number, node: ICustomData) => void",
+      "value": ""
+    },
+    {
+      "name": "flag-click",
+      "description": "Flag click event, parameter (index: flag index, node: flag data information)",
+      "description_zh": "旗子的点击事件，参数（index:旗子索引, node：旗子数据信息）",
+      "params": "(index: number, node: ICustomData) => void",
+      "value": ""
+    },
+    {
+      "name": "flagclick",
+      "description": "[使用flag-click代替， deprecated v3.5.0废弃，v3.17.0移除；移除原因：命名规范]",
+      "description_zh": "[使用flag-click代替， deprecated v3.5.0废弃，v3.17.0移除；移除原因：命名规范]",
+      "params": "(index: number, node: ICustomData) => void",
+      "value": ""
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "bottom",
+      "description": "node",
+      "description_zh": "节点下方内容"
+    },
+    {
+      "name": "flag",
+      "description": "Flag content",
+      "description_zh": "旗帜内容"
+    },
+    {
+      "name": "icon",
+      "description": "node icon",
+      "description_zh": "节点图标"
+    },
+    {
+      "name": "top",
+      "description": "The content above the node",
+      "description_zh": "节点上方内容"
+    }
+  ],
+  "filename": "Milestone"
+}

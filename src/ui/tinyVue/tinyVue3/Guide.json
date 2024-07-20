@@ -1,0 +1,98 @@
+{
+  "name": "TinyGuide",
+  "props": {
+    ":alignment-axis": {
+      "default": "0",
+      "value": "",
+      "type": "number",
+      "description": "Sets the guide frame alignment axis distance",
+      "description_zh": "设置引导框对齐轴距离"
+    },
+    "arrow": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to display the arrow for the tooltip",
+      "description_zh": "是否显示工具提示的箭头"
+    },
+    ":cross-axis": {
+      "default": "0",
+      "value": "",
+      "type": "number",
+      "description": "Sets the distance of the horizontal axis of the guide frame",
+      "description_zh": "设置引导框横轴距离"
+    },
+    "dom-data": {
+      "default": "--",
+      "value": "",
+      "type": "IDomData[]",
+      "description": "User bootstrap parameters",
+      "description_zh": "用户引导参数"
+    },
+    ":height": {
+      "default": "--",
+      "value": "",
+      "type": "number",
+      "description": "Sets the bootstrap height",
+      "description_zh": "设置引导框高度"
+    },
+    "light-class": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "The class name applied to the element when it is highlighted (that is, when its step is active).",
+      "description_zh": "当元素突出显示时（即，当其步骤处于活动状态时）应用于元素的类名"
+    },
+    ":main-axis": {
+      "default": "18",
+      "value": "",
+      "type": "number",
+      "description": "Set the distance of the main axis (vertical axis) of the guide frame",
+      "description_zh": "设置引导框主轴（纵轴）距离"
+    },
+    ":modal-overlay-opening-padding": {
+      "default": "0",
+      "value": "",
+      "type": "number",
+      "description": "The amount of padding added around the opening of the modal overlay",
+      "description_zh": "在模态叠加层开口周围添加的填充量"
+    },
+    ":modal-overlay-opening-radius": {
+      "default": "0",
+      "value": "",
+      "type": "number",
+      "description": "The amount of boundary radius added around the opening of the modal overlay",
+      "description_zh": "在模态叠加层开口周围添加的边界半径量"
+    },
+    "pop-position": {
+      "default": "'bottom'",
+      "value": "",
+      "type": "IPosition",
+      "description": "Boot box arrow position, an optional value for which can be referenced as an IPosition type",
+      "description_zh": "引导框箭头位置，该属性的可选值可参考 IPosition 类型"
+    },
+    ":width": {
+      "default": "510",
+      "value": "",
+      "type": "number",
+      "description": "Sets the boot frame width",
+      "description_zh": "设置引导框宽度"
+    }
+  },
+  "link": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/guide",
+  "link_zh": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/guide",
+  "typeDetail": {
+    "IDomData": "interface IDomData {\n  // 指引的标题\n  title: string\n  // 指引的内容（可以是 html）\n  text: string\n  // 需要绑定指引的元素类名（只能是类名，若未传入则显示为上下左右居中且无指示箭头）\n  domElement: string\n  // 添加需要高亮的元素的类名\n  hightBox: string[]\n  // 要添加到步骤的内容元素的一串类名\n  classes: string\n\n  // 展示前的回调函数\n  beforeShow: () => void\n  // 隐藏前的回调函数\n  beforeHide: () => void\n  // 显示的回调函数\n  show: () => void\n  // 隐藏的回调函数\n  hide: () => void\n  // 关闭的回调函数\n  cancel: () => void\n  //销毁的回调函数\n  destroy: () => void\n  // 完成的回调函数\n  completey: () => void\n\n  // 需要设置的按钮组\n  button: {\n    // 按钮名\n    text: string\n    // 需要执行的步骤，包含 next(下一步)、back(返回)、complete(完成)\n    action: 'next' | 'back' | 'complete'\n    // 按钮的类名\n    classes: string\n    // 是否是次要按钮\n    secondary: boolean\n  }[]\n}",
+    "IPosition": "type IPosition = 'top' | 'top-start' | 'top-end' | 'bottom' | 'bottom-start' | 'bottom-end' | 'left' | 'left-start' | 'left-end' | 'right' | 'right-start' | 'right-end'"
+  },
+  "events": [],
+  "methods": [],
+  "slots": [
+    {
+      "name": "main",
+      "description": "Set the contents of the boot box",
+      "description_zh": "设置引导框内容"
+    }
+  ],
+  "filename": "Guide"
+}

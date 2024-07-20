@@ -26,6 +26,7 @@ export const UINames = [
   'bits-ui',
   '@mui/material',
   'shadcn-ui',
+  '@opentiny/vue',
 ]
 
 export const nameMap: any = {
@@ -42,4 +43,5 @@ export const nameMap: any = {
   '@nuxt/uiPro': 'nuxtUiPro',
   'bits-ui': 'shadcnSvelte',
   '@mui/material': 'materialUi',
+  '@opentiny/vue': 'tinyVue',
 }

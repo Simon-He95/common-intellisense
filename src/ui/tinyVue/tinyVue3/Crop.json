@@ -1,0 +1,308 @@
+{
+  "name": "TinyCrop",
+  "props": {
+    ":aspect-ratio": {
+      "default": "--",
+      "value": "",
+      "type": "number",
+      "description": "the aspect ratio of the crop box; The default is 16 / 9",
+      "description_zh": "裁剪框的宽高比;默认为 16 / 9"
+    },
+    "auto-crop": {
+      "default": "--",
+      "value": "",
+      "type": "boolean",
+      "description": "When initializing, whether the cropping box is automatically displayed; Defaults to true",
+      "description_zh": "初始化时，是否自动显示裁剪框;默认为 true"
+    },
+    ":auto-crop-area": {
+      "default": "--",
+      "value": "",
+      "type": "number",
+      "description": "Define the size of the auto-clipping area (in percentage); The default is 0.8",
+      "description_zh": "定义自动裁剪面积大小（百分比）;默认为 0.8"
+    },
+    "background": {
+      "default": "--",
+      "value": "",
+      "type": "boolean",
+      "description": "whether to display the grid background of the container; Defaults to true",
+      "description_zh": "是否显示容器的网格背景;默认为 true"
+    },
+    "center": {
+      "default": "--",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the crop frame is in the center of the image; Defaults to true",
+      "description_zh": "裁剪框是否在图片正中心;默认为 true"
+    },
+    "crop-type": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "Set the type to be returned after cropping, which can be set to blob and base64, and the default is base64",
+      "description_zh": "设置图片裁剪后返回的类型，可配置为 blob 和 base64，默认为 base64"
+    },
+    "cropvisible": {
+      "default": "--",
+      "value": "",
+      "type": "boolean",
+      "description": "Set whether the cropping pop-up box is visible; Defaults to false",
+      "description_zh": "设置裁剪弹框是否可见;默认为 false"
+    },
+    "drag-mode": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "Define the drag-and-drop mode of the cropper; Defaults to 'crop'; 'crop': can generate a new crop box 3. 'move': Only image 3 can be moved. 'none': Nothing to do",
+      "description_zh": "定义 cropper 的拖拽模式;默认为 'crop';'crop'： 可以产生一个新的裁剪框 3 。'move'：只可以移动图片 3 。'none'： 什么也不处理"
+    },
+    "guides": {
+      "default": "--",
+      "value": "",
+      "type": "boolean",
+      "description": "whether to display a dotted line above the crop box; Defaults to true",
+      "description_zh": "是否在裁剪框上方显示虚线;默认为 true"
+    },
+    "max-size": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "Set the maximum size of the image to be cropped, the default is 1M; The default is 1M",
+      "description_zh": "设置待裁剪图片的最大大小，默认为 1M ;默认为 1M"
+    },
+    ":min-container-height": {
+      "default": "--",
+      "value": "",
+      "type": "number",
+      "description": "the minimum height of the container; The default is 300",
+      "description_zh": "容器的最小高度;默认为 300"
+    },
+    ":min-container-width": {
+      "default": "--",
+      "value": "",
+      "type": "number",
+      "description": "the minimum width of the container; The default is 652",
+      "description_zh": "容器的最小宽度;默认为 652"
+    },
+    ":min-crop-box-height": {
+      "default": "--",
+      "value": "",
+      "type": "number",
+      "description": "the minimum height of the cropping layer; The default is 0",
+      "description_zh": "裁剪层的最小高度;默认为 0"
+    },
+    ":min-crop-box-width": {
+      "default": "--",
+      "value": "",
+      "type": "number",
+      "description": "the minimum width of the crop layer; The default is 0",
+      "description_zh": "裁剪层的最小宽度;默认为 0"
+    },
+    "modal": {
+      "default": "--",
+      "value": "",
+      "type": "boolean",
+      "description": "whether to display the black modal below the crop box above the image; Defaults to true",
+      "description_zh": "是否显示图片上方裁剪框下方的黑色模态;默认为 true"
+    },
+    "movable": {
+      "default": "--",
+      "value": "",
+      "type": "boolean",
+      "description": "whether to allow the picture behind it to be moved; Defaults to true",
+      "description_zh": "是否允许可以移动后面的图片;默认为 true"
+    },
+    "preview": {
+      "default": "--",
+      "value": "",
+      "type": "boolean",
+      "description": "Sets whether the crop area image can be previewed, which is false by default",
+      "description_zh": "设置裁剪区域图片是否可预览，默认为 false"
+    },
+    ":quality": {
+      "default": "--",
+      "value": "",
+      "type": "number",
+      "description": "Set the compression ratio of the cropped image, the value is between 0-1, and the default is 0.92",
+      "description_zh": "设置图片裁剪后的压缩比例，值在 0-1 之间，默认为 0.92"
+    },
+    "rotatable": {
+      "default": "--",
+      "value": "",
+      "type": "boolean",
+      "description": "whether to allow the image to be rotated; Defaults to true",
+      "description_zh": "是否允许旋转图像;默认为 true"
+    },
+    "src": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "The source image cropped by default",
+      "description_zh": "默认裁剪的源图片"
+    },
+    ":view-mode": {
+      "default": "--",
+      "value": "",
+      "type": "number",
+      "description": "Define the view mode of the cropper; Defaults to 0; 0: There is no limit, 3 can be moved to 2 outside. 1:3 can only move within 2. The 2:2 image is not all covered with 1 (i.e. there can be a gap on one side when zoomed out). The 3:2 picture fills the entire 1",
+      "description_zh": "定义 cropper 的视图模式;默认为 0;0：没有限制，3 可以移动到 2 外。1：3 只能在 2 内移动。2：2 图片不全部铺满 1 （即缩小时可以有一边出现空隙）。3：2 图片填充整个 1"
+    },
+    ":wheel-zoom-ratio": {
+      "default": "--",
+      "value": "",
+      "type": "number",
+      "description": "When moving an image with the mouse, define the zoom level; The default is 0.1",
+      "description_zh": "用鼠标移动图像时，定义缩放比例;默认为 0.1"
+    },
+    "zoom-on-wheel": {
+      "default": "--",
+      "value": "",
+      "type": "boolean",
+      "description": "whether the image can be zoomed or zoomed by scrolling the mouse wheel; Defaults to true",
+      "description_zh": "是否可以通过滚动鼠标滚轮来缩放图像;默认为 true"
+    },
+    "zoomable": {
+      "default": "--",
+      "value": "",
+      "type": "boolean",
+      "description": "whether the image is allowed to be enlarged; Defaults to true",
+      "description_zh": "是否允许放大图像;默认为 true"
+    }
+  },
+  "link": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/crop",
+  "link_zh": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/crop",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "crop",
+      "description": "Triggered when the canvas (image wrapper) or crop frame changes; The callback parameter is (event: event), native event",
+      "description_zh": "当画布（图像包装器）或裁剪框发生改变时触发;回调参数为 (event: Event)，原生事件",
+      "params": "Function(value)",
+      "value": ""
+    },
+    {
+      "name": "cropdata",
+      "description": "The cropdata event callback function can get the cropped data, which is base64 data by default",
+      "description_zh": "cropdata 事件回调函数中可以拿到裁剪后的数据，默认为 base64 数据",
+      "params": "Function(data)",
+      "value": ""
+    },
+    {
+      "name": "cropend",
+      "description": "Triggered when the canvas (image wrapper) or clipping box changes at the end of the process; The callback parameter is (event: Event)",
+      "description_zh": "当画布（图像包装器）或剪切框发生变化结束时触发;回调参数为 (event: Event)",
+      "params": "",
+      "value": ""
+    },
+    {
+      "name": "cropmove",
+      "description": "Triggers when the canvas (image wrapper) or clipping box is changing; The callback parameter is (event: Event)",
+      "description_zh": "当画布（图像包装器）或剪切框正在发生变化时触发;回调参数为 (event: Event)",
+      "params": "",
+      "value": ""
+    },
+    {
+      "name": "cropstart",
+      "description": "Triggers when the canvas (image wrapper) or clipping box starts to change; The callback parameter is (event: Event)",
+      "description_zh": "当画布（图像包装器）或剪切框开始发生变化时触发;回调参数为 (event: Event)",
+      "params": "",
+      "value": ""
+    },
+    {
+      "name": "ready",
+      "description": "Triggers when a cropper instance is fully built",
+      "description_zh": "当一个 cropper 实例完全构建时触发",
+      "params": "",
+      "value": ""
+    }
+  ],
+  "methods": [
+    {
+      "name": "clear",
+      "description": "",
+      "params": "清除裁切框",
+      "description_zh": "",
+      "value": ""
+    },
+    {
+      "name": "destroy",
+      "description": "",
+      "params": "销毁 cropper 并从图像中删除整个 cropper",
+      "description_zh": "",
+      "value": ""
+    },
+    {
+      "name": "disable",
+      "description": "",
+      "params": "禁用裁切框（裁切框不可移动）",
+      "description_zh": "",
+      "value": ""
+    },
+    {
+      "name": "enable",
+      "description": "",
+      "params": "启用裁切框",
+      "description_zh": "",
+      "value": ""
+    },
+    {
+      "name": "getCanvasData",
+      "description": "",
+      "params": "获取画布 Canvas（图像包装器）位置和大小数据;返回的数据类型为 object",
+      "description_zh": "",
+      "value": ""
+    },
+    {
+      "name": "getContainerData",
+      "description": "",
+      "params": "获取 container 容器大小数据;返回的数据类型为 object",
+      "description_zh": "",
+      "value": ""
+    },
+    {
+      "name": "getCropBoxData",
+      "description": "",
+      "params": "获取剪切框的位置和大小数据;返回的数据类型为 object",
+      "description_zh": "",
+      "value": ""
+    },
+    {
+      "name": "getCroppedCanvas",
+      "description": "",
+      "params": "获取裁剪后的图片数据;.getCroppedCanvas().toDataURL()：转成 base64 图片;.getCroppedCanvas().toBlob()：生成 Blob 图片数据",
+      "description_zh": "",
+      "value": ""
+    },
+    {
+      "name": "getData",
+      "description": "",
+      "params": "获取最终裁剪的区域位置和大小数据（根据原始图像的自然大小）;参数为 (rounded) ，默认 false，设置 true 可以获取其所有数据;返回的数据类型为 object",
+      "description_zh": "",
+      "value": ""
+    },
+    {
+      "name": "getImageData",
+      "description": "",
+      "params": "获取图像 image 位置、大小和其他相关数据;返回的数据类型为 object",
+      "description_zh": "",
+      "value": ""
+    },
+    {
+      "name": "replace",
+      "description": "",
+      "params": "替换图像的 src 并重新构建 cropper;参数为 图片 URL",
+      "description_zh": "",
+      "value": ""
+    },
+    {
+      "name": "setAspectRatio",
+      "description": "",
+      "params": "改变裁切框的宽高比;参数为(aspectRatio)，类型 number，是一个正数",
+      "description_zh": "",
+      "value": ""
+    }
+  ],
+  "slots": [],
+  "filename": "Crop"
+}

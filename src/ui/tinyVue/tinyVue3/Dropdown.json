@@ -1,0 +1,81 @@
+{
+  "name": "TinyDropdown",
+  "props": {
+    "disabled": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to disable or not",
+      "description_zh": "是否禁用"
+    },
+    "divided": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether or not to display a dividing line",
+      "description_zh": "是否显示分割线"
+    },
+    "icon": {
+      "default": "--",
+      "value": "",
+      "type": "Component",
+      "description": "Inline icons",
+      "description_zh": "内嵌图标"
+    },
+    "item-data": {
+      "default": "--",
+      "value": "",
+      "type": "IItemData",
+      "description": "Configuration information for the menu item",
+      "description_zh": "菜单项的配置信息"
+    },
+    "label": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "The text of the menu item",
+      "description_zh": "菜单项的文本"
+    }
+  },
+  "link": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/dropdown",
+  "link_zh": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/dropdown",
+  "events": [
+    {
+      "name": "button-click",
+      "description": "Listen for button click events on the left, which takes effect only when split-button is true",
+      "description_zh": "监听左侧按钮点击事件，仅 split-button 为 true 时生效",
+      "params": "() => void",
+      "value": ""
+    },
+    {
+      "name": "item-click",
+      "description": "Listen for click-and-click menu item events",
+      "description_zh": "监听点击菜单项事件",
+      "params": "(data:IItemClickParam) => void",
+      "value": ""
+    },
+    {
+      "name": "visible-change",
+      "description": "Listen for the drop-down box to be shown or hidden",
+      "description_zh": "监听下拉框的显示或隐藏状态",
+      "params": "(status:boolean) => void",
+      "value": ""
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "default",
+      "description": "Menu item text area",
+      "description_zh": "菜单项文本区域"
+    }
+  ],
+  "typeDetail": {
+    "IMenuOption": "interface IMenuOption {\n  options: IItemData[]\n  textField?: string\n  popperClass?: string\n  placement?: 'top' | 'top-start' | 'top-end' | 'bottom' | 'bottom-start' | 'bottom-end'\n}",
+    "IItemClickParam": "interface IItemClickParam {\n  itemData: IItemData\n  // dropdownItem 组件的实例\n  vm: {\n    selected: boolean\n    textField: string\n    tipPosition: string\n    $el: HTMLElement\n  }\n}",
+    "IItemData": "interface IItemData {\n  label?: string\n  disabled?: boolean\n  divided?: boolean\n}",
+    "IButtonType": "type IButtonType =  'primary' | 'success' | 'warning' | 'danger' | 'info' | 'text'",
+    "IPlacementType": "type IPlacementType =  'top' | 'top-start' | 'top-end' | 'bottom' | 'bottom-start' | 'bottom-end'"
+  },
+  "filename": "Dropdown"
+}

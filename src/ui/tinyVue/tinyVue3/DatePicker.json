@@ -1,0 +1,297 @@
+{
+  "name": "TinyDatePicker",
+  "props": {
+    "align": {
+      "default": "'left'",
+      "value": "",
+      "type": "left / center / right",
+      "description": "The alignment of the date selection panel and the input box",
+      "description_zh": "日期选择面板和输入框的对齐方式"
+    },
+    "clear-icon": {
+      "default": "IconOperationfaild",
+      "value": "",
+      "type": "Component",
+      "description": "Customize the clear icon",
+      "description_zh": "自定义清空图标"
+    },
+    "clearable": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether or not to display a clear button",
+      "description_zh": "是否显示清除按钮"
+    },
+    "default-time": {
+      "default": "'00:00:00' | ['00:00:00', '00:00:00']",
+      "value": "",
+      "type": "string | string[]",
+      "description": "type=\"datetime\", default-time is a string that is used to set the default value in the time input box after selecting a date. type=\"datetimerange\", default-time is an array of strings that sets the default values in the start and end time input boxes when a date range is selected",
+      "description_zh": "type=\"datetime\" 时，default-time 是一个字符串，用于设置选择一个日期后，时间输入框中的默认值；type=\"datetimerange\" 时，default-time 是一个字符串数组，用于设置选择一个日期范围后，开始和结束时间输入框中的默认值"
+    },
+    "default-value": {
+      "default": "new Date()",
+      "value": "",
+      "type": "string | Date",
+      "description": "When the selected date value is empty, the default time displayed when the selector panel is opened, which can be in date format or a string that can be parsed by new Date().",
+      "description_zh": "当选中的日期值为空时，选择器面板打开时默认显示的时间，可以是日期格式或者能被 new Date() 解析的字符串"
+    },
+    "disabled": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "disable",
+      "description_zh": "禁用"
+    },
+    "editable": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Text boxes can be entered",
+      "description_zh": "文本框可输入"
+    },
+    "end-placeholder": {
+      "default": "''",
+      "value": "",
+      "type": "string",
+      "description": "The placeholder content for the end date when the scope is selected",
+      "description_zh": "范围选择时结束日期的占位内容"
+    },
+    "format": {
+      "default": "'yyyy-MM-dd'",
+      "value": "",
+      "type": "string",
+      "description": "The format that appears in the input box",
+      "description_zh": "显示在输入框中的格式"
+    },
+    "format-weeks": {
+      "default": "--",
+      "value": "",
+      "type": "(customWeeks: number, weekFirstDays: string[]) => string",
+      "description": "The callback function has two parameters, customWeeks is used to get the sequence number of the custom week, and weekFirstDays is used to get the first date of the week",
+      "description_zh": "格式化周次序号，该回调函数有两个参数，customWeeks 用来获取自定义周次的序号，weekFirstDays 用来获取每周次中的首个日期"
+    },
+    "isutc8": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "The default value is false, and when it is set to true, the default time zone of the system is switched, and the time is still displayed as the time in the East 8 zone, and the applicable scenario is the time in the East 8 zone in overseas regions",
+      "description_zh": "默认值为 false，设置为 true 时切换系统默认时区，时间依然显示为东八区时间，适用场景为海外地区显示东八区时间"
+    },
+    "label": {
+      "default": "''",
+      "value": "",
+      "type": "string",
+      "description": "When the shape=\"filter\" property is set, it represents the title displayed in filter mode, and a separate label property allows the label to be placed at the beginning of the component",
+      "description_zh": "设置 shape=\"filter\" 属性之后，代表过滤器模式下显示的标题，单独设置 label 属性可以使 label 放置在组件的开始位置"
+    },
+    "v-model": {
+      "default": "--",
+      "value": "",
+      "type": "Date | string | number | Array",
+      "description": "Binding value",
+      "description_zh": "绑定值"
+    },
+    "name": {
+      "default": "''",
+      "value": "",
+      "type": "string",
+      "description": "Native attributes",
+      "description_zh": "原生属性"
+    },
+    "picker-options": {
+      "default": "--",
+      "value": "",
+      "type": "IPickerOptions",
+      "description": "配置部分禁用、快捷选项等，包含 firstDayOfWeek / disabledDate / onPick / shortcuts 属性，详细用法可参考 IPickerOptions 类型声明",
+      "description_zh": "配置部分禁用、快捷选项等，包含 firstDayOfWeek / disabledDate / onPick / shortcuts 属性，详细用法可参考 IPickerOptions 类型声明"
+    },
+    "placeholder": {
+      "default": "''",
+      "value": "",
+      "type": "string",
+      "description": "Placeholder content when not scoped",
+      "description_zh": "非范围选择时的占位内容"
+    },
+    "popper-append-to-body": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to insert a pop-up into the body element, and if there is a problem with the positioning of the pop-up, you can set this property to false (see Select Component)",
+      "description_zh": "是否将弹出框插入至 body 元素，在弹出框的定位出现问题时，可将该属性设置为 false (可参考 select 组件)"
+    },
+    "popper-class": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "The class class name added to the DatePicker drop-down box",
+      "description_zh": "为 DatePicker 下拉弹框添加的 class 类名"
+    },
+    "range-separator": {
+      "default": "'-'",
+      "value": "",
+      "type": "string",
+      "description": "Separator when selecting a range",
+      "description_zh": "选择范围时的分隔符"
+    },
+    "readonly": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Specifies whether the calendar component is read-only",
+      "description_zh": "设置日历组件是否只读"
+    },
+    "shape": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "Switch to filter mode via the shape=\"filter\" attribute",
+      "description_zh": "通过 shape=\"filter\" 属性切换至过滤器模式"
+    },
+    "show-timezone": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to enable the time zone selection in the date selection panel",
+      "description_zh": "是否开启设置日期选择面板时区选择"
+    },
+    "show-week-number": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to display the week number",
+      "description_zh": "是否展示周次序号"
+    },
+    "size": {
+      "default": "--",
+      "value": "",
+      "type": "medium / small / mini",
+      "description": "Enter the size of the field",
+      "description_zh": "输入框尺寸"
+    },
+    "start-placeholder": {
+      "default": "''",
+      "value": "",
+      "type": "string",
+      "description": "The placeholder content for the start date when the range is selected",
+      "description_zh": "范围选择时开始日期的占位内容"
+    },
+    "step": {
+      "default": "--",
+      "value": "",
+      "type": "IStep",
+      "description": "After setting the type=\"datetime\" or type=\"datetimerange\" property, you can configure the step size of the time by step, which is an object that contains three properties: hour, minute, and second, which are used to configure the step size of hours, minutes, and seconds, respectively",
+      "description_zh": "设置 type=\"datetime\" 或者 type=\"datetimerange\" 属性之后，可以通过 step 配置时间的步长，step 是一个对象，包含三个属性：hour、minute、second，分别用来配置时、分、秒的步长"
+    },
+    "suffix-icon": {
+      "default": "IconCalendar",
+      "value": "",
+      "type": "Component",
+      "description": "Customize the back icon of the selector",
+      "description_zh": "自定义选择器的后置图标"
+    },
+    "time-arrow-control": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Time selection is controlled by the arrow buttons, used when type is datetime, datetimerange, and the default is time selection by scrolling through the mouse wheel",
+      "description_zh": "通过箭头按钮控制时间选择，当 type 为 datetime、datetimerange 时使用，默认为 通过鼠标滚轮滚动选择时间"
+    },
+    "time-format": {
+      "default": "'HH:mm:ss'",
+      "value": "",
+      "type": "string",
+      "description": "If the custom format cannot automatically distinguish between time and date, this option can be configured to help determine the format",
+      "description_zh": "当自定义的 format 格式无法自动区分时间与日期时，可配置该选项用来辅助确定格式"
+    },
+    "tip": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "Prompt information displayed in filter mode",
+      "description_zh": "过滤器模式下显示的提示信息"
+    },
+    "type": {
+      "default": "'date'",
+      "value": "",
+      "type": "IType",
+      "description": "Display type, the optional value of which can be found by referring to the IType type declaration",
+      "description_zh": "显示类型，该属性的可选值可参考 IType 类型声明"
+    },
+    "unlink-panels": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Cancel the linkage between the two date panels in the range selector",
+      "description_zh": "在范围选择器里取消两个日期面板之间的联动"
+    },
+    "validate-event": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Sets whether the date picker triggers a form validation when entered",
+      "description_zh": "设置日期选择器在输入时是否会触发表单校验"
+    },
+    "value-format": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "Specifies the format of the bound value, or if it is not specified, the bound value is a Date object",
+      "description_zh": "指定绑定值的格式，不指定则绑定值为 Date 对象"
+    }
+  },
+  "link": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/date-picker",
+  "link_zh": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/date-picker",
+  "typeDetail": {
+    "IPickerOptions": "interface IPickerOptions {\n  // 每周的第一天是星期几，默认值是7，也就是星期天\n  firstDayOfWeek: number\n  // 实现部分禁用，此时只能选择一部分日期\n  disabledDate: (time: Date) => boolean\n  // 选中日期后执行的回调，需要与 daterange 或 datetimerange 类型配合使用才生效\n  onPick: (range: { minDate: Date, maxDate: Date }) => void\n  // 快捷选项\n  shortcuts: {\n    text: string\n    onClick: (picker: { $emit: (type: string, date: Date) => void }) => void\n    type: 'startFrom' | 'EndAt'\n    startDate: Date\n    endDate: Date\n  }[]\n}",
+    "IType": "type IType = 'date' | 'dates' | 'daterange' | 'datetime' | 'datetimerange' | 'week' | 'month' | 'monthrange' | 'quarter' | 'year' | 'years' | 'yearrange'"
+  },
+  "events": [
+    {
+      "name": "blur",
+      "description": "Triggers when input loses focus",
+      "description_zh": "当 input 失去焦点时触发",
+      "params": "() => void",
+      "value": ""
+    },
+    {
+      "name": "change",
+      "description": "Triggered when the user confirms the selected value",
+      "description_zh": "用户确认选定的值时触发",
+      "params": "(value: Date) => void",
+      "value": ""
+    },
+    {
+      "name": "focus",
+      "description": "Triggers when input gains focus",
+      "description_zh": "当 input 获得焦点时触发",
+      "params": "() => void",
+      "value": ""
+    }
+  ],
+  "methods": [
+    {
+      "name": "abort",
+      "description": "Cancel the upload request",
+      "params": "() => void",
+      "description_zh": "取消上传请求",
+      "value": ""
+    },
+    {
+      "name": "clearFiles",
+      "description": "Clear the list of uploaded files (this method cannot be called in before-upload)",
+      "params": "() => void",
+      "description_zh": "清空已上传的文件列表（该方法不支持在 before-upload 中调用）",
+      "value": ""
+    },
+    {
+      "name": "submit",
+      "description": "Manually upload a list of files",
+      "params": "() => void",
+      "description_zh": "手动上传文件列表",
+      "value": ""
+    }
+  ],
+  "slots": [],
+  "filename": "DatePicker"
+}

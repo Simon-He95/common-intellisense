@@ -1,0 +1,144 @@
+{
+  "name": "TinySelect",
+  "props": {
+    "disabled": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "option whether to disable it",
+      "description_zh": "选项是否禁用"
+    },
+    "icon": {
+      "default": "--",
+      "value": "",
+      "type": "Component",
+      "description": "Customize the icons of the options",
+      "description_zh": "自定义选项的图标"
+    },
+    "label": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "The display text for the option",
+      "description_zh": "选项的显示文本"
+    },
+    "required": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the option is mandatory",
+      "description_zh": "选项是否必选"
+    },
+    "value": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "The value of the option",
+      "description_zh": "选项的值"
+    }
+  },
+  "link": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/select",
+  "link_zh": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/select",
+  "typeDetail": {
+    "IOption": "interface IOption {\n  value?: string | number\n  label?: string\n  disabled?: boolean\n  icon?: Component\n  required?:boolean\n}",
+    "ICacheOp": "interface ICacheItem {\n  frequency: number\n  key: string\n  time: number\n}\n\ninterface ICacheOp {\n  key: string // 本地缓存的唯一 key 值\n  sortBy?: 'frequency' | 'time' // 排序的字段，默认 frequency (频次)\n  sort?: 'desc' | 'asc' // 排序方式，默认 desc (降序)\n  dataKey?: string // 数据中的唯一标识的 key 名称,默认 value\n  highlightClass?: string // 个性化高亮 class 名称，默认：memorize-highlight\n  highlightNum?: number // 高亮个性化的条数,默认：Infinity\n  cacheNum?: number // 存储个性化的条数,默认：Infinity\n  serialize?: ()=> string  // 本地存储序列化方法,默认：JSON.stringify\n  deserialize?: ()=> ICacheItem[] // 本地存储序反列化方法，默认：JSON.parse\n}",
+    "IGridOption": "interface IGridOption {\n  data: any[]    // 表格数据，用法同 Grid\n  columns: any[] // 列配置，用法同 Grid\n}",
+    "ITreeOption": "interface ITreeNode {\n  label: string         // 默认树节点的文本字段\n  id: number|string     // 树节点唯一标识\n  children: ITreeNode[] // 子节点\n}\n\ninterface ITreeOption {\n  data: ITreeNode[] // 树数据，用法同 Tree\n}",
+    "IPlacement": "type IPlacement = 'top' | 'top-start' | 'top-end' | 'bottom' | 'bottom-start' | 'bottom-end' | 'left' | 'left-start' | 'left-end' | 'right' | 'right-start' | 'right-end'"
+  },
+  "events": [
+    {
+      "name": "blur",
+      "description": "Listen for an out-of-focus event in the input box",
+      "description_zh": "监听输入框失去焦点事件",
+      "params": "(event:MouseEvent) => void",
+      "value": ""
+    },
+    {
+      "name": "change",
+      "description": "Listen for binding value change events",
+      "description_zh": "监听绑定值变更事件",
+      "params": "(value:string|number|Array, list:Array) => void",
+      "value": ""
+    },
+    {
+      "name": "clear",
+      "description": "Listen for one-click clearing events",
+      "description_zh": "监听一键清除事件",
+      "params": "() => void",
+      "value": ""
+    },
+    {
+      "name": "focus",
+      "description": "Listen to the input box to get the focus event",
+      "description_zh": "监听输入框获取焦点事件",
+      "params": "(event:MouseEvent) => void",
+      "value": ""
+    },
+    {
+      "name": "remove-tag",
+      "description": "Listen for the removal of tags when multi-selection",
+      "description_zh": "监听多选时移除标签事件",
+      "params": "(tag:string|number) => void",
+      "value": ""
+    },
+    {
+      "name": "top-create-click",
+      "description": "Listen for a new button click event at the top, which is used with the top-create property",
+      "description_zh": "监听顶部新增按钮点击事件，同 top-create 属性一起使用",
+      "params": "() => void",
+      "value": ""
+    },
+    {
+      "name": "visible-change",
+      "description": "Listen to the display and hiding status of the drop-down pop-up box",
+      "description_zh": "监听下拉弹框的显示隐藏状态",
+      "params": "(status:boolean) => void",
+      "value": ""
+    }
+  ],
+  "methods": [
+    {
+      "name": "blur",
+      "description": "Makes the input box lose focus",
+      "params": "() => void",
+      "description_zh": "使输入框失去焦点",
+      "value": ""
+    },
+    {
+      "name": "focus",
+      "description": "Makes the input box get focus",
+      "params": "() => void",
+      "description_zh": "使输入框获取焦点",
+      "value": ""
+    }
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "description": "optionDefault slot",
+      "description_zh": "选项默认插槽"
+    },
+    {
+      "name": "empty",
+      "description": "Empty data slots",
+      "description_zh": "空数据插槽"
+    },
+    {
+      "name": "footer",
+      "description": "Pull down the slot at the bottom of the pop-up box",
+      "description_zh": "下拉弹框底部插槽"
+    },
+    {
+      "name": "prefix",
+      "description": "Input box prefix slot",
+      "description_zh": "输入框前缀插槽"
+    },
+    {
+      "name": "reference",
+      "description": "Trigger the source slot",
+      "description_zh": "触发源插槽"
+    }
+  ],
+  "filename": "Select"
+}

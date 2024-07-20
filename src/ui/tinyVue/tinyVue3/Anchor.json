@@ -1,0 +1,71 @@
+{
+  "name": "TinyAnchor",
+  "props": {
+    "container-id": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "When used for a single-page hash route pattern, specify the id value of the scrolling container, and if the id is empty, the scrolling container defaults to the root node body element of the HTML document",
+      "description_zh": "用于单页面 hash 路由模式时指定滚动容器的 id 值，id 为空时则滚动容器默认为 HTML 文档的根节点 body 元素"
+    },
+    "is-affix": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Fixed mode",
+      "description_zh": "固定模式"
+    },
+    "links": {
+      "default": "--",
+      "value": "",
+      "type": "ILink[]",
+      "description": "Navigation data configuration items, which can be nested via children",
+      "description_zh": "导航数据配置项，可通过 children 嵌套"
+    },
+    "mark-class": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "Customize the class name of the target element for scrolling",
+      "description_zh": "自定义滚动的目标元素类名"
+    },
+    "type": {
+      "default": "'line'",
+      "value": "",
+      "type": "line / dot",
+      "description": "Anchor type",
+      "description_zh": "锚点类型"
+    }
+  },
+  "link": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/anchor",
+  "link_zh": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/anchor",
+  "typeDetail": {
+    "ILink": "interface ILink {\n  key: string // 锚点的key值\n  link: string // 导航的hash值\n  title: string // 锚点标题\n  children: ILink[] // 子锚点\n}"
+  },
+  "events": [
+    {
+      "name": "change",
+      "description": "Anchor link change events",
+      "description_zh": "锚点链接改变事件",
+      "params": "(hash: string) => void",
+      "value": ""
+    },
+    {
+      "name": "link-click",
+      "description": "Anchor click events",
+      "description_zh": "锚点点击事件",
+      "params": "(event: Event, currentLink: {link: string, title: string}) => void",
+      "value": ""
+    },
+    {
+      "name": "on-change",
+      "description": "使用 change 代替；[deprecated v3.12.0 废弃，v3.17.0 移除；移除原因：命名规范]",
+      "description_zh": "使用 change 代替；[deprecated v3.12.0 废弃，v3.17.0 移除；移除原因：命名规范]",
+      "params": "(hash: string) => void",
+      "value": ""
+    }
+  ],
+  "methods": [],
+  "slots": [],
+  "filename": "Anchor"
+}

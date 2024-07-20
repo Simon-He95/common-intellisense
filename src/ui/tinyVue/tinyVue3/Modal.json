@@ -1,0 +1,272 @@
+{
+  "name": "TinyModal",
+  "props": {
+    "cancel-btn-props": {
+      "default": "{}",
+      "value": "",
+      "type": "Button.props",
+      "description": "Customize the props of the cancel button, with optional values consistent with the Button component",
+      "description_zh": "自定义取消按钮的 props ，可选值与 Button 组件一致"
+    },
+    "cancel-content": {
+      "default": "'取消'",
+      "value": "",
+      "type": "string",
+      "description": "Customize the content of the cancel button",
+      "description_zh": "自定义取消按钮内容"
+    },
+    "confirm-btn-props": {
+      "default": "{}",
+      "value": "",
+      "type": "Button.props",
+      "description": "Customize the confirmation button props, with optional values consistent with the Button component",
+      "description_zh": "自定义确认按钮 props，可选值与 Button 组件一致"
+    },
+    "confirm-content": {
+      "default": "'确认'",
+      "value": "",
+      "type": "string",
+      "description": "Customize the content of the confirmation button",
+      "description_zh": "自定义确认按钮内容"
+    },
+    "duration": {
+      "default": "3000",
+      "value": "",
+      "type": "number | string",
+      "description": "The delay of auto-shutdown is only valid if the type is 'message'",
+      "description_zh": "自动关闭的延时，仅当 type 为 'message' 有效"
+    },
+    "esc-closable": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to allow pressing the Esc key to close the window",
+      "description_zh": "是否允许按 Esc 键关闭窗口"
+    },
+    "footer-dragable": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "The bottom of the control can be dragged",
+      "description_zh": "控制底部可拖拽"
+    },
+    "fullscreen": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether or not to maximize the display",
+      "description_zh": "是否最大化显示"
+    },
+    "height": {
+      "default": "--",
+      "value": "",
+      "type": "number | string",
+      "description": "The height of the window",
+      "description_zh": "窗口的高度"
+    },
+    "id": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "If you don't want the window to be clicked repeatedly, you can set a unique ID to prevent repeated prompts, only if the type is 'message'",
+      "description_zh": "如果不想窗口重复点击，可以设置唯一的 id 防止重复提示，仅当 type 为 'message' 有效"
+    },
+    "is-form-reset": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "When the pop-up window is closed, whether to reset the form data",
+      "description_zh": "关闭弹窗时，是否重置表单数据"
+    },
+    "lock-scroll": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to lock the scroll bar and not allow the page to scroll",
+      "description_zh": "是否锁住滚动条，不允许页面滚动"
+    },
+    "lock-view": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to lock the page and not allow any operation outside the window",
+      "description_zh": "是否锁住页面，不允许窗口之外的任何操作"
+    },
+    "mask": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether or not to display the mask layer",
+      "description_zh": "是否显示遮罩层"
+    },
+    "mask-closable": {
+      "default": "--",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to allow clicking on the mask layer to close the window",
+      "description_zh": "是否允许点击遮罩层关闭窗口"
+    },
+    "message": {
+      "default": "--",
+      "value": "",
+      "type": "string | VNode | () => string | VNode",
+      "description": "The contents of the window",
+      "description_zh": "窗口的内容"
+    },
+    "message-closable": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "'message' 类型弹窗是否显示关闭按钮",
+      "description_zh": "'message' 类型弹窗是否显示关闭按钮"
+    },
+    "min-height": {
+      "default": "--",
+      "value": "",
+      "type": "number | string",
+      "description": "The minimum height of the window",
+      "description_zh": "窗口的最小高度"
+    },
+    "min-width": {
+      "default": "--",
+      "value": "",
+      "type": "number | string",
+      "description": "The minimum width of the window",
+      "description_zh": "窗口的最小宽度"
+    },
+    "v-model": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether it is displayed or not",
+      "description_zh": "是否显示"
+    },
+    "resize": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to allow dragging to resize the window",
+      "description_zh": "是否允许拖动调整窗口大小"
+    },
+    "show-footer": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether or not to show the bottom",
+      "description_zh": "是否显示底部"
+    },
+    "show-header": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether or not to show the head",
+      "description_zh": "是否显示头部"
+    },
+    "status": {
+      "default": "'info'",
+      "value": "",
+      "type": "IStatus",
+      "description": "消息状态，当 type 为 'alert'、'message'、'confirm' 时有效",
+      "description_zh": "消息状态，当 type 为 'alert'、'message'、'confirm' 时有效"
+    },
+    "title": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "The title of the window",
+      "description_zh": "窗口的标题"
+    },
+    "top": {
+      "default": "15",
+      "value": "",
+      "type": "number | string",
+      "description": "The position of the message from the top, only valid if the type is 'message'",
+      "description_zh": "消息距离顶部的位置，仅当 type 为 'message' 时有效"
+    },
+    "type": {
+      "default": "'alert'",
+      "value": "",
+      "type": "alert / confirm / message",
+      "description": "Window type",
+      "description_zh": "窗口类型"
+    },
+    "width": {
+      "default": "--",
+      "value": "",
+      "type": "number | string",
+      "description": "The width of the window (set the width in pixels or percentages, and the browser window size can be centered when the size of the browser window changes)",
+      "description_zh": "窗口的宽度（设置宽度像素或者百分比，浏览器窗口大小改变可居中显示)"
+    },
+    ":z-index": {
+      "default": "--",
+      "value": "",
+      "type": "number",
+      "description": "Custom stacking order (may be used for some special scenes, such as when occluded)",
+      "description_zh": "自定义堆叠顺序（对于某些特殊场景，比如被遮挡时可能会用到）"
+    }
+  },
+  "link": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/modal",
+  "link_zh": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/modal",
+  "typeDetail": {
+    "IModalEventParam": "interface IModalEventParam {\n  type: 'alert' | 'message' | 'confirm' // 弹窗类型\n  $modal: ComponentPublicInstance // Modal组件实例\n}",
+    "IStatus": "type IStatus = 'info' | 'success' | 'warning' | 'error' | 'loading'"
+  },
+  "events": [
+    {
+      "name": "cancel",
+      "description": "The event is triggered when the cancel button is clicked",
+      "description_zh": "点击取消按钮时会触发该事件",
+      "params": "(params: IModalEventParam, event: Event) => void",
+      "value": ""
+    },
+    {
+      "name": "close",
+      "description": "The event is triggered when the close button is clicked",
+      "description_zh": "点击关闭按钮时会触发该事件",
+      "params": "(params: IModalEventParam, event: Event) => void",
+      "value": ""
+    },
+    {
+      "name": "confirm",
+      "description": "The event is triggered when the OK button is clicked",
+      "description_zh": "点击确定按钮时会触发该事件",
+      "params": "(params: IModalEventParam, event: Event) => void",
+      "value": ""
+    },
+    {
+      "name": "hide",
+      "description": "This event is triggered when the window is closed",
+      "description_zh": "在窗口关闭时会触发该事件",
+      "params": "(params: IModalEventParam) => void",
+      "value": ""
+    },
+    {
+      "name": "show",
+      "description": "This event is triggered when the window is displayed",
+      "description_zh": "在窗口显示时会触发该事件",
+      "params": "(params: IModalEventParam) => void",
+      "value": ""
+    },
+    {
+      "name": "zoom",
+      "description": "This event is triggered when the window zooms",
+      "description_zh": "窗口缩放时会触发该事件",
+      "params": "(params: IModalEventParam, event: Event) => void",
+      "value": ""
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "default",
+      "description": "Default slot",
+      "description_zh": "默认插槽"
+    },
+    {
+      "name": "footer",
+      "description": "Template at the bottom of the window",
+      "description_zh": "窗口底部的模板"
+    }
+  ],
+  "filename": "Modal"
+}

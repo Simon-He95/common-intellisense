@@ -60,9 +60,14 @@ export function propsReducer(uiName: string, map: string[], prefix: string, icon
         documentation.appendMarkdown(detail.join('\n\n'))
 
         if (item.typeDetail && Object.keys(item.typeDetail).length) {
-          const data = `🌈 类型详情:\n${Object.keys(item.typeDetail).reduce((result, key) => result += key[0] === '$'
-            ? `\ntype ${key.slice(1).replace(/-(\w)/g, v => v.toUpperCase())} = \n${item.typeDetail[key].map((typeItem: any) => `${typeItem.name} /*${typeItem.description}*/`).join('\n| ')}\n\n`
-            : `\ninterface ${key} {\n  ${item.typeDetail[key].map((typeItem: any) => `${typeItem.name}${typeItem.optional ? '?' : ''}: ${typeItem.type} /*${typeItem.description}${typeItem.default ? ` 默认值: ***${typeItem.default}***` : ''}*/`).join('\n  ')}\n}`, '')}`
+          const data = `🌈 类型详情:\n${Object.keys(item.typeDetail).reduce((result, key) => {
+            if (Array.isArray(item.typeDetail[key])) {
+              return result += key[0] === '$'
+                ? `\ntype ${key.slice(1).replace(/-(\w)/g, v => v.toUpperCase())} = \n${item.typeDetail[key].map((typeItem: any) => `${typeItem.name} /*${typeItem.description}*/`).join('\n| ')}\n\n`
+                : `\ninterface ${key} {\n  ${item.typeDetail[key].map((typeItem: any) => `${typeItem.name}${typeItem.optional ? '?' : ''}: ${typeItem.type} /*${typeItem.description}${typeItem.default ? ` 默认值: ***${typeItem.default}***` : ''}*/`).join('\n  ')}\n}`
+}
+            return result += `\n${item.typeDetail[key]}`
+          }, '')}`
           documentation.appendCodeblock(data, 'typescript')
         }
 

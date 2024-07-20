@@ -1,0 +1,105 @@
+{
+  "name": "TinyCheckboxGroup",
+  "props": {
+    "disabled": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to disable or not",
+      "description_zh": "是否禁用"
+    },
+    "fill": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "The fill color and border color of the checkbox in the form of a button",
+      "description_zh": "按钮形式的 checkbox 激活时的填充色和边框色"
+    },
+    ":max": {
+      "default": "--",
+      "value": "",
+      "type": "number",
+      "description": "The maximum number of checkboxes that can be checked",
+      "description_zh": "可被勾选的 checkbox 的最大数量"
+    },
+    ":min": {
+      "default": "--",
+      "value": "",
+      "type": "number",
+      "description": "The minimum number of checkboxes that can be checked",
+      "description_zh": "可被勾选的 checkbox 的最小数量"
+    },
+    "v-model": {
+      "default": "--",
+      "value": "",
+      "type": "string[] | number[]",
+      "description": "Binding value",
+      "description_zh": "绑定值"
+    },
+    "options": {
+      "default": "--",
+      "value": "",
+      "type": "ICheckboxGroupOptions[]",
+      "description": "checkbox-group 子项配置列表",
+      "description_zh": "checkbox-group 子项配置列表"
+    },
+    "shape": {
+      "default": "--",
+      "value": "",
+      "type": "filter",
+      "description": "Filter mode",
+      "description_zh": "过滤器模式"
+    },
+    "size": {
+      "default": "--",
+      "value": "",
+      "type": "medium / small / mini",
+      "description": "The checkbox group size, which is only valid for checkboxes in the form of buttons or checkboxes with borders",
+      "description_zh": "多选框组尺寸，仅对按钮形式的 checkbox 或带有边框的 checkbox 有效"
+    },
+    "text-color": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "The color of the text when the checkbox in the form of a button is activated",
+      "description_zh": "按钮形式的 checkbox 激活时的文本颜色"
+    },
+    "type": {
+      "default": "'checkbox'",
+      "value": "",
+      "type": "button / checkbox",
+      "description": "The checkbox group child component type needs to be used in conjunction with the options property",
+      "description_zh": " 复选框组子项组件类型，需配合 options 属性使用"
+    },
+    "vertical": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Set how the components are arranged, and set whether the checkboxes are arranged vertically",
+      "description_zh": "设置组件排列方式，设置复选框是否垂直排列"
+    }
+  },
+  "link": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/checkbox",
+  "link_zh": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/checkbox",
+  "typeDetail": {
+    "ICheckboxGroupOptions": "interface ICheckboxGroupOptions {\n  label: string // 选中时对应的值\n  text?: number // 描述文本\n  disabled?: boolean // 是否禁用\n  checked?: boolean // 是否默认选中\n  events?: {\n    click?: (e: Event) => void // 点击事件\n    change?: (e: Event) => void // change事件\n  }\n}"
+  },
+  "events": [
+    {
+      "name": "change",
+      "description": "An event that is triggered when a binding value changes",
+      "description_zh": "当绑定值变化时触发的事件",
+      "params": "(value: string[] |number[]) => void",
+      "value": ""
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "default",
+      "description": "checkbox-group 的内容",
+      "description_zh": "checkbox-group 的内容"
+    }
+  ],
+  "filename": "CheckboxGroup"
+}

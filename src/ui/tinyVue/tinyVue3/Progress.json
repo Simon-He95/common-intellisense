@@ -1,0 +1,77 @@
+{
+  "name": "TinyProgress",
+  "props": {
+    "color": {
+      "default": "--",
+      "value": "",
+      "type": "string | IColorItem[] | (percentage: string) => string",
+      "description": "Progress bar background color (overrides status color)",
+      "description_zh": "进度条背景色（会覆盖 status 状态颜色）"
+    },
+    "format": {
+      "default": "--",
+      "value": "",
+      "type": "() => string",
+      "description": "Customize the text of the progress bar",
+      "description_zh": "自定义进度条的文字"
+    },
+    ":percentage": {
+      "default": "0",
+      "value": "",
+      "type": "number",
+      "description": "Percentage (required); The optional values for this property are 0-100",
+      "description_zh": "百分比（必填）；该属性的可选值为 0-100"
+    },
+    "show-text": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to display the text content of the progress bar",
+      "description_zh": "是否显示进度条文字内容"
+    },
+    "status": {
+      "default": "--",
+      "value": "",
+      "type": "success / exception / warning",
+      "description": "The current status of the progress bar",
+      "description_zh": "进度条当前状态"
+    },
+    ":stroke-width": {
+      "default": "6",
+      "value": "",
+      "type": "number",
+      "description": "The width of the progress bar of type line in px",
+      "description_zh": "line 类型进度条的宽度，单位 px"
+    },
+    "text-inside": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "The progress bar display text is built into the progress bar (only available when type=line)",
+      "description_zh": "进度条显示文字内置在进度条内（只在 type=line 时可用）"
+    },
+    "type": {
+      "default": "'line'",
+      "value": "",
+      "type": "line / circle / dashboard",
+      "description": "The type of progress bar",
+      "description_zh": "进度条类型"
+    },
+    ":width": {
+      "default": "126",
+      "value": "",
+      "type": "number",
+      "description": "Circular progress bar canvas width (only available when type is Circle or Dashboard)",
+      "description_zh": "环形进度条画布宽度（只在 type 为 circle 或 dashboard 时可用）"
+    }
+  },
+  "link": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/progress",
+  "link_zh": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/progress",
+  "typeDetail": {
+    "IColorItem": "interface IColorItem {\n  color: string\n  percentage: number\n}"
+  },
+  "events": [],
+  "methods": [],
+  "slots": [],
+  "filename": "Progress"
+}

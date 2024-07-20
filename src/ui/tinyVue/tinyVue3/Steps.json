@@ -1,0 +1,85 @@
+{
+  "name": "TinySteps",
+  "props": {
+    ":active": {
+      "default": "-1",
+      "value": "",
+      "type": "number",
+      "description": "The current step index, counting from 0",
+      "description_zh": "当前步骤索引，从0开始计数"
+    },
+    "count-field": {
+      "default": "'count'",
+      "value": "",
+      "type": "string",
+      "description": "The name of the field corresponding to the logo count in the bar step bar",
+      "description_zh": "条形步骤条里徽标计数对应的字段名"
+    },
+    "data": {
+      "default": "[]",
+      "value": "",
+      "type": "IStepsItem[]",
+      "description": "Step bar data",
+      "description_zh": "步骤条的数据"
+    },
+    ":duration": {
+      "default": "300",
+      "value": "",
+      "type": "number",
+      "description": "The duration of the node scroll in ms, which is only valid in advanced wizard mode",
+      "description_zh": "节点滚动的持续时间（单位 ms），仅高级向导模式有效"
+    },
+    "flex": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the node is adaptive to the width",
+      "description_zh": "节点是否自适应宽度"
+    },
+    "name-field": {
+      "default": "'name'",
+      "value": "",
+      "type": "string",
+      "description": "The name of the field corresponding to the node name",
+      "description_zh": "节点名称对应的字段名"
+    },
+    "space": {
+      "default": "--",
+      "value": "",
+      "type": "string | number",
+      "description": "Node width, number of possible values, values and percentages with length units, and px as the unit of length by default",
+      "description_zh": "节点宽度, 可取值数字、带长度单位数值与百分比，传数字则默认以 px 为长度单位"
+    },
+    "status-field": {
+      "default": "'status'",
+      "value": "",
+      "type": "string",
+      "description": "The name of the field corresponding to the data status, which is used for the bar step bar",
+      "description_zh": "数据状态对应的字段名，用于条形步骤条"
+    }
+  },
+  "link": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/steps",
+  "link_zh": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/steps",
+  "typeDetail": {
+    "IStepsItem": "interface IStepsItem {\n  // 节点数据\n  name: string, // 节点名称\n  status?: IStepsStatus, // 节点状态，取值见下面IStepsStatus类型说明\n  description?: string, // 描述，仅用于单链型步骤条\n  count?: number // 节点右上角徽标计数，仅用于默认条形步骤条\n}",
+    "IStepsStatus": "type IStepsStatus = 'doing' | 'done' | 'disabled' | 'error' | ''"
+  },
+  "events": [
+    {
+      "name": "click",
+      "description": "Node click event, parameter: index: click the index of the node: click the data of the node",
+      "description_zh": "节点点击事件，参数：index: 点击节点的索引node：点击节点的数据",
+      "params": "(index: number, node: IStepsItem) => void",
+      "value": ""
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "item",
+      "description": "Step bar data item slot for bar step bars",
+      "description_zh": "步骤条数据项插槽，用于条形步骤条"
+    }
+  ],
+  "filename": "Steps"
+}

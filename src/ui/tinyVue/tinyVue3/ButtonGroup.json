@@ -1,0 +1,105 @@
+{
+  "name": "TinyButtonGroup",
+  "props": {
+    "border": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to display border lines",
+      "description_zh": "是否显示边框线"
+    },
+    "data": {
+      "default": "--",
+      "value": "",
+      "type": "IButtonGroupData[]",
+      "description": "Button group data",
+      "description_zh": "按钮组数据"
+    },
+    "disabled": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the button group is disabled",
+      "description_zh": "是否被禁用按钮组"
+    },
+    "v-model": {
+      "default": "--",
+      "value": "",
+      "type": "number | string",
+      "description": "The value of the button is selected by default",
+      "description_zh": "默认选中按钮的值"
+    },
+    "plain": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether it is a plain button",
+      "description_zh": "是否朴素按钮"
+    },
+    "show-edit": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether or not to display the Edit button will only take effect if more are displayed",
+      "description_zh": "是否显示编辑按钮，只有在显示更多的情况下生效"
+    },
+    ":show-more": {
+      "default": "--",
+      "value": "",
+      "type": "number",
+      "description": "More buttons are displayed when the given number of buttons is exceeded",
+      "description_zh": "当超过给定的按钮数量时显示更多按钮"
+    },
+    "size": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "Button group size",
+      "description_zh": "按钮组尺寸大小"
+    },
+    "text-field": {
+      "default": "'text'",
+      "value": "",
+      "type": "string",
+      "description": "button displays the field value of the text",
+      "description_zh": "按钮显示文字的字段值"
+    },
+    "value-field": {
+      "default": "'value'",
+      "value": "",
+      "type": "string",
+      "description": "button to select the field value of the value",
+      "description_zh": "按钮选中值的字段值"
+    }
+  },
+  "link": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/button-group",
+  "link_zh": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/button-group",
+  "typeDetail": {
+    "IButtonGroupData": "interface IButtonGroupData {\n  text: string // 显示文本\n  value: number | number // 选中的值\n  disabled?: boolean // 是否禁用\n  // 配置选块角标\n  sup?: {\n    text: string // 角标文本\n    class?: string // 角标的自定义class\n    slot?: string // 自定义插槽名称，提供后可在button-group内使用对应的插槽自定义角标内容\n    icon?: Component // 传入图标组件\n  }\n}"
+  },
+  "events": [
+    {
+      "name": "change",
+      "description": "Triggers when the selected button changes",
+      "description_zh": "当选中按钮发生改变时触发",
+      "params": "(value: string | number) => void",
+      "value": ""
+    },
+    {
+      "name": "edit",
+      "description": "Triggered when the edit button is clicked",
+      "description_zh": "当编辑按钮被点击时触发",
+      "params": "() => void",
+      "value": ""
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "default",
+      "description": "Default slots, custom button group content",
+      "description_zh": "默认插槽，自定义按钮组内容"
+    }
+  ],
+  "filename": "ButtonGroup"
+}

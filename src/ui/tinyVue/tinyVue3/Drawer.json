@@ -1,0 +1,125 @@
+{
+  "name": "TinyDrawer",
+  "props": {
+    "before-close": {
+      "default": "--",
+      "value": "",
+      "type": "(type) => boolean",
+      "description": "The callback before the pop-up window closes, returning false will prevent the pop-up window from closing",
+      "description_zh": "弹窗关闭前的回调，返回 false 会阻止弹窗关闭"
+    },
+    "dragable": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to enable the width of the drawer",
+      "description_zh": "是否开启抽屉的宽度拖拽功能"
+    },
+    "mask": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether or not to display the mask layer",
+      "description_zh": "是否显示遮罩层"
+    },
+    "mask-closable": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "By default, when the pop-up window is opened, you can click the mask layer to close the pop-up window, and set mask-closable to false to disable the feature",
+      "description_zh": "默认情况下，弹窗打开后，可以单击遮罩层关闭弹窗，设置 mask-closable 为 false 后将禁用该功能"
+    },
+    "placement": {
+      "default": "'right'",
+      "value": "",
+      "type": "left / right / top / bottom ",
+      "description": "Set the orientation of the drawer",
+      "description_zh": "设置抽屉的方向"
+    },
+    "show-close": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether or not to display the close icon",
+      "description_zh": "是否显示关闭图标"
+    },
+    "show-footer": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether or not to show the bottom",
+      "description_zh": "是否显示底部"
+    },
+    "show-header": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether or not to show the head",
+      "description_zh": "是否显示头部"
+    },
+    "visible": {
+      "default": "--",
+      "value": "",
+      "type": "boolean",
+      "description": "Control the display and closure of drawers",
+      "description_zh": "控制抽屉的显示与关闭"
+    },
+    "width": {
+      "default": "'500px'",
+      "value": "",
+      "type": "string",
+      "description": "Sets the width of the drawer",
+      "description_zh": "设置抽屉的宽度"
+    },
+    ":z-index": {
+      "default": "2000",
+      "value": "",
+      "type": "number",
+      "description": "Custom stacking order (may be used for some special scenes, such as when occluded)",
+      "description_zh": "自定义堆叠顺序（对于某些特殊场景，比如被遮挡时可能会用到）"
+    }
+  },
+  "link": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/drawer",
+  "link_zh": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/drawer",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "close",
+      "description": "Close drawer event",
+      "description_zh": "关闭抽屉事件",
+      "params": "()=> void",
+      "value": ""
+    },
+    {
+      "name": "confirm",
+      "description": "Confirm event, valid when :show-footer=\"true\" is set",
+      "description_zh": "确认事件，设置 :show-footer=\"true\" 时有效",
+      "params": "()=> void",
+      "value": ""
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "default",
+      "description": "Default slot",
+      "description_zh": "默认插槽"
+    },
+    {
+      "name": "footer",
+      "description": "Bottom slot",
+      "description_zh": "底部插槽"
+    },
+    {
+      "name": "header",
+      "description": "Head slot",
+      "description_zh": "头部插槽"
+    },
+    {
+      "name": "header-right",
+      "description": "Slot on the right side of the head",
+      "description_zh": "头部右侧插槽"
+    }
+  ],
+  "filename": "Drawer"
+}

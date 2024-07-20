@@ -1,0 +1,65 @@
+{
+  "name": "TinyTabItem",
+  "props": {
+    "disabled": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "The Settings tab item is disabled, and if it is set to true, it cannot be clicked",
+      "description_zh": "设置页签项禁用，设置为 true 则无法点击"
+    },
+    "lazy": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Set whether the content of the tab items on this page is lazy loaded, and the default value is No",
+      "description_zh": "设置本页签项内容是否为懒加载，默认为否"
+    },
+    "name": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "The value of the tab item",
+      "description_zh": "页签项的值"
+    },
+    "title": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "The title of the tab item",
+      "description_zh": "页签项标题"
+    },
+    "with-close": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the tab item displays the delete button, take or take the with-close of the tabs, as long as one of them is true, then this item displays the delete button",
+      "description_zh": "页签项是否展示删除按钮，与 Tabs 的 with-close 取或，只要有一个为true，则此项展示删除按钮"
+    }
+  },
+  "link": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/tabs",
+  "link_zh": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/tabs",
+  "typeDetail": {
+    "IPosition": "type IPosition = 'top' | 'right' | 'bottom' | 'left'",
+    "ITabStyle": "type ITabStyle = 'card' | 'border-card' | 'button-card' | ''",
+    "ITooltipProps": "interface ITooltipProps { // 参照tooltip的props进行配置\n  effect?: string\n  placement?: string\n  visible?: string\n  [propName: string]: any\n}"
+  },
+  "events": [
+    {
+      "name": "tab-nav-update",
+      "description": "Triggered when the title value of a tab item changes",
+      "description_zh": "当页签项的 title 值发生变化时触发",
+      "params": "() => void",
+      "value": ""
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "default",
+      "description": "The default slot for the content section of the tab item is used to customize the page content corresponding to the tab item",
+      "description_zh": "页签项对应内容部分的默认插槽，用来自定义页签项对应的页面内容"
+    }
+  ],
+  "filename": "TabItem"
+}

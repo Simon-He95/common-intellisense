@@ -1,0 +1,317 @@
+{
+  "name": "TinyGridColumn",
+  "props": {
+    "align": {
+      "default": "'left'",
+      "value": "",
+      "type": "left / center / right",
+      "description": "Column alignment",
+      "description_zh": "列对齐方式"
+    },
+    "class-name": {
+      "default": "--",
+      "value": "",
+      "type": "string | (args: IClassNameArgs)=> string",
+      "description": "Append a className to a cell, which can also be a function",
+      "description_zh": "给单元格附加 className，也可以是函数"
+    },
+    "editor": {
+      "default": "--",
+      "value": "",
+      "type": "IEditorConfig | (h, {row:Row, column: IColumnConfig})=> Component",
+      "description": "Cell edit renders configuration items, or it can be a function that returns a Vue component",
+      "description_zh": "单元格编辑渲染配置项，也可以是函数返回 Vue 组件"
+    },
+    "filter": {
+      "default": "false",
+      "value": "",
+      "type": "boolean | IFilterConfig",
+      "description": "Set the filter configuration information for table columns. The default value is false and no filtering information is configured",
+      "description_zh": "设置表格列的筛选配置信息。默认值为 false 不配置筛选信息"
+    },
+    "fixed": {
+      "default": "--",
+      "value": "",
+      "type": "left / right",
+      "description": "Pin the column to the left side, where freezable can be frozen and unfrozen, and can be operated in the table personalization panel, while frozen can only be frozen and cannot be unfrozen, and cannot be operated in the personalization panel; Pin the column to the left or right (note: the fixed column should be placed on the left and right sides)",
+      "description_zh": "将列固定在左侧，其中 freezable 可冻结可解冻，在表格个性化面板中可操作，而 frozen 只能冻结不能解冻，在个性化面板中不可操作；将列固定在左侧或者右侧（注意：固定列应该放在左右两侧的位置）"
+    },
+    "footer-align": {
+      "default": "'left'",
+      "value": "",
+      "type": "left / center / right",
+      "description": "Alignment of the footer column)",
+      "description_zh": "表尾列的对齐方式）"
+    },
+    "footer-class-name": {
+      "default": "--",
+      "value": "",
+      "type": "string | (args: IClassNameArgs)=> string",
+      "description": "Append className to the cells in the footer, which can also be a function",
+      "description_zh": "给表尾的单元格附加 className，也可以是函数"
+    },
+    "format-config": {
+      "default": "--",
+      "value": "",
+      "type": "IFormatConfig",
+      "description": "Enable asynchronous rendering of data in this column",
+      "description_zh": "开启该列数据异步渲染"
+    },
+    "format-text": {
+      "default": "--",
+      "value": "",
+      "type": "IFormatText",
+      "description": "Set the display and edit type of the current table column; Set the display of the current table column to get the edit type, or it can be a function",
+      "description_zh": "设置当前表格列的显示获取编辑类型；设置当前表格列的显示获取编辑类型，也可以是函数"
+    },
+    "header-align": {
+      "default": "'left'",
+      "value": "",
+      "type": "left / center / right",
+      "description": "The alignment of the header column",
+      "description_zh": "表头列的对齐方式"
+    },
+    "header-class-name": {
+      "default": "--",
+      "value": "",
+      "type": "string | (args: IClassNameArgs)=> string",
+      "description": "Set the column header style name; Append className to the cells in the header, which can also be a function",
+      "description_zh": "设置列头样式名称；给表头的单元格附加 className，也可以是函数"
+    },
+    "index-method": {
+      "default": "--",
+      "value": "",
+      "type": "string | (args: IIndexMethodArgs)=> string",
+      "description": "Valid only for type=index, custom indexing method",
+      "description_zh": "只对 type=index 有效，自定义索引方法"
+    },
+    "min-width": {
+      "default": "--",
+      "value": "",
+      "type": "number | string",
+      "description": "minimum column width; The remaining space is automatically proportionalized; The optional value for this property is integer, px,%",
+      "description_zh": "最小列宽度；会自动将剩余空间按比例分配；该属性的可选值为 整数, px，%"
+    },
+    "multi": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "is a built-in property of the filter object, which allows multiple selections to be filtered; Set whether to display the Select columns check box. Valid when columnType is select",
+      "description_zh": "是 filter 对象内置的属性，筛选是否允许多选；设置选择列是否显示复选框。当 columnType 为 select 时有效"
+    },
+    ":params": {
+      "default": "--",
+      "value": "",
+      "type": "object",
+      "description": "Additional parameters (some custom data parameters, may be used for some special scenarios)",
+      "description_zh": "额外的参数（自定义一些数据参数，对于某些特殊的场景可能会用到）"
+    },
+    "remote-sort": {
+      "default": "--",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether or not to use server-side sorting, if set to true, the data will not be processed",
+      "description_zh": "是否使用服务端排序，如果设置为 true 则不会对数据进行处理"
+    },
+    "renderer": {
+      "default": "--",
+      "value": "",
+      "type": "IEditorConfig | (h, {row: IRow, column: IColumnConfig})=> Component",
+      "description": "Sets the rendering type of the table column. Its priority is higher than the column's type attribute configuration; The cell renders a configuration item that takes precedence over the column's formatText property configuration",
+      "description_zh": "设置表格列的渲染类型。其优先级高于列的 type 属性配置；单元格渲染配置项，其优先级高于列的 formatText 属性配置"
+    },
+    "required": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "If not, it will be automatically generated based on the validation rules",
+      "description_zh": "是否必填，如不设置，则会根据校验规则自动生成"
+    },
+    "resizable": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Set whether the column width can be adjusted; Whether the column allows dragging the column width to resize",
+      "description_zh": "设置该列是否可以调整列宽；列是否允许拖动列宽调整大小"
+    },
+    "rules": {
+      "default": "--",
+      "value": "",
+      "type": "IValidRules",
+      "description": "Validation of forms",
+      "description_zh": "表单的验证功能"
+    },
+    "show-header-overflow": {
+      "default": "--",
+      "value": "",
+      "type": "string | boolean",
+      "description": "When the header is too long, it is displayed as an ellipsis; The optional values for this property are ellipsis (only the ellipsis is displayed), title (and is displayed as native title), tooltip (and is displayed as a tooltip hint)",
+      "description_zh": "当表头内容过长时显示为省略号；该属性的可选值为 ellipsis （只显示省略号）， title （并且显示为原生 title ）， tooltip （并且显示为 tooltip 提示）"
+    },
+    "show-header-tip": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the table column header needs to be prompted",
+      "description_zh": "表格列头是否需要提示"
+    },
+    "show-icon": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to display the column header edit icon is valid when editing",
+      "description_zh": "是否显示列头编辑图标，在编辑时有效"
+    },
+    "show-overflow": {
+      "default": "--",
+      "value": "",
+      "type": "string | boolean",
+      "description": "When the content is too long, it is displayed as an ellipsis; The optional values for this property are ellipsis (which shows only the ellipsis), title (and appears as the native title), tooltip (and displays it as a tooltip hint)",
+      "description_zh": "当内容过长时显示为省略号；该属性的可选值为 ellipsis（只显示省略号）, title（并且显示为原生 title）, tooltip（并且显示为 tooltip 提示）"
+    },
+    "show-tip": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Table column cells need a prompt",
+      "description_zh": "表格列单元格是否需要提示"
+    },
+    "sort-by": {
+      "default": "--",
+      "value": "",
+      "type": "string | string[]",
+      "description": "Only valid for sortable, custom sorted properties",
+      "description_zh": "只对 sortable 有效，自定义排序的属性"
+    },
+    "sort-method": {
+      "default": "--",
+      "value": "",
+      "type": "(row1: IRow, row2: IRow)=> boolean",
+      "description": "Customize the sorting method for all columns, which will be called when sorting is triggered",
+      "description_zh": "自定义所有列的排序方法，当触发排序时会调用该函数"
+    },
+    "sortable": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Specifies whether the data in the column can be sorted",
+      "description_zh": "设置该列数据是否可以排序"
+    },
+    "title": {
+      "default": "--",
+      "value": "",
+      "type": "string | (h, params)=> string | VNode",
+      "description": "Column headers (internationalization is supported), which can be functions",
+      "description_zh": "列标题（支持开启国际化），可以是函数"
+    },
+    "tree-node": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Valid only when tree-config is configured, specified as a tree node",
+      "description_zh": "只对 tree-config 配置时有效，指定为树节点"
+    },
+    "type": {
+      "default": "--",
+      "value": "",
+      "type": "index / selection / radio / expand",
+      "description": "Set the type of built-in column",
+      "description_zh": "设置内置列的类型"
+    },
+    "width": {
+      "default": "--",
+      "value": "",
+      "type": "number | string",
+      "description": "Set the width of the column, which can be pixels or percentages or auto, when set to auto, the column width will automatically adapt; The optional values for this property are integer , px , %",
+      "description_zh": "设置列的宽度，可以是像素或者百分比或者 auto ，设置为 auto 时，列宽会自动适应；该属性的可选值为 整数 ， px ，%"
+    }
+  },
+  "link": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/grid",
+  "link_zh": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/grid",
+  "typeDetail": {
+    "IRow": "interface IRow {\n  // 表格行数据\n  [filed: string]: any\n}",
+    "IColumnConfig": "interface IColumnConfig {\n  type: 'index' | 'radio' | 'checkbox'\n  id: string\n  prop: string\n  rules: IValidRules\n  required: boolean\n  property: string\n  title: string\n  label: string\n  width: string | number\n  minWidth: string | number\n  resizable: boolean\n  fixed: boolean\n  align: 'left' | 'center' | 'right'\n  headerAlign: 'left' | 'center' | 'right'\n  footerAlign: 'left' | 'center' | 'right'\n  showOverflow: boolean | 'ellipsis' | 'tooltip' | 'title'\n  showHeaderOverflow: boolean | 'ellipsis' | 'tooltip' | 'title'\n  showTip: boolean\n  showHeaderTip: boolean\n  className: string\n  headerClassName: string\n  footerClassName: string\n}",
+    "IPagerConfig": "interface IPagerConfig {\n  component?: Component\n  attrs: {\n    currentPage: number\n    pageSize: number\n    pageSizes: number[]\n    total: number\n    // 分页组件布局默认值：'total, prev, pager, next, jumper, sizes'\n    layout: string\n  }\n}",
+    "IDataHandler": "interface IDataHandler {\n  api: ()=> Promise\n}",
+    "IRowGroup": "interface IRowGroup {\n  // 列标识符，行分组会将具有相同值的列进行分组展示\n  field: string\n}",
+    "IToolbarConfig": "interface IToolbarConfig {\n  component: GridToolbar\n  buttons: {\n    code: string\n    name: string\n  }[]\n}",
+    "IToolTipConfig": "interface IToolTipConfig {\n  placement?: 'top' | 'top-start' | 'top-end' | 'bottom' | 'bottom-start' | 'bottom-end' | 'left' | 'left-start' | 'left-end' | 'right' | 'right-start' | 'right-end'\n  visibleArrow?: boolean\n  enterable?: boolean\n  type?: 'normal' | 'warning' | 'error' | 'info' | 'success'\n  effect?: 'dark' | 'light'\n  // 自定义提示内容\n  contentMethod?: ()=> string | VNode\n}",
+    "IContextMenuConfig": "interface IMenuOptions {\n  code: string\n  name: string\n  visible?: boolean\n  disabled?: boolean\n}\n\ninterface IContextMenuConfig {\n  body?: { \n    options: IMenuOptions\n  }\n  footer?: { \n    options: IMenuOptions\n  }\n  visibleMethod?: ()=> boolean\n}",
+    "IValidRules": "interface IValidRules {\n [filed:string]: { \n  type?: string\n  required?: boolean\n  validator?: () => boolean\n  message?: string\n  min?: number\n  max?: number\n }\n}[]",
+    "IExpandConfig": "interface IExpandConfig {\n  // 默认展开所有行\n  expandAll?: boolean \n  // 触发方式 default（点击按钮触发）,cell（点击单元格触发）,row（点击行触发）\n  trigger?: 'default' | 'row' | cell\n  // 默认展开指定行（需要有 row-id）\n  expandRowKeys?: string[]\n  // 对于同一级的节点，每次只能展开一个\n  accordion?: boolean\n  // 控制是否渲染展开行\n  activeMethod?:({row: IRow})=> boolean\n  // 配置是否显示展开图标\n  showIcon?: boolean \n}",
+    "IOptimizationConfig": "interface IOptimizationConfig {\n  animat: boolean\n  delayHover: number\n  scrollX: {\n    // 指定大于多少范围时自动启动虚拟滚动（启用 X 虚拟滚动，必须固定所有列宽，否则无法兼容）默认100\n    gt?: number\n    // 当剩余数据少于指定范围时触发重新渲染 默认自动计算\n    oSize?: number\n    // 每次渲染条数 默认自动计算\n    rSize?: number\n    // 指定可视区域条数\n    vSize?: number\n  }\n  scrollY: {\n    // 指定大于多少范围时自动启动虚拟滚动（启用 Y 虚拟滚动，必须固定所有行高，否则无法兼容）默认500\n    gt?: number\n    // 当剩余数据少于指定范围时触发重新渲染 默认自动计算\n    oSize?: number \n    // 每次渲染条数 默认自动计算\n    rSize?: number\n    // 指定可视区域条数 默认自动计算\n    vSize?: number \n    // 指定行高 默认自动计算\n    rHeight?: number \n    // 自动适配最优的渲染方式 默认true\n    adaptive?: boolean \n  }\n}",
+    "IKeyboardConfig": "interface IKeyboardConfig {\n  // 启用方向键功能\n  isArrow?: boolean \n  isDel?: boolean\n  isTab?: boolean \n  isEdit?: boolean\n}",
+    "IMouseConfig": "interface IMouseConfig {\n  // 是否开启左键选中单元格功能（只对 editConfig.mode=cell 有效），默认为 false\n  selected: boolean \n}",
+    "IRadioConfig": "interface IRadioConfig {\n  // 触发选中的方式，可选项包括 cell（单击图标所在单元格触发） / row（点击行触发），默认点击图标触发\n  trigger?: 'cell' | 'row' \n  // 单选框显示的字段名，可以直接显示在单选框中\n  labelField?: string |\n  // 默认选中指定行（只会在初始化时被触发一次，需要有 row-id）\n  checkRowKey?: string\n  // 是否允许选中的方法，该方法的返回值用来决定这一行的 Radio 是否可以选中\n  checkMethod?: ()=> boolean\n}",
+    "ISelectConfig": "interface ISelectConfig {\n  // 触发选中的方式，可选项包括 cell（单击图标所在单元格触发） / row（点击行触发），默认点击图标触发\n  trigger?: 'cell' | 'row'\n  // 复选框显示的字段名，可以直接显示在复选框中\n  labelField?: string\n  // 默认勾选开指定行（只会在初始化时被触发一次，需要有 row-id）\n  checkRowKeys?: string[] \n  // 是否允许选中的方法，该方法的返回值用来决定这一行的 checkbox 是否可以勾选\n  checkMethod?: ()=> boolean \n  // 默认勾选所有（只会在初始化时被触发一次）}\n  checkAll?: boolean\n  // 是否显示全选按钮（如果 checkStrictly=true 则默认为 false）\n  showHeader?: boolean \n  // 是否严格的遵循父子不互相关联的做法\n  checkStrictly?: boolean\n  // 翻页操作是否保留历史选择数据\n  reserve?: boolean\n}",
+    "ISortConfig": "interface ISortConfig {\n  // 排序触发方式，可配置为 cell（点击头部单元格触发排序），不配置时默认为点击上下箭头触发排序\n  trigger?: 'cell'\n}",
+    "ITreeConfig": "interface ITreeConfig {\n  // 展开子级触发方式：'default'(点击按钮触发)；'cell'(点击单元格触发)；'row'(点击行触发)\n  trigger?: 'default' | 'cell' | 'row'\n  // 子级索引是否按数字递增显示：true(子级索引按数字递增显示，父级1，子级2)；false(子级索引在父级索引基础上增加，父级1，子级1.1)\n  ordered?: boolean\n  // 控制水平缩进距离，默认 16，单位 px\n  indent?: number\n  // 指定子级数据的字段名\n  children?: string\n  // 是否展开所有行\n  expandAll?: boolean\n  // 默认展开所给数组中的指定行，需要有row-id，可以由行的'_RID'属性获取\n  expandRowKeys?: string[]\n  // 对于同一级的多个子节点，是否只能同时展开一个子节点\n  accordion?: boolean\n}",
+    "IValidConfig": "interface IValidConfig {\n  // 校验提示类型，'inline'(内置提示)；'tooltip'(tooltip文字提示)\n  message?: 'inline' | 'tooltip'\n}",
+    "ISummaryConfig": "interface ISummaryConfig {\n  // 统计字段名 \n  fields: string[]\n  // 小数点后保留的小数位\n  fraction?: boolean\n  // 是否截断，默认为四舍五入，不截断\n  truncate?: boolean\n  // 统计显示的文本\n   text?: string\n}",
+    "IScrollLoadConfig": "interface IScrollLoadConfig {\n  // 是否连续\n  isInfinity: boolean\n  // 每次加载多少条\n  pageSize: number\n}",
+    "IEventsConfig": "interface IEventsConfig {\n  [field: string]: ()=> void\n}",
+    "IDropConfig": "interface IDropConfig {\n  // sortablejs 插件\n  plugin: Sortable\n  // 开启行拖拽\n  row: boolean\n  // 开启列拖拽\n  column: boolean\n  // 拖拽前函数，返回 false 取消拖动\n  onBeforeMove?: ()=> boolean\n  // 拖拽触发源选择器一般是class类名\n  trigger?: string\n  // 根据行的类名来控制是否可以拖动\n  filter?: string\n  // 如果变动了树层级，可以指定是否需要刷新数据\n  refresh?: boolean\n  }",
+    "IEditConfig": "interface IEditConfig {\n  // 激活触发方式\n  trigger: 'click' | 'dblclick' | 'manual'\n  // 激活类型单元格激活或者行\n  mode: 'cell' | 'row'\n  // 是否显示状态\n  showStatus?: boolean\n  // 自定义编辑规则，返回true可以编辑返回false则禁止编辑\n  activeMethod?: ({row: IRow, column: IColumnConfig})=> boolean\n}",
+    "IRecordset": "interface IRecordset {\n  insertRecords: IRow[]\n  removeRecords: IRow[]\n  updateRecords: IRow[]\n}",
+    "IPageChangeArgs": "interface IPageChangeArgs { \n  // table组件vue实例\n  $grid: Component\n  // 当前页码\n  currentPage: number\n  //当前分页组件布局信息 'total, prev, pager, next, jumper, sizes'\n  layout: string\n  // 当前每页显示条数\n  pageSize: number\n  //可切换的每页条数\n  pageSizes: number[] \n  //总数据条数\n  total: number \n}",
+    "IBeforePageChangeArgs": "interface IBeforePageChangeArgs { \n  //新页码\n  newPage: number\n  //新的分页大小 \n  newPageSize: number\n  //当前页码\n  currentPage: number\n  //当前的页大小\n  currentPageSize: number\n  //生效回调\n  callback: ()=> void\n  //失效回调\n  rollback: ()=> void\n}",
+    "IToolbarButtonClickArgs": "interface IToolbarButtonClickArgs { \n  //表格组件实例对象信息 \n  $grid: Component\n  //按钮信息对象 \n  button: {\n    code: string\n    name: string\n  }[]\n  // 按钮功能类型\n  code: string\n}",
+    "ICellClickArgs": "interface ICellClickArgs {\n  // 当前行\n  row: IRow,\n  // 当前行的下标\n  rowIndex: number\n  // 当前列\n  column: IColumnConfig\n  // 当前列的下标\n  columnIndex: number\n}",
+    "ICellContextMenuArgs": "interface ICellContextMenuArgs {\n  // 当前行\n  row: IRow\n}",
+    "ICellArgs": "interface ICellArgs {\n  //当前行\n  row: IRow\n  //当前行的下标\n  rowIndex: number\n  // 当前列 \n  column: IColumnConfig\n  // 当前列的下标 \n  columnIndex: number\n}",
+    "ICurrentChangeArgs": "interface ICurrentChangeArgs {\n  // 当前行\n  row: IRow\n}",
+    "IEditActivedArgs": "interface IEditActivedArgs {\n  // 当前行\n  row: IRow\n  // 当前列 \n  column: IColumnConfig\n}",
+    "IEditClosedArgs": "interface IEditClosedArgs {\n  // 当前行\n  row: IRow\n  // 当前列 \n  column: IColumnConfig\n}",
+    "IEditDisabledArgs": "interface IEditDisabledArgs {\n  //当前行\n  row: IRow\n  // 当前列 \n  column: IColumnConfig\n}",
+    "IFilterChangeArgs": "interface IFilterChangeArgs {\n  //表格的信息对象\n  $table: Component\n  //过滤列的过滤数据信息\n  filters: object\n}",
+    "IFooterCellClickArgs": "interface IFooterCellClickArgs {\n  $columnIndex: number\n  $rowIndex: number\n  // table组件vue实例\n  $table: Component\n  // 当前单元格节点 \n  cell: HTMLElement\n  // 当前列信息\n  column: IColumnConfig\n  columnIndex: number\n}",
+    "IContextMenuArgs": "interface IContextMenuArgs {\n  $columnIndex: number\n  $rowIndex: number\n  // table组件vue实例\n  $table: Component\n  // 当前单元格节点\n  cell: HTMLElement\n  // 当前列信息\n  column: IColumnConfig\n  columnIndex: number\n  // 配置清除等功能信息\n  options: object[]\n  // 表格区域类型\n  type: 'header' | 'footer' | 'body'\n}",
+    "IFooterCellDblClickArgs": "interface IFooterCellDblClickArgs {\n  $columnIndex: number\n  $rowIndex: number\n  // table组件vue实例\n  $table: Component\n  // 当前单元格节点\n  cell: HTMLElement\n  // 当前列信息\n  column: IColumnConfig\n  columnIndex: number\n}",
+    "IHeaderCellClickArgs": "interface IHeaderCellClickArgs {\n  $columnIndex: number\n  $rowIndex: number\n  // table组件vue实例\n  $table: Component\n  // 点击表头单元格\n  cell: HTMLElement\n  // 当前列信息\n  column: IColumnConfig\n  columnIndex: number\n  // 当前点击节点过滤标识\n  triggerFilter: boolean\n  // 当前点击节点排序标识\n  triggerSort: boolean\n}",
+    "IHeaderCellDblClickArgs": "interface IHeaderCellDblClickArgs {\n  // 列数据\n  column: IColumnConfig  \n  // 列索引\n  columnIndex: number\n  // table组件 vue实例 \n  $table: Component\n  // 点击的单元格dom\n  cell: HTMLElement\n}",
+    "IResizableChangeArgs": "interface IResizableChangeArgs {\n  // table组件的vue 实例 \n  $table: Component,\n  // 列配置信息 \n  column: IColumnConfig \n  // 拖动列的索引\n  columnIndex: number\n  // 是否固定列\n  fixed: boolean\n}",
+    "IScrollArgs": "interface IScrollArgs {\n  // 表格实例对象信息\n  $table: Component\n  fixed: boolean\n  // X轴滚动\n  isX: boolean\n  // Y轴滚动\n  isY: true\n  // X轴滚动距离\n  scrollLeft: number\n  // Y轴滚动距离\n  scrollTop: number\n  type: 'body' | 'header' | 'footer'\n}",
+    "ISelectAllArgs": "interface ISelectAllArgs {\n  $columnIndex: number\n  $rowIndex: number\n  $seq: string\n  // 表格实例对象信息\n  $table: Component \n  // 勾选状态\n  checked: boolean\n  // 列信息\n  column: IColumnConfig\n  // 列下标\n  columnIndex: number\n  // 表格数据\n  data: IRow[]\n  fixed: boolean\n  isHidden: boolean\n  level: number\n  // 勾选项的行数据信息\n  row: IRow\n  // 勾选项的行下标\n  rowIndex: number\n  // 选中的数据\n  selection: IRow[]\n  seq: number\n}",
+    "IToggleExpandChangeArgs": "interface IToggleExpandChangeArgs { \n  // 表格实例对象信息\n  $table: Component,\n  //点击展开行的数据信息对象\n  row: IRow\n  // 点击展开行的下标 \n  rowIndex: number\n}",
+    "IToggleTreeChangeArgs": "interface IToggleTreeChangeArgs { \n  // 表格实例对象信息\n  $table: Component,\n  //点击展开行的数据信息对象\n  row: IRow\n  // 点击展开行的下标 \n  rowIndex: number\n}",
+    "IValidErrorArgs": "interface IValidErrorArgs { \n  // 校验的单元格信息对象\n  cell: Cell\n  //校验单元格所在列的列配置信息对象\n  column: IColumnConfig\n  //校验单元格所在行的信息对象\n  row: IRow\n  // 校验规则信息对象 \n  rule: object\n}",
+    "ISortChangeArgs": "interface ISortChangeArgs { \n  // 表格实例对象信息\n  $grid: Component\n  // 列信息\n  column: IColumnConfig\n  // 排序的字段名\n  field: string \n  // 排序类型升序或降序\n  order: 'asc' | 'desc' \n  prop: string\n  property: string\n}",
+    "IClassNameArgs": "interface IClassNameArgs {\n  seq: number\n  row: IRow\n  rowIndex: number\n  $rowIndex: number\n  column: IColumnConfig\n  columnIndex: number\n  $columnIndex: number\n}",
+    "IIndexMethodArgs": "interface IIndexMethodArgs {\n  row: IRow\n  rowIndex: number\n  column: IColumnConfig\n  columnIndex: number\n}",
+    "IFormatConfig": "interface IFormatConfig {\n  // 列数据源\n  data: IColumnConfig[] \n  // 内置渲染器类型，与 format-text 属性取值相同\n  type: 'money' | 'enum' | 'select' | 'number' | 'integer' | 'filesize' | 'date' | 'dateTime' | 'longDateTime' | 'time' | 'longTime' | 'yearMonth' | 'ellipsis' | 'rate'\n  // 配置为 true 后，支持动态修改 data 的数据。还可以配置为对象，配置为对象时，对象中可以配置 splitConfig.enabled（是否启用分隔配置）、splitConfig.valueSplit（指定 value 值的分隔符）、splitConfig.textSplit（指定 text 的分隔符）、fetch（列数据异步渲染，请求数据）\n  async: true, \n  // 单元格显示内容的映射\n  label: string\n  // 单元格取值的映射\n  value: string\n}",
+    "IButtonClick": "interface IButtonClick { \n  // 表格组件实例对象信息\n  $grid: Component \n  // 按钮列表信息对象   \n  button: {\n    code: string\n    name: string\n  }[]\n   // 按钮类型 \n   code: string\n  }",
+    "ISettingConfigs": "interface ISettingConfigs {\n  sortType: 'page' | 'all'\n  pageSize: number\n  columns: {\n    property: string\n    order: 'asc' | 'desc' | null \n    visible: boolean\n    sortable: boolean\n  }[]\n}",
+    "ISpanMethodArgs": "interface ISpanMethodArgs {\n  // 行标\n  $rowIndex: number\n  // 列数据  \n  column: IColumnConfig\n  // 列下标 \n  columnIndex: number\n  // 一个数组，保存了当前合并和计算的数据\n  data: (string | number | null)[][]\n}",
+    "IExportCsvOptions": "interface IExportCsvOptions {\n  filename: string\n  original: boolean\n  isHeader: boolean\n  data: IRow[]\n}",
+    "IEditorConfig": "interface IEditorConfig {\n  // 内置组件名称或者自定义组件实例\n  component: 'input' | 'select' | Component\n  // 传递给组件的事件集合\n  events?: {\n    [event]: ()=> void\n  }\n  // 传递给编辑器组件的属性集合\n  attrs?: {\n    [prop]: any\n  }\n  // select 内置组件独有的下拉数据配置项\n  options?: object[]\n}",
+    "IFilterConfig": "interface IFilterConfig {\n  // 设置在显示枚举选项功能是否为多选, 仅在 enumable:true 下有效\n  multi: boolean\n  // 设置在过滤面板中显示枚举选项\n  enumable: boolean\n  // 设置在过滤面板中显示默认的筛选条件\n  defaultFilter: boolean\n  // 设置在过滤面板中显示输入筛选的项\n  inputFilter: boolean\n  // 设置在显示枚举选项功能(enumable)下制定静态数据源，也可以是函数返回一个Promise对象\n  values: {\n    // 设置枚举数据的显示值属性字段， 默认'label'\n    label: string\n    // 设置枚举数据的实际值属性字段， 默认'value'\n    value: string \n  }[] | ()=> Promise\n}",
+    "IOPConfig": "interface IOPConfig {\n  editConfig?: IEditConfig\n  pagerConfig?: IPagerConfig\n  columns: IColumnConfig[]\n  data: IRow[]\n}",
+    "IFormatText": "'money' | 'enum' | 'select' | 'number' | 'integer' | 'filesize' | 'date' | 'dateTime' | 'longDateTime' | 'time' | 'longTime' | 'yearMonth' | 'ellipsis' | 'rate' | 'boole' | (params)=> string",
+    "IToolbarSetting": "interface IToolbarSetting {\n        remote?: boolean\n        storage?: string\n        sortable?: Sortable \n      }"
+  },
+  "events": [],
+  "methods": [],
+  "slots": [
+    {
+      "name": "default",
+      "description": "自定义显示内容模板，作用插槽参数说明：slots.default({ $table, column, row },h)，$table：表格组件对象，column：当前列配置，row：当前行数据,h：vue的渲染函数",
+      "description_zh": "自定义显示内容模板，作用插槽参数说明：slots.default({ $table, column, row },h)，$table：表格组件对象，column：当前列配置，row：当前行数据,h：vue的渲染函数"
+    },
+    {
+      "name": "edit",
+      "description": "自定义可编辑组件模板，作用插槽参数说明：slots.edit({ $table, column, row },h)，$table：表格组件对象，column：当前列配置，row：当前行数据,h：vue的渲染函数",
+      "description_zh": "自定义可编辑组件模板，作用插槽参数说明：slots.edit({ $table, column, row },h)，$table：表格组件对象，column：当前列配置，row：当前行数据,h：vue的渲染函数"
+    },
+    {
+      "name": "filter",
+      "description": "自定义筛选模板，作用插槽参数说明：slots.filter({ $grid, values, args, context },h)，$grid：表格组件对象，values：筛选项集合，args：筛选相关参数,context：筛选面板组件上下文对象",
+      "description_zh": "自定义筛选模板，作用插槽参数说明：slots.filter({ $grid, values, args, context },h)，$grid：表格组件对象，values：筛选项集合，args：筛选相关参数,context：筛选面板组件上下文对象"
+    },
+    {
+      "name": "header",
+      "description": "自定义表头内容的模板，作用插槽参数说明：slots.header({ $table, column, columnIndex，$rowIndex},h)，$table：表格组件对象，column：当前列配置，columnIndex：当前列索引,$rowIndex:当前行索引,h：vue的渲染函数",
+      "description_zh": "自定义表头内容的模板，作用插槽参数说明：slots.header({ $table, column, columnIndex，$rowIndex},h)，$table：表格组件对象，column：当前列配置，columnIndex：当前列索引,$rowIndex:当前行索引,h：vue的渲染函数"
+    }
+  ],
+  "filename": "GridColumn"
+}

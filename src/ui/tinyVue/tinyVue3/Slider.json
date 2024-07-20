@@ -1,0 +1,131 @@
+{
+  "name": "TinySlider",
+  "props": {
+    "disabled": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to disable or not",
+      "description_zh": "是否禁用"
+    },
+    "format-tooltip": {
+      "default": "--",
+      "value": "",
+      "type": "(currentValue: number) => string",
+      "description": "Format the tooltip prompt",
+      "description_zh": "格式化 tooltip 提示"
+    },
+    "height": {
+      "default": "'300px'",
+      "value": "",
+      "type": "string",
+      "description": "The height of the Slider component, which is valid when vertical is true",
+      "description_zh": "Slider 组件的高度，当 vertical 为 true 时有效"
+    },
+    "marks": {
+      "default": "--",
+      "value": "",
+      "type": "{ [key:number]: string }",
+      "description": "Sets the scale value of the slider",
+      "description_zh": "设置滑杆的刻度值"
+    },
+    ":max": {
+      "default": "100",
+      "value": "",
+      "type": "number",
+      "description": "Set the maximum value, which must be an integer, which can be negative, and must be greater than the minimum value set",
+      "description_zh": "设置最大值，必需是整数，可以负数，必需大于所设置的最小值"
+    },
+    ":min": {
+      "default": "0",
+      "value": "",
+      "type": "number",
+      "description": "Set a minimum value",
+      "description_zh": "设置最小值"
+    },
+    ":num-pages": {
+      "default": "1",
+      "value": "",
+      "type": "number",
+      "description": "设置总步数，即按快捷键 PageDown/PageUp 时，每次移动的距离是 \"⌈(max-min)/num-pages⌉\"",
+      "description_zh": "设置总步数，即按快捷键 PageDown/PageUp 时，每次移动的距离是 \"⌈(max-min)/num-pages⌉\""
+    },
+    "show-input": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether or not to display the input box",
+      "description_zh": "是否显示输入框"
+    },
+    "show-tip": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to display the tooltip",
+      "description_zh": "是否显示 tooltip"
+    },
+    ":step": {
+      "default": "1",
+      "value": "",
+      "type": "number",
+      "description": "When setting the slider to move, the displacement distance of each step must be a positive integer greater than 0",
+      "description_zh": "设置滑块移动时，每步位移距离，必需是大于0的正整数"
+    },
+    "unit": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "The units displayed after the input box are only valid in input box mode",
+      "description_zh": "输入框后面显示的单位，仅在输入框模式下有效"
+    },
+    "v-model": {
+      "default": "--",
+      "value": "",
+      "type": "number | [number, number]",
+      "description": "Sets the current value of a single slider, which must be an integer or an array",
+      "description_zh": "设置单滑块的当前值，必需是整数或数组"
+    },
+    "vertical": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether or not to be in portrait mode",
+      "description_zh": "是否竖向模式"
+    }
+  },
+  "link": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/slider",
+  "link_zh": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/slider",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "change",
+      "description": "Triggered when the value is changed (when dragging with the mouse, it only triggers when the mouse is released)",
+      "description_zh": "值改变时触发（使用鼠标拖曳时，只在松开鼠标后触发）",
+      "params": "(value: number | [number, number]) => void",
+      "value": ""
+    },
+    {
+      "name": "start",
+      "description": "Sets the event to be triggered when the slider slide starts",
+      "description_zh": "设置滑块滑动开始时，触发该事件",
+      "params": "(event: Event, value: number | [number, number]) => void",
+      "value": ""
+    },
+    {
+      "name": "stop",
+      "description": "Sets the event to be triggered at the end of the slider slide",
+      "description_zh": "设置滑块滑动结束时，触发该事件",
+      "params": "(value: number | [number, number]) => void",
+      "value": ""
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "default",
+      "description": "显示滑块值的插槽，仅仅 v-model 是单数值时才有效，插槽参数为：slotArg: { slotScope: number }",
+      "description_zh": "显示滑块值的插槽，仅仅 v-model 是单数值时才有效，插槽参数为：slotArg: { slotScope: number }"
+    }
+  ],
+  "filename": "Slider"
+}
