@@ -65,8 +65,8 @@ export function propsReducer(uiName: string, map: string[], prefix: string, icon
               return result += key[0] === '$'
                 ? `\ntype ${key.slice(1).replace(/-(\w)/g, v => v.toUpperCase())} = \n${item.typeDetail[key].map((typeItem: any) => `${typeItem.name} /*${typeItem.description}*/`).join('\n| ')}\n\n`
                 : `\ninterface ${key} {\n  ${item.typeDetail[key].map((typeItem: any) => `${typeItem.name}${typeItem.optional ? '?' : ''}: ${typeItem.type} /*${typeItem.description}${typeItem.default ? ` 默认值: ***${typeItem.default}***` : ''}*/`).join('\n  ')}\n}`
-}
-            return result += `\n${item.typeDetail[key]}`
+            }
+            return result += `\n${item.typeDetail[key].split('|').join('\n|')}`
           }, '')}`
           documentation.appendCodeblock(data, 'typescript')
         }
