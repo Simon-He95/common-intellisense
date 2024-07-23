@@ -149,6 +149,9 @@ export function activate(context: vscode.ExtensionContext) {
       let pos: any = null
       if (isVue) {
         if (loc) {
+          if (getLineText(loc.start.line)?.trim()) {
+            str += '\n'
+          }
           pos = createPosition(loc.start.line, 0)
         }
         else {
@@ -175,6 +178,7 @@ export function activate(context: vscode.ExtensionContext) {
           pos = createPosition(0, 0)
         }
       }
+
       updateText((edit) => {
         edit.insert(pos, str)
       })
@@ -257,9 +261,9 @@ export function activate(context: vscode.ExtensionContext) {
     const result = parser(document.getText(), p)
     if (!result)
       return
-    if (position.active === ':' && result.type === 'text') {
+    if (position.active === ':' && result.type === 'text')
       return
-    }
+
     const lan = getActiveTextEditorLanguageId()
     const isVue = lan === 'vue' && result.template
     const code = getActiveText()
