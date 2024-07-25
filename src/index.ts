@@ -1,13 +1,14 @@
 import fsp from 'node:fs/promises'
 import path from 'node:path'
 import * as vscode from 'vscode'
-import { addEventListener, createCompletionItem, createPosition, createRange, createSelect, getActiveText, getActiveTextEditor, getActiveTextEditorLanguageId, getConfiguration, getCurrentFileUrl, getLineText, getLocale, getPosition, getSelection, message, openExternalUrl, registerCommand, registerCompletionItemProvider, setConfiguration, setCopyText, updateText } from '@vscode-use/utils'
+import { addEventListener, createCompletionItem, createMarkdownString, createPosition, createRange, createSelect, getActiveText, getActiveTextEditor, getActiveTextEditorLanguageId, getConfiguration, getCurrentFileUrl, getLineText, getLocale, getPosition, getSelection, message, openExternalUrl, registerCommand, registerCompletionItemProvider, setConfiguration, setCopyText, updateText } from '@vscode-use/utils'
 import { CreateWebview } from '@vscode-use/createwebview'
 import { parse } from '@vue/compiler-sfc'
 import { createFilter } from '@rollup/pluginutils'
 import { alias, detectSlots, findPkgUI, parser, registerCodeLensProviderFn } from './utils'
 import UI from './ui'
 import { UINames as UINamesMap, nameMap } from './constants'
+import type { Directives } from './ui/utils'
 import { toCamel } from './ui/utils'
 // import {createWebviewPanel} from './webview/webview'
 
@@ -332,9 +333,36 @@ export function activate(context: vscode.ExtensionContext) {
       const { events, completions, uiName } = target
       const key = uiName + name
       if (!completionsCallbacks.has(key)) {
+        const directives = optionsComponents.directivesMap[uiName]
+        const directivesCompletions = directives
+          ? directives.map((item: Directives[0]) => {
+            const detail = isZh ? item.description_zh : item.description
+            const content = `${item.name}  ${detail}`
+            const documentation = createMarkdownString()
+            documentation.appendMarkdown(item.documentation)
+            if (item.params.length) {
+              documentation.appendCodeblock('\n')
+              item.params.forEach((i) => {
+                documentation.appendMarkdown(`### 🌟 ${i.name}: \n`)
+                documentation.appendMarkdown(`- ${isZh ? '类型' : 'type'}: ${i.type}\n`)
+                documentation.appendMarkdown(`- ${isZh ? '描述' : 'description'}: ${isZh ? i.description_zh : i.description}\n`)
+                documentation.appendMarkdown(`- ${isZh ? '默认值' : 'default'}: ${i.default}\n`)
+              })
+            }
+            return createCompletionItem({
+              content,
+              detail,
+              sortText: 'a',
+              type: vscode.CompletionItemKind.Enum,
+              snippet: item.params.length ? `${item.name}="$1"` : item.name,
+              preselect: true,
+              documentation,
+            })
+          })
+          : []
         const _events = events[0](isVue)
         eventCallbacks.set(key, _events)
-        completionsCallbacks.set(key, [...completions[0](isVue), ...(isVue ? [] : _events)])
+        completionsCallbacks.set(key, [...completions[0](isVue), ...(isVue ? [] : _events), ...directivesCompletions])
       }
 
       if (!eventCallbacks.has(key))
@@ -366,49 +394,38 @@ export function activate(context: vscode.ExtensionContext) {
       }
       else if (propName) {
         const r: any[] = []
-        completionsCallback.filter((item: any) => isValue
-          ? hasProps.find((prop: any) => item?.params?.[1] === prop)
-          : !hasProps.find((prop: any) => item?.params?.[1] === prop))
-          .filter((item: any) => {
-            const reg = propName === 'bind'
-              ? new RegExp('^:')
-              : new RegExp(`^:?${propName}`)
-            return reg.test(item.label)
-          })
-          .map((item: any) => {
-            let label = item.label
-            if (result.isDynamic && label[0] === ':')
-              label = label.slice(1)
-
-            item.propType.split('/').forEach((p: string) => {
-              r.push(createCompletionItem({
-                content: p.trim(),
-                snippet: p.trim().replace(/'`/g, ''),
-                documentation: item.documentation,
-                detail: item.detail,
-                type: item.kind,
-              }))
+        if (isValue) {
+          completionsCallback.filter((item: any) => hasProps.find((prop: any) => item?.params?.[1] === prop))
+            .filter((item: any) => {
+              const reg = propName === 'bind'
+                ? new RegExp('^:')
+                : new RegExp(`^:?${propName}`)
+              return reg.test(item.label)
+            }).forEach((item: any) => {
+              item.propType?.split('/').forEach((p: string) => {
+                r.push(createCompletionItem({
+                  content: p.trim(),
+                  snippet: p.trim().replace(/'`/g, ''),
+                  documentation: item.documentation,
+                  sortText: 'a',
+                  detail: item.detail,
+                  type: item.kind,
+                }))
+              })
             })
-            return item.label.match(/^\w+=\{[^}]*\}/)
-              ? undefined
-              : createCompletionItem(isValue
-                ? ({
-                    content: label,
-                    snippet: label.replace(/^\w+="([^"]+)".*/, '$1'),
-                    documentation: item.documentation,
-                    detail: item.detail,
-                    type: item.kind,
-                  })
-                : ({
-                    content: label,
-                    snippet: label.split(' ')[0],
-                    documentation: item.documentation,
-                    detail: item.detail,
-                    type: item.kind,
-                  }))
-          },
-
-          ).filter(Boolean)
+        }
+        else {
+          r.push(...completionsCallback.filter((item: any) => !hasProps.find((prop: any) => item?.params?.[1] === prop))
+            .map((item: any) => createCompletionItem(({
+              content: item.content,
+              snippet: item.snippet,
+              documentation: item.documentation,
+              detail: item.detail,
+              sortText: 'a',
+              preselect: true,
+              type: item.kind,
+            }))))
+        }
         const events = isVue
           ? []
           : isValue
@@ -695,14 +712,15 @@ export function findUI() {
       }
       if (componentsNames) {
         for (const componentsName of componentsNames) {
-          const { prefix, data } = componentsName
+          const { prefix, data, directives, lib } = componentsName
           if (!result.prefix.includes(prefix))
             result.prefix.push(prefix)
           result.data.push(data)
+          result.directivesMap[lib] = directives
         }
       }
       return result
-    }, { prefix: [], data: [] })
+    }, { prefix: [], data: [], directivesMap: {} })
 
     UiCompletions = UINames.reduce((result: any, option: string) => {
       let completion

@@ -1,3 +1,4 @@
+import type { Directives } from '../../utils'
 import { componentsReducer, propsReducer } from '../../utils'
 import ActionMenu from './ActionMenu.json'
 import Alert from './Alert.json'
@@ -317,6 +318,18 @@ const componentsMap = [
   [Watermark, Watermark.name, `<tiny-watermark></tiny-watermark>`],
   [Wizard, Wizard.name, `<tiny-wizard></tiny-wizard>`],
 ]
+
+const directives: Directives = [
+  {
+    name: 'v-auto-tip',
+    description: 'AutoTip 超出隐藏提示指令，用于在超出省略隐藏时可以配置tooltip提示。',
+    description_zh: 'AutoTip 超出隐藏提示指令，用于在超出省略隐藏时可以配置tooltip提示。',
+    documentation: `通过配置 v-auto-tip 自定义指令的值可以分为以下两种情况：
+如果配置为 { always: true, content: '自定义内容', effect: 'dark' } ，always: true 可以正常触发提示无论是否超出隐藏省略；content 可以定义提示内容；effect 可以配置主题，可选值有： light 和 dark ，默认是亮色主题。
+如果配置为 false 则不处理任何 tip 相关逻辑。`,
+    params: [],
+  },
+]
 export function tinyVue3Components() {
-  return componentsReducer(componentsMap, true, 'tiny', '@opentiny/vue3', false)
+  return componentsReducer(componentsMap, true, 'tiny', '@opentiny/vue3', false, undefined, undefined, directives)
 }

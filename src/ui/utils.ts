@@ -1,5 +1,5 @@
 import * as vscode from 'vscode'
-import { createCompletionItem, getActiveTextEditorLanguageId, getLocale, setCommandParams } from '@vscode-use/utils'
+import { createCompletionItem, createMarkdownString, getActiveTextEditorLanguageId, getLocale, setCommandParams } from '@vscode-use/utils'
 
 export function propsReducer(uiName: string, map: string[], prefix: string, iconData?: { prefix: string, type: string, icons: any[] }, extensionContext?: any) {
   const result: any = {}
@@ -330,14 +330,29 @@ export function propsReducer(uiName: string, map: string[], prefix: string, icon
     return result
   }, result)
 }
+export type Directives = {
+  name: string
+  description: string
+  description_zh: string
+  documentation: string
+  params: {
+    name: string
+    description: string
+    description_zh: string
+    type: string
+    default: string
+  }[]
+}[]
 
-// todo: 提供第二次使用场景，将有前缀的UI，例如a-button，肯能存在局部导入的情况，需要支持Button的情况，然后将导入的路径插入
-export function componentsReducer(map: any[][], isSeperatorByHyphen = true, prefix = '', lib: string, isReact = false, dynamicLib?: string, importWay?: 'as default' | 'default') {
+// todo: 重构参数，参数过多，改为 options
+export function componentsReducer(map: any[][], isSeperatorByHyphen = true, prefix = '', lib: string, isReact = false, dynamicLib?: string, importWay?: 'as default' | 'default', directives?: Directives) {
   const isZh = getLocale().includes('zh')
   if (!isReact && prefix) {
     return [
       {
         prefix,
+        directives,
+        lib,
         data: () => map.map(([content, detail, demo]) => {
           const lan = getActiveTextEditorLanguageId()
           const isVue = lan === 'vue'
@@ -386,7 +401,7 @@ export function componentsReducer(map: any[][], isSeperatorByHyphen = true, pref
           }
           if (!demo)
             demo = snippet
-          const documentation = new vscode.MarkdownString()
+          const documentation = createMarkdownString()
           documentation.isTrusted = true
           documentation.supportHtml = true
           documentation.appendMarkdown(`#### 🍀 ${lib} ${detail}\n`)
@@ -403,6 +418,8 @@ export function componentsReducer(map: any[][], isSeperatorByHyphen = true, pref
       },
       {
         prefix: '',
+        directives,
+        lib,
         data: () => map.map(([content, detail, demo]) => {
           const lan = getActiveTextEditorLanguageId()
           const isVue = lan === 'vue'
@@ -473,6 +490,8 @@ export function componentsReducer(map: any[][], isSeperatorByHyphen = true, pref
   }
   return [{
     prefix,
+    directives,
+    lib,
     data: () => map.map(([content, detail, demo]) => {
       const lan = getActiveTextEditorLanguageId()
       const isVue = lan === 'vue'
