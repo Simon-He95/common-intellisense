@@ -1,0 +1,156 @@
+{
+  "vuetify3": [
+    {
+      "name": "v-click-outside",
+      "description": "The v-click-outside directive calls a function when something outside of the target element is clicked on. This is used internally by components like v-menu and v-dialog.",
+      "description_zh": "v-click-outside 指令在单击目标元素之外的内容时调用函数。这在内部由 v-menu 和 v-dialog 等组件使用。",
+      "documentation": "  | ((e: MouseEvent) => void)\n    | {\n        handler: (e: MouseEvent) => void\n        closeConditional: (e: Event) => boolean\n        include: () => HTMLElement[]\n      }",
+      "params": [],
+      "link": "https://vuetifyjs.com/zh-Hans/directives/click-outside/",
+      "link_zh": "https://vuetifyjs.com/zh-Hans/directives/click-outside/"
+    },
+    {
+      "name": "v-intersect",
+      "description": "The v-intersect directive utilizes the Intersection Observer API. It provides an easy-to-use interface for detecting when elements are visible within the user’s viewport. This is also used for the v-lazy component.",
+      "description_zh": "v-intersect 指令使用 Intersection Observer API。它提供了一个易于使用的界面，用于检测元素何时在用户的视口中可见。这也用于 v-lazy 组件。",
+      "documentation": "  | ((\n        isIntersecting: boolean,\n        entries: IntersectionObserverEntry[],\n        observer: IntersectionObserver,\n      ) => void)\n    | { handler: ObserveHandler; options: IntersectionObserverInit\n      }",
+      "params": [
+        {
+          "name": "once",
+          "type": "boolean",
+          "description": "The handler function is only invoked once, the first time the element is visible.",
+          "description_zh": "处理程序函数仅调用一次，即元素第一次可见时。",
+          "default": ""
+        },
+        {
+          "name": "quiet",
+          "type": "boolean",
+          "description": "Will not invoke the handler function if the element is visible when the IntersectionObserver is created.",
+          "description_zh": "如果在创建 IntersectionObserver 时元素可见，则不会调用处理程序函数。",
+          "default": ""
+        }
+      ],
+      "link": "https://vuetifyjs.com/en/directives/intersect/",
+      "link_zh": "https://vuetifyjs.com/zh-Hans/directives/intersect/"
+    },
+    {
+      "name": "v-mutate",
+      "description": "The v-mutate directive utilizes the Mutation Observer API. It provides an easy to use interface for detecting when elements are updated.",
+      "description_zh": "v-mutate 指令使用了 DOM 变动观察者 API。它为检测 DOM 元素更改提供了简单易用的接口。",
+      "params": [
+        {
+          "default": "",
+          "name": "attr",
+          "type": "boolean",
+          "description": "Sets the value of attributes to true.",
+          "description_zh": "将属性的值设置为 true。"
+        },
+        {
+          "default": "",
+          "name": "char",
+          "type": "boolean",
+          "description": "Sets the value of characterData to true.",
+          "description_zh": "将 characterData 的值设置为 true。"
+        },
+        {
+          "default": "",
+          "name": "child",
+          "type": "boolean",
+          "description": "Sets the value of childList to true.",
+          "description_zh": "将 childList 的值设置为 true。"
+        },
+        {
+          "default": "",
+          "name": "immediate",
+          "type": "boolean",
+          "description": "The provided handler function is invoked immediately when directive is attached to element.",
+          "description_zh": "当指令附加到元素时，将立即调用提供的处理程序函数。"
+        },
+        {
+          "default": "",
+          "name": "once",
+          "type": "boolean",
+          "description": "The provided handler function is only invoked once.",
+          "description_zh": "提供的处理程序函数仅调用一次。"
+        },
+        {
+          "default": "",
+          "name": "sub",
+          "type": "boolean",
+          "description": "Sets the value of subtree to true.",
+          "description_zh": "将 subtree 的值设置为 true。"
+        }
+      ],
+      "link": "https://vuetifyjs.com/en/directives/mutate/",
+      "link_zh": "https://vuetifyjs.com/en/directives/mutate/",
+      "documentation": "  | MutationCallback\n  | { handler: MutationCallback; options: MutationObserverInit\n      }\n"
+    },
+    {
+      "name": "v-resize",
+      "description": "The v-resize directive can be used for calling specific functions when the window resizes.",
+      "description_zh": "v-resize 指令可用于在窗口尺寸发生变化时调用指定的函数。",
+      "link": "https://vuetifyjs.com/en/directives/resize/",
+      "link_zh": "https://vuetifyjs.com/en/directives/resize/",
+      "params": [],
+      "documentation": "() => void\n"
+    },
+    {
+      "name": "v-ripple",
+      "description": "The v-ripple directive is used to show action from a user. It can be applied to any block level element. Numerous components come with the ripple directive built in, such as the v-btn, v-tabs-item and many more.",
+      "description_zh": "v-ripple 指令用于显示用户的操作。它可以应用于任何块级元素。许多组件都内置了波纹指令，如 v-btn、v-tabs-item 等。",
+      "link": "https://vuetifyjs.com/en/directives/ripple/",
+      "link_zh": "https://vuetifyjs.com/en/directives/ripple/",
+      "params": [
+        {
+          "default": "",
+          "name": "center",
+          "type": "boolean",
+          "description": "Makes it so that the ripple originates from the center of the element, instead where the user clicked on it.",
+          "description_zh": "使波纹起源于元素的中心，而不是用户单击它的地方。"
+        },
+        {
+          "default": "",
+          "name": "circle",
+          "type": "boolean",
+          "description": "Changes the ripple behavior to better match circular elements.",
+          "description_zh": "更改纹波行为以更好地匹配圆形元素。"
+        },
+        {
+          "default": "",
+          "name": "stop",
+          "type": "boolean",
+          "description": "Prevents ripples from being triggered on any other elements when the click event is bubbling up.",
+          "description_zh": "防止在点击事件冒泡时在任何其他元素上触发涟漪。"
+        }
+      ],
+      "documentation": "boolean | { class: string }\n"
+    },
+    {
+      "name": "v-scroll",
+      "description": "The v-scroll directive allows you to provide callbacks when the window, specified target or element itself (with .self modifier) is scrolled.",
+      "description_zh": "v-scroll 指令允许您在窗口、指定目标或元素本身( 使用.self 修饰符)滚动时提供回调。",
+      "link": "https://vuetifyjs.com/en/directives/scroll/",
+      "link_zh": "https://vuetifyjs.com/en/directives/scroll/",
+      "params": [],
+      "documentation": "  | EventListener\n  | { handler: EventListener; options: AddEventListenerOptions }\n  | (EventListenerObject & { options: AddEventListenerOptions })\n"
+    },
+    {
+      "name": "v-tooltip",
+      "description": "The v-tooltip directive is a shorthand way of adding tooltips to elements in your application.",
+      "description_zh": "v-tooltip 指令是向应用程序中的元素添加工具提示的简写方式。",
+      "link": "https://vuetifyjs.com/en/directives/tooltip/",
+      "link_zh": "https://vuetifyjs.com/en/directives/tooltip/",
+      "params": [],
+      "documentation": "string | boolean | Record<string, any>\n"
+    },
+    {
+      "name": "v-touch",
+      "description": "The v-touch directive allows you to capture swipe gestures and apply directional callbacks.",
+      "description_zh": "v-touch 指令允许您捕获滑动手势并应用方向回调。",
+      "link": "https://vuetifyjs.com/en/directives/touch/",
+      "link_zh": "https://vuetifyjs.com/en/directives/touch/",
+      "params": [],
+      "documentation": "{\n  parent: boolean\n  options: AddEventListenerOptions\n  start: (\n    wrapperEvent: { originalEvent: TouchEvent } & {\n      touchstartX: number\n      touchstartY: number\n      touchmoveX: number\n      touchmoveY: number\n      touchendX: number\n      touchendY: number\n      offsetX: number\n      offsetY: number\n    },\n  ) => void\n  end: (\n    wrapperEvent: { originalEvent: TouchEvent } & {\n      touchstartX: number\n      touchstartY: number\n      touchmoveX: number\n      touchmoveY: number\n      touchendX: number\n      touchendY: number\n      offsetX: number\n      offsetY: number\n    },\n  ) => void\n  move: (\n    wrapperEvent: { originalEvent: TouchEvent } & {\n      touchstartX: number\n      touchstartY: number\n      touchmoveX: number\n      touchmoveY: number\n      touchendX: number\n      touchendY: number\n      offsetX: number\n      offsetY: number\n    },\n  ) => void\n  left: (wrapper: {\n    touchstartX: number\n    touchstartY: number\n    touchmoveX: number\n    touchmoveY: number\n    touchendX: number\n    touchendY: number\n    offsetX: number\n    offsetY: number\n  }) => void\n  right: (wrapper: {\n    touchstartX: number\n    touchstartY: number\n    touchmoveX: number\n    touchmoveY: number\n    touchendX: number\n    touchendY: number\n    offsetX: number\n    offsetY: number\n  }) => void\n  up: (wrapper: {\n    touchstartX: number\n    touchstartY: number\n    touchmoveX: number\n    touchmoveY: number\n    touchendX: number\n    touchendY: number\n    offsetX: number\n    offsetY: number\n  }) => void\n  down: (wrapper: {\n    touchstartX: number\n    touchstartY: number\n    touchmoveX: number\n    touchmoveY: number\n    touchendX: number\n    touchendY: number\n    offsetX: number\n    offsetY: number\n  }) => void\n}\n"
+    }
+  ]
+}

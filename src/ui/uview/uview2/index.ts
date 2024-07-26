@@ -201,5 +201,10 @@ export function uview2Components() {
     [tabbarItem, tabbarItem.name, `<${tabbarItem.name}></${tabbarItem.name}>`],
     [transition, transition.name, `<${transition.name}></${transition.name}>`],
   ]
-  return componentsReducer(map, true, 'u', 'uview-ui')
+  return componentsReducer({
+    map,
+    isSeperatorByHyphen: true,
+    prefix: 'u',
+    lib: 'uview-ui',
+  })
 }

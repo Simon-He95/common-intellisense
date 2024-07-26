@@ -815,7 +815,11 @@ export function shadcnVue0Components() {
     [SplitterGroup, '将布局划分为可调整大小的部分的组件', '<SplitterGroup></SplitterGroup>'],
     [SplitterPanel, '将布局划分为可调整大小的部分的组件', '<SplitterPanel></SplitterPanel>'],
     [SplitterResizeHandle, '将布局划分为可调整大小的部分的组件', '<SplitterResizeHandle></SplitterResizeHandle>'],
-
   ]
-  return componentsReducer(map, false, '', 'shadcn-vue')
+  return componentsReducer({
+    map,
+    isSeperatorByHyphen: false,
+    prefix: '',
+    lib: 'shadcn-vue',
+  })
 }

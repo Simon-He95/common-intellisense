@@ -340,7 +340,8 @@ export function activate(context: vscode.ExtensionContext) {
             const content = `${item.name}  ${detail}`
             const documentation = createMarkdownString()
             documentation.appendMarkdown(item.documentation)
-            if (item.params.length) {
+
+            if (item.params?.length) {
               documentation.appendCodeblock('\n')
               item.params.forEach((i) => {
                 documentation.appendMarkdown(`### 🌟 ${i.name}: \n`)
@@ -349,12 +350,23 @@ export function activate(context: vscode.ExtensionContext) {
                 documentation.appendMarkdown(`- ${isZh ? '默认值' : 'default'}: ${i.default}\n`)
               })
             }
+
+            const snippet = item.params?.length
+              ? `:${item.name}="${JSON.stringify(item.params.reduce((acc, i) => {
+                const key = i.name
+                const type = i.type.toLocaleLowerCase()
+                const value = i.default || type === 'boolean' ? false : type === 'number' ? 0 : type === 'string' ? '' : ''
+                acc[key] = value
+                return acc
+              }, {} as Record<string, any>), null, 2).replace(/"([^"]+)":/g, '$1:').replace(/"/g, '`')}"`
+              : item.name
+
             return createCompletionItem({
               content,
               detail,
               sortText: 'a',
               type: vscode.CompletionItemKind.Enum,
-              snippet: item.params.length ? `${item.name}="$1"` : item.name,
+              snippet,
               preselect: true,
               documentation,
             })

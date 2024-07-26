@@ -258,5 +258,10 @@ export function uview1Components() {
     [cellItem, cellItem.name, `<${cellItem.name}></${cellItem.name}>`],
     [cellGroup, cellGroup.name, `<${cellGroup.name}></${cellGroup.name}>`],
   ]
-  return componentsReducer(map, true, 'u', 'uview-ui')
+  return componentsReducer({
+    map,
+    isSeperatorByHyphen: true,
+    prefix: 'u',
+    lib: 'uview-ui',
+  })
 }

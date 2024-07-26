@@ -241,5 +241,10 @@ export function taro3Components() {
     [VoipRoom, VoipRoom.name, '<AVoipRoom></AVoipRoom>'],
     [WebView, WebView.name, '<AWebView></AWebView>'],
   ]
-  return componentsReducer(map, false, '', '@tarojs/components')
+  return componentsReducer({
+    map,
+    isSeperatorByHyphen: false,
+    prefix: '',
+    lib: '@tarojs/components',
+  })
 }

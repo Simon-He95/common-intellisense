@@ -1,5 +1,6 @@
 import { getLocale } from '@vscode-use/utils'
 import { componentsReducer, hyphenate, propsReducer } from '../../utils'
+import directives from '../directives.json'
 import app from './app.json'
 import bottomSheet from './bottomSheet.json'
 import calendar from './calendar.json'
@@ -735,5 +736,11 @@ export function vuetify3Components() {
         [speedDial, 'The v-speed-dial component can be used as a floating action button that can reveal additional actions when clicked.', '<v-speedDial location="bottom center" transition="fade-transition"></v-speedDial>'],
         [fab, 'The v-fab component can be used as a floating action button. This provides an application with a main point of action', '<v-fab icon="$vuetify"></v-fab>'],
       ]
-  return componentsReducer(map, true, 'v', 'vuetify')
+  return componentsReducer({
+    map,
+    isSeperatorByHyphen: true,
+    prefix: 'v',
+    lib: 'vuetify',
+    directives: directives.vuetify3,
+  })
 }

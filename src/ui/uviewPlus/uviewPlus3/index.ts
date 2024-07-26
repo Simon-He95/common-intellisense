@@ -265,5 +265,10 @@ export function uviewPlus3Components() {
     [Upload, Upload.name, `<upload><upload>`],
     [Waterfall, Waterfall.name, `<waterfall><waterfall>`],
   ]
-  return componentsReducer(map, true, 'up', 'uviewPlus3')
+  return componentsReducer({
+    map,
+    isSeperatorByHyphen: true,
+    prefix: 'up',
+    lib: 'uviewPlus3',
+  })
 }

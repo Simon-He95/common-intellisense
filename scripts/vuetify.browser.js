@@ -52,5 +52,50 @@ function run() {
     const description = item.nextElementSibling.nextElementSibling.textContent
     slots.push({ name, description, description_zh: description })
   })
+  copyToClipboard(JSON.stringify(result, null, 2))
+
   return result
+}
+
+function getDirectives() {
+  const params = []
+  let temp = {}
+  document.querySelector('tbody')?.querySelectorAll('tr').forEach((item, i) => {
+    const key = i % 3
+    if (key === 0) {
+      temp = {
+        default: ''
+      }
+      temp.name = item.children[0].textContent
+    } else if (key === 1) {
+      temp.type = item.children[0].textContent
+    } else if (key === 2) {
+      temp.description = item.children[0].textContent
+      temp.description_zh = item.children[0].textContent
+      params.push(temp)
+    }
+  })
+  const documentation = document.querySelector('#value code').textContent
+  const name = document.querySelector('.v-heading').textContent.split(' ')[0].slice(1)
+  const directives = {
+    name,
+    description: '',
+    description_zh: '',
+    link: `https://vuetifyjs.com/en/directives/${name.split('-').slice(-1)[0]}/`,
+    link_zh: `https://vuetifyjs.com/en/directives/${name.split('-').slice(-1)[0]}/`,
+    params,
+    documentation
+  }
+  copyToClipboard(JSON.stringify(directives, null, 2))
+  return directives
+}
+
+function copyToClipboard(text) {
+  const textArea = document.createElement('textarea');
+  textArea.value = text;
+  document.body.appendChild(textArea);
+  textArea.select();
+  textArea.setSelectionRange(0, 99999); // 选中全部内容
+  document.execCommand('copy');
+  document.body.removeChild(textArea);
 }

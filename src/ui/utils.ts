@@ -335,17 +335,30 @@ export type Directives = {
   description: string
   description_zh: string
   documentation: string
-  params: {
+  params?: {
     name: string
     description: string
     description_zh: string
     type: string
     default: string
   }[]
+  link: string
+  link_zh: string
 }[]
 
 // todo: 重构参数，参数过多，改为 options
-export function componentsReducer(map: any[][], isSeperatorByHyphen = true, prefix = '', lib: string, isReact = false, dynamicLib?: string, importWay?: 'as default' | 'default', directives?: Directives) {
+interface Options {
+  map: any[][]
+  isSeperatorByHyphen?: boolean
+  prefix?: string
+  lib: string
+  isReact?: boolean
+  dynamicLib?: string
+  importWay?: 'as default' | 'default'
+  directives?: Directives
+}
+export function componentsReducer(options: Options) {
+  const { map, isSeperatorByHyphen = true, prefix = '', lib, isReact = false, dynamicLib, importWay, directives } = options
   const isZh = getLocale().includes('zh')
   if (!isReact && prefix) {
     return [

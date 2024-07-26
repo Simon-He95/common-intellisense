@@ -681,5 +681,12 @@ const componentsMap = [
   [TooltipTrigger, TooltipTrigger.name, `<${TooltipTrigger.name}></${TooltipTrigger.name}`],
 ]
 export function shadcnUi0Components() {
-  return componentsReducer(componentsMap, false, '', 'shadcn-Ui0', true, '@/components/ui/${name}', 'default')
+  return componentsReducer({
+    map: componentsMap,
+    isSeperatorByHyphen: false,
+    prefix: '',
+    lib: 'shadcn-Ui0',
+    isReact: true,
+    dynamicLib: '@/components/ui/${name}',
+  })
 }

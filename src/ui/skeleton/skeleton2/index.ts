@@ -13,5 +13,10 @@ export function skeleton2Components() {
   const map = [
     [Accordion.name, '手风琴', '<Accordion autocollapse></Accordion>'],
   ]
-  return componentsReducer(map, false, '', 'skeleton')
+  return componentsReducer({
+    map,
+    isSeperatorByHyphen: false,
+    prefix: '',
+    lib: 'skeleton',
+  })
 }

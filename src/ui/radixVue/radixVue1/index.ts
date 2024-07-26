@@ -817,5 +817,11 @@ export function radixVue1Components() {
     [SplitterResizeHandle, '将布局划分为可调整大小的部分的组件', '<SplitterResizeHandle></SplitterResizeHandle>'],
 
   ]
-  return componentsReducer(map, false, '', 'radix-vue', true)
+  return componentsReducer({
+    map,
+    isSeperatorByHyphen: false,
+    prefix: '',
+    lib: 'radix-vue',
+    isReact: true,
+  })
 }
