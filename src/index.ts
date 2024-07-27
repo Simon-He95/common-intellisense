@@ -345,7 +345,7 @@ export function activate(context: vscode.ExtensionContext) {
             const detail = isZh ? item.description_zh : item.description
             const content = `${item.name}  ${detail}`
             const documentation = createMarkdownString()
-            documentation.appendMarkdown(item.documentation)
+            documentation.appendCodeblock(item.documentation, 'typscript')
 
             if (item.params?.length) {
               documentation.appendCodeblock('\n')

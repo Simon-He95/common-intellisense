@@ -1,5 +1,6 @@
 import { getLocale } from '@vscode-use/utils'
 import { componentsReducer, hyphenate, propsReducer } from '../../utils'
+import directives from '../directives.json'
 import button from './button.json'
 import buttonGroup from './buttonGroup.json'
 import fab from './fab.json'
@@ -516,5 +517,6 @@ export function varlet3Components() {
     isSeperatorByHyphen: true,
     prefix: 'var',
     lib: 'varlet',
+    directives: directives.varlet3,
   })
 }
