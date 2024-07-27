@@ -1,4 +1,5 @@
 import { componentsReducer, propsReducer } from '../../utils'
+import directives from '../directives.json'
 import ActionMenu from './ActionMenu.json'
 import Alert from './Alert.json'
 import Anchor from './Anchor.json'
@@ -324,5 +325,6 @@ export function tinyVue3Components() {
     isSeperatorByHyphen: true,
     prefix: 'tiny',
     lib: '@opentiny/vue3',
+    directives: directives.tinyVue3,
   })
 }

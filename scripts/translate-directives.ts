@@ -7,7 +7,7 @@ let stack = 0
 const limit = 10
 const hasDone = new Set()
 async function setup() {
-  const cwd = path.resolve(root, 'src/ui/vuetify')
+  const cwd = path.resolve(root, 'src/ui/varlet')
   const entry = await fg(['**/directives.json'], { dot: true, cwd })
   // entry.forEach(async (url: string) => {
   //   const _url = path.resolve(cwd, url)

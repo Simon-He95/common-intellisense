@@ -5,7 +5,7 @@ import { addEventListener, createCompletionItem, createMarkdownString, createPos
 import { CreateWebview } from '@vscode-use/createwebview'
 import { parse } from '@vue/compiler-sfc'
 import { createFilter } from '@rollup/pluginutils'
-import { alias, detectSlots, findPkgUI, parser, registerCodeLensProviderFn } from './utils'
+import { alias, detectSlots, findPkgUI, findRefs, parser, registerCodeLensProviderFn, transformVue } from './utils'
 import UI from './ui'
 import { UINames as UINamesMap, nameMap } from './constants'
 import type { Directives } from './ui/utils'
@@ -34,6 +34,15 @@ export function activate(context: vscode.ExtensionContext) {
   // todo: createWebviewPanel
   // createWebviewPanel(context)
   const isZh = getLocale().includes('zh')
+  const LANS = ['javascriptreact', 'typescript', 'typescriptreact', 'vue', 'svelte', 'solid', 'swan', 'react', 'js', 'ts', 'tsx', 'jsx']
+
+  if (!isSkip())
+    findUI()
+
+  const provider = new CreateWebview(context, {
+    viewColumn: vscode.ViewColumn.Beside,
+    scripts: ['main.js'],
+  })
 
   context.subscriptions.push(registerCodeLensProviderFn())
 
@@ -185,9 +194,6 @@ export function activate(context: vscode.ExtensionContext) {
       })
     }
   }))
-
-  if (!isSkip())
-    findUI()
 
   // 监听pkg变化
   if (isShowSlots) {
@@ -503,11 +509,6 @@ export function activate(context: vscode.ExtensionContext) {
     return item
   }, ['"', '\'', '-', ' ', '@', '.', ':']))
 
-  const provider = new CreateWebview(context, {
-    viewColumn: vscode.ViewColumn.Beside,
-    scripts: ['main.js'],
-  })
-
   context.subscriptions.push(registerCommand('intellisense.openDocument', (args) => {
     // 注册全局的link点击时间
     const url = args.link
@@ -550,8 +551,6 @@ export function activate(context: vscode.ExtensionContext) {
     openExternalUrl(url)
   }))
 
-  const LANS = ['javascriptreact', 'typescript', 'typescriptreact', 'vue', 'svelte', 'solid', 'swan', 'react', 'js', 'ts', 'tsx', 'jsx']
-
   context.subscriptions.push(vscode.languages.registerHoverProvider(LANS, {
     async provideHover(document, position) {
       if (!optionsComponents || !UiCompletions)
@@ -574,7 +573,7 @@ export function activate(context: vscode.ExtensionContext) {
         return
 
       let word = document.getText(range)
-      // 只针对template中的内容才提示
+
       const lineText = getLineText(position.line)
       if (!lineText)
         return
@@ -590,7 +589,7 @@ export function activate(context: vscode.ExtensionContext) {
       }
       else if (lineText[range.start.character - 1] === '.') {
         let index = range.start.character - 1
-        while (!/[<\s/]/.test(lineText[index]) && index > 0) {
+        while (!/[<\s/]/.test(lineText[index]) && index >= 0) {
           word = lineText[index] + word
           index--
         }
@@ -615,6 +614,31 @@ export function activate(context: vscode.ExtensionContext) {
         if (!detail)
           return
         return new vscode.Hover(`## Details \n\n${detail}`)
+      }
+      // todo: 优化这里的条件，在 react 中， 也可以减少更多的处理步骤
+      if (getActiveTextEditorLanguageId() === 'vue') {
+        const r = transformVue(code, position)
+        if (r) {
+          if (!r.template)
+            return
+          if (word.includes('.value.') && r.type === 'script' && r.refs.length) {
+            const refsMap = findRefs(r.template)
+            const index = word.indexOf('.value.')
+            const key = word.slice(0, index)
+            const refName = refsMap[key]
+            const targetKey = word.slice(index + '.value.'.length)
+            if (!refName)
+              return
+
+            const target = UiCompletions[refName].methods.find((item: any) => item.label === targetKey)
+
+            if (!target)
+              return
+
+            return target.hover
+          }
+          return
+        }
       }
       const data = optionsComponents.data.map((c: any) => c()).flat()
       if (!data?.length || !word)

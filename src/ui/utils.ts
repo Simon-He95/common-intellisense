@@ -1,5 +1,5 @@
 import * as vscode from 'vscode'
-import { createCompletionItem, createMarkdownString, getActiveTextEditorLanguageId, getLocale, setCommandParams } from '@vscode-use/utils'
+import { createCompletionItem, createHover, createMarkdownString, getActiveTextEditorLanguageId, getLocale, setCommandParams } from '@vscode-use/utils'
 
 export function propsReducer(uiName: string, map: string[], prefix: string, iconData?: { prefix: string, type: string, icons: any[] }, extensionContext?: any) {
   const result: any = {}
@@ -224,7 +224,8 @@ export function propsReducer(uiName: string, map: string[], prefix: string, icon
           detail.push(`- 🚢 ${isZh ? '参数' : 'params'}:    ***\`${params}\`***`)
 
         documentation.appendMarkdown(detail.join('\n\n'))
-        return createCompletionItem({ content: method.name, snippet: `${name.endsWith('()') ? name : `${name}()`}$1`, documentation, type: 1, sortText: 'b', params: uiName })
+        const hover = createHover(documentation)
+        return createCompletionItem({ content: method.name, snippet: `${name.endsWith('()') ? name : `${name}()`}$1`, documentation, type: 1, sortText: 'b', params: uiName, hover })
       }))
     }
 
