@@ -865,7 +865,13 @@ const componentsMap = [
 ]
 
 export function bitsUi0Components() {
-  return componentsReducer(componentsMap, false, '', 'bits-ui', true)
+  return componentsReducer({
+    map: componentsMap,
+    isSeperatorByHyphen: false,
+    prefix: '',
+    lib: 'bits-ui',
+    isReact: true,
+  })
 }
 
 export function shadcnSvelte0() {
@@ -873,5 +879,13 @@ export function shadcnSvelte0() {
 }
 
 export function shadcnSvelte0Components() {
-  return componentsReducer(componentsMap, false, '', 'shadcn-svelte', true, '$lib/components/ui/${name}/index.js', 'as default')
+  return componentsReducer({
+    map: componentsMap,
+    isSeperatorByHyphen: false,
+    prefix: '',
+    lib: 'shadcn-svelte',
+    isReact: true,
+    dynamicLib: '$lib/components/ui/${name}/index.js',
+    importWay: 'as default',
+  })
 }

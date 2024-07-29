@@ -220,5 +220,11 @@ export function nuxtUiPro1Components() {
     [Shortcut, Shortcut.name, `<${Shortcut.name}></${Shortcut.name}`],
     [Tabs, Tabs.name, `<${Tabs.name}></${Tabs.name}`],
   ]
-  return componentsReducer(map, false, 'U', '@nuxt/ui-pro')
+  return componentsReducer({
+    map,
+    isSeperatorByHyphen: false,
+    prefix: 'U',
+    lib: '@nuxt/ui-pro',
+    isReact: false,
+  })
 }

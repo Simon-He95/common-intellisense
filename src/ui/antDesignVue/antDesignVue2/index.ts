@@ -85,5 +85,11 @@ export function antDesignVue2Components() {
     ['backtop', '回到顶部'],
     ['drawer', '抽屉'],
   ]
-  return componentsReducer(map)
+  return componentsReducer({
+    map,
+    isSeperatorByHyphen: true,
+    prefix: 'a',
+    lib: 'ant-design-vue',
+    isReact: false,
+  })
 }

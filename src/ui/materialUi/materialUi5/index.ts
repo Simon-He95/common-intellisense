@@ -417,5 +417,11 @@ const componentsMap = [
   [Zoom, Zoom.name, `<${Zoom.name}></${Zoom.name}`],
 ]
 export function materialUi5Components() {
-  return componentsReducer(componentsMap, false, '', '@mui/material', true)
+  return componentsReducer({
+    map: componentsMap,
+    isSeperatorByHyphen: false,
+    prefix: '',
+    lib: '@mui/material',
+    isReact: true,
+  })
 }

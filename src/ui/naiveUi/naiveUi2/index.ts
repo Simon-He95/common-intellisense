@@ -746,5 +746,11 @@ Definitely Maybe
    :rotate="-15"
 >`],
       ]
-  return componentsReducer(map, true, 'n', 'naive-ui')
+  return componentsReducer({
+    map,
+    isSeperatorByHyphen: true,
+    prefix: 'n',
+    lib: 'naive-ui',
+    isReact: false,
+  })
 }

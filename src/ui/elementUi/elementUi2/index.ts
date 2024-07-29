@@ -1239,5 +1239,11 @@ export function elementUi2Components() {
           '<el-autocomplete></el-autocomplete>',
         ],
       ]
-  return componentsReducer(map, true, 'el', 'element-ui')
+  return componentsReducer({
+    map,
+    isSeperatorByHyphen: true,
+    prefix: 'el',
+    lib: 'element-ui',
+    isReact: false,
+  })
 }

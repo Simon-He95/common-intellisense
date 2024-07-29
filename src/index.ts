@@ -5,7 +5,7 @@ import { addEventListener, createCompletionItem, createMarkdownString, createPos
 import { CreateWebview } from '@vscode-use/createwebview'
 import { parse } from '@vue/compiler-sfc'
 import { createFilter } from '@rollup/pluginutils'
-import { alias, detectSlots, findPkgUI, findRefs, parser, registerCodeLensProviderFn, transformVue } from './utils'
+import { alias, detectSlots, findPkgUI, findRefs, getReactRefsMap, parser, registerCodeLensProviderFn, transformVue } from './utils'
 import UI from './ui'
 import { UINames as UINamesMap, nameMap } from './constants'
 import type { Directives } from './ui/utils'
@@ -185,6 +185,7 @@ export function activate(context: vscode.ExtensionContext) {
           str = `\n  ${str}`
         }
         else {
+          str += '\n'
           pos = createPosition(0, 0)
         }
       }
@@ -626,10 +627,10 @@ export function activate(context: vscode.ExtensionContext) {
             const index = word.indexOf('.value.')
             const key = word.slice(0, index)
             const refName = refsMap[key]
-            const targetKey = word.slice(index + '.value.'.length)
             if (!refName)
               return
 
+            const targetKey = word.slice(index + '.value.'.length)
             const target = UiCompletions[refName].methods.find((item: any) => item.label === targetKey)
 
             if (!target)
@@ -638,6 +639,23 @@ export function activate(context: vscode.ExtensionContext) {
             return target.hover
           }
           return
+        }
+      }
+      else if (getActiveTextEditorLanguageId()?.includes('react')) {
+        if (word.includes('.current.')) {
+          const r = getReactRefsMap()
+          const index = word.indexOf('.current.')
+          const key = word.slice(0, index)
+          const refName = r.refsMap[key]
+          if (!refName)
+            return
+          const targetKey = word.slice(index + '.current.'.length)
+          const target = UiCompletions[refName].methods.find((item: any) => item.label === targetKey)
+
+          if (!target)
+            return
+
+          return target.hover
         }
       }
       const data = optionsComponents.data.map((c: any) => c()).flat()

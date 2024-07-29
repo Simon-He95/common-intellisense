@@ -370,5 +370,11 @@ export function antDesignVue1Components() {
         [AListItem, 'list item'],
         [AListItemMeta, 'List element graph'],
       ]
-  return componentsReducer(map, true, 'a', 'ant-design-vue')
+  return componentsReducer({
+    map,
+    isSeperatorByHyphen: true,
+    prefix: 'a',
+    lib: 'ant-design-vue',
+    isReact: false,
+  })
 }

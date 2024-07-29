@@ -310,5 +310,12 @@ export function nuxtui2Components() {
       `<${UInputMenu.name}></${UInputMenu.name}>`,
     ],
   ]
-  return componentsReducer(map, false, '', '@nuxt/ui')
+
+  return componentsReducer({
+    map,
+    isSeperatorByHyphen: false,
+    prefix: 'U',
+    lib: '@nuxt/ui',
+    isReact: false,
+  })
 }

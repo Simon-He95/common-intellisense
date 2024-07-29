@@ -319,5 +319,11 @@ export function antDesignVue4Components() {
     [Upload, Upload.name, '<a-upload></a-upload>'],
     [Watermark, Watermark.name, '<a-watermark></a-watermark>'],
   ]
-  return componentsReducer(map, true, 'a', 'ant-design-vue')
+  return componentsReducer({
+    map,
+    isSeperatorByHyphen: true,
+    prefix: 'a',
+    lib: 'ant-design-vue',
+    isReact: false,
+  })
 }

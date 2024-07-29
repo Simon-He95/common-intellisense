@@ -364,5 +364,11 @@ export function arcoDesignVue2Components() {
     [WeekPicker, WeekPicker.name, '<a-week-picker></a-week-picker>'],
     [YearPicker, YearPicker.name, '<a-year-picker></a-year-picker>'],
   ]
-  return componentsReducer(map, true, 'a', '@arco-design/web-vue')
+  return componentsReducer({
+    map,
+    isSeperatorByHyphen: true,
+    prefix: 'a',
+    lib: '@arco-design/web-vue',
+    isReact: false,
+  })
 }

@@ -995,5 +995,11 @@ export function elementPlus2Components() {
           '<el-tour-step></el-tour-step>',
         ],
       ]
-  return componentsReducer(map, true, 'el', 'element-plus')
+  return componentsReducer({
+    map,
+    isSeperatorByHyphen: true,
+    prefix: 'el',
+    lib: 'element-plus',
+    isReact: false,
+  })
 }

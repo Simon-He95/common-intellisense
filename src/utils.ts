@@ -193,6 +193,12 @@ function isInPosition(loc: any, position: vscode.Position) {
   return true
 }
 
+export function getReactRefsMap() {
+  const ast = tsParser(getActiveText()!, { jsx: true, loc: true })
+  const children = ast.body
+  return findJsxRefs(children)
+}
+
 export function parserJSX(code: string, position: vscode.Position) {
   try {
     const ast = tsParser(code, { jsx: true, loc: true })
@@ -215,6 +221,7 @@ export function parserJSX(code: string, position: vscode.Position) {
 function jsxDfs(children: any, parent: any, position: vscode.Position) {
   for (const child of children) {
     let { loc, type, openingElement, body: children, argument, declarations, init } = child
+    child.name = openingElement?.name.name
     if (!loc)
       loc = convertPositionToLoc(child)
 
@@ -371,7 +378,10 @@ function jsxDfs(children: any, parent: any, position: vscode.Position) {
 function findJsxRefs(childrens: any, map: any = {}, refs: any = []) {
   for (const child of childrens) {
     let { type, openingElement, body: children, argument, declarations, init, id, expression } = child
-    if (type === 'VariableDeclaration') {
+    if (child.children) {
+      children = child.children
+    }
+    else if (type === 'VariableDeclaration') {
       children = declarations
     }
     else if (type === 'VariableDeclarator') {
@@ -389,6 +399,11 @@ function findJsxRefs(childrens: any, map: any = {}, refs: any = []) {
     }
     else if (type === 'JSXElement') {
       children = child.children
+    }
+    else if (type === 'ExportDefaultDeclaration') {
+      if (child.declaration.type === 'FunctionDeclaration') {
+        children = child.declaration.body.body
+      }
     }
     else if (!children) {
       continue

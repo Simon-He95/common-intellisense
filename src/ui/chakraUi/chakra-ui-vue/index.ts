@@ -13,5 +13,11 @@ export function chakraUiVue0Components() {
   const map = [
     ['Accordion', '手风琴', '<Accordion></Accordion>'],
   ]
-  return componentsReducer(map, false, '', '@chakra-ui/vue')
+  return componentsReducer({
+    map,
+    isSeperatorByHyphen: false,
+    prefix: '',
+    lib: '@chakra-ui/vue',
+    isReact: false,
+  })
 }

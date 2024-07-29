@@ -310,5 +310,11 @@ export function antdMobile5Components() {
     [VirtualInput, VirtualInput.name, `<${VirtualInput.name}></${VirtualInput.name}`],
     [WaterMark, WaterMark.name, `<${WaterMark.name}></${WaterMark.name}`],
   ]
-  return componentsReducer(map, false, '', 'antd-mobile')
+  return componentsReducer({
+    map,
+    isSeperatorByHyphen: false,
+    prefix: '',
+    lib: 'antd-mobile',
+    isReact: true,
+  })
 }

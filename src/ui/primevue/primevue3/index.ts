@@ -577,5 +577,11 @@ export function primevue3Components() {
       '<Terminal></Terminal>',
     ],
   ]
-  return componentsReducer(map, false, '', 'primevue')
+  return componentsReducer({
+    map,
+    isSeperatorByHyphen: false,
+    prefix: '',
+    lib: 'primevue',
+    isReact: false,
+  })
 }

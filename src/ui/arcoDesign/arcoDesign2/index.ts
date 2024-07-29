@@ -361,5 +361,11 @@ export function arcoDesign2Components() {
     [WeekPicker, '日期选择器', '<DatePicker.WeekPicker></DatePicker.WeekPicker>'],
     [YearPicker, '日期选择器', '<DatePicker.YearPicker></DatePicker.YearPicker>'],
   ]
-  return componentsReducer(map, false, '', '@arco-design/web-react', true)
+  return componentsReducer({
+    map,
+    isSeperatorByHyphen: false,
+    prefix: '',
+    lib: '@arco-design/web-react',
+    isReact: true,
+  })
 }
