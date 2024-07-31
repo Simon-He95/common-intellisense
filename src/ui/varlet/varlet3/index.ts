@@ -184,18 +184,18 @@ export function varlet3Components() {
         [breadcrumb, '面包屑', '<var-breadcrumb></var-breadcrumb>'],
         [link, '链接 链接组件,用于页面跳转.', '<var-link>默认链接</var-link>'],
         [cell, '单元格', '<var-cell>这是单元格</var-cell>'],
-        [icon, '图标', `<${hyphenate(icon.name).slice(1)}></${hyphenate(icon.name).slice(1)}>`],
-        [image, '图片', `<${hyphenate(image.name).slice(1)}></${hyphenate(image.name).slice(1)}>`],
-        [avatar, '头像', `<${hyphenate(avatar.name).slice(1)}></${hyphenate(avatar.name).slice(1)}>`],
-        [avatarGroup, '头像', `<${hyphenate(avatarGroup.name).slice(1)}></${hyphenate(avatarGroup.name).slice(1)}>`],
+        [icon, '图标', `<${hyphenate(icon.name)}></${hyphenate(icon.name)}>`],
+        [image, '图片', `<${hyphenate(image.name)}></${hyphenate(image.name)}>`],
+        [avatar, '头像', `<${hyphenate(avatar.name)}></${hyphenate(avatar.name)}>`],
+        [avatarGroup, '头像', `<${hyphenate(avatarGroup.name)}></${hyphenate(avatarGroup.name)}>`],
         [loading, '加载 加载组件,用于数据加载时执行动画.', '<var-loading type="circle" />'],
         [chip, '纸片', '<var-chip>默认纸片</var-chip>'],
-        [badge, '徽标', `<${hyphenate(badge.name).slice(1)}></${hyphenate(badge.name).slice(1)}>`],
+        [badge, '徽标', `<${hyphenate(badge.name)}></${hyphenate(badge.name)}>`],
         [paper, '纸张 创建一个更容易的使用海拔效果和水波效果的容器', '<var-paper :elevation="2" :width="100" :height="100" ripple />'],
         [skeleton, '骨架屏 显示一些带过渡效果的占位元素,优化加载过程.', '<var-skeleton :loading="loading">加载的数据</var-skeleton>'],
         [collapse, '折叠面板 可以折叠/展开的内容区域.', '<var-collapse v-model="value" @change="changeHandle"></varrow>'],
         [collapseItem, '折叠面板 可以折叠/展开的内容区域.', '<var-collapse-item title="标题" name="1">文本</var-collapse-item>'],
-        [collapseTransition, '折叠东校', `<${hyphenate(collapseTransition.name).slice(1)}></${hyphenate(collapseTransition.name).slice(1)}>`],
+        [collapseTransition, '折叠东校', `<${hyphenate(collapseTransition.name)}></${hyphenate(collapseTransition.name)}>`],
         [col, '布局 提供 span 属性设置这一列所占的份数,offset 属性设置这一列偏移的份数.', '<var-col :span="8">span: 8</var-col>'],
         [row, '布局 组件把一行平均划分为 24列 栅格( 24份 )', '<var-row></varrow>'],
         [space, '间隔 组件库提供了 <var-space> 布局的组件,使您更有效率的进行 flex 布局.', '<var-space></var-space'],
@@ -233,7 +233,7 @@ export function varlet3Components() {
           <var-step>步骤4</var-step>
         </var-steps>`],
         [step, '步骤条 引导用户按照流程完成任务的导航条.', '<var-step>步骤1</var-step>'],
-        [watermark, '水印', `<${hyphenate(watermark.name).slice(1)}></${hyphenate(watermark.name).slice(1)}>`],
+        [watermark, '水印', `<${hyphenate(watermark.name)}></${hyphenate(watermark.name)}>`],
         [tabs, '选项卡组', `<var-tabs
         elevation
         color="var(--color-primary)"
@@ -265,13 +265,13 @@ export function varlet3Components() {
           <var-button type="success">知道了</var-button>
         </template>
       </var-result>`],
-        [appBar, '导航栏', `<${hyphenate(appBar.name).slice(1)}></${hyphenate(appBar.name).slice(1)}>`],
-        [bottomNavigation, '底部导航栏', `<${hyphenate(bottomNavigation.name).slice(1)}></${hyphenate(bottomNavigation.name).slice(1)}>`],
-        [bottomNavigationItem, '底部导航栏', `<${hyphenate(bottomNavigationItem.name).slice(1)}></${hyphenate(bottomNavigationItem.name).slice(1)}>`],
+        [appBar, '导航栏', `<${hyphenate(appBar.name)}></${hyphenate(appBar.name)}>`],
+        [bottomNavigation, '底部导航栏', `<${hyphenate(bottomNavigation.name)}></${hyphenate(bottomNavigation.name)}>`],
+        [bottomNavigationItem, '底部导航栏', `<${hyphenate(bottomNavigationItem.name)}></${hyphenate(bottomNavigationItem.name)}>`],
         [indexBar, '索引栏 用于跳转到页面指定位置.', '<var-index-bar duration="300" @change="change"></var-index-bar>'],
-        [backTop, '回到顶部', `<${hyphenate(backTop.name).slice(1)}></${hyphenate(backTop.name).slice(1)}>`],
-        [menuOption, '菜单', `<${hyphenate(menuOption.name).slice(1)}></${hyphenate(menuOption.name).slice(1)}>`],
-        [menuSelect, '菜单', `<${hyphenate(menuSelect.name).slice(1)}></${hyphenate(menuSelect.name).slice(1)}>`],
+        [backTop, '回到顶部', `<${hyphenate(backTop.name)}></${hyphenate(backTop.name)}>`],
+        [menuOption, '菜单', `<${hyphenate(menuOption.name)}></${hyphenate(menuOption.name)}>`],
+        [menuSelect, '菜单', `<${hyphenate(menuSelect.name)}></${hyphenate(menuSelect.name)}>`],
         [actionSheet, '动作面板', `<var-action-sheet
           :actions="actions"
           v-model:show="show"
@@ -298,9 +298,9 @@ export function varlet3Components() {
         [tooltip, '提示 当元素点击或悬停时显示一个提示,通过控制弹出位置和偏移量改变提示的显示位置.', `<var-tooltip content="Tooltip">
       <var-button type="primary">基本使用</var-button>
     </var-tooltip>`],
-        [floatingPanel, '浮动面板', `<${hyphenate(floatingPanel.name).slice(1)}></${hyphenate(floatingPanel.name).slice(1)}>`],
-        [loadingBar, '加载条', `<${hyphenate(loadingBar.name).slice(1)}></${hyphenate(loadingBar.name).slice(1)}>`],
-        [option, '下拉选项', `<${hyphenate(option.name).slice(1)}></${hyphenate(option.name).slice(1)}>`],
+        [floatingPanel, '浮动面板', `<${hyphenate(floatingPanel.name)}></${hyphenate(floatingPanel.name)}>`],
+        [loadingBar, '加载条', `<${hyphenate(loadingBar.name)}></${hyphenate(loadingBar.name)}>`],
+        [option, '下拉选项', `<${hyphenate(option.name)}></${hyphenate(option.name)}>`],
         [radio, '单选框', '<var-radio v-model="value">当前的值: {{ value }}</var-radio>'],
         [radioGroup, '单选框组', `<var-radio-group v-model="value">
           <var-radio :checked-value="0">吃饭</var-radio>
@@ -341,7 +341,7 @@ export function varlet3Components() {
         [rate, '评分', '<var-rate v-model="score" :count="8"/>'],
         [slider, '滑块 用于在给定范围内取值.', '<var-slider v-model="value" />'],
         [uploader, '文件上传 提供了文件读取、图片/视频预览能力. 通过监听 after-read 事件获取文件上传服务器.', '<var-uploader v-model="files" @after-read="handleAfterRead"/>'],
-        [styleProvider, styleProvider.name, `<${hyphenate(styleProvider.name).slice(1)}></${hyphenate(styleProvider.name).slice(1)}>`],
+        [styleProvider, styleProvider.name, `<${hyphenate(styleProvider.name)}></${hyphenate(styleProvider.name)}>`],
       ]
     : [
         [button, 'Button', '<var-button>Default button</var-button>'],
@@ -355,18 +355,18 @@ export function varlet3Components() {
         [breadcrumb, 'breadcrumb', '<var-breadcrumb></var-breadcrumb>'],
         [link, 'Link link component, used for page jumps. ', '<var-link>Default link</var-link>'],
         [cell, 'cell', '<var-cell>This is the cell</var-cell>'],
-        [icon, icon.name, `<${hyphenate(icon.name).slice(1)}></${hyphenate(icon.name).slice(1)}>`],
-        [image, image.name, `<${hyphenate(image.name).slice(1)}></${hyphenate(image.name).slice(1)}>`],
-        [avatar, avatar.name, `<${hyphenate(avatar.name).slice(1)}></${hyphenate(avatar.name).slice(1)}>`],
-        [avatarGroup, avatarGroup.name, `<${hyphenate(avatarGroup.name).slice(1)}></${hyphenate(avatarGroup.name).slice(1)}>`],
+        [icon, icon.name, `<${hyphenate(icon.name)}></${hyphenate(icon.name)}>`],
+        [image, image.name, `<${hyphenate(image.name)}></${hyphenate(image.name)}>`],
+        [avatar, avatar.name, `<${hyphenate(avatar.name)}></${hyphenate(avatar.name)}>`],
+        [avatarGroup, avatarGroup.name, `<${hyphenate(avatarGroup.name)}></${hyphenate(avatarGroup.name)}>`],
         [loading, 'Loading loading component, used to perform animation when data is loaded. ', '<var-loading type="circle" />'],
         [chip, 'Chip', '<var-chip>default paper</var-chip>'],
-        [badge, badge.name, `<${hyphenate(badge.name).slice(1)}></${hyphenate(badge.name).slice(1)}>`],
+        [badge, badge.name, `<${hyphenate(badge.name)}></${hyphenate(badge.name)}>`],
         [paper, 'Paper creates a container that makes it easier to use elevation and ripple effects', '<var-paper :elevation="2" :width="100" :height="100" ripple /> '],
         [skeleton, 'Skeleton screen displays some placeholder elements with transition effects to optimize the loading process. ', '<var-skeleton :loading="loading">Loading data</var-skeleton>'],
         [collapse, 'Collapse panel A content area that can be collapsed/expanded. ', '<var-collapse v-model="value" @change="changeHandle"></varrow>'],
         [collapseItem, 'Collapse panel A content area that can be collapsed/expanded. ', '<var-collapse-item title="title" name="1">Text</var-collapse-item>'],
-        [collapseTransition, collapseTransition.name, `<${hyphenate(collapseTransition.name).slice(1)}></${hyphenate(collapseTransition.name).slice(1)}>`],
+        [collapseTransition, collapseTransition.name, `<${hyphenate(collapseTransition.name)}></${hyphenate(collapseTransition.name)}>`],
         [col, 'Layout provides the span attribute to set the number of shares occupied by this column, and the offset attribute sets the number of shares offset by this column. ', '<var-col :span="8">span: 8</var-col>'],
         [row, 'The layout component divides a row evenly into a 24-column grid (24 copies)', '<var-row></varrow>'],
         [space, 'Spacer The component library provides <var-space> layout components, allowing you to perform flex layout more efficiently. ', '<var-space></var-space'],
@@ -425,7 +425,7 @@ export function varlet3Components() {
            Next, let me introduce myself. Even though I'm a cowboy, I only order milk at the bar. Why not drink beer, because beer is harmful to the body.
          </var-tab-item>
       </var-tabs-items`],
-        [watermark, watermark.name, `<${hyphenate(watermark.name).slice(1)}></${hyphenate(watermark.name).slice(1)}>`],
+        [watermark, watermark.name, `<${hyphenate(watermark.name)}></${hyphenate(watermark.name)}>`],
         [result, 'Result is used to display the results to the user. ', `<var-result
       type="success"
       title="success"
@@ -435,14 +435,14 @@ export function varlet3Components() {
         <var-button type="success">Got it</var-button>
       </template>
    </var-result>`],
-        [appBar, appBar.name, `<${hyphenate(appBar.name).slice(1)}></${hyphenate(appBar.name).slice(1)}>`],
-        [bottomNavigation, bottomNavigation.name, `<${hyphenate(bottomNavigation.name).slice(1)}></${hyphenate(bottomNavigation.name).slice(1)}>`],
-        [bottomNavigationItem, bottomNavigationItem.name, `<${hyphenate(bottomNavigationItem.name).slice(1)}></${hyphenate(bottomNavigationItem.name).slice(1)}>`],
+        [appBar, appBar.name, `<${hyphenate(appBar.name)}></${hyphenate(appBar.name)}>`],
+        [bottomNavigation, bottomNavigation.name, `<${hyphenate(bottomNavigation.name)}></${hyphenate(bottomNavigation.name)}>`],
+        [bottomNavigationItem, bottomNavigationItem.name, `<${hyphenate(bottomNavigationItem.name)}></${hyphenate(bottomNavigationItem.name)}>`],
         [indexBar, 'The index bar is used to jump to the specified location on the page. ', '<var-index-bar duration="300" @change="change"></var-index-bar>'],
-        [backTop, backTop.name, `<${hyphenate(backTop.name).slice(1)}></${hyphenate(backTop.name).slice(1)}>`],
-        [floatingPanel, floatingPanel.name, `<${hyphenate(floatingPanel.name).slice(1)}></${hyphenate(floatingPanel.name).slice(1)}>`],
-        [menuOption, menuOption.name, `<${hyphenate(menuOption.name).slice(1)}></${hyphenate(menuOption.name).slice(1)}>`],
-        [menuSelect, menuSelect.name, `<${hyphenate(menuSelect.name).slice(1)}></${hyphenate(menuSelect.name).slice(1)}>`],
+        [backTop, backTop.name, `<${hyphenate(backTop.name)}></${hyphenate(backTop.name)}>`],
+        [floatingPanel, floatingPanel.name, `<${hyphenate(floatingPanel.name)}></${hyphenate(floatingPanel.name)}>`],
+        [menuOption, menuOption.name, `<${hyphenate(menuOption.name)}></${hyphenate(menuOption.name)}>`],
+        [menuSelect, menuSelect.name, `<${hyphenate(menuSelect.name)}></${hyphenate(menuSelect.name)}>`],
         [actionSheet, 'Action Panel', `<var-action-sheet
          :actions="actions"
          v-model:show="show"
@@ -468,8 +468,8 @@ export function varlet3Components() {
 <var-button type="primary">Basic use</var-button>
 </var-tooltip>`],
         [pullRefresh, 'Pull-refresh is used to provide interactive operations of pull-down refresh', ' <var-pull-refresh v-model="isRefresh" @refresh="refresh"></var-pull-refresh >'],
-        [loadingBar, 'Loading Bar', `<${hyphenate(loadingBar.name).slice(1)}></${hyphenate(loadingBar.name).slice(1)}>`],
-        [option, option.name, `<${hyphenate(option.name).slice(1)}></${hyphenate(option.name).slice(1)}>`],
+        [loadingBar, 'Loading Bar', `<${hyphenate(loadingBar.name)}></${hyphenate(loadingBar.name)}>`],
+        [option, option.name, `<${hyphenate(option.name)}></${hyphenate(option.name)}>`],
         [radio, 'Radio button', '<var-radio v-model="value">Current value: {{ value }}</var-radio>'],
         [radioGroup, 'Radio button group', `<var-radio-group v-model="value">
          <var-radio :checked-value="0">Eat</var-radio>
@@ -510,7 +510,7 @@ export function varlet3Components() {
         [rate, 'score', '<var-rate v-model="score" :count="8"/>'],
         [slider, 'Slider is used to take a value within a given range. ', '<var-slider v-model="value" />'],
         [uploader, 'File upload provides file reading and image/video preview capabilities. Obtain the file upload server by listening to the after-read event. ', '<var-uploader v-model="files" @after-read="handleAfterRead"/>'],
-        [styleProvider, styleProvider.name, `<${hyphenate(styleProvider.name).slice(1)}></${hyphenate(styleProvider.name).slice(1)}>`],
+        [styleProvider, styleProvider.name, `<${hyphenate(styleProvider.name)}></${hyphenate(styleProvider.name)}>`],
       ]
   return componentsReducer({
     map,

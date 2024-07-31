@@ -1,7 +1,7 @@
 import fsp from 'node:fs/promises'
 import path from 'node:path'
 import * as vscode from 'vscode'
-import { addEventListener, createCompletionItem, createMarkdownString, createPosition, createRange, createSelect, getActiveText, getActiveTextEditor, getActiveTextEditorLanguageId, getConfiguration, getCurrentFileUrl, getLineText, getLocale, getPosition, getSelection, message, openExternalUrl, registerCommand, registerCompletionItemProvider, setConfiguration, setCopyText, updateText } from '@vscode-use/utils'
+import { addEventListener, createCompletionItem, createHover, createMarkdownString, createPosition, createRange, createSelect, getActiveText, getActiveTextEditor, getActiveTextEditorLanguageId, getConfiguration, getCurrentFileUrl, getLineText, getLocale, getPosition, getSelection, message, openExternalUrl, registerCommand, registerCompletionItemProvider, setConfiguration, setCopyText, updateText } from '@vscode-use/utils'
 import { CreateWebview } from '@vscode-use/createwebview'
 import { parse } from '@vue/compiler-sfc'
 import { createFilter } from '@rollup/pluginutils'
@@ -588,7 +588,8 @@ export function activate(context: vscode.ExtensionContext) {
           index++
         }
       }
-      else if (lineText[range.start.character - 1] === '.') {
+
+      if (lineText[range.start.character - 1] === '.') {
         let index = range.start.character - 1
         while (!/[<\s/]/.test(lineText[index]) && index >= 0) {
           word = lineText[index] + word
@@ -630,6 +631,19 @@ export function activate(context: vscode.ExtensionContext) {
             if (!refName)
               return
 
+            if (lineText.slice(range.start.character, range.end.character) === 'value') {
+              // hover .value.区域 提示所有方法
+              const gorupMd = createMarkdownString()
+              UiCompletions[refName].methods.forEach((m: any, i: number) => {
+                let content = m.documentation.value
+                if (i !== 0) {
+                  content = content.replace(/##[^\]\n]*[\]\n]/, '')
+                }
+                gorupMd.appendMarkdown(content)
+                gorupMd.appendMarkdown('\n')
+              })
+              return createHover(gorupMd)
+            }
             const targetKey = word.slice(index + '.value.'.length)
             const target = UiCompletions[refName].methods.find((item: any) => item.label === targetKey)
 
@@ -649,6 +663,20 @@ export function activate(context: vscode.ExtensionContext) {
           const refName = r.refsMap[key]
           if (!refName)
             return
+
+          if (lineText.slice(range.start.character, range.end.character) === 'current') {
+            // hover .value.区域 提示所有方法
+            const gorupMd = createMarkdownString()
+            UiCompletions[refName].methods.forEach((m: any, i: number) => {
+              let content = m.documentation.value
+              if (i !== 0) {
+                content = content.replace(/##[^\]\n]*[\]\n]/, '')
+              }
+              gorupMd.appendMarkdown(content)
+              gorupMd.appendMarkdown('\n')
+            })
+            return createHover(gorupMd)
+          }
           const targetKey = word.slice(index + '.current.'.length)
           const target = UiCompletions[refName].methods.find((item: any) => item.label === targetKey)
 
