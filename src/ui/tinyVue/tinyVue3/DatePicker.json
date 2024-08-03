@@ -2,7 +2,7 @@
   "name": "TinyDatePicker",
   "props": {
     "align": {
-      "default": "'left'",
+      "default": "left",
       "value": "",
       "type": "left / center / right",
       "description": "The alignment of the date selection panel and the input box",
@@ -51,14 +51,14 @@
       "description_zh": "文本框可输入"
     },
     "end-placeholder": {
-      "default": "''",
+      "default": "",
       "value": "",
       "type": "string",
       "description": "The placeholder content for the end date when the scope is selected",
       "description_zh": "范围选择时结束日期的占位内容"
     },
     "format": {
-      "default": "'yyyy-MM-dd'",
+      "default": "yyyy-MM-dd",
       "value": "",
       "type": "string",
       "description": "The format that appears in the input box",
@@ -79,7 +79,7 @@
       "description_zh": "默认值为 false，设置为 true 时切换系统默认时区，时间依然显示为东八区时间，适用场景为海外地区显示东八区时间"
     },
     "label": {
-      "default": "''",
+      "default": "",
       "value": "",
       "type": "string",
       "description": "When the shape=\"filter\" property is set, it represents the title displayed in filter mode, and a separate label property allows the label to be placed at the beginning of the component",
@@ -90,10 +90,11 @@
       "value": "",
       "type": "Date | string | number | Array",
       "description": "Binding value",
-      "description_zh": "绑定值"
+      "description_zh": "绑定值",
+      "required": true
     },
     "name": {
-      "default": "''",
+      "default": "",
       "value": "",
       "type": "string",
       "description": "Native attributes",
@@ -107,11 +108,12 @@
       "description_zh": "配置部分禁用、快捷选项等，包含 firstDayOfWeek / disabledDate / onPick / shortcuts 属性，详细用法可参考 IPickerOptions 类型声明"
     },
     "placeholder": {
-      "default": "''",
+      "default": "",
       "value": "",
       "type": "string",
       "description": "Placeholder content when not scoped",
-      "description_zh": "非范围选择时的占位内容"
+      "description_zh": "非范围选择时的占位内容",
+      "required": true
     },
     "popper-append-to-body": {
       "default": "true",
@@ -128,7 +130,7 @@
       "description_zh": "为 DatePicker 下拉弹框添加的 class 类名"
     },
     "range-separator": {
-      "default": "'-'",
+      "default": "-",
       "value": "",
       "type": "string",
       "description": "Separator when selecting a range",
@@ -170,7 +172,7 @@
       "description_zh": "输入框尺寸"
     },
     "start-placeholder": {
-      "default": "''",
+      "default": "",
       "value": "",
       "type": "string",
       "description": "The placeholder content for the start date when the range is selected",
@@ -198,7 +200,7 @@
       "description_zh": "通过箭头按钮控制时间选择，当 type 为 datetime、datetimerange 时使用，默认为 通过鼠标滚轮滚动选择时间"
     },
     "time-format": {
-      "default": "'HH:mm:ss'",
+      "default": "HH:mm:ss",
       "value": "",
       "type": "string",
       "description": "If the custom format cannot automatically distinguish between time and date, this option can be configured to help determine the format",
@@ -212,7 +214,7 @@
       "description_zh": "过滤器模式下显示的提示信息"
     },
     "type": {
-      "default": "'date'",
+      "default": "date",
       "value": "",
       "type": "IType",
       "description": "Display type, the optional value of which can be found by referring to the IType type declaration",

@@ -6,6 +6,7 @@ import Anchor from './Anchor.json'
 import AutoComplete from './AutoComplete.json'
 import Badge from './Badge.json'
 import Breadcrumb from './Breadcrumb.json'
+import BreadcrumbItem from './BreadcrumbItem.json'
 import BulletinBoard from './BulletinBoard.json'
 import Button from './Button.json'
 import ButtonGroup from './ButtonGroup.json'
@@ -103,6 +104,8 @@ import UserContact from './UserContact.json'
 import UserHead from './UserHead.json'
 import Watermark from './Watermark.json'
 import Wizard from './Wizard.json'
+import Option from './Option.json'
+import BaseSelect from './BaseSelect.json'
 
 const map: any = [
   ActionMenu,
@@ -110,7 +113,9 @@ const map: any = [
   Anchor,
   AutoComplete,
   Badge,
+  BaseSelect,
   Breadcrumb,
+  BreadcrumbItem,
   BulletinBoard,
   Button,
   ButtonGroup,
@@ -173,6 +178,7 @@ const map: any = [
   PopUpload,
   Popover,
   Progress,
+  Option,
   QrCode,
   Radio,
   RadioButton,
@@ -219,7 +225,9 @@ const componentsMap = [
   [Anchor, Anchor.name, `<tiny-anchor></tiny-anchor>`],
   [AutoComplete, AutoComplete.name, `<tiny-auto-complete></tiny-auto-complete>`],
   [Badge, Badge.name, `<tiny-badge></tiny-badge>`],
+  [BaseSelect, BaseSelect.name, `<tiny-base-select></tiny-base-select>`],
   [Breadcrumb, Breadcrumb.name, `<tiny-breadcrumb></tiny-breadcrumb>`],
+  [BreadcrumbItem, BreadcrumbItem.name, `<tiny-breadcrumb-item></tiny-breadcrumb-item>`],
   [BulletinBoard, BulletinBoard.name, `<tiny-bulletin-board></tiny-bulletin-board>`],
   [Button, Button.name, `<tiny-button></tiny-button>`],
   [ButtonGroup, ButtonGroup.name, `<tiny-button-group></tiny-button-group>`],
@@ -276,6 +284,7 @@ const componentsMap = [
   [Modal, Modal.name, `<tiny-modal></tiny-modal>`],
   [NavMenu, NavMenu.name, `<tiny-nav-menu></tiny-nav-menu>`],
   [Numeric, Numeric.name, `<tiny-numeric></tiny-numeric>`],
+  [Option, Option.name, `<tiny-option></tiny-option>`],
   [Pager, Pager.name, `<tiny-pager></tiny-pager>`],
   [PopConfirm, PopConfirm.name, `<tiny-pop-confirm></tiny-pop-confirm>`],
   [PopEditor, PopEditor.name, `<tiny-pop-editor></tiny-pop-editor>`],

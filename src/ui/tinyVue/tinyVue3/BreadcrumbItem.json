@@ -1,0 +1,59 @@
+{
+  "name": "TinyBreadcrumbItem",
+  "props": {
+    "label": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "Defines the display text for breadcrumbs",
+      "description_zh": "定义面包屑的显示文本"
+    },
+    "replace": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "When using to for route hopping, enabling replace will not add new records to the browser history",
+      "description_zh": "在使用 to 进行路由跳转时，启用 replace 将不会向 浏览器历史记录 history 里添加新记录"
+    },
+    "size": {
+      "default": "medium",
+      "value": "",
+      "type": "string",
+      "description": "Set the breadcrumb size",
+      "description_zh": "设置面包屑尺寸大小"
+    },
+    "to": {
+      "default": "--",
+      "value": "",
+      "type": "string | IOptionsItemTo",
+      "description": "路由跳转对象,同 vue-router 的 to",
+      "description_zh": "路由跳转对象,同 vue-router 的 to",
+      "required": true
+    }
+  },
+  "link": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/breadcrumb",
+  "link_zh": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/breadcrumb",
+  "typeDetail": {
+    "IOptionsItemTo": "interface IOptionsItemTo {\n  path: string\n}",
+    "IOptionsItem": "interface IOptionsItem {\n  label?: string\n  to?: IOptionsItemTo\n  replace?: boolean\n  [customProp: string]: string\n}",
+    "ISelectValue": "interface ISelectValue {\n  event: Event\n  link: HTMLElement\n  option: IOptionsItem\n  replace: boolean\n  to?: IOptionsItemTo\n}"
+  },
+  "events": [
+    {
+      "name": "select",
+      "description": "点击 BreadcrumbItem 时触发",
+      "description_zh": "点击 BreadcrumbItem 时触发",
+      "params": "(value: ISelectValue) => void",
+      "value": ""
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "default",
+      "description": "Default slot",
+      "description_zh": "默认插槽"
+    }
+  ],
+  "filename": "BreadcrumbItem"
+}

@@ -1,40 +1,377 @@
 {
   "name": "TinySelect",
   "props": {
+    "all-text": {
+      "default": "--",
+      "value": "",
+      "type": "string ",
+      "description": "When you display all in the drop-down drop-down, you can customize all the displayed text. If not specified, All is displayed by default",
+      "description_zh": "当下拉中显示全部时，自定义全部的显示文本。不指定时，则默认显示\"全部\""
+    },
+    "allow-copy": {
+      "default": "false",
+      "value": "",
+      "type": "boolean ",
+      "description": "Whether to copy the contents of the input box is applicable to single-select searchable scenarios",
+      "description_zh": "是否允许复制输入框的内容，适用单选可搜索场景"
+    },
+    "allow-create": {
+      "default": "false",
+      "value": "",
+      "type": "boolean ",
+      "description": "Whether to allow the creation of new entries needs to be used in conjunction with filterables. If the search field is not in the list of options, it can be created as a new option",
+      "description_zh": "是否允许创建新条目，需配合 filterable 使用。若搜索字段不在选项列表中，可创建为新的选项"
+    },
+    "autocomplete": {
+      "default": "off",
+      "value": "",
+      "type": "string ",
+      "description": "The native autocomplete property of the input box",
+      "description_zh": "输入框的原生 autocomplete 属性"
+    },
+    "cache-op": {
+      "default": "<pre>\n{\n  key: '',\n  sortBy: 'frequency',\n  sort: 'desc',\n  dataKey: 'value',\n  highlightClass: \n  'memorize-highlight',\n  highlightNum: Infinity,\n  cacheNum: Infinity,\n  serialize: JSON.stringify\n  deserialize: JSON.parse\n}\n</pre>",
+      "value": "",
+      "type": "ICacheOp ",
+      "description": "Enable the configuration of the local cache option (continue to store sorting based on the number of times the user clicked on the selection, the last time to save the selection)",
+      "description_zh": "启用本地缓存已选项的功能配置（根据用户点击选择的次数、最后时间继续存储排序)"
+    },
+    "clear-no-match-value": {
+      "default": "false",
+      "value": "",
+      "type": "boolean ",
+      "description": "Whether or not auto-clear the value of the match could not be found in options",
+      "description_zh": "是否自动清空无法在 options 中找到匹配项的值"
+    },
+    "clearable": {
+      "default": "false",
+      "value": "",
+      "type": "boolean ",
+      "description": "Whether to enable the one-click clearing function",
+      "description_zh": "是否启用一键清除的功能"
+    },
+    "click-expend": {
+      "default": "false",
+      "value": "",
+      "type": "boolean ",
+      "description": "Click to expand or collapse the infully displayed option. For multi-select only",
+      "description_zh": "点击可展开或收起显示不全的选项。仅用于多选"
+    },
+    "collapse-tags": {
+      "default": "false",
+      "value": "",
+      "type": "boolean ",
+      "description": "Whether to collapse multiple labels. Only multi-select is applicable",
+      "description_zh": "是否将多个标签折叠显示。仅适用多选"
+    },
+    "copyable": {
+      "default": "false",
+      "value": "",
+      "type": "boolean ",
+      "description": "Whether to enable the one-click replication feature. Click the copy button to copy the text content of all tags with one click and separate them with commas, which is only applicable to multiple selection",
+      "description_zh": "是否启用一键复制的功能。点击复制按钮一键复制所有标签的文本内容并以逗号分隔，仅适用于多选"
+    },
+    "default-first-option": {
+      "default": "false",
+      "value": "",
+      "type": "boolean ",
+      "description": "Whether to enable the ability to press Enter to select the first match. Requires use with filterable or remote",
+      "description_zh": "是否启用按 Enter 键选择第一个匹配项的功能。需配合 filterable 或 remote 使用"
+    },
     "disabled": {
       "default": "false",
       "value": "",
-      "type": "boolean",
-      "description": "option whether to disable it",
-      "description_zh": "选项是否禁用"
+      "type": "boolean ",
+      "description": "Whether to disable or not",
+      "description_zh": "是否禁用"
     },
-    "icon": {
+    "dropdown-icon": {
       "default": "--",
       "value": "",
-      "type": "Component",
-      "description": "Customize the icons of the options",
-      "description_zh": "自定义选项的图标"
+      "type": "Component ",
+      "description": "Customize the drop-down icon",
+      "description_zh": "自定义下拉图标"
     },
-    "label": {
+    "dropdown-style": {
       "default": "--",
       "value": "",
-      "type": "string",
-      "description": "The display text for the option",
-      "description_zh": "选项的显示文本"
+      "type": "String ",
+      "description": "Customize the drop-down option style",
+      "description_zh": "自定义下拉选项样式"
     },
-    "required": {
+    "filter-method": {
+      "default": "--",
+      "value": "",
+      "type": "(query: string) => void ",
+      "description": "Customize the filtering method",
+      "description_zh": "自定义过滤方法"
+    },
+    "filterable": {
       "default": "false",
       "value": "",
-      "type": "boolean",
-      "description": "Whether the option is mandatory",
-      "description_zh": "选项是否必选"
+      "type": "boolean ",
+      "description": "Whether it is searchable",
+      "description_zh": "是否可搜索"
     },
-    "value": {
+    "grid-op": {
       "default": "--",
       "value": "",
-      "type": "string",
-      "description": "The value of the option",
-      "description_zh": "选项的值"
+      "type": "IGridOption ",
+      "description": "When you drop down a table, the configuration of the built-in table is the same as that of the Grid component. It needs to be used in conjunction with the render-type attribute",
+      "description_zh": "下拉表格时，内置表格的配置，用法同 Grid 组件。需结合 render-type 属性使用"
+    },
+    "init-label": {
+      "default": "--",
+      "value": "",
+      "type": "string ",
+      "description": "Use the <code>init-label</code> property to set the initialized <code>label </code>value to be displayed when remote search or nested sloth load data is not obtained.",
+      "description_zh": "通过 <code>init-label</code> 属性设置远程搜索或者嵌套树懒加载数据未获取到时显示的初始化 <code>label </code>值。"
+    },
+    "input-box-type": {
+      "default": "input",
+      "value": "",
+      "type": "input / underline ",
+      "description": "The type of display of the input box",
+      "description_zh": "输入框的显示类型"
+    },
+    "is-drop-inherit-width": {
+      "default": "false",
+      "value": "",
+      "type": "boolean ",
+      "description": "Check whether the width of the drop-down box is the same as that of the input box. By default, when the width of the input box is exceeded, the content is stretched out",
+      "description_zh": "下拉弹框的宽度是否跟输入框保持一致。默认超出输入框宽度时由内容撑开"
+    },
+    "loading": {
+      "default": "false",
+      "value": "",
+      "type": "boolean ",
+      "description": "Whether or not it is loading, it is applicable to remote search scenarios",
+      "description_zh": "是否加载中，适用于远程搜索场景"
+    },
+    "loading-text": {
+      "default": "加载中",
+      "value": "",
+      "type": "string ",
+      "description": "The text that is displayed when loaded remotely",
+      "description_zh": "远程加载时显示的文本"
+    },
+    "max-visible-rows": {
+      "default": "1",
+      "value": "",
+      "type": "number ",
+      "description": "The default maximum number of rows for multiple rows is automatically hidden",
+      "description_zh": "多行默认最大显示行数，超出后选项自动隐藏"
+    },
+    "v-model": {
+      "default": "--",
+      "value": "",
+      "type": "string | number | Array<string|number> ",
+      "description": "Binding value",
+      "description_zh": "绑定值",
+      "required": true
+    },
+    "multiple": {
+      "default": "false",
+      "value": "",
+      "type": "boolean ",
+      "description": "Whether multiple options are allowed",
+      "description_zh": "是否允许选择多个选项"
+    },
+    "multiple-limit": {
+      "default": "0",
+      "value": "",
+      "type": "number ",
+      "description": "The maximum number of items that can be selected when multiple selections is 0 by default",
+      "description_zh": "多选时最多可选择的个数，默认为 0 不限制"
+    },
+    "name": {
+      "default": "--",
+      "value": "",
+      "type": "string ",
+      "description": "输入框的原生 name 属性",
+      "description_zh": "输入框的原生 name 属性"
+    },
+    "no-data-text": {
+      "default": "暂无相关数据",
+      "value": "",
+      "type": "string ",
+      "description": "The text that appears when the picklist is empty, can also be set using the empty slot",
+      "description_zh": "选项列表为空时显示的文本，也可以使用 empty 插槽设置"
+    },
+    "no-match-text": {
+      "default": "无匹配数据",
+      "value": "",
+      "type": "string ",
+      "description": "The text that is displayed when the search criteria do not match, can also be set using the empty slot",
+      "description_zh": "搜索条件无匹配时显示的文本，也可以使用 empty 插槽设置"
+    },
+    "options": {
+      "default": "--",
+      "value": "",
+      "type": "IOption[] ",
+      "description": "Option list configuration, you don't need to configure tiny-option after use",
+      "description_zh": "选项列表配置，使用后不需要再配置 tiny-option"
+    },
+    "placeholder": {
+      "default": "请选择",
+      "value": "",
+      "type": "string ",
+      "description": "Placeholders",
+      "description_zh": "占位符"
+    },
+    "placement": {
+      "default": "bottom-start",
+      "value": "",
+      "type": "IPlacement ",
+      "description": "The drop-down pop-up box is relative to the pop-up position of the trigger source",
+      "description_zh": "下拉弹框相对于触发源的弹出位置"
+    },
+    "popper-append-to-body": {
+      "default": "true",
+      "value": "",
+      "type": "boolean ",
+      "description": "Whether to insert the DOM element of the popover box into the body element",
+      "description_zh": "是否将弹出框的 dom 元素插入至 body 元素"
+    },
+    "popper-class": {
+      "default": "--",
+      "value": "",
+      "type": "string ",
+      "description": "Customize the class name of the drop-down box to customize the style",
+      "description_zh": "自定义下拉框的类名，用于自定义样式"
+    },
+    "remote": {
+      "default": "false",
+      "value": "",
+      "type": "boolean ",
+      "description": "Whether it is a remote search",
+      "description_zh": "是否为远程搜索"
+    },
+    "remote-method": {
+      "default": "--",
+      "value": "",
+      "type": "(query:string) => void ",
+      "description": "Methods of remote search",
+      "description_zh": "远程搜索的方法"
+    },
+    "render-type": {
+      "default": "--",
+      "value": "",
+      "type": "tree / grid ",
+      "description": "渲染为下拉表格或下拉树,需结合 grid-op / tree-op 使用",
+      "description_zh": "渲染为下拉表格或下拉树,需结合 grid-op / tree-op 使用"
+    },
+    "reserve-keyword": {
+      "default": "false",
+      "value": "",
+      "type": "boolean ",
+      "description": "If you select multiple searches, whether to retain the current search terms even after selecting an option",
+      "description_zh": "多选可搜索时，是否在选中一个选项后仍然保留当前的搜索关键词"
+    },
+    "searchable": {
+      "default": "false",
+      "value": "",
+      "type": "boolean ",
+      "description": "Whether to enable drop-down panel search",
+      "description_zh": "是否启用下拉面板搜索"
+    },
+    "show-all-text-tag": {
+      "default": "false",
+      "value": "",
+      "type": "boolean ",
+      "description": "After specifying that the multi-select mode is all selected, in the input box, whether to display only the tag specified by all-text. The default value is <code>false</code>, and all options are cycled through the input box.",
+      "description_zh": "指定多选模式全选后，在输入框中，是否只显示 all-text 指定的Tag。 默认值为 <code>false</code>，所有选项循环显示在输入框。"
+    },
+    "show-alloption": {
+      "default": "true",
+      "value": "",
+      "type": "boolean ",
+      "description": "Whether or not to show the \"Select All\" option",
+      "description_zh": "是否展示 “全选” 选项"
+    },
+    "show-empty-image": {
+      "default": "false",
+      "value": "",
+      "type": "boolean ",
+      "description": "Whether to display an empty data image",
+      "description_zh": "是否显示空数据图片"
+    },
+    "show-limit-text": {
+      "default": "false",
+      "value": "",
+      "type": "boolean ",
+      "description": "When the multi-check box is displayed, when the number of records is restricted, the number of records and the proportion of the total number of restricted records are selected. This property takes precedence over the <code>show-proportion</code> property.",
+      "description_zh": "是否展示多选框开启多选限制选择数量时，选中条数和限制总条数的占比的文字提示。 该属性的优先级大于<code>show-proportion</code> 属性。"
+    },
+    "show-proportion": {
+      "default": "false",
+      "value": "",
+      "type": "boolean ",
+      "description": "Whether to display a text prompt that indicates the proportion of the number of records and the total number of records in the multi-check box",
+      "description_zh": "是否展示多选框选中条数和总条数的占比的文字提示"
+    },
+    "size": {
+      "default": "--",
+      "value": "",
+      "type": "medium / small / mini ",
+      "description": "Enter the size of the field.",
+      "description_zh": "输入框尺寸。"
+    },
+    "tag-selectable": {
+      "default": "false",
+      "value": "",
+      "type": "boolean ",
+      "description": "Whether the label in the input box can be copied by mouse selection",
+      "description_zh": "输入框中的标签是否可通过鼠标选中复制"
+    },
+    "tag-type": {
+      "default": "--",
+      "value": "",
+      "type": "success / info / warning / danger ",
+      "description": "Label type, only multi-select is applicable. When using the Aurora theme, set the property to info",
+      "description_zh": "标签类型，仅多选适用。使用 aurora 主题时设置该属性为 info"
+    },
+    "text-field": {
+      "default": "label",
+      "value": "",
+      "type": "string ",
+      "description": "Displays the value field",
+      "description_zh": "显示值字段"
+    },
+    "text-split": {
+      "default": ",",
+      "value": "",
+      "type": "string ",
+      "description": "Customize the separator of the copied text, which needs to be used in conjunction with the copyable attribute",
+      "description_zh": "自定义复制文本的分隔符，需结合 copyable 属性使用"
+    },
+    "top-create": {
+      "default": "--",
+      "value": "",
+      "type": "boolean ",
+      "description": "Whether to display a new button at the top of the drop-down box, clicking the button will throw a top-create-click event, and you can customize some behaviors in the event",
+      "description_zh": "是否显示下拉框顶部新增按钮，点击按钮会抛出一个 top-create-click 事件，可以在事件中自定义一些行为"
+    },
+    "tree-op": {
+      "default": "--",
+      "value": "",
+      "type": "ITreeOption ",
+      "description": "When you drop down a tree, the configuration of the built-in tree component is the same as that of the tree component. It needs to be used in conjunction with the render-type attribute",
+      "description_zh": "下拉树时，内置树组件的配置，用法同 Tree 组件。需结合 render-type 属性使用"
+    },
+    "value-field": {
+      "default": "value",
+      "value": "",
+      "type": "string ",
+      "description": "Binding value field",
+      "description_zh": "绑定值字段"
+    },
+    "value-key": {
+      "default": "value",
+      "value": "",
+      "type": "string ",
+      "description": "As a key name that is uniquely identified by value, it is required if the binding value is an object type",
+      "description_zh": "作为 value 唯一标识的键名，绑定值为对象类型时必填"
     }
   },
   "link": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/select",
@@ -139,6 +476,9 @@
       "description": "Trigger the source slot",
       "description_zh": "触发源插槽"
     }
+  ],
+  "suggestions": [
+    "tiny-option"
   ],
   "filename": "Select"
 }

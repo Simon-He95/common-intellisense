@@ -32,33 +32,40 @@ function run() {
   })
 
   Array.from(propsChildren).forEach((item) => {
-    let prop = item.children[0].textContent.replace('*', '')
-    const description = item.children[3].textContent
-    const type = item.children[1].textContent.replace(/\n/g, '')
-    let value = item.children[2].textContent
-    if (prop === 'style')
-      prop = ':style'
-    else if (
-      type === 'number' || type === 'object'
-    )
-      prop = `:${prop}`
+    Array.from($0.closest('tbody').children).forEach(item => {
+      let children = Array.from(item.children)
+      let prop = children[0].textContent.replace('*', '')
+      if (!prop) {
+        children = children.slice(1)
+        prop = children[0].textContent.replace('*', '')
+      }
+      const description = children[3].textContent
+      const type = children[1].textContent.replace(/\n/g, '')
+      let value = children[2].textContent
+      if (prop === 'style')
+        prop = ':style'
+      else if (
+        type === 'number' || type === 'object'
+      )
+        prop = `:${prop}`
 
-    if (prop === 'model-value (v-model)' || prop === 'model-value' || prop === 'modelValue / v-model')
-      prop = 'v-model'
-    else
-      prop = prop.replace(/([\w-]+) \(v-model\)/, 'v-model:$1')
-    if (type === 'boolean' && (value === '' || value === '-'))
-      value = 'false'
-    else if (type === 'CSSProperties' && !prop.startsWith(':'))
-      prop = `:${prop}`
+      if (prop === 'model-value (v-model)' || prop === 'model-value' || prop === 'modelValue / v-model')
+        prop = 'v-model'
+      else
+        prop = prop.replace(/([\w-]+) \(v-model\)/, 'v-model:$1')
+      if (type === 'boolean' && (value === '' || value === '-'))
+        value = 'false'
+      else if (type === 'CSSProperties' && !prop.startsWith(':'))
+        prop = `:${prop}`
 
-    props[prop] = {
-      default: value,
-      value: '',
-      type,
-      description,
-      description_zh: description,
-    }
+      props[prop] = {
+        default: value,
+        value: '',
+        type,
+        description,
+        description_zh: description,
+      }
+    })
   })
 
   Array.from(eventsChildren).forEach((item) => {
@@ -105,10 +112,15 @@ function run() {
 function getProps() {
   const props = {}
   Array.from($0.closest('tbody').children).forEach(item => {
-    let prop = item.children[0].textContent.replace('*', '')
-    const description = item.children[3].textContent
-    const type = item.children[1].textContent.replace(/\n/g, '')
-    let value = item.children[2].textContent
+    let children = Array.from(item.children)
+    let prop = children[0].textContent.replace('*', '')
+    if (!prop) {
+      children = children.slice(1)
+      prop = children[0].textContent.replace('*', '')
+    }
+    const description = children[3].textContent
+    const type = children[1].textContent.replace(/\n/g, '')
+    let value = children[2].textContent
     if (prop === 'style')
       prop = ':style'
     else if (
@@ -192,8 +204,12 @@ function copyToClipboard(text) {
 const cwd = process.cwd()
 function arrayGenerateFile(array) {
   const baseSrc = 'src/ui/tinyVue/tinyVue3'
-  array.forEach(item => {
+  array.forEach(async item => {
     const url = path.resolve(cwd, baseSrc, `${item.filename}.json`)
+    // 兼容 suggestions
+    const fileContent = JSON.parse(await fsp.readFile(url, 'utf-8'))
+    const suggestions = fileContent.suggestions || []
+    item.suggestions = suggestions
     fsp.writeFile(url, JSON.stringify(item, null, 2), 'utf-8')
   })
 }

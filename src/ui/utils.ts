@@ -1,5 +1,6 @@
 import * as vscode from 'vscode'
 import { createCompletionItem, createHover, createMarkdownString, getActiveTextEditorLanguageId, getLocale, setCommandParams } from '@vscode-use/utils'
+import { escapeRegExp } from '../utils'
 
 export function propsReducer(uiName: string, map: string[], prefix: string, iconData?: { prefix: string, type: string, icons: any[] }, extensionContext?: any) {
   const result: any = {}
@@ -620,16 +621,33 @@ export function getRequireProp(content: any, index = 0, isVue: boolean): [string
       }
     }
     else if (item.type && item.type.includes('boolean') && item.default === 'false') {
+      // 还要进一步看它的 type 如果 type === boolean 提供 true or false 如果是字符串，使用 / 或着 ｜ 分割，作为提示
       if (isVue)
         attr = key
       else
         attr = `${key}="true"`
     }
     else {
+      const types = item.type.split(/[|/]/)
+        .filter((item: string) => {
+          // 如果 item长度太长，可能有问题，所以也过滤掉
+          return !!item && item.length < 40
+        }).map((item: string) => item.replace(/['"]/g, '').trim())
+
+      if (item.default && types.includes(item.default)) {
+        // 如果 item.default 并且在 type 中，将 types 的 default 值，放到
+        const i = types.findIndex((i: string) => i === item.default)
+        types.splice(i, 1)
+        types.unshift(item.default)
+      }
+      const typeTipes = types
+        .map((item: string) => escapeRegExp(item))
+        .join(',')
+
       if (v)
         attr = `${key}="${v}"`
       else
-        attr = `${key}="\$${++index}"`
+        attr = `${key}="\${${++index}|${typeTipes}|}"`
     }
     requiredProps.push(attr)
   })

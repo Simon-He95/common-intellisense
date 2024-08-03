@@ -722,7 +722,7 @@ async function findUiTag(children: any, UiCompletions: any, result: any[] = [], 
 }
 
 function findAllJsxElements(code: string) {
-  const ast = tsParser(code, { jsx: true, loc: true, range: true })
+  const ast = tsParser(code, { jsx: true, loc: true, range: true }) as any
   const results: any = []
   traverse(ast, (node) => {
     if (node.type === 'JSXElement') {
@@ -744,4 +744,14 @@ function findAllJsxElements(code: string) {
     }
   })
   return results
+}
+
+/**
+ * escapeRegExp
+ * @description 对字符串中的特殊字符进行转义以在正则表达式中使用它
+ * @param str string
+ * @returns string
+ */
+export function escapeRegExp(str: string) {
+  return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
 }

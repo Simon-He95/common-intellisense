@@ -8,22 +8,21 @@ const limit = 10
 const hasDone = new Set()
 async function setup() {
   const cwd = path.resolve(root, 'src/ui/tinyVue/tinyVue3')
-  const entry = await fg(['**/*.json'], { dot: true, cwd })
+  // const entry = await fg(['**/*.json'], { dot: true, cwd, absolute: true })
+  const entry = await fg(['./scripts/tinyVue.data.json'], { dot: true, absolute: true })
   // entry.forEach(async (url: string) => {
   //   const _url = path.resolve(cwd, url)
   //   const content = JSON.parse(await fsp.readFile(_url, 'utf-8'))
   //   console.log(content.name)
   // })
   const rest = entry.map((url: string) => {
-    const newUrl = path.resolve(cwd, url)
-    if (hasDone.has(newUrl))
+    if (hasDone.has(url))
       return
-    return newUrl
+    return url
   }).filter(Boolean)
   const entryLength = entry.length
   stack--
-  console.log(rest)
-
+  console.log({ rest })
   await Promise.all(rest.map(async (newUrl: string) => {
     if (hasDone.has(newUrl))
       return
@@ -31,132 +30,253 @@ async function setup() {
     if (!content)
       return
     const obj = JSON.parse(content)
-    // obj['link_zh'] = `https://element-plus.org/zh-CN/component/${hyphenate(obj.name.slice(2))}.html`
-    // obj.link = `https://element-plus.org/en-US/component/${hyphenate(obj.name.slice(2))}.html`
-    // if (!obj['link_zh'])
-    //   obj['link_zh'] = obj.link
-    for (const key in obj.props) {
-      const value = obj.props[key]
-      if (!value.description)
-        value.description = ''
+    if (Array.isArray(obj)) {
+      const namesMap = new Map()
+      for (const item of obj) {
+        namesMap.set(item.name, false)
+        if (!item.props)
+          continue
+        for (const k in item.props) {
+          const value = item.props[k]
+          if (!value.description)
+            value.description = ''
 
-      if (!value.value)
-        value.value = ''
+          if (!value.value)
+            value.value = ''
 
-      if (hasChineseCharacters(value.description)) {
-        value.description_zh = value.description
-        try {
-          value.description = await fanyi(value.description)
+          if (hasChineseCharacters(value.description)) {
+            value.description_zh = value.description
+            try {
+              value.description = await fanyi(value.description)
+            }
+            catch (error) {
+              if (stack >= limit)
+                return
+              stack++
+              console.log('reload', newUrl)
+              setTimeout(setup, 500)
+              return
+            }
+          }
+          if (!hasChineseCharacters(value.description_zh)) {
+            try {
+              value.description_zh = await fanyi(value.description)
+            }
+            catch (error) {
+              if (stack >= limit)
+                return
+              stack++
+              console.log('reload', newUrl)
+              setTimeout(setup, 500)
+              return
+            }
+          }
         }
-        catch (error) {
-          if (stack >= limit)
+        if (!item.methods)
+          item.methods = []
+        for (const method of item.methods) {
+          if (!method.description)
+            method.description = ''
+
+          if (!method.value)
+            method.value = ''
+
+          if (hasChineseCharacters(method.description)) {
+            method.description_zh = method.description
+            try {
+              method.description = await fanyi(method.description)
+            }
+            catch (error) {
+              if (stack >= limit)
+                return
+              stack++
+              console.log('reload', newUrl)
+              setTimeout(setup, 500)
+              return
+            }
+          }
+          if (!hasChineseCharacters(method.description_zh)) {
+            try {
+              method.description_zh = await fanyi(method.description)
+            }
+            catch (error) {
+              if (stack >= limit)
+                return
+              stack++
+              console.log('reload', newUrl)
+              setTimeout(setup, 500)
+              return
+            }
+          }
+        }
+        if (!item.events)
+          item.events = []
+        for (const event of item.events) {
+          if (!event.description)
+            event.description = ''
+
+          if (!event.value)
+            event.value = ''
+
+          if (hasChineseCharacters(event.description)) {
+            event.description_zh = event.description
+            try {
+              event.description = await fanyi(event.description)
+            }
+            catch (error) {
+              if (stack >= limit)
+                return
+              stack++
+              console.log('reload', newUrl)
+              setTimeout(setup, 500)
+              return
+            }
+          }
+          if (!hasChineseCharacters(event.description_zh)) {
+            try {
+              event.description_zh = await fanyi(event.description)
+            }
+            catch (error) {
+              if (stack >= limit)
+                return
+              stack++
+              console.log('reload', newUrl)
+              setTimeout(setup, 500)
+              return
+            }
+          }
+        }
+        if (item.slots) {
+          for (const slot of item.slots) {
+            if (!slot.description)
+              slot.description = ''
+
+            if (hasChineseCharacters(slot.description)) {
+              slot.description_zh = slot.description
+              try {
+                slot.description = await fanyi(slot.description)
+              }
+              catch (error) {
+                if (stack >= limit)
+                  return
+                stack++
+                console.log('reload', newUrl)
+                setTimeout(setup, 500)
+                return
+              }
+            }
+            if (!hasChineseCharacters(slot.description_zh)) {
+              try {
+                slot.description_zh = await fanyi(slot.description)
+              }
+              catch (error) {
+                if (stack >= limit)
+                  return
+                stack++
+                console.log('reload', newUrl)
+                setTimeout(setup, 500)
+                return
+              }
+            }
+          }
+        }
+        namesMap.set(item.name, true)
+        const data = JSON.stringify(obj, null, 2)
+        console.log({ newUrl, resolveLength: hasDone.size, entryLength })
+        fsp.writeFile(newUrl, data)
+      }
+      return
+    } else {
+      // obj['link_zh'] = `https://element-plus.org/zh-CN/component/${hyphenate(obj.name.slice(2))}.html`
+      // obj.link = `https://element-plus.org/en-US/component/${hyphenate(obj.name.slice(2))}.html`
+      // if (!obj['link_zh'])
+      //   obj['link_zh'] = obj.link
+      for (const key in obj.props) {
+        const value = obj.props[key]
+        if (!value.description)
+          value.description = ''
+
+        if (!value.value)
+          value.value = ''
+
+        if (hasChineseCharacters(value.description)) {
+          value.description_zh = value.description
+          try {
+            value.description = await fanyi(value.description)
+          }
+          catch (error) {
+            if (stack >= limit)
+              return
+            stack++
+            console.log('reload', newUrl)
+            setTimeout(setup, 500)
             return
-          stack++
-          console.log('reload', newUrl)
-          setTimeout(setup, 500)
-          return
+          }
+        }
+        if (!hasChineseCharacters(value.description_zh)) {
+          try {
+            value.description_zh = await fanyi(value.description)
+          }
+          catch (error) {
+            if (stack >= limit)
+              return
+            stack++
+            console.log('reload', newUrl)
+            setTimeout(setup, 500)
+            return
+          }
         }
       }
-      if (!hasChineseCharacters(value.description_zh)) {
-        try {
-          value.description_zh = await fanyi(value.description)
-        }
-        catch (error) {
-          if (stack >= limit)
-            return
-          stack++
-          console.log('reload', newUrl)
-          setTimeout(setup, 500)
-          return
-        }
-      }
-    }
 
-    if (!obj.methods)
-      obj.methods = []
-    for (const item of obj.methods) {
-      if (!item.description)
-        item.description = ''
-
-      if (!item.value)
-        item.value = ''
-
-      if (hasChineseCharacters(item.description)) {
-        item.description_zh = item.description
-        try {
-          item.description = await fanyi(item.description)
-        }
-        catch (error) {
-          if (stack >= limit)
-            return
-
-          console.log('reload', newUrl)
-          stack++
-          setTimeout(setup, 500)
-
-          return
-        }
-      }
-      if (!hasChineseCharacters(item.description_zh)) {
-        try {
-          item.description_zh = await fanyi(item.description)
-        }
-        catch (error) {
-          if (stack >= limit)
-            return
-
-          stack++
-          console.log('reload', newUrl)
-
-          setTimeout(setup, 500)
-          return
-        }
-      }
-    }
-    if (!obj.events)
-      obj.events = []
-    for (const item of obj.events) {
-      if (!item.description)
-        item.description = ''
-
-      if (!item.value)
-        item.value = ''
-
-      if (hasChineseCharacters(item.description)) {
-        item.description_zh = item.description
-        try {
-          item.description = await fanyi(item.description)
-        }
-        catch (error) {
-          if (stack >= limit)
-            return
-
-          stack++
-          console.log('reload', newUrl)
-          setTimeout(setup, 500)
-          return
-        }
-      }
-      if (!hasChineseCharacters(item.description_zh)) {
-        try {
-          item.description_zh = await fanyi(item.description)
-        }
-        catch (error) {
-          if (stack >= limit)
-            return
-
-          stack++
-          console.log('reload', newUrl)
-          setTimeout(setup, 500)
-          return
-        }
-      }
-    }
-
-    if (obj.slots) {
-      for (const item of obj.slots) {
+      if (!obj.methods)
+        obj.methods = []
+      for (const item of obj.methods) {
         if (!item.description)
           item.description = ''
+
+        if (!item.value)
+          item.value = ''
+
+        if (hasChineseCharacters(item.description)) {
+          item.description_zh = item.description
+          try {
+            item.description = await fanyi(item.description)
+          }
+          catch (error) {
+            if (stack >= limit)
+              return
+
+            console.log('reload', newUrl)
+            stack++
+            setTimeout(setup, 500)
+
+            return
+          }
+        }
+        if (!hasChineseCharacters(item.description_zh)) {
+          try {
+            item.description_zh = await fanyi(item.description)
+          }
+          catch (error) {
+            if (stack >= limit)
+              return
+
+            stack++
+            console.log('reload', newUrl)
+
+            setTimeout(setup, 500)
+            return
+          }
+        }
+      }
+      if (!obj.events)
+        obj.events = []
+      for (const item of obj.events) {
+        if (!item.description)
+          item.description = ''
+
+        if (!item.value)
+          item.value = ''
 
         if (hasChineseCharacters(item.description)) {
           item.description_zh = item.description
@@ -180,6 +300,7 @@ async function setup() {
           catch (error) {
             if (stack >= limit)
               return
+
             stack++
             console.log('reload', newUrl)
             setTimeout(setup, 500)
@@ -187,7 +308,44 @@ async function setup() {
           }
         }
       }
+
+      if (obj.slots) {
+        for (const item of obj.slots) {
+          if (!item.description)
+            item.description = ''
+
+          if (hasChineseCharacters(item.description)) {
+            item.description_zh = item.description
+            try {
+              item.description = await fanyi(item.description)
+            }
+            catch (error) {
+              if (stack >= limit)
+                return
+
+              stack++
+              console.log('reload', newUrl)
+              setTimeout(setup, 500)
+              return
+            }
+          }
+          if (!hasChineseCharacters(item.description_zh)) {
+            try {
+              item.description_zh = await fanyi(item.description)
+            }
+            catch (error) {
+              if (stack >= limit)
+                return
+              stack++
+              console.log('reload', newUrl)
+              setTimeout(setup, 500)
+              return
+            }
+          }
+        }
+      }
     }
+
 
     try {
       hasDone.add(newUrl)

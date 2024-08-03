@@ -36,12 +36,13 @@
       "description": "Whether to display both the Add and Remove buttons, in conjunction with the edit event",
       "description_zh": "是否同时显示添加和删除按钮，与 edit 事件搭配使用"
     },
-    "v-model": {
+    ":v-model": {
       "default": "--",
       "value": "",
       "type": "string",
       "description": "绑定选中值，选中项的 name",
-      "description_zh": "绑定选中值，选中项的 name"
+      "description_zh": "绑定选中值，选中项的 name",
+      "required": true
     },
     "more-show-all": {
       "default": "false",
@@ -79,7 +80,7 @@
       "description_zh": "为\"更多\"下拉页签框添加类名，可用于自定义下拉选项的样式"
     },
     "position": {
-      "default": "'top'",
+      "default": "top",
       "value": "",
       "type": "IPosition",
       "description": "Set the location of the tab bar; Defaults to top",
@@ -167,7 +168,7 @@
     {
       "name": "click",
       "description": "点击页签项时触发,tab 被选中时触发; TabItem: 点中页签项的vueComponent对象信息",
-      "description_zh": "点击页签项时触发，tab 被选中时触发； TabItem: 点中页签项的vueComponent对象信息",
+      "description_zh": "点击页签项时触发,tab 被选中时触发; TabItem: 点中页签项的vueComponent对象信息",
       "params": "(TabItem: Component, event: Event) => void",
       "value": ""
     },
@@ -219,6 +220,9 @@
       "description": "tab item title slot",
       "description_zh": "页签项标题插槽"
     }
+  ],
+  "suggestions": [
+    "tiny-tab-item"
   ],
   "filename": "Tabs"
 }

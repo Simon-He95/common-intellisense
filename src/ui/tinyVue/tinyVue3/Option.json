@@ -1,0 +1,57 @@
+{
+  "name": "TinyOption",
+  "props": {
+    "disabled": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "option whether to disable it",
+      "description_zh": "选项是否禁用"
+    },
+    "icon": {
+      "default": "--",
+      "value": "",
+      "type": "Component",
+      "description": "Customize the icons of the options",
+      "description_zh": "自定义选项的图标"
+    },
+    ":label": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "The display text for the option",
+      "description_zh": "选项的显示文本",
+      "required": true,
+      "foreach": true
+    },
+    "required": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the option is mandatory",
+      "description_zh": "选项是否必选"
+    },
+    ":value": {
+      "default": "--",
+      "value": "",
+      "type": "string",
+      "description": "The value of the option",
+      "description_zh": "选项的值",
+      "foreach": true,
+      "required": true
+    }
+  },
+  "link": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/select",
+  "link_zh": "https://opentiny.design/tiny-vue/zh-CN/smb-theme/components/select",
+  "typeDetail": {
+    "IOption": "interface IOption {\n  value?: string | number\n  label?: string\n  disabled?: boolean\n  icon?: Component\n  required?:boolean\n}",
+    "ICacheOp": "interface ICacheItem {\n  frequency: number\n  key: string\n  time: number\n}\n\ninterface ICacheOp {\n  key: string // 本地缓存的唯一 key 值\n  sortBy?: 'frequency' | 'time' // 排序的字段，默认 frequency (频次)\n  sort?: 'desc' | 'asc' // 排序方式，默认 desc (降序)\n  dataKey?: string // 数据中的唯一标识的 key 名称,默认 value\n  highlightClass?: string // 个性化高亮 class 名称，默认：memorize-highlight\n  highlightNum?: number // 高亮个性化的条数,默认：Infinity\n  cacheNum?: number // 存储个性化的条数,默认：Infinity\n  serialize?: ()=> string  // 本地存储序列化方法,默认：JSON.stringify\n  deserialize?: ()=> ICacheItem[] // 本地存储序反列化方法，默认：JSON.parse\n}",
+    "IGridOption": "interface IGridOption {\n  data: any[]    // 表格数据，用法同 Grid\n  columns: any[] // 列配置，用法同 Grid\n}",
+    "ITreeOption": "interface ITreeNode {\n  label: string         // 默认树节点的文本字段\n  id: number|string     // 树节点唯一标识\n  children: ITreeNode[] // 子节点\n}\n\ninterface ITreeOption {\n  data: ITreeNode[] // 树数据，用法同 Tree\n}",
+    "IPlacement": "type IPlacement = 'top' | 'top-start' | 'top-end' | 'bottom' | 'bottom-start' | 'bottom-end' | 'left' | 'left-start' | 'left-end' | 'right' | 'right-start' | 'right-end'"
+  },
+  "events": [],
+  "methods": [],
+  "slots": [],
+  "filename": "Option"
+}
