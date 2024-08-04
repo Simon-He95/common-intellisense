@@ -628,11 +628,22 @@ export function getRequireProp(content: any, index = 0, isVue: boolean): [string
         attr = `${key}="true"`
     }
     else {
-      const types = item.type.split(/[|/]/)
+      const tempMap: any = {}
+      const types = item.type.replace(/\s+/g, ' ').replace(/\{((?:[^{}]|\{[^{}]*\})*)\}/g, (_: string) => {
+        const key = hash(_)
+        tempMap[key] = _.replace(/,/g, '\,')
+        return key
+      })
+        .split(/[|/]/)
         .filter((item: string) => {
           // 如果 item长度太长，可能有问题，所以也过滤掉
           return !!item && item.length < 40
-        }).map((item: string) => item.replace(/['"]/g, '').trim())
+        }).map((item: string) => item.replace(/['"]/g, '').trim()).map((item: string) => {
+          Object.keys(tempMap).forEach((i) => {
+            item = item.replace(i, tempMap[i])
+          })
+          return item
+        })
 
       if (item.default && types.includes(item.default)) {
         // 如果 item.default 并且在 type 中，将 types 的 default 值，放到
@@ -641,7 +652,7 @@ export function getRequireProp(content: any, index = 0, isVue: boolean): [string
         types.unshift(item.default)
       }
       const typeTipes = types
-        .map((item: string) => escapeRegExp(item))
+        .map((item: string) => escapeRegExp(item).replace(/,/g, '\\,'))
         .join(',')
 
       if (v)
@@ -684,4 +695,16 @@ function generateSnippetNameOptions(item: any, keyName: string, prefix: string) 
     `${componentName}${keyName[0].toUpperCase()}${keyName.slice(1)}`,
     `${componentName}_${keyName}`,
   ].join(',')
+}
+
+export function hash(str: string) {
+  let i
+  let l
+  let hval = 0x811C9DC5
+
+  for (i = 0, l = str.length; i < l; i++) {
+    hval ^= str.charCodeAt(i)
+    hval += (hval << 1) + (hval << 4) + (hval << 7) + (hval << 8) + (hval << 24)
+  }
+  return `00000${(hval >>> 0).toString(36)}`.slice(-6)
 }
