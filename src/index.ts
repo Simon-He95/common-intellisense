@@ -140,8 +140,8 @@ export function activate(context: vscode.ExtensionContext) {
 
       const offsetStart = code.match(uiComponents[lib].match[0])!.index!
       const offsetEnd = offsetStart + uiComponents[lib].match[0].length
-      const posStart = getPosition(offsetStart)
-      const posEnd = getPosition(offsetEnd)
+      const posStart = getPosition(offsetStart).position
+      const posEnd = getPosition(offsetEnd).position
 
       const str = importWay === 'as default'
         ? `import * as ${deps.join(', ')} from '${from}'`

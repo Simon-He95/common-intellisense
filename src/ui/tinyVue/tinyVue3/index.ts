@@ -333,7 +333,7 @@ export function tinyVue3Components() {
     map: componentsMap,
     isSeperatorByHyphen: true,
     prefix: 'tiny',
-    lib: '@opentiny/vue3',
+    lib: '@opentiny/vue',
     directives: directives.tinyVue3,
   })
 }

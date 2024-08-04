@@ -269,6 +269,6 @@ export function uviewPlus3Components() {
     map,
     isSeperatorByHyphen: true,
     prefix: 'up',
-    lib: 'uviewPlus3',
+    lib: 'uviewPlus',
   })
 }
