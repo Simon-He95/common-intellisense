@@ -101,7 +101,7 @@ function dfs(children: any, parent: any, position: vscode.Position) {
               props,
               type: 'props',
               isInTemplate: true,
-              isValue: !!prop?.value?.content,
+              isValue: prop.value?.content !== undefined,
               parent: {
                 tag: parent.tag ? parent.tag : 'template',
                 props: parent.props || [],
@@ -130,7 +130,7 @@ function dfs(children: any, parent: any, position: vscode.Position) {
               props,
               type: isTag ? 'tag' : 'props',
               isInTemplate: true,
-              isValue: !!prop?.value?.content,
+              isValue: prop.value?.content !== undefined,
               parent: {
                 tag: parent.tag ? parent.tag : 'template',
                 props: parent.props || [],
@@ -251,10 +251,10 @@ function jsxDfs(children: any, parent: any, position: vscode.Position) {
             isInTemplate,
             isValue: prop.value
               ? Array.isArray(prop.value)
-                ? !!prop.value[0]?.raw
+                ? prop.value[0]?.raw !== undefined
                 : prop.value.type === 'JSXExpressionContainer'
-                  ? !!prop.value?.expression
-                  : !!prop?.value?.value
+                  ? prop.value?.expression !== undefined
+                  : prop.value?.value !== undefined
               : false,
             parent,
             isEvent: prop.type === 'EventHandler' || (prop.type === 'JSXAttribute' && prop.name.name.startsWith('on')),
