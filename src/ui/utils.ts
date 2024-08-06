@@ -175,7 +175,7 @@ export function propsReducer(uiName: string, map: string[], prefix: string, icon
               item[0].toUpperCase() + item.slice(1),
             ).join('').replace(/-(\w)/g, (_: string, v: string) => v.toUpperCase())
             snippet = `${name}="\${1:on${_name}}"`
-            content = `${name}="on${_name}"`
+            content = `@${name}="on${_name}"`
           }
           else if (lan === 'svelte') {
             snippet = `${name}={\${1:${name.replace(/:(\w)/, (_: string, v: string) => v.toUpperCase())}}}`
@@ -373,6 +373,7 @@ export function componentsReducer(options: Options) {
           const isVue = lan === 'vue'
           let snippet = ''
           let _content = ''
+          let description = ''
           if (typeof content === 'object') {
             let [requiredProps, index] = getRequireProp(content, 0, isVue)
             const tag = isSeperatorByHyphen ? hyphenate(content.name) : content.name
@@ -408,7 +409,8 @@ export function componentsReducer(options: Options) {
               }
               else { snippet = `<${tag}>$1</${tag}>` }
             }
-            _content = `${tag}  ${detail}`
+            description = isZh ? content.description_zh : content.description || content.description_zh
+            _content = `${tag}  ${description}`
           }
           else {
             snippet = `<${content}>$1</${content}>`
@@ -419,16 +421,19 @@ export function componentsReducer(options: Options) {
           const documentation = createMarkdownString()
           documentation.isTrusted = true
           documentation.supportHtml = true
-          documentation.appendMarkdown(`#### 🍀 ${lib} ${detail}\n`)
-          if (demo) {
-            const copyIcon = '<img width="12" height="12" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxnIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2UyOWNkMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2Utd2lkdGg9IjEuNSI+PHBhdGggZD0iTTIwLjk5OCAxMGMtLjAxMi0yLjE3NS0uMTA4LTMuMzUzLS44NzctNC4xMjFDMTkuMjQzIDUgMTcuODI4IDUgMTUgNWgtM2MtMi44MjggMC00LjI0MyAwLTUuMTIxLjg3OUM2IDYuNzU3IDYgOC4xNzIgNiAxMXY1YzAgMi44MjggMCA0LjI0My44NzkgNS4xMjFDNy43NTcgMjIgOS4xNzIgMjIgMTIgMjJoM2MyLjgyOCAwIDQuMjQzIDAgNS4xMjEtLjg3OUMyMSAyMC4yNDMgMjEgMTguODI4IDIxIDE2di0xIi8+PHBhdGggZD0iTTMgMTB2NmEzIDMgMCAwIDAgMyAzTTE4IDVhMyAzIDAgMCAwLTMtM2gtNEM3LjIyOSAyIDUuMzQzIDIgNC4xNzIgMy4xNzJDMy41MTggMy44MjUgMy4yMjkgNC43IDMuMTAyIDYiLz48L2c+PC9zdmc+" />'
-            documentation.appendMarkdown(`#### 🌰 ${isZh ? '例子' : 'example'}\n`)
-            documentation.appendCodeblock(demo, 'html')
-            const params = setCommandParams(demo)
-            documentation.appendMarkdown(`\n<a href="command:intellisense.copyDemo?${params}">${copyIcon}</a>\n`)
-          }
 
-          return createCompletionItem({ content: _content, snippet, documentation, type: vscode.CompletionItemKind.TypeParameter, sortText: 'a', params: [content, lib, isReact, prefix, dynamicLib, importWay], demo })
+          documentation.appendMarkdown(`#### 🍀 ${lib} ${detail}\n`)
+          if (typeof content === 'object' && content.suggestions?.length) {
+            documentation.appendMarkdown(`\n#### 👗 ${isZh ? '常用搭配' : 'Common collocation'} \n`)
+            documentation.appendMarkdown(`${content.suggestions.map((item: string) => `- ${item}`).join('\n')}\n`)
+          }
+          const copyIcon = '<img width="12" height="12" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxnIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2UyOWNkMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2Utd2lkdGg9IjEuNSI+PHBhdGggZD0iTTIwLjk5OCAxMGMtLjAxMi0yLjE3NS0uMTA4LTMuMzUzLS44NzctNC4xMjFDMTkuMjQzIDUgMTcuODI4IDUgMTUgNWgtM2MtMi44MjggMC00LjI0MyAwLTUuMTIxLjg3OUM2IDYuNzU3IDYgOC4xNzIgNiAxMXY1YzAgMi44MjggMCA0LjI0My44NzkgNS4xMjFDNy43NTcgMjIgOS4xNzIgMjIgMTIgMjJoM2MyLjgyOCAwIDQuMjQzIDAgNS4xMjEtLjg3OUMyMSAyMC4yNDMgMjEgMTguODI4IDIxIDE2di0xIi8+PHBhdGggZD0iTTMgMTB2NmEzIDMgMCAwIDAgMyAzTTE4IDVhMyAzIDAgMCAwLTMtM2gtNEM3LjIyOSAyIDUuMzQzIDIgNC4xNzIgMy4xNzJDMy41MTggMy44MjUgMy4yMjkgNC43IDMuMTAyIDYiLz48L2c+PC9zdmc+" />'
+          documentation.appendMarkdown(`#### 🌰 ${isZh ? '例子' : 'example'}\n`)
+          documentation.appendCodeblock(demo, 'html')
+          const params = setCommandParams(demo)
+          documentation.appendMarkdown(`\n<a href="command:intellisense.copyDemo?${params}">${copyIcon}</a>\n`)
+
+          return createCompletionItem({ content: _content, snippet, detail: description, documentation, type: vscode.CompletionItemKind.TypeParameter, sortText: 'a', params: [content, lib, isReact, prefix, dynamicLib, importWay], demo })
         }),
       },
       {
@@ -440,6 +445,7 @@ export function componentsReducer(options: Options) {
           const isVue = lan === 'vue'
           let snippet = ''
           let _content = ''
+          let description = ''
           if (typeof content === 'object') {
             let [requiredProps, index] = getRequireProp(content, 0, isVue)
             const tag = content.name.slice(prefix.length)
@@ -451,7 +457,6 @@ export function componentsReducer(options: Options) {
                   suggestionTag = suggestion.name.slice(prefix.length)
                   const [childRequiredProps, _index] = getRequireProp(suggestion, index, isVue)
                   index = _index
-
                   snippet = `<${tag}${requiredProps.length ? ` ${requiredProps.join(' ')}` : ''}>\n  <${suggestionTag}${childRequiredProps.length ? ` ${childRequiredProps.join(' ')}` : ''}>\$${++index}</${suggestionTag}>\n</${tag}>`
                 }
                 else {
@@ -478,7 +483,8 @@ export function componentsReducer(options: Options) {
               }
               else { snippet = `<${tag}>$1</${tag}>` }
             }
-            _content = `${tag}  ${detail}`
+            description = isZh ? content.description_zh : content.description || content.description_zh
+            _content = `${tag}  ${description}`
           }
           else {
             snippet = `<${content}>$1</${content}>`
@@ -490,15 +496,17 @@ export function componentsReducer(options: Options) {
           documentation.isTrusted = true
           documentation.supportHtml = true
           documentation.appendMarkdown(`#### 🍀 ${lib} ${detail}\n`)
-          if (demo) {
-            const copyIcon = '<img width="12" height="12" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxnIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2UyOWNkMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2Utd2lkdGg9IjEuNSI+PHBhdGggZD0iTTIwLjk5OCAxMGMtLjAxMi0yLjE3NS0uMTA4LTMuMzUzLS44NzctNC4xMjFDMTkuMjQzIDUgMTcuODI4IDUgMTUgNWgtM2MtMi44MjggMC00LjI0MyAwLTUuMTIxLjg3OUM2IDYuNzU3IDYgOC4xNzIgNiAxMXY1YzAgMi44MjggMCA0LjI0My44NzkgNS4xMjFDNy43NTcgMjIgOS4xNzIgMjIgMTIgMjJoM2MyLjgyOCAwIDQuMjQzIDAgNS4xMjEtLjg3OUMyMSAyMC4yNDMgMjEgMTguODI4IDIxIDE2di0xIi8+PHBhdGggZD0iTTMgMTB2NmEzIDMgMCAwIDAgMyAzTTE4IDVhMyAzIDAgMCAwLTMtM2gtNEM3LjIyOSAyIDUuMzQzIDIgNC4xNzIgMy4xNzJDMy41MTggMy44MjUgMy4yMjkgNC43IDMuMTAyIDYiLz48L2c+PC9zdmc+" />'
-            documentation.appendMarkdown(`#### 🌰 ${isZh ? '例子' : 'example'}\n`)
-            documentation.appendCodeblock(demo, 'html')
-            const params = setCommandParams(demo)
-            documentation.appendMarkdown(`\n<a href="command:intellisense.copyDemo?${params}">${copyIcon}</a>\n`)
+          if (typeof content === 'object' && content.suggestions?.length) {
+            documentation.appendMarkdown(`\n#### 👗 ${isZh ? '常用搭配' : 'Common collocation'} \n`)
+            documentation.appendMarkdown(`${content.suggestions.map((item: string) => `- ${item}`).join('\n')}\n`)
           }
+          const copyIcon = '<img width="12" height="12" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxnIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2UyOWNkMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2Utd2lkdGg9IjEuNSI+PHBhdGggZD0iTTIwLjk5OCAxMGMtLjAxMi0yLjE3NS0uMTA4LTMuMzUzLS44NzctNC4xMjFDMTkuMjQzIDUgMTcuODI4IDUgMTUgNWgtM2MtMi44MjggMC00LjI0MyAwLTUuMTIxLjg3OUM2IDYuNzU3IDYgOC4xNzIgNiAxMXY1YzAgMi44MjggMCA0LjI0My44NzkgNS4xMjFDNy43NTcgMjIgOS4xNzIgMjIgMTIgMjJoM2MyLjgyOCAwIDQuMjQzIDAgNS4xMjEtLjg3OUMyMSAyMC4yNDMgMjEgMTguODI4IDIxIDE2di0xIi8+PHBhdGggZD0iTTMgMTB2NmEzIDMgMCAwIDAgMyAzTTE4IDVhMyAzIDAgMCAwLTMtM2gtNEM3LjIyOSAyIDUuMzQzIDIgNC4xNzIgMy4xNzJDMy41MTggMy44MjUgMy4yMjkgNC43IDMuMTAyIDYiLz48L2c+PC9zdmc+" />'
+          documentation.appendMarkdown(`#### 🌰 ${isZh ? '例子' : 'example'}\n`)
+          documentation.appendCodeblock(demo, 'html')
+          const params = setCommandParams(demo)
+          documentation.appendMarkdown(`\n<a href="command:intellisense.copyDemo?${params}">${copyIcon}</a>\n`)
 
-          return createCompletionItem({ content: _content, snippet, documentation, type: vscode.CompletionItemKind.TypeParameter, sortText: 'a', params: [{ ...content, name: content.name?.slice(prefix.length) }, lib, true, prefix, dynamicLib, importWay], demo })
+          return createCompletionItem({ content: _content, detail: description, snippet, documentation, type: vscode.CompletionItemKind.TypeParameter, sortText: 'a', params: [{ ...content, name: content.name?.slice(prefix.length) }, lib, true, prefix, dynamicLib, importWay], demo })
         }),
       },
     ]
@@ -512,6 +520,7 @@ export function componentsReducer(options: Options) {
       const isVue = lan === 'vue'
       let snippet = ''
       let _content = ''
+      let description = ''
       if (typeof content === 'object') {
         let [requiredProps, index] = getRequireProp(content, 0, isVue)
         const tag = isSeperatorByHyphen ? hyphenate(content.name) : content.name
@@ -547,7 +556,8 @@ export function componentsReducer(options: Options) {
           }
           else { snippet = `<${tag}>$1</${tag}>` }
         }
-        _content = `${tag}  ${detail}`
+        description = isZh ? content.description_zh : content.description || content.description_zh
+        _content = `${tag}  ${description}`
       }
       else {
         snippet = `<${content}>$1</${content}>`
@@ -555,19 +565,22 @@ export function componentsReducer(options: Options) {
       }
       if (!demo)
         demo = snippet
+
       const documentation = new vscode.MarkdownString()
       documentation.isTrusted = true
       documentation.supportHtml = true
       documentation.appendMarkdown(`#### 🍀 ${lib} ${detail}\n`)
-      if (demo) {
-        const copyIcon = '<img width="12" height="12" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxnIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2UyOWNkMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2Utd2lkdGg9IjEuNSI+PHBhdGggZD0iTTIwLjk5OCAxMGMtLjAxMi0yLjE3NS0uMTA4LTMuMzUzLS44NzctNC4xMjFDMTkuMjQzIDUgMTcuODI4IDUgMTUgNWgtM2MtMi44MjggMC00LjI0MyAwLTUuMTIxLjg3OUM2IDYuNzU3IDYgOC4xNzIgNiAxMXY1YzAgMi44MjggMCA0LjI0My44NzkgNS4xMjFDNy43NTcgMjIgOS4xNzIgMjIgMTIgMjJoM2MyLjgyOCAwIDQuMjQzIDAgNS4xMjEtLjg3OUMyMSAyMC4yNDMgMjEgMTguODI4IDIxIDE2di0xIi8+PHBhdGggZD0iTTMgMTB2NmEzIDMgMCAwIDAgMyAzTTE4IDVhMyAzIDAgMCAwLTMtM2gtNEM3LjIyOSAyIDUuMzQzIDIgNC4xNzIgMy4xNzJDMy41MTggMy44MjUgMy4yMjkgNC43IDMuMTAyIDYiLz48L2c+PC9zdmc+" />'
-        documentation.appendMarkdown(`#### 🌰 ${isZh ? '例子' : 'example'}\n`)
-        documentation.appendCodeblock(demo, 'html')
-        const params = setCommandParams(demo)
-        documentation.appendMarkdown(`\n<a href="command:intellisense.copyDemo?${params}">${copyIcon}</a>\n`)
+      if (typeof content === 'object' && content.suggestions?.length) {
+        documentation.appendMarkdown(`\n#### 👗 ${isZh ? '常用搭配' : 'Common collocation'} \n`)
+        documentation.appendMarkdown(`${content.suggestions.map((item: string) => `- ${item}`).join('\n')}\n`)
       }
+      const copyIcon = '<img width="12" height="12" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxnIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2UyOWNkMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2Utd2lkdGg9IjEuNSI+PHBhdGggZD0iTTIwLjk5OCAxMGMtLjAxMi0yLjE3NS0uMTA4LTMuMzUzLS44NzctNC4xMjFDMTkuMjQzIDUgMTcuODI4IDUgMTUgNWgtM2MtMi44MjggMC00LjI0MyAwLTUuMTIxLjg3OUM2IDYuNzU3IDYgOC4xNzIgNiAxMXY1YzAgMi44MjggMCA0LjI0My44NzkgNS4xMjFDNy43NTcgMjIgOS4xNzIgMjIgMTIgMjJoM2MyLjgyOCAwIDQuMjQzIDAgNS4xMjEtLjg3OUMyMSAyMC4yNDMgMjEgMTguODI4IDIxIDE2di0xIi8+PHBhdGggZD0iTTMgMTB2NmEzIDMgMCAwIDAgMyAzTTE4IDVhMyAzIDAgMCAwLTMtM2gtNEM3LjIyOSAyIDUuMzQzIDIgNC4xNzIgMy4xNzJDMy41MTggMy44MjUgMy4yMjkgNC43IDMuMTAyIDYiLz48L2c+PC9zdmc+" />'
+      documentation.appendMarkdown(`#### 🌰 ${isZh ? '例子' : 'example'}\n`)
+      documentation.appendCodeblock(demo, 'html')
+      const params = setCommandParams(demo)
+      documentation.appendMarkdown(`\n<a href="command:intellisense.copyDemo?${params}">${copyIcon}</a>\n`)
 
-      return createCompletionItem({ content: _content, snippet, documentation, type: vscode.CompletionItemKind.TypeParameter, sortText: 'a', params: [content, lib, isReact, prefix, dynamicLib, importWay], demo })
+      return createCompletionItem({ content: _content, snippet, detail: description, documentation, type: vscode.CompletionItemKind.TypeParameter, sortText: 'a', params: [content, lib, isReact, prefix, dynamicLib, importWay], demo })
     }),
   }]
 }

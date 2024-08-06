@@ -4,7 +4,10 @@ import ActionMenu from './ActionMenu.json'
 import Alert from './Alert.json'
 import Anchor from './Anchor.json'
 import AutoComplete from './AutoComplete.json'
+import AutonaviMap from './AutonaviMap.json'
 import Badge from './Badge.json'
+import BaiduMap from './BaiduMap.json'
+import BaseSelect from './BaseSelect.json'
 import Breadcrumb from './Breadcrumb.json'
 import BreadcrumbItem from './BreadcrumbItem.json'
 import BulletinBoard from './BulletinBoard.json'
@@ -18,6 +21,27 @@ import CarouselItem from './CarouselItem.json'
 import Cascader from './Cascader.json'
 import CascaderPanel from './CascaderPanel.json'
 import Chart from './Chart.json'
+import ChartBar from './ChartBar.json'
+import ChartBoxplot from './ChartBoxplot.json'
+import ChartCandle from './ChartCandle.json'
+import ChartFunnel from './ChartFunnel.json'
+import ChartGauge from './ChartGauge.json'
+import ChartGraph from './ChartGraph.json'
+import ChartHeatmap from './ChartHeatmap.json'
+import ChartHistogram from './ChartHistogram.json'
+import ChartLine from './ChartLine.json'
+import ChartLiquidfill from './ChartLiquidfill.json'
+import ChartMap from './ChartMap.json'
+import ChartPie from './ChartPie.json'
+import ChartProcess from './ChartProcess.json'
+import ChartRadar from './ChartRadar.json'
+import ChartRing from './ChartRing.json'
+import ChartSankey from './ChartSankey.json'
+import ChartScatter from './ChartScatter.json'
+import ChartSunburst from './ChartSunburst.json'
+import ChartTree from './ChartTree.json'
+import ChartWaterfall from './ChartWaterfall.json'
+import ChartWordcloud from './ChartWordcloud.json'
 import Checkbox from './Checkbox.json'
 import CheckboxButton from './CheckboxButton.json'
 import CheckboxGroup from './CheckboxGroup.json'
@@ -44,7 +68,6 @@ import FileUpload from './FileUpload.json'
 import FilterPanel from './FilterPanel.json'
 import FloatBar from './FloatBar.json'
 import FlowChart from './FlowChart.json'
-import Font from './Font.json'
 import Form from './Form.json'
 import FormItem from './FormItem.json'
 import Fullscreen from './Fullscreen.json'
@@ -63,6 +86,7 @@ import MindMap from './MindMap.json'
 import Modal from './Modal.json'
 import NavMenu from './NavMenu.json'
 import Numeric from './Numeric.json'
+import Option from './Option.json'
 import Pager from './Pager.json'
 import PopConfirm from './PopConfirm.json'
 import PopEditor from './PopEditor.json'
@@ -104,15 +128,15 @@ import UserContact from './UserContact.json'
 import UserHead from './UserHead.json'
 import Watermark from './Watermark.json'
 import Wizard from './Wizard.json'
-import Option from './Option.json'
-import BaseSelect from './BaseSelect.json'
 
 const map: any = [
   ActionMenu,
   Alert,
   Anchor,
   AutoComplete,
+  AutonaviMap,
   Badge,
+  BaiduMap,
   BaseSelect,
   Breadcrumb,
   BreadcrumbItem,
@@ -127,6 +151,27 @@ const map: any = [
   Cascader,
   CascaderPanel,
   Chart,
+  ChartBar,
+  ChartBoxplot,
+  ChartCandle,
+  ChartFunnel,
+  ChartGauge,
+  ChartGraph,
+  ChartHeatmap,
+  ChartHistogram,
+  ChartLine,
+  ChartLiquidfill,
+  ChartMap,
+  ChartPie,
+  ChartProcess,
+  ChartRadar,
+  ChartRing,
+  ChartSankey,
+  ChartScatter,
+  ChartSunburst,
+  ChartTree,
+  ChartWaterfall,
+  ChartWordcloud,
   Checkbox,
   CheckboxButton,
   CheckboxGroup,
@@ -153,7 +198,6 @@ const map: any = [
   FilterPanel,
   FloatBar,
   FlowChart,
-  Font,
   Form,
   FormItem,
   Fullscreen,
@@ -172,13 +216,13 @@ const map: any = [
   Modal,
   NavMenu,
   Numeric,
+  Option,
   Pager,
   PopConfirm,
   PopEditor,
   PopUpload,
   Popover,
   Progress,
-  Option,
   QrCode,
   Radio,
   RadioButton,
@@ -224,7 +268,9 @@ const componentsMap = [
   [Alert, Alert.name, `<tiny-alert></tiny-alert>`],
   [Anchor, Anchor.name, `<tiny-anchor></tiny-anchor>`],
   [AutoComplete, AutoComplete.name, `<tiny-auto-complete></tiny-auto-complete>`],
+  [AutonaviMap, AutonaviMap.name, `<tiny-autonavi-map></tiny-autonavi-map>`],
   [Badge, Badge.name, `<tiny-badge></tiny-badge>`],
+  [BaiduMap, BaiduMap.name, `<tiny-baidu-map></tiny-baidu-map>`],
   [BaseSelect, BaseSelect.name, `<tiny-base-select></tiny-base-select>`],
   [Breadcrumb, Breadcrumb.name, `<tiny-breadcrumb></tiny-breadcrumb>`],
   [BreadcrumbItem, BreadcrumbItem.name, `<tiny-breadcrumb-item></tiny-breadcrumb-item>`],
@@ -239,6 +285,27 @@ const componentsMap = [
   [Cascader, Cascader.name, `<tiny-cascader></tiny-cascader>`],
   [CascaderPanel, CascaderPanel.name, `<tiny-cascader-panel></tiny-cascader-panel>`],
   [Chart, Chart.name, `<tiny-chart></tiny-chart>`],
+  [ChartBar, ChartBar.name, `<tiny-chart-bar></tiny-chart-bar>`],
+  [ChartBoxplot, ChartBoxplot.name, `<tiny-chart-boxplot></tiny-chart-boxplot>`],
+  [ChartCandle, ChartCandle.name, `<tiny-chart-candle></tiny-chart-candle>`],
+  [ChartFunnel, ChartFunnel.name, `<tiny-chart-funnel></tiny-chart-funnel>`],
+  [ChartGauge, ChartGauge.name, `<tiny-chart-gauge></tiny-chart-gauge>`],
+  [ChartGraph, ChartGraph.name, `<tiny-chart-graph></tiny-chart-graph>`],
+  [ChartHeatmap, ChartHeatmap.name, `<tiny-chart-heatmap></tiny-chart-heatmap>`],
+  [ChartHistogram, ChartHistogram.name, `<tiny-chart-histogram></tiny-chart-histogram>`],
+  [ChartLine, ChartLine.name, `<tiny-chart-line></tiny-chart-line>`],
+  [ChartLiquidfill, ChartLiquidfill.name, `<tiny-chart-liquidfill></tiny-chart-liquidfill>`],
+  [ChartMap, ChartMap.name, `<tiny-chart-map></tiny-chart-map>`],
+  [ChartPie, ChartPie.name, `<tiny-chart-pie></tiny-chart-pie>`],
+  [ChartProcess, ChartProcess.name, `<tiny-chart-process></tiny-chart-process>`],
+  [ChartRadar, ChartRadar.name, `<tiny-chart-radar></tiny-chart-radar>`],
+  [ChartRing, ChartRing.name, `<tiny-chart-ring></tiny-chart-ring>`],
+  [ChartSankey, ChartSankey.name, `<tiny-chart-sankey></tiny-chart-sankey>`],
+  [ChartScatter, ChartScatter.name, `<tiny-chart-scatter></tiny-chart-scatter>`],
+  [ChartSunburst, ChartSunburst.name, `<tiny-chart-sunburst></tiny-chart-sunburst>`],
+  [ChartTree, ChartTree.name, `<tiny-chart-tree></tiny-chart-tree>`],
+  [ChartWaterfall, ChartWaterfall.name, `<tiny-chart-waterfall></tiny-chart-waterfall>`],
+  [ChartWordcloud, ChartWordcloud.name, `<tiny-chart-wordcloud></tiny-chart-wordcloud>`],
   [Checkbox, Checkbox.name, `<tiny-checkbox></tiny-checkbox>`],
   [CheckboxButton, CheckboxButton.name, `<tiny-checkbox-button></tiny-checkbox-button>`],
   [CheckboxGroup, CheckboxGroup.name, `<tiny-checkbox-group></tiny-checkbox-group>`],
@@ -265,7 +332,6 @@ const componentsMap = [
   [FilterPanel, FilterPanel.name, `<tiny-filter-panel></tiny-filter-panel>`],
   [FloatBar, FloatBar.name, `<tiny-float-bar></tiny-float-bar>`],
   [FlowChart, FlowChart.name, `<tiny-flow-chart></tiny-flow-chart>`],
-  [Font, Font.name, `<tiny-font></tiny-font>`],
   [Form, Form.name, `<tiny-form></tiny-form>`],
   [FormItem, FormItem.name, `<tiny-form-item></tiny-form-item>`],
   [Fullscreen, Fullscreen.name, `<tiny-fullscreen></tiny-fullscreen>`],

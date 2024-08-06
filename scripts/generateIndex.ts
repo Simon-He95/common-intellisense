@@ -37,8 +37,16 @@ export function ${name}() {
 const componentsMap = [
   ${map.join('\n    ')}
 ]
+
 export function ${name}Components() {
-  return componentsReducer(componentsMap, ${isHyphen}, '${prefix}', '${lib}', ${isReact})
+  return componentsReducer({
+    map: componentsMap,
+    isSeperatorByHyphen: ${isHyphen},
+    prefix: '${prefix}',
+    isReact: ${isReact}
+    lib: '${lib}',
+    // directives: directives.${name},
+  })
 }
 `
   fsp.writeFile(path.resolve(root, `${folder}/${name}/index.ts`), template)
