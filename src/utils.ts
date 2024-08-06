@@ -94,14 +94,14 @@ function dfs(children: any, parent: any, position: vscode.Position) {
         if (isInPosition(prop.loc, position)) {
           if (!isInAttribute(child, position))
             return false
-          if ((prop.name === 'bind' || prop.name === 'on') && prop.arg && isInPosition(prop.arg.loc, position)) {
+          if ((prop.name === 'bind' || prop.name === 'on') && prop.exp && isInPosition(prop.exp.loc, position)) {
             return {
               tag,
-              propName: prop.arg.content,
+              propName: prop.exp?.content !== undefined,
               props,
               type: 'props',
               isInTemplate: true,
-              isValue: prop.value?.content !== undefined,
+              isValue: prop.exp?.content !== undefined,
               parent: {
                 tag: parent.tag ? parent.tag : 'template',
                 props: parent.props || [],
@@ -182,7 +182,7 @@ function isInPosition(loc: any, position: vscode.Position) {
   const { line: startLine, column: startcharacter } = start
   const { line: endLine, column: endcharacter } = end
   const { line, character } = position
-  if (line + 1 === startLine && character < startcharacter)
+  if (line + 1 === startLine && character < startcharacter - 1)
     return
   if (line + 1 === endLine && character > endcharacter - 1)
     return

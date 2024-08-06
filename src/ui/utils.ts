@@ -409,8 +409,8 @@ export function componentsReducer(options: Options) {
               }
               else { snippet = `<${tag}>$1</${tag}>` }
             }
+            _content = `${tag}  ${content.tag || detail}`
             description = isZh ? content.description_zh : content.description || content.description_zh
-            _content = `${tag}  ${description}`
           }
           else {
             snippet = `<${content}>$1</${content}>`
@@ -483,8 +483,8 @@ export function componentsReducer(options: Options) {
               }
               else { snippet = `<${tag}>$1</${tag}>` }
             }
+            _content = `${tag}  ${content.tag || detail}`
             description = isZh ? content.description_zh : content.description || content.description_zh
-            _content = `${tag}  ${description}`
           }
           else {
             snippet = `<${content}>$1</${content}>`
@@ -556,8 +556,8 @@ export function componentsReducer(options: Options) {
           }
           else { snippet = `<${tag}>$1</${tag}>` }
         }
+        _content = `${tag}  ${content.tag || detail}`
         description = isZh ? content.description_zh : content.description || content.description_zh
-        _content = `${tag}  ${description}`
       }
       else {
         snippet = `<${content}>$1</${content}>`
@@ -642,7 +642,7 @@ export function getRequireProp(content: any, index = 0, isVue: boolean): [string
     }
     else {
       const tempMap: any = {}
-      const types = item.type.replace(/\s+/g, ' ').replace(/\{((?:[^{}]|\{[^{}]*\})*)\}/g, (_: string) => {
+      const types = item.type.replace(/\s+/g, ' ').replace(/\{((?:[^{}]|\{[^{}]*\})*)\}|<((?:[^<>]|<[^<>]*>)*)>/g, (_: string) => {
         const key = hash(_)
         tempMap[key] = _.replace(/,/g, '\,')
         return key

@@ -12,3 +12,9 @@ function copyToClipboard(text) {
   document.execCommand('copy');
   document.body.removeChild(textArea);
 }
+
+
+const getTag = () => {
+  const tag = `\n  "tag": "${document.querySelector('h1').textContent.split(' ')[1]}",`
+  copyToClipboard(tag)
+}
