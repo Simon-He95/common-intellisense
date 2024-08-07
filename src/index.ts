@@ -5,11 +5,11 @@ import { addEventListener, createCompletionItem, createHover, createMarkdownStri
 import { CreateWebview } from '@vscode-use/createwebview'
 import { parse } from '@vue/compiler-sfc'
 import { createFilter } from '@rollup/pluginutils'
-import { alias, detectSlots, findPkgUI, findRefs, getReactRefsMap, parser, registerCodeLensProviderFn, transformVue } from './utils'
+import { alias, detectSlots, findPkgUI, findRefs, getReactRefsMap, parser, parserVine, registerCodeLensProviderFn, transformVue } from './utils'
 import UI from './ui'
 import { UINames as UINamesMap, nameMap } from './constants'
 import type { Directives } from './ui/utils'
-import { toCamel } from './ui/utils'
+import { isVine, isVue, toCamel } from './ui/utils'
 // import {createWebviewPanel} from './webview/webview'
 
 let UINames: any = []
@@ -155,9 +155,8 @@ export function activate(context: vscode.ExtensionContext) {
       let str = importWay === 'as default'
         ? `import * as ${deps.join(', ')} from '${from}'`
         : `import { ${deps.join(', ')} } from '${from}'`
-      const isVue = getActiveTextEditorLanguageId() === 'vue'
       let pos: any = null
-      if (isVue) {
+      if (isVue()) {
         if (loc) {
           if (getLineText(loc.start.line)?.trim()) {
             str += '\n'
@@ -198,7 +197,7 @@ export function activate(context: vscode.ExtensionContext) {
 
   // 监听pkg变化
   if (isShowSlots) {
-    context.subscriptions.push(registerCommand('common-intellisense.slots', (child, name) => {
+    context.subscriptions.push(registerCommand('common-intellisense.slots', (child, name, offset) => {
       const activeText = getActiveText()
       if (!activeText)
         return
@@ -209,18 +208,25 @@ export function activate(context: vscode.ExtensionContext) {
       }
       if (!child.children)
         return
-      const lastChild = child.children[child.children.findLastIndex((c: any) => c.type !== 2)]
+
+      let lastChild = child.children[child.children.findLastIndex((c: any) => c.type !== 2)]
       let slotName = `#${name}`
       if (child.range)
         slotName = `v-slot:${name}`
 
       if (lastChild) {
+        if (isVine() && lastChild.codegenNode) {
+          lastChild = lastChild.codegenNode
+        }
         const pos = lastChild.loc.end
         const repeatColumn = Math.max(lastChild.loc.start.column - 1, 0)
         const empty = ' '.repeat(repeatColumn)
         const endColumn = Math.max(pos.column - 1, 0)
         updateText((edit) => {
-          edit.insert(createPosition(pos.line - 1, endColumn), `\n${empty}<template ${slotName}></template>`)
+          if (isVine())
+            edit.insert(getPosition(pos.offset + offset), `\n${empty}<template ${slotName}></template>`)
+          else
+            edit.insert(createPosition(pos.line - 1, endColumn), `\n${empty}<template ${slotName}></template>`)
         })
       }
       else {
@@ -228,7 +234,10 @@ export function activate(context: vscode.ExtensionContext) {
 
         if (child.isSelfClosing) {
           updateText((edit) => {
-            edit.replace(createRange([child.loc.end.line - 1, child.loc.end.column - 3], [child.loc.end.line - 1, child.loc.end.column - 1]), `>\n${empty}  <template ${slotName}></template>\n${empty}</${child.tag}>`)
+            if (isVine())
+              edit.replace(createRange(getPosition(child.loc.end.offset + offset - 3), getPosition(child.loc.end.offset + offset - 1)), `>\n${empty}  <template ${slotName}></template>\n${empty}</${child.tag}>`)
+            else
+              edit.replace(createRange([child.loc.end.line - 1, child.loc.end.column - 3], [child.loc.end.line - 1, child.loc.end.column - 1]), `>\n${empty}  <template ${slotName}></template>\n${empty}</${child.tag}>`)
           })
         }
         else {
@@ -236,7 +245,10 @@ export function activate(context: vscode.ExtensionContext) {
           const index = child.loc.start.offset + child.loc.source.indexOf(`</${child.tag}`) - (isNeedLineBlock ? 0 : (child.loc.end.column - `</${child.tag}>`.length - 1))
           const pos = getPosition(index)
           updateText((edit) => {
-            edit.insert(createPosition(pos), `${isNeedLineBlock ? '\n' : ''}${empty}  <template ${slotName}></template>\n${isNeedLineBlock ? empty : ''}`)
+            if (isVine())
+              edit.insert(getPosition(pos.offset + offset), `${isNeedLineBlock ? '\n' : ''}${empty}  <template ${slotName}></template>\n${isNeedLineBlock ? empty : ''}`)
+            else
+              edit.insert(createPosition(pos), `${isNeedLineBlock ? '\n' : ''}${empty}  <template ${slotName}></template>\n${isNeedLineBlock ? empty : ''}`)
           })
         }
       }
@@ -273,7 +285,7 @@ export function activate(context: vscode.ExtensionContext) {
       return
 
     const lan = getActiveTextEditorLanguageId()
-    const isVue = lan === 'vue' && result.template
+    const isVue = (lan === 'vue' && result.template) || isVine()
     const code = getActiveText()
     if (!code)
       return
@@ -283,23 +295,21 @@ export function activate(context: vscode.ExtensionContext) {
     const isPreEmpty = lineText[character - 1] === ' '
     const isValue = result.isValue
 
-    if (!result.isInTemplate && result.refs && !isPreEmpty) {
-      if (result.refsMap && Object.keys(result.refsMap).length) {
-        if (lineText?.slice(-1)[0] === '.') {
-          for (const key in result.refsMap) {
-            const value = result.refsMap[key]
-            if (isVue && (lineText.endsWith(`.$refs.${key}.`) || lineText.endsWith(`${key}.value.`)) && UiCompletions[value])
-              return UiCompletions[value].methods
-            else if (!isVue && lineText.endsWith(`${key}.current.`) && UiCompletions[value])
-              return UiCompletions[value].methods
-          }
+    if (result.type === 'script' && Object.keys(result.refsMap || {}).length && !isPreEmpty) {
+      if (lineText?.slice(-1)[0] === '.') {
+        for (const key in result.refsMap) {
+          const value = result.refsMap[key]
+          if (isVue && (lineText.endsWith(`.$refs.${key}.`) || lineText.endsWith(`${key}.value.`)) && UiCompletions[value])
+            return UiCompletions[value].methods
+          else if (!isVue && lineText.endsWith(`${key}.current.`) && UiCompletions[value])
+            return UiCompletions[value].methods
         }
-        if (isVue && lineText.slice(character, character + 6) !== '.value' && !/\.value\.?$/.test(lineText.slice(0, character)))
-          return result.refs.map((refName: string) => createCompletionItem({ content: refName, snippet: `${refName}.value`, documentation: `${refName}.value`, preselect: true, sortText: 'a' }))
-
-        if (!isVue && lineText.slice(character, character + 8) !== '.current' && !/\.current\.?$/.test(lineText.slice(0, character)))
-          return result.refs.map((refName: string) => createCompletionItem({ content: refName, snippet: `${refName}.current`, documentation: `${refName}.current`, preselect: true, sortText: 'a' }))
       }
+      if (isVue && lineText.slice(character, character + 6) !== '.value' && !/\.value\.?$/.test(lineText.slice(0, character)))
+        return result.refs.map((refName: string) => createCompletionItem({ content: refName, snippet: `${refName}.value`, documentation: `${refName}.value`, preselect: true, sortText: 'a' }))
+
+      if (!isVue && lineText.slice(character, character + 8) !== '.current' && !/\.current\.?$/.test(lineText.slice(0, character)))
+        return result.refs.map((refName: string) => createCompletionItem({ content: refName, snippet: `${refName}.current`, documentation: `${refName}.current`, preselect: true, sortText: 'a' }))
     }
 
     if (result.parent && result.tag === 'template') {
@@ -584,7 +594,7 @@ export function activate(context: vscode.ExtensionContext) {
 
       const code = document.getText()
       // word 修正
-      if (lineText[range.end.character] === '.') {
+      if (lineText[range.end.character] === '.' || lineText[range.end.character] === '-') {
         let index = range.end.character
         while (!/[>\s/]/.test(lineText[index]) && index < lineText.length) {
           word += lineText[index]
@@ -603,8 +613,41 @@ export function activate(context: vscode.ExtensionContext) {
         const result = parser(code, position as any)
         if (!result)
           return
-        if (!result.propName)
+        if (result.type === 'tag') {
+          const data = optionsComponents.data.map((c: any) => c()).flat()
+          if (!data?.length || !word)
+            return new vscode.Hover('')
+          const tag = toCamel(result.tag)[0].toUpperCase() + toCamel(result.tag).slice(1)
+          let target = UiCompletions[tag] || await findDynamicComponent(tag, {})
+          if (!target)
+            return
+          const uiDeps = getUiDeps(code)
+          const importUiSource = uiDeps[tag]
+          if (importUiSource && target.uiName !== importUiSource) {
+            for (const p of optionsComponents.prefix.filter(Boolean)) {
+              const realName = p[0].toUpperCase() + p.slice(1) + tag
+              const newTarget = UiCompletions[realName]
+              if (!newTarget)
+                continue
+              if (newTarget.uiName === importUiSource) {
+                target = newTarget
+                break
+              }
+            }
+          }
+
+          if (!target)
+            return
+
+          const tableDocument = target.tableDocument
+
+          if (tableDocument)
+            return new vscode.Hover(tableDocument)
+        }
+        else if (!result.propName) {
           return
+        }
+
         const propName = result.propName === 'bind' ? result.props[0].arg.content : result.propName
         if (['class', 'className', 'style', 'id'].includes(propName))
           return
@@ -621,7 +664,7 @@ export function activate(context: vscode.ExtensionContext) {
         return new vscode.Hover(`## Details \n\n${detail}`)
       }
       // todo: 优化这里的条件，在 react 中， 也可以减少更多的处理步骤
-      if (getActiveTextEditorLanguageId() === 'vue') {
+      if (isVue()) {
         const r = transformVue(code, position)
         if (r) {
           if (!r.template)
@@ -655,7 +698,42 @@ export function activate(context: vscode.ExtensionContext) {
 
             return target.hover
           }
-          return
+          if (r.type === 'script')
+            return
+        }
+      }
+      else if (isVine()) {
+        const r = parserVine(code, position)
+        if (r) {
+          if (word.includes('.value.') && r.type === 'script' && Object.keys(r.refsMap || {}).length) {
+            const index = word.indexOf('.value.')
+            const key = word.slice(0, index)
+            const refName = r.refsMap[key]
+            if (!refName)
+              return
+            if (lineText.slice(range.start.character, range.end.character) === 'value') {
+              // hover .value.区域 提示所有方法
+              const groupMd = createMarkdownString()
+              UiCompletions[refName].methods.forEach((m: any, i: number) => {
+                let content = m.documentation.value
+                if (i !== 0) {
+                  content = content.replace(/##[^\]\n]*[\]\n]/, '')
+                }
+                groupMd.appendMarkdown(content)
+                groupMd.appendMarkdown('\n')
+              })
+              return createHover(groupMd)
+            }
+            const targetKey = word.slice(index + '.value.'.length)
+            const target = UiCompletions[refName].methods.find((item: any) => item.label === targetKey)
+
+            if (!target)
+              return
+
+            return target.hover
+          }
+          if (r.type === 'script')
+            return
         }
       }
       else if (getActiveTextEditorLanguageId()?.includes('react')) {
@@ -741,7 +819,6 @@ export function findUI() {
   completionsCallbacks.clear()
   currentPkgUiNames = null
   cacheMap.clear()
-
   const selectedUIs = getConfiguration('common-intellisense.ui') as string[]
 
   const cwd = getCurrentFileUrl()

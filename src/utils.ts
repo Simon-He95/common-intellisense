@@ -4,10 +4,15 @@ import { parse } from '@vue/compiler-sfc'
 import type { SFCTemplateBlock } from '@vue/compiler-sfc'
 import { parse as tsParser } from '@typescript-eslint/typescript-estree'
 import { findUp } from 'find-up'
-import { createRange, getActiveText, getActiveTextEditor, getActiveTextEditorLanguageId, getConfiguration, getCurrentFileUrl, getLocale, getOffsetFromPosition, registerCodeLensProvider, watchFiles } from '@vscode-use/utils'
+import { createRange, getActiveText, getActiveTextEditor, getActiveTextEditorLanguageId, getConfiguration, getCurrentFileUrl, getLocale, getOffsetFromPosition, getPosition, isInPosition, registerCodeLensProvider, watchFiles } from '@vscode-use/utils'
 import { traverse } from '@babel/types'
+import type { VineCompilerHooks, VineDiagnostic, VineFileCtx } from '@vue-vine/compiler'
+import {
+  compileVineTypeScriptFile,
+  createCompilerCtx,
+} from '@vue-vine/compiler'
 import { UINames } from './constants'
-import { toCamel } from './ui/utils'
+import { isVine, isVue, toCamel } from './ui/utils'
 import { findDynamicComponent, findUI, optionsComponents, urlCache } from '.'
 
 const { parse: svelteParser } = require('svelte/compiler')
@@ -19,29 +24,35 @@ export function parser(code: string, position: vscode.Position & { active: strin
   const entry = getCurrentFileUrl()
   if (!entry)
     return
-  const suffix = entry.slice(entry.lastIndexOf('.') + 1)
-  if (!suffix)
-    return
-  isInTemplate = false
-  if (suffix === 'vue') {
-    const result = transformVue(code, position)
-    if (!result)
-      return
-    if (!result.refs?.length || !result.template)
-      return result
-    const refsMap = findRefs(result.template)
-    return Object.assign(result, { refsMap })
+  const isVine = entry.endsWith('.vine.ts')
+  if (isVine) {
+    return parserVine(code, position)
   }
-  if (/ts|js|jsx|tsx/.test(suffix))
-    return parserJSX(code, position)
+  else {
+    const suffix = entry.slice(entry.lastIndexOf('.') + 1)
+    if (!suffix)
+      return
+    isInTemplate = false
+    if (suffix === 'vue') {
+      const result = transformVue(code, position)
+      if (!result)
+        return
+      if (!result.refs?.length || !result.template)
+        return result
+      const refsMap = findRefs(result.template)
+      return Object.assign(result, { refsMap })
+    }
+    if (/ts|js|jsx|tsx/.test(suffix))
+      return parserJSX(code, position)
 
-  if (suffix === 'svelte')
-    return parserSvelte(code, position)
+    if (suffix === 'svelte')
+      return parserSvelte(code, position)
+  }
 
   return true
 }
 
-export function transformVue(code: string, position: vscode.Position) {
+export function transformVue(code: string, position: vscode.Position, offset = 0) {
   const {
     descriptor: { template, script, scriptSetup },
     errors,
@@ -58,7 +69,7 @@ export function transformVue(code: string, position: vscode.Position) {
     }
     return
   }
-  if (_script && isInPosition(_script.loc, position)) {
+  if (_script && isInPosition(_script.loc, position, offset)) {
     const content = _script.content!
     const refs: string[] = []
     for (const match of content.matchAll(/(const|let|var)\s+([\w$]+)\s*=\s*ref[^()]*\(/g)) {
@@ -71,12 +82,12 @@ export function transformVue(code: string, position: vscode.Position) {
       template,
     }
   }
-  if (!isInPosition(template.loc, position))
+  if (!isInPosition(template.loc, position, offset))
     return
   // 在template中
   const { ast } = template
 
-  const r = dfs(ast.children, template, position)
+  const r = dfs(ast.children, template, position, offset)
   if (r) {
     r.loc = _script?.loc
     return r
@@ -84,15 +95,61 @@ export function transformVue(code: string, position: vscode.Position) {
   return r
 }
 
-function dfs(children: any, parent: any, position: vscode.Position) {
+export function transformVine(vineFileCtx: VineFileCtx, position: vscode.Position) {
+  const targetInPositionNode = vineFileCtx.vineCompFns.find(item => isInPosition(item.fnDeclNode.loc, position))
+  if (!targetInPositionNode)
+    return
+
+  const { templateAst, fnDeclNode, templateStringNode } = targetInPositionNode
+  const children = templateAst?.children
+  if (!children)
+    return
+  const parent = fnDeclNode
+  const result = dfs(children, parent, position, templateStringNode?.quasi.quasis[0].start || 0)
+  const refsMap = findRef(children, {})
+  if (result)
+    return Object.assign(result, refsMap)
+
+  return {
+    type: 'script',
+    refsMap,
+  }
+}
+
+function dfs(children: any, parent: any, position: vscode.Position, offset = 0) {
   for (const child of children) {
     const { loc, tag, props, children } = child
-    if (!isInPosition(loc, position))
+    if (!isInPosition(loc, position, offset))
       continue
+
+    if (tag) {
+      const isTag = isInPosition({
+        start: loc.start,
+        end: {
+          line: loc.start.line,
+          column: loc.start.column + tag.length,
+        },
+      }, position, offset)
+
+      if (isTag) {
+        return {
+          tag,
+          props,
+          type: 'tag',
+          isInTemplate: true,
+          parent: {
+            tag: parent.tag ? parent.tag : 'template',
+            props: parent.props || [],
+          },
+          template: parent,
+        }
+      }
+    }
+
     if (props && props.length) {
       for (const prop of props) {
-        if (isInPosition(prop.loc, position)) {
-          if (!isInAttribute(child, position))
+        if (isInPosition(prop.loc, position, offset)) {
+          if (!isInAttribute(child, position, offset))
             return false
           if ((prop.name === 'bind' || prop.name === 'on') && prop.exp && isInPosition(prop.exp.loc, position)) {
             return {
@@ -117,18 +174,12 @@ function dfs(children: any, parent: any, position: vscode.Position) {
               propName = prop.arg.content
             else if (prop.exp && isInPosition(prop.exp.loc, position))
               propName = prop.exp.content
-            const isTag = isInPosition({
-              start: loc.start,
-              end: {
-                line: loc.start.line,
-                column: loc.start.column + child.tag.length,
-              },
-            }, position)
+
             return {
               tag,
               propName,
               props,
-              type: isTag ? 'tag' : 'props',
+              type: 'props',
               isInTemplate: true,
               isValue: prop.value?.content !== undefined,
               parent: {
@@ -142,16 +193,16 @@ function dfs(children: any, parent: any, position: vscode.Position) {
       }
     }
     if (children && children.length) {
-      const result = dfs(children, child, position) as any
+      const result = dfs(children, child, position, offset) as any
       if (result)
         return result
     }
-    if (child.tag) {
-      if (!isInAttribute(child, position))
+    if (tag) {
+      if (!isInAttribute(child, position, offset))
         return false
       return {
         type: 'props',
-        tag: child.tag,
+        tag,
         props,
         isInTemplate: true,
         parent: {
@@ -161,7 +212,7 @@ function dfs(children: any, parent: any, position: vscode.Position) {
         template: parent,
       }
     }
-    if (child.type === 2) {
+    if (child.type === 2 || child.content?.type === 2) {
       return {
         type: 'text',
         isInTemplate: true,
@@ -175,22 +226,6 @@ function dfs(children: any, parent: any, position: vscode.Position) {
     }
     return
   }
-}
-
-function isInPosition(loc: any, position: vscode.Position) {
-  const { start, end } = loc
-  const { line: startLine, column: startcharacter } = start
-  const { line: endLine, column: endcharacter } = end
-  const { line, character } = position
-  if (line + 1 === startLine && character < startcharacter - 1)
-    return
-  if (line + 1 === endLine && character > endcharacter - 1)
-    return
-  if (line + 1 < startLine)
-    return
-  if (line + 1 > endLine)
-    return
-  return true
 }
 
 export function getReactRefsMap() {
@@ -509,7 +544,7 @@ export function transformTagName(name: string) {
   return name[0].toUpperCase() + name.replace(/(-\w)/g, (match: string) => match[1].toUpperCase()).slice(1)
 }
 
-export function isInAttribute(child: any, position: any) {
+export function isInAttribute(child: any, position: any, offset: number) {
   const len = child.props.length
   let end = null
   const start = {
@@ -553,10 +588,10 @@ export function isInAttribute(child: any, position: any) {
     }
   }
 
-  const offset = getOffsetFromPosition(position)!
+  const _offset = getOffsetFromPosition(position)!
   const startOffset = start.offset
   const endOffset = end.offset
-  return (startOffset < offset) && (offset <= endOffset)
+  return (startOffset + offset < _offset) && (_offset <= endOffset + offset)
 }
 
 export function convertPositionToLoc(data: any) {
@@ -589,59 +624,83 @@ const modules: any = {
   offset: 0,
 }
 export async function detectSlots(UiCompletions: any, uiDeps: any) {
-  const [children, offset] = await getTemplateAst(UiCompletions, uiDeps)
+  const children = (await getTemplateAst(UiCompletions, uiDeps)).filter(item => item.children.length)
 
-  if (!children || !children?.length) {
+  if (!children.length) {
     modules.children = []
     modules.offset = 0
     return
   }
 
   modules.children = children
-  modules.offset = offset
 }
 
 export function registerCodeLensProviderFn() {
   const isZh = getLocale().includes('zh')
-  return registerCodeLensProvider(['vue', 'javascriptreact', 'typescriptreact'], {
+  return registerCodeLensProvider(['vue', 'javascriptreact', 'typescriptreact', 'typescript'], {
     provideCodeLenses() {
+      const languageId = getActiveTextEditorLanguageId()
+      if (languageId === 'typescript' && !isVine())
+        return []
       const result: vscode.CodeLens[] = []
       const children = modules.children
-      children.forEach((m: any) => {
-        const { child, slots } = m
-        const range = child.loc
-        const filters: string[] = []
-        for (const c of Array.from(child.children) as any) {
-          if (c.type === 'JSXElement') {
-            if (c.openingElement.name.name !== 'template')
-              continue
-            for (const p of c.openingElement.attributes) {
-              const namespace = p.name.namespace.name
-              if (namespace === 'v-slot') {
-                const slotName = p.name.name.name
-                filters.push(slotName)
-                break
+      children.forEach((child: any) => {
+        const offset = child.offset
+        child.children.forEach((m: any) => {
+          const { child, slots } = m
+          const range = child.loc
+          const filters: string[] = []
+          for (const c of Array.from(child.children) as any) {
+            if (c.type === 'JSXElement') {
+              if (c.openingElement.name.name !== 'template')
+                continue
+              for (const p of c.openingElement.attributes) {
+                const namespace = p.name.namespace.name
+                if (namespace === 'v-slot') {
+                  const slotName = p.name.name.name
+                  filters.push(slotName)
+                  break
+                }
+              }
+            }
+            else if (c.tag === 'template' && c.props) {
+              for (const p of c.props) {
+                if (p.name === 'slot') {
+                  const slotName = p.arg.content
+                  filters.push(slotName)
+                  break
+                }
+              }
+            }
+            else if (c.codegenNode?.tag === 'template' && c.codegenNode.props) {
+              for (const p of c.codegenNode.props) {
+                if (p.name === 'slot') {
+                  const slotName = p.arg.content
+                  filters.push(slotName)
+                  break
+                }
               }
             }
           }
-          else if (c.tag === 'template' && c.props) {
-            for (const p of c.props) {
-              if (p.name === 'slot') {
-                const slotName = p.arg.content
-                filters.push(slotName)
-                break
-              }
+          slots.filter((s: any) => !filters.includes(s.name)).forEach((s: any, i: number) => {
+            const { name, description, description_zh } = s
+            // 计算偏移量
+            let codeLensRange = null
+            if (isVine()) {
+              const fixedStart = getPosition(range.start.offset + offset).position
+              const fixedEnd = getPosition(range.end.offset + offset).position
+              codeLensRange = createRange(fixedStart, fixedEnd)
             }
-          }
-        }
-        slots.filter((s: any) => !filters.includes(s.name)).forEach((s: any, i: number) => {
-          const { name, description, description_zh } = s
-          result.push(new vscode.CodeLens(createRange(range.start.line - 1, range.start.column, range.end.line - 1, range.end.column), {
-            title: `${i === 0 ? 'Slots: ' : ''}${name}`,
-            tooltip: isZh ? description_zh : description,
-            command: 'common-intellisense.slots',
-            arguments: [child, name],
-          }))
+            else {
+              codeLensRange = new vscode.CodeLens(createRange(range.start.line - 1, range.start.column, range.end.line - 1, range.end.column))
+            }
+            result.push(new vscode.CodeLens(codeLensRange, {
+              title: `${i === 0 ? 'Slots: ' : ''}${name}`,
+              tooltip: isZh ? description_zh : description,
+              command: 'common-intellisense.slots',
+              arguments: [child, name, offset],
+            }))
+          })
         })
       })
       return result
@@ -649,11 +708,10 @@ export function registerCodeLensProviderFn() {
   })
 }
 
-async function getTemplateAst(UiCompletions: any, uiDeps: any): Promise<[any, number?] | []> {
+async function getTemplateAst(UiCompletions: any, uiDeps: any): Promise<[{ children: any, offset: number }] | []> {
   const code = getActiveText()!
-  const lan = getActiveTextEditorLanguageId() || ''
 
-  if (lan === 'vue') {
+  if (isVue()) {
     const {
       descriptor: { template, script, scriptSetup },
     } = parse(code)
@@ -661,15 +719,37 @@ async function getTemplateAst(UiCompletions: any, uiDeps: any): Promise<[any, nu
     if (!template) {
       if (_script?.lang === 'tsx') {
         const children = findAllJsxElements(_script.content)
-        return [await findUiTag(children, UiCompletions, [], new Set(), uiDeps), _script.loc.start.offset]
+        return [{
+          children: await findUiTag(children, UiCompletions, [], new Set(), uiDeps),
+          offset: _script.loc.start.offset,
+        }]
       }
       return []
     }
-    return [await findUiTag(template.ast.children, UiCompletions, [], new Set(), uiDeps), 0]
+    return [{
+      children: await findUiTag(template.ast.children, UiCompletions, [], new Set(), uiDeps),
+      offset: 0,
+    }]
   }
-  else if (['javascriptreact', 'typescriptreact'].includes(lan)) {
+  else if (isVine()) {
+    const { vineFileCtx } = createVineFileCtx('', code)
+    if (!vineFileCtx.vineCompFns)
+      return []
+
+    return await Promise.all(vineFileCtx.vineCompFns.map(async (item) => {
+      const r = {
+        children: await findUiTag(item.templateAst?.children, UiCompletions, [], new Set(), uiDeps),
+        offset: item.templateStringNode?.quasi.quasis[0].start || 0,
+      }
+      return r
+    })) as any
+  }
+  else if (['javascriptreact', 'typescriptreact'].includes(getActiveTextEditorLanguageId()!)) {
     const children = findAllJsxElements(code)
-    return [await findUiTag(children, UiCompletions, [], new Set(), uiDeps), 0]
+    return [{
+      children: await findUiTag(children, UiCompletions, [], new Set(), uiDeps),
+      offset: 0,
+    }]
   }
   return []
 }
@@ -754,4 +834,50 @@ function findAllJsxElements(code: string) {
  */
 export function escapeRegExp(str: string) {
   return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+}
+
+export function parserVine(code: string, position: vscode.Position) {
+  const { vineFileCtx } = createVineFileCtx('', code)
+  if (!vineFileCtx.vineCompFns.length)
+    return
+
+  return transformVine(vineFileCtx, position)
+}
+
+export function createVineFileCtx(sourceFileName: string, source: string) {
+  const compilerCtx = createCompilerCtx({
+    envMode: 'module',
+    vueCompilerOptions: {
+      // 'module' will break Volar virtual code's mapping
+      mode: 'function',
+      // These options below is for resolving conflicts
+      // with original compiler's mode: 'module'
+      cacheHandlers: false,
+      prefixIdentifiers: false,
+      scopeId: null,
+    },
+  })
+  const vineCompileErrs: VineDiagnostic[] = []
+  const vineCompileWarns: VineDiagnostic[] = []
+  const compilerHooks: VineCompilerHooks = {
+    onError: err => vineCompileErrs.push(err),
+    onWarn: warn => vineCompileWarns.push(warn),
+    getCompilerCtx: () => compilerCtx,
+  }
+  const vineFileCtx = compileVineTypeScriptFile(
+    source,
+    sourceFileName,
+    {
+      compilerHooks,
+      babelParseOptions: {
+        tokens: true,
+      },
+    },
+  )
+
+  return {
+    vineFileCtx,
+    vineCompileErrs,
+    vineCompileWarns,
+  }
 }

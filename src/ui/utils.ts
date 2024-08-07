@@ -1,5 +1,5 @@
 import * as vscode from 'vscode'
-import { createCompletionItem, createHover, createMarkdownString, getActiveTextEditorLanguageId, getLocale, setCommandParams } from '@vscode-use/utils'
+import { createCompletionItem, createHover, createMarkdownString, getActiveTextEditorLanguageId, getCurrentFileUrl, getLocale, setCommandParams } from '@vscode-use/utils'
 import { escapeRegExp } from '../utils'
 
 export function propsReducer(uiName: string, map: string[], prefix: string, iconData?: { prefix: string, type: string, icons: any[] }, extensionContext?: any) {
@@ -47,7 +47,7 @@ export function propsReducer(uiName: string, map: string[], prefix: string, icon
         detail.push(`## ${uiName} [${item.name}]`)
 
         if (value.default !== undefined && value.default !== '')
-          detail.push(`#### 💎 ${isZh ? '默认值' : 'default'}:    ***\`${value.default.toString().replace(/`/g, '')}\`***`)
+          detail.push(`#### 💎 ${isZh ? '默认值' : 'default'}:    ***\`${value.default.toString().replace(/[`\n]/g, '')}\`***`)
 
         if (value.description) {
           if (isZh)
@@ -65,7 +65,7 @@ export function propsReducer(uiName: string, map: string[], prefix: string, icon
             if (Array.isArray(item.typeDetail[key])) {
               return result += key[0] === '$'
                 ? `\ntype ${key.slice(1).replace(/-(\w)/g, v => v.toUpperCase())} = \n${item.typeDetail[key].map((typeItem: any) => `${typeItem.name} /*${typeItem.description}*/`).join('\n| ')}\n\n`
-                : `\ninterface ${key} {\n  ${item.typeDetail[key].map((typeItem: any) => `${typeItem.name}${typeItem.optional ? '?' : ''}: ${typeItem.type} /*${typeItem.description}${typeItem.default ? ` 默认值: ***${typeItem.default}***` : ''}*/`).join('\n  ')}\n}`
+                : `\ninterface ${key} {\n  ${item.typeDetail[key].map((typeItem: any) => `${typeItem.name}${typeItem.optional ? '?' : ''}: ${typeItem.type} /*${typeItem.description}${typeItem.default ? ` 默认值: ***${typeItem.default.replace(/\n/g, '')}***` : ''}*/`).join('\n  ')}\n}`
             }
             return result += `\n${item.typeDetail[key].split('|').join('\n|')}`
           }, '')}`
@@ -110,7 +110,7 @@ export function propsReducer(uiName: string, map: string[], prefix: string, icon
           else
             snippet = `${key}="\${1}"`
         }
-        content += `  ${isZh ? (value.description_zh || value.description) : value.description}${value.default ? `  ${isZh ? '默认' : 'default'}：${value.default}` : ''}`
+        content += `  ${isZh ? (value.description_zh || value.description) : value.description}${value.default ? `  ${isZh ? '默认' : 'default'}：${value.default.replace(/\n/g, '')}` : ''}`
         data.push(createCompletionItem({
           content,
           snippet,
@@ -270,8 +270,10 @@ export function propsReducer(uiName: string, map: string[], prefix: string, icon
           tableHeader,
           tableDivider,
           ...Object.keys(item.props).map((name) => {
-            const { default: defaultValue, type, description, description_zh } = item.props[name]
-            return `| ${name} | ${isZh ? description_zh : description} | ${type} | ${defaultValue} |`
+            const { default: defaultValue = '', type, description, description_zh } = item.props[name]
+            let value = defaultValue.replace(/\s+/g, ' ').replace(/\|/g, ' \\| ').trim()
+            value = defaultValue.length > 20 ? '...' : value
+            return `| \`${name}\` | \`${isZh ? description_zh : description}\` | \`${type}\` | \`${value}\` |`
           }),
         ].join('\n')
 
@@ -370,8 +372,7 @@ export function componentsReducer(options: Options) {
         directives,
         lib,
         data: () => map.map(([content, detail, demo]) => {
-          const lan = getActiveTextEditorLanguageId()
-          const isVue = lan === 'vue'
+          const isVue = isVueOrVine()
           let snippet = ''
           let _content = ''
           let description = ''
@@ -442,8 +443,7 @@ export function componentsReducer(options: Options) {
         directives,
         lib,
         data: () => map.map(([content, detail, demo]) => {
-          const lan = getActiveTextEditorLanguageId()
-          const isVue = lan === 'vue'
+          const isVue = isVueOrVine()
           let snippet = ''
           let _content = ''
           let description = ''
@@ -517,8 +517,7 @@ export function componentsReducer(options: Options) {
     directives,
     lib,
     data: () => map.map(([content, detail, demo]) => {
-      const lan = getActiveTextEditorLanguageId()
-      const isVue = lan === 'vue'
+      const isVue = isVueOrVine()
       let snippet = ''
       let _content = ''
       let description = ''
@@ -721,4 +720,18 @@ export function hash(str: string) {
     hval += (hval << 1) + (hval << 4) + (hval << 7) + (hval << 8) + (hval << 24)
   }
   return `00000${(hval >>> 0).toString(36)}`.slice(-6)
+}
+
+export function isVue() {
+  const currentFileUrl = getCurrentFileUrl()!
+  return currentFileUrl.endsWith('.vue')
+}
+
+export function isVine() {
+  const currentFileUrl = getCurrentFileUrl()!
+  return currentFileUrl.endsWith('.vine.ts')
+}
+
+export function isVueOrVine() {
+  return isVine() || isVine()
 }
