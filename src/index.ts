@@ -346,7 +346,10 @@ export function activate(context: vscode.ExtensionContext) {
             const detail = isZh ? item.description_zh : item.description
             const content = `${item.name}  ${detail}`
             const documentation = createMarkdownString()
-            documentation.appendCodeblock(item.documentation, 'typscript')
+            if (item.documentation)
+              documentation.appendMarkdown(item.documentation)
+            else if (item.documentationType)
+              documentation.appendCodeblock(item.documentationType, 'typescript')
 
             if (item.params?.length) {
               documentation.appendCodeblock('\n')
@@ -633,16 +636,16 @@ export function activate(context: vscode.ExtensionContext) {
 
             if (lineText.slice(range.start.character, range.end.character) === 'value') {
               // hover .value.区域 提示所有方法
-              const gorupMd = createMarkdownString()
+              const groupMd = createMarkdownString()
               UiCompletions[refName].methods.forEach((m: any, i: number) => {
                 let content = m.documentation.value
                 if (i !== 0) {
                   content = content.replace(/##[^\]\n]*[\]\n]/, '')
                 }
-                gorupMd.appendMarkdown(content)
-                gorupMd.appendMarkdown('\n')
+                groupMd.appendMarkdown(content)
+                groupMd.appendMarkdown('\n')
               })
-              return createHover(gorupMd)
+              return createHover(groupMd)
             }
             const targetKey = word.slice(index + '.value.'.length)
             const target = UiCompletions[refName].methods.find((item: any) => item.label === targetKey)
@@ -761,6 +764,7 @@ export function findUI() {
 
   function updateCompletions(uis: any) {
     const uisName: string[] = []
+    const originUisName: string[] = []
     uis.forEach(([uiName, version]: any) => {
       let _version = version.match(/[^~]?(\d+)./)![1]
       if (uiName in alias) {
@@ -770,6 +774,7 @@ export function findUI() {
         _version = m[2]
       }
       const name = uiName.replace(/-(\w)/g, (_: string, v: string) => v.toUpperCase())
+      originUisName.push(`${name}${_version}`)
       uisName.push(`${nameMap[name] ?? name}${_version}`)
     })
 
@@ -798,7 +803,8 @@ export function findUI() {
           if (!result.prefix.includes(prefix))
             result.prefix.push(prefix)
           result.data.push(data)
-          result.directivesMap[lib] = directives
+          const libWithVersion = originUisName.find(item => item.startsWith(lib))!
+          result.directivesMap[libWithVersion] = directives
         }
       }
       return result

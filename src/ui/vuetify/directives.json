@@ -4,7 +4,7 @@
       "name": "v-click-outside",
       "description": "The v-click-outside directive calls a function when something outside of the target element is clicked on. This is used internally by components like v-menu and v-dialog.",
       "description_zh": "v-click-outside 指令在单击目标元素之外的内容时调用函数。这在内部由 v-menu 和 v-dialog 等组件使用。",
-      "documentation": "  | ((e: MouseEvent) => void)\n    | {\n        handler: (e: MouseEvent) => void\n        closeConditional: (e: Event) => boolean\n        include: () => HTMLElement[]\n      }",
+      "documentationType": "  | ((e: MouseEvent) => void)\n    | {\n        handler: (e: MouseEvent) => void\n        closeConditional: (e: Event) => boolean\n        include: () => HTMLElement[]\n      }",
       "params": [],
       "link": "https://vuetifyjs.com/zh-Hans/directives/click-outside/",
       "link_zh": "https://vuetifyjs.com/zh-Hans/directives/click-outside/"
@@ -13,7 +13,7 @@
       "name": "v-intersect",
       "description": "The v-intersect directive utilizes the Intersection Observer API. It provides an easy-to-use interface for detecting when elements are visible within the user’s viewport. This is also used for the v-lazy component.",
       "description_zh": "v-intersect 指令使用 Intersection Observer API。它提供了一个易于使用的界面，用于检测元素何时在用户的视口中可见。这也用于 v-lazy 组件。",
-      "documentation": "  | ((\n        isIntersecting: boolean,\n        entries: IntersectionObserverEntry[],\n        observer: IntersectionObserver,\n      ) => void)\n    | { handler: ObserveHandler; options: IntersectionObserverInit\n      }",
+      "documentationType": "  | ((\n        isIntersecting: boolean,\n        entries: IntersectionObserverEntry[],\n        observer: IntersectionObserver,\n      ) => void)\n    | { handler: ObserveHandler; options: IntersectionObserverInit\n      }",
       "params": [
         {
           "name": "once",
@@ -83,7 +83,7 @@
       ],
       "link": "https://vuetifyjs.com/en/directives/mutate/",
       "link_zh": "https://vuetifyjs.com/en/directives/mutate/",
-      "documentation": "  | MutationCallback\n  | { handler: MutationCallback; options: MutationObserverInit\n      }\n"
+      "documentationType": "  | MutationCallback\n  | { handler: MutationCallback; options: MutationObserverInit\n      }\n"
     },
     {
       "name": "v-resize",
@@ -92,7 +92,7 @@
       "link": "https://vuetifyjs.com/en/directives/resize/",
       "link_zh": "https://vuetifyjs.com/en/directives/resize/",
       "params": [],
-      "documentation": "() => void\n"
+      "documentationType": "() => void\n"
     },
     {
       "name": "v-ripple",
@@ -123,7 +123,7 @@
           "description_zh": "防止在点击事件冒泡时在任何其他元素上触发涟漪。"
         }
       ],
-      "documentation": "boolean | { class: string }\n"
+      "documentationType": "boolean | { class: string }\n"
     },
     {
       "name": "v-scroll",
@@ -132,7 +132,7 @@
       "link": "https://vuetifyjs.com/en/directives/scroll/",
       "link_zh": "https://vuetifyjs.com/en/directives/scroll/",
       "params": [],
-      "documentation": "  | EventListener\n  | { handler: EventListener; options: AddEventListenerOptions }\n  | (EventListenerObject & { options: AddEventListenerOptions })\n"
+      "documentationType": "  | EventListener\n  | { handler: EventListener; options: AddEventListenerOptions }\n  | (EventListenerObject & { options: AddEventListenerOptions })\n"
     },
     {
       "name": "v-tooltip",
@@ -141,7 +141,7 @@
       "link": "https://vuetifyjs.com/en/directives/tooltip/",
       "link_zh": "https://vuetifyjs.com/en/directives/tooltip/",
       "params": [],
-      "documentation": "string | boolean | Record<string, any>\n"
+      "documentationType": "string | boolean | Record<string, any>\n"
     },
     {
       "name": "v-touch",
@@ -150,7 +150,7 @@
       "link": "https://vuetifyjs.com/en/directives/touch/",
       "link_zh": "https://vuetifyjs.com/en/directives/touch/",
       "params": [],
-      "documentation": "{\n  parent: boolean\n  options: AddEventListenerOptions\n  start: (\n    wrapperEvent: { originalEvent: TouchEvent } & {\n      touchstartX: number\n      touchstartY: number\n      touchmoveX: number\n      touchmoveY: number\n      touchendX: number\n      touchendY: number\n      offsetX: number\n      offsetY: number\n    },\n  ) => void\n  end: (\n    wrapperEvent: { originalEvent: TouchEvent } & {\n      touchstartX: number\n      touchstartY: number\n      touchmoveX: number\n      touchmoveY: number\n      touchendX: number\n      touchendY: number\n      offsetX: number\n      offsetY: number\n    },\n  ) => void\n  move: (\n    wrapperEvent: { originalEvent: TouchEvent } & {\n      touchstartX: number\n      touchstartY: number\n      touchmoveX: number\n      touchmoveY: number\n      touchendX: number\n      touchendY: number\n      offsetX: number\n      offsetY: number\n    },\n  ) => void\n  left: (wrapper: {\n    touchstartX: number\n    touchstartY: number\n    touchmoveX: number\n    touchmoveY: number\n    touchendX: number\n    touchendY: number\n    offsetX: number\n    offsetY: number\n  }) => void\n  right: (wrapper: {\n    touchstartX: number\n    touchstartY: number\n    touchmoveX: number\n    touchmoveY: number\n    touchendX: number\n    touchendY: number\n    offsetX: number\n    offsetY: number\n  }) => void\n  up: (wrapper: {\n    touchstartX: number\n    touchstartY: number\n    touchmoveX: number\n    touchmoveY: number\n    touchendX: number\n    touchendY: number\n    offsetX: number\n    offsetY: number\n  }) => void\n  down: (wrapper: {\n    touchstartX: number\n    touchstartY: number\n    touchmoveX: number\n    touchmoveY: number\n    touchendX: number\n    touchendY: number\n    offsetX: number\n    offsetY: number\n  }) => void\n}\n"
+      "documentationType": "{\n  parent: boolean\n  options: AddEventListenerOptions\n  start: (\n    wrapperEvent: { originalEvent: TouchEvent } & {\n      touchstartX: number\n      touchstartY: number\n      touchmoveX: number\n      touchmoveY: number\n      touchendX: number\n      touchendY: number\n      offsetX: number\n      offsetY: number\n    },\n  ) => void\n  end: (\n    wrapperEvent: { originalEvent: TouchEvent } & {\n      touchstartX: number\n      touchstartY: number\n      touchmoveX: number\n      touchmoveY: number\n      touchendX: number\n      touchendY: number\n      offsetX: number\n      offsetY: number\n    },\n  ) => void\n  move: (\n    wrapperEvent: { originalEvent: TouchEvent } & {\n      touchstartX: number\n      touchstartY: number\n      touchmoveX: number\n      touchmoveY: number\n      touchendX: number\n      touchendY: number\n      offsetX: number\n      offsetY: number\n    },\n  ) => void\n  left: (wrapper: {\n    touchstartX: number\n    touchstartY: number\n    touchmoveX: number\n    touchmoveY: number\n    touchendX: number\n    touchendY: number\n    offsetX: number\n    offsetY: number\n  }) => void\n  right: (wrapper: {\n    touchstartX: number\n    touchstartY: number\n    touchmoveX: number\n    touchmoveY: number\n    touchendX: number\n    touchendY: number\n    offsetX: number\n    offsetY: number\n  }) => void\n  up: (wrapper: {\n    touchstartX: number\n    touchstartY: number\n    touchmoveX: number\n    touchmoveY: number\n    touchendX: number\n    touchendY: number\n    offsetX: number\n    offsetY: number\n  }) => void\n  down: (wrapper: {\n    touchstartX: number\n    touchstartY: number\n    touchmoveX: number\n    touchmoveY: number\n    touchendX: number\n    touchendY: number\n    offsetX: number\n    offsetY: number\n  }) => void\n}\n"
     }
   ]
 }

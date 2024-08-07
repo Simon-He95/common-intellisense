@@ -336,7 +336,8 @@ export type Directives = {
   name: string
   description: string
   description_zh: string
-  documentation: string
+  documentation?: string
+  documentationType?: string
   params?: {
     name: string
     description: string
