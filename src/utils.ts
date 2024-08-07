@@ -856,6 +856,7 @@ export function createVineFileCtx(sourceFileName: string, source: string) {
       prefixIdentifiers: false,
       scopeId: null,
     },
+    inlineTemplate: false,
   })
   const vineCompileErrs: VineDiagnostic[] = []
   const vineCompileWarns: VineDiagnostic[] = []
