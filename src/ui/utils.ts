@@ -271,7 +271,7 @@ export function propsReducer(uiName: string, map: string[], prefix: string, icon
           tableDivider,
           ...Object.keys(item.props).map((name) => {
             const { default: defaultValue = '', type, description, description_zh } = item.props[name]
-            let value = defaultValue.replace(/\s+/g, ' ').replace(/\|/g, ' \\| ').trim()
+            let value = String(defaultValue).replace(/\s+/g, ' ').replace(/\|/g, ' \\| ').trim()
             value = defaultValue.length > 20 ? '...' : value
             return `| \`${name}\` | \`${isZh ? description_zh : description}\` | \`${type}\` | \`${value}\` |`
           }),
