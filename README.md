@@ -35,6 +35,7 @@ Install the supported ui component library in your project and install the plug-
 - material-ui 5
 - shadcn-ui 0
 - tiny-vue 3
+- nutui 4
 
 ### [antdv demo](assets/antdv.gif)
 
