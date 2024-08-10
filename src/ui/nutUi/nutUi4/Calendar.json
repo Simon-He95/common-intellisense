@@ -1,0 +1,193 @@
+{
+  "name": "NutCalendar",
+  "description": "日历，可平铺/弹窗展示",
+  "description_zh": "日历，可平铺/弹窗展示",
+  "tag": "日历",
+  "props": {
+    "v-model:visible": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否可见",
+      "description_zh": "是否可见"
+    },
+    "type": {
+      "default": "‘one’",
+      "value": "",
+      "type": "string",
+      "description": "类型，日期单择one，区间选择range,日期多选multiple,周选择week(v4.0.1)",
+      "description_zh": "类型，日期单择one，区间选择range,日期多选multiple,周选择week(v4.0.1)"
+    },
+    "poppable": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "是否弹窗状态展示",
+      "description_zh": "是否弹窗状态展示"
+    },
+    "is-auto-back-fill": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "自动回填",
+      "description_zh": "自动回填"
+    },
+    "title": {
+      "default": "日期选择",
+      "value": "",
+      "type": "string",
+      "description": "显示标题",
+      "description_zh": "显示标题"
+    },
+    "default-value": {
+      "default": "null",
+      "value": "",
+      "type": "string | string[]",
+      "description": "默认值，单个日期选择 string，其他为 string[]",
+      "description_zh": "默认值，单个日期选择 string，其他为 string[]"
+    },
+    "start-date": {
+      "default": "今天",
+      "value": "",
+      "type": "string",
+      "description": "开始日期",
+      "description_zh": "开始日期"
+    },
+    "end-date": {
+      "default": "距离今天 365 天",
+      "value": "",
+      "type": "string",
+      "description": "结束日期",
+      "description_zh": "结束日期"
+    },
+    "show-today": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "是否展示今天标记",
+      "description_zh": "是否展示今天标记"
+    },
+    "start-text": {
+      "default": "开始",
+      "value": "",
+      "type": "string",
+      "description": "范围选择，开始信息文案",
+      "description_zh": "范围选择，开始信息文案"
+    },
+    "end-text": {
+      "default": "结束",
+      "value": "",
+      "type": "string",
+      "description": "范围选择，结束信息文案",
+      "description_zh": "范围选择，结束信息文案"
+    },
+    "confirm-text": {
+      "default": "确认",
+      "value": "",
+      "type": "string",
+      "description": "底部确认按钮文案",
+      "description_zh": "底部确认按钮文案"
+    },
+    "show-title": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "是否在展示日历标题",
+      "description_zh": "是否在展示日历标题"
+    },
+    "show-sub-title": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "是否展示日期标题",
+      "description_zh": "是否展示日期标题"
+    },
+    "to-date-animation": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "是否启动滚动动画",
+      "description_zh": "是否启动滚动动画"
+    },
+    "first-day-of-week": {
+      "default": "0",
+      "value": "",
+      "type": "0-6",
+      "description": "设置周起始日",
+      "description_zh": "设置周起始日"
+    },
+    "disabled-date": {
+      "default": "-",
+      "value": "",
+      "type": "function",
+      "description": "一个用来判断该日期是否被禁用的函数，接受一个年-月-日作为参数。 应该返回一个 Boolean 值。",
+      "description_zh": "一个用来判断该日期是否被禁用的函数，接受一个年-月-日作为参数。 应该返回一个 Boolean 值。"
+    }
+  },
+  "link": "https://nutui.jd.com/h5/vue/4x/#/zh-CN/component/calendar",
+  "link_zh": "https://nutui.jd.com/h5/vue/4x/#/zh-CN/component/calendar",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "choose",
+      "description": "选择之后或是点击确认按钮触发,日期数组（包含年月日和星期）",
+      "description_zh": "选择之后或是点击确认按钮触发,日期数组（包含年月日和星期）",
+      "params": "(string | string[])[]"
+    },
+    {
+      "name": "close",
+      "description": "关闭时触发",
+      "description_zh": "关闭时触发",
+      "params": "-"
+    },
+    {
+      "name": "select",
+      "description": "点击/选择后触发",
+      "description_zh": "点击/选择后触发",
+      "params": "(string | string[])[]"
+    }
+  ],
+  "methods": [
+    {
+      "name": "scrollToDate",
+      "description": "string",
+      "params": "滚动到指定日期所在月,如：‘2021-12-30’",
+      "description_zh": "string"
+    },
+    {
+      "name": "initPosition",
+      "description": "无",
+      "params": "初始化滚动位置",
+      "description_zh": "无"
+    }
+  ],
+  "slots": [
+    {
+      "name": "btn",
+      "description": "自定义日历标题下部，可用以添加自定义操作",
+      "description_zh": "自定义日历标题下部，可用以添加自定义操作"
+    },
+    {
+      "name": "day",
+      "description": "日期信息",
+      "description_zh": "日期信息"
+    },
+    {
+      "name": "top-info",
+      "description": "日期顶部信息",
+      "description_zh": "日期顶部信息"
+    },
+    {
+      "name": "bottom-info",
+      "description": "日期底部信息",
+      "description_zh": "日期底部信息"
+    },
+    {
+      "name": "footer-info",
+      "description": "日历自定义底部，替代confirm按钮",
+      "description_zh": "日历自定义底部，替代confirm按钮"
+    }
+  ],
+  "filename": "Calendar",
+  "suggestions": []
+}

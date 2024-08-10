@@ -1,0 +1,181 @@
+{
+  "name": "NutDatePicker",
+  "description": "时间选择器，支持日期、年月、时分等维度，通常与弹出层组件配合使用。",
+  "description_zh": "时间选择器，支持日期、年月、时分等维度，通常与弹出层组件配合使用。",
+  "tag": "日期选择器",
+  "props": {
+    "v-model": {
+      "default": "null",
+      "value": "",
+      "type": "date",
+      "description": "初始值",
+      "description_zh": "初始值"
+    },
+    "type": {
+      "default": "date",
+      "value": "",
+      "type": "string",
+      "description": "时间类型，可选值 date(年月日) time(时分秒) year-month(年月) month-day(月日) datehour(年月日时) hour-minute(时分v4.0.5)",
+      "description_zh": "时间类型，可选值 date(年月日) time(时分秒) year-month(年月) month-day(月日) datehour(年月日时) hour-minute(时分v4.0.5)"
+    },
+    ":minute-step": {
+      "default": "1",
+      "value": "",
+      "type": "number",
+      "description": "分钟步进值",
+      "description_zh": "分钟步进值"
+    },
+    "is-show-chinese": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "每列是否展示中文",
+      "description_zh": "每列是否展示中文"
+    },
+    "min-date": {
+      "default": "十年前",
+      "value": "",
+      "type": "date",
+      "description": "开始日期",
+      "description_zh": "开始日期"
+    },
+    "max-date": {
+      "default": "十年后",
+      "value": "",
+      "type": "date",
+      "description": "结束日期",
+      "description_zh": "结束日期"
+    },
+    "formatter": {
+      "default": "",
+      "value": "",
+      "type": "(type: string, option: PickerOption) => PickerOption",
+      "description": "选项格式化函数",
+      "description_zh": "选项格式化函数"
+    },
+    "filter": {
+      "default": "",
+      "value": "",
+      "type": "(type: string, option: PickerOption) => PickerOption[]",
+      "description": "选项过滤函数",
+      "description_zh": "选项过滤函数"
+    },
+    "title": {
+      "default": "null",
+      "value": "",
+      "type": "string",
+      "description": "设置标题",
+      "description_zh": "设置标题"
+    },
+    "ok-text": {
+      "default": "确定",
+      "value": "",
+      "type": "string",
+      "description": "确定按钮文案",
+      "description_zh": "确定按钮文案"
+    },
+    "cancel-text": {
+      "default": "取消",
+      "value": "",
+      "type": "string",
+      "description": "取消按钮文案",
+      "description_zh": "取消按钮文案"
+    },
+    "three-dimensional": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "是否开启 3D 效果",
+      "description_zh": "是否开启 3D 效果"
+    },
+    "swipe-duration": {
+      "default": "1000",
+      "value": "",
+      "type": "number | string",
+      "description": "惯性滚动时长",
+      "description_zh": "惯性滚动时长"
+    },
+    "visible-option-num": {
+      "default": "7",
+      "value": "",
+      "type": "number | string",
+      "description": "可见的选项个数",
+      "description_zh": "可见的选项个数"
+    },
+    "option-height": {
+      "default": "36",
+      "value": "",
+      "type": "number | string",
+      "description": "选项高度",
+      "description_zh": "选项高度"
+    },
+    "show-toolbar": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "是否显示顶部导航",
+      "description_zh": "是否显示顶部导航"
+    }
+  },
+  "link": "https://nutui.jd.com/h5/vue/4x/#/zh-CN/component/datepicker",
+  "link_zh": "https://nutui.jd.com/h5/vue/4x/#/zh-CN/component/datepicker",
+  "typeDetail": {
+    "PickerOption": [
+      {
+        "name": "text",
+        "detail": "选项的文字内容",
+        "type": "string | number"
+      },
+      {
+        "name": "value",
+        "detail": "选项对应的值，且唯一",
+        "type": "string | number"
+      },
+      {
+        "name": "children",
+        "detail": "用于级联选项",
+        "type": "Array"
+      },
+      {
+        "name": "className",
+        "detail": "添加额外的类名",
+        "type": "string"
+      }
+    ]
+  },
+  "events": [
+    {
+      "name": "confirm",
+      "description": "点击确定按钮时触发",
+      "description_zh": "点击确定按钮时触发",
+      "params": "{ selectedValue, selectedOptions }"
+    },
+    {
+      "name": "cancel",
+      "description": "点击取消按钮时触发",
+      "description_zh": "点击取消按钮时触发",
+      "params": "{ selectedValue, selectedOptions }"
+    },
+    {
+      "name": "change",
+      "description": "选项改变时触发",
+      "description_zh": "选项改变时触发",
+      "params": "{ columnIndex, selectedValue, selectedOptions }"
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "default",
+      "description": "自定义滑动数据底部区域",
+      "description_zh": "自定义滑动数据底部区域"
+    },
+    {
+      "name": "top",
+      "description": "自定义滑动数据顶部区域",
+      "description_zh": "自定义滑动数据顶部区域"
+    }
+  ],
+  "filename": "DatePicker",
+  "suggestions": []
+}

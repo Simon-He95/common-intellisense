@@ -1,0 +1,208 @@
+{
+  "name": "NutSku",
+  "description": "常用于进行商品选择",
+  "description_zh": "常用于进行商品选择",
+  "tag": "商品规格选择",
+  "props": {
+    "v-model:visible": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否显示商品规格弹框",
+      "isRequired": false,
+      "description_zh": "是否显示商品规格弹框"
+    },
+    "sku": {
+      "default": "[]",
+      "value": "",
+      "type": "Array",
+      "description": "商品 sku 数据",
+      "isRequired": false,
+      "description_zh": "商品 sku 数据"
+    },
+    ":goods": {
+      "default": "-",
+      "value": "",
+      "type": "object",
+      "description": "商品信息",
+      "isRequired": false,
+      "description_zh": "商品信息"
+    },
+    "stepper-max": {
+      "default": "99999",
+      "value": "",
+      "type": "string | number",
+      "description": "设置 inputNumber 最大值",
+      "isRequired": false,
+      "description_zh": "设置 inputNumber 最大值"
+    },
+    "stepper-min": {
+      "default": "1",
+      "value": "",
+      "type": "string | number",
+      "description": "设置 inputNumber 最小值",
+      "isRequired": false,
+      "description_zh": "设置 inputNumber 最小值"
+    },
+    "btn-options": {
+      "default": "[confirm]",
+      "value": "",
+      "type": "Array",
+      "description": "底部按钮设置。[confirm, buy, cart ] 分别对应确定、立即购买、加入购物车",
+      "isRequired": false,
+      "description_zh": "底部按钮设置。[confirm, buy, cart ] 分别对应确定、立即购买、加入购物车"
+    },
+    "btn-extra-text": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "按钮上部添加文案，默认为空，有值时显示",
+      "isRequired": false,
+      "description_zh": "按钮上部添加文案，默认为空，有值时显示"
+    },
+    "stepper-title": {
+      "default": "购买数量",
+      "value": "",
+      "type": "string",
+      "description": "数量选择组件左侧文案",
+      "isRequired": false,
+      "description_zh": "数量选择组件左侧文案"
+    },
+    "stepper-extra-text": {
+      "default": "false",
+      "value": "",
+      "type": "Function | boolean",
+      "description": "InputNumber 与标题之间的文案",
+      "isRequired": false,
+      "description_zh": "InputNumber 与标题之间的文案"
+    },
+    "buy-text": {
+      "default": "立即购买",
+      "value": "",
+      "type": "string",
+      "description": "立即购买按钮文案",
+      "isRequired": false,
+      "description_zh": "立即购买按钮文案"
+    },
+    "add-cart-text": {
+      "default": "加入购物车 ",
+      "value": "",
+      "type": "string",
+      "description": "加入购物车按钮文案",
+      "isRequired": false,
+      "description_zh": "加入购物车按钮文案"
+    },
+    "confirm-text": {
+      "default": "确定",
+      "value": "",
+      "type": "string",
+      "description": "确定按钮文案",
+      "isRequired": false,
+      "description_zh": "确定按钮文案"
+    }
+  },
+  "link": "https://nutui.jd.com/h5/vue/4x/#/zh-CN/component/sku",
+  "link_zh": "https://nutui.jd.com/h5/vue/4x/#/zh-CN/component/sku",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "select-sku",
+      "description": "切换规格类目时触发",
+      "description_zh": "切换规格类目时触发",
+      "params": "{sku,skuIndex,parentSku,parentIndex}"
+    },
+    {
+      "name": "add",
+      "description": "InputNumber 点击增加按钮时触发",
+      "description_zh": "InputNumber 点击增加按钮时触发",
+      "params": "value"
+    },
+    {
+      "name": "reduce",
+      "description": "InputNumber 点击减少按钮时触发",
+      "description_zh": "InputNumber 点击减少按钮时触发",
+      "params": "value"
+    },
+    {
+      "name": "overLimit",
+      "description": "InputNumber 点击不可用的按钮时触发",
+      "description_zh": "InputNumber 点击不可用的按钮时触发",
+      "params": "value"
+    },
+    {
+      "name": "change-stepper",
+      "description": "购买变化时触发",
+      "description_zh": "购买变化时触发",
+      "params": "value"
+    },
+    {
+      "name": "click-btn-operate",
+      "description": "点击底部按钮时触发",
+      "description_zh": "点击底部按钮时触发",
+      "params": "{type:‘confirm’,value:‘inputNumber value’}"
+    },
+    {
+      "name": "click-close-icon",
+      "description": "点击左上角关闭 icon 时触发",
+      "description_zh": "点击左上角关闭 icon 时触发",
+      "params": "-"
+    },
+    {
+      "name": "click-overlay",
+      "description": "点击遮罩时触发",
+      "description_zh": "点击遮罩时触发",
+      "params": "-"
+    },
+    {
+      "name": "close",
+      "description": "关闭弹层时触发",
+      "description_zh": "关闭弹层时触发",
+      "params": "-"
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "sku-header",
+      "description": "商品信息展示区，包含商品图片、价格、编号",
+      "description_zh": "商品信息展示区，包含商品图片、价格、编号"
+    },
+    {
+      "name": "sku-header-price",
+      "description": "商品信息展示区，价格区域展示",
+      "description_zh": "商品信息展示区，价格区域展示"
+    },
+    {
+      "name": "sku-header-extra",
+      "description": "商品信息展示区，编号区域展示",
+      "description_zh": "商品信息展示区，编号区域展示"
+    },
+    {
+      "name": "sku-select-top",
+      "description": "Sku 展示区上方与商品信息展示区下方区域，无默认展示内容",
+      "description_zh": "Sku 展示区上方与商品信息展示区下方区域，无默认展示内容"
+    },
+    {
+      "name": "sku-select",
+      "description": "Sku 展示区",
+      "description_zh": "Sku 展示区"
+    },
+    {
+      "name": "sku-stepper",
+      "description": "数量选择区",
+      "description_zh": "数量选择区"
+    },
+    {
+      "name": "sku-stepper-bottom",
+      "description": "数量选择区下方区域",
+      "description_zh": "数量选择区下方区域"
+    },
+    {
+      "name": "sku-operate",
+      "description": "底部按钮操作区域",
+      "description_zh": "底部按钮操作区域"
+    }
+  ],
+  "filename": "Sku",
+  "suggestions": []
+}

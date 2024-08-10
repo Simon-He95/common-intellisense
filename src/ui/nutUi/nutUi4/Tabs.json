@@ -1,0 +1,147 @@
+{
+  "name": "NutTabs",
+  "description": "常用于平级区域大块内容的的收纳和展现，支持内嵌标签形式和渲染循环数据形式",
+  "description_zh": "常用于平级区域大块内容的的收纳和展现，支持内嵌标签形式和渲染循环数据形式",
+  "tag": "选项卡切换",
+  "props": {
+    "v-model": {
+      "default": "0",
+      "value": "",
+      "type": "number | string",
+      "description": "绑定当前选中标签的标识符",
+      "description_zh": "绑定当前选中标签的标识符"
+    },
+    "color": {
+      "default": "#1a1a1a",
+      "value": "",
+      "type": "string",
+      "description": "标签选中色",
+      "description_zh": "标签选中色"
+    },
+    "background": {
+      "default": "#f5f5f5",
+      "value": "",
+      "type": "string",
+      "description": "标签栏背景颜色",
+      "description_zh": "标签栏背景颜色"
+    },
+    "direction": {
+      "default": "horizontal",
+      "value": "",
+      "type": "string",
+      "description": "使用横纵方向 可选值 horizontal、vertical",
+      "description_zh": "使用横纵方向 可选值 horizontal、vertical"
+    },
+    "type": {
+      "default": "line",
+      "value": "",
+      "type": "string",
+      "description": "选中底部展示样式 可选值 line、smile",
+      "description_zh": "选中底部展示样式 可选值 line、smile"
+    },
+    "swipeable4.0.3": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否开启手势左右滑动切换",
+      "description_zh": "是否开启手势左右滑动切换"
+    },
+    "title-scroll": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "标签栏是否可以滚动",
+      "description_zh": "标签栏是否可以滚动"
+    },
+    "ellipsis": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "是否省略过长的标题文字",
+      "description_zh": "是否省略过长的标题文字"
+    },
+    "animated-time": {
+      "default": "300",
+      "value": "",
+      "type": "number | string",
+      "description": "切换动画时长，单位 ms。0 代表无动画，此时必须设置 pane-key",
+      "description_zh": "切换动画时长，单位 ms。0 代表无动画，此时必须设置 pane-key"
+    },
+    "title-gutter": {
+      "default": "0",
+      "value": "",
+      "type": "number | string",
+      "description": "标签间隙",
+      "description_zh": "标签间隙"
+    },
+    "size": {
+      "default": "normal",
+      "value": "",
+      "type": "string",
+      "description": "标签栏字体尺寸大小 可选值 large normal small",
+      "description_zh": "标签栏字体尺寸大小 可选值 large normal small"
+    },
+    "auto-height": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "自动高度。设置为 true 时，nut-tabs 和 nut-tabs__content 会随着当前 nut-tab-pane 的高度而发生变化。",
+      "description_zh": "自动高度。设置为 true 时，nut-tabs 和 nut-tabs__content 会随着当前 nut-tab-pane 的高度而发生变化。"
+    },
+    "sticky": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否使用粘性布局",
+      "description_zh": "是否使用粘性布局"
+    },
+    ":top": {
+      "default": "0",
+      "value": "",
+      "type": "number",
+      "description": "粘性布局下的吸顶距离",
+      "description_zh": "粘性布局下的吸顶距离"
+    },
+    "align ": {
+      "default": "center",
+      "value": "",
+      "type": "string",
+      "description": "横轴方向的标题对齐方式，可选值 left、center",
+      "description_zh": "横轴方向的标题对齐方式，可选值 left、center"
+    }
+  },
+  "link": "https://nutui.jd.com/h5/vue/4x/#/zh-CN/component/tabs",
+  "link_zh": "https://nutui.jd.com/h5/vue/4x/#/zh-CN/component/tabs",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "click",
+      "description": "点击标签时触发",
+      "description_zh": "点击标签时触发",
+      "params": "{title,paneKey,disabled}"
+    },
+    {
+      "name": "change",
+      "description": "当前激活的标签改变时触发",
+      "description_zh": "当前激活的标签改变时触发",
+      "params": "{title,paneKey,disabled}"
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "titles",
+      "description": "自定义导航区域",
+      "description_zh": "自定义导航区域"
+    },
+    {
+      "name": "default",
+      "description": "自定义内容",
+      "description_zh": "自定义内容"
+    }
+  ],
+  "filename": "Tabs",
+  "suggestions": [
+    "nut-tab-pane"
+  ]
+}

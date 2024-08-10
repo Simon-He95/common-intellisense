@@ -1,0 +1,136 @@
+{
+  "name": "NutCountdown",
+  "description": "用于实时展示倒计时数值，支持毫秒精度。",
+  "description_zh": "用于实时展示倒计时数值，支持毫秒精度。",
+  "tag": "倒计时",
+  "props": {
+    ":v-model": {
+      "default": "{}",
+      "value": "",
+      "type": "object",
+      "description": "当前时间，自定义展示内容时生效",
+      "isRequired": false,
+      "description_zh": "当前时间，自定义展示内容时生效"
+    },
+    "start-time": {
+      "default": "Date.now()",
+      "value": "",
+      "type": "string | number",
+      "description": "开始时间",
+      "isRequired": false,
+      "description_zh": "开始时间"
+    },
+    "end-time": {
+      "default": "Date.now()",
+      "value": "",
+      "type": "string | number",
+      "description": "结束时间",
+      "isRequired": false,
+      "description_zh": "结束时间"
+    },
+    "format": {
+      "default": "HH:mm:ss",
+      "value": "",
+      "type": "string",
+      "description": "时间格式",
+      "isRequired": false,
+      "description_zh": "时间格式"
+    },
+    "millisecond": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否开启毫秒级渲染",
+      "isRequired": false,
+      "description_zh": "是否开启毫秒级渲染"
+    },
+    "auto-start": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "是否自动开始倒计时",
+      "isRequired": false,
+      "description_zh": "是否自动开始倒计时"
+    },
+    "time": {
+      "default": "0",
+      "value": "",
+      "type": "string | number",
+      "description": "倒计时显示时间，单位是毫秒。auto-start 为 false 时生效",
+      "isRequired": false,
+      "description_zh": "倒计时显示时间，单位是毫秒。auto-start 为 false 时生效"
+    },
+    "paused": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否暂停",
+      "isRequired": false,
+      "description_zh": "是否暂停"
+    }
+  },
+  "link": "https://nutui.jd.com/h5/vue/4x/#/zh-CN/component/countdown",
+  "link_zh": "https://nutui.jd.com/h5/vue/4x/#/zh-CN/component/countdown",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "end",
+      "description": "倒计时结束时",
+      "description_zh": "倒计时结束时",
+      "params": "剩余时间戳"
+    },
+    {
+      "name": "paused",
+      "description": "暂停时",
+      "description_zh": "暂停时",
+      "params": "剩余时间戳"
+    },
+    {
+      "name": "restart",
+      "description": "暂停时",
+      "description_zh": "暂停时",
+      "params": "剩余时间戳"
+    },
+    {
+      "name": "on-end",
+      "description": "倒计时结束时",
+      "description_zh": "倒计时结束时",
+      "params": "剩余时间戳"
+    },
+    {
+      "name": "on-paused",
+      "description": "暂停时",
+      "description_zh": "暂停时",
+      "params": "剩余时间戳"
+    },
+    {
+      "name": "on-restart",
+      "description": "暂停时",
+      "description_zh": "暂停时",
+      "params": "剩余时间戳"
+    }
+  ],
+  "methods": [
+    {
+      "name": "start",
+      "description": "",
+      "params": "开始倒计时",
+      "description_zh": ""
+    },
+    {
+      "name": "pause",
+      "description": "",
+      "params": "暂停倒计时",
+      "description_zh": ""
+    },
+    {
+      "name": "reset",
+      "description": "",
+      "params": "重设倒计时，若 auto-start为 true，重设后会自动开始倒计时",
+      "description_zh": ""
+    }
+  ],
+  "slots": [],
+  "filename": "Countdown",
+  "suggestions": []
+}

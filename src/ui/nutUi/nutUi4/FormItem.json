@@ -1,0 +1,127 @@
+{
+  "name": "NutFormItem",
+  "description": "用于数据录入、校验，支持输入框、单选框、复选框、文件上传等类型。",
+  "description_zh": "用于数据录入、校验，支持输入框、单选框、复选框、文件上传等类型。",
+  "tag": "表单",
+  "props": {
+    "required": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否显示必填字段的标签旁边的红色星号",
+      "description_zh": "是否显示必填字段的标签旁边的红色星号"
+    },
+    "prop": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "表单域 v-model 字段， 在使用表单校验功能的情况下，该属性是必填的",
+      "description_zh": "表单域 v-model 字段， 在使用表单校验功能的情况下，该属性是必填的"
+    },
+    "rules": {
+      "default": "[]",
+      "value": "",
+      "type": "FormItemRule []",
+      "description": "定义校验规则",
+      "description_zh": "定义校验规则"
+    },
+    "label-width": {
+      "default": "-",
+      "value": "",
+      "type": "number | string",
+      "description": "表单项 label 宽度，默认单位为px",
+      "description_zh": "表单项 label 宽度，默认单位为px"
+    },
+    "label-align": {
+      "default": "left",
+      "value": "",
+      "type": "string",
+      "description": "表单项 label 对齐方式，可选值为 center right",
+      "description_zh": "表单项 label 对齐方式，可选值为 center right"
+    },
+    "body-align": {
+      "default": "left",
+      "value": "",
+      "type": "string",
+      "description": "右侧插槽对齐方式，可选值为 center right",
+      "description_zh": "右侧插槽对齐方式，可选值为 center right"
+    },
+    "error-message-align": {
+      "default": "left",
+      "value": "",
+      "type": "string",
+      "description": "错误提示文案对齐方式，可选值为 center right",
+      "description_zh": "错误提示文案对齐方式，可选值为 center right"
+    },
+    "show-error-line": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "是否在校验不通过时标红输入框",
+      "description_zh": "是否在校验不通过时标红输入框"
+    },
+    "show-error-message": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "是否在校验不通过时在输入框下方展示错误提示",
+      "description_zh": "是否在校验不通过时在输入框下方展示错误提示"
+    },
+    "label-position": {
+      "default": "left",
+      "value": "",
+      "type": "top | left | right",
+      "description": "表单项 label 的位置，优先级高于 form 中的 label-position",
+      "description_zh": "表单项 label 的位置，优先级高于 form 中的 label-position"
+    },
+    "star-position": {
+      "default": "left",
+      "value": "",
+      "type": "left | right",
+      "description": "必填表单项 label 的红色星标位置，优先级高于 form 中的 star-position",
+      "description_zh": "必填表单项 label 的红色星标位置，优先级高于 form 中的 star-position"
+    }
+  },
+  "link": "https://nutui.jd.com/h5/vue/4x/#/zh-CN/component/form",
+  "link_zh": "https://nutui.jd.com/h5/vue/4x/#/zh-CN/component/form",
+  "typeDetail": {
+    "FormItemRule": [
+      {
+        "name": "required",
+        "detail": "是否为必选字段",
+        "type": "boolean"
+      },
+      {
+        "name": "message",
+        "detail": "错误提示文案",
+        "type": "string"
+      },
+      {
+        "name": "validator",
+        "detail": "通过函数进行校验",
+        "type": "(value:string, rule?:FormItemRule ) => boolean | Promise"
+      },
+      {
+        "name": "regex",
+        "detail": "通过正则表达式进行校验",
+        "type": "RegExp"
+      }
+    ]
+  },
+  "events": [],
+  "methods": [],
+  "slots": [
+    {
+      "name": "default",
+      "description": "自定义内容",
+      "description_zh": "自定义内容"
+    },
+    {
+      "name": "label",
+      "description": "自定义 label 区域",
+      "description_zh": "自定义 label 区域"
+    }
+  ],
+  "filename": "FormItem",
+  "suggestions": []
+}

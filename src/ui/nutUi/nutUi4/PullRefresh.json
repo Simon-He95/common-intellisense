@@ -1,0 +1,135 @@
+{
+  "name": "NutPullRefresh",
+  "description": "用于提供下拉刷新的交互操作。",
+  "description_zh": "用于提供下拉刷新的交互操作。",
+  "tag": "下拉刷新",
+  "props": {
+    "v-model": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否触发下拉刷新",
+      "isRequired": false,
+      "description_zh": "是否触发下拉刷新"
+    },
+    "pull-distance": {
+      "default": "50",
+      "value": "",
+      "type": "number | string",
+      "description": "触发下拉刷新的距离",
+      "isRequired": false,
+      "description_zh": "触发下拉刷新的距离"
+    },
+    "head-height": {
+      "default": "50",
+      "value": "",
+      "type": "number | string",
+      "description": "顶部内容高度",
+      "isRequired": false,
+      "description_zh": "顶部内容高度"
+    },
+    "loading-icon": {
+      "default": "loading",
+      "value": "",
+      "type": "string",
+      "description": "加载中状态时，loading 图标。为空表示去掉",
+      "isRequired": false,
+      "description_zh": "加载中状态时，loading 图标。为空表示去掉"
+    },
+    "pulling-txt": {
+      "default": "下拉刷新",
+      "value": "",
+      "type": "string",
+      "description": "下拉过程提示文案",
+      "isRequired": false,
+      "description_zh": "下拉过程提示文案"
+    },
+    "loosing-txt": {
+      "default": "释放刷新",
+      "value": "",
+      "type": "string",
+      "description": "释放过程提示文案",
+      "isRequired": false,
+      "description_zh": "释放过程提示文案"
+    },
+    "loading-txt": {
+      "default": "加载中...",
+      "value": "",
+      "type": "string",
+      "description": "加载过程提示文案",
+      "isRequired": false,
+      "description_zh": "加载过程提示文案"
+    },
+    "complete-txt": {
+      "default": "刷新成功",
+      "value": "",
+      "type": "string",
+      "description": "加载完成提示文案",
+      "isRequired": false,
+      "description_zh": "加载完成提示文案"
+    },
+    ":complete-duration": {
+      "default": "0",
+      "value": "",
+      "type": "number",
+      "description": "加载完成时显示文字的持续时间(毫秒),为0时不展示加载完成文案",
+      "isRequired": false,
+      "description_zh": "加载完成时显示文字的持续时间(毫秒),为0时不展示加载完成文案"
+    },
+    ":duration": {
+      "default": "0.3 ",
+      "value": "",
+      "type": "number",
+      "description": "下拉动画加载时长",
+      "isRequired": false,
+      "description_zh": "下拉动画加载时长"
+    }
+  },
+  "link": "https://nutui.jd.com/h5/vue/4x/#/zh-CN/component/pullrefresh",
+  "link_zh": "https://nutui.jd.com/h5/vue/4x/#/zh-CN/component/pullrefresh",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "change",
+      "description": "下拉过程或状态改变时触发",
+      "description_zh": "下拉过程或状态改变时触发",
+      "params": "{status:string,distance:number}"
+    },
+    {
+      "name": "refresh",
+      "description": "下拉刷新事件回调",
+      "description_zh": "下拉刷新事件回调",
+      "params": "-"
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "pulling",
+      "description": "下拉过程的顶部内容",
+      "description_zh": "下拉过程的顶部内容"
+    },
+    {
+      "name": "loosing",
+      "description": "释放过程中顶部内容",
+      "description_zh": "释放过程中顶部内容"
+    },
+    {
+      "name": "loading",
+      "description": "加载过程中顶部内容",
+      "description_zh": "加载过程中顶部内容"
+    },
+    {
+      "name": "complete",
+      "description": "完成时头部的内容",
+      "description_zh": "完成时头部的内容"
+    },
+    {
+      "name": "default",
+      "description": "自定义内容",
+      "description_zh": "自定义内容"
+    }
+  ],
+  "filename": "PullRefresh",
+  "suggestions": []
+}

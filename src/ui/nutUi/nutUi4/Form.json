@@ -1,0 +1,83 @@
+{
+  "name": "NutForm",
+  "description": "用于数据录入、校验，支持输入框、单选框、复选框、文件上传等类型。",
+  "description_zh": "用于数据录入、校验，支持输入框、单选框、复选框、文件上传等类型。",
+  "tag": "表单",
+  "props": {
+    ":model-value": {
+      "default": "",
+      "value": "",
+      "type": "object",
+      "description": "表单数据对象(使用表单校验时，必填)",
+      "description_zh": "表单数据对象(使用表单校验时，必填)"
+    },
+    "rules": {
+      "default": "{}",
+      "value": "",
+      "type": "{ prop: FormItemRule[] }",
+      "description": "统一配置每个 FormItem 的 rules",
+      "description_zh": "统一配置每个 FormItem 的 rules"
+    },
+    "disabled": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "禁用表单下的所有数据录入组件",
+      "description_zh": "禁用表单下的所有数据录入组件"
+    },
+    "label-position": {
+      "default": "left",
+      "value": "",
+      "type": "top | left | right",
+      "description": "表单项 label 的位置",
+      "description_zh": "表单项 label 的位置"
+    },
+    "star-position": {
+      "default": "left",
+      "value": "",
+      "type": "left | right",
+      "description": "必填表单项 label 的红色星标位置",
+      "description_zh": "必填表单项 label 的红色星标位置"
+    }
+  },
+  "link": "https://nutui.jd.com/h5/vue/4x/#/zh-CN/component/form",
+  "link_zh": "https://nutui.jd.com/h5/vue/4x/#/zh-CN/component/form",
+  "typeDetail": {
+    "FormItemRule": [
+      {
+        "name": "required",
+        "detail": "是否为必选字段",
+        "type": "boolean"
+      },
+      {
+        "name": "message",
+        "detail": "错误提示文案",
+        "type": "string"
+      },
+      {
+        "name": "validator",
+        "detail": "通过函数进行校验",
+        "type": "(value:string, rule?:FormItemRule ) => boolean | Promise"
+      },
+      {
+        "name": "regex",
+        "detail": "通过正则表达式进行校验",
+        "type": "RegExp"
+      }
+    ]
+  },
+  "events": [
+    {
+      "name": "validate",
+      "description": "任一表单项被校验失败后触发",
+      "description_zh": "任一表单项被校验失败后触发",
+      "params": "被校验的表单项 prop 值，校验是否通过，错误消息（如果存在）"
+    }
+  ],
+  "methods": [],
+  "slots": [],
+  "filename": "Form",
+  "suggestions": [
+    "nut-form-item"
+  ]
+}

@@ -1,0 +1,225 @@
+{
+  "name": "NutDialog",
+  "description": "模态对话框，在浮层中显示，引导用户进行相关操作，常用于消息提示、消息确认，或在当前页面内完成特定的交互操作。",
+  "description_zh": "模态对话框，在浮层中显示，引导用户进行相关操作，常用于消息提示、消息确认，或在当前页面内完成特定的交互操作。",
+  "tag": "对话框",
+  "props": {
+    "title": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "标题",
+      "isRequired": false,
+      "description_zh": "标题"
+    },
+    "content": {
+      "default": "",
+      "value": "",
+      "type": "string | VNode",
+      "description": "内容，支持 HTML 和组件",
+      "isRequired": false,
+      "description_zh": "内容，支持 HTML 和组件"
+    },
+    "teleport": {
+      "default": "\"body\"",
+      "value": "",
+      "type": "string",
+      "description": "指定挂载节点",
+      "isRequired": false,
+      "description_zh": "指定挂载节点"
+    },
+    "close-on-click-overlay": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "点击蒙层是否关闭对话框",
+      "isRequired": false,
+      "description_zh": "点击蒙层是否关闭对话框"
+    },
+    "no-footer": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否隐藏底部按钮栏",
+      "isRequired": false,
+      "description_zh": "是否隐藏底部按钮栏"
+    },
+    "no-ok-btn": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否隐藏确定按钮",
+      "isRequired": false,
+      "description_zh": "是否隐藏确定按钮"
+    },
+    "no-cancel-btn": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否隐藏取消按钮",
+      "isRequired": false,
+      "description_zh": "是否隐藏取消按钮"
+    },
+    "cancel-text": {
+      "default": "”取消“",
+      "value": "",
+      "type": "string",
+      "description": "取消按钮文案",
+      "isRequired": false,
+      "description_zh": "取消按钮文案"
+    },
+    "ok-text": {
+      "default": "”确 定“",
+      "value": "",
+      "type": "string",
+      "description": "确定按钮文案",
+      "isRequired": false,
+      "description_zh": "确定按钮文案"
+    },
+    "cancel-auto-close": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "取消按钮是否默认关闭弹窗",
+      "isRequired": false,
+      "description_zh": "取消按钮是否默认关闭弹窗"
+    },
+    "ok-auto-close4.2.1": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "确认按钮是否默认关闭弹窗",
+      "isRequired": false,
+      "description_zh": "确认按钮是否默认关闭弹窗"
+    },
+    "text-align": {
+      "default": "\"center\"",
+      "value": "",
+      "type": "string",
+      "description": "文字对齐方向，可选值同 css 的 text-align",
+      "isRequired": false,
+      "description_zh": "文字对齐方向，可选值同 css 的 text-align"
+    },
+    "close-on-popstate": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否在页面回退时自动关闭",
+      "isRequired": false,
+      "description_zh": "是否在页面回退时自动关闭"
+    },
+    "lock-scroll": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "背景是否锁定",
+      "isRequired": false,
+      "description_zh": "背景是否锁定"
+    },
+    "footer-direction": {
+      "default": "horizontal",
+      "value": "",
+      "type": "string",
+      "description": "使用横纵方向 可选值 horizontal、vertical",
+      "isRequired": false,
+      "description_zh": "使用横纵方向 可选值 horizontal、vertical"
+    },
+    "overlay-class": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "自定义遮罩类名",
+      "isRequired": false,
+      "description_zh": "自定义遮罩类名"
+    },
+    ":overlay-style": {
+      "default": "-",
+      "value": "",
+      "type": "CSSProperties",
+      "description": "自定义遮罩样式",
+      "isRequired": false,
+      "description_zh": "自定义遮罩样式"
+    },
+    "pop-class": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "自定义 popup 弹框类名",
+      "isRequired": false,
+      "description_zh": "自定义 popup 弹框类名"
+    },
+    ":pop-style": {
+      "default": "-",
+      "value": "",
+      "type": "CSSProperties",
+      "description": "自定义 popup 弹框样式",
+      "isRequired": false,
+      "description_zh": "自定义 popup 弹框样式"
+    },
+    "custom-class": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "自定义 class",
+      "isRequired": false,
+      "description_zh": "自定义 class"
+    },
+    "before-close": {
+      "default": "-",
+      "value": "",
+      "type": "Function(action: string)",
+      "description": "关闭前的回调函数，返回 false 可阻止关闭，支持返回 Promise",
+      "isRequired": false,
+      "description_zh": "关闭前的回调函数，返回 false 可阻止关闭，支持返回 Promise"
+    }
+  },
+  "link": "https://nutui.jd.com/h5/vue/4x/#/zh-CN/component/dialog",
+  "link_zh": "https://nutui.jd.com/h5/vue/4x/#/zh-CN/component/dialog",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "ok",
+      "description": "确定按钮回调",
+      "description_zh": "确定按钮回调",
+      "params": "Function"
+    },
+    {
+      "name": "cancel",
+      "description": "取消按钮回调",
+      "description_zh": "取消按钮回调",
+      "params": "Function"
+    },
+    {
+      "name": "closed",
+      "description": "关闭弹框回调",
+      "description_zh": "关闭弹框回调",
+      "params": "Function"
+    },
+    {
+      "name": "opened",
+      "description": "打开弹框回调",
+      "description_zh": "打开弹框回调",
+      "params": "Function"
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "header",
+      "description": "自定义标题区域",
+      "description_zh": "自定义标题区域"
+    },
+    {
+      "name": "default",
+      "description": "自定义内容",
+      "description_zh": "自定义内容"
+    },
+    {
+      "name": "footer",
+      "description": "自定义底部按钮区域",
+      "description_zh": "自定义底部按钮区域"
+    }
+  ],
+  "filename": "Dialog",
+  "suggestions": []
+}

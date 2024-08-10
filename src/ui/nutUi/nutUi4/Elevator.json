@@ -1,0 +1,90 @@
+{
+  "name": "NutElevator",
+  "description": "用于列表快速定位以及索引的显示",
+  "description_zh": "用于列表快速定位以及索引的显示",
+  "tag": "电梯楼层",
+  "props": {
+    "height": {
+      "default": "200px",
+      "value": "",
+      "type": "number | string",
+      "description": "电梯区域的高度",
+      "description_zh": "电梯区域的高度"
+    },
+    "accept-key": {
+      "default": "title",
+      "value": "",
+      "type": "string",
+      "description": "索引 key 值",
+      "description_zh": "索引 key 值"
+    },
+    "index-list": {
+      "default": "[{id: 0, name: ''}]",
+      "value": "",
+      "type": "Array（item 需包含 id、name 属性, name 支持传入 html 结构）",
+      "description": "索引列表",
+      "description_zh": "索引列表"
+    },
+    "is-sticky": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "索引是否吸顶",
+      "description_zh": "索引是否吸顶"
+    },
+    ":space-height": {
+      "default": "23",
+      "value": "",
+      "type": "number",
+      "description": "右侧锚点的上下间距",
+      "description_zh": "右侧锚点的上下间距"
+    },
+    ":title-height": {
+      "default": "35",
+      "value": "",
+      "type": "number",
+      "description": "左侧索引的高度",
+      "description_zh": "左侧索引的高度"
+    }
+  },
+  "link": "https://nutui.jd.com/h5/vue/4x/#/zh-CN/component/elevator",
+  "link_zh": "https://nutui.jd.com/h5/vue/4x/#/zh-CN/component/elevator",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "click-item",
+      "description": "点击内容",
+      "description_zh": "点击内容",
+      "params": "key: string, item: { id: 0, name: '' }"
+    },
+    {
+      "name": "click-index",
+      "description": "点击索引",
+      "description_zh": "点击索引",
+      "params": "key: string"
+    },
+    {
+      "name": "change",
+      "description": "索引改变",
+      "description_zh": "索引改变",
+      "params": "index: number"
+    }
+  ],
+  "methods": [
+    {
+      "name": "scrollTo",
+      "description": "index:number",
+      "params": "滚动到对应索引的位置",
+      "description_zh": "index:number"
+    }
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "description": "自定义左侧索引下每条数据的内容",
+      "description_zh": "自定义左侧索引下每条数据的内容"
+    }
+  ],
+  "filename": "Elevator",
+  "suggestions": []
+}

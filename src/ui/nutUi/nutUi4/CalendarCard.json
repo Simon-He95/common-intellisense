@@ -1,0 +1,106 @@
+{
+  "name": "NutCalendarCard",
+  "description": "日历卡片。在 NutUI >= 4.3.0 版本中提供。",
+  "description_zh": "日历卡片。在 NutUI >= 4.3.0 版本中提供。",
+  "tag": "日历卡片",
+  "props": {
+    "type": {
+      "default": "single",
+      "value": "",
+      "type": "string",
+      "description": "类型，单个日期 single，多个日期 multiple，日期范围 range，周选择 week",
+      "description_zh": "类型，单个日期 single，多个日期 multiple，日期范围 range，周选择 week"
+    },
+    "v-model": {
+      "default": "-",
+      "value": "",
+      "type": "Date | Date[]",
+      "description": "当前选中值，单个日期 Date 格式，多个日期/范围选择 Date[] 格式",
+      "description_zh": "当前选中值，单个日期 Date 格式，多个日期/范围选择 Date[] 格式"
+    },
+    "startDate": {
+      "default": "-",
+      "value": "",
+      "type": "Date",
+      "description": "限制范围开始日期",
+      "description_zh": "限制范围开始日期"
+    },
+    "endDate": {
+      "default": "-",
+      "value": "",
+      "type": "Date",
+      "description": "限制范围结束日期",
+      "description_zh": "限制范围结束日期"
+    },
+    "firstDayOfWeek": {
+      "default": "1",
+      "value": "",
+      "type": "0-6",
+      "description": "设置周起始日，0 为周日，1 为周一",
+      "description_zh": "设置周起始日，0 为周日，1 为周一"
+    },
+    "disableDay": {
+      "default": "-",
+      "value": "",
+      "type": "(day: CalendarCardDay) => boolean",
+      "description": "设置不可选日期",
+      "description_zh": "设置不可选日期"
+    }
+  },
+  "link": "https://nutui.jd.com/h5/vue/4x/#/zh-CN/component/calendarcard",
+  "link_zh": "https://nutui.jd.com/h5/vue/4x/#/zh-CN/component/calendarcard",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "change",
+      "description": "选择值发生变化时触发",
+      "description_zh": "选择值发生变化时触发",
+      "params": "(val: Date | Date[]) => void"
+    },
+    {
+      "name": "day-click",
+      "description": "点击后触发",
+      "description_zh": "点击后触发",
+      "params": "(day: CalendarCardDay) => void"
+    },
+    {
+      "name": "page-change",
+      "description": "切换月份时触发",
+      "description_zh": "切换月份时触发",
+      "params": "(val: { year, month }) => void"
+    }
+  ],
+  "methods": [
+    {
+      "name": "jump",
+      "description": "step: number",
+      "params": "在当前基础上前进或后退月数，正数向前，负数向后",
+      "description_zh": "step: number"
+    },
+    {
+      "name": "jumpTo",
+      "description": "year: number, month: number",
+      "params": "跳转至特定的年月",
+      "description_zh": "year: number, month: number"
+    }
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "description": "日期信息",
+      "description_zh": "日期信息"
+    },
+    {
+      "name": "top",
+      "description": "日期顶部信息",
+      "description_zh": "日期顶部信息"
+    },
+    {
+      "name": "bottom",
+      "description": "日期底部信息",
+      "description_zh": "日期底部信息"
+    }
+  ],
+  "filename": "CalendarCard",
+  "suggestions": []
+}

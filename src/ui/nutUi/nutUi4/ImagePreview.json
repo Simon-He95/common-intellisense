@@ -1,0 +1,155 @@
+{
+  "name": "NutImagePreview",
+  "description": "支持全屏预览视频和图片，可函数式调用",
+  "description_zh": "支持全屏预览视频和图片，可函数式调用",
+  "tag": "图片预览",
+  "props": {
+    "show": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否展示预览图片",
+      "isRequired": false,
+      "description_zh": "是否展示预览图片"
+    },
+    "videos": {
+      "default": "[]",
+      "value": "",
+      "type": "VideoArray[]",
+      "description": "预览的视频数组（视频自动放到图片之前）",
+      "isRequired": false,
+      "description_zh": "预览的视频数组（视频自动放到图片之前）"
+    },
+    "images": {
+      "default": "[]",
+      "value": "",
+      "type": "ImageArray[]",
+      "description": "预览图片数组",
+      "isRequired": false,
+      "description_zh": "预览图片数组"
+    },
+    "autoplay": {
+      "default": "3000",
+      "value": "",
+      "type": "number | string",
+      "description": "自动轮播时长，0 表示不会自动轮播",
+      "isRequired": false,
+      "description_zh": "自动轮播时长，0 表示不会自动轮播"
+    },
+    ":init-no": {
+      "default": "0",
+      "value": "",
+      "type": "number",
+      "description": "初始页码",
+      "isRequired": false,
+      "description_zh": "初始页码"
+    },
+    "pagination-visible": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "分页指示器是否展示",
+      "isRequired": false,
+      "description_zh": "分页指示器是否展示"
+    },
+    "pagination-color": {
+      "default": "#fff",
+      "value": "",
+      "type": "string",
+      "description": "分页指示器选中的颜色",
+      "isRequired": false,
+      "description_zh": "分页指示器选中的颜色"
+    },
+    "content-close": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "点击图片可以退出预览",
+      "isRequired": false,
+      "description_zh": "点击图片可以退出预览"
+    },
+    "show-index": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "是否显示页码",
+      "isRequired": false,
+      "description_zh": "是否显示页码"
+    },
+    "closeable": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否显示关闭图标",
+      "isRequired": false,
+      "description_zh": "是否显示关闭图标"
+    },
+    "close-icon-position": {
+      "default": "top-right",
+      "value": "",
+      "type": "string",
+      "description": "关闭图标位置，可选值：top-left",
+      "isRequired": false,
+      "description_zh": "关闭图标位置，可选值：top-left"
+    },
+    "before-close": {
+      "default": "-",
+      "value": "",
+      "type": "(active: number) => boolean | Promise<boolean>",
+      "description": "关闭前的回调函数，返回 false 可阻止关闭，支持返回 Promise",
+      "isRequired": false,
+      "description_zh": "关闭前的回调函数，返回 false 可阻止关闭，支持返回 Promise"
+    },
+    ":max-zoom": {
+      "default": "3",
+      "value": "",
+      "type": "number",
+      "description": "手势缩放时，最大缩放比例",
+      "isRequired": false,
+      "description_zh": "手势缩放时，最大缩放比例"
+    },
+    ":min-zoom": {
+      "default": "1/3",
+      "value": "",
+      "type": "number",
+      "description": "手势缩放时，最小缩放比例",
+      "isRequired": false,
+      "description_zh": "手势缩放时，最小缩放比例"
+    },
+    "is-loop": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "是否循环播放",
+      "isRequired": false,
+      "description_zh": "是否循环播放"
+    }
+  },
+  "link": "https://nutui.jd.com/h5/vue/4x/#/zh-CN/component/imagepreview",
+  "link_zh": "https://nutui.jd.com/h5/vue/4x/#/zh-CN/component/imagepreview",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "close",
+      "description": "点击遮罩关闭图片预览时触发",
+      "description_zh": "点击遮罩关闭图片预览时触发",
+      "params": "无"
+    },
+    {
+      "name": "change",
+      "description": "切换图片时触发",
+      "description_zh": "切换图片时触发",
+      "params": "index:当前图片索引"
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "closeIcon",
+      "description": "自定义关闭图片",
+      "description_zh": "自定义关闭图片"
+    }
+  ],
+  "filename": "ImagePreview",
+  "suggestions": []
+}

@@ -1,0 +1,121 @@
+{
+  "name": "NutAvatarCropper",
+  "description": "用来对头像进行剪切生成一张新的图片。在 NutUI >= 4.2.0 版本中提供。",
+  "description_zh": "用来对头像进行剪切生成一张新的图片。在 NutUI >= 4.2.0 版本中提供。",
+  "tag": "头像裁剪",
+  "props": {
+    ":max-zoom": {
+      "default": "3",
+      "value": "",
+      "type": "number",
+      "description": "最大缩放倍数",
+      "isRequired": false,
+      "description_zh": "最大缩放倍数"
+    },
+    ":space": {
+      "default": "10",
+      "value": "",
+      "type": "number",
+      "description": "裁剪区域两边预留的间隙",
+      "isRequired": false,
+      "description_zh": "裁剪区域两边预留的间隙"
+    },
+    "toolbar-position": {
+      "default": "bottom",
+      "value": "",
+      "type": "string",
+      "description": "裁剪区域工具栏位置,可选值为：top bottom",
+      "isRequired": false,
+      "description_zh": "裁剪区域工具栏位置,可选值为：top bottom"
+    },
+    "edit-text": {
+      "default": "编辑",
+      "value": "",
+      "type": "string",
+      "description": "中间的文字内容",
+      "isRequired": false,
+      "description_zh": "中间的文字内容"
+    },
+    "cancel-text": {
+      "default": "取消",
+      "value": "",
+      "type": "string",
+      "description": "取消按钮的文字",
+      "isRequired": false,
+      "description_zh": "取消按钮的文字"
+    },
+    "cancel-confirm": {
+      "default": "确认",
+      "value": "",
+      "type": "string",
+      "description": "确认按钮的文字",
+      "isRequired": false,
+      "description_zh": "确认按钮的文字"
+    },
+    "shape": {
+      "default": "square",
+      "value": "",
+      "type": "string",
+      "description": "头像的形状,可选值为：square round",
+      "isRequired": false,
+      "description_zh": "头像的形状,可选值为：square round"
+    }
+  },
+  "link": "https://nutui.jd.com/h5/vue/4x/#/zh-CN/component/avatarcropper",
+  "link_zh": "https://nutui.jd.com/h5/vue/4x/#/zh-CN/component/avatarcropper",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "confirm",
+      "description": "裁剪后点击确认触发",
+      "description_zh": "裁剪后点击确认触发",
+      "params": "url:裁剪后的base64"
+    },
+    {
+      "name": "cancel",
+      "description": "点击取消触发",
+      "description_zh": "点击取消触发",
+      "params": "-"
+    }
+  ],
+  "methods": [
+    {
+      "name": "cancel",
+      "description": "取消裁剪",
+      "params": "",
+      "description_zh": "取消裁剪"
+    },
+    {
+      "name": "reset",
+      "description": "重置为0度",
+      "params": "",
+      "description_zh": "重置为0度"
+    },
+    {
+      "name": "rotate",
+      "description": "旋转90度",
+      "params": "",
+      "description_zh": "旋转90度"
+    },
+    {
+      "name": "confirm",
+      "description": "确定裁剪",
+      "params": "",
+      "description_zh": "确定裁剪"
+    }
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "description": "默认插槽，可放置图片、图标、文本等元素",
+      "description_zh": "默认插槽，可放置图片、图标、文本等元素"
+    },
+    {
+      "name": "toolbar",
+      "description": "选择文件后裁剪弹窗底部元素可以自定义，通过ref调用组件的方法",
+      "description_zh": "选择文件后裁剪弹窗底部元素可以自定义，通过ref调用组件的方法"
+    }
+  ],
+  "filename": "AvatarCropper",
+  "suggestions": []
+}

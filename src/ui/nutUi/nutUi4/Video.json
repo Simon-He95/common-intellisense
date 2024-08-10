@@ -1,0 +1,143 @@
+{
+  "name": "NutVideo",
+  "description": "原生 video 实现的视频播放器",
+  "description_zh": "原生 video 实现的视频播放器",
+  "tag": "视频播放器",
+  "props": {
+    "source": {
+      "default": "{}",
+      "value": "",
+      "type": "VideoSource",
+      "description": "视频地址和类型设置",
+      "isRequired": false,
+      "description_zh": "视频地址和类型设置"
+    },
+    "options": {
+      "default": "{}",
+      "value": "",
+      "type": "VideoOptions",
+      "description": "控制视频播放属性",
+      "isRequired": false,
+      "description_zh": "控制视频播放属性"
+    }
+  },
+  "link": "https://nutui.jd.com/h5/vue/4x/#/zh-CN/component/video",
+  "link_zh": "https://nutui.jd.com/h5/vue/4x/#/zh-CN/component/video",
+  "typeDetail": {
+    "VideoSource": [
+      {
+        "name": "src",
+        "detail": "视频链接",
+        "type": "boolean"
+      },
+      {
+        "name": "type",
+        "detail": "视频类型",
+        "type": "string"
+      }
+    ],
+    "VideoOptions": [
+      {
+        "name": "autoplay",
+        "detail": "是否自动播放",
+        "type": "boolean"
+      },
+      {
+        "name": "poster",
+        "detail": "海报设置",
+        "type": "string"
+      },
+      {
+        "name": "loop",
+        "detail": "是否循环播放",
+        "type": "boolean"
+      },
+      {
+        "name": "controls",
+        "detail": "是否展示操作栏",
+        "type": "boolean"
+      },
+      {
+        "name": "muted",
+        "detail": "是否静音",
+        "type": "boolean"
+      },
+      {
+        "name": "volume",
+        "detail": "音量控制",
+        "type": "number"
+      },
+      {
+        "name": "disabled",
+        "detail": "禁用操作（如循环播放的背景图，禁止操作）",
+        "type": "boolean"
+      },
+      {
+        "name": "playsinline",
+        "detail": "是否设置为行内播放元素（解决安卓兼容问题）",
+        "type": "boolean"
+      }
+    ]
+  },
+  "events": [
+    {
+      "name": "play",
+      "description": "播放",
+      "description_zh": "播放",
+      "params": "videoElm"
+    },
+    {
+      "name": "pause",
+      "description": "暂停",
+      "description_zh": "暂停",
+      "params": "videoElm"
+    },
+    {
+      "name": "playend",
+      "description": "播放完成回调",
+      "description_zh": "播放完成回调",
+      "params": "videoElm"
+    },
+    {
+      "name": "time",
+      "description": "播放时触发(current 为当前播放时间，total 为总时间)",
+      "description_zh": "播放时触发(current 为当前播放时间，total 为总时间)",
+      "params": "(current:string,total:string)"
+    }
+  ],
+  "methods": [
+    {
+      "name": "play",
+      "description": "",
+      "params": "播放",
+      "description_zh": ""
+    },
+    {
+      "name": "pause",
+      "description": "",
+      "params": "暂停",
+      "description_zh": ""
+    },
+    {
+      "name": "stop",
+      "description": "",
+      "params": "结束",
+      "description_zh": ""
+    },
+    {
+      "name": "muted",
+      "description": "",
+      "params": "静音",
+      "description_zh": ""
+    },
+    {
+      "name": "unmuted",
+      "description": "",
+      "params": "取消静音",
+      "description_zh": ""
+    }
+  ],
+  "slots": [],
+  "filename": "Video",
+  "suggestions": []
+}

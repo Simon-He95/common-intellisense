@@ -1,0 +1,303 @@
+{
+  "name": "NutUploader",
+  "description": "用于将本地的图片或文件上传至服务器。",
+  "description_zh": "用于将本地的图片或文件上传至服务器。",
+  "tag": "上传",
+  "props": {
+    "auto-upload": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "是否在选取文件后立即进行上传，false 时需要手动执行 ref submit 方法进行上传",
+      "isRequired": false,
+      "description_zh": "是否在选取文件后立即进行上传，false 时需要手动执行 ref submit 方法进行上传"
+    },
+    "name": {
+      "default": "\"file\"",
+      "value": "",
+      "type": "string",
+      "description": "input 标签 name 的名称，发到后台的文件参数名",
+      "isRequired": false,
+      "description_zh": "input 标签 name 的名称，发到后台的文件参数名"
+    },
+    "url": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "上传服务器的接口地址",
+      "isRequired": false,
+      "description_zh": "上传服务器的接口地址"
+    },
+    "v-model:file-list": {
+      "default": "[]",
+      "value": "",
+      "type": "FileItem[]",
+      "description": "默认已经上传的文件列表",
+      "isRequired": false,
+      "description_zh": "默认已经上传的文件列表"
+    },
+    "is-preview": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "是否上传成功后展示预览图",
+      "isRequired": false,
+      "description_zh": "是否上传成功后展示预览图"
+    },
+    "is-deletable": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "是否展示删除按钮",
+      "isRequired": false,
+      "description_zh": "是否展示删除按钮"
+    },
+    "method": {
+      "default": "\"post\"",
+      "value": "",
+      "type": "string",
+      "description": "上传请求的 http method",
+      "isRequired": false,
+      "description_zh": "上传请求的 http method"
+    },
+    "list-type": {
+      "default": "\"picture\"",
+      "value": "",
+      "type": "string",
+      "description": "上传列表的内建样式，支持两种基础样式 picture、list",
+      "isRequired": false,
+      "description_zh": "上传列表的内建样式，支持两种基础样式 picture、list"
+    },
+    "capture": {
+      "default": "false",
+      "value": "",
+      "type": "string",
+      "description": "图片选取模式，直接调起摄像头",
+      "isRequired": false,
+      "description_zh": "图片选取模式，直接调起摄像头"
+    },
+    "maximize": {
+      "default": "Number.MAX_VALUE",
+      "value": "",
+      "type": "number | string",
+      "description": "可以设定最大上传文件的大小（字节）",
+      "isRequired": false,
+      "description_zh": "可以设定最大上传文件的大小（字节）"
+    },
+    "maximum": {
+      "default": "1",
+      "value": "",
+      "type": "number | string",
+      "description": "文件上传数量限制",
+      "isRequired": false,
+      "description_zh": "文件上传数量限制"
+    },
+    "clear-input": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "是否需要清空input内容，设为true支持重复选择上传同一个文件",
+      "isRequired": false,
+      "description_zh": "是否需要清空input内容，设为true支持重复选择上传同一个文件"
+    },
+    "accept": {
+      "default": "* ",
+      "value": "",
+      "type": "string",
+      "description": "允许上传的文件类型，详细说明",
+      "isRequired": false,
+      "description_zh": "允许上传的文件类型，详细说明"
+    },
+    ":headers": {
+      "default": "{}",
+      "value": "",
+      "type": "object",
+      "description": "设置上传的请求头部",
+      "isRequired": false,
+      "description_zh": "设置上传的请求头部"
+    },
+    ":data": {
+      "default": "{}",
+      "value": "",
+      "type": "object",
+      "description": "附加上传的信息 formData",
+      "isRequired": false,
+      "description_zh": "附加上传的信息 formData"
+    },
+    ":xhr-state": {
+      "default": "200",
+      "value": "",
+      "type": "number",
+      "description": "接口响应的成功状态（status）值",
+      "isRequired": false,
+      "description_zh": "接口响应的成功状态（status）值"
+    },
+    "with-credentials": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "支持发送 cookie 凭证信息",
+      "isRequired": false,
+      "description_zh": "支持发送 cookie 凭证信息"
+    },
+    "multiple": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否支持文件多选",
+      "isRequired": false,
+      "description_zh": "是否支持文件多选"
+    },
+    "disabled": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否禁用文件上传",
+      "isRequired": false,
+      "description_zh": "是否禁用文件上传"
+    },
+    "timeout": {
+      "default": "1000 * 30",
+      "value": "",
+      "type": "number | string",
+      "description": "超时时间，单位为毫秒",
+      "isRequired": false,
+      "description_zh": "超时时间，单位为毫秒"
+    },
+    "before-upload": {
+      "default": "null",
+      "value": "",
+      "type": "Function",
+      "description": "上传前的函数需要返回一个Promise对象",
+      "isRequired": false,
+      "description_zh": "上传前的函数需要返回一个Promise对象"
+    },
+    "before-xhr-upload": {
+      "default": "null",
+      "value": "",
+      "type": "Function(xhr，option)",
+      "description": "执行 XHR 上传时，自定义方式",
+      "isRequired": false,
+      "description_zh": "执行 XHR 上传时，自定义方式"
+    },
+    "before-delete": {
+      "default": "-",
+      "value": "",
+      "type": "Function(file,fileList): boolean 丨Promise",
+      "description": "除文件时的回调，返回值为 false 时不移除。支持返回一个 Promise 对象，Promise 对象 resolve(false) 或 reject 时不移除",
+      "isRequired": false,
+      "description_zh": "除文件时的回调，返回值为 false 时不移除。支持返回一个 Promise 对象，Promise 对象 resolve(false) 或 reject 时不移除"
+    }
+  },
+  "link": "https://nutui.jd.com/h5/vue/4x/#/zh-CN/component/uploader",
+  "link_zh": "https://nutui.jd.com/h5/vue/4x/#/zh-CN/component/uploader",
+  "typeDetail": {
+    "FileItem": [
+      {
+        "name": "status",
+        "detail": "文件状态值，可选 ready,uploading,success,error",
+        "type": "ready"
+      },
+      {
+        "name": "uid",
+        "detail": "文件的唯一标识",
+        "type": "new Date().getTime().toString()"
+      },
+      {
+        "name": "name",
+        "detail": "文件名称",
+        "type": "-"
+      },
+      {
+        "name": "url",
+        "detail": "文件路径",
+        "type": "-"
+      },
+      {
+        "name": "type",
+        "detail": "文件类型",
+        "type": "\"image/jpeg\""
+      },
+      {
+        "name": "formData",
+        "detail": "上传所需的 data",
+        "type": "new FormData() "
+      },
+      {
+        "name": "percentage",
+        "detail": "上传百分比",
+        "type": "0"
+      }
+    ]
+  },
+  "events": [
+    {
+      "name": "start",
+      "description": "文件上传开始",
+      "description_zh": "文件上传开始",
+      "params": "options"
+    },
+    {
+      "name": "progress",
+      "description": "文件上传的进度",
+      "description_zh": "文件上传的进度",
+      "params": "{event,option,percentage}"
+    },
+    {
+      "name": "oversize",
+      "description": "文件大小超过限制时触发",
+      "description_zh": "文件大小超过限制时触发",
+      "params": "files"
+    },
+    {
+      "name": "success",
+      "description": "上传成功",
+      "description_zh": "上传成功",
+      "params": "{responseText,option,fileItem}"
+    },
+    {
+      "name": "failure",
+      "description": "上传失败",
+      "description_zh": "上传失败",
+      "params": "{responseText,option,fileItem}"
+    },
+    {
+      "name": "change",
+      "description": "上传文件改变时的状态",
+      "description_zh": "上传文件改变时的状态",
+      "params": "{fileList,event}"
+    },
+    {
+      "name": "delete",
+      "description": "文件删除事件",
+      "description_zh": "文件删除事件",
+      "params": "{files,fileList,index}"
+    },
+    {
+      "name": "file-item-click",
+      "description": "文件上传成功后点击触发",
+      "description_zh": "文件上传成功后点击触发",
+      "params": "{fileItem}"
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "default",
+      "description": "默认插槽自定义内容",
+      "description_zh": "默认插槽自定义内容"
+    },
+    {
+      "name": "upload-icon",
+      "description": "自定义上传按钮中间icon区域",
+      "description_zh": "自定义上传按钮中间icon区域"
+    },
+    {
+      "name": "delete-icon",
+      "description": "自定义右上角删除按钮区域",
+      "description_zh": "自定义右上角删除按钮区域"
+    }
+  ],
+  "filename": "Uploader",
+  "suggestions": []
+}

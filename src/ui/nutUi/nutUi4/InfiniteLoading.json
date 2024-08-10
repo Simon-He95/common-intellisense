@@ -1,0 +1,98 @@
+{
+  "name": "NutInfiniteLoading",
+  "description": "列表滚动到底部自动加载更多数据。",
+  "description_zh": "列表滚动到底部自动加载更多数据。",
+  "tag": "滚动加载",
+  "props": {
+    "v-model": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否触发滚动加载",
+      "isRequired": false,
+      "description_zh": "是否触发滚动加载"
+    },
+    "has-more": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "是否还有更多数据",
+      "isRequired": false,
+      "description_zh": "是否还有更多数据"
+    },
+    ":threshold": {
+      "default": "200",
+      "value": "",
+      "type": "number",
+      "description": "滚动条与底部距离小于 threshold 时触发 loadMore 事件",
+      "isRequired": false,
+      "description_zh": "滚动条与底部距离小于 threshold 时触发 loadMore 事件"
+    },
+    "use-capture": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否使用捕获模式 true 捕获 false 冒泡",
+      "isRequired": false,
+      "description_zh": "是否使用捕获模式 true 捕获 false 冒泡"
+    },
+    "load-more-txt": {
+      "default": "'哎呀，这里是底部了啦'",
+      "value": "",
+      "type": "string",
+      "description": "“没有更多数据” 展示文案",
+      "isRequired": false,
+      "description_zh": "“没有更多数据” 展示文案"
+    },
+    "load-txt": {
+      "default": "加载中...",
+      "value": "",
+      "type": "string",
+      "description": "上拉加载提示文案",
+      "isRequired": false,
+      "description_zh": "上拉加载提示文案"
+    }
+  },
+  "link": "https://nutui.jd.com/h5/vue/4x/#/zh-CN/component/infiniteloading",
+  "link_zh": "https://nutui.jd.com/h5/vue/4x/#/zh-CN/component/infiniteloading",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "load-more",
+      "description": "继续加载的回调函数",
+      "description_zh": "继续加载的回调函数",
+      "params": "-"
+    },
+    {
+      "name": "scroll-change",
+      "description": "实时监听滚动高度",
+      "description_zh": "实时监听滚动高度",
+      "params": "滚动高度"
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "default",
+      "description": "自定义加载内容",
+      "description_zh": "自定义加载内容"
+    },
+    {
+      "name": "loading",
+      "description": "自定义底部加载中提示",
+      "description_zh": "自定义底部加载中提示"
+    },
+    {
+      "name": "loading-icon",
+      "description": "自定义底部加载中图标",
+      "description_zh": "自定义底部加载中图标"
+    },
+    {
+      "name": "finished",
+      "description": "自定义加载完成后的提示文案",
+      "description_zh": "自定义加载完成后的提示文案"
+    }
+  ],
+  "filename": "InfiniteLoading",
+  "suggestions": []
+}

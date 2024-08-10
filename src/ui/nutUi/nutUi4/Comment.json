@@ -1,0 +1,110 @@
+{
+  "name": "NutComment",
+  "description": "用于进行评论列表的展示。",
+  "description_zh": "用于进行评论列表的展示。",
+  "tag": "商品评论",
+  "props": {
+    "header-type": {
+      "default": "default",
+      "value": "",
+      "type": "string",
+      "description": "头部样式展示类型，可选： default，complex",
+      "isRequired": false,
+      "description_zh": "头部样式展示类型，可选： default，complex"
+    },
+    "images-rows": {
+      "default": "one",
+      "value": "",
+      "type": "string",
+      "description": "评论图片展示行数，可选： one，multi",
+      "isRequired": false,
+      "description_zh": "评论图片展示行数，可选： one，multi"
+    },
+    "ellipsis": {
+      "default": "2",
+      "value": "",
+      "type": "string | number",
+      "description": "设置评论内容省略行数",
+      "isRequired": false,
+      "description_zh": "设置评论内容省略行数"
+    },
+    "videos": {
+      "default": "[]",
+      "value": "",
+      "type": "Array",
+      "description": "视频信息",
+      "isRequired": false,
+      "description_zh": "视频信息"
+    },
+    "images": {
+      "default": "[]",
+      "value": "",
+      "type": "Array",
+      "description": "图片信息",
+      "isRequired": false,
+      "description_zh": "图片信息"
+    },
+    ":info": {
+      "default": "{}",
+      "value": "",
+      "type": "object",
+      "description": "评论详情",
+      "isRequired": false,
+      "description_zh": "评论详情"
+    },
+    ":follow": {
+      "default": "{}",
+      "value": "",
+      "type": "object",
+      "description": "追评内容",
+      "isRequired": false,
+      "description_zh": "追评内容"
+    },
+    "operation": {
+      "default": "[\"replay\", \"like\", \"more\"]",
+      "value": "",
+      "type": "Array",
+      "description": "配置底部按钮",
+      "isRequired": false,
+      "description_zh": "配置底部按钮"
+    }
+  },
+  "link": "https://nutui.jd.com/h5/vue/4x/#/zh-CN/component/comment",
+  "link_zh": "https://nutui.jd.com/h5/vue/4x/#/zh-CN/component/comment",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "click-operate",
+      "description": "点击底部操作按钮回调函数",
+      "description_zh": "点击底部操作按钮回调函数",
+      "params": "type"
+    },
+    {
+      "name": "click",
+      "description": "点击评论内容回调函数",
+      "description_zh": "点击评论内容回调函数",
+      "params": "type"
+    },
+    {
+      "name": "click-images",
+      "description": "点击图片或视频触发",
+      "description_zh": "点击图片或视频触发",
+      "params": "{type,index,value}"
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "comment-labels",
+      "description": "评论用户的标签",
+      "description_zh": "评论用户的标签"
+    },
+    {
+      "name": "comment-shop-reply",
+      "description": "评论最底部，用于展示商家回复",
+      "description_zh": "评论最底部，用于展示商家回复"
+    }
+  ],
+  "filename": "Comment",
+  "suggestions": []
+}

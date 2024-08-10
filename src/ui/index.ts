@@ -25,6 +25,7 @@ import { bitsUi0, bitsUi0Components, shadcnSvelte0, shadcnSvelte0Components } fr
 import { materialUi5, materialUi5Components } from './materialUi'
 import { shadcnUi0, shadcnUi0Components } from './shadcnUi'
 import { tinyVue3, tinyVue3Components } from './tinyVue'
+import { nutUi4, nutUi4Components } from './nutUi'
 
 export default {
   elementUi2,
@@ -61,6 +62,7 @@ export default {
   materialUi5,
   shadcnUi0,
   tinyVue3,
+  nutUi4,
   elementUi2Components,
   antd4Components,
   antd5Components,
@@ -95,4 +97,5 @@ export default {
   materialUi5Components,
   shadcnUi0Components,
   tinyVue3Components,
+  nutUi4Components,
 }

@@ -1,0 +1,107 @@
+{
+  "name": "NutAudio",
+  "description": "用于音频播放",
+  "description_zh": "用于音频播放",
+  "tag": "音频播放器",
+  "props": {
+    "url": {
+      "default": "''",
+      "value": "",
+      "type": "string",
+      "description": "语音播放的连接",
+      "isRequired": false,
+      "description_zh": "语音播放的连接"
+    },
+    "muted": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否静音",
+      "isRequired": false,
+      "description_zh": "是否静音"
+    },
+    "autoplay": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否自动播放",
+      "isRequired": false,
+      "description_zh": "是否自动播放"
+    },
+    "loop": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否循环播放",
+      "isRequired": false,
+      "description_zh": "是否循环播放"
+    },
+    "preload": {
+      "default": "auto",
+      "value": "",
+      "type": "string",
+      "description": "是否预加载语音",
+      "isRequired": false,
+      "description_zh": "是否预加载语音"
+    },
+    "type": {
+      "default": "progress",
+      "value": "",
+      "type": "string",
+      "description": "展示形式，可选值：controls 控制面板 progress 进度条 icon 图标 none 自定义",
+      "isRequired": false,
+      "description_zh": "展示形式，可选值：controls 控制面板 progress 进度条 icon 图标 none 自定义"
+    }
+  },
+  "link": "https://nutui.jd.com/h5/vue/4x/#/zh-CN/component/audio",
+  "link_zh": "https://nutui.jd.com/h5/vue/4x/#/zh-CN/component/audio",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "fast-back",
+      "description": "触发语音快退",
+      "description_zh": "触发语音快退",
+      "params": "返回当前播放时长（单位：毫秒）"
+    },
+    {
+      "name": "forward",
+      "description": "触发语音快进",
+      "description_zh": "触发语音快进",
+      "params": "返回当前播放时长（单位：毫秒）"
+    },
+    {
+      "name": "play",
+      "description": "触发播放/暂停语音",
+      "description_zh": "触发播放/暂停语音",
+      "params": "返回当前播放状态"
+    },
+    {
+      "name": "ended",
+      "description": "语音播放完成，当 loop == false 时生效",
+      "description_zh": "语音播放完成，当 loop == false 时生效",
+      "params": "——"
+    },
+    {
+      "name": "mute",
+      "description": "触发静音",
+      "description_zh": "触发静音",
+      "params": "——"
+    },
+    {
+      "name": "change-progress",
+      "description": "当进度条改变时触发",
+      "description_zh": "当进度条改变时触发",
+      "params": "返回当前播放时长（单位：毫秒）"
+    },
+    {
+      "name": "can-play",
+      "description": "当可以播放媒体文件时触发",
+      "description_zh": "当可以播放媒体文件时触发",
+      "params": "event: Event"
+    }
+  ],
+  "methods": [],
+  "slots": [],
+  "filename": "Audio",
+  "suggestions": []
+}

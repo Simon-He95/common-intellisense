@@ -1,0 +1,240 @@
+{
+  "name": "NutAddress",
+  "description": "用于进行四级地址选择",
+  "description_zh": "用于进行四级地址选择",
+  "tag": "地址",
+  "props": {
+    "v-model:visible": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否打开地址选择",
+      "isRequired": false,
+      "description_zh": "是否打开地址选择"
+    },
+    "v-model:value": {
+      "default": "[]",
+      "value": "",
+      "type": "Array",
+      "description": "设置默认选中值",
+      "isRequired": false,
+      "description_zh": "设置默认选中值"
+    },
+    "type": {
+      "default": "custom",
+      "value": "",
+      "type": "string",
+      "description": "地址选择类型 exist/custom/custom2",
+      "isRequired": false,
+      "description_zh": "地址选择类型 exist/custom/custom2"
+    },
+    "province": {
+      "default": "[]",
+      "value": "",
+      "type": "Array",
+      "description": "省，每个省的对象中，必须有 name 字段，如果类型选择 custom2，必须指定 title 字段为首字母",
+      "isRequired": false,
+      "description_zh": "省，每个省的对象中，必须有 name 字段，如果类型选择 custom2，必须指定 title 字段为首字母"
+    },
+    "city": {
+      "default": "[]",
+      "value": "",
+      "type": "Array",
+      "description": "市，每个市的对象中，必须有 name 字段，如果类型选择 custom2，必须指定 title 字段为首字母",
+      "isRequired": false,
+      "description_zh": "市，每个市的对象中，必须有 name 字段，如果类型选择 custom2，必须指定 title 字段为首字母"
+    },
+    "country": {
+      "default": "[]",
+      "value": "",
+      "type": "Array",
+      "description": "县，每个县的对象中，必须有 name 字段，如果类型选择 custom2，必须指定 title 字段为首字母",
+      "isRequired": false,
+      "description_zh": "县，每个县的对象中，必须有 name 字段，如果类型选择 custom2，必须指定 title 字段为首字母"
+    },
+    "town": {
+      "default": "[]",
+      "value": "",
+      "type": "Array",
+      "description": "乡/镇，每个乡/镇的对象中,必须有 name 字段,如果类型选择 custom2，必须指定 title 字段为首字母",
+      "isRequired": false,
+      "description_zh": "乡/镇，每个乡/镇的对象中,必须有 name 字段,如果类型选择 custom2，必须指定 title 字段为首字母"
+    },
+    "height": {
+      "default": "200px",
+      "value": "",
+      "type": "string | number",
+      "description": "弹层中内容容器的高度，仅在 type=\"custom2\" 时有效",
+      "isRequired": false,
+      "description_zh": "弹层中内容容器的高度，仅在 type=\"custom2\" 时有效"
+    },
+    "exist-address": {
+      "default": "[]",
+      "value": "",
+      "type": "Array",
+      "description": "已存在地址列表，每个地址对象中，必传值 provinceName、cityName、countyName、townName、addressDetail、selectedAddress（字段解释见下）",
+      "isRequired": false,
+      "description_zh": "已存在地址列表，每个地址对象中，必传值 provinceName、cityName、countyName、townName、addressDetail、selectedAddress（字段解释见下）"
+    },
+    "is-show-custom-address": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "是否可以切换自定义地址选择，type=‘exist’ 时生效",
+      "isRequired": false,
+      "description_zh": "是否可以切换自定义地址选择，type=‘exist’ 时生效"
+    },
+    "custom-address-title": {
+      "default": "请选择所在地区",
+      "value": "",
+      "type": "string",
+      "description": "自定义地址选择文案，type='custom' 时生效",
+      "isRequired": false,
+      "description_zh": "自定义地址选择文案，type='custom' 时生效"
+    },
+    "exist-address-title": {
+      "default": "配送至",
+      "value": "",
+      "type": "string",
+      "description": "已有地址文案 ，type=‘exist’ 时生效",
+      "isRequired": false,
+      "description_zh": "已有地址文案 ，type=‘exist’ 时生效"
+    },
+    "custom-and-exist-title": {
+      "default": "选择其他地址",
+      "value": "",
+      "type": "string",
+      "description": "自定义地址与已有地址切换按钮文案 ，type=‘exist’ 时生效",
+      "isRequired": false,
+      "description_zh": "自定义地址与已有地址切换按钮文案 ，type=‘exist’ 时生效"
+    },
+    "columns-placeholder": {
+      "default": "请选择",
+      "value": "",
+      "type": "string | Array",
+      "description": "列提示文字",
+      "isRequired": false,
+      "description_zh": "列提示文字"
+    },
+    "lock-scroll": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "背景是否锁定",
+      "isRequired": false,
+      "description_zh": "背景是否锁定"
+    }
+  },
+  "link": "https://nutui.jd.com/h5/vue/4x/#/zh-CN/component/address",
+  "link_zh": "https://nutui.jd.com/h5/vue/4x/#/zh-CN/component/address",
+  "typeDetail": {
+    "change": [
+      {
+        "name": "custom",
+        "detail": "当前点击的行政区域",
+        "type": "province(省) / city(市) / country(县) / town(乡)"
+      },
+      {
+        "name": "next",
+        "detail": "当前点击的行政区域的下一级",
+        "type": "province(省) / city(市) / country(县) / town(乡)"
+      },
+      {
+        "name": "value",
+        "detail": "当前点击的行政区域的值（返回传入的值）",
+        "type": "{}"
+      }
+    ],
+    "selected": [
+      {
+        "name": "第一个参数（prevExistAdd）",
+        "detail": "选择前选中的地址",
+        "type": "{}"
+      },
+      {
+        "name": "第二个参数（nowExistAdd）",
+        "detail": "当前选中的地址",
+        "type": "{}"
+      },
+      {
+        "name": "第三个参数（arr）",
+        "detail": "选择完之后的已有地址列表（selectedAddress 值发生改变）",
+        "type": "{}"
+      }
+    ],
+    "close": [
+      {
+        "name": "type",
+        "detail": "地址选择类型 exist/custom/custom2",
+        "type": "exist/custom/custom2"
+      },
+      {
+        "name": "data",
+        "detail": "选择地址的值,custom 时，addressStr 为选择的地址组合",
+        "type": "{}"
+      }
+    ]
+  },
+  "events": [
+    {
+      "name": "change",
+      "description": "自定义选择地址时，选择地区时触发",
+      "description_zh": "自定义选择地址时，选择地区时触发",
+      "params": "参考 onChange"
+    },
+    {
+      "name": "selected",
+      "description": "选择已有地址列表时触发",
+      "description_zh": "选择已有地址列表时触发",
+      "params": "参考 selected"
+    },
+    {
+      "name": "close",
+      "description": "地址选择弹框关闭时触发",
+      "description_zh": "地址选择弹框关闭时触发",
+      "params": "参考 close"
+    },
+    {
+      "name": "close-mask",
+      "description": "点击遮罩层或点击右上角叉号关闭时触发",
+      "description_zh": "点击遮罩层或点击右上角叉号关闭时触发",
+      "params": "{closeWay:‘mask’/‘cross’}"
+    },
+    {
+      "name": "switch-module",
+      "description": "点击‘选择其他地址’或自定义地址选择左上角返回按钮触发",
+      "description_zh": "点击‘选择其他地址’或自定义地址选择左上角返回按钮触发",
+      "params": "{type:‘exist’/‘custom’/‘custom2’}"
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "bottom",
+      "description": "可自定义底部",
+      "description_zh": "可自定义底部"
+    },
+    {
+      "name": "icon",
+      "description": "自定义选中项的图标",
+      "description_zh": "自定义选中项的图标"
+    },
+    {
+      "name": "unselected-icon",
+      "description": "未选中地址时的图标",
+      "description_zh": "未选中地址时的图标"
+    },
+    {
+      "name": "close-icon",
+      "description": "关闭弹层的图标",
+      "description_zh": "关闭弹层的图标"
+    },
+    {
+      "name": "back-icon",
+      "description": "自定义地址与已有地址切换时返回的图标",
+      "description_zh": "自定义地址与已有地址切换时返回的图标"
+    }
+  ],
+  "filename": "Address",
+  "suggestions": []
+}

@@ -1,0 +1,131 @@
+{
+  "name": "NutNoticebar",
+  "description": "用于循环播放展示一组消息通知。",
+  "description_zh": "用于循环播放展示一组消息通知。",
+  "tag": "公告栏",
+  "props": {
+    "direction": {
+      "default": "across",
+      "value": "",
+      "type": "string",
+      "description": "滚动的方向，可选 across、vertical",
+      "isRequired": false,
+      "description_zh": "滚动的方向，可选 across、vertical"
+    },
+    "text": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "提示的信息",
+      "isRequired": false,
+      "description_zh": "提示的信息"
+    },
+    "close-mode": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否启用关闭模式",
+      "isRequired": false,
+      "description_zh": "是否启用关闭模式"
+    },
+    "left-icon": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "是否展示左侧图标, 滚动方向为 across 生效",
+      "isRequired": false,
+      "description_zh": "是否展示左侧图标, 滚动方向为 across 生效"
+    },
+    "color": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "导航栏的文字颜色",
+      "isRequired": false,
+      "description_zh": "导航栏的文字颜色"
+    },
+    "background": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "导航栏的背景颜色",
+      "isRequired": false,
+      "description_zh": "导航栏的背景颜色"
+    },
+    "delay": {
+      "default": "1",
+      "value": "",
+      "type": "string | number",
+      "description": "延时多少秒",
+      "isRequired": false,
+      "description_zh": "延时多少秒"
+    },
+    "scrollable": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否可以滚动",
+      "isRequired": false,
+      "description_zh": "是否可以滚动"
+    },
+    ":speed": {
+      "default": "50",
+      "value": "",
+      "type": "number",
+      "description": "滚动速率 (px/s)",
+      "isRequired": false,
+      "description_zh": "滚动速率 (px/s)"
+    },
+    "wrapable": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否开启文本换行，scrollable 会设置为 false",
+      "isRequired": false,
+      "description_zh": "是否开启文本换行，scrollable 会设置为 false"
+    }
+  },
+  "link": "https://nutui.jd.com/h5/vue/4x/#/zh-CN/component/noticebar",
+  "link_zh": "https://nutui.jd.com/h5/vue/4x/#/zh-CN/component/noticebar",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "click",
+      "description": "外层点击事件回调",
+      "description_zh": "外层点击事件回调",
+      "params": "event: Event"
+    },
+    {
+      "name": "close",
+      "description": "关闭通知栏时触发",
+      "description_zh": "关闭通知栏时触发",
+      "params": "event: Event"
+    },
+    {
+      "name": "across-end",
+      "description": "横向滚动结束时触发",
+      "description_zh": "横向滚动结束时触发",
+      "params": "event: Event"
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "default",
+      "description": "通知文本的内容",
+      "description_zh": "通知文本的内容"
+    },
+    {
+      "name": "right-icon",
+      "description": "自定义右侧图标",
+      "description_zh": "自定义右侧图标"
+    },
+    {
+      "name": "left-icon",
+      "description": "自定义左侧图标, 滚动方向为 across 生效",
+      "description_zh": "自定义左侧图标, 滚动方向为 across 生效"
+    }
+  ],
+  "filename": "Noticebar",
+  "suggestions": []
+}

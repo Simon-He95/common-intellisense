@@ -4,15 +4,15 @@ const fsp = require('node:fs/promises')
 const fg = require('fast-glob')
 
 export async function run() {
-  const folder = 'src/ui/tinyVue'
-  const lib = '@opentiny/vue3'
-  const name = 'tinyVue3'
+  const folder = 'src/ui/nutUi'
+  const lib = '@nutui/nutui'
+  const name = 'nutUi4'
   const isHyphen = true /** 生成的模板中的使用是 true ? a-affix : AAfix */
   const isReact = false
   const url = path.resolve(root, `${folder}/${name}`)
   const entry = await fg(['**/*.json'], { dot: true, cwd: url })
   const imports = entry.map((_url: string) => `import ${_url.split('.')[0]} from './${_url}'`)
-  let prefix = 'tiny'
+  let prefix = 'nut'
   const map = entry.map((_url: string) => {
     let tagName = `${_url.split('.')[0]}`
     if (isHyphen) {
@@ -43,7 +43,7 @@ export function ${name}Components() {
     map: componentsMap,
     isSeperatorByHyphen: ${isHyphen},
     prefix: '${prefix}',
-    isReact: ${isReact}
+    isReact: ${isReact},
     lib: '${lib}',
     // directives: directives.${name},
   })

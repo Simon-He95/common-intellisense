@@ -1,0 +1,87 @@
+{
+  "name": "NutSignature",
+  "description": "基于 Canvas 的签名组件。默认竖屏模式使用，如使用横屏模式，请开发者自行设置旋转角度或者宽高。",
+  "description_zh": "基于 Canvas 的签名组件。默认竖屏模式使用，如使用横屏模式，请开发者自行设置旋转角度或者宽高。",
+  "tag": "签名",
+  "props": {
+    "custom-class": {
+      "default": "-",
+      "value": "",
+      "type": "string",
+      "description": "自定义 class",
+      "isRequired": false,
+      "description_zh": "自定义 class"
+    },
+    ":line-width": {
+      "default": "3",
+      "value": "",
+      "type": "number",
+      "description": "线条的宽度",
+      "isRequired": false,
+      "description_zh": "线条的宽度"
+    },
+    "stroke-style": {
+      "default": "#000",
+      "value": "",
+      "type": "string",
+      "description": "绘图笔触颜色",
+      "isRequired": false,
+      "description_zh": "绘图笔触颜色"
+    },
+    "type": {
+      "default": "png",
+      "value": "",
+      "type": "string",
+      "description": "图片格式",
+      "isRequired": false,
+      "description_zh": "图片格式"
+    },
+    "un-support-tpl": {
+      "default": "对不起，当前浏览器不支持Canvas，无法使用本控件！",
+      "value": "",
+      "type": "string",
+      "description": "不支持 Canvas 情况下的展示文案",
+      "isRequired": false,
+      "description_zh": "不支持 Canvas 情况下的展示文案"
+    }
+  },
+  "link": "https://nutui.jd.com/h5/vue/4x/#/zh-CN/component/signature",
+  "link_zh": "https://nutui.jd.com/h5/vue/4x/#/zh-CN/component/signature",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "start",
+      "description": "签名开始回调函数（指某次笔画的开始）",
+      "description_zh": "签名开始回调函数（指某次笔画的开始）",
+      "params": "-"
+    },
+    {
+      "name": "signing",
+      "description": "正在签名的回调函数（指某次笔画进行中）",
+      "description_zh": "正在签名的回调函数（指某次笔画进行中）",
+      "params": "event"
+    },
+    {
+      "name": "end",
+      "description": "签名结束回调函数（指某次笔画的结束）",
+      "description_zh": "签名结束回调函数（指某次笔画的结束）",
+      "params": "-"
+    },
+    {
+      "name": "confirm",
+      "description": "点击确认按钮触发事件回调函数",
+      "description_zh": "点击确认按钮触发事件回调函数",
+      "params": "canvas和签名图片展示的 data URI，<br>如未绘制，则返回提示信息和空 data URI"
+    },
+    {
+      "name": "clear",
+      "description": "点击重签按钮触发事件回调函数",
+      "description_zh": "点击重签按钮触发事件回调函数",
+      "params": "-"
+    }
+  ],
+  "methods": [],
+  "slots": [],
+  "filename": "Signature",
+  "suggestions": []
+}

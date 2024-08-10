@@ -1,0 +1,143 @@
+{
+  "name": "NutActionSheet",
+  "description": "从底部弹出的动作菜单面板。",
+  "description_zh": "从底部弹出的动作菜单面板。",
+  "tag": "动作面板",
+  "props": {
+    "v-model:visible": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "是否展示动作面板",
+      "isRequired": false,
+      "description_zh": "是否展示动作面板"
+    },
+    "menu-items": {
+      "default": "[ ] ",
+      "value": "",
+      "type": "MenuItems[]",
+      "description": "列表项",
+      "isRequired": false,
+      "description_zh": "列表项"
+    },
+    "option-tag": {
+      "default": "'name'",
+      "value": "",
+      "type": "string",
+      "description": "设置列表项标题展示使用参数",
+      "isRequired": false,
+      "description_zh": "设置列表项标题展示使用参数"
+    },
+    "option-sub-tag": {
+      "default": "'subname'",
+      "value": "",
+      "type": "string",
+      "description": "设置列表项二级标题展示使用参数",
+      "isRequired": false,
+      "description_zh": "设置列表项二级标题展示使用参数"
+    },
+    "choose-tag-value": {
+      "default": "‘’",
+      "value": "",
+      "type": "string",
+      "description": "设置选中项的值，和 'option-tag' 的值对应",
+      "isRequired": false,
+      "description_zh": "设置选中项的值，和 'option-tag' 的值对应"
+    },
+    "color": {
+      "default": "'#ee0a24'",
+      "value": "",
+      "type": "string",
+      "description": "选中项颜色，当 choose-tag-value == option-tag 的值 生效",
+      "isRequired": false,
+      "description_zh": "选中项颜色，当 choose-tag-value == option-tag 的值 生效"
+    },
+    "title": {
+      "default": "''",
+      "value": "",
+      "type": "string",
+      "description": "设置列表项标题",
+      "isRequired": false,
+      "description_zh": "设置列表项标题"
+    },
+    "description": {
+      "default": "''",
+      "value": "",
+      "type": "string",
+      "description": "设置列表项副标题/描述",
+      "isRequired": false,
+      "description_zh": "设置列表项副标题/描述"
+    },
+    "cancel-txt": {
+      "default": "'取消'",
+      "value": "",
+      "type": "string",
+      "description": "取消文案",
+      "isRequired": false,
+      "description_zh": "取消文案"
+    },
+    "close-abled": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "遮罩层是否可关闭",
+      "isRequired": false,
+      "description_zh": "遮罩层是否可关闭"
+    }
+  },
+  "link": "https://nutui.jd.com/h5/vue/4x/#/zh-CN/component/actionsheet",
+  "link_zh": "https://nutui.jd.com/h5/vue/4x/#/zh-CN/component/actionsheet",
+  "typeDetail": {
+    "MenuItems": [
+      {
+        "name": "name",
+        "detail": "标题",
+        "type": "string"
+      },
+      {
+        "name": "subname",
+        "detail": "二级标题",
+        "type": "string"
+      },
+      {
+        "name": "color",
+        "detail": "选项字体颜色（选中项颜色层级>选项字体颜色）",
+        "type": "string"
+      },
+      {
+        "name": "loading",
+        "detail": "是否为 loading 状态",
+        "type": "boolean"
+      },
+      {
+        "name": "disable",
+        "detail": "是否为禁用状态",
+        "type": "boolean"
+      }
+    ]
+  },
+  "events": [
+    {
+      "name": "choose",
+      "description": "选择之后触发",
+      "description_zh": "选择之后触发",
+      "params": "选中列表项 item, 选中的索引值 index"
+    },
+    {
+      "name": "cancel",
+      "description": "点击取消文案时触发",
+      "description_zh": "点击取消文案时触发",
+      "params": "-"
+    },
+    {
+      "name": "close",
+      "description": "点击遮罩层时触发",
+      "description_zh": "点击遮罩层时触发",
+      "params": "event: Event"
+    }
+  ],
+  "methods": [],
+  "slots": [],
+  "filename": "ActionSheet",
+  "suggestions": []
+}
