@@ -4,7 +4,7 @@ export function antDesignVue2() {
   const map: any = [
   ]
 
-  return propsReducer('ant-design-vue', map, 'a')
+  return propsReducer('ant-design-vue2', map, 'a')
 }
 
 export function antDesignVue2Components() {

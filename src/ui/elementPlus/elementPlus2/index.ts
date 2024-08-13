@@ -173,7 +173,7 @@ export function elementPlus2() {
     ElTourStep,
   ]
 
-  return propsReducer('element-plus', map, 'el')
+  return propsReducer('element-plus2', map, 'el')
 }
 
 export function elementPlus2Components() {

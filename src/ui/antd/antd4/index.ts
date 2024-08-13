@@ -171,7 +171,7 @@ export function antd4() {
     Spin,
   ]
 
-  return propsReducer('antd', map, '')
+  return propsReducer('antd4', map, '')
 }
 
 export function antd4Components() {

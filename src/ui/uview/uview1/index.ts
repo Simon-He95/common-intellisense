@@ -169,7 +169,7 @@ export function uview1() {
     cellGroup,
   ]
 
-  return propsReducer('uview', map, 'u')
+  return propsReducer('uview1', map, 'u')
 }
 
 export function uview1Components() {

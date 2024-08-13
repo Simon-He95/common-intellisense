@@ -89,7 +89,7 @@ export function nuxtui2() {
     UInputMenu,
   ]
 
-  return propsReducer('@nuxt/ui', map, 'U')
+  return propsReducer('@nuxt/ui2', map, 'U')
 }
 
 export function nuxtui2Components() {

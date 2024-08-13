@@ -192,7 +192,7 @@ export function vant4() {
     watermark,
   ]
 
-  return propsReducer('vant', map, 'van')
+  return propsReducer('vant4', map, 'van')
 }
 
 export function vant4Components() {

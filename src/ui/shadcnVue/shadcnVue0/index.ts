@@ -542,7 +542,7 @@ export function shadcnVue0() {
     SplitterResizeHandle,
   ]
 
-  return propsReducer('shadcn-vue', map, '')
+  return propsReducer('shadcn-vue0', map, '')
 }
 
 export function shadcnVue0Components() {

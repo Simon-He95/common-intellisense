@@ -204,7 +204,7 @@ export function antdMobile5() {
     WaterMark,
   ]
 
-  return propsReducer('antd-mobile', map, '')
+  return propsReducer('antd-mobile5', map, '')
 }
 
 export function antdMobile5Components() {

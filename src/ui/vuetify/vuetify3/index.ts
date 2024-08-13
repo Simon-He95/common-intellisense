@@ -346,7 +346,7 @@ export function vuetify3() {
     fab,
   ]
 
-  return propsReducer('vuetify', map, 'v')
+  return propsReducer('vuetify3', map, 'v')
 }
 
 export function vuetify3Components() {

@@ -28,7 +28,7 @@ export function chakraUiReact2() {
     IconButton,
   ]
 
-  return propsReducer('@chakra-ui/react', map, '')
+  return propsReducer('@chakra-ui/react2', map, '')
 }
 
 export function chakraUiReact2Components() {

@@ -165,7 +165,7 @@ export function varlet3() {
     styleProvider,
   ]
 
-  return propsReducer('varlet', map, 'var')
+  return propsReducer('varlet3', map, 'var')
 }
 
 export function varlet3Components() {

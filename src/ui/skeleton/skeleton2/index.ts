@@ -6,7 +6,7 @@ export function skeleton2() {
     Accordion,
   ]
 
-  return propsReducer('skeleton', map, '')
+  return propsReducer('skeleton2', map, '')
 }
 
 export function skeleton2Components() {

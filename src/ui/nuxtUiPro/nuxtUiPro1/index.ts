@@ -144,7 +144,7 @@ export function nuxtUiPro1() {
     Tabs,
   ]
 
-  return propsReducer('@nuxt/ui-pro', map, '')
+  return propsReducer('@nuxt/ui-pro1', map, '')
 }
 
 export function nuxtUiPro1Components() {

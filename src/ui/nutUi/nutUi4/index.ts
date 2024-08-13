@@ -209,7 +209,7 @@ const map: any = [
   Watermark,
 ]
 export function nutUi4() {
-  return propsReducer('@nutui/nutui', map, 'nut')
+  return propsReducer('@nutui/nutui4', map, 'nut')
 }
 
 const componentsMap = [

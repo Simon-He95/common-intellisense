@@ -131,7 +131,7 @@ export function uview2() {
     transition,
   ]
 
-  return propsReducer('uview', map, 'u')
+  return propsReducer('uview2', map, 'u')
 }
 
 export function uview2Components() {
