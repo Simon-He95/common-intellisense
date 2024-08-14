@@ -733,5 +733,5 @@ export function isVine() {
 }
 
 export function isVueOrVine() {
-  return isVine() || isVine()
+  return isVue() || isVine()
 }
