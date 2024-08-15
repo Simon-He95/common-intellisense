@@ -237,8 +237,8 @@ const map: any = [
   UserName,
   WordCount,
 ]
-export function viewUiPlus3() {
-  return propsReducer('view-ui-plus', map, '')
+export function viewUiPlus1() {
+  return propsReducer('view-ui-plus1', map, '')
 }
 
 const componentsMap = [
@@ -361,13 +361,13 @@ const componentsMap = [
   [WordCount, WordCount.name, `<${WordCount.name}></${WordCount.name}`],
 ]
 
-export function viewUiPlus3Components() {
+export function viewUiPlus1Components() {
   return componentsReducer({
     map: componentsMap,
     isSeperatorByHyphen: false,
     prefix: '',
     isReact: false,
     lib: 'view-ui-plus',
-    directives: directives.viewUiPlus3,
+    directives: directives.viewUiPlus1,
   })
 }

@@ -26,7 +26,7 @@ import { materialUi5, materialUi5Components } from './materialUi'
 import { shadcnUi0, shadcnUi0Components } from './shadcnUi'
 import { tinyVue3, tinyVue3Components } from './tinyVue'
 import { nutUi4, nutUi4Components } from './nutUi'
-import { viewUiPlus3, viewUiPlus3Components } from './viewUiPlus'
+import { viewUiPlus1, viewUiPlus1Components } from './viewUiPlus'
 
 export default {
   elementUi2,
@@ -64,7 +64,7 @@ export default {
   shadcnUi0,
   tinyVue3,
   nutUi4,
-  viewUiPlus3,
+  viewUiPlus1,
   elementUi2Components,
   antd4Components,
   antd5Components,
@@ -100,5 +100,5 @@ export default {
   shadcnUi0Components,
   tinyVue3Components,
   nutUi4Components,
-  viewUiPlus3Components,
+  viewUiPlus1Components,
 }

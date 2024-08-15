@@ -847,11 +847,14 @@ export function findUI() {
       if (uiName in alias) {
         const v = alias[uiName]
         const m = v.match(/([^1-9^]+)\^?(\d)/)!
-        uiName = m[1]
         _version = m[2]
+        originUisName.push(`${uiName}${_version}`)
+        uiName = m[1]
+      }
+      else {
+        originUisName.push(`${uiName}${_version}`)
       }
       const name = uiName.replace(/-(\w)/g, (_: string, v: string) => v.toUpperCase())
-      originUisName.push(`${name}${_version}`)
       uisName.push(`${nameMap[name] ?? name}${_version}`)
     })
 
