@@ -1,0 +1,200 @@
+{
+  "name": "Drawer",
+  "description": "抽屉从父窗体边缘滑入，覆盖住部分父窗体内容。用户在抽屉内操作时不必离开当前任务，操作完成后，可以平滑地回到到原任务。",
+  "description_zh": "抽屉从父窗体边缘滑入，覆盖住部分父窗体内容。用户在抽屉内操作时不必离开当前任务，操作完成后，可以平滑地回到到原任务。",
+  "tag": "抽屉",
+  "props": {
+    "v-model": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "抽屉是否显示，可使用 v-model 双向绑定数据",
+      "isRequired": false,
+      "description_zh": "抽屉是否显示，可使用 v-model 双向绑定数据"
+    },
+    "title": {
+      "default": "-",
+      "value": "",
+      "type": "String",
+      "description": "抽屉标题，如果使用 slot 自定义了页头，则 title 无效",
+      "isRequired": false,
+      "description_zh": "抽屉标题，如果使用 slot 自定义了页头，则 title 无效"
+    },
+    "width": {
+      "default": "256",
+      "value": "",
+      "type": "Number | String",
+      "description": "抽屉宽度，左、右方向时可用。当其值不大于 100 时以百分比显示，大于 100 时为像素",
+      "isRequired": false,
+      "description_zh": "抽屉宽度，左、右方向时可用。当其值不大于 100 时以百分比显示，大于 100 时为像素"
+    },
+    "height": {
+      "default": "256",
+      "value": "",
+      "type": "Number | String",
+      "description": "抽屉高度，上、下方向时可用。当其值不大于 100 时以百分比显示，大于 100 时为像素",
+      "isRequired": false,
+      "description_zh": "抽屉高度，上、下方向时可用。当其值不大于 100 时以百分比显示，大于 100 时为像素"
+    },
+    "closable": {
+      "default": "true",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否显示右上角的关闭按钮",
+      "isRequired": false,
+      "description_zh": "是否显示右上角的关闭按钮"
+    },
+    "mask-closable": {
+      "default": "true",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否允许点击遮罩层关闭",
+      "isRequired": false,
+      "description_zh": "是否允许点击遮罩层关闭"
+    },
+    "mask": {
+      "default": "true",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否显示遮罩层",
+      "isRequired": false,
+      "description_zh": "是否显示遮罩层"
+    },
+    "mask-style": {
+      "default": "-",
+      "value": "",
+      "type": "Object",
+      "description": "遮罩层样式",
+      "isRequired": false,
+      "description_zh": "遮罩层样式"
+    },
+    "styles": {
+      "default": "-",
+      "value": "",
+      "type": "Object",
+      "description": "抽屉中间层的样式",
+      "isRequired": false,
+      "description_zh": "抽屉中间层的样式"
+    },
+    "scrollable": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "页面是否可以滚动",
+      "isRequired": false,
+      "description_zh": "页面是否可以滚动"
+    },
+    "placement": {
+      "default": "right",
+      "value": "",
+      "type": "String",
+      "description": "抽屉的方向，可选值为 left、right、top、bottom",
+      "isRequired": false,
+      "description_zh": "抽屉的方向，可选值为 left、right、top、bottom"
+    },
+    "z-index": {
+      "default": "1000",
+      "value": "",
+      "type": "Number",
+      "description": "设置 Drawer 的 z-index",
+      "isRequired": false,
+      "description_zh": "设置 Drawer 的 z-index"
+    },
+    "transfer": {
+      "default": "true",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否将抽屉放置于 body 内",
+      "isRequired": false,
+      "description_zh": "是否将抽屉放置于 body 内"
+    },
+    "class-name": {
+      "default": "-",
+      "value": "",
+      "type": "String",
+      "description": "设置抽屉容器.ivu-drawer-wrap的类名",
+      "isRequired": false,
+      "description_zh": "设置抽屉容器.ivu-drawer-wrap的类名"
+    },
+    "inner": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否设置抽屉在某个元素内打开，开启此属性时，应当关闭 transfer 属性",
+      "isRequired": false,
+      "description_zh": "是否设置抽屉在某个元素内打开，开启此属性时，应当关闭 transfer 属性"
+    },
+    "draggable": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否开启拖拽调整宽度",
+      "isRequired": false,
+      "description_zh": "是否开启拖拽调整宽度"
+    },
+    "before-close": {
+      "default": "-",
+      "value": "",
+      "type": "Function",
+      "description": "返回 Promise 可以阻止关闭",
+      "isRequired": false,
+      "description_zh": "返回 Promise 可以阻止关闭"
+    },
+    "lock-scroll": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否禁止对页面滚动条的修改",
+      "isRequired": false,
+      "description_zh": "是否禁止对页面滚动条的修改"
+    }
+  },
+  "link": "https://www.iviewui.com/view-ui-plus/component/view/drawer",
+  "link_zh": "https://www.iviewui.com/view-ui-plus/component/view/drawer",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "on-close",
+      "description": "关闭抽屉时触发",
+      "description_zh": "关闭抽屉时触发",
+      "params": "无"
+    },
+    {
+      "name": "on-visible-change",
+      "description": "显示状态发生变化时触发",
+      "description_zh": "显示状态发生变化时触发",
+      "params": "true / false"
+    },
+    {
+      "name": "on-resize-width",
+      "description": "调整宽度时触发",
+      "description_zh": "调整宽度时触发",
+      "params": "width"
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "header",
+      "description": "自定义标题栏",
+      "description_zh": "自定义标题栏"
+    },
+    {
+      "name": "close",
+      "description": "自定义右上角关闭内容",
+      "description_zh": "自定义右上角关闭内容"
+    },
+    {
+      "name": "trigger",
+      "description": "自定义调整宽度节点",
+      "description_zh": "自定义调整宽度节点"
+    },
+    {
+      "name": "默认",
+      "description": "抽屉主体内容",
+      "description_zh": "抽屉主体内容"
+    }
+  ],
+  "filename": "Drawer",
+  "suggestions": []
+}

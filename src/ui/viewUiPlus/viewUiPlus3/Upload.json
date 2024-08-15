@@ -1,0 +1,218 @@
+{
+  "name": "Upload",
+  "description": "",
+  "description_zh": "",
+  "tag": "上传",
+  "props": {
+    "action": {
+      "default": "-",
+      "value": "",
+      "type": "String",
+      "description": "上传的地址，必填",
+      "isRequired": false,
+      "description_zh": "上传的地址，必填"
+    },
+    "headers": {
+      "default": "{}",
+      "value": "",
+      "type": "Object",
+      "description": "设置上传的请求头部",
+      "isRequired": false,
+      "description_zh": "设置上传的请求头部"
+    },
+    "multiple": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否支持多选文件",
+      "isRequired": false,
+      "description_zh": "是否支持多选文件"
+    },
+    "paste": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否支持粘贴上传文件",
+      "isRequired": false,
+      "description_zh": "是否支持粘贴上传文件"
+    },
+    "webkitdirectory": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否开启选择文件夹，部分浏览器适用",
+      "isRequired": false,
+      "description_zh": "是否开启选择文件夹，部分浏览器适用"
+    },
+    "disabled": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否禁用",
+      "isRequired": false,
+      "description_zh": "是否禁用"
+    },
+    "data": {
+      "default": "-",
+      "value": "",
+      "type": "Object",
+      "description": "上传时附带的额外参数",
+      "isRequired": false,
+      "description_zh": "上传时附带的额外参数"
+    },
+    "name": {
+      "default": "file",
+      "value": "",
+      "type": "String",
+      "description": "上传的文件字段名",
+      "isRequired": false,
+      "description_zh": "上传的文件字段名"
+    },
+    "with-credentials": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "支持发送 cookie 凭证信息",
+      "isRequired": false,
+      "description_zh": "支持发送 cookie 凭证信息"
+    },
+    "show-upload-list": {
+      "default": "true",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否显示已上传文件列表",
+      "isRequired": false,
+      "description_zh": "是否显示已上传文件列表"
+    },
+    "type": {
+      "default": "select",
+      "value": "",
+      "type": "String",
+      "description": "上传控件的类型，可选值为 select（点击选择），drag（支持拖拽）",
+      "isRequired": false,
+      "description_zh": "上传控件的类型，可选值为 select（点击选择），drag（支持拖拽）"
+    },
+    "accept": {
+      "default": "-",
+      "value": "",
+      "type": "String",
+      "description": "接受上传的文件类型",
+      "isRequired": false,
+      "description_zh": "接受上传的文件类型"
+    },
+    "format": {
+      "default": "[]",
+      "value": "",
+      "type": "Array",
+      "description": "支持的文件类型，与 accept 不同的是，format 是识别文件的后缀名，accept 为 input 标签原生的 accept 属性，会在选择文件时过滤，可以两者结合使用",
+      "isRequired": false,
+      "description_zh": "支持的文件类型，与 accept 不同的是，format 是识别文件的后缀名，accept 为 input 标签原生的 accept 属性，会在选择文件时过滤，可以两者结合使用"
+    },
+    "max-size": {
+      "default": "-",
+      "value": "",
+      "type": "Number",
+      "description": "文件大小限制，单位 kb",
+      "isRequired": false,
+      "description_zh": "文件大小限制，单位 kb"
+    },
+    "before-upload": {
+      "default": "-",
+      "value": "",
+      "type": "Function",
+      "description": "上传文件之前的钩子，参数为上传的文件，若返回 false 或者 Promise 则停止上传",
+      "isRequired": false,
+      "description_zh": "上传文件之前的钩子，参数为上传的文件，若返回 false 或者 Promise 则停止上传"
+    },
+    "on-progress": {
+      "default": "-",
+      "value": "",
+      "type": "Function",
+      "description": "文件上传时的钩子，返回字段为 event, file, fileList",
+      "isRequired": false,
+      "description_zh": "文件上传时的钩子，返回字段为 event, file, fileList"
+    },
+    "on-success": {
+      "default": "-",
+      "value": "",
+      "type": "Function",
+      "description": "文件上传成功时的钩子，返回字段为 response, file, fileList",
+      "isRequired": false,
+      "description_zh": "文件上传成功时的钩子，返回字段为 response, file, fileList"
+    },
+    "on-error": {
+      "default": "-",
+      "value": "",
+      "type": "Function",
+      "description": "文件上传失败时的钩子，返回字段为 error, file, fileList",
+      "isRequired": false,
+      "description_zh": "文件上传失败时的钩子，返回字段为 error, file, fileList"
+    },
+    "on-preview": {
+      "default": "-",
+      "value": "",
+      "type": "Function",
+      "description": "点击已上传的文件链接时的钩子，返回字段为 file， 可以通过 file.response 拿到服务端返回数据",
+      "isRequired": false,
+      "description_zh": "点击已上传的文件链接时的钩子，返回字段为 file， 可以通过 file.response 拿到服务端返回数据"
+    },
+    "on-remove": {
+      "default": "-",
+      "value": "",
+      "type": "Function",
+      "description": "文件列表移除文件时的钩子，返回字段为 file, fileList",
+      "isRequired": false,
+      "description_zh": "文件列表移除文件时的钩子，返回字段为 file, fileList"
+    },
+    "on-format-error": {
+      "default": "-",
+      "value": "",
+      "type": "Function",
+      "description": "文件格式验证失败时的钩子，返回字段为 file, fileList",
+      "isRequired": false,
+      "description_zh": "文件格式验证失败时的钩子，返回字段为 file, fileList"
+    },
+    "on-exceeded-size": {
+      "default": "-",
+      "value": "",
+      "type": "Function",
+      "description": "文件超出指定大小限制时的钩子，返回字段为 file, fileList",
+      "isRequired": false,
+      "description_zh": "文件超出指定大小限制时的钩子，返回字段为 file, fileList"
+    },
+    "default-file-list": {
+      "default": "[]",
+      "value": "",
+      "type": "Array",
+      "description": "默认已上传的文件列表，例如：[{name: 'img1.jpg', url: 'http://www.xxx.com/img1.jpg'}, {name: 'img2.jpg', url: 'http://www.xxx.com/img2.jpg'}]",
+      "isRequired": false,
+      "description_zh": "默认已上传的文件列表，例如：[{name: 'img1.jpg', url: 'http://www.xxx.com/img1.jpg'}, {name: 'img2.jpg', url: 'http://www.xxx.com/img2.jpg'}]"
+    }
+  },
+  "link": "https://www.iviewui.com/view-ui-plus/component/form/upload",
+  "link_zh": "https://www.iviewui.com/view-ui-plus/component/form/upload",
+  "typeDetail": {},
+  "events": [],
+  "methods": [
+    {
+      "name": "clearFiles",
+      "description": "清空已上传的文件列表",
+      "params": "无",
+      "description_zh": "清空已上传的文件列表"
+    }
+  ],
+  "slots": [
+    {
+      "name": "无",
+      "description": "触发上传组件的控件",
+      "description_zh": "触发上传组件的控件"
+    },
+    {
+      "name": "tip",
+      "description": "辅助提示内容",
+      "description_zh": "辅助提示内容"
+    }
+  ],
+  "filename": "Upload",
+  "suggestions": []
+}

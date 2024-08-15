@@ -1,0 +1,77 @@
+{
+  "name": "TreeSelect",
+  "description": " 树型选择控件，与 Select 类似，它的可选择数据结构是一个树形结构（Tree）。 该组件支持 Form 校验。 ",
+  "description_zh": " 树型选择控件，与 Select 类似，它的可选择数据结构是一个树形结构（Tree）。 该组件支持 Form 校验。 ",
+  "tag": "树选择",
+  "props": {
+    "v-model": {
+      "default": "-",
+      "value": "",
+      "type": "String, Number, Array",
+      "description": "指定选中项目的 value 值，可以使用 v-model 双向绑定数据。单选时只接受 String 或 Number，多选时只接受 Array",
+      "isRequired": false,
+      "description_zh": "指定选中项目的 value 值，可以使用 v-model 双向绑定数据。单选时只接受 String 或 Number，多选时只接受 Array"
+    },
+    "data": {
+      "default": "[]",
+      "value": "",
+      "type": "Array",
+      "description": "Tree 的数据，基本同 View UI Plus Tree，但要额外设置一个 value 字段，而且 selected 和 checked 字段需预先设置在 data 中，详见示例",
+      "isRequired": false,
+      "description_zh": "Tree 的数据，基本同 View UI Plus Tree，但要额外设置一个 value 字段，而且 selected 和 checked 字段需预先设置在 data 中，详见示例"
+    },
+    "multiple": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否支持多选",
+      "isRequired": false,
+      "description_zh": "是否支持多选"
+    },
+    "show-checkbox": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否显示多选框",
+      "isRequired": false,
+      "description_zh": "是否显示多选框"
+    },
+    "load-data": {
+      "default": "-",
+      "value": "",
+      "type": "Function",
+      "description": "异步加载数据的方法，详见示例",
+      "isRequired": false,
+      "description_zh": "异步加载数据的方法，详见示例"
+    },
+    "transfer": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否将弹层放置于 body 内",
+      "isRequired": false,
+      "description_zh": "是否将弹层放置于 body 内"
+    }
+  },
+  "link": "https://www.iviewui.com/view-ui-plus/component/form/tree-select",
+  "link_zh": "https://www.iviewui.com/view-ui-plus/component/form/tree-select",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "on-change",
+      "description": "选项变化时触发",
+      "description_zh": "选项变化时触发",
+      "params": "返回 String 或 Array，取决于 multiple，返回项为 data 中的 value 字段"
+    },
+    {
+      "name": "on-open-change",
+      "description": "下拉框展开或收起时触发",
+      "description_zh": "下拉框展开或收起时触发",
+      "params": "true / false"
+    }
+  ],
+  "methods": [],
+  "slots": [],
+  "filename": "TreeSelect",
+  "suggestions": []
+}

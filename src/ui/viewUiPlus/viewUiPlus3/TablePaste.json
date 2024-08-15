@@ -1,0 +1,73 @@
+{
+  "name": "TablePaste",
+  "description": " 从网页、Excel 或其它软件复制表格数据，粘贴后，会格式化显示在标准的 Table 组件里。 输入框、表格支持自定义配置，粘贴的数据有误时，也会告知具体错误的数据行。 ",
+  "description_zh": " 从网页、Excel 或其它软件复制表格数据，粘贴后，会格式化显示在标准的 Table 组件里。 输入框、表格支持自定义配置，粘贴的数据有误时，也会告知具体错误的数据行。 ",
+  "tag": "粘贴表格数据",
+  "props": {
+    "value": {
+      "default": "-",
+      "value": "",
+      "type": "String",
+      "description": "组件默认为左右结构，左边输入框，右边显示表格，如果想自定义输入框 (即使用 slot) 时，需设置该值",
+      "isRequired": false,
+      "description_zh": "组件默认为左右结构，左边输入框，右边显示表格，如果想自定义输入框 (即使用 slot) 时，需设置该值"
+    },
+    "hide-table": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否隐藏右侧表格，开启后，只会显示输入框，这时用户可以根据事件自己渲染 Table",
+      "isRequired": false,
+      "description_zh": "是否隐藏右侧表格，开启后，只会显示输入框，这时用户可以根据事件自己渲染 Table"
+    },
+    "input-props": {
+      "default": "{}",
+      "value": "",
+      "type": "Object",
+      "description": "代理的 Input props",
+      "isRequired": false,
+      "description_zh": "代理的 Input props"
+    },
+    "table-props": {
+      "default": "{}",
+      "value": "",
+      "type": "Object",
+      "description": "代理的 Table props",
+      "isRequired": false,
+      "description_zh": "代理的 Table props"
+    }
+  },
+  "link": "https://www.iviewui.com/view-ui-plus/component/form/table-paste",
+  "link_zh": "https://www.iviewui.com/view-ui-plus/component/form/table-paste",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "on-change",
+      "description": "输入框内容变化时触发，返回内容",
+      "description_zh": "输入框内容变化时触发，返回内容",
+      "params": "content"
+    },
+    {
+      "name": "on-success",
+      "description": "表格渲染正确时触发，返回表格数据 tableData (含 columns 和 data)",
+      "description_zh": "表格渲染正确时触发，返回表格数据 tableData (含 columns 和 data)",
+      "params": "tableData"
+    },
+    {
+      "name": "on-error",
+      "description": "表格渲染错误时触发，返回表格数据 tableData (含 columns 和 data) 及 错误行序号 errorIndex (从 1 计数)",
+      "description_zh": "表格渲染错误时触发，返回表格数据 tableData (含 columns 和 data) 及 错误行序号 errorIndex (从 1 计数)",
+      "params": "tableData, errorIndex"
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "default",
+      "description": "默认为普通输入框，如果想使用其它输入控件，比如 codemirror 或 Ace，可以自定义 slot，这时需传入",
+      "description_zh": "默认为普通输入框，如果想使用其它输入控件，比如 codemirror 或 Ace，可以自定义 slot，这时需传入"
+    }
+  ],
+  "filename": "TablePaste",
+  "suggestions": []
+}

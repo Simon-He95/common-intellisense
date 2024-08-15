@@ -1,0 +1,177 @@
+{
+  "name": "Page",
+  "description": "当数据量较多时，使用分页可以快速进行数据切换。",
+  "description_zh": "当数据量较多时，使用分页可以快速进行数据切换。",
+  "tag": "分页",
+  "props": {
+    "v-model": {
+      "default": "1",
+      "value": "",
+      "type": "Number",
+      "description": "当前页码, 可以使用 v-model来进行双向绑定",
+      "isRequired": false,
+      "description_zh": "当前页码, 可以使用 v-model来进行双向绑定"
+    },
+    "total": {
+      "default": "0",
+      "value": "",
+      "type": "Number",
+      "description": "数据总数",
+      "isRequired": false,
+      "description_zh": "数据总数"
+    },
+    "page-size": {
+      "default": "10",
+      "value": "",
+      "type": "Number",
+      "description": "每页条数",
+      "isRequired": false,
+      "description_zh": "每页条数"
+    },
+    "page-size-opts": {
+      "default": "[10, 20, 30, 40]",
+      "value": "",
+      "type": "Array",
+      "description": "每页条数切换的配置",
+      "isRequired": false,
+      "description_zh": "每页条数切换的配置"
+    },
+    "placement": {
+      "default": "bottom",
+      "value": "",
+      "type": "String",
+      "description": "条数切换弹窗的展开方向，可选值为 bottom 和 top",
+      "isRequired": false,
+      "description_zh": "条数切换弹窗的展开方向，可选值为 bottom 和 top"
+    },
+    "size": {
+      "default": "-",
+      "value": "",
+      "type": "String",
+      "description": "可选值为small（迷你版）、default（默认）或不填",
+      "isRequired": false,
+      "description_zh": "可选值为small（迷你版）、default（默认）或不填"
+    },
+    "simple": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "简洁版",
+      "isRequired": false,
+      "description_zh": "简洁版"
+    },
+    "show-total": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "显示总数",
+      "isRequired": false,
+      "description_zh": "显示总数"
+    },
+    "show-elevator": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "显示电梯，可以快速切换到某一页",
+      "isRequired": false,
+      "description_zh": "显示电梯，可以快速切换到某一页"
+    },
+    "show-sizer": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "显示分页，用来改变page-size",
+      "isRequired": false,
+      "description_zh": "显示分页，用来改变page-size"
+    },
+    "class-name": {
+      "default": "-",
+      "value": "",
+      "type": "String",
+      "description": "自定义 class 名称",
+      "isRequired": false,
+      "description_zh": "自定义 class 名称"
+    },
+    "styles": {
+      "default": "-",
+      "value": "",
+      "type": "Object",
+      "description": "自定义 style 样式",
+      "isRequired": false,
+      "description_zh": "自定义 style 样式"
+    },
+    "transfer": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否将弹层放置于 body 内，在 Tabs、带有 fixed 的 Table 列内使用时，建议添加此属性，它将不受父级样式影响，从而达到更好的效果",
+      "isRequired": false,
+      "description_zh": "是否将弹层放置于 body 内，在 Tabs、带有 fixed 的 Table 列内使用时，建议添加此属性，它将不受父级样式影响，从而达到更好的效果"
+    },
+    "prev-text": {
+      "default": "-",
+      "value": "",
+      "type": "String",
+      "description": "替代图标显示的上一页文字",
+      "isRequired": false,
+      "description_zh": "替代图标显示的上一页文字"
+    },
+    "next-text": {
+      "default": "-",
+      "value": "",
+      "type": "String",
+      "description": "替代图标显示的下一页文字",
+      "isRequired": false,
+      "description_zh": "替代图标显示的下一页文字"
+    },
+    "disabled": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否禁用",
+      "isRequired": false,
+      "description_zh": "是否禁用"
+    },
+    "events-enabled": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否开启 Popper 的 eventsEnabled 属性，开启可能会牺牲一定的性能",
+      "isRequired": false,
+      "description_zh": "是否开启 Popper 的 eventsEnabled 属性，开启可能会牺牲一定的性能"
+    }
+  },
+  "link": "https://www.iviewui.com/view-ui-plus/component/navigation/page",
+  "link_zh": "https://www.iviewui.com/view-ui-plus/component/navigation/page",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "on-change",
+      "description": "页码改变的回调，返回改变后的页码",
+      "description_zh": "页码改变的回调，返回改变后的页码",
+      "params": "page"
+    },
+    {
+      "name": "on-page-size-change",
+      "description": "切换每页条数时的回调，返回切换后的每页条数",
+      "description_zh": "切换每页条数时的回调，返回切换后的每页条数",
+      "params": "page-size"
+    },
+    {
+      "name": "on-prev",
+      "description": "切换上一页时触发，返回切换后的页码",
+      "description_zh": "切换上一页时触发，返回切换后的页码",
+      "params": "page"
+    },
+    {
+      "name": "on-next",
+      "description": "切换下一页时触发，返回切换后的页码",
+      "description_zh": "切换下一页时触发，返回切换后的页码",
+      "params": "page"
+    }
+  ],
+  "methods": [],
+  "slots": [],
+  "filename": "Page",
+  "suggestions": []
+}

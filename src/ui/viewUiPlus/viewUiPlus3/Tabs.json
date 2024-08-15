@@ -1,0 +1,134 @@
+{
+  "name": "Tabs",
+  "description": "选项卡切换组件，常用于平级区域大块内容的的收纳和展现。",
+  "description_zh": "选项卡切换组件，常用于平级区域大块内容的的收纳和展现。",
+  "tag": "标签页",
+  "props": {
+    "v-model": {
+      "default": "默认为第一项的 name",
+      "value": "",
+      "type": "String",
+      "description": "当前激活 tab 面板的 name，可以使用 v-model 双向绑定数据",
+      "isRequired": false,
+      "description_zh": "当前激活 tab 面板的 name，可以使用 v-model 双向绑定数据"
+    },
+    "type": {
+      "default": "line",
+      "value": "",
+      "type": "String",
+      "description": "页签的基本样式，可选值为 line 和 card",
+      "isRequired": false,
+      "description_zh": "页签的基本样式，可选值为 line 和 card"
+    },
+    "size": {
+      "default": "default",
+      "value": "",
+      "type": "String",
+      "description": "尺寸，可选值为 default 和 small，仅在 type=\"line\" 时有效",
+      "isRequired": false,
+      "description_zh": "尺寸，可选值为 default 和 small，仅在 type=\"line\" 时有效"
+    },
+    "closable": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否可以关闭页签，仅在 type=\"card\" 时有效",
+      "isRequired": false,
+      "description_zh": "是否可以关闭页签，仅在 type=\"card\" 时有效"
+    },
+    "animated": {
+      "default": "true",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否使用 CSS3 动画",
+      "isRequired": false,
+      "description_zh": "是否使用 CSS3 动画"
+    },
+    "capture-focus": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "Tabs 内的表单类组件是否自动获得焦点",
+      "isRequired": false,
+      "description_zh": "Tabs 内的表单类组件是否自动获得焦点"
+    },
+    "before-remove": {
+      "default": "-",
+      "value": "",
+      "type": "Function",
+      "description": "关闭前的函数，返回 Promise 可阻止标签关闭",
+      "isRequired": false,
+      "description_zh": "关闭前的函数，返回 Promise 可阻止标签关闭"
+    },
+    "name": {
+      "default": "-",
+      "value": "",
+      "type": "String",
+      "description": "当嵌套使用 Tabs，指定 name 区分层级",
+      "isRequired": false,
+      "description_zh": "当嵌套使用 Tabs，指定 name 区分层级"
+    },
+    "draggable": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "开启可配合事件 @on-drag-drop 实现拖拽调整页签顺序，详见示例",
+      "isRequired": false,
+      "description_zh": "开启可配合事件 @on-drag-drop 实现拖拽调整页签顺序，详见示例"
+    },
+    "auto-close-contextmenu": {
+      "default": "true",
+      "value": "",
+      "type": "Boolean",
+      "description": "点击右键菜单项是否自动关闭右键菜单",
+      "isRequired": false,
+      "description_zh": "点击右键菜单项是否自动关闭右键菜单"
+    }
+  },
+  "link": "https://www.iviewui.com/view-ui-plus/component/navigation/tabs",
+  "link_zh": "https://www.iviewui.com/view-ui-plus/component/navigation/tabs",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "on-click",
+      "description": "tab 被点击时触发",
+      "description_zh": "tab 被点击时触发",
+      "params": "name"
+    },
+    {
+      "name": "on-tab-remove",
+      "description": "tab 被关闭时触发",
+      "description_zh": "tab 被关闭时触发",
+      "params": "name"
+    },
+    {
+      "name": "on-contextmenu",
+      "description": "当前页签点击右键时触发",
+      "description_zh": "当前页签点击右键时触发",
+      "params": "data, event, position"
+    },
+    {
+      "name": "on-drag-drop",
+      "description": "拖拽调整页签顺序时触发",
+      "description_zh": "拖拽调整页签顺序时触发",
+      "params": "name1, name2, index1, index2, names"
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "extra",
+      "description": "附加内容",
+      "description_zh": "附加内容"
+    },
+    {
+      "name": "contextMenu",
+      "description": "右键菜单，详见示例",
+      "description_zh": "右键菜单，详见示例"
+    }
+  ],
+  "filename": "Tabs",
+  "suggestions": [
+    "TabPane"
+  ]
+}

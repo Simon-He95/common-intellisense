@@ -1,0 +1,157 @@
+{
+  "name": "Cascader",
+  "description": " 从一组相关联的数据集合中进行选择，常用于省市区、公司级层、事务分类等。 相比 Select 组件，可以一次性完成选择，体验更好。 ",
+  "description_zh": " 从一组相关联的数据集合中进行选择，常用于省市区、公司级层、事务分类等。 相比 Select 组件，可以一次性完成选择，体验更好。 ",
+  "tag": "级联选择",
+  "props": {
+    "data": {
+      "default": "[]",
+      "value": "",
+      "type": "Array",
+      "description": "可选项的数据源，格式参照示例说明",
+      "isRequired": false,
+      "description_zh": "可选项的数据源，格式参照示例说明"
+    },
+    "v-model": {
+      "default": "[]",
+      "value": "",
+      "type": "Array",
+      "description": "当前已选项的数据，格式参照示例说明",
+      "isRequired": false,
+      "description_zh": "当前已选项的数据，格式参照示例说明"
+    },
+    "render-format": {
+      "default": "label => label.join(' / ')",
+      "value": "",
+      "type": "Function",
+      "description": "选择后展示的函数，用于自定义显示格式",
+      "isRequired": false,
+      "description_zh": "选择后展示的函数，用于自定义显示格式"
+    },
+    "disabled": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否禁用选择器",
+      "isRequired": false,
+      "description_zh": "是否禁用选择器"
+    },
+    "clearable": {
+      "default": "true",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否支持清除",
+      "isRequired": false,
+      "description_zh": "是否支持清除"
+    },
+    "placeholder": {
+      "default": "请选择",
+      "value": "",
+      "type": "String",
+      "description": "输入框占位符",
+      "isRequired": false,
+      "description_zh": "输入框占位符"
+    },
+    "trigger": {
+      "default": "click",
+      "value": "",
+      "type": "String",
+      "description": "次级菜单展开方式，可选值为 click 或 hover",
+      "isRequired": false,
+      "description_zh": "次级菜单展开方式，可选值为 click 或 hover"
+    },
+    "change-on-select": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "当此项为 true 时，点选每级菜单选项值都会发生变化，具体见上面的示例",
+      "isRequired": false,
+      "description_zh": "当此项为 true 时，点选每级菜单选项值都会发生变化，具体见上面的示例"
+    },
+    "size": {
+      "default": "-",
+      "value": "",
+      "type": "String",
+      "description": "输入框大小，可选值为large和small或者不填",
+      "isRequired": false,
+      "description_zh": "输入框大小，可选值为large和small或者不填"
+    },
+    "load-data": {
+      "default": "-",
+      "value": "",
+      "type": "Function",
+      "description": "动态获取数据，数据源需标识 loading",
+      "isRequired": false,
+      "description_zh": "动态获取数据，数据源需标识 loading"
+    },
+    "filterable": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否支持搜索",
+      "isRequired": false,
+      "description_zh": "是否支持搜索"
+    },
+    "not-found-text": {
+      "default": "无匹配数据",
+      "value": "",
+      "type": "String",
+      "description": "当搜索列表为空时显示的内容",
+      "isRequired": false,
+      "description_zh": "当搜索列表为空时显示的内容"
+    },
+    "transfer": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否将弹层放置于 body 内，在 Tabs、带有 fixed 的 Table 列内使用时，建议添加此属性，它将不受父级样式影响，从而达到更好的效果",
+      "isRequired": false,
+      "description_zh": "是否将弹层放置于 body 内，在 Tabs、带有 fixed 的 Table 列内使用时，建议添加此属性，它将不受父级样式影响，从而达到更好的效果"
+    },
+    "element-id": {
+      "default": "-",
+      "value": "",
+      "type": "String",
+      "description": "给表单元素设置 id，详见 Form 用法。",
+      "isRequired": false,
+      "description_zh": "给表单元素设置 id，详见 Form 用法。"
+    },
+    "transfer-class-name": {
+      "default": "-",
+      "value": "",
+      "type": "String",
+      "description": "开启 transfer 时，给浮层添加额外的 class 名称",
+      "isRequired": false,
+      "description_zh": "开启 transfer 时，给浮层添加额外的 class 名称"
+    },
+    "events-enabled": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否开启 Popper 的 eventsEnabled 属性，开启可能会牺牲一定的性能",
+      "isRequired": false,
+      "description_zh": "是否开启 Popper 的 eventsEnabled 属性，开启可能会牺牲一定的性能"
+    }
+  },
+  "link": "https://www.iviewui.com/view-ui-plus/component/form/cascader",
+  "link_zh": "https://www.iviewui.com/view-ui-plus/component/form/cascader",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "on-change",
+      "description": "选择完成后的回调，返回值 value 即已选值 value，selectedData 为已选项的具体数据",
+      "description_zh": "选择完成后的回调，返回值 value 即已选值 value，selectedData 为已选项的具体数据",
+      "params": "value, selectedData"
+    },
+    {
+      "name": "on-visible-change",
+      "description": "展开和关闭弹窗时触发",
+      "description_zh": "展开和关闭弹窗时触发",
+      "params": "显示状态，Boolean"
+    }
+  ],
+  "methods": [],
+  "slots": [],
+  "filename": "Cascader",
+  "suggestions": []
+}

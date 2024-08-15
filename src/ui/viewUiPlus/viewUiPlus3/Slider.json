@@ -1,0 +1,133 @@
+{
+  "name": "Slider",
+  "description": "滑动输入器，用于在数值区间/自定义区间内进行选择，支持连续或离散值。",
+  "description_zh": "滑动输入器，用于在数值区间/自定义区间内进行选择，支持连续或离散值。",
+  "tag": "滑块",
+  "props": {
+    "v-model": {
+      "default": "0",
+      "value": "",
+      "type": "Number | Array",
+      "description": "滑块选定的值，可以使用 v-model 双向绑定数据。普通模式下，数据格式为数字，在双滑块模式下，数据格式为长度是2的数组，且每项都为数字",
+      "isRequired": false,
+      "description_zh": "滑块选定的值，可以使用 v-model 双向绑定数据。普通模式下，数据格式为数字，在双滑块模式下，数据格式为长度是2的数组，且每项都为数字"
+    },
+    "min": {
+      "default": "0",
+      "value": "",
+      "type": "Number",
+      "description": "最小值",
+      "isRequired": false,
+      "description_zh": "最小值"
+    },
+    "max": {
+      "default": "100",
+      "value": "",
+      "type": "Number",
+      "description": "最大值",
+      "isRequired": false,
+      "description_zh": "最大值"
+    },
+    "step": {
+      "default": "1",
+      "value": "",
+      "type": "Number",
+      "description": "步长，取值建议能被（max - min）整除",
+      "isRequired": false,
+      "description_zh": "步长，取值建议能被（max - min）整除"
+    },
+    "disabled": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否禁用滑块",
+      "isRequired": false,
+      "description_zh": "是否禁用滑块"
+    },
+    "range": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否开启双滑块模式",
+      "isRequired": false,
+      "description_zh": "是否开启双滑块模式"
+    },
+    "show-input": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否显示数字输入框，仅在单滑块模式下有效",
+      "isRequired": false,
+      "description_zh": "是否显示数字输入框，仅在单滑块模式下有效"
+    },
+    "show-stops": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否显示间断点，建议在 step 不密集时使用",
+      "isRequired": false,
+      "description_zh": "是否显示间断点，建议在 step 不密集时使用"
+    },
+    "show-tip": {
+      "default": "hover",
+      "value": "",
+      "type": "String",
+      "description": "提示的显示控制，可选值为 hover（悬停，默认）、always（总是可见）、never（不可见）",
+      "isRequired": false,
+      "description_zh": "提示的显示控制，可选值为 hover（悬停，默认）、always（总是可见）、never（不可见）"
+    },
+    "tip-format": {
+      "default": "value",
+      "value": "",
+      "type": "Function",
+      "description": "Slider 会把当前值传给 tip-format，并在 Tooltip 中显示 tip-format 的返回值，若为 null，则隐藏 Tooltip",
+      "isRequired": false,
+      "description_zh": "Slider 会把当前值传给 tip-format，并在 Tooltip 中显示 tip-format 的返回值，若为 null，则隐藏 Tooltip"
+    },
+    "input-size": {
+      "default": "default",
+      "value": "",
+      "type": "String",
+      "description": "数字输入框的尺寸，可选值为large、small、default或者不填，仅在开启 show-input 时有效",
+      "isRequired": false,
+      "description_zh": "数字输入框的尺寸，可选值为large、small、default或者不填，仅在开启 show-input 时有效"
+    },
+    "active-change": {
+      "default": "true",
+      "value": "",
+      "type": "Boolean",
+      "description": "同 InputNumber 的 active-change",
+      "isRequired": false,
+      "description_zh": "同 InputNumber 的 active-change"
+    },
+    "marks": {
+      "default": "-",
+      "value": "",
+      "type": "Object",
+      "description": "标记， key 的类型必须为 number 且取值在闭区间 [min, max] 内，每个标记可以单独设置样式",
+      "isRequired": false,
+      "description_zh": "标记， key 的类型必须为 number 且取值在闭区间 [min, max] 内，每个标记可以单独设置样式"
+    }
+  },
+  "link": "https://www.iviewui.com/view-ui-plus/component/form/slider",
+  "link_zh": "https://www.iviewui.com/view-ui-plus/component/form/slider",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "on-change",
+      "description": "在松开滑动时触发，返回当前的选值，在滑动过程中不会触发",
+      "description_zh": "在松开滑动时触发，返回当前的选值，在滑动过程中不会触发",
+      "params": "value"
+    },
+    {
+      "name": "on-input",
+      "description": "滑动条数据变化时触发，返回当前的选值，在滑动过程中实时触发",
+      "description_zh": "滑动条数据变化时触发，返回当前的选值，在滑动过程中实时触发",
+      "params": "value"
+    }
+  ],
+  "methods": [],
+  "slots": [],
+  "filename": "Slider",
+  "suggestions": []
+}

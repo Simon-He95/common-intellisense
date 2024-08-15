@@ -1,0 +1,315 @@
+{
+  "name": "Modal",
+  "description": "模态对话框，在浮层中显示，引导用户进行相关操作。Modal提供了两种用法，普通组件使用和封装好的简洁实例调用。",
+  "description_zh": "模态对话框，在浮层中显示，引导用户进行相关操作。Modal提供了两种用法，普通组件使用和封装好的简洁实例调用。",
+  "tag": "对话框",
+  "props": {
+    "v-model": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "对话框是否显示，可使用 v-model 双向绑定数据。",
+      "isRequired": false,
+      "description_zh": "对话框是否显示，可使用 v-model 双向绑定数据。"
+    },
+    "title": {
+      "default": "-",
+      "value": "",
+      "type": "String",
+      "description": "对话框标题，如果使用 slot 自定义了页头，则 title 无效",
+      "isRequired": false,
+      "description_zh": "对话框标题，如果使用 slot 自定义了页头，则 title 无效"
+    },
+    "closable": {
+      "default": "true",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否显示右上角的关闭按钮，关闭后 Esc 按键也将关闭",
+      "isRequired": false,
+      "description_zh": "是否显示右上角的关闭按钮，关闭后 Esc 按键也将关闭"
+    },
+    "mask-closable": {
+      "default": "true",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否允许点击遮罩层关闭",
+      "isRequired": false,
+      "description_zh": "是否允许点击遮罩层关闭"
+    },
+    "loading": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "点击确定按钮时，确定按钮是否显示 loading 状态，开启则需手动设置value来关闭对话框",
+      "isRequired": false,
+      "description_zh": "点击确定按钮时，确定按钮是否显示 loading 状态，开启则需手动设置value来关闭对话框"
+    },
+    "scrollable": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "页面是否可以滚动",
+      "isRequired": false,
+      "description_zh": "页面是否可以滚动"
+    },
+    "fullscreen": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否全屏显示",
+      "isRequired": false,
+      "description_zh": "是否全屏显示"
+    },
+    "draggable": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否可以拖拽移动",
+      "isRequired": false,
+      "description_zh": "是否可以拖拽移动"
+    },
+    "sticky": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "拖拽时，是否吸附屏幕边缘",
+      "isRequired": false,
+      "description_zh": "拖拽时，是否吸附屏幕边缘"
+    },
+    "sticky-distance": {
+      "default": "10",
+      "value": "",
+      "type": "Number",
+      "description": "拖拽时，自动吸附屏幕边缘的临界距离",
+      "isRequired": false,
+      "description_zh": "拖拽时，自动吸附屏幕边缘的临界距离"
+    },
+    "reset-drag-position": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "Modal 再次打开时，是否重置拖拽的位置",
+      "isRequired": false,
+      "description_zh": "Modal 再次打开时，是否重置拖拽的位置"
+    },
+    "mask": {
+      "default": "",
+      "value": "",
+      "type": "",
+      "description": "是否显示遮罩层，",
+      "isRequired": false,
+      "description_zh": "是否显示遮罩层，"
+    },
+    "ok-text": {
+      "default": "确定",
+      "value": "",
+      "type": "String",
+      "description": "确定按钮文字",
+      "isRequired": false,
+      "description_zh": "确定按钮文字"
+    },
+    "cancel-text": {
+      "default": "取消",
+      "value": "",
+      "type": "String",
+      "description": "取消按钮文字",
+      "isRequired": false,
+      "description_zh": "取消按钮文字"
+    },
+    "width": {
+      "default": "String",
+      "value": "",
+      "type": "Number",
+      "description": "对话框宽度，对话框的宽度是响应式的，当屏幕尺寸小于 768px 时，宽度会变为自动auto。当其值不大于 100 时以百分比显示，大于 100 时为像素",
+      "isRequired": false,
+      "description_zh": "对话框宽度，对话框的宽度是响应式的，当屏幕尺寸小于 768px 时，宽度会变为自动auto。当其值不大于 100 时以百分比显示，大于 100 时为像素"
+    },
+    "footer-hide": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "不显示底部",
+      "isRequired": false,
+      "description_zh": "不显示底部"
+    },
+    "styles": {
+      "default": "-",
+      "value": "",
+      "type": "Object",
+      "description": "设置浮层样式，调整浮层位置等，该属性设置的是.ivu-modal的样式",
+      "isRequired": false,
+      "description_zh": "设置浮层样式，调整浮层位置等，该属性设置的是.ivu-modal的样式"
+    },
+    "class-name": {
+      "default": "-",
+      "value": "",
+      "type": "String",
+      "description": "设置对话框容器.ivu-modal-wrap的类名，可辅助实现垂直居中等自定义效果",
+      "isRequired": false,
+      "description_zh": "设置对话框容器.ivu-modal-wrap的类名，可辅助实现垂直居中等自定义效果"
+    },
+    "z-index": {
+      "default": "1000",
+      "value": "",
+      "type": "Number",
+      "description": "层级",
+      "isRequired": false,
+      "description_zh": "层级"
+    },
+    "transition-names": {
+      "default": "['ease', 'fade']",
+      "value": "",
+      "type": "Array",
+      "description": "自定义显示动画，第一项是模态框，第二项是背景",
+      "isRequired": false,
+      "description_zh": "自定义显示动画，第一项是模态框，第二项是背景"
+    },
+    "transfer": {
+      "default": "true",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否将弹层放置于 body 内",
+      "isRequired": false,
+      "description_zh": "是否将弹层放置于 body 内"
+    },
+    "lock-scroll": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否禁止对页面滚动条的修改",
+      "isRequired": false,
+      "description_zh": "是否禁止对页面滚动条的修改"
+    },
+    "before-close": {
+      "default": "-",
+      "value": "",
+      "type": "Function",
+      "description": "返回 Promise 可以阻止关闭",
+      "isRequired": false,
+      "description_zh": "返回 Promise 可以阻止关闭"
+    }
+  },
+  "link": "https://www.iviewui.com/view-ui-plus/component/view/modal",
+  "link_zh": "https://www.iviewui.com/view-ui-plus/component/view/modal",
+  "typeDetail": {
+    "Modal": [
+      {
+        "name": "title",
+        "description": "标题 默认值: - ",
+        "type": "String | Element String",
+        "description_zh": "标题 默认值: - "
+      },
+      {
+        "name": "content",
+        "description": "内容 默认值: - ",
+        "type": "String | Element String",
+        "description_zh": "内容 默认值: - "
+      },
+      {
+        "name": "render",
+        "description": "自定义内容，使用后不再限制类型， content 也无效。 默认值: - ",
+        "type": "Function",
+        "description_zh": "自定义内容，使用后不再限制类型， content 也无效。 默认值: - "
+      },
+      {
+        "name": "width",
+        "description": "宽度，单位 px 默认值: 416 ",
+        "type": "Number | String",
+        "description_zh": "宽度，单位 px 默认值: 416 "
+      },
+      {
+        "name": "okText",
+        "description": "确定按钮的文字 默认值: 确定 ",
+        "type": "String",
+        "description_zh": "确定按钮的文字 默认值: 确定 "
+      },
+      {
+        "name": "cancelText",
+        "description": "取消按钮的文字，只在Modal.confirm()下有效 默认值: 取消 ",
+        "type": "String",
+        "description_zh": "取消按钮的文字，只在Modal.confirm()下有效 默认值: 取消 "
+      },
+      {
+        "name": "loading",
+        "description": "点击确定按钮时，确定按钮是否显示 loading 状态，开启则需手动调用Modal.remove()来关闭对话框 默认值: false ",
+        "type": "Boolean",
+        "description_zh": "点击确定按钮时，确定按钮是否显示 loading 状态，开启则需手动调用Modal.remove()来关闭对话框 默认值: false "
+      },
+      {
+        "name": "scrollable",
+        "description": "页面是否可以滚动 默认值: false ",
+        "type": "Boolean",
+        "description_zh": "页面是否可以滚动 默认值: false "
+      },
+      {
+        "name": "closable",
+        "description": "是否可以按 Esc 键关闭 默认值: false ",
+        "type": "Boolean",
+        "description_zh": "是否可以按 Esc 键关闭 默认值: false "
+      },
+      {
+        "name": "onOk",
+        "description": "点击确定的回调 默认值: - ",
+        "type": "Function",
+        "description_zh": "点击确定的回调 默认值: - "
+      },
+      {
+        "name": "onCancel",
+        "description": "点击取消的回调，只在Modal.confirm()下有效 默认值: - ",
+        "type": "Function",
+        "description_zh": "点击取消的回调，只在Modal.confirm()下有效 默认值: - "
+      },
+      {
+        "name": "lock-scroll",
+        "description": "是否禁止对页面滚动条的修改 默认值: false ",
+        "type": "Boolean",
+        "description_zh": "是否禁止对页面滚动条的修改 默认值: false "
+      }
+    ]
+  },
+  "events": [
+    {
+      "name": "on-ok",
+      "description": "点击确定的回调",
+      "description_zh": "点击确定的回调",
+      "params": "无"
+    },
+    {
+      "name": "on-cancel",
+      "description": "点击取消的回调",
+      "description_zh": "点击取消的回调",
+      "params": "无"
+    },
+    {
+      "name": "on-visible-change",
+      "description": "显示状态发生变化时触发",
+      "description_zh": "显示状态发生变化时触发",
+      "params": "true / false"
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "header",
+      "description": "自定义页头",
+      "description_zh": "自定义页头"
+    },
+    {
+      "name": "footer",
+      "description": "自定义页脚内容",
+      "description_zh": "自定义页脚内容"
+    },
+    {
+      "name": "close",
+      "description": "自定义右上角关闭内容",
+      "description_zh": "自定义右上角关闭内容"
+    },
+    {
+      "name": "无",
+      "description": "对话框主体内容",
+      "description_zh": "对话框主体内容"
+    }
+  ],
+  "filename": "Modal",
+  "suggestions": []
+}

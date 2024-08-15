@@ -1,0 +1,279 @@
+{
+  "name": "Select",
+  "description": "使用模拟的增强下拉选择器来代替浏览器原生的选择器。选择器支持单选、多选、搜索，以及键盘快捷操作。注意：非 template/render 模式下，需使用 i-select、i-option。",
+  "description_zh": "使用模拟的增强下拉选择器来代替浏览器原生的选择器。选择器支持单选、多选、搜索，以及键盘快捷操作。注意：非 template/render 模式下，需使用 i-select、i-option。",
+  "tag": "选择器",
+  "props": {
+    "v-model": {
+      "default": "",
+      "value": "",
+      "type": "空",
+      "description": "指定选中项目的 value 值，可以使用 v-model 双向绑定数据。单选时只接受 String 或 Number，多选时只接受 Array|String | Number | Array",
+      "isRequired": false,
+      "description_zh": "指定选中项目的 value 值，可以使用 v-model 双向绑定数据。单选时只接受 String 或 Number，多选时只接受 Array|String | Number | Array"
+    },
+    "multiple": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否支持多选",
+      "isRequired": false,
+      "description_zh": "是否支持多选"
+    },
+    "disabled": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否禁用",
+      "isRequired": false,
+      "description_zh": "是否禁用"
+    },
+    "clearable": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否可以清空选项，只在单选时有效",
+      "isRequired": false,
+      "description_zh": "是否可以清空选项，只在单选时有效"
+    },
+    "filterable": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否支持搜索",
+      "isRequired": false,
+      "description_zh": "是否支持搜索"
+    },
+    "filter-by-label": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "在搜索时，是否只按照 label 进行搜索",
+      "isRequired": false,
+      "description_zh": "在搜索时，是否只按照 label 进行搜索"
+    },
+    "remote-method": {
+      "default": "-",
+      "value": "",
+      "type": "Function",
+      "description": "远程搜索的方法",
+      "isRequired": false,
+      "description_zh": "远程搜索的方法"
+    },
+    "loading": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "当前是否正在远程搜索",
+      "isRequired": false,
+      "description_zh": "当前是否正在远程搜索"
+    },
+    "loading-text": {
+      "default": "加载中",
+      "value": "",
+      "type": "String",
+      "description": "远程搜索中的文字提示",
+      "isRequired": false,
+      "description_zh": "远程搜索中的文字提示"
+    },
+    "default-label": {
+      "default": "-",
+      "value": "",
+      "type": "String | Number | Array",
+      "description": "远程搜索时，显示默认 label，详见示例",
+      "isRequired": false,
+      "description_zh": "远程搜索时，显示默认 label，详见示例"
+    },
+    "size": {
+      "default": "-",
+      "value": "",
+      "type": "String",
+      "description": "选择框大小，可选值为large、small、default或者不填",
+      "isRequired": false,
+      "description_zh": "选择框大小，可选值为large、small、default或者不填"
+    },
+    "placeholder": {
+      "default": "请选择",
+      "value": "",
+      "type": "String",
+      "description": "选择框默认文字",
+      "isRequired": false,
+      "description_zh": "选择框默认文字"
+    },
+    "not-found-text": {
+      "default": "无匹配数据",
+      "value": "",
+      "type": "String",
+      "description": "当下拉列表为空时显示的内容",
+      "isRequired": false,
+      "description_zh": "当下拉列表为空时显示的内容"
+    },
+    "label-in-value": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "在返回选项时，是否将 label 和 value 一并返回，默认只返回 value",
+      "isRequired": false,
+      "description_zh": "在返回选项时，是否将 label 和 value 一并返回，默认只返回 value"
+    },
+    "placement": {
+      "default": "bottom-start",
+      "value": "",
+      "type": "String",
+      "description": "弹窗的展开方向，可选值为 top、bottom、top-start、bottom-start、top-end、bottom-end",
+      "isRequired": false,
+      "description_zh": "弹窗的展开方向，可选值为 top、bottom、top-start、bottom-start、top-end、bottom-end"
+    },
+    "transfer": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否将弹层放置于 body 内，在 Tabs、带有 fixed 的 Table 列内使用时，建议添加此属性，它将不受父级样式影响，从而达到更好的效果",
+      "isRequired": false,
+      "description_zh": "是否将弹层放置于 body 内，在 Tabs、带有 fixed 的 Table 列内使用时，建议添加此属性，它将不受父级样式影响，从而达到更好的效果"
+    },
+    "element-id": {
+      "default": "-",
+      "value": "",
+      "type": "String",
+      "description": "给表单元素设置 id，详见 Form 用法。",
+      "isRequired": false,
+      "description_zh": "给表单元素设置 id，详见 Form 用法。"
+    },
+    "transfer-class-name": {
+      "default": "-",
+      "value": "",
+      "type": "String",
+      "description": "开启 transfer 时，给浮层添加额外的 class 名称",
+      "isRequired": false,
+      "description_zh": "开启 transfer 时，给浮层添加额外的 class 名称"
+    },
+    "prefix": {
+      "default": "-",
+      "value": "",
+      "type": "String",
+      "description": "在 Select 内显示图标",
+      "isRequired": false,
+      "description_zh": "在 Select 内显示图标"
+    },
+    "max-tag-count": {
+      "default": "-",
+      "value": "",
+      "type": "Number",
+      "description": "多选时最多显示多少个 tag",
+      "isRequired": false,
+      "description_zh": "多选时最多显示多少个 tag"
+    },
+    "max-tag-placeholder": {
+      "default": "-",
+      "value": "",
+      "type": "Function",
+      "description": "隐藏 tag 时显示的内容，参数是剩余项数量",
+      "isRequired": false,
+      "description_zh": "隐藏 tag 时显示的内容，参数是剩余项数量"
+    },
+    "allow-create": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否允许用户创建新条目，需开启 filterable",
+      "isRequired": false,
+      "description_zh": "是否允许用户创建新条目，需开启 filterable"
+    },
+    "capture": {
+      "default": "true",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否开启 capture 模式，也可通过全局配置",
+      "isRequired": false,
+      "description_zh": "是否开启 capture 模式，也可通过全局配置"
+    },
+    "events-enabled": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否开启 Popper 的 eventsEnabled 属性，开启可能会牺牲一定的性能",
+      "isRequired": false,
+      "description_zh": "是否开启 Popper 的 eventsEnabled 属性，开启可能会牺牲一定的性能"
+    }
+  },
+  "link": "https://www.iviewui.com/view-ui-plus/component/form/select",
+  "link_zh": "https://www.iviewui.com/view-ui-plus/component/form/select",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "on-change",
+      "description": "选中的Option变化时触发，默认返回 value，如需返回 label，详见 label-in-value 属性",
+      "description_zh": "选中的Option变化时触发，默认返回 value，如需返回 label，详见 label-in-value 属性",
+      "params": "当前选中项"
+    },
+    {
+      "name": "on-query-change",
+      "description": "搜索词改变时触发",
+      "description_zh": "搜索词改变时触发",
+      "params": "query"
+    },
+    {
+      "name": "on-clear",
+      "description": "点击清空按钮时触发",
+      "description_zh": "点击清空按钮时触发",
+      "params": "无"
+    },
+    {
+      "name": "on-open-change",
+      "description": "下拉框展开或收起时触发",
+      "description_zh": "下拉框展开或收起时触发",
+      "params": "true / false"
+    },
+    {
+      "name": "on-create",
+      "description": "新建条目时触发",
+      "description_zh": "新建条目时触发",
+      "params": "query"
+    },
+    {
+      "name": "on-select",
+      "description": "选择项目时触发",
+      "description_zh": "选择项目时触发",
+      "params": "当前选中项"
+    },
+    {
+      "name": "on-set-default-options",
+      "description": "配合 default-label 使用，详见示例",
+      "description_zh": "配合 default-label 使用，详见示例",
+      "params": "options"
+    }
+  ],
+  "methods": [
+    {
+      "name": "focus",
+      "description": "聚焦",
+      "params": "无",
+      "description_zh": "聚焦"
+    },
+    {
+      "name": "setQuery",
+      "description": "设置搜索词，为空时清空，仅在 filterable=\"true\" 时有效",
+      "params": "query",
+      "description_zh": "设置搜索词，为空时清空，仅在 filterable=\"true\" 时有效"
+    },
+    {
+      "name": "clearSingleSelect",
+      "description": "清空单选项，仅在 clearable=\"true\" 时有效",
+      "params": "无",
+      "description_zh": "清空单选项，仅在 clearable=\"true\" 时有效"
+    }
+  ],
+  "slots": [
+    {
+      "name": "prefix",
+      "description": "自定义 Select 内头部图标",
+      "description_zh": "自定义 Select 内头部图标"
+    }
+  ],
+  "filename": "Select",
+  "suggestions": [
+    "Option",
+    "OptionGroup"
+  ]
+}

@@ -1,0 +1,258 @@
+{
+  "name": "DatePicker",
+  "description": "选择或输入日期，支持年、月、日期等类型，支持选择范围。",
+  "description_zh": "选择或输入日期，支持年、月、日期等类型，支持选择范围。",
+  "tag": "日期选择器",
+  "props": {
+    "type": {
+      "default": "date",
+      "value": "",
+      "type": "String",
+      "description": "显示类型，可选值为 date、daterange、datetime、datetimerange、year、month",
+      "isRequired": false,
+      "description_zh": "显示类型，可选值为 date、daterange、datetime、datetimerange、year、month"
+    },
+    "v-model": {
+      "default": "-",
+      "value": "",
+      "type": "Date",
+      "description": "日期，可以是 JavaScript 的 Date，例如 new Date() ，也可以是标准的日期格式，点击右边查看，注意：model-value 使用 v-model 时，值是 Date 类型，可以配合 @on-change 使用",
+      "isRequired": false,
+      "description_zh": "日期，可以是 JavaScript 的 Date，例如 new Date() ，也可以是标准的日期格式，点击右边查看，注意：model-value 使用 v-model 时，值是 Date 类型，可以配合 @on-change 使用"
+    },
+    "format": {
+      "default": "date | daterange: yyyy-MM-dd, datetime | datetimerange: yyyy-MM-dd HH:mm:ss, year: yyyy, month: yyyy-MM",
+      "value": "",
+      "type": "Date",
+      "description": "展示的日期格式",
+      "isRequired": false,
+      "description_zh": "展示的日期格式"
+    },
+    "placement": {
+      "default": "bottom-start",
+      "value": "",
+      "type": "String",
+      "description": "日期选择器出现的位置，可选值为top top-start top-end bottom bottom-start bottom-end left left-start left-end right right-start right-end",
+      "isRequired": false,
+      "description_zh": "日期选择器出现的位置，可选值为top top-start top-end bottom bottom-start bottom-end left left-start left-end right right-start right-end"
+    },
+    "placeholder": {
+      "default": "空",
+      "value": "",
+      "type": "String",
+      "description": "占位文本",
+      "isRequired": false,
+      "description_zh": "占位文本"
+    },
+    "options": {
+      "default": "-",
+      "value": "",
+      "type": "Object",
+      "description": "选择器额外配置，比如不可选日期与快捷选项，具体项详见下表",
+      "isRequired": false,
+      "description_zh": "选择器额外配置，比如不可选日期与快捷选项，具体项详见下表"
+    },
+    "split-panels": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "开启后，左右面板不联动，仅在 daterange 和 datetimerange 下可用。",
+      "isRequired": false,
+      "description_zh": "开启后，左右面板不联动，仅在 daterange 和 datetimerange 下可用。"
+    },
+    "multiple": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "开启后，可以选择多个日期，仅在 date 下可用。",
+      "isRequired": false,
+      "description_zh": "开启后，可以选择多个日期，仅在 date 下可用。"
+    },
+    "show-week-numbers": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "开启后，可以显示星期数。",
+      "isRequired": false,
+      "description_zh": "开启后，可以显示星期数。"
+    },
+    "start-date": {
+      "default": "-",
+      "value": "",
+      "type": "Date",
+      "description": "设置默认显示的起始日期。",
+      "isRequired": false,
+      "description_zh": "设置默认显示的起始日期。"
+    },
+    "confirm": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否显示底部控制栏，开启后，选择完日期，选择器不会主动关闭，需用户确认后才可关闭",
+      "isRequired": false,
+      "description_zh": "是否显示底部控制栏，开启后，选择完日期，选择器不会主动关闭，需用户确认后才可关闭"
+    },
+    "open": {
+      "default": "null",
+      "value": "",
+      "type": "Boolean",
+      "description": "手动控制日期选择器的显示状态，true 为显示，false 为收起。使用该属性后，选择器不会主动关闭。建议配合 slot 及 confirm 和相关事件一起使用",
+      "isRequired": false,
+      "description_zh": "手动控制日期选择器的显示状态，true 为显示，false 为收起。使用该属性后，选择器不会主动关闭。建议配合 slot 及 confirm 和相关事件一起使用"
+    },
+    "size": {
+      "default": "-",
+      "value": "",
+      "type": "String",
+      "description": "尺寸，可选值为large、small、default或者不设置",
+      "isRequired": false,
+      "description_zh": "尺寸，可选值为large、small、default或者不设置"
+    },
+    "disabled": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否禁用选择器",
+      "isRequired": false,
+      "description_zh": "是否禁用选择器"
+    },
+    "clearable": {
+      "default": "true",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否显示清除按钮",
+      "isRequired": false,
+      "description_zh": "是否显示清除按钮"
+    },
+    "readonly": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "完全只读，开启后不会弹出选择器，只在没有设置 open 属性下生效",
+      "isRequired": false,
+      "description_zh": "完全只读，开启后不会弹出选择器，只在没有设置 open 属性下生效"
+    },
+    "editable": {
+      "default": "true",
+      "value": "",
+      "type": "Boolean",
+      "description": "文本框是否可以输入，只在没有使用 slot 时有效",
+      "isRequired": false,
+      "description_zh": "文本框是否可以输入，只在没有使用 slot 时有效"
+    },
+    "transfer": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否将弹层放置于 body 内，在 Tabs、带有 fixed 的 Table 列内使用时，建议添加此属性，它将不受父级样式影响，从而达到更好的效果",
+      "isRequired": false,
+      "description_zh": "是否将弹层放置于 body 内，在 Tabs、带有 fixed 的 Table 列内使用时，建议添加此属性，它将不受父级样式影响，从而达到更好的效果"
+    },
+    "element-id": {
+      "default": "-",
+      "value": "",
+      "type": "String",
+      "description": "给表单元素设置 id，详见 Form 用法。",
+      "isRequired": false,
+      "description_zh": "给表单元素设置 id，详见 Form 用法。"
+    },
+    "time-picker-options": {
+      "default": "{}",
+      "value": "",
+      "type": "Object",
+      "description": "可以在 type 为 datetime 和 datetimerange 下，配置 TimePicker 的属性，比如时间间隔 steps：:time-picker-options=\"{steps: [1, 10, 10]}\"",
+      "isRequired": false,
+      "description_zh": "可以在 type 为 datetime 和 datetimerange 下，配置 TimePicker 的属性，比如时间间隔 steps：:time-picker-options=\"{steps: [1, 10, 10]}\""
+    },
+    "separator": {
+      "default": "-",
+      "value": "",
+      "type": "String",
+      "description": "两个日期间的分隔符",
+      "isRequired": false,
+      "description_zh": "两个日期间的分隔符"
+    },
+    "capture": {
+      "default": "true",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否开启 capture 模式，也可通过全局配置",
+      "isRequired": false,
+      "description_zh": "是否开启 capture 模式，也可通过全局配置"
+    },
+    "transfer-class-name": {
+      "default": "-",
+      "value": "",
+      "type": "String",
+      "description": "开启 transfer 时，给浮层添加额外的 class 名称",
+      "isRequired": false,
+      "description_zh": "开启 transfer 时，给浮层添加额外的 class 名称"
+    },
+    "events-enabled": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否开启 Popper 的 eventsEnabled 属性，开启可能会牺牲一定的性能",
+      "isRequired": false,
+      "description_zh": "是否开启 Popper 的 eventsEnabled 属性，开启可能会牺牲一定的性能"
+    }
+  },
+  "link": "https://www.iviewui.com/view-ui-plus/component/form/date-picker",
+  "link_zh": "https://www.iviewui.com/view-ui-plus/component/form/date-picker",
+  "typeDetail": {
+    "Other": [
+      {
+        "name": "shortcuts",
+        "detail": "设置快捷选项，每项内容：text | String：显示的文案， value | Function：返回指定的日期，如需自己控制逻辑，可不设置，并使用 onClick 回调， onClick | Function：点击时的回调，参数为当前日期选择器的 Vue 实例，当需要自定义复杂操作时，可以使用 默认值: -",
+        "type": "Array"
+      },
+      {
+        "name": "disabledDate",
+        "detail": "设置不可选择的日期，参数为当前的日期，需要返回 Boolean 是否禁用这天 默认值: -",
+        "type": "Function"
+      }
+    ]
+  },
+  "events": [
+    {
+      "name": "on-change",
+      "description": "日期发生变化时触发",
+      "description_zh": "日期发生变化时触发",
+      "params": "返回两个值，已经格式化后的日期，比如 2016-01-01，和当前的日期类型，比如 date"
+    },
+    {
+      "name": "on-open-change",
+      "description": "弹出日历和关闭日历时触发",
+      "description_zh": "弹出日历和关闭日历时触发",
+      "params": "true"
+    },
+    {
+      "name": "on-ok",
+      "description": "在 confirm 模式下有效，点击确定按钮时触发",
+      "description_zh": "在 confirm 模式下有效，点击确定按钮时触发",
+      "params": "-"
+    },
+    {
+      "name": "on-clear",
+      "description": "在 confirm 模式或 clearable = true 时有效，在清空日期时触发",
+      "description_zh": "在 confirm 模式或 clearable = true 时有效，在清空日期时触发",
+      "params": "-"
+    },
+    {
+      "name": "on-clickoutside",
+      "description": "点击外部关闭下拉菜单时触发",
+      "description_zh": "点击外部关闭下拉菜单时触发",
+      "params": "event"
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "无",
+      "description": "自定义选择器的显示内容，建议与 open 等参数一起使用，详见示例",
+      "description_zh": "自定义选择器的显示内容，建议与 open 等参数一起使用，详见示例"
+    }
+  ],
+  "filename": "DatePicker",
+  "suggestions": []
+}

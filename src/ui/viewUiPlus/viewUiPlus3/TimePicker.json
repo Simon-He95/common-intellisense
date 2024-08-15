@@ -1,0 +1,199 @@
+{
+  "name": "TimePicker",
+  "description": "选择或输入标准时间，支持选择范围。",
+  "description_zh": "选择或输入标准时间，支持选择范围。",
+  "tag": "时间选择器",
+  "props": {
+    "type": {
+      "default": "time",
+      "value": "",
+      "type": "String",
+      "description": "显示类型，可选值为 time、timerange",
+      "isRequired": false,
+      "description_zh": "显示类型，可选值为 time、timerange"
+    },
+    "v-model": {
+      "default": "-",
+      "value": "",
+      "type": "Date",
+      "description": "时间，可以是 JavaScript 的 Date，例如 new Date() ，也可以是标准的时间格式，注意：model-value 使用 v-model 时，值是 Date 类型，可以配合 @on-change 使用",
+      "isRequired": false,
+      "description_zh": "时间，可以是 JavaScript 的 Date，例如 new Date() ，也可以是标准的时间格式，注意：model-value 使用 v-model 时，值是 Date 类型，可以配合 @on-change 使用"
+    },
+    "format": {
+      "default": "HH:mm:ss",
+      "value": "",
+      "type": "Date",
+      "description": "展示的时间格式",
+      "isRequired": false,
+      "description_zh": "展示的时间格式"
+    },
+    "steps": {
+      "default": "[]",
+      "value": "",
+      "type": "Array",
+      "description": "下拉列表的时间间隔，数组的三项分别对应小时、分钟、秒。例如设置为 [1, 15] 时，分钟会显示：00、15、30、45。",
+      "isRequired": false,
+      "description_zh": "下拉列表的时间间隔，数组的三项分别对应小时、分钟、秒。例如设置为 [1, 15] 时，分钟会显示：00、15、30、45。"
+    },
+    "placement": {
+      "default": "bottom-start",
+      "value": "",
+      "type": "String",
+      "description": "时间选择器出现的位置，可选值为top top-start top-end bottom bottom-start bottom-end left left-start left-end right right-start right-end",
+      "isRequired": false,
+      "description_zh": "时间选择器出现的位置，可选值为top top-start top-end bottom bottom-start bottom-end left left-start left-end right right-start right-end"
+    },
+    "placeholder": {
+      "default": "空",
+      "value": "",
+      "type": "String",
+      "description": "占位文本",
+      "isRequired": false,
+      "description_zh": "占位文本"
+    },
+    "confirm": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否显示底部控制栏",
+      "isRequired": false,
+      "description_zh": "是否显示底部控制栏"
+    },
+    "open": {
+      "default": "null",
+      "value": "",
+      "type": "Boolean",
+      "description": "手动控制时间选择器的显示状态，true 为显示，false 为收起。使用该属性后，选择器不会主动关闭。建议配合 slot 及 confirm 和相关事件一起使用",
+      "isRequired": false,
+      "description_zh": "手动控制时间选择器的显示状态，true 为显示，false 为收起。使用该属性后，选择器不会主动关闭。建议配合 slot 及 confirm 和相关事件一起使用"
+    },
+    "size": {
+      "default": "-",
+      "value": "",
+      "type": "String",
+      "description": "尺寸，可选值为large、small、default或者不设置",
+      "isRequired": false,
+      "description_zh": "尺寸，可选值为large、small、default或者不设置"
+    },
+    "disabled": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否禁用选择器",
+      "isRequired": false,
+      "description_zh": "是否禁用选择器"
+    },
+    "clearable": {
+      "default": "true",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否显示清除按钮",
+      "isRequired": false,
+      "description_zh": "是否显示清除按钮"
+    },
+    "readonly": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "完全只读，开启后不会弹出选择器，只在没有设置 open 属性下生效",
+      "isRequired": false,
+      "description_zh": "完全只读，开启后不会弹出选择器，只在没有设置 open 属性下生效"
+    },
+    "editable": {
+      "default": "true",
+      "value": "",
+      "type": "Boolean",
+      "description": "文本框是否可以输入，只在没有使用 slot 时有效",
+      "isRequired": false,
+      "description_zh": "文本框是否可以输入，只在没有使用 slot 时有效"
+    },
+    "transfer": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否将弹层放置于 body 内，在 Tabs、带有 fixed 的 Table 列内使用时，建议添加此属性，它将不受父级样式影响，从而达到更好的效果",
+      "isRequired": false,
+      "description_zh": "是否将弹层放置于 body 内，在 Tabs、带有 fixed 的 Table 列内使用时，建议添加此属性，它将不受父级样式影响，从而达到更好的效果"
+    },
+    "element-id": {
+      "default": "-",
+      "value": "",
+      "type": "String",
+      "description": "给表单元素设置 id，详见 Form 用法。",
+      "isRequired": false,
+      "description_zh": "给表单元素设置 id，详见 Form 用法。"
+    },
+    "separator": {
+      "default": "-",
+      "value": "",
+      "type": "String",
+      "description": "两个日期间的分隔符",
+      "isRequired": false,
+      "description_zh": "两个日期间的分隔符"
+    },
+    "capture": {
+      "default": "true",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否开启 capture 模式，也可通过全局配置",
+      "isRequired": false,
+      "description_zh": "是否开启 capture 模式，也可通过全局配置"
+    },
+    "transfer-class-name": {
+      "default": "-",
+      "value": "",
+      "type": "String",
+      "description": "开启 transfer 时，给浮层添加额外的 class 名称",
+      "isRequired": false,
+      "description_zh": "开启 transfer 时，给浮层添加额外的 class 名称"
+    },
+    "events-enabled": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否开启 Popper 的 eventsEnabled 属性，开启可能会牺牲一定的性能",
+      "isRequired": false,
+      "description_zh": "是否开启 Popper 的 eventsEnabled 属性，开启可能会牺牲一定的性能"
+    }
+  },
+  "link": "https://www.iviewui.com/view-ui-plus/component/form/time-picker",
+  "link_zh": "https://www.iviewui.com/view-ui-plus/component/form/time-picker",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "on-change",
+      "description": "时间发生变化时触发",
+      "description_zh": "时间发生变化时触发",
+      "params": "已经格式化后的时间，比如 09:41:00"
+    },
+    {
+      "name": "on-open-change",
+      "description": "弹出浮层和关闭浮层时触发",
+      "description_zh": "弹出浮层和关闭浮层时触发",
+      "params": "true | false"
+    },
+    {
+      "name": "on-ok",
+      "description": "点击确定按钮时触发",
+      "description_zh": "点击确定按钮时触发",
+      "params": "-"
+    },
+    {
+      "name": "on-clear",
+      "description": "在清空日期时触发",
+      "description_zh": "在清空日期时触发",
+      "params": "-"
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "无",
+      "description": "自定义选择器的显示内容，建议与 open 等参数一起使用，详见示例",
+      "description_zh": "自定义选择器的显示内容，建议与 open 等参数一起使用，详见示例"
+    }
+  ],
+  "filename": "TimePicker",
+  "suggestions": []
+}

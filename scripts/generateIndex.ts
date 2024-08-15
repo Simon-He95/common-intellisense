@@ -4,15 +4,15 @@ const fsp = require('node:fs/promises')
 const fg = require('fast-glob')
 
 export async function run() {
-  const folder = 'src/ui/nutUi'
-  const lib = '@nutui/nutui'
-  const name = 'nutUi4'
-  const isHyphen = true /** 生成的模板中的使用是 true ? a-affix : AAfix */
+  const folder = 'src/ui/viewUiPlus'
+  const lib = 'view-ui-plus'
+  const name = 'viewUiPlus3'
+  const isHyphen = false /** 生成的模板中的使用是 true ? a-affix : AAfix */
   const isReact = false
   const url = path.resolve(root, `${folder}/${name}`)
   const entry = await fg(['**/*.json'], { dot: true, cwd: url })
   const imports = entry.map((_url: string) => `import ${_url.split('.')[0]} from './${_url}'`)
-  let prefix = 'nut'
+  let prefix = ''
   const map = entry.map((_url: string) => {
     let tagName = `${_url.split('.')[0]}`
     if (isHyphen) {
@@ -26,6 +26,7 @@ export async function run() {
   const template
     = `import { componentsReducer, propsReducer } from '../../utils'
 ${imports.join('\n')}
+// import directives from '../directives.json'
 
 const map: any = [
   ${entry.map((_url: string) => `${_url.split('.')[0]},`).join('\n  ')}

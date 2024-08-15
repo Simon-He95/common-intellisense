@@ -1,0 +1,315 @@
+{
+  "name": "Text",
+  "description": "展示标题、段落、列表等内容,常用于文章、文档的排版.支持常见的辅助功能,如拷贝、可编辑、省略等.",
+  "description_zh": "展示标题、段落、列表等内容,常用于文章、文档的排版.支持常见的辅助功能,如拷贝、可编辑、省略等.",
+  "tag": "排版",
+  "props": {
+    "v-model": {
+      "default": "-",
+      "value": "",
+      "type": "String",
+      "description": "绑定的值,可使用 v-model 双向绑定",
+      "isRequired": false,
+      "description_zh": "绑定的值,可使用 v-model 双向绑定"
+    },
+    "type": {
+      "default": "-",
+      "value": "",
+      "type": "String",
+      "description": "文本类型,可选值为 secondary、success、warning、danger",
+      "isRequired": false,
+      "description_zh": "文本类型,可选值为 secondary、success、warning、danger"
+    },
+    "copyable": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否可以拷贝",
+      "isRequired": false,
+      "description_zh": "是否可以拷贝"
+    },
+    "copy-text": {
+      "default": "-",
+      "value": "",
+      "type": "String",
+      "description": "自定义拷贝内容",
+      "isRequired": false,
+      "description_zh": "自定义拷贝内容"
+    },
+    "copy-config": {
+      "default": "copy-config",
+      "value": "",
+      "type": "Object",
+      "description": "拷贝配置项,支持全局配置",
+      "isRequired": false,
+      "description_zh": "拷贝配置项,支持全局配置"
+    },
+    "editable": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否可以编辑",
+      "isRequired": false,
+      "description_zh": "是否可以编辑"
+    },
+    "edit-config": {
+      "default": "edit-config",
+      "value": "",
+      "type": "Object",
+      "description": "编辑配置项,支持全局配置",
+      "isRequired": false,
+      "description_zh": "编辑配置项,支持全局配置"
+    },
+    "ellipsis": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "自动溢出省略",
+      "isRequired": false,
+      "description_zh": "自动溢出省略"
+    },
+    "ellipsis-config": {
+      "default": "ellipsis-config",
+      "value": "",
+      "type": "Object",
+      "description": "自动溢出省略配置项,支持全局配置",
+      "isRequired": false,
+      "description_zh": "自动溢出省略配置项,支持全局配置"
+    },
+    "disabled": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "禁用文本",
+      "isRequired": false,
+      "description_zh": "禁用文本"
+    },
+    "code": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "添加代码样式",
+      "isRequired": false,
+      "description_zh": "添加代码样式"
+    },
+    "delete": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "添加删除线样式",
+      "isRequired": false,
+      "description_zh": "添加删除线样式"
+    },
+    "keyboard": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "添加键盘样式",
+      "isRequired": false,
+      "description_zh": "添加键盘样式"
+    },
+    "mark": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "添加标记样式",
+      "isRequired": false,
+      "description_zh": "添加标记样式"
+    },
+    "underline": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "添加下划线样式",
+      "isRequired": false,
+      "description_zh": "添加下划线样式"
+    },
+    "strong": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否加粗",
+      "isRequired": false,
+      "description_zh": "是否加粗"
+    },
+    "italic": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否斜体",
+      "isRequired": false,
+      "description_zh": "是否斜体"
+    },
+    "transfer": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否开启 Tooltip 的 transfer 属性,仅适用于 ellipsis 模式",
+      "isRequired": false,
+      "description_zh": "是否开启 Tooltip 的 transfer 属性,仅适用于 ellipsis 模式"
+    },
+    "theme": {
+      "default": "dark",
+      "value": "",
+      "type": "String",
+      "description": "Tooltip 的 theme 属性,仅适用于 ellipsis 模式",
+      "isRequired": false,
+      "description_zh": "Tooltip 的 theme 属性,仅适用于 ellipsis 模式"
+    },
+    "max-width": {
+      "default": "250",
+      "value": "",
+      "type": "Number | String",
+      "description": "Tooltip 的 max-width 属性,仅适用于 ellipsis 模式",
+      "isRequired": false,
+      "description_zh": "Tooltip 的 max-width 属性,仅适用于 ellipsis 模式"
+    },
+    "placement": {
+      "default": "top",
+      "value": "",
+      "type": "String",
+      "description": "Tooltip 的 placement 属性,仅适用于 ellipsis 模式",
+      "isRequired": false,
+      "description_zh": "Tooltip 的 placement 属性,仅适用于 ellipsis 模式"
+    }
+  },
+  "link": "https://www.iviewui.com/view-ui-plus/component/base/typography",
+  "link_zh": "https://www.iviewui.com/view-ui-plus/component/base/typography",
+  "typeDetail": {
+    "copy-config": [
+      {
+        "name": "tooltips",
+        "description": "Tooltip 显示内容,为 false 则不显示 默认值: ['复制', '复制成功'] ",
+        "type": "Boolean | Array",
+        "description_zh": "Tooltip 显示内容,为 false 则不显示 默认值: ['复制', '复制成功'] "
+      },
+      {
+        "name": "showTip",
+        "description": "是否显示复制成功的通知 默认值: false ",
+        "type": "Boolean",
+        "description_zh": "是否显示复制成功的通知 默认值: false "
+      },
+      {
+        "name": "successTip",
+        "description": "复制成功时的通知 默认值: 复制成功 ",
+        "type": "String",
+        "description_zh": "复制成功时的通知 默认值: 复制成功 "
+      },
+      {
+        "name": "errorTip",
+        "description": "复制失败时的通知 默认值: 复制失败 ",
+        "type": "String",
+        "description_zh": "复制失败时的通知 默认值: 复制失败 "
+      }
+    ],
+    "edit-config": [
+      {
+        "name": "tooltip",
+        "description": "Tooltip 显示内容,为 false 则不显示 默认值: 编辑 ",
+        "type": "Boolean | String",
+        "description_zh": "Tooltip 显示内容,为 false 则不显示 默认值: 编辑 "
+      },
+      {
+        "name": "editing",
+        "description": "是否默认进入编辑状态 默认值: false ",
+        "type": "Boolean",
+        "description_zh": "是否默认进入编辑状态 默认值: false "
+      },
+      {
+        "name": "maxlength",
+        "description": "最大输入长度 默认值: - ",
+        "type": "Number",
+        "description_zh": "最大输入长度 默认值: - "
+      },
+      {
+        "name": "autosize",
+        "description": "自适应内容高度 默认值: true ",
+        "type": "Object",
+        "description_zh": "自适应内容高度 默认值: true "
+      },
+      {
+        "name": "triggerType",
+        "description": "触发方式,可选值为 icon、text、both 默认值: icon ",
+        "type": "String",
+        "description_zh": "触发方式,可选值为 icon、text、both 默认值: icon "
+      }
+    ],
+    "ellipsis-config": [
+      {
+        "name": "rows",
+        "description": "最多显示的行数 默认值: 1 ",
+        "type": "Number",
+        "description_zh": "最多显示的行数 默认值: 1 "
+      },
+      {
+        "name": "tooltip",
+        "description": "是否以 Tooltip 显示完整内容或自定义内容 默认值: false ",
+        "type": "Boolean | String",
+        "description_zh": "是否以 Tooltip 显示完整内容或自定义内容 默认值: false "
+      }
+    ]
+  },
+  "events": [
+    {
+      "name": "on-copy-success",
+      "description": "拷贝成功时触发",
+      "description_zh": "拷贝成功时触发",
+      "params": "-"
+    },
+    {
+      "name": "on-copy-error",
+      "description": "拷贝失败时触发",
+      "description_zh": "拷贝失败时触发",
+      "params": "-"
+    },
+    {
+      "name": "on-edit-start",
+      "description": "进入编辑状态时触发",
+      "description_zh": "进入编辑状态时触发",
+      "params": "-"
+    },
+    {
+      "name": "on-edit-end",
+      "description": "结束编辑状态时触发,即保存",
+      "description_zh": "结束编辑状态时触发,即保存",
+      "params": "editContent"
+    },
+    {
+      "name": "on-edit-change",
+      "description": "编辑内容时触发",
+      "description_zh": "编辑内容时触发",
+      "params": "value"
+    },
+    {
+      "name": "on-edit-cancel",
+      "description": "退出编辑时触发",
+      "description_zh": "退出编辑时触发",
+      "params": "-"
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "default",
+      "description": "文本内容,优先级低于 model-value",
+      "description_zh": "文本内容,优先级低于 model-value"
+    },
+    {
+      "name": "copyIcon",
+      "description": "自定义拷贝图标,可选参数 copied",
+      "description_zh": "自定义拷贝图标,可选参数 copied"
+    },
+    {
+      "name": "editIcon",
+      "description": "自定义编辑图标",
+      "description_zh": "自定义编辑图标"
+    },
+    {
+      "name": "enterIcon",
+      "description": "自定义回车图标",
+      "description_zh": "自定义回车图标"
+    }
+  ],
+  "filename": "Text",
+  "suggestions": []
+}

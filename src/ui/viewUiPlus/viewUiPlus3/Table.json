@@ -1,0 +1,564 @@
+{
+  "name": "Table",
+  "description": " 主要用于展示大量结构化数据。 支持排序、筛选、分页、自定义操作、导出 csv 等复杂功能。 注意：非 template/render 模式下，需使用 i-table。",
+  "description_zh": " 主要用于展示大量结构化数据。 支持排序、筛选、分页、自定义操作、导出 csv 等复杂功能。 注意：非 template/render 模式下，需使用 i-table。",
+  "tag": "表格",
+  "props": {
+    "data": {
+      "default": "[]",
+      "value": "",
+      "type": "Array",
+      "description": "显示的结构化数据，其中，字段 cellClassName 用于设置任意单元格的样式名称，因此数据不能使用该字段，详见示例特定样式。",
+      "isRequired": false,
+      "description_zh": "显示的结构化数据，其中，字段 cellClassName 用于设置任意单元格的样式名称，因此数据不能使用该字段，详见示例特定样式。"
+    },
+    "columns": {
+      "default": "[]",
+      "value": "",
+      "type": "Array",
+      "description": "表格列的配置描述，具体项见后文",
+      "isRequired": false,
+      "description_zh": "表格列的配置描述，具体项见后文"
+    },
+    "stripe": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否显示间隔斑马纹",
+      "isRequired": false,
+      "description_zh": "是否显示间隔斑马纹"
+    },
+    "border": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否显示纵向边框",
+      "isRequired": false,
+      "description_zh": "是否显示纵向边框"
+    },
+    "show-header": {
+      "default": "true",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否显示表头",
+      "isRequired": false,
+      "description_zh": "是否显示表头"
+    },
+    "width": {
+      "default": "自动",
+      "value": "",
+      "type": "Number | String",
+      "description": "表格宽度，单位 px",
+      "isRequired": false,
+      "description_zh": "表格宽度，单位 px"
+    },
+    "height": {
+      "default": "-",
+      "value": "",
+      "type": "Number | String",
+      "description": "表格高度，单位 px，设置后，如果表格内容大于此值，会固定表头",
+      "isRequired": false,
+      "description_zh": "表格高度，单位 px，设置后，如果表格内容大于此值，会固定表头"
+    },
+    "max-height": {
+      "default": "-",
+      "value": "",
+      "type": "Number | String",
+      "description": "表格最大高度，单位 px，设置后，如果表格内容大于此值，会固定表头",
+      "isRequired": false,
+      "description_zh": "表格最大高度，单位 px，设置后，如果表格内容大于此值，会固定表头"
+    },
+    "loading": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "表格是否加载中",
+      "isRequired": false,
+      "description_zh": "表格是否加载中"
+    },
+    "disabled-hover": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "禁用鼠标悬停时的高亮",
+      "isRequired": false,
+      "description_zh": "禁用鼠标悬停时的高亮"
+    },
+    "highlight-row": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否支持高亮选中的行，即单选",
+      "isRequired": false,
+      "description_zh": "是否支持高亮选中的行，即单选"
+    },
+    "row-class-name": {
+      "default": "-",
+      "value": "",
+      "type": "Function",
+      "description": "行的 className 的回调方法，传入参数：row：当前行数据 index：当前行的索引",
+      "isRequired": false,
+      "description_zh": "行的 className 的回调方法，传入参数：row：当前行数据 index：当前行的索引"
+    },
+    "size": {
+      "default": "-",
+      "value": "",
+      "type": "String",
+      "description": "表格尺寸，可选值为 large、small、default 或者不填",
+      "isRequired": false,
+      "description_zh": "表格尺寸，可选值为 large、small、default 或者不填"
+    },
+    "no-data-text": {
+      "default": "暂无数据",
+      "value": "",
+      "type": "String",
+      "description": "数据为空时显示的提示内容",
+      "isRequired": false,
+      "description_zh": "数据为空时显示的提示内容"
+    },
+    "no-filtered-data-text": {
+      "default": "暂无筛选结果",
+      "value": "",
+      "type": "String",
+      "description": "筛选数据为空时显示的提示内容",
+      "isRequired": false,
+      "description_zh": "筛选数据为空时显示的提示内容"
+    },
+    "draggable": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否开启拖拽调整行顺序，需配合 @on-drag-drop 事件使用",
+      "isRequired": false,
+      "description_zh": "是否开启拖拽调整行顺序，需配合 @on-drag-drop 事件使用"
+    },
+    "tooltip-theme": {
+      "default": "dark",
+      "value": "",
+      "type": "String",
+      "description": "列使用 tooltip 时，配置它的主题，可选值为 dark 或 light",
+      "isRequired": false,
+      "description_zh": "列使用 tooltip 时，配置它的主题，可选值为 dark 或 light"
+    },
+    "tooltip-max-width": {
+      "default": "300",
+      "value": "",
+      "type": "Number",
+      "description": "列使用 tooltip 时，配置 Tooltip 的最大宽，默认是 300",
+      "isRequired": false,
+      "description_zh": "列使用 tooltip 时，配置 Tooltip 的最大宽，默认是 300"
+    },
+    "row-key": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean | String",
+      "description": "是否强制使用内置的 row-key，开启后可能会影响性能",
+      "isRequired": false,
+      "description_zh": "是否强制使用内置的 row-key，开启后可能会影响性能"
+    },
+    "span-method": {
+      "default": "-",
+      "value": "",
+      "type": "Function",
+      "description": "合并行或列的计算方法",
+      "isRequired": false,
+      "description_zh": "合并行或列的计算方法"
+    },
+    "show-summary": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否在表尾显示合计行",
+      "isRequired": false,
+      "description_zh": "是否在表尾显示合计行"
+    },
+    "sum-text": {
+      "default": "合计",
+      "value": "",
+      "type": "String",
+      "description": "合计行第一列的文本",
+      "isRequired": false,
+      "description_zh": "合计行第一列的文本"
+    },
+    "summary-method": {
+      "default": "-",
+      "value": "",
+      "type": "Function",
+      "description": "自定义的合计计算方法",
+      "isRequired": false,
+      "description_zh": "自定义的合计计算方法"
+    },
+    "indent-size": {
+      "default": "16",
+      "value": "",
+      "type": "Number",
+      "description": "树形数据缩进宽度，单位 px",
+      "isRequired": false,
+      "description_zh": "树形数据缩进宽度，单位 px"
+    },
+    "load-data": {
+      "default": "-",
+      "value": "",
+      "type": "Function",
+      "description": "异步加载树形数据的方法，详见示例",
+      "isRequired": false,
+      "description_zh": "异步加载树形数据的方法，详见示例"
+    },
+    "update-show-children": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "展开树形数据时，是否需要更新 _showChildren 字段，使用异步树形数据时建议开启",
+      "isRequired": false,
+      "description_zh": "展开树形数据时，是否需要更新 _showChildren 字段，使用异步树形数据时建议开启"
+    },
+    "context-menu": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "当前行点击右键是否会阻止默认行为",
+      "isRequired": false,
+      "description_zh": "当前行点击右键是否会阻止默认行为"
+    },
+    "show-context-menu": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "点击右键弹出菜单，需配合 slot contextMenu 一起使用，详见示例",
+      "isRequired": false,
+      "description_zh": "点击右键弹出菜单，需配合 slot contextMenu 一起使用，详见示例"
+    },
+    "fixed-shadow": {
+      "default": "show",
+      "value": "",
+      "type": "String",
+      "description": "列固定时，阴影显示规则，可选值为 auto、show、hide",
+      "isRequired": false,
+      "description_zh": "列固定时，阴影显示规则，可选值为 auto、show、hide"
+    },
+    "auto-close-contextmenu": {
+      "default": "true",
+      "value": "",
+      "type": "Boolean",
+      "description": "点击右键菜单项是否自动关闭右键菜单",
+      "isRequired": false,
+      "description_zh": "点击右键菜单项是否自动关闭右键菜单"
+    }
+  },
+  "link": "https://www.iviewui.com/view-ui-plus/component/form/table",
+  "link_zh": "https://www.iviewui.com/view-ui-plus/component/form/table",
+  "typeDetail": {
+    "column": [
+      {
+        "name": "type",
+        "description": "列类型，可选值为 index、selection、expand、html 默认值: - ",
+        "type": "String",
+        "description_zh": "列类型，可选值为 index、selection、expand、html 默认值: - "
+      },
+      {
+        "name": "title",
+        "description": "列头显示文字 默认值: # ",
+        "type": "String",
+        "description_zh": "列头显示文字 默认值: # "
+      },
+      {
+        "name": "key",
+        "description": "对应列内容的字段名 默认值: - ",
+        "type": "String",
+        "description_zh": "对应列内容的字段名 默认值: - "
+      },
+      {
+        "name": "width",
+        "description": "列宽 默认值: - ",
+        "type": "Number",
+        "description_zh": "列宽 默认值: - "
+      },
+      {
+        "name": "minWidth",
+        "description": "最小列宽 默认值: - ",
+        "type": "Number",
+        "description_zh": "最小列宽 默认值: - "
+      },
+      {
+        "name": "maxWidth",
+        "description": "最大列宽 默认值: - ",
+        "type": "Number",
+        "description_zh": "最大列宽 默认值: - "
+      },
+      {
+        "name": "align",
+        "description": "对齐方式，可选值为 left 左对齐、right 右对齐和 center 居中对齐 默认值: left ",
+        "type": "String",
+        "description_zh": "对齐方式，可选值为 left 左对齐、right 右对齐和 center 居中对齐 默认值: left "
+      },
+      {
+        "name": "className",
+        "description": "列的样式名称 默认值: - ",
+        "type": "String",
+        "description_zh": "列的样式名称 默认值: - "
+      },
+      {
+        "name": "fixed",
+        "description": "列是否固定在左侧或者右侧，可选值为 left 左侧和 right 右侧 默认值: - ",
+        "type": "String",
+        "description_zh": "列是否固定在左侧或者右侧，可选值为 left 左侧和 right 右侧 默认值: - "
+      },
+      {
+        "name": "ellipsis",
+        "description": "开启后，文本将不换行，超出部分显示为省略号 默认值: false ",
+        "type": "Boolean",
+        "description_zh": "开启后，文本将不换行，超出部分显示为省略号 默认值: false "
+      },
+      {
+        "name": "tooltip",
+        "description": "开启后，文本将不换行，超出部分显示为省略号，并用 Tooltip 组件显示完整内容 默认值: false ",
+        "type": "Boolean",
+        "description_zh": "开启后，文本将不换行，超出部分显示为省略号，并用 Tooltip 组件显示完整内容 默认值: false "
+      },
+      {
+        "name": "tooltipTheme",
+        "description": "配置 Tooltip 的主题，可选值为 dark 或 light 默认值: dark ",
+        "type": "String",
+        "description_zh": "配置 Tooltip 的主题，可选值为 dark 或 light 默认值: dark "
+      },
+      {
+        "name": "tooltipMaxWidth",
+        "description": "配置 Tooltip 的最大宽，默认是 300 默认值: 300 ",
+        "type": "Number",
+        "description_zh": "配置 Tooltip 的最大宽，默认是 300 默认值: 300 "
+      },
+      {
+        "name": "render",
+        "description": "自定义渲染列，使用 Vue 的 Render 函数。传入两个参数，第一个是 h，第二个为对象，包含 row、column 和 index，分别指当前行数据，当前列数据，当前行索引，详见示例。 默认值: - ",
+        "type": "Function",
+        "description_zh": "自定义渲染列，使用 Vue 的 Render 函数。传入两个参数，第一个是 h，第二个为对象，包含 row、column 和 index，分别指当前行数据，当前列数据，当前行索引，详见示例。 默认值: - "
+      },
+      {
+        "name": "renderHeader",
+        "description": "自定义列头显示内容，使用 Vue 的 Render 函数。传入两个参数，第一个是 h，第二个为对象，包含 column 和 index，分别为当前列数据和当前列索引。 默认值: - ",
+        "type": "Function",
+        "description_zh": "自定义列头显示内容，使用 Vue 的 Render 函数。传入两个参数，第一个是 h，第二个为对象，包含 column 和 index，分别为当前列数据和当前列索引。 默认值: - "
+      },
+      {
+        "name": "indexMethod",
+        "description": "type 为 index 时可用，自定义序号 默认值: - ",
+        "type": "Function，参数 row 为当前行内容，index 为序号",
+        "description_zh": "type 为 index 时可用，自定义序号 默认值: - "
+      },
+      {
+        "name": "sortable",
+        "description": "对应列是否可以排序，如果设置为 custom，则代表用户希望远程排序，需要监听 Table 的 on-sort-change 事件 默认值: false ",
+        "type": "Boolean | 'custom'",
+        "description_zh": "对应列是否可以排序，如果设置为 custom，则代表用户希望远程排序，需要监听 Table 的 on-sort-change 事件 默认值: false "
+      },
+      {
+        "name": "sortMethod",
+        "description": "自定义排序使用的方法，接收三个参数 a 、 b 和 type，当设置 sortable: true 时有效。type 值为 asc 和 desc 默认值: - ",
+        "type": "Function",
+        "description_zh": "自定义排序使用的方法，接收三个参数 a 、 b 和 type，当设置 sortable: true 时有效。type 值为 asc 和 desc 默认值: - "
+      },
+      {
+        "name": "sortType",
+        "description": "设置初始化排序。值为 asc 和 desc 默认值: - ",
+        "type": "String",
+        "description_zh": "设置初始化排序。值为 asc 和 desc 默认值: - "
+      },
+      {
+        "name": "filters",
+        "description": "过滤数据的选项，格式为数组，数组中每项包含 label 和 value 属性，使用过滤，必须同时配置 filterMethod 默认值: - ",
+        "type": "Array",
+        "description_zh": "过滤数据的选项，格式为数组，数组中每项包含 label 和 value 属性，使用过滤，必须同时配置 filterMethod 默认值: - "
+      },
+      {
+        "name": "filterMethod",
+        "description": "数据过滤使用的方法，如果是多选的筛选项，对每一条数据会执行多次，任意一次返回 true 就会显示 默认值: - ",
+        "type": "Function",
+        "description_zh": "数据过滤使用的方法，如果是多选的筛选项，对每一条数据会执行多次，任意一次返回 true 就会显示 默认值: - "
+      },
+      {
+        "name": "filterMultiple",
+        "description": "数据过滤的选项是否多选 默认值: true ",
+        "type": "Boolean",
+        "description_zh": "数据过滤的选项是否多选 默认值: true "
+      },
+      {
+        "name": "filteredValue",
+        "description": "在初始化时使用过滤，数组，值为需要过滤的 value 集合 默认值: - ",
+        "type": "Array",
+        "description_zh": "在初始化时使用过滤，数组，值为需要过滤的 value 集合 默认值: - "
+      },
+      {
+        "name": "filterRemote",
+        "description": "使用远程过滤 默认值: - ",
+        "type": "Function",
+        "description_zh": "使用远程过滤 默认值: - "
+      },
+      {
+        "name": "children",
+        "description": "表头分组 默认值: - ",
+        "type": "Array",
+        "description_zh": "表头分组 默认值: - "
+      },
+      {
+        "name": "resizable",
+        "description": "该列是否允许拖拽调整宽度，需开启 border 属性，且设置 width 默认值: false ",
+        "type": "Boolean",
+        "description_zh": "该列是否允许拖拽调整宽度，需开启 border 属性，且设置 width 默认值: false "
+      },
+      {
+        "name": "tree",
+        "description": "指定该列为显示展开/收起图标，树形数据时使用 默认值: - ",
+        "type": "Boolean",
+        "description_zh": "指定该列为显示展开/收起图标，树形数据时使用 默认值: - "
+      },
+      {
+        "name": "display",
+        "description": "使用 slot 自定义列时，列的渲染模式。可选值为 block、inline、inline-block，当使用树形数据时，建议使用 inline 或 inline-block 默认值: - ",
+        "type": "String",
+        "description_zh": "使用 slot 自定义列时，列的渲染模式。可选值为 block、inline、inline-block，当使用树形数据时，建议使用 inline 或 inline-block 默认值: - "
+      }
+    ]
+  },
+  "events": [
+    {
+      "name": "on-current-change",
+      "description": "开启 highlight-row 后有效，当表格的当前行发生变化的时候会触发",
+      "description_zh": "开启 highlight-row 后有效，当表格的当前行发生变化的时候会触发",
+      "params": "currentRow：当前高亮行的数据 oldCurrentRow：上一次高亮的数据"
+    },
+    {
+      "name": "on-select",
+      "description": "在多选模式下有效，选中某一项时触发",
+      "description_zh": "在多选模式下有效，选中某一项时触发",
+      "params": "selection：已选项数据 row：刚选择的项数据"
+    },
+    {
+      "name": "on-select-cancel",
+      "description": "在多选模式下有效，取消选中某一项时触发",
+      "description_zh": "在多选模式下有效，取消选中某一项时触发",
+      "params": "selection：已选项数据 row：取消选择的项数据"
+    },
+    {
+      "name": "on-select-all",
+      "description": "在多选模式下有效，点击全选时触发",
+      "description_zh": "在多选模式下有效，点击全选时触发",
+      "params": "selection：已选项数据"
+    },
+    {
+      "name": "on-select-all-cancel",
+      "description": "在多选模式下有效，点击取消全选时触发",
+      "description_zh": "在多选模式下有效，点击取消全选时触发",
+      "params": "selection：已选项数据"
+    },
+    {
+      "name": "on-selection-change",
+      "description": "在多选模式下有效，只要选中项发生变化时就会触发",
+      "description_zh": "在多选模式下有效，只要选中项发生变化时就会触发",
+      "params": "selection：已选项数据"
+    },
+    {
+      "name": "on-sort-change",
+      "description": "排序时有效，当点击排序时触发",
+      "description_zh": "排序时有效，当点击排序时触发",
+      "params": "column：当前列数据 key：排序依据的指标 order：排序的顺序，值为 asc 或 desc"
+    },
+    {
+      "name": "on-filter-change",
+      "description": "筛选时有效，筛选条件发生变化时触发",
+      "description_zh": "筛选时有效，筛选条件发生变化时触发",
+      "params": "当前列数据"
+    },
+    {
+      "name": "on-row-click",
+      "description": "单击某一行时触发",
+      "description_zh": "单击某一行时触发",
+      "params": "当前行的数据, index"
+    },
+    {
+      "name": "on-row-dblclick",
+      "description": "双击某一行时触发",
+      "description_zh": "双击某一行时触发",
+      "params": "当前行的数据, index"
+    },
+    {
+      "name": "on-cell-click",
+      "description": "点击单元格时触发",
+      "description_zh": "点击单元格时触发",
+      "params": "row, column, data, event"
+    },
+    {
+      "name": "on-expand",
+      "description": "展开或收起某一行时触发",
+      "description_zh": "展开或收起某一行时触发",
+      "params": "row：当前行的数据 status：当前的状态"
+    },
+    {
+      "name": "on-drag-drop",
+      "description": "拖拽排序松开时触发，返回置换的两行数据索引",
+      "description_zh": "拖拽排序松开时触发，返回置换的两行数据索引",
+      "params": "index1, index2"
+    },
+    {
+      "name": "on-column-width-resize",
+      "description": "拖拽调整列宽时触发",
+      "description_zh": "拖拽调整列宽时触发",
+      "params": "newWidth, oldWidth, column, event"
+    },
+    {
+      "name": "on-contextmenu",
+      "description": "当前行点击右键时触发",
+      "description_zh": "当前行点击右键时触发",
+      "params": "row, event, position"
+    },
+    {
+      "name": "on-expand-tree",
+      "description": "展开或收起子数据时触发",
+      "description_zh": "展开或收起子数据时触发",
+      "params": "row-key, status"
+    }
+  ],
+  "methods": [
+    {
+      "name": "exportCsv",
+      "description": "将数据导出为 .csv 文件，说明：支持IE9~IE11、Edge、Chrome、Safari、Firefox 全系列浏览器。IE9、Safari 需要手动修改后缀名为 .csv。IE9暂时只支持英文，中文会显示为乱码。",
+      "params": "params(Object): filename: 文件名，默认为 table.csv original: 是否导出为原始数据，默认为 true noHeader: 不显示表头，默认为 false columns: 自定义导出的列数据 data: 自定义导出的行数据 callback: 添加此函数后，不会下载，而是返回数据 separator: 数据分隔符，默认是逗号(,) quoted: 每项数据是否加引号，默认为 false 说明：columns 和 data 需同时声明，声明后将导出指定的数据，建议列数据有自定义render时，可以根据需求自定义导出内容",
+      "description_zh": "将数据导出为 .csv 文件，说明：支持IE9~IE11、Edge、Chrome、Safari、Firefox 全系列浏览器。IE9、Safari 需要手动修改后缀名为 .csv。IE9暂时只支持英文，中文会显示为乱码。"
+    },
+    {
+      "name": "clearCurrentRow",
+      "description": "清除高亮项，仅在开启 highlight-row 时可用",
+      "params": "无",
+      "description_zh": "清除高亮项，仅在开启 highlight-row 时可用"
+    },
+    {
+      "name": "selectAll",
+      "description": "全选/取消全选，详见示例",
+      "params": "status",
+      "description_zh": "全选/取消全选，详见示例"
+    }
+  ],
+  "slots": [
+    {
+      "name": "header",
+      "description": "表头",
+      "description_zh": "表头"
+    },
+    {
+      "name": "footer",
+      "description": "页脚",
+      "description_zh": "页脚"
+    },
+    {
+      "name": "loading",
+      "description": "加载中",
+      "description_zh": "加载中"
+    },
+    {
+      "name": "contextMenu",
+      "description": "右键菜单，详见示例",
+      "description_zh": "右键菜单，详见示例"
+    }
+  ],
+  "filename": "Table",
+  "suggestions": []
+}

@@ -1,0 +1,148 @@
+{
+  "name": "Notification",
+  "description": " 深度封装的通知菜单，极简单的配置即可完成复杂的通知显示业务，功能丰富。 常用在导航工具栏上，作为整个产品统一的通知中心。 ",
+  "description_zh": " 深度封装的通知菜单，极简单的配置即可完成复杂的通知显示业务，功能丰富。 常用在导航工具栏上，作为整个产品统一的通知中心。 ",
+  "tag": "通知菜单",
+  "props": {
+    "count": {
+      "default": "-",
+      "value": "",
+      "type": "Number",
+      "description": "图标上的消息总数",
+      "isRequired": false,
+      "description_zh": "图标上的消息总数"
+    },
+    "auto-count": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否根基 Tab 的 count 自动计算 count，开启，则 count 无效",
+      "isRequired": false,
+      "description_zh": "是否根基 Tab 的 count 自动计算 count，开启，则 count 无效"
+    },
+    "count-type": {
+      "default": "text",
+      "value": "",
+      "type": "String",
+      "description": "Tab 的 count 是纯文本显示，还是 Badge 显示，可选值为 text 或 badge",
+      "isRequired": false,
+      "description_zh": "Tab 的 count 是纯文本显示，还是 Badge 显示，可选值为 text 或 badge"
+    },
+    "icon": {
+      "default": "md-notifications-outline",
+      "value": "",
+      "type": "String",
+      "description": "图标 (铃铛)，也有同名 slot",
+      "isRequired": false,
+      "description_zh": "图标 (铃铛)，也有同名 slot"
+    },
+    "transfer": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否将弹层放置于 body 内",
+      "isRequired": false,
+      "description_zh": "是否将弹层放置于 body 内"
+    },
+    "placement": {
+      "default": "bottom",
+      "value": "",
+      "type": "String",
+      "description": "弹窗的展开方向，支持 12 个方向",
+      "isRequired": false,
+      "description_zh": "弹窗的展开方向，支持 12 个方向"
+    },
+    "badge-props": {
+      "default": "{}",
+      "value": "",
+      "type": "Object",
+      "description": "额外的 Badge 配置",
+      "isRequired": false,
+      "description_zh": "额外的 Badge 配置"
+    },
+    "clear-close": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "点击清空按钮后关闭通知菜单",
+      "isRequired": false,
+      "description_zh": "点击清空按钮后关闭通知菜单"
+    },
+    "tab": {
+      "default": "-",
+      "value": "",
+      "type": "String",
+      "description": "当前显示哪一个面板，基于 Tab 的 name",
+      "isRequired": false,
+      "description_zh": "当前显示哪一个面板，基于 Tab 的 name"
+    },
+    "wide": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "开启后，宽度是100%而不是默认的300px，在移动端等环境下使用较好",
+      "isRequired": false,
+      "description_zh": "开启后，宽度是100%而不是默认的300px，在移动端等环境下使用较好"
+    },
+    "locale": {
+      "default": "{ loadedAll: '加载完毕', loading: '加载中...', loadMore: '加载更多', clear: '清空' }",
+      "value": "",
+      "type": "Object",
+      "description": "默认文案",
+      "isRequired": false,
+      "description_zh": "默认文案"
+    }
+  },
+  "link": "https://www.iviewui.com/view-ui-plus/component/view/notification",
+  "link_zh": "https://www.iviewui.com/view-ui-plus/component/view/notification",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "on-clear",
+      "description": "点击清空时触发，返回 tab 内容，包含 name 和 title",
+      "description_zh": "点击清空时触发，返回 tab 内容，包含 name 和 title",
+      "params": "tab"
+    },
+    {
+      "name": "on-load-more",
+      "description": "点击加载更多时触发，返回 tab 内容",
+      "description_zh": "点击加载更多时触发，返回 tab 内容",
+      "params": "tab"
+    },
+    {
+      "name": "on-tab-change",
+      "description": "切换页签时触发，返回 tab 内容",
+      "description_zh": "切换页签时触发，返回 tab 内容",
+      "params": "tab"
+    },
+    {
+      "name": "on-item-click",
+      "description": "点击 item 项时触发，返回 tab 和 item（其中 item 返回的是 attrs 而不是 props）",
+      "description_zh": "点击 item 项时触发，返回 tab 和 item（其中 item 返回的是 attrs 而不是 props）",
+      "params": "tab, item"
+    },
+    {
+      "name": "on-visible-change",
+      "description": "菜单显示状态改变时调用",
+      "description_zh": "菜单显示状态改变时调用",
+      "params": "state"
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "icon",
+      "description": "自定义铃铛",
+      "description_zh": "自定义铃铛"
+    },
+    {
+      "name": "extra",
+      "description": "底部附加信息，常见有设置、查看全部等功能",
+      "description_zh": "底部附加信息，常见有设置、查看全部等功能"
+    }
+  ],
+  "filename": "Notification",
+  "suggestions": [
+    "NotificationTab"
+  ]
+}

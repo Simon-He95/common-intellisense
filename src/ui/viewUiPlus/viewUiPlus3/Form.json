@@ -1,0 +1,124 @@
+{
+  "name": "Form",
+  "description": "具有数据收集、校验和提交功能的表单，包含复选框、单选框、输入框、下拉选择框等元素。",
+  "description_zh": "具有数据收集、校验和提交功能的表单，包含复选框、单选框、输入框、下拉选择框等元素。",
+  "tag": "表单",
+  "props": {
+    "model": {
+      "default": "-",
+      "value": "",
+      "type": "Object",
+      "description": "表单数据对象",
+      "isRequired": false,
+      "description_zh": "表单数据对象"
+    },
+    "rules": {
+      "default": "-",
+      "value": "",
+      "type": "Object",
+      "description": "表单验证规则，具体配置查看 async-validator",
+      "isRequired": false,
+      "description_zh": "表单验证规则，具体配置查看 async-validator"
+    },
+    "inline": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否开启行内表单模式",
+      "isRequired": false,
+      "description_zh": "是否开启行内表单模式"
+    },
+    "label-position": {
+      "default": "right",
+      "value": "",
+      "type": "String",
+      "description": "表单域标签的位置，可选值为 left、right、top",
+      "isRequired": false,
+      "description_zh": "表单域标签的位置，可选值为 left、right、top"
+    },
+    "label-width": {
+      "default": "-",
+      "value": "",
+      "type": "Number",
+      "description": "表单域标签的宽度，所有的 FormItem 都会继承 Form 组件的 label-width 的值",
+      "isRequired": false,
+      "description_zh": "表单域标签的宽度，所有的 FormItem 都会继承 Form 组件的 label-width 的值"
+    },
+    "show-message": {
+      "default": "true",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否显示校验错误信息",
+      "isRequired": false,
+      "description_zh": "是否显示校验错误信息"
+    },
+    "autocomplete": {
+      "default": "off",
+      "value": "",
+      "type": "String",
+      "description": "原生的 autocomplete 属性，可选值为 off 或 on",
+      "isRequired": false,
+      "description_zh": "原生的 autocomplete 属性，可选值为 off 或 on"
+    },
+    "hide-required-mark": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否隐藏所有表单项的必选标记",
+      "isRequired": false,
+      "description_zh": "是否隐藏所有表单项的必选标记"
+    },
+    "label-colon": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否自动在 label 名称后添加冒号",
+      "isRequired": false,
+      "description_zh": "是否自动在 label 名称后添加冒号"
+    },
+    "disabled": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否禁用该表单内的所有组件（适用于具有 disabled 属性的表单类组件）",
+      "isRequired": false,
+      "description_zh": "是否禁用该表单内的所有组件（适用于具有 disabled 属性的表单类组件）"
+    }
+  },
+  "link": "https://www.iviewui.com/view-ui-plus/component/form/form",
+  "link_zh": "https://www.iviewui.com/view-ui-plus/component/form/form",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "on-validate",
+      "description": "任一表单项被校验后触发，返回表单项 prop、校验状态、错误消息",
+      "description_zh": "任一表单项被校验后触发，返回表单项 prop、校验状态、错误消息",
+      "params": "prop, status, error"
+    }
+  ],
+  "methods": [
+    {
+      "name": "validate",
+      "description": "callback",
+      "params": "对整个表单进行校验，参数为检验完的回调，会返回一个 Boolean 表示成功与失败，支持 Promise",
+      "description_zh": "callback"
+    },
+    {
+      "name": "validateField",
+      "description": "callback",
+      "params": "对部分表单字段进行校验的方法，参数1为需校验的 prop，参数2为检验完回调，返回错误信息",
+      "description_zh": "callback"
+    },
+    {
+      "name": "resetFields",
+      "description": "无",
+      "params": "对整个表单进行重置，将所有字段值重置为空并移除校验结果",
+      "description_zh": "无"
+    }
+  ],
+  "slots": [],
+  "filename": "Form",
+  "suggestions": [
+    "FormItem"
+  ]
+}

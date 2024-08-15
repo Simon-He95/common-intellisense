@@ -1,0 +1,126 @@
+{
+  "name": "Calendar",
+  "description": " 显示日历，常用于日程规划、课程表、机票价格等场景。可以按月或年切换显示类型。 ",
+  "description_zh": " 显示日历，常用于日程规划、课程表、机票价格等场景。可以按月或年切换显示类型。 ",
+  "tag": "日历",
+  "props": {
+    "v-model": {
+      "default": "-",
+      "value": "",
+      "type": "Date, String, Number",
+      "description": "绑定当前日期的值，为空时默认显示今天，可使用 v-model 双向绑定数据",
+      "isRequired": false,
+      "description_zh": "绑定当前日期的值，为空时默认显示今天，可使用 v-model 双向绑定数据"
+    },
+    "type": {
+      "default": "month",
+      "value": "",
+      "type": "String",
+      "description": "视图类型，可选值为 month (月视图) 或 year (年视图)",
+      "isRequired": false,
+      "description_zh": "视图类型，可选值为 month (月视图) 或 year (年视图)"
+    },
+    "cell-height": {
+      "default": "100",
+      "value": "",
+      "type": "Number",
+      "description": "单元格高度，单位 px",
+      "isRequired": false,
+      "description_zh": "单元格高度，单位 px"
+    },
+    "show-header": {
+      "default": "true",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否显示顶部",
+      "isRequired": false,
+      "description_zh": "是否显示顶部"
+    },
+    "first-day-of-week": {
+      "default": "1",
+      "value": "",
+      "type": "Number",
+      "description": "周起始日",
+      "isRequired": false,
+      "description_zh": "周起始日"
+    },
+    "hide-type": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否隐藏类型切换",
+      "isRequired": false,
+      "description_zh": "是否隐藏类型切换"
+    },
+    "locale": {
+      "default": "见下",
+      "value": "",
+      "type": "Object",
+      "description": "默认文案",
+      "isRequired": false,
+      "description_zh": "默认文案"
+    }
+  },
+  "link": "https://www.iviewui.com/view-ui-plus/component/view/calendar",
+  "link_zh": "https://www.iviewui.com/view-ui-plus/component/view/calendar",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "on-change",
+      "description": "选择日期发生变化时触发",
+      "description_zh": "选择日期发生变化时触发",
+      "params": "date"
+    },
+    {
+      "name": "on-type-change",
+      "description": "切换视图类型时触发",
+      "description_zh": "切换视图类型时触发",
+      "params": "type"
+    },
+    {
+      "name": "on-cell-click",
+      "description": "点击单元格时触发",
+      "description_zh": "点击单元格时触发",
+      "params": "data"
+    },
+    {
+      "name": "on-cell-contextmenu",
+      "description": "右键单元格时触发",
+      "description_zh": "右键单元格时触发",
+      "params": "data"
+    },
+    {
+      "name": "on-prev",
+      "description": "切换上一个时触发",
+      "description_zh": "切换上一个时触发",
+      "params": "-"
+    },
+    {
+      "name": "on-next",
+      "description": "切换下一个时触发",
+      "description_zh": "切换下一个时触发",
+      "params": "-"
+    },
+    {
+      "name": "on-today",
+      "description": "点击今日时触发",
+      "description_zh": "点击今日时触发",
+      "params": "-"
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "header",
+      "description": "自定义顶部",
+      "description_zh": "自定义顶部"
+    },
+    {
+      "name": "headerTitle",
+      "description": "自定义顶部标题",
+      "description_zh": "自定义顶部标题"
+    }
+  ],
+  "filename": "Calendar",
+  "suggestions": []
+}

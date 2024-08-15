@@ -1,0 +1,69 @@
+{
+  "name": "Captcha",
+  "description": "内置了常见的登录（或注册）的控件，简单的几行代码，就能实现复杂的登录（或注册）表单验证，包括获取验证码等。",
+  "description_zh": "内置了常见的登录（或注册）的控件，简单的几行代码，就能实现复杂的登录（或注册）表单验证，包括获取验证码等。",
+  "tag": "登录",
+  "props": {
+    "field": {
+      "default": "-",
+      "value": "",
+      "type": "String, Array",
+      "description": "设置后，需要对应 name 的表单验证过才会触发",
+      "isRequired": false,
+      "description_zh": "设置后，需要对应 name 的表单验证过才会触发"
+    },
+    "count-down": {
+      "default": "60",
+      "value": "",
+      "type": "Number",
+      "description": "倒计时时间，单位：秒，如果设置为 0，则不置为 disabled",
+      "isRequired": false,
+      "description_zh": "倒计时时间，单位：秒，如果设置为 0，则不置为 disabled"
+    },
+    "text": {
+      "default": "获取验证码",
+      "value": "",
+      "type": "String",
+      "description": "按钮文案，也支持同名 slot，且 slot 优先",
+      "isRequired": false,
+      "description_zh": "按钮文案，也支持同名 slot，且 slot 优先"
+    },
+    "unit-text": {
+      "default": "秒",
+      "value": "",
+      "type": "String",
+      "description": "倒计时单位",
+      "isRequired": false,
+      "description_zh": "倒计时单位"
+    },
+    "before-click": {
+      "default": "-",
+      "value": "",
+      "type": "Function",
+      "description": "返回 Promise 可以阻止点击",
+      "isRequired": false,
+      "description_zh": "返回 Promise 可以阻止点击"
+    }
+  },
+  "link": "https://www.iviewui.com/view-ui-plus/component/form/login",
+  "link_zh": "https://www.iviewui.com/view-ui-plus/component/form/login",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "on-get-captcha",
+      "description": "点击获取验证码时触发。",
+      "description_zh": "点击获取验证码时触发。",
+      "params": "value, values"
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "text",
+      "description": "自定义按钮文案，比如是图片验证码，可做到点击切换验证码",
+      "description_zh": "自定义按钮文案，比如是图片验证码，可做到点击切换验证码"
+    }
+  ],
+  "filename": "Captcha",
+  "suggestions": []
+}

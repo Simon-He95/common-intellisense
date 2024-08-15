@@ -1,0 +1,131 @@
+{
+  "name": "Transfer",
+  "description": "双栏穿梭选择框，常用于将多个项目从一边移动到另一边。",
+  "description_zh": "双栏穿梭选择框，常用于将多个项目从一边移动到另一边。",
+  "tag": "穿梭框",
+  "props": {
+    "data": {
+      "default": "[]",
+      "value": "",
+      "type": "Array",
+      "description": "数据源，其中的数据将会被渲染到左边一栏中，targetKeys 中指定的除外。",
+      "isRequired": false,
+      "description_zh": "数据源，其中的数据将会被渲染到左边一栏中，targetKeys 中指定的除外。"
+    },
+    "target-keys": {
+      "default": "[]",
+      "value": "",
+      "type": "Array",
+      "description": "显示在右侧框数据的key集合",
+      "isRequired": false,
+      "description_zh": "显示在右侧框数据的key集合"
+    },
+    "render-format": {
+      "default": "默认显示label，没有时显示key",
+      "value": "",
+      "type": "Function",
+      "description": "每行数据渲染函数，该函数的入参为 data 中的项",
+      "isRequired": false,
+      "description_zh": "每行数据渲染函数，该函数的入参为 data 中的项"
+    },
+    "selected-keys": {
+      "default": "[]",
+      "value": "",
+      "type": "Array",
+      "description": "设置哪些项应该被选中",
+      "isRequired": false,
+      "description_zh": "设置哪些项应该被选中"
+    },
+    "list-style": {
+      "default": "{}",
+      "value": "",
+      "type": "Object",
+      "description": "两个穿梭框的自定义样式",
+      "isRequired": false,
+      "description_zh": "两个穿梭框的自定义样式"
+    },
+    "titles": {
+      "default": "['源列表', '目的列表']",
+      "value": "",
+      "type": "Array",
+      "description": "标题集合，顺序从左至右",
+      "isRequired": false,
+      "description_zh": "标题集合，顺序从左至右"
+    },
+    "operations": {
+      "default": "[]",
+      "value": "",
+      "type": "Array",
+      "description": "操作文案集合，顺序从上至下",
+      "isRequired": false,
+      "description_zh": "操作文案集合，顺序从上至下"
+    },
+    "reverse-operation": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否颠倒两个操作按钮的上下顺序",
+      "isRequired": false,
+      "description_zh": "是否颠倒两个操作按钮的上下顺序"
+    },
+    "filterable": {
+      "default": "false",
+      "value": "",
+      "type": "Boolean",
+      "description": "是否显示搜索框",
+      "isRequired": false,
+      "description_zh": "是否显示搜索框"
+    },
+    "filter-placeholder": {
+      "default": "请输入搜索内容",
+      "value": "",
+      "type": "String",
+      "description": "搜索框的占位",
+      "isRequired": false,
+      "description_zh": "搜索框的占位"
+    },
+    "filter-method": {
+      "default": "默认搜索label",
+      "value": "",
+      "type": "Function",
+      "description": "自定义搜索函数，入参为 data 和 query，data 为项，query 为当前输入的搜索词",
+      "isRequired": false,
+      "description_zh": "自定义搜索函数，入参为 data 和 query，data 为项，query 为当前输入的搜索词"
+    },
+    "not-found-text": {
+      "default": "列表为空",
+      "value": "",
+      "type": "String",
+      "description": "当列表为空时显示的内容",
+      "isRequired": false,
+      "description_zh": "当列表为空时显示的内容"
+    }
+  },
+  "link": "https://www.iviewui.com/view-ui-plus/component/form/transfer",
+  "link_zh": "https://www.iviewui.com/view-ui-plus/component/form/transfer",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "on-change",
+      "description": "选项在两栏之间转移时的回调函数",
+      "description_zh": "选项在两栏之间转移时的回调函数",
+      "params": "targetKeys, direction, moveKeys"
+    },
+    {
+      "name": "on-selected-change",
+      "description": "选中项发生变化时触发",
+      "description_zh": "选中项发生变化时触发",
+      "params": "sourceSelectedKeys, targetSelectedKeys"
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "无",
+      "description": "自定义底部内容",
+      "description_zh": "自定义底部内容"
+    }
+  ],
+  "filename": "Transfer",
+  "suggestions": []
+}
