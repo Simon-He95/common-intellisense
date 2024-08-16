@@ -692,7 +692,7 @@ export function registerCodeLensProviderFn() {
               codeLensRange = createRange(fixedStart, fixedEnd)
             }
             else {
-              codeLensRange = new vscode.CodeLens(createRange(range.start.line - 1, range.start.column, range.end.line - 1, range.end.column))
+              codeLensRange = createRange(range.start.line - 1, range.start.column, range.end.line - 1, range.end.column)
             }
             result.push(new vscode.CodeLens(codeLensRange, {
               title: `${i === 0 ? 'Slots: ' : ''}${name}`,
