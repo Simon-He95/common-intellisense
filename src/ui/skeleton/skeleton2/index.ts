@@ -6,7 +6,11 @@ export function skeleton2() {
     Accordion,
   ]
 
-  return propsReducer('skeleton2', map, '')
+  return propsReducer({
+    uiName: 'skeleton2',
+    map,
+    lib: 'skeleton',
+  })
 }
 
 export function skeleton2Components() {

@@ -542,7 +542,11 @@ export function radixVue1() {
     SplitterResizeHandle,
   ]
 
-  return propsReducer('radix-vue1', map, '')
+  return propsReducer({
+    uiName: 'radix-vue1',
+    map,
+    lib: 'radix-vue',
+  })
 }
 
 export function radixVue1Components() {

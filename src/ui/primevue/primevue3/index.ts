@@ -166,7 +166,11 @@ export function primevue3() {
     Terminal,
   ]
 
-  return propsReducer('primevue3', map, '')
+  return propsReducer({
+    uiName: 'primevue3',
+    map,
+    lib: 'primevue',
+  })
 }
 
 export function primevue3Components() {

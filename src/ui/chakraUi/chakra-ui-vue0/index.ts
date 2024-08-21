@@ -6,7 +6,11 @@ export function chakraUiVue0() {
     Accordion,
   ]
 
-  return propsReducer('@chakra-ui/vue', map, '')
+  return propsReducer({
+    uiName: '@chakra-ui/vue',
+    map,
+    lib: '@chakra-ui/vue',
+  })
 }
 
 export function chakraUiVue0Components() {

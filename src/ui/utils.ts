@@ -2,7 +2,17 @@ import * as vscode from 'vscode'
 import { createCompletionItem, createHover, createMarkdownString, getActiveTextEditorLanguageId, getCurrentFileUrl, getLocale, setCommandParams } from '@vscode-use/utils'
 import { escapeRegExp } from '../utils'
 
-export function propsReducer(uiName: string, map: string[], prefix: string, iconData?: { prefix: string, type: string, icons: any[] }, extensionContext?: any) {
+interface PropsOptions {
+  uiName: string
+  lib: string
+  map: any[]
+  iconData?: { prefix: string, type: string, icons: any[] }
+  extensionContext?: any
+  prefix?: string
+}
+
+export function propsReducer(options: PropsOptions) {
+  const { uiName, lib, map, iconData, extensionContext, prefix = '' } = options
   const result: any = {}
   let icons
   if (iconData) {
@@ -330,7 +340,7 @@ export function propsReducer(uiName: string, map: string[], prefix: string, icon
     }
     const tableDocument = createTableDocument()
 
-    result[item.name!] = { completions, events, methods, slots, suggestions: item.suggestions || [], tableDocument, rawSlots: item.slots, uiName }
+    result[item.name!] = { completions, events, methods, slots, suggestions: item.suggestions || [], tableDocument, rawSlots: item.slots, uiName, lib }
     return result
   }, result)
 }
@@ -352,7 +362,7 @@ export type Directives = {
 }[]
 
 // todo: 重构参数，参数过多，改为 options
-interface Options {
+interface ComponentOptions {
   map: any[][]
   isSeperatorByHyphen?: boolean
   prefix?: string
@@ -362,7 +372,7 @@ interface Options {
   importWay?: 'as default' | 'default'
   directives?: Directives
 }
-export function componentsReducer(options: Options) {
+export function componentsReducer(options: ComponentOptions) {
   const { map, isSeperatorByHyphen = true, prefix = '', lib, isReact = false, dynamicLib, importWay, directives } = options
   const isZh = getLocale().includes('zh')
   if (!isReact && prefix) {
@@ -700,11 +710,15 @@ function generateSnippetNameOptions(item: any, keyName: string, prefix: string) 
   if (keyName[0] === ':')
     keyName = keyName.slice(1)
   keyName = toCamel(keyName.replace(/:.*/, ''))
-  const componentName = item.name[prefix.length].toLowerCase() + item.name.slice(prefix.length + 1)
+  const componentName = prefix ? item.name[prefix.length].toLowerCase() + item.name.slice(prefix.length + 1) : item.name
+  const splitNames = componentName.split(/(?=[A-Z])/).map((i: string) => `${i.toLocaleLowerCase()}${keyName[0].toUpperCase()}${keyName.slice(1)}`)
+  const splitNamesReverse = componentName.split(/(?=[A-Z])/).map((i: string) => `${keyName.toLocaleLowerCase()}${i}`)
   return [
     keyName,
     `${keyName}Value`,
     `is${keyName[0].toUpperCase()}${keyName.slice(1)}`,
+    ...splitNames,
+    ...splitNamesReverse,
     `${componentName}${keyName[0].toUpperCase()}${keyName.slice(1)}`,
     `${componentName}_${keyName}`,
   ].join(',')

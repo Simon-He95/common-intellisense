@@ -224,7 +224,7 @@ export function activate(context: vscode.ExtensionContext) {
         const endColumn = Math.max(pos.column - 1, 0)
         updateText((edit) => {
           if (isVine())
-            edit.insert(getPosition(pos.offset + offset), `\n${empty}<template ${slotName}></template>`)
+            edit.insert(getPosition(pos.offset + offset).position, `\n${empty}<template ${slotName}></template>`)
           else
             edit.insert(createPosition(pos.line - 1, endColumn), `\n${empty}<template ${slotName}></template>`)
         })
@@ -246,7 +246,7 @@ export function activate(context: vscode.ExtensionContext) {
           const pos = getPosition(index)
           updateText((edit) => {
             if (isVine())
-              edit.insert(getPosition(pos.offset + offset), `${isNeedLineBlock ? '\n' : ''}${empty}  <template ${slotName}></template>\n${isNeedLineBlock ? empty : ''}`)
+              edit.insert(getPosition(pos.offset + offset).position, `${isNeedLineBlock ? '\n' : ''}${empty}  <template ${slotName}></template>\n${isNeedLineBlock ? empty : ''}`)
             else
               edit.insert(createPosition(pos), `${isNeedLineBlock ? '\n' : ''}${empty}  <template ${slotName}></template>\n${isNeedLineBlock ? empty : ''}`)
           })
@@ -329,7 +329,7 @@ export function activate(context: vscode.ExtensionContext) {
         return UiCompletions.icons
 
       const propName = result.propName
-      let target = UiCompletions[name] || await findDynamicComponent(name, deps)
+      let target = await findDynamicComponent(name, deps, uiDeps[name])
       const importUiSource = uiDeps[name]
       if (importUiSource && target.uiName !== importUiSource) {
         for (const p of optionsComponents.prefix.filter(Boolean)) {
@@ -593,6 +593,7 @@ export function activate(context: vscode.ExtensionContext) {
         return
 
       const code = document.getText()
+      const uiDeps = getUiDeps(code)
       // word 修正
       if (lineText[range.end.character] === '.' || lineText[range.end.character] === '-') {
         let index = range.end.character
@@ -601,7 +602,6 @@ export function activate(context: vscode.ExtensionContext) {
           index++
         }
       }
-
       if (lineText[range.start.character - 1] === '.') {
         let index = range.start.character - 1
         while (!/[<\s/]/.test(lineText[index]) && index >= 0) {
@@ -616,33 +616,16 @@ export function activate(context: vscode.ExtensionContext) {
         if (result.type === 'tag') {
           const data = optionsComponents.data.map((c: any) => c()).flat()
           if (!data?.length || !word)
-            return new vscode.Hover('')
+            return createHover('')
           const tag = toCamel(result.tag)[0].toUpperCase() + toCamel(result.tag).slice(1)
-          let target = UiCompletions[tag] || await findDynamicComponent(tag, {})
-          if (!target)
-            return
-          const uiDeps = getUiDeps(code)
-          const importUiSource = uiDeps[tag]
-          if (importUiSource && target.uiName !== importUiSource) {
-            for (const p of optionsComponents.prefix.filter(Boolean)) {
-              const realName = p[0].toUpperCase() + p.slice(1) + tag
-              const newTarget = UiCompletions[realName]
-              if (!newTarget)
-                continue
-              if (newTarget.uiName === importUiSource) {
-                target = newTarget
-                break
-              }
-            }
-          }
-
+          const target = await findDynamicComponent(tag, {}, uiDeps[tag])
           if (!target)
             return
 
           const tableDocument = target.tableDocument
 
           if (tableDocument)
-            return new vscode.Hover(tableDocument)
+            return createHover(tableDocument)
         }
         else if (!result.propName) {
           return
@@ -661,7 +644,7 @@ export function activate(context: vscode.ExtensionContext) {
         const detail = getHoverAttribute(completions, propName)
         if (!detail)
           return
-        return new vscode.Hover(`## Details \n\n${detail}`)
+        return createHover(`## Details \n\n${detail}`)
       }
       // todo: 优化这里的条件，在 react 中， 也可以减少更多的处理步骤
       if (isVue()) {
@@ -769,33 +752,16 @@ export function activate(context: vscode.ExtensionContext) {
       }
       const data = optionsComponents.data.map((c: any) => c()).flat()
       if (!data?.length || !word)
-        return new vscode.Hover('')
+        return createHover('')
       word = toCamel(word)[0].toUpperCase() + toCamel(word).slice(1)
-      let target = UiCompletions[word] || await findDynamicComponent(word, {})
-      if (!target)
-        return
-      const uiDeps = getUiDeps(code)
-      const importUiSource = uiDeps[word]
-      if (importUiSource && target.uiName !== importUiSource) {
-        for (const p of optionsComponents.prefix.filter(Boolean)) {
-          const realName = p[0].toUpperCase() + p.slice(1) + word
-          const newTarget = UiCompletions[realName]
-          if (!newTarget)
-            continue
-          if (newTarget.uiName === importUiSource) {
-            target = newTarget
-            break
-          }
-        }
-      }
-
+      const target = await findDynamicComponent(word, {}, uiDeps[word])
       if (!target)
         return
 
       const tableDocument = target.tableDocument
 
       if (tableDocument)
-        return new vscode.Hover(tableDocument)
+        return createHover(tableDocument)
     },
   }))
 }
@@ -984,29 +950,38 @@ async function getTemplateParentElementName(url: string) {
   return result
 }
 
-export async function findDynamicComponent(name: string, deps: Record<string, string>) {
+export async function findDynamicComponent(name: string, deps: Record<string, string>, from?: string) {
   const prefix = optionsComponents.prefix
-  let target = findDynamic(name, prefix)
+  let target = findDynamic(name, prefix, from)
+  if (target)
+    return target
 
   let dep
-  if (!target && (dep = deps[name])) {
+  if (dep = deps[name]) {
     // 只往下找一层
     const tag = await getTemplateParentElementName(getAbsoluteUrl(dep))
     if (!tag)
       return
-    target = findDynamic(tag, prefix)
+    target = findDynamic(tag, prefix, from)
   }
   return target
 }
 
-function findDynamic(tag: string, prefix: string[]) {
+function findDynamic(tag: string, prefix: string[], from?: string) {
   let target = UiCompletions[tag]
+  if (target && from && target.lib !== from) {
+    target = null
+  }
   if (!target) {
     for (const p of prefix) {
       if (!p)
         continue
       const t = UiCompletions[p[0].toUpperCase() + p.slice(1) + tag]
-      if (t) {
+      if (from && t && t.lib === from) {
+        target = t
+        break
+      }
+      else if (t) {
         target = t
         break
       }

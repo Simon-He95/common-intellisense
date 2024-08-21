@@ -451,7 +451,11 @@ const map: any = [
   TooltipTrigger,
 ]
 export function shadcnUi0() {
-  return propsReducer('shadcn-Ui0', map, '')
+  return propsReducer({
+    uiName: 'shadcn-Ui0',
+    map,
+    lib: 'shadcn-Ui',
+  })
 }
 
 const componentsMap = [

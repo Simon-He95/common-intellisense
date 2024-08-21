@@ -573,7 +573,11 @@ const map: any = [
   TooltipTrigger,
 ]
 export function bitsUi0() {
-  return propsReducer('bitsUi0', map, '')
+  return propsReducer({
+    uiName: 'bitsUi0',
+    map,
+    lib: 'bits-ui',
+  })
 }
 
 const componentsMap = [
@@ -875,7 +879,11 @@ export function bitsUi0Components() {
 }
 
 export function shadcnSvelte0() {
-  return propsReducer('shadcnSvelte0', map, '')
+  return propsReducer({
+    uiName: 'shadcnSvelte0',
+    map,
+    lib: 'shadcn-svelte',
+  })
 }
 
 export function shadcnSvelte0Components() {

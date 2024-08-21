@@ -160,7 +160,12 @@ export function quasar2() {
     QVirtualScroll,
   ]
 
-  return propsReducer('quasar2', map, 'q')
+  return propsReducer({
+    uiName: 'quasar2',
+    map,
+    lib: 'quasar',
+    prefix: 'q',
+  })
 }
 
 export function quasar2Components() {

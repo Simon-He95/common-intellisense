@@ -25,23 +25,20 @@ export async function run() {
   })
   const template
     = `import { componentsReducer, propsReducer } from '../../utils'
-${imports.join('\n')}
+import { getComponentsMap, getPropsMap } from './mapping'
 // import directives from '../directives.json'
 
-const map: any = [
-  ${entry.map((_url: string) => `${_url.split('.')[0]},`).join('\n  ')}
-]
 export function ${name}() {
-  return propsReducer('${lib}', map, '${prefix}')
+  return propsReducer({
+    uiName: '${lib}',
+    lib: '${lib}',
+    map: getPropsMap(),
+  })
 }
-
-const componentsMap = [
-  ${map.join('\n    ')}
-]
 
 export function ${name}Components() {
   return componentsReducer({
-    map: componentsMap,
+    map: getComponentsMap(),
     isSeperatorByHyphen: ${isHyphen},
     prefix: '${prefix}',
     isReact: ${isReact},
@@ -50,7 +47,22 @@ export function ${name}Components() {
   })
 }
 `
+// 生成 index.ts
   fsp.writeFile(path.resolve(root, `${folder}/${name}/index.ts`), template)
+  // 生成 mapping.ts
+  fsp.writeFile(path.resolve(root, `${folder}/${name}/mapping.ts`), `${imports.join('\n')}
+
+export function getPropsMap() {
+  return [
+    ${entry.map((_url: string) => `${_url.split('.')[0]},`).join('\n    ')}
+  ]
+}
+
+export function getComponentsMap() {
+  return [
+    ${map.join('\n    ')}
+  ]
+}`)
 }
 
 run()
