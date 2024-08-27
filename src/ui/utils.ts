@@ -120,7 +120,7 @@ export function propsReducer(options: PropsOptions) {
           else
             snippet = `${key}="\${1}"`
         }
-        content += `  ${isZh ? (value.description_zh || value.description) : value.description}${value.default ? `  ${isZh ? '默认' : 'default'}：${value.default.replace(/\n/g, '')}` : ''}`
+        content += `\n-  ${isZh ? (value.description_zh || value.description) : value.description}\n-  ${value.default ? `  ${isZh ? '默认' : 'default'}：${value.default.replace(/\n/g, '')}` : ''}`
         data.push(createCompletionItem({
           content,
           snippet,

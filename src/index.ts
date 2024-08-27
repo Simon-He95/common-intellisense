@@ -994,7 +994,7 @@ function getEffectWord(preText: string) {
   let i = preText.length - 1
   let active = ''
   while (preText[i] && (preText[i] !== ' ')) {
-    active += preText[i]
+    active = `${preText[i]}${active}`
     i--
   }
   return active
