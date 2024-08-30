@@ -1,7 +1,7 @@
 import fsp from 'node:fs/promises'
 import path from 'node:path'
 import * as vscode from 'vscode'
-import { addEventListener, createCompletionItem, createHover, createMarkdownString, createPosition, createRange, createSelect, getActiveText, getActiveTextEditor, getActiveTextEditorLanguageId, getConfiguration, getCurrentFileUrl, getLineText, getLocale, getPosition, getSelection, message, openExternalUrl, registerCommand, registerCompletionItemProvider, setConfiguration, setCopyText, updateText } from '@vscode-use/utils'
+import { addEventListener, createCompletionItem, createHover, createMarkdownString, createPosition, createRange, createSelect, getActiveText, getActiveTextEditor, getActiveTextEditorLanguageId, getConfiguration, getCurrentFileUrl, getLineText, getLocale, getPosition, getSelection, insertText, message, openExternalUrl, registerCommand, registerCompletionItemProvider, setConfiguration, setCopyText, updateText } from '@vscode-use/utils'
 import { CreateWebview } from '@vscode-use/createwebview'
 import { parse } from '@vue/compiler-sfc'
 import { createFilter } from '@rollup/pluginutils'
@@ -219,37 +219,47 @@ export function activate(context: vscode.ExtensionContext) {
           lastChild = lastChild.codegenNode
         }
         const pos = lastChild.loc.end
-        const repeatColumn = Math.max(lastChild.loc.start.column - 1, 0)
-        const empty = ' '.repeat(repeatColumn)
         const endColumn = Math.max(pos.column - 1, 0)
-        updateText((edit) => {
-          if (isVine())
-            edit.insert(getPosition(pos.offset + offset).position, `\n${empty}<template ${slotName}></template>`)
-          else
-            edit.insert(createPosition(pos.line - 1, endColumn), `\n${empty}<template ${slotName}></template>`)
-        })
+        if (isVine())
+          insertText(`\n<template ${slotName}>$1</template>`, getPosition(pos.offset + offset).position)
+        else
+          insertText(`\n<template ${slotName}>$1</template>`, createPosition(pos.line - 1, endColumn))
+        // updateText((edit) => {
+        //   if (isVine())
+        //     edit.insert(getPosition(pos.offset + offset).position, `\n${empty}<template ${slotName}></template>`)
+        //   else
+        //     edit.insert(createPosition(pos.line - 1, endColumn), `\n${empty}<template ${slotName}></template>`)
+        // })
       }
       else {
         const empty = ' '.repeat(Math.max(child.loc.start.column - 1, 0))
 
         if (child.isSelfClosing) {
-          updateText((edit) => {
-            if (isVine())
-              edit.replace(createRange(getPosition(child.loc.end.offset + offset - 3), getPosition(child.loc.end.offset + offset - 1)), `>\n${empty}  <template ${slotName}></template>\n${empty}</${child.tag}>`)
-            else
-              edit.replace(createRange([child.loc.end.line - 1, child.loc.end.column - 3], [child.loc.end.line - 1, child.loc.end.column - 1]), `>\n${empty}  <template ${slotName}></template>\n${empty}</${child.tag}>`)
-          })
+          if (isVine())
+            insertText(`>\n${empty}  <template ${slotName}>$1</template>\n</${child.tag}>`, getPosition(child.loc.end.offset + offset - 3).position)
+          else
+            insertText(`>\n${empty}  <template ${slotName}>$1</template>\n</${child.tag}>`, createPosition(child.loc.end.line - 1, child.loc.end.column - 3))
+          // updateText((edit) => {
+          //   if (isVine())
+          //     edit.replace(createRange(getPosition(child.loc.end.offset + offset - 3), getPosition(child.loc.end.offset + offset - 1)), `>\n${empty}  <template ${slotName}></template>\n${empty}</${child.tag}>`)
+          //   else
+          //     edit.replace(createRange([child.loc.end.line - 1, child.loc.end.column - 3], [child.loc.end.line - 1, child.loc.end.column - 1]), `>\n${empty}  <template ${slotName}></template>\n${empty}</${child.tag}>`)
+          // })
         }
         else {
           const isNeedLineBlock = child.loc.start.line === child.loc.end.line
           const index = child.loc.start.offset + child.loc.source.indexOf(`</${child.tag}`) - (isNeedLineBlock ? 0 : (child.loc.end.column - `</${child.tag}>`.length - 1))
           const pos = getPosition(index)
-          updateText((edit) => {
-            if (isVine())
-              edit.insert(getPosition(pos.offset + offset).position, `${isNeedLineBlock ? '\n' : ''}${empty}  <template ${slotName}></template>\n${isNeedLineBlock ? empty : ''}`)
-            else
-              edit.insert(createPosition(pos), `${isNeedLineBlock ? '\n' : ''}${empty}  <template ${slotName}></template>\n${isNeedLineBlock ? empty : ''}`)
-          })
+          if (isVine())
+            insertText(`${isNeedLineBlock ? '\n' : empty}  <template ${slotName}>$1</template>\n`, getPosition(index + offset).position)
+          else
+            insertText(`${isNeedLineBlock ? '\n' : empty}  <template ${slotName}>$1</template>\n`, createPosition(pos.line, pos.column))
+          // updateText((edit) => {
+          //   if (isVine())
+          //     edit.insert(getPosition(pos.offset + offset).position, `${isNeedLineBlock ? '\n' : ''}${empty}  <template ${slotName}></template>\n${isNeedLineBlock ? empty : ''}`)
+          //   else
+          //     edit.insert(createPosition(pos), `${isNeedLineBlock ? '\n' : ''}${empty}  <template ${slotName}></template>\n${isNeedLineBlock ? empty : ''}`)
+          // })
         }
       }
     }))
