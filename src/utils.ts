@@ -311,13 +311,19 @@ function jsxDfs(children: any, parent: any, position: vscode.Position) {
       else
         children = child.declaration.arguments
     }
-    else if (type === 'JSXExpressionContainer') {
+    else if (type === 'JSXExpressionContainer' || type === 'ChainExpression') {
       if (child.expression.type === 'CallExpression') { children = child.expression.arguments }
       else if (child.expression.type === 'ConditionalExpression') {
         children = [
           child.expression.alternate,
           child.expression.consequent,
         ].filter(Boolean)
+      }
+      else if (child.expression.type === 'LogicalExpression') {
+        children = [
+          child.expression.left,
+          child.expression.right,
+        ]
       }
       else { children = child.expression }
     }
