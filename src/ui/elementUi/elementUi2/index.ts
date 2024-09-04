@@ -296,7 +296,7 @@ export function elementUi2(extensionContext: any) {
 
 export function elementUi2Components() {
   return componentsReducer({
-    map: getComponentMap,
+    map: getComponentMap(),
     isSeperatorByHyphen: true,
     prefix: 'el',
     lib: 'element-ui',
