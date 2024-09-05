@@ -56,8 +56,10 @@ export function propsReducer(options: PropsOptions) {
 
         detail.push(`## ${uiName} [${item.name}]`)
 
-        if (value.default !== undefined && value.default !== '')
-          detail.push(`#### 💎 ${isZh ? '默认值' : 'default'}:    ***\`${value.default.toString().replace(/[`\n]/g, '')}\`***`)
+        if (value.default !== undefined && value.default !== '') {
+          value.default = String(value.default)
+          detail.push(`#### 💎 ${isZh ? '默认值' : 'default'}:    ***\`${value.default.replace(/[`\n]/g, '')}\`***`)
+        }
 
         if (value.description) {
           if (isZh)
@@ -120,9 +122,11 @@ export function propsReducer(options: PropsOptions) {
           else
             snippet = `${key}="\${1}"`
         }
-        content += `\n-  ${isZh ? (value.description_zh || value.description) : value.description}\n-  ${value.default ? `  ${isZh ? '默认' : 'default'}：${value.default.replace(/\n/g, '')}` : ''}`
+        const details = `${content}\n-  ${isZh ? (value.description_zh || value.description) : value.description}\n-  ${value.default ? `  ${isZh ? '默认' : 'default'}：${value.default.replace(/\n/g, '')}` : ''}`
+        content += `  ${isZh ? (value.description_zh || value.description) : value.description}  ${value.default ? `  ${isZh ? '默认' : 'default'}：${value.default.replace(/\n/g, '')}` : ''}`
         data.push(createCompletionItem({
           content,
+          details,
           snippet,
           type,
           documentation,
@@ -199,6 +203,7 @@ export function propsReducer(options: PropsOptions) {
             snippet = `${_name}={\${1:${_name}}}`
             content = `${_name}={${_name}}`
           }
+
           content += `  ${isZh ? (description_zh || description) : description}${params ? `  ${isZh ? '参数' : 'params'}：${params}` : ''}`
           const documentation = new vscode.MarkdownString()
           documentation.isTrusted = true

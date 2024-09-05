@@ -1013,7 +1013,7 @@ function getEffectWord(preText: string) {
 function getHoverAttribute(attributeList: any[], attr: string) {
   return attributeList.filter(a =>
     toCamel(a?.params?.[1]?.replace('v-model:', '') || '') === toCamel(attr),
-  ).map(i => `- ${i.label}`).join('\n\n')
+  ).map(i => `- ${i.details}`).join('\n\n')
 }
 
 const IMPORT_UI_REG = /import\s+\{([^}]+)\}\s+from\s+['"]([^"']+)['"]/g
