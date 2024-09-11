@@ -6,14 +6,19 @@ function run() {
   const events = []
   const methods = []
   const slots = []
-  const result = { name, props, link, link_zh: link, typeDetail: {}, events, methods, slots }
-  const propsChildren = document.querySelectorAll('#props tbody > tr.bg-surface-bright')
+  const exposed = []
+  const result = { name, props, link, link_zh: link, typeDetail: {}, events, methods, slots, exposed }
+  const { propsChildren, slotsChildren, eventsChildren, exposedChildren } = getChildren()
 
-  Array.from(propsChildren).forEach((item) => {
-    let prop = item.children[0].textContent.replace('*', '')
-
-    const description = item.nextElementSibling.textContent
-    const type = item.children[1].textContent.replace(/\n/g, '')
+  for (let i = 0; i < propsChildren.length; i += 2) {
+    const item = propsChildren[i]
+    let prop = item.children[0].textContent
+    let required = prop.includes('*')
+    prop = prop.replace(/\*/g, '').split(' ')[0]
+    const description = item.nextElementSibling?.textContent
+    const type = item.children[1]?.textContent.replace(/\n/g, '')
+    if (!type)
+      return
     let value = item.children[2].textContent
     if (prop === 'style')
       prop = ':style'
@@ -37,24 +42,65 @@ function run() {
       type,
       description,
       description_zh: description,
+      required
     }
-  })
-  const eventsChildren = document.querySelectorAll('#events tbody > tr.bg-surface-bright')
-  Array.from(eventsChildren).forEach((item) => {
+  }
+
+  for (let i = 0; i < eventsChildren.length; i += 2) {
+    const item = eventsChildren[i]
     const name = item.children[0].textContent.replace('*', '')
-    const description = item.nextElementSibling.textContent
-    const params = item.children[1].textContent.replace(/\n/g, '')
+    const description = item.nextElementSibling?.textContent
+    const params = item.children[1]?.textContent.replace(/\n/g, '')
     events.push({ name, description, description_zh: description, params })
-  })
-  const slotsChildren = document.querySelectorAll('#slots tbody > tr.bg-surface-bright')
-  Array.from(slotsChildren).forEach((item) => {
-    const name = item.children[0].textContent.replace('*', '')
-    const description = item.nextElementSibling.nextElementSibling.textContent
+  }
+
+  for (let i = 0; i < slotsChildren.length; i += 3) {
+    const item = slotsChildren[i]
+    const name = item.children[0].textContent.replace('*', '').trim()
+    const description = item.nextElementSibling?.nextElementSibling?.textContent.trim()
     slots.push({ name, description, description_zh: description })
-  })
+  }
+  for (let i = 0; i < exposedChildren.length; i += 3) {
+    const item = exposedChildren[i]
+    const name = item.children[0].textContent.replace('*', '').trim()
+    const detail = item.nextElementSibling?.textContent.trim()
+    const description = item.nextElementSibling?.nextElementSibling?.textContent.trim()
+    exposed.push({
+      name,
+      description,
+      description_zh: description,
+      detail
+    })
+  }
+
   copyToClipboard(JSON.stringify(result, null, 2))
 
   return result
+}
+
+function getChildren() {
+  let propsChildren = []
+  let eventsChildren = []
+  let slotsChildren = []
+  let exposedChildren = []
+  Array.from(document.querySelectorAll('.text-h6')).forEach(item => {
+    const content = item.textContent.toLowerCase().trim()
+    if (content === 'props') {
+      propsChildren = Array.from(item.nextElementSibling.querySelectorAll('tbody tr'))
+    } else if (content === 'slots') {
+      slotsChildren = Array.from(item.nextElementSibling.querySelectorAll('tbody tr'))
+    } else if (content === 'events') {
+      eventsChildren = Array.from(item.nextElementSibling.querySelectorAll('tbody tr'))
+    } else if (content === 'exposed') {
+      exposedChildren = Array.from(item.nextElementSibling.querySelectorAll('tbody tr'))
+    }
+  })
+  return {
+    propsChildren,
+    eventsChildren,
+    slotsChildren,
+    exposedChildren
+  }
 }
 
 function getDirectives() {

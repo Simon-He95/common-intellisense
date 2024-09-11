@@ -310,9 +310,9 @@ export function activate(context: vscode.ExtensionContext) {
         for (const key in result.refsMap) {
           const value = result.refsMap[key]
           if (isVue && (lineText.endsWith(`.$refs.${key}.`) || lineText.endsWith(`${key}.value.`)) && UiCompletions[value])
-            return UiCompletions[value].methods
+            return [...UiCompletions[value].methods, ...UiCompletions[value].exposed]
           else if (!isVue && lineText.endsWith(`${key}.current.`) && UiCompletions[value])
-            return UiCompletions[value].methods
+            return [...UiCompletions[value].methods, ...UiCompletions[value].exposed]
         }
       }
       if (isVue && lineText.slice(character, character + 6) !== '.value' && !/\.value\.?$/.test(lineText.slice(0, character)))
@@ -673,7 +673,7 @@ export function activate(context: vscode.ExtensionContext) {
             if (lineText.slice(range.start.character, range.end.character) === 'value') {
               // hover .value.区域 提示所有方法
               const groupMd = createMarkdownString()
-              UiCompletions[refName].methods.forEach((m: any, i: number) => {
+                ;[...UiCompletions[refName].methods, ...UiCompletions[refName].exposed].forEach((m: any, i: number) => {
                 let content = m.documentation.value
                 if (i !== 0) {
                   content = content.replace(/##[^\]\n]*[\]\n]/, '')
@@ -681,10 +681,11 @@ export function activate(context: vscode.ExtensionContext) {
                 groupMd.appendMarkdown(content)
                 groupMd.appendMarkdown('\n')
               })
+
               return createHover(groupMd)
             }
             const targetKey = word.slice(index + '.value.'.length)
-            const target = UiCompletions[refName].methods.find((item: any) => item.label === targetKey)
+            const target = [...UiCompletions[refName].methods, ...UiCompletions[refName].exposed].find((item: any) => item.label === targetKey)
 
             if (!target)
               return
@@ -707,7 +708,7 @@ export function activate(context: vscode.ExtensionContext) {
             if (lineText.slice(range.start.character, range.end.character) === 'value') {
               // hover .value.区域 提示所有方法
               const groupMd = createMarkdownString()
-              UiCompletions[refName].methods.forEach((m: any, i: number) => {
+                ;[...UiCompletions[refName].methods, ...UiCompletions[refName].exposed].forEach((m: any, i: number) => {
                 let content = m.documentation.value
                 if (i !== 0) {
                   content = content.replace(/##[^\]\n]*[\]\n]/, '')
@@ -718,7 +719,7 @@ export function activate(context: vscode.ExtensionContext) {
               return createHover(groupMd)
             }
             const targetKey = word.slice(index + '.value.'.length)
-            const target = UiCompletions[refName].methods.find((item: any) => item.label === targetKey)
+            const target = [...UiCompletions[refName].methods, ...UiCompletions[refName].exposed].find((item: any) => item.label === targetKey)
 
             if (!target)
               return
@@ -741,7 +742,7 @@ export function activate(context: vscode.ExtensionContext) {
           if (lineText.slice(range.start.character, range.end.character) === 'current') {
             // hover .value.区域 提示所有方法
             const gorupMd = createMarkdownString()
-            UiCompletions[refName].methods.forEach((m: any, i: number) => {
+            ;[[...UiCompletions[refName].methods, ...UiCompletions[refName].exposed]].forEach((m: any, i: number) => {
               let content = m.documentation.value
               if (i !== 0) {
                 content = content.replace(/##[^\]\n]*[\]\n]/, '')
@@ -752,7 +753,7 @@ export function activate(context: vscode.ExtensionContext) {
             return createHover(gorupMd)
           }
           const targetKey = word.slice(index + '.current.'.length)
-          const target = UiCompletions[refName].methods.find((item: any) => item.label === targetKey)
+          const target = [...UiCompletions[refName].methods, ...UiCompletions[refName].exposed].find((item: any) => item.label === targetKey)
 
           if (!target)
             return

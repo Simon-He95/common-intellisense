@@ -7,9 +7,9 @@ let stack = 0
 const limit = 10
 const hasDone = new Set()
 async function setup() {
-  const cwd = path.resolve(root, 'src/ui/tinyVue/tinyVue3')
-  // const entry = await fg(['**/*.json'], { dot: true, cwd, absolute: true })
-  const entry = await fg(['./scripts/tinyVue.data.json'], { dot: true, absolute: true })
+  const cwd = path.resolve(root, 'src/ui/vuetify/vuetify3')
+  const entry = await fg(['**/*.json'], { dot: true, cwd, absolute: true })
+  // const entry = await fg(['./scripts/tinyVue.data.json'], { dot: true, absolute: true })
   // entry.forEach(async (url: string) => {
   //   const _url = path.resolve(cwd, url)
   //   const content = JSON.parse(await fsp.readFile(_url, 'utf-8'))

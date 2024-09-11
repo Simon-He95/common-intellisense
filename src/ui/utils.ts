@@ -29,6 +29,7 @@ export function propsReducer(options: PropsOptions) {
     const completions: any = []
     const events: any = []
     const methods = []
+    const exposed = []
     const slots: any[] = []
     const isZh = getLocale().includes('zh')
 
@@ -245,6 +246,35 @@ export function propsReducer(options: PropsOptions) {
       }))
     }
 
+    if (item.exposed) {
+      exposed.push(...item.exposed.map((expose: any) => {
+        const documentation = new vscode.MarkdownString()
+        documentation.isTrusted = true
+        documentation.supportHtml = true
+        const details: any = []
+        const { name, description, detail, description_zh } = expose
+
+        details.push(`## ${uiName} [${item.name}]`)
+
+        if (name)
+          details.push(`\n#### 💨 ${isZh ? '方法' : 'method'} ${name}:`)
+
+        if (description) {
+          if (isZh)
+            details.push(`- 👓 说明:    ***\`${description_zh || description}\`***`)
+          else
+            details.push(`- 👓 description:    ***\`${description}\`***`)
+        }
+
+        if (detail)
+          details.push(`- 🚢 ${isZh ? '参数' : 'params'}:    ***\`${detail}\`***`)
+
+        documentation.appendMarkdown(details.join('\n\n'))
+        const hover = createHover(documentation)
+        return createCompletionItem({ content: expose.name, detail, documentation, type: 1, sortText: 'b', params: uiName, hover })
+      }))
+    }
+
     if (item.slots) {
       item.slots.forEach((slot: any) => {
         const { name, description, description_zh } = slot
@@ -345,7 +375,7 @@ export function propsReducer(options: PropsOptions) {
     }
     const tableDocument = createTableDocument()
 
-    result[item.name!] = { completions, events, methods, slots, suggestions: item.suggestions || [], tableDocument, rawSlots: item.slots, uiName, lib }
+    result[item.name!] = { completions, events, methods, exposed, slots, suggestions: item.suggestions || [], tableDocument, rawSlots: item.slots, uiName, lib }
     return result
   }, result)
 }

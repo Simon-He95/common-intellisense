@@ -5,40 +5,45 @@
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "Set all subform components to a disabled state.",
-      "description_zh": "将所有的子表单组件设置为禁用状态."
+      "description": "Puts all children inputs into a disabled state.",
+      "description_zh": "将所有子项输入置于禁用状态。",
+      "required": false
     },
     "fast-fail": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "Validation is stopped as soon as any rule fails.",
-      "description_zh": "任何规则失败后立即停止验证。"
+      "description": "Stop validation as soon as any rules fail.",
+      "description_zh": "一旦任何规则失败，就立即停止验证。",
+      "required": false
     },
-    ":v-model": {
+    "v-model": {
       "default": "null",
       "value": "",
       "type": "boolean",
-      "description": "A value that represents the validity of the form. If the value is null, it means that the form has not been validated or the form has been reset. Otherwise, the value will be the boolean that indicates whether the validation passed or not.",
-      "description_zh": "代表表单有效性的值。 如果值是 null，则代表还没有进行验证或表单已被重置。否则，值将是表示验证是否通过的boolean。"
+      "description": "The value representing the validity of the form. If the value is null then no validation has taken place yet, or the form has been reset. Otherwise the value will be a boolean that indicates if validation has passed or not.",
+      "description_zh": "表示表单有效性的值。如果值为 null，则尚未进行验证，或者表单已重置。否则，该值将是一个布尔值，指示验证是否通过。",
+      "required": false
     },
     "readonly": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "Set all subform components to read-only.",
-      "description_zh": "将所有的子表单组件设置为只读状态."
+      "description": "Puts all children inputs into a readonly state.",
+      "description_zh": "将所有子项输入置于只读状态。",
+      "required": false
     },
     "validate-on": {
-      "default": "input",
+      "default": "'input'",
       "value": "",
-      "type": " / blur / input / submit / blur lazy / input lazy / submit lazy / lazy blur / lazy input / lazy submit / lazy",
-      "description": "Change the event that triggered the validation behavior.",
-      "description_zh": "更改触发验证行为的事件。"
+      "type": " / blur / input / submit / invalid-input / blur lazy / input lazy / submit lazy / invalid-input lazy / blur eager / input eager / submit eager / invalid-input eager / lazy blur / lazy input / lazy submit / lazy invalid-input / eager blur / eager input / eager submit / eager invalid-input / lazy / eager",
+      "description": "Changes the events in which validation occurs.",
+      "description_zh": "更改发生验证的事件。",
+      "required": false
     }
   },
-  "link": "https://vuetifyjs.com/zh-Hans/api/v-form/#links",
-  "link_zh": "https://vuetifyjs.com/zh-Hans/api/v-form/#links",
+  "link": "https://vuetifyjs.com/en/api/v-form/",
+  "link_zh": "https://vuetifyjs.com/en/api/v-form/",
   "typeDetail": {},
   "events": [
     {
@@ -60,8 +65,64 @@
   "slots": [
     {
       "name": "default",
-      "description": "Default Vue slot.",
-      "description_zh": "默认Vue 插槽。"
+      "description": "The default Vue slot.",
+      "description_zh": "默认的 Vue 插槽。"
+    }
+  ],
+  "exposed": [
+    {
+      "name": "errors",
+      "description": "Contains all current form input errors.",
+      "description_zh": "Contains all current form input errors.",
+      "detail": "{ id: string | number; errorMessages: string[] }[]"
+    },
+    {
+      "name": "isDisabled",
+      "description": "Indicates if form is disabled or not.",
+      "description_zh": "Indicates if form is disabled or not.",
+      "detail": "boolean"
+    },
+    {
+      "name": "isReadonly",
+      "description": "Indicates if form is readonly or not.",
+      "description_zh": "Indicates if form is readonly or not.",
+      "detail": "boolean"
+    },
+    {
+      "name": "isValid",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "boolean"
+    },
+    {
+      "name": "isValidating",
+      "description": "Indicates if form is currently being validated or not.",
+      "description_zh": "Indicates if form is currently being validated or not.",
+      "detail": "boolean"
+    },
+    {
+      "name": "items",
+      "description": "Array of all registered inputs.",
+      "description_zh": "Array of all registered inputs.",
+      "detail": "{\n  id: string | number\n  validate: () => Promise<string[]>\n  reset: () => Promise<void>\n  resetValidation: () => Promise<void>\n  vm: Raw<ComponentInternalInstance>\n  isValid: boolean | null\n  errorMessages: string[]\n}[]"
+    },
+    {
+      "name": "reset",
+      "description": "Resets validation of all registered inputs, and clears their values.",
+      "description_zh": "Resets validation of all registered inputs, and clears their values.",
+      "detail": "() => void"
+    },
+    {
+      "name": "resetValidation",
+      "description": "Resets validation of all registered inputs without modifying their values.",
+      "description_zh": "Resets validation of all registered inputs without modifying their values.",
+      "detail": "() => void"
+    },
+    {
+      "name": "validate",
+      "description": "Validates all registered inputs.",
+      "description_zh": "Validates all registered inputs.",
+      "detail": "() => Promise<{\n  valid: boolean\n  errors: { id: string | number; errorMessages: string[] }[]\n}>"
     }
   ]
 }

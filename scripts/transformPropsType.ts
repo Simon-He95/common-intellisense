@@ -4,7 +4,7 @@ const root = process.cwd()
 const fsp = require('node:fs/promises')
 
 export async function run() {
-  const folder = 'src/ui'
+  const folder = 'src/ui/vuetify'
   const url = path.resolve(root, folder)
   const entry = await fg(['**/*.json'], { dot: true, cwd: url, absolute: true })
 
