@@ -39,7 +39,7 @@ export function parser(code: string, position: vscode.Position & { active: strin
         return
       if (!result.refs?.length || !result.template)
         return result
-      const refsMap = findRefs(result.template)
+      const refsMap = findRefs(result.template, result.refs)
       return Object.assign(result, { refsMap })
     }
     if (/ts|js|jsx|tsx/.test(suffix))
@@ -71,10 +71,14 @@ export function transformVue(code: string, position: vscode.Position, offset = 0
   }
   if (_script && isInPosition(_script.loc, position, offset)) {
     const content = _script.content!
-    const refs: string[] = []
-    for (const match of content.matchAll(/(const|let|var)\s+([\w$]+)\s*=\s*ref[^()]*\(/g)) {
-      if (match)
+    const refs: (string | [string, string])[] = []
+    for (const match of content.matchAll(/(const|let|var)\s+([\w$]+)\s*=\s*(ref|useTemplateRef)[^()]*\(([^)]*)\)/g)) {
+      if (match[3] === 'useTemplateRef') {
+        refs.push([match[2], match[4].slice(1, -1)])
+      }
+      else if (match) {
         refs.push(match[2])
+      }
     }
     return {
       type: 'script',
@@ -469,11 +473,11 @@ function findJsxRefs(childrens: any, map: any = {}, refs: any = []) {
   }
 }
 
-export function findRefs(template: SFCTemplateBlock) {
+export function findRefs(template: SFCTemplateBlock, refsMap: (string | [string, string])[]) {
   const { ast } = template
-  return findRef(ast.children, {})
+  return findRef(ast.children, {}, refsMap)
 }
-function findRef(children: any, map: any) {
+function findRef(children: any, map: any, refsMap: (string | [string, string])[]) {
   for (const child of children) {
     const { tag, props, children } = child
     if (props && props.length) {
@@ -481,15 +485,20 @@ function findRef(children: any, map: any) {
         const { name, value } = prop
         if (!value)
           continue
-        const { content } = value
-        if (name !== 'ref' || !content)
+        let { content } = value
+        if ((name !== 'ref') || !content)
           continue
+        for (const r of refsMap) {
+          if (Array.isArray(r) && r[1] === content) {
+            content = r[0]
+          }
+        }
         const tagName = transformTagName(tag)
         map[content] = tagName
       }
     }
     if (children && children.length)
-      findRef(children, map) as any
+      findRef(children, map, refsMap) as any
   }
   return map
 }
