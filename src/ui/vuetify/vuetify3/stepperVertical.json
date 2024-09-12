@@ -1,6 +1,15 @@
 {
-  "name": "VExpansionPanels",
+  "name": "VStepperVertical",
   "props": {
+    "alt-labels": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "description": "Places the labels beneath the step.",
+      "description_zh": "将标签放在步骤下方。",
+      "required": false
+    },
     "bg-color": {
       "default": "undefined",
       "value": "",
@@ -28,13 +37,22 @@
       "description_zh": "将指定的颜色应用于控件 - 支持实用工具颜色（例如 success 或紫色）或 css 颜色（#033 或 rgba（255， 0， 0， 0.5））。在 colors 页面上查找内置类的列表。",
       "required": false
     },
+    "complete-icon": {
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "缺少描述（在 github 中编辑）",
+      "required": false
+    },
     "disabled": {
       "default": "false",
       "value": "",
       "type": "boolean",
       "version": "",
-      "description": "Puts all children components into a disabled state.",
-      "description_zh": "将所有子组件置于禁用状态。",
+      "description": "Disables the expansion-panel content.",
+      "description_zh": "禁用扩展面板内容。",
       "required": false
     },
     "eager": {
@@ -46,6 +64,24 @@
       "description_zh": "强制组件的内容在挂载时呈现。如果您的内容不会在 DOM 中呈现，并且您希望为 SEO 抓取，这将非常有用。",
       "required": false
     },
+    "editable": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "description": "Marks step as editable.",
+      "description_zh": "将步骤标记为可编辑。",
+      "required": false
+    },
+    "edit-icon": {
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "缺少描述（在 github 中编辑）",
+      "required": false
+    },
     "elevation": {
       "default": "undefined",
       "value": "",
@@ -53,6 +89,15 @@
       "version": "",
       "description": "Designates an elevation applied to the component between 0 and 24. You can find more information on the elevation page.",
       "description_zh": "指定应用于组件的 0 到 24 之间的高程。您可以在海拔页面上找到更多信息。",
+      "required": false
+    },
+    "error-icon": {
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "缺少描述（在 github 中编辑）",
       "required": false
     },
     "expand-icon": {
@@ -87,12 +132,39 @@
       "value": "",
       "type": "boolean",
       "version": "",
-      "description": "Hide the expand icon in the content title.",
-      "description_zh": "隐藏内容标题中的展开图标。",
+      "description": "Hide actions bar (prev and next buttons).",
+      "description_zh": "隐藏操作栏（“上一个”和“下一个”按钮）。",
+      "required": false
+    },
+    "items": {
+      "default": "[]",
+      "value": "",
+      "type": "(string | Record<string, any>)[]",
+      "version": "",
+      "description": "An array of strings or objects used for automatically generating children components.",
+      "description_zh": "用于自动生成子组件的字符串或对象的数组。",
+      "required": false
+    },
+    "item-title": {
+      "default": "'title'",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "description": "Property on supplied items that contains its title.",
+      "description_zh": "包含其标题的所提供项上的属性。",
+      "required": false
+    },
+    "item-value": {
+      "default": "'value'",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "description": "Property on supplied items that contains its value.",
+      "description_zh": "包含其值的 supplied items 上的属性。",
       "required": false
     },
     "mandatory": {
-      "default": "false",
+      "default": "'force'",
       "value": "",
       "type": "boolean / force",
       "version": "",
@@ -107,6 +179,24 @@
       "version": "",
       "description": "Sets a maximum number of selections that can be made.",
       "description_zh": "设置可以进行的最大选择数。",
+      "required": false
+    },
+    "mobile": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "description": "Forces the stepper into a mobile state, removing labels from stepper items.",
+      "description_zh": "强制步进器进入移动状态，从步进器项中删除标签。",
+      "required": false
+    },
+    "mobile-breakpoint": {
+      "default": "undefined",
+      "value": "",
+      "type": "number / xs / sm / md / lg / xl / xxl",
+      "version": "",
+      "description": "Overrides the display configuration default screen size that the component should be considered in mobile.",
+      "description_zh": "覆盖组件在移动设备中应考虑的显示配置默认屏幕大小。",
       "required": false
     },
     "v-model": {
@@ -125,6 +215,33 @@
       "version": "",
       "description": "Allows one to select multiple items.",
       "description_zh": "允许选择多个项目。",
+      "required": false
+    },
+    "next-text": {
+      "default": "'$vuetify.stepper.next'",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "description": "The text used for the Next button.",
+      "description_zh": "用于 Next （下一步） 按钮的文本。",
+      "required": false
+    },
+    "non-linear": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "description": "Allow user to jump to any step.",
+      "description_zh": "允许用户跳转到任何步骤。",
+      "required": false
+    },
+    "prev-text": {
+      "default": "'$vuetify.stepper.prev'",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "description": "The text used for the Prev button.",
+      "description_zh": "用于 Prev 按钮的文本。",
       "required": false
     },
     "readonly": {
@@ -163,15 +280,6 @@
       "description_zh": "配置在选择项目时应用的活动 CSS 类。",
       "required": false
     },
-    "static": {
-      "default": "false",
-      "value": "",
-      "type": "boolean",
-      "version": "",
-      "description": "Remove title size expansion when selected.",
-      "description_zh": "选中后删除标题大小扩展。",
-      "required": false
-    },
     "tag": {
       "default": "'div'",
       "value": "",
@@ -200,7 +308,7 @@
       "required": false
     },
     "variant": {
-      "default": "'default'",
+      "default": "'accordion'",
       "value": "",
       "type": "default / accordion / inset / popout",
       "version": "",
@@ -209,43 +317,70 @@
       "required": false
     }
   },
-  "link": "https://vuetifyjs.com/en/api/v-expansion-panels/",
-  "link_zh": "https://vuetifyjs.com/en/api/v-expansion-panels/",
+  "link": "https://vuetifyjs.com/en/api/v-stepper-vertical/",
+  "link_zh": "https://vuetifyjs.com/en/api/v-stepper-vertical/",
   "typeDetail": {},
   "events": [
     {
       "name": "update:modelValue",
       "description": "Event that is emitted when the component’s model changes.",
       "description_zh": "组件的模型更改时发出的事件。",
-      "params": "[unknown]",
+      "params": "[any]",
       "value": ""
     }
   ],
   "methods": [],
   "slots": [
     {
+      "name": "[`header-item.${string}`]",
+      "description": "Slot for customizing header items when using the items prop.",
+      "description_zh": "使用 items 属性时用于自定义标题项的插槽。"
+    },
+    {
+      "name": "[`item.${string}`]",
+      "description": "Slot for customizing the content for each step.",
+      "description_zh": "用于自定义每个步骤内容的插槽。"
+    },
+    {
+      "name": "actions",
+      "description": "Slot for customizing v-stepper-actions.",
+      "description_zh": "用于自定义 v-stepper-actions 的插槽。"
+    },
+    {
       "name": "default",
       "description": "The default Vue slot.",
       "description_zh": "默认的 Vue 插槽。"
-    }
-  ],
-  "exposed": [
+    },
+    {
+      "name": "icon",
+      "description": "Slot for customizing all stepper item icons.",
+      "description_zh": "用于自定义所有步进项图标的插槽。"
+    },
+    {
+      "name": "item",
+      "description": "Define a custom item appearance.",
+      "description_zh": "定义自定义项外观。"
+    },
     {
       "name": "next",
-      "description": "MISSING DESCRIPTION (edit in github)",
-      "description_zh": "MISSING DESCRIPTION (edit in github)",
-      "detail": "() => void"
+      "description": "Slot for customizing the next step functionailty",
+      "description_zh": "用于自定义下一步功能的插槽"
     },
     {
       "name": "prev",
-      "description": "MISSING DESCRIPTION (edit in github)",
-      "description_zh": "MISSING DESCRIPTION (edit in github)",
-      "detail": "() => void"
+      "description": "Slot for customizing the prev step functionality",
+      "description_zh": "用于自定义上一个步骤功能的插槽"
+    },
+    {
+      "name": "subtitle",
+      "description": "Slot for the component’s subtitle content.",
+      "description_zh": "组件字幕内容的插槽。"
+    },
+    {
+      "name": "title",
+      "description": "Slot for the component’s title content.",
+      "description_zh": "组件标题内容的插槽。"
     }
   ],
-  "suggestions": [
-    "v-expansion-panel",
-    "v-expansion-panel-title",
-    "v-expansion-panel-text"
-  ]
+  "exposed": []
 }

@@ -1,0 +1,334 @@
+{
+  "name": "VTimePicker",
+  "props": {
+    "allowed-hours": {
+      "default": "undefined",
+      "value": "",
+      "type": "((val: number) => boolean) | number[]",
+      "version": "",
+      "description": "Restricts which hours can be selected.",
+      "description_zh": "限制可以选择的时间。",
+      "required": false
+    },
+    "allowed-minutes": {
+      "default": "undefined",
+      "value": "",
+      "type": "((val: number) => boolean) | number[]",
+      "version": "",
+      "description": "Restricts which minutes can be selected.",
+      "description_zh": "限制可以选择的分钟数。",
+      "required": false
+    },
+    "allowed-seconds": {
+      "default": "undefined",
+      "value": "",
+      "type": "((val: number) => boolean) | number[]",
+      "version": "",
+      "description": "Restricts which seconds can be selected.",
+      "description_zh": "限制可以选择的秒数。",
+      "required": false
+    },
+    "ampm-in-title": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "description": "Place AM/PM switch in title, not near the clock.",
+      "description_zh": "将 AM/PM 开关放在标题中，而不是靠近时钟。",
+      "required": false
+    },
+    "bg-color": {
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "description": "Applies specified color to the control’s background. Used on components that also support the color prop. - supports utility colors (for example success or purple) or css color (#033 or rgba(255, 0, 0, 0.5)). Find a list of built-in classes on the colors page.",
+      "description_zh": "将指定的颜色应用于控件的背景。用于也支持 color 属性的组件。- 支持实用工具颜色（例如 Success 或 Purple）或 CSS 颜色（#033 或 RGBA（255， 0， 0， 0.5））。在 colors 页面上查找内置类的列表。",
+      "required": false
+    },
+    "border": {
+      "default": "false",
+      "value": "",
+      "type": "string | number | boolean",
+      "version": "",
+      "description": "Designates the border-radius applied to the component. This can be xs, sm, md, lg, xl.",
+      "description_zh": "指定应用于组件的 border-radius。这可以是 xs、sm、md、lg、xl。",
+      "required": false
+    },
+    "color": {
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "description": "Applies specified color to the control - supports utility colors (for example success or purple) or css color (#033 or rgba(255, 0, 0, 0.5)). Find a list of built-in classes on the colors page.",
+      "description_zh": "将指定的颜色应用于控件 - 支持实用工具颜色（例如 success 或紫色）或 css 颜色（#033 或 rgba（255， 0， 0， 0.5））。在 colors 页面上查找内置类的列表。",
+      "required": false
+    },
+    "disabled": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "description": "Removes the ability to click or target the component.",
+      "description_zh": "删除单击组件或定位组件的功能。",
+      "required": false
+    },
+    "elevation": {
+      "default": "undefined",
+      "value": "",
+      "type": "string | number",
+      "version": "",
+      "description": "Designates an elevation applied to the component between 0 and 24. You can find more information on the elevation page.",
+      "description_zh": "指定应用于组件的 0 到 24 之间的高程。您可以在海拔页面上找到更多信息。",
+      "required": false
+    },
+    "format": {
+      "default": "'ampm'",
+      "value": "",
+      "type": "ampm / 24hr",
+      "version": "",
+      "description": "Defines the format of a time displayed in picker. Available options are ampm and 24hr.",
+      "description_zh": "定义选取器中显示的时间格式。可用选项为 ampm 和 24hr。",
+      "required": false
+    },
+    "height": {
+      "default": "undefined",
+      "value": "",
+      "type": "string | number",
+      "version": "",
+      "description": "Sets the height for the component.",
+      "description_zh": "设置组件的高度。",
+      "required": false
+    },
+    "hide-header": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "description": "Hide the picker header.",
+      "description_zh": "隐藏选取器标题。",
+      "required": false
+    },
+    "location": {
+      "default": "undefined",
+      "value": "",
+      "type": "Anchor",
+      "version": "",
+      "description": "Specifies the component’s location. Can combine by using a space separated string.",
+      "description_zh": "指定组件的位置。可以使用空格分隔的字符串进行组合。",
+      "required": false
+    },
+    "max": {
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "description": "Maximum allowed time.",
+      "description_zh": "最大允许时间。",
+      "required": false
+    },
+    "max-height": {
+      "default": "undefined",
+      "value": "",
+      "type": "string | number",
+      "version": "",
+      "description": "Sets the maximum height for the component.",
+      "description_zh": "设置组件的最大高度。",
+      "required": false
+    },
+    "max-width": {
+      "default": "undefined",
+      "value": "",
+      "type": "string | number",
+      "version": "",
+      "description": "Sets the maximum width for the component.",
+      "description_zh": "设置组件的最大宽度。",
+      "required": false
+    },
+    "min": {
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "description": "Minimum allowed time.",
+      "description_zh": "允许的最短时间。",
+      "required": false
+    },
+    "min-height": {
+      "default": "undefined",
+      "value": "",
+      "type": "string | number",
+      "version": "",
+      "description": "Sets the minimum height for the component.",
+      "description_zh": "设置组件的最小高度。",
+      "required": false
+    },
+    "min-width": {
+      "default": "undefined",
+      "value": "",
+      "type": "string | number",
+      "version": "",
+      "description": "Sets the minimum width for the component.",
+      "description_zh": "设置组件的最小宽度。",
+      "required": false
+    },
+    "v-model": {
+      "default": "undefined",
+      "value": "",
+      "type": "any",
+      "version": "",
+      "description": "The v-model value of the component. If component supports the multiple prop, this defaults to an empty array.",
+      "description_zh": "组件的 v-model 值。如果 component 支持 multiple prop，则默认为空数组。",
+      "required": false
+    },
+    "position": {
+      "default": "undefined",
+      "value": "",
+      "type": "static / relative / fixed / absolute / sticky",
+      "version": "",
+      "description": "Sets the position for the component.",
+      "description_zh": "设置零部件的位置。",
+      "required": false
+    },
+    "readonly": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "description": "Puts picker in readonly state.",
+      "description_zh": "将选取器置于只读状态。",
+      "required": false
+    },
+    "rounded": {
+      "default": "undefined",
+      "value": "",
+      "type": "string | number | boolean",
+      "version": "",
+      "description": "Designates the border-radius applied to the component. This can be 0, xs, sm, true, lg, xl, pill, circle, and shaped. Find more information on available border radius classes on the Border Radius page.",
+      "description_zh": "指定应用于组件的 border-radius。这可以是 0、xs、sm、true、lg、xl、pill、circle 和 shaped。在 Border Radius 页面上查找有关可用边界半径类的更多信息。",
+      "required": false
+    },
+    "scrollable": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "description": "Allows changing hour/minute with mouse scroll.",
+      "description_zh": "允许通过鼠标滚动更改小时/分钟。",
+      "required": false
+    },
+    "tag": {
+      "default": "'div'",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "description": "Specify a custom tag used on the root element.",
+      "description_zh": "指定根元素上使用的自定义标记。",
+      "required": false
+    },
+    "theme": {
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "description": "Specify a theme for this component and all of its children.",
+      "description_zh": "为此组件及其所有子组件指定主题。",
+      "required": false
+    },
+    "tile": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "description": "Removes any applied border-radius from the component.",
+      "description_zh": "从组件中删除任何应用的 border-radius。",
+      "required": false
+    },
+    "title": {
+      "default": "'$vuetify.timePicker.title'",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "description": "Specify a title text for the component.",
+      "description_zh": "指定组件的标题文本。",
+      "required": false
+    },
+    "use-seconds": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "缺少描述（在 github 中编辑）",
+      "required": false
+    },
+    "width": {
+      "default": "undefined",
+      "value": "",
+      "type": "string | number",
+      "version": "",
+      "description": "Width of the picker.",
+      "description_zh": "选取器的宽度。",
+      "required": false
+    }
+  },
+  "link": "https://vuetifyjs.com/en/api/v-time-picker/",
+  "link_zh": "https://vuetifyjs.com/en/api/v-time-picker/",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "update:hour",
+      "description": "Emitted when user selects the hour.",
+      "description_zh": "当用户选择小时时发出。",
+      "params": "[number]",
+      "value": ""
+    },
+    {
+      "name": "update:minute",
+      "description": "Emitted when user selects the minute.",
+      "description_zh": "当用户选择分钟时发出。",
+      "params": "[number]",
+      "value": ""
+    },
+    {
+      "name": "update:modelValue",
+      "description": "Event that is emitted when the component’s model changes.",
+      "description_zh": "组件的模型更改时发出的事件。",
+      "params": "[string]",
+      "value": ""
+    },
+    {
+      "name": "update:period",
+      "description": "Emitted when user clicks the AM/PM button.",
+      "description_zh": "当用户单击 AM/PM 按钮时发出。",
+      "params": "['am' | 'pm']",
+      "value": ""
+    },
+    {
+      "name": "update:second",
+      "description": "Emitted when user selects the second.",
+      "description_zh": "当用户选择第二个时触发。",
+      "params": "[number]",
+      "value": ""
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "actions",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "缺少描述（在 github 中编辑）"
+    },
+    {
+      "name": "default",
+      "description": "Displayed below the clock, can be used for example for adding action button (OK and Cancel)/",
+      "description_zh": "显示在时钟下方，可用于添加操作按钮（OK 和 Cancel）/"
+    },
+    {
+      "name": "title",
+      "description": "Slot for the component’s title content.",
+      "description_zh": "组件标题内容的插槽。"
+    }
+  ],
+  "exposed": []
+}

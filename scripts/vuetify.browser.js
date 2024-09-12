@@ -12,9 +12,9 @@ function run() {
 
   for (let i = 0; i < propsChildren.length; i += 2) {
     const item = propsChildren[i]
-    let prop = item.children[0].textContent
-    let required = prop.includes('*')
-    prop = prop.replace(/\*/g, '').split(' ')[0]
+    let propContent = item.children[0].textContent
+    let required = propContent.includes('*')
+    let [prop, ...rest] = propContent.replace(/\*/g, '').split(' ')
     const description = item.nextElementSibling?.textContent
     const type = item.children[1]?.textContent.replace(/\n/g, '')
     if (!type)
@@ -40,6 +40,7 @@ function run() {
       default: value,
       value: '',
       type,
+      version: rest.join(' '),
       description,
       description_zh: description,
       required

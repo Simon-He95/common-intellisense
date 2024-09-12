@@ -5,103 +5,128 @@
       "default": "false",
       "value": "",
       "type": "boolean",
+      "version": "",
       "description": "If true, window will “wrap around” from the last item to the first, and from the first item to the last.",
-      "description_zh": "如果为 true，则窗口将从最后一项到第一项，以及从第一项到最后一项“环绕”。"
+      "description_zh": "如果为 true，则 window 将从最后一项到第一项，以及从第一项到最后一项“环绕”。",
+      "required": false
     },
     "direction": {
-      "default": "horizontal",
+      "default": "'horizontal'",
       "value": "",
       "type": "horizontal / vertical",
+      "version": "",
       "description": "The transition direction when changing windows.",
-      "description_zh": "更改窗口时的过渡方向。"
+      "description_zh": "更改窗口时的过渡方向。",
+      "required": false
     },
     "disabled": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "Remove the component's click or target functionality.",
-      "description_zh": "移除组件的单击或 target 功能。"
+      "version": "",
+      "description": "Removes the ability to click or target the component.",
+      "description_zh": "删除单击组件或定位组件的功能。",
+      "required": false
     },
     "mandatory": {
-      "default": "force",
+      "default": "'force'",
       "value": "",
-      "type": "true / false / force",
-      "description": "Force at least one item to be selected, if available.",
-      "description_zh": "强制至少选择一个项目（如果可用）。"
+      "type": "boolean / force",
+      "version": "",
+      "description": "Forces at least one item to always be selected (if available).",
+      "description_zh": "强制始终选择至少一个项目（如果可用）。",
+      "required": false
     },
     ":v-model": {
       "default": "undefined",
       "value": "",
       "type": "unknown",
-      "description": "The value of the component v-mode. If the component supports variants, the default is an empty array.",
-      "description_zh": "组件 v-mode 的值。如果组件支持多属性，默认为空数组。",
+      "version": "",
+      "description": "The v-model value of the component. If component supports the multiple prop, this defaults to an empty array.",
+      "description_zh": "组件的 v-model 值。如果 component 支持 multiple prop，则默认为空数组。",
       "required": true
     },
     "next-icon": {
-      "default": "$next",
+      "default": "'$next'",
       "value": "",
-      "type": "any",
+      "type": "  | string  | (string | [string, number])[]  | (new () => any)  | FunctionalComponent",
+      "version": "",
       "description": "Icon used for the “next” button if show-arrows is true.",
-      "description_zh": "如果 show-arrows 为 true，则用于“下一步”按钮的图标。"
+      "description_zh": "如果 show-arrows 为 true，则用于 “next” 按钮的图标。",
+      "required": false
     },
     "prev-icon": {
-      "default": "$prev",
+      "default": "'$prev'",
       "value": "",
-      "type": "any",
+      "type": "  | string  | (string | [string, number])[]  | (new () => any)  | FunctionalComponent",
+      "version": "",
       "description": "Icon used for the “prev” button if show-arrows is true.",
-      "description_zh": "如果 show-arrows 为 true，则用于“prev”按钮的图标。"
+      "description_zh": "如果 show-arrows 为 true，则用于 “prev” 按钮的图标。",
+      "required": false
     },
     "reverse": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "Reverses the normal direction of the transition.",
-      "description_zh": "反转正常的过渡方向。"
+      "version": "",
+      "description": "Reverse the normal transition direction.",
+      "description_zh": "反转正常过渡方向。",
+      "required": false
     },
     "selected-class": {
-      "default": "v-window-item--active",
+      "default": "'v-window-item--active'",
       "value": "",
       "type": "string",
-      "description": "Configure the name of the CSS class that will be applied when the selected item is selected.",
-      "description_zh": "配置被选中项目时应用的 CSS 类名。"
+      "version": "",
+      "description": "Configure the active CSS class applied when an item is selected.",
+      "description_zh": "配置在选择项目时应用的活动 CSS 类。",
+      "required": false
     },
     "show-arrows": {
       "default": "false",
       "value": "",
       "type": "string | boolean",
+      "version": "",
       "description": "Display the “next” and “prev” buttons.",
-      "description_zh": "显示“下一个”和“上一个”按钮。"
+      "description_zh": "显示 “next” 和 “prev” 按钮。",
+      "required": false
     },
     "tag": {
-      "default": "div",
+      "default": "'div'",
       "value": "",
       "type": "string",
-      "description": "Specifies the custom tag to be used on the root element.",
-      "description_zh": "指定在根元素上使用的自定义标签。"
+      "version": "",
+      "description": "Specify a custom tag used on the root element.",
+      "description_zh": "指定根元素上使用的自定义标记。",
+      "required": false
     },
     "theme": {
       "default": "undefined",
       "value": "",
       "type": "string",
+      "version": "",
       "description": "Specify a theme for this component and all of its children.",
-      "description_zh": "为此组件及其所有子组件指定主题。"
+      "description_zh": "为此组件及其所有子组件指定主题。",
+      "required": false
     },
     "touch": {
       "default": "undefined",
       "value": "",
-      "type": "true / false / TouchHandlers",
-      "description": "Custom left and right functions are provided when swiping left and right.",
-      "description_zh": "左右滑动时提供自定义的 left 和 right 函数。"
+      "type": "boolean | TouchHandlers",
+      "version": "",
+      "description": "Provide a custom left and right function when swiped left or right.",
+      "description_zh": "在向左或向右滑动时提供自定义的 left 和 right 功能。",
+      "required": false
     }
   },
-  "link": "https://vuetifyjs.com/zh-Hans/api/v-window/#links",
-  "link_zh": "https://vuetifyjs.com/zh-Hans/api/v-window/#links",
+  "link": "https://vuetifyjs.com/en/api/v-window/",
+  "link_zh": "https://vuetifyjs.com/en/api/v-window/",
   "typeDetail": {},
   "events": [
     {
       "name": "update:modelValue",
-      "description": "An event that is raised when a component's model-value changes.",
-      "description_zh": "当组件的 model-value 更改时引发的事件。",
+      "description": "Event that is emitted when the component’s model changes.",
+      "description_zh": "组件的模型更改时发出的事件。",
       "params": "[unknown]",
       "value": ""
     }
@@ -115,21 +140,26 @@
     },
     {
       "name": "default",
-      "description": "Default Vue slot.",
-      "description_zh": "默认Vue 插槽。"
+      "description": "The default Vue slot.",
+      "description_zh": "默认的 Vue 插槽。"
     },
     {
       "name": "next",
       "description": "Slot displaying the arrow switching to the next item.",
-      "description_zh": "显示箭头切换到下一项的插槽。"
+      "description_zh": "显示切换到下一项的箭头的插槽。"
     },
     {
       "name": "prev",
       "description": "Slot displaying the arrow switching to the previous item.",
-      "description_zh": "显示箭头切换到上一项的插槽。"
+      "description_zh": "显示切换到上一项的箭头的插槽。"
     }
   ],
-  "suggestions": [
-    "v-window-item"
+  "exposed": [
+    {
+      "name": "group",
+      "description": "Returns item group data, state and helper methods.",
+      "description_zh": "Returns item group data, state and helper methods.",
+      "detail": "{\n  register: (item: GroupItem, cmp: ComponentInternalInstance) => void\n  unregister: (id: number) => void\n  select: (id: number, value: boolean) => void\n  selected: readonly number[]\n  isSelected: (id: number) => boolean\n  prev: () => void\n  next: () => void\n  selectedClass: string | undefined\n  items: { id: number; value: unknown; disabled: boolean | undefined }[]\n  disabled: boolean | undefined\n  getItemIndex: (value: unknown) => number\n}"
+    }
   ]
 }

@@ -5,109 +5,146 @@
       "default": "false",
       "value": "",
       "type": "boolean",
+      "version": "",
       "description": "Forces the selected component to be centered.",
-      "description_zh": "强制所选元件居中。"
+      "description_zh": "强制选定零部件居中。",
+      "required": false
     },
     "direction": {
-      "default": "horizontal",
+      "default": "'horizontal'",
       "value": "",
       "type": "horizontal / vertical",
-      "description": "MISSING DESCRIPTION (edit in github)",
-      "description_zh": "缺少描述 （在 github 中编辑）"
+      "version": "",
+      "description": "Switch between horizontal and vertical modes.",
+      "description_zh": "在水平和垂直模式之间切换。",
+      "required": false
     },
     "disabled": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "Set all child components to a disabled state.",
-      "description_zh": "将所有子组件设置为禁用状态。"
+      "version": "",
+      "description": "Puts all children components into a disabled state.",
+      "description_zh": "将所有子组件置于禁用状态。",
+      "required": false
     },
     "mandatory": {
       "default": "false",
       "value": "",
       "type": "boolean / force",
-      "description": "Force at least one item to be selected, if available.",
-      "description_zh": "强制至少选择一个项目（如果可用）。"
+      "version": "",
+      "description": "Forces at least one item to always be selected (if available).",
+      "description_zh": "强制始终选择至少一个项目（如果可用）。",
+      "required": false
     },
     ":max": {
       "default": "undefined",
       "value": "",
       "type": "number",
-      "description": "Set the maximum number that can be selected.",
-      "description_zh": "设置可以选择的最大数量。"
+      "version": "",
+      "description": "Sets a maximum number of selections that can be made.",
+      "description_zh": "设置可以进行的最大选择数。",
+      "required": false
+    },
+    "mobile": {
+      "default": "null",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "description": "Determines the display mode of the component. If true, the component will be displayed in mobile mode. If false, the component will be displayed in desktop mode. If null, will be based on the current mobile-breakpoint",
+      "description_zh": "确定组件的显示模式。如果为 true，则组件将以移动模式显示。如果为 false，则组件将以桌面模式显示。如果为 null，则将基于当前的 mobile-breakpoint",
+      "required": false
     },
     "mobile-breakpoint": {
       "default": "undefined",
       "value": "",
       "type": "number / xs / sm / md / lg / xl / xxl",
-      "description": "Set and specify screen size breakpoints for mobile devices for components",
-      "description_zh": "为组件设置和指定移动设备的屏幕尺寸断点"
+      "version": "",
+      "description": "Sets the designated mobile breakpoint for the component.",
+      "description_zh": "为组件设置指定的移动断点。",
+      "required": false
     },
-    ":v-model": {
+    "v-model": {
       "default": "undefined",
       "value": "",
       "type": "unknown",
-      "description": "The value of the component v-mode. If the component supports variants, the default is an empty array.",
-      "description_zh": "组件 v-mode 的值。如果组件支持多属性，默认为空数组。"
+      "version": "",
+      "description": "The v-model value of the component. If component supports the multiple prop, this defaults to an empty array.",
+      "description_zh": "组件的 v-model 值。如果 component 支持 multiple prop，则默认为空数组。",
+      "required": false
     },
     "multiple": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "Allows you to select multiple options.",
-      "description_zh": "允许您选择多个选项。"
+      "version": "",
+      "description": "Allows one to select multiple items.",
+      "description_zh": "允许选择多个项目。",
+      "required": false
     },
     "next-icon": {
-      "default": "$next",
+      "default": "'$next'",
       "value": "",
-      "type": "any",
+      "type": "  | string  | (string | [string, number])[]  | (new () => any)  | FunctionalComponent",
+      "version": "",
       "description": "The appended slot when arrows are shown.",
-      "description_zh": "显示箭头时附加的插槽。"
+      "description_zh": "显示箭头时附加的插槽。",
+      "required": false
     },
     "prev-icon": {
-      "default": "$prev",
+      "default": "'$prev'",
       "value": "",
-      "type": "any",
+      "type": "  | string  | (string | [string, number])[]  | (new () => any)  | FunctionalComponent",
+      "version": "",
       "description": "The prepended slot when arrows are shown.",
-      "description_zh": "显示箭头时的前置槽。"
+      "description_zh": "显示箭头时的前置槽。",
+      "required": false
     },
     "selected-class": {
-      "default": "v-slide-group-item--active",
+      "default": "'v-slide-group-item--active'",
       "value": "",
       "type": "string",
-      "description": "Configure the name of the CSS class that will be applied when the selected item is selected.",
-      "description_zh": "配置被选中项目时应用的 CSS 类名。"
+      "version": "",
+      "description": "Configure the active CSS class applied when an item is selected.",
+      "description_zh": "配置在选择项目时应用的活动 CSS 类。",
+      "required": false
     },
     "show-arrows": {
       "default": "false",
       "value": "",
       "type": "string | boolean",
-      "description": "Changed when the overflow arrow indicator is displayed. By default, the arrows are always displayed when a container overflows on the desktop. When a container overflows on a mobile device, the arrows are not displayed by default. If the container overflows, the show arrows value is \"true\", allowing these arrows to be displayed on mobile devices. The \"desktop\" value always displays an arrow on the desktop, while the value \"mobile\" always displays an arrow on mobile. The value \"always\" always displays arrows on desktop and mobile. Find more information on how to customize breakpoint thresholds on the Breakpoints page (/customization/breakpoints).",
-      "description_zh": "显示溢出箭头指示器时更改。默认情况下，当容器在桌面上溢出时箭头总是显示。当容器在移动设备上溢出时，默认情况下不显示箭头。如果容器溢出，show arrows值为“true”，则允许这些箭头在移动设备上显示。“desktop”值总是在桌面上显示箭头，而值“mobile”则总是在mobile上显示箭头。值“always”总是在桌面和Mobile上显示箭头。在[断点页面]（/customization/breakpoints）上查找有关如何自定义断点阈值的详细信息。"
+      "version": "",
+      "description": "Change when the overflow arrow indicators are shown. By default, arrows always display on Desktop when the container is overflowing. When the container overflows on mobile, arrows are not shown by default. A show-arrows value of true allows these arrows to show on Mobile if the container overflowing. A value of desktop always displays arrows on Desktop while a value of mobile always displays arrows on Mobile. A value of always always displays arrows on Desktop and Mobile. Find more information on how to customize breakpoint thresholds on the breakpoints page.",
+      "description_zh": "更改显示溢出箭头指示器的时间。默认情况下，当容器溢出时，箭头始终显示在 Desktop 上。当容器在移动设备上溢出时，默认情况下不显示箭头。如果 show-arrows 值为 true，则允许这些箭头在容器溢出时显示在 Mobile 上。值 desktop 始终在 Desktop 上显示箭头，而值 mobile 始终在 Mobile 上显示箭头。值 always 在 Desktop 和 Mobile 上始终显示箭头。在 breakpoints 页面上查找有关如何自定义断点阈值的更多信息。",
+      "required": false
     },
     "symbol": {
       "default": "undefined",
       "value": "",
       "type": "any",
+      "version": "",
       "description": "The Symbol used to hook into group functionality for components like v-btn-toggle and v-bottom-navigation.",
-      "description_zh": "用于挂接到 v-btn-toggle 和 v-bottom-navigation 等组件的组功能的符号。"
+      "description_zh": "用于钩入组件（如 v-btn-toggle 和 v-bottom-navigation）的组功能的 Symbol。",
+      "required": false
     },
     "tag": {
-      "default": "div",
+      "default": "'div'",
       "value": "",
       "type": "string",
-      "description": "Specifies the custom tag to be used on the root element.",
-      "description_zh": "指定在根元素上使用的自定义标签。"
+      "version": "",
+      "description": "Specify a custom tag used on the root element.",
+      "description_zh": "指定根元素上使用的自定义标记。",
+      "required": false
     }
   },
-  "link": "https://vuetifyjs.com/zh-Hans/api/v-slide-group/#exposed",
-  "link_zh": "https://vuetifyjs.com/zh-Hans/api/v-slide-group/#exposed",
+  "link": "https://vuetifyjs.com/en/api/v-slide-group/",
+  "link_zh": "https://vuetifyjs.com/en/api/v-slide-group/",
   "typeDetail": {},
   "events": [
     {
       "name": "update:modelValue",
-      "description": "An event that is raised when a component's model-value changes.",
-      "description_zh": "当组件的 model-value 更改时引发的事件。",
+      "description": "Event that is emitted when the component’s model changes.",
+      "description_zh": "组件的模型更改时发出的事件。",
       "params": "[unknown]",
       "value": ""
     }
@@ -116,8 +153,8 @@
   "slots": [
     {
       "name": "default",
-      "description": "Default Vue slot.",
-      "description_zh": "默认Vue 插槽。"
+      "description": "The default Vue slot.",
+      "description_zh": "默认的 Vue 插槽。"
     },
     {
       "name": "next",
@@ -127,7 +164,45 @@
     {
       "name": "prev",
       "description": "The prev slot.",
-      "description_zh": "上一个插槽。"
+      "description_zh": "prev 插槽。"
+    }
+  ],
+  "exposed": [
+    {
+      "name": "focus",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(location: 'prev' | 'next' | 'first' | 'last') => void"
+    },
+    {
+      "name": "hasNext",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "boolean"
+    },
+    {
+      "name": "hasPrev",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "boolean"
+    },
+    {
+      "name": "scrollOffset",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "number"
+    },
+    {
+      "name": "scrollTo",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(location: 'prev' | 'next') => void"
+    },
+    {
+      "name": "selected",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "number[]"
     }
   ],
   "suggestions": [

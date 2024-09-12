@@ -5,585 +5,749 @@
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "Control the active state of the item. This is typically used to highlight components.",
-      "description_zh": "控制项的 active 状态。这通常用于高亮显示组件。"
+      "version": "",
+      "description": "Controls the active state of the item. This is typically used to highlight the component.",
+      "description_zh": "控制项的活动状态。这通常用于突出显示组件。",
+      "required": false
     },
     "append-icon": {
       "default": "undefined",
       "value": "",
-      "type": "any",
+      "type": "  | string  | (string | [string, number])[]  | (new () => any)  | FunctionalComponent",
+      "version": "",
       "description": "Creates a v-icon component after default content in the append slot.",
-      "description_zh": "在追加插槽中的默认内容之后创建一个 v-icon 组件。"
+      "description_zh": "在附加插槽中的默认内容之后创建一个 v 图标组件。",
+      "required": false
     },
     "autofocus": {
       "default": "false",
       "value": "",
       "type": "boolean",
+      "version": "",
       "description": "Enables autofocus.",
-      "description_zh": "启用自动对焦。"
+      "description_zh": "启用自动对焦。",
+      "required": false
     },
-    "auto-select-first3.3.0 版本的新特色": {
+    "auto-select-firstNew": {
       "default": "false",
       "value": "",
       "type": "boolean / exact",
+      "version": "in v3.3.0",
       "description": "When searching, will always highlight the first option and select it on blur. exact will only highlight and select exact matches.",
-      "description_zh": "搜索时，将始终突出显示第一个选项并在模糊时选择它。exact 将仅突出显示并选择完全匹配项。"
+      "description_zh": "搜索时，将始终高亮显示第一个选项并在模糊时选择它。exact 将仅突出显示并选择 exact matches。",
+      "required": false
     },
     "base-color": {
       "default": "undefined",
       "value": "",
       "type": "string",
+      "version": "",
       "description": "Sets the color of the input when it is not focused.",
-      "description_zh": "设置输入未聚焦时的颜色。"
+      "description_zh": "设置输入未聚焦时的颜色。",
+      "required": false
     },
     "bg-color": {
       "default": "undefined",
       "value": "",
       "type": "string",
+      "version": "",
       "description": "Applies specified color to the control’s background. Used on components that also support the color prop. - supports utility colors (for example success or purple) or css color (#033 or rgba(255, 0, 0, 0.5)). Find a list of built-in classes on the colors page.",
-      "description_zh": "将指定的颜色应用于控件的背景。用于还支持颜色道具的组件。- 支持实用程序颜色（例如 success 或紫色）或 CSS 颜色（#033 或 rgba（255， 0， 0， 0.5））。在颜色页面上查找内置类的列表。"
+      "description_zh": "将指定的颜色应用于控件的背景。用于也支持 color 属性的组件。- 支持实用工具颜色（例如 Success 或 Purple）或 CSS 颜色（#033 或 RGBA（255， 0， 0， 0.5））。在 colors 页面上查找内置类的列表。",
+      "required": false
     },
     "center-affix": {
       "default": "undefined",
       "value": "",
       "type": "boolean",
+      "version": "",
       "description": "Vertically align appendInner, prependInner, clearIcon and label in the center.",
-      "description_zh": "垂直对齐 appendInner、prependInner、clearIcon 和标签的中心。"
+      "description_zh": "将 appendInner、prependInner、clearIcon 和 label 垂直对齐在中心。",
+      "required": false
     },
     "chips": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "Change the display of a selected chip item.",
-      "description_zh": "改变一个已选择项为小纸片（chips）的显示方式."
+      "version": "",
+      "description": "Changes display of selections to chips.",
+      "description_zh": "将选择项的显示更改为筹码。",
+      "required": false
     },
     "clearable": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "Allows the component to be emptied.",
-      "description_zh": "允许清空该组件."
+      "version": "",
+      "description": "Allows for the component to be cleared.",
+      "description_zh": "允许清除组件。",
+      "required": false
     },
     "clear-icon": {
-      "default": "$clear",
+      "default": "'$clear'",
       "value": "",
-      "type": "any",
-      "description": "When the Purge property is set to true, sets the properties of the purge icon.",
-      "description_zh": "当\"可清除\"属性设置为 true 时, 设置清除图标的属性."
+      "type": "  | string  | (string | [string, number])[]  | (new () => any)  | FunctionalComponent",
+      "version": "",
+      "description": "The icon used when the clearable prop is set to true.",
+      "description_zh": "当 clearable prop 设置为 true 时使用的图标。",
+      "required": false
     },
     "clear-on-select": {
       "default": "false",
       "value": "",
       "type": "boolean",
+      "version": "",
       "description": "Reset the search text when a selection is made while using the multiple prop.",
-      "description_zh": "在使用多重道具时进行选择时重置搜索文本。"
+      "description_zh": "在使用 multiple 属性时进行选择时重置搜索文本。",
+      "required": false
     },
     "closable-chips": {
       "default": "false",
       "value": "",
       "type": "boolean",
+      "version": "",
       "description": "Enables the closable prop on all v-chip components.",
-      "description_zh": "在所有 v-chip 组件上启用可关闭的支柱。"
+      "description_zh": "在所有 v-chip 组件上启用 closable prop。",
+      "required": false
     },
     "close-text": {
-      "default": "$vuetify.close",
+      "default": "'$vuetify.close'",
       "value": "",
       "type": "string",
+      "version": "",
       "description": "Text set to to the inputs aria-label and title when input menu is closed.",
-      "description_zh": "当输入菜单关闭时，文本设置为输入咏叹调标签和标题。"
+      "description_zh": "关闭输入菜单时，文本设置为输入 aria-label 和 title。",
+      "required": false
     },
     "color": {
       "default": "undefined",
       "value": "",
       "type": "string",
+      "version": "",
       "description": "Applies specified color to the control - supports utility colors (for example success or purple) or css color (#033 or rgba(255, 0, 0, 0.5)). Find a list of built-in classes on the colors page.",
-      "description_zh": "将指定的颜色应用于控件 - 支持实用程序颜色（例如 success 或紫色）或 css 颜色（#033 或 rgba（255， 0， 0， 0.5））。在颜色页面上查找内置类的列表。"
+      "description_zh": "将指定的颜色应用于控件 - 支持实用工具颜色（例如 success 或紫色）或 css 颜色（#033 或 rgba（255， 0， 0， 0.5））。在 colors 页面上查找内置类的列表。",
+      "required": false
     },
     "counter": {
       "default": "false",
       "value": "",
       "type": "string | number | boolean",
-      "description": "Create a counter for the input length, default to 25 if no number is specified, no validation will be applied.",
-      "description_zh": "为输入长度创建一个计数器，如果未指定数字，则默认为25，不会应用任何验证。"
+      "version": "",
+      "description": "Creates counter for input length; if no number is specified, it defaults to 25. Does not apply any validation.",
+      "description_zh": "为 input length 创建 counter;如果未指定数字，则默认为 25。不应用任何验证。",
+      "required": false
     },
     "counter-value": {
       "default": "undefined",
       "value": "",
       "type": "number | ((value: any) => number)",
+      "version": "",
       "description": "Function returns the counter display text.",
-      "description_zh": "函数返回计数器显示文本。"
+      "description_zh": "function 返回计数器显示文本。",
+      "required": false
     },
     "custom-filter": {
       "default": "undefined",
       "value": "",
       "type": "FilterFunction",
+      "version": "",
       "description": "Function used to filter items, called for each filterable key on each item in the list. The first argument is the filterable value from the item, the second is the search term, and the third is the internal item object. The function should return true if the item should be included in the filtered list, or the index of the match in the value if it should be included with the result highlighted.",
-      "description_zh": "用于筛选项的函数，为列表中每个项上的每个可筛选键调用。第一个参数是项中的可筛选值，第二个参数是搜索词，第三个参数是内部项对象。如果项目应包含在筛选列表中，则该函数应返回 true，如果应在突出显示的结果中包含匹配项的索引，则该函数应返回 true。"
+      "description_zh": "用于筛选项目的函数，为列表中每个项目上的每个可筛选键调用。第一个参数是项目中的可筛选值，第二个参数是搜索词，第三个参数是内部项目对象。如果项目应包含在筛选列表中，则该函数应返回 true，如果匹配项应包含在突出显示的结果中，则该值应返回匹配项的索引。",
+      "required": false
     },
     "custom-key-filter": {
       "default": "undefined",
       "value": "",
       "type": "unknown",
+      "version": "",
       "description": "Function used on specific keys within the item object. customFilter is skipped for columns with customKeyFilter specified.",
-      "description_zh": "用于 item 对象中特定键的函数。对于指定了 customKeyFilter 的列，将跳过 customFilter。"
+      "description_zh": "用于 item 对象中特定键的函数。对于指定了 customKeyFilter 的列，将跳过 customFilter。",
+      "required": false
     },
     "density": {
-      "default": "default",
+      "default": "'default'",
       "value": "",
       "type": "default / comfortable / compact",
+      "version": "",
       "description": "Adjusts the vertical height used by the component.",
-      "description_zh": "调整组件使用的垂直高度。"
+      "description_zh": "调整组件使用的垂直高度。",
+      "required": false
     },
     "direction": {
-      "default": "horizontal",
+      "default": "'horizontal'",
       "value": "",
       "type": "horizontal / vertical",
-      "description": "Change the input direction.",
-      "description_zh": "改变输入方向."
+      "version": "",
+      "description": "Changes the direction of the input.",
+      "description_zh": "更改输入的方向。",
+      "required": false
     },
     "disabled": {
       "default": "null",
       "value": "",
       "type": "boolean",
+      "version": "",
       "description": "Removes the ability to click or target the input.",
-      "description_zh": "删除单击输入或定位输入的功能。"
+      "description_zh": "删除单击或定位输入的功能。",
+      "required": false
     },
     "eager": {
       "default": "false",
       "value": "",
       "type": "boolean",
+      "version": "",
       "description": "Forces the component’s content to render when it mounts. This is useful if you have content that will not be rendered in the DOM that you want crawled for SEO.",
-      "description_zh": "强制组件的内容在装载时呈现。如果您有不会在 DOM 中呈现的内容，并且要为 SEO 抓取内容，这将很有用。"
+      "description_zh": "强制组件的内容在挂载时呈现。如果您的内容不会在 DOM 中呈现，并且您希望为 SEO 抓取，这将非常有用。",
+      "required": false
     },
     "error": {
       "default": "false",
       "value": "",
       "type": "boolean",
+      "version": "",
       "description": "Puts the input in a manual error state.",
-      "description_zh": "将输入置于手动错误状态。"
+      "description_zh": "将输入置于手动错误状态。",
+      "required": false
     },
     "error-messages": {
       "default": "[]",
       "value": "",
       "type": "string | string[]",
-      "description": "Put the input box into an error state and pass in a custom error message. will be combined with any validation from the rules property. This field does not trigger validation.",
-      "description_zh": "将输入框置于错误状态，并传入自定义的错误信息。将与来自 rules 属性的任何验证相结合。这个字段不会触发验证。"
+      "version": "",
+      "description": "Puts the input in an error state and passes through custom error messages. Will be combined with any validations that occur from the rules prop. This field will not trigger validation.",
+      "description_zh": "将输入置于错误状态并传递自定义错误消息。将与 rules prop 发生的任何验证相结合。此字段不会触发验证。",
+      "required": false
     },
     "filter-keys": {
       "default": "['title']",
       "value": "",
       "type": "string | string[]",
+      "version": "",
       "description": "Array of specific keys to filter on the item.",
-      "description_zh": "要筛选项目的特定键的数组。"
+      "description_zh": "用于筛选项目的特定键的数组。",
+      "required": false
     },
     "filter-mode": {
-      "default": "intersection",
+      "default": "'intersection'",
       "value": "",
       "type": "some / every / union / intersection",
+      "version": "",
       "description": "Controls how the results of customFilter and customKeyFilter are combined. All modes only apply customFilter to columns not specified in customKeyFilter.some: There is at least one match from either the custom filter or the custom key filter.every: All columns match either the custom filter or the custom key filter.union: There is at least one match from the custom filter, or all columns match the custom key filters.intersection: There is at least one match from the custom filter, and all columns match the custom key filters.",
-      "description_zh": "控制 customFilter 和 customKeyFilter 的结果组合方式。所有模式仅将 customFilter 应用于 customKeyFilter.some 中未指定的列：自定义筛选器或自定义键 filter.every 中至少有一个匹配项：所有列都与自定义筛选器或自定义键 filter.union 匹配：自定义筛选器中至少有一个匹配项，或者所有列都与自定义键 filters.intersection 匹配： 自定义筛选器中至少有一个匹配项，并且所有列都与自定义键筛选器匹配。"
+      "description_zh": "控制 customFilter 和 customKeyFilter 的结果的组合方式。所有模式仅将 customFilter 应用于 customKeyFilter.some：自定义筛选条件或自定义键至少有一个匹配项 filter.every：所有列都与自定义筛选条件或自定义键匹配 filter.union：自定义筛选条件中至少有一个匹配项，或者所有列都与自定义键 filters.intersection 匹配： 自定义筛选条件中至少有一个匹配项，并且所有列都与自定义键筛选条件匹配。",
+      "required": false
     },
     "flat": {
       "default": "false",
       "value": "",
       "type": "boolean",
+      "version": "",
       "description": "Removes box shadow when using a variant with elevation.",
-      "description_zh": "使用具有高程的变体时删除框阴影。"
+      "description_zh": "使用具有高程的变量时删除框阴影。",
+      "required": false
     },
     "focused": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "Force the component to use the style when focused.",
-      "description_zh": "强制组件使用聚焦时的样式。"
+      "version": "",
+      "description": "Forces a focused state styling on the component.",
+      "description_zh": "强制对组件进行 focused state 样式设置。",
+      "required": false
     },
     "hide-details": {
       "default": "false",
       "value": "",
       "type": "boolean / auto",
-      "description": "Hide hints and validation errors. When set to auto and only displays information (prompts, error messages, counter values, etc.) to display.",
-      "description_zh": "隐藏提示和验证错误。当设置为 auto 并且只有在有信息（提示、错误信息、计数器值等）要显示时，才会显示信息。"
+      "version": "",
+      "description": "Hides hint and validation errors. When set to auto messages will be rendered only if there’s a message (hint, error message, counter value etc) to display.",
+      "description_zh": "隐藏提示和验证错误。当设置为 auto 时，仅当有消息 （提示、错误消息、计数器值等） 要显示时，才会呈现消息。",
+      "required": false
     },
     "hide-no-data": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "When there are no options to display, hide the menu. Used to prevent the menu from opening before the results are obtained asynchronously. There is also the effect of opening the menu when the items array changes if it is not already open.",
-      "description_zh": "当没有要显示的选项时，隐藏菜单。用于防止在异步获取结果之前打开菜单。也有打开菜单的效果，当“ items 数组改变，如果还没有打开。"
+      "version": "",
+      "description": "Hides the menu when there are no options to show. Useful for preventing the menu from opening before results are fetched asynchronously. Also has the effect of opening the menu when the items array changes if not already open.",
+      "description_zh": "当没有要显示的选项时隐藏菜单。用于防止在异步获取结果之前打开菜单。如果尚未打开，则还具有在 items 数组更改时打开菜单的效果。",
+      "required": false
     },
     "hide-selected": {
       "default": "false",
       "value": "",
       "type": "boolean",
+      "version": "",
       "description": "Do not display in the select menu items that are already selected.",
-      "description_zh": "不要在选择菜单项中显示已选择的项。"
+      "description_zh": "不显示在已选择的 select 菜单项中。",
+      "required": false
     },
     "hide-spin-buttons": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "When the type is set to number, the rotation button is hidden on the input element.",
-      "description_zh": "当类型设置为 number 时，在 input 元素上隐藏旋转按钮。"
+      "version": "",
+      "description": "Hides spin buttons on the input when type is set to number.",
+      "description_zh": "当 type 设置为 number 时，隐藏输入上的旋转按钮。",
+      "required": false
     },
     "hint": {
       "default": "undefined",
       "value": "",
       "type": "string",
+      "version": "",
       "description": "Displays hint text below the input when focused. Force this always open with the persistent-hint property.",
-      "description_zh": "聚焦时在输入下方显示提示文本。强制它始终使用 persistent-hint 属性打开。"
+      "description_zh": "聚焦时，在输入下方显示提示文本。使用 persistent-hint 属性强制 this always 打开。",
+      "required": false
     },
     "id": {
       "default": "undefined",
       "value": "",
       "type": "string",
+      "version": "",
       "description": "Sets the DOM id on the component.",
-      "description_zh": "设置组件上的 DOM ID。"
+      "description_zh": "设置组件上的 DOM ID。",
+      "required": false
     },
     "item-children": {
       "default": "false",
       "value": "",
       "type": "SelectItemKey",
+      "version": "",
       "description": "This property currently has no effect.",
-      "description_zh": "此属性目前不起作用。"
+      "description_zh": "此属性当前不起作用。",
+      "required": false
     },
     "item-color": {
       "default": "undefined",
       "value": "",
       "type": "string",
+      "version": "",
       "description": "Sets color of selected items.",
-      "description_zh": "设置所选项目的颜色。"
+      "description_zh": "设置选定项目的颜色。",
+      "required": false
     },
     "item-props": {
-      "default": "props",
+      "default": "'props'",
       "value": "",
       "type": "SelectItemKey<any>",
+      "version": "",
       "description": "Props object that will be applied to each item component. true will treat the original object as raw props and pass it directly to the component.",
-      "description_zh": "将应用于每个项目组件的 Props 对象。true 会将原始对象视为原始 props，并将其直接传递给组件。"
+      "description_zh": "Props 对象。true 会将原始对象视为 raw props 并将其直接传递给组件。",
+      "required": false
     },
-    "items": {
+    ":items": {
       "default": "[]",
       "value": "",
       "type": "any[]",
+      "version": "",
       "description": "Can be an array of objects or strings. By default objects should have title and value properties, and can optionally have a props property containing any VListItem props. Keys to use for these can be changed with the item-title, item-value, and item-props props.",
-      "description_zh": "可以是对象或字符串的数组。默认情况下，对象应具有 title 和 value 属性，并且可以选择具有包含任何 VListItem 属性的 props 属性。可以使用 item-title、item-value 和 item-props 道具更改用于这些的键。"
+      "description_zh": "可以是对象或字符串的数组。默认情况下，对象应该具有 title 和 value 属性，并且可以选择具有包含任何 VListItem props 的 props 属性。用于这些的键可以通过 item-title、item-value 和 item-props 属性来更改。",
+      "required": true
     },
     "item-title": {
-      "default": "title",
+      "default": "'title'",
       "value": "",
       "type": "SelectItemKey<any>",
+      "version": "",
       "description": "Property on supplied items that contains its title.",
-      "description_zh": "包含其标题的所提供项目的属性。"
+      "description_zh": "包含其标题的所提供项上的属性。",
+      "required": false
     },
     "item-value": {
-      "default": "value",
+      "default": "'value'",
       "value": "",
       "type": "SelectItemKey<any>",
+      "version": "",
       "description": "Property on supplied items that contains its value.",
-      "description_zh": "包含其值的已提供项的属性。"
+      "description_zh": "包含其值的 supplied items 上的属性。",
+      "required": false
     },
     "label": {
       "default": "undefined",
       "value": "",
       "type": "string",
+      "version": "",
       "description": "Sets the text of the v-label or v-field-label component.",
-      "description_zh": "设置 v-label 或 v-field-label 组件的文本。"
+      "description_zh": "设置 v-label 或 v-field-label 组件的文本。",
+      "required": true
     },
     "list-props": {
       "default": "undefined",
       "value": "",
       "type": "unknown",
+      "version": "",
       "description": "Pass props through to the v-list component. Accepts an object with anything from v-list props, camelCase keys are recommended.",
-      "description_zh": "将道具传递到 v-list 组件。接受带有 v-list 道具的任何内容的对象，建议使用 camelCase 键。"
+      "description_zh": "将 props 传递给 v-list 组件。接受带有 v-list props 中的任何内容的对象，建议使用 camelCase 键。",
+      "required": false
     },
     "loading": {
       "default": "false",
       "value": "",
       "type": "string | boolean",
+      "version": "",
       "description": "Displays linear progress bar. Can either be a String which specifies which color is applied to the progress bar (any material color or theme color - primary, secondary, success, info, warning, error) or a Boolean which uses the component color (set by color prop - if it’s supported by the component) or the primary color.",
-      "description_zh": "显示线性进度条。可以是指定应用于进度条的颜色的 String（任何材质颜色或主题颜色 - 主要颜色、次要颜色、成功颜色、信息颜色、警告颜色、错误颜色）或布尔值，它使用组件颜色（由颜色属性设置 - 如果组件支持）或主要颜色。"
+      "description_zh": "显示线性进度条。可以是指定应用于进度条的颜色的 String（任何材料颜色或主题颜色 - primary、secondary、success、info、warning、error），也可以是使用组件颜色（由 color 属性设置 - 如果组件支持）或主要颜色的 Boolean。",
+      "required": false
     },
     "max-errors": {
       "default": "1",
       "value": "",
       "type": "string | number",
+      "version": "",
       "description": "Control the maximum number of shown errors from validation.",
-      "description_zh": "控制验证中显示的最大错误数。"
+      "description_zh": "控制验证时显示的错误的最大数量。",
+      "required": false
     },
     "max-width": {
       "default": "undefined",
       "value": "",
       "type": "string | number",
-      "description": "Sets the maximum width of the component.",
-      "description_zh": "设定组件的最大宽度。"
+      "version": "",
+      "description": "Sets the maximum width for the component.",
+      "description_zh": "设置组件的最大宽度。",
+      "required": false
     },
     "menu": {
       "default": "false",
       "value": "",
       "type": "boolean",
+      "version": "",
       "description": "Renders with the menu open by default.",
-      "description_zh": "默认情况下，菜单处于打开状态。"
+      "description_zh": "默认情况下，在菜单打开的情况下进行渲染。",
+      "required": false
     },
     "menu-icon": {
-      "default": "$dropdown",
+      "default": "'$dropdown'",
       "value": "",
-      "type": "any",
+      "type": "  | string  | (string | [string, number])[]  | (new () => any)  | FunctionalComponent",
+      "version": "",
       "description": "Sets the the spin icon.",
-      "description_zh": "设置旋转图标。"
+      "description_zh": "设置旋转图标。",
+      "required": false
     },
     "menu-props": {
       "default": "undefined",
       "value": "",
       "type": "unknown",
+      "version": "",
       "description": "Pass props through to the v-menu component. Accepts an object with anything from v-menu props, camelCase keys are recommended.",
-      "description_zh": "将道具传递到 v-menu 组件。接受带有 v 菜单道具的任何内容的对象，建议使用 camelCase 键。"
+      "description_zh": "将 props 传递给 v-menu 组件。接受带有 v-menu props 中的任何内容的对象，建议使用 camelCase 键。",
+      "required": false
     },
     "messages": {
       "default": "[]",
       "value": "",
       "type": "string | string[]",
-      "description": "Display a list of messages or messages (if using strings)",
-      "description_zh": "显示消息列表或消息（如果使用字符串）"
+      "version": "",
+      "description": "Displays a list of messages or a single message if using a string.",
+      "description_zh": "显示消息列表，如果使用字符串，则显示单个消息。",
+      "required": false
     },
     "min-width": {
       "default": "undefined",
       "value": "",
       "type": "string | number",
-      "description": "Sets the minimum width of the component.",
-      "description_zh": "设定组件的最小宽度。"
+      "version": "",
+      "description": "Sets the minimum width for the component.",
+      "description_zh": "设置组件的最小宽度。",
+      "required": false
     },
     "v-model": {
       "default": "null",
       "value": "",
       "type": "any",
-      "description": "The value of the component v-mode. If the component supports variants, the default is an empty array.",
-      "description_zh": "组件 v-mode 的值。如果组件支持多属性，默认为空数组。"
+      "version": "",
+      "description": "The v-model value of the component. If component supports the multiple prop, this defaults to an empty array.",
+      "description_zh": "组件的 v-model 值。如果 component 支持 multiple prop，则默认为空数组。",
+      "required": false
     },
     "multiple": {
       "default": "false",
       "value": "",
       "type": "boolean",
+      "version": "",
       "description": "Changes select to multiple. Accepts array for value.",
-      "description_zh": "更改选择为多个。接受值的数组。"
+      "description_zh": "将 select 更改为 multiple。接受数组作为值。",
+      "required": false
     },
     "name": {
       "default": "undefined",
       "value": "",
       "type": "string",
-      "description": "Set the name property of the component.",
-      "description_zh": "设置组件的 name 属性."
+      "version": "",
+      "description": "Sets the component’s name attribute.",
+      "description_zh": "设置组件的 name 属性。",
+      "required": false
     },
     "no-data-text": {
-      "default": "$vuetify.noDataText",
+      "default": "'$vuetify.noDataText'",
       "value": "",
       "type": "string",
+      "version": "",
       "description": "Text shown when no items are provided to the component.",
-      "description_zh": "未向组件提供任何项目时显示的文本。"
+      "description_zh": "未向组件提供任何项时显示的文本。",
+      "required": false
     },
     "no-filter": {
       "default": "false",
       "value": "",
       "type": "boolean",
+      "version": "",
       "description": "Do not apply filtering when searching. Useful when data is being filtered server side.",
-      "description_zh": "搜索时不要应用筛选。在服务器端筛选数据时很有用。"
+      "description_zh": "搜索时不要应用筛选。在服务器端筛选数据时很有用。",
+      "required": false
     },
     "open-on-clear": {
       "default": "false",
       "value": "",
       "type": "boolean",
+      "version": "",
       "description": "Open’s the menu whenever the clear icon is clicked.",
-      "description_zh": "每当单击清除图标时，打开菜单。"
+      "description_zh": "每当单击清除图标时，打开菜单。",
+      "required": false
     },
     "open-text": {
-      "default": "$vuetify.open",
+      "default": "'$vuetify.open'",
       "value": "",
       "type": "string",
+      "version": "",
       "description": "Text set to to the inputs aria-label and title when input menu is open.",
-      "description_zh": "当输入菜单打开时，文本设置为输入咏叹调标签和标题。"
+      "description_zh": "当输入菜单打开时，文本设置为输入 aria-label 和 title。",
+      "required": false
     },
     "persistent-clear": {
       "default": "false",
       "value": "",
       "type": "boolean",
+      "version": "",
       "description": "Always show the clearable icon when the input is dirty (By default it only shows on hover).",
-      "description_zh": "当输入变脏时，始终显示可清除图标（默认情况下，它仅在悬停时显示）。"
+      "description_zh": "当输入脏时，始终显示可清除图标（默认情况下，它仅在悬停时显示）。",
+      "required": false
     },
     "persistent-counter": {
       "default": "false",
       "value": "",
       "type": "boolean",
+      "version": "",
       "description": "Forces counter to always be visible.",
-      "description_zh": "计数器的力始终可见。"
+      "description_zh": "强制计数器始终可见。",
+      "required": false
     },
     "persistent-hint": {
       "default": "false",
       "value": "",
       "type": "boolean",
+      "version": "",
       "description": "Forces hint to always be visible.",
-      "description_zh": "力提示始终可见。"
+      "description_zh": "强制提示始终可见。",
+      "required": false
     },
     "persistent-placeholder": {
       "default": "false",
       "value": "",
       "type": "boolean",
+      "version": "",
       "description": "Forces placeholder to always be visible.",
-      "description_zh": "强制占位符始终可见。"
+      "description_zh": "强制占位符始终可见。",
+      "required": false
     },
     "placeholder": {
       "default": "undefined",
       "value": "",
       "type": "string",
+      "version": "",
       "description": "Sets the input’s placeholder text.",
-      "description_zh": "设置输入的占位符文本。"
+      "description_zh": "设置输入的占位符文本。",
+      "required": false
     },
     "prefix": {
       "default": "undefined",
       "value": "",
       "type": "string",
+      "version": "",
       "description": "Displays prefix text.",
-      "description_zh": "显示前缀文本。"
+      "description_zh": "显示前缀文本。",
+      "required": false
     },
     "prepend-icon": {
       "default": "undefined",
       "value": "",
-      "type": "any",
+      "type": "  | string  | (string | [string, number])[]  | (new () => any)  | FunctionalComponent",
+      "version": "",
       "description": "Prepends an icon to the outnside the component’s input, uses the same syntax as v-icon.",
-      "description_zh": "在组件输入的外侧附加一个图标，使用与 v-icon 相同的语法。"
+      "description_zh": "在组件输入的外部预置一个图标，使用与 v-icon 相同的语法。",
+      "required": false
     },
     "prepend-inner-icon": {
       "default": "undefined",
       "value": "",
-      "type": "any",
+      "type": "  | string  | (string | [string, number])[]  | (new () => any)  | FunctionalComponent",
+      "version": "",
       "description": "Creates a v-icon component in the prepend-inner slot.",
-      "description_zh": "在前置内插槽中创建一个 v-icon 组件。"
+      "description_zh": "在 prepend-inner 插槽中创建一个 v-icon 组件。",
+      "required": false
     },
     "readonly": {
       "default": "null",
       "value": "",
       "type": "boolean",
+      "version": "",
       "description": "Puts input in readonly state.",
-      "description_zh": "将输入置于只读状态。"
+      "description_zh": "将输入置于只读状态。",
+      "required": false
     },
     "return-object": {
       "default": "false",
       "value": "",
       "type": "boolean",
+      "version": "",
       "description": "Changes the selection behavior to return the object directly rather than the value specified with item-value.",
-      "description_zh": "更改选择行为以直接返回对象，而不是使用 item-value 指定的值。"
+      "description_zh": "更改选择行为以直接返回对象，而不是使用 item-value 指定的值。",
+      "required": false
     },
     "reverse": {
       "default": "false",
       "value": "",
       "type": "boolean",
+      "version": "",
       "description": "Reverses the orientation.",
-      "description_zh": "反转方向。"
+      "description_zh": "反转方向。",
+      "required": false
     },
     "role": {
-      "default": "combobox",
+      "default": "'combobox'",
       "value": "",
       "type": "string",
+      "version": "",
       "description": "The role attribute applied to the input.",
-      "description_zh": "应用于输入的 role 属性。"
+      "description_zh": "应用于输入的 role 属性。",
+      "required": false
     },
     "rounded": {
       "default": "undefined",
       "value": "",
       "type": "string | number | boolean",
+      "version": "",
       "description": "Adds a border radius to the input.",
-      "description_zh": "向输入添加边框半径。"
+      "description_zh": "向输入添加边框半径。",
+      "required": false
     },
     "rules": {
       "default": "[]",
       "value": "",
       "type": "ValidationRule[]",
+      "version": "",
       "description": "Accepts a mixed array of types function, boolean and string. Functions pass an input value as an argument and must return either true / false or a string containing an error message. The input field will enter an error state if a function returns (or any value in the array contains) false or is a string.",
-      "description_zh": "接受 function、boolean 和 string 类型的混合数组。函数将输入值作为参数传递，并且必须返回 true/false 或包含错误消息的字符串。如果函数返回（或数组中的任何值包含）false 或字符串，则输入字段将进入错误状态。"
+      "description_zh": "接受 function、boolean 和 string 类型的混合数组。函数将输入值作为参数传递，并且必须返回 true / false 或包含错误消息的字符串。如果函数返回 （或数组中的任何值包含） false 或为字符串，则输入字段将进入错误状态。",
+      "required": false
     },
     "search": {
       "default": "undefined",
       "value": "",
       "type": "string",
+      "version": "",
       "description": "Text input used to filter items.",
-      "description_zh": "用于筛选项目的文本输入。"
+      "description_zh": "用于筛选项目的文本输入。",
+      "required": false
     },
     "single-line": {
       "default": "false",
       "value": "",
       "type": "boolean",
+      "version": "",
       "description": "Label does not move on focus/dirty.",
-      "description_zh": "标签不会在焦点/脏污时移动。"
+      "description_zh": "标签在聚焦/脏污时不移动。",
+      "required": false
     },
     "suffix": {
       "default": "undefined",
       "value": "",
       "type": "string",
+      "version": "",
       "description": "Displays suffix text.",
-      "description_zh": "显示后缀文本。"
+      "description_zh": "显示后缀文本。",
+      "required": false
     },
     "theme": {
       "default": "undefined",
       "value": "",
       "type": "string",
+      "version": "",
       "description": "Specify a theme for this component and all of its children.",
-      "description_zh": "为此组件及其所有子组件指定主题。"
+      "description_zh": "为此组件及其所有子组件指定主题。",
+      "required": false
     },
     "tile": {
       "default": "false",
       "value": "",
       "type": "boolean",
+      "version": "",
       "description": "Removes any applied border-radius from the component.",
-      "description_zh": "从元件中移除任何应用的边框半径。"
+      "description_zh": "从组件中删除任何应用的 border-radius。",
+      "required": false
     },
     "transition": {
       "default": "false",
       "value": "",
       "type": "string | boolean | (TransitionProps & { component: Component })",
+      "version": "",
       "description": "Sets the component transition. Can be one of the built in or custom transition.",
-      "description_zh": "设置组件转换。可以是内置或自定义过渡之一。"
+      "description_zh": "设置零部件过渡。可以是内置或自定义过渡之一。",
+      "required": false
     },
     "type": {
-      "default": "text",
+      "default": "'text'",
       "value": "",
       "type": "string",
+      "version": "",
       "description": "Sets input type.",
-      "description_zh": "设置输入类型。"
+      "description_zh": "设置输入类型。",
+      "required": false
     },
     "validate-on": {
       "default": "undefined",
       "value": "",
-      "type": " / lazy / blur / input / submit / blur lazy / input lazy / submit lazy / lazy blur / lazy input / lazy submit",
+      "type": " / eager / lazy / blur / input / submit / invalid-input / blur lazy / input lazy / submit lazy / invalid-input lazy / blur eager / input eager / submit eager / invalid-input eager / lazy blur / lazy input / lazy submit / lazy invalid-input / eager blur / eager input / eager submit / eager invalid-input",
+      "version": "",
       "description": "Change what type of event triggers validation to run.",
-      "description_zh": "更改触发验证运行的事件类型。"
+      "description_zh": "更改触发验证的事件类型以运行。",
+      "required": false
     },
     "value-comparator": {
       "default": "undefined",
       "value": "",
       "type": "(a: any, b: any) => boolean",
+      "version": "",
       "description": "Apply a custom comparison algorithm to compare model-value and values contains in the items prop.",
-      "description_zh": "应用自定义比较算法来比较 model-value 和 items prop 中包含的值。"
+      "description_zh": "应用自定义比较算法来比较 models-value 和 items prop 中包含的值。",
+      "required": false
     },
     "variant": {
-      "default": "filled",
+      "default": "'filled'",
       "value": "",
       "type": " / outlined / plain / underlined / filled / solo / solo-inverted / solo-filled",
+      "version": "",
       "description": "Applies a distinct style to the component.",
-      "description_zh": "将不同的样式应用于组件。"
+      "description_zh": "将不同的样式应用于组件。",
+      "required": false
     },
     "width": {
       "default": "undefined",
       "value": "",
       "type": "string | number",
-      "description": "Sets the width of the component.",
-      "description_zh": "设定组件的宽度。"
+      "version": "",
+      "description": "Sets the width for the component.",
+      "description_zh": "设置组件的宽度。",
+      "required": false
     }
   },
-  "link": "https://vuetifyjs.com/zh-Hans/api/v-autocomplete/#links",
-  "link_zh": "https://vuetifyjs.com/zh-Hans/api/v-autocomplete/#links",
+  "link": "https://vuetifyjs.com/en/api/v-autocomplete/",
+  "link_zh": "https://vuetifyjs.com/en/api/v-autocomplete/",
   "typeDetail": {},
   "events": [
     {
       "name": "click:append",
       "description": "Emitted when append icon is clicked.",
-      "description_zh": "单击追加图标时发出。",
+      "description_zh": "单击附加图标时发出。",
       "params": "[MouseEvent]",
       "value": ""
     },
@@ -631,8 +795,8 @@
     },
     {
       "name": "update:modelValue",
-      "description": "An event that is raised when a component's model-value changes.",
-      "description_zh": "当组件的 model-value 更改时引发的事件。",
+      "description": "Event that is emitted when the component’s model changes.",
+      "description_zh": "组件的模型更改时发出的事件。",
       "params": "[any]",
       "value": ""
     },
@@ -649,7 +813,7 @@
     {
       "name": "append",
       "description": "Adds an item inside the input and after input content.",
-      "description_zh": "在输入内容内和输入内容之后添加项目。"
+      "description_zh": "在 input 内容内和 After input 内容中添加一个项目。"
     },
     {
       "name": "append-inner",
@@ -664,22 +828,22 @@
     {
       "name": "chip",
       "description": "Slot for custom chip when using the chip prop.",
-      "description_zh": "使用芯片道具时用于定制芯片的插槽。"
+      "description_zh": "使用 chip 属性时自定义 chip 的插槽。"
     },
     {
       "name": "clear",
       "description": "Slot for custom clear icon (displayed when the clearable prop is equal to true).",
-      "description_zh": "自定义清除图标的插槽（当可清除道具等于 true 时显示）。"
+      "description_zh": "自定义 clear 图标的插槽（当 clearable prop 等于 true 时显示）。"
     },
     {
       "name": "details",
       "description": "Slot for custom input details to modifying the display of messages.",
-      "description_zh": "用于自定义输入详细信息的插槽，用于修改消息的显示。"
+      "description_zh": "用于修改消息显示的自定义输入详细信息的插槽。"
     },
     {
       "name": "item",
       "description": "Define a custom item appearance. The root element of this slot must be a v-list-item with v-bind=\"props\" applied. props includes everything required for the default select list behaviour - including title, value, click handlers, virtual scrolling, and anything else that has been added with item-props.",
-      "description_zh": "定义自定义项外观。此插槽的根元素必须是应用了 v-bind=“props” 的 v-list-item。props 包括默认选择列表行为所需的所有内容 - 包括标题、值、点击处理程序、虚拟滚动以及使用 item-props 添加的任何其他内容。"
+      "description_zh": "定义自定义项外观。这个插槽的根元素必须是一个应用了 v-bind=“props” 的 v-list-item。props 包括默认选择列表行为所需的一切 - 包括 title、value、click 处理程序、虚拟滚动以及通过 item-props 添加的任何其他内容。"
     },
     {
       "name": "label",
@@ -689,7 +853,7 @@
     {
       "name": "loader",
       "description": "Slot for custom loader (displayed when loading prop is equal to true).",
-      "description_zh": "自定义加载器的插槽（当加载道具等于 true 时显示）。"
+      "description_zh": "自定义加载器的插槽（当加载 prop 等于 true 时显示）。"
     },
     {
       "name": "message",
@@ -704,12 +868,12 @@
     {
       "name": "prepend",
       "description": "Adds an item outside the input and before input content.",
-      "description_zh": "在输入内容之外和输入内容之前添加项目。"
+      "description_zh": "在输入内容之外和之前添加项目。"
     },
     {
       "name": "prepend-inner",
       "description": "Slot that is prepended to the input.",
-      "description_zh": "附加到输入前面的插槽。"
+      "description_zh": "Slot 添加到输入的前缀。"
     },
     {
       "name": "prepend-item",
@@ -720,6 +884,14 @@
       "name": "selection",
       "description": "Define a custom selection appearance.",
       "description_zh": "定义自定义选择外观。"
+    }
+  ],
+  "exposed": [
+    {
+      "name": "[string]",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "any"
     }
   ]
 }

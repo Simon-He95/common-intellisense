@@ -2,42 +2,50 @@
   "name": "VConfirmEdit",
   "props": {
     "cancel-text": {
-      "default": "$vuetify.confirmEdit.cancel",
+      "default": "'$vuetify.confirmEdit.cancel'",
       "value": "",
       "type": "string",
+      "version": "",
       "description": "Text for the cancel button",
-      "description_zh": "取消按钮的文本"
+      "description_zh": "取消按钮的文本",
+      "required": false
     },
     "color": {
       "default": "undefined",
       "value": "",
       "type": "string",
+      "version": "",
       "description": "Applies specified color to the control - supports utility colors (for example success or purple) or css color (#033 or rgba(255, 0, 0, 0.5)). Find a list of built-in classes on the colors page.",
-      "description_zh": "将指定的颜色应用于控件 - 支持实用程序颜色（例如 success 或紫色）或 css 颜色（#033 或 rgba（255， 0， 0， 0.5））。在颜色页面上查找内置类的列表。"
+      "description_zh": "将指定的颜色应用于控件 - 支持实用工具颜色（例如 success 或紫色）或 css 颜色（#033 或 rgba（255， 0， 0， 0.5））。在 colors 页面上查找内置类的列表。",
+      "required": false
     },
     "v-model": {
       "default": "undefined",
       "value": "",
       "type": "unknown",
+      "version": "",
       "description": "The v-model value of the component. If component supports the multiple prop, this defaults to an empty array.",
-      "description_zh": "组件的 v 模型值。如果组件支持多 prop，则默认为空数组。"
+      "description_zh": "组件的 v-model 值。如果 component 支持 multiple prop，则默认为空数组。",
+      "required": true
     },
     "ok-text": {
-      "default": "$vuetify.confirmEdit.ok",
+      "default": "'$vuetify.confirmEdit.ok'",
       "value": "",
       "type": "string",
+      "version": "",
       "description": "Text for the ok button",
-      "description_zh": "“确定”按钮的文本"
+      "description_zh": "确定按钮的文本",
+      "required": false
     }
   },
-  "link": "https://vuetifyjs.com/en/api/v-confirm-edit/#links",
-  "link_zh": "https://vuetifyjs.com/en/api/v-confirm-edit/#links",
+  "link": "https://vuetifyjs.com/en/api/v-confirm-edit/",
+  "link_zh": "https://vuetifyjs.com/en/api/v-confirm-edit/",
   "typeDetail": {},
   "events": [
     {
       "name": "cancel",
       "description": "The event emitted when the user clicks the Cancel button",
-      "description_zh": "用户单击“取消”按钮时发出的事件",
+      "description_zh": "用户单击 Cancel 按钮时发出的事件",
       "params": "[]",
       "value": ""
     },
@@ -51,7 +59,7 @@
     {
       "name": "update:modelValue",
       "description": "Event that is emitted when the component’s model changes.",
-      "description_zh": "组件模型更改时发出的事件。",
+      "description_zh": "组件的模型更改时发出的事件。",
       "params": "[unknown]",
       "value": ""
     }
@@ -62,6 +70,26 @@
       "name": "default",
       "description": "The default Vue slot.",
       "description_zh": "默认的 Vue 插槽。"
+    }
+  ],
+  "exposed": [
+    {
+      "name": "cancel",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "() => void"
+    },
+    {
+      "name": "isPristine",
+      "description": "Returns true if the input has not been modified in any way.",
+      "description_zh": "Returns true if the input has not been modified in any way.",
+      "detail": "boolean"
+    },
+    {
+      "name": "save",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "() => void"
     }
   ]
 }

@@ -1,121 +1,168 @@
 {
   "name": "VBtnToggle",
   "props": {
+    "base-color": {
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "description": "Sets the color of component when not focused.",
+      "description_zh": "设置未聚焦时组件的颜色。",
+      "required": false
+    },
     "border": {
       "default": "false",
       "value": "",
       "type": "string | number | boolean",
-      "description": "Apply a border style to the component.",
-      "description_zh": "应用边框样式到组件。"
+      "version": "",
+      "description": "Designates the border-radius applied to the component. This can be xs, sm, md, lg, xl.",
+      "description_zh": "指定应用于组件的 border-radius。这可以是 xs、sm、md、lg、xl。",
+      "required": false
     },
     "color": {
       "default": "undefined",
       "value": "",
       "type": "string",
-      "description": "Applies specified color to the control - supports utility colors (for example success or purple) or css color (for example success or purple) or css color (#033 or rgba(255, 0, 0, 0.5)). Find a list of built-in classes on the colors page.",
-      "description_zh": "将指定的颜色应用于控件 - 支持实用程序颜色（例如成功或紫色）或 css 颜色（例如成功或紫色）或 css 颜色（#033 或 rgba（255， 0， 0， 0.5））。在颜色页面上查找内置类的列表。"
+      "version": "",
+      "description": "Applies specified color to the control - supports utility colors (for example success or purple) or css color (#033 or rgba(255, 0, 0, 0.5)). Find a list of built-in classes on the colors page.",
+      "description_zh": "将指定的颜色应用于控件 - 支持实用工具颜色（例如 success 或紫色）或 css 颜色（#033 或 rgba（255， 0， 0， 0.5））。在 colors 页面上查找内置类的列表。",
+      "required": false
     },
     "density": {
-      "default": "default",
+      "default": "'default'",
       "value": "",
       "type": "default / comfortable / compact",
+      "version": "",
       "description": "Adjusts the vertical height used by the component.",
-      "description_zh": "调整组件使用的垂直高度。"
+      "description_zh": "调整组件使用的垂直高度。",
+      "required": false
     },
     "disabled": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "Set all child components to a disabled state.",
-      "description_zh": "将所有子组件设置为禁用状态。"
+      "version": "",
+      "description": "Puts all children components into a disabled state.",
+      "description_zh": "将所有子组件置于禁用状态。",
+      "required": false
     },
     "divided": {
       "default": "false",
       "value": "",
       "type": "boolean",
+      "version": "",
       "description": "Add dividers between children v-btn components.",
-      "description_zh": "在子 v-btn 组件之间添加分隔线。"
+      "description_zh": "在子 v-btn 组件之间添加分隔线。",
+      "required": false
     },
     "elevation": {
       "default": "undefined",
       "value": "",
       "type": "string | number",
-      "description": "The elevation of the component is acceptable from 0 to 24. You can read more on the Elevation page.",
-      "description_zh": "组件的海拔可接受 0 到 24 之间的值。你可以在 elevation page 浏览更多信息。"
+      "version": "",
+      "description": "Designates an elevation applied to the component between 0 and 24. You can find more information on the elevation page.",
+      "description_zh": "指定应用于组件的 0 到 24 之间的高程。您可以在海拔页面上找到更多信息。",
+      "required": false
     },
     "mandatory": {
       "default": "false",
       "value": "",
       "type": "boolean / force",
-      "description": "Force at least one item to be selected, if available.",
-      "description_zh": "强制至少选择一个项目（如果可用）。"
+      "version": "",
+      "description": "Forces at least one item to always be selected (if available).",
+      "description_zh": "强制始终选择至少一个项目（如果可用）。",
+      "required": false
     },
     ":max": {
       "default": "undefined",
       "value": "",
       "type": "number",
-      "description": "Set the maximum number that can be selected.",
-      "description_zh": "设置可以选择的最大数量。"
+      "version": "",
+      "description": "Sets a maximum number of selections that can be made.",
+      "description_zh": "设置可以进行的最大选择数。",
+      "required": false
     },
     ":v-model": {
       "default": "undefined",
       "value": "",
       "type": "unknown",
-      "description": "The value of the component v-mode. If the component supports variants, the default is an empty array.",
-      "description_zh": "组件 v-mode 的值。如果组件支持多属性，默认为空数组。",
+      "version": "",
+      "description": "The v-model value of the component. If component supports the multiple prop, this defaults to an empty array.",
+      "description_zh": "组件的 v-model 值。如果 component 支持 multiple prop，则默认为空数组。",
       "required": true
     },
     "multiple": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "Allows you to select multiple options.",
-      "description_zh": "允许您选择多个选项。"
+      "version": "",
+      "description": "Allows one to select multiple items.",
+      "description_zh": "允许选择多个项目。",
+      "required": false
     },
     "rounded": {
       "default": "undefined",
       "value": "",
       "type": "string | number | boolean",
+      "version": "",
       "description": "Round edge buttons.",
-      "description_zh": "圆边按钮。"
+      "description_zh": "圆边按钮。",
+      "required": false
     },
     "selected-class": {
       "default": "undefined",
       "value": "",
       "type": "string",
-      "description": "Configure the name of the CSS class that will be applied when the selected item is selected.",
-      "description_zh": "配置被选中项目时应用的 CSS 类名。"
+      "version": "",
+      "description": "Configure the active CSS class applied when an item is selected.",
+      "description_zh": "配置在选择项目时应用的活动 CSS 类。",
+      "required": false
     },
     "tag": {
-      "default": "div",
+      "default": "'div'",
       "value": "",
       "type": "string",
-      "description": "Specifies the custom tag to be used on the root element.",
-      "description_zh": "指定在根元素上使用的自定义标签。"
+      "version": "",
+      "description": "Specify a custom tag used on the root element.",
+      "description_zh": "指定根元素上使用的自定义标记。",
+      "required": false
     },
     "theme": {
       "default": "undefined",
       "value": "",
       "type": "string",
+      "version": "",
       "description": "Specify a theme for this component and all of its children.",
-      "description_zh": "为此组件及其所有子组件指定主题。"
+      "description_zh": "为此组件及其所有子组件指定主题。",
+      "required": false
+    },
+    "tile": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "description": "Removes the component’s border-radius.",
+      "description_zh": "删除组件的 border-radius。",
+      "required": false
     },
     "variant": {
-      "default": "elevated",
+      "default": "'elevated'",
       "value": "",
       "type": "flat / elevated / tonal / outlined / text / plain",
+      "version": "",
       "description": "Applies a distinct style to the component.",
-      "description_zh": "对组件应用不同的样式。"
+      "description_zh": "将不同的样式应用于组件。",
+      "required": false
     }
   },
-  "link": "https://vuetifyjs.com/zh-Hans/api/v-btn-toggle/#links",
-  "link_zh": "https://vuetifyjs.com/zh-Hans/api/v-btn-toggle/#links",
+  "link": "https://vuetifyjs.com/en/api/v-btn-toggle/",
+  "link_zh": "https://vuetifyjs.com/en/api/v-btn-toggle/",
   "typeDetail": {},
   "events": [
     {
       "name": "update:modelValue",
-      "description": "An event that is raised when a component's model-value changes.",
-      "description_zh": "当组件的 model-value 更改时引发的事件。",
+      "description": "Event that is emitted when the component’s model changes.",
+      "description_zh": "组件的模型更改时发出的事件。",
       "params": "[unknown]",
       "value": ""
     }
@@ -124,8 +171,28 @@
   "slots": [
     {
       "name": "default",
-      "description": "Default Vue slot.",
-      "description_zh": "默认Vue 插槽。"
+      "description": "The default Vue slot.",
+      "description_zh": "默认的 Vue 插槽。"
+    }
+  ],
+  "exposed": [
+    {
+      "name": "next",
+      "description": "Activates the next button.",
+      "description_zh": "Activates the next button.",
+      "detail": "() => void"
+    },
+    {
+      "name": "prev",
+      "description": "Activates the previous button.",
+      "description_zh": "Activates the previous button.",
+      "detail": "() => void"
+    },
+    {
+      "name": "select",
+      "description": "Selects a button by index, the second parameter is a boolean to indicate if the button should be selected or not.",
+      "description_zh": "Selects a button by index, the second parameter is a boolean to indicate if the button should be selected or not.",
+      "detail": "(id: number, value: boolean) => void"
     }
   ],
   "suggestions": [

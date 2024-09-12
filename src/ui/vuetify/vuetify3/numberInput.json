@@ -1,0 +1,2830 @@
+{
+  "name": "VNumberInput",
+  "props": {
+    "active": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "description": "Controls the active state of the item. This is typically used to highlight the component.",
+      "description_zh": "控制项的活动状态。这通常用于突出显示组件。",
+      "required": false
+    },
+    "append-icon": {
+      "default": "undefined",
+      "value": "",
+      "type": "  | string  | (string | [string, number])[]  | (new () => any)  | FunctionalComponent",
+      "version": "",
+      "description": "Creates a v-icon component after default content in the append slot.",
+      "description_zh": "在附加插槽中的默认内容之后创建一个 v 图标组件。",
+      "required": false
+    },
+    "autofocus": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "description": "Enables autofocus.",
+      "description_zh": "启用自动对焦。",
+      "required": false
+    },
+    "base-color": {
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "description": "Sets the color of the input when it is not focused.",
+      "description_zh": "设置输入未聚焦时的颜色。",
+      "required": false
+    },
+    "bg-color": {
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "description": "Applies specified color to the control’s background. Used on components that also support the color prop. - supports utility colors (for example success or purple) or css color (#033 or rgba(255, 0, 0, 0.5)). Find a list of built-in classes on the colors page.",
+      "description_zh": "将指定的颜色应用于控件的背景。用于也支持 color 属性的组件。- 支持实用工具颜色（例如 Success 或 Purple）或 CSS 颜色（#033 或 RGBA（255， 0， 0， 0.5））。在 colors 页面上查找内置类的列表。",
+      "required": false
+    },
+    "center-affix": {
+      "default": "undefined",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "description": "Vertically align appendInner, prependInner, clearIcon and label in the center.",
+      "description_zh": "将 appendInner、prependInner、clearIcon 和 label 垂直对齐在中心。",
+      "required": false
+    },
+    "clearable": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "description": "Allows for the component to be cleared.",
+      "description_zh": "允许清除组件。",
+      "required": false
+    },
+    "clear-icon": {
+      "default": "'$clear'",
+      "value": "",
+      "type": "  | string  | (string | [string, number])[]  | (new () => any)  | FunctionalComponent",
+      "version": "",
+      "description": "The icon used when the clearable prop is set to true.",
+      "description_zh": "当 clearable prop 设置为 true 时使用的图标。",
+      "required": false
+    },
+    "color": {
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "description": "Applies specified color to the control - supports utility colors (for example success or purple) or css color (#033 or rgba(255, 0, 0, 0.5)). Find a list of built-in classes on the colors page.",
+      "description_zh": "将指定的颜色应用于控件 - 支持实用工具颜色（例如 success 或紫色）或 css 颜色（#033 或 rgba（255， 0， 0， 0.5））。在 colors 页面上查找内置类的列表。",
+      "required": false
+    },
+    "control-variant": {
+      "default": "'default'",
+      "value": "",
+      "type": "default / stacked / split",
+      "version": "",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "缺少描述（在 github 中编辑）",
+      "required": false
+    },
+    "counter": {
+      "default": "false",
+      "value": "",
+      "type": "string | number | boolean",
+      "version": "",
+      "description": "Creates counter for input length; if no number is specified, it defaults to 25. Does not apply any validation.",
+      "description_zh": "为 input length 创建 counter;如果未指定数字，则默认为 25。不应用任何验证。",
+      "required": false
+    },
+    "counter-value": {
+      "default": "undefined",
+      "value": "",
+      "type": "number | ((value: any) => number)",
+      "version": "",
+      "description": "Function returns the counter display text.",
+      "description_zh": "function 返回计数器显示文本。",
+      "required": false
+    },
+    "density": {
+      "default": "'default'",
+      "value": "",
+      "type": "default / comfortable / compact",
+      "version": "",
+      "description": "Adjusts the vertical height used by the component.",
+      "description_zh": "调整组件使用的垂直高度。",
+      "required": false
+    },
+    "direction": {
+      "default": "'horizontal'",
+      "value": "",
+      "type": "horizontal / vertical",
+      "version": "",
+      "description": "Changes the direction of the input.",
+      "description_zh": "更改输入的方向。",
+      "required": false
+    },
+    "dirty": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "description": "Manually apply the dirty state styling.",
+      "description_zh": "手动应用 dirty state 样式。",
+      "required": false
+    },
+    "disabled": {
+      "default": "null",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "description": "Removes the ability to click or target the input.",
+      "description_zh": "删除单击或定位输入的功能。",
+      "required": false
+    },
+    "error": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "description": "Puts the input in a manual error state.",
+      "description_zh": "将输入置于手动错误状态。",
+      "required": false
+    },
+    "error-messages": {
+      "default": "[]",
+      "value": "",
+      "type": "string | string[]",
+      "version": "",
+      "description": "Puts the input in an error state and passes through custom error messages. Will be combined with any validations that occur from the rules prop. This field will not trigger validation.",
+      "description_zh": "将输入置于错误状态并传递自定义错误消息。将与 rules prop 发生的任何验证相结合。此字段不会触发验证。",
+      "required": false
+    },
+    "flat": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "description": "Removes box shadow when using a variant with elevation.",
+      "description_zh": "使用具有高程的变量时删除框阴影。",
+      "required": false
+    },
+    "focused": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "description": "Forces a focused state styling on the component.",
+      "description_zh": "强制对组件进行 focused state 样式设置。",
+      "required": false
+    },
+    "hide-details": {
+      "default": "false",
+      "value": "",
+      "type": "boolean / auto",
+      "version": "",
+      "description": "Hides hint and validation errors. When set to auto messages will be rendered only if there’s a message (hint, error message, counter value etc) to display.",
+      "description_zh": "隐藏提示和验证错误。当设置为 auto 时，仅当有消息 （提示、错误消息、计数器值等） 要显示时，才会呈现消息。",
+      "required": false
+    },
+    "hide-input": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "缺少描述（在 github 中编辑）",
+      "required": false
+    },
+    "hide-spin-buttons": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "description": "Hides spin buttons on the input when type is set to number.",
+      "description_zh": "当 type 设置为 number 时，隐藏输入上的旋转按钮。",
+      "required": false
+    },
+    "hint": {
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "description": "Displays hint text below the input when focused. Force this always open with the persistent-hint property.",
+      "description_zh": "聚焦时，在输入下方显示提示文本。使用 persistent-hint 属性强制 this always 打开。",
+      "required": false
+    },
+    "id": {
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "description": "Sets the DOM id on the component.",
+      "description_zh": "设置组件上的 DOM ID。",
+      "required": false
+    },
+    "inset": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "缺少描述（在 github 中编辑）",
+      "required": false
+    },
+    "label": {
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "description": "Sets the text of the v-label or v-field-label component.",
+      "description_zh": "设置 v-label 或 v-field-label 组件的文本。",
+      "required": false
+    },
+    "loading": {
+      "default": "false",
+      "value": "",
+      "type": "string | boolean",
+      "version": "",
+      "description": "Displays linear progress bar. Can either be a String which specifies which color is applied to the progress bar (any material color or theme color - primary, secondary, success, info, warning, error) or a Boolean which uses the component color (set by color prop - if it’s supported by the component) or the primary color.",
+      "description_zh": "显示线性进度条。可以是指定应用于进度条的颜色的 String（任何材料颜色或主题颜色 - primary、secondary、success、info、warning、error），也可以是使用组件颜色（由 color 属性设置 - 如果组件支持）或主要颜色的 Boolean。",
+      "required": false
+    },
+    ":max": {
+      "default": "9007199254740991",
+      "value": "",
+      "type": "number",
+      "version": "",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "缺少描述（在 github 中编辑）",
+      "required": false
+    },
+    "max-errors": {
+      "default": "1",
+      "value": "",
+      "type": "string | number",
+      "version": "",
+      "description": "Control the maximum number of shown errors from validation.",
+      "description_zh": "控制验证时显示的错误的最大数量。",
+      "required": false
+    },
+    "max-width": {
+      "default": "undefined",
+      "value": "",
+      "type": "string | number",
+      "version": "",
+      "description": "Sets the maximum width for the component.",
+      "description_zh": "设置组件的最大宽度。",
+      "required": false
+    },
+    "messages": {
+      "default": "[]",
+      "value": "",
+      "type": "string | string[]",
+      "version": "",
+      "description": "Displays a list of messages or a single message if using a string.",
+      "description_zh": "显示消息列表，如果使用字符串，则显示单个消息。",
+      "required": false
+    },
+    ":min": {
+      "default": "-9007199254740991",
+      "value": "",
+      "type": "number",
+      "version": "",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "缺少描述（在 github 中编辑）",
+      "required": false
+    },
+    "min-width": {
+      "default": "undefined",
+      "value": "",
+      "type": "string | number",
+      "version": "",
+      "description": "Sets the minimum width for the component.",
+      "description_zh": "设置组件的最小宽度。",
+      "required": false
+    },
+    "v-model": {
+      "default": "null",
+      "value": "",
+      "type": "Number",
+      "version": "",
+      "description": "The v-model value of the component. If component supports the multiple prop, this defaults to an empty array.",
+      "description_zh": "组件的 v-model 值。如果 component 支持 multiple prop，则默认为空数组。",
+      "required": false
+    },
+    "name": {
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "description": "Sets the component’s name attribute.",
+      "description_zh": "设置组件的 name 属性。",
+      "required": false
+    },
+    "persistent-clear": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "description": "Always show the clearable icon when the input is dirty (By default it only shows on hover).",
+      "description_zh": "当输入脏时，始终显示可清除图标（默认情况下，它仅在悬停时显示）。",
+      "required": false
+    },
+    "persistent-counter": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "description": "Forces counter to always be visible.",
+      "description_zh": "强制计数器始终可见。",
+      "required": false
+    },
+    "persistent-hint": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "description": "Forces hint to always be visible.",
+      "description_zh": "强制提示始终可见。",
+      "required": false
+    },
+    "persistent-placeholder": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "description": "Forces placeholder to always be visible.",
+      "description_zh": "强制占位符始终可见。",
+      "required": false
+    },
+    "placeholder": {
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "description": "Sets the input’s placeholder text.",
+      "description_zh": "设置输入的占位符文本。",
+      "required": false
+    },
+    "prefix": {
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "description": "Displays prefix text.",
+      "description_zh": "显示前缀文本。",
+      "required": false
+    },
+    "prepend-icon": {
+      "default": "undefined",
+      "value": "",
+      "type": "  | string  | (string | [string, number])[]  | (new () => any)  | FunctionalComponent",
+      "version": "",
+      "description": "Prepends an icon to the outnside the component’s input, uses the same syntax as v-icon.",
+      "description_zh": "在组件输入的外部预置一个图标，使用与 v-icon 相同的语法。",
+      "required": false
+    },
+    "readonly": {
+      "default": "null",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "description": "Puts input in readonly state.",
+      "description_zh": "将输入置于只读状态。",
+      "required": false
+    },
+    "reverse": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "description": "Reverses the orientation.",
+      "description_zh": "反转方向。",
+      "required": false
+    },
+    "role": {
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "description": "The role attribute applied to the input.",
+      "description_zh": "应用于输入的 role 属性。",
+      "required": false
+    },
+    "rounded": {
+      "default": "undefined",
+      "value": "",
+      "type": "string | number | boolean",
+      "version": "",
+      "description": "Adds a border radius to the input.",
+      "description_zh": "向输入添加边框半径。",
+      "required": false
+    },
+    "rules": {
+      "default": "[]",
+      "value": "",
+      "type": "ValidationRule[]",
+      "version": "",
+      "description": "Accepts a mixed array of types function, boolean and string. Functions pass an input value as an argument and must return either true / false or a string containing an error message. The input field will enter an error state if a function returns (or any value in the array contains) false or is a string.",
+      "description_zh": "接受 function、boolean 和 string 类型的混合数组。函数将输入值作为参数传递，并且必须返回 true / false 或包含错误消息的字符串。如果函数返回 （或数组中的任何值包含） false 或为字符串，则输入字段将进入错误状态。",
+      "required": false
+    },
+    "single-line": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "description": "Label does not move on focus/dirty.",
+      "description_zh": "标签在聚焦/脏污时不移动。",
+      "required": false
+    },
+    ":step": {
+      "default": "1",
+      "value": "",
+      "type": "number",
+      "version": "",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "缺少描述（在 github 中编辑）",
+      "required": false
+    },
+    "suffix": {
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "description": "Displays suffix text.",
+      "description_zh": "显示后缀文本。",
+      "required": false
+    },
+    "theme": {
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "description": "Specify a theme for this component and all of its children.",
+      "description_zh": "为此组件及其所有子组件指定主题。",
+      "required": false
+    },
+    "tile": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "description": "Removes any applied border-radius from the component.",
+      "description_zh": "从组件中删除任何应用的 border-radius。",
+      "required": false
+    },
+    "type": {
+      "default": "'text'",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "description": "Sets input type.",
+      "description_zh": "设置输入类型。",
+      "required": false
+    },
+    "validate-on": {
+      "default": "undefined",
+      "value": "",
+      "type": " / blur / input / submit / invalid-input / blur lazy / input lazy / submit lazy / invalid-input lazy / blur eager / input eager / submit eager / invalid-input eager / lazy blur / lazy input / lazy submit / lazy invalid-input / eager blur / eager input / eager submit / eager invalid-input / lazy / eager",
+      "version": "",
+      "description": "Change what type of event triggers validation to run.",
+      "description_zh": "更改触发验证的事件类型以运行。",
+      "required": false
+    },
+    "validation-value": {
+      "default": "undefined",
+      "value": "",
+      "type": "any",
+      "version": "",
+      "description": "The value used when applying validation rules.",
+      "description_zh": "应用验证规则时使用的值。",
+      "required": false
+    },
+    "variant": {
+      "default": "'filled'",
+      "value": "",
+      "type": " / underlined / outlined / filled / solo / solo-inverted / solo-filled / plain",
+      "version": "",
+      "description": "Applies a distinct style to the component.",
+      "description_zh": "将不同的样式应用于组件。",
+      "required": false
+    },
+    "width": {
+      "default": "undefined",
+      "value": "",
+      "type": "string | number",
+      "version": "",
+      "description": "Sets the width for the component.",
+      "description_zh": "设置组件的宽度。",
+      "required": false
+    }
+  },
+  "link": "https://vuetifyjs.com/en/api/v-number-input/",
+  "link_zh": "https://vuetifyjs.com/en/api/v-number-input/",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "click:append",
+      "description": "Emitted when append icon is clicked.",
+      "description_zh": "单击附加图标时发出。",
+      "params": "[MouseEvent]",
+      "value": ""
+    },
+    {
+      "name": "click:appendInner",
+      "description": "Emitted when appended inner icon is clicked.",
+      "description_zh": "单击附加的内部图标时发出。",
+      "params": "[MouseEvent]",
+      "value": ""
+    },
+    {
+      "name": "click:clear",
+      "description": "Emitted when clearable icon clicked.",
+      "description_zh": "单击可清除图标时发出。",
+      "params": "[MouseEvent]",
+      "value": ""
+    },
+    {
+      "name": "click:prepend",
+      "description": "Emitted when prepended icon is clicked.",
+      "description_zh": "单击前置图标时发出。",
+      "params": "[MouseEvent]",
+      "value": ""
+    },
+    {
+      "name": "click:prependInner",
+      "description": "Emitted when prepended inner icon is clicked.",
+      "description_zh": "单击前置的内部图标时发出。",
+      "params": "[MouseEvent]",
+      "value": ""
+    },
+    {
+      "name": "update:focused",
+      "description": "Emitted when the input is focused or blurred",
+      "description_zh": "当输入聚焦或模糊时发出",
+      "params": "[boolean]",
+      "value": ""
+    },
+    {
+      "name": "update:modelValue",
+      "description": "Event that is emitted when the component’s model changes.",
+      "description_zh": "组件的模型更改时发出的事件。",
+      "params": "[number]",
+      "value": ""
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "append",
+      "description": "Adds an item inside the input and after input content.",
+      "description_zh": "在 input 内容内和 After input 内容中添加一个项目。"
+    },
+    {
+      "name": "append-inner",
+      "description": "Adds an item inside the input content.",
+      "description_zh": "在输入内容中添加项目。"
+    },
+    {
+      "name": "clear",
+      "description": "Slot for custom clear icon (displayed when the clearable prop is equal to true).",
+      "description_zh": "自定义 clear 图标的插槽（当 clearable prop 等于 true 时显示）。"
+    },
+    {
+      "name": "counter",
+      "description": "Slot for the input’s counter text.",
+      "description_zh": "输入的计数器文本的插槽。"
+    },
+    {
+      "name": "decrement",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "缺少描述（在 github 中编辑）"
+    },
+    {
+      "name": "details",
+      "description": "Slot for custom input details to modifying the display of messages.",
+      "description_zh": "用于修改消息显示的自定义输入详细信息的插槽。"
+    },
+    {
+      "name": "increment",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "缺少描述（在 github 中编辑）"
+    },
+    {
+      "name": "label",
+      "description": "The default slot of the v-label or v-field-label component.",
+      "description_zh": "v-label 或 v-field-label 组件的默认插槽。"
+    },
+    {
+      "name": "loader",
+      "description": "Slot for custom loader (displayed when loading prop is equal to true).",
+      "description_zh": "自定义加载器的插槽（当加载 prop 等于 true 时显示）。"
+    },
+    {
+      "name": "message",
+      "description": "Slot used to customize the message content.",
+      "description_zh": "用于自定义消息内容的插槽。"
+    },
+    {
+      "name": "prepend",
+      "description": "Adds an item outside the input and before input content.",
+      "description_zh": "在输入内容之外和之前添加项目。"
+    },
+    {
+      "name": "prepend-inner",
+      "description": "Slot that is prepended to the input.",
+      "description_zh": "Slot 添加到输入的前缀。"
+    }
+  ],
+  "exposed": [
+    {
+      "name": "accept",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "accessKey",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "accessKeyLabel",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "addEventListener",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "{\n  <K extends keyof HTMLElementEventMap>(\n    type: K,\n    listener: (this: HTMLInputElement, ev: HTMLElementEventMap[K]) => any,\n    options?: boolean | AddEventListenerOptions | undefined,\n  ): void\n  (\n    type: string,\n    listener: EventListenerOrEventListenerObject,\n    options?: boolean | AddEventListenerOptions | undefined,\n  ): void\n}"
+    },
+    {
+      "name": "after",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(...nodes: (string | Node)[]) => void"
+    },
+    {
+      "name": "align",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "alt",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "animate",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(\n  keyframes: Keyframe[] | PropertyIndexedKeyframes | null,\n  options?: number | KeyframeAnimationOptions | undefined,\n) => Animation"
+    },
+    {
+      "name": "append",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(...nodes: (string | Node)[]) => void"
+    },
+    {
+      "name": "appendChild",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "<T extends Node>(node: T) => T"
+    },
+    {
+      "name": "ariaAtomic",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "ariaAutoComplete",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "ariaBusy",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "ariaChecked",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "ariaColCount",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "ariaColIndex",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "ariaColSpan",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "ariaCurrent",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "ariaDisabled",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "ariaExpanded",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "ariaHasPopup",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "ariaHidden",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "ariaInvalid",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "ariaKeyShortcuts",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "ariaLabel",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "ariaLevel",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "ariaLive",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "ariaModal",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "ariaMultiLine",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "ariaMultiSelectable",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "ariaOrientation",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "ariaPlaceholder",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "ariaPosInSet",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "ariaPressed",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "ariaReadOnly",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "ariaRequired",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "ariaRoleDescription",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "ariaRowCount",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "ariaRowIndex",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "ariaRowSpan",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "ariaSelected",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "ariaSetSize",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "ariaSort",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "ariaValueMax",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "ariaValueMin",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "ariaValueNow",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "ariaValueText",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "assignedSlot",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "HTMLSlotElement"
+    },
+    {
+      "name": "attachInternals",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "() => ElementInternals"
+    },
+    {
+      "name": "attachShadow",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(init: ShadowRootInit) => ShadowRoot"
+    },
+    {
+      "name": "ATTRIBUTE_NODE",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "2"
+    },
+    {
+      "name": "attributes",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "{\n  [x: number]: Attr\n  readonly length: number\n  getNamedItem: (qualifiedName: string) => Attr | null\n  getNamedItemNS: (namespace: string | null, localName: string) => Attr | null\n  item: (index: number) => Attr | null\n  removeNamedItem: (qualifiedName: string) => Attr\n  removeNamedItemNS: (namespace: string | null, localName: string) => Attr\n  setNamedItem: (attr: Attr) => Attr | null\n  setNamedItemNS: (attr: Attr) => Attr | null\n  [Symbol.iterator]: () => IterableIterator<Attr>\n}"
+    },
+    {
+      "name": "attributeStyleMap",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "{\n  append: (property: string, ...values: (string | CSSStyleValue)[]) => void\n  clear: () => void\n  delete: (property: string) => void\n  set: (property: string, ...values: (string | CSSStyleValue)[]) => void\n  readonly size: number\n  get: (property: string) => CSSStyleValue | undefined\n  getAll: (property: string) => CSSStyleValue[]\n  has: (property: string) => boolean\n  forEach: (\n    callbackfn: (\n      value: CSSStyleValue[],\n      key: string,\n      parent: StylePropertyMapReadOnly,\n    ) => void,\n    thisArg?: any,\n  ) => void\n  entries: () => IterableIterator<[string, Iterable<CSSStyleValue>]>\n  keys: () => IterableIterator<string>\n  values: () => IterableIterator<Iterable<CSSStyleValue>>\n  [Symbol.iterator]: () => IterableIterator<[string, Iterable<CSSStyleValue>]>\n}"
+    },
+    {
+      "name": "autocapitalize",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "autocomplete",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "AutoFill"
+    },
+    {
+      "name": "autofocus",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "boolean"
+    },
+    {
+      "name": "baseURI",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "before",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(...nodes: (string | Node)[]) => void"
+    },
+    {
+      "name": "blur",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "() => void"
+    },
+    {
+      "name": "capture",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "CDATA_SECTION_NODE",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "4"
+    },
+    {
+      "name": "checked",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "boolean"
+    },
+    {
+      "name": "checkValidity",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "() => boolean"
+    },
+    {
+      "name": "checkVisibility",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(options?: CheckVisibilityOptions | undefined) => boolean"
+    },
+    {
+      "name": "childElementCount",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "number"
+    },
+    {
+      "name": "childNodes",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "{\n  [x: number]: ChildNode\n  item: (index: number) => ChildNode\n  forEach: (\n    callbackfn: (\n      value: ChildNode,\n      key: number,\n      parent: NodeListOf<ChildNode>,\n    ) => void,\n    thisArg?: any,\n  ) => void\n  entries: () => IterableIterator<[number, ChildNode]>\n  keys: () => IterableIterator<number>\n  values: () => IterableIterator<ChildNode>\n  [Symbol.iterator]: () => IterableIterator<ChildNode>\n  readonly length: number\n}"
+    },
+    {
+      "name": "children",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "{\n  [x: number]: Element\n  namedItem: (name: string) => Element | null\n  readonly length: number\n  item: (index: number) => Element | null\n  [Symbol.iterator]: () => IterableIterator<Element>\n}"
+    },
+    {
+      "name": "classList",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "{\n  [x: number]: string\n  readonly length: number\n  value: string\n  toString: () => string\n  add: (...tokens: string[]) => void\n  contains: (token: string) => boolean\n  item: (index: number) => string | null\n  remove: (...tokens: string[]) => void\n  replace: (token: string, newToken: string) => boolean\n  supports: (token: string) => boolean\n  toggle: (token: string, force?: boolean | undefined) => boolean\n  forEach: (\n    callbackfn: (value: string, key: number, parent: DOMTokenList) => void,\n    thisArg?: any,\n  ) => void\n  entries: () => IterableIterator<[number, string]>\n  keys: () => IterableIterator<number>\n  values: () => IterableIterator<string>\n  [Symbol.iterator]: () => IterableIterator<string>\n}"
+    },
+    {
+      "name": "className",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "click",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "() => void"
+    },
+    {
+      "name": "clientHeight",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "number"
+    },
+    {
+      "name": "clientLeft",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "number"
+    },
+    {
+      "name": "clientTop",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "number"
+    },
+    {
+      "name": "clientWidth",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "number"
+    },
+    {
+      "name": "cloneNode",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(deep?: boolean | undefined) => Node"
+    },
+    {
+      "name": "closest",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "{\n  <K extends keyof HTMLElementTagNameMap>(\n    selector: K,\n  ): HTMLElementTagNameMap[K] | null\n  <K extends keyof SVGElementTagNameMap>(\n    selector: K,\n  ): SVGElementTagNameMap[K] | null\n  <K extends keyof MathMLElementTagNameMap>(\n    selector: K,\n  ): MathMLElementTagNameMap[K] | null\n  <E extends Element = Element>(selectors: string): E | null\n}"
+    },
+    {
+      "name": "COMMENT_NODE",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "8"
+    },
+    {
+      "name": "compareDocumentPosition",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(other: Node) => number"
+    },
+    {
+      "name": "computedStyleMap",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "() => StylePropertyMapReadOnly"
+    },
+    {
+      "name": "contains",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(other: Node | null) => boolean"
+    },
+    {
+      "name": "contentEditable",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "controlRef",
+      "description": "Reference to the control element of the field.",
+      "description_zh": "Reference to the control element of the field.",
+      "detail": "HTMLElement"
+    },
+    {
+      "name": "dataset",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "DOMStringMap"
+    },
+    {
+      "name": "defaultChecked",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "boolean"
+    },
+    {
+      "name": "defaultValue",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "dir",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "dirName",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "disabled",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "boolean"
+    },
+    {
+      "name": "dispatchEvent",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(event: Event) => boolean"
+    },
+    {
+      "name": "DOCUMENT_FRAGMENT_NODE",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "11"
+    },
+    {
+      "name": "DOCUMENT_NODE",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "9"
+    },
+    {
+      "name": "DOCUMENT_POSITION_CONTAINED_BY",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "16"
+    },
+    {
+      "name": "DOCUMENT_POSITION_CONTAINS",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "8"
+    },
+    {
+      "name": "DOCUMENT_POSITION_DISCONNECTED",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "1"
+    },
+    {
+      "name": "DOCUMENT_POSITION_FOLLOWING",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "4"
+    },
+    {
+      "name": "DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "32"
+    },
+    {
+      "name": "DOCUMENT_POSITION_PRECEDING",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "2"
+    },
+    {
+      "name": "DOCUMENT_TYPE_NODE",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "10"
+    },
+    {
+      "name": "draggable",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "boolean"
+    },
+    {
+      "name": "ELEMENT_NODE",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "1"
+    },
+    {
+      "name": "enterKeyHint",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "ENTITY_NODE",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "6"
+    },
+    {
+      "name": "ENTITY_REFERENCE_NODE",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "5"
+    },
+    {
+      "name": "errorMessages",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string[]"
+    },
+    {
+      "name": "files",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "{\n  [x: number]: {\n    readonly lastModified: number\n    readonly name: string\n    readonly webkitRelativePath: string\n    readonly size: number\n    readonly type: string\n    arrayBuffer: () => Promise<ArrayBuffer>\n    slice: (\n      start?: number | undefined,\n      end?: number | undefined,\n      contentType?: string | undefined,\n    ) => Blob\n    stream: () => ReadableStream<Uint8Array>\n    text: () => Promise<string>\n  }\n  readonly length: number\n  item: (index: number) => File | null\n  [Symbol.iterator]: () => IterableIterator<File>\n}"
+    },
+    {
+      "name": "firstChild",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "ChildNode"
+    },
+    {
+      "name": "firstElementChild",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "Element"
+    },
+    {
+      "name": "focus",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(options?: FocusOptions | undefined) => void"
+    },
+    {
+      "name": "form",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "HTMLFormElement"
+    },
+    {
+      "name": "formAction",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "formEnctype",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "formMethod",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "formNoValidate",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "boolean"
+    },
+    {
+      "name": "formTarget",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "getAnimations",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(options: GetAnimationsOptions) => Animation[]"
+    },
+    {
+      "name": "getAttribute",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(qualifiedName: string) => string | null"
+    },
+    {
+      "name": "getAttributeNames",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "() => string[]"
+    },
+    {
+      "name": "getAttributeNode",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(qualifiedName: string) => Attr | null"
+    },
+    {
+      "name": "getAttributeNodeNS",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(namespace: string | null, localName: string) => Attr | null"
+    },
+    {
+      "name": "getAttributeNS",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(namespace: string | null, localName: string) => string | null"
+    },
+    {
+      "name": "getBoundingClientRect",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "() => DOMRect"
+    },
+    {
+      "name": "getClientRects",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "() => DOMRectList"
+    },
+    {
+      "name": "getElementsByClassName",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(classNames: string) => HTMLCollectionOf<Element>"
+    },
+    {
+      "name": "getElementsByTagName",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "{\n  <K extends keyof HTMLElementTagNameMap>(\n    qualifiedName: K,\n  ): HTMLCollectionOf<HTMLElementTagNameMap[K]>\n  <K extends keyof SVGElementTagNameMap>(\n    qualifiedName: K,\n  ): HTMLCollectionOf<SVGElementTagNameMap[K]>\n  <K extends keyof MathMLElementTagNameMap>(\n    qualifiedName: K,\n  ): HTMLCollectionOf<MathMLElementTagNameMap[K]>\n  <K extends keyof HTMLElementDeprecatedTagNameMap>(\n    qualifiedName: K,\n  ): HTMLCollectionOf<HTMLElementDeprecatedTagNameMap[K]>\n  (qualifiedName: string): HTMLCollectionOf<Element>\n}"
+    },
+    {
+      "name": "getElementsByTagNameNS",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "{\n  (\n    namespaceURI: 'http://www.w3.org/1999/xhtml',\n    localName: string,\n  ): HTMLCollectionOf<HTMLElement>\n  (\n    namespaceURI: 'http://www.w3.org/2000/svg',\n    localName: string,\n  ): HTMLCollectionOf<SVGElement>\n  (\n    namespaceURI: 'http://www.w3.org/1998/Math/MathML',\n    localName: string,\n  ): HTMLCollectionOf<MathMLElement>\n  (namespace: string | null, localName: string): HTMLCollectionOf<Element>\n}"
+    },
+    {
+      "name": "getRootNode",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(options?: GetRootNodeOptions | undefined) => Node"
+    },
+    {
+      "name": "hasAttribute",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(qualifiedName: string) => boolean"
+    },
+    {
+      "name": "hasAttributeNS",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(namespace: string | null, localName: string) => boolean"
+    },
+    {
+      "name": "hasAttributes",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "() => boolean"
+    },
+    {
+      "name": "hasChildNodes",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "() => boolean"
+    },
+    {
+      "name": "hasPointerCapture",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(pointerId: number) => boolean"
+    },
+    {
+      "name": "height",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "number"
+    },
+    {
+      "name": "hidden",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "boolean"
+    },
+    {
+      "name": "hidePopover",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "() => void"
+    },
+    {
+      "name": "id",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "indeterminate",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "boolean"
+    },
+    {
+      "name": "inert",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "boolean"
+    },
+    {
+      "name": "innerHTML",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "innerText",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "inputMode",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "insertAdjacentElement",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(where: InsertPosition, element: Element) => Element | null"
+    },
+    {
+      "name": "insertAdjacentHTML",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(position: InsertPosition, text: string) => void"
+    },
+    {
+      "name": "insertAdjacentText",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(where: InsertPosition, data: string) => void"
+    },
+    {
+      "name": "insertBefore",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "<T extends Node>(node: T, child: Node | null) => T"
+    },
+    {
+      "name": "isConnected",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "boolean"
+    },
+    {
+      "name": "isContentEditable",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "boolean"
+    },
+    {
+      "name": "isDefaultNamespace",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(namespace: string | null) => boolean"
+    },
+    {
+      "name": "isEqualNode",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(otherNode: Node | null) => boolean"
+    },
+    {
+      "name": "isSameNode",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(otherNode: Node | null) => boolean"
+    },
+    {
+      "name": "isValid",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "boolean"
+    },
+    {
+      "name": "labels",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "{\n  [x: number]: HTMLLabelElement\n  item: (index: number) => HTMLLabelElement\n  forEach: (\n    callbackfn: (\n      value: HTMLLabelElement,\n      key: number,\n      parent: NodeListOf<HTMLLabelElement>,\n    ) => void,\n    thisArg?: any,\n  ) => void\n  entries: () => IterableIterator<[number, HTMLLabelElement]>\n  keys: () => IterableIterator<number>\n  values: () => IterableIterator<HTMLLabelElement>\n  [Symbol.iterator]: () => IterableIterator<HTMLLabelElement>\n  readonly length: number\n}"
+    },
+    {
+      "name": "lang",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "lastChild",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "ChildNode"
+    },
+    {
+      "name": "lastElementChild",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "Element"
+    },
+    {
+      "name": "list",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "HTMLDataListElement"
+    },
+    {
+      "name": "localName",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "lookupNamespaceURI",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(prefix: string | null) => string | null"
+    },
+    {
+      "name": "lookupPrefix",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(namespace: string | null) => string | null"
+    },
+    {
+      "name": "matches",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(selectors: string) => boolean"
+    },
+    {
+      "name": "max",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "maxLength",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "number"
+    },
+    {
+      "name": "min",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "minLength",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "number"
+    },
+    {
+      "name": "multiple",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "boolean"
+    },
+    {
+      "name": "name",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "namespaceURI",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "nextElementSibling",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "Element"
+    },
+    {
+      "name": "nextSibling",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "ChildNode"
+    },
+    {
+      "name": "nodeName",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "nodeType",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "number"
+    },
+    {
+      "name": "nodeValue",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "nonce",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "normalize",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "() => void"
+    },
+    {
+      "name": "NOTATION_NODE",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "12"
+    },
+    {
+      "name": "offsetHeight",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "number"
+    },
+    {
+      "name": "offsetLeft",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "number"
+    },
+    {
+      "name": "offsetParent",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "Element"
+    },
+    {
+      "name": "offsetTop",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "number"
+    },
+    {
+      "name": "offsetWidth",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "number"
+    },
+    {
+      "name": "onabort",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: UIEvent) => any"
+    },
+    {
+      "name": "onanimationcancel",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: AnimationEvent) => any"
+    },
+    {
+      "name": "onanimationend",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: AnimationEvent) => any"
+    },
+    {
+      "name": "onanimationiteration",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: AnimationEvent) => any"
+    },
+    {
+      "name": "onanimationstart",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: AnimationEvent) => any"
+    },
+    {
+      "name": "onauxclick",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: MouseEvent) => any"
+    },
+    {
+      "name": "onbeforeinput",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: InputEvent) => any"
+    },
+    {
+      "name": "onblur",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: FocusEvent) => any"
+    },
+    {
+      "name": "oncancel",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: Event) => any"
+    },
+    {
+      "name": "oncanplay",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: Event) => any"
+    },
+    {
+      "name": "oncanplaythrough",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: Event) => any"
+    },
+    {
+      "name": "onchange",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: Event) => any"
+    },
+    {
+      "name": "onclick",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: MouseEvent) => any"
+    },
+    {
+      "name": "onclose",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: Event) => any"
+    },
+    {
+      "name": "oncontextmenu",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: MouseEvent) => any"
+    },
+    {
+      "name": "oncopy",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: ClipboardEvent) => any"
+    },
+    {
+      "name": "oncuechange",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: Event) => any"
+    },
+    {
+      "name": "oncut",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: ClipboardEvent) => any"
+    },
+    {
+      "name": "ondblclick",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: MouseEvent) => any"
+    },
+    {
+      "name": "ondrag",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: DragEvent) => any"
+    },
+    {
+      "name": "ondragend",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: DragEvent) => any"
+    },
+    {
+      "name": "ondragenter",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: DragEvent) => any"
+    },
+    {
+      "name": "ondragleave",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: DragEvent) => any"
+    },
+    {
+      "name": "ondragover",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: DragEvent) => any"
+    },
+    {
+      "name": "ondragstart",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: DragEvent) => any"
+    },
+    {
+      "name": "ondrop",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: DragEvent) => any"
+    },
+    {
+      "name": "ondurationchange",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: Event) => any"
+    },
+    {
+      "name": "onemptied",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: Event) => any"
+    },
+    {
+      "name": "onended",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: Event) => any"
+    },
+    {
+      "name": "onerror",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "OnErrorEventHandler"
+    },
+    {
+      "name": "onfocus",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: FocusEvent) => any"
+    },
+    {
+      "name": "onformdata",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: FormDataEvent) => any"
+    },
+    {
+      "name": "onfullscreenchange",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: Element, ev: Event) => any"
+    },
+    {
+      "name": "onfullscreenerror",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: Element, ev: Event) => any"
+    },
+    {
+      "name": "ongotpointercapture",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: PointerEvent) => any"
+    },
+    {
+      "name": "oninput",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: Event) => any"
+    },
+    {
+      "name": "oninvalid",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: Event) => any"
+    },
+    {
+      "name": "onkeydown",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: KeyboardEvent) => any"
+    },
+    {
+      "name": "onkeypress",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: KeyboardEvent) => any"
+    },
+    {
+      "name": "onkeyup",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: KeyboardEvent) => any"
+    },
+    {
+      "name": "onload",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: Event) => any"
+    },
+    {
+      "name": "onloadeddata",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: Event) => any"
+    },
+    {
+      "name": "onloadedmetadata",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: Event) => any"
+    },
+    {
+      "name": "onloadstart",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: Event) => any"
+    },
+    {
+      "name": "onlostpointercapture",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: PointerEvent) => any"
+    },
+    {
+      "name": "onmousedown",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: MouseEvent) => any"
+    },
+    {
+      "name": "onmouseenter",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: MouseEvent) => any"
+    },
+    {
+      "name": "onmouseleave",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: MouseEvent) => any"
+    },
+    {
+      "name": "onmousemove",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: MouseEvent) => any"
+    },
+    {
+      "name": "onmouseout",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: MouseEvent) => any"
+    },
+    {
+      "name": "onmouseover",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: MouseEvent) => any"
+    },
+    {
+      "name": "onmouseup",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: MouseEvent) => any"
+    },
+    {
+      "name": "onpaste",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: ClipboardEvent) => any"
+    },
+    {
+      "name": "onpause",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: Event) => any"
+    },
+    {
+      "name": "onplay",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: Event) => any"
+    },
+    {
+      "name": "onplaying",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: Event) => any"
+    },
+    {
+      "name": "onpointercancel",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: PointerEvent) => any"
+    },
+    {
+      "name": "onpointerdown",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: PointerEvent) => any"
+    },
+    {
+      "name": "onpointerenter",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: PointerEvent) => any"
+    },
+    {
+      "name": "onpointerleave",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: PointerEvent) => any"
+    },
+    {
+      "name": "onpointermove",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: PointerEvent) => any"
+    },
+    {
+      "name": "onpointerout",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: PointerEvent) => any"
+    },
+    {
+      "name": "onpointerover",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: PointerEvent) => any"
+    },
+    {
+      "name": "onpointerup",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: PointerEvent) => any"
+    },
+    {
+      "name": "onprogress",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: ProgressEvent<EventTarget>) => any"
+    },
+    {
+      "name": "onratechange",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: Event) => any"
+    },
+    {
+      "name": "onreset",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: Event) => any"
+    },
+    {
+      "name": "onresize",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: UIEvent) => any"
+    },
+    {
+      "name": "onscroll",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: Event) => any"
+    },
+    {
+      "name": "onscrollend",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: Event) => any"
+    },
+    {
+      "name": "onsecuritypolicyviolation",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: SecurityPolicyViolationEvent) => any"
+    },
+    {
+      "name": "onseeked",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: Event) => any"
+    },
+    {
+      "name": "onseeking",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: Event) => any"
+    },
+    {
+      "name": "onselect",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: Event) => any"
+    },
+    {
+      "name": "onselectionchange",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: Event) => any"
+    },
+    {
+      "name": "onselectstart",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: Event) => any"
+    },
+    {
+      "name": "onslotchange",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: Event) => any"
+    },
+    {
+      "name": "onstalled",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: Event) => any"
+    },
+    {
+      "name": "onsubmit",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: SubmitEvent) => any"
+    },
+    {
+      "name": "onsuspend",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: Event) => any"
+    },
+    {
+      "name": "ontimeupdate",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: Event) => any"
+    },
+    {
+      "name": "ontoggle",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: Event) => any"
+    },
+    {
+      "name": "ontouchcancel",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: TouchEvent) => any"
+    },
+    {
+      "name": "ontouchend",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: TouchEvent) => any"
+    },
+    {
+      "name": "ontouchmove",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: TouchEvent) => any"
+    },
+    {
+      "name": "ontouchstart",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: TouchEvent) => any"
+    },
+    {
+      "name": "ontransitioncancel",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: TransitionEvent) => any"
+    },
+    {
+      "name": "ontransitionend",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: TransitionEvent) => any"
+    },
+    {
+      "name": "ontransitionrun",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: TransitionEvent) => any"
+    },
+    {
+      "name": "ontransitionstart",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: TransitionEvent) => any"
+    },
+    {
+      "name": "onvolumechange",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: Event) => any"
+    },
+    {
+      "name": "onwaiting",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: Event) => any"
+    },
+    {
+      "name": "onwebkitanimationend",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: Event) => any"
+    },
+    {
+      "name": "onwebkitanimationiteration",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: Event) => any"
+    },
+    {
+      "name": "onwebkitanimationstart",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: Event) => any"
+    },
+    {
+      "name": "onwebkittransitionend",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: Event) => any"
+    },
+    {
+      "name": "onwheel",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(this: GlobalEventHandlers, ev: WheelEvent) => any"
+    },
+    {
+      "name": "outerHTML",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "outerText",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "ownerDocument",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "Document"
+    },
+    {
+      "name": "parentElement",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "HTMLElement"
+    },
+    {
+      "name": "parentNode",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "ParentNode"
+    },
+    {
+      "name": "part",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "{\n  [x: number]: string\n  readonly length: number\n  value: string\n  toString: () => string\n  add: (...tokens: string[]) => void\n  contains: (token: string) => boolean\n  item: (index: number) => string | null\n  remove: (...tokens: string[]) => void\n  replace: (token: string, newToken: string) => boolean\n  supports: (token: string) => boolean\n  toggle: (token: string, force?: boolean | undefined) => boolean\n  forEach: (\n    callbackfn: (value: string, key: number, parent: DOMTokenList) => void,\n    thisArg?: any,\n  ) => void\n  entries: () => IterableIterator<[number, string]>\n  keys: () => IterableIterator<number>\n  values: () => IterableIterator<string>\n  [Symbol.iterator]: () => IterableIterator<string>\n}"
+    },
+    {
+      "name": "pattern",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "placeholder",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "popover",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "popoverTargetAction",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "popoverTargetElement",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "Element"
+    },
+    {
+      "name": "prefix",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "prepend",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(...nodes: (string | Node)[]) => void"
+    },
+    {
+      "name": "previousElementSibling",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "Element"
+    },
+    {
+      "name": "previousSibling",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "ChildNode"
+    },
+    {
+      "name": "PROCESSING_INSTRUCTION_NODE",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "7"
+    },
+    {
+      "name": "querySelector",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "{\n  <K extends keyof HTMLElementTagNameMap>(\n    selectors: K,\n  ): HTMLElementTagNameMap[K] | null\n  <K extends keyof SVGElementTagNameMap>(\n    selectors: K,\n  ): SVGElementTagNameMap[K] | null\n  <K extends keyof MathMLElementTagNameMap>(\n    selectors: K,\n  ): MathMLElementTagNameMap[K] | null\n  <K extends keyof HTMLElementDeprecatedTagNameMap>(\n    selectors: K,\n  ): HTMLElementDeprecatedTagNameMap[K] | null\n  <E extends Element = Element>(selectors: string): E | null\n}"
+    },
+    {
+      "name": "querySelectorAll",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "{\n  <K extends keyof HTMLElementTagNameMap>(\n    selectors: K,\n  ): NodeListOf<HTMLElementTagNameMap[K]>\n  <K extends keyof SVGElementTagNameMap>(\n    selectors: K,\n  ): NodeListOf<SVGElementTagNameMap[K]>\n  <K extends keyof MathMLElementTagNameMap>(\n    selectors: K,\n  ): NodeListOf<MathMLElementTagNameMap[K]>\n  <K extends keyof HTMLElementDeprecatedTagNameMap>(\n    selectors: K,\n  ): NodeListOf<HTMLElementDeprecatedTagNameMap[K]>\n  <E extends Element = Element>(selectors: string): NodeListOf<E>\n}"
+    },
+    {
+      "name": "readOnly",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "boolean"
+    },
+    {
+      "name": "releasePointerCapture",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(pointerId: number) => void"
+    },
+    {
+      "name": "remove",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "() => void"
+    },
+    {
+      "name": "removeAttribute",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(qualifiedName: string) => void"
+    },
+    {
+      "name": "removeAttributeNode",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(attr: Attr) => Attr"
+    },
+    {
+      "name": "removeAttributeNS",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(namespace: string | null, localName: string) => void"
+    },
+    {
+      "name": "removeChild",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "<T extends Node>(child: T) => T"
+    },
+    {
+      "name": "removeEventListener",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "{\n  <K extends keyof HTMLElementEventMap>(\n    type: K,\n    listener: (this: HTMLInputElement, ev: HTMLElementEventMap[K]) => any,\n    options?: boolean | EventListenerOptions | undefined,\n  ): void\n  (\n    type: string,\n    listener: EventListenerOrEventListenerObject,\n    options?: boolean | EventListenerOptions | undefined,\n  ): void\n}"
+    },
+    {
+      "name": "replaceChild",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "<T extends Node>(node: Node, child: T) => T"
+    },
+    {
+      "name": "replaceChildren",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(...nodes: (string | Node)[]) => void"
+    },
+    {
+      "name": "replaceWith",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(...nodes: (string | Node)[]) => void"
+    },
+    {
+      "name": "reportValidity",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "() => boolean"
+    },
+    {
+      "name": "requestFullscreen",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(options?: FullscreenOptions | undefined) => Promise<void>"
+    },
+    {
+      "name": "requestPointerLock",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "() => void"
+    },
+    {
+      "name": "required",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "boolean"
+    },
+    {
+      "name": "reset",
+      "description": "Resets the input value.",
+      "description_zh": "Resets the input value.",
+      "detail": "() => Promise<void>"
+    },
+    {
+      "name": "resetValidation",
+      "description": "Resets validation of the input without modifying its value.",
+      "description_zh": "Resets validation of the input without modifying its value.",
+      "detail": "() => Promise<void>"
+    },
+    {
+      "name": "role",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "scroll",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "{\n  (options?: ScrollToOptions | undefined): void\n  (x: number, y: number): void\n}"
+    },
+    {
+      "name": "scrollBy",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "{\n  (options?: ScrollToOptions | undefined): void\n  (x: number, y: number): void\n}"
+    },
+    {
+      "name": "scrollHeight",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "number"
+    },
+    {
+      "name": "scrollIntoView",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(arg?: boolean | ScrollIntoViewOptions | undefined) => void"
+    },
+    {
+      "name": "scrollLeft",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "number"
+    },
+    {
+      "name": "scrollTo",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "{\n  (options?: ScrollToOptions | undefined): void\n  (x: number, y: number): void\n}"
+    },
+    {
+      "name": "scrollTop",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "number"
+    },
+    {
+      "name": "scrollWidth",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "number"
+    },
+    {
+      "name": "select",
+      "description": "The function used to select an items. The first argument expects the value of the item.",
+      "description_zh": "The function used to select an items. The first argument expects the value of the item.",
+      "detail": "() => void"
+    },
+    {
+      "name": "selectionDirection",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "'forward' | 'backward' | 'none'"
+    },
+    {
+      "name": "selectionEnd",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "number"
+    },
+    {
+      "name": "selectionStart",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "number"
+    },
+    {
+      "name": "setAttribute",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(qualifiedName: string, value: string) => void"
+    },
+    {
+      "name": "setAttributeNode",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(attr: Attr) => Attr | null"
+    },
+    {
+      "name": "setAttributeNodeNS",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(attr: Attr) => Attr | null"
+    },
+    {
+      "name": "setAttributeNS",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(\n  namespace: string | null,\n  qualifiedName: string,\n  value: string,\n) => void"
+    },
+    {
+      "name": "setCustomValidity",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(error: string) => void"
+    },
+    {
+      "name": "setPointerCapture",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(pointerId: number) => void"
+    },
+    {
+      "name": "setRangeText",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "{\n  (replacement: string): void\n  (\n    replacement: string,\n    start: number,\n    end: number,\n    selectionMode?: SelectionMode | undefined,\n  ): void\n}"
+    },
+    {
+      "name": "setSelectionRange",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(\n  start: number | null,\n  end: number | null,\n  direction?: 'forward' | 'backward' | 'none' | undefined,\n) => void"
+    },
+    {
+      "name": "shadowRoot",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "ShadowRoot"
+    },
+    {
+      "name": "showPicker",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "() => void"
+    },
+    {
+      "name": "showPopover",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "() => void"
+    },
+    {
+      "name": "size",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "number"
+    },
+    {
+      "name": "slot",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "spellcheck",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "boolean"
+    },
+    {
+      "name": "src",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "step",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "stepDown",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(n?: number | undefined) => void"
+    },
+    {
+      "name": "stepUp",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(n?: number | undefined) => void"
+    },
+    {
+      "name": "style",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "{\n  [x: number]: string\n  accentColor: string\n  alignContent: string\n  alignItems: string\n  alignSelf: string\n  alignmentBaseline: string\n  all: string\n  animation: string\n  animationComposition: string\n  animationDelay: string\n  animationDirection: string\n  animationDuration: string\n  animationFillMode: string\n  animationIterationCount: string\n  animationName: string\n  animationPlayState: string\n  animationTimingFunction: string\n  appearance: string\n  aspectRatio: string\n  backdropFilter: string\n  backfaceVisibility: string\n  background: string\n  backgroundAttachment: string\n  backgroundBlendMode: string\n  backgroundClip: string\n  backgroundColor: string\n  backgroundImage: string\n  backgroundOrigin: string\n  backgroundPosition: string\n  backgroundPositionX: string\n  backgroundPositionY: string\n  backgroundRepeat: string\n  backgroundSize: string\n  baselineShift: string\n  blockSize: string\n  border: string\n  borderBlock: string\n  borderBlockColor: string\n  borderBlockEnd: string\n  borderBlockEndColor: string\n  borderBlockEndStyle: string\n  borderBlockEndWidth: string\n  borderBlockStart: string\n  borderBlockStartColor: string\n  borderBlockStartStyle: string\n  borderBlockStartWidth: string\n  borderBlockStyle: string\n  borderBlockWidth: string\n  borderBottom: string\n  borderBottomColor: string\n  borderBottomLeftRadius: string\n  borderBottomRightRadius: string\n  borderBottomStyle: string\n  borderBottomWidth: string\n  borderCollapse: string\n  borderColor: string\n  borderEndEndRadius: string\n  borderEndStartRadius: string\n  borderImage: string\n  borderImageOutset: string\n  borderImageRepeat: string\n  borderImageSlice: string\n  borderImageSource: string\n  borderImageWidth: string\n  borderInline: string\n  borderInlineColor: string\n  borderInlineEnd: string\n  borderInlineEndColor: string\n  borderInlineEndStyle: string\n  borderInlineEndWidth: string\n  borderInlineStart: string\n  borderInlineStartColor: string\n  borderInlineStartStyle: string\n  borderInlineStartWidth: string\n  borderInlineStyle: string\n  borderInlineWidth: string\n  borderLeft: string\n  borderLeftColor: string\n  borderLeftStyle: string\n  borderLeftWidth: string\n  borderRadius: string\n  borderRight: string\n  borderRightColor: string\n  borderRightStyle: string\n  borderRightWidth: string\n  borderSpacing: string\n  borderStartEndRadius: string\n  borderStartStartRadius: string\n  borderStyle: string\n  borderTop: string\n  borderTopColor: string\n  borderTopLeftRadius: string\n  borderTopRightRadius: string\n  borderTopStyle: string\n  borderTopWidth: string\n  borderWidth: string\n  bottom: string\n  boxShadow: string\n  boxSizing: string\n  breakAfter: string\n  breakBefore: string\n  breakInside: string\n  captionSide: string\n  caretColor: string\n  clear: string\n  clip: string\n  clipPath: string\n  clipRule: string\n  color: string\n  colorInterpolation: string\n  colorInterpolationFilters: string\n  colorScheme: string\n  columnCount: string\n  columnFill: string\n  columnGap: string\n  columnRule: string\n  columnRuleColor: string\n  columnRuleStyle: string\n  columnRuleWidth: string\n  columnSpan: string\n  columnWidth: string\n  columns: string\n  contain: string\n  containIntrinsicBlockSize: string\n  containIntrinsicHeight: string\n  containIntrinsicInlineSize: string\n  containIntrinsicSize: string\n  containIntrinsicWidth: string\n  container: string\n  containerName: string\n  containerType: string\n  content: string\n  counterIncrement: string\n  counterReset: string\n  counterSet: string\n  cssFloat: string\n  cssText: string\n  cursor: string\n  direction: string\n  display: string\n  dominantBaseline: string\n  emptyCells: string\n  fill: string\n  fillOpacity: string\n  fillRule: string\n  filter: string\n  flex: string\n  flexBasis: string\n  flexDirection: string\n  flexFlow: string\n  flexGrow: string\n  flexShrink: string\n  flexWrap: string\n  float: string\n  floodColor: string\n  floodOpacity: string\n  font: string\n  fontFamily: string\n  fontFeatureSettings: string\n  fontKerning: string\n  fontOpticalSizing: string\n  fontPalette: string\n  fontSize: string\n  fontSizeAdjust: string\n  fontStretch: string\n  fontStyle: string\n  fontSynthesis: string\n  fontSynthesisSmallCaps: string\n  fontSynthesisStyle: string\n  fontSynthesisWeight: string\n  fontVariant: string\n  fontVariantAlternates: string\n  fontVariantCaps: string\n  fontVariantEastAsian: string\n  fontVariantLigatures: string\n  fontVariantNumeric: string\n  fontVariantPosition: string\n  fontVariationSettings: string\n  fontWeight: string\n  forcedColorAdjust: string\n  gap: string\n  grid: string\n  gridArea: string\n  gridAutoColumns: string\n  gridAutoFlow: string\n  gridAutoRows: string\n  gridColumn: string\n  gridColumnEnd: string\n  gridColumnGap: string\n  gridColumnStart: string\n  gridGap: string\n  gridRow: string\n  gridRowEnd: string\n  gridRowGap: string\n  gridRowStart: string\n  gridTemplate: string\n  gridTemplateAreas: string\n  gridTemplateColumns: string\n  gridTemplateRows: string\n  height: string\n  hyphenateCharacter: string\n  hyphens: string\n  imageOrientation: string\n  imageRendering: string\n  inlineSize: string\n  inset: string\n  insetBlock: string\n  insetBlockEnd: string\n  insetBlockStart: string\n  insetInline: string\n  insetInlineEnd: string\n  insetInlineStart: string\n  isolation: string\n  justifyContent: string\n  justifyItems: string\n  justifySelf: string\n  left: string\n  readonly length: number\n  letterSpacing: string\n  lightingColor: string\n  lineBreak: string\n  lineHeight: string\n  listStyle: string\n  listStyleImage: string\n  listStylePosition: string\n  listStyleType: string\n  margin: string\n  marginBlock: string\n  marginBlockEnd: string\n  marginBlockStart: string\n  marginBottom: string\n  marginInline: string\n  marginInlineEnd: string\n  marginInlineStart: string\n  marginLeft: string\n  marginRight: string\n  marginTop: string\n  marker: string\n  markerEnd: string\n  markerMid: string\n  markerStart: string\n  mask: string\n  maskClip: string\n  maskComposite: string\n  maskImage: string\n  maskMode: string\n  maskOrigin: string\n  maskPosition: string\n  maskRepeat: string\n  maskSize: string\n  maskType: string\n  mathStyle: string\n  maxBlockSize: string\n  maxHeight: string\n  maxInlineSize: string\n  maxWidth: string\n  minBlockSize: string\n  minHeight: string\n  minInlineSize: string\n  minWidth: string\n  mixBlendMode: string\n  objectFit: string\n  objectPosition: string\n  offset: string\n  offsetDistance: string\n  offsetPath: string\n  offsetRotate: string\n  opacity: string\n  order: string\n  orphans: string\n  outline: string\n  outlineColor: string\n  outlineOffset: string\n  outlineStyle: string\n  outlineWidth: string\n  overflow: string\n  overflowAnchor: string\n  overflowClipMargin: string\n  overflowWrap: string\n  overflowX: string\n  overflowY: string\n  overscrollBehavior: string\n  overscrollBehaviorBlock: string\n  overscrollBehaviorInline: string\n  overscrollBehaviorX: string\n  overscrollBehaviorY: string\n  padding: string\n  paddingBlock: string\n  paddingBlockEnd: string\n  paddingBlockStart: string\n  paddingBottom: string\n  paddingInline: string\n  paddingInlineEnd: string\n  paddingInlineStart: string\n  paddingLeft: string\n  paddingRight: string\n  paddingTop: string\n  page: string\n  pageBreakAfter: string\n  pageBreakBefore: string\n  pageBreakInside: string\n  paintOrder: string\n  readonly parentRule: {\n    cssText: string\n    readonly parentRule: any | null\n    readonly parentStyleSheet: {\n      readonly cssRules: {\n        [x: number]: any\n        readonly length: number\n        item: (index: number) => CSSRule | null\n        [Symbol.iterator]: () => IterableIterator<CSSRule>\n      }\n      readonly ownerRule: any | null\n      readonly rules: {\n        [x: number]: any\n        readonly length: number\n        item: (index: number) => CSSRule | null\n        [Symbol.iterator]: () => IterableIterator<CSSRule>\n      }\n      addRule: (\n        selector?: string | undefined,\n        style?: string | undefined,\n        index?: number | undefined,\n      ) => number\n      deleteRule: (index: number) => void\n      insertRule: (rule: string, index?: number | undefined) => number\n      removeRule: (index?: number | undefined) => void\n      replace: (text: string) => Promise<CSSStyleSheet>\n      replaceSync: (text: string) => void\n      disabled: boolean\n      readonly href: string | null\n      readonly media: {\n        [x: number]: string\n        readonly length: number\n        mediaText: string\n        toString: () => string\n        appendMedium: (medium: string) => void\n        deleteMedium: (medium: string) => void\n        item: (index: number) => string | null\n        [Symbol.iterator]: () => IterableIterator<string>\n      }\n      readonly ownerNode: Element | ProcessingInstruction | null\n      readonly parentStyleSheet: any | null\n      readonly title: string | null\n      readonly type: string\n    } | null\n    readonly type: number\n    readonly STYLE_RULE: 1\n    readonly CHARSET_RULE: 2\n    readonly IMPORT_RULE: 3\n    readonly MEDIA_RULE: 4\n    readonly FONT_FACE_RULE: 5\n    readonly PAGE_RULE: 6\n    readonly NAMESPACE_RULE: 10\n    readonly KEYFRAMES_RULE: 7\n    readonly KEYFRAME_RULE: 8\n    readonly SUPPORTS_RULE: 12\n  } | null\n  perspective: string\n  perspectiveOrigin: string\n  placeContent: string\n  placeItems: string\n  placeSelf: string\n  pointerEvents: string\n  position: string\n  printColorAdjust: string\n  quotes: string\n  resize: string\n  right: string\n  rotate: string\n  rowGap: string\n  rubyPosition: string\n  scale: string\n  scrollBehavior: string\n  scrollMargin: string\n  scrollMarginBlock: string\n  scrollMarginBlockEnd: string\n  scrollMarginBlockStart: string\n  scrollMarginBottom: string\n  scrollMarginInline: string\n  scrollMarginInlineEnd: string\n  scrollMarginInlineStart: string\n  scrollMarginLeft: string\n  scrollMarginRight: string\n  scrollMarginTop: string\n  scrollPadding: string\n  scrollPaddingBlock: string\n  scrollPaddingBlockEnd: string\n  scrollPaddingBlockStart: string\n  scrollPaddingBottom: string\n  scrollPaddingInline: string\n  scrollPaddingInlineEnd: string\n  scrollPaddingInlineStart: string\n  scrollPaddingLeft: string\n  scrollPaddingRight: string\n  scrollPaddingTop: string\n  scrollSnapAlign: string\n  scrollSnapStop: string\n  scrollSnapType: string\n  scrollbarGutter: string\n  shapeImageThreshold: string\n  shapeMargin: string\n  shapeOutside: string\n  shapeRendering: string\n  stopColor: string\n  stopOpacity: string\n  stroke: string\n  strokeDasharray: string\n  strokeDashoffset: string\n  strokeLinecap: string\n  strokeLinejoin: string\n  strokeMiterlimit: string\n  strokeOpacity: string\n  strokeWidth: string\n  tabSize: string\n  tableLayout: string\n  textAlign: string\n  textAlignLast: string\n  textAnchor: string\n  textCombineUpright: string\n  textDecoration: string\n  textDecorationColor: string\n  textDecorationLine: string\n  textDecorationSkipInk: string\n  textDecorationStyle: string\n  textDecorationThickness: string\n  textEmphasis: string\n  textEmphasisColor: string\n  textEmphasisPosition: string\n  textEmphasisStyle: string\n  textIndent: string\n  textOrientation: string\n  textOverflow: string\n  textRendering: string\n  textShadow: string\n  textTransform: string\n  textUnderlineOffset: string\n  textUnderlinePosition: string\n  top: string\n  touchAction: string\n  transform: string\n  transformBox: string\n  transformOrigin: string\n  transformStyle: string\n  transition: string\n  transitionDelay: string\n  transitionDuration: string\n  transitionProperty: string\n  transitionTimingFunction: string\n  translate: string\n  unicodeBidi: string\n  userSelect: string\n  verticalAlign: string\n  visibility: string\n  webkitAlignContent: string\n  webkitAlignItems: string\n  webkitAlignSelf: string\n  webkitAnimation: string\n  webkitAnimationDelay: string\n  webkitAnimationDirection: string\n  webkitAnimationDuration: string\n  webkitAnimationFillMode: string\n  webkitAnimationIterationCount: string\n  webkitAnimationName: string\n  webkitAnimationPlayState: string\n  webkitAnimationTimingFunction: string\n  webkitAppearance: string\n  webkitBackfaceVisibility: string\n  webkitBackgroundClip: string\n  webkitBackgroundOrigin: string\n  webkitBackgroundSize: string\n  webkitBorderBottomLeftRadius: string\n  webkitBorderBottomRightRadius: string\n  webkitBorderRadius: string\n  webkitBorderTopLeftRadius: string\n  webkitBorderTopRightRadius: string\n  webkitBoxAlign: string\n  webkitBoxFlex: string\n  webkitBoxOrdinalGroup: string\n  webkitBoxOrient: string\n  webkitBoxPack: string\n  webkitBoxShadow: string\n  webkitBoxSizing: string\n  webkitFilter: string\n  webkitFlex: string\n  webkitFlexBasis: string\n  webkitFlexDirection: string\n  webkitFlexFlow: string\n  webkitFlexGrow: string\n  webkitFlexShrink: string\n  webkitFlexWrap: string\n  webkitJustifyContent: string\n  webkitLineClamp: string\n  webkitMask: string\n  webkitMaskBoxImage: string\n  webkitMaskBoxImageOutset: string\n  webkitMaskBoxImageRepeat: string\n  webkitMaskBoxImageSlice: string\n  webkitMaskBoxImageSource: string\n  webkitMaskBoxImageWidth: string\n  webkitMaskClip: string\n  webkitMaskComposite: string\n  webkitMaskImage: string\n  webkitMaskOrigin: string\n  webkitMaskPosition: string\n  webkitMaskRepeat: string\n  webkitMaskSize: string\n  webkitOrder: string\n  webkitPerspective: string\n  webkitPerspectiveOrigin: string\n  webkitTextFillColor: string\n  webkitTextSizeAdjust: string\n  webkitTextStroke: string\n  webkitTextStrokeColor: string\n  webkitTextStrokeWidth: string\n  webkitTransform: string\n  webkitTransformOrigin: string\n  webkitTransformStyle: string\n  webkitTransition: string\n  webkitTransitionDelay: string\n  webkitTransitionDuration: string\n  webkitTransitionProperty: string\n  webkitTransitionTimingFunction: string\n  webkitUserSelect: string\n  whiteSpace: string\n  widows: string\n  width: string\n  willChange: string\n  wordBreak: string\n  wordSpacing: string\n  wordWrap: string\n  writingMode: string\n  zIndex: string\n  getPropertyPriority: (property: string) => string\n  getPropertyValue: (property: string) => string\n  item: (index: number) => string\n  removeProperty: (property: string) => string\n  setProperty: (\n    property: string,\n    value: string | null,\n    priority?: string | undefined,\n  ) => void\n  [Symbol.iterator]: () => IterableIterator<string>\n}"
+    },
+    {
+      "name": "tabIndex",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "number"
+    },
+    {
+      "name": "tagName",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "TEXT_NODE",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "3"
+    },
+    {
+      "name": "textContent",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "title",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "toggleAttribute",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(qualifiedName: string, force?: boolean | undefined) => boolean"
+    },
+    {
+      "name": "togglePopover",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(force?: boolean | undefined) => void"
+    },
+    {
+      "name": "translate",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "boolean"
+    },
+    {
+      "name": "type",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "useMap",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "validate",
+      "description": "Validates the input’s value.",
+      "description_zh": "Validates the input’s value.",
+      "detail": "(silent: boolean) => Promise<string[]>"
+    },
+    {
+      "name": "validationMessage",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "validity",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "{\n  readonly badInput: boolean\n  readonly customError: boolean\n  readonly patternMismatch: boolean\n  readonly rangeOverflow: boolean\n  readonly rangeUnderflow: boolean\n  readonly stepMismatch: boolean\n  readonly tooLong: boolean\n  readonly tooShort: boolean\n  readonly typeMismatch: boolean\n  readonly valid: boolean\n  readonly valueMissing: boolean\n}"
+    },
+    {
+      "name": "value",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "string"
+    },
+    {
+      "name": "valueAsDate",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "{\n  toString: () => string\n  toDateString: () => string\n  toTimeString: () => string\n  toLocaleString: {\n    (): string\n    (\n      locales?: string | string[] | undefined,\n      options?: Intl.DateTimeFormatOptions | undefined,\n    ): string\n    (\n      locales?: Intl.LocalesArgument,\n      options?: Intl.DateTimeFormatOptions | undefined,\n    ): string\n  }\n  toLocaleDateString: {\n    (): string\n    (\n      locales?: string | string[] | undefined,\n      options?: Intl.DateTimeFormatOptions | undefined,\n    ): string\n    (\n      locales?: Intl.LocalesArgument,\n      options?: Intl.DateTimeFormatOptions | undefined,\n    ): string\n  }\n  toLocaleTimeString: {\n    (): string\n    (\n      locales?: string | string[] | undefined,\n      options?: Intl.DateTimeFormatOptions | undefined,\n    ): string\n    (\n      locales?: Intl.LocalesArgument,\n      options?: Intl.DateTimeFormatOptions | undefined,\n    ): string\n  }\n  valueOf: () => number\n  getTime: () => number\n  getFullYear: () => number\n  getUTCFullYear: () => number\n  getMonth: () => number\n  getUTCMonth: () => number\n  getDate: () => number\n  getUTCDate: () => number\n  getDay: () => number\n  getUTCDay: () => number\n  getHours: () => number\n  getUTCHours: () => number\n  getMinutes: () => number\n  getUTCMinutes: () => number\n  getSeconds: () => number\n  getUTCSeconds: () => number\n  getMilliseconds: () => number\n  getUTCMilliseconds: () => number\n  getTimezoneOffset: () => number\n  setTime: (time: number) => number\n  setMilliseconds: (ms: number) => number\n  setUTCMilliseconds: (ms: number) => number\n  setSeconds: (sec: number, ms?: number | undefined) => number\n  setUTCSeconds: (sec: number, ms?: number | undefined) => number\n  setMinutes: (\n    min: number,\n    sec?: number | undefined,\n    ms?: number | undefined,\n  ) => number\n  setUTCMinutes: (\n    min: number,\n    sec?: number | undefined,\n    ms?: number | undefined,\n  ) => number\n  setHours: (\n    hours: number,\n    min?: number | undefined,\n    sec?: number | undefined,\n    ms?: number | undefined,\n  ) => number\n  setUTCHours: (\n    hours: number,\n    min?: number | undefined,\n    sec?: number | undefined,\n    ms?: number | undefined,\n  ) => number\n  setDate: (date: number) => number\n  setUTCDate: (date: number) => number\n  setMonth: (month: number, date?: number | undefined) => number\n  setUTCMonth: (month: number, date?: number | undefined) => number\n  setFullYear: (\n    year: number,\n    month?: number | undefined,\n    date?: number | undefined,\n  ) => number\n  setUTCFullYear: (\n    year: number,\n    month?: number | undefined,\n    date?: number | undefined,\n  ) => number\n  toUTCString: () => string\n  toISOString: () => string\n  toJSON: (key?: any) => string\n  [Symbol.toPrimitive]: {\n    (hint: 'default'): string\n    (hint: 'string'): string\n    (hint: 'number'): number\n    (hint: string): string | number\n  }\n}"
+    },
+    {
+      "name": "valueAsNumber",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "number"
+    },
+    {
+      "name": "webkitdirectory",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "boolean"
+    },
+    {
+      "name": "webkitEntries",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "{\n  readonly filesystem: {\n    readonly name: string\n    readonly root: {\n      createReader: () => FileSystemDirectoryReader\n      getDirectory: (\n        path?: string | null | undefined,\n        options?: FileSystemFlags | undefined,\n        successCallback?: FileSystemEntryCallback | undefined,\n        errorCallback?: ErrorCallback | undefined,\n      ) => void\n      getFile: (\n        path?: string | null | undefined,\n        options?: FileSystemFlags | undefined,\n        successCallback?: FileSystemEntryCallback | undefined,\n        errorCallback?: ErrorCallback | undefined,\n      ) => void\n      readonly filesystem: any\n      readonly fullPath: string\n      readonly isDirectory: boolean\n      readonly isFile: boolean\n      readonly name: string\n      getParent: (\n        successCallback?: FileSystemEntryCallback | undefined,\n        errorCallback?: ErrorCallback | undefined,\n      ) => void\n    }\n  }\n  readonly fullPath: string\n  readonly isDirectory: boolean\n  readonly isFile: boolean\n  readonly name: string\n  getParent: (\n    successCallback?: FileSystemEntryCallback | undefined,\n    errorCallback?: ErrorCallback | undefined,\n  ) => void\n}[]"
+    },
+    {
+      "name": "webkitMatchesSelector",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(selectors: string) => boolean"
+    },
+    {
+      "name": "width",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "number"
+    },
+    {
+      "name": "willValidate",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "boolean"
+    }
+  ]
+}

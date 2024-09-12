@@ -5,291 +5,389 @@
       "default": "false",
       "value": "",
       "type": "boolean",
+      "version": "",
       "description": "Applies position: absolute to the content element.",
-      "description_zh": "将 position： absolute 应用于 content 元素。"
+      "description_zh": "将 position： absolute 应用于 content 元素。",
+      "required": false
     },
     "activator": {
       "default": "undefined",
       "value": "",
       "type": "Element | 'parent' | (string & {}) | ComponentPublicInstance",
+      "version": "",
       "description": "Explicitly sets the overlay’s activator.",
-      "description_zh": "显式设置覆盖的激活器。"
+      "description_zh": "显式设置叠加层的激活器。",
+      "required": false
     },
     "activator-props": {
       "default": "{}",
       "value": "",
       "type": "unknown",
+      "version": "",
       "description": "Apply custom properties to the activator.",
-      "description_zh": "将自定义属性应用于激活器。"
+      "description_zh": "将自定义属性应用于激活器。",
+      "required": false
     },
     "attach": {
       "default": "false",
       "value": "",
       "type": "string | boolean | Element",
+      "version": "",
       "description": "Specifies which DOM element the overlay content should teleport to. Can be a direct element reference, querySelector string, or true to disable teleporting. Uses body by default.",
-      "description_zh": "指定覆盖内容应传送到哪个 DOM 元素。可以是直接元素引用、querySelector 字符串或 true 以禁用传送。默认使用 body。"
+      "description_zh": "指定覆盖内容应传送到哪个 DOM 元素。可以是直接元素引用、querySelector 字符串或 true，以禁用传送。默认使用 body。",
+      "required": false
     },
     "close-delay": {
       "default": "undefined",
       "value": "",
       "type": "string | number",
-      "description": "The number of milliseconds to wait before the component shuts down. Applies only to hover and focus events.",
-      "description_zh": "组件关闭前等待的毫秒数。仅应用于悬停和焦点事件。"
+      "version": "",
+      "description": "Milliseconds to wait before closing component. Only applies to hover and focus events.",
+      "description_zh": "关闭组件之前等待的毫秒数。仅适用于悬停和焦点事件。",
+      "required": false
     },
     "close-on-back": {
       "default": "true",
       "value": "",
       "type": "boolean",
+      "version": "",
       "description": "Closes the overlay content when the browser’s back button is pressed or $router.back() is called, cancelling the original navigation. persistent overlays will cancel navigation and animate as if they were clicked outside instead of closing.",
-      "description_zh": "当按下浏览器的后退按钮或调用 $router.back（） 时关闭覆盖内容，从而取消原始导航。持久叠加将取消导航并制作动画，就好像它们在外部单击而不是关闭一样。"
+      "description_zh": "在按下浏览器的后退按钮或调用 $router.back（） 时关闭覆盖内容，从而取消原始导航。永久叠加将取消导航并制作动画，就像在外部单击而不是关闭一样。",
+      "required": false
     },
     "close-on-content-click": {
       "default": "false",
       "value": "",
       "type": "boolean",
+      "version": "",
       "description": "Closes component when you click on its content.",
-      "description_zh": "单击组件内容时关闭组件。"
+      "description_zh": "单击组件内容时关闭组件。",
+      "required": false
     },
     "color": {
       "default": "undefined",
       "value": "",
       "type": "string",
-      "description": "Applies specified color to the control - supports utility colors (for example success or purple) or css color (for example success or purple) or css color (#033 or rgba(255, 0, 0, 0.5)). Find a list of built-in classes on the colors page.",
-      "description_zh": "将指定的颜色应用于控件 - 支持实用程序颜色（例如成功或紫色）或 css 颜色（例如成功或紫色）或 css 颜色（#033 或 rgba（255， 0， 0， 0.5））。在颜色页面上查找内置类的列表。"
+      "version": "",
+      "description": "Applies specified color to the control - supports utility colors (for example success or purple) or css color (#033 or rgba(255, 0, 0, 0.5)). Find a list of built-in classes on the colors page.",
+      "description_zh": "将指定的颜色应用于控件 - 支持实用工具颜色（例如 success 或紫色）或 css 颜色（#033 或 rgba（255， 0， 0， 0.5））。在 colors 页面上查找内置类的列表。",
+      "required": false
     },
     "contained": {
       "default": "false",
       "value": "",
       "type": "boolean",
+      "version": "",
       "description": "Limits the size of the component and scrim to its offset parent. Implies absolute and attach. (Note: The parent element must have position: relative.).",
-      "description_zh": "将元件和稀松布的大小限制为其偏移父项。表示绝对和附加。（注意：父元素必须具有 position： relative。"
+      "description_zh": "将零部件和纱布的大小限制为其偏移父级。暗示 absolute 和 attach。（注意：父元素必须具有 position： relative。",
+      "required": false
     },
     "content-class": {
       "default": "undefined",
       "value": "",
       "type": "any",
-      "description": "Apply a custom class to the detached element. This implementation is useful since the contents of this element will be appended to the beginning of the v-app component (unless you set the attach attribute), and the class attribute will not pass the CSS class directly to the component.",
-      "description_zh": "将自定义的class应用于被分离的此元素。由于此元素的内容将被附加到v-app组件开头(除非你设置了attach属性)，并且class属性不会将css类直接传递给组件，所以这个实行非常有用。"
+      "version": "",
+      "description": "Applies a custom class to the detached element. This is useful because the content is moved to the beginning of the v-app component (unless the attach prop is provided) and is not targetable by classes passed directly on the component.",
+      "description_zh": "将自定义类应用于分离的元素。这很有用，因为内容被移动到 v-app 组件的开头（除非提供了 attach 属性），并且不能被直接在组件上传递的类所定位。",
+      "required": false
     },
     "content-props": {
       "default": "undefined",
       "value": "",
       "type": "any",
+      "version": "",
       "description": "Apply custom properties to the content.",
-      "description_zh": "将自定义属性应用于内容。"
+      "description_zh": "将自定义属性应用于内容。",
+      "required": false
     },
     "disabled": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "Remove the component's click or target functionality.",
-      "description_zh": "移除组件的单击或 target 功能。"
+      "version": "",
+      "description": "Removes the ability to click or target the component.",
+      "description_zh": "删除单击组件或定位组件的功能。",
+      "required": false
     },
     "eager": {
       "default": "false",
       "value": "",
       "type": "boolean",
+      "version": "",
       "description": "Forces the component’s content to render when it mounts. This is useful if you have content that will not be rendered in the DOM that you want crawled for SEO.",
-      "description_zh": "强制在装入组件时呈现组件的内容。如果您的内容不会在 DOM 中呈现，而您希望为 SEO 进行爬网，这将非常有用。"
+      "description_zh": "强制组件的内容在挂载时呈现。如果您的内容不会在 DOM 中呈现，并且您希望为 SEO 抓取，这将非常有用。",
+      "required": false
     },
     "height": {
       "default": "undefined",
       "value": "",
       "type": "string | number",
-      "description": "Sets the height of the component.",
-      "description_zh": "设定组件的高度。"
+      "version": "",
+      "description": "Sets the height for the component.",
+      "description_zh": "设置组件的高度。",
+      "required": false
     },
     "location": {
-      "default": "bottom",
+      "default": "'bottom'",
       "value": "",
       "type": "Anchor",
+      "version": "",
       "description": "Specifies the anchor point for positioning the component, using directional cues to align it either horizontally, vertically, or both…",
-      "description_zh": "指定用于定位组件的锚点，使用方向提示将其水平、垂直或两者对齐..."
+      "description_zh": "指定用于定位组件的锚点，使用方向提示将其水平对齐、垂直对齐或两者对齐......",
+      "required": false
     },
     "location-strategy": {
-      "default": "static",
+      "default": "'static'",
       "value": "",
       "type": "static / connected / LocationStrategyFn",
+      "version": "",
       "description": "A function used to specifies how the component should position relative to its activator.",
-      "description_zh": "一个函数，用于指定组件相对于其激活器应如何定位。"
+      "description_zh": "用于指定组件相对于其激活器的位置的函数。",
+      "required": false
     },
     "max-height": {
       "default": "undefined",
       "value": "",
       "type": "string | number",
-      "description": "Sets the maximum height of the component.",
-      "description_zh": "设定组件的最大高度。"
+      "version": "",
+      "description": "Sets the maximum height for the component.",
+      "description_zh": "设置组件的最大高度。",
+      "required": false
     },
     "max-width": {
       "default": "undefined",
       "value": "",
       "type": "string | number",
-      "description": "Sets the maximum width of the component.",
-      "description_zh": "设定组件的最大宽度。"
+      "version": "",
+      "description": "Sets the maximum width for the component.",
+      "description_zh": "设置组件的最大宽度。",
+      "required": false
     },
     "min-height": {
       "default": "undefined",
       "value": "",
       "type": "string | number",
-      "description": "Sets the minimum height of the component.",
-      "description_zh": "设定组件的最小高度。"
+      "version": "",
+      "description": "Sets the minimum height for the component.",
+      "description_zh": "设置组件的最小高度。",
+      "required": false
     },
     "min-width": {
       "default": "undefined",
       "value": "",
       "type": "string | number",
-      "description": "Sets the minimum width of the component.",
-      "description_zh": "设定组件的最小宽度。"
+      "version": "",
+      "description": "Sets the minimum width for the component.",
+      "description_zh": "设置组件的最小宽度。",
+      "required": false
     },
     ":v-model": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "The value of the component v-mode. If the component supports variants, the default is an empty array.",
-      "description_zh": "组件 v-mode 的值。如果组件支持多属性，默认为空数组。"
+      "version": "",
+      "description": "The v-model value of the component. If component supports the multiple prop, this defaults to an empty array.",
+      "description_zh": "组件的 v-model 值。如果 component 支持 multiple prop，则默认为空数组。",
+      "required": true
     },
     "multi-line": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "Makes the message strip have a larger minimum height.",
-      "description_zh": "使消息条具有更大的最低高度。"
+      "version": "",
+      "description": "Gives the snackbar a larger minimum height.",
+      "description_zh": "为信息提示控件提供更大的最小高度。",
+      "required": false
     },
     "offset": {
       "default": "undefined",
       "value": "",
       "type": "string | number | number[]",
+      "version": "",
       "description": "A single value that offsets content away from the target based upon what side it is on.",
-      "description_zh": "一个值，它根据内容所在的一侧将内容与目标偏移。"
+      "description_zh": "一个值，该值根据内容所在的一侧将内容从目标偏移。",
+      "required": false
+    },
+    "opacity": {
+      "default": "undefined",
+      "value": "",
+      "type": "string | number",
+      "version": "",
+      "description": "Sets the overlay opacity.",
+      "description_zh": "设置叠加不透明度。",
+      "required": false
     },
     "open-delay": {
       "default": "undefined",
       "value": "",
       "type": "string | number",
-      "description": "The number of milliseconds that the component waits before opening. Applies only to hover and focus events.",
-      "description_zh": "组件打开前等待的毫秒数。仅应用于悬停和焦点事件。"
+      "version": "",
+      "description": "Milliseconds to wait before opening component. Only applies to hover and focus events.",
+      "description_zh": "打开组件之前等待的毫秒数。仅适用于悬停和焦点事件。",
+      "required": false
     },
     "open-on-click": {
       "default": "undefined",
       "value": "",
       "type": "boolean",
+      "version": "",
       "description": "Activate the component when the activator is clicked.",
-      "description_zh": "单击激活器时激活组件。"
+      "description_zh": "单击激活器时激活组件。",
+      "required": false
     },
     "open-on-focus": {
       "default": "undefined",
       "value": "",
       "type": "boolean",
+      "version": "",
       "description": "Activate the component when the activator is focused.",
-      "description_zh": "当激活器聚焦时激活组件。"
+      "description_zh": "当激活器聚焦时激活组件。",
+      "required": false
     },
     "open-on-hover": {
       "default": "false",
       "value": "",
       "type": "boolean",
+      "version": "",
       "description": "Activate the component when the activator is hovered.",
-      "description_zh": "当激活器悬停时激活组件。"
+      "description_zh": "将鼠标悬停在激活器上时激活组件。",
+      "required": false
     },
     "origin": {
-      "default": "auto",
+      "default": "'auto'",
       "value": "",
       "type": "Anchor / auto / overlap",
-      "description": "Sets the origin of the animation on the element. You can explore more for transition origin on the MDN documentation",
-      "description_zh": "设置元素上的动画原点。您可以在 MDN 文档上浏览更多 for transition origin"
+      "version": "",
+      "description": "Sets the transition origin on the element. You can find more information on the MDN documentation for transition origin.",
+      "description_zh": "设置元素上的过渡原点。您可以在 transition origin 的 MDN 文档上找到更多信息。",
+      "required": false
     },
     "position": {
       "default": "undefined",
       "value": "",
       "type": "static / relative / fixed / absolute / sticky",
+      "version": "",
       "description": "Sets the position for the component.",
-      "description_zh": "设置元件的位置。"
+      "description_zh": "设置零部件的位置。",
+      "required": false
     },
     "rounded": {
       "default": "undefined",
       "value": "",
       "type": "string | number | boolean",
-      "description": "Applies the border-radius style to the specified component. You can get more information about this on the Corner Radius of Borders page",
-      "description_zh": "对指定的组件应用 border-radius 样式。您可以在 边框的圆角半径页面 获取更多有关信息"
+      "version": "",
+      "description": "Designates the border-radius applied to the component. This can be 0, xs, sm, true, lg, xl, pill, circle, and shaped. Find more information on available border radius classes on the Border Radius page.",
+      "description_zh": "指定应用于组件的 border-radius。这可以是 0、xs、sm、true、lg、xl、pill、circle 和 shaped。在 Border Radius 页面上查找有关可用边界半径类的更多信息。",
+      "required": false
     },
     "target": {
       "default": "undefined",
       "value": "",
       "type": "  | Element  | 'parent'  | 'cursor'  | (string & {})  | ComponentPublicInstance  | [number, number]",
+      "version": "",
       "description": "For locationStrategy=“connected”, specify an element or array of x,y coordinates that the overlay should position itself relative to. This will be the activator element by default.",
-      "description_zh": "对于 locationStrategy=“connected”，指定一个元素或 x，y 坐标数组，叠加应相对于该元素或数组定位自身。默认情况下，这将是 activator 元素。"
+      "description_zh": "对于 locationStrategy=“connected”，指定叠加层应相对于其定位自身的 x，y 坐标的元素或数组。默认情况下，这将是 activator 元素。",
+      "required": false
     },
     "text": {
       "default": "undefined",
       "value": "",
       "type": "string",
-      "description": "Sets the content text of the component.",
-      "description_zh": "设置组件的内容文本。"
+      "version": "",
+      "description": "Specify content text for the component.",
+      "description_zh": "指定组件的内容文本。",
+      "required": false
     },
     "theme": {
       "default": "undefined",
       "value": "",
       "type": "string",
+      "version": "",
       "description": "Specify a theme for this component and all of its children.",
-      "description_zh": "为此组件及其所有子组件指定主题。"
+      "description_zh": "为此组件及其所有子组件指定主题。",
+      "required": false
+    },
+    "tile": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "description": "Removes any applied border-radius from the component.",
+      "description_zh": "从组件中删除任何应用的 border-radius。",
+      "required": false
     },
     "timeout": {
       "default": "5000",
       "value": "",
       "type": "string | number",
-      "description": "The amount of time (ms) spent waiting for the snackbar to be automatically hidden. Use \"-1\" to keep it open indefinitely (version < 2 of 0). It is recommended that this number be between 4000 and 10000. A change to this property resets the timeout.",
-      "description_zh": "等待snackbar 自动隐藏的时间 (毫秒) 。使用 “-1” 保持无限期打开 (版本 < 2 的 0 )。 建议这个数字在 4000 和 10000 之间。此属性的更改将重置超时。"
+      "version": "",
+      "description": "Time (in milliseconds) to wait until snackbar is automatically hidden. Use -1 to keep open indefinitely (0 in version < 2.3 ). It is recommended for this number to be between 4000 and 10000. Changes to this property will reset the timeout.",
+      "description_zh": "等待信息提示控件自动隐藏之前的时间 （毫秒）。使用 -1 可无限期保持打开状态（在版本 < 2.3 中为 0 ）。建议此数字介于 4000 和 10000 之间。更改此属性将重置超时。",
+      "required": false
     },
     "timer": {
       "default": "false",
       "value": "",
       "type": "string | boolean",
+      "version": "",
       "description": "Display a progress bar that counts down until the snackbar closes. Pass a string to set a custom color, otherwise uses info.",
-      "description_zh": "显示一个进度条，该进度条会倒计时，直到小吃栏关闭。传递字符串以设置自定义颜色，否则使用 info。"
+      "description_zh": "显示一个进度条，该进度条会倒计时，直到信息提示控件关闭。传递一个字符串来设置自定义颜色，否则使用 info。",
+      "required": false
     },
     "transition": {
-      "default": "v-snackbar-transition",
+      "default": "'v-snackbar-transition'",
       "value": "",
       "type": "string | boolean | (TransitionProps & { component: Component })",
+      "version": "",
       "description": "Sets the component transition. Can be one of the built in or custom transition.",
-      "description_zh": "设置组件过渡。可以是内置过渡或自定义过渡之一。"
+      "description_zh": "设置零部件过渡。可以是内置或自定义过渡之一。",
+      "required": false
     },
     "variant": {
-      "default": "elevated",
+      "default": "'elevated'",
       "value": "",
       "type": "text / flat / elevated / tonal / outlined / plain",
+      "version": "",
       "description": "Applies a distinct style to the component.",
-      "description_zh": "对组件应用不同的样式。"
+      "description_zh": "将不同的样式应用于组件。",
+      "required": false
     },
     "vertical": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "Stack the message content on top of the action (button).",
-      "description_zh": "将消息条内容堆叠在操作（按钮）之上。"
+      "version": "",
+      "description": "Stacks snackbar content on top of the actions (button).",
+      "description_zh": "将信息提示控件内容堆叠在操作（按钮）的顶部。",
+      "required": false
     },
     "width": {
       "default": "undefined",
       "value": "",
       "type": "string | number",
-      "description": "Sets the width of the component.",
-      "description_zh": "设定组件的宽度。"
+      "version": "",
+      "description": "Sets the width for the component.",
+      "description_zh": "设置组件的宽度。",
+      "required": false
     },
     "z-index": {
       "default": "2000",
       "value": "",
       "type": "string | number",
+      "version": "",
       "description": "The z-index used for the component.",
-      "description_zh": "用于组件的 z 索引。"
+      "description_zh": "用于组件的 z-index。",
+      "required": false
     }
   },
-  "link": "https://vuetifyjs.com/zh-Hans/api/v-snackbar/#links",
-  "link_zh": "https://vuetifyjs.com/zh-Hans/api/v-snackbar/#links",
+  "link": "https://vuetifyjs.com/en/api/v-snackbar/",
+  "link_zh": "https://vuetifyjs.com/en/api/v-snackbar/",
   "typeDetail": {},
   "events": [
     {
       "name": "update:modelValue",
-      "description": "An event that is raised when a component's model-value changes.",
-      "description_zh": "当组件的 model-value 更改时引发的事件。",
+      "description": "Event that is emitted when the component’s model changes.",
+      "description_zh": "组件的模型更改时发出的事件。",
       "params": "[boolean]",
       "value": ""
     }
@@ -298,23 +396,73 @@
   "slots": [
     {
       "name": "actions",
-      "description": "Used to bind styles to v-btn to match MD2 specifications.",
-      "description_zh": "用于将样式绑定到 v-btn 以匹配MD2 规格。"
+      "description": "Used to bind styles to v-btn to match MD2 specification.",
+      "description_zh": "用于将样式绑定到 v-btn 以匹配 MD2 规范。"
     },
     {
       "name": "activator",
       "description": "When used, will activate the component when clicked (or hover for specific components). This manually stops the event propagation. Without this slot, if you open the component through its model, you will need to manually stop the event propagation.",
-      "description_zh": "使用时，将在单击（或悬停在特定组件上）时激活组件。这将手动停止事件传播。如果没有此插槽，如果通过其模型打开组件，则需要手动停止事件传播。"
+      "description_zh": "使用时，将在单击时激活组件（或将鼠标悬停在特定组件上）。这将手动停止事件传播。如果没有此插槽，如果通过其模型打开组件，则需要手动停止事件传播。"
     },
     {
       "name": "default",
-      "description": "Default Vue slot.",
-      "description_zh": "默认Vue 插槽。"
+      "description": "The default Vue slot.",
+      "description_zh": "默认的 Vue 插槽。"
     },
     {
       "name": "text",
       "description": "Slot for the component’s text content.",
       "description_zh": "组件文本内容的插槽。"
+    }
+  ],
+  "exposed": [
+    {
+      "name": "activatorEl",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "HTMLElement"
+    },
+    {
+      "name": "animateClick",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "() => void"
+    },
+    {
+      "name": "contentEl",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "HTMLElement"
+    },
+    {
+      "name": "globalTop",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "boolean"
+    },
+    {
+      "name": "localTop",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "boolean"
+    },
+    {
+      "name": "scrimEl",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "HTMLElement"
+    },
+    {
+      "name": "target",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "HTMLElement | [number, number]"
+    },
+    {
+      "name": "updateLocation",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "(e: Event) => void"
     }
   ]
 }

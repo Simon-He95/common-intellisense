@@ -1,5 +1,5 @@
 {
-  "name": "VExpansionPanel",
+  "name": "VStepperVerticalItem",
   "props": {
     "bg-color": {
       "default": "undefined",
@@ -11,7 +11,7 @@
       "required": false
     },
     "collapse-icon": {
-      "default": "'$collapse'",
+      "default": "",
       "value": "",
       "type": "  | string  | (string | [string, number])[]  | (new () => any)  | FunctionalComponent",
       "version": "",
@@ -26,6 +26,24 @@
       "version": "",
       "description": "Applies specified color to the control - supports utility colors (for example success or purple) or css color (#033 or rgba(255, 0, 0, 0.5)). Find a list of built-in classes on the colors page.",
       "description_zh": "将指定的颜色应用于控件 - 支持实用工具颜色（例如 success 或紫色）或 css 颜色（#033 或 rgba（255， 0， 0， 0.5））。在 colors 页面上查找内置类的列表。",
+      "required": false
+    },
+    "complete": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "description": "Marks step as complete.",
+      "description_zh": "将步骤标记为完成。",
+      "required": false
+    },
+    "complete-icon": {
+      "default": "'$complete'",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "description": "Icon to display when step is marked as completed.",
+      "description_zh": "步骤标记为已完成时显示的图标。",
       "required": false
     },
     "disabled": {
@@ -46,6 +64,24 @@
       "description_zh": "强制组件的内容在挂载时呈现。如果您的内容不会在 DOM 中呈现，并且您希望为 SEO 抓取，这将非常有用。",
       "required": false
     },
+    "editable": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "description": "Marks step as editable.",
+      "description_zh": "将步骤标记为可编辑。",
+      "required": false
+    },
+    "edit-icon": {
+      "default": "'$edit'",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "description": "Icon to display when step is editable.",
+      "description_zh": "步骤可编辑时显示的图标。",
+      "required": false
+    },
     "elevation": {
       "default": "undefined",
       "value": "",
@@ -55,8 +91,26 @@
       "description_zh": "指定应用于组件的 0 到 24 之间的高程。您可以在海拔页面上找到更多信息。",
       "required": false
     },
+    "error": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "description": "Puts the stepper item in a manual error state.",
+      "description_zh": "将步进项置于手动错误状态。",
+      "required": false
+    },
+    "error-icon": {
+      "default": "'$error'",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "description": "Icon to display when step has an error.",
+      "description_zh": "步骤出错时显示的图标。",
+      "required": false
+    },
     "expand-icon": {
-      "default": "'$expand'",
+      "default": "",
       "value": "",
       "type": "  | string  | (string | [string, number])[]  | (new () => any)  | FunctionalComponent",
       "version": "",
@@ -89,6 +143,15 @@
       "version": "",
       "description": "Hide the expand icon in the content title.",
       "description_zh": "隐藏内容标题中的展开图标。",
+      "required": false
+    },
+    "icon": {
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "description": "Apply a specific icon using the v-icon component.",
+      "description_zh": "使用 v-icon 组件应用特定图标。",
       "required": false
     },
     "max-height": {
@@ -154,6 +217,15 @@
       "description_zh": "指定应用于组件的 border-radius。这可以是 0、xs、sm、true、lg、xl、pill、circle 和 shaped。在 Border Radius 页面上查找有关可用边界半径类的更多信息。",
       "required": false
     },
+    "rules": {
+      "default": "[]",
+      "value": "",
+      "type": "ValidationRule[]",
+      "version": "",
+      "description": "Accepts a mixed array of types function, boolean and string. Functions pass an input value as an argument and must return either true / false or a string containing an error message. The input field will enter an error state if a function returns (or any value in the array contains) false or is a string.",
+      "description_zh": "接受 function、boolean 和 string 类型的混合数组。函数将输入值作为参数传递，并且必须返回 true / false 或包含错误消息的字符串。如果函数返回 （或数组中的任何值包含） false 或为字符串，则输入字段将进入错误状态。",
+      "required": false
+    },
     "selected-class": {
       "default": "undefined",
       "value": "",
@@ -172,6 +244,15 @@
       "description_zh": "选中后删除标题大小扩展。",
       "required": false
     },
+    "subtitle": {
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "description": "Specify a subtitle text for the component.",
+      "description_zh": "指定组件的副标题文本。",
+      "required": false
+    },
     "tag": {
       "default": "'div'",
       "value": "",
@@ -188,7 +269,7 @@
       "version": "",
       "description": "Specify content text for the component.",
       "description_zh": "指定组件的内容文本。",
-      "required": true
+      "required": false
     },
     "tile": {
       "default": "false",
@@ -206,7 +287,7 @@
       "version": "",
       "description": "Specify a title text for the component.",
       "description_zh": "指定组件的标题文本。",
-      "required": true
+      "required": false
     },
     "value": {
       "default": "undefined",
@@ -227,24 +308,63 @@
       "required": false
     }
   },
-  "link": "https://vuetifyjs.com/en/api/v-expansion-panel/",
-  "link_zh": "https://vuetifyjs.com/en/api/v-expansion-panel/",
+  "link": "https://vuetifyjs.com/en/api/v-stepper-vertical-item/",
+  "link_zh": "https://vuetifyjs.com/en/api/v-stepper-vertical-item/",
   "typeDetail": {},
   "events": [
     {
-      "name": "group:selected",
-      "description": "Event that is emitted when an item is selected within a group.",
-      "description_zh": "在组中选择项时发出的事件。",
-      "params": "[{ value: boolean }]",
+      "name": "click:finish",
+      "description": "Event emitted when clicking the finish button",
+      "description_zh": "单击完成按钮时发出的事件",
+      "params": "[]",
+      "value": ""
+    },
+    {
+      "name": "click:next",
+      "description": "Event emitted when clicking the next button",
+      "description_zh": "单击下一步按钮时发出的事件",
+      "params": "[]",
+      "value": ""
+    },
+    {
+      "name": "click:prev",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "缺少描述（在 github 中编辑）",
+      "params": "[]",
       "value": ""
     }
   ],
   "methods": [],
   "slots": [
     {
+      "name": "actions",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "缺少描述（在 github 中编辑）"
+    },
+    {
       "name": "default",
       "description": "The default Vue slot.",
       "description_zh": "默认的 Vue 插槽。"
+    },
+    {
+      "name": "icon",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "缺少描述（在 github 中编辑）"
+    },
+    {
+      "name": "next",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "缺少描述（在 github 中编辑）"
+    },
+    {
+      "name": "prev",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "缺少描述（在 github 中编辑）"
+    },
+    {
+      "name": "subtitle",
+      "description": "Slot for the component’s subtitle content.",
+      "description_zh": "组件字幕内容的插槽。"
     },
     {
       "name": "text",
@@ -257,12 +377,5 @@
       "description_zh": "组件标题内容的插槽。"
     }
   ],
-  "exposed": [
-    {
-      "name": "groupItem",
-      "description": "MISSING DESCRIPTION (edit in github)",
-      "description_zh": "MISSING DESCRIPTION (edit in github)",
-      "detail": "{\n  id: number\n  isSelected: boolean\n  isFirst: boolean\n  isLast: boolean\n  toggle: () => void\n  select: (value: boolean) => void\n  selectedClass: false | (string | undefined)[]\n  value: unknown\n  disabled: boolean | undefined\n  group: {\n    register: (item: GroupItem, cmp: ComponentInternalInstance) => void\n    unregister: (id: number) => void\n    select: (id: number, value: boolean) => void\n    selected: readonly number[]\n    isSelected: (id: number) => boolean\n    prev: () => void\n    next: () => void\n    selectedClass: string | undefined\n    items: { id: number; value: unknown; disabled: boolean | undefined }[]\n    disabled: boolean | undefined\n    getItemIndex: (value: unknown) => number\n  }\n}"
-    }
-  ]
+  "exposed": []
 }

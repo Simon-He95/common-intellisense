@@ -6,26 +6,48 @@
       "value": "",
       "type": "boolean",
       "description": "Sets the component height to 100%.",
-      "description_zh": "将元件高度设置为 100%。"
+      "description_zh": "将组件高度设置为 100%。",
+      "required": false
     },
     "theme": {
       "default": "undefined",
       "value": "",
       "type": "string",
       "description": "Specify a theme for this component and all of its children.",
-      "description_zh": "为此组件及其所有子组件指定主题。"
+      "description_zh": "为此组件及其所有子组件指定主题。",
+      "required": false
     }
   },
-  "link": "https://vuetifyjs.com/zh-Hans/api/v-app/#links",
-  "link_zh": "https://vuetifyjs.com/zh-Hans/api/v-app/#links",
+  "link": "https://vuetifyjs.com/en/api/v-app/",
+  "link_zh": "https://vuetifyjs.com/en/api/v-app/",
   "typeDetail": {},
   "events": [],
   "methods": [],
   "slots": [
     {
       "name": "default",
-      "description": "Default Vue slot.",
-      "description_zh": "默认Vue 插槽。"
+      "description": "The default Vue slot.",
+      "description_zh": "默认的 Vue 插槽。"
+    }
+  ],
+  "exposed": [
+    {
+      "name": "getLayoutItem",
+      "description": "Function that returns position and size information about a specific layout item.",
+      "description_zh": "Function that returns position and size information about a specific layout item.",
+      "detail": "(id: string) => {\n  size: number\n  position: 'top' | 'left' | 'right' | 'bottom'\n  top: number\n  bottom: number\n  left: number\n  right: number\n  id: string\n}"
+    },
+    {
+      "name": "items",
+      "description": "A array of all registered layout items.",
+      "description_zh": "A array of all registered layout items.",
+      "detail": "{\n  size: number\n  position: 'top' | 'left' | 'right' | 'bottom'\n  top: number\n  bottom: number\n  left: number\n  right: number\n  id: string\n}[]"
+    },
+    {
+      "name": "theme",
+      "description": "The instance of the injected active theme.",
+      "description_zh": "The instance of the injected active theme.",
+      "detail": "{\n  readonly isDisabled: boolean\n  readonly themes: Record<string, InternalThemeDefinition>\n  readonly name: string\n  readonly current: {\n    readonly dark: boolean\n    readonly colors: {\n      readonly [x: string]: string\n      readonly background: string\n      readonly surface: string\n      readonly primary: string\n      readonly secondary: string\n      readonly success: string\n      readonly warning: string\n      readonly error: string\n      readonly info: string\n      readonly 'on-background': string\n      readonly 'on-surface': string\n      readonly 'on-primary': string\n      readonly 'on-secondary': string\n      readonly 'on-success': string\n      readonly 'on-warning': string\n      readonly 'on-error': string\n      readonly 'on-info': string\n    }\n    readonly variables: { readonly [x: string]: string | number }\n  }\n  readonly computedThemes: {\n    readonly [x: string]: {\n      readonly dark: boolean\n      readonly colors: {\n        readonly [x: string]: string\n        readonly background: string\n        readonly surface: string\n        readonly primary: string\n        readonly secondary: string\n        readonly success: string\n        readonly warning: string\n        readonly error: string\n        readonly info: string\n        readonly 'on-background': string\n        readonly 'on-surface': string\n        readonly 'on-primary': string\n        readonly 'on-secondary': string\n        readonly 'on-success': string\n        readonly 'on-warning': string\n        readonly 'on-error': string\n        readonly 'on-info': string\n      }\n      readonly variables: { readonly [x: string]: string | number }\n    }\n  }\n  readonly themeClasses: string | undefined\n  readonly styles: string\n  readonly global: {\n    readonly name: string\n    readonly current: {\n      readonly dark: boolean\n      readonly colors: {\n        readonly [x: string]: string\n        readonly background: string\n        readonly surface: string\n        readonly primary: string\n        readonly secondary: string\n        readonly success: string\n        readonly warning: string\n        readonly error: string\n        readonly info: string\n        readonly 'on-background': string\n        readonly 'on-surface': string\n        readonly 'on-primary': string\n        readonly 'on-secondary': string\n        readonly 'on-success': string\n        readonly 'on-warning': string\n        readonly 'on-error': string\n        readonly 'on-info': string\n      }\n      readonly variables: { readonly [x: string]: string | number }\n    }\n  }\n}"
     }
   ]
 }

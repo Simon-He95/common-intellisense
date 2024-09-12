@@ -1,6 +1,15 @@
 {
-  "name": "VTooltip",
+  "name": "VSnackbarQueue",
   "props": {
+    "absolute": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "description": "Applies position: absolute to the content element.",
+      "description_zh": "将 position： absolute 应用于 content 元素。",
+      "required": false
+    },
     "activator": {
       "default": "undefined",
       "value": "",
@@ -28,17 +37,26 @@
       "description_zh": "指定覆盖内容应传送到哪个 DOM 元素。可以是直接元素引用、querySelector 字符串或 true，以禁用传送。默认使用 body。",
       "required": false
     },
+    "closable": {
+      "default": "false",
+      "value": "",
+      "type": "string | boolean",
+      "version": "",
+      "description": "Adds a dismiss button that closes the active snackbar.",
+      "description_zh": "添加一个关闭按钮，用于关闭活动信息提示控件。",
+      "required": false
+    },
     "close-delay": {
       "default": "undefined",
       "value": "",
       "type": "string | number",
       "version": "",
-      "description": "Delay (in ms) after which menu closes (when open-on-hover prop is set to true).",
-      "description_zh": "菜单关闭后的延迟（以毫秒为单位）（当 open-on-hover prop 设置为 true 时）。",
+      "description": "Milliseconds to wait before closing component. Only applies to hover and focus events.",
+      "description_zh": "关闭组件之前等待的毫秒数。仅适用于悬停和焦点事件。",
       "required": false
     },
     "close-on-back": {
-      "default": "false",
+      "default": "true",
       "value": "",
       "type": "boolean",
       "version": "",
@@ -53,6 +71,24 @@
       "version": "",
       "description": "Closes component when you click on its content.",
       "description_zh": "单击组件内容时关闭组件。",
+      "required": false
+    },
+    "close-text": {
+      "default": "'$vuetify.dismiss'",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "description": "The text used in the close button when using the closable prop.",
+      "description_zh": "使用 closable 属性时 close 按钮中使用的文本。",
+      "required": false
+    },
+    "color": {
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "description": "Applies specified color to the control - supports utility colors (for example success or purple) or css color (#033 or rgba(255, 0, 0, 0.5)). Find a list of built-in classes on the colors page.",
+      "description_zh": "将指定的颜色应用于控件 - 支持实用工具颜色（例如 success 或紫色）或 css 颜色（#033 或 rgba（255， 0， 0， 0.5））。在 colors 页面上查找内置类的列表。",
       "required": false
     },
     "contained": {
@@ -91,11 +127,11 @@
       "description_zh": "删除单击组件或定位组件的功能。",
       "required": false
     },
-    "eagerNew": {
-      "default": "true",
+    "eager": {
+      "default": "false",
       "value": "",
       "type": "boolean",
-      "version": "in v3.2.0",
+      "version": "",
       "description": "Forces the component’s content to render when it mounts. This is useful if you have content that will not be rendered in the DOM that you want crawled for SEO.",
       "description_zh": "强制组件的内容在挂载时呈现。如果您的内容不会在 DOM 中呈现，并且您希望为 SEO 抓取，这将非常有用。",
       "required": false
@@ -109,17 +145,8 @@
       "description_zh": "设置组件的高度。",
       "required": false
     },
-    "id": {
-      "default": "undefined",
-      "value": "",
-      "type": "string",
-      "version": "",
-      "description": "HTML id attribute of the tooltip overlay. If not set, a globally unique id will be used.",
-      "description_zh": "HTML id 属性。如果未设置，则将使用全局唯一 ID。",
-      "required": false
-    },
     "location": {
-      "default": "'end'",
+      "default": "'bottom'",
       "value": "",
       "type": "Anchor",
       "version": "",
@@ -128,7 +155,7 @@
       "required": false
     },
     "location-strategy": {
-      "default": "'connected'",
+      "default": "'static'",
       "value": "",
       "type": "static / connected / LocationStrategyFn",
       "version": "",
@@ -164,7 +191,7 @@
       "required": false
     },
     "min-width": {
-      "default": "0",
+      "default": "undefined",
       "value": "",
       "type": "string | number",
       "version": "",
@@ -173,25 +200,25 @@
       "required": false
     },
     "v-model": {
-      "default": "false",
+      "default": "[]",
       "value": "",
-      "type": "boolean",
+      "type": "(  | string  | {      text: string      multiLine: boolean      timer: string | boolean      timeout: string | number      vertical: boolean      location: Anchor      position: 'static' | 'relative' | 'fixed' | 'absolute' | 'sticky'      absolute: boolean      rounded: string | number | boolean      tile: boolean      color: string      variant: 'text' | 'flat' | 'elevated' | 'tonal' | 'outlined' | 'plain'      theme: string      closeOnBack: boolean      contained: boolean      contentClass: any      contentProps: any      disabled: boolean      opacity: string | number      zIndex: string | number      target:        | Element        | 'parent'        | 'cursor'        | (string & {})        | ComponentPublicInstance        | [number, number]      closeOnContentClick: boolean      style: StyleValue      class: any      height: string | number      maxHeight: string | number      maxWidth: string | number      minHeight: string | number      minWidth: string | number      width: string | number      eager: boolean      locationStrategy: 'static' | 'connected' | LocationStrategyFn      origin: Anchor | 'auto' | 'overlap'      offset: string | number | number[]      transition:        | string        | boolean        | (TransitionProps & { component: Component })      attach: string | boolean | Element      'v-slots': {        activator:          | false          | ((arg: {              isActive: boolean              props: Record<string, any>            }) => VNodeChild)        default: false | (() => VNodeChild)        actions: false | ((arg: { isActive: Ref<boolean> }) => VNodeChild)        text: false | (() => VNodeChild)      }      'v-slot:default': false | (() => VNodeChild)      'v-slot:activator':        | false        | ((arg: {            isActive: boolean            props: Record<string, any>          }) => VNodeChild)      key: string | number | symbol      ref: VNodeRef      ref_for: boolean      ref_key: string      onVnodeBeforeMount: VNodeMountHook | VNodeMountHook[]      onVnodeMounted: VNodeMountHook | VNodeMountHook[]      onVnodeBeforeUpdate: VNodeUpdateHook | VNodeUpdateHook[]      onVnodeUpdated: VNodeUpdateHook | VNodeUpdateHook[]      onVnodeBeforeUnmount: VNodeMountHook | VNodeMountHook[]      onVnodeUnmounted: VNodeMountHook | VNodeMountHook[]      'v-slot:actions':        | false        | ((arg: { isActive: Ref<boolean> }) => VNodeChild)      'v-slot:text': false | (() => VNodeChild)    })[]",
       "version": "",
       "description": "The v-model value of the component. If component supports the multiple prop, this defaults to an empty array.",
       "description_zh": "组件的 v-model 值。如果 component 支持 multiple prop，则默认为空数组。",
       "required": false
     },
-    "no-click-animation": {
+    "multi-line": {
       "default": "false",
       "value": "",
       "type": "boolean",
       "version": "",
-      "description": "Disables the bounce effect when clicking outside of the content element when using the persistent prop.",
-      "description_zh": "在使用 persistent prop 时，在内容元素外部单击时禁用弹跳效果。",
+      "description": "Gives the snackbar a larger minimum height.",
+      "description_zh": "为信息提示控件提供更大的最小高度。",
       "required": false
     },
     "offset": {
-      "default": "10",
+      "default": "undefined",
       "value": "",
       "type": "string | number | number[]",
       "version": "",
@@ -213,17 +240,17 @@
       "value": "",
       "type": "string | number",
       "version": "",
-      "description": "Delay (in ms) after which tooltip opens (when open-on-hover prop is set to true).",
-      "description_zh": "延迟（以毫秒为单位），在此之后，工具提示将打开（当 open-on-hover prop 设置为 true 时）。",
+      "description": "Milliseconds to wait before opening component. Only applies to hover and focus events.",
+      "description_zh": "打开组件之前等待的毫秒数。仅适用于悬停和焦点事件。",
       "required": false
     },
     "open-on-click": {
-      "default": "false",
+      "default": "undefined",
       "value": "",
       "type": "boolean",
       "version": "",
-      "description": "Designates whether the tooltip should open on activator click.",
-      "description_zh": "指定是否应在激活器单击时打开工具提示。",
+      "description": "Activate the component when the activator is clicked.",
+      "description_zh": "单击激活器时激活组件。",
       "required": false
     },
     "open-on-focus": {
@@ -236,12 +263,12 @@
       "required": false
     },
     "open-on-hover": {
-      "default": "true",
+      "default": "false",
       "value": "",
       "type": "boolean",
       "version": "",
-      "description": "Designates whether the tooltip should open on activator hover.",
-      "description_zh": "指定工具提示是否应在激活器悬停时打开。",
+      "description": "Activate the component when the activator is hovered.",
+      "description_zh": "将鼠标悬停在激活器上时激活组件。",
       "required": false
     },
     "origin": {
@@ -253,22 +280,22 @@
       "description_zh": "设置元素上的过渡原点。您可以在 transition origin 的 MDN 文档上找到更多信息。",
       "required": false
     },
-    "scrim": {
-      "default": "false",
+    "position": {
+      "default": "undefined",
       "value": "",
-      "type": "string | boolean",
+      "type": "static / relative / fixed / absolute / sticky",
       "version": "",
-      "description": "Accepts true/false to enable background, and string to define color.",
-      "description_zh": "接受 true/false 以启用背景，接受 string 以定义颜色。",
+      "description": "Sets the position for the component.",
+      "description_zh": "设置零部件的位置。",
       "required": false
     },
-    "scroll-strategy": {
-      "default": "'reposition'",
+    "rounded": {
+      "default": "undefined",
       "value": "",
-      "type": "none / close / block / reposition / ScrollStrategyFn",
+      "type": "string | number | boolean",
       "version": "",
-      "description": "Strategy used when the component is activate and user scrolls.",
-      "description_zh": "当组件处于 activate 状态且用户滚动时使用的策略。",
+      "description": "Designates the border-radius applied to the component. This can be 0, xs, sm, true, lg, xl, pill, circle, and shaped. Find more information on available border radius classes on the Border Radius page.",
+      "description_zh": "指定应用于组件的 border-radius。这可以是 0、xs、sm、true、lg、xl、pill、circle 和 shaped。在 Border Radius 页面上查找有关可用边界半径类的更多信息。",
       "required": false
     },
     "target": {
@@ -287,7 +314,7 @@
       "version": "",
       "description": "Specify content text for the component.",
       "description_zh": "指定组件的内容文本。",
-      "required": true
+      "required": false
     },
     "theme": {
       "default": "undefined",
@@ -298,13 +325,58 @@
       "description_zh": "为此组件及其所有子组件指定主题。",
       "required": false
     },
-    "transition": {
+    "tile": {
       "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "description": "Removes any applied border-radius from the component.",
+      "description_zh": "从组件中删除任何应用的 border-radius。",
+      "required": false
+    },
+    "timeout": {
+      "default": "5000",
+      "value": "",
+      "type": "string | number",
+      "version": "",
+      "description": "Time (in milliseconds) to wait until snackbar is automatically hidden. Use -1 to keep open indefinitely (0 in version < 2.3 ). It is recommended for this number to be between 4000 and 10000. Changes to this property will reset the timeout.",
+      "description_zh": "等待信息提示控件自动隐藏之前的时间 （毫秒）。使用 -1 可无限期保持打开状态（在版本 < 2.3 中为 0 ）。建议此数字介于 4000 和 10000 之间。更改此属性将重置超时。",
+      "required": false
+    },
+    "timer": {
+      "default": "false",
+      "value": "",
+      "type": "string | boolean",
+      "version": "",
+      "description": "Display a progress bar that counts down until the snackbar closes. Pass a string to set a custom color, otherwise uses info.",
+      "description_zh": "显示一个进度条，该进度条会倒计时，直到信息提示控件关闭。传递一个字符串来设置自定义颜色，否则使用 info。",
+      "required": false
+    },
+    "transition": {
+      "default": "'v-snackbar-transition'",
       "value": "",
       "type": "string | boolean | (TransitionProps & { component: Component })",
       "version": "",
       "description": "Sets the component transition. Can be one of the built in or custom transition.",
       "description_zh": "设置零部件过渡。可以是内置或自定义过渡之一。",
+      "required": false
+    },
+    "variant": {
+      "default": "'elevated'",
+      "value": "",
+      "type": "text / flat / elevated / tonal / outlined / plain",
+      "version": "",
+      "description": "Applies a distinct style to the component.",
+      "description_zh": "将不同的样式应用于组件。",
+      "required": false
+    },
+    "vertical": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "description": "Stacks snackbar content on top of the actions (button).",
+      "description_zh": "将信息提示控件内容堆叠在操作（按钮）的顶部。",
       "required": false
     },
     "width": {
@@ -326,79 +398,35 @@
       "required": false
     }
   },
-  "link": "https://vuetifyjs.com/en/api/v-tooltip/",
-  "link_zh": "https://vuetifyjs.com/en/api/v-tooltip/",
+  "link": "https://vuetifyjs.com/en/api/v-snackbar-queue/",
+  "link_zh": "https://vuetifyjs.com/en/api/v-snackbar-queue/",
   "typeDetail": {},
   "events": [
     {
       "name": "update:modelValue",
       "description": "Event that is emitted when the component’s model changes.",
       "description_zh": "组件的模型更改时发出的事件。",
-      "params": "[boolean]",
+      "params": "[  (    | string    | {        text: string        multiLine: boolean        timer: string | boolean        timeout: string | number        vertical: boolean        location: Anchor        position: 'static' | 'relative' | 'fixed' | 'absolute' | 'sticky'        absolute: boolean        rounded: string | number | boolean        tile: boolean        color: string        variant: 'text' | 'flat' | 'elevated' | 'tonal' | 'outlined' | 'plain'        theme: string        closeOnBack: boolean        contained: boolean        contentClass: any        contentProps: any        disabled: boolean        opacity: string | number        zIndex: string | number        target:          | Element          | 'parent'          | 'cursor'          | (string & {})          | ComponentPublicInstance          | [number, number]        closeOnContentClick: boolean        style: StyleValue        class: any        height: string | number        maxHeight: string | number        maxWidth: string | number        minHeight: string | number        minWidth: string | number        width: string | number        eager: boolean        locationStrategy: 'static' | 'connected' | LocationStrategyFn        origin: Anchor | 'auto' | 'overlap'        offset: string | number | number[]        transition:          | string          | boolean          | (TransitionProps & { component: Component })        attach: string | boolean | Element        'v-slots': {          activator:            | false            | ((arg: {                isActive: boolean                props: Record<string, any>              }) => VNodeChild)          default: false | (() => VNodeChild)          actions: false | ((arg: { isActive: Ref<boolean> }) => VNodeChild)          text: false | (() => VNodeChild)        }        'v-slot:default': false | (() => VNodeChild)        'v-slot:activator':          | false          | ((arg: {              isActive: boolean              props: Record<string, any>            }) => VNodeChild)        key: string | number | symbol        ref: VNodeRef        ref_for: boolean        ref_key: string        onVnodeBeforeMount: VNodeMountHook | VNodeMountHook[]        onVnodeMounted: VNodeMountHook | VNodeMountHook[]        onVnodeBeforeUpdate: VNodeUpdateHook | VNodeUpdateHook[]        onVnodeUpdated: VNodeUpdateHook | VNodeUpdateHook[]        onVnodeBeforeUnmount: VNodeMountHook | VNodeMountHook[]        onVnodeUnmounted: VNodeMountHook | VNodeMountHook[]        'v-slot:actions':          | false          | ((arg: { isActive: Ref<boolean> }) => VNodeChild)        'v-slot:text': false | (() => VNodeChild)      }  )[],]",
       "value": ""
     }
   ],
   "methods": [],
   "slots": [
     {
-      "name": "activator",
-      "description": "When used, will activate the component when clicked (or hover for specific components). This manually stops the event propagation. Without this slot, if you open the component through its model, you will need to manually stop the event propagation.",
-      "description_zh": "使用时，将在单击时激活组件（或将鼠标悬停在特定组件上）。这将手动停止事件传播。如果没有此插槽，如果通过其模型打开组件，则需要手动停止事件传播。"
+      "name": "actions",
+      "description": "Used to bind styles to v-btn to match MD2 specification.",
+      "description_zh": "用于将样式绑定到 v-btn 以匹配 MD2 规范。"
     },
     {
       "name": "default",
       "description": "The default Vue slot.",
       "description_zh": "默认的 Vue 插槽。"
+    },
+    {
+      "name": "text",
+      "description": "Slot for the component’s text content.",
+      "description_zh": "组件文本内容的插槽。"
     }
   ],
-  "exposed": [
-    {
-      "name": "activatorEl",
-      "description": "Ref to the current activator element.",
-      "description_zh": "Ref to the current activator element.",
-      "detail": "HTMLElement"
-    },
-    {
-      "name": "animateClick",
-      "description": "Function invoked when user clicks outside.",
-      "description_zh": "Function invoked when user clicks outside.",
-      "detail": "() => void"
-    },
-    {
-      "name": "contentEl",
-      "description": "Ref to the current content element.",
-      "description_zh": "Ref to the current content element.",
-      "detail": "HTMLElement"
-    },
-    {
-      "name": "globalTop",
-      "description": "Used by activator to determine a components position in the global stack order.",
-      "description_zh": "Used by activator to determine a components position in the global stack order.",
-      "detail": "boolean"
-    },
-    {
-      "name": "localTop",
-      "description": "Used by activator to determine a components position in the local stack order.",
-      "description_zh": "Used by activator to determine a components position in the local stack order.",
-      "detail": "boolean"
-    },
-    {
-      "name": "scrimEl",
-      "description": "MISSING DESCRIPTION (edit in github)",
-      "description_zh": "MISSING DESCRIPTION (edit in github)",
-      "detail": "HTMLElement"
-    },
-    {
-      "name": "target",
-      "description": "MISSING DESCRIPTION (edit in github)",
-      "description_zh": "MISSING DESCRIPTION (edit in github)",
-      "detail": "HTMLElement | [number, number]"
-    },
-    {
-      "name": "updateLocation",
-      "description": "Function used for locationStrategy positioning.",
-      "description_zh": "Function used for locationStrategy positioning.",
-      "detail": "(e: Event) => void"
-    }
-  ]
+  "exposed": []
 }

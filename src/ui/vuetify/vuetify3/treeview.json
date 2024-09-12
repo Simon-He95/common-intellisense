@@ -1,13 +1,13 @@
 {
-  "name": "VList",
+  "name": "VTreeview",
   "props": {
     "activatable": {
       "default": "false",
       "value": "",
       "type": "boolean",
       "version": "",
-      "description": "MISSING DESCRIPTION (edit in github)",
-      "description_zh": "缺少描述（在 github 中编辑）",
+      "description": "Allows user to mark a node as active by clicking on it.",
+      "description_zh": "允许用户通过单击节点将其标记为活动节点。",
       "required": false
     },
     "activated": {
@@ -74,7 +74,7 @@
       "required": false
     },
     "collapse-icon": {
-      "default": "undefined",
+      "default": "'$treeviewCollapse'",
       "value": "",
       "type": "string",
       "version": "",
@@ -87,8 +87,26 @@
       "value": "",
       "type": "string",
       "version": "",
-      "description": "Applies specified color to the control - supports utility colors (for example success or purple) or css color (#033 or rgba(255, 0, 0, 0.5)). Find a list of built-in classes on the colors page.",
-      "description_zh": "将指定的颜色应用于控件 - 支持实用工具颜色（例如 success 或紫色）或 css 颜色（#033 或 rgba（255， 0， 0， 0.5））。在 colors 页面上查找内置类的列表。",
+      "description": "Applies specified color to the active node - supports utility colors (for example success or purple) or css color (#033 or rgba(255, 0, 0, 0.5)). Find a list of built-in classes on the colors page.",
+      "description_zh": "将指定颜色应用于活动节点 - 支持实用工具颜色（例如 success 或 purple）或 css 颜色（#033 或 rgba（255， 0， 0， 0.5））。在 colors 页面上查找内置类的列表。",
+      "required": false
+    },
+    "custom-filter": {
+      "default": "undefined",
+      "value": "",
+      "type": "FilterFunction",
+      "version": "",
+      "description": "Function used to filter items, called for each filterable key on each item in the list. The first argument is the filterable value from the item, the second is the search term, and the third is the internal item object. The function should return true if the item should be included in the filtered list, or the index of the match in the value if it should be included with the result highlighted.",
+      "description_zh": "用于筛选项目的函数，为列表中每个项目上的每个可筛选键调用。第一个参数是项目中的可筛选值，第二个参数是搜索词，第三个参数是内部项目对象。如果项目应包含在筛选列表中，则该函数应返回 true，如果匹配项应包含在突出显示的结果中，则该值应返回匹配项的索引。",
+      "required": false
+    },
+    "custom-key-filter": {
+      "default": "undefined",
+      "value": "",
+      "type": "unknown",
+      "version": "",
+      "description": "Function used on specific keys within the item object. customFilter is skipped for columns with customKeyFilter specified.",
+      "description_zh": "用于 item 对象中特定键的函数。对于指定了 customKeyFilter 的列，将跳过 customFilter。",
       "required": false
     },
     "density": {
@@ -105,8 +123,8 @@
       "value": "",
       "type": "boolean",
       "version": "",
-      "description": "Puts all children inputs into a disabled state.",
-      "description_zh": "将所有子项输入置于禁用状态。",
+      "description": "Disables selection for all nodes.",
+      "description_zh": "禁用所有节点的选择。",
       "required": false
     },
     "elevation": {
@@ -119,12 +137,39 @@
       "required": false
     },
     "expand-icon": {
-      "default": "undefined",
+      "default": "'$treeviewExpand'",
       "value": "",
       "type": "string",
       "version": "",
-      "description": "Icon to display when the list item is collapsed.",
-      "description_zh": "折叠列表项时显示的图标。",
+      "description": "Icon used to indicate that a node can be expanded.",
+      "description_zh": "图标，用于指示节点可以展开。",
+      "required": false
+    },
+    "false-icon": {
+      "default": "undefined",
+      "value": "",
+      "type": "  | string  | (string | [string, number])[]  | (new () => any)  | FunctionalComponent",
+      "version": "",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "缺少描述（在 github 中编辑）",
+      "required": false
+    },
+    "filter-keys": {
+      "default": "['title']",
+      "value": "",
+      "type": "string | string[]",
+      "version": "",
+      "description": "Array of specific keys to filter on the item.",
+      "description_zh": "用于筛选项目的特定键的数组。",
+      "required": false
+    },
+    "filter-mode": {
+      "default": "'intersection'",
+      "value": "",
+      "type": "some / every / union / intersection",
+      "version": "",
+      "description": "Controls how the results of customFilter and customKeyFilter are combined. All modes only apply customFilter to columns not specified in customKeyFilter.some: There is at least one match from either the custom filter or the custom key filter.every: All columns match either the custom filter or the custom key filter.union: There is at least one match from the custom filter, or all columns match the custom key filters.intersection: There is at least one match from the custom filter, and all columns match the custom key filters.",
+      "description_zh": "控制 customFilter 和 customKeyFilter 的结果的组合方式。所有模式仅将 customFilter 应用于 customKeyFilter.some：自定义筛选条件或自定义键至少有一个匹配项 filter.every：所有列都与自定义筛选条件或自定义键匹配 filter.union：自定义筛选条件中至少有一个匹配项，或者所有列都与自定义键 filters.intersection 匹配： 自定义筛选条件中至少有一个匹配项，并且所有列都与自定义键筛选条件匹配。",
       "required": false
     },
     "height": {
@@ -136,10 +181,19 @@
       "description_zh": "设置组件的高度。",
       "required": false
     },
+    "indeterminate-icon": {
+      "default": "'$checkboxIndeterminate'",
+      "value": "",
+      "type": "  | string  | (string | [string, number])[]  | (new () => any)  | FunctionalComponent",
+      "version": "",
+      "description": "Icon used when node is in an indeterminate state. Only visible when selectable is true.",
+      "description_zh": "节点处于不确定状态时使用的图标。Only visible when selectable 为 true。",
+      "required": false
+    },
     "item-children": {
       "default": "'children'",
       "value": "",
-      "type": "SelectItemKey<any>",
+      "type": "SelectItemKey",
       "version": "",
       "description": "Property on supplied items that contains its children.",
       "description_zh": "包含其子项的 supplied items 上的属性。",
@@ -148,7 +202,7 @@
     "item-props": {
       "default": "'props'",
       "value": "",
-      "type": "SelectItemKey<any>",
+      "type": "SelectItemKey",
       "version": "",
       "description": "Props object that will be applied to each item component. true will treat the original object as raw props and pass it directly to the component.",
       "description_zh": "Props 对象。true 会将原始对象视为 raw props 并将其直接传递给组件。",
@@ -157,34 +211,25 @@
     "items": {
       "default": "[]",
       "value": "",
-      "type": "any[]",
+      "type": "unknown[]",
       "version": "",
-      "description": "Can be an array of objects or strings. By default objects should have a title property, and can optionally have a props property containing any VListItem props, a value property to allow selection, and a children property containing more item objects. Keys to use for these can be changed with the item-title, item-value, item-props, and item-children props.",
-      "description_zh": "可以是对象或字符串的数组。默认情况下，对象应该具有 title 属性，并且可以选择具有包含任何 VListItem props 的 props 属性、允许选择的 value 属性以及包含更多 item 对象的 children 属性。用于这些的键可以通过 item-title、item-value、item-props 和 item-children 属性来更改。",
+      "description": "An array of items used to build the treeview.",
+      "description_zh": "用于构建 treeview 的项数组。",
       "required": false
     },
     "item-title": {
       "default": "'title'",
       "value": "",
-      "type": "SelectItemKey<any>",
+      "type": "SelectItemKey",
       "version": "",
       "description": "Property on supplied items that contains its title.",
       "description_zh": "包含其标题的所提供项上的属性。",
       "required": false
     },
-    "item-type": {
-      "default": "'type'",
-      "value": "",
-      "type": "string",
-      "version": "",
-      "description": "Designates the key on the supplied items that is used for determining the nodes type.",
-      "description_zh": "在提供的项上指定用于确定节点类型的键。",
-      "required": false
-    },
     "item-value": {
       "default": "'value'",
       "value": "",
-      "type": "SelectItemKey<any>",
+      "type": "SelectItemKey",
       "version": "",
       "description": "Property on supplied items that contains its value.",
       "description_zh": "包含其值的 supplied items 上的属性。",
@@ -197,6 +242,24 @@
       "version": "",
       "description": "Designates a minimum-height for all children v-list-item components. This prop uses line-clamp and is not supported in all browsers.",
       "description_zh": "为所有子 v-list-item 组件指定 minimum-height。这个 prop 使用 line-clamp，并不是所有浏览器都支持。",
+      "required": false
+    },
+    "load-children": {
+      "default": "undefined",
+      "value": "",
+      "type": "(item: unknown) => Promise<void>",
+      "version": "",
+      "description": "A function used when dynamically loading children. If this prop is set, then the supplied function will be run if expanding an item that has a item-children property that is an empty array. Supports returning a Promise.",
+      "description_zh": "动态加载 children 时使用的函数。如果设置了此 prop，则如果展开具有空数组的 item-children 属性的项，则将运行提供的函数。支持返回 Promise。",
+      "required": false
+    },
+    "loading-icon": {
+      "default": "'$loading'",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "description": "Icon used when node is in a loading state.",
+      "description_zh": "节点处于加载状态时使用的图标。",
       "required": false
     },
     "mandatory": {
@@ -244,31 +307,49 @@
       "description_zh": "设置组件的最小宽度。",
       "required": false
     },
-    "nav": {
+    "v-model": {
+      "default": "[]",
+      "value": "",
+      "type": "unknown[]",
+      "version": "",
+      "description": "Allows one to control which nodes are selected. The array contains the values of currently selected items. It is equivalent to the v-model:selected",
+      "description_zh": "允许控制选择哪些节点。该数组包含当前所选项目的值。它相当于 v-model：selected",
+      "required": false
+    },
+    "no-filter": {
       "default": "false",
       "value": "",
       "type": "boolean",
       "version": "",
-      "description": "An alternative styling that reduces v-list-item width and rounds the corners. Typically used with v-navigation-drawer.",
-      "description_zh": "一种替代样式，用于减小 v-list-item 宽度并使角变圆。通常与 v-navigation-drawer 一起使用。",
+      "description": "Disables all item filtering.",
+      "description_zh": "禁用所有项目筛选。",
+      "required": false
+    },
+    "open-all": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "description": "When true will cause all branch nodes to be opened when component is mounted.",
+      "description_zh": "如果为 true，则会导致在挂载组件时打开所有分支节点。",
       "required": false
     },
     "opened": {
       "default": "undefined",
       "value": "",
-      "type": "unknown",
+      "type": "any",
       "version": "",
       "description": "An array containing the values of currently opened groups. Can be two-way bound with v-model:opened.",
       "description_zh": "包含当前打开的组值的数组。可以用 v-model：opened 进行双向绑定。",
       "required": false
     },
-    "open-strategy": {
-      "default": "'list'",
+    "open-on-click": {
+      "default": "undefined",
       "value": "",
-      "type": "single / multiple / list / OpenStrategy",
+      "type": "boolean",
       "version": "",
-      "description": "Affects how items with children behave when expanded.multiple: Any number of groups can be open at once.single: Only one group at each level can be open, opening a group will cause others to close.list: Multiple, but all other groups will close when an item is selected.",
-      "description_zh": "影响具有子项的项目在展开时的行为方式。multiple：一次可以打开任意数量的组。single：每个级别只能打开一个组，打开一个组将导致其他组关闭。list：多个，但所有其他组将在选择项目时关闭。",
+      "description": "When true will cause nodes to be opened by clicking anywhere on it, instead of only opening by clicking on expand icon. When using this prop with activatable you will be unable to mark nodes with children as active.",
+      "description_zh": "如果为 true，则可以通过单击节点上的任意位置来打开节点，而不仅仅是通过单击展开图标来打开节点。将此 prop 与 activatable 一起使用时，您将无法将带有 children 的节点标记为 active。",
       "required": false
     },
     "return-object": {
@@ -276,8 +357,8 @@
       "value": "",
       "type": "boolean",
       "version": "",
-      "description": "Changes the selection behavior to return the object directly rather than the value specified with item-value.",
-      "description_zh": "更改选择行为以直接返回对象，而不是使用 item-value 指定的值。",
+      "description": "When true will make v-model, active.sync and open.sync return the complete object instead of just the key.",
+      "description_zh": "当 true 时，v-model 、 active.sync 和 open.sync 将返回完整的对象，而不仅仅是 key。",
       "required": false
     },
     "rounded": {
@@ -285,8 +366,17 @@
       "value": "",
       "type": "string | number | boolean",
       "version": "",
-      "description": "Designates the border-radius applied to the component. This can be 0, xs, sm, true, lg, xl, pill, circle, and shaped. Find more information on available border radius classes on the Border Radius page.",
-      "description_zh": "指定应用于组件的 border-radius。这可以是 0、xs、sm、true、lg、xl、pill、circle 和 shaped。在 Border Radius 页面上查找有关可用边界半径类的更多信息。",
+      "description": "Provides an alternative active style for v-treeview node. Only visible when activatable is true and should not be used in conjunction with the shaped prop.",
+      "description_zh": "为 v-treeview 节点提供替代活动样式。Only visible when activatable 为 true，不应与 shaped 属性一起使用。",
+      "required": false
+    },
+    "search": {
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "description": "The search model for filtering results.",
+      "description_zh": "用于筛选结果的搜索模型。",
       "required": false
     },
     "selectable": {
@@ -294,17 +384,26 @@
       "value": "",
       "type": "boolean",
       "version": "",
-      "description": "MISSING DESCRIPTION (edit in github)",
-      "description_zh": "缺少描述（在 github 中编辑）",
+      "description": "Will render a checkbox next to each node allowing them to be selected. Additionally, the openOnClick property will be applied internally.",
+      "description_zh": "将在每个节点旁边呈现一个复选框，允许选择它们。此外，openOnClick 属性将在内部应用。",
       "required": false
     },
     "selected": {
       "default": "undefined",
       "value": "",
-      "type": "unknown",
+      "type": "any",
       "version": "",
       "description": "An array containing the values of currently selected items. Can be two-way bound with v-model:selected.",
       "description_zh": "包含当前选定项的值的数组。可以与 v-model：selected 进行双向绑定。",
+      "required": false
+    },
+    "selected-color": {
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "description": "The color of the selection checkbox.",
+      "description_zh": "选择复选框的颜色。",
       "required": false
     },
     "select-strategy": {
@@ -317,7 +416,7 @@
       "required": false
     },
     "slim": {
-      "default": "false",
+      "default": "true",
       "value": "",
       "type": "boolean",
       "version": "",
@@ -352,6 +451,15 @@
       "description_zh": "从组件中删除任何应用的 border-radius。",
       "required": false
     },
+    "true-icon": {
+      "default": "undefined",
+      "value": "",
+      "type": "  | string  | (string | [string, number])[]  | (new () => any)  | FunctionalComponent",
+      "version": "",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "缺少描述（在 github 中编辑）",
+      "required": false
+    },
     "value-comparator": {
       "default": "undefined",
       "value": "",
@@ -380,49 +488,49 @@
       "required": false
     }
   },
-  "link": "https://vuetifyjs.com/en/api/v-list/",
-  "link_zh": "https://vuetifyjs.com/en/api/v-list/",
+  "link": "https://vuetifyjs.com/en/api/v-treeview/",
+  "link_zh": "https://vuetifyjs.com/en/api/v-treeview/",
   "typeDetail": {},
   "events": [
     {
-      "name": "click:activate",
-      "description": "MISSING DESCRIPTION (edit in github)",
-      "description_zh": "缺少描述（在 github 中编辑）",
-      "params": "[{ id: unknown; value: boolean; path: unknown[] }]",
-      "value": ""
-    },
-    {
       "name": "click:open",
-      "description": "MISSING DESCRIPTION (edit in github)",
-      "description_zh": "缺少描述（在 github 中编辑）",
+      "description": "Emits the item when it is clicked to open.",
+      "description_zh": "单击以打开项目时发出该项目。",
       "params": "[{ id: unknown; value: boolean; path: unknown[] }]",
       "value": ""
     },
     {
       "name": "click:select",
-      "description": "MISSING DESCRIPTION (edit in github)",
-      "description_zh": "缺少描述（在 github 中编辑）",
+      "description": "Emits the item when it is clicked to select.",
+      "description_zh": "单击以选择项目时发出项目。",
       "params": "[{ id: unknown; value: boolean; path: unknown[] }]",
       "value": ""
     },
     {
       "name": "update:activated",
-      "description": "MISSING DESCRIPTION (edit in github)",
-      "description_zh": "缺少描述（在 github 中编辑）",
+      "description": "Emits the array of active items when this value changes.",
+      "description_zh": "当此值更改时，发出活动项的数组。",
+      "params": "[unknown]",
+      "value": ""
+    },
+    {
+      "name": "update:modelValue",
+      "description": "Event that is emitted when the component’s model changes.",
+      "description_zh": "组件的模型更改时发出的事件。",
       "params": "[unknown]",
       "value": ""
     },
     {
       "name": "update:opened",
-      "description": "MISSING DESCRIPTION (edit in github)",
-      "description_zh": "缺少描述（在 github 中编辑）",
+      "description": "Emits the array of open items when this value changes.",
+      "description_zh": "当此值更改时，发出打开项的数组。",
       "params": "[unknown]",
       "value": ""
     },
     {
       "name": "update:selected",
-      "description": "MISSING DESCRIPTION (edit in github)",
-      "description_zh": "缺少描述（在 github 中编辑）",
+      "description": "Emits the array of selected items when this value changes.",
+      "description_zh": "当此值更改时，发出所选项目的数组。",
       "params": "[unknown]",
       "value": ""
     }
@@ -431,8 +539,8 @@
   "slots": [
     {
       "name": "append",
-      "description": "Adds an item inside the input and after input content.",
-      "description_zh": "在 input 内容内和 After input 内容中添加一个项目。"
+      "description": "Appends content after label.",
+      "description_zh": "在标签后附加内容。"
     },
     {
       "name": "default",
@@ -441,13 +549,13 @@
     },
     {
       "name": "divider",
-      "description": "MISSING DESCRIPTION (edit in github)",
-      "description_zh": "缺少描述（在 github 中编辑）"
+      "description": "Slot for custom divider.",
+      "description_zh": "用于自定义分隔器的插槽。"
     },
     {
       "name": "header",
-      "description": "MISSING DESCRIPTION (edit in github)",
-      "description_zh": "缺少描述（在 github 中编辑）"
+      "description": "Slot for custom header.",
+      "description_zh": "自定义标头的插槽。"
     },
     {
       "name": "item",
@@ -456,13 +564,13 @@
     },
     {
       "name": "prepend",
-      "description": "Adds an item outside the input and before input content.",
-      "description_zh": "在输入内容之外和之前添加项目。"
+      "description": "Prepends content before label.",
+      "description_zh": "在标签前预置内容。"
     },
     {
       "name": "subheader",
-      "description": "MISSING DESCRIPTION (edit in github)",
-      "description_zh": "缺少描述（在 github 中编辑）"
+      "description": "Slot for custom subheader.",
+      "description_zh": "自定义子标题的插槽。"
     },
     {
       "name": "subtitle",
@@ -475,52 +583,5 @@
       "description_zh": "组件标题内容的插槽。"
     }
   ],
-  "exposed": [
-    {
-      "name": "children",
-      "description": "MISSING DESCRIPTION (edit in github)",
-      "description_zh": "MISSING DESCRIPTION (edit in github)",
-      "detail": "Map<unknown, unknown[]>"
-    },
-    {
-      "name": "focus",
-      "description": "MISSING DESCRIPTION (edit in github)",
-      "description_zh": "MISSING DESCRIPTION (edit in github)",
-      "detail": "(location: 'next' | 'prev' | 'first' | 'last') => void"
-    },
-    {
-      "name": "getPath",
-      "description": "MISSING DESCRIPTION (edit in github)",
-      "description_zh": "MISSING DESCRIPTION (edit in github)",
-      "detail": "(id: unknown) => unknown[]"
-    },
-    {
-      "name": "open",
-      "description": "MISSING DESCRIPTION (edit in github)",
-      "description_zh": "MISSING DESCRIPTION (edit in github)",
-      "detail": "(id: unknown, value: boolean, event: Event) => void"
-    },
-    {
-      "name": "parents",
-      "description": "MISSING DESCRIPTION (edit in github)",
-      "description_zh": "MISSING DESCRIPTION (edit in github)",
-      "detail": "Map<unknown, unknown>"
-    },
-    {
-      "name": "select",
-      "description": "The function used to select an items. The first argument expects the value of the item.",
-      "description_zh": "The function used to select an items. The first argument expects the value of the item.",
-      "detail": "(id: unknown, value: boolean, event: Event) => void"
-    }
-  ],
-  "suggestions": [
-    "v-list-group",
-    "v-list-subheader",
-    "v-list-item",
-    "v-list-item-title",
-    "v-list-item-subtitle",
-    "v-list-item-action",
-    "v-list-img",
-    "v-list-item-media"
-  ]
+  "exposed": []
 }

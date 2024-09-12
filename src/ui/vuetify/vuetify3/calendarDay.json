@@ -5,83 +5,111 @@
       "default": "{}",
       "value": "",
       "type": "unknown",
-      "description": "Represents a specific date associated with the time interval.",
-      "description_zh": "代表与时间间隔相关的具体日期。"
+      "version": "",
+      "description": "Represents the specific day associated with the interval.",
+      "description_zh": "表示与间隔关联的特定日期。",
+      "required": false
     },
     ":day-index": {
       "default": "undefined",
       "value": "",
       "type": "number",
+      "version": "",
       "description": "Index of the day this interval is a part of, in a week or month view.",
-      "description_zh": "此区间所属日期的索引，以周或月视图表示。"
+      "description_zh": "此间隔所属的日期的索引，在周或月视图中。",
+      "required": false
     },
     "events": {
       "default": "undefined",
       "value": "",
       "type": "any[]",
+      "version": "",
       "description": "Array of events specific to this interval.",
-      "description_zh": "特定于此间隔的事件数组。"
+      "description_zh": "特定于此间隔的事件数组。",
+      "required": false
     },
     "hide-day-header": {
       "default": "false",
       "value": "",
       "type": "boolean",
+      "version": "",
       "description": "Determines whether the day header is visible in the calendar day view.",
-      "description_zh": "确定日期标题在日历日视图中是否可见。"
+      "description_zh": "确定日标题在日历日视图中是否可见。",
+      "required": false
     },
     ":interval-divisions": {
       "default": "2",
       "value": "",
       "type": "number",
+      "version": "",
       "description": "Number of subdivisions within this interval.",
-      "description_zh": "此间隔内的细分数。"
+      "description_zh": "此区间内的细分数。",
+      "required": false
     },
     ":interval-duration": {
       "default": "60",
       "value": "",
       "type": "number",
+      "version": "",
       "description": "Duration of this specific interval in minutes.",
-      "description_zh": "此特定时间间隔的持续时间（以分钟为单位）。"
+      "description_zh": "此特定间隔的持续时间（以分钟为单位）。",
+      "required": false
     },
     "interval-format": {
-      "default": "fullTime12h",
+      "default": "'fullTime12h'",
       "value": "",
       "type": "string | Function",
+      "version": "",
       "description": "Formatting rule for displaying the interval, as a string or function.",
-      "description_zh": "用于将间隔显示为字符串或函数的格式规则。"
+      "description_zh": "用于将间隔显示为字符串或函数的格式设置规则。",
+      "required": false
     },
     ":interval-height": {
       "default": "48",
       "value": "",
       "type": "number",
+      "version": "",
       "description": "Height of the interval in pixels in the calendar view.",
-      "description_zh": "日历视图中间隔的高度（以像素为单位）。"
+      "description_zh": "日历视图中的间隔高度（以像素为单位）。",
+      "required": false
     },
     ":intervals": {
       "default": "24",
       "value": "",
       "type": "number",
+      "version": "",
       "description": "Specifies the total number of time intervals for the day in the calendar view.",
-      "description_zh": "指定日历视图中一天的总时间间隔数。"
+      "description_zh": "指定日历视图中一天的时间间隔总数。",
+      "required": false
     },
     ":interval-start": {
       "default": "0",
       "value": "",
       "type": "number",
+      "version": "",
       "description": "Starting time for this specific interval.",
-      "description_zh": "此特定时间间隔的开始时间。"
+      "description_zh": "此特定间隔的开始时间。",
+      "required": false
     }
   },
-  "link": "https://vuetifyjs.com/zh-Hans/api/v-calendar-day/#links",
-  "link_zh": "https://vuetifyjs.com/zh-Hans/api/v-calendar-day/#links",
+  "link": "https://vuetifyjs.com/en/api/v-calendar-day/",
+  "link_zh": "https://vuetifyjs.com/en/api/v-calendar-day/",
   "typeDetail": {},
   "events": [],
   "methods": [],
   "slots": [
     {
       "name": "default",
-      "description": "Default Vue slot.",
-      "description_zh": "默认Vue 插槽。"
+      "description": "The default Vue slot.",
+      "description_zh": "默认的 Vue 插槽。"
+    }
+  ],
+  "exposed": [
+    {
+      "name": "intervals",
+      "description": "Computed reference containing details about each interval in the day view.",
+      "description_zh": "Computed reference containing details about each interval in the day view.",
+      "detail": "number[]"
     }
   ]
 }

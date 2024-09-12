@@ -170,6 +170,20 @@ import emptyState from './emptyState.json'
 import sparkline from './sparkline.json'
 import speedDial from './speedDial.json'
 import fab from './fab.json'
+import numberInput from './numberInput.json'
+import pullToRefresh from './pullToRefresh.json'
+import snackbarQueue from './snackbarQueue.json'
+import stepperVertical from './stepperVertical.json'
+import stepperVerticalActions from './stepperVerticalActions.json'
+import stepperVerticalItem from './stepperVerticalItem.json'
+import tabsWindow from './tabsWindow.json'
+import tabsWindowItem from './tabsWindowItem.json'
+import timePicker from './timePicker.json'
+import timePickerClock from './timePickerClock.json'
+import timePickerControls from './timePickerControls.json'
+import treeview from './treeview.json'
+import treeviewGroup from './treeviewGroup.json'
+import treeviewItem from './treeviewItem.json'
 
 export function getPropsMap() {
   return [
@@ -343,6 +357,20 @@ export function getPropsMap() {
     sparkline,
     speedDial,
     fab,
+    numberInput,
+    pullToRefresh,
+    snackbarQueue,
+    stepperVertical,
+    stepperVerticalActions,
+    stepperVerticalItem,
+    tabsWindow,
+    tabsWindowItem,
+    timePicker,
+    timePickerClock,
+    timePickerControls,
+    treeview,
+    treeviewGroup,
+    treeviewItem,
   ]
 }
 
@@ -541,6 +569,20 @@ export function getComponentMap() {
       ></v-sparkline>`],
         [speedDial, 'v-speed-dial 组件可以用作浮动操作按钮，单击时可以显示其他操作', '<v-speedDial location="bottom center" transition="fade-transition"></v-speedDial>'],
         [fab, 'v-fab 组件可以用作浮动操作按钮。这为应用程序提供了一个主要的操作点', '<v-fab icon="$vuetify"></v-fab>'],
+        [numberInput, 'v-number-input 组件支持 v-field 的大部分属性，并遵循与其他输入相同的设计模式', `<${hyphenate(numberInput.name)}></${hyphenate(numberInput.name)}>`],
+        [pullToRefresh, 'PullToRefresh 允许用户通过在屏幕上向下滑动来更新内容。适用于移动设备和桌面设备', `<${hyphenate(pullToRefresh.name)}></${hyphenate(pullToRefresh.name)}>`],
+        [snackbarQueue, 'v-snackbar-queue 组件用于将多个 Snackbar 消息排队显示给用户。Snackbars 支持定位、移除延迟和回调。', `<${hyphenate(snackbarQueue.name)}></${hyphenate(snackbarQueue.name)}>`],
+        [stepperVertical, 'v-snackbar-queue 组件用于将多个 Snackbar 消息排队显示给用户。Snackbars 支持定位、移除延迟和回调。', `<${hyphenate(stepperVertical.name)}></${hyphenate(stepperVertical.name)}>`],
+        [stepperVerticalActions, 'v-snackbar-queue 组件用于将多个 Snackbar 消息排队显示给用户。Snackbars 支持定位、移除延迟和回调。', `<${hyphenate(stepperVerticalActions.name)}></${hyphenate(stepperVerticalActions.name)}>`],
+        [stepperVerticalItem, 'v-snackbar-queue 组件用于将多个 Snackbar 消息排队显示给用户。Snackbars 支持定位、移除延迟和回调。', `<${hyphenate(stepperVerticalItem.name)}></${hyphenate(stepperVerticalItem.name)}>`],
+        [tabsWindow, 'tabsWindow', `<${hyphenate(tabsWindow.name)}></${hyphenate(tabsWindow.name)}>`],
+        [tabsWindowItem, 'tabsWindowItem', `<${hyphenate(tabsWindowItem.name)}></${hyphenate(tabsWindowItem.name)}>`],
+        [timePicker, 'v-time-picker 是一个独立组件，可用于许多现有的 Vuetify 组件。它为用户提供了选择时间的视觉表示。', `<${hyphenate(timePicker.name)}></${hyphenate(timePicker.name)}>`],
+        [timePickerClock, 'v-time-picker 是一个独立组件，可用于许多现有的 Vuetify 组件。它为用户提供了选择时间的视觉表示。', `<${hyphenate(timePickerClock.name)}></${hyphenate(timePickerClock.name)}>`],
+        [timePickerControls, 'v-time-picker 是一个独立组件，可用于许多现有的 Vuetify 组件。它为用户提供了选择时间的视觉表示。', `<${hyphenate(timePickerControls.name)}></${hyphenate(timePickerControls.name)}>`],
+        [treeview, 'v-treeview 组件对于显示大量嵌套数据很有用。', `<${hyphenate(treeview.name)}></${hyphenate(treeview.name)}>`],
+        [treeviewGroup, 'v-treeview 组件对于显示大量嵌套数据很有用。', `<${hyphenate(treeviewGroup.name)}></${hyphenate(treeviewGroup.name)}>`],
+        [treeviewItem, 'v-treeview 组件对于显示大量嵌套数据很有用。', `<${hyphenate(treeviewItem.name)}></${hyphenate(treeviewItem.name)}>`],
       ]
     : [
         [app, 'app', `<${hyphenate(app.name)}></${hyphenate(app.name)}>`],
@@ -732,5 +774,19 @@ export function getComponentMap() {
       ></v-sparkline>`],
         [speedDial, 'The v-speed-dial component can be used as a floating action button that can reveal additional actions when clicked.', '<v-speedDial location="bottom center" transition="fade-transition"></v-speedDial>'],
         [fab, 'The v-fab component can be used as a floating action button. This provides an application with a main point of action', '<v-fab icon="$vuetify"></v-fab>'],
+        [numberInput, 'The v-number-input component has support for most of v-field’s props and is follows the same design patterns as other inputs', `<${hyphenate(numberInput.name)}></${hyphenate(numberInput.name)}>`],
+        [pullToRefresh, 'The PullToRefresh allows users to update content with a simple downward swipe on their screen. Works for Mobile and Desktop', `<${hyphenate(pullToRefresh.name)}></${hyphenate(pullToRefresh.name)}>`],
+        [snackbarQueue, 'The v-snackbar-queue component is used to queue up multiple snackbar messages to be displayed to the user. Snackbars support positioning, removal delay, and callbacks.', `<${hyphenate(snackbarQueue.name)}></${hyphenate(snackbarQueue.name)}>`],
+        [stepperVertical, 'The v-snackbar-queue component is used to queue up multiple snackbar messages to be displayed to the user. Snackbars support positioning, removal delay, and callbacks.', `<${hyphenate(stepperVertical.name)}></${hyphenate(stepperVertical.name)}>`],
+        [stepperVerticalActions, 'The v-snackbar-queue component is used to queue up multiple snackbar messages to be displayed to the user. Snackbars support positioning, removal delay, and callbacks.', `<${hyphenate(stepperVerticalActions.name)}></${hyphenate(stepperVerticalActions.name)}>`],
+        [stepperVerticalItem, 'The v-snackbar-queue component is used to queue up multiple snackbar messages to be displayed to the user. Snackbars support positioning, removal delay, and callbacks.', `<${hyphenate(stepperVerticalItem.name)}></${hyphenate(stepperVerticalItem.name)}>`],
+        [tabsWindow, 'tabsWindow', `<${hyphenate(tabsWindow.name)}></${hyphenate(tabsWindow.name)}>`],
+        [tabsWindowItem, 'tabsWindowItem', `<${hyphenate(tabsWindowItem.name)}></${hyphenate(tabsWindowItem.name)}>`],
+        [timePicker, 'The v-time-picker is stand-alone component that can be utilized in many existing Vuetify components. It offers the user a visual representation for selecting the time.', `<${hyphenate(timePicker.name)}></${hyphenate(timePicker.name)}>`],
+        [timePickerClock, 'The v-time-picker is stand-alone component that can be utilized in many existing Vuetify components. It offers the user a visual representation for selecting the time.', `<${hyphenate(timePickerClock.name)}></${hyphenate(timePickerClock.name)}>`],
+        [timePickerControls, 'The v-time-picker is stand-alone component that can be utilized in many existing Vuetify components. It offers the user a visual representation for selecting the time.', `<${hyphenate(timePickerControls.name)}></${hyphenate(timePickerControls.name)}>`],
+        [treeview, 'The v-treeview component is useful for displaying large amounts of nested data.', `<${hyphenate(treeview.name)}></${hyphenate(treeview.name)}>`],
+        [treeviewGroup, 'The v-treeview component is useful for displaying large amounts of nested data.', `<${hyphenate(treeviewGroup.name)}></${hyphenate(treeviewGroup.name)}>`],
+        [treeviewItem, 'The v-treeview component is useful for displaying large amounts of nested data.', `<${hyphenate(treeviewItem.name)}></${hyphenate(treeviewItem.name)}>`],
       ]
 }

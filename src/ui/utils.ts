@@ -62,6 +62,13 @@ export function propsReducer(options: PropsOptions) {
           detail.push(`#### 💎 ${isZh ? '默认值' : 'default'}:    ***\`${value.default.replace(/[`\n]/g, '')}\`***`)
         }
 
+        if (value.version) {
+          if (isZh)
+            detail.push(`#### 🚀 版本:    ***\`${value.version}\`***`)
+          else
+            detail.push(`#### 🚀 version:    ***\`${value.version}\`***`)
+        }
+
         if (value.description) {
           if (isZh)
             detail.push(`#### 🔦 说明:    ***\`${value.description_zh || value.description}\`***`)

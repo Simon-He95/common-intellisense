@@ -5,193 +5,288 @@
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "给组件应用 position: absolute",
-      "description_zh": "给组件应用 position: absolute"
+      "version": "",
+      "description": "Applies position: absolute to the component.",
+      "description_zh": "将 position： absolute 应用于组件。",
+      "required": false
     },
     "border": {
       "default": "false",
       "value": "",
       "type": "string | number | boolean",
-      "description": "Apply a border style to the component.",
-      "description_zh": "应用边框样式到组件。"
+      "version": "",
+      "description": "Designates the border-radius applied to the component. This can be xs, sm, md, lg, xl.",
+      "description_zh": "指定应用于组件的 border-radius。这可以是 xs、sm、md、lg、xl。",
+      "required": false
+    },
+    "close-delay": {
+      "default": "undefined",
+      "value": "",
+      "type": "string | number",
+      "version": "",
+      "description": "Milliseconds to wait before closing component. Only applies to hover and focus events.",
+      "description_zh": "关闭组件之前等待的毫秒数。仅适用于悬停和焦点事件。",
+      "required": false
     },
     "color": {
       "default": "undefined",
       "value": "",
       "type": "string",
-      "description": "Applies specified color to the control - supports utility colors (for example success or purple) or css color (for example success or purple) or css color (#033 or rgba(255, 0, 0, 0.5)). Find a list of built-in classes on the colors page.",
-      "description_zh": "将指定的颜色应用于控件 - 支持实用程序颜色（例如成功或紫色）或 css 颜色（例如成功或紫色）或 css 颜色（#033 或 rgba（255， 0， 0， 0.5））。在颜色页面上查找内置类的列表。"
+      "version": "",
+      "description": "Applies specified color to the control - supports utility colors (for example success or purple) or css color (#033 or rgba(255, 0, 0, 0.5)). Find a list of built-in classes on the colors page.",
+      "description_zh": "将指定的颜色应用于控件 - 支持实用工具颜色（例如 success 或紫色）或 css 颜色（#033 或 rgba（255， 0， 0， 0.5））。在 colors 页面上查找内置类的列表。",
+      "required": false
     },
     "disable-resize-watcher": {
       "default": "false",
       "value": "",
       "type": "boolean",
+      "version": "",
       "description": "Prevents the automatic opening or closing of the drawer when resized, based on whether the device is mobile or desktop.",
-      "description_zh": "防止在调整大小时自动打开或关闭抽屉，具体取决于设备是移动设备还是桌面设备。"
+      "description_zh": "防止在调整大小时根据设备是移动设备还是桌面设备自动打开或关闭抽屉。",
+      "required": false
     },
     "disable-route-watcher": {
       "default": "false",
       "value": "",
       "type": "boolean",
+      "version": "",
       "description": "Disables opening of navigation drawer when route changes.",
-      "description_zh": "禁止在路线更改时打开导航抽屉。"
+      "description_zh": "禁用在路线更改时打开抽屉式导航栏。",
+      "required": false
     },
     "elevation": {
       "default": "undefined",
       "value": "",
       "type": "string | number",
-      "description": "The elevation of the component is acceptable from 0 to 24. You can read more on the Elevation page.",
-      "description_zh": "组件的海拔可接受 0 到 24 之间的值。你可以在 elevation page 浏览更多信息。"
+      "version": "",
+      "description": "Designates an elevation applied to the component between 0 and 24. You can find more information on the elevation page.",
+      "description_zh": "指定应用于组件的 0 到 24 之间的高程。您可以在海拔页面上找到更多信息。",
+      "required": false
     },
     "expand-on-hover": {
       "default": "false",
       "value": "",
       "type": "boolean",
+      "version": "",
       "description": "Collapses the drawer to a mini-variant until hovering with the mouse.",
-      "description_zh": "将抽屉折叠成一个迷你变体，直到鼠标悬停。"
+      "description_zh": "将抽屉折叠为迷你变体，直到将鼠标悬停在鼠标上。",
+      "required": false
     },
     "floating": {
       "default": "false",
       "value": "",
       "type": "boolean",
+      "version": "",
       "description": "A floating drawer has no visible container (no border-right).",
-      "description_zh": "浮动抽屉没有可见的容器（没有右边框）。"
+      "description_zh": "浮动抽屉没有可见的容器 （没有 border-right）。",
+      "required": false
     },
     "image": {
       "default": "undefined",
       "value": "",
       "type": "string",
+      "version": "",
       "description": "Apply a specific background image to the component.",
-      "description_zh": "将特定背景图像应用于组件。"
+      "description_zh": "将特定背景图像应用于组件。",
+      "required": false
     },
     "location": {
-      "default": "start",
+      "default": "'start'",
       "value": "",
       "type": "start / end / left / right / top / bottom",
-      "description": "MISSING DESCRIPTION (edit in github)",
-      "description_zh": "缺少描述 （在 github 中编辑）"
+      "version": "",
+      "description": "Controls the edge of the screen the drawer is attached to.",
+      "description_zh": "控制抽屉所连接的屏幕边缘。",
+      "required": false
+    },
+    "mobile": {
+      "default": "null",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "description": "Determines the display mode of the component. If true, the component will be displayed in mobile mode. If false, the component will be displayed in desktop mode. If null, will be based on the current mobile-breakpoint",
+      "description_zh": "确定组件的显示模式。如果为 true，则组件将以移动模式显示。如果为 false，则组件将以桌面模式显示。如果为 null，则将基于当前的 mobile-breakpoint",
+      "required": false
     },
     "mobile-breakpoint": {
       "default": "undefined",
       "value": "",
       "type": "number / xs / sm / md / lg / xl / xxl",
-      "description": "Sets the specified movement breakpoint for the component. This will apply an alternate style for mobile devices, such as a temporary prop, or activate a bottom prop when a breakpoint value is met. Setting the value to 0 disables this feature.",
-      "description_zh": "为组件设置指定的移动断点。这将为移动设备应用替代样式，如 temporary prop，或在满足断点值时激活 bottom prop。将值设置为 0 将禁用此功能。"
+      "version": "",
+      "description": "Sets the designated mobile breakpoint for the component. This will apply alternate styles for mobile devices such as the temporary prop, or activate the bottom prop when the breakpoint value is met. Setting the value to 0 will disable this functionality.",
+      "description_zh": "为组件设置指定的移动断点。这将为移动设备应用替代样式，例如 temporary prop，或在满足断点值时激活 bottom prop。将值设置为 0 将禁用此功能。",
+      "required": false
     },
-    ":v-model": {
+    "v-model": {
       "default": "null",
       "value": "",
       "type": "boolean",
-      "description": "The value of the component v-mode. If the component supports variants, the default is an empty array.",
-      "description_zh": "组件 v-mode 的值。如果组件支持多属性，默认为空数组。"
+      "version": "",
+      "description": "The v-model value of the component. If component supports the multiple prop, this defaults to an empty array.",
+      "description_zh": "组件的 v-model 值。如果 component 支持 multiple prop，则默认为空数组。",
+      "required": false
     },
     "name": {
       "default": "undefined",
       "value": "",
       "type": "string",
+      "version": "",
       "description": "Assign a specific name for layout registration.",
-      "description_zh": "为布局注册指定特定名称。"
+      "description_zh": "为布局注册分配特定名称。",
+      "required": false
+    },
+    "open-delay": {
+      "default": "undefined",
+      "value": "",
+      "type": "string | number",
+      "version": "",
+      "description": "Milliseconds to wait before opening component. Only applies to hover and focus events.",
+      "description_zh": "打开组件之前等待的毫秒数。仅适用于悬停和焦点事件。",
+      "required": false
     },
     "order": {
       "default": "0",
       "value": "",
       "type": "string | number",
+      "version": "",
       "description": "Adjust the order of the component in relation to its registration order.",
-      "description_zh": "根据组件的注册顺序调整组件的顺序。"
+      "description_zh": "根据元件的注册顺序调整元件的顺序。",
+      "required": false
     },
     "permanent": {
       "default": "false",
       "value": "",
       "type": "boolean",
+      "version": "",
       "description": "The drawer remains visible regardless of screen size.",
-      "description_zh": "无论屏幕尺寸如何，抽屉都保持可见。"
+      "description_zh": "无论屏幕大小如何，抽屉都保持可见。",
+      "required": false
+    },
+    "persistent": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "description": "Clicking outside or pressing esc key will not dismiss the dialog.",
+      "description_zh": "在外部单击或按 esc 键不会关闭对话框。",
+      "required": false
     },
     "rail": {
       "default": "null",
       "value": "",
       "type": "boolean",
+      "version": "",
       "description": "Sets the component width to the rail-width value.",
-      "description_zh": "将元件宽度设置为 rail-width 值。"
+      "description_zh": "将组件宽度设置为 rail-width 值。",
+      "required": false
     },
     "rail-width": {
       "default": "56",
       "value": "",
       "type": "string | number",
+      "version": "",
       "description": "Sets the width for the component when rail is enabled.",
-      "description_zh": "设置启用导轨时元件的宽度。"
+      "description_zh": "设置启用边栏时组件的宽度。",
+      "required": false
     },
     "rounded": {
       "default": "undefined",
       "value": "",
       "type": "string | number | boolean",
-      "description": "Applies the border-radius style to the specified component. You can get more information about this on the Corner Radius of Borders page",
-      "description_zh": "对指定的组件应用 border-radius 样式。您可以在 边框的圆角半径页面 获取更多有关信息"
+      "version": "",
+      "description": "Designates the border-radius applied to the component. This can be 0, xs, sm, true, lg, xl, pill, circle, and shaped. Find more information on available border radius classes on the Border Radius page.",
+      "description_zh": "指定应用于组件的 border-radius。这可以是 0、xs、sm、true、lg、xl、pill、circle 和 shaped。在 Border Radius 页面上查找有关可用边界半径类的更多信息。",
+      "required": false
     },
     "scrim": {
       "default": "true",
       "value": "",
       "type": "string | boolean",
+      "version": "",
       "description": "Determines whether an overlay is used when a temporary drawer is open. Accepts true/false to enable background, and string to define color.",
-      "description_zh": "确定在打开临时抽屉时是否使用覆盖。接受 true/false 以启用背景，接受 string 以定义颜色。"
+      "description_zh": "确定在打开临时抽屉时是否使用叠加。接受 true/false 以启用背景，接受 string 以定义颜色。",
+      "required": false
     },
     "sticky": {
       "default": "false",
       "value": "",
       "type": "boolean",
+      "version": "",
       "description": "MISSING DESCRIPTION (edit in github)",
-      "description_zh": "缺少描述 （在 github 中编辑）"
+      "description_zh": "缺少描述（在 github 中编辑）",
+      "required": false
     },
     "tag": {
-      "default": "nav",
+      "default": "'nav'",
       "value": "",
       "type": "string",
-      "description": "Specifies the custom tag to be used on the root element.",
-      "description_zh": "指定在根元素上使用的自定义标签。"
+      "version": "",
+      "description": "Specify a custom tag used on the root element.",
+      "description_zh": "指定根元素上使用的自定义标记。",
+      "required": false
     },
     "temporary": {
       "default": "false",
       "value": "",
       "type": "boolean",
-      "description": "The temporary drawer sits above its application and uses a scrim (overlay) to darken the background.",
-      "description_zh": "临时抽屉位于它的应用程序上方，并使用一个scrim（覆盖层）使背景变暗。"
+      "version": "",
+      "description": "A temporary drawer sits above its application and uses a scrim (overlay) to darken the background.",
+      "description_zh": "一个临时抽屉位于其应用程序上方，并使用纱幕（覆盖层）使背景变暗。",
+      "required": false
     },
     "theme": {
       "default": "undefined",
       "value": "",
       "type": "string",
+      "version": "",
       "description": "Specify a theme for this component and all of its children.",
-      "description_zh": "为此组件及其所有子组件指定主题。"
+      "description_zh": "为此组件及其所有子组件指定主题。",
+      "required": false
+    },
+    "tile": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "description": "Removes any applied border-radius from the component.",
+      "description_zh": "从组件中删除任何应用的 border-radius。",
+      "required": false
     },
     "touchless": {
       "default": "false",
       "value": "",
       "type": "boolean",
+      "version": "",
       "description": "Disable mobile touch functionality.",
-      "description_zh": "禁用移动触摸功能。"
+      "description_zh": "禁用移动触控功能。",
+      "required": false
     },
     "width": {
       "default": "256",
       "value": "",
       "type": "string | number",
-      "description": "Sets the width of the component.",
-      "description_zh": "设定组件的宽度。"
+      "version": "",
+      "description": "Sets the width for the component.",
+      "description_zh": "设置组件的宽度。",
+      "required": false
     }
   },
-  "link": "https://vuetifyjs.com/zh-Hans/api/v-navigation-drawer/#links",
-  "link_zh": "https://vuetifyjs.com/zh-Hans/api/v-navigation-drawer/#links",
+  "link": "https://vuetifyjs.com/en/api/v-navigation-drawer/",
+  "link_zh": "https://vuetifyjs.com/en/api/v-navigation-drawer/",
   "typeDetail": {},
   "events": [
     {
       "name": "update:modelValue",
-      "description": "An event that is raised when a component's model-value changes.",
-      "description_zh": "当组件的 model-value 更改时引发的事件。",
+      "description": "Event that is emitted when the component’s model changes.",
+      "description_zh": "组件的模型更改时发出的事件。",
       "params": "[boolean]",
       "value": ""
     },
     {
       "name": "update:rail",
       "description": "Event that is emitted when the rail model changes.",
-      "description_zh": "轨道模型更改时发出的事件。",
+      "description_zh": "当轨道模型更改时发出的事件。",
       "params": "[boolean]",
       "value": ""
     }
@@ -205,8 +300,8 @@
     },
     {
       "name": "default",
-      "description": "Default Vue slot.",
-      "description_zh": "默认Vue 插槽。"
+      "description": "The default Vue slot.",
+      "description_zh": "默认的 Vue 插槽。"
     },
     {
       "name": "image",
@@ -215,8 +310,16 @@
     },
     {
       "name": "prepend",
-      "description": "Slots at the top of drawers",
+      "description": "A slot at the top of the drawer",
       "description_zh": "抽屉顶部的插槽"
+    }
+  ],
+  "exposed": [
+    {
+      "name": "isStuck",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "MISSING DESCRIPTION (edit in github)",
+      "detail": "boolean | 'top' | 'bottom'"
     }
   ]
 }
