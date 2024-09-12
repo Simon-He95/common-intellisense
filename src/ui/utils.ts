@@ -264,7 +264,7 @@ export function propsReducer(options: PropsOptions) {
         details.push(`## ${uiName} [${item.name}]`)
 
         if (name)
-          details.push(`\n#### 💨 ${isZh ? '方法' : 'method'} ${name}:`)
+          details.push(`\n#### 💨 ${isZh ? '导出' : 'exposed'} ${name}:`)
 
         if (description) {
           if (isZh)
@@ -274,7 +274,7 @@ export function propsReducer(options: PropsOptions) {
         }
 
         if (detail)
-          details.push(`- 🚢 ${isZh ? '参数' : 'params'}:    ***\`${detail}\`***`)
+          details.push(`- 🚢 ${isZh ? '详情' : 'detail'}:    ***\`${detail}\`***`)
 
         documentation.appendMarkdown(details.join('\n\n'))
         const hover = createHover(documentation)

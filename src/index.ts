@@ -663,7 +663,7 @@ export function activate(context: vscode.ExtensionContext) {
           if (!r.template)
             return
           if (word.includes('.value.') && r.type === 'script' && r.refs.length) {
-            const refsMap = findRefs(r.template)
+            const refsMap = findRefs(r.template, r.refs)
             const index = word.indexOf('.value.')
             const key = word.slice(0, index)
             const refName = refsMap[key]
@@ -742,7 +742,7 @@ export function activate(context: vscode.ExtensionContext) {
           if (lineText.slice(range.start.character, range.end.character) === 'current') {
             // hover .value.区域 提示所有方法
             const gorupMd = createMarkdownString()
-            ;[[...UiCompletions[refName].methods, ...UiCompletions[refName].exposed]].forEach((m: any, i: number) => {
+              ;[[...UiCompletions[refName].methods, ...UiCompletions[refName].exposed]].forEach((m: any, i: number) => {
               let content = m.documentation.value
               if (i !== 0) {
                 content = content.replace(/##[^\]\n]*[\]\n]/, '')
