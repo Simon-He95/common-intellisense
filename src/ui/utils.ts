@@ -278,7 +278,7 @@ export function propsReducer(options: PropsOptions) {
 
         documentation.appendMarkdown(details.join('\n\n'))
         const hover = createHover(documentation)
-        return createCompletionItem({ content: expose.name, detail, documentation, type: 1, sortText: 'b', params: uiName, hover })
+        return createCompletionItem({ content: expose.name, snippet: expose.detail.startsWith('()') ? `${expose.name}()` : expose.name, detail, documentation, type: 1, sortText: 'b', params: uiName, hover })
       }))
     }
 
