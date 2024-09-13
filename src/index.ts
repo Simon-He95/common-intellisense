@@ -534,7 +534,7 @@ export function activate(context: vscode.ExtensionContext) {
   }, ['"', '\'', '-', ' ', '@', '.', ':']))
 
   context.subscriptions.push(registerCommand('intellisense.openDocument', (args) => {
-    // 注册全局的link点击时间
+    // 注册全局的 link 点击事件
     const url = args.link
     if (!url)
       return
@@ -557,7 +557,7 @@ export function activate(context: vscode.ExtensionContext) {
         </body>
       </html>
       `, ({ data, type }) => {
-      // callback 获取js层的postMessage数据
+      // callback 获取 js 层的 postMessage 数据
       if (type === 'copy') {
         setCopyText(data).then(() => {
           const isZh = getLocale().includes('zh')
@@ -568,7 +568,7 @@ export function activate(context: vscode.ExtensionContext) {
   }))
 
   context.subscriptions.push(registerCommand('intellisense.openDocumentExternal', (args) => {
-    // 注册全局的link点击时间
+    // 注册全局的 link 点击事件
     const url = args.link
     if (!url)
       return
@@ -937,7 +937,7 @@ export function getAbsoluteUrl(url: string) {
 
 async function getTemplateParentElementName(url: string) {
   const code = await fsp.readFile(url, 'utf-8')
-  // 如果有defineProps或者props的忽律，交给v-component-prompter处理
+  // 如果有defineProps或者props的忽律，交给 v-component-prompter 处理
   const {
     descriptor: { template, script, scriptSetup },
   } = parse(code)
@@ -953,7 +953,7 @@ async function getTemplateParentElementName(url: string) {
   for (const child of template.ast.children) {
     const node = child as any
     if (node.tag) {
-      if (result) // 说明template下不是唯一父节点
+      if (result) // 说明 template 下不是唯一父节点
         return
       result = node.tag
     }
@@ -1020,7 +1020,7 @@ function getHoverAttribute(attributeList: any[], attr: string) {
 const IMPORT_UI_REG = /import\s+\{([^}]+)\}\s+from\s+['"]([^"']+)['"]/g
 
 function getImportUiComponents(text: string) {
-  // 读取需要按需导入的ui库， 例如 antd ,拿出导入的components
+  // 读取需要按需导入的ui库， 例如 antd, 拿出导入的 components
   const deps: Record<string, any> = {}
   for (const match of text.matchAll(IMPORT_UI_REG)) {
     if (!match)
