@@ -291,7 +291,7 @@ export function activate(context: vscode.ExtensionContext) {
     const result = parser(document.getText(), p)
     if (!result)
       return
-    if (position.active === ':' && result.type === 'text')
+    if ((position as any).active === ':' && result.type === 'text')
       return
 
     const lan = getActiveTextEditorLanguageId()
