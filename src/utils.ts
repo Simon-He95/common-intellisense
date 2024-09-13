@@ -100,7 +100,7 @@ export function transformVue(code: string, position: vscode.Position, offset = 0
 }
 
 export function transformVine(vineFileCtx: VineFileCtx, position: vscode.Position) {
-  const targetInPositionNode = vineFileCtx.vineCompFns.find(item => isInPosition(item.fnDeclNode.loc, position))
+  const targetInPositionNode = vineFileCtx.vineCompFns.find(item => item.fnDeclNode.loc ? isInPosition(item.fnDeclNode.loc, position) : false)
   if (!targetInPositionNode)
     return
 
@@ -477,7 +477,7 @@ export function findRefs(template: SFCTemplateBlock, refsMap: (string | [string,
   const { ast } = template
   return findRef(ast.children, {}, refsMap)
 }
-function findRef(children: any, map: any, refsMap: (string | [string, string])[]) {
+function findRef(children: any, map: any, refsMap: (string | [string, string])[] = []) {
   for (const child of children) {
     const { tag, props, children } = child
     if (props && props.length) {
