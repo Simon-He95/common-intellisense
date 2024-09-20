@@ -4,95 +4,216 @@
     {
       "name": "setNow",
       "description": "Change model to current moment",
+      "description_zh": "将模型更改为当前时刻",
       "params": "",
-      "description_zh": "将模型更改为当前时刻"
+      "value": ""
     }
   ],
   "events": [
     {
       "name": "update:model-value",
       "description": "",
+      "description_zh": "",
       "params": "(value: String,null, details: Object) => void",
-      "description_zh": ""
+      "value": ""
     }
   ],
   "props": {
+    "landscape": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Display the component in landscape mode",
+      "description_zh": "在横向模式下显示组件",
+      "default": "false",
+      "required": false
+    },
+    "mask": {
+      "value": "",
+      "type": "String | null",
+      "description": "Mask (formatting string) used for parsing and formatting value",
+      "description_zh": "用于解析和格式化值的掩码（格式字符串）",
+      "default": "'HH:mm'",
+      "required": false
+    },
+    "locale": {
+      "value": "",
+      "type": "Object",
+      "description": "Locale formatting options",
+      "description_zh": "区域设置格式选项",
+      "default": "",
+      "required": false
+    },
+    "calendar": {
+      "value": "",
+      "type": "String",
+      "description": "Specify calendar type",
+      "description_zh": "指定日历类型",
+      "default": "'gregorian'",
+      "required": false
+    },
+    "color": {
+      "type": "String | Array",
+      "description": "Color name for component from the Quasar Color Palette",
+      "value": "",
+      "default": "'primary'",
+      "extends": "color",
+      "desc": "The color to be attributed to the indicator (the underline) of the active tab",
+      "category": "style",
+      "__runtimeDefault": true,
+      "examples": [
+        "[ 'accent', 'grey-7' ]"
+      ],
+      "addedIn": "v2.4",
+      "description_zh": "Quasar Color Palette （类星体调色板） 中组件的颜色名称"
+    },
+    "text-color": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "",
+      "required": false,
+      "extends": "text-color"
+    },
+    "dark": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "",
+      "required": false,
+      "extends": "dark"
+    },
+    "square": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "",
+      "required": false,
+      "extends": "square"
+    },
+    "flat": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "",
+      "required": false,
+      "extends": "flat"
+    },
+    "bordered": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "",
+      "required": false,
+      "extends": "bordered"
+    },
+    "readonly": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "",
+      "required": false,
+      "extends": "readonly"
+    },
+    "disable": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "",
+      "required": false,
+      "extends": "disable"
+    },
     "model-value": {
       "value": "",
       "type": "String | null | undefined",
       "description": "",
+      "description_zh": "",
       "default": "",
+      "required": false,
       "extends": "model-value",
       "desc": "Time of the component; Either use this property (along with a listener for 'update:modelValue' event) OR use v-model directive",
       "examples": [
-        "v-model=\"currentTime\""
-      ],
-      "description_zh": ""
+        "# v-model=\"currentTime\""
+      ]
     },
     "format24h": {
       "value": "",
-      "type": "Boolean",
-      "description": "Forces 24 hour time display instead of AM/PM system",
-      "default": "(based on Quasar lang language being used)",
-      "description_zh": "强制 24 小时时间显示，而不是 AM/PM 系统"
+      "type": "Boolean | null",
+      "description": "Forces 24 hour time display instead of AM/PM system; If prop is not set, then the default is based on Quasar lang language being used",
+      "description_zh": "强制 24 小时时间显示而不是 AM/PM 系统;如果未设置 prop，则默认基于正在使用的 Quasar 语言",
+      "default": "null",
+      "required": false
     },
     "default-date": {
       "value": "",
       "type": "String",
       "description": "The default date to use (in YYYY/MM/DD format) when model is unfilled (undefined or null)",
-      "default": "current day",
-      "description_zh": "模型未填充（未定义或空）时使用的默认日期（YYYY/MM/DD 格式）"
-    },
-    "mask": {
-      "value": "",
-      "type": "String",
-      "default": "HH:mm",
-      "description": "",
-      "description_zh": ""
+      "description_zh": "当模型未填充（未定义或为空）时要使用的默认日期（以 YYYY/MM/DD 格式）",
+      "default": "# current day",
+      "required": false
     },
     "options": {
       "value": "",
       "type": "Function",
       "description": "Optionally configure what time is the user allowed to set; Overridden by 'hour-options', 'minute-options' and 'second-options' if those are set; For best performance, reference it from your scope and do not define it inline",
+      "description_zh": "（可选）配置允许用户设置的时间;如果设置了 'hour-options'、'minute-options' 和 'second-options'，则被覆盖;为了获得最佳性能，请从您的范围中引用它，不要内联定义它",
       "default": "",
-      "description_zh": "（可选）配置允许用户设置的时间;如果设置了“小时选项”、“分钟选项”和“第二选项”，则覆盖这些选项;为了获得最佳性能，请从您的范围引用它，不要以内联方式定义它"
+      "required": false
     },
     "hour-options": {
       "value": "",
       "type": "Array",
       "description": "Optionally configure what hours is the user allowed to set; Overrides 'options' prop if that is also set",
+      "description_zh": "（可选）配置允许用户设置的时间;如果也设置了 'options' prop，则覆盖该属性",
       "default": "",
-      "description_zh": "（可选）配置允许用户设置的小时数;覆盖 'options' 道具（如果也设置了）"
+      "required": false
     },
     "minute-options": {
       "value": "",
       "type": "Array",
       "description": "Optionally configure what minutes is the user allowed to set; Overrides 'options' prop if that is also set",
+      "description_zh": "（可选）配置允许用户设置的分钟数;如果也设置了 'options' prop，则覆盖该属性",
       "default": "",
-      "description_zh": "（可选）配置允许用户设置的分钟数;覆盖 'options' 道具（如果也设置了）"
+      "required": false
     },
     "second-options": {
       "value": "",
       "type": "Array",
       "description": "Optionally configure what seconds is the user allowed to set; Overrides 'options' prop if that is also set",
+      "description_zh": "（可选）配置允许用户设置的秒数;如果也设置了 'options' prop，则覆盖该属性",
       "default": "",
-      "description_zh": "（可选）配置允许用户设置的秒数;覆盖 'options' 道具（如果也设置了）"
+      "required": false
     },
     "with-seconds": {
       "value": "",
       "type": "Boolean",
       "description": "Allow the time to be set with seconds",
+      "description_zh": "允许以秒为单位设置时间",
       "default": "false",
-      "description_zh": "允许以秒为单位设置时间"
+      "required": false
     },
     "now-btn": {
       "value": "",
       "type": "Boolean",
       "description": "Display a button that selects the current time",
+      "description_zh": "显示用于选择当前时间的按钮",
       "default": "false",
-      "description_zh": "显示一个选择当前时间的按钮"
+      "required": false
     }
   },
   "link": "https://v2.quasar.dev/vue-components/time",
-  "link_zh": "https://v2.quasar.dev/vue-components/time"
+  "link_zh": "https://v2.quasar.dev/vue-components/time",
+  "slots": [
+    {
+      "name": "default",
+      "description": "This is where additional buttons can go",
+      "description_zh": "这是其他按钮可以去的地方"
+    }
+  ]
 }

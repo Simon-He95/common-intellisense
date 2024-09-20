@@ -3,53 +3,72 @@
   "methods": [],
   "events": [],
   "props": {
+    "size": {
+      "value": "",
+      "type": "String",
+      "description": "Size in CSS units, including unit name or standard size name (xs|sm|md|lg|xl)",
+      "description_zh": "以 CSS 单位为单位的大小，包括单位名称或标准大小名称 （xs|sm|md|lg|xl）",
+      "default": "",
+      "required": false
+    },
     "tag": {
       "value": "",
       "type": "String",
       "description": "",
-      "default": "i",
+      "description_zh": "",
+      "default": "'i'",
+      "required": false,
       "extends": "tag",
       "desc": "HTML tag to render, unless no icon is supplied or it's an svg icon",
       "examples": [
-        "div",
-        "i"
-      ],
-      "description_zh": ""
+        "'div'",
+        "'i'"
+      ]
     },
     "name": {
       "value": "",
       "type": "String",
       "description": "",
+      "description_zh": "",
       "default": "",
+      "required": false,
       "extends": "icon",
-      "category": "model",
-      "description_zh": ""
+      "category": "model"
     },
     "color": {
       "type": "String",
       "description": "Color name for component from the Quasar Color Palette",
       "value": "",
-      "default": "primary",
+      "default": "'primary'",
       "extends": "color",
-      "desc": "Font color (from the Quasar Palette) of buttons and text in the toolbar",
+      "desc": "Color name for the label from the Quasar Color Palette; Overrides the 'color' prop; The difference from 'color' prop is that the label will always have this color, even when field is not focused",
       "category": "toolbar",
-      "description_zh": "类星体调色板中组件的颜色名称"
+      "description_zh": "Quasar Color Palette （类星体调色板） 中组件的颜色名称"
     },
     "left": {
       "value": "",
       "type": "Boolean",
       "description": "Useful if icon is on the left side of something: applies a standard margin on the right side of Icon",
+      "description_zh": "如果图标位于某物的左侧，则很有用：在 Icon 的右侧应用标准边距",
       "default": "false",
-      "description_zh": "如果图标位于某物的左侧，则很有用：在图标的右侧应用标准边距"
+      "required": false
     },
     "right": {
       "value": "",
       "type": "Boolean",
       "description": "Useful if icon is on the right side of something: applies a standard margin on the left side of Icon",
+      "description_zh": "如果 icon 位于某物的右侧，则很有用：在 Icon 的左侧应用标准边距",
       "default": "false",
-      "description_zh": "如果图标位于某物的右侧，则很有用：在图标的左侧应用标准边距"
+      "required": false
     }
   },
   "link": "https://v2.quasar.dev/vue-components/icon",
-  "link_zh": "https://v2.quasar.dev/vue-components/icon"
+  "link_zh": "https://v2.quasar.dev/vue-components/icon",
+  "slots": [
+    {
+      "name": "default",
+      "description": "Suggestions: QTooltip or QMenu",
+      "description_zh": "建议：QTooltip 或 QMenu"
+    }
+  ]
 }

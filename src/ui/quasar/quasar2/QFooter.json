@@ -5,8 +5,16 @@
     {
       "name": "reveal",
       "description": "Emitted when 'reveal' state gets changed",
+      "description_zh": "当 'reveal' 状态发生变化时触发",
       "params": "(value: Boolean) => void",
-      "description_zh": "当“显示”状态发生更改时发出"
+      "value": ""
+    },
+    {
+      "name": "focusin",
+      "description": "",
+      "description_zh": "",
+      "params": "",
+      "value": ""
     }
   ],
   "props": {
@@ -14,45 +22,56 @@
       "value": "",
       "type": "Boolean",
       "description": "",
-      "default": true,
+      "description_zh": "",
+      "default": "true",
+      "required": false,
       "extends": "model-value",
       "desc": "Model of the component defining if it is shown or hidden to the user; Either use this property (along with a listener for 'update:modelValue' event) OR use v-model directive",
-      "required": false,
       "examples": [
-        "v-model=\"footerState\""
-      ],
-      "description_zh": ""
+        "# v-model=\"footerState\""
+      ]
     },
     "reveal": {
       "value": "",
       "type": "Boolean",
       "description": "Enable 'reveal' mode; Takes into account user scroll to temporarily show/hide footer",
+      "description_zh": "启用 'reveal' 模式;考虑用户滚动以临时显示/隐藏页脚",
       "default": "false",
-      "description_zh": "启用“显示”模式;考虑用户滚动以临时显示/隐藏页脚"
+      "required": false
     },
     "bordered": {
       "value": "",
       "type": "String",
       "description": "",
+      "description_zh": "",
       "default": "",
-      "extends": "bordered",
-      "description_zh": ""
+      "required": false,
+      "extends": "bordered"
     },
     "elevated": {
       "value": "",
       "type": "Boolean",
       "description": "Adds a default shadow to the footer",
+      "description_zh": "向页脚添加默认阴影",
       "default": "false",
-      "description_zh": "向页脚添加默认阴影"
+      "required": false
     },
     "height-hint": {
       "value": "",
       "type": "Number | String",
       "description": "When using SSR, you can optionally hint of the height (in pixels) of the QFooter",
-      "default": 50,
-      "description_zh": "使用 SSR 时，您可以选择提示 QFooter 的高度（以像素为单位）"
+      "description_zh": "使用 SSR 时，您可以选择提示 QFooter 的高度（以像素为单位）",
+      "default": "50",
+      "required": false
     }
   },
   "link": "https://v2.quasar.dev/layout/header-and-footer",
-  "link_zh": "https://v2.quasar.dev/layout/header-and-footer"
+  "link_zh": "https://v2.quasar.dev/layout/header-and-footer",
+  "slots": [
+    {
+      "name": "default",
+      "description": "Default slot in the devland unslotted content of the component; Suggestion: QToolbar",
+      "description_zh": "组件的 devland unslotted 内容中的 Default slot;建议：QToolbar"
+    }
+  ]
 }

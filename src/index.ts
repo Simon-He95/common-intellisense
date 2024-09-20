@@ -10,6 +10,7 @@ import UI from './ui'
 import { UINames as UINamesMap, nameMap } from './constants'
 import type { Directives } from './ui/utils'
 import { isVine, isVue, toCamel } from './ui/utils'
+import { fetchFromCommonIntellisense } from './fetch'
 // import {createWebviewPanel} from './webview/webview'
 
 let UINames: any = []
@@ -29,7 +30,9 @@ function isSkip() {
   return !id || !filter.includes(id)
 }
 // todo: 补充example
-export function activate(context: vscode.ExtensionContext) {
+export async function activate(context: vscode.ExtensionContext) {
+  const commonUI = await fetchFromCommonIntellisense()
+  Object.assign(UI, commonUI)
   extensionContext = context
   // todo: createWebviewPanel
   // createWebviewPanel(context)
@@ -597,7 +600,6 @@ export function activate(context: vscode.ExtensionContext) {
         return
 
       let word = document.getText(range)
-
       const lineText = getLineText(position.line)
       if (!lineText)
         return

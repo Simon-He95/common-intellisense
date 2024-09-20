@@ -5,20 +5,30 @@
     {
       "name": "click",
       "description": "Emitted on QChip click if 'clickable' property is set",
+      "description_zh": "如果设置了 'clickable' 属性，则在 QChip 单击时发出",
       "params": "(evt: undefined) => void",
-      "description_zh": "如果设置了“clickable”属性，则在 QChip click 时发出"
+      "value": ""
+    },
+    {
+      "name": "update:model-value",
+      "description": "",
+      "description_zh": "",
+      "params": "",
+      "value": ""
     },
     {
       "name": "update:selected",
       "description": "Used by Vue on 'v-model:selected' for updating its value",
+      "description_zh": "被 Vue 在 'v-model：selected' 上用于更新其值",
       "params": "(state: Boolean) => void",
-      "description_zh": "Vue 在 'v-model：selected' 上使用它来更新其值"
+      "value": ""
     },
     {
       "name": "remove",
       "description": "Works along with 'value' and 'removable' prop. Emitted when toggling rendering state of the QChip",
+      "description_zh": "与 'value' 和 'removable' prop 一起使用。在切换 QChip 的渲染状态时发出",
       "params": "(state: Boolean) => void",
-      "description_zh": "与“value”和“removable”道具一起工作。切换 QChip 的渲染状态时发出"
+      "value": ""
     }
   ],
   "props": {
@@ -26,161 +36,187 @@
       "value": "",
       "type": "String",
       "description": "",
+      "description_zh": "",
       "default": "",
-      "extends": "dense",
-      "description_zh": ""
+      "required": false,
+      "extends": "dense"
     },
     "size": {
       "value": "",
       "type": "String",
       "description": "QChip size name or a CSS unit including unit name",
+      "description_zh": "QChip 大小名称或包含单元名称的 CSS 单元",
       "default": "",
-      "description_zh": "Q大小名称或包含单元名称的 CSS 单元"
+      "required": false
     },
     "dark": {
       "value": "",
       "type": "String",
       "description": "",
+      "description_zh": "",
       "default": "",
-      "extends": "dark",
-      "description_zh": ""
+      "required": false,
+      "extends": "dark"
     },
     "icon": {
       "value": "",
       "type": "String",
       "description": "",
+      "description_zh": "",
       "default": "",
-      "extends": "icon",
-      "description_zh": ""
+      "required": false,
+      "extends": "icon"
     },
     "icon-right": {
       "value": "",
       "type": "String",
       "description": "",
+      "description_zh": "",
       "default": "",
-      "extends": "icon",
-      "description_zh": ""
+      "required": false,
+      "extends": "icon"
     },
     "icon-remove": {
       "value": "",
       "type": "String",
       "description": "",
+      "description_zh": "",
       "default": "",
-      "extends": "icon",
-      "description_zh": ""
+      "required": false,
+      "extends": "icon"
     },
     "icon-selected": {
       "value": "",
       "type": "String",
       "description": "",
+      "description_zh": "",
       "default": "",
-      "extends": "icon",
-      "description_zh": ""
+      "required": false,
+      "extends": "icon"
     },
     "label": {
       "value": "",
       "type": "String | Number",
       "description": "Chip's content as string; overrides default slot if specified",
+      "description_zh": "Chip 的内容为 string;如果指定，则覆盖默认插槽",
       "default": "",
-      "description_zh": "芯片的内容为字符串;覆盖默认插槽（如果指定）"
+      "required": false
     },
     "color": {
       "type": "String",
       "description": "Color name for component from the Quasar Color Palette",
       "value": "",
-      "default": "primary",
+      "default": "'primary'",
       "extends": "color",
-      "desc": "Color name for the track of the component from the Quasar Color Palette",
+      "desc": "Color name (from the Quasar Color Palette) for chat bubble background",
       "category": "style",
-      "description_zh": "类星体调色板中组件的颜色名称"
+      "description_zh": "Quasar Color Palette （类星体调色板） 中组件的颜色名称"
     },
     "text-color": {
       "value": "",
       "type": "String",
       "description": "",
+      "description_zh": "",
       "default": "",
-      "extends": "text-color",
-      "description_zh": ""
+      "required": false,
+      "extends": "text-color"
     },
     "model-value": {
       "value": "",
       "type": "Boolean",
       "description": "",
-      "default": true,
-      "extends": "model-value",
-      "desc": "Model of the component determining if QChip should be rendered or not",
+      "description_zh": "",
+      "default": "true",
       "required": false,
-      "description_zh": ""
+      "extends": "model-value",
+      "desc": "Model of the component determining if QChip should be rendered or not"
     },
     "selected": {
       "value": "",
-      "type": "Boolean",
+      "type": "Boolean | null",
       "description": "Model for QChip if it's selected or not",
-      "default": "false",
-      "description_zh": "QChip 的模型（如果已选择与否）"
+      "description_zh": "QChip 的模型（如果已选中）",
+      "default": "null",
+      "required": false
     },
     "square": {
       "value": "",
       "type": "String",
       "description": "",
+      "description_zh": "",
       "default": "",
+      "required": false,
       "extends": "square",
-      "desc": "Sets a low value for border-radius instead of the default one, making it close to a square",
-      "description_zh": ""
+      "desc": "Sets a low value for border-radius instead of the default one, making it close to a square"
     },
     "outline": {
       "value": "",
       "type": "Boolean",
       "description": "Display using the 'outline' design",
+      "description_zh": "使用 'outline' 设计显示",
       "default": "false",
-      "description_zh": "使用“轮廓”设计的显示"
+      "required": false
     },
     "clickable": {
       "value": "",
       "type": "Boolean",
       "description": "Is QChip clickable? If it's the case, then it will add hover effects and emit 'click' events",
+      "description_zh": "QChip 是可点击的吗？如果是这种情况，那么它将添加悬停效果并发出 'click' 事件",
       "default": "false",
-      "description_zh": "QChip 可以点击吗？如果是这种情况，那么它将添加悬停效果并发出“点击”事件"
+      "required": false
     },
     "removable": {
       "value": "",
       "type": "Boolean",
       "description": "If set, then it displays a 'remove' icon that when clicked the QChip emits 'remove' event",
+      "description_zh": "如果设置，则会显示一个 'remove' 图标，当单击 QChip 时，会发出 'remove' 事件",
       "default": "false",
-      "description_zh": "如果设置，则会显示一个“删除”图标，单击该图标时，QChip 会发出“删除”事件"
+      "required": false
     },
     "ripple": {
       "value": "",
       "type": "String",
       "description": "",
+      "description_zh": "",
       "default": "",
-      "extends": "ripple",
-      "description_zh": ""
+      "required": false,
+      "extends": "ripple"
     },
     "remove-aria-label": {
       "value": "",
       "type": "String",
       "description": "aria-label to be used on the remove icon",
+      "description_zh": "aria-label 用于 Remove 图标",
       "default": "",
-      "description_zh": "aria-label 用于删除图标"
+      "version": "v2.8.4",
+      "required": false
     },
     "tabindex": {
       "value": "",
       "type": "String",
       "description": "",
+      "description_zh": "",
       "default": "",
-      "extends": "tabindex",
-      "description_zh": ""
+      "required": false,
+      "extends": "tabindex"
     },
     "disable": {
       "value": "",
       "type": "String",
       "description": "",
+      "description_zh": "",
       "default": "",
-      "extends": "disable",
-      "description_zh": ""
+      "required": false,
+      "extends": "disable"
     }
   },
   "link": "https://v2.quasar.dev/vue-components/chip",
-  "link_zh": "https://v2.quasar.dev/vue-components/chip"
+  "link_zh": "https://v2.quasar.dev/vue-components/chip",
+  "slots": [
+    {
+      "name": "default",
+      "description": "This is where QChip content goes, if not using 'label' property",
+      "description_zh": "这就是 QChip 内容的位置，如果不使用 'label' 属性"
+    }
+  ]
 }

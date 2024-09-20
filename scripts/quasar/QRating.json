@@ -1,117 +1,421 @@
 {
-  "mixins": ["composables/private/use-size", "composables/private/use-form"],
-
+  "mixins": [
+    {
+      "props": {
+        "size": {
+          "type": "String",
+          "desc": "Size in CSS units, including unit name or standard size name (xs|sm|md|lg|xl)",
+          "examples": [
+            "'16px'",
+            "'2rem'",
+            "'xs'",
+            "'md'"
+          ],
+          "category": "style"
+        },
+        "model-value": {
+          "extends": "model-value",
+          "type": "Number",
+          "examples": [
+            "# v-model=\"rating\"",
+            "# :model-value=\"rating\"",
+            "# :model-value=\"2\""
+          ]
+        },
+        "max": {
+          "type": [
+            "Number",
+            "String"
+          ],
+          "desc": "Number of icons to display",
+          "default": "5",
+          "category": "general"
+        },
+        "icon": {
+          "type": [
+            "String",
+            "Array"
+          ],
+          "desc": "Icon name following Quasar convention; make sure you have the icon library installed unless you are using 'img:' prefix; If an array is provided each rating value will use the corresponding icon in the array (0 based)",
+          "examples": [
+            "'map'",
+            "'ion-add'",
+            "'img:https://cdn.quasar.dev/logo-v2/svg/logo.svg'",
+            "'img:path/to/some_image.png'"
+          ],
+          "category": "content"
+        },
+        "icon-selected": {
+          "type": [
+            "String",
+            "Array"
+          ],
+          "desc": "Icon name following Quasar convention to be used when selected (optional); make sure you have the icon library installed unless you are using 'img:' prefix; If an array is provided each rating value will use the corresponding icon in the array (0 based)",
+          "examples": [
+            "'map'",
+            "'ion-add'",
+            "'img:https://cdn.quasar.dev/logo-v2/svg/logo.svg'",
+            "'img:path/to/some_image.png'"
+          ],
+          "category": "content"
+        },
+        "icon-half": {
+          "type": [
+            "String",
+            "Array"
+          ],
+          "desc": "Icon name following Quasar convention to be used when selected (optional); make sure you have the icon library installed unless you are using 'img:' prefix; If an array is provided each rating value will use the corresponding icon in the array (0 based)",
+          "examples": [
+            "'map'",
+            "'ion-add'",
+            "'img:https://cdn.quasar.dev/logo-v2/svg/logo.svg'",
+            "'img:path/to/some_image.png'"
+          ],
+          "category": "content"
+        },
+        "icon-aria-label": {
+          "type": [
+            "String",
+            "Array"
+          ],
+          "desc": "Label to be set on aria-label for Icon; If an array is provided each rating value will use the corresponding aria-label in the array (0 based); If string value is provided the rating value will be appended; If not provided the name of the icon will be used",
+          "examples": [
+            "'Rating'",
+            "[ 'Bad', 'Normal', 'Good' ]"
+          ],
+          "category": "accessibility",
+          "addedIn": "v1.20.3"
+        },
+        "color": {
+          "extends": "color",
+          "type": [
+            "String",
+            "Array"
+          ],
+          "desc": "Color name for component from the Quasar Color Palette; v1.5.0+: If an array is provided each rating value will use the corresponding color in the array (0 based)",
+          "examples": [
+            "[ 'accent', 'grey-7' ]"
+          ]
+        },
+        "color-selected": {
+          "extends": "color",
+          "type": [
+            "String",
+            "Array"
+          ],
+          "desc": "Color name from the Quasar Palette for selected icons"
+        },
+        "color-half": {
+          "extends": "color",
+          "type": [
+            "String",
+            "Array"
+          ],
+          "desc": "Color name from the Quasar Palette for half selected icons"
+        },
+        "no-dimming": {
+          "type": "Boolean",
+          "desc": "Does not lower opacity for unselected icons",
+          "category": "style"
+        },
+        "no-reset": {
+          "type": "Boolean",
+          "desc": "When used, disables default behavior of clicking/tapping on icon which represents current model value to reset model to 0",
+          "category": "model"
+        },
+        "readonly": {
+          "extends": "readonly"
+        },
+        "disable": {
+          "extends": "disable"
+        }
+      }
+    },
+    {
+      "props": {
+        "name": {
+          "type": "String",
+          "desc": "Used to specify the name of the control; Useful if dealing with forms submitted directly to a URL",
+          "examples": [
+            "'car_id'"
+          ],
+          "category": "behavior"
+        },
+        "size": {
+          "type": "String",
+          "desc": "Size in CSS units, including unit name or standard size name (xs|sm|md|lg|xl)",
+          "examples": [
+            "'16px'",
+            "'2rem'",
+            "'xs'",
+            "'md'"
+          ],
+          "category": "style"
+        },
+        "model-value": {
+          "extends": "model-value",
+          "type": "Number",
+          "examples": [
+            "# v-model=\"rating\"",
+            "# :model-value=\"rating\"",
+            "# :model-value=\"2\""
+          ]
+        },
+        "max": {
+          "type": [
+            "Number",
+            "String"
+          ],
+          "desc": "Number of icons to display",
+          "default": "5",
+          "category": "general"
+        },
+        "icon": {
+          "type": [
+            "String",
+            "Array"
+          ],
+          "desc": "Icon name following Quasar convention; make sure you have the icon library installed unless you are using 'img:' prefix; If an array is provided each rating value will use the corresponding icon in the array (0 based)",
+          "examples": [
+            "'map'",
+            "'ion-add'",
+            "'img:https://cdn.quasar.dev/logo-v2/svg/logo.svg'",
+            "'img:path/to/some_image.png'"
+          ],
+          "category": "content"
+        },
+        "icon-selected": {
+          "type": [
+            "String",
+            "Array"
+          ],
+          "desc": "Icon name following Quasar convention to be used when selected (optional); make sure you have the icon library installed unless you are using 'img:' prefix; If an array is provided each rating value will use the corresponding icon in the array (0 based)",
+          "examples": [
+            "'map'",
+            "'ion-add'",
+            "'img:https://cdn.quasar.dev/logo-v2/svg/logo.svg'",
+            "'img:path/to/some_image.png'"
+          ],
+          "category": "content"
+        },
+        "icon-half": {
+          "type": [
+            "String",
+            "Array"
+          ],
+          "desc": "Icon name following Quasar convention to be used when selected (optional); make sure you have the icon library installed unless you are using 'img:' prefix; If an array is provided each rating value will use the corresponding icon in the array (0 based)",
+          "examples": [
+            "'map'",
+            "'ion-add'",
+            "'img:https://cdn.quasar.dev/logo-v2/svg/logo.svg'",
+            "'img:path/to/some_image.png'"
+          ],
+          "category": "content"
+        },
+        "icon-aria-label": {
+          "type": [
+            "String",
+            "Array"
+          ],
+          "desc": "Label to be set on aria-label for Icon; If an array is provided each rating value will use the corresponding aria-label in the array (0 based); If string value is provided the rating value will be appended; If not provided the name of the icon will be used",
+          "examples": [
+            "'Rating'",
+            "[ 'Bad', 'Normal', 'Good' ]"
+          ],
+          "category": "accessibility",
+          "addedIn": "v1.20.3"
+        },
+        "color": {
+          "extends": "color",
+          "type": [
+            "String",
+            "Array"
+          ],
+          "desc": "Color name for component from the Quasar Color Palette; v1.5.0+: If an array is provided each rating value will use the corresponding color in the array (0 based)",
+          "examples": [
+            "[ 'accent', 'grey-7' ]"
+          ]
+        },
+        "color-selected": {
+          "extends": "color",
+          "type": [
+            "String",
+            "Array"
+          ],
+          "desc": "Color name from the Quasar Palette for selected icons"
+        },
+        "color-half": {
+          "extends": "color",
+          "type": [
+            "String",
+            "Array"
+          ],
+          "desc": "Color name from the Quasar Palette for half selected icons"
+        },
+        "no-dimming": {
+          "type": "Boolean",
+          "desc": "Does not lower opacity for unselected icons",
+          "category": "style"
+        },
+        "no-reset": {
+          "type": "Boolean",
+          "desc": "When used, disables default behavior of clicking/tapping on icon which represents current model value to reset model to 0",
+          "category": "model"
+        },
+        "readonly": {
+          "extends": "readonly"
+        },
+        "disable": {
+          "extends": "disable"
+        }
+      }
+    }
+  ],
   "meta": {
     "docsUrl": "https://v2.quasar.dev/vue-components/rating"
   },
-
   "props": {
+    "name": {
+      "type": "String",
+      "desc": "Used to specify the name of the control; Useful if dealing with forms submitted directly to a URL",
+      "examples": [
+        "'car_id'"
+      ],
+      "category": "behavior"
+    },
+    "size": {
+      "type": "String",
+      "desc": "Size in CSS units, including unit name or standard size name (xs|sm|md|lg|xl)",
+      "examples": [
+        "'16px'",
+        "'2rem'",
+        "'xs'",
+        "'md'"
+      ],
+      "category": "style"
+    },
     "model-value": {
       "extends": "model-value",
       "type": "Number",
-      "examples": ["v-model=\"rating\"", ":model-value=\"rating\"", ":model-value=\"2\""]
+      "examples": [
+        "# v-model=\"rating\"",
+        "# :model-value=\"rating\"",
+        "# :model-value=\"2\""
+      ]
     },
-
     "max": {
-      "type": ["Number", "String"],
+      "type": [
+        "Number",
+        "String"
+      ],
       "desc": "Number of icons to display",
-      "default": 5,
+      "default": "5",
       "category": "general"
     },
-
     "icon": {
-      "type": ["String", "Array"],
+      "type": [
+        "String",
+        "Array"
+      ],
       "desc": "Icon name following Quasar convention; make sure you have the icon library installed unless you are using 'img:' prefix; If an array is provided each rating value will use the corresponding icon in the array (0 based)",
       "examples": [
-        "map",
-        "ion-add",
-        "img:https://cdn.quasar.dev/logo-v2/svg/logo.svg",
-        "img:path/to/some_image.png"
+        "'map'",
+        "'ion-add'",
+        "'img:https://cdn.quasar.dev/logo-v2/svg/logo.svg'",
+        "'img:path/to/some_image.png'"
       ],
       "category": "content"
     },
-
     "icon-selected": {
-      "type": ["String", "Array"],
+      "type": [
+        "String",
+        "Array"
+      ],
       "desc": "Icon name following Quasar convention to be used when selected (optional); make sure you have the icon library installed unless you are using 'img:' prefix; If an array is provided each rating value will use the corresponding icon in the array (0 based)",
       "examples": [
-        "map",
-        "ion-add",
-        "img:https://cdn.quasar.dev/logo-v2/svg/logo.svg",
-        "img:path/to/some_image.png"
+        "'map'",
+        "'ion-add'",
+        "'img:https://cdn.quasar.dev/logo-v2/svg/logo.svg'",
+        "'img:path/to/some_image.png'"
       ],
       "category": "content"
     },
-
     "icon-half": {
-      "type": ["String", "Array"],
+      "type": [
+        "String",
+        "Array"
+      ],
       "desc": "Icon name following Quasar convention to be used when selected (optional); make sure you have the icon library installed unless you are using 'img:' prefix; If an array is provided each rating value will use the corresponding icon in the array (0 based)",
       "examples": [
-        "map",
-        "ion-add",
-        "img:https://cdn.quasar.dev/logo-v2/svg/logo.svg",
-        "img:path/to/some_image.png"
+        "'map'",
+        "'ion-add'",
+        "'img:https://cdn.quasar.dev/logo-v2/svg/logo.svg'",
+        "'img:path/to/some_image.png'"
       ],
       "category": "content"
     },
-
     "icon-aria-label": {
-      "type": ["String", "Array"],
+      "type": [
+        "String",
+        "Array"
+      ],
       "desc": "Label to be set on aria-label for Icon; If an array is provided each rating value will use the corresponding aria-label in the array (0 based); If string value is provided the rating value will be appended; If not provided the name of the icon will be used",
       "examples": [
-        "Rating",
-        "[\"Bad\", \"Normal\", \"Good\"]"
+        "'Rating'",
+        "[ 'Bad', 'Normal', 'Good' ]"
       ],
       "category": "accessibility",
       "addedIn": "v1.20.3"
     },
-
     "color": {
       "extends": "color",
-      "type": ["String", "Array"],
+      "type": [
+        "String",
+        "Array"
+      ],
       "desc": "Color name for component from the Quasar Color Palette; v1.5.0+: If an array is provided each rating value will use the corresponding color in the array (0 based)",
-      "examples": ["primary", "teal-10", "[\"accent\", \"grey-7\"] "]
+      "examples": [
+        "[ 'accent', 'grey-7' ]"
+      ]
     },
-
     "color-selected": {
       "extends": "color",
-      "type": ["String", "Array"],
+      "type": [
+        "String",
+        "Array"
+      ],
       "desc": "Color name from the Quasar Palette for selected icons"
     },
-
     "color-half": {
       "extends": "color",
-      "type": ["String", "Array"],
+      "type": [
+        "String",
+        "Array"
+      ],
       "desc": "Color name from the Quasar Palette for half selected icons"
     },
-
     "no-dimming": {
       "type": "Boolean",
       "desc": "Does not lower opacity for unselected icons",
       "category": "style"
     },
-
     "no-reset": {
       "type": "Boolean",
       "desc": "When used, disables default behavior of clicking/tapping on icon which represents current model value to reset model to 0",
       "category": "model"
     },
-
     "readonly": {
       "extends": "readonly"
     },
-
     "disable": {
       "extends": "disable"
     }
   },
-
   "events": {
     "update:model-value": {
       "extends": "update:model-value"
     }
   },
-
   "slots": {
     "tip-[name]": {
       "desc": "Slot to define the tooltip of icon at '[name]' where name is a 1-based index; Suggestion: QTooltip"

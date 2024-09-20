@@ -4,22 +4,25 @@
     {
       "name": "trigger",
       "description": "Emit a 'scroll' event",
+      "description_zh": "发出 'scroll' 事件",
       "params": "(immediately: Boolean) => void",
-      "description_zh": "发出“滚动”事件"
+      "value": ""
     },
     {
       "name": "getPosition",
       "description": "Get current scroll details under the form of an Object: { position, direction, directionChanged, inflectionPoint }",
+      "description_zh": "以 Object 的形式获取当前滚动详细信息： { position， direction， directionChanged， inflectionPoint }",
       "params": "",
-      "description_zh": "以 Object 的形式获取当前滚动详细信息：{ position， direction， directionChanged， inflectionPoint }"
+      "value": ""
     }
   ],
   "events": [
     {
       "name": "scroll",
       "description": "Emitted when scroll position changes",
+      "description_zh": "滚动位置更改时发出",
       "params": "(details: Object) => void",
-      "description_zh": "滚动位置更改时发出"
+      "value": ""
     }
   ],
   "props": {
@@ -27,25 +30,29 @@
       "value": "",
       "type": "String | Number",
       "description": "Debounce amount (in milliseconds)",
+      "description_zh": "防抖量（以毫秒为单位）",
       "default": "",
-      "description_zh": "去抖动量（以毫秒为单位）"
+      "required": false
     },
     "axis": {
       "value": "",
       "type": "String",
       "description": "Axis on which to detect changes",
-      "default": "vertical",
-      "description_zh": "用于检测更改的轴"
+      "description_zh": "要检测更改的轴",
+      "default": "'vertical'",
+      "required": false
     },
     "scroll-target": {
       "value": "",
       "type": "String",
       "description": "",
+      "description_zh": "",
       "default": "",
-      "extends": "scroll-target",
-      "description_zh": ""
+      "required": false,
+      "extends": "scroll-target"
     }
   },
   "link": "https://v2.quasar.dev/vue-components/scroll-observer",
-  "link_zh": "https://v2.quasar.dev/vue-components/scroll-observer"
+  "link_zh": "https://v2.quasar.dev/vue-components/scroll-observer",
+  "slots": []
 }

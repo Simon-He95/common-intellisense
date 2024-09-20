@@ -4,46 +4,53 @@
     {
       "name": "getScrollTarget",
       "description": "Get the scrolling DOM element target",
+      "description_zh": "获取滚动 DOM 元素目标",
       "params": "",
-      "description_zh": "获取滚动的 DOM 元素目标"
+      "value": ""
     },
     {
       "name": "getScroll",
       "description": "Get the current scroll information",
+      "description_zh": "获取当前滚动信息",
       "params": "",
-      "description_zh": "获取当前滚动信息"
+      "value": ""
     },
     {
       "name": "getScrollPosition",
       "description": "Get current scroll position",
+      "description_zh": "获取当前滚动位置",
       "params": "",
-      "description_zh": "获取当前滚动位置"
+      "value": ""
     },
     {
       "name": "getScrollPercentage",
       "description": "Get current scroll position in percentage (0.0 <= x <= 1.0)",
+      "description_zh": "以百分比形式获取当前滚动位置 （0.0 <= x <= 1.0）",
       "params": "",
-      "description_zh": "以百分比获取当前滚动位置 （0.0 <= x <= 1.0）"
+      "value": ""
     },
     {
       "name": "setScrollPosition",
       "description": "Set scroll position to an offset; If a duration (in milliseconds) is specified then the scroll is animated",
+      "description_zh": "将 scroll position 设置为偏移量;如果指定了持续时间（以毫秒为单位），则对滚动进行动画处理",
       "params": "(axis: String, offset: Number, duration: Number) => void",
-      "description_zh": "将滚动位置设置为偏移量;如果指定了持续时间（以毫秒为单位），则滚动将进行动画处理"
+      "value": ""
     },
     {
       "name": "setScrollPercentage",
       "description": "Set scroll position to a percentage (0.0 <= x <= 1.0) of the total scrolling size; If a duration (in milliseconds) is specified then the scroll is animated",
+      "description_zh": "将滚动位置设置为总滚动大小的百分比 （0.0 <= x <= 1.0）;如果指定了持续时间（以毫秒为单位），则对滚动进行动画处理",
       "params": "(axis: String, offset: Number, duration: Number) => void",
-      "description_zh": "将滚动位置设置为总滚动大小的百分比 （0.0 <= x <= 1.0）;如果指定了持续时间（以毫秒为单位），则滚动将进行动画处理"
+      "value": ""
     }
   ],
   "events": [
     {
       "name": "scroll",
       "description": "Emitted when scroll information changes (and listener is configured)",
+      "description_zh": "当滚动信息发生变化时发出（并且配置了 listener）",
       "params": "(info: Object) => void",
-      "description_zh": "在滚动信息更改（并配置侦听器）时发出"
+      "value": ""
     }
   ],
   "props": {
@@ -51,89 +58,126 @@
       "value": "",
       "type": "String",
       "description": "",
+      "description_zh": "",
       "default": "",
-      "extends": "dark",
-      "description_zh": ""
+      "required": false,
+      "extends": "dark"
+    },
+    "vertical-offset": {
+      "value": "",
+      "type": "Array",
+      "description": "Adds [top, bottom] offset to vertical thumb",
+      "description_zh": "将 [top， bottom] 偏移添加到垂直滑块",
+      "default": "# [ 0, 0 ]",
+      "version": "v2.17",
+      "required": false
+    },
+    "horizontal-offset": {
+      "value": "",
+      "type": "Array",
+      "description": "Adds [left, right] offset to horizontal thumb",
+      "description_zh": "将 [left， right] 偏移添加到水平滑块",
+      "default": "# [ 0, 0 ]",
+      "version": "v2.17",
+      "required": false
     },
     "bar-style": {
       "value": "",
       "type": "String | Array | Object",
       "description": "Object with CSS properties and values for custom styling the scrollbars (both vertical and horizontal)",
+      "description_zh": "具有 CSS 属性和值的对象，用于自定义滚动条样式（垂直和水平）",
       "default": "",
-      "description_zh": "具有 CSS 属性和值的对象，用于自定义滚动条样式（垂直和水平）"
+      "required": false
     },
     "vertical-bar-style": {
       "value": "",
       "type": "String | Array | Object",
       "description": "Object with CSS properties and values for custom styling the vertical scrollbar; Is applied on top of 'bar-style' prop",
+      "description_zh": "具有 CSS 属性和值的对象，用于自定义垂直滚动条的样式;应用于 'bar-style' 属性之上",
       "default": "",
-      "description_zh": "具有 CSS 属性和值的对象，用于自定义垂直滚动条的样式;应用于“酒吧式”道具的顶部"
+      "required": false
     },
     "horizontal-bar-style": {
       "value": "",
       "type": "String | Array | Object",
       "description": "Object with CSS properties and values for custom styling the horizontal scrollbar; Is applied on top of 'bar-style' prop",
+      "description_zh": "具有 CSS 属性和值的对象，用于自定义水平滚动条的样式;应用于 'bar-style' 属性之上",
       "default": "",
-      "description_zh": "具有 CSS 属性和值的对象，用于自定义水平滚动条的样式;应用于“酒吧式”道具的顶部"
+      "required": false
     },
     "thumb-style": {
       "value": "",
       "type": "Object",
       "description": "Object with CSS properties and values for custom styling the thumb of scrollbars (both vertical and horizontal)",
+      "description_zh": "具有 CSS 属性和值的对象，用于自定义滚动条的缩略图（垂直和水平）的样式",
       "default": "",
-      "description_zh": "具有 CSS 属性和值的对象，用于自定义滚动条（垂直和水平）的缩略图样式"
+      "required": false
     },
     "vertical-thumb-style": {
       "value": "",
       "type": "Object",
       "description": "Object with CSS properties and values for custom styling the thumb of the vertical scrollbar; Is applied on top of 'thumb-style' prop",
+      "description_zh": "具有 CSS 属性和值的对象，用于自定义样式：垂直滚动条的缩略图;应用于 'thumb-style' 属性之上",
       "default": "",
-      "description_zh": "具有 CSS 属性和值的对象，用于自定义样式：垂直滚动条的拇指;应用于“拇指式”道具的顶部"
+      "required": false
     },
     "horizontal-thumb-style": {
       "value": "",
       "type": "Object",
       "description": "Object with CSS properties and values for custom styling the thumb of the horizontal scrollbar; Is applied on top of 'thumb-style' prop",
+      "description_zh": "具有 CSS 属性和值的对象，用于自定义水平滚动条的缩略图样式;应用于 'thumb-style' 属性之上",
       "default": "",
-      "description_zh": "具有 CSS 属性和值的对象，用于自定义样式：水平滚动条的拇指;应用于“拇指式”道具的顶部"
+      "required": false
     },
     "content-style": {
       "value": "",
       "type": "String | Array | Object",
       "description": "Object with CSS properties and values for styling the container of QScrollArea",
+      "description_zh": "具有CSS属性和值的对象，用于设置QScrollArea容器的样式",
       "default": "",
-      "description_zh": "具有 CSS 属性和值的对象，用于设置 QScrollArea 容器的样式"
+      "required": false
     },
     "content-active-style": {
       "value": "",
       "type": "String | Array | Object",
       "description": "Object with CSS properties and values for styling the container of QScrollArea when scroll area becomes active (is mouse hovered)",
+      "description_zh": "具有CSS属性和值的对象，用于在滚动区域变为活动状态（鼠标悬停）时为QScrollArea的容器设置样式",
       "default": "",
-      "description_zh": "具有 CSS 属性和值的对象，用于在滚动区域变为活动状态（鼠标悬停）时设置 QScrollArea 容器的样式"
+      "required": false
     },
     "visible": {
       "value": "",
-      "type": "Boolean",
+      "type": "Boolean | null",
       "description": "Manually control the visibility of the scrollbar; Overrides default mouse over/leave behavior",
-      "default": "false",
-      "description_zh": "手动控制滚动条的可见性;覆盖默认的鼠标悬停/离开行为"
+      "description_zh": "手动控制滚动条的可见性;覆盖默认的鼠标悬停/离开行为",
+      "default": "null",
+      "required": false
     },
     "delay": {
       "value": "",
       "type": "Number | String",
       "description": "When content changes, the scrollbar appears; this delay defines the amount of time (in milliseconds) before scrollbars disappear again (if component is not hovered)",
-      "default": 1000,
-      "description_zh": "当内容更改时，会出现滚动条;此延迟定义滚动条再次消失（如果组件未悬停）之前的时间量（以毫秒为单位）"
+      "description_zh": "当内容更改时，将显示滚动条;此延迟定义滚动条再次消失之前的时间量（以毫秒为单位）（如果组件未悬停）",
+      "default": "1000",
+      "required": false
     },
     "tabindex": {
       "value": "",
       "type": "String",
       "description": "",
+      "description_zh": "",
       "default": "",
-      "extends": "tabindex",
-      "description_zh": ""
+      "required": false,
+      "extends": "tabindex"
     }
   },
   "link": "https://v2.quasar.dev/vue-components/scroll-area",
-  "link_zh": "https://v2.quasar.dev/vue-components/scroll-area"
+  "link_zh": "https://v2.quasar.dev/vue-components/scroll-area",
+  "slots": [
+    {
+      "name": "default",
+      "description": "",
+      "description_zh": ""
+    }
+  ]
 }

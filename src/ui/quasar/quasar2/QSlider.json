@@ -3,33 +3,391 @@
   "methods": [],
   "events": [
     {
+      "name": "change",
+      "description": "Emitted on lazy model value change (after user slides then releases the thumb)",
+      "description_zh": "在延迟模型值更改时发出（在用户滑动然后释放拇指后）",
+      "params": "",
+      "value": ""
+    },
+    {
+      "name": "pan",
+      "description": "Triggered when user starts panning on the component",
+      "description_zh": "当用户开始在组件上平移时触发",
+      "params": "(phase: String) => void",
+      "value": ""
+    },
+    {
       "name": "update:model-value",
       "description": "",
+      "description_zh": "",
       "params": "(value: Number,null) => void",
-      "description_zh": ""
+      "value": ""
     }
   ],
   "props": {
+    "min": {
+      "value": "",
+      "type": "Number",
+      "description": "Minimum value of the model; Set track's minimum value",
+      "description_zh": "模型的最小值;设置轨迹的最小值",
+      "default": "0",
+      "required": false
+    },
+    "max": {
+      "value": "",
+      "type": "Number",
+      "description": "Maximum value of the model; Set track's maximum value",
+      "description_zh": "模型的最大值;设置轨迹的最大值",
+      "default": "100",
+      "required": false
+    },
+    "inner-min": {
+      "value": "",
+      "type": "Number",
+      "description": "Inner minimum value of the model; Use in case you need the model value to be inside of the track's min-max values; Needs to be higher or equal to 'min' prop; Defaults to 'min' prop",
+      "description_zh": "模型的内部最小值;如果您需要 model 值位于轨迹的 min-max 值范围内，请使用 view;需要高于或等于 'min' prop;默认为 'min' prop",
+      "default": "",
+      "version": "v2.4",
+      "required": false
+    },
+    "inner-max": {
+      "value": "",
+      "type": "Number",
+      "description": "Inner maximum value of the model; Use in case you need the model value to be inside of the track's min-max values; Needs to be lower or equal to 'max' prop; Defaults to 'max' prop",
+      "description_zh": "模型的内部最大值;如果您需要 model 值位于轨迹的 min-max 值范围内，请使用 view;需要小于或等于 'max' prop;默认为 'max' prop",
+      "default": "",
+      "version": "v2.4",
+      "required": false
+    },
+    "step": {
+      "value": "",
+      "type": "Number",
+      "description": "Specify step amount between valid values (> 0.0); When step equals to 0 it defines infinite granularity",
+      "description_zh": "指定有效值之间的步长量 （> 0.0）;当 step 等于 0 时，它定义无限粒度",
+      "default": "1",
+      "required": false
+    },
+    "snap": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Snap on valid values, rather than sliding freely; Suggestion: use with 'step' prop",
+      "description_zh": "捕捉有效值，而不是自由滑动;建议：与 'step' prop 一起使用",
+      "default": "false",
+      "required": false
+    },
+    "reverse": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Work in reverse (changes direction)",
+      "description_zh": "反向工作 （改变方向）",
+      "default": "false",
+      "required": false
+    },
+    "vertical": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Display in vertical direction",
+      "description_zh": "垂直方向显示",
+      "default": "false",
+      "required": false
+    },
+    "color": {
+      "type": "String | Array",
+      "description": "Color name for component from the Quasar Color Palette",
+      "value": "",
+      "default": "'primary'",
+      "extends": "color",
+      "desc": "Color name for the selection bar (can be 'transparent' too) from the Quasar Color Palette",
+      "category": "style",
+      "__runtimeDefault": true,
+      "examples": [
+        "[ 'accent', 'grey-7' ]"
+      ],
+      "addedIn": "v2.4",
+      "description_zh": "Quasar Color Palette （类星体调色板） 中组件的颜色名称"
+    },
+    "track-color": {
+      "type": "String | Array",
+      "description": "Color name for component from the Quasar Color Palette",
+      "value": "",
+      "default": "'primary'",
+      "extends": "color",
+      "desc": "Color name for the selection bar (can be 'transparent' too) from the Quasar Color Palette",
+      "category": "style",
+      "__runtimeDefault": true,
+      "examples": [
+        "[ 'accent', 'grey-7' ]"
+      ],
+      "addedIn": "v2.4",
+      "description_zh": "Quasar Color Palette （类星体调色板） 中组件的颜色名称"
+    },
+    "track-img": {
+      "value": "",
+      "type": "String",
+      "description": "Apply a pattern image on the track",
+      "description_zh": "在轨道上应用样式图像",
+      "default": "",
+      "version": "v2.4",
+      "required": false
+    },
+    "inner-track-color": {
+      "type": "String | Array",
+      "description": "Color name for component from the Quasar Color Palette",
+      "value": "",
+      "default": "'primary'",
+      "extends": "color",
+      "desc": "Color name for the selection bar (can be 'transparent' too) from the Quasar Color Palette",
+      "category": "style",
+      "__runtimeDefault": true,
+      "examples": [
+        "[ 'accent', 'grey-7' ]"
+      ],
+      "addedIn": "v2.4",
+      "description_zh": "Quasar Color Palette （类星体调色板） 中组件的颜色名称"
+    },
+    "inner-track-img": {
+      "value": "",
+      "type": "String",
+      "description": "Apply a pattern image on the inner track",
+      "description_zh": "在内部轨道上应用样式图像",
+      "default": "",
+      "version": "v2.4",
+      "required": false
+    },
+    "selection-color": {
+      "type": "String | Array",
+      "description": "Color name for component from the Quasar Color Palette",
+      "value": "",
+      "default": "'primary'",
+      "extends": "color",
+      "desc": "Color name for the selection bar (can be 'transparent' too) from the Quasar Color Palette",
+      "category": "style",
+      "__runtimeDefault": true,
+      "examples": [
+        "[ 'accent', 'grey-7' ]"
+      ],
+      "addedIn": "v2.4",
+      "description_zh": "Quasar Color Palette （类星体调色板） 中组件的颜色名称"
+    },
+    "selection-img": {
+      "value": "",
+      "type": "String",
+      "description": "Apply a pattern image on the selection bar",
+      "description_zh": "在选择栏上应用图案图像",
+      "default": "",
+      "version": "v2.4",
+      "required": false
+    },
+    "label": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Popup a label when user clicks/taps on the slider thumb and moves it",
+      "description_zh": "当用户单击/点击滑块并移动它时弹出标签",
+      "default": "false",
+      "required": false
+    },
+    "label-color": {
+      "type": "String | Array",
+      "description": "Color name for component from the Quasar Color Palette",
+      "value": "",
+      "default": "'primary'",
+      "extends": "color",
+      "desc": "Color name for the selection bar (can be 'transparent' too) from the Quasar Color Palette",
+      "category": "style",
+      "__runtimeDefault": true,
+      "examples": [
+        "[ 'accent', 'grey-7' ]"
+      ],
+      "addedIn": "v2.4",
+      "description_zh": "Quasar Color Palette （类星体调色板） 中组件的颜色名称"
+    },
+    "label-text-color": {
+      "type": "String | Array",
+      "description": "Color name for component from the Quasar Color Palette",
+      "value": "",
+      "default": "'primary'",
+      "extends": "color",
+      "desc": "Color name for the selection bar (can be 'transparent' too) from the Quasar Color Palette",
+      "category": "style",
+      "__runtimeDefault": true,
+      "examples": [
+        "[ 'accent', 'grey-7' ]"
+      ],
+      "addedIn": "v2.4",
+      "description_zh": "Quasar Color Palette （类星体调色板） 中组件的颜色名称"
+    },
+    "switch-label-side": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Switch the position of the label (top <-> bottom or left <-> right)",
+      "description_zh": "切换标签的位置（顶部 <-> 底部或左侧<->右侧）",
+      "default": "false",
+      "version": "v2.4",
+      "required": false
+    },
+    "label-always": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Always display the label",
+      "description_zh": "始终显示标签",
+      "default": "false",
+      "required": false
+    },
+    "markers": {
+      "value": "",
+      "type": "Boolean | Number",
+      "description": "Display markers on the track, one for each possible value for the model or using a custom step (when specifying a Number)",
+      "description_zh": "在轨道上显示标记，模型的每个可能值对应一个标记，或使用自定义步骤（指定 Number 时）",
+      "default": "",
+      "required": false
+    },
+    "marker-labels": {
+      "value": "",
+      "type": "Boolean | Array | Object | Function",
+      "description": "Configure the marker labels (or show the default ones if 'true'); Array of definition Objects or Object with key-value where key is the model and the value is the marker label definition",
+      "description_zh": "配置标记标签（如果为 'true'，则显示默认标签）;定义数组 对象 或具有键值的对象，其中 key 是模型，value 是标记标签定义",
+      "default": "",
+      "version": "v2.4",
+      "required": false
+    },
+    "marker-labels-class": {
+      "value": "",
+      "type": "String",
+      "description": "CSS class(es) to apply to the marker labels container",
+      "description_zh": "要应用于标记标签容器的 CSS 类",
+      "default": "",
+      "version": "v2.4",
+      "required": false
+    },
+    "switch-marker-labels-side": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Switch the position of the marker labels (top <-> bottom or left <-> right)",
+      "description_zh": "切换标记标签的位置（顶部<->底部或左侧<->右侧）",
+      "default": "false",
+      "version": "v2.4",
+      "required": false
+    },
+    "track-size": {
+      "value": "",
+      "type": "String",
+      "description": "Track size (including CSS unit)",
+      "description_zh": "轨道大小（包括 CSS 单元）",
+      "default": "'4px'",
+      "version": "v2.4",
+      "required": false
+    },
+    "thumb-size": {
+      "value": "",
+      "type": "String",
+      "description": "Thumb size (including CSS unit)",
+      "description_zh": "缩略图大小（包括 CSS 单位）",
+      "default": "'20px'",
+      "version": "v2.4",
+      "required": false
+    },
+    "thumb-color": {
+      "type": "String | Array",
+      "description": "Color name for component from the Quasar Color Palette",
+      "value": "",
+      "default": "'primary'",
+      "extends": "color",
+      "desc": "Color name for the selection bar (can be 'transparent' too) from the Quasar Color Palette",
+      "category": "style",
+      "__runtimeDefault": true,
+      "examples": [
+        "[ 'accent', 'grey-7' ]"
+      ],
+      "addedIn": "v2.4",
+      "description_zh": "Quasar Color Palette （类星体调色板） 中组件的颜色名称"
+    },
+    "thumb-path": {
+      "value": "",
+      "type": "String",
+      "description": "Set custom thumb svg path",
+      "description_zh": "设置自定义 Thumb svg 路径",
+      "default": "'M 4, 10 a 6,6 0 1,0 12,0 a 6,6 0 1,0 -12,0'",
+      "required": false
+    },
+    "dark": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "",
+      "required": false,
+      "extends": "dark"
+    },
+    "dense": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "",
+      "required": false,
+      "extends": "dense"
+    },
+    "disable": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "",
+      "required": false,
+      "extends": "disable"
+    },
+    "readonly": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "",
+      "required": false,
+      "extends": "readonly"
+    },
+    "tabindex": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "",
+      "required": false,
+      "extends": "tabindex"
+    },
     "model-value": {
       "value": "",
       "type": "Number | null | undefined",
       "description": "",
-      "default": "",
+      "description_zh": "",
+      "default": "null",
+      "required": false,
       "extends": "model-value",
       "desc": "Model of the component (must be between min/max); Either use this property (along with a listener for 'update:modelValue' event) OR use v-model directive",
       "examples": [
-        "v-model=\"positionModel\""
-      ],
-      "description_zh": ""
+        "# v-model=\"positionModel\""
+      ]
     },
     "label-value": {
       "value": "",
       "type": "String | Number",
       "description": "Override default label value",
+      "description_zh": "覆盖默认标签值",
       "default": "",
-      "description_zh": "覆盖默认标签值"
+      "required": false
     }
   },
   "link": "https://v2.quasar.dev/vue-components/slider",
-  "link_zh": "https://v2.quasar.dev/vue-components/slider"
+  "link_zh": "https://v2.quasar.dev/vue-components/slider",
+  "slots": [
+    {
+      "name": "marker-label",
+      "description": "What should the menu display after filtering options and none are left to be displayed; Suggestion: <div>",
+      "description_zh": "筛选选项后菜单应该显示什么，并且没有要显示的内容;建议： <div>"
+    },
+    {
+      "name": "marker-label-group",
+      "description": "What should the menu display after filtering options and none are left to be displayed; Suggestion: <div>",
+      "description_zh": "筛选选项后菜单应该显示什么，并且没有要显示的内容;建议： <div>"
+    }
+  ]
 }

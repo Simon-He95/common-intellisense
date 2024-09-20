@@ -4,46 +4,53 @@
     {
       "name": "reset",
       "description": "Reset to initial state (not swiped to any side)",
+      "description_zh": "重置为初始状态（不滑动到任何一侧）",
       "params": "",
-      "description_zh": "重置为初始状态（不向任何一侧滑动）"
+      "value": ""
     }
   ],
   "events": [
     {
       "name": "left",
       "description": "Emitted when user finished sliding the item to the left",
+      "description_zh": "当用户完成向左滑动项目时发出",
       "params": "(details: Object) => void",
-      "description_zh": "当用户完成向左滑动项目时发出"
+      "value": ""
     },
     {
       "name": "right",
       "description": "Emitted when user finished sliding the item to the right",
+      "description_zh": "当用户完成向右滑动项目时发出",
       "params": "(details: Object) => void",
-      "description_zh": "当用户完成向右滑动项目时发出"
+      "value": ""
     },
     {
       "name": "top",
       "description": "Emitted when user finished sliding the item up",
+      "description_zh": "用户完成向上滑动时发出",
       "params": "(details: Object) => void",
-      "description_zh": "用户完成向上滑动项目时发出"
+      "value": ""
     },
     {
       "name": "bottom",
       "description": "Emitted when user finished sliding the item down",
+      "description_zh": "当用户完成向下滑动项目时发出",
       "params": "(details: Object) => void",
-      "description_zh": "当用户完成向下滑动项目时发出"
+      "value": ""
     },
     {
       "name": "slide",
       "description": "Emitted while user is sliding the item to one of the available sides",
+      "description_zh": "当用户将项目滑动到其中一个可用侧时发出",
       "params": "(details: Object) => void",
-      "description_zh": "当用户将项目滑动到可用一侧时发出"
+      "value": ""
     },
     {
       "name": "action",
       "description": "Emitted when user finished sliding the item to either sides",
+      "description_zh": "当用户完成将项滑动到任一侧时发出",
       "params": "(details: Object) => void",
-      "description_zh": "当用户完成将项目滑动到任一侧时发出"
+      "value": ""
     }
   ],
   "props": {
@@ -51,75 +58,99 @@
       "type": "String | Array",
       "description": "Color name for component from the Quasar Color Palette",
       "value": "",
-      "default": "grey-8",
+      "default": "'primary'",
       "extends": "color",
       "desc": "Color name for bottom-side background from the Quasar Color Palette",
       "category": "style",
-      "addedIn": "v2.4",
+      "__runtimeDefault": true,
       "examples": [
-        "primary",
-        "teal-10",
-        "[\"accent\", \"grey-7\"] "
+        "[ 'accent', 'grey-7' ]"
       ],
-      "description_zh": "类星体调色板中组件的颜色名称"
+      "addedIn": "v2.4",
+      "description_zh": "Quasar Color Palette （类星体调色板） 中组件的颜色名称"
     },
     "right-color": {
       "type": "String | Array",
       "description": "Color name for component from the Quasar Color Palette",
       "value": "",
-      "default": "grey-8",
+      "default": "'primary'",
       "extends": "color",
       "desc": "Color name for bottom-side background from the Quasar Color Palette",
       "category": "style",
-      "addedIn": "v2.4",
+      "__runtimeDefault": true,
       "examples": [
-        "primary",
-        "teal-10",
-        "[\"accent\", \"grey-7\"] "
+        "[ 'accent', 'grey-7' ]"
       ],
-      "description_zh": "类星体调色板中组件的颜色名称"
+      "addedIn": "v2.4",
+      "description_zh": "Quasar Color Palette （类星体调色板） 中组件的颜色名称"
     },
     "top-color": {
       "type": "String | Array",
       "description": "Color name for component from the Quasar Color Palette",
       "value": "",
-      "default": "grey-8",
+      "default": "'primary'",
       "extends": "color",
       "desc": "Color name for bottom-side background from the Quasar Color Palette",
       "category": "style",
-      "addedIn": "v2.4",
+      "__runtimeDefault": true,
       "examples": [
-        "primary",
-        "teal-10",
-        "[\"accent\", \"grey-7\"] "
+        "[ 'accent', 'grey-7' ]"
       ],
-      "description_zh": "类星体调色板中组件的颜色名称"
+      "addedIn": "v2.4",
+      "description_zh": "Quasar Color Palette （类星体调色板） 中组件的颜色名称"
     },
     "bottom-color": {
       "type": "String | Array",
       "description": "Color name for component from the Quasar Color Palette",
       "value": "",
-      "default": "grey-8",
+      "default": "'primary'",
       "extends": "color",
       "desc": "Color name for bottom-side background from the Quasar Color Palette",
       "category": "style",
-      "addedIn": "v2.4",
+      "__runtimeDefault": true,
       "examples": [
-        "primary",
-        "teal-10",
-        "[\"accent\", \"grey-7\"] "
+        "[ 'accent', 'grey-7' ]"
       ],
-      "description_zh": "类星体调色板中组件的颜色名称"
+      "addedIn": "v2.4",
+      "description_zh": "Quasar Color Palette （类星体调色板） 中组件的颜色名称"
     },
     "dark": {
       "value": "",
       "type": "String",
       "description": "",
+      "description_zh": "",
       "default": "",
-      "extends": "dark",
-      "description_zh": ""
+      "required": false,
+      "extends": "dark"
     }
   },
   "link": "https://v2.quasar.dev/vue-components/slide-item",
-  "link_zh": "https://v2.quasar.dev/vue-components/slide-item"
+  "link_zh": "https://v2.quasar.dev/vue-components/slide-item",
+  "slots": [
+    {
+      "name": "default",
+      "description": "This is where item's sections go; Suggestion: QItemSection",
+      "description_zh": "这是 item 部分的去处;建议：QItemSection"
+    },
+    {
+      "name": "left",
+      "description": "Left side content when sliding",
+      "description_zh": "滑动时的左侧内容"
+    },
+    {
+      "name": "right",
+      "description": "Right side content when sliding",
+      "description_zh": "滑动时的右侧内容"
+    },
+    {
+      "name": "top",
+      "description": "Top side content when sliding",
+      "description_zh": "滑动时的顶部内容"
+    },
+    {
+      "name": "bottom",
+      "description": "Bottom side content when sliding",
+      "description_zh": "滑动时的底部内容物"
+    }
+  ]
 }

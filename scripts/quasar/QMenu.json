@@ -1,140 +1,235 @@
 {
-  "mixins": ["composables/private/use-model-toggle", "composables/private/use-portal", "composables/private/use-anchor", "composables/private/use-transition"],
-
+  "mixins": [
+    "composables/private.use-anchor/use-anchor-static"
+  ],
   "meta": {
     "docsUrl": "https://v2.quasar.dev/vue-components/menu"
   },
-
   "props": {
+    "transition-show": {
+      "extends": "transition",
+      "default": "'fade'"
+    },
+    "transition-hide": {
+      "extends": "transition",
+      "default": "'fade'"
+    },
+    "transition-duration": {
+      "type": [
+        "String",
+        "Number"
+      ],
+      "desc": "Transition duration (in milliseconds, without unit)",
+      "default": "300",
+      "category": "transition"
+    },
+    "context-menu": {
+      "type": "Boolean",
+      "desc": "Allows the component to behave like a context menu, which opens with a right mouse click (or long tap on mobile)",
+      "category": "behavior"
+    },
+    "model-value": {
+      "type": [
+        "Boolean",
+        "null"
+      ],
+      "desc": "Model of the component defining shown/hidden state; Either use this property (along with a listener for 'update:model-value' event) OR use v-model directive",
+      "default": "null",
+      "category": "model",
+      "examples": [
+        "# v-model=\"state\""
+      ]
+    },
     "dark": {
       "extends": "dark"
     },
-
     "fit": {
       "type": "Boolean",
       "desc": "Allows the menu to match at least the full width of its target",
       "category": "position"
     },
-
     "cover": {
       "type": "Boolean",
       "desc": "Allows the menu to cover its target. When used, the 'self' and 'fit' props are no longer effective",
       "category": "position"
     },
-
     "anchor": {
       "type": "String",
       "desc": "Two values setting the starting position or anchor point of the menu relative to its target",
       "values": [
-        "top left", "top middle", "top right", "top start", "top end",
-        "center left", "center middle", "center right", "center start", "center end",
-        "bottom left", "bottom middle", "bottom right", "bottom start", "bottom end"
+        "'top left'",
+        "'top middle'",
+        "'top right'",
+        "'top start'",
+        "'top end'",
+        "'center left'",
+        "'center middle'",
+        "'center right'",
+        "'center start'",
+        "'center end'",
+        "'bottom left'",
+        "'bottom middle'",
+        "'bottom right'",
+        "'bottom start'",
+        "'bottom end'"
       ],
       "category": "position"
     },
-
     "self": {
       "type": "String",
       "desc": "Two values setting the menu's own position relative to its target",
       "values": [
-        "top left", "top middle", "top right", "top start", "top end",
-        "center left", "center middle", "center right", "center start", "center end",
-        "bottom left", "bottom middle", "bottom right", "bottom start", "bottom end"
+        "'top left'",
+        "'top middle'",
+        "'top right'",
+        "'top start'",
+        "'top end'",
+        "'center left'",
+        "'center middle'",
+        "'center right'",
+        "'center start'",
+        "'center end'",
+        "'bottom left'",
+        "'bottom middle'",
+        "'bottom right'",
+        "'bottom start'",
+        "'bottom end'"
       ],
       "category": "position"
     },
-
     "offset": {
       "type": "Array",
       "desc": "An array of two numbers to offset the menu horizontally and vertically in pixels",
-      "examples": ["[8, 8]", "[5, 10]"],
+      "examples": [
+        "[ 8, 8 ]",
+        "[ 5, 10 ]"
+      ],
       "category": "position"
     },
-
     "scroll-target": {
       "extends": "scroll-target"
     },
-
     "touch-position": {
       "type": "Boolean",
       "desc": "Allows for the target position to be set by the mouse position, when the target of the menu is either clicked or touched",
       "category": "behavior"
     },
-
     "persistent": {
       "type": "Boolean",
-      "desc": "Allows the menu to not be dismissed by a click/tap outside of the menu or by hitting the ESC key",
+      "desc": "Allows the menu to not be dismissed by a click/tap outside of the menu or by hitting the ESC key; Also, an app route change won't dismiss it",
       "category": "behavior"
     },
-
     "no-route-dismiss": {
       "type": "Boolean",
       "desc": "Changing route app won't dismiss the popup; No need to set it if 'persistent' prop is also set",
       "category": "behavior"
     },
-
     "auto-close": {
       "type": "Boolean",
       "desc": "Allows any click/tap in the menu to close it; Useful instead of attaching events to each menu item that should close the menu on click/tap",
       "category": "behavior"
     },
-
     "separate-close-popup": {
       "type": "Boolean",
       "desc": "Separate from parent menu, marking it as a separate closing point for v-close-popup (without this, chained menus close all together)",
       "category": "behavior"
     },
-
     "square": {
       "type": "Boolean",
       "desc": "Forces content to have squared borders",
       "category": "style"
     },
-
     "no-refocus": {
       "type": "Boolean",
       "desc": "(Accessibility) When Menu gets hidden, do not refocus on the DOM element that previously had focus",
       "category": "behavior"
     },
-
     "no-focus": {
       "type": "Boolean",
       "desc": "(Accessibility) When Menu gets shown, do not switch focus on it",
       "category": "behavior"
     },
-
     "max-height": {
       "extends": "size",
+      "type": [
+        "String",
+        "null"
+      ],
+      "default": "null",
       "desc": "The maximum height of the menu; Size in CSS units, including unit name",
       "category": "style"
     },
-
     "max-width": {
       "extends": "size",
+      "type": [
+        "String",
+        "null"
+      ],
+      "default": "null",
       "desc": "The maximum width of the menu; Size in CSS units, including unit name",
       "category": "style"
     }
   },
-
   "slots": {
     "default": {
       "extends": "default"
     }
   },
-
   "events": {
+    "update:model-value": {
+      "desc": "Emitted when showing/hidden state changes; Is also used by v-model",
+      "params": {
+        "value": {
+          "type": "Boolean",
+          "desc": "New state (showing/hidden)"
+        }
+      }
+    },
+    "show": {
+      "extends": "show"
+    },
+    "before-show": {
+      "extends": "before-show"
+    },
+    "hide": {
+      "extends": "hide"
+    },
+    "before-hide": {
+      "extends": "before-hide"
+    },
     "escape-key": {
       "desc": "Emitted when ESC key is pressed; Does not get emitted if Menu is 'persistent'"
+    },
+    "click": {
+      "internal": true
     }
   },
-
   "methods": {
-    "updatePosition": {
-      "desc": "There are some custom scenarios for which Quasar cannot automatically reposition the menu without significant performance drawbacks so the optimal solution is for you to call this method when you need it"
+    "show": {
+      "extends": "show"
     },
-
+    "hide": {
+      "extends": "hide"
+    },
+    "toggle": {
+      "extends": "toggle"
+    },
+    "updatePosition": {
+      "desc": "There are some custom scenarios for which Quasar cannot automatically reposition the menu without significant performance drawbacks so the optimal solution is for you to call this method when you need it",
+      "params": null,
+      "returns": null
+    },
     "focus": {
-      "desc": "Focus menu; if you have content with autofocus attribute, it will directly focus it"
+      "desc": "Focus menu; if you have content with autofocus attribute, it will directly focus it",
+      "params": null,
+      "returns": null
+    }
+  },
+  "computedProps": {
+    "contentEl": {
+      "type": "Element",
+      "desc": "The DOM Element of the rendered content",
+      "addedIn": "v2.10.1"
     }
   }
 }

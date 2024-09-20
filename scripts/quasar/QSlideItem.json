@@ -2,59 +2,48 @@
   "meta": {
     "docsUrl": "https://v2.quasar.dev/vue-components/slide-item"
   },
-
   "props": {
     "left-color": {
       "extends": "color",
       "desc": "Color name for left-side background from the Quasar Color Palette",
       "category": "style"
     },
-
     "right-color": {
       "extends": "color",
       "desc": "Color name for right-side background from the Quasar Color Palette",
       "category": "style"
     },
-
     "top-color": {
       "extends": "color",
       "desc": "Color name for top-side background from the Quasar Color Palette",
       "category": "style"
     },
-
     "bottom-color": {
       "extends": "color",
       "desc": "Color name for bottom-side background from the Quasar Color Palette",
       "category": "style"
     },
-
     "dark": {
       "extends": "dark"
     }
   },
-
   "slots": {
     "default": {
       "desc": "This is where item's sections go; Suggestion: QItemSection"
     },
-
     "left": {
       "desc": "Left side content when sliding"
     },
-
     "right": {
       "desc": "Right side content when sliding"
     },
-
     "top": {
       "desc": "Top side content when sliding"
     },
-
     "bottom": {
       "desc": "Bottom side content when sliding"
     }
   },
-
   "events": {
     "left": {
       "desc": "Emitted when user finished sliding the item to the left",
@@ -74,7 +63,6 @@
         }
       }
     },
-
     "right": {
       "desc": "Emitted when user finished sliding the item to the right",
       "params": {
@@ -93,7 +81,6 @@
         }
       }
     },
-
     "top": {
       "desc": "Emitted when user finished sliding the item up",
       "params": {
@@ -112,7 +99,6 @@
         }
       }
     },
-
     "bottom": {
       "desc": "Emitted when user finished sliding the item down",
       "params": {
@@ -131,7 +117,6 @@
         }
       }
     },
-
     "slide": {
       "desc": "Emitted while user is sliding the item to one of the available sides",
       "params": {
@@ -143,7 +128,12 @@
               "type": "String",
               "required": true,
               "desc": "Side to which sliding is taking effect",
-              "values": ["left", "right", "top", "bottom"]
+              "values": [
+                "'left'",
+                "'right'",
+                "'top'",
+                "'bottom'"
+              ]
             },
             "ratio": {
               "type": "Number",
@@ -159,7 +149,6 @@
         }
       }
     },
-
     "action": {
       "desc": "Emitted when user finished sliding the item to either sides",
       "params": {
@@ -171,7 +160,12 @@
               "type": "String",
               "required": true,
               "desc": "Side to which sliding has taken effect",
-              "values": ["left", "right", "top", "bottom"]
+              "values": [
+                "'left'",
+                "'right'",
+                "'top'",
+                "'bottom'"
+              ]
             },
             "reset": {
               "type": "Function",
@@ -185,10 +179,11 @@
       }
     }
   },
-
   "methods": {
     "reset": {
-      "desc": "Reset to initial state (not swiped to any side)"
+      "desc": "Reset to initial state (not swiped to any side)",
+      "params": null,
+      "returns": null
     }
   }
 }

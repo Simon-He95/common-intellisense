@@ -5,138 +5,167 @@
     {
       "name": "update:model-value",
       "description": "",
+      "description_zh": "",
       "params": "",
-      "description_zh": ""
+      "value": ""
     }
   ],
   "props": {
+    "name": {
+      "value": "",
+      "type": "String",
+      "description": "Used to specify the name of the control; Useful if dealing with forms submitted directly to a URL",
+      "description_zh": "用于指定控件的名称;如果处理直接提交到 URL 的表单，则很有用",
+      "default": "",
+      "required": false
+    },
+    "size": {
+      "value": "",
+      "type": "String",
+      "description": "Size in CSS units, including unit name or standard size name (xs|sm|md|lg|xl)",
+      "description_zh": "以 CSS 单位为单位的大小，包括单位名称或标准大小名称 （xs|sm|md|lg|xl）",
+      "default": "",
+      "required": false
+    },
     "model-value": {
       "value": "",
       "type": "Number",
       "description": "",
+      "description_zh": "",
       "default": "",
+      "required": false,
       "extends": "model-value",
       "examples": [
-        "v-model=\"rating\"",
-        ":model-value=\"rating\"",
-        ":model-value=\"2\""
-      ],
-      "description_zh": ""
+        "# v-model=\"rating\"",
+        "# :model-value=\"rating\"",
+        "# :model-value=\"2\""
+      ]
     },
     "max": {
       "value": "",
       "type": "Number | String",
       "description": "Number of icons to display",
-      "default": 5,
-      "description_zh": "要显示的图标数"
+      "description_zh": "要显示的图标数",
+      "default": "5",
+      "required": false
     },
     "icon": {
       "value": "",
       "type": "String | Array",
       "description": "Icon name following Quasar convention; make sure you have the icon library installed unless you are using 'img:' prefix; If an array is provided each rating value will use the corresponding icon in the array (0 based)",
+      "description_zh": "图标名称遵循 Quasar 约定;确保您已安装图标库，除非您使用的是 'img：' 前缀;如果提供了数组，则每个评级值都将使用数组中的相应图标（从 0 开始）",
       "default": "",
-      "description_zh": "遵循类星体约定的图标名称;确保您已安装图标库，除非您使用 'img：' 前缀;如果提供了数组，则每个评级值将使用数组中的相应图标（从 0 开始）"
+      "required": false
     },
     "icon-selected": {
       "value": "",
       "type": "String | Array",
       "description": "Icon name following Quasar convention to be used when selected (optional); make sure you have the icon library installed unless you are using 'img:' prefix; If an array is provided each rating value will use the corresponding icon in the array (0 based)",
+      "description_zh": "图标名称遵循 Quasar 约定，在选中时使用（可选）;确保您已安装图标库，除非您使用的是 'img：' 前缀;如果提供了数组，则每个评级值都将使用数组中的相应图标（从 0 开始）",
       "default": "",
-      "description_zh": "选择时要使用的遵循类星体约定的图标名称（可选）;确保您已安装图标库，除非您使用 'img：' 前缀;如果提供了数组，则每个评级值将使用数组中的相应图标（从 0 开始）"
+      "required": false
     },
     "icon-half": {
       "value": "",
       "type": "String | Array",
       "description": "Icon name following Quasar convention to be used when selected (optional); make sure you have the icon library installed unless you are using 'img:' prefix; If an array is provided each rating value will use the corresponding icon in the array (0 based)",
+      "description_zh": "图标名称遵循 Quasar 约定，在选中时使用（可选）;确保您已安装图标库，除非您使用的是 'img：' 前缀;如果提供了数组，则每个评级值都将使用数组中的相应图标（从 0 开始）",
       "default": "",
-      "description_zh": "选择时要使用的遵循类星体约定的图标名称（可选）;确保您已安装图标库，除非您使用 'img：' 前缀;如果提供了数组，则每个评级值将使用数组中的相应图标（从 0 开始）"
+      "required": false
     },
     "icon-aria-label": {
       "value": "",
       "type": "String | Array",
       "description": "Label to be set on aria-label for Icon; If an array is provided each rating value will use the corresponding aria-label in the array (0 based); If string value is provided the rating value will be appended; If not provided the name of the icon will be used",
+      "description_zh": "在 Icon 的 aria-label 上设置的标签;如果提供了数组，则每个 rating 值将使用数组中相应的 aria-label（从 0 开始）;如果提供了 string value，则将附加 rating 值;如果未提供，将使用图标的名称",
       "default": "",
-      "description_zh": "在 Aria-label 上为 Icon 设置标签;如果提供了数组，则每个评级值将使用数组中相应的 aria-label（从 0 开始）;如果提供了字符串值，则将附加评级值;如果未提供，将使用图标的名称"
+      "version": "v1.20.3",
+      "required": false
     },
     "color": {
       "type": "String | Array",
       "description": "Color name for component from the Quasar Color Palette",
       "value": "",
-      "default": "primary",
+      "default": "'primary'",
       "extends": "color",
       "desc": "Color name from the Quasar Palette for half selected icons",
-      "category": "labels",
-      "addedIn": "v2.4",
+      "category": "style",
+      "__runtimeDefault": true,
       "examples": [
-        "primary",
-        "teal-10",
-        "[\"accent\", \"grey-7\"] "
+        "[ 'accent', 'grey-7' ]"
       ],
-      "description_zh": "类星体调色板中组件的颜色名称"
+      "description_zh": "Quasar Color Palette （类星体调色板） 中组件的颜色名称"
     },
     "color-selected": {
       "type": "String | Array",
       "description": "Color name for component from the Quasar Color Palette",
       "value": "",
-      "default": "primary",
+      "default": "'primary'",
       "extends": "color",
       "desc": "Color name from the Quasar Palette for half selected icons",
-      "category": "labels",
-      "addedIn": "v2.4",
+      "category": "style",
+      "__runtimeDefault": true,
       "examples": [
-        "primary",
-        "teal-10",
-        "[\"accent\", \"grey-7\"] "
+        "[ 'accent', 'grey-7' ]"
       ],
-      "description_zh": "类星体调色板中组件的颜色名称"
+      "description_zh": "Quasar Color Palette （类星体调色板） 中组件的颜色名称"
     },
     "color-half": {
       "type": "String | Array",
       "description": "Color name for component from the Quasar Color Palette",
       "value": "",
-      "default": "primary",
+      "default": "'primary'",
       "extends": "color",
       "desc": "Color name from the Quasar Palette for half selected icons",
-      "category": "labels",
-      "addedIn": "v2.4",
+      "category": "style",
+      "__runtimeDefault": true,
       "examples": [
-        "primary",
-        "teal-10",
-        "[\"accent\", \"grey-7\"] "
+        "[ 'accent', 'grey-7' ]"
       ],
-      "description_zh": "类星体调色板中组件的颜色名称"
+      "description_zh": "Quasar Color Palette （类星体调色板） 中组件的颜色名称"
     },
     "no-dimming": {
       "value": "",
       "type": "Boolean",
       "description": "Does not lower opacity for unselected icons",
+      "description_zh": "不降低未选中图标的不透明度",
       "default": "false",
-      "description_zh": "不会降低未选择图标的不透明度"
+      "required": false
     },
     "no-reset": {
       "value": "",
       "type": "Boolean",
       "description": "When used, disables default behavior of clicking/tapping on icon which represents current model value to reset model to 0",
+      "description_zh": "使用时，禁用单击/点击代表当前模型值的图标的默认行为，以将模型重置为 0",
       "default": "false",
-      "description_zh": "使用时，禁用单击/点击代表当前模型值的图标的默认行为，以将模型重置为 0"
+      "required": false
     },
     "readonly": {
       "value": "",
       "type": "String",
       "description": "",
+      "description_zh": "",
       "default": "",
-      "extends": "readonly",
-      "description_zh": ""
+      "required": false,
+      "extends": "readonly"
     },
     "disable": {
       "value": "",
       "type": "String",
       "description": "",
+      "description_zh": "",
       "default": "",
-      "extends": "disable",
-      "description_zh": ""
+      "required": false,
+      "extends": "disable"
     }
   },
   "link": "https://v2.quasar.dev/vue-components/rating",
-  "link_zh": "https://v2.quasar.dev/vue-components/rating"
+  "link_zh": "https://v2.quasar.dev/vue-components/rating",
+  "slots": [
+    {
+      "name": "tip-[name]",
+      "description": "Slot to define the tooltip of icon at '[name]' where name is a 1-based index; Suggestion: QTooltip",
+      "description_zh": "在 '[name]' 中定义图标工具提示的插槽，其中 name 是从 1 开始的索引;建议：QTooltip"
+    }
+  ]
 }

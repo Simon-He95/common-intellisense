@@ -6,25 +6,26 @@ interface PropsOptions {
   uiName: string
   lib: string
   map: any[]
-  iconData?: { prefix: string, type: string, icons: any[] }
-  extensionContext?: any
+  // iconData?: { prefix: string, type: string, icons: any[] }
+  // extensionContext?: any
   prefix?: string
 }
 
 export function propsReducer(options: PropsOptions) {
-  const { uiName, lib, map, iconData, extensionContext, prefix = '' } = options
+  const { uiName, lib, map, prefix = '' } = options
   const result: any = {}
-  let icons
-  if (iconData) {
-    const prefix = iconData.prefix
-    icons = iconData.icons.map((icon) => {
-      const imagePath = vscode.Uri.file(extensionContext.asAbsolutePath(`images/${iconData.type}/${icon}.svg`))
-      const documentation = new vscode.MarkdownString(`![img](${imagePath})`)
-      const snippet = `${prefix}-${icon}`
-      return createCompletionItem({ content: icon, type: 19, documentation, snippet, params: [uiName] })
-    })
-    result.icons = icons
-  }
+  // 废弃 icons 支持
+  // let icons
+  // if (iconData) {
+  // const prefix = iconData.prefix
+  // icons = iconData.icons.map((icon) => {
+  //   const imagePath = vscode.Uri.file(extensionContext.asAbsolutePath(`images/${iconData.type}/${icon}.svg`))
+  //   const documentation = new vscode.MarkdownString(`![img](${imagePath})`)
+  //   const snippet = `${prefix}-${icon}`
+  //   return createCompletionItem({ content: icon, type: 19, documentation, snippet, params: [uiName] })
+  // })
+  // result.icons = icons
+  // }
   return map.reduce((result: any, item: any) => {
     const completions: any = []
     const events: any = []

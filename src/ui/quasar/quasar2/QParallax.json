@@ -5,8 +5,9 @@
     {
       "name": "scroll",
       "description": "Emitted when scrolling occurs",
+      "description_zh": "发生滚动时发出",
       "params": "(percentage: Number) => void",
-      "description_zh": "滚动时发出"
+      "value": ""
     }
   ],
   "props": {
@@ -14,32 +15,53 @@
       "value": "",
       "type": "String",
       "description": "Path to image (unless a 'media' slot is used)",
+      "description_zh": "图像路径（除非使用“media”插槽）",
       "default": "",
-      "description_zh": "图像路径（除非使用“媒体”插槽）"
+      "required": false
     },
     "height": {
       "value": "",
       "type": "Number",
       "description": "Height of component (in pixels)",
-      "default": 500,
-      "description_zh": "组件高度（以像素为单位）"
+      "description_zh": "组件高度（以像素为单位）",
+      "default": "500",
+      "required": false
     },
     "speed": {
       "value": "",
       "type": "Number",
       "description": "Speed of parallax effect (0.0 < x < 1.0)",
-      "default": "",
-      "description_zh": "视差效果的速度 （0.0 < x < 1.0）"
+      "description_zh": "视差效果的速度 （0.0 < x < 1.0）",
+      "default": "1",
+      "required": false
     },
     "scroll-target": {
       "value": "",
       "type": "String",
       "description": "",
+      "description_zh": "",
       "default": "",
-      "extends": "scroll-target",
-      "description_zh": ""
+      "required": false,
+      "extends": "scroll-target"
     }
   },
   "link": "https://v2.quasar.dev/vue-components/parallax",
-  "link_zh": "https://v2.quasar.dev/vue-components/parallax"
+  "link_zh": "https://v2.quasar.dev/vue-components/parallax",
+  "slots": [
+    {
+      "name": "default",
+      "description": "Default slot can be used for content that gets displayed on top of the component",
+      "description_zh": "默认插槽可用于显示在组件顶部的内容"
+    },
+    {
+      "name": "media",
+      "description": "Slot for describing <img> or <video> tags",
+      "description_zh": "用于描述<img>或<video>标记的插槽"
+    },
+    {
+      "name": "content",
+      "description": "Scoped slot for describing content that gets displayed on top of the component; If specified, it overrides the default slot",
+      "description_zh": "用于描述显示在组件顶部的内容的 scoped 插槽;如果指定，它将覆盖默认插槽"
+    }
+  ]
 }

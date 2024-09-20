@@ -2,28 +2,34 @@
   "meta": {
     "docsUrl": "https://v2.quasar.dev/vue-components/scroll-observer"
   },
-
   "props": {
     "debounce": {
-      "type": ["String", "Number"],
+      "type": [
+        "String",
+        "Number"
+      ],
       "desc": "Debounce amount (in milliseconds)",
-      "examples": ["0", "530"],
+      "examples": [
+        "0",
+        "'530'"
+      ],
       "category": "behavior"
     },
-
     "axis": {
       "type": "String",
       "desc": "Axis on which to detect changes",
-      "values": ["both", "vertical", "horizontal"],
-      "default": "vertical",
+      "values": [
+        "'both'",
+        "'vertical'",
+        "'horizontal'"
+      ],
+      "default": "'vertical'",
       "category": "behavior"
     },
-
     "scroll-target": {
       "extends": "scroll-target"
     }
   },
-
   "events": {
     "scroll": {
       "desc": "Emitted when scroll position changes",
@@ -49,12 +55,16 @@
                 }
               }
             },
-
             "direction": {
               "type": "String",
               "required": true,
               "desc": "Direction of scroll",
-              "values": ["up", "down", "left", "right"]
+              "values": [
+                "'up'",
+                "'down'",
+                "'left'",
+                "'right'"
+              ]
             },
             "directionChanged": {
               "type": "Boolean",
@@ -78,7 +88,6 @@
                 }
               }
             },
-
             "inflectionPoint": {
               "type": "Object",
               "required": true,
@@ -101,7 +110,6 @@
       }
     }
   },
-
   "methods": {
     "trigger": {
       "desc": "Emit a 'scroll' event",
@@ -110,11 +118,13 @@
           "type": "Boolean",
           "desc": "Skip over the debounce amount"
         }
-      }
+      },
+      "returns": null
     },
-
     "getPosition": {
-      "desc": "Get current scroll details under the form of an Object: { position, direction, directionChanged, inflectionPoint }"
+      "desc": "Get current scroll details under the form of an Object: { position, direction, directionChanged, inflectionPoint }",
+      "params": null,
+      "returns": null
     }
   }
 }

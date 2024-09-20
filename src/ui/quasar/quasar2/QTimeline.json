@@ -7,41 +7,50 @@
       "type": "String | Array",
       "description": "Color name for component from the Quasar Color Palette",
       "value": "",
-      "default": "grey-8",
+      "default": "'primary'",
       "extends": "color",
       "desc": "The color to be attributed to the indicator (the underline) of the active tab",
       "category": "style",
-      "addedIn": "v2.4",
+      "__runtimeDefault": true,
       "examples": [
-        "primary",
-        "teal-10",
-        "[\"accent\", \"grey-7\"] "
+        "[ 'accent', 'grey-7' ]"
       ],
-      "description_zh": "类星体调色板中组件的颜色名称"
+      "addedIn": "v2.4",
+      "description_zh": "Quasar Color Palette （类星体调色板） 中组件的颜色名称"
     },
     "side": {
       "value": "",
       "type": "String",
       "description": "Side to place the timeline entries in dense and comfortable layout; For loose layout it gets overridden by QTimelineEntry side prop",
-      "default": "right",
-      "description_zh": "侧面以密集舒适的布局放置时间线条目;对于松散布局，它被 QTimelineEntry 端 prop 覆盖"
+      "description_zh": "side 将时间轴条目放置在密集舒适的布局中;对于松散布局，它被 QTimelineEntry 侧 prop 覆盖",
+      "default": "'right'",
+      "required": false
     },
     "layout": {
       "value": "",
       "type": "String",
       "description": "Layout of the timeline. Dense keeps content and labels on one side. Comfortable keeps content on one side and labels on the opposite side. Loose puts content on both sides.",
-      "default": "dense",
-      "description_zh": "时间线的布局。Dense 将内容和标签保持在一侧。舒适将内容放在一侧，将标签放在另一侧。松散将内容放在两边。"
+      "description_zh": "时间轴的布局。密集 将内容和标签保持在一侧。Comfortable 将内容保留在一侧，将标签保留在另一侧。Loose 将内容放在两边。",
+      "default": "'dense'",
+      "required": false
     },
     "dark": {
       "value": "",
       "type": "String",
       "description": "",
+      "description_zh": "",
       "default": "",
-      "extends": "dark",
-      "description_zh": ""
+      "required": false,
+      "extends": "dark"
     }
   },
   "link": "https://v2.quasar.dev/vue-components/timeline",
-  "link_zh": "https://v2.quasar.dev/vue-components/timeline"
+  "link_zh": "https://v2.quasar.dev/vue-components/timeline",
+  "slots": [
+    {
+      "name": "default",
+      "description": "Used for content of component",
+      "description_zh": "用于组件的内容"
+    }
+  ]
 }

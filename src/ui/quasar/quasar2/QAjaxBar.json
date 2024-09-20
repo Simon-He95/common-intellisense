@@ -4,34 +4,39 @@
     {
       "name": "start",
       "description": "Notify bar you are waiting for a new process to finish",
+      "description_zh": "通知栏您正在等待新流程完成",
       "params": "(speed: Number) => Number",
-      "description_zh": "通知栏您正在等待新进程完成"
+      "value": ""
     },
     {
       "name": "increment",
       "description": "Manually trigger a bar progress increment",
+      "description_zh": "手动触发小节进度增量",
       "params": "(amount: Number) => Number",
-      "description_zh": "手动触发柱线进度增量"
+      "value": ""
     },
     {
       "name": "stop",
       "description": "Notify bar that one process you were waiting has finished",
+      "description_zh": "通知栏您正在等待的一个进程已完成",
       "params": "",
-      "description_zh": "通知栏您正在等待的一个进程已完成"
+      "value": ""
     }
   ],
   "events": [
     {
       "name": "start",
       "description": "Emitted when bar is triggered to appear",
+      "description_zh": "当 bar 被触发出现时发出",
       "params": "",
-      "description_zh": "触发柱线出现时发出"
+      "value": ""
     },
     {
       "name": "stop",
       "description": "Emitted when bar has finished its job",
+      "description_zh": "当 bar 完成其工作时发出",
       "params": "",
-      "description_zh": "当棒完成其工作时发出"
+      "value": ""
     }
   ],
   "props": {
@@ -39,16 +44,18 @@
       "value": "",
       "type": "String",
       "description": "Position within window of where QAjaxBar should be displayed",
-      "default": "top",
-      "description_zh": "在窗口内应显示 QAjaxBar 的位置"
+      "description_zh": "在窗口中 QAjaxBar 应显示的位置",
+      "default": "'top'",
+      "required": false
     },
     "size": {
       "value": "",
       "type": "String",
       "description": "",
-      "default": "2px",
-      "extends": "size",
-      "description_zh": ""
+      "description_zh": "",
+      "default": "'2px'",
+      "required": false,
+      "extends": "size"
     },
     "color": {
       "type": "String",
@@ -56,30 +63,35 @@
       "value": "",
       "default": "",
       "extends": "color",
-      "description_zh": "类星体调色板中组件的颜色名称"
+      "description_zh": "Quasar Color Palette （类星体调色板） 中组件的颜色名称"
     },
     "reverse": {
       "value": "",
       "type": "Boolean",
       "description": "Reverse direction of progress",
+      "description_zh": "进度反转",
       "default": "false",
-      "description_zh": "反转前进方向"
+      "required": false
     },
     "skip-hijack": {
       "value": "",
       "type": "Boolean",
       "description": "Skip Ajax hijacking (not a reactive prop)",
+      "description_zh": "跳过 Ajax 劫持（不是响应式 prop）",
       "default": "false",
-      "description_zh": "跳过 Ajax 劫持（不是反应性道具）"
+      "required": false
     },
     "hijack-filter": {
       "value": "",
       "type": "Function",
       "description": "Filter which URL should trigger start() + stop()",
+      "description_zh": "过滤应触发 start（） + stop（） 的 URL",
       "default": "",
-      "description_zh": "过滤哪个 URL 应该触发 start（） + stop（）"
+      "version": "v2.4.5",
+      "required": false
     }
   },
   "link": "https://v2.quasar.dev/vue-components/ajax-bar",
-  "link_zh": "https://v2.quasar.dev/vue-components/ajax-bar"
+  "link_zh": "https://v2.quasar.dev/vue-components/ajax-bar",
+  "slots": []
 }

@@ -4,79 +4,298 @@
     {
       "name": "show",
       "description": "Expands fab actions list",
+      "description_zh": "展开 fab 操作列表",
       "params": "",
-      "description_zh": "扩展晶圆厂操作列表"
+      "value": ""
     },
     {
       "name": "hide",
       "description": "Collapses fab actions list",
+      "description_zh": "折叠 fab 操作列表",
       "params": "",
-      "description_zh": "折叠晶圆厂操作列表"
+      "value": ""
+    },
+    {
+      "name": "toggle",
+      "params": "",
+      "description": "",
+      "value": "",
+      "description_zh": ""
     }
   ],
   "events": [
     {
       "name": "update:model-value",
       "description": "Emitted when fab actions are shown/hidden; Captured by v-model directive",
+      "description_zh": "显示/隐藏 fab 操作时发出;由 v-model 指令捕获",
+      "params": "(value: Boolean) => void",
+      "value": ""
+    },
+    {
+      "name": "show",
+      "description": "",
+      "description_zh": "",
       "params": "",
-      "description_zh": "在显示/隐藏晶圆厂操作时发出;由 v-model 指令捕获"
+      "value": ""
+    },
+    {
+      "name": "before-show",
+      "description": "",
+      "description_zh": "",
+      "params": "",
+      "value": ""
+    },
+    {
+      "name": "hide",
+      "description": "",
+      "description_zh": "",
+      "params": "",
+      "value": ""
+    },
+    {
+      "name": "before-hide",
+      "description": "",
+      "description_zh": "",
+      "params": "",
+      "value": ""
     }
   ],
   "props": {
-    "model-value": {
+    "type": {
+      "value": "",
+      "type": "String",
+      "description": "Define the button HTML DOM type",
+      "description_zh": "定义按钮 HTML DOM 类型",
+      "default": "'a'",
+      "required": false
+    },
+    "outline": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Use 'outline' design for Fab button",
+      "description_zh": "对 Fab 按钮使用“轮廓”设计",
+      "default": "false",
+      "required": false
+    },
+    "push": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Use 'push' design for Fab button",
+      "description_zh": "对 Fab 按钮使用“推”设计",
+      "default": "false",
+      "required": false
+    },
+    "flat": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Use 'flat' design for Fab button",
+      "description_zh": "对 Fab 按钮使用“平面”设计",
+      "default": "false",
+      "required": false
+    },
+    "unelevated": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Remove shadow",
+      "description_zh": "移除阴影",
+      "default": "false",
+      "required": false
+    },
+    "padding": {
+      "value": "",
+      "type": "String",
+      "description": "Apply custom padding (vertical [horizontal]); Size in CSS units, including unit name or standard size name (none|xs|sm|md|lg|xl); Also removes the min width and height when set",
+      "description_zh": "应用自定义内边距 （垂直 [水平]）;以 CSS 单位表示的大小，包括单元名称或标准大小名称 （none|xs|sm|md|lg|xl）;设置时还会删除最小宽度和高度",
+      "default": "",
+      "required": false
+    },
+    "color": {
+      "type": "String",
+      "description": "Color name for component from the Quasar Color Palette",
+      "value": "",
+      "default": "'primary'",
+      "extends": "color",
+      "desc": "Font color (from the Quasar Palette) of buttons and text in the toolbar",
+      "category": "toolbar",
+      "description_zh": "Quasar Color Palette （类星体调色板） 中组件的颜色名称"
+    },
+    "text-color": {
       "value": "",
       "type": "String",
       "description": "",
+      "description_zh": "",
       "default": "",
-      "extends": "model-value",
-      "desc": "Controls state of fab actions (showing/hidden); Works best with v-model directive, otherwise use along listening to 'update:modelValue' event",
-      "category": "model",
       "required": false,
-      "description_zh": ""
+      "extends": "text-color"
+    },
+    "glossy": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Apply the glossy effect over the button",
+      "description_zh": "在按钮上应用光泽效果",
+      "default": "false",
+      "required": false
+    },
+    "external-label": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Display label besides the FABs, as external content",
+      "description_zh": "将标签与 FAB 一起显示为外部内容",
+      "default": "false",
+      "required": false
+    },
+    "label": {
+      "value": "",
+      "type": "String | Number",
+      "description": "The label that will be shown when Fab is extended",
+      "description_zh": "扩展 Fab 时将显示的标签",
+      "default": "''",
+      "required": false
+    },
+    "label-position": {
+      "value": "",
+      "type": "String",
+      "description": "Position of the label around the icon",
+      "description_zh": "标签在图标周围的位置",
+      "default": "'right'",
+      "required": false
+    },
+    "hide-label": {
+      "value": "",
+      "type": "Boolean | null",
+      "description": "Hide the label; Useful for animation purposes where you toggle the visibility of the label",
+      "description_zh": "隐藏标签;用于切换标签可见性的动画目的",
+      "default": "null",
+      "required": false
+    },
+    "label-class": {
+      "value": "",
+      "type": "String | Array | Object",
+      "description": "Class definitions to be attributed to the label container",
+      "description_zh": "要归属于标签容器的类定义",
+      "default": "",
+      "required": false
+    },
+    "label-style": {
+      "value": "",
+      "type": "String | Array | Object",
+      "description": "Style definitions to be attributed to the label container",
+      "description_zh": "要归属于标签容器的样式定义",
+      "default": "",
+      "required": false
+    },
+    "square": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Apply a rectangle aspect to the FAB",
+      "description_zh": "将矩形长宽比应用于 FAB",
+      "default": "false",
+      "required": false
+    },
+    "disable": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "",
+      "required": false,
+      "extends": "disable"
+    },
+    "tabindex": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "",
+      "required": false,
+      "extends": "tabindex"
+    },
+    "model-value": {
+      "value": "",
+      "type": "Boolean | null",
+      "description": "Controls state of fab actions (showing/hidden); Works best with v-model directive, otherwise use along listening to 'update:modelValue' event",
+      "description_zh": "控制 fab 操作的状态（显示/隐藏）;与 v-model 指令一起使用效果最好，否则使用侦听 'update：modelValue' 事件",
+      "default": "null",
+      "required": false
     },
     "icon": {
       "value": "",
       "type": "String",
       "description": "",
+      "description_zh": "",
       "default": "",
-      "extends": "icon",
-      "description_zh": ""
+      "required": false,
+      "extends": "icon"
     },
     "active-icon": {
       "value": "",
       "type": "String",
       "description": "",
+      "description_zh": "",
       "default": "",
-      "extends": "icon",
-      "description_zh": ""
+      "required": false,
+      "extends": "icon"
     },
     "hide-icon": {
       "value": "",
       "type": "Boolean",
       "description": "Hide the icon (don't use any)",
+      "description_zh": "隐藏图标（不使用任何图标）",
       "default": "false",
-      "description_zh": "隐藏图标（不要使用任何图标）"
+      "required": false
     },
     "direction": {
       "value": "",
       "type": "String",
       "description": "Direction to expand Fab Actions to",
-      "default": "right",
-      "description_zh": "将 Fab Actions 扩展到的方向"
+      "description_zh": "将 Fab Actions 扩展到的方向",
+      "default": "'right'",
+      "required": false
     },
     "vertical-actions-align": {
       "value": "",
       "type": "String",
       "description": "The side of the Fab where Fab Actions will expand (only when direction is 'up' or 'down')",
-      "default": "center",
-      "description_zh": "Fab 操作将展开的 Fab 一侧（仅当方向为“向上”或“向下”时）"
+      "description_zh": "Fab 操作将展开的一侧（仅当方向为“向上”或“向下”时）",
+      "default": "'center'",
+      "required": false
     },
     "persistent": {
       "value": "",
       "type": "Boolean",
       "description": "By default, Fab Actions are hidden when user navigates to another route and this prop disables this behavior",
+      "description_zh": "默认情况下，当用户导航到另一个路由时，Fab Actions 是隐藏的，此 prop 会禁用此行为",
       "default": "false",
-      "description_zh": "默认情况下，当用户导航到另一条路线时，Fab 操作是隐藏的，并且此道具禁用此行为"
+      "required": false
     }
-  }
+  },
+  "link": "https://v2.quasar.dev/vue-components/floating-action-button",
+  "link_zh": "https://v2.quasar.dev/vue-components/floating-action-button",
+  "slots": [
+    {
+      "name": "default",
+      "description": "This is where QFabActions may go into",
+      "description_zh": "这就是 QFabActions 可能进入的地方"
+    },
+    {
+      "name": "tooltip",
+      "description": "Slot specifically designed for a QTooltip",
+      "description_zh": "专为 QTooltip 设计的插槽"
+    },
+    {
+      "name": "icon",
+      "description": "Slot for icon shown when FAB is closed; Suggestion: QIcon",
+      "description_zh": "FAB 关闭时显示的图标插槽;建议：QIcon"
+    },
+    {
+      "name": "active-icon",
+      "description": "Slot for icon shown when FAB is opened; Suggestion: QIcon",
+      "description_zh": "打开 FAB 时显示的图标插槽;建议：QIcon"
+    },
+    {
+      "name": "label",
+      "description": "Slot for label",
+      "description_zh": "标签槽"
+    }
+  ]
 }

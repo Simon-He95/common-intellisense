@@ -5,8 +5,9 @@
     {
       "name": "visibility",
       "description": "Fires when visibility changes",
+      "description_zh": "在可见性更改时触发",
       "params": "(isVisible: Boolean) => void",
-      "description_zh": "能见度变化时触发"
+      "value": ""
     }
   ],
   "props": {
@@ -14,74 +15,96 @@
       "value": "",
       "type": "String",
       "description": "",
-      "default": "div",
+      "description_zh": "",
+      "default": "'div'",
+      "required": false,
       "extends": "tag",
       "examples": [
-        "div",
-        "span",
-        "blockquote"
-      ],
-      "description_zh": ""
+        "'div'",
+        "'span'",
+        "'blockquote'"
+      ]
     },
     "once": {
       "value": "",
       "type": "Boolean",
       "description": "Get triggered only once",
+      "description_zh": "仅触发一次",
       "default": "false",
-      "description_zh": "仅触发一次"
+      "required": false
     },
     "ssr-prerender": {
       "value": "",
       "type": "Boolean",
       "description": "Pre-render content on server side if using SSR (use it to pre-render above the fold content)",
+      "description_zh": "如果使用 SSR，则在服务器端预渲染内容（使用它来预渲染首屏内容）",
       "default": "false",
-      "description_zh": "如果使用 SSR，则在服务器端预渲染内容（使用它来预渲染首屏内容）"
+      "required": false
     },
     "root": {
       "value": "",
-      "type": "Element",
+      "type": "Element | null",
       "description": "[Intersection API root prop] Lets you define an alternative to the viewport as your root (through its DOM element); It is important to keep in mind that root needs to be an ancestor of the observed element",
-      "default": "",
-      "description_zh": "[交集 API 根属性]允许您将视口的替代方案定义为根（通过其 DOM 元素）;重要的是要记住，根需要是观察到的元素的祖先"
+      "description_zh": "[交集 API 根属性]允许您将视区的替代项定义为根（通过其 DOM 元素）;请务必记住，root 必须是被观察元素的上级",
+      "default": "null",
+      "required": false
     },
     "margin": {
       "value": "",
       "type": "String",
       "description": "[Intersection API rootMargin prop] Allows you to specify the margins for the root, effectively allowing you to either grow or shrink the area used for intersections",
+      "description_zh": "[交集 API rootMargin 属性]允许您指定根的边距，从而有效地允许您扩大或缩小用于交集的区域",
       "default": "",
-      "description_zh": "[交集 API rootMargin 属性]允许您指定根的边距，从而有效地允许您增大或缩小用于相交的区域"
+      "required": false
     },
     "threshold": {
       "value": "",
       "type": "Array | Number",
       "description": "[Intersection API threshold prop] Threshold(s) at which to trigger, specified as a ratio, or list of ratios, of (visible area / total area) of the observed element",
+      "description_zh": "[交叉点 API 阈值 prop]触发的阈值，指定为被观察元素（可见面积 / 总面积）的比率或比率列表",
       "default": "",
-      "description_zh": "[交集 API 阈值属性]触发阈值，指定为观察到元素（可见面积/总面积）的比率或比率列表"
+      "required": false
     },
     "transition": {
       "value": "",
       "type": "String",
       "description": "",
+      "description_zh": "",
       "default": "",
+      "required": false,
       "extends": "transition",
-      "category": "behavior",
-      "description_zh": ""
+      "category": "behavior"
     },
     "transition-duration": {
       "value": "",
       "type": "String | Number",
       "description": "Transition duration (in milliseconds, without unit)",
-      "default": 300,
-      "description_zh": "转换持续时间（以毫秒为单位，不含单位）"
+      "description_zh": "过渡持续时间（以毫秒为单位，不含单位）",
+      "default": "300",
+      "version": "v2.3.1",
+      "required": false
     },
     "disable": {
       "value": "",
       "type": "Boolean",
       "description": "Disable visibility observable (content will remain as it was, visible or hidden)",
+      "description_zh": "禁用可见性可观察对象（内容将保持原样、可见或隐藏）",
       "default": "false",
-      "description_zh": "禁用可见性可观察（内容将保持原样，可见或隐藏）"
+      "required": false
     }
   },
   "link": "https://v2.quasar.dev/vue-components/intersection",
-  "link_zh": "https://v2.quasar.dev/vue-components/intersection"
+  "link_zh": "https://v2.quasar.dev/vue-components/intersection",
+  "slots": [
+    {
+      "name": "default",
+      "description": "",
+      "description_zh": ""
+    },
+    {
+      "name": "hidden",
+      "description": "Slot for content to render when component is not on screen; Example: a text that the user can search for with the browser's search function",
+      "description_zh": "组件不在屏幕上时要呈现的内容的插槽;示例：用户可以使用浏览器的搜索功能搜索的文本"
+    }
+  ]
 }

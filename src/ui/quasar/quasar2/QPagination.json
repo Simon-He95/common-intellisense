@@ -4,22 +4,25 @@
     {
       "name": "set",
       "description": "Go directly to the specified page",
+      "description_zh": "直接进入指定页面",
       "params": "(pageNumber: Number) => void",
-      "description_zh": "直接转到指定页面"
+      "value": ""
     },
     {
       "name": "setByOffset",
       "description": "Increment/Decrement current page by offset",
+      "description_zh": "按偏移量递增/递减当前页",
       "params": "(offset: Number) => void",
-      "description_zh": "按偏移量递增/递减当前页面"
+      "value": ""
     }
   ],
   "events": [
     {
       "name": "update:model-value",
       "description": "",
+      "description_zh": "",
       "params": "(value: Number) => void",
-      "description_zh": ""
+      "value": ""
     }
   ],
   "props": {
@@ -27,260 +30,297 @@
       "value": "",
       "type": "Number",
       "description": "",
+      "description_zh": "",
       "default": "",
+      "required": false,
       "extends": "model-value",
-      "desc": "Current page (must be between min/max)",
-      "description_zh": ""
+      "desc": "Current page (must be between min/max)"
     },
     "min": {
       "value": "",
       "type": "Number | String",
       "description": "Minimum page (must be lower than 'max')",
-      "default": 1,
-      "description_zh": "最小页数（必须低于“max”）"
+      "description_zh": "最小页数（必须小于 'max'）",
+      "default": "1",
+      "required": false
     },
     "max": {
       "value": "",
       "type": "Number | String",
       "description": "Number of last page (must be higher than 'min')",
+      "description_zh": "最后一页数（必须大于 'min'）",
       "default": "",
-      "description_zh": "最后一页页数（必须高于“min”）"
+      "required": true
     },
     "dark": {
       "value": "",
       "type": "String",
       "description": "",
+      "description_zh": "",
       "default": "",
+      "required": false,
       "extends": "dark",
-      "desc": "Notify the component that the background is a dark color (useful when you are using it along with the 'input' prop)",
-      "description_zh": ""
+      "desc": "Notify the component that the background is a dark color (useful when you are using it along with the 'input' prop)"
     },
     "size": {
       "value": "",
       "type": "String",
       "description": "Button size in CSS units, including unit name",
+      "description_zh": "以 CSS 单位表示的按钮大小，包括单位名称",
       "default": "",
-      "description_zh": "以 CSS 为单位的按钮大小，包括单元名称"
+      "required": false
     },
     "disable": {
       "value": "",
       "type": "String",
       "description": "",
+      "description_zh": "",
       "default": "",
-      "extends": "disable",
-      "description_zh": ""
+      "required": false,
+      "extends": "disable"
     },
     "input": {
       "value": "",
       "type": "Boolean",
       "description": "Use an input instead of buttons",
+      "description_zh": "使用输入而不是按钮",
       "default": "false",
-      "description_zh": "使用输入而不是按钮"
+      "required": false
     },
     "icon-prev": {
       "value": "",
       "type": "String",
       "description": "",
+      "description_zh": "",
       "default": "",
-      "extends": "icon",
-      "description_zh": ""
+      "required": false,
+      "extends": "icon"
     },
     "icon-next": {
       "value": "",
       "type": "String",
       "description": "",
+      "description_zh": "",
       "default": "",
-      "extends": "icon",
-      "description_zh": ""
+      "required": false,
+      "extends": "icon"
     },
     "icon-first": {
       "value": "",
       "type": "String",
       "description": "",
+      "description_zh": "",
       "default": "",
-      "extends": "icon",
-      "description_zh": ""
+      "required": false,
+      "extends": "icon"
     },
     "icon-last": {
       "value": "",
       "type": "String",
       "description": "",
+      "description_zh": "",
       "default": "",
-      "extends": "icon",
-      "description_zh": ""
+      "required": false,
+      "extends": "icon"
     },
     "to-fn": {
       "value": "",
       "type": "Function",
       "description": "Generate link for page buttons; For best performance, reference it from your scope and do not define it inline",
+      "description_zh": "为页面按钮生成链接;为了获得最佳性能，请从您的范围中引用它，不要内联定义它",
       "default": "",
-      "description_zh": "为页面按钮生成链接;为了获得最佳性能，请从您的范围引用它，不要以内联方式定义它"
+      "required": false
     },
     "boundary-links": {
       "value": "",
-      "type": "Boolean",
+      "type": "Boolean | null",
       "description": "Show boundary button links",
-      "default": "false",
-      "description_zh": "显示边界按钮链接"
+      "description_zh": "显示边界按钮链接",
+      "default": "null",
+      "required": false
     },
     "boundary-numbers": {
       "value": "",
-      "type": "Boolean",
+      "type": "Boolean | null",
       "description": "Always show first and last page buttons (if not using 'input')",
-      "default": "false",
-      "description_zh": "始终显示第一页和最后一页按钮（如果不使用“input”）"
+      "description_zh": "始终显示第一页和最后一页按钮（如果不使用 'input'）",
+      "default": "null",
+      "required": false
     },
     "direction-links": {
       "value": "",
-      "type": "Boolean",
+      "type": "Boolean | null",
       "description": "Show direction buttons",
-      "default": "false",
-      "description_zh": "显示方向按钮"
+      "description_zh": "显示方向按钮",
+      "default": "null",
+      "required": false
     },
     "ellipses": {
       "value": "",
-      "type": "Boolean",
+      "type": "Boolean | null",
       "description": "Show ellipses (...) when pages are available",
-      "default": "false",
-      "description_zh": "当页面可用时显示省略号 （...）"
+      "description_zh": "当页面可用时显示省略号 （...）",
+      "default": "null",
+      "required": false
     },
     "max-pages": {
       "value": "",
       "type": "Number | String",
       "description": "Maximum number of page links to display at a time; 0 means Infinite",
-      "default": 0,
-      "description_zh": "一次显示的最大页面链接数;0 表示无限"
+      "description_zh": "一次显示的最大页面链接数;0 表示无限",
+      "default": "0",
+      "required": false
     },
     "flat": {
       "value": "",
       "type": "Boolean",
       "description": "Use 'flat' design for non-active buttons (it's the default option)",
+      "description_zh": "对非活动按钮使用 'flat' 设计（这是默认选项）",
       "default": "false",
-      "description_zh": "对非活动按钮使用“扁平”设计（这是默认选项）"
+      "required": false
     },
     "outline": {
       "value": "",
       "type": "Boolean",
       "description": "Use 'outline' design for non-active buttons",
+      "description_zh": "对非活动按钮使用“轮廓”设计",
       "default": "false",
-      "description_zh": "对非活动按钮使用“轮廓”设计"
+      "required": false
     },
     "unelevated": {
       "value": "",
       "type": "Boolean",
       "description": "Remove shadow for non-active buttons",
+      "description_zh": "移除非活动按钮的阴影",
       "default": "false",
-      "description_zh": "去除非活动按钮的阴影"
+      "required": false
     },
     "push": {
       "value": "",
       "type": "Boolean",
       "description": "Use 'push' design for non-active buttons",
+      "description_zh": "对非活动按钮使用“push”设计",
       "default": "false",
-      "description_zh": "对非活动按钮使用“按压”设计"
+      "required": false
     },
     "color": {
       "type": "String",
       "description": "Color name for component from the Quasar Color Palette",
       "value": "",
-      "default": "primary",
+      "default": "'primary'",
       "extends": "color",
       "desc": "Color name from the Quasar Color Palette for the ACTIVE button",
       "category": "style",
-      "description_zh": "类星体调色板中组件的颜色名称"
+      "__runtimeDefault": true,
+      "description_zh": "Quasar Color Palette （类星体调色板） 中组件的颜色名称"
     },
     "text-color": {
       "value": "",
       "type": "String",
       "description": "",
+      "description_zh": "",
       "default": "",
+      "required": false,
       "extends": "text-color",
-      "desc": "Text color name from the Quasar Color Palette for the ACTIVE buttons",
-      "description_zh": ""
+      "desc": "Text color name from the Quasar Color Palette for the ACTIVE buttons"
     },
     "active-design": {
       "value": "",
       "type": "String",
       "description": "The design of the ACTIVE button, similar to the flat/outline/push/unelevated props (but those are used for non-active buttons)",
-      "default": "",
-      "description_zh": "ACTIVE按钮的设计，类似于平面/轮廓/推动/未抬高的道具（但这些用于非活动按钮）"
+      "description_zh": "ACTIVE 按钮的设计，类似于 flat/outline/push/unelevated 属性（但这些用于非活动按钮）",
+      "default": "''",
+      "version": "v2.10",
+      "required": false
     },
     "active-color": {
       "type": "String",
       "description": "Color name for component from the Quasar Color Palette",
       "value": "",
-      "default": "primary",
+      "default": "'primary'",
       "extends": "color",
       "desc": "Color name from the Quasar Color Palette for the ACTIVE button",
       "category": "style",
-      "description_zh": "类星体调色板中组件的颜色名称"
+      "__runtimeDefault": true,
+      "description_zh": "Quasar Color Palette （类星体调色板） 中组件的颜色名称"
     },
     "active-text-color": {
       "value": "",
       "type": "String",
       "description": "",
+      "description_zh": "",
       "default": "",
+      "required": false,
       "extends": "text-color",
-      "desc": "Text color name from the Quasar Color Palette for the ACTIVE button",
-      "description_zh": ""
+      "desc": "Text color name from the Quasar Color Palette for the ACTIVE button"
     },
     "round": {
       "value": "",
       "type": "Boolean",
       "description": "Makes a circle shaped button for all buttons",
+      "description_zh": "为所有按钮制作一个圆形按钮",
       "default": "false",
-      "description_zh": "为所有按钮制作一个圆形按钮"
+      "required": false
     },
     "rounded": {
       "value": "",
       "type": "Boolean",
       "description": "Applies a more prominent border-radius for a squared shape button for all buttons",
+      "description_zh": "为所有按钮的方形按钮应用更突出的边框半径",
       "default": "false",
-      "description_zh": "为所有按钮的方形按钮应用更突出的边框半径"
+      "required": false
     },
     "glossy": {
       "value": "",
       "type": "Boolean",
       "description": "Applies a glossy effect for all buttons",
+      "description_zh": "对所有按钮应用光泽效果",
       "default": "false",
-      "description_zh": "对所有按钮应用光泽效果"
+      "required": false
     },
     "gutter": {
       "value": "",
       "type": "String",
       "description": "Apply custom gutter; Size in CSS units, including unit name or standard size name (none|xs|sm|md|lg|xl)",
-      "default": "2px",
-      "description_zh": "应用自定义装订线;以 CSS 为单位的大小，包括单位名称或标准大小名称 （none|xs|sm|md|lg|xl）"
+      "description_zh": "应用自定义装订线;以 CSS 单位为单位的大小，包括单位名称或标准大小名称 （none|xs|sm|md|lg|xl）",
+      "default": "'2px'",
+      "version": "v2.10",
+      "required": false
     },
     "padding": {
       "value": "",
       "type": "String",
       "description": "Apply custom padding (vertical [horizontal]); Size in CSS units, including unit name or standard size name (none|xs|sm|md|lg|xl); Also removes the min width and height when set",
-      "default": "",
-      "description_zh": "应用自定义填充（垂直 [水平]）;以 CSS 为单位的大小，包括单位名称或标准大小名称 （none|xs|sm|md|lg|xl）;设置时还会删除最小宽度和高度"
+      "description_zh": "应用自定义内边距 （垂直 [水平]）;以 CSS 单位表示的大小，包括单元名称或标准大小名称 （none|xs|sm|md|lg|xl）;设置时还会删除最小宽度和高度",
+      "default": "'3px 2px'",
+      "required": false
     },
     "input-style": {
       "value": "",
       "type": "String | Array | Object",
       "description": "Style definitions to be attributed to the input (if using one)",
+      "description_zh": "要归属于输入的样式定义（如果使用）",
       "default": "",
-      "description_zh": "要归因于输入的样式定义（如果使用）"
+      "required": false
     },
     "input-class": {
       "value": "",
       "type": "String | Array | Object",
       "description": "Class definitions to be attributed to the input (if using one)",
+      "description_zh": "要归属于输入的类定义（如果使用）",
       "default": "",
-      "description_zh": "要归因于输入的类定义（如果使用）"
+      "required": false
     },
     "ripple": {
       "value": "",
-      "type": "Boolean | Object",
+      "type": "Boolean | Object | null",
       "description": "Configure buttons material ripple (disable it by setting it to 'false' or supply a config object); Does not applies to boundary and ellipsis buttons",
-      "default": true,
-      "description_zh": "配置按钮材料波纹（通过将其设置为“false”或提供配置对象来禁用它）;不适用于边界和省略号按钮"
+      "description_zh": "配置按钮材质涟漪（通过将其设置为 'false' 或提供配置对象来禁用它）;不适用于边界和省略号按钮",
+      "default": "true",
+      "required": false
     }
   },
   "link": "https://v2.quasar.dev/vue-components/pagination",
-  "link_zh": "https://v2.quasar.dev/vue-components/pagination"
+  "link_zh": "https://v2.quasar.dev/vue-components/pagination",
+  "slots": []
 }

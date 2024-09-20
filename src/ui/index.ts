@@ -1,4 +1,3 @@
-import { elementUi2, elementUi2Components } from './elementUi'
 import { antd4, antd4Components, antd5, antd5Components } from './antd'
 import { elementPlus2, elementPlus2Components } from './elementPlus'
 import { vant4, vant4Components } from './vant'
@@ -29,7 +28,7 @@ import { nutUi4, nutUi4Components } from './nutUi'
 import { viewUiPlus1, viewUiPlus1Components } from './viewUiPlus'
 
 export default {
-  elementUi2,
+  // elementUi2,
   antd4,
   antd5,
   elementPlus2,
@@ -65,7 +64,7 @@ export default {
   tinyVue3,
   nutUi4,
   viewUiPlus1,
-  elementUi2Components,
+  // elementUi2Components,
   antd4Components,
   antd5Components,
   elementPlus2Components,

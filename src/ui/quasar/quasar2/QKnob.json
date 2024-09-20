@@ -5,167 +5,219 @@
     {
       "name": "update:model-value",
       "description": "",
+      "description_zh": "",
       "params": "(value: Number) => void",
-      "description_zh": ""
+      "value": ""
     },
     {
       "name": "change",
       "description": "Fires at the end of a knob's adjustment and offers the value of the model",
+      "description_zh": "在旋钮调整结束时触发，并提供模型的值",
       "params": "(value: Number) => void",
-      "description_zh": "在旋钮调整结束时触发，并提供模型的价值"
+      "value": ""
     },
     {
       "name": "drag-value",
       "description": "The value of the model while dragging is still in progress",
+      "description_zh": "拖动时模型的值仍在进行中",
       "params": "(value: Number) => void",
-      "description_zh": "拖动时模型的值仍在进行中"
+      "value": ""
     }
   ],
   "props": {
+    "name": {
+      "value": "",
+      "type": "String",
+      "description": "Used to specify the name of the control; Useful if dealing with forms submitted directly to a URL",
+      "description_zh": "用于指定控件的名称;如果处理直接提交到 URL 的表单，则很有用",
+      "default": "",
+      "required": false
+    },
+    "size": {
+      "value": "",
+      "type": "String",
+      "description": "Size in CSS units, including unit name or standard size name (xs|sm|md|lg|xl)",
+      "description_zh": "以 CSS 单位为单位的大小，包括单位名称或标准大小名称 （xs|sm|md|lg|xl）",
+      "default": "",
+      "required": false
+    },
     "model-value": {
       "value": "",
       "type": "Number",
       "description": "",
+      "description_zh": "",
       "default": "",
+      "required": false,
       "extends": "model-value",
       "desc": "Any number to indicate the given value of the knob. Either use this property (along with a listener for 'update:modelValue' event) OR use the v-model directive",
       "examples": [
-        "v-model=\"myValue\""
-      ],
-      "description_zh": ""
+        "# v-model=\"myValue\""
+      ]
     },
     "min": {
       "value": "",
       "type": "Number",
       "description": "The minimum value that the model (the knob value) should start at",
-      "default": "",
-      "description_zh": "模型应从的最小值（旋钮值）开始"
+      "description_zh": "模型 （旋钮值） 应从的最小值 （旋钮值）",
+      "default": "0",
+      "required": false
     },
     "max": {
       "value": "",
       "type": "Number",
       "description": "The maximum value that the model (the knob value) should go to",
-      "default": "",
-      "description_zh": "模型应达到的最大值（旋钮值）"
+      "description_zh": "模型应达到的最大值 （旋钮值）",
+      "default": "100",
+      "required": false
     },
     "inner-min": {
       "value": "",
       "type": "Number",
       "description": "Inner minimum value of the model; Use in case you need the model value to be inside of the track's min-max values; Needs to be higher or equal to 'min' prop; Defaults to 'min' prop",
+      "description_zh": "模型的内部最小值;如果您需要 model 值位于轨迹的 min-max 值范围内，请使用 view;需要高于或等于 'min' prop;默认为 'min' prop",
       "default": "",
-      "description_zh": "模型的内部最小值;如果您需要模型值在轨道的最小值-最大值范围内，请使用;需要高于或等于“min”道具;默认为 'min' prop"
+      "version": "v2.5.4",
+      "required": false
     },
     "inner-max": {
       "value": "",
       "type": "Number",
       "description": "Inner maximum value of the model; Use in case you need the model value to be inside of the track's min-max values; Needs to be lower or equal to 'max' prop; Defaults to 'max' prop",
+      "description_zh": "模型的内部最大值;如果您需要 model 值位于轨迹的 min-max 值范围内，请使用 view;需要小于或等于 'max' prop;默认为 'max' prop",
       "default": "",
-      "description_zh": "模型的内部最大值;如果您需要模型值在轨道的最小值-最大值范围内，请使用;需要低于或等于“最大”道具;默认为 'max' prop"
+      "version": "v2.5.4",
+      "required": false
     },
     "step": {
       "value": "",
       "type": "Number",
       "description": "A number representing steps in the value of the model, while adjusting the knob",
-      "default": 1,
-      "description_zh": "一个数字，表示调整旋钮时模型值中的步长"
+      "description_zh": "一个数字，表示在调整旋钮时模型值中的步数",
+      "default": "1",
+      "required": false
     },
     "reverse": {
       "value": "",
       "type": "Boolean",
       "description": "Reverses the direction of progress",
+      "description_zh": "逆转进步的方向",
       "default": "false",
-      "description_zh": "颠倒了前进的方向"
+      "required": false
     },
     "instant-feedback": {
       "value": "",
       "type": "Boolean",
       "description": "No animation when model changes",
+      "description_zh": "模型更改时无动画",
       "default": "false",
-      "description_zh": "模型更改时无动画"
+      "required": false
     },
     "color": {
       "type": "String",
       "description": "Color name for component from the Quasar Color Palette",
       "value": "",
-      "default": "primary",
+      "default": "'primary'",
       "extends": "color",
       "desc": "Color name for the track of the component from the Quasar Color Palette",
       "category": "style",
-      "description_zh": "类星体调色板中组件的颜色名称"
+      "description_zh": "Quasar Color Palette （类星体调色板） 中组件的颜色名称"
     },
     "center-color": {
       "type": "String",
       "description": "Color name for component from the Quasar Color Palette",
       "value": "",
-      "default": "primary",
+      "default": "'primary'",
       "extends": "color",
       "desc": "Color name for the track of the component from the Quasar Color Palette",
       "category": "style",
-      "description_zh": "类星体调色板中组件的颜色名称"
+      "description_zh": "Quasar Color Palette （类星体调色板） 中组件的颜色名称"
     },
     "track-color": {
       "type": "String",
       "description": "Color name for component from the Quasar Color Palette",
       "value": "",
-      "default": "primary",
+      "default": "'primary'",
       "extends": "color",
       "desc": "Color name for the track of the component from the Quasar Color Palette",
       "category": "style",
-      "description_zh": "类星体调色板中组件的颜色名称"
+      "description_zh": "Quasar Color Palette （类星体调色板） 中组件的颜色名称"
     },
     "font-size": {
       "value": "",
       "type": "String",
       "description": "Size of text in CSS units, including unit name. Suggestion: use 'em' units to sync with component size",
-      "default": "0.25em",
-      "description_zh": "以 CSS 为单位的文本大小，包括单元名称。建议：使用“em”单位与组件大小同步"
+      "description_zh": "以 CSS 单位表示的文本大小，包括单位名称。建议：使用 'em' 单位与组件尺寸同步",
+      "default": "",
+      "required": false
+    },
+    "rounded": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Rounding the arc of progress",
+      "description_zh": "圆润进步的弧线",
+      "default": "false",
+      "version": "v2.8.4",
+      "required": false
     },
     "thickness": {
       "value": "",
       "type": "Number",
       "description": "Thickness of progress arc as a ratio (0.0 < x < 1.0) of component size",
-      "default": 0.2,
-      "description_zh": "进度弧的厚度与组件尺寸之比 （0.0 < x < 1.0）"
+      "description_zh": "进程弧的厚度与组件尺寸的比率 （0.0 < x < 1.0）",
+      "default": "0.2",
+      "required": false
     },
     "angle": {
       "value": "",
       "type": "Number",
       "description": "Angle to rotate progress arc by",
-      "default": 0,
-      "description_zh": "旋转进度弧的角度"
+      "description_zh": "进度弧旋转的角度",
+      "default": "0",
+      "required": false
     },
     "show-value": {
       "value": "",
       "type": "Boolean",
       "description": "Enables the default slot and uses it (if available), otherwise it displays the 'value' prop as text; Make sure the text has enough space to be displayed inside the component",
+      "description_zh": "启用默认插槽并使用它（如果可用），否则它将 'value' 属性显示为文本;确保文本有足够的空间在组件内部显示",
       "default": "false",
-      "description_zh": "启用默认插槽并使用它（如果可用），否则它将“value”属性显示为文本;确保文本有足够的空间在组件内部显示"
+      "required": false
     },
     "tabindex": {
       "value": "",
       "type": "String",
       "description": "",
-      "default": "",
-      "extends": "tabindex",
-      "description_zh": ""
+      "description_zh": "",
+      "default": "0",
+      "required": false,
+      "extends": "tabindex"
     },
     "disable": {
       "value": "",
       "type": "String",
       "description": "",
+      "description_zh": "",
       "default": "",
-      "extends": "disable",
-      "description_zh": ""
+      "required": false,
+      "extends": "disable"
     },
     "readonly": {
       "value": "",
       "type": "String",
       "description": "",
+      "description_zh": "",
       "default": "",
-      "extends": "readonly",
-      "description_zh": ""
+      "required": false,
+      "extends": "readonly"
     }
   },
   "link": "https://v2.quasar.dev/vue-components/knob",
-  "link_zh": "https://v2.quasar.dev/vue-components/knob"
+  "link_zh": "https://v2.quasar.dev/vue-components/knob",
+  "slots": [
+    {
+      "name": "default",
+      "description": "",
+      "description_zh": ""
+    }
+  ]
 }

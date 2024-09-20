@@ -5,8 +5,9 @@
     {
       "name": "update:model-value",
       "description": "Emitted when component's model value changes; Is also used by v-model",
+      "description_zh": "当组件的 model 值发生变化时发出;也被 v-model 使用",
       "params": "(value: Number) => void",
-      "description_zh": "当组件的模型值发生变化时发出;也被 v-model 使用"
+      "value": ""
     }
   ],
   "props": {
@@ -14,93 +15,129 @@
       "value": "",
       "type": "Number",
       "description": "",
+      "description_zh": "",
       "default": "",
+      "required": false,
       "extends": "model-value",
       "desc": "Model of the component defining the size of first panel (or second if using reverse) in the unit specified (for '%' it's the split ratio percent - 0.0 < x < 100.0; for 'px' it's the size in px); Either use this property (along with a listener for 'update:modelValue' event) OR use v-model directive",
       "examples": [
-        "v-model=\"ratio\""
-      ],
-      "description_zh": ""
+        "# v-model=\"ratio\""
+      ]
     },
     "reverse": {
       "value": "",
       "type": "Boolean",
       "description": "Apply the model size to the second panel (by default it applies to the first)",
+      "description_zh": "将模型大小应用于第二个面板（默认情况下，它适用于第一个面板）",
       "default": "false",
-      "description_zh": "将模型大小应用于第二个面板（默认情况下，它适用于第一个面板）"
+      "required": false
     },
     "unit": {
       "value": "",
       "type": "String",
       "description": "CSS unit for the model",
-      "default": "%",
-      "description_zh": "模型的 CSS 单元"
+      "description_zh": "模型的 CSS 单位",
+      "default": "'%'",
+      "required": false
     },
     "emit-immediately": {
       "value": "",
       "type": "Boolean",
       "description": "Emit model while user is panning on the separator",
+      "description_zh": "当用户在分隔符上平移时发出模型",
       "default": "false",
-      "description_zh": "当用户在分隔符上平移时发出模型"
+      "required": false
     },
     "horizontal": {
       "value": "",
       "type": "Boolean",
       "description": "Allows the splitter to split its two panels horizontally, instead of vertically",
+      "description_zh": "允许分流器水平分拆其两个面板，而不是垂直分拆",
       "default": "false",
-      "description_zh": "允许拆分器水平拆分其两个面板，而不是垂直拆分"
+      "required": false
     },
     "limits": {
       "value": "",
       "type": "Array",
-      "description": "An array of two values representing the minimum and maximum split size of the two panels; When 'px' unit is set then you can use Infinity as the second value to make it unbound on the other side",
-      "default": "For '%' unit: [10, 90]; For 'px' unit: [50, Infinity]",
-      "description_zh": "由两个值组成的数组，表示两个面板的最小和最大拆分大小;当设置了“px”单位时，您可以使用 Infinity 作为第二个值，使其在另一侧解除绑定"
+      "description": "An array of two values representing the minimum and maximum split size of the two panels; When 'px' unit is set then you can use Infinity as the second value to make it unbound on the other side; Default value: for '%' unit it is [10, 90], while for 'px' unit it is [50, Infinity]",
+      "description_zh": "一个包含两个值的数组，表示两个面板的最小和最大拆分大小;当设置了 'px' 单位时，你可以使用 Infinity 作为第二个值，使其在另一侧解绑;默认值：对于 '%' 单位，它是 [10， 90]，而对于 'px' 单位，它是 [50， Infinity]",
+      "default": "# [10, 90]/[50, Infinity]",
+      "required": false
     },
     "disable": {
       "value": "",
       "type": "String",
       "description": "",
+      "description_zh": "",
       "default": "",
-      "extends": "disable",
-      "description_zh": ""
+      "required": false,
+      "extends": "disable"
     },
     "before-class": {
       "value": "",
       "type": "String | Array | Object",
       "description": "Class definitions to be attributed to the 'before' panel",
+      "description_zh": "归属于 'before' 面板的类定义",
       "default": "",
-      "description_zh": "归因于“之前”面板的类定义"
+      "required": false
     },
     "after-class": {
       "value": "",
       "type": "String | Array | Object",
       "description": "Class definitions to be attributed to the 'after' panel",
+      "description_zh": "归属于 'after' 面板的类定义",
       "default": "",
-      "description_zh": "归因于“after”面板的类定义"
+      "required": false
     },
     "separator-class": {
       "value": "",
       "type": "String | Array | Object",
       "description": "Class definitions to be attributed to the splitter separator",
+      "description_zh": "归属于 splitter separator 的类定义",
       "default": "",
-      "description_zh": "要归因于拆分器分隔符的类定义"
+      "required": false
     },
     "separator-style": {
       "value": "",
       "type": "String | Array | Object",
       "description": "Style definitions to be attributed to the splitter separator",
+      "description_zh": "要归属于分隔器分隔符的样式定义",
       "default": "",
-      "description_zh": "要归因于拆分器分隔符的样式定义"
+      "required": false
     },
     "dark": {
       "value": "",
-      "type": "Boolean",
-      "description": "Applies a default lighter color on the separator; To be used when background is darker; Avoid using when you are overriding through separator-class or separator-style props",
-      "default": "false",
-      "description_zh": "在分隔符上应用默认的较浅颜色;在背景较暗时使用;避免在覆盖分隔符类或分隔符样式的道具时使用"
+      "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "",
+      "required": false,
+      "extends": "dark",
+      "desc": "Applies a default lighter color on the separator; To be used when background is darker; Avoid using when you are overriding through separator-class or separator-style props"
     }
   },
   "link": "https://v2.quasar.dev/vue-components/splitter",
-  "link_zh": "https://v2.quasar.dev/vue-components/splitter"
+  "link_zh": "https://v2.quasar.dev/vue-components/splitter",
+  "slots": [
+    {
+      "name": "default",
+      "description": "Default slot in the devland unslotted content of the component; Suggestion: QTooltip, QMenu",
+      "description_zh": "组件的 devland unslotted 内容中的 Default slot;建议：QTooltip、QMenu"
+    },
+    {
+      "name": "before",
+      "description": "Content of the panel on left/top",
+      "description_zh": "左侧/顶部的面板内容"
+    },
+    {
+      "name": "after",
+      "description": "Content of the panel on right/bottom",
+      "description_zh": "右侧/底部的面板内容"
+    },
+    {
+      "name": "separator",
+      "description": "Content to be placed inside the separator; By default it is centered",
+      "description_zh": "要放置在分隔符内的内容;默认情况下，它是居中"
+    }
+  ]
 }

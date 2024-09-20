@@ -2,280 +2,383 @@
   "name": "QEditor",
   "methods": [
     {
+      "name": "toggleFullscreen",
+      "description": "Toggle the view to be fullscreen or not fullscreen",
+      "description_zh": "将视图切换为全屏或不全屏",
+      "params": "",
+      "value": ""
+    },
+    {
+      "name": "setFullscreen",
+      "description": "Enter the fullscreen view",
+      "description_zh": "进入全屏视图",
+      "params": "",
+      "value": ""
+    },
+    {
+      "name": "exitFullscreen",
+      "description": "Leave the fullscreen view",
+      "description_zh": "离开全屏视图",
+      "params": "",
+      "value": ""
+    },
+    {
       "name": "runCmd",
       "description": "Run contentEditable command at caret position and range",
+      "description_zh": "在插入符号位置和范围运行 contentEditable 命令",
       "params": "(cmd: String, param: String, update: Boolean) => void",
-      "description_zh": "在插入符号位置和范围运行 contentEditable 命令"
+      "value": ""
     },
     {
       "name": "refreshToolbar",
       "description": "Hide the link editor if visible and force the instance to re-render",
+      "description_zh": "隐藏链接编辑器（如果可见）并强制实例重新渲染",
       "params": "",
-      "description_zh": "隐藏链接编辑器（如果可见），并强制实例重新渲染"
+      "value": ""
     },
     {
       "name": "focus",
       "description": "Focus on the contentEditable at saved cursor position",
+      "description_zh": "将焦点放在保存的光标位置的 contentEditable 上",
       "params": "",
-      "description_zh": "将焦点放在内容上保存的光标位置的可编辑内容"
+      "value": ""
     },
     {
       "name": "getContentEl",
       "description": "Retrieve the content of the Editor",
+      "description_zh": "检索 Editor 的内容",
       "params": "",
-      "description_zh": "检索编辑器的内容"
+      "value": ""
     }
   ],
   "events": [
     {
+      "name": "fullscreen",
+      "description": "Emitted when fullscreen state changes",
+      "description_zh": "全屏状态更改时发出",
+      "params": "(value: Boolean) => void",
+      "value": ""
+    },
+    {
+      "name": "update:fullscreen",
+      "description": "Used by Vue on 'v-model:fullscreen' prop for updating its value",
+      "description_zh": "被 Vue 在 'v-model：fullscreen' prop 上使用，以更新其值",
+      "params": "(value: Boolean) => void",
+      "value": ""
+    },
+    {
       "name": "update:model-value",
       "description": "",
+      "description_zh": "",
       "params": "(value: String) => void",
-      "description_zh": ""
+      "value": ""
     },
     {
       "name": "dropdown-show",
       "description": "Emitted after a dropdown in the toolbar has triggered show()",
+      "description_zh": "在工具栏中的下拉列表触发 show（） 后发出",
       "params": "(evt: undefined) => void",
-      "description_zh": "在工具栏中的下拉列表触发 show（） 后发出"
+      "value": ""
     },
     {
       "name": "dropdown-before-show",
       "description": "Emitted when a dropdown in the toolbar triggers show() but before it finishes doing it",
+      "description_zh": "当工具栏中的下拉列表触发 show（） 但在完成之前触发",
       "params": "(evt: undefined) => void",
-      "description_zh": "在工具栏中的下拉列表触发 show（） 但在完成操作之前发出"
+      "value": ""
     },
     {
       "name": "dropdown-hide",
       "description": "Emitted after a dropdown in the toolbar has triggered hide()",
+      "description_zh": "在工具栏中的下拉列表触发 hide（） 后发出",
       "params": "(evt: undefined) => void",
-      "description_zh": "在工具栏中的下拉列表触发 hide（） 后发出"
+      "value": ""
     },
     {
       "name": "dropdown-before-hide",
       "description": "Emitted when a dropdown in the toolbar triggers hide() but before it finishes doing it",
+      "description_zh": "当工具栏中的下拉列表触发 hide（） 但在完成之前触发",
       "params": "(evt: undefined) => void",
-      "description_zh": "在工具栏中的下拉列表触发 hide（） 但在完成操作之前发出"
+      "value": ""
     },
     {
       "name": "link-show",
       "description": "Emitted when the toolbar for editing a link is shown",
+      "description_zh": "显示用于编辑链接的工具栏时发出",
       "params": "",
-      "description_zh": "显示用于编辑链接的工具栏时发出"
+      "value": ""
     },
     {
       "name": "link-hide",
       "description": "Emitted when the toolbar for editing a link is hidden",
+      "description_zh": "隐藏用于编辑链接的工具栏时发出",
       "params": "",
-      "description_zh": "当用于编辑链接的工具栏处于隐藏状态时发出"
+      "value": ""
+    },
+    {
+      "name": "keydown",
+      "description": "",
+      "description_zh": "",
+      "params": "",
+      "value": ""
+    },
+    {
+      "name": "click",
+      "description": "",
+      "description_zh": "",
+      "params": "",
+      "value": ""
+    },
+    {
+      "name": "blur",
+      "description": "",
+      "description_zh": "",
+      "params": "",
+      "value": ""
+    },
+    {
+      "name": "focus",
+      "description": "",
+      "description_zh": "",
+      "params": "",
+      "value": ""
     }
   ],
   "props": {
+    "fullscreen": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Fullscreen mode",
+      "description_zh": "全屏模式",
+      "default": "false",
+      "required": false
+    },
+    "no-route-fullscreen-exit": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Changing route app won't exit fullscreen",
+      "description_zh": "更改路线应用程序不会全屏退出",
+      "default": "false",
+      "required": false
+    },
     "model-value": {
       "value": "",
       "type": "String",
       "description": "",
+      "description_zh": "",
       "default": "",
+      "required": false,
       "extends": "model-value",
       "desc": "Model of the component; Either use this property (along with a listener for 'update:modelValue' event) OR use v-model directive",
       "examples": [
-        "v-model=\"content\""
-      ],
-      "description_zh": ""
+        "# v-model=\"content\""
+      ]
     },
     "readonly": {
       "value": "",
       "type": "String",
       "description": "",
+      "description_zh": "",
       "default": "",
-      "extends": "readonly",
-      "description_zh": ""
+      "required": false,
+      "extends": "readonly"
     },
     "square": {
       "value": "",
       "type": "String",
       "description": "",
+      "description_zh": "",
       "default": "",
-      "extends": "square",
-      "description_zh": ""
+      "required": false,
+      "extends": "square"
     },
     "flat": {
       "value": "",
       "type": "String",
       "description": "",
+      "description_zh": "",
       "default": "",
+      "required": false,
       "extends": "flat",
-      "desc": "Applies a 'flat' design (no borders)",
-      "description_zh": ""
+      "desc": "Applies a 'flat' design (no borders)"
     },
     "dense": {
       "value": "",
       "type": "String",
       "description": "",
+      "description_zh": "",
       "default": "",
+      "required": false,
       "extends": "dense",
-      "desc": "Dense mode; toolbar buttons are shown on one-line only",
-      "description_zh": ""
+      "desc": "Dense mode; toolbar buttons are shown on one-line only"
     },
     "dark": {
       "value": "",
       "type": "String",
       "description": "",
+      "description_zh": "",
       "default": "",
-      "extends": "dark",
-      "description_zh": ""
+      "required": false,
+      "extends": "dark"
     },
     "disable": {
       "value": "",
       "type": "String",
       "description": "",
+      "description_zh": "",
       "default": "",
-      "extends": "disable",
-      "description_zh": ""
+      "required": false,
+      "extends": "disable"
     },
     "min-height": {
       "value": "",
       "type": "String",
       "description": "CSS unit for the minimum height of the editable area",
-      "default": "10rem",
-      "description_zh": "可编辑区域最小高度的 CSS 单位"
+      "description_zh": "可编辑区域最小高度的 CSS 单位",
+      "default": "'10rem'",
+      "required": false
     },
     "max-height": {
       "value": "",
       "type": "String",
       "description": "CSS unit for maximum height of the input area",
+      "description_zh": "用于输入区域最大高度的 CSS 单位",
       "default": "",
-      "description_zh": "CSS 单位，用于输入区域的最大高度"
+      "required": false
     },
     "height": {
       "value": "",
       "type": "String",
       "description": "CSS value to set the height of the editable area",
+      "description_zh": "用于设置可编辑区域高度的 CSS 值",
       "default": "",
-      "description_zh": "用于设置可编辑区域高度的 CSS 值"
+      "required": false
     },
     "definitions": {
       "value": "",
       "type": "Object",
       "description": "Definition of commands and their buttons to be included in the 'toolbar' prop",
+      "description_zh": "要包含在 'toolbar' 属性中的命令及其按钮的定义",
       "default": "",
-      "description_zh": "定义要包含在“工具栏”属性中的命令及其按钮"
+      "required": false
     },
     "fonts": {
       "value": "",
       "type": "Object",
       "description": "Object with definitions of fonts",
+      "description_zh": "包含字体定义的对象",
       "default": "",
-      "description_zh": "具有字体定义的对象"
+      "required": false
     },
     "toolbar": {
       "value": "",
       "type": "Array",
       "description": "An array of arrays of Objects/Strings that you use to define the construction of the elements and commands available in the toolbar",
-      "default": [
-        [
-          "left",
-          "center",
-          "right",
-          "justify"
-        ],
-        [
-          "bold",
-          "italic",
-          "underline",
-          "strike"
-        ],
-        [
-          "undo",
-          "redo"
-        ]
-      ],
-      "description_zh": "对象/字符串数组的数组，用于定义工具栏中可用元素和命令的构造"
+      "description_zh": "一个 Objects/String 数组数组，用于定义工具栏中可用的元素和命令的构造",
+      "default": "[ [ 'left', 'center', 'right', 'justify' ], [ 'bold', 'italic', 'underline', 'strike' ], [ 'undo', 'redo' ] ]",
+      "required": false
     },
     "toolbar-color": {
       "type": "String",
       "description": "Color name for component from the Quasar Color Palette",
       "value": "",
-      "default": "primary",
+      "default": "'primary'",
       "extends": "color",
       "desc": "Font color (from the Quasar Palette) of buttons and text in the toolbar",
       "category": "toolbar",
-      "description_zh": "类星体调色板中组件的颜色名称"
+      "description_zh": "Quasar Color Palette （类星体调色板） 中组件的颜色名称"
     },
     "toolbar-text-color": {
       "value": "",
       "type": "String",
       "description": "",
+      "description_zh": "",
       "default": "",
+      "required": false,
       "extends": "text-color",
       "desc": "Text color (from the Quasar Palette) of toolbar commands",
-      "category": "toolbar",
-      "description_zh": ""
+      "category": "toolbar"
     },
     "toolbar-toggle-color": {
       "value": "",
       "type": "String",
       "description": "Choose the active color (from the Quasar Palette) of toolbar commands button",
-      "default": "primary",
-      "description_zh": "选择工具栏命令按钮的活动颜色（从类星体调色板中）"
+      "description_zh": "选择工具栏命令按钮的活动颜色（从 Quasar 调色板中）",
+      "default": "'primary'",
+      "required": false
     },
     "toolbar-bg": {
       "value": "",
       "type": "String",
       "description": "Toolbar background color (from Quasar Palette)",
-      "default": "grey-3",
-      "description_zh": "工具栏背景颜色（来自类星体调色板）"
+      "description_zh": "工具栏背景颜色（来自 Quasar 调色板）",
+      "default": "'grey-3'",
+      "required": false
     },
     "toolbar-outline": {
       "value": "",
       "type": "Boolean",
       "description": "Toolbar buttons are rendered \"outlined\"",
+      "description_zh": "工具栏按钮呈现为“轮廓”",
       "default": "false",
-      "description_zh": "工具栏按钮呈现为“轮廓”"
+      "required": false
     },
     "toolbar-push": {
       "value": "",
       "type": "Boolean",
       "description": "Toolbar buttons are rendered as a \"push-button\" type",
+      "description_zh": "工具栏按钮呈现为“按钮”类型",
       "default": "false",
-      "description_zh": "工具栏按钮呈现为“按钮”类型"
+      "required": false
     },
     "toolbar-rounded": {
       "value": "",
       "type": "Boolean",
       "description": "Toolbar buttons are rendered \"rounded\"",
+      "description_zh": "工具栏按钮呈现为“圆角”",
       "default": "false",
-      "description_zh": "工具栏按钮呈现为“圆角”"
+      "required": false
     },
     "paragraph-tag": {
       "value": "",
       "type": "String",
       "description": "Paragraph tag to be used",
-      "default": "",
-      "description_zh": "要使用的段落标签"
+      "description_zh": "要使用的段落标签",
+      "default": "'div'",
+      "required": false
     },
     "content-style": {
       "value": "",
       "type": "Object",
       "description": "Object with CSS properties and values for styling the container of QEditor",
+      "description_zh": "具有 CSS 属性和值的对象，用于为 QEditor 的容器设置样式",
       "default": "",
-      "description_zh": "具有 CSS 属性和值的对象，用于设置 QEditor 容器的样式"
+      "required": false
     },
     "content-class": {
       "value": "",
       "type": "String | Array | Object",
       "description": "CSS classes for the input area",
+      "description_zh": "输入区域的 CSS 类",
       "default": "",
-      "description_zh": "输入区域的 CSS 类"
+      "required": false
     },
     "placeholder": {
       "value": "",
       "type": "String",
       "description": "Text to display as placeholder",
+      "description_zh": "要显示为占位符的文本",
       "default": "",
-      "description_zh": "要显示为占位符的文本"
+      "required": false
     }
   },
   "link": "https://v2.quasar.dev/vue-components/editor",
-  "link_zh": "https://v2.quasar.dev/vue-components/editor"
+  "link_zh": "https://v2.quasar.dev/vue-components/editor",
+  "slots": [
+    {
+      "name": "[command]",
+      "description": "Content for the given command in the toolbar",
+      "description_zh": "工具栏中给定命令的内容"
+    }
+  ]
 }

@@ -1,52 +1,161 @@
 {
   "name": "QVirtualScroll",
-  "methods": [],
+  "methods": [
+    {
+      "name": "scrollTo",
+      "description": "Scroll the virtual scroll list to the item with the specified index (0 based)",
+      "description_zh": "将虚拟滚动列表滚动到具有指定索引的项目（从 0 开始）",
+      "params": "(index: Number,String, edge: String) => void",
+      "value": ""
+    },
+    {
+      "name": "reset",
+      "description": "Resets the virtual scroll computations; Needed for custom edge-cases",
+      "description_zh": "重置虚拟滚动计算;自定义边缘情况需要",
+      "params": "",
+      "value": ""
+    },
+    {
+      "name": "refresh",
+      "description": "Refreshes the virtual scroll list; Use it after appending items",
+      "description_zh": "刷新虚拟滚动列表;在附加项后使用",
+      "params": "(index: String,Number) => void",
+      "value": ""
+    }
+  ],
   "events": [
     {
       "name": "virtual-scroll",
-      "description": "",
-      "params": "(details: undefined) => void",
-      "description_zh": ""
+      "description": "Emitted when the virtual scroll occurs",
+      "description_zh": "在虚拟滚动发生时发出",
+      "params": "(details: Object) => void",
+      "value": ""
     }
   ],
   "props": {
+    "virtual-scroll-horizontal": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Make virtual list work in horizontal mode",
+      "description_zh": "使虚拟列表在水平模式下工作",
+      "default": "false",
+      "required": false
+    },
+    "virtual-scroll-slice-size": {
+      "value": "",
+      "type": "Number | String | null",
+      "description": "Minimum number of items to render in the virtual list",
+      "description_zh": "要在虚拟列表中呈现的最小项目数",
+      "default": "10",
+      "required": false
+    },
+    "virtual-scroll-slice-ratio-before": {
+      "value": "",
+      "type": "Number | String",
+      "description": "Ratio of number of items in visible zone to render before it",
+      "description_zh": "可见区域中的项目数与渲染前的比率",
+      "default": "1",
+      "required": false
+    },
+    "virtual-scroll-slice-ratio-after": {
+      "value": "",
+      "type": "Number | String",
+      "description": "Ratio of number of items in visible zone to render after it",
+      "description_zh": "可见区域中的项目数与之后渲染的比率",
+      "default": "1",
+      "required": false
+    },
+    "virtual-scroll-item-size": {
+      "value": "",
+      "type": "Number | String",
+      "description": "Default size in pixels (height if vertical, width if horizontal) of an item; This value is used for rendering the initial list; Try to use a value close to the minimum size of an item",
+      "description_zh": "项目的默认大小（以像素为单位）（如果垂直时为高度，如果水平时为宽度）;此值用于呈现初始列表;尝试使用接近项的最小大小的值",
+      "default": "24",
+      "required": false
+    },
+    "virtual-scroll-sticky-size-start": {
+      "value": "",
+      "type": "Number | String",
+      "description": "Size in pixels (height if vertical, width if horizontal) of the sticky part (if using one) at the start of the list; A correct value will improve scroll precision",
+      "description_zh": "列表开头的粘性部分（如果使用）的大小（如果垂直则为高度，如果为水平，则以宽度为单位）;正确的值将提高滚动精度",
+      "default": "0",
+      "required": false
+    },
+    "virtual-scroll-sticky-size-end": {
+      "value": "",
+      "type": "Number | String",
+      "description": "Size in pixels (height if vertical, width if horizontal) of the sticky part (if using one) at the end of the list; A correct value will improve scroll precision",
+      "description_zh": "列表末尾的粘性部分（如果使用）的大小（如果垂直则为高度，如果为水平，则以宽度为单位）;正确的值将提高滚动精度",
+      "default": "0",
+      "required": false
+    },
+    "table-colspan": {
+      "value": "",
+      "type": "Number | String",
+      "description": "The number of columns in the table (you need this if you use table-layout: fixed)",
+      "description_zh": "表中的列数（如果您使用 table-layout： fixed，则需要此列）",
+      "default": "",
+      "required": false
+    },
     "type": {
       "value": "",
       "type": "String",
       "description": "The type of content: list (default) or table",
-      "default": "list",
-      "description_zh": "内容类型：列表（默认）或表格"
+      "description_zh": "内容类型：list （default） 或 table",
+      "default": "'list'",
+      "required": false
     },
     "items": {
       "value": "",
       "type": "Array",
       "description": "Available list items that will be passed to the scoped slot; For best performance freeze the list of items; Required if 'itemsFn' is not supplied",
+      "description_zh": "将传递到范围槽的可用列表项;为了获得最佳性能，请冻结项目列表;如果未提供 'itemsFn'，则为必需",
       "default": "[]",
-      "description_zh": "将传递到作用域槽的可用列表项;为获得最佳性能，请冻结项目列表;如果未提供“itemsFn”，则为必填项"
+      "required": false
     },
     "items-size": {
       "value": "",
       "type": "Number",
       "description": "Number of available items in the list; Required and used only if 'itemsFn' is provided",
-      "default": "void 0",
-      "description_zh": "列表中的可用项目数;仅当提供“itemsFn”时才需要和使用"
+      "description_zh": "列表中的可用项数;必需，并且仅在提供 'itemsFn' 时使用",
+      "default": "",
+      "required": false
     },
     "items-fn": {
       "value": "",
       "type": "Function",
       "description": "Function to return the scope for the items to be displayed; Should return an array for items starting from 'from' index for size length; For best performance, reference it from your scope and do not define it inline",
+      "description_zh": "返回要显示的项目的范围的函数;应返回一个数组，用于从 size length 的 'from' 索引开始的项目;为了获得最佳性能，请从您的范围中引用它，不要内联定义它",
       "default": "",
-      "description_zh": "返回要显示的项目的范围的函数;应该为从大小长度的“from”索引开始的项目返回一个数组;为了获得最佳性能，请从您的范围引用它，不要以内联方式定义它"
+      "required": false
     },
     "scroll-target": {
       "value": "",
       "type": "String",
       "description": "",
+      "description_zh": "",
       "default": "",
-      "extends": "scroll-target",
-      "description_zh": ""
+      "required": false,
+      "extends": "scroll-target"
     }
   },
   "link": "https://v2.quasar.dev/vue-components/virtual-scroll",
-  "link_zh": "https://v2.quasar.dev/vue-components/virtual-scroll"
+  "link_zh": "https://v2.quasar.dev/vue-components/virtual-scroll",
+  "slots": [
+    {
+      "name": "before",
+      "description": "Template slot for the elements that should be rendered before the list; Suggestion: thead before a table",
+      "description_zh": "应在列表之前渲染的元素的模板插槽;建议：在表格前 thead"
+    },
+    {
+      "name": "after",
+      "description": "Template slot for the elements that should be rendered after the list; Suggestion: tfoot after a table",
+      "description_zh": "应在列表之后渲染的元素的模板插槽;建议：在桌子后面"
+    },
+    {
+      "name": "default",
+      "description": "Template slot for defining the list item; Suggestion: QItem",
+      "description_zh": "用于定义列表项的模板插槽;建议：QItem"
+    }
+  ]
 }

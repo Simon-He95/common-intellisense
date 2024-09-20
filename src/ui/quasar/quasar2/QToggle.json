@@ -1,54 +1,216 @@
 {
   "name": "QToggle",
-  "methods": [],
-  "events": [],
+  "methods": [
+    {
+      "name": "toggle",
+      "description": "Toggle the state (of the model)",
+      "description_zh": "切换（模型）状态",
+      "params": "",
+      "value": ""
+    }
+  ],
+  "events": [
+    {
+      "name": "update:model-value",
+      "description": "Emitted when the component needs to change the model; Is also used by v-model",
+      "description_zh": "当组件需要更改模型时发出;也被 v-model 使用",
+      "params": "(value: Any, evt: undefined) => void",
+      "value": ""
+    }
+  ],
   "props": {
-    "icon": {
+    "model-value": {
+      "value": "",
+      "type": "Any | Array",
+      "description": "",
+      "description_zh": "",
+      "default": "null",
+      "required": false,
+      "extends": "model-value",
+      "examples": [
+        "false",
+        "[ 'car', 'building' ]"
+      ]
+    },
+    "val": {
+      "value": "",
+      "type": "Any",
+      "description": "Works when model ('value') is Array. It tells the component which value should add/remove when ticked/unticked",
+      "description_zh": "当 model （'value'） 为 Array 时工作。它告诉组件在勾选/取消勾选时应该添加/删除哪个值",
+      "default": "",
+      "required": false
+    },
+    "true-value": {
+      "value": "",
+      "type": "Any",
+      "description": "What model value should be considered as checked/ticked/on?",
+      "description_zh": "什么模型值应被视为选中/勾选/打开？",
+      "default": "true",
+      "required": false
+    },
+    "false-value": {
+      "value": "",
+      "type": "Any",
+      "description": "What model value should be considered as unchecked/unticked/off?",
+      "description_zh": "什么模型值应被视为未选中/未选中/关闭？",
+      "default": "false",
+      "required": false
+    },
+    "indeterminate-value": {
+      "value": "",
+      "type": "Any",
+      "description": "What model value should be considered as 'indeterminate'?",
+      "description_zh": "什么模型值应被视为“不确定”？",
+      "default": "null",
+      "required": false
+    },
+    "toggle-order": {
       "value": "",
       "type": "String",
-      "description": "",
+      "description": "Determines toggle order of the two states ('t' stands for state of true, 'f' for state of false); If 'toggle-indeterminate' is true, then the order is: indet -> first state -> second state -> indet (and repeat), otherwise: indet -> first state -> second state -> first state -> second state -> ...",
+      "description_zh": "确定两种状态的切换顺序（'t' 代表 true 状态，'f' 代表 false 状态）;如果 'toggle-indeterminate' 为 true，则顺序为： indet -> first state -> second state -> indet （并重复），否则： indet -> 第一个状态 -> 第二个状态 -> 第一个状态 -> 第二个状态 -> ...",
       "default": "",
-      "extends": "icon",
-      "description_zh": ""
+      "required": false
+    },
+    "toggle-indeterminate": {
+      "value": "",
+      "type": "Boolean",
+      "description": "When user clicks/taps on the component, should we toggle through the indeterminate state too?",
+      "description_zh": "当用户单击/点击组件时，我们也应该在 indecertain 状态之间切换吗？",
+      "default": "false",
+      "required": false
+    },
+    "label": {
+      "value": "",
+      "type": "String",
+      "description": "Label to display along the component (or use the default slot instead of this prop)",
+      "description_zh": "Label 沿组件显示（或使用默认插槽而不是此 prop）",
+      "default": "",
+      "required": false
+    },
+    "left-label": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Label (if any specified) should be displayed on the left side of the component",
+      "description_zh": "标签（如果指定了任何标签）应显示在组件的左侧",
+      "default": "false",
+      "required": false
     },
     "checked-icon": {
       "value": "",
       "type": "String",
       "description": "The icon to be used when the toggle is on",
+      "description_zh": "切换开关打开时要使用的图标",
       "default": "",
-      "description_zh": "打开切换开关时要使用的图标"
+      "required": false
     },
     "unchecked-icon": {
       "value": "",
       "type": "String",
       "description": "The icon to be used when the toggle is off",
+      "description_zh": "关闭切换开关时使用的图标",
       "default": "",
-      "description_zh": "切换开关关闭时要使用的图标"
+      "required": false
     },
     "indeterminate-icon": {
       "value": "",
       "type": "String",
       "description": "The icon to be used when the model is indeterminate",
+      "description_zh": "模型不确定时使用的图标",
       "default": "",
-      "description_zh": "模型不确定时要使用的图标"
+      "required": false
+    },
+    "color": {
+      "type": "String | Array",
+      "description": "Color name for component from the Quasar Color Palette",
+      "value": "",
+      "default": "'grey-8'",
+      "extends": "color",
+      "desc": "Override default icon color (for truthy state only); Color name for component from the Quasar Color Palette",
+      "category": "style",
+      "__runtimeDefault": true,
+      "examples": [
+        "[ 'accent', 'grey-7' ]"
+      ],
+      "addedIn": "v2.4",
+      "description_zh": "Quasar Color Palette （类星体调色板） 中组件的颜色名称"
+    },
+    "keep-color": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Should the color (if specified any) be kept when the component is unticked/ off?",
+      "description_zh": "当组件未勾选/关闭时，是否应该保留颜色（如果指定了任何颜色）？",
+      "default": "false",
+      "required": false
+    },
+    "dark": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "",
+      "required": false,
+      "extends": "dark"
+    },
+    "dense": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "",
+      "required": false,
+      "extends": "dense"
+    },
+    "disable": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "",
+      "required": false,
+      "extends": "disable"
+    },
+    "tabindex": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "",
+      "required": false,
+      "extends": "tabindex"
+    },
+    "icon": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "",
+      "required": false,
+      "extends": "icon"
     },
     "icon-color": {
       "type": "String | Array",
       "description": "Color name for component from the Quasar Color Palette",
       "value": "",
-      "default": "grey-8",
+      "default": "'grey-8'",
       "extends": "color",
       "desc": "Override default icon color (for truthy state only); Color name for component from the Quasar Color Palette",
       "category": "style",
-      "addedIn": "v2.4",
+      "__runtimeDefault": true,
       "examples": [
-        "primary",
-        "teal-10",
-        "[\"accent\", \"grey-7\"] "
+        "[ 'accent', 'grey-7' ]"
       ],
-      "description_zh": "类星体调色板中组件的颜色名称"
+      "addedIn": "v2.4",
+      "description_zh": "Quasar Color Palette （类星体调色板） 中组件的颜色名称"
     }
   },
   "link": "https://v2.quasar.dev/vue-components/toggle",
-  "link_zh": "https://v2.quasar.dev/vue-components/toggle"
+  "link_zh": "https://v2.quasar.dev/vue-components/toggle",
+  "slots": [
+    {
+      "name": "default",
+      "description": "Default slot can be used as label, unless 'label' prop is specified; Suggestion: string",
+      "description_zh": "默认插槽可以用作标签，除非指定了 'label' prop;建议：字符串"
+    }
+  ]
 }

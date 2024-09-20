@@ -1,32 +1,224 @@
 {
-  "mixins": ["composables/private/use-field"],
-
+  "mixins": [
+    "composables/private.use-validate/use-validate"
+  ],
   "meta": {
     "docsUrl": "https://v2.quasar.dev/vue-components/field"
   },
-
   "props": {
+    "label": {
+      "type": "String",
+      "desc": "A text label that will “float” up above the input field, once the field gets focus",
+      "examples": [
+        "'Username'"
+      ],
+      "category": "content"
+    },
+    "stack-label": {
+      "type": "Boolean",
+      "desc": "Label will be always shown above the field regardless of field content (if any)",
+      "category": "content"
+    },
+    "hint": {
+      "type": "String",
+      "desc": "Helper (hint) text which gets placed below your wrapped form component",
+      "examples": [
+        "'Fill in between 3 and 12 characters'"
+      ],
+      "category": "content"
+    },
+    "hide-hint": {
+      "type": "Boolean",
+      "desc": "Hide the helper (hint) text when field doesn't have focus",
+      "category": "content"
+    },
+    "prefix": {
+      "type": "String",
+      "desc": "Prefix",
+      "examples": [
+        "'$'"
+      ],
+      "category": "content"
+    },
+    "suffix": {
+      "type": "String",
+      "desc": "Suffix",
+      "examples": [
+        "'@gmail.com'"
+      ],
+      "category": "content"
+    },
+    "label-color": {
+      "extends": "color",
+      "desc": "Color name for the label from the Quasar Color Palette; Overrides the 'color' prop; The difference from 'color' prop is that the label will always have this color, even when field is not focused"
+    },
+    "color": {
+      "extends": "color"
+    },
+    "bg-color": {
+      "extends": "color"
+    },
+    "dark": {
+      "extends": "dark"
+    },
+    "loading": {
+      "type": "Boolean",
+      "desc": "Signals the user a process is in progress by displaying a spinner; Spinner can be customized by using the 'loading' slot.",
+      "category": "behavior|content"
+    },
+    "clearable": {
+      "type": "Boolean",
+      "desc": "Appends clearable icon when a value (not undefined or null) is set; When clicked, model becomes null",
+      "category": "behavior|content"
+    },
+    "clear-icon": {
+      "type": "String",
+      "desc": "Custom icon to use for the clear button when using along with 'clearable' prop",
+      "examples": [
+        "'close'"
+      ],
+      "category": "content"
+    },
+    "filled": {
+      "type": "Boolean",
+      "desc": "Use 'filled' design for the field",
+      "category": "style"
+    },
+    "outlined": {
+      "type": "Boolean",
+      "desc": "Use 'outlined' design for the field",
+      "category": "style"
+    },
+    "borderless": {
+      "type": "Boolean",
+      "desc": "Use 'borderless' design for the field",
+      "category": "style"
+    },
+    "standout": {
+      "type": [
+        "Boolean",
+        "String"
+      ],
+      "desc": "Use 'standout' design for the field; Specifies classes to be applied when focused (overriding default ones)",
+      "examples": [
+        "true",
+        "'bg-primary text-white'"
+      ],
+      "category": "style"
+    },
+    "label-slot": {
+      "type": "Boolean",
+      "desc": "Enables label slot; You need to set it to force use of the 'label' slot if the 'label' prop is not set",
+      "category": "content"
+    },
+    "bottom-slots": {
+      "type": "Boolean",
+      "desc": "Enables bottom slots ('error', 'hint', 'counter')",
+      "category": "content"
+    },
+    "hide-bottom-space": {
+      "type": "Boolean",
+      "desc": "Do not reserve space for hint/error/counter anymore when these are not used; As a result, it also disables the animation for those; It also allows the hint/error area to stretch vertically based on its content",
+      "category": "style"
+    },
+    "counter": {
+      "type": "Boolean",
+      "desc": "Show an automatic counter on bottom right",
+      "category": "content"
+    },
+    "rounded": {
+      "extends": "rounded"
+    },
+    "square": {
+      "type": "Boolean",
+      "desc": "Remove border-radius so borders are squared; Overrides 'rounded' prop",
+      "category": "style"
+    },
+    "dense": {
+      "extends": "dense"
+    },
+    "item-aligned": {
+      "type": "Boolean",
+      "desc": "Match inner content alignment to that of QItem",
+      "category": "style"
+    },
+    "disable": {
+      "extends": "disable"
+    },
+    "readonly": {
+      "extends": "readonly"
+    },
+    "autofocus": {
+      "type": "Boolean",
+      "desc": "Focus field on initial component render",
+      "category": "behavior"
+    },
+    "for": {
+      "type": "String",
+      "desc": "Used to specify the 'id' of the control and also the 'for' attribute of the label that wraps it; If no 'name' prop is specified, then it is used for this attribute as well",
+      "examples": [
+        "'myFieldsId'"
+      ],
+      "category": "behavior"
+    },
     "maxlength": {
-      "type": ["String", "Number"],
+      "type": [
+        "String",
+        "Number"
+      ],
       "desc": "Specify a max length of model",
       "category": "model"
     },
-
-    "max-values": {
-      "type": ["Number", "String"],
-      "desc": "Used internally by QSelect",
-      "internal": true
+    "tag": {
+      "extends": "tag",
+      "default": "'label'",
+      "examples": [
+        "'div'",
+        "'label'"
+      ],
+      "addedIn": "v2.13.1"
     }
   },
-
   "slots": {
+    "default": {
+      "desc": "Field main content"
+    },
+    "prepend": {
+      "desc": "Prepend inner field; Suggestions: QIcon, QBtn"
+    },
+    "append": {
+      "desc": "Append to inner field; Suggestions: QIcon, QBtn"
+    },
+    "before": {
+      "desc": "Prepend outer field; Suggestions: QIcon, QBtn"
+    },
+    "after": {
+      "desc": "Append outer field; Suggestions: QIcon, QBtn"
+    },
+    "label": {
+      "desc": "Slot for label; Used only if 'label-slot' prop is set or the 'label' prop is set; When it is used the text in the 'label' prop is ignored"
+    },
+    "error": {
+      "desc": "Slot for errors; Enabled only if 'bottom-slots' prop is used; Suggestion: <div>"
+    },
+    "hint": {
+      "desc": "Slot for hint text; Enabled only if 'bottom-slots' prop is used; Suggestion: <div>"
+    },
+    "counter": {
+      "desc": "Slot for counter text; Enabled only if 'bottom-slots' prop is used; Suggestion: <div>"
+    },
+    "loading": {
+      "desc": "Override default spinner when component is in loading mode; Use in conjunction with 'loading' prop"
+    },
     "control": {
       "desc": "Slot for controls; Suggestion QSlider, QRange, QKnob, ...",
       "scope": {
         "id": {
           "type": "String",
-          "desc": "Element id used in the `for` attribute of the field label. Can be used to link the control to the label",
-          "examples": ["qf_363270c0-7a83-62b1-8dcf-6dfd64ee38fa"]
+          "desc": "Element id used in the 'for' attribute of the field label. Can be used to link the control to the label",
+          "examples": [
+            "'qf_363270c0-7a83-62b1-8dcf-6dfd64ee38fa'"
+          ]
         },
         "field": {
           "type": "Element",
@@ -47,7 +239,10 @@
         "modelValue": {
           "type": "Any",
           "desc": "Field's value",
-          "examples": [0.241, "Text"]
+          "examples": [
+            "0.241",
+            "'Text'"
+          ]
         },
         "emitValue": {
           "type": "Function",
@@ -57,25 +252,25 @@
               "type": "Any",
               "required": true,
               "desc": "Value to be emitted",
-              "examples": [0, "Changed text"]
+              "examples": [
+                "0",
+                "'Changed text'"
+              ]
             }
           },
           "returns": null
         }
       }
     },
-
     "rawControl": {
       "internal": true
     }
   },
-
   "events": {
     "update:model-value": {
       "extends": "update:model-value",
       "desc": "Emitted when the model changes, only when used with 'clearable' or the 'control' scoped slot."
     },
-
     "focus": {
       "desc": "Emitted when component gets focused",
       "params": {
@@ -84,7 +279,6 @@
         }
       }
     },
-
     "blur": {
       "desc": "Emitted when component loses focus",
       "params": {
@@ -92,16 +286,27 @@
           "extends": "evt"
         }
       }
+    },
+    "clear": {
+      "desc": "When using the 'clearable' property, this event is emitted when the clear icon is clicked",
+      "params": {
+        "value": {
+          "type": "Any",
+          "desc": "The previous value before clearing it"
+        }
+      }
     }
   },
-
   "methods": {
     "focus": {
-      "desc": "Focus field"
+      "desc": "Focus component",
+      "params": null,
+      "returns": null
     },
-
     "blur": {
-      "desc": "Blur field (lose focus)"
+      "desc": "Blur component (lose focus)",
+      "params": null,
+      "returns": null
     }
   }
 }

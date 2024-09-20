@@ -4,22 +4,25 @@
     {
       "name": "trigger",
       "description": "Triggers a refresh",
+      "description_zh": "触发刷新",
       "params": "",
-      "description_zh": "触发刷新"
+      "value": ""
     },
     {
       "name": "updateScrollTarget",
       "description": "Updates the scroll target; Useful when the parent elements change so that the scrolling target also changes",
+      "description_zh": "更新滚动目标;当父元素发生更改时很有用，因此滚动目标也会发生更改",
       "params": "",
-      "description_zh": "更新滚动目标;当父元素更改时很有用，因此滚动目标也发生变化"
+      "value": ""
     }
   ],
   "events": [
     {
       "name": "refresh",
       "description": "Called whenever a refresh is triggered; at this time, your function should load more data",
+      "description_zh": "每当触发刷新时调用;此时，您的函数应该加载更多数据",
       "params": "(done: Function) => void",
-      "description_zh": "每当触发刷新时调用;此时，函数应加载更多数据"
+      "value": ""
     }
   ],
   "props": {
@@ -27,55 +30,68 @@
       "type": "String",
       "description": "Color name for component from the Quasar Color Palette",
       "value": "",
-      "default": "primary",
+      "default": "'primary'",
       "extends": "color",
       "desc": "Color name for background of the icon container from the Quasar Color Palette",
       "category": "style",
-      "description_zh": "类星体调色板中组件的颜色名称"
+      "__runtimeDefault": true,
+      "description_zh": "Quasar Color Palette （类星体调色板） 中组件的颜色名称"
     },
     "bg-color": {
       "type": "String",
       "description": "Color name for component from the Quasar Color Palette",
       "value": "",
-      "default": "primary",
+      "default": "'primary'",
       "extends": "color",
       "desc": "Color name for background of the icon container from the Quasar Color Palette",
       "category": "style",
-      "description_zh": "类星体调色板中组件的颜色名称"
+      "__runtimeDefault": true,
+      "description_zh": "Quasar Color Palette （类星体调色板） 中组件的颜色名称"
     },
     "icon": {
       "value": "",
       "type": "String",
       "description": "",
+      "description_zh": "",
       "default": "",
+      "required": false,
       "extends": "icon",
-      "desc": "Icon to display when refreshing the content",
-      "description_zh": ""
+      "desc": "Icon to display when refreshing the content"
     },
     "no-mouse": {
       "value": "",
       "type": "Boolean",
       "description": "Don't listen for mouse events",
+      "description_zh": "不侦听鼠标事件",
       "default": "false",
-      "description_zh": "不侦听鼠标事件"
+      "required": false
     },
     "disable": {
       "value": "",
       "type": "String",
       "description": "",
+      "description_zh": "",
       "default": "",
-      "extends": "disable",
-      "description_zh": ""
+      "required": false,
+      "extends": "disable"
     },
     "scroll-target": {
       "value": "",
       "type": "String",
       "description": "",
+      "description_zh": "",
       "default": "",
-      "extends": "scroll-target",
-      "description_zh": ""
+      "required": false,
+      "extends": "scroll-target"
     }
   },
   "link": "https://v2.quasar.dev/vue-components/pull-to-refresh",
-  "link_zh": "https://v2.quasar.dev/vue-components/pull-to-refresh"
+  "link_zh": "https://v2.quasar.dev/vue-components/pull-to-refresh",
+  "slots": [
+    {
+      "name": "default",
+      "description": "Content (area controlled by the component) goes here",
+      "description_zh": "内容 （由组件控制的区域） 位于此处"
+    }
+  ]
 }

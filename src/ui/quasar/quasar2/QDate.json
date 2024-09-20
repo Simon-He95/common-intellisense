@@ -4,203 +4,335 @@
     {
       "name": "setToday",
       "description": "Change model to today",
+      "description_zh": "将模型更改为今天",
       "params": "",
-      "description_zh": "将模型更改为今天"
+      "value": ""
     },
     {
       "name": "setView",
       "description": "Change current view",
+      "description_zh": "更改当前视图",
       "params": "(view: String) => void",
-      "description_zh": "更改当前视图"
+      "value": ""
     },
     {
       "name": "offsetCalendar",
       "description": "Increment or decrement calendar view's month or year",
+      "description_zh": "递增或递减日历视图的月份或年份",
       "params": "(type: String, descending: Boolean) => void",
-      "description_zh": "递增或递减日历视图的月份或年份"
+      "value": ""
     },
     {
       "name": "setCalendarTo",
       "description": "Change current year and month of the Calendar view; It gets corrected if using navigation-min/max-year-month and sets the current view to Calendar",
+      "description_zh": "更改 Calendar （日历） 视图的当前年份和月份;如果使用 navigation-min/max-year-month，则会更正它，并将当前视图设置为 Calendar",
       "params": "(year: Number, month: Number) => void",
-      "description_zh": "更改日历视图的当前年份和月份;如果使用 navigation-min/max-year-month 并将当前视图设置为 Calendar，则会得到更正"
+      "value": ""
     },
     {
       "name": "setEditingRange",
       "description": "Configure the current editing range",
+      "description_zh": "配置当前编辑范围",
       "params": "(from: Object, to: Object) => void",
-      "description_zh": "配置当前编辑范围"
+      "value": ""
     }
   ],
   "events": [
     {
       "name": "update:model-value",
       "description": "",
+      "description_zh": "",
       "params": "(value: String,Array,Object,null, reason: String, details: Object) => void",
-      "description_zh": ""
+      "value": ""
     },
     {
       "name": "navigation",
       "description": "Emitted when user navigates to a different month or year (and even when the model changes from an outside source)",
+      "description_zh": "当用户导航到其他月份或年份时发出（甚至当模型从外部源更改时）",
       "params": "(view: Object) => void",
-      "description_zh": "当用户导航到不同的月份或年份时发出（甚至当模型从外部源更改时）"
+      "value": ""
     },
     {
       "name": "range-start",
       "description": "User has started a range selection",
+      "description_zh": "用户已开始选择范围",
       "params": "(from: Object) => void",
-      "description_zh": "用户已开始范围选择"
+      "value": ""
     },
     {
       "name": "range-end",
       "description": "User has ended a range selection",
+      "description_zh": "用户已结束范围选择",
       "params": "(range: Object) => void",
-      "description_zh": "用户已结束范围选择"
+      "value": ""
     }
   ],
   "props": {
+    "landscape": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Display the component in landscape mode",
+      "description_zh": "在横向模式下显示组件",
+      "default": "false",
+      "required": false
+    },
+    "mask": {
+      "value": "",
+      "type": "String",
+      "description": "Mask (formatting string) used for parsing and formatting value",
+      "description_zh": "用于解析和格式化值的掩码（格式字符串）",
+      "default": "'YYYY/MM/DD'",
+      "required": false
+    },
+    "locale": {
+      "value": "",
+      "type": "Object",
+      "description": "Locale formatting options",
+      "description_zh": "区域设置格式选项",
+      "default": "",
+      "required": false
+    },
+    "calendar": {
+      "value": "",
+      "type": "String",
+      "description": "Specify calendar type",
+      "description_zh": "指定日历类型",
+      "default": "'gregorian'",
+      "required": false
+    },
+    "color": {
+      "type": "String",
+      "description": "Color name for component from the Quasar Color Palette",
+      "value": "",
+      "default": "'primary'",
+      "extends": "color",
+      "desc": "Color name for the track of the component from the Quasar Color Palette",
+      "category": "style",
+      "description_zh": "Quasar Color Palette （类星体调色板） 中组件的颜色名称"
+    },
+    "text-color": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "",
+      "required": false,
+      "extends": "text-color"
+    },
+    "dark": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "",
+      "required": false,
+      "extends": "dark"
+    },
+    "square": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "",
+      "required": false,
+      "extends": "square"
+    },
+    "flat": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "",
+      "required": false,
+      "extends": "flat"
+    },
+    "bordered": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "",
+      "required": false,
+      "extends": "bordered"
+    },
+    "readonly": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "",
+      "required": false,
+      "extends": "readonly"
+    },
+    "disable": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "",
+      "required": false,
+      "extends": "disable"
+    },
     "model-value": {
       "value": "",
       "type": "String | Array | Object | null | undefined",
       "description": "",
+      "description_zh": "",
       "default": "",
+      "required": false,
       "extends": "model-value",
       "desc": "Date(s) of the component; Must be Array if using 'multiple' prop; Either use this property (along with a listener for 'update:model-value' event) OR use v-model directive",
       "examples": [
-        "v-model=\"myDate\"",
-        "v-model=\"[myDate1, myDate2]\"",
-        "v-model=\"[{ from: myDateFrom, to: myDateTo }]\"",
-        "v-model=\"[myDate1, { from: myDateFrom, to: myDateTo }, myDate2]\""
-      ],
-      "description_zh": ""
+        "# v-model=\"myDate\"",
+        "# v-model=\"[myDate1, myDate2]\"",
+        "# v-model=\"[{ from: myDateFrom, to: myDateTo }]\"",
+        "# v-model=\"[myDate1, { from: myDateFrom, to: myDateTo }, myDate2]\""
+      ]
     },
     "title": {
       "value": "",
       "type": "String",
       "description": "When specified, it overrides the default header title; Makes sense when not in 'minimal' mode",
+      "description_zh": "指定后，它将覆盖默认标题;不在“最小”模式下时有意义",
       "default": "",
-      "description_zh": "指定后，它将覆盖默认标题;当不处于“最小”模式时有意义"
+      "required": false
     },
     "subtitle": {
       "value": "",
       "type": "String",
       "description": "When specified, it overrides the default header subtitle; Makes sense when not in 'minimal' mode",
+      "description_zh": "指定后，它将覆盖默认的 Header Subtitle;不在“最小”模式下时有意义",
       "default": "",
-      "description_zh": "指定后，它会覆盖默认的标题字幕;当不处于“最小”模式时有意义"
+      "required": false
     },
     "default-year-month": {
       "value": "",
       "type": "String",
       "description": "The default year and month to display (in YYYY/MM format) when model is unfilled (undefined or null); Please ensure it is within the navigation min/max year-month (if using them)",
+      "description_zh": "当 model 未填充（undefined 或 null）时要显示的默认年份和月份（以 YYYY/MM 格式）;请确保它在导航最小/最大年-月内（如果使用它们）",
       "default": "",
-      "description_zh": "模型未填充（未定义或空）时显示的默认年份和月份（YYYY/MM 格式）;请确保它在导航的最小/最大年月内（如果使用它们）"
-    },
-    "mask": {
-      "value": "",
-      "type": "String",
-      "default": "YYYY/MM/DD",
-      "description": "",
-      "description_zh": ""
+      "required": false
     },
     "default-view": {
       "value": "",
       "type": "String",
       "description": "The view which will be displayed by default",
-      "default": "Calendar",
-      "description_zh": "默认显示的视图"
+      "description_zh": "默认显示的视图",
+      "default": "'Calendar'",
+      "required": false
     },
     "years-in-month-view": {
       "value": "",
       "type": "Boolean",
       "description": "Show the years selector in months view",
+      "description_zh": "在月视图中显示年份选择器",
       "default": "false",
-      "description_zh": "在月份视图中显示年份选择器"
+      "required": false
     },
     "events": {
       "value": "",
       "type": "Array | Function",
       "description": "A list of events to highlight on the calendar; If using a function, it receives the date as a String and must return a Boolean (matches or not); If using a function then for best performance, reference it from your scope and do not define it inline",
+      "description_zh": "要在日历上突出显示的事件列表;如果使用函数，它将日期作为 String 接收，并且必须返回布尔值（匹配或不匹配）;如果使用函数，则为了获得最佳性能，请从您的范围引用它，而不是内联定义它",
       "default": "",
-      "description_zh": "要在日历上突出显示的事件列表;如果使用函数，它将日期接收为 String ，并且必须返回布尔值（匹配与否）;如果使用函数，则为了获得最佳性能，请从您的范围引用它，并且不要以内联方式定义它"
+      "required": false
     },
     "event-color": {
       "value": "",
       "type": "String | Function",
       "description": "Color name (from the Quasar Color Palette); If using a function, it receives the date as a String and must return a String (color for the received date); If using a function then for best performance, reference it from your scope and do not define it inline",
+      "description_zh": "颜色名称（来自 Quasar 调色板）;如果使用函数，它将日期作为 String 接收，并且必须返回 String （接收日期的颜色）;如果使用函数，则为了获得最佳性能，请从您的范围引用它，而不是内联定义它",
       "default": "",
-      "description_zh": "颜色名称（来自类星体调色板）;如果使用函数，它将日期接收为 String，并且必须返回 String（接收日期的颜色）;如果使用函数，则为了获得最佳性能，请从您的范围引用它，并且不要以内联方式定义它"
+      "required": false
     },
     "options": {
       "value": "",
       "type": "Array | Function",
       "description": "Optionally configure the days that are selectable; If using a function, it receives the date as a String and must return a Boolean (is date acceptable or not); If using a function then for best performance, reference it from your scope and do not define it inline; Incompatible with 'range' prop",
+      "description_zh": "（可选）配置可选择的日期;如果使用函数，它将日期作为 String 接收，并且必须返回布尔值（日期是否可接受）;如果使用函数，则为了获得最佳性能，请从您的范围内引用它，并且不要内联定义它;与 'range' prop 不兼容",
       "default": "",
-      "description_zh": "（可选）配置可选的日期;如果使用函数，它将日期接收为 String 并且必须返回布尔值（日期是否可接受）;如果使用函数，则为了获得最佳性能，请从您的范围内引用它，并且不要以内联方式定义它;与“range”道具不兼容"
+      "required": false
     },
     "navigation-min-year-month": {
       "value": "",
       "type": "String",
       "description": "Lock user from navigating below a specific year+month (in YYYY/MM format); This prop is not used to correct the model; You might want to also use 'default-year-month' prop",
+      "description_zh": "锁定用户，使其无法在特定年份 + 月份下方导航（以 YYYY/MM 格式）;此 prop 不用于更正模型;你可能还想使用 'default-year-month' prop",
       "default": "",
-      "description_zh": "锁定用户在特定年份+月份以下导航（YYYY/MM 格式）;此道具不用于校正模型;您可能还想使用 'default-year-month' 道具"
+      "required": false
     },
     "navigation-max-year-month": {
       "value": "",
       "type": "String",
       "description": "Lock user from navigating above a specific year+month (in YYYY/MM format); This prop is not used to correct the model; You might want to also use 'default-year-month' prop",
+      "description_zh": "锁定用户无法在特定年份 + 月份上方导航（采用 YYYY/MM 格式）;此 prop 不用于更正模型;你可能还想使用 'default-year-month' prop",
       "default": "",
-      "description_zh": "锁定用户在特定年份+月份以上导航（YYYY/MM 格式）;此道具不用于校正模型;您可能还想使用 'default-year-month' 道具"
+      "required": false
     },
     "no-unset": {
       "value": "",
       "type": "Boolean",
       "description": "Remove ability to unselect a date; It does not apply to selecting a range over already selected dates",
+      "description_zh": "删除取消选择日期的功能;它不适用于在已选择日期上选择范围",
       "default": "false",
-      "description_zh": "删除取消选择日期的功能;它不适用于在已选择的日期上选择范围"
+      "required": false
     },
     "first-day-of-week": {
       "value": "",
       "type": "String | Number",
       "description": "Sets the day of the week that is considered the first day (0 - Sunday, 1 - Monday, ...); This day will show in the left-most column of the calendar",
-      "default": "(based on configured Quasar lang language)",
-      "description_zh": "设置被视为第一天的星期几（0 - 星期日，1 - 星期一，...）;这一天将显示在日历的最左边一列中"
+      "description_zh": "设置被视为第一天的星期几（0 - 星期日，1 - 星期一，...）;这一天将显示在日历最左侧的列中",
+      "default": "# based on configured Quasar lang language",
+      "required": false
     },
     "today-btn": {
       "value": "",
       "type": "Boolean",
       "description": "Display a button that selects the current day",
+      "description_zh": "显示用于选择当前日期的按钮",
       "default": "false",
-      "description_zh": "显示一个按钮，用于选择当天"
+      "required": false
     },
     "minimal": {
       "value": "",
       "type": "Boolean",
       "description": "Don’t display the header",
+      "description_zh": "不显示标题",
       "default": "false",
-      "description_zh": "不显示标题"
+      "required": false
     },
     "multiple": {
       "value": "",
       "type": "Boolean",
       "description": "Allow multiple selection; Model must be Array",
+      "description_zh": "允许多选;Model 必须是 Array",
       "default": "false",
-      "description_zh": "允许多选;模型必须是数组"
+      "required": false
     },
     "range": {
       "value": "",
       "type": "Boolean",
       "description": "Allow range selection; Partial compatibility with 'options' prop: selected ranges might also include 'unselectable' days",
+      "description_zh": "允许范围选择;与 'options' prop 部分兼容：所选范围也可能包括 'unselectable' 日期",
       "default": "false",
-      "description_zh": "允许范围选择;与“options”属性的部分兼容性：选定的范围可能还包括“不可选择”的天数"
+      "required": false
     },
     "emit-immediately": {
       "value": "",
       "type": "Boolean",
       "description": "Emit model when user browses month and year too; ONLY for single selection (non-multiple, non-range)",
+      "description_zh": "当用户浏览月份和年份时也发出 model;仅适用于单选 （非多选、非范围）",
       "default": "false",
-      "description_zh": "当用户浏览月份和年份时也发出模型;仅适用于单选（非多选、非范围）"
+      "required": false
     }
   },
   "link": "https://v2.quasar.dev/vue-components/date",
-  "link_zh": "https://v2.quasar.dev/vue-components/date"
+  "link_zh": "https://v2.quasar.dev/vue-components/date",
+  "slots": [
+    {
+      "name": "default",
+      "description": "This is where additional buttons can go",
+      "description_zh": "这是其他按钮可以去的地方"
+    }
+  ]
 }

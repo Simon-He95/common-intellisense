@@ -2,585 +2,807 @@
   "name": "QTable",
   "methods": [
     {
+      "name": "toggleFullscreen",
+      "description": "Toggles fullscreen mode",
+      "description_zh": "切换全屏模式",
+      "params": "",
+      "value": ""
+    },
+    {
+      "name": "setFullscreen",
+      "description": "Enter the fullscreen view",
+      "description_zh": "进入全屏视图",
+      "params": "",
+      "value": ""
+    },
+    {
+      "name": "exitFullscreen",
+      "description": "Leave the fullscreen view",
+      "description_zh": "离开全屏视图",
+      "params": "",
+      "value": ""
+    },
+    {
       "name": "requestServerInteraction",
       "description": "Trigger a server request (emits 'request' event)",
+      "description_zh": "触发服务器请求（发出 'request' 事件）",
       "params": "(props: Object) => void",
-      "description_zh": "触发服务器请求（发出“request”事件）"
+      "value": ""
     },
     {
       "name": "setPagination",
       "description": "Unless using an external pagination Object (through 'v-model:pagination' prop), you can use this method and force the internal pagination to change",
+      "description_zh": "除非使用外部分页对象（通过 'v-model：pagination' prop），否则你可以使用此方法并强制内部分页更改",
       "params": "(pagination: Object, forceServerRequest: Boolean) => void",
-      "description_zh": "除非使用外部分页对象（通过“v-model：pagination”属性），否则可以使用此方法并强制更改内部分页"
+      "value": ""
     },
     {
       "name": "firstPage",
       "description": "Navigates to first page",
+      "description_zh": "导航到第一页",
       "params": "",
-      "description_zh": "导航到第一页"
+      "value": ""
     },
     {
       "name": "prevPage",
       "description": "Navigates to previous page, if available",
+      "description_zh": "导航到上一页（如果可用）",
       "params": "",
-      "description_zh": "导航到上一页（如果可用）"
+      "value": ""
     },
     {
       "name": "nextPage",
       "description": "Navigates to next page, if available",
+      "description_zh": "导航到下一页（如果可用）",
       "params": "",
-      "description_zh": "导航到下一页（如果可用）"
+      "value": ""
     },
     {
       "name": "lastPage",
       "description": "Navigates to last page",
+      "description_zh": "导航到最后一页",
       "params": "",
-      "description_zh": "导航到最后一页"
+      "value": ""
     },
     {
       "name": "isRowSelected",
       "description": "Determine if a row has been selected by user",
+      "description_zh": "确定用户是否已选择行",
       "params": "(key: Any) => Boolean",
-      "description_zh": "确定用户是否选择了某行"
+      "value": ""
     },
     {
       "name": "clearSelection",
       "description": "Clears user selection (emits 'update:selected' with empty array)",
+      "description_zh": "清除用户选择（发出带有空数组的 'update：selected'）",
       "params": "",
-      "description_zh": "清除用户选择（发出带有空数组的“update：selected”）"
+      "value": ""
     },
     {
       "name": "isRowExpanded",
       "description": "Determine if a row is expanded or not",
+      "description_zh": "确定行是否已展开",
       "params": "(key: Any) => Boolean",
-      "description_zh": "确定行是否展开"
+      "value": ""
     },
     {
       "name": "setExpanded",
       "description": "Sets the expanded rows keys array; Especially useful if not using an external 'expanded' state otherwise just emits 'update:expanded' with the value",
+      "description_zh": "设置扩展的行键数组;如果不使用外部 'expanded' 状态，则特别有用，否则只发出 'update：expanded' 和值",
       "params": "(expanded: Array) => void",
-      "description_zh": "设置展开的行键数组;如果不使用外部“expanded”状态，则特别有用，否则只需发出带有值的“update：expanded”"
+      "value": ""
     },
     {
       "name": "sort",
       "description": "Trigger a table sort",
+      "description_zh": "触发表排序",
       "params": "(col: String,Object) => void",
-      "description_zh": "触发表排序"
-    },
-    {
-      "name": "toggleFullscreen",
-      "description": "Toggles fullscreen mode",
-      "params": "",
-      "description_zh": "切换全屏模式"
+      "value": ""
     },
     {
       "name": "resetVirtualScroll",
       "description": "Resets the virtual scroll (if using it) computations; Needed for custom edge-cases",
+      "description_zh": "重置虚拟滚动 （如果使用） 计算;自定义边缘情况需要",
       "params": "",
-      "description_zh": "重置虚拟滚动（如果使用它）计算;自定义边缘案例需要"
+      "value": ""
     },
     {
       "name": "scrollTo",
       "description": "Scroll the table to the row with the specified index in page (0 based)",
-      "params": "(index: String,Number, edge: String) => void",
-      "description_zh": "将表格滚动到页面中具有指定索引的行（从 0 开始）"
+      "description_zh": "将表格滚动到页面中具有指定索引的行（从 0 开始）",
+      "params": "(index: Number,String, edge: String) => void",
+      "value": ""
     }
   ],
   "events": [
     {
+      "name": "fullscreen",
+      "description": "Emitted when fullscreen state changes",
+      "description_zh": "全屏状态更改时发出",
+      "params": "(value: Boolean) => void",
+      "value": ""
+    },
+    {
+      "name": "update:fullscreen",
+      "description": "Used by Vue on 'v-model:fullscreen' prop for updating its value",
+      "description_zh": "被 Vue 在 'v-model：fullscreen' prop 上使用，以更新其值",
+      "params": "(value: Boolean) => void",
+      "value": ""
+    },
+    {
       "name": "row-click",
       "description": "Emitted when user clicks/taps on a row; Is not emitted when using body/row/item scoped slots",
+      "description_zh": "当用户单击/点按行时发出;使用 body/row/item 范围的插槽时不发出",
       "params": "(evt: undefined, row: Object, index: Number) => void",
-      "description_zh": "当用户单击/点击某行时发出;使用正文/行/项目范围的插槽时不发出"
+      "value": ""
     },
     {
       "name": "row-dblclick",
       "description": "Emitted when user quickly double clicks/taps on a row; Is not emitted when using body/row/item scoped slots; Please check JS dblclick event support before using",
+      "description_zh": "当用户快速双击/点按某一行时发出;使用 body/row/item 范围的插槽时不发出;使用前请检查 JS dblclick 事件支持",
       "params": "(evt: undefined, row: Object, index: Number) => void",
-      "description_zh": "当用户快速双击/点击一行时发出;使用正文/行/项目范围的插槽时不发出;使用前请检查 JS dblclick 事件支持"
+      "value": ""
     },
     {
       "name": "row-contextmenu",
       "description": "Emitted when user right clicks/long taps on a row; Is not emitted when using body/row/item scoped slots",
+      "description_zh": "当用户右键单击/长按一行时发出;使用 body/row/item 范围的插槽时不发出",
       "params": "(evt: undefined, row: Object, index: Number) => void",
-      "description_zh": "当用户右键单击/长按某一行时发出;使用正文/行/项目范围的插槽时不发出"
+      "value": ""
     },
     {
       "name": "request",
       "description": "Emitted when a server request is triggered",
+      "description_zh": "触发服务器请求时发出",
       "params": "(requestProp: Object) => void",
-      "description_zh": "触发服务器请求时发出"
+      "value": ""
     },
     {
       "name": "selection",
       "description": "Emitted when user selects/unselects row(s)",
+      "description_zh": "当用户选择/取消选择行时发出",
       "params": "(details: Object) => void",
-      "description_zh": "当用户选择/取消选择行时发出"
+      "value": ""
     },
     {
       "name": "update:pagination",
       "description": "Used by Vue on 'v-model:pagination' for updating its value",
+      "description_zh": "被 Vue 在 'v-model：pagination' 上用于更新其值",
       "params": "(newPagination: Object) => void",
-      "description_zh": "由 Vue 在 'v-model：pagination' 上用于更新其值"
+      "value": ""
     },
     {
       "name": "update:selected",
       "description": "Used by Vue on 'v-model:selected' prop for updating its value",
+      "description_zh": "被 Vue 在 'v-model：selected' prop 上使用，以更新其值",
       "params": "(newSelected: Array) => void",
-      "description_zh": "由 Vue 在 'v-model：selected' prop 上使用，用于更新其值"
+      "value": ""
     },
     {
       "name": "update:expanded",
       "description": "Used by Vue on 'v-model:expanded' prop for updating its value",
+      "description_zh": "被 Vue 在 'v-model：expanded' prop 上使用，以更新其值",
       "params": "(newExpanded: Array) => void",
-      "description_zh": "由 Vue 在 'v-model：expanded' prop 上使用以更新其值"
+      "value": ""
     },
     {
       "name": "virtual-scroll",
       "description": "Emitted when the virtual scroll occurs, if using virtual scroll",
+      "description_zh": "如果使用虚拟滚动，则在发生虚拟滚动时发出",
       "params": "(details: Object) => void",
-      "description_zh": "如果使用虚拟滚动，则在发生虚拟滚动时发出"
+      "value": ""
     }
   ],
   "props": {
+    "fullscreen": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Fullscreen mode",
+      "description_zh": "全屏模式",
+      "default": "false",
+      "required": false
+    },
+    "no-route-fullscreen-exit": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Changing route app won't exit fullscreen",
+      "description_zh": "更改路线应用程序不会全屏退出",
+      "default": "false",
+      "required": false
+    },
     "rows": {
       "value": "",
       "type": "Array",
       "description": "Rows of data to display",
+      "description_zh": "要显示的数据行数",
       "default": "",
-      "description_zh": "要显示的数据行数"
+      "required": true
     },
     "row-key": {
       "value": "",
       "type": "String | Function",
       "description": "Property of each row that defines the unique key of each row (the result must be a primitive, not Object, Array, etc); The value of property must be string or a function taking a row and returning the desired (nested) key in the row; If supplying a function then for best performance, reference it from your scope and do not define it inline",
-      "default": "id",
-      "description_zh": "定义每行唯一键的每行的属性（结果必须是基元，而不是 Object、Array 等）;属性的值必须是字符串或函数，该函数采用一行并在行中返回所需的（嵌套）键;如果提供函数，则为了获得最佳性能，请从作用域中引用它，不要以内联方式定义它"
+      "description_zh": "定义每行唯一键的每行的属性（结果必须是原始值，而不是 Object、Array 等）;property 的值必须是 string 或函数，它接受一行并返回该行中所需的（嵌套）键;如果提供函数，则为了获得最佳性能，请从您的作用域中引用它，并且不要内联定义它",
+      "default": "'id'",
+      "required": false
     },
     "virtual-scroll": {
       "value": "",
       "type": "Boolean",
       "description": "Display data using QVirtualScroll (for non-grid mode only)",
+      "description_zh": "使用 QVirtualScroll 显示数据（仅适用于非网格模式）",
       "default": "false",
-      "description_zh": "使用 QVirtualScroll 显示数据（仅适用于非网格模式）"
+      "required": false
     },
     "virtual-scroll-target": {
       "value": "",
       "type": "String",
       "description": "",
+      "description_zh": "",
       "default": "",
+      "required": false,
       "extends": "scroll-target",
-      "description_zh": ""
+      "passthrough": "child"
     },
     "virtual-scroll-slice-size": {
       "value": "",
-      "type": "Number | String",
+      "type": "Number | String | null",
       "description": "Minimum number of rows to render in the virtual list",
-      "default": 30,
-      "description_zh": "要在虚拟列表中呈现的最小行数"
+      "description_zh": "要在虚拟列表中呈现的最小行数",
+      "default": "10",
+      "required": false
     },
     "virtual-scroll-slice-ratio-before": {
       "value": "",
       "type": "Number | String",
       "description": "Ratio of number of rows in visible zone to render before it",
-      "default": 1,
-      "description_zh": "可见区域中要在其之前渲染的行数的比率"
+      "description_zh": "可见区域中的行数与渲染之前的行数之比",
+      "default": "1",
+      "required": false
     },
     "virtual-scroll-slice-ratio-after": {
       "value": "",
       "type": "Number | String",
       "description": "Ratio of number of rows in visible zone to render after it",
-      "default": 1,
-      "description_zh": "可见区域中要在其之后渲染的行数比率"
+      "description_zh": "可见区域中的行数与之后渲染的比率",
+      "default": "1",
+      "required": false
     },
     "virtual-scroll-item-size": {
       "value": "",
       "type": "Number | String",
-      "description": "Default size in pixels of a row; This value is used for rendering the initial table; Try to use a value close to the minimum size of a row",
-      "default": "48 (24 if dense)",
-      "description_zh": "默认大小（以一行的像素为单位）;此值用于呈现初始表;尝试使用接近行的最小大小的值"
+      "description": "Default size in pixels of a row; This value is used for rendering the initial table; Try to use a value close to the minimum size of a row; Default value: 48 (24 if dense)",
+      "description_zh": "默认大小（以行的像素为单位）;此值用于呈现初始表;尝试使用接近行的最小大小的值;默认值：48（如果密集，则为 24）",
+      "default": "# 48/24",
+      "required": false
     },
     "virtual-scroll-sticky-size-start": {
       "value": "",
       "type": "Number | String",
       "description": "Size in pixels of the sticky header (if using one); A correct value will improve scroll precision; Will be also used for non-virtual-scroll tables for fixing top alignment when using scrollTo method",
+      "description_zh": "大小（以粘性标头的像素为单位）（如果使用）;正确的值将提高滚动精度;还将用于非虚拟滚动表，以便在使用 scrollTo 方法时修复顶部对齐",
       "default": "0",
-      "description_zh": "粘性标题的大小（以像素为单位）（如果使用）;正确的值将提高滚动精度;在使用 scrollTo 方法时，还将用于非虚拟滚动表，用于固定顶部对齐方式"
+      "required": false
     },
     "virtual-scroll-sticky-size-end": {
       "value": "",
       "type": "Number | String",
       "description": "Size in pixels of the sticky footer part (if using one); A correct value will improve scroll precision",
+      "description_zh": "粘性页脚部分的大小（以像素为单位）（如果使用）;正确的值将提高滚动精度",
       "default": "0",
-      "description_zh": "粘性页脚部分的大小（以像素为单位）（如果使用）;正确的值将提高滚动精度"
+      "required": false
     },
     "table-colspan": {
       "value": "",
       "type": "Number | String",
       "description": "The number of columns in the table (you need this if you use table-layout: fixed)",
+      "description_zh": "表中的列数（如果您使用 table-layout： fixed，则需要此列）",
       "default": "",
-      "description_zh": "表中的列数（如果使用 table-layout： fixed，则需要此项）"
+      "required": false
     },
     "color": {
       "type": "String | Array",
       "description": "Color name for component from the Quasar Color Palette",
       "value": "",
-      "default": "grey-8",
+      "default": "'grey-8'",
       "extends": "color",
-      "desc": "Color name from the Quasar Palette for half selected icons",
-      "category": "header",
-      "addedIn": "v2.4",
+      "desc": "The color to be attributed to the indicator (the underline) of the active tab",
+      "category": "style",
+      "__runtimeDefault": true,
       "examples": [
-        "primary",
-        "teal-10",
-        "[\"accent\", \"grey-7\"] "
+        "[ 'accent', 'grey-7' ]"
       ],
-      "description_zh": "类星体调色板中组件的颜色名称"
+      "addedIn": "v2.4",
+      "description_zh": "Quasar Color Palette （类星体调色板） 中组件的颜色名称"
     },
     "icon-first-page": {
       "value": "",
       "type": "String",
       "description": "",
+      "description_zh": "",
       "default": "",
+      "required": false,
       "extends": "icon",
-      "desc": "Icon name following Quasar convention for stepping to first page; Make sure you have the icon library installed unless you are using 'img:' prefix",
-      "description_zh": ""
+      "desc": "Icon name following Quasar convention for stepping to first page; Make sure you have the icon library installed unless you are using 'img:' prefix"
     },
     "icon-prev-page": {
       "value": "",
       "type": "String",
       "description": "",
+      "description_zh": "",
       "default": "",
+      "required": false,
       "extends": "icon",
-      "desc": "Icon name following Quasar convention for stepping to previous page; Make sure you have the icon library installed unless you are using 'img:' prefix",
-      "description_zh": ""
+      "desc": "Icon name following Quasar convention for stepping to previous page; Make sure you have the icon library installed unless you are using 'img:' prefix"
     },
     "icon-next-page": {
       "value": "",
       "type": "String",
       "description": "",
+      "description_zh": "",
       "default": "",
+      "required": false,
       "extends": "icon",
-      "desc": "Icon name following Quasar convention for stepping to next page; Make sure you have the icon library installed unless you are using 'img:' prefix",
-      "description_zh": ""
+      "desc": "Icon name following Quasar convention for stepping to next page; Make sure you have the icon library installed unless you are using 'img:' prefix"
     },
     "icon-last-page": {
       "value": "",
       "type": "String",
       "description": "",
+      "description_zh": "",
       "default": "",
+      "required": false,
       "extends": "icon",
-      "desc": "Icon name following Quasar convention for stepping to last page; Make sure you have the icon library installed unless you are using 'img:' prefix",
-      "description_zh": ""
+      "desc": "Icon name following Quasar convention for stepping to last page; Make sure you have the icon library installed unless you are using 'img:' prefix"
     },
     "grid": {
       "value": "",
       "type": "Boolean",
       "description": "Display data as a grid instead of the default table",
+      "description_zh": "以表格形式显示数据，而不是默认表格",
       "default": "false",
-      "description_zh": "将数据显示为网格而不是默认表"
+      "required": false
     },
     "grid-header": {
       "value": "",
       "type": "Boolean",
       "description": "Display header for grid-mode also",
+      "description_zh": "grid 模式的显示标题",
       "default": "false",
-      "description_zh": "网格模式的显示标题"
+      "required": false
     },
     "dense": {
       "value": "",
       "type": "String",
       "description": "",
+      "description_zh": "",
       "default": "",
+      "required": false,
       "extends": "dense",
-      "desc": "Dense mode; Connect with $q.screen for responsive behavior",
-      "description_zh": ""
+      "desc": "Dense mode; Connect with $q.screen for responsive behavior"
     },
     "columns": {
       "value": "",
       "type": "Array",
       "description": "The column definitions (Array of Objects)",
+      "description_zh": "列定义 （Array of Objects）",
       "default": "",
-      "description_zh": "列定义（对象数组）"
+      "required": false
     },
     "visible-columns": {
       "value": "",
       "type": "Array",
       "description": "Array of Strings defining column names ('name' property of each column from 'columns' prop definitions); Columns marked as 'required' are not affected by this property",
+      "description_zh": "定义列名的字符串数组（'columns' prop 定义中每列的 'name' 属性）;标记为“必需”的列不受此属性的影响",
       "default": "",
-      "description_zh": "定义列名的字符串数组（'columns' prop 定义中每列的 'name' 属性）;标记为“必需”的列不受此属性的影响"
+      "required": false
     },
     "loading": {
       "value": "",
       "type": "Boolean",
       "description": "Put Table into 'loading' state; Notify the user something is happening behind the scenes",
+      "description_zh": "将 Table 置于 'loading' 状态;通知用户幕后发生的事情",
       "default": "false",
-      "description_zh": "将 Table 置于“加载”状态;通知用户后台正在发生一些事情"
+      "required": false
     },
     "title": {
       "value": "",
       "type": "String",
       "description": "Table title",
+      "description_zh": "表格标题",
       "default": "",
-      "description_zh": "表标题"
+      "required": false
     },
     "hide-header": {
       "value": "",
       "type": "Boolean",
       "description": "Hide table header layer",
+      "description_zh": "隐藏表头层",
       "default": "false",
-      "description_zh": "隐藏表头层"
+      "required": false
     },
     "hide-bottom": {
       "value": "",
       "type": "Boolean",
       "description": "Hide table bottom layer regardless of what it has to display",
+      "description_zh": "隐藏表底层，无论它必须显示什么",
       "default": "false",
-      "description_zh": "隐藏表格底层，无论它必须显示什么"
+      "required": false
     },
     "hide-selected-banner": {
       "value": "",
       "type": "Boolean",
       "description": "Hide the selected rows banner (if any)",
+      "description_zh": "隐藏所选行横幅（如果有）",
       "default": "false",
-      "description_zh": "隐藏所选行横幅（如果有）"
+      "required": false
     },
     "hide-no-data": {
       "value": "",
       "type": "Boolean",
       "description": "Hide the default no data bottom layer",
+      "description_zh": "隐藏默认的 no data bottom 层",
       "default": "false",
-      "description_zh": "隐藏默认无数据底层"
+      "required": false
     },
     "hide-pagination": {
       "value": "",
       "type": "Boolean",
       "description": "Hide the pagination controls at the bottom",
+      "description_zh": "隐藏底部的分页控件",
       "default": "false",
-      "description_zh": "隐藏底部的分页控件"
+      "required": false
     },
     "dark": {
       "value": "",
       "type": "String",
       "description": "",
+      "description_zh": "",
       "default": "",
-      "extends": "dark",
-      "description_zh": ""
+      "required": false,
+      "extends": "dark"
     },
     "flat": {
       "value": "",
       "type": "String",
       "description": "",
+      "description_zh": "",
       "default": "",
-      "extends": "flat",
-      "description_zh": ""
+      "required": false,
+      "extends": "flat"
     },
     "bordered": {
       "value": "",
       "type": "String",
       "description": "",
+      "description_zh": "",
       "default": "",
-      "extends": "bordered",
-      "description_zh": ""
+      "required": false,
+      "extends": "bordered"
     },
     "square": {
       "value": "",
       "type": "String",
       "description": "",
+      "description_zh": "",
       "default": "",
-      "extends": "square",
-      "description_zh": ""
+      "required": false,
+      "extends": "square"
     },
     "separator": {
       "value": "",
       "type": "String",
       "description": "Use a separator/border between rows, columns or all cells",
-      "default": "horizontal",
-      "description_zh": "在行、列或所有单元格之间使用分隔符/边框"
+      "description_zh": "在行、列或所有单元格之间使用分隔符/边框",
+      "default": "'horizontal'",
+      "required": false
     },
     "wrap-cells": {
       "value": "",
       "type": "Boolean",
       "description": "Wrap text within table cells",
+      "description_zh": "在表格单元格内换行",
       "default": "false",
-      "description_zh": "在表格单元格中换行文本"
+      "required": false
     },
     "binary-state-sort": {
       "value": "",
       "type": "Boolean",
       "description": "Skip the third state (unsorted) when user toggles column sort direction",
+      "description_zh": "当用户切换列排序方向时跳过第三种状态 （unsorted）",
       "default": "false",
-      "description_zh": "当用户切换列排序方向时跳过第三种状态（未排序）"
+      "required": false
     },
     "column-sort-order": {
       "value": "",
       "type": "String",
       "description": "Set column sort order: 'ad' (ascending-descending) or 'da' (descending-ascending); It gets applied to all columns unless a column has its own sortOrder specified in the 'columns' definition prop",
-      "default": "ad",
-      "description_zh": "设置列排序顺序：“ad”（升序-降序）或“da”（降序-升序）;它适用于所有列，除非列在“columns”定义属性中指定了自己的 sortOrder"
+      "description_zh": "设置列排序顺序：'ad' （升序-降序） 或 'da' （降序-升序）;它被应用于所有列，除非列在 'columns' 定义 prop 中指定了自己的 sortOrder",
+      "default": "'ad'",
+      "required": false
     },
     "no-data-label": {
       "value": "",
       "type": "String",
       "description": "Override default text to display when no data is available",
+      "description_zh": "覆盖无可用数据时显示的默认文本",
       "default": "",
-      "description_zh": "覆盖默认文本以在没有可用数据时显示"
+      "required": false
     },
     "no-results-label": {
       "value": "",
       "type": "String",
       "description": "Override default text to display when user filters the table and no matched results are found",
+      "description_zh": "覆盖用户筛选表且未找到匹配结果时要显示的默认文本",
       "default": "",
-      "description_zh": "覆盖在用户筛选表且未找到匹配结果时显示的默认文本"
+      "required": false
     },
     "loading-label": {
       "value": "",
       "type": "String",
       "description": "Override default text to display when table is in loading state (see 'loading' prop)",
+      "description_zh": "覆盖表处于 loading 状态时显示的默认文本（参见 'loading' prop）",
       "default": "",
-      "description_zh": "覆盖默认文本以在表处于加载状态时显示（请参阅“加载”属性）"
+      "required": false
     },
     "selected-rows-label": {
       "value": "",
       "type": "Function",
       "description": "Text to display when user selected at least one row; For best performance, reference it from your scope and do not define it inline",
+      "description_zh": "用户选择至少一行时显示的文本;为了获得最佳性能，请从您的范围中引用它，不要内联定义它",
       "default": "",
-      "description_zh": "用户选择至少一行时显示的文本;为了获得最佳性能，请从您的范围引用它，不要以内联方式定义它"
+      "required": false
     },
     "rows-per-page-label": {
       "value": "",
       "type": "String",
       "description": "Text to override default rows per page label at bottom of table",
+      "description_zh": "用于覆盖表格底部每页默认行数标签的文本",
       "default": "",
-      "description_zh": "用于覆盖表格底部每页默认行数标签的文本"
+      "required": false
     },
     "pagination-label": {
       "value": "",
       "type": "Function",
       "description": "Text to override default pagination label at bottom of table (unless 'pagination' scoped slot is used); For best performance, reference it from your scope and do not define it inline",
+      "description_zh": "覆盖表底部默认分页标签的文本（除非使用 'pagination' 范围的插槽）;为了获得最佳性能，请从您的范围中引用它，不要内联定义它",
       "default": "",
-      "description_zh": "用于覆盖表格底部默认分页标签的文本（除非使用“分页”范围的插槽）;为了获得最佳性能，请从您的范围引用它，不要以内联方式定义它"
+      "required": false
     },
     "table-style": {
       "value": "",
       "type": "String | Array | Object",
       "description": "CSS style to apply to native HTML <table> element's wrapper (which is a DIV)",
+      "description_zh": "应用于本机 HTML <table> 元素的包装器（即 DIV）的 CSS 样式",
       "default": "",
-      "description_zh": "应用于本机 HTML <table> 元素的包装器（即 DIV）的 CSS 样式"
+      "required": false
     },
     "table-class": {
       "value": "",
       "type": "String | Array | Object",
       "description": "CSS classes to apply to native HTML <table> element's wrapper (which is a DIV)",
+      "description_zh": "应用于本机 HTML <table> 元素的包装器（即 DIV）的 CSS 类",
       "default": "",
-      "description_zh": "应用于本机 HTML <table> 元素的包装器（即 DIV）的 CSS 类"
+      "required": false
     },
     "table-header-style": {
       "value": "",
       "type": "String | Array | Object",
       "description": "CSS style to apply to header of native HTML <table> (which is a TR)",
+      "description_zh": "要应用于本机 HTML <table> （即 TR）标题的 CSS 样式",
       "default": "",
-      "description_zh": "应用于本机 HTML <table> （即 TR）标头的 CSS 样式"
+      "required": false
     },
     "table-header-class": {
       "value": "",
       "type": "String | Array | Object",
       "description": "CSS classes to apply to header of native HTML <table> (which is a TR)",
+      "description_zh": "要应用于本机 HTML <table> （即 TR）标头的 CSS 类",
       "default": "",
-      "description_zh": "应用于本机 HTML <table> （即 TR）标头的 CSS 类"
+      "required": false
     },
     "card-container-style": {
       "value": "",
       "type": "String | Array | Object",
       "description": "CSS style to apply to the cards container (when in grid mode)",
+      "description_zh": "要应用于卡片容器的 CSS 样式（处于网格模式时）",
       "default": "",
-      "description_zh": "应用于卡片容器的 CSS 样式（在网格模式下时）"
+      "required": false
     },
     "card-container-class": {
       "value": "",
       "type": "String | Array | Object",
       "description": "CSS classes to apply to the cards container (when in grid mode)",
+      "description_zh": "要应用于卡片容器的 CSS 类（处于网格模式时）",
       "default": "",
-      "description_zh": "应用于卡片容器的 CSS 类（在网格模式下）"
+      "required": false
     },
     "card-style": {
       "value": "",
       "type": "String | Array | Object",
       "description": "CSS style to apply to the card (when in grid mode) or container card (when not in grid mode)",
+      "description_zh": "要应用于卡片（处于网格模式时）或容器卡片（未处于网格模式时）的 CSS 样式",
       "default": "",
-      "description_zh": "CSS 样式应用于卡片（在网格模式下时）或容器卡（不在网格模式下时）"
+      "required": false
     },
     "card-class": {
       "value": "",
       "type": "String | Array | Object",
       "description": "CSS classes to apply to the card (when in grid mode) or container card (when not in grid mode)",
+      "description_zh": "要应用于卡片（处于网格模式时）或容器卡片（未处于网格模式时）的 CSS 类",
       "default": "",
-      "description_zh": "要应用于卡片（在网格模式下时）或容器卡（未在网格模式下时）的 CSS 类"
+      "required": false
     },
     "title-class": {
       "value": "",
       "type": "String | Array | Object",
       "description": "CSS classes to apply to the title (if using 'title' prop)",
+      "description_zh": "应用于标题的 CSS 类（如果使用 'title' 属性）",
       "default": "",
-      "description_zh": "应用于标题的 CSS 类（如果使用 'title' 属性）"
+      "required": false
     },
     "filter": {
       "value": "",
       "type": "String | Object",
       "description": "String/Object to filter table with; When using an Object it requires 'filter-method' to also be specified since it will be a custom filtering",
+      "description_zh": "用于过滤表的字符串/对象;当使用 Object 时，还需要指定 'filter-method'，因为它将是一个自定义过滤",
       "default": "",
-      "description_zh": "用于过滤表的字符串/对象;使用对象时，还需要指定“filter-method”，因为它将是一个自定义过滤"
+      "required": false
     },
     "filter-method": {
       "value": "",
       "type": "Function",
       "description": "The actual filtering mechanism; For best performance, reference it from your scope and do not define it inline",
-      "default": "(see source code)",
-      "description_zh": "实际的过滤机制;为了获得最佳性能，请从您的范围引用它，不要以内联方式定义它"
+      "description_zh": "实际的过滤机制;为了获得最佳性能，请从您的范围中引用它，不要内联定义它",
+      "default": "",
+      "required": false
     },
     "pagination": {
       "value": "",
       "type": "Object",
       "description": "Pagination object; You can also use the 'v-model:pagination' for synching; When not synching it simply initializes the pagination on first render",
+      "description_zh": "Pagination 对象;你也可以使用 'v-model：pagination' 进行同步;如果不同步，它只是在第一次渲染时初始化分页",
       "default": "",
-      "description_zh": "分页对象;您还可以使用“v-model：pagination”进行同步;不同步时，它只是在第一次渲染时初始化分页"
+      "required": false
     },
     "rows-per-page-options": {
       "value": "",
       "type": "Array",
       "description": "Options for user to pick (Numbers); Number 0 means 'Show all rows in one page'",
-      "default": "[ 3, 5, 7, 10, 15, 20, 25, 50, 0 ]",
-      "description_zh": "供用户选择的选项（数字）;数字 0 表示“在一页中显示所有行”"
+      "description_zh": "供用户选择的选项 （Numbers）;数字 0 表示“在一页中显示所有行”",
+      "default": "[ 5, 7, 10, 15, 20, 25, 50, 0 ]",
+      "required": false
     },
     "selection": {
       "value": "",
       "type": "String",
       "description": "Selection type",
-      "default": "none",
-      "description_zh": "选择类型"
+      "description_zh": "选择类型",
+      "default": "'none'",
+      "required": false
     },
     "selected": {
       "value": "",
       "type": "Array",
       "description": "Keeps the user selection array",
+      "description_zh": "保留用户选择数组",
       "default": "[]",
-      "description_zh": "保留用户选择数组"
+      "required": false
     },
     "expanded": {
       "value": "",
       "type": "Array",
       "description": "Keeps the array with expanded rows keys",
-      "default": "[]",
-      "description_zh": "使用扩展的行键保留数组"
+      "description_zh": "保留具有扩展行键的数组",
+      "default": "",
+      "required": false
     },
     "sort-method": {
       "value": "",
       "type": "Function",
       "description": "The actual sort mechanism. Function (rows, sortBy, descending) => sorted rows; For best performance, reference it from your scope and do not define it inline",
-      "default": "(see source code)",
-      "description_zh": "实际的排序机制。函数 （rows， sortBy， descending） => 排序行;为了获得最佳性能，请从您的范围引用它，不要以内联方式定义它"
+      "description_zh": "实际的排序机制。函数 （rows， sortBy， descending） =>排序的行;为了获得最佳性能，请从您的范围中引用它，不要内联定义它",
+      "default": "",
+      "required": false
     }
   },
   "link": "https://v2.quasar.dev/vue-components/table",
-  "link_zh": "https://v2.quasar.dev/vue-components/table"
+  "link_zh": "https://v2.quasar.dev/vue-components/table",
+  "slots": [
+    {
+      "name": "loading",
+      "description": "Override default effect when table is in loading state; Suggestion: QInnerLoading",
+      "description_zh": "当 table 处于 loading 状态时覆盖默认效果;建议：QInnerLoading"
+    },
+    {
+      "name": "item",
+      "description": "Slot to use for defining an item when in 'grid' mode; Suggestion: QCard",
+      "description_zh": "在 'grid' 模式下用于定义项目的插槽;建议：QCard"
+    },
+    {
+      "name": "body",
+      "description": "Slot to define how a body row looks like; Suggestion: QTr + Td",
+      "description_zh": "Slot 定义 body 行的外观;建议：QTr + Td"
+    },
+    {
+      "name": "body-cell",
+      "description": "Slot to define how all body cells look like; Suggestion: QTd",
+      "description_zh": "Slot 来定义所有体细胞的外观;建议：QTd"
+    },
+    {
+      "name": "body-cell-[name]",
+      "description": "Slot to define how a specific column cell looks like; replace '[name]' with column name (from columns definition object)",
+      "description_zh": "Slot 定义特定列单元格的外观;将 '[name]' 替换为 column name （from columns definition object）"
+    },
+    {
+      "name": "header",
+      "description": "Slot to define how header looks like; Suggestion: QTr + QTh",
+      "description_zh": "Slot 定义 header 的外观;建议：QTr + QTh"
+    },
+    {
+      "name": "header-cell",
+      "description": "Slot to define how each header cell looks like; Suggestion: QTh",
+      "description_zh": "Slot 来定义每个标题单元格的外观;建议：QTh"
+    },
+    {
+      "name": "header-cell-[name]",
+      "description": "Slot to define how a specific header cell looks like; replace '[name]' with column name (from columns definition object)",
+      "description_zh": "Slot 定义特定标题单元格的外观;将 '[name]' 替换为 column name （from columns definition object）"
+    },
+    {
+      "name": "body-selection",
+      "description": "Slot to define how body selection column looks like; Suggestion: QCheckbox",
+      "description_zh": "Slot 定义 body selection 列的外观;建议：QCheckbox"
+    },
+    {
+      "name": "header-selection",
+      "description": "Slot to define how header selection column looks like (available only for multiple selection mode); Suggestion: QCheckbox",
+      "description_zh": "Slot 定义标题选择列的外观（仅适用于多选模式）;建议：QCheckbox"
+    },
+    {
+      "name": "top-row",
+      "description": "Slot to define how top extra row looks like",
+      "description_zh": "Slot 定义顶部额外行的外观"
+    },
+    {
+      "name": "bottom-row",
+      "description": "Slot to define how bottom extra row looks like",
+      "description_zh": "Slot 定义底部额外行的外观"
+    },
+    {
+      "name": "top",
+      "description": "Slot to define how table top looks like",
+      "description_zh": "用于定义桌面外观的插槽"
+    },
+    {
+      "name": "bottom",
+      "description": "Slot to define how table bottom looks like",
+      "description_zh": "用于定义表底外观的 slot"
+    },
+    {
+      "name": "pagination",
+      "description": "Slot to override default pagination label and buttons",
+      "description_zh": "用于覆盖默认分页标签和按钮的插槽"
+    },
+    {
+      "name": "top-left",
+      "description": "Slot to define how left part of the table top looks like",
+      "description_zh": "用于定义桌面左侧部分外观的 Slot"
+    },
+    {
+      "name": "top-right",
+      "description": "Slot to define how right part of the table top looks like",
+      "description_zh": "用于定义桌面右侧部分外观的插槽"
+    },
+    {
+      "name": "top-selection",
+      "description": "Slot to define how top table section looks like when user has selected at least one row",
+      "description_zh": "Slot 用于定义当用户选择了至少一行时顶表部分的外观"
+    },
+    {
+      "name": "no-data",
+      "description": "Slot to define how the bottom will look like when is nothing to display",
+      "description_zh": "Slot 定义当没有要显示的内容时底部的外观"
+    }
+  ]
 }

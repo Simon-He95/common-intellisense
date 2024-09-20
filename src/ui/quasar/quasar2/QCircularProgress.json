@@ -3,123 +3,157 @@
   "methods": [],
   "events": [],
   "props": {
+    "size": {
+      "value": "",
+      "type": "String",
+      "description": "Size in CSS units, including unit name or standard size name (xs|sm|md|lg|xl)",
+      "description_zh": "以 CSS 单位为单位的大小，包括单位名称或标准大小名称 （xs|sm|md|lg|xl）",
+      "default": "",
+      "required": false
+    },
     "value": {
       "value": "",
       "type": "Number",
       "description": "Current progress (must be between min/max)",
-      "default": 0,
-      "description_zh": "当前进度（必须介于最小值/最大值之间）"
+      "description_zh": "当前进度（必须介于最小值/最大值之间）",
+      "default": "0",
+      "required": false
     },
     "min": {
       "value": "",
       "type": "Number",
       "description": "Minimum value defining 'no progress' (must be lower than 'max')",
-      "default": 0,
-      "description_zh": "定义“无进度”的最小值（必须低于“最大值”）"
+      "description_zh": "定义 'no progress' 的最小值（必须小于 'max'）",
+      "default": "0",
+      "required": false
     },
     "max": {
       "value": "",
       "type": "Number",
       "description": "Maximum value defining 100% progress made (must be higher than 'min')",
-      "default": 100,
-      "description_zh": "定义 100% 进度的最大值（必须高于“min”）"
+      "description_zh": "定义 100% 进度的最大值（必须高于 'min'）",
+      "default": "100",
+      "required": false
     },
     "color": {
       "type": "String",
       "description": "Color name for component from the Quasar Color Palette",
       "value": "",
-      "default": "primary",
+      "default": "'primary'",
       "extends": "color",
       "desc": "Color name for the track of the component from the Quasar Color Palette",
       "category": "style",
-      "description_zh": "类星体调色板中组件的颜色名称"
+      "description_zh": "Quasar Color Palette （类星体调色板） 中组件的颜色名称"
     },
     "center-color": {
       "type": "String",
       "description": "Color name for component from the Quasar Color Palette",
       "value": "",
-      "default": "primary",
+      "default": "'primary'",
       "extends": "color",
       "desc": "Color name for the track of the component from the Quasar Color Palette",
       "category": "style",
-      "description_zh": "类星体调色板中组件的颜色名称"
+      "description_zh": "Quasar Color Palette （类星体调色板） 中组件的颜色名称"
     },
     "track-color": {
       "type": "String",
       "description": "Color name for component from the Quasar Color Palette",
       "value": "",
-      "default": "primary",
+      "default": "'primary'",
       "extends": "color",
       "desc": "Color name for the track of the component from the Quasar Color Palette",
       "category": "style",
-      "description_zh": "类星体调色板中组件的颜色名称"
+      "description_zh": "Quasar Color Palette （类星体调色板） 中组件的颜色名称"
     },
     "font-size": {
       "value": "",
       "type": "String",
       "description": "Size of text in CSS units, including unit name. Suggestion: use 'em' units to sync with component size",
-      "default": "0.25em",
-      "description_zh": "以 CSS 为单位的文本大小，包括单元名称。建议：使用“em”单位与组件大小同步"
+      "description_zh": "以 CSS 单位表示的文本大小，包括单位名称。建议：使用 'em' 单位与组件尺寸同步",
+      "default": "",
+      "required": false
     },
     "rounded": {
       "value": "",
       "type": "Boolean",
       "description": "Rounding the arc of progress",
+      "description_zh": "圆润进步的弧线",
       "default": "false",
-      "description_zh": "圆润进步的弧线"
+      "version": "v2.8.4",
+      "required": false
     },
     "thickness": {
       "value": "",
       "type": "Number",
       "description": "Thickness of progress arc as a ratio (0.0 < x < 1.0) of component size",
-      "default": 0.2,
-      "description_zh": "进度弧的厚度与组件尺寸之比 （0.0 < x < 1.0）"
+      "description_zh": "进程弧的厚度与组件尺寸的比率 （0.0 < x < 1.0）",
+      "default": "0.2",
+      "required": false
     },
     "angle": {
       "value": "",
       "type": "Number",
       "description": "Angle to rotate progress arc by",
-      "default": 0,
-      "description_zh": "旋转进度弧的角度"
+      "description_zh": "进度弧旋转的角度",
+      "default": "0",
+      "required": false
     },
     "indeterminate": {
       "value": "",
       "type": "Boolean",
       "description": "Put component into 'indeterminate' state; Ignores 'value' prop",
+      "description_zh": "将组件置于 'indeterminate' 状态;忽略 'value' 属性",
       "default": "false",
-      "description_zh": "将组件置于“不确定”状态;忽略 'value' 道具"
+      "required": false
     },
     "show-value": {
       "value": "",
       "type": "Boolean",
       "description": "Enables the default slot and uses it (if available), otherwise it displays the 'value' prop as text; Make sure the text has enough space to be displayed inside the component",
+      "description_zh": "启用默认插槽并使用它（如果可用），否则它将 'value' 属性显示为文本;确保文本有足够的空间在组件内部显示",
       "default": "false",
-      "description_zh": "启用默认插槽并使用它（如果可用），否则它将“value”属性显示为文本;确保文本有足够的空间在组件内部显示"
+      "required": false
     },
     "reverse": {
       "value": "",
       "type": "Boolean",
       "description": "Reverses the direction of progress; Only for determined state",
+      "description_zh": "反转进步的方向;仅适用于确定状态",
       "default": "false",
-      "description_zh": "颠倒了前进的方向;仅适用于确定的状态"
+      "required": false
     },
     "instant-feedback": {
       "value": "",
       "type": "Boolean",
       "description": "No animation when model changes",
+      "description_zh": "模型更改时无动画",
       "default": "false",
-      "description_zh": "模型更改时无动画"
+      "required": false
     },
     "animation-speed": {
       "value": "",
       "type": "String",
       "description": "",
-      "default": 600,
+      "description_zh": "",
+      "default": "600",
+      "version": "v2.3",
+      "required": false,
       "extends": "animation-speed",
-      "addedIn": "v2.3",
-      "description_zh": ""
+      "addedIn": "v2.3"
     }
   },
   "link": "https://v2.quasar.dev/vue-components/circular-progress",
-  "link_zh": "https://v2.quasar.dev/vue-components/circular-progress"
+  "link_zh": "https://v2.quasar.dev/vue-components/circular-progress",
+  "slots": [
+    {
+      "name": "default",
+      "description": "Used for component content only if 'show-value' prop is set; Make sure the content has enough space to be displayed inside the component",
+      "description_zh": "仅当设置了 'show-value' prop 时，才用于组件内容;确保内容有足够的空间在组件内显示"
+    },
+    {
+      "name": "internal",
+      "description": "Used by QKnob internally",
+      "description_zh": "由 QKnob 内部使用"
+    }
+  ]
 }

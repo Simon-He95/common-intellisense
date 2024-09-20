@@ -27,10 +27,11 @@ async function run() {
     quasar2Map.push(name)
     quasar2ComponentsMap.push([name, name, `<${name}></${name}>`])
     const json = JSON.parse(await fsp.readFile(path.resolve(cwd, item), 'utf-8'))
-    const { props: _props, methods: _methods, events: _events, meta } = json
+    const { props: _props, methods: _methods, events: _events, meta, slots: _slots } = json
     const props: any = {}
     const methods: any = []
     const events: any = []
+    const slots = []
 
     if (_props) {
       Object.keys(_props).forEach((key) => {
@@ -40,11 +41,14 @@ async function run() {
             value.type = value.type.join(' | ')
 
           props[key] = Object.assign(extendsMap[value.extends]
-          || {
+            || {
             value: '',
             type: 'String',
             description: '',
+            description_zh: '',
             default: '',
+            version: value.addedIn,
+            required: value.required || false,
           }, value)
         }
         else {
@@ -53,7 +57,10 @@ async function run() {
             value: '',
             type: Array.isArray(type) ? type.join(' | ') : type,
             description: value.desc,
+            description_zh: value.desc,
             default: value.default !== undefined ? value.default : type === 'Boolean' ? 'false' : '',
+            version: value.addedIn,
+            required: value.required || false,
           }
         }
       })
@@ -71,6 +78,7 @@ async function run() {
         methods.push({
           name: key,
           description: value.desc,
+          description_zh: value.desc,
           params,
         })
       })
@@ -88,9 +96,21 @@ async function run() {
         events.push({
           name: key,
           description: value.desc || '',
+          description_zh: value.desc || '',
           params,
         })
       })
+    }
+    if (_slots) {
+      for (const key in _slots) {
+        if (key === '...')
+          continue
+        slots.push({
+          name: key,
+          description: _slots[key].desc,
+          description_zh: _slots[key].desc
+        })
+      }
     }
     const newJson = {
       name,
@@ -98,30 +118,55 @@ async function run() {
       events,
       props,
       link: meta?.docsUrl,
+      link_zh: meta?.docsUrl,
+      slots
     }
     fsp.writeFile(path.resolve(base, `src/ui/quasar/quasar2/${item}`), JSON.stringify(newJson, null, 2), 'utf-8')
   })
 
   generateIndex()
+  generateMapping()
   console.log('quasar generate done!')
 }
 
+function generateMapping(){
+  const indexTemplate = `${quasar2Importers.join('\n')}
+  
+  export function getPropsMap() {
+    return ${JSON.stringify(quasar2Map, null, 4).replace(/"/g, '')}
+  }
+  
+  export function getComponentMap() {
+    return ${JSON.stringify(quasar2ComponentsMap, null, 4)}
+  }
+    `
+    fsp.writeFile(`${base}/src/ui/quasar/quasar2/mapping.ts`, indexTemplate)
+}
+
 function generateIndex() {
-  const indexTemplate = `import { componentsReducer, propsReducer } from '../../utils'
-${quasar2Importers.join('\n')}
+  const indexTemplate = `import { getComponentMap, getPropsMap } from './mapping'
 
 export function quasar2() {
-  const map: any = ${JSON.stringify(quasar2Map, null, 4).replace(/"/g, '')}
-
-  return propsReducer(map)
+  return {
+    uiName: 'quasar2',
+    map: getPropsMap(),
+    lib: 'quasar',
+    prefix: 'q',
+  }
 }
 
 export function quasar2Components() {
-  const map = ${JSON.stringify(quasar2ComponentsMap, null, 4)}
-  return componentsReducer(map)
+  return {
+    map: getComponentMap(),
+    isSeperatorByHyphen: true,
+    prefix: 'q',
+    lib: 'quasar',
+    isReact: false,
+  }
 }
   `
   fsp.writeFile(`${base}/src/ui/quasar/quasar2/index.ts`, indexTemplate)
 }
+run()
 
 export default run

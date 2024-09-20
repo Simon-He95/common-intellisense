@@ -2,106 +2,209 @@
   "name": "QTooltip",
   "methods": [
     {
+      "name": "show",
+      "params": "",
+      "description": "",
+      "value": "",
+      "description_zh": ""
+    },
+    {
+      "name": "hide",
+      "params": "",
+      "description": "",
+      "value": "",
+      "description_zh": ""
+    },
+    {
+      "name": "toggle",
+      "params": "",
+      "description": "",
+      "value": "",
+      "description_zh": ""
+    },
+    {
       "name": "updatePosition",
       "description": "There are some custom scenarios for which Quasar cannot automatically reposition the tooltip without significant performance drawbacks so the optimal solution is for you to call this method when you need it",
+      "description_zh": "对于某些自定义方案，Quasar 无法在不出现明显性能缺陷的情况下自动重新定位工具提示，因此最佳解决方案是在需要时调用此方法",
       "params": "",
-      "description_zh": "在某些自定义场景中，类星体无法自动重新定位工具提示，而不会出现明显的性能缺陷，因此最佳解决方案是在需要时调用此方法"
+      "value": ""
     }
   ],
-  "events": [],
+  "events": [
+    {
+      "name": "update:model-value",
+      "description": "Emitted when showing/hidden state changes; Is also used by v-model",
+      "description_zh": "在显示/隐藏状态更改时触发;也被 v-model 使用",
+      "params": "(value: Boolean) => void",
+      "value": ""
+    },
+    {
+      "name": "show",
+      "description": "",
+      "description_zh": "",
+      "params": "",
+      "value": ""
+    },
+    {
+      "name": "before-show",
+      "description": "",
+      "description_zh": "",
+      "params": "",
+      "value": ""
+    },
+    {
+      "name": "hide",
+      "description": "",
+      "description_zh": "",
+      "params": "",
+      "value": ""
+    },
+    {
+      "name": "before-hide",
+      "description": "",
+      "description_zh": "",
+      "params": "",
+      "value": ""
+    }
+  ],
   "props": {
-    "max-height": {
-      "value": "",
-      "type": "String",
-      "description": "",
-      "default": "",
-      "extends": "size",
-      "desc": "The maximum height of the Tooltip; Size in CSS units, including unit name",
-      "category": "content",
-      "description_zh": ""
-    },
-    "max-width": {
-      "value": "",
-      "type": "String",
-      "description": "",
-      "default": "",
-      "extends": "size",
-      "desc": "The maximum width of the Tooltip; Size in CSS units, including unit name",
-      "category": "content",
-      "description_zh": ""
-    },
     "transition-show": {
       "value": "",
       "type": "String",
-      "default": "jump-down",
       "description": "",
-      "description_zh": ""
+      "description_zh": "",
+      "default": "'jump-down'",
+      "required": false,
+      "extends": "transition"
     },
     "transition-hide": {
       "value": "",
       "type": "String",
-      "default": "jump-up",
       "description": "",
-      "description_zh": ""
+      "description_zh": "",
+      "default": "'jump-up'",
+      "required": false,
+      "extends": "transition"
     },
-    "anchor": {
+    "transition-duration": {
       "value": "",
-      "type": "String",
-      "description": "Two values setting the starting position or anchor point of the Tooltip relative to its target",
-      "default": "bottom middle",
-      "description_zh": "两个值设置工具提示相对于其目标的起始位置或锚点"
-    },
-    "self": {
-      "value": "",
-      "type": "String",
-      "description": "Two values setting the Tooltip's own position relative to its target",
-      "default": "top middle",
-      "description_zh": "两个值设置工具提示自身相对于其目标的位置"
-    },
-    "offset": {
-      "value": "",
-      "type": "Array",
-      "description": "An array of two numbers to offset the Tooltip horizontally and vertically in pixels",
-      "default": "[14, 14]",
-      "description_zh": "由两个数字组成的数组，用于水平和垂直偏移工具提示（以像素为单位）"
-    },
-    "scroll-target": {
-      "value": "",
-      "type": "String",
-      "description": "",
-      "default": "",
-      "extends": "scroll-target",
-      "description_zh": ""
+      "type": "String | Number",
+      "description": "Transition duration (in milliseconds, without unit)",
+      "description_zh": "过渡持续时间（以毫秒为单位，不含单位）",
+      "default": "300",
+      "required": false
     },
     "target": {
       "value": "",
-      "type": "Boolean | String",
-      "description": "Configure a target element to trigger Tooltip toggle; 'true' means it enables the parent DOM element, 'false' means it disables attaching events to any DOM elements; By using a String (CSS selector) it attaches the events to the specified DOM element (if it exists)",
-      "default": true,
-      "description_zh": "配置目标元素以触发工具提示切换;'true' 表示启用父 DOM 元素，“false' 表示禁用将事件附加到任何 DOM 元素;通过使用 String（CSS 选择器），它将事件附加到指定的 DOM 元素（如果存在）"
+      "type": "Boolean | String | Element",
+      "description": "Configure a target element to trigger component toggle; 'true' means it enables the parent DOM element, 'false' means it disables attaching events to any DOM elements; By using a String (CSS selector) or a DOM element it attaches the events to the specified DOM element (if it exists)",
+      "description_zh": "配置目标元素以触发组件切换;'true' 表示启用父 DOM 元素，'false' 表示禁用将事件附加到任何 DOM 元素;通过使用 String（CSS 选择器）或 DOM 元素，它将事件附加到指定的 DOM 元素（如果存在）",
+      "default": "true",
+      "required": false
     },
     "no-parent-event": {
       "value": "",
       "type": "Boolean",
       "description": "Skips attaching events to the target DOM element (that trigger the element to get shown)",
+      "description_zh": "跳过将事件附加到目标 DOM 元素（触发元素显示）",
       "default": "false",
-      "description_zh": "跳过将事件附加到目标 DOM 元素（触发元素显示）"
+      "required": false
+    },
+    "model-value": {
+      "value": "",
+      "type": "Boolean | null",
+      "description": "Model of the component defining shown/hidden state; Either use this property (along with a listener for 'update:model-value' event) OR use v-model directive",
+      "description_zh": "定义显示/隐藏状态的组件模型;使用此属性（以及 'update：model-value' 事件的侦听器）或使用 v-model 指令",
+      "default": "null",
+      "required": false
+    },
+    "max-height": {
+      "value": "",
+      "type": "String | null",
+      "description": "",
+      "description_zh": "",
+      "default": "null",
+      "required": false,
+      "extends": "size",
+      "desc": "The maximum height of the Tooltip; Size in CSS units, including unit name",
+      "category": "content"
+    },
+    "max-width": {
+      "value": "",
+      "type": "String | null",
+      "description": "",
+      "description_zh": "",
+      "default": "null",
+      "required": false,
+      "extends": "size",
+      "desc": "The maximum width of the Tooltip; Size in CSS units, including unit name",
+      "category": "content"
+    },
+    "anchor": {
+      "value": "",
+      "type": "String",
+      "description": "Two values setting the starting position or anchor point of the Tooltip relative to its target",
+      "description_zh": "两个值，用于设置 Tooltip 相对于其目标的起始位置或锚点",
+      "default": "'bottom middle'",
+      "required": false
+    },
+    "self": {
+      "value": "",
+      "type": "String",
+      "description": "Two values setting the Tooltip's own position relative to its target",
+      "description_zh": "两个值设置 Tooltip 自身相对于其目标的位置",
+      "default": "'top middle'",
+      "required": false
+    },
+    "offset": {
+      "value": "",
+      "type": "Array",
+      "description": "An array of two numbers to offset the Tooltip horizontally and vertically in pixels",
+      "description_zh": "一个包含两个数字的数组，用于在水平和垂直方向上偏移工具提示（以像素为单位）",
+      "default": "[ 14, 14 ]",
+      "required": false
+    },
+    "scroll-target": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "",
+      "required": false,
+      "extends": "scroll-target"
     },
     "delay": {
       "value": "",
       "type": "Number",
       "description": "Configure Tooltip to appear with delay",
-      "default": 0,
-      "description_zh": "将工具提示配置为延迟显示"
+      "description_zh": "将工具提示配置为延迟显示",
+      "default": "0",
+      "required": false
     },
     "hide-delay": {
       "value": "",
       "type": "Number",
       "description": "Configure Tooltip to disappear with delay",
-      "default": 0,
-      "description_zh": "将工具提示配置为延迟消失"
+      "description_zh": "将工具提示配置为延迟消失",
+      "default": "0",
+      "required": false
+    },
+    "persistent": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Prevents Tooltip from auto-closing when app's route changes",
+      "description_zh": "防止 Tooltip 在应用程序的路由更改时自动关闭",
+      "default": "false",
+      "required": false
     }
   },
   "link": "https://v2.quasar.dev/vue-components/tooltip",
-  "link_zh": "https://v2.quasar.dev/vue-components/tooltip"
+  "link_zh": "https://v2.quasar.dev/vue-components/tooltip",
+  "slots": [
+    {
+      "name": "default",
+      "description": "",
+      "description_zh": ""
+    }
+  ]
 }

@@ -1,0 +1,153 @@
+{
+  "name": "QChatMessage",
+  "methods": [],
+  "events": [],
+  "props": {
+    "sent": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Render as a sent message (so from current user)",
+      "description_zh": "渲染为已发送消息（来自当前用户）",
+      "default": "false",
+      "required": false
+    },
+    "label": {
+      "value": "",
+      "type": "String",
+      "description": "Renders a label header/section only",
+      "description_zh": "仅呈现标签标题/部分",
+      "default": "",
+      "required": false
+    },
+    "bg-color": {
+      "type": "String",
+      "description": "Color name for component from the Quasar Color Palette",
+      "value": "",
+      "default": "'primary'",
+      "extends": "color",
+      "desc": "Color name (from the Quasar Color Palette) for chat bubble background",
+      "category": "style",
+      "description_zh": "Quasar Color Palette （类星体调色板） 中组件的颜色名称"
+    },
+    "text-color": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "",
+      "required": false,
+      "extends": "text-color",
+      "desc": "Color name (from the Quasar Color Palette) for chat bubble text",
+      "category": "style"
+    },
+    "name": {
+      "value": "",
+      "type": "String",
+      "description": "Author's name",
+      "description_zh": "作者姓名",
+      "default": "",
+      "required": false
+    },
+    "avatar": {
+      "value": "",
+      "type": "String",
+      "description": "URL to the avatar image of the author",
+      "description_zh": "指向作者头像图像的 URL",
+      "default": "",
+      "required": false
+    },
+    "text": {
+      "value": "",
+      "type": "Array",
+      "description": "Array of strings that are the message body. Strings are not sanitized (see details in docs)",
+      "description_zh": "作为消息正文的字符串数组。字符串未被清理（请参阅文档中的详细信息）",
+      "default": "",
+      "required": false
+    },
+    "stamp": {
+      "value": "",
+      "type": "String",
+      "description": "Creation timestamp",
+      "description_zh": "创建时间戳",
+      "default": "",
+      "required": false
+    },
+    "size": {
+      "value": "",
+      "type": "String",
+      "description": "1-12 out of 12 (same as col-*)",
+      "description_zh": "12 分中的 1-12 分（与 col-* 相同）",
+      "default": "",
+      "required": false
+    },
+    "label-html": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "",
+      "required": false,
+      "extends": "html",
+      "desc": "Render the label as HTML; This can lead to XSS attacks so make sure that you sanitize the message first"
+    },
+    "name-html": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "",
+      "required": false,
+      "extends": "html",
+      "desc": "Render the name as HTML; This can lead to XSS attacks so make sure that you sanitize the message first"
+    },
+    "text-html": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "",
+      "required": false,
+      "extends": "html",
+      "desc": "Render the text as HTML; This can lead to XSS attacks so make sure that you sanitize the message first"
+    },
+    "stamp-html": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "",
+      "required": false,
+      "extends": "html",
+      "desc": "Render the stamp as HTML; This can lead to XSS attacks so make sure that you sanitize the message first"
+    }
+  },
+  "link": "https://v2.quasar.dev/vue-components/chat",
+  "link_zh": "https://v2.quasar.dev/vue-components/chat",
+  "slots": [
+    {
+      "name": "default",
+      "description": "You can use this slot to define a custom message (overrides props)",
+      "description_zh": "您可以使用此插槽来定义自定义消息 （overrides props）"
+    },
+    {
+      "name": "avatar",
+      "description": "Slot for avatar; Suggestion: QAvatar, img",
+      "description_zh": "头像插槽;建议： QAvatar， img"
+    },
+    {
+      "name": "name",
+      "description": "Slot for name; Overrides the 'name' prop",
+      "description_zh": "名称槽;覆盖 'name' 属性"
+    },
+    {
+      "name": "stamp",
+      "description": "Slot for stamp; Overrides the 'stamp' prop",
+      "description_zh": "邮票槽;覆盖 'stamp' 属性"
+    },
+    {
+      "name": "label",
+      "description": "Slot for label; Overrides the 'label' prop",
+      "description_zh": "标签槽;覆盖 'label' 属性"
+    }
+  ]
+}

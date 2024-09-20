@@ -4,94 +4,109 @@
     {
       "name": "getNodeByKey",
       "description": "Get the node with the given key",
+      "description_zh": "获取具有给定 key 的节点",
       "params": "(key: Any) => Object",
-      "description_zh": "获取具有给定密钥的节点"
+      "value": ""
     },
     {
       "name": "getTickedNodes",
       "description": "Get array of nodes that are ticked",
+      "description_zh": "获取已标记的节点数组",
       "params": "",
-      "description_zh": "获取勾选的节点数组"
+      "value": ""
     },
     {
       "name": "getExpandedNodes",
       "description": "Get array of nodes that are expanded",
+      "description_zh": "获取展开的节点数组",
       "params": "",
-      "description_zh": "获取扩展的节点数组"
+      "value": ""
     },
     {
       "name": "isExpanded",
       "description": "Determine if a node is expanded",
+      "description_zh": "确定节点是否已扩展",
       "params": "(key: Any) => Boolean",
-      "description_zh": "确定节点是否已展开"
+      "value": ""
     },
     {
       "name": "expandAll",
       "description": "Use to expand all branches of the tree",
+      "description_zh": "用于展开树的所有分支",
       "params": "",
-      "description_zh": "用于展开树的所有分支"
+      "value": ""
     },
     {
       "name": "collapseAll",
       "description": "Use to collapse all branches of the tree",
+      "description_zh": "用于折叠树的所有分支",
       "params": "",
-      "description_zh": "用于折叠树的所有分支"
+      "value": ""
     },
     {
       "name": "setExpanded",
       "description": "Expands the tree at the point of the node with the key given",
+      "description_zh": "使用给定的键在节点的点处扩展树",
       "params": "(key: Any, state: Boolean) => void",
-      "description_zh": "使用给定的键展开节点点处的树"
+      "value": ""
     },
     {
       "name": "isTicked",
       "description": "Method to check if a node's checkbox is selected or not",
+      "description_zh": "检查节点的复选框是否被选中的方法",
       "params": "(key: Any) => Boolean",
-      "description_zh": "检查节点复选框是否被选中的方法"
+      "value": ""
     },
     {
       "name": "setTicked",
       "description": "Method to set a node's checkbox programmatically",
+      "description_zh": "以编程方式设置节点复选框的方法",
       "params": "(keys: Array, state: Boolean) => void",
-      "description_zh": "以编程方式设置节点复选框的方法"
+      "value": ""
     }
   ],
   "events": [
     {
       "name": "update:expanded",
       "description": "Triggered when nodes are expanded or collapsed; Used by Vue on 'v-model:update' to update its value",
+      "description_zh": "当节点展开或折叠时触发;被 Vue 在 'v-model：update' 上使用以更新其值",
       "params": "(expanded: Array) => void",
-      "description_zh": "当节点展开或折叠时触发;Vue 在 'v-model：update' 上使用 来更新其值"
+      "value": ""
     },
     {
       "name": "lazy-load",
       "description": "Emitted when the lazy loading of nodes is finished",
+      "description_zh": "当节点的延迟加载完成时发出",
       "params": "(details: Object) => void",
-      "description_zh": "节点延迟加载完成时发出"
+      "value": ""
     },
     {
       "name": "update:ticked",
       "description": "Emitted when nodes are ticked/unticked via the checkbox; Used by Vue on 'v-model:ticked' to update its value",
+      "description_zh": "通过复选框勾选/取消勾选节点时发出;被 Vue 在 'v-model：ticked' 上使用来更新它的值",
       "params": "(target: Array) => void",
-      "description_zh": "通过复选框勾选/取消勾选节点时发出;由 Vue 在 'v-model：ticked' 上使用来更新其值"
+      "value": ""
     },
     {
       "name": "update:selected",
       "description": "Emitted when selected node changes; Used by Vue on 'v-model:selected' to update its value",
+      "description_zh": "当选定节点更改时发出;Vue 在 'v-model：selected' 上使用来更新它的值",
       "params": "(target: Any) => void",
-      "description_zh": "所选节点更改时发出;由 Vue 在 'v-model：selected' 上使用来更新其值"
+      "value": ""
     },
     {
       "name": "after-show",
       "description": "",
+      "description_zh": "",
       "params": "",
-      "description_zh": ""
+      "value": ""
     },
     {
       "name": "after-hide",
       "description": "",
+      "description_zh": "",
       "params": "",
-      "description_zh": ""
+      "value": ""
     }
   ],
   "props": {
@@ -99,210 +114,254 @@
       "value": "",
       "type": "Array",
       "description": "The array of nodes that designates the tree structure",
+      "description_zh": "指定树结构的节点数组",
       "default": "",
-      "description_zh": "指定树结构的节点数组"
+      "required": true
     },
     "node-key": {
       "value": "",
       "type": "String",
       "description": "The property name of each node object that holds a unique node id",
+      "description_zh": "包含唯一节点 ID 的每个节点对象的属性名称",
       "default": "",
-      "description_zh": "保存唯一节点 ID 的每个节点对象的属性名称"
+      "required": true
     },
     "label-key": {
       "value": "",
       "type": "String",
       "description": "The property name of each node object that holds the label of the node",
-      "default": "label",
-      "description_zh": "保存节点标签的每个节点对象的属性名称"
+      "description_zh": "保存节点标签的每个节点对象的属性名称",
+      "default": "'label'",
+      "required": false
     },
     "children-key": {
       "value": "",
       "type": "String",
       "description": "The property name of each node object that holds the list of children of the node",
-      "default": "children",
-      "description_zh": "保存节点子级列表的每个节点对象的属性名称"
+      "description_zh": "保存节点的子项列表的每个节点对象的属性名称",
+      "default": "'children'",
+      "required": false
     },
     "no-connectors": {
       "value": "",
       "type": "Boolean",
       "description": "Do not display the connector lines between nodes",
+      "description_zh": "不在节点之间显示连接线",
       "default": "false",
-      "description_zh": "不显示节点之间的连接线"
+      "required": false
     },
     "color": {
       "type": "String | Array",
       "description": "Color name for component from the Quasar Color Palette",
       "value": "",
-      "default": "grey-8",
+      "default": "'grey-8'",
       "extends": "color",
       "desc": "Color name for selected nodes (from the Quasar Color Palette)",
       "category": "style",
-      "addedIn": "v2.4",
+      "__runtimeDefault": true,
       "examples": [
-        "primary",
-        "teal-10",
-        "[\"accent\", \"grey-7\"] "
+        "[ 'accent', 'grey-7' ]"
       ],
-      "description_zh": "类星体调色板中组件的颜色名称"
+      "addedIn": "v2.4",
+      "description_zh": "Quasar Color Palette （类星体调色板） 中组件的颜色名称"
     },
     "control-color": {
       "type": "String | Array",
       "description": "Color name for component from the Quasar Color Palette",
       "value": "",
-      "default": "grey-8",
+      "default": "'grey-8'",
       "extends": "color",
       "desc": "Color name for selected nodes (from the Quasar Color Palette)",
       "category": "style",
-      "addedIn": "v2.4",
+      "__runtimeDefault": true,
       "examples": [
-        "primary",
-        "teal-10",
-        "[\"accent\", \"grey-7\"] "
+        "[ 'accent', 'grey-7' ]"
       ],
-      "description_zh": "类星体调色板中组件的颜色名称"
+      "addedIn": "v2.4",
+      "description_zh": "Quasar Color Palette （类星体调色板） 中组件的颜色名称"
     },
     "text-color": {
       "value": "",
       "type": "String",
       "description": "",
+      "description_zh": "",
       "default": "",
-      "extends": "text-color",
-      "description_zh": ""
+      "required": false,
+      "extends": "text-color"
     },
     "selected-color": {
       "type": "String | Array",
       "description": "Color name for component from the Quasar Color Palette",
       "value": "",
-      "default": "grey-8",
+      "default": "'grey-8'",
       "extends": "color",
       "desc": "Color name for selected nodes (from the Quasar Color Palette)",
       "category": "style",
-      "addedIn": "v2.4",
+      "__runtimeDefault": true,
       "examples": [
-        "primary",
-        "teal-10",
-        "[\"accent\", \"grey-7\"] "
+        "[ 'accent', 'grey-7' ]"
       ],
-      "description_zh": "类星体调色板中组件的颜色名称"
+      "addedIn": "v2.4",
+      "description_zh": "Quasar Color Palette （类星体调色板） 中组件的颜色名称"
     },
     "dense": {
       "value": "",
       "type": "String",
       "description": "",
+      "description_zh": "",
       "default": "",
+      "version": "v2.2.4",
+      "required": false,
       "extends": "dense",
-      "addedIn": "v2.2.4",
-      "description_zh": ""
+      "addedIn": "v2.2.4"
     },
     "dark": {
       "value": "",
       "type": "String",
       "description": "",
+      "description_zh": "",
       "default": "",
-      "extends": "dark",
-      "description_zh": ""
+      "required": false,
+      "extends": "dark"
     },
     "icon": {
       "value": "",
       "type": "String",
       "description": "",
+      "description_zh": "",
       "default": "",
-      "extends": "icon",
-      "description_zh": ""
+      "required": false,
+      "extends": "icon"
     },
     "tick-strategy": {
       "value": "",
       "type": "String",
       "description": "The type of strategy to use for the selection of the nodes",
-      "default": "none",
-      "description_zh": "用于选择节点的策略类型"
+      "description_zh": "用于选择节点的策略类型",
+      "default": "'none'",
+      "required": false
     },
     "ticked": {
       "value": "",
       "type": "Array",
       "description": "Keys of nodes that are ticked",
+      "description_zh": "已勾选的节点的键",
       "default": "",
-      "description_zh": "勾选的节点键"
+      "required": false
     },
     "expanded": {
       "value": "",
       "type": "Array",
       "description": "Keys of nodes that are expanded",
+      "description_zh": "展开的节点的键",
       "default": "",
-      "description_zh": "扩展的节点键"
+      "required": false
     },
     "selected": {
       "value": "",
       "type": "Any",
       "description": "Key of node currently selected",
+      "description_zh": "当前所选节点的键",
       "default": "",
-      "description_zh": "当前选择的节点的密钥"
+      "required": false
     },
     "no-selection-unset": {
       "value": "",
       "type": "Boolean",
       "description": "Do not allow un-selection when clicking currently selected node",
+      "description_zh": "单击当前所选节点时不允许取消选择",
       "default": "false",
-      "description_zh": "单击当前选定的节点时不允许取消选择"
+      "version": "v2.4.10",
+      "required": false
     },
     "default-expand-all": {
       "value": "",
       "type": "Boolean",
       "description": "Allow the tree to have all its branches expanded, when first rendered",
+      "description_zh": "允许树在首次渲染时展开其所有分支",
       "default": "false",
-      "description_zh": "允许树在首次呈现时展开其所有分支"
+      "required": false
     },
     "accordion": {
       "value": "",
       "type": "Boolean",
       "description": "Allows the tree to be set in accordion mode",
+      "description_zh": "允许在折叠模式下设置树",
       "default": "false",
-      "description_zh": "允许在折叠模式下设置树"
+      "required": false
     },
     "no-transition": {
       "value": "",
       "type": "Boolean",
       "description": "Turn off transition effects when expanding/collapsing nodes; Also enhances perf by a lot as a side-effect; Recommended for big trees",
+      "description_zh": "在展开/折叠节点时关闭过渡效果;作为副作用，还可以大大提高性能;推荐用于大树",
       "default": "false",
-      "description_zh": "在展开/折叠节点时关闭过渡效果;作为副作用，还大大提高了性能;推荐用于大树"
+      "version": "v2.9.2",
+      "required": false
     },
     "filter": {
       "value": "",
       "type": "String",
       "description": "The text value to be used for filtering nodes",
+      "description_zh": "用于筛选节点的文本值",
       "default": "",
-      "description_zh": "用于筛选节点的文本值"
+      "required": false
     },
     "filter-method": {
       "value": "",
       "type": "Function",
       "description": "The function to use to filter the tree nodes; For best performance, reference it from your scope and do not define it inline",
-      "default": "(see source code)",
-      "description_zh": "用于筛选树节点的函数;为了获得最佳性能，请从您的范围引用它，不要以内联方式定义它"
+      "description_zh": "用于筛选树节点的函数;为了获得最佳性能，请从您的范围中引用它，不要内联定义它",
+      "default": "",
+      "required": false
     },
     "duration": {
       "value": "",
       "type": "Number",
       "description": "Toggle animation duration (in milliseconds)",
-      "default": 300,
-      "description_zh": "切换动画持续时间（以毫秒为单位）"
+      "description_zh": "切换动画持续时间（以毫秒为单位）",
+      "default": "300",
+      "required": false
     },
     "no-nodes-label": {
       "value": "",
       "type": "String",
       "description": "Override default such label for when no nodes are available",
+      "description_zh": "在没有节点可用时覆盖默认的此类标签",
       "default": "",
-      "description_zh": "在没有可用节点时覆盖默认的此类标签"
+      "required": false
     },
     "no-results-label": {
       "value": "",
       "type": "String",
       "description": "Override default such label for when no nodes are available due to filtering",
+      "description_zh": "覆盖默认的此类标签，用于由于筛选而没有可用的节点",
       "default": "",
-      "description_zh": "当由于过滤而没有可用的节点时，覆盖默认的此类标签"
+      "required": false
     }
   },
   "link": "https://v2.quasar.dev/vue-components/tree",
-  "link_zh": "https://v2.quasar.dev/vue-components/tree"
+  "link_zh": "https://v2.quasar.dev/vue-components/tree",
+  "slots": [
+    {
+      "name": "default-header",
+      "description": "Slot to use for defining the header of a node",
+      "description_zh": "用于定义节点标头的插槽"
+    },
+    {
+      "name": "header-[name]",
+      "description": "Header template slot for describing node header; Used by nodes which have their 'header' prop set to '[name]', where '[name]' can be any string",
+      "description_zh": "描述节点 header 的 header 模板槽;由将 'header' 属性设置为 '[name]' 的节点使用，其中 '[name]' 可以是任何字符串"
+    },
+    {
+      "name": "default-body",
+      "description": "Slot to use for defining the body of a node",
+      "description_zh": "用于定义节点主体的插槽"
+    },
+    {
+      "name": "body-[name]",
+      "description": "Body template slot for describing node body; Used by nodes which have their 'body' prop set to '[name]', where '[name]' can be any string",
+      "description_zh": "body 模板槽位，用于描述节点 body ;由将 'body' 属性设置为 '[name]' 的节点使用，其中 '[name]' 可以是任何字符串"
+    }
+  ]
 }

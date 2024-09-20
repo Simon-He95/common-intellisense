@@ -1,87 +1,316 @@
 {
-  "mixins": ["composables/private/use-field", "components/input/use-mask", "composables/private/use-form"],
-
+  "mixins": [
+    "composables/private.use-validate/use-validate"
+  ],
   "meta": {
     "docsUrl": "https://v2.quasar.dev/vue-components/input"
   },
-
   "props": {
+    "name": {
+      "type": "String",
+      "desc": "Used to specify the name of the control; Useful if dealing with forms; If not specified, it takes the value of 'for' prop, if it exists",
+      "examples": [
+        "'car_id'"
+      ],
+      "category": "behavior"
+    },
+    "mask": {
+      "type": "String",
+      "desc": "Custom mask or one of the predefined mask names",
+      "examples": [
+        "'###-##'",
+        "'date'",
+        "'datetime'",
+        "'time'",
+        "'fulltime'",
+        "'phone'",
+        "'card'"
+      ],
+      "category": "behavior"
+    },
+    "fill-mask": {
+      "type": [
+        "Boolean",
+        "String"
+      ],
+      "desc": "Fills string with specified characters (or underscore if value is not string) to fill mask's length",
+      "examples": [
+        "true",
+        "'0'",
+        "'_'"
+      ],
+      "category": "behavior"
+    },
+    "reverse-fill-mask": {
+      "type": "Boolean",
+      "desc": "Fills string from the right side of the mask",
+      "category": "behavior"
+    },
+    "unmasked-value": {
+      "type": "Boolean",
+      "desc": "Model will be unmasked (won't contain tokens/separation characters)",
+      "category": "behavior"
+    },
+    "label": {
+      "type": "String",
+      "desc": "A text label that will “float” up above the input field, once the field gets focus",
+      "examples": [
+        "'Username'"
+      ],
+      "category": "content"
+    },
+    "stack-label": {
+      "type": "Boolean",
+      "desc": "Label will be always shown above the field regardless of field content (if any)",
+      "category": "content"
+    },
+    "hint": {
+      "type": "String",
+      "desc": "Helper (hint) text which gets placed below your wrapped form component",
+      "examples": [
+        "'Fill in between 3 and 12 characters'"
+      ],
+      "category": "content"
+    },
+    "hide-hint": {
+      "type": "Boolean",
+      "desc": "Hide the helper (hint) text when field doesn't have focus",
+      "category": "content"
+    },
+    "prefix": {
+      "type": "String",
+      "desc": "Prefix",
+      "examples": [
+        "'$'"
+      ],
+      "category": "content"
+    },
+    "suffix": {
+      "type": "String",
+      "desc": "Suffix",
+      "examples": [
+        "'@gmail.com'"
+      ],
+      "category": "content"
+    },
+    "label-color": {
+      "extends": "color",
+      "desc": "Color name for the label from the Quasar Color Palette; Overrides the 'color' prop; The difference from 'color' prop is that the label will always have this color, even when field is not focused"
+    },
+    "color": {
+      "extends": "color"
+    },
+    "bg-color": {
+      "extends": "color"
+    },
+    "dark": {
+      "extends": "dark"
+    },
+    "loading": {
+      "type": "Boolean",
+      "desc": "Signals the user a process is in progress by displaying a spinner; Spinner can be customized by using the 'loading' slot.",
+      "category": "behavior|content"
+    },
+    "clearable": {
+      "type": "Boolean",
+      "desc": "Appends clearable icon when a value (not undefined or null) is set; When clicked, model becomes null",
+      "category": "behavior|content"
+    },
+    "clear-icon": {
+      "type": "String",
+      "desc": "Custom icon to use for the clear button when using along with 'clearable' prop",
+      "examples": [
+        "'close'"
+      ],
+      "category": "content"
+    },
+    "filled": {
+      "type": "Boolean",
+      "desc": "Use 'filled' design for the field",
+      "category": "style"
+    },
+    "outlined": {
+      "type": "Boolean",
+      "desc": "Use 'outlined' design for the field",
+      "category": "style"
+    },
+    "borderless": {
+      "type": "Boolean",
+      "desc": "Use 'borderless' design for the field",
+      "category": "style"
+    },
+    "standout": {
+      "type": [
+        "Boolean",
+        "String"
+      ],
+      "desc": "Use 'standout' design for the field; Specifies classes to be applied when focused (overriding default ones)",
+      "examples": [
+        "true",
+        "'bg-primary text-white'"
+      ],
+      "category": "style"
+    },
+    "label-slot": {
+      "type": "Boolean",
+      "desc": "Enables label slot; You need to set it to force use of the 'label' slot if the 'label' prop is not set",
+      "category": "content"
+    },
+    "bottom-slots": {
+      "type": "Boolean",
+      "desc": "Enables bottom slots ('error', 'hint', 'counter')",
+      "category": "content"
+    },
+    "hide-bottom-space": {
+      "type": "Boolean",
+      "desc": "Do not reserve space for hint/error/counter anymore when these are not used; As a result, it also disables the animation for those; It also allows the hint/error area to stretch vertically based on its content",
+      "category": "style"
+    },
+    "counter": {
+      "type": "Boolean",
+      "desc": "Show an automatic counter on bottom right",
+      "category": "content"
+    },
+    "rounded": {
+      "extends": "rounded"
+    },
+    "square": {
+      "type": "Boolean",
+      "desc": "Remove border-radius so borders are squared; Overrides 'rounded' prop",
+      "category": "style"
+    },
+    "dense": {
+      "extends": "dense"
+    },
+    "item-aligned": {
+      "type": "Boolean",
+      "desc": "Match inner content alignment to that of QItem",
+      "category": "style"
+    },
+    "disable": {
+      "extends": "disable"
+    },
+    "readonly": {
+      "extends": "readonly"
+    },
+    "autofocus": {
+      "type": "Boolean",
+      "desc": "Focus field on initial component render",
+      "category": "behavior"
+    },
+    "for": {
+      "type": "String",
+      "desc": "Used to specify the 'id' of the control and also the 'for' attribute of the label that wraps it; If no 'name' prop is specified, then it is used for this attribute as well",
+      "examples": [
+        "'myFieldsId'"
+      ],
+      "category": "behavior"
+    },
     "model-value": {
       "extends": "model-value",
-      "type": ["String", "Number", "null", "undefined"],
+      "type": [
+        "String",
+        "Number",
+        "FileList",
+        "null",
+        "undefined"
+      ],
       "desc": "Model of the component; Either use this property (along with a listener for 'update:modelValue' event) OR use v-model directive",
-      "examples": ["v-model=\"myText\""]
+      "examples": [
+        "# v-model=\"myText\""
+      ]
     },
-
     "shadow-text": {
       "type": "String",
       "desc": "Text to be displayed as shadow at the end of the text in the control; Does NOT applies to type=file",
-      "examples": ["rest of the fill value"],
+      "examples": [
+        "'rest of the fill value'"
+      ],
       "category": "content"
     },
-
     "type": {
       "type": "String",
       "desc": "Input type",
-      "default": "text",
+      "default": "'text'",
       "values": [
-        "text", "password", "textarea", "email", "search",
-        "tel", "file", "number", "url", "time", "date"
+        "'text'",
+        "'password'",
+        "'textarea'",
+        "'email'",
+        "'search'",
+        "'tel'",
+        "'file'",
+        "'number'",
+        "'url'",
+        "'time'",
+        "'date'",
+        "'datetime-local'"
       ],
       "category": "general"
     },
-
     "debounce": {
-      "type": ["String", "Number"],
+      "type": [
+        "String",
+        "Number"
+      ],
       "desc": "Debounce amount (in milliseconds) when updating model",
       "category": "model"
     },
-
     "maxlength": {
-      "type": ["String", "Number"],
+      "type": [
+        "String",
+        "Number"
+      ],
       "desc": "Specify a max length of model",
       "category": "model"
     },
-
     "autogrow": {
       "type": "Boolean",
       "desc": "Make field autogrow along with its content (uses a textarea)",
       "category": "content"
     },
-
     "input-class": {
-      "type": ["String", "Array", "Object"],
+      "type": [
+        "String",
+        "Array",
+        "Object"
+      ],
       "tsType": "VueClassProp",
       "desc": "Class definitions to be attributed to the underlying input tag",
       "examples": [
-        "my-special-class",
-        ":input-class=\"{ 'my-special-class': <condition> }\""
+        "'my-special-class'",
+        "{ 'my-special-class': true }"
       ],
       "category": "style"
     },
-
     "input-style": {
-      "type": ["String", "Array", "Object"],
+      "type": [
+        "String",
+        "Array",
+        "Object"
+      ],
       "tsType": "VueStyleProp",
       "desc": "Style definitions to be attributed to the underlying input tag",
       "examples": [
-        "background-color: #ff0000",
-        ":input-style=\"{ backgroundColor: '#ff0000' }\""
+        "'background-color: #ff0000'",
+        "{ backgroundColor: '#ff0000' }"
       ],
       "category": "style"
     }
   },
-
   "events": {
     "update:model-value": {
       "extends": "update:model-value",
       "params": {
         "value": {
-          "type": ["String", "Number", "null"]
+          "type": [
+            "String",
+            "Number",
+            "null"
+          ]
         }
       }
     },
-
     "focus": {
       "desc": "Emitted when component gets focused",
       "params": {
@@ -90,7 +319,6 @@
         }
       }
     },
-
     "blur": {
       "desc": "Emitted when component loses focus",
       "params": {
@@ -98,24 +326,51 @@
           "extends": "evt"
         }
       }
+    },
+    "clear": {
+      "desc": "When using the 'clearable' property, this event is emitted when the clear icon is clicked",
+      "params": {
+        "value": {
+          "type": "Any",
+          "desc": "The previous value before clearing it"
+        }
+      }
+    },
+    "click": {
+      "internal": true
+    },
+    "paste": {
+      "internal": true
+    },
+    "animationend": {
+      "internal": true
+    },
+    "change": {
+      "internal": true
+    },
+    "keydown": {
+      "internal": true
     }
   },
-
   "methods": {
     "focus": {
-      "desc": "Focus underlying input tag"
+      "desc": "Focus underlying input tag",
+      "params": null,
+      "returns": null
     },
-
     "blur": {
-      "desc": "Lose focus on underlying input tag"
+      "desc": "Lose focus on underlying input tag",
+      "params": null,
+      "returns": null
     },
-
     "select": {
-      "desc": "Select input text"
+      "desc": "Select input text",
+      "params": null,
+      "returns": null
     },
-
     "getNativeElement": {
       "desc": "DEPRECATED; Access 'nativeEl' directly instead; Get the native input/textarea DOM Element",
+      "params": null,
       "returns": {
         "type": "Element",
         "tsType": "QInputNativeElement",
@@ -123,13 +378,44 @@
       }
     }
   },
-
   "computedProps": {
     "nativeEl": {
       "type": "Element",
       "tsType": "QInputNativeElement",
       "desc": "The native input/textarea DOM Element",
       "addedIn": "v2.10.1"
+    }
+  },
+  "slots": {
+    "default": {
+      "desc": "Field main content"
+    },
+    "prepend": {
+      "desc": "Prepend inner field; Suggestions: QIcon, QBtn"
+    },
+    "append": {
+      "desc": "Append to inner field; Suggestions: QIcon, QBtn"
+    },
+    "before": {
+      "desc": "Prepend outer field; Suggestions: QIcon, QBtn"
+    },
+    "after": {
+      "desc": "Append outer field; Suggestions: QIcon, QBtn"
+    },
+    "label": {
+      "desc": "Slot for label; Used only if 'label-slot' prop is set or the 'label' prop is set; When it is used the text in the 'label' prop is ignored"
+    },
+    "error": {
+      "desc": "Slot for errors; Enabled only if 'bottom-slots' prop is used; Suggestion: <div>"
+    },
+    "hint": {
+      "desc": "Slot for hint text; Enabled only if 'bottom-slots' prop is used; Suggestion: <div>"
+    },
+    "counter": {
+      "desc": "Slot for counter text; Enabled only if 'bottom-slots' prop is used; Suggestion: <div>"
+    },
+    "loading": {
+      "desc": "Override default spinner when component is in loading mode; Use in conjunction with 'loading' prop"
     }
   }
 }

@@ -5,18 +5,21 @@
       "name": "show",
       "params": "",
       "description": "",
+      "value": "",
       "description_zh": ""
     },
     {
       "name": "hide",
       "params": "",
       "description": "",
+      "value": "",
       "description_zh": ""
     },
     {
       "name": "toggle",
       "params": "",
       "description": "",
+      "value": "",
       "description_zh": ""
     }
   ],
@@ -24,53 +27,75 @@
     {
       "name": "update:model-value",
       "description": "",
+      "description_zh": "",
       "params": "",
-      "description_zh": ""
+      "value": ""
     },
     {
       "name": "before-show",
       "description": "",
+      "description_zh": "",
       "params": "",
-      "description_zh": ""
+      "value": ""
     },
     {
       "name": "show",
       "description": "",
+      "description_zh": "",
       "params": "",
-      "description_zh": ""
+      "value": ""
     },
     {
       "name": "before-hide",
       "description": "",
+      "description_zh": "",
       "params": "",
-      "description_zh": ""
+      "value": ""
     },
     {
       "name": "hide",
       "description": "",
+      "description_zh": "",
       "params": "",
-      "description_zh": ""
+      "value": ""
     }
   ],
   "props": {
+    "context-menu": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Allows the component to behave like a context menu, which opens with a right mouse click (or long tap on mobile)",
+      "description_zh": "允许组件的行为类似于上下文菜单，该菜单通过右键单击（或在移动设备上长按）打开",
+      "default": "false",
+      "required": false
+    },
     "model-value": {
       "value": "",
       "type": "Boolean",
       "description": "",
+      "description_zh": "",
       "default": "",
+      "required": false,
       "extends": "model-value",
       "desc": "Defines the state of the component (shown/hidden); Either use this property (along with a listener for 'update:modelValue' event) OR use v-model directive",
-      "required": false,
-      "description_zh": ""
+      "passthrough": true
     },
     "breakpoint": {
       "value": "",
       "type": "Number | String",
       "description": "Breakpoint (in pixels) of window width/height (whichever is smaller) from where a Menu will get to be used instead of a Dialog",
-      "default": 450,
-      "description_zh": "窗口宽度/高度（以较小者为准）的断点（以像素为单位），从该断点开始使用菜单而不是对话框"
+      "description_zh": "窗口宽度/高度（以较小者为准）的断点（以像素为单位），从该断点开始将使用 Menu 而不是 Dialog",
+      "default": "450",
+      "required": false
     }
   },
   "link": "https://v2.quasar.dev/vue-components/popup-proxy",
-  "link_zh": "https://v2.quasar.dev/vue-components/popup-proxy"
+  "link_zh": "https://v2.quasar.dev/vue-components/popup-proxy",
+  "slots": [
+    {
+      "name": "default",
+      "description": "",
+      "description_zh": ""
+    }
+  ]
 }

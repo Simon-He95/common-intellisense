@@ -1,0 +1,111 @@
+{
+  "name": "QTimelineEntry",
+  "methods": [],
+  "events": [],
+  "props": {
+    "heading": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Defines a heading timeline item",
+      "description_zh": "定义标题时间线项",
+      "default": "false",
+      "required": false
+    },
+    "tag": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "'h3'",
+      "required": false,
+      "extends": "tag",
+      "desc": "Tag to use, if of type 'heading' only",
+      "examples": [
+        "'h1'"
+      ]
+    },
+    "side": {
+      "value": "",
+      "type": "String",
+      "description": "Side to place the timeline entry; Works only if QTimeline layout is loose.",
+      "description_zh": "side 放置时间轴条目;仅当 QTimeline 布局松散时有效。",
+      "default": "'right'",
+      "required": false
+    },
+    "icon": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "",
+      "required": false,
+      "extends": "icon"
+    },
+    "avatar": {
+      "value": "",
+      "type": "String",
+      "description": "URL to the avatar image; Icon takes precedence if used, so it replaces avatar",
+      "description_zh": "头像图像的 URL;如果使用 Icon，则优先，因此它会替换 avatar",
+      "default": "",
+      "required": false
+    },
+    "color": {
+      "type": "String | Array",
+      "description": "Color name for component from the Quasar Color Palette",
+      "value": "",
+      "default": "'grey-8'",
+      "extends": "color",
+      "desc": "Override default icon color (for truthy state only); Color name for component from the Quasar Color Palette",
+      "category": "style",
+      "__runtimeDefault": true,
+      "examples": [
+        "[ 'accent', 'grey-7' ]"
+      ],
+      "addedIn": "v2.4",
+      "description_zh": "Quasar Color Palette （类星体调色板） 中组件的颜色名称"
+    },
+    "title": {
+      "value": "",
+      "type": "String",
+      "description": "Title of timeline entry; Is overridden if using 'title' slot",
+      "description_zh": "时间线条目的标题;如果使用 'title' 插槽，则被覆盖",
+      "default": "",
+      "required": false
+    },
+    "subtitle": {
+      "value": "",
+      "type": "String",
+      "description": "Subtitle of timeline entry; Is overridden if using 'subtitle' slot",
+      "description_zh": "时间线条目的字幕;如果使用 'subtitle' 插槽，则被覆盖",
+      "default": "",
+      "required": false
+    },
+    "body": {
+      "value": "",
+      "type": "String",
+      "description": "Body content of timeline entry; Use this prop or the default slot",
+      "description_zh": "时间线条目的正文内容;使用此 prop 或默认插槽",
+      "default": "",
+      "required": false
+    }
+  },
+  "link": "https://v2.quasar.dev/vue-components/timeline",
+  "link_zh": "https://v2.quasar.dev/vue-components/timeline",
+  "slots": [
+    {
+      "name": "default",
+      "description": "Timeline entry content (body)",
+      "description_zh": "时间线条目内容（正文）"
+    },
+    {
+      "name": "title",
+      "description": "Optional slot for title; When used, it overrides 'title' prop",
+      "description_zh": "标题的可选插槽;使用时，它会覆盖 'title' 属性"
+    },
+    {
+      "name": "subtitle",
+      "description": "Optional slot for subtitle; When used, it overrides 'subtitle' prop",
+      "description_zh": "字幕的可选插槽;使用时，它会覆盖 'subtitle' 属性"
+    }
+  ]
+}

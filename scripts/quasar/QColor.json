@@ -1,104 +1,217 @@
 {
-  "mixins": ["composables/private/use-form"],
-
+  "mixins": [
+    {
+      "props": {
+        "name": {
+          "type": "String",
+          "desc": "Used to specify the name of the control; Useful if dealing with forms submitted directly to a URL",
+          "examples": [
+            "'car_id'"
+          ],
+          "category": "behavior"
+        },
+        "model-value": {
+          "extends": "model-value",
+          "type": [
+            "String",
+            "null",
+            "undefined"
+          ],
+          "examples": [
+            "# v-model=\"myColor\""
+          ]
+        },
+        "default-value": {
+          "type": "String",
+          "desc": "The default value to show when the model doesn't have one",
+          "examples": [
+            "'#c0c0c0'"
+          ],
+          "category": "model"
+        },
+        "default-view": {
+          "type": "String",
+          "desc": "The default view of the picker",
+          "default": "'spectrum'",
+          "values": [
+            "'spectrum'",
+            "'tune'",
+            "'palette'"
+          ],
+          "category": "behavior"
+        },
+        "format-model": {
+          "type": "String",
+          "desc": "Forces a certain model format upon the model",
+          "default": "'auto'",
+          "values": [
+            "'auto'",
+            "'hex'",
+            "'rgb'",
+            "'hexa'",
+            "'rgba'"
+          ],
+          "category": "model"
+        },
+        "palette": {
+          "type": "Array",
+          "desc": "Use a custom palette of colors for the palette tab",
+          "default": "# hard-coded palette",
+          "__runtimeDefault": true,
+          "examples": [
+            "[ '#019A9D', '#D9B801', 'rgb(23,120,0)', '#B2028A' ]"
+          ],
+          "category": "content"
+        },
+        "square": {
+          "extends": "square"
+        },
+        "flat": {
+          "extends": "flat"
+        },
+        "bordered": {
+          "extends": "bordered"
+        },
+        "no-header": {
+          "type": "Boolean",
+          "desc": "Do not render header",
+          "category": "content"
+        },
+        "no-header-tabs": {
+          "type": "Boolean",
+          "desc": "Do not render header tabs (only the input)",
+          "category": "content",
+          "addedIn": "v2.2"
+        },
+        "no-footer": {
+          "type": "Boolean",
+          "desc": "Do not render footer; Useful when you want a specific view ('default-view' prop) and don't want the user to be able to switch it",
+          "category": "content"
+        },
+        "disable": {
+          "extends": "disable"
+        },
+        "readonly": {
+          "extends": "readonly"
+        },
+        "dark": {
+          "extends": "dark"
+        }
+      }
+    }
+  ],
   "meta": {
     "docsUrl": "https://v2.quasar.dev/vue-components/color-picker"
   },
-
   "props": {
+    "name": {
+      "type": "String",
+      "desc": "Used to specify the name of the control; Useful if dealing with forms submitted directly to a URL",
+      "examples": [
+        "'car_id'"
+      ],
+      "category": "behavior"
+    },
     "model-value": {
       "extends": "model-value",
-      "type": ["String", "null", "undefined"],
-      "examples": ["v-model=\"myColor\""]
+      "type": [
+        "String",
+        "null",
+        "undefined"
+      ],
+      "examples": [
+        "# v-model=\"myColor\""
+      ]
     },
-
     "default-value": {
       "type": "String",
       "desc": "The default value to show when the model doesn't have one",
-      "examples": ["default-value=\"#c0c0c0\""],
+      "examples": [
+        "'#c0c0c0'"
+      ],
       "category": "model"
     },
-
     "default-view": {
       "type": "String",
       "desc": "The default view of the picker",
-      "default": "spectrum",
-      "values": ["spectrum", "tune", "palette"],
+      "default": "'spectrum'",
+      "values": [
+        "'spectrum'",
+        "'tune'",
+        "'palette'"
+      ],
       "category": "behavior"
     },
-
     "format-model": {
       "type": "String",
       "desc": "Forces a certain model format upon the model",
-      "default": "auto",
-      "values": ["auto", "hex", "rgb", "hexa", "rgba"],
+      "default": "'auto'",
+      "values": [
+        "'auto'",
+        "'hex'",
+        "'rgb'",
+        "'hexa'",
+        "'rgba'"
+      ],
       "category": "model"
     },
-
     "palette": {
       "type": "Array",
       "desc": "Use a custom palette of colors for the palette tab",
-      "default": "(hard-coded palette)",
+      "default": "# hard-coded palette",
+      "__runtimeDefault": true,
       "examples": [
-        ":palette=\"[ '#019A9D', '#D9B801', 'rgb(23,120,0)', '#B2028A' ]\""
+        "[ '#019A9D', '#D9B801', 'rgb(23,120,0)', '#B2028A' ]"
       ],
       "category": "content"
     },
-
     "square": {
       "extends": "square"
     },
-
     "flat": {
       "extends": "flat"
     },
-
     "bordered": {
       "extends": "bordered"
     },
-
     "no-header": {
       "type": "Boolean",
       "desc": "Do not render header",
       "category": "content"
     },
-
     "no-header-tabs": {
       "type": "Boolean",
       "desc": "Do not render header tabs (only the input)",
       "category": "content",
       "addedIn": "v2.2"
     },
-
     "no-footer": {
       "type": "Boolean",
       "desc": "Do not render footer; Useful when you want a specific view ('default-view' prop) and don't want the user to be able to switch it",
       "category": "content"
     },
-
     "disable": {
       "extends": "disable"
     },
-
     "readonly": {
       "extends": "readonly"
     },
-
     "dark": {
       "extends": "dark"
     }
   },
-
   "events": {
     "update:model-value": {
       "extends": "update:model-value",
       "params": {
         "value": {
-          "type": ["String", "null"]
+          "type": [
+            "String",
+            "null"
+          ]
         }
       }
     },
-
     "change": {
       "extends": "update:model-value",
       "desc": "Emitted on lazy model value change (after user finishes selecting a color)"

@@ -5,85 +5,176 @@
     {
       "name": "click",
       "description": "Emitted when the component is clicked",
+      "description_zh": "单击组件时发出",
       "params": "(evt: undefined, go: Function) => void",
-      "description_zh": "单击组件时发出"
+      "value": ""
+    },
+    {
+      "name": "keyup",
+      "description": "",
+      "description_zh": "",
+      "params": "",
+      "value": ""
     }
   ],
   "props": {
-    "active": {
+    "to": {
+      "value": "",
+      "type": "String | Object",
+      "description": "Equivalent to Vue Router <router-link> 'to' property; Superseded by 'href' prop if used",
+      "description_zh": "等同于 Vue Router <router-link> 的 'to' 属性;如果使用，则被 'href' prop 取代",
+      "default": "",
+      "required": false
+    },
+    "exact": {
       "value": "",
       "type": "Boolean",
+      "description": "Equivalent to Vue Router <router-link> 'exact' property; Superseded by 'href' prop if used",
+      "description_zh": "等价于 Vue Router <router-link> 的 'exact' 属性;如果使用，则被 'href' prop 取代",
+      "default": "false",
+      "required": false
+    },
+    "replace": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Equivalent to Vue Router <router-link> 'replace' property; Superseded by 'href' prop if used",
+      "description_zh": "相当于 Vue Router <router-link> 的 'replace' 属性;如果使用，则被 'href' prop 取代",
+      "default": "false",
+      "required": false
+    },
+    "active-class": {
+      "value": "",
+      "type": "String",
+      "description": "Equivalent to Vue Router <router-link> 'active-class' property; Superseded by 'href' prop if used",
+      "description_zh": "等同于 Vue Router <router-link> 的 'active-class' 属性;如果使用，则被 'href' prop 取代",
+      "default": "'q-router-link--active'",
+      "required": false
+    },
+    "exact-active-class": {
+      "value": "",
+      "type": "String",
+      "description": "Equivalent to Vue Router <router-link> 'active-class' property; Superseded by 'href' prop if used",
+      "description_zh": "等同于 Vue Router <router-link> 的 'active-class' 属性;如果使用，则被 'href' prop 取代",
+      "default": "'q-router-link--exact-active'",
+      "required": false
+    },
+    "href": {
+      "value": "",
+      "type": "String",
+      "description": "Native <a> link href attribute; Has priority over the 'to'/'exact'/'replace'/'active-class'/'exact-active-class' props",
+      "description_zh": "原生<a>链接 href 属性;优先于 'to'/'exact'/'replace'/'active-class'/'exact-active-class' 属性",
+      "default": "",
+      "version": "v2.4",
+      "required": false
+    },
+    "target": {
+      "value": "",
+      "type": "String",
+      "description": "Native <a> link target attribute; Use it only along with 'href' prop; Has priority over the 'to'/'exact'/'replace'/'active-class'/'exact-active-class' props",
+      "description_zh": "Native <a> link 目标属性;只能与 'href' prop 一起使用;优先于 'to'/'exact'/'replace'/'active-class'/'exact-active-class' 属性",
+      "default": "",
+      "version": "v2.4",
+      "required": false
+    },
+    "disable": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "",
+      "required": false,
+      "extends": "disable"
+    },
+    "active": {
+      "value": "",
+      "type": "Boolean | null",
       "description": "Put item into 'active' state",
-      "default": null,
-      "description_zh": "将项目置于“活动”状态"
+      "description_zh": "将项目置于“活动”状态",
+      "default": "null",
+      "required": false
     },
     "dark": {
       "value": "",
       "type": "String",
       "description": "",
+      "description_zh": "",
       "default": "",
-      "extends": "dark",
-      "description_zh": ""
+      "required": false,
+      "extends": "dark"
     },
     "clickable": {
       "value": "",
       "type": "Boolean",
       "description": "Is QItem clickable? If it's the case, then it will add hover effects and emit 'click' events",
+      "description_zh": "QItem 是可点击的吗？如果是这种情况，那么它将添加悬停效果并发出 'click' 事件",
       "default": "false",
-      "description_zh": "QItem 可以点击吗？如果是这种情况，那么它将添加悬停效果并发出“点击”事件"
+      "required": false
     },
     "dense": {
       "value": "",
       "type": "String",
       "description": "",
+      "description_zh": "",
       "default": "",
-      "extends": "dense",
-      "description_zh": ""
+      "required": false,
+      "extends": "dense"
     },
     "inset-level": {
       "value": "",
       "type": "Number",
       "description": "Apply an inset; Useful when avatar/left side is missing but you want to align content with other items that do have a left side, or when you're building a menu",
+      "description_zh": "应用插入;当缺少头像/左侧，但您希望将内容与具有左侧的其他项目对齐时，或者当您正在构建菜单时，这很有用",
       "default": "",
-      "description_zh": "应用插图;当缺少头像/左侧，但您希望将内容与具有左侧的其他项目对齐时，或者当您构建菜单时，这很有用"
+      "required": false
     },
     "tabindex": {
       "value": "",
       "type": "String",
       "description": "",
+      "description_zh": "",
       "default": "",
-      "extends": "tabindex",
-      "description_zh": ""
+      "required": false,
+      "extends": "tabindex"
     },
     "tag": {
       "value": "",
       "type": "String",
       "description": "",
-      "default": "div",
+      "description_zh": "",
+      "default": "'div'",
+      "required": false,
       "extends": "tag",
       "desc": "HTML tag to render; Suggestion: use 'label' when encapsulating a QCheckbox/QRadio/QToggle so that when user clicks/taps on the whole item it will trigger a model change for the mentioned components",
       "examples": [
-        "a",
-        "label",
-        "div"
-      ],
-      "description_zh": ""
+        "'a'",
+        "'label'",
+        "'div'"
+      ]
     },
     "manual-focus": {
       "value": "",
       "type": "Boolean",
       "description": "Put item into a manual focus state; Enables 'focused' prop which will determine if item is focused or not, rather than relying on native hover/focus states",
+      "description_zh": "将 item 置于手动焦点状态;启用 'focused' 属性，它将确定项目是否被聚焦，而不是依赖于原生的悬停/焦点状态",
       "default": "false",
-      "description_zh": "将项目置于手动对焦状态;启用“聚焦”道具，该道具将确定项目是否聚焦，而不是依赖于本机悬停/聚焦状态"
+      "required": false
     },
     "focused": {
       "value": "",
       "type": "Boolean",
       "description": "Determines focus state, ONLY if 'manual-focus' is enabled / set to true",
+      "description_zh": "确定焦点状态，仅当 'manual-focus' 已启用 / 设置为 true 时",
       "default": "false",
-      "description_zh": "确定对焦状态，仅当启用/设置为 true 时"
+      "required": false
     }
   },
   "link": "https://v2.quasar.dev/vue-components/list-and-list-items",
-  "link_zh": "https://v2.quasar.dev/vue-components/list-and-list-items"
+  "link_zh": "https://v2.quasar.dev/vue-components/list-and-list-items",
+  "slots": [
+    {
+      "name": "default",
+      "description": "This is where QItem's content goes",
+      "description_zh": "这就是 QItem 的内容去哪里"
+    }
+  ]
 }

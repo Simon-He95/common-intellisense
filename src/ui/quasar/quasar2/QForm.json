@@ -4,64 +4,74 @@
     {
       "name": "focus",
       "description": "Focus on first focusable element/component in the form",
+      "description_zh": "将焦点放在表单中的第一个可聚焦元素/组件上",
       "params": "",
-      "description_zh": "将重点放在表单中的第一个可聚焦元素/组件上"
+      "value": ""
     },
     {
       "name": "validate",
       "description": "Triggers a validation on all applicable inner Quasar components",
+      "description_zh": "触发对所有适用的内部 Quasar 组件的验证",
       "params": "(shouldFocus: Boolean) => Promise<boolean>",
-      "description_zh": "触发对所有适用的内部类星体组件的验证"
+      "value": ""
     },
     {
       "name": "resetValidation",
       "description": "Resets the validation on all applicable inner Quasar components",
+      "description_zh": "重置所有适用的内部 Quasar 组件的验证",
       "params": "",
-      "description_zh": "重置所有适用的内部类星体组件的验证"
+      "value": ""
     },
     {
       "name": "submit",
       "description": "Manually trigger form validation and submit",
+      "description_zh": "手动触发表单验证并提交",
       "params": "(evt: undefined) => void",
-      "description_zh": "手动触发表单验证并提交"
+      "value": ""
     },
     {
       "name": "reset",
       "description": "Manually trigger form reset",
+      "description_zh": "手动触发表单重置",
       "params": "(evt: undefined) => void",
-      "description_zh": "手动触发表单重置"
+      "value": ""
     },
     {
       "name": "getValidationComponents",
       "description": "Get an array of children Vue component instances that support Quasar validation API (derived from QField, or using useFormChild()/QFormChildMixin)",
+      "description_zh": "获取支持 Quasar 验证 API 的子 Vue 组件实例数组（源自 QField，或使用 useFormChild（）/QFormChildMixin）",
       "params": "",
-      "description_zh": "获取支持 Quasar 验证 API 的子 Vue 组件实例数组（派生自 QField，或使用 useFormChild（）/QFormChildMixin）"
+      "value": ""
     }
   ],
   "events": [
     {
       "name": "submit",
       "description": "Emitted when all validations have passed when tethered to a submit button",
+      "description_zh": "当所有验证都通过时，当连接到提交按钮时发出",
       "params": "(evt: Event,SubmitEvent) => void",
-      "description_zh": "当连接到提交按钮时，当所有验证都通过时发出"
+      "value": ""
     },
     {
       "name": "reset",
       "description": "Emitted when all validations have been reset when tethered to a reset button; It is recommended to manually reset the wrapped components models in this handler",
+      "description_zh": "当所有验证都已重置时，当连接到重置按钮时发出;建议在此处理程序中手动重置包装的组件模型",
       "params": "",
-      "description_zh": "当连接到重置按钮时，当所有验证都已重置时发出;建议在此处理程序中手动重置包装的组件模型"
+      "value": ""
     },
     {
       "name": "validation-success",
       "description": "Emitted after a validation was triggered and all inner Quasar components models are valid",
+      "description_zh": "在触发验证后发出，并且所有内部 Quasar 组件模型都有效",
       "params": "",
-      "description_zh": "在触发验证且所有内部类星体组件模型均有效后发出"
+      "value": ""
     },
     {
       "name": "validation-error",
       "description": "Emitted after a validation was triggered and at least one of the inner Quasar components models are NOT valid",
+      "description_zh": "在触发验证后发出，并且至少一个内部 Quasar 组件模型无效",
       "params": "(ref: Component) => void",
-      "description_zh": "在触发验证后发出，并且至少有一个内部类星体组件模型无效"
+      "value": ""
     }
   ],
   "props": {
@@ -69,31 +79,42 @@
       "value": "",
       "type": "Boolean",
       "description": "Focus first focusable element on initial component render",
+      "description_zh": "将第一个可聚焦元素聚焦在初始组件渲染上",
       "default": "false",
-      "description_zh": "将第一个可聚焦元素聚焦在初始组件渲染上"
+      "required": false
     },
     "no-error-focus": {
       "value": "",
       "type": "Boolean",
       "description": "Do not try to focus on first component that has a validation error when submitting form",
+      "description_zh": "在提交表单时，不要试图将重点放在第一个出现验证错误的组件上",
       "default": "false",
-      "description_zh": "提交表单时，不要试图关注第一个出现验证错误的组件"
+      "required": false
     },
     "no-reset-focus": {
       "value": "",
       "type": "Boolean",
       "description": "Do not try to focus on first component when resetting form",
+      "description_zh": "重置表单时，不要试图专注于第一个组件",
       "default": "false",
-      "description_zh": "重置表单时不要试图将注意力集中在第一个组件上"
+      "required": false
     },
     "greedy": {
       "value": "",
       "type": "Boolean",
       "description": "Validate all fields in form (by default it stops after finding the first invalid field with synchronous validation)",
+      "description_zh": "验证表单中的所有字段（默认情况下，它在通过同步验证找到第一个无效字段后停止）",
       "default": "false",
-      "description_zh": "验证表单中的所有字段（默认情况下，它会在通过同步验证找到第一个无效字段后停止）"
+      "required": false
     }
   },
   "link": "https://v2.quasar.dev/vue-components/form",
-  "link_zh": "https://v2.quasar.dev/vue-components/form"
+  "link_zh": "https://v2.quasar.dev/vue-components/form",
+  "slots": [
+    {
+      "name": "default",
+      "description": "",
+      "description_zh": ""
+    }
+  ]
 }

@@ -4,41 +4,340 @@
     {
       "name": "click",
       "description": "Emulate click on QBtn",
+      "description_zh": "模拟点击 QBtn",
       "params": "(evt: undefined) => void",
-      "description_zh": "模拟点击 QBtn"
+      "value": ""
     }
   ],
   "events": [
     {
       "name": "click",
       "description": "Emitted when the component is clicked",
+      "description_zh": "单击组件时发出",
       "params": "(evt: undefined, go: Function) => void",
-      "description_zh": "单击组件时发出"
+      "value": ""
+    },
+    {
+      "name": "touchstart",
+      "description": "",
+      "description_zh": "",
+      "params": "",
+      "value": ""
+    },
+    {
+      "name": "keydown",
+      "description": "",
+      "description_zh": "",
+      "params": "",
+      "value": ""
+    },
+    {
+      "name": "keyup",
+      "description": "",
+      "description_zh": "",
+      "params": "",
+      "value": ""
+    },
+    {
+      "name": "mousedown",
+      "description": "",
+      "description_zh": "",
+      "params": "",
+      "value": ""
     }
   ],
   "props": {
+    "type": {
+      "value": "",
+      "type": "String",
+      "description": "1) Define the button native type attribute (submit, reset, button) or 2) render component with <a> tag so you can access events even if disable or 3) Use 'href' prop and specify 'type' as a media tag",
+      "description_zh": "1） 定义按钮原生类型属性（submit、reset、button）或 2） 使用标签渲染组件<a>，这样即使禁用也可以访问事件，或者 3） 使用 'href' 属性并指定 'type' 作为媒体标签",
+      "default": "'button'",
+      "required": false
+    },
+    "to": {
+      "value": "",
+      "type": "String | Object",
+      "description": "Equivalent to Vue Router <router-link> 'to' property; Superseded by 'href' prop if used",
+      "description_zh": "等同于 Vue Router <router-link> 的 'to' 属性;如果使用，则被 'href' prop 取代",
+      "default": "",
+      "required": false
+    },
+    "replace": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Equivalent to Vue Router <router-link> 'replace' property; Superseded by 'href' prop if used",
+      "description_zh": "相当于 Vue Router <router-link> 的 'replace' 属性;如果使用，则被 'href' prop 取代",
+      "default": "false",
+      "required": false
+    },
+    "href": {
+      "value": "",
+      "type": "String",
+      "description": "Native <a> link href attribute; Has priority over the 'to' and 'replace' props",
+      "description_zh": "原生<a>链接 href 属性;优先于 'to' 和 'replace' 属性",
+      "default": "",
+      "version": "v2.4",
+      "required": false
+    },
+    "target": {
+      "value": "",
+      "type": "String",
+      "description": "Native <a> link target attribute; Use it only with 'to' or 'href' props",
+      "description_zh": "Native <a> link 目标属性;仅将其与 'to' 或 'href' 属性一起使用",
+      "default": "",
+      "version": "v2.4",
+      "required": false
+    },
+    "label": {
+      "value": "",
+      "type": "String | Number",
+      "description": "The text that will be shown on the button",
+      "description_zh": "按钮上显示的文本",
+      "default": "",
+      "required": false
+    },
+    "icon": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "",
+      "required": false,
+      "extends": "icon"
+    },
+    "icon-right": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "",
+      "required": false,
+      "extends": "icon"
+    },
+    "outline": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Use 'outline' design",
+      "description_zh": "使用“轮廓”设计",
+      "default": "false",
+      "required": false
+    },
+    "flat": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Use 'flat' design",
+      "description_zh": "使用“扁平化”设计",
+      "default": "false",
+      "required": false
+    },
+    "unelevated": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Remove shadow",
+      "description_zh": "移除阴影",
+      "default": "false",
+      "required": false
+    },
+    "rounded": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Applies a more prominent border-radius for a squared shape button",
+      "description_zh": "为方形按钮应用更突出的边框半径",
+      "default": "false",
+      "required": false
+    },
+    "push": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Use 'push' design",
+      "description_zh": "使用 'push' 设计",
+      "default": "false",
+      "required": false
+    },
+    "square": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "",
+      "version": "v2.7.6",
+      "required": false,
+      "extends": "square",
+      "addedIn": "v2.7.6"
+    },
+    "glossy": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Applies a glossy effect",
+      "description_zh": "应用光泽效果",
+      "default": "false",
+      "required": false
+    },
+    "fab": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Makes button size and shape to fit a Floating Action Button",
+      "description_zh": "使按钮的大小和形状适合浮动操作按钮",
+      "default": "false",
+      "required": false
+    },
+    "fab-mini": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Makes button size and shape to fit a small Floating Action Button",
+      "description_zh": "使按钮的大小和形状适合小型浮动操作按钮",
+      "default": "false",
+      "required": false
+    },
+    "padding": {
+      "value": "",
+      "type": "String",
+      "description": "Apply custom padding (vertical [horizontal]); Size in CSS units, including unit name or standard size name (none|xs|sm|md|lg|xl); Also removes the min width and height when set",
+      "description_zh": "应用自定义内边距 （垂直 [水平]）;以 CSS 单位表示的大小，包括单元名称或标准大小名称 （none|xs|sm|md|lg|xl）;设置时还会删除最小宽度和高度",
+      "default": "",
+      "required": false
+    },
+    "color": {
+      "type": "String",
+      "description": "Color name for component from the Quasar Color Palette",
+      "value": "",
+      "default": "'primary'",
+      "extends": "color",
+      "desc": "The color used to color the separator, which can be any color from the Quasar Color Palette",
+      "category": "style",
+      "description_zh": "Quasar Color Palette （类星体调色板） 中组件的颜色名称"
+    },
+    "text-color": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "",
+      "required": false,
+      "extends": "text-color"
+    },
+    "no-caps": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Avoid turning label text into caps (which happens by default)",
+      "description_zh": "避免将标签文本转换为大写字母（默认情况下会发生这种情况）",
+      "default": "false",
+      "required": false
+    },
+    "no-wrap": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Avoid label text wrapping",
+      "description_zh": "避免标签文本换行",
+      "default": "false",
+      "required": false
+    },
+    "dense": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "",
+      "required": false,
+      "extends": "dense"
+    },
+    "ripple": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "",
+      "required": false,
+      "extends": "ripple"
+    },
+    "tabindex": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "",
+      "required": false,
+      "extends": "tabindex"
+    },
+    "align": {
+      "value": "",
+      "type": "String",
+      "description": "Label or content alignment",
+      "description_zh": "标签或内容对齐方式",
+      "default": "'center'",
+      "required": false
+    },
+    "stack": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Stack icon and label vertically instead of on same line (like it is by default)",
+      "description_zh": "垂直堆叠图标和标签，而不是在同一行上（就像默认情况下一样）",
+      "default": "false",
+      "required": false
+    },
+    "stretch": {
+      "value": "",
+      "type": "Boolean",
+      "description": "When used on flexbox parent, button will stretch to parent's height",
+      "description_zh": "在 flexbox 父级上使用时，按钮将拉伸到父级的高度",
+      "default": "false",
+      "required": false
+    },
+    "loading": {
+      "value": "",
+      "type": "Boolean | null",
+      "description": "Put button into loading state (displays a QSpinner -- can be overridden by using a 'loading' slot)",
+      "description_zh": "将按钮置于加载状态（显示 QSpinner -- 可以使用“加载”插槽覆盖）",
+      "default": "null",
+      "required": false
+    },
+    "disable": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "",
+      "required": false,
+      "extends": "disable"
+    },
     "round": {
       "value": "",
       "type": "Boolean",
       "description": "Makes a circle shaped button",
+      "description_zh": "制作圆形按钮",
       "default": "false",
-      "description_zh": "制作圆形按钮"
+      "required": false
     },
     "percentage": {
       "value": "",
       "type": "Number",
       "description": "Percentage (0.0 < x < 100.0); To be used along 'loading' prop; Display a progress bar on the background",
+      "description_zh": "百分比 （0.0 < x < 100.0）;与 'loading' prop 一起使用;在背景上显示进度条",
       "default": "",
-      "description_zh": "百分比 （0.0 < x < 100.0）;与“加载”道具一起使用;在背景上显示进度条"
+      "required": false
     },
     "dark-percentage": {
       "value": "",
       "type": "Boolean",
       "description": "Progress bar on the background should have dark color; To be used along with 'percentage' and 'loading' props",
+      "description_zh": "背景上的进度条应为深色;与 'percentage' 和 'loading' props 一起使用",
       "default": "false",
-      "description_zh": "背景上的进度条应为深色;与“百分比”和“加载”道具一起使用"
+      "required": false
     }
   },
   "link": "https://v2.quasar.dev/vue-components/button",
-  "link_zh": "https://v2.quasar.dev/vue-components/button"
+  "link_zh": "https://v2.quasar.dev/vue-components/button",
+  "slots": [
+    {
+      "name": "default",
+      "description": "Use for custom content, instead of relying on 'icon' and 'label' props",
+      "description_zh": "用于自定义内容，而不是依赖 'icon' 和 'label' 属性"
+    },
+    {
+      "name": "loading",
+      "description": "Override the default QSpinner when in 'loading' state",
+      "description_zh": "在 'loading' 状态下覆盖默认的 QSpinner"
+    }
+  ]
 }

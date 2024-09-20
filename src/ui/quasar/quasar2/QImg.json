@@ -5,192 +5,253 @@
     {
       "name": "load",
       "description": "Emitted when image has been loaded by the browser",
+      "description_zh": "浏览器加载图像时发出",
       "params": "(src: String) => void",
-      "description_zh": "浏览器加载图像时发出"
+      "value": ""
     },
     {
       "name": "error",
       "description": "Emitted when browser could not load the image",
-      "params": "(src: Error) => void",
-      "description_zh": "当浏览器无法加载图像时发出"
+      "description_zh": "当浏览器无法加载图像时发出",
+      "params": "(evt: Event) => void",
+      "value": ""
     }
   ],
   "props": {
+    "ratio": {
+      "value": "",
+      "type": "String | Number",
+      "description": "Force the component to maintain an aspect ratio",
+      "description_zh": "强制组件保持长宽比",
+      "default": "",
+      "required": false
+    },
     "src": {
       "value": "",
       "type": "String",
       "description": "Path to image",
+      "description_zh": "图像路径",
       "default": "",
-      "description_zh": "图像路径"
+      "required": false
     },
     "srcset": {
       "value": "",
       "type": "String",
       "description": "Same syntax as <img> srcset attribute",
+      "description_zh": "与 <img> srcset 属性的语法相同",
       "default": "",
-      "description_zh": "与 <img> srcset 属性相同的语法"
+      "required": false
     },
     "sizes": {
       "value": "",
       "type": "String",
       "description": "Same syntax as <img> sizes attribute",
+      "description_zh": "与 <img> sizes 属性相同的语法",
       "default": "",
-      "description_zh": "与 <img> sizes 属性相同的语法"
+      "required": false
     },
     "placeholder-src": {
       "value": "",
       "type": "String",
       "description": "While waiting for your image to load, you can use a placeholder image",
+      "description_zh": "在等待图像加载时，您可以使用占位符图像",
       "default": "",
-      "description_zh": "在等待图像加载时，您可以使用占位符图像"
+      "required": false
     },
-    "ratio": {
+    "error-src": {
       "value": "",
       "type": "String",
-      "description": "Force the component to maintain an aspect ratio",
+      "description": "In case your image fails to load, you can use an error image",
+      "description_zh": "如果您的图像无法加载，您可以使用错误图像",
       "default": "",
-      "description_zh": "强制组件保持纵横比"
+      "version": "v2.15",
+      "required": false
     },
     "initial-ratio": {
       "value": "",
       "type": "String | Number",
       "description": "Use it when not specifying 'ratio' but still wanting an initial aspect ratio",
-      "default": "16/9",
-      "description_zh": "当未指定“比率”但仍需要初始纵横比时使用它"
+      "description_zh": "如果未指定 'ratio' 但仍需要初始纵横比，请使用它",
+      "default": "1.7778",
+      "required": false
     },
     "width": {
       "value": "",
       "type": "String",
       "description": "Forces image width; Must also include the unit (px or %)",
+      "description_zh": "强制图像宽度;还必须包含单位（px 或 %）",
       "default": "",
-      "description_zh": "强制图像宽度;还必须包括单位（px 或 %）"
+      "required": false
     },
     "height": {
       "value": "",
       "type": "String",
       "description": "Forces image height; Must also include the unit (px or %)",
+      "description_zh": "强制图像高度;还必须包含单位（px 或 %）",
       "default": "",
-      "description_zh": "强制图像高度;还必须包括单位（px 或 %）"
+      "required": false
     },
     "loading": {
       "value": "",
       "type": "String",
       "description": "Lazy or immediate load; Same syntax as <img> loading attribute",
-      "default": "lazy",
-      "description_zh": "延迟或即时加载;与 <img> loading 属性相同的语法"
+      "description_zh": "延迟加载或立即加载;与 <img> loading attribute 相同的语法",
+      "default": "'lazy'",
+      "required": false
+    },
+    "loading-show-delay": {
+      "value": "",
+      "type": "Number | String",
+      "description": "Delay showing the spinner when image changes; Gives time for the browser to load the image from cache to prevent flashing the spinner unnecessarily; Value should represent milliseconds",
+      "description_zh": "图像更改时延迟显示微调器;为浏览器提供从缓存加载图像的时间，以防止不必要地闪烁微调器;值应表示毫秒",
+      "default": "0",
+      "version": "v2.14.6",
+      "required": false
     },
     "crossorigin": {
       "value": "",
       "type": "String",
       "description": "Same syntax as <img> crossorigin attribute",
+      "description_zh": "与 <img> crossorigin 属性的语法相同",
       "default": "",
-      "description_zh": "与 <img> crossorigin 属性相同的语法"
+      "required": false
     },
     "decoding": {
       "value": "",
       "type": "String",
       "description": "Same syntax as <img> decoding attribute",
+      "description_zh": "与 <img> decoding 属性语法相同",
       "default": "",
-      "description_zh": "与<img>解码属性相同的语法"
+      "required": false
     },
     "referrerpolicy": {
       "value": "",
       "type": "String",
       "description": "Same syntax as <img> referrerpolicy attribute",
+      "description_zh": "与 <img> referrerpolicy 属性的语法相同",
       "default": "",
-      "description_zh": "与 <img> referrerpolicy 属性相同的语法"
+      "required": false
     },
     "fetchpriority": {
       "value": "",
       "type": "String",
       "description": "Provides a hint of the relative priority to use when fetching the image",
-      "default": "auto",
-      "description_zh": "提供提取图像时要使用的相对优先级的提示"
+      "description_zh": "提供获取图像时要使用的相对优先级的提示",
+      "default": "'auto'",
+      "version": "v2.6.6",
+      "required": false
     },
     "fit": {
       "value": "",
       "type": "String",
       "description": "How the image will fit into the container; Equivalent of the object-fit prop; Can be coordinated with 'position' prop",
-      "default": "cover",
-      "description_zh": "图像将如何适应容器;等效于对象拟合道具;可与“位置”道具协调"
+      "description_zh": "图像如何适应容器;相当于 object-fit prop;可以与 'position' prop 协调",
+      "default": "'cover'",
+      "required": false
     },
     "position": {
       "value": "",
       "type": "String",
       "description": "The alignment of the image into the container; Equivalent of the object-position CSS prop",
-      "default": "50% 50%",
-      "description_zh": "将图像与容器对齐;等同于 object-position CSS 属性"
+      "description_zh": "图像与容器中的对齐方式;相当于 object-position CSS 属性",
+      "default": "'50% 50%'",
+      "required": false
     },
     "alt": {
       "value": "",
       "type": "String",
       "description": "Specifies an alternate text for the image, if the image cannot be displayed",
+      "description_zh": "如果无法显示图像，则指定图像的替代文本",
       "default": "",
-      "description_zh": "如果图像无法显示，则指定图像的替代文本"
+      "required": false
     },
     "draggable": {
       "value": "",
       "type": "Boolean",
       "description": "Adds the native 'draggable' attribute",
+      "description_zh": "添加本机 'draggable' 属性",
       "default": "false",
-      "description_zh": "添加原生的“draggable”属性"
+      "required": false
     },
     "img-class": {
       "value": "",
       "type": "String",
       "description": "CSS classes to be attributed to the native img element",
+      "description_zh": "要归因于本机 img 元素的 CSS 类",
       "default": "",
-      "description_zh": "要归因于本机 img 元素的 CSS 类"
+      "required": false
     },
     "img-style": {
       "value": "",
       "type": "Object",
       "description": "Apply CSS to the native img element",
+      "description_zh": "将 CSS 应用于本机 img 元素",
       "default": "",
-      "description_zh": "将 CSS 应用于原生 img 元素"
+      "required": false
     },
     "spinner-color": {
       "type": "String",
       "description": "Color name for component from the Quasar Color Palette",
       "value": "",
-      "default": "primary",
+      "default": "'primary'",
       "extends": "color",
       "desc": "Color name for default Spinner (unless using a 'loading' slot)",
       "category": "style",
-      "description_zh": "类星体调色板中组件的颜色名称"
+      "description_zh": "Quasar Color Palette （类星体调色板） 中组件的颜色名称"
     },
     "spinner-size": {
       "value": "",
       "type": "String",
       "description": "",
+      "description_zh": "",
       "default": "",
+      "required": false,
       "extends": "size",
       "desc": "Size in CSS units, including unit name, for default Spinner (unless using a 'loading' slot)",
-      "category": "style",
-      "description_zh": ""
+      "category": "style"
     },
     "no-spinner": {
       "value": "",
       "type": "Boolean",
       "description": "Do not display the default spinner while waiting for the image to be loaded; It is overriden by the 'loading' slot when one is present",
+      "description_zh": "在等待图像加载时不显示默认微调器;如果存在 'loading' 插槽，它将被 'loading' 插槽覆盖",
       "default": "false",
-      "description_zh": "在等待图像加载时不显示默认微调器;当存在“加载”插槽时，它会被“加载”插槽覆盖"
+      "required": false
     },
     "no-native-menu": {
       "value": "",
       "type": "Boolean",
       "description": "Disables the native context menu for the image",
+      "description_zh": "禁用图像的本机上下文菜单",
       "default": "false",
-      "description_zh": "禁用图像的本机上下文菜单"
+      "required": false
     },
     "no-transition": {
       "value": "",
       "type": "Boolean",
       "description": "Disable default transition when switching between old and new image",
+      "description_zh": "在新旧图像之间切换时禁用默认过渡",
       "default": "false",
-      "description_zh": "在新旧映像之间切换时禁用默认过渡"
+      "required": false
     }
   },
   "link": "https://v2.quasar.dev/vue-components/img",
-  "link_zh": "https://v2.quasar.dev/vue-components/img"
+  "link_zh": "https://v2.quasar.dev/vue-components/img",
+  "slots": [
+    {
+      "name": "default",
+      "description": "Default slot can be used for captions. See examples",
+      "description_zh": "默认插槽可用于字幕。查看示例"
+    },
+    {
+      "name": "loading",
+      "description": "While image is loading, this slot is being displayed on top of the component; Suggestions: a spinner or text",
+      "description_zh": "在加载图像时，此插槽显示在组件顶部;建议：微调器或文本"
+    },
+    {
+      "name": "error",
+      "description": "Optional slot to be used when image could not be loaded; make sure you assign a min-height and min-width to the component through CSS",
+      "description_zh": "无法加载图像时使用的可选插槽;确保通过 CSS 为组件分配 min-height 和 min-width"
+    }
+  ]
 }

@@ -1,40 +1,72 @@
 {
   "name": "QPageScroller",
   "methods": [],
-  "events": [],
+  "events": [
+    {
+      "name": "click",
+      "description": "",
+      "description_zh": "",
+      "params": "",
+      "value": ""
+    }
+  ],
   "props": {
+    "position": {
+      "value": "",
+      "type": "String",
+      "description": "Page side/corner to stick to",
+      "description_zh": "要坚持的页面侧/角",
+      "default": "'bottom-right'",
+      "required": false
+    },
+    "offset": {
+      "value": "",
+      "type": "Array",
+      "description": "An array of two numbers to offset the component horizontally and vertically in pixels",
+      "description_zh": "一个包含两个数字的数组，用于水平和垂直偏移组件（以像素为单位）",
+      "default": "[ 18, 18 ]",
+      "required": false
+    },
+    "expand": {
+      "value": "",
+      "type": "Boolean",
+      "description": "By default the component shrinks to content's size; By using this prop you make the component fully expand horizontally or vertically, based on 'position' prop",
+      "description_zh": "默认情况下，组件会缩小到内容的大小;通过使用这个 prop，你可以根据 'position' 属性使组件在水平或垂直方向上完全展开",
+      "default": "false",
+      "required": false
+    },
     "scroll-offset": {
       "value": "",
       "type": "Number",
       "description": "Scroll offset (in pixels) from which point the component is shown on page; Measured from the top of the page (or from the bottom if in 'reverse' mode)",
-      "default": 1000,
-      "description_zh": "滚动偏移量（以像素为单位），从该点开始组件在页面上显示;从页面顶部开始测量（如果处于“反向”模式，则从底部开始测量）"
+      "description_zh": "在页面上显示组件的起始点的滚动偏移量（以像素为单位）;从页面顶部测量（如果处于“反向”模式，则从底部测量）",
+      "default": "1000",
+      "required": false
     },
     "reverse": {
       "value": "",
       "type": "Boolean",
       "description": "Work in reverse (shows when scrolling to the top of the page and scrolls to bottom when triggered)",
+      "description_zh": "反向工作（滚动到页面顶部时显示，触发时滚动到底部）",
       "default": "false",
-      "description_zh": "反向工作（滚动到页面顶部时显示，触发时滚动到底部）"
+      "required": false
     },
     "duration": {
       "value": "",
       "type": "Number",
       "description": "Duration (in milliseconds) of the scrolling until it reaches its target",
-      "default": 300,
-      "description_zh": "滚动到达到目标的持续时间（以毫秒为单位）"
-    },
-    "offset": {
-      "value": "",
-      "type": "String",
-      "default": [
-        18,
-        18
-      ],
-      "description": "",
-      "description_zh": ""
+      "description_zh": "滚动到达目标之前的持续时间（以毫秒为单位）",
+      "default": "300",
+      "required": false
     }
   },
   "link": "https://v2.quasar.dev/layout/page-scroller",
-  "link_zh": "https://v2.quasar.dev/layout/page-scroller"
+  "link_zh": "https://v2.quasar.dev/layout/page-scroller",
+  "slots": [
+    {
+      "name": "default",
+      "description": "",
+      "description_zh": ""
+    }
+  ]
 }

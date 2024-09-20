@@ -2,139 +2,275 @@
   "name": "QDialog",
   "methods": [
     {
+      "name": "show",
+      "params": "",
+      "description": "",
+      "value": "",
+      "description_zh": ""
+    },
+    {
+      "name": "hide",
+      "params": "",
+      "description": "",
+      "value": "",
+      "description_zh": ""
+    },
+    {
+      "name": "toggle",
+      "params": "",
+      "description": "",
+      "value": "",
+      "description_zh": ""
+    },
+    {
       "name": "focus",
       "description": "Focus dialog; if you have content with autofocus attribute, it will directly focus it",
+      "description_zh": "焦点对话框;如果你有带有 autofocus 属性的内容，它会直接聚焦它",
       "params": "(selector: String) => void",
-      "description_zh": "焦点对话框;如果您有具有自动对焦属性的内容，它将直接对焦"
+      "value": ""
     },
     {
       "name": "shake",
       "description": "Shakes dialog",
+      "description_zh": "“振动”对话框",
       "params": "(focusTarget: Element) => void",
-      "description_zh": "“摇晃”对话框"
+      "value": ""
     }
   ],
   "events": [
     {
+      "name": "update:model-value",
+      "description": "Emitted when showing/hidden state changes; Is also used by v-model",
+      "description_zh": "在显示/隐藏状态更改时触发;也被 v-model 使用",
+      "params": "(value: Boolean) => void",
+      "value": ""
+    },
+    {
+      "name": "show",
+      "description": "",
+      "description_zh": "",
+      "params": "",
+      "value": ""
+    },
+    {
+      "name": "before-show",
+      "description": "",
+      "description_zh": "",
+      "params": "",
+      "value": ""
+    },
+    {
+      "name": "hide",
+      "description": "",
+      "description_zh": "",
+      "params": "",
+      "value": ""
+    },
+    {
+      "name": "before-hide",
+      "description": "",
+      "description_zh": "",
+      "params": "",
+      "value": ""
+    },
+    {
       "name": "shake",
       "description": "Emitted when the Dialog shakes in order to catch user's attention, unless the 'no-shake' property is set",
+      "description_zh": "在 Dialog 摇动时发出以引起用户的注意，除非设置了 'no-shake' 属性",
       "params": "",
-      "description_zh": "在对话框摇晃时发出以引起用户注意，除非设置了“no-shake”属性"
+      "value": ""
     },
     {
       "name": "escape-key",
       "description": "Emitted when ESC key is pressed; Does not get emitted if Dialog is 'persistent' or it has 'no-esc-key' set",
+      "description_zh": "按下 ESC 键时发出;如果 Dialog 是 'persistent' 或 'no-esc-key' 设置的，则不会发出",
       "params": "",
-      "description_zh": "按下ESC键时发出;如果 Dialog 为“持久性”或设置了“no-esc-key”，则不会发出"
+      "value": ""
+    },
+    {
+      "name": "click",
+      "description": "",
+      "description_zh": "",
+      "params": "",
+      "value": ""
     }
   ],
   "props": {
+    "transition-show": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "'fade'",
+      "required": false,
+      "extends": "transition",
+      "__runtimeDefault": true
+    },
+    "transition-hide": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "'fade'",
+      "required": false,
+      "extends": "transition",
+      "__runtimeDefault": true
+    },
+    "transition-duration": {
+      "value": "",
+      "type": "String | Number",
+      "description": "Transition duration (in milliseconds, without unit)",
+      "description_zh": "过渡持续时间（以毫秒为单位，不含单位）",
+      "default": "300",
+      "required": false
+    },
+    "model-value": {
+      "value": "",
+      "type": "Boolean | null",
+      "description": "Model of the component defining shown/hidden state; Either use this property (along with a listener for 'update:model-value' event) OR use v-model directive",
+      "description_zh": "定义显示/隐藏状态的组件模型;使用此属性（以及 'update：model-value' 事件的侦听器）或使用 v-model 指令",
+      "default": "null",
+      "required": false
+    },
     "persistent": {
       "value": "",
       "type": "Boolean",
       "description": "User cannot dismiss Dialog if clicking outside of it or hitting ESC key; Also, an app route change won't dismiss it",
+      "description_zh": "如果单击对话框外部或按 ESC 键，用户无法关闭对话框;此外，应用程序路线更改不会关闭它",
       "default": "false",
-      "description_zh": "如果单击对话框外部或按 ESC 键，则用户无法关闭对话框;此外，应用路由更改不会将其关闭"
+      "required": false
     },
     "no-esc-dismiss": {
       "value": "",
       "type": "Boolean",
       "description": "User cannot dismiss Dialog by hitting ESC key; No need to set it if 'persistent' prop is also set",
+      "description_zh": "用户无法通过按 ESC 键来关闭 Dialog;如果还设置了 'persistent' prop，则无需设置它",
       "default": "false",
-      "description_zh": "用户无法通过按 ESC 键关闭对话框;如果还设置了 'persistent' 道具，则无需设置它"
+      "required": false
     },
     "no-backdrop-dismiss": {
       "value": "",
       "type": "Boolean",
       "description": "User cannot dismiss Dialog by clicking outside of it; No need to set it if 'persistent' prop is also set",
+      "description_zh": "用户无法通过在 Dialog 外部单击来关闭 Dialog;如果还设置了 'persistent' prop，则无需设置它",
       "default": "false",
-      "description_zh": "用户不能通过单击对话框外部来关闭对话框;如果还设置了 'persistent' 道具，则无需设置它"
+      "required": false
     },
     "no-route-dismiss": {
       "value": "",
       "type": "Boolean",
       "description": "Changing route app won't dismiss Dialog; No need to set it if 'persistent' prop is also set",
+      "description_zh": "更改路线应用程序不会关闭 Dialog;如果还设置了 'persistent' prop，则无需设置它",
       "default": "false",
-      "description_zh": "更改路线应用程序不会关闭 Dialog;如果还设置了 'persistent' 道具，则无需设置它"
+      "required": false
     },
     "auto-close": {
       "value": "",
       "type": "Boolean",
       "description": "Any click/tap inside of the dialog will close it",
+      "description_zh": "对话框内的任何单击/点击都会将其关闭",
       "default": "false",
-      "description_zh": "对话框中的任何单击/点击都将关闭它"
+      "required": false
     },
     "seamless": {
       "value": "",
       "type": "Boolean",
       "description": "Put Dialog into seamless mode; Does not use a backdrop so user is able to interact with the rest of the page too",
+      "description_zh": "将 Dialog 置于无缝模式;不使用背景，因此用户也能够与页面的其余部分进行交互",
       "default": "false",
-      "description_zh": "将对话框置于无缝模式;不使用背景，因此用户也可以与页面的其余部分进行交互"
+      "required": false
+    },
+    "backdrop-filter": {
+      "value": "",
+      "type": "String",
+      "description": "Apply a backdrop filter; The value needs to be the same as in the CSS specs for backdrop-filter; The examples are not an exhaustive list",
+      "description_zh": "应用背景滤镜;该值需要与 backdrop-filter 的 CSS 规范中的值相同;这些示例并非详尽无遗",
+      "default": "",
+      "version": "v2.15",
+      "required": false
     },
     "maximized": {
       "value": "",
       "type": "Boolean",
       "description": "Put Dialog into maximized mode",
+      "description_zh": "将 Dialog 置于最大化模式",
       "default": "false",
-      "description_zh": "将对话框置于最大化模式"
+      "required": false
     },
     "full-width": {
       "value": "",
       "type": "Boolean",
       "description": "Dialog will try to render with same width as the window",
+      "description_zh": "对话框将尝试以与窗口相同的宽度进行渲染",
       "default": "false",
-      "description_zh": "对话框将尝试以与窗口相同的宽度呈现"
+      "required": false
     },
     "full-height": {
       "value": "",
       "type": "Boolean",
       "description": "Dialog will try to render with same height as the window",
+      "description_zh": "对话框将尝试以与窗口相同的高度进行渲染",
       "default": "false",
-      "description_zh": "对话框将尝试以与窗口相同的高度呈现"
+      "required": false
     },
     "position": {
       "value": "",
       "type": "String",
       "description": "Stick dialog to one of the sides (top, right, bottom or left)",
-      "default": "standard",
-      "description_zh": "将对话框粘贴到其中一侧（顶部、右侧、底部或左侧）"
+      "description_zh": "将对话框固定到其中一侧（上、右、下或左）",
+      "default": "'standard'",
+      "required": false
     },
     "square": {
       "value": "",
       "type": "Boolean",
       "description": "Forces content to have squared borders",
+      "description_zh": "强制内容具有方形边框",
       "default": "false",
-      "description_zh": "强制内容具有方形边框"
+      "required": false
     },
     "no-refocus": {
       "value": "",
       "type": "Boolean",
       "description": "(Accessibility) When Dialog gets hidden, do not refocus on the DOM element that previously had focus",
+      "description_zh": "（辅助功能）当 Dialog 被隐藏时，不要重新聚焦在以前具有焦点的 DOM 元素上",
       "default": "false",
-      "description_zh": "（辅助功能）当 Dialog 被隐藏时，不要重新聚焦在以前具有焦点的 DOM 元素上"
+      "required": false
     },
     "no-focus": {
       "value": "",
       "type": "Boolean",
       "description": "(Accessibility) When Dialog gets shown, do not switch focus on it",
+      "description_zh": "（辅助功能）当 Dialog （对话框） 显示时，不要将焦点切换到它上面",
       "default": "false",
-      "description_zh": "（辅助功能）显示对话框时，请勿将焦点切换到该对话框上"
+      "required": false
     },
     "no-shake": {
       "value": "",
       "type": "Boolean",
       "description": "Do not shake up the Dialog to catch user's attention",
+      "description_zh": "不要摇晃对话框以吸引用户的注意力",
       "default": "false",
-      "description_zh": "不要摇晃对话框以吸引用户的注意力"
+      "version": "v2.1.1",
+      "required": false
     },
     "allow-focus-outside": {
       "value": "",
       "type": "Boolean",
       "description": "Allow elements outside of the Dialog to be focusable; By default, for accessibility reasons, QDialog does not allow outer focus",
+      "description_zh": "允许 Dialog 外部的元素可聚焦;默认情况下，出于可访问性的原因，QDialog 不允许外部聚焦",
       "default": "false",
-      "description_zh": "允许对话框外部的元素可聚焦;默认情况下，出于可访问性的原因，QDialog 不允许外部焦点"
+      "version": "v2.7.2",
+      "required": false
     }
   },
   "link": "https://v2.quasar.dev/vue-components/dialog",
-  "link_zh": "https://v2.quasar.dev/vue-components/dialog"
+  "link_zh": "https://v2.quasar.dev/vue-components/dialog",
+  "slots": [
+    {
+      "name": "default",
+      "description": "",
+      "description_zh": ""
+    }
+  ]
 }
