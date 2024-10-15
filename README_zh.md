@@ -7,6 +7,8 @@
 
 迁移至 [common-intellisense](https://github.com/common-intellisense/common-intellisense/blob/main/README_zh.md)。如果您有任何问题或反馈，请在[此处](https://github.com/common-intellisense/common-intellisense/issues?q=sort%3Aupdated-desc+is%3Aissue+is%3Aopen)发布。
 
+如果你在内网环境或者没有网络的情况下使用，可以安装 [common-intellisense-local](https://marketplace.visualstudio.com/items?itemName=simonhe.common-intellisense-local)
+
 ## :coffee:
 
 [请我喝一杯咖啡](https://github.com/Simon-He95/sponsor)

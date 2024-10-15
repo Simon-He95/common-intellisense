@@ -7,6 +7,8 @@ This plugin can provide a super powerful smart prompt function, including proper
 
 Migrate to [common-intellisense](https://github.com/common-intellisense/common-intellisense). If you have any questions or feedback, please post them [here](https://github.com/common-intellisense/common-intellisense/issues?q=sort%3Aupdated-desc+is%3Aissue+is%3Aopen).
 
+If you are using it in an intranet environment or without a network connection, you can install [common-intellisense-local](https://marketplace.visualstudio.com/items?itemName=simonhe.common-intellisense-local)
+
 ## :coffee:
 
 [buy me a cup of coffee](https://github.com/Simon-He95/sponsor)
