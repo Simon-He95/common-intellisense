@@ -516,7 +516,7 @@ export async function activate(context: vscode.ExtensionContext) {
     }
   }, (item: any) => {
     if (!item.command) {
-      if (item.params[2]) {
+      if (item.params?.[2]) {
         item.command = {
           title: 'common-intellisense-local-import',
           command: 'common-intellisense-local.import',

@@ -529,7 +529,6 @@ export function getComponentMap(isZh: boolean) {
         [cardText, '卡片', '<v-card-text></v-card-text>'],
         [cardTitle, '卡片', '<v-card-title></v-card-title>'],
         [cardSubtitle, '卡片', '<v-card-subtitle></v-card-subtitle>'],
-        ['v-card-actions', '卡片', '<v-card-actions></v-card-actions>'],
         [chip, '纸片', '<v-chip>Chip</v-chip'],
         [dialog, '对话框', `<v-dialog
   v-model="dialog"
@@ -736,7 +735,6 @@ export function getComponentMap(isZh: boolean) {
         [cardText, 'card', '<v-card-text></v-card-text>'],
         [cardTitle, 'card', '<v-card-title></v-card-title>'],
         [cardSubtitle, 'card', '<v-card-subtitle></v-card-subtitle>'],
-        ['v-card-actions', 'card', '<v-card-actions></v-card-actions>'],
         [chip, 'paper', '<v-chip>Chip</v-chip'],
         [dialog, 'Dialog', `<v-dialog
   v-model="dialog"
