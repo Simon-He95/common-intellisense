@@ -74,67 +74,80 @@
     {
       "name": "[`header.${string}`]",
       "description": "MISSING DESCRIPTION (edit in github)",
-      "description_zh": "缺少描述（在 github 中编辑）"
+      "description_zh": "缺少描述（在 github 中编辑）",
+      "params": "{\n  column: InternalDataTableHeader\n  selectAll: (value: boolean) => void\n  isSorted: (column: InternalDataTableHeader) => boolean\n  toggleSort: (column: InternalDataTableHeader) => void\n  sortBy: SortItem[]\n  someSelected: boolean\n  allSelected: boolean\n  getSortIcon: (\n    column: InternalDataTableHeader,\n  ) =>\n    | string\n    | (string | [string, number])[]\n    | (new () => any)\n    | FunctionalComponent\n}"
     },
     {
       "name": "[`item.${string}`]",
       "description": "MISSING DESCRIPTION (edit in github)",
-      "description_zh": "缺少描述（在 github 中编辑）"
+      "description_zh": "缺少描述（在 github 中编辑）",
+      "params": "{\n  index: number\n  item: unknown\n  internalItem: DataTableItem\n  isExpanded: (item: DataTableItem) => boolean\n  toggleExpand: (item: DataTableItem) => void\n  isSelected: (\n    items: { value: any; selectable: boolean } | SelectableItem[],\n  ) => boolean\n  toggleSelect: (item: { value: any; selectable: boolean }) => void\n} & { value: any; column: InternalDataTableHeader }"
     },
     {
       "name": "data-table-group",
       "description": "Slot for custom rendering of a group.",
-      "description_zh": "用于自定义组渲染的插槽。"
+      "description_zh": "用于自定义渲染组的插槽。",
+      "params": "{ item: Group; count: number; props: Record<string, unknown> }"
     },
     {
       "name": "data-table-select",
       "description": "Slot for custom rendering of a header cell with the select checkbox.",
-      "description_zh": "用于自定义呈现带有选择复选框的标题单元格的插槽。"
+      "description_zh": "用于自定义渲染标题单元格的插槽，带有 select 复选框。",
+      "params": "{ props: Record<string, unknown> }"
     },
     {
       "name": "expanded-row",
       "description": "Slot for custom rendering of an expanded row.",
-      "description_zh": "用于自定义渲染扩展行的插槽。"
+      "description_zh": "用于自定义渲染展开行的槽。",
+      "params": "{\n  index: number\n  item: unknown\n  internalItem: DataTableItem\n  isExpanded: (item: DataTableItem) => boolean\n  toggleExpand: (item: DataTableItem) => void\n  isSelected: (\n    items: { value: any; selectable: boolean } | SelectableItem[],\n  ) => boolean\n  toggleSelect: (item: { value: any; selectable: boolean }) => void\n} & { columns: InternalDataTableHeader[] }"
     },
     {
       "name": "group-header",
       "description": "Slot for custom rendering of a group header.",
-      "description_zh": "用于自定义呈现组标题的插槽。"
+      "description_zh": "用于自定义呈现组标题的插槽。",
+      "params": "{\n  index: number\n  item: Group\n  columns: InternalDataTableHeader[]\n  isExpanded: (item: DataTableItem) => boolean\n  toggleExpand: (item: DataTableItem) => void\n  isSelected: (\n    items: { value: any; selectable: boolean } | SelectableItem[],\n  ) => boolean\n  toggleSelect: (item: { value: any; selectable: boolean }) => void\n  toggleGroup: (group: Group) => void\n  isGroupOpen: (group: Group) => boolean\n}"
     },
     {
       "name": "header.data-table-expand",
       "description": "MISSING DESCRIPTION (edit in github)",
-      "description_zh": "缺少描述（在 github 中编辑）"
+      "description_zh": "缺少描述（在 github 中编辑）",
+      "params": "{\n  column: InternalDataTableHeader\n  selectAll: (value: boolean) => void\n  isSorted: (column: InternalDataTableHeader) => boolean\n  toggleSort: (column: InternalDataTableHeader) => void\n  sortBy: SortItem[]\n  someSelected: boolean\n  allSelected: boolean\n  getSortIcon: (\n    column: InternalDataTableHeader,\n  ) =>\n    | string\n    | (string | [string, number])[]\n    | (new () => any)\n    | FunctionalComponent\n}"
     },
     {
       "name": "header.data-table-select",
       "description": "MISSING DESCRIPTION (edit in github)",
-      "description_zh": "缺少描述（在 github 中编辑）"
+      "description_zh": "缺少描述（在 github 中编辑）",
+      "params": "{\n  column: InternalDataTableHeader\n  selectAll: (value: boolean) => void\n  isSorted: (column: InternalDataTableHeader) => boolean\n  toggleSort: (column: InternalDataTableHeader) => void\n  sortBy: SortItem[]\n  someSelected: boolean\n  allSelected: boolean\n  getSortIcon: (\n    column: InternalDataTableHeader,\n  ) =>\n    | string\n    | (string | [string, number])[]\n    | (new () => any)\n    | FunctionalComponent\n}"
     },
     {
       "name": "item",
       "description": "Define a custom item appearance.",
-      "description_zh": "定义自定义项外观。"
+      "description_zh": "定义自定义项外观。",
+      "params": "{\n  index: number\n  item: unknown\n  internalItem: DataTableItem\n  isExpanded: (item: DataTableItem) => boolean\n  toggleExpand: (item: DataTableItem) => void\n  isSelected: (\n    items: { value: any; selectable: boolean } | SelectableItem[],\n  ) => boolean\n  toggleSelect: (item: { value: any; selectable: boolean }) => void\n} & { columns: InternalDataTableHeader[] } & { props: Record<string, any> }"
     },
     {
       "name": "item.data-table-expand",
       "description": "Slot for custom rendering of a row cell with the expand icon.",
-      "description_zh": "用于自定义呈现带有展开图标的行单元格的插槽。"
+      "description_zh": "用于自定义呈现带有展开图标的行单元格的插槽。",
+      "params": "Omit<ItemKeySlot<unknown>, 'value'>"
     },
     {
       "name": "item.data-table-select",
       "description": "Slot for custom rendering of a row cell with the select checkbox.",
-      "description_zh": "用于使用选择复选框自定义呈现行单元格的插槽。"
+      "description_zh": "用于自定义渲染行单元格的插槽 select 复选框。",
+      "params": "Omit<ItemKeySlot<unknown>, 'value'>"
     },
     {
       "name": "loading",
       "description": "Slot for custom rendering of the loading state.",
-      "description_zh": "用于自定义渲染加载状态的插槽。"
+      "description_zh": "用于自定义渲染加载状态的插槽。",
+      "params": ""
     },
     {
       "name": "no-data",
       "description": "Defines content for when no items are provided.",
-      "description_zh": "定义未提供任何项目时的内容。"
+      "description_zh": "定义未提供任何项目时的内容。",
+      "params": ""
     }
   ],
   "suggestions": [

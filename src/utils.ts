@@ -521,7 +521,7 @@ export function parserSvelte(code: string, position: vscode.Position) {
 }
 
 let stop: any = null
-export const alias = getConfiguration('common-intellisense.alias') as Record<string, string>
+export const alias = getConfiguration('common-intellisense-local.alias') as Record<string, string>
 export async function findPkgUI(cwd?: string) {
   if (!cwd)
     return
@@ -712,8 +712,8 @@ export function registerCodeLensProviderFn() {
             result.push(new vscode.CodeLens(codeLensRange, {
               title: `${i === 0 ? 'Slots: ' : ''}${name}`,
               tooltip: isZh ? description_zh : description,
-              command: 'common-intellisense.slots',
-              arguments: [child, name, offset],
+              command: 'common-intellisense-local.slots',
+              arguments: [child, name, offset, s],
             }))
           })
         })

@@ -335,57 +335,68 @@
     {
       "name": "append",
       "description": "Adds an item inside the input and after input content.",
-      "description_zh": "在输入内容内部和之后添加一个项目。"
+      "description_zh": "在 input 内容内和 After input 内容中添加一个项目。",
+      "params": "{\n  id: ComputedRef<string>\n  messagesId: ComputedRef<string>\n  isDirty: ComputedRef<boolean>\n  isDisabled: ComputedRef<boolean>\n  isReadonly: ComputedRef<boolean>\n  isPristine: Ref<boolean>\n  isValid: ComputedRef<boolean | null>\n  isValidating: Ref<boolean>\n  reset: () => void\n  resetValidation: () => void\n  validate: () => void\n}"
     },
     {
       "name": "default",
-      "description": "Default Vue slot.",
-      "description_zh": "默认Vue 插槽。"
+      "description": "The default Vue slot.",
+      "description_zh": "默认的 Vue 插槽。",
+      "params": "{\n  id: ComputedRef<string>\n  messagesId: ComputedRef<string>\n  isDirty: ComputedRef<boolean>\n  isDisabled: ComputedRef<boolean>\n  isReadonly: ComputedRef<boolean>\n  isPristine: Ref<boolean>\n  isValid: ComputedRef<boolean | null>\n  isValidating: Ref<boolean>\n  reset: () => void\n  resetValidation: () => void\n  validate: () => void\n} & {\n  backgroundColorClasses: Ref<string[]>\n  backgroundColorStyles: Ref<CSSProperties>\n}"
     },
     {
       "name": "details",
       "description": "Slot for custom input details to modifying the display of messages.",
-      "description_zh": "用于自定义输入详细信息的插槽，用于修改消息的显示。"
+      "description_zh": "用于修改消息显示的自定义输入详细信息的插槽。",
+      "params": "{\n  id: ComputedRef<string>\n  messagesId: ComputedRef<string>\n  isDirty: ComputedRef<boolean>\n  isDisabled: ComputedRef<boolean>\n  isReadonly: ComputedRef<boolean>\n  isPristine: Ref<boolean>\n  isValid: ComputedRef<boolean | null>\n  isValidating: Ref<boolean>\n  reset: () => void\n  resetValidation: () => void\n  validate: () => void\n}"
     },
     {
       "name": "input",
       "description": "The slot used for the default input element.",
-      "description_zh": "用于默认输入元素的槽。"
+      "description_zh": "用于默认 input 元素的插槽。",
+      "params": "{\n  model: WritableComputedRef<boolean>\n  textColorClasses: Ref<string[]>\n  textColorStyles: Ref<CSSProperties>\n  backgroundColorClasses: Ref<string[]>\n  backgroundColorStyles: Ref<CSSProperties>\n  inputNode: VNode<RendererNode, RendererElement, { [key: string]: any }>\n  icon:\n    | string\n    | (string | [string, number])[]\n    | (new () => any)\n    | FunctionalComponent\n  props: {\n    onBlur: (e: Event) => void\n    onFocus: (e: FocusEvent) => void\n    id: string\n  }\n}"
     },
     {
       "name": "label",
       "description": "The default slot of the v-label or v-field-label component.",
-      "description_zh": "v-label 或 v-field-label 组件的默认插槽。"
+      "description_zh": "v-label 或 v-field-label 组件的默认插槽。",
+      "params": "{ label: string; props: Record<string, unknown> }"
     },
     {
       "name": "loader",
       "description": "Slot for custom loader (displayed when loading prop is equal to true).",
-      "description_zh": "自定义加载器的插槽（当加载道具等于 true 时显示）。"
+      "description_zh": "自定义加载器的插槽（当加载 prop 等于 true 时显示）。",
+      "params": "{ color: string; isActive: boolean }"
     },
     {
       "name": "message",
       "description": "Slot used to customize the message content.",
-      "description_zh": "用于自定义消息内容的槽。"
+      "description_zh": "用于自定义消息内容的插槽。",
+      "params": "{ message: string }"
     },
     {
       "name": "prepend",
       "description": "Adds an item outside the input and before input content.",
-      "description_zh": "在输入内容之外和输入内容之前添加一个项目。"
+      "description_zh": "在输入内容之外和之前添加项目。",
+      "params": "{\n  id: ComputedRef<string>\n  messagesId: ComputedRef<string>\n  isDirty: ComputedRef<boolean>\n  isDisabled: ComputedRef<boolean>\n  isReadonly: ComputedRef<boolean>\n  isPristine: Ref<boolean>\n  isValid: ComputedRef<boolean | null>\n  isValidating: Ref<boolean>\n  reset: () => void\n  resetValidation: () => void\n  validate: () => void\n}"
     },
     {
-      "name": "thumb3.5.0 版本的新特色",
+      "name": "thumbNew in v3.5.0",
       "description": "Slot for custom thumb content.",
-      "description_zh": "用于自定义拇指内容的插槽。"
+      "description_zh": "用于自定义 Thumb 内容的插槽。",
+      "params": "{\n  icon:\n    | string\n    | (string | [string, number])[]\n    | (new () => any)\n    | FunctionalComponent\n} & { model: Ref<boolean>; isValid: ComputedRef<boolean | null> }"
     },
     {
-      "name": "track-false3.5.0 版本的新特色",
+      "name": "track-falseNew in v3.5.0",
       "description": "Slot for custom track content when value is false.",
-      "description_zh": "当 value 为 false 时，用于自定义轨道内容的槽。"
+      "description_zh": "当 value 为 false 时，自定义轨道内容的插槽。",
+      "params": "{ model: Ref<boolean>; isValid: ComputedRef<boolean | null> }"
     },
     {
-      "name": "track-true3.5.0 版本的新特色",
+      "name": "track-trueNew in v3.5.0",
       "description": "Slot for custom track content when value is true.",
-      "description_zh": "当 value 为 true 时，用于自定义轨道内容的插槽。"
+      "description_zh": "当值为 true 时，自定义轨道内容的插槽。",
+      "params": "{ model: Ref<boolean>; isValid: ComputedRef<boolean | null> }"
     }
   ]
 }

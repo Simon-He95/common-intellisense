@@ -136,22 +136,26 @@
     {
       "name": "additional",
       "description": "Slot for additional content at the end of the component.",
-      "description_zh": "组件末尾的附加内容插槽。"
+      "description_zh": "组件末尾的附加内容插槽。",
+      "params": "{\n  group: {\n    register: (\n      item: {\n        id: number\n        value: Ref<unknown>\n        disabled: Ref<boolean | undefined>\n        useIndexAsValue: boolean\n      },\n      cmp: ComponentInternalInstance,\n    ) => void\n    unregister: (id: number) => void\n    select: (id: number, value: boolean) => void\n    selected: Ref<readonly number[]>\n    isSelected: (id: number) => boolean\n    prev: () => void\n    next: () => void\n    selectedClass: Ref<string | undefined>\n    items: ComputedRef<\n      { id: number; value: unknown; disabled: boolean | undefined }[]\n    >\n    disabled: Ref<boolean | undefined>\n    getItemIndex: (value: unknown) => number\n  }\n}"
     },
     {
       "name": "default",
       "description": "The default Vue slot.",
-      "description_zh": "默认的 Vue 插槽。"
+      "description_zh": "默认的 Vue 插槽。",
+      "params": "{\n  group: {\n    register: (\n      item: {\n        id: number\n        value: Ref<unknown>\n        disabled: Ref<boolean | undefined>\n        useIndexAsValue: boolean\n      },\n      cmp: ComponentInternalInstance,\n    ) => void\n    unregister: (id: number) => void\n    select: (id: number, value: boolean) => void\n    selected: Ref<readonly number[]>\n    isSelected: (id: number) => boolean\n    prev: () => void\n    next: () => void\n    selectedClass: Ref<string | undefined>\n    items: ComputedRef<\n      { id: number; value: unknown; disabled: boolean | undefined }[]\n    >\n    disabled: Ref<boolean | undefined>\n    getItemIndex: (value: unknown) => number\n  }\n}"
     },
     {
       "name": "next",
       "description": "Slot displaying the arrow switching to the next item.",
-      "description_zh": "显示切换到下一项的箭头的插槽。"
+      "description_zh": "显示切换到下一项的箭头的插槽。",
+      "params": "{\n  props: {\n    icon:\n      | string\n      | (string | [string, number])[]\n      | (new () => any)\n      | FunctionalComponent\n    class: string\n    onClick: () => void\n    'aria-label': string\n  }\n}"
     },
     {
       "name": "prev",
       "description": "Slot displaying the arrow switching to the previous item.",
-      "description_zh": "显示切换到上一项的箭头的插槽。"
+      "description_zh": "显示切换到上一项的箭头的插槽。",
+      "params": "{\n  props: {\n    icon:\n      | string\n      | (string | [string, number])[]\n      | (new () => any)\n      | FunctionalComponent\n    class: string\n    onClick: () => void\n    'aria-label': string\n  }\n}"
     }
   ],
   "exposed": [

@@ -10,7 +10,6 @@ import UI from './ui'
 import { UINames as UINamesMap, nameMap } from './constants'
 import type { Directives } from './ui/utils'
 import { isVine, isVue, toCamel } from './ui/utils'
-import { fetchFromCommonIntellisense } from './fetch'
 // import {createWebviewPanel} from './webview/webview'
 
 let UINames: any = []
@@ -21,8 +20,8 @@ let extensionContext: any = null
 let eventCallbacks: any = new Map()
 let completionsCallbacks: any = new Map()
 let currentPkgUiNames: null | string[] = null
-const isShowSlots = getConfiguration('common-intellisense.showSlots')
-const defaultExclude = getConfiguration('common-intellisense.exclude')
+const isShowSlots = getConfiguration('common-intellisense-local.showSlots')
+const defaultExclude = getConfiguration('common-intellisense-local.exclude')
 const filterId = createFilter(defaultExclude)
 const filter = ['javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'vue', 'svelte']
 function isSkip() {
@@ -31,8 +30,6 @@ function isSkip() {
 }
 // todo: 补充example
 export async function activate(context: vscode.ExtensionContext) {
-  const commonUI = await fetchFromCommonIntellisense()
-  Object.assign(UI, commonUI)
   extensionContext = context
   // todo: createWebviewPanel
   // createWebviewPanel(context)
@@ -62,12 +59,12 @@ export async function activate(context: vscode.ExtensionContext) {
       findUI()
   }))
 
-  context.subscriptions.push(registerCommand('intellisense.copyDemo', (demo) => {
+  context.subscriptions.push(registerCommand('intellisense-local.copyDemo', (demo) => {
     setCopyText(demo)
     message.info('copy successfully')
   }))
 
-  context.subscriptions.push(registerCommand('common-intellisense.pickUI', () => {
+  context.subscriptions.push(registerCommand('common-intellisense-local.pickUI', () => {
     if (currentPkgUiNames && currentPkgUiNames.length) {
       if (currentPkgUiNames.some(i => i.includes('bitsUi'))) {
         currentPkgUiNames.filter(i => i.startsWith('bitsUi')).map(i => i.replace('bitsUi', 'shadcnSvelte')).forEach((i) => {
@@ -75,7 +72,7 @@ export async function activate(context: vscode.ExtensionContext) {
             currentPkgUiNames!.push(i)
         })
       }
-      const currentSelect = getConfiguration('common-intellisense.ui')
+      const currentSelect = getConfiguration('common-intellisense-local.ui')
       let options: any[] = []
       if (currentSelect) {
         options = currentPkgUiNames.map((label) => {
@@ -97,7 +94,7 @@ export async function activate(context: vscode.ExtensionContext) {
         placeHolder: isZh ? '请指定你需要提示的 UI 库' : 'Please specify the UI library you need to prompt.',
         title: 'common intellisense',
       }).then((data: any) => {
-        setConfiguration('common-intellisense.ui', data)
+        setConfiguration('common-intellisense-local.ui', data)
       })
     }
     else {
@@ -108,11 +105,11 @@ export async function activate(context: vscode.ExtensionContext) {
   }))
 
   context.subscriptions.push(addEventListener('config-change', (e) => {
-    if (e.affectsConfiguration('common-intellisense.ui'))
+    if (e.affectsConfiguration('common-intellisense-local.ui'))
       findUI()
   }))
 
-  context.subscriptions.push(registerCommand('common-intellisense.import', (params, loc, _lineOffset) => {
+  context.subscriptions.push(registerCommand('common-intellisense-local.import', (params, loc, _lineOffset) => {
     if (!params)
       return
     const [data, lib, _, prefix, dynamicLib, importWay] = params
@@ -200,7 +197,7 @@ export async function activate(context: vscode.ExtensionContext) {
 
   // 监听pkg变化
   if (isShowSlots) {
-    context.subscriptions.push(registerCommand('common-intellisense.slots', (child, name, offset) => {
+    context.subscriptions.push(registerCommand('common-intellisense-local.slots', (child, name, offset, detail) => {
       const activeText = getActiveText()
       if (!activeText)
         return
@@ -216,6 +213,8 @@ export async function activate(context: vscode.ExtensionContext) {
       let slotName = `#${name}`
       if (child.range)
         slotName = `v-slot:${name}`
+      if (detail.params)
+        slotName += '="slotProps"'
 
       if (lastChild) {
         if (isVine() && lastChild.codegenNode) {
@@ -519,15 +518,15 @@ export async function activate(context: vscode.ExtensionContext) {
     if (!item.command) {
       if (item.params[2]) {
         item.command = {
-          title: 'common-intellisense-import',
-          command: 'common-intellisense.import',
+          title: 'common-intellisense-local-import',
+          command: 'common-intellisense-local.import',
           arguments: [item.params, item.loc, (item.snippet || item.content).split('\n').length - 1],
         }
       }
       else {
         item.command = {
-          title: 'common-intellisense.slots',
-          command: 'common-intellisense.slots',
+          title: 'common-intellisense-local.slots',
+          command: 'common-intellisense-local.slots',
           arguments: [],
         }
       }
@@ -536,7 +535,7 @@ export async function activate(context: vscode.ExtensionContext) {
     return item
   }, ['"', '\'', '-', ' ', '@', '.', ':']))
 
-  context.subscriptions.push(registerCommand('intellisense.openDocument', (args) => {
+  context.subscriptions.push(registerCommand('intellisense-local.openDocument', (args) => {
     // 注册全局的 link 点击事件
     const url = args.link
     if (!url)
@@ -570,7 +569,7 @@ export async function activate(context: vscode.ExtensionContext) {
     })
   }))
 
-  context.subscriptions.push(registerCommand('intellisense.openDocumentExternal', (args) => {
+  context.subscriptions.push(registerCommand('intellisense-local.openDocumentExternal', (args) => {
     // 注册全局的 link 点击事件
     const url = args.link
     if (!url)
@@ -798,7 +797,7 @@ export function findUI() {
   completionsCallbacks.clear()
   currentPkgUiNames = null
   cacheMap.clear()
-  const selectedUIs = getConfiguration('common-intellisense.ui') as string[]
+  const selectedUIs = getConfiguration('common-intellisense-local.ui') as string[]
 
   const cwd = getCurrentFileUrl()
   if (!cwd || cwd === 'exthhost')
@@ -840,7 +839,7 @@ export function findUI() {
     if (selectedUIs && selectedUIs.length && !selectedUIs.includes('auto')) {
       UINames = [...selectedUIs.filter(item => uisName.includes(item))]
       if (!UINames.length)
-        setConfiguration('common-intellisense.ui', [])
+        setConfiguration('common-intellisense-local.ui', [])
     }
 
     if (!UINames.length)

@@ -1,10 +1,10 @@
 {
   "publisher": "simonhe",
-  "name": "common-intellisense",
-  "displayName": "common-intellisense",
+  "name": "common-intellisense-local",
+  "displayName": "common-intellisense-local",
   "version": "0.1.77",
   "packageManager": "pnpm@8.15.9",
-  "description": "common-intellisense",
+  "description": "common-intellisense for local",
   "author": "Simon He <https://github.com/Simon-He95>",
   "license": "MIT",
   "funding": "https://github.com/sponsors/Simon-He95",
@@ -34,7 +34,7 @@
     "configuration": {
       "title": "Common Intellisense",
       "properties": {
-        "common-intellisense.ui": {
+        "common-intellisense-local.ui": {
           "type": "array",
           "default": [
             "auto"
@@ -74,34 +74,44 @@
           },
           "description": "Choose the UI framework. If your selection includes `auto`, the extension will ignore the config and automatically detect the UI framework."
         },
-        "common-intellisense.remoteUris": {
+        "common-intellisense-local.remoteUris": {
           "type": "array",
           "default": [],
           "description": "Fetch UI Configuration from remote URLs and generate code hints"
         },
-        "common-intellisense.showSlots": {
+        "common-intellisense-local.showSlots": {
           "type": "boolean",
           "default": true,
           "description": "Whether to show the slots on template completion."
         },
-        "common-intellisense.alias": {
+        "common-intellisense-local.alias": {
           "type": "object",
           "default": {},
           "description": "Alias for the UI framework. If the UI framework you are using is not in the list, you can add an alias here. like { \"xxx\": \"elementUi2\" }"
         },
-        "common-intellisense.exclude": {
+        "common-intellisense-local.exclude": {
           "type": "array",
           "default": [
             "**/dist/**",
             "**/node_modules/**"
           ],
           "description": "The directory you want to be skipped"
+        },
+        "common-intellisense-local.prefixMap": {
+          "type": "array",
+          "default": [
+            {
+              "lib": "",
+              "prefix": ""
+            }
+          ],
+          "description": "The prefix map for the UI framework"
         }
       }
     },
     "commands": [
       {
-        "command": "common-intellisense.pickUI",
+        "command": "common-intellisense-local.pickUI",
         "title": "Specify the UI library you need to prompt"
       }
     ]

@@ -503,132 +503,158 @@
     {
       "name": "[`header.${string}`]",
       "description": "MISSING DESCRIPTION (edit in github)",
-      "description_zh": "缺少描述（在 github 中编辑）"
+      "description_zh": "缺少描述（在 github 中编辑）",
+      "params": "{\n  column: InternalDataTableHeader\n  selectAll: (value: boolean) => void\n  isSorted: (column: InternalDataTableHeader) => boolean\n  toggleSort: (column: InternalDataTableHeader) => void\n  sortBy: SortItem[]\n  someSelected: boolean\n  allSelected: boolean\n  getSortIcon: (\n    column: InternalDataTableHeader,\n  ) =>\n    | string\n    | (string | [string, number])[]\n    | (new () => any)\n    | FunctionalComponent\n}"
     },
     {
       "name": "[`item.${string}`]",
       "description": "Slot for custom rendering of a row cell.",
-      "description_zh": "用于行单元格的自定义渲染的插槽。"
+      "description_zh": "用于自定义呈现行单元格的插槽。",
+      "params": "{\n  index: number\n  item: any\n  internalItem: DataTableItem\n  isExpanded: (item: DataTableItem) => boolean\n  toggleExpand: (item: DataTableItem) => void\n  isSelected: (\n    items: { value: any; selectable: boolean } | SelectableItem[],\n  ) => boolean\n  toggleSelect: (item: { value: any; selectable: boolean }) => void\n} & { value: any; column: InternalDataTableHeader }"
     },
     {
       "name": "body",
       "description": "Slot to replace the default table <tbody>.",
-      "description_zh": "用于替换默认表的插槽<tbody>。"
+      "description_zh": "Slot 替换默认表 <tbody>。",
+      "params": "{\n  page: number\n  itemsPerPage: number\n  sortBy: SortItem[]\n  pageCount: number\n  toggleSort: (column: InternalDataTableHeader) => void\n  setItemsPerPage: (value: number) => void\n  someSelected: boolean\n  allSelected: boolean\n  isSelected: (\n    items: { value: any; selectable: boolean } | SelectableItem[],\n  ) => boolean\n  select: (items: SelectableItem[], value: boolean) => void\n  selectAll: (value: boolean) => void\n  toggleSelect: (item: { value: any; selectable: boolean }) => void\n  isExpanded: (item: DataTableItem) => boolean\n  toggleExpand: (item: DataTableItem) => void\n  isGroupOpen: (group: Group) => boolean\n  toggleGroup: (group: Group) => void\n  items: any[]\n  internalItems: DataTableItem[]\n  groupedItems: (DataTableItem | Group)[]\n  columns: InternalDataTableHeader[]\n  headers: InternalDataTableHeader[][]\n}"
     },
     {
       "name": "body.append",
       "description": "Appends elements to the end of the default table <tbody>.",
-      "description_zh": "将元素追加到默认表的末尾<tbody>。"
+      "description_zh": "将元素附加到 default table 的末尾 <tbody>。",
+      "params": "{\n  page: number\n  itemsPerPage: number\n  sortBy: SortItem[]\n  pageCount: number\n  toggleSort: (column: InternalDataTableHeader) => void\n  setItemsPerPage: (value: number) => void\n  someSelected: boolean\n  allSelected: boolean\n  isSelected: (\n    items: { value: any; selectable: boolean } | SelectableItem[],\n  ) => boolean\n  select: (items: SelectableItem[], value: boolean) => void\n  selectAll: (value: boolean) => void\n  toggleSelect: (item: { value: any; selectable: boolean }) => void\n  isExpanded: (item: DataTableItem) => boolean\n  toggleExpand: (item: DataTableItem) => void\n  isGroupOpen: (group: Group) => boolean\n  toggleGroup: (group: Group) => void\n  items: any[]\n  internalItems: DataTableItem[]\n  groupedItems: (DataTableItem | Group)[]\n  columns: InternalDataTableHeader[]\n  headers: InternalDataTableHeader[][]\n}"
     },
     {
       "name": "body.prepend",
       "description": "Prepends elements to the start of the default table <tbody>.",
-      "description_zh": "将元素预置到默认表的开头<tbody>。"
+      "description_zh": "将 elements 添加到默认 table 的开头 <tbody>。",
+      "params": "{\n  page: number\n  itemsPerPage: number\n  sortBy: SortItem[]\n  pageCount: number\n  toggleSort: (column: InternalDataTableHeader) => void\n  setItemsPerPage: (value: number) => void\n  someSelected: boolean\n  allSelected: boolean\n  isSelected: (\n    items: { value: any; selectable: boolean } | SelectableItem[],\n  ) => boolean\n  select: (items: SelectableItem[], value: boolean) => void\n  selectAll: (value: boolean) => void\n  toggleSelect: (item: { value: any; selectable: boolean }) => void\n  isExpanded: (item: DataTableItem) => boolean\n  toggleExpand: (item: DataTableItem) => void\n  isGroupOpen: (group: Group) => boolean\n  toggleGroup: (group: Group) => void\n  items: any[]\n  internalItems: DataTableItem[]\n  groupedItems: (DataTableItem | Group)[]\n  columns: InternalDataTableHeader[]\n  headers: InternalDataTableHeader[][]\n}"
     },
     {
       "name": "bottom",
       "description": "Slot for custom rendering of a data table footer.",
-      "description_zh": "用于自定义呈现数据表页脚的插槽。"
+      "description_zh": "用于自定义呈现数据表页脚的插槽。",
+      "params": "{\n  page: number\n  itemsPerPage: number\n  sortBy: SortItem[]\n  pageCount: number\n  toggleSort: (column: InternalDataTableHeader) => void\n  setItemsPerPage: (value: number) => void\n  someSelected: boolean\n  allSelected: boolean\n  isSelected: (\n    items: { value: any; selectable: boolean } | SelectableItem[],\n  ) => boolean\n  select: (items: SelectableItem[], value: boolean) => void\n  selectAll: (value: boolean) => void\n  toggleSelect: (item: { value: any; selectable: boolean }) => void\n  isExpanded: (item: DataTableItem) => boolean\n  toggleExpand: (item: DataTableItem) => void\n  isGroupOpen: (group: Group) => boolean\n  toggleGroup: (group: Group) => void\n  items: any[]\n  internalItems: DataTableItem[]\n  groupedItems: (DataTableItem | Group)[]\n  columns: InternalDataTableHeader[]\n  headers: InternalDataTableHeader[][]\n}"
     },
     {
       "name": "colgroup",
       "description": "Slot to replace the default rendering of the <colgroup> element.",
-      "description_zh": "槽来替换元素的默认渲染<colgroup>。"
+      "description_zh": "Slot 替换元素的默认渲染<colgroup>。",
+      "params": "{\n  page: number\n  itemsPerPage: number\n  sortBy: SortItem[]\n  pageCount: number\n  toggleSort: (column: InternalDataTableHeader) => void\n  setItemsPerPage: (value: number) => void\n  someSelected: boolean\n  allSelected: boolean\n  isSelected: (\n    items: { value: any; selectable: boolean } | SelectableItem[],\n  ) => boolean\n  select: (items: SelectableItem[], value: boolean) => void\n  selectAll: (value: boolean) => void\n  toggleSelect: (item: { value: any; selectable: boolean }) => void\n  isExpanded: (item: DataTableItem) => boolean\n  toggleExpand: (item: DataTableItem) => void\n  isGroupOpen: (group: Group) => boolean\n  toggleGroup: (group: Group) => void\n  items: any[]\n  internalItems: DataTableItem[]\n  groupedItems: (DataTableItem | Group)[]\n  columns: InternalDataTableHeader[]\n  headers: InternalDataTableHeader[][]\n}"
     },
     {
       "name": "data-table-group",
       "description": "Slot for custom rendering of a group.",
-      "description_zh": "用于自定义组渲染的插槽。"
+      "description_zh": "用于自定义渲染组的插槽。",
+      "params": "{ item: Group; count: number; props: Record<string, unknown> }"
     },
     {
       "name": "data-table-select",
       "description": "Slot for custom rendering of a header cell with the select checkbox.",
-      "description_zh": "用于自定义呈现带有选择复选框的标题单元格的插槽。"
+      "description_zh": "用于自定义渲染标题单元格的插槽，带有 select 复选框。",
+      "params": "{ props: Record<string, unknown> }"
     },
     {
       "name": "default",
       "description": "The default Vue slot.",
-      "description_zh": "默认的 Vue 插槽。"
+      "description_zh": "默认的 Vue 插槽。",
+      "params": "{\n  page: number\n  itemsPerPage: number\n  sortBy: SortItem[]\n  pageCount: number\n  toggleSort: (column: InternalDataTableHeader) => void\n  setItemsPerPage: (value: number) => void\n  someSelected: boolean\n  allSelected: boolean\n  isSelected: (\n    items: { value: any; selectable: boolean } | SelectableItem[],\n  ) => boolean\n  select: (items: SelectableItem[], value: boolean) => void\n  selectAll: (value: boolean) => void\n  toggleSelect: (item: { value: any; selectable: boolean }) => void\n  isExpanded: (item: DataTableItem) => boolean\n  toggleExpand: (item: DataTableItem) => void\n  isGroupOpen: (group: Group) => boolean\n  toggleGroup: (group: Group) => void\n  items: any[]\n  internalItems: DataTableItem[]\n  groupedItems: (DataTableItem | Group)[]\n  columns: InternalDataTableHeader[]\n  headers: InternalDataTableHeader[][]\n}"
     },
     {
       "name": "expanded-row",
       "description": "Slot for custom rendering of an expanded row.",
-      "description_zh": "用于自定义渲染扩展行的插槽。"
+      "description_zh": "用于自定义渲染展开行的槽。",
+      "params": "{\n  index: number\n  item: any\n  internalItem: DataTableItem\n  isExpanded: (item: DataTableItem) => boolean\n  toggleExpand: (item: DataTableItem) => void\n  isSelected: (\n    items: { value: any; selectable: boolean } | SelectableItem[],\n  ) => boolean\n  toggleSelect: (item: { value: any; selectable: boolean }) => void\n} & { columns: InternalDataTableHeader[] }"
     },
     {
       "name": "footer.prepend",
       "description": "Adds content to the empty space in the footer.",
-      "description_zh": "将内容添加到页脚的空白区域。"
+      "description_zh": "将内容添加到页脚的空白处。",
+      "params": ""
     },
     {
       "name": "group-header",
       "description": "Slot for custom rendering of a group header.",
-      "description_zh": "用于自定义呈现组标题的插槽。"
+      "description_zh": "用于自定义呈现组标题的插槽。",
+      "params": "{\n  index: number\n  item: Group\n  columns: InternalDataTableHeader[]\n  isExpanded: (item: DataTableItem) => boolean\n  toggleExpand: (item: DataTableItem) => void\n  isSelected: (\n    items: { value: any; selectable: boolean } | SelectableItem[],\n  ) => boolean\n  toggleSelect: (item: { value: any; selectable: boolean }) => void\n  toggleGroup: (group: Group) => void\n  isGroupOpen: (group: Group) => boolean\n}"
     },
     {
       "name": "header.data-table-expand",
       "description": "MISSING DESCRIPTION (edit in github)",
-      "description_zh": "缺少描述（在 github 中编辑）"
+      "description_zh": "缺少描述（在 github 中编辑）",
+      "params": "{\n  column: InternalDataTableHeader\n  selectAll: (value: boolean) => void\n  isSorted: (column: InternalDataTableHeader) => boolean\n  toggleSort: (column: InternalDataTableHeader) => void\n  sortBy: SortItem[]\n  someSelected: boolean\n  allSelected: boolean\n  getSortIcon: (\n    column: InternalDataTableHeader,\n  ) =>\n    | string\n    | (string | [string, number])[]\n    | (new () => any)\n    | FunctionalComponent\n}"
     },
     {
       "name": "header.data-table-select",
       "description": "Slot to replace the default v-checkbox-btn in header.",
-      "description_zh": "用于替换标头中默认的 v-checkbox-btn 的插槽。"
+      "description_zh": "Slot 替换 header 中默认的 v-checkbox-btn。",
+      "params": "{\n  column: InternalDataTableHeader\n  selectAll: (value: boolean) => void\n  isSorted: (column: InternalDataTableHeader) => boolean\n  toggleSort: (column: InternalDataTableHeader) => void\n  sortBy: SortItem[]\n  someSelected: boolean\n  allSelected: boolean\n  getSortIcon: (\n    column: InternalDataTableHeader,\n  ) =>\n    | string\n    | (string | [string, number])[]\n    | (new () => any)\n    | FunctionalComponent\n}"
     },
     {
       "name": "headers",
       "description": "MISSING DESCRIPTION (edit in github)",
-      "description_zh": "缺少描述（在 github 中编辑）"
+      "description_zh": "缺少描述（在 github 中编辑）",
+      "params": "{\n  headers: InternalDataTableHeader[][]\n  columns: InternalDataTableHeader[]\n  sortBy: SortItem[]\n  someSelected: boolean\n  allSelected: boolean\n  toggleSort: (column: InternalDataTableHeader) => void\n  selectAll: (value: boolean) => void\n  getSortIcon: (\n    column: InternalDataTableHeader,\n  ) =>\n    | string\n    | (string | [string, number])[]\n    | (new () => any)\n    | FunctionalComponent\n  isSorted: (column: InternalDataTableHeader) => boolean\n}"
     },
     {
       "name": "item",
       "description": "Slot to replace the default rendering of a row.",
-      "description_zh": "槽来替换行的默认呈现。"
+      "description_zh": "Slot 替换行的默认渲染。",
+      "params": "{\n  index: number\n  item: any\n  internalItem: DataTableItem\n  isExpanded: (item: DataTableItem) => boolean\n  toggleExpand: (item: DataTableItem) => void\n  isSelected: (\n    items: { value: any; selectable: boolean } | SelectableItem[],\n  ) => boolean\n  toggleSelect: (item: { value: any; selectable: boolean }) => void\n} & { columns: InternalDataTableHeader[] } & { props: Record<string, any> }"
     },
     {
       "name": "item.data-table-expand",
       "description": "Slot to replace the default v-icon used when expanding rows.",
-      "description_zh": "插槽，以替换扩展行时使用的默认 V 图标。"
+      "description_zh": "用于替换展开行时使用的默认 v 图标的插槽。",
+      "params": "Omit<ItemKeySlot<any>, 'value'>"
     },
     {
       "name": "item.data-table-select",
       "description": "Slot to replace the default v-checkbox-btn used when selecting rows.",
-      "description_zh": "槽来替换选择行时使用的默认 v-checkbox-btn。"
+      "description_zh": "用于替换选择行时使用的默认 v-checkbox-btn 的插槽。",
+      "params": "Omit<ItemKeySlot<any>, 'value'>"
     },
     {
       "name": "loader",
       "description": "Slot for custom loader (displayed when loading prop is equal to true).",
-      "description_zh": "自定义加载器的插槽（当加载道具等于 true 时显示）。"
+      "description_zh": "自定义加载器的插槽（当加载 prop 等于 true 时显示）。",
+      "params": "{ color: string; isActive: boolean }"
     },
     {
       "name": "loading",
       "description": "Defines content for when loading is true and no items are provided.",
-      "description_zh": "定义加载为 true 且未提供任何项目时的内容。"
+      "description_zh": "定义 loading 为 true 且未提供任何项目时的内容。",
+      "params": ""
     },
     {
       "name": "no-data",
       "description": "Defines content for when no items are provided.",
-      "description_zh": "定义未提供任何项目时的内容。"
+      "description_zh": "定义未提供任何项目时的内容。",
+      "params": ""
     },
     {
       "name": "tbody",
       "description": "MISSING DESCRIPTION (edit in github)",
-      "description_zh": "缺少描述（在 github 中编辑）"
+      "description_zh": "缺少描述（在 github 中编辑）",
+      "params": "{\n  page: number\n  itemsPerPage: number\n  sortBy: SortItem[]\n  pageCount: number\n  toggleSort: (column: InternalDataTableHeader) => void\n  setItemsPerPage: (value: number) => void\n  someSelected: boolean\n  allSelected: boolean\n  isSelected: (\n    items: { value: any; selectable: boolean } | SelectableItem[],\n  ) => boolean\n  select: (items: SelectableItem[], value: boolean) => void\n  selectAll: (value: boolean) => void\n  toggleSelect: (item: { value: any; selectable: boolean }) => void\n  isExpanded: (item: DataTableItem) => boolean\n  toggleExpand: (item: DataTableItem) => void\n  isGroupOpen: (group: Group) => boolean\n  toggleGroup: (group: Group) => void\n  items: any[]\n  internalItems: DataTableItem[]\n  groupedItems: (DataTableItem | Group)[]\n  columns: InternalDataTableHeader[]\n  headers: InternalDataTableHeader[][]\n}"
     },
     {
       "name": "tfoot",
       "description": "MISSING DESCRIPTION (edit in github)",
-      "description_zh": "缺少描述（在 github 中编辑）"
+      "description_zh": "缺少描述（在 github 中编辑）",
+      "params": "{\n  page: number\n  itemsPerPage: number\n  sortBy: SortItem[]\n  pageCount: number\n  toggleSort: (column: InternalDataTableHeader) => void\n  setItemsPerPage: (value: number) => void\n  someSelected: boolean\n  allSelected: boolean\n  isSelected: (\n    items: { value: any; selectable: boolean } | SelectableItem[],\n  ) => boolean\n  select: (items: SelectableItem[], value: boolean) => void\n  selectAll: (value: boolean) => void\n  toggleSelect: (item: { value: any; selectable: boolean }) => void\n  isExpanded: (item: DataTableItem) => boolean\n  toggleExpand: (item: DataTableItem) => void\n  isGroupOpen: (group: Group) => boolean\n  toggleGroup: (group: Group) => void\n  items: any[]\n  internalItems: DataTableItem[]\n  groupedItems: (DataTableItem | Group)[]\n  columns: InternalDataTableHeader[]\n  headers: InternalDataTableHeader[][]\n}"
     },
     {
       "name": "thead",
       "description": "MISSING DESCRIPTION (edit in github)",
-      "description_zh": "缺少描述（在 github 中编辑）"
+      "description_zh": "缺少描述（在 github 中编辑）",
+      "params": "{\n  page: number\n  itemsPerPage: number\n  sortBy: SortItem[]\n  pageCount: number\n  toggleSort: (column: InternalDataTableHeader) => void\n  setItemsPerPage: (value: number) => void\n  someSelected: boolean\n  allSelected: boolean\n  isSelected: (\n    items: { value: any; selectable: boolean } | SelectableItem[],\n  ) => boolean\n  select: (items: SelectableItem[], value: boolean) => void\n  selectAll: (value: boolean) => void\n  toggleSelect: (item: { value: any; selectable: boolean }) => void\n  isExpanded: (item: DataTableItem) => boolean\n  toggleExpand: (item: DataTableItem) => void\n  isGroupOpen: (group: Group) => boolean\n  toggleGroup: (group: Group) => void\n  items: any[]\n  internalItems: DataTableItem[]\n  groupedItems: (DataTableItem | Group)[]\n  columns: InternalDataTableHeader[]\n  headers: InternalDataTableHeader[][]\n}"
     },
     {
       "name": "top",
       "description": "Slot to add content above the table.",
-      "description_zh": "用于在表格上方添加内容的插槽。"
+      "description_zh": "用于在表格上方添加内容的插槽。",
+      "params": "{\n  page: number\n  itemsPerPage: number\n  sortBy: SortItem[]\n  pageCount: number\n  toggleSort: (column: InternalDataTableHeader) => void\n  setItemsPerPage: (value: number) => void\n  someSelected: boolean\n  allSelected: boolean\n  isSelected: (\n    items: { value: any; selectable: boolean } | SelectableItem[],\n  ) => boolean\n  select: (items: SelectableItem[], value: boolean) => void\n  selectAll: (value: boolean) => void\n  toggleSelect: (item: { value: any; selectable: boolean }) => void\n  isExpanded: (item: DataTableItem) => boolean\n  toggleExpand: (item: DataTableItem) => void\n  isGroupOpen: (group: Group) => boolean\n  toggleGroup: (group: Group) => void\n  items: any[]\n  internalItems: DataTableItem[]\n  groupedItems: (DataTableItem | Group)[]\n  columns: InternalDataTableHeader[]\n  headers: InternalDataTableHeader[][]\n}"
     }
   ]
 }

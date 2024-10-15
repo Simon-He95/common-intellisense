@@ -5,7 +5,7 @@ export async function createWebviewPanel(context: vscode.ExtensionContext) {
   const panel = new CreateWebview(
     context,
     {
-      title: 'vscode-common-intellisense',
+      title: 'vscode-common-intellisense-local',
     },
   )
 

@@ -71,7 +71,8 @@
     {
       "name": "default",
       "description": "The default Vue slot.",
-      "description_zh": "默认的 Vue 插槽。"
+      "description_zh": "默认的 Vue 插槽。",
+      "params": "{\n  errors: Ref<{ id: string | number; errorMessages: string[] }[]>\n  isDisabled: ComputedRef<boolean>\n  isReadonly: ComputedRef<boolean>\n  isValidating: ShallowRef<boolean>\n  isValid: Ref<boolean | null> & { externalValue: boolean }\n  items: Ref<\n    {\n      id: string | number\n      validate: () => Promise<string[]>\n      reset: () => Promise<void>\n      resetValidation: () => Promise<void>\n      vm: Raw<ComponentInternalInstance>\n      isValid: boolean | null\n      errorMessages: string[]\n    }[]\n  >\n  validate: () => Promise<{\n    valid: boolean\n    errors: { id: string | number; errorMessages: string[] }[]\n  }>\n  reset: () => void\n  resetValidation: () => void\n}"
     }
   ],
   "exposed": [

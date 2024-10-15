@@ -1,5 +1,5 @@
 {
-  "name": "VFileInput",
+  "name": "VDateInput",
   "props": {
     "active": {
       "default": "false",
@@ -8,6 +8,15 @@
       "version": "",
       "description": "Controls the active state of the item. This is typically used to highlight the component.",
       "description_zh": "控制项的活动状态。这通常用于突出显示组件。",
+      "required": false
+    },
+    "allowed-dates": {
+      "default": "undefined",
+      "value": "",
+      "type": "unknown[] | ((date: unknown) => boolean)",
+      "version": "",
+      "description": "Restricts which dates can be selected.",
+      "description_zh": "限制可以选择的日期。",
       "required": false
     },
     "append-icon": {
@@ -28,6 +37,15 @@
       "description_zh": "在 append-inner 插槽中创建 v-icon 组件。",
       "required": false
     },
+    "autofocus": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "description": "Enables autofocus.",
+      "description_zh": "启用自动对焦。",
+      "required": false
+    },
     "base-color": {
       "default": "undefined",
       "value": "",
@@ -46,6 +64,24 @@
       "description_zh": "将指定的颜色应用于控件的背景。用于也支持 color 属性的组件。- 支持实用工具颜色（例如 Success 或 Purple）或 CSS 颜色（#033 或 RGBA（255， 0， 0， 0.5））。在 colors 页面上查找内置类的列表。",
       "required": false
     },
+    "border": {
+      "default": "false",
+      "value": "",
+      "type": "string | number | boolean",
+      "version": "",
+      "description": "Designates the border-radius applied to the component. This can be xs, sm, md, lg, xl.",
+      "description_zh": "指定应用于组件的 border-radius。这可以是 xs、sm、md、lg、xl。",
+      "required": false
+    },
+    "cancel-text": {
+      "default": "'$vuetify.confirmEdit.cancel'",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "description": "Text for the cancel button",
+      "description_zh": "取消按钮的文本",
+      "required": false
+    },
     "center-affix": {
       "default": "undefined",
       "value": "",
@@ -55,17 +91,8 @@
       "description_zh": "将 appendInner、prependInner、clearIcon 和 label 垂直对齐在中心。",
       "required": false
     },
-    "chips": {
-      "default": "false",
-      "value": "",
-      "type": "boolean",
-      "version": "",
-      "description": "Changes display of selections to chips.",
-      "description_zh": "将选择项的显示更改为筹码。",
-      "required": false
-    },
     "clearable": {
-      "default": "true",
+      "default": "false",
       "value": "",
       "type": "boolean",
       "version": "",
@@ -94,34 +121,25 @@
     "counter": {
       "default": "false",
       "value": "",
-      "type": "boolean",
+      "type": "string | number | boolean",
       "version": "",
-      "description": "Displays the number of selected files.",
-      "description_zh": "显示所选文件的数量。",
+      "description": "Creates counter for input length; if no number is specified, it defaults to 25. Does not apply any validation.",
+      "description_zh": "为 input length 创建 counter;如果未指定数字，则默认为 25。不应用任何验证。",
       "required": false
     },
-    "counter-size-string": {
-      "default": "'$vuetify.fileInput.counterSize'",
+    "counter-value": {
+      "default": "undefined",
       "value": "",
-      "type": "string",
+      "type": "number | ((value: any) => number)",
       "version": "",
-      "description": "The text displayed when using the counter and show-size props. Can also be customized globally on the internationalization page.",
-      "description_zh": "使用 counter 和 show-size 属性时显示的文本。也可以在国际化页面上进行全局自定义。",
-      "required": false
-    },
-    "counter-string": {
-      "default": "'$vuetify.fileInput.counter'",
-      "value": "",
-      "type": "string",
-      "version": "",
-      "description": "The text displayed when using the counter prop. Can also be customized globally on the internationalization page.",
-      "description_zh": "使用 counter prop 时显示的文本。也可以在国际化页面上进行全局自定义。",
+      "description": "Function returns the counter display text.",
+      "description_zh": "function 返回计数器显示文本。",
       "required": false
     },
     "density": {
       "default": "'default'",
       "value": "",
-      "type": "default / comfortable / compact",
+      "type": "'default' | 'comfortable' | 'compact'",
       "version": "",
       "description": "Adjusts the vertical height used by the component.",
       "description_zh": "调整组件使用的垂直高度。",
@@ -130,7 +148,7 @@
     "direction": {
       "default": "'horizontal'",
       "value": "",
-      "type": "horizontal / vertical",
+      "type": "'horizontal' | 'vertical'",
       "version": "",
       "description": "Changes the direction of the input.",
       "description_zh": "更改输入的方向。",
@@ -146,12 +164,30 @@
       "required": false
     },
     "disabled": {
-      "default": "null",
+      "default": "false",
       "value": "",
       "type": "boolean",
       "version": "",
       "description": "Removes the ability to click or target the input.",
       "description_zh": "删除单击或定位输入的功能。",
+      "required": false
+    },
+    "display-value": {
+      "default": "undefined",
+      "value": "",
+      "type": "unknown",
+      "version": "",
+      "description": "The value that determines the month to show. This is different from modelValue, which determines the selected value.",
+      "description_zh": "确定要显示的月份的值。这与 modelValue 不同，modelValue 确定所选值。",
+      "required": false
+    },
+    "elevation": {
+      "default": "undefined",
+      "value": "",
+      "type": "string | number",
+      "version": "",
+      "description": "Designates an elevation applied to the component between 0 and 24. You can find more information on the elevation page.",
+      "description_zh": "指定应用于组件的 0 到 24 之间的高程。您可以在海拔页面上找到更多信息。",
       "required": false
     },
     "error": {
@@ -172,6 +208,15 @@
       "description_zh": "将输入置于错误状态并传递自定义错误消息。将与 rules prop 发生的任何验证相结合。此字段不会触发验证。",
       "required": false
     },
+    "first-day-of-week": {
+      "default": "undefined",
+      "value": "",
+      "type": "string | number",
+      "version": "",
+      "description": "Sets the first day of the week, starting with 0 for Sunday.",
+      "description_zh": "设置一周的第一天，从 0 开始表示星期日。",
+      "required": false
+    },
     "flat": {
       "default": "false",
       "value": "",
@@ -190,22 +235,49 @@
       "description_zh": "强制对组件进行 focused state 样式设置。",
       "required": false
     },
+    "header": {
+      "default": "'$vuetify.datePicker.header'",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "description": "Text shown when no display-date is set.",
+      "description_zh": "未设置显示日期时显示的文本。",
+      "required": false
+    },
+    "height": {
+      "default": "undefined",
+      "value": "",
+      "type": "string | number",
+      "version": "",
+      "description": "Sets the height of the input.",
+      "description_zh": "设置输入的高度。",
+      "required": false
+    },
+    "hide-actions": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "description": "MISSING DESCRIPTION (edit in github)",
+      "description_zh": "缺少描述（在 github 中编辑）",
+      "required": false
+    },
     "hide-details": {
       "default": "false",
       "value": "",
-      "type": "boolean / auto",
+      "type": "boolean | 'auto'",
       "version": "",
       "description": "Hides hint and validation errors. When set to auto messages will be rendered only if there’s a message (hint, error message, counter value etc) to display.",
       "description_zh": "隐藏提示和验证错误。当设置为 auto 时，仅当有消息 （提示、错误消息、计数器值等） 要显示时，才会呈现消息。",
       "required": false
     },
-    "hide-input": {
-      "default": "false",
+    "hide-header": {
+      "default": "true",
       "value": "",
       "type": "boolean",
       "version": "",
-      "description": "Display the icon only without the input (file names).",
-      "description_zh": "仅显示图标，不显示输入（文件名）。",
+      "description": "Hide the picker header.",
+      "description_zh": "隐藏选取器标题。",
       "required": false
     },
     "hide-spin-buttons": {
@@ -215,6 +287,15 @@
       "version": "",
       "description": "Hides spin buttons on the input when type is set to number.",
       "description_zh": "当 type 设置为 number 时，隐藏输入上的旋转按钮。",
+      "required": false
+    },
+    "hide-weekdays": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "description": "Hide the days of the week letters.",
+      "description_zh": "隐藏星期几字母。",
       "required": false
     },
     "hint": {
@@ -242,7 +323,16 @@
       "version": "",
       "description": "Sets the text of the v-label or v-field-label component.",
       "description_zh": "设置 v-label 或 v-field-label 组件的文本。",
-      "required": true
+      "required": false
+    },
+    "landscape": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "description": "Puts the picker into landscape mode.",
+      "description_zh": "将选取器置于横向模式。",
+      "required": false
     },
     "loading": {
       "default": "false",
@@ -253,6 +343,24 @@
       "description_zh": "显示线性进度条。可以是指定应用于进度条的颜色的 String（任何材料颜色或主题颜色 - primary、secondary、success、info、warning、error），也可以是使用组件颜色（由 color 属性设置 - 如果组件支持）或主要颜色的 Boolean。",
       "required": false
     },
+    "location": {
+      "default": "undefined",
+      "value": "",
+      "type": "Anchor",
+      "version": "",
+      "description": "Specifies the component’s location. Can combine by using a space separated string.",
+      "description_zh": "指定组件的位置。可以使用空格分隔的字符串进行组合。",
+      "required": false
+    },
+    "max": {
+      "default": "undefined",
+      "value": "",
+      "type": "unknown",
+      "version": "",
+      "description": "Maximum allowed date/month (ISO 8601 format).",
+      "description_zh": "允许的最大日期/月（ISO 8601 格式）。",
+      "required": false
+    },
     "max-errors": {
       "default": "1",
       "value": "",
@@ -260,6 +368,15 @@
       "version": "",
       "description": "Control the maximum number of shown errors from validation.",
       "description_zh": "控制验证时显示的错误的最大数量。",
+      "required": false
+    },
+    "max-height": {
+      "default": "undefined",
+      "value": "",
+      "type": "string | number",
+      "version": "",
+      "description": "Sets the maximum height for the component.",
+      "description_zh": "设置组件的最大高度。",
       "required": false
     },
     "max-width": {
@@ -280,6 +397,24 @@
       "description_zh": "显示消息列表，如果使用字符串，则显示单个消息。",
       "required": false
     },
+    "min": {
+      "default": "undefined",
+      "value": "",
+      "type": "unknown",
+      "version": "",
+      "description": "Minimum allowed date/month (ISO 8601 format).",
+      "description_zh": "允许的最小日期/月份 （ISO 8601 格式）。",
+      "required": false
+    },
+    "min-height": {
+      "default": "undefined",
+      "value": "",
+      "type": "string | number",
+      "version": "",
+      "description": "Sets the minimum height for the component.",
+      "description_zh": "设置组件的最小高度。",
+      "required": false
+    },
     "min-width": {
       "default": "undefined",
       "value": "",
@@ -289,22 +424,40 @@
       "description_zh": "设置组件的最小宽度。",
       "required": false
     },
-    "v-model": {
-      "default": "null",
+    "mode-icon": {
+      "default": "'$subgroup'",
       "value": "",
-      "type": "File | File[]",
+      "type": "  | string  | (string | [string, number])[]  | (new () => any)  | FunctionalComponent",
+      "version": "",
+      "description": "Icon displayed next to the current month and year, toggles year selection when clicked.",
+      "description_zh": "图标显示在当前月份和年份旁边，单击时切换年份选择。",
+      "required": false
+    },
+    "v-model": {
+      "default": "undefined",
+      "value": "",
+      "type": "any",
       "version": "",
       "description": "The v-model value of the component. If component supports the multiple prop, this defaults to an empty array.",
       "description_zh": "组件的 v-model 值。如果 component 支持 multiple prop，则默认为空数组。",
       "required": false
     },
+    "month": {
+      "default": "undefined",
+      "value": "",
+      "type": "string | number",
+      "version": "",
+      "description": "The current month number to show",
+      "description_zh": "要显示的当前月份数",
+      "required": false
+    },
     "multiple": {
       "default": "false",
       "value": "",
-      "type": "boolean",
+      "type": "number | boolean | (string & {}) | 'range'",
       "version": "",
-      "description": "Adds the multiple attribute to the input, allowing multiple file selections.",
-      "description_zh": "将 multiple 属性添加到输入中，从而允许选择多个文件。",
+      "description": "Allow the selection of multiple dates. The range value selects all dates between two selections.",
+      "description_zh": "允许选择多个日期。范围值选择两个选择之间的所有日期。",
       "required": false
     },
     "name": {
@@ -316,6 +469,24 @@
       "description_zh": "设置组件的 name 属性。",
       "required": false
     },
+    "next-icon": {
+      "default": "'$next'",
+      "value": "",
+      "type": "  | string  | (string | [string, number])[]  | (new () => any)  | FunctionalComponent",
+      "version": "",
+      "description": "Sets the icon for next month/year button.",
+      "description_zh": "设置下个月/年度的图标按钮。",
+      "required": false
+    },
+    "ok-text": {
+      "default": "'$vuetify.confirmEdit.ok'",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "description": "Text for the ok button",
+      "description_zh": "确定按钮的文本",
+      "required": false
+    },
     "persistent-clear": {
       "default": "false",
       "value": "",
@@ -323,6 +494,15 @@
       "version": "",
       "description": "Always show the clearable icon when the input is dirty (By default it only shows on hover).",
       "description_zh": "当输入脏时，始终显示可清除图标（默认情况下，它仅在悬停时显示）。",
+      "required": false
+    },
+    "persistent-counter": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "description": "Forces counter to always be visible.",
+      "description_zh": "强制计数器始终可见。",
       "required": false
     },
     "persistent-hint": {
@@ -334,13 +514,49 @@
       "description_zh": "强制提示始终可见。",
       "required": false
     },
+    "persistent-placeholder": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "description": "Forces placeholder to always be visible.",
+      "description_zh": "强制占位符始终可见。",
+      "required": false
+    },
+    "placeholder": {
+      "default": "'mm/dd/yyyy'",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "description": "Sets the input’s placeholder text.",
+      "description_zh": "设置输入的占位符文本。",
+      "required": false
+    },
+    "position": {
+      "default": "undefined",
+      "value": "",
+      "type": "'static' | 'relative' | 'fixed' | 'absolute' | 'sticky'",
+      "version": "",
+      "description": "Sets the position for the component.",
+      "description_zh": "设置零部件的位置。",
+      "required": false
+    },
+    "prefix": {
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "description": "Displays prefix text.",
+      "description_zh": "显示前缀文本。",
+      "required": false
+    },
     "prepend-icon": {
-      "default": "'$file'",
+      "default": "'$calendar'",
       "value": "",
       "type": "  | string  | (string | [string, number])[]  | (new () => any)  | FunctionalComponent",
       "version": "",
-      "description": "Prepends an icon to the component, uses the same syntax as v-icon.",
-      "description_zh": "在组件前面加上一个图标，使用与 v-icon 相同的语法。",
+      "description": "Prepends an icon to the outnside the component’s input, uses the same syntax as v-icon.",
+      "description_zh": "在组件输入的外部预置一个图标，使用与 v-icon 相同的语法。",
       "required": false
     },
     "prepend-inner-icon": {
@@ -352,13 +568,22 @@
       "description_zh": "在 prepend-inner 插槽中创建一个 v-icon 组件。",
       "required": false
     },
+    "prev-icon": {
+      "default": "'$prev'",
+      "value": "",
+      "type": "  | string  | (string | [string, number])[]  | (new () => any)  | FunctionalComponent",
+      "version": "",
+      "description": "Sets the icon for previous month/year button.",
+      "description_zh": "设置上个月/年份的图标按钮。",
+      "required": false
+    },
     "readonly": {
       "default": "null",
       "value": "",
       "type": "boolean",
       "version": "",
-      "description": "Puts input in readonly state.",
-      "description_zh": "将输入置于只读状态。",
+      "description": "Makes the picker readonly (doesn’t allow to select new date).",
+      "description_zh": "将选取器设置为只读（不允许选择新日期）。",
       "required": false
     },
     "reverse": {
@@ -370,13 +595,31 @@
       "description_zh": "反转方向。",
       "required": false
     },
+    "reverse-transition": {
+      "default": "'picker-reverse-transition'",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "description": "The transition used when changing months into the past",
+      "description_zh": "将月份更改为过去时使用的过渡",
+      "required": false
+    },
+    "role": {
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "description": "The role attribute applied to the input.",
+      "description_zh": "应用于输入的 role 属性。",
+      "required": false
+    },
     "rounded": {
       "default": "undefined",
       "value": "",
       "type": "string | number | boolean",
       "version": "",
-      "description": "Designates the border-radius applied to the component. This can be 0, xs, sm, true, lg, xl, pill, circle, and shaped. Find more information on available border radius classes on the Border Radius page.",
-      "description_zh": "指定应用于组件的 border-radius。这可以是 0、xs、sm、true、lg、xl、pill、circle 和 shaped。在 Border Radius 页面上查找有关可用边界半径类的更多信息。",
+      "description": "Adds a border radius to the input.",
+      "description_zh": "向输入添加边框半径。",
       "required": false
     },
     "rules": {
@@ -388,13 +631,22 @@
       "description_zh": "接受 function、boolean 和 string 类型的混合数组。函数将输入值作为参数传递，并且必须返回 true / false 或包含错误消息的字符串。如果函数返回 （或数组中的任何值包含） false 或为字符串，则输入字段将进入错误状态。",
       "required": false
     },
-    "show-size": {
+    "show-adjacent-months": {
       "default": "false",
       "value": "",
-      "type": "boolean | 1000 | 1024",
+      "type": "boolean",
       "version": "",
-      "description": "Sets the displayed size of selected file(s). When using true will default to 1000 displaying (kB, MB, GB) while 1024 will display (KiB, MiB, GiB).",
-      "description_zh": "设置所选文件的显示大小。当使用 true 时，将默认显示 1000 （kB， MB， GB），而 1024 将显示 （KiB， MiB， GiB）。",
+      "description": "Toggles visibility of days from previous and next months.",
+      "description_zh": "切换上个月和下个月的日期的可见性。",
+      "required": false
+    },
+    "show-week": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "description": "Toggles visibility of the week numbers in the body of the calendar.",
+      "description_zh": "切换日历正文中周数的可见性。",
       "required": false
     },
     "single-line": {
@@ -404,6 +656,33 @@
       "version": "",
       "description": "Label does not move on focus/dirty.",
       "description_zh": "标签在聚焦/脏污时不移动。",
+      "required": false
+    },
+    "suffix": {
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "description": "Displays suffix text.",
+      "description_zh": "显示后缀文本。",
+      "required": false
+    },
+    "tag": {
+      "default": "'div'",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "description": "Specify a custom tag used on the root element.",
+      "description_zh": "指定根元素上使用的自定义标记。",
+      "required": false
+    },
+    "text": {
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "description": "Specify content text for the component.",
+      "description_zh": "指定组件的内容文本。",
       "required": false
     },
     "theme": {
@@ -424,10 +703,37 @@
       "description_zh": "从组件中删除任何应用的 border-radius。",
       "required": false
     },
+    "title": {
+      "default": "'$vuetify.datePicker.title'",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "description": "Specify a title text for the component.",
+      "description_zh": "指定组件的标题文本。",
+      "required": false
+    },
+    "transition": {
+      "default": "'picker-transition'",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "description": "The transition used when changing months into the future",
+      "description_zh": "将未来月份更改为未来月份时使用的过渡",
+      "required": false
+    },
+    "type": {
+      "default": "'text'",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "description": "Determines the type of the picker - date for date picker, month for month picker.",
+      "description_zh": "确定选取器的类型 - 日期选取器对应日期，月份对应月份选取器。",
+      "required": false
+    },
     "validate-on": {
       "default": "undefined",
       "value": "",
-      "type": " / blur / input / submit / invalid-input / blur lazy / input lazy / submit lazy / invalid-input lazy / blur eager / input eager / submit eager / invalid-input eager / lazy blur / lazy input / lazy submit / lazy invalid-input / eager blur / eager input / eager submit / eager invalid-input / lazy / eager",
+      "type": "  | 'blur'  | 'input'  | 'submit'  | 'invalid-input'  | 'blur lazy'  | 'input lazy'  | 'submit lazy'  | 'invalid-input lazy'  | 'blur eager'  | 'input eager'  | 'submit eager'  | 'invalid-input eager'  | 'lazy blur'  | 'lazy input'  | 'lazy submit'  | 'lazy invalid-input'  | 'eager blur'  | 'eager input'  | 'eager submit'  | 'eager invalid-input'  | 'lazy'  | 'eager'",
       "version": "",
       "description": "Change what type of event triggers validation to run.",
       "description_zh": "更改触发验证的事件类型以运行。",
@@ -445,10 +751,37 @@
     "variant": {
       "default": "'filled'",
       "value": "",
-      "type": " / underlined / outlined / filled / solo / solo-inverted / solo-filled / plain",
+      "type": "  | 'underlined'  | 'outlined'  | 'filled'  | 'solo'  | 'solo-inverted'  | 'solo-filled'  | 'plain'",
       "version": "",
       "description": "Applies a distinct style to the component.",
       "description_zh": "将不同的样式应用于组件。",
+      "required": false
+    },
+    "view-mode": {
+      "default": "'month'",
+      "value": "",
+      "type": "'month' | 'months' | 'year'",
+      "version": "",
+      "description": "Determines which picker in the date or month picker is being displayed. Allowed values: 'month', 'months', 'year'.",
+      "description_zh": "确定显示日期或月份选取器中的哪个选取器。允许的值：'month'、'months'、'year'。",
+      "required": false
+    },
+    "weekdays": {
+      "default": "[0, 1, 2, 3, 4, 5, 6]",
+      "value": "",
+      "type": "number[]",
+      "version": "",
+      "description": "An array of weekdays to display.",
+      "description_zh": "要显示的工作日数组。",
+      "required": false
+    },
+    "weeks-in-month": {
+      "default": "'dynamic'",
+      "value": "",
+      "type": "'dynamic' | 'static'",
+      "version": "",
+      "description": "A dynamic number of weeks in a month will grow and shrink depending on how many days are in the month. A static number always shows 7 weeks.",
+      "description_zh": "一个月中的动态周数将根据该月的天数而增加和减少。静态数字始终显示 7 周。",
       "required": false
     },
     "width": {
@@ -456,13 +789,22 @@
       "value": "",
       "type": "string | number",
       "version": "",
-      "description": "Sets the width for the component.",
-      "description_zh": "设置组件的宽度。",
+      "description": "Width of the picker.",
+      "description_zh": "选取器的宽度。",
+      "required": false
+    },
+    ":year": {
+      "default": "undefined",
+      "value": "",
+      "type": "number",
+      "version": "",
+      "description": "The current year number to show",
+      "description_zh": "要显示的当前年份编号",
       "required": false
     }
   },
-  "link": "https://vuetifyjs.com/en/api/v-file-input/",
-  "link_zh": "https://vuetifyjs.com/en/api/v-file-input/",
+  "link": "https://vuetifyjs.com/en/api/v-date-input/",
+  "link_zh": "https://vuetifyjs.com/en/api/v-date-input/",
   "typeDetail": {},
   "events": [
     {
@@ -487,13 +829,6 @@
       "value": ""
     },
     {
-      "name": "click:control",
-      "description": "Emitted when the main input is clicked.",
-      "description_zh": "单击主输入时发出。",
-      "params": "[MouseEvent]",
-      "value": ""
-    },
-    {
       "name": "click:prepend",
       "description": "Emitted when prepended icon is clicked.",
       "description_zh": "单击前置图标时发出。",
@@ -508,13 +843,6 @@
       "value": ""
     },
     {
-      "name": "mousedown:control",
-      "description": "Event that is emitted when using mousedown on the main control area.",
-      "description_zh": "在主控制区域上使用 mousedown 时触发的事件。",
-      "params": "[MouseEvent]",
-      "value": ""
-    },
-    {
       "name": "update:focused",
       "description": "Emitted when the input is focused or blurred",
       "description_zh": "当输入聚焦或模糊时发出",
@@ -525,115 +853,18 @@
       "name": "update:modelValue",
       "description": "Event that is emitted when the component’s model changes.",
       "description_zh": "组件的模型更改时发出的事件。",
-      "params": "[File | File[]]",
+      "params": "[string]",
       "value": ""
     }
   ],
   "methods": [],
   "slots": [
     {
-      "name": "append",
-      "description": "Adds an item inside the input and after input content.",
-      "description_zh": "在 input 内容内和 After input 内容中添加一个项目。",
-      "params": "{\n  id: ComputedRef<string>\n  messagesId: ComputedRef<string>\n  isDirty: ComputedRef<boolean>\n  isDisabled: ComputedRef<boolean>\n  isReadonly: ComputedRef<boolean>\n  isPristine: Ref<boolean>\n  isValid: ComputedRef<boolean | null>\n  isValidating: Ref<boolean>\n  reset: () => void\n  resetValidation: () => void\n  validate: () => void\n}"
-    },
-    {
-      "name": "append-inner",
-      "description": "Adds an item inside the input content.",
-      "description_zh": "在输入内容中添加项目。",
-      "params": "{\n  isActive: Ref<boolean>\n  isFocused: Ref<boolean>\n  controlRef: Ref<HTMLElement | undefined>\n  focus: () => void\n  blur: () => void\n}"
-    },
-    {
-      "name": "clear",
-      "description": "Slot for custom clear icon (displayed when the clearable prop is equal to true).",
-      "description_zh": "自定义 clear 图标的插槽（当 clearable prop 等于 true 时显示）。",
-      "params": "{\n  isActive: Ref<boolean>\n  isFocused: Ref<boolean>\n  controlRef: Ref<HTMLElement | undefined>\n  focus: () => void\n  blur: () => void\n} & { props: Record<string, any> }"
-    },
-    {
-      "name": "counter",
-      "description": "Slot for the input’s counter text.",
-      "description_zh": "输入的计数器文本的插槽。",
-      "params": ""
-    },
-    {
       "name": "default",
       "description": "The default Vue slot.",
       "description_zh": "默认的 Vue 插槽。",
-      "params": "{\n  id: ComputedRef<string>\n  messagesId: ComputedRef<string>\n  isDirty: ComputedRef<boolean>\n  isDisabled: ComputedRef<boolean>\n  isReadonly: ComputedRef<boolean>\n  isPristine: Ref<boolean>\n  isValid: ComputedRef<boolean | null>\n  isValidating: Ref<boolean>\n  reset: () => void\n  resetValidation: () => void\n  validate: () => void\n} & {\n  props: Record<string, unknown>\n  isActive: Ref<boolean>\n  isFocused: Ref<boolean>\n  controlRef: Ref<HTMLElement | undefined>\n  focus: () => void\n  blur: () => void\n}"
-    },
-    {
-      "name": "details",
-      "description": "Slot for custom input details to modifying the display of messages.",
-      "description_zh": "用于修改消息显示的自定义输入详细信息的插槽。",
-      "params": "{\n  id: ComputedRef<string>\n  messagesId: ComputedRef<string>\n  isDirty: ComputedRef<boolean>\n  isDisabled: ComputedRef<boolean>\n  isReadonly: ComputedRef<boolean>\n  isPristine: Ref<boolean>\n  isValid: ComputedRef<boolean | null>\n  isValidating: Ref<boolean>\n  reset: () => void\n  resetValidation: () => void\n  validate: () => void\n}"
-    },
-    {
-      "name": "label",
-      "description": "The default slot of the v-label or v-field-label component.",
-      "description_zh": "v-label 或 v-field-label 组件的默认插槽。",
-      "params": "{\n  isActive: Ref<boolean>\n  isFocused: Ref<boolean>\n  controlRef: Ref<HTMLElement | undefined>\n  focus: () => void\n  blur: () => void\n} & { label: string; props: Record<string, any> }"
-    },
-    {
-      "name": "loader",
-      "description": "Slot for custom loader (displayed when loading prop is equal to true).",
-      "description_zh": "自定义加载器的插槽（当加载 prop 等于 true 时显示）。",
-      "params": "{ color: string; isActive: boolean }"
-    },
-    {
-      "name": "message",
-      "description": "Slot used to customize the message content.",
-      "description_zh": "用于自定义消息内容的插槽。",
-      "params": "{ message: string }"
-    },
-    {
-      "name": "prepend",
-      "description": "Adds an item outside the input and before input content.",
-      "description_zh": "在输入内容之外和之前添加项目。",
-      "params": "{\n  id: ComputedRef<string>\n  messagesId: ComputedRef<string>\n  isDirty: ComputedRef<boolean>\n  isDisabled: ComputedRef<boolean>\n  isReadonly: ComputedRef<boolean>\n  isPristine: Ref<boolean>\n  isValid: ComputedRef<boolean | null>\n  isValidating: Ref<boolean>\n  reset: () => void\n  resetValidation: () => void\n  validate: () => void\n}"
-    },
-    {
-      "name": "prepend-inner",
-      "description": "Slot that is prepended to the input.",
-      "description_zh": "Slot 添加到输入的前缀。",
-      "params": "{\n  isActive: Ref<boolean>\n  isFocused: Ref<boolean>\n  controlRef: Ref<HTMLElement | undefined>\n  focus: () => void\n  blur: () => void\n}"
-    },
-    {
-      "name": "selection",
-      "description": "Slot for defining a custom appearance for selected item(s). Provides the current index, text (truncated) and file.",
-      "description_zh": "用于定义选定项目的自定义外观的插槽。提供当前索引、文本（截断）和文件。",
-      "params": "{\n  fileNames: string[]\n  totalBytes: number\n  totalBytesReadable: string\n}"
+      "params": ""
     }
   ],
-  "exposed": [
-    {
-      "name": "errorMessages",
-      "description": "MISSING DESCRIPTION (edit in github)",
-      "description_zh": "MISSING DESCRIPTION (edit in github)",
-      "detail": "string[]"
-    },
-    {
-      "name": "isValid",
-      "description": "MISSING DESCRIPTION (edit in github)",
-      "description_zh": "MISSING DESCRIPTION (edit in github)",
-      "detail": "boolean"
-    },
-    {
-      "name": "reset",
-      "description": "Resets the input value.",
-      "description_zh": "Resets the input value.",
-      "detail": "() => Promise<void>"
-    },
-    {
-      "name": "resetValidation",
-      "description": "Resets validation of the input without modifying its value.",
-      "description_zh": "Resets validation of the input without modifying its value.",
-      "detail": "() => Promise<void>"
-    },
-    {
-      "name": "validate",
-      "description": "Validates the input’s value.",
-      "description_zh": "Validates the input’s value.",
-      "detail": "(silent: boolean) => Promise<string[]>"
-    }
-  ]
+  "exposed": []
 }

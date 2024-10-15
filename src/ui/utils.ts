@@ -1,5 +1,5 @@
 import * as vscode from 'vscode'
-import { createCompletionItem, createHover, createMarkdownString, getActiveTextEditorLanguageId, getCurrentFileUrl, getLocale, setCommandParams } from '@vscode-use/utils'
+import { createCompletionItem, createHover, createMarkdownString, getActiveTextEditorLanguageId, getConfiguration, getCurrentFileUrl, getLocale, setCommandParams } from '@vscode-use/utils'
 import { escapeRegExp } from '../utils'
 
 interface PropsOptions {
@@ -11,8 +11,23 @@ interface PropsOptions {
   prefix?: string
 }
 
+const prefixMap = getConfiguration('common-intellisense-local.prefixMap') || []
+
 export function propsReducer(options: PropsOptions) {
-  const { uiName, lib, map, prefix = '' } = options
+  let { uiName, lib, map, prefix = '' } = options
+  const originPrefix = prefix
+  // 只针对存在 prefix 的生效
+  if (prefix && prefixMap.length) {
+    const target = prefixMap.find((item: any) => {
+      const { lib: _lib } = item
+      if (_lib === lib)
+        return true
+      return false
+    })
+    if (target) {
+      prefix = target.prefix
+    }
+  }
   const result: any = {}
   // 废弃 icons 支持
   // let icons
@@ -27,6 +42,11 @@ export function propsReducer(options: PropsOptions) {
   // result.icons = icons
   // }
   return map.reduce((result: any, item: any) => {
+    if (originPrefix && originPrefix !== prefix) {
+      const fixedPrefix = prefix[0].toUpperCase() + toCamel(prefix.slice(1))
+      if (!item.name.startsWith(fixedPrefix))
+        item.name = fixedPrefix + item.name.slice(originPrefix.length)
+    }
     const completions: any = []
     const events: any = []
     const methods = []
@@ -95,7 +115,7 @@ export function propsReducer(options: PropsOptions) {
 
         // command:extension.openDocumentLink?%7B%22link%22%3A%22https%3A%2F%2Fexample.com%2F%22%7D
         if (item.link)
-          documentation.appendMarkdown(`\n[🔗 ${isZh ? '文档链接' : 'Documentation link'}](command:intellisense.openDocument?%7B%22link%22%3A%22${encodeURIComponent(isZh ? item.link_zh : item.link)}%22%7D)\`       \`[🔗 ${isZh ? '外部文档链接' : 'External document links'}](command:intellisense.openDocumentExternal?%7B%22link%22%3A%22${encodeURIComponent(isZh ? item.link_zh : item.link)}%22%7D)`)
+          documentation.appendMarkdown(`\n[🔗 ${isZh ? '文档链接' : 'Documentation link'}](command:intellisense-local.openDocument?%7B%22link%22%3A%22${encodeURIComponent(isZh ? item.link_zh : item.link)}%22%7D)\`       \`[🔗 ${isZh ? '外部文档链接' : 'External document links'}](command:intellisense-local.openDocumentExternal?%7B%22link%22%3A%22${encodeURIComponent(isZh ? item.link_zh : item.link)}%22%7D)`)
 
         let content = ''
         let snippet = ''
@@ -308,7 +328,7 @@ export function propsReducer(options: PropsOptions) {
       documentation.supportHtml = true
       const details = []
 
-      details.push(`## ${uiName} [${item.name}]\`            \`[🔗 ${isZh ? '文档链接' : 'Documentation link'}](command:intellisense.openDocument?%7B%22link%22%3A%22${encodeURIComponent(isZh ? item.link_zh : item.link)}%22%7D)\`   \`[🔗 ${isZh ? '外部链接' : 'External document links'}](command:intellisense.openDocumentExternal?%7B%22link%22%3A%22${encodeURIComponent(isZh ? item.link_zh : item.link)}%22%7D)`)
+      details.push(`## ${uiName} [${item.name}]\`            \`[🔗 ${isZh ? '文档链接' : 'Documentation link'}](command:intellisense-local.openDocument?%7B%22link%22%3A%22${encodeURIComponent(isZh ? item.link_zh : item.link)}%22%7D)\`   \`[🔗 ${isZh ? '外部链接' : 'External document links'}](command:intellisense-local.openDocumentExternal?%7B%22link%22%3A%22${encodeURIComponent(isZh ? item.link_zh : item.link)}%22%7D)`)
 
       if (item.props) {
         if (isZh)
@@ -376,7 +396,7 @@ export function propsReducer(options: PropsOptions) {
       }
 
       if (item.link)
-        details.push(`[🔗 ${isZh ? '文档链接' : 'Documentation link'}](command:intellisense.openDocument?%7B%22link%22%3A%22${encodeURIComponent(isZh ? item.link_zh : item.link)}%22%7D)\`        \` [🔗 ${isZh ? '外部链接' : 'External document links'}](command:intellisense.openDocumentExternal?%7B%22link%22%3A%22${encodeURIComponent(isZh ? item.link_zh : item.link)}%22%7D)`)
+        details.push(`[🔗 ${isZh ? '文档链接' : 'Documentation link'}](command:intellisense-local.openDocument?%7B%22link%22%3A%22${encodeURIComponent(isZh ? item.link_zh : item.link)}%22%7D)\`        \` [🔗 ${isZh ? '外部链接' : 'External document links'}](command:intellisense-local.openDocumentExternal?%7B%22link%22%3A%22${encodeURIComponent(isZh ? item.link_zh : item.link)}%22%7D)`)
 
       documentation.appendMarkdown(details.join('\n\n'))
       return documentation
@@ -416,9 +436,23 @@ interface ComponentOptions {
   directives?: Directives
 }
 export function componentsReducer(options: ComponentOptions) {
-  const { map, isSeperatorByHyphen = true, prefix = '', lib, isReact = false, dynamicLib, importWay, directives } = options
+  let { map, isSeperatorByHyphen = true, prefix = '', lib, isReact = false, dynamicLib, importWay, directives } = options
   const isZh = getLocale().includes('zh')
+
   if (!isReact && prefix) {
+    const originPrefix = prefix
+    // 只针对存在 prefix 的生效
+    if (prefix && prefixMap.length) {
+      const target = prefixMap.find((item: any) => {
+        const { lib: _lib } = item
+        if (_lib === lib)
+          return true
+        return false
+      })
+      if (target) {
+        prefix = target.prefix
+      }
+    }
     return [
       {
         prefix,
@@ -429,6 +463,15 @@ export function componentsReducer(options: ComponentOptions) {
           let snippet = ''
           let _content = ''
           let description = ''
+          if (originPrefix && originPrefix !== prefix) {
+            const fixedPrefix = prefix[0].toUpperCase() + toCamel(prefix.slice(1))
+            if (typeof content === 'object' && !content.name.startsWith(fixedPrefix)) {
+              content.name = prefix[0].toUpperCase() + toCamel(prefix.slice(1)) + content.name.slice(originPrefix.length)
+            }
+            else if (typeof content === 'string' && !content.startsWith(fixedPrefix)) {
+              content = fixedPrefix + content.slice(originPrefix.length)
+            }
+          }
           if (typeof content === 'object') {
             let [requiredProps, index] = getRequireProp(content, 0, isVue)
             const tag = isSeperatorByHyphen ? hyphenate(content.name) : content.name
@@ -486,7 +529,7 @@ export function componentsReducer(options: ComponentOptions) {
           documentation.appendMarkdown(`#### 🌰 ${isZh ? '例子' : 'example'}\n`)
           documentation.appendCodeblock(demo, 'html')
           const params = setCommandParams(demo)
-          documentation.appendMarkdown(`\n<a href="command:intellisense.copyDemo?${params}">${copyIcon}</a>\n`)
+          documentation.appendMarkdown(`\n<a href="command:intellisense-local.copyDemo?${params}">${copyIcon}</a>\n`)
 
           return createCompletionItem({ content: _content, snippet, detail: description, documentation, type: vscode.CompletionItemKind.TypeParameter, sortText: 'a', params: [content, lib, isReact, prefix, dynamicLib, importWay], demo })
         }),
@@ -558,7 +601,7 @@ export function componentsReducer(options: ComponentOptions) {
           documentation.appendMarkdown(`#### 🌰 ${isZh ? '例子' : 'example'}\n`)
           documentation.appendCodeblock(demo, 'html')
           const params = setCommandParams(demo)
-          documentation.appendMarkdown(`\n<a href="command:intellisense.copyDemo?${params}">${copyIcon}</a>\n`)
+          documentation.appendMarkdown(`\n<a href="command:intellisense-local.copyDemo?${params}">${copyIcon}</a>\n`)
 
           return createCompletionItem({ content: _content, detail: description, snippet, documentation, type: vscode.CompletionItemKind.TypeParameter, sortText: 'a', params: [{ ...content, name: content.name?.slice(prefix.length) }, lib, true, prefix, dynamicLib, importWay], demo })
         }),
@@ -631,7 +674,7 @@ export function componentsReducer(options: ComponentOptions) {
       documentation.appendMarkdown(`#### 🌰 ${isZh ? '例子' : 'example'}\n`)
       documentation.appendCodeblock(demo, 'html')
       const params = setCommandParams(demo)
-      documentation.appendMarkdown(`\n<a href="command:intellisense.copyDemo?${params}">${copyIcon}</a>\n`)
+      documentation.appendMarkdown(`\n<a href="command:intellisense-local.copyDemo?${params}">${copyIcon}</a>\n`)
 
       return createCompletionItem({ content: _content, snippet, detail: description, documentation, type: vscode.CompletionItemKind.TypeParameter, sortText: 'a', params: [content, lib, isReact, prefix, dynamicLib, importWay], demo })
     }),
