@@ -105,8 +105,12 @@ export async function activate(context: vscode.ExtensionContext) {
   }))
 
   context.subscriptions.push(addEventListener('config-change', (e) => {
-    if (e.affectsConfiguration('common-intellisense-local.ui'))
+    if (e.affectsConfiguration('common-intellisense-local.ui')) {
       findUI()
+    }
+    else if (e.affectsConfiguration('common-intellisense-local.prefixMap')) {
+      vscode.commands.executeCommand('workbench.action.reloadWindow')
+    }
   }))
 
   context.subscriptions.push(registerCommand('common-intellisense-local.import', (params, loc, _lineOffset) => {

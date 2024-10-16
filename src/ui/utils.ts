@@ -464,12 +464,11 @@ export function componentsReducer(options: ComponentOptions) {
           let _content = ''
           let description = ''
           if (originPrefix && originPrefix !== prefix) {
-            const fixedPrefix = prefix[0].toUpperCase() + toCamel(prefix.slice(1))
-            if (typeof content === 'object' && !content.name.startsWith(fixedPrefix)) {
+            if (typeof content === 'object' && !content.name.startsWith(prefix[0].toUpperCase() + toCamel(prefix.slice(1)))) {
               content.name = prefix[0].toUpperCase() + toCamel(prefix.slice(1)) + content.name.slice(originPrefix.length)
             }
-            else if (typeof content === 'string' && !content.startsWith(fixedPrefix)) {
-              content = fixedPrefix + content.slice(originPrefix.length)
+            else if (typeof content === 'string' && !content.startsWith(prefix)) {
+              content = prefix + content.slice(originPrefix.length)
             }
           }
           if (typeof content === 'object') {
@@ -584,6 +583,9 @@ export function componentsReducer(options: ComponentOptions) {
             description = isZh ? content.description_zh : content.description || content.description_zh
           }
           else {
+            if (originPrefix && originPrefix !== prefix) {
+              content = prefix + content.slice(originPrefix.length)
+            }
             snippet = `<${content}>$1</${content}>`
             _content = `${content}  ${detail}`
           }
