@@ -1,0 +1,145 @@
+{
+  "name": "WdImgCropper",
+  "props": {
+    "v-model": {
+      "default": "",
+      "value": "false",
+      "type": "boolean",
+      "description": "Open the image cropping component",
+      "version": "-",
+      "required": false,
+      "description_zh": "打开图片裁剪组件"
+    },
+    "img-src": {
+      "default": "",
+      "value": "-",
+      "type": "string",
+      "description": "Links to image resources",
+      "version": "-",
+      "required": false,
+      "description_zh": "图片资源链接"
+    },
+    "img-width": {
+      "default": "",
+      "value": "-",
+      "type": "number / string",
+      "description": "the initial width of the screenshot preview image; 1. Set the width without setting the height, and scale it according to the width in equal proportion; 2. If it is not set, the size of the picture will be scaled proportionally according to the size of the crop frame during preview, and the edge will be locked. The string type only supports % units, and the number type is px",
+      "version": "-",
+      "required": false,
+      "description_zh": "截屏预览图片的初始宽度; 1、设置宽度不设置高度，按照宽度等比缩放；2、如果都不设置，预览时图片大小会根据裁剪框大小进行等比缩放，进行锁边处理；; string 类型只支持 % 单位，number 类型时单位为 px"
+    },
+    "img-height": {
+      "default": "",
+      "value": "-",
+      "type": "number / string",
+      "description": "the initial height of the screenshot preview image; 1. Set the height without setting the width, and scale it according to the height ratio; 2. If it is not set, the size of the picture will be scaled proportionally according to the size of the crop frame during preview, and the edge will be locked. The string type only supports % units, and the number type is px",
+      "version": "-",
+      "required": false,
+      "description_zh": "截屏预览图片的初始高度; 1、设置高度不设置宽度，按照高度等比缩放；2、如果都不设置，预览时图片大小会根据裁剪框大小进行等比缩放，进行锁边处理；; string 类型只支持 % 单位，number 类型时单位为 px"
+    },
+    "disabled-rotate": {
+      "default": "",
+      "value": "false",
+      "type": "boolean",
+      "description": "Picture rotation is prohibited",
+      "version": "-",
+      "required": false,
+      "description_zh": "禁止图片旋转"
+    },
+    "export-scale": {
+      "default": "",
+      "value": "2",
+      "type": "number",
+      "description": "Set the size of the exported image",
+      "version": "-",
+      "required": false,
+      "description_zh": "设置导出图片尺寸"
+    },
+    "max-scale": {
+      "default": "",
+      "value": "3",
+      "type": "number",
+      "description": "The maximum zoom factor",
+      "version": "-",
+      "required": false,
+      "description_zh": "最大缩放倍数"
+    },
+    "cancel-button-text": {
+      "default": "",
+      "value": "取消",
+      "type": "string",
+      "description": "Cancel button copy",
+      "version": "-",
+      "required": false,
+      "description_zh": "取消按钮文案"
+    },
+    "confirm-button-text": {
+      "default": "",
+      "value": "完成",
+      "type": "string",
+      "description": "Confirm the button copy",
+      "version": "-",
+      "required": false,
+      "description_zh": "确认按钮文案"
+    },
+    "quality": {
+      "default": "",
+      "value": "1",
+      "type": "0/1",
+      "description": "The quality of the generated image is described in the wx.canvasToTempFilePath property",
+      "version": "-",
+      "required": false,
+      "description_zh": "生成的图片质量 wx.canvasToTempFilePath属性介绍"
+    },
+    "file-type": {
+      "default": "",
+      "value": "png",
+      "type": "string",
+      "description": "The type of the target file is described in the wx.canvasToTempFilePath property",
+      "version": "-",
+      "required": false,
+      "description_zh": "目标文件的类型，wx.canvasToTempFilePath属性介绍"
+    }
+  },
+  "link": "https://wot-design-uni.pages.dev/component/img-cropper.html",
+  "link_zh": "https://wot-design-uni.pages.dev/component/img-cropper.html",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "confirm",
+      "description": "Triggered when you finish taking a screenshot",
+      "params": "{tempFilePath, width, height} 分别为生成文件的临时路径 (本地路径)、生成图片宽、生成图片高",
+      "version": "-",
+      "value": "",
+      "description_zh": "完成截图时触发"
+    },
+    {
+      "name": "cancel",
+      "description": "Triggered when a screenshot is canceled",
+      "params": "-",
+      "version": "-",
+      "value": "",
+      "description_zh": "当取消截图时触发"
+    },
+    {
+      "name": "imgloaderror",
+      "description": "Triggered when an image loads incorrectly",
+      "params": "{err} ",
+      "version": "-",
+      "value": "",
+      "description_zh": "当图片加载错误时触发"
+    },
+    {
+      "name": "imgloaded",
+      "description": "Triggered when the image is loaded",
+      "params": "{res}",
+      "version": "-",
+      "value": "",
+      "description_zh": "当图片加载完成时触发"
+    }
+  ],
+  "methods": [],
+  "slots": [],
+  "suggestions": [],
+  "filename": "ImgCropper"
+}

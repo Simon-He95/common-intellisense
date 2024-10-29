@@ -1,0 +1,408 @@
+{
+  "name": "WdSelectPicker",
+  "props": {
+    "v-model": {
+      "default": "",
+      "value": "-",
+      "type": "array / number / boolean / string",
+      "description": "选中项，type类型为checkbox时，类型为 array；type为radio 时 ，类型为 number / boolean / string",
+      "version": "-",
+      "required": false,
+      "description_zh": "选中项，type类型为checkbox时，类型为 array；type为radio 时 ，类型为 number / boolean / string"
+    },
+    "columns": {
+      "default": "",
+      "value": "-",
+      "type": "array",
+      "description": "Selector data, one-dimensional arrays",
+      "version": "-",
+      "required": false,
+      "description_zh": "选择器数据，一维数组"
+    },
+    "type": {
+      "default": "",
+      "value": "checkbox",
+      "type": "checkbox / radio",
+      "description": "Single check the selector type",
+      "version": "-",
+      "required": false,
+      "description_zh": "单复选选择器类型"
+    },
+    "value-key": {
+      "default": "",
+      "value": "value",
+      "type": "string",
+      "description": "option object, the key corresponding to the value",
+      "version": "-",
+      "required": false,
+      "description_zh": "选项对象中，value 对应的 key"
+    },
+    "label-key": {
+      "default": "",
+      "value": "label",
+      "type": "string",
+      "description": "In the options object, the key corresponding to the displayed text",
+      "version": "-",
+      "required": false,
+      "description_zh": "选项对象中，展示的文本对应的 key"
+    },
+    "title": {
+      "default": "",
+      "value": "-",
+      "type": "string",
+      "description": "Pop up the layer title",
+      "version": "-",
+      "required": false,
+      "description_zh": "弹出层标题"
+    },
+    "label": {
+      "default": "",
+      "value": "-",
+      "type": "string",
+      "description": "Selector left copy",
+      "version": "-",
+      "required": false,
+      "description_zh": "选择器左侧文案"
+    },
+    "placeholder": {
+      "default": "",
+      "value": "请选择",
+      "type": "string",
+      "description": "Selector placeholders",
+      "version": "-",
+      "required": false,
+      "description_zh": "选择器占位符"
+    },
+    "disabled": {
+      "default": "",
+      "value": "fasle",
+      "type": "boolean",
+      "description": "disable",
+      "version": "-",
+      "required": false,
+      "description_zh": "禁用"
+    },
+    "loading": {
+      "default": "",
+      "value": "false",
+      "type": "boolean",
+      "description": "Loading",
+      "version": "-",
+      "required": false,
+      "description_zh": "加载中"
+    },
+    "loading-color": {
+      "default": "",
+      "value": "#4D80F0",
+      "type": "String",
+      "description": "Loaded colors can only be written in hexadecimal color values, and cannot use abbreviations",
+      "version": "-",
+      "required": false,
+      "description_zh": "加载的颜色，只能使用十六进制的色值写法，且不能使用缩写"
+    },
+    "readonly": {
+      "default": "",
+      "value": "false",
+      "type": "boolean",
+      "description": "read only",
+      "version": "-",
+      "required": false,
+      "description_zh": "只读"
+    },
+    "display-format": {
+      "default": "",
+      "value": "-",
+      "type": "function",
+      "description": "Customize the formatting function of the display copy, which returns a string",
+      "version": "-",
+      "required": false,
+      "description_zh": "自定义展示文案的格式化函数，返回一个字符串"
+    },
+    "confirm-button-text": {
+      "default": "",
+      "value": "确认",
+      "type": "string",
+      "description": "Confirm the button copy",
+      "version": "-",
+      "required": false,
+      "description_zh": "确认按钮文案"
+    },
+    "size": {
+      "default": "",
+      "value": "-",
+      "type": "large",
+      "description": "Set the selector size",
+      "version": "-",
+      "required": false,
+      "description_zh": "设置选择器大小"
+    },
+    "label-width": {
+      "default": "",
+      "value": "33%",
+      "type": "string",
+      "description": "Set the width of the header on the left",
+      "version": "-",
+      "required": false,
+      "description_zh": "设置左侧标题宽度"
+    },
+    "error": {
+      "default": "",
+      "value": "false",
+      "type": "boolean",
+      "description": "Whether it is in the error state, and the content on the right side is red when the error state is in the error state",
+      "version": "-",
+      "required": false,
+      "description_zh": "是否为错误状态，错误状态时右侧内容为红色"
+    },
+    "required": {
+      "default": "",
+      "value": "false",
+      "type": "boolean",
+      "description": "Required style",
+      "version": "-",
+      "required": false,
+      "description_zh": "必填样式"
+    },
+    "align-right": {
+      "default": "",
+      "value": "false",
+      "type": "boolean",
+      "description": "The value of the selector is shown on the right",
+      "version": "-",
+      "required": false,
+      "description_zh": "选择器的值靠右展示"
+    },
+    "before-confirm": {
+      "default": "",
+      "value": "-",
+      "type": "function",
+      "description": "Before determining the checksum function, receive (value, resolve) parameters, and continue to execute the picker through resolve, resolve receives 1 boolean parameter",
+      "version": "-",
+      "required": false,
+      "description_zh": "确定前校验函数，接收 (value, resolve) 参数，通过 resolve 继续执行 picker，resolve 接收 1 个 boolean 参数"
+    },
+    "select-size": {
+      "default": "",
+      "value": "-",
+      "type": "large",
+      "description": "Set the size of the option group inside the picker (single/checkbox)",
+      "version": "-",
+      "required": false,
+      "description_zh": "设置 picker 内部的选项组尺寸大小 （单/复选框）"
+    },
+    "min": {
+      "default": "",
+      "value": "0",
+      "type": "number",
+      "description": "Minimum number of checks (only valid under checkbox type, type checkbox)",
+      "version": "-",
+      "required": false,
+      "description_zh": "最小选中的数量（仅在复选框类型下生效，type类型为checkbox）"
+    },
+    "max": {
+      "default": "",
+      "value": "0",
+      "type": "number",
+      "description": "Maximum number of checks, 0 is an unlimited number, default is 0 (only valid under checkbox type, type is checkbox)",
+      "version": "-",
+      "required": false,
+      "description_zh": "最大选中的数量，0 为无限数量，默认为 0（仅在复选框类型下生效，type类型为checkbox）"
+    },
+    "checked-color": {
+      "default": "",
+      "value": "#4D80F0",
+      "type": "string",
+      "description": "Selected color (single/checkbox)",
+      "version": "-",
+      "required": false,
+      "description_zh": "选中的颜色（单/复选框）"
+    },
+    "use-default-slot": {
+      "default": "",
+      "value": "false",
+      "type": "boolean",
+      "description": "Set this option when using the default slot",
+      "version": "-",
+      "required": false,
+      "description_zh": "使用默认插槽时设置该选项"
+    },
+    "use-label-slot": {
+      "default": "",
+      "value": "false",
+      "type": "boolean",
+      "description": "Set this option when using the label slot",
+      "version": "-",
+      "required": false,
+      "description_zh": "使用 label 插槽时设置该选项"
+    },
+    "close-on-click-modal": {
+      "default": "",
+      "value": "true",
+      "type": "boolean",
+      "description": "Click whether the mask is off",
+      "version": "-",
+      "required": false,
+      "description_zh": "点击遮罩是否关闭"
+    },
+    "z-index": {
+      "default": "",
+      "value": "15",
+      "type": "number",
+      "description": "Pop-up level",
+      "version": "-",
+      "required": false,
+      "description_zh": "弹窗层级"
+    },
+    "safe-area-inset-bottom": {
+      "default": "",
+      "value": "true",
+      "type": "boolean",
+      "description": "Whether the pop-up panel sets the bottom safety distance (iPhone X type models)",
+      "version": "-",
+      "required": false,
+      "description_zh": "弹出面板是否设置底部安全距离（iphone X 类型的机型）"
+    },
+    "filterable": {
+      "default": "",
+      "value": "false",
+      "type": "boolean",
+      "description": "Searchable (currently only local search is supported)",
+      "version": "-",
+      "required": false,
+      "description_zh": "可搜索（目前只支持本地搜索）"
+    },
+    "filter-placeholder": {
+      "default": "",
+      "value": "搜索",
+      "type": "string",
+      "description": "Search box placeholder",
+      "version": "-",
+      "required": false,
+      "description_zh": "搜索框占位符"
+    },
+    "ellipsis": {
+      "default": "",
+      "value": "false",
+      "type": "boolean",
+      "description": "Whether or not it is out of hiding",
+      "version": "-",
+      "required": false,
+      "description_zh": "是否超出隐藏"
+    },
+    "scroll-into-view": {
+      "default": "",
+      "value": "true",
+      "type": "boolean",
+      "description": "Reopen whether to scroll to the selection",
+      "version": "0.1.34",
+      "required": false,
+      "description_zh": "重新打开是否滚动到选中项"
+    },
+    "show-confirm": {
+      "default": "",
+      "value": "true",
+      "type": "boolean",
+      "description": "Whether to display the Confirm button (only for the radio type)",
+      "version": "1.2.8",
+      "required": false,
+      "description_zh": "是否显示确认按钮（仅radio类型生效）"
+    },
+    "prop": {
+      "default": "",
+      "value": "-",
+      "type": "string",
+      "description": "The form field model field name, which is required if the form validation function is used",
+      "version": "-",
+      "required": false,
+      "description_zh": "表单域 model 字段名，在使用表单校验功能的情况下，该属性是必填的"
+    },
+    "rules": {
+      "default": "",
+      "value": "[]",
+      "type": "FormItemRule []",
+      "description": "Form validation rules, which can be used in conjunction with the wd-form component",
+      "version": "-",
+      "required": false,
+      "description_zh": "表单验证规则，结合wd-form组件使用"
+    }
+  },
+  "link": "https://wot-design-uni.pages.dev/component/select-picker.html",
+  "link_zh": "https://wot-design-uni.pages.dev/component/select-picker.html",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "confirm",
+      "description": "Triggered when you click Confirm",
+      "params": "event.detail = { value, selectedItems }, checkbox 类型时 value 和 selectedItems 为数组，radio 类型为非数组",
+      "version": "-",
+      "value": "",
+      "description_zh": "点击确认时触发"
+    },
+    {
+      "name": "change",
+      "description": "Triggered when the picker option is changed",
+      "params": "{ value }, checkbox 类型时 value 为数组，radio 类型为非数组",
+      "version": "-",
+      "value": "",
+      "description_zh": "picker 内选项更改时触发"
+    },
+    {
+      "name": "cancel",
+      "description": "Triggered when the close button or masked is clicked",
+      "params": "-",
+      "version": "-",
+      "value": "",
+      "description_zh": "点击关闭按钮或者蒙层时触发"
+    },
+    {
+      "name": "close",
+      "description": "Triggered when the pop-up window is closed",
+      "params": "-",
+      "version": "1.2.29",
+      "value": "",
+      "description_zh": "弹窗关闭时触发"
+    },
+    {
+      "name": "open",
+      "description": "Triggered when a pop-up window opens",
+      "params": "-",
+      "version": "1.2.29",
+      "value": "",
+      "description_zh": "弹窗打开时触发"
+    }
+  ],
+  "methods": [
+    {
+      "name": "open",
+      "description": "Open the pop-up window",
+      "params": "-",
+      "version": "-",
+      "value": "",
+      "description_zh": "打开弹窗"
+    },
+    {
+      "name": "close",
+      "description": "Close the pop-up window",
+      "params": "-",
+      "version": "-",
+      "value": "",
+      "description_zh": "关闭弹窗"
+    }
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "description": "Customize your presentation",
+      "version": "-",
+      "description_zh": "自定义展示"
+    },
+    {
+      "name": "label",
+      "description": "Left slot",
+      "version": "-",
+      "description_zh": "左侧插槽"
+    }
+  ],
+  "suggestions": [],
+  "filename": "SelectPicker"
+}

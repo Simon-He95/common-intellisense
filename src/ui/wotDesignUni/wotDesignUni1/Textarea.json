@@ -1,0 +1,445 @@
+{
+  "name": "WdTextarea",
+  "props": {
+    "v-model": {
+      "default": "",
+      "value": "-",
+      "type": "string/number",
+      "description": "Binding value",
+      "version": "-",
+      "required": false,
+      "description_zh": "绑定值"
+    },
+    "placeholder": {
+      "default": "",
+      "value": "请输入...",
+      "type": "string",
+      "description": "Placeholder text",
+      "version": "-",
+      "required": false,
+      "description_zh": "占位文本"
+    },
+    "placeholderStyle": {
+      "default": "",
+      "value": "-",
+      "type": "string",
+      "description": "原生属性，指定 placeholder 的样式",
+      "version": "-",
+      "required": false,
+      "description_zh": "原生属性，指定 placeholder 的样式"
+    },
+    "placeholderClass": {
+      "default": "",
+      "value": "-",
+      "type": "string",
+      "description": "原生属性，指定 placeholder 的样式类",
+      "version": "-",
+      "required": false,
+      "description_zh": "原生属性，指定 placeholder 的样式类"
+    },
+    "disabled": {
+      "default": "",
+      "value": "false",
+      "type": "boolean",
+      "description": "Native attributes, disabled",
+      "version": "-",
+      "required": false,
+      "description_zh": "原生属性，禁用"
+    },
+    "maxlength": {
+      "default": "",
+      "value": "-",
+      "type": "number",
+      "description": "The native property, the maximum input length, is set to -1 without limiting the maximum length",
+      "version": "-",
+      "required": false,
+      "description_zh": "原生属性，最大输入长度，设置为 -1 的时候不限制最大长度"
+    },
+    "auto-focus": {
+      "default": "",
+      "value": "false",
+      "type": "boolean",
+      "description": "Native attributes, autofocus, pull up the keyboard.",
+      "version": "-",
+      "required": false,
+      "description_zh": "原生属性，自动聚焦，拉起键盘。"
+    },
+    "focus": {
+      "default": "",
+      "value": "false",
+      "type": "boolean",
+      "description": "Native attributes, get focus",
+      "version": "-",
+      "required": false,
+      "description_zh": "原生属性，获取焦点"
+    },
+    "auto-height": {
+      "default": "",
+      "value": "false",
+      "type": "boolean",
+      "description": "When auto-height is set, style.height does not take effect",
+      "version": "-",
+      "required": false,
+      "description_zh": "原生属性，是否自动增高，设置 auto-height 时，style.height 不生效"
+    },
+    "fixed": {
+      "default": "",
+      "value": "-",
+      "type": "false",
+      "description": "If the textarea is in a position:fixed area, you need to display the specified property fixed as true",
+      "version": "",
+      "required": false,
+      "description_zh": "如果 textarea 是在一个 position:fixed 的区域，需要显示指定属性 fixed 为 true"
+    },
+    "cursorSpacing": {
+      "default": "",
+      "value": "0",
+      "type": "number",
+      "description": "Native property, which specifies the distance between the cursor and the keyboard. Take the minimum of the distance from the bottom of the textarea and the distance specified by cursor-spacing as the distance between the cursor and the keyboard",
+      "version": "-",
+      "required": false,
+      "description_zh": "原生属性，指定光标与键盘的距离。取 textarea 距离底部的距离和 cursor-spacing 指定的距离的最小值作为光标与键盘的距离"
+    },
+    "cursor": {
+      "default": "",
+      "value": "-1",
+      "type": "number",
+      "description": "Native property, specifying the cursor position when focus",
+      "version": "-",
+      "required": false,
+      "description_zh": "原生属性，指定 focus 时的光标位置"
+    },
+    "confirm-type": {
+      "default": "",
+      "value": "-",
+      "type": "done / go / next / search / send",
+      "description": "Set the text for the button in the lower-right corner of the keyboard",
+      "version": "-",
+      "required": false,
+      "description_zh": "设置键盘右下角按钮的文字"
+    },
+    "confirm-hold": {
+      "default": "",
+      "value": "false",
+      "type": "Boolean",
+      "description": "Whether to keep the keyboard unfolded when you click the button in the lower right corner of the keyboard",
+      "version": "-",
+      "required": false,
+      "description_zh": "点击键盘右下角按钮时是否保持键盘不收起"
+    },
+    "show-confirm-bar": {
+      "default": "",
+      "value": "true",
+      "type": "Boolean",
+      "description": "Whether to display the bar with the Done button at the top of the keyboard",
+      "version": "-",
+      "required": false,
+      "description_zh": "是否显示键盘上方带有”完成“按钮那一栏"
+    },
+    "selection-start": {
+      "default": "",
+      "value": "-1",
+      "type": "number",
+      "description": "Native properties, cursor start position, valid when auto-clustering, need to be used with selection-end",
+      "version": "-",
+      "required": false,
+      "description_zh": "原生属性，光标起始位置，自动聚集时有效，需与 selection-end 搭配使用"
+    },
+    "selection-end": {
+      "default": "",
+      "value": "-1",
+      "type": "number",
+      "description": "Native property, cursor end position, valid when auto-gathering, needs to be used with selection-start",
+      "version": "-",
+      "required": false,
+      "description_zh": "原生属性，光标结束位置，自动聚集时有效，需与 selection-start 搭配使用"
+    },
+    "adjust-position": {
+      "default": "",
+      "value": "true",
+      "type": "boolean",
+      "description": "Native attributes, whether the page is automatically pushed up when the keyboard pops up",
+      "version": "-",
+      "required": false,
+      "description_zh": "原生属性，键盘弹起时，是否自动上推页面"
+    },
+    "disable-default-padding": {
+      "default": "",
+      "value": "false",
+      "type": "boolean",
+      "description": "Native attributes, whether to remove the default padding under iOS",
+      "version": "-",
+      "required": false,
+      "description_zh": "原生属性，是否去掉 iOS 下的默认内边距"
+    },
+    "hold-keyboard": {
+      "default": "",
+      "value": "false",
+      "type": "boolean",
+      "description": "Native attributes, focus, do not collapse the keyboard when clicking on the page",
+      "version": "-",
+      "required": false,
+      "description_zh": "原生属性，focus 时，点击页面的时候不收起键盘"
+    },
+    "show-password": {
+      "default": "",
+      "value": "false",
+      "type": "boolean",
+      "description": "Appears as a password box",
+      "version": "-",
+      "required": false,
+      "description_zh": "显示为密码框"
+    },
+    "clearable": {
+      "default": "",
+      "value": "false",
+      "type": "boolean",
+      "description": "The Clear button is displayed",
+      "version": "-",
+      "required": false,
+      "description_zh": "显示清空按钮"
+    },
+    "readonly": {
+      "default": "",
+      "value": "false",
+      "type": "boolean",
+      "description": "read only",
+      "version": "-",
+      "required": false,
+      "description_zh": "只读"
+    },
+    "prefix-icon": {
+      "default": "",
+      "value": "-",
+      "type": "string",
+      "description": "Prep-icon is the name of the icon class in the icon component",
+      "version": "-",
+      "required": false,
+      "description_zh": "前置图标，icon 组件中的图标类名"
+    },
+    "use-prefix-slot": {
+      "default": "",
+      "value": "false",
+      "type": "boolean",
+      "description": "Use the front icon slot",
+      "version": "-",
+      "required": false,
+      "description_zh": "使用 前置图标 插槽"
+    },
+    "show-word-limit": {
+      "default": "",
+      "value": "false",
+      "type": "boolean",
+      "description": "To display the word limit, maxlength needs to be set at the same time",
+      "version": "-",
+      "required": false,
+      "description_zh": "显示字数限制，需要同时设置 maxlength"
+    },
+    "label": {
+      "default": "",
+      "value": "-",
+      "type": "string",
+      "description": "Set the title on the left",
+      "version": "-",
+      "required": false,
+      "description_zh": "设置左侧标题"
+    },
+    "label-width": {
+      "default": "",
+      "value": "33%",
+      "type": "string",
+      "description": "Set the width of the header on the left",
+      "version": "-",
+      "required": false,
+      "description_zh": "设置左侧标题宽度"
+    },
+    "use-label-slot": {
+      "default": "",
+      "value": "false",
+      "type": "boolean",
+      "description": "Use the label slot",
+      "version": "-",
+      "required": false,
+      "description_zh": "使用 label 插槽"
+    },
+    "size": {
+      "default": "",
+      "value": "-",
+      "type": "string",
+      "description": "Set the size of the input box",
+      "version": "-",
+      "required": false,
+      "description_zh": "设置输入框大小"
+    },
+    "error": {
+      "default": "",
+      "value": "false",
+      "type": "boolean",
+      "description": "Set the error status of the input box, which is red when the error status is in",
+      "version": "-",
+      "required": false,
+      "description_zh": "设置输入框错误状态，错误状态时为红色"
+    },
+    "center": {
+      "default": "",
+      "value": "false",
+      "type": "boolean",
+      "description": "When there is a label attribute, set the title and input box to be vertically centered, with the top centered by default",
+      "version": "-",
+      "required": false,
+      "description_zh": "当有 label 属性时，设置标题和输入框垂直居中，默认为顶部居中"
+    },
+    "no-border": {
+      "default": "",
+      "value": "false",
+      "type": "boolean",
+      "description": "非 cell 类型下是否隐藏下划线",
+      "version": "-",
+      "required": false,
+      "description_zh": "非 cell 类型下是否隐藏下划线"
+    },
+    "required": {
+      "default": "",
+      "value": "false",
+      "type": "boolean",
+      "description": "Required style under cell type",
+      "version": "-",
+      "required": false,
+      "description_zh": "cell 类型下必填样式"
+    },
+    "prop": {
+      "default": "",
+      "value": "-",
+      "type": "string",
+      "description": "The form field model field name, which is required if the form validation function is used",
+      "version": "-",
+      "required": false,
+      "description_zh": "表单域 model 字段名，在使用表单校验功能的情况下，该属性是必填的"
+    },
+    "rules": {
+      "default": "",
+      "value": "[]",
+      "type": "FormItemRule []",
+      "description": "Form validation rules",
+      "version": "-",
+      "required": false,
+      "description_zh": "表单验证规则"
+    },
+    "clearTrigger": {
+      "default": "",
+      "value": "always",
+      "type": "focus / always",
+      "description": "When the clear icon is displayed, always indicates that the input box is not displayed when it is empty, and focus indicates that the input box is focused and not displayed when it is empty",
+      "version": "1.3.7",
+      "required": false,
+      "description_zh": "显示清除图标的时机，always 表示输入框不为空时展示，focus 表示输入框聚焦且不为空时展示"
+    },
+    "focusWhenClear": {
+      "default": "",
+      "value": "true",
+      "type": "boolean",
+      "description": "Whether or not to focus the input box when the Clear button is clicked",
+      "version": "1.3.7",
+      "required": false,
+      "description_zh": "是否在点击清除按钮时聚焦输入框"
+    },
+    "ignoreCompositionEvent": {
+      "default": "",
+      "value": "true",
+      "type": "boolean",
+      "description": "是否忽略组件内对文本合成系统事件的处理。 为 false 时将触发 compositionstart、compositionend、compositionupdate 事件,且在文本合成期间会触发 input 事件。",
+      "version": "1.3.11",
+      "required": false,
+      "description_zh": "是否忽略组件内对文本合成系统事件的处理。为 false 时将触发 compositionstart、compositionend、compositionupdate 事件，且在文本合成期间会触发 input 事件。"
+    }
+  },
+  "link": "https://wot-design-uni.pages.dev/component/textarea.html",
+  "link_zh": "https://wot-design-uni.pages.dev/component/textarea.html",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "input",
+      "description": "Listen for the input event",
+      "params": " {value, cursor, keyCode}",
+      "version": "-",
+      "value": "",
+      "description_zh": "监听输入框 input 事件"
+    },
+    {
+      "name": "focus",
+      "description": "Listen for the input box focus event",
+      "params": " { value, height }, height 为键盘高度",
+      "version": "-",
+      "value": "",
+      "description_zh": "监听输入框 focus 事件"
+    },
+    {
+      "name": "blur",
+      "description": "Listen for the input box blur event",
+      "params": " { value }",
+      "version": "-",
+      "value": "",
+      "description_zh": "监听输入框 blur 事件"
+    },
+    {
+      "name": "change",
+      "description": "Listen for input field modification events",
+      "params": " { value }",
+      "version": "-",
+      "value": "",
+      "description_zh": "监听输入框修改事件"
+    },
+    {
+      "name": "clear",
+      "description": "Listen for the input box to clear button event",
+      "params": "-",
+      "version": "-",
+      "value": "",
+      "description_zh": "监听输入框清空按钮事件"
+    },
+    {
+      "name": "linechange",
+      "description": "Listen for changes in the number of rows in the input box",
+      "params": " { height: 0, heightRpx: 0, lineCount: 0 }",
+      "version": "-",
+      "value": "",
+      "description_zh": "监听输入框行数变化"
+    },
+    {
+      "name": "confirm",
+      "description": "When you click Complete, the confirm event is triggered",
+      "params": " { value }",
+      "version": "-",
+      "value": "",
+      "description_zh": "点击完成时， 触发 confirm 事件"
+    },
+    {
+      "name": "keyboardheightchange",
+      "description": "This event is triggered when the keyboard height changes",
+      "params": " { height, duration }",
+      "version": "-",
+      "value": "",
+      "description_zh": "键盘高度发生变化的时候触发此事件"
+    },
+    {
+      "name": "clickprefixicon",
+      "description": "Triggered when the front icon is clicked",
+      "params": "-",
+      "version": "-",
+      "value": "",
+      "description_zh": "点击前置图标时触发"
+    },
+    {
+      "name": "clicksuffixicon",
+      "description": "Triggered when the rear icon is clicked",
+      "params": "-",
+      "version": "-",
+      "value": "",
+      "description_zh": "点击后置图标时触发"
+    }
+  ],
+  "methods": [],
+  "slots": [],
+  "suggestions": [],
+  "filename": "Textarea"
+}

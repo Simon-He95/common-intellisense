@@ -26,6 +26,7 @@ import { shadcnUi0, shadcnUi0Components } from './shadcnUi'
 import { tinyVue3, tinyVue3Components } from './tinyVue'
 import { nutUi4, nutUi4Components } from './nutUi'
 import { viewUiPlus1, viewUiPlus1Components } from './viewUiPlus'
+import { wotDesignUni1, wotDesignUni1Components } from './wotDesignUni'
 
 export default {
   // elementUi2,
@@ -64,6 +65,7 @@ export default {
   tinyVue3,
   nutUi4,
   viewUiPlus1,
+  wotDesignUni1,
   // elementUi2Components,
   antd4Components,
   antd5Components,
@@ -100,4 +102,5 @@ export default {
   tinyVue3Components,
   nutUi4Components,
   viewUiPlus1Components,
+  wotDesignUni1Components,
 }

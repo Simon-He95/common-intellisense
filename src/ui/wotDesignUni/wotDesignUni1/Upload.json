@@ -1,0 +1,362 @@
+{
+  "name": "WdUpload",
+  "props": {
+    "file-list / v-model:file-list": {
+      "default": "",
+      "value": "[]",
+      "type": "array",
+      "description": "上传的文件列表, 例如: [{ name: 'food.jpg', url: 'https://xxx.cdn.com/xxx.jpg' }]",
+      "version": "-",
+      "required": false,
+      "description_zh": "上传的文件列表, 例如: [{ name: 'food.jpg', url: 'https://xxx.cdn.com/xxx.jpg' }]"
+    },
+    "action": {
+      "default": "",
+      "value": "-",
+      "type": "string",
+      "description": "Required parameter: The upload URL",
+      "version": "-",
+      "required": false,
+      "description_zh": "必选参数，上传的地址"
+    },
+    "header": {
+      "default": "",
+      "value": "-",
+      "type": "object",
+      "description": "HTTP 请求 Header，Header 中不能设置 Referer，uploadFile 接口详细参数，查看官方手册",
+      "version": "-",
+      "required": false,
+      "description_zh": "HTTP 请求 Header，Header 中不能设置 Referer，uploadFile 接口详细参数，查看官方手册"
+    },
+    "multiple": {
+      "default": "",
+      "value": "-",
+      "type": "boolean",
+      "description": "Whether multi-select files are supported",
+      "version": "-",
+      "required": false,
+      "description_zh": "是否支持多选文件"
+    },
+    "disabled": {
+      "default": "",
+      "value": "false",
+      "type": "boolean",
+      "description": "Whether to disable or not",
+      "version": "-",
+      "required": false,
+      "description_zh": "是否禁用"
+    },
+    "limit": {
+      "default": "",
+      "value": "-",
+      "type": "number",
+      "description": "The maximum number of uploads allowed",
+      "version": "-",
+      "required": false,
+      "description_zh": "最大允许上传个数"
+    },
+    "show-limit-num": {
+      "default": "",
+      "value": "false",
+      "type": "boolean",
+      "description": "If the number of uploads is limited, whether to display the number of uploads",
+      "version": "-",
+      "required": false,
+      "description_zh": "限制上传个数的情况下，是否展示当前上传的个数"
+    },
+    "max-size": {
+      "default": "",
+      "value": "-",
+      "type": "number",
+      "description": "File size limit in bytes",
+      "version": "-",
+      "required": false,
+      "description_zh": "文件大小限制，单位为byte"
+    },
+    "source-type": {
+      "default": "",
+      "value": "['album', 'camera']",
+      "type": "array / string",
+      "description": "Select the source of the image, choose the detailed parameters of the Image API, and check the official manual",
+      "version": "-",
+      "required": false,
+      "description_zh": "选择图片的来源，chooseImage 接口详细参数，查看官方手册"
+    },
+    "size-type": {
+      "default": "",
+      "value": "['original', 'compressed']",
+      "type": "array / string",
+      "description": "For the size of the selected image and the detailed parameters of the chooseImage interface, please refer to the official manual",
+      "version": "-",
+      "required": false,
+      "description_zh": "所选的图片的尺寸，chooseImage 接口详细参数，查看官方手册"
+    },
+    "name": {
+      "default": "",
+      "value": "file",
+      "type": "string",
+      "description": "The key corresponding to the file, the developer can get the binary content of the file through this key on the server, upload the detailed parameters of the File interface, and view the official manual",
+      "version": "-",
+      "required": false,
+      "description_zh": "文件对应的 key，开发者在服务端可以通过这个 key 获取文件的二进制内容，uploadFile 接口详细参数，查看官方手册"
+    },
+    "formData": {
+      "default": "",
+      "value": "-",
+      "type": "object",
+      "description": "For more information about the additional form data and uploadFile interface parameters in the HTTP request, see the official manual",
+      "version": "-",
+      "required": false,
+      "description_zh": "HTTP 请求中其他额外的 form data，uploadFile 接口详细参数，查看官方手册"
+    },
+    "on-preview-fail": {
+      "default": "",
+      "value": "-",
+      "type": "function({ index, imgList })",
+      "description": "The preview failed to perform the action",
+      "version": "-",
+      "required": false,
+      "description_zh": "预览失败执行操作"
+    },
+    "before-upload": {
+      "default": "",
+      "value": "-",
+      "type": "function({ files, fileList, resolve })",
+      "description": "The hook before uploading the file, the parameter is the uploaded file and the file list, if it returns false or returns a promise and is rejected, the upload will be stopped.",
+      "version": "-",
+      "required": false,
+      "description_zh": "上传文件之前的钩子，参数为上传的文件和文件列表，若返回 false 或者返回 Promise 且被 reject，则停止上传。"
+    },
+    "before-choose": {
+      "default": "",
+      "value": "-",
+      "type": "function({ fileList, resolve })",
+      "description": "Select the hook before the image, the parameter is the file list, if false is returned or a Promise is returned and rejected, the upload will be stopped.",
+      "version": "-",
+      "required": false,
+      "description_zh": "选择图片之前的钩子，参数为文件列表，若返回 false 或者返回 Promise 且被 reject，则停止上传。"
+    },
+    "before-remove": {
+      "default": "",
+      "value": "-",
+      "type": "function({ file, fileList, resolve })",
+      "description": "The hook before deleting a file, the parameter is the file to be deleted and the file list, if it returns false or returns a promise and is rejected, the upload will be stopped.",
+      "version": "-",
+      "required": false,
+      "description_zh": "删除文件之前的钩子，参数为要删除的文件和文件列表，若返回 false 或者返回 Promise 且被 reject，则停止上传。"
+    },
+    "before-preview": {
+      "default": "",
+      "value": "-",
+      "type": "function({file, index, imgList, resolve })",
+      "description": "If the checkmark before the image preview is returned false or a Promise is returned and rejected, the upload will be stopped.",
+      "version": "-",
+      "required": false,
+      "description_zh": "图片预览前的钩子，参数为预览的图片下标和图片列表，若返回 false 或者返回 Promise 且被 reject，则停止上传。"
+    },
+    "build-form-data": {
+      "default": "",
+      "value": "-",
+      "type": "function({ file, formData, resolve })",
+      "description": "构建上传formData的钩子,参数为上传的文件、待处理的formData,返回值为处理后的formData,若返回 false 或者返回 Promise 且被 reject,则停止上传。",
+      "version": "0.1.61",
+      "required": false,
+      "description_zh": "构建上传formData的钩子，参数为上传的文件、待处理的formData，返回值为处理后的formData，若返回 false 或者返回 Promise 且被 reject，则停止上传。"
+    },
+    "loading-type": {
+      "default": "",
+      "value": "circular-ring",
+      "type": "string",
+      "description": "Loading icon type",
+      "version": "-",
+      "required": false,
+      "description_zh": "加载中图标类型"
+    },
+    "loading-color": {
+      "default": "",
+      "value": "#ffffff",
+      "type": "string",
+      "description": "Loading icon color",
+      "version": "-",
+      "required": false,
+      "description_zh": "加载中图标颜色"
+    },
+    "loading-size": {
+      "default": "",
+      "value": "24px",
+      "type": "string",
+      "description": "Loading icon size",
+      "version": "-",
+      "required": false,
+      "description_zh": "加载中图标尺寸"
+    },
+    "status-key": {
+      "default": "",
+      "value": "status",
+      "type": "string",
+      "description": "file data structure, the key corresponding to status",
+      "version": "-",
+      "required": false,
+      "description_zh": "file 数据结构中，status 对应的 key"
+    },
+    "image-mode": {
+      "default": "",
+      "value": "aspectFit",
+      "type": "ImageMode",
+      "description": "Preview the mode property of the image",
+      "version": "-",
+      "required": false,
+      "description_zh": "预览图片的 mode 属性"
+    },
+    "accept": {
+      "default": "",
+      "value": "image",
+      "type": "image video media file all",
+      "description": "Accepted file types",
+      "version": "1.3.0",
+      "required": false,
+      "description_zh": "接受的文件类型"
+    },
+    "compressed": {
+      "default": "",
+      "value": "true",
+      "type": "boolean",
+      "description": "Whether to compress the video, when accept is video | media",
+      "version": "1.3.0",
+      "required": false,
+      "description_zh": "是否压缩视频，当 accept 为 video | media 时生效"
+    },
+    "maxDuration": {
+      "default": "",
+      "value": "60",
+      "type": "Number",
+      "description": "The maximum shooting time of a video is set to video | media, in seconds",
+      "version": "1.3.0",
+      "required": false,
+      "description_zh": "拍摄视频最长拍摄时间，当 accept 为 video | media 时生效，单位秒"
+    },
+    "camera": {
+      "default": "",
+      "value": "back",
+      "type": "front",
+      "description": "When using the front or rear camera, accept is video | media",
+      "version": "1.3.0",
+      "required": false,
+      "description_zh": "使用前置或者后置相机，当 accept 为 video | media 时生效"
+    },
+    "successStatus": {
+      "default": "",
+      "value": "200",
+      "type": "number",
+      "description": "The value of the success status (statusCode) of the interface response",
+      "version": "1.3.4",
+      "required": false,
+      "description_zh": "接口响应的成功状态（statusCode）值"
+    },
+    "auto-upload": {
+      "default": "",
+      "value": "true",
+      "type": "boolean",
+      "description": "Whether to select the file and upload it automatically. If false, you should manually call the submit() method to start the upload",
+      "version": "1.3.8",
+      "required": false,
+      "description_zh": "是否选择文件后自动上传。为 false 时应手动调用 submit() 方法开始上传"
+    },
+    "upload-method": {
+      "default": "",
+      "value": "-",
+      "type": "UploadMethod",
+      "description": "Customize the upload method",
+      "version": "1.3.8",
+      "required": false,
+      "description_zh": "自定义上传方法"
+    }
+  },
+  "link": "https://wot-design-uni.pages.dev/component/upload.html",
+  "link_zh": "https://wot-design-uni.pages.dev/component/upload.html",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "success",
+      "description": "Triggered when the upload is successful",
+      "params": "event = { file, fileList,formData } file 为当前选上传的文件，'fileList' 上传图片列表",
+      "version": "-",
+      "value": "",
+      "description_zh": "上传成功时触发"
+    },
+    {
+      "name": "fail",
+      "description": "Triggered when the upload fails",
+      "params": "event = { error, file,formData } error 错误信息，file 上传失败的文件",
+      "version": "-",
+      "value": "",
+      "description_zh": "上传失败时触发"
+    },
+    {
+      "name": "progress",
+      "description": "Triggered when uploading",
+      "params": "event = { response, file } response 上传中响应信息，file 为当前选上传的文件",
+      "version": "-",
+      "value": "",
+      "description_zh": "上传中时触发"
+    },
+    {
+      "name": "chooseerror",
+      "description": "Triggered when the image selection fails",
+      "params": "event = { error } error 选择图片失败的错误信息",
+      "version": "-",
+      "value": "",
+      "description_zh": "选择图片失败时触发"
+    },
+    {
+      "name": "change",
+      "description": "Triggered when the upload list is modified",
+      "params": "选中的值 event = { fileList } 'fileList' 上传图片列表",
+      "version": "-",
+      "value": "",
+      "description_zh": "上传列表修改时触发"
+    },
+    {
+      "name": "remove",
+      "description": "Triggered when an image is removed",
+      "params": "event = { file } file: 移除的文件信息",
+      "version": "-",
+      "value": "",
+      "description_zh": "移除图片时触发"
+    },
+    {
+      "name": "oversize",
+      "description": "Triggered when the file size exceeds the limit",
+      "params": "event = { file } file: 尺寸超出的文件信息",
+      "version": "-",
+      "value": "",
+      "description_zh": "文件大小超过限制时触发"
+    }
+  ],
+  "methods": [
+    {
+      "name": "submit",
+      "description": "Start the upload manually",
+      "params": "-",
+      "version": "1.3.8",
+      "value": "",
+      "description_zh": "手动开始上传"
+    }
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "description": "Upload evoke slot styles",
+      "version": "-",
+      "description_zh": "上传唤起插槽样式"
+    },
+    {
+      "name": "preview-cover",
+      "description": "Customize the content overlaid above the preview area",
+      "version": "1.3.12",
+      "description_zh": "自定义覆盖在预览区域上方的内容"
+    }
+  ],
+  "suggestions": [],
+  "filename": "Upload"
+}

@@ -1,0 +1,164 @@
+{
+  "name": "WdDatetimePickerView",
+  "props": {
+    "v-model": {
+      "default": "",
+      "value": "-",
+      "type": "string / date",
+      "description": "When selected, the type is a string when type is time, otherwise it is a date",
+      "version": "",
+      "required": false,
+      "description_zh": "选中项，当 type 为 time 时，类型为字符串，否则为 Date"
+    },
+    "type": {
+      "default": "",
+      "value": "datetime",
+      "type": "date / year-month / time / year",
+      "description": "Selector type",
+      "version": "-",
+      "required": false,
+      "description_zh": "选择器类型"
+    },
+    "loading": {
+      "default": "",
+      "value": "false",
+      "type": "boolean",
+      "description": "Loading",
+      "version": "-",
+      "required": false,
+      "description_zh": "加载中"
+    },
+    "loading-color": {
+      "default": "",
+      "value": "#4D80F0",
+      "type": "string",
+      "description": "Loaded colors can only be written in hexadecimal color values, and cannot use abbreviations",
+      "version": "-",
+      "required": false,
+      "description_zh": "加载的颜色，只能使用十六进制的色值写法，且不能使用缩写"
+    },
+    "columns-height": {
+      "default": "",
+      "value": "231",
+      "type": "number",
+      "description": "The picker inner drum is high",
+      "version": "-",
+      "required": false,
+      "description_zh": "picker内部滚筒高"
+    },
+    "formatter": {
+      "default": "",
+      "value": "-",
+      "type": "function",
+      "description": "Customize the formatting function of the pop-up layer options copy, which returns a string",
+      "version": "-",
+      "required": false,
+      "description_zh": "自定义弹出层选项文案的格式化函数，返回一个字符串"
+    },
+    "filter": {
+      "default": "",
+      "value": "-",
+      "type": "function",
+      "description": "A function that customizes the filtering options and returns an array of options for the columns",
+      "version": "-",
+      "required": false,
+      "description_zh": "自定义过滤选项的函数，返回列的选项数组"
+    },
+    "minDate": {
+      "default": "",
+      "value": "当前日期 - 10年",
+      "type": "timestamp",
+      "description": "Minimum date, 13-bit timestamp",
+      "version": "-",
+      "required": false,
+      "description_zh": "最小日期，13 位的时间戳"
+    },
+    "maxDate": {
+      "default": "",
+      "value": "当前日期 + 10年",
+      "type": "timestamp",
+      "description": "Maximum date, 13-bit timestamp",
+      "version": "-",
+      "required": false,
+      "description_zh": "最大日期，13 位的时间戳"
+    },
+    "minHour": {
+      "default": "",
+      "value": "0",
+      "type": "number",
+      "description": "The minimum hour, time type",
+      "version": "-",
+      "required": false,
+      "description_zh": "最小小时，time类型时生效"
+    },
+    "maxHour": {
+      "default": "",
+      "value": "23",
+      "type": "number",
+      "description": "The maximum hour takes effect when the time type takes effect",
+      "version": "-",
+      "required": false,
+      "description_zh": "最大小时，time类型时生效"
+    },
+    "minMinute": {
+      "default": "",
+      "value": "0",
+      "type": "number",
+      "description": "Minimum minute, time type takes effect",
+      "version": "-",
+      "required": false,
+      "description_zh": "最小分钟，time类型时生效"
+    },
+    "maxMinute": {
+      "default": "",
+      "value": "59",
+      "type": "number",
+      "description": "Maximum minutes, time type takes effect",
+      "version": "-",
+      "required": false,
+      "description_zh": "最大分钟，time类型时生效"
+    },
+    "immediate-change": {
+      "default": "",
+      "value": "false",
+      "type": "boolean",
+      "description": "Whether to trigger the picker-view change event immediately when the finger is released. If it is not enabled, the change event will be triggered after the end of the scrolling animation, which is available from version 1.2.25 onwards and is only supported by WeChat Mini Programs and Alipay Mini Programs.",
+      "version": "1.2.25",
+      "required": false,
+      "description_zh": "是否在手指松开时立即触发picker-view的 change 事件。若不开启则会在滚动动画结束后触发 change 事件，1.2.25版本起提供，仅微信小程序和支付宝小程序支持。"
+    }
+  },
+  "link": "https://wot-design-uni.pages.dev/component/datetime-picker-view.html",
+  "link_zh": "https://wot-design-uni.pages.dev/component/datetime-picker-view.html",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "change",
+      "description": "Triggered when the option is toggled",
+      "params": "选中的值 { value }，value 为当前选中日期的时间戳，'time' 类型则为字符串",
+      "version": "-",
+      "value": "",
+      "description_zh": "切换选项时触发"
+    },
+    {
+      "name": "pickstart",
+      "description": "The event is triggered when the scroll selection starts",
+      "params": "-",
+      "version": "-",
+      "value": "",
+      "description_zh": "当滚动选择开始时候触发事件"
+    },
+    {
+      "name": "pickend",
+      "description": "The event is triggered when the scroll selection ends",
+      "params": "-",
+      "version": "-",
+      "value": "",
+      "description_zh": "当滚动选择结束时候触发事件"
+    }
+  ],
+  "methods": [],
+  "slots": [],
+  "suggestions": [],
+  "filename": "DatetimePickerView"
+}

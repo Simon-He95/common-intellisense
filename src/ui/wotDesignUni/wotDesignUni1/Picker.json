@@ -1,0 +1,347 @@
+{
+  "name": "WdPicker",
+  "props": {
+    "v-model": {
+      "default": "",
+      "value": "-",
+      "type": "string / number / boolean / array",
+      "description": "The selection, if it is a multi-column selector, should be of type Array",
+      "version": "",
+      "required": false,
+      "description_zh": "选中项，如果为多列选择器，则其类型应为数组"
+    },
+    "columns": {
+      "default": "",
+      "value": "-",
+      "type": "array",
+      "description": "Selector data, which can be an array of strings, an array of objects, or a multi-column selector if it is a two-dimensional array",
+      "version": "-",
+      "required": false,
+      "description_zh": "选择器数据，可以为字符串数组，也可以为对象数组，如果为二维数组，则为多列选择器"
+    },
+    "loading": {
+      "default": "",
+      "value": "false",
+      "type": "boolean",
+      "description": "Loading",
+      "version": "-",
+      "required": false,
+      "description_zh": "加载中"
+    },
+    "loading-color": {
+      "default": "",
+      "value": "#4D80F0",
+      "type": "string",
+      "description": "Loaded colors can only be written in hexadecimal color values, and cannot use abbreviations",
+      "version": "-",
+      "required": false,
+      "description_zh": "加载的颜色，只能使用十六进制的色值写法，且不能使用缩写"
+    },
+    "columns-height": {
+      "default": "",
+      "value": "231",
+      "type": "number",
+      "description": "The picker inner drum is high",
+      "version": "-",
+      "required": false,
+      "description_zh": "picker内部滚筒高"
+    },
+    "value-key": {
+      "default": "",
+      "value": "value",
+      "type": "string",
+      "description": "option object, the key corresponding to the value",
+      "version": "-",
+      "required": false,
+      "description_zh": "选项对象中，value对应的 key"
+    },
+    "label-key": {
+      "default": "",
+      "value": "label",
+      "type": "string",
+      "description": "In the options object, the key corresponding to the displayed text",
+      "version": "-",
+      "required": false,
+      "description_zh": "选项对象中，展示的文本对应的 key"
+    },
+    "title": {
+      "default": "",
+      "value": "-",
+      "type": "string",
+      "description": "Pop up the layer title",
+      "version": "-",
+      "required": false,
+      "description_zh": "弹出层标题"
+    },
+    "cancel-button-text": {
+      "default": "",
+      "value": "取消",
+      "type": "string",
+      "description": "Cancel button copy",
+      "version": "-",
+      "required": false,
+      "description_zh": "取消按钮文案"
+    },
+    "confirm-button-text": {
+      "default": "",
+      "value": "完成",
+      "type": "string",
+      "description": "Confirm the button copy",
+      "version": "-",
+      "required": false,
+      "description_zh": "确认按钮文案"
+    },
+    "label": {
+      "default": "",
+      "value": "-",
+      "type": "string",
+      "description": "Selector left copy",
+      "version": "-",
+      "required": false,
+      "description_zh": "选择器左侧文案"
+    },
+    "placeholder": {
+      "default": "",
+      "value": "请选择",
+      "type": "string",
+      "description": "Selector placeholders",
+      "version": "-",
+      "required": false,
+      "description_zh": "选择器占位符"
+    },
+    "disabled": {
+      "default": "",
+      "value": "fasle",
+      "type": "boolean",
+      "description": "disable",
+      "version": "-",
+      "required": false,
+      "description_zh": "禁用"
+    },
+    "readonly": {
+      "default": "",
+      "value": "false",
+      "type": "boolean",
+      "description": "read only",
+      "version": "-",
+      "required": false,
+      "description_zh": "只读"
+    },
+    "display-format": {
+      "default": "",
+      "value": "-",
+      "type": "function",
+      "description": "Customize the formatting function of the display copy, which returns a string",
+      "version": "-",
+      "required": false,
+      "description_zh": "自定义展示文案的格式化函数，返回一个字符串"
+    },
+    "column-change": {
+      "default": "",
+      "value": "-",
+      "type": "function",
+      "description": "Receive the pickerView instance, the selected item, the subscript of the currently modified column, and resolve as input parameters, and modify the data source of other columns through the setColumnData method exposed by the pickerView instance.",
+      "version": "-",
+      "required": false,
+      "description_zh": "接收 pickerView 实例、选中项、当前修改列的下标、resolve 作为入参，根据选中项和列下标进行判断，通过 pickerView 实例暴露出来的 setColumnData 方法修改其他列的数据源。"
+    },
+    "size": {
+      "default": "",
+      "value": "-",
+      "type": "large",
+      "description": "Set the selector size",
+      "version": "-",
+      "required": false,
+      "description_zh": "设置选择器大小"
+    },
+    "label-width": {
+      "default": "",
+      "value": "33%",
+      "type": "string",
+      "description": "Set the width of the header on the left",
+      "version": "-",
+      "required": false,
+      "description_zh": "设置左侧标题宽度"
+    },
+    "error": {
+      "default": "",
+      "value": "false",
+      "type": "boolean",
+      "description": "Whether it is in the error state, and the content on the right side is red when the error state is in the error state",
+      "version": "-",
+      "required": false,
+      "description_zh": "是否为错误状态，错误状态时右侧内容为红色"
+    },
+    "required": {
+      "default": "",
+      "value": "false",
+      "type": "boolean",
+      "description": "Form attributes, required",
+      "version": "-",
+      "required": false,
+      "description_zh": "表单属性，必填"
+    },
+    "align-right": {
+      "default": "",
+      "value": "false",
+      "type": "boolean",
+      "description": "The value of the selector is shown on the right",
+      "version": "-",
+      "required": false,
+      "description_zh": "选择器的值靠右展示"
+    },
+    "use-label-slot": {
+      "default": "",
+      "value": "false",
+      "type": "boolean",
+      "description": "label using slots",
+      "version": "-",
+      "required": false,
+      "description_zh": "label 使用插槽"
+    },
+    "use-default-slot": {
+      "default": "",
+      "value": "false",
+      "type": "boolean",
+      "description": "Use the default slot",
+      "version": "-",
+      "required": false,
+      "description_zh": "使用默认插槽"
+    },
+    "before-confirm": {
+      "default": "",
+      "value": "-",
+      "type": "function",
+      "description": "Before determining the checksum function, receive (value, resolve, picker) parameters, and continue to execute picker through resolve, resolve receives one boolean parameter",
+      "version": "-",
+      "required": false,
+      "description_zh": "确定前校验函数，接收 (value, resolve, picker) 参数，通过 resolve 继续执行 picker，resolve 接收1个boolean参数"
+    },
+    "close-on-click-modal": {
+      "default": "",
+      "value": "true",
+      "type": "boolean",
+      "description": "Click whether the mask is off",
+      "version": "-",
+      "required": false,
+      "description_zh": "点击遮罩是否关闭"
+    },
+    "z-index": {
+      "default": "",
+      "value": "15",
+      "type": "number",
+      "description": "Pop-up level",
+      "version": "-",
+      "required": false,
+      "description_zh": "弹窗层级"
+    },
+    "safe-area-inset-bottom": {
+      "default": "",
+      "value": "true",
+      "type": "boolean",
+      "description": "Whether the pop-up panel sets the bottom safety distance (iPhone X type models)",
+      "version": "-",
+      "required": false,
+      "description_zh": "弹出面板是否设置底部安全距离（iphone X 类型的机型）"
+    },
+    "ellipsis": {
+      "default": "",
+      "value": "false",
+      "type": "boolean",
+      "description": "Whether or not it is out of hiding",
+      "version": "-",
+      "required": false,
+      "description_zh": "是否超出隐藏"
+    },
+    "prop": {
+      "default": "",
+      "value": "-",
+      "type": "string",
+      "description": "The form field model field name, which is required if the form validation function is used",
+      "version": "-",
+      "required": false,
+      "description_zh": "表单域 model 字段名，在使用表单校验功能的情况下，该属性是必填的"
+    },
+    "rules": {
+      "default": "",
+      "value": "[]",
+      "type": "FormItemRule []",
+      "description": "Form validation rules, which can be used in conjunction with the wd-form component",
+      "version": "-",
+      "required": false,
+      "description_zh": "表单验证规则，结合wd-form组件使用"
+    },
+    "immediate-change": {
+      "default": "",
+      "value": "false",
+      "type": "boolean",
+      "description": "Whether to trigger the picker-view change event immediately when the finger is released. If it is not enabled, the change event will be triggered after the end of the scrolling animation, which is available from version 1.2.25 onwards and is only supported by WeChat Mini Programs and Alipay Mini Programs.",
+      "version": "1.2.25",
+      "required": false,
+      "description_zh": "是否在手指松开时立即触发picker-view的 change 事件。若不开启则会在滚动动画结束后触发 change 事件，1.2.25版本起提供，仅微信小程序和支付宝小程序支持。"
+    }
+  },
+  "link": "https://wot-design-uni.pages.dev/component/picker.html",
+  "link_zh": "https://wot-design-uni.pages.dev/component/picker.html",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "confirm",
+      "description": "Click the button on the right to trigger",
+      "params": "event.detail = { value, selectedItems }， value 为选中值(多列则为数组)，selectedItems为选中项(多列则为数组)",
+      "version": "-",
+      "value": "",
+      "description_zh": "点击右侧按钮触发"
+    },
+    {
+      "name": "cancel",
+      "description": "Click the button on the left to trigger",
+      "params": "-",
+      "version": "-",
+      "value": "",
+      "description_zh": "点击左侧按钮触发"
+    },
+    {
+      "name": "open",
+      "description": "Triggered when the selector pops up a layer",
+      "params": "-",
+      "version": "-",
+      "value": "",
+      "description_zh": "打开选择器弹出层时触发"
+    }
+  ],
+  "methods": [
+    {
+      "name": "open",
+      "description": "Open the picker pop-up box",
+      "params": "-",
+      "version": "-",
+      "value": "",
+      "description_zh": "打开picker弹框"
+    },
+    {
+      "name": "close",
+      "description": "Close the picker pop-up box",
+      "params": "-",
+      "version": "-",
+      "value": "",
+      "description_zh": "关闭picker弹框"
+    }
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "description": "Use the default slot",
+      "version": "-",
+      "description_zh": "使用默认插槽"
+    },
+    {
+      "name": "label",
+      "description": "Title slot on the left",
+      "version": "-",
+      "description_zh": "左侧标题插槽"
+    }
+  ],
+  "suggestions": [],
+  "filename": "Picker"
+}

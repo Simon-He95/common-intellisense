@@ -1,0 +1,330 @@
+{
+  "name": "WdColPicker",
+  "props": {
+    "v-model": {
+      "default": "",
+      "value": "-",
+      "type": "array",
+      "description": "Checked",
+      "version": "-",
+      "required": false,
+      "description_zh": "选中项"
+    },
+    "columns": {
+      "default": "",
+      "value": "-",
+      "type": "array",
+      "description": "Selector data, two-dimensional arrays",
+      "version": "-",
+      "required": false,
+      "description_zh": "选择器数据，二维数组"
+    },
+    "value-key": {
+      "default": "",
+      "value": "value",
+      "type": "string",
+      "description": "option object, the key corresponding to the value",
+      "version": "-",
+      "required": false,
+      "description_zh": "选项对象中，value 对应的 key"
+    },
+    "label-key": {
+      "default": "",
+      "value": "label",
+      "type": "string",
+      "description": "In the options object, the key corresponding to the displayed text",
+      "version": "-",
+      "required": false,
+      "description_zh": "选项对象中，展示的文本对应的 key"
+    },
+    "tip-key": {
+      "default": "",
+      "value": "tip",
+      "type": "string",
+      "description": "Option object, prompt the key corresponding to the copy",
+      "version": "-",
+      "required": false,
+      "description_zh": "选项对象中，提示文案对应的 key"
+    },
+    "title": {
+      "default": "",
+      "value": "-",
+      "type": "string",
+      "description": "Pop up the layer title",
+      "version": "-",
+      "required": false,
+      "description_zh": "弹出层标题"
+    },
+    "label": {
+      "default": "",
+      "value": "-",
+      "type": "string",
+      "description": "Selector left copy",
+      "version": "-",
+      "required": false,
+      "description_zh": "选择器左侧文案"
+    },
+    "placeholder": {
+      "default": "",
+      "value": "请选择",
+      "type": "string",
+      "description": "Selector placeholders",
+      "version": "-",
+      "required": false,
+      "description_zh": "选择器占位符"
+    },
+    "disabled": {
+      "default": "",
+      "value": "fasle",
+      "type": "boolean",
+      "description": "disable",
+      "version": "-",
+      "required": false,
+      "description_zh": "禁用"
+    },
+    "readonly": {
+      "default": "",
+      "value": "false",
+      "type": "boolean",
+      "description": "read only",
+      "version": "-",
+      "required": false,
+      "description_zh": "只读"
+    },
+    "display-format": {
+      "default": "",
+      "value": "-",
+      "type": "function",
+      "description": "Customize the formatting function of the display copy, which returns a string",
+      "version": "-",
+      "required": false,
+      "description_zh": "自定义展示文案的格式化函数，返回一个字符串"
+    },
+    "column-change": {
+      "default": "",
+      "value": "-",
+      "type": "function",
+      "description": "Receive the selected item for the current column, subscript for the current column, subscript for the current column selection, resolve, and finish for the final selection",
+      "version": "-",
+      "required": false,
+      "description_zh": "接收当前列的选中项 item、当前列下标、当前列选中项下标下一列数据处理函数 resolve、结束选择 finish"
+    },
+    "size": {
+      "default": "",
+      "value": "-",
+      "type": "large",
+      "description": "Set the selector size",
+      "version": "-",
+      "required": false,
+      "description_zh": "设置选择器大小"
+    },
+    "label-width": {
+      "default": "",
+      "value": "33%",
+      "type": "string",
+      "description": "Set the width of the header on the left",
+      "version": "-",
+      "required": false,
+      "description_zh": "设置左侧标题宽度"
+    },
+    "error": {
+      "default": "",
+      "value": "false",
+      "type": "boolean",
+      "description": "Whether it is in the error state, and the content on the right side is red when the error state is in the error state",
+      "version": "-",
+      "required": false,
+      "description_zh": "是否为错误状态，错误状态时右侧内容为红色"
+    },
+    "required": {
+      "default": "",
+      "value": "false",
+      "type": "boolean",
+      "description": "Required style",
+      "version": "-",
+      "required": false,
+      "description_zh": "必填样式"
+    },
+    "align-right": {
+      "default": "",
+      "value": "false",
+      "type": "boolean",
+      "description": "The value of the selector is shown on the right",
+      "version": "-",
+      "required": false,
+      "description_zh": "选择器的值靠右展示"
+    },
+    "before-confirm": {
+      "default": "",
+      "value": "-",
+      "type": "function",
+      "description": "Before determining the checksum function, receive (value, resolve) parameters, and continue to execute the picker through resolve, resolve receives 1 boolean parameter",
+      "version": "-",
+      "required": false,
+      "description_zh": "确定前校验函数，接收 (value, resolve) 参数，通过 resolve 继续执行 picker，resolve 接收 1 个 boolean 参数"
+    },
+    "loading-color": {
+      "default": "",
+      "value": "#4D80F0",
+      "type": "string",
+      "description": "The color of the loading icon",
+      "version": "-",
+      "required": false,
+      "description_zh": "loading 图标的颜色"
+    },
+    "use-default-slot": {
+      "default": "",
+      "value": "false",
+      "type": "boolean",
+      "description": "Set this option when using the default slot",
+      "version": "-",
+      "required": false,
+      "description_zh": "使用默认插槽时设置该选项"
+    },
+    "use-label-slot": {
+      "default": "",
+      "value": "false",
+      "type": "boolean",
+      "description": "Set this option when using the label slot",
+      "version": "-",
+      "required": false,
+      "description_zh": "使用 label 插槽时设置该选项"
+    },
+    "close-on-click-modal": {
+      "default": "",
+      "value": "true",
+      "type": "boolean",
+      "description": "Click whether the mask is off",
+      "version": "-",
+      "required": false,
+      "description_zh": "点击遮罩是否关闭"
+    },
+    "auto-complete": {
+      "default": "",
+      "value": "-",
+      "type": "false",
+      "description": "自动触发 column-change 事件来补全数据，当 columns 为空数组或者 columns 数组长度小于 value 数组长度时，会自动触发 column-change",
+      "version": "",
+      "required": false,
+      "description_zh": "自动触发 column-change 事件来补全数据，当 columns 为空数组或者 columns 数组长度小于 value 数组长度时，会自动触发 column-change"
+    },
+    "z-index": {
+      "default": "",
+      "value": "15",
+      "type": "number",
+      "description": "Pop-up level",
+      "version": "-",
+      "required": false,
+      "description_zh": "弹窗层级"
+    },
+    "safe-area-inset-bottom": {
+      "default": "",
+      "value": "true",
+      "type": "boolean",
+      "description": "Whether the pop-up panel sets the bottom safety distance (iPhone X type models)",
+      "version": "-",
+      "required": false,
+      "description_zh": "弹出面板是否设置底部安全距离（iphone X 类型的机型）"
+    },
+    "ellipsis": {
+      "default": "",
+      "value": "false",
+      "type": "boolean",
+      "description": "Whether or not it is out of hiding",
+      "version": "-",
+      "required": false,
+      "description_zh": "是否超出隐藏"
+    },
+    "prop": {
+      "default": "",
+      "value": "-",
+      "type": "string",
+      "description": "The form field model field name, which is required if the form validation function is used",
+      "version": "-",
+      "required": false,
+      "description_zh": "表单域 model 字段名，在使用表单校验功能的情况下，该属性是必填的"
+    },
+    "rules": {
+      "default": "",
+      "value": "[]",
+      "type": "FormItemRule []",
+      "description": "Form validation rules, which can be used in conjunction with the wd-form component",
+      "version": "-",
+      "required": false,
+      "description_zh": "表单验证规则，结合wd-form组件使用"
+    },
+    "lineWidth": {
+      "default": "",
+      "value": "-",
+      "type": "number",
+      "description": "Bottom bar width, in pixels",
+      "version": "1.3.7",
+      "required": false,
+      "description_zh": "底部条宽度，单位像素"
+    },
+    "lineHeight": {
+      "default": "",
+      "value": "-",
+      "type": "number",
+      "description": "Bottom bar height, in pixels",
+      "version": "1.3.7",
+      "required": false,
+      "description_zh": "底部条高度，单位像素"
+    }
+  },
+  "link": "https://wot-design-uni.pages.dev/component/col-picker.html",
+  "link_zh": "https://wot-design-uni.pages.dev/component/col-picker.html",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "confirm",
+      "description": "Triggers when the last column option is selected",
+      "params": "{ value(选项值数组), selectedItems(选项数组) }",
+      "version": "-",
+      "value": "",
+      "description_zh": "最后一列选项选中时触发"
+    },
+    {
+      "name": "close",
+      "description": "Triggered when the close button or masked is clicked",
+      "params": "-",
+      "version": "-",
+      "value": "",
+      "description_zh": "点击关闭按钮或者蒙层时触发"
+    }
+  ],
+  "methods": [
+    {
+      "name": "open",
+      "description": "Open the picker pop-up box",
+      "params": "-",
+      "version": "",
+      "value": "",
+      "description_zh": "打开 picker 弹框"
+    },
+    {
+      "name": "close",
+      "description": "Close the picker pop-up box",
+      "params": "-",
+      "version": "",
+      "value": "",
+      "description_zh": "关闭 picker 弹框"
+    }
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "description": "Customize your presentation",
+      "version": "-",
+      "description_zh": "自定义展示"
+    },
+    {
+      "name": "label",
+      "description": "Left slot",
+      "version": "-",
+      "description_zh": "左侧插槽"
+    }
+  ],
+  "suggestions": [],
+  "filename": "ColPicker"
+}

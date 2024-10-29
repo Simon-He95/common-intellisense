@@ -1,0 +1,156 @@
+{
+  "name": "WdNoticeBar",
+  "props": {
+    "text": {
+      "default": "",
+      "value": "-",
+      "type": "string string[]",
+      "description": "Set up notification bar copy",
+      "version": "-",
+      "required": false,
+      "description_zh": "设置通知栏文案"
+    },
+    "type": {
+      "default": "",
+      "value": "warning",
+      "type": "info / warning / danger",
+      "description": "Set the notification bar type",
+      "version": "-",
+      "required": false,
+      "description_zh": "设置通知栏类型"
+    },
+    "prefix": {
+      "default": "",
+      "value": "-",
+      "type": "string",
+      "description": "Set the icon on the left, using the icon name in the icon section",
+      "version": "-",
+      "required": false,
+      "description_zh": "设置左侧图标，使用 icon 章节中的图标名"
+    },
+    "scrollable": {
+      "default": "",
+      "value": "true",
+      "type": "boolean",
+      "description": "Whether it is possible to scroll",
+      "version": "-",
+      "required": false,
+      "description_zh": "是否可以滚动"
+    },
+    "delay": {
+      "default": "",
+      "value": "1",
+      "type": "number",
+      "description": "Initial Delay of Scrolling Animation, in seconds(s)",
+      "version": "-",
+      "required": false,
+      "description_zh": "滚动动画初始延时，单位 秒(s)"
+    },
+    "speed": {
+      "default": "",
+      "value": "50",
+      "type": "number",
+      "description": "Scroll speed, in px/s",
+      "version": "-",
+      "required": false,
+      "description_zh": "滚动速度，单位 px/s"
+    },
+    "closable": {
+      "default": "",
+      "value": "false",
+      "type": "boolean",
+      "description": "Whether it can be turned off",
+      "version": "-",
+      "required": false,
+      "description_zh": "是否可以关闭"
+    },
+    "wrapable": {
+      "default": "",
+      "value": "false",
+      "type": "boolean",
+      "description": "Whether or not to wrap the line",
+      "version": "-",
+      "required": false,
+      "description_zh": "是否换行展示"
+    },
+    "color": {
+      "default": "",
+      "value": "-",
+      "type": "string",
+      "description": "Text, icon color",
+      "version": "-",
+      "required": false,
+      "description_zh": "文字、图标颜色"
+    },
+    "background-color": {
+      "default": "",
+      "value": "-",
+      "type": "string",
+      "description": "Background color",
+      "version": "-",
+      "required": false,
+      "description_zh": "背景颜色"
+    },
+    "direction": {
+      "default": "",
+      "value": "horizontal",
+      "type": "horizontal vertical",
+      "description": "Scroll direction",
+      "version": "-",
+      "required": false,
+      "description_zh": "滚动方向"
+    }
+  },
+  "link": "https://wot-design-uni.pages.dev/component/notice-bar.html",
+  "link_zh": "https://wot-design-uni.pages.dev/component/notice-bar.html",
+  "typeDetail": {},
+  "events": [
+    {
+      "name": "close",
+      "description": "Close button when clicked",
+      "params": "-",
+      "version": "-",
+      "value": "",
+      "description_zh": "关闭按钮点击时"
+    },
+    {
+      "name": "next",
+      "description": "Triggers before the next roll",
+      "params": "index: number",
+      "version": "-",
+      "value": "",
+      "description_zh": "下一次滚动前触发"
+    },
+    {
+      "name": "click",
+      "description": "Triggered when clicked",
+      "params": "{ text: string, index: number }，其中text为当前文本，index为当前文本索引",
+      "version": "1.2.16",
+      "value": "",
+      "description_zh": "点击时触发"
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "prefix",
+      "description": "Front icon",
+      "version": "-",
+      "description_zh": "前置图标"
+    },
+    {
+      "name": "suffix",
+      "description": "Rear slots",
+      "version": "-",
+      "description_zh": "后置插槽"
+    },
+    {
+      "name": "default",
+      "description": "The text of the notification",
+      "version": "-",
+      "description_zh": "通知文本内容"
+    }
+  ],
+  "suggestions": [],
+  "filename": "NoticeBar"
+}
