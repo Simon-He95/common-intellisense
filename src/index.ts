@@ -9,7 +9,7 @@ import { alias, detectSlots, findPkgUI, findRefs, getReactRefsMap, parser, parse
 import UI from './ui'
 import { UINames as UINamesMap, nameMap } from './constants'
 import type { Directives } from './ui/utils'
-import { isVine, isVue, toCamel } from './ui/utils'
+import { hyphenate, isVine, isVue, toCamel } from './ui/utils'
 // import {createWebviewPanel} from './webview/webview'
 
 let UINames: any = []
@@ -119,7 +119,7 @@ export async function activate(context: vscode.ExtensionContext) {
     const [data, lib, _, prefix, dynamicLib, importWay] = params
     const name = data.name.split('.')[0]
     const fromName = data.from
-    const from = fromName || dynamicLib ? dynamicLib.replace('${name}', name.toLowerCase()) : lib
+    const from = fromName || dynamicLib ? dynamicLib.replace('${name}', hyphenate(name)) : lib
     const code = getActiveText()!
     const uiComponents = getImportUiComponents(code)
     let deps = data.suggestions?.length === 1
@@ -818,6 +818,7 @@ export function findUI() {
     urlCache.set(cwd, uis)
     if (!uis || !uis.length)
       return
+
     updateCompletions(uis)
   })
 

@@ -4,9 +4,9 @@ const fsp = require('node:fs/promises')
 const fg = require('fast-glob')
 
 export async function run() {
-  const folder = 'src/ui/viewUiPlus'
-  const lib = 'view-ui-plus'
-  const name = 'viewUiPlus3'
+  const folder = 'src/ui/arkVue'
+  const lib = '@ark-ui/vue'
+  const name = 'arkVue4'
   const isHyphen = false /** 生成的模板中的使用是 true ? a-affix : AAfix */
   const isReact = false
   const url = path.resolve(root, `${folder}/${name}`)

@@ -1,0 +1,190 @@
+{
+  "name": "Slider.Root",
+  "description": "A control element that allows for a range of selections.",
+  "description_zh": "A control element that allows for a range of selections.",
+  "slots": [],
+  "suggestions": [],
+  "filename": "SliderRoot",
+  "link": "https://ark-ui.com/vue/docs/components/slider",
+  "link_zh": "https://ark-ui.com/vue/docs/components/slider",
+  "props": {
+    "aria-label": {
+      "default": "",
+      "value": "",
+      "type": "string[]",
+      "description": "The aria-label of each slider thumb. Useful for providing an accessible name to the slider",
+      "description_zh": "每个滑块滑块的 aria-label。用于为滑块提供辅助名称"
+    },
+    "aria-labelledby": {
+      "default": "",
+      "value": "",
+      "type": "string[]",
+      "description": "The `id` of the elements that labels each slider thumb. Useful for providing an accessible name to the slider",
+      "description_zh": "标记每个滑块滑块的元素的 'id'。用于为滑块提供辅助名称"
+    },
+    "asChild": {
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "description": "Use the provided child element as the default rendered element, combining their props and behavior.",
+      "description_zh": "使用提供的子元素作为默认渲染元素，结合它们的 props 和行为。"
+    },
+    "defaultValue": {
+      "default": "",
+      "value": "",
+      "type": "number[]",
+      "description": "The initial value of the slider when it is first rendered.\nUse when you do not need to control the state of the slider.",
+      "description_zh": "首次渲染滑块时的初始值。\n在不需要控制滑块的状态时使用。"
+    },
+    "disabled": {
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the slider is disabled",
+      "description_zh": "滑块是否被禁用"
+    },
+    "form": {
+      "default": "",
+      "value": "",
+      "type": "string",
+      "description": "The associate form of the underlying input element.",
+      "description_zh": "基础 input 元素的 associate 形式。"
+    },
+    "getAriaValueText": {
+      "default": "",
+      "value": "",
+      "type": "(details: ValueTextDetails) => string",
+      "description": "Function that returns a human readable value for the slider thumb",
+      "description_zh": "返回滑块滑块的可读值的函数"
+    },
+    "id": {
+      "default": "",
+      "value": "",
+      "type": "string",
+      "description": "The unique identifier of the machine.",
+      "description_zh": "计算机的唯一标识符。"
+    },
+    "ids": {
+      "default": "",
+      "value": "",
+      "type": "Partial<{\n  root: string\n  thumb(index: number): string\n  hiddenInput(index: number): string\n  control: string\n  track: string\n  range: string\n  label: string\n  valueText: string\n  marker(index: number): string\n}>",
+      "description": "The ids of the elements in the range slider. Useful for composition.",
+      "description_zh": "范围滑块中元素的 ID。对合成很有用。"
+    },
+    "invalid": {
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the slider is invalid",
+      "description_zh": "滑块是否无效"
+    },
+    "max": {
+      "default": "100",
+      "value": "",
+      "type": "number",
+      "description": "The maximum value of the slider",
+      "description_zh": "滑块的最大值"
+    },
+    "min": {
+      "default": "0",
+      "value": "",
+      "type": "number",
+      "description": "The minimum value of the slider",
+      "description_zh": "滑块的最小值"
+    },
+    "minStepsBetweenThumbs": {
+      "default": "0",
+      "value": "",
+      "type": "number",
+      "description": "The minimum permitted steps between multiple thumbs.",
+      "description_zh": "多个缩略图之间允许的最小步数。"
+    },
+    "modelValue": {
+      "default": "",
+      "value": "",
+      "type": "number[]",
+      "description": "",
+      "description_zh": ""
+    },
+    "name": {
+      "default": "",
+      "value": "",
+      "type": "string",
+      "description": "The name associated with each slider thumb (when used in a form)",
+      "description_zh": "与每个滑块块关联的名称（在表单中使用时）"
+    },
+    "orientation": {
+      "default": "'horizontal'",
+      "value": "",
+      "type": "'horizontal' | 'vertical'",
+      "description": "The orientation of the slider",
+      "description_zh": "滑块的方向"
+    },
+    "origin": {
+      "default": "'start'",
+      "value": "",
+      "type": "'start' | 'center'",
+      "description": "The origin of the slider range\n- \"start\": Useful when the value represents an absolute value\n- \"center\": Useful when the value represents an offset (relative)",
+      "description_zh": "滑块范围的原点\n- “start”：当值表示绝对值时很有用\n- “center”：当值表示偏移量（相对）时很有用"
+    },
+    "readOnly": {
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the slider is read-only",
+      "description_zh": "滑块是否为只读"
+    },
+    "step": {
+      "default": "1",
+      "value": "",
+      "type": "number",
+      "description": "The step value of the slider",
+      "description_zh": "滑块的步长值"
+    },
+    "thumbAlignment": {
+      "default": "'contain'",
+      "value": "",
+      "type": "'center' | 'contain'",
+      "description": "The alignment of the slider thumb relative to the track\n- `center`: the thumb will extend beyond the bounds of the slider track.\n- `contain`: the thumb will be contained within the bounds of the track.",
+      "description_zh": "滑块滑块相对于轨道的对齐方式\n- 'center'：拇指将延伸到滑轨的边界之外。\n- 'contain'：Thumb 将包含在轨道的边界内。"
+    },
+    "thumbSize": {
+      "default": "",
+      "value": "",
+      "type": "{ width: number; height: number }",
+      "description": "The slider thumbs dimensions",
+      "description_zh": "滑块滑块尺寸"
+    }
+  },
+  "events": [
+    {
+      "name": "focusChange",
+      "description": "Function invoked when the slider's focused index changes",
+      "description_zh": "当滑块的焦点索引更改时调用的函数",
+      "params": "[details: FocusChangeDetails]",
+      "value": ""
+    },
+    {
+      "name": "update:modelValue",
+      "description": "The callback fired when the model value changes.",
+      "description_zh": "当 model 值更改时触发回调。",
+      "params": "[value: number[]]",
+      "value": ""
+    },
+    {
+      "name": "valueChange",
+      "description": "Function invoked when the value of the slider changes",
+      "description_zh": "当滑块的值发生变化时调用的函数",
+      "params": "[details: ValueChangeDetails]",
+      "value": ""
+    },
+    {
+      "name": "valueChangeEnd",
+      "description": "Function invoked when the slider value change is done",
+      "description_zh": "完成滑块值更改时调用的函数",
+      "params": "[details: ValueChangeDetails]",
+      "value": ""
+    }
+  ],
+  "methods": []
+}

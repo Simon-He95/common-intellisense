@@ -7,7 +7,7 @@ let stack = 0
 const limit = 10
 const hasDone = new Set()
 async function setup() {
-  const cwd = path.resolve(root, 'src/ui/vuetify/vuetify3')
+  const cwd = path.resolve(root, 'src/ui/arkVue/arkVue4')
   const entry = await fg(['**/*.json'], { dot: true, cwd, absolute: true })
   // const entry = await fg(['./scripts/tinyVue.data.json'], { dot: true, absolute: true })
   // entry.forEach(async (url: string) => {

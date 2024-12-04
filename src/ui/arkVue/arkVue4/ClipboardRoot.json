@@ -1,0 +1,57 @@
+{
+  "name": "Clipboard.Root",
+  "description": "A component to copy text to the clipboard",
+  "description_zh": "A component to copy text to the clipboard",
+  "slots": [],
+  "suggestions": [],
+  "filename": "ClipboardRoot",
+  "link": "https://ark-ui.com/vue/docs/components/clipboard",
+  "link_zh": "https://ark-ui.com/vue/docs/components/clipboard",
+  "props": {
+    "asChild": {
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "description": "Use the provided child element as the default rendered element, combining their props and behavior.",
+      "description_zh": "使用提供的子元素作为默认渲染元素，结合它们的 props 和行为。"
+    },
+    "id": {
+      "default": "",
+      "value": "",
+      "type": "string",
+      "description": "The unique identifier of the machine.",
+      "description_zh": "计算机的唯一标识符。"
+    },
+    "ids": {
+      "default": "",
+      "value": "",
+      "type": "Partial<{ root: string; input: string; label: string }>",
+      "description": "The ids of the elements in the clipboard. Useful for composition.",
+      "description_zh": "剪贴板中元素的 ID。对合成很有用。"
+    },
+    "timeout": {
+      "default": "3000",
+      "value": "",
+      "type": "number",
+      "description": "The timeout for the copy operation",
+      "description_zh": "复制操作的超时"
+    },
+    "value": {
+      "default": "",
+      "value": "",
+      "type": "string",
+      "description": "The value to be copied to the clipboard",
+      "description_zh": "要复制到剪贴板的值"
+    }
+  },
+  "events": [
+    {
+      "name": "statusChange",
+      "description": "The function to be called when the value is copied to the clipboard",
+      "description_zh": "将值复制到剪贴板时要调用的函数",
+      "params": "[details: CopyStatusDetails]",
+      "value": ""
+    }
+  ],
+  "methods": []
+}

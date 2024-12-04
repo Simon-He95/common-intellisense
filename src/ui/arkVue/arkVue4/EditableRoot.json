@@ -1,0 +1,225 @@
+{
+  "name": "Editable.Root",
+  "description": "A component that allows users to edit text in place.",
+  "description_zh": "A component that allows users to edit text in place.",
+  "slots": [],
+  "suggestions": [],
+  "filename": "EditableRoot",
+  "link": "https://ark-ui.com/vue/docs/components/editable",
+  "link_zh": "https://ark-ui.com/vue/docs/components/editable",
+  "props": {
+    "activationMode": {
+      "default": "'focus'",
+      "value": "",
+      "type": "ActivationMode",
+      "description": "The activation mode for the preview element.\n\n- \"focus\" - Enter edit mode when the preview is focused\n- \"dblclick\" - Enter edit mode when the preview is double-clicked\n- \"click\" - Enter edit mode when the preview is clicked",
+      "description_zh": "预览元素的激活模式。\n\n- “focus” - 聚焦预览时进入编辑模式\n- “dblclick” - 双击预览时进入编辑模式\n- “click” - 单击预览时进入编辑模式"
+    },
+    "asChild": {
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "description": "Use the provided child element as the default rendered element, combining their props and behavior.",
+      "description_zh": "使用提供的子元素作为默认渲染元素，结合它们的 props 和行为。"
+    },
+    "autoResize": {
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the editable should auto-resize to fit the content.",
+      "description_zh": "可编辑对象是否应自动调整大小以适应内容。"
+    },
+    "defaultEdit": {
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "description": "The initial edit state of the editable when it is first rendered.\nUse when you do not need to control its edit state.",
+      "description_zh": "首次渲染可编辑对象时的初始编辑状态。\n在不需要控制其编辑状态时使用。"
+    },
+    "defaultValue": {
+      "default": "",
+      "value": "",
+      "type": "string",
+      "description": "The initial value of the editable when it is first rendered.\nUse when you do not need to control the state of the editable.",
+      "description_zh": "首次渲染可编辑对象时的初始值。\n在不需要控制可编辑对象的状态时使用。"
+    },
+    "disabled": {
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the editable is disabled",
+      "description_zh": "是否禁用可编辑对象"
+    },
+    "edit": {
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the editable is in edit mode.",
+      "description_zh": "可编辑对象是否处于编辑模式。"
+    },
+    "finalFocusEl": {
+      "default": "",
+      "value": "",
+      "type": "() => HTMLElement | null",
+      "description": "The element that should receive focus when the editable is closed.\nBy default, it will focus on the trigger element.",
+      "description_zh": "在可编辑对象关闭时应接收焦点的元素。\n默认情况下，它将聚焦在 trigger 元素上。"
+    },
+    "form": {
+      "default": "",
+      "value": "",
+      "type": "string",
+      "description": "The associate form of the underlying input.",
+      "description_zh": "基础输入的 associate 形式。"
+    },
+    "id": {
+      "default": "",
+      "value": "",
+      "type": "string",
+      "description": "The unique identifier of the machine.",
+      "description_zh": "计算机的唯一标识符。"
+    },
+    "ids": {
+      "default": "",
+      "value": "",
+      "type": "Partial<{\n  root: string\n  area: string\n  label: string\n  preview: string\n  input: string\n  control: string\n  submitTrigger: string\n  cancelTrigger: string\n  editTrigger: string\n}>",
+      "description": "The ids of the elements in the editable. Useful for composition.",
+      "description_zh": "可编辑对象中元素的 ID。对合成很有用。"
+    },
+    "invalid": {
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the input's value is invalid.",
+      "description_zh": "输入的值是否无效。"
+    },
+    "maxLength": {
+      "default": "",
+      "value": "",
+      "type": "number",
+      "description": "The maximum number of characters allowed in the editable",
+      "description_zh": "可编辑对象中允许的最大字符数"
+    },
+    "modelValue": {
+      "default": "",
+      "value": "",
+      "type": "string",
+      "description": "",
+      "description_zh": ""
+    },
+    "name": {
+      "default": "",
+      "value": "",
+      "type": "string",
+      "description": "The name attribute of the editable component. Used for form submission.",
+      "description_zh": "可编辑组件的 name 属性。用于表单提交。"
+    },
+    "placeholder": {
+      "default": "",
+      "value": "",
+      "type": "string | { edit: string; preview: string }",
+      "description": "The placeholder value to show when the `value` is empty",
+      "description_zh": "当 'value' 为空时显示的占位符值"
+    },
+    "readOnly": {
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the editable is readonly",
+      "description_zh": "可编辑对象是否为 readonly"
+    },
+    "required": {
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the editable is required",
+      "description_zh": "是否需要 editable"
+    },
+    "selectOnFocus": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to select the text in the input when it is focused.",
+      "description_zh": "是否在聚焦输入时选择输入中的文本。"
+    },
+    "submitMode": {
+      "default": "'both'",
+      "value": "",
+      "type": "SubmitMode",
+      "description": "The action that triggers submit in the edit mode:\n\n- \"enter\" - Trigger submit when the enter key is pressed\n- \"blur\" - Trigger submit when the editable is blurred\n- \"none\" - No action will trigger submit. You need to use the submit button\n- \"both\" - Pressing `Enter` and blurring the input will trigger submit",
+      "description_zh": "在 edit 模式下触发 submit 的操作：\n\n- “enter” - 按下 enter 键时触发提交\n- “blur” - 当可编辑对象模糊时触发提交\n- “none” - 没有操作会触发提交。您需要使用提交按钮\n- “both” - 按 'Enter' 并模糊输入将触发提交"
+    },
+    "translations": {
+      "default": "",
+      "value": "",
+      "type": "IntlTranslations",
+      "description": "Specifies the localized strings that identifies the accessibility elements and their states",
+      "description_zh": "指定标识辅助功能元素及其状态的本地化字符串"
+    }
+  },
+  "events": [
+    {
+      "name": "editChange",
+      "description": "The callback that is called when the edit mode is changed",
+      "description_zh": "更改编辑模式时调用的回调",
+      "params": "[details: EditChangeDetails]",
+      "value": ""
+    },
+    {
+      "name": "focusOutside",
+      "description": "Function called when the focus is moved outside the component",
+      "description_zh": "当焦点移出组件时调用的函数",
+      "params": "[event: FocusOutsideEvent]",
+      "value": ""
+    },
+    {
+      "name": "interactOutside",
+      "description": "Function called when an interaction happens outside the component",
+      "description_zh": "当交互发生在组件外部时调用的函数",
+      "params": "[event: InteractOutsideEvent]",
+      "value": ""
+    },
+    {
+      "name": "pointerDownOutside",
+      "description": "Function called when the pointer is pressed down outside the component",
+      "description_zh": "在组件外部按下指针时调用的函数",
+      "params": "[event: PointerDownOutsideEvent]",
+      "value": ""
+    },
+    {
+      "name": "update:edit",
+      "description": "Event handler called when the edit state of the combobox changes.",
+      "description_zh": "当组合框的 edit 状态发生更改时调用的事件处理程序。",
+      "params": "[edit: boolean]",
+      "value": ""
+    },
+    {
+      "name": "update:modelValue",
+      "description": "The callback fired when the model value changes.",
+      "description_zh": "当 model 值更改时触发回调。",
+      "params": "[value: string]",
+      "value": ""
+    },
+    {
+      "name": "valueChange",
+      "description": "The callback that is called when the editable's value is changed",
+      "description_zh": "更改可编辑对象的值时调用的回调",
+      "params": "[details: ValueChangeDetails]",
+      "value": ""
+    },
+    {
+      "name": "valueCommit",
+      "description": "The callback that is called when the editable's value is submitted.",
+      "description_zh": "提交可编辑对象的值时调用的回调。",
+      "params": "[details: ValueChangeDetails]",
+      "value": ""
+    },
+    {
+      "name": "valueRevert",
+      "description": "The callback that is called when the esc key is pressed or the cancel button is clicked",
+      "description_zh": "按下 Esc 键或单击取消按钮时调用的回调",
+      "params": "[details: ValueChangeDetails]",
+      "value": ""
+    }
+  ],
+  "methods": []
+}

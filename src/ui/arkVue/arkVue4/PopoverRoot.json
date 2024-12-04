@@ -1,0 +1,155 @@
+{
+  "name": "Popover.Root",
+  "description": "An overlay that displays additional information or options when triggered.",
+  "description_zh": "An overlay that displays additional information or options when triggered.",
+  "slots": [],
+  "suggestions": [],
+  "filename": "PopoverRoot",
+  "link": "https://ark-ui.com/vue/docs/components/popover",
+  "link_zh": "https://ark-ui.com/vue/docs/components/popover",
+  "props": {
+    "autoFocus": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to automatically set focus on the first focusable\ncontent within the popover when opened.",
+      "description_zh": "是否自动将焦点设置在第一个可聚焦对象上\n打开时弹出窗口中的内容。"
+    },
+    "closeOnEscape": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to close the popover when the escape key is pressed.",
+      "description_zh": "是否在按下 Esc 键时关闭弹出框。"
+    },
+    "closeOnInteractOutside": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to close the popover when the user clicks outside of the popover.",
+      "description_zh": "当用户在弹出框外部单击时是否关闭弹出框。"
+    },
+    "defaultOpen": {
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "description": "The initial open state of the popover when it is first rendered.\nUse when you do not need to control its open state.",
+      "description_zh": "首次呈现弹出框时弹出框的初始打开状态。\n在不需要控制其打开状态时使用。"
+    },
+    "id": {
+      "default": "",
+      "value": "",
+      "type": "string",
+      "description": "The unique identifier of the machine.",
+      "description_zh": "计算机的唯一标识符。"
+    },
+    "ids": {
+      "default": "",
+      "value": "",
+      "type": "Partial<{\n  anchor: string\n  trigger: string\n  content: string\n  title: string\n  description: string\n  closeTrigger: string\n  positioner: string\n  arrow: string\n}>",
+      "description": "The ids of the elements in the popover. Useful for composition.",
+      "description_zh": "弹出窗口中元素的 ID。对合成很有用。"
+    },
+    "initialFocusEl": {
+      "default": "",
+      "value": "",
+      "type": "() => HTMLElement | null",
+      "description": "The element to focus on when the popover is opened.",
+      "description_zh": "打开弹出框时要关注的元素。"
+    },
+    "lazyMount": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to enable lazy mounting",
+      "description_zh": "是否启用延迟挂载"
+    },
+    "modal": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the popover should be modal. When set to `true`:\n- interaction with outside elements will be disabled\n- only popover content will be visible to screen readers\n- scrolling is blocked\n- focus is trapped within the popover",
+      "description_zh": "弹出窗口是否应为模态。当设置为 'true' 时：\n- 将禁用与外部元素的交互\n- 只有 PopOver 内容对屏幕阅读器可见\n- 滚动被阻止\n- 焦点被困在 Popover 内"
+    },
+    "open": {
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the popover is open",
+      "description_zh": "弹出窗口是否打开"
+    },
+    "persistentElements": {
+      "default": "",
+      "value": "",
+      "type": "(() => Element | null)[]",
+      "description": "Returns the persistent elements that:\n- should not have pointer-events disabled\n- should not trigger the dismiss event",
+      "description_zh": "返回符合以下条件的持久元素：\n- 不应禁用指针事件\n- 不应触发 dismiss 事件"
+    },
+    "portalled": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the popover is portalled. This will proxy the tabbing behavior regardless of the DOM position\nof the popover content.",
+      "description_zh": "弹出窗口是否已门户。这将代理 Tab 键行为，而不管 DOM 位置如何\n的弹出框内容。"
+    },
+    "positioning": {
+      "default": "",
+      "value": "",
+      "type": "PositioningOptions",
+      "description": "The user provided options used to position the popover content",
+      "description_zh": "用户提供的用于定位弹出框内容的选项"
+    },
+    "unmountOnExit": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to unmount on exit.",
+      "description_zh": "是否在退出时卸载。"
+    }
+  },
+  "events": [
+    {
+      "name": "escapeKeyDown",
+      "description": "Function called when the escape key is pressed",
+      "description_zh": "按下 Esc 键时调用的函数",
+      "params": "[event: KeyboardEvent]",
+      "value": ""
+    },
+    {
+      "name": "focusOutside",
+      "description": "Function called when the focus is moved outside the component",
+      "description_zh": "当焦点移出组件时调用的函数",
+      "params": "[event: FocusOutsideEvent]",
+      "value": ""
+    },
+    {
+      "name": "interactOutside",
+      "description": "Function called when an interaction happens outside the component",
+      "description_zh": "当交互发生在组件外部时调用的函数",
+      "params": "[event: InteractOutsideEvent]",
+      "value": ""
+    },
+    {
+      "name": "openChange",
+      "description": "Function invoked when the popover opens or closes",
+      "description_zh": "弹出框打开或关闭时调用的函数",
+      "params": "[details: OpenChangeDetails]",
+      "value": ""
+    },
+    {
+      "name": "pointerDownOutside",
+      "description": "Function called when the pointer is pressed down outside the component",
+      "description_zh": "在组件外部按下指针时调用的函数",
+      "params": "[event: PointerDownOutsideEvent]",
+      "value": ""
+    },
+    {
+      "name": "update:open",
+      "description": "",
+      "description_zh": "",
+      "params": "[open: boolean]",
+      "value": ""
+    }
+  ],
+  "methods": []
+}

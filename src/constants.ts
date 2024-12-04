@@ -30,6 +30,7 @@ export const UINames = [
   '@nutui/nutui',
   'view-ui-plus',
   'wot-design-uni',
+  '@ark-ui/vue',
 ]
 
 export const nameMap: any = {
@@ -48,5 +49,5 @@ export const nameMap: any = {
   '@mui/material': 'materialUi',
   '@opentiny/vue': 'tinyVue',
   '@nutui/nutui': 'nutUi',
-  'view-ui-plus': 'viewUiPlus',
+  '@arkUi/vue': 'arkVue',
 }

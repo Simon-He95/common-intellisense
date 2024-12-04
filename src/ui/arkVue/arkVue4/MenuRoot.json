@@ -1,0 +1,176 @@
+{
+  "name": "Menu.Root",
+  "description": "A list of options that appears when a user interacts with a button.",
+  "description_zh": "A list of options that appears when a user interacts with a button.",
+  "slots": [],
+  "suggestions": [],
+  "filename": "MenuRoot",
+  "link": "https://ark-ui.com/vue/docs/components/menu",
+  "link_zh": "https://ark-ui.com/vue/docs/components/menu",
+  "props": {
+    "anchorPoint": {
+      "default": "",
+      "value": "",
+      "type": "Point",
+      "description": "The positioning point for the menu. Can be set by the context menu trigger or the button trigger.",
+      "description_zh": "菜单的定位点。可以通过上下文菜单触发器或按钮触发器进行设置。"
+    },
+    "aria-label": {
+      "default": "",
+      "value": "",
+      "type": "string",
+      "description": "The accessibility label for the menu",
+      "description_zh": "菜单的辅助功能标签"
+    },
+    "asChild": {
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "description": "Use the provided child element as the default rendered element, combining their props and behavior.",
+      "description_zh": "使用提供的子元素作为默认渲染元素，结合它们的 props 和行为。"
+    },
+    "closeOnSelect": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to close the menu when an option is selected",
+      "description_zh": "是否在选择选项时关闭菜单"
+    },
+    "composite": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the menu is a composed with other composite widgets like a combobox or tabs",
+      "description_zh": "菜单是否由其他复合 widget（如组合框或选项卡）组成"
+    },
+    "defaultOpen": {
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "description": "The initial open state of the menu when it is first rendered.\nUse when you do not need to control its open state.",
+      "description_zh": "首次呈现菜单时菜单的初始打开状态。\n在不需要控制其打开状态时使用。"
+    },
+    "highlightedValue": {
+      "default": "",
+      "value": "",
+      "type": "string",
+      "description": "The value of the highlighted menu item.",
+      "description_zh": "高亮显示的菜单项的值。"
+    },
+    "id": {
+      "default": "",
+      "value": "",
+      "type": "string",
+      "description": "The unique identifier of the machine.",
+      "description_zh": "计算机的唯一标识符。"
+    },
+    "ids": {
+      "default": "",
+      "value": "",
+      "type": "Partial<{\n  trigger: string\n  contextTrigger: string\n  content: string\n  groupLabel(id: string): string\n  group(id: string): string\n  positioner: string\n  arrow: string\n}>",
+      "description": "The ids of the elements in the menu. Useful for composition.",
+      "description_zh": "菜单中元素的 ID。对合成很有用。"
+    },
+    "lazyMount": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to enable lazy mounting",
+      "description_zh": "是否启用延迟挂载"
+    },
+    "loopFocus": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to loop the keyboard navigation.",
+      "description_zh": "是否循环键盘导航。"
+    },
+    "open": {
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the menu is open",
+      "description_zh": "菜单是否打开"
+    },
+    "positioning": {
+      "default": "",
+      "value": "",
+      "type": "PositioningOptions",
+      "description": "The options used to dynamically position the menu",
+      "description_zh": "用于动态定位菜单的选项"
+    },
+    "typeahead": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the pressing printable characters should trigger typeahead navigation",
+      "description_zh": "按下可打印字符是否应触发 typeahead 导航"
+    },
+    "unmountOnExit": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to unmount on exit.",
+      "description_zh": "是否在退出时卸载。"
+    }
+  },
+  "events": [
+    {
+      "name": "escapeKeyDown",
+      "description": "Function called when the escape key is pressed",
+      "description_zh": "按下 Esc 键时调用的函数",
+      "params": "[event: KeyboardEvent]",
+      "value": ""
+    },
+    {
+      "name": "focusOutside",
+      "description": "Function called when the focus is moved outside the component",
+      "description_zh": "当焦点移出组件时调用的函数",
+      "params": "[event: FocusOutsideEvent]",
+      "value": ""
+    },
+    {
+      "name": "highlightChange",
+      "description": "Function called when the highlighted menu item changes.",
+      "description_zh": "当高亮显示的菜单项发生更改时调用的函数。",
+      "params": "[details: HighlightChangeDetails]",
+      "value": ""
+    },
+    {
+      "name": "interactOutside",
+      "description": "Function called when an interaction happens outside the component",
+      "description_zh": "当交互发生在组件外部时调用的函数",
+      "params": "[event: InteractOutsideEvent]",
+      "value": ""
+    },
+    {
+      "name": "openChange",
+      "description": "Function called when the menu opens or closes",
+      "description_zh": "菜单打开或关闭时调用的函数",
+      "params": "[details: OpenChangeDetails]",
+      "value": ""
+    },
+    {
+      "name": "pointerDownOutside",
+      "description": "Function called when the pointer is pressed down outside the component",
+      "description_zh": "在组件外部按下指针时调用的函数",
+      "params": "[event: PointerDownOutsideEvent]",
+      "value": ""
+    },
+    {
+      "name": "select",
+      "description": "Function called when a menu item is selected.",
+      "description_zh": "选择菜单项时调用的函数。",
+      "params": "[details: SelectionDetails]",
+      "value": ""
+    },
+    {
+      "name": "update:open",
+      "description": "Function called when the menu is opened or closed.",
+      "description_zh": "打开或关闭菜单时调用的函数。",
+      "params": "[open: boolean]",
+      "value": ""
+    }
+  ],
+  "methods": []
+}

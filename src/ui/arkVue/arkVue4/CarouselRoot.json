@@ -1,0 +1,99 @@
+{
+  "name": "Carousel.Root",
+  "description": "A slideshow component that cycles through elements.",
+  "description_zh": "A slideshow component that cycles through elements.",
+  "slots": [],
+  "suggestions": [],
+  "filename": "CarouselRoot",
+  "link": "https://ark-ui.com/vue/docs/components/carousel",
+  "link_zh": "https://ark-ui.com/vue/docs/components/carousel",
+  "props": {
+    "align": {
+      "default": "'start'",
+      "value": "",
+      "type": "'start' | 'center' | 'end'",
+      "description": "The alignment of the slides in the carousel.",
+      "description_zh": "轮播中幻灯片的对齐方式。"
+    },
+    "asChild": {
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "description": "Use the provided child element as the default rendered element, combining their props and behavior.",
+      "description_zh": "使用提供的子元素作为默认渲染元素，结合它们的 props 和行为。"
+    },
+    "defaultIndex": {
+      "default": "",
+      "value": "",
+      "type": "number",
+      "description": "The initial index of the carousel when it is first rendered.\nUse this when you do not need to control the state of the carousel.",
+      "description_zh": "首次呈现轮播时轮播的初始索引。\n当您不需要控制轮播的状态时，请使用此选项。"
+    },
+    "id": {
+      "default": "",
+      "value": "",
+      "type": "string",
+      "description": "The unique identifier of the machine.",
+      "description_zh": "计算机的唯一标识符。"
+    },
+    "ids": {
+      "default": "",
+      "value": "",
+      "type": "Partial<{\n  root: string\n  viewport: string\n  item(index: number): string\n  itemGroup: string\n  nextTrigger: string\n  prevTrigger: string\n  indicatorGroup: string\n  indicator(index: number): string\n}>",
+      "description": "The ids of the elements in the carousel. Useful for composition.",
+      "description_zh": "轮播中元素的 ID。对合成很有用。"
+    },
+    "index": {
+      "default": "",
+      "value": "",
+      "type": "number",
+      "description": "The current slide index.",
+      "description_zh": "当前幻灯片索引。"
+    },
+    "loop": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the carousel should loop around.",
+      "description_zh": "轮播是否应循环播放。"
+    },
+    "orientation": {
+      "default": "'horizontal'",
+      "value": "",
+      "type": "'horizontal' | 'vertical'",
+      "description": "The orientation of the carousel.",
+      "description_zh": "轮播的方向。"
+    },
+    "slidesPerView": {
+      "default": "1",
+      "value": "",
+      "type": "number | 'auto'",
+      "description": "The number of slides to show at a time.",
+      "description_zh": "一次要显示的幻灯片数。"
+    },
+    "spacing": {
+      "default": "'0px'",
+      "value": "",
+      "type": "string",
+      "description": "The amount of space between slides.",
+      "description_zh": "幻灯片之间的间距。"
+    }
+  },
+  "events": [
+    {
+      "name": "indexChange",
+      "description": "Function called when the slide changes.",
+      "description_zh": "幻灯片更改时调用的函数。",
+      "params": "[details: SlideChangeDetails]",
+      "value": ""
+    },
+    {
+      "name": "update:index",
+      "description": "",
+      "description_zh": "",
+      "params": "[index: number]",
+      "value": ""
+    }
+  ],
+  "methods": []
+}

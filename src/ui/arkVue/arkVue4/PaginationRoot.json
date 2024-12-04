@@ -1,0 +1,99 @@
+{
+  "name": "Pagination.Root",
+  "description": "A navigation component that allows users to browse through pages.",
+  "description_zh": "A navigation component that allows users to browse through pages.",
+  "slots": [],
+  "suggestions": [],
+  "filename": "PaginationRoot",
+  "link": "https://ark-ui.com/vue/docs/components/pagination",
+  "link_zh": "https://ark-ui.com/vue/docs/components/pagination",
+  "props": {
+    "count": {
+      "default": "",
+      "value": "",
+      "type": "number",
+      "description": "Total number of data items",
+      "description_zh": "数据项总数"
+    },
+    "asChild": {
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "description": "Use the provided child element as the default rendered element, combining their props and behavior.",
+      "description_zh": "使用提供的子元素作为默认渲染元素，结合它们的 props 和行为。"
+    },
+    "defaultPage": {
+      "default": "",
+      "value": "",
+      "type": "number",
+      "description": "The initial page of the pagination when it is first rendered.\nUse when you do not need to control the state of the pagination.",
+      "description_zh": "首次呈现分页时的初始页。\n当您不需要控制分页的状态时使用。"
+    },
+    "id": {
+      "default": "",
+      "value": "",
+      "type": "string",
+      "description": "The unique identifier of the machine.",
+      "description_zh": "计算机的唯一标识符。"
+    },
+    "ids": {
+      "default": "",
+      "value": "",
+      "type": "Partial<{\n  root: string\n  ellipsis(index: number): string\n  prevTrigger: string\n  nextTrigger: string\n  item(page: number): string\n}>",
+      "description": "The ids of the elements in the accordion. Useful for composition.",
+      "description_zh": "折叠面板中元素的 ID。对合成很有用。"
+    },
+    "page": {
+      "default": "1",
+      "value": "",
+      "type": "number",
+      "description": "The active page",
+      "description_zh": "活动页面"
+    },
+    "pageSize": {
+      "default": "10",
+      "value": "",
+      "type": "number",
+      "description": "Number of data items per page",
+      "description_zh": "每页数据项数"
+    },
+    "siblingCount": {
+      "default": "1",
+      "value": "",
+      "type": "number",
+      "description": "Number of pages to show beside active page",
+      "description_zh": "在活动页面旁边显示的页数"
+    },
+    "translations": {
+      "default": "",
+      "value": "",
+      "type": "IntlTranslations",
+      "description": "Specifies the localized strings that identifies the accessibility elements and their states",
+      "description_zh": "指定标识辅助功能元素及其状态的本地化字符串"
+    },
+    "type": {
+      "default": "'button'",
+      "value": "",
+      "type": "'button' | 'link'",
+      "description": "The type of the trigger element",
+      "description_zh": "触发器元素的类型"
+    }
+  },
+  "events": [
+    {
+      "name": "pageChange",
+      "description": "Called when the page number is changed",
+      "description_zh": "更改页码时调用",
+      "params": "[details: PageChangeDetails]",
+      "value": ""
+    },
+    {
+      "name": "pageSizeChange",
+      "description": "Called when the page size is changed",
+      "description_zh": "更改页面大小时调用",
+      "params": "[details: PageSizeChangeDetails]",
+      "value": ""
+    }
+  ],
+  "methods": []
+}

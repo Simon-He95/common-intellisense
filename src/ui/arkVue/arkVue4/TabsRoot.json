@@ -1,0 +1,127 @@
+{
+  "name": "Tabs.Root",
+  "description": "Flexible navigation tool with various modes and features.",
+  "description_zh": "Flexible navigation tool with various modes and features.",
+  "slots": [],
+  "suggestions": [],
+  "filename": "TabsRoot",
+  "link": "https://ark-ui.com/vue/docs/components/tabs",
+  "link_zh": "https://ark-ui.com/vue/docs/components/tabs",
+  "props": {
+    "activationMode": {
+      "default": "'automatic'",
+      "value": "",
+      "type": "'manual' | 'automatic'",
+      "description": "The activation mode of the tabs. Can be `manual` or `automatic`\n- `manual`: Tabs are activated when clicked or press `enter` key.\n- `automatic`: Tabs are activated when receiving focus",
+      "description_zh": "选项卡的激活模式。可以是 'manual' 或 'automatic'\n- 'manual'：单击或按“enter”键时激活选项卡。\n- 'automatic'：接收焦点时激活标签页"
+    },
+    "asChild": {
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "description": "Use the provided child element as the default rendered element, combining their props and behavior.",
+      "description_zh": "使用提供的子元素作为默认渲染元素，结合它们的 props 和行为。"
+    },
+    "composite": {
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the tab is composite",
+      "description_zh": "选项卡是否为复合选项卡"
+    },
+    "defaultValue": {
+      "default": "",
+      "value": "",
+      "type": "string",
+      "description": "The initial value of the tabs when it is first rendered.\nUse when you do not need to control the state of the tabs.",
+      "description_zh": "首次呈现选项卡时的初始值。\n当您不需要控制选项卡的状态时使用。"
+    },
+    "deselectable": {
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the active tab can be deselected when clicking on it.",
+      "description_zh": "单击活动选项卡时是否可以取消选择该选项卡。"
+    },
+    "id": {
+      "default": "",
+      "value": "",
+      "type": "string",
+      "description": "The unique identifier of the machine.",
+      "description_zh": "计算机的唯一标识符。"
+    },
+    "ids": {
+      "default": "",
+      "value": "",
+      "type": "Partial<{\n  root: string\n  trigger: string\n  list: string\n  content: string\n  indicator: string\n}>",
+      "description": "The ids of the elements in the tabs. Useful for composition.",
+      "description_zh": "选项卡中元素的 ID。对合成很有用。"
+    },
+    "lazyMount": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to enable lazy mounting",
+      "description_zh": "是否启用延迟挂载"
+    },
+    "loopFocus": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the keyboard navigation will loop from last tab to first, and vice versa.",
+      "description_zh": "键盘导航是否将从最后一个选项卡循环到第一个选项卡，反之亦然。"
+    },
+    "modelValue": {
+      "default": "",
+      "value": "",
+      "type": "string",
+      "description": "",
+      "description_zh": ""
+    },
+    "orientation": {
+      "default": "'horizontal'",
+      "value": "",
+      "type": "'horizontal' | 'vertical'",
+      "description": "The orientation of the tabs. Can be `horizontal` or `vertical`\n- `horizontal`: only left and right arrow key navigation will work.\n- `vertical`: only up and down arrow key navigation will work.",
+      "description_zh": "选项卡的方向。可以是 'horizontal' 或 'vertical'\n- 'horizontal'：只有向左和向右箭头键导航有效。\n- 'vertical'：只有向上和向下箭头键导航有效。"
+    },
+    "translations": {
+      "default": "",
+      "value": "",
+      "type": "IntlTranslations",
+      "description": "Specifies the localized strings that identifies the accessibility elements and their states",
+      "description_zh": "指定标识辅助功能元素及其状态的本地化字符串"
+    },
+    "unmountOnExit": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to unmount on exit.",
+      "description_zh": "是否在退出时卸载。"
+    }
+  },
+  "events": [
+    {
+      "name": "focusChange",
+      "description": "Callback to be called when the focused tab changes",
+      "description_zh": "焦点选项卡更改时调用的回调",
+      "params": "[details: FocusChangeDetails]",
+      "value": ""
+    },
+    {
+      "name": "update:modelValue",
+      "description": "The callback fired when the model value changes.",
+      "description_zh": "当 model 值更改时触发回调。",
+      "params": "[value: string]",
+      "value": ""
+    },
+    {
+      "name": "valueChange",
+      "description": "Callback to be called when the selected/active tab changes",
+      "description_zh": "选中/激活的 Tab 键发生变化时调用的回调",
+      "params": "[details: ValueChangeDetails]",
+      "value": ""
+    }
+  ],
+  "methods": []
+}

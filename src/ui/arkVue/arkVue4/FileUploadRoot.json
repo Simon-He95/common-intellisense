@@ -1,0 +1,155 @@
+{
+  "name": "FileUpload.Root",
+  "description": "A component that is used to upload multiple files.",
+  "description_zh": "A component that is used to upload multiple files.",
+  "slots": [],
+  "suggestions": [],
+  "filename": "FileUploadRoot",
+  "link": "https://ark-ui.com/vue/docs/components/file-upload",
+  "link_zh": "https://ark-ui.com/vue/docs/components/file-upload",
+  "props": {
+    "accept": {
+      "default": "",
+      "value": "",
+      "type": "Record<string, string[]> | FileMimeType | FileMimeType[]",
+      "description": "The accept file types",
+      "description_zh": "接受文件类型"
+    },
+    "allowDrop": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to allow drag and drop in the dropzone element",
+      "description_zh": "是否允许在 dropzone 元素中拖放"
+    },
+    "asChild": {
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "description": "Use the provided child element as the default rendered element, combining their props and behavior.",
+      "description_zh": "使用提供的子元素作为默认渲染元素，结合它们的 props 和行为。"
+    },
+    "capture": {
+      "default": "",
+      "value": "",
+      "type": "'user' | 'environment'",
+      "description": "The default camera to use when capturing media",
+      "description_zh": "捕获媒体时使用的默认摄像机"
+    },
+    "directory": {
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to accept directories, only works in webkit browsers",
+      "description_zh": "是否接受目录，仅在 webkit 浏览器中有效"
+    },
+    "disabled": {
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the file input is disabled",
+      "description_zh": "是否禁用文件输入"
+    },
+    "id": {
+      "default": "",
+      "value": "",
+      "type": "string",
+      "description": "The unique identifier of the machine.",
+      "description_zh": "计算机的唯一标识符。"
+    },
+    "ids": {
+      "default": "",
+      "value": "",
+      "type": "Partial<{\n  root: string\n  dropzone: string\n  hiddenInput: string\n  trigger: string\n  label: string\n  item(id: string): string\n  itemName(id: string): string\n  itemSizeText(id: string): string\n  itemPreview(id: string): string\n}>",
+      "description": "The ids of the elements. Useful for composition.",
+      "description_zh": "元素的 ID。对合成很有用。"
+    },
+    "invalid": {
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the file input is invalid",
+      "description_zh": "文件输入是否无效"
+    },
+    "locale": {
+      "default": "'en-US'",
+      "value": "",
+      "type": "string",
+      "description": "The current locale. Based on the BCP 47 definition.",
+      "description_zh": "当前区域设置。基于 BCP 47 定义。"
+    },
+    "maxFiles": {
+      "default": "1",
+      "value": "",
+      "type": "number",
+      "description": "The maximum number of files",
+      "description_zh": "最大文件数"
+    },
+    "maxFileSize": {
+      "default": "Infinity",
+      "value": "",
+      "type": "number",
+      "description": "The maximum file size in bytes",
+      "description_zh": "最大文件大小（以字节为单位）"
+    },
+    "minFileSize": {
+      "default": "0",
+      "value": "",
+      "type": "number",
+      "description": "The minimum file size in bytes",
+      "description_zh": "最小文件大小（以字节为单位）"
+    },
+    "name": {
+      "default": "",
+      "value": "",
+      "type": "string",
+      "description": "The name of the underlying file input",
+      "description_zh": "基础文件输入的名称"
+    },
+    "required": {
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the file input is required",
+      "description_zh": "是否需要文件输入"
+    },
+    "translations": {
+      "default": "",
+      "value": "",
+      "type": "IntlTranslations",
+      "description": "The localized messages to use.",
+      "description_zh": "要使用的本地化消息。"
+    },
+    "validate": {
+      "default": "",
+      "value": "",
+      "type": "(file: File) => FileError[] | null",
+      "description": "Function to validate a file",
+      "description_zh": "用于验证文件的函数"
+    }
+  },
+  "events": [
+    {
+      "name": "fileAccept",
+      "description": "Function called when the file is accepted",
+      "description_zh": "接受文件时调用的函数",
+      "params": "[details: FileAcceptDetails]",
+      "value": ""
+    },
+    {
+      "name": "fileChange",
+      "description": "Function called when the value changes, whether accepted or rejected",
+      "description_zh": "值更改时调用的函数，无论是接受还是拒绝",
+      "params": "[details: FileChangeDetails]",
+      "value": ""
+    },
+    {
+      "name": "fileReject",
+      "description": "Function called when the file is rejected",
+      "description_zh": "文件被拒绝时调用的函数",
+      "params": "[details: FileRejectDetails]",
+      "value": ""
+    }
+  ],
+  "methods": []
+}

@@ -1,0 +1,225 @@
+{
+  "name": "TagsInput.Root",
+  "description": "A component that allows users to add tags to an input field.",
+  "description_zh": "A component that allows users to add tags to an input field.",
+  "slots": [],
+  "suggestions": [],
+  "filename": "TagsInputRoot",
+  "link": "https://ark-ui.com/vue/docs/components/tags-input",
+  "link_zh": "https://ark-ui.com/vue/docs/components/tags-input",
+  "props": {
+    "addOnPaste": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to add a tag when you paste values into the tag input",
+      "description_zh": "在将值粘贴到标签输入时是否添加标签"
+    },
+    "allowOverflow": {
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to allow tags to exceed max. In this case,\nwe'll attach `data-invalid` to the root",
+      "description_zh": "是否允许 tag 超过 max。在这种情况下，\n我们将 'data-invalid' 附加到根目录"
+    },
+    "asChild": {
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "description": "Use the provided child element as the default rendered element, combining their props and behavior.",
+      "description_zh": "使用提供的子元素作为默认渲染元素，结合它们的 props 和行为。"
+    },
+    "autoFocus": {
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the input should be auto-focused",
+      "description_zh": "输入是否应自动聚焦"
+    },
+    "blurBehavior": {
+      "default": "",
+      "value": "",
+      "type": "'add' | 'clear'",
+      "description": "The behavior of the tags input when the input is blurred\n- `\"add\"`: add the input value as a new tag\n- `\"clear\"`: clear the input value",
+      "description_zh": "当输入模糊时 tags input 的行为\n- '“add”'：将输入值添加为新标签\n- '“clear”'：清除输入值"
+    },
+    "defaultValue": {
+      "default": "",
+      "value": "",
+      "type": "string[]",
+      "description": "The initial value of the tags input when it is first rendered.\nUse when you do not need to control the state of the tags input.",
+      "description_zh": "首次渲染时输入的 tags 的初始值。\n当您不需要控制 tags 输入的状态时使用。"
+    },
+    "delimiter": {
+      "default": "','",
+      "value": "",
+      "type": "string | RegExp",
+      "description": "The character that serves has:\n- event key to trigger the addition of a new tag\n- character used to split tags when pasting into the input",
+      "description_zh": "发球的字符具有：\n- 事件键触发新标签的添加\n- 用于在粘贴到输入时拆分标签的字符"
+    },
+    "disabled": {
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the tags input should be disabled",
+      "description_zh": "是否应禁用 tags 输入"
+    },
+    "editable": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether a tag can be edited after creation, by presing `Enter` or double clicking.",
+      "description_zh": "标记创建后是否可以通过按“Enter”或双击来编辑。"
+    },
+    "form": {
+      "default": "",
+      "value": "",
+      "type": "string",
+      "description": "The associate form of the underlying input element.",
+      "description_zh": "基础 input 元素的 associate 形式。"
+    },
+    "id": {
+      "default": "",
+      "value": "",
+      "type": "string",
+      "description": "The unique identifier of the machine.",
+      "description_zh": "计算机的唯一标识符。"
+    },
+    "ids": {
+      "default": "",
+      "value": "",
+      "type": "Partial<{\n  root: string\n  input: string\n  hiddenInput: string\n  clearBtn: string\n  label: string\n  control: string\n  item(opts: ItemProps): string\n  itemDeleteTrigger(opts: ItemProps): string\n  itemInput(opts: ItemProps): string\n}>",
+      "description": "The ids of the elements in the tags input. Useful for composition.",
+      "description_zh": "tags 输入中元素的 id。对合成很有用。"
+    },
+    "inputValue": {
+      "default": "",
+      "value": "",
+      "type": "string",
+      "description": "The tag input's value",
+      "description_zh": "标签输入的值"
+    },
+    "invalid": {
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the tags input is invalid",
+      "description_zh": "tags 输入是否无效"
+    },
+    "max": {
+      "default": "Infinity",
+      "value": "",
+      "type": "number",
+      "description": "The max number of tags",
+      "description_zh": "最大标签数"
+    },
+    "maxLength": {
+      "default": "",
+      "value": "",
+      "type": "number",
+      "description": "The max length of the input.",
+      "description_zh": "输入的最大长度。"
+    },
+    "modelValue": {
+      "default": "",
+      "value": "",
+      "type": "string[]",
+      "description": "",
+      "description_zh": ""
+    },
+    "name": {
+      "default": "",
+      "value": "",
+      "type": "string",
+      "description": "The name attribute for the input. Useful for form submissions",
+      "description_zh": "输入的 name 属性。对表单提交有用"
+    },
+    "readOnly": {
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the tags input should be read-only",
+      "description_zh": "tags 输入是否应为只读"
+    },
+    "required": {
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the tags input is required",
+      "description_zh": "是否需要 tags 输入"
+    },
+    "translations": {
+      "default": "",
+      "value": "",
+      "type": "IntlTranslations",
+      "description": "Specifies the localized strings that identifies the accessibility elements and their states",
+      "description_zh": "指定标识辅助功能元素及其状态的本地化字符串"
+    },
+    "validate": {
+      "default": "",
+      "value": "",
+      "type": "(details: ValidateArgs) => boolean",
+      "description": "Returns a boolean that determines whether a tag can be added.\nUseful for preventing duplicates or invalid tag values.",
+      "description_zh": "返回一个布尔值，用于确定是否可以添加标记。\n有助于防止重复或无效的标记值。"
+    }
+  },
+  "events": [
+    {
+      "name": "focusOutside",
+      "description": "Function called when the focus is moved outside the component",
+      "description_zh": "当焦点移出组件时调用的函数",
+      "params": "[event: FocusOutsideEvent]",
+      "value": ""
+    },
+    {
+      "name": "highlightChange",
+      "description": "Callback fired when a tag is highlighted by pointer or keyboard navigation",
+      "description_zh": "当指针或键盘导航高亮标记时触发回调",
+      "params": "[details: HighlightChangeDetails]",
+      "value": ""
+    },
+    {
+      "name": "inputValueChange",
+      "description": "Callback fired when the input value is updated",
+      "description_zh": "更新输入值时触发的回调",
+      "params": "[details: InputValueChangeDetails]",
+      "value": ""
+    },
+    {
+      "name": "interactOutside",
+      "description": "Function called when an interaction happens outside the component",
+      "description_zh": "当交互发生在组件外部时调用的函数",
+      "params": "[event: InteractOutsideEvent]",
+      "value": ""
+    },
+    {
+      "name": "pointerDownOutside",
+      "description": "Function called when the pointer is pressed down outside the component",
+      "description_zh": "在组件外部按下指针时调用的函数",
+      "params": "[event: PointerDownOutsideEvent]",
+      "value": ""
+    },
+    {
+      "name": "update:modelValue",
+      "description": "The callback fired when the model value changes.",
+      "description_zh": "当 model 值更改时触发回调。",
+      "params": "[value: string[]]",
+      "value": ""
+    },
+    {
+      "name": "valueChange",
+      "description": "Callback fired when the tag values is updated",
+      "description_zh": "更新标签值时触发的回调",
+      "params": "[details: ValueChangeDetails]",
+      "value": ""
+    },
+    {
+      "name": "valueInvalid",
+      "description": "Callback fired when the max tag count is reached or the `validateTag` function returns `false`",
+      "description_zh": "达到最大标签计数或 'validateTag' 函数返回 'false' 时触发回调",
+      "params": "[details: ValidityChangeDetails]",
+      "value": ""
+    }
+  ],
+  "methods": []
+}

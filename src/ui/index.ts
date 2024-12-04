@@ -27,6 +27,7 @@ import { tinyVue3, tinyVue3Components } from './tinyVue'
 import { nutUi4, nutUi4Components } from './nutUi'
 import { viewUiPlus1, viewUiPlus1Components } from './viewUiPlus'
 import { wotDesignUni1, wotDesignUni1Components } from './wotDesignUni'
+import { arkVue4, arkVue4Components } from './arkVue'
 
 export default {
   // elementUi2,
@@ -66,6 +67,7 @@ export default {
   nutUi4,
   viewUiPlus1,
   wotDesignUni1,
+  arkVue4,
   // elementUi2Components,
   antd4Components,
   antd5Components,
@@ -103,4 +105,5 @@ export default {
   nutUi4Components,
   viewUiPlus1Components,
   wotDesignUni1Components,
+  arkVue4Components,
 }

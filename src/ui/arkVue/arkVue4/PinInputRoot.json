@@ -1,0 +1,183 @@
+{
+  "name": "PinInput.Root",
+  "description": "For pin or verification codes with auto-focus transfer and masking options.",
+  "description_zh": "For pin or verification codes with auto-focus transfer and masking options.",
+  "slots": [],
+  "suggestions": [],
+  "filename": "PinInputRoot",
+  "link": "https://ark-ui.com/vue/docs/components/pin-input",
+  "link_zh": "https://ark-ui.com/vue/docs/components/pin-input",
+  "props": {
+    "asChild": {
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "description": "Use the provided child element as the default rendered element, combining their props and behavior.",
+      "description_zh": "使用提供的子元素作为默认渲染元素，结合它们的 props 和行为。"
+    },
+    "autoFocus": {
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to auto-focus the first input.",
+      "description_zh": "是否自动聚焦第一个输入。"
+    },
+    "blurOnComplete": {
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to blur the input when the value is complete",
+      "description_zh": "值完成时是否对输入进行模糊处理"
+    },
+    "defaultValue": {
+      "default": "",
+      "value": "",
+      "type": "string[]",
+      "description": "The initial value of the pin input when it is first rendered.\nUse when you do not need to control the state of the pin input.",
+      "description_zh": "首次渲染时引脚输入的初始值。\n当您不需要控制 pin input 的状态时使用。"
+    },
+    "disabled": {
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the inputs are disabled",
+      "description_zh": "是否禁用了 inputs"
+    },
+    "form": {
+      "default": "",
+      "value": "",
+      "type": "string",
+      "description": "The associate form of the underlying input element.",
+      "description_zh": "基础 input 元素的 associate 形式。"
+    },
+    "id": {
+      "default": "",
+      "value": "",
+      "type": "string",
+      "description": "The unique identifier of the machine.",
+      "description_zh": "计算机的唯一标识符。"
+    },
+    "ids": {
+      "default": "",
+      "value": "",
+      "type": "Partial<{\n  root: string\n  hiddenInput: string\n  label: string\n  control: string\n  input(id: string): string\n}>",
+      "description": "The ids of the elements in the pin input. Useful for composition.",
+      "description_zh": "pin 输入中元素的 id。对合成很有用。"
+    },
+    "invalid": {
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the pin input is in the invalid state",
+      "description_zh": "pin input 是否处于无效状态"
+    },
+    "mask": {
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "description": "If `true`, the input's value will be masked just like `type=password`",
+      "description_zh": "如果为 'true'，则输入的值将被屏蔽，就像 'type=password' 一样"
+    },
+    "modelValue": {
+      "default": "",
+      "value": "",
+      "type": "string[]",
+      "description": "",
+      "description_zh": ""
+    },
+    "name": {
+      "default": "",
+      "value": "",
+      "type": "string",
+      "description": "The name of the input element. Useful for form submission.",
+      "description_zh": "input 元素的名称。用于表单提交。"
+    },
+    "otp": {
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "description": "If `true`, the pin input component signals to its fields that they should\nuse `autocomplete=\"one-time-code\"`.",
+      "description_zh": "如果为 'true'，则引脚输入组件向其字段发出信号，表明它们应该\n使用 'autocomplete=“one-time-code”'。"
+    },
+    "pattern": {
+      "default": "",
+      "value": "",
+      "type": "string",
+      "description": "The regular expression that the user-entered input value is checked against.",
+      "description_zh": "检查用户输入的输入值所依据的正则表达式。"
+    },
+    "placeholder": {
+      "default": "'○'",
+      "value": "",
+      "type": "string",
+      "description": "The placeholder text for the input",
+      "description_zh": "输入的占位符文本"
+    },
+    "readOnly": {
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the pin input is in the valid state",
+      "description_zh": "pin input 是否处于有效状态"
+    },
+    "required": {
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the pin input is required",
+      "description_zh": "是否需要 pin 输入"
+    },
+    "selectOnFocus": {
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to select input value when input is focused",
+      "description_zh": "是否在聚焦输入时选择输入值"
+    },
+    "translations": {
+      "default": "",
+      "value": "",
+      "type": "IntlTranslations",
+      "description": "Specifies the localized strings that identifies the accessibility elements and their states",
+      "description_zh": "指定标识辅助功能元素及其状态的本地化字符串"
+    },
+    "type": {
+      "default": "'numeric'",
+      "value": "",
+      "type": "'numeric' | 'alphabetic' | 'alphanumeric'",
+      "description": "The type of value the pin-input should allow",
+      "description_zh": "pin-input 应允许的值类型"
+    }
+  },
+  "events": [
+    {
+      "name": "update:modelValue",
+      "description": "The callback fired when the model value changes.",
+      "description_zh": "当 model 值更改时触发回调。",
+      "params": "[value: string[]]",
+      "value": ""
+    },
+    {
+      "name": "valueChange",
+      "description": "Function called on input change",
+      "description_zh": "在输入更改时调用的函数",
+      "params": "[details: ValueChangeDetails]",
+      "value": ""
+    },
+    {
+      "name": "valueComplete",
+      "description": "Function called when all inputs have valid values",
+      "description_zh": "当所有输入都具有有效值时调用的函数",
+      "params": "[details: ValueChangeDetails]",
+      "value": ""
+    },
+    {
+      "name": "valueInvalid",
+      "description": "Function called when an invalid value is entered",
+      "description_zh": "输入无效值时调用的函数",
+      "params": "[details: ValueInvalidDetails]",
+      "value": ""
+    }
+  ],
+  "methods": []
+}

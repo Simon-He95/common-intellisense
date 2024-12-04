@@ -1,0 +1,85 @@
+{
+  "name": "Timer.Root",
+  "description": "Used to record the time elapsed from zero or since a specified target time.",
+  "description_zh": "Used to record the time elapsed from zero or since a specified target time.",
+  "slots": [],
+  "suggestions": [],
+  "filename": "TimerRoot",
+  "link": "https://ark-ui.com/vue/docs/components/timer",
+  "link_zh": "https://ark-ui.com/vue/docs/components/timer",
+  "props": {
+    "asChild": {
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "description": "Use the provided child element as the default rendered element, combining their props and behavior.",
+      "description_zh": "使用提供的子元素作为默认渲染元素，结合它们的 props 和行为。"
+    },
+    "autoStart": {
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the timer should start automatically",
+      "description_zh": "计时器是否应自动启动"
+    },
+    "countdown": {
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the timer should countdown, decrementing the timer on each tick.",
+      "description_zh": "计时器是否应该倒计时，在每个时钟周期上递减计时器。"
+    },
+    "id": {
+      "default": "",
+      "value": "",
+      "type": "string",
+      "description": "The unique identifier of the machine.",
+      "description_zh": "计算机的唯一标识符。"
+    },
+    "ids": {
+      "default": "",
+      "value": "",
+      "type": "Partial<{ root: string; area: string }>",
+      "description": "The ids of the timer parts",
+      "description_zh": "计时器部分的 ID"
+    },
+    "interval": {
+      "default": "250",
+      "value": "",
+      "type": "number",
+      "description": "The interval in milliseconds to update the timer count.",
+      "description_zh": "更新计时器计数的间隔（以毫秒为单位）。"
+    },
+    "startMs": {
+      "default": "",
+      "value": "",
+      "type": "number",
+      "description": "The total duration of the timer in milliseconds.",
+      "description_zh": "计时器的总持续时间（以毫秒为单位）。"
+    },
+    "targetMs": {
+      "default": "",
+      "value": "",
+      "type": "number",
+      "description": "The minimum count of the timer in milliseconds.",
+      "description_zh": "计时器的最小计数（以毫秒为单位）。"
+    }
+  },
+  "events": [
+    {
+      "name": "complete",
+      "description": "Function invoked when the timer is completed",
+      "description_zh": "计时器完成时调用的函数",
+      "params": "[]",
+      "value": ""
+    },
+    {
+      "name": "tick",
+      "description": "Function invoked when the timer ticks",
+      "description_zh": "计时器滴答作响时调用的函数",
+      "params": "[details: TickDetails]",
+      "value": ""
+    }
+  ],
+  "methods": []
+}

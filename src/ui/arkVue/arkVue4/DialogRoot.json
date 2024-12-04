@@ -1,0 +1,176 @@
+{
+  "name": "Dialog.Root",
+  "description": "A modal window that appears on top of the main content.",
+  "description_zh": "A modal window that appears on top of the main content.",
+  "slots": [],
+  "suggestions": [],
+  "filename": "DialogRoot",
+  "link": "https://ark-ui.com/vue/docs/components/dialog",
+  "link_zh": "https://ark-ui.com/vue/docs/components/dialog",
+  "props": {
+    "aria-label": {
+      "default": "",
+      "value": "",
+      "type": "string",
+      "description": "Human readable label for the dialog, in event the dialog title is not rendered",
+      "description_zh": "对话框的人类可读标签（如果对话框标题未呈现）"
+    },
+    "closeOnEscape": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to close the dialog when the escape key is pressed",
+      "description_zh": "是否在按下 Esc 键时关闭对话框"
+    },
+    "closeOnInteractOutside": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to close the dialog when the outside is clicked",
+      "description_zh": "是否在单击外部时关闭对话框"
+    },
+    "defaultOpen": {
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "description": "The initial open state of the dialog when it is first rendered.\nUse when you do not need to control its open state.",
+      "description_zh": "首次呈现对话框时对话框的初始打开状态。\n在不需要控制其打开状态时使用。"
+    },
+    "finalFocusEl": {
+      "default": "",
+      "value": "",
+      "type": "() => HTMLElement",
+      "description": "Element to receive focus when the dialog is closed",
+      "description_zh": "在对话框关闭时接收焦点的元素"
+    },
+    "id": {
+      "default": "",
+      "value": "",
+      "type": "string",
+      "description": "The unique identifier of the machine.",
+      "description_zh": "计算机的唯一标识符。"
+    },
+    "ids": {
+      "default": "",
+      "value": "",
+      "type": "Partial<{\n  trigger: string\n  positioner: string\n  backdrop: string\n  content: string\n  closeTrigger: string\n  title: string\n  description: string\n}>",
+      "description": "The ids of the elements in the dialog. Useful for composition.",
+      "description_zh": "对话框中元素的 ID。对合成很有用。"
+    },
+    "initialFocusEl": {
+      "default": "",
+      "value": "",
+      "type": "() => HTMLElement",
+      "description": "Element to receive focus when the dialog is opened",
+      "description_zh": "打开对话框时接收焦点的元素"
+    },
+    "lazyMount": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to enable lazy mounting",
+      "description_zh": "是否启用延迟挂载"
+    },
+    "modal": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to prevent pointer interaction outside the element and hide all content below it",
+      "description_zh": "是否阻止元素外部的指针交互并隐藏其下方的所有内容"
+    },
+    "open": {
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the dialog is open",
+      "description_zh": "对话框是否打开"
+    },
+    "persistentElements": {
+      "default": "",
+      "value": "",
+      "type": "(() => Element)[]",
+      "description": "Returns the persistent elements that:\n- should not have pointer-events disabled\n- should not trigger the dismiss event",
+      "description_zh": "返回符合以下条件的持久元素：\n- 不应禁用指针事件\n- 不应触发 dismiss 事件"
+    },
+    "preventScroll": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to prevent scrolling behind the dialog when it's opened",
+      "description_zh": "是否防止在对话框打开时滚动到对话框后面"
+    },
+    "restoreFocus": {
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to restore focus to the element that had focus before the dialog was opened",
+      "description_zh": "是否将焦点恢复到在对话框打开之前具有焦点的元素"
+    },
+    "role": {
+      "default": "'dialog'",
+      "value": "",
+      "type": "'dialog' | 'alertdialog'",
+      "description": "The dialog's role",
+      "description_zh": "对话框的角色"
+    },
+    "trapFocus": {
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to trap focus inside the dialog when it's opened",
+      "description_zh": "是否在对话框打开时将焦点陷在对话框内"
+    },
+    "unmountOnExit": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to unmount on exit.",
+      "description_zh": "是否在退出时卸载。"
+    }
+  },
+  "events": [
+    {
+      "name": "escapeKeyDown",
+      "description": "Function called when the escape key is pressed",
+      "description_zh": "按下 Esc 键时调用的函数",
+      "params": "[event: KeyboardEvent]",
+      "value": ""
+    },
+    {
+      "name": "focusOutside",
+      "description": "Function called when the focus is moved outside the component",
+      "description_zh": "当焦点移出组件时调用的函数",
+      "params": "[event: FocusOutsideEvent]",
+      "value": ""
+    },
+    {
+      "name": "interactOutside",
+      "description": "Function called when an interaction happens outside the component",
+      "description_zh": "当交互发生在组件外部时调用的函数",
+      "params": "[event: InteractOutsideEvent]",
+      "value": ""
+    },
+    {
+      "name": "openChange",
+      "description": "Callback to be invoked when the dialog is opened or closed",
+      "description_zh": "打开或关闭对话框时调用的回调",
+      "params": "[details: OpenChangeDetails]",
+      "value": ""
+    },
+    {
+      "name": "pointerDownOutside",
+      "description": "Function called when the pointer is pressed down outside the component",
+      "description_zh": "在组件外部按下指针时调用的函数",
+      "params": "[event: PointerDownOutsideEvent]",
+      "value": ""
+    },
+    {
+      "name": "update:open",
+      "description": "",
+      "description_zh": "",
+      "params": "[open: boolean]",
+      "value": ""
+    }
+  ],
+  "methods": []
+}

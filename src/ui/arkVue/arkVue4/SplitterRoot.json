@@ -1,0 +1,71 @@
+{
+  "name": "Splitter.Root",
+  "description": "A component that divides your interface into resizable sections",
+  "description_zh": "A component that divides your interface into resizable sections",
+  "slots": [],
+  "suggestions": [],
+  "filename": "SplitterRoot",
+  "link": "https://ark-ui.com/vue/docs/components/splitter",
+  "link_zh": "https://ark-ui.com/vue/docs/components/splitter",
+  "props": {
+    "asChild": {
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "description": "Use the provided child element as the default rendered element, combining their props and behavior.",
+      "description_zh": "使用提供的子元素作为默认渲染元素，结合它们的 props 和行为。"
+    },
+    "defaultSize": {
+      "default": "",
+      "value": "",
+      "type": "PanelSizeData[]",
+      "description": "The initial size of the panels when it is first rendered.\nUse this when you do not need to control the state of the carousel.",
+      "description_zh": "首次渲染面板时面板的初始大小。\n当您不需要控制轮播的状态时，请使用此选项。"
+    },
+    "id": {
+      "default": "",
+      "value": "",
+      "type": "string",
+      "description": "The unique identifier of the machine.",
+      "description_zh": "计算机的唯一标识符。"
+    },
+    "ids": {
+      "default": "",
+      "value": "",
+      "type": "Partial<{\n  root: string\n  resizeTrigger(id: string): string\n  label(id: string): string\n  panel(id: string | number): string\n}>",
+      "description": "The ids of the elements in the splitter. Useful for composition.",
+      "description_zh": "splitter 中元素的 id。对合成很有用。"
+    },
+    "orientation": {
+      "default": "",
+      "value": "",
+      "type": "'horizontal' | 'vertical'",
+      "description": "The orientation of the splitter. Can be `horizontal` or `vertical`",
+      "description_zh": "分流器的方向。可以是 'horizontal' 或 'vertical'"
+    },
+    "size": {
+      "default": "",
+      "value": "",
+      "type": "PanelSizeData[]",
+      "description": "The size data of the panels",
+      "description_zh": "面板的大小数据"
+    }
+  },
+  "events": [
+    {
+      "name": "sizeChange",
+      "description": "Function called when the splitter is resized.",
+      "description_zh": "调整拆分器大小时调用的函数。",
+      "params": "[details: SizeChangeDetails]",
+      "value": ""
+    },
+    {
+      "name": "sizeChangeEnd",
+      "description": "Function called when the splitter resize ends.",
+      "description_zh": "splitter 调整大小结束时调用的函数。",
+      "params": "[details: SizeChangeDetails]",
+      "value": ""
+    }
+  ],
+  "methods": []
+}

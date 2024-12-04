@@ -1,0 +1,113 @@
+{
+  "name": "Accordion.Root",
+  "description": "A collapsible component for displaying content in a vertical stack.",
+  "description_zh": "A collapsible component for displaying content in a vertical stack.",
+  "slots": [],
+  "suggestions": [],
+  "filename": "AccordionRoot",
+  "link": "https://ark-ui.com/vue/docs/components/accordion",
+  "link_zh": "https://ark-ui.com/vue/docs/components/accordion",
+  "props": {
+    "asChild": {
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "description": "Use the provided child element as the default rendered element, combining their props and behavior.",
+      "description_zh": "使用提供的子元素作为默认渲染元素，结合它们的 props 和行为。"
+    },
+    "collapsible": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether an accordion item can be closed after it has been expanded.",
+      "description_zh": "折叠面板项在展开后是否可以关闭。"
+    },
+    "defaultValue": {
+      "default": "",
+      "value": "",
+      "type": "string[]",
+      "description": "The initial value of the accordion that are expanded.\nUse this when you do not need to control the state of the accordion.",
+      "description_zh": "展开的折叠面板的初始值。\n当您不需要控制折叠式设备的状态时，请使用此选项。"
+    },
+    "disabled": {
+      "default": "",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether the accordion items are disabled",
+      "description_zh": "是否禁用折叠面板项"
+    },
+    "id": {
+      "default": "",
+      "value": "",
+      "type": "string",
+      "description": "The unique identifier of the machine.",
+      "description_zh": "计算机的唯一标识符。"
+    },
+    "ids": {
+      "default": "",
+      "value": "",
+      "type": "Partial<{\n  root: string\n  item(value: string): string\n  itemContent(value: string): string\n  itemTrigger(value: string): string\n}>",
+      "description": "The ids of the elements in the accordion. Useful for composition.",
+      "description_zh": "折叠面板中元素的 ID。对合成很有用。"
+    },
+    "lazyMount": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to enable lazy mounting",
+      "description_zh": "是否启用延迟挂载"
+    },
+    "modelValue": {
+      "default": "",
+      "value": "",
+      "type": "string[]",
+      "description": "The accordion items that are currently expanded.\nUse this prop to control the state of the items via v-model.",
+      "description_zh": "当前展开的折叠面板项。\n使用 this prop 通过 v-model 控制项目的状态。"
+    },
+    "multiple": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether multple accordion items can be expanded at the same time.",
+      "description_zh": "是否可以同时扩展多个手风琴项。"
+    },
+    "orientation": {
+      "default": "'vertical'",
+      "value": "",
+      "type": "'horizontal' | 'vertical'",
+      "description": "The orientation of the accordion items.",
+      "description_zh": "折叠面板项的方向。"
+    },
+    "unmountOnExit": {
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "description": "Whether to unmount on exit.",
+      "description_zh": "是否在退出时卸载。"
+    }
+  },
+  "events": [
+    {
+      "name": "focusChange",
+      "description": "The callback fired when the focused accordion item changes.",
+      "description_zh": "当焦点折叠项发生更改时触发回调。",
+      "params": "[details: FocusChangeDetails]",
+      "value": ""
+    },
+    {
+      "name": "update:modelValue",
+      "description": "The callback fired when the model value changes.",
+      "description_zh": "当 model 值更改时触发回调。",
+      "params": "[value: string[]]",
+      "value": ""
+    },
+    {
+      "name": "valueChange",
+      "description": "The callback fired when the state of expanded/collapsed accordion items changes.",
+      "description_zh": "当展开/折叠的折叠折叠项的状态发生变化时触发回调。",
+      "params": "[details: ValueChangeDetails]",
+      "value": ""
+    }
+  ],
+  "methods": []
+}
