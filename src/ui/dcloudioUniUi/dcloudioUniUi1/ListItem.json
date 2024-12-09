@@ -1,0 +1,185 @@
+{
+  "name": "UniListItem",
+  "typeDetail": {},
+  "link": "https://uniapp.dcloud.net.cn/component/uniui/uni-list.html",
+  "link_zh": "https://uniapp.dcloud.net.cn/component/uniui/uni-list.html",
+  "filename": "ListItem",
+  "slots": [
+    {
+      "name": "header",
+      "description": "左/上内容插槽，可完全自定义默认显示",
+      "description_zh": "左/上内容插槽，可完全自定义默认显示"
+    },
+    {
+      "name": "body",
+      "description": "中间内容插槽，可完全自定义中间内容",
+      "description_zh": "中间内容插槽，可完全自定义中间内容"
+    },
+    {
+      "name": "footer",
+      "description": "右/下内容插槽，可完全自定义右侧内容",
+      "description_zh": "右/下内容插槽，可完全自定义右侧内容"
+    }
+  ],
+  "methods": [],
+  "events": [
+    {
+      "name": "click",
+      "description": "-",
+      "description_zh": "-",
+      "params": "点击 uniListItem 触发事件，需开启点击反馈"
+    },
+    {
+      "name": "switchChange",
+      "description": "e={value:checked}",
+      "description_zh": "e={value:checked}",
+      "params": "点击切换 Switch 时触发，需显示 switch"
+    }
+  ],
+  "props": {
+    "title": {
+      "type": "String",
+      "value": "",
+      "default": "-",
+      "description": "标题",
+      "description_zh": "标题",
+      "required": true
+    },
+    "note": {
+      "type": "String",
+      "value": "",
+      "default": "-",
+      "description": "描述",
+      "description_zh": "描述"
+    },
+    "ellipsis": {
+      "type": "Number",
+      "value": "",
+      "default": "0",
+      "description": "title 是否溢出隐藏，可选值，0:默认;  1:显示一行;\t2:显示两行;",
+      "description_zh": "title 是否溢出隐藏，可选值，0:默认;  1:显示一行;\t2:显示两行;"
+    },
+    "thumb": {
+      "type": "String",
+      "value": "",
+      "default": "-",
+      "description": "左侧缩略图，若thumb有值，则不会显示扩展图标",
+      "description_zh": "左侧缩略图，若thumb有值，则不会显示扩展图标"
+    },
+    "thumbSize": {
+      "type": "String",
+      "value": "",
+      "default": "medium",
+      "description": "略缩图尺寸，可选值，lg:大图;  medium:一般;\tsm:小图;",
+      "description_zh": "略缩图尺寸，可选值，lg:大图;  medium:一般;\tsm:小图;"
+    },
+    "showBadge": {
+      "type": "Boolean",
+      "value": "",
+      "default": "false",
+      "description": "是否显示数字角标",
+      "description_zh": "是否显示数字角标"
+    },
+    "badgeText": {
+      "type": "String",
+      "value": "",
+      "default": "-",
+      "description": "数字角标内容",
+      "description_zh": "数字角标内容"
+    },
+    "badgeType": {
+      "type": "String",
+      "value": "",
+      "default": "-",
+      "description": "数字角标类型，参考uni-icons ",
+      "description_zh": "数字角标类型，参考uni-icons "
+    },
+    "badgeStyle": {
+      "type": "Object",
+      "value": "",
+      "default": "-",
+      "description": "数字角标样式，使用uni-badge的custom-style参数",
+      "description_zh": "数字角标样式，使用uni-badge的custom-style参数"
+    },
+    "rightText": {
+      "type": "String",
+      "value": "",
+      "default": "-",
+      "description": "右侧文字内容",
+      "description_zh": "右侧文字内容"
+    },
+    "disabled": {
+      "type": "Boolean",
+      "value": "",
+      "default": "false",
+      "description": "是否禁用",
+      "description_zh": "是否禁用"
+    },
+    "showArrow": {
+      "type": "Boolean",
+      "value": "",
+      "default": "false",
+      "description": "是否显示箭头图标",
+      "description_zh": "是否显示箭头图标"
+    },
+    "link": {
+      "type": "String",
+      "value": "",
+      "default": "navigateTo",
+      "description": "新页面跳转方式，可选值见下表",
+      "description_zh": "新页面跳转方式，可选值见下表"
+    },
+    "to": {
+      "type": "String",
+      "value": "",
+      "default": "-",
+      "description": "新页面跳转地址，如填写此属性，click 会返回页面是否跳转成功",
+      "description_zh": "新页面跳转地址，如填写此属性，click 会返回页面是否跳转成功"
+    },
+    "clickable": {
+      "type": "Boolean",
+      "value": "",
+      "default": "false",
+      "description": "是否开启点击反馈",
+      "description_zh": "是否开启点击反馈"
+    },
+    "showSwitch": {
+      "type": "Boolean",
+      "value": "",
+      "default": "false",
+      "description": "是否显示Switch",
+      "description_zh": "是否显示Switch"
+    },
+    "switchChecked": {
+      "type": "Boolean",
+      "value": "",
+      "default": "false",
+      "description": "Switch是否被选中",
+      "description_zh": "Switch是否被选中"
+    },
+    "showExtraIcon": {
+      "type": "Boolean",
+      "value": "",
+      "default": "false",
+      "description": "左侧是否显示扩展图标",
+      "description_zh": "左侧是否显示扩展图标"
+    },
+    "extraIcon": {
+      "type": "Object",
+      "value": "",
+      "default": "-",
+      "description": "扩展图标参数，格式为 {color: '#4cd964',size: '22',type: 'spinner'}，参考 uni-icons ",
+      "description_zh": "扩展图标参数，格式为 {color: '#4cd964',size: '22',type: 'spinner'}，参考 uni-icons "
+    },
+    "direction": {
+      "type": "String",
+      "value": "",
+      "default": "row",
+      "description": "排版方向，可选值，row:水平排列;  column:垂直排列; 3个插槽是水平排还是垂直排，也受此属性控制",
+      "description_zh": "排版方向，可选值，row:水平排列;  column:垂直排列; 3个插槽是水平排还是垂直排，也受此属性控制"
+    }
+  },
+  "suggestions": [],
+  "description": "List 列表组件，包含基本列表样式、可扩展插槽机制、长列表性能优化、多端兼容。",
+  "description_zh": "List 列表组件，包含基本列表样式、可扩展插槽机制、长列表性能优化、多端兼容。"
+}
