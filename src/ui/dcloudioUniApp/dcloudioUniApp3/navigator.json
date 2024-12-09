@@ -1,0 +1,150 @@
+{
+  "name": "navigator",
+  "description": "页面跳转。",
+  "description_zh": "页面跳转。",
+  "props": {
+    "show-confirm-bar": {
+      "type": "boolean",
+      "default": true,
+      "value": "",
+      "description": "是否显示键盘上方带有”完成“按钮那一栏",
+      "description_zh": "是否显示键盘上方带有”完成“按钮那一栏",
+      "platform": "微信小程序、百度小程序、QQ小程序、京东小程序"
+    },
+    "url": {
+      "type": "string",
+      "default": "",
+      "value": "",
+      "description": "应用内的跳转链接，值为相对路径或绝对路径，如：\"../first/first\"，\"/pages/first/first\"，注意不能加 .vue 后缀",
+      "description_zh": "应用内的跳转链接，值为相对路径或绝对路径，如：\"../first/first\"，\"/pages/first/first\"，注意不能加 .vue 后缀",
+      "platform": "",
+      "required": true
+    },
+    "open-type": {
+      "type": "navigate / redirect / switchTab / reLaunch / navigateBack / exit",
+      "default": "navigate",
+      "value": "navigate",
+      "description": "跳转方式",
+      "description_zh": "跳转方式",
+      "platform": ""
+    },
+    "delta": {
+      "type": "number",
+      "default": 0,
+      "value": 0,
+      "description": "当 open-type 为 'navigateBack' 时有效，表示回退的层数",
+      "description_zh": "当 open-type 为 'navigateBack' 时有效，表示回退的层数",
+      "platform": ""
+    },
+    "animation-type": {
+      "type": "string",
+      "default": "pop-in/out",
+      "value": "pop-in/out",
+      "description": "当 open-type 为 navigate、navigateBack 时有效，窗口的显示/关闭动画效果，详见：窗口动画",
+      "description_zh": "当 open-type 为 navigate、navigateBack 时有效，窗口的显示/关闭动画效果，详见：窗口动画",
+      "platform": "App"
+    },
+    "animation-duration": {
+      "type": "number",
+      "default": 300,
+      "value": 300,
+      "description": "当 open-type 为 navigate、navigateBack 时有效，窗口显示/关闭动画的持续时间。",
+      "description_zh": "当 open-type 为 navigate、navigateBack 时有效，窗口显示/关闭动画的持续时间。",
+      "platform": "App"
+    },
+    "render-link": {
+      "type": "boolean",
+      "default": true,
+      "value": "",
+      "description": "是否给 navigator 组件加一层 a 标签控制 ssr 渲染",
+      "description_zh": "是否给 navigator 组件加一层 a 标签控制 ssr 渲染",
+      "platform": "web3.7.6+、App-vue3.7.6+"
+    },
+    "hover-class": {
+      "type": "string",
+      "default": "navigator-hover",
+      "value": "navigator-hover",
+      "description": "指定点击时的样式类，当hover-class=\"none\"时，没有点击态效果",
+      "description_zh": "指定点击时的样式类，当hover-class=\"none\"时，没有点击态效果",
+      "platform": ""
+    },
+    "hover-stop-propagation": {
+      "type": "boolean",
+      "default": false,
+      "value": "",
+      "description": "指定是否阻止本节点的祖先节点出现点击态",
+      "description_zh": "指定是否阻止本节点的祖先节点出现点击态",
+      "platform": "微信小程序"
+    },
+    "hover-start-time": {
+      "type": "number",
+      "default": 50,
+      "value": 50,
+      "description": "按住后多久出现点击态，单位毫秒",
+      "description_zh": "按住后多久出现点击态，单位毫秒",
+      "platform": ""
+    },
+    "hover-stay-time": {
+      "type": "number",
+      "default": 600,
+      "value": 600,
+      "description": "手指松开后点击态保留时间，单位毫秒",
+      "description_zh": "手指松开后点击态保留时间，单位毫秒",
+      "platform": ""
+    },
+    "target": {
+      "type": "string",
+      "default": "self",
+      "value": "self",
+      "description": "在哪个小程序目标上发生跳转，默认当前小程序，值域self/miniProgram",
+      "description_zh": "在哪个小程序目标上发生跳转，默认当前小程序，值域self/miniProgram",
+      "platform": "微信2.0.7+、百度2.5.2+、QQ"
+    }
+  },
+  "events": [
+    {
+      "name": "focus",
+      "description": "输入框聚焦时触发，event.detail = { value, height }，height 为键盘高度",
+      "description_zh": "输入框聚焦时触发，event.detail = { value, height }，height 为键盘高度",
+      "params": "EventHandle",
+      "platform": "仅微信小程序、京东小程序、App（HBuilderX 2.0+ nvue uni-app模式） 、QQ小程序支持 height"
+    },
+    {
+      "name": "blur",
+      "description": "输入框失去焦点时触发，event.detail = {value, cursor}",
+      "description_zh": "输入框失去焦点时触发，event.detail = {value, cursor}",
+      "params": "EventHandle",
+      "platform": "快手小程序不支持 cursor"
+    },
+    {
+      "name": "linechange",
+      "description": "输入框行数变化时调用，event.detail = {height: 0, heightRpx: 0, lineCount: 0}",
+      "description_zh": "输入框行数变化时调用，event.detail = {height: 0, heightRpx: 0, lineCount: 0}",
+      "params": "EventHandle",
+      "platform": "抖音小程序、飞书小程序、快手小程序不支持"
+    },
+    {
+      "name": "input",
+      "description": "当键盘输入时，触发 input 事件，event.detail = {value, cursor}， @input 处理函数的返回值并不会反映到 textarea 上",
+      "description_zh": "当键盘输入时，触发 input 事件，event.detail = {value, cursor}， @input 处理函数的返回值并不会反映到 textarea 上",
+      "params": "EventHandle",
+      "platform": "快手小程序不支持"
+    },
+    {
+      "name": "confirm",
+      "description": "点击完成时， 触发 confirm 事件，event.detail = {value: value}",
+      "description_zh": "点击完成时， 触发 confirm 事件，event.detail = {value: value}",
+      "params": "EventHandle",
+      "platform": "微信小程序、百度小程序、QQ小程序、京东小程序"
+    },
+    {
+      "name": "keyboardheightchange",
+      "description": "键盘高度发生变化的时候触发此事件，event.detail = {height: height, duration: duration}",
+      "description_zh": "键盘高度发生变化的时候触发此事件，event.detail = {height: height, duration: duration}",
+      "params": "EventHandle",
+      "platform": "微信小程序基础库2.7.0+、App 3.1.0+"
+    }
+  ],
+  "link": "https://uniapp.dcloud.net.cn/component/navigator.html",
+  "link_zh": "https://uniapp.dcloud.net.cn/component/navigator.html"
+}

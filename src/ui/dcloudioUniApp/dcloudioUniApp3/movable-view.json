@@ -1,0 +1,117 @@
+{
+  "name": "movable-view",
+  "description": "可拖动区域。",
+  "description_zh": "可拖动区域。",
+  "props": {
+    "direction": {
+      "type": "all / vertical / horizontal / none",
+      "default": "none",
+      "value": "",
+      "description": "movable-view的移动方向，属性值有all、vertical、horizontal、none",
+      "description_zh": "movable-view的移动方向，属性值有all、vertical、horizontal、none"
+    },
+    "inertia": {
+      "type": "Boolean",
+      "default": false,
+      "value": "",
+      "description": "movable-view是否带有惯性",
+      "description_zh": "movable-view是否带有惯性"
+    },
+    "out-of-bounds": {
+      "type": "Boolean",
+      "default": false,
+      "value": "",
+      "description": "超过可移动区域后，movable-view是否还可以移动",
+      "description_zh": "超过可移动区域后，movable-view是否还可以移动"
+    },
+    "x": {
+      "type": "Number / String",
+      "default": "",
+      "value": "",
+      "description": "定义x轴方向的偏移，如果x的值不在可移动范围内，会自动移动到可移动范围；改变x的值会触发动画",
+      "description_zh": "定义x轴方向的偏移，如果x的值不在可移动范围内，会自动移动到可移动范围；改变x的值会触发动画"
+    },
+    "y": {
+      "type": "Number / String",
+      "default": "",
+      "value": "",
+      "description": "定义y轴方向的偏移，如果y的值不在可移动范围内，会自动移动到可移动范围；改变y的值会触发动画",
+      "description_zh": "定义y轴方向的偏移，如果y的值不在可移动范围内，会自动移动到可移动范围；改变y的值会触发动画"
+    },
+    "damping": {
+      "type": "Number",
+      "default": 20,
+      "value": "",
+      "description": "阻尼系数，用于控制x或y改变时的动画和过界回弹的动画，值越大移动越快",
+      "description_zh": "阻尼系数，用于控制x或y改变时的动画和过界回弹的动画，值越大移动越快",
+      "platform": "360小程序不支持"
+    },
+    "friction": {
+      "type": "Number",
+      "default": 2,
+      "value": "",
+      "description": "摩擦系数，用于控制惯性滑动的动画，值越大摩擦力越大，滑动越快停止；必须大于0，否则会被设置成默认值",
+      "description_zh": "摩擦系数，用于控制惯性滑动的动画，值越大摩擦力越大，滑动越快停止；必须大于0，否则会被设置成默认值",
+      "platform": "360小程序不支持"
+    },
+    "disabled": {
+      "type": "Boolean",
+      "default": false,
+      "value": "",
+      "description": "是否禁用",
+      "description_zh": "是否禁用"
+    },
+    "scale": {
+      "type": "Boolean",
+      "default": false,
+      "value": "",
+      "description": "是否支持双指缩放，默认缩放手势生效区域是在movable-view内",
+      "description_zh": "是否支持双指缩放，默认缩放手势生效区域是在movable-view内",
+      "platform": "360小程序不支持"
+    },
+    "scale-min": {
+      "type": "Number",
+      "default": 0.5,
+      "value": "",
+      "description": "定义缩放倍数最小值",
+      "description_zh": "定义缩放倍数最小值"
+    },
+    "scale-max": {
+      "type": "Number",
+      "default": 10,
+      "value": "",
+      "description": "定义缩放倍数最大值",
+      "description_zh": "定义缩放倍数最大值"
+    },
+    "scale-value": {
+      "type": "Number",
+      "default": 1,
+      "value": "",
+      "description": "定义缩放倍数，取值范围为 0.5 - 10",
+      "description_zh": "定义缩放倍数，取值范围为 0.5 - 10"
+    },
+    "animation": {
+      "type": "Boolean",
+      "default": true,
+      "value": "",
+      "description": "是否使用动画",
+      "description_zh": "是否使用动画"
+    }
+  },
+  "events": [
+    {
+      "name": "change",
+      "description": "拖动过程中触发的事件，event.detail = {x: x, y: y, source: source}，其中source表示产生移动的原因，值可为touch（拖动）、touch-out-of-bounds（超出移动范围）、out-of-bounds（超出移动范围后的回弹）、friction（惯性）和空字符串（setData）",
+      "description_zh": "拖动过程中触发的事件，event.detail = {x: x, y: y, source: source}，其中source表示产生移动的原因，值可为touch（拖动）、touch-out-of-bounds（超出移动范围）、out-of-bounds（超出移动范围后的回弹）、friction（惯性）和空字符串（setData）",
+      "params": "EventHandle"
+    },
+    {
+      "name": "scale",
+      "description": "缩放过程中触发的事件，event.detail = {x: x, y: y, scale: scale}，",
+      "description_zh": "缩放过程中触发的事件，event.detail = {x: x, y: y, scale: scale}，",
+      "params": "EventHandle"
+    }
+  ],
+  "link": "https://uniapp.dcloud.net.cn/component/movable-view.html",
+  "link_zh": "https://uniapp.dcloud.net.cn/component/movable-view.html"
+}

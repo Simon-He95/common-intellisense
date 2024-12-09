@@ -1,0 +1,321 @@
+{
+  "name": "button",
+  "description": "按钮",
+  "description_zh": "按钮",
+  "props": {
+    "size": {
+      "type": "default / mini",
+      "default": "default",
+      "description": "按钮的大小",
+      "description_zh": "按钮的大小",
+      "value": ""
+    },
+    "type": {
+      "type": "primary / default / warn",
+      "default": "default",
+      "description": "按钮的样式类型",
+      "description_zh": "按钮的样式类型",
+      "value": ""
+    },
+    "plain": {
+      "type": "Boolean",
+      "default": false,
+      "description": "按钮是否镂空，背景色透明",
+      "description_zh": "按钮是否镂空，背景色透明",
+      "value": ""
+    },
+    "disabled": {
+      "type": "Boolean",
+      "default": false,
+      "description": "是否禁用",
+      "description_zh": "是否禁用",
+      "value": ""
+    },
+    "loading": {
+      "type": "Boolean",
+      "default": false,
+      "description": "名称前是否带 loading 图标",
+      "description_zh": "名称前是否带 loading 图标",
+      "value": "",
+      "platform": "H5、App(App-nvue 平台，在 ios 上为雪花，Android上为圆圈)"
+    },
+    "form-type": {
+      "type": "submit / reset",
+      "default": "",
+      "description": "用于 <form> 组件，点击分别会触发 <form> 组件的 submit/reset 事件",
+      "description_zh": "用于 <form> 组件，点击分别会触发 <form> 组件的 submit/reset 事件",
+      "value": ""
+    },
+    "open-type": {
+      "type": "feedback / share / getUserInfo / contact / getPhoneNumber / launchApp / openSetting / chooseAvatar / agreePrivacyAuthorization / uploadDouyinVideo / im / getAuthorize / lifestyle / contactShare / openGroupProfile / openGuildProfile / openPublicProfile / shareMessageToFriend / addFriend / addColorSign / addGroupApp / addToFavorites / chooseAddress / chooseInvoiceTitle / login / subscribe / favorite / watchLater / openProfile",
+      "default": "",
+      "description": "开放能力",
+      "description_zh": "开放能力",
+      "value": ""
+    },
+    "hover-class": {
+      "type": "String",
+      "default": "button-hover",
+      "description": "指定按钮按下去的样式类。当 hover-class=\"none\" 时，没有点击态效果",
+      "description_zh": "指定按钮按下去的样式类。当 hover-class=\"none\" 时，没有点击态效果",
+      "value": "",
+      "platform": "App-nvue 平台暂不支持"
+    },
+    "hover-start-time": {
+      "type": "Number",
+      "default": 20,
+      "description": "按住后多久出现点击态，单位毫秒",
+      "description_zh": "按住后多久出现点击态，单位毫秒",
+      "value": ""
+    },
+    "hover-stay-time": {
+      "type": "Number",
+      "default": 70,
+      "description": "手指松开后点击态保留时间，单位毫秒",
+      "description_zh": "手指松开后点击态保留时间，单位毫秒",
+      "value": ""
+    },
+    "app-parameter": {
+      "type": "String",
+      "default": "",
+      "description": "打开 APP 时，向 APP 传递的参数，open-type=launchApp时有效",
+      "description_zh": "打开 APP 时，向 APP 传递的参数，open-type=launchApp时有效",
+      "value": "",
+      "platform": "微信小程序、QQ小程序"
+    },
+    "hover-stop-propagation": {
+      "type": "Boolean",
+      "default": false,
+      "description": "指定是否阻止本节点的祖先节点出现点击态",
+      "description_zh": "指定是否阻止本节点的祖先节点出现点击态",
+      "value": "",
+      "platform": "微信小程序"
+    },
+    "lang": {
+      "type": "en / zh_CN / zh_TW",
+      "default": "en",
+      "description": "指定返回用户信息的语言，zh_CN 简体中文，zh_TW 繁体中文，en 英文。",
+      "description_zh": "指定返回用户信息的语言，zh_CN 简体中文，zh_TW 繁体中文，en 英文。",
+      "value": "",
+      "platform": "微信小程序"
+    },
+    "session-from": {
+      "type": "String",
+      "default": "",
+      "description": "会话来源，open-type=\"contact\"时有效",
+      "description_zh": "会话来源，open-type=\"contact\"时有效",
+      "value": "",
+      "platform": "微信小程序"
+    },
+    "send-message-title": {
+      "type": "String",
+      "default": "当前标题",
+      "description": "会话内消息卡片标题，open-type=\"contact\"时有效",
+      "description_zh": "会话内消息卡片标题，open-type=\"contact\"时有效",
+      "value": "",
+      "platform": "微信小程序"
+    },
+    "send-message-path": {
+      "type": "String",
+      "default": "当前分享路径",
+      "description": "会话内消息卡片点击跳转小程序路径，open-type=\"contact\"时有效",
+      "description_zh": "会话内消息卡片点击跳转小程序路径，open-type=\"contact\"时有效",
+      "value": "",
+      "platform": "微信小程序"
+    },
+    "send-message-img": {
+      "type": "String",
+      "default": "截图",
+      "description": "会话内消息卡片图片，open-type=\"contact\"时有效",
+      "description_zh": "会话内消息卡片图片，open-type=\"contact\"时有效",
+      "value": "",
+      "platform": "微信小程序"
+    },
+    "show-message-card": {
+      "type": "Boolean",
+      "default": false,
+      "description": "是否显示会话内消息卡片，设置此参数为 true，用户进入客服会话会在右下角显示\"可能要发送的小程序\"提示，用户点击后可以快速发送小程序消息，open-type=\"contact\"时有效",
+      "description_zh": "是否显示会话内消息卡片，设置此参数为 true，用户进入客服会话会在右下角显示\"可能要发送的小程序\"提示，用户点击后可以快速发送小程序消息，open-type=\"contact\"时有效",
+      "value": "",
+      "platform": "微信小程序"
+    },
+    "group-id": {
+      "type": "String",
+      "description": "打开群资料卡时，传递的群号",
+      "description_zh": "打开群资料卡时，传递的群号",
+      "value": "",
+      "platform": "open-type=\"openGroupProfile\"，QQ小程序"
+    },
+    "guild-id": {
+      "type": "String",
+      "description": "打开频道页面时，传递的频道号",
+      "description_zh": "打开频道页面时，传递的频道号",
+      "value": "",
+      "platform": "open-type=\"openGuildProfile\"，QQ小程序"
+    },
+    "public-id": {
+      "type": "String",
+      "default": "",
+      "description": "打开公众号资料卡时，传递的号码",
+      "description_zh": "打开公众号资料卡时，传递的号码",
+      "value": "",
+      "platform": "open-type=\"openPublicProfile\"，QQ小程序"
+    },
+    "data-im-id": {
+      "type": "String",
+      "default": "",
+      "description": "客服的抖音号",
+      "description_zh": "客服的抖音号",
+      "value": "",
+      "platform": "open-type=\"im\"，抖音小程序2.68.0版本+"
+    },
+    "data-im-type": {
+      "type": "String",
+      "default": "",
+      "description": "IM卡片类型",
+      "description_zh": "IM卡片类型",
+      "value": "",
+      "platform": "open-type=\"im\"，抖音小程序2.80.0版本+"
+    },
+    "data-goods-id": {
+      "type": "String",
+      "default": "",
+      "description": "商品的id，仅支持泛知识课程库和生活服务商品库中的商品",
+      "description_zh": "商品的id，仅支持泛知识课程库和生活服务商品库中的商品",
+      "value": "",
+      "platform": "open-type=\"im\"，抖音小程序2.80.0版本+"
+    },
+    "data-order-id": {
+      "type": "String",
+      "default": "",
+      "description": "订单的id，仅支持交易2.0订单",
+      "description_zh": "订单的id，仅支持交易2.0订单",
+      "value": "",
+      "platform": "open-type=\"im\"，抖音小程序2.80.0版本+"
+    },
+    "data-biz-line": {
+      "type": "1 / 2",
+      "default": "",
+      "description": "商品类型，“1”代表生活服务，“2”代表泛知识。",
+      "description_zh": "商品类型，“1”代表生活服务，“2”代表泛知识。",
+      "value": "",
+      "platform": "open-type=\"im\""
+    }
+  },
+  "events": [
+    {
+      "name": "getphonenumber",
+      "params": "Handler",
+      "platform": "微信、支付宝、百度、抖音、快手、京东小程序",
+      "description": "获取用户手机号回调",
+      "description_zh": "获取用户手机号回调",
+      "open-type": "getPhoneNumber"
+    },
+    {
+      "name": "getuserinfo",
+      "params": "Handler",
+      "platform": "微信、QQ、百度、快手、京东小程序",
+      "description": "用户点击该按钮时，会返回获取到的用户信息，从返回参数的detail中获取到的值同uni.getUserInfo",
+      "description_zh": "用户点击该按钮时，会返回获取到的用户信息，从返回参数的detail中获取到的值同uni.getUserInfo",
+      "open-type": "getUserInfo"
+    },
+    {
+      "name": "error",
+      "params": "Handler",
+      "platform": "微信、QQ、快手、京东小程序",
+      "description": "当使用开放能力时，发生错误的回调",
+      "description_zh": "当使用开放能力时，发生错误的回调",
+      "open-type": "launchApp"
+    },
+    {
+      "name": "opensetting",
+      "params": "Handler",
+      "platform": "微信、QQ、百度、快手、京东小程序",
+      "description": "在打开授权设置页并关闭后回调",
+      "description_zh": "在打开授权设置页并关闭后回调",
+      "open-type": "openSetting"
+    },
+    {
+      "name": "launchapp",
+      "params": "Handler",
+      "platform": "微信、QQ、快手、京东小程序",
+      "description": "从小程序打开 App 成功的回调",
+      "description_zh": "从小程序打开 App 成功的回调",
+      "open-type": "launchApp"
+    },
+    {
+      "name": "contact",
+      "params": "Handler",
+      "platform": "微信、QQ、百度、快手小程序",
+      "description": "客服消息回调",
+      "description_zh": "客服消息回调",
+      "open-type": "contact"
+    },
+    {
+      "name": "chooseavatar",
+      "params": "Handler",
+      "platform": "微信、支付宝小程序",
+      "description": "获取用户头像回调",
+      "description_zh": "获取用户头像回调",
+      "open-type": "chooseAvatar"
+    },
+    {
+      "name": "agreeprivacyauthorization",
+      "params": "Handler",
+      "platform": "微信小程序2.33.0",
+      "description": "用户同意隐私协议事件回调，open-type=\"agreePrivacyAuthorization\"时有效",
+      "description_zh": "用户同意隐私协议事件回调，open-type=\"agreePrivacyAuthorization\"时有效",
+      "open-type": "agreePrivacyAuthorization"
+    },
+    {
+      "name": "addgroupapp",
+      "params": "Handler",
+      "platform": "QQ小程序",
+      "description": "添加群应用的回调",
+      "description_zh": "添加群应用的回调",
+      "open-type": "addGroupApp"
+    },
+    {
+      "name": "chooseaddress",
+      "params": "Handler",
+      "platform": "百度小程序",
+      "description": "调起用户编辑并选择收货地址的回调",
+      "description_zh": "调起用户编辑并选择收货地址的回调",
+      "open-type": "chooseAddress"
+    },
+    {
+      "name": "chooseinvoicetitle",
+      "params": "Handler",
+      "platform": "百度小程序",
+      "description": "用户选择发票抬头的回调",
+      "description_zh": "用户选择发票抬头的回调",
+      "open-type": "chooseInvoiceTitle"
+    },
+    {
+      "name": "subscribe",
+      "params": "Handler",
+      "platform": "百度小程序",
+      "description": "订阅消息授权回调",
+      "description_zh": "订阅消息授权回调",
+      "open-type": "subscribe"
+    },
+    {
+      "name": "login",
+      "params": "Handler",
+      "platform": "百度小程序",
+      "description": "登录回调",
+      "description_zh": "登录回调",
+      "open-type": "login"
+    },
+    {
+      "name": "im",
+      "params": "Handler",
+      "platform": "抖音小程序",
+      "description": "监听跳转IM的成功回调",
+      "description_zh": "监听跳转IM的成功回调",
+      "open-type": "im"
+    }
+  ],
+  "link": "https://uniapp.dcloud.net.cn/component/button.html",
+  "link_zh": "https://uniapp.dcloud.net.cn/component/button.html"
+}

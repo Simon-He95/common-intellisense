@@ -1,0 +1,238 @@
+{
+  "name": "textarea",
+  "description": "文本组件。用于包裹文本内容",
+  "description_zh": "文本组件。用于包裹文本内容",
+  "props": {
+    "value": {
+      "type": "string",
+      "default": "",
+      "value": "",
+      "description": "输入框的内容",
+      "description_zh": "输入框的内容"
+    },
+    "placeholder": {
+      "type": "string",
+      "default": "",
+      "value": "",
+      "description": "输入框为空时占位符",
+      "description_zh": "输入框为空时占位符"
+    },
+    "placeholder-style": {
+      "type": "string",
+      "default": "",
+      "value": "",
+      "description": "指定 placeholder 的样式",
+      "description_zh": "指定 placeholder 的样式"
+    },
+    "placeholder-class": {
+      "type": "string",
+      "default": "textarea-placeholder",
+      "value": "textarea-placeholder",
+      "description": "指定 placeholder 的样式类，注意页面或组件的style中写了scoped时，需要在类名前写/deep/",
+      "description_zh": "指定 placeholder 的样式类，注意页面或组件的style中写了scoped时，需要在类名前写/deep/",
+      "platform": "抖音小程序、飞书小程序、快手小程序不支持"
+    },
+    "disabled": {
+      "type": "boolean",
+      "default": false,
+      "value": "",
+      "description": "是否禁用",
+      "description_zh": "是否禁用"
+    },
+    "maxlength": {
+      "type": "number",
+      "default": 140,
+      "value": 140,
+      "description": "最大输入长度，设置为 -1 的时候不限制最大长度",
+      "description_zh": "最大输入长度，设置为 -1 的时候不限制最大长度"
+    },
+    "focus": {
+      "type": "boolean",
+      "default": false,
+      "value": "",
+      "description": "获取焦点",
+      "description_zh": "获取焦点"
+    },
+    "auto-focus": {
+      "type": "boolean",
+      "default": false,
+      "value": "",
+      "description": "自动聚焦，拉起键盘",
+      "description_zh": "自动聚焦，拉起键盘",
+      "platform": "京东小程序"
+    },
+    "auto-height": {
+      "type": "boolean",
+      "default": false,
+      "value": "",
+      "description": "是否自动增高，设置auto-height时，style.height不生效",
+      "description_zh": "是否自动增高，设置auto-height时，style.height不生效"
+    },
+    "fixed": {
+      "type": "boolean",
+      "default": false,
+      "value": "",
+      "description": "如果 textarea 是在一个 position:fixed 的区域，需要显示指定属性 fixed 为 true",
+      "description_zh": "如果 textarea 是在一个 position:fixed 的区域，需要显示指定属性 fixed 为 true",
+      "platform": "微信小程序、百度小程序、抖音小程序、飞书小程序、QQ小程序、快手小程序、京东小程序"
+    },
+    "cursor-spacing": {
+      "type": "number",
+      "default": 0,
+      "value": 0,
+      "description": "指定光标与键盘的距离，单位 px 。取 textarea 距离底部的距离和 cursor-spacing 指定的距离的最小值作为光标与键盘的距离",
+      "description_zh": "指定光标与键盘的距离，单位 px 。取 textarea 距离底部的距离和 cursor-spacing 指定的距离的最小值作为光标与键盘的距离",
+      "platform": "App、微信小程序、百度小程序、抖音小程序、飞书小程序、QQ小程序、京东小程序"
+    },
+    "cursor": {
+      "type": "number",
+      "default": null,
+      "value": null,
+      "description": "指定focus时的光标位置",
+      "description_zh": "指定focus时的光标位置",
+      "platform": "微信小程序、App、H5、百度小程序、抖音小程序、飞书小程序、QQ小程序、京东小程序"
+    },
+    "cursor-color": {
+      "type": "string",
+      "default": "",
+      "value": "",
+      "description": "光标颜色",
+      "description_zh": "光标颜色",
+      "platform": "H5(4.0+)、App-Vue(4.0+)"
+    },
+    "confirm-type": {
+      "type": "send / search / next / go / done",
+      "default": "done",
+      "value": "done",
+      "description": "设置键盘右下角按钮的文字",
+      "description_zh": "设置键盘右下角按钮的文字",
+      "platform": "微信小程序基础库2.13.0+、App-vue和H5(2.9.9+，且要求设备webview内核Chrome81+、Safari13.7+)"
+    },
+    "confirm-hold": {
+      "type": "boolean",
+      "default": false,
+      "value": "",
+      "description": "点击键盘右下角按钮时是否保持键盘不收起",
+      "description_zh": "点击键盘右下角按钮时是否保持键盘不收起",
+      "platform": "App(3.3.7+)、H5 (3.3.7+)、微信小程序 (基础库 2.16.0+)、百度小程序 (基础库 3.130.1+)、快手小程序"
+    },
+    "show-confirm-bar": {
+      "type": "boolean",
+      "default": true,
+      "value": "",
+      "description": "是否显示键盘上方带有”完成“按钮那一栏",
+      "description_zh": "是否显示键盘上方带有”完成“按钮那一栏",
+      "platform": "微信小程序、百度小程序、QQ小程序、京东小程序"
+    },
+    "selection-start": {
+      "type": "number",
+      "default": -1,
+      "value": -1,
+      "description": "光标起始位置，自动聚焦时有效，需与selection-end搭配使用",
+      "description_zh": "光标起始位置，自动聚焦时有效，需与selection-end搭配使用",
+      "platform": "微信小程序、App、H5、百度小程序、抖音小程序、飞书小程序、QQ小程序、京东小程序"
+    },
+    "selection-end": {
+      "type": "number",
+      "default": -1,
+      "value": -1,
+      "description": "光标结束位置，自动聚焦时有效，需与selection-start搭配使用",
+      "description_zh": "光标结束位置，自动聚焦时有效，需与selection-start搭配使用",
+      "platform": "微信小程序、App、H5、百度小程序、抖音小程序、飞书小程序、QQ小程序、京东小程序"
+    },
+    "adjust-position": {
+      "type": "boolean",
+      "default": true,
+      "value": "",
+      "description": "键盘弹起时，是否自动上推页面",
+      "description_zh": "键盘弹起时，是否自动上推页面",
+      "platform": "App-Android（softinputMode 为 adjustResize 时无效）、微信小程序、百度小程序、QQ小程序、京东小程序"
+    },
+    "disable-default-padding": {
+      "type": "boolean",
+      "default": false,
+      "value": "",
+      "description": "是否去掉 iOS 下的默认内边距",
+      "description_zh": "是否去掉 iOS 下的默认内边距",
+      "platform": "微信小程序2.10.0、飞书小程序 3.46"
+    },
+    "hold-keyboard": {
+      "type": "boolean",
+      "default": false,
+      "value": "",
+      "description": "focus时，点击页面的时候不收起键盘",
+      "description_zh": "focus时，点击页面的时候不收起键盘",
+      "platform": "微信小程序2.8.2"
+    },
+    "auto-blur": {
+      "type": "boolean",
+      "default": false,
+      "value": "",
+      "description": "键盘收起时，是否自动失去焦点",
+      "description_zh": "键盘收起时，是否自动失去焦点",
+      "platform": "App-vue 3.0.0+ ，App-nvue不支持"
+    },
+    "ignoreCompositionEvent": {
+      "type": "boolean",
+      "default": true,
+      "value": "",
+      "description": "是否忽略组件内对文本合成系统事件的处理。为 false 时将触发 compositionstart、compositionend、compositionupdate 事件，且在文本合成期间会触发 input 事件",
+      "description_zh": "是否忽略组件内对文本合成系统事件的处理。为 false 时将触发 compositionstart、compositionend、compositionupdate 事件，且在文本合成期间会触发 input 事件",
+      "platform": "App-vue (3.4.4+)、H5 (3.4.4+)、App-nvue不支持"
+    },
+    "inputmode": {
+      "type": "text / none / tel / url / email / numeric / decimal / search",
+      "default": "text",
+      "value": "text",
+      "description": "是一个枚举属性，它提供了用户在编辑元素或其内容时可能输入的数据类型的提示。有效值",
+      "description_zh": "是一个枚举属性，它提供了用户在编辑元素或其内容时可能输入的数据类型的提示。有效值",
+      "platform": "H5（3.7.0+）、App-vue（3.7.0+）"
+    }
+  },
+  "events": [
+    {
+      "name": "focus",
+      "description": "输入框聚焦时触发，event.detail = { value, height }，height 为键盘高度",
+      "description_zh": "输入框聚焦时触发，event.detail = { value, height }，height 为键盘高度",
+      "params": "EventHandle",
+      "platform": "仅微信小程序、京东小程序、App（HBuilderX 2.0+ nvue uni-app模式） 、QQ小程序支持 height"
+    },
+    {
+      "name": "blur",
+      "description": "输入框失去焦点时触发，event.detail = {value, cursor}",
+      "description_zh": "输入框失去焦点时触发，event.detail = {value, cursor}",
+      "params": "EventHandle",
+      "platform": "快手小程序不支持 cursor"
+    },
+    {
+      "name": "linechange",
+      "description": "输入框行数变化时调用，event.detail = {height: 0, heightRpx: 0, lineCount: 0}",
+      "description_zh": "输入框行数变化时调用，event.detail = {height: 0, heightRpx: 0, lineCount: 0}",
+      "params": "EventHandle",
+      "platform": "抖音小程序、飞书小程序、快手小程序不支持"
+    },
+    {
+      "name": "input",
+      "description": "当键盘输入时，触发 input 事件，event.detail = {value, cursor}， @input 处理函数的返回值并不会反映到 textarea 上",
+      "description_zh": "当键盘输入时，触发 input 事件，event.detail = {value, cursor}， @input 处理函数的返回值并不会反映到 textarea 上",
+      "params": "EventHandle",
+      "platform": "快手小程序不支持"
+    },
+    {
+      "name": "confirm",
+      "description": "点击完成时， 触发 confirm 事件，event.detail = {value: value}",
+      "description_zh": "点击完成时， 触发 confirm 事件，event.detail = {value: value}",
+      "params": "EventHandle",
+      "platform": "微信小程序、百度小程序、QQ小程序、京东小程序"
+    },
+    {
+      "name": "keyboardheightchange",
+      "description": "键盘高度发生变化的时候触发此事件，event.detail = {height: height, duration: duration}",
+      "description_zh": "键盘高度发生变化的时候触发此事件，event.detail = {height: height, duration: duration}",
+      "params": "EventHandle",
+      "platform": "微信小程序基础库2.7.0+、App 3.1.0+"
+    }
+  ],
+  "link": "https://uniapp.dcloud.net.cn/component/textarea.html",
+  "link_zh": "https://uniapp.dcloud.net.cn/component/textarea.html"
+}

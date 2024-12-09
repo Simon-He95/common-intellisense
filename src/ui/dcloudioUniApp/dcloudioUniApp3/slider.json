@@ -1,0 +1,103 @@
+{
+  "name": "slider",
+  "description": "滑动选择器。",
+  "description_zh": "滑动选择器。",
+  "props": {
+    "min": {
+      "type": "Number",
+      "default": 0,
+      "value": 0,
+      "description": "最小值",
+      "description_zh": "最小值",
+      "platform": ""
+    },
+    "max": {
+      "type": "Number",
+      "default": 100,
+      "value": 100,
+      "description": "最大值",
+      "description_zh": "最大值",
+      "platform": ""
+    },
+    "step": {
+      "type": "Number",
+      "default": 1,
+      "value": 1,
+      "description": "步长，取值必须大于 0，并且可被(max - min)整除",
+      "description_zh": "步长，取值必须大于 0，并且可被(max - min)整除",
+      "platform": ""
+    },
+    "disabled": {
+      "type": "Boolean",
+      "default": false,
+      "value": "",
+      "description": "是否禁用",
+      "description_zh": "是否禁用",
+      "platform": ""
+    },
+    "value": {
+      "type": "Number",
+      "default": 0,
+      "value": 0,
+      "description": "当前取值",
+      "description_zh": "当前取值",
+      "platform": ""
+    },
+    "activeColor": {
+      "type": "Color",
+      "default": "",
+      "value": "",
+      "description": "滑块左侧已选择部分的线条颜色",
+      "description_zh": "滑块左侧已选择部分的线条颜色",
+      "platform": "各个平台不同，详见下"
+    },
+    "backgroundColor": {
+      "type": "Color",
+      "default": "#e9e9e9",
+      "value": "#e9e9e9",
+      "description": "滑块右侧背景条的颜色",
+      "description_zh": "滑块右侧背景条的颜色",
+      "platform": ""
+    },
+    "block-size": {
+      "type": "Number",
+      "default": 28,
+      "value": 28,
+      "description": "滑块的大小，取值范围为 12 - 28",
+      "description_zh": "滑块的大小，取值范围为 12 - 28",
+      "platform": ""
+    },
+    "block-color": {
+      "type": "Color",
+      "default": "#ffffff",
+      "value": "#ffffff",
+      "description": "滑块的颜色",
+      "description_zh": "滑块的颜色",
+      "platform": ""
+    },
+    "show-value": {
+      "type": "Boolean",
+      "default": false,
+      "value": "",
+      "description": "是否显示当前 value",
+      "description_zh": "是否显示当前 value",
+      "platform": ""
+    }
+  },
+  "events": [
+    {
+      "name": "change",
+      "params": "EventHandle",
+      "description": "完成一次拖动后触发的事件，event.detail = {value: value}",
+      "description_zh": "完成一次拖动后触发的事件，event.detail = {value: value}"
+    },
+    {
+      "name": "changing",
+      "params": "EventHandle",
+      "description": "拖动过程中触发的事件，event.detail = {value: value}",
+      "description_zh": "拖动过程中触发的事件，event.detail = {value: value}"
+    }
+  ],
+  "link": "https://uniapp.dcloud.net.cn/component/slider.html",
+  "link_zh": "https://uniapp.dcloud.net.cn/component/slider.html"
+}

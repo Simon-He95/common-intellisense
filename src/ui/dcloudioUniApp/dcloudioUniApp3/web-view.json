@@ -1,0 +1,112 @@
+{
+  "name": "web-view",
+  "description": "web-view 是一个 web 浏览器组件，可以用来承载网页的容器，会自动铺满整个页面（nvue 使用需要手动指定宽高）。",
+  "description_zh": "web-view 是一个 web 浏览器组件，可以用来承载网页的容器，会自动铺满整个页面（nvue 使用需要手动指定宽高）。",
+  "props": {
+    "src": {
+      "type": "string",
+      "default": "",
+      "value": "",
+      "description": "webview 指向网页的链接",
+      "description_zh": "webview 指向网页的链接",
+      "platform": "",
+      "required": true
+    },
+    "allow": {
+      "type": "string",
+      "default": "",
+      "value": "",
+      "description": "用于为 iframe 指定其特征策略",
+      "description_zh": "用于为 iframe 指定其特征策略",
+      "platform": "H5",
+      "required": false
+    },
+    "sandbox": {
+      "type": "string",
+      "default": "",
+      "value": "",
+      "description": "该属性对呈现在 iframe 框架中的内容启用一些额外的限制条件。",
+      "description_zh": "该属性对呈现在 iframe 框架中的内容启用一些额外的限制条件。",
+      "platform": "H5",
+      "required": false
+    },
+    "fullscreen": {
+      "type": "boolean",
+      "default": true,
+      "value": true,
+      "description": "是否铺满整个页面，默认值：true。",
+      "description_zh": "是否铺满整个页面，默认值：true。",
+      "platform": "H5 (HBuilder X 3.5.4+)",
+      "required": false
+    },
+    "webview-styles": {
+      "type": "object",
+      "default": {},
+      "value": {},
+      "description": "webview 的样式",
+      "description_zh": "webview 的样式",
+      "platform": "App-vue",
+      "required": false
+    },
+    "update-title": {
+      "type": "boolean",
+      "default": true,
+      "value": true,
+      "description": "是否自动更新当前页面标题。默认值：true",
+      "description_zh": "是否自动更新当前页面标题。默认值：true",
+      "platform": "App-vue (HBuilder X 3.3.8+)",
+      "required": false
+    }
+  },
+  "events": [
+    {
+      "name": "message",
+      "description": "网页向应用 postMessage 时，会在特定时机（后退、组件销毁、分享）触发并收到消息。",
+      "description_zh": "网页向应用 postMessage 时，会在特定时机（后退、组件销毁、分享）触发并收到消息。",
+      "params": "EventHandle",
+      "platform": "H5 暂不支持（可以直接使用 window.postMessage）"
+    },
+    {
+      "name": "onPostMessage",
+      "description": "网页向应用实时 postMessage",
+      "description_zh": "网页向应用实时 postMessage",
+      "params": "EventHandle",
+      "platform": "App-nvue"
+    },
+    {
+      "name": "load",
+      "description": "网页加载成功时候触发此事件。",
+      "description_zh": "网页加载成功时候触发此事件。",
+      "params": "EventHandle",
+      "platform": "微信小程序、支付宝小程序、抖音小程序、QQ小程序"
+    },
+    {
+      "name": "error",
+      "description": "网页加载失败的时候触发此事件。",
+      "description_zh": "网页加载失败的时候触发此事件。",
+      "params": "EventHandle",
+      "platform": "微信小程序、支付宝小程序、抖音小程序、QQ小程序"
+    }
+  ],
+  "typeDetail": {
+    "webview-styles": [
+      {
+        "name": "progress",
+        "type": "Object/Boolean",
+        "description": "进度条样式。仅加载网络 HTML 时生效，设置为 false 时禁用进度条。"
+      },
+      {
+        "name": "width",
+        "type": "String",
+        "description": "web-view 组件的宽度。"
+      },
+      {
+        "name": "height",
+        "type": "String",
+        "description": "web-view 组件的高度。"
+      }
+    ]
+  },
+  "link": "https://uniapp.dcloud.net.cn/component/web-view.html",
+  "link_zh": "https://uniapp.dcloud.net.cn/component/web-view.html"
+}

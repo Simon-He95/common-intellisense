@@ -1,0 +1,69 @@
+{
+  "name": "picker",
+  "description": "从底部弹起的滚动选择器。支持五种选择器，通过mode来区分，分别是普通选择器，多列选择器，时间选择器，日期选择器，省市区选择器，默认是普通选择器。",
+  "description_zh": "从底部弹起的滚动选择器。支持五种选择器，通过mode来区分，分别是普通选择器，多列选择器，时间选择器，日期选择器，省市区选择器，默认是普通选择器。",
+  "props": {
+    "mode": {
+      "type": "selector / multiSelector / time / date / region",
+      "default": "selector",
+      "value": "selector",
+      "description": "选择器类型",
+      "description_zh": "选择器类型"
+    },
+    ":range": {
+      "type": "Array / Array<Object>",
+      "default": [],
+      "value": [],
+      "description": "mode为 selector 或 multiSelector 时，range 有效",
+      "description_zh": "mode为 selector 或 multiSelector 时，range 有效"
+    },
+    "range-key": {
+      "type": "String",
+      "default": "",
+      "value": "",
+      "description": "当 range 是一个 Array<Object> 时，通过 range-key 来指定 Object 中 key 的值作为选择器显示内容",
+      "description_zh": "当 range 是一个 Array<Object> 时，通过 range-key 来指定 Object 中 key 的值作为选择器显示内容"
+    },
+    "value": {
+      "type": "Number",
+      "default": 0,
+      "value": 0,
+      "description": "value 的值表示选择了 range 中的第几个（下标从 0 开始）",
+      "description_zh": "value 的值表示选择了 range 中的第几个（下标从 0 开始）"
+    },
+    "selector-type": {
+      "type": "String",
+      "default": "auto",
+      "value": "auto",
+      "description": "UI类型,仅大屏时该属性生效，支持 picker、select、auto，默认在 iPad 以 picker 样式展示而在 PC 以 select 样式展示",
+      "description_zh": "UI类型,仅大屏时该属性生效，支持 picker、select、auto，默认在 iPad 以 picker 样式展示而在 PC 以 select 样式展示",
+      "platform": "H5 2.9.9+"
+    },
+    "disabled": {
+      "type": "Boolean",
+      "default": false,
+      "value": "",
+      "description": "是否禁用",
+      "description_zh": "是否禁用",
+      "platform": "快手小程序不支持"
+    }
+  },
+  "events": [
+    {
+      "name": "change",
+      "params": "EventHandle",
+      "description": "value 改变时触发 change 事件，event.detail = {value: value}",
+      "description_zh": "value 改变时触发 change 事件，event.detail = {value: value}",
+      "platform": ""
+    },
+    {
+      "name": "cancel",
+      "params": "EventHandle",
+      "description": "取消选择时触发",
+      "description_zh": "取消选择时触发",
+      "platform": ""
+    }
+  ],
+  "link": "https://uniapp.dcloud.net.cn/component/picker.html",
+  "link_zh": "https://uniapp.dcloud.net.cn/component/picker.html"
+}

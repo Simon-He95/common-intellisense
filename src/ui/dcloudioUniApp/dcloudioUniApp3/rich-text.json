@@ -1,0 +1,57 @@
+{
+  "name": "rich-text",
+  "description": "文本组件。用于包裹文本内容",
+  "description_zh": "文本组件。用于包裹文本内容",
+  "props": {
+    "nodes": {
+      "type": "Array / String",
+      "default": [],
+      "value": [],
+      "description": "节点列表 / HTML String",
+      "description_zh": "节点列表 / HTML String"
+    },
+    "space": {
+      "type": "string",
+      "default": "",
+      "value": "",
+      "description": "显示连续空格",
+      "description_zh": "显示连续空格",
+      "platform": "App、H5、微信基础库2.4.1+、QQ小程序、抖音小程序、快手小程序"
+    },
+    "selectable": {
+      "type": "boolean",
+      "default": true,
+      "value": "",
+      "description": "富文本是否可以长按选中，可用于复制，粘贴等场景",
+      "description_zh": "富文本是否可以长按选中，可用于复制，粘贴等场景",
+      "platform": "百度小程序（仅真机支持，基础库 3.150.1 以下版本默认为 false）"
+    },
+    "image-menu-prevent": {
+      "type": "boolean",
+      "default": false,
+      "value": "",
+      "description": "阻止长按图片时弹起默认菜单（将该属性设置为image-menu-prevent或image-menu-prevent=\"true\"），只在初始化时有效，不能动态变更；若不想阻止弹起默认菜单，则不需要设置此属性",
+      "description_zh": "阻止长按图片时弹起默认菜单（将该属性设置为image-menu-prevent或image-menu-prevent=\"true\"），只在初始化时有效，不能动态变更；若不想阻止弹起默认菜单，则不需要设置此属性",
+      "platform": "百度小程序"
+    },
+    "preview": {
+      "type": "boolean",
+      "default": false,
+      "value": "",
+      "description": "富文本中的图片是否可点击预览。在不设置的情况下，若 rich-text 未监听点击事件，则默认开启。未显示设置 preview 时会进行点击默认预览判断，建议显示设置 preview",
+      "description_zh": "富文本中的图片是否可点击预览。在不设置的情况下，若 rich-text 未监听点击事件，则默认开启。未显示设置 preview 时会进行点击默认预览判断，建议显示设置 preview",
+      "platform": "百度小程序"
+    }
+  },
+  "events": [
+    {
+      "name": "itemclick",
+      "params": "EventHandle",
+      "platform": "H5 (3.2.13+)、App-Vue (3.2.13+)",
+      "description": "拦截点击事件（只支持 a、img标签），返回当前node信息 event.detail={node}",
+      "description_zh": "拦截点击事件（只支持 a、img标签），返回当前node信息 event.detail={node}"
+    }
+  ],
+  "link": "https://uniapp.dcloud.net.cn/component/rich-text.html",
+  "link_zh": "https://uniapp.dcloud.net.cn/component/rich-text.html"
+}

@@ -1,0 +1,326 @@
+{
+  "name": "map",
+  "description": "地图组件。",
+  "description_zh": "地图组件。",
+  "props": {
+    "longitude": {
+      "type": "number",
+      "default": "",
+      "value": "",
+      "description": "中心经度",
+      "description_zh": "中心经度",
+      "platform": "",
+      "required": false
+    },
+    "latitude": {
+      "type": "number",
+      "default": "",
+      "value": "",
+      "description": "中心纬度",
+      "description_zh": "中心纬度",
+      "platform": "",
+      "required": false
+    },
+    "scale": {
+      "type": "number",
+      "default": 16,
+      "value": "",
+      "description": "缩放级别，取值范围为3-20",
+      "description_zh": "缩放级别，取值范围为3-20",
+      "platform": "高德地图缩放比例与微信小程序不同",
+      "required": false
+    },
+    "theme": {
+      "type": "string",
+      "default": "normal",
+      "value": "",
+      "description": "主题（satellite 或 normal）只在初始化时有效，不能动态变更（仅Android支持）",
+      "description_zh": "主题（satellite 或 normal）只在初始化时有效，不能动态变更（仅Android支持）",
+      "platform": "京东小程序",
+      "required": false
+    },
+    "min-scale": {
+      "type": "number",
+      "default": 3,
+      "value": "",
+      "description": "最小缩放级别",
+      "description_zh": "最小缩放级别",
+      "platform": "App-nvue 3.1.0+、微信小程序2.13+",
+      "required": false
+    },
+    "max-scale": {
+      "type": "number",
+      "default": 20,
+      "value": "",
+      "description": "最大缩放级别",
+      "description_zh": "最大缩放级别",
+      "platform": "App-nvue 3.1.0+、微信小程序2.13+",
+      "required": false
+    },
+    "layer-style": {
+      "type": ["number", "string"],
+      "default": 1,
+      "value": "",
+      "description": "个性化地图",
+      "description_zh": "个性化地图",
+      "platform": "App-nvue 3.1.0+、微信小程序2.13+",
+      "required": false
+    },
+    "markers": {
+      "type": "array",
+      "default": "",
+      "value": "",
+      "description": "标记点",
+      "description_zh": "标记点",
+      "platform": "",
+      "required": false
+    },
+    "polyline": {
+      "type": "array",
+      "default": "",
+      "value": "",
+      "description": "路线",
+      "description_zh": "路线",
+      "platform": "飞书小程序不支持",
+      "required": false
+    },
+    "circles": {
+      "type": "array",
+      "default": "",
+      "value": "",
+      "description": "圆",
+      "description_zh": "圆",
+      "platform": "",
+      "required": false
+    },
+    "controls": {
+      "type": "array",
+      "default": "",
+      "value": "",
+      "description": "控件",
+      "description_zh": "控件",
+      "platform": "",
+      "required": false
+    },
+    "include-points": {
+      "type": "array",
+      "default": "",
+      "value": "",
+      "description": "缩放视野以包含所有给定的坐标点",
+      "description_zh": "缩放视野以包含所有给定的坐标点",
+      "platform": "App-nvue 2.1.5+、微信小程序、H5、百度小程序、支付宝小程序、京东小程序",
+      "required": false
+    },
+    "zIndex": {
+      "type": "number",
+      "default": false,
+      "value": "",
+      "description": "显示层级",
+      "description_zh": "显示层级",
+      "platform": "微信小程序2.3.0",
+      "required": false
+    },
+    "enable-3D": {
+      "type": "boolean",
+      "default": false,
+      "value": "",
+      "description": "是否显示3D楼块",
+      "description_zh": "是否显示3D楼块",
+      "platform": "App-nvue 2.1.5+、微信小程序2.3.0",
+      "required": false
+    },
+    "show-compass": {
+      "type": "boolean",
+      "default": false,
+      "value": "",
+      "description": "是否显示指南针",
+      "description_zh": "是否显示指南针",
+      "platform": "App-nvue 2.1.5+、微信小程序2.3.0",
+      "required": false
+    },
+    "enable-zoom": {
+      "type": "boolean",
+      "default": true,
+      "value": "",
+      "description": "是否支持缩放",
+      "description_zh": "是否支持缩放",
+      "platform": "App-nvue 2.1.5+、微信小程序2.3.0",
+      "required": false
+    },
+    "enable-scroll": {
+      "type": "boolean",
+      "default": true,
+      "value": "",
+      "description": "是否支持拖动",
+      "description_zh": "是否支持拖动",
+      "platform": "App-nvue 2.1.5+、微信小程序2.3.0",
+      "required": false
+    },
+    "enable-rotate": {
+      "type": "boolean",
+      "default": false,
+      "value": "",
+      "description": "是否支持旋转",
+      "description_zh": "是否支持旋转",
+      "platform": "App-nvue 2.1.5+、微信小程序2.3.0",
+      "required": false
+    },
+    "rotate": {
+      "type": "number",
+      "default": 0,
+      "value": "",
+      "description": "旋转角度(范围0-360)地图正北和设备 y 轴角度的夹角",
+      "description_zh": "旋转角度(范围0-360)地图正北和设备 y 轴角度的夹角",
+      "platform": "微信小程序2.5.0、支付宝小程序、抖音小程序、QQ小程序",
+      "required": false
+    },
+    "skew": {
+      "type": "number",
+      "default": 0,
+      "value": "",
+      "description": "倾斜角度，范围 0 ~ 40 , 关于 z 轴的倾角",
+      "description_zh": "倾斜角度，范围 0 ~ 40 , 关于 z 轴的倾角",
+      "platform": "微信小程序2.5.0、支付宝小程序、抖音小程序、QQ小程序",
+      "required": false
+    },
+    "enable-overlooking": {
+      "type": "boolean",
+      "default": false,
+      "value": "",
+      "description": "是否开启俯视",
+      "description_zh": "是否开启俯视",
+      "platform": "App-nvue 2.1.5+、微信小程序2.3.0",
+      "required": false
+    },
+    "enable-satellite": {
+      "type": "boolean",
+      "default": false,
+      "value": "",
+      "description": "是否开启卫星图",
+      "description_zh": "是否开启卫星图",
+      "platform": "App-nvue 2.1.5+、微信小程序2.7.0",
+      "required": false
+    },
+    "enable-traffic": {
+      "type": "boolean",
+      "default": false,
+      "value": "",
+      "description": "是否开启实时路况",
+      "description_zh": "是否开启实时路况",
+      "platform": "App-nvue 2.1.5+、微信小程序2.7.0",
+      "required": false
+    },
+    "enable-poi": {
+      "type": "boolean",
+      "default": false,
+      "value": "",
+      "description": "是否展示 POI 点",
+      "description_zh": "是否展示 POI 点",
+      "platform": "App-nvue 3.1.0+",
+      "required": false
+    },
+    "enable-building": {
+      "type": "boolean",
+      "default": false,
+      "value": "",
+      "description": "是否展示建筑物",
+      "description_zh": "是否展示建筑物",
+      "platform": "App-nvue 3.1.0+ 支持 (废除原enable-3D属性 高德地图默认开启建筑物就是3D无法设置)",
+      "required": false
+    },
+    "show-location": {
+      "type": "boolean",
+      "default": "",
+      "value": "",
+      "description": "显示带有方向的当前定位点",
+      "description_zh": "显示带有方向的当前定位点",
+      "platform": "微信小程序、H5、百度小程序、支付宝小程序、京东小程序",
+      "required": false
+    },
+    "polygons": {
+      "type": "array",
+      "default": "",
+      "value": "",
+      "description": "多边形",
+      "description_zh": "多边形",
+      "platform": "App-nvue 2.1.5+、App-vue 3.4.3+、H5 3.4.3+、微信小程序、百度小程序、支付宝小程序",
+      "required": false
+    },
+    "enable-indoorMap": {
+      "type": "boolean",
+      "default": false,
+      "value": "",
+      "description": "是否展示室内地图",
+      "description_zh": "是否展示室内地图",
+      "platform": "App-nvue 3.1.0+",
+      "required": false
+    }
+  },
+  "events": [
+    {
+      "name": "markertap",
+      "description": "点击标记点时触发，e.detail = {markerId}",
+      "description_zh": "点击标记点时触发，e.detail = {markerId}",
+      "params": "EventHandle",
+      "platform": "App-nvue 2.3.3+、H5、微信小程序、支付宝小程序 （App和H5平台需要指定 marker 对象属性 id）"
+    },
+    {
+      "name": "labeltap",
+      "description": "点击label时触发，e.detail = {markerId}",
+      "description_zh": "点击label时触发，e.detail = {markerId}",
+      "params": "EventHandle",
+      "platform": "微信小程序2.9.0"
+    },
+    {
+      "name": "callouttap",
+      "description": "点击标记点对应的气泡时触发，e.detail = {markerId}",
+      "description_zh": "点击标记点对应的气泡时触发，e.detail = {markerId}",
+      "params": "EventHandle",
+      "platform": ""
+    },
+    {
+      "name": "controltap",
+      "description": "点击控件时触发，e.detail = {controlId}",
+      "description_zh": "点击控件时触发，e.detail = {controlId}",
+      "params": "EventHandle",
+      "platform": ""
+    },
+    {
+      "name": "regionchange",
+      "description": "视野发生变化时触发",
+      "description_zh": "视野发生变化时触发",
+      "params": "EventHandle",
+      "platform": "微信小程序、H5、百度小程序、支付宝小程序、京东小程序"
+    },
+    {
+      "name": "tap",
+      "description": "点击地图时触发; App-nvue、微信小程序2.9支持返回经纬度",
+      "description_zh": "点击地图时触发; App-nvue、微信小程序2.9支持返回经纬度",
+      "params": "EventHandle",
+      "platform": ""
+    },
+    {
+      "name": "updated",
+      "description": "在地图渲染更新完成时触发",
+      "description_zh": "在地图渲染更新完成时触发",
+      "params": "EventHandle",
+      "platform": "微信小程序、H5、百度小程序"
+    },
+    {
+      "name": "anchorpointtap",
+      "description": "点击定位标时触发，e.detail = {longitude, latitude}",
+      "description_zh": "点击定位标时触发，e.detail = {longitude, latitude}",
+      "params": "EventHandle",
+      "platform": "App-nvue 3.1.0+、微信小程序2.13+"
+    },
+    {
+      "name": "poitap",
+      "description": "点击地图poi点时触发，e.detail = {name, longitude, latitude}",
+      "description_zh": "点击地图poi点时触发，e.detail = {name, longitude, latitude}",
+      "params": "EventHandle",
+      "platform": "微信小程序2.3.0+"
+    }
+  ],
+  "link": "https://uniapp.dcloud.net.cn/component/map.html",
+  "link_zh": "https://uniapp.dcloud.net.cn/component/map.html"
+}

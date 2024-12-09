@@ -1,0 +1,291 @@
+{
+  "name": "input",
+  "description": "单行输入框。",
+  "description_zh": "单行输入框。",
+  "props": {
+    ":value": {
+      "type": "String",
+      "default": "",
+      "value": "",
+      "description": "输入框的初始内容",
+      "description_zh": "输入框的初始内容",
+      "required": true
+    },
+    "type": {
+      "type": "text / number / idcard / digit / tel / safe-password / nickname",
+      "default": "",
+      "value": "",
+      "description": "input 的类型 有效值",
+      "description_zh": "input 的类型 有效值"
+    },
+    "text-content-type": {
+      "type": "String",
+      "default": "",
+      "value": "",
+      "description": "文本区域的语义，根据类型自动填充 有效值",
+      "description_zh": "文本区域的语义，根据类型自动填充 有效值",
+      "platform": "仅 App-nvue-iOS 支持"
+    },
+    "password": {
+      "type": "Boolean",
+      "default": false,
+      "value": "",
+      "description": "是否是密码类型",
+      "description_zh": "是否是密码类型",
+      "platform": "H5和App写此属性时，type失效"
+    },
+    "placeholder": {
+      "type": "String",
+      "default": "",
+      "value": "",
+      "description": "输入框为空时占位符",
+      "description_zh": "输入框为空时占位符"
+    },
+    "placeholder-style": {
+      "type": "String",
+      "default": "",
+      "value": "",
+      "description": "指定 placeholder 的样式",
+      "description_zh": "指定 placeholder 的样式"
+    },
+    "placeholder-class": {
+      "type": "String",
+      "default": "input-placeholder",
+      "value": "",
+      "description": "指定 placeholder 的样式类，注意页面或组件的style中写了scoped时，需要在类名前写/deep/",
+      "description_zh": "指定 placeholder 的样式类，注意页面或组件的style中写了scoped时，需要在类名前写/deep/",
+      "platform": "抖音小程序、飞书小程序、快手小程序不支持"
+    },
+    "disabled": {
+      "type": "Boolean",
+      "default": false,
+      "value": "",
+      "description": "是否禁用",
+      "description_zh": "是否禁用"
+    },
+    "maxlength": {
+      "type": "Number",
+      "default": 140,
+      "value": "",
+      "description": "最大输入长度，设置为 -1 的时候不限制最大长度",
+      "description_zh": "最大输入长度，设置为 -1 的时候不限制最大长度"
+    },
+    "cursor-spacing": {
+      "type": "Number",
+      "default": 0,
+      "value": "",
+      "description": "指定光标与键盘的距离，单位 px 。取 input 距离底部的距离和 cursor-spacing 指定的距离的最小值作为光标与键盘的距离",
+      "description_zh": "指定光标与键盘的距离，单位 px 。取 input 距离底部的距离和 cursor-spacing 指定的距离的最小值作为光标与键盘的距离",
+      "platform": "App、微信小程序、百度小程序、QQ小程序、京东小程序"
+    },
+    "focus": {
+      "type": "Boolean",
+      "default": false,
+      "value": "",
+      "description": "获取焦点。",
+      "description_zh": "获取焦点。",
+      "platform": "H5、App需要点击按钮获取焦点的，必须使用@touchend.prevent=\"onTap\"阻止键盘收起默认事件才能获取焦点关于软键盘弹出的逻辑说明，小程序、nvue需使用组件的 focus()、blur() 方法控制焦点"
+    },
+    "confirm-type": {
+      "type": "send / search / next / go / done",
+      "default": "done",
+      "value": "",
+      "description": "设置键盘右下角按钮的文字，仅在 type=\"text\" 时生效。有效值",
+      "description_zh": "设置键盘右下角按钮的文字，仅在 type=\"text\" 时生效。有效值",
+      "platform": "微信小程序、App、H5、快手小程序、京东小程序"
+    },
+    "confirm-hold": {
+      "type": "Boolean",
+      "default": false,
+      "value": "",
+      "description": "点击键盘右下角按钮时是否保持键盘不收起",
+      "description_zh": "点击键盘右下角按钮时是否保持键盘不收起",
+      "platform": "App(3.3.7+)、H5 (3.3.7+)、微信小程序、支付宝小程序、百度小程序、QQ小程序、京东小程序"
+    },
+    "cursor": {
+      "type": "Number",
+      "value": "",
+      "default": "",
+      "description": "指定focus时的光标位置",
+      "description_zh": "指定focus时的光标位置"
+    },
+    "cursor-color": {
+      "type": "String",
+      "default": "#576b95",
+      "value": "",
+      "description": "光标颜色",
+      "description_zh": "光标颜色",
+      "platform": "微信小程序 3.1.0+、H5(4.0+)、App-Vue(4.0+)"
+    },
+    "selection-start": {
+      "type": "Number",
+      "default": -1,
+      "value": "",
+      "description": "光标起始位置，自动聚集时有效，需与selection-end搭配使用",
+      "description_zh": "光标起始位置，自动聚集时有效，需与selection-end搭配使用"
+    },
+    "selection-end": {
+      "type": "Number",
+      "default": -1,
+      "value": "",
+      "description": "光标结束位置，自动聚集时有效，需与selection-start搭配使用",
+      "description_zh": "光标结束位置，自动聚集时有效，需与selection-start搭配使用"
+    },
+    "adjust-position": {
+      "type": "Boolean",
+      "default": true,
+      "value": "",
+      "description": "键盘弹起时，是否自动上推页面",
+      "description_zh": "键盘弹起时，是否自动上推页面",
+      "platform": "App-Android（vue 页面 softinputMode 为 adjustResize 时无效，使用 x5 内核时无效）、微信小程序、百度小程序、QQ小程序、京东小程序"
+    },
+    "auto-blur": {
+      "type": "Boolean",
+      "default": false,
+      "value": "",
+      "description": "键盘收起时，是否自动失去焦点",
+      "description_zh": "键盘收起时，是否自动失去焦点",
+      "platform": "App-Vue 3.0.0+"
+    },
+    "ignoreCompositionEvent": {
+      "type": "Boolean",
+      "default": true,
+      "value": "",
+      "description": "是否忽略组件内对文本合成系统事件的处理。为 false 时将触发 compositionstart、compositionend、compositionupdate 事件，且在文本合成期间会触发 input 事件",
+      "description_zh": "是否忽略组件内对文本合成系统事件的处理。为 false 时将触发 compositionstart、compositionend、compositionupdate 事件，且在文本合成期间会触发 input 事件",
+      "platform": "App-vue (3.4.4+)、H5 (3.4.4+)、App-nvue不支持"
+    },
+    "always-embed": {
+      "type": "Boolean",
+      "default": false,
+      "value": "",
+      "description": "强制 input 处于同层状态，默认 focus 时 input 会切到非同层状态 (仅在 iOS 下生效)",
+      "description_zh": "强制 input 处于同层状态，默认 focus 时 input 会切到非同层状态 (仅在 iOS 下生效)",
+      "platform": "微信小程序 2.10.4+"
+    },
+    "hold-keyboard": {
+      "type": "Boolean",
+      "default": false,
+      "value": "",
+      "description": "focus时，点击页面的时候不收起键盘",
+      "description_zh": "focus时，点击页面的时候不收起键盘",
+      "platform": "微信小程序 2.8.2+"
+    },
+    "safe-password-cert-path": {
+      "type": "String",
+      "default": "",
+      "value": "",
+      "description": "安全键盘加密公钥的路径，只支持包内路径",
+      "description_zh": "安全键盘加密公钥的路径，只支持包内路径",
+      "platform": "微信小程序 2.18.0+"
+    },
+    "safe-password-length": {
+      "type": "Number",
+      "default": 6,
+      "value": "",
+      "description": "安全键盘输入密码长度",
+      "description_zh": "安全键盘输入密码长度",
+      "platform": "微信小程序 2.18.0+"
+    },
+    "safe-password-time-stamp": {
+      "type": "Number",
+      "default": 0,
+      "value": "",
+      "description": "安全键盘加密时间戳",
+      "description_zh": "安全键盘加密时间戳",
+      "platform": "微信小程序 2.18.0+"
+    },
+    "safe-password-nonce": {
+      "type": "String",
+      "default": "",
+      "value": "",
+      "description": "安全键盘加密盐值",
+      "description_zh": "安全键盘加密盐值",
+      "platform": "微信小程序 2.18.0+"
+    },
+    "safe-password-salt": {
+      "type": "String",
+      "default": "",
+      "value": "",
+      "description": "安全键盘计算 hash 盐值，若指定custom-hash 则无效",
+      "description_zh": "安全键盘计算 hash 盐值，若指定custom-hash 则无效",
+      "platform": "微信小程序 2.18.0+"
+    },
+    "safe-password-custom-hash": {
+      "type": "String",
+      "default": "",
+      "value": "",
+      "description": "安全键盘计算 hash 的算法表达式，如 md5(sha1('foo' + sha256(sm3(password + 'bar'))))",
+      "description_zh": "安全键盘计算 hash 的算法表达式，如 md5(sha1('foo' + sha256(sm3(password + 'bar'))))",
+      "platform": "微信小程序 2.18.0+"
+    },
+    "random-number": {
+      "type": "Boolean",
+      "default": false,
+      "value": "",
+      "description": "当 type 为 number, digit, idcard 数字键盘是否随机排列",
+      "description_zh": "当 type 为 number, digit, idcard 数字键盘是否随机排列",
+      "platform": "支付宝小程序 1.9.0+"
+    },
+    "controlled": {
+      "type": "Boolean",
+      "default": false,
+      "value": "",
+      "description": "是否为受控组件。为 true 时，value 内容会完全受 setData 控制",
+      "description_zh": "是否为受控组件。为 true 时，value 内容会完全受 setData 控制",
+      "platform": "支付宝小程序 1.9.0+"
+    },
+    "always-system": {
+      "type": "Boolean",
+      "default": false,
+      "value": "",
+      "description": "是否强制使用系统键盘和 Web-view 创建的 input 元素。为 true 时，confirm-type、confirm-hold 可能失效",
+      "description_zh": "是否强制使用系统键盘和 Web-view 创建的 input 元素。为 true 时，confirm-type、confirm-hold 可能失效",
+      "platform": "支付宝小程序 2.7.3+"
+    },
+    "inputmode": {
+      "type": "none / text / decimal / numeric / tel / search / email / url",
+      "default": "text",
+      "value": "",
+      "description": "是一个枚举属性，它提供了用户在编辑元素或其内容时可能输入的数据类型的提示。有效值",
+      "description_zh": "是一个枚举属性，它提供了用户在编辑元素或其内容时可能输入的数据类型的提示。有效值",
+      "platform": "H5（3.6.16+）、App-vue（3.6.16+）"
+    }
+  },
+  "events": [
+    {
+      "name": "input",
+      "params": "EventHandle",
+      "description": "当键盘输入时，触发input事件，event.detail = {value}",
+      "description_zh": "当键盘输入时，触发input事件，event.detail = {value}"
+    },
+    {
+      "name": "focus",
+      "params": "EventHandle",
+      "description": "输入框聚焦时触发，event.detail = { value, height }，height 为键盘高度",
+      "description_zh": "输入框聚焦时触发，event.detail = { value, height }，height 为键盘高度",
+      "platform": "仅微信小程序、京东小程序、App（2.2.3+） 、QQ小程序、快手小程序支持 height"
+    },
+    {
+      "name": "blur",
+      "params": "EventHandle",
+      "description": "输入框失去焦点时触发，event.detail = {value: value}",
+      "description_zh": "输入框失去焦点时触发，event.detail = {value: value}"
+    },
+    {
+      "name": "confirm",
+      "params": "EventHandle",
+      "description": "点击完成按钮时触发，event.detail = {value: value}",
+      "description_zh": "点击完成按钮时触发，event.detail = {value: value}"
+    },
+    {
+      "name": "keyboardheightchange",
+      "params": "EventHandle",
+      "description": "键盘高度发生变化的时候触发此事件，event.detail = {height: height, duration: duration}",
+      "description_zh": "键盘高度发生变化的时候触发此事件，event.detail = {height: height, duration: duration}",
+      "platform": "微信小程序基础库2.7.0+、App 3.1.0+"
+    }
+  ],
+  "link": "https://uniapp.dcloud.net.cn/component/input.html",
+  "link_zh": "https://uniapp.dcloud.net.cn/component/input.html"
+}

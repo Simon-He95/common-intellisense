@@ -29,6 +29,7 @@ import { viewUiPlus1, viewUiPlus1Components } from './viewUiPlus'
 import { wotDesignUni1, wotDesignUni1Components } from './wotDesignUni'
 import { arkVue4, arkVue4Components } from './arkVue'
 import { dcloudioUniUi1, dcloudioUniUi1Components } from './dcloudioUniUi'
+import { dcloudioUniApp3, dcloudioUniApp3Components } from './dcloudioUniApp'
 
 export default {
   // elementUi2,
@@ -70,6 +71,7 @@ export default {
   wotDesignUni1,
   arkVue4,
   dcloudioUniUi1,
+  dcloudioUniApp3,
   // elementUi2Components,
   antd4Components,
   antd5Components,
@@ -109,4 +111,5 @@ export default {
   wotDesignUni1Components,
   arkVue4Components,
   dcloudioUniUi1Components,
+  dcloudioUniApp3Components,
 }

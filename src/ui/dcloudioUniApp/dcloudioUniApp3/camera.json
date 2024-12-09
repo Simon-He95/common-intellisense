@@ -1,0 +1,94 @@
+{
+  "name": "camera",
+  "description": "页面内嵌的区域相机组件。注意这不是点击后全屏打开的相机。",
+  "description_zh": "页面内嵌的区域相机组件。注意这不是点击后全屏打开的相机。",
+  "props": {
+    "mode": {
+      "type": "string",
+      "default": "normal",
+      "value": "",
+      "description": "应用模式，有效值为 normal(相机模式), scanCode(扫码模式)，不支持动态修改",
+      "description_zh": "应用模式，有效值为 normal(相机模式), scanCode(扫码模式)，不支持动态修改",
+      "platform": ""
+    },
+    "resolution": {
+      "type": "low / medium / high",
+      "default": "medium",
+      "value": "",
+      "description": "分辨率，有效值为low, medium, high，不支持动态修改",
+      "description_zh": "分辨率，有效值为low, medium, high，不支持动态修改",
+      "platform": "微信小程序2.10.0、抖音小程序、飞书小程序"
+    },
+    "device-position": {
+      "type": "front / back",
+      "default": "back",
+      "value": "",
+      "description": "前置或后置摄像头，值为front, back",
+      "description_zh": "前置或后置摄像头，值为front, back",
+      "platform": ""
+    },
+    "flash": {
+      "type": "auto / on / off / torch",
+      "default": "auto",
+      "value": "",
+      "description": "闪光灯，值为auto, on, off, torch",
+      "description_zh": "闪光灯，值为auto, on, off, torch",
+      "platform": ""
+    },
+    "frame-size": {
+      "type": "small / medium / large",
+      "default": "medium",
+      "value": "",
+      "description": "指定期望的相机帧数据尺寸，值为small, medium, large",
+      "description_zh": "指定期望的相机帧数据尺寸，值为small, medium, large",
+      "platform": "微信小程序2.7.0、快应用、支付宝小程序、抖音小程序"
+    },
+    "output-dimension": {
+      "type": "360P / 540P / 720P / 1080P / max",
+      "default": "720P",
+      "value": "",
+      "description": "相机拍照，录制的分辨率。有效值为 360P、540P、720P、1080P、max。",
+      "description_zh": "相机拍照，录制的分辨率。有效值为 360P、540P、720P、1080P、max。",
+      "platform": "支付宝小程序1.23.0"
+    }
+  },
+  "events": [
+    {
+      "name": "stop",
+      "description": "摄像头在非正常终止时触发，如退出后台等情况",
+      "description_zh": "摄像头在非正常终止时触发，如退出后台等情况",
+      "params": "EventHandle",
+      "platform": ""
+    },
+    {
+      "name": "error",
+      "description": "用户不允许使用摄像头时触发",
+      "description_zh": "用户不允许使用摄像头时触发",
+      "params": "EventHandle",
+      "platform": ""
+    },
+    {
+      "name": "initdone",
+      "description": "相机初始化完成时触发，e.detail = {maxZoom}",
+      "description_zh": "相机初始化完成时触发，e.detail = {maxZoom}",
+      "params": "EventHandle",
+      "platform": "微信小程序2.7.0、抖音小程序1.78.0、飞书小程序、快手小程序"
+    },
+    {
+      "name": "ready",
+      "description": "相机初始化成功时触发。event.detail = {maxZoom}",
+      "description_zh": "相机初始化成功时触发。event.detail = {maxZoom}",
+      "params": "EventHandle",
+      "platform": "支付宝小程序1.24.3"
+    },
+    {
+      "name": "scancode",
+      "description": "在扫码识别成功时触发，仅在 mode=\"scanCode\" 时生效",
+      "description_zh": "在扫码识别成功时触发，仅在 mode=\"scanCode\" 时生效",
+      "params": "EventHandle",
+      "platform": "微信小程序、支付宝小程序、抖音小程序、飞书小程序、快手小程序"
+    }
+  ],
+  "link": "https://uniapp.dcloud.net.cn/component/camera.html",
+  "link_zh": "https://uniapp.dcloud.net.cn/component/camera.html"
+}

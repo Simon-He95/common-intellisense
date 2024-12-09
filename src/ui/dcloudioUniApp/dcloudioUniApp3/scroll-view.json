@@ -1,0 +1,185 @@
+{
+  "name": "scroll-view",
+  "description": "可滚动视图区域。用于区域滚动。",
+  "description_zh": "可滚动视图区域。用于区域滚动。",
+  "props": {
+    "scroll-x": {
+      "type": "Boolean",
+      "default": false,
+      "value": "",
+      "description": "允许横向滚动",
+      "description_zh": "允许横向滚动"
+    },
+    "scroll-y": {
+      "type": "Boolean",
+      "default": false,
+      "value": "",
+      "description": "允许纵向滚动",
+      "description_zh": "允许纵向滚动"
+    },
+    "upper-threshold": {
+      "type": "Number / String",
+      "default": 50,
+      "value": "",
+      "description": "距顶部/左边多远时（单位px），触发 scrolltoupper 事件",
+      "description_zh": "距顶部/左边多远时（单位px），触发 scrolltoupper 事件"
+    },
+    "lower-threshold": {
+      "type": "Number / String",
+      "default": 50,
+      "value": "",
+      "description": "距底部/右边多远时（单位px），触发 scrolltolower 事件",
+      "description_zh": "距底部/右边多远时（单位px），触发 scrolltolower 事件"
+    },
+    "scroll-top": {
+      "type": "Number / String",
+      "default": "",
+      "value": "",
+      "description": "设置竖向滚动条位置",
+      "description_zh": "设置竖向滚动条位置"
+    },
+    "scroll-left": {
+      "type": "Number / String",
+      "default": "",
+      "value": "",
+      "description": "设置横向滚动条位置",
+      "description_zh": "设置横向滚动条位置"
+    },
+    "scroll-into-view": {
+      "type": "String",
+      "default": "",
+      "value": "",
+      "description": "值应为某子元素id（id不能以数字开头）。设置哪个方向可滚动，则在哪个方向滚动到该元素",
+      "description_zh": "值应为某子元素id（id不能以数字开头）。设置哪个方向可滚动，则在哪个方向滚动到该元素"
+    },
+    "scroll-with-animation": {
+      "type": "Boolean",
+      "default": false,
+      "value": "",
+      "description": "在设置滚动条位置时使用动画过渡",
+      "description_zh": "在设置滚动条位置时使用动画过渡"
+    },
+    "enable-back-to-top": {
+      "type": "Boolean",
+      "default": false,
+      "value": "",
+      "description": "iOS点击顶部状态栏、安卓双击标题栏时，滚动条返回顶部，只支持竖向",
+      "description_zh": "iOS点击顶部状态栏、安卓双击标题栏时，滚动条返回顶部，只支持竖向",
+      "platform": "app-nvue，微信小程序"
+    },
+    "show-scrollbar": {
+      "type": "Boolean",
+      "default": false,
+      "value": "",
+      "description": "控制是否出现滚动条",
+      "description_zh": "控制是否出现滚动条",
+      "platform": "App-nvue 2.1.5+"
+    },
+    "refresher-enabled": {
+      "type": "Boolean",
+      "default": false,
+      "value": "",
+      "description": "开启自定义下拉刷新",
+      "description_zh": "开启自定义下拉刷新",
+      "platform": "H5、app-vue 2.5.12+,微信小程序基础库2.10.1+"
+    },
+    "refresher-threshold": {
+      "type": "Number",
+      "default": 45,
+      "value": "",
+      "description": "设置自定义下拉刷新阈值",
+      "description_zh": "设置自定义下拉刷新阈值",
+      "platform": "H5、app-vue 2.5.12+,微信小程序基础库2.10.1+"
+    },
+    "refresher-default-style": {
+      "type": "black / white / none",
+      "default": "black",
+      "value": "",
+      "description": "设置自定义下拉刷新默认样式，支持设置 black，white，none，none 表示不使用默认样式",
+      "description_zh": "设置自定义下拉刷新默认样式，支持设置 black，white，none，none 表示不使用默认样式",
+      "platform": "H5、app-vue 2.5.12+,微信小程序基础库2.10.1+"
+    },
+    "refresher-background": {
+      "type": "String",
+      "default": "#FFF",
+      "value": "",
+      "description": "设置自定义下拉刷新区域背景颜色",
+      "description_zh": "设置自定义下拉刷新区域背景颜色",
+      "platform": "H5、app-vue 2.5.12+,微信小程序基础库2.10.1+"
+    },
+    "refresher-triggered": {
+      "type": "Boolean",
+      "default": false,
+      "value": "",
+      "description": "设置当前下拉刷新状态，true 表示下拉刷新已经被触发，false 表示下拉刷新未被触发",
+      "description_zh": "设置当前下拉刷新状态，true 表示下拉刷新已经被触发，false 表示下拉刷新未被触发",
+      "platform": "H5、app-vue 2.5.12+,微信小程序基础库2.10.1+"
+    },
+    "enable-flex": {
+      "type": "Boolean",
+      "default": false,
+      "value": "",
+      "description": "启用 flexbox 布局。开启后，当前节点声明了 display: flex 就会成为 flex container，并作用于其孩子节点。",
+      "description_zh": "启用 flexbox 布局。开启后，当前节点声明了 display: flex 就会成为 flex container，并作用于其孩子节点。",
+      "platform": "微信小程序 2.7.3"
+    },
+    "scroll-anchoring": {
+      "type": "Boolean",
+      "default": false,
+      "value": "",
+      "description": "开启 scroll anchoring 特性，即控制滚动位置不随内容变化而抖动，仅在 iOS 下生效，安卓下可参考 CSS overflow-anchor 属性。",
+      "description_zh": "开启 scroll anchoring 特性，即控制滚动位置不随内容变化而抖动，仅在 iOS 下生效，安卓下可参考 CSS overflow-anchor 属性。",
+      "platform": "微信小程序 2.8.2"
+    }
+  },
+  "events": [
+    {
+      "name": "scrolltoupper",
+      "params": "EventHandle",
+      "description": "滚动到顶部/左边，会触发 scrolltoupper 事件",
+      "description_zh": "滚动到顶部/左边，会触发 scrolltoupper 事件"
+    },
+    {
+      "name": "scrolltolower",
+      "params": "EventHandle",
+      "description": "滚动到底部/右边，会触发 scrolltolower 事件",
+      "description_zh": "滚动到底部/右边，会触发 scrolltolower 事件"
+    },
+    {
+      "name": "scroll",
+      "params": "EventHandle",
+      "description": "滚动时触发，event.detail = {scrollLeft, scrollTop, scrollHeight, scrollWidth, deltaX, deltaY}",
+      "description_zh": "滚动时触发，event.detail = {scrollLeft, scrollTop, scrollHeight, scrollWidth, deltaX, deltaY}"
+    },
+    {
+      "name": "refresherpulling",
+      "params": "EventHandle",
+      "description": "自定义下拉刷新控件被下拉",
+      "description_zh": "自定义下拉刷新控件被下拉",
+      "platform": "H5、app-vue 2.5.12+,微信小程序基础库2.10.1+"
+    },
+    {
+      "name": "refresherrefresh",
+      "params": "EventHandle",
+      "description": "自定义下拉刷新被触发",
+      "description_zh": "自定义下拉刷新被触发",
+      "platform": "H5、app-vue 2.5.12+,微信小程序基础库2.10.1+"
+    },
+    {
+      "name": "refresherrestore",
+      "params": "EventHandle",
+      "description": "自定义下拉刷新被复位",
+      "description_zh": "自定义下拉刷新被复位",
+      "platform": "H5、app-vue 2.5.12+,微信小程序基础库2.10.1+"
+    },
+    {
+      "name": "refresherabort",
+      "params": "EventHandle",
+      "description": "自定义下拉刷新被中止",
+      "description_zh": "自定义下拉刷新被中止",
+      "platform": "H5、app-vue 2.5.12+,微信小程序基础库2.10.1+"
+    }
+  ],
+  "link": "https://uniapp.dcloud.net.cn/component/scroll-view.html",
+  "link_zh": "https://uniapp.dcloud.net.cn/component/scroll-view.html"
+}

@@ -1,0 +1,405 @@
+{
+  "name": "video",
+  "description": "视频播放组件。",
+  "description_zh": "视频播放组件。",
+  "props": {
+    "src": {
+      "type": "string",
+      "default": "",
+      "value": "",
+      "description": "要播放视频的资源地址",
+      "description_zh": "要播放视频的资源地址",
+      "platform": "",
+      "required": true
+    },
+    "autoplay": {
+      "type": "boolean",
+      "default": false,
+      "value": "",
+      "description": "是否自动播放",
+      "description_zh": "是否自动播放",
+      "platform": ""
+    },
+    "loop": {
+      "type": "boolean",
+      "default": false,
+      "value": "",
+      "description": "是否循环播放",
+      "description_zh": "是否循环播放",
+      "platform": ""
+    },
+    "muted": {
+      "type": "boolean",
+      "default": false,
+      "value": "",
+      "description": "是否静音播放",
+      "description_zh": "是否静音播放",
+      "platform": "飞书小程序不支持"
+    },
+    "initial-time": {
+      "type": "number",
+      "default": 0,
+      "value": 0,
+      "description": "指定视频初始播放位置，单位为秒（s）",
+      "description_zh": "指定视频初始播放位置，单位为秒（s）",
+      "platform": "飞书小程序不支持"
+    },
+    "duration": {
+      "type": "number",
+      "default": 0,
+      "value": 0,
+      "description": "指定视频时长，单位为秒（s）",
+      "description_zh": "指定视频时长，单位为秒（s）",
+      "platform": "抖音小程序、飞书小程序、快手小程序、京东小程序不支持"
+    },
+    "controls": {
+      "type": "boolean",
+      "default": true,
+      "value": "",
+      "description": "是否显示默认播放控件（播放/暂停按钮、播放进度、时间）",
+      "description_zh": "是否显示默认播放控件（播放/暂停按钮、播放进度、时间）",
+      "platform": "快手小程序不支持"
+    },
+    "danmu-list": {
+      "type": "object",
+      "default": [],
+      "value": [],
+      "description": "弹幕列表",
+      "description_zh": "弹幕列表",
+      "platform": "抖音小程序、飞书小程序、快手小程序、京东小程序不支持"
+    },
+    "danmu-btn": {
+      "type": "boolean",
+      "default": false,
+      "value": "",
+      "description": "是否显示弹幕按钮，只在初始化时有效，不能动态变更",
+      "description_zh": "是否显示弹幕按钮，只在初始化时有效，不能动态变更",
+      "platform": "抖音小程序、飞书小程序、快手小程序、京东小程序不支持"
+    },
+    "enable-danmu": {
+      "type": "boolean",
+      "default": false,
+      "value": "",
+      "description": "是否展示弹幕，只在初始化时有效，不能动态变更",
+      "description_zh": "是否展示弹幕，只在初始化时有效，不能动态变更",
+      "platform": "抖音小程序、飞书小程序、快手小程序、京东小程序不支持"
+    },
+    "page-gesture": {
+      "type": "boolean",
+      "default": false,
+      "value": "",
+      "description": "在非全屏模式下，是否开启亮度与音量调节手势",
+      "description_zh": "在非全屏模式下，是否开启亮度与音量调节手势",
+      "platform": "微信小程序、H5"
+    },
+    "direction": {
+      "type": "0 / 90 / -90",
+      "default": 0,
+      "value": 0,
+      "description": "设置全屏时视频的方向，不指定则根据宽高比自动判断。有效值为 0（正常竖向）, 90（屏幕逆时针90度）, -90（屏幕顺时针90度）",
+      "description_zh": "设置全屏时视频的方向，不指定则根据宽高比自动判断。有效值为 0（正常竖向）, 90（屏幕逆时针90度）, -90（屏幕顺时针90度）",
+      "platform": "H5、飞书小程序、快手小程序、京东小程序不支持"
+    },
+    "show-progress": {
+      "type": "boolean",
+      "default": true,
+      "value": "",
+      "description": "若不设置，宽度大于240时才会显示",
+      "description_zh": "若不设置，宽度大于240时才会显示",
+      "platform": "抖音小程序、飞书小程序、快手小程序、京东小程序不支持"
+    },
+    "show-fullscreen-btn": {
+      "type": "boolean",
+      "default": true,
+      "value": "",
+      "description": "是否显示全屏按钮",
+      "description_zh": "是否显示全屏按钮",
+      "platform": "京东小程序不支持"
+    },
+    "show-play-btn": {
+      "type": "boolean",
+      "default": true,
+      "value": "",
+      "description": "是否显示视频底部控制栏的播放按钮",
+      "description_zh": "是否显示视频底部控制栏的播放按钮",
+      "platform": "京东小程序不支持"
+    },
+    "show-center-play-btn": {
+      "type": "boolean",
+      "default": true,
+      "value": "",
+      "description": "是否显示视频中间的播放按钮",
+      "description_zh": "是否显示视频中间的播放按钮",
+      "platform": "抖音小程序、京东小程序不支持"
+    },
+    "show-loading": {
+      "type": "boolean",
+      "default": true,
+      "value": "",
+      "description": "是否显示loading控件",
+      "description_zh": "是否显示loading控件",
+      "platform": "仅app 2.8.12+"
+    },
+    "enable-progress-gesture": {
+      "type": "boolean",
+      "default": true,
+      "value": "",
+      "description": "是否开启控制进度的手势",
+      "description_zh": "是否开启控制进度的手势",
+      "platform": "抖音小程序、京东小程序不支持"
+    },
+    "object-fit": {
+      "type": "contain / fill / cover",
+      "default": "contain",
+      "value": "",
+      "description": "当视频大小与 video 容器大小不一致时，视频的表现形式。contain：包含，fill：填充，cover：覆盖",
+      "description_zh": "当视频大小与 video 容器大小不一致时，视频的表现形式。contain：包含，fill：填充，cover：覆盖",
+      "platform": "App、微信小程序、抖音小程序、飞书小程序、H5、京东小程序"
+    },
+    "poster": {
+      "type": "string",
+      "default": "",
+      "value": "",
+      "description": "视频封面的图片网络资源地址，如果 controls 属性值为 false 则设置 poster 无效",
+      "description_zh": "视频封面的图片网络资源地址，如果 controls 属性值为 false 则设置 poster 无效",
+      "platform": ""
+    },
+    "show-mute-btn": {
+      "type": "boolean",
+      "default": false,
+      "value": "",
+      "description": "是否显示静音按钮",
+      "description_zh": "是否显示静音按钮",
+      "platform": "微信小程序、抖音小程序、App-nvue"
+    },
+    "title": {
+      "type": "string",
+      "default": "",
+      "value": "",
+      "description": "视频的标题，全屏时在顶部展示",
+      "description_zh": "视频的标题，全屏时在顶部展示",
+      "platform": "微信小程序、App（3.6.7+）"
+    },
+    "play-btn-position": {
+      "type": "center / bottom",
+      "default": "bottom",
+      "value": "bottom",
+      "description": "播放按钮的位置",
+      "description_zh": "播放按钮的位置",
+      "platform": "微信小程序、抖音小程序、飞书小程序"
+    },
+    "mobilenet-hint-type": {
+      "type": "number",
+      "default": 1,
+      "value": 1,
+      "description": "移动网络提醒样式：0是不提醒，1是提醒，默认值为1",
+      "description_zh": "移动网络提醒样式：0是不提醒，1是提醒，默认值为1",
+      "platform": "京东小程序"
+    },
+    "enable-play-gesture": {
+      "type": "boolean",
+      "default": false,
+      "value": "",
+      "description": "是否开启播放手势，即双击切换播放/暂停",
+      "description_zh": "是否开启播放手势，即双击切换播放/暂停",
+      "platform": "微信小程序、快手小程序"
+    },
+    "auto-pause-if-navigate": {
+      "type": "boolean",
+      "default": true,
+      "value": "",
+      "description": "当跳转到其它小程序页面时，是否自动暂停本页面的视频",
+      "description_zh": "当跳转到其它小程序页面时，是否自动暂停本页面的视频",
+      "platform": "微信小程序"
+    },
+    "auto-pause-if-open-native": {
+      "type": "boolean",
+      "default": true,
+      "value": "",
+      "description": "当跳转到其它微信原生页面时，是否自动暂停本页面的视频",
+      "description_zh": "当跳转到其它微信原生页面时，是否自动暂停本页面的视频",
+      "platform": "微信小程序"
+    },
+    "vslide-gesture": {
+      "type": "boolean",
+      "default": false,
+      "value": "",
+      "description": "在非全屏模式下，是否开启亮度与音量调节手势（同 page-gesture）",
+      "description_zh": "在非全屏模式下，是否开启亮度与音量调节手势（同 page-gesture）",
+      "platform": "微信小程序、App（3.4.0+）、快手小程序"
+    },
+    "vslide-gesture-in-fullscreen": {
+      "type": "boolean",
+      "default": true,
+      "value": "",
+      "description": "在全屏模式下，是否开启亮度与音量调节手势",
+      "description_zh": "在全屏模式下，是否开启亮度与音量调节手势",
+      "platform": "微信小程序、App（3.4.0+）、快手小程序"
+    },
+    "ad-unit-id": {
+      "type": "string",
+      "default": "",
+      "value": "",
+      "description": "视频前贴广告单元ID，更多详情可参考开放能力视频前贴广告",
+      "description_zh": "视频前贴广告单元ID，更多详情可参考开放能力视频前贴广告",
+      "platform": "微信小程序"
+    },
+    "poster-for-crawler": {
+      "type": "string",
+      "default": "",
+      "value": "",
+      "description": "用于给搜索等场景作为视频封面展示，建议使用无播放 icon 的视频封面图，只支持网络地址",
+      "description_zh": "用于给搜索等场景作为视频封面展示，建议使用无播放 icon 的视频封面图，只支持网络地址",
+      "platform": "微信小程序"
+    },
+    "codec": {
+      "type": "string",
+      "default": "hardware",
+      "value": "hardware",
+      "description": "解码器选择，hardware：硬解码（硬解码可以增加解码算力，提高视频清晰度。少部分老旧硬件可能存在兼容性问题）；software：ffmpeg 软解码；",
+      "description_zh": "解码器选择，hardware：硬解码（硬解码可以增加解码算力，提高视频清晰度。少部分老旧硬件可能存在兼容性问题）；software：ffmpeg 软解码；",
+      "platform": "App-Android 3.1.0+"
+    },
+    "http-cache": {
+      "type": "boolean",
+      "default": true,
+      "value": "",
+      "description": "是否对 http、https 视频源开启本地缓存。缓存策略:开启了此开关的视频源，在视频播放时会在本地保存缓存文件，如果本地缓存池已超过100M，在进行缓存前会清空之前的缓存（不适用于m3u8等流媒体协议）",
+      "description_zh": "是否对 http、https 视频源开启本地缓存。缓存策略:开启了此开关的视频源，在视频播放时会在本地保存缓存文件，如果本地缓存池已超过100M，在进行缓存前会清空之前的缓存（不适用于m3u8等流媒体协议）",
+      "platform": "App-Android 3.1.0+"
+    },
+    "play-strategy": {
+      "type": "number",
+      "default": 0,
+      "value": 0,
+      "description": "播放策略，0：普通模式，适合绝大部分视频播放场景；1：平滑播放模式（降级），增加缓冲区大小，采用open sl解码音频，避免音视频脱轨的问题，可能会降低首屏展现速度、视频帧率，出现开屏音频延迟等。 适用于高码率视频的极端场景；2： M3U8优化模式，增加缓冲区大小，提升视频加载速度和流畅度，可能会降低首屏展现速度。 适用于M3U8在线播放的场景",
+      "description_zh": "播放策略，0：普通模式，适合绝大部分视频播放场景；1：平滑播放模式（降级），增加缓冲区大小，采用open sl解码音频，避免音视频脱轨的问题，可能会降低首屏展现速度、视频帧率，出现开屏音频延迟等。 适用于高码率视频的极端场景；2： M3U8优化模式，增加缓冲区大小，提升视频加载速度和流畅度，可能会降低首屏展现速度。 适用于M3U8在线播放的场景",
+      "platform": "App-Android 3.1.0+"
+    },
+    "header": {
+      "type": "object",
+      "default": {},
+      "value": {},
+      "description": "HTTP 请求 Header",
+      "description_zh": "HTTP 请求 Header",
+      "platform": "App 3.1.19+"
+    },
+    "is-live": {
+      "type": "boolean",
+      "default": false,
+      "value": "",
+      "description": "是否为直播源",
+      "description_zh": "是否为直播源",
+      "platform": "App 3.7.2+、微信小程序（2.28.1+）"
+    }
+  },
+  "events": [
+    {
+      "name": "play",
+      "description": "当开始/继续播放时触发play事件",
+      "description_zh": "当开始/继续播放时触发play事件",
+      "params": "EventHandle",
+      "platform": "飞书小程序不支持"
+    },
+    {
+      "name": "pause",
+      "description": "当暂停播放时触发 pause 事件",
+      "description_zh": "当暂停播放时触发 pause 事件",
+      "params": "EventHandle",
+      "platform": "飞书小程序不支持"
+    },
+    {
+      "name": "ended",
+      "description": "当播放到末尾时触发 ended 事件",
+      "description_zh": "当播放到末尾时触发 ended 事件",
+      "params": "EventHandle",
+      "platform": "飞书小程序不支持"
+    },
+    {
+      "name": "timeupdate",
+      "description": "播放进度变化时触发，event.detail = {currentTime, duration} 。触发频率 250ms 一次",
+      "description_zh": "播放进度变化时触发，event.detail = {currentTime, duration} 。触发频率 250ms 一次",
+      "params": "EventHandle",
+      "platform": "飞书小程序不支持"
+    },
+    {
+      "name": "fullscreenchange",
+      "description": "当视频进入和退出全屏时触发，event.detail = {fullScreen, direction}，direction取为 vertical 或 horizontal",
+      "description_zh": "当视频进入和退出全屏时触发，event.detail = {fullScreen, direction}，direction取为 vertical 或 horizontal",
+      "params": "EventHandle",
+      "platform": "飞书小程序不支持"
+    },
+    {
+      "name": "waiting",
+      "description": "视频出现缓冲时触发",
+      "description_zh": "视频出现缓冲时触发",
+      "params": "EventHandle",
+      "platform": "飞书小程序、快手小程序不支持"
+    },
+    {
+      "name": "error",
+      "description": "视频播放出错时触发",
+      "description_zh": "视频播放出错时触发",
+      "params": "EventHandle",
+      "platform": "飞书小程序不支持"
+    },
+    {
+      "name": "progress",
+      "description": "加载进度变化时触发，只支持一段加载。event.detail = {buffered}，百分比",
+      "description_zh": "加载进度变化时触发，只支持一段加载。event.detail = {buffered}，百分比",
+      "params": "EventHandle",
+      "platform": "微信小程序、抖音小程序、H5"
+    },
+    {
+      "name": "loadeddata",
+      "description": "视频资源开始加载时触发",
+      "description_zh": "视频资源开始加载时触发",
+      "params": "EventHandle",
+      "platform": "京东小程序"
+    },
+    {
+      "name": "loadstart",
+      "description": "开始加载数据",
+      "description_zh": "开始加载数据",
+      "params": "EventHandle",
+      "platform": "京东小程序"
+    },
+    {
+      "name": "seeked",
+      "description": "拖动进度条结束",
+      "description_zh": "拖动进度条结束",
+      "params": "EventHandle",
+      "platform": "京东小程序"
+    },
+    {
+      "name": "seeking",
+      "description": "正在拖动进度条",
+      "description_zh": "正在拖动进度条",
+      "params": "EventHandle",
+      "platform": "京东小程序"
+    },
+    {
+      "name": "loadedmetadata",
+      "description": "视频元数据加载完成时触发。event.detail = {width, height, duration}",
+      "description_zh": "视频元数据加载完成时触发。event.detail = {width, height, duration}",
+      "params": "EventHandle",
+      "platform": "微信小程序、H5、抖音小程序、京东小程序"
+    },
+    {
+      "name": "fullscreenclick",
+      "description": "视频播放全屏播放时点击事件。event.detail = { screenX:\"Number类型，点击点相对于屏幕左侧边缘的 X 轴坐标\", screenY:\"Number类型，点击点相对于屏幕顶部边缘的 Y 轴坐标\", screenWidth:\"Number类型，屏幕总宽度\", screenHeight:\"Number类型，屏幕总高度\"}",
+      "description_zh": "视频播放全屏播放时点击事件。event.detail = { screenX:\"Number类型，点击点相对于屏幕左侧边缘的 X 轴坐标\", screenY:\"Number类型，点击点相对于屏幕顶部边缘的 Y 轴坐标\", screenWidth:\"Number类型，屏幕总宽度\", screenHeight:\"Number类型，屏幕总高度\"}",
+      "params": "EventHandle",
+      "platform": "App 2.6.3+"
+    },
+    {
+      "name": "controlstoggle",
+      "description": "切换 controls 显示隐藏时触发。event.detail = {show}",
+      "description_zh": "切换 controls 显示隐藏时触发。event.detail = {show}",
+      "params": "EventHandle",
+      "platform": "微信小程序2.9.5"
+    }
+  ],
+  "link": "https://uniapp.dcloud.net.cn/component/video.html",
+  "link_zh": "https://uniapp.dcloud.net.cn/component/video.html"
+}

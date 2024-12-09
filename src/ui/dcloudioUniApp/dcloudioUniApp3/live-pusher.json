@@ -1,0 +1,262 @@
+{
+  "name": "live-pusher",
+  "description": "实时音视频录制，也称直播推流。",
+  "description_zh": "实时音视频录制，也称直播推流。",
+  "props": {
+    "url": {
+      "type": "string",
+      "default": "",
+      "value": "",
+      "description": "推流地址，支持RTMP协议。",
+      "description_zh": "推流地址，支持RTMP协议。",
+      "platform": "",
+      "required": true
+    },
+    "mode": {
+      "type": "string",
+      "default": "SD",
+      "value": "",
+      "description": "推流视频模式，可取值：SD（标清）, HD（高清）, FHD（超清）。",
+      "description_zh": "推流视频模式，可取值：SD（标清）, HD（高清）, FHD（超清）。",
+      "platform": "",
+      "required": false
+    },
+    "aspect": {
+      "type": "string",
+      "default": "3:2",
+      "value": "",
+      "description": "视频宽高比例",
+      "description_zh": "视频宽高比例",
+      "platform": "",
+      "required": false
+    },
+    "muted": {
+      "type": "boolean",
+      "default": false,
+      "value": "",
+      "description": "是否静音。",
+      "description_zh": "是否静音。",
+      "platform": "",
+      "required": false
+    },
+    "enable-camera": {
+      "type": "boolean",
+      "default": true,
+      "value": "",
+      "description": "开启摄像头。",
+      "description_zh": "开启摄像头。",
+      "platform": "",
+      "required": false
+    },
+    "auto-focus": {
+      "type": "boolean",
+      "default": true,
+      "value": "",
+      "description": "自动聚集。",
+      "description_zh": "自动聚集。",
+      "platform": "",
+      "required": false
+    },
+    "beauty": {
+      "type": "number",
+      "default": 0,
+      "value": "",
+      "description": "美颜，取值范围 0-9（iOS取值范围为1） ，0 表示关闭。",
+      "description_zh": "美颜，取值范围 0-9（iOS取值范围为1） ，0 表示关闭。",
+      "platform": "",
+      "required": false
+    },
+    "whiteness": {
+      "type": "number",
+      "default": 0,
+      "value": "",
+      "description": "美白，取值范围 0-9（iOS取值范围为1） ，0 表示关闭。",
+      "description_zh": "美白，取值范围 0-9（iOS取值范围为1） ，0 表示关闭。",
+      "platform": "",
+      "required": false
+    },
+    "orientation": {
+      "type": "vertical / horizontal",
+      "default": "vertical",
+      "value": "",
+      "description": "画面方向",
+      "description_zh": "画面方向",
+      "platform": "",
+      "required": false
+    },
+    "min-bitrate": {
+      "type": "number",
+      "default": 200,
+      "value": "",
+      "description": "最小码率。",
+      "description_zh": "最小码率。",
+      "platform": "",
+      "required": false
+    },
+    "max-bitrate": {
+      "type": "number",
+      "default": 1000,
+      "value": "",
+      "description": "最大码率。",
+      "description_zh": "最大码率。",
+      "platform": "",
+      "required": false
+    },
+    "audio-quality": {
+      "type": "string",
+      "default": "high",
+      "value": "",
+      "description": "高音质(48KHz)或低音质(16KHz)，值为high, low",
+      "description_zh": "高音质(48KHz)或低音质(16KHz)，值为high, low",
+      "platform": "微信小程序1.7.0",
+      "required": false
+    },
+    "waiting-image": {
+      "type": "string",
+      "default": "",
+      "value": "",
+      "description": "进入后台时推流的等待画面",
+      "description_zh": "进入后台时推流的等待画面",
+      "platform": "微信小程序1.7.0",
+      "required": false
+    },
+    "waiting-image-hash": {
+      "type": "string",
+      "default": "",
+      "value": "",
+      "description": "等待画面资源的MD5值",
+      "description_zh": "等待画面资源的MD5值",
+      "platform": "微信小程序1.7.0",
+      "required": false
+    },
+    "zoom": {
+      "type": "boolean",
+      "default": false,
+      "value": "",
+      "description": "调整焦距",
+      "description_zh": "调整焦距",
+      "platform": "微信小程序2.1.0",
+      "required": false
+    },
+    "device-position": {
+      "type": "string",
+      "default": "front",
+      "value": "",
+      "description": "前置或后置，值为front, back",
+      "description_zh": "前置或后置，值为front, back",
+      "platform": "微信小程序2.3.0",
+      "required": false
+    },
+    "background-mute": {
+      "type": "boolean",
+      "default": false,
+      "value": "",
+      "description": "进入后台时是否静音",
+      "description_zh": "进入后台时是否静音",
+      "platform": "微信小程序1.7.0",
+      "required": false
+    },
+    "remote-mirror": {
+      "type": "boolean",
+      "default": false,
+      "value": "",
+      "description": "设置推流画面是否镜像，产生的效果在 live-player 反应到",
+      "description_zh": "设置推流画面是否镜像，产生的效果在 live-player 反应到",
+      "platform": "微信小程序2.10.0",
+      "required": false
+    },
+    "local-mirror": {
+      "type": "auto / enable / disable",
+      "default": "auto",
+      "value": "",
+      "description": "控制本地预览画面是否镜像",
+      "description_zh": "控制本地预览画面是否镜像",
+      "platform": "微信小程序2.10.0",
+      "required": false
+    },
+    "audio-reverb-type": {
+      "type": "0 / 1 / 2 / 3 / 4 / 5 / 6 / 7",
+      "default": 0,
+      "value": "",
+      "description": "音频混响类型 0: 关闭 1: KTV 2: 小房间 3: 大会堂 4: 低沉 5: 洪亮 6: 金属声 7: 磁性",
+      "description_zh": "音频混响类型 0: 关闭 1: KTV 2: 小房间 3: 大会堂 4: 低沉 5: 洪亮 6: 金属声 7: 磁性",
+      "platform": "微信小程序2.10.0",
+      "required": false
+    },
+    "enable-mic": {
+      "type": "boolean",
+      "default": true,
+      "value": "",
+      "description": "开启或关闭麦克风",
+      "description_zh": "开启或关闭麦克风",
+      "platform": "微信小程序2.10.0",
+      "required": false
+    },
+    "enable-agc": {
+      "type": "boolean",
+      "default": false,
+      "value": "",
+      "description": "是否开启音频自动增益",
+      "description_zh": "是否开启音频自动增益",
+      "platform": "微信小程序2.10.0",
+      "required": false
+    },
+    "enable-ans": {
+      "type": "boolean",
+      "default": false,
+      "value": "",
+      "description": "是否开启音频噪声抑制",
+      "description_zh": "是否开启音频噪声抑制",
+      "platform": "微信小程序2.10.0",
+      "required": false
+    },
+    "audio-volume-type": {
+      "type": "media / voicecall",
+      "default": "voicecall",
+      "value": "",
+      "description": "音量类型",
+      "description_zh": "音量类型",
+      "platform": "微信小程序2.10.0",
+      "required": false
+    }
+  },
+  "events": [
+    {
+      "name": "netstatus",
+      "description": "网络状态通知，detail = {info}",
+      "description_zh": "网络状态通知，detail = {info}",
+      "params": "EventHandle",
+      "platform": ""
+    },
+    {
+      "name": "error",
+      "description": "渲染错误事件，detail = {errMsg, errCode}",
+      "description_zh": "渲染错误事件，detail = {errMsg, errCode}",
+      "params": "EventHandle",
+      "platform": ""
+    },
+    {
+      "name": "bgmstart",
+      "description": "背景音开始播放时触发",
+      "description_zh": "背景音开始播放时触发",
+      "params": "EventHandle",
+      "platform": "微信小程序2.4.0"
+    },
+    {
+      "name": "bgmprogress",
+      "description": "背景音进度变化时触发，detail = {progress, duration}",
+      "description_zh": "背景音进度变化时触发，detail = {progress, duration}",
+      "params": "EventHandle",
+      "platform": "微信小程序2.4.0"
+    },
+    {
+      "name": "bgmcomplete",
+      "description": "背景音播放完成时触发",
+      "description_zh": "背景音播放完成时触发",
+      "params": "EventHandle",
+      "platform": "微信小程序2.4.0"
+    }
+  ],
+  "link": "https://uniapp.dcloud.net.cn/component/live-pusher.html",
+  "link_zh": "https://uniapp.dcloud.net.cn/component/live-pusher.html"
+}

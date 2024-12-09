@@ -1,0 +1,89 @@
+{
+  "name": "canvas",
+  "description": "画布",
+  "description_zh": "画布",
+  "props": {
+    "type": {
+      "type": "string",
+      "default": "",
+      "value": "",
+      "description": "指定 canvas 类型，支持 2d (2.9.0) 和 webgl",
+      "description_zh": "指定 canvas 类型，支持 2d (2.9.0) 和 webgl",
+      "platform": "微信小程序 2.7.0+ 抖音小程序1.78.0+",
+      "required": false
+    },
+    "canvas-id": {
+      "type": "string",
+      "default": "",
+      "value": "",
+      "description": "canvas 组件的唯一标识符",
+      "description_zh": "canvas 组件的唯一标识符",
+      "platform": "",
+      "required": false
+    },
+    "disable-scroll": {
+      "type": "boolean",
+      "default": false,
+      "value": "",
+      "description": "当在 canvas 中移动时且有绑定手势事件时，禁止屏幕滚动以及下拉刷新",
+      "description_zh": "当在 canvas 中移动时且有绑定手势事件时，禁止屏幕滚动以及下拉刷新",
+      "platform": "抖音小程序与飞书小程序不支持",
+      "required": false
+    },
+    "hidpi": {
+      "type": "boolean",
+      "default": true,
+      "value": "",
+      "description": "是否启用高清处理",
+      "description_zh": "是否启用高清处理",
+      "platform": "H5 (HBuilder X 3.4.0+)、App-vue (HBuilder X 3.4.0+)",
+      "required": false
+    }
+  },
+  "events": [
+    {
+      "name": "touchstart",
+      "description": "手指触摸动作开始",
+      "description_zh": "手指触摸动作开始",
+      "params": "EventHandle",
+      "platform": "抖音小程序1.78.0+"
+    },
+    {
+      "name": "touchmove",
+      "description": "手指触摸后移动",
+      "description_zh": "手指触摸后移动",
+      "params": "EventHandle",
+      "platform": "抖音小程序1.78.0+"
+    },
+    {
+      "name": "touchend",
+      "description": "手指触摸动作结束",
+      "description_zh": "手指触摸动作结束",
+      "params": "EventHandle",
+      "platform": "抖音小程序1.78.0+"
+    },
+    {
+      "name": "touchcancel",
+      "description": "手指触摸动作被打断，如来电提醒，弹窗",
+      "description_zh": "手指触摸动作被打断，如来电提醒，弹窗",
+      "params": "EventHandle",
+      "platform": "抖音小程序1.78.0+"
+    },
+    {
+      "name": "longtap",
+      "description": "手指长按 500ms 之后触发，触发了长按事件后进行移动不会触发屏幕的滚动",
+      "description_zh": "手指长按 500ms 之后触发，触发了长按事件后进行移动不会触发屏幕的滚动",
+      "params": "EventHandle",
+      "platform": "抖音小程序与飞书小程序不支持"
+    },
+    {
+      "name": "error",
+      "description": "当发生错误时触发 error 事件，detail = {errMsg: 'something wrong'}",
+      "description_zh": "当发生错误时触发 error 事件，detail = {errMsg: 'something wrong'}",
+      "params": "EventHandle",
+      "platform": "抖音小程序与飞书小程序不支持"
+    }
+  ],
+  "link": "https://uniapp.dcloud.net.cn/component/canvas.html",
+  "link_zh": "https://uniapp.dcloud.net.cn/component/canvas.html"
+}

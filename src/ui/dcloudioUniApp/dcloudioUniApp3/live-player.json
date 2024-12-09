@@ -1,0 +1,152 @@
+{
+  "name": "live-player",
+  "description": "实时音视频播放，也称直播拉流。",
+  "description_zh": "实时音视频播放，也称直播拉流。",
+  "props": {
+    "id": {
+      "type": "string",
+      "default": "",
+      "value": "",
+      "description": "live-player 属性的唯一标志符",
+      "description_zh": "live-player 属性的唯一标志符",
+      "platform": "",
+      "required": true
+    },
+    "mode": {
+      "type": "liver / RTC",
+      "default": "live",
+      "value": "",
+      "description": "live（直播），RTC（实时通话，该模式时延更低）",
+      "description_zh": "live（直播），RTC（实时通话，该模式时延更低）",
+      "platform": "微信小程序",
+      "required": false
+    },
+    "autoplay": {
+      "type": "boolean",
+      "default": false,
+      "value": "",
+      "description": "自动播放",
+      "description_zh": "自动播放",
+      "platform": "",
+      "required": false
+    },
+    "muted": {
+      "type": "boolean",
+      "default": false,
+      "value": "",
+      "description": "是否静音",
+      "description_zh": "是否静音",
+      "platform": "",
+      "required": false
+    },
+    "orientation": {
+      "type": "vertical / horizontal",
+      "default": "vertical",
+      "value": "",
+      "description": "画面方向，可选值有 vertical，horizontal",
+      "description_zh": "画面方向，可选值有 vertical，horizontal",
+      "platform": "",
+      "required": false
+    },
+    "object-fit": {
+      "type": "contain / fillCrop",
+      "default": "contain",
+      "value": "",
+      "description": "填充模式，可选值:contain、fillCrop",
+      "description_zh": "填充模式，可选值:contain、fillCrop",
+      "platform": "",
+      "required": false
+    },
+    "background-mute": {
+      "type": "boolean",
+      "default": false,
+      "value": "",
+      "description": "进入后台时是否静音",
+      "description_zh": "进入后台时是否静音",
+      "platform": "",
+      "required": false
+    },
+    "sound-mode": {
+      "type": "speaker / ear",
+      "default": "speaker",
+      "value": "",
+      "description": "声音输出方式;可选值speaker、ear",
+      "description_zh": "声音输出方式;可选值speaker、ear",
+      "platform": "微信小程序、QQ小程序1.5.0（仅支持speaker）",
+      "required": false
+    },
+    "min-cache": {
+      "type": "number",
+      "default": 1,
+      "value": "",
+      "description": "最小缓冲区，单位s",
+      "description_zh": "最小缓冲区，单位s",
+      "platform": "",
+      "required": false
+    },
+    "max-cache": {
+      "type": "number",
+      "default": 3,
+      "value": "",
+      "description": "最大缓冲区，单位s",
+      "description_zh": "最大缓冲区，单位s",
+      "platform": "",
+      "required": false
+    },
+    "picture-in-picture-mode": {
+      "type": "string / array",
+      "default": "",
+      "value": "",
+      "description": "设置小窗模式： push, pop，空字符串或通过数组形式设置多种模式（如： [\"push\", \"pop\"]）",
+      "description_zh": "设置小窗模式： push, pop，空字符串或通过数组形式设置多种模式（如： [\"push\", \"pop\"]）",
+      "platform": "微信小程序（2.10.3）",
+      "required": false
+    }
+  },
+  "events": [
+    {
+      "name": "statechange",
+      "description": "播放状态变化事件，detail = {code}",
+      "description_zh": "播放状态变化事件，detail = {code}",
+      "params": "EventHandle",
+      "platform": ""
+    },
+    {
+      "name": "netstatus",
+      "description": "网络状态通知，detail = {info}",
+      "description_zh": "网络状态通知，detail = {info}",
+      "params": "EventHandle",
+      "platform": ""
+    },
+    {
+      "name": "fullscreenchange",
+      "description": "全屏变化事件，detail = {direction, fullScreen}",
+      "description_zh": "全屏变化事件，detail = {direction, fullScreen}",
+      "params": "EventHandle",
+      "platform": ""
+    },
+    {
+      "name": "audiovolumenotify",
+      "description": "播放音量大小通知，detail = {}",
+      "description_zh": "播放音量大小通知，detail = {}",
+      "params": "EventHandle",
+      "platform": "微信小程序（2.10.0）"
+    },
+    {
+      "name": "enterpictureinpicture",
+      "description": "播放器进入小窗",
+      "description_zh": "播放器进入小窗",
+      "params": "EventHandle",
+      "platform": "微信小程序（2.11.0）"
+    },
+    {
+      "name": "leavepictureinpicture",
+      "description": "播放器退出小窗",
+      "description_zh": "播放器退出小窗",
+      "params": "EventHandle",
+      "platform": "微信小程序（2.11.0）"
+    }
+  ],
+  "link": "https://uniapp.dcloud.net.cn/component/live-player.html",
+  "link_zh": "https://uniapp.dcloud.net.cn/component/live-player.html"
+}

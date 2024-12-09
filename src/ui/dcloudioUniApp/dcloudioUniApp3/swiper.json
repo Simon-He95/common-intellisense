@@ -1,0 +1,191 @@
+{
+  "name": "swiper",
+  "description": "滑块视图容器。",
+  "description_zh": "滑块视图容器。",
+  "props": {
+    "indicator-dots": {
+      "type": "Boolean",
+      "default": false,
+      "value": "",
+      "description": "是否显示面板指示点",
+      "description_zh": "是否显示面板指示点"
+    },
+    "indicator-color": {
+      "type": "Color",
+      "default": "rgba(0, 0, 0, .3)",
+      "value": "",
+      "description": "指示点颜色",
+      "description_zh": "指示点颜色"
+    },
+    "indicator-active-color": {
+      "type": "Color",
+      "default": "#000000",
+      "value": "",
+      "description": "当前选中的指示点颜色",
+      "description_zh": "当前选中的指示点颜色"
+    },
+    "active-class": {
+      "type": "String",
+      "default": "",
+      "value": "",
+      "description": "swiper-item 可见时的 class",
+      "description_zh": "swiper-item 可见时的 class",
+      "platform": "支付宝小程序"
+    },
+    "changing-class": {
+      "type": "String",
+      "default": "",
+      "value": "",
+      "description": "acceleration 设置为 true 时且处于滑动过程中，中间若干屏处于可见时的 class",
+      "description_zh": "acceleration 设置为 true 时且处于滑动过程中，中间若干屏处于可见时的 class",
+      "platform": "支付宝小程序"
+    },
+    "autoplay": {
+      "type": "Boolean",
+      "default": false,
+      "value": "",
+      "description": "是否自动切换",
+      "description_zh": "是否自动切换"
+    },
+    "current": {
+      "type": "Number",
+      "default": 0,
+      "value": "",
+      "description": "当前所在滑块的 index",
+      "description_zh": "当前所在滑块的 index"
+    },
+    "current-item-id": {
+      "type": "String",
+      "default": "",
+      "value": "",
+      "description": "当前所在滑块的 item-id ，不能与 current 被同时指定",
+      "description_zh": "当前所在滑块的 item-id ，不能与 current 被同时指定",
+      "platform": "支付宝小程序不支持"
+    },
+    "interval": {
+      "type": "Number",
+      "default": 5000,
+      "value": "",
+      "description": "自动切换时间间隔",
+      "description_zh": "自动切换时间间隔"
+    },
+    "duration": {
+      "type": "Number",
+      "default": 500,
+      "value": "",
+      "description": "滑动动画时长",
+      "description_zh": "滑动动画时长",
+      "platform": "app-nvue不支持"
+    },
+    "circular": {
+      "type": "Boolean",
+      "default": false,
+      "value": "",
+      "description": "是否采用衔接滑动，即播放到末尾后重新回到开头",
+      "description_zh": "是否采用衔接滑动，即播放到末尾后重新回到开头"
+    },
+    "vertical": {
+      "type": "Boolean",
+      "default": false,
+      "value": "",
+      "description": "滑动方向是否为纵向",
+      "description_zh": "滑动方向是否为纵向"
+    },
+    "previous-margin": {
+      "type": "String",
+      "default": "0px",
+      "value": "",
+      "description": "前边距，可用于露出前一项的一小部分，接受 px 和 rpx 值",
+      "description_zh": "前边距，可用于露出前一项的一小部分，接受 px 和 rpx 值",
+      "platform": "app-nvue、抖音小程序、飞书小程序不支持"
+    },
+    "next-margin": {
+      "type": "String",
+      "default": "0px",
+      "value": "",
+      "description": "后边距，可用于露出后一项的一小部分，接受 px 和 rpx 值",
+      "description_zh": "后边距，可用于露出后一项的一小部分，接受 px 和 rpx 值",
+      "platform": "app-nvue、抖音小程序、飞书小程序不支持"
+    },
+    "acceleration": {
+      "type": "Boolean",
+      "default": false,
+      "value": "",
+      "description": "当开启时，会根据滑动速度，连续滑动多屏",
+      "description_zh": "当开启时，会根据滑动速度，连续滑动多屏",
+      "platform": "支付宝小程序"
+    },
+    "disable-programmatic-animation": {
+      "type": "Boolean",
+      "default": false,
+      "value": "",
+      "description": "是否禁用代码变动触发 swiper 切换时使用动画。",
+      "description_zh": "是否禁用代码变动触发 swiper 切换时使用动画。",
+      "platform": "支付宝小程序"
+    },
+    "display-multiple-items": {
+      "type": "Number",
+      "default": 1,
+      "value": "",
+      "description": "同时显示的滑块数量",
+      "description_zh": "同时显示的滑块数量",
+      "platform": "app-nvue、支付宝小程序不支持"
+    },
+    "skip-hidden-item-layout": {
+      "type": "Boolean",
+      "default": false,
+      "value": "",
+      "description": "是否跳过未显示的滑块布局，设为 true 可优化复杂情况下的滑动性能，但会丢失隐藏状态滑块的布局信息",
+      "description_zh": "是否跳过未显示的滑块布局，设为 true 可优化复杂情况下的滑动性能，但会丢失隐藏状态滑块的布局信息",
+      "platform": "App、微信小程序、京东小程序"
+    },
+    "disable-touch": {
+      "type": "Boolean",
+      "default": false,
+      "value": "",
+      "description": "是否禁止用户 touch 操作",
+      "description_zh": "是否禁止用户 touch 操作",
+      "platform": "App 2.5.5+、H5 2.5.5+、支付宝小程序、抖音小程序与飞书小程序（只在初始化时有效，不能动态变更）"
+    },
+    "touchable": {
+      "type": "Boolean",
+      "default": true,
+      "value": "",
+      "description": "是否监听用户的触摸事件，只在初始化时有效，不能动态变更",
+      "description_zh": "是否监听用户的触摸事件，只在初始化时有效，不能动态变更",
+      "platform": "抖音小程序与飞书小程序（uni-app 2.5.5+ 推荐统一使用 disable-touch）"
+    },
+    "easing-function": {
+      "type": "default / linear / easeInCubic / easeOutCubic / easeInOutCubic",
+      "default": "default",
+      "value": "",
+      "description": "指定 swiper 切换缓动动画类型，有效值：default、linear、easeInCubic、easeOutCubic、easeInOutCubic",
+      "description_zh": "指定 swiper 切换缓动动画类型，有效值：default、linear、easeInCubic、easeOutCubic、easeInOutCubic",
+      "platform": "微信小程序、快手小程序、京东小程序"
+    }
+  },
+  "events": [
+    {
+      "name": "change",
+      "description": "current 改变时会触发 change 事件，event.detail = {current: current, source: source}",
+      "description_zh": "current 改变时会触发 change 事件，event.detail = {current: current, source: source}",
+      "params": "EventHandle"
+    },
+    {
+      "name": "transition",
+      "description": "swiper-item 的位置发生改变时会触发 transition 事件，event.detail = {dx: dx, dy: dy}，支付宝小程序暂不支持dx, dy",
+      "description_zh": "swiper-item 的位置发生改变时会触发 transition 事件，event.detail = {dx: dx, dy: dy}，支付宝小程序暂不支持dx, dy",
+      "params": "EventHandle",
+      "platform": "App、H5、微信小程序、支付宝小程序、抖音小程序、飞书小程序、QQ小程序、快手小程序"
+    },
+    {
+      "name": "animationfinish",
+      "description": "动画结束时会触发 animationfinish 事件，event.detail = {current: current, source: source}",
+      "description_zh": "动画结束时会触发 animationfinish 事件，event.detail = {current: current, source: source}",
+      "params": "EventHandle",
+      "platform": "抖音小程序与飞书小程序不支持"
+    }
+  ],
+  "link": "https://uniapp.dcloud.net.cn/component/swiper.html",
+  "link_zh": "https://uniapp.dcloud.net.cn/component/swiper.html"
+}

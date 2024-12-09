@@ -90,6 +90,10 @@ export function propsReducer(options: PropsOptions) {
             detail.push(`#### 🚀 version:    ***\`${value.version}\`***`)
         }
 
+        if (value.platform) {
+          detail.push(`#### 🚀 平台:   ***\`${value.platform}\`***`)
+        }
+
         if (value.description) {
           if (isZh)
             detail.push(`#### 🔦 说明:    ***\`${value.description_zh || value.description}\`***`)
@@ -198,7 +202,7 @@ export function propsReducer(options: PropsOptions) {
         })
         return item.events.map((events: any) => {
           const detail = []
-          const { name, description, params, description_zh } = events
+          const { name, description, params, description_zh, platform } = events
 
           detail.push(`## ${uiName} [${item.name}]`)
 
@@ -207,6 +211,10 @@ export function propsReducer(options: PropsOptions) {
               detail.push(`#### 🔦 说明:    ***\`${description_zh || description}\`***`)
             else
               detail.push(`#### 🔦 description:    ***\`${description}\`***`)
+          }
+
+          if (platform) {
+            detail.push(`#### 🚀 平台:    ***\`${platform}\`***`)
           }
 
           if (params)

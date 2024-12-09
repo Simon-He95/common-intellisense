@@ -989,6 +989,9 @@ function findDynamic(tag: string, prefix: string[], from?: string) {
   if (target && from && target.lib !== from) {
     target = null
   }
+  else if (UiCompletions[tag[0].toLocaleLowerCase() + tag.slice(1)]) {
+    target = UiCompletions[tag[0].toLocaleLowerCase() + tag.slice(1)]
+  }
   if (!target) {
     for (const p of prefix) {
       if (!p)
