@@ -11,17 +11,18 @@ export async function run() {
   const isReact = false
   const url = path.resolve(root, `${folder}/${name}`)
   const entry = await fg(['**/*.json'], { dot: true, cwd: url })
-  const imports = entry.map((_url: string) => `import ${_url.split('.')[0]} from './${_url}'`)
+  const imports = entry.map((_url: string) => `import ${toCamel(_url.split('.')[0])} from './${_url}'`)
   let prefix = 'uni'
   const map = entry.map((_url: string) => {
-    let tagName = `${_url.split('.')[0]}`
+    let tagName = `${toCamel(_url.split('.')[0])}`
+    const importName = tagName
     if (isHyphen) {
       tagName = hyphenate(tagName)
       // prefix = `'${tagName.split('-')[0]}'`
-      return `[${_url.split('.')[0]}, ${_url.split('.')[0]}.name, \`<${prefix ? prefix + '-' : ''}${tagName}></${prefix ? prefix + '-' : ''}${tagName}>\`],`
+      return `[${importName}, ${importName}.name, \`<${prefix ? prefix + '-' : ''}${tagName}></${prefix ? prefix + '-' : ''}${tagName}>\`],`
 
     }
-    return `[${_url.split('.')[0]}, ${_url.split('.')[0]}.name, \`<\${${tagName}.name}></\${${tagName}.name}\`],`
+    return `[${importName}, ${importName}.name, \`<\${${tagName}.name}></\${${tagName}.name}\`],`
   })
   const template
     = `import { componentsReducer, propsReducer } from '../../utils'
@@ -54,7 +55,7 @@ export function ${name}Components() {
 
 export function getPropsMap() {
   return [
-    ${entry.map((_url: string) => `${_url.split('.')[0]},`).join('\n    ')}
+    ${entry.map((_url: string) => `${toCamel(_url.split('.')[0])},`).join('\n    ')}
   ]
 }
 
@@ -69,4 +70,8 @@ run()
 
 function hyphenate(s: string): string {
   return s.replace(/([A-Z])/g, '-$1').toLowerCase().replace(/^-/, '')
+}
+
+export function toCamel(s: string) {
+  return s.replace(/-(\w)/g, (_, v) => v.toUpperCase())
 }
