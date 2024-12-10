@@ -498,7 +498,7 @@ export async function activate(context: vscode.ExtensionContext) {
     if (prefix.toLowerCase() === prefix ? optionsComponents.prefix.some((reg: string) => prefix.startsWith(reg) || reg.startsWith(prefix)) : true) {
       const parent = result.parent
       const data = optionsComponents.data.map((c: any) => c()).flat()
-      if (parent) {
+      if (parent && UiCompletions) {
         const parentTag = parent.tag || parent.name
         const suggestions = UiCompletions[toCamel(parentTag)[0].toUpperCase() + toCamel(parentTag).slice(1)]?.suggestions
         if (suggestions && suggestions.length) {
@@ -989,8 +989,8 @@ function findDynamic(tag: string, prefix: string[], from?: string) {
   if (target && from && target.lib !== from) {
     target = null
   }
-  else if (UiCompletions[tag[0].toLocaleLowerCase() + tag.slice(1)]) {
-    target = UiCompletions[tag[0].toLocaleLowerCase() + tag.slice(1)]
+  else if (UiCompletions[hyphenate(tag[0].toLocaleLowerCase() + tag.slice(1))]) {
+    target = UiCompletions[hyphenate(tag[0].toLocaleLowerCase() + tag.slice(1))]
   }
   if (!target) {
     for (const p of prefix) {

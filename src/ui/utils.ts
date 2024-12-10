@@ -336,7 +336,7 @@ export function propsReducer(options: PropsOptions) {
       documentation.supportHtml = true
       const details = []
 
-      details.push(`## ${uiName} [${item.name}]\`            \`[🔗 ${isZh ? '文档链接' : 'Documentation link'}](command:intellisense-local.openDocument?%7B%22link%22%3A%22${encodeURIComponent(isZh ? item.link_zh : item.link)}%22%7D)\`   \`[🔗 ${isZh ? '外部链接' : 'External document links'}](command:intellisense-local.openDocumentExternal?%7B%22link%22%3A%22${encodeURIComponent(isZh ? item.link_zh : item.link)}%22%7D)`)
+      details.push(`## ${uiName} [${item.name}]\`            \`[🔗 ${isZh ? '文档链接' : 'Documentation link'}](command:intellisense-local.openDocument?%7B%22link%22%3A%22${encodeURIComponent(isZh ? item.link_zh : item.link)}%22%7D)\`   \`[🔗 ${isZh ? '外部链接' : 'External document links'}](command:intellisense-local.openDocumentExternal?%7B%22link%22%3A%22${encodeURIComponent(isZh ? item.link_zh : item.link)}%22%7D) \`            \` [🌟 Star!](https://github.com/common-intellisense/common-intellisense) \`            \` [❤️ Sponsor!](https://github.com/Simon-He95/sponsor)`)
 
       if (item.props) {
         if (isZh)
@@ -353,7 +353,7 @@ export function propsReducer(options: PropsOptions) {
           ...Object.keys(item.props).map((name) => {
             const { default: defaultValue = '', type, description, description_zh } = item.props[name]
             let value = String(defaultValue).replace(/\s+/g, ' ').replace(/\|/g, ' \\| ').trim()
-            value = defaultValue.length > 20 ? '...' : value
+            value = (defaultValue || '').length > 20 ? '...' : value
             return `| \`${name}\` | \`${isZh ? description_zh : description}\` | \`${type}\` | \`${value}\` |`
           }),
         ].join('\n')
@@ -789,10 +789,10 @@ function findTargetMap(maps: any, label: string) {
   label = toCamel(`-${label}`)
   for (const map of maps) {
     if (typeof map[0] === 'object') {
-      if (map[0].name === label)
+      if (toCamel(`-${map[0].name}`) === label)
         return map[0]
     }
-    else if (map[0] === label) {
+    else if (toCamel(`-${map[0].name}`) === label) {
       return map
     }
   }

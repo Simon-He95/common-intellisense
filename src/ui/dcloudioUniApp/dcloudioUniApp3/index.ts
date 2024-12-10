@@ -14,7 +14,7 @@ export function dcloudioUniApp3Components() {
   return componentsReducer({
     map: getComponentsMap(),
     isSeperatorByHyphen: false,
-    prefix: 'uni',
+    prefix: '',
     isReact: false,
     lib: '@dcloudio/uni-app',
     // directives: directives.dcloudioUniApp3,
