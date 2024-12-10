@@ -1,5 +1,5 @@
-import * as vscode from 'vscode'
 import { createCompletionItem, createHover, createMarkdownString, getActiveTextEditorLanguageId, getConfiguration, getCurrentFileUrl, getLocale, setCommandParams } from '@vscode-use/utils'
+import * as vscode from 'vscode'
 import { escapeRegExp } from '../utils'
 
 interface PropsOptions {
@@ -752,17 +752,15 @@ export function getRequireProp(content: any, index = 0, isVue: boolean): [string
         const key = hash(_)
         tempMap[key] = _.replace(/,/g, '\,')
         return key
-      })
-        .split(/[|/]/)
-        .filter((item: string) => {
-          // 如果 item长度太长，可能有问题，所以也过滤掉
-          return !!item && item.length < 40
-        }).map((item: string) => item.replace(/['"]/g, '').trim()).map((item: string) => {
-          Object.keys(tempMap).forEach((i) => {
-            item = item.replace(i, tempMap[i])
-          })
-          return item
+      }).split(/[|/]/).filter((item: string) => {
+        // 如果 item长度太长，可能有问题，所以也过滤掉
+        return !!item && item.length < 40
+      }).map((item: string) => item.replace(/['"]/g, '').trim()).map((item: string) => {
+        Object.keys(tempMap).forEach((i) => {
+          item = item.replace(i, tempMap[i])
         })
+        return item
+      })
 
       if (item.default && types.includes(item.default)) {
         // 如果 item.default 并且在 type 中，将 types 的 default 值，放到

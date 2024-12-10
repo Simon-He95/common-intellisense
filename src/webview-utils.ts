@@ -135,8 +135,8 @@ export class CreateWebview {
             const styleUri = outerUriReg.test(style)
               ? style
               : webview.asWebviewUri(
-                vscode.Uri.joinPath(this._extensionUri, 'media', style),
-              )
+                  vscode.Uri.joinPath(this._extensionUri, 'media', style),
+                )
             return `<link href="${styleUri}" rel="stylesheet">`
           })
           .join('\n')
@@ -156,8 +156,8 @@ export class CreateWebview {
       const scriptUri = outerUriReg.test(script)
         ? script
         : webview.asWebviewUri(
-          vscode.Uri.joinPath(this._extensionUri, 'media', script),
-        )
+            vscode.Uri.joinPath(this._extensionUri, 'media', script),
+          )
       const _script = script.startsWith('<script')
         ? script
         : `<script src="${scriptUri}"></script>`

@@ -1,19 +1,19 @@
-import fsp from 'node:fs/promises'
-import * as vscode from 'vscode'
-import { parse } from '@vue/compiler-sfc'
-import type { SFCTemplateBlock } from '@vue/compiler-sfc'
-import { parse as tsParser } from '@typescript-eslint/typescript-estree'
-import { findUp } from 'find-up'
-import { createRange, getActiveText, getActiveTextEditor, getActiveTextEditorLanguageId, getConfiguration, getCurrentFileUrl, getLocale, getOffsetFromPosition, getPosition, isInPosition, registerCodeLensProvider, watchFiles } from '@vscode-use/utils'
-import { traverse } from '@babel/types'
 import type { VineCompilerHooks, VineDiagnostic, VineFileCtx } from '@vue-vine/compiler'
+import type { SFCTemplateBlock } from '@vue/compiler-sfc'
+import fsp from 'node:fs/promises'
+import { traverse } from '@babel/types'
+import { parse as tsParser } from '@typescript-eslint/typescript-estree'
+import { createRange, getActiveText, getActiveTextEditor, getActiveTextEditorLanguageId, getConfiguration, getCurrentFileUrl, getLocale, getOffsetFromPosition, getPosition, isInPosition, registerCodeLensProvider, watchFiles } from '@vscode-use/utils'
 import {
   compileVineTypeScriptFile,
   createCompilerCtx,
 } from '@vue-vine/compiler'
+import { parse } from '@vue/compiler-sfc'
+import { findUp } from 'find-up'
+import * as vscode from 'vscode'
+import { findDynamicComponent, findUI, optionsComponents, urlCache } from '.'
 import { UINames } from './constants'
 import { isVine, isVue, toCamel } from './ui/utils'
-import { findDynamicComponent, findUI, optionsComponents, urlCache } from '.'
 
 const { parse: svelteParser } = require('svelte/compiler')
 
