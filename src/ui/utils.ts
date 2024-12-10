@@ -101,8 +101,11 @@ export function propsReducer(options: PropsOptions) {
             detail.push(`#### 🔦 description:    ***\`${value.description}\`***`)
         }
 
-        if (value.type)
+        if (value.type) {
+          if (Array.isArray(value.type))
+            value.type = value.type.join(' / ')
           detail.push(`#### 💡 ${isZh ? '类型' : 'type'}:    ***\`${value.type.replace(/`/g, '')}\`***`)
+        }
         documentation.appendMarkdown(detail.join('\n\n'))
 
         if (item.typeDetail && Object.keys(item.typeDetail).length) {
