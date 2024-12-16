@@ -47,7 +47,177 @@
     }
   ],
   "props": {
-    "model-value": {
+    "dark": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "",
+      "required": false,
+      "extends": "dark"
+    },
+    "flat": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "",
+      "required": false,
+      "extends": "flat"
+    },
+    "bordered": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "",
+      "required": false,
+      "extends": "bordered"
+    },
+    "vertical": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Default transitions and swipe actions will be on the vertical axis",
+      "description_zh": "默认过渡和滑动操作将位于纵轴上",
+      "default": "false",
+      "required": false
+    },
+    "alternative-labels": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Use alternative labels - stacks the icon on top of the label (applies only to horizontal stepper)",
+      "description_zh": "Use alternative labels - 将图标堆叠在标签顶部（仅适用于水平步进器）",
+      "default": "false",
+      "required": false
+    },
+    "header-nav": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Allow navigation through the header",
+      "description_zh": "允许通过标题导航",
+      "default": "false",
+      "required": false
+    },
+    "contracted": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Hide header labels on narrow windows",
+      "description_zh": "在窄窗口中隐藏标题标签",
+      "default": "false",
+      "required": false
+    },
+    "inactive-icon": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "",
+      "required": false,
+      "extends": "icon",
+      "category": "header"
+    },
+    "inactive-color": {
+      "type": "String | Array",
+      "description": "Color name for component from the Quasar Color Palette",
+      "value": "",
+      "default": "primary",
+      "extends": "color",
+      "desc": "Color name for bottom-side background from the Quasar Color Palette",
+      "category": "header",
+      "addedIn": "v2.4",
+      "__runtimeDefault": true,
+      "examples": [
+        "[ 'accent', 'grey-7' ]"
+      ],
+      "description_zh": "Quasar Color Palette （类星体调色板） 中组件的颜色名称"
+    },
+    "done-icon": {
+      "value": "",
+      "type": "String",
+      "description": "Icon name following Quasar convention; If 'none' (String) is used as value, then it will defer to prefix or the regular icon for this state; Make sure you have the icon library installed unless you are using 'img:' prefix",
+      "description_zh": "图标名称遵循 Quasar 约定;如果 'none' （String） 用作值，则它将遵循此状态的 prefix 或常规图标;确保已安装图标库，除非使用 'img：' 前缀",
+      "default": "",
+      "required": false,
+      "extends": "icon",
+      "desc": "Icon name following Quasar convention; If 'none' (String) is used as value, then it will defer to prefix or the regular icon for this state; Make sure you have the icon library installed unless you are using 'img:' prefix",
+      "category": "header"
+    },
+    "done-color": {
+      "type": "String | Array",
+      "description": "Color name for component from the Quasar Color Palette",
+      "value": "",
+      "default": "primary",
+      "extends": "color",
+      "desc": "Color name for bottom-side background from the Quasar Color Palette",
+      "category": "header",
+      "addedIn": "v2.4",
+      "__runtimeDefault": true,
+      "examples": [
+        "[ 'accent', 'grey-7' ]"
+      ],
+      "description_zh": "Quasar Color Palette （类星体调色板） 中组件的颜色名称"
+    },
+    "active-icon": {
+      "value": "",
+      "type": "String",
+      "description": "Icon name following Quasar convention; If 'none' (String) is used as value, then it will defer to prefix or the regular icon for this state; Make sure you have the icon library installed unless you are using 'img:' prefix",
+      "description_zh": "图标名称遵循 Quasar 约定;如果 'none' （String） 用作值，则它将遵循此状态的 prefix 或常规图标;确保已安装图标库，除非使用 'img：' 前缀",
+      "default": "",
+      "required": false,
+      "extends": "icon",
+      "desc": "Icon name following Quasar convention; If 'none' (String) is used as value, then it will defer to prefix or the regular icon for this state; Make sure you have the icon library installed unless you are using 'img:' prefix",
+      "category": "header"
+    },
+    "active-color": {
+      "type": "String | Array",
+      "description": "Color name for component from the Quasar Color Palette",
+      "value": "",
+      "default": "primary",
+      "extends": "color",
+      "desc": "Color name for bottom-side background from the Quasar Color Palette",
+      "category": "header",
+      "addedIn": "v2.4",
+      "__runtimeDefault": true,
+      "examples": [
+        "[ 'accent', 'grey-7' ]"
+      ],
+      "description_zh": "Quasar Color Palette （类星体调色板） 中组件的颜色名称"
+    },
+    "error-icon": {
+      "value": "",
+      "type": "String",
+      "description": "Icon name following Quasar convention; If 'none' (String) is used as value, then it will defer to prefix or the regular icon for this state; Make sure you have the icon library installed unless you are using 'img:' prefix",
+      "description_zh": "图标名称遵循 Quasar 约定;如果 'none' （String） 用作值，则它将遵循此状态的 prefix 或常规图标;确保已安装图标库，除非使用 'img：' 前缀",
+      "default": "",
+      "required": false,
+      "extends": "icon",
+      "desc": "Icon name following Quasar convention; If 'none' (String) is used as value, then it will defer to prefix or the regular icon for this state; Make sure you have the icon library installed unless you are using 'img:' prefix",
+      "category": "header"
+    },
+    "error-color": {
+      "type": "String | Array",
+      "description": "Color name for component from the Quasar Color Palette",
+      "value": "",
+      "default": "primary",
+      "extends": "color",
+      "desc": "Color name for bottom-side background from the Quasar Color Palette",
+      "category": "header",
+      "addedIn": "v2.4",
+      "__runtimeDefault": true,
+      "examples": [
+        "[ 'accent', 'grey-7' ]"
+      ],
+      "description_zh": "Quasar Color Palette （类星体调色板） 中组件的颜色名称"
+    },
+    "header-class": {
+      "value": "",
+      "type": "String",
+      "description": "Class definitions to be attributed to the header",
+      "description_zh": "要归属于标头的类定义",
+      "default": "",
+      "required": false
+    },
+    "v-model": {
       "value": "",
       "type": "Any",
       "description": "Model of the component defining the current panel's name; If a Number is used, it does not define the panel's index, but rather the panel's name which can also be an Integer; Either use this property (along with a listener for 'update:model-value' event) OR use the v-model directive.",
@@ -111,19 +281,11 @@
       "default": "false",
       "required": false
     },
-    "vertical": {
-      "value": "",
-      "type": "Boolean",
-      "description": "Put Stepper in vertical mode (instead of horizontal by default)",
-      "description_zh": "将 Stepper 置于垂直模式（而不是默认为水平模式）",
-      "default": "false",
-      "required": false
-    },
     "transition-prev": {
       "value": "",
       "type": "String",
-      "description": "",
-      "description_zh": "",
+      "description": "One of Quasar's embedded transitions (has effect only if 'animated' prop is set)",
+      "description_zh": "Quasar 的嵌入式过渡之一（仅在设置了 'animated' prop 时有效）",
       "default": "# slide-right/slide-down",
       "required": false,
       "extends": "transition",
@@ -134,8 +296,8 @@
     "transition-next": {
       "value": "",
       "type": "String",
-      "description": "",
-      "description_zh": "",
+      "description": "One of Quasar's embedded transitions (has effect only if 'animated' prop is set)",
+      "description_zh": "Quasar 的嵌入式过渡之一（仅在设置了 'animated' prop 时有效）",
       "default": "# slide-left/slide-up",
       "required": false,
       "extends": "transition",
@@ -150,168 +312,6 @@
       "description_zh": "过渡持续时间（以毫秒为单位，不含单位）",
       "default": "300",
       "version": "v2.2",
-      "required": false
-    },
-    "dark": {
-      "value": "",
-      "type": "String",
-      "description": "",
-      "description_zh": "",
-      "default": "",
-      "required": false,
-      "extends": "dark"
-    },
-    "flat": {
-      "value": "",
-      "type": "String",
-      "description": "",
-      "description_zh": "",
-      "default": "",
-      "required": false,
-      "extends": "flat"
-    },
-    "bordered": {
-      "value": "",
-      "type": "String",
-      "description": "",
-      "description_zh": "",
-      "default": "",
-      "required": false,
-      "extends": "bordered"
-    },
-    "alternative-labels": {
-      "value": "",
-      "type": "Boolean",
-      "description": "Use alternative labels - stacks the icon on top of the label (applies only to horizontal stepper)",
-      "description_zh": "Use alternative labels - 将图标堆叠在标签顶部（仅适用于水平步进器）",
-      "default": "false",
-      "required": false
-    },
-    "header-nav": {
-      "value": "",
-      "type": "Boolean",
-      "description": "Allow navigation through the header",
-      "description_zh": "允许通过标题导航",
-      "default": "false",
-      "required": false
-    },
-    "contracted": {
-      "value": "",
-      "type": "Boolean",
-      "description": "Hide header labels on narrow windows",
-      "description_zh": "在窄窗口中隐藏标题标签",
-      "default": "false",
-      "required": false
-    },
-    "inactive-icon": {
-      "value": "",
-      "type": "String",
-      "description": "",
-      "description_zh": "",
-      "default": "",
-      "required": false,
-      "extends": "icon",
-      "category": "header"
-    },
-    "inactive-color": {
-      "type": "String | Array",
-      "description": "Color name for component from the Quasar Color Palette",
-      "value": "",
-      "default": "'primary'",
-      "extends": "color",
-      "desc": "Color name for the selection bar (can be 'transparent' too) from the Quasar Color Palette",
-      "category": "header",
-      "__runtimeDefault": true,
-      "examples": [
-        "[ 'accent', 'grey-7' ]"
-      ],
-      "addedIn": "v2.4",
-      "description_zh": "Quasar Color Palette （类星体调色板） 中组件的颜色名称"
-    },
-    "done-icon": {
-      "value": "",
-      "type": "String",
-      "description": "",
-      "description_zh": "",
-      "default": "",
-      "required": false,
-      "extends": "icon",
-      "desc": "Icon name following Quasar convention; If 'none' (String) is used as value, then it will defer to prefix or the regular icon for this state; Make sure you have the icon library installed unless you are using 'img:' prefix",
-      "category": "header"
-    },
-    "done-color": {
-      "type": "String | Array",
-      "description": "Color name for component from the Quasar Color Palette",
-      "value": "",
-      "default": "'primary'",
-      "extends": "color",
-      "desc": "Color name for the selection bar (can be 'transparent' too) from the Quasar Color Palette",
-      "category": "header",
-      "__runtimeDefault": true,
-      "examples": [
-        "[ 'accent', 'grey-7' ]"
-      ],
-      "addedIn": "v2.4",
-      "description_zh": "Quasar Color Palette （类星体调色板） 中组件的颜色名称"
-    },
-    "active-icon": {
-      "value": "",
-      "type": "String",
-      "description": "",
-      "description_zh": "",
-      "default": "",
-      "required": false,
-      "extends": "icon",
-      "desc": "Icon name following Quasar convention; If 'none' (String) is used as value, then it will defer to prefix or the regular icon for this state; Make sure you have the icon library installed unless you are using 'img:' prefix",
-      "category": "header"
-    },
-    "active-color": {
-      "type": "String | Array",
-      "description": "Color name for component from the Quasar Color Palette",
-      "value": "",
-      "default": "'primary'",
-      "extends": "color",
-      "desc": "Color name for the selection bar (can be 'transparent' too) from the Quasar Color Palette",
-      "category": "header",
-      "__runtimeDefault": true,
-      "examples": [
-        "[ 'accent', 'grey-7' ]"
-      ],
-      "addedIn": "v2.4",
-      "description_zh": "Quasar Color Palette （类星体调色板） 中组件的颜色名称"
-    },
-    "error-icon": {
-      "value": "",
-      "type": "String",
-      "description": "",
-      "description_zh": "",
-      "default": "",
-      "required": false,
-      "extends": "icon",
-      "desc": "Icon name following Quasar convention; If 'none' (String) is used as value, then it will defer to prefix or the regular icon for this state; Make sure you have the icon library installed unless you are using 'img:' prefix",
-      "category": "header"
-    },
-    "error-color": {
-      "type": "String | Array",
-      "description": "Color name for component from the Quasar Color Palette",
-      "value": "",
-      "default": "'primary'",
-      "extends": "color",
-      "desc": "Color name for the selection bar (can be 'transparent' too) from the Quasar Color Palette",
-      "category": "header",
-      "__runtimeDefault": true,
-      "examples": [
-        "[ 'accent', 'grey-7' ]"
-      ],
-      "addedIn": "v2.4",
-      "description_zh": "Quasar Color Palette （类星体调色板） 中组件的颜色名称"
-    },
-    "header-class": {
-      "value": "",
-      "type": "String",
-      "description": "Class definitions to be attributed to the header",
-      "description_zh": "要归属于标头的类定义",
-      "default": "",
       "required": false
     }
   },

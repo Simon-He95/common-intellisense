@@ -11,6 +11,36 @@
     }
   ],
   "props": {
+    "label": {
+      "value": "",
+      "type": "String",
+      "description": "The label text for the breadcrumb",
+      "description_zh": "痕迹导航的标签文本",
+      "default": "",
+      "required": false
+    },
+    "icon": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "",
+      "required": false,
+      "extends": "icon"
+    },
+    "tag": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "span",
+      "required": false,
+      "extends": "tag",
+      "examples": [
+        "div",
+        "span"
+      ]
+    },
     "to": {
       "value": "",
       "type": "String | Object",
@@ -40,7 +70,7 @@
       "type": "String",
       "description": "Equivalent to Vue Router <router-link> 'active-class' property; Superseded by 'href' prop if used",
       "description_zh": "等同于 Vue Router <router-link> 的 'active-class' 属性;如果使用，则被 'href' prop 取代",
-      "default": "'q-router-link--active'",
+      "default": "q-router-link--active",
       "required": false
     },
     "exact-active-class": {
@@ -48,7 +78,7 @@
       "type": "String",
       "description": "Equivalent to Vue Router <router-link> 'active-class' property; Superseded by 'href' prop if used",
       "description_zh": "等同于 Vue Router <router-link> 的 'active-class' 属性;如果使用，则被 'href' prop 取代",
-      "default": "'q-router-link--exact-active'",
+      "default": "q-router-link--exact-active",
       "required": false
     },
     "href": {
@@ -77,36 +107,6 @@
       "default": "",
       "required": false,
       "extends": "disable"
-    },
-    "label": {
-      "value": "",
-      "type": "String",
-      "description": "The label text for the breadcrumb",
-      "description_zh": "痕迹导航的标签文本",
-      "default": "",
-      "required": false
-    },
-    "icon": {
-      "value": "",
-      "type": "String",
-      "description": "",
-      "description_zh": "",
-      "default": "",
-      "required": false,
-      "extends": "icon"
-    },
-    "tag": {
-      "value": "",
-      "type": "String",
-      "description": "",
-      "description_zh": "",
-      "default": "'span'",
-      "required": false,
-      "extends": "tag",
-      "examples": [
-        "'div'",
-        "'span'"
-      ]
     }
   },
   "link": "https://v2.quasar.dev/vue-components/breadcrumbs",

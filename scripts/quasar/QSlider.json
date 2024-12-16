@@ -6,6 +6,30 @@
     "docsUrl": "https://v2.quasar.dev/vue-components/slider"
   },
   "props": {
+    "model-value": {
+      "extends": "model-value",
+      "type": [
+        "Number",
+        "null",
+        "undefined"
+      ],
+      "desc": "Model of the component (must be between min/max); Either use this property (along with a listener for 'update:modelValue' event) OR use v-model directive",
+      "default": "null",
+      "examples": [
+        "# v-model=\"positionModel\""
+      ]
+    },
+    "label-value": {
+      "type": [
+        "String",
+        "Number"
+      ],
+      "desc": "Override default label value",
+      "examples": [
+        "# :label-value=\"model + 'px'\""
+      ],
+      "category": "content"
+    },
     "min": {
       "type": "Number",
       "desc": "Minimum value of the model; Set track's minimum value",
@@ -295,33 +319,20 @@
     },
     "tabindex": {
       "extends": "tabindex"
-    },
-    "model-value": {
-      "extends": "model-value",
-      "type": [
-        "Number",
-        "null",
-        "undefined"
-      ],
-      "desc": "Model of the component (must be between min/max); Either use this property (along with a listener for 'update:modelValue' event) OR use v-model directive",
-      "default": "null",
-      "examples": [
-        "# v-model=\"positionModel\""
-      ]
-    },
-    "label-value": {
-      "type": [
-        "String",
-        "Number"
-      ],
-      "desc": "Override default label value",
-      "examples": [
-        "# :label-value=\"model + 'px'\""
-      ],
-      "category": "content"
     }
   },
   "events": {
+    "update:model-value": {
+      "extends": "update:model-value",
+      "params": {
+        "value": {
+          "type": [
+            "Number",
+            "null"
+          ]
+        }
+      }
+    },
     "change": {
       "extends": "update:model-value",
       "desc": "Emitted on lazy model value change (after user slides then releases the thumb)"
@@ -335,17 +346,6 @@
           "values": [
             "'start'",
             "'end'"
-          ]
-        }
-      }
-    },
-    "update:model-value": {
-      "extends": "update:model-value",
-      "params": {
-        "value": {
-          "type": [
-            "Number",
-            "null"
           ]
         }
       }

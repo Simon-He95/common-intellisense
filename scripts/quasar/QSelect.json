@@ -6,242 +6,6 @@
     "docsUrl": "https://v2.quasar.dev/vue-components/select"
   },
   "props": {
-    "name": {
-      "type": "String",
-      "desc": "Used to specify the name of the control; Useful if dealing with forms; If not specified, it takes the value of 'for' prop, if it exists",
-      "examples": [
-        "'car_id'"
-      ],
-      "category": "behavior"
-    },
-    "virtual-scroll-horizontal": {
-      "type": "Boolean",
-      "desc": "Make virtual list work in horizontal mode",
-      "category": "behavior"
-    },
-    "virtual-scroll-slice-size": {
-      "type": [
-        "Number",
-        "String",
-        "null"
-      ],
-      "desc": "Minimum number of items to render in the virtual list",
-      "default": "10",
-      "examples": [
-        "60",
-        "'60'"
-      ],
-      "category": "virtual-scroll"
-    },
-    "virtual-scroll-slice-ratio-before": {
-      "type": [
-        "Number",
-        "String"
-      ],
-      "desc": "Ratio of number of items in visible zone to render before it",
-      "default": "1",
-      "category": "virtual-scroll"
-    },
-    "virtual-scroll-slice-ratio-after": {
-      "type": [
-        "Number",
-        "String"
-      ],
-      "desc": "Ratio of number of items in visible zone to render after it",
-      "default": "1",
-      "category": "virtual-scroll"
-    },
-    "virtual-scroll-item-size": {
-      "type": [
-        "Number",
-        "String"
-      ],
-      "desc": "Default size in pixels (height if vertical, width if horizontal) of an item; This value is used for rendering the initial list; Try to use a value close to the minimum size of an item",
-      "default": "24",
-      "category": "virtual-scroll",
-      "__runtimeDefault": true
-    },
-    "virtual-scroll-sticky-size-start": {
-      "type": [
-        "Number",
-        "String"
-      ],
-      "desc": "Size in pixels (height if vertical, width if horizontal) of the sticky part (if using one) at the start of the list; A correct value will improve scroll precision",
-      "default": "0",
-      "category": "virtual-scroll"
-    },
-    "virtual-scroll-sticky-size-end": {
-      "type": [
-        "Number",
-        "String"
-      ],
-      "desc": "Size in pixels (height if vertical, width if horizontal) of the sticky part (if using one) at the end of the list; A correct value will improve scroll precision",
-      "default": "0",
-      "category": "virtual-scroll"
-    },
-    "table-colspan": {
-      "type": [
-        "Number",
-        "String"
-      ],
-      "desc": "The number of columns in the table (you need this if you use table-layout: fixed)",
-      "category": "virtual-scroll|content"
-    },
-    "label": {
-      "type": "String",
-      "desc": "A text label that will “float” up above the input field, once the field gets focus",
-      "examples": [
-        "'Username'"
-      ],
-      "category": "content"
-    },
-    "stack-label": {
-      "type": "Boolean",
-      "desc": "Label will be always shown above the field regardless of field content (if any)",
-      "category": "content"
-    },
-    "hint": {
-      "type": "String",
-      "desc": "Helper (hint) text which gets placed below your wrapped form component",
-      "examples": [
-        "'Fill in between 3 and 12 characters'"
-      ],
-      "category": "content"
-    },
-    "hide-hint": {
-      "type": "Boolean",
-      "desc": "Hide the helper (hint) text when field doesn't have focus",
-      "category": "content"
-    },
-    "prefix": {
-      "type": "String",
-      "desc": "Prefix",
-      "examples": [
-        "'$'"
-      ],
-      "category": "content"
-    },
-    "suffix": {
-      "type": "String",
-      "desc": "Suffix",
-      "examples": [
-        "'@gmail.com'"
-      ],
-      "category": "content"
-    },
-    "label-color": {
-      "extends": "color",
-      "desc": "Color name for the label from the Quasar Color Palette; Overrides the 'color' prop; The difference from 'color' prop is that the label will always have this color, even when field is not focused"
-    },
-    "color": {
-      "extends": "color"
-    },
-    "bg-color": {
-      "extends": "color"
-    },
-    "dark": {
-      "extends": "dark"
-    },
-    "loading": {
-      "type": "Boolean",
-      "desc": "Signals the user a process is in progress by displaying a spinner; Spinner can be customized by using the 'loading' slot.",
-      "category": "behavior|content"
-    },
-    "clearable": {
-      "type": "Boolean",
-      "desc": "Appends clearable icon when a value (not undefined or null) is set; When clicked, model becomes null",
-      "category": "behavior|content"
-    },
-    "clear-icon": {
-      "type": "String",
-      "desc": "Custom icon to use for the clear button when using along with 'clearable' prop",
-      "examples": [
-        "'close'"
-      ],
-      "category": "content"
-    },
-    "filled": {
-      "type": "Boolean",
-      "desc": "Use 'filled' design for the field",
-      "category": "style"
-    },
-    "outlined": {
-      "type": "Boolean",
-      "desc": "Use 'outlined' design for the field",
-      "category": "style"
-    },
-    "borderless": {
-      "type": "Boolean",
-      "desc": "Use 'borderless' design for the field",
-      "category": "style"
-    },
-    "standout": {
-      "type": [
-        "Boolean",
-        "String"
-      ],
-      "desc": "Use 'standout' design for the field; Specifies classes to be applied when focused (overriding default ones)",
-      "examples": [
-        "true",
-        "'bg-primary text-white'"
-      ],
-      "category": "style"
-    },
-    "label-slot": {
-      "type": "Boolean",
-      "desc": "Enables label slot; You need to set it to force use of the 'label' slot if the 'label' prop is not set",
-      "category": "content"
-    },
-    "bottom-slots": {
-      "type": "Boolean",
-      "desc": "Enables bottom slots ('error', 'hint', 'counter')",
-      "category": "content"
-    },
-    "hide-bottom-space": {
-      "type": "Boolean",
-      "desc": "Do not reserve space for hint/error/counter anymore when these are not used; As a result, it also disables the animation for those; It also allows the hint/error area to stretch vertically based on its content",
-      "category": "style"
-    },
-    "counter": {
-      "type": "Boolean",
-      "desc": "Show an automatic counter on bottom right",
-      "category": "content"
-    },
-    "rounded": {
-      "extends": "rounded"
-    },
-    "square": {
-      "type": "Boolean",
-      "desc": "Remove border-radius so borders are squared; Overrides 'rounded' prop",
-      "category": "style"
-    },
-    "dense": {
-      "extends": "dense"
-    },
-    "item-aligned": {
-      "type": "Boolean",
-      "desc": "Match inner content alignment to that of QItem",
-      "category": "style"
-    },
-    "disable": {
-      "extends": "disable"
-    },
-    "readonly": {
-      "extends": "readonly"
-    },
-    "autofocus": {
-      "type": "Boolean",
-      "desc": "Focus field on initial component render",
-      "category": "behavior"
-    },
-    "for": {
-      "type": "String",
-      "desc": "Used to specify the 'id' of the control and also the 'for' attribute of the label that wraps it; If no 'name' prop is specified, then it is used for this attribute as well",
-      "examples": [
-        "'myFieldsId'"
-      ],
-      "category": "behavior"
-    },
     "model-value": {
       "extends": "model-value",
       "type": "Any",
@@ -656,41 +420,250 @@
       ],
       "default": "'default'",
       "category": "behavior"
+    },
+    "name": {
+      "desc": "Used to specify the name of the control; Useful if dealing with forms submitted directly to a URL",
+      "type": "String",
+      "examples": [
+        "'car_id'"
+      ],
+      "category": "behavior"
+    },
+    "virtual-scroll-item-size": {
+      "__runtimeDefault": true,
+      "type": [
+        "Number",
+        "String"
+      ],
+      "desc": "Default size in pixels (height if vertical, width if horizontal) of an item; This value is used for rendering the initial list; Try to use a value close to the minimum size of an item",
+      "default": "24",
+      "category": "virtual-scroll"
+    },
+    "virtual-scroll-horizontal": {
+      "type": "Boolean",
+      "desc": "Make virtual list work in horizontal mode",
+      "category": "behavior"
+    },
+    "virtual-scroll-slice-size": {
+      "type": [
+        "Number",
+        "String",
+        "null"
+      ],
+      "desc": "Minimum number of items to render in the virtual list",
+      "default": "10",
+      "examples": [
+        "60",
+        "'60'"
+      ],
+      "category": "virtual-scroll"
+    },
+    "virtual-scroll-slice-ratio-before": {
+      "type": [
+        "Number",
+        "String"
+      ],
+      "desc": "Ratio of number of items in visible zone to render before it",
+      "default": "1",
+      "category": "virtual-scroll"
+    },
+    "virtual-scroll-slice-ratio-after": {
+      "type": [
+        "Number",
+        "String"
+      ],
+      "desc": "Ratio of number of items in visible zone to render after it",
+      "default": "1",
+      "category": "virtual-scroll"
+    },
+    "virtual-scroll-sticky-size-start": {
+      "type": [
+        "Number",
+        "String"
+      ],
+      "desc": "Size in pixels (height if vertical, width if horizontal) of the sticky part (if using one) at the start of the list; A correct value will improve scroll precision",
+      "default": "0",
+      "category": "virtual-scroll"
+    },
+    "virtual-scroll-sticky-size-end": {
+      "type": [
+        "Number",
+        "String"
+      ],
+      "desc": "Size in pixels (height if vertical, width if horizontal) of the sticky part (if using one) at the end of the list; A correct value will improve scroll precision",
+      "default": "0",
+      "category": "virtual-scroll"
+    },
+    "table-colspan": {
+      "type": [
+        "Number",
+        "String"
+      ],
+      "desc": "The number of columns in the table (you need this if you use table-layout: fixed)",
+      "category": "virtual-scroll|content"
+    },
+    "label": {
+      "type": "String",
+      "desc": "A text label that will “float” up above the input field, once the field gets focus",
+      "examples": [
+        "'Username'"
+      ],
+      "category": "content"
+    },
+    "stack-label": {
+      "type": "Boolean",
+      "desc": "Label will be always shown above the field regardless of field content (if any)",
+      "category": "content"
+    },
+    "hint": {
+      "type": "String",
+      "desc": "Helper (hint) text which gets placed below your wrapped form component",
+      "examples": [
+        "'Fill in between 3 and 12 characters'"
+      ],
+      "category": "content"
+    },
+    "hide-hint": {
+      "type": "Boolean",
+      "desc": "Hide the helper (hint) text when field doesn't have focus",
+      "category": "content"
+    },
+    "prefix": {
+      "type": "String",
+      "desc": "Prefix",
+      "examples": [
+        "'$'"
+      ],
+      "category": "content"
+    },
+    "suffix": {
+      "type": "String",
+      "desc": "Suffix",
+      "examples": [
+        "'@gmail.com'"
+      ],
+      "category": "content"
+    },
+    "label-color": {
+      "extends": "color",
+      "desc": "Color name for the label from the Quasar Color Palette; Overrides the 'color' prop; The difference from 'color' prop is that the label will always have this color, even when field is not focused"
+    },
+    "color": {
+      "extends": "color"
+    },
+    "bg-color": {
+      "extends": "color"
+    },
+    "dark": {
+      "extends": "dark"
+    },
+    "loading": {
+      "type": "Boolean",
+      "desc": "Signals the user a process is in progress by displaying a spinner; Spinner can be customized by using the 'loading' slot.",
+      "category": "behavior|content"
+    },
+    "clearable": {
+      "type": "Boolean",
+      "desc": "Appends clearable icon when a value (not undefined or null) is set; When clicked, model becomes null",
+      "category": "behavior|content"
+    },
+    "clear-icon": {
+      "type": "String",
+      "desc": "Custom icon to use for the clear button when using along with 'clearable' prop",
+      "examples": [
+        "'close'"
+      ],
+      "category": "content"
+    },
+    "filled": {
+      "type": "Boolean",
+      "desc": "Use 'filled' design for the field",
+      "category": "style"
+    },
+    "outlined": {
+      "type": "Boolean",
+      "desc": "Use 'outlined' design for the field",
+      "category": "style"
+    },
+    "borderless": {
+      "type": "Boolean",
+      "desc": "Use 'borderless' design for the field",
+      "category": "style"
+    },
+    "standout": {
+      "type": [
+        "Boolean",
+        "String"
+      ],
+      "desc": "Use 'standout' design for the field; Specifies classes to be applied when focused (overriding default ones)",
+      "examples": [
+        "true",
+        "'bg-primary text-white'"
+      ],
+      "category": "style"
+    },
+    "label-slot": {
+      "type": "Boolean",
+      "desc": "Enables label slot; You need to set it to force use of the 'label' slot if the 'label' prop is not set",
+      "category": "content"
+    },
+    "bottom-slots": {
+      "type": "Boolean",
+      "desc": "Enables bottom slots ('error', 'hint', 'counter')",
+      "category": "content"
+    },
+    "hide-bottom-space": {
+      "type": "Boolean",
+      "desc": "Do not reserve space for hint/error/counter anymore when these are not used; As a result, it also disables the animation for those; It also allows the hint/error area to stretch vertically based on its content",
+      "category": "style"
+    },
+    "counter": {
+      "type": "Boolean",
+      "desc": "Show an automatic counter on bottom right",
+      "category": "content"
+    },
+    "rounded": {
+      "extends": "rounded"
+    },
+    "square": {
+      "type": "Boolean",
+      "desc": "Remove border-radius so borders are squared; Overrides 'rounded' prop",
+      "category": "style"
+    },
+    "dense": {
+      "extends": "dense"
+    },
+    "item-aligned": {
+      "type": "Boolean",
+      "desc": "Match inner content alignment to that of QItem",
+      "category": "style"
+    },
+    "disable": {
+      "extends": "disable"
+    },
+    "readonly": {
+      "extends": "readonly"
+    },
+    "autofocus": {
+      "type": "Boolean",
+      "desc": "Focus field on initial component render",
+      "category": "behavior"
+    },
+    "for": {
+      "type": "String",
+      "desc": "Used to specify the 'id' of the control and also the 'for' attribute of the label that wraps it; If no 'name' prop is specified, then it is used for this attribute as well",
+      "examples": [
+        "'myFieldsId'"
+      ],
+      "category": "behavior"
     }
   },
   "slots": {
-    "default": {
-      "desc": "Field main content"
-    },
-    "prepend": {
-      "desc": "Prepend inner field; Suggestions: QIcon, QBtn"
-    },
-    "append": {
-      "desc": "Append to inner field; Suggestions: QIcon, QBtn"
-    },
-    "before": {
-      "desc": "Prepend outer field; Suggestions: QIcon, QBtn"
-    },
-    "after": {
-      "desc": "Append outer field; Suggestions: QIcon, QBtn"
-    },
-    "label": {
-      "desc": "Slot for label; Used only if 'label-slot' prop is set or the 'label' prop is set; When it is used the text in the 'label' prop is ignored"
-    },
-    "error": {
-      "desc": "Slot for errors; Enabled only if 'bottom-slots' prop is used; Suggestion: <div>"
-    },
-    "hint": {
-      "desc": "Slot for hint text; Enabled only if 'bottom-slots' prop is used; Suggestion: <div>"
-    },
-    "counter": {
-      "desc": "Slot for counter text; Enabled only if 'bottom-slots' prop is used; Suggestion: <div>"
-    },
-    "loading": {
-      "desc": "Override default spinner when component is in loading mode; Suggestion: spinners"
-    },
     "selected": {
       "desc": "Override default selection slot; Suggestion: QChip"
+    },
+    "loading": {
+      "desc": "Override default spinner when component is in loading mode; Use in conjunction with 'loading' prop"
     },
     "before-options": {
       "desc": "Template slot for the elements that should be rendered before the list of options"
@@ -724,6 +697,10 @@
         "selected": {
           "type": "Boolean",
           "desc": "Always true -- passed down as prop to QItem (when using QItem)"
+        },
+        "html": {
+          "type": "Boolean",
+          "desc": "Is the content HTML?"
         },
         "removeAtIndex": {
           "type": "Function",
@@ -770,6 +747,14 @@
           "type": "Any",
           "desc": "Option -- its value is taken from 'options' prop"
         },
+        "html": {
+          "type": "Boolean",
+          "desc": "Is the content HTML?"
+        },
+        "label": {
+          "type": "String",
+          "desc": "Label of the option"
+        },
         "selected": {
           "type": "Boolean",
           "desc": "Is option selected?"
@@ -807,78 +792,36 @@
           "desc": "Computed properties passed down to QItem"
         }
       }
+    },
+    "default": {
+      "desc": "Field main content"
+    },
+    "prepend": {
+      "desc": "Prepend inner field; Suggestions: QIcon, QBtn"
+    },
+    "append": {
+      "desc": "Append to inner field; Suggestions: QIcon, QBtn"
+    },
+    "before": {
+      "desc": "Prepend outer field; Suggestions: QIcon, QBtn"
+    },
+    "after": {
+      "desc": "Append outer field; Suggestions: QIcon, QBtn"
+    },
+    "label": {
+      "desc": "Slot for label; Used only if 'label-slot' prop is set or the 'label' prop is set; When it is used the text in the 'label' prop is ignored"
+    },
+    "error": {
+      "desc": "Slot for errors; Enabled only if 'bottom-slots' prop is used; Suggestion: <div>"
+    },
+    "hint": {
+      "desc": "Slot for hint text; Enabled only if 'bottom-slots' prop is used; Suggestion: <div>"
+    },
+    "counter": {
+      "desc": "Slot for counter text; Enabled only if 'bottom-slots' prop is used; Suggestion: <div>"
     }
   },
   "events": {
-    "virtual-scroll": {
-      "desc": "Emitted when the virtual scroll occurs",
-      "params": {
-        "details": {
-          "type": "Object",
-          "desc": "Object of properties on the new scroll position",
-          "definition": {
-            "index": {
-              "type": "Number",
-              "required": true,
-              "desc": "Index of the list item that was scrolled into view (0 based)"
-            },
-            "from": {
-              "type": "Number",
-              "required": true,
-              "desc": "The index of the first list item that is rendered (0 based)"
-            },
-            "to": {
-              "type": "Number",
-              "required": true,
-              "desc": "The index of the last list item that is rendered (0 based)"
-            },
-            "direction": {
-              "type": "String",
-              "required": true,
-              "desc": "Direction of change",
-              "values": [
-                "'increase'",
-                "'decrease'"
-              ]
-            },
-            "ref": {
-              "type": "Component",
-              "required": true,
-              "desc": "Vue reference to the QSelect",
-              "tsType": "QSelect"
-            }
-          }
-        }
-      }
-    },
-    "update:model-value": {
-      "extends": "update:model-value"
-    },
-    "focus": {
-      "desc": "Emitted when component gets focused",
-      "params": {
-        "evt": {
-          "extends": "evt"
-        }
-      }
-    },
-    "blur": {
-      "desc": "Emitted when component loses focus",
-      "params": {
-        "evt": {
-          "extends": "evt"
-        }
-      }
-    },
-    "clear": {
-      "desc": "When using the 'clearable' property, this event is emitted when the clear icon is clicked",
-      "params": {
-        "value": {
-          "type": "Any",
-          "desc": "The previous value before clearing it"
-        }
-      }
-    },
     "input-value": {
       "desc": "Emitted when the value in the text input changes",
       "params": {
@@ -1030,6 +973,47 @@
         }
       }
     },
+    "virtual-scroll": {
+      "params": {
+        "details": {
+          "definition": {
+            "ref": {
+              "type": "Component",
+              "tsType": "QSelect",
+              "desc": "Vue reference to the component which triggered the event",
+              "required": true
+            },
+            "index": {
+              "type": "Number",
+              "required": true,
+              "desc": "Index of the list item that was scrolled into view (0 based)"
+            },
+            "from": {
+              "type": "Number",
+              "required": true,
+              "desc": "The index of the first list item that is rendered (0 based)"
+            },
+            "to": {
+              "type": "Number",
+              "required": true,
+              "desc": "The index of the last list item that is rendered (0 based)"
+            },
+            "direction": {
+              "type": "String",
+              "required": true,
+              "desc": "Direction of change",
+              "values": [
+                "'increase'",
+                "'decrease'"
+              ]
+            }
+          },
+          "type": "Object",
+          "desc": "Object of properties on the new scroll position"
+        }
+      },
+      "desc": "Emitted when the virtual scroll occurs"
+    },
     "keyup": {
       "internal": true
     },
@@ -1038,66 +1022,37 @@
     },
     "keypress": {
       "internal": true
+    },
+    "update:model-value": {
+      "extends": "update:model-value"
+    },
+    "focus": {
+      "desc": "Emitted when component gets focused",
+      "params": {
+        "evt": {
+          "extends": "evt"
+        }
+      }
+    },
+    "blur": {
+      "desc": "Emitted when component loses focus",
+      "params": {
+        "evt": {
+          "extends": "evt"
+        }
+      }
+    },
+    "clear": {
+      "desc": "When using the 'clearable' property, this event is emitted when the clear icon is clicked",
+      "params": {
+        "value": {
+          "type": "Any",
+          "desc": "The previous value before clearing it"
+        }
+      }
     }
   },
   "methods": {
-    "scrollTo": {
-      "desc": "Scroll the virtual scroll list to the item with the specified index (0 based)",
-      "params": {
-        "index": {
-          "type": [
-            "Number",
-            "String"
-          ],
-          "desc": "The index of the list item (0 based)",
-          "required": true
-        },
-        "edge": {
-          "type": "String",
-          "desc": "The edge to align to if the item is not visible already (by default it aligns to end if scrolling towards the end and to start otherwise); If the '-force' version is used then it always aligns",
-          "values": [
-            "'start'",
-            "'center'",
-            "'end'",
-            "'start-force'",
-            "'center-force'",
-            "'end-force'"
-          ]
-        }
-      },
-      "returns": null
-    },
-    "reset": {
-      "desc": "Resets the virtual scroll computations; Needed for custom edge-cases",
-      "params": null,
-      "returns": null
-    },
-    "refresh": {
-      "desc": "Refreshes the virtual scroll list; Use it after appending items",
-      "params": {
-        "index": {
-          "type": [
-            "String",
-            "Number"
-          ],
-          "desc": "The index of the list item to scroll to after refresh (0 based); If it's not specified the scroll position is not changed; Use a negative value to keep scroll position",
-          "examples": [
-            "5"
-          ]
-        }
-      },
-      "returns": null
-    },
-    "focus": {
-      "desc": "Focus component",
-      "params": null,
-      "returns": null
-    },
-    "blur": {
-      "desc": "Blur component (lose focus)",
-      "params": null,
-      "returns": null
-    },
     "showPopup": {
       "desc": "Focus and open popup",
       "params": null,
@@ -1290,6 +1245,63 @@
         "type": "Boolean",
         "desc": "Option is disabled or not"
       }
+    },
+    "scrollTo": {
+      "desc": "Scroll the virtual scroll list to the item with the specified index (0 based)",
+      "params": {
+        "index": {
+          "type": [
+            "Number",
+            "String"
+          ],
+          "desc": "The index of the list item (0 based)",
+          "required": true
+        },
+        "edge": {
+          "type": "String",
+          "desc": "The edge to align to if the item is not visible already (by default it aligns to end if scrolling towards the end and to start otherwise); If the '-force' version is used then it always aligns",
+          "values": [
+            "'start'",
+            "'center'",
+            "'end'",
+            "'start-force'",
+            "'center-force'",
+            "'end-force'"
+          ]
+        }
+      },
+      "returns": null
+    },
+    "reset": {
+      "desc": "Resets the virtual scroll computations; Needed for custom edge-cases",
+      "params": null,
+      "returns": null
+    },
+    "refresh": {
+      "desc": "Refreshes the virtual scroll list; Use it after appending items",
+      "params": {
+        "index": {
+          "type": [
+            "String",
+            "Number"
+          ],
+          "desc": "The index of the list item to scroll to after refresh (0 based); If it's not specified the scroll position is not changed; Use a negative value to keep scroll position",
+          "examples": [
+            "5"
+          ]
+        }
+      },
+      "returns": null
+    },
+    "focus": {
+      "desc": "Focus component",
+      "params": null,
+      "returns": null
+    },
+    "blur": {
+      "desc": "Blur component (lose focus)",
+      "params": null,
+      "returns": null
     }
   }
 }

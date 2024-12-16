@@ -18,14 +18,6 @@
     }
   ],
   "props": {
-    "ratio": {
-      "value": "",
-      "type": "String | Number",
-      "description": "Force the component to maintain an aspect ratio",
-      "description_zh": "强制组件保持长宽比",
-      "default": "",
-      "required": false
-    },
     "src": {
       "value": "",
       "type": "String",
@@ -67,6 +59,14 @@
       "version": "v2.15",
       "required": false
     },
+    "ratio": {
+      "value": "",
+      "type": "String | Number",
+      "description": "Aspect ratio for the content; If value is a String, then avoid using a computational statement (like '16/9') and instead specify the String value of the result directly (eg. '1.7777')",
+      "description_zh": "内容的纵横比;如果 value 是 String，则避免使用计算语句（如 '16/9'），而是直接指定结果的 String 值（例如。'1.7777')",
+      "default": "",
+      "required": false
+    },
     "initial-ratio": {
       "value": "",
       "type": "String | Number",
@@ -93,10 +93,10 @@
     },
     "loading": {
       "value": "",
-      "type": "String",
+      "type": "lazy / eager",
       "description": "Lazy or immediate load; Same syntax as <img> loading attribute",
       "description_zh": "延迟加载或立即加载;与 <img> loading attribute 相同的语法",
-      "default": "'lazy'",
+      "default": "lazy",
       "required": false
     },
     "loading-show-delay": {
@@ -110,7 +110,7 @@
     },
     "crossorigin": {
       "value": "",
-      "type": "String",
+      "type": "anonymous / use-credentials",
       "description": "Same syntax as <img> crossorigin attribute",
       "description_zh": "与 <img> crossorigin 属性的语法相同",
       "default": "",
@@ -118,7 +118,7 @@
     },
     "decoding": {
       "value": "",
-      "type": "String",
+      "type": "sync / async / auto",
       "description": "Same syntax as <img> decoding attribute",
       "description_zh": "与 <img> decoding 属性语法相同",
       "default": "",
@@ -126,7 +126,7 @@
     },
     "referrerpolicy": {
       "value": "",
-      "type": "String",
+      "type": "no-referrer / no-referrer-when-downgrade / origin / origin-when-cross-origin / same-origin / strict-origin / strict-origin-when-cross-origin / unsafe-url",
       "description": "Same syntax as <img> referrerpolicy attribute",
       "description_zh": "与 <img> referrerpolicy 属性的语法相同",
       "default": "",
@@ -134,19 +134,19 @@
     },
     "fetchpriority": {
       "value": "",
-      "type": "String",
+      "type": "high / low / auto",
       "description": "Provides a hint of the relative priority to use when fetching the image",
       "description_zh": "提供获取图像时要使用的相对优先级的提示",
-      "default": "'auto'",
+      "default": "auto",
       "version": "v2.6.6",
       "required": false
     },
     "fit": {
       "value": "",
-      "type": "String",
+      "type": "cover / fill / contain / none / scale-down",
       "description": "How the image will fit into the container; Equivalent of the object-fit prop; Can be coordinated with 'position' prop",
       "description_zh": "图像如何适应容器;相当于 object-fit prop;可以与 'position' prop 协调",
-      "default": "'cover'",
+      "default": "cover",
       "required": false
     },
     "position": {
@@ -154,7 +154,7 @@
       "type": "String",
       "description": "The alignment of the image into the container; Equivalent of the object-position CSS prop",
       "description_zh": "图像与容器中的对齐方式;相当于 object-position CSS 属性",
-      "default": "'50% 50%'",
+      "default": "50% 50%",
       "required": false
     },
     "alt": {
@@ -193,7 +193,7 @@
       "type": "String",
       "description": "Color name for component from the Quasar Color Palette",
       "value": "",
-      "default": "'primary'",
+      "default": "primary",
       "extends": "color",
       "desc": "Color name for default Spinner (unless using a 'loading' slot)",
       "category": "style",
@@ -202,8 +202,8 @@
     "spinner-size": {
       "value": "",
       "type": "String",
-      "description": "",
-      "description_zh": "",
+      "description": "Size in CSS units, including unit name, for default Spinner (unless using a 'loading' slot)",
+      "description_zh": "默认微调器的大小（以 CSS 单位为单位），包括单位名称（除非使用 'loading' 插槽）",
       "default": "",
       "required": false,
       "extends": "size",

@@ -18,15 +18,7 @@
     }
   ],
   "props": {
-    "name": {
-      "value": "",
-      "type": "String",
-      "description": "Used to specify the name of the control; Useful if dealing with forms submitted directly to a URL",
-      "description_zh": "用于指定控件的名称;如果处理直接提交到 URL 的表单，则很有用",
-      "default": "",
-      "required": false
-    },
-    "model-value": {
+    "v-model": {
       "value": "",
       "type": "String | null | undefined",
       "description": "",
@@ -48,18 +40,18 @@
     },
     "default-view": {
       "value": "",
-      "type": "String",
+      "type": "spectrum / tune / palette",
       "description": "The default view of the picker",
       "description_zh": "选取器的默认视图",
-      "default": "'spectrum'",
+      "default": "spectrum",
       "required": false
     },
     "format-model": {
       "value": "",
-      "type": "String",
+      "type": "auto / hex / rgb / hexa / rgba",
       "description": "Forces a certain model format upon the model",
       "description_zh": "在模型上强制使用特定的模型格式",
-      "default": "'auto'",
+      "default": "auto",
       "required": false
     },
     "palette": {
@@ -117,7 +109,7 @@
     "no-footer": {
       "value": "",
       "type": "Boolean",
-      "description": "Do not render footer; Useful when you want a specific view ('default-view' prop) and don't want the user to be able to switch it",
+      "description": "Do not render footer; Useful when you want a specific view ('default-view prop) and don't want the user to be able to switch it",
       "description_zh": "不呈现页脚;当你想要一个特定的视图 （'default-view' prop） 并且不希望用户能够切换它时，这很有用",
       "default": "false",
       "required": false
@@ -148,6 +140,14 @@
       "default": "",
       "required": false,
       "extends": "dark"
+    },
+    "name": {
+      "value": "",
+      "type": "String",
+      "description": "Used to specify the name of the control; Useful if dealing with forms submitted directly to a URL",
+      "description_zh": "用于指定控件的名称;如果处理直接提交到 URL 的表单，则很有用",
+      "default": "",
+      "required": false
     }
   },
   "link": "https://v2.quasar.dev/vue-components/color-picker",

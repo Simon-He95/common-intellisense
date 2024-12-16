@@ -2,27 +2,6 @@
   "name": "QTable",
   "methods": [
     {
-      "name": "toggleFullscreen",
-      "description": "Toggles fullscreen mode",
-      "description_zh": "切换全屏模式",
-      "params": "",
-      "value": ""
-    },
-    {
-      "name": "setFullscreen",
-      "description": "Enter the fullscreen view",
-      "description_zh": "进入全屏视图",
-      "params": "",
-      "value": ""
-    },
-    {
-      "name": "exitFullscreen",
-      "description": "Leave the fullscreen view",
-      "description_zh": "离开全屏视图",
-      "params": "",
-      "value": ""
-    },
-    {
       "name": "requestServerInteraction",
       "description": "Trigger a server request (emits 'request' event)",
       "description_zh": "触发服务器请求（发出 'request' 事件）",
@@ -100,6 +79,13 @@
       "value": ""
     },
     {
+      "name": "toggleFullscreen",
+      "description": "Toggle the view to be fullscreen or not fullscreen",
+      "description_zh": "将视图切换为全屏或不全屏",
+      "params": "",
+      "value": ""
+    },
+    {
       "name": "resetVirtualScroll",
       "description": "Resets the virtual scroll (if using it) computations; Needed for custom edge-cases",
       "description_zh": "重置虚拟滚动 （如果使用） 计算;自定义边缘情况需要",
@@ -112,23 +98,23 @@
       "description_zh": "将表格滚动到页面中具有指定索引的行（从 0 开始）",
       "params": "(index: Number,String, edge: String) => void",
       "value": ""
+    },
+    {
+      "name": "setFullscreen",
+      "description": "Enter the fullscreen view",
+      "description_zh": "进入全屏视图",
+      "params": "",
+      "value": ""
+    },
+    {
+      "name": "exitFullscreen",
+      "description": "Leave the fullscreen view",
+      "description_zh": "离开全屏视图",
+      "params": "",
+      "value": ""
     }
   ],
   "events": [
-    {
-      "name": "fullscreen",
-      "description": "Emitted when fullscreen state changes",
-      "description_zh": "全屏状态更改时发出",
-      "params": "(value: Boolean) => void",
-      "value": ""
-    },
-    {
-      "name": "update:fullscreen",
-      "description": "Used by Vue on 'v-model:fullscreen' prop for updating its value",
-      "description_zh": "被 Vue 在 'v-model：fullscreen' prop 上使用，以更新其值",
-      "params": "(value: Boolean) => void",
-      "value": ""
-    },
     {
       "name": "row-click",
       "description": "Emitted when user clicks/taps on a row; Is not emitted when using body/row/item scoped slots",
@@ -191,25 +177,23 @@
       "description_zh": "如果使用虚拟滚动，则在发生虚拟滚动时发出",
       "params": "(details: Object) => void",
       "value": ""
+    },
+    {
+      "name": "fullscreen",
+      "description": "Emitted when fullscreen state changes",
+      "description_zh": "全屏状态更改时发出",
+      "params": "(value: Boolean) => void",
+      "value": ""
+    },
+    {
+      "name": "update:fullscreen",
+      "description": "Used by Vue on 'v-model:fullscreen' prop for updating its value",
+      "description_zh": "被 Vue 在 'v-model：fullscreen' prop 上使用，以更新其值",
+      "params": "(value: Boolean) => void",
+      "value": ""
     }
   ],
   "props": {
-    "fullscreen": {
-      "value": "",
-      "type": "Boolean",
-      "description": "Fullscreen mode",
-      "description_zh": "全屏模式",
-      "default": "false",
-      "required": false
-    },
-    "no-route-fullscreen-exit": {
-      "value": "",
-      "type": "Boolean",
-      "description": "Changing route app won't exit fullscreen",
-      "description_zh": "更改路线应用程序不会全屏退出",
-      "default": "false",
-      "required": false
-    },
     "rows": {
       "value": "",
       "type": "Array",
@@ -223,7 +207,7 @@
       "type": "String | Function",
       "description": "Property of each row that defines the unique key of each row (the result must be a primitive, not Object, Array, etc); The value of property must be string or a function taking a row and returning the desired (nested) key in the row; If supplying a function then for best performance, reference it from your scope and do not define it inline",
       "description_zh": "定义每行唯一键的每行的属性（结果必须是原始值，而不是 Object、Array 等）;property 的值必须是 string 或函数，它接受一行并返回该行中所需的（嵌套）键;如果提供函数，则为了获得最佳性能，请从您的作用域中引用它，并且不要内联定义它",
-      "default": "'id'",
+      "default": "id",
       "required": false
     },
     "virtual-scroll": {
@@ -304,22 +288,22 @@
       "type": "String | Array",
       "description": "Color name for component from the Quasar Color Palette",
       "value": "",
-      "default": "'grey-8'",
+      "default": "grey-8",
       "extends": "color",
-      "desc": "The color to be attributed to the indicator (the underline) of the active tab",
+      "desc": "Override default icon color (for truthy state only); Color name for component from the Quasar Color Palette",
       "category": "style",
+      "addedIn": "v2.4",
       "__runtimeDefault": true,
       "examples": [
         "[ 'accent', 'grey-7' ]"
       ],
-      "addedIn": "v2.4",
       "description_zh": "Quasar Color Palette （类星体调色板） 中组件的颜色名称"
     },
     "icon-first-page": {
       "value": "",
       "type": "String",
-      "description": "",
-      "description_zh": "",
+      "description": "Icon name following Quasar convention for stepping to first page; Make sure you have the icon library installed unless you are using 'img:' prefix",
+      "description_zh": "遵循 Quasar 约定的图标名称，用于步入第一页;确保已安装图标库，除非使用 'img：' 前缀",
       "default": "",
       "required": false,
       "extends": "icon",
@@ -328,8 +312,8 @@
     "icon-prev-page": {
       "value": "",
       "type": "String",
-      "description": "",
-      "description_zh": "",
+      "description": "Icon name following Quasar convention for stepping to previous page; Make sure you have the icon library installed unless you are using 'img:' prefix",
+      "description_zh": "遵循 Quasar 约定的图标名称，用于步入上一页;确保已安装图标库，除非使用 'img：' 前缀",
       "default": "",
       "required": false,
       "extends": "icon",
@@ -338,8 +322,8 @@
     "icon-next-page": {
       "value": "",
       "type": "String",
-      "description": "",
-      "description_zh": "",
+      "description": "Icon name following Quasar convention for stepping to next page; Make sure you have the icon library installed unless you are using 'img:' prefix",
+      "description_zh": "遵循 Quasar 约定的图标名称，用于跳转到下一页;确保已安装图标库，除非使用 'img：' 前缀",
       "default": "",
       "required": false,
       "extends": "icon",
@@ -348,8 +332,8 @@
     "icon-last-page": {
       "value": "",
       "type": "String",
-      "description": "",
-      "description_zh": "",
+      "description": "Icon name following Quasar convention for stepping to last page; Make sure you have the icon library installed unless you are using 'img:' prefix",
+      "description_zh": "图标名称遵循 Quasar 约定，用于步入最后一页;确保已安装图标库，除非使用 'img：' 前缀",
       "default": "",
       "required": false,
       "extends": "icon",
@@ -374,8 +358,8 @@
     "dense": {
       "value": "",
       "type": "String",
-      "description": "",
-      "description_zh": "",
+      "description": "Dense mode; Connect with $q.screen for responsive behavior",
+      "description_zh": "密集模式;与 $q.screen 连接以实现响应行为",
       "default": "",
       "required": false,
       "extends": "dense",
@@ -491,10 +475,10 @@
     },
     "separator": {
       "value": "",
-      "type": "String",
+      "type": "horizontal / vertical / cell / none",
       "description": "Use a separator/border between rows, columns or all cells",
       "description_zh": "在行、列或所有单元格之间使用分隔符/边框",
-      "default": "'horizontal'",
+      "default": "horizontal",
       "required": false
     },
     "wrap-cells": {
@@ -515,10 +499,10 @@
     },
     "column-sort-order": {
       "value": "",
-      "type": "String",
+      "type": "ad / da",
       "description": "Set column sort order: 'ad' (ascending-descending) or 'da' (descending-ascending); It gets applied to all columns unless a column has its own sortOrder specified in the 'columns' definition prop",
       "description_zh": "设置列排序顺序：'ad' （升序-降序） 或 'da' （降序-升序）;它被应用于所有列，除非列在 'columns' 定义 prop 中指定了自己的 sortOrder",
-      "default": "'ad'",
+      "default": "ad",
       "required": false
     },
     "no-data-label": {
@@ -675,10 +659,10 @@
     },
     "selection": {
       "value": "",
-      "type": "String",
+      "type": "single / multiple / none",
       "description": "Selection type",
       "description_zh": "选择类型",
-      "default": "'none'",
+      "default": "none",
       "required": false
     },
     "selected": {
@@ -703,6 +687,22 @@
       "description": "The actual sort mechanism. Function (rows, sortBy, descending) => sorted rows; For best performance, reference it from your scope and do not define it inline",
       "description_zh": "实际的排序机制。函数 （rows， sortBy， descending） =>排序的行;为了获得最佳性能，请从您的范围中引用它，不要内联定义它",
       "default": "",
+      "required": false
+    },
+    "fullscreen": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Fullscreen mode",
+      "description_zh": "全屏模式",
+      "default": "false",
+      "required": false
+    },
+    "no-route-fullscreen-exit": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Changing route app won't exit fullscreen",
+      "description_zh": "更改路线应用程序不会全屏退出",
+      "default": "false",
       "required": false
     }
   },

@@ -3,15 +3,15 @@
   "methods": [
     {
       "name": "focus",
-      "description": "Focus underlying input tag",
-      "description_zh": "焦点基础输入标记",
+      "description": "Focus component",
+      "description_zh": "焦点组件",
       "params": "",
       "value": ""
     },
     {
       "name": "blur",
-      "description": "Lose focus on underlying input tag",
-      "description_zh": "失去对底层输入标签的关注",
+      "description": "Blur component (lose focus)",
+      "description_zh": "模糊组件（失去焦点）",
       "params": "",
       "value": ""
     },
@@ -36,27 +36,6 @@
       "description": "",
       "description_zh": "",
       "params": "(value: String,Number,null) => void",
-      "value": ""
-    },
-    {
-      "name": "focus",
-      "description": "Emitted when component gets focused",
-      "description_zh": "当组件获得焦点时发出",
-      "params": "(evt: undefined) => void",
-      "value": ""
-    },
-    {
-      "name": "blur",
-      "description": "Emitted when component loses focus",
-      "description_zh": "当组件失去焦点时发出",
-      "params": "(evt: undefined) => void",
-      "value": ""
-    },
-    {
-      "name": "clear",
-      "description": "When using the 'clearable' property, this event is emitted when the clear icon is clicked",
-      "description_zh": "当使用 'clearable' 属性时，当单击 clear 图标时，将触发此事件",
-      "params": "(value: Any) => void",
       "value": ""
     },
     {
@@ -93,47 +72,105 @@
       "description_zh": "",
       "params": "",
       "value": ""
+    },
+    {
+      "name": "focus",
+      "description": "Emitted when component gets focused",
+      "description_zh": "当组件获得焦点时发出",
+      "params": "(evt: undefined) => void",
+      "value": ""
+    },
+    {
+      "name": "blur",
+      "description": "Emitted when component loses focus",
+      "description_zh": "当组件失去焦点时发出",
+      "params": "(evt: undefined) => void",
+      "value": ""
+    },
+    {
+      "name": "clear",
+      "description": "When using the 'clearable' property, this event is emitted when the clear icon is clicked",
+      "description_zh": "当使用 'clearable' 属性时，当单击 clear 图标时，将触发此事件",
+      "params": "(alue: Any) => void",
+      "value": ""
     }
   ],
   "props": {
+    "v-model": {
+      "value": "",
+      "type": "String | Number | FileList | null | undefined",
+      "description": "Model of the component; Either use this property (along with a listener for 'update:modelValue' event) OR use v-model directive",
+      "description_zh": "组件的模型;使用此属性（以及 'update：modelValue' 事件的侦听器）或使用 v-model 指令",
+      "default": "",
+      "required": false,
+      "extends": "model-value",
+      "desc": "Model of the component; Either use this property (along with a listener for 'update:modelValue' event) OR use v-model directive",
+      "examples": [
+        "# v-model=\"myText\""
+      ]
+    },
+    "shadow-text": {
+      "value": "",
+      "type": "String",
+      "description": "Text to be displayed as shadow at the end of the text in the control; Does NOT applies to type=file",
+      "description_zh": "在控件中文本末尾显示为阴影的文本;不适用于 type=file",
+      "default": "",
+      "required": false
+    },
+    "type": {
+      "value": "",
+      "type": "text / password / textarea / email / search / tel / file / number / url / time / date / datetime-local",
+      "description": "Input type",
+      "description_zh": "输入类型",
+      "default": "text",
+      "required": false
+    },
+    "debounce": {
+      "value": "",
+      "type": "String | Number",
+      "description": "Debounce amount (in milliseconds) when updating model",
+      "description_zh": "更新模型时的防抖量（以毫秒为单位）",
+      "default": "",
+      "required": false
+    },
+    "maxlength": {
+      "value": "",
+      "type": "String | Number",
+      "description": "Specify a max length of model",
+      "description_zh": "指定模型的最大长度",
+      "default": "",
+      "required": false
+    },
+    "autogrow": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Make field autogrow along with its content (uses a textarea)",
+      "description_zh": "使字段及其内容自动增长（使用 textarea）",
+      "default": "false",
+      "required": false
+    },
+    "input-class": {
+      "value": "",
+      "type": "String | Array | Object",
+      "description": "Class definitions to be attributed to the underlying input tag",
+      "description_zh": "要归属于底层 input 标签的类定义",
+      "default": "",
+      "required": false
+    },
+    "input-style": {
+      "value": "",
+      "type": "String | Array | Object",
+      "description": "Style definitions to be attributed to the underlying input tag",
+      "description_zh": "要归属于基础 input 标记的样式定义",
+      "default": "",
+      "required": false
+    },
     "name": {
       "value": "",
       "type": "String",
-      "description": "Used to specify the name of the control; Useful if dealing with forms; If not specified, it takes the value of 'for' prop, if it exists",
-      "description_zh": "用于指定控件的名称;在处理表单时很有用;如果未指定，则采用 'for' prop 的值（如果存在）",
+      "description": "Used to specify the name of the control; Useful if dealing with forms submitted directly to a URL",
+      "description_zh": "用于指定控件的名称;如果处理直接提交到 URL 的表单，则很有用",
       "default": "",
-      "required": false
-    },
-    "mask": {
-      "value": "",
-      "type": "String",
-      "description": "Custom mask or one of the predefined mask names",
-      "description_zh": "自定义蒙版或预定义的蒙版名称之一",
-      "default": "",
-      "required": false
-    },
-    "fill-mask": {
-      "value": "",
-      "type": "Boolean | String",
-      "description": "Fills string with specified characters (or underscore if value is not string) to fill mask's length",
-      "description_zh": "使用指定字符（如果 value 不是字符串，则为下划线）填充字符串以填充掩码的长度",
-      "default": "",
-      "required": false
-    },
-    "reverse-fill-mask": {
-      "value": "",
-      "type": "Boolean",
-      "description": "Fills string from the right side of the mask",
-      "description_zh": "从蒙版的右侧填充字符串",
-      "default": "false",
-      "required": false
-    },
-    "unmasked-value": {
-      "value": "",
-      "type": "Boolean",
-      "description": "Model will be unmasked (won't contain tokens/separation characters)",
-      "description_zh": "模型将被取消掩码（不包含标记/分隔字符）",
-      "default": "false",
       "required": false
     },
     "label": {
@@ -188,7 +225,7 @@
       "type": "String",
       "description": "Color name for component from the Quasar Color Palette",
       "value": "",
-      "default": "'primary'",
+      "default": "primary",
       "extends": "color",
       "desc": "Color name for the label from the Quasar Color Palette; Overrides the 'color' prop; The difference from 'color' prop is that the label will always have this color, even when field is not focused",
       "category": "style",
@@ -198,7 +235,7 @@
       "type": "String",
       "description": "Color name for component from the Quasar Color Palette",
       "value": "",
-      "default": "'primary'",
+      "default": "primary",
       "extends": "color",
       "desc": "Color name for the label from the Quasar Color Palette; Overrides the 'color' prop; The difference from 'color' prop is that the label will always have this color, even when field is not focused",
       "category": "style",
@@ -208,7 +245,7 @@
       "type": "String",
       "description": "Color name for component from the Quasar Color Palette",
       "value": "",
-      "default": "'primary'",
+      "default": "primary",
       "extends": "color",
       "desc": "Color name for the label from the Quasar Color Palette; Overrides the 'color' prop; The difference from 'color' prop is that the label will always have this color, even when field is not focused",
       "category": "style",
@@ -379,73 +416,36 @@
       "default": "",
       "required": false
     },
-    "model-value": {
-      "value": "",
-      "type": "String | Number | FileList | null | undefined",
-      "description": "",
-      "description_zh": "",
-      "default": "",
-      "required": false,
-      "extends": "model-value",
-      "desc": "Model of the component; Either use this property (along with a listener for 'update:modelValue' event) OR use v-model directive",
-      "examples": [
-        "# v-model=\"myText\""
-      ]
-    },
-    "shadow-text": {
+    "mask": {
       "value": "",
       "type": "String",
-      "description": "Text to be displayed as shadow at the end of the text in the control; Does NOT applies to type=file",
-      "description_zh": "在控件中文本末尾显示为阴影的文本;不适用于 type=file",
+      "description": "Custom mask or one of the predefined mask names",
+      "description_zh": "自定义蒙版或预定义的蒙版名称之一",
       "default": "",
       "required": false
     },
-    "type": {
+    "fill-mask": {
       "value": "",
-      "type": "String",
-      "description": "Input type",
-      "description_zh": "输入类型",
-      "default": "'text'",
-      "required": false
-    },
-    "debounce": {
-      "value": "",
-      "type": "String | Number",
-      "description": "Debounce amount (in milliseconds) when updating model",
-      "description_zh": "更新模型时的防抖量（以毫秒为单位）",
+      "type": "Boolean | String",
+      "description": "Fills string with specified characters (or underscore if value is not string) to fill mask's length",
+      "description_zh": "使用指定字符（如果 value 不是字符串，则为下划线）填充字符串以填充掩码的长度",
       "default": "",
       "required": false
     },
-    "maxlength": {
-      "value": "",
-      "type": "String | Number",
-      "description": "Specify a max length of model",
-      "description_zh": "指定模型的最大长度",
-      "default": "",
-      "required": false
-    },
-    "autogrow": {
+    "reverse-fill-mask": {
       "value": "",
       "type": "Boolean",
-      "description": "Make field autogrow along with its content (uses a textarea)",
-      "description_zh": "使字段及其内容自动增长（使用 textarea）",
+      "description": "Fills string from the right side of the mask",
+      "description_zh": "从蒙版的右侧填充字符串",
       "default": "false",
       "required": false
     },
-    "input-class": {
+    "unmasked-value": {
       "value": "",
-      "type": "String | Array | Object",
-      "description": "Class definitions to be attributed to the underlying input tag",
-      "description_zh": "要归属于底层 input 标签的类定义",
-      "default": "",
-      "required": false
-    },
-    "input-style": {
-      "value": "",
-      "type": "String | Array | Object",
-      "description": "Style definitions to be attributed to the underlying input tag",
-      "description_zh": "要归属于基础 input 标记的样式定义",
-      "default": "",
+      "type": "Boolean",
+      "description": "Model will be unmasked (won't contain tokens/separation characters)",
+      "description_zh": "模型将被取消掩码（不包含标记/分隔字符）",
+      "default": "false",
       "required": false
     }
   },

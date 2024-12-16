@@ -33,6 +33,47 @@
     }
   ],
   "props": {
+    "type": {
+      "value": "",
+      "type": "list / table",
+      "description": "The type of content: list (default) or table",
+      "description_zh": "内容类型：list （default） 或 table",
+      "default": "list",
+      "required": false
+    },
+    "items": {
+      "value": "",
+      "type": "Array",
+      "description": "Available list items that will be passed to the scoped slot; For best performance freeze the list of items; Required if 'itemsFn' is not supplied",
+      "description_zh": "将传递到范围槽的可用列表项;为了获得最佳性能，请冻结项目列表;如果未提供 'itemsFn'，则为必需",
+      "default": "[]",
+      "required": false
+    },
+    "items-size": {
+      "value": "",
+      "type": "Number",
+      "description": "Number of available items in the list; Required and used only if 'itemsFn' is provided",
+      "description_zh": "列表中的可用项数;必需，并且仅在提供 'itemsFn' 时使用",
+      "default": "",
+      "required": false
+    },
+    "items-fn": {
+      "value": "",
+      "type": "Function",
+      "description": "Function to return the scope for the items to be displayed; Should return an array for items starting from 'from' index for size length; For best performance, reference it from your scope and do not define it inline",
+      "description_zh": "返回要显示的项目的范围的函数;应返回一个数组，用于从 size length 的 'from' 索引开始的项目;为了获得最佳性能，请从您的范围中引用它，不要内联定义它",
+      "default": "",
+      "required": false
+    },
+    "scroll-target": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "",
+      "required": false,
+      "extends": "scroll-target"
+    },
     "virtual-scroll-horizontal": {
       "value": "",
       "type": "Boolean",
@@ -96,47 +137,6 @@
       "description_zh": "表中的列数（如果您使用 table-layout： fixed，则需要此列）",
       "default": "",
       "required": false
-    },
-    "type": {
-      "value": "",
-      "type": "String",
-      "description": "The type of content: list (default) or table",
-      "description_zh": "内容类型：list （default） 或 table",
-      "default": "'list'",
-      "required": false
-    },
-    "items": {
-      "value": "",
-      "type": "Array",
-      "description": "Available list items that will be passed to the scoped slot; For best performance freeze the list of items; Required if 'itemsFn' is not supplied",
-      "description_zh": "将传递到范围槽的可用列表项;为了获得最佳性能，请冻结项目列表;如果未提供 'itemsFn'，则为必需",
-      "default": "[]",
-      "required": false
-    },
-    "items-size": {
-      "value": "",
-      "type": "Number",
-      "description": "Number of available items in the list; Required and used only if 'itemsFn' is provided",
-      "description_zh": "列表中的可用项数;必需，并且仅在提供 'itemsFn' 时使用",
-      "default": "",
-      "required": false
-    },
-    "items-fn": {
-      "value": "",
-      "type": "Function",
-      "description": "Function to return the scope for the items to be displayed; Should return an array for items starting from 'from' index for size length; For best performance, reference it from your scope and do not define it inline",
-      "description_zh": "返回要显示的项目的范围的函数;应返回一个数组，用于从 size length 的 'from' 索引开始的项目;为了获得最佳性能，请从您的范围中引用它，不要内联定义它",
-      "default": "",
-      "required": false
-    },
-    "scroll-target": {
-      "value": "",
-      "type": "String",
-      "description": "",
-      "description_zh": "",
-      "default": "",
-      "required": false,
-      "extends": "scroll-target"
     }
   },
   "link": "https://v2.quasar.dev/vue-components/virtual-scroll",

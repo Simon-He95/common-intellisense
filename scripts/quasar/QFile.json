@@ -6,83 +6,119 @@
     "docsUrl": "https://v2.quasar.dev/vue-components/file"
   },
   "props": {
-    "name": {
-      "type": "String",
-      "desc": "Used to specify the name of the control; Useful if dealing with forms; If not specified, it takes the value of 'for' prop, if it exists",
-      "examples": [
-        "'car_id'"
+    "model-value": {
+      "extends": "model-value",
+      "type": [
+        "File",
+        "FileList",
+        "Array",
+        "null",
+        "undefined"
       ],
-      "category": "behavior"
+      "desc": "Model of the component; Must be FileList or Array if using 'multiple' prop; Either use this property (along with a listener for 'update:modelValue' event) OR use v-model directive",
+      "examples": [
+        "# v-model=\"myModel\""
+      ]
     },
-    "multiple": {
+    "append": {
       "type": "Boolean",
-      "desc": "Allow multiple file uploads",
+      "desc": "Append file(s) to current model rather than replacing them; Has effect only when using 'multiple' mode",
       "category": "behavior"
     },
-    "accept": {
-      "type": "String",
-      "desc": "Comma separated list of unique file type specifiers. Maps to 'accept' attribute of native input type=file element",
+    "display-value": {
+      "type": [
+        "Number",
+        "String"
+      ],
+      "desc": "Override default selection string, if not using 'file' or 'selected' scoped slots and if not using 'use-chips' prop",
       "examples": [
-        "'.jpg, .pdf, image/*'",
-        "'image/jpeg, .pdf'"
+        "'Options: x, y, z'"
       ],
-      "category": "behavior"
+      "category": "selection"
     },
-    "capture": {
-      "type": "String",
-      "desc": "Optionally, specify that a new file should be captured, and which device should be used to capture that new media of a type defined by the 'accept' prop. Maps to 'capture' attribute of native input type=file element",
-      "values": [
-        "'user'",
-        "'environment'"
-      ],
-      "category": "behavior"
+    "use-chips": {
+      "type": "Boolean",
+      "desc": "Use QChip to show picked files",
+      "category": "selection"
     },
-    "max-file-size": {
-      "type": [
-        "Number",
-        "String"
-      ],
-      "desc": "Maximum size of individual file in bytes",
-      "examples": [
-        "1024",
-        "'1048576'"
-      ],
-      "category": "behavior"
-    },
-    "max-total-size": {
-      "type": [
-        "Number",
-        "String"
-      ],
-      "desc": "Maximum size of all files combined in bytes",
-      "category": "behavior"
-    },
-    "max-files": {
-      "type": [
-        "Number",
-        "String"
-      ],
-      "desc": "Maximum number of files to contain",
-      "category": "behavior"
-    },
-    "filter": {
+    "counter-label": {
       "type": "Function",
-      "desc": "Custom filter for added files; Only files that pass this filter will be added to the queue and uploaded; For best performance, reference it from your scope and do not define it inline",
+      "desc": "Label for the counter; The 'counter' prop is necessary to enable this one",
       "params": {
-        "files": {
-          "type": [
-            "Array",
-            "FileList"
-          ],
-          "desc": "Candidate files to be added to queue"
+        "props": {
+          "type": "Object",
+          "desc": "Object containing counter label information",
+          "definition": {
+            "totalSize": {
+              "type": "String",
+              "required": true,
+              "desc": "The total size of files in human readable format",
+              "examples": [
+                "'1.42MB'"
+              ]
+            },
+            "filesNumber": {
+              "type": "Number",
+              "required": true,
+              "desc": "Number of picked files"
+            },
+            "maxFiles": {
+              "type": [
+                "Number",
+                "String"
+              ],
+              "required": true,
+              "desc": "Maximum number of files (same as 'max-files' prop, if specified); When 'max-files' is not specified, this has 'void 0' as value"
+            }
+          }
         }
       },
       "returns": {
-        "type": "Array",
-        "desc": "Filtered files to be added to queue"
+        "type": "String",
+        "desc": "String to display for the counter label"
       },
       "examples": [
-        "files => files.filter(file => file.size === 1024)"
+        "(totalSize, filesNumber, maxFiles) => `${ filesNumber }${ maxFiles !== void 0 ? ' / ' + maxFiles : '' } (${ totalSize })`"
+      ],
+      "category": "behavior"
+    },
+    "tabindex": {
+      "extends": "tabindex",
+      "default": "0"
+    },
+    "input-class": {
+      "type": [
+        "String",
+        "Array",
+        "Object"
+      ],
+      "tsType": "VueClassProp",
+      "desc": "Class definitions to be attributed to the underlying selection container",
+      "examples": [
+        "'my-special-class'",
+        "{ 'my-special-class': true }"
+      ],
+      "category": "style"
+    },
+    "input-style": {
+      "type": [
+        "String",
+        "Array",
+        "Object"
+      ],
+      "tsType": "VueStyleProp",
+      "desc": "Style definitions to be attributed to the underlying selection container",
+      "examples": [
+        "'background-color: #ff0000'",
+        "{ backgroundColor: '#ff0000' }"
+      ],
+      "category": "style"
+    },
+    "name": {
+      "desc": "Used to specify the name of the control; Useful if dealing with forms submitted directly to a URL",
+      "type": "String",
+      "examples": [
+        "'car_id'"
       ],
       "category": "behavior"
     },
@@ -241,116 +277,112 @@
       ],
       "category": "behavior"
     },
-    "model-value": {
-      "extends": "model-value",
-      "type": [
-        "File",
-        "FileList",
-        "Array",
-        "null",
-        "undefined"
-      ],
-      "desc": "Model of the component; Must be FileList or Array if using 'multiple' prop; Either use this property (along with a listener for 'update:modelValue' event) OR use v-model directive",
-      "examples": [
-        "# v-model=\"myModel\""
-      ]
-    },
-    "append": {
+    "multiple": {
       "type": "Boolean",
-      "desc": "Append file(s) to current model rather than replacing them; Has effect only when using 'multiple' mode",
+      "desc": "Allow multiple file uploads",
       "category": "behavior"
     },
-    "display-value": {
+    "accept": {
+      "type": "String",
+      "desc": "Comma separated list of unique file type specifiers. Maps to 'accept' attribute of native input type=file element",
+      "examples": [
+        "'.jpg, .pdf, image/*'",
+        "'image/jpeg, .pdf'"
+      ],
+      "category": "behavior"
+    },
+    "capture": {
+      "type": "String",
+      "desc": "Optionally, specify that a new file should be captured, and which device should be used to capture that new media of a type defined by the 'accept' prop. Maps to 'capture' attribute of native input type=file element",
+      "values": [
+        "'user'",
+        "'environment'"
+      ],
+      "category": "behavior"
+    },
+    "max-file-size": {
       "type": [
         "Number",
         "String"
       ],
-      "desc": "Override default selection string, if not using 'file' or 'selected' scoped slots and if not using 'use-chips' prop",
+      "desc": "Maximum size of individual file in bytes",
       "examples": [
-        "'Options: x, y, z'"
-      ],
-      "category": "selection"
-    },
-    "use-chips": {
-      "type": "Boolean",
-      "desc": "Use QChip to show picked files",
-      "category": "selection"
-    },
-    "counter-label": {
-      "type": "Function",
-      "desc": "Label for the counter; The 'counter' prop is necessary to enable this one",
-      "params": {
-        "props": {
-          "type": "Object",
-          "desc": "Object containing counter label information",
-          "definition": {
-            "totalSize": {
-              "type": "String",
-              "required": true,
-              "desc": "The total size of files in human readable format",
-              "examples": [
-                "'1.42MB'"
-              ]
-            },
-            "filesNumber": {
-              "type": "Number",
-              "required": true,
-              "desc": "Number of picked files"
-            },
-            "maxFiles": {
-              "type": [
-                "Number",
-                "String"
-              ],
-              "required": true,
-              "desc": "Maximum number of files (same as 'max-files' prop, if specified); When 'max-files' is not specified, this has 'void 0' as value"
-            }
-          }
-        }
-      },
-      "returns": {
-        "type": "String",
-        "desc": "String to display for the counter label"
-      },
-      "examples": [
-        "(totalSize, filesNumber, maxFiles) => `${ filesNumber }${ maxFiles !== void 0 ? ' / ' + maxFiles : '' } (${ totalSize })`"
+        "1024",
+        "'1048576'"
       ],
       "category": "behavior"
     },
-    "tabindex": {
-      "extends": "tabindex",
-      "default": "0"
-    },
-    "input-class": {
+    "max-total-size": {
       "type": [
-        "String",
-        "Array",
-        "Object"
+        "Number",
+        "String"
       ],
-      "tsType": "VueClassProp",
-      "desc": "Class definitions to be attributed to the underlying selection container",
-      "examples": [
-        "'my-special-class'",
-        "{ 'my-special-class': true }"
-      ],
-      "category": "style"
+      "desc": "Maximum size of all files combined in bytes",
+      "category": "behavior"
     },
-    "input-style": {
+    "max-files": {
       "type": [
-        "String",
-        "Array",
-        "Object"
+        "Number",
+        "String"
       ],
-      "tsType": "VueStyleProp",
-      "desc": "Style definitions to be attributed to the underlying selection container",
+      "desc": "Maximum number of files to contain",
+      "category": "behavior"
+    },
+    "filter": {
+      "type": "Function",
+      "desc": "Custom filter for added files; Only files that pass this filter will be added to the queue and uploaded; For best performance, reference it from your scope and do not define it inline",
+      "params": {
+        "files": {
+          "type": "Array",
+          "tsType": "File",
+          "desc": "Candidate files to be added to queue"
+        }
+      },
+      "returns": {
+        "type": "Array",
+        "tsType": "File",
+        "desc": "Filtered files to be added to queue"
+      },
       "examples": [
-        "'background-color: #ff0000'",
-        "{ backgroundColor: '#ff0000' }"
+        "files => files.filter(file => file.size === 1024)"
       ],
-      "category": "style"
+      "category": "behavior"
     }
   },
   "slots": {
+    "file": {
+      "desc": "Override default node to render a file from the user picked list",
+      "scope": {
+        "index": {
+          "type": "Number",
+          "desc": "Selection index"
+        },
+        "file": {
+          "type": "File",
+          "desc": "File object"
+        },
+        "ref": {
+          "type": "Component",
+          "tsType": "QFile",
+          "desc": "Reference to the QFile component"
+        }
+      }
+    },
+    "selected": {
+      "desc": "Override default selection slot; Suggestion: QChip",
+      "scope": {
+        "files": {
+          "type": "Array",
+          "tsType": "File",
+          "desc": "Array of File objects"
+        },
+        "ref": {
+          "type": "Component",
+          "tsType": "QFile",
+          "desc": "Reference to the QFile component"
+        }
+      }
+    },
     "default": {
       "desc": "Field main content"
     },
@@ -380,77 +412,9 @@
     },
     "loading": {
       "desc": "Override default spinner when component is in loading mode; Use in conjunction with 'loading' prop"
-    },
-    "file": {
-      "desc": "Override default node to render a file from the user picked list",
-      "scope": {
-        "index": {
-          "type": "Number",
-          "desc": "Selection index"
-        },
-        "file": {
-          "type": "File",
-          "desc": "File object"
-        },
-        "ref": {
-          "type": "Component",
-          "tsType": "QFile",
-          "desc": "Reference to the QFile component"
-        }
-      }
-    },
-    "selected": {
-      "desc": "Override default selection slot; Suggestion: QChip",
-      "scope": {
-        "files": {
-          "type": [
-            "Array",
-            "FileList"
-          ],
-          "desc": "Array of File objects"
-        },
-        "ref": {
-          "type": "Component",
-          "tsType": "QFile",
-          "desc": "Reference to the QFile component"
-        }
-      }
     }
   },
   "methods": {
-    "pickFiles": {
-      "desc": "Trigger file pick; Must be called as a direct consequence of user interaction (eg. in a click handler), due to browsers security policy",
-      "params": {
-        "evt": {
-          "extends": "evt"
-        }
-      },
-      "returns": null
-    },
-    "addFiles": {
-      "desc": "Add files programmatically",
-      "params": {
-        "files": {
-          "type": [
-            "Array",
-            "FileList"
-          ],
-          "desc": "Array of files (instances of File)",
-          "required": true
-        }
-      },
-      "returns": null
-    },
-    "focus": {
-      "desc": "Focus component",
-      "params": null,
-      "returns": null
-    },
-    "blur": {
-      "desc": "Blur component (lose focus)",
-      "params": null,
-      "returns": null
-    },
     "removeAtIndex": {
       "desc": "Remove file located at specific index in the model",
       "params": {
@@ -481,6 +445,40 @@
         "tsType": "QFileNativeElement",
         "desc": "The underlying native input DOM Element"
       }
+    },
+    "focus": {
+      "desc": "Focus component",
+      "params": null,
+      "returns": null
+    },
+    "blur": {
+      "desc": "Blur component (lose focus)",
+      "params": null,
+      "returns": null
+    },
+    "pickFiles": {
+      "desc": "Trigger file pick; Must be called as a direct consequence of user interaction (eg. in a click handler), due to browsers security policy",
+      "params": {
+        "evt": {
+          "extends": "evt"
+        }
+      },
+      "returns": null
+    },
+    "addFiles": {
+      "desc": "Add files programmatically",
+      "params": {
+        "files": {
+          "type": [
+            "Array",
+            "FileList"
+          ],
+          "tsType": "QUseFileAddInput",
+          "desc": "Array of files (instances of File) or FileList",
+          "required": true
+        }
+      },
+      "returns": null
     }
   },
   "computedProps": {
@@ -492,16 +490,6 @@
     }
   },
   "events": {
-    "rejected": {
-      "desc": "Emitted after files are picked and some do not pass the validation props (accept, max-file-size, max-total-size, filter, etc)",
-      "params": {
-        "rejectedEntries": {
-          "type": "Array",
-          "tsType": "QRejectedEntry",
-          "desc": "Array of { failedPropValidation: string, file: File } Objects for files that do not pass the validation"
-        }
-      }
-    },
     "update:model-value": {
       "extends": "update:model-value"
     },
@@ -527,6 +515,16 @@
         "value": {
           "type": "Any",
           "desc": "The previous value before clearing it"
+        }
+      }
+    },
+    "rejected": {
+      "desc": "Emitted after files are picked and some do not pass the validation props (accept, max-file-size, max-total-size, filter, etc)",
+      "params": {
+        "rejectedEntries": {
+          "type": "Array",
+          "tsType": "QRejectedEntry",
+          "desc": "Array of { failedPropValidation: string, file: File } Objects for files that do not pass the validation"
         }
       }
     }

@@ -2,27 +2,6 @@
   "name": "QCarousel",
   "methods": [
     {
-      "name": "toggleFullscreen",
-      "description": "Toggle the view to be fullscreen or not fullscreen",
-      "description_zh": "将视图切换为全屏或不全屏",
-      "params": "",
-      "value": ""
-    },
-    {
-      "name": "setFullscreen",
-      "description": "Enter the fullscreen view",
-      "description_zh": "进入全屏视图",
-      "params": "",
-      "value": ""
-    },
-    {
-      "name": "exitFullscreen",
-      "description": "Leave the fullscreen view",
-      "description_zh": "离开全屏视图",
-      "params": "",
-      "value": ""
-    },
-    {
       "name": "next",
       "description": "Go to next panel",
       "description_zh": "转到下一个面板",
@@ -42,23 +21,30 @@
       "description_zh": "转到特定面板",
       "params": "(panelName: String,Number) => void",
       "value": ""
+    },
+    {
+      "name": "toggleFullscreen",
+      "description": "Toggle the view to be fullscreen or not fullscreen",
+      "description_zh": "将视图切换为全屏或不全屏",
+      "params": "",
+      "value": ""
+    },
+    {
+      "name": "setFullscreen",
+      "description": "Enter the fullscreen view",
+      "description_zh": "进入全屏视图",
+      "params": "",
+      "value": ""
+    },
+    {
+      "name": "exitFullscreen",
+      "description": "Leave the fullscreen view",
+      "description_zh": "离开全屏视图",
+      "params": "",
+      "value": ""
     }
   ],
   "events": [
-    {
-      "name": "fullscreen",
-      "description": "Emitted when fullscreen state changes",
-      "description_zh": "全屏状态更改时发出",
-      "params": "(value: Boolean) => void",
-      "value": ""
-    },
-    {
-      "name": "update:fullscreen",
-      "description": "Used by Vue on 'v-model:fullscreen' prop for updating its value",
-      "description_zh": "被 Vue 在 'v-model：fullscreen' prop 上使用，以更新其值",
-      "params": "(value: Boolean) => void",
-      "value": ""
-    },
     {
       "name": "update:model-value",
       "description": "Emitted when the component changes the model; This event _isn't_ fired if the model is changed externally; Is also used by v-model",
@@ -79,26 +65,186 @@
       "description_zh": "在组件过渡到新面板后发出",
       "params": "(newVal: String,Number, oldVal: String,Number) => void",
       "value": ""
+    },
+    {
+      "name": "fullscreen",
+      "description": "Emitted when fullscreen state changes",
+      "description_zh": "全屏状态更改时发出",
+      "params": "(value: Boolean) => void",
+      "value": ""
+    },
+    {
+      "name": "update:fullscreen",
+      "description": "Used by Vue on 'v-model:fullscreen' prop for updating its value",
+      "description_zh": "被 Vue 在 'v-model：fullscreen' prop 上使用，以更新其值",
+      "params": "(value: Boolean) => void",
+      "value": ""
     }
   ],
   "props": {
-    "fullscreen": {
+    "dark": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "",
+      "required": false,
+      "extends": "dark"
+    },
+    "height": {
+      "value": "",
+      "type": "String",
+      "description": "Height of Carousel in CSS units, including unit name",
+      "description_zh": "以 CSS 单位表示的轮播高度，包括单位名称",
+      "default": "",
+      "required": false,
+      "extends": "size",
+      "desc": "Height of Carousel in CSS units, including unit name"
+    },
+    "padding": {
       "value": "",
       "type": "Boolean",
-      "description": "Fullscreen mode",
-      "description_zh": "全屏模式",
+      "description": "Applies a default padding to each slide, according to the usage of 'arrows' and 'navigation' props",
+      "description_zh": "根据 'arrows' 和 'navigation' props 的用法，为每张幻灯片应用默认内边距",
       "default": "false",
       "required": false
     },
-    "no-route-fullscreen-exit": {
+    "control-color": {
+      "type": "String",
+      "value": "",
+      "default": "primary",
+      "extends": "color",
+      "desc": "Color name for text color of QCarousel button controls (arrows, navigation) from the Quasar Color Palette",
+      "category": "style",
+      "description": "Color name for component from the Quasar Color Palette",
+      "description_zh": "Quasar Color Palette （类星体调色板） 中组件的颜色名称"
+    },
+    "control-text-color": {
+      "type": "String",
+      "description": "Color name for component from the Quasar Color Palette",
+      "value": "",
+      "default": "primary",
+      "extends": "color",
+      "desc": "Color name for text color of QCarousel button controls (arrows, navigation) from the Quasar Color Palette",
+      "category": "style",
+      "description_zh": "Quasar Color Palette （类星体调色板） 中组件的颜色名称"
+    },
+    "control-type": {
+      "value": "",
+      "type": "regular / flat / outline / push / unelevated",
+      "description": "Type of button to use for controls (arrows, navigation)",
+      "description_zh": "用于控件的按钮类型（箭头、导航）",
+      "default": "flat",
+      "required": false
+    },
+    "autoplay": {
+      "value": "",
+      "type": "Number | Boolean",
+      "description": "Jump to next slide (if 'true' or val > 0) or previous slide (if val < 0) at fixed time intervals (in milliseconds); 'false' disables autoplay, 'true' enables it for 5000ms intervals",
+      "description_zh": "以固定的时间间隔（以毫秒为单位）跳转到下一张幻灯片（如果 'true' 或 val > 0）或上一张幻灯片（如果 val < 0）;'false' 禁用自动播放，'true' 启用 5000 毫秒间隔",
+      "default": "",
+      "required": false
+    },
+    "arrows": {
       "value": "",
       "type": "Boolean",
-      "description": "Changing route app won't exit fullscreen",
-      "description_zh": "更改路线应用程序不会全屏退出",
+      "description": "Show navigation arrow buttons",
+      "description_zh": "显示导航箭头按钮",
       "default": "false",
       "required": false
     },
-    "model-value": {
+    "prev-icon": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "",
+      "required": false,
+      "extends": "icon"
+    },
+    "next-icon": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "",
+      "required": false,
+      "extends": "icon"
+    },
+    "navigation": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Show navigation dots",
+      "description_zh": "显示导航点",
+      "default": "false",
+      "required": false
+    },
+    "navigation-position": {
+      "value": "",
+      "type": "top / right / bottom / left",
+      "description": "Side to stick navigation to",
+      "description_zh": "侧向 stick 导航",
+      "default": "# bottom/right",
+      "required": false
+    },
+    "navigation-icon": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "",
+      "required": false,
+      "extends": "icon"
+    },
+    "navigation-active-icon": {
+      "value": "",
+      "type": "String",
+      "description": "Icon name following Quasar convention for the active (current slide) navigation icon; Make sure you have the icon library installed unless you are using 'img:' prefix",
+      "description_zh": "活动（当前幻灯片）导航图标的图标名称遵循 Quasar 约定;确保已安装图标库，除非使用 'img：' 前缀",
+      "default": "",
+      "required": false,
+      "extends": "icon",
+      "desc": "Icon name following Quasar convention for the active (current slide) navigation icon; Make sure you have the icon library installed unless you are using 'img:' prefix"
+    },
+    "thumbnails": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Show thumbnails",
+      "description_zh": "显示缩略图",
+      "default": "false",
+      "required": false
+    },
+    "transition-prev": {
+      "value": "",
+      "type": "String",
+      "description": "One of Quasar's embedded transitions (has effect only if 'animated' prop is set)",
+      "description_zh": "Quasar 的嵌入式过渡之一（仅在设置了 'animated' prop 时有效）",
+      "default": "# slide-right/slide-down",
+      "required": false,
+      "__delete": [
+        "__runtimeDefault"
+      ],
+      "extends": "transition",
+      "desc": "One of Quasar's embedded transitions (has effect only if 'animated' prop is set)",
+      "__runtimeDefault": true,
+      "category": "transition"
+    },
+    "transition-next": {
+      "value": "",
+      "type": "String",
+      "description": "One of Quasar's embedded transitions (has effect only if 'animated' prop is set)",
+      "description_zh": "Quasar 的嵌入式过渡之一（仅在设置了 'animated' prop 时有效）",
+      "default": "# slide-left/slide-up",
+      "required": false,
+      "__delete": [
+        "__runtimeDefault"
+      ],
+      "extends": "transition",
+      "desc": "One of Quasar's embedded transitions (has effect only if 'animated' prop is set)",
+      "__runtimeDefault": true,
+      "category": "transition"
+    },
+    "v-model": {
       "value": "",
       "type": "Any",
       "description": "Model of the component defining the current panel's name; If a Number is used, it does not define the panel's index, but rather the panel's name which can also be an Integer; Either use this property (along with a listener for 'update:model-value' event) OR use the v-model directive.",
@@ -170,36 +316,6 @@
       "default": "false",
       "required": false
     },
-    "transition-prev": {
-      "value": "",
-      "type": "String",
-      "description": "",
-      "description_zh": "",
-      "default": "'fade'",
-      "required": false,
-      "extends": "transition",
-      "desc": "One of Quasar's embedded transitions (has effect only if 'animated' prop is set)",
-      "__runtimeDefault": true,
-      "category": "transition",
-      "__delete": [
-        "__runtimeDefault"
-      ]
-    },
-    "transition-next": {
-      "value": "",
-      "type": "String",
-      "description": "",
-      "description_zh": "",
-      "default": "'fade'",
-      "required": false,
-      "extends": "transition",
-      "desc": "One of Quasar's embedded transitions (has effect only if 'animated' prop is set)",
-      "__runtimeDefault": true,
-      "category": "transition",
-      "__delete": [
-        "__runtimeDefault"
-      ]
-    },
     "transition-duration": {
       "value": "",
       "type": "String | Number",
@@ -209,135 +325,19 @@
       "version": "v2.2",
       "required": false
     },
-    "dark": {
-      "value": "",
-      "type": "String",
-      "description": "",
-      "description_zh": "",
-      "default": "",
-      "required": false,
-      "extends": "dark"
-    },
-    "height": {
-      "value": "",
-      "type": "String",
-      "description": "",
-      "description_zh": "",
-      "default": "",
-      "required": false,
-      "extends": "size",
-      "desc": "Height of Carousel in CSS units, including unit name"
-    },
-    "padding": {
+    "fullscreen": {
       "value": "",
       "type": "Boolean",
-      "description": "Applies a default padding to each slide, according to the usage of 'arrows' and 'navigation' props",
-      "description_zh": "根据 'arrows' 和 'navigation' props 的用法，为每张幻灯片应用默认内边距",
+      "description": "Fullscreen mode",
+      "description_zh": "全屏模式",
       "default": "false",
       "required": false
     },
-    "control-color": {
-      "type": "String",
-      "description": "Color name for component from the Quasar Color Palette",
-      "value": "",
-      "default": "'primary'",
-      "extends": "color",
-      "desc": "Color name for text color of QCarousel button controls (arrows, navigation) from the Quasar Color Palette",
-      "category": "style",
-      "description_zh": "Quasar Color Palette （类星体调色板） 中组件的颜色名称"
-    },
-    "control-text-color": {
-      "type": "String",
-      "description": "Color name for component from the Quasar Color Palette",
-      "value": "",
-      "default": "'primary'",
-      "extends": "color",
-      "desc": "Color name for text color of QCarousel button controls (arrows, navigation) from the Quasar Color Palette",
-      "category": "style",
-      "description_zh": "Quasar Color Palette （类星体调色板） 中组件的颜色名称"
-    },
-    "control-type": {
-      "value": "",
-      "type": "String",
-      "description": "Type of button to use for controls (arrows, navigation)",
-      "description_zh": "用于控件的按钮类型（箭头、导航）",
-      "default": "'flat'",
-      "required": false
-    },
-    "autoplay": {
-      "value": "",
-      "type": "Number | Boolean",
-      "description": "Jump to next slide (if 'true' or val > 0) or previous slide (if val < 0) at fixed time intervals (in milliseconds); 'false' disables autoplay, 'true' enables it for 5000ms intervals",
-      "description_zh": "以固定的时间间隔（以毫秒为单位）跳转到下一张幻灯片（如果 'true' 或 val > 0）或上一张幻灯片（如果 val < 0）;'false' 禁用自动播放，'true' 启用 5000 毫秒间隔",
-      "default": "",
-      "required": false
-    },
-    "arrows": {
+    "no-route-fullscreen-exit": {
       "value": "",
       "type": "Boolean",
-      "description": "Show navigation arrow buttons",
-      "description_zh": "显示导航箭头按钮",
-      "default": "false",
-      "required": false
-    },
-    "prev-icon": {
-      "value": "",
-      "type": "String",
-      "description": "",
-      "description_zh": "",
-      "default": "",
-      "required": false,
-      "extends": "icon"
-    },
-    "next-icon": {
-      "value": "",
-      "type": "String",
-      "description": "",
-      "description_zh": "",
-      "default": "",
-      "required": false,
-      "extends": "icon"
-    },
-    "navigation": {
-      "value": "",
-      "type": "Boolean",
-      "description": "Show navigation dots",
-      "description_zh": "显示导航点",
-      "default": "false",
-      "required": false
-    },
-    "navigation-position": {
-      "value": "",
-      "type": "String",
-      "description": "Side to stick navigation to",
-      "description_zh": "侧向 stick 导航",
-      "default": "# 'bottom'/'right'",
-      "required": false
-    },
-    "navigation-icon": {
-      "value": "",
-      "type": "String",
-      "description": "",
-      "description_zh": "",
-      "default": "",
-      "required": false,
-      "extends": "icon"
-    },
-    "navigation-active-icon": {
-      "value": "",
-      "type": "String",
-      "description": "",
-      "description_zh": "",
-      "default": "",
-      "required": false,
-      "extends": "icon",
-      "desc": "Icon name following Quasar convention for the active (current slide) navigation icon; Make sure you have the icon library installed unless you are using 'img:' prefix"
-    },
-    "thumbnails": {
-      "value": "",
-      "type": "Boolean",
-      "description": "Show thumbnails",
-      "description_zh": "显示缩略图",
+      "description": "Changing route app won't exit fullscreen",
+      "description_zh": "更改路线应用程序不会全屏退出",
       "default": "false",
       "required": false
     }

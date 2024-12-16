@@ -18,73 +18,6 @@
     }
   ],
   "props": {
-    "to": {
-      "value": "",
-      "type": "String | Object",
-      "description": "Equivalent to Vue Router <router-link> 'to' property; Superseded by 'href' prop if used",
-      "description_zh": "等同于 Vue Router <router-link> 的 'to' 属性;如果使用，则被 'href' prop 取代",
-      "default": "",
-      "required": false
-    },
-    "exact": {
-      "value": "",
-      "type": "Boolean",
-      "description": "Equivalent to Vue Router <router-link> 'exact' property; Superseded by 'href' prop if used",
-      "description_zh": "等价于 Vue Router <router-link> 的 'exact' 属性;如果使用，则被 'href' prop 取代",
-      "default": "false",
-      "required": false
-    },
-    "replace": {
-      "value": "",
-      "type": "Boolean",
-      "description": "Equivalent to Vue Router <router-link> 'replace' property; Superseded by 'href' prop if used",
-      "description_zh": "相当于 Vue Router <router-link> 的 'replace' 属性;如果使用，则被 'href' prop 取代",
-      "default": "false",
-      "required": false
-    },
-    "active-class": {
-      "value": "",
-      "type": "String",
-      "description": "Equivalent to Vue Router <router-link> 'active-class' property; Superseded by 'href' prop if used",
-      "description_zh": "等同于 Vue Router <router-link> 的 'active-class' 属性;如果使用，则被 'href' prop 取代",
-      "default": "'q-router-link--active'",
-      "required": false
-    },
-    "exact-active-class": {
-      "value": "",
-      "type": "String",
-      "description": "Equivalent to Vue Router <router-link> 'active-class' property; Superseded by 'href' prop if used",
-      "description_zh": "等同于 Vue Router <router-link> 的 'active-class' 属性;如果使用，则被 'href' prop 取代",
-      "default": "'q-router-link--exact-active'",
-      "required": false
-    },
-    "href": {
-      "value": "",
-      "type": "String",
-      "description": "Native <a> link href attribute; Has priority over the 'to'/'exact'/'replace'/'active-class'/'exact-active-class' props",
-      "description_zh": "原生<a>链接 href 属性;优先于 'to'/'exact'/'replace'/'active-class'/'exact-active-class' 属性",
-      "default": "",
-      "version": "v2.4",
-      "required": false
-    },
-    "target": {
-      "value": "",
-      "type": "String",
-      "description": "Native <a> link target attribute; Use it only along with 'href' prop; Has priority over the 'to'/'exact'/'replace'/'active-class'/'exact-active-class' props",
-      "description_zh": "Native <a> link 目标属性;只能与 'href' prop 一起使用;优先于 'to'/'exact'/'replace'/'active-class'/'exact-active-class' 属性",
-      "default": "",
-      "version": "v2.4",
-      "required": false
-    },
-    "disable": {
-      "value": "",
-      "type": "String",
-      "description": "",
-      "description_zh": "",
-      "default": "",
-      "required": false,
-      "extends": "disable"
-    },
     "active": {
       "value": "",
       "type": "Boolean | null",
@@ -139,16 +72,16 @@
     "tag": {
       "value": "",
       "type": "String",
-      "description": "",
-      "description_zh": "",
-      "default": "'div'",
+      "description": "HTML tag to render; Suggestion: use 'label' when encapsulating a QCheckbox/QRadio/QToggle so that when user clicks/taps on the whole item it will trigger a model change for the mentioned components",
+      "description_zh": "HTML 标签进行渲染;建议：在封装 QCheckbox/QRadio/QToggle 时使用 'label'，这样当用户点击/点击整个项目时，它将触发上述组件的模型更改",
+      "default": "div",
       "required": false,
       "extends": "tag",
       "desc": "HTML tag to render; Suggestion: use 'label' when encapsulating a QCheckbox/QRadio/QToggle so that when user clicks/taps on the whole item it will trigger a model change for the mentioned components",
       "examples": [
-        "'a'",
-        "'label'",
-        "'div'"
+        "a",
+        "label",
+        "div"
       ]
     },
     "manual-focus": {
@@ -166,6 +99,73 @@
       "description_zh": "确定焦点状态，仅当 'manual-focus' 已启用 / 设置为 true 时",
       "default": "false",
       "required": false
+    },
+    "to": {
+      "value": "",
+      "type": "String | Object",
+      "description": "Equivalent to Vue Router <router-link> 'to' property; Superseded by 'href' prop if used",
+      "description_zh": "等同于 Vue Router <router-link> 的 'to' 属性;如果使用，则被 'href' prop 取代",
+      "default": "",
+      "required": false
+    },
+    "exact": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Equivalent to Vue Router <router-link> 'exact' property; Superseded by 'href' prop if used",
+      "description_zh": "等价于 Vue Router <router-link> 的 'exact' 属性;如果使用，则被 'href' prop 取代",
+      "default": "false",
+      "required": false
+    },
+    "replace": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Equivalent to Vue Router <router-link> 'replace' property; Superseded by 'href' prop if used",
+      "description_zh": "相当于 Vue Router <router-link> 的 'replace' 属性;如果使用，则被 'href' prop 取代",
+      "default": "false",
+      "required": false
+    },
+    "active-class": {
+      "value": "",
+      "type": "String",
+      "description": "Equivalent to Vue Router <router-link> 'active-class' property; Superseded by 'href' prop if used",
+      "description_zh": "等同于 Vue Router <router-link> 的 'active-class' 属性;如果使用，则被 'href' prop 取代",
+      "default": "q-router-link--active",
+      "required": false
+    },
+    "exact-active-class": {
+      "value": "",
+      "type": "String",
+      "description": "Equivalent to Vue Router <router-link> 'active-class' property; Superseded by 'href' prop if used",
+      "description_zh": "等同于 Vue Router <router-link> 的 'active-class' 属性;如果使用，则被 'href' prop 取代",
+      "default": "q-router-link--exact-active",
+      "required": false
+    },
+    "href": {
+      "value": "",
+      "type": "String",
+      "description": "Native <a> link href attribute; Has priority over the 'to'/'exact'/'replace'/'active-class'/'exact-active-class' props",
+      "description_zh": "原生<a>链接 href 属性;优先于 'to'/'exact'/'replace'/'active-class'/'exact-active-class' 属性",
+      "default": "",
+      "version": "v2.4",
+      "required": false
+    },
+    "target": {
+      "value": "",
+      "type": "String",
+      "description": "Native <a> link target attribute; Use it only along with 'href' prop; Has priority over the 'to'/'exact'/'replace'/'active-class'/'exact-active-class' props",
+      "description_zh": "Native <a> link 目标属性;只能与 'href' prop 一起使用;优先于 'to'/'exact'/'replace'/'active-class'/'exact-active-class' 属性",
+      "default": "",
+      "version": "v2.4",
+      "required": false
+    },
+    "disable": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "",
+      "required": false,
+      "extends": "disable"
     }
   },
   "link": "https://v2.quasar.dev/vue-components/list-and-list-items",

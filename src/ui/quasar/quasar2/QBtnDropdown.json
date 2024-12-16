@@ -25,6 +25,13 @@
   ],
   "events": [
     {
+      "name": "click",
+      "description": "Emitted when user clicks/taps on the main button (not the icon one, if using 'split')",
+      "description_zh": "当用户单击/点击主按钮时发出（如果使用 'split'，则不是图标按钮）",
+      "params": "",
+      "value": ""
+    },
+    {
       "name": "update:model-value",
       "description": "Emitted when showing/hidden state changes; Is also used by v-model",
       "description_zh": "在显示/隐藏状态更改时触发;也被 v-model 使用",
@@ -58,48 +65,137 @@
       "description_zh": "",
       "params": "",
       "value": ""
-    },
-    {
-      "name": "click",
-      "description": "Emitted when user clicks/taps on the main button (not the icon one, if using 'split')",
-      "description_zh": "当用户单击/点击主按钮时发出（如果使用 'split'，则不是图标按钮）",
-      "params": "",
-      "value": ""
     }
   ],
   "props": {
-    "transition-show": {
+    "v-model": {
       "value": "",
-      "type": "String",
-      "description": "",
-      "description_zh": "",
-      "default": "'fade'",
-      "required": false,
-      "extends": "transition"
-    },
-    "transition-hide": {
-      "value": "",
-      "type": "String",
-      "description": "",
-      "description_zh": "",
-      "default": "'fade'",
-      "required": false,
-      "extends": "transition"
-    },
-    "transition-duration": {
-      "value": "",
-      "type": "String | Number",
-      "description": "Transition duration (in milliseconds, without unit)",
-      "description_zh": "过渡持续时间（以毫秒为单位，不含单位）",
-      "default": "300",
-      "required": false
-    },
-    "model-value": {
-      "value": "",
-      "type": "Boolean",
+      "type": "Boolean | null",
       "description": "Model of the component defining shown/hidden state; Either use this property (along with a listener for 'update:model-value' event) OR use v-model directive",
       "description_zh": "定义显示/隐藏状态的组件模型;使用此属性（以及 'update：model-value' 事件的侦听器）或使用 v-model 指令",
       "default": "null",
+      "required": false
+    },
+    "split": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Split dropdown icon into its own button",
+      "description_zh": "将下拉图标拆分为自己的按钮",
+      "default": "false",
+      "required": false
+    },
+    "dropdown-icon": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "",
+      "required": false,
+      "extends": "icon"
+    },
+    "disable-main-btn": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Disable main button (useful along with 'split' prop)",
+      "description_zh": "禁用主按钮（与 'split' 属性一起有用）",
+      "default": "false",
+      "required": false
+    },
+    "disable-dropdown": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Disables dropdown (dropdown button if using along 'split' prop)",
+      "description_zh": "禁用下拉列表（如果与 'split' prop 一起使用，则为下拉按钮）",
+      "default": "false",
+      "required": false
+    },
+    "no-icon-animation": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Disables the rotation of the dropdown icon when state is toggled",
+      "description_zh": "在切换状态时禁用下拉图标的旋转",
+      "default": "false",
+      "required": false
+    },
+    "content-style": {
+      "value": "",
+      "type": "String | Array | Object",
+      "description": "Style definitions to be attributed to the menu",
+      "description_zh": "要归属于菜单的样式定义",
+      "default": "",
+      "required": false
+    },
+    "content-class": {
+      "value": "",
+      "type": "String | Array | Object",
+      "description": "Class definitions to be attributed to the menu",
+      "description_zh": "要归属于菜单的类定义",
+      "default": "",
+      "required": false
+    },
+    "cover": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Allows the menu to cover the button. When used, the 'menu-self' and 'menu-fit' props are no longer effective",
+      "description_zh": "允许菜单覆盖按钮。使用时，'menu-self' 和 'menu-fit' props 不再有效",
+      "default": "false",
+      "required": false
+    },
+    "persistent": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Allows the menu to not be dismissed by a click/tap outside of the menu or by hitting the ESC key; Also, an app route change won't dismiss it",
+      "description_zh": "允许不通过单击/点击菜单外部或按 ESC 键来关闭菜单;此外，应用程序路线更改不会关闭它",
+      "default": "false",
+      "required": false
+    },
+    "no-route-dismiss": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Changing route app won't dismiss the popup; No need to set it if 'persistent' prop is also set",
+      "description_zh": "更改路线应用程序不会关闭弹出窗口;如果还设置了 'persistent' prop，则无需设置它",
+      "default": "false",
+      "required": false
+    },
+    "auto-close": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Allows any click/tap in the menu to close it; Useful instead of attaching events to each menu item that should close the menu on click/tap",
+      "description_zh": "允许单击/点击菜单中的任何按钮来关闭它;有用的，而不是将事件附加到每个菜单项，这些菜单项应在单击/点击时关闭菜单",
+      "default": "false",
+      "required": false
+    },
+    "menu-anchor": {
+      "value": "",
+      "type": "top left / top middle / top right / top start / top end / center left / center middle / center right / center start / center end / bottom left / bottom middle / bottom right / bottom start / bottom end",
+      "description": "Two values setting the starting position or anchor point of the menu relative to its target",
+      "description_zh": "两个值设置菜单相对于其目标的起始位置或锚点",
+      "default": "bottom end",
+      "required": false
+    },
+    "menu-self": {
+      "value": "",
+      "type": "top left / top middle / top right / top start / top end / center left / center middle / center right / center start / center end / bottom left / bottom middle / bottom right / bottom start / bottom end",
+      "description": "Two values setting the menu's own position relative to its target",
+      "description_zh": "两个值设置菜单相对于其目标的位置",
+      "default": "top end",
+      "required": false
+    },
+    "menu-offset": {
+      "value": "",
+      "type": "Array",
+      "description": "An array of two numbers to offset the menu horizontally and vertically in pixels",
+      "description_zh": "一个包含两个数字的数组，用于水平和垂直偏移菜单（以像素为单位）",
+      "default": "",
+      "required": false
+    },
+    "toggle-aria-label": {
+      "value": "",
+      "type": "String",
+      "description": "aria-label to be used on the dropdown toggle element",
+      "description_zh": "aria-label 用于下拉切换元素",
+      "default": "",
+      "version": "v2.8.4",
       "required": false
     },
     "type": {
@@ -107,7 +203,7 @@
       "type": "String",
       "description": "1) Define the button native type attribute (submit, reset, button) or 2) render component with <a> tag so you can access events even if disable or 3) Use 'href' prop and specify 'type' as a media tag",
       "description_zh": "1） 定义按钮原生类型属性（submit、reset、button）或 2） 使用标签渲染组件<a>，这样即使禁用也可以访问事件，或者 3） 使用 'href' 属性并指定 'type' 作为媒体标签",
-      "default": "'button'",
+      "default": "button",
       "required": false
     },
     "to": {
@@ -257,7 +353,7 @@
       "type": "String",
       "description": "Color name for component from the Quasar Color Palette",
       "value": "",
-      "default": "'primary'",
+      "default": "primary",
       "extends": "color",
       "desc": "The color used to color the separator, which can be any color from the Quasar Color Palette",
       "category": "style",
@@ -317,10 +413,10 @@
     },
     "align": {
       "value": "",
-      "type": "String",
+      "type": "left / right / center / around / between / evenly",
       "description": "Label or content alignment",
       "description_zh": "标签或内容对齐方式",
-      "default": "'center'",
+      "default": "center",
       "required": false
     },
     "stack": {
@@ -356,126 +452,30 @@
       "required": false,
       "extends": "disable"
     },
-    "split": {
-      "value": "",
-      "type": "Boolean",
-      "description": "Split dropdown icon into its own button",
-      "description_zh": "将下拉图标拆分为自己的按钮",
-      "default": "false",
-      "required": false
-    },
-    "dropdown-icon": {
+    "transition-show": {
       "value": "",
       "type": "String",
       "description": "",
       "description_zh": "",
-      "default": "",
+      "default": "fade",
       "required": false,
-      "extends": "icon"
+      "extends": "transition"
     },
-    "disable-main-btn": {
-      "value": "",
-      "type": "Boolean",
-      "description": "Disable main button (useful along with 'split' prop)",
-      "description_zh": "禁用主按钮（与 'split' 属性一起有用）",
-      "default": "false",
-      "required": false
-    },
-    "disable-dropdown": {
-      "value": "",
-      "type": "Boolean",
-      "description": "Disables dropdown (dropdown button if using along 'split' prop)",
-      "description_zh": "禁用下拉列表（如果与 'split' prop 一起使用，则为下拉按钮）",
-      "default": "false",
-      "required": false
-    },
-    "no-icon-animation": {
-      "value": "",
-      "type": "Boolean",
-      "description": "Disables the rotation of the dropdown icon when state is toggled",
-      "description_zh": "在切换状态时禁用下拉图标的旋转",
-      "default": "false",
-      "required": false
-    },
-    "content-style": {
-      "value": "",
-      "type": "String | Array | Object",
-      "description": "Style definitions to be attributed to the menu",
-      "description_zh": "要归属于菜单的样式定义",
-      "default": "",
-      "required": false
-    },
-    "content-class": {
-      "value": "",
-      "type": "String | Array | Object",
-      "description": "Class definitions to be attributed to the menu",
-      "description_zh": "要归属于菜单的类定义",
-      "default": "",
-      "required": false
-    },
-    "cover": {
-      "value": "",
-      "type": "Boolean",
-      "description": "Allows the menu to cover the button. When used, the 'menu-self' and 'menu-fit' props are no longer effective",
-      "description_zh": "允许菜单覆盖按钮。使用时，'menu-self' 和 'menu-fit' props 不再有效",
-      "default": "false",
-      "required": false
-    },
-    "persistent": {
-      "value": "",
-      "type": "Boolean",
-      "description": "Allows the menu to not be dismissed by a click/tap outside of the menu or by hitting the ESC key; Also, an app route change won't dismiss it",
-      "description_zh": "允许不通过单击/点击菜单外部或按 ESC 键来关闭菜单;此外，应用程序路线更改不会关闭它",
-      "default": "false",
-      "required": false
-    },
-    "no-route-dismiss": {
-      "value": "",
-      "type": "Boolean",
-      "description": "Changing route app won't dismiss the popup; No need to set it if 'persistent' prop is also set",
-      "description_zh": "更改路线应用程序不会关闭弹出窗口;如果还设置了 'persistent' prop，则无需设置它",
-      "default": "false",
-      "required": false
-    },
-    "auto-close": {
-      "value": "",
-      "type": "Boolean",
-      "description": "Allows any click/tap in the menu to close it; Useful instead of attaching events to each menu item that should close the menu on click/tap",
-      "description_zh": "允许单击/点击菜单中的任何按钮来关闭它;有用的，而不是将事件附加到每个菜单项，这些菜单项应在单击/点击时关闭菜单",
-      "default": "false",
-      "required": false
-    },
-    "menu-anchor": {
+    "transition-hide": {
       "value": "",
       "type": "String",
-      "description": "Two values setting the starting position or anchor point of the menu relative to its target",
-      "description_zh": "两个值设置菜单相对于其目标的起始位置或锚点",
-      "default": "'bottom end'",
-      "required": false
+      "description": "",
+      "description_zh": "",
+      "default": "fade",
+      "required": false,
+      "extends": "transition"
     },
-    "menu-self": {
+    "transition-duration": {
       "value": "",
-      "type": "String",
-      "description": "Two values setting the menu's own position relative to its target",
-      "description_zh": "两个值设置菜单相对于其目标的位置",
-      "default": "'top end'",
-      "required": false
-    },
-    "menu-offset": {
-      "value": "",
-      "type": "Array",
-      "description": "An array of two numbers to offset the menu horizontally and vertically in pixels",
-      "description_zh": "一个包含两个数字的数组，用于水平和垂直偏移菜单（以像素为单位）",
-      "default": "",
-      "required": false
-    },
-    "toggle-aria-label": {
-      "value": "",
-      "type": "String",
-      "description": "aria-label to be used on the dropdown toggle element",
-      "description_zh": "aria-label 用于下拉切换元素",
-      "default": "",
-      "version": "v2.8.4",
+      "type": "String | Number",
+      "description": "Transition duration (in milliseconds, without unit)",
+      "description_zh": "过渡持续时间（以毫秒为单位，不含单位）",
+      "default": "300",
       "required": false
     }
   },

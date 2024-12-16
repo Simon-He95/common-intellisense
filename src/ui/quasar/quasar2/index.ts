@@ -1,4 +1,3 @@
-import directives from '../directives.json'
 import { getComponentMap, getPropsMap } from './mapping'
 
 export function quasar2() {
@@ -17,6 +16,5 @@ export function quasar2Components() {
     prefix: 'q',
     lib: 'quasar',
     isReact: false,
-    directives: directives.quasar2,
   }
 }

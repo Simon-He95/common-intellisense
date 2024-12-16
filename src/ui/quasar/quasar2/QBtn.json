@@ -47,12 +47,36 @@
     }
   ],
   "props": {
+    "round": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Makes a circle shaped button",
+      "description_zh": "制作圆形按钮",
+      "default": "false",
+      "required": false
+    },
+    "percentage": {
+      "value": "",
+      "type": "Number",
+      "description": "Percentage (0.0 < x < 100.0); To be used along 'loading' prop; Display a progress bar on the background",
+      "description_zh": "百分比 （0.0 < x < 100.0）;与 'loading' prop 一起使用;在背景上显示进度条",
+      "default": "",
+      "required": false
+    },
+    "dark-percentage": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Progress bar on the background should have dark color; To be used along with 'percentage' and 'loading' props",
+      "description_zh": "背景上的进度条应为深色;与 'percentage' 和 'loading' props 一起使用",
+      "default": "false",
+      "required": false
+    },
     "type": {
       "value": "",
       "type": "String",
       "description": "1) Define the button native type attribute (submit, reset, button) or 2) render component with <a> tag so you can access events even if disable or 3) Use 'href' prop and specify 'type' as a media tag",
       "description_zh": "1） 定义按钮原生类型属性（submit、reset、button）或 2） 使用标签渲染组件<a>，这样即使禁用也可以访问事件，或者 3） 使用 'href' 属性并指定 'type' 作为媒体标签",
-      "default": "'button'",
+      "default": "button",
       "required": false
     },
     "to": {
@@ -202,10 +226,8 @@
       "type": "String",
       "description": "Color name for component from the Quasar Color Palette",
       "value": "",
-      "default": "'primary'",
+      "default": "",
       "extends": "color",
-      "desc": "The color used to color the separator, which can be any color from the Quasar Color Palette",
-      "category": "style",
       "description_zh": "Quasar Color Palette （类星体调色板） 中组件的颜色名称"
     },
     "text-color": {
@@ -262,10 +284,10 @@
     },
     "align": {
       "value": "",
-      "type": "String",
+      "type": "left / right / center / around / between / evenly",
       "description": "Label or content alignment",
       "description_zh": "标签或内容对齐方式",
-      "default": "'center'",
+      "default": "center",
       "required": false
     },
     "stack": {
@@ -300,30 +322,6 @@
       "default": "",
       "required": false,
       "extends": "disable"
-    },
-    "round": {
-      "value": "",
-      "type": "Boolean",
-      "description": "Makes a circle shaped button",
-      "description_zh": "制作圆形按钮",
-      "default": "false",
-      "required": false
-    },
-    "percentage": {
-      "value": "",
-      "type": "Number",
-      "description": "Percentage (0.0 < x < 100.0); To be used along 'loading' prop; Display a progress bar on the background",
-      "description_zh": "百分比 （0.0 < x < 100.0）;与 'loading' prop 一起使用;在背景上显示进度条",
-      "default": "",
-      "required": false
-    },
-    "dark-percentage": {
-      "value": "",
-      "type": "Boolean",
-      "description": "Progress bar on the background should have dark color; To be used along with 'percentage' and 'loading' props",
-      "description_zh": "背景上的进度条应为深色;与 'percentage' 和 'loading' props 一起使用",
-      "default": "false",
-      "required": false
     }
   },
   "link": "https://v2.quasar.dev/vue-components/button",

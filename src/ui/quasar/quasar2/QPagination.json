@@ -26,11 +26,11 @@
     }
   ],
   "props": {
-    "model-value": {
+    "v-model": {
       "value": "",
       "type": "Number",
-      "description": "",
-      "description_zh": "",
+      "description": "Current page (must be between min/max)",
+      "description_zh": "当前页面（必须介于最小值/最大值之间）",
       "default": "",
       "required": false,
       "extends": "model-value",
@@ -55,8 +55,8 @@
     "dark": {
       "value": "",
       "type": "String",
-      "description": "",
-      "description_zh": "",
+      "description": "Notify the component that the background is a dark color (useful when you are using it along with the 'input' prop)",
+      "description_zh": "通知组件背景是深色的（当你将它与 'input' 属性一起使用时很有用）",
       "default": "",
       "required": false,
       "extends": "dark",
@@ -204,21 +204,22 @@
       "required": false
     },
     "color": {
-      "type": "String",
+      "type": "Strng",
       "description": "Color name for component from the Quasar Color Palette",
       "value": "",
-      "default": "'primary'",
+      "default": "primary",
       "extends": "color",
       "desc": "Color name from the Quasar Color Palette for the ACTIVE button",
-      "category": "style",
+      "category": "labels",
+      "addedIn": "v2.4",
       "__runtimeDefault": true,
       "description_zh": "Quasar Color Palette （类星体调色板） 中组件的颜色名称"
     },
     "text-color": {
       "value": "",
       "type": "String",
-      "description": "",
-      "description_zh": "",
+      "description": "Text color name from the Quasar Color Palette for the ACTIVE buttons",
+      "description_zh": "ACTIVE 按钮的 Quasar 调色板中的文本颜色名称",
       "default": "",
       "required": false,
       "extends": "text-color",
@@ -226,10 +227,10 @@
     },
     "active-design": {
       "value": "",
-      "type": "String",
+      "type": "flat / outline / push / unelevated / ",
       "description": "The design of the ACTIVE button, similar to the flat/outline/push/unelevated props (but those are used for non-active buttons)",
       "description_zh": "ACTIVE 按钮的设计，类似于 flat/outline/push/unelevated 属性（但这些用于非活动按钮）",
-      "default": "''",
+      "default": "",
       "version": "v2.10",
       "required": false
     },
@@ -237,18 +238,19 @@
       "type": "String",
       "description": "Color name for component from the Quasar Color Palette",
       "value": "",
-      "default": "'primary'",
+      "default": "primary",
       "extends": "color",
       "desc": "Color name from the Quasar Color Palette for the ACTIVE button",
-      "category": "style",
+      "category": "labels",
+      "addedIn": "v2.4",
       "__runtimeDefault": true,
       "description_zh": "Quasar Color Palette （类星体调色板） 中组件的颜色名称"
     },
     "active-text-color": {
       "value": "",
       "type": "String",
-      "description": "",
-      "description_zh": "",
+      "description": "Text color name from the Quasar Color Palette for the ACTIVE button",
+      "description_zh": "ACTIVE 按钮的 Quasar 调色板中的文本颜色名称",
       "default": "",
       "required": false,
       "extends": "text-color",
@@ -283,7 +285,7 @@
       "type": "String",
       "description": "Apply custom gutter; Size in CSS units, including unit name or standard size name (none|xs|sm|md|lg|xl)",
       "description_zh": "应用自定义装订线;以 CSS 单位为单位的大小，包括单位名称或标准大小名称 （none|xs|sm|md|lg|xl）",
-      "default": "'2px'",
+      "default": "2px",
       "version": "v2.10",
       "required": false
     },
@@ -292,7 +294,7 @@
       "type": "String",
       "description": "Apply custom padding (vertical [horizontal]); Size in CSS units, including unit name or standard size name (none|xs|sm|md|lg|xl); Also removes the min width and height when set",
       "description_zh": "应用自定义内边距 （垂直 [水平]）;以 CSS 单位表示的大小，包括单元名称或标准大小名称 （none|xs|sm|md|lg|xl）;设置时还会删除最小宽度和高度",
-      "default": "'3px 2px'",
+      "default": "3px 2px",
       "required": false
     },
     "input-style": {

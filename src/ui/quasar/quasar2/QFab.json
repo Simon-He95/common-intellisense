@@ -26,8 +26,8 @@
   "events": [
     {
       "name": "update:model-value",
-      "description": "Emitted when fab actions are shown/hidden; Captured by v-model directive",
-      "description_zh": "显示/隐藏 fab 操作时发出;由 v-model 指令捕获",
+      "description": "Emitted when showing/hidden state changes; Is also used by v-model",
+      "description_zh": "在显示/隐藏状态更改时触发;也被 v-model 使用",
       "params": "(value: Boolean) => void",
       "value": ""
     },
@@ -61,12 +61,78 @@
     }
   ],
   "props": {
-    "type": {
+    "v-model": {
+      "value": "",
+      "type": "Boolean | null",
+      "description": "Model of the component defining shown/hidden state; Either use this property (along with a listener for 'update:model-value' event) OR use v-model directive",
+      "description_zh": "定义显示/隐藏状态的组件模型;使用此属性（以及 'update：model-value' 事件的侦听器）或使用 v-model 指令",
+      "default": "null",
+      "required": false
+    },
+    "icon": {
       "value": "",
       "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "",
+      "required": false,
+      "extends": "icon"
+    },
+    "active-icon": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "",
+      "required": false,
+      "extends": "icon"
+    },
+    "hide-label": {
+      "value": "",
+      "type": "Boolean | null",
+      "description": "Hide the label; Useful for animation purposes where you toggle the visibility of the label",
+      "description_zh": "隐藏标签;用于切换标签可见性的动画目的",
+      "default": "null",
+      "required": false
+    },
+    "hide-icon": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Hide the icon (don't use any)",
+      "description_zh": "隐藏图标（不使用任何图标）",
+      "default": "false",
+      "required": false
+    },
+    "direction": {
+      "value": "",
+      "type": "up / right / down / left",
+      "description": "Direction to expand Fab Actions to",
+      "description_zh": "将 Fab Actions 扩展到的方向",
+      "default": "right",
+      "required": false
+    },
+    "vertical-actions-align": {
+      "value": "",
+      "type": "left / center / right",
+      "description": "The side of the Fab where Fab Actions will expand (only when direction is 'up' or 'down')",
+      "description_zh": "Fab 操作将展开的一侧（仅当方向为“向上”或“向下”时）",
+      "default": "center",
+      "required": false
+    },
+    "persistent": {
+      "value": "",
+      "type": "Boolean",
+      "description": "By default, Fab Actions are hidden when user navigates to another route and this prop disables this behavior",
+      "description_zh": "默认情况下，当用户导航到另一个路由时，Fab Actions 是隐藏的，此 prop 会禁用此行为",
+      "default": "false",
+      "required": false
+    },
+    "type": {
+      "value": "",
+      "type": "a / submit / button / reset",
       "description": "Define the button HTML DOM type",
       "description_zh": "定义按钮 HTML DOM 类型",
-      "default": "'a'",
+      "default": "a",
       "required": false
     },
     "outline": {
@@ -113,7 +179,7 @@
       "type": "String",
       "description": "Color name for component from the Quasar Color Palette",
       "value": "",
-      "default": "'primary'",
+      "default": "primary",
       "extends": "color",
       "desc": "Font color (from the Quasar Palette) of buttons and text in the toolbar",
       "category": "toolbar",
@@ -149,23 +215,15 @@
       "type": "String | Number",
       "description": "The label that will be shown when Fab is extended",
       "description_zh": "扩展 Fab 时将显示的标签",
-      "default": "''",
+      "default": "",
       "required": false
     },
     "label-position": {
       "value": "",
-      "type": "String",
+      "type": "top / right / bottom / left",
       "description": "Position of the label around the icon",
       "description_zh": "标签在图标周围的位置",
-      "default": "'right'",
-      "required": false
-    },
-    "hide-label": {
-      "value": "",
-      "type": "Boolean | null",
-      "description": "Hide the label; Useful for animation purposes where you toggle the visibility of the label",
-      "description_zh": "隐藏标签;用于切换标签可见性的动画目的",
-      "default": "null",
+      "default": "right",
       "required": false
     },
     "label-class": {
@@ -209,64 +267,6 @@
       "default": "",
       "required": false,
       "extends": "tabindex"
-    },
-    "model-value": {
-      "value": "",
-      "type": "Boolean | null",
-      "description": "Controls state of fab actions (showing/hidden); Works best with v-model directive, otherwise use along listening to 'update:modelValue' event",
-      "description_zh": "控制 fab 操作的状态（显示/隐藏）;与 v-model 指令一起使用效果最好，否则使用侦听 'update：modelValue' 事件",
-      "default": "null",
-      "required": false
-    },
-    "icon": {
-      "value": "",
-      "type": "String",
-      "description": "",
-      "description_zh": "",
-      "default": "",
-      "required": false,
-      "extends": "icon"
-    },
-    "active-icon": {
-      "value": "",
-      "type": "String",
-      "description": "",
-      "description_zh": "",
-      "default": "",
-      "required": false,
-      "extends": "icon"
-    },
-    "hide-icon": {
-      "value": "",
-      "type": "Boolean",
-      "description": "Hide the icon (don't use any)",
-      "description_zh": "隐藏图标（不使用任何图标）",
-      "default": "false",
-      "required": false
-    },
-    "direction": {
-      "value": "",
-      "type": "String",
-      "description": "Direction to expand Fab Actions to",
-      "description_zh": "将 Fab Actions 扩展到的方向",
-      "default": "'right'",
-      "required": false
-    },
-    "vertical-actions-align": {
-      "value": "",
-      "type": "String",
-      "description": "The side of the Fab where Fab Actions will expand (only when direction is 'up' or 'down')",
-      "description_zh": "Fab 操作将展开的一侧（仅当方向为“向上”或“向下”时）",
-      "default": "'center'",
-      "required": false
-    },
-    "persistent": {
-      "value": "",
-      "type": "Boolean",
-      "description": "By default, Fab Actions are hidden when user navigates to another route and this prop disables this behavior",
-      "description_zh": "默认情况下，当用户导航到另一个路由时，Fab Actions 是隐藏的，此 prop 会禁用此行为",
-      "default": "false",
-      "required": false
     }
   },
   "link": "https://v2.quasar.dev/vue-components/floating-action-button",

@@ -6,6 +6,23 @@
     "docsUrl": "https://v2.quasar.dev/vue-components/field"
   },
   "props": {
+    "maxlength": {
+      "type": [
+        "String",
+        "Number"
+      ],
+      "desc": "Specify a max length of model",
+      "category": "model"
+    },
+    "tag": {
+      "extends": "tag",
+      "default": "'label'",
+      "examples": [
+        "'div'",
+        "'label'"
+      ],
+      "addedIn": "v2.13.1"
+    },
     "label": {
       "type": "String",
       "desc": "A text label that will “float” up above the input field, once the field gets focus",
@@ -160,56 +177,9 @@
         "'myFieldsId'"
       ],
       "category": "behavior"
-    },
-    "maxlength": {
-      "type": [
-        "String",
-        "Number"
-      ],
-      "desc": "Specify a max length of model",
-      "category": "model"
-    },
-    "tag": {
-      "extends": "tag",
-      "default": "'label'",
-      "examples": [
-        "'div'",
-        "'label'"
-      ],
-      "addedIn": "v2.13.1"
     }
   },
   "slots": {
-    "default": {
-      "desc": "Field main content"
-    },
-    "prepend": {
-      "desc": "Prepend inner field; Suggestions: QIcon, QBtn"
-    },
-    "append": {
-      "desc": "Append to inner field; Suggestions: QIcon, QBtn"
-    },
-    "before": {
-      "desc": "Prepend outer field; Suggestions: QIcon, QBtn"
-    },
-    "after": {
-      "desc": "Append outer field; Suggestions: QIcon, QBtn"
-    },
-    "label": {
-      "desc": "Slot for label; Used only if 'label-slot' prop is set or the 'label' prop is set; When it is used the text in the 'label' prop is ignored"
-    },
-    "error": {
-      "desc": "Slot for errors; Enabled only if 'bottom-slots' prop is used; Suggestion: <div>"
-    },
-    "hint": {
-      "desc": "Slot for hint text; Enabled only if 'bottom-slots' prop is used; Suggestion: <div>"
-    },
-    "counter": {
-      "desc": "Slot for counter text; Enabled only if 'bottom-slots' prop is used; Suggestion: <div>"
-    },
-    "loading": {
-      "desc": "Override default spinner when component is in loading mode; Use in conjunction with 'loading' prop"
-    },
     "control": {
       "desc": "Slot for controls; Suggestion QSlider, QRange, QKnob, ...",
       "scope": {
@@ -264,12 +234,42 @@
     },
     "rawControl": {
       "internal": true
+    },
+    "default": {
+      "desc": "Field main content"
+    },
+    "prepend": {
+      "desc": "Prepend inner field; Suggestions: QIcon, QBtn"
+    },
+    "append": {
+      "desc": "Append to inner field; Suggestions: QIcon, QBtn"
+    },
+    "before": {
+      "desc": "Prepend outer field; Suggestions: QIcon, QBtn"
+    },
+    "after": {
+      "desc": "Append outer field; Suggestions: QIcon, QBtn"
+    },
+    "label": {
+      "desc": "Slot for label; Used only if 'label-slot' prop is set or the 'label' prop is set; When it is used the text in the 'label' prop is ignored"
+    },
+    "error": {
+      "desc": "Slot for errors; Enabled only if 'bottom-slots' prop is used; Suggestion: <div>"
+    },
+    "hint": {
+      "desc": "Slot for hint text; Enabled only if 'bottom-slots' prop is used; Suggestion: <div>"
+    },
+    "counter": {
+      "desc": "Slot for counter text; Enabled only if 'bottom-slots' prop is used; Suggestion: <div>"
+    },
+    "loading": {
+      "desc": "Override default spinner when component is in loading mode; Use in conjunction with 'loading' prop"
     }
   },
   "events": {
     "update:model-value": {
-      "extends": "update:model-value",
-      "desc": "Emitted when the model changes, only when used with 'clearable' or the 'control' scoped slot."
+      "desc": "Emitted when the model changes, only when used with 'clearable' or the 'control' scoped slot.",
+      "extends": "update:model-value"
     },
     "focus": {
       "desc": "Emitted when component gets focused",

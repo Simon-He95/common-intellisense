@@ -19,7 +19,55 @@
     }
   ],
   "props": {
-    "model-value": {
+    "icon": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "",
+      "required": false,
+      "extends": "icon"
+    },
+    "checked-icon": {
+      "value": "",
+      "type": "String",
+      "description": "The icon to be used when the toggle is on",
+      "description_zh": "切换开关打开时要使用的图标",
+      "default": "",
+      "required": false
+    },
+    "unchecked-icon": {
+      "value": "",
+      "type": "String",
+      "description": "The icon to be used when the toggle is off",
+      "description_zh": "关闭切换开关时使用的图标",
+      "default": "",
+      "required": false
+    },
+    "indeterminate-icon": {
+      "value": "",
+      "type": "String",
+      "description": "The icon to be used when the model is indeterminate",
+      "description_zh": "模型不确定时使用的图标",
+      "default": "",
+      "required": false
+    },
+    "icon-color": {
+      "type": "String | Array",
+      "description": "Color name for component from the Quasar Color Palette",
+      "value": "",
+      "default": "primary",
+      "extends": "color",
+      "desc": "Override default icon color (for truthy state only); Color name for component from the Quasar Color Palette",
+      "category": "style",
+      "addedIn": "v2.4",
+      "__runtimeDefault": true,
+      "examples": [
+        "[ 'accent', 'grey-7' ]"
+      ],
+      "description_zh": "Quasar Color Palette （类星体调色板） 中组件的颜色名称"
+    },
+    "v-model": {
       "value": "",
       "type": "Any | Array",
       "description": "",
@@ -66,7 +114,7 @@
     },
     "toggle-order": {
       "value": "",
-      "type": "String",
+      "type": "tf / ft",
       "description": "Determines toggle order of the two states ('t' stands for state of true, 'f' for state of false); If 'toggle-indeterminate' is true, then the order is: indet -> first state -> second state -> indet (and repeat), otherwise: indet -> first state -> second state -> first state -> second state -> ...",
       "description_zh": "确定两种状态的切换顺序（'t' 代表 true 状态，'f' 代表 false 状态）;如果 'toggle-indeterminate' 为 true，则顺序为： indet -> first state -> second state -> indet （并重复），否则： indet -> 第一个状态 -> 第二个状态 -> 第一个状态 -> 第二个状态 -> ...",
       "default": "",
@@ -96,43 +144,19 @@
       "default": "false",
       "required": false
     },
-    "checked-icon": {
-      "value": "",
-      "type": "String",
-      "description": "The icon to be used when the toggle is on",
-      "description_zh": "切换开关打开时要使用的图标",
-      "default": "",
-      "required": false
-    },
-    "unchecked-icon": {
-      "value": "",
-      "type": "String",
-      "description": "The icon to be used when the toggle is off",
-      "description_zh": "关闭切换开关时使用的图标",
-      "default": "",
-      "required": false
-    },
-    "indeterminate-icon": {
-      "value": "",
-      "type": "String",
-      "description": "The icon to be used when the model is indeterminate",
-      "description_zh": "模型不确定时使用的图标",
-      "default": "",
-      "required": false
-    },
     "color": {
       "type": "String | Array",
       "description": "Color name for component from the Quasar Color Palette",
       "value": "",
-      "default": "'grey-8'",
+      "default": "primary",
       "extends": "color",
       "desc": "Override default icon color (for truthy state only); Color name for component from the Quasar Color Palette",
       "category": "style",
+      "addedIn": "v2.4",
       "__runtimeDefault": true,
       "examples": [
         "[ 'accent', 'grey-7' ]"
       ],
-      "addedIn": "v2.4",
       "description_zh": "Quasar Color Palette （类星体调色板） 中组件的颜色名称"
     },
     "keep-color": {
@@ -178,30 +202,6 @@
       "default": "",
       "required": false,
       "extends": "tabindex"
-    },
-    "icon": {
-      "value": "",
-      "type": "String",
-      "description": "",
-      "description_zh": "",
-      "default": "",
-      "required": false,
-      "extends": "icon"
-    },
-    "icon-color": {
-      "type": "String | Array",
-      "description": "Color name for component from the Quasar Color Palette",
-      "value": "",
-      "default": "'grey-8'",
-      "extends": "color",
-      "desc": "Override default icon color (for truthy state only); Color name for component from the Quasar Color Palette",
-      "category": "style",
-      "__runtimeDefault": true,
-      "examples": [
-        "[ 'accent', 'grey-7' ]"
-      ],
-      "addedIn": "v2.4",
-      "description_zh": "Quasar Color Palette （类星体调色板） 中组件的颜色名称"
     }
   },
   "link": "https://v2.quasar.dev/vue-components/toggle",

@@ -47,7 +47,16 @@
     }
   ],
   "props": {
-    "model-value": {
+    "dark": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "",
+      "required": false,
+      "extends": "dark"
+    },
+    "v-model": {
       "value": "",
       "type": "Any",
       "description": "Model of the component defining the current panel's name; If a Number is used, it does not define the panel's index, but rather the panel's name which can also be an Integer; Either use this property (along with a listener for 'update:model-value' event) OR use the v-model directive.",
@@ -122,8 +131,8 @@
     "transition-prev": {
       "value": "",
       "type": "String",
-      "description": "",
-      "description_zh": "",
+      "description": "One of Quasar's embedded transitions (has effect only if 'animated' prop is set)",
+      "description_zh": "Quasar 的嵌入式过渡之一（仅在设置了 'animated' prop 时有效）",
       "default": "# slide-right/slide-down",
       "required": false,
       "extends": "transition",
@@ -134,8 +143,8 @@
     "transition-next": {
       "value": "",
       "type": "String",
-      "description": "",
-      "description_zh": "",
+      "description": "One of Quasar's embedded transitions (has effect only if 'animated' prop is set)",
+      "description_zh": "Quasar 的嵌入式过渡之一（仅在设置了 'animated' prop 时有效）",
       "default": "# slide-left/slide-up",
       "required": false,
       "extends": "transition",
@@ -151,15 +160,6 @@
       "default": "300",
       "version": "v2.2",
       "required": false
-    },
-    "dark": {
-      "value": "",
-      "type": "String",
-      "description": "",
-      "description_zh": "",
-      "default": "",
-      "required": false,
-      "extends": "dark"
     }
   },
   "link": "https://v2.quasar.dev/vue-components/tab-panels",

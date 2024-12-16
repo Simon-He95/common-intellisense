@@ -124,11 +124,11 @@ export async function activate(context: vscode.ExtensionContext) {
     const uiComponents = getImportUiComponents(code)
     let deps = data.suggestions?.length === 1
       ? data.suggestions.map((i: any) => {
-        if (i.includes('-'))
-          return toCamel(i).slice(prefix.length)
+          if (i.includes('-'))
+            return toCamel(i).slice(prefix.length)
 
-        return i
-      })
+          return i
+        })
       : []
 
     if (uiComponents[lib])
@@ -371,44 +371,44 @@ export async function activate(context: vscode.ExtensionContext) {
         const directives = optionsComponents.directivesMap[uiName]
         const directivesCompletions = directives
           ? directives.map((item: Directives[0]) => {
-            const detail = isZh ? item.description_zh : item.description
-            const content = `${item.name}  ${detail}`
-            const documentation = createMarkdownString()
-            if (item.documentation)
-              documentation.appendMarkdown(item.documentation)
-            else if (item.documentationType)
-              documentation.appendCodeblock(item.documentationType, 'typescript')
+              const detail = isZh ? item.description_zh : item.description
+              const content = `${item.name}  ${detail}`
+              const documentation = createMarkdownString()
+              if (item.documentation)
+                documentation.appendMarkdown(item.documentation)
+              else if (item.documentationType)
+                documentation.appendCodeblock(item.documentationType, 'typescript')
 
-            if (item.params?.length) {
-              documentation.appendCodeblock('\n')
-              item.params.forEach((i) => {
-                documentation.appendMarkdown(`### 🌟 ${i.name}: \n`)
-                documentation.appendMarkdown(`- ${isZh ? '类型' : 'type'}: ${i.type}\n`)
-                documentation.appendMarkdown(`- ${isZh ? '描述' : 'description'}: ${isZh ? i.description_zh : i.description}\n`)
-                documentation.appendMarkdown(`- ${isZh ? '默认值' : 'default'}: ${i.default}\n`)
+              if (item.params?.length) {
+                documentation.appendCodeblock('\n')
+                item.params.forEach((i) => {
+                  documentation.appendMarkdown(`### 🌟 ${i.name}: \n`)
+                  documentation.appendMarkdown(`- ${isZh ? '类型' : 'type'}: ${i.type}\n`)
+                  documentation.appendMarkdown(`- ${isZh ? '描述' : 'description'}: ${isZh ? i.description_zh : i.description}\n`)
+                  documentation.appendMarkdown(`- ${isZh ? '默认值' : 'default'}: ${i.default}\n`)
+                })
+              }
+
+              const snippet = item.params?.length
+                ? `:${item.name}="${JSON.stringify(item.params.reduce((acc, i) => {
+                  const key = i.name
+                  const type = i.type.toLocaleLowerCase()
+                  const value = i.default || type === 'boolean' ? false : type === 'number' ? 0 : type === 'string' ? '' : ''
+                  acc[key] = value
+                  return acc
+                }, {} as Record<string, any>), null, 2).replace(/"([^"]+)":/g, '$1:').replace(/"/g, '`')}"`
+                : item.name
+
+              return createCompletionItem({
+                content,
+                detail,
+                sortText: 'a',
+                type: vscode.CompletionItemKind.Enum,
+                snippet,
+                preselect: true,
+                documentation,
               })
-            }
-
-            const snippet = item.params?.length
-              ? `:${item.name}="${JSON.stringify(item.params.reduce((acc, i) => {
-                const key = i.name
-                const type = i.type.toLocaleLowerCase()
-                const value = i.default || type === 'boolean' ? false : type === 'number' ? 0 : type === 'string' ? '' : ''
-                acc[key] = value
-                return acc
-              }, {} as Record<string, any>), null, 2).replace(/"([^"]+)":/g, '$1:').replace(/"/g, '`')}"`
-              : item.name
-
-            return createCompletionItem({
-              content,
-              detail,
-              sortText: 'a',
-              type: vscode.CompletionItemKind.Enum,
-              snippet,
-              preselect: true,
-              documentation,
             })
-          })
           : []
         const _events = events[0](isVue)
         eventCallbacks.set(key, _events)
@@ -421,23 +421,23 @@ export async function activate(context: vscode.ExtensionContext) {
       completionsCallback = completionsCallbacks.get(key)
       const hasProps = result.props
         ? result.props.map((item: any) => {
-          if (item.name === 'on' && item.arg)
-            return `${item.arg.content}`
+            if (item.name === 'on' && item.arg)
+              return `${item.arg.content}`
 
-          if (typeof item.name === 'object' && item.name.name !== 'on')
-            return item.name.name
+            if (typeof item.name === 'object' && item.name.name !== 'on')
+              return item.name.name
 
-          if (item.name === 'model' && item?.loc?.source?.startsWith('v-model'))
-            return item.loc.source.split('=')[0]
+            if (item.name === 'model' && item?.loc?.source?.startsWith('v-model'))
+              return item.loc.source.split('=')[0]
 
-          if (item.name === 'bind')
-            return item?.arg?.content
+            if (item.name === 'bind')
+              return item?.arg?.content
 
-          if (item.name !== 'on')
-            return item.name
+            if (item.name !== 'on')
+              return item.name
 
-          return false
-        }).filter(Boolean)
+            return false
+          }).filter(Boolean)
         : []
       if (propName === 'on') {
         return eventCallbacks.get(key).filter((item: any) => !hasProps.find((prop: any) => item?.params?.[1] === prop))
@@ -682,13 +682,13 @@ export async function activate(context: vscode.ExtensionContext) {
               // hover .value.区域 提示所有方法
               const groupMd = createMarkdownString()
                 ;[...UiCompletions[refName].methods, ...UiCompletions[refName].exposed].forEach((m: any, i: number) => {
-                  let content = m.documentation.value
-                  if (i !== 0) {
-                    content = content.replace(/##[^\]\n]*[\]\n]/, '')
-                  }
-                  groupMd.appendMarkdown(content)
-                  groupMd.appendMarkdown('\n')
-                })
+                let content = m.documentation.value
+                if (i !== 0) {
+                  content = content.replace(/##[^\]\n]*[\]\n]/, '')
+                }
+                groupMd.appendMarkdown(content)
+                groupMd.appendMarkdown('\n')
+              })
 
               return createHover(groupMd)
             }
@@ -717,13 +717,13 @@ export async function activate(context: vscode.ExtensionContext) {
               // hover .value.区域 提示所有方法
               const groupMd = createMarkdownString()
                 ;[...UiCompletions[refName].methods, ...UiCompletions[refName].exposed].forEach((m: any, i: number) => {
-                  let content = m.documentation.value
-                  if (i !== 0) {
-                    content = content.replace(/##[^\]\n]*[\]\n]/, '')
-                  }
-                  groupMd.appendMarkdown(content)
-                  groupMd.appendMarkdown('\n')
-                })
+                let content = m.documentation.value
+                if (i !== 0) {
+                  content = content.replace(/##[^\]\n]*[\]\n]/, '')
+                }
+                groupMd.appendMarkdown(content)
+                groupMd.appendMarkdown('\n')
+              })
               return createHover(groupMd)
             }
             const targetKey = word.slice(index + '.value.'.length)
@@ -751,13 +751,13 @@ export async function activate(context: vscode.ExtensionContext) {
             // hover .value.区域 提示所有方法
             const gorupMd = createMarkdownString()
               ;[[...UiCompletions[refName].methods, ...UiCompletions[refName].exposed]].forEach((m: any, i: number) => {
-                let content = m.documentation.value
-                if (i !== 0) {
-                  content = content.replace(/##[^\]\n]*[\]\n]/, '')
-                }
-                gorupMd.appendMarkdown(content)
-                gorupMd.appendMarkdown('\n')
-              })
+              let content = m.documentation.value
+              if (i !== 0) {
+                content = content.replace(/##[^\]\n]*[\]\n]/, '')
+              }
+              gorupMd.appendMarkdown(content)
+              gorupMd.appendMarkdown('\n')
+            })
             return createHover(gorupMd)
           }
           const targetKey = word.slice(index + '.current.'.length)

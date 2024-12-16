@@ -19,7 +19,34 @@
     }
   ],
   "props": {
-    "model-value": {
+    "checked-icon": {
+      "value": "",
+      "type": "String",
+      "description": "The icon to be used when the model is truthy (instead of the default design)",
+      "description_zh": "当模型为 true（而不是默认设计）时使用的图标",
+      "default": "",
+      "version": "v2.5",
+      "required": false
+    },
+    "unchecked-icon": {
+      "value": "",
+      "type": "String",
+      "description": "The icon to be used when the toggle is falsy (instead of the default design)",
+      "description_zh": "切换为 falsy 时使用的图标（而不是默认设计）",
+      "default": "",
+      "version": "v2.5",
+      "required": false
+    },
+    "indeterminate-icon": {
+      "value": "",
+      "type": "String",
+      "description": "The icon to be used when the model is indeterminate (instead of the default design)",
+      "description_zh": "当模型不确定时使用的图标（而不是默认设计）",
+      "default": "",
+      "version": "v2.5",
+      "required": false
+    },
+    "v-model": {
       "value": "",
       "type": "Any | Array",
       "description": "",
@@ -66,7 +93,7 @@
     },
     "toggle-order": {
       "value": "",
-      "type": "String",
+      "type": "tf / ft",
       "description": "Determines toggle order of the two states ('t' stands for state of true, 'f' for state of false); If 'toggle-indeterminate' is true, then the order is: indet -> first state -> second state -> indet (and repeat), otherwise: indet -> first state -> second state -> first state -> second state -> ...",
       "description_zh": "确定两种状态的切换顺序（'t' 代表 true 状态，'f' 代表 false 状态）;如果 'toggle-indeterminate' 为 true，则顺序为： indet -> first state -> second state -> indet （并重复），否则： indet -> 第一个状态 -> 第二个状态 -> 第一个状态 -> 第二个状态 -> ...",
       "default": "",
@@ -96,40 +123,13 @@
       "default": "false",
       "required": false
     },
-    "checked-icon": {
-      "value": "",
-      "type": "String",
-      "description": "The icon to be used when the model is truthy (instead of the default design)",
-      "description_zh": "当模型为 true（而不是默认设计）时使用的图标",
-      "default": "",
-      "version": "v2.5",
-      "required": false
-    },
-    "unchecked-icon": {
-      "value": "",
-      "type": "String",
-      "description": "The icon to be used when the toggle is falsy (instead of the default design)",
-      "description_zh": "切换为 falsy 时使用的图标（而不是默认设计）",
-      "default": "",
-      "version": "v2.5",
-      "required": false
-    },
-    "indeterminate-icon": {
-      "value": "",
-      "type": "String",
-      "description": "The icon to be used when the model is indeterminate (instead of the default design)",
-      "description_zh": "当模型不确定时使用的图标（而不是默认设计）",
-      "default": "",
-      "version": "v2.5",
-      "required": false
-    },
     "color": {
       "type": "String",
       "description": "Color name for component from the Quasar Color Palette",
       "value": "",
-      "default": "'primary'",
+      "default": "primary",
       "extends": "color",
-      "desc": "Color name (from the Quasar Color Palette) for chat bubble background",
+      "desc": "The color used to color the separator, which can be any color from the Quasar Color Palette",
       "category": "style",
       "description_zh": "Quasar Color Palette （类星体调色板） 中组件的颜色名称"
     },

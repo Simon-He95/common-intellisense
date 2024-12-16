@@ -1,291 +1,69 @@
 {
   "mixins": [
-    {
-      "props": {
-        "model-value": {
-          "type": [
-            "Boolean",
-            "null"
-          ],
-          "desc": "Controls state of fab actions (showing/hidden); Works best with v-model directive, otherwise use along listening to 'update:modelValue' event",
-          "default": "null",
-          "category": "model",
-          "examples": [
-            "# v-model=\"state\""
-          ]
-        },
-        "icon": {
-          "extends": "icon"
-        },
-        "active-icon": {
-          "extends": "icon"
-        },
-        "hide-label": {
-          "default": "null"
-        },
-        "hide-icon": {
-          "type": "Boolean",
-          "desc": "Hide the icon (don't use any)",
-          "category": "style|content"
-        },
-        "direction": {
-          "type": "String",
-          "desc": "Direction to expand Fab Actions to",
-          "default": "'right'",
-          "values": [
-            "'up'",
-            "'right'",
-            "'down'",
-            "'left'"
-          ],
-          "category": "behavior"
-        },
-        "vertical-actions-align": {
-          "type": "String",
-          "desc": "The side of the Fab where Fab Actions will expand (only when direction is 'up' or 'down')",
-          "default": "'center'",
-          "values": [
-            "'left'",
-            "'center'",
-            "'right'"
-          ],
-          "category": "style|content"
-        },
-        "persistent": {
-          "type": "Boolean",
-          "desc": "By default, Fab Actions are hidden when user navigates to another route and this prop disables this behavior",
-          "category": "behavior"
-        }
-      },
-      "events": {
-        "update:model-value": {
-          "desc": "Emitted when fab actions are shown/hidden; Captured by v-model directive",
-          "params": {
-            "value": {
-              "type": "Boolean",
-              "desc": "New state (showing/hidden)"
-            }
-          }
-        },
-        "show": {
-          "extends": "show"
-        },
-        "before-show": {
-          "extends": "before-show"
-        },
-        "hide": {
-          "extends": "hide"
-        },
-        "before-hide": {
-          "extends": "before-hide"
-        }
-      },
-      "methods": {
-        "show": {
-          "extends": "show",
-          "desc": "Expands fab actions list"
-        },
-        "hide": {
-          "extends": "hide",
-          "desc": "Collapses fab actions list"
-        },
-        "toggle": {
-          "extends": "toggle"
-        }
-      }
-    },
-    {
-      "meta": {
-        "docsUrl": "https://v2.quasar.dev/vue-components/floating-action-button"
-      },
-      "props": {
-        "type": {
-          "type": "String",
-          "desc": "Define the button HTML DOM type",
-          "default": "'a'",
-          "values": [
-            "'a'",
-            "'submit'",
-            "'button'",
-            "'reset'"
-          ],
-          "category": "general"
-        },
-        "outline": {
-          "type": "Boolean",
-          "desc": "Use 'outline' design for Fab button",
-          "category": "style"
-        },
-        "push": {
-          "type": "Boolean",
-          "desc": "Use 'push' design for Fab button",
-          "category": "style"
-        },
-        "flat": {
-          "type": "Boolean",
-          "desc": "Use 'flat' design for Fab button",
-          "category": "style"
-        },
-        "unelevated": {
-          "type": "Boolean",
-          "desc": "Remove shadow",
-          "category": "style"
-        },
-        "padding": {
-          "type": "String",
-          "desc": "Apply custom padding (vertical [horizontal]); Size in CSS units, including unit name or standard size name (none|xs|sm|md|lg|xl); Also removes the min width and height when set",
-          "examples": [
-            "'16px'",
-            "'10px 5px'",
-            "'2rem'",
-            "'xs'",
-            "'md lg'"
-          ],
-          "category": "style"
-        },
-        "color": {
-          "extends": "color"
-        },
-        "text-color": {
-          "extends": "text-color"
-        },
-        "glossy": {
-          "type": "Boolean",
-          "desc": "Apply the glossy effect over the button",
-          "category": "style"
-        },
-        "external-label": {
-          "type": "Boolean",
-          "desc": "Display label besides the FABs, as external content",
-          "category": "style|content"
-        },
-        "label": {
-          "type": [
-            "String",
-            "Number"
-          ],
-          "desc": "The label that will be shown when Fab is extended",
-          "examples": [
-            "'Button Label'"
-          ],
-          "default": "''",
-          "category": "content"
-        },
-        "label-position": {
-          "type": "String",
-          "desc": "Position of the label around the icon",
-          "values": [
-            "'top'",
-            "'right'",
-            "'bottom'",
-            "'left'"
-          ],
-          "default": "'right'",
-          "category": "style|content"
-        },
-        "hide-label": {
-          "type": [
-            "Boolean",
-            "null"
-          ],
-          "desc": "Hide the label; Useful for animation purposes where you toggle the visibility of the label",
-          "category": "style|content",
-          "default": "null"
-        },
-        "label-class": {
-          "type": [
-            "String",
-            "Array",
-            "Object"
-          ],
-          "tsType": "VueClassProp",
-          "desc": "Class definitions to be attributed to the label container",
-          "examples": [
-            "'my-special-class'",
-            "{ 'my-special-class': true }"
-          ],
-          "category": "style"
-        },
-        "label-style": {
-          "type": [
-            "String",
-            "Array",
-            "Object"
-          ],
-          "tsType": "VueStyleProp",
-          "desc": "Style definitions to be attributed to the label container",
-          "examples": [
-            "'background-color: #ff0000'",
-            "{ backgroundColor: '#ff0000' }"
-          ],
-          "category": "style"
-        },
-        "square": {
-          "type": "Boolean",
-          "desc": "Apply a rectangle aspect to the FAB",
-          "category": "style"
-        },
-        "disable": {
-          "extends": "disable"
-        },
-        "tabindex": {
-          "extends": "tabindex"
-        },
-        "model-value": {
-          "type": [
-            "Boolean",
-            "null"
-          ],
-          "desc": "Controls state of fab actions (showing/hidden); Works best with v-model directive, otherwise use along listening to 'update:modelValue' event",
-          "default": "null",
-          "category": "model",
-          "examples": [
-            "# v-model=\"state\""
-          ]
-        },
-        "icon": {
-          "extends": "icon"
-        },
-        "active-icon": {
-          "extends": "icon"
-        },
-        "hide-icon": {
-          "type": "Boolean",
-          "desc": "Hide the icon (don't use any)",
-          "category": "style|content"
-        },
-        "direction": {
-          "type": "String",
-          "desc": "Direction to expand Fab Actions to",
-          "default": "'right'",
-          "values": [
-            "'up'",
-            "'right'",
-            "'down'",
-            "'left'"
-          ],
-          "category": "behavior"
-        },
-        "vertical-actions-align": {
-          "type": "String",
-          "desc": "The side of the Fab where Fab Actions will expand (only when direction is 'up' or 'down')",
-          "default": "'center'",
-          "values": [
-            "'left'",
-            "'center'",
-            "'right'"
-          ],
-          "category": "style|content"
-        },
-        "persistent": {
-          "type": "Boolean",
-          "desc": "By default, Fab Actions are hidden when user navigates to another route and this prop disables this behavior",
-          "category": "behavior"
-        }
-      }
-    }
+    "composables/private.use-model-toggle/use-model-toggle",
+    "components/fab/use-fab"
   ],
   "props": {
+    "model-value": {
+      "desc": "Model of the component defining shown/hidden state; Either use this property (along with a listener for 'update:model-value' event) OR use v-model directive",
+      "type": [
+        "Boolean",
+        "null"
+      ],
+      "default": "null",
+      "category": "model",
+      "examples": [
+        "# v-model=\"state\""
+      ]
+    },
+    "icon": {
+      "extends": "icon"
+    },
+    "active-icon": {
+      "extends": "icon"
+    },
+    "hide-label": {
+      "default": "null",
+      "type": [
+        "Boolean",
+        "null"
+      ],
+      "desc": "Hide the label; Useful for animation purposes where you toggle the visibility of the label",
+      "category": "style|content"
+    },
+    "hide-icon": {
+      "type": "Boolean",
+      "desc": "Hide the icon (don't use any)",
+      "category": "style|content"
+    },
+    "direction": {
+      "type": "String",
+      "desc": "Direction to expand Fab Actions to",
+      "default": "'right'",
+      "values": [
+        "'up'",
+        "'right'",
+        "'down'",
+        "'left'"
+      ],
+      "category": "behavior"
+    },
+    "vertical-actions-align": {
+      "type": "String",
+      "desc": "The side of the Fab where Fab Actions will expand (only when direction is 'up' or 'down')",
+      "default": "'center'",
+      "values": [
+        "'left'",
+        "'center'",
+        "'right'"
+      ],
+      "category": "style|content"
+    },
+    "persistent": {
+      "type": "Boolean",
+      "desc": "By default, Fab Actions are hidden when user navigates to another route and this prop disables this behavior",
+      "category": "behavior"
+    },
     "type": {
       "type": "String",
       "desc": "Define the button HTML DOM type",
@@ -370,15 +148,6 @@
       "default": "'right'",
       "category": "style|content"
     },
-    "hide-label": {
-      "type": [
-        "Boolean",
-        "null"
-      ],
-      "desc": "Hide the label; Useful for animation purposes where you toggle the visibility of the label",
-      "category": "style|content",
-      "default": "null"
-    },
     "label-class": {
       "type": [
         "String",
@@ -417,57 +186,6 @@
     },
     "tabindex": {
       "extends": "tabindex"
-    },
-    "model-value": {
-      "type": [
-        "Boolean",
-        "null"
-      ],
-      "desc": "Controls state of fab actions (showing/hidden); Works best with v-model directive, otherwise use along listening to 'update:modelValue' event",
-      "default": "null",
-      "category": "model",
-      "examples": [
-        "# v-model=\"state\""
-      ]
-    },
-    "icon": {
-      "extends": "icon"
-    },
-    "active-icon": {
-      "extends": "icon"
-    },
-    "hide-icon": {
-      "type": "Boolean",
-      "desc": "Hide the icon (don't use any)",
-      "category": "style|content"
-    },
-    "direction": {
-      "type": "String",
-      "desc": "Direction to expand Fab Actions to",
-      "default": "'right'",
-      "values": [
-        "'up'",
-        "'right'",
-        "'down'",
-        "'left'"
-      ],
-      "category": "behavior"
-    },
-    "vertical-actions-align": {
-      "type": "String",
-      "desc": "The side of the Fab where Fab Actions will expand (only when direction is 'up' or 'down')",
-      "default": "'center'",
-      "values": [
-        "'left'",
-        "'center'",
-        "'right'"
-      ],
-      "category": "style|content"
-    },
-    "persistent": {
-      "type": "Boolean",
-      "desc": "By default, Fab Actions are hidden when user navigates to another route and this prop disables this behavior",
-      "category": "behavior"
     }
   },
   "slots": {
@@ -510,7 +228,7 @@
   },
   "events": {
     "update:model-value": {
-      "desc": "Emitted when fab actions are shown/hidden; Captured by v-model directive",
+      "desc": "Emitted when showing/hidden state changes; Is also used by v-model",
       "params": {
         "value": {
           "type": "Boolean",
@@ -533,12 +251,12 @@
   },
   "methods": {
     "show": {
-      "extends": "show",
-      "desc": "Expands fab actions list"
+      "desc": "Expands fab actions list",
+      "extends": "show"
     },
     "hide": {
-      "extends": "hide",
-      "desc": "Collapses fab actions list"
+      "desc": "Collapses fab actions list",
+      "extends": "hide"
     },
     "toggle": {
       "extends": "toggle"

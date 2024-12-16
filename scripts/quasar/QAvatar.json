@@ -1,60 +1,11 @@
 {
   "mixins": [
-    {
-      "props": {
-        "size": {
-          "type": "String",
-          "desc": "Size in CSS units, including unit name or standard size name (xs|sm|md|lg|xl)",
-          "examples": [
-            "'16px'",
-            "'2rem'",
-            "'xs'",
-            "'md'"
-          ],
-          "category": "style"
-        },
-        "font-size": {
-          "type": "String",
-          "desc": "The size in CSS units, including unit name, of the content (icon, text)",
-          "examples": [
-            "'18px'",
-            "'2rem'"
-          ],
-          "category": "style"
-        },
-        "color": {
-          "extends": "color"
-        },
-        "text-color": {
-          "extends": "text-color"
-        },
-        "icon": {
-          "extends": "icon"
-        },
-        "square": {
-          "extends": "square"
-        },
-        "rounded": {
-          "extends": "rounded"
-        }
-      }
-    }
+    "composables/private.use-size/use-size"
   ],
   "meta": {
     "docsUrl": "https://v2.quasar.dev/vue-components/avatar"
   },
   "props": {
-    "size": {
-      "type": "String",
-      "desc": "Size in CSS units, including unit name or standard size name (xs|sm|md|lg|xl)",
-      "examples": [
-        "'16px'",
-        "'2rem'",
-        "'xs'",
-        "'md'"
-      ],
-      "category": "style"
-    },
     "font-size": {
       "type": "String",
       "desc": "The size in CSS units, including unit name, of the content (icon, text)",
@@ -78,6 +29,17 @@
     },
     "rounded": {
       "extends": "rounded"
+    },
+    "size": {
+      "type": "String",
+      "desc": "Size in CSS units, including unit name or standard size name (xs|sm|md|lg|xl)",
+      "examples": [
+        "'16px'",
+        "'2rem'",
+        "'xs'",
+        "'md'"
+      ],
+      "category": "style"
     }
   },
   "slots": {

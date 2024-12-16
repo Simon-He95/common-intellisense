@@ -11,11 +11,11 @@
     }
   ],
   "props": {
-    "model-value": {
+    "v-model": {
       "value": "",
       "type": "Number",
-      "description": "",
-      "description_zh": "",
+      "description": "Model of the component defining the size of first panel (or second if using reverse) in the unit specified (for '%' it's the split ratio percent - 0.0 < x < 100.0; for 'px' it's the size in px); Either use this property (along with a listener for 'update:modelValue' event) OR use v-model directive",
+      "description_zh": "以指定单位定义第一个面板（如果使用反向，则为第二个面板）大小的组件模型（对于 '%'，它是分割比率百分比 - 0.0 < x < 100.0;对于 'px'，它是以 px 为单位的大小）;使用此属性（以及 'update：modelValue' 事件的侦听器）或使用 v-model 指令",
       "default": "",
       "required": false,
       "extends": "model-value",
@@ -34,10 +34,10 @@
     },
     "unit": {
       "value": "",
-      "type": "String",
+      "type": "% / px",
       "description": "CSS unit for the model",
       "description_zh": "模型的 CSS 单位",
-      "default": "'%'",
+      "default": "%",
       "required": false
     },
     "emit-immediately": {
@@ -108,8 +108,8 @@
     "dark": {
       "value": "",
       "type": "String",
-      "description": "",
-      "description_zh": "",
+      "description": "Applies a default lighter color on the separator; To be used when background is darker; Avoid using when you are overriding through separator-class or separator-style props",
+      "description_zh": "在分隔符上应用默认的较浅颜色;在背景较暗时使用;避免在通过 separator-class 或 separator-style 属性覆盖时使用",
       "default": "",
       "required": false,
       "extends": "dark",

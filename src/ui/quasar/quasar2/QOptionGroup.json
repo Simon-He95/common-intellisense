@@ -11,15 +11,7 @@
     }
   ],
   "props": {
-    "size": {
-      "value": "",
-      "type": "String",
-      "description": "Size in CSS units, including unit name or standard size name (xs|sm|md|lg|xl)",
-      "description_zh": "以 CSS 单位为单位的大小，包括单位名称或标准大小名称 （xs|sm|md|lg|xl）",
-      "default": "",
-      "required": false
-    },
-    "model-value": {
+    "v-model": {
       "value": "",
       "type": "Any",
       "description": "",
@@ -43,8 +35,8 @@
       "value": "",
       "type": "Function | String",
       "description": "Property of option which holds the 'value'; If using a function then for best performance, reference it from your scope and do not define it inline",
-      "description_zh": "保存 'value' 的 option 属性;如果使用函数，则为了获得最佳性能，请从您的范围引用它，而不是内联定义它",
-      "default": "'value'",
+      "descriptionzh": "保存 'value' 的 option 属性;如果使用函数，则为了获得最佳性能，请从您的范围引用它，而不是内联定义它",
+      "default": "value",
       "version": "v2.17",
       "required": false
     },
@@ -53,7 +45,7 @@
       "type": "Function | String",
       "description": "Property of option which holds the 'label'; If using a function then for best performance, reference it from your scope and do not define it inline",
       "description_zh": "保存 'label' 的选项的属性;如果使用函数，则为了获得最佳性能，请从您的范围引用它，而不是内联定义它",
-      "default": "'label'",
+      "default": "label",
       "version": "v2.17",
       "required": false
     },
@@ -62,7 +54,7 @@
       "type": "Function | String",
       "description": "Property of option which tells it's disabled; The value of the property must be a Boolean; If using a function then for best performance, reference it from your scope and do not define it inline",
       "description_zh": "option 的属性，告诉它已禁用;该属性的值必须是布尔值;如果使用函数，则为了获得最佳性能，请从您的范围引用它，而不是内联定义它",
-      "default": "'disable'",
+      "default": "disable",
       "version": "v2.17",
       "required": false
     },
@@ -76,21 +68,21 @@
     },
     "type": {
       "value": "",
-      "type": "String",
+      "type": "radio / checkbox / toggle",
       "description": "The type of input component to be used",
       "description_zh": "要使用的输入组件的类型",
-      "default": "'radio'",
+      "default": "radio",
       "required": false
     },
     "color": {
       "type": "String",
       "description": "Color name for component from the Quasar Color Palette",
       "value": "",
-      "default": "'primary'",
+      "default": "primary",
       "extends": "color",
-      "desc": "Color name from the Quasar Color Palette for the ACTIVE button",
-      "category": "style",
-      "__runtimeDefault": true,
+      "desc": "Color name for background of the icon container from the Quasar Color Palette",
+      "category": "labels",
+      "addedIn": "v2.4",
       "description_zh": "Quasar Color Palette （类星体调色板） 中组件的颜色名称"
     },
     "keep-color": {
@@ -143,6 +135,14 @@
       "default": "",
       "required": false,
       "extends": "disable"
+    },
+    "size": {
+      "value": "",
+      "type": "String",
+      "description": "Size in CSS units, including unit name or standard size name (xs|sm|md|lg|xl)",
+      "description_zh": "以 CSS 单位为单位的大小，包括单位名称或标准大小名称 （xs|sm|md|lg|xl）",
+      "default": "",
+      "required": false
     }
   },
   "link": "https://v2.quasar.dev/vue-components/option-group",

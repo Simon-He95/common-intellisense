@@ -19,12 +19,45 @@
     }
   ],
   "props": {
-    "type": {
+    "icon": {
       "value": "",
       "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "",
+      "required": false,
+      "extends": "icon"
+    },
+    "anchor": {
+      "value": "",
+      "type": "start / center / end",
+      "description": "How to align the Fab Action relative to Fab expand side; By default it uses the align specified in QFab",
+      "description_zh": "如何相对于 Fab 扩展端对齐 Fab 操作;默认情况下，它使用 QFab 中指定的对齐方式",
+      "default": "",
+      "required": false
+    },
+    "to": {
+      "value": "",
+      "type": "String | Object",
+      "description": "Equivalent to Vue Router <router-link> 'to' property",
+      "description_zh": "相当于 Vue Router <router-link> 的 'to' 属性",
+      "default": "",
+      "required": false
+    },
+    "replace": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Equivalent to Vue Router <router-link> 'replace' property",
+      "description_zh": "相当于 Vue Router <router-link> 的 'replace' 属性",
+      "default": "false",
+      "required": false
+    },
+    "type": {
+      "value": "",
+      "type": "a / submit / button / reset",
       "description": "Define the button HTML DOM type",
       "description_zh": "定义按钮 HTML DOM 类型",
-      "default": "'a'",
+      "default": "a",
       "required": false
     },
     "outline": {
@@ -71,7 +104,7 @@
       "type": "String",
       "description": "Color name for component from the Quasar Color Palette",
       "value": "",
-      "default": "'primary'",
+      "default": "primary",
       "extends": "color",
       "desc": "Font color (from the Quasar Palette) of buttons and text in the toolbar",
       "category": "toolbar",
@@ -107,15 +140,15 @@
       "type": "String | Number",
       "description": "The label that will be shown when Fab is extended",
       "description_zh": "扩展 Fab 时将显示的标签",
-      "default": "''",
+      "default": "",
       "required": false
     },
     "label-position": {
       "value": "",
-      "type": "String",
+      "type": "top / right / bottom / left",
       "description": "Position of the label around the icon",
       "description_zh": "标签在图标周围的位置",
-      "default": "'right'",
+      "default": "right",
       "required": false
     },
     "hide-label": {
@@ -167,39 +200,6 @@
       "default": "",
       "required": false,
       "extends": "tabindex"
-    },
-    "icon": {
-      "value": "",
-      "type": "String",
-      "description": "",
-      "description_zh": "",
-      "default": "''",
-      "required": false,
-      "extends": "icon"
-    },
-    "anchor": {
-      "value": "",
-      "type": "String",
-      "description": "How to align the Fab Action relative to Fab expand side; By default it uses the align specified in QFab",
-      "description_zh": "如何相对于 Fab 扩展端对齐 Fab 操作;默认情况下，它使用 QFab 中指定的对齐方式",
-      "default": "",
-      "required": false
-    },
-    "to": {
-      "value": "",
-      "type": "String | Object",
-      "description": "Equivalent to Vue Router <router-link> 'to' property",
-      "description_zh": "相当于 Vue Router <router-link> 的 'to' 属性",
-      "default": "",
-      "required": false
-    },
-    "replace": {
-      "value": "",
-      "type": "Boolean",
-      "description": "Equivalent to Vue Router <router-link> 'replace' property",
-      "description_zh": "相当于 Vue Router <router-link> 的 'replace' 属性",
-      "default": "false",
-      "required": false
     }
   },
   "link": "https://v2.quasar.dev/vue-components/floating-action-button",

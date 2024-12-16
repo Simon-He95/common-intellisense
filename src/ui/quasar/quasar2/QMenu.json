@@ -2,6 +2,20 @@
   "name": "QMenu",
   "methods": [
     {
+      "name": "updatePosition",
+      "description": "There are some custom scenarios for which Quasar cannot automatically reposition the menu without significant performance drawbacks so the optimal solution is for you to call this method when you need it",
+      "description_zh": "对于某些自定义方案，Quasar 无法自动重新定位菜单，而不会产生明显的性能缺陷，因此最佳解决方案是在需要时调用此方法",
+      "params": "",
+      "value": ""
+    },
+    {
+      "name": "focus",
+      "description": "Focus menu; if you have content with autofocus attribute, it will directly focus it",
+      "description_zh": "焦点菜单;如果你有带有 autofocus 属性的内容，它会直接聚焦它",
+      "params": "",
+      "value": ""
+    },
+    {
       "name": "show",
       "params": "",
       "description": "",
@@ -21,23 +35,23 @@
       "description": "",
       "value": "",
       "description_zh": ""
-    },
-    {
-      "name": "updatePosition",
-      "description": "There are some custom scenarios for which Quasar cannot automatically reposition the menu without significant performance drawbacks so the optimal solution is for you to call this method when you need it",
-      "description_zh": "对于某些自定义方案，Quasar 无法自动重新定位菜单，而不会产生明显的性能缺陷，因此最佳解决方案是在需要时调用此方法",
-      "params": "",
-      "value": ""
-    },
-    {
-      "name": "focus",
-      "description": "Focus menu; if you have content with autofocus attribute, it will directly focus it",
-      "description_zh": "焦点菜单;如果你有带有 autofocus 属性的内容，它会直接聚焦它",
-      "params": "",
-      "value": ""
     }
   ],
   "events": [
+    {
+      "name": "escape-key",
+      "description": "Emitted when ESC key is pressed; Does not get emitted if Menu is 'persistent'",
+      "description_zh": "按下 ESC 键时发出;如果 Menu 是 'persistent' ，则不会发出",
+      "params": "",
+      "value": ""
+    },
+    {
+      "name": "click",
+      "description": "",
+      "description_zh": "",
+      "params": "",
+      "value": ""
+    },
     {
       "name": "update:model-value",
       "description": "Emitted when showing/hidden state changes; Is also used by v-model",
@@ -72,65 +86,9 @@
       "description_zh": "",
       "params": "",
       "value": ""
-    },
-    {
-      "name": "escape-key",
-      "description": "Emitted when ESC key is pressed; Does not get emitted if Menu is 'persistent'",
-      "description_zh": "按下 ESC 键时发出;如果 Menu 是 'persistent' ，则不会发出",
-      "params": "",
-      "value": ""
-    },
-    {
-      "name": "click",
-      "description": "",
-      "description_zh": "",
-      "params": "",
-      "value": ""
     }
   ],
   "props": {
-    "transition-show": {
-      "value": "",
-      "type": "String",
-      "description": "",
-      "description_zh": "",
-      "default": "'fade'",
-      "required": false,
-      "extends": "transition"
-    },
-    "transition-hide": {
-      "value": "",
-      "type": "String",
-      "description": "",
-      "description_zh": "",
-      "default": "'fade'",
-      "required": false,
-      "extends": "transition"
-    },
-    "transition-duration": {
-      "value": "",
-      "type": "String | Number",
-      "description": "Transition duration (in milliseconds, without unit)",
-      "description_zh": "过渡持续时间（以毫秒为单位，不含单位）",
-      "default": "300",
-      "required": false
-    },
-    "context-menu": {
-      "value": "",
-      "type": "Boolean",
-      "description": "Allows the component to behave like a context menu, which opens with a right mouse click (or long tap on mobile)",
-      "description_zh": "允许组件的行为类似于上下文菜单，该菜单通过右键单击（或在移动设备上长按）打开",
-      "default": "false",
-      "required": false
-    },
-    "model-value": {
-      "value": "",
-      "type": "Boolean | null",
-      "description": "Model of the component defining shown/hidden state; Either use this property (along with a listener for 'update:model-value' event) OR use v-model directive",
-      "description_zh": "定义显示/隐藏状态的组件模型;使用此属性（以及 'update：model-value' 事件的侦听器）或使用 v-model 指令",
-      "default": "null",
-      "required": false
-    },
     "dark": {
       "value": "",
       "type": "String",
@@ -158,7 +116,7 @@
     },
     "anchor": {
       "value": "",
-      "type": "String",
+      "type": "top left / top middle / top right / top start / top end / center left / center middle / center right / center start / center end / bottom left / bottom middle / bottom right / bottom start / bottom end",
       "description": "Two values setting the starting position or anchor point of the menu relative to its target",
       "description_zh": "两个值设置菜单相对于其目标的起始位置或锚点",
       "default": "",
@@ -166,7 +124,7 @@
     },
     "self": {
       "value": "",
-      "type": "String",
+      "type": "top left / top middle / top right / top start / top end / center left / center middle / center right / center start / center end / bottom left / bottom middle / bottom right / bottom start / bottom end",
       "description": "Two values setting the menu's own position relative to its target",
       "description_zh": "两个值设置菜单相对于其目标的位置",
       "default": "",
@@ -256,8 +214,8 @@
     "max-height": {
       "value": "",
       "type": "String | null",
-      "description": "",
-      "description_zh": "",
+      "description": "The maximum height of the menu; Size in CSS units, including unit name",
+      "description_zh": "菜单的最大高度;以 CSS 单位为单位的大小，包括单位名称",
       "default": "null",
       "required": false,
       "extends": "size",
@@ -267,13 +225,55 @@
     "max-width": {
       "value": "",
       "type": "String | null",
-      "description": "",
-      "description_zh": "",
+      "description": "The maximum width of the menu; Size in CSS units, including unit name",
+      "description_zh": "菜单的最大宽度;以 CSS 单位为单位的大小，包括单位名称",
       "default": "null",
       "required": false,
       "extends": "size",
       "desc": "The maximum width of the menu; Size in CSS units, including unit name",
       "category": "style"
+    },
+    "v-model": {
+      "value": "",
+      "type": "Boolean | null",
+      "description": "Model of the component defining shown/hidden state; Either use this property (along with a listener for 'update:model-value' event) OR use v-model directive",
+      "description_zh": "定义显示/隐藏状态的组件模型;使用此属性（以及 'update：model-value' 事件的侦听器）或使用 v-model 指令",
+      "default": "null",
+      "required": false
+    },
+    "context-menu": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Allows the component to behave like a context menu, which opens with a right mouse click (or long tap on mobile)",
+      "description_zh": "允许组件的行为类似于上下文菜单，该菜单通过右键单击（或在移动设备上长按）打开",
+      "default": "false",
+      "required": false
+    },
+    "transition-show": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "fade",
+      "required": false,
+      "extends": "transition"
+    },
+    "transition-hide": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "fade",
+      "required": false,
+      "extends": "transition"
+    },
+    "transition-duration": {
+      "value": "",
+      "type": "String | Number",
+      "description": "Transition duration (in milliseconds, without unit)",
+      "description_zh": "过渡持续时间（以毫秒为单位，不含单位）",
+      "default": "300",
+      "required": false
     }
   },
   "link": "https://v2.quasar.dev/vue-components/menu",

@@ -2,6 +2,20 @@
   "name": "QDialog",
   "methods": [
     {
+      "name": "focus",
+      "description": "Focus dialog; if you have content with autofocus attribute, it will directly focus it",
+      "description_zh": "焦点对话框;如果你有带有 autofocus 属性的内容，它会直接聚焦它",
+      "params": "(selector: String) => void",
+      "value": ""
+    },
+    {
+      "name": "shake",
+      "description": "Shakes dialog",
+      "description_zh": "“振动”对话框",
+      "params": "(focusTarget: Element) => void",
+      "value": ""
+    },
+    {
       "name": "show",
       "params": "",
       "description": "",
@@ -21,23 +35,30 @@
       "description": "",
       "value": "",
       "description_zh": ""
-    },
-    {
-      "name": "focus",
-      "description": "Focus dialog; if you have content with autofocus attribute, it will directly focus it",
-      "description_zh": "焦点对话框;如果你有带有 autofocus 属性的内容，它会直接聚焦它",
-      "params": "(selector: String) => void",
-      "value": ""
-    },
-    {
-      "name": "shake",
-      "description": "Shakes dialog",
-      "description_zh": "“振动”对话框",
-      "params": "(focusTarget: Element) => void",
-      "value": ""
     }
   ],
   "events": [
+    {
+      "name": "shake",
+      "description": "Emitted when the Dialog shakes in order to catch user's attention, unless the 'no-shake' property is set",
+      "description_zh": "在 Dialog 摇动时发出以引起用户的注意，除非设置了 'no-shake' 属性",
+      "params": "",
+      "value": ""
+    },
+    {
+      "name": "escape-key",
+      "description": "Emitted when ESC key is pressed; Does not get emitted if Dialog is 'persistent' or it has 'no-esc-key' set",
+      "description_zh": "按下 ESC 键时发出;如果 Dialog 是 'persistent' 或 'no-esc-key' 设置的，则不会发出",
+      "params": "",
+      "value": ""
+    },
+    {
+      "name": "click",
+      "description": "",
+      "description_zh": "",
+      "params": "",
+      "value": ""
+    },
     {
       "name": "update:model-value",
       "description": "Emitted when showing/hidden state changes; Is also used by v-model",
@@ -72,66 +93,9 @@
       "description_zh": "",
       "params": "",
       "value": ""
-    },
-    {
-      "name": "shake",
-      "description": "Emitted when the Dialog shakes in order to catch user's attention, unless the 'no-shake' property is set",
-      "description_zh": "在 Dialog 摇动时发出以引起用户的注意，除非设置了 'no-shake' 属性",
-      "params": "",
-      "value": ""
-    },
-    {
-      "name": "escape-key",
-      "description": "Emitted when ESC key is pressed; Does not get emitted if Dialog is 'persistent' or it has 'no-esc-key' set",
-      "description_zh": "按下 ESC 键时发出;如果 Dialog 是 'persistent' 或 'no-esc-key' 设置的，则不会发出",
-      "params": "",
-      "value": ""
-    },
-    {
-      "name": "click",
-      "description": "",
-      "description_zh": "",
-      "params": "",
-      "value": ""
     }
   ],
   "props": {
-    "transition-show": {
-      "value": "",
-      "type": "String",
-      "description": "",
-      "description_zh": "",
-      "default": "'fade'",
-      "required": false,
-      "extends": "transition",
-      "__runtimeDefault": true
-    },
-    "transition-hide": {
-      "value": "",
-      "type": "String",
-      "description": "",
-      "description_zh": "",
-      "default": "'fade'",
-      "required": false,
-      "extends": "transition",
-      "__runtimeDefault": true
-    },
-    "transition-duration": {
-      "value": "",
-      "type": "String | Number",
-      "description": "Transition duration (in milliseconds, without unit)",
-      "description_zh": "过渡持续时间（以毫秒为单位，不含单位）",
-      "default": "300",
-      "required": false
-    },
-    "model-value": {
-      "value": "",
-      "type": "Boolean | null",
-      "description": "Model of the component defining shown/hidden state; Either use this property (along with a listener for 'update:model-value' event) OR use v-model directive",
-      "description_zh": "定义显示/隐藏状态的组件模型;使用此属性（以及 'update：model-value' 事件的侦听器）或使用 v-model 指令",
-      "default": "null",
-      "required": false
-    },
     "persistent": {
       "value": "",
       "type": "Boolean",
@@ -215,10 +179,10 @@
     },
     "position": {
       "value": "",
-      "type": "String",
+      "type": "standard / top / right / bottom / left",
       "description": "Stick dialog to one of the sides (top, right, bottom or left)",
       "description_zh": "将对话框固定到其中一侧（上、右、下或左）",
-      "default": "'standard'",
+      "default": "standard",
       "required": false
     },
     "square": {
@@ -261,6 +225,42 @@
       "description_zh": "允许 Dialog 外部的元素可聚焦;默认情况下，出于可访问性的原因，QDialog 不允许外部聚焦",
       "default": "false",
       "version": "v2.7.2",
+      "required": false
+    },
+    "transition-show": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "fade",
+      "required": false,
+      "__runtimeDefault": true,
+      "extends": "transition"
+    },
+    "transition-hide": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "fade",
+      "required": false,
+      "__runtimeDefault": true,
+      "extends": "transition"
+    },
+    "v-model": {
+      "value": "",
+      "type": "Boolean | null",
+      "description": "Model of the component defining shown/hidden state; Either use this property (along with a listener for 'update:model-value' event) OR use v-model directive",
+      "description_zh": "定义显示/隐藏状态的组件模型;使用此属性（以及 'update：model-value' 事件的侦听器）或使用 v-model 指令",
+      "default": "null",
+      "required": false
+    },
+    "transition-duration": {
+      "value": "",
+      "type": "String | Number",
+      "description": "Transition duration (in milliseconds, without unit)",
+      "description_zh": "过渡持续时间（以毫秒为单位，不含单位）",
+      "default": "300",
       "required": false
     }
   },

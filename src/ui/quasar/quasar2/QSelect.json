@@ -2,41 +2,6 @@
   "name": "QSelect",
   "methods": [
     {
-      "name": "scrollTo",
-      "description": "Scroll the virtual scroll list to the item with the specified index (0 based)",
-      "description_zh": "将虚拟滚动列表滚动到具有指定索引的项目（从 0 开始）",
-      "params": "(index: Number,String, edge: String) => void",
-      "value": ""
-    },
-    {
-      "name": "reset",
-      "description": "Resets the virtual scroll computations; Needed for custom edge-cases",
-      "description_zh": "重置虚拟滚动计算;自定义边缘情况需要",
-      "params": "",
-      "value": ""
-    },
-    {
-      "name": "refresh",
-      "description": "Refreshes the virtual scroll list; Use it after appending items",
-      "description_zh": "刷新虚拟滚动列表;在附加项后使用",
-      "params": "(index: String,Number) => void",
-      "value": ""
-    },
-    {
-      "name": "focus",
-      "description": "Focus component",
-      "description_zh": "焦点组件",
-      "params": "",
-      "value": ""
-    },
-    {
-      "name": "blur",
-      "description": "Blur component (lose focus)",
-      "description_zh": "模糊组件（失去焦点）",
-      "params": "",
-      "value": ""
-    },
-    {
       "name": "showPopup",
       "description": "Focus and open popup",
       "description_zh": "聚焦并打开弹出窗口",
@@ -147,44 +112,44 @@
       "description_zh": "告知选项是否被禁用;考虑 'option-disable' prop （如果使用）",
       "params": "(opt: Any) => Boolean",
       "value": ""
-    }
-  ],
-  "events": [
+    },
     {
-      "name": "virtual-scroll",
-      "description": "Emitted when the virtual scroll occurs",
-      "description_zh": "在虚拟滚动发生时发出",
-      "params": "(details: Object) => void",
+      "name": "scrollTo",
+      "description": "Scroll the virtual scroll list to the item with the specified index (0 based)",
+      "description_zh": "将虚拟滚动列表滚动到具有指定索引的项目（从 0 开始）",
+      "params": "(index: Number,String, edge: String) => void",
       "value": ""
     },
     {
-      "name": "update:model-value",
-      "description": "",
-      "description_zh": "",
+      "name": "reset",
+      "description": "Resets the virtual scroll computations; Needed for custom edge-cases",
+      "description_zh": "重置虚拟滚动计算;自定义边缘情况需要",
       "params": "",
       "value": ""
     },
     {
+      "name": "refresh",
+      "description": "Refreshes the virtual scroll list; Use it after appending items",
+      "description_zh": "刷新虚拟滚动列表;在附加项后使用",
+      "params": "(index: String,Number) => void",
+      "value": ""
+    },
+    {
       "name": "focus",
-      "description": "Emitted when component gets focused",
-      "description_zh": "当组件获得焦点时发出",
-      "params": "(evt: undefined) => void",
+      "description": "Focus component",
+      "description_zh": "焦点组件",
+      "params": "",
       "value": ""
     },
     {
       "name": "blur",
-      "description": "Emitted when component loses focus",
-      "description_zh": "当组件失去焦点时发出",
-      "params": "(evt: undefined) => void",
+      "description": "Blur component (lose focus)",
+      "description_zh": "模糊组件（失去焦点）",
+      "params": "",
       "value": ""
-    },
-    {
-      "name": "clear",
-      "description": "When using the 'clearable' property, this event is emitted when the clear icon is clicked",
-      "description_zh": "当使用 'clearable' 属性时，当单击 clear 图标时，将触发此事件",
-      "params": "(value: Any) => void",
-      "value": ""
-    },
+    }
+  ],
+  "events": [
     {
       "name": "input-value",
       "description": "Emitted when the value in the text input changes",
@@ -242,6 +207,13 @@
       "value": ""
     },
     {
+      "name": "virtual-scroll",
+      "description": "Emitted when the virtual scroll occurs",
+      "description_zh": "在虚拟滚动发生时发出",
+      "params": "(details: Object) => void",
+      "value": ""
+    },
+    {
       "name": "keyup",
       "description": "",
       "description_zh": "",
@@ -261,15 +233,405 @@
       "description_zh": "",
       "params": "",
       "value": ""
+    },
+    {
+      "name": "update:model-value",
+      "description": "",
+      "description_zh": "",
+      "params": "",
+      "value": ""
+    },
+    {
+      "name": "focus",
+      "description": "Emitted when component gets focused",
+      "description_zh": "当组件获得焦点时发出",
+      "params": "(evt: undefined) => void",
+      "value": ""
+    },
+    {
+      "name": "blur",
+      "description": "Emitted when component loses focus",
+      "description_zh": "当组件失去焦点时发出",
+      "params": "(evt: undefined) => void",
+      "value": ""
+    },
+    {
+      "name": "clear",
+      "description": "When using the 'clearable' property, this event is emitted when the clear icon is clicked",
+      "description_zh": "当使用 'clearable' 属性时，当单击 clear 图标时，将触发此事件",
+      "params": "(value: Any) => void",
+      "value": ""
     }
   ],
   "props": {
+    "v-model": {
+      "value": "",
+      "type": "Any",
+      "description": "Model of the component; Must be Array if using 'multiple' prop; Either use this property (along with a listener for 'update:modelValue' event) OR use v-model directive",
+      "description_zh": "组件的模型;如果使用 'multiple' prop，则必须为 Array;使用此属性（以及 'update：modelValue' 事件的侦听器）或使用 v-model 指令",
+      "default": "",
+      "required": false,
+      "extends": "model-value",
+      "desc": "Model of the component; Must be Array if using 'multiple' prop; Either use this property (along with a listener for 'update:modelValue' event) OR use v-model directive",
+      "examples": [
+        "# v-model=\"myModel\""
+      ]
+    },
+    "multiple": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Allow multiple selection; Model must be Array",
+      "description_zh": "允许多选;Model 必须是 Array",
+      "default": "false",
+      "required": false
+    },
+    "display-value": {
+      "value": "",
+      "type": "Number | String",
+      "description": "Override default selection string, if not using 'selected' slot/scoped slot and if not using 'use-chips' prop",
+      "description_zh": "如果不使用 'selected' 插槽/scoped 插槽，如果不使用 'use-chips' 属性，则覆盖默认选择字符串",
+      "default": "",
+      "required": false
+    },
+    "display-value-html": {
+      "value": "",
+      "type": "String",
+      "description": "Force render the selected option(s) as HTML; This can lead to XSS attacks so make sure that you sanitize the content; Does NOT apply when using 'selected' or 'selected-item' slots!",
+      "description_zh": "强制将所选选项渲染为 HTML;这可能会导致 XSS 攻击，因此请确保对内容进行清理;在使用 'selected' 或 'selected-item' 插槽时不适用！",
+      "default": "",
+      "required": false,
+      "extends": "html",
+      "desc": "Force render the selected option(s) as HTML; This can lead to XSS attacks so make sure that you sanitize the content; Does NOT apply when using 'selected' or 'selected-item' slots!",
+      "category": "selection"
+    },
+    "options": {
+      "value": "",
+      "type": "Array",
+      "description": "Available options that the user can select from. For best performance freeze the list of options.",
+      "description_zh": "用户可以从中选择的可用选项。为了获得最佳性能，请冻结选项列表。",
+      "default": "[]",
+      "required": false
+    },
+    "option-value": {
+      "value": "",
+      "type": "Function | String",
+      "description": "Property of option which holds the 'value'; If using a function then for best performance, reference it from your scope and do not define it inline",
+      "description_zh": "保存 'value' 的 option 属性;如果使用函数，则为了获得最佳性能，请从您的范围引用它，而不是内联定义它",
+      "default": "value",
+      "required": false
+    },
+    "option-label": {
+      "value": "",
+      "type": "Function | String",
+      "description": "Property of option which holds the 'label'; If using a function then for best performance, reference it from your scope and do not define it inline",
+      "description_zh": "保存 'label' 的选项的属性;如果使用函数，则为了获得最佳性能，请从您的范围引用它，而不是内联定义它",
+      "default": "label",
+      "required": false
+    },
+    "option-disable": {
+      "value": "",
+      "type": "Function | String",
+      "description": "Property of option which tells it's disabled; The value of the property must be a Boolean; If using a function then for best performance, reference it from your scope and do not define it inline",
+      "description_zh": "option 的属性，告诉它已禁用;该属性的值必须是布尔值;如果使用函数，则为了获得最佳性能，请从您的范围引用它，而不是内联定义它",
+      "default": "disable",
+      "required": false
+    },
+    "hide-selected": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Hides selection; Use the underlying input tag to hold the label (instead of showing it to the right of the input) of the selected option; Only works for non 'multiple' Selects",
+      "description_zh": "隐藏选择;使用基础 input 标签来保存所选选项的标签（而不是将其显示在 input 的右侧）;仅适用于非 'multiple' Selects",
+      "default": "false",
+      "required": false
+    },
+    "hide-dropdown-icon": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Hides dropdown icon",
+      "description_zh": "隐藏下拉图标",
+      "default": "false",
+      "required": false
+    },
+    "dropdown-icon": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "",
+      "required": false,
+      "extends": "icon"
+    },
+    "max-values": {
+      "value": "",
+      "type": "Number | String",
+      "description": "Allow a maximum number of selections that the user can do",
+      "description_zh": "允许用户执行的最大选择数",
+      "default": "",
+      "required": false
+    },
+    "options-dense": {
+      "value": "",
+      "type": "String",
+      "description": "Dense mode for options list; occupies less space",
+      "description_zh": "选项列表的密集模式;占用更少的空间",
+      "default": "",
+      "required": false,
+      "extends": "dense",
+      "desc": "Dense mode for options list; occupies less space",
+      "category": "options"
+    },
+    "options-dark": {
+      "value": "",
+      "type": "Boolean | null",
+      "description": "Options menu will be colored with a dark color",
+      "description_zh": "选项菜单将用深色着色",
+      "default": "null",
+      "required": false
+    },
+    "options-selected-class": {
+      "value": "",
+      "type": "String",
+      "description": "CSS class name for options that are active/selected; Set it to an empty string to stop applying the default (which is text-* where * is the 'color' prop value)",
+      "description_zh": "活动/选定选项的 CSS 类名称;将其设置为空字符串以停止应用默认值（即 text-*，其中 * 是 'color' 属性值）",
+      "default": "",
+      "required": false
+    },
+    "options-html": {
+      "value": "",
+      "type": "String",
+      "description": "Force render the options as HTML; This can lead to XSS attacks so make sure that you sanitize the content; Does NOT apply when using 'option' slot!",
+      "description_zh": "强制将选项渲染为 HTML;这可能会导致 XSS 攻击，因此请确保对内容进行清理;使用 'option' 插槽时不适用！",
+      "default": "",
+      "required": false,
+      "extends": "html",
+      "desc": "Force render the options as HTML; This can lead to XSS attacks so make sure that you sanitize the content; Does NOT apply when using 'option' slot!",
+      "category": "options"
+    },
+    "options-cover": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Expanded menu will cover the component (will not work along with 'use-input' prop for obvious reasons)",
+      "description_zh": "展开的菜单将覆盖组件（由于显而易见的原因，不能与 'use-input' 属性一起使用）",
+      "default": "false",
+      "required": false
+    },
+    "menu-shrink": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Allow the options list to be narrower than the field (only in menu mode)",
+      "description_zh": "允许选项列表比字段窄（仅在菜单模式下）",
+      "default": "false",
+      "required": false
+    },
+    "menu-anchor": {
+      "value": "",
+      "type": "top left / top middle / top right / top start / top end / center left / center middle / center right / center start / center end / bottom left / bottom middle / bottom right / bottom start / bottom end",
+      "description": "Two values setting the starting position or anchor point of the options list relative to the field (only in menu mode)",
+      "description_zh": "两个值，用于设置选项列表相对于字段的起始位置或锚点（仅在菜单模式下）",
+      "default": "",
+      "required": false
+    },
+    "menu-self": {
+      "value": "",
+      "type": "top left / top middle / top right / top start / top end / center left / center middle / center right / center start / center end / bottom left / bottom middle / bottom right / bottom start / bottom end",
+      "description": "Two values setting the options list's own position relative to its target (only in menu mode)",
+      "description_zh": "两个值设置选项列表相对于其目标的位置（仅在菜单模式下）",
+      "default": "",
+      "required": false
+    },
+    "menu-offset": {
+      "value": "",
+      "type": "Array",
+      "description": "An array of two numbers to offset the options list horizontally and vertically in pixels (only in menu mode)",
+      "description_zh": "一个包含两个数字的数组，用于以像素为单位水平和垂直偏移选项列表（仅在菜单模式下）",
+      "default": "",
+      "required": false
+    },
+    "popup-content-class": {
+      "value": "",
+      "type": "String",
+      "description": "Class definitions to be attributed to the popup content",
+      "description_zh": "要归属于弹出窗口内容的类定义",
+      "default": "",
+      "required": false
+    },
+    "popup-content-style": {
+      "value": "",
+      "type": "String | Array | Object",
+      "description": "Style definitions to be attributed to the popup content",
+      "description_zh": "要归属于弹出窗口内容的样式定义",
+      "default": "",
+      "required": false
+    },
+    "popup-no-route-dismiss": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Changing route app won't dismiss the popup (menu or dialog)",
+      "description_zh": "更改路线应用程序不会关闭弹出窗口（菜单或对话框）",
+      "default": "false",
+      "version": "v2.15",
+      "required": false
+    },
+    "use-chips": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Use QChip to show what is currently selected",
+      "description_zh": "使用 QChip 显示当前选择的内容",
+      "default": "false",
+      "required": false
+    },
+    "use-input": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Use an input tag where users can type",
+      "description_zh": "使用用户可以键入的 input 标签",
+      "default": "false",
+      "required": false
+    },
+    "maxlength": {
+      "value": "",
+      "type": "String | Number",
+      "description": "Specify a max length for the inner input tag (if 'use-input' is enabled)",
+      "description_zh": "指定内部 input 标签的最大长度（如果启用了 'use-input'）",
+      "default": "",
+      "required": false
+    },
+    "fill-input": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Fills the input with current value; Useful along with 'hide-selected'; Does NOT works along with 'multiple' selection",
+      "description_zh": "用当前值填充 input;与 'hide-selected' 一起有用;不能与“多个”选择一起使用",
+      "default": "false",
+      "required": false
+    },
+    "new-value-mode": {
+      "value": "",
+      "type": "add / add-unique / toggle",
+      "description": "Enables creation of new values and defines behavior when a new value is added: 'add' means it adds the value (even if possible duplicate), 'add-unique' adds only unique values, and 'toggle' adds or removes the value (based on if it exists or not already); When using this prop then listening for @new-value becomes optional (only to override the behavior defined by 'new-value-mode')",
+      "description_zh": "启用创建新值并定义添加新值时的行为： 'add' 表示添加值（即使可能重复）， 'add-unique' 仅添加唯一值，'toggle' 添加或删除值（基于它是否存在）;当使用此 prop 时，监听 @new 值就变成了可选的（仅用于覆盖 'new-value-mode' 定义的行为）",
+      "default": "",
+      "required": false
+    },
+    "map-options": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Try to map labels of model from 'options' Array; has a small performance penalty; If you are using emit-value you will probably need to use map-options to display the label text in the select field rather than the value;  Refer to the 'Affecting model' section above",
+      "description_zh": "尝试从 'options' 数组映射模型的标签;性能损失较小;如果你正在使用 emit-value，你可能需要使用 map-options 在 select 字段中显示标签文本，而不是 value; 请参阅上面的“影响模型”部分",
+      "default": "false",
+      "required": false
+    },
+    "disable-tab-selection": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Prevents the tab key from confirming the currently hovered option",
+      "description_zh": "阻止 Tab 键确认当前悬停的选项",
+      "default": "false",
+      "version": "v2.17",
+      "required": false
+    },
+    "emit-value": {
+      "value": "",
+      "type": "Boolean",
+      "description": "Update model with the value of the selected option instead of the whole option",
+      "description_zh": "使用所选选项的值而不是整个选项更新模型",
+      "default": "false",
+      "required": false
+    },
+    "input-debounce": {
+      "value": "",
+      "type": "Number | String",
+      "description": "Debounce the input model update with an amount of milliseconds (also affects the 'filter' event, if used)",
+      "description_zh": "以毫秒为单位对输入模型更新进行去抖动（如果使用，也会影响 'filter' 事件）",
+      "default": "500",
+      "required": false
+    },
+    "input-class": {
+      "value": "",
+      "type": "String | Array | Object",
+      "description": "Class definitions to be attributed to the underlying input tag",
+      "description_zh": "要归属于底层 input 标签的类定义",
+      "default": "",
+      "required": false
+    },
+    "input-style": {
+      "value": "",
+      "type": "String | Array | Object",
+      "description": "Style definitions to be attributed to the underlying input tag",
+      "description_zh": "要归属于基础 input 标记的样式定义",
+      "default": "",
+      "required": false
+    },
+    "tabindex": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "0",
+      "required": false,
+      "extends": "tabindex"
+    },
+    "autocomplete": {
+      "value": "",
+      "type": "String",
+      "description": "Autocomplete attribute for field",
+      "description_zh": "字段的 Autocomplete 属性",
+      "default": "",
+      "required": false
+    },
+    "transition-show": {
+      "value": "",
+      "type": "String",
+      "description": "Transition when showing the menu/dialog; One of Quasar's embedded transitions",
+      "description_zh": "显示菜单/对话框时的过渡;Quasar 的嵌入式过渡之一",
+      "default": "fade",
+      "required": false,
+      "extends": "transition",
+      "desc": "Transition when showing the menu/dialog; One of Quasar's embedded transitions",
+      "passthrough": "child",
+      "category": "behavior"
+    },
+    "transition-hide": {
+      "value": "",
+      "type": "String",
+      "description": "Transition when hiding the menu/dialog; One of Quasar's embedded transitions",
+      "description_zh": "隐藏菜单/对话框时的过渡;Quasar 的嵌入式过渡之一",
+      "default": "fade",
+      "required": false,
+      "extends": "transition",
+      "desc": "Transition when hiding the menu/dialog; One of Quasar's embedded transitions",
+      "passthrough": "child",
+      "category": "behavior"
+    },
+    "transition-duration": {
+      "value": "",
+      "type": "String | Number",
+      "description": "Transition duration when hiding the menu/dialog (in milliseconds, without unit)",
+      "description_zh": "隐藏菜单/对话框时的过渡持续时间（以毫秒为单位，不含单位）",
+      "default": "300",
+      "required": false
+    },
+    "behavior": {
+      "value": "",
+      "type": "default / menu / dialog",
+      "description": "Overrides the default dynamic mode of showing as menu on desktop and dialog on mobiles",
+      "description_zh": "覆盖在桌面上显示为菜单，在移动设备上显示为对话框的默认动态模式",
+      "default": "default",
+      "required": false
+    },
     "name": {
       "value": "",
       "type": "String",
-      "description": "Used to specify the name of the control; Useful if dealing with forms; If not specified, it takes the value of 'for' prop, if it exists",
-      "description_zh": "用于指定控件的名称;在处理表单时很有用;如果未指定，则采用 'for' prop 的值（如果存在）",
+      "description": "Used to specify the name of the control; Useful if dealing with forms submitted directly to a URL",
+      "description_zh": "用于指定控件的名称;如果处理直接提交到 URL 的表单，则很有用",
       "default": "",
+      "required": false
+    },
+    "virtual-scroll-item-size": {
+      "value": "",
+      "type": "Number | String",
+      "description": "Default size in pixels (height if vertical, width if horizontal) of an item; This value is used for rendering the initial list; Try to use a value close to the minimum size of an item",
+      "description_zh": "项目的默认大小（以像素为单位）（如果垂直时为高度，如果水平时为宽度）;此值用于呈现初始列表;尝试使用接近项的最小大小的值",
+      "default": "24",
       "required": false
     },
     "virtual-scroll-horizontal": {
@@ -302,14 +664,6 @@
       "description": "Ratio of number of items in visible zone to render after it",
       "description_zh": "可见区域中的项目数与之后渲染的比率",
       "default": "1",
-      "required": false
-    },
-    "virtual-scroll-item-size": {
-      "value": "",
-      "type": "Number | String",
-      "description": "Default size in pixels (height if vertical, width if horizontal) of an item; This value is used for rendering the initial list; Try to use a value close to the minimum size of an item",
-      "description_zh": "项目的默认大小（以像素为单位）（如果垂直时为高度，如果水平时为宽度）;此值用于呈现初始列表;尝试使用接近项的最小大小的值",
-      "default": "24",
       "required": false
     },
     "virtual-scroll-sticky-size-start": {
@@ -388,45 +742,45 @@
       "type": "String | Array",
       "description": "Color name for component from the Quasar Color Palette",
       "value": "",
-      "default": "'primary'",
+      "default": "primary",
       "extends": "color",
       "desc": "Color name for the label from the Quasar Color Palette; Overrides the 'color' prop; The difference from 'color' prop is that the label will always have this color, even when field is not focused",
       "category": "labels",
+      "addedIn": "v2.4",
       "__runtimeDefault": true,
       "examples": [
         "[ 'accent', 'grey-7' ]"
       ],
-      "addedIn": "v2.4",
       "description_zh": "Quasar Color Palette （类星体调色板） 中组件的颜色名称"
     },
     "color": {
       "type": "String | Array",
       "description": "Color name for component from the Quasar Color Palette",
       "value": "",
-      "default": "'primary'",
+      "default": "primary",
       "extends": "color",
       "desc": "Color name for the label from the Quasar Color Palette; Overrides the 'color' prop; The difference from 'color' prop is that the label will always have this color, even when field is not focused",
       "category": "labels",
+      "addedIn": "v2.4",
       "__runtimeDefault": true,
       "examples": [
         "[ 'accent', 'grey-7' ]"
       ],
-      "addedIn": "v2.4",
       "description_zh": "Quasar Color Palette （类星体调色板） 中组件的颜色名称"
     },
     "bg-color": {
       "type": "String | Array",
       "description": "Color name for component from the Quasar Color Palette",
       "value": "",
-      "default": "'primary'",
+      "default": "primary",
       "extends": "color",
       "desc": "Color name for the label from the Quasar Color Palette; Overrides the 'color' prop; The difference from 'color' prop is that the label will always have this color, even when field is not focused",
       "category": "labels",
+      "addedIn": "v2.4",
       "__runtimeDefault": true,
       "examples": [
         "[ 'accent', 'grey-7' ]"
       ],
-      "addedIn": "v2.4",
       "description_zh": "Quasar Color Palette （类星体调色板） 中组件的颜色名称"
     },
     "dark": {
@@ -593,365 +947,46 @@
       "description_zh": "用于指定控件的 'id' 以及包装它的标签的 'for' 属性;如果未指定 'name' prop，则它也用于此属性",
       "default": "",
       "required": false
-    },
-    "model-value": {
-      "value": "",
-      "type": "Any",
-      "description": "",
-      "description_zh": "",
-      "default": "",
-      "required": false,
-      "extends": "model-value",
-      "desc": "Model of the component; Must be Array if using 'multiple' prop; Either use this property (along with a listener for 'update:modelValue' event) OR use v-model directive",
-      "examples": [
-        "# v-model=\"myModel\""
-      ]
-    },
-    "multiple": {
-      "value": "",
-      "type": "Boolean",
-      "description": "Allow multiple selection; Model must be Array",
-      "description_zh": "允许多选;Model 必须是 Array",
-      "default": "false",
-      "required": false
-    },
-    "display-value": {
-      "value": "",
-      "type": "Number | String",
-      "description": "Override default selection string, if not using 'selected' slot/scoped slot and if not using 'use-chips' prop",
-      "description_zh": "如果不使用 'selected' 插槽/scoped 插槽，如果不使用 'use-chips' 属性，则覆盖默认选择字符串",
-      "default": "",
-      "required": false
-    },
-    "display-value-html": {
-      "value": "",
-      "type": "String",
-      "description": "",
-      "description_zh": "",
-      "default": "",
-      "required": false,
-      "extends": "html",
-      "desc": "Force render the selected option(s) as HTML; This can lead to XSS attacks so make sure that you sanitize the content; Does NOT apply when using 'selected' or 'selected-item' slots!",
-      "category": "selection"
-    },
-    "options": {
-      "value": "",
-      "type": "Array",
-      "description": "Available options that the user can select from. For best performance freeze the list of options.",
-      "description_zh": "用户可以从中选择的可用选项。为了获得最佳性能，请冻结选项列表。",
-      "default": "[]",
-      "required": false
-    },
-    "option-value": {
-      "value": "",
-      "type": "Function | String",
-      "description": "Property of option which holds the 'value'; If using a function then for best performance, reference it from your scope and do not define it inline",
-      "description_zh": "保存 'value' 的 option 属性;如果使用函数，则为了获得最佳性能，请从您的范围引用它，而不是内联定义它",
-      "default": "'value'",
-      "required": false
-    },
-    "option-label": {
-      "value": "",
-      "type": "Function | String",
-      "description": "Property of option which holds the 'label'; If using a function then for best performance, reference it from your scope and do not define it inline",
-      "description_zh": "保存 'label' 的选项的属性;如果使用函数，则为了获得最佳性能，请从您的范围引用它，而不是内联定义它",
-      "default": "'label'",
-      "required": false
-    },
-    "option-disable": {
-      "value": "",
-      "type": "Function | String",
-      "description": "Property of option which tells it's disabled; The value of the property must be a Boolean; If using a function then for best performance, reference it from your scope and do not define it inline",
-      "description_zh": "option 的属性，告诉它已禁用;该属性的值必须是布尔值;如果使用函数，则为了获得最佳性能，请从您的范围引用它，而不是内联定义它",
-      "default": "'disable'",
-      "required": false
-    },
-    "hide-selected": {
-      "value": "",
-      "type": "Boolean",
-      "description": "Hides selection; Use the underlying input tag to hold the label (instead of showing it to the right of the input) of the selected option; Only works for non 'multiple' Selects",
-      "description_zh": "隐藏选择;使用基础 input 标签来保存所选选项的标签（而不是将其显示在 input 的右侧）;仅适用于非 'multiple' Selects",
-      "default": "false",
-      "required": false
-    },
-    "hide-dropdown-icon": {
-      "value": "",
-      "type": "Boolean",
-      "description": "Hides dropdown icon",
-      "description_zh": "隐藏下拉图标",
-      "default": "false",
-      "required": false
-    },
-    "dropdown-icon": {
-      "value": "",
-      "type": "String",
-      "description": "",
-      "description_zh": "",
-      "default": "",
-      "required": false,
-      "extends": "icon"
-    },
-    "max-values": {
-      "value": "",
-      "type": "Number | String",
-      "description": "Allow a maximum number of selections that the user can do",
-      "description_zh": "允许用户执行的最大选择数",
-      "default": "",
-      "required": false
-    },
-    "options-dense": {
-      "value": "",
-      "type": "String",
-      "description": "",
-      "description_zh": "",
-      "default": "",
-      "required": false,
-      "extends": "dense",
-      "desc": "Dense mode for options list; occupies less space",
-      "category": "options"
-    },
-    "options-dark": {
-      "value": "",
-      "type": "Boolean | null",
-      "description": "Options menu will be colored with a dark color",
-      "description_zh": "选项菜单将用深色着色",
-      "default": "null",
-      "required": false
-    },
-    "options-selected-class": {
-      "value": "",
-      "type": "String",
-      "description": "CSS class name for options that are active/selected; Set it to an empty string to stop applying the default (which is text-* where * is the 'color' prop value)",
-      "description_zh": "活动/选定选项的 CSS 类名称;将其设置为空字符串以停止应用默认值（即 text-*，其中 * 是 'color' 属性值）",
-      "default": "",
-      "required": false
-    },
-    "options-html": {
-      "value": "",
-      "type": "String",
-      "description": "",
-      "description_zh": "",
-      "default": "",
-      "required": false,
-      "extends": "html",
-      "desc": "Force render the options as HTML; This can lead to XSS attacks so make sure that you sanitize the content; Does NOT apply when using 'option' slot!",
-      "category": "options"
-    },
-    "options-cover": {
-      "value": "",
-      "type": "Boolean",
-      "description": "Expanded menu will cover the component (will not work along with 'use-input' prop for obvious reasons)",
-      "description_zh": "展开的菜单将覆盖组件（由于显而易见的原因，不能与 'use-input' 属性一起使用）",
-      "default": "false",
-      "required": false
-    },
-    "menu-shrink": {
-      "value": "",
-      "type": "Boolean",
-      "description": "Allow the options list to be narrower than the field (only in menu mode)",
-      "description_zh": "允许选项列表比字段窄（仅在菜单模式下）",
-      "default": "false",
-      "required": false
-    },
-    "menu-anchor": {
-      "value": "",
-      "type": "String",
-      "description": "Two values setting the starting position or anchor point of the options list relative to the field (only in menu mode)",
-      "description_zh": "两个值，用于设置选项列表相对于字段的起始位置或锚点（仅在菜单模式下）",
-      "default": "",
-      "required": false
-    },
-    "menu-self": {
-      "value": "",
-      "type": "String",
-      "description": "Two values setting the options list's own position relative to its target (only in menu mode)",
-      "description_zh": "两个值设置选项列表相对于其目标的位置（仅在菜单模式下）",
-      "default": "",
-      "required": false
-    },
-    "menu-offset": {
-      "value": "",
-      "type": "Array",
-      "description": "An array of two numbers to offset the options list horizontally and vertically in pixels (only in menu mode)",
-      "description_zh": "一个包含两个数字的数组，用于以像素为单位水平和垂直偏移选项列表（仅在菜单模式下）",
-      "default": "",
-      "required": false
-    },
-    "popup-content-class": {
-      "value": "",
-      "type": "String",
-      "description": "Class definitions to be attributed to the popup content",
-      "description_zh": "要归属于弹出窗口内容的类定义",
-      "default": "",
-      "required": false
-    },
-    "popup-content-style": {
-      "value": "",
-      "type": "String | Array | Object",
-      "description": "Style definitions to be attributed to the popup content",
-      "description_zh": "要归属于弹出窗口内容的样式定义",
-      "default": "",
-      "required": false
-    },
-    "popup-no-route-dismiss": {
-      "value": "",
-      "type": "Boolean",
-      "description": "Changing route app won't dismiss the popup (menu or dialog)",
-      "description_zh": "更改路线应用程序不会关闭弹出窗口（菜单或对话框）",
-      "default": "false",
-      "version": "v2.15",
-      "required": false
-    },
-    "use-chips": {
-      "value": "",
-      "type": "Boolean",
-      "description": "Use QChip to show what is currently selected",
-      "description_zh": "使用 QChip 显示当前选择的内容",
-      "default": "false",
-      "required": false
-    },
-    "use-input": {
-      "value": "",
-      "type": "Boolean",
-      "description": "Use an input tag where users can type",
-      "description_zh": "使用用户可以键入的 input 标签",
-      "default": "false",
-      "required": false
-    },
-    "maxlength": {
-      "value": "",
-      "type": "String | Number",
-      "description": "Specify a max length for the inner input tag (if 'use-input' is enabled)",
-      "description_zh": "指定内部 input 标签的最大长度（如果启用了 'use-input'）",
-      "default": "",
-      "required": false
-    },
-    "fill-input": {
-      "value": "",
-      "type": "Boolean",
-      "description": "Fills the input with current value; Useful along with 'hide-selected'; Does NOT works along with 'multiple' selection",
-      "description_zh": "用当前值填充 input;与 'hide-selected' 一起有用;不能与“多个”选择一起使用",
-      "default": "false",
-      "required": false
-    },
-    "new-value-mode": {
-      "value": "",
-      "type": "String",
-      "description": "Enables creation of new values and defines behavior when a new value is added: 'add' means it adds the value (even if possible duplicate), 'add-unique' adds only unique values, and 'toggle' adds or removes the value (based on if it exists or not already); When using this prop then listening for @new-value becomes optional (only to override the behavior defined by 'new-value-mode')",
-      "description_zh": "启用创建新值并定义添加新值时的行为： 'add' 表示添加值（即使可能重复）， 'add-unique' 仅添加唯一值，'toggle' 添加或删除值（基于它是否存在）;当使用此 prop 时，监听 @new 值就变成了可选的（仅用于覆盖 'new-value-mode' 定义的行为）",
-      "default": "",
-      "required": false
-    },
-    "map-options": {
-      "value": "",
-      "type": "Boolean",
-      "description": "Try to map labels of model from 'options' Array; has a small performance penalty; If you are using emit-value you will probably need to use map-options to display the label text in the select field rather than the value;  Refer to the 'Affecting model' section above",
-      "description_zh": "尝试从 'options' 数组映射模型的标签;性能损失较小;如果你正在使用 emit-value，你可能需要使用 map-options 在 select 字段中显示标签文本，而不是 value; 请参阅上面的“影响模型”部分",
-      "default": "false",
-      "required": false
-    },
-    "disable-tab-selection": {
-      "value": "",
-      "type": "Boolean",
-      "description": "Prevents the tab key from confirming the currently hovered option",
-      "description_zh": "阻止 Tab 键确认当前悬停的选项",
-      "default": "false",
-      "version": "v2.17",
-      "required": false
-    },
-    "emit-value": {
-      "value": "",
-      "type": "Boolean",
-      "description": "Update model with the value of the selected option instead of the whole option",
-      "description_zh": "使用所选选项的值而不是整个选项更新模型",
-      "default": "false",
-      "required": false
-    },
-    "input-debounce": {
-      "value": "",
-      "type": "Number | String",
-      "description": "Debounce the input model update with an amount of milliseconds (also affects the 'filter' event, if used)",
-      "description_zh": "以毫秒为单位对输入模型更新进行去抖动（如果使用，也会影响 'filter' 事件）",
-      "default": "500",
-      "required": false
-    },
-    "input-class": {
-      "value": "",
-      "type": "String | Array | Object",
-      "description": "Class definitions to be attributed to the underlying input tag",
-      "description_zh": "要归属于底层 input 标签的类定义",
-      "default": "",
-      "required": false
-    },
-    "input-style": {
-      "value": "",
-      "type": "String | Array | Object",
-      "description": "Style definitions to be attributed to the underlying input tag",
-      "description_zh": "要归属于基础 input 标记的样式定义",
-      "default": "",
-      "required": false
-    },
-    "tabindex": {
-      "value": "",
-      "type": "String",
-      "description": "",
-      "description_zh": "",
-      "default": "0",
-      "required": false,
-      "extends": "tabindex"
-    },
-    "autocomplete": {
-      "value": "",
-      "type": "String",
-      "description": "Autocomplete attribute for field",
-      "description_zh": "字段的 Autocomplete 属性",
-      "default": "",
-      "required": false
-    },
-    "transition-show": {
-      "value": "",
-      "type": "String",
-      "description": "",
-      "description_zh": "",
-      "default": "'fade'",
-      "required": false,
-      "extends": "transition",
-      "desc": "Transition when showing the menu/dialog; One of Quasar's embedded transitions",
-      "passthrough": "child",
-      "category": "behavior"
-    },
-    "transition-hide": {
-      "value": "",
-      "type": "String",
-      "description": "",
-      "description_zh": "",
-      "default": "'fade'",
-      "required": false,
-      "extends": "transition",
-      "desc": "Transition when hiding the menu/dialog; One of Quasar's embedded transitions",
-      "passthrough": "child",
-      "category": "behavior"
-    },
-    "transition-duration": {
-      "value": "",
-      "type": "String | Number",
-      "description": "Transition duration when hiding the menu/dialog (in milliseconds, without unit)",
-      "description_zh": "隐藏菜单/对话框时的过渡持续时间（以毫秒为单位，不含单位）",
-      "default": "300",
-      "required": false
-    },
-    "behavior": {
-      "value": "",
-      "type": "String",
-      "description": "Overrides the default dynamic mode of showing as menu on desktop and dialog on mobiles",
-      "description_zh": "覆盖在桌面上显示为菜单，在移动设备上显示为对话框的默认动态模式",
-      "default": "'default'",
-      "required": false
     }
   },
   "link": "https://v2.quasar.dev/vue-components/select",
   "link_zh": "https://v2.quasar.dev/vue-components/select",
   "slots": [
+    {
+      "name": "selected",
+      "description": "Override default selection slot; Suggestion: QChip",
+      "description_zh": "覆盖默认选择槽;建议：QChip"
+    },
+    {
+      "name": "loading",
+      "description": "Override default spinner when component is in loading mode; Use in conjunction with 'loading' prop",
+      "description_zh": "当组件处于加载模式时覆盖默认微调器;与 'loading' prop 结合使用"
+    },
+    {
+      "name": "before-options",
+      "description": "Template slot for the elements that should be rendered before the list of options",
+      "description_zh": "应在选项列表之前渲染的元素的模板插槽"
+    },
+    {
+      "name": "after-options",
+      "description": "Template slot for the elements that should be rendered after the list of options",
+      "description_zh": "应在选项列表之后呈现的元素的模板插槽"
+    },
+    {
+      "name": "no-option",
+      "description": "What should the menu display after filtering options and none are left to be displayed; Suggestion: <div>",
+      "description_zh": "筛选选项后菜单应该显示什么，并且没有要显示的内容;建议： <div>"
+    },
+    {
+      "name": "selected-item",
+      "description": "Override default selection slot; Suggestion: QChip",
+      "description_zh": "覆盖默认选择槽;建议：QChip"
+    },
+    {
+      "name": "option",
+      "description": "Customize how options are rendered; Suggestion: QItem",
+      "description_zh": "自定义选项的呈现方式;建议：QItem"
+    },
     {
       "name": "default",
       "description": "Field main content",
@@ -996,41 +1031,6 @@
       "name": "counter",
       "description": "Slot for counter text; Enabled only if 'bottom-slots' prop is used; Suggestion: <div>",
       "description_zh": "计数器文本的插槽;仅在使用 'bottom-slots' prop 时启用;建议： <div>"
-    },
-    {
-      "name": "loading",
-      "description": "Override default spinner when component is in loading mode; Suggestion: spinners",
-      "description_zh": "当组件处于加载模式时覆盖默认微调器;建议：微调器"
-    },
-    {
-      "name": "selected",
-      "description": "Override default selection slot; Suggestion: QChip",
-      "description_zh": "覆盖默认选择槽;建议：QChip"
-    },
-    {
-      "name": "before-options",
-      "description": "Template slot for the elements that should be rendered before the list of options",
-      "description_zh": "应在选项列表之前渲染的元素的模板插槽"
-    },
-    {
-      "name": "after-options",
-      "description": "Template slot for the elements that should be rendered after the list of options",
-      "description_zh": "应在选项列表之后呈现的元素的模板插槽"
-    },
-    {
-      "name": "no-option",
-      "description": "What should the menu display after filtering options and none are left to be displayed; Suggestion: <div>",
-      "description_zh": "筛选选项后菜单应该显示什么，并且没有要显示的内容;建议： <div>"
-    },
-    {
-      "name": "selected-item",
-      "description": "Override default selection slot; Suggestion: QChip",
-      "description_zh": "覆盖默认选择槽;建议：QChip"
-    },
-    {
-      "name": "option",
-      "description": "Customize how options are rendered; Suggestion: QItem",
-      "description_zh": "自定义选项的呈现方式;建议：QItem"
     }
   ]
 }

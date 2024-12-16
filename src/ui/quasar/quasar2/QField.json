@@ -28,7 +28,7 @@
       "name": "focus",
       "description": "Emitted when component gets focused",
       "description_zh": "当组件获得焦点时发出",
-      "params": "(evt: undefined) => void",
+      "paams": "(evt: undefined) => void",
       "value": ""
     },
     {
@@ -47,6 +47,29 @@
     }
   ],
   "props": {
+    "maxlength": {
+      "value": "",
+      "type": "String | Number",
+      "description": "Specify a max length of model",
+      "description_zh": "指定模型的最大长度",
+      "default": "",
+      "required": false
+    },
+    "tag": {
+      "value": "",
+      "type": "String",
+      "description": "",
+      "description_zh": "",
+      "default": "label",
+      "version": "v2.13.1",
+      "required": false,
+      "extends": "tag",
+      "examples": [
+        "div",
+        "label"
+      ],
+      "addedIn": "v2.13.1"
+    },
     "label": {
       "value": "",
       "type": "String",
@@ -99,30 +122,30 @@
       "type": "String",
       "description": "Color name for component from the Quasar Color Palette",
       "value": "",
-      "default": "'primary'",
+      "default": "primary",
       "extends": "color",
       "desc": "Color name for the label from the Quasar Color Palette; Overrides the 'color' prop; The difference from 'color' prop is that the label will always have this color, even when field is not focused",
-      "category": "toolbar",
+      "category": "style",
       "description_zh": "Quasar Color Palette （类星体调色板） 中组件的颜色名称"
     },
     "color": {
       "type": "String",
       "description": "Color name for component from the Quasar Color Palette",
       "value": "",
-      "default": "'primary'",
+      "default": "primary",
       "extends": "color",
       "desc": "Color name for the label from the Quasar Color Palette; Overrides the 'color' prop; The difference from 'color' prop is that the label will always have this color, even when field is not focused",
-      "category": "toolbar",
+      "category": "style",
       "description_zh": "Quasar Color Palette （类星体调色板） 中组件的颜色名称"
     },
     "bg-color": {
       "type": "String",
       "description": "Color name for component from the Quasar Color Palette",
       "value": "",
-      "default": "'primary'",
+      "default": "primary",
       "extends": "color",
       "desc": "Color name for the label from the Quasar Color Palette; Overrides the 'color' prop; The difference from 'color' prop is that the label will always have this color, even when field is not focused",
-      "category": "toolbar",
+      "category": "style",
       "description_zh": "Quasar Color Palette （类星体调色板） 中组件的颜色名称"
     },
     "dark": {
@@ -289,34 +312,21 @@
       "description_zh": "用于指定控件的 'id' 以及包装它的标签的 'for' 属性;如果未指定 'name' prop，则它也用于此属性",
       "default": "",
       "required": false
-    },
-    "maxlength": {
-      "value": "",
-      "type": "String | Number",
-      "description": "Specify a max length of model",
-      "description_zh": "指定模型的最大长度",
-      "default": "",
-      "required": false
-    },
-    "tag": {
-      "value": "",
-      "type": "String",
-      "description": "",
-      "description_zh": "",
-      "default": "'label'",
-      "version": "v2.13.1",
-      "required": false,
-      "extends": "tag",
-      "examples": [
-        "'div'",
-        "'label'"
-      ],
-      "addedIn": "v2.13.1"
     }
   },
   "link": "https://v2.quasar.dev/vue-components/field",
   "link_zh": "https://v2.quasar.dev/vue-components/field",
   "slots": [
+    {
+      "name": "control",
+      "description": "Slot for controls; Suggestion QSlider, QRange, QKnob, ...",
+      "description_zh": "控制插槽;建议 QSlider， QRange， QKnob， ..."
+    },
+    {
+      "name": "rawControl",
+      "description": "",
+      "description_zh": ""
+    },
     {
       "name": "default",
       "description": "Field main content",
@@ -366,16 +376,6 @@
       "name": "loading",
       "description": "Override default spinner when component is in loading mode; Use in conjunction with 'loading' prop",
       "description_zh": "当组件处于加载模式时覆盖默认微调器;与 'loading' prop 结合使用"
-    },
-    {
-      "name": "control",
-      "description": "Slot for controls; Suggestion QSlider, QRange, QKnob, ...",
-      "description_zh": "控制插槽;建议 QSlider， QRange， QKnob， ..."
-    },
-    {
-      "name": "rawControl",
-      "description": "",
-      "description_zh": ""
     }
   ]
 }

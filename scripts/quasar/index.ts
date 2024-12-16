@@ -25,7 +25,7 @@ async function run() {
     const name = item.slice(0, -5)
     quasar2Importers.push(`import ${name} from './${name}.json'`)
     quasar2Map.push(name)
-    quasar2ComponentsMap.push([name, name, `<${name}></${name}>`])
+    quasar2ComponentsMap.push([name, `${name}.name`, `<${hyphenate(name)}></${hyphenate(name)}>`])
     const json = JSON.parse(await fsp.readFile(path.resolve(cwd, item), 'utf-8'))
     const { props: _props, methods: _methods, events: _events, meta, slots: _slots } = json
     const props: any = {}
@@ -36,6 +36,8 @@ async function run() {
     if (_props) {
       Object.keys(_props).forEach((key) => {
         const value = _props[key]
+        if(key === 'model-value')
+          key = 'v-model'
         if (value.extends) {
           if (value.type && Array.isArray(value.type))
             value.type = value.type.join(' | ')
@@ -44,21 +46,22 @@ async function run() {
             || {
             value: '',
             type: 'String',
-            description: '',
-            description_zh: '',
+            description: value.desc || '',
+            description_zh: value.desc || '',
             default: '',
             version: value.addedIn,
             required: value.required || false,
           }, value)
         }
         else {
-          const type = value.type || value.tsType || 'String'
+          const values = value.values
+          const type = values && values.length ? values.map((v: string) => v.replace(/'/g, '')).join(' / ') : value.type || value.tsType || 'String'
           props[key] = {
             value: '',
             type: Array.isArray(type) ? type.join(' | ') : type,
             description: value.desc,
             description_zh: value.desc,
-            default: value.default !== undefined ? value.default : type === 'Boolean' ? 'false' : '',
+            default: value.default !== undefined ? value.default.replace(/'/g, '') : type === 'Boolean' ? 'false' : '',
             version: value.addedIn,
             required: value.required || false,
           }
@@ -129,18 +132,18 @@ async function run() {
   console.log('quasar generate done!')
 }
 
-function generateMapping(){
+function generateMapping() {
   const indexTemplate = `${quasar2Importers.join('\n')}
   
-  export function getPropsMap() {
-    return ${JSON.stringify(quasar2Map, null, 4).replace(/"/g, '')}
-  }
+export function getPropsMap() {
+  return ${JSON.stringify(quasar2Map, null, 4).replace(/"/g, '')}
+}
   
-  export function getComponentMap() {
-    return ${JSON.stringify(quasar2ComponentsMap, null, 4)}
-  }
+export function getComponentMap() {
+  return ${JSON.stringify(quasar2ComponentsMap, null, 4)}
+}
     `
-    fsp.writeFile(`${base}/src/ui/quasar/quasar2/mapping.ts`, indexTemplate)
+  fsp.writeFile(`${base}/src/ui/quasar/quasar2/mapping.ts`, indexTemplate)
 }
 
 function generateIndex() {
@@ -170,3 +173,7 @@ export function quasar2Components() {
 run()
 
 export default run
+
+function hyphenate(s: string): string {
+  return s.replace(/([A-Z])/g, '-$1').toLowerCase().replace(/^-/, '')
+}
