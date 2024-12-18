@@ -2,107 +2,156 @@
   "name": "NAvatar",
   "props": {
     "bordered": {
-      "value": "",
-      "description": "Whether the avatar has a border or not",
+      "description": "头像是否带边框",
+      "description_zh": "头像是否带边框",
       "default": "false",
+      "value": "",
       "type": "boolean",
-      "description_zh": "头像是否带边框"
+      "version": "",
+      "required": false
     },
     "color": {
-      "value": "",
-      "description": "The background color of the avatar",
+      "description": "头像的背景色",
+      "description_zh": "头像的背景色",
       "default": "undefined",
+      "value": "",
       "type": "string",
-      "description_zh": "头像的背景色"
+      "version": "",
+      "required": false
     },
     "fallback-src": {
-      "value": "",
-      "description": "The address of the image that is displayed when the avatar fails to load",
+      "description": "头像加载失败时显示的图片的地址",
+      "description_zh": "头像加载失败时显示的图片的地址",
       "default": "undefined",
+      "value": "",
       "type": "string",
-      "description_zh": "头像加载失败时显示的图片的地址"
+      "version": "",
+      "required": false
     },
     "img-props": {
-      "value": "",
-      "description": "The properties of the img element in the component",
+      "description": "组件中 img 元素的属性",
+      "description_zh": "组件中 img 元素的属性",
       "default": "undefined",
-      "type": "object",
-      "description_zh": "组件中 img 元素的属性"
+      "value": "",
+      "type": "ImgHTMLAttributes",
+      "version": "2.34.0",
+      "required": false
     },
     ":intersection-observer-options": {
-      "value": "",
-      "description": "'lazy=true' when the intersection observer observation",
+      "description": "lazy=true 时 intersection observer 观测的配置",
+      "description_zh": "lazy=true 时 intersection observer 观测的配置",
       "default": "undefined",
+      "value": "",
       "type": "{ root?: Element | Document | string | null, rootMargin?: string, threshold?: number | number[]; }",
-      "description_zh": "`lazy=true` 时 intersection observer 观测的配置"
+      "version": "2.31.0",
+      "required": false
     },
     "lazy": {
-      "value": "",
-      "description": "Whether to start loading after entering the viewport configured in 'intersection-observer-options'",
+      "description": "是否让图片进入视口再加载，单独使用将设置为HTMLImageElement.loading 的属性值；也可配合 intersection-observer-options 配置实现懒加载",
+      "description_zh": "是否让图片进入视口再加载，单独使用将设置为HTMLImageElement.loading 的属性值；也可配合 intersection-observer-options 配置实现懒加载",
       "default": "false",
+      "value": "",
       "type": "boolean",
-      "description_zh": "是否在进入 `intersection-observer-options` 配置的视口之后再开始加载"
+      "version": "2.31.0",
+      "required": false
     },
     "object-fit": {
-      "value": [
-        "fill",
-        "contain",
-        "cover",
-        "none",
-        "scale-down"
-      ],
-      "description": "The type of adaptation of the avatar image inside the container",
+      "description": "头像的图片在容器内的的适应类型",
+      "description_zh": "头像的图片在容器内的的适应类型",
       "default": "fill",
+      "value": "",
       "type": "fill | contain | cover | none | scale-down",
-      "description_zh": "头像的图片在容器内的的适应类型"
+      "version": "",
+      "required": false
     },
     ":render-fallback": {
-      "value": "",
-      "description": "Failed to load render function",
+      "description": "加载失败的渲染函数",
+      "description_zh": "加载失败的渲染函数",
       "default": "undefined",
+      "value": "",
       "type": "() => VNodeChild",
-      "description_zh": "加载失败的渲染函数"
+      "version": "2.33.4",
+      "required": false
     },
     ":render-placeholder": {
-      "value": "",
-      "description": "Placeholder rendering function",
+      "description": "占位的渲染函数",
+      "description_zh": "占位的渲染函数",
       "default": "undefined",
+      "value": "",
       "type": "() => VNodeChild",
-      "description_zh": "占位的渲染函数"
+      "version": "2.33.4",
+      "required": false
     },
     "round": {
-      "value": "",
-      "description": "Whether the avatar is round or not",
+      "description": "头像是否圆形",
+      "description_zh": "头像是否圆形",
       "default": "false",
+      "value": "",
       "type": "boolean",
-      "description_zh": "头像是否圆形"
+      "version": "",
+      "required": false
     },
     "size": {
-      "value": "",
-      "description": "The size of the avatar",
+      "description": "头像的尺寸",
+      "description_zh": "头像的尺寸",
       "default": "medium",
-      "type": "small / medium / large / number",
-      "description_zh": "头像的尺寸"
+      "value": "",
+      "type": "small | medium | large | number",
+      "version": "",
+      "required": false
     },
     "src": {
-      "value": "",
-      "description": "The address of the avatar",
-      "default": "undefined",
-      "type": "string",
+      "description": "头像的地址",
       "description_zh": "头像的地址",
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "version": "",
       "required": true
+    },
+    ":on-error": {
+      "description": "头像的图片加载失败执行的回调",
+      "description_zh": "头像的图片加载失败执行的回调",
+      "default": "undefined",
+      "value": "",
+      "type": "(e: Event) => void",
+      "version": "",
+      "required": false
     }
   },
-  "methods": [],
-  "typeDetail": {},
   "events": [
     {
       "name": "error",
-      "description": "The callback that is executed when the image of the avatar fails to load",
+      "description": "头像的图片加载失败执行的回调",
+      "description_zh": "头像的图片加载失败执行的回调",
       "params": "(e: Event) => void",
-      "description_zh": "头像的图片加载失败执行的回调"
+      "version": ""
     }
   ],
-  "link": "https://www.naiveui.com/en-US/dark/components/avatar",
-  "link_zh": "https://www.naiveui.com/zh-CN/dark/components/avatar"
+  "methods": [],
+  "slots": [
+    {
+      "name": "default",
+      "description": "头像内填充的内容",
+      "description_zh": "头像内填充的内容",
+      "version": ""
+    },
+    {
+      "name": "fallback",
+      "description": "加载失败的内容",
+      "description_zh": "加载失败的内容",
+      "version": "2.33.4"
+    },
+    {
+      "name": "placeholder",
+      "description": "图像没有完成加载时候的占位",
+      "description_zh": "图像没有完成加载时候的占位",
+      "version": "2.31.0"
+    }
+  ],
+  "suggestions": [],
+  "link": "https://www.naiveui.com/zh-CN/os-theme/components/avatar",
+  "link_zh": "https://www.naiveui.com/zh-CN/os-theme/components/avatar",
+  "filename": "Avatar",
+  "typeDetail": {}
 }

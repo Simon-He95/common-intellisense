@@ -1,46 +1,191 @@
 {
   "name": "NAvatarGroup",
   "props": {
-    ":max": {
+    "bordered": {
+      "description": "头像是否带边框",
+      "description_zh": "头像是否带边框",
+      "default": "false",
       "value": "",
-      "description": "The maximum number of avatars displayed in the group",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    "color": {
+      "description": "头像的背景色",
+      "description_zh": "头像的背景色",
       "default": "undefined",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "required": false
+    },
+    "fallback-src": {
+      "description": "头像加载失败时显示的图片的地址",
+      "description_zh": "头像加载失败时显示的图片的地址",
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "required": false
+    },
+    "img-props": {
+      "description": "组件中 img 元素的属性",
+      "description_zh": "组件中 img 元素的属性",
+      "default": "undefined",
+      "value": "",
+      "type": "ImgHTMLAttributes",
+      "version": "2.34.0",
+      "required": false
+    },
+    ":intersection-observer-options": {
+      "description": "lazy=true 时 intersection observer 观测的配置",
+      "description_zh": "lazy=true 时 intersection observer 观测的配置",
+      "default": "undefined",
+      "value": "",
+      "type": "{ root?: Element | Document | string | null, rootMargin?: string, threshold?: number | number[]; }",
+      "version": "2.31.0",
+      "required": false
+    },
+    "lazy": {
+      "description": "是否让图片进入视口再加载，单独使用将设置为HTMLImageElement.loading 的属性值；也可配合 intersection-observer-options 配置实现懒加载",
+      "description_zh": "是否让图片进入视口再加载，单独使用将设置为HTMLImageElement.loading 的属性值；也可配合 intersection-observer-options 配置实现懒加载",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "2.31.0",
+      "required": false
+    },
+    "object-fit": {
+      "description": "头像的图片在容器内的的适应类型",
+      "description_zh": "头像的图片在容器内的的适应类型",
+      "default": "fill",
+      "value": "",
+      "type": "fill | contain | cover | none | scale-down",
+      "version": "",
+      "required": false
+    },
+    ":render-fallback": {
+      "description": "加载失败的渲染函数",
+      "description_zh": "加载失败的渲染函数",
+      "default": "undefined",
+      "value": "",
+      "type": "() => VNodeChild",
+      "version": "2.33.4",
+      "required": false
+    },
+    ":render-placeholder": {
+      "description": "占位的渲染函数",
+      "description_zh": "占位的渲染函数",
+      "default": "undefined",
+      "value": "",
+      "type": "() => VNodeChild",
+      "version": "2.33.4",
+      "required": false
+    },
+    "round": {
+      "description": "头像是否圆形",
+      "description_zh": "头像是否圆形",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    "size": {
+      "description": "头像的尺寸",
+      "description_zh": "头像的尺寸",
+      "default": "medium",
+      "value": "",
+      "type": "small | medium | large | number",
+      "version": "",
+      "required": false
+    },
+    "src": {
+      "description": "头像的地址",
+      "description_zh": "头像的地址",
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "required": false
+    },
+    ":on-error": {
+      "description": "头像的图片加载失败执行的回调",
+      "description_zh": "头像的图片加载失败执行的回调",
+      "default": "undefined",
+      "value": "",
+      "type": "(e: Event) => void",
+      "version": "",
+      "required": false
+    },
+    "expand-on-hover": {
+      "description": "悬停时展开",
+      "description_zh": "悬停时展开",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "2.37.0",
+      "required": false
+    },
+    ":max": {
+      "description": "组内头像显示的最大个数",
+      "description_zh": "组内头像显示的最大个数",
+      "default": "undefined",
+      "value": "",
       "type": "number",
-      "description_zh": "组内头像显示的最大个数"
+      "version": "",
+      "required": false
     },
     "max-style": {
-      "value": "",
-      "description": "The style of the overflow identity",
+      "description": "溢出标识的样式",
+      "description_zh": "溢出标识的样式",
       "default": "undefined",
+      "value": "",
       "type": "Object | string",
-      "description_zh": "溢出标识的样式"
+      "version": "",
+      "required": false
     },
     ":options": {
-      "value": "",
-      "description": "Options for avatar groups",
-      "default": "[]",
-      "type": "Array<AvatarOption>",
+      "description": "头像组的选项",
       "description_zh": "头像组的选项",
+      "default": "[]",
+      "value": "",
+      "type": "Array<AvatarOption>",
+      "version": "",
       "required": true
     },
     "vertical": {
-      "value": "",
-      "description": "Whether the avatars in the group are arranged vertically",
+      "description": "组内头像是否垂直排列",
+      "description_zh": "组内头像是否垂直排列",
       "default": "false",
-      "type": "boolean",
-      "description_zh": "组内头像是否垂直排列"
-    },
-    "size": {
       "value": "",
-      "description": "The size of the avatar",
-      "default": "medium",
-      "type": "small / medium / large / number",
-      "description_zh": "头像的尺寸"
+      "type": "boolean",
+      "version": "",
+      "required": false
     }
   },
-  "methods": [],
-  "typeDetail": {},
   "events": [],
-  "link": "https://www.naiveui.com/en-US/dark/components/avatar",
-  "link_zh": "https://www.naiveui.com/zh-CN/dark/components/avatar"
+  "methods": [],
+  "slots": [
+    {
+      "name": "avatar",
+      "description": "头像组头像",
+      "description_zh": "头像组头像"
+    },
+    {
+      "name": "default",
+      "description": "头像组内填充的内容",
+      "description_zh": "头像组内填充的内容"
+    },
+    {
+      "name": "rest",
+      "description": "头像组溢出容器",
+      "description_zh": "头像组溢出容器"
+    }
+  ],
+  "suggestions": [],
+  "link": "https://www.naiveui.com/zh-CN/os-theme/components/avatar",
+  "link_zh": "https://www.naiveui.com/zh-CN/os-theme/components/avatar",
+  "filename": "AvatarGroup",
+  "typeDetail": {}
 }
