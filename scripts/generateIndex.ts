@@ -4,15 +4,15 @@ const fsp = require('node:fs/promises')
 const fg = require('fast-glob')
 
 export async function run() {
-  const folder = 'src/ui/dcloudioUniApp'
-  const lib = '@dcloudio/uni-app'
-  const name = 'dcloudioUniApp3'
-  const isHyphen = false /** 生成的模板中的使用是 true ? a-affix : AAfix */
+  const folder = 'src/ui/naiveUi'
+  const lib = 'naive-ui'
+  const name = 'naiveUi2'
+  const isHyphen = true /** 生成的模板中的使用是 true ? a-affix : AAfix */
   const isReact = false
   const url = path.resolve(root, `${folder}/${name}`)
   const entry = await fg(['**/*.json'], { dot: true, cwd: url })
   const imports = entry.map((_url: string) => `import ${toCamel(_url.split('.')[0])} from './${_url}'`)
-  let prefix = 'uni'
+  let prefix = 'n'
   const map = entry.map((_url: string) => {
     let tagName = `${toCamel(_url.split('.')[0])}`
     const importName = tagName

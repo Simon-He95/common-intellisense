@@ -1,0 +1,188 @@
+{
+  "name": "NColorPicker",
+  "props": {
+    "default-show": {
+      "description": "默认是否展示弹出层",
+      "description_zh": "默认是否展示弹出层",
+      "default": "undefined",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    "default-value": {
+      "description": "默认的颜色值",
+      "description_zh": "默认的颜色值",
+      "default": "和第一个 mode 对应的黑色值",
+      "value": "",
+      "type": "string | null",
+      "version": "",
+      "required": false
+    },
+    ":modes": {
+      "description": "颜色选择器支持颜色的格式，注意一旦你在某个模式下选择了值，颜色选择器值的格式将跟随这个格式",
+      "description_zh": "颜色选择器支持颜色的格式，注意一旦你在某个模式下选择了值，颜色选择器值的格式将跟随这个格式",
+      "default": "[rgb, hex, hsl]",
+      "value": "",
+      "type": "Array<rgb / hex / hsl / hsv>",
+      "version": "",
+      "required": false
+    },
+    "placement": {
+      "description": "面板的弹出位置",
+      "description_zh": "面板的弹出位置",
+      "default": "bottom-start",
+      "value": "",
+      "type": "top-start / top / top-end / right-start / right / right-end / bottom-start / bottom / bottom-end / left-start / left / left-end",
+      "version": "2.25.0",
+      "required": false
+    },
+    ":render-label": {
+      "description": "触发器的内容",
+      "description_zh": "触发器的内容",
+      "default": "undefined",
+      "value": "",
+      "type": "(color: string | null) => VNodeChild",
+      "version": "2.24.0",
+      "required": false
+    },
+    "show": {
+      "description": "是否展示面板",
+      "description_zh": "是否展示面板",
+      "default": "undefined",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    "show-alpha": {
+      "description": "是否可调节 alpha 通道",
+      "description_zh": "是否可调节 alpha 通道",
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    "show-preview": {
+      "description": "是否展示颜色预览块",
+      "description_zh": "是否展示颜色预览块",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    "size": {
+      "description": "颜色选择器的尺寸",
+      "description_zh": "颜色选择器的尺寸",
+      "default": "medium",
+      "value": "",
+      "type": "small / medium / large",
+      "version": "",
+      "required": false
+    },
+    "disabled": {
+      "description": "是否禁用",
+      "description_zh": "是否禁用",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "2.24.5",
+      "required": false
+    },
+    "swatches": {
+      "description": "色板的值",
+      "description_zh": "色板的值",
+      "default": "undefined",
+      "value": "",
+      "type": "string[]",
+      "version": "",
+      "required": false
+    },
+    "to": {
+      "description": "面板的卸载位置，false 会待在原地",
+      "description_zh": "面板的卸载位置，false 会待在原地",
+      "default": "body",
+      "value": "",
+      "type": "string | HTMLElement | false",
+      "version": "",
+      "required": false
+    },
+    "value": {
+      "description": "颜色选择器的值",
+      "description_zh": "颜色选择器的值",
+      "default": "undefined",
+      "value": "",
+      "type": "string | null",
+      "version": "",
+      "required": false
+    },
+    ":actions": {
+      "description": "显示按钮",
+      "description_zh": "显示按钮",
+      "default": "null",
+      "value": "",
+      "type": "Array<confirm / clear> / null",
+      "version": "",
+      "required": false
+    }
+  },
+  "events": [
+    {
+      "name": "complete",
+      "description": "颜色完成改变后的回调（在鼠标移动时候不会调用）",
+      "description_zh": "颜色完成改变后的回调（在鼠标移动时候不会调用）",
+      "params": "(value: string) => void",
+      "version": ""
+    },
+    {
+      "name": "confirm",
+      "description": "点击确定按钮的回调",
+      "description_zh": "点击确定按钮的回调",
+      "params": "(value: string) => void",
+      "version": "2.29.0"
+    },
+    {
+      "name": "clear",
+      "description": "点击清除按钮的回调",
+      "description_zh": "点击清除按钮的回调",
+      "params": "() => void",
+      "version": "2.39.0"
+    },
+    {
+      "name": "update:show",
+      "description": "面板可见状态改变的回调",
+      "description_zh": "面板可见状态改变的回调",
+      "params": "(value: boolean) => void",
+      "version": ""
+    },
+    {
+      "name": "update:value",
+      "description": "颜色改变时的回调",
+      "description_zh": "颜色改变时的回调",
+      "params": "(value: string) => void",
+      "version": ""
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "label",
+      "description": "触发器的内容",
+      "description_zh": "触发器的内容",
+      "version": "2.24.0"
+    },
+    {
+      "name": "action",
+      "description": "菜单操作区域的 slot",
+      "description_zh": "菜单操作区域的 slot",
+      "version": "2.24.0"
+    }
+  ],
+  "suggestions": [],
+  "link": "https://www.naiveui.com/zh-CN/os-theme/components/color-picker",
+  "link_zh": "https://www.naiveui.com/zh-CN/os-theme/components/color-picker",
+  "filename": "ColorPicker",
+  "typeDetail": {}
+}

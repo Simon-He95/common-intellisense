@@ -1,0 +1,475 @@
+{
+  "name": "NSelect",
+  "props": {
+    "consistent-menu-width": {
+      "description": "菜单宽度是否和选择触发器一致，设为 false 会使 virtual-scroll 失效",
+      "description_zh": "菜单宽度是否和选择触发器一致，设为 false 会使 virtual-scroll 失效",
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    "children-field": {
+      "description": "选项组 children 的字段名",
+      "description_zh": "选项组 children 的字段名",
+      "default": "children",
+      "value": "",
+      "type": "string",
+      "version": "2.29.1",
+      "required": false
+    },
+    "clearable": {
+      "description": "是否可清空",
+      "description_zh": "是否可清空",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    "clear-filter-after-select": {
+      "description": "是否在可过滤和多选的情况下选中一个选项后保留当前的搜索关键词",
+      "description_zh": "是否在可过滤和多选的情况下选中一个选项后保留当前的搜索关键词",
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "version": "2.25.2",
+      "required": false
+    },
+    ":default-value": {
+      "description": "非受控模式下的默认值",
+      "description_zh": "非受控模式下的默认值",
+      "default": "null",
+      "value": "",
+      "type": "Array<string | number> | string | number | null",
+      "version": "",
+      "required": false
+    },
+    "disabled": {
+      "description": "是否禁用",
+      "description_zh": "是否禁用",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    "ellipsis-tag-popover-props": {
+      "description": "选中选项过多省略显示时，预览弹出 popover 的属性",
+      "description_zh": "选中选项过多省略显示时，预览弹出 popover 的属性",
+      "default": "undefined",
+      "value": "",
+      "type": "PopoverProps",
+      "version": "2.37.0",
+      "required": false
+    },
+    ":fallback-option": {
+      "description": "在传入的选项中没有对应当前值的选项时，这个值应该对应的选项。如果设为 false，不会为找不到对应选项的值生成回退选项也不会显示它，未在选项中的值会被视为不合法，操作过程中会被组件清除掉",
+      "description_zh": "在传入的选项中没有对应当前值的选项时，这个值应该对应的选项。如果设为 false，不会为找不到对应选项的值生成回退选项也不会显示它，未在选项中的值会被视为不合法，操作过程中会被组件清除掉",
+      "default": "value => ({ label:  + value, value })",
+      "value": "",
+      "type": "false | (value: string | number) => SelectOption",
+      "version": "",
+      "required": false
+    },
+    "filterable": {
+      "description": "是否可以过滤",
+      "description_zh": "是否可以过滤",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    ":filter": {
+      "description": "过滤器函数",
+      "description_zh": "过滤器函数",
+      "default": "一个简单的字符串搜索算法",
+      "value": "",
+      "type": "(pattern: string, option: object) => boolean",
+      "version": "",
+      "required": false
+    },
+    "ignore-composition": {
+      "description": "忽略输入法 Composition 状态，默认情况下 filter 在输入法输入的过程中不会触发",
+      "description_zh": "忽略输入法 Composition 状态，默认情况下 filter 在输入法输入的过程中不会触发",
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "version": "2.33.4",
+      "required": false
+    },
+    "input-props": {
+      "description": "触发器中 input 元素的属性，只在可过滤时有意义",
+      "description_zh": "触发器中 input 元素的属性，只在可过滤时有意义",
+      "default": "undefined",
+      "value": "",
+      "type": "InputHTMLAttributes",
+      "version": "",
+      "required": false
+    },
+    "keyboard": {
+      "description": "是否支持键盘操作",
+      "description_zh": "是否支持键盘操作",
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "version": "2.34.4",
+      "required": false
+    },
+    "label-field": {
+      "description": "选项 label 的字段名",
+      "description_zh": "选项 label 的字段名",
+      "default": "label",
+      "value": "",
+      "type": "string",
+      "version": "2.29.1",
+      "required": false
+    },
+    "loading": {
+      "description": "是否为加载状态",
+      "description_zh": "是否为加载状态",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    "max-tag-count": {
+      "description": "多选标签的最大显示数量，responsive 会将所有标签保持在一行",
+      "description_zh": "多选标签的最大显示数量，responsive 会将所有标签保持在一行",
+      "default": "undefined",
+      "value": "",
+      "type": "number / responsive",
+      "version": "",
+      "required": false
+    },
+    "menu-props": {
+      "description": "菜单的 DOM 属性",
+      "description_zh": "菜单的 DOM 属性",
+      "default": "undefined",
+      "value": "",
+      "type": "HTMLAttributes",
+      "version": "",
+      "required": false
+    },
+    "menu-size": {
+      "description": "菜单的尺寸",
+      "description_zh": "菜单的尺寸",
+      "default": "medium",
+      "value": "",
+      "type": "tiny / small / medium / large",
+      "version": "2.40.0",
+      "required": false
+    },
+    "multiple": {
+      "description": "是否为多选",
+      "description_zh": "是否为多选",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    ":node-props": {
+      "description": "选项的 DOM 属性生成函数",
+      "description_zh": "选项的 DOM 属性生成函数",
+      "default": "undefined",
+      "value": "",
+      "type": "(option: SelectOption | SelectGroupOption) => object",
+      "version": "2.32.2",
+      "required": false
+    },
+    ":options": {
+      "description": "配置选项内容，详情见 SelectOption Properties",
+      "description_zh": "配置选项内容，详情见 SelectOption Properties",
+      "default": "[]",
+      "value": "",
+      "type": "Array<SelectOption | SelectGroupOption>",
+      "version": "",
+      "required": false
+    },
+    "placeholder": {
+      "description": "提示信息",
+      "description_zh": "提示信息",
+      "default": "请选择 (i18n)",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "required": false
+    },
+    "placement": {
+      "description": "菜单的弹出位置",
+      "description_zh": "菜单的弹出位置",
+      "default": "bottom-start",
+      "value": "",
+      "type": "top-start / top / top-end / right-start / right / right-end / bottom-start / bottom / bottom-end / left-start / left / left-end",
+      "version": "2.25.0",
+      "required": false
+    },
+    "remote": {
+      "description": "是否要异步获取选项。注意如果设定了，那么 filter 和 tag 都不会对 options 生效。这个时候你在全权控制 options",
+      "description_zh": "是否要异步获取选项。注意如果设定了，那么 filter 和 tag 都不会对 options 生效。这个时候你在全权控制 options",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    ":render-label": {
+      "description": "选项标签渲染函数",
+      "description_zh": "选项标签渲染函数",
+      "default": "undefined",
+      "value": "",
+      "type": "(option: SelectOption | SelectGroupOption, selected: boolean) => VNodeChild",
+      "version": "",
+      "required": false
+    },
+    ":render-option": {
+      "description": "选项的渲染函数",
+      "description_zh": "选项的渲染函数",
+      "default": "undefined",
+      "value": "",
+      "type": "(info: { node: VNode, option: SelectOption | SelectGroupOption, selected: boolean }) => VNodeChild",
+      "version": "",
+      "required": false
+    },
+    ":render-tag": {
+      "description": "控制标签的渲染",
+      "description_zh": "控制标签的渲染",
+      "default": "undefined",
+      "value": "",
+      "type": "(props: { option: SelectBaseOption, handleClose: () => void }) => VNodeChild",
+      "version": "",
+      "required": false
+    },
+    ":reset-menu-on-options-change": {
+      "description": "是否在选项变化时重置菜单状态，例如滚动状态",
+      "description_zh": "是否在选项变化时重置菜单状态，例如滚动状态",
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "version": "2.24.2",
+      "required": false
+    },
+    "show": {
+      "description": "是否展示菜单",
+      "description_zh": "是否展示菜单",
+      "default": "undefined",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    "show-arrow": {
+      "description": "是否展示箭头",
+      "description_zh": "是否展示箭头",
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    "show-checkmark": {
+      "description": "是否展示对勾",
+      "description_zh": "是否展示对勾",
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "version": "2.33.4",
+      "required": false
+    },
+    "show-on-focus": {
+      "description": "聚焦时是否展示菜单",
+      "description_zh": "聚焦时是否展示菜单",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "2.34.3",
+      "required": false
+    },
+    "size": {
+      "description": "组件尺寸",
+      "description_zh": "组件尺寸",
+      "default": "medium",
+      "value": "",
+      "type": "tiny / small / medium / large",
+      "version": "",
+      "required": false
+    },
+    "status": {
+      "description": "验证状态",
+      "description_zh": "验证状态",
+      "default": "undefined",
+      "value": "",
+      "type": "success / warning / error",
+      "version": "2.27.0",
+      "required": false
+    },
+    "tag": {
+      "description": "是否可以创建新的选项，需要和 filterable 一起使用",
+      "description_zh": "是否可以创建新的选项，需要和 filterable 一起使用",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    "to": {
+      "description": "菜单的容器节点，false 会待在原地",
+      "description_zh": "菜单的容器节点，false 会待在原地",
+      "default": "body",
+      "value": "",
+      "type": "string | HTMLElement | false",
+      "version": "",
+      "required": false
+    },
+    ":v-model:value": {
+      "description": "受控模式下的值",
+      "description_zh": "受控模式下的值",
+      "default": "undefined",
+      "value": "",
+      "type": "Array<string | number> | string | number | null",
+      "version": "",
+      "required": true
+    },
+    "value-field": {
+      "description": "选项 value 的字段名",
+      "description_zh": "选项 value 的字段名",
+      "default": "value",
+      "value": "",
+      "type": "string",
+      "version": "2.29.1",
+      "required": false
+    },
+    "virtual-scroll": {
+      "description": "是否启用虚拟滚动",
+      "description_zh": "是否启用虚拟滚动",
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    }
+  },
+  "events": [
+    {
+      "name": "blur",
+      "description": "blur 时执行的回调",
+      "description_zh": "blur 时执行的回调",
+      "params": "() => void",
+      "version": ""
+    },
+    {
+      "name": "clear",
+      "description": "clear 时执行的回调",
+      "description_zh": "clear 时执行的回调",
+      "params": "() => void",
+      "version": ""
+    },
+    {
+      "name": "create",
+      "description": "在输入内容时如何创建一个选项。注意 filter 对这个生成的选项同样会生效。同时确保这个选项和其他选项的 value 不要有重复，应该和 tag 属性一起被使用",
+      "description_zh": "在输入内容时如何创建一个选项。注意 filter 对这个生成的选项同样会生效。同时确保这个选项和其他选项的 value 不要有重复，应该和 tag 属性一起被使用",
+      "params": "(label: string) => SelectOption",
+      "version": ""
+    },
+    {
+      "name": "focus",
+      "description": "focus 时执行的回调",
+      "description_zh": "focus 时执行的回调",
+      "params": "() => void",
+      "version": ""
+    },
+    {
+      "name": "scroll",
+      "description": "滚动时执行的回调",
+      "description_zh": "滚动时执行的回调",
+      "params": "(e: ScrollEvent) => void",
+      "version": ""
+    },
+    {
+      "name": "search",
+      "description": "搜索时执行的回调",
+      "description_zh": "搜索时执行的回调",
+      "params": "(value: string) => void",
+      "version": ""
+    },
+    {
+      "name": "update:show",
+      "description": "菜单打开状态变化的回调",
+      "description_zh": "菜单打开状态变化的回调",
+      "params": "(show: boolean) => void",
+      "version": "2.24.2"
+    },
+    {
+      "name": "update:value",
+      "description": "值更新时执行的回调",
+      "description_zh": "值更新时执行的回调",
+      "params": "(value: Array | string | number | null, option: SelectBaseOption | null | SelectBaseOption[]) => void",
+      "version": ""
+    }
+  ],
+  "methods": [
+    {
+      "name": "focus",
+      "description": "聚焦",
+      "description_zh": "聚焦",
+      "params": "() => void",
+      "version": "2.24.2"
+    },
+    {
+      "name": "focusInput",
+      "description": "输入聚焦",
+      "description_zh": "输入聚焦",
+      "params": "() => void",
+      "version": "2.35.0"
+    },
+    {
+      "name": "blur",
+      "description": "失焦",
+      "description_zh": "失焦",
+      "params": "() => void",
+      "version": "2.24.2"
+    },
+    {
+      "name": "blurInput",
+      "description": "输入失焦",
+      "description_zh": "输入失焦",
+      "params": "() => void",
+      "version": "2.35.0"
+    }
+  ],
+  "slots": [
+    {
+      "name": "header",
+      "description": "菜单头部区域的 slot",
+      "description_zh": "菜单头部区域的 slot",
+      "version": "2.37.0"
+    },
+    {
+      "name": "action",
+      "description": "菜单操作区域的 slot",
+      "description_zh": "菜单操作区域的 slot",
+      "version": ""
+    },
+    {
+      "name": "empty",
+      "description": "菜单无数据时的 slot",
+      "description_zh": "菜单无数据时的 slot",
+      "version": ""
+    },
+    {
+      "name": "arrow",
+      "description": "箭头的 slot",
+      "description_zh": "箭头的 slot",
+      "version": "2.24.2"
+    }
+  ],
+  "suggestions": [],
+  "link": "https://www.naiveui.com/zh-CN/os-theme/components/select",
+  "link_zh": "https://www.naiveui.com/zh-CN/os-theme/components/select",
+  "filename": "Select",
+  "typeDetail": {}
+}

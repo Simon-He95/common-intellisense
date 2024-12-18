@@ -1,0 +1,169 @@
+{
+  "name": "NSplit",
+  "props": {
+    "default-size": {
+      "description": "Split 的默认分割大小，为 number 类型时应该为 0 ~ 1 之间的值，为 string 类型时应该为 ${number}px 格式",
+      "description_zh": "Split 的默认分割大小，为 number 类型时应该为 0 ~ 1 之间的值，为 string 类型时应该为 ${number}px 格式",
+      "default": "0.5",
+      "value": "",
+      "type": "string | number",
+      "version": "2.36.0, string 2.38.2",
+      "required": false
+    },
+    "direction": {
+      "description": "Split 的分割方向",
+      "description_zh": "Split 的分割方向",
+      "default": "horizontal",
+      "value": "",
+      "type": "horizontal / vertical",
+      "version": "2.36.0",
+      "required": false
+    },
+    "disabled": {
+      "description": "是否禁用",
+      "description_zh": "是否禁用",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "2.36.0",
+      "required": false
+    },
+    "max": {
+      "description": "Split 的分割最大阈值，为 number 类型时应该为 0 ~ 1 之间的值，为 string 类型时应该为 ${number}px 格式",
+      "description_zh": "Split 的分割最大阈值，为 number 类型时应该为 0 ~ 1 之间的值，为 string 类型时应该为 ${number}px 格式",
+      "default": "1",
+      "value": "",
+      "type": "string | number",
+      "version": "2.36.0, string 2.38.2",
+      "required": false
+    },
+    "min": {
+      "description": "Split 的分割最小阈值，为 number 类型时应该为 0 ~ 1 之间的值，为 string 类型时应该为 ${number}px 格式",
+      "description_zh": "Split 的分割最小阈值，为 number 类型时应该为 0 ~ 1 之间的值，为 string 类型时应该为 ${number}px 格式",
+      "default": "0",
+      "value": "",
+      "type": "string | number",
+      "version": "2.36.0, string 2.38.2",
+      "required": false
+    },
+    "pane1-class": {
+      "description": "第一个面板的类名",
+      "description_zh": "第一个面板的类名",
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "version": "2.38.2",
+      "required": false
+    },
+    "pane1-style": {
+      "description": "第一个面板的样式",
+      "description_zh": "第一个面板的样式",
+      "default": "undefined",
+      "value": "",
+      "type": "Object | string",
+      "version": "2.38.2",
+      "required": false
+    },
+    "pane2-class": {
+      "description": "第二个面板的类名",
+      "description_zh": "第二个面板的类名",
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "version": "2.38.2",
+      "required": false
+    },
+    "pane2-style": {
+      "description": "第二个面板的样式",
+      "description_zh": "第二个面板的样式",
+      "default": "undefined",
+      "value": "",
+      "type": "Object | string",
+      "version": "2.38.2",
+      "required": false
+    },
+    ":resize-trigger-size": {
+      "description": "Split 的分隔条大小",
+      "description_zh": "Split 的分隔条大小",
+      "default": "3",
+      "value": "",
+      "type": "number",
+      "version": "2.36.0",
+      "required": false
+    },
+    "size": {
+      "description": "Split 的受控分割大小，为 number 类型时应该为 0 ~ 1 之间的值，为 string 类型时应该为 ${number}px 格式",
+      "description_zh": "Split 的受控分割大小，为 number 类型时应该为 0 ~ 1 之间的值，为 string 类型时应该为 ${number}px 格式",
+      "default": "undefined",
+      "value": "",
+      "type": "string | number",
+      "version": "2.38.0, string 2.38.2",
+      "required": false
+    },
+    ":watch-props": {
+      "description": "需要检测变更的默认属性，检测后组件状态会更新。注意：watch-props 本身不是响应式的",
+      "description_zh": "需要检测变更的默认属性，检测后组件状态会更新。注意：watch-props 本身不是响应式的",
+      "default": "undefined",
+      "value": "",
+      "type": "Array<defaultSize>",
+      "version": "2.38.0",
+      "required": false
+    }
+  },
+  "events": [
+    {
+      "name": "drag-start",
+      "description": "开始拖拽的回调函数",
+      "description_zh": "开始拖拽的回调函数",
+      "params": "(e: Event) => void",
+      "version": "2.36.0"
+    },
+    {
+      "name": "drag-move",
+      "description": "拖拽中的回调函数",
+      "description_zh": "拖拽中的回调函数",
+      "params": "(e: Event) => void",
+      "version": "2.36.0"
+    },
+    {
+      "name": "drag-end",
+      "description": "结束拖拽的回调函数",
+      "description_zh": "结束拖拽的回调函数",
+      "params": "(e: Event) => void",
+      "version": "2.36.0"
+    },
+    {
+      "name": "update:size",
+      "description": "组件 size 属性变化时触发的回调，如果 props.value 或 props.defaultValue 是 string， 则 value 为 string",
+      "description_zh": "组件 size 属性变化时触发的回调，如果 props.value 或 props.defaultValue 是 string， 则 value 为 string",
+      "params": "(value: string | number) => void",
+      "version": "2.38.0"
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "1",
+      "description": "第一个面板内容",
+      "description_zh": "第一个面板内容",
+      "version": "2.36.0"
+    },
+    {
+      "name": "2",
+      "description": "第二个面板内容",
+      "description_zh": "第二个面板内容",
+      "version": "2.36.0"
+    },
+    {
+      "name": "resize-trigger",
+      "description": "分割条内容",
+      "description_zh": "分割条内容",
+      "version": "2.36.0"
+    }
+  ],
+  "suggestions": [],
+  "link": "https://www.naiveui.com/zh-CN/os-theme/components/split",
+  "link_zh": "https://www.naiveui.com/zh-CN/os-theme/components/split",
+  "filename": "Split",
+  "typeDetail": {}
+}

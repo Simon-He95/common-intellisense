@@ -1,0 +1,68 @@
+{
+  "name": "NCalendar",
+  "props": {
+    ":default-value": {
+      "description": "默认被选中的日期的时间戳",
+      "description_zh": "默认被选中的日期的时间戳",
+      "default": "null",
+      "value": "",
+      "type": "number",
+      "version": "",
+      "required": false
+    },
+    ":is-date-disabled": {
+      "description": "日期禁用的校验函数",
+      "description_zh": "日期禁用的校验函数",
+      "default": "undefined",
+      "value": "",
+      "type": "(timestamp: number) => boolean",
+      "version": "",
+      "required": false
+    },
+    ":v-model:value": {
+      "description": "被选中的日期的时间戳",
+      "description_zh": "被选中的日期的时间戳",
+      "default": "undefined",
+      "value": "",
+      "type": "number | null",
+      "version": "",
+      "required": true
+    }
+  },
+  "events": [
+    {
+      "name": "panel-change",
+      "description": "面板内容切换的回调",
+      "description_zh": "面板内容切换的回调",
+      "params": "(info: { year: number, month: number })",
+      "version": "2.24.0"
+    },
+    {
+      "name": "update:value",
+      "description": "选中日期的回调，month 从 1 开始",
+      "description_zh": "选中日期的回调，month 从 1 开始",
+      "params": "(timestamp: number, info: { year: number, month: number, date: number }) => void",
+      "version": ""
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "default",
+      "description": "每个日期中渲染的内容",
+      "description_zh": "每个日期中渲染的内容",
+      "version": ""
+    },
+    {
+      "name": "header",
+      "description": "日历的标题，month 从 1 开始",
+      "description_zh": "日历的标题，month 从 1 开始",
+      "version": "2.29.1"
+    }
+  ],
+  "suggestions": [],
+  "link": "https://www.naiveui.com/zh-CN/os-theme/components/calendar",
+  "link_zh": "https://www.naiveui.com/zh-CN/os-theme/components/calendar",
+  "filename": "Calendar",
+  "typeDetail": {}
+}

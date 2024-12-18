@@ -1,0 +1,272 @@
+{
+  "name": "NPagination",
+  "props": {
+    ":default-page": {
+      "description": "非受控模式下的当前页",
+      "description_zh": "非受控模式下的当前页",
+      "default": "1",
+      "value": "",
+      "type": "number",
+      "version": "",
+      "required": false
+    },
+    ":default-page-size": {
+      "description": "非受控模式下的分页大小",
+      "description_zh": "非受控模式下的分页大小",
+      "default": "10",
+      "value": "",
+      "type": "number",
+      "version": "",
+      "required": false
+    },
+    "disabled": {
+      "description": "是否禁用",
+      "description_zh": "是否禁用",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    ":display-order": {
+      "description": "不同部分的展示顺序",
+      "description_zh": "不同部分的展示顺序",
+      "default": "[pages, size-picker, quick-jumper]",
+      "value": "",
+      "type": "Array<pages / size-picker / quick-jumper>",
+      "version": "2.32.2",
+      "required": false
+    },
+    ":goto": {
+      "description": "渲染快速跳转的文本内容",
+      "description_zh": "渲染快速跳转的文本内容",
+      "default": "undefined",
+      "value": "",
+      "type": "() => VNodeChild",
+      "version": "2.34.3",
+      "required": false
+    },
+    ":item-count": {
+      "description": "总条数",
+      "description_zh": "总条数",
+      "default": "undefined",
+      "value": "",
+      "type": "number",
+      "version": "",
+      "required": false
+    },
+    ":next": {
+      "description": "下一页",
+      "description_zh": "下一页",
+      "default": "undefined",
+      "value": "",
+      "type": "(info: PaginationInfo) => VNodeChild",
+      "version": "",
+      "required": false
+    },
+    ":prev": {
+      "description": "上一页",
+      "description_zh": "上一页",
+      "default": "undefined",
+      "value": "",
+      "type": "(info: PaginationInfo) => VNodeChild",
+      "version": "",
+      "required": false
+    },
+    "label": {
+      "description": "每一项的内容",
+      "description_zh": "每一项的内容",
+      "default": "undefined",
+      "value": "",
+      "type": "PaginationRenderLabel",
+      "version": "2.24.0",
+      "required": false
+    },
+    ":page-count": {
+      "description": "总页数",
+      "description_zh": "总页数",
+      "default": "1",
+      "value": "",
+      "type": "number",
+      "version": "",
+      "required": true
+    },
+    ":page-sizes": {
+      "description": "每页条数， 可自定义",
+      "description_zh": "每页条数， 可自定义",
+      "default": "[10]",
+      "value": "",
+      "type": "Array<number | PaginationSizeOption>",
+      "version": "",
+      "required": false
+    },
+    ":page-size": {
+      "description": "受控模式下的分页大小",
+      "description_zh": "受控模式下的分页大小",
+      "default": "undefined",
+      "value": "",
+      "type": "number",
+      "version": "",
+      "required": false
+    },
+    ":page-slot": {
+      "description": "页码显示的个数",
+      "description_zh": "页码显示的个数",
+      "default": "9",
+      "value": "",
+      "type": "number",
+      "version": "",
+      "required": false
+    },
+    ":v-model:page": {
+      "description": "受控模式下的当前页",
+      "description_zh": "受控模式下的当前页",
+      "default": "undefined",
+      "value": "",
+      "type": "number",
+      "version": "",
+      "required": true
+    },
+    ":prefix": {
+      "description": "分页前缀",
+      "description_zh": "分页前缀",
+      "default": "undefined",
+      "value": "",
+      "type": "(info: PaginationInfo) => VNodeChild",
+      "version": "",
+      "required": false
+    },
+    "select-props": {
+      "description": "分页大小选择器的属性",
+      "description_zh": "分页大小选择器的属性",
+      "default": "undefined",
+      "value": "",
+      "type": "SelectProps",
+      "version": "2.34.3",
+      "required": false
+    },
+    "show-quick-jumper": {
+      "description": "是否显示快速跳转",
+      "description_zh": "是否显示快速跳转",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    "size": {
+      "description": "分页按钮的大小",
+      "description_zh": "分页按钮的大小",
+      "default": "medium",
+      "value": "",
+      "type": "small / medium / large",
+      "version": "2.29.0",
+      "required": false
+    },
+    "simple": {
+      "description": "是否显示为简单分页",
+      "description_zh": "是否显示为简单分页",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "2.32.2",
+      "required": false
+    },
+    ":suffix": {
+      "description": "分页后缀",
+      "description_zh": "分页后缀",
+      "default": "undefined",
+      "value": "",
+      "type": "(info: PaginationInfo) => VNodeChild",
+      "version": "",
+      "required": false
+    },
+    "show-size-picker": {
+      "description": "是否显示每页条数的选择器",
+      "description_zh": "是否显示每页条数的选择器",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    "show-quick-jump-dropdown": {
+      "description": "展示快速跳转的下拉菜单。如果页数过多，可能导致分页的数据创建性能消耗较高，可以通过设为 false 来提升性能",
+      "description_zh": "展示快速跳转的下拉菜单。如果页数过多，可能导致分页的数据创建性能消耗较高，可以通过设为 false 来提升性能",
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "version": "2.37.0",
+      "required": false
+    },
+    "to": {
+      "description": "弹出菜单的容器节点，false 会待在原地",
+      "description_zh": "弹出菜单的容器节点，false 会待在原地",
+      "default": "body",
+      "value": "",
+      "type": "string | HTMLElement | false",
+      "version": "2.33.4",
+      "required": false
+    }
+  },
+  "events": [
+    {
+      "name": "update:page",
+      "description": "当前页发生改变时的回调函数",
+      "description_zh": "当前页发生改变时的回调函数",
+      "params": "(page: number) => void",
+      "version": ""
+    },
+    {
+      "name": "update:page-size",
+      "description": "当前分页大小发生改变时的回调函数",
+      "description_zh": "当前分页大小发生改变时的回调函数",
+      "params": "(pageSize: number) => void",
+      "version": ""
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "goto",
+      "description": "快速跳转的文本内容",
+      "description_zh": "快速跳转的文本内容",
+      "version": "2.27.0"
+    },
+    {
+      "name": "label",
+      "description": "每一项的内容",
+      "description_zh": "每一项的内容",
+      "version": "2.24.0"
+    },
+    {
+      "name": "next",
+      "description": "下一页",
+      "description_zh": "下一页",
+      "version": ""
+    },
+    {
+      "name": "prev",
+      "description": "上一页",
+      "description_zh": "上一页",
+      "version": ""
+    },
+    {
+      "name": "prefix",
+      "description": "分页前缀",
+      "description_zh": "分页前缀",
+      "version": ""
+    },
+    {
+      "name": "suffix",
+      "description": "分页后缀",
+      "description_zh": "分页后缀",
+      "version": ""
+    }
+  ],
+  "suggestions": [],
+  "link": "https://www.naiveui.com/zh-CN/os-theme/components/pagination",
+  "link_zh": "https://www.naiveui.com/zh-CN/os-theme/components/pagination",
+  "filename": "Pagination",
+  "typeDetail": {}
+}

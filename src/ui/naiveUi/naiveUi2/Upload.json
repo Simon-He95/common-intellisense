@@ -1,0 +1,429 @@
+{
+  "name": "NUpload",
+  "props": {
+    "abstract": {
+      "description": "是否不存在 DOM 包裹，不支持 image-card 类型的 Upload",
+      "description_zh": "是否不存在 DOM 包裹，不支持 image-card 类型的 Upload",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    "accept": {
+      "description": "接受的文件类型，参考 accept",
+      "description_zh": "接受的文件类型，参考 accept",
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "required": false
+    },
+    "action": {
+      "description": "请求提交的地址",
+      "description_zh": "请求提交的地址",
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "required": false
+    },
+    ":create-thumbnail-url": {
+      "description": "自定义文件缩略图，如果返回了 undefined，会使用默认的缩略图展示逻辑",
+      "description_zh": "自定义文件缩略图，如果返回了 undefined，会使用默认的缩略图展示逻辑",
+      "default": "undefined",
+      "value": "",
+      "type": "(file: File | null, fileInfo: UploadSettledFileInfo) => (Promise<string> | string | undefined)",
+      "version": "fileInfo 2.34.0",
+      "required": false
+    },
+    ":custom-request": {
+      "description": "自定义上传方法，类型参考 UploadCustomRequestOptions",
+      "description_zh": "自定义上传方法，类型参考 UploadCustomRequestOptions",
+      "default": "undefined",
+      "value": "",
+      "type": "(options: UploadCustomRequestOptions) => void",
+      "version": "",
+      "required": false
+    },
+    ":data": {
+      "description": "提交表单需要附加的数据",
+      "description_zh": "提交表单需要附加的数据",
+      "default": "undefined",
+      "value": "",
+      "type": "Object | ({ file: UploadFileInfo }) => Object",
+      "version": "",
+      "required": false
+    },
+    ":default-file-list": {
+      "description": "非受控状态下默认的文件列表",
+      "description_zh": "非受控状态下默认的文件列表",
+      "default": "[]",
+      "value": "",
+      "type": "Array<UploadFileInfo>",
+      "version": "",
+      "required": false
+    },
+    "default-upload": {
+      "description": "选择文件时候是否默认上传",
+      "description_zh": "选择文件时候是否默认上传",
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    "disabled": {
+      "description": "是否禁用",
+      "description_zh": "是否禁用",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    "directory": {
+      "description": "是否支持目录上传（在文件选框中只能选择目录）",
+      "description_zh": "是否支持目录上传（在文件选框中只能选择目录）",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "2.28.3",
+      "required": false
+    },
+    "directory-dnd": {
+      "description": "是否支持目录拖拽上传（如果不设定会默认跟随 directory）",
+      "description_zh": "是否支持目录拖拽上传（如果不设定会默认跟随 directory）",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "2.28.3",
+      "required": false
+    },
+    "file-list-class": {
+      "description": "文件列表区域的类名",
+      "description_zh": "文件列表区域的类名",
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "version": "2.36.0",
+      "required": false
+    },
+    "file-list-style": {
+      "description": "文件列表区域的样式",
+      "description_zh": "文件列表区域的样式",
+      "default": "undefined",
+      "value": "",
+      "type": "Object",
+      "version": "",
+      "required": false
+    },
+    ":v-model:file-list": {
+      "description": "文件列表，如果传入组件会处于受控状态",
+      "description_zh": "文件列表，如果传入组件会处于受控状态",
+      "default": "undefined",
+      "value": "",
+      "type": "Array<UploadFileInfo>",
+      "version": "",
+      "required": true
+    },
+    ":headers": {
+      "description": "HTTP 请求需要附加的 Headers",
+      "description_zh": "HTTP 请求需要附加的 Headers",
+      "default": "undefined",
+      "value": "",
+      "type": "Object | ({ file: UploadFileInfo }) => Object",
+      "version": "",
+      "required": false
+    },
+    "image-group-props": {
+      "description": "Upload 中预览图片组件的属性，参考 ImageGroup Props",
+      "description_zh": "Upload 中预览图片组件的属性，参考 ImageGroup Props",
+      "default": "undefined",
+      "value": "",
+      "type": "ImageGroupProps",
+      "version": "2.24.0",
+      "required": false
+    },
+    "input-props": {
+      "description": "file input 元素的属性",
+      "description_zh": "file input 元素的属性",
+      "default": "undefined",
+      "value": "",
+      "type": "InputHTMLAttributes",
+      "version": "2.24.2",
+      "required": false
+    },
+    ":is-error-state": {
+      "description": "判断请求是否为异常状态",
+      "description_zh": "判断请求是否为异常状态",
+      "default": "undefined",
+      "value": "",
+      "type": "(xhr: XMLHttpRequest) => boolean",
+      "version": "2.29.1",
+      "required": false
+    },
+    "list-type": {
+      "description": "文件列表的内建样式，text、image 和 image-card",
+      "description_zh": "文件列表的内建样式，text、image 和 image-card",
+      "default": "text",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "required": false
+    },
+    ":max": {
+      "description": "限制上传文件数量",
+      "description_zh": "限制上传文件数量",
+      "default": "undefined",
+      "value": "",
+      "type": "number",
+      "version": "",
+      "required": false
+    },
+    "method": {
+      "description": "HTTP 请求的方法",
+      "description_zh": "HTTP 请求的方法",
+      "default": "POST",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "required": false
+    },
+    "multiple": {
+      "description": "是否支持多个文件",
+      "description_zh": "是否支持多个文件",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    "name": {
+      "description": "文件在提交表单中的字段名",
+      "description_zh": "文件在提交表单中的字段名",
+      "default": "file",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "required": false
+    },
+    ":render-icon": {
+      "description": "文件图标的渲染函数，仅在 list-type=\"image\" 和 list-type=\"image-card\" 时生效",
+      "description_zh": "文件图标的渲染函数，仅在 list-type=\"image\" 和 list-type=\"image-card\" 时生效",
+      "default": "undefined",
+      "value": "",
+      "type": "(file: UploadSettledFileInfo) => VNodeChild",
+      "version": "2.34.0",
+      "required": false
+    },
+    "response-type": {
+      "description": "n-upload 使用的 XMLHttpRequest 的 responseType",
+      "description_zh": "n-upload 使用的 XMLHttpRequest 的 responseType",
+      "default": "",
+      "value": "",
+      "type": " / arraybuffer / blob / document / json / text",
+      "version": "2.33.3",
+      "required": false
+    },
+    ":should-use-thumbnail-url": {
+      "description": "是否要对文件使用预览图的判定函数，只在 list-type=\"image\" 或 list-type=\"image-card\" 时生效",
+      "description_zh": "是否要对文件使用预览图的判定函数，只在 list-type=\"image\" 或 list-type=\"image-card\" 时生效",
+      "default": "只对图片类文件返回 true 的函数",
+      "value": "",
+      "type": "(file: UploadSettledFileInfo) => boolean",
+      "version": "2.34.0",
+      "required": false
+    },
+    "show-cancel-button": {
+      "description": "是否显示取消按钮（在 pending、uploading、error 的时候展示），点击取消按钮会触发 on-remove 回调",
+      "description_zh": "是否显示取消按钮（在 pending、uploading、error 的时候展示），点击取消按钮会触发 on-remove 回调",
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    "show-download-button": {
+      "description": "是否显示下载按钮（在 finished 后展示）",
+      "description_zh": "是否显示下载按钮（在 finished 后展示）",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    "show-remove-button": {
+      "description": "是否显示删除按钮（在 finished 后时候展示），点击删除按钮会触发 on-remove 回调",
+      "description_zh": "是否显示删除按钮（在 finished 后时候展示），点击删除按钮会触发 on-remove 回调",
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    "show-retry-button": {
+      "description": "是否显示重新上传按钮（在 error 时展示）",
+      "description_zh": "是否显示重新上传按钮（在 error 时展示）",
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    "show-file-list": {
+      "description": "是否显示文件列表",
+      "description_zh": "是否显示文件列表",
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    "show-preview-button": {
+      "description": "是否允许显示预览按钮（在 list-type 为 image-card 时生效）",
+      "description_zh": "是否允许显示预览按钮（在 list-type 为 image-card 时生效）",
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    "show-trigger": {
+      "description": "是否显示触发元素",
+      "description_zh": "是否显示触发元素",
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "version": "2.21.5",
+      "required": false
+    },
+    "trigger-class": {
+      "description": "触发器区域的类名",
+      "description_zh": "触发器区域的类名",
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "version": "2.36.0",
+      "required": false
+    },
+    "trigger-style": {
+      "description": "触发器区域的样式",
+      "description_zh": "触发器区域的样式",
+      "default": "undefined",
+      "value": "",
+      "type": "Object | string",
+      "version": "2.29.1",
+      "required": false
+    },
+    "with-credentials": {
+      "description": "是否携带 Cookie",
+      "description_zh": "是否携带 Cookie",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    }
+  },
+  "events": [
+    {
+      "name": "change",
+      "description": "组件状态变化的回调，组件的任何文件状态变化都会触发回调",
+      "description_zh": "组件状态变化的回调，组件的任何文件状态变化都会触发回调",
+      "params": "(options: { file: UploadFileInfo, fileList: Array<UploadFileInfo>, event?: Event }) => void",
+      "version": ""
+    },
+    {
+      "name": "error",
+      "description": "文件上传失败的回调",
+      "description_zh": "文件上传失败的回调",
+      "params": "(options: { file: UploadFileInfo, event?: ProgressEvent }) => UploadFileInfo | void",
+      "version": "2.24.0"
+    },
+    {
+      "name": "finish",
+      "description": "文件上传结束的回调，可以修改传入的 UploadFileInfo 或者返回一个新的 UploadFileInfo。注意：file 将会下一次事件循环中被置为 null",
+      "description_zh": "文件上传结束的回调，可以修改传入的 UploadFileInfo 或者返回一个新的 UploadFileInfo。注意：file 将会下一次事件循环中被置为 null",
+      "params": "(options: { file: UploadFileInfo, event?: ProgressEvent }) => UploadFileInfo | undefined",
+      "version": ""
+    },
+    {
+      "name": "before-upload",
+      "description": "文件上传之前的回调，返回 false、Promise resolve false、Promise rejected 时会取消本次上传",
+      "description_zh": "文件上传之前的回调，返回 false、Promise resolve false、Promise rejected 时会取消本次上传",
+      "params": "(options: { file: UploadFileInfo, fileList: UploadFileInfo[] }) => (Promise<boolean | void> | boolean | void)",
+      "version": ""
+    },
+    {
+      "name": "download",
+      "description": "点击文件下载按钮的回调函数，返回 false、Promise resolve false、Promise rejected 时会取消本次下载",
+      "description_zh": "点击文件下载按钮的回调函数，返回 false、Promise resolve false、Promise rejected 时会取消本次下载",
+      "params": "(file: FileInfo) => Promise<boolean> | boolean | any",
+      "version": ""
+    },
+    {
+      "name": "preview",
+      "description": "点击文件链接或预览按钮的回调函数，你可以通过 preventDefault 来取消默认的链接打开行为",
+      "description_zh": "点击文件链接或预览按钮的回调函数，你可以通过 preventDefault 来取消默认的链接打开行为",
+      "params": "(file: FileInfo, detail: { event: MouseEvent }) => void",
+      "version": "detail.event 2.39.0"
+    },
+    {
+      "name": "remove",
+      "description": "文件删除回调，返回 false、Promise resolve false、Promise rejected 时会取消本次删除",
+      "description_zh": "文件删除回调，返回 false、Promise resolve false、Promise rejected 时会取消本次删除",
+      "params": "(options: { file: UploadFileInfo, fileList: Array<UploadFileInfo>, index: number }) => Promise<boolean> | boolean | any",
+      "version": "index 2.38.2"
+    },
+    {
+      "name": "retry",
+      "description": "点击重试的回调函数，返回 false、Promise resolve false、Promise rejected 时会取消本次重试",
+      "description_zh": "点击重试的回调函数，返回 false、Promise resolve false、Promise rejected 时会取消本次重试",
+      "params": "(options: { file: UploadFileInfo }) => (Promise<boolean | void> | boolean | void)",
+      "version": "2.40.0"
+    },
+    {
+      "name": "update:file-list",
+      "description": "当 file-list 改变时触发的回调函数",
+      "description_zh": "当 file-list 改变时触发的回调函数",
+      "params": "(fileList: UploadFileInfo[]) => void",
+      "version": ""
+    }
+  ],
+  "methods": [
+    {
+      "name": "clear",
+      "description": "清空上传列表",
+      "description_zh": "清空上传列表",
+      "params": "() => void",
+      "version": "2.24.2"
+    },
+    {
+      "name": "openOpenFileDialog",
+      "description": "打开文件选择对话框",
+      "description_zh": "打开文件选择对话框",
+      "params": "() => void",
+      "version": ""
+    },
+    {
+      "name": "submit",
+      "description": "提交当前所有处于 pending 状态的文件",
+      "description_zh": "提交当前所有处于 pending 状态的文件",
+      "params": "(fileId?: string)",
+      "version": ""
+    }
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "description": "上传的内容",
+      "description_zh": "上传的内容"
+    }
+  ],
+  "suggestions": [],
+  "link": "https://www.naiveui.com/zh-CN/os-theme/components/upload",
+  "link_zh": "https://www.naiveui.com/zh-CN/os-theme/components/upload",
+  "filename": "Upload",
+  "typeDetail": {}
+}

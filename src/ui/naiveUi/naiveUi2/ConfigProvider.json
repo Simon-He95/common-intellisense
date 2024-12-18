@@ -1,0 +1,130 @@
+{
+  "name": "NConfigProvider",
+  "props": {
+    "abstract": {
+      "description": "是否不存在 DOM 包裹",
+      "description_zh": "是否不存在 DOM 包裹",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    "breakpoints": {
+      "description": "屏幕响应式断点，对 n-grid 生效。这个属性不是响应式的，你需要在组件第一次挂载时就设定好",
+      "description_zh": "屏幕响应式断点，对 n-grid 生效。这个属性不是响应式的，你需要在组件第一次挂载时就设定好",
+      "default": "{ xs: 0, s: 640, m: 1024, l: 1280, xl: 1536, xxl: 1920 }",
+      "value": "",
+      "type": "{ [k: string]: number }",
+      "version": "",
+      "required": false
+    },
+    "cls-prefix": {
+      "description": "内部所有组件的类的前缀。（从 2.40.0 开始）如果不设置 n-config-provider 的类前缀 cls-prefix，则默认继承父级的类前缀。注意，该属性不是响应式的。",
+      "description_zh": "内部所有组件的类的前缀。（从 2.40.0 开始）如果不设置 n-config-provider 的类前缀 cls-prefix，则默认继承父级的类前缀。注意，该属性不是响应式的。",
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "required": false
+    },
+    "date-locale": {
+      "description": "对后代组件生效的日期语言对象，为 null 时会使用默认 dateEnUS，为 undefined 时会继承上级 n-config-provider",
+      "description_zh": "对后代组件生效的日期语言对象，为 null 时会使用默认 dateEnUS，为 undefined 时会继承上级 n-config-provider",
+      "default": "undefined",
+      "value": "",
+      "type": "DateLocale | null",
+      "version": "",
+      "required": false
+    },
+    "inline-theme-disabled": {
+      "description": "是否禁用 inline css 主题变量，如果你不会频繁调整主题变量，并且需要 SSR 或者想让 devtools 看起来更干净，可以打开这个选项。注意，这个属性不是响应式的",
+      "description_zh": "是否禁用 inline css 主题变量，如果你不会频繁调整主题变量，并且需要 SSR 或者想让 devtools 看起来更干净，可以打开这个选项。注意，这个属性不是响应式的",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "2.26.0",
+      "required": false
+    },
+    "katex": {
+      "description": "公式组件需要的 katex 对象",
+      "description_zh": "公式组件需要的 katex 对象",
+      "default": "undefined",
+      "value": "",
+      "type": "object",
+      "version": "2.34.0",
+      "required": false
+    },
+    "locale": {
+      "description": "对后代组件生效的语言对象，为 null 时会使用默认 enUS，为 undefined 时会继承上级 n-config-provider",
+      "description_zh": "对后代组件生效的语言对象，为 null 时会使用默认 enUS，为 undefined 时会继承上级 n-config-provider",
+      "default": "undefined",
+      "value": "",
+      "type": "Locale | null",
+      "version": "",
+      "required": false
+    },
+    "namespace": {
+      "description": "n-config-provider 内部组件被卸载于其他位置的 DOM 的类名",
+      "description_zh": "n-config-provider 内部组件被卸载于其他位置的 DOM 的类名",
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "required": false
+    },
+    "preflight-style-disabled": {
+      "description": "是否禁用默认样式，如果你禁用了它，便可以完全控制全局样式。你也可以使用 n-global-style 去挂载全局样式（推荐，样式是响应式的）",
+      "description_zh": "是否禁用默认样式，如果你禁用了它，便可以完全控制全局样式。你也可以使用 n-global-style 去挂载全局样式（推荐，样式是响应式的）",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "2.29.0",
+      "required": false
+    },
+    "style-mount-target": {
+      "description": "组件样式的挂载位置。注意，该属性不是响应式的。",
+      "description_zh": "组件样式的挂载位置。注意，该属性不是响应式的。",
+      "default": "undefined",
+      "value": "",
+      "type": "ParentNode",
+      "version": "2.40.0",
+      "required": false
+    },
+    "tag": {
+      "description": "n-config-provider 被渲染成的元素",
+      "description_zh": "n-config-provider 被渲染成的元素",
+      "default": "div",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "required": false
+    },
+    ":theme": {
+      "description": "对后代组件生效的主题对象，为 null 时会使用默认亮色，为 undefined 时会继承上级 n-config-provider。更多信息参见调整主题",
+      "description_zh": "对后代组件生效的主题对象，为 null 时会使用默认亮色，为 undefined 时会继承上级 n-config-provider。更多信息参见调整主题",
+      "default": "undefined",
+      "value": "",
+      "type": "Theme | null",
+      "version": "",
+      "required": true
+    },
+    "theme-overrides": {
+      "description": "对后代组件生效的主题变量覆盖，为 null 时会清除全部覆盖变量，为 undefined 时会继承上级 n-config-provider。更多信息参见调整主题",
+      "description_zh": "对后代组件生效的主题变量覆盖，为 null 时会清除全部覆盖变量，为 undefined 时会继承上级 n-config-provider。更多信息参见调整主题",
+      "default": "undefined",
+      "value": "",
+      "type": "ThemeOverrides | null",
+      "version": "",
+      "required": false
+    }
+  },
+  "events": [],
+  "methods": [],
+  "slots": [],
+  "suggestions": [],
+  "link": "https://www.naiveui.com/zh-CN/os-theme/components/config-provider",
+  "link_zh": "https://www.naiveui.com/zh-CN/os-theme/components/config-provider",
+  "filename": "ConfigProvider",
+  "typeDetail": {}
+}

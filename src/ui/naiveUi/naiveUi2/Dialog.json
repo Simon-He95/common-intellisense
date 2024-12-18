@@ -1,0 +1,237 @@
+{
+  "name": "NDialog",
+  "props": {
+    "action-class": {
+      "description": "操作区域的类名",
+      "description_zh": "操作区域的类名",
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "version": "2.38.2",
+      "required": false
+    },
+    "action-style": {
+      "description": "操作区域的样式",
+      "description_zh": "操作区域的样式",
+      "default": "undefined",
+      "value": "",
+      "type": "Object | string",
+      "version": "2.38.2",
+      "required": false
+    },
+    "bordered": {
+      "description": "是否显示 border",
+      "description_zh": "是否显示 border",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    "closable": {
+      "description": "是否显示 close 图标",
+      "description_zh": "是否显示 close 图标",
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    ":content": {
+      "description": "对话框内容，可以是渲染函数",
+      "description_zh": "对话框内容，可以是渲染函数",
+      "default": "undefined",
+      "value": "",
+      "type": "string | (() => VNodeChild)",
+      "version": "",
+      "required": false
+    },
+    "content-class": {
+      "description": "内容的类名",
+      "description_zh": "内容的类名",
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "version": "2.38.2",
+      "required": false
+    },
+    "content-style": {
+      "description": "内容的样式",
+      "description_zh": "内容的样式",
+      "default": "undefined",
+      "value": "",
+      "type": "Object | string",
+      "version": "2.38.2",
+      "required": false
+    },
+    "icon-placement": {
+      "description": "图标放置的位置",
+      "description_zh": "图标放置的位置",
+      "default": "left",
+      "value": "",
+      "type": "left / top",
+      "version": "",
+      "required": false
+    },
+    ":icon": {
+      "description": "需要是渲染函数",
+      "description_zh": "需要是渲染函数",
+      "default": "undefined",
+      "value": "",
+      "type": "() => VNodeChild",
+      "version": "",
+      "required": false
+    },
+    "loading": {
+      "description": "是否显示 loading 状态",
+      "description_zh": "是否显示 loading 状态",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    "negative-button-props": {
+      "description": "取消按钮的属性",
+      "description_zh": "取消按钮的属性",
+      "default": "undefined",
+      "value": "",
+      "type": "ButtonProps",
+      "version": "2.27.0",
+      "required": false
+    },
+    "negative-text": {
+      "description": "取消按钮的文字，不填对应的按钮不会出现",
+      "description_zh": "取消按钮的文字，不填对应的按钮不会出现",
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "required": false
+    },
+    "positive-button-props": {
+      "description": "确认按钮的属性",
+      "description_zh": "确认按钮的属性",
+      "default": "undefined",
+      "value": "",
+      "type": "ButtonProps",
+      "version": "2.27.0",
+      "required": false
+    },
+    "positive-text": {
+      "description": "确认按钮的文字，不填对应的按钮不会出现",
+      "description_zh": "确认按钮的文字，不填对应的按钮不会出现",
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "required": false
+    },
+    "show-icon": {
+      "description": "是否显示 icon",
+      "description_zh": "是否显示 icon",
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    ":title": {
+      "description": "对话框标题，可以是渲染函数",
+      "description_zh": "对话框标题，可以是渲染函数",
+      "default": "undefined",
+      "value": "",
+      "type": "string | (() => VNodeChild)",
+      "version": "",
+      "required": false
+    },
+    "title-class": {
+      "description": "标题的类名",
+      "description_zh": "标题的类名",
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "version": "2.38.2",
+      "required": false
+    },
+    "title-style": {
+      "description": "标题的样式",
+      "description_zh": "标题的样式",
+      "default": "undefined",
+      "value": "",
+      "type": "Object | string",
+      "version": "2.38.2",
+      "required": false
+    },
+    "type": {
+      "description": "对话框类型",
+      "description_zh": "对话框类型",
+      "default": "warning",
+      "value": "",
+      "type": "error / success / warning / info",
+      "version": "",
+      "required": false
+    }
+  },
+  "events": [
+    {
+      "name": "close",
+      "description": "点击关闭时执行的回调函数",
+      "description_zh": "点击关闭时执行的回调函数",
+      "params": "() => void",
+      "version": ""
+    },
+    {
+      "name": "negative-click",
+      "description": "执行 negative 时执行的回调函数",
+      "description_zh": "执行 negative 时执行的回调函数",
+      "params": "(e: MouseEvent) => void",
+      "version": ""
+    },
+    {
+      "name": "positive-click",
+      "description": "执行 positive 时执行的回调函数",
+      "description_zh": "执行 positive 时执行的回调函数",
+      "params": "(e: MouseEvent) => void",
+      "version": ""
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "action",
+      "description": "action 内容",
+      "description_zh": "action 内容",
+      "version": ""
+    },
+    {
+      "name": "default",
+      "description": "对话框内容",
+      "description_zh": "对话框内容",
+      "version": ""
+    },
+    {
+      "name": "header",
+      "description": "header 内容",
+      "description_zh": "header 内容",
+      "version": ""
+    },
+    {
+      "name": "icon",
+      "description": "icon 内容",
+      "description_zh": "icon 内容",
+      "version": ""
+    },
+    {
+      "name": "close",
+      "description": "close 内容",
+      "description_zh": "close 内容",
+      "version": "2.36.0"
+    }
+  ],
+  "suggestions": [],
+  "link": "https://www.naiveui.com/zh-CN/os-theme/components/dialog",
+  "link_zh": "https://www.naiveui.com/zh-CN/os-theme/components/dialog",
+  "filename": "Dialog",
+  "typeDetail": {}
+}

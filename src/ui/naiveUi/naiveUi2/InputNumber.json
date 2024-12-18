@@ -1,0 +1,296 @@
+{
+  "name": "NInputNumber",
+  "props": {
+    "autofocus": {
+      "description": "是否自动获取焦点",
+      "description_zh": "是否自动获取焦点",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "2.26.1",
+      "required": false
+    },
+    "bordered": {
+      "description": "是否有边框",
+      "description_zh": "是否有边框",
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    "button-placement": {
+      "description": "加减按钮的位置",
+      "description_zh": "加减按钮的位置",
+      "default": "right",
+      "value": "",
+      "type": "both / right",
+      "version": "2.29.1",
+      "required": false
+    },
+    "clearable": {
+      "description": "是否可清空",
+      "description_zh": "是否可清空",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    "default-value": {
+      "description": "非受控模式下的默认值",
+      "description_zh": "非受控模式下的默认值",
+      "default": "null",
+      "value": "",
+      "type": "number | null",
+      "version": "",
+      "required": false
+    },
+    "disabled": {
+      "description": "是否禁用",
+      "description_zh": "是否禁用",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    ":format": {
+      "description": "格式化值的方法，设定后会禁用 update-value-on-input",
+      "description_zh": "格式化值的方法，设定后会禁用 update-value-on-input",
+      "default": "undefined",
+      "value": "",
+      "type": "(value: number | null) => string",
+      "version": "2.30.0",
+      "required": false
+    },
+    "input-props": {
+      "description": "组件内部 input 元素的属性，在这里查看原生属性。注意：input-props 不会覆盖内部 input 元素的已经存在的属性（除了 type）",
+      "description_zh": "组件内部 input 元素的属性，在这里查看原生属性。注意：input-props 不会覆盖内部 input 元素的已经存在的属性（除了 type）",
+      "default": "undefined",
+      "value": "",
+      "type": "InputHTMLAttributes",
+      "version": "2.37.0",
+      "required": false
+    },
+    "keyboard": {
+      "description": "控制允许的键盘操作，属性值设为 false 的时候会禁用对应的键盘操作",
+      "description_zh": "控制允许的键盘操作，属性值设为 false 的时候会禁用对应的键盘操作",
+      "default": "{}",
+      "value": "",
+      "type": "{ ArrowUp?: boolean, ArrowDown?: boolean }",
+      "version": "",
+      "required": false
+    },
+    "loading": {
+      "description": "是否展示加载图标，设为非 undefined 会占据空间",
+      "description_zh": "是否展示加载图标，设为非 undefined 会占据空间",
+      "default": "undefined",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    ":max": {
+      "description": "最大值",
+      "description_zh": "最大值",
+      "default": "undefined",
+      "value": "",
+      "type": "number",
+      "version": "",
+      "required": false
+    },
+    ":min": {
+      "description": "最小值",
+      "description_zh": "最小值",
+      "default": "undefined",
+      "value": "",
+      "type": "number",
+      "version": "",
+      "required": false
+    },
+    ":parse": {
+      "description": "解析输入的字符串，设定后会禁用 update-value-on-input",
+      "description_zh": "解析输入的字符串，设定后会禁用 update-value-on-input",
+      "default": "undefined",
+      "value": "",
+      "type": "(input: string) => number | null",
+      "version": "2.30.0",
+      "required": false
+    },
+    "placeholder": {
+      "description": "提示信息",
+      "description_zh": "提示信息",
+      "default": "请输入",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "required": false
+    },
+    ":precision": {
+      "description": "数值保留的精度值，设定后会禁用 update-value-on-input",
+      "description_zh": "数值保留的精度值，设定后会禁用 update-value-on-input",
+      "default": "undefined",
+      "value": "",
+      "type": "number",
+      "version": "2.30.0",
+      "required": false
+    },
+    "readonly": {
+      "description": "是否只读",
+      "description_zh": "是否只读",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    "round": {
+      "description": "输入框是否圆角",
+      "description_zh": "输入框是否圆角",
+      "default": "undefined",
+      "value": "",
+      "type": "boolean",
+      "version": "2.39.0",
+      "required": false
+    },
+    "show-button": {
+      "description": "是否有按钮",
+      "description_zh": "是否有按钮",
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    "size": {
+      "description": "输入框大小",
+      "description_zh": "输入框大小",
+      "default": "medium",
+      "value": "",
+      "type": "tiny / small / medium / large",
+      "version": "",
+      "required": false
+    },
+    "status": {
+      "description": "验证状态",
+      "description_zh": "验证状态",
+      "default": "undefined",
+      "value": "",
+      "type": "success / warning / error",
+      "version": "2.27.0",
+      "required": false
+    },
+    ":step": {
+      "description": "每次改变步数，可以为小数",
+      "description_zh": "每次改变步数，可以为小数",
+      "default": "1",
+      "value": "",
+      "type": "number",
+      "version": "",
+      "required": false
+    },
+    "update-value-on-input": {
+      "description": "在输入的过程中，在输入值合法的情况下，是否改变值",
+      "description_zh": "在输入的过程中，在输入值合法的情况下，是否改变值",
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    ":validator": {
+      "description": "设置自定义验证",
+      "description_zh": "设置自定义验证",
+      "default": "undefined",
+      "value": "",
+      "type": "(value) => boolean",
+      "version": "",
+      "required": false
+    },
+    ":v-model:value": {
+      "description": "受控模式下的值",
+      "description_zh": "受控模式下的值",
+      "default": "undefined",
+      "value": "",
+      "type": "number | null",
+      "version": "",
+      "required": true
+    }
+  },
+  "events": [
+    {
+      "name": "blur",
+      "description": "移除焦点的回调",
+      "description_zh": "移除焦点的回调",
+      "params": "(event: FocusEvent) => void",
+      "version": ""
+    },
+    {
+      "name": "clear",
+      "description": "点击清空按钮时的回调",
+      "description_zh": "点击清空按钮时的回调",
+      "params": "() => void",
+      "version": ""
+    },
+    {
+      "name": "focus",
+      "description": "获取焦点的回调",
+      "description_zh": "获取焦点的回调",
+      "params": "(event: FocusEvent) => void",
+      "version": ""
+    },
+    {
+      "name": "update:value",
+      "description": "组件值发生变化的回调",
+      "description_zh": "组件值发生变化的回调",
+      "params": "(value: number | null) => void",
+      "version": ""
+    }
+  ],
+  "methods": [
+    {
+      "name": "blur",
+      "description": "失焦输入",
+      "description_zh": "失焦输入",
+      "params": "() => void"
+    },
+    {
+      "name": "focus",
+      "description": "聚焦输入",
+      "description_zh": "聚焦输入",
+      "params": "() => void"
+    }
+  ],
+  "slots": [
+    {
+      "name": "add-icon",
+      "description": "增加按钮的图标",
+      "description_zh": "增加按钮的图标",
+      "version": "2.28.1"
+    },
+    {
+      "name": "minus-icon",
+      "description": "减少按钮的图标",
+      "description_zh": "减少按钮的图标",
+      "version": "2.28.1"
+    },
+    {
+      "name": "prefix",
+      "description": "输入框头部内容插槽",
+      "description_zh": "输入框头部内容插槽",
+      "version": ""
+    },
+    {
+      "name": "suffix",
+      "description": "输入框尾部内容插槽",
+      "description_zh": "输入框尾部内容插槽",
+      "version": ""
+    }
+  ],
+  "suggestions": [],
+  "link": "https://www.naiveui.com/zh-CN/os-theme/components/input-number",
+  "link_zh": "https://www.naiveui.com/zh-CN/os-theme/components/input-number",
+  "filename": "InputNumber",
+  "typeDetail": {}
+}

@@ -1,0 +1,176 @@
+{
+  "name": "NDynamicTags",
+  "props": {
+    "closable": {
+      "description": "是否可关闭",
+      "description_zh": "是否可关闭",
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    "color": {
+      "description": "标签颜色，设置该项后 type 无效",
+      "description_zh": "标签颜色，设置该项后 type 无效",
+      "default": "undefined",
+      "value": "",
+      "type": "{ color?: string, borderColor?: string, textColor?: string }",
+      "version": "",
+      "required": false
+    },
+    ":default-value": {
+      "description": "非受控模式下的默认值",
+      "description_zh": "非受控模式下的默认值",
+      "default": "[]",
+      "value": "",
+      "type": "string[] | Array<{ label: string, value: string }>",
+      "version": "",
+      "required": false
+    },
+    "disabled": {
+      "description": "是否禁用",
+      "description_zh": "是否禁用",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    "input-props": {
+      "description": "内部 n-input 组件的属性",
+      "description_zh": "内部 n-input 组件的属性",
+      "default": "undefined",
+      "value": "",
+      "type": "InputProps",
+      "version": "2.25.0",
+      "required": false
+    },
+    "input-class": {
+      "description": "自定义输入框的类名",
+      "description_zh": "自定义输入框的类名",
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "version": "2.36.0",
+      "required": false
+    },
+    "input-style": {
+      "description": "自定义输入框的样式",
+      "description_zh": "自定义输入框的样式",
+      "default": "undefined",
+      "value": "",
+      "type": "string | Object",
+      "version": "",
+      "required": false
+    },
+    ":max": {
+      "description": "tag 的最大数量",
+      "description_zh": "tag 的最大数量",
+      "default": "undefined",
+      "value": "",
+      "type": "number",
+      "version": "",
+      "required": false
+    },
+    "round": {
+      "description": "是否圆角",
+      "description_zh": "是否圆角",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    ":render-tag": {
+      "description": "自定义渲染 tag",
+      "description_zh": "自定义渲染 tag",
+      "default": "undefined",
+      "value": "",
+      "type": "((tag: string, index: number) => VNodeChild) | ((tag: { label: string, value: string }, index: number) => VNodeChild)",
+      "version": "2.27.0",
+      "required": false
+    },
+    "size": {
+      "description": "尺寸大小",
+      "description_zh": "尺寸大小",
+      "default": "medium",
+      "value": "",
+      "type": "small / medium / large",
+      "version": "",
+      "required": false
+    },
+    "tag-class": {
+      "description": "自定义标签的类名",
+      "description_zh": "自定义标签的类名",
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "version": "2.36.0",
+      "required": false
+    },
+    "tag-style": {
+      "description": "自定义标签的样式",
+      "description_zh": "自定义标签的样式",
+      "default": "undefined",
+      "value": "",
+      "type": "string | Object",
+      "version": "",
+      "required": false
+    },
+    "type": {
+      "description": "标签类型",
+      "description_zh": "标签类型",
+      "default": "default",
+      "value": "",
+      "type": "default / primary / info / success / warning / error",
+      "version": "",
+      "required": false
+    },
+    ":v-model:value": {
+      "description": "受控模式下的值",
+      "description_zh": "受控模式下的值",
+      "default": "undefined",
+      "value": "",
+      "type": "string[] | Array<{ label: string, value: string }>",
+      "version": "",
+      "required": true
+    }
+  },
+  "events": [
+    {
+      "name": "create",
+      "description": "根据输入的值创造对应的选项",
+      "description_zh": "根据输入的值创造对应的选项",
+      "params": "((label: string) => string) | ((label: string) => ({ label: string, value: string }))",
+      "version": "2.30.4"
+    },
+    {
+      "name": "update:value",
+      "description": "组件值发生变化时的回调",
+      "description_zh": "组件值发生变化时的回调",
+      "params": "((value: string[]) => void) | ((value: DynamicTagsOption[]) => void)",
+      "version": ""
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "input",
+      "description": "自定义输入元素，由用户填充",
+      "description_zh": "自定义输入元素，由用户填充",
+      "version": "deactivate 2.26.2"
+    },
+    {
+      "name": "trigger",
+      "description": "触发输入标签的组件或元素",
+      "description_zh": "触发输入标签的组件或元素",
+      "version": ""
+    }
+  ],
+  "suggestions": [],
+  "link": "https://www.naiveui.com/zh-CN/os-theme/components/dynamic-tags",
+  "link_zh": "https://www.naiveui.com/zh-CN/os-theme/components/dynamic-tags",
+  "filename": "DynamicTags",
+  "typeDetail": {}
+}

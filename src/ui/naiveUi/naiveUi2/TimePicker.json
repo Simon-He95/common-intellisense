@@ -1,0 +1,300 @@
+{
+  "name": "NTimePicker",
+  "props": {
+    ":actions": {
+      "description": "Time Picker 中支持的操作",
+      "description_zh": "Time Picker 中支持的操作",
+      "default": "[now, confirm]",
+      "value": "",
+      "type": "Array<clear / now / confirm> / null",
+      "version": "'clear' 2.37.0",
+      "required": false
+    },
+    "clearable": {
+      "description": "是否可清空",
+      "description_zh": "是否可清空",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    "default-value": {
+      "description": "非受控模式下的默认值",
+      "description_zh": "非受控模式下的默认值",
+      "default": "null",
+      "value": "",
+      "type": "number | null",
+      "version": "",
+      "required": false
+    },
+    "default-formatted-value": {
+      "description": "非受控模式下的默认格式化后的值",
+      "description_zh": "非受控模式下的默认格式化后的值",
+      "default": "undefined",
+      "value": "",
+      "type": "string | null",
+      "version": "2.24.0",
+      "required": false
+    },
+    "disabled": {
+      "description": "是否禁用",
+      "description_zh": "是否禁用",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    "format": {
+      "description": "时间格式化字符串，详情见 format",
+      "description_zh": "时间格式化字符串，详情见 format",
+      "default": "HH:mm:ss",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "required": false
+    },
+    "formatted-value": {
+      "description": "格式化后的值",
+      "description_zh": "格式化后的值",
+      "default": "undefined",
+      "value": "",
+      "type": "string | null",
+      "version": "2.24.0",
+      "required": false
+    },
+    "hours": {
+      "description": "通过数组指定显示的小时。当值为 number 时，将被当做时间步进处理",
+      "description_zh": "通过数组指定显示的小时。当值为 number 时，将被当做时间步进处理",
+      "default": "undefined",
+      "value": "",
+      "type": "number | number[]",
+      "version": "",
+      "required": false
+    },
+    "minutes": {
+      "description": "通过数组指定显示的分钟。当值为 number 时，将被当做时间步进处理",
+      "description_zh": "通过数组指定显示的分钟。当值为 number 时，将被当做时间步进处理",
+      "default": "undefined",
+      "value": "",
+      "type": "number | number[]",
+      "version": "",
+      "required": false
+    },
+    "seconds": {
+      "description": "通过数组指定显示的秒。当值为 number 时，将被当做时间步进处理",
+      "description_zh": "通过数组指定显示的秒。当值为 number 时，将被当做时间步进处理",
+      "default": "undefined",
+      "value": "",
+      "type": "number | number[]",
+      "version": "",
+      "required": false
+    },
+    "input-readonly": {
+      "description": "设置输入框为只读（避免在移动设备上打开虚拟键盘）",
+      "description_zh": "设置输入框为只读（避免在移动设备上打开虚拟键盘）",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    ":is-hour-disabled": {
+      "description": "用于禁用小时的回调函数",
+      "description_zh": "用于禁用小时的回调函数",
+      "default": "() => false",
+      "value": "",
+      "type": "(hour: number) => boolean",
+      "version": "",
+      "required": false
+    },
+    ":is-minute-disabled": {
+      "description": "用于禁用分钟的回调函数，在没有选中值时，hour 是 null",
+      "description_zh": "用于禁用分钟的回调函数，在没有选中值时，hour 是 null",
+      "default": "() => false",
+      "value": "",
+      "type": "(minute: number, hour: number | null) => boolean",
+      "version": "",
+      "required": false
+    },
+    ":is-second-disabled": {
+      "description": "用于禁用秒钟的回调函数，在没有选中值时，minute 和 hour 是 null",
+      "description_zh": "用于禁用秒钟的回调函数，在没有选中值时，minute 和 hour 是 null",
+      "default": "() => false",
+      "value": "",
+      "type": "(second: number, minute: number | null, hour: number | null) => boolean",
+      "version": "",
+      "required": false
+    },
+    "placeholder": {
+      "description": "选择框的占位符",
+      "description_zh": "选择框的占位符",
+      "default": "请选择时间",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "required": false
+    },
+    "placement": {
+      "description": "时间选择器的面板的弹出位置",
+      "description_zh": "时间选择器的面板的弹出位置",
+      "default": "bottom-start",
+      "value": "",
+      "type": "top-start / top / top-end / right-start / right / right-end / bottom-start / bottom / bottom-end / left-start / left / left-end",
+      "version": "2.25.0",
+      "required": false
+    },
+    "show": {
+      "description": "是否展示面板",
+      "description_zh": "是否展示面板",
+      "default": "undefined",
+      "value": "",
+      "type": "boolean",
+      "version": "2.28.3",
+      "required": false
+    },
+    "size": {
+      "description": "选择框的尺寸",
+      "description_zh": "选择框的尺寸",
+      "default": "medium",
+      "value": "",
+      "type": "small / medium / large",
+      "version": "",
+      "required": false
+    },
+    "status": {
+      "description": "验证状态",
+      "description_zh": "验证状态",
+      "default": "undefined",
+      "value": "",
+      "type": "success / warning / error",
+      "version": "2.27.0",
+      "required": false
+    },
+    "time-zone": {
+      "description": "格式化值时使用的时区，遵循 iana time zones 格式。你可以使用 Intl.supportedValuesOf('timeZone') 来查看支持的时区",
+      "description_zh": "格式化值时使用的时区，遵循 iana time zones 格式。你可以使用 Intl.supportedValuesOf('timeZone') 来查看支持的时区",
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "version": "2.30.0",
+      "required": false
+    },
+    "to": {
+      "description": "菜单的容器节点，false 会待在原地",
+      "description_zh": "菜单的容器节点，false 会待在原地",
+      "default": "body",
+      "value": "",
+      "type": "string | HTMLElement | false",
+      "version": "",
+      "required": false
+    },
+    "use-12-hours": {
+      "description": "是否使用 12 小时制的面板",
+      "description_zh": "是否使用 12 小时制的面板",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    ":v-model:value": {
+      "description": "受控模式下的值",
+      "description_zh": "受控模式下的值",
+      "default": "undefined",
+      "value": "",
+      "type": "number | null",
+      "version": "",
+      "required": true
+    },
+    "value-format": {
+      "description": "格式化后值的格式",
+      "description_zh": "格式化后值的格式",
+      "default": "跟随 format",
+      "value": "",
+      "type": "string",
+      "version": "2.24.0",
+      "required": false
+    }
+  },
+  "events": [
+    {
+      "name": "blur",
+      "description": "选择框失去焦点时的回调",
+      "description_zh": "选择框失去焦点时的回调",
+      "params": "() => void",
+      "version": ""
+    },
+    {
+      "name": "clear",
+      "description": "清除值时的回调",
+      "description_zh": "清除值时的回调",
+      "params": "() => void",
+      "version": "2.28.3"
+    },
+    {
+      "name": "confirm",
+      "description": "点击确认按钮时的回调",
+      "description_zh": "点击确认按钮时的回调",
+      "params": "(value: number | null, formattedValue: string | null) => void",
+      "version": "2.28.3"
+    },
+    {
+      "name": "focus",
+      "description": "选择框获得焦点时的回调",
+      "description_zh": "选择框获得焦点时的回调",
+      "params": "() => void",
+      "version": ""
+    },
+    {
+      "name": "update:formatted-value",
+      "description": "格式化的值发生改变时的回调",
+      "description_zh": "格式化的值发生改变时的回调",
+      "params": "(value: number | null, timestampValue: number | null) => void",
+      "version": "2.24.0"
+    },
+    {
+      "name": "update:show",
+      "description": "面板打开、关闭时的回调",
+      "description_zh": "面板打开、关闭时的回调",
+      "params": "(show: boolean) => void",
+      "version": "2.28.3"
+    },
+    {
+      "name": "update:value",
+      "description": "值发生改变时的回调",
+      "description_zh": "值发生改变时的回调",
+      "params": "(value: number | null, formattedValue: string | null) => void",
+      "version": "formattedValue 2.24.0"
+    }
+  ],
+  "methods": [
+    {
+      "name": "focus",
+      "description": "聚焦",
+      "description_zh": "聚焦",
+      "params": "() => void",
+      "version": "2.24.2"
+    },
+    {
+      "name": "blur",
+      "description": "失焦",
+      "description_zh": "失焦",
+      "params": "() => void",
+      "version": "2.24.2"
+    }
+  ],
+  "slots": [
+    {
+      "name": "icon",
+      "description": "自定义图标",
+      "description_zh": "自定义图标"
+    }
+  ],
+  "suggestions": [],
+  "link": "https://www.naiveui.com/zh-CN/os-theme/components/time-picker",
+  "link_zh": "https://www.naiveui.com/zh-CN/os-theme/components/time-picker",
+  "filename": "TimePicker",
+  "typeDetail": {}
+}

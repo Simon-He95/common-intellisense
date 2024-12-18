@@ -109,15 +109,6 @@
       "required": false,
       "description_zh": "HTTP 请求中其他额外的 form data，uploadFile 接口详细参数，查看官方手册"
     },
-    "on-preview-fail": {
-      "default": "",
-      "value": "-",
-      "type": "function({ index, imgList })",
-      "description": "The preview failed to perform the action",
-      "version": "-",
-      "required": false,
-      "description_zh": "预览失败执行操作"
-    },
     "before-upload": {
       "default": "",
       "value": "-",
@@ -331,6 +322,14 @@
       "version": "-",
       "value": "",
       "description_zh": "文件大小超过限制时触发"
+    },
+    {
+      "name": "preview-fail",
+      "description": "Triggered when the preview fails",
+      "params": "event = { file, fileList } file: 预览失败的文件信息",
+      "version": "-",
+      "value": "",
+      "description_zh": "预览失败时触发"
     }
   ],
   "methods": [

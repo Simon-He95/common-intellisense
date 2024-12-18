@@ -1,0 +1,511 @@
+{
+  "name": "NTreeSelect",
+  "props": {
+    "allow-checking-not-loaded": {
+      "description": "是否允许级联勾选还没有完全加载的节点。如果你要用这个属性，请记住 value 可能是不完整的，并且请注意勾选行为和后端计算逻辑的一致性，尤其是有禁用节点的情况下",
+      "description_zh": "是否允许级联勾选还没有完全加载的节点。如果你要用这个属性，请记住 value 可能是不完整的，并且请注意勾选行为和后端计算逻辑的一致性，尤其是有禁用节点的情况下",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "2.28.1",
+      "required": false
+    },
+    "cascade": {
+      "description": "使用 checkbox 进行多选时是否级联",
+      "description_zh": "使用 checkbox 进行多选时是否级联",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    "checkable": {
+      "description": "是否使用 checkbox 进行选择",
+      "description_zh": "是否使用 checkbox 进行选择",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    "check-strategy": {
+      "description": "设置勾选策略来指定显示的勾选节点，all 表示显示全部选中节点；parent 表示只显示父节点（当父节点下所有子节点都选中时）；child 表示只显示子节点",
+      "description_zh": "设置勾选策略来指定显示的勾选节点，all 表示显示全部选中节点；parent 表示只显示父节点（当父节点下所有子节点都选中时）；child 表示只显示子节点",
+      "default": "all",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "required": false
+    },
+    "children-field": {
+      "description": "替代 TreeSelectOption 中的 children 字段名",
+      "description_zh": "替代 TreeSelectOption 中的 children 字段名",
+      "default": "children",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "required": false
+    },
+    "clearable": {
+      "description": "是否可清除",
+      "description_zh": "是否可清除",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    "clear-filter-after-select": {
+      "description": "是否在可过滤和多选的情况下选中一个选项后保留当前的搜索关键词",
+      "description_zh": "是否在可过滤和多选的情况下选中一个选项后保留当前的搜索关键词",
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "version": "2.25.3",
+      "required": false
+    },
+    "consistent-menu-width": {
+      "description": "是否使菜单宽度和输入框一致，打开会禁用虚拟滚动",
+      "description_zh": "是否使菜单宽度和输入框一致，打开会禁用虚拟滚动",
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    ":default-value": {
+      "description": "默认选中的 key",
+      "description_zh": "默认选中的 key",
+      "default": "null",
+      "value": "",
+      "type": "string | number | Array<string | number> | null",
+      "version": "",
+      "required": false
+    },
+    "default-expand-all": {
+      "description": "默认展开全部",
+      "description_zh": "默认展开全部",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    ":default-expanded-keys": {
+      "description": "默认展开节点的 key",
+      "description_zh": "默认展开节点的 key",
+      "default": "[]",
+      "value": "",
+      "type": "Array<string | number>",
+      "version": "",
+      "required": false
+    },
+    "disabled": {
+      "description": "是否禁用",
+      "description_zh": "是否禁用",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    "ellipsis-tag-popover-props": {
+      "description": "选中选项过多省略显示时，预览弹出 popover 的属性",
+      "description_zh": "选中选项过多省略显示时，预览弹出 popover 的属性",
+      "default": "undefined",
+      "value": "",
+      "type": "PopoverProps",
+      "version": "2.37.0",
+      "required": false
+    },
+    ":expanded-keys": {
+      "description": "展开节点的 key",
+      "description_zh": "展开节点的 key",
+      "default": "undefined",
+      "value": "",
+      "type": "Array<string | number>",
+      "version": "",
+      "required": false
+    },
+    "indeterminate-keys": {
+      "description": "部分选中选项的 key",
+      "description_zh": "部分选中选项的 key",
+      "default": "undefined",
+      "value": "",
+      "type": "string | number",
+      "version": "",
+      "required": false
+    },
+    "filterable": {
+      "description": "是否可过滤",
+      "description_zh": "是否可过滤",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    ":filter": {
+      "description": "过滤器函数",
+      "description_zh": "过滤器函数",
+      "default": "-",
+      "value": "",
+      "type": "(pattern: string, option: TreeSelectOption) => boolean",
+      "version": "",
+      "required": false
+    },
+    ":get-children": {
+      "description": "获取当前选项的子选项",
+      "description_zh": "获取当前选项的子选项",
+      "default": "undefined",
+      "value": "",
+      "type": "(option: any) => unknown",
+      "version": "2.38.1",
+      "required": false
+    },
+    "key-field": {
+      "description": "替代 TreeSelectOption 中的 key 字段名",
+      "description_zh": "替代 TreeSelectOption 中的 key 字段名",
+      "default": "key",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "required": false
+    },
+    "label-field": {
+      "description": "替代 TreeSelectOption 中的 label 字段名",
+      "description_zh": "替代 TreeSelectOption 中的 label 字段名",
+      "default": "label",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "required": false
+    },
+    "disabled-field": {
+      "description": "替代 TreeSelectOption 中的 disabled 字段名",
+      "description_zh": "替代 TreeSelectOption 中的 disabled 字段名",
+      "default": "disabled",
+      "value": "",
+      "type": "string",
+      "version": "2.32.2",
+      "required": false
+    },
+    "loading": {
+      "description": "是否加载中",
+      "description_zh": "是否加载中",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "2.28.3",
+      "required": false
+    },
+    "max-tag-count": {
+      "description": "多选时最多直接显示多少选项，设为 'responsive' 会保证最多一行",
+      "description_zh": "多选时最多直接显示多少选项，设为 'responsive' 会保证最多一行",
+      "default": "undefined",
+      "value": "",
+      "type": "number / responsive",
+      "version": "",
+      "required": false
+    },
+    "menu-props": {
+      "description": "菜单的 DOM 属性",
+      "description_zh": "菜单的 DOM 属性",
+      "default": "undefined",
+      "value": "",
+      "type": "HTMLAttributes",
+      "version": "2.22.0",
+      "required": false
+    },
+    "multiple": {
+      "description": "是否支持多选",
+      "description_zh": "是否支持多选",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    ":node-props": {
+      "description": "节点的 HTML 属性",
+      "description_zh": "节点的 HTML 属性",
+      "default": "undefined",
+      "value": "",
+      "type": "(info: { option: TreeSelectOption }) => HTMLAttributes",
+      "version": "2.30.7",
+      "required": false
+    },
+    ":options": {
+      "description": "选项",
+      "description_zh": "选项",
+      "default": "[]",
+      "value": "",
+      "type": "TreeSelectOption[]",
+      "version": "",
+      "required": true
+    },
+    ":override-default-node-click-behavior": {
+      "description": "覆盖默认的节点点击行为",
+      "description_zh": "覆盖默认的节点点击行为",
+      "default": "undefined",
+      "value": "",
+      "type": "(info: { option: TreeSelectOption }) => toggleExpand / toggleSelect / toggleCheck / default / none",
+      "version": "2.37.0",
+      "required": false
+    },
+    "placeholder": {
+      "description": "占位信息",
+      "description_zh": "占位信息",
+      "default": "请选择",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "required": false
+    },
+    "placement": {
+      "description": "选择器的弹出位置.",
+      "description_zh": "选择器的弹出位置.",
+      "default": "bottom-start",
+      "value": "",
+      "type": "top-start / top / top-end / right-start / right / right-end / bottom-start / bottom / bottom-end / left-start / left / left-end",
+      "version": "2.25.0",
+      "required": false
+    },
+    ":render-label": {
+      "description": "节点内容的渲染函数",
+      "description_zh": "节点内容的渲染函数",
+      "default": "undefined",
+      "value": "",
+      "type": "(info: { option: TreeSelectOption, checked: boolean, selected: boolean }) => VNodeChild",
+      "version": "2.30.7",
+      "required": false
+    },
+    ":render-prefix": {
+      "description": "节点前缀的渲染函数",
+      "description_zh": "节点前缀的渲染函数",
+      "default": "undefined",
+      "value": "",
+      "type": "(info: { option: TreeSelectOption, checked: boolean, selected: boolean }) => VNodeChild",
+      "version": "2.30.7",
+      "required": false
+    },
+    ":render-suffix": {
+      "description": "节点后缀的渲染函数",
+      "description_zh": "节点后缀的渲染函数",
+      "default": "undefined",
+      "value": "",
+      "type": "(info: { option: TreeSelectOption, checked: boolean, selected: boolean }) => VNodeChild",
+      "version": "2.30.7",
+      "required": false
+    },
+    ":render-switcher-icon": {
+      "description": "节点展开开关的渲染函数",
+      "description_zh": "节点展开开关的渲染函数",
+      "default": "undefined",
+      "value": "",
+      "type": "() => VNodeChild",
+      "version": "2.30.7",
+      "required": false
+    },
+    ":render-tag": {
+      "description": "控制标签的渲染",
+      "description_zh": "控制标签的渲染",
+      "default": "undefined",
+      "value": "",
+      "type": "(props: { option: TreeSelectOption, handleClose: () => void }) => VNodeChild",
+      "version": "2.30.7",
+      "required": false
+    },
+    "separator": {
+      "description": "数据分隔符",
+      "description_zh": "数据分隔符",
+      "default": " / ",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "required": false
+    },
+    "show-path": {
+      "description": "是否在选择器中显示选项路径",
+      "description_zh": "是否在选择器中显示选项路径",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    "size": {
+      "description": "组件尺寸",
+      "description_zh": "组件尺寸",
+      "default": "medium",
+      "value": "",
+      "type": "small / medium / large",
+      "version": "",
+      "required": false
+    },
+    "status": {
+      "description": "验证状态",
+      "description_zh": "验证状态",
+      "default": "undefined",
+      "value": "",
+      "type": "success / warning / error",
+      "version": "2.27.0",
+      "required": false
+    },
+    "to": {
+      "description": "菜单的容器节点，false 会待在原地",
+      "description_zh": "菜单的容器节点，false 会待在原地",
+      "default": "body",
+      "value": "",
+      "type": "string | HTMLElement | false",
+      "version": "",
+      "required": false
+    },
+    ":v-model:value": {
+      "description": "选中的 key",
+      "description_zh": "选中的 key",
+      "default": "undefined",
+      "value": "",
+      "type": "string | number | Array<string | number> | null>",
+      "version": "",
+      "required": true
+    },
+    "virtual-scroll": {
+      "description": "是否开启虚拟滚动",
+      "description_zh": "是否开启虚拟滚动",
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    ":watch-props": {
+      "description": "需要检测变更的默认属性，检测后组件状态会更新。注意：watch-props 本身不是响应式的",
+      "description_zh": "需要检测变更的默认属性，检测后组件状态会更新。注意：watch-props 本身不是响应式的",
+      "default": "undefined",
+      "value": "",
+      "type": "Array<defaultCheckedKeys / defaultSelectedKeys /defaultExpandedKeys>",
+      "version": "2.36.0",
+      "required": false
+    }
+  },
+  "events": [
+    {
+      "name": "blur",
+      "description": "Blur 时的回调",
+      "description_zh": "Blur 时的回调",
+      "params": "(e: FocusEvent) => void",
+      "version": ""
+    },
+    {
+      "name": "focus",
+      "description": "Focus 时的回调",
+      "description_zh": "Focus 时的回调",
+      "params": "(e: FocusEvent) => void",
+      "version": ""
+    },
+    {
+      "name": "load",
+      "description": "异步加载数据的回调函数",
+      "description_zh": "异步加载数据的回调函数",
+      "params": "(node: TreeSelectOption) => Promise<void>",
+      "version": "2.27.0"
+    },
+    {
+      "name": "update:expanded-keys",
+      "description": "展开节点更新的回调",
+      "description_zh": "展开节点更新的回调",
+      "params": "(value: Array<string | number>, meta: { node: TreeOption | null, action: 'expand' | 'collapse' | 'filter' }) => void",
+      "version": "meta 2.34.0"
+    },
+    {
+      "name": "update:indeterminate-keys",
+      "description": "节点部分勾选项发生变化时的回调函数",
+      "description_zh": "节点部分勾选项发生变化时的回调函数",
+      "params": "(keys: Array<string | number>) => void",
+      "version": ""
+    },
+    {
+      "name": "update:value",
+      "description": "更新值的回调",
+      "description_zh": "更新值的回调",
+      "params": "(value: string | number | Array<string | number> | null, option: TreeSelectOption | null | Array<TreeSelectOption | null>, meta: { node: TreeOption | null, action: 'select' | 'unselect' | 'delete' | 'clear' }) => void",
+      "version": "meta 2.34.0"
+    }
+  ],
+  "methods": [
+    {
+      "name": "blur",
+      "description": "失焦",
+      "description_zh": "失焦",
+      "params": "() => void",
+      "version": "2.34.0"
+    },
+    {
+      "name": "blurInput",
+      "description": "输入失焦",
+      "description_zh": "输入失焦",
+      "params": "() => void",
+      "version": "2.35.0"
+    },
+    {
+      "name": "focus",
+      "description": "聚焦",
+      "description_zh": "聚焦",
+      "params": "() => void",
+      "version": "2.34.0"
+    },
+    {
+      "name": "focusInput",
+      "description": "输入聚焦",
+      "description_zh": "输入聚焦",
+      "params": "() => void",
+      "version": "2.35.0"
+    },
+    {
+      "name": "getCheckedData",
+      "description": "获取选中的数据",
+      "description_zh": "获取选中的数据",
+      "params": "() => { keys: Array<string | number>, options: Array<TreeOption | null> }",
+      "version": "2.34.0"
+    },
+    {
+      "name": "getIndeterminateData",
+      "description": "获取半选的数据",
+      "description_zh": "获取半选的数据",
+      "params": "() => { keys: Array<string | number>, options: Array<TreeOption | null> }",
+      "version": "2.34.0"
+    }
+  ],
+  "slots": [
+    {
+      "name": "header",
+      "description": "菜单头部区域的 slot",
+      "description_zh": "菜单头部区域的 slot",
+      "version": "2.40.0"
+    },
+    {
+      "name": "action",
+      "description": "菜单操作区域的 slot",
+      "description_zh": "菜单操作区域的 slot",
+      "version": "2.22.0"
+    },
+    {
+      "name": "arrow",
+      "description": "选择箭头 slot",
+      "description_zh": "选择箭头 slot",
+      "version": "2.30.4"
+    },
+    {
+      "name": "empty",
+      "description": "菜单无数据时的 slot",
+      "description_zh": "菜单无数据时的 slot",
+      "version": "2.22.0"
+    }
+  ],
+  "suggestions": [],
+  "link": "https://www.naiveui.com/zh-CN/os-theme/components/tree-select",
+  "link_zh": "https://www.naiveui.com/zh-CN/os-theme/components/tree-select",
+  "filename": "TreeSelect",
+  "typeDetail": {}
+}

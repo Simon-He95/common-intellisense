@@ -1,0 +1,95 @@
+{
+  "name": "NCollapse",
+  "props": {
+    "accordion": {
+      "description": "是否只允许展开一个面板",
+      "description_zh": "是否只允许展开一个面板",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    "arrow-placement": {
+      "description": "箭头位置",
+      "description_zh": "箭头位置",
+      "default": "left",
+      "value": "",
+      "type": "left / right",
+      "version": "",
+      "required": false
+    },
+    ":default-expanded-names": {
+      "description": "非受控模式下展开的面板 name。accordion 模式时不为数组",
+      "description_zh": "非受控模式下展开的面板 name。accordion 模式时不为数组",
+      "default": "null",
+      "value": "",
+      "type": "string | number | Array<string | number> | null",
+      "version": "",
+      "required": false
+    },
+    "display-directive": {
+      "description": "内部 n-collapse-item 在控制内容是否渲染时使用的指令，'if' 对应 v-if，'show' 对应 v-show",
+      "description_zh": "内部 n-collapse-item 在控制内容是否渲染时使用的指令，'if' 对应 v-if，'show' 对应 v-show",
+      "default": "if",
+      "value": "",
+      "type": "if / show",
+      "version": "",
+      "required": false
+    },
+    ":expanded-names": {
+      "description": "受控模式下展开的面板的 name，accordion 模式时不为数组",
+      "description_zh": "受控模式下展开的面板的 name，accordion 模式时不为数组",
+      "default": "undefined",
+      "value": "",
+      "type": "string | number | Array<string | number> | null",
+      "version": "",
+      "required": false
+    },
+    ":trigger-areas": {
+      "description": "触发展开的区域，如果不想让某些区域触发展开，可以使用此属性",
+      "description_zh": "触发展开的区域，如果不想让某些区域触发展开，可以使用此属性",
+      "default": "[main, arrow, extra]",
+      "value": "",
+      "type": "Array<main / arrow / extra>",
+      "version": "2.37.1",
+      "required": false
+    }
+  },
+  "events": [
+    {
+      "name": "item-header-click",
+      "description": "点击标题时触发的回调函数",
+      "description_zh": "点击标题时触发的回调函数",
+      "params": "(data: { name: string | number, expanded: boolean, event: MouseEvent }) => void",
+      "version": ""
+    },
+    {
+      "name": "update:expanded-names",
+      "description": "展开内容改变时触发的回调函数",
+      "description_zh": "展开内容改变时触发的回调函数",
+      "params": "(expandedNames: Array<string | number> | string | number | null) => void",
+      "version": ""
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "default",
+      "description": "折叠面板的内容",
+      "description_zh": "折叠面板的内容"
+    },
+    {
+      "name": "arrow",
+      "description": "折叠面板的自定义图标",
+      "description_zh": "折叠面板的自定义图标"
+    }
+  ],
+  "suggestions": [
+    "n-collapse-item"
+  ],
+  "link": "https://www.naiveui.com/zh-CN/os-theme/components/collapse",
+  "link_zh": "https://www.naiveui.com/zh-CN/os-theme/components/collapse",
+  "filename": "Collapse",
+  "typeDetail": {}
+}

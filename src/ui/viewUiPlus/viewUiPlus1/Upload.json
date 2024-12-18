@@ -124,62 +124,6 @@
       "isRequired": false,
       "description_zh": "上传文件之前的钩子，参数为上传的文件，若返回 false 或者 Promise 则停止上传"
     },
-    "on-progress": {
-      "default": "-",
-      "value": "",
-      "type": "Function",
-      "description": "文件上传时的钩子，返回字段为 event, file, fileList",
-      "isRequired": false,
-      "description_zh": "文件上传时的钩子，返回字段为 event, file, fileList"
-    },
-    "on-success": {
-      "default": "-",
-      "value": "",
-      "type": "Function",
-      "description": "文件上传成功时的钩子，返回字段为 response, file, fileList",
-      "isRequired": false,
-      "description_zh": "文件上传成功时的钩子，返回字段为 response, file, fileList"
-    },
-    "on-error": {
-      "default": "-",
-      "value": "",
-      "type": "Function",
-      "description": "文件上传失败时的钩子，返回字段为 error, file, fileList",
-      "isRequired": false,
-      "description_zh": "文件上传失败时的钩子，返回字段为 error, file, fileList"
-    },
-    "on-preview": {
-      "default": "-",
-      "value": "",
-      "type": "Function",
-      "description": "点击已上传的文件链接时的钩子，返回字段为 file， 可以通过 file.response 拿到服务端返回数据",
-      "isRequired": false,
-      "description_zh": "点击已上传的文件链接时的钩子，返回字段为 file， 可以通过 file.response 拿到服务端返回数据"
-    },
-    "on-remove": {
-      "default": "-",
-      "value": "",
-      "type": "Function",
-      "description": "文件列表移除文件时的钩子，返回字段为 file, fileList",
-      "isRequired": false,
-      "description_zh": "文件列表移除文件时的钩子，返回字段为 file, fileList"
-    },
-    "on-format-error": {
-      "default": "-",
-      "value": "",
-      "type": "Function",
-      "description": "文件格式验证失败时的钩子，返回字段为 file, fileList",
-      "isRequired": false,
-      "description_zh": "文件格式验证失败时的钩子，返回字段为 file, fileList"
-    },
-    "on-exceeded-size": {
-      "default": "-",
-      "value": "",
-      "type": "Function",
-      "description": "文件超出指定大小限制时的钩子，返回字段为 file, fileList",
-      "isRequired": false,
-      "description_zh": "文件超出指定大小限制时的钩子，返回字段为 file, fileList"
-    },
     "default-file-list": {
       "default": "[]",
       "value": "",
@@ -192,7 +136,38 @@
   "link": "https://www.iviewui.com/view-ui-plus/component/form/upload",
   "link_zh": "https://www.iviewui.com/view-ui-plus/component/form/upload",
   "typeDetail": {},
-  "events": [],
+  "events": [
+    {
+      "name": "success",
+      "description": "文件上传成功时的钩子",
+      "params": "Function",
+      "description_zh": "文件上传成功时的钩子"
+    },
+    {
+      "name": "error",
+      "description": "文件上传失败时的钩子",
+      "params": "Function",
+      "description_zh": "文件上传失败时的钩子"
+    },
+    {
+      "name": "progress",
+      "description": "文件上传时的钩子",
+      "params": "Function",
+      "description_zh": "文件上传时的钩子"
+    },
+    {
+      "name": "format-error",
+      "description": "文件格式验证失败时的钩子",
+      "params": "Function",
+      "description_zh": "文件格式验证失败时的钩子"
+    },
+    {
+      "name": "exceeded-size",
+      "description": "文件超出指定大小限制时的钩子",
+      "params": "Function",
+      "description_zh": "文件超出指定大小限制时的钩子"
+    }
+  ],
   "methods": [
     {
       "name": "clearFiles",

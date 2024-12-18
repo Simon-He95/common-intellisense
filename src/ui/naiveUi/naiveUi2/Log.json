@@ -1,0 +1,111 @@
+{
+  "name": "NLog",
+  "props": {
+    ":font-size": {
+      "description": "文字大小",
+      "description_zh": "文字大小",
+      "default": "14",
+      "value": "",
+      "type": "number",
+      "required": false
+    },
+    "hljs": {
+      "description": "如果你想局部设定 hljs ，可以通过这个属性传给组件",
+      "description_zh": "如果你想局部设定 hljs ，可以通过这个属性传给组件",
+      "default": "undefined",
+      "value": "",
+      "type": "Object",
+      "required": false
+    },
+    "language": {
+      "description": "日志在 highlightjs 中的语言",
+      "description_zh": "日志在 highlightjs 中的语言",
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "required": false
+    },
+    ":line-height": {
+      "description": "行高",
+      "description_zh": "行高",
+      "default": "1.25",
+      "value": "",
+      "type": "number",
+      "required": false
+    },
+    ":lines": {
+      "description": "按行显示日志内容，在同时存在 log 参数时，该参数无效",
+      "description_zh": "按行显示日志内容，在同时存在 log 参数时，该参数无效",
+      "default": "undefined",
+      "value": "",
+      "type": "Array<string>",
+      "required": false
+    },
+    "loading": {
+      "description": "是否显示加载中",
+      "description_zh": "是否显示加载中",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    },
+    "log": {
+      "description": "日志的内容",
+      "description_zh": "日志的内容",
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "required": true
+    },
+    ":rows": {
+      "description": "日志的尺寸",
+      "description_zh": "日志的尺寸",
+      "default": "15",
+      "value": "",
+      "type": "number",
+      "required": false
+    },
+    "trim": {
+      "description": "是否显示 trim 后的日志",
+      "description_zh": "是否显示 trim 后的日志",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "required": false
+    }
+  },
+  "events": [
+    {
+      "name": "require-more",
+      "description": "滚动加载日志的回调函数",
+      "description_zh": "滚动加载日志的回调函数",
+      "params": "(from: 'top' | 'bottom') => void"
+    },
+    {
+      "name": "reach-top",
+      "description": "滚动到顶部的回调函数",
+      "description_zh": "滚动到顶部的回调函数",
+      "params": "() => void"
+    },
+    {
+      "name": "reach-bottom",
+      "description": "滚动到底部的回调函数",
+      "description_zh": "滚动到底部的回调函数",
+      "params": "() => void"
+    }
+  ],
+  "methods": [
+    {
+      "name": "scrollTo",
+      "description": "滚动事件的回调函数",
+      "description_zh": "滚动事件的回调函数",
+      "params": "(options: { top?: number, position?: 'top' | 'bottom', silent?: boolean })"
+    }
+  ],
+  "slots": [],
+  "suggestions": [],
+  "link": "https://www.naiveui.com/zh-CN/os-theme/components/log",
+  "link_zh": "https://www.naiveui.com/zh-CN/os-theme/components/log",
+  "filename": "Log",
+  "typeDetail": {}
+}

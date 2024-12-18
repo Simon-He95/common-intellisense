@@ -1,0 +1,360 @@
+{
+  "name": "NInput",
+  "props": {
+    ":allow-input": {
+      "description": "校验当前的输入是否合法，如果返回 false 输入框便不会响应此次的输入",
+      "description_zh": "校验当前的输入是否合法，如果返回 false 输入框便不会响应此次的输入",
+      "default": "undefined",
+      "value": "",
+      "type": "(value: string) => false",
+      "version": "2.30.4",
+      "required": false
+    },
+    "autofocus": {
+      "description": "是否自动获取焦点",
+      "description_zh": "是否自动获取焦点",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    "autosize": {
+      "description": "自适应内容高度，只对 type=\"textarea\" 有效，可传入对象，如 { minRows: 1, maxRows: 3 }",
+      "description_zh": "自适应内容高度，只对 type=\"textarea\" 有效，可传入对象，如 { minRows: 1, maxRows: 3 }",
+      "default": "false",
+      "value": "",
+      "type": "boolean | { minRows?: number, maxRows?: number }",
+      "version": "",
+      "required": false
+    },
+    "clearable": {
+      "description": "是否可清空",
+      "description_zh": "是否可清空",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    "default-value": {
+      "description": "输入框默认值",
+      "description_zh": "输入框默认值",
+      "default": "null",
+      "value": "",
+      "type": "string | [string, string] | null",
+      "version": "",
+      "required": false
+    },
+    ":count-graphemes": {
+      "description": "计算输入的字数。如果设定了，那么原生的 maxlength 和 minlength 属性将不再被使用",
+      "description_zh": "计算输入的字数。如果设定了，那么原生的 maxlength 和 minlength 属性将不再被使用",
+      "default": "undefined",
+      "value": "",
+      "type": "(value: string) => number",
+      "version": "2.34.0",
+      "required": false
+    },
+    "disabled": {
+      "description": "是否禁用",
+      "description_zh": "是否禁用",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    "input-props": {
+      "description": "Input 组件内部 input 元素的属性，对 pair 类型不生效，在这里查看原生属性。注意：input-props 不会覆盖内部 input 元素的已经存在的属性（除了 type）",
+      "description_zh": "Input 组件内部 input 元素的属性，对 pair 类型不生效，在这里查看原生属性。注意：input-props 不会覆盖内部 input 元素的已经存在的属性（除了 type）",
+      "default": "undefined",
+      "value": "",
+      "type": "InputHTMLAttributes | TextareaHTMLAttributes",
+      "version": "",
+      "required": false
+    },
+    "loading": {
+      "description": "是否展示加载图标，设为非 undefined 会占据空间",
+      "description_zh": "是否展示加载图标，设为非 undefined 会占据空间",
+      "default": "undefined",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    ":maxlength": {
+      "description": "最大输入长度",
+      "description_zh": "最大输入长度",
+      "default": "undefined",
+      "value": "",
+      "type": "number",
+      "version": "",
+      "required": false
+    },
+    ":minlength": {
+      "description": "最小输入长度",
+      "description_zh": "最小输入长度",
+      "default": "undefined",
+      "value": "",
+      "type": "number",
+      "version": "",
+      "required": false
+    },
+    "pair": {
+      "description": "是否输入成对的值",
+      "description_zh": "是否输入成对的值",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    "passively-activated": {
+      "description": "是否被动激活输入框",
+      "description_zh": "是否被动激活输入框",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    "placeholder": {
+      "description": "文本输入的占位符。如果 pair 是 true，placeholder是一个数组",
+      "description_zh": "文本输入的占位符。如果 pair 是 true，placeholder是一个数组",
+      "default": "undefined",
+      "value": "",
+      "type": "string | [string, string]",
+      "version": "",
+      "required": false
+    },
+    "readonly": {
+      "description": "是否只读",
+      "description_zh": "是否只读",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    ":render-count": {
+      "description": "字数统计的渲染函数",
+      "description_zh": "字数统计的渲染函数",
+      "default": "undefined",
+      "value": "",
+      "type": "(props: { value: string }) => void",
+      "version": "2.32.2",
+      "required": false
+    },
+    "round": {
+      "description": "输入框是否圆角",
+      "description_zh": "输入框是否圆角",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    ":rows": {
+      "description": "输入框行数，对 type=\"textarea\" 有效",
+      "description_zh": "输入框行数，对 type=\"textarea\" 有效",
+      "default": "3",
+      "value": "",
+      "type": "number",
+      "version": "",
+      "required": false
+    },
+    "separator": {
+      "description": "成对输入框中间的分隔符",
+      "description_zh": "成对输入框中间的分隔符",
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "required": false
+    },
+    "show-count": {
+      "description": "是否显示字数统计",
+      "description_zh": "是否显示字数统计",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    "show-password-on": {
+      "description": "显示密码的时机",
+      "description_zh": "显示密码的时机",
+      "default": "undefined",
+      "value": "",
+      "type": "click / mousedown",
+      "version": "",
+      "required": false
+    },
+    "size": {
+      "description": "输入框尺寸",
+      "description_zh": "输入框尺寸",
+      "default": "medium",
+      "value": "",
+      "type": "tiny / small / medium / large",
+      "version": "",
+      "required": false
+    },
+    "status": {
+      "description": "验证状态",
+      "description_zh": "验证状态",
+      "default": "undefined",
+      "value": "",
+      "type": "success / warning / error",
+      "version": "2.25.0",
+      "required": false
+    },
+    "type": {
+      "description": "输入框类型",
+      "description_zh": "输入框类型",
+      "default": "text",
+      "value": "",
+      "type": "text / password / textarea",
+      "version": "",
+      "required": false
+    },
+    ":v-model:value": {
+      "description": "文本输入的值。如果 pair 是 true，value 是一个数组",
+      "description_zh": "文本输入的值。如果 pair 是 true，value 是一个数组",
+      "default": "undefined",
+      "value": "",
+      "type": "string | [string, string] | null",
+      "version": "",
+      "required": true
+    }
+  },
+  "events": [
+    {
+      "name": "blur",
+      "description": "输入框失去焦点时触发",
+      "description_zh": "输入框失去焦点时触发",
+      "params": "() => void",
+      "version": ""
+    },
+    {
+      "name": "change",
+      "description": "原生 change 事件触发时触发",
+      "description_zh": "原生 change 事件触发时触发",
+      "params": "(value: string | [string, string]) => void",
+      "version": ""
+    },
+    {
+      "name": "clear",
+      "description": "输入框点击清空按钮时触发",
+      "description_zh": "输入框点击清空按钮时触发",
+      "params": "() => void",
+      "version": ""
+    },
+    {
+      "name": "focus",
+      "description": "输入框获得焦点时触发",
+      "description_zh": "输入框获得焦点时触发",
+      "params": "() => void",
+      "version": ""
+    },
+    {
+      "name": "input",
+      "description": "输入框在用户输入时触发",
+      "description_zh": "输入框在用户输入时触发",
+      "params": "(value: string | [string, string]) => void",
+      "version": ""
+    },
+    {
+      "name": "update:value",
+      "description": "输入框值 change 时触发",
+      "description_zh": "输入框值 change 时触发",
+      "params": "(value: string | [string, string]) => void",
+      "version": ""
+    }
+  ],
+  "methods": [
+    {
+      "name": "blur",
+      "description": "Blur 输入框",
+      "description_zh": "Blur 输入框",
+      "params": "() => void",
+      "version": ""
+    },
+    {
+      "name": "clear",
+      "description": "清空输入框",
+      "description_zh": "清空输入框",
+      "params": "() => void",
+      "version": "2.37.0"
+    },
+    {
+      "name": "focus",
+      "description": "Focus 输入框",
+      "description_zh": "Focus 输入框",
+      "params": "() => void",
+      "version": ""
+    },
+    {
+      "name": "scrollTo",
+      "description": "滚动到",
+      "description_zh": "滚动到",
+      "params": "(options: { left?: number, top?: number, behavior?: 'auto' | 'smooth' }) => void",
+      "version": "2.32.0"
+    },
+    {
+      "name": "select",
+      "description": "选中输入框内容",
+      "description_zh": "选中输入框内容",
+      "params": "() => void",
+      "version": ""
+    }
+  ],
+  "slots": [
+    {
+      "name": "clear-icon",
+      "description": "自定义清除图标",
+      "description_zh": "自定义清除图标",
+      "version": "2.29.0"
+    },
+    {
+      "name": "count",
+      "description": "字数统计",
+      "description_zh": "字数统计",
+      "version": ""
+    },
+    {
+      "name": "password-invisible-icon",
+      "description": "密码关闭时的密码开关图标",
+      "description_zh": "密码关闭时的密码开关图标",
+      "version": "2.27.0"
+    },
+    {
+      "name": "password-visible-icon",
+      "description": "密码显示时的密码开关图标",
+      "description_zh": "密码显示时的密码开关图标",
+      "version": "2.27.0"
+    },
+    {
+      "name": "prefix",
+      "description": "输入框头部内容",
+      "description_zh": "输入框头部内容",
+      "version": ""
+    },
+    {
+      "name": "separator",
+      "description": "成对输入框之间分隔符，仅 pair = true 生效且优先级高于 separator 属性",
+      "description_zh": "成对输入框之间分隔符，仅 pair = true 生效且优先级高于 separator 属性",
+      "version": ""
+    },
+    {
+      "name": "suffix",
+      "description": "输入框尾部内容",
+      "description_zh": "输入框尾部内容",
+      "version": ""
+    }
+  ],
+  "suggestions": [],
+  "link": "https://www.naiveui.com/zh-CN/os-theme/components/input",
+  "link_zh": "https://www.naiveui.com/zh-CN/os-theme/components/input",
+  "filename": "Input",
+  "typeDetail": {}
+}

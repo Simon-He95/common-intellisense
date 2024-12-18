@@ -1,0 +1,190 @@
+{
+  "name": "NProgress",
+  "props": {
+    "border-radius": {
+      "description": "'line' 类型进度条的圆角半径，不填写则维持高度的一半",
+      "description_zh": "'line' 类型进度条的圆角半径，不填写则维持高度的一半",
+      "default": "undefined",
+      "value": "",
+      "type": "number | string",
+      "version": "",
+      "required": false
+    },
+    ":circle-gap": {
+      "description": "当类型是 'multiple-circle' 的时候圈之间的距离，假设 viewbox 的尺寸是 100",
+      "description_zh": "当类型是 'multiple-circle' 的时候圈之间的距离，假设 viewbox 的尺寸是 100",
+      "default": "1",
+      "value": "",
+      "type": "number",
+      "version": "",
+      "required": false
+    },
+    ":color": {
+      "description": "进度条颜色，{ stops: string[] } 表示渐变色，stops 数组长度必须为 2，第一个元素为渐变的起始颜色，第二个元素为渐变的终止颜色",
+      "description_zh": "进度条颜色，{ stops: string[] } 表示渐变色，stops 数组长度必须为 2，第一个元素为渐变的起始颜色，第二个元素为渐变的终止颜色",
+      "default": "undefined",
+      "value": "",
+      "type": "string | string[] | { stops: string[] } | Array<{ stops: string[] }>",
+      "version": "2.40.2 开始支持 stops",
+      "required": false
+    },
+    "fill-border-radius": {
+      "description": "'line' 类型进度条填充的圆角半径，不填写则维持 border-radius",
+      "description_zh": "'line' 类型进度条填充的圆角半径，不填写则维持 border-radius",
+      "default": "undefined",
+      "value": "",
+      "type": "number | string",
+      "version": "",
+      "required": false
+    },
+    ":gap-degree": {
+      "description": "仪表盘进度条缺口角度，取值范围 0 ~ 360",
+      "description_zh": "仪表盘进度条缺口角度，取值范围 0 ~ 360",
+      "default": "75",
+      "value": "",
+      "type": "number",
+      "version": "2.25.2",
+      "required": false
+    },
+    ":gap-offset-degree": {
+      "description": "仪表盘进度条缺口位置",
+      "description_zh": "仪表盘进度条缺口位置",
+      "default": "0",
+      "value": "",
+      "type": "number",
+      "version": "2.25.2",
+      "required": false
+    },
+    ":height": {
+      "description": "'line' 类型进度条的高度，不填写则维持默认高度",
+      "description_zh": "'line' 类型进度条的高度，不填写则维持默认高度",
+      "default": "undefined",
+      "value": "",
+      "type": "number",
+      "version": "",
+      "required": false
+    },
+    "indicator-placement": {
+      "description": "'line' 类型设置指示标位置",
+      "description_zh": "'line' 类型设置指示标位置",
+      "default": "outside",
+      "value": "",
+      "type": "inside / outside",
+      "version": "",
+      "required": false
+    },
+    "indicator-text-color": {
+      "description": "指示标文本颜色",
+      "description_zh": "指示标文本颜色",
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "required": false
+    },
+    ":offset-degree": {
+      "description": "进度的偏移角度，只对 'circle' 类型生效",
+      "description_zh": "进度的偏移角度，只对 'circle' 类型生效",
+      "default": "0",
+      "value": "",
+      "type": "number",
+      "version": "2.24.0",
+      "required": false
+    },
+    ":percentage": {
+      "description": "百分比的值",
+      "description_zh": "百分比的值",
+      "default": "0",
+      "value": "",
+      "type": "number | number[]",
+      "version": "",
+      "required": true
+    },
+    "processing": {
+      "description": "处理中状态",
+      "description_zh": "处理中状态",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    "rail-color": {
+      "description": "轨道的颜色",
+      "description_zh": "轨道的颜色",
+      "default": "undefined",
+      "value": "",
+      "type": "string | string[]",
+      "version": "",
+      "required": false
+    },
+    ":rail-style": {
+      "description": "轨道的对象",
+      "description_zh": "轨道的对象",
+      "default": "undefined",
+      "value": "",
+      "type": "string | CSS | Array<string | CSS>",
+      "version": "",
+      "required": false
+    },
+    "show-indicator": {
+      "description": "是否显示指示标",
+      "description_zh": "是否显示指示标",
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    "status": {
+      "description": "进度条状态",
+      "description_zh": "进度条状态",
+      "default": "default",
+      "value": "",
+      "type": "default / success / error / warning / info",
+      "version": "",
+      "required": false
+    },
+    ":stroke-width": {
+      "description": "进度条宽度",
+      "description_zh": "进度条宽度",
+      "default": "7",
+      "value": "",
+      "type": "number",
+      "version": "",
+      "required": false
+    },
+    "type": {
+      "description": "进度条类型",
+      "description_zh": "进度条类型",
+      "default": "line",
+      "value": "",
+      "type": "line / circle / multiple-circle / dashboard",
+      "version": "'dashboard' 2.25.2",
+      "required": false
+    },
+    "unit": {
+      "description": "进度条单位",
+      "description_zh": "进度条单位",
+      "default": "%",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "required": false
+    }
+  },
+  "events": [],
+  "methods": [],
+  "slots": [
+    {
+      "name": "default",
+      "description": "指示标里的内容",
+      "description_zh": "指示标里的内容"
+    }
+  ],
+  "suggestions": [],
+  "link": "https://www.naiveui.com/zh-CN/os-theme/components/progress",
+  "link_zh": "https://www.naiveui.com/zh-CN/os-theme/components/progress",
+  "filename": "Progress",
+  "typeDetail": {}
+}

@@ -1,0 +1,177 @@
+{
+  "name": "NSlider",
+  "props": {
+    "default-value": {
+      "description": "默认值",
+      "description_zh": "默认值",
+      "default": "null",
+      "value": "",
+      "type": "number | [number, number] | null",
+      "version": "",
+      "required": false
+    },
+    "disabled": {
+      "description": "是否禁用",
+      "description_zh": "是否禁用",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    ":format-tooltip": {
+      "description": "格式化 tooltip",
+      "description_zh": "格式化 tooltip",
+      "default": "undefined",
+      "value": "",
+      "type": "(value: number) => string | number",
+      "version": "",
+      "required": false
+    },
+    "keyboard": {
+      "description": "是否可键盘控制",
+      "description_zh": "是否可键盘控制",
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "version": "2.33.0",
+      "required": false
+    },
+    ":marks": {
+      "description": "Slider 上的标记",
+      "description_zh": "Slider 上的标记",
+      "default": "undefined",
+      "value": "",
+      "type": "{ [markValue: number]: string | (() => VNodeChild) }",
+      "version": "2.40.0 支持 render 函数",
+      "required": false
+    },
+    ":max": {
+      "description": "最大值",
+      "description_zh": "最大值",
+      "default": "100",
+      "value": "",
+      "type": "number",
+      "version": "",
+      "required": false
+    },
+    ":min": {
+      "description": "最小值",
+      "description_zh": "最小值",
+      "default": "0",
+      "value": "",
+      "type": "number",
+      "version": "",
+      "required": false
+    },
+    "placement": {
+      "description": "Tooltip 的弹出位置",
+      "description_zh": "Tooltip 的弹出位置",
+      "default": "undefined",
+      "value": "",
+      "type": "top-start / top / top-end / right-start / right / right-end / bottom-start / bottom / bottom-end / left-start / left / left-end",
+      "version": "2.25.0",
+      "required": false
+    },
+    "range": {
+      "description": "是否选择范围值",
+      "description_zh": "是否选择范围值",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    "reverse": {
+      "description": "是否倒转轨道",
+      "description_zh": "是否倒转轨道",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    "show-tooltip": {
+      "description": "是否一直显示 tooltip，仅对非 range 生效",
+      "description_zh": "是否一直显示 tooltip，仅对非 range 生效",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "2.24.2",
+      "required": false
+    },
+    "step": {
+      "description": "步长",
+      "description_zh": "步长",
+      "default": "1",
+      "value": "",
+      "type": "number / mark",
+      "version": "",
+      "required": false
+    },
+    "tooltip": {
+      "description": "是否展示 tooltip",
+      "description_zh": "是否展示 tooltip",
+      "default": "true",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    "vertical": {
+      "description": "是否启用垂直模式",
+      "description_zh": "是否启用垂直模式",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    ":v-model:value": {
+      "description": "值",
+      "description_zh": "值",
+      "default": "undefined",
+      "value": "",
+      "type": "number | [number, number] | null",
+      "version": "",
+      "required": true
+    }
+  },
+  "events": [
+    {
+      "name": "update:value",
+      "description": "值更新的回调",
+      "description_zh": "值更新的回调",
+      "params": "(value: number | [number, number]) => void",
+      "version": ""
+    },
+    {
+      "name": "dragstart",
+      "description": "开始拖拽的回调函数",
+      "description_zh": "开始拖拽的回调函数",
+      "params": "() => void",
+      "version": "2.36.0"
+    },
+    {
+      "name": "dragend",
+      "description": "拖拽结束的回调函数",
+      "description_zh": "拖拽结束的回调函数",
+      "params": "() => void",
+      "version": "2.36.0"
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "thumb",
+      "description": "滑块按钮",
+      "description_zh": "滑块按钮",
+      "version": "2.30.4"
+    }
+  ],
+  "suggestions": [],
+  "link": "https://www.naiveui.com/zh-CN/os-theme/components/slider",
+  "link_zh": "https://www.naiveui.com/zh-CN/os-theme/components/slider",
+  "filename": "Slider",
+  "typeDetail": {}
+}

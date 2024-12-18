@@ -1,0 +1,159 @@
+{
+  "name": "NDynamicInput",
+  "props": {
+    "create-button-props": {
+      "description": "新建项按钮的属性",
+      "description_zh": "新建项按钮的属性",
+      "default": "undefined",
+      "value": "",
+      "type": "ButtonProps",
+      "version": "2.25.0",
+      "required": false
+    },
+    "default-value": {
+      "description": "非受控模式下的默认值",
+      "description_zh": "非受控模式下的默认值",
+      "default": "[]",
+      "value": "",
+      "type": "unknown[]",
+      "version": "",
+      "required": false
+    },
+    "disabled": {
+      "description": "是否禁用，对自定义内容无效",
+      "description_zh": "是否禁用，对自定义内容无效",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "2.34.4",
+      "required": false
+    },
+    "item-class": {
+      "description": "动态录入中每项的类名",
+      "description_zh": "动态录入中每项的类名",
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "version": "2.36.0",
+      "required": false
+    },
+    "item-style": {
+      "description": "动态录入中每项的样式",
+      "description_zh": "动态录入中每项的样式",
+      "default": "undefined",
+      "value": "",
+      "type": "string | Object",
+      "version": "",
+      "required": false
+    },
+    "key-field": {
+      "description": "每一项的 key 值，会被用于列表渲染中",
+      "description_zh": "每一项的 key 值，会被用于列表渲染中",
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "required": false
+    },
+    ":min": {
+      "description": "最少有几项内容",
+      "description_zh": "最少有几项内容",
+      "default": "0",
+      "value": "",
+      "type": "number",
+      "version": "",
+      "required": false
+    },
+    ":max": {
+      "description": "最多有几项内容",
+      "description_zh": "最多有几项内容",
+      "default": "undefined",
+      "value": "",
+      "type": "number",
+      "version": "",
+      "required": false
+    },
+    "preset": {
+      "description": "动态录入使用的预设，在不设定 $slots.default 的时候生效",
+      "description_zh": "动态录入使用的预设，在不设定 $slots.default 的时候生效",
+      "default": "input",
+      "value": "",
+      "type": "input / pair",
+      "version": "",
+      "required": false
+    },
+    "show-sort-button": {
+      "description": "是否显示排序按钮",
+      "description_zh": "是否显示排序按钮",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "2.25.0",
+      "required": false
+    },
+    ":v-model:value": {
+      "description": "受控模式下的值",
+      "description_zh": "受控模式下的值",
+      "default": "undefined",
+      "value": "",
+      "type": "unknown[]",
+      "version": "",
+      "required": true
+    }
+  },
+  "events": [
+    {
+      "name": "create",
+      "description": "点击添加按钮时的回调，如果设定则返回值会被用作新添加的初始值。其中 index 是创建内容将要被放置到的位置对应的数组索引，从 1（第二项）开始计算",
+      "description_zh": "点击添加按钮时的回调，如果设定则返回值会被用作新添加的初始值。其中 index 是创建内容将要被放置到的位置对应的数组索引，从 1（第二项）开始计算",
+      "params": "(index: number) => void",
+      "version": ""
+    },
+    {
+      "name": "remove",
+      "description": "点击第 index 项删除按钮的回调",
+      "description_zh": "点击第 index 项删除按钮的回调",
+      "params": "(index: number) => void",
+      "version": ""
+    },
+    {
+      "name": "update:value",
+      "description": "组件值发生变化的回调",
+      "description_zh": "组件值发生变化的回调",
+      "params": "(value: any) => void",
+      "version": ""
+    }
+  ],
+  "methods": [],
+  "slots": [
+    {
+      "name": "action",
+      "description": "自定义操作，其中 value 为该项对应的数组值，index 为该项对应的数组索引",
+      "description_zh": "自定义操作，其中 value 为该项对应的数组值，index 为该项对应的数组索引",
+      "version": "2.34.4"
+    },
+    {
+      "name": "default",
+      "description": "每一项的渲染方式，其中 value 为该项对应的数组值，index 为该项对应的数组索引",
+      "description_zh": "每一项的渲染方式，其中 value 为该项对应的数组值，index 为该项对应的数组索引",
+      "version": ""
+    },
+    {
+      "name": "create-button-default",
+      "description": "新建项按钮的内容",
+      "description_zh": "新建项按钮的内容",
+      "version": "2.25.0"
+    },
+    {
+      "name": "create-button-icon",
+      "description": "新建项按钮的图标",
+      "description_zh": "新建项按钮的图标",
+      "version": "2.25.0"
+    }
+  ],
+  "suggestions": [],
+  "link": "https://www.naiveui.com/zh-CN/os-theme/components/dynamic-input",
+  "link_zh": "https://www.naiveui.com/zh-CN/os-theme/components/dynamic-input",
+  "filename": "DynamicInput",
+  "typeDetail": {}
+}

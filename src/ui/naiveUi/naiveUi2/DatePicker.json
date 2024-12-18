@@ -1,0 +1,727 @@
+{
+  "name": "NDatePicker",
+  "props": {
+    "calendar-day-format": {
+      "description": "选择面板内部星期几的格式",
+      "description_zh": "选择面板内部星期几的格式",
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "version": "2.40.2",
+      "required": false
+    },
+    "calendar-header-year-format": {
+      "description": "选择面板内部年的格式",
+      "description_zh": "选择面板内部年的格式",
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "version": "2.40.2",
+      "required": false
+    },
+    "calendar-header-month-format": {
+      "description": "选择面板内部月的格式",
+      "description_zh": "选择面板内部月的格式",
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "version": "2.40.2",
+      "required": false
+    },
+    "calendar-header-month-before-year": {
+      "description": "选择面板内部月是否显示在年的前面",
+      "description_zh": "选择面板内部月是否显示在年的前面",
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "version": "2.40.2",
+      "required": false
+    },
+    "calendar-header-month-year-separator": {
+      "description": "选择面板内部年和月的分隔字符",
+      "description_zh": "选择面板内部年和月的分隔字符",
+      "default": " ",
+      "value": "",
+      "type": "string",
+      "version": "2.40.2",
+      "required": false
+    },
+    "clearable": {
+      "description": "是否支持清除",
+      "description_zh": "是否支持清除",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    "date-format": {
+      "description": "选择面板内部日期输入框的日期格式",
+      "description_zh": "选择面板内部日期输入框的日期格式",
+      "default": "undefined",
+      "value": "",
+      "type": "string",
+      "version": "2.40.2",
+      "required": false
+    },
+    "default-value": {
+      "description": "默认被选中的日期的时间戳",
+      "description_zh": "默认被选中的日期的时间戳",
+      "default": "undefined",
+      "value": "",
+      "type": "number | [number, number] | null",
+      "version": "",
+      "required": false
+    },
+    "default-formatted-value": {
+      "description": "Date Picker 格式化后的值",
+      "description_zh": "Date Picker 格式化后的值",
+      "default": "undefined",
+      "value": "",
+      "type": "string | [string, string] | null",
+      "version": "",
+      "required": false
+    },
+    "disabled": {
+      "description": "是否禁用",
+      "description_zh": "是否禁用",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    "first-day-of-week": {
+      "description": "日历上一周的开始，0 代表周一",
+      "description_zh": "日历上一周的开始，0 代表周一",
+      "default": "undefined",
+      "value": "",
+      "type": "0 | 1 | 2 | 3 | 4 | 5 | 6",
+      "version": "",
+      "required": false
+    },
+    "formatted-value": {
+      "description": "格式化之后的值",
+      "description_zh": "格式化之后的值",
+      "default": "undefined",
+      "value": "",
+      "type": "string | [string, string] | null",
+      "version": "2.24.0",
+      "required": false
+    },
+    "input-readonly": {
+      "description": "设置输入框为只读（避免在移动设备上打开虚拟键盘）",
+      "description_zh": "设置输入框为只读（避免在移动设备上打开虚拟键盘）",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "",
+      "required": false
+    },
+    "month-format": {
+      "description": "设置面板中月份的显示方式，详情见 format",
+      "description_zh": "设置面板中月份的显示方式，详情见 format",
+      "default": "M",
+      "value": "",
+      "type": "string",
+      "version": "2.37.0",
+      "required": false
+    },
+    "panel": {
+      "description": "是否只使用面板",
+      "description_zh": "是否只使用面板",
+      "default": "false",
+      "value": "",
+      "type": "boolean",
+      "version": "2.29.1",
+      "required": false
+    },
+    "placement": {
+      "description": "面板的弹出位置",
+      "description_zh": "面板的弹出位置",
+      "default": "bottom-start",
+      "value": "",
+      "type": "top-start / top / top-end / right-start / right / right-end / bottom-start / bottom / bottom-end / left-start / left / left-end",
+      "version": "2.25.0",
+      "required": false
+    },
+    "quarter-format": {
+      "description": "设置面板中季度的显示方式，详情见 format",
+      "description_zh": "设置面板中季度的显示方式，详情见 format",
+      "default": "QQ",
+      "value": "",
+      "type": "string",
+      "version": "2.37.0",
+      "required": false
+    },
+    ":shortcuts": {
+      "description": "自定义快捷按钮",
+      "description_zh": "自定义快捷按钮",
+      "default": "undefined",
+      "value": "",
+      "type": "Record<string, number | (() => number)> | Record<string, [number, number] | (() => [number, number])>",
+      "version": "",
+      "required": false
+    },
+    "show": {
+      "description": "是否展示面板",
+      "description_zh": "是否展示面板",
+      "default": "undefined",
+      "value": "",
+      "type": "boolean",
+      "version": "2.28.3",
+      "required": false
+    },
+    "size": {
+      "description": "尺寸",
+      "description_zh": "尺寸",
+      "default": "medium",
+      "value": "",
+      "type": "small / medium / large",
+      "version": "",
+      "required": false
+    },
+    "status": {
+      "description": "验证状态",
+      "description_zh": "验证状态",
+      "default": "undefined",
+      "value": "",
+      "type": "success / warning / error",
+      "version": "2.27.0",
+      "required": false
+    },
+    "time-picker-format": {
+      "description": "日期面板内时间的显示方式，详情见 format",
+      "description_zh": "日期面板内时间的显示方式，详情见 format",
+      "default": "undefined",
+      "value": "",
+      "type": "string | undefined",
+      "version": "2.38.2",
+      "required": false
+    },
+    "to": {
+      "description": "面板的容器节点，false 会待在原地",
+      "description_zh": "面板的容器节点，false 会待在原地",
+      "default": "body",
+      "value": "",
+      "type": "string | HTMLElement | false",
+      "version": "",
+      "required": false
+    },
+    "type": {
+      "description": "Date Picker 的类型",
+      "description_zh": "Date Picker 的类型",
+      "default": "date",
+      "value": "",
+      "type": "date / datetime / daterange / datetimerange / month / monthrange / year / yearrange / quarter / quarterrange / week",
+      "version": "'quarter' v2.22.0, 'monthrange' 2.28.3",
+      "required": false
+    },
+    ":v-model:value": {
+      "description": "Date Picker 的值",
+      "description_zh": "Date Picker 的值",
+      "default": "undefined",
+      "value": "",
+      "type": "number | [number, number] | null",
+      "version": "",
+      "required": true
+    },
+    "value-format": {
+      "description": "绑定值的格式，详情见 format",
+      "description_zh": "绑定值的格式，详情见 format",
+      "default": "跟随 format 属性",
+      "value": "",
+      "type": "string",
+      "version": "",
+      "required": false
+    },
+    "year-format": {
+      "description": "设置面板中年的显示方式，详情见 format",
+      "description_zh": "设置面板中年的显示方式，详情见 format",
+      "default": "y",
+      "value": "",
+      "type": "string",
+      "version": "2.37.0",
+      "required": false
+    },
+    "year-range": {
+      "description": "设置面板中的年份选择范围",
+      "description_zh": "设置面板中的年份选择范围",
+      "default": "[1901, 2100]",
+      "value": "",
+      "type": "[number, number]",
+      "version": "2.40.0",
+      "required": false
+    }
+  },
+  "events": [
+    {
+      "name": "clear",
+      "description": "用户 clear 时执行的回调",
+      "description_zh": "用户 clear 时执行的回调",
+      "params": "() => void",
+      "version": "2.28.3"
+    },
+    {
+      "name": "confirm",
+      "description": "用户 confirm 时执行的回调",
+      "description_zh": "用户 confirm 时执行的回调",
+      "params": "(value: number | [number, number] | null, formattedValue: string | [string, string] | null) => void",
+      "version": "2.28.3"
+    },
+    {
+      "name": "blur",
+      "description": "用户 blur 时执行的回调",
+      "description_zh": "用户 blur 时执行的回调",
+      "params": "() => void",
+      "version": ""
+    },
+    {
+      "name": "focus",
+      "description": "用户 focus 时执行的回调",
+      "description_zh": "用户 focus 时执行的回调",
+      "params": "() => void",
+      "version": ""
+    },
+    {
+      "name": "next-month",
+      "description": "点击下一个月时的回调",
+      "description_zh": "点击下一个月时的回调",
+      "params": "() => void",
+      "version": "2.37.0"
+    },
+    {
+      "name": "prev-month",
+      "description": "点击上一个月时的回调",
+      "description_zh": "点击上一个月时的回调",
+      "params": "() => void",
+      "version": "2.37.0"
+    },
+    {
+      "name": "next-year",
+      "description": "点击下一年时的回调",
+      "description_zh": "点击下一年时的回调",
+      "params": "() => void",
+      "version": "2.37.0"
+    },
+    {
+      "name": "prev-year",
+      "description": "点击上一年时的回调",
+      "description_zh": "点击上一年时的回调",
+      "params": "() => void",
+      "version": "2.37.0"
+    },
+    {
+      "name": "update:show",
+      "description": "面板打开、关闭时的回调",
+      "description_zh": "面板打开、关闭时的回调",
+      "params": "(show: boolean) => void",
+      "version": "2.28.3"
+    }
+  ],
+  "methods": [
+    {
+      "name": "focus",
+      "description": "聚焦",
+      "description_zh": "聚焦",
+      "params": "() => void",
+      "version": "2.24.2"
+    },
+    {
+      "name": "blur",
+      "description": "失焦",
+      "description_zh": "失焦",
+      "params": "() => void",
+      "version": "2.24.2"
+    }
+  ],
+  "slots": [
+    {
+      "name": "date-icon",
+      "description": "日期输入框的图标",
+      "description_zh": "日期输入框的图标",
+      "version": "2.29.0"
+    },
+    {
+      "name": "footer",
+      "description": "添加额外的页脚",
+      "description_zh": "添加额外的页脚",
+      "version": ""
+    },
+    {
+      "name": "next-month",
+      "description": "日期面板的 下一个 图标",
+      "description_zh": "日期面板的 下一个 图标",
+      "version": "2.33.4"
+    },
+    {
+      "name": "next-year",
+      "description": "日期面板的 快速下一个 图标",
+      "description_zh": "日期面板的 快速下一个 图标",
+      "version": "2.33.4"
+    },
+    {
+      "name": "prev-month",
+      "description": "日期面板的 上一个 图标",
+      "description_zh": "日期面板的 上一个 图标",
+      "version": "2.33.4"
+    },
+    {
+      "name": "prev-year",
+      "description": "日期面板的 快速上一个 图标",
+      "description_zh": "日期面板的 快速上一个 图标",
+      "version": "2.33.4"
+    },
+    {
+      "name": "separator",
+      "description": "日期范围分隔符号",
+      "description_zh": "日期范围分隔符号",
+      "version": "2.29.0"
+    }
+  ],
+  "suggestions": [],
+  "link": "https://www.naiveui.com/zh-CN/os-theme/components/date-picker",
+  "link_zh": "https://www.naiveui.com/zh-CN/os-theme/components/date-picker",
+  "filename": "DatePicker",
+  "typeDetail": {
+    "Date": [
+      {
+        "name": "actions",
+        "description": "Date 类型的 Date Picker 中支持的操作",
+        "type": "Array<clear | now> | null"
+      },
+      {
+        "name": "format",
+        "description": "时间格式化字符串，详情见 [format](https://date-fns.org/v2.23.0/docs/format)",
+        "type": "string"
+      },
+      {
+        "name": "is-date-disabled",
+        "description": "日期禁用的校验函数",
+        "type": "(current: number) => boolean"
+      },
+      {
+        "name": "placeholder",
+        "description": "自动填充的提示信息",
+        "type": "string"
+      },
+      {
+        "name": "on-update:formatted-value",
+        "description": "可控数据更新时触发的回调函数",
+        "type": "(value: string | null, timestampValue: number | null) => void"
+      },
+      {
+        "name": "on-update:value",
+        "description": "可控数据更新时触发的回调函数",
+        "type": "(value: number | null, formattedValue: string | null) => void"
+      }
+    ],
+    "DateTime": [
+      {
+        "name": "actions",
+        "description": "DateTime 类型的 Date Picker 中支持的操作",
+        "type": "Array<clear | now | confirm> | null"
+      },
+      {
+        "name": "default-time",
+        "description": "默认时间，格式为 `HH:mm:ss`",
+        "type": "string"
+      },
+      {
+        "name": "format",
+        "description": "时间格式化字符串，详情见 [format](https://date-fns.org/v2.23.0/docs/format)",
+        "type": "string"
+      },
+      {
+        "name": "is-date-disabled",
+        "description": "日期禁用的校验函数",
+        "type": "(current: number) => boolean"
+      },
+      {
+        "name": "is-time-disabled",
+        "description": "时间禁用的校验函数",
+        "type": "(current: number) => { isHourDisabled: boolean, isMinuteDisabled: boolean, isSecondDisabled: boolean }"
+      },
+      {
+        "name": "placeholder",
+        "description": "提示信息",
+        "type": "string"
+      },
+      {
+        "name": "time-picker-props",
+        "description": "面板中时间选择器的属性",
+        "type": "TimePickerProps"
+      },
+      {
+        "name": "update-value-on-close",
+        "description": "关闭面板时更新值",
+        "type": "boolean"
+      },
+      {
+        "name": "on-update:formatted-value",
+        "description": "数据更新时触发的回调函数",
+        "type": "(value: string | null, timestampValue: number | null) => void"
+      },
+      {
+        "name": "on-update:value",
+        "description": "数据更新时触发的回调函数",
+        "type": "(value: number | null, formattedValue: string | null) => void"
+      }
+    ],
+    "DateRange": [
+      {
+        "name": "actions",
+        "description": "DateRange 类型的 Date Picker 中支持的用户操作",
+        "type": "Array<clear | confirm> | null"
+      },
+      {
+        "name": "bind-calendar-months",
+        "description": "面板月份是否连续",
+        "type": "boolean"
+      },
+      {
+        "name": "default-calendar-start-time",
+        "description": "面板日历默认开始的月份时间戳",
+        "type": "number"
+      },
+      {
+        "name": "default-calendar-end-time",
+        "description": "面板日历默认结束的月份时间戳",
+        "type": "number"
+      },
+      {
+        "name": "format",
+        "description": "时间格式化字符串，详情见 [format](https://date-fns.org/v2.23.0/docs/format)",
+        "type": "string"
+      },
+      {
+        "name": "is-date-disabled",
+        "description": "日期禁用的校验函数",
+        "type": "(current: number, phase: start | end, value: [number, number] | null) => boolean"
+      },
+      {
+        "name": "is-time-disabled",
+        "description": "时间禁用的校验函数，校验函数中的 `null` 表示当前没有选中值",
+        "type": "(current: number, phase: start | end, value: [number, number]) => { isHourDisabled?: (hour: number) => boolean, isMinuteDisabled?: (minute: number, hour: number | null) => boolean, isSecondDisabled?: (second: number, minute: number | null, hour: number | null) => boolean }"
+      },
+      {
+        "name": "close-on-select",
+        "description": "用户选择时间范围后是否自动关闭面板",
+        "type": "boolean"
+      },
+      {
+        "name": "separator",
+        "description": "start 选框与 end 选框之间的分隔符",
+        "type": "string"
+      },
+      {
+        "name": "start-placeholder",
+        "description": "DateRange 中 start 选框的提示信息",
+        "type": "string"
+      },
+      {
+        "name": "update-value-on-close",
+        "description": "关闭面板时是否更新值",
+        "type": "boolean"
+      },
+      {
+        "name": "on-update:formatted-value",
+        "description": "数据更新时触发的回调函数",
+        "type": "(value: [string, string] | null, timestampValue: [number, number] | null) => void"
+      },
+      {
+        "name": "on-update:value",
+        "description": "数据更新时触发的回调函数",
+        "type": "(value: [number, number] | null, formattedValue: [string, string] | null) => void"
+      }
+    ],
+    "DateTimeRange": [
+      {
+        "name": "actions",
+        "description": "DateTimeRange 类型的 Date Picker 中支持的用户操作",
+        "type": "Array<clear | confirm> | null"
+      },
+      {
+        "name": "bind-calendar-months",
+        "description": "面板月份是否连续",
+        "type": "boolean"
+      },
+      {
+        "name": "default-calendar-start-time",
+        "description": "面板日历默认开始的月份时间戳",
+        "type": "number"
+      },
+      {
+        "name": "default-calendar-end-time",
+        "description": "面板日历默认结束的月份时间戳",
+        "type": "number"
+      },
+      {
+        "name": "default-time",
+        "description": "默认时间，格式为 `HH:mm:ss`",
+        "type": "string | Array<string | undefined>"
+      },
+      {
+        "name": "end-placeholder",
+        "description": "DateTimeRange 中 end 选框的提示信息",
+        "type": "string"
+      },
+      {
+        "name": "format",
+        "description": "时间格式化字符串，详情见 [format](https://date-fns.org/v2.23.0/docs/format)",
+        "type": "string"
+      },
+      {
+        "name": "is-date-disabled",
+        "description": "日期禁用的校验函数",
+        "type": "(current: number, phase: start | end, value: [number, number] | null) => boolean"
+      },
+      {
+        "name": "is-time-disabled",
+        "description": "时间禁用的校验函数，校验函数中的 `null` 表示当前没有选中值",
+        "type": "(current: number, phase: start | end, value: [number, number]) => { isHourDisabled?: (hour: number) => boolean, isMinuteDisabled?: (minute: number, hour: number | null) => boolean, isSecondDisabled?: (second: number, minute: number | null, hour: number | null) => boolean }"
+      },
+      {
+        "name": "separator",
+        "description": "start 选框与 end 选框之间的分隔符",
+        "type": "string"
+      },
+      {
+        "name": "start-placeholder",
+        "description": "DateTimeRange 中 start 选框的提示信息",
+        "type": "string"
+      },
+      {
+        "name": "time-picker-props",
+        "description": "面板中时间选择器的属性",
+        "type": "TimePickerProps | [TimePickerProps, TimePickerProps]"
+      },
+      {
+        "name": "update-value-on-close",
+        "description": "关闭面板时是否更新值",
+        "type": "boolean"
+      },
+      {
+        "name": "on-update:formatted-value",
+        "description": "数据更新时触发的回调函数",
+        "type": "(value: [string, string] | null, timestampValue: [number, number] | null) => void"
+      },
+      {
+        "name": "on-update:value",
+        "description": "数据更新时触发的回调函数",
+        "type": "(value: [number, number] | null, formattedValue: [string, string] | null) => void"
+      }
+    ],
+    "Month": [
+      {
+        "name": "actions",
+        "description": "Month 类型的 Date Picker 中支持的操作",
+        "type": "Array<clear | now | confirm> | null"
+      },
+      {
+        "name": "format",
+        "description": "时间格式化字符串，详情见 [format](https://date-fns.org/v2.23.0/docs/format)",
+        "type": "string"
+      },
+      {
+        "name": "is-date-disabled",
+        "description": "月份禁用的校验函数",
+        "type": "(current: number) => boolean"
+      },
+      {
+        "name": "placeholder",
+        "description": "自动填充的提示信息",
+        "type": "string"
+      },
+      {
+        "name": "on-update:formatted-value",
+        "description": "可控数据更新时触发的回调函数",
+        "type": "(value: string | null, timestampValue: number | null) => void"
+      },
+      {
+        "name": "on-update:value",
+        "description": "可控数据更新时触发的回调函数",
+        "type": "(value: number | null, formattedValue: string | null) => void"
+      }
+    ],
+    "MonthRange、QuarterRange、YearRange": [
+      {
+        "name": "actions",
+        "description": "MonthRange 类型的 Date Picker 中支持的用户操作",
+        "type": "Array<clear | confirm> | null"
+      },
+      {
+        "name": "end-placeholder",
+        "description": "MonthRange 中 end 选框的提示信息",
+        "type": "string"
+      },
+      {
+        "name": "format",
+        "description": "时间格式化字符串，详情见 [format](https://date-fns.org/v2.23.0/docs/format)",
+        "type": "string"
+      },
+      {
+        "name": "close-on-select",
+        "description": "用户选择时间范围后是否自动关闭面板",
+        "type": "boolean"
+      },
+      {
+        "name": "separator",
+        "description": "start 选框与 end 选框之间的分隔符",
+        "type": "string"
+      },
+      {
+        "name": "start-placeholder",
+        "description": "MonthRange 中 start 选框的提示信息",
+        "type": "string"
+      },
+      {
+        "name": "update-value-on-close",
+        "description": "关闭面板时是否更新值",
+        "type": "boolean"
+      },
+      {
+        "name": "on-update:formatted-value",
+        "description": "数据更新时触发的回调函数",
+        "type": "(value: [string, string] | null, timestampValue: [number, number] | null) => void"
+      },
+      {
+        "name": "on-update:value",
+        "description": "数据更新时触发的回调函数",
+        "type": "(value: [number, number] | null, formattedValue: [string, string] | null) => void"
+      }
+    ],
+    "Year": [
+      {
+        "name": "actions",
+        "description": "Year 类型的 Date Picker 中支持的操作",
+        "type": "Array<clear | now> | null"
+      },
+      {
+        "name": "format",
+        "description": "时间格式化字符串，详情见 [format](https://date-fns.org/v2.23.0/docs/format)",
+        "type": "string"
+      },
+      {
+        "name": "is-date-disabled",
+        "description": "年份禁用的校验函数",
+        "type": "(current: number) => boolean"
+      },
+      {
+        "name": "placeholder",
+        "description": "自动填充的提示信息",
+        "type": "string"
+      },
+      {
+        "name": "on-update:formatted-value",
+        "description": "可控数据更新时触发的回调函数",
+        "type": "(value: string | null, timestampValue: number | null) => void"
+      },
+      {
+        "name": "on-update:value",
+        "description": "可控数据更新时触发的回调函数",
+        "type": "(value: number | null, formattedValue: string | null) => void"
+      }
+    ]
+  }
+}
