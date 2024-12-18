@@ -49,7 +49,7 @@ function run() {
           description_zh: description,
           default: value.replace(/'/g, ''),
           value: '',
-          type: type.replace(/'/g, ''),
+          type: type.replace(/{[^}]*}/g, '').replace(/\[[^\]]*\]/g, '').includes('\'') ? type.replace(/(?<![{[][^{}[\]])\|(?![^{}[\]]*[\]}])/g, '/').replace(/'/g, '') : type.replace(/'/g, ''),
           version,
           required: false,
         }
